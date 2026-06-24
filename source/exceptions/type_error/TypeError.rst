@@ -570,7 +570,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
         return 'a string'
 
 
-    a_tuple = (1, 2, 3, 'n')
+    a_tuple = (0, 1, 2, 'n')
 
   the terminal_ is my friend, and shows TypeError_
 
@@ -589,7 +589,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
 
     def a_tuple():
-        return (1, 2, 3, 'n')
+        return (0, 1, 2, 'n')
 
   the test passes. I can call a :ref:`function<what is a function?>`. :ref:`I cannot call a tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`
 
@@ -617,10 +617,10 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     :emphasize-lines: 5
 
     def a_tuple():
-        return (1, 2, 3, 'n')
+        return (0, 1, 2, 'n')
 
 
-    a_list = [1, 2, 3, 'n']
+    a_list = [0, 1, 2, 'n']
 
   the terminal_ is my friend, and shows TypeError_
 
@@ -635,11 +635,11 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     :emphasize-lines: 5-6
 
     def a_tuple():
-        return (1, 2, 3, 'n')
+        return (0, 1, 2, 'n')
 
 
     def a_list():
-        return [1, 2, 3, 'n']
+        return [0, 1, 2, 'n']
 
   the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`
 
@@ -667,10 +667,10 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     :emphasize-lines: 5
 
     def a_list():
-        return [1, 2, 3, 'n']
+        return [0, 1, 2, 'n']
 
 
-    a_set = {1, 2, 3, 'n'}
+    a_set = {0, 1, 2, 'n'}
 
   the terminal_ is my friend, and shows TypeError_
 
@@ -685,11 +685,11 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     :emphasize-lines: 5-6
 
     def a_list():
-        return [1, 2, 3, 'n']
+        return [0, 1, 2, 'n']
 
 
     def a_set():
-        return {1, 2, 3, 'n'}
+        return {0, 1, 2, 'n'}
 
   the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a set, list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`
 
@@ -727,7 +727,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     :emphasize-lines: 5
 
     def a_set():
-        return {1, 2, 3, 'n'}
+        return {0, 1, 2, 'n'}
 
 
     a_dictionary = {'key': 'value'}
@@ -745,7 +745,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     :emphasize-lines: 5-6
 
     def a_set():
-        return {1, 2, 3, 'n'}
+        return {0, 1, 2, 'n'}
 
 
     def a_dictionary():

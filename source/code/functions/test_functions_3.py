@@ -11,8 +11,8 @@ class TestFunctions(unittest.TestCase):
 
     first = 'first'
     last = 'last'
-    a_tuple = (1, 2, 3, 'n')
-    a_list = [1, 2, 3, 'n']
+    a_tuple = (0, 1, 2, 'n')
+    a_list = [0, 1, 2, 'n']
     first_number = 0
     second_number = 1
 
@@ -194,7 +194,7 @@ class TestFunctions(unittest.TestCase):
         )
         self.assertEqual(reality, my_expectation)
 
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         a_dictionary = {'key': 'value'}
         reality = src.functions.w_keyword_arguments(
             first_input=a_set,

@@ -477,12 +477,12 @@ the test passes.
             # self.assertTrue(bool(0.1))
             # self.assertTrue("a string with things")
             # self.assertTrue(bool("a string with things"))
-            # self.assertTrue((1, 2, 3, 'n'))
-            # self.assertTrue(bool((1, 2, 3, 'n')))
-            # self.assertTrue([1, 2, 3, 'n'])
-            # self.assertTrue(bool([1, 2, 3, 'n']))
-            # self.assertTrue({1, 2, 3, 'n'})
-            # self.assertTrue(bool({1, 2, 3, 'n'}))
+            # self.assertTrue((0, 1, 2, 'n'))
+            # self.assertTrue(bool((0, 1, 2, 'n')))
+            # self.assertTrue([0, 1, 2, 'n'])
+            # self.assertTrue(bool([0, 1, 2, 'n']))
+            # self.assertTrue({0, 1, 2, 'n'})
+            # self.assertTrue(bool({0, 1, 2, 'n'}))
             # self.assertTrue({'key': 'value'})
             # self.assertTrue(bool({'key': 'value'}))
             for true_item in (
@@ -490,9 +490,9 @@ the test passes.
                 -1, bool(-1), 1, bool(1),
                 -0.1, bool(-0.1), 0.1, bool(0.1),
                 "a string with things", bool("a string with things"),
-                ((1, 2, 3, 'n')), bool((1, 2, 3, 'n')),
-                [1, 2, 3, 'n'], bool([1, 2, 3, 'n']),
-                {1, 2, 3, 'n'}, bool({1, 2, 3, 'n'}),
+                ((0, 1, 2, 'n')), bool((0, 1, 2, 'n')),
+                [0, 1, 2, 'n'], bool([0, 1, 2, 'n']),
+                {0, 1, 2, 'n'}, bool({0, 1, 2, 'n'}),
                 {'key': 'value'}, bool({'key': 'value'}),
             ):
                 with self.subTest(item=true_item):
@@ -513,11 +513,11 @@ the test passes.
     SUBFAILED(item=True) ...             - AssertionError: True is not false
     SUBFAILED(item='text') ...           - AssertionError: 'text' is not false
     SUBFAILED(item=True) ...             - AssertionError: True is not false
-    SUBFAILED(item=(1, 2, 3, 'n')) ...   - AssertionError: (1, 2, 3, 'n') is not false
+    SUBFAILED(item=(0, 1, 2, 'n')) ...   - AssertionError: (0, 1, 2, 'n') is not false
     SUBFAILED(item=True) ...             - AssertionError: True is not false
-    SUBFAILED(item=[1, 2, 3, 'n']) ...   - AssertionError: [1, 2, 3, 'n'] is not false
+    SUBFAILED(item=[0, 1, 2, 'n']) ...   - AssertionError: [0, 1, 2, 'n'] is not false
     SUBFAILED(item=True) ...             - AssertionError: True is not false
-    SUBFAILED(item={1, 2, 3, 'n'}) ...   - AssertionError: {1, 2, 3, 'n'} is not false
+    SUBFAILED(item={0, 1, 2, 'n'}) ...   - AssertionError: {0, 1, 2, 'n'} is not false
     SUBFAILED(item=True) ...             - AssertionError: True is not false
     SUBFAILED(item={'key': 'value'}) ... - AssertionError: {'key': 'value'} is not false
     SUBFAILED(item=True) ...             - AssertionError: True is not false
@@ -546,9 +546,9 @@ the test passes.
                 -1, bool(-1), 1, bool(1),
                 -0.1, bool(-0.1), 0.1, bool(0.1),
                 "a string with things", bool("a string with things"),
-                ((1, 2, 3, 'n')), bool((1, 2, 3, 'n')),
-                [1, 2, 3, 'n'], bool([1, 2, 3, 'n']),
-                {1, 2, 3, 'n'}, bool({1, 2, 3, 'n'}),
+                ((0, 1, 2, 'n')), bool((0, 1, 2, 'n')),
+                [0, 1, 2, 'n'], bool([0, 1, 2, 'n']),
+                {0, 1, 2, 'n'}, bool({0, 1, 2, 'n'}),
                 {'key': 'value'}, bool({'key': 'value'}),
             ):
                 with self.subTest(item=true_item):

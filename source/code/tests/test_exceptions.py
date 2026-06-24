@@ -21,7 +21,7 @@ class TestExceptions(unittest.TestCase):
             src.exceptions.function_name('the input')
 
     def test_catching_index_error_in_tests(self):
-        a_list = [1, 2, 3, 'n']
+        a_list = [0, 1, 2, 'n']
         with self.assertRaises(IndexError):
             a_list[4]
         with self.assertRaises(IndexError):

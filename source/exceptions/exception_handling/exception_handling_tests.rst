@@ -585,7 +585,7 @@ test_catching_index_error_in_tests
                 src.exceptions.function_name('the input')
 
         def test_catching_index_error_in_tests(self):
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
 
 * the first item in a :ref:`list<lists>` has ``0`` as its :ref:`index<test_index_returns_first_position_of_item_in_a_list>` (its position in the container)
 
@@ -594,7 +594,7 @@ test_catching_index_error_in_tests
     :emphasize-lines: 3
 
         def test_catching_index_error_in_tests(self):
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             a_list[0]
 
   the test is still green.
@@ -606,7 +606,7 @@ test_catching_index_error_in_tests
     :emphasize-lines: 3
 
         def test_catching_index_error_in_tests(self):
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             a_list[3]
 
   still green.
@@ -618,7 +618,7 @@ test_catching_index_error_in_tests
     :emphasize-lines: 3
 
         def test_catching_index_error_in_tests(self):
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             a_list[4]
 
   the terminal_ is my friend, and shows :ref:`IndexError<test_index_error>`
@@ -658,7 +658,7 @@ I add assertRaises_
   :emphasize-lines: 3-4
 
       def test_catching_index_error_in_tests(self):
-          a_list = [1, 2, 3, 'n']
+          a_list = [0, 1, 2, 'n']
           with self.assertRaises(IndexError):
               a_list[4]
 
@@ -679,7 +679,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
     :emphasize-lines: 5
 
         def test_catching_index_error_in_tests(self):
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             with self.assertRaises(IndexError):
                 a_list[4]
             a_list[-1]
@@ -693,7 +693,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
     :emphasize-lines: 5
 
         def test_catching_index_error_in_tests(self):
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             with self.assertRaises(IndexError):
                 a_list[4]
             a_list[-4]
@@ -707,7 +707,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
     :emphasize-lines: 5
 
         def test_catching_index_error_in_tests(self):
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             with self.assertRaises(IndexError):
                 a_list[4]
             a_list[-5]
@@ -725,7 +725,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
     :emphasize-lines: 5-6
 
         def test_catching_index_error_in_tests(self):
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             with self.assertRaises(IndexError):
                 a_list[4]
             with self.assertRaises(IndexError):
@@ -740,7 +740,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
     :emphasize-lines: 5-6
 
         def test_catching_index_error_in_tests(self):
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             with self.assertRaises(IndexError):
                 a_list[4]
                 a_list[-5]
@@ -755,7 +755,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
     :emphasize-lines: 5-6
 
         def test_catching_index_error_in_tests(self):
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             with self.assertRaises(IndexError):
                 a_list[4]
             with self.assertRaises(IndexError):
@@ -789,7 +789,7 @@ test_catching_key_error_in_tests
     :emphasize-lines: 8-9
 
         def test_catching_index_error_in_tests(self):
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             with self.assertRaises(IndexError):
                 a_list[4]
             with self.assertRaises(IndexError):
@@ -1131,7 +1131,7 @@ one exception one exception handler
     :emphasize-lines: 5-6
 
         def test_catching_index_error_in_tests(self):
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             with self.assertRaises(IndexError):
                 a_list[4]
                 a_list[-5]
@@ -1144,7 +1144,7 @@ one exception one exception handler
     :emphasize-lines: 5
 
         def test_catching_index_error_in_tests(self):
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             with self.assertRaises(IndexError):
                 a_list[4]
                 raise Exception
@@ -1160,7 +1160,7 @@ one exception one exception handler
     :emphasize-lines: 4
 
         def test_catching_index_error_in_tests(self):
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             with self.assertRaises(IndexError):
                 raise Exception
                 a_list[4]
@@ -1182,7 +1182,7 @@ one exception one exception handler
     :emphasize-lines: 3-6
 
         def test_catching_index_error_in_tests(self):
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             with self.assertRaises(IndexError):
                 a_list[4]
             with self.assertRaises(IndexError):

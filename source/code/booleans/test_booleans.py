@@ -57,7 +57,7 @@ class TestBooleans(unittest.TestCase):
         self.assertFalse(bool(tuple()))
         self.assertFalse(tuple())
 
-        a_tuple = (1, 2, 3, 'n')
+        a_tuple = (0, 1, 2, 'n')
         self.assertTrue(bool(a_tuple))
         self.assertTrue(a_tuple)
 
@@ -65,7 +65,7 @@ class TestBooleans(unittest.TestCase):
         self.assertFalse(bool(list()))
         self.assertFalse(list())
 
-        a_list = [1, 2, 3, 'n']
+        a_list = [0, 1, 2, 'n']
         self.assertTrue(bool(a_list))
         self.assertTrue(a_list)
 
@@ -73,7 +73,7 @@ class TestBooleans(unittest.TestCase):
         self.assertFalse(bool(set()))
         self.assertFalse(set())
 
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         self.assertTrue(bool(a_set))
         self.assertTrue(a_set)
 

@@ -29,9 +29,9 @@ class TestBooleans(unittest.TestCase):
             -1, bool(-1), 1, bool(1),
             -0.1, bool(-0.1), 0.1, bool(0.1),
             "a string with things", bool("a string with things"),
-            ((1, 2, 3, 'n')), bool((1, 2, 3, 'n')),
-            [1, 2, 3, 'n'], bool([1, 2, 3, 'n']),
-            {1, 2, 3, 'n'}, bool({1, 2, 3, 'n'}),
+            ((0, 1, 2, 'n')), bool((0, 1, 2, 'n')),
+            [0, 1, 2, 'n'], bool([0, 1, 2, 'n']),
+            {0, 1, 2, 'n'}, bool({0, 1, 2, 'n'}),
             {'key': 'value'}, bool({'key': 'value'}),
         ):
             with self.subTest(item=true_item):

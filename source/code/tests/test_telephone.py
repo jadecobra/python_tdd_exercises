@@ -42,13 +42,13 @@ class TestTelephone(unittest.TestCase):
         self.assertEqual(reality, my_expectation)
 
     def test_passing_a_tuple(self):
-        a_tuple = (1, 2, 3, 'n')
+        a_tuple = (0, 1, 2, 'n')
         reality = src.telephone.text(a_tuple)
         my_expectation = f"I got: {a_tuple}"
         self.assertEqual(reality, my_expectation)
 
     def test_passing_a_list(self):
-        a_list = [1, 2, 3, 'n']
+        a_list = [0, 1, 2, 'n']
         reality = src.telephone.text(a_list)
         my_expectation = f"I got: {a_list}"
         self.assertEqual(reality, my_expectation)

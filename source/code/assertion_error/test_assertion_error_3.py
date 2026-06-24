@@ -6,9 +6,9 @@ class TestAssertionError(unittest.TestCase):
     an_integer = 0
     a_float = 0.0
     a_string = 'a string'
-    a_tuple = (1, 2, 3, 'n')
-    a_list = [1, 2, 3, 'n']
-    a_set = {1, 2, 3, 'n'}
+    a_tuple = (0, 1, 2, 'n')
+    a_list = [0, 1, 2, 'n']
+    a_set = {0, 1, 2, 'n'}
     a_dictionary = {'key': 'value'}
 
     def test_assert_keyword(self):

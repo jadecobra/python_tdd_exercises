@@ -78,14 +78,14 @@ def test_positional_arguments():
      == (0, 1)
     )
 
-    a_tuple = (1, 2, 3, 'n')
-    a_list = [1, 2, 3, 'n']
+    a_tuple = (0, 1, 2, 'n')
+    a_list = [0, 1, 2, 'n']
     assert (
         positional_arguments(a_tuple, a_list)
      == (a_tuple, a_list)
     )
 
-    a_set = {1, 2, 3, 'n'}
+    a_set = {0, 1, 2, 'n'}
     a_dictionary = {'key': 'value'}
     assert (
         keyword_arguments(
@@ -121,8 +121,8 @@ def test_keyword_arguments():
      == (1, 0)
     )
 
-    a_tuple = (1, 2, 3, 'n')
-    a_list = [1, 2, 3, 'n']
+    a_tuple = (0, 1, 2, 'n')
+    a_list = [0, 1, 2, 'n']
     assert (
         keyword_arguments(
             first_input=a_tuple,
@@ -131,7 +131,7 @@ def test_keyword_arguments():
      == (a_tuple, a_list)
     )
 
-    a_set = {1, 2, 3, 'n'}
+    a_set = {0, 1, 2, 'n'}
     a_dictionary = {'key': 'value'}
     assert (
         positional_arguments(
@@ -230,7 +230,7 @@ def test_unknown_number_of_arguments():
      == (a_tuple, a_dictionary)
     )
 
-    a_tuple = (1, 2, 3, 'n')
+    a_tuple = (0, 1, 2, 'n')
     assert (
         unknown_number_of_arguments(*a_tuple)
      == (a_tuple, {})

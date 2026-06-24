@@ -318,7 +318,7 @@ use assertIsNotNone and assertIsNone
 
   .. code-block:: python
 
-    AssertionError: (1, 2, 3, 'n') is not None
+    AssertionError: (0, 1, 2, 'n') is not None
 
 * I change the call from :ref:`assertIsNone<one more way to test if something is None>` to :ref:`assertIsNotNone<one more way to test if something is NOT None>`
 
@@ -353,7 +353,7 @@ use assertIsNotNone and assertIsNone
 
   .. code-block:: python
 
-    AssertionError: [1, 2, 3, 'n'] is not None
+    AssertionError: [0, 1, 2, 'n'] is not None
 
 * I change the call from :ref:`assertIsNone<one more way to test if something is None>` to :ref:`assertIsNotNone<one more way to test if something is NOT None>`
 
@@ -388,7 +388,7 @@ use assertIsNotNone and assertIsNone
 
   .. code-block:: python
 
-    AssertionError: {1, 2, 3, 'n'} is not None
+    AssertionError: {0, 1, 2, 'n'} is not None
 
 * I change the call from :ref:`assertIsNone<one more way to test if something is None>` to :ref:`assertIsNotNone<one more way to test if something is NOT None>`
 
@@ -422,7 +422,7 @@ use assertIsNotNone and assertIsNone
 
   .. code-block:: python
 
-    AssertionError: {1, 2, 3, 'n'} is not None
+    AssertionError: {0, 1, 2, 'n'} is not None
 
 * I change the call from :ref:`assertIsNone<one more way to test if something is None>` to :ref:`assertIsNotNone<one more way to test if something is NOT None>`
 

@@ -1952,7 +1952,7 @@ the test passes.
         def test_is_none_a_tuple(self):
             # self.assertIsNone(())
             self.assertIsNotNone(())
-            self.assertIsNone((1, 2, 3, 'n'))
+            self.assertIsNone((0, 1, 2, 'n'))
 
 
     # NOTES
@@ -1961,7 +1961,7 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: (1, 2, 3, 'n') is not None
+    AssertionError: (0, 1, 2, 'n') is not None
 
 * I make the statement :ref:`True<test_what_is_true>`
 
@@ -1973,8 +1973,8 @@ the test passes.
         def test_is_none_a_tuple(self):
             # self.assertIsNone(())
             self.assertIsNotNone(())
-            # self.assertIsNone((1, 2, 3, 'n'))
-            self.assertIsNotNone((1, 2, 3, 'n'))
+            # self.assertIsNone((0, 1, 2, 'n'))
+            self.assertIsNotNone((0, 1, 2, 'n'))
 
 
     # NOTES
@@ -1990,8 +1990,8 @@ the test passes.
         def test_is_none_a_tuple(self):
             # self.assertIsNone(())
             self.assertIsNotNone(())
-            # self.assertIsNone((1, 2, 3, 'n'))
-            self.assertIsNotNone((1, 2, 3, 'n'))
+            # self.assertIsNone((0, 1, 2, 'n'))
+            self.assertIsNotNone((0, 1, 2, 'n'))
             self.assertNotIsInstance((), tuple)
 
 
@@ -2014,8 +2014,8 @@ the test passes.
         def test_is_none_a_tuple(self):
             # self.assertIsNone(())
             self.assertIsNotNone(())
-            # self.assertIsNone((1, 2, 3, 'n'))
-            self.assertIsNotNone((1, 2, 3, 'n'))
+            # self.assertIsNone((0, 1, 2, 'n'))
+            self.assertIsNotNone((0, 1, 2, 'n'))
             # self.assertNotIsInstance((), tuple)
             self.assertIsInstance((), tuple)
 
@@ -2033,11 +2033,11 @@ the test passes.
         def test_is_none_a_tuple(self):
             # self.assertIsNone(())
             self.assertIsNotNone(())
-            # self.assertIsNone((1, 2, 3, 'n'))
-            self.assertIsNotNone((1, 2, 3, 'n'))
+            # self.assertIsNone((0, 1, 2, 'n'))
+            self.assertIsNotNone((0, 1, 2, 'n'))
             # self.assertNotIsInstance((), tuple)
             self.assertIsInstance((), tuple)
-            self.assertNotIsInstance((1, 2, 3, 'n'), tuple)
+            self.assertNotIsInstance((0, 1, 2, 'n'), tuple)
 
 
     # NOTES
@@ -2046,7 +2046,7 @@ the test passes.
 
   .. code-block:: shell
 
-    AssertionError: (1, 2, 3, 'n') is an instance of <class 'tuple'>
+    AssertionError: (0, 1, 2, 'n') is an instance of <class 'tuple'>
 
   because in Python_ anything in parentheses (``( )``) separated by commas is a tuple_.
 
@@ -2059,12 +2059,12 @@ the test passes.
         def test_is_none_a_tuple(self):
             # self.assertIsNone(())
             self.assertIsNotNone(())
-            # self.assertIsNone((1, 2, 3, 'n'))
-            self.assertIsNotNone((1, 2, 3, 'n'))
+            # self.assertIsNone((0, 1, 2, 'n'))
+            self.assertIsNotNone((0, 1, 2, 'n'))
             # self.assertNotIsInstance((), tuple)
             self.assertIsInstance((), tuple)
-            # self.assertNotIsInstance((1, 2, 3, 'n'), tuple)
-            self.assertIsInstance((1, 2, 3, 'n'), tuple)
+            # self.assertNotIsInstance((0, 1, 2, 'n'), tuple)
+            self.assertIsInstance((0, 1, 2, 'n'), tuple)
 
 
     # NOTES
@@ -2080,12 +2080,12 @@ the test passes.
         def test_is_none_a_tuple(self):
             # self.assertIsNone(())
             self.assertIsNotNone(())
-            # self.assertIsNone((1, 2, 3, 'n'))
-            self.assertIsNotNone((1, 2, 3, 'n'))
+            # self.assertIsNone((0, 1, 2, 'n'))
+            self.assertIsNotNone((0, 1, 2, 'n'))
             # self.assertNotIsInstance((), tuple)
             self.assertIsInstance((), tuple)
-            # self.assertNotIsInstance((1, 2, 3, 'n'), tuple)
-            self.assertIsInstance((1, 2, 3, 'n'), tuple)
+            # self.assertNotIsInstance((0, 1, 2, 'n'), tuple)
+            self.assertIsInstance((0, 1, 2, 'n'), tuple)
             self.assertIsInstance(None, tuple)
 
 
@@ -2108,12 +2108,12 @@ the test passes.
         def test_is_none_a_tuple(self):
             # self.assertIsNone(())
             self.assertIsNotNone(())
-            # self.assertIsNone((1, 2, 3, 'n'))
-            self.assertIsNotNone((1, 2, 3, 'n'))
+            # self.assertIsNone((0, 1, 2, 'n'))
+            self.assertIsNotNone((0, 1, 2, 'n'))
             # self.assertNotIsInstance((), tuple)
             self.assertIsInstance((), tuple)
-            # self.assertNotIsInstance((1, 2, 3, 'n'), tuple)
-            self.assertIsInstance((1, 2, 3, 'n'), tuple)
+            # self.assertNotIsInstance((0, 1, 2, 'n'), tuple)
+            self.assertIsInstance((0, 1, 2, 'n'), tuple)
             # self.assertIsInstance(None, tuple)
             self.assertNotIsInstance(None, tuple)
 
@@ -2129,9 +2129,9 @@ the test passes.
 
         def test_is_none_a_tuple(self):
             self.assertIsNotNone(())
-            self.assertIsNotNone((1, 2, 3, 'n'))
+            self.assertIsNotNone((0, 1, 2, 'n'))
             self.assertIsInstance((), tuple)
-            self.assertIsInstance((1, 2, 3, 'n'), tuple)
+            self.assertIsInstance((0, 1, 2, 'n'), tuple)
             self.assertNotIsInstance(None, tuple)
 
 
@@ -2190,9 +2190,9 @@ test_is_none_a_list
 
         def test_is_none_a_tuple(self):
             self.assertIsNotNone(())
-            self.assertIsNotNone((1, 2, 3, 'n'))
+            self.assertIsNotNone((0, 1, 2, 'n'))
             self.assertIsInstance((), tuple)
-            self.assertIsInstance((1, 2, 3, 'n'), tuple)
+            self.assertIsInstance((0, 1, 2, 'n'), tuple)
             self.assertNotIsInstance(None, tuple)
 
         def test_is_none_a_list(self):
@@ -2248,13 +2248,13 @@ the test passes.
         def test_is_none_a_list(self):
             # self.assertIsNone([])
             self.assertIsNotNone([])
-            self.assertIsNone([1, 2, 3, 'n'])
+            self.assertIsNone([0, 1, 2, 'n'])
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: [1, 2, 3, 'n'] is not None
+    AssertionError: [0, 1, 2, 'n'] is not None
 
 * I make the statement :ref:`True<test_what_is_true>`
 
@@ -2266,8 +2266,8 @@ the test passes.
         def test_is_none_a_list(self):
             # self.assertIsNone([])
             self.assertIsNotNone([])
-            # self.assertIsNone([1, 2, 3, 'n'])
-            self.assertIsNotNone([1, 2, 3, 'n'])
+            # self.assertIsNone([0, 1, 2, 'n'])
+            self.assertIsNotNone([0, 1, 2, 'n'])
 
 
     # NOTES
@@ -2283,8 +2283,8 @@ the test passes.
         def test_is_none_a_list(self):
             # self.assertIsNone([])
             self.assertIsNotNone([])
-            # self.assertIsNone([1, 2, 3, 'n'])
-            self.assertIsNotNone([1, 2, 3, 'n'])
+            # self.assertIsNone([0, 1, 2, 'n'])
+            self.assertIsNotNone([0, 1, 2, 'n'])
             self.assertNotIsInstance([], list)
 
 
@@ -2307,8 +2307,8 @@ the test passes.
         def test_is_none_a_list(self):
             # self.assertIsNone([])
             self.assertIsNotNone([])
-            # self.assertIsNone([1, 2, 3, 'n'])
-            self.assertIsNotNone([1, 2, 3, 'n'])
+            # self.assertIsNone([0, 1, 2, 'n'])
+            self.assertIsNotNone([0, 1, 2, 'n'])
             # self.assertNotIsInstance([], list)
             self.assertIsInstance([], list)
 
@@ -2326,11 +2326,11 @@ the test passes.
         def test_is_none_a_list(self):
             # self.assertIsNone([])
             self.assertIsNotNone([])
-            # self.assertIsNone([1, 2, 3, 'n'])
-            self.assertIsNotNone([1, 2, 3, 'n'])
+            # self.assertIsNone([0, 1, 2, 'n'])
+            self.assertIsNotNone([0, 1, 2, 'n'])
             # self.assertNotIsInstance([], list)
             self.assertIsInstance([], list)
-            self.assertNotIsInstance([1, 2, 3, 'n'], list)
+            self.assertNotIsInstance([0, 1, 2, 'n'], list)
 
 
     # NOTES
@@ -2339,7 +2339,7 @@ the test passes.
 
   .. code-block:: shell
 
-    AssertionError: [1, 2, 3, 'n'] is an instance of <class 'list'>
+    AssertionError: [0, 1, 2, 'n'] is an instance of <class 'list'>
 
   because in Python_ anything in square brackets (``[ ]``) is a :ref:`list<what is a list?>`.
 
@@ -2352,12 +2352,12 @@ the test passes.
         def test_is_none_a_list(self):
             # self.assertIsNone([])
             self.assertIsNotNone([])
-            # self.assertIsNone([1, 2, 3, 'n'])
-            self.assertIsNotNone([1, 2, 3, 'n'])
+            # self.assertIsNone([0, 1, 2, 'n'])
+            self.assertIsNotNone([0, 1, 2, 'n'])
             # self.assertNotIsInstance([], list)
             self.assertIsInstance([], list)
-            # self.assertNotIsInstance([1, 2, 3, 'n'], list)
-            self.assertIsInstance([1, 2, 3, 'n'], list)
+            # self.assertNotIsInstance([0, 1, 2, 'n'], list)
+            self.assertIsInstance([0, 1, 2, 'n'], list)
 
 
     # NOTES
@@ -2373,12 +2373,12 @@ the test passes.
         def test_is_none_a_list(self):
             # self.assertIsNone([])
             self.assertIsNotNone([])
-            # self.assertIsNone([1, 2, 3, 'n'])
-            self.assertIsNotNone([1, 2, 3, 'n'])
+            # self.assertIsNone([0, 1, 2, 'n'])
+            self.assertIsNotNone([0, 1, 2, 'n'])
             # self.assertNotIsInstance([], list)
             self.assertIsInstance([], list)
-            # self.assertNotIsInstance([1, 2, 3, 'n'], list)
-            self.assertIsInstance([1, 2, 3, 'n'], list)
+            # self.assertNotIsInstance([0, 1, 2, 'n'], list)
+            self.assertIsInstance([0, 1, 2, 'n'], list)
             self.assertIsInstance(None, list)
 
 
@@ -2401,12 +2401,12 @@ the test passes.
         def test_is_none_a_list(self):
             # self.assertIsNone([])
             self.assertIsNotNone([])
-            # self.assertIsNone([1, 2, 3, 'n'])
-            self.assertIsNotNone([1, 2, 3, 'n'])
+            # self.assertIsNone([0, 1, 2, 'n'])
+            self.assertIsNotNone([0, 1, 2, 'n'])
             # self.assertNotIsInstance([], list)
             self.assertIsInstance([], list)
-            # self.assertNotIsInstance([1, 2, 3, 'n'], list)
-            self.assertIsInstance([1, 2, 3, 'n'], list)
+            # self.assertNotIsInstance([0, 1, 2, 'n'], list)
+            self.assertIsInstance([0, 1, 2, 'n'], list)
             # self.assertIsInstance(None, list)
             self.assertNotIsInstance(None, list)
 
@@ -2422,9 +2422,9 @@ the test passes.
 
         def test_is_none_a_list(self):
             self.assertIsNotNone([])
-            self.assertIsNotNone([1, 2, 3, 'n'])
+            self.assertIsNotNone([0, 1, 2, 'n'])
             self.assertIsInstance([], list)
-            self.assertIsInstance([1, 2, 3, 'n'], list)
+            self.assertIsInstance([0, 1, 2, 'n'], list)
             self.assertNotIsInstance(None, list)
 
 
@@ -2481,9 +2481,9 @@ test_is_none_a_set
 
         def test_is_none_a_list(self):
             self.assertIsNotNone([])
-            self.assertIsNotNone([1, 2, 3, 'n'])
+            self.assertIsNotNone([0, 1, 2, 'n'])
             self.assertIsInstance([], list)
-            self.assertIsInstance([1, 2, 3, 'n'], list)
+            self.assertIsInstance([0, 1, 2, 'n'], list)
             self.assertNotIsInstance(None, list)
 
         def test_is_none_a_set(self):
@@ -2539,7 +2539,7 @@ the test passes.
         def test_is_none_a_set(self):
             # self.assertIsNone(set())
             self.assertIsNotNone(set())
-            self.assertIsNone({1, 2, 3, 'n'})
+            self.assertIsNone({0, 1, 2, 'n'})
 
 
     # NOTES
@@ -2548,7 +2548,7 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: {1, 2, 3, 'n'} is not None
+    AssertionError: {0, 1, 2, 'n'} is not None
 
 * I make the statement :ref:`True<test_what_is_true>`
 
@@ -2560,8 +2560,8 @@ the test passes.
         def test_is_none_a_set(self):
             # self.assertIsNone(set())
             self.assertIsNotNone(set())
-            # self.assertIsNone({1, 2, 3, 'n'})
-            self.assertIsNotNone({1, 2, 3, 'n'})
+            # self.assertIsNone({0, 1, 2, 'n'})
+            self.assertIsNotNone({0, 1, 2, 'n'})
 
 
     # NOTES
@@ -2577,9 +2577,9 @@ the test passes.
         def test_is_none_a_set(self):
             # self.assertIsNone(set())
             self.assertIsNotNone(set())
-            # self.assertIsNone({1, 2, 3, 'n'})
-            self.assertIsNotNone({1, 2, 3, 'n'})
-            self.assertNotIsInstance({1, 2, 3, 'n'}, set)
+            # self.assertIsNone({0, 1, 2, 'n'})
+            self.assertIsNotNone({0, 1, 2, 'n'})
+            self.assertNotIsInstance({0, 1, 2, 'n'}, set)
 
 
     # NOTES
@@ -2588,7 +2588,7 @@ the test passes.
 
   .. code-block:: shell
 
-    AssertionError: {1, 2, 3, 'n'} is an instance of <class 'set'>
+    AssertionError: {0, 1, 2, 'n'} is an instance of <class 'set'>
 
 * I make the statement :ref:`True<test_what_is_true>`
 
@@ -2599,10 +2599,10 @@ the test passes.
         def test_is_none_a_set(self):
             # self.assertIsNone(set())
             self.assertIsNotNone(set())
-            # self.assertIsNone({1, 2, 3, 'n'})
-            self.assertIsNotNone({1, 2, 3, 'n'})
-            # self.assertNotIsInstance({1, 2, 3, 'n'}, set)
-            self.assertIsInstance({1, 2, 3, 'n'}, set)
+            # self.assertIsNone({0, 1, 2, 'n'})
+            self.assertIsNotNone({0, 1, 2, 'n'})
+            # self.assertNotIsInstance({0, 1, 2, 'n'}, set)
+            self.assertIsInstance({0, 1, 2, 'n'}, set)
 
 
     # NOTES
@@ -2618,10 +2618,10 @@ the test passes.
         def test_is_none_a_set(self):
             # self.assertIsNone(set())
             self.assertIsNotNone(set())
-            # self.assertIsNone({1, 2, 3, 'n'})
-            self.assertIsNotNone({1, 2, 3, 'n'})
-            # self.assertNotIsInstance({1, 2, 3, 'n'}, set)
-            self.assertIsInstance({1, 2, 3, 'n'}, set)
+            # self.assertIsNone({0, 1, 2, 'n'})
+            self.assertIsNotNone({0, 1, 2, 'n'})
+            # self.assertNotIsInstance({0, 1, 2, 'n'}, set)
+            self.assertIsInstance({0, 1, 2, 'n'}, set)
             self.assertIsInstance(None, set)
 
 
@@ -2642,10 +2642,10 @@ the test passes.
         def test_is_none_a_set(self):
             # self.assertIsNone(set())
             self.assertIsNotNone(set())
-            # self.assertIsNone({1, 2, 3, 'n'})
-            self.assertIsNotNone({1, 2, 3, 'n'})
-            # self.assertNotIsInstance({1, 2, 3, 'n'}, set)
-            self.assertIsInstance({1, 2, 3, 'n'}, set)
+            # self.assertIsNone({0, 1, 2, 'n'})
+            self.assertIsNotNone({0, 1, 2, 'n'})
+            # self.assertNotIsInstance({0, 1, 2, 'n'}, set)
+            self.assertIsInstance({0, 1, 2, 'n'}, set)
             # self.assertIsInstance(None, set)
             self.assertNotIsInstance(None, set)
 
@@ -2661,8 +2661,8 @@ the test passes.
 
         def test_is_none_a_set(self):
             self.assertIsNotNone(set())
-            self.assertIsNotNone({1, 2, 3, 'n'})
-            self.assertIsInstance({1, 2, 3, 'n'}, set)
+            self.assertIsNotNone({0, 1, 2, 'n'})
+            self.assertIsInstance({0, 1, 2, 'n'}, set)
             self.assertNotIsInstance(None, set)
 
 
@@ -2717,8 +2717,8 @@ test_is_none_a_dictionary
 
         def test_is_none_a_set(self):
             self.assertIsNotNone(set())
-            self.assertIsNotNone({1, 2, 3, 'n'})
-            self.assertIsInstance({1, 2, 3, 'n'}, set)
+            self.assertIsNotNone({0, 1, 2, 'n'})
+            self.assertIsInstance({0, 1, 2, 'n'}, set)
             self.assertNotIsInstance(None, set)
 
         def test_is_none_a_dictionary(self):

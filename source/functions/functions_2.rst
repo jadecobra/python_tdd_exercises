@@ -1861,8 +1861,8 @@ the test passes.
          == (0, 1)
         )
 
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
         assert (
             positional_arguments(a_list, a_tuple)
          == (a_tuple, a_list)
@@ -1876,29 +1876,29 @@ the test passes.
   .. code-block:: python
 
       AssertionError:
-          assert ([1, 2, 3, 'n...1, 2, 3, 'n'))
-              == ((1, 2, 3, 'n...1, 2, 3, 'n'])
+          assert ([1, 2, 3, 'n...0, 1, 2, 'n'))
+              == ((1, 2, 3, 'n...0, 1, 2, 'n'])
 
-  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this test sends ``(1, 2, 3, 'n')`` as ``first_input`` and ``[1, 2, 3, 'n']`` as ``last_input``. Using substitution
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this test sends ``(0, 1, 2, 'n')`` as ``first_input`` and ``[0, 1, 2, 'n']`` as ``last_input``. Using substitution
 
   .. code-block:: python
 
-    a_tuple = (1, 2, 3, 'n')
-    a_list = [1, 2, 3, 'n']
+    a_tuple = (0, 1, 2, 'n')
+    a_list = [0, 1, 2, 'n']
 
   .. code-block:: python
 
     positional_arguments(a_list        , a_tuple       )
-    positional_arguments([1, 2, 3, 'n'], (1, 2, 3, 'n'))
+    positional_arguments([0, 1, 2, 'n'], (0, 1, 2, 'n'))
         return first_input   , last_input
-        return [1, 2, 3, 'n'], (1, 2, 3, 'n')
+        return [0, 1, 2, 'n'], (0, 1, 2, 'n')
 
   .. code-block:: python
 
     assert positional_arguments(a_list, a_tuple)
                               == (a_tuple, a_list)
-    assert ([1, 2, 3, 'n'], (1, 2, 3, 'n'))
-        == ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
+    assert ([0, 1, 2, 'n'], (0, 1, 2, 'n'))
+        == ((0, 1, 2, 'n'), [0, 1, 2, 'n'])
 
 * I change reality to match my expectation
 
@@ -1906,8 +1906,8 @@ the test passes.
     :lineno-start: 93
     :emphasize-lines: 4-5
 
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
         assert (
             # positional_arguments(a_list, a_tuple)
             positional_arguments(a_tuple, a_list)
@@ -1943,8 +1943,8 @@ the test passes.
          == (0, 1)
         )
 
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
         assert (
             positional_arguments(a_tuple, a_list)
          == (a_tuple, a_list)
@@ -1991,8 +1991,8 @@ Another way to :ref:`call a function<how to call a function with input>` is to u
     :lineno-start: 80
     :emphasize-lines: 9-10
 
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
         assert (
             positional_arguments(a_tuple, a_list)
          == (a_tuple, a_list)
@@ -2558,8 +2558,8 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
          == (1, 0)
         )
 
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
         assert (
             keyword_arguments(
                 first_input=a_list,
@@ -2576,10 +2576,10 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
   .. code-block:: python
 
     AssertionError:
-        assert ([1, 2, 3, 'n...1, 2, 3, 'n'))
-            == ((1, 2, 3, 'n...1, 2, 3, 'n'])
+        assert ([1, 2, 3, 'n...0, 1, 2, 'n'))
+            == ((1, 2, 3, 'n...0, 1, 2, 'n'])
 
-  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``[1, 2, 3, 'n']`` as ``first_input`` and ``(1, 2, 3, 'n')`` as ``last_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``[0, 1, 2, 'n']`` as ``first_input`` and ``(0, 1, 2, 'n')`` as ``last_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
@@ -2604,8 +2604,8 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
     :lineno-start: 128
     :emphasize-lines: 5-8
 
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
         assert (
             keyword_arguments(
                 # first_input=a_list,
@@ -2660,8 +2660,8 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
     .. code-block:: python
       :emphasize-text: first
 
-      positional_arguments((1, 2, 3, 'n'), [1, 2, 3, 'n'])
-                   return ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
+      positional_arguments((0, 1, 2, 'n'), [0, 1, 2, 'n'])
+                   return ((0, 1, 2, 'n'), [0, 1, 2, 'n'])
 
     .. code-block:: python
       :emphasize-text: first
@@ -2697,10 +2697,10 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
       :emphasize-text: first
 
       keyword_arguments(
-          first_input=(1, 2, 3, 'n'),
-          last_input=[1, 2, 3, 'n'],
+          first_input=(0, 1, 2, 'n'),
+          last_input=[0, 1, 2, 'n'],
       )
-          return ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
+          return ((0, 1, 2, 'n'), [0, 1, 2, 'n'])
 
   I add an :ref:`assertion<what is an assertion?>` to show that the two :ref:`functions<what is a function?>` are the same, by calling the :ref:`positional_arguments function<test_positional_arguments>` with :ref:`keyword arguments<test_keyword_arguments>`
 
@@ -2709,8 +2709,8 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
     :emphasize-lines: 13-21
     :emphasize-text: positional
 
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
         assert (
             keyword_arguments(
                 # first_input=a_list,
@@ -2721,7 +2721,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
          == (a_tuple, a_list)
         )
 
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         a_dictionary = {'key': 'value'}
         assert (
             positional_arguments(
@@ -2742,7 +2742,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
   because the :ref:`positional_arguments function<test_positional_arguments>`  belongs to the :ref:`test_positional_arguments function<test_positional_arguments>` and I cannot reach it from outside.
 
-* I move the :ref:`positional_arguments function<test_positional_arguments>` out of :ref:`test_positional_arguments` so that it can be called by any :ref:`function<what is a function?>`
+* I move the :ref:`positional_arguments function<test_positional_arguments>` out of :ref:`test_positional_arguments` so that it can be called from anywhere in the file_
 
   .. code-block:: python
     :lineno-start: 58
@@ -2771,8 +2771,8 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
          == (0, 1)
         )
 
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
         assert (
             positional_arguments(a_tuple, a_list)
          == (a_tuple, a_list)
@@ -2800,14 +2800,14 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
     :emphasize-lines: 8-15
     :emphasize-text: keyword
 
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
         assert (
             positional_arguments(a_tuple, a_list)
          == (a_tuple, a_list)
         )
 
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         a_dictionary = {'key': 'value'}
         assert (
             keyword_arguments(
@@ -2827,13 +2827,13 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
   because the :ref:`keyword_arguments function<test_keyword_arguments>` belongs to the :ref:`test_keyword_arguments` and I cannot reach it from outside.
 
-* I move the :ref:`keyword_arguments function<test_keyword_arguments>` out of :ref:`test_keyword_arguments` so that it can be called by any :ref:`function<what is a function?>`
+* I move the :ref:`keyword_arguments function<test_keyword_arguments>` out of :ref:`test_keyword_arguments` so that it can be called from anywhere in the file_
 
   .. code-block:: python
     :lineno-start: 88
     :emphasize-lines: 11-12
 
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         a_dictionary = {'key': 'value'}
         assert (
             keyword_arguments(
@@ -2876,7 +2876,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
   .. code-block:: python
     :lineno-start: 88
 
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         a_dictionary = {'key': 'value'}
         assert (
             keyword_arguments(
@@ -2912,8 +2912,8 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
          == (1, 0)
         )
 
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
         assert (
             keyword_arguments(
                 first_input=a_tuple,
@@ -2922,7 +2922,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
          == (a_tuple, a_list)
         )
 
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         a_dictionary = {'key': 'value'}
         assert (
             positional_arguments(
@@ -2972,7 +2972,7 @@ I can call :ref:`functions<what is a function>` with both :ref:`positional<test_
     :emphasize-lines: 12-18
     :emphasize-text: first
 
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         a_dictionary = {'key': 'value'}
         assert (
             positional_arguments(
@@ -3760,9 +3760,9 @@ are the same, they always ``return first_input, last_input``, their names are di
   :emphasize-text: last
 
   positional_arguments(
-      first_input=[1, 2, 3, 'n'], last_input=(1, 2, 3, 'n')
+      first_input=[0, 1, 2, 'n'], last_input=(0, 1, 2, 'n')
   )
-      return [1, 2, 3, 'n'], (1, 2, 3, 'n')
+      return [0, 1, 2, 'n'], (0, 1, 2, 'n')
 
 .. code-block:: python
   :emphasize-text: last
@@ -4774,7 +4774,7 @@ how Python reads starred expressions
          == (a_tuple, a_dictionary)
         )
 
-        a_tuple = (1, 2, 3, 'n')
+        a_tuple = (0, 1, 2, 'n')
         assert (
             unknown_number_of_arguments(*a_tuple)
          == ()
@@ -4787,7 +4787,7 @@ how Python reads starred expressions
 
   .. code-block:: python
 
-    AssertionError: assert ((1, 2, 3, 'n'), {}) == ()
+    AssertionError: assert ((0, 1, 2, 'n'), {}) == ()
 
   because passing in the values this way means I am sending in only :ref:`positional arguments<test_positional_arguments>` (``*a_tuple``) so I get a tuple_ with
 
@@ -4798,15 +4798,15 @@ how Python reads starred expressions
 
   .. code-block:: python
 
-    a_tuple = (1, 2, 3, 'n')
+    a_tuple = (0, 1, 2, 'n')
 
   these three statements are the same
 
   .. code-block:: python
 
     unknown_number_of_arguments(*a_tuple       )
-    unknown_number_of_arguments(*(1, 2, 3, 'n'))
-    unknown_number_of_arguments(1, 2, 3, 'n'   )
+    unknown_number_of_arguments(*(0, 1, 2, 'n'))
+    unknown_number_of_arguments(0, 1, 2, 'n'   )
 
   Using substitution
 
@@ -4816,10 +4816,10 @@ how Python reads starred expressions
     unknown_number_of_arguments(
         *positional_arguments, **keyword_arguments
     )
-        positional_arguments = (1, 2, 3, 'n')
+        positional_arguments = (0, 1, 2, 'n')
         keyword_arguments = {}
         return  positional_arguments, keyword_arguments
-        return ((1, 2, 3, 'n')      , {})
+        return ((0, 1, 2, 'n')      , {})
 
 
   - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the things in ``something`` as :ref:`positional arguments<test_positional_arguments>`.
@@ -4831,7 +4831,7 @@ how Python reads starred expressions
     :lineno-start: 255
     :emphasize-lines: 4-5
 
-        a_tuple = (1, 2, 3, 'n')
+        a_tuple = (0, 1, 2, 'n')
         assert (
             unknown_number_of_arguments(*a_tuple)
         #  == ()
@@ -4863,7 +4863,7 @@ I add another :ref:`assertion<what is an assertion?>` to see what happens when I
   :lineno-start: 255
   :emphasize-lines: 8-12
 
-        a_tuple = (1, 2, 3, 'n')
+        a_tuple = (0, 1, 2, 'n')
         assert (
             unknown_number_of_arguments(*a_tuple)
         #  == ()
@@ -5059,7 +5059,7 @@ the test passes.
          == (a_tuple, a_dictionary)
         )
 
-        a_tuple = (1, 2, 3, 'n')
+        a_tuple = (0, 1, 2, 'n')
         assert (
             unknown_number_of_arguments(*a_tuple)
          == (a_tuple, {})

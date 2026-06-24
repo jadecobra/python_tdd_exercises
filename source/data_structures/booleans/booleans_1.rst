@@ -2601,7 +2601,7 @@ the test passes.
             # self.assertTrue(tuple())
             self.assertFalse(tuple())
 
-            self.assertFalse(bool((1, 2, 3, 'n')))
+            self.assertFalse(bool((0, 1, 2, 'n')))
 
 
     # NOTES
@@ -2612,7 +2612,7 @@ the test passes.
 
     AssertionError: True is not false
 
-  because the result of ``bool((1, 2, 3, 'n'))`` is :ref:`True<test_what_is_true>`.
+  because the result of ``bool((0, 1, 2, 'n'))`` is :ref:`True<test_what_is_true>`.
 
 * I change assertFalse_ to assertTrue_
 
@@ -2620,8 +2620,8 @@ the test passes.
     :lineno-start: 62
     :emphasize-lines: 1-2
 
-            # self.assertFalse(bool((1, 2, 3, 'n')))
-            self.assertTrue(bool((1, 2, 3, 'n')))
+            # self.assertFalse(bool((0, 1, 2, 'n')))
+            self.assertTrue(bool((0, 1, 2, 'n')))
 
 
     # NOTES
@@ -2656,9 +2656,9 @@ the test passes.
     :lineno-start: 62
     :emphasize-lines: 3
 
-            # self.assertFalse(bool((1, 2, 3, 'n')))
-            self.assertTrue(bool((1, 2, 3, 'n')))
-            self.assertFalse((1, 2, 3, 'n'))
+            # self.assertFalse(bool((0, 1, 2, 'n')))
+            self.assertTrue(bool((0, 1, 2, 'n')))
+            self.assertFalse((0, 1, 2, 'n'))
 
 
     # NOTES
@@ -2667,9 +2667,9 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: (1, 2, 3, 'n') is not false
+    AssertionError: (0, 1, 2, 'n') is not false
 
-  because the result of ``bool((1, 2, 3, 'n'))`` is :ref:`True<test_what_is_true>`.
+  because the result of ``bool((0, 1, 2, 'n'))`` is :ref:`True<test_what_is_true>`.
 
 * I change assertFalse_ to assertTrue_
 
@@ -2677,19 +2677,19 @@ the test passes.
     :lineno-start: 62
     :emphasize-lines: 3-4
 
-            # self.assertFalse(bool((1, 2, 3, 'n')))
-            self.assertTrue(bool((1, 2, 3, 'n')))
-            # self.assertFalse((1, 2, 3, 'n'))
-            self.assertTrue((1, 2, 3, 'n'))
+            # self.assertFalse(bool((0, 1, 2, 'n')))
+            self.assertTrue(bool((0, 1, 2, 'n')))
+            # self.assertFalse((0, 1, 2, 'n'))
+            self.assertTrue((0, 1, 2, 'n'))
 
 
     # NOTES
 
-  - the test passes because the result of ``bool((1, 2, 3, 'n'))`` is :ref:`True<test_what_is_true>`
+  - the test passes because the result of ``bool((0, 1, 2, 'n'))`` is :ref:`True<test_what_is_true>`
   - a tuple_ with things is grouped as :ref:`True<test_what_is_true>`
   - :ref:`a tuple is not the same object as True<test_assertion_error_w_true>`
 
-* I add a :ref:`variable<what is a variable?>` for ``(1, 2, 3, 'n')``
+* I add a :ref:`variable<what is a variable?>` for ``(0, 1, 2, 'n')``
 
   .. code-block:: python
     :lineno-start: 56
@@ -2701,27 +2701,27 @@ the test passes.
             # self.assertTrue(tuple())
             self.assertFalse(tuple())
 
-            a_tuple = (1, 2, 3, 'n')
-            # self.assertFalse(bool((1, 2, 3, 'n')))
-            self.assertTrue(bool((1, 2, 3, 'n')))
-            # self.assertFalse((1, 2, 3, 'n'))
-            self.assertTrue((1, 2, 3, 'n'))
+            a_tuple = (0, 1, 2, 'n')
+            # self.assertFalse(bool((0, 1, 2, 'n')))
+            self.assertTrue(bool((0, 1, 2, 'n')))
+            # self.assertFalse((0, 1, 2, 'n'))
+            self.assertTrue((0, 1, 2, 'n'))
 
 
     # NOTES
 
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``(1, 2, 3, 'n')``
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``(0, 1, 2, 'n')``
 
   .. code-block:: python
     :lineno-start: 62
     :emphasize-lines: 3-4, 6-7
 
-            a_tuple = (1, 2, 3, 'n')
-            # self.assertFalse(bool((1, 2, 3, 'n')))
-            # self.assertTrue(bool((1, 2, 3, 'n')))
+            a_tuple = (0, 1, 2, 'n')
+            # self.assertFalse(bool((0, 1, 2, 'n')))
+            # self.assertTrue(bool((0, 1, 2, 'n')))
             self.assertTrue(bool(a_tuple))
-            # self.assertFalse((1, 2, 3, 'n'))
-            # self.assertTrue((1, 2, 3, 'n'))
+            # self.assertFalse((0, 1, 2, 'n'))
+            # self.assertTrue((0, 1, 2, 'n'))
             self.assertTrue(a_tuple)
 
 
@@ -2738,7 +2738,7 @@ the test passes.
             self.assertFalse(bool(tuple()))
             self.assertFalse(tuple())
 
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
             self.assertTrue(bool(a_tuple))
             self.assertTrue(a_tuple)
 
@@ -2779,7 +2779,7 @@ test_is_a_list_falsy_or_truthy
     :lineno-start: 60
     :emphasize-lines: 5-6
 
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
             self.assertTrue(bool(a_tuple))
             self.assertTrue(a_tuple)
 
@@ -2905,7 +2905,7 @@ the test passes.
             # self.assertTrue(list())
             self.assertFalse(list())
 
-            self.assertFalse(bool([1, 2, 3, 'n']))
+            self.assertFalse(bool([0, 1, 2, 'n']))
 
 
     # NOTES
@@ -2916,7 +2916,7 @@ the test passes.
 
     AssertionError: True is not false
 
-  because the result of ``bool([1, 2, 3, 'n'])`` is :ref:`True<test_what_is_true>`.
+  because the result of ``bool([0, 1, 2, 'n'])`` is :ref:`True<test_what_is_true>`.
 
 * I change assertFalse_ to assertTrue_
 
@@ -2924,8 +2924,8 @@ the test passes.
     :lineno-start: 70
     :emphasize-lines: 1-2
 
-            # self.assertFalse(bool([1, 2, 3, 'n']))
-            self.assertTrue(bool([1, 2, 3, 'n']))
+            # self.assertFalse(bool([0, 1, 2, 'n']))
+            self.assertTrue(bool([0, 1, 2, 'n']))
 
 
     # NOTES
@@ -2962,9 +2962,9 @@ the test passes.
     :lineno-start: 70
     :emphasize-lines: 3
 
-            # self.assertFalse(bool([1, 2, 3, 'n']))
-            self.assertTrue(bool([1, 2, 3, 'n']))
-            self.assertFalse([1, 2, 3, 'n'])
+            # self.assertFalse(bool([0, 1, 2, 'n']))
+            self.assertTrue(bool([0, 1, 2, 'n']))
+            self.assertFalse([0, 1, 2, 'n'])
 
 
     # NOTES
@@ -2973,9 +2973,9 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: [1, 2, 3, 'n'] is not false
+    AssertionError: [0, 1, 2, 'n'] is not false
 
-  because the result of ``bool([1, 2, 3, 'n'])`` is :ref:`True<test_what_is_true>`.
+  because the result of ``bool([0, 1, 2, 'n'])`` is :ref:`True<test_what_is_true>`.
 
 * I change assertFalse_ to assertTrue_
 
@@ -2983,19 +2983,19 @@ the test passes.
     :lineno-start: 70
     :emphasize-lines: 3-4
 
-            # self.assertFalse(bool([1, 2, 3, 'n']))
-            self.assertTrue(bool([1, 2, 3, 'n']))
-            # self.assertFalse([1, 2, 3, 'n'])
-            self.assertTrue([1, 2, 3, 'n'])
+            # self.assertFalse(bool([0, 1, 2, 'n']))
+            self.assertTrue(bool([0, 1, 2, 'n']))
+            # self.assertFalse([0, 1, 2, 'n'])
+            self.assertTrue([0, 1, 2, 'n'])
 
 
     # NOTES
 
-  - the test passes because the result of ``bool([1, 2, 3, 'n'])`` is :ref:`True<test_what_is_true>`
+  - the test passes because the result of ``bool([0, 1, 2, 'n'])`` is :ref:`True<test_what_is_true>`
   - a :ref:`list<what is a list?>` with things is grouped as :ref:`True<test_what_is_true>`
   - :ref:`a list is not the same object as True<test_assertion_error_w_true>`
 
-* I add a :ref:`variable<what is a variable?>` for ``[1, 2, 3, 'n']``
+* I add a :ref:`variable<what is a variable?>` for ``[0, 1, 2, 'n']``
 
   .. code-block:: python
     :lineno-start: 64
@@ -3007,27 +3007,27 @@ the test passes.
             # self.assertTrue(list())
             self.assertFalse(list())
 
-            a_list = [1, 2, 3, 'n']
-            # self.assertFalse(bool([1, 2, 3, 'n']))
-            self.assertTrue(bool([1, 2, 3, 'n']))
-            # self.assertFalse([1, 2, 3, 'n'])
-            self.assertTrue([1, 2, 3, 'n'])
+            a_list = [0, 1, 2, 'n']
+            # self.assertFalse(bool([0, 1, 2, 'n']))
+            self.assertTrue(bool([0, 1, 2, 'n']))
+            # self.assertFalse([0, 1, 2, 'n'])
+            self.assertTrue([0, 1, 2, 'n'])
 
 
     # NOTES
 
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``[1, 2, 3, 'n']``
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``[0, 1, 2, 'n']``
 
   .. code-block:: python
     :lineno-start: 70
     :emphasize-lines: 3-4, 6-7
 
-            a_list = [1, 2, 3, 'n']
-            # self.assertFalse(bool([1, 2, 3, 'n']))
-            # self.assertTrue(bool([1, 2, 3, 'n']))
+            a_list = [0, 1, 2, 'n']
+            # self.assertFalse(bool([0, 1, 2, 'n']))
+            # self.assertTrue(bool([0, 1, 2, 'n']))
             self.assertTrue(bool(a_list))
-            # self.assertFalse([1, 2, 3, 'n'])
-            # self.assertTrue([1, 2, 3, 'n'])
+            # self.assertFalse([0, 1, 2, 'n'])
+            # self.assertTrue([0, 1, 2, 'n'])
             self.assertTrue(a_list)
 
 
@@ -3044,7 +3044,7 @@ the test passes.
             self.assertFalse(bool(list()))
             self.assertFalse(list())
 
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             self.assertTrue(bool(a_list))
             self.assertTrue(a_list)
 
@@ -3086,7 +3086,7 @@ test_is_a_set_falsy_or_truthy
     :lineno-start: 68
     :emphasize-lines: 5-6
 
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             self.assertTrue(bool(a_list))
             self.assertTrue(a_list)
 
@@ -3213,7 +3213,7 @@ the test passes.
             # self.assertTrue(set())
             self.assertFalse(set())
 
-            self.assertFalse(bool({1, 2, 3, 'n'}))
+            self.assertFalse(bool({0, 1, 2, 'n'}))
 
 
     # NOTES
@@ -3224,7 +3224,7 @@ the test passes.
 
     AssertionError: True is not false
 
-  because the result of ``bool({1, 2, 3, 'n'})`` is :ref:`True<test_what_is_true>`.
+  because the result of ``bool({0, 1, 2, 'n'})`` is :ref:`True<test_what_is_true>`.
 
 * I change assertFalse_ to assertTrue_
 
@@ -3232,8 +3232,8 @@ the test passes.
     :lineno-start: 78
     :emphasize-lines: 1-2
 
-            # self.assertFalse(bool({1, 2, 3, 'n'}))
-            self.assertTrue(bool({1, 2, 3, 'n'}))
+            # self.assertFalse(bool({0, 1, 2, 'n'}))
+            self.assertTrue(bool({0, 1, 2, 'n'}))
 
 
     # NOTES
@@ -3272,9 +3272,9 @@ the test passes.
     :lineno-start: 78
     :emphasize-lines: 3
 
-            # self.assertFalse(bool({1, 2, 3, 'n'}))
-            self.assertTrue(bool({1, 2, 3, 'n'}))
-            self.assertFalse({1, 2, 3, 'n'})
+            # self.assertFalse(bool({0, 1, 2, 'n'}))
+            self.assertTrue(bool({0, 1, 2, 'n'}))
+            self.assertFalse({0, 1, 2, 'n'})
 
 
     # NOTES
@@ -3283,9 +3283,9 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: {1, 2, 3, 'n'} is not false
+    AssertionError: {0, 1, 2, 'n'} is not false
 
-  because the result of ``bool({1, 2, 3, 'n'})`` is :ref:`True<test_what_is_true>`.
+  because the result of ``bool({0, 1, 2, 'n'})`` is :ref:`True<test_what_is_true>`.
 
 * I change assertFalse_ to assertTrue_
 
@@ -3293,19 +3293,19 @@ the test passes.
     :lineno-start: 78
     :emphasize-lines: 3-4
 
-            # self.assertFalse(bool({1, 2, 3, 'n'}))
-            self.assertTrue(bool({1, 2, 3, 'n'}))
-            # self.assertFalse({1, 2, 3, 'n'})
-            self.assertTrue({1, 2, 3, 'n'})
+            # self.assertFalse(bool({0, 1, 2, 'n'}))
+            self.assertTrue(bool({0, 1, 2, 'n'}))
+            # self.assertFalse({0, 1, 2, 'n'})
+            self.assertTrue({0, 1, 2, 'n'})
 
 
     # NOTES
 
-  - the test passes because the result of ``bool({1, 2, 3, 'n'})`` is :ref:`True<test_what_is_true>`
+  - the test passes because the result of ``bool({0, 1, 2, 'n'})`` is :ref:`True<test_what_is_true>`
   - a set_ with things is grouped as :ref:`True<test_what_is_true>`
   - :ref:`a set is not the same object as True<test_assertion_error_w_true>`
 
-* I add a :ref:`variable<what is a variable?>` for ``{1, 2, 3, 'n'}``
+* I add a :ref:`variable<what is a variable?>` for ``{0, 1, 2, 'n'}``
 
   .. code-block:: python
     :lineno-start: 72
@@ -3317,27 +3317,27 @@ the test passes.
             # self.assertTrue(set())
             self.assertFalse(set())
 
-            a_set = {1, 2, 3, 'n'}
-            # self.assertFalse(bool({1, 2, 3, 'n'}))
-            self.assertTrue(bool({1, 2, 3, 'n'}))
-            # self.assertFalse({1, 2, 3, 'n'})
-            self.assertTrue({1, 2, 3, 'n'})
+            a_set = {0, 1, 2, 'n'}
+            # self.assertFalse(bool({0, 1, 2, 'n'}))
+            self.assertTrue(bool({0, 1, 2, 'n'}))
+            # self.assertFalse({0, 1, 2, 'n'})
+            self.assertTrue({0, 1, 2, 'n'})
 
 
     # NOTES
 
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``{1, 2, 3, 'n'}``
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``{0, 1, 2, 'n'}``
 
   .. code-block:: python
     :lineno-start: 78
     :emphasize-lines: 3-4, 6-7
 
-            a_set = {1, 2, 3, 'n'}
-            # self.assertFalse(bool({1, 2, 3, 'n'}))
-            # self.assertTrue(bool({1, 2, 3, 'n'}))
+            a_set = {0, 1, 2, 'n'}
+            # self.assertFalse(bool({0, 1, 2, 'n'}))
+            # self.assertTrue(bool({0, 1, 2, 'n'}))
             self.assertTrue(bool(a_set))
-            # self.assertFalse({1, 2, 3, 'n'})
-            # self.assertTrue({1, 2, 3, 'n'})
+            # self.assertFalse({0, 1, 2, 'n'})
+            # self.assertTrue({0, 1, 2, 'n'})
             self.assertTrue(a_set)
 
 
@@ -3354,7 +3354,7 @@ the test passes.
             self.assertFalse(bool(set()))
             self.assertFalse(set())
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             self.assertTrue(bool(a_set))
             self.assertTrue(a_set)
 
@@ -3397,7 +3397,7 @@ test_is_a_dictionary_falsy_or_truthy
     :lineno-start: 76
     :emphasize-lines: 5-6
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             self.assertTrue(bool(a_set))
             self.assertTrue(a_set)
 

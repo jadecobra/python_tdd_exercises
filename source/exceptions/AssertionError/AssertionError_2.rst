@@ -132,15 +132,15 @@ remove repetition with class attributes
             assert a_string is not None
             self.assertIsNot(a_string, None)
 
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
             assert a_tuple is not None
             self.assertIsNot(a_tuple, None)
 
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             assert a_list is not None
             self.assertIsNot(a_list, None)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             assert a_set is not None
             self.assertIsNot(a_set, None)
 
@@ -182,15 +182,15 @@ remove repetition with class attributes
             assert a_string is not False
             self.assertIsNot(a_string, False)
 
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
             assert a_tuple is not False
             self.assertIsNot(a_tuple, False)
 
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             assert a_list is not False
             self.assertIsNot(a_list, False)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             assert a_set is not False
             self.assertIsNot(a_set, False)
 
@@ -232,15 +232,15 @@ remove repetition with class attributes
             assert a_string is not True
             self.assertIsNot(a_string, True)
 
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
             assert a_tuple is not True
             self.assertIsNot(a_tuple, True)
 
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             assert a_list is not True
             self.assertIsNot(a_list, True)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             assert a_set is not True
             self.assertIsNot(a_set, True)
 
@@ -298,15 +298,15 @@ remove repetition with class attributes
             assert a_string is not None
             self.assertIsNot(a_string, None)
 
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
             assert a_tuple is not None
             self.assertIsNot(a_tuple, None)
 
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             assert a_list is not None
             self.assertIsNot(a_list, None)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             assert a_set is not None
             self.assertIsNot(a_set, None)
 
@@ -350,15 +350,15 @@ remove repetition with class attributes
             assert a_string is not False
             self.assertIsNot(a_string, False)
 
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
             assert a_tuple is not False
             self.assertIsNot(a_tuple, False)
 
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             assert a_list is not False
             self.assertIsNot(a_list, False)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             assert a_set is not False
             self.assertIsNot(a_set, False)
 
@@ -402,15 +402,15 @@ remove repetition with class attributes
             assert a_string is not True
             self.assertIsNot(a_string, True)
 
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
             assert a_tuple is not True
             self.assertIsNot(a_tuple, True)
 
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             assert a_list is not True
             self.assertIsNot(a_list, True)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             assert a_set is not True
             self.assertIsNot(a_set, True)
 
@@ -471,15 +471,15 @@ remove repetition with class attributes
             assert self.a_string is not None
             self.assertIsNot(self.a_string, None)
 
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
             assert a_tuple is not None
             self.assertIsNot(a_tuple, None)
 
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             assert a_list is not None
             self.assertIsNot(a_list, None)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             assert a_set is not None
             self.assertIsNot(a_set, None)
 
@@ -525,15 +525,15 @@ remove repetition with class attributes
             assert self.a_string is not False
             self.assertIsNot(self.a_string, False)
 
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
             assert a_tuple is not False
             self.assertIsNot(a_tuple, False)
 
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             assert a_list is not False
             self.assertIsNot(a_list, False)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             assert a_set is not False
             self.assertIsNot(a_set, False)
 
@@ -579,15 +579,15 @@ remove repetition with class attributes
             assert self.a_string is not True
             self.assertIsNot(self.a_string, True)
 
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
             assert a_tuple is not True
             self.assertIsNot(a_tuple, True)
 
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             assert a_list is not True
             self.assertIsNot(a_list, True)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             assert a_set is not True
             self.assertIsNot(a_set, True)
 
@@ -611,11 +611,11 @@ remove repetition with class attributes
             self.an_integer = 0
             self.a_float = 0.0
             self.a_string = 'a string'
-            self.a_tuple = (1, 2, 3, 'n')
+            self.a_tuple = (0, 1, 2, 'n')
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = (1, 2, 3, 'n')`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = (0, 1, 2, 'n')`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
     :lineno-start: 28
@@ -649,17 +649,17 @@ remove repetition with class attributes
             assert self.a_string is not None
             self.assertIsNot(self.a_string, None)
 
-            # a_tuple = (1, 2, 3, 'n')
+            # a_tuple = (0, 1, 2, 'n')
             # assert a_tuple is not None
             # self.assertIsNot(a_tuple, None)
             assert self.a_tuple is not None
             self.assertIsNot(self.a_tuple, None)
 
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             assert a_list is not None
             self.assertIsNot(a_list, None)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             assert a_set is not None
             self.assertIsNot(a_set, None)
 
@@ -671,7 +671,7 @@ remove repetition with class attributes
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = (1, 2, 3, 'n')`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = (0, 1, 2, 'n')`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
     :lineno-start: 74
@@ -705,17 +705,17 @@ remove repetition with class attributes
             assert self.a_string is not False
             self.assertIsNot(self.a_string, False)
 
-            # a_tuple = (1, 2, 3, 'n')
+            # a_tuple = (0, 1, 2, 'n')
             # assert a_tuple is not False
             # self.assertIsNot(a_tuple, False)
             assert self.a_tuple is not False
             self.assertIsNot(self.a_tuple, False)
 
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             assert a_list is not False
             self.assertIsNot(a_list, False)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             assert a_set is not False
             self.assertIsNot(a_set, False)
 
@@ -727,7 +727,7 @@ remove repetition with class attributes
 
   green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = (1, 2, 3, 'n')`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = (0, 1, 2, 'n')`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
     :lineno-start: 120
@@ -761,17 +761,17 @@ remove repetition with class attributes
             assert self.a_string is not True
             self.assertIsNot(self.a_string, True)
 
-            # a_tuple = (1, 2, 3, 'n')
+            # a_tuple = (0, 1, 2, 'n')
             # assert a_tuple is not True
             # self.assertIsNot(a_tuple, True)
             assert self.a_tuple is not True
             self.assertIsNot(self.a_tuple, True)
 
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             assert a_list is not True
             self.assertIsNot(a_list, True)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             assert a_set is not True
             self.assertIsNot(a_set, True)
 
@@ -795,12 +795,12 @@ remove repetition with class attributes
             self.an_integer = 0
             self.a_float = 0.0
             self.a_string = 'a string'
-            self.a_tuple = (1, 2, 3, 'n')
-            self.a_list = [1, 2, 3, 'n']
+            self.a_tuple = (0, 1, 2, 'n')
+            self.a_list = [0, 1, 2, 'n']
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = [1, 2, 3, 'n']`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = [0, 1, 2, 'n']`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
     :lineno-start: 29
@@ -834,19 +834,19 @@ remove repetition with class attributes
             assert self.a_string is not None
             self.assertIsNot(self.a_string, None)
 
-            # a_tuple = (1, 2, 3, 'n')
+            # a_tuple = (0, 1, 2, 'n')
             # assert a_tuple is not None
             # self.assertIsNot(a_tuple, None)
             assert self.a_tuple is not None
             self.assertIsNot(self.a_tuple, None)
 
-            # a_list = [1, 2, 3, 'n']
+            # a_list = [0, 1, 2, 'n']
             # assert a_list is not None
             # self.assertIsNot(a_list, None)
             assert self.a_list is not None
             self.assertIsNot(self.a_list, None)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             assert a_set is not None
             self.assertIsNot(a_set, None)
 
@@ -858,7 +858,7 @@ remove repetition with class attributes
 
   the test is still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = [1, 2, 3, 'n']`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = [0, 1, 2, 'n']`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
     :lineno-start: 77
@@ -892,19 +892,19 @@ remove repetition with class attributes
             assert self.a_string is not False
             self.assertIsNot(self.a_string, False)
 
-            # a_tuple = (1, 2, 3, 'n')
+            # a_tuple = (0, 1, 2, 'n')
             # assert a_tuple is not False
             # self.assertIsNot(a_tuple, False)
             assert self.a_tuple is not False
             self.assertIsNot(self.a_tuple, False)
 
-            # a_list = [1, 2, 3, 'n']
+            # a_list = [0, 1, 2, 'n']
             # assert a_list is not False
             # self.assertIsNot(a_list, False)
             assert self.a_list is not False
             self.assertIsNot(self.a_list, False)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             assert a_set is not False
             self.assertIsNot(a_set, False)
 
@@ -916,7 +916,7 @@ remove repetition with class attributes
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = [1, 2, 3, 'n']`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = [0, 1, 2, 'n']`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
     :lineno-start: 125
@@ -950,19 +950,19 @@ remove repetition with class attributes
             assert self.a_string is not True
             self.assertIsNot(self.a_string, True)
 
-            # a_tuple = (1, 2, 3, 'n')
+            # a_tuple = (0, 1, 2, 'n')
             # assert a_tuple is not True
             # self.assertIsNot(a_tuple, True)
             assert self.a_tuple is not True
             self.assertIsNot(self.a_tuple, True)
 
-            # a_list = [1, 2, 3, 'n']
+            # a_list = [0, 1, 2, 'n']
             # assert a_list is not True
             # self.assertIsNot(a_list, True)
             assert self.a_list is not True
             self.assertIsNot(self.a_list, True)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             assert a_set is not True
             self.assertIsNot(a_set, True)
 
@@ -986,13 +986,13 @@ remove repetition with class attributes
             self.an_integer = 0
             self.a_float = 0.0
             self.a_string = 'a string'
-            self.a_tuple = (1, 2, 3, 'n')
-            self.a_list = [1, 2, 3, 'n']
-            self.a_set = {1, 2, 3, 'n'}
+            self.a_tuple = (0, 1, 2, 'n')
+            self.a_list = [0, 1, 2, 'n']
+            self.a_set = {0, 1, 2, 'n'}
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = {1, 2, 3, 'n'}`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = {0, 1, 2, 'n'}`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
     :lineno-start: 30
@@ -1026,19 +1026,19 @@ remove repetition with class attributes
             assert self.a_string is not None
             self.assertIsNot(self.a_string, None)
 
-            # a_tuple = (1, 2, 3, 'n')
+            # a_tuple = (0, 1, 2, 'n')
             # assert a_tuple is not None
             # self.assertIsNot(a_tuple, None)
             assert self.a_tuple is not None
             self.assertIsNot(self.a_tuple, None)
 
-            # a_list = [1, 2, 3, 'n']
+            # a_list = [0, 1, 2, 'n']
             # assert a_list is not None
             # self.assertIsNot(a_list, None)
             assert self.a_list is not None
             self.assertIsNot(self.a_list, None)
 
-            # a_set = {1, 2, 3, 'n'}
+            # a_set = {0, 1, 2, 'n'}
             # assert a_set is not None
             # self.assertIsNot(a_set, None)
             assert self.a_set is not None
@@ -1052,7 +1052,7 @@ remove repetition with class attributes
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = {1, 2, 3, 'n'}`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = {0, 1, 2, 'n'}`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
     :lineno-start: 80
@@ -1086,19 +1086,19 @@ remove repetition with class attributes
             assert self.a_string is not False
             self.assertIsNot(self.a_string, False)
 
-            # a_tuple = (1, 2, 3, 'n')
+            # a_tuple = (0, 1, 2, 'n')
             # assert a_tuple is not False
             # self.assertIsNot(a_tuple, False)
             assert self.a_tuple is not False
             self.assertIsNot(self.a_tuple, False)
 
-            # a_list = [1, 2, 3, 'n']
+            # a_list = [0, 1, 2, 'n']
             # assert a_list is not False
             # self.assertIsNot(a_list, False)
             assert self.a_list is not False
             self.assertIsNot(self.a_list, False)
 
-            # a_set = {1, 2, 3, 'n'}
+            # a_set = {0, 1, 2, 'n'}
             # assert a_set is not False
             # self.assertIsNot(a_set, False)
             assert self.a_set is not False
@@ -1112,7 +1112,7 @@ remove repetition with class attributes
 
   the test is still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = {1, 2, 3, 'n'}`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = {0, 1, 2, 'n'}`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
     :lineno-start: 130
@@ -1146,19 +1146,19 @@ remove repetition with class attributes
             assert self.a_string is not True
             self.assertIsNot(self.a_string, True)
 
-            # a_tuple = (1, 2, 3, 'n')
+            # a_tuple = (0, 1, 2, 'n')
             # assert a_tuple is not True
             # self.assertIsNot(a_tuple, True)
             assert self.a_tuple is not True
             self.assertIsNot(self.a_tuple, True)
 
-            # a_list = [1, 2, 3, 'n']
+            # a_list = [0, 1, 2, 'n']
             # assert a_list is not True
             # self.assertIsNot(a_list, True)
             assert self.a_list is not True
             self.assertIsNot(self.a_list, True)
 
-            # a_set = {1, 2, 3, 'n'}
+            # a_set = {0, 1, 2, 'n'}
             # assert a_set is not True
             # self.assertIsNot(a_set, True)
             assert self.a_set is not True
@@ -1184,9 +1184,9 @@ remove repetition with class attributes
             self.an_integer = 0
             self.a_float = 0.0
             self.a_string = 'a string'
-            self.a_tuple = (1, 2, 3, 'n')
-            self.a_list = [1, 2, 3, 'n']
-            self.a_set = {1, 2, 3, 'n'}
+            self.a_tuple = (0, 1, 2, 'n')
+            self.a_list = [0, 1, 2, 'n']
+            self.a_set = {0, 1, 2, 'n'}
             self.a_dictionary = {'key': 'value'}
 
         def test_assert_keyword(self):
@@ -1225,19 +1225,19 @@ remove repetition with class attributes
             assert self.a_string is not None
             self.assertIsNot(self.a_string, None)
 
-            # a_tuple = (1, 2, 3, 'n')
+            # a_tuple = (0, 1, 2, 'n')
             # assert a_tuple is not None
             # self.assertIsNot(a_tuple, None)
             assert self.a_tuple is not None
             self.assertIsNot(self.a_tuple, None)
 
-            # a_list = [1, 2, 3, 'n']
+            # a_list = [0, 1, 2, 'n']
             # assert a_list is not None
             # self.assertIsNot(a_list, None)
             assert self.a_list is not None
             self.assertIsNot(self.a_list, None)
 
-            # a_set = {1, 2, 3, 'n'}
+            # a_set = {0, 1, 2, 'n'}
             # assert a_set is not None
             # self.assertIsNot(a_set, None)
             assert self.a_set is not None
@@ -1287,19 +1287,19 @@ remove repetition with class attributes
             assert self.a_string is not False
             self.assertIsNot(self.a_string, False)
 
-            # a_tuple = (1, 2, 3, 'n')
+            # a_tuple = (0, 1, 2, 'n')
             # assert a_tuple is not False
             # self.assertIsNot(a_tuple, False)
             assert self.a_tuple is not False
             self.assertIsNot(self.a_tuple, False)
 
-            # a_list = [1, 2, 3, 'n']
+            # a_list = [0, 1, 2, 'n']
             # assert a_list is not False
             # self.assertIsNot(a_list, False)
             assert self.a_list is not False
             self.assertIsNot(self.a_list, False)
 
-            # a_set = {1, 2, 3, 'n'}
+            # a_set = {0, 1, 2, 'n'}
             # assert a_set is not False
             # self.assertIsNot(a_set, False)
             assert self.a_set is not False
@@ -1349,19 +1349,19 @@ remove repetition with class attributes
             assert self.a_string is not True
             self.assertIsNot(self.a_string, True)
 
-            # a_tuple = (1, 2, 3, 'n')
+            # a_tuple = (0, 1, 2, 'n')
             # assert a_tuple is not True
             # self.assertIsNot(a_tuple, True)
             assert self.a_tuple is not True
             self.assertIsNot(self.a_tuple, True)
 
-            # a_list = [1, 2, 3, 'n']
+            # a_list = [0, 1, 2, 'n']
             # assert a_list is not True
             # self.assertIsNot(a_list, True)
             assert self.a_list is not True
             self.assertIsNot(self.a_list, True)
 
-            # a_set = {1, 2, 3, 'n'}
+            # a_set = {0, 1, 2, 'n'}
             # assert a_set is not True
             # self.assertIsNot(a_set, True)
             assert self.a_set is not True
@@ -1506,18 +1506,18 @@ remove repetition with class attributes
         self.an_integer = 0
         self.a_float = 0.0
         self.a_string = 'a string'
-        self.a_tuple = (1, 2, 3, 'n')
-        self.a_list = [1, 2, 3, 'n']
-        self.a_set = {1, 2, 3, 'n'}
+        self.a_tuple = (0, 1, 2, 'n')
+        self.a_list = [0, 1, 2, 'n']
+        self.a_set = {0, 1, 2, 'n'}
         self.a_dictionary = {'key': 'value'}
 
         # def setUp(self):
         #    self.an_integer = 0
         #    self.a_float = 0.0
         #    self.a_string = 'a string'
-        #    self.a_tuple = (1, 2, 3, 'n')
-        #    self.a_list = [1, 2, 3, 'n']
-        #    self.a_set = {1, 2, 3, 'n'}
+        #    self.a_tuple = (0, 1, 2, 'n')
+        #    self.a_list = [0, 1, 2, 'n']
+        #    self.a_set = {0, 1, 2, 'n'}
         #    self.a_dictionary = {'key': 'value'}
 
         def test_assert_keyword(self):
@@ -1551,26 +1551,26 @@ remove repetition with class attributes
         # self.an_integer = 0
         # self.a_float = 0.0
         # self.a_string = 'a string'
-        # self.a_tuple = (1, 2, 3, 'n')
-        # self.a_list = [1, 2, 3, 'n']
-        # self.a_set = {1, 2, 3, 'n'}
+        # self.a_tuple = (0, 1, 2, 'n')
+        # self.a_list = [0, 1, 2, 'n']
+        # self.a_set = {0, 1, 2, 'n'}
         # self.a_dictionary = {'key': 'value'}
 
         an_integer = 0
         a_float = 0.0
         a_string = 'a string'
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
-        a_set = {1, 2, 3, 'n'}
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
+        a_set = {0, 1, 2, 'n'}
         a_dictionary = {'key': 'value'}
 
         # def setUp(self):
         #     self.an_integer = 0
         #     self.a_float = 0.0
         #     self.a_string = 'a string'
-        #     self.a_tuple = (1, 2, 3, 'n')
-        #     self.a_list = [1, 2, 3, 'n']
-        #     self.a_set = {1, 2, 3, 'n'}
+        #     self.a_tuple = (0, 1, 2, 'n')
+        #     self.a_list = [0, 1, 2, 'n']
+        #     self.a_set = {0, 1, 2, 'n'}
         #     self.a_dictionary = {'key': 'value'}
 
         def test_assert_keyword(self):
@@ -1587,9 +1587,9 @@ remove repetition with class attributes
         an_integer = 0
         a_float = 0.0
         a_string = 'a string'
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
-        a_set = {1, 2, 3, 'n'}
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
+        a_set = {0, 1, 2, 'n'}
         a_dictionary = {'key': 'value'}
 
         def test_assert_keyword(self):

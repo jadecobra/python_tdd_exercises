@@ -1282,7 +1282,7 @@ I can pass a tuple_ (anything in parentheses ``( )`` separated by a comma) from 
             self.assertEqual(reality, my_expectation)
 
         def test_passing_a_tuple(self):
-            reality = src.telephone.text((1, 2, 3, 'n'))
+            reality = src.telephone.text((0, 1, 2, 'n'))
             my_expectation = 'I got: (1, 2, 3, n)'
             self.assertEqual(reality, my_expectation)
 
@@ -1293,7 +1293,7 @@ I can pass a tuple_ (anything in parentheses ``( )`` separated by a comma) from 
 
   .. code-block:: shell
 
-    AssertionError: "I got: (1, 2, 3, 'n')"
+    AssertionError: "I got: (0, 1, 2, 'n')"
                  != 'I got: "(1, 2, 3, n)"'
 
 ----
@@ -1312,9 +1312,9 @@ I change the tuple_ in ``my_expectation`` to match ``reality``
   :emphasize-text: "
 
       def test_passing_a_tuple(self):
-          reality = src.telephone.text((1, 2, 3, 'n'))
+          reality = src.telephone.text((0, 1, 2, 'n'))
           # my_expectation = 'I got: (1, 2, 3, n)'
-          my_expectation = "I got: (1, 2, 3, 'n')"
+          my_expectation = "I got: (0, 1, 2, 'n')"
           self.assertEqual(reality, my_expectation)
 
 
@@ -1337,10 +1337,10 @@ the test passes.
     :emphasize-lines: 2
 
         def test_passing_a_tuple(self):
-            a_tuple = (1, 2, 3, 'n')
-            reality = src.telephone.text((1, 2, 3, 'n'))
+            a_tuple = (0, 1, 2, 'n')
+            reality = src.telephone.text((0, 1, 2, 'n'))
             # my_expectation = 'I got: (1, 2, 3, n)'
-            my_expectation = "I got: (1, 2, 3, 'n')"
+            my_expectation = "I got: (0, 1, 2, 'n')"
             self.assertEqual(reality, my_expectation)
 
 
@@ -1353,11 +1353,11 @@ the test passes.
     :emphasize-lines: 3-4, 6-7
 
         def test_passing_a_tuple(self):
-            a_tuple = (1, 2, 3, 'n')
-            # reality = src.telephone.text((1, 2, 3, 'n'))
+            a_tuple = (0, 1, 2, 'n')
+            # reality = src.telephone.text((0, 1, 2, 'n'))
             reality = src.telephone.text(a_tuple)
             # my_expectation = 'I got: (1, 2, 3, n)'
-            # my_expectation = "I got: (1, 2, 3, 'n')"
+            # my_expectation = "I got: (0, 1, 2, 'n')"
             my_expectation = f"I got: {a_tuple}"
             self.assertEqual(reality, my_expectation)
 
@@ -1372,7 +1372,7 @@ the test passes.
     :lineno-start: 44
 
         def test_passing_a_tuple(self):
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
             reality = src.telephone.text(a_tuple)
             my_expectation = f"I got: {a_tuple}"
             self.assertEqual(reality, my_expectation)
@@ -1418,13 +1418,13 @@ I can pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) 
     :emphasize-text: '
 
         def test_passing_a_tuple(self):
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
             reality = src.telephone.text(a_tuple)
             my_expectation = f"I got: {a_tuple}"
             self.assertEqual(reality, my_expectation)
 
         def test_passing_a_list(self):
-            reality = src.telephone.text([1, 2, 3, 'n'])
+            reality = src.telephone.text([0, 1, 2, 'n'])
             my_expectation = 'I got: [1, 2, 3, "n"]'
             self.assertEqual(reality, my_expectation)
 
@@ -1435,7 +1435,7 @@ I can pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) 
 
   .. code-block:: shell
 
-    AssertionError: "I got: [1, 2, 3, 'n']"
+    AssertionError: "I got: [0, 1, 2, 'n']"
                  != "I got: '[1, 2, 3, n]'"
 
 ----
@@ -1454,9 +1454,9 @@ I change the :ref:`list<what is a list?>` in ``my_expectation`` to match ``reali
   :emphasize-text: " '
 
       def test_passing_a_list(self):
-          reality = src.telephone.text([1, 2, 3, 'n'])
+          reality = src.telephone.text([0, 1, 2, 'n'])
           # my_expectation = 'I got: [1, 2, 3, "n"]'
-          my_expectation = "I got: [1, 2, 3, 'n']"
+          my_expectation = "I got: [0, 1, 2, 'n']"
           self.assertEqual(reality, my_expectation)
 
 
@@ -1479,10 +1479,10 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
     :emphasize-lines: 2
 
         def test_passing_a_list(self):
-            a_list = [1, 2, 3, 'n']
-            reality = src.telephone.text([1, 2, 3, 'n'])
+            a_list = [0, 1, 2, 'n']
+            reality = src.telephone.text([0, 1, 2, 'n'])
             # my_expectation = 'I got: [1, 2, 3, "n"]'
-            my_expectation = "I got: [1, 2, 3, 'n']"
+            my_expectation = "I got: [0, 1, 2, 'n']"
             self.assertEqual(reality, my_expectation)
 
 
@@ -1495,11 +1495,11 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
     :emphasize-lines: 3-4, 6-7
 
         def test_passing_a_list(self):
-            a_list = [1, 2, 3, 'n']
-            # reality = src.telephone.text([1, 2, 3, 'n'])
+            a_list = [0, 1, 2, 'n']
+            # reality = src.telephone.text([0, 1, 2, 'n'])
             reality = src.telephone.text(a_list)
             # my_expectation = 'I got: [1, 2, 3, "n"]'
-            # my_expectation = "I got: [1, 2, 3, 'n']"
+            # my_expectation = "I got: [0, 1, 2, 'n']"
             my_expectation = f"I got: {a_list}"
             self.assertEqual(reality, my_expectation)
 
@@ -1514,7 +1514,7 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
     :lineno-start: 50
 
         def test_passing_a_list(self):
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             reality = src.telephone.text(a_list)
             my_expectation = f"I got: {a_list}"
             self.assertEqual(reality, my_expectation)
@@ -1559,7 +1559,7 @@ I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces 
     :emphasize-text: "
 
         def test_passing_a_list(self):
-            a_list = [1, 2, 3, 'n']
+            a_list = [0, 1, 2, 'n']
             reality = src.telephone.text(a_list)
             my_expectation = f"I got: {a_list}"
             self.assertEqual(reality, my_expectation)
@@ -2454,11 +2454,11 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     AssertionError:
         1.234 != 'I got: 1.234'
     AssertionError:
-        [1, 2, 3, 'n'] != "I got: [1, 2, 3, 'n']"
+        [0, 1, 2, 'n'] != "I got: [0, 1, 2, 'n']"
     AssertionError:
         'hello' != 'I got: hello'
     AssertionError:
-        (1, 2, 3, 'n') != "I got: (1, 2, 3, 'n')"
+        (0, 1, 2, 'n') != "I got: (0, 1, 2, 'n')"
     AssertionError:
         1234 != 'I got: 1234'
     AssertionError:

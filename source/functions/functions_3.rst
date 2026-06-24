@@ -1,8 +1,8 @@
 .. _functions 3: use class attributes:
 
 .. meta::
-  :description: Part 2 / continuation of the beginner Python TDD functions tutorial in the functions project: use class attributes on TestFunctions (first, last, a_tuple, a_list, first_number, second_number) to remove repetition of string literals, tuples, lists and numbers from test_positional_arguments, test_keyword_arguments, test_args_and_kwargs (and cross-call sites) instead of duplicating locals like first, last = 'first', 'last' or a_tuple = (1, 2, 3, 'n') inside each test. Builds directly on :ref:`AssertionError 2: use class attributes` and the setUp / class attributes lessons from the classes chapter. Although classes teaches the setUp method to reset fresh values before every test, here the values are constants identical across tests so plain class attributes at the Test class level suffice (no setUp needed, no per-test reset). The "I have these tests by the end of the chapter" literalinclude of test_functions_2.py shows the final state with 6 class attrs + self. access in the affected tests (test_why_use_a_function and maker/optional/unknown tests keep their original structure and local vars). Continues red-green-refactor + uv run pytest-watcher in the existing functions project after the base functions chapter. Demonstrates "extract class attributes" for DRY unittest.TestCase test code.
-  :keywords: Jacob Itegboje, Pumping Python, functions 2, functions 3: use class attributes, use class attributes unittest TestCase, python class attributes for DRY tests, class attributes vs setUp unittest, when not to use setUp, "In this case, I do not need the setUp method", "I do not need anything to run before each test", "extract class attributes", test_functions_2.py, refactor locals to class attributes python, unittest no setUp needed for constants, red green refactor class attributes, continuing functions project uv pytest-watcher, test_positional_arguments, test_keyword_arguments, 'first', 'last', (1, 2, 3, 'n'), first_number second_number class attr, functions TDD class attributes, Pumping Python functions chapter 2
+  :description: Part 2 / continuation of the beginner Python TDD functions tutorial in the functions project: use class attributes on TestFunctions (first, last, a_tuple, a_list, first_number, second_number) to remove repetition of string literals, tuples, lists and numbers from test_positional_arguments, test_keyword_arguments, test_args_and_kwargs (and cross-call sites) instead of duplicating locals like first, last = 'first', 'last' or a_tuple = (0, 1, 2, 'n') inside each test. Builds directly on :ref:`AssertionError 2: use class attributes` and the setUp / class attributes lessons from the classes chapter. Although classes teaches the setUp method to reset fresh values before every test, here the values are constants identical across tests so plain class attributes at the Test class level suffice (no setUp needed, no per-test reset). The "I have these tests by the end of the chapter" literalinclude of test_functions_2.py shows the final state with 6 class attrs + self. access in the affected tests (test_why_use_a_function and maker/optional/unknown tests keep their original structure and local vars). Continues red-green-refactor + uv run pytest-watcher in the existing functions project after the base functions chapter. Demonstrates "extract class attributes" for DRY unittest.TestCase test code.
+  :keywords: Jacob Itegboje, Pumping Python, functions 2, functions 3: use class attributes, use class attributes unittest TestCase, python class attributes for DRY tests, class attributes vs setUp unittest, when not to use setUp, "In this case, I do not need the setUp method", "I do not need anything to run before each test", "extract class attributes", test_functions_2.py, refactor locals to class attributes python, unittest no setUp needed for constants, red green refactor class attributes, continuing functions project uv pytest-watcher, test_positional_arguments, test_keyword_arguments, 'first', 'last', (0, 1, 2, 'n'), first_number second_number class attr, functions TDD class attributes, Pumping Python functions chapter 2
 
 .. include:: ../links.rst
 
@@ -195,11 +195,11 @@ continue the project
 
         first = 'first'
         last = 'last'
-        a_tuple = (1, 2, 3, 'n')
+        a_tuple = (0, 1, 2, 'n')
 
         def test_why_use_a_function(self):
 
-* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``(1, 2, 3, 'n')`` from :ref:`test_positional_arguments`
+* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``(0, 1, 2, 'n')`` from :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 137
@@ -231,8 +231,8 @@ continue the project
             my_expectation = (first_number, second_number)
             self.assertEqual(reality, my_expectation)
 
-            # a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
+            # a_tuple = (0, 1, 2, 'n')
+            a_list = [0, 1, 2, 'n']
             reality = src.functions.positional_arguments(
                 # a_tuple, a_list,
                 self.a_tuple, a_list,
@@ -245,7 +245,7 @@ continue the project
 
   still green.
 
-* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``(1, 2, 3, 'n')`` from :ref:`test_keyword_arguments`
+* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``(0, 1, 2, 'n')`` from :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 173
@@ -287,7 +287,7 @@ continue the project
             my_expectation = (one, zero)
             self.assertEqual(reality, my_expectation)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
             reality = src.functions.w_keyword_arguments(
                 first_input=a_set,
@@ -296,8 +296,8 @@ continue the project
             my_expectation = (a_set, a_dictionary)
             self.assertEqual(reality, my_expectation)
 
-            # a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
+            # a_tuple = (0, 1, 2, 'n')
+            a_list = [0, 1, 2, 'n']
             reality = src.functions.positional_arguments(
                 first_input=a_list,
                 # last_input=a_tuple,
@@ -324,12 +324,12 @@ continue the project
 
         first = 'first'
         last = 'last'
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
 
         def test_why_use_a_function(self):
 
-* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``[1, 2, 3, 'n']`` from :ref:`test_positional_arguments`
+* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``[0, 1, 2, 'n']`` from :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 138
@@ -361,8 +361,8 @@ continue the project
             my_expectation = (first_number, second_number)
             self.assertEqual(reality, my_expectation)
 
-            # a_tuple = (1, 2, 3, 'n')
-            # a_list = [1, 2, 3, 'n']
+            # a_tuple = (0, 1, 2, 'n')
+            # a_list = [0, 1, 2, 'n']
             reality = src.functions.positional_arguments(
                 # a_tuple, a_list,
                 # self.a_tuple, a_list,
@@ -377,7 +377,7 @@ continue the project
 
   still green.
 
-* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``[1, 2, 3, 'n']`` from :ref:`test_keyword_arguments`
+* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``[0, 1, 2, 'n']`` from :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 176
@@ -419,7 +419,7 @@ continue the project
             my_expectation = (one, zero)
             self.assertEqual(reality, my_expectation)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
             reality = src.functions.w_keyword_arguments(
                 first_input=a_set,
@@ -428,8 +428,8 @@ continue the project
             my_expectation = (a_set, a_dictionary)
             self.assertEqual(reality, my_expectation)
 
-            # a_tuple = (1, 2, 3, 'n')
-            # a_list = [1, 2, 3, 'n']
+            # a_tuple = (0, 1, 2, 'n')
+            # a_list = [0, 1, 2, 'n']
             reality = src.functions.positional_arguments(
                 # first_input=a_list,
                 # last_input=a_tuple,
@@ -457,8 +457,8 @@ continue the project
 
         first = 'first'
         last = 'last'
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
         first_number = 0
         second_number = 1
 
@@ -500,8 +500,8 @@ continue the project
             )
             self.assertEqual(reality, my_expectation)
 
-            # a_tuple = (1, 2, 3, 'n')
-            # a_list = [1, 2, 3, 'n']
+            # a_tuple = (0, 1, 2, 'n')
+            # a_list = [0, 1, 2, 'n']
             reality = src.functions.positional_arguments(
                 # a_tuple, a_list,
                 # self.a_tuple, a_list,
@@ -597,7 +597,7 @@ continue the project
             )
             self.assertEqual(reality, my_expectation)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
             reality = src.functions.w_keyword_arguments(
                 first_input=a_set,
@@ -606,8 +606,8 @@ continue the project
             my_expectation = (a_set, a_dictionary)
             self.assertEqual(reality, my_expectation)
 
-            # a_tuple = (1, 2, 3, 'n')
-            # a_list = [1, 2, 3, 'n']
+            # a_tuple = (0, 1, 2, 'n')
+            # a_list = [0, 1, 2, 'n']
             reality = src.functions.positional_arguments(
                 # first_input=a_list,
                 # last_input=a_tuple,
@@ -656,7 +656,7 @@ continue the project
             )
             self.assertEqual(reality, my_expectation)
 
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
             reality = src.functions.w_keyword_arguments(
                 first_input=a_set,
@@ -724,8 +724,8 @@ I can place the constants directly under the ``TestFunctions`` class:
 
     first = 'first'
     last = 'last'
-    a_tuple = (1, 2, 3, 'n')
-    a_list = [1, 2, 3, 'n']
+    a_tuple = (0, 1, 2, 'n')
+    a_list = [0, 1, 2, 'n']
     first_number = 0
     second_number = 1
 

@@ -41,15 +41,15 @@ class TestAssertionError(unittest.TestCase):
         assert a_string is not None
         self.assertIsNot(a_string, None)
 
-        a_tuple = (1, 2, 3, 'n')
+        a_tuple = (0, 1, 2, 'n')
         assert a_tuple is not None
         self.assertIsNot(a_tuple, None)
 
-        a_list = [1, 2, 3, 'n']
+        a_list = [0, 1, 2, 'n']
         assert a_list is not None
         self.assertIsNot(a_list, None)
 
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         assert a_set is not None
         self.assertIsNot(a_set, None)
 
@@ -79,15 +79,15 @@ class TestAssertionError(unittest.TestCase):
         assert a_string is not False
         self.assertIsNot(a_string, False)
 
-        a_tuple = (1, 2, 3, 'n')
+        a_tuple = (0, 1, 2, 'n')
         assert a_tuple is not False
         self.assertIsNot(a_tuple, False)
 
-        a_list = [1, 2, 3, 'n']
+        a_list = [0, 1, 2, 'n']
         assert a_list is not False
         self.assertIsNot(a_list, False)
 
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         assert a_set is not False
         self.assertIsNot(a_set, False)
 
@@ -117,15 +117,15 @@ class TestAssertionError(unittest.TestCase):
         assert a_string is not True
         self.assertIsNot(a_string, True)
 
-        a_tuple = (1, 2, 3, 'n')
+        a_tuple = (0, 1, 2, 'n')
         assert a_tuple is not True
         self.assertIsNot(a_tuple, True)
 
-        a_list = [1, 2, 3, 'n']
+        a_list = [0, 1, 2, 'n']
         assert a_list is not True
         self.assertIsNot(a_list, True)
 
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         assert a_set is not True
         self.assertIsNot(a_set, True)
 

@@ -41,22 +41,22 @@ class TestNone(unittest.TestCase):
 
     def test_is_none_a_tuple(self):
         self.assertIsNotNone(())
-        self.assertIsNotNone((1, 2, 3, 'n'))
+        self.assertIsNotNone((0, 1, 2, 'n'))
         self.assertIsInstance((), tuple)
-        self.assertIsInstance((1, 2, 3, 'n'), tuple)
+        self.assertIsInstance((0, 1, 2, 'n'), tuple)
         self.assertNotIsInstance(None, tuple)
 
     def test_is_none_a_list(self):
         self.assertIsNotNone([])
-        self.assertIsNotNone([1, 2, 3, 'n'])
+        self.assertIsNotNone([0, 1, 2, 'n'])
         self.assertIsInstance([], list)
-        self.assertIsInstance([1, 2, 3, 'n'], list)
+        self.assertIsInstance([0, 1, 2, 'n'], list)
         self.assertNotIsInstance(None, list)
 
     def test_is_none_a_set(self):
         self.assertIsNotNone(set())
-        self.assertIsNotNone({1, 2, 3, 'n'})
-        self.assertIsInstance({1, 2, 3, 'n'}, set)
+        self.assertIsNotNone({0, 1, 2, 'n'})
+        self.assertIsInstance({0, 1, 2, 'n'}, set)
         self.assertNotIsInstance(None, set)
 
     def test_is_none_a_dictionary(self):
