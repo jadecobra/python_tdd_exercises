@@ -27,18 +27,18 @@ I send things (:ref:`input data<data structures>`) to a program_ to test it, and
 * what is the same?
 * what is different?
 
-The difference helps me know what to change to get what I want. I do this with the :ref:`assertEqual method<another way to test if two things are Equal>`, which takes 2 inputs and checks if they are the same
+The difference helps me know what to change to get what I want. I use :ref:`assertions<what is an assertion?>` to test if the result of a :ref:`call to a function with input<functions that take input>` is the same as my expectation.
 
 .. code-block:: python
 
-  self.assertEqual(reality, my_expectation)
+  assert reality == my_expectation
 
 where
 
 * ``reality`` is what happens when I do something with code
 * ``my_expectation`` is what I think will happen when I do something with code
 
-The exercises in this chapter show how I can pass :ref:`input data<data structures>` from a test to a :ref:`function<what is a function?>` in a :ref:`module<what is a module?>`.
+The exercises in this chapter show how I can pass :ref:`objects<what is a class?>` to a :ref:`function<what is a function?>` and use it to make a string_ (anything in :ref:`quotes`). It will also show :ref:`another way to organize tests`.
 
 ----
 
@@ -89,38 +89,6 @@ start the project
 
     .../pumping_python/telephone
 
-* I make a directory_ for the source code
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    mkdir src
-
-  the terminal_ goes back to the command line.
-
-* I use the `mv program`_ to change the name of ``main.py`` to ``telephone.py`` and move it to the ``src`` folder_
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        mv main.py src/telephone.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        Move-Item main.py src/telephone.py
-
-  the terminal_ goes back to the command line.
-
 * I `make a directory`_ for the tests
 
   .. code-block:: shell
@@ -155,7 +123,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
+* I use the `mv program`_ to change the name of ``main.py`` to ``test_telephone.py`` and move it to the ``tests`` folder_
 
   .. tab-set::
     :sync-group: os
@@ -166,7 +134,7 @@ start the project
       .. code-block:: shell
         :emphasize-lines: 1
 
-        touch tests/test_telephone.py
+        mv main.py tests/test_telephone.py
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -174,7 +142,7 @@ start the project
       .. code-block:: shell
         :emphasize-lines: 1
 
-        New-Item tests/test_telephone.py
+        Move-Item main.py tests/test_telephone.py
 
   the terminal_ goes back to the command line.
 

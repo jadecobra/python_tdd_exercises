@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master Python functions step-by-step using Test-Driven Development (TDD). Learn positional and keyword arguments, default values, *args, **kwargs, return statements, and argument unpacking with unittest. Perfect for programming beginners and hands-on coders.
-  :keywords: Jacob Itegboje, Python functions for beginners, learn Python functions with TDD, test-driven development Python tutorial, positional vs keyword arguments Python, what does a function return by default, how to write a function in Python, Python *args and **kwargs explained, Python function return None, constant and identity functions Python, Python unittest function examples, argument unpacking python asterisk, beginner Python coding exercises
+  :description: Master Python functions step-by-step using Test-Driven Development (TDD) in the functions project. Learn how to make functions take input with def, identity function, positional vs keyword arguments (order independence with names), default/optional values ('doe'), *args and **kwargs, argument unpacking (*tuple **dict), return statements. See real errors: "NameError: name 'identity' is not defined", "TypeError: ... takes 0 positional arguments but 1 was given", "takes 1 positional argument but 2 were given", AssertionError on wrong returns. Practice bare assert == / is, constant functions "assert constant() is 'the same thing'", swapping calls like keyword(last_input=0, first_input=1) == (1, 0), unknown_number_of_arguments(*a_tuple, **a_dictionary) == (tuple, dict). Part of Jacob Itegboje's Pumping Python TDD series for beginners.
+  :keywords: Jacob Itegboje, Pumping Python, Python functions for beginners, learn Python functions with TDD, positional vs keyword arguments Python, keyword_arguments(last_input=last, first_input=first), what does a function return by default, Python *args **kwargs, unknown_number_of_arguments(*a_tuple, **a_dictionary), optional_arguments default value, test_identity_function return the_input, "takes 0 positional arguments but 1 was given", "NameError: name 'identity' is not defined", constant function "the same thing", argument unpacking python, bare assert in tests, functions that take input, red green refactor functions, Python TDD positional keyword, how to call python function with input, return first_input last_input tuple
 
 .. include:: ../links.rst
 
@@ -2825,9 +2825,9 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
     NameError: name 'keyword_arguments' is not defined
 
-  because the :ref:`keyword_arguments function<test_positional_arguments>`  belongs to the :ref:`test_keyword_arguments function<test_positional_arguments>` and I cannot reach it from outside.
+  because the :ref:`keyword_arguments function<test_keyword_arguments>` belongs to the :ref:`test_keyword_arguments` and I cannot reach it from outside.
 
-* I move the :ref:`keyword_arguments function<test_positional_arguments>` out of :ref:`test_keyword_arguments` so that it can be called by any :ref:`function<what is a function?>`
+* I move the :ref:`keyword_arguments function<test_keyword_arguments>` out of :ref:`test_keyword_arguments` so that it can be called by any :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 88
@@ -4255,8 +4255,8 @@ how Python reads starred and double starred expressions
         return  positional_arguments, keyword_arguments
         return ((0, 1              ), {'a': 2, 'b': 3  })
 
-  - If I use ``*something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+  - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
 
 * I change my expectation to match reality in the first :ref:`assertion<what is an assertion?>`
 
@@ -4307,8 +4307,8 @@ how Python reads starred and double starred expressions
         return  positional_arguments, keyword_arguments
         return ((0, 1              ), {'a': 2, 'b': 3, 'c':4})
 
-  - If I use ``*something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+  - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
 
 * I change my expectation to match reality in the second :ref:`assertion<what is an assertion?>`
 
@@ -4363,8 +4363,8 @@ how Python reads starred and double starred expressions
         return  positional_arguments, keyword_arguments
         return ((0, 1, 2           ), {'a': 3, 'b': 4, 'c':5})
 
-  - If I use ``*something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+  - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
 
 * I change my expectation to match reality in the last :ref:`assertion<what is an assertion?>`
 
@@ -4823,7 +4823,7 @@ how Python reads starred expressions
 
 
   - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the things in ``something`` as :ref:`positional arguments<test_positional_arguments>`.
-  - If I use ``*something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
+  - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
 
 * I change my expectation to match reality
 
@@ -4919,7 +4919,7 @@ Using substitution
 
 
 - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
-- If I use ``**something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+- If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
 
 ----
 
@@ -5001,8 +5001,8 @@ the test passes.
         return (()                  , {}               )
 
 
-  - If I use ``*something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+  - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
 
 * I change my expectation to match reality
 
@@ -5139,8 +5139,8 @@ I ran tests to show that I can make :ref:`functions<what is a function>` that ta
 
   - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the things in ``something`` as :ref:`positional arguments<test_positional_arguments>`.
   - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
-  - If I use ``*something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+  - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
 
 :ref:`How many questions can you answer about functions?<questions about functions>`
 
@@ -5165,7 +5165,7 @@ you have covered a bit so far and know
 * :ref:`how to make functions<what is a function?>`
 * :ref:`how to make functions that take input<functions that take input>`
 
-:ref:`would you like to test using a function to make a string from input?<telephone>` I am going for a walk.
+I am going for a walk. :ref:`Would you like to test using a function to make a string from input?<telephone>`
 
 ----
 

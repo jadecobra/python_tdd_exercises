@@ -20,7 +20,7 @@ functions that take input: tests
 
 the code from ``functions/tests/test_functions.py`` from :ref:`functions<functions that take input>`
 
-.. literalinclude:: functions/test_functions_1.py
+.. literalinclude:: functions/test_functions_2.py
   :language: python
   :linenos:
 

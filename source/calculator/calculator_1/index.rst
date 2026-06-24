@@ -32,7 +32,7 @@ the chapters
   :maxdepth: 1
 
   make a calculator 1<calculator>
-  functions 2: use variables<../../../functions/functions_3>
+  ../../../functions/functions_3
 
 *************************************************************************************
 what is next?
