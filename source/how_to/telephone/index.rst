@@ -604,18 +604,18 @@ how to write an f-string
   .. code-block:: python
 
     text(None)
-    text(the_input)
-        the_input = None
-        return f'I got: {the_input}'
-        return  'I got: None       '
+        text(the_input)
+            the_input = None
+            return f'I got: {the_input}'
+            return  'I got:  None      '
 
   .. code-block:: python
 
     text(False)
-    text(the_input)
-        the_input = False
-        return f'I got: {the_input}'
-        return  'I got: False      '
+        text(the_input)
+            the_input = False
+            return f'I got: {the_input}'
+            return  'I got:  False     '
 
 ----
 
@@ -670,7 +670,15 @@ how to write an f-string
 
     # Exceptions seen
 
-  the test passes.
+  the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+
+  .. code-block:: python
+
+    text(True)
+        text(the_input)
+            the_input = True
+            return f'I got: {the_input}'
+            return  'I got:  True      '
 
 * I remove the commented line
 
@@ -759,7 +767,15 @@ I remove the :ref:`quotes` around the integer_ in my expectation
 
   # Exceptions seen
 
-the test passes.
+the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+
+.. code-block:: python
+
+  text(1234)
+      text(the_input)
+          the_input = None
+          return f'I got: {the_input}'
+          return  'I got:  1234      '
 
 ----
 
@@ -783,7 +799,7 @@ the test passes.
 
     # Exceptions seen
 
-* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<string interpolation>` to remove repetition of ``1234``
+* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<what is string interpolation?>` to remove repetition of ``1234``
 
   .. code-block:: python
     :lineno-start: 14
@@ -853,7 +869,7 @@ I can pass a float_ (binary floating point decimal number) from a test to a :ref
 
 
     def test_passing_a_float():
-        assert text(1.234) == 'I got: "1.234"'
+        assert text(5.678) == 'I got: "5.678"'
 
 
     # Exceptions seen
@@ -862,7 +878,7 @@ I can pass a float_ (binary floating point decimal number) from a test to a :ref
 
   .. code-block:: python
 
-    E       assert 'I got: 1.234' == 'I got: "1.234"'
+    E       assert 'I got: 5.678' == 'I got: "5.678"'
 
 ----
 
@@ -879,13 +895,21 @@ I remove the :ref:`quotes` around the float_ in my expectation
   :emphasize-lines: 2-3
 
   def test_passing_a_float():
-      # assert text(1.234) == 'I got: "1.234"'
-      assert text(1.234) == 'I got: 1.234'
+      # assert text(5.678) == 'I got: "5.678"'
+      assert text(5.678) == 'I got: 5.678'
 
 
   # Exceptions seen
 
-the test passes.
+the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+
+.. code-block:: python
+
+  text(5.678)
+      text(the_input)
+          the_input = 5.678
+          return f'I got: {the_input}'
+          return  'I got:  5.678     '
 
 ----
 
@@ -895,30 +919,30 @@ the test passes.
 
 ----
 
-* I add a :ref:`variable<what is a variable?>` for ``1.234``
+* I add a :ref:`variable<what is a variable?>` for ``5.678``
 
   .. code-block:: python
     :lineno-start: 19
     :emphasize-lines: 2
 
     def test_passing_a_float():
-        a_float = 1.234
-        # assert text(1.234) == 'I got: "1.234"'
-        assert text(1.234) == 'I got: 1.234'
+        a_float = 5.678
+        # assert text(5.678) == 'I got: "5.678"'
+        assert text(5.678) == 'I got: 5.678'
 
 
     # Exceptions seen
 
-* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<string interpolation>` to remove repetition of ``1.234``
+* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<what is string interpolation?>` to remove repetition of ``5.678``
 
   .. code-block:: python
     :lineno-start: 19
     :emphasize-lines: 4-5
 
     def test_passing_a_float():
-        a_float = 1.234
-        # assert text(1.234) == 'I got: "1.234"'
-        # assert text(1.234) == 'I got: 1.234'
+        a_float = 5.678
+        # assert text(5.678) == 'I got: "5.678"'
+        # assert text(5.678) == 'I got: 5.678'
         assert text(a_float) == f'I got: {a_float}'
 
 
@@ -932,7 +956,7 @@ the test passes.
     :lineno-start: 19
 
     def test_passing_a_float():
-        a_float = 1.234
+        a_float = 5.678
         assert text(a_float) == f'I got: {a_float}'
 
 
@@ -975,7 +999,7 @@ I can pass a string_ from a test to a :ref:`function<what is a function?>`.
     :emphasize-lines: 6-7
 
     def test_passing_a_float():
-        a_float = 1.234
+        a_float = 5.678
         assert text(a_float) == f'I got: {a_float}'
 
 
@@ -1003,7 +1027,7 @@ I change my expectation to match reality
 
 .. code-block:: python
   :lineno-start: 24
-  :emphasize-lines: 3-4
+  :emphasize-lines: 2-3
 
   def test_passing_a_string():
       # assert text('hi') == f'I got: hello'
@@ -1012,7 +1036,15 @@ I change my expectation to match reality
 
   # Exceptions seen
 
-the test passes.
+the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+
+.. code-block:: python
+
+  text(hi)
+      text(the_input)
+          the_input = hi
+          return f'I got: {the_input}'
+          return  'I got:  hi        '
 
 ----
 
@@ -1036,7 +1068,7 @@ the test passes.
 
     # Exceptions seen
 
-* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<string interpolation>` to remove repetition of ``'hi'``
+* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<what is string interpolation?>` to remove repetition of ``'hi'``
 
   .. code-block:: python
     :lineno-start: 24
@@ -1140,7 +1172,15 @@ I change the tuple_ in my expectation to match reality
 
     # Exceptions seen
 
-the test passes.
+the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+
+.. code-block:: python
+
+  text((0, 1, 2, 'n'))
+      text(the_input)
+          the_input = (0, 1, 2, 'n')
+          return f'I got: {the_input    }'
+          return  'I got:  (0, 1, 2, 'n')'
 
 ----
 
@@ -1153,33 +1193,28 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``(0, 1, 2, 'n')``
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 2
+    :lineno-start: 29
+    :emphasize-lines: 3-4
 
-        def test_passing_a_tuple(self):
-            a_tuple = (0, 1, 2, 'n')
-            reality = src.telephone.text((0, 1, 2, 'n'))
-            # my_expectation = 'I got: (1, 2, 3, n)'
-            my_expectation = "I got: (0, 1, 2, 'n')"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_tuple():
+        a_tuple = ()
+        # assert text((0, 1, 2, 'n')) == 'I got: (0, 1, 2, 'n')'
+        assert text((0, 1, 2, 'n')) == "I got: (0, 1, 2, 'n')"
 
 
     # Exceptions seen
 
-* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<string interpolation>` to remove repetition of ``(0, 1, 2, 'n')``
+* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<what is string interpolation?>` to remove repetition of ``(0, 1, 2, 'n')``
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 3-4, 6-7
+    :lineno-start: 29
+    :emphasize-lines: 4-5
 
-        def test_passing_a_tuple(self):
-            a_tuple = (0, 1, 2, 'n')
-            # reality = src.telephone.text((0, 1, 2, 'n'))
-            reality = src.telephone.text(a_tuple)
-            # my_expectation = 'I got: (1, 2, 3, n)'
-            # my_expectation = "I got: (0, 1, 2, 'n')"
-            my_expectation = f"I got: {a_tuple}"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_tuple():
+        a_tuple = ()
+        # assert text((0, 1, 2, 'n')) == 'I got: (0, 1, 2, 'n')'
+        # assert text((0, 1, 2, 'n')) == "I got: (0, 1, 2, 'n')"
+        assert text(a_tuple) == f'I got: {a_tuple}'
 
 
     # Exceptions seen
@@ -2274,7 +2309,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
                  {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}
       != "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
     AssertionError:
-        1.234 != 'I got: 1.234'
+        5.678 != 'I got: 5.678'
     AssertionError:
         [0, 1, 2, 'n'] != "I got: [0, 1, 2, 'n']"
     AssertionError:
