@@ -1001,7 +1001,7 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 46
-    :emphasize-lines: 15-16, 23-24
+    :emphasize-lines: 18-19, 26-27
 
     def test_jane():
         # assert jane() == 'jane, doe, F, 1991'
