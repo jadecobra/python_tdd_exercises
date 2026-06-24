@@ -71,7 +71,7 @@ the chapters
   inheritance
   ../exceptions/AssertionError/AssertionError_2
   family_ties
-  ../functions/functions_2
+  ../functions/functions_4
 
 ----
 

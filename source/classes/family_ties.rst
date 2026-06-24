@@ -4090,7 +4090,7 @@ you know
 * :ref:`what happens when classes have one or more parents<family ties>`
 
 
-:ref:`Would you like to use class attributes with the 'functions' project?<Functions 2: use class attributes>`
+:ref:`Would you like to use class attributes with the 'functions' project?<functions 3: use class attributes>`
 
 ----
 

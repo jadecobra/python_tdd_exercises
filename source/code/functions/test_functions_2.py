@@ -1,305 +1,255 @@
-import src.functions
-import unittest
+def test_making_a_function_w_pass():
+    def w_pass():
+        pass
+
+    assert w_pass() is None
 
 
-def add_x(number):
-    # return 2 + number
-    return 3 + number
+def test_making_a_function_w_return():
+    def w_return():
+        return
+
+    assert w_return() is None
 
 
-class TestFunctions(unittest.TestCase):
+def test_making_a_function_w_return_none():
+    def w_return_none():
+        return None
 
-    first = 'first'
-    last = 'last'
+    assert w_return_none() is None
+
+
+def test_what_happens_after_functions_return():
+    def return_leaves_the_function():
+        return None
+        return 'only one way for this line to run'
+
+    assert return_leaves_the_function() is None
+
+
+def test_constant_function():
+    def constant():
+        return 'the same thing'
+
+    assert constant() is 'the same thing'
+
+
+def test_identity_function():
+    def identity(the_input):
+        return the_input
+
+    assert identity(None) == None
+    assert identity(object) == object
+
+
+def test_why_use_a_function():
+    def add_x(number):
+        return 3 + number
+
+    assert add_x(0) == 3
+    assert add_x(1) == 4
+    assert add_x(2) == 5
+    assert add_x(3) == 6
+    assert add_x(4) == 7
+    assert add_x(5) == 8
+    assert add_x(6) == 9
+    assert add_x(7) == 10
+    assert add_x(8) == 11
+    assert add_x(9) == 12
+
+
+def positional_arguments(first_input, last_input):
+    return first_input, last_input
+
+
+def test_positional_arguments():
+    first, last = 'first', 'last'
+
+    assert (
+        positional_arguments(first, last)
+     == (first, last)
+    )
+    assert (
+        positional_arguments(last, first)
+     == (last, first)
+    )
+    assert (
+        positional_arguments(0, 1)
+     == (0, 1)
+    )
+
     a_tuple = (1, 2, 3, 'n')
     a_list = [1, 2, 3, 'n']
-    first_number = 0
-    second_number = 1
+    assert (
+        positional_arguments(a_tuple, a_list)
+     == (a_tuple, a_list)
+    )
 
-    def test_why_use_a_function(self):
-        # reality = 1 + 0
-        # reality = 2 + 0
-        reality = add_x(0)
-        # my_expectation = 0
-        # my_expectation = 1
-        # my_expectation = 2
-        my_expectation = 3
-        self.assertEqual(reality, my_expectation)
-
-        # reality = 1 + 1
-        # reality = 2 + 1
-        reality = add_x(1)
-        # my_expectation = 1
-        # my_expectation = 2
-        # my_expectation = 3
-        my_expectation = 4
-        self.assertEqual(reality, my_expectation)
-
-        # reality = 1 + 2
-        # reality = 2 + 2
-        reality = add_x(2)
-        # my_expectation = 2
-        # my_expectation = 3
-        # my_expectation = 4
-        my_expectation = 5
-        self.assertEqual(reality, my_expectation)
-
-        # reality = 1 + 3
-        # reality = 2 + 3
-        reality = add_x(3)
-        # my_expectation = 3
-        # my_expectation = 4
-        # my_expectation = 5
-        my_expectation = 6
-        self.assertEqual(reality, my_expectation)
-
-        # reality = 1 + 4
-        # reality = 2 + 4
-        reality = add_x(4)
-        # my_expectation = 4
-        # my_expectation = 5
-        # my_expectation = 6
-        my_expectation = 7
-        self.assertEqual(reality, my_expectation)
-
-        # reality = 1 + 5
-        # reality = 2 + 5
-        reality = add_x(5)
-        # my_expectation = 5
-        # my_expectation = 6
-        # my_expectation = 7
-        my_expectation = 8
-        self.assertEqual(reality, my_expectation)
-
-        # reality = 1 + 6
-        # reality = 2 + 6
-        reality = add_x(6)
-        # my_expectation = 6
-        # my_expectation = 7
-        # my_expectation = 8
-        my_expectation = 9
-        self.assertEqual(reality, my_expectation)
-
-        # reality = 1 + 7
-        # reality = 2 + 7
-        reality = add_x(7)
-        # my_expectation = 7
-        # my_expectation = 8
-        # my_expectation = 9
-        my_expectation = 10
-        self.assertEqual(reality, my_expectation)
-
-        # reality = 1 + 8
-        # reality = 2 + 8
-        reality = add_x(8)
-        # my_expectation = 8
-        # my_expectation = 9
-        # my_expectation = 10
-        my_expectation = 11
-        self.assertEqual(reality, my_expectation)
-
-        # reality = 1 + 9
-        # reality = 2 + 9
-        reality = add_x(9)
-        # my_expectation = 9
-        # my_expectation = 10
-        # my_expectation = 11
-        my_expectation = 12
-        self.assertEqual(reality, my_expectation)
-
-    def test_making_a_function_w_pass(self):
-        self.assertIs(src.functions.w_pass(), None)
-
-    def test_making_a_function_w_return(self):
-        self.assertIs(src.functions.w_return(), None)
-
-    def test_making_a_function_w_return_none(self):
-        self.assertIs(
-            src.functions.w_return_none(), None
+    a_set = {1, 2, 3, 'n'}
+    a_dictionary = {'key': 'value'}
+    assert (
+        keyword_arguments(
+            a_set, a_dictionary,
         )
+     == (a_set, a_dictionary)
+    )
 
-    def test_what_happens_after_a_function_returns(self):
-        self.assertIs(
-            src.functions.return_is_last(), None
+
+def keyword_arguments(first_input, last_input):
+    return first_input, last_input
+
+
+def test_keyword_arguments():
+    first, last = 'first', 'last'
+
+    assert (
+        keyword_arguments(
+            first_input=first, last_input=last,
         )
-
-    def test_constant_function(self):
-        reality = src.functions.constant()
-        my_expectation = 'the same thing'
-        self.assertEqual(reality, my_expectation)
-
-    def test_identity_function(self):
-        reality = src.functions.identity(None)
-        my_expectation = None
-        self.assertEqual(reality, my_expectation)
-
-        reality = src.functions.identity(object)
-        my_expectation = object
-        self.assertEqual(reality, my_expectation)
-
-    def test_positional_arguments(self):
-        reality = src.functions.positional_arguments(
-            self.first, self.last,
+     == (first, last)
+    )
+    assert (
+        keyword_arguments(
+            last_input=last, first_input=first,
         )
-        my_expectation = (self.first, self.last)
-        self.assertEqual(reality, my_expectation)
+     == (first, last)
+    )
+    assert (
+        keyword_arguments(
+            last_input=0, first_input=1,
+        )
+     == (1, 0)
+    )
 
-        reality = src.functions.positional_arguments(
-            self.last, self.first,
+    a_tuple = (1, 2, 3, 'n')
+    a_list = [1, 2, 3, 'n']
+    assert (
+        keyword_arguments(
+            first_input=a_tuple,
+            last_input=a_list,
         )
-        my_expectation = (self.last, self.first)
-        self.assertEqual(reality, my_expectation)
+     == (a_tuple, a_list)
+    )
 
-        reality = src.functions.positional_arguments(
-            self.first_number, self.second_number,
-        )
-        my_expectation = (
-            self.first_number, self.second_number
-        )
-        self.assertEqual(reality, my_expectation)
-
-        reality = src.functions.positional_arguments(
-            self.a_tuple, self.a_list,
-        )
-        my_expectation = (self.a_tuple, self.a_list)
-        self.assertEqual(reality, my_expectation)
-
-    def test_keyword_arguments(self):
-        reality = src.functions.w_keyword_arguments(
-            first_input=self.first,
-            last_input=self.last,
-        )
-        my_expectation = (self.first, self.last)
-        self.assertEqual(reality, my_expectation)
-
-        reality = src.functions.w_keyword_arguments(
-            last_input=self.last,
-            first_input=self.first,
-        )
-        my_expectation = (self.first, self.last)
-        self.assertEqual(reality, my_expectation)
-
-        reality = src.functions.w_keyword_arguments(
-            self.last, self.first,
-        )
-        my_expectation = (self.last, self.first)
-        self.assertEqual(reality, my_expectation)
-
-        reality = src.functions.w_keyword_arguments(
-            last_input=self.first_number,
-            first_input=self.second_number,
-        )
-        my_expectation = (
-            self.second_number, self.first_number
-        )
-        self.assertEqual(reality, my_expectation)
-
-        a_set = {1, 2, 3, 'n'}
-        a_dictionary = {'key': 'value'}
-        reality = src.functions.w_keyword_arguments(
-            first_input=a_set,
+    a_set = {1, 2, 3, 'n'}
+    a_dictionary = {'key': 'value'}
+    assert (
+        positional_arguments(
             last_input=a_dictionary,
+            first_input=a_set,
         )
-        my_expectation = (a_set, a_dictionary)
-        self.assertEqual(reality, my_expectation)
+     == (a_set, a_dictionary)
+    )
 
-        reality = src.functions.positional_arguments(
-            first_input=self.a_list,
-            last_input=self.a_tuple,
+
+def test_args_and_kwargs():
+    def args_and_kwargs(first_input, last_input):
+        return first_input, last_input
+
+    first, last = 'first', 'last'
+
+    assert (
+        args_and_kwargs(
+            first, last_input=last,
         )
-        my_expectation = (self.a_list, self.a_tuple)
-        self.assertEqual(reality, my_expectation)
+     == (first, last)
+    )
 
-    def test_args_and_kwargs(self):
-        reality = (
-            src.functions.args_and_kwargs(
-                self.first, last_input=self.last,
-            )
-        )
-        my_expectation = (self.first, self.last)
-        self.assertEqual(reality, my_expectation)
 
-    def test_optional_arguments(self):
-        first_name, last_name = 'jane', 'doe'
-        reality = src.functions.w_optional_arguments(
+def test_optional_arguments():
+    def optional_arguments(
+        first_input, last_input='doe',
+    ):
+        return first_input, last_input
+
+    first_name, last_name = 'jane', 'doe'
+
+    assert (
+        optional_arguments(
             first_name,
         )
-        my_expectation = (first_name, last_name)
-        self.assertEqual(reality, my_expectation)
+     == (first_name, last_name)
+    )
 
-        first_name, blow = 'joe', 'blow'
-        reality = src.functions.w_optional_arguments(
-            first_name, blow,
+    first_name, blow = 'joe', 'blow'
+    assert (
+        optional_arguments(
+            first_name, blow
         )
-        my_expectation = (first_name, blow)
-        self.assertEqual(reality, my_expectation)
+     == (first_name, blow)
+    )
 
-        first_name = 'john'
-        reality = src.functions.w_optional_arguments(
-            first_input=first_name,
+    first_name = 'john'
+    assert (
+        optional_arguments(
+            first_input=first_name
         )
-        my_expectation = (first_name, last_name)
-        self.assertEqual(reality, my_expectation)
+     == (first_name, last_name)
+    )
 
-        last_name = 'smith'
-        reality = src.functions.w_optional_arguments(
+    last_name = 'smith'
+    assert (
+        optional_arguments(
             last_input=last_name,
             first_input=first_name,
         )
-        my_expectation = (first_name, last_name)
-        self.assertEqual(reality, my_expectation)
+     == (first_name, last_name)
+    )
 
-    def test_unknown_number_of_arguments(self):
-        a_tuple = (0, 1)
-        a_dictionary = {'a': 2, 'b': 3}
-        reality = src.functions.w_unknown_arguments(
+
+def test_unknown_number_of_arguments():
+    def unknown_number_of_arguments(
+        *positional_arguments, **keyword_arguments
+    ):
+        return positional_arguments, keyword_arguments
+
+    a_tuple = (0, 1)
+    a_dictionary = {'a': 2, 'b': 3}
+    assert (
+        unknown_number_of_arguments(
             *a_tuple, **a_dictionary
         )
-        my_expectation = (a_tuple, a_dictionary)
-        self.assertEqual(reality, my_expectation)
+     == (a_tuple, a_dictionary)
+    )
 
-        a_tuple = (0, 1)
-        a_dictionary = {'a': 2, 'b': 3, 'c': 4}
-        reality = src.functions.w_unknown_arguments(
+    a_tuple = (0, 1)
+    a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+    assert (
+        unknown_number_of_arguments(
             *a_tuple, **a_dictionary
         )
-        my_expectation = (
-            a_tuple, a_dictionary
-        )
-        self.assertEqual(reality, my_expectation)
+     == (a_tuple, a_dictionary)
+    )
 
-        a_tuple = (0, 1, 2)
-        a_dictionary = {'a': 3, 'b': 4, 'c': 5}
-        reality = src.functions.w_unknown_arguments(
-            *a_tuple, **a_dictionary,
+    a_tuple = (0, 1, 2)
+    a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+    assert (
+        unknown_number_of_arguments(
+            *a_tuple, **a_dictionary
         )
-        my_expectation = (
-            a_tuple, a_dictionary
-        )
-        self.assertEqual(reality, my_expectation)
+     == (a_tuple, a_dictionary)
+    )
 
-        a_tuple = (0, 1, 2, 3)
-        reality = src.functions.w_unknown_arguments(
-            *a_tuple
-        )
-        my_expectation = (a_tuple, {})
-        self.assertEqual(reality, my_expectation)
+    a_tuple = (1, 2, 3, 'n')
+    assert (
+        unknown_number_of_arguments(*a_tuple)
+     == (a_tuple, {})
+    )
 
-        a_dictionary = {'a': 4, 'b': 5, 'c': 6, 'd': 7}
-        reality = src.functions.w_unknown_arguments(
-            **a_dictionary
-        )
-        my_expectation = ((), a_dictionary)
-        self.assertEqual(reality, my_expectation)
+    a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
+    assert (
+        unknown_number_of_arguments(**a_dictionary)
+     == ((), a_dictionary)
+    )
 
-        reality = src.functions.w_unknown_arguments()
-        my_expectation = ((), {})
-        self.assertEqual(reality, my_expectation)
+    assert (
+        unknown_number_of_arguments()
+     == ((), {})
+    )
 
 
 # Exceptions seen
 # AssertionError
 # NameError
-# AttributeError
 # TypeError
 # SyntaxError

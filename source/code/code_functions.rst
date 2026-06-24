@@ -28,10 +28,10 @@ the code from ``functions/tests/test_functions.py`` from :ref:`functions<functio
 ----
 
 *********************************************************************************
-functions 2: tests
+functions 3: tests
 *********************************************************************************
 
-the code from ``functions/tests/test_functions.py`` (after refactor) from :ref:`Functions 2: use class attributes`
+the code from ``functions/tests/test_functions.py`` (after refactor) from :ref:`functions 3: use class attributes`
 
 .. literalinclude:: functions/test_functions_2.py
   :language: python
@@ -56,7 +56,7 @@ the solutions in ``functions/src/functions.py`` from :ref:`functions<what is a f
 functions 3: solutions
 *********************************************************************************
 
-the solutions in ``functions/tests/test_functions.py`` from :ref:`functions 3`
+the solutions in ``functions/tests/test_functions.py`` from :ref:`functions 4: use for loops`
 
 .. literalinclude:: functions/test_functions_list_comprehensions.py
   :language: python
