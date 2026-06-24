@@ -287,7 +287,7 @@ start the project
 test_passing_none
 *********************************************************************************
 
-I can pass :ref:`None (the simplest object)<what is None?>` from a test to a :ref:`function<what is a function?>`?
+I can pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`function<what is a function?>`?
 
 ----
 
@@ -449,7 +449,7 @@ I can pass :ref:`None (the simplest object)<what is None?>` from a test to a :re
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass None from a test to a function<test_passing_none>`.
+:ref:`I can pass None as input to a function<test_passing_none>`.
 
 The problem with this solution is that the ``text`` :ref:`function<what is a function?>` does not care about what it gets, it always returns ``'I got: None'`` when it is called. I want it to return the :ref:`object<what is a class?>` it gets as part of the string_.
 
@@ -702,7 +702,7 @@ how to write an f-string
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass booleans from a test to a function<test_passing_booleans>`.
+:ref:`I can pass booleans as input to a function<test_passing_booleans>`.
 
 ----
 
@@ -710,7 +710,7 @@ how to write an f-string
 test_passing_an_integer
 *********************************************************************************
 
-Can I pass an integer_ (a whole number without decimals) from a test to a :ref:`function<what is a function?>`?.
+Can I pass an integer_ (a whole number without decimals) as input to a :ref:`function<what is a function?>`?.
 
 ----
 
@@ -837,7 +837,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass an integer from a test to a function<test_passing_an_integer>`.
+:ref:`I can pass an integer as input to a function<test_passing_an_integer>`.
 
 ----
 
@@ -845,7 +845,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 test_passing_a_float
 *********************************************************************************
 
-Can I pass a float_ (binary floating point decimal number) from a test to a :ref:`function<what is a function?>`?.
+Can I pass a float_ (binary floating point decimal number) as input to a :ref:`function<what is a function?>`?.
 
 ----
 
@@ -972,7 +972,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass a float from a test to a function<test_passing_a_float>`.
+:ref:`I can pass a float as input to a function<test_passing_a_float>`.
 
 ----
 
@@ -980,7 +980,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 test_passing_a_string
 *********************************************************************************
 
-Can I pass a string_ from a test to a :ref:`function<what is a function?>`?.
+Can I pass a string_ as input to a :ref:`function<what is a function?>`?.
 
 ----
 
@@ -1106,7 +1106,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass a string from a test to a function<test_passing_a_string>`.
+:ref:`I can pass a string as input to a function<test_passing_a_string>`.
 
 ----
 
@@ -1114,7 +1114,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 test_passing_a_tuple
 *********************************************************************************
 
-Can I pass a tuple_ (anything in parentheses ``( )`` separated by a comma) from a test to a :ref:`function<what is a function?>`?
+Can I pass a tuple_ (anything in parentheses ``( )`` separated by a comma) as input to a :ref:`function<what is a function?>`?
 
 ----
 
@@ -1165,12 +1165,12 @@ I change the tuple_ in my expectation to match reality
   :emphasize-lines: 2-3
   :emphasize-text: "
 
-    def test_passing_a_tuple():
-        # assert text((0, 1, 2, 'n')) == 'I got: (1, 2, 3, n)'
-        assert text((0, 1, 2, 'n')) == "I got: (0, 1, 2, 'n')"
+  def test_passing_a_tuple():
+      # assert text((0, 1, 2, 'n')) == 'I got: (1, 2, 3, n)'
+      assert text((0, 1, 2, 'n')) == "I got: (0, 1, 2, 'n')"
 
 
-    # Exceptions seen
+  # Exceptions seen
 
 the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
 
@@ -1242,7 +1242,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass a tuple from a test to a function<test_passing_a_tuple>`.
+:ref:`I can pass a tuple as input to a function<test_passing_a_tuple>`.
 
 ----
 
@@ -1381,7 +1381,7 @@ Python_ changed the :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what 
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass a list from a test to a function<test_passing_a_list>`.
+:ref:`I can pass a list as input to a function<test_passing_a_list>`.
 
 ----
 
@@ -1542,7 +1542,7 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass a set from a test to a function<test_passing_a_set>`.
+:ref:`I can pass a set as input to a function<test_passing_a_set>`.
 
 ----
 
@@ -1550,7 +1550,7 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 test_passing_a_dictionary
 *********************************************************************************
 
-Can I pass a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas<what is a dictionary?>` from a test to a :ref:`function<what is a function?>`?
+Can I pass a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas<what is a dictionary?>` as input to a :ref:`function<what is a function?>`?
 
 ----
 
@@ -1565,28 +1565,25 @@ Can I pass a :ref:`dictionary (any key-value pairs in curly braces '{ }' separat
 * I add a test for a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 50
-    :emphasize-lines: 7-18
+    :lineno-start: 39
+    :emphasize-lines: 6-15
     :emphasize-text: "
 
-        def test_passing_a_list(self):
-            a_list = [0, 1, 2, 'n']
-            reality = src.telephone.text(a_list)
-            my_expectation = f"I got: {a_list}"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_set():
+        a_set = {0, 1, 2, 'n'}
+        assert text(a_set) == f'I got: {a_set}'
 
-        def test_passing_a_dictionary(self):
-            reality = src.telephone.text(
-                {
-                    'key0': 'value0',
-                    'keyN': [0, 1, 2, 'n'],
-                }
-            )
-            my_expectation = (
-                "I got: "
-                "{key0: value0, keyN: [0, 1, 2, n]}"
-            )
-            self.assertEqual(reality, my_expectation)
+
+    def test_passing_a_dictionary():
+        reality = text({
+            'key0': 'value0',
+            'keyN': [0, 1, 2, 'n'],
+        })
+        my_expectation = (
+            "I got: "
+            "{key0: value0, keyN: [0, 1, 2, n]}"
+        )
+        assert reality == my_expectation
 
 
     # Exceptions seen
@@ -1595,9 +1592,10 @@ Can I pass a :ref:`dictionary (any key-value pairs in curly braces '{ }' separat
 
   .. code-block:: python
 
-    AssertionError:
-        "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
-     != 'I got: { key0:   value0 ,  keyN : [0, 1, 2,  n ]}'
+    assert "I got: {'key..., 1, 2, 'n']}"
+        == 'I got: {key0...[0, 1, 2, n]}'
+
+  I want more detail in my error messages.
 
 ----
 
@@ -1607,31 +1605,37 @@ Can I pass a :ref:`dictionary (any key-value pairs in curly braces '{ }' separat
 
 ----
 
-I change my expectation to match reality
+I change ``my_expectation`` to match ``reality``
 
 .. code-block:: python
-  :lineno-start: 56
-  :emphasize-lines: 10-11
+  :lineno-start: 44
+  :emphasize-lines: 8-9
   :emphasize-text: '
 
-      def test_passing_a_dictionary(self):
-          reality = src.telephone.text(
-              {
-                  'key0': 'value0',
-                  'keyN': [0, 1, 2, 'n'],
-              }
-          )
-          my_expectation = (
-              "I got: "
-              # "{key0: value0, keyN: [0, 1, 2, n]}"
-              "{'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
-          )
-          self.assertEqual(reality, my_expectation)
+  def test_passing_a_dictionary():
+      reality = text({
+          'key0': 'value0',
+          'keyN': [0, 1, 2, 'n'],
+      })
+      my_expectation = (
+          "I got: "
+          # "{key0: value0, keyN: [0, 1, 2, n]}"
+          "{'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
+      )
+      assert reality == my_expectation
 
 
   # Exceptions seen
 
-the test passes.
+the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+
+.. code-block:: python
+
+  text({'key0': 'value0', 'keyN': [0, 1, 2, 'n'],})
+      text(the_input)
+          the_input = {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}
+          return f'I got: {the_input    }'
+          return  "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
 
 ----
 
@@ -1641,58 +1645,54 @@ the test passes.
 
 ----
 
-* I add a :ref:`variable<what is a variable?>`
+* I add a :ref:`variable<what is a variable?>` for ``{'key0': 'value0', 'keyN': [0, 1, 2, 'n'],}``
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 44
     :emphasize-lines: 2-5
 
-        def test_passing_a_dictionary(self):
-            a_dictionary = {
-                'key0': 'value0',
-                'keyN': [0, 1, 2, 'n'],
-            }
-            reality = src.telephone.text(
-                {
-                    'key0': 'value0',
-                    'keyN': [0, 1, 2, 'n'],
-                }
-            )
-            my_expectation = (
-                "I got: "
-                # "{key0: value0, keyN: [0, 1, 2, n]}"
-                "{'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
-            )
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_dictionary():
+        a_dictionary = {
+            'key0': 'value0',
+            'keyN': [0, 1, 2, 'n'],
+        }
+        reality = text({
+            'key0': 'value0',
+            'keyN': [0, 1, 2, 'n'],
+        })
+        my_expectation = (
+            "I got: "
+            # "{key0: value0, keyN: [0, 1, 2, n]}"
+            "{'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
+        )
+        assert reality == my_expectation
 
 
     # Exceptions seen
 
-* I use the :ref:`variable<what is a variable?>` with `string interpolation`_ to remove repetition of the :ref:`dictionary<what is a dictionary?>`
+* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<what is string interpolation?>` to remove repetition of ``{'key0': 'value0', 'keyN': [0, 1, 2, 'n'],}``
 
   .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 6-18
+    :lineno-start: 44
+    :emphasize-lines: 6-16
 
-        def test_passing_a_dictionary(self):
-            a_dictionary = {
-                'key0': 'value0',
-                'keyN': [0, 1, 2, 'n'],
-            }
-            # reality = src.telephone.text(
-            #     {
-            #         'key0': 'value0',
-            #         'keyN': [0, 1, 2, 'n'],
-            #     }
-            # )
-            reality = src.telephone.text(a_dictionary)
-            # my_expectation = (
-            #     "I got: "
-            #     # "{key0: value0, keyN: [0, 1, 2, n]}"
-            #     "{'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
-            # )
-            my_expectation = f'I got: {a_dictionary}'
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_dictionary():
+        a_dictionary = {
+            'key0': 'value0',
+            'keyN': [0, 1, 2, 'n'],
+        }
+        # reality = text({
+        #     'key0': 'value0',
+        #     'keyN': [0, 1, 2, 'n'],
+        # })
+        # my_expectation = (
+        #     "I got: "
+        #     # "{key0: value0, keyN: [0, 1, 2, n]}"
+        #     "{'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
+        # )
+        reality = text(a_dictionary)
+        my_expectation = f'I got: {a_dictionary}'
+        assert reality == my_expectation
 
 
     # Exceptions seen
@@ -1704,14 +1704,14 @@ the test passes.
   .. code-block:: python
     :lineno-start: 56
 
-        def test_passing_a_dictionary(self):
-            a_dictionary = {
-                'key0': 'value0',
-                'keyN': [0, 1, 2, 'n'],
-            }
-            reality = src.telephone.text(a_dictionary)
-            my_expectation = f'I got: {a_dictionary}'
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_dictionary():
+        a_dictionary = {
+            'key0': 'value0',
+            'keyN': [0, 1, 2, 'n'],
+        }
+        reality = text(a_dictionary)
+        my_expectation = f'I got: {a_dictionary}'
+        assert reality == my_expectation
 
 
     # Exceptions seen
@@ -1721,11 +1721,11 @@ the test passes.
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit --all --message 'add test_passing_a_dictionary'
+    git commit -am 'add test_passing_a_dictionary'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass a dictionary from a test to a function<test_passing_a_dictionary>`.
+:ref:`I can pass a dictionary as input to a function<test_passing_a_dictionary>`.
 
 ----
 
@@ -1733,7 +1733,7 @@ the test passes.
 test_passing_a_class
 *********************************************************************************
 
-Can I pass an :ref:`object<everything is an object>` from a test to a :ref:`function<what is a function?>`?
+Can I pass any :ref:`object<everything is an object>` as input to a :ref:`function<what is a function?>`?
 
 ----
 
@@ -1748,22 +1748,21 @@ Can I pass an :ref:`object<everything is an object>` from a test to a :ref:`func
 * I add a failing test to see what happens when I pass a :ref:`class <what is a class?>` from a test to the ``text`` :ref:`function<what is a function?>`, in ``test_telephone.py``
 
   .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 10-13
+    :lineno-start: 44
+    :emphasize-lines: 11-12
 
-        def test_passing_a_dictionary(self):
-            a_dictionary = {
-                'key0': 'value0',
-                'keyN': [0, 1, 2, 'n'],
-            }
-            reality = src.telephone.text(a_dictionary)
-            my_expectation = f'I got: {a_dictionary}'
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_dictionary():
+        a_dictionary = {
+            'key0': 'value0',
+            'keyN': [0, 1, 2, 'n'],
+        }
+        reality = text(a_dictionary)
+        my_expectation = f'I got: {a_dictionary}'
+        assert reality == my_expectation
 
-        def test_passing_a_class(self):
-            reality = src.telephone.text(object)
-            my_expectation = 'I got: object'
-            self.assertEqual(reality, my_expectation)
+
+    def test_passing_a_class():
+        assert text(object) == 'I got: object'
 
 
     # Exceptions seen
@@ -1772,10 +1771,10 @@ Can I pass an :ref:`object<everything is an object>` from a test to a :ref:`func
 
   .. code-block:: python
 
-    AssertionError: "I got: <class 'object'>"
-                 != 'I got:         object'
+    E       assert "I got: <class 'object'>"
+                == 'I got: object'
 
-  :ref:`object<everything is an object>` is the :ref:`mother class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from, and :ref:`everything in Python is an object<everything is an object>`
+  :ref:`object<everything is an object>` is the :ref:`mother class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from, and :ref:`everything in Python is an object<everything is an object>`.
 
 ----
 
@@ -1788,20 +1787,26 @@ Can I pass an :ref:`object<everything is an object>` from a test to a :ref:`func
 I change my expectation to match reality
 
 .. code-block:: python
-  :lineno-start: 65
-  :emphasize-lines: 3-4
+  :lineno-start: 54
+  :emphasize-lines: 2-3
   :emphasize-text: " '
 
-      def test_passing_a_class(self):
-          reality = src.telephone.text(object)
-          # my_expectation = 'I got: object'
-          my_expectation = "I got: <class 'object'>"
-          self.assertEqual(reality, my_expectation)
+  def test_passing_a_class():
+      # assert text(object) == 'I got: object'
+      assert text(object) == "I got: <class 'object'>"
 
 
   # Exceptions seen
 
-the test passes.
+the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+
+.. code-block:: python
+
+  text(object)
+      text(the_input)
+          the_input = object
+          return f'I got: {the_input       }'
+          return  "I got:  <class 'object'> "
 
 ----
 
@@ -1811,125 +1816,16 @@ the test passes.
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>` with the ``TestTelephone`` :ref:`class<what is a class?>` to ``test_passing_a_class`` in ``test_telephone.py``
-
-  .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 7-9
-
-        def test_passing_a_class(self):
-            reality = src.telephone.text(object)
-            # my_expectation = 'I got: object'
-            my_expectation = "I got: <class 'object'>"
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(TestTelephone)
-            my_expectation = "I got: <class 'object'>"
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError:
-        "I got: <class 'tests.test_telephone.TestTelephone'>"
-     != "I got: <class 'object'>"
-
-* I change my expectation to match reality
-
-  .. code-block:: python
-    :lineno-start: 71
-    :emphasize-lines: 2-6
-    :emphasize-text: '
-
-            reality = src.telephone.text(TestTelephone)
-            # my_expectation = "I got: <class 'object'>"
-            my_expectation = (
-                "I got: <class"
-                f" 'tests.test_telephone.TestTelephone'>"
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the test passes. What does ``tests.test_telephone.TestTelephone`` point to?
-
-  - ``tests`` is the folder_
-  - ``test_telephone`` is ``test_telephone.py`` in the ``tests`` folder_
-  - ``TestTelephone`` is the :ref:`class (object)<what is a class?>` that is defined on line 5 of ``test_telephone.py`` in the ``tests`` folder_
-
-* I add another :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 71
-    :emphasize-lines: 9-11
-
-            reality = src.telephone.text(TestTelephone)
-            # my_expectation = "I got: <class 'object'>"
-            my_expectation = (
-                "I got: <class"
-                f" 'tests.test_telephone.TestTelephone'>"
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(self)
-            my_expectation = "I got: self"
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError:
-        'I got: test_passing_a_class (
-            tests.test_telephone
-                 .TestTelephone.test_passing_a_class
-        )'
-        != 'I got: self'
-
-* I change my expectation to match reality
-
-  .. code-block:: python
-    :lineno-start: 79
-    :emphasize-lines: 2-7
-
-            reality = src.telephone.text(self)
-            # my_expectation = "I got: self"
-            my_expectation = (
-                "I got: test_passing_a_class"
-                " (tests.test_telephone.TestTelephone"
-                ".test_passing_a_class)"
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`bool (the class for booleans)<what are booleans?>`
 
   .. code-block:: python
-    :lineno-start: 79
-    :emphasize-lines: 10-12
+    :lineno-start: 54
+    :emphasize-lines: 4
 
-            reality = src.telephone.text(self)
-            # my_expectation = "I got: self"
-            my_expectation = (
-                "I got: test_passing_a_class"
-                " (tests.test_telephone.TestTelephone"
-                ".test_passing_a_class)"
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(bool)
-            my_expectation = 'I got: bool'
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_class():
+        # assert text(object) == 'I got: object'
+        assert text(object) == "I got: <class 'object'>"
+        assert text(bool) == 'I got: bool'
 
 
     # Exceptions seen
@@ -1938,18 +1834,19 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: "I got: <class 'bool'>" != 'I got: bool'
+    E       assert "I got: <class 'bool'>" == 'I got: bool'
 
 * I change my expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 88
-    :emphasize-lines: 2-3
+    :lineno-start: 54
+    :emphasize-lines: 4-5
 
-            reality = src.telephone.text(bool)
-            # my_expectation = 'I got: bool'
-            my_expectation = "I got: <class 'bool'>"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_class():
+        # assert text(object) == 'I got: object'
+        assert text(object) == "I got: <class 'object'>"
+        # assert text(bool) == 'I got: bool'
+        assert text(bool) == "I got: <class 'bool'>"
 
 
     # Exceptions seen
@@ -1959,17 +1856,15 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<what is a class?>` for whole numbers without decimals)
 
   .. code-block:: python
-    :lineno-start: 88
-    :emphasize-lines: 6-8
+    :lineno-start: 54
+    :emphasize-lines: 6
 
-            reality = src.telephone.text(bool)
-            # my_expectation = 'I got: bool'
-            my_expectation = "I got: <class 'bool'>"
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(int)
-            my_expectation = "I got: int"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_class():
+        # assert text(object) == 'I got: object'
+        assert text(object) == "I got: <class 'object'>"
+        # assert text(bool) == 'I got: bool'
+        assert text(bool) == "I got: <class 'bool'>"
+        assert text(int) == 'I got: int'
 
 
     # Exceptions seen
@@ -1978,38 +1873,41 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: "I got: <class 'int'>" != 'I got: int'
+    E       assert "I got: <class 'int'>" == 'I got: int'
 
 * I change my expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 93
-    :emphasize-lines: 2-3
+    :lineno-start: 54
+    :emphasize-lines: 6-7
 
-            reality = src.telephone.text(int)
-            # my_expectation = "I got: int"
-            my_expectation = "I got: <class 'int'>"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_class():
+        # assert text(object) == 'I got: object'
+        assert text(object) == "I got: <class 'object'>"
+        # assert text(bool) == 'I got: bool'
+        assert text(bool) == "I got: <class 'bool'>"
+        # assert text(int) == "I got: int"
+        assert text(int) == "I got: <class 'int'>"
 
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<what is a class?>` for binary floating point decimal numbers)
 
   .. code-block:: python
-    :lineno-start: 93
-    :emphasize-lines: 6-8
+    :lineno-start: 54
+    :emphasize-lines: 8
 
-            reality = src.telephone.text(int)
-            # my_expectation = 'I got: int'
-            my_expectation = "I got: <class 'int'>"
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(float)
-            my_expectation = "I got: float"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_class():
+        # assert text(object) == 'I got: object'
+        assert text(object) == "I got: <class 'object'>"
+        # assert text(bool) == 'I got: bool'
+        assert text(bool) == "I got: <class 'bool'>"
+        # assert text(int) == "I got: int"
+        assert text(int) == "I got: <class 'int'>"
+        assert text(float) == 'I got: float'
 
 
     # Exceptions seen
@@ -2018,38 +1916,45 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: "I got: <class 'float'>" != 'I got: float'
+    E       assert "I got: <class 'float'>" == 'I got: float'
 
 * I change my expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 98
-    :emphasize-lines: 2-3
+    :lineno-start: 54
+    :emphasize-lines: 8-9
 
-            reality = src.telephone.text(float)
-            # my_expectation = "I got: float"
-            my_expectation = "I got: <class 'float'>"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_class():
+        # assert text(object) == 'I got: object'
+        assert text(object) == "I got: <class 'object'>"
+        # assert text(bool) == 'I got: bool'
+        assert text(bool) == "I got: <class 'bool'>"
+        # assert text(int) == "I got: int"
+        assert text(int) == "I got: <class 'int'>"
+        # assert text(float) == 'I got: float'
+        assert text(float) == "I got: <class 'float'>"
 
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for anything in :ref:`quotes`)
 
   .. code-block:: python
-    :lineno-start: 98
-    :emphasize-lines: 6-8
+    :lineno-start: 54
+    :emphasize-lines: 10
 
-            reality = src.telephone.text(float)
-            # my_expectation = "I got: float"
-            my_expectation = "I got: <class 'float'>"
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(str)
-            my_expectation = "I got: str"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_class():
+        # assert text(object) == 'I got: object'
+        assert text(object) == "I got: <class 'object'>"
+        # assert text(bool) == 'I got: bool'
+        assert text(bool) == "I got: <class 'bool'>"
+        # assert text(int) == "I got: int"
+        assert text(int) == "I got: <class 'int'>"
+        # assert text(float) == 'I got: float'
+        assert text(float) == "I got: <class 'float'>"
+        assert text(str) == 'I got: str'
 
 
     # Exceptions seen
@@ -2058,38 +1963,49 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: "I got: <class 'str'>" != 'I got: str'
+    E       assert "I got: <class 'str'>" == 'I got: str'
 
 * I change my expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 103
-    :emphasize-lines: 2-3
+    :lineno-start: 54
+    :emphasize-lines: 10-11
 
-            reality = src.telephone.text(str)
-            # my_expectation = "I got: str"
-            my_expectation = "I got: <class 'str'>"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_class():
+        # assert text(object) == 'I got: object'
+        assert text(object) == "I got: <class 'object'>"
+        # assert text(bool) == 'I got: bool'
+        assert text(bool) == "I got: <class 'bool'>"
+        # assert text(int) == "I got: int"
+        assert text(int) == "I got: <class 'int'>"
+        # assert text(float) == 'I got: float'
+        assert text(float) == "I got: <class 'float'>"
+        # assert text(str) == 'I got: str'
+        assert text(str) == "I got: <class 'str'>"
 
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for anything in parentheses ``( )`` separated by a comma)
 
   .. code-block:: python
-    :lineno-start: 103
-    :emphasize-lines: 6-8
+    :lineno-start: 54
+    :emphasize-lines: 12
 
-            reality = src.telephone.text(str)
-            # my_expectation = "I got: str"
-            my_expectation = "I got: <class 'str'>"
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(tuple)
-            my_expectation = "I got: tuple"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_class():
+        # assert text(object) == 'I got: object'
+        assert text(object) == "I got: <class 'object'>"
+        # assert text(bool) == 'I got: bool'
+        assert text(bool) == "I got: <class 'bool'>"
+        # assert text(int) == "I got: int"
+        assert text(int) == "I got: <class 'int'>"
+        # assert text(float) == 'I got: float'
+        assert text(float) == "I got: <class 'float'>"
+        # assert text(str) == 'I got: str'
+        assert text(str) == "I got: <class 'str'>"
+        assert text(tuple) == 'I got: tuple'
 
 
     # Exceptions seen
@@ -2098,36 +2014,53 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: "I got: <class 'tuple'>" != 'I got: tuple'
+    E       assert "I got: <class 'tuple'>" == 'I got: tuple'
 
 * I change my expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 108
-    :emphasize-lines: 2-3
+    :lineno-start: 54
+    :emphasize-lines: 12-13
 
-            reality = src.telephone.text(tuple)
-            # my_expectation = "I got: tuple"
-            my_expectation = "I got: <class 'tuple'>"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_class():
+        # assert text(object) == 'I got: object'
+        assert text(object) == "I got: <class 'object'>"
+        # assert text(bool) == 'I got: bool'
+        assert text(bool) == "I got: <class 'bool'>"
+        # assert text(int) == "I got: int"
+        assert text(int) == "I got: <class 'int'>"
+        # assert text(float) == 'I got: float'
+        assert text(float) == "I got: <class 'float'>"
+        # assert text(str) == 'I got: str'
+        assert text(str) == "I got: <class 'str'>"
+        # assert text(tuple) == 'I got: tuple'
+        assert text(tuple) == "I got: <class 'tuple'>"
 
 
     # Exceptions seen
+
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for anything in square brackets '[ ]')<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 108
-    :emphasize-lines: 6-8
+    :lineno-start: 54
+    :emphasize-lines: 14
 
-            reality = src.telephone.text(tuple)
-            # my_expectation = "I got: tuple"
-            my_expectation = "I got: <class 'tuple'>"
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(list)
-            my_expectation = "I got: list"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_class():
+        # assert text(object) == 'I got: object'
+        assert text(object) == "I got: <class 'object'>"
+        # assert text(bool) == 'I got: bool'
+        assert text(bool) == "I got: <class 'bool'>"
+        # assert text(int) == "I got: int"
+        assert text(int) == "I got: <class 'int'>"
+        # assert text(float) == 'I got: float'
+        assert text(float) == "I got: <class 'float'>"
+        # assert text(str) == 'I got: str'
+        assert text(str) == "I got: <class 'str'>"
+        # assert text(tuple) == 'I got: tuple'
+        assert text(tuple) == "I got: <class 'tuple'>"
+        assert text(list) == 'I got: list'
 
 
     # Exceptions seen
@@ -2136,38 +2069,57 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: "I got: <class 'list'>" != 'I got: list'
+    E       assert "I got: <class 'tuple'>" == 'I got: tuple'
 
 * I change my expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 113
-    :emphasize-lines: 2-3
+    :lineno-start: 54
+    :emphasize-lines: 14-15
 
-            reality = src.telephone.text(list)
-            # my_expectation = "I got: list"
-            my_expectation = "I got: <class 'list'>"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_class():
+        # assert text(object) == 'I got: object'
+        assert text(object) == "I got: <class 'object'>"
+        # assert text(bool) == 'I got: bool'
+        assert text(bool) == "I got: <class 'bool'>"
+        # assert text(int) == "I got: int"
+        assert text(int) == "I got: <class 'int'>"
+        # assert text(float) == 'I got: float'
+        assert text(float) == "I got: <class 'float'>"
+        # assert text(str) == 'I got: str'
+        assert text(str) == "I got: <class 'str'>"
+        # assert text(tuple) == 'I got: tuple'
+        assert text(tuple) == "I got: <class 'tuple'>"
+        # assert text(list) == 'I got: list'
+        assert text(list) == "I got: <class 'list'>"
 
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
 
   .. code-block:: python
-    :lineno-start: 113
-    :emphasize-lines: 6-8
+    :lineno-start: 54
+    :emphasize-lines: 16
 
-            reality = src.telephone.text(list)
-            # my_expectation = "I got: list"
-            my_expectation = "I got: <class 'list'>"
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(set)
-            my_expectation = "I got: set"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_class():
+        # assert text(object) == 'I got: object'
+        assert text(object) == "I got: <class 'object'>"
+        # assert text(bool) == 'I got: bool'
+        assert text(bool) == "I got: <class 'bool'>"
+        # assert text(int) == "I got: int"
+        assert text(int) == "I got: <class 'int'>"
+        # assert text(float) == 'I got: float'
+        assert text(float) == "I got: <class 'float'>"
+        # assert text(str) == 'I got: str'
+        assert text(str) == "I got: <class 'str'>"
+        # assert text(tuple) == 'I got: tuple'
+        assert text(tuple) == "I got: <class 'tuple'>"
+        # assert text(list) == 'I got: list'
+        assert text(list) == "I got: <class 'list'>"
+        assert text(set) == 'I got: set'
 
 
     # Exceptions seen
@@ -2176,38 +2128,61 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: "I got: <class 'set'>" != 'I got: set'
+    E       assert "I got: <class 'set'>" == 'I got: set'
 
 * I change my expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 118
-    :emphasize-lines: 2-3
+    :lineno-start: 54
+    :emphasize-lines: 16-17
 
-            reality = src.telephone.text(set)
-            # my_expectation = "I got: set"
-            my_expectation = "I got: <class 'set'>"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_class():
+        # assert text(object) == 'I got: object'
+        assert text(object) == "I got: <class 'object'>"
+        # assert text(bool) == 'I got: bool'
+        assert text(bool) == "I got: <class 'bool'>"
+        # assert text(int) == "I got: int"
+        assert text(int) == "I got: <class 'int'>"
+        # assert text(float) == 'I got: float'
+        assert text(float) == "I got: <class 'float'>"
+        # assert text(str) == 'I got: str'
+        assert text(str) == "I got: <class 'str'>"
+        # assert text(tuple) == 'I got: tuple'
+        assert text(tuple) == "I got: <class 'tuple'>"
+        # assert text(list) == 'I got: list'
+        assert text(list) == "I got: <class 'list'>"
+        # assert text(set) == 'I got: set'
+        assert text(set) == "I got: <class 'set'>"
 
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 118
-    :emphasize-lines: 6-8
+    :lineno-start: 54
+    :emphasize-lines: 18
 
-            reality = src.telephone.text(set)
-            # my_expectation = "I got: set"
-            my_expectation = "I got: <class 'set'>"
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(dict)
-            my_expectation = "I got: dict"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_class():
+        # assert text(object) == 'I got: object'
+        assert text(object) == "I got: <class 'object'>"
+        # assert text(bool) == 'I got: bool'
+        assert text(bool) == "I got: <class 'bool'>"
+        # assert text(int) == "I got: int"
+        assert text(int) == "I got: <class 'int'>"
+        # assert text(float) == 'I got: float'
+        assert text(float) == "I got: <class 'float'>"
+        # assert text(str) == 'I got: str'
+        assert text(str) == "I got: <class 'str'>"
+        # assert text(tuple) == 'I got: tuple'
+        assert text(tuple) == "I got: <class 'tuple'>"
+        # assert text(list) == 'I got: list'
+        assert text(list) == "I got: <class 'list'>"
+        # assert text(set) == 'I got: set'
+        assert text(set) == "I got: <class 'set'>"
+        assert text(dict) == 'I got: dict'
 
 
     # Exceptions seen
@@ -2216,80 +2191,62 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: "I got: <class 'dict'>" != 'I got: dict'
+    E       assert "I got: <class 'dict'>" == 'I got: dict'
 
 * I change my expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 123
-    :emphasize-lines: 2-3
+    :lineno-start: 54
+    :emphasize-lines: 18-19
 
-            reality = src.telephone.text(dict)
-            # my_expectation = "I got: dict"
-            my_expectation = "I got: <class 'dict'>"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_class():
+        # assert text(object) == 'I got: object'
+        assert text(object) == "I got: <class 'object'>"
+        # assert text(bool) == 'I got: bool'
+        assert text(bool) == "I got: <class 'bool'>"
+        # assert text(int) == "I got: int"
+        assert text(int) == "I got: <class 'int'>"
+        # assert text(float) == 'I got: float'
+        assert text(float) == "I got: <class 'float'>"
+        # assert text(str) == 'I got: str'
+        assert text(str) == "I got: <class 'str'>"
+        # assert text(tuple) == 'I got: tuple'
+        assert text(tuple) == "I got: <class 'tuple'>"
+        # assert text(list) == 'I got: list'
+        assert text(list) == "I got: <class 'list'>"
+        # assert text(set) == 'I got: set'
+        assert text(set) == "I got: <class 'set'>"
+        # assert text(dict) == 'I got: dict'
+        assert text(dict) == "I got: <class 'dict'>"
 
 
     # Exceptions seen
 
-  the test passes
+  the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+
+  .. code-block:: python
+
+    text(dict)
+        text(the_input)
+            the_input = dict
+            return f'I got: {the_input     }'
+            return  "I got:  <class 'dict'> "
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 54
 
-        def test_passing_a_class(self):
-            reality = src.telephone.text(object)
-            my_expectation = "I got: <class 'object'>"
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(TestTelephone)
-            my_expectation = (
-                "I got: <class"
-                f" 'tests.test_telephone.TestTelephone'>"
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(self)
-            my_expectation = (
-                "I got: test_passing_a_class"
-                " (tests.test_telephone.TestTelephone"
-                ".test_passing_a_class)"
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(bool)
-            my_expectation = "I got: <class 'bool'>"
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(int)
-            my_expectation = "I got: <class 'int'>"
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(float)
-            my_expectation = "I got: <class 'float'>"
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(str)
-            my_expectation = "I got: <class 'str'>"
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(tuple)
-            my_expectation = "I got: <class 'tuple'>"
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(list)
-            my_expectation = "I got: <class 'list'>"
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(set)
-            my_expectation = "I got: <class 'set'>"
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(dict)
-            my_expectation = "I got: <class 'dict'>"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_class():
+        assert text(object) == "I got: <class 'object'>"
+        assert text(bool) == "I got: <class 'bool'>"
+        assert text(int) == "I got: <class 'int'>"
+        assert text(float) == "I got: <class 'float'>"
+        assert text(str) == "I got: <class 'str'>"
+        assert text(tuple) == "I got: <class 'tuple'>"
+        assert text(list) == "I got: <class 'list'>"
+        assert text(set) == "I got: <class 'set'>"
+        assert text(dict) == "I got: <class 'dict'>"
 
 
     # Exceptions seen
@@ -2299,11 +2256,11 @@ the test passes.
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_passing_a_class'
+    git commit --all --message 'add test_passing_a_class'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass an object from a test to a function<test_passing_a_class>`.
+:ref:`I can pass any object as input to a function<test_passing_a_class>`.
 
 ----
 

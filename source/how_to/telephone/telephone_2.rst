@@ -719,7 +719,7 @@ what is string interpolation?
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass a string from a test to a function<test_passing_a_string>`.
+:ref:`I can pass a string as input to a function<test_passing_a_string>`.
 
 ----
 
@@ -826,7 +826,7 @@ the test passes.
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass None from a test to a function<test_passing_none>`.
+:ref:`I can pass None as input to a function<test_passing_none>`.
 
 ----
 
@@ -972,7 +972,7 @@ the test passes.
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass booleans from a test to a function<test_passing_booleans>`.
+:ref:`I can pass booleans as input to a function<test_passing_booleans>`.
 
 ----
 
@@ -1110,7 +1110,7 @@ the test passes.
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass an integer from a test to a function<test_passing_an_integer>`.
+:ref:`I can pass an integer as input to a function<test_passing_an_integer>`.
 
 ----
 
@@ -1249,7 +1249,7 @@ the test passes.
   the terminal_ shows a summary of the changes then goes back to the command line.
 
 
-:ref:`I can pass a float from a test to a function<test_passing_a_float>`.
+:ref:`I can pass a float as input to a function<test_passing_a_float>`.
 
 ----
 
@@ -1390,7 +1390,7 @@ the test passes.
   the terminal_ shows a summary of the changes then goes back to the command line.
 
 
-:ref:`I can pass a tuple from a test to a function<test_passing_a_tuple>`.
+:ref:`I can pass a tuple as input to a function<test_passing_a_tuple>`.
 
 ----
 
@@ -1531,7 +1531,7 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass a list from a test to a function<test_passing_a_list>`.
+:ref:`I can pass a list as input to a function<test_passing_a_list>`.
 
 ----
 
@@ -1714,7 +1714,7 @@ the test passes.
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass a dictionary from a test to a function<test_passing_a_dictionary>`.
+:ref:`I can pass a dictionary as input to a function<test_passing_a_dictionary>`.
 
 ----
 
@@ -2292,7 +2292,7 @@ the test passes.
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass an object from a test to a function<test_passing_a_class>`.
+:ref:`I can pass an object as input to a function<test_passing_a_class>`.
 
 ----
 

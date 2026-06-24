@@ -3019,7 +3019,7 @@ I can add more :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pa
       'another_key': 'another value',
       'one_more_key': 'one more value',
       'magic_key': 'magic value',
-      'keyN': 'valueN',
+      'keyN': [0, 1, 2, 'n'],
   }
 
 sets_ do NOT have key-value pairs.
