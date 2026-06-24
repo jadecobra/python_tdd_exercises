@@ -287,7 +287,7 @@ start the project
 test_passing_none
 *********************************************************************************
 
-I can pass :ref:`None (the simplest object)<what is None?>` from a test to a :ref:`function<what is a function?>`
+I can pass :ref:`None (the simplest object)<what is None?>` from a test to a :ref:`function<what is a function?>`?
 
 ----
 
@@ -710,7 +710,7 @@ how to write an f-string
 test_passing_an_integer
 *********************************************************************************
 
-I can pass an integer_ (a whole number without decimals) from a test to a :ref:`function<what is a function?>`.
+Can I pass an integer_ (a whole number without decimals) from a test to a :ref:`function<what is a function?>`?.
 
 ----
 
@@ -845,7 +845,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 test_passing_a_float
 *********************************************************************************
 
-I can pass a float_ (binary floating point decimal number) from a test to a :ref:`function<what is a function?>`.
+Can I pass a float_ (binary floating point decimal number) from a test to a :ref:`function<what is a function?>`?.
 
 ----
 
@@ -980,7 +980,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 test_passing_a_string
 *********************************************************************************
 
-I can pass a string_ from a test to a :ref:`function<what is a function?>`.
+Can I pass a string_ from a test to a :ref:`function<what is a function?>`?.
 
 ----
 
@@ -1114,7 +1114,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 test_passing_a_tuple
 *********************************************************************************
 
-I can pass a tuple_ (anything in parentheses ``( )`` separated by a comma) from a test to a :ref:`function<what is a function?>`
+Can I pass a tuple_ (anything in parentheses ``( )`` separated by a comma) from a test to a :ref:`function<what is a function?>`?
 
 ----
 
@@ -1197,7 +1197,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :emphasize-lines: 3-4
 
     def test_passing_a_tuple():
-        a_tuple = ()
+        a_tuple = (0, 1, 2, 'n')
         # assert text((0, 1, 2, 'n')) == 'I got: (0, 1, 2, 'n')'
         assert text((0, 1, 2, 'n')) == "I got: (0, 1, 2, 'n')"
 
@@ -1211,7 +1211,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :emphasize-lines: 4-5
 
     def test_passing_a_tuple():
-        a_tuple = ()
+        a_tuple = (0, 1, 2, 'n')
         # assert text((0, 1, 2, 'n')) == 'I got: (0, 1, 2, 'n')'
         # assert text((0, 1, 2, 'n')) == "I got: (0, 1, 2, 'n')"
         assert text(a_tuple) == f'I got: {a_tuple}'
@@ -1224,13 +1224,11 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I remove the comments
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 29
 
-        def test_passing_a_tuple(self):
-            a_tuple = (0, 1, 2, 'n')
-            reality = src.telephone.text(a_tuple)
-            my_expectation = f"I got: {a_tuple}"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_tuple():
+        a_tuple = (0, 1, 2, 'n')
+        assert text(a_tuple) == f'I got: {a_tuple}'
 
 
     # Exceptions seen
@@ -1244,7 +1242,6 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-
 :ref:`I can pass a tuple from a test to a function<test_passing_a_tuple>`.
 
 ----
@@ -1253,7 +1250,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 test_passing_a_list
 *********************************************************************************
 
-I can pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) from a test to a :ref:`function<what is a function?>`
+Can I pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) from a test to a :ref:`function?<what is a function?>`
 
 ----
 
@@ -1394,7 +1391,7 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
 test_passing_a_dictionary
 *********************************************************************************
 
-I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) from a test to a :ref:`function<what is a function?>`
+Can I pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) from a test to a :ref:`function<what is a function?>`?
 
 ----
 
@@ -1577,7 +1574,7 @@ the test passes.
 test_passing_a_class
 *********************************************************************************
 
-I can pass an :ref:`object<everything is an object>` from a test to a :ref:`function<what is a function?>`
+Can I pass an :ref:`object<everything is an object>` from a test to a :ref:`function<what is a function?>`?
 
 ----
 
