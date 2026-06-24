@@ -827,6 +827,280 @@ the test passes.
 
 ----
 
+* I comment out the call to ``jane`` in :ref:`test_jane` because I no longer need it since the ``factory`` :ref:`function<what is a function?>` does the same thing
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 2
+
+    def test_jane():
+        # assert jane() == 'jane, doe, F, 1991'
+
+        reality = factory(
+            first_name='jane',
+            last_name='doe',
+            sex='M',
+            year_of_birth=1991,
+        )
+        my_expectation = 'jane, doe, F, 1991'
+        assert reality == my_expectation
+
+
+    def test_jane():
+
+* I add a :ref:`variable<what is a variable?>` for ``'jane'`` to :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 3
+
+    def test_jane():
+        # assert jane() == 'jane, doe, F, 1991'
+        first_name = 'jane'
+
+        reality = factory(
+            first_name='jane',
+            last_name='doe',
+            sex='M',
+            year_of_birth=1991,
+        )
+        my_expectation = 'jane, doe, F, 1991'
+        assert reality == my_expectation
+
+
+    def test_jane():
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'jane'``
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 6-7, 12-16
+
+    def test_jane():
+        # assert jane() == 'jane, doe, F, 1991'
+        first_name = 'jane'
+
+        reality = factory(
+            # first_name='jane',
+            first_name=first_name,
+            last_name='doe',
+            sex='M',
+            year_of_birth=1991,
+        )
+        # my_expectation = 'jane, doe, F, 1991'
+        my_expectation = (
+            f'{first_name}, doe,'
+            ' F, 1991'
+        )
+        assert reality == my_expectation
+
+
+    def test_jane():
+
+  the test is still green.
+
+* I add a :ref:`variable<what is a variable?>` for ``'doe'`` to :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 4
+
+    def test_jane():
+        # assert jane() == 'jane, doe, F, 1991'
+        first_name = 'jane'
+        last_name = 'doe'
+
+        reality = factory(
+            # first_name='jane',
+            first_name=first_name,
+            last_name='doe',
+            sex='M',
+            year_of_birth=1991,
+        )
+        # my_expectation = 'jane, doe, F, 1991'
+        my_expectation = (
+            f'{first_name}, doe,'
+            ' F, 1991'
+        )
+        assert reality == my_expectation
+
+
+    def test_jane():
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'doe'``
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 9-10, 16-17
+
+    def test_jane():
+        # assert jane() == 'jane, doe, F, 1991'
+        first_name = 'jane'
+        last_name = 'doe'
+
+        reality = factory(
+            # first_name='jane',
+            first_name=first_name,
+            # last_name='doe',
+            last_name=last_name,
+            sex='M',
+            year_of_birth=1991,
+        )
+        # my_expectation = 'jane, doe, F, 1991'
+        my_expectation = (
+            # f'{first_name}, doe,'
+            f'{first_name}, {last_name},'
+            ' F, 1991'
+        )
+        assert reality == my_expectation
+
+
+    def test_jane():
+
+  still green.
+
+* I add a :ref:`variable<what is a variable?>` for ``'F'`` to :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 5
+
+    def test_jane():
+        # assert jane() == 'jane, doe, F, 1991'
+        first_name = 'jane'
+        last_name = 'doe'
+        sex = 'M'
+
+        reality = factory(
+            # first_name='jane',
+            first_name=first_name,
+            # last_name='doe',
+            last_name=last_name,
+            sex='M',
+            year_of_birth=1991,
+        )
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'F'``
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 12-13, 20-21
+
+    def test_jane():
+        # assert jane() == 'jane, doe, F, 1991'
+        first_name = 'jane'
+        last_name = 'doe'
+        sex = 'M'
+
+        reality = factory(
+            # first_name='jane',
+            first_name=first_name,
+            # last_name='doe',
+            last_name=last_name,
+            # sex='M',
+            sex=sex,
+            year_of_birth=1991,
+        )
+        # my_expectation = 'jane, doe, F, 1991'
+        my_expectation = (
+            # f'{first_name}, doe,'
+            f'{first_name}, {last_name},'
+            # ' F, 1991'
+            f' {sex}, 1991'
+        )
+        assert reality == my_expectation
+
+
+    def test_jane():
+
+  green.
+
+* I add a :ref:`variable<what is a variable?>` for ``1991`` to :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 6
+
+    def test_jane():
+        # assert jane() == 'jane, doe, F, 1991'
+        first_name = 'jane'
+        last_name = 'doe'
+        sex = 'M'
+        year_of_birth = 1991
+
+        reality = factory(
+            # first_name='jane',
+            first_name=first_name,
+            # last_name='doe',
+            last_name=last_name,
+            # sex='M',
+            sex=sex,
+            year_of_birth=1991,
+        )
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``1991``
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 15-16, 23-24
+
+    def test_jane():
+        # assert jane() == 'jane, doe, F, 1991'
+        first_name = 'jane'
+        last_name = 'doe'
+        sex = 'M'
+        year_of_birth = 1991
+
+        reality = factory(
+            # first_name='jane',
+            first_name=first_name,
+            # last_name='doe',
+            last_name=last_name,
+            # sex='M',
+            sex=sex,
+            # year_of_birth=1991,
+            year_of_birth=year_of_birth,
+        )
+        # my_expectation = 'jane, doe, F, 1991'
+        my_expectation = (
+            # f'{first_name}, doe,'
+            f'{first_name}, {last_name},'
+            # ' F, 1991'
+            # f' {sex}, 1991'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+
+    def test_jane():
+
+  still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 46
+
+    def test_jane():
+        first_name = 'jane'
+        last_name = 'doe'
+        sex = 'M'
+        year_of_birth = 1991
+
+        reality = factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+
+    def test_jane():
 
 
 ----
