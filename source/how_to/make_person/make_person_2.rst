@@ -5,19 +5,12 @@
 .. include:: ../../links.rst
 
 #################################################################################
-how to make a person with strings
+how to make a person with f-strings
 #################################################################################
 
 ----
 
-I want to make a contact list of people. I can use strings_ to represent a person, for example
-
-* First Name
-* Last Name (Surname)
-* Sex
-* Year of Birth
-
-can be placed in a string_ (anything in :ref:`quotes`).
+Since I can pass :ref:`objects<what is a class?>` into a string_ with :ref:`f-strings<what is string interpolation?>`. I can write one :ref:`function<what is a function?>` that makes a person instead of making one :ref:`function<what is a function?>` for each person.
 
 ----
 
@@ -27,7 +20,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../../code/person/tests/test_person_1.py
+.. literalinclude:: ../../code/person/tests/test_person_w_fstrings.py
   :language: python
   :linenos:
 
@@ -66,7 +59,7 @@ open the project
 ----
 
 *********************************************************************************
-test_say_hello
+test_joe
 *********************************************************************************
 
 ----

@@ -20,7 +20,7 @@ functions that take input: tests
 
 the code from ``functions/tests/test_functions.py`` from :ref:`functions<functions that take input>`
 
-.. literalinclude:: functions/test_functions_2.py
+.. literalinclude:: functions/test_functions_w_input.py
   :language: python
   :linenos:
 
@@ -33,7 +33,7 @@ functions 3: tests
 
 the code from ``functions/tests/test_functions.py`` (after refactor) from :ref:`functions 3: use class attributes`
 
-.. literalinclude:: functions/test_functions_2.py
+.. literalinclude:: functions/test_functions_w_input.py
   :language: python
   :linenos:
 

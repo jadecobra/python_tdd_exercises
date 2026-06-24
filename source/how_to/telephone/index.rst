@@ -3291,7 +3291,7 @@ You now know:
 * :ref:`how to make functions that take input<functions that take input>`
 * :ref:`how to place values in strings<telephone>`
 
-:ref:`would you like to test using f-strings to make a person with one function?<how to make a person with f-strings>`
+:ref:`would you like to test making a person with f-strings?<how to make a person with f-strings>`
 
 ----
 
