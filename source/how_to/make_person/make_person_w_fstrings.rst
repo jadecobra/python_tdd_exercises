@@ -836,17 +836,7 @@ the test passes.
     def test_jane():
         # assert jane() == 'jane, doe, F, 1991'
 
-        reality = factory(
-            first_name='jane',
-            last_name='doe',
-            sex='M',
-            year_of_birth=1991,
-        )
-        my_expectation = 'jane, doe, F, 1991'
-        assert reality == my_expectation
-
-
-    def test_jane():
+        # reality = factory()
 
 * I add a :ref:`variable<what is a variable?>` for ``'jane'`` to :ref:`test_jane`
 
@@ -858,33 +848,26 @@ the test passes.
         # assert jane() == 'jane, doe, F, 1991'
         first_name = 'jane'
 
-        reality = factory(
-            first_name='jane',
-            last_name='doe',
-            sex='M',
-            year_of_birth=1991,
-        )
-        my_expectation = 'jane, doe, F, 1991'
-        assert reality == my_expectation
-
-
-    def test_jane():
+        # reality = factory()
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'jane'``
 
   .. code-block:: python
     :lineno-start: 46
-    :emphasize-lines: 6-7, 12-16
+    :emphasize-lines: 9-10, 15-19
 
     def test_jane():
         # assert jane() == 'jane, doe, F, 1991'
         first_name = 'jane'
 
+        # reality = factory()
+        # reality = factory('jane')
+        # reality = factory('jane', 'doe')
         reality = factory(
             # first_name='jane',
             first_name=first_name,
             last_name='doe',
-            sex='M',
+            sex='F',
             year_of_birth=1991,
         )
         # my_expectation = 'jane, doe, F, 1991'
@@ -895,7 +878,7 @@ the test passes.
         assert reality == my_expectation
 
 
-    def test_jane():
+    def test_john():
 
   the test is still green.
 
@@ -910,40 +893,28 @@ the test passes.
         first_name = 'jane'
         last_name = 'doe'
 
-        reality = factory(
-            # first_name='jane',
-            first_name=first_name,
-            last_name='doe',
-            sex='M',
-            year_of_birth=1991,
-        )
-        # my_expectation = 'jane, doe, F, 1991'
-        my_expectation = (
-            f'{first_name}, doe,'
-            ' F, 1991'
-        )
-        assert reality == my_expectation
-
-
-    def test_jane():
+        # reality = factory()
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'doe'``
 
   .. code-block:: python
     :lineno-start: 46
-    :emphasize-lines: 9-10, 16-17
+    :emphasize-lines: 12-13, 19-20
 
     def test_jane():
         # assert jane() == 'jane, doe, F, 1991'
         first_name = 'jane'
         last_name = 'doe'
 
+        # reality = factory()
+        # reality = factory('jane')
+        # reality = factory('jane', 'doe')
         reality = factory(
             # first_name='jane',
             first_name=first_name,
             # last_name='doe',
             last_name=last_name,
-            sex='M',
+            sex='F',
             year_of_birth=1991,
         )
         # my_expectation = 'jane, doe, F, 1991'
@@ -955,7 +926,7 @@ the test passes.
         assert reality == my_expectation
 
 
-    def test_jane():
+    def test_john():
 
   still green.
 
@@ -969,35 +940,31 @@ the test passes.
         # assert jane() == 'jane, doe, F, 1991'
         first_name = 'jane'
         last_name = 'doe'
-        sex = 'M'
+        sex = 'F'
 
-        reality = factory(
-            # first_name='jane',
-            first_name=first_name,
-            # last_name='doe',
-            last_name=last_name,
-            sex='M',
-            year_of_birth=1991,
-        )
+        # reality = factory()
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'F'``
 
   .. code-block:: python
     :lineno-start: 46
-    :emphasize-lines: 12-13, 20-21
+    :emphasize-lines: 15-16, 23-24
 
     def test_jane():
         # assert jane() == 'jane, doe, F, 1991'
         first_name = 'jane'
         last_name = 'doe'
-        sex = 'M'
+        sex = 'F'
 
+        # reality = factory()
+        # reality = factory('jane')
+        # reality = factory('jane', 'doe')
         reality = factory(
             # first_name='jane',
             first_name=first_name,
             # last_name='doe',
             last_name=last_name,
-            # sex='M',
+            # sex='F',
             sex=sex,
             year_of_birth=1991,
         )
@@ -1011,7 +978,7 @@ the test passes.
         assert reality == my_expectation
 
 
-    def test_jane():
+    def test_john():
 
   green.
 
@@ -1025,18 +992,10 @@ the test passes.
         # assert jane() == 'jane, doe, F, 1991'
         first_name = 'jane'
         last_name = 'doe'
-        sex = 'M'
+        sex = 'F'
         year_of_birth = 1991
 
-        reality = factory(
-            # first_name='jane',
-            first_name=first_name,
-            # last_name='doe',
-            last_name=last_name,
-            # sex='M',
-            sex=sex,
-            year_of_birth=1991,
-        )
+        # reality = factory()
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``1991``
 
@@ -1048,15 +1007,18 @@ the test passes.
         # assert jane() == 'jane, doe, F, 1991'
         first_name = 'jane'
         last_name = 'doe'
-        sex = 'M'
+        sex = 'F'
         year_of_birth = 1991
 
+        # reality = factory()
+        # reality = factory('jane')
+        # reality = factory('jane', 'doe')
         reality = factory(
             # first_name='jane',
             first_name=first_name,
             # last_name='doe',
             last_name=last_name,
-            # sex='M',
+            # sex='F',
             sex=sex,
             # year_of_birth=1991,
             year_of_birth=year_of_birth,
@@ -1072,7 +1034,7 @@ the test passes.
         assert reality == my_expectation
 
 
-    def test_jane():
+    def test_john():
 
   still green.
 
@@ -1084,7 +1046,7 @@ the test passes.
     def test_jane():
         first_name = 'jane'
         last_name = 'doe'
-        sex = 'M'
+        sex = 'F'
         year_of_birth = 1991
 
         reality = factory(
@@ -1100,7 +1062,7 @@ the test passes.
         assert reality == my_expectation
 
 
-    def test_jane():
+    def test_john():
 
 
 ----
