@@ -41,10 +41,10 @@ table of contents
   what is a module?<exceptions/ModuleNotFoundError>
   make_tdd/make_tdd_manually_2
   what is an assertion?<exceptions/AssertionError/index>
-  what is a function?<functions/index>
+  functions/index
   make a person with variables<how_to/make_person/index>
-  functions that take input<functions/2>
-  telephone<how_to/telephone/index>
+  functions/functions_2
+  how to pass values<how_to/telephone/index>
   make a person<how_to/make_person>
   classes/index
   what causes AttributeError?<exceptions/AttributeError>
@@ -52,14 +52,14 @@ table of contents
   what are booleans?<data_structures/booleans/index>
   truth table<truth_table/index>
   make a calculator<calculator/calculator_1/index>
-  make TDD project 2<make_tdd/make_tdd_automatically>
+  make TDD automatically<make_tdd/make_tdd_automatically>
   handling Exceptions<exceptions/exception_handling/index>
   exceptions/type_error/index
   data_structures/lists/index
   data_structures/dictionaries/index
   make TDD project 3<make_tdd/make_tdd_automatically_w_variables/index>
   questions the book answers<review>
-  make TDD project 1<make_tdd/make_tdd_manually>
+  make TDD manually<make_tdd/make_tdd_manually_1>
 
   connect the dots<dot_notation>
   exceptions/index
