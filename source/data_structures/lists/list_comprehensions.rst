@@ -29,7 +29,7 @@ list comprehensions
 what is a list comprehension?
 *********************************************************************************
 
-A `List Comprehension`_ is a simple way to make a :ref:`list <lists>` from an :ref:`iterable<what is an iterable?>` with one line
+A `List Comprehension`_ is a simple way to make a :ref:`list<what is a list?>` from an :ref:`iterable<what is an iterable?>` with one line
 
 ----
 

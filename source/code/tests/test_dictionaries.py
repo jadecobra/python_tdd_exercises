@@ -126,25 +126,25 @@ class TestDictionaries(unittest.TestCase):
 
     def test_items_returns_iterable_of_key_value_pairs_of_a_dictionary(self):
         a_dictionary = {
-            'key1': 'value1',
+            'key0': 'value0',
             'keyN': [0, 1, 2, 'n'],
         }
         self.assertEqual(
             list(a_dictionary.items()),
             [
-                ('key1', 'value1'),
+                ('key0', 'value0'),
                 ('keyN', [0, 1, 2, 'n']),
             ]
         )
 
     def test_keys_of_a_dictionary(self):
         a_dictionary = {
-            'key1': 'value1',
+            'key0': 'value0',
             'keyN': [0, 1, 2, 'n'],
         }
         self.assertEqual(
             list(a_dictionary.keys()),
-            ['key1', 'keyN']
+            ['key0', 'keyN']
         )
 
     def test_pop_removes_given_key_from_a_dictionary_and_returns_its_value(self):
@@ -164,14 +164,14 @@ class TestDictionaries(unittest.TestCase):
 
     def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
         a_dictionary = {
-            'key1': 'value1',
+            'key0': 'value0',
             'keyN': [0, 1, 2, 'n'],
         }
         self.assertEqual(
             a_dictionary.popitem(),
             ('keyN', [0, 1, 2, 'n'])
         )
-        self.assertEqual(a_dictionary, {'key1': 'value1'})
+        self.assertEqual(a_dictionary, {'key0': 'value0'})
 
     def test_setdefault_adds_given_key_to_a_dictionary(self):
         a_dictionary = {'key': 'value'}
@@ -209,13 +209,13 @@ class TestDictionaries(unittest.TestCase):
 
     def test_values_of_a_dictionary(self):
         a_dictionary = {
-            'key1': 'value1',
+            'key0': 'value0',
             'keyN': [0, 1, 2, 'n'],
         }
         self.assertEqual(
             list(a_dictionary.values()),
             [
-                'value1',
+                'value0',
                 [0, 1, 2, 'n'],
             ]
         )

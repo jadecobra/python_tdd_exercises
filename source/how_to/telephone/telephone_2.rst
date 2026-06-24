@@ -1410,7 +1410,7 @@ I can pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) 
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for a :ref:`list <lists>`
+* I add a test for a :ref:`list<what is a list?>`
 
   .. code-block:: python
     :lineno-start: 44
@@ -1539,7 +1539,7 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
 test_passing_a_dictionary
 *********************************************************************************
 
-I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) from a test to a :ref:`function<what is a function?>`
+I can pass a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas<what is a dictionary?>` from a test to a :ref:`function<what is a function?>`
 
 ----
 
@@ -1567,13 +1567,13 @@ I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces 
         def test_passing_a_dictionary(self):
             reality = src.telephone.text(
                 {
-                    'key1': 'value1',
+                    'key0': 'value0',
                     'keyN': [0, 1, 2, 'n'],
                 }
             )
             my_expectation = (
                 "I got: "
-                "{key1: value1, keyN: [0, 1, 2, n]}"
+                "{key0: value0, keyN: [0, 1, 2, n]}"
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1585,8 +1585,8 @@ I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces 
   .. code-block:: shell
 
     AssertionError:
-        "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
-     != 'I got: { key1:   value1 ,  keyN : [0, 1, 2,  n ]}'
+        "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
+     != 'I got: { key0:   value0 ,  keyN : [0, 1, 2,  n ]}'
 
 ----
 
@@ -1606,14 +1606,14 @@ I change ``my_expectation`` to match ``reality``
       def test_passing_a_dictionary(self):
           reality = src.telephone.text(
               {
-                  'key1': 'value1',
+                  'key0': 'value0',
                   'keyN': [0, 1, 2, 'n'],
               }
           )
           my_expectation = (
               "I got: "
-              # "{key1: value1, keyN: [0, 1, 2, n]}"
-              "{'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+              # "{key0: value0, keyN: [0, 1, 2, n]}"
+              "{'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
           )
           self.assertEqual(reality, my_expectation)
 
@@ -1638,19 +1638,19 @@ the test passes.
 
         def test_passing_a_dictionary(self):
             a_dictionary = {
-                'key1': 'value1',
+                'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
             reality = src.telephone.text(
                 {
-                    'key1': 'value1',
+                    'key0': 'value0',
                     'keyN': [0, 1, 2, 'n'],
                 }
             )
             my_expectation = (
                 "I got: "
-                # "{key1: value1, keyN: [0, 1, 2, n]}"
-                "{'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+                # "{key0: value0, keyN: [0, 1, 2, n]}"
+                "{'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1665,20 +1665,20 @@ the test passes.
 
         def test_passing_a_dictionary(self):
             a_dictionary = {
-                'key1': 'value1',
+                'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
             # reality = src.telephone.text(
             #     {
-            #         'key1': 'value1',
+            #         'key0': 'value0',
             #         'keyN': [0, 1, 2, 'n'],
             #     }
             # )
             reality = src.telephone.text(a_dictionary)
             # my_expectation = (
             #     "I got: "
-            #     # "{key1: value1, keyN: [0, 1, 2, n]}"
-            #     "{'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+            #     # "{key0: value0, keyN: [0, 1, 2, n]}"
+            #     "{'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
             # )
             my_expectation = f'I got: {a_dictionary}'
             self.assertEqual(reality, my_expectation)
@@ -1695,7 +1695,7 @@ the test passes.
 
         def test_passing_a_dictionary(self):
             a_dictionary = {
-                'key1': 'value1',
+                'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
             reality = src.telephone.text(a_dictionary)
@@ -1742,7 +1742,7 @@ I can pass an :ref:`object<everything is an object>` from a test to a :ref:`func
 
         def test_passing_a_dictionary(self):
             a_dictionary = {
-                'key1': 'value1',
+                'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
             reality = src.telephone.text(a_dictionary)
@@ -2183,7 +2183,7 @@ the test passes.
 
   the test passes
 
-* I add an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 118
@@ -2449,8 +2449,8 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     AssertionError:
         <class 'object'> != "I got: <class 'object'>"
     AssertionError:
-                 {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}
-      != "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+                 {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}
+      != "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
     AssertionError:
         1.234 != 'I got: 1.234'
     AssertionError:

@@ -406,7 +406,7 @@ use assertIsNotNone and assertIsNone
 
   the test passes because a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is not :ref:`None<what is None?>`.
 
-* I add :ref:`assertIsNone<one more way to test if something is None>` for a :ref:`dictionary (key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`
+* I add :ref:`assertIsNone<one more way to test if something is None>` for a :ref:`dictionary (key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 76
@@ -437,7 +437,7 @@ use assertIsNotNone and assertIsNone
 
         def test_assertion_error_w_false(self):
 
-  the test passes because a :ref:`dictionary (key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>` is not :ref:`None<what is None?>`.
+  the test passes because a :ref:`dictionary (key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>` is not :ref:`None<what is None?>`.
 
 * I remove the commented lines and :ref:`assertions<what is an assertion?>` that use :ref:`assertIsNot<another way to test if something is NOT the same object as None>`, :ref:`assertIs<another way to test if something is the same object as None>`, and basic `assert statements`_ from :ref:`test_assertion_error_w_none`
 

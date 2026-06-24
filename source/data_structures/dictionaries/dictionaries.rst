@@ -1826,7 +1826,7 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
 
         def test_items(self):
             a_dictionary = {
-                'key1': 'value1',
+                'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
             self.assertEqual(
@@ -1841,7 +1841,7 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [('key1', 'value1'), ('keyN', [0, 1, 2, 'n'])] != [('key', 'value')]
+    AssertionError: Lists differ: [('key0', 'value0'), ('keyN', [0, 1, 2, 'n'])] != [('key', 'value')]
 
 * I change the expectation to match
 
@@ -1852,7 +1852,7 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
             self.assertEqual(
                 list(a_dictionary.items()),
                 [
-                    ('key1', 'value1'),
+                    ('key0', 'value0'),
                     ('keyN', [0, 1, 2, 'n']),
                 ]
             )
@@ -1867,13 +1867,13 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
 
         def test_items_returns_iterable_of_key_value_pairs_of_a_dictionary(self):
             a_dictionary = {
-                'key1': 'value1',
+                'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
             self.assertEqual(
                 list(a_dictionary.items()),
                 [
-                    ('key1', 'value1'),
+                    ('key0', 'value0'),
                     ('keyN', [0, 1, 2, 'n']),
                 ]
             )
@@ -1889,7 +1889,7 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
             self.assertEqual(
                 list(a_dictionary.items()),
                 [
-                    ('key1', 'value1'),
+                    ('key0', 'value0'),
                     ('keyN', [0, 1, 2, 'n']),
                 ]
             )
@@ -1929,7 +1929,7 @@ I add a new test
               self.assertEqual(
                   list(a_dictionary.items()),
                   [
-                      ('key1', 'value1'),
+                      ('key0', 'value0'),
                       ('keyN', [0, 1, 2, 'n']),
                   ]
               )
@@ -2043,7 +2043,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
         def test_keys(self):
             a_dictionary = {
-                'key1': 'value1',
+                'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
             self.assertEqual(
@@ -2055,7 +2055,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
   .. code-block:: python
 
-    AssertionError: Lists differ: ['key1', 'keyN'] != ['key']
+    AssertionError: Lists differ: ['key0', 'keyN'] != ['key']
 
 * I change the expectation to match
 
@@ -2065,7 +2065,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
             self.assertEqual(
                 list(a_dictionary.keys()),
-                ['key1', 'keyN']
+                ['key0', 'keyN']
             )
 
   the test passes.
@@ -2078,12 +2078,12 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
         def test_keys_of_a_dictionary(self):
             a_dictionary = {
-                'key1': 'value1',
+                'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
             self.assertEqual(
                 list(a_dictionary.keys()),
-                ['key1', 'keyN']
+                ['key0', 'keyN']
             )
 
 
@@ -2096,7 +2096,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
             self.assertEqual(
                 list(a_dictionary.keys()),
-                ['key1', 'keyN']
+                ['key0', 'keyN']
             )
 
 
@@ -2130,7 +2130,7 @@ I wonder if the `pop method`_ of :ref:`dictionaries<what is a dictionary?>` beha
 
           self.assertEqual(
               list(a_dictionary.keys()),
-              ['key1', 'keyN']
+              ['key0', 'keyN']
           )
 
       def test_pop(self):
@@ -2512,7 +2512,7 @@ the test passes.
 
         def test_popitem(self):
             a_dictionary = {
-                'key1': 'value1',
+                'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
             self.assertEqual(
@@ -2544,7 +2544,7 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: {'key1': 'value1'} != {'key': 'value'}
+    AssertionError: {'key0': 'value0'} != {'key': 'value'}
 
 * I change the value in the second :ref:`assertEqual method<another way to test if two things are Equal>` to match
 
@@ -2552,7 +2552,7 @@ the test passes.
     :lineno-start: 174
     :emphasize-lines: 1
 
-            self.assertEqual(a_dictionary, {'key1': 'value1'})
+            self.assertEqual(a_dictionary, {'key0': 'value0'})
 
   the test passes.
 
@@ -2564,14 +2564,14 @@ the test passes.
 
         def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
             a_dictionary = {
-                'key1': 'value1',
+                'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
             self.assertEqual(
                 a_dictionary.popitem(),
                 ('keyN', [0, 1, 2, 'n'])
             )
-            self.assertEqual(a_dictionary, {'key1': 'value1'})
+            self.assertEqual(a_dictionary, {'key0': 'value0'})
 
 
     'popitem',
@@ -2581,7 +2581,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 174
 
-            self.assertEqual(a_dictionary, {'key1': 'value1'})
+            self.assertEqual(a_dictionary, {'key0': 'value0'})
 
 
     'setdefault',
@@ -2610,7 +2610,7 @@ I add a test for the `setdefault method`_
   :lineno-start: 174
   :emphasize-lines: 3-5
 
-          self.assertEqual(a_dictionary, {'key1': 'value1'})
+          self.assertEqual(a_dictionary, {'key0': 'value0'})
 
       def test_setdefault(self):
           a_dictionary = {'key': 'value'}
@@ -3282,7 +3282,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
         def test_values(self):
             a_dictionary = {
-                'key1': 'value1',
+                'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
             self.assertEqual(
@@ -3294,7 +3294,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
   .. code-block:: python
 
-    AssertionError: Lists differ: ['value1', [0, 1, 2, 'n']] != ['value']
+    AssertionError: Lists differ: ['value0', [0, 1, 2, 'n']] != ['value']
 
 * I change the values in the expectation
 
@@ -3305,7 +3305,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
             self.assertEqual(
                 list(a_dictionary.values()),
                 [
-                    'value1',
+                    'value0',
                     [0, 1, 2, 'n'],
                 ]
             )
@@ -3320,13 +3320,13 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
         def test_values_of_a_dictionary(self):
             a_dictionary = {
-                'key1': 'value1',
+                'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
             self.assertEqual(
                 list(a_dictionary.values()),
                 [
-                    'value1',
+                    'value0',
                     [0, 1, 2, 'n'],
                 ]
             )
@@ -3342,7 +3342,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
             self.assertEqual(
                 list(a_dictionary.values()),
                 [
-                    'value1',
+                    'value0',
                     [0, 1, 2, 'n']
                 ]
             )
@@ -3377,7 +3377,7 @@ I add a test for getting the :ref:`value<test_values_of_a_dictionary>` of a :ref
           self.assertEqual(
               list(a_dictionary.values()),
               [
-                  'value1',
+                  'value0',
                   [0, 1, 2, 'n']
               ]
           )

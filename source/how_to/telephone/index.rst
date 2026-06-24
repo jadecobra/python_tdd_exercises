@@ -413,7 +413,7 @@ I can pass :ref:`None (the simplest object)<what is None?>` from a test to a :re
 
 ----
 
-* I remove the comments
+* I remove the commented lines
 
   .. code-block:: python
     :linenos:
@@ -1221,7 +1221,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the test is still green.
 
-* I remove the comments
+* I remove the commented lines
 
   .. code-block:: python
     :lineno-start: 29
@@ -1262,23 +1262,20 @@ Can I pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) 
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for a :ref:`list <lists>`
+* I add a test for a :ref:`list<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 7-10
+    :lineno-start: 29
+    :emphasize-lines: 6-7
     :emphasize-text: '
 
-        def test_passing_a_tuple(self):
-            a_tuple = (0, 1, 2, 'n')
-            reality = src.telephone.text(a_tuple)
-            my_expectation = f"I got: {a_tuple}"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_tuple():
+        a_tuple = (0, 1, 2, 'n')
+        assert text(a_tuple) == f'I got: {a_tuple}'
 
-        def test_passing_a_list(self):
-            reality = src.telephone.text([0, 1, 2, 'n'])
-            my_expectation = 'I got: [0, 1, 2, "n"]'
-            self.assertEqual(reality, my_expectation)
+
+    def test_passing_a_list():
+        assert text([0, 1, 2, 'n']) == 'I got: [0, 1, 2, "n"]'
 
 
     # Exceptions seen
@@ -1287,8 +1284,8 @@ Can I pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) 
 
   .. code-block:: python
 
-    AssertionError: "I got: [0, 1, 2, 'n']"
-                 != "I got: '[1, 2, 3, n]'"
+    assert "I got: [0, 1, 2, 'n']"
+        == 'I got: [0, 1, 2, "n"]'
 
 ----
 
@@ -1301,20 +1298,28 @@ Can I pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) 
 I change the :ref:`list<what is a list?>` in my expectation to match reality
 
 .. code-block:: python
-  :lineno-start: 50
-  :emphasize-lines: 3-4
+  :lineno-start: 34
+  :emphasize-lines: 2-3
   :emphasize-text: " '
 
-      def test_passing_a_list(self):
-          reality = src.telephone.text([0, 1, 2, 'n'])
-          # my_expectation = 'I got: [0, 1, 2, "n"]'
-          my_expectation = "I got: [0, 1, 2, 'n']"
-          self.assertEqual(reality, my_expectation)
+  def test_passing_a_list():
+      # assert text([0, 1, 2, 'n']) == 'I got: [0, 1, 2, "n"]'
+      assert text([0, 1, 2, 'n']) == "I got: [0, 1, 2, 'n']"
 
 
   # Exceptions seen
 
-the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what is a list?>` to a :ref:`single quote<quotes>` (``'``).
+the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+
+.. code-block:: python
+
+  text([0, 1, 2, 'n'])
+      text(the_input)
+          the_input = [0, 1, 2, 'n']
+          return f'I got: {the_input    }'
+          return  'I got:  [0, 1, 2, 'n']'
+
+Python_ changed the :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what is a list?>` to a :ref:`single quote<quotes>` (``'``).
 
 ----
 
@@ -1324,52 +1329,45 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
 
 ----
 
-* I add a :ref:`variable<what is a variable?>`
+* I add a :ref:`variable<what is a variable?>` for ``[0, 1, 2, 'n']``
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 34
     :emphasize-lines: 2
 
-        def test_passing_a_list(self):
-            a_list = [0, 1, 2, 'n']
-            reality = src.telephone.text([0, 1, 2, 'n'])
-            # my_expectation = 'I got: [0, 1, 2, "n"]'
-            my_expectation = "I got: [0, 1, 2, 'n']"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_list():
+        a_list = [0, 1, 2, 'n']
+        # assert text([0, 1, 2, 'n']) == 'I got: [0, 1, 2, "n"]'
+        assert text([0, 1, 2, 'n']) == "I got: [0, 1, 2, 'n']"
 
 
     # Exceptions seen
 
-* I use the :ref:`variable<what is a variable?>` with an `f-string`_ to remove repetition of the :ref:`list<what is a list?>`
+* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<what is string interpolation?>` to remove repetition of ``[0, 1, 2, 'n']``
 
   .. code-block:: python
-    :lineno-start: 50
-    :emphasize-lines: 3-4, 6-7
+    :lineno-start: 34
+    :emphasize-lines: 4-5
 
-        def test_passing_a_list(self):
-            a_list = [0, 1, 2, 'n']
-            # reality = src.telephone.text([0, 1, 2, 'n'])
-            reality = src.telephone.text(a_list)
-            # my_expectation = 'I got: [0, 1, 2, "n"]'
-            # my_expectation = "I got: [0, 1, 2, 'n']"
-            my_expectation = f"I got: {a_list}"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_list():
+        a_list = [0, 1, 2, 'n']
+        # assert text([0, 1, 2, 'n']) == 'I got: [0, 1, 2, "n"]'
+        # assert text([0, 1, 2, 'n']) == "I got: [0, 1, 2, 'n']"
+        assert text(a_list) == f'I got: {a_list}'
 
 
     # Exceptions seen
 
   the test is still green.
 
-* I remove the comments
+* I remove the commented lines
 
   .. code-block:: python
     :lineno-start: 50
 
-        def test_passing_a_list(self):
-            a_list = [0, 1, 2, 'n']
-            reality = src.telephone.text(a_list)
-            my_expectation = f"I got: {a_list}"
-            self.assertEqual(reality, my_expectation)
+    def test_passing_a_list():
+        a_list = [0, 1, 2, 'n']
+        assert text(a_list) == f'I got: {a_list}'
 
 
     # Exceptions seen
@@ -1388,10 +1386,171 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
 ----
 
 *********************************************************************************
+test_passing_a_set
+*********************************************************************************
+
+Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) from a test to a :ref:`function?<what is a function?>`
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
+* I add a test for a set_
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 6-7
+    :emphasize-text: '
+
+    def test_passing_a_list():
+        a_list = [0, 1, 2, 'n']
+        assert text(a_list) == f'I got: {a_list}'
+
+
+    def test_passing_a_set():
+        assert text({0, 1, 2, 'n'}) == 'I got: {0, 1, 2, "n"}'
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert "I got: {0, 1, 2, 'n'}"
+                == 'I got: {0, 1, 2, "n"}'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change the set_ in my expectation to match reality
+
+  .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 2-3
+    :emphasize-text: " '
+
+    def test_passing_a_set():
+        # assert text({0, 1, 2, 'n'}) == 'I got: {0, 1, 2, "n"}'
+        assert text({0, 1, 2, 'n'}) == "I got: {0, 1, 2, 'n'}"
+
+
+    # Exceptions seen
+
+* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times
+
+  - if the result of ``text({0, 1, 2, 'n'})`` is equal to ``"I got: {0, 1, 2, 'n'}"`` the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+
+    .. code-block:: python
+
+      text({0, 1, 2, 'n'})
+          text(the_input)
+              the_input = {0, 1, 2, 'n'}
+              return f'I got: {the_input    }'
+              return  'I got:  {0, 1, 2, 'n'}'
+
+  - if the result of ``text({0, 1, 2, 'n'})`` is NOT equal to ``"I got: {0, 1, 2, 'n'}"``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+    .. code-block:: python
+
+      E       assert "I got: {0, 'n', 2, 1}"
+                  == "I got: {0, 1, 2, 'n'}"
+
+  Python_ cannot guarantee the order of the things in the set_ and the order matters for the :ref:`assertion<what is an assertion?>` that is comparing the strings_ because
+
+  - these two are the same set
+
+    .. code-block:: python
+
+      {0, 'n', 2, 1} == {0, 1, 2, 'n'}
+
+  - these two are not the same string
+
+    .. code-block:: python
+
+      "{0, 'n', 2, 1}" != "{0, 1, 2, 'n'}"
+
+* I add a :ref:`variable<what is a variable?>` for ``{0, 1, 2, 'n'}``
+
+  .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 2
+
+    def test_passing_a_set():
+        a_set = {0, 1, 2, 'n'}
+        # assert text({0, 1, 2, 'n'}) == 'I got: {0, 1, 2, "n"}'
+        assert text({0, 1, 2, 'n'}) == "I got: {0, 1, 2, 'n'}"
+
+
+    # Exceptions seen
+
+* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<what is string interpolation?>` to remove repetition of ``{0, 1, 2, 'n'}``
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 4-5
+
+    def test_passing_a_set():
+        a_set = {0, 1, 2, 'n'}
+        # assert text({0, 1, 2, 'n'}) == 'I got: {0, 1, 2, "n"}'
+        # assert text({0, 1, 2, 'n'}) == "I got: {0, 1, 2, 'n'}"
+        assert text(a_set) == f'I got: {a_set}'
+
+
+    # Exceptions seen
+
+  - I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and the test stays green with no random failures because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``.
+  - It can guarantee the order when I use a :ref:`variable<what is a variable?>` and the :ref:`f-string<what is string interpolation>` to refer to the same exact set_.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 50
+
+    def test_passing_a_set():
+        a_set = {0, 1, 2, 'n'}
+        assert text(a_set) == f'I got: {a_set}'
+
+
+    # Exceptions seen
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'add test_passing_a_set'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+:ref:`I can pass a set from a test to a function<test_passing_a_set>`.
+
+----
+
+*********************************************************************************
 test_passing_a_dictionary
 *********************************************************************************
 
-Can I pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) from a test to a :ref:`function<what is a function?>`?
+Can I pass a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas<what is a dictionary?>` from a test to a :ref:`function<what is a function?>`?
 
 ----
 
@@ -1419,13 +1578,13 @@ Can I pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces 
         def test_passing_a_dictionary(self):
             reality = src.telephone.text(
                 {
-                    'key1': 'value1',
+                    'key0': 'value0',
                     'keyN': [0, 1, 2, 'n'],
                 }
             )
             my_expectation = (
                 "I got: "
-                "{key1: value1, keyN: [0, 1, 2, n]}"
+                "{key0: value0, keyN: [0, 1, 2, n]}"
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1437,8 +1596,8 @@ Can I pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces 
   .. code-block:: python
 
     AssertionError:
-        "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
-     != 'I got: { key1:   value1 ,  keyN : [0, 1, 2,  n ]}'
+        "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
+     != 'I got: { key0:   value0 ,  keyN : [0, 1, 2,  n ]}'
 
 ----
 
@@ -1458,14 +1617,14 @@ I change my expectation to match reality
       def test_passing_a_dictionary(self):
           reality = src.telephone.text(
               {
-                  'key1': 'value1',
+                  'key0': 'value0',
                   'keyN': [0, 1, 2, 'n'],
               }
           )
           my_expectation = (
               "I got: "
-              # "{key1: value1, keyN: [0, 1, 2, n]}"
-              "{'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+              # "{key0: value0, keyN: [0, 1, 2, n]}"
+              "{'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
           )
           self.assertEqual(reality, my_expectation)
 
@@ -1490,19 +1649,19 @@ the test passes.
 
         def test_passing_a_dictionary(self):
             a_dictionary = {
-                'key1': 'value1',
+                'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
             reality = src.telephone.text(
                 {
-                    'key1': 'value1',
+                    'key0': 'value0',
                     'keyN': [0, 1, 2, 'n'],
                 }
             )
             my_expectation = (
                 "I got: "
-                # "{key1: value1, keyN: [0, 1, 2, n]}"
-                "{'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+                # "{key0: value0, keyN: [0, 1, 2, n]}"
+                "{'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1517,20 +1676,20 @@ the test passes.
 
         def test_passing_a_dictionary(self):
             a_dictionary = {
-                'key1': 'value1',
+                'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
             # reality = src.telephone.text(
             #     {
-            #         'key1': 'value1',
+            #         'key0': 'value0',
             #         'keyN': [0, 1, 2, 'n'],
             #     }
             # )
             reality = src.telephone.text(a_dictionary)
             # my_expectation = (
             #     "I got: "
-            #     # "{key1: value1, keyN: [0, 1, 2, n]}"
-            #     "{'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+            #     # "{key0: value0, keyN: [0, 1, 2, n]}"
+            #     "{'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
             # )
             my_expectation = f'I got: {a_dictionary}'
             self.assertEqual(reality, my_expectation)
@@ -1540,14 +1699,14 @@ the test passes.
 
   the test is still green.
 
-* I remove the comments
+* I remove the commented lines
 
   .. code-block:: python
     :lineno-start: 56
 
         def test_passing_a_dictionary(self):
             a_dictionary = {
-                'key1': 'value1',
+                'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
             reality = src.telephone.text(a_dictionary)
@@ -1594,7 +1753,7 @@ Can I pass an :ref:`object<everything is an object>` from a test to a :ref:`func
 
         def test_passing_a_dictionary(self):
             a_dictionary = {
-                'key1': 'value1',
+                'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
             reality = src.telephone.text(a_dictionary)
@@ -2035,7 +2194,7 @@ the test passes.
 
   the test passes
 
-* I add an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 118
@@ -2303,8 +2462,8 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     AssertionError:
         <class 'object'> != "I got: <class 'object'>"
     AssertionError:
-                 {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}
-      != "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+                 {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}
+      != "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
     AssertionError:
         5.678 != 'I got: 5.678'
     AssertionError:

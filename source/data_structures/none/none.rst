@@ -2709,7 +2709,7 @@ test_is_none_a_dictionary
 ----
 
 * I go back to the terminal_ where the tests are running
-* One last test, this one for if :ref:`None<what is None?>` is a :ref:`dictionary (key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`
+* One last test, this one for if :ref:`None<what is None?>` is a :ref:`dictionary (key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 56

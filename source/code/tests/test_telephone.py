@@ -55,7 +55,7 @@ class TestTelephone(unittest.TestCase):
 
     def test_passing_a_dictionary(self):
         a_dictionary = {
-            'key1': 'value1',
+            'key0': 'value0',
             'keyN': [0, 1, 2, 'n'],
         }
         reality = src.telephone.text(a_dictionary)

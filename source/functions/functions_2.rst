@@ -4238,7 +4238,7 @@ how Python reads starred and double starred expressions
   I get a tuple_ that has
 
   - a tuple_ (anything in parentheses ``( )`` separated by a comma) for the :ref:`positional arguments<test_positional_arguments>`
-  - a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>` for the :ref:`keyword arguments<test_keyword_arguments>`
+  - a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>` for the :ref:`keyword arguments<test_keyword_arguments>`
 
   Using substitution
 
@@ -4256,7 +4256,7 @@ how Python reads starred and double starred expressions
         return ((0, 1              ), {'a': 2, 'b': 3  })
 
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by commas>`.
 
 * I change my expectation to match reality in the first :ref:`assertion<what is an assertion?>`
 
@@ -4290,7 +4290,7 @@ how Python reads starred and double starred expressions
   I get a tuple_ that has
 
   - a tuple_ (anything in parentheses ``( )`` separated by a comma) for the :ref:`positional arguments<test_positional_arguments>`
-  - a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>` for the :ref:`keyword arguments<test_keyword_arguments>`
+  - a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>` for the :ref:`keyword arguments<test_keyword_arguments>`
 
   Using substitution
 
@@ -4308,7 +4308,7 @@ how Python reads starred and double starred expressions
         return ((0, 1              ), {'a': 2, 'b': 3, 'c':4})
 
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by commas>`.
 
 * I change my expectation to match reality in the second :ref:`assertion<what is an assertion?>`
 
@@ -4346,7 +4346,7 @@ how Python reads starred and double starred expressions
   I get a tuple_ that has
 
   - a tuple_ (anything in parentheses ``( )`` separated by a comma) for the :ref:`positional arguments<test_positional_arguments>`
-  - a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>` for the :ref:`keyword arguments<test_keyword_arguments>`
+  - a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>` for the :ref:`keyword arguments<test_keyword_arguments>`
 
   Using substitution
 
@@ -4364,7 +4364,7 @@ how Python reads starred and double starred expressions
         return ((0, 1, 2           ), {'a': 3, 'b': 4, 'c':5})
 
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by commas>`.
 
 * I change my expectation to match reality in the last :ref:`assertion<what is an assertion?>`
 
@@ -4919,7 +4919,7 @@ Using substitution
 
 
 - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
-- If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+- If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by commas>`.
 
 ----
 
@@ -5002,7 +5002,7 @@ the test passes.
 
 
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by commas>`.
 
 * I change my expectation to match reality
 
@@ -5140,7 +5140,7 @@ I ran tests to show that I can make :ref:`functions<what is a function>` that ta
   - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the things in ``something`` as :ref:`positional arguments<test_positional_arguments>`.
   - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by commas>`.
 
 :ref:`How many questions can you answer about functions?<questions about functions>`
 

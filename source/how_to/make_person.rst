@@ -608,7 +608,7 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I want the :ref:`factory function<test_factory_w_keyword_arguments>` to return a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) as output when it is called. I change ``my_expectation`` in ``test_person.py``
+* I want the :ref:`factory function<test_factory_w_keyword_arguments>` to return a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by commas) as output when it is called. I change ``my_expectation`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7

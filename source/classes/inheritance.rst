@@ -2106,7 +2106,7 @@ the test passes.
 test_is_a_dictionary_an_object
 *********************************************************************************
 
-I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is an :ref:`object<everything is an object>`.
+I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by commas) is an :ref:`object<everything is an object>`.
 
 ----
 
@@ -2120,7 +2120,7 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`, to show that :ref:`in Python everything is an object<everything is an object>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`, to show that :ref:`in Python everything is an object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 50

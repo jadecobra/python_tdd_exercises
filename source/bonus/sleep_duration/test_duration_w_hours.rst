@@ -499,12 +499,12 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: ['01:23'] != None
 
-`str.split`_ returns a :ref:`list <lists>`, if called
+`str.split`_ returns a :ref:`list<what is a list?>`, if called
 
 :green:`GREEN`: make it pass
 ---------------------------------------------------------------------------------
 
-I copy the :ref:`list <lists>` from the terminal_ and paste it in the test to make it pass
+I copy the :ref:`list<what is a list?>` from the terminal_ and paste it in the test to make it pass
 
 .. code-block:: python
 
@@ -586,7 +586,7 @@ the test passes.
 
         self.assertEqual(split, ['01', '23'])
 
-  the terminal_ still shows passing tests. I add an :ref:`assertion<what is an assertion?>` for indexing the :ref:`list <lists>`
+  the terminal_ still shows passing tests. I add an :ref:`assertion<what is an assertion?>` for indexing the :ref:`list<what is a list?>`
 
   .. code-block:: python
 
@@ -849,7 +849,7 @@ The challenge is to write a program_ that calculates the difference between a gi
 * `test_string_splitting`_ where I
 
   - used the `str.split`_ :ref:`method<what is a method?>` I found by calling the `help system`_ to split a string_ on a separator
-  - and indexed the :ref:`list <lists>` from the split to get specific items
+  - and indexed the :ref:`list<what is a list?>` from the split to get specific items
 
 * `test_converting_strings_to_numbers`_ with ``int()``
 

@@ -3391,7 +3391,7 @@ test_is_a_dictionary_falsy_or_truthy
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for if a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>` is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
+* I add a test for if a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>` is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 76
