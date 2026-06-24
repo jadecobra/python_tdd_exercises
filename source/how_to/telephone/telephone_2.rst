@@ -1425,7 +1425,7 @@ I can pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) 
 
         def test_passing_a_list(self):
             reality = src.telephone.text([0, 1, 2, 'n'])
-            my_expectation = 'I got: [1, 2, 3, "n"]'
+            my_expectation = 'I got: [0, 1, 2, "n"]'
             self.assertEqual(reality, my_expectation)
 
 
@@ -1455,7 +1455,7 @@ I change the :ref:`list<what is a list?>` in ``my_expectation`` to match ``reali
 
       def test_passing_a_list(self):
           reality = src.telephone.text([0, 1, 2, 'n'])
-          # my_expectation = 'I got: [1, 2, 3, "n"]'
+          # my_expectation = 'I got: [0, 1, 2, "n"]'
           my_expectation = "I got: [0, 1, 2, 'n']"
           self.assertEqual(reality, my_expectation)
 
@@ -1481,7 +1481,7 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
         def test_passing_a_list(self):
             a_list = [0, 1, 2, 'n']
             reality = src.telephone.text([0, 1, 2, 'n'])
-            # my_expectation = 'I got: [1, 2, 3, "n"]'
+            # my_expectation = 'I got: [0, 1, 2, "n"]'
             my_expectation = "I got: [0, 1, 2, 'n']"
             self.assertEqual(reality, my_expectation)
 
@@ -1498,7 +1498,7 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
             a_list = [0, 1, 2, 'n']
             # reality = src.telephone.text([0, 1, 2, 'n'])
             reality = src.telephone.text(a_list)
-            # my_expectation = 'I got: [1, 2, 3, "n"]'
+            # my_expectation = 'I got: [0, 1, 2, "n"]'
             # my_expectation = "I got: [0, 1, 2, 'n']"
             my_expectation = f"I got: {a_list}"
             self.assertEqual(reality, my_expectation)
