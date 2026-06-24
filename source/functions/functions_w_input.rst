@@ -85,8 +85,8 @@ Questions to think about as I go through the chapter
 * :ref:`how can I make arguments a choice in a function?<test_optional_arguments>`
 * :ref:`how can I make a function take any number of positional arguments?<test_unknown_number_of_arguments>`
 * :ref:`how can I make a function take any number of keyword arguments?<test_unknown_number_of_arguments>`
-* :ref:`what can I do with starred expressions?<starred expression>`
-* :ref:`what can I do with double starred expressions?<double starred expression>`
+* :ref:`what can I do with starred expressions?<starred expressions>`
+* :ref:`what can I do with double starred expressions?<double starred expressions>`
 * :ref:`how does Python read starred expressions?<how Python reads starred expressions>`
 * :ref:`how does Python read double starred expressions?<how Python reads double starred expressions>`
 
@@ -238,9 +238,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 because
 
-- I called ``identity`` which belongs to ``test_identity_function`` with one input (:ref:`None`).
-- The :ref:`function definition (signature)<how to make a function with input>` of ``identity`` does not allow any inputs when it is called, since the parentheses are empty.
-- I am violating the :ref:`function signature<how to make a function with input>` when I call it in a way that it was not designed to be called which raises :ref:`TypeError<what causes TypeError?>`.
+- I called ``identity`` which belongs to ``test_identity_function`` with one input (:ref:`None<what is None?>`).
+- The :ref:`function definition (signature)<how to make a function that takes input>` of ``identity`` does not allow any inputs when it is called, since the parentheses are empty.
+- I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
 ----
 
@@ -1451,8 +1451,8 @@ the test passes.
   because
 
   - I called ``positional_arguments`` which belongs to ``test_positional_arguments`` with one input (``'first'``).
-  - The :ref:`function definition (signature)<how to make a function with input>` of ``positional_arguments`` does not allow any inputs when it is called since the parentheses are empty.
-  - I am violating the :ref:`function signature<how to make a function with input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``positional_arguments`` does not allow any inputs when it is called since the parentheses are empty.
+  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
 * I make the :ref:`function<what is a function?>` take input by adding a name in parentheses
 
@@ -1502,8 +1502,8 @@ the test passes.
   because
 
   - I called ``positional_arguments`` which belongs to ``test_positional_arguments`` with two inputs(``'first'`` and ``'last'``).
-  - The :ref:`function definition (signature)<how to make a function with input>` of ``positional_arguments`` only allows one input.
-  - I am violating the :ref:`function signature<how to make a function with input>` when I call it in a way that it was not designed to be called which raises :ref:`TypeError<what causes TypeError?>`.
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``positional_arguments`` only allows one input.
+  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
 * I make the :ref:`function<what is a function?>` take two inputs by changing the name of the first input to be clearer, and adding a name in parentheses
 
@@ -1596,7 +1596,7 @@ the test passes.
 
   the test passes, because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in the test sends ``'first'`` as ``first_input`` and ``'last'`` as ``last_input``.
 
-* The problem with giving arguments this way is that they always have to be in the order in the :ref:`function definition<how to make a function with input>` or I get something different. I add an :ref:`assertion<what is an assertion?>` to show this
+* The problem with giving arguments this way is that they always have to be in the order in the :ref:`function definition<how to make a function that takes input>` or I get something different. I add an :ref:`assertion<what is an assertion?>` to show this
 
   .. code-block:: python
     :lineno-start: 61
@@ -2021,7 +2021,7 @@ Another way to :ref:`call a function<how to call a function with input>` is to u
 
 ----
 
-I add a :ref:`function definition<how to make a function with input>`
+I add a :ref:`function definition<how to make a function that takes input>`
 
 .. code-block:: python
   :lineno-start: 88
@@ -2044,7 +2044,7 @@ the test passes.
 what is a keyword argument?
 *********************************************************************************
 
-A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`function call<how to call a function?>`. Where key is a name, and the value is any :ref:`object<what is a class?>`.
+A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`function call<how to call a function>`. Where key is a name, and the value is any :ref:`object<what is a class?>`.
 
 ----
 
@@ -2081,8 +2081,8 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
   because
 
   - I called ``keyword_arguments`` which belongs to ``test_keyword_arguments`` with a name (``first_input``) and a value for the name (``'first'``).
-  - The :ref:`function definition (signature)<how to make a function with input>` of ``keyword_arguments`` does not allow any inputs when it is called since the parentheses are empty.
-  - I am violating the :ref:`function signature<how to make a function with input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``keyword_arguments`` does not allow any inputs when it is called since the parentheses are empty.
+  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
 * I make the :ref:`function<what is a function?>` take input by adding a name in parentheses
 
@@ -2101,7 +2101,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
     # Exceptions seen
 
-  the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because the names in the :ref:`function call<how to call a function with input>` and :ref:`function definition<how to make a function with input>` are different.
+  the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because the names in the :ref:`function call<how to call a function with input>` and :ref:`function definition<how to make a function that takes input>` are different.
 
 * I change the name of the input to match the one used in the call
 
@@ -2121,7 +2121,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
     # Exceptions seen
 
-  the test passes because I use the same name in the :ref:`function definition<how to make a function with input>` when I call it with a `keyword argument`_.
+  the test passes because I use the same name in the :ref:`function definition<how to make a function that takes input>` when I call it with a `keyword argument`_.
 
 * I add another input to the :ref:`function call<how to call a function with input>`
 
@@ -2159,8 +2159,8 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
   because
 
   - I called ``keyword_arguments`` which belongs to ``test_keyword_arguments`` with two names (``first_input`` and ``last_input``) and values for the names (``'first'`` and ``'last'``).
-  - The :ref:`function definition (signature)<how to make a function with input>` of ``keyword_arguments`` only allows one input when it is called.
-  - I am violating the :ref:`function signature<how to make a function with input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``keyword_arguments`` only allows one input when it is called.
+  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
 * I make the :ref:`function<what is a function?>` take two inputs by adding another name in parentheses
 
@@ -2187,7 +2187,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
     # Exceptions seen
 
-  the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because the names in the :ref:`function call<how to call a function with input>` and :ref:`function definition<how to make a function with input>` are different.
+  the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because the names in the :ref:`function call<how to call a function with input>` and :ref:`function definition<how to make a function that takes input>` are different.
 
 * I change name of the input to match the one used in the call
 
@@ -2215,7 +2215,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
     # Exceptions seen
 
-  the test passes because I use the same name in the :ref:`function definition<how to make a function with input>` when I call it with a `keyword argument`_.
+  the test passes because I use the same name in the :ref:`function definition<how to make a function that takes input>` when I call it with a `keyword argument`_.
 
 * I change the expectation of the :ref:`assertion<what is an assertion?>`
 
@@ -2296,7 +2296,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
   the test passes, because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in the test sends ``first_input='first'`` and ``last_input='last'``.
 
-* The problem with giving arguments this way, is I must use the exact names. The advantage of giving arguments this way is that they do not have to be in the order in the :ref:`function definition<how to make a function with input>`. I add an :ref:`assertion<what is an assertion?>` with the `keyword arguments`_ given out of order
+* The problem with giving arguments this way, is I must use the exact names. The advantage of giving arguments this way is that they do not have to be in the order in the :ref:`function definition<how to make a function that takes input>`. I add an :ref:`assertion<what is an assertion?>` with the `keyword arguments`_ given out of order
 
   .. code-block:: python
     :lineno-start: 97
@@ -2669,7 +2669,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
       keyword_arguments('last', 'first')
                 return ('last', 'first')
 
-  - I can give the input in any order when I use `keyword arguments`_ because I use the names from the :ref:`function definition<how to make a function with input>` when I call it
+  - I can give the input in any order when I use `keyword arguments`_ because I use the names from the :ref:`function definition<how to make a function that takes input>` when I call it
 
     .. code-block:: python
       :emphasize-text: first
@@ -2953,7 +2953,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 test_args_and_kwargs
 *********************************************************************************
 
-I can call :ref:`functions<what is a function>` with both :ref:`positional<test_positional_arguments>`.
+I can call :ref:`functions<what is a function?>` with both :ref:`positional<test_positional_arguments>`.
 
 ----
 
@@ -3050,7 +3050,7 @@ I can call :ref:`functions<what is a function>` with both :ref:`positional<test_
 
   because I have not given a definition for the name yet.
 
-* I add a :ref:`function definition<how to make a function with input>`
+* I add a :ref:`function definition<how to make a function that takes input>`
 
   .. code-block:: python
     :lineno-start: 145
@@ -3082,8 +3082,8 @@ I can call :ref:`functions<what is a function>` with both :ref:`positional<test_
   because
 
   - I called ``args_and_kwargs`` which belongs to ``test_args_and_kwargs`` with a :ref:`keyword argument<test_keyword_arguments>` (``last_input='last'``).
-  - The :ref:`function definition (signature)<how to make a function with input>` of ``args_and_kwargs`` does not allow any inputs when it is called since the parentheses are empty.
-  - I am violating the :ref:`function signature<how to make a function with input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``args_and_kwargs`` does not allow any inputs when it is called since the parentheses are empty.
+  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
 * I add the name in parentheses
 
@@ -3115,7 +3115,7 @@ I can call :ref:`functions<what is a function>` with both :ref:`positional<test_
         test_args_and_kwargs.<locals>.args_and_kwargs()
         got multiple values for argument 'last_input'
 
-  because the :ref:`definition<how to make a function with input>` for ``args_and_kwargs`` takes one argument (``last_input``), and the :ref:`assertion<what is an assertion?>` calls the :ref:`function<what is a function?>` with two arguments ``('first', last_input='last')``. How does Python_ know which value to use for ``last_input`` if I use the :ref:`position<test_positional_arguments>` and the :ref:`keyword<test_keyword_arguments>`?
+  because the :ref:`definition<how to make a function that takes input>` for ``args_and_kwargs`` takes one argument (``last_input``), and the :ref:`assertion<what is an assertion?>` calls the :ref:`function<what is a function?>` with two arguments ``('first', last_input='last')``. How does Python_ know which value to use for ``last_input`` if I use the :ref:`position<test_positional_arguments>` and the :ref:`keyword<test_keyword_arguments>`?
 
 * I add another name in parentheses to make it clearer
 
@@ -3141,7 +3141,7 @@ I can call :ref:`functions<what is a function>` with both :ref:`positional<test_
 
     # Exceptions seen
 
-  the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because I have not fixed the problem, I gave confusing values in the call. Python_ still cannot tell the difference between the two values because I gave a :ref:`positional argument<test_positional_arguments>` which from the :ref:`function definition<how to make a function with input>` is ``last_input`` and I gave a value with the name ``last_input``.
+  the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because I have not fixed the problem, I gave confusing values in the call. Python_ still cannot tell the difference between the two values because I gave a :ref:`positional argument<test_positional_arguments>` which from the :ref:`function definition<how to make a function that takes input>` is ``last_input`` and I gave a value with the name ``last_input``.
 
 * The call tells it that the values for ``last_input`` are both ``'first'`` and ``'last'``, it would be like defining the :ref:`function<what is a function?>` with the same name twice
 
@@ -3387,7 +3387,7 @@ I can make an argument_ of a :ref:`function<what is a function?>` optional, whic
 
 ----
 
-I add the :ref:`function definition<how to make a function with input>` for ``optional_arguments``
+I add the :ref:`function definition<how to make a function that takes input>` for ``optional_arguments``
 
 .. code-block:: python
   :lineno-start: 159
@@ -3475,7 +3475,7 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes because I do not need to give a value for the ``last_input`` parameter when I call the :ref:`function<what is a function>` since the :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the :ref:`function<what is a function?>` is ``doe``
+  the test passes because I do not need to give a value for the ``last_input`` parameter when I call the :ref:`function<what is a function?>` since the :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the :ref:`function<what is a function?>` is ``doe``
 
   .. code-block:: python
 
@@ -3727,10 +3727,10 @@ the test passes.
 
 These four :ref:`functions<what is a function?>`
 
-* :ref:`keyword_arguments`
-* :ref:`positional_arguments`
-* :ref:`args_and_kwargs`
-* :ref:`optional_arguments`
+* :ref:`keyword_arguments<test_keyword_arguments>`
+* :ref:`positional_arguments<test_positional_arguments>`
+* :ref:`args_and_kwargs<test_args_and_kwargs>`
+* :ref:`optional_arguments<test_optional_arguments>`
 
 are the same, they always ``return first_input, last_input``, their names are different.
 
@@ -3907,9 +3907,9 @@ I can make :ref:`functions<what is a function?>` that take any number of :ref:`p
                    .<locals>.unknown_number_of_arguments()
                got an unexpected keyword argument 'a'
 
-  because the :ref:`assertion<what is an assertion?>` called ``unknown_number_of_arguments`` with a :ref:`keyword argument<test_keyword_arguments>` named ``a`` and the :ref:`function definition<how to make a function with input>` does not allow any inputs, the parentheses are empty.
+  because the :ref:`assertion<what is an assertion?>` called ``unknown_number_of_arguments`` with a :ref:`keyword argument<test_keyword_arguments>` named ``a`` and the :ref:`function definition<how to make a function that takes input>` does not allow any inputs, the parentheses are empty.
 
-* I add the name to the :ref:`function definition<how to make a function with input>`
+* I add the name to the :ref:`function definition<how to make a function that takes input>`
 
   .. code-block:: python
     :lineno-start: 200
@@ -3928,7 +3928,7 @@ I can make :ref:`functions<what is a function?>` that take any number of :ref:`p
                    .<locals>.unknown_number_of_arguments()
                got multiple values for argument 'a'
 
-  I had this same problem in :ref:`test_args_and_kwargs`. Python_ cannot tell if ``a`` is a :ref:`positional<test_positional_arguments>` or :ref:`keyword argument<test_keyword_arguments>` based on my :ref:`function definition<how to make a function with input>`. It cannot tell if ``0`` or ``2`` is the value for ``a``.
+  I had this same problem in :ref:`test_args_and_kwargs`. Python_ cannot tell if ``a`` is a :ref:`positional<test_positional_arguments>` or :ref:`keyword argument<test_keyword_arguments>` based on my :ref:`function definition<how to make a function that takes input>`. It cannot tell if ``0`` or ``2`` is the value for ``a``.
 
 ----
 
@@ -4118,7 +4118,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
                    .<locals>.unknown_number_of_arguments()
                takes 2 positional arguments but 3 were given
 
-  the :ref:`function definition<how to make a function with input>` only allows two :ref:`positional arguments<test_positional_arguments>` not three.
+  the :ref:`function definition<how to make a function that takes input>` only allows two :ref:`positional arguments<test_positional_arguments>` not three.
 
 * I change the definition of the ``unknown_number_of_arguments`` :ref:`function<what is a function?>` to make it take three :ref:`positional arguments<test_positional_arguments>`
 
@@ -4256,7 +4256,7 @@ how Python reads starred and double starred expressions
         return ((0, 1              ), {'a': 2, 'b': 3  })
 
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by commas>`.
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`.
 
 * I change my expectation to match reality in the first :ref:`assertion<what is an assertion?>`
 
@@ -4308,7 +4308,7 @@ how Python reads starred and double starred expressions
         return ((0, 1              ), {'a': 2, 'b': 3, 'c':4})
 
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by commas>`.
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`.
 
 * I change my expectation to match reality in the second :ref:`assertion<what is an assertion?>`
 
@@ -4364,7 +4364,7 @@ how Python reads starred and double starred expressions
         return ((0, 1, 2           ), {'a': 3, 'b': 4, 'c':5})
 
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by commas>`.
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`.
 
 * I change my expectation to match reality in the last :ref:`assertion<what is an assertion?>`
 
@@ -4919,7 +4919,7 @@ Using substitution
 
 
 - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
-- If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by commas>`.
+- If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`.
 
 ----
 
@@ -5002,7 +5002,7 @@ the test passes.
 
 
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by commas>`.
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`.
 
 * I change my expectation to match reality
 
@@ -5126,7 +5126,7 @@ close the project
 review
 *********************************************************************************
 
-I ran tests to show that I can make :ref:`functions<what is a function>` that take input
+I ran tests to show that I can make :ref:`functions<what is a function?>` that take input
 
 * I can use a :ref:`function to remove repetition<test_why_use_a_function>`.
 * I can call a :ref:`function<what is a function?>` with input by placing an :ref:`object<what is a class?>` in parentheses when I call it.
@@ -5140,7 +5140,7 @@ I ran tests to show that I can make :ref:`functions<what is a function>` that ta
   - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the things in ``something`` as :ref:`positional arguments<test_positional_arguments>`.
   - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by commas>`.
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`.
 
 :ref:`How many questions can you answer about functions?<questions about functions>`
 

@@ -117,8 +117,8 @@ functions that take input review
 * :ref:`how can I make arguments a choice in a function?<test_optional_arguments>`
 * :ref:`how can I make a function take any number of positional arguments?<test_unknown_number_of_arguments>`
 * :ref:`how can I make a function take any number of keyword arguments?<test_unknown_number_of_arguments>`
-* :ref:`what can I do with starred expressions?<starred expression>`
-* :ref:`what can I do with double starred expressions?<double starred expression>`
+* :ref:`what can I do with starred expressions?<starred expressions>`
+* :ref:`what can I do with double starred expressions?<double starred expressions>`
 * :ref:`how does Python read starred expressions?<how Python reads starred expressions>`
 * :ref:`how does Python read double starred expressions?<how Python reads double starred expressions>`
 

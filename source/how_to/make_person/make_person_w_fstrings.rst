@@ -59,7 +59,7 @@ open the project
 ----
 
 *********************************************************************************
-test_person_factory_w_keyword_arguments
+test_person_factory_w_inputs
 *********************************************************************************
 
 ----
@@ -70,19 +70,300 @@ test_person_factory_w_keyword_arguments
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_joe`
+I add an :ref:`assertion<what is an assertion?>` to :ref:`test_joe` in ``test_person.py``
+
+.. code-block:: python
+  :lineno-start: 17
+  :emphasize-lines: 3
+
+  def test_joe():
+      assert joe() == 'joe, blow, M, 1996'
+      assert factory() == 'joe, blow, M, 1996'
+
+
+  def test_jane():
+
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+.. code-block:: python
+
+  NameError: name 'factory' is not defined
+
+because I have not defined ``factory`` in ``test_person.py``, yet.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add a :ref:`function definition<how to make a function that takes input>` for it
+
+.. code-block:: python
+  :linenos:
+  :emphasize-lines: 1-2
+
+  def factory():
+      return 'joe, blow, M, 1996'
+
+
+  def joe():
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>` with a call to the ``factory`` :ref:`function<what is a function?>` in :ref:`test_jane`
 
   .. code-block:: python
-    :lineno-start: 17
+    :lineno-start: 26
     :emphasize-lines: 3
 
-    def test_joe():
-        assert joe() == 'joe, blow, M, 1996'
-        assert factory() == 'joe', 'blow', 'M', '1996'
+    def test_jane():
+        assert jane() == 'jane, doe, F, 1991'
+        assert factory() == 'jane, doe, F, 1991'
 
+
+    def test_john():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'joe, blow, M, 1996'
+                        == 'jane, doe, F, 1991'
+
+  because the ``factory`` :ref:`function<what is a function?>` always returns ``joe, blow, M, 1996`` when it is called. It has to return a string_ based on the input it gets for me to be able to use it to make more than one person.
+
+* I :ref:`make the function take input<how to make a function that takes input>` for the first name
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2
+
+    # def factory():
+    def factory(first_name):
+        return 'joe, blow, M, 1996'
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: factory() missing
+               1 required positional argument: 'first_name'
+
+  because
+
+  - I called the ``factory`` :ref:`function<what is a function?>` with zero inputs.
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has one required argument (``first_name``).
+  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+
+* I add ``first_name`` to the call to the ``factory`` :ref:`function<what is a function?>` in the new :ref:`assertion<what is an assertion?>` in :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 3-4
 
     def test_jane():
+        assert jane() == 'jane, doe, F, 1991'
+        # assert factory() == 'jane, doe, F, 1991'
+        assert factory('jane') == 'jane, doe, F, 1991'
 
+
+    def test_john():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'joe, blow, M, 1996'
+                        == 'jane, doe, F, 1991'
+
+* I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3-4
+
+    # def factory():
+    def factory(first_name):
+        # return 'joe, blow, M, 1996'
+        return f'{first_name}, blow, M, 1996'
+
+
+    def joe():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'jane, blow, M, 1996'
+                        == 'jane, doe, F, 1991'
+
+  the first names match. Progress!
+
+* I add ``last_name`` to :ref:`the return statement`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5
+
+    # def factory():
+    def factory(first_name):
+        # return 'joe, blow, M, 1996'
+        # return f'{first_name}, blow, M, 1996'
+        return f'{first_name}, {last_name}, M, 1996'
+
+
+    def joe():
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'last_name' is not defined
+
+* I add the name to the parentheses to define it in the ``factory`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-3
+
+    # def factory():
+    # def factory(first_name):
+    def factory(first_name, last_name):
+        # return 'joe, blow, M, 1996'
+        # return f'{first_name}, blow, M, 1996'
+        return f'{first_name}, {last_name}, M, 1996'
+
+
+    def joe():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: factory() missing
+               1 required positional argument: 'last_name'
+
+  because
+
+  - I called the ``factory`` :ref:`function<what is a function?>` with one input (``jane``).
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has two required arguments (``first_name`` and ``last_name``).
+  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+
+* I add ``first_name`` to the call to the ``factory`` :ref:`function<what is a function?>` in the new :ref:`assertion<what is an assertion?>` in :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 3-4
+
+    def test_jane():
+        assert jane() == 'jane, doe, F, 1991'
+        # assert factory() == 'jane, doe, F, 1991'
+        assert factory('jane') == 'jane, doe, F, 1991'
+
+
+    def test_john():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'joe, blow, M, 1996'
+                        == 'jane, doe, F, 1991'
+
+* I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3-4
+
+    # def factory():
+    def factory(first_name):
+        # return 'joe, blow, M, 1996'
+        return f'{first_name}, blow, M, 1996'
+
+
+    def joe():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'jane, blow, M, 1996'
+                        == 'jane, doe, F, 1991'
+
+  the first names match. Progress!
+
+* I add ``last_name`` to :ref:`the return statement`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5
+
+    # def factory():
+    def factory(first_name):
+        # return 'joe, blow, M, 1996'
+        # return f'{first_name}, blow, M, 1996'
+        return f'{first_name}, {last_name}, M, 1996'
+
+
+    def joe():
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'last_name' is not defined
+
+* I add the name to the parentheses to define it in the ``factory`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-3
+
+    # def factory():
+    # def factory(first_name):
+    def factory(first_name, last_name):
+        # return 'joe, blow, M, 1996'
+        # return f'{first_name}, blow, M, 1996'
+        return f'{first_name}, {last_name}, M, 1996'
+
+
+    def joe():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: factory() missing
+               1 required positional argument: 'last_name'
+
+  because
+
+  - I called the ``factory`` :ref:`function<what is a function?>` with one input (``jane``).
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has two required arguments (``first_name`` and ``last_name``).
+  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+
+
+----
+BOOM
+----
+----
+BOOM
+----
+----
+BOOM
+----
 
 * I remove the :ref:`assertion<what is an assertion?>` and comments then add a new test :ref:`function<what is a function?>`
 
@@ -116,13 +397,6 @@ test_person_factory_w_keyword_arguments
     # AssertionError
     # NameError
 
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
 
 * I add a :ref:`variable<what is a variable?>` for ``joe`` and point it to :ref:`None<what is None?>`
 
@@ -219,13 +493,7 @@ test_person_factory_w_keyword_arguments
 
   the test passes.
 
-----
 
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
 
 * I remove the commented lines
 
