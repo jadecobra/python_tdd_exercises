@@ -44,7 +44,7 @@ table of contents
   functions/index
   make a person with variables<how_to/make_person/index>
   functions/functions_2
-  how to pass values<how_to/telephone/index>
+  <how_to/telephone/index>
   make a person<how_to/make_person>
   classes/index
   what causes AttributeError?<exceptions/AttributeError>

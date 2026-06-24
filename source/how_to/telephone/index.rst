@@ -38,7 +38,7 @@ where
 * reality is what happens when I do something with code
 * my expectation is what I think will happen when I do something with code
 
-The exercises in this chapter show how I can pass :ref:`objects<what is a class?>` to a :ref:`function<what is a function?>` and use it to make a string_ (anything in :ref:`quotes`). It will also show :ref:`another way to organize tests`.
+The exercises in this chapter show how I can pass :ref:`objects<what is a class?>` to a :ref:`function<what is a function?>` and use it to make a string_ (anything in :ref:`quotes`). It will also show :ref:`another way to organize tests<separate and equal>`.
 
 ----
 
@@ -2261,6 +2261,360 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
   the terminal_ shows a summary of the changes then goes back to the command line.
 
 :ref:`I can pass any object as input to a function<test_passing_a_class>`.
+
+----
+
+*********************************************************************************
+separate and equal
+*********************************************************************************
+
+So far all :ref:`functions<what is a function?>` I have written have been in the same file_ as the tests, some are even in the same :ref:`function<what is a function?>` as the :ref:`assertions<what is an assertion?>` of the tests.
+
+In earlier tests I found it better to keep :ref:`functions<what is a function?>` outside of :ref:`functions<what is a function?>` so that anything could call them from outside.
+
+I can also place them in other :ref:`modules<what is a module?>` then use the `import statement`_ to bring in the :ref:`function<what is a function?>` so I can test it. This helps me keep tests and solutions separate. It also means I can send tests only, solutions only or both.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
+* I change the :ref:`assertion<what is an assertion?>` to call the ``text`` :ref:`function<what is a function?>` from the ``telephone`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of from the same file_ (``test_telephone.py``)
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 6-9
+
+    def text(the_input):
+        return f'I got: {the_input}'
+
+
+    def test_passing_none():
+        # assert text(None) == 'I got: None'
+        reality = src.telephone.text(None)
+        my_expectation = 'I got: None'
+        assert reality == my_expectation
+
+
+    def test_passing_booleans():
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'src' is not defined
+
+  because there is nothing with that name in ``test_telephone.py``.
+
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add an `import statement`_ at the top of ``test_telephone.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import src
+
+
+    def text(the_input):
+
+  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+
+  .. code-block:: python
+
+    E   ModuleNotFoundError: No module named 'src'
+
+  because there is nothing named ``src`` in the project.
+
+* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 73
+    :emphasize-lines: 4
+    :emphasize-text: ModuleNotFoundError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # ModuleNotFoundError
+
+* I go to the other terminal_
+
+* I use mkdir_ to make a folder_ named ``src``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    mkdir src
+
+  the terminal_ goes back to the command line.
+
+* I go back to the terminal_ where the tests are running
+
+* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) in ``test_telephone.py`` to run the test again, and the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src' has no attribute 'telephone'
+
+  because there is nothing named ``telephone`` in the ``src`` folder_.
+
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 73
+    :emphasize-lines: 5
+    :emphasize-text: AttributeError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # ModuleNotFoundError
+    # AttributeError
+
+* I change the `import statement`_ to make it import ``telephone.py`` from the ``src`` folder_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2
+
+    # import src
+    import src.telephone
+
+
+    def text(the_input):
+
+  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+
+  .. code-block:: python
+
+    E   ModuleNotFoundError: No module named 'src.telephone'
+
+  because Python_ cannot find ``telephone.py`` in the ``src`` folder_ since I have not made it yet.
+
+* I go to the other terminal_
+
+* I use touch_ to make ``telephone.py`` in the ``src`` folder_
+
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        touch src/telephone.py
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        New-Item src/telephone.py
+
+  the terminal_ goes back to the command line.
+
+* I go back to the terminal_ where the tests are running and it shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.telephone' has no attribute 'text'
+
+  because ``telephone.py`` in the ``src`` folder_ does not have anything named ``text`` inside it.
+
+* I open ``telephone.py`` from the ``src`` folder_
+* I add a copy of the ``text`` :ref:`function<what is a function?>` to ``telephone.py``
+
+  .. code-block:: python
+    :linenos:
+
+    def text(the_input):
+        return f'I got: {the_input}'
+
+  the test passes because
+
+  - when ``import src.telephone`` runs Python_ brings in an :ref:`object<what is a class?>` for the ``telephone.py`` file_ from the ``src`` folder_ so I can use it in ``test_telephone.py`` - ``src.telephone``
+  - when ``src.telephone.text(None)`` runs Python_ calls the ``text`` :ref:`function<what is a function?>` from the :ref:`object<what is a class?>` it imported for the ``telephone.py`` file_ from the ``src`` folder_
+
+  I think of ``src.telephone.text`` like an address
+
+  - ``text`` is something in ``telephone``, in this case it is a :ref:`function<what is a function?>` in ``telephone``
+  - ``telephone`` is something in ``src``, in this case it is the ``telephone.py`` :ref:`module<what is a module?>` in the ``src`` folder_
+  - ``src`` is something Python_ can import (a :ref:`module<what is a module?>`, `Python package`_ or folder_)
+
+* I remove the commented lines from ``test_telephone.py``
+
+  .. code-block:: python
+    :linenos:
+
+    import src.telephone
+
+
+    def text(the_input):
+        return f'I got: {the_input}'
+
+
+    def test_passing_none():
+        reality = src.telephone.text(None)
+        my_expectation = 'I got: None'
+        assert reality == my_expectation
+
+
+    def test_passing_booleans():
+
+* I change the call in the first :ref:`assertion<what is an assertion?>` of :ref:`test_passing_booleans` to ``src.telephone.text``
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 2-5
+
+    def test_passing_booleans():
+        # assert text(False) == 'I got: False'
+        reality = src.telephone.text(False)
+        my_expectation = 'I got: False'
+        assert reality == my_expectation
+        assert text(True) == 'I got: True'
+
+
+    def test_passing_an_integer():
+
+  the test is still green.
+
+* I make the same change for the next :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 6-9
+
+    def test_passing_booleans():
+        # assert text(False) == 'I got: False'
+        reality = src.telephone.text(False)
+        my_expectation = 'I got: False'
+        assert reality == my_expectation
+        # assert text(True) == 'I got: True'
+        reality = src.telephone.text(True)
+        my_expectation = 'I got: True'
+        assert reality == my_expectation
+
+
+    def test_passing_an_integer():
+
+  still green.
+
+* I remove the commented lines from :ref:`test_passing_booleans`
+
+  .. code-block:: python
+    :lineno-start: 14
+
+    def test_passing_booleans():
+        reality = src.telephone.text(False)
+        my_expectation = 'I got: False'
+        assert reality == my_expectation
+
+        reality = src.telephone.text(True)
+        my_expectation = 'I got: True'
+        assert reality == my_expectation
+
+
+    def test_passing_an_integer():
+
+* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_an_integer` to ``src.telephone.text``
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 3-6
+
+    def test_passing_an_integer():
+        an_integer = 1234
+        # assert text(an_integer) == f'I got: {an_integer}'
+        reality = src.telephone.text(an_integer)
+        my_expectation = f'I got: {an_integer}'
+        assert reality == my_expectation
+
+
+    def test_passing_a_float():
+
+  green.
+
+* I remove the commented line from :ref:`test_passing_an_integer`
+
+  .. code-block:: python
+    :lineno-start: 24
+
+    def test_passing_an_integer():
+        an_integer = 1234
+
+        reality = src.telephone.text(an_integer)
+        my_expectation = f'I got: {an_integer}'
+        assert reality == my_expectation
+
+
+    def test_passing_a_float():
+
+* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_a_float`
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 3-6
+
+    def test_passing_a_float():
+        a_float = 5.678
+        # assert text(a_float) == f'I got: {a_float}'
+        reality = src.telephone.text(a_float)
+        my_expectation = f'I got: {a_float}'
+        assert reality == my_expectation
+
+
+    def test_passing_a_string():
+
+  green.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 32
+
+    def test_passing_a_float():
+        a_float = 5.678
+
+        reality = src.telephone.text(a_float)
+        my_expectation = f'I got: {a_float}'
+        assert reality == my_expectation
+
+
+    def test_passing_a_string():
+
+  "BOOM BOOM BOOM"
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
 
 ----
 

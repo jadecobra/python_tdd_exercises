@@ -316,7 +316,8 @@ test_module_not_found_error
   .. code-block:: shell
     :emphasize-lines: 4
 
-      File ".../pumping_python/module_not_found_error/tests/test_module_not_found_error.py",
+      File ".../pumping_python/module_not_found_error/
+                tests/test_module_not_found_error.py",
         line 1, in <module>
         import src.module_00
     ModuleNotFoundError: No module named 'src.module_00'
@@ -347,7 +348,6 @@ what causes ModuleNotFoundError?
 *********************************************************************************
 
 ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that ends in ``.py``) with the name given in an `import statement`_
-
 
 ----
 

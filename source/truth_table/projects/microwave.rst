@@ -67,7 +67,7 @@ start the project
 
   then goes back to the command line.
 
-* I make a directory_ for the source code
+* I use mkdir_ to make a folder_ named ``src``
 
   .. code-block:: shell
     :emphasize-lines: 1
