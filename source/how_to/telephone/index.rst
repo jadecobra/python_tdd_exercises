@@ -2600,7 +2600,240 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
     def test_passing_a_string():
 
-  "BOOM BOOM BOOM"
+  still green.
+
+* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_a_s_string`
+
+  .. code-block:: python
+    :lineno-start: 40
+    :emphasize-lines: 3-6
+
+    def test_passing_a_string():
+        a_string = 'hi'
+        # assert text(a_string) == f'I got: {a_string}'
+        reality = src.telephone.text(a_string)
+        my_expectation = f'I got: {a_string}'
+        assert reality == my_expectation
+
+
+    def test_passing_a_tuple():
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 40
+
+    def test_passing_a_string():
+        a_string = 'hi'
+
+        reality = src.telephone.text(a_string)
+        my_expectation = f'I got: {a_string}'
+        assert reality == my_expectation
+
+
+    def test_passing_a_tuple():
+
+* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_a_tuple`
+
+  .. code-block:: python
+    :lineno-start: 48
+    :emphasize-lines: 3-6
+
+    def test_passing_a_tuple():
+        a_tuple = (0, 1, 2, 'n')
+        # assert text(a_tuple) == f'I got: {a_tuple}'
+        reality = src.telephone.text(a_tuple)
+        my_expectation = f'I got: {a_tuple}'
+        assert reality == my_expectation
+
+
+    def test_passing_a_list():
+
+  the test is still green.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 48
+
+    def test_passing_a_tuple():
+        a_tuple = (0, 1, 2, 'n')
+
+        reality = src.telephone.text(a_tuple)
+        my_expectation = f'I got: {a_tuple}'
+        assert reality == my_expectation
+
+
+    def test_passing_a_list():
+
+* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_a_list`
+
+  .. code-block:: python
+    :lineno-start: 56
+    :emphasize-lines: 3-6
+
+    def test_passing_a_list():
+        a_list = [0, 1, 2, 'n']
+        # assert text(a_list) == f'I got: {a_list}'
+        reality = src.telephone.text(a_list)
+        my_expectation = f'I got: {a_list}'
+        assert reality == my_expectation
+
+
+    def test_passing_a_set():
+
+  still green.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 56
+
+    def test_passing_a_list():
+        a_list = [0, 1, 2, 'n']
+
+        reality = src.telephone.text(a_list)
+        my_expectation = f'I got: {a_list}'
+        assert reality == my_expectation
+
+
+    def test_passing_a_set():
+
+* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_a_set`
+
+  .. code-block:: python
+    :lineno-start: 64
+    :emphasize-lines: 3-6
+
+    def test_passing_a_set():
+        a_set = {0, 1, 2, 'n'}
+        # assert text(a_set) == f'I got: {a_set}'
+        reality = src.telephone.text(a_set)
+        my_expectation = f'I got: {a_set}'
+        assert reality == my_expectation
+
+
+    def test_passing_a_dictionary():
+
+  green.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 64
+
+    def test_passing_a_set():
+        a_set = {0, 1, 2, 'n'}
+
+        reality = src.telephone.text(a_set)
+        my_expectation = f'I got: {a_set}'
+        assert reality == my_expectation
+
+
+    def test_passing_a_dictionary():
+
+* I change the call in ``reality`` for :ref:`test_passing_a_dictionary`
+
+  .. code-block:: python
+    :lineno-start: 72
+    :emphasize-lines: 6-7
+
+    def test_passing_a_dictionary():
+        a_dictionary = {
+            'key0': 'value0',
+            'keyN': [0, 1, 2, 'n'],
+        }
+        # reality = text(a_dictionary)
+        reality = src.telephone.text(a_dictionary)
+        my_expectation = f'I got: {a_dictionary}'
+        assert reality == my_expectation
+
+
+    def test_passing_a_class():
+
+  still green.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 72
+
+    def test_passing_a_dictionary():
+        a_dictionary = {
+            'key0': 'value0',
+            'keyN': [0, 1, 2, 'n'],
+        }
+
+        reality = src.telephone.text(a_dictionary)
+        my_expectation = f'I got: {a_dictionary}'
+        assert reality == my_expectation
+
+
+    def test_passing_a_class():
+
+* I change the calls in the :ref:`assertions<what is an assertion?>` of :ref:`test_passing_a_class`
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 2-5, 7-10, 12-15, 17-20, 22-25, 27-30, 32-35, 37-40, 42-45
+
+    def test_passing_a_class():
+        # assert text(object) == "I got: <class 'object'>"
+        reality = src.telephone.text(object)
+        my_expectation = "I got: <class 'object'>"
+        assert reality == my_expectation
+
+        # assert text(bool) == "I got: <class 'bool'>"
+        reality = src.telephone.text(bool)
+        my_expectation = "I got: <class 'bool'>"
+        assert reality == my_expectation
+
+        # assert text(int) == "I got: <class 'int'>"
+        reality = src.telephone.text(int)
+        my_expectation = "I got: <class 'int'>"
+        assert reality == my_expectation
+
+        # assert text(float) == "I got: <class 'float'>"
+        reality = src.telephone.text(float)
+        my_expectation = "I got: <class 'float'>"
+        assert reality == my_expectation
+
+        # assert text(str) == "I got: <class 'str'>"
+        reality = src.telephone.text(str)
+        my_expectation = "I got: <class 'str'>"
+        assert reality == my_expectation
+
+        # assert text(tuple) == "I got: <class 'tuple'>"
+        reality = src.telephone.text(tuple)
+        my_expectation = "I got: <class 'tuple'>"
+        assert reality == my_expectation
+
+        # assert text(list) == "I got: <class 'list'>"
+        reality = src.telephone.text(list)
+        my_expectation = "I got: <class 'list'>"
+        assert reality == my_expectation
+
+        # assert text(set) == "I got: <class 'set'>"
+        reality = src.telephone.text(set)
+        my_expectation = "I got: <class 'set'>"
+        assert reality == my_expectation
+
+        # assert text(dict) == "I got: <class 'dict'>"
+        reality = src.telephone.text(dict)
+        my_expectation = "I got: <class 'dict'>"
+        assert reality == my_expectation
+
+
+    # Exceptions seen
+
+  the test is still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start:
+
+
 
 ----
 
