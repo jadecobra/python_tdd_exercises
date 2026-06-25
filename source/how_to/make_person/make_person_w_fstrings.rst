@@ -1882,7 +1882,86 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
     def test_jane():
 
-  the terminal_ is my friend, and shows :ref:`NameError`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'say_hi' is not defined
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add a :ref:`function definition<how to make a function that takes input>` for it
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5
+
+    import src.person
+
+
+    def say_hi():
+        return None
+
+
+    def test_joe():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: say_hi() got an
+               unexpected keyword argument
+               'first_name'
+
+  because
+
+  - I called :ref:`the say_hi function<test say_hi>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``year_of_birth``).
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` allows zero input, because the parentheses are empty.
+  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+
+* I add ``first_name`` in parentheses
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 1-2
+
+    # def say_hi():
+    def say_hi(first_name):
+        return None
+
+
+    def test_joe():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: shell
+
+    TypeError: say_hi()
+               got an unexpected keyword argument 'last_name'.
+               Did you mean 'first_name'?
+
+* I add ``last_name`` in parentheses
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 2-3
+
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
 
 
 ----
