@@ -4157,7 +4157,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
              {'first_name': 'jane', 'last_name': 'doe',
               'sex': 'F', 'age': 35}
 
-  * this happens in ``say_hello`` when  ``my_expectation = src.person.say_hello(jane)`` runs
+  * this happens in ``say_hello`` when  ``src.person.say_hello(jane)`` runs
 
     .. code-block:: python
 
@@ -4180,7 +4180,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   .. code-block:: python
 
-    my_expectation = src.person.say_hello(jane)
+    src.person.say_hello(jane)
     # the say_hello function returns
     'Hi, my name is jane blow and I am 30'
 
@@ -4235,7 +4235,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
              {'first_name': 'jane', 'last_name': 'doe',
               'sex': 'F', 'age': 35}
 
-  * this happens in ``say_hello`` when  ``my_expectation = src.person.say_hello(jane)`` runs
+  * this happens in ``say_hello`` when  ``src.person.say_hello(jane)`` runs
 
     .. code-block:: python
 
@@ -4264,7 +4264,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   .. code-block:: python
 
-    my_expectation = src.person.say_hello(jane)
+    src.person.say_hello(jane)
     # the say_hello function returns
     'Hi, my name is jane doe and I am 30'
 
@@ -4312,7 +4312,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
              {'first_name': 'jane', 'last_name': 'doe',
               'sex': 'F', 'age': 35}
 
-  * this happens in ``say_hello`` when  ``my_expectation = src.person.say_hello(jane)`` runs
+  * this happens in ``say_hello`` when  ``src.person.say_hello(jane)`` runs
 
     .. code-block:: python
 
@@ -4344,7 +4344,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   .. code-block:: python
 
-    my_expectation = src.person.say_hello(jane)
+    src.person.say_hello(jane)
     # the say_hello function returns
     'Hi, my name is jane doe and I am 35'
 

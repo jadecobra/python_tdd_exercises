@@ -2172,8 +2172,10 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   the test passes.
 
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`the say_hi function<test say_hi>` to :ref:`test_john` in ``test_person.py``
 
-
+  .. code-block:: python
+    :lineno-start: 85
 
 
 
