@@ -2983,7 +2983,7 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
     def test_passing_booleans():
 
-  all the tests are still green because all the calls that were to the ``text`` :ref:`function<what is a function?>` in ``test_telephone.py`` have been rerouted to the ``text`` :ref:`function<what is a function?>` in ``telephone.py`` in the ``src`` folder_. When ``src.telephone.text`` is called Python_ follows this path
+  all the tests are still green because all the calls to the ``text`` :ref:`function<what is a function?>` that was in ``test_telephone.py`` are now to the ``text`` :ref:`function<what is a function?>` in ``telephone.py`` in the ``src`` folder_. When ``src.telephone.text`` is called Python_ follows this path
 
   .. code-block:: shell
 
@@ -2998,7 +2998,7 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
     :emphasize-lines: 1-2
 
     git commit -am \
-    'solution from tests'
+    'separate solution from tests'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 

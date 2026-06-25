@@ -42,7 +42,7 @@ open the project
 
   .. code-block:: shell
 
-    .../pumping_python/person
+    .../pumping_python/ove
 
 * I open ``test_person.py``
 
@@ -59,7 +59,7 @@ open the project
 ----
 
 *********************************************************************************
-test_person_factory_w_inputs
+test person factory
 *********************************************************************************
 
 ----
@@ -124,7 +124,7 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` with a call to the ``factory`` :ref:`function<what is a function?>` in :ref:`test_jane`
+* I add an :ref:`assertion<what is an assertion?>` with a call to :ref:`the factory function<test person factory>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 21
@@ -155,7 +155,7 @@ the test passes.
     AssertionError: assert 'joe, blow, M, 1996'
                         == 'jane, doe, F, 1991'
 
-  because the ``factory`` :ref:`function<what is a function?>` always returns ``joe, blow, M, 1996`` when it is called. It has to return a string_ based on the input it gets for me to be able to use it to make more than one person.
+  because :ref:`the factory function<test person factory>` always returns ``joe, blow, M, 1996`` when it is called. It has to return a string_ based on the input it gets for me to be able to use it to make more than one person.
 
 * I :ref:`make the function take input<how to make a function that takes input>` for the first name
 
@@ -177,11 +177,11 @@ the test passes.
 
   because
 
-  - I called the ``factory`` :ref:`function<what is a function?>` with zero inputs.
+  - I called :ref:`the factory function<test person factory>` with zero inputs.
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has one required argument (``first_name``).
   - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
-* I add ``'jane'`` to the call to the ``factory`` :ref:`function<what is a function?>` in :ref:`test_jane`
+* I add ``'jane'`` to the call to :ref:`the factory function<test person factory>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 30
@@ -205,7 +205,7 @@ the test passes.
     AssertionError: assert 'joe, blow, M, 1996'
                         == 'jane, doe, F, 1991'
 
-* I change :ref:`the return statement` of the ``factory`` :ref:`function<what is a function?>` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
+* I change :ref:`the return statement` of :ref:`the factory function<test person factory>` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
 
   .. code-block:: python
     :linenos:
@@ -252,7 +252,7 @@ the test passes.
 
     NameError: name 'last_name' is not defined
 
-* I add the name to the parentheses to define it in the ``factory`` :ref:`function<what is a function?>`
+* I add the name to the parentheses to define it in :ref:`the factory function<test person factory>`
 
   .. code-block:: python
     :linenos:
@@ -281,11 +281,11 @@ the test passes.
 
   because
 
-  - I called the ``factory`` :ref:`function<what is a function?>` with one input (``jane``).
+  - I called :ref:`the factory function<test person factory>` with one input (``jane``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has two required arguments (``first_name`` and ``last_name``).
   - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
-* I add ``'doe'`` to the call to the ``factory`` :ref:`function<what is a function?>` in :ref:`test_jane`
+* I add ``'doe'`` to the call to :ref:`the factory function<test person factory>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 36
@@ -312,7 +312,7 @@ the test passes.
 
   the first and last names match. More progress.
 
-* I use :ref:`keyword arguments<test_keyword_arguments>` with a value for ``sex`` (since I have more than two) to change the call to the ``factory`` :ref:`function<what is a function?>` in :ref:`test_jane`
+* I use :ref:`keyword arguments<test_keyword_arguments>` with a value for ``sex`` (since I have more than two) to change the call to :ref:`the factory function<test person factory>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 36
@@ -344,7 +344,7 @@ the test passes.
 
   because
 
-  - I called the ``factory`` :ref:`function<what is a function?>` with three :ref:`keyword arguments<test_keyword_arguments>` input (``first_name``, ``last_name`` and ``sex``).
+  - I called :ref:`the factory function<test person factory>` with three :ref:`keyword arguments<test_keyword_arguments>` input (``first_name``, ``last_name`` and ``sex``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has two required arguments (``first_name`` and ``last_name``).
   - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
@@ -370,7 +370,7 @@ the test passes.
 
   the terminal_ shows the last :ref:`AssertionError<what causes AssertionError?>` again.
 
-* I add ``sex`` to the :ref:`f-string<what is string interpolation?>` in the ``factory`` :ref:`function<what is a function?>`
+* I add ``sex`` to the :ref:`f-string<what is string interpolation?>` in :ref:`the factory function<test person factory>`
 
   .. code-block:: python
     :linenos:
@@ -428,7 +428,7 @@ the test passes.
 
     NameError: name 'year_of_birth' is not defined
 
-* I add ``year_of_birth`` to the parentheses to define it in the ``factory`` :ref:`function<what is a function?>`
+* I add ``year_of_birth`` to the parentheses to define it in :ref:`the factory function<test person factory>`
 
   .. code-block:: python
     :linenos:
@@ -464,11 +464,11 @@ the test passes.
 
   because
 
-  - I called the ``factory`` :ref:`function<what is a function?>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``sex``).
+  - I called :ref:`the factory function<test person factory>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``sex``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has four required arguments (``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
   - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
-* I add ``year_of_birth=1996`` to the call to the ``factory`` :ref:`function<what is a function?>` in :ref:`test_jane`
+* I add ``year_of_birth=1996`` to the call to :ref:`the factory function<test person factory>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 43
@@ -503,11 +503,11 @@ the test passes.
 
   because
 
-  - I called in :ref:`test_joe` the ``factory`` :ref:`function<what is a function?>` with zero arguments.
+  - I called in :ref:`test_joe` :ref:`the factory function<test person factory>` with zero arguments.
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has four required arguments (``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
   - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
-* Since there are more than two, I add :ref:`keyword arguments<test_keyword_arguments>` to the call to the ``factory`` :ref:`function<what is a function?>` in :ref:`test_joe`
+* Since there are more than two, I add :ref:`keyword arguments<test_keyword_arguments>` to the call to :ref:`the factory function<test person factory>` in :ref:`test_joe`
 
   .. code-block:: python
     :lineno-start: 35
@@ -533,7 +533,7 @@ the test passes.
 
 ----
 
-* I remove the commented lines from the ``factory`` :ref:`function<what is a function?>`
+* I remove the commented lines from :ref:`the factory function<test person factory>`
 
   .. code-block:: python
     :linenos:
@@ -550,7 +550,7 @@ the test passes.
 
     def joe():
 
-* I comment out the call to ``joe`` in :ref:`test_joe` because I no longer need it since the ``factory`` :ref:`function<what is a function?>` does the same thing
+* I comment out the call to ``joe`` in :ref:`test_joe` because I no longer need it since :ref:`the factory function<test person factory>` does the same thing
 
   .. code-block:: python
     :lineno-start: 27
@@ -827,7 +827,7 @@ the test passes.
 
 ----
 
-* I comment out the call to ``jane`` in :ref:`test_jane` because I no longer need it since the ``factory`` :ref:`function<what is a function?>` does the same thing
+* I comment out the call to ``jane`` in :ref:`test_jane` because I no longer need it since :ref:`the factory function<test person factory>` does the same thing
 
   .. code-block:: python
     :lineno-start: 46
@@ -1066,7 +1066,7 @@ the test passes.
 
 ----
 
-* I change the call in :ref:`test_john` to a call to the ``factory`` :ref:`function<what is a function?>`
+* I change the call in :ref:`test_john` to a call to :ref:`the factory function<test person factory>`
 
   .. code-block:: python
     :lineno-start: 65
@@ -1362,6 +1362,7 @@ the test passes.
             f'{first_name}, {last_name},'
             f' {sex}, {year_of_birth}'
         )
+        assert reality == my_expectation
 
 
     # Exceptions seen
@@ -1389,6 +1390,7 @@ the test passes.
             f'{first_name}, {last_name},'
             f' {sex}, {year_of_birth}'
         )
+        assert reality == my_expectation
 
 
     # Exceptions seen
@@ -1410,7 +1412,7 @@ the test passes.
 
     def test_joe():
 
-  the ``factory`` :ref:`function<what is a function?>` can make a string_ for any person I want when I give it the first name, last name, sex and year of birth.
+  :ref:`the factory function<test person factory>` can make a string_ for any person I want when I give it the first name, last name, sex and year of birth.
 
 * I open a new terminal_ then change directories to ``person``
 
@@ -1442,7 +1444,7 @@ separate and equal
 
 * I go back to the terminal_ where the tests are running
 
-* I change the call to the ``factory`` :ref:`function<what is a function?>` in :ref:`test_joe` to the ``factory`` :ref:`function<what is a function?>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of in the same file_ (``test_person.py``)
+* I change the call to :ref:`the factory function<test person factory>` in :ref:`test_joe` to :ref:`the factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of in the same file_ (``test_person.py``)
 
   .. code-block:: python
     :lineno-start: 11
@@ -1520,7 +1522,7 @@ separate and equal
     # AttributeError
 
 * I open ``person.py`` from the ``src`` folder_
-* I delete all the text in the file_ then add a copy of the ``factory`` :ref:`function<what is a function?>` to ``person.py``
+* I delete all the text in the file_ then add a copy of :ref:`the factory function<test person factory>` to ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -1538,7 +1540,7 @@ separate and equal
   the test passes because
 
   - when ``import src.person`` runs, Python_ brings in an :ref:`object<what is a class?>` for the ``person.py`` file_ from the ``src`` folder_ so I can use it in ``test_person.py`` as ``src.person``
-  - when ``src.person.factory`` is called, Python_ calls the ``factory`` :ref:`function<what is a function?>` from the :ref:`object<what is a class?>` it imported for the ``person.py`` file_ from the ``src`` folder_ (``src.person``)
+  - when ``src.person.factory`` is called, Python_ calls :ref:`the factory function<test person factory>` from the :ref:`object<what is a class?>` it imported for the ``person.py`` file_ from the ``src`` folder_ (``src.person``)
 
   I think of ``src.person.factory`` like an address
 
@@ -1567,7 +1569,7 @@ separate and equal
 
 ----
 
-* I remove the commented line from :ref:`test_joe` in test_person.py``
+* I remove the commented line from :ref:`test_joe` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 14
@@ -1593,715 +1595,233 @@ separate and equal
 
     def test_jane():
 
-* I change the call to the ``factory`` :ref:`function<what is a function?>` in :ref:`test_joe` to the ``factory`` :ref:`function<what is a function?>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change the call to :ref:`the factory function<test person factory>` in :ref:`test_jane` to :ref:`the factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 33
     :emphasize-lines: 7-8
-
-
-----
-BOOM
-----
-----
-BOOM
-----
-----
-BOOM
-----
-
-extract factory tester function
-
-
-* I remove the :ref:`assertion<what is an assertion?>` and comments then add a new test :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-2
-
-    def test_joe():
-        assert joe() == 'joe, blow, M, 1996'
-
-
-    # Exceptions seen
-    # AssertionError
-
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'joe' is not defined
-
-  because there is no definition for ``joe`` in ``test_person.py``.
-
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
-
-  .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 3
-    :emphasize-text: NameError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-
-
-* I add a :ref:`variable<what is a variable?>` for ``joe`` and point it to :ref:`None<what is None?>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
-
-    joe = None
-
-
-    def test_joe():
-        assert joe() == 'joe, blow, M, 1996'
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: 'NoneType' object is not callable
-
-  because I called ``joe`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
-
-  .. code-block:: python
-
-    joe = None # point the name to the object
-    joe()      # call the name
-    None()     # substitute the value for the name
-
-  ``None()`` raises :ref:`TypeError<what causes TypeError?>`.
-
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 4
-    :emphasize-text: TypeError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # TypeError
-
-* I change ``joe`` to a :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-3
-
-    # joe = None
-    def joe():
-        return None
-
-
-    def test_joe():
-        assert joe() == 'joe, blow, M, 1996'
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: assert None == 'joe, blow, M, 1996'
-
-  because when I call ``joe`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
-
-  .. code-block:: python
-
-    assert joe() == 'joe, blow, M, 1996'
-    assert None  == 'joe, blow, M, 1996'
-
-  which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`None is only equal to None<what is None?>`.
-
-* I change :ref:`the return statement` of ``joe``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3-4
-
-    # joe = None
-    def joe():
-        # return None
-        return 'joe, blow, M, 1996'
-
-
-    def test_joe():
-        assert joe() == 'joe, blow, M, 1996'
-
-
-    # Exceptions seen
-
-  the test passes.
-
-
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :linenos:
-
-    def joe():
-        return 'joe, blow, M, 1996'
-
-
-    def test_joe():
-        assert joe() == 'joe, blow, M, 1996'
-
-
-    # Exceptions seen
-
-* I add a git_ commit message in the other terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit -am 'add test_joe'
-
-  the terminal_ shows a summary of the changes then goes back to the command line.
-
-----
-
-*********************************************************************************
-test_jane
-*********************************************************************************
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add a test :ref:`function<what is a function?>`
-
-.. code-block:: python
-  :lineno-start: 5
-  :emphasize-lines: 5-6
-
-  def test_joe():
-      assert joe() == 'joe, blow, M, 1996'
-
-
-  def test_jane():
-      assert jane() == 'jane, doe, F, 1991'
-
-
-
-  # Exceptions seen
-
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-.. code-block:: python
-
-  NameError: name 'jane' is not defined
-
-because there is no definition for ``jane`` in this file_.
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I add a :ref:`variable<what is a variable?>` for ``jane`` and point it to :ref:`None<what is None?>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5
-
-    def joe():
-        return 'joe, blow, M, 1996'
-
-
-    jane = None
-
-
-    def test_joe():
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: 'NoneType' object is not callable
-
-  because I called ``jane`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
-
-  .. code-block:: python
-
-    jane = None # point the name to the object
-    jane()      # call the name
-    None()      # substitute the value for the name
-
-  ``None()`` raises :ref:`TypeError<what causes TypeError?>`.
-
-* I change ``jane`` to a :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5-7
-
-    def joe():
-        return 'joe, blow, M, 1996'
-
-
-    # jane = None
-    def jane():
-        return None
-
-
-    def test_joe():
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: assert None == 'jane, doe, F, 1991'
-
-  because when I call ``jane`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
-
-  .. code-block:: python
-
-    assert jane() == 'jane, doe, F, 1991'
-    assert None   == 'jane, doe, F, 1991'
-
-  which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`None is only equal to None<what is None?>`.
-
-* I change :ref:`the return statement` of ``jane``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 7-8
-
-    def joe():
-        return 'joe, blow, M, 1996'
-
-
-    # jane = None
-    def jane():
-        # return None
-        return 'jane, doe, F, 1991'
-
-
-    def test_joe():
-
-  the test passes.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :linenos:
-
-    def joe():
-        return 'joe, blow, M, 1996'
-
-
-    def jane():
-        return 'jane, doe, F, 1991'
-
-
-    def test_joe():
-        assert joe() == 'joe, blow, M, 1996'
-
 
     def test_jane():
-        assert jane() == 'jane, doe, F, 1991'
-
-
-    # Exceptions seen
-
-* I add a git_ commit message in the other terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit -am 'add test_jane'
-
-  the terminal_ shows a summary of the changes then goes back to the command line.
-
-----
-
-*********************************************************************************
-test_john
-*********************************************************************************
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add another test :ref:`function<what is a function?>`
-
-.. code-block:: python
-  :lineno-start: 13
-  :emphasize-lines: 5-6
-
-  def test_jane():
-      assert jane() == 'jane, doe, F, 1991'
-
-
-  def test_john():
-      assert john() == 'john, smith, M, 1580'
-
-
-
-  # Exceptions seen
-
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-.. code-block:: python
-
-  NameError: name 'john' is not defined
-
-because there is no definition for ``john`` in this file_, yet.
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I add a :ref:`variable<what is a variable?>` for ``john`` and point it to :ref:`None<what is None?>`
-
-  .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 5
-
-    def jane():
-        return 'jane, doe, F, 1991'
-
-
-    john = None
-
-
-    def test_joe():
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: 'NoneType' object is not callable
-
-  because I called ``john`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
-
-  .. code-block:: python
-
-    john = None # point the name to the object
-    john()      # call the name
-    None()      # substitute the value for the name
-
-  ``None()`` raises :ref:`TypeError<what causes TypeError?>`.
-
-* I change ``john`` to a :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 5-7
-
-    def joe():
-        return 'joe, blow, M, 1996'
-
-
-    # john = None
-    def john():
-        return None
-
-
-    def test_joe():
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: assert None == 'john, smith, M, 1580'
-
-  because when I call ``john`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
-
-  .. code-block:: python
-
-    assert john() == 'john, smith, M, 1580'
-    assert None   == 'john, smith, M, 1580'
-
-  which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`None is only equal to None<what is None?>`.
-
-* I change :ref:`the return statement` of ``john``
-
-  .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 7-8
-
-    def jane():
-        return 'jane, doe, F, 1991'
-
-
-    # john = None
-    def john():
-        # return None
-        return 'john, smith, M, 1580'
-
-
-    def test_joe():
-
-  the test passes.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :linenos:
-
-    def joe():
-        return 'joe, blow, M, 1996'
-
-
-    def jane():
-        return 'jane, doe, F, 1991'
-
-
-    def john():
-        return 'john, smith, M, 1580'
-
-
-    def test_joe():
-        assert joe() == 'joe, blow, M, 1996'
-
-
-    def test_jane():
-        assert jane() == 'jane, doe, F, 1991'
+        first_name = 'jane'
+        last_name = 'doe'
+        sex = 'F'
+        year_of_birth = 1991
+
+        # reality = factory(
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
 
 
     def test_john():
-        assert john() == 'john, smith, M, 1580'
 
+  the test is still green.
 
-    # Exceptions seen
-
-* I add a git_ commit message in the other terminal_
+* I remove the commented line from :ref:`test_jane`
 
   .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit -am 'add test_john'
-
-  the terminal_ shows a summary of the changes then goes back to the command line.
-
-----
-
-*********************************************************************************
-test_mary
-*********************************************************************************
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add another test :ref:`function<what is a function?>`
-
-.. code-block:: python
-  :lineno-start: 16
-  :emphasize-lines: 5-6
-
-  def test_john():
-      assert john() == 'john, smith, M, 1580'
-
-
-  def test_mary():
-      assert mary() == 'mary, public, F, 2000'
-
-
-  # Exceptions seen
-
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-.. code-block:: python
-
-  NameError: name 'mary' is not defined
-
-because there is no definition for ``mary``, it is just a name.
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I add a :ref:`variable<what is a variable?>` for ``mary`` and point it to :ref:`None<what is None?>`
-
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 5
-
-    def john():
-        return 'john, smith, M, 1580'
-
-
-    mary = None
-
-
-    def test_joe():
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: 'NoneType' object is not callable
-
-  because I called ``mary`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
-
-  .. code-block:: python
-
-    mary = None # point the name to the object
-    mary()      # call the name
-    None()      # substitute the value for the name
-
-  ``None()`` raises :ref:`TypeError<what causes TypeError?>`.
-
-* I change ``mary`` to a :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 5-7
-
-    def john():
-        return 'john, smith, M, 1580'
-
-
-    # mary = None
-    def mary():
-        return None
-
-
-    def test_joe():
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: assert None == 'mary, public, F, 2000'
-
-  because when I call ``mary`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
-
-  .. code-block:: python
-
-    assert mary() == 'mary, public, F, 2000'
-    assert None   == 'mary, public, F, 2000'
-
-  which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`None is only equal to None<what is None?>`.
-
-* I change :ref:`the return statement` of ``mary``
-
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 7-8
-
-    def john():
-        return 'john, smith, M, 1580'
-
-
-    # mary = None
-    def mary():
-        # return None
-        return 'mary, public, F, 2000'
-
-
-    def test_joe():
-
-  the test passes.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :linenos:
-
-    def joe():
-        return 'joe, blow, M, 1996'
-
-
-    def jane():
-        return 'jane, doe, F, 1991'
-
-
-    def john():
-        return 'john, smith, M, 1580'
-
-
-    def mary():
-        return 'mary, public, F, 2000'
-
-
-    def test_joe():
-        assert joe() == 'joe, blow, M, 1996'
-
+    :lineno-start: 33
 
     def test_jane():
-        assert jane() == 'jane, doe, F, 1991'
+        first_name = 'jane'
+        last_name = 'doe'
+        sex = 'F'
+        year_of_birth = 1991
+
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
 
 
     def test_john():
-        assert john() == 'john, smith, M, 1580'
+
+* I reroute the call to :ref:`the factory function<test person factory>` in :ref:`test_john` to :ref:`the factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+
+  .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 7-8
+
+    def test_john():
+        first_name = 'john'
+        last_name = 'smith'
+        sex = 'M'
+        year_of_birth = 1580
+
+        # reality = factory(
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
 
 
     def test_mary():
-        assert mary() == 'mary, public, F, 2000'
+
+  still green.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 52
+
+    def test_john():
+        first_name = 'john'
+        last_name = 'smith'
+        sex = 'M'
+        year_of_birth = 1580
+
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+
+    def test_mary():
+
+* I do the same thing to the call to :ref:`the factory function<test person factory>` in :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 7-8
+
+    def test_mary():
+        first_name = 'mary'
+        last_name = 'public'
+        sex = 'F'
+        year_of_birth = 2000
+
+        # reality = factory(
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+
+    # Exceptions seen
+
+  green.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 71
+
+    def test_mary():
+        first_name = 'mary'
+        last_name = 'public'
+        sex = 'F'
+        year_of_birth = 2000
+
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
 
 
     # Exceptions seen
     # AssertionError
     # NameError
     # TypeError
+    # AttributeError
+
+* I remove :ref:`the factory function<test person factory>` from ``test_person.py``
+
+  .. code-block:: python
+    :linenos:
+
+    import src.person
+
+
+    def test_joe():
+        first_name = 'joe'
+        last_name = 'blow'
+        sex = 'M'
+        year_of_birth = 1996
+
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+
+    def test_jane():
+
+  all the tests are still green because all the calls to :ref:`the factory function<test person factory>` that was in ``test_person.py`` are now to :ref:`the factory function<test person factory>` in ``person.py`` in the ``src`` folder_. When ``src.person.factory`` is called Python_ follows this path
+
+  .. code-block:: shell
+
+      src
+      └── person.py
+          └── def factory(
+                  first_name, last_name,
+                  sex, year_of_birth
+              ):
+                  return (
+                      f'{first_name}, {last_name},'
+                      f' {sex}, {year_of_birth}'
+                  )
 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    git commit -am 'add test_mary'
+    git commit -am \
+    'separate solution from tests'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
+
+:ref:`I can write solutions in a different module from the tests<separate and equal>`.
 
 ----
 
@@ -2309,7 +1829,7 @@ because there is no definition for ``mary``, it is just a name.
 close the project
 *********************************************************************************
 
-* I close ``test_person.py``
+* I close ``test_person.py`` and ``person.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
@@ -2334,12 +1854,7 @@ close the project
 review
 *************************************************************************************
 
-I ran tests to make :ref:`functions<what is a function?>` that return strings_ with information for people. There are a few problems with what I have so far
-
-- I made a :ref:`function<what is a function?>` for each person. What happens if I have to make 10 or 100 or 1000 people? I am not ready to make 1000 :ref:`functions<what is a function?>`.
-- Each test is basically a repetition of the information for each person.
-
-I want something that will take in information for a person and return a representation for the person. That way I can use one thing to make as many people as I want. I can do that with :ref:`functions that take input<what is a function?>`.
+I ran tests to make a :ref:`function<what is a function?>` that uses :ref:`f-strings<what is string interpolation?>` to make a string_ that can represent a person when I give it ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``.
 
 ----
 
@@ -2347,7 +1862,7 @@ I want something that will take in information for a person and return a represe
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a person: tests and solution>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a person with f-strings: tests and solution>`
 
 ----
 
