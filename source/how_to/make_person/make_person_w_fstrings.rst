@@ -1840,7 +1840,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_joe`
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_joe` in ``test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -1952,8 +1952,73 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     :lineno-start: 4
     :emphasize-lines: 2-3
 
+    # def say_hi():
+    # def say_hi(first_name):
+    def say_hi(first_name, last_name):
+        return None
+
+
+    def test_joe():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: say_hi()
+               got an unexpected keyword argument
+               'year_of_birth'
+
+  because
+
+  - I called :ref:`the say_hi function<test say_hi>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``year_of_birth``).
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` allows two arguments (``first_name``, ``last_name``).
+  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+
+* I add ``year_of_birth`` in parentheses
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 3-7
+
+    # def say_hi():
+    # def say_hi(first_name):
+    # def say_hi(first_name, last_name):
+    def say_hi(
+        first_name, last_name,
+        year_of_birth
+    ):
+        return None
+
+
+    def test_joe():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert None
+        == 'Hi, my name is joe blow and I am 30.'
+
+* I change :ref:`the return statement` to give the test what it wants
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 8-9
+
+    # def say_hi():
+    # def say_hi(first_name):
+    # def say_hi(first_name, last_name):
+    def say_hi(
+        first_name, last_name,
+        year_of_birth
+    ):
+        # return None
+        return 'Hi, my name is joe blow and I am 30.'
+
+
+    def test_joe():
+
+  the test passes.
 
 ----
 
@@ -1962,6 +2027,155 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 =================================================================================
 
 ----
+
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`the say_hi function<test say_hi>` to :ref:`test_jane` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 19-29
+
+    def test_jane():
+        first_name = 'jane'
+        last_name = 'doe'
+        sex = 'F'
+        year_of_birth = 1991
+
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+        reality = say_hi(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'Hi, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+
+    def test_john():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'Hi, my name ... and I am 30.'
+                        == 'Hi, my name ... and I am 35.'
+
+  - because :ref:`the say_hi function<test say_hi>` always returns ``'Hi, my name is joe blow and I am 30.'`` when it is called. It has to return a string_ based on the input it gets for me to be able to use it to make messages based on the person.
+  - I need better error messages.
+
+* I change :ref:`the return statement` of :ref:`the say_hi function<test say_hi>` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 9-13
+
+    # def say_hi():
+    # def say_hi(first_name):
+    # def say_hi(first_name, last_name):
+    def say_hi(
+        first_name, last_name,
+        year_of_birth
+    ):
+        # return None
+        # return 'Hi, my name is joe blow and I am 30.'
+        return (
+            f'Hi, my name is {first_name}'
+            ' blow and I am 30.'
+        )
+
+
+    def test_joe():
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'Hi, my name ... and I am 30.'
+                        == 'Hi, my name ... and I am 35.'
+
+  the first names now match and I still need better error messages.
+
+* I add ``last_name`` to :ref:`the return statement`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 12-13
+
+    # def say_hi():
+    # def say_hi(first_name):
+    # def say_hi(first_name, last_name):
+    def say_hi(
+        first_name, last_name,
+        year_of_birth
+    ):
+        # return None
+        # return 'Hi, my name is joe blow and I am 30.'
+        return (
+            f'Hi, my name is {first_name}'
+            # ' blow and I am 30.'
+            f' {last_name} and I am 30.'
+        )
+
+
+    def test_joe():
+
+  the terminal shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'Hi, my name ... and I am 30.'
+                        == 'Hi, my name ... and I am 35.'
+
+  the ages are different.
+
+* I add the age calculation to :ref:`the return statement`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 10, 15-16
+
+
+    # def say_hi():
+    # def say_hi(first_name):
+    # def say_hi(first_name, last_name):
+    def say_hi(
+        first_name, last_name,
+        year_of_birth
+    ):
+        # return None
+        # return 'Hi, my name is joe blow and I am 30.'
+        age = 2026 - year_of_birth
+
+        return (
+            f'Hi, my name is {first_name}'
+            # ' blow and I am 30.'
+            # f' {last_name} and I am 30.'
+            f' {last_name} and I am {age}.'
+        )
+
+
+    def test_joe():
+
+  the test passes.
+
+
+
+
+
 
 
 ----
