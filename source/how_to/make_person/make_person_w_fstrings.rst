@@ -1844,9 +1844,45 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines:
+    :emphasize-lines: 22-32
+
+    import src.person
 
 
+    def test_joe():
+        first_name = 'joe'
+        last_name = 'blow'
+        sex = 'M'
+        year_of_birth = 1996
+
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+        reality = say_hi(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'Hi, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+
+    def test_jane():
+
+  the terminal_ is my friend, and shows :ref:`NameError`
 
 
 ----
