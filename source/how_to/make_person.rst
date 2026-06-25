@@ -5639,7 +5639,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 * I use the ``get_random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variable?>` for ``john``
 
   .. code-block:: python
-    :lineno-start: 99
+    :lineno-start: 121
     :emphasize-lines: 4-6, 8
 
             first_name = 'john'

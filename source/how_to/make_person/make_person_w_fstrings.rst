@@ -1823,6 +1823,32 @@ separate and equal
 
 :ref:`I can write solutions in a different module from the tests<separate and equal>`.
 
+
+----
+
+*********************************************************************************
+test say_hi
+*********************************************************************************
+
+I want the person I make to say hi. I can make a :ref:`function<what is a function?>` that takes input about a person and returns a message.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_joe`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines:
+
+
+
+
 ----
 
 *********************************************************************************
