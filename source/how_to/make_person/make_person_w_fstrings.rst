@@ -1064,6 +1064,9 @@ the test passes.
 
     def test_john():
 
+* I change the call in :ref:`test_john` to a call to the ``factory`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
 
 ----
 BOOM
@@ -1074,6 +1077,9 @@ BOOM
 ----
 BOOM
 ----
+
+extract factory tester function
+
 
 * I remove the :ref:`assertion<what is an assertion?>` and comments then add a new test :ref:`function<what is a function?>`
 
