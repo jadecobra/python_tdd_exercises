@@ -1339,6 +1339,265 @@ the test passes.
 
     def test_mary():
 
+* I make the same change to :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 84
+    :emphasize-lines: 3-6, 8-17
+
+    def test_mary():
+        # assert mary() == 'mary, public, F, 2000'
+        first_name = 'mary'
+        last_name = 'public'
+        sex = 'F'
+        year_of_birth = 2000
+
+        reality = factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+
+
+    # Exceptions seen
+
+  the test is still green.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 84
+
+    def test_mary():
+        first_name = 'mary'
+        last_name = 'public'
+        sex = 'F'
+        year_of_birth = 2000
+
+        reality = factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+
+
+    # Exceptions seen
+
+* I remove the ``joe``, ``jane``, ``john`` and ``mary`` :ref:`functions<what is a function?>` because they are no longer used
+
+  .. code-block:: python
+    :linenos:
+
+    def factory(
+        first_name, last_name,
+        sex, year_of_birth
+    ):
+        return (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+
+
+    def test_joe():
+
+  the ``factory`` :ref:`function<what is a function?>` can make a string_ for any person I want when I give it the first name, last name, sex and year of birth.
+
+* I open a new terminal_ then change directories to ``person``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd person
+
+* I add a git_ commit message in the new terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'extract factory function'
+
+----
+
+*********************************************************************************
+separate and equal
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
+* I change the call to the ``factory`` :ref:`function<what is a function?>` in :ref:`test_joe` to the ``factory`` :ref:`function<what is a function?>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of in the same file_ (``test_person.py``)
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 7-8
+
+    def test_joe():
+        first_name = 'joe'
+        last_name = 'blow'
+        sex = 'M'
+        year_of_birth = 1996
+
+        # reality = factory(
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+
+    def test_jane():
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'src' is not defined
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add an `import statement`_ at the top of ``test_person.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import src.person
+
+
+    def factory(
+        first_name, last_name,
+        sex, year_of_birth
+    ):
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.person' has no attribute 'factory'
+
+  because there is nothing named ``factory`` in ``person.py`` in the ``src`` folder_.
+
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 90
+    :emphasize-lines: 5
+    :emphasize-text: AttributeError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # AttributeError
+
+* I open ``person.py`` from the ``src`` folder_
+* I delete all the text in the file_ then add a copy of the ``factory`` :ref:`function<what is a function?>` to ``person.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-8
+
+    def factory(
+        first_name, last_name,
+        sex, year_of_birth
+    ):
+        return (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+
+  the test passes because
+
+  - when ``import src.person`` runs, Python_ brings in an :ref:`object<what is a class?>` for the ``person.py`` file_ from the ``src`` folder_ so I can use it in ``test_person.py`` as ``src.person``
+  - when ``src.person.factory`` is called, Python_ calls the ``factory`` :ref:`function<what is a function?>` from the :ref:`object<what is a class?>` it imported for the ``person.py`` file_ from the ``src`` folder_ (``src.person``)
+
+  I think of ``src.person.factory`` like an address
+
+  - ``factory`` is something in ``person``, in this case it is a :ref:`function<what is a function?>` in ``person``
+  - ``person`` is something in ``src``, in this case it is ``person.py`` (a :ref:`module<what is a module?>`) in the ``src`` folder_
+  - ``src`` is something Python_ can import (a :ref:`module<what is a module?>`, `Python package`_ or folder_)
+
+    .. code-block:: shell
+
+      src
+      └── person.py
+          └── def factory(
+                  first_name, last_name,
+                  sex, year_of_birth
+              ):
+                  return (
+                      f'{first_name}, {last_name},'
+                      f' {sex}, {year_of_birth}'
+                  )
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented line from :ref:`test_joe` in test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 14
+
+    def test_joe():
+        first_name = 'joe'
+        last_name = 'blow'
+        sex = 'M'
+        year_of_birth = 1996
+
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+
+    def test_jane():
+
+* I change the call to the ``factory`` :ref:`function<what is a function?>` in :ref:`test_joe` to the ``factory`` :ref:`function<what is a function?>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 7-8
 
 
 ----
