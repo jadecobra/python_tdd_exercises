@@ -27,7 +27,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../../code/person/tests/test_person_1.py
+.. literalinclude:: ../../code/person/tests/test_person_w_strings.py
   :language: python
   :linenos:
 
