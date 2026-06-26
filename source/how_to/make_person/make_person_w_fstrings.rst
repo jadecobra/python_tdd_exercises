@@ -1444,7 +1444,7 @@ separate and equal
 
 * I go back to the terminal_ where the tests are running
 
-* I change the call to :ref:`the factory function<test person factory>` in :ref:`test_joe` to :ref:`the factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of in the same file_ (``test_person.py``)
+* I change ``reality`` for :ref:`test_joe` to be the result of a call :ref:`the factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to :ref:`the factory function<test person factory>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -1595,7 +1595,7 @@ separate and equal
 
     def test_jane():
 
-* I change the call to :ref:`the factory function<test person factory>` in :ref:`test_jane` to :ref:`the factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``reality`` for :ref:`test_jane` to be the result of a call :ref:`the factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 33
@@ -1651,7 +1651,7 @@ separate and equal
 
     def test_john():
 
-* I reroute the call to :ref:`the factory function<test person factory>` in :ref:`test_john` to :ref:`the factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``reality`` for :ref:`test_john` to be the result of a call :ref:`the factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 52
@@ -1796,7 +1796,7 @@ separate and equal
 
     def test_jane():
 
-  all the tests are still green because all the calls to :ref:`the factory function<test person factory>` that was in ``test_person.py`` are now to :ref:`the factory function<test person factory>` in ``person.py`` in the ``src`` folder_. When ``src.person.factory`` is called Python_ follows this path
+  all the tests are still green because the calls that were made to :ref:`the factory function<test person factory>` that was in ``test_person.py`` are now to :ref:`the factory function<test person factory>` in ``person.py`` in the ``src`` folder_. When ``src.person.factory`` is called, Python_ follows this path
 
   .. code-block:: shell
 
@@ -1817,7 +1817,7 @@ separate and equal
     :emphasize-lines: 1-2
 
     git commit -am \
-    'separate solution from tests'
+    'move factory function to person.py'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -2176,9 +2176,453 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   .. code-block:: python
     :lineno-start: 85
+    :emphasize-lines: 19-29
+
+    def test_john():
+        first_name = 'john'
+        last_name = 'smith'
+        sex = 'M'
+        year_of_birth = 1580
+
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+        reality = say_hi(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            'Hi, my name is jane'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+
+    def test_mary():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'Hi, my name ...and I am 446.'
+                        == 'Hi, my name ...and I am 446.'
+
+  - The first names are different.
+  - I want more detail in the error messages.
+
+* I change ``my_expectation`` to match ``reality`` in :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 103
+    :emphasize-lines: 7-8
+
+        reality = say_hi(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            # 'Hi, my name is jane'
+            f'Hi, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+
+    def test_mary():
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`the say_hi function<test say_hi>` to :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 117
+    :emphasize-lines: 19-29
+
+    def test_mary():
+        first_name = 'mary'
+        last_name = 'public'
+        sex = 'F'
+        year_of_birth = 2000
+
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+        reality = say_hi(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'Hi, my name is {first_name}'
+            ' smith and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'Hi, my name ... and I am 26.'
+                        == 'Hi, my name ... and I am 26.'
+
+  - The last names are different.
+  - I want better messages that show as much of the difference in the summary.
+
+* I change ``my_expectation`` to match ``reality`` in :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 135
+    :emphasize-lines: 8-9
+
+        reality = say_hi(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'Hi, my name is {first_name}'
+            # ' smith and I am'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 116
+
+    def test_mary():
+        first_name = 'mary'
+        last_name = 'public'
+        sex = 'F'
+        year_of_birth = 2000
+
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+        reality = say_hi(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'Hi, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+
+    # Exceptions seen
+
+  the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+
+  .. code-block:: python
+
+    say_hi(
+        first_name=first_name,
+        last_name=last_name,
+        year_of_birth=year_of_birth,
+    )
+        say_hi(
+            first_name, last_name,
+            year_of_birth,
+        )
+            first_name = 'mary'
+            last_name = 'public'
+            year_of_birth = 1991
+
+            age = 2026 - year_of_birth
+            age = 2026 - 1991
+            age = 35
+
+            return (
+                f'Hi, my name is {first_name}'
+                f' {last_name} and I am {age}.'
+            )
+            return f'Hi, my name is mary public and I am 35'
+
+----
+
+*********************************************************************************
+separate and equal say_hi
+*********************************************************************************
+
+* I change ``reality`` to be the result of a call :ref:`the say_hi function<test say_hi>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to :ref:`the say_hi function<test say_hi>` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 117
+    :emphasize-lines: 19-20
+
+    def test_mary():
+        first_name = 'mary'
+        last_name = 'public'
+        sex = 'F'
+        year_of_birth = 2000
+
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+        # reality = say_hi(
+        reality = src.person.say_hi(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'Hi, my name is {first_name}'
+            # ' smith and I am'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.person'
+                    has no attribute 'say_hi'
+
+  because there is nothing named ``say_hi`` in the ``person.py`` file_ in the ``src`` folder_.
+
+* I add a copy of :ref:`the say_hi function<test say_hi>` without the commented lines to ``person.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 11-20
+
+    def factory(
+        first_name, last_name,
+        sex, year_of_birth
+    ):
+        return (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+
+
+    def say_hi(
+        first_name, last_name,
+        year_of_birth
+    ):
+        age = 2026 - year_of_birth
+
+        return (
+            f'Hi, my name is {first_name}'
+            f' {last_name} and I am {age}.'
+        )
+
+  the test passes.
+
+* I remove the commented lines from :ref:`test_mary` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 117
+
+    def test_mary():
+        first_name = 'mary'
+        last_name = 'public'
+        sex = 'F'
+        year_of_birth = 2000
+
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+        reality = src.person.say_hi(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'Hi, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+
+    # Exceptions seen
+
+* I change ``reality`` for :ref:`test_john` to be the result of a call :ref:`the say_hi function<test say_hi>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+
+  .. code-block:: python
+    :lineno-start: 85
+    :emphasize-lines: 19-20
+
+    def test_john():
+        first_name = 'john'
+        last_name = 'smith'
+        sex = 'M'
+        year_of_birth = 1580
+
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+        # reality = say_hi(
+        reality = src.person.say_hi(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            # 'Hi, my name is jane'
+            f'Hi, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+
+    def test_mary():
+
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.person'
+                    has no attribute 'say_hi'
+
+  because there is nothing named ``say_hi`` in the ``person.py`` file_ in the ``src`` folder_.
+
+* I remove the commented lines from :ref:`test_mary` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 117
+
+    def test_mary():
+        first_name = 'mary'
+        last_name = 'public'
+        sex = 'F'
+        year_of_birth = 2000
+
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+        reality = src.person.say_hi(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'Hi, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+
+    # Exceptions seen
 
 
 
+
+  all the tests are still green because the calls that were made to :ref:`the say_hi function<test say_hi>` that was in ``test_person.py`` are now to :ref:`the say_hi function<test say_hi>` in ``person.py`` in the ``src`` folder_. When ``src.person.say_hi`` is called, Python_ follows this path
+
+  .. code-block:: shell
+
+      src
+      └── person.py
+          └── def say_hi(
+                  first_name, last_name,
+                  year_of_birth
+              ):
+                  age = 2026 - year_of_birth
+
+                  return (
+                      f'Hi, my name is {first_name}'
+                      f' {last_name} and I am {age}.'
+                  )
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move say_hi function to person.py'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 ----
 

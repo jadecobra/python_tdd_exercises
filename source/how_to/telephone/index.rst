@@ -2273,7 +2273,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 ----
 
 *********************************************************************************
-separate and equal
+separate and equal factory
 *********************************************************************************
 
 So far all :ref:`functions<what is a function?>` I have written have been in the same file_ as the tests, some are even in the same :ref:`function<what is a function?>` as the :ref:`assertions<what is an assertion?>` of the tests.
