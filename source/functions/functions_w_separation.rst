@@ -229,10 +229,10 @@ because ``src`` is not defined in ``test_functions.py``.
 
   .. code-block:: shell
 
-      src
-      └── functions.py
-          └── def w_pass():
-                  pass
+    src
+    └── functions.py
+        └── def w_pass():
+                pass
 
 * I add a git_ commit message in the other terminal_
 
@@ -329,10 +329,10 @@ the test passes.
 
   .. code-block:: shell
 
-      src
-      └── functions.py
-          └── def w_return():
-                  return
+    src
+    └── functions.py
+        └── def w_return():
+                return
 
 * I add a git_ commit message in the other terminal_
 
@@ -341,8 +341,6 @@ the test passes.
 
     git commit -am \
     'move w_return to functions.py'
-
-:ref:`I can write solutions in a different module from the tests<separate and equal>`.
 
 ----
 
@@ -429,10 +427,10 @@ the test passes.
 
   .. code-block:: shell
 
-      src
-      └── functions.py
-          └── def w_return_none():
-                  return None
+    src
+    └── functions.py
+        └── def w_return_none():
+                return None
 
 * I add a git_ commit message in the other terminal_
 
@@ -441,8 +439,6 @@ the test passes.
 
     git commit -am \
     'move w_return_none to functions.py'
-
-:ref:`I can write solutions in a different module from the tests<separate and equal>`.
 
 ----
 
@@ -537,10 +533,10 @@ the test passes.
 
   .. code-block:: shell
 
-      src
-      └── functions.py
-          └── def return_leaves_the_function():
-                  return None
+    src
+    └── functions.py
+        └── def return_leaves_the_function():
+                return None
 
 * I add a git_ commit message in the other terminal_
 
@@ -549,8 +545,6 @@ the test passes.
 
     git commit -am \
     'move return_leaves_the_function to functions.py'
-
-:ref:`I can write solutions in a different module from the tests<separate and equal>`.
 
 ----
 
@@ -589,7 +583,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   AttributeError: module 'src.functions'
                   has no attribute 'constant'
 
-because there is nothing named ``constant`` in functions.py`` in the ``src`` folder_.
+because there is nothing named ``constant`` in ``functions.py`` in the ``src`` folder_.
 
 ----
 
@@ -638,10 +632,10 @@ the test passes.
 
   .. code-block:: shell
 
-      src
-      └── functions.py
-          └── def constant():
-                  return 'the same thing'
+    src
+    └── functions.py
+        └── def constant():
+                return 'the same thing'
 
 * I add a git_ commit message in the other terminal_
 
@@ -651,7 +645,270 @@ the test passes.
     git commit -am \
     'move constant function to functions.py'
 
-:ref:`I can write solutions in a different module from the tests<separate and equal>`.
+----
+
+*********************************************************************************
+move identity function
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I change the calls in the :ref:`assertions<what is an assertion?>` of :ref:`test_identity_function` to use the results of calls to the :ref:`identity function<test_identity_function>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of calls to the :ref:`identity function<test_identity_function>` in ``test_functions.py``
+
+.. code-block:: python
+  :lineno-start: 27
+  :emphasize-lines: 5-8
+
+  def test_identity_function():
+      def identity(the_input):
+          return the_input
+
+      # assert identity(None) == None
+      # assert identity(object) == object
+      assert src.functions.identity(None) == None
+      assert src.functions.identity(object) == object
+
+
+  def test_why_use_a_function():
+
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+.. code-block:: python
+
+  AttributeError: module 'src.functions'
+                  has no attribute 'identity'
+
+because ``identity`` is not a name in ``functions.py`` in the ``src`` folder_.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add a copy of :ref:`the identity function<test_identity_function>` to ``functions.py``
+
+.. code-block:: python
+  :lineno-start: 18
+  :emphasize-lines: 5-6
+
+  def constant():
+      return 'the same thing'
+
+
+  def identity(the_input):
+      return the_input
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented line and :ref:`the identity function<test_identity_function>` from :ref:`test_identity_function` in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 23
+
+    def test_identity_function():
+        assert src.functions.identity(None) == None
+        assert src.functions.identity(object) == object
+
+
+    def test_why_use_a_function():
+
+  the test is still green because the call that was made to :ref:`the identity function<test_identity_function>` that was in ``test_functions.py`` is now to :ref:`the identity function<test_identity_function>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.identity`` is called, Python_ follows this path
+
+  .. code-block:: shell
+
+    src
+    └── functions.py
+        └── def identity(the_input):
+                return the_input
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move identity function to functions.py'
+
+----
+
+*********************************************************************************
+move positional_arguments function
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I comment out the :ref:`positional_arguments function<test_positional_arguments>` in ``test_functions.py``
+
+.. code-block:: python
+  :lineno-start: 32
+  :emphasize-lines: 17-18
+
+  def test_why_use_a_function():
+      def add_x(number):
+          return 3 + number
+
+      assert add_x(0) == 3
+      assert add_x(1) == 4
+      assert add_x(2) == 5
+      assert add_x(3) == 6
+      assert add_x(4) == 7
+      assert add_x(5) == 8
+      assert add_x(6) == 9
+      assert add_x(7) == 10
+      assert add_x(8) == 11
+      assert add_x(9) == 12
+
+
+  # def positional_arguments(first_input, last_input):
+  #     return first_input, last_input
+
+
+  def test_positional_arguments():
+
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+.. code-block:: python
+
+  NameError: name 'positional_arguments'
+             is not defined
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I use a :ref:`variable<what is a variable?>` to reroute the calls to the :ref:`positional arguments function<test_positional_arguments>` in :ref:`test_positional_arguments` to the :ref:`positional_arguments function<test_positional_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
+
+  .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 2-4
+
+    def test_positional_arguments():
+        positional_arguments = (
+            src.functions.positional_arguments
+        )
+        first, last = 'first', 'last'
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'positional_arguments'
+               is not defined
+
+  because :ref:`test_keyword_arguments` also calls :ref:`the positional_arguments functions<test_positional_arguments>` of ``test_functions.py``. This is a risky change.
+
+* I use a :ref:`variable<what is a variable?>` to reroute the calls to the :ref:`positional arguments function<test_positional_arguments>` in :ref:`test_keyword_arguments` to the :ref:`positional_arguments function<test_positional_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
+
+  .. code-block:: python
+    :lineno-start: 92
+    :emphasize-lines: 2-4
+
+    def test_keyword_arguments():
+        positional_arguments = (
+            src.functions.positional_arguments
+        )
+        first, last = 'first', 'last'
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'positional_arguments'
+
+  because ``positional_arguments`` does not exist in ``functions.py``.
+
+* I add a copy of :ref:`the positional_arguments function<test_positional_arguments>` to ``functions.py``
+
+  .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 5-6
+
+    def identity(the_input):
+        return the_input
+
+
+    def positional_arguments(first_input, last_input):
+        return first_input, last_input
+
+  the test passes because the call that was made to :ref:`the positional_arguments function<test_positional_arguments>` that was in ``test_functions.py`` is now rerouted to :ref:`the positional_arguments function<test_positional_arguments>` in ``functions.py`` in the ``src`` folder_.
+
+  When ``positional_arguments`` is called in :ref:`test_positional_arguments` and :ref:`test_keyword_arguments`, Python_ follows this path
+
+  .. code-block:: shell
+
+    positional_arguments = src.functions.positional_arguments
+
+    src
+    └── functions.py
+        └── def positional_arguments(the_input):
+                return the_input
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented :ref:`positional_arguments function<test_positional_arguments>` from :ref:`test_positional_arguments` in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 32
+
+    def test_why_use_a_function():
+        def add_x(number):
+            return 3 + number
+
+        assert add_x(0) == 3
+        assert add_x(1) == 4
+        assert add_x(2) == 5
+        assert add_x(3) == 6
+        assert add_x(4) == 7
+        assert add_x(5) == 8
+        assert add_x(6) == 9
+        assert add_x(7) == 10
+        assert add_x(8) == 11
+        assert add_x(9) == 12
+
+
+    def test_positional_arguments():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move positional_arguments to functions.py'
 
 ----
 
@@ -717,9 +974,7 @@ close the project
 review
 *********************************************************************************
 
-I ran tests to show that I can make :ref:`functions<what is a function?>` that take input
-
-
+:ref:`I can write solutions in a different module from the tests<separate and equal>`.
 
 ----
 

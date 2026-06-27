@@ -1802,16 +1802,16 @@ separate and equal factory
 
   .. code-block:: shell
 
-      src
-      └── person.py
-          └── def factory(
-                  first_name, last_name,
-                  sex, year_of_birth
-              ):
-                  return (
-                      f'{first_name}, {last_name},'
-                      f' {sex}, {year_of_birth}'
-                  )
+    src
+    └── person.py
+        └── def factory(
+                first_name, last_name,
+                sex, year_of_birth
+            ):
+                return (
+                    f'{first_name}, {last_name},'
+                    f' {sex}, {year_of_birth}'
+                )
 
 * I add a git_ commit message in the other terminal_
 
@@ -2767,18 +2767,18 @@ separate and equal say_hi
 
   .. code-block:: shell
 
-      src
-      └── person.py
-          └── def say_hi(
-                  first_name, last_name,
-                  year_of_birth
-              ):
-                  age = 2026 - year_of_birth
+    src
+    └── person.py
+        └── def say_hi(
+                first_name, last_name,
+                year_of_birth
+            ):
+                age = 2026 - year_of_birth
 
-                  return (
-                      f'Hi, my name is {first_name}'
-                      f' {last_name} and I am {age}.'
-                  )
+                return (
+                    f'Hi, my name is {first_name}'
+                    f' {last_name} and I am {age}.'
+                )
 
 * I add a git_ commit message in the other terminal_
 
