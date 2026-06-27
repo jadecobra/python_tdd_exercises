@@ -5128,10 +5128,10 @@ review
 
 I ran tests to show that I can make :ref:`functions<what is a function?>` that take input
 
-* I can use a :ref:`function to remove repetition<test_why_use_a_function>`.
-* I can call a :ref:`function<what is a function?>` with input by placing an input in parentheses when I call it.
-* The :ref:`identity or passthrough function<test_identity_function>` returns its input as output.
-* :ref:`I can call functions with positional arguments<test_positional_arguments>`.
+* :ref:`I can use a function to remove repetition<test_why_use_a_function>`.
+* :ref:`I can call a function with input by placing an input in parentheses when I call it<how to call a function with input>`.
+* :ref:`The identity or passthrough function returns its input as output<test_identity_function>`.
+* :ref:`I can call a function with positional arguments<test_positional_arguments>`.
 * :ref:`I can call a function with keyword arguments<test_keyword_arguments>`.
 * :ref:`I can call a function with positional and keyword arguments<test_args_and_kwargs>`.
 * :ref:`I can make a function with optional arguments<test_optional_arguments>`.
