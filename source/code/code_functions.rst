@@ -6,9 +6,9 @@ functions: tests and solutions
 what is a function?: tests
 *********************************************************************************
 
-the code from ``functions/tests/test_functions.py`` from :ref:`functions<what is a function?>`
+the code from ``functions/tests/test_functions.py`` from :ref:`what is a function?`
 
-.. literalinclude:: functions/test_functions.py
+.. literalinclude:: functions/tests/test_functions_what_is_a_function.py
   :language: python
   :linenos:
 
@@ -18,12 +18,23 @@ the code from ``functions/tests/test_functions.py`` from :ref:`functions<what is
 functions that take input: tests
 *********************************************************************************
 
-the code from ``functions/tests/test_functions.py`` from :ref:`functions<functions that take input>`
+the code from ``functions/tests/test_functions.py`` from :ref:`functions that take input`
 
-.. literalinclude:: functions/test_functions_w_input.py
+.. literalinclude:: functions/tests/test_functions_w_input.py
   :language: python
   :linenos:
 
+----
+
+*********************************************************************************
+separate and equal functions: tests and solutions
+*********************************************************************************
+
+the code from ``functions/tests/test_functions.py`` from :ref:`separate and equal functions`
+
+.. literalinclude:: functions/tests/test_functions_separate_and_equal.py
+  :language: python
+  :linenos:
 
 ----
 
