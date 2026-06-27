@@ -803,7 +803,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
 ----
 
-* I use a :ref:`variable<what is a variable?>` to reroute the calls to the :ref:`positional arguments function<test_positional_arguments>` in :ref:`test_positional_arguments` to the :ref:`positional_arguments function<test_positional_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I use a :ref:`variable<what is a variable?>` to reroute the calls to the :ref:`positional_arguments function<test_positional_arguments>` from :ref:`test_positional_arguments` to the :ref:`positional_arguments function<test_positional_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 52
@@ -819,22 +819,41 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
   .. code-block:: python
 
-    NameError: name 'positional_arguments'
-               is not defined
+    NameError: name 'positional_arguments' is not defined
 
-  because :ref:`test_keyword_arguments` also calls :ref:`the positional_arguments functions<test_positional_arguments>` of ``test_functions.py``. This is a risky change.
+  because :ref:`test_keyword_arguments` also calls :ref:`the positional_arguments function<test_positional_arguments>` of ``test_functions.py``. This is a risky change.
 
-* I use a :ref:`variable<what is a variable?>` to reroute the calls to the :ref:`positional arguments function<test_positional_arguments>` in :ref:`test_keyword_arguments` to the :ref:`positional_arguments function<test_positional_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I use a :ref:`variable<what is a variable?>` to reroute the call to the :ref:`positional_arguments function<test_positional_arguments>` from :ref:`test_keyword_arguments` to the :ref:`positional_arguments function<test_positional_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
-    :lineno-start: 92
-    :emphasize-lines: 2-4
+    :lineno-start: 114
+    :emphasize-lines: 11-13
 
-    def test_keyword_arguments():
+        a_tuple = (1, 2, 3, 'n')
+        a_list = [1, 2, 3, 'n']
+        assert (
+            keyword_arguments(
+                first_input=a_tuple,
+                last_input=a_list,
+            )
+          == (a_tuple, a_list)
+        )
+
         positional_arguments = (
             src.functions.positional_arguments
         )
-        first, last = 'first', 'last'
+        a_set = {1, 2, 3, 'n'}
+        a_dictionary = {'key': 'value'}
+        assert (
+            positional_arguments(
+                last_input=a_dictionary,
+                first_input=a_set,
+            )
+          == (a_set, a_dictionary)
+        )
+
+
+    def test_args_and_kwargs():
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -845,7 +864,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
   because ``positional_arguments`` does not exist in ``functions.py``.
 
-* I add a copy of :ref:`the positional_arguments function<test_positional_arguments>` to ``functions.py``
+* I add a copy of the :ref:`positional_arguments function<test_positional_arguments>` to ``functions.py``
 
   .. code-block:: python
     :lineno-start: 22
@@ -858,7 +877,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
     def positional_arguments(first_input, last_input):
         return first_input, last_input
 
-  the test passes because the call that was made to :ref:`the positional_arguments function<test_positional_arguments>` that was in ``test_functions.py`` is now rerouted to :ref:`the positional_arguments function<test_positional_arguments>` in ``functions.py`` in the ``src`` folder_.
+  the test passes because the calls that were made to the :ref:`positional_arguments function<test_positional_arguments>` that was in ``test_functions.py`` are now to the :ref:`positional_arguments function<test_positional_arguments>` in ``functions.py`` in the ``src`` folder_.
 
   When ``positional_arguments`` is called in :ref:`test_positional_arguments` and :ref:`test_keyword_arguments`, Python_ follows this path
 
@@ -868,8 +887,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     src
     └── functions.py
-        └── def positional_arguments(the_input):
-                return the_input
+        └── def positional_arguments(first_input, last_input):
+                return first_input, last_input
 
 ----
 
@@ -879,7 +898,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
 ----
 
-* I remove the commented :ref:`positional_arguments function<test_positional_arguments>` from :ref:`test_positional_arguments` in ``test_functions.py``
+* I remove the commented :ref:`positional_arguments function<test_positional_arguments>` from ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 32
@@ -909,6 +928,251 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     git commit -am \
     'move positional_arguments to functions.py'
+
+----
+
+*********************************************************************************
+move keyword_arguments function
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I comment out the :ref:`keyword_arguments function<test_keyword_arguments>` in ``test_functions.py``
+
+.. code-block:: python
+  :lineno-start: 74
+  :emphasize-lines: 11-12
+
+      a_set = {1, 2, 3, 'n'}
+      a_dictionary = {'key': 'value'}
+      assert (
+          keyword_arguments(
+              a_set, a_dictionary,
+          )
+       == (a_set, a_dictionary)
+      )
+
+
+  # def keyword_arguments(first_input, last_input):
+  #     return first_input, last_input
+
+
+  def test_keyword_arguments():
+
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+.. code-block:: python
+
+  NameError: name 'keyword_arguments' is not defined
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I use a :ref:`variable<what is a variable?>` to reroute the calls to the :ref:`keyword_arguments function<test_keyword_arguments>` from :ref:`test_keyword_arguments` to the :ref:`keyword_arguments function<test_keyword_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 2-4
+
+    def test_keyword_arguments():
+        keyword_arguments = (
+            src.functions.keyword_arguments
+        )
+        first, last = 'first', 'last'
+
+        assert (
+            keyword_arguments(
+                first_input=first, last_input=last,
+            )
+         == (first, last)
+        )
+        assert (
+            keyword_arguments(
+                last_input=last, first_input=first,
+            )
+         == (first, last)
+        )
+        assert (
+            keyword_arguments(
+                last_input=0, first_input=1,
+            )
+         == (1, 0)
+        )
+
+        a_tuple = (1, 2, 3, 'n')
+        a_list = [1, 2, 3, 'n']
+        assert (
+            keyword_arguments(
+                first_input=a_tuple,
+                last_input=a_list,
+            )
+         == (a_tuple, a_list)
+        )
+
+        positional_arguments = (
+            src.functions.positional_arguments
+        )
+        a_set = {1, 2, 3, 'n'}
+        a_dictionary = {'key': 'value'}
+        assert (
+            positional_arguments(
+                last_input=a_dictionary,
+                first_input=a_set,
+            )
+         == (a_set, a_dictionary)
+        )
+
+
+    def test_args_and_kwargs():
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'keyword_arguments'
+
+  because I have not added ``keyword_arguments`` to ``functions.py``, yet.
+
+* I add a copy of the :ref:`keyword_arguments function<test_keyword_arguments>` to ``functions.py``
+
+  .. code-block:: python
+    :lineno-start: 26
+    :emphasize-lines: 5-6
+
+    def positional_arguments(first_input, last_input):
+        return first_input, last_input
+
+
+    def keyword_arguments(first_input, last_input):
+        return first_input, last_input
+
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'keyword_arguments' is not defined
+
+  because :ref:`test_positional_arguments` also calls :ref:`the keyword_arguments function<test_keyword_arguments>` of ``test_functions.py``. Risky business.
+
+* I use a :ref:`variable<what is a variable?>` to reroute the calls to the :ref:`keyword_arguments function<test_keyword_arguments>` from :ref:`test_positional_arguments` to the :ref:`keyword_arguments function<test_keyword_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
+
+  .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 8-10
+
+        a_tuple = (1, 2, 3, 'n')
+        a_list = [1, 2, 3, 'n']
+        assert (
+            positional_arguments(a_tuple, a_list)
+         == (a_tuple, a_list)
+        )
+
+        keyword_arguments = (
+            src.functions.keyword_arguments
+        )
+        a_set = {1, 2, 3, 'n'}
+        a_dictionary = {'key': 'value'}
+        assert (
+            keyword_arguments(
+                a_set, a_dictionary,
+            )
+         == (a_set, a_dictionary)
+        )
+
+
+    # def keyword_arguments(first_input, last_input):
+    #     return first_input, last_input
+
+
+    def test_keyword_arguments():
+
+  the test passes because the calls that were made to :ref:`the keyword_arguments function<test_keyword_arguments>` that was in ``test_functions.py`` are now to :ref:`the keyword_arguments function<test_keyword_arguments>` in ``functions.py`` in the ``src`` folder_.
+
+  When ``keyword_arguments`` is called in :ref:`test_keyword_arguments` and :ref:`test_positional_arguments`, Python_ follows this path
+
+  .. code-block:: shell
+
+    keyword_arguments = src.functions.keyword_arguments
+
+    src
+    └── functions.py
+        └── def keyword_arguments(first_input, last_input):
+                return first_input, last_input
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented :ref:`keyword_arguments function<test_keyword_arguments>` from ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 48
+
+    def test_positional_arguments():
+        positional_arguments = (
+            src.functions.positional_arguments
+        )
+        first, last = 'first', 'last'
+
+        assert (
+            positional_arguments(first, last)
+         == (first, last)
+        )
+        assert (
+            positional_arguments(last, first)
+         == (last, first)
+        )
+        assert (
+            positional_arguments(0, 1)
+         == (0, 1)
+        )
+
+        a_tuple = (1, 2, 3, 'n')
+        a_list = [1, 2, 3, 'n']
+        assert (
+            positional_arguments(a_tuple, a_list)
+         == (a_tuple, a_list)
+        )
+
+        keyword_arguments = (
+            src.functions.keyword_arguments
+        )
+        a_set = {1, 2, 3, 'n'}
+        a_dictionary = {'key': 'value'}
+        assert (
+            keyword_arguments(
+                a_set, a_dictionary,
+            )
+         == (a_set, a_dictionary)
+        )
+
+
+    def test_keyword_arguments():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move keyword_arguments to functions.py'
 
 ----
 
