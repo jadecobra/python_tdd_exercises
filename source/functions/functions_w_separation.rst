@@ -203,6 +203,14 @@ because ``src`` is not defined in ``test_functions.py``.
 
   the test passes.
 
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
 * I remove the commented line and :ref:`the w_pass function<test_making_a_function_w_pass>` from :ref:`test_making_a_function_w_pass` in ``test_functions.py``
 
   .. code-block:: python
@@ -283,20 +291,28 @@ because ``functions.py`` in the ``src`` folder_ does not have anything named ``w
 
 ----
 
-* I add a copy of :ref:`the w_return function<test_making_a_function_w_return>` to ``functions.py``
+I add a copy of :ref:`the w_return function<test_making_a_function_w_return>` to ``functions.py``
 
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5-6
+.. code-block:: python
+  :linenos:
+  :emphasize-lines: 5-6
 
-    def w_pass():
-        pass
+  def w_pass():
+      pass
 
 
-    def w_return():
-        return
+  def w_return():
+      return
 
-  the test passes.
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
 
 * I remove the commented line and :ref:`the w_return function<test_making_a_function_w_return>` from :ref:`test_making_a_function_w_return` in ``test_functions.py``
 
@@ -375,20 +391,28 @@ because ``functions.py`` in the ``src`` folder_ does not have anything named ``w
 
 ----
 
-* I add a copy of :ref:`the w_return_none function<test_making_a_function_w_return_none>` to ``functions.py``
+I add a copy of :ref:`the w_return_none function<test_making_a_function_w_return_none>` to ``functions.py``
 
-  .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 5-6
+.. code-block:: python
+  :lineno-start: 5
+  :emphasize-lines: 5-6
 
-    def w_return():
-        return
+  def w_return():
+      return
 
 
-    def w_return_none():
-        return None
+  def w_return_none():
+      return None
 
-  the test passes.
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
 
 * I remove the commented line and :ref:`the w_return_none function<test_making_a_function_w_return_none>` from :ref:`test_making_a_function_w_return_none` in ``test_functions.py``
 
@@ -408,7 +432,7 @@ because ``functions.py`` in the ``src`` folder_ does not have anything named ``w
       src
       └── functions.py
           └── def w_return_none():
-                  return
+                  return None
 
 * I add a git_ commit message in the other terminal_
 
@@ -417,6 +441,110 @@ because ``functions.py`` in the ``src`` folder_ does not have anything named ``w
 
     git commit -am \
     'move w_return_none to functions.py'
+
+:ref:`I can write solutions in a different module from the tests<separate and equal>`.
+
+----
+
+*********************************************************************************
+move return_leaves_the_function
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_what_happens_after_functions_return` to use the result of a call to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` in ``test_functions.py``
+
+.. code-block:: python
+  :lineno-start: 16
+  :emphasize-lines: 5-6
+
+  def test_what_happens_after_functions_return():
+      def return_leaves_the_function():
+          return None
+          return 'only one way for this line to run'
+
+      # assert return_leaves_the_function() is None
+      assert (
+          src.functions
+              .return_leaves_the_function()
+      ) is None
+
+
+  def test_constant_function():
+
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+.. code-block:: python
+
+  AttributeError: module 'src.functions'
+                  has no attribute 'return_leaves_the_function'
+
+because ``functions.py`` in the ``src`` folder_ does not have anything named ``return_leaves_the_function`` in it.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add a copy of :ref:`the return_leaves_the_function function<test_what_happens_after_functions_return>` to ``functions.py``
+
+.. code-block:: python
+  :lineno-start: 5
+  :emphasize-lines: 5-6
+
+  def w_return():
+      return
+
+
+  def return_leaves_the_function():
+      return None
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented line and :ref:`the return_leaves_the_function function<test_what_happens_after_functions_return>` from :ref:`test_what_happens_after_functions_return` in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 12
+
+    def test_what_happens_after_functions_return():
+        assert src.functions.return_leaves_the_function() is None
+
+
+    def test_what_happens_after_functions_return():
+
+  the test is still green because the call that was made to :ref:`the return_leaves_the_function function<test_what_happens_after_functions_return>` that was in ``test_functions.py`` is now to :ref:`the return_leaves_the_function function<test_what_happens_after_functions_return>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.return_leaves_the_function`` is called, Python_ follows this path
+
+  .. code-block:: shell
+
+      src
+      └── functions.py
+          └── def return_leaves_the_function():
+                  return
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move return_leaves_the_function to functions.py'
 
 :ref:`I can write solutions in a different module from the tests<separate and equal>`.
 
