@@ -203,7 +203,7 @@ because ``src`` is not defined in ``test_functions.py``.
 
   the test passes.
 
-* I remove the commented line and :ref:`the w_pass function<what is a function>` from :ref:`test_making_a_function_w_pass` in ``test_functions.py``
+* I remove the commented line and :ref:`the w_pass function<test_making_a_function_w_pass>` from :ref:`test_making_a_function_w_pass` in ``test_functions.py``
 
   .. code-block:: python
     :linenos:
@@ -213,6 +213,9 @@ because ``src`` is not defined in ``test_functions.py``.
 
     def test_making_a_function_w_pass():
         assert src.functions.w_pass() is None
+
+
+    def test_making_a_function_w_return():
 
   the test is still green because the call that was made to :ref:`the w_pass function<test_making_a_function_w_pass>` that was in ``test_functions.py`` is now to :ref:`the w_pass function<test_making_a_function_w_pass>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.w_pass`` is called, Python_ follows this path
 
@@ -250,12 +253,8 @@ move w_return
 I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return` to use the result of a call to the :ref:`w_return function<test_making_a_function_w_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`w_return function<test_making_a_function_w_return>` in ``test_functions.py``
 
 .. code-block:: python
-  :lineno-start: 4
-  :emphasize-lines: 9-10
-
-  def test_making_a_function_w_pass():
-      assert src.functions.w_pass() is None
-
+  :lineno-start: 8
+  :emphasize-lines: 5-6
 
   def test_making_a_function_w_return():
       def w_return():
@@ -288,23 +287,27 @@ because ``functions.py`` in the ``src`` folder_ does not have anything named ``w
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1-2
+    :emphasize-lines: 5-6
+
+    def w_pass():
+        pass
+
 
     def w_return():
-        pass
+        return
 
   the test passes.
 
-* I remove the commented line and :ref:`the w_return function<what is a function>` from :ref:`test_making_a_function_w_return` in ``test_functions.py``
+* I remove the commented line and :ref:`the w_return function<test_making_a_function_w_return>` from :ref:`test_making_a_function_w_return` in ``test_functions.py``
 
   .. code-block:: python
-    :linenos:
-
-    import src.functions
-
+    :lineno-start: 8
 
     def test_making_a_function_w_return():
         assert src.functions.w_return() is None
+
+
+    def test_making_a_function_w_return_none():
 
   the test is still green because the call that was made to :ref:`the w_return function<test_making_a_function_w_return>` that was in ``test_functions.py`` is now to :ref:`the w_return function<test_making_a_function_w_return>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.w_return`` is called, Python_ follows this path
 
@@ -313,7 +316,7 @@ because ``functions.py`` in the ``src`` folder_ does not have anything named ``w
       src
       └── functions.py
           └── def w_return():
-                  pass
+                  return
 
 * I add a git_ commit message in the other terminal_
 
@@ -325,6 +328,97 @@ because ``functions.py`` in the ``src`` folder_ does not have anything named ``w
 
 :ref:`I can write solutions in a different module from the tests<separate and equal>`.
 
+----
+
+*********************************************************************************
+move w_return_none
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return_none` to use the result of a call to the :ref:`w_return_none function<test_making_a_function_w_return_none>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`w_return_none function<test_making_a_function_w_return_none>` in ``test_functions.py``
+
+.. code-block:: python
+  :lineno-start: 12
+  :emphasize-lines: 5-6
+
+  def test_making_a_function_w_return_none():
+      def w_return_none():
+          return None
+
+      # assert w_return_none() is None
+      assert src.functions.w_return_none() is None
+
+
+  def test_what_happens_after_functions_return():
+
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+.. code-block:: python
+
+  AttributeError: module 'src.functions'
+                  has no attribute 'w_return_none'
+
+because ``functions.py`` in the ``src`` folder_ does not have anything named ``w_return_none`` in it.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add a copy of :ref:`the w_return_none function<test_making_a_function_w_return_none>` to ``functions.py``
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 5-6
+
+    def w_return():
+        return
+
+
+    def w_return_none():
+        return None
+
+  the test passes.
+
+* I remove the commented line and :ref:`the w_return_none function<test_making_a_function_w_return_none>` from :ref:`test_making_a_function_w_return_none` in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 12
+
+    def test_making_a_function_w_return_none():
+        assert src.functions.w_return_none() is None
+
+
+    def test_what_happens_after_functions_return():
+
+  the test is still green because the call that was made to :ref:`the w_return_none function<test_making_a_function_w_return_none>` that was in ``test_functions.py`` is now to :ref:`the w_return_none function<test_making_a_function_w_return_none>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.w_return_none`` is called, Python_ follows this path
+
+  .. code-block:: shell
+
+      src
+      └── functions.py
+          └── def w_return_none():
+                  return
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move w_return_none to functions.py'
+
+:ref:`I can write solutions in a different module from the tests<separate and equal>`.
 
 ----
 BOOM
