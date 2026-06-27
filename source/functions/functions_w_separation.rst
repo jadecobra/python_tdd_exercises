@@ -198,6 +198,215 @@ because ``src`` is not defined in ``test_functions.py``.
     :linenos:
     :emphasize-lines: 1-2
 
+    def w_pass():
+        pass
+
+  the test passes.
+
+* I remove the commented line and :ref:`the w_pass function<what is a function>` from :ref:`test_making_a_function_w_pass` in ``test_functions.py``
+
+  .. code-block:: python
+    :linenos:
+
+    import src.functions
+
+
+    def test_making_a_function_w_pass():
+        assert src.functions.w_pass() is None
+
+  the test is still green because the call that was made to :ref:`the w_pass function<test_making_a_function_w_pass>` that was in ``test_functions.py`` is now to :ref:`the w_pass function<test_making_a_function_w_pass>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.w_pass`` is called, Python_ follows this path
+
+  .. code-block:: shell
+
+      src
+      └── functions.py
+          └── def w_pass():
+                  pass
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move w_pass to functions.py'
+
+:ref:`I can write solutions in a different module from the tests<separate and equal>`.
+
+----
+
+*********************************************************************************
+move w_return
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return` to use the result of a call to the :ref:`w_return function<test_making_a_function_w_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`w_return function<test_making_a_function_w_return>` in ``test_functions.py``
+
+.. code-block:: python
+  :linenos:
+  :emphasize-lines: 5-6
+
+  def test_making_a_function_w_pass():
+      assert src.functions.w_pass() is None
+
+
+  def test_making_a_function_w_return():
+      def w_return():
+          return
+
+      # assert w_return() is None
+      assert src.functions.w_return() is None
+
+
+  def test_making_a_function_w_return_none():
+
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+.. code-block:: python
+
+  NameError: name 'src' is not defined
+
+because ``src`` is not defined in ``test_functions.py``.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add an `import statement`_ at the top of ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 1
+
+    import src.functions
+
+
+    def test_making_a_function_w_return():
+
+  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+
+  .. code-block:: python
+
+    ModuleNotFoundError: No module named 'src'
+
+  because there is nothing named ``src`` in this project.
+
+* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 255
+    :emphasize-lines: 6
+    :emphasize-text: ModuleNotFoundError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # SyntaxError
+    # ModuleNotFoundError
+
+* I open another terminal_ then make sure I am in the ``functions`` folder_
+
+* I use mkdir_ to make a folder_ named ``src``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mkdir src
+
+* I go back to the terminal_ where the tests are running.
+
+* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) on the keyboard in ``test_functions.py`` to run the test again and it shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+
+  .. code-block:: python
+
+    ModuleNotFoundError: No module named 'src.functions'
+
+  because there is nothing in the ``src`` folder_ named ``functions``.
+
+* I go to the second terminal_ I opened, then use touch_ to make ``functions.py`` in the ``src`` folder_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch src/functions.py
+
+* I go back to the terminal_ where the tests are running and it shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.functions' has no attribute 'w_return'
+
+  because there is nothing in ``functions.py`` in the ``src`` folder_ with the name ``w_return``.
+
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 255
+    :emphasize-lines: 7
+    :emphasize-text: AttributeError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # SyntaxError
+    # ModuleNotFoundError
+    # AttributeError
+
+* I open ``functions.py`` from the ``src`` folder.
+
+* I add a copy of :ref:`the w_return function<test_making_functions_w_return>` to ``functions.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2
+
+    def w_return():
+        pass
+
+  the test passes.
+
+* I remove the commented line and :ref:`the w_return function<what is a function>` from :ref:`test_making_a_function_w_return` in ``test_functions.py``
+
+  .. code-block:: python
+    :linenos:
+
+    import src.functions
+
+
+    def test_making_a_function_w_return():
+        assert src.functions.w_return() is None
+
+  the test is still green because the call that was made to :ref:`the w_return function<test_making_a_function_w_return>` that was in ``test_functions.py`` is now to :ref:`the w_return function<test_making_a_function_w_return>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.w_return`` is called, Python_ follows this path
+
+  .. code-block:: shell
+
+      src
+      └── functions.py
+          └── def w_return():
+                  pass
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move w_return to functions.py'
+
+:ref:`I can write solutions in a different module from the tests<separate and equal>`.
 
 
 ----
