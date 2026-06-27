@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master Python functions step-by-step using Test-Driven Development (TDD) with functions. Learn how to make functions take input with def, identity function, positional vs keyword arguments (order independence with names), default/optional values, *args and **kwargs, argument unpacking (*tuple **dict), return statements. See real errors: "NameError: name 'identity' is not defined", "TypeError: ... takes 0 positional arguments but 1 was given", "takes 1 positional argument but 2 were given", AssertionError on wrong returns. Practice bare assert == / is, constant functions "assert constant() is 'the same thing'", swapping calls like keyword(last_input=0, first_input=1) == (1, 0), unknown_number_of_arguments(*a_tuple, **a_dictionary) == (tuple, dict). Part of Jacob Itegboje's Pumping Python TDD series for beginners.
-  :keywords: Jacob Itegboje, Pumping Python, Python functions for beginners, learn Python functions with TDD, positional vs keyword arguments Python, keyword_arguments, what does a function return by default, Python *args **kwargs, optional arguments default value, test identity function return the_input, "takes 0 positional arguments but 1 was given", "NameError: name 'identity' is not defined", constant function "the same thing", argument unpacking python, bare assert in tests, functions that take input, red green refactor functions, Python TDD positional keyword, how to call python function with input, return first_input last_input tuple
+  :description: Master Python functions that take input step-by-step using Test-Driven Development (TDD) in the functions project. Learn def with parameters, the identity/passthrough function, positional vs keyword arguments (order independence via names, swap examples like last_input=0 first_input=1), optional/default values, *args and **kwargs plus unpacking (*a_tuple, **a_dict), moving helpers out of tests for cross-calls, and bare assert == / is. See real errors: "NameError: name 'identity' is not defined", "TypeError: ... takes 0 positional arguments but 1 was given", "got an unexpected keyword argument", "SyntaxError: positional argument follows keyword argument", "SyntaxError: duplicate argument", AssertionError on wrong returns or order. Practice constant functions "assert constant() == 'the same thing'", unknown_number_of_arguments(*a_tuple, **a_dictionary) == (tuple, dict), uv run pytest-watcher, red green refactor. Builds directly on the prior functions chapter. Part of Jacob Itegboje's Pumping Python TDD series for beginners.
+  :keywords: Jacob Itegboje, Pumping Python, Python functions that take input, TDD functions with parameters, positional vs keyword arguments, keyword arguments order independence, identity function return the_input, *args **kwargs unpacking, optional default arguments, bare assert in tests, "NameError: name 'identity' is not defined", "TypeError: takes 0 positional arguments but 1 was given", "got an unexpected keyword argument", "SyntaxError: positional argument follows keyword argument", constant function "the same thing", swap last_input first_input, functions red green refactor, uv run pytest-watcher functions, test_identity_function, test_positional_arguments, test_keyword_arguments, test_args_and_kwargs, test_optional_arguments, test_unknown_number_of_arguments, argument unpacking python
 
 .. include:: ../links.rst
 
@@ -154,7 +154,7 @@ I add a test to ``test_functions.py``
       def constant():
           return 'the same thing'
 
-      assert constant() is 'the same thing'
+      assert constant() == 'the same thing'
 
 
   def test_identity_function():
@@ -5129,7 +5129,7 @@ review
 I ran tests to show that I can make :ref:`functions<what is a function?>` that take input
 
 * I can use a :ref:`function to remove repetition<test_why_use_a_function>`.
-* I can call a :ref:`function<what is a function?>` with input by placing an :ref:`object<what is a class?>` in parentheses when I call it.
+* I can call a :ref:`function<what is a function?>` with input by placing an input in parentheses when I call it.
 * The :ref:`identity or passthrough function<test_identity_function>` returns its input as output.
 * :ref:`I can call functions with positional arguments<test_positional_arguments>`.
 * :ref:`I can call a function with keyword arguments<test_keyword_arguments>`.

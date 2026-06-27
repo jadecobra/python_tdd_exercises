@@ -1646,7 +1646,7 @@ the test passes.
             return 'the same thing'
 
         # assert constant() is None
-        assert constant() is 'the same thing'
+        assert constant() == 'the same thing'
 
 
     # Exceptions seen
@@ -1670,7 +1670,7 @@ the test passes.
         def constant():
             return 'the same thing'
 
-        assert constant() is 'the same thing'
+        assert constant() == 'the same thing'
 
 
     # Exceptions seen

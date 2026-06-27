@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with strings. Use variables for person data (first name, last name, sex, year of birth). pytest-watcher shows "no tests ran". RED: add def test_joe(): assert joe() == 'joe, blow, M, 1996' → NameError: name 'joe' is not defined. GREEN: joe = None → TypeError: 'NoneType' object is not callable; make def joe(): return None → AssertionError: assert None == 'joe, blow, M, 1996'; fix return value. Repeat for jane, john, mary. REFACTOR: remove the commented lines, git commit -am. Ends with 4 module-level functions that return 'name, surname, X, YYYY' strings + 4 bare assert tests + # Exceptions seen list. Shows why one function per person doesn't scale. Code: person/tests/test_person_1.py. What is next: functions that take input.
-  :keywords: Jacob Itegboje, Pumping Python, how to make a person with strings, python TDD variables, NameError: name 'joe' is not defined, TypeError: 'NoneType' object is not callable, AssertionError: assert None == 'joe, blow, M, 1996', bare assert, pytest-watcher "no tests ran", remove the commented lines, def joe(): return 'joe, blow, M, 1996', functions that return strings, red green refactor, repetition in tests, test_joe test_jane test_john test_mary, person attributes as variables, what is next functions that take input
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with f-strings. Use f-strings + one factory function (instead of one function per person) that takes first_name, last_name, sex, year_of_birth and returns 'name, surname, X, YYYY'. Add say_hi using f-strings for 'Hi, my name is ... and I am N.'. Start in the person project; uv run pytest-watcher . --now. Progressively introduce f-strings in the return, required args then keyword arguments, move factory and say_hi to src/person.py (AttributeError: module 'src.person' has no attribute 'factory'), use local variables in tests to remove repetition of the data, remove commented lines. Ends with 4 tests calling src.person.factory + src.person.say_hi + # Exceptions seen (AssertionError, NameError, TypeError, AttributeError). Shows why even with f-strings the 4 tests are repetitive. What is next: separate and equal functions. Code: person/tests/test_person_w_fstrings.py and person/solutions/person_w_fstrings.py.
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with f-strings, python f-strings, f-string factory function, one function instead of one per person, src.person, import src.person, AttributeError module 'src.person' has no attribute 'factory', TypeError missing required positional argument, uv run pytest-watcher, red green refactor f-strings, variables remove repetition in tests, first_name last_name sex year_of_birth, say_hi f-string age 2026-year_of_birth, remove the commented lines, test_joe test_jane test_john test_mary, person factory with f-strings, separate tests and solution, what is next separate and equal functions
 
 .. include:: ../../links.rst
 
@@ -54,7 +54,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ shows ``no tests ran``.
+  the terminal_ shows the tests from before are passing.
 
 ----
 
@@ -1476,7 +1476,9 @@ separate and equal factory
 
   .. code-block:: python
 
-    NameError: name 'src' is not defined
+    NameError: name 'src' is not
+
+  because ``src`` is not defined in ``test_person.py``
 
 ----
 
@@ -3384,25 +3386,25 @@ close the project
 review
 *************************************************************************************
 
-I ran tests to make another :ref:`function<what is a function?>` that uses :ref:`f-strings<what is string interpolation?>` to make a string_ that can represents a person saying hi when I give it ``first_name``, ``last_name``, and ``year_of_birth``.
+* I ran tests to write one :ref:`function<what is a function?>` that makes a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` so I do not have to make one :ref:`function<what is a function?>` for each person.
+* I also ran tests to make another :ref:`function<what is a function?>` that uses :ref:`f-strings<what is string interpolation?>` to make a string_ that represents the person I make saying hi when I give it ``first_name``, ``last_name``, and ``year_of_birth``.
+* I saw the following :ref:`Exceptions<errors>`
 
-I saw the following :ref:`Exceptions<errors>`
+  - :ref:`AssertionError<what causes AssertionError?>`
+  - :ref:`NameError<test_catching_name_error_in_tests>`
+  - :ref:`TypeError<what causes TypeError?>`
+  - :ref:`AttributeError<what causes AttributeError?>`
 
-* :ref:`AssertionError<what causes AssertionError?>`
-* :ref:`NameError<test_catching_name_error_in_tests>`
-* :ref:`TypeError<what causes TypeError?>`
-* :ref:`AttributeError<what causes AttributeError?>`
+* My tests and solutions have a few problems,
 
-My tests and solutions have a few problems,
+  - Each test is basically the same two tests, there has to be a way that I can use one test for all the people.
+  - The :ref:`factory<test person factory>` and :ref:`say_hi functions<test say_hi>` use three of the same inputs
 
-* Each test is basically the same two tests, there has to be a way that I can use one test for all the people.
-* The :ref:`factory<test person factory>` and :ref:`say_hi functions<test say_hi>` use three of the same inputs
+    * ``first_name``
+    * ``last_name``
+    * ``year_of_birth``
 
-  - ``first_name``
-  - ``last_name``
-  - ``year_of_birth``
-
-  There has to be a better way, where I can give those values once, and get a representation for a person when I call :ref:`the factory function<test person factory>` and a message when I call :ref:`the say_hi function<test say_hi>`.
+    There has to be a better way, where I can give those values once, and get a representation for a person when I call :ref:`the factory function<test person factory>` and a message when I call :ref:`the say_hi function<test say_hi>`.
 
 For now, I am going to :ref:`clean up the functions project<separate and equal functions>` so the tests and solutions are in separate files.
 
