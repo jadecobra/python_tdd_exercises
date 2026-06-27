@@ -424,7 +424,7 @@ test_addition
     # AttributeError
     # TypeError
 
-* I use the def_ keyword in ``calculator.py`` to make ``add`` a :ref:`function<what is a function?>` so it is callable_
+* I use the def_ keyword in ``calculator.py`` to make ``add`` a :ref:`function<what is a function?>` so it is :ref:`callable<how to make a function>`
 
   .. code-block:: python
     :linenos:
@@ -1414,7 +1414,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   I have seen this before
 
-* I change ``subtract`` to a :ref:`function<what is a function?>` to make it callable_
+* I change ``subtract`` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
     :lineno-start: 5

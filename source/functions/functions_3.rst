@@ -714,7 +714,7 @@ close the project
 review
 *********************************************************************************
 
-In :ref:`AssertionError 2: use class attributes` I used :ref:`class attributes<what is a class attribute?>` to remove repetition. The :ref:`classes` chapter shows the :ref:`the setUp method<how to use the setUp method to reset class attributes for every test>` to make new values before every test, for example when I want random values for each test.
+In :ref:`AssertionError 2: use class attributes` I used :ref:`class attributes<what is a class attribute?>` to remove repetition. The :ref:`classes` chapter shows :ref:`the setUp method<how to use the setUp method to reset class attributes for every test>` to make new values before every test, for example when I want random values for each test.
 
 In some cases the values I need are the same for every test, which means I do not need :ref:`the setUp method<how to use the setUp method to reset class attributes for every test>` because the :ref:`class attributes<what is a class attribute?>` are the same for every test and I do not need anything to run before each test.
 

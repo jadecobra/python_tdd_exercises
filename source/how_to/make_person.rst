@@ -5867,7 +5867,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   because ``factory`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
-* I make ``factory`` a :ref:`function<what is a function?>` to make it callable_
+* I make ``factory`` a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
     :linenos:
@@ -6367,7 +6367,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   because ``say_hello`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
-* I make ``say_hello`` a :ref:`function<what is a function?>` to make it callable_
+* I make ``say_hello`` a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
     :linenos:

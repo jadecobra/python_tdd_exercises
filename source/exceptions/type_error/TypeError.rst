@@ -257,7 +257,7 @@ There are :ref:`objects<everything is an object>` that can NOT be called
     TypeError: 'NoneType' object is not callable
 
   - the ``()`` to the right of ``src.type_error.none`` makes it a call
-  - the name ``none`` points to :ref:`None<what is None?>` which is NOT callable_
+  - the name ``none`` points to :ref:`None<what is None?>` which is NOT :ref:`callable<how to make a function>`
 
   :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
@@ -272,7 +272,7 @@ There are :ref:`objects<everything is an object>` that can NOT be called
     # AttributeError
     # TypeError
 
-* I make ``none`` a :ref:`function<what is a function?>` in ``type_error.py`` to make it callable_
+* I make ``none`` a :ref:`function<what is a function?>` in ``type_error.py`` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
     :linenos:
@@ -478,7 +478,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
     TypeError: 'float' object is not callable
 
-* I make ``a_float`` a :ref:`function<what is a function?>` to make it callable_
+* I make ``a_float`` a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -753,7 +753,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
   the test is green again. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a dictionary, set, list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`
 
-It is safe to say that :ref:`I cannot call data structures because they are NOT callable<test_type_error_w_the_uncallables>`. I can call :ref:`functions<what is a function?>`, they are callable_
+It is safe to say that :ref:`I cannot call data structures because they are NOT callable<test_type_error_w_the_uncallables>`. I can call :ref:`functions<what is a function?>`, they are :ref:`callable<how to make a function>`
 
 ----
 

@@ -3572,7 +3572,7 @@ I used comments to group the :ref:`assertions<what is an assertion?>` by what I 
 
 Since I am using `pytest-watcher`_ which uses pytest_ to run the test, I can group the :ref:`assertions<what is an assertion?>` with :ref:`functions<what is a function?>` instead.
 
-A :ref:`function<what is a function?>` is code that is callable_, this means I can write code to do something one time, and call the name for it to do that thing at a different time from when I write it.
+A :ref:`function<what is a function?>` is code that is :ref:`callable<how to make a function>`, this means I can write code to do something one time, and call the name for it to do that thing at a different time from when I write it.
 
 :ref:`functions<what is a function?>` are made with
 

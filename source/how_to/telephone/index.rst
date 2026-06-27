@@ -3004,6 +3004,8 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
 :ref:`I can write solutions in a different module from the tests<separate and equal>`.
 
+----
+
 *********************************************************************************
 test_telephone
 *********************************************************************************
@@ -3096,9 +3098,9 @@ Now that the solution is separate from the tests, I can write the program_ that 
 
     TypeError: 'NoneType' object is not callable
 
-  because :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
+  because ``text`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
-* I make ``text`` a :ref:`function<what is a function?>` to make it callable_
+* I make ``text`` a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
     :linenos:
@@ -3156,7 +3158,7 @@ Now that the solution is separate from the tests, I can write the program_ that 
     E       assert "I got: <class 'object'>"
                 == "I got: <class 'bool'>"
 
-* I add a :ref:`return statement<the return statement>` to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
+* I change the :ref:`return statement<the return statement>` to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
 
   .. code-block:: python
     :linenos:

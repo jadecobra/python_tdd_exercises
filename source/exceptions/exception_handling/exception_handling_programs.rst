@@ -161,7 +161,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 
     TypeError: 'NoneType' object is not callable
 
-* when I make ``raise_exception`` a :ref:`function<what is a function?>` to make it callable_
+* when I make ``raise_exception`` a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
     :lineno-start: 5
@@ -497,9 +497,9 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     >       return a_function()
     E       TypeError: 'NoneType' object is not callable
 
-  because ``does_not_raise_exception`` points to :ref:`None<what is None?>`, which is not callable_
+  because ``does_not_raise_exception`` points to :ref:`None<what is None?>`, which is not :ref:`callable<how to make a function>`
 
-* I make it a :ref:`function<what is a function?>` to make it callable_
+* I make it a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
     :lineno-start: 9

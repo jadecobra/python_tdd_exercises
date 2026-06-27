@@ -84,7 +84,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     # NameError
     # TypeError
 
-* I change ``get_datetime`` to a :ref:`function<what is a function?>` to make it callable_
+* I change ``get_datetime`` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
 
@@ -213,7 +213,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     TypeError: 'NoneType' object is not callable
 
-* then change it to a :ref:`function<what is a function?>` to make it callable_
+* then change it to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
 

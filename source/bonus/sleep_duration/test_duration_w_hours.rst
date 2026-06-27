@@ -210,7 +210,7 @@ requirements
 
     TypeError: 'NoneType' object is not callable
 
-  I make it callable_ by changing it to a :ref:`function<what is a function?>`
+  I make it :ref:`callable<how to make a function>` by changing it to a :ref:`function<what is a function?>`
 
   .. code-block:: python
 

@@ -461,7 +461,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
     # AttributeError
     # TypeError
 
-* I change ``text`` to a :ref:`function<what is a function?>` in ``telephone.py`` to make it callable_
+* I change ``text`` to a :ref:`function<what is a function?>` in ``telephone.py`` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
     :linenos:
@@ -2372,7 +2372,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     TypeError: 'NoneType' object is not callable
 
-* I make ``text`` a :ref:`function<what is a function?>` to make it callable_
+* I make ``text`` a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
     :linenos:
