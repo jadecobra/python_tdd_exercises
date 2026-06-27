@@ -38,6 +38,14 @@ the code from ``functions/tests/test_functions.py`` from :ref:`separate and equa
 
 ----
 
+the code from ``functions/src/functions.py`` from :ref:`separate and equal functions`
+
+.. literalinclude:: functions/solutions/functions_separate_and_equal.py
+  :language: python
+  :linenos:
+
+----
+
 *********************************************************************************
 functions 3: tests
 *********************************************************************************
@@ -61,14 +69,14 @@ the solutions in ``functions/src/functions.py`` from :ref:`functions<what is a f
   :linenos:
 
 
-----
+.. ----
 
-*********************************************************************************
-functions 3: solutions
-*********************************************************************************
+.. *********************************************************************************
+.. functions 3: solutions
+.. *********************************************************************************
 
-the solutions in ``functions/tests/test_functions.py`` from :ref:`functions 4: use for loops`
+.. the solutions in ``functions/tests/test_functions.py`` from :ref:`functions 4: use for loops`
 
-.. literalinclude:: functions/test_functions_list_comprehensions.py
-  :language: python
-  :linenos:
+.. .. literalinclude:: functions/test_functions_list_comprehensions.py
+..   :language: python
+..   :linenos:

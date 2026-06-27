@@ -19,6 +19,18 @@ def test_joe():
     )
     assert reality == my_expectation
 
+    reality = src.person.say_hi(
+        first_name=first_name,
+        last_name=last_name,
+        year_of_birth=year_of_birth,
+    )
+    my_expectation = (
+        f'Hi, my name is {first_name}'
+        f' {last_name} and I am'
+        f' {2026-year_of_birth}.'
+    )
+    assert reality == my_expectation
+
 
 def test_jane():
     first_name = 'jane'
@@ -35,6 +47,18 @@ def test_jane():
     my_expectation = (
         f'{first_name}, {last_name},'
         f' {sex}, {year_of_birth}'
+    )
+    assert reality == my_expectation
+
+    reality = src.person.say_hi(
+        first_name=first_name,
+        last_name=last_name,
+        year_of_birth=year_of_birth,
+    )
+    my_expectation = (
+        f'Hi, my name is {first_name}'
+        f' {last_name} and I am'
+        f' {2026-year_of_birth}.'
     )
     assert reality == my_expectation
 
@@ -57,6 +81,18 @@ def test_john():
     )
     assert reality == my_expectation
 
+    reality = src.person.say_hi(
+        first_name=first_name,
+        last_name=last_name,
+        year_of_birth=year_of_birth,
+    )
+    my_expectation = (
+        f'Hi, my name is {first_name}'
+        f' {last_name} and I am'
+        f' {2026-year_of_birth}.'
+    )
+    assert reality == my_expectation
+
 
 def test_mary():
     first_name = 'mary'
@@ -73,6 +109,18 @@ def test_mary():
     my_expectation = (
         f'{first_name}, {last_name},'
         f' {sex}, {year_of_birth}'
+    )
+    assert reality == my_expectation
+
+    reality = src.person.say_hi(
+        first_name=first_name,
+        last_name=last_name,
+        year_of_birth=year_of_birth,
+    )
+    my_expectation = (
+        f'Hi, my name is {first_name}'
+        f' {last_name} and I am'
+        f' {2026-year_of_birth}.'
     )
     assert reality == my_expectation
 

@@ -46,6 +46,7 @@ table of contents
   functions/functions_w_input
   how_to/telephone/index
   make a person with f-strings<how_to/make_person/make_person_w_fstrings>
+  functions/functions_w_separation
   make a person<how_to/make_person>
   classes/index
   what causes AttributeError?<exceptions/AttributeError>
