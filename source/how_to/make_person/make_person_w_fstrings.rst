@@ -3389,7 +3389,7 @@ I ran tests to make another :ref:`function<what is a function?>` that uses :ref:
 I saw the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
-* :ref:`NameError<test_catching_name_error>`
+* :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`TypeError<what causes TypeError?>`
 * :ref:`AttributeError<what causes AttributeError?>`
 
