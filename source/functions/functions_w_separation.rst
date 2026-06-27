@@ -462,7 +462,7 @@ I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_w
 
 .. code-block:: python
   :lineno-start: 16
-  :emphasize-lines: 5-6
+  :emphasize-lines: 6-10
 
   def test_what_happens_after_functions_return():
       def return_leaves_the_function():
@@ -472,7 +472,7 @@ I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_w
       # assert return_leaves_the_function() is None
       assert (
           src.functions
-              .return_leaves_the_function()
+             .return_leaves_the_function()
       ) is None
 
 
@@ -485,7 +485,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   AttributeError: module 'src.functions'
                   has no attribute 'return_leaves_the_function'
 
-because ``functions.py`` in the ``src`` folder_ does not have anything named ``return_leaves_the_function`` in it.
+because I have not added ``return_leaves_the_function`` to ``functions.py`` in the ``src`` folder_.
 
 ----
 
@@ -495,18 +495,19 @@ because ``functions.py`` in the ``src`` folder_ does not have anything named ``r
 
 ----
 
-I add a copy of :ref:`the return_leaves_the_function function<test_what_happens_after_functions_return>` to ``functions.py``
+I add a copy of :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` to ``functions.py``
 
 .. code-block:: python
-  :lineno-start: 5
-  :emphasize-lines: 5-6
+  :lineno-start: 9
+  :emphasize-lines: 5-7
 
-  def w_return():
-      return
+  def w_return_none():
+      return None
 
 
   def return_leaves_the_function():
       return None
+      return 'only one way for this line to run'
 
 the test passes.
 
@@ -518,25 +519,28 @@ the test passes.
 
 ----
 
-* I remove the commented line and :ref:`the return_leaves_the_function function<test_what_happens_after_functions_return>` from :ref:`test_what_happens_after_functions_return` in ``test_functions.py``
+* I remove the commented line and :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` from :ref:`test_what_happens_after_functions_return` in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 12
+    :lineno-start: 16
 
     def test_what_happens_after_functions_return():
-        assert src.functions.return_leaves_the_function() is None
+        assert (
+            src.functions
+               .return_leaves_the_function()
+        ) is None
 
 
-    def test_what_happens_after_functions_return():
+    def test_constant_function():
 
-  the test is still green because the call that was made to :ref:`the return_leaves_the_function function<test_what_happens_after_functions_return>` that was in ``test_functions.py`` is now to :ref:`the return_leaves_the_function function<test_what_happens_after_functions_return>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.return_leaves_the_function`` is called, Python_ follows this path
+  the test is still green because the call that was made to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` that was in ``test_functions.py`` is now to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.return_leaves_the_function`` is called, Python_ follows this path
 
   .. code-block:: shell
 
       src
       └── functions.py
           └── def return_leaves_the_function():
-                  return
+                  return None
 
 * I add a git_ commit message in the other terminal_
 
@@ -547,6 +551,109 @@ the test passes.
     'move return_leaves_the_function to functions.py'
 
 :ref:`I can write solutions in a different module from the tests<separate and equal>`.
+
+----
+
+*********************************************************************************
+move constant function
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_constant_function` to use the result of a call to the :ref:`constant function<test_constant_function>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`constant function<test_constant_function>` in ``test_functions.py``
+
+.. code-block:: python
+  :lineno-start: 23
+  :emphasize-lines: 5-6
+
+  def test_constant_function():
+      def constant():
+          return 'the same thing'
+
+      # assert constant() == 'the same thing'
+      assert src.functions.constant() == 'the same thing'
+
+
+  def test_identity_function():
+
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+.. code-block:: python
+
+  AttributeError: module 'src.functions'
+                  has no attribute 'constant'
+
+because there is nothing named ``constant`` in functions.py`` in the ``src`` folder_.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add a copy of :ref:`the constant function<test_constant_function>` to ``functions.py``
+
+.. code-block:: python
+  :lineno-start: 13
+  :emphasize-lines: 6-7
+
+  def return_leaves_the_function():
+      return None
+      return 'only one way for this line to run'
+
+
+  def constant():
+      return 'the same thing'
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented line and :ref:`the constant function<test_constant_function>` from :ref:`test_constant_function` in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 23
+
+    def test_constant_function():
+        assert src.functions.constant() == 'the same thing'
+
+
+    def test_identity_function():
+
+  the test is still green because the call that was made to :ref:`the constant function<test_constant_function>` that was in ``test_functions.py`` is now to :ref:`the constant function<test_constant_function>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.constant`` is called, Python_ follows this path
+
+  .. code-block:: shell
+
+      src
+      └── functions.py
+          └── def constant():
+                  return 'the same thing'
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move constant function to functions.py'
+
+:ref:`I can write solutions in a different module from the tests<separate and equal>`.
+
+----
 
 ----
 BOOM
