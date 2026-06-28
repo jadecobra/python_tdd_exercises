@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master Python functions step-by-step using Test-Driven Development (TDD) with functions. Learn how to make functions take input with def, identity function, positional vs keyword arguments (order independence with names), default/optional values, *args and **kwargs, argument unpacking (*tuple **dict), return statements. See real errors: "NameError: name 'identity' is not defined", "TypeError: ... takes 0 positional arguments but 1 was given", "takes 1 positional argument but 2 were given", AssertionError on wrong returns. Practice bare assert == / is, constant functions "assert constant() == 'the same thing'", swapping calls like keyword(last_input=0, first_input=1) == (1, 0), unknown_number_of_arguments(*a_tuple, **a_dictionary) == (tuple, dict). Part of Jacob Itegboje's Pumping Python TDD series for beginners.
-  :keywords: Jacob Itegboje, Pumping Python, Python functions for beginners, learn Python functions with TDD, positional vs keyword arguments Python, keyword_arguments, what does a function return by default, Python *args **kwargs, optional arguments default value, test identity function return the_input, "takes 0 positional arguments but 1 was given", "NameError: name 'identity' is not defined", constant function "the same thing", argument unpacking python, bare assert in tests, functions that take input, red green refactor functions, Python TDD positional keyword, how to call python function with input, return first_input last_input tuple
+  :description: Separate tests from solutions (keep them in different modules) in the functions project using TDD. Move every function (w_pass, w_return, return_leaves_the_function, constant, identity, positional_arguments, keyword_arguments, args_and_kwargs, optional_arguments, unknown_number_of_arguments) out of test_functions.py into src/functions.py. Use mkdir src, touch src/functions.py, import src.functions, reroute calls via local aliases like positional_arguments = src.functions.positional_arguments, then remove the commented lines (the local def left behind in the test). See real errors while separating: "NameError: name 'src' is not defined", "ModuleNotFoundError: No module named 'src'", "ModuleNotFoundError: No module named 'src.functions'", "AttributeError: module 'src.functions' has no attribute 'w_pass'". Practice bare assert is None / == , git commit -am after each move, uv run pytest-watcher. Reviews the functions that take input (positional/keyword order independence, optional defaults, *args **kwargs unpacking) as they get moved. Review lesson: I can write solutions in a different module from the tests. Part of Jacob Itegboje's Pumping Python TDD series for beginners.
+  :keywords: Jacob Itegboje, Pumping Python, separate tests from solutions python, src folder functions, import src.functions, move function to src, ModuleNotFoundError No module named 'src', AttributeError module 'src.functions' has no attribute, remove the commented lines, test_functions.py to functions.py, functions separation TDD, bare assert in tests, uv run pytest-watcher, git commit -am move, w_pass w_return constant identity positional_arguments keyword_arguments, optional_arguments *args **kwargs, "NameError: name 'src' is not defined", "ModuleNotFoundError: No module named 'src.functions'", "I can write solutions in a different module from the tests", red green refactor separation, Python TDD separate module
 
 .. include:: ../links.rst
 
@@ -130,7 +130,7 @@ because ``src`` is not defined in ``test_functions.py``.
 * I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 255
+    :lineno-start: 230
     :emphasize-lines: 6
     :emphasize-text: ModuleNotFoundError
 
@@ -178,7 +178,7 @@ because ``src`` is not defined in ``test_functions.py``.
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 255
+    :lineno-start: 230
     :emphasize-lines: 7
     :emphasize-text: AttributeError
 
@@ -1710,7 +1710,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 
 ----
 
-* Starting with the last :ref:`Exception<errors>`, I add a :ref:`function definition<how to make a function>` for :ref:`unknown_number_of_arguments<test_unknown_number_of_arguments>` to ``person.py``
+* Starting with the last :ref:`Exception<errors>`, I add a :ref:`function definition<how to make a function>` for :ref:`unknown_number_of_arguments<test_unknown_number_of_arguments>` to ``functions.py`` in the ``src`` folder_
 
   .. code-block:: python
     :linenos:

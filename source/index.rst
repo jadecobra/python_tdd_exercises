@@ -42,7 +42,7 @@ table of contents
   make_tdd/run_tests_automatically
   what is an assertion?<exceptions/AssertionError/index>
   functions/index
-  make a person with variables<how_to/make_person/index>
+  make a person with strings<how_to/make_person/index>
   functions/functions_w_input
   how_to/telephone/index
   make a person with f-strings<how_to/make_person/make_person_w_fstrings>

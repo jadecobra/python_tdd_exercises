@@ -4,13 +4,33 @@
 
 .. include:: ../../links.rst
 
+.. _constructor: https://grokipedia.com/page/Constructor_(object-oriented_programming)
+.. _constructor method: constructor_
+.. _staticmethod: https://docs.python.org/3/library/functions.html#staticmethod
+.. _staticmethod decorator: staticmethod_
+
 #################################################################################
-how to make a person with f-strings
+how to make a person with a class
 #################################################################################
 
 ----
 
-Since I can pass :ref:`objects<what is a class?>` into a string_ with :ref:`f-strings<what is string interpolation?>`. I can write one :ref:`function<what is a function?>` that makes a person instead of making one :ref:`function<what is a function?>` for each person.
+The :ref:`factory<test person factory>` and :ref:`say_hi functions<test say_hi>` use three of the same inputs
+
+* ``first_name``
+* ``last_name``
+* ``year_of_birth``
+
+I want to give those values once, and get a representation for a person. I can do that with a :ref:`class<what is a class?>`
+
+*********************************************************************************
+what is a class?
+*********************************************************************************
+
+I think of classes_ as :ref:`attributes (variables)<what is a class attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together.
+
+Everything in Python_ is an object_, which is another word for a class_, it means that everything in Python_ has a class_ definition somewhere. Knowing how classes_ work and how to make them shows how everything in Python_ works or at least that they are :ref:`attributes (variables) <what is a class attribute?>` and :ref:`methods (functions)<what is a method?>` that belong together.
+
 
 ----
 
@@ -3404,7 +3424,7 @@ review
     * ``last_name``
     * ``year_of_birth``
 
-    There has to be `a better way<how to make a person with a class>`, where I can give those values once, and get a representation for a person when I call :ref:`the factory function<test person factory>` and a message when I call :ref:`the say_hi function<test say_hi>`.
+    There has to be a better way, where I can give those values once, and get a representation for a person when I call :ref:`the factory function<test person factory>` and a message when I call :ref:`the say_hi function<test say_hi>`.
 
 For now, I am going to :ref:`clean up the functions project<separate and equal functions>` so the tests and solutions are in separate files.
 
