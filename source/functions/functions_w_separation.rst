@@ -1450,36 +1450,185 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
 ----
 
-----
-BOOM
-----
-----
-BOOM
-----
-BOOM
-----
-BOOM
-----
-BOOM
+*********************************************************************************
+move unknown_number_of_arguments function
+*********************************************************************************
+
 ----
 
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I comment out the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` in :ref:`test_unknown_number_of_arguments` in ``test_functions.py``
+
+.. code-block:: python
+  :lineno-start: 187
+  :emphasize-lines: 2-5
+
+  def test_unknown_number_of_arguments():
+      # def unknown_number_of_arguments(
+      #     *positional_arguments, **keyword_arguments
+      # ):
+      #     return positional_arguments, keyword_arguments
+
+      a_tuple = (0, 1)
+
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+.. code-block:: python
+
+  NameError: name 'unknown_number_of_arguments'
+             is not defined
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I use a :ref:`variable<what is a variable?>` to reroute the calls to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` from :ref:`test_unknown_number_of_arguments` to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
+
+  .. code-block:: python
+    :lineno-start: 187
+    :emphasize-lines: 6-8
+
+    def test_unknown_number_of_arguments():
+        # def unknown_number_of_arguments(
+        #     *positional_arguments, **keyword_arguments
+        # ):
+        #     return positional_arguments, keyword_arguments
+        unknown_number_of_arguments = (
+            src.functions.unknown_number_of_arguments
+        )
+
+        a_tuple = (0, 1)
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'unknown_number_of_arguments'
+
+  because I have not yet added ``unknown_number_of_arguments`` to ``functions.py``.
+
+* I add a copy of the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` to ``functions.py``
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 5-8
+
+    def optional_arguments(
+        first_input, last_input='doe',
+    ):
+        return first_input, last_input
 
 
+    def unknown_number_of_arguments(
+        *positional_arguments, **keyword_arguments
+    ):
+        return positional_arguments, keyword_arguments
+
+  the test passes because the calls that were made to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` that was in ``test_functions.py`` are now to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` in ``functions.py`` in the ``src`` folder_.
+
+  When ``unknown_number_of_arguments`` is called in :ref:`test_unknown_number_of_arguments`, Python_ follows this path
+
+  .. code-block:: shell
+
+    unknown_number_of_arguments = (
+        src.functions.unknown_number_of_arguments
+    )
+
+    src
+    └── functions.py
+        └── def unknown_number_of_arguments(
+                *positional_arguments, **keyword_arguments
+            ):
+                return positional_arguments, keyword_arguments
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` from :ref:`test_unknown_number_of_arguments` in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 187
+
+    def test_unknown_number_of_arguments():
+        unknown_number_of_arguments = (
+            src.functions.unknown_number_of_arguments
+        )
+
+        a_tuple = (0, 1)
+        a_dictionary = {'a': 2, 'b': 3}
+        assert (
+            unknown_number_of_arguments(
+                *a_tuple, **a_dictionary
+            )
+         == (a_tuple, a_dictionary)
+        )
+
+        a_tuple = (0, 1)
+        a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+        assert (
+            unknown_number_of_arguments(
+                *a_tuple, **a_dictionary
+            )
+         == (a_tuple, a_dictionary)
+        )
+
+        a_tuple = (0, 1, 2)
+        a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+        assert (
+            unknown_number_of_arguments(
+                *a_tuple, **a_dictionary
+            )
+         == (a_tuple, a_dictionary)
+        )
+
+        a_tuple = (1, 2, 3, 'n')
+        assert (
+            unknown_number_of_arguments(*a_tuple)
+         == (a_tuple, {})
+        )
+
+        a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
+        assert (
+            unknown_number_of_arguments(**a_dictionary)
+         == ((), a_dictionary)
+        )
+
+        assert (
+            unknown_number_of_arguments()
+         == ((), {})
+        )
 
 
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # SyntaxError
+    # ModuleNotFoundError
+    # AttributeError
 
+* I add a git_ commit message in the other terminal_
 
+  .. code-block:: python
+    :emphasize-lines: 1-2
 
-
-
-
-
-
-
-
-
-
-
+    git commit -am \
+    'move unknown_number_of_arguments to functions.py'
 
 ----
 
