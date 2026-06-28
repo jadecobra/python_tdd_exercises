@@ -306,7 +306,7 @@ isinstance_ checks if the thing in the parentheses on the left is an :ref:`insta
 
     class WPass: pass
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1079,7 +1079,7 @@ the test passes.
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1236,7 +1236,7 @@ I use `unittest.TestCase.assertNotIsSubclass`_ to show that :ref:`bool (the clas
 
   # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1379,7 +1379,7 @@ the test passes.
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1514,7 +1514,7 @@ the test passes.
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1649,7 +1649,7 @@ the test passes.
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1784,7 +1784,7 @@ the test passes.
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1919,7 +1919,7 @@ the test passes.
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2053,7 +2053,7 @@ the test passes.
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2173,7 +2173,7 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2321,7 +2321,7 @@ the test passes.
 
         def test_making_a_class_w_parentheses(self):
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2478,7 +2478,7 @@ the test passes.
 
         def test_making_a_class_w_object(self):
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2642,7 +2642,7 @@ the test passes.
 
         def test_is_none_an_object(self):
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 

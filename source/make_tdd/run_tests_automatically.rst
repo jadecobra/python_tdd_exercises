@@ -645,7 +645,7 @@ You know
 * :ref:`what a Python module is<what is a module?>`
 * :ref:`how to run tests automatically`
 
-:ref:`Would you like to know what causes AssertionError<what is an assertion?>`
+:ref:`Would you like to know what causes AssertionError<what causes AssertionError?>`
 
 -----
 

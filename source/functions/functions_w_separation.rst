@@ -1710,7 +1710,750 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 
 ----
 
-* Starting with the last :ref:`Exceptions<error>`, I add a :ref:
+* Starting with the last :ref:`Exception<errors>`, I add a :ref:`function definition<how to make a function>` for :ref:`unknown_number_of_arguments<test_unknown_number_of_arguments>` to ``person.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2
+
+    def unknown_number_of_arguments():
+        return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: unknown_number_of_arguments() got an
+               unexpected keyword argument 'a'
+
+* I add ``a`` to the parentheses
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2
+
+    # def unknown_number_of_arguments():
+    def unknown_number_of_arguments(a):
+        return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: unknown_number_of_arguments() got
+               multiple values for argument 'a'
+
+  which means it got called with ``a`` as a :ref:`keyword argument<test_keyword_arguments>` and since I have it as the first position, Python_ reads it as two values for the same argument.
+
+* I try another argument in the parentheses before ``a``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-3
+
+    # def unknown_number_of_arguments():
+    # def unknown_number_of_arguments(a):
+    def unknown_number_of_arguments(z, a):
+        return None
+
+  the terminal_ still shows :ref:`TypeError<what causes TypeError?>`
+
+* I use a :ref:`starred expression<starred expressions>` to make the :ref:`function<what is a function?>` any number of :ref:`positional_arguments<test_positional_arguments>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3-6
+
+    # def unknown_number_of_arguments():
+    # def unknown_number_of_arguments(a):
+    # def unknown_number_of_arguments(z, a):
+    def unknown_number_of_arguments(
+        *positional, a
+    ):
+        return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: unknown_number_of_arguments() got
+               an unexpected keyword argument 'b'
+
+* I add ``b`` to the parentheses
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6
+
+    # def unknown_number_of_arguments():
+    # def unknown_number_of_arguments(a):
+    # def unknown_number_of_arguments(z, a):
+    def unknown_number_of_arguments(
+        # *positional, a
+        *positional, a, b
+    ):
+        return None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert None == ((0, 1), {'a': 2, 'b': 3})
+
+* I copy (:kbd:`ctrl/command+c`) the tuple_ from the right side in the terminal_ then paste it (:kbd:`ctrl/command+v`) to replace :ref:`the return statement`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 8-9
+
+    # def unknown_number_of_arguments():
+    # def unknown_number_of_arguments(a):
+    # def unknown_number_of_arguments(z, a):
+    def unknown_number_of_arguments(
+        # *positional, a
+        *positional, a, b
+    ):
+        # return None
+        return ((0, 1), {'a': 2, 'b': 3})
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: unknown_number_of_arguments() got
+               an unexpected keyword argument 'c'
+
+* I add ``c`` to the parentheses
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 6-7
+
+    # def unknown_number_of_arguments():
+    # def unknown_number_of_arguments(a):
+    # def unknown_number_of_arguments(z, a):
+    def unknown_number_of_arguments(
+        # *positional, a
+        # *positional, a, b
+        *positional, a, b, c
+    ):
+        # return None
+        return ((0, 1), {'a': 2, 'b': 3})
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: unknown_number_of_arguments() missing
+               1 required keyword-only argument: 'c'.
+
+  because something called the :ref:`function<what is a function?>` without a value for ``c``
+
+* I make ``c`` an :ref:`optional argument<test_optional_arguments>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 7-8
+
+    # def unknown_number_of_arguments():
+    # def unknown_number_of_arguments(a):
+    # def unknown_number_of_arguments(z, a):
+    def unknown_number_of_arguments(
+        # *positional, a
+        # *positional, a, b
+        # *positional, a, b, c
+        *positional, a, b, c=None
+    ):
+        # return None
+        return ((0, 1), {'a': 2, 'b': 3})
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert ((0, 1), {'a': 2, 'b': 3})
+                        == ((0, 1), {'a'...': 3, 'c': 4})
+
+* I change the :ref:`return statement<the return statement>` to see the difference between the input and the expected output
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 11-12
+
+    # def unknown_number_of_arguments():
+    # def unknown_number_of_arguments(a):
+    # def unknown_number_of_arguments(z, a):
+    def unknown_number_of_arguments(
+        # *positional, a
+        # *positional, a, b
+        # *positional, a, b, c
+        *positional, a, b, c=None
+    ):
+        # return None
+        # return ((0, 1), {'a': 2, 'b': 3})
+        return positional, a, b, c
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert ((0, 1), 2, 3, None)
+                        == ((0, 1), {'a': 2, 'b': 3})
+
+  - The test expects a tuple_ with a tuple_ and a :ref:`dictionary<what is a dictionary?>`.
+  - The :ref:`function<what is a function?>` returns a tuple_ with a tuple_ and three values.
+
+* I change :ref:`the return statement` back
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 11-12
+
+    # def unknown_number_of_arguments():
+    # def unknown_number_of_arguments(a):
+    # def unknown_number_of_arguments(z, a):
+    def unknown_number_of_arguments(
+        # *positional, a
+        # *positional, a, b
+        # *positional, a, b, c
+        *positional, a, b, c=None
+    ):
+        # return None
+        return ((0, 1), {'a': 2, 'b': 3})
+        # return positional, a, b, c
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert ((0, 1), {'a': 2, 'b': 3})
+                        == ((0, 1), {'a'...': 3, 'c': 4})
+
+  the :ref:`dictionaries<what is a dictionary?>` are different.
+
+* I use a :ref:`double starred expression<double starred expressions>` in the parentheses to make the :ref:`function<what is a function?>` take any number of :ref:`keyword_arguments<test_keyword_arguments>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 8-9
+
+    # def unknown_number_of_arguments():
+    # def unknown_number_of_arguments(a):
+    # def unknown_number_of_arguments(z, a):
+    def unknown_number_of_arguments(
+        # *positional, a
+        # *positional, a, b
+        # *positional, a, b, c
+        # *positional, a, b, c=None
+        *positional, **keyword
+    ):
+        # return None
+        return ((0, 1), {'a': 2, 'b': 3})
+        # return positional, a, b, c
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert ((0, 1), {'a': 2, 'b': 3})
+                        == ((0, 1), {'a'...': 3, 'c': 4})
+
+* I return the inputs
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 12, 14
+
+    # def unknown_number_of_arguments():
+    # def unknown_number_of_arguments(a):
+    # def unknown_number_of_arguments(z, a):
+    def unknown_number_of_arguments(
+        # *positional, a
+        # *positional, a, b
+        # *positional, a, b, c
+        # *positional, a, b, c=None
+        *positional, **keyword
+    ):
+        # return None
+        # return ((0, 1), {'a': 2, 'b': 3})
+        # return positional, a, b, c
+        return positional, keyword
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'optional_arguments'
+
+* I add a :ref:`function definition<how to make a function>` for :ref:`optional_arguments<test_optional_arguments>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 17-18
+
+    # def unknown_number_of_arguments():
+    # def unknown_number_of_arguments(a):
+    # def unknown_number_of_arguments(z, a):
+    def unknown_number_of_arguments(
+        # *positional, a
+        # *positional, a, b
+        # *positional, a, b, c
+        # *positional, a, b, c=None
+        *positional, **keyword
+    ):
+        # return None
+        # return ((0, 1), {'a': 2, 'b': 3})
+        # return positional, a, b, c
+        return positional, keyword
+
+
+    def optional_arguments():
+        return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: optional_arguments() takes
+               0 positional arguments but 1 was given
+
+* I add a name to allow the :ref:`function<what is a function?>` take input
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 1-2
+
+    # def optional_arguments():
+    def optional_arguments(argument):
+        return None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert None == ('jane', 'doe')
+
+* I copy (:kbd:`ctrl/command+c`) the value from the terminal_ and paste it (:kbd:`ctrl/command+v`) to replace :ref:`the return statement`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 3-4
+
+    # def optional_arguments():
+    def optional_arguments(argument):
+        # return None
+        return ('jane', 'doe')
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: optional_arguments() takes
+               1 positional argument but 2 were given
+
+* I add another name to the parentheses
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 2-3
+
+    # def optional_arguments():
+    # def optional_arguments(argument):
+    def optional_arguments(argument, argument_b):
+        # return None
+        return ('jane', 'doe')
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: optional_arguments() missing
+               1 required positional argument: 'argument_b'
+
+* I make the argument :ref:`optional<test_optional_arguments>`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 3-4
+
+    # def optional_arguments():
+    # def optional_arguments(argument):
+    # def optional_arguments(argument, argument_b):
+    def optional_arguments(argument, argument_b=None):
+        # return None
+        return ('jane', 'doe')
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert ('jane', 'doe')
+                        == ('joe', 'blow')
+
+* I change the :ref:`return statement<the return statement>` of :ref:`optional_arguments<test_optional_arguments>` to see the difference between the input and the expected output
+
+  .. code-block:: python
+    :lineno-start:
+
+    # def optional_arguments():
+    # def optional_arguments(argument):
+    # def optional_arguments(argument, argument_b):
+    def optional_arguments(argument, argument_b=None):
+        # return None
+        # return ('jane', 'doe')
+        return argument, argument_b
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert ('jane', None) == ('jane', 'doe')
+
+  the :ref:`function<what is a function?>` returned a tuple_ with the first argument and the :ref:`default value<test_optional_arguments>` of ``argument_b``.
+
+* I change the :ref:`default value<test_optional_arguments>` to ``'doe'``
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 4-5
+
+    # def optional_arguments():
+    # def optional_arguments(argument):
+    # def optional_arguments(argument, argument_b):
+    # def optional_arguments(argument, argument_b=None):
+    def optional_arguments(argument, argument_b='doe'):
+        # return None
+        # return ('jane', 'doe')
+        return argument, argument_b
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+     TypeError: optional_arguments() got
+                an unexpected keyword argument 'first_input'
+
+* I add the name in parentheses
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 5-8
+
+    # def optional_arguments():
+    # def optional_arguments(argument):
+    # def optional_arguments(argument, argument_b):
+    # def optional_arguments(argument, argument_b=None):
+    # def optional_arguments(argument, argument_b='doe'):
+    def optional_arguments(
+        argument, argument_b='doe', first_input
+    ):
+        # return None
+        # return ('jane', 'doe')
+        return argument, argument_b
+
+  the terminal_ is my friend, and shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: parameter without a default
+         follows parameter with a default
+
+  because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
+
+* I change the order of the arguments
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 7-9
+
+    # def optional_arguments():
+    # def optional_arguments(argument):
+    # def optional_arguments(argument, argument_b):
+    # def optional_arguments(argument, argument_b=None):
+    # def optional_arguments(argument, argument_b='doe'):
+    def optional_arguments(
+        # argument, argument_b='doe', first_input
+        argument, first_input,
+        argument_b='doe',
+    ):
+        # return None
+        # return ('jane', 'doe')
+        return argument, argument_b
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: optional_arguments() missing
+               1 required positional argument: 'first_input'
+
+* I make ``first_input`` the first argument to see if the problem is the position it is in
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 8-9
+
+    # def optional_arguments():
+    # def optional_arguments(argument):
+    # def optional_arguments(argument, argument_b):
+    # def optional_arguments(argument, argument_b=None):
+    # def optional_arguments(argument, argument_b='doe'):
+    def optional_arguments(
+        # argument, argument_b='doe', first_input
+        # argument, first_input,
+        first_input, argument,
+        argument_b='doe',
+    ):
+        # return None
+        # return ('jane', 'doe')
+        return argument, argument_b
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: optional_arguments() missing
+               1 required positional argument: 'argument'
+
+* I make ``argument`` :ref:`optional<test_optional_arguments>`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 9-10
+
+
+    # def optional_arguments():
+    # def optional_arguments(argument):
+    # def optional_arguments(argument, argument_b):
+    # def optional_arguments(argument, argument_b=None):
+    # def optional_arguments(argument, argument_b='doe'):
+    def optional_arguments(
+        # argument, argument_b='doe', first_input
+        # argument, first_input,
+        # first_input, argument,
+        first_input, argument=None,
+        argument_b='doe',
+    ):
+        # return None
+        # return ('jane', 'doe')
+        return argument, argument_b
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert (None, 'doe')
+                        == ('jane', 'doe')
+
+  the :ref:`function<what is a function?>` returned a tuple_ with the :ref:`default value<test_optional_arguments>` of ``argument``
+
+* I add ``first_input`` to :ref:`the return statement`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 15-16
+
+    # def optional_arguments():
+    # def optional_arguments(argument):
+    # def optional_arguments(argument, argument_b):
+    # def optional_arguments(argument, argument_b=None):
+    # def optional_arguments(argument, argument_b='doe'):
+    def optional_arguments(
+        # argument, argument_b='doe', first_input
+        # argument, first_input,
+        # first_input, argument,
+        first_input, argument=None,
+        argument_b='doe',
+    ):
+        # return None
+        # return ('jane', 'doe')
+        # return argument, argument_b
+        return first_input, argument, argument_b
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert ('jane', None, 'doe')
+                        == ('jane', 'doe')
+
+  it looks like I do not need the ``argument`` parameter.
+
+* I remove ``argument`` from the parentheses and :ref:`return statement<the return statement>`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 10-11, 17-18
+
+    # def optional_arguments():
+    # def optional_arguments(argument):
+    # def optional_arguments(argument, argument_b):
+    # def optional_arguments(argument, argument_b=None):
+    # def optional_arguments(argument, argument_b='doe'):
+    def optional_arguments(
+        # argument, argument_b='doe', first_input
+        # argument, first_input,
+        # first_input, argument,
+        # first_input, argument=None,
+        first_input,
+        argument_b='doe',
+    ):
+        # return None
+        # return ('jane', 'doe')
+        # return argument, argument_b
+        # return first_input, argument, argument_b
+        return first_input, argument_b
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: shell
+
+    TypeError: optional_arguments() got
+               an unexpected keyword argument 'last_input'.
+               Did you mean 'first_input'?
+
+* I add the name in the parentheses
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 12-13
+
+    # def optional_arguments():
+    # def optional_arguments(argument):
+    # def optional_arguments(argument, argument_b):
+    # def optional_arguments(argument, argument_b=None):
+    # def optional_arguments(argument, argument_b='doe'):
+    def optional_arguments(
+        # argument, argument_b='doe', first_input
+        # argument, first_input,
+        # first_input, argument,
+        # first_input, argument=None,
+        first_input,
+        # argument_b='doe',
+        argument_b='doe', last_input,
+    ):
+        # return None
+        # return ('jane', 'doe')
+        # return argument, argument_b
+        # return first_input, argument, argument_b
+        return first_input, argument_b
+
+  the terminal_ is my friend, and shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: parameter without a default
+         follows parameter with a default
+
+  because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
+
+* I give the argument a :ref:`default value<test_optional_arguments>`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 13-14
+
+    # def optional_arguments():
+    # def optional_arguments(argument):
+    # def optional_arguments(argument, argument_b):
+    # def optional_arguments(argument, argument_b=None):
+    # def optional_arguments(argument, argument_b='doe'):
+    def optional_arguments(
+        # argument, argument_b='doe', first_input
+        # argument, first_input,
+        # first_input, argument,
+        # first_input, argument=None,
+        first_input,
+        # argument_b='doe',
+        # argument_b='doe', last_input,
+        argument_b='doe', last_input=None,
+    ):
+        # return None
+        # return ('jane', 'doe')
+        # return argument, argument_b
+        # return first_input, argument, argument_b
+        return first_input, argument_b
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert ('john', 'doe')
+                        == ('john', 'smith')
+
+  the last names are different.
+
+* I add ``last_input`` to :ref:`the return statement`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 20-21
+
+    # def optional_arguments():
+    # def optional_arguments(argument):
+    # def optional_arguments(argument, argument_b):
+    # def optional_arguments(argument, argument_b=None):
+    # def optional_arguments(argument, argument_b='doe'):
+    def optional_arguments(
+        # argument, argument_b='doe', first_input
+        # argument, first_input,
+        # first_input, argument,
+        # first_input, argument=None,
+        first_input,
+        # argument_b='doe',
+        # argument_b='doe', last_input,
+        argument_b='doe', last_input=None,
+    ):
+        # return None
+        # return ('jane', 'doe')
+        # return argument, argument_b
+        # return first_input, argument, argument_b
+        # return first_input, argument_b
+        return first_input, argument_b, last_input
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert ('jane', 'doe', None)
+                        == ('jane', 'doe')
+
+  I only need two inputs.
+
+* I remove ``argument_b`` from the parentheses and :ref:`return statement<the return statement>`,  then change the :ref:`default value<test_optional_arguments>` of ``last_input`` to ``'doe'``
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 14-15, 22-23
+
+    # def optional_arguments():
+    # def optional_arguments(argument):
+    # def optional_arguments(argument, argument_b):
+    # def optional_arguments(argument, argument_b=None):
+    # def optional_arguments(argument, argument_b='doe'):
+    def optional_arguments(
+        # argument, argument_b='doe', first_input
+        # argument, first_input,
+        # first_input, argument,
+        # first_input, argument=None,
+        first_input,
+        # argument_b='doe',
+        # argument_b='doe', last_input,
+        # argument_b='doe', last_input=None,
+        last_input='doe',
+    ):
+        # return None
+        # return ('jane', 'doe')
+        # return argument, argument_b
+        # return first_input, argument, argument_b
+        # return first_input, argument_b
+        # return first_input, argument_b, last_input
+        return first_input, last_input
+
+
+
+
 
 
 
