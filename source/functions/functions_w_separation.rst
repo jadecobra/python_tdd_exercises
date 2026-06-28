@@ -1989,22 +1989,9 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add a :ref:`function definition<how to make a function>` for :ref:`optional_arguments<test_optional_arguments>`
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 17-18
+    :lineno-start: 14
+    :emphasize-lines: 4-5
 
-    # def unknown_number_of_arguments():
-    # def unknown_number_of_arguments(a):
-    # def unknown_number_of_arguments(z, a):
-    def unknown_number_of_arguments(
-        # *positional, a
-        # *positional, a, b
-        # *positional, a, b, c
-        # *positional, a, b, c=None
-        *positional, **keyword
-    ):
-        # return None
-        # return ((0, 1), {'a': 2, 'b': 3})
-        # return positional, a, b, c
         return positional, keyword
 
 
@@ -2535,26 +2522,494 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I add a :ref:`function definition<how to make a function>` for :ref:`keyword_arguments<test_keyword_arguments>`
 
   .. code-block:: python
-    :lineno-start: 42
-    :emphasize-lines: 8-9
+    :lineno-start: 46
+    :emphasize-lines: 4-5
 
-    # def args_and_kwargs():
-    # def args_and_kwargs(last_input):
-    def args_and_kwargs(argument, last_input):
-        # return None
         return argument, last_input
 
 
     def keyword_arguments():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError<whatc auses Ty>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: keyword_arguments() got
+               an unexpected keyword argument 'first_input'
+
+* I add ``first_input`` to the parentheses
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 1-2
+
+    # def keyword_arguments():
+    def keyword_arguments(first_input):
+        return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: shell
+
+    TypeError: keyword_arguments() got
+               an unexpected keyword argument 'last_input'.
+               Did you mean 'first_input'?
+
+* I add ``last_input`` to the parentheses
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 2-3
+
+    # def keyword_arguments():
+    # def keyword_arguments(first_input):
+    def keyword_arguments(first_input, last_input):
+        return None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert None == ('first', 'last')0
+
+* I copy and paste the tuple_ from the terminal_ as :ref:`the return statement`
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 4-5
+
+    # def keyword_arguments():
+    # def keyword_arguments(first_input):
+    def keyword_arguments(first_input, last_input):
+        # return None
+        return ('first', 'last')
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert ('first', 'last') == (1, 0)
+
+* I change :ref:`the return statement` to see the difference between the inputs and the output
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 5-6
+
+    # def keyword_arguments():
+    # def keyword_arguments(first_input):
+    def keyword_arguments(first_input, last_input):
+        # return None
+        # return ('first', 'last')
+        return first_input, last_input
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'positional_arguments'.
+                    Did you mean: 'optional_arguments'?
+
+* I add a :ref:`function definition<how to make a function>` for :ref:`positional_arguments<test_positional_arguments>`
+
+  .. code-block:: python
+    :lineno-start: 54
+    :emphasize-lines: 4-5
+
+        return first_input, last_input
+
+
+    def positional_arguments():
+        return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: positional_arguments() got
+               an unexpected keyword argument 'last_input'
+
+* I add the name to the parentheses in the :ref:`definition<how to make a function>`
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 1-2
+
+    # def positional_arguments():
+    def positional_arguments(last_input):
+        return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: shell
+
+    TypeError: positional_arguments() got
+               an unexpected keyword argument 'first_input'.
+               Did you mean 'last_input'?
+
+* I add ``last_input`` to the parentheses
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 2-3
+
+    # def positional_arguments():
+    # def positional_arguments(last_input):
+    def positional_arguments(last_input, first_input):
+        return None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert None
+        == ({3, 1, 2, 'n'}, {'key': 'value'})
+
+* I copy (:kbd:`ctrl/command+c`) and paste (:kbd:`ctrl/command+v`) the value from the terminal_ to change :ref:`the return statement`
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 4-5
+
+    # def positional_arguments():
+    # def positional_arguments(last_input):
+    def positional_arguments(last_input, first_input):
+        # return None
+        return ({3, 1, 2, 'n'}, {'key': 'value'})
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        assert ({1, 2, 3, 'n...ey': 'value'})
+            == ('first', 'last')
+
+* I change :ref:`the return statement` to see the difference between the inputs and output
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 5-6
+
+    # def positional_arguments():
+    # def positional_arguments(last_input):
+    def positional_arguments(last_input, first_input):
+        # return None
+        # return ({3, 1, 2, 'n'}, {'key': 'value'})
+        return last_input, first_input
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        assert ({'key': 'val...3, 1, 'n', 2})
+            == ({3, 1, 'n', ...ey': 'value'})
+
+  - The order is reversed.
+  - I want better error messages.
+
+* I change the order of the inputs in the :ref:`the return statement`
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 6-7
+
+    # def positional_arguments():
+    # def positional_arguments(last_input):
+    def positional_arguments(last_input, first_input):
+        # return None
+        # return ({3, 1, 2, 'n'}, {'key': 'value'})
+        # return last_input, first_input
+        return first_input, last_input
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert ('last', 'first')
+                        == ('first', 'last')
+
+  the order is reversed.
+
+* I change the order of inputs in the parentheses
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 3-4
+
+    # def positional_arguments():
+    # def positional_arguments(last_input):
+    # def positional_arguments(last_input, first_input):
+    def positional_arguments(first_input, last_input):
+        # return None
+        # return ({3, 1, 2, 'n'}, {'key': 'value'})
+        # return last_input, first_input
+        return first_input, last_input
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'identity'
+
+* I add a :ref:`function definition<how to make a function>` for :ref:`identity<test_identity_function>`
+
+  .. code-block:: python
+    :lineno-start: 64
+    :emphasize-lines: 4-5
+
+        return first_input, last_input
+
+
+    def identity():
+        return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: identity() takes
+               0 positional arguments but 1 was given
+
+* I add a name to the :ref:`function definition<how to make a function>` to make it take input
+
+  .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 1-2
+
+    # def identity():
+    def identity(argument):
+        return None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert None == object
+
+* I change :ref:`the return statement` to give the test what it wants
+
+  .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 3-4
+
+    # def identity():
+    def identity(argument):
+        # return None
+        return object
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: assert <class 'object'> == None
+
+* I :ref:`return<the return statement>` the input
+
+  .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 4-5
+
+    # def identity():
+    def identity(argument):
+        # return None
+        # return object
+        return argument
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'constant'
+
+* I add a :ref:`function definition<how to make a function>` for :ref:`constant<test_constant_function>`
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 4-5
+
+        return argument
+
+
+    def constant():
+        return None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert None == 'the same thing'
+
+* I copy and paste the value from the terminal_ as :ref:`the return statement`
+
+  .. code-block:: python
+    :lineno-start: 74
+    :emphasize-lines: 2-3
+
+    def constant():
+        # return None
+        return 'the same thing'
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'return_leaves_the_function'
+
+* I add a :ref:`function definition<how to make a function>` for :ref:`return_leaves_the_function<test_what_happens_after_functions_return>`
+
+  .. code-block:: python
+    :lineno-start: 76
+    :emphasize-lines: 4-5
+
+        return 'the same thing'
+
+
+    def return_leaves_the_function():
+        return None
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'w_return_none'
+
+* I add a :ref:`function definition<how to make a function>` for :ref:`w_return_none<test_making_a_function_w_return_none>`
+
+  .. code-block:: python
+    :lineno-start: 79
+    :emphasize-lines: 5-6
+
+    def return_leaves_the_function():
+        return None
+
+
+    def w_return_none():
+        return None
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'w_return'
+
+* I add a :ref:`function definition<how to make a function>` for :ref:`w_return<test_making_a_function_w_return>`
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 5-6
+
+    def w_return_none():
+        return None
+
+
+    def w_return():
+        return None
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'w_pass'
+
+* I add a :ref:`function definition<how to make a function>` for :ref:`w_pass<test_making_a_function_w_pass>`
+
+  .. code-block:: python
+    :lineno-start: 87
+    :emphasize-lines: 5-6
+
+    def w_return():
+        return None
+
+
+    def w_pass():
+        return None
+
+  all tests are passing!
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented lines
+
+  .. code-block:: python
+      :linenos:
+
+    def unknown_number_of_arguments(
+        *positional, **keyword
+    ):
+        return positional, keyword
+
+
+    def optional_arguments(
+        first_input, last_input='doe',
+    ):
+        return first_input, last_input
+
+
+    def args_and_kwargs(argument, last_input):
+        return argument, last_input
+
+
+    def keyword_arguments(first_input, last_input):
+        return first_input, last_input
+
+
+    def positional_arguments(first_input, last_input):
+        return first_input, last_input
+
+
+    def identity(argument):
+        return argument
+
+
+    def constant():
+        return 'the same thing'
+
+
+    def return_leaves_the_function():
+        return None
+
+
+    def w_return_none():
+        return None
+
+
+    def w_return():
+        return None
+
+
+    def w_pass():
+        return None
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'test functions'
+
+----
 
 *********************************************************************************
 close the project
 *********************************************************************************
 
-* I close ``test_functions.py`` and ``functions.py``
+* I close ``functions.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
@@ -2595,7 +3050,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-you have covered a bit so far and know
+So far, you know
 
 * :ref:`how to make a Python test driven development environment manually`
 * :ref:`what a Python module is<what is a module?>`
@@ -2608,7 +3063,7 @@ you have covered a bit so far and know
 * :ref:`how to make a person say hi with f-strings<how to make a person with f-strings>`
 * :ref:`how to separate tests from solutions<separate and equal functions>`
 
-:ref:`Would you like to test using a class to remove repetition of inputs between functions?<telephone>`
+:ref:`Would you like to test using a class to remove repetition of inputs from functions?<how to make a person with a class>`
 
 ----
 
