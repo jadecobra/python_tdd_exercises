@@ -2536,6 +2536,19 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 
   .. code-block:: python
     :lineno-start: 42
+    :emphasize-lines: 8-9
+
+    # def args_and_kwargs():
+    # def args_and_kwargs(last_input):
+    def args_and_kwargs(argument, last_input):
+        # return None
+        return argument, last_input
+
+
+    def keyword_arguments():
+        return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<whatc auses Ty>`
 
 *********************************************************************************
 close the project
