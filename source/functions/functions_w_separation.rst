@@ -1287,6 +1287,169 @@ the test passes.
 
 ----
 
+*********************************************************************************
+move optional_arguments function
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I comment out the :ref:`optional_arguments function<test_optional_arguments>` in :ref:`test_optional_arguments` in ``test_functions.py``
+
+.. code-block:: python
+  :lineno-start: 147
+  :emphasize-lines: 2-5
+
+  def test_optional_arguments():
+      # def optional_arguments(
+      #     first_input, last_input='doe',
+      # ):
+      #     return first_input, last_input
+
+      first_name, last_name = 'jane', 'doe'
+
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+.. code-block:: python
+
+  NameError: name 'optional_arguments'
+             is not defined
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I use a :ref:`variable<what is a variable?>` to reroute the calls to the :ref:`optional_arguments function<test_optional_arguments>` from :ref:`test_optional_arguments` to the :ref:`optional_arguments function<test_optional_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
+
+  .. code-block:: python
+    :lineno-start: 147
+    :emphasize-lines: 6-8
+
+    def test_optional_arguments():
+        # def optional_arguments(
+        #     first_input, last_input='doe',
+        # ):
+        #     return first_input, last_input
+        optional_arguments = (
+            src.functions.optional_arguments
+        )
+
+        first_name, last_name = 'jane', 'doe'
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'optional_arguments'.
+                    Did you mean: 'positional_arguments'?
+
+  because ``optional_arguments`` does not exist in ``functions.py``.
+
+* I add a copy of the :ref:`optional_arguments function<test_optional_arguments>` to ``functions.py``
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 5-8
+
+    def args_and_kwargs(first_input, last_input):
+        return first_input, last_input
+
+
+    def optional_arguments(
+        first_input, last_input='doe',
+    ):
+        return first_input, last_input
+
+  the test passes because the calls that were made to the :ref:`optional_arguments function<test_optional_arguments>` that was in ``test_functions.py`` are now to the :ref:`optional_arguments function<test_optional_arguments>` in ``functions.py`` in the ``src`` folder_.
+
+  When ``optional_arguments`` is called in :ref:`test_optional_arguments`, Python_ follows this path
+
+  .. code-block:: shell
+
+    optional_arguments = src.functions.optional_arguments
+
+    src
+    └── functions.py
+        └── def optional_arguments(
+                first_input, last_input='doe',
+            ):
+                return first_input, last_input
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented :ref:`optional_arguments function<test_optional_arguments>` from :ref:`test_optional_arguments` in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 147
+
+    def test_optional_arguments():
+        optional_arguments = (
+            src.functions.optional_arguments
+        )
+
+        first_name, last_name = 'jane', 'doe'
+
+        assert (
+            optional_arguments(
+                first_name,
+            )
+         == (first_name, last_name)
+        )
+
+        first_name, blow = 'joe', 'blow'
+        assert (
+            optional_arguments(
+                first_name, blow
+            )
+         == (first_name, blow)
+        )
+
+        first_name = 'john'
+        assert (
+            optional_arguments(
+                first_input=first_name
+            )
+         == (first_name, last_name)
+        )
+
+        last_name = 'smith'
+        assert (
+            optional_arguments(
+                last_input=last_name,
+                first_input=first_name,
+            )
+         == (first_name, last_name)
+        )
+
+
+    def test_unknown_number_of_arguments():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move optional_arguments to functions.py'
+
+----
+
 ----
 BOOM
 ----
