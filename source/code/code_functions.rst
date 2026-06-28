@@ -32,7 +32,7 @@ separate and equal functions: tests and solutions
 
 the code from ``functions/tests/test_functions.py`` from :ref:`separate and equal functions`
 
-.. literalinclude:: functions/tests/test_functions_separate_and_equal.py
+.. literalinclude:: functions/tests/test_functions_w_separation.py
   :language: python
   :linenos:
 
@@ -40,7 +40,7 @@ the code from ``functions/tests/test_functions.py`` from :ref:`separate and equa
 
 the code from ``functions/src/functions.py`` from :ref:`separate and equal functions`
 
-.. literalinclude:: functions/solutions/functions_separate_and_equal.py
+.. literalinclude:: functions/solutions/functions_w_separation.py
   :language: python
   :linenos:
 

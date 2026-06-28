@@ -18,7 +18,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/functions/tests/test_functions_separate_and_equal.py
+.. literalinclude:: ../code/functions/tests/test_functions_w_separation.py
   :language: python
   :linenos:
 
@@ -1629,6 +1629,71 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     git commit -am \
     'move unknown_number_of_arguments to functions.py'
+
+----
+
+*********************************************************************************
+test_functions
+*********************************************************************************
+
+I can write the :ref:`functions<what is a function?>` that make the tests pass (except for :ref:`test_why_use_a_function` which I left alone) without looking at ``test_functions.py`` since the solutions are now separate from the tests.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I close ``test_functions.py``
+
+* I delete all the text in ``functions.py`` and the terminal_ shows 11 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    FAILED ...::test_making_a_function_w_pass -
+        AttributeError: module 'src.functions'
+                        has no attribute 'w_pass'
+    FAILED ...::test_making_a_function_w_return -
+        AttributeError: module 'src.functions'
+                        has no attribute 'w_return'
+    FAILED ...::test_making_a_function_w_return_none -
+        AttributeError: module 'src.functions'
+                        has no attribute 'w_return_none'
+    FAILED ...::test_what_happens_after_functions_return -
+        AttributeError: module 'src.functions'
+                        has no attribute 'return_lea...
+    FAILED ...::test_constant_function -
+        AttributeError: module 'src.functions'
+                        has no attribute 'constant'
+    FAILED ...::test_identity_function -
+        AttributeError: module 'src.functions'
+                        has no attribute 'identity'
+    FAILED ...::test_positional_arguments -
+        AttributeError: module 'src.functions'
+                        has no attribute 'positional_arguments'
+    FAILED ...::test_keyword_arguments -
+        AttributeError: module 'src.functions'
+                        has no attribute 'keyword_arguments'
+    FAILED ...::test_args_and_kwargs -
+        AttributeError: module 'src.functions'
+                        has no attribute 'args_and_kwargs'
+    FAILED ...::test_optional_arguments -
+        AttributeError: module 'src.functions'
+                        has no attribute 'optional_arguments'
+    FAILED ...::test_unknown_number_of_arguments -
+        AttributeError: module 'src.functions'
+                        has no attribute 'unknown_nu...
+    ============= 11 failed, 1 passed in A.BCs ==============
+
+  Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done or if you get stuck.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
 
 ----
 

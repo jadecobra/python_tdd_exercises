@@ -5824,7 +5824,7 @@ I want to write the solution without looking at the tests
 
   because there is nothing in ``person.py`` with the name ``factory``.
 
-Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done.
+Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done or if you get stuck.
 
 ----
 

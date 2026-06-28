@@ -94,7 +94,7 @@ continue the project
 
   because ...
 
-  Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done.
+  Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done or if you get stuck.
 
 ----
 

@@ -3059,7 +3059,7 @@ Now that the solution is separate from the tests, I can write the program_ that 
     =================== 10 failed in A.BCs ===================
 
 
-  Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done.
+  Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done or if you get stuck.
 
 ----
 
