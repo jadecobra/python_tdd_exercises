@@ -258,30 +258,32 @@ move w_return
 
 ----
 
-I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return` to use the result of a call to the :ref:`w_return function<test_making_a_function_w_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`w_return function<test_making_a_function_w_return>` in ``test_functions.py``
+* I go back to the terminal_ where the tests are running.
 
-.. code-block:: python
-  :lineno-start: 8
-  :emphasize-lines: 5-6
+* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return` to use the result of a call to the :ref:`w_return function<test_making_a_function_w_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`w_return function<test_making_a_function_w_return>` in ``test_functions.py``
 
-  def test_making_a_function_w_return():
-      def w_return():
-          return
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 5-6
 
-      # assert w_return() is None
-      assert src.functions.w_return() is None
+    def test_making_a_function_w_return():
+        def w_return():
+            return
+
+        # assert w_return() is None
+        assert src.functions.w_return() is None
 
 
-  def test_making_a_function_w_return_none():
+    def test_making_a_function_w_return_none():
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AttributeError: module 'src.functions'
-                  has no attribute 'w_return'
+    AttributeError: module 'src.functions'
+                    has no attribute 'w_return'
 
-because ``functions.py`` in the ``src`` folder_ does not have anything named ``w_return`` in it.
+  because ``functions.py`` in the ``src`` folder_ does not have anything named ``w_return`` in it.
 
 ----
 
@@ -356,30 +358,31 @@ move w_return_none
 
 ----
 
-I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return_none` to use the result of a call to the :ref:`w_return_none function<test_making_a_function_w_return_none>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`w_return_none function<test_making_a_function_w_return_none>` in ``test_functions.py``
+* I go back to the terminal_ where the tests are running.
+* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return_none` to use the result of a call to the :ref:`w_return_none function<test_making_a_function_w_return_none>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`w_return_none function<test_making_a_function_w_return_none>` in ``test_functions.py``
 
-.. code-block:: python
-  :lineno-start: 12
-  :emphasize-lines: 5-6
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 5-6
 
-  def test_making_a_function_w_return_none():
-      def w_return_none():
-          return None
+    def test_making_a_function_w_return_none():
+        def w_return_none():
+            return None
 
-      # assert w_return_none() is None
-      assert src.functions.w_return_none() is None
+        # assert w_return_none() is None
+        assert src.functions.w_return_none() is None
 
 
-  def test_what_happens_after_functions_return():
+    def test_what_happens_after_functions_return():
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AttributeError: module 'src.functions'
-                  has no attribute 'w_return_none'
+    AttributeError: module 'src.functions'
+                    has no attribute 'w_return_none'
 
-because ``functions.py`` in the ``src`` folder_ does not have anything named ``w_return_none`` in it.
+  because ``functions.py`` in the ``src`` folder_ does not have anything named ``w_return_none`` in it.
 
 ----
 
@@ -454,34 +457,35 @@ move return_leaves_the_function
 
 ----
 
-I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_what_happens_after_functions_return` to use the result of a call to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` in ``test_functions.py``
+* I go back to the terminal_ where the tests are running.
+* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_what_happens_after_functions_return` to use the result of a call to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` in ``test_functions.py``
 
-.. code-block:: python
-  :lineno-start: 16
-  :emphasize-lines: 6-10
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 6-10
 
-  def test_what_happens_after_functions_return():
-      def return_leaves_the_function():
-          return None
-          return 'only one way for this line to run'
+    def test_what_happens_after_functions_return():
+        def return_leaves_the_function():
+            return None
+            return 'only one way for this line to run'
 
-      # assert return_leaves_the_function() is None
-      assert (
-          src.functions
-             .return_leaves_the_function()
-      ) is None
+        # assert return_leaves_the_function() is None
+        assert (
+            src.functions
+               .return_leaves_the_function()
+        ) is None
 
 
-  def test_constant_function():
+    def test_constant_function():
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AttributeError: module 'src.functions'
-                  has no attribute 'return_leaves_the_function'
+    AttributeError: module 'src.functions'
+                    has no attribute 'return_leaves_the_function'
 
-because I have not added ``return_leaves_the_function`` to ``functions.py`` in the ``src`` folder_.
+  because I have not added ``return_leaves_the_function`` to ``functions.py`` in the ``src`` folder_.
 
 ----
 
@@ -560,30 +564,31 @@ move constant function
 
 ----
 
-I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_constant_function` to use the result of a call to the :ref:`constant function<test_constant_function>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`constant function<test_constant_function>` in ``test_functions.py``
+* I go back to the terminal_ where the tests are running.
+* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_constant_function` to use the result of a call to the :ref:`constant function<test_constant_function>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`constant function<test_constant_function>` in ``test_functions.py``
 
-.. code-block:: python
-  :lineno-start: 23
-  :emphasize-lines: 5-6
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 5-6
 
-  def test_constant_function():
-      def constant():
-          return 'the same thing'
+    def test_constant_function():
+        def constant():
+            return 'the same thing'
 
-      # assert constant() == 'the same thing'
-      assert src.functions.constant() == 'the same thing'
+        # assert constant() == 'the same thing'
+        assert src.functions.constant() == 'the same thing'
 
 
-  def test_identity_function():
+    def test_identity_function():
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AttributeError: module 'src.functions'
-                  has no attribute 'constant'
+    AttributeError: module 'src.functions'
+                    has no attribute 'constant'
 
-because there is nothing named ``constant`` in ``functions.py`` in the ``src`` folder_.
+  because there is nothing named ``constant`` in ``functions.py`` in the ``src`` folder_.
 
 ----
 
@@ -659,32 +664,33 @@ move identity function
 
 ----
 
-I change the calls in the :ref:`assertions<what is an assertion?>` of :ref:`test_identity_function` to use the results of calls to the :ref:`identity function<test_identity_function>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of calls to the :ref:`identity function<test_identity_function>` in ``test_functions.py``
+* I go back to the terminal_ where the tests are running.
+* I change the calls in the :ref:`assertions<what is an assertion?>` of :ref:`test_identity_function` to use the results of calls to the :ref:`identity function<test_identity_function>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of calls to the :ref:`identity function<test_identity_function>` in ``test_functions.py``
 
-.. code-block:: python
-  :lineno-start: 27
-  :emphasize-lines: 5-8
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 5-8
 
-  def test_identity_function():
-      def identity(the_input):
-          return the_input
+    def test_identity_function():
+        def identity(the_input):
+            return the_input
 
-      # assert identity(None) == None
-      # assert identity(object) == object
-      assert src.functions.identity(None) == None
-      assert src.functions.identity(object) == object
+        # assert identity(None) == None
+        # assert identity(object) == object
+        assert src.functions.identity(None) == None
+        assert src.functions.identity(object) == object
 
 
-  def test_why_use_a_function():
+    def test_why_use_a_function():
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AttributeError: module 'src.functions'
-                  has no attribute 'identity'
+    AttributeError: module 'src.functions'
+                    has no attribute 'identity'
 
-because ``identity`` is not a name in ``functions.py`` in the ``src`` folder_.
+  because ``identity`` is not a name in ``functions.py`` in the ``src`` folder_.
 
 ----
 
@@ -760,40 +766,41 @@ move positional_arguments function
 
 ----
 
-I comment out the :ref:`positional_arguments function<test_positional_arguments>` in ``test_functions.py``
+* I go back to the terminal_ where the tests are running.
+* I comment out the :ref:`positional_arguments function<test_positional_arguments>` in ``test_functions.py``
 
-.. code-block:: python
-  :lineno-start: 32
-  :emphasize-lines: 17-18
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 17-18
 
-  def test_why_use_a_function():
-      def add_x(number):
-          return 3 + number
+    def test_why_use_a_function():
+        def add_x(number):
+            return 3 + number
 
-      assert add_x(0) == 3
-      assert add_x(1) == 4
-      assert add_x(2) == 5
-      assert add_x(3) == 6
-      assert add_x(4) == 7
-      assert add_x(5) == 8
-      assert add_x(6) == 9
-      assert add_x(7) == 10
-      assert add_x(8) == 11
-      assert add_x(9) == 12
-
-
-  # def positional_arguments(first_input, last_input):
-  #     return first_input, last_input
+        assert add_x(0) == 3
+        assert add_x(1) == 4
+        assert add_x(2) == 5
+        assert add_x(3) == 6
+        assert add_x(4) == 7
+        assert add_x(5) == 8
+        assert add_x(6) == 9
+        assert add_x(7) == 10
+        assert add_x(8) == 11
+        assert add_x(9) == 12
 
 
-  def test_positional_arguments():
+    # def positional_arguments(first_input, last_input):
+    #     return first_input, last_input
 
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-.. code-block:: python
+    def test_positional_arguments():
 
-  NameError: name 'positional_arguments'
-             is not defined
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'positional_arguments'
+               is not defined
 
 ----
 
@@ -943,33 +950,34 @@ move keyword_arguments function
 
 ----
 
-I comment out the :ref:`keyword_arguments function<test_keyword_arguments>` in ``test_functions.py``
+* I go back to the terminal_ where the tests are running.
+* I comment out the :ref:`keyword_arguments function<test_keyword_arguments>` in ``test_functions.py``
 
-.. code-block:: python
-  :lineno-start: 74
-  :emphasize-lines: 11-12
+  .. code-block:: python
+    :lineno-start: 74
+    :emphasize-lines: 11-12
 
-      a_set = {1, 2, 3, 'n'}
-      a_dictionary = {'key': 'value'}
-      assert (
-          keyword_arguments(
-              a_set, a_dictionary,
-          )
-       == (a_set, a_dictionary)
-      )
-
-
-  # def keyword_arguments(first_input, last_input):
-  #     return first_input, last_input
+        a_set = {1, 2, 3, 'n'}
+        a_dictionary = {'key': 'value'}
+        assert (
+            keyword_arguments(
+                a_set, a_dictionary,
+            )
+         == (a_set, a_dictionary)
+        )
 
 
-  def test_keyword_arguments():
+    # def keyword_arguments(first_input, last_input):
+    #     return first_input, last_input
 
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-.. code-block:: python
+    def test_keyword_arguments():
 
-  NameError: name 'keyword_arguments' is not defined
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'keyword_arguments' is not defined
 
 ----
 
@@ -1188,37 +1196,38 @@ move args_and_kwargs function
 
 ----
 
-I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_args_and_kwargs` to use the result of a call to the :ref:`args_and_kwargs function<test_args_and_kwargs>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of the result of a call to the :ref:`args_and_kwargs function<test_args_and_kwargs>` in ``test_functions.py``
+* I go back to the terminal_ where the tests are running.
+* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_args_and_kwargs` to use the result of a call to the :ref:`args_and_kwargs function<test_args_and_kwargs>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of the result of a call to the :ref:`args_and_kwargs function<test_args_and_kwargs>` in ``test_functions.py``
 
-.. code-block:: python
-  :lineno-start: 136
-  :emphasize-lines: 8-9
+  .. code-block:: python
+    :lineno-start: 136
+    :emphasize-lines: 8-9
 
-  def test_args_and_kwargs():
-      def args_and_kwargs(first_input, last_input):
-          return first_input, last_input
+    def test_args_and_kwargs():
+        def args_and_kwargs(first_input, last_input):
+            return first_input, last_input
 
-      first, last = 'first', 'last'
+        first, last = 'first', 'last'
 
-      assert (
-          # args_and_kwargs(
-          src.functions.args_and_kwargs(
-              first, last_input=last,
-          )
-       == (first, last)
-      )
+        assert (
+            # args_and_kwargs(
+            src.functions.args_and_kwargs(
+                first, last_input=last,
+            )
+         == (first, last)
+        )
 
 
-  def test_optional_arguments():
+    def test_optional_arguments():
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AttributeError: module 'src.functions'
-                  has no attribute 'args_and_kwargs'
+    AttributeError: module 'src.functions'
+                    has no attribute 'args_and_kwargs'
 
-because ``args_and_kwargs`` is not a name in ``functions.py`` in the ``src`` folder_.
+  because ``args_and_kwargs`` is not a name in ``functions.py`` in the ``src`` folder_.
 
 ----
 
@@ -1299,26 +1308,27 @@ move optional_arguments function
 
 ----
 
-I comment out the :ref:`optional_arguments function<test_optional_arguments>` in :ref:`test_optional_arguments` in ``test_functions.py``
+* I go back to the terminal_ where the tests are running.
+* I comment out the :ref:`optional_arguments function<test_optional_arguments>` in :ref:`test_optional_arguments` in ``test_functions.py``
 
-.. code-block:: python
-  :lineno-start: 147
-  :emphasize-lines: 2-5
+  .. code-block:: python
+    :lineno-start: 147
+    :emphasize-lines: 2-5
 
-  def test_optional_arguments():
-      # def optional_arguments(
-      #     first_input, last_input='doe',
-      # ):
-      #     return first_input, last_input
+    def test_optional_arguments():
+        # def optional_arguments(
+        #     first_input, last_input='doe',
+        # ):
+        #     return first_input, last_input
 
-      first_name, last_name = 'jane', 'doe'
+        first_name, last_name = 'jane', 'doe'
 
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  NameError: name 'optional_arguments'
-             is not defined
+    NameError: name 'optional_arguments'
+               is not defined
 
 ----
 
@@ -1462,26 +1472,27 @@ move unknown_number_of_arguments function
 
 ----
 
-I comment out the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` in :ref:`test_unknown_number_of_arguments` in ``test_functions.py``
+* I go back to the terminal_ where the tests are running.
+* I comment out the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` in :ref:`test_unknown_number_of_arguments` in ``test_functions.py``
 
-.. code-block:: python
-  :lineno-start: 187
-  :emphasize-lines: 2-5
+  .. code-block:: python
+    :lineno-start: 187
+    :emphasize-lines: 2-5
 
-  def test_unknown_number_of_arguments():
-      # def unknown_number_of_arguments(
-      #     *positional_arguments, **keyword_arguments
-      # ):
-      #     return positional_arguments, keyword_arguments
+    def test_unknown_number_of_arguments():
+        # def unknown_number_of_arguments(
+        #     *positional_arguments, **keyword_arguments
+        # ):
+        #     return positional_arguments, keyword_arguments
 
-      a_tuple = (0, 1)
+        a_tuple = (0, 1)
 
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  NameError: name 'unknown_number_of_arguments'
-             is not defined
+    NameError: name 'unknown_number_of_arguments'
+              is not defined
 
 ----
 
@@ -1646,6 +1657,8 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 
 ----
 
+* I go back to the terminal_ where the tests are running
+
 * I close ``test_functions.py``
 
 * I delete all the text in ``functions.py`` and the terminal_ shows 11 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
@@ -1696,6 +1709,10 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 =================================================================================
 
 ----
+
+* Starting with the last :ref:`Exceptions<error>`, I add a :ref:
+
+
 
 *********************************************************************************
 close the project
