@@ -2451,11 +2451,91 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
         # return first_input, argument_b, last_input
         return first_input, last_input
 
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'args_and_kwargs'
+
+* I add a :ref:`function definition<how to make a function>` for :ref:`args_and_kwargs<test_args_and_kwargs>`
+
+  .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 4-5
+
+        return first_input, last_input
 
 
+    def args_and_kwargs():
+        return None
 
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
+  .. code-block:: python
 
+    TypeError: args_and_kwargs() got
+               an unexpected keyword argument 'last_input'
+
+* I add ``last_input`` in parentheses
+
+  .. code-block:: python
+    :lineno-start: 42
+    :emphasize-lines: 1-2
+
+    # def args_and_kwargs():
+    def args_and_kwargs(last_input):
+        return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: args_and_kwargs() got
+               multiple values for argument 'last_input'
+
+  which means it got called with ``last_input`` as a :ref:`positional <test_keyword_arguments>` and :ref:`keyword argument<test_keyword_arguments>`. Since I have it as the first position, Python_ reads it as two values for the same argument.
+
+* I add another name before ``last_input``
+
+  .. code-block:: python
+    :lineno-start: 42
+    :emphasize-lines: 2-3
+
+    # def args_and_kwargs():
+    # def args_and_kwargs(last_input):
+    def args_and_kwargs(argument, last_input):
+        return None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert None == ('first', 'last')
+
+* I :ref:`return<the return statement>` the inputs
+
+  .. code-block:: python
+    :lineno-start: 42
+    :emphasize-lines: 4-5
+
+    # def args_and_kwargs():
+    # def args_and_kwargs(last_input):
+    def args_and_kwargs(argument, last_input):
+        # return None
+        return argument, last_input
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'keyword_arguments'
+
+* I add a :ref:`function definition<how to make a function>` for :ref:`keyword_arguments<test_keyword_arguments>`
+
+  .. code-block:: python
+    :lineno-start: 42
 
 *********************************************************************************
 close the project
