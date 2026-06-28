@@ -1176,6 +1176,117 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
 ----
 
+*********************************************************************************
+move args_and_kwargs function
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_args_and_kwargs` to use the result of a call to the :ref:`args_and_kwargs function<test_args_and_kwargs>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of the result of a call to the :ref:`args_and_kwargs function<test_args_and_kwargs>` in ``test_functions.py``
+
+.. code-block:: python
+  :lineno-start: 136
+  :emphasize-lines: 8-9
+
+  def test_args_and_kwargs():
+      def args_and_kwargs(first_input, last_input):
+          return first_input, last_input
+
+      first, last = 'first', 'last'
+
+      assert (
+          # args_and_kwargs(
+          src.functions.args_and_kwargs(
+              first, last_input=last,
+          )
+       == (first, last)
+      )
+
+
+  def test_optional_arguments():
+
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+.. code-block:: python
+
+  AttributeError: module 'src.functions'
+                  has no attribute 'args_and_kwargs'
+
+because ``args_and_kwargs`` is not a name in ``functions.py`` in the ``src`` folder_.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add a copy of :ref:`the args_and_kwargs function<test_args_and_kwargs>` to ``functions.py``
+
+.. code-block:: python
+  :lineno-start: 30
+  :emphasize-lines: 5-6
+
+  def keyword_arguments(first_input, last_input):
+      return first_input, last_input
+
+
+  def args_and_kwargs(first_input, last_input):
+      return first_input, last_input
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented line and the :ref:`args_and_kwargs function<test_args_and_kwargs>` from :ref:`test_args_and_kwargs` in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 136
+
+    def test_args_and_kwargs():
+        first, last = 'first', 'last'
+
+        assert (
+            src.functions.args_and_kwargs(
+                first, last_input=last,
+            )
+         == (first, last)
+        )
+
+
+    def test_optional_arguments():
+
+  the test is still green because the call that was made to the :ref:`args_and_kwargs function<test_args_and_kwargs>` that was in ``test_functions.py`` is now to the :ref:`args_and_kwargs function<test_args_and_kwargs>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.args_and_kwargs`` is called, Python_ follows this path
+
+  .. code-block:: shell
+
+    src
+    └── functions.py
+        └── def args_and_kwargs(first_input, last_input):
+                return first_input, last_input
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move args_and_kwargs to functions.py'
+
+----
+
 ----
 BOOM
 ----
