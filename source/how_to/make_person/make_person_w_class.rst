@@ -240,11 +240,19 @@ because there is no definition for ``Person`` in ``test_person.py``.
               last_name=last_name,
               sex=sex,
               year_of_birth=year_of_birth,
-          ) # has no constructor methods
+          ) # has no constructor method
 
     which raises :ref:`TypeError<what causes TypeError?>` since :ref:`classes<what is a class?>` do not take arguments like a :ref:`function<what is a function?>` without a :ref:`method<what is a method?>` that handles those arguments and I called this one with four arguments.
 
-* I add a `constructor method`_ to the :ref:`Person class<test Person class>` so it can take arguments, it is used to define how copies of the :ref:`class<what is a class?>` are made
+----
+
+*********************************************************************************
+the constructor method
+*********************************************************************************
+
+A `constructor method`_ is used to define what happens when :ref:`an instance (a copy)`copy of a  :ref:`class<what is a class?>` is made.
+
+* I add a `constructor method`_ to the :ref:`Person class<test Person class>` so it can take arguments
 
   .. code-block:: python
     :lineno-start: 4
@@ -267,8 +275,6 @@ because there is no definition for ``Person`` in ``test_person.py``.
         Person.__init__() got
         an unexpected keyword argument 'first_name'
 
-  - A `constructor method`_ is used to handle arguments given when a copy of a  :ref:`class<what is a class?>` is made.
-  - A `constructor method`_ is used to make copies of a :ref:`class<what is a class?>`.
   - Here is what is happens when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
 
     .. code-block:: python
@@ -289,7 +295,7 @@ because there is no definition for ``Person`` in ``test_person.py``.
     which raises :ref:`TypeError<what causes TypeError?>` because the :ref:`definition<how to make a function>` for ``__init__`` does not allow calling it with inputs (the parentheses are empty) and the test sends four :ref:`keyword arguments<test_keyword_arguments>` as input.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
 
-* I add the name in parentheses so that the ``__init__`` `constructor method`_ can take input
+* I add the name in parentheses so that the ``__init__`` :ref:`constructor method<the constructor method>` can take input
 
   .. code-block:: python
     :lineno-start: 4
@@ -469,7 +475,7 @@ because there is no definition for ``Person`` in ``test_person.py``.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
   - Same as with the :ref:`factory function<test person factory>`.
 
-* I add ``sex`` to the :ref:`definition<how to make a function>` of the ``__init__`` `constructor method`_
+* I add ``sex`` to the :ref:`definition<how to make a function>` of the ``__init__`` :ref:`constructor method<the constructor method>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -587,7 +593,7 @@ I made a person :ref:`say hi with a function<test say_hi function>`, I can also 
 
 ----
 
-* I add ``self.first_name`` to the :ref:`definition<how to make a function>` of the ``__init__`` `constructor method`_
+* I add ``self.first_name`` to the :ref:`definition<how to make a function>` of the ``__init__`` :ref:`constructor method<the constructor method>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -661,7 +667,7 @@ I made a person :ref:`say hi with a function<test say_hi function>`, I can also 
     AttributeError: 'Person' object
                     has no attribute 'year_of_birth'
 
-* I add ``self.year_of_birth`` and point it to the value for ``year_of_birth`` when the ``__init__`` `constructor method`_ is called
+* I add ``self.year_of_birth`` and point it to the value for ``year_of_birth`` when the ``__init__`` :ref:`constructor method<the constructor method>` is called
 
   .. code-block:: python
     :lineno-start: 4
@@ -1253,7 +1259,7 @@ I made a person :ref:`say hi with a function<test say_hi function>`, I can also 
 
   the test passes. This is still a repetition. I give an :ref:`instance (copy)<how to test if something is an instance of a class>` of the :ref:`Person class<test person class>` as input to the :ref:`say_hi method<test Person class>` of the :ref:`Person class<test person class>` (``Person.say_hi``).
 
-* I change the call to the :ref:`say_hi method<test say_hi method>` in :ref:`test_jane` because the :ref:`say_hi method<test say_hi method>` is in the :ref:`Person class<test Person class>` so its :ref:`copies<how to test if something is an instance of a class>` also have it
+* I change the call to the :ref:`say_hi method<test say_hi method>` in :ref:`test_jane` because the :ref:`say_hi method<test say_hi method>` is in the :ref:`Person class<test Person class>` so its :ref:`copies<how to test if something is an instance of a class>` also have the :ref:`say_hi method<test say_hi method>`
 
   .. code-block:: python
     :lineno-start: 119
@@ -1500,6 +1506,18 @@ what is the staticmethod decorator?
               f' {2026-joe.year_of_birth}.'
           )
 
+    and the result is ``'Hi, my name is joe blow and I am 30.'``
+
+  - a simple way to think of ``joe.say_hi()``
+
+    .. code-block:: python
+
+      joe.say_hi() == Person().say_hi(joe)
+      joe.say_hi() == joe.say_hi(joe)
+
+    I do not need to pass ``joe`` as input to the :ref:`say_hi method<test say_hi method>` because 
+
+
 * I remove ``person=jane`` from the call to the :ref:`say_hi method<test say_hi method>` in :ref:`test_jane` because the :ref:`say_hi method<test say_hi method>` is in the :ref:`Person class<test Person class>`
 
   .. code-block:: python
@@ -1691,10 +1709,569 @@ what is the staticmethod decorator?
               f' {2026-mary.year_of_birth}.'
           )
 
-* I remove the commented line
+  and the result is ``'Hi, my name is mary public and I am 26.'``
+
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :lineno-start: 164
+    :emphasize-lines: 1
+
+    git commit -am 'add say_hi method'
+
+----
+
+*********************************************************************************
+separate and equal Person class
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
+* I change ``reality`` for :ref:`test_mary` to be the result of a call to :ref:`the Person class<test person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to :ref:`the person class<test person class>` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 196
+    :emphasize-lines: 13-14
+
+        reality = src.person.say_hi(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'Hi, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+        # mary = Person(
+        mary = src.person.Person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+        reality = mary.say_hi()
+        # assert reality == None
+        assert reality == my_expectation
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.person' has no attribute 'Person'
+
+  because there is nothing with that name in the ``person.py`` file_ in the ``src`` folder_.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I open ``person.py`` from the ``src`` folder_
+
+* I add the name to ``person.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    Person
+
+
+    def say_hi(
+        first_name, last_name, year_of_birth
+    ):
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'Person' is not defined
+
+* I point it to :ref:`None<what is None?>` to define it
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2
+
+    # Person
+    Person = None
+
+
+    def say_hi(
+        first_name, last_name, year_of_birth
+    ):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: 'NoneType' object is not callable
+
+  because :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
+
+* I change ``Person`` to a :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-4
+
+    # Person
+    # Person = None
+    def Person():
+        return None
+
+
+    def say_hi(
+        first_name, last_name, year_of_birth
+    ):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person() got
+               an unexpected keyword argument 'first_name'
+
+* I add ``first_name`` to the parentheses
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3-4
+
+    # Person
+    # Person = None
+    # def Person():
+    def Person(first_name):
+        return None
+
+
+    def say_hi(
+        first_name, last_name, year_of_birth
+    ):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: shell
+
+    TypeError: Person() got
+               an unexpected keyword argument 'last_name'.
+               Did you mean 'first_name'?
+
+* I add ``first_name`` to the parentheses
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5
+
+    # Person
+    # Person = None
+    # def Person():
+    # def Person(first_name):
+    def Person(first_name, last_name):
+        return None
+
+
+    def say_hi(
+        first_name, last_name, year_of_birth
+    ):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person() got
+               an unexpected keyword argument 'sex'
+
+* I add ``sex`` to the parentheses
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6
+
+    # Person
+    # Person = None
+    # def Person():
+    # def Person(first_name):
+    # def Person(first_name, last_name):
+    def Person(first_name, last_name, sex):
+        return None
+
+
+    def say_hi(
+        first_name, last_name, year_of_birth
+    ):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person() got
+               an unexpected keyword argument 'year_of_birth'
+
+* I add ``year_of_birth`` to the parentheses
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 6-10
+
+    # Person
+    # Person = None
+    # def Person():
+    # def Person(first_name):
+    # def Person(first_name, last_name):
+    # def Person(first_name, last_name, sex):
+    def Person(
+        first_name, last_name,
+        sex, year_of_birth,
+    ):
+        return None
+
+
+    def say_hi(
+        first_name, last_name, year_of_birth
+    ):
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: 'NoneType' object
+                    has no attribute 'say_hi'
+
+  because the :ref:`function<what is a function?>` I just made returns :ref:`None<what is None?>`
+
+  - given
+
+    .. code-block:: python
+
+      first_name = 'mary'
+      last_name = 'public'
+      sex = 'F'
+      year_of_birth = 2000
+
+  - when ``mary = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
+
+    .. code-block:: python
+
+      mary = Person(
+          first_name=first_name,
+          last_name=last_name,
+          sex=sex,
+          year_of_birth=year_of_birth,
+      )
+          Person(
+              first_name='mary',
+              last_name='public',
+              sex='F',
+              year_of_birth=2000,
+          )
+              return None
+
+  - When ``reality = mary.say_hi()`` runs
+
+    .. code-block:: python
+
+      reality = mary.say_hi()
+      reality = None.say_hi()
+
+  which raises :ref:`AttributeError<what causes AttributeError?>` since :ref:`None<what is None?>` does not have anything named ``say_hi`` in it.
+
+* I change ``Person`` to a :ref:`class<what is a class?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 7-8
+
+    # Person
+    # Person = None
+    # def Person():
+    # def Person(first_name):
+    # def Person(first_name, last_name):
+    # def Person(first_name, last_name, sex):
+    # def Person(
+    class Person(
+        first_name, last_name,
+        sex, year_of_birth,
+    ):
+        return None
+
+
+    def say_hi(
+        first_name, last_name, year_of_birth
+    ):
+
+  the terminal_ is my friend, and shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: 'return' outside function
+
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen, in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 221
+    :emphasize-lines: 6
+    :emphasize-text: SyntaxError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # AttributeError
+    # SyntaxError
+
+* I change :ref:`the return statement` to the pass_ keyword, in ``person.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 12-13
+
+    # Person
+    # Person = None
+    # def Person():
+    # def Person(first_name):
+    # def Person(first_name, last_name):
+    # def Person(first_name, last_name, sex):
+    # def Person(
+    class Person(
+        first_name, last_name,
+        sex, year_of_birth,
+    ):
+        # return None
+        pass
+
+
+    def say_hi(
+        first_name, last_name, year_of_birth
+    ):
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'first_name' is not defined
+
+  because the only definitions for ``first_name`` are in the :ref:`say_hi<test say_hi function>` and :ref:`factory functions<test person factory>` in ``person.py``.
+
+* I add :ref:`the constructor method` to handle the inputs
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 8-12, 14-19
+
+    # Person
+    # Person = None
+    # def Person():
+    # def Person(first_name):
+    # def Person(first_name, last_name):
+    # def Person(first_name, last_name, sex):
+    # def Person(
+    # class Person(
+    #     first_name, last_name,
+    #     sex, year_of_birth,
+    # ):
+    class Person:
+
+        def __init__(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
+            # return None
+            pass
+
+
+    def say_hi(
+        first_name, last_name, year_of_birth
+    ):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person.__init__() got
+               multiple values for argument 'first_name'
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+* I add ``self`` to :ref:`the constructor method`
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 4-5
+
+    class Person:
+
+        def __init__(
+            # first_name, last_name,
+            self, first_name, last_name,
+            sex, year_of_birth
+        ):
+            # return None
+            pass
+
+
+    def say_hi(
+        first_name, last_name, year_of_birth
+    ):
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: 'Person' object has no attribute 'say_hi'
+
+  better, I can add an :ref:`attribute<what is a class attribute?>` to a :ref:`class<what is a class?>`.
+
+* I add the name to the :ref:`Person class<test Person class>`
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 3
+
+    class Person:
+
+        say_hi
+
+        def __init__(
+            # first_name, last_name,
+            self, first_name, last_name,
+            sex, year_of_birth
+        ):
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'say_hi' is not defined
+
+* I point ``say_hi`` to :ref:`None<what is None?>` to define it
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 3-4
+
+    class Person:
+
+        # say_hi
+        say_hi = None
+
+        def __init__(
+            # first_name, last_name,
+            self, first_name, last_name,
+            sex, year_of_birth
+        ):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: 'NoneType' object is not callable
+
+  because :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
+
+* I change it to a :ref:`method<what is a method?>`
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 4, 14-15
+
+    class Person:
+
+        # say_hi
+        # say_hi = None
+
+        def __init__(
+            # first_name, last_name,
+            self, first_name, last_name,
+            sex, year_of_birth
+        ):
+            # return None
+            pass
+
+        def say_hi():
+            return None
+
+
+    def say_hi(
+        first_name, last_name, year_of_birth
+    ):
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person.say_hi() takes
+               0 positional arguments but 1 was given
+
+* I add a name to the parentheses
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 1-2
+
+        # def say_hi():
+        def say_hi(argument):
+            return None
+
+
+    def say_hi(
+        first_name, last_name, year_of_birth
+    ):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert None
+        == 'Hi, my name is mary public and I am 26.'
+
+* I copy and paste the string_ from the terminal_ to use as :ref:`the return statement`
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 3-4
+
+        # def say_hi():
+        def say_hi(argument):
+            # return None
+            return 'Hi, my name is mary public and I am 26.'
+
+
+    def say_hi(
+        first_name, last_name, year_of_birth
+    ):
+
+  the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented lines from :ref:`test_mary` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 178
 
     def test_mary():
         first_name = 'mary'
@@ -1726,49 +2303,6 @@ what is the staticmethod decorator?
         )
         assert reality == my_expectation
 
-        mary = Person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-
-        reality = mary.say_hi()
-        assert reality == my_expectation
-
-
-    # Exceptions seen
-
-* I add a git_ commit message in the other terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    git commit -am 'add say_hi method'
-
-----
-
-*********************************************************************************
-separate and equal Person class
-*********************************************************************************
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-* I go back to the terminal_ where the tests are running
-
-* I change ``reality`` for :ref:`test_mary` to be the result of a call to :ref:`the Person class<test person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to :ref:`the person class<test person class>` in ``test_person.py``
-
-  .. code-block:: python
-    :lineno-start: 194
-    :emphasize-lines: 1-2
-
-        # mary = Person(
         mary = src.person.Person(
             first_name=first_name,
             last_name=last_name,
@@ -1781,444 +2315,44 @@ separate and equal Person class
 
 
     # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # AttributeError
+    # SyntaxError
 
-*********************************************************************************
-test_person
-*********************************************************************************
-
-Since the solutions are separate from the tests, I can write the programs_ that make the tests pass without looking at ``test_person.py``.
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-* I close ``test_person.py``
-
-* I delete all the text  and the terminal_ shows 9 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
+* I change ``reality`` for :ref:`test_john` to be the result of a call to :ref:`the Person class<test person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
-
-    FAILED ...::test_joe - AttributeError:
-        module 'src.person' has no attribute 'factory'
-    FAILED ...::test_jane - AttributeError:
-        module 'src.person' has no attribute 'factory'
-    FAILED ...::test_john - AttributeError:
-        module 'src.person' has no attribute 'factory'
-    FAILED ...::test_mary - AttributeError:
-        module 'src.person' has no attribute 'factory'
-    =================== 4 failed in A.BCs ===================
-
-  Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done or if you get stuck.
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I add the name to ``person.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
-
-    factory
-
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'factory' is not defined
-
-* I point ``factory`` to :ref:`None (the simplest object)<what is None?>` to define it
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-2
-
-    # factory
-    factory = None
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: 'NoneType' object is not callable
-
-  because ``factory`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
-
-* I change ``factory`` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2-4
-
-    # factory
-    # factory = None
-    def factory():
-        return None
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: factory() got
-               an unexpected keyword argument
-               'first_name'
-
-  because this :ref:`function definition<how to make a function that takes input>` does not allow any inputs, the parentheses are empty.
-
-* I add ``first_name`` in the parentheses so the :ref:`function<what is a function?>` can take input
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3-4
-
-    # factory
-    # factory = None
-    # def factory():
-    def factory(first_name):
-        return None
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: shell
-
-    TypeError: factory() got
-               an unexpected keyword argument 'last_name'.
-               Did you mean 'first_name'?
-
-  because the :ref:`function definition<how to make a function that takes input>` now only allows one input (``first_name``) and it was called with a :ref:`keyword argument<test_keyword_arguments>` (``last_name``).
-
-* I add ``last_name`` to the parentheses
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4-5
-
-    # factory
-    # factory = None
-    # def factory():
-    # def factory(first_name):
-    def factory(first_name, last_name):
-        return None
-
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: factory() got
-               an unexpected keyword argument 'sex'
-
-  because the :ref:`function definition<how to make a function that takes input>` only allows two inputs (``first_name`` and ``last_name``) and it was called with a :ref:`keyword argument<test_keyword_arguments>` (``sex``).
-
-* I add ``sex`` to the parentheses
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5-6
-
-    # factory
-    # factory = None
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    def factory(first_name, last_name, sex):
-        return None
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: factory() got
-               an unexpected keyword argument
-               'year_of_birth'
-
-  because the :ref:`function definition<how to make a function that takes input>` only allows three inputs (``first_name``, ``last_name``, ``sex``) and it was called with a :ref:`keyword argument<test_keyword_arguments>` (``year_of_birth``).
-
-* I add ``year_of_birth`` to the parentheses
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 6-10
-
-    # factory
-    # factory = None
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    # def factory(first_name, last_name, sex):
-    def factory(
-            first_name, last_name,
-            sex, year_of_birth
-        ):
-        return None
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: assert None == 'mary, public, F, 2000'
-
-* I change :ref:`the return statement` to match the expectation of the test
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 11-12
-
-    # factory
-    # factory = None
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    # def factory(first_name, last_name, sex):
-    def factory(
-            first_name, last_name,
-            sex, year_of_birth
-        ):
-        return 'mary, public, F, 2000'
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: python
-
-    AttributeError: module 'src.person'
-                    has no attribute 'say_hi'
-
-* I add the name
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
-
-    say_hi
-
-
-    # factory
-    # factory = None
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    # def factory(first_name, last_name, sex):
-    def factory(
-            first_name, last_name,
-            sex, year_of_birth
-        ):
-        return 'mary, public, F, 2000'
-
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'say_hi' is not defined
-
-* I point it to :ref:`None<what is None?>` to define it
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-2
-
-    # say_hi
-    say_hi = None
-
-
-    # factory
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: 'NoneType' object is not callable
-
-  because ``say_hi`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
-
-* I make ``say_hi`` a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2-4
-
-    # say_hi
-    # say_hi = None
-    def say_hi():
-        return None
-
-
-    # factory
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: say_hi() got
-               an unexpected keyword argument
-               'first_name'
-
-  because this :ref:`function definition<how to make a function that takes input>` does not allow any inputs, the parentheses are empty.
-
-* I add ``first_name`` in the parentheses
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3-4
-
-    # say_hi
-    # say_hi = None
-    # def say_hi():
-    def say_hi(first_name):
-        return None
-
-
-    # factory
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: shell
-
-    TypeError: say_hi() got
-               an unexpected keyword argument 'last_name'.
-               Did you mean 'first_name'?
-
-  because the :ref:`function definition<how to make a function that takes input>` now only allows one input (``first_name``) and it was called with a :ref:`keyword argument<test_keyword_arguments>` (``last_name``).
-
-* I add ``last_name`` to the parentheses
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4-5
-
-    # say_hi
-    # say_hi = None
-    # def say_hi():
-    # def say_hi(first_name):
-    def say_hi(first_name, last_name):
-        return None
-
-
-    # factory
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: say_hi() got
-               an unexpected keyword argument
-               'year_of_birth'
-
-  because the :ref:`function definition<how to make a function that takes input>` only allows two inputs (``first_name`` and ``last_name``) and it was called with a :ref:`keyword argument<test_keyword_arguments>` (``year_of_birth``).
-
-* I add ``year_of_birth`` to the parentheses
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5-8
-
-    # say_hi
-    # say_hi = None
-    # def say_hi():
-    # def say_hi(first_name):
-    # def say_hi(first_name, last_name):
-    def say_hi(
-        first_name, last_name, year_of_birth
-    ):
-        return None
-
-
-    # factory
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: assert None
-        == 'Hi, my name is mary public and I am 26.'
-
-* I use :kbd:`ctrl/command+c` (Windows_ & Linux_/MacOS_) on the keyboard to copy the string_ from the terminal and :kbd:`ctrl/command+v` to paste it to replace :ref:`None<what is None?>` in :ref:`the return statement`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 9-10
-
-    # say_hi
-    # say_hi = None
-    # def say_hi():
-    # def say_hi(first_name):
-    # def say_hi(first_name, last_name):
-    def say_hi(
-        first_name, last_name, year_of_birth
-    ):
-        # return None
-        return 'Hi, my name is mary public and I am 26.'
-
-
-    # factory
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: assert 'mary, public, F, 2000'
-                        == 'john, smith, M, 1580'
-
-  because :ref:`the factory function<test person factory>` always returns ``'mary, public, F, 2000'`` and this test expects ``'john, smith, M, 1580'``.
-
-* I change the :ref:`return statement<the return statement>` of :ref:`the factory function<test person factory>` to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
-
-  .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 11-12
-
-    # factory
-    # factory = None
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    # def factory(first_name, last_name, sex):
-    def factory(
-            first_name, last_name,
-            sex, year_of_birth
-        ):
-        # return 'mary, public, F, 2000'
-        return first_name, last_name, sex, year_of_birth
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: assert ('mary', 'public', 'F', 2000)
-                         == 'mary, public, F, 2000'
-
-  the ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` are part of the output.
-
-* I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>` with those values
-
-  .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 12-16
-
-    # factory
-    # factory = None
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    # def factory(first_name, last_name, sex):
-    def factory(
-            first_name, last_name,
-            sex, year_of_birth
-        ):
-        # return 'mary, public, F, 2000'
-        # return first_name, last_name, sex, year_of_birth
-        return (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
+    :lineno-start: 154
+    :emphasize-lines: 13-14
+
+        reality = src.person.say_hi(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
         )
+        my_expectation = (
+            f'Hi, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+        # john = Person(
+        john = src.person.Person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+        reality = john.say_hi()
+        # assert reality == None
+        assert reality == my_expectation
+
+
+    def test_mary():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2227,124 +2361,204 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     AssertionError: assert 'Hi, my name ... and I am 26.'
                         == 'Hi, my name ...and I am 446.'
 
-  because the :ref:`say_hi function<test say_hi function>` always returns ``'Hi, my name is mary public and I am 26.'`` and this test expects ``'Hi, my name is john smith and I am 446.'``
-
-* I change the :ref:`return statement<the return statement>` of the :ref:`say_hi function<test say_hi function>` to see the difference between the input and the expected output
+* I change :ref:`the return statement` of the :ref:`say_hi method<test say_hi method>` to return the input, in ``person.py``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 10-11
+    :lineno-start: 25
+    :emphasize-lines: 4-5
 
-    # say_hi
-    # say_hi = None
-    # def say_hi():
-    # def say_hi(first_name):
-    # def say_hi(first_name, last_name):
+        # def say_hi():
+        def say_hi(argument):
+            # return None
+            # return 'Hi, my name is mary public and I am 26.'
+            return argument
+
+
     def say_hi(
         first_name, last_name, year_of_birth
     ):
-        # return None
-        # return 'Hi, my name is mary public and I am 26.'
-        return first_name, last_name, year_of_birth
-
-
-    # factory
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: assert ('mary', 'public', 'F', 2000)
-                         == 'mary, public, F, 2000'
+    AssertionError:
+        assert <src.person.Person object at 0xffffb012cd34>
+            == 'Hi, my name is mary public and I am 26.'
 
-  the ``first_name`` and ``last_name`` are part of the output.
+  because ``argument`` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the :ref:`Person class<test Person class>`.
 
-* I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>` with the input values
+* I change :ref:`the return statement` to use :ref:`class attributes<what is a class attribute?>` in an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 11-15
+    :lineno-start: 25
+    :emphasize-lines: 5-10
 
-    # say_hi
-    # say_hi = None
-    # def say_hi():
-    # def say_hi(first_name):
-    # def say_hi(first_name, last_name):
+        # def say_hi():
+        def say_hi(argument):
+            # return None
+            # return 'Hi, my name is mary public and I am 26.'
+            # return argument
+            return (
+                f'Hi, my name is {argument.first_name}'
+                f' {argument.last_name} and I am'
+                f' {2026-argument.year_of_birth}.'
+            )
+
+
     def say_hi(
         first_name, last_name, year_of_birth
     ):
-        # return None
-        # return 'Hi, my name is mary public and I am 26.'
-        # return first_name, last_name, year_of_birth
-        return (
-            f'Hi, my name is {first_name}'
-            f' {last_name} and I am {year_of_birth}.'
-        )
 
-
-    # factory
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
-    AssertionError: assert 'Hi, my name ...nd I am 2000.'
-                        == 'Hi, my name ... and I am 26.'
+    AttributeError: 'Person' object
+                    has no attribute 'first_name'
 
-  It looks like ``26`` is the age.
+  because I have not defined a :ref:`class attribute<what is a class attribute?>` named ``first_name``.
 
-* I change the ``year_of_birth`` value to a calculation of the age
+* I add ``self.first_name`` to the ``__init__`` :ref:`constructor method<the constructor method>`
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 14-15
+    :lineno-start: 12
+    :emphasize-lines: 12-13
 
-    # say_hi
-    # say_hi = None
-    # def say_hi():
-    # def say_hi(first_name):
-    # def say_hi(first_name, last_name):
+    class Person:
+
+        # say_hi
+        # say_hi = None
+
+        def __init__(
+            # first_name, last_name,
+            self, first_name, last_name,
+            sex, year_of_birth
+        ):
+            # return None
+            # pass
+            self.first_name = first_name
+
+        # def say_hi():
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: 'Person' object
+                    has no attribute 'last_name'.
+                    Did you mean: 'first_name'?
+
+  because I have not defined a :ref:`class attribute<what is a class attribute?>` named ``last_name``.
+
+* I add ``self.last_name`` to the ``__init__`` :ref:`constructor method<the constructor method>`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 9
+
+        def __init__(
+            # first_name, last_name,
+            self, first_name, last_name,
+            sex, year_of_birth
+        ):
+            # return None
+            # pass
+            self.first_name = first_name
+            self.last_name = last_name
+
+        # def say_hi():
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: 'Person' object
+                    has no attribute 'year_of_birth'
+
+  because I have not defined a :ref:`class attribute<what is a class attribute?>` named ``year_of_birth``.
+
+* I add ``self.year_of_birth`` to the ``__init__`` :ref:`constructor method<the constructor method>`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 10
+
+        def __init__(
+            # first_name, last_name,
+            self, first_name, last_name,
+            sex, year_of_birth
+        ):
+            # return None
+            # pass
+            self.first_name = first_name
+            self.last_name = last_name
+            self.year_of_birth = year_of_birth
+
+        # def say_hi():
+
+  the test passes.
+
+* I change ``argument`` to ``self`` in the :ref:`say_hi method<test say_hi method>` to follow :ref:`Python convention<conventions>`
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 2-3, 8-13
+
+        # def say_hi():
+        # def say_hi(argument):
+        def say_hi(self):
+            # return None
+            # return 'Hi, my name is mary public and I am 26.'
+            # return argument
+            return (
+                # f'Hi, my name is {argument.first_name}'
+                # f' {argument.last_name} and I am'
+                # f' {2026-argument.year_of_birth}.'
+                f'Hi, my name is {self.first_name}'
+                f' {self.last_name} and I am'
+                f' {2026-self.year_of_birth}.'
+            )
+
+
     def say_hi(
         first_name, last_name, year_of_birth
     ):
-        # return None
-        # return 'Hi, my name is mary public and I am 26.'
-        # return first_name, last_name, year_of_birth
-        return (
-            f'Hi, my name is {first_name}'
-            # f' {last_name} and I am {year_of_birth}.'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
 
-
-    # factory
-
-  all tests are green!
+  the test is still green.
 
 * I remove the commented lines
 
   .. code-block:: python
     :linenos:
 
+    class Person:
+
+        def __init__(
+            self, first_name, last_name,
+            sex, year_of_birth
+        ):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.year_of_birth = year_of_birth
+
+        def say_hi(self):
+            return (
+                f'Hi, my name is {self.first_name}'
+                f' {self.last_name} and I am'
+                f' {2026-self.year_of_birth}.'
+            )
+
+
     def say_hi(
         first_name, last_name, year_of_birth
     ):
-        return (
-            f'Hi, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
+
+* I remove the commented lines from :ref:`test_john` in ``test_person.py``
+
+  .. code-block:: python
 
 
-    def factory(
-            first_name, last_name,
-            sex, year_of_birth
-        ):
-        return (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
 
 ----
 
