@@ -65,7 +65,7 @@ class TestPerson(unittest.TestCase):
 
         reality = src.person.say_hello(a_random_person)
         my_expectation = (
-            f'Hi, my name is {self.random_first_name}'
+            f'Hello, my name is {self.random_first_name}'
             f' {self.random_last_name}'
             f' and I am {self.age}'
         )
@@ -80,7 +80,7 @@ class TestPerson(unittest.TestCase):
 
         reality = a_random_person.say_hello()
         my_expectation = (
-            f'Hi, my name is {self.random_first_name}'
+            f'Hello, my name is {self.random_first_name}'
             f' {self.random_last_name}'
             f' and I am {self.age}'
         )

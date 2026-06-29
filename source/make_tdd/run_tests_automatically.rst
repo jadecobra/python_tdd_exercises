@@ -193,13 +193,13 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
   .. code-block:: python
     :emphasize-lines: 1
 
-    echo "hi, my name is Jacob"
+    echo "Hello, my name is Jacob"
 
   it shows
 
   .. code-block:: python
 
-    hi, my name is Jacob
+    Hello, my name is Jacob
 
 * I can also use echo_ to add text to a file_. I use it to make the requirements file_ with pytest_ as what is inside it
 

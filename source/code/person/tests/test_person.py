@@ -83,7 +83,7 @@ class TestPerson(unittest.TestCase):
 
         reality = src.person.say_hello(joe)
         my_expectation = (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am {age}'
         )
         self.assertEqual(reality, my_expectation)
@@ -100,7 +100,7 @@ class TestPerson(unittest.TestCase):
 
         reality = src.person.say_hello(jane)
         my_expectation = (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             f' doe and I am {age}'
         )
         self.assertEqual(reality, my_expectation)
@@ -118,7 +118,7 @@ class TestPerson(unittest.TestCase):
 
         reality = src.person.say_hello(john)
         my_expectation = (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am {age}'
         )
         self.assertEqual(reality, my_expectation)
@@ -137,7 +137,7 @@ class TestPerson(unittest.TestCase):
 
         reality = src.person.say_hello(mary)
         my_expectation = (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am {age}'
         )
         self.assertEqual(reality, my_expectation)

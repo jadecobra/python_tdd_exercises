@@ -3,7 +3,7 @@ import datetime
 
 def say_hello(a_dictionary):
     return (
-        f'Hi, my name is {a_dictionary.get("first_name")}'
+        f'Hello, my name is {a_dictionary.get("first_name")}'
         f' {a_dictionary.get("last_name")}'
         f' and I am {a_dictionary.get("age")}'
     )
@@ -41,6 +41,6 @@ class Person:
           - self.year_of_birth
         )
         return (
-            f'Hi, my name is {self.first_name}'
+            f'Hello, my name is {self.first_name}'
             f' {self.last_name} and I am {age}'
         )

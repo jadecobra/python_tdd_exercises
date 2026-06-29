@@ -131,7 +131,7 @@ I add a new test to ``test_person.py``
 
           reality = src.person.say_hello(a_random_person)
           my_expectation = (
-              f'Hi, my name is {first_name} {last_name}'
+              f'Hello, my name is {first_name} {last_name}'
               f' and I am {age}'
           )
           self.assertEqual(reality, my_expectation)
@@ -490,7 +490,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
             reality = src.person.Person.say_hello(joe)
             # my_expectation = None
             my_expectation = (
-                'Hi, my name is joe blow and I am'
+                'Hello, my name is joe blow and I am'
                 f' {calculate_age(1996)}'
             )
             self.assertEqual(reality, my_expectation)
@@ -502,7 +502,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   .. code-block:: python
 
-    AssertionError: None != 'Hi, my name is joe blow and I am 30'
+    AssertionError: None != 'Hello, my name is joe blow and I am 30'
 
 * I copy the value from the terminal_ and paste it in the :ref:`return statement<the return statement>` for the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`class<what is a class?>` in ``person.py``
 
@@ -514,7 +514,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         @staticmethod
         def say_hello(person):
             # return None
-            return 'Hi, my name is joe blow and I am 30'
+            return 'Hello, my name is joe blow and I am 30'
 
   the test passes.
 
@@ -529,7 +529,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
             reality = src.person.Person.say_hello(joe)
             # my_expectation = None
             my_expectation = (
-                'Hi, my name is joe blow and I am'
+                'Hello, my name is joe blow and I am'
                 f' {calculate_age(1996)}'
             )
             self.assertEqual(reality, my_expectation)
@@ -542,7 +542,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
             reality = src.person.Person.say_hello(jane)
             my_expectation = (
-                'Hi, my name is jane doe and I am'
+                'Hello, my name is jane doe and I am'
                 f' {calculate_age(1991)}'
             )
             self.assertEqual(reality, my_expectation)
@@ -660,8 +660,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-          'Hi, my name is joe blow and I am 30'
-       != 'Hi, my name is jane doe and I am 35'
+          'Hello, my name is joe blow and I am 30'
+       != 'Hello, my name is jane doe and I am 35'
 
   Progress. I can make the ``say_hello`` :ref:`function<what is a function?>` use :ref:`attributes<what is a class attribute?>` of the person it receives as input to make the message.
 
@@ -675,9 +675,9 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         @staticmethod
         def say_hello(person):
             # return None
-            # return 'Hi, my name is joe blow and I am 30'
+            # return 'Hello, my name is joe blow and I am 30'
             return (
-                f'Hi, my name is {person.first_name} blow'
+                f'Hello, my name is {person.first_name} blow'
                 ' and I am 30'
             )
 
@@ -707,8 +707,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-        'Hi, my name is jane blow and I am 30'
-     != 'Hi, my name is joe blow and I am 30'
+        'Hello, my name is jane blow and I am 30'
+     != 'Hello, my name is joe blow and I am 30'
 
   because I used a fixed value (``jane``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``joe``. I have to get the value from the :ref:`object<everything is an object>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
 
@@ -743,8 +743,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-        'Hi, my name is jane blow and I am 30'
-     != 'Hi, my name is joe blow and I am 30'
+        'Hello, my name is jane blow and I am 30'
+     != 'Hello, my name is joe blow and I am 30'
 
 * I change the :ref:`variable<what is a variable?>` to a :ref:`class attribute<what is a class attribute?>` by adding ``self.`` before it
 
@@ -770,8 +770,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
     :emphasize-text: doe blow 30 35
 
     AssertionError:
-        'Hi, my name is jane blow and I am 30'
-     != 'Hi, my name is jane doe and I am 35'
+        'Hello, my name is jane blow and I am 30'
+     != 'Hello, my name is jane doe and I am 35'
 
   the first names are the same, the last names and ages are different
 
@@ -787,10 +787,10 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         @staticmethod
         def say_hello(person):
             # return None
-            # return 'Hi, my name is joe blow and I am 30'
+            # return 'Hello, my name is joe blow and I am 30'
             return (
-                # f'Hi, my name is {person.first_name} blow'
-                f'Hi, my name is {person.first_name}'
+                # f'Hello, my name is {person.first_name} blow'
+                f'Hello, my name is {person.first_name}'
                 f' {person.last_name}'
                 ' and I am 30'
             )
@@ -823,8 +823,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-        'Hi, my name is joe doe and I am 30'
-     != 'Hi, my name is joe blow and I am 30'
+        'Hello, my name is joe doe and I am 30'
+     != 'Hello, my name is joe blow and I am 30'
 
   because I used a fixed value (``doe``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``blow``. I have to get the value from the :ref:`object<everything is an object>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
 
@@ -857,8 +857,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-        'Hi, my name is joe doe and I am 30'
-     != 'Hi, my name is joe blow and I am 30'
+        'Hello, my name is joe doe and I am 30'
+     != 'Hello, my name is joe blow and I am 30'
 
 * I change ``last_name`` to a :ref:`class attribute<what is a class attribute?>` in the ``__init__`` :ref:`method<what is a method?>` by adding ``self.`` before it
 
@@ -886,8 +886,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
     :emphasize-text: doe blow 30 35
 
     AssertionError:
-        'Hi, my name is jane None and I am 30'
-     != 'Hi, my name is jane doe and I am 35'
+        'Hello, my name is jane None and I am 30'
+     != 'Hello, my name is jane doe and I am 35'
 
   - the first names are the same and last names and ages are different
   - the ``__init__`` :ref:`method<what is a method?>` used :ref:`None<what is None?>` for the value of ``self.last_name`` because the :ref:`default value<test_optional_arguments>` for the ``last_name`` parameter of the :ref:`method<what is a method?>` is :ref:`None<what is None?>`. This means that
@@ -935,8 +935,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
     :emphasize-text: 30 35
 
     AssertionError:
-        'Hi, my name is jane doe and I am 30'
-     != 'Hi, my name is jane doe and I am 35'
+        'Hello, my name is jane doe and I am 30'
+     != 'Hello, my name is jane doe and I am 35'
 
   the age is the only thing that is different
 
@@ -956,10 +956,10 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
               - person.year_of_birth
             )
             # return None
-            # return 'Hi, my name is joe blow and I am 30'
+            # return 'Hello, my name is joe blow and I am 30'
             return (
-                # f'Hi, my name is {person.first_name} blow'
-                f'Hi, my name is {person.first_name}'
+                # f'Hello, my name is {person.first_name} blow'
+                f'Hello, my name is {person.first_name}'
                 f' {person.last_name}'
                 # f' and I am 30'
                 f' and I am {age}'
@@ -993,8 +993,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-        'Hi, my name is joe blow and I am 35'
-     != 'Hi, my name is joe blow and I am 30'
+        'Hello, my name is joe blow and I am 35'
+     != 'Hello, my name is joe blow and I am 30'
 
   because I used a fixed value (``1991``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``datetime.datetime.now().year-1996``. I have to get the value from the :ref:`object<everything is an object>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
 
@@ -1025,8 +1025,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-        'Hi, my name is joe blow and I am 35'
-     != 'Hi, my name is joe blow and I am 30'
+        'Hello, my name is joe blow and I am 35'
+     != 'Hello, my name is joe blow and I am 30'
 
 * I change ``year_of_birth`` to a :ref:`class attribute<what is a class attribute?>` in the ``__init__`` :ref:`method<what is a method?>` by adding ``self.`` before it
 
@@ -1128,10 +1128,10 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
             # )
             age = calculate_age(person.year_of_birth)
             # return None
-            # return 'Hi, my name is joe blow and I am 30'
+            # return 'Hello, my name is joe blow and I am 30'
             return (
-                # f'Hi, my name is {person.first_name} blow'
-                f'Hi, my name is {person.first_name}'
+                # f'Hello, my name is {person.first_name} blow'
+                f'Hello, my name is {person.first_name}'
                 f' {person.last_name}'
                 # f' and I am 30'
                 f' and I am {age}'
@@ -1155,13 +1155,13 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
             # age = calculate_age(person.year_of_birth)
             age = calculate_age(self.year_of_birth)
             # return None
-            # return 'Hi, my name is joe blow and I am 30'
+            # return 'Hello, my name is joe blow and I am 30'
             return (
-                # f'Hi, my name is {person.first_name} blow'
-                # f'Hi, my name is {person.first_name}'
+                # f'Hello, my name is {person.first_name} blow'
+                # f'Hello, my name is {person.first_name}'
                 # f' {person.last_name}'
                 # f' and I am 30'
-                f'Hi, my name is {self.first_name}'
+                f'Hello, my name is {self.first_name}'
                 f' {self.last_name}'
                 f' and I am {age}'
             )
@@ -1209,7 +1209,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
             reality = joe.say_hello()
             # my_expectation = None
             my_expectation = (
-                'Hi, my name is joe blow and I am'
+                'Hello, my name is joe blow and I am'
                 f' {calculate_age(1996)}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1237,7 +1237,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
             # reality = src.person.Person.say_hello(jane)
             reality = jane.say_hello()
             my_expectation = (
-                'Hi, my name is jane doe and I am'
+                'Hello, my name is jane doe and I am'
                 f' {calculate_age(1991)}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1257,7 +1257,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
             # reality = src.person.Person.say_hello(jane)
             reality = jane.say_hello()
             my_expectation = (
-                'Hi, my name is jane doe and I am'
+                'Hello, my name is jane doe and I am'
                 f' {calculate_age(1991)}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1270,7 +1270,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
             reality = john.say_hello()
             my_expectation = (
-                'Hi, my name is jane doe and I am'
+                'Hello, my name is jane doe and I am'
                 f' {calculate_age(1991)}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1283,8 +1283,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-        'Hi, my name is john smith and I am 446'
-     != 'Hi, my name is jane doe and I am 35'
+        'Hello, my name is john smith and I am 446'
+     != 'Hello, my name is jane doe and I am 35'
 
 * I change ``my_expectation`` to match ``reality`` for ``john``
 
@@ -1294,9 +1294,9 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
             reality = john.say_hello()
             my_expectation = (
-                # 'Hi, my name is jane doe and I am'
+                # 'Hello, my name is jane doe and I am'
                 # f' {calculate_age(1991)}'
-                'Hi, my name is john smith and I am'
+                'Hello, my name is john smith and I am'
                 f' {calculate_age(1580)}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1312,9 +1312,9 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
             reality = john.say_hello()
             my_expectation = (
-                # 'Hi, my name is jane doe and I am'
+                # 'Hello, my name is jane doe and I am'
                 # f' {calculate_age(1991)}'
-                'Hi, my name is john smith and I am'
+                'Hello, my name is john smith and I am'
                 f' {calculate_age(1580)}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1328,7 +1328,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
             reality = a_person.say_hello()
             my_expectation = (
-                'Hi, my name is john smith and I am'
+                'Hello, my name is john smith and I am'
                 f' {calculate_age(1580)}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1341,8 +1341,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-        'Hi, my name is mary public and I am 26'
-     != 'Hi, my name is john smith and I am 446'
+        'Hello, my name is mary public and I am 26'
+     != 'Hello, my name is john smith and I am 446'
 
 * I change ``my_expectation`` to match ``reality`` for ``mary``
 
@@ -1359,7 +1359,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
             reality = a_person.say_hello()
             my_expectation = (
-                'Hi, my name is mary public and I am'
+                'Hello, my name is mary public and I am'
                 f' {calculate_age(2000)}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1432,9 +1432,9 @@ I want to use random values to :ref:`test_classy_person_says_hello`
             reality = joe.say_hello()
             # my_expectation = None
             my_expectation = (
-                # 'Hi, my name is joe blow and I am'
+                # 'Hello, my name is joe blow and I am'
                 # f' {calculate_age(1996)}'
-                f'Hi, my name is {first_name} {last_name}'
+                f'Hello, my name is {first_name} {last_name}'
                 f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1452,9 +1452,9 @@ I want to use random values to :ref:`test_classy_person_says_hello`
             reality = joe.say_hello()
             # my_expectation = None
             my_expectation = (
-                # 'Hi, my name is joe blow and I am'
+                # 'Hello, my name is joe blow and I am'
                 # f' {calculate_age(1996)}'
-                f'Hi, my name is {first_name} {last_name}'
+                f'Hello, my name is {first_name} {last_name}'
                 f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1489,9 +1489,9 @@ I want to use random values to :ref:`test_classy_person_says_hello`
             # reality = src.person.Person.say_hello(jane)
             reality = jane.say_hello()
             my_expectation = (
-                # 'Hi, my name is jane doe and I am'
+                # 'Hello, my name is jane doe and I am'
                 # f' {calculate_age(1991)}'
-                f'Hi, my name is {first_name} {last_name}'
+                f'Hello, my name is {first_name} {last_name}'
                 f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1513,9 +1513,9 @@ I want to use random values to :ref:`test_classy_person_says_hello`
             # reality = src.person.Person.say_hello(jane)
             reality = jane.say_hello()
             my_expectation = (
-                # 'Hi, my name is jane doe and I am'
+                # 'Hello, my name is jane doe and I am'
                 # f' {calculate_age(1991)}'
-                f'Hi, my name is {first_name} {last_name}'
+                f'Hello, my name is {first_name} {last_name}'
                 f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1537,11 +1537,11 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 
             reality = john.say_hello()
             my_expectation = (
-                # 'Hi, my name is jane doe and I am'
+                # 'Hello, my name is jane doe and I am'
                 # f' {calculate_age(1991)}'
-                # 'Hi, my name is john smith and I am'
+                # 'Hello, my name is john smith and I am'
                 # f' {calculate_age(1580)}'
-                f'Hi, my name is {first_name} {last_name}'
+                f'Hello, my name is {first_name} {last_name}'
                 f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1556,11 +1556,11 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 
             reality = john.say_hello()
             my_expectation = (
-                # 'Hi, my name is jane doe and I am'
+                # 'Hello, my name is jane doe and I am'
                 # f' {calculate_age(1991)}'
-                # 'Hi, my name is john smith and I am'
+                # 'Hello, my name is john smith and I am'
                 # f' {calculate_age(1580)}'
-                f'Hi, my name is {first_name} {last_name}'
+                f'Hello, my name is {first_name} {last_name}'
                 f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1583,11 +1583,11 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 
             reality = a_person.say_hello()
             my_expectation = (
-                # 'Hi, my name is john smith and I am'
+                # 'Hello, my name is john smith and I am'
                 # f' {calculate_age(1580)}'
-                # 'Hi, my name is mary public and I am'
+                # 'Hello, my name is mary public and I am'
                 # f' {calculate_age(2000)}'
-                f'Hi, my name is {first_name} {last_name}'
+                f'Hello, my name is {first_name} {last_name}'
                 f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1627,7 +1627,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 
   .. code-block:: python
 
-    AssertionError: 'Hi, my name is Z Y and I am X' != ''
+    AssertionError: 'Hello, my name is Z Y and I am X' != ''
 
 * I change ``my_expectation`` to match ``reality`` for ``a_random_person``
 
@@ -1638,7 +1638,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
             reality = a_random_person.say_hello()
             # my_expectation = ''
             my_expectation = (
-                f'Hi, my name is {first_name} {last_name}'
+                f'Hello, my name is {first_name} {last_name}'
                 f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1665,7 +1665,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 
             reality = a_random_person.say_hello()
             my_expectation = (
-                f'Hi, my name is {first_name} {last_name}'
+                f'Hello, my name is {first_name} {last_name}'
                 f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1780,8 +1780,8 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 
             reality = src.person.say_hello(a_random_person)
             my_expectation = (
-                # f'Hi, my name is {first_name} {last_name}'
-                f'Hi, my name is {self.random_first_name}'
+                # f'Hello, my name is {first_name} {last_name}'
+                f'Hello, my name is {self.random_first_name}'
                 f' {last_name}'
                 f' and I am {age}'
             )
@@ -1814,8 +1814,8 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 
             reality = a_random_person.say_hello()
             my_expectation = (
-                # f'Hi, my name is {first_name} {last_name}'
-                f'Hi, my name is {self.random_first_name}'
+                # f'Hello, my name is {first_name} {last_name}'
+                f'Hello, my name is {self.random_first_name}'
                 f' {last_name}'
                 f' and I am {age}'
             )
@@ -1954,8 +1954,8 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
 
             reality = src.person.say_hello(a_random_person)
             my_expectation = (
-                # f'Hi, my name is {first_name} {last_name}'
-                f'Hi, my name is {self.random_first_name}'
+                # f'Hello, my name is {first_name} {last_name}'
+                f'Hello, my name is {self.random_first_name}'
                 f' {last_name}'
                 f' and I am {age}'
             )
@@ -2073,8 +2073,8 @@ The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in t
 
             reality = src.person.say_hello(a_random_person)
             my_expectation = (
-                # f'Hi, my name is {first_name} {last_name}'
-                f'Hi, my name is {self.random_first_name}'
+                # f'Hello, my name is {first_name} {last_name}'
+                f'Hello, my name is {self.random_first_name}'
                 # f' {last_name}'
                 f' {self.random_last_name}'
                 f' and I am {age}'
@@ -2113,8 +2113,8 @@ The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in t
 
             reality = a_random_person.say_hello()
             my_expectation = (
-                # f'Hi, my name is {first_name} {last_name}'
-                f'Hi, my name is {self.random_first_name}'
+                # f'Hello, my name is {first_name} {last_name}'
+                f'Hello, my name is {self.random_first_name}'
                 # f' {last_name}'
                 f' {self.random_last_name}'
                 f' and I am {age}'
@@ -2289,8 +2289,8 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
 
             reality = src.person.say_hello(a_random_person)
             my_expectation = (
-                # f'Hi, my name is {first_name} {last_name}'
-                f'Hi, my name is {self.random_first_name}'
+                # f'Hello, my name is {first_name} {last_name}'
+                f'Hello, my name is {self.random_first_name}'
                 # f' {last_name}'
                 f' {self.random_last_name}'
                 # f' and I am {age}'
@@ -2316,7 +2316,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
 
             reality = src.person.say_hello(a_random_person)
             my_expectation = (
-                f'Hi, my name is {self.random_first_name}'
+                f'Hello, my name is {self.random_first_name}'
                 f' {self.random_last_name}'
                 f' and I am {self.age}'
             )
@@ -2349,8 +2349,8 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
 
             reality = a_random_person.say_hello()
             my_expectation = (
-                # f'Hi, my name is {first_name} {last_name}'
-                f'Hi, my name is {self.random_first_name}'
+                # f'Hello, my name is {first_name} {last_name}'
+                f'Hello, my name is {self.random_first_name}'
                 # f' {last_name}'
                 f' {self.random_last_name}'
                 # f' and I am {age}'
@@ -2377,7 +2377,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
 
             reality = a_random_person.say_hello()
             my_expectation = (
-                f'Hi, my name is {self.random_first_name}'
+                f'Hello, my name is {self.random_first_name}'
                 f' {self.random_last_name}'
                 f' and I am {self.age}'
             )
@@ -2756,7 +2756,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 
             reality = a_random_person.say_hello()
             my_expectation = (
-                f'Hi, my name is {self.random_first_name}'
+                f'Hello, my name is {self.random_first_name}'
                 f' {self.random_last_name}'
                 f' and I am {self.age}'
             )
@@ -3216,7 +3216,7 @@ the test passes.
 
     def say_hello(a_dictionary):
         return (
-            f'Hi, my name is {a_dictionary.get("first_name")}'
+            f'Hello, my name is {a_dictionary.get("first_name")}'
             f' {a_dictionary.get("last_name")}'
             f' and I am {a_dictionary.get("age")}'
         )
@@ -3249,7 +3249,7 @@ the test passes.
         def say_hello(self):
             age = calculate_age(self.year_of_birth)
             return (
-                f'Hi, my name is {self.first_name}'
+                f'Hello, my name is {self.first_name}'
                 f' {self.last_name}'
                 f' and I am {age}'
             )
@@ -3344,7 +3344,7 @@ There are few problems with what I have now
 
   .. code-block:: python
 
-    f'Hi, my name is {self.random_first_name}'
+    f'Hello, my name is {self.random_first_name}'
     f' {self.random_last_name} '
     f'and I am {self.age}'
 

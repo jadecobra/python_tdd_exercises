@@ -4042,7 +4042,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             reality = src.person.say_hello(joe)
             # my_expectation = None
             my_expectation = (
-                'Hi, my name is joe blow and I am'
+                'Hello, my name is joe blow and I am'
                 f' {datetime.datetime.now().year-1996}'
             )
             self.assertEqual(reality, my_expectation)
@@ -4055,7 +4055,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
   .. code-block:: python
 
     AssertionError:
-        None != 'Hi, my name is joe blow and I am 30'
+        None != 'Hello, my name is joe blow and I am 30'
 
 * I copy (:kbd:`ctrl/command+c`) the value from the terminal_ and paste it (:kbd:`ctrl/command+v`) in the :ref:`return statement<the return statement>` in ``person.py``
 
@@ -4066,7 +4066,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     # def say_hello():
     def say_hello(person):
         # return None
-        return 'Hi, my name is joe blow and I am 30'
+        return 'Hello, my name is joe blow and I am 30'
 
   the test passes.
 
@@ -4079,7 +4079,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             reality = src.person.say_hello(joe)
             # my_expectation = None
             my_expectation = (
-                'Hi, my name is joe blow and I am'
+                'Hello, my name is joe blow and I am'
                 f' {datetime.datetime.now().year-1996}'
             )
             self.assertEqual(reality, my_expectation)
@@ -4092,7 +4092,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                'Hi, my name is jane doe and I am'
+                'Hello, my name is jane doe and I am'
                 f' {datetime.datetime.now().year-1991}'
             )
             self.assertEqual(reality, my_expectation)
@@ -4106,8 +4106,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     :emphasize-text: jane doe
 
     AssertionError:
-          'Hi, my name is joe blow and I am 30'
-       != 'Hi, my name is jane doe and I am 35'
+          'Hello, my name is joe blow and I am 30'
+       != 'Hello, my name is jane doe and I am 35'
 
   I have to make sure the ``say_hello`` :ref:`function<what is a function?>` uses the :ref:`values<test_values_of_a_dictionary>` of the ``person`` :ref:`dictionary<what is a dictionary?>` to make the message. I can do that with the :ref:`get method of dictionaries<test_get_value_of_a_key_in_a_dictionary>`.
 
@@ -4121,9 +4121,9 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     def say_hello(person):
         first_name = person.get('first_name')
         # return None
-        # return 'Hi, my name is joe blow and I am 30'
+        # return 'Hello, my name is joe blow and I am 30'
         return (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             ' blow and I am 30'
         )
 
@@ -4133,8 +4133,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     :emphasize-text: doe blow 30 35
 
     AssertionError:
-        'Hi, my name is jane blow and I am 30'
-     != 'Hi, my name is jane doe and I am 35'
+        'Hello, my name is jane blow and I am 30'
+     != 'Hello, my name is jane doe and I am 35'
 
   the values for ``first_name`` are the same because
 
@@ -4174,7 +4174,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     .. code-block:: python
 
       return (
-          f'Hi, my name is {first_name}'
+          f'Hello, my name is {first_name}'
           ' blow and I am 30'
       )
 
@@ -4182,7 +4182,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
     src.person.say_hello(jane)
     # the say_hello function returns
-    'Hi, my name is jane blow and I am 30'
+    'Hello, my name is jane blow and I am 30'
 
   which raises :ref:`AssertionError<what causes AssertionError?>` since the values for ``last_name`` and ``age`` are different.
 
@@ -4197,11 +4197,11 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
         first_name = person.get('first_name')
         last_name = person.get('last_name')
         # return None
-        # return 'Hi, my name is joe blow and I am 30'
+        # return 'Hello, my name is joe blow and I am 30'
         return (
-            # f'Hi, my name is {first_name}'
+            # f'Hello, my name is {first_name}'
             # ' blow and I am 30'
-            f'Hi, my name is {first_name} {last_name}'
+            f'Hello, my name is {first_name} {last_name}'
             ' and I am 30'
         )
 
@@ -4211,8 +4211,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     :emphasize-text: 30 35
 
     AssertionError:
-        'Hi, my name is jane doe and I am 30'
-     != 'Hi, my name is jane doe and I am 35'
+        'Hello, my name is jane doe and I am 30'
+     != 'Hello, my name is jane doe and I am 35'
 
   the values for ``last_name`` are the same because
 
@@ -4258,7 +4258,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     .. code-block:: python
 
       return (
-          f'Hi, my name is {first_name} {last_name}'
+          f'Hello, my name is {first_name} {last_name}'
           ' and I am 30'
       )
 
@@ -4266,7 +4266,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
     src.person.say_hello(jane)
     # the say_hello function returns
-    'Hi, my name is jane doe and I am 30'
+    'Hello, my name is jane doe and I am 30'
 
   which raises :ref:`AssertionError<what causes AssertionError?>` since the values for ``age`` are different.
 
@@ -4282,11 +4282,11 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
         last_name = person.get('last_name')
         age = person.get('age')
         # return None
-        # return 'Hi, my name is joe blow and I am 30'
+        # return 'Hello, my name is joe blow and I am 30'
         return (
-            # f'Hi, my name is {first_name}'
+            # f'Hello, my name is {first_name}'
             # ' blow and I am 30'
-            f'Hi, my name is {first_name} {last_name}'
+            f'Hello, my name is {first_name} {last_name}'
             # ' and I am 30'
             f' and I am {age}'
         )
@@ -4338,7 +4338,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     .. code-block:: python
 
       return (
-          f'Hi, my name is {first_name} {last_name}'
+          f'Hello, my name is {first_name} {last_name}'
           f' and I am {age}'
       )
 
@@ -4346,7 +4346,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
     src.person.say_hello(jane)
     # the say_hello function returns
-    'Hi, my name is jane doe and I am 35'
+    'Hello, my name is jane doe and I am 35'
 
 * I remove the commented lines
 
@@ -4360,7 +4360,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
         age = person.get('age')
 
         return (
-            f'Hi, my name is {first_name} {last_name}'
+            f'Hello, my name is {first_name} {last_name}'
             f' and I am {age}'
         )
 
@@ -4378,7 +4378,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                'Hi, my name is jane doe and I am'
+                'Hello, my name is jane doe and I am'
                 f' {datetime.datetime.now().year-1991}'
             )
             self.assertEqual(reality, my_expectation)
@@ -4391,7 +4391,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                'Hi, my name is jane doe and I am'
+                'Hello, my name is jane doe and I am'
                 f' {datetime.datetime.now().year-1991}'
             )
             self.assertEqual(reality, my_expectation)
@@ -4404,8 +4404,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
   .. code-block:: python
 
     AssertionError:
-        'Hi, my name is john smith and I am 446'
-     != 'Hi, my name is jane doe and I am 35'
+        'Hello, my name is john smith and I am 446'
+     != 'Hello, my name is jane doe and I am 35'
 
 * I change ``my_expectation`` to match ``reality`` for ``john``
 
@@ -4421,9 +4421,9 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                # 'Hi, my name is jane doe and I am'
+                # 'Hello, my name is jane doe and I am'
                 # f' {datetime.datetime.now().year-1991}'
-                'Hi, my name is john smith and I am'
+                'Hello, my name is john smith and I am'
                 f' {datetime.datetime.now().year-1580}'
             )
             self.assertEqual(reality, my_expectation)
@@ -4441,9 +4441,9 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                # 'Hi, my name is jane doe and I am'
+                # 'Hello, my name is jane doe and I am'
                 # f' {datetime.datetime.now().year-1991}'
-                'Hi, my name is john smith and I am'
+                'Hello, my name is john smith and I am'
                 f' {datetime.datetime.now().year-1580}'
             )
             self.assertEqual(reality, my_expectation)
@@ -4457,7 +4457,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(mary)
             my_expectation = (
-                'Hi, my name is john smith and I am'
+                'Hello, my name is john smith and I am'
                 f' {datetime.datetime.now().year-1580}'
             )
             self.assertEqual(reality, my_expectation)
@@ -4470,8 +4470,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
   .. code-block:: python
 
     AssertionError:
-        'Hi, my name is mary public and I am 26'
-     != 'Hi, my name is john smith and I am 446'
+        'Hello, my name is mary public and I am 26'
+     != 'Hello, my name is john smith and I am 446'
 
 * I change ``my_expectation`` to match ``reality`` for ``mary``
 
@@ -4488,9 +4488,9 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(mary)
             my_expectation = (
-                # 'Hi, my name is john smith and I am'
+                # 'Hello, my name is john smith and I am'
                 # f' {datetime.datetime.now().year-1580}'
-                'Hi, my name is mary public and I am'
+                'Hello, my name is mary public and I am'
                 f' {datetime.datetime.now().year-2000}'
             )
             self.assertEqual(reality, my_expectation)
@@ -4533,7 +4533,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             reality = src.person.say_hello(joe)
             # my_expectation = None
             my_expectation = (
-                'Hi, my name is joe blow and I am'
+                'Hello, my name is joe blow and I am'
                 # f' {datetime.datetime.now().year-1996}'
                 f' {this_year-1996}'
             )
@@ -4547,7 +4547,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                'Hi, my name is jane doe and I am'
+                'Hello, my name is jane doe and I am'
                 # f' {datetime.datetime.now().year-1991}'
                 f' {this_year-1991}'
             )
@@ -4561,9 +4561,9 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                # 'Hi, my name is jane doe and I am'
+                # 'Hello, my name is jane doe and I am'
                 # f' {datetime.datetime.now().year-1991}'
-                'Hi, my name is john smith and I am'
+                'Hello, my name is john smith and I am'
                 # f' {datetime.datetime.now().year-1580}'
                 f' {this_year-1580}'
             )
@@ -4580,7 +4580,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             my_expectation = (
                 # 'Hi my name is john smith and I am'
                 # f' {datetime.datetime.now().year-1580}'
-                'Hi, my name is mary public and I am'
+                'Hello, my name is mary public and I am'
                 # f' {datetime.datetime.now().year-2000}'
                 f' {this_year-2000}'
             )
@@ -4599,9 +4599,9 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                # 'Hi, my name is jane doe and I am'
+                # 'Hello, my name is jane doe and I am'
                 # f' {datetime.datetime.now().year-1991}'
-                'Hi, my name is john smith and I am'
+                'Hello, my name is john smith and I am'
                 # f' {datetime.datetime.now().year-1580}'
                 f' {this_year-1580}'
             )
@@ -4644,10 +4644,10 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             my_expectation = (
                 # 'Hi my name is john smith and I am'
                 # f' {datetime.datetime.now().year-1580}'
-                # 'Hi, my name is mary public and I am'
+                # 'Hello, my name is mary public and I am'
                 # f' {datetime.datetime.now().year-2000}'
                 # f' {this_year-2000}'
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -4665,7 +4665,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                'Hi, my name is jane doe and I am'
+                'Hello, my name is jane doe and I am'
                 # f' {datetime.datetime.now().year-1991}'
                 f' {this_year-1991}'
             )
@@ -4704,12 +4704,12 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                # 'Hi, my name is jane doe and I am'
+                # 'Hello, my name is jane doe and I am'
                 # f' {datetime.datetime.now().year-1991}'
-                # 'Hi, my name is john smith and I am'
+                # 'Hello, my name is john smith and I am'
                 # f' {datetime.datetime.now().year-1580}'
                 # f' {this_year-1580}'
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -4725,7 +4725,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             reality = src.person.say_hello(joe)
             # my_expectation = None
             my_expectation = (
-                'Hi, my name is joe blow and I am'
+                'Hello, my name is joe blow and I am'
                 # f' {datetime.datetime.now().year-1996}'
                 f' {this_year-1996}'
             )
@@ -4761,10 +4761,10 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                # 'Hi, my name is jane doe and I am'
+                # 'Hello, my name is jane doe and I am'
                 # f' {datetime.datetime.now().year-1991}'
                 # f' {this_year-1991}'
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' doe and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -4817,10 +4817,10 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             reality = src.person.say_hello(joe)
             # my_expectation = None
             my_expectation = (
-                # 'Hi, my name is joe blow and I am'
+                # 'Hello, my name is joe blow and I am'
                 # f' {datetime.datetime.now().year-1996}'
                 # f' {this_year-1996}'
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -4848,7 +4848,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(joe)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -4865,7 +4865,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' doe and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -4883,7 +4883,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -4902,7 +4902,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(mary)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -5173,7 +5173,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
             reality = src.person.say_hello(joe)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -5203,7 +5203,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' doe and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -5235,7 +5235,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -5307,7 +5307,7 @@ I want to use random values for ``year_of_birth`` in the tests
 
             reality = src.person.say_hello(joe)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -5341,7 +5341,7 @@ I want to use random values for ``year_of_birth`` in the tests
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' doe and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -5377,7 +5377,7 @@ I want to use random values for ``year_of_birth`` in the tests
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -5414,7 +5414,7 @@ I want to use random values for ``year_of_birth`` in the tests
 
             reality = src.person.say_hello(mary)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -5582,7 +5582,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 
             reality = src.person.say_hello(joe)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -5620,7 +5620,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' doe and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -5660,7 +5660,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -5713,7 +5713,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 
             reality = src.person.say_hello(joe)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -5730,7 +5730,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' doe and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -5748,7 +5748,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -5767,7 +5767,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 
             reality = src.person.say_hello(mary)
             my_expectation = (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -6409,7 +6409,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
 
-    AssertionError: None != 'Hi, my name is Z Y and I am Z'
+    AssertionError: None != 'Hello, my name is Z Y and I am Z'
 
   because the test expects a string_ and the ``say_hello`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
 
@@ -6424,7 +6424,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     # def say_hello():
     def say_hello(argument):
         # return None
-        return 'Hi, my name is jade doe and I am 66'
+        return 'Hello, my name is jade doe and I am 66'
 
 
     # factory
@@ -6434,8 +6434,8 @@ Can you make the tests pass without looking at how I solve it below? You can com
   .. code-block:: python
 
     AssertionError:
-        'Hi, my name is Z Y and I am X'
-     != 'Hi, my name is A B and I am C'
+        'Hello, my name is Z Y and I am X'
+     != 'Hello, my name is A B and I am C'
 
   the names and ages change
 
@@ -6451,7 +6451,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     def say_hello(argument):
         # return None
         return argument
-        return 'Hi, my name is jade doe and I am 66'
+        return 'Hello, my name is jade doe and I am 66'
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -6460,7 +6460,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     AssertionError:
         {'first_name': A, 'last_name': Z, 'sex': Y, 'age': X}
-    != 'Hi, my name is A Z and I am X'
+    != 'Hello, my name is A Z and I am X'
 
   the test sends a :ref:`dictionary<what is a dictionary?>` as input and expects a string_ as output, and the string_ uses the :ref:`values<test_values_of_a_dictionary>` of the ``first_name``, ``last_name`` and ``age`` :ref:`keys<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>` it receives
 
@@ -6477,12 +6477,12 @@ Can you make the tests pass without looking at how I solve it below? You can com
     def say_hello(argument):
         # return None
         return (
-            f'Hi, my name is {argument.get("first_name")}'
+            f'Hello, my name is {argument.get("first_name")}'
             f' {argument.get("last_name")}'
             f' and I am {argument.get("age")}'
         )
         return argument
-        return 'Hi, my name is jade doe and I am 66'
+        return 'Hello, my name is jade doe and I am 66'
 
   the test passes. Okay!
 
@@ -6507,12 +6507,12 @@ Can you make the tests pass without looking at how I solve it below? You can com
     def say_hello(a_dictionary):
         # return None
         return (
-            f'Hi, my name is {a_dictionary.get("first_name")}'
+            f'Hello, my name is {a_dictionary.get("first_name")}'
             f' {a_dictionary.get("last_name")}'
             f' and I am {a_dictionary.get("age")}'
         )
         return a_dictionary
-        return 'Hi, my name is jade doe and I am 66'
+        return 'Hello, my name is jade doe and I am 66'
 
 * I remove the commented lines and other `return statements`_
 
@@ -6524,7 +6524,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     def say_hello(a_dictionary):
         return (
-            f'Hi, my name is {a_dictionary.get("first_name")}'
+            f'Hello, my name is {a_dictionary.get("first_name")}'
             f' {a_dictionary.get("last_name")}'
             f' and I am {a_dictionary.get("age")}'
         )

@@ -1,6 +1,6 @@
 cd person
 uv run pytest-watcher
-echo "hi, my name is Jacob"
+echo "Hello, my name is Jacob"
 echo "pytest" > requirements.txt
 tree -a -L 1
 cat requirements.txt

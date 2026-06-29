@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with f-strings. Use f-strings + one factory function (instead of one function per person) that takes first_name, last_name, sex, year_of_birth and returns 'name, surname, X, YYYY'. Add say_hi using f-strings for 'Hi, my name is ... and I am N.'. Start in the person project; uv run pytest-watcher . --now. Progressively introduce f-strings in the return, required args then keyword arguments, move factory and say_hi to src/person.py (AttributeError: module 'src.person' has no attribute 'factory'), use local variables in tests to remove repetition of the data, remove commented lines. Ends with 4 tests calling src.person.factory + src.person.say_hi + # Exceptions seen (AssertionError, NameError, TypeError, AttributeError). Shows why even with f-strings the 4 tests are repetitive. What is next: separate and equal functions. Code: person/tests/test_person_w_fstrings.py and person/solutions/person_w_fstrings.py.
-  :keywords: Jacob Itegboje, Pumping Python, how to make a person with f-strings, python f-strings, f-string factory function, one function instead of one per person, src.person, import src.person, AttributeError module 'src.person' has no attribute 'factory', TypeError missing required positional argument, uv run pytest-watcher, red green refactor f-strings, variables remove repetition in tests, first_name last_name sex year_of_birth, say_hi f-string age 2026-year_of_birth, remove the commented lines, test_joe test_jane test_john test_mary, person factory with f-strings, separate tests and solution, what is next separate and equal functions
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with f-strings. Use f-strings + one factory function (instead of one function per person) that takes first_name, last_name, sex, year_of_birth and returns 'name, surname, X, YYYY'. Add say_hello using f-strings for 'Hello, my name is ... and I am N.'. Start in the person project; uv run pytest-watcher . --now. Progressively introduce f-strings in the return, required args then keyword arguments, move factory and say_hello to src/person.py (AttributeError: module 'src.person' has no attribute 'factory'), use local variables in tests to remove repetition of the data, remove commented lines. Ends with 4 tests calling src.person.factory + src.person.say_hello + # Exceptions seen (AssertionError, NameError, TypeError, AttributeError). Shows why even with f-strings the 4 tests are repetitive. What is next: separate and equal functions. Code: person/tests/test_person_w_fstrings.py and person/solutions/person_w_fstrings.py.
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with f-strings, python f-strings, f-string factory function, one function instead of one per person, src.person, import src.person, AttributeError module 'src.person' has no attribute 'factory', TypeError missing required positional argument, uv run pytest-watcher, red green refactor f-strings, variables remove repetition in tests, first_name last_name sex year_of_birth, say_hello f-string age 2026-year_of_birth, remove the commented lines, test_joe test_jane test_john test_mary, person factory with f-strings, separate tests and solution, what is next separate and equal functions
 
 .. include:: ../../links.rst
 
@@ -1825,7 +1825,7 @@ the test passes.
 ----
 
 *********************************************************************************
-test say_hi function
+test say_hello function
 *********************************************************************************
 
 I want the person I make to say hi. I can make a :ref:`function<what is a function?>` that takes input about a person and returns a message.
@@ -1865,13 +1865,13 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
         )
         assert reality == my_expectation
 
-        reality = say_hi(
+        reality = say_hello(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
         my_expectation = (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
@@ -1884,7 +1884,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   .. code-block:: python
 
-    NameError: name 'say_hi' is not defined
+    NameError: name 'say_hello' is not defined
 
 ----
 
@@ -1903,7 +1903,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     import src.person
 
 
-    def say_hi():
+    def say_hello():
         return None
 
 
@@ -1913,13 +1913,13 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   .. code-block:: python
 
-    TypeError: say_hi() got an
+    TypeError: say_hello() got an
                unexpected keyword argument
                'first_name'
 
   because
 
-  - I called the :ref:`say_hi function<test say_hi function>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``year_of_birth``).
+  - I called the :ref:`say_hello function<test say_hello function>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``year_of_birth``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` allows zero input, because the parentheses are empty.
   - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
@@ -1929,8 +1929,8 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     :lineno-start: 4
     :emphasize-lines: 1-2
 
-    # def say_hi():
-    def say_hi(first_name):
+    # def say_hello():
+    def say_hello(first_name):
         return None
 
 
@@ -1940,7 +1940,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   .. code-block:: shell
 
-    TypeError: say_hi()
+    TypeError: say_hello()
                got an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
@@ -1950,9 +1950,9 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     :lineno-start: 4
     :emphasize-lines: 2-3
 
-    # def say_hi():
-    # def say_hi(first_name):
-    def say_hi(first_name, last_name):
+    # def say_hello():
+    # def say_hello(first_name):
+    def say_hello(first_name, last_name):
         return None
 
 
@@ -1962,13 +1962,13 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   .. code-block:: python
 
-    TypeError: say_hi()
+    TypeError: say_hello()
                got an unexpected keyword argument
                'year_of_birth'
 
   because
 
-  - I called the :ref:`say_hi function<test say_hi function>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``year_of_birth``).
+  - I called the :ref:`say_hello function<test say_hello function>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``year_of_birth``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` allows two arguments (``first_name``, ``last_name``).
   - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
@@ -1978,10 +1978,10 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     :lineno-start: 4
     :emphasize-lines: 3-7
 
-    # def say_hi():
-    # def say_hi(first_name):
-    # def say_hi(first_name, last_name):
-    def say_hi(
+    # def say_hello():
+    # def say_hello(first_name):
+    # def say_hello(first_name, last_name):
+    def say_hello(
         first_name, last_name,
         year_of_birth
     ):
@@ -1995,7 +1995,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
   .. code-block:: python
 
     AssertionError: assert None
-        == 'Hi, my name is joe blow and I am 30.'
+        == 'Hello, my name is joe blow and I am 30.'
 
 * I change :ref:`the return statement` to give the test what it wants
 
@@ -2003,15 +2003,15 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     :lineno-start: 4
     :emphasize-lines: 8-9
 
-    # def say_hi():
-    # def say_hi(first_name):
-    # def say_hi(first_name, last_name):
-    def say_hi(
+    # def say_hello():
+    # def say_hello(first_name):
+    # def say_hello(first_name, last_name):
+    def say_hello(
         first_name, last_name,
         year_of_birth
     ):
         # return None
-        return 'Hi, my name is joe blow and I am 30.'
+        return 'Hello, my name is joe blow and I am 30.'
 
 
     def test_joe():
@@ -2026,7 +2026,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hi function<test say_hi function>` to :ref:`test_jane` in ``test_person.py``
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello function<test say_hello function>` to :ref:`test_jane` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 46
@@ -2050,13 +2050,13 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
         )
         assert reality == my_expectation
 
-        reality = say_hi(
+        reality = say_hello(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
         my_expectation = (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
@@ -2072,26 +2072,26 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     AssertionError: assert 'Hi, my name ... and I am 30.'
                         == 'Hi, my name ... and I am 35.'
 
-  - because the :ref:`say_hi function<test say_hi function>` always returns ``'Hi, my name is joe blow and I am 30.'`` when it is called. It has to return a string_ based on the input it gets for me to be able to use it to make messages based on the person.
+  - because the :ref:`say_hello function<test say_hello function>` always returns ``'Hello, my name is joe blow and I am 30.'`` when it is called. It has to return a string_ based on the input it gets for me to be able to use it to make messages based on the person.
   - I need better error messages.
 
-* I change :ref:`the return statement` of the :ref:`say_hi function<test say_hi function>` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
+* I change :ref:`the return statement` of the :ref:`say_hello function<test say_hello function>` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
 
   .. code-block:: python
     :lineno-start: 4
     :emphasize-lines: 9-13
 
-    # def say_hi():
-    # def say_hi(first_name):
-    # def say_hi(first_name, last_name):
-    def say_hi(
+    # def say_hello():
+    # def say_hello(first_name):
+    # def say_hello(first_name, last_name):
+    def say_hello(
         first_name, last_name,
         year_of_birth
     ):
         # return None
-        # return 'Hi, my name is joe blow and I am 30.'
+        # return 'Hello, my name is joe blow and I am 30.'
         return (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             ' blow and I am 30.'
         )
 
@@ -2113,17 +2113,17 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     :lineno-start: 4
     :emphasize-lines: 12-13
 
-    # def say_hi():
-    # def say_hi(first_name):
-    # def say_hi(first_name, last_name):
-    def say_hi(
+    # def say_hello():
+    # def say_hello(first_name):
+    # def say_hello(first_name, last_name):
+    def say_hello(
         first_name, last_name,
         year_of_birth
     ):
         # return None
-        # return 'Hi, my name is joe blow and I am 30.'
+        # return 'Hello, my name is joe blow and I am 30.'
         return (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             # ' blow and I am 30.'
             f' {last_name} and I am 30.'
         )
@@ -2147,19 +2147,19 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     :emphasize-lines: 10, 15-16
 
 
-    # def say_hi():
-    # def say_hi(first_name):
-    # def say_hi(first_name, last_name):
-    def say_hi(
+    # def say_hello():
+    # def say_hello(first_name):
+    # def say_hello(first_name, last_name):
+    def say_hello(
         first_name, last_name,
         year_of_birth
     ):
         # return None
-        # return 'Hi, my name is joe blow and I am 30.'
+        # return 'Hello, my name is joe blow and I am 30.'
         age = 2026 - year_of_birth
 
         return (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             # ' blow and I am 30.'
             # f' {last_name} and I am 30.'
             f' {last_name} and I am {age}.'
@@ -2170,7 +2170,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hi function<test say_hi function>` to :ref:`test_john` in ``test_person.py``
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello function<test say_hello function>` to :ref:`test_john` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 85
@@ -2194,13 +2194,13 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
         )
         assert reality == my_expectation
 
-        reality = say_hi(
+        reality = say_hello(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
         my_expectation = (
-            'Hi, my name is jane'
+            'Hello, my name is jane'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
@@ -2225,14 +2225,14 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     :lineno-start: 103
     :emphasize-lines: 7-8
 
-        reality = say_hi(
+        reality = say_hello(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
         my_expectation = (
-            # 'Hi, my name is jane'
-            f'Hi, my name is {first_name}'
+            # 'Hello, my name is jane'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
@@ -2243,7 +2243,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hi function<test say_hi function>` to :ref:`test_mary`
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello function<test say_hello function>` to :ref:`test_mary`
 
   .. code-block:: python
     :lineno-start: 117
@@ -2267,13 +2267,13 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
         )
         assert reality == my_expectation
 
-        reality = say_hi(
+        reality = say_hello(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
         my_expectation = (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             ' smith and I am'
             f' {2026-year_of_birth}.'
         )
@@ -2298,13 +2298,13 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     :lineno-start: 135
     :emphasize-lines: 8-9
 
-        reality = say_hi(
+        reality = say_hello(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
         my_expectation = (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             # ' smith and I am'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
@@ -2339,13 +2339,13 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
         )
         assert reality == my_expectation
 
-        reality = say_hi(
+        reality = say_hello(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
         my_expectation = (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
@@ -2358,12 +2358,12 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   .. code-block:: python
 
-    say_hi(
+    say_hello(
         first_name=first_name,
         last_name=last_name,
         year_of_birth=year_of_birth,
     )
-        say_hi(
+        say_hello(
             first_name, last_name,
             year_of_birth,
         )
@@ -2376,18 +2376,18 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
             age = 35
 
             return (
-                f'Hi, my name is {first_name}'
+                f'Hello, my name is {first_name}'
                 f' {last_name} and I am {age}.'
             )
-            return f'Hi, my name is mary public and I am 35'
+            return f'Hello, my name is mary public and I am 35'
 
 ----
 
 *********************************************************************************
-separate and equal say_hi
+separate and equal say_hello
 *********************************************************************************
 
-* I change ``reality`` to be the result of a call to the :ref:`say_hi function<test say_hi function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`say_hi function<test say_hi function>` in ``test_person.py``
+* I change ``reality`` to be the result of a call to the :ref:`say_hello function<test say_hello function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`say_hello function<test say_hello function>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 117
@@ -2411,14 +2411,14 @@ separate and equal say_hi
         )
         assert reality == my_expectation
 
-        # reality = say_hi(
-        reality = src.person.say_hi(
+        # reality = say_hello(
+        reality = src.person.say_hello(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
         my_expectation = (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             # ' smith and I am'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
@@ -2433,11 +2433,11 @@ separate and equal say_hi
   .. code-block:: python
 
     AttributeError: module 'src.person'
-                    has no attribute 'say_hi'
+                    has no attribute 'say_hello'
 
-  because there is nothing named ``say_hi`` in the ``person.py`` file_ in the ``src`` folder_.
+  because there is nothing named ``say_hello`` in the ``person.py`` file_ in the ``src`` folder_.
 
-* I add a copy of the :ref:`say_hi function<test say_hi function>` without the commented lines to ``person.py``
+* I add a copy of the :ref:`say_hello function<test say_hello function>` without the commented lines to ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -2453,14 +2453,14 @@ separate and equal say_hi
         )
 
 
-    def say_hi(
+    def say_hello(
         first_name, last_name,
         year_of_birth
     ):
         age = 2026 - year_of_birth
 
         return (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am {age}.'
         )
 
@@ -2489,13 +2489,13 @@ separate and equal say_hi
         )
         assert reality == my_expectation
 
-        reality = src.person.say_hi(
+        reality = src.person.say_hello(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
         my_expectation = (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
@@ -2508,7 +2508,7 @@ separate and equal say_hi
     # TypeError
     # AttributeError
 
-* I change ``reality`` for :ref:`test_john` to be the result of a call to the :ref:`say_hi function<test say_hi function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``reality`` for :ref:`test_john` to be the result of a call to the :ref:`say_hello function<test say_hello function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 85
@@ -2532,15 +2532,15 @@ separate and equal say_hi
         )
         assert reality == my_expectation
 
-        # reality = say_hi(
-        reality = src.person.say_hi(
+        # reality = say_hello(
+        reality = src.person.say_hello(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
         my_expectation = (
-            # 'Hi, my name is jane'
-            f'Hi, my name is {first_name}'
+            # 'Hello, my name is jane'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
@@ -2574,13 +2574,13 @@ separate and equal say_hi
         )
         assert reality == my_expectation
 
-        reality = src.person.say_hi(
+        reality = src.person.say_hello(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
         my_expectation = (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
@@ -2589,7 +2589,7 @@ separate and equal say_hi
 
     def test_mary():
 
-* I change ``reality`` for :ref:`test_joe` to be the result of a call to the :ref:`say_hi function<test say_hi function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``reality`` for :ref:`test_joe` to be the result of a call to the :ref:`say_hello function<test say_hello function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 23
@@ -2613,14 +2613,14 @@ separate and equal say_hi
         )
         assert reality == my_expectation
 
-        # reality = say_hi(
-        reality = src.person.say_hi(
+        # reality = say_hello(
+        reality = src.person.say_hello(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
         my_expectation = (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
@@ -2654,13 +2654,13 @@ separate and equal say_hi
         )
         assert reality == my_expectation
 
-        reality = src.person.say_hi(
+        reality = src.person.say_hello(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
         my_expectation = (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
@@ -2669,7 +2669,7 @@ separate and equal say_hi
 
     def test_jane():
 
-* I change ``reality`` for :ref:`test_jane` to be the result of a call to the :ref:`say_hi function<test say_hi function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``reality`` for :ref:`test_jane` to be the result of a call to the :ref:`say_hello function<test say_hello function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 54
@@ -2693,14 +2693,14 @@ separate and equal say_hi
         )
         assert reality == my_expectation
 
-        # reality = say_hi(
-        reality = src.person.say_hi(
+        # reality = say_hello(
+        reality = src.person.say_hello(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
         my_expectation = (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
@@ -2734,13 +2734,13 @@ separate and equal say_hi
         )
         assert reality == my_expectation
 
-        reality = src.person.say_hi(
+        reality = src.person.say_hello(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
         my_expectation = (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
@@ -2749,7 +2749,7 @@ separate and equal say_hi
 
     def test_john():
 
-* I remove the :ref:`say_hi function<test say_hi function>` from ``test_person.py``
+* I remove the :ref:`say_hello function<test say_hello function>` from ``test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -2759,20 +2759,20 @@ separate and equal say_hi
 
     def test_joe():
 
-  all the tests are still green because the calls that were made to the :ref:`say_hi function<test say_hi function>` that was in ``test_person.py`` are now to the :ref:`say_hi function<test say_hi function>` in ``person.py`` in the ``src`` folder_. When ``src.person.say_hi`` is called, Python_ follows this path
+  all the tests are still green because the calls that were made to the :ref:`say_hello function<test say_hello function>` that was in ``test_person.py`` are now to the :ref:`say_hello function<test say_hello function>` in ``person.py`` in the ``src`` folder_. When ``src.person.say_hello`` is called, Python_ follows this path
 
   .. code-block:: shell
 
     src
     └── person.py
-        └── def say_hi(
+        └── def say_hello(
                 first_name, last_name,
                 year_of_birth
             ):
                 age = 2026 - year_of_birth
 
                 return (
-                    f'Hi, my name is {first_name}'
+                    f'Hello, my name is {first_name}'
                     f' {last_name} and I am {age}.'
                 )
 
@@ -2781,7 +2781,7 @@ separate and equal say_hi
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add say_hi function'
+    git commit -am 'add say_hello function'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -2995,7 +2995,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
   .. code-block:: python
 
     AttributeError: module 'src.person'
-                    has no attribute 'say_hi'
+                    has no attribute 'say_hello'
 
 * I add the name
 
@@ -3003,7 +3003,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :linenos:
     :emphasize-lines: 1
 
-    say_hi
+    say_hello
 
 
     # factory
@@ -3022,7 +3022,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
   .. code-block:: python
 
-    NameError: name 'say_hi' is not defined
+    NameError: name 'say_hello' is not defined
 
 * I point it to :ref:`None<what is None?>` to define it
 
@@ -3030,8 +3030,8 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :linenos:
     :emphasize-lines: 1-2
 
-    # say_hi
-    say_hi = None
+    # say_hello
+    say_hello = None
 
 
     # factory
@@ -3042,17 +3042,17 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
     TypeError: 'NoneType' object is not callable
 
-  because ``say_hi`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
+  because ``say_hello`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
-* I make ``say_hi`` a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
+* I make ``say_hello`` a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 2-4
 
-    # say_hi
-    # say_hi = None
-    def say_hi():
+    # say_hello
+    # say_hello = None
+    def say_hello():
         return None
 
 
@@ -3062,7 +3062,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
   .. code-block:: python
 
-    TypeError: say_hi() got
+    TypeError: say_hello() got
                an unexpected keyword argument
                'first_name'
 
@@ -3074,10 +3074,10 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :linenos:
     :emphasize-lines: 3-4
 
-    # say_hi
-    # say_hi = None
-    # def say_hi():
-    def say_hi(first_name):
+    # say_hello
+    # say_hello = None
+    # def say_hello():
+    def say_hello(first_name):
         return None
 
 
@@ -3087,7 +3087,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
   .. code-block:: shell
 
-    TypeError: say_hi() got
+    TypeError: say_hello() got
                an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
@@ -3099,11 +3099,11 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :linenos:
     :emphasize-lines: 4-5
 
-    # say_hi
-    # say_hi = None
-    # def say_hi():
-    # def say_hi(first_name):
-    def say_hi(first_name, last_name):
+    # say_hello
+    # say_hello = None
+    # def say_hello():
+    # def say_hello(first_name):
+    def say_hello(first_name, last_name):
         return None
 
 
@@ -3113,7 +3113,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
   .. code-block:: python
 
-    TypeError: say_hi() got
+    TypeError: say_hello() got
                an unexpected keyword argument
                'year_of_birth'
 
@@ -3125,12 +3125,12 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :linenos:
     :emphasize-lines: 5-8
 
-    # say_hi
-    # say_hi = None
-    # def say_hi():
-    # def say_hi(first_name):
-    # def say_hi(first_name, last_name):
-    def say_hi(
+    # say_hello
+    # say_hello = None
+    # def say_hello():
+    # def say_hello(first_name):
+    # def say_hello(first_name, last_name):
+    def say_hello(
         first_name, last_name, year_of_birth
     ):
         return None
@@ -3143,7 +3143,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
   .. code-block:: python
 
     AssertionError: assert None
-        == 'Hi, my name is mary public and I am 26.'
+        == 'Hello, my name is mary public and I am 26.'
 
 * I use :kbd:`ctrl/command+c` (Windows_ & Linux_/MacOS_) on the keyboard to copy the string_ from the terminal and :kbd:`ctrl/command+v` to paste it to replace :ref:`None<what is None?>` in :ref:`the return statement`
 
@@ -3151,16 +3151,16 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :linenos:
     :emphasize-lines: 9-10
 
-    # say_hi
-    # say_hi = None
-    # def say_hi():
-    # def say_hi(first_name):
-    # def say_hi(first_name, last_name):
-    def say_hi(
+    # say_hello
+    # say_hello = None
+    # def say_hello():
+    # def say_hello(first_name):
+    # def say_hello(first_name, last_name):
+    def say_hello(
         first_name, last_name, year_of_birth
     ):
         # return None
-        return 'Hi, my name is mary public and I am 26.'
+        return 'Hello, my name is mary public and I am 26.'
 
 
     # factory
@@ -3232,24 +3232,24 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     AssertionError: assert 'Hi, my name ... and I am 26.'
                         == 'Hi, my name ...and I am 446.'
 
-  because the :ref:`say_hi function<test say_hi function>` always returns ``'Hi, my name is mary public and I am 26.'`` and this test expects ``'Hi, my name is john smith and I am 446.'``
+  because the :ref:`say_hello function<test say_hello function>` always returns ``'Hello, my name is mary public and I am 26.'`` and this test expects ``'Hello, my name is john smith and I am 446.'``
 
-* I change the :ref:`return statement<the return statement>` of the :ref:`say_hi function<test say_hi function>` to see the difference between the input and the expected output
+* I change the :ref:`return statement<the return statement>` of the :ref:`say_hello function<test say_hello function>` to see the difference between the input and the expected output
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 10-11
 
-    # say_hi
-    # say_hi = None
-    # def say_hi():
-    # def say_hi(first_name):
-    # def say_hi(first_name, last_name):
-    def say_hi(
+    # say_hello
+    # say_hello = None
+    # def say_hello():
+    # def say_hello(first_name):
+    # def say_hello(first_name, last_name):
+    def say_hello(
         first_name, last_name, year_of_birth
     ):
         # return None
-        # return 'Hi, my name is mary public and I am 26.'
+        # return 'Hello, my name is mary public and I am 26.'
         return first_name, last_name, year_of_birth
 
 
@@ -3270,19 +3270,19 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :linenos:
     :emphasize-lines: 11-15
 
-    # say_hi
-    # say_hi = None
-    # def say_hi():
-    # def say_hi(first_name):
-    # def say_hi(first_name, last_name):
-    def say_hi(
+    # say_hello
+    # say_hello = None
+    # def say_hello():
+    # def say_hello(first_name):
+    # def say_hello(first_name, last_name):
+    def say_hello(
         first_name, last_name, year_of_birth
     ):
         # return None
-        # return 'Hi, my name is mary public and I am 26.'
+        # return 'Hello, my name is mary public and I am 26.'
         # return first_name, last_name, year_of_birth
         return (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am {year_of_birth}.'
         )
 
@@ -3304,19 +3304,19 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :linenos:
     :emphasize-lines: 14-15
 
-    # say_hi
-    # say_hi = None
-    # def say_hi():
-    # def say_hi(first_name):
-    # def say_hi(first_name, last_name):
-    def say_hi(
+    # say_hello
+    # say_hello = None
+    # def say_hello():
+    # def say_hello(first_name):
+    # def say_hello(first_name, last_name):
+    def say_hello(
         first_name, last_name, year_of_birth
     ):
         # return None
-        # return 'Hi, my name is mary public and I am 26.'
+        # return 'Hello, my name is mary public and I am 26.'
         # return first_name, last_name, year_of_birth
         return (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             # f' {last_name} and I am {year_of_birth}.'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
@@ -3332,11 +3332,11 @@ Since the solutions are separate from the tests, I can write the programs_ that 
   .. code-block:: python
     :linenos:
 
-    def say_hi(
+    def say_hello(
         first_name, last_name, year_of_birth
     ):
         return (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
@@ -3401,13 +3401,13 @@ review
 * My tests and solutions have a few problems,
 
   - Each test is basically the same two tests, there has to be a way that I can use one test for all the people.
-  - The :ref:`factory<test person factory>` and :ref:`say_hi functions<test say_hi function>` use three of the same inputs
+  - The :ref:`factory<test person factory>` and :ref:`say_hello functions<test say_hello function>` use three of the same inputs
 
     * ``first_name``
     * ``last_name``
     * ``year_of_birth``
 
-    There has to be `a better way<how to make a person with a class>`, where I can give those values once, and get a representation for a person when I call :ref:`the factory function<test person factory>` and a message when I call the :ref:`say_hi function<test say_hi function>`.
+    There has to be `a better way<how to make a person with a class>`, where I can give those values once, and get a representation for a person when I call :ref:`the factory function<test person factory>` and a message when I call the :ref:`say_hello function<test say_hello function>`.
 
 For now, I am going to :ref:`clean up the functions project<separate and equal functions>` so the tests and solutions are in separate files.
 
