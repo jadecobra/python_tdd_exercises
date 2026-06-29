@@ -123,7 +123,7 @@ open the project
 ----
 
 *********************************************************************************
-test person class
+test Person class
 *********************************************************************************
 
 I made a :ref:`function<what is a function?>` that makes a string_ to represent a person when I give it ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``. I can also represent a person with a :ref:`class<what is a class?>` because it is :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` that belong together.
@@ -229,13 +229,18 @@ because there is no definition for ``Person`` in ``test_person.py``.
 
     .. code-block:: python
 
-      Person(
+      joe = Person(
           first_name=first_name,
           last_name=last_name,
           sex=sex,
           year_of_birth=year_of_birth,
       )
-          Person() # has no constructor methods
+          Person(
+              first_name=first_name,
+              last_name=last_name,
+              sex=sex,
+              year_of_birth=year_of_birth,
+          ) # has no constructor methods
 
     which raises :ref:`TypeError<what causes TypeError?>` since :ref:`classes<what is a class?>` do not take arguments like a :ref:`function<what is a function?>` without a :ref:`method<what is a method?>` that handles those arguments and I called this one with four arguments.
 
@@ -268,17 +273,17 @@ because there is no definition for ``Person`` in ``test_person.py``.
 
     .. code-block:: python
 
-      Person(
+      joe = Person(
           first_name=first_name,
           last_name=last_name,
           sex=sex,
           year_of_birth=year_of_birth,
       )
           Person.__init__(
-              first_name=first_name,
-              last_name=last_name,
-              sex=sex,
-              year_of_birth=year_of_birth,
+              first_name='joe',
+              last_name='blow',
+              sex='M',
+              year_of_birth=1996,
           )
 
     which raises :ref:`TypeError<what causes TypeError?>` because the :ref:`definition<how to make a function>` for ``__init__`` does not allow calling it with inputs (the parentheses are empty) and the test sends four :ref:`keyword arguments<test_keyword_arguments>` as input.
@@ -344,7 +349,7 @@ because there is no definition for ``Person`` in ``test_person.py``.
 
     .. code-block:: python
 
-      Person(
+      joe = Person(
           first_name=first_name,
           last_name=last_name,
           sex=sex,
@@ -352,10 +357,10 @@ because there is no definition for ``Person`` in ``test_person.py``.
       )
           Person.__init__(
               self,
-              first_name = 'joe'
-              last_name = 'blow'    # not in definition
-              sex = 'M'
-              year_of_birth = 1996
+              first_name='joe',
+              last_name='blow',    # not in definition
+              sex='M',
+              year_of_birth=1996,
           )
 
     which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows two arguments (``self`` and ``first_name``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
@@ -393,7 +398,7 @@ because there is no definition for ``Person`` in ``test_person.py``.
 
     .. code-block:: python
 
-      Person(
+      joe = Person(
           first_name=first_name,
           last_name=last_name,
           sex=sex,
@@ -401,10 +406,10 @@ because there is no definition for ``Person`` in ``test_person.py``.
       )
           Person.__init__(
               self,
-              first_name = 'joe'
-              last_name = 'blow'
-              sex = 'M'             # not in definition
-              year_of_birth = 1996
+              first_name='joe',
+              last_name='blow',
+              sex='M',             # not in definition
+              year_of_birth=1996,
           )
 
     which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows three arguments (``self``,  ``first_name`` and ``last_name``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
@@ -445,7 +450,7 @@ because there is no definition for ``Person`` in ``test_person.py``.
 
     .. code-block:: python
 
-      Person(
+      joe = Person(
           first_name=first_name,
           last_name=last_name,
           sex=sex,
@@ -453,10 +458,10 @@ because there is no definition for ``Person`` in ``test_person.py``.
       )
           Person.__init__(
               self,
-              first_name = 'joe'
-              last_name = 'blow'
-              sex = 'M'
-              year_of_birth = 1996  # not in definition
+              first_name='joe',
+              last_name='blow',
+              sex='M',
+              year_of_birth=1996,  # not in definition
           )
 
     which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows three arguments (``self``,  ``first_name``, ``last_name`` and ``sex``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
@@ -585,6 +590,8 @@ I made a person :ref:`say hi with a function<test say_hi>`, I can also do the sa
 * I add ``self.first_name`` to the :ref:`definition<how to make a function>` of the ``__init__`` `constructor method`_
 
   .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 7
 
     class Person:
 
@@ -603,26 +610,153 @@ I made a person :ref:`say hi with a function<test say_hi>`, I can also do the sa
 * I point ``self.first_name`` to the value for ``first_name`` when the ``__init__`` :ref:`method<what is a method?>` is called
 
   .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 7-8
+
+    class Person:
+
+        def __init__(
+            self, first_name, last_name,
+            year_of_birth, sex
+        ):
+            # self.first_name
+            self.first_name = first_name
+            return None
 
 
+    def test_joe():
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: 'Person' object
+                    has no attribute 'last_name'.
+                    Did you mean: 'first_name'?
+
+* I add ``self.last_name`` and point it to the value for ``last_name`` when the ``__init__`` :ref:`method<what is a method?>` is called
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 9
+
+    class Person:
+
+        def __init__(
+            self, first_name, last_name,
+            year_of_birth, sex
+        ):
+            # self.first_name
+            self.first_name = first_name
+            self.last_name = last_name
+            return None
 
 
+    def test_joe():
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
-    AttributeError:
-        'Person' object has no attribute 'get'
+    AttributeError: 'Person' object
+                    has no attribute 'year_of_birth'
 
-  because
+* I add ``self.year_of_birth`` and point it to the value for ``year_of_birth`` when the ``__init__`` `constructor method`_ is called
 
-  - the test calls the ``say_hello`` :ref:`function<what is a function?>`
-  - the ``say_hello`` :ref:`function<what is a function?>` expects a :ref:`dictionary<what is a dictionary?>`
-  - the ``say_hello`` :ref:`function<what is a function?>` calls the :ref:`get method<test_get_value_of_a_key_in_a_dictionary>` on what it receives and
-  - the ``Person`` :ref:`object<everything is an object>` it receives is not a :ref:`dictionary<what is a dictionary?>` and does not have a :ref:`get method<test_get_value_of_a_key_in_a_dictionary>`
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 10
 
-* I change ``reality`` in :ref:`test_classy_person_says_hello` to use a :ref:`method<what is a method?>` I can add to ``Person``, in ``test_person.py``
+    class Person:
+
+        def __init__(
+            self, first_name, last_name,
+            year_of_birth, sex
+        ):
+            # self.first_name
+            self.first_name = first_name
+            self.last_name = last_name
+            self.year_of_birth = year_of_birth
+            return None
+
+
+    def test_joe():
+
+  the test passes, because
+
+  - given
+
+    .. code-block:: python
+
+      first_name = 'joe'
+      last_name = 'blow'
+      sex = 'M'
+      year_of_birth = 1996
+
+  - when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
+
+    .. code-block:: python
+
+      joe = Person(
+          first_name=first_name,
+          last_name=last_name,
+          sex=sex,
+          year_of_birth=year_of_birth,
+      )
+          Person.__init__(
+              self,
+              first_name='joe',
+              last_name= 'blow',
+              sex='M',
+              year_of_birth=1996,
+          )
+              self.first_name = 'joe'
+              self.last_name = 'blow'
+              self.year_of_birth = 1996
+
+    ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Person.__init__()``, ``self`` is ``Person`` inside ``Person``. It would be like calling ``Person.__init__(Person)``.
+
+  - when ``reality = src.person.say_hi(first_name=joe.first_name, last_name=joe.last_name,year_of_birth=joe.year_of_birth)`` runs
+
+    .. code-block:: python
+
+      reality = src.person.say_hi(
+          first_name=joe.first_name,
+          last_name=joe.last_name,
+          year_of_birth=joe.year_of_birth,
+      )
+          reality = src.person.say_hi(
+              first_name='joe',
+              last_name='blow',
+              year_of_birth=1996,
+          )
+
+    Python_ follows this path
+
+    .. code-block:: shell
+
+      src
+      └── person.py
+          └── def say_hi(
+                  first_name, last_name, year_of_birth
+              ):
+                  return (
+                      f'Hi, my name is {first_name}'
+                      f' {last_name} and I am'
+                      f' {2026-year_of_birth}.'
+                  )
+
+  and the result is ``'Hi, my name is joe blow and I am 30.'``
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I change the call to ``src.person.say_hi`` in :ref:`test_joe` to a call to the :ref:`say_hi method<test classy person say_hi>` of the :ref:`Person class<test>`in :ref:`test_classy_person_says_hello` to use a :ref:`method<what is a method?>` I can add to ``Person``, in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 91
