@@ -218,14 +218,26 @@ because there is no definition for ``Person`` in ``test_person.py``.
 
     def test_joe():
 
-  - I can :ref:`make a class with the pass keyword<test_making_a_class_w_pass>`
-  - the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+  - I can :ref:`make a class with the pass keyword<test_making_a_class_w_pass>`.
+  - The terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     .. code-block:: python
 
       TypeError: Person() takes no arguments
 
-    because :ref:`classes<what is a class?>` do not take arguments like a :ref:`function<what is a function?>` without a :ref:`method<what is a method?>` that handles those arguments.
+    because this happens when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
+
+    .. code-block:: python
+
+      Person(
+          first_name=first_name,
+          last_name=last_name,
+          sex=sex,
+          year_of_birth=year_of_birth,
+      )
+          Person() # has no constructor methods
+
+    which raises :ref:`TypeError<what causes TypeError?>` since :ref:`classes<what is a class?>` do not take arguments like a :ref:`function<what is a function?>` without a :ref:`method<what is a method?>` that handles those arguments and I called this one with four arguments.
 
 * I add a `constructor method`_ to the ``Person`` :ref:`class<what is a class?>` so it can take arguments, it is used to define how copies of the :ref:`class<what is a class?>` are made
 
@@ -250,9 +262,27 @@ because there is no definition for ``Person`` in ``test_person.py``.
         Person.__init__() got
         an unexpected keyword argument 'first_name'
 
-  - because the :ref:`definition<how to make a function>` for ``__init__`` does not allow calling it with inputs (the parentheses are empty) and the test sends ``'first_name'`` as input.
   - A `constructor method`_ is used to handle arguments given when a copy of a  :ref:`class<what is a class?>` is made.
   - A `constructor method`_ is used to make copies of a :ref:`class<what is a class?>`.
+  - Here is what is happens when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
+
+    .. code-block:: python
+
+      Person(
+          first_name=first_name,
+          last_name=last_name,
+          sex=sex,
+          year_of_birth=year_of_birth,
+      )
+          Person.__init__(
+              first_name=first_name,
+              last_name=last_name,
+              sex=sex,
+              year_of_birth=year_of_birth,
+          )
+
+    which raises :ref:`TypeError<what causes TypeError?>` because the :ref:`definition<how to make a function>` for ``__init__`` does not allow calling it with inputs (the parentheses are empty) and the test sends four :ref:`keyword arguments<test_keyword_arguments>` as input.
+  - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
 
 * I add the name in parentheses so that the ``__init__`` `constructor method`_ can take input
 
@@ -278,7 +308,9 @@ because there is no definition for ``Person`` in ``test_person.py``.
         Person.__init__() got
         multiple values for argument 'first_name'
 
-  because the ``__init__`` `constructor method`_ takes the :ref:`instance (copy)<how to test if something is an instance of a class>` it belongs to as the first argument.
+  because the ``__init__`` `constructor method`_ takes the :ref:`instance (copy)<how to test if something is an instance of a class>` it belongs to as the first argument and the :ref:`definition<how to make a function that takes input>` takes one argument (``first_input``).
+
+  The test calls the :ref:`function<what is a function?>` with four :ref:`keyword arguments<test_keyword_arguments>` ``(first_name, last_name, sex and year_of_birth')``. How does Python_ know which value to use for the first argument if I use the :ref:`position<test_positional_arguments>` and a :ref:`keyword<test_keyword_arguments>`?
 
 * I add ``self`` as the first argument
 
@@ -298,6 +330,7 @@ because there is no definition for ``Person`` in ``test_person.py``.
     def test_joe():
 
   - ``self`` is Python_ convention, I can use any name I want.
+  - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Person.__init__()``, ``self`` is ``Person`` inside ``Person``. It would be like calling ``Person.__init__(Person)``.
   - The terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     .. code-block:: shell
@@ -307,7 +340,28 @@ because there is no definition for ``Person`` in ``test_person.py``.
           an unexpected keyword argument 'last_name'.
           Did you mean 'first_name'?
 
-    I have seen this before, so far it is the same as making the :ref:`factory function<test person factory>`.
+    because this happens when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
+
+    .. code-block:: python
+
+      Person(
+          first_name=first_name,
+          last_name=last_name,
+          sex=sex,
+          year_of_birth=year_of_birth,
+      )
+          Person.__init__(
+              self,
+              first_name = 'joe'
+              last_name = 'blow'    # not in definition
+              sex = 'M'
+              year_of_birth = 1996
+          )
+
+    which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows two arguments (``self`` and ``first_name``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
+  - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Person.__init__()``, ``self`` is ``Person`` inside ``Person``. It would be like calling ``Person.__init__(Person)``.
+  - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
+  - I have seen this before, so far it is the same as making the :ref:`factory function<test person factory>`.
 
 * I add ``last_name`` to the :ref:`definition<how to make a function>` of ``__init__``
 
@@ -335,7 +389,28 @@ because there is no definition for ``Person`` in ``test_person.py``.
         Person.__init__() got
         an unexpected keyword argument 'year_of_birth'
 
-  still the same as making the :ref:`factory function<test person factory>`.
+  - because this happens when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
+
+    .. code-block:: python
+
+      Person(
+          first_name=first_name,
+          last_name=last_name,
+          sex=sex,
+          year_of_birth=year_of_birth,
+      )
+          Person.__init__(
+              self,
+              first_name = 'joe'
+              last_name = 'blow'
+              sex = 'M'             # not in definition
+              year_of_birth = 1996
+          )
+
+    which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows three arguments (``self``,  ``first_name`` and ``last_name``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
+  - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Person.__init__()``, ``self`` is ``Person`` inside ``Person``. It would be like calling ``Person.__init__(Person)``.
+  - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
+  - Still the same as making the :ref:`factory function<test person factory>`.
 
 * I add ``year_of_birth`` to the :ref:`definition<how to make a function>` of the ``__init__`` :ref:`method<what is a method?>`
 
@@ -366,7 +441,28 @@ because there is no definition for ``Person`` in ``test_person.py``.
     TypeError: Person.__init__() got
                an unexpected keyword argument 'sex'
 
-  same as with the :ref:`factory function<test person factory>`.
+  - because this happens when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
+
+    .. code-block:: python
+
+      Person(
+          first_name=first_name,
+          last_name=last_name,
+          sex=sex,
+          year_of_birth=year_of_birth,
+      )
+          Person.__init__(
+              self,
+              first_name = 'joe'
+              last_name = 'blow'
+              sex = 'M'
+              year_of_birth = 1996  # not in definition
+          )
+
+    which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows three arguments (``self``,  ``first_name``, ``last_name`` and ``sex``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
+  - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Person.__init__()``, ``self`` is ``Person`` inside ``Person``. It would be like calling ``Person.__init__(Person)``.
+  - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
+  - Same as with the :ref:`factory function<test person factory>`.
 
 * I add ``sex`` to the :ref:`definition<how to make a function>` of the ``__init__`` `constructor method`_
 
@@ -504,7 +600,11 @@ I made a person :ref:`say hi with a function<test say_hi>`, I can also do the sa
 
   the terminal_ still shows :ref:`AttributeError<what causes AttributeError?>` because this is just a reference to the name, not a definition.
 
-* I point ``self.first_name`` to the value for ``first_name`` when a
+* I point ``self.first_name`` to the value for ``first_name`` when the ``__init__`` :ref:`method<what is a method?>` is called
+
+  .. code-block:: python
+
+
 
 
 
