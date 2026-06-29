@@ -1829,7 +1829,7 @@ separate and equal factory
 ----
 
 *********************************************************************************
-test say_hi
+test say_hi function
 *********************************************************************************
 
 I want the person I make to say hi. I can make a :ref:`function<what is a function?>` that takes input about a person and returns a message.
@@ -1923,7 +1923,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   because
 
-  - I called :ref:`the say_hi function<test say_hi>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``year_of_birth``).
+  - I called the :ref:`say_hi function<test say_hi function>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``year_of_birth``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` allows zero input, because the parentheses are empty.
   - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
@@ -1972,7 +1972,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   because
 
-  - I called :ref:`the say_hi function<test say_hi>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``year_of_birth``).
+  - I called the :ref:`say_hi function<test say_hi function>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``year_of_birth``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` allows two arguments (``first_name``, ``last_name``).
   - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
@@ -2030,7 +2030,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for :ref:`the say_hi function<test say_hi>` to :ref:`test_jane` in ``test_person.py``
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hi function<test say_hi function>` to :ref:`test_jane` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 46
@@ -2076,10 +2076,10 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     AssertionError: assert 'Hi, my name ... and I am 30.'
                         == 'Hi, my name ... and I am 35.'
 
-  - because :ref:`the say_hi function<test say_hi>` always returns ``'Hi, my name is joe blow and I am 30.'`` when it is called. It has to return a string_ based on the input it gets for me to be able to use it to make messages based on the person.
+  - because the :ref:`say_hi function<test say_hi function>` always returns ``'Hi, my name is joe blow and I am 30.'`` when it is called. It has to return a string_ based on the input it gets for me to be able to use it to make messages based on the person.
   - I need better error messages.
 
-* I change :ref:`the return statement` of :ref:`the say_hi function<test say_hi>` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
+* I change :ref:`the return statement` of the :ref:`say_hi function<test say_hi function>` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
 
   .. code-block:: python
     :lineno-start: 4
@@ -2174,7 +2174,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for :ref:`the say_hi function<test say_hi>` to :ref:`test_john` in ``test_person.py``
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hi function<test say_hi function>` to :ref:`test_john` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 85
@@ -2247,7 +2247,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for :ref:`the say_hi function<test say_hi>` to :ref:`test_mary`
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hi function<test say_hi function>` to :ref:`test_mary`
 
   .. code-block:: python
     :lineno-start: 117
@@ -2391,7 +2391,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 separate and equal say_hi
 *********************************************************************************
 
-* I change ``reality`` to be the result of a call to :ref:`the say_hi function<test say_hi>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to :ref:`the say_hi function<test say_hi>` in ``test_person.py``
+* I change ``reality`` to be the result of a call to the :ref:`say_hi function<test say_hi function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`say_hi function<test say_hi function>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 117
@@ -2441,7 +2441,7 @@ separate and equal say_hi
 
   because there is nothing named ``say_hi`` in the ``person.py`` file_ in the ``src`` folder_.
 
-* I add a copy of :ref:`the say_hi function<test say_hi>` without the commented lines to ``person.py``
+* I add a copy of the :ref:`say_hi function<test say_hi function>` without the commented lines to ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -2512,7 +2512,7 @@ separate and equal say_hi
     # TypeError
     # AttributeError
 
-* I change ``reality`` for :ref:`test_john` to be the result of a call to :ref:`the say_hi function<test say_hi>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``reality`` for :ref:`test_john` to be the result of a call to the :ref:`say_hi function<test say_hi function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 85
@@ -2593,7 +2593,7 @@ separate and equal say_hi
 
     def test_mary():
 
-* I change ``reality`` for :ref:`test_joe` to be the result of a call to :ref:`the say_hi function<test say_hi>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``reality`` for :ref:`test_joe` to be the result of a call to the :ref:`say_hi function<test say_hi function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 23
@@ -2673,7 +2673,7 @@ separate and equal say_hi
 
     def test_jane():
 
-* I change ``reality`` for :ref:`test_jane` to be the result of a call to :ref:`the say_hi function<test say_hi>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``reality`` for :ref:`test_jane` to be the result of a call to the :ref:`say_hi function<test say_hi function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 54
@@ -2753,7 +2753,7 @@ separate and equal say_hi
 
     def test_john():
 
-* I remove :ref:`the say_hi function<test say_hi>` from ``test_person.py``
+* I remove the :ref:`say_hi function<test say_hi function>` from ``test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -2763,7 +2763,7 @@ separate and equal say_hi
 
     def test_joe():
 
-  all the tests are still green because the calls that were made to :ref:`the say_hi function<test say_hi>` that was in ``test_person.py`` are now to :ref:`the say_hi function<test say_hi>` in ``person.py`` in the ``src`` folder_. When ``src.person.say_hi`` is called, Python_ follows this path
+  all the tests are still green because the calls that were made to the :ref:`say_hi function<test say_hi function>` that was in ``test_person.py`` are now to the :ref:`say_hi function<test say_hi function>` in ``person.py`` in the ``src`` folder_. When ``src.person.say_hi`` is called, Python_ follows this path
 
   .. code-block:: shell
 
@@ -3236,9 +3236,9 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     AssertionError: assert 'Hi, my name ... and I am 26.'
                         == 'Hi, my name ...and I am 446.'
 
-  because :ref:`the say_hi function<test say_hi>` always returns ``'Hi, my name is mary public and I am 26.'`` and this test expects ``'Hi, my name is john smith and I am 446.'``
+  because the :ref:`say_hi function<test say_hi function>` always returns ``'Hi, my name is mary public and I am 26.'`` and this test expects ``'Hi, my name is john smith and I am 446.'``
 
-* I change the :ref:`return statement<the return statement>` of :ref:`the say_hi function<test say_hi>` to see the difference between the input and the expected output
+* I change the :ref:`return statement<the return statement>` of the :ref:`say_hi function<test say_hi function>` to see the difference between the input and the expected output
 
   .. code-block:: python
     :linenos:
@@ -3405,13 +3405,13 @@ review
 * My tests and solutions have a few problems,
 
   - Each test is basically the same two tests, there has to be a way that I can use one test for all the people.
-  - The :ref:`factory<test person factory>` and :ref:`say_hi functions<test say_hi>` use three of the same inputs
+  - The :ref:`factory<test person factory>` and :ref:`say_hi functions<test say_hi function>` use three of the same inputs
 
     * ``first_name``
     * ``last_name``
     * ``year_of_birth``
 
-    There has to be `a better way<how to make a person with a class>`, where I can give those values once, and get a representation for a person when I call :ref:`the factory function<test person factory>` and a message when I call :ref:`the say_hi function<test say_hi>`.
+    There has to be `a better way<how to make a person with a class>`, where I can give those values once, and get a representation for a person when I call :ref:`the factory function<test person factory>` and a message when I call the :ref:`say_hi function<test say_hi function>`.
 
 For now, I am going to :ref:`clean up the functions project<separate and equal functions>` so the tests and solutions are in separate files.
 
