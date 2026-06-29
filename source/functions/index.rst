@@ -1748,7 +1748,7 @@ you have covered a bit so far and know
 * :ref:`what causes AssertionError<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
 
-:ref:`Would you like to use variables to make a person?<how to make a person with strings>`
+:ref:`Would you like to make a person with strings?<how to make a person with strings>`
 
 ----
 

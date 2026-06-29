@@ -3355,6 +3355,13 @@ Since the solutions are separate from the tests, I can write the programs_ that 
             f' {sex}, {year_of_birth}'
         )
 
+* I add a git_ commit message in the new terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'test person with f-strings'
+
 ----
 
 *********************************************************************************

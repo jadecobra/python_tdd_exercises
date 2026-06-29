@@ -58,8 +58,6 @@ open the project
 
     test_functions.py ............                      [100%]
 
-
-
     =================== 12 passed in X.YZs ===================
 
 ----

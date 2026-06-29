@@ -3226,6 +3226,15 @@ Now that the solution is separate from the tests, I can write the program_ that 
     def text(value):
         return f'I got: {value}'
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'test telephone'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
 ----
 
 *********************************************************************************
