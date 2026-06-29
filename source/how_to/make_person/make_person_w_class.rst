@@ -123,10 +123,10 @@ open the project
 ----
 
 *********************************************************************************
-test_classy_person_says_hi
+test person class
 *********************************************************************************
 
-I made a person :ref:`say hi with a function<test say_hi>`, I can also do the same thing with a :ref:`class<what is a class?>` because it is :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` that belong together.
+I made a :ref:`function<what is a function?>` that makes a string_ to represent a person when I give it ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``. I can also represent a person with a :ref:`class<what is a class?>` because it is :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` that belong together.
 
 ----
 
@@ -136,14 +136,14 @@ I made a person :ref:`say hi with a function<test say_hi>`, I can also do the sa
 
 ----
 
-I add an :ref:`assertion<what is an assertion?>` to :ref:`test_joe` in ``test_person.py``
+I add make a copy of a :ref:`class<what is a class?>` to represent ``joe`` in :ref:`test_joe` in ``test_person.py``
 
 .. code-block:: python
   :lineno-start:
 
 .. code-block:: python
   :lineno-start: 4
-  :emphasize-lines: 31-36, 38-40
+  :emphasize-lines: 31-36
   :emphasize-text: Person
 
   def test_joe():
@@ -182,10 +182,6 @@ I add an :ref:`assertion<what is an assertion?>` to :ref:`test_joe` in ``test_pe
           sex=sex,
           year_of_birth=year_of_birth,
       )
-
-      reality = src.person.say_hi(joe)
-      my_expectation = None
-      assert reality == my_expectation
 
 
   def test_jane():
@@ -372,7 +368,145 @@ because there is no definition for ``Person`` in ``test_person.py``.
 
   same as with the :ref:`factory function<test person factory>`.
 
-* I add ``sex`` to the :ref:`definition<how to make a function>`
+* I add ``sex`` to the :ref:`definition<how to make a function>` of the ``__init__`` `constructor method`_
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 10-11
+
+    class Person:
+
+        # pass
+        # def __init__():
+        # def __init__(first_name):
+        # def __init__(self, first_name):
+        # def __init__(self, first_name, last_name):
+        def __init__(
+            self, first_name, last_name,
+            # year_of_birth,
+            year_of_birth, sex
+        ):
+            return None
+
+
+    def test_joe():
+
+  the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 4
+
+    class Person:
+
+        def __init__(
+            self, first_name, last_name,
+            year_of_birth, sex
+        ):
+            return None
+
+
+    def test_joe():
+
+* I open a new terminal_ then change directories to ``person``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd person
+
+* I add a git_ commit message in the new terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add Person class'
+
+----
+
+*********************************************************************************
+test classy person say_hi
+*********************************************************************************
+
+I made a person :ref:`say hi with a function<test say_hi>`, I can also do the same thing with a :ref:`class<what is a class?>` because it is :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` that belong together.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>` with a call to the :ref:`say_hi function<test say_hi>` with the :ref:`attributes<what is a class attribute?>` of ``joe`` in :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 8-13
+
+        joe = Person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+        reality = src.person.say_hi(
+            first_name=joe.first_name,
+            last_name=joe.last_name,
+            year_of_birth=joe.year_of_birth,
+        )
+        assert reality == my_expectation
+
+
+    def test_jane():
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: 'Person' object has no attribute 'first_name'
+
+  because there is nothing named ``first_name`` in the ``Person`` :ref:`class<what is a class?>`
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add ``self.first_name`` to the :ref:`definition<how to make a function>` of the ``__init__`` `constructor method`_
+
+  .. code-block:: python
+
+    class Person:
+
+        def __init__(
+            self, first_name, last_name,
+            year_of_birth, sex
+        ):
+            self.first_name
+            return None
+
+
+    def test_joe():
+
+  the terminal_ still shows :ref:`AttributeError<what causes AttributeError?>` because this is just a reference to the name, not a definition.
+
+* I point ``self.first_name`` to the value for ``first_name`` when a
+
+
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
