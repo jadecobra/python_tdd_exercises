@@ -124,7 +124,7 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` with a call to :ref:`the factory function<test person factory>` in :ref:`test_jane`
+* I add an :ref:`assertion<what is an assertion?>` with a call to the :ref:`factory function<test person factory>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 21
@@ -155,7 +155,7 @@ the test passes.
     AssertionError: assert 'joe, blow, M, 1996'
                         == 'jane, doe, F, 1991'
 
-  because :ref:`the factory function<test person factory>` always returns ``joe, blow, M, 1996`` when it is called. It has to return a string_ based on the input it gets for me to be able to use it to make more than one person.
+  because the :ref:`factory function<test person factory>` always returns ``joe, blow, M, 1996`` when it is called. It has to return a string_ based on the input it gets for me to be able to use it to make more than one person.
 
 * I :ref:`make the function take input<how to make a function that takes input>` for the first name
 
@@ -177,11 +177,11 @@ the test passes.
 
   because
 
-  - I called :ref:`the factory function<test person factory>` with zero inputs.
+  - I called the :ref:`factory function<test person factory>` with zero inputs.
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has one required argument (``first_name``).
   - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
-* I add ``'jane'`` to the call to :ref:`the factory function<test person factory>` in :ref:`test_jane`
+* I add ``'jane'`` to the call to the :ref:`factory function<test person factory>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 30
@@ -205,7 +205,7 @@ the test passes.
     AssertionError: assert 'joe, blow, M, 1996'
                         == 'jane, doe, F, 1991'
 
-* I change :ref:`the return statement` of :ref:`the factory function<test person factory>` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
+* I change :ref:`the return statement` of the :ref:`factory function<test person factory>` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
 
   .. code-block:: python
     :linenos:
@@ -252,7 +252,7 @@ the test passes.
 
     NameError: name 'last_name' is not defined
 
-* I add the name to the parentheses to define it in :ref:`the factory function<test person factory>`
+* I add the name to the parentheses to define it in the :ref:`factory function<test person factory>`
 
   .. code-block:: python
     :linenos:
@@ -281,11 +281,11 @@ the test passes.
 
   because
 
-  - I called :ref:`the factory function<test person factory>` with one input (``jane``).
+  - I called the :ref:`factory function<test person factory>` with one input (``jane``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has two required arguments (``first_name`` and ``last_name``).
   - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
-* I add ``'doe'`` to the call to :ref:`the factory function<test person factory>` in :ref:`test_jane`
+* I add ``'doe'`` to the call to the :ref:`factory function<test person factory>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 36
@@ -312,7 +312,7 @@ the test passes.
 
   the first and last names match. More progress.
 
-* I use :ref:`keyword arguments<test_keyword_arguments>` with a value for ``sex`` (since I have more than two) to change the call to :ref:`the factory function<test person factory>` in :ref:`test_jane`
+* I use :ref:`keyword arguments<test_keyword_arguments>` with a value for ``sex`` (since I have more than two) to change the call to the :ref:`factory function<test person factory>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 36
@@ -344,7 +344,7 @@ the test passes.
 
   because
 
-  - I called :ref:`the factory function<test person factory>` with three :ref:`keyword arguments<test_keyword_arguments>` input (``first_name``, ``last_name`` and ``sex``).
+  - I called the :ref:`factory function<test person factory>` with three :ref:`keyword arguments<test_keyword_arguments>` input (``first_name``, ``last_name`` and ``sex``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has two required arguments (``first_name`` and ``last_name``).
   - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
@@ -370,7 +370,7 @@ the test passes.
 
   the terminal_ shows the last :ref:`AssertionError<what causes AssertionError?>` again.
 
-* I add ``sex`` to the :ref:`f-string<what is string interpolation?>` in :ref:`the factory function<test person factory>`
+* I add ``sex`` to the :ref:`f-string<what is string interpolation?>` in the :ref:`factory function<test person factory>`
 
   .. code-block:: python
     :linenos:
@@ -428,7 +428,7 @@ the test passes.
 
     NameError: name 'year_of_birth' is not defined
 
-* I add ``year_of_birth`` to the parentheses to define it in :ref:`the factory function<test person factory>`
+* I add ``year_of_birth`` to the parentheses to define it in the :ref:`factory function<test person factory>`
 
   .. code-block:: python
     :linenos:
@@ -464,11 +464,11 @@ the test passes.
 
   because
 
-  - I called :ref:`the factory function<test person factory>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``sex``).
+  - I called the :ref:`factory function<test person factory>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``sex``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has four required arguments (``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
   - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
-* I add ``year_of_birth=1996`` to the call to :ref:`the factory function<test person factory>` in :ref:`test_jane`
+* I add ``year_of_birth=1996`` to the call to the :ref:`factory function<test person factory>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 43
@@ -503,11 +503,11 @@ the test passes.
 
   because
 
-  - I called in :ref:`test_joe` :ref:`the factory function<test person factory>` with zero arguments.
+  - I called in :ref:`test_joe` the :ref:`factory function<test person factory>` with zero arguments.
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has four required arguments (``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
   - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
-* Since there are more than two, I add :ref:`keyword arguments<test_keyword_arguments>` to the call to :ref:`the factory function<test person factory>` in :ref:`test_joe`
+* Since there are more than two, I add :ref:`keyword arguments<test_keyword_arguments>` to the call to the :ref:`factory function<test person factory>` in :ref:`test_joe`
 
   .. code-block:: python
     :lineno-start: 35
@@ -533,7 +533,7 @@ the test passes.
 
 ----
 
-* I remove the commented lines from :ref:`the factory function<test person factory>`
+* I remove the commented lines from the :ref:`factory function<test person factory>`
 
   .. code-block:: python
     :linenos:
@@ -550,7 +550,7 @@ the test passes.
 
     def joe():
 
-* I comment out the call to ``joe`` in :ref:`test_joe` because I no longer need it since :ref:`the factory function<test person factory>` does the same thing
+* I comment out the call to ``joe`` in :ref:`test_joe` because I no longer need it since the :ref:`factory function<test person factory>` does the same thing
 
   .. code-block:: python
     :lineno-start: 27
@@ -827,7 +827,7 @@ the test passes.
 
 ----
 
-* I comment out the call to ``jane`` in :ref:`test_jane` because I no longer need it since :ref:`the factory function<test person factory>` does the same thing
+* I comment out the call to ``jane`` in :ref:`test_jane` because I no longer need it since the :ref:`factory function<test person factory>` does the same thing
 
   .. code-block:: python
     :lineno-start: 46
@@ -1066,7 +1066,7 @@ the test passes.
 
 ----
 
-* I change the call in :ref:`test_john` to a call to :ref:`the factory function<test person factory>`
+* I change the call in :ref:`test_john` to a call to the :ref:`factory function<test person factory>`
 
   .. code-block:: python
     :lineno-start: 65
@@ -1412,7 +1412,7 @@ the test passes.
 
     def test_joe():
 
-  :ref:`the factory function<test person factory>` can make a string_ for any person I want when I give it the first name, last name, sex and year of birth.
+  the :ref:`factory function<test person factory>` can make a string_ for any person I want when I give it the first name, last name, sex and year of birth.
 
 * I open a new terminal_ then change directories to ``person``
 
@@ -1440,7 +1440,7 @@ the test passes.
 
 * I go back to the terminal_ where the tests are running
 
-* I change ``reality`` for :ref:`test_joe` to be the result of a call to :ref:`the factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to :ref:`the factory function<test person factory>` in ``test_person.py``
+* I change ``reality`` for :ref:`test_joe` to be the result of a call to the :ref:`factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`factory function<test person factory>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -1520,7 +1520,7 @@ the test passes.
     # AttributeError
 
 * I open ``person.py`` from the ``src`` folder_
-* I delete all the text in the file_ then add a copy of :ref:`the factory function<test person factory>` to ``person.py``
+* I delete all the text in the file_ then add a copy of the :ref:`factory function<test person factory>` to ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -1538,7 +1538,7 @@ the test passes.
   the test passes because
 
   - when ``import src.person`` runs, Python_ brings in an :ref:`object<what is a class?>` for the ``person.py`` file_ from the ``src`` folder_ so I can use it in ``test_person.py`` as ``src.person``
-  - when ``src.person.factory`` is called, Python_ calls :ref:`the factory function<test person factory>` from the :ref:`object<what is a class?>` it imported for the ``person.py`` file_ from the ``src`` folder_ (``src.person``)
+  - when ``src.person.factory`` is called, Python_ calls the :ref:`factory function<test person factory>` from the :ref:`object<what is a class?>` it imported for the ``person.py`` file_ from the ``src`` folder_ (``src.person``)
 
   I think of ``src.person.factory`` like an address
 
@@ -1593,7 +1593,7 @@ the test passes.
 
     def test_jane():
 
-* I change ``reality`` for :ref:`test_jane` to be the result of a call to :ref:`the factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``reality`` for :ref:`test_jane` to be the result of a call to the :ref:`factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 33
@@ -1649,7 +1649,7 @@ the test passes.
 
     def test_john():
 
-* I change ``reality`` for :ref:`test_john` to be the result of a call to :ref:`the factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``reality`` for :ref:`test_john` to be the result of a call to the :ref:`factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 52
@@ -1705,7 +1705,7 @@ the test passes.
 
     def test_mary():
 
-* I do the same thing to the call to :ref:`the factory function<test person factory>` in :ref:`test_mary`
+* I do the same thing to the call to the :ref:`factory function<test person factory>` in :ref:`test_mary`
 
   .. code-block:: python
     :lineno-start: 71
@@ -1765,7 +1765,7 @@ the test passes.
     # TypeError
     # AttributeError
 
-* I remove :ref:`the factory function<test person factory>` from ``test_person.py``
+* I remove the :ref:`factory function<test person factory>` from ``test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -1794,7 +1794,7 @@ the test passes.
 
     def test_jane():
 
-  all the tests are still green because the calls that were made to :ref:`the factory function<test person factory>` that was in ``test_person.py`` are now to :ref:`the factory function<test person factory>` in ``person.py`` in the ``src`` folder_. When ``src.person.factory`` is called, Python_ follows this path
+  all the tests are still green because the calls that were made to the :ref:`factory function<test person factory>` that was in ``test_person.py`` are now to the :ref:`factory function<test person factory>` in ``person.py`` in the ``src`` folder_. When ``src.person.factory`` is called, Python_ follows this path
 
   .. code-block:: shell
 
@@ -3172,9 +3172,9 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     AssertionError: assert 'mary, public, F, 2000'
                         == 'john, smith, M, 1580'
 
-  because :ref:`the factory function<test person factory>` always returns ``'mary, public, F, 2000'`` and this test expects ``'john, smith, M, 1580'``.
+  because the :ref:`factory function<test person factory>` always returns ``'mary, public, F, 2000'`` and this test expects ``'john, smith, M, 1580'``.
 
-* I change the :ref:`return statement<the return statement>` of :ref:`the factory function<test person factory>` to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
+* I change the :ref:`return statement<the return statement>` of the :ref:`factory function<test person factory>` to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
 
   .. code-block:: python
     :lineno-start: 13
@@ -3407,7 +3407,7 @@ review
     * ``last_name``
     * ``year_of_birth``
 
-    There has to be `a better way<how to make a person with a class>`, where I can give those values once, and get a representation for a person when I call :ref:`the factory function<test person factory>` and a message when I call the :ref:`say_hello function<test say_hello function>`.
+    There has to be `a better way<how to make a person with a class>`, where I can give those values once, and get a representation for a person when I call the :ref:`factory function<test person factory>` and a message when I call the :ref:`say_hello function<test say_hello function>`.
 
 For now, I am going to :ref:`clean up the functions project<separate and equal functions>` so the tests and solutions are in separate files.
 

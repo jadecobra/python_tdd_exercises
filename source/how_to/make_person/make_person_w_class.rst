@@ -1508,15 +1508,15 @@ what is the staticmethod decorator?
 
     and the result is ``'Hello, my name is joe blow and I am 30.'``
 
-  - a simple way to think of ``joe.say_hello()``
+  - a simple way to think of ``joe.say_hello()`` is
 
     .. code-block:: python
 
-      joe.say_hello() == Person().say_hello(joe)
+      joe.say_hello() == Person().say_hello()
+      joe.say_hello() == joe.say_hello(Person())
       joe.say_hello() == joe.say_hello(joe)
 
-    I do not need to pass ``joe`` as input to the :ref:`say_hello method<test say_hello method>` because
-
+    I do not need to pass ``joe`` as input to the :ref:`say_hello method<test say_hello method>` since it is ``self``.
 
 * I remove ``person=jane`` from the call to the :ref:`say_hello method<test say_hello method>` in :ref:`test_jane` because the :ref:`say_hello method<test say_hello method>` is in the :ref:`Person class<test Person class>`
 
@@ -1709,7 +1709,17 @@ what is the staticmethod decorator?
               f' {2026-mary.year_of_birth}.'
           )
 
-  and the result is ``'Hello, my name is mary public and I am 26.'``
+    and the result is ``'Hello, my name is mary public and I am 26.'``
+
+  - a simple way to think of ``mary.say_hello()``
+
+    .. code-block:: python
+
+      mary.say_hello() == Person().say_hello()
+      mary.say_hello() == mary.say_hello(Person())
+      mary.say_hello() == mary.say_hello(mary)
+
+    I do not need to pass ``mary`` as input to the :ref:`say_hello method<test say_hello method>` since it is ``self``.
 
 * I add a git_ commit message in the other terminal_
 
@@ -1734,7 +1744,7 @@ separate and equal Person class
 
 * I go back to the terminal_ where the tests are running
 
-* I change ``reality`` for :ref:`test_mary` to be the result of a call to :ref:`the Person class<test person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to :ref:`the person class<test person class>` in ``test_person.py``
+* I change ``mary`` in :ref:`test_mary` to be the result of a call to the :ref:`Person class<test person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`Person class<test person class>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 196
@@ -2321,7 +2331,7 @@ separate and equal Person class
     # AttributeError
     # SyntaxError
 
-* I change ``reality`` for :ref:`test_john` to be the result of a call to :ref:`the Person class<test person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``john`` in :ref:`test_john` to be the result of a call to the :ref:`Person class<test person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 154
@@ -2525,9 +2535,18 @@ separate and equal Person class
         first_name, last_name, year_of_birth
     ):
 
-  the test is still green.
+  the test is still green because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument which means
 
-* I remove the commented lines
+  .. code-block:: python
+
+    instance = Person()
+    instance.say_hello() == Person().say_hello()
+    instance.say_hello() == instance.say_hello(Person())
+    instance.say_hello() == instance.say_hello(instance)
+
+  I do not need to pass the :ref:`instance<how to test if something is an instance of a class>` as input to the :ref:`say_hello method<test say_hello method>` since it is ``self``.
+
+* I remove the commented lines from the :ref:`Person class<test Person class>` in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -2557,8 +2576,803 @@ separate and equal Person class
 * I remove the commented lines from :ref:`test_john` in ``test_person.py``
 
   .. code-block:: python
+    :lineno-start: 136
+
+    def test_john():
+        first_name = 'john'
+        last_name = 'smith'
+        sex = 'M'
+        year_of_birth = 1580
+
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+        reality = src.person.say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+        john = src.person.Person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+        reality = john.say_hello()
+        assert reality == my_expectation
 
 
+    def test_mary():
+
+* I change ``jane`` in :ref:`test_jane` to be the result of a call to the :ref:`Person class<test person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+
+  .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 13-14
+
+        reality = src.person.say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+        # jane = Person(
+        jane = src.person.Person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+        # reality = Person.say_hello(
+        reality = jane.say_hello(
+            # person=jane,
+            # first_name=jane.first_name,
+            # last_name=jane.last_name,
+            # year_of_birth=jane.year_of_birth,
+        )
+        assert reality == my_expectation
+
+
+    def test_john():
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 89
+
+    def test_jane():
+        first_name = 'jane'
+        last_name = 'doe'
+        sex = 'F'
+        year_of_birth = 1991
+
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+        reality = src.person.say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+        jane = src.person.Person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+        reality = jane.say_hello()
+        assert reality == my_expectation
+
+
+    def test_john():
+
+* I change ``joe`` in :ref:`test_joe` to be the result of a call to the :ref:`Person class<test person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 13-14
+
+        reality = src.person.say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+        # joe = Person(
+        joe = src.person.Person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+        # reality = src.person.say_hello(
+        # reality = Person.say_hello(
+        reality = joe.say_hello(
+            # person=joe,
+            # first_name=joe.first_name,
+            # last_name=joe.last_name,
+            # year_of_birth=joe.year_of_birth,
+        )
+        assert reality == my_expectation
+
+
+    def test_jane():
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 41
+
+    def test_joe():
+        first_name = 'joe'
+        last_name = 'blow'
+        sex = 'M'
+        year_of_birth = 1996
+
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+        reality = src.person.say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+
+        joe = src.person.Person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+        reality = joe.say_hello()
+        assert reality == my_expectation
+
+
+    def test_jane():
+
+* I remove the :ref:`Person class<test Person class>` from ``test_person.py``
+
+  .. code-block:: python
+
+    import src.person
+
+
+    def test_joe():
+
+  all the tests are still green because the calls that were made to the :ref:`Person class<test Person class>` that was in ``test_person.py`` are now to the :ref:`Person class<test Person class>` in ``person.py`` in the ``src`` folder_. When ``src.person.Person`` is called, Python_ follows this path
+
+  .. code-block:: shell
+
+    src
+    └── person.py
+        └── class Person:
+
+                def __init__(
+                    self, first_name, last_name,
+                    sex, year_of_birth
+                ):
+                    self.first_name = first_name
+                    self.last_name = last_name
+                    self.year_of_birth = year_of_birth
+
+                def say_hello(self):
+                    return (
+                        f'Hello, my name is {self.first_name}'
+                        f' {self.last_name} and I am'
+                        f' {2026-self.year_of_birth}.'
+                    )
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move Person class to person.py'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+:ref:`I can write solutions in a different module from the tests<separate and equal>`.
+
+----
+
+*********************************************************************************
+test_attributes_and_methods_of_person_instance
+*********************************************************************************
+
+Python has the `dir built-in function`_ which shows the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<everything is an object>` it is given in parentheses. It allows me to see what makes up an :ref:`object<everything is an object>` without looking at the code or reading the documentation. I can then run tests to see what each thing does.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
+* I add a new test with the `dir built-in function`_ in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 81
+    :emphasize-lines: 9-12
+
+            reality = a_random_person.say_hello()
+            my_expectation = (
+                f'Hello, my name is {self.random_first_name}'
+                f' {self.random_last_name}'
+                f' and I am {self.age}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+        def test_attributes_and_methods_of_person_class(self):
+            reality = dir(src.person.Person)
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ:
+        ['__class__', '__delattr__', '__dict__',
+         '[377 chars]llo']
+     != None
+
+  because dir_ returned a :ref:`list <what is a list?>` (anything in square brackets ``[ ]``) and ``my_expectation`` is :ref:`None<what is None?>`
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
+
+  .. code-block:: python
+    :lineno-start: 89
+    :emphasize-lines: 3-7
+
+        def test_attributes_and_methods_of_person_class(self):
+            reality = dir(src.person.Person)
+            # my_expectation = None
+            my_expectation = [
+                '__class__', '__delattr__', '__dict__',
+                [371 chars]llo'
+            ]
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows SyntaxError_
+
+  .. code-block:: python
+
+    E       [371 chars]llo'
+    E                     ^
+    E   SyntaxError: unterminated string literal
+                     (detected at line 94)
+
+  because I have a closing :ref:`quote<quotes>` (``'``) without a matching opening one and :ref:`enclosures must be closed once open<enclosures>`
+
+* I add the opening :ref:`quote<quotes>`
+
+  .. code-block:: python
+    :lineno-start: 89
+    :emphasize-lines: 6
+
+        def test_attributes_and_methods_of_person_class(self):
+            reality = dir(src.person.Person)
+            # my_expectation = None
+            my_expectation = [
+                '__class__', '__delattr__', '__dict__',
+                '[371 chars]llo'
+            ]
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ:
+        ['__c[32 chars]_', '__dir__', '__doc__', '__eq__',
+         '__firstli[329 chars]llo']
+     != ['__c[32 chars]_', '[371 chars]llo']
+
+  it shows me the entire :ref:`list<what is a list?>` below the message
+
+* I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
+
+  .. code-block:: python
+    :lineno-start: 89
+    :emphasize-lines: 4-37
+    :emphasize-text: __init__ say_hello
+
+        def test_attributes_and_methods_of_person_class(self):
+            reality = dir(src.person.Person)
+            # my_expectation = None
+            # my_expectation = [
+            #     '__class__', '__delattr__', '__dict__',
+            #     '[371 chars]llo'
+            # ]
+            my_expectation = E       - ['__class__',
+    E       -  '__delattr__',
+    E       -  '__dict__',
+    E       -  '__dir__',
+    E       -  '__doc__',
+    E       -  '__eq__',
+    E       -  '__firstlineno__',
+    E       -  '__format__',
+    E       -  '__ge__',
+    E       -  '__getattribute__',
+    E       -  '__getstate__',
+    E       -  '__gt__',
+    E       -  '__hash__',
+    E       -  '__init__',
+    E       -  '__init_subclass__',
+    E       -  '__le__',
+    E       -  '__lt__',
+    E       -  '__module__',
+    E       -  '__ne__',
+    E       -  '__new__',
+    E       -  '__reduce__',
+    E       -  '__reduce_ex__',
+    E       -  '__repr__',
+    E       -  '__setattr__',
+    E       -  '__sizeof__',
+    E       -  '__static_attributes__',
+    E       -  '__str__',
+    E       -  '__subclasshook__',
+    E       -  '__weakref__',
+    E       -  'say_hello']
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'E' is not defined
+
+* I use the ``find and replace`` feature of the `Integrated Development Environment (IDE)`_ to remove the extra characters, then remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 89
+    :emphasize-lines: 3-34
+    :emphasize-text: __init__ say_hello
+
+        def test_attributes_and_methods_of_person_class(self):
+            reality = dir(src.person.Person)
+            my_expectation = [
+                '__class__',
+                '__delattr__',
+                '__dict__',
+                '__dir__',
+                '__doc__',
+                '__eq__',
+                '__firstlineno__',
+                '__format__',
+                '__ge__',
+                '__getattribute__',
+                '__getstate__',
+                '__gt__',
+                '__hash__',
+                '__init__',
+                '__init_subclass__',
+                '__le__',
+                '__lt__',
+                '__module__',
+                '__ne__',
+                '__new__',
+                '__reduce__',
+                '__reduce_ex__',
+                '__repr__',
+                '__setattr__',
+                '__sizeof__',
+                '__static_attributes__',
+                '__str__',
+                '__subclasshook__',
+                '__weakref__',
+                'say_hello',
+            ]
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  - the test passes.
+  - the ``__init__`` and ``say_hello`` :ref:`methods<what is a method?>` I defined are in the list
+  - there are names in the list that I did not define, which leads to the question of :ref:`where did they come from?<family ties>`
+  - The attributes I defined in the ``__init__`` :ref:`method<what is a method?>` are not in the list, because the test called dir_ on ``src.person.Person`` which is the :ref:`class<what is a class?>`, not an instance (copy) of the class
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_attributes_and_methods_of_person_class'
+
+
+----
+
+*********************************************************************************
+test_attributes_and_methods_of_person_class
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a test for the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of an instance/copy of the ``Person`` :ref:`class<what is a class?>` to see the difference between it and the original
+
+.. code-block:: python
+  :lineno-start: 118
+  :emphasize-lines: 8-14, 16-49
+
+              '__str__',
+              '__subclasshook__',
+              '__weakref__',
+              'say_hello',
+          ]
+          self.assertEqual(reality, my_expectation)
+
+      def test_attributes_and_methods_of_person_instance(self):
+          an_instance_of_person = src.person.Person(
+              first_name=self.random_first_name,
+              last_name=self.random_last_name,
+              year_of_birth=self.random_year_of_birth,
+              sex=pick_one('F', 'M')
+          )
+
+          reality = dir(an_instance_of_person)
+          my_expectation = [
+              '__class__',
+              '__delattr__',
+              '__dict__',
+              '__dir__',
+              '__doc__',
+              '__eq__',
+              '__firstlineno__',
+              '__format__',
+              '__ge__',
+              '__getattribute__',
+              '__getstate__',
+              '__gt__',
+              '__hash__',
+              '__init__',
+              '__init_subclass__',
+              '__le__',
+              '__lt__',
+              '__module__',
+              '__ne__',
+              '__new__',
+              '__reduce__',
+              '__reduce_ex__',
+              '__repr__',
+              '__setattr__',
+              '__sizeof__',
+              '__static_attributes__',
+              '__str__',
+              '__subclasshook__',
+              '__weakref__',
+              'say_hello',
+          ]
+          self.assertEqual(reality, my_expectation)
+
+
+  # Exceptions
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  AssertionError: Lists differ:
+      ['__c[393 chars]ef__', 'first_name', 'last_name',
+        'say_hello', 'year_of_birth']
+   != ['__c[393 chars]ef__', 'say_hello']
+
+because ``first_name``, ``last_name`` and ``year_of_birth`` are missing. Why is there no ``sex``?
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add the missing :ref:`attributes<what is an attribute?>` to ``my_expectation``
+
+.. code-block:: python
+  :lineno-start: 133
+  :emphasize-lines: 32-33, 35
+
+          reality = dir(an_instance_of_person)
+          my_expectation = [
+              '__class__',
+              '__delattr__',
+              '__dict__',
+              '__dir__',
+              '__doc__',
+              '__eq__',
+              '__firstlineno__',
+              '__format__',
+              '__ge__',
+              '__getattribute__',
+              '__getstate__',
+              '__gt__',
+              '__hash__',
+              '__init__',
+              '__init_subclass__',
+              '__le__',
+              '__lt__',
+              '__module__',
+              '__ne__',
+              '__new__',
+              '__reduce__',
+              '__reduce_ex__',
+              '__repr__',
+              '__setattr__',
+              '__sizeof__',
+              '__static_attributes__',
+              '__str__',
+              '__subclasshook__',
+              '__weakref__',
+              'first_name',
+              'last_name',
+              'say_hello',
+              'year_of_birth',
+          ]
+          self.assertEqual(reality, my_expectation)
+
+
+  # Exceptions seen
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add ``sex`` to the list
+
+  .. code-block:: python
+    :lineno-start: 133
+    :emphasize-lines: 35
+
+            reality = dir(an_instance_of_person)
+            my_expectation = [
+                '__class__',
+                '__delattr__',
+                '__dict__',
+                '__dir__',
+                '__doc__',
+                '__eq__',
+                '__firstlineno__',
+                '__format__',
+                '__ge__',
+                '__getattribute__',
+                '__getstate__',
+                '__gt__',
+                '__hash__',
+                '__init__',
+                '__init_subclass__',
+                '__le__',
+                '__lt__',
+                '__module__',
+                '__ne__',
+                '__new__',
+                '__reduce__',
+                '__reduce_ex__',
+                '__repr__',
+                '__setattr__',
+                '__sizeof__',
+                '__static_attributes__',
+                '__str__',
+                '__subclasshook__',
+                '__weakref__',
+                'first_name',
+                'last_name',
+                'say_hello',
+                'sex',
+                'year_of_birth',
+            ]
+            self.assertEqual(reality, my_expectation)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ:
+        ['__c[400 chars]'first_name', 'last_name',
+         'say_hello', 'year_of_birth']
+     != ['__c[400 chars]'first_name', 'last_name',
+         'say_hello', 'sex', 'year_of_birth']
+
+  the ``sex`` :ref:`attribute<what is a class attribute?>` is not defined anywhere in the ``Person`` :ref:`class<what is a class?>`
+
+* I add ``self.sex`` to the ``__init__`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 21
+
+        # pass
+        # def __init__():
+        # def __init__(first_name):
+        # def __init__(self, first_name):
+        # def __init__(self, first_name, last_name):
+        def __init__(
+            # self, first_name, last_name,
+            # self, first_name, last_name=None,
+            self, first_name, last_name='doe',
+            # year_of_birth,
+            # year_of_birth, sex,
+            # year_of_birth, sex=None,
+            year_of_birth=None, sex=None,
+        ):
+            # first_name = first_name
+            self.first_name = first_name
+            # last_name = last_name
+            self.last_name = last_name
+            # year_of_birth = year_of_birth
+            self.year_of_birth = year_of_birth
+            self.sex = sex
+            return None
+
+  the test passes
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    import datetime
+
+
+    def calculate_age(year_of_birth):
+        return (
+            datetime.datetime.today().year
+          - year_of_birth
+        )
+
+
+    def say_hello(a_dictionary):
+        return (
+            f'Hello, my name is {a_dictionary.get("first_name")}'
+            f' {a_dictionary.get("last_name")}'
+            f' and I am {a_dictionary.get("age")}'
+        )
+
+
+    def factory(
+            first_name, year_of_birth,
+            last_name='doe', sex='M',
+        ):
+        return {
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            'age': calculate_age(year_of_birth),
+        }
+
+
+    class Person:
+
+        def __init__(
+            self, first_name, last_name='doe',
+            year_of_birth=None, sex=None,
+        ):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.year_of_birth = year_of_birth
+            self.sex = sex
+            return None
+
+        def say_hello(self):
+            age = calculate_age(self.year_of_birth)
+            return (
+                f'Hello, my name is {self.first_name}'
+                f' {self.last_name}'
+                f' and I am {age}'
+            )
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_attributes_and_methods_of_person_instance'
 
 ----
 
@@ -2609,7 +3423,7 @@ review
     * ``last_name``
     * ``year_of_birth``
 
-    There has to be a better way, where I can give those values once, and get a representation for a person when I call :ref:`the factory function<test person factory>` and a message when I call the :ref:`say_hello function<test say_hello function>`.
+    There has to be a better way, where I can give those values once, and get a representation for a person when I call the :ref:`factory function<test person factory>` and a message when I call the :ref:`say_hello function<test say_hello function>`.
 
 For now, I am going to :ref:`clean up the functions project<separate and equal functions>` so the tests and solutions are in separate files.
 
