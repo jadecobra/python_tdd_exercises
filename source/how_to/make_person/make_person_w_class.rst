@@ -335,7 +335,7 @@ because there is no definition for ``Person`` in ``test_person.py``.
     def test_joe():
 
   - ``self`` is Python_ convention, I can use any name I want.
-  - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Person.__init__()``, ``self`` is ``Person`` inside ``Person``. It would be like calling ``Person.__init__(Person)``.
+  - ``self`` is the :ref:`instance of the class<what is a class?>`.
   - The terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     .. code-block:: shell
@@ -364,7 +364,7 @@ because there is no definition for ``Person`` in ``test_person.py``.
           )
 
     which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows two arguments (``self`` and ``first_name``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
-  - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Person.__init__()``, ``self`` is ``Person`` inside ``Person``. It would be like calling ``Person.__init__(Person)``.
+  - ``self`` is the :ref:`instance of the class<what is a class?>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
   - I have seen this before, so far it is the same as making the :ref:`factory function<test person factory>`.
 
@@ -413,7 +413,7 @@ because there is no definition for ``Person`` in ``test_person.py``.
           )
 
     which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows three arguments (``self``,  ``first_name`` and ``last_name``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
-  - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Person.__init__()``, ``self`` is ``Person`` inside ``Person``. It would be like calling ``Person.__init__(Person)``.
+  - ``self`` is the :ref:`instance of the class<what is a class?>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
   - Still the same as making the :ref:`factory function<test person factory>`.
 
@@ -465,7 +465,7 @@ because there is no definition for ``Person`` in ``test_person.py``.
           )
 
     which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows three arguments (``self``,  ``first_name``, ``last_name`` and ``sex``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
-  - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Person.__init__()``, ``self`` is ``Person`` inside ``Person``. It would be like calling ``Person.__init__(Person)``.
+  - ``self`` is the :ref:`instance of the class<what is a class?>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
   - Same as with the :ref:`factory function<test person factory>`.
 
@@ -706,7 +706,7 @@ I made a person :ref:`say hi with a function<test say_hi function>`, I can also 
           Person.__init__(
               self,
               first_name='joe',
-              last_name= 'blow',
+              last_name='blow',
               sex='M',
               year_of_birth=1996,
           )
@@ -714,9 +714,9 @@ I made a person :ref:`say hi with a function<test say_hi function>`, I can also 
               self.last_name = 'blow'
               self.year_of_birth = 1996
 
-    ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Person.__init__()``, ``self`` is ``Person`` inside ``Person``. It would be like calling ``Person.__init__(Person)``.
+    ``self`` is the :ref:`instance of the class<what is a class?>`.
 
-  - when ``reality = src.person.say_hi(first_name=joe.first_name, last_name=joe.last_name,year_of_birth=joe.year_of_birth)`` runs
+  - When ``reality = src.person.say_hi(first_name=joe.first_name, last_name=joe.last_name,year_of_birth=joe.year_of_birth)`` runs
 
     .. code-block:: python
 
@@ -1134,7 +1134,7 @@ I made a person :ref:`say hi with a function<test say_hi function>`, I can also 
           Person.__init__(
               self,
               first_name='joe',
-              last_name= 'blow',
+              last_name='blow',
               sex='M',
               year_of_birth=1996,
           )
@@ -1142,9 +1142,9 @@ I made a person :ref:`say hi with a function<test say_hi function>`, I can also 
               self.last_name = 'blow'
               self.year_of_birth = 1996
 
-    ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Person.__init__()``, ``self`` is ``Person`` inside ``Person``. It would be like calling ``Person.__init__(Person)``.
+    ``self`` is the :ref:`instance of the class<what is a class?>` aka ``joe``.
 
-  - when ``reality = Person.say_hi(person=joe, first_name=joe.first_name, last_name=joe.last_name,year_of_birth=joe.year_of_birth)`` runs
+  - When ``reality = Person.say_hi(person=joe, first_name=joe.first_name, last_name=joe.last_name,year_of_birth=joe.year_of_birth)`` runs
 
     .. code-block:: python
 
@@ -1449,60 +1449,61 @@ what is the staticmethod decorator?
             self, person=None
         ):
 
-  the test passes.
+  the test passes because
 
-* I remove the commented lines from :ref:`test_joe`
+  - given
 
-  .. code-block:: python
-    :lineno-start: 41
+    .. code-block:: python
 
-    def test_joe():
-        first_name = 'joe'
-        last_name = 'blow'
-        sex = 'M'
-        year_of_birth = 1996
+      first_name = 'joe'
+      last_name = 'blow'
+      sex = 'M'
+      year_of_birth = 1996
 
-        reality = src.person.factory(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
+  - when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
 
-        reality = src.person.say_hi(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'Hi, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
-        assert reality == my_expectation
+    .. code-block:: python
 
-        joe = Person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
+      joe = Person(
+          first_name=first_name,
+          last_name=last_name,
+          sex=sex,
+          year_of_birth=year_of_birth,
+      )
+          Person.__init__(
+              self,
+              first_name='joe',
+              last_name='blow',
+              sex='M',
+              year_of_birth=1996,
+          )
+              self.first_name = 'joe'
+              self.last_name = 'blow'
+              self.year_of_birth = 1996
 
-        reality = joe.say_hi()
-        assert reality == my_expectation
+    ``self`` is the :ref:`instance of the class<what is a class?>` aka ``joe``.
 
+  - When ``reality = joe.say_hi()`` runs
 
-    def test_jane():
+    .. code-block:: python
+
+      reality = joe.say_hi()
+          return (
+              f'Hi, my name is {self.first_name}'
+              f' {self.last_name} and I am'
+              f' {2026-self.year_of_birth}.'
+          )
+          # inside joe, self == joe
+          return (
+              f'Hi, my name is {joe.first_name}'
+              f' {joe.last_name} and I am'
+              f' {2026-joe.year_of_birth}.'
+          )
 
 * I remove ``person=jane`` from the call to the :ref:`say_hi method<test say_hi method>` in :ref:`test_jane` because the :ref:`say_hi method<test say_hi method>` is in the :ref:`Person class<test Person class>`
 
   .. code-block:: python
-    :lineno-start: 119
+    :lineno-start: 126
     :emphasize-lines: 3
 
         # reality = Person.say_hi(
@@ -1519,58 +1520,10 @@ what is the staticmethod decorator?
 
   the test is still green.
 
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 82
-
-    def test_jane():
-        first_name = 'jane'
-        last_name = 'doe'
-        sex = 'F'
-        year_of_birth = 1991
-
-        reality = src.person.factory(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
-        reality = src.person.say_hi(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'Hi, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
-        assert reality == my_expectation
-
-        jane = Person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-
-        reality = jane.say_hi()
-        assert reality == my_expectation
-
-
-    def test_john():
-
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_john` for the :ref:`say_hi method<test say_hi method>`
 
   .. code-block:: python
-    :lineno-start: 141
+    :lineno-start: 154
     :emphasize-lines: 13-18, 20-21
 
         reality = src.person.say_hi(
@@ -1609,7 +1562,7 @@ what is the staticmethod decorator?
 * I change my expectation to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 153
+    :lineno-start: 166
     :emphasize-lines: 9-10
 
         john = Person(
@@ -1628,58 +1581,10 @@ what is the staticmethod decorator?
 
   the test passes.
 
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 123
-
-    def test_john():
-        first_name = 'john'
-        last_name = 'smith'
-        sex = 'M'
-        year_of_birth = 1580
-
-        reality = src.person.factory(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
-        reality = src.person.say_hi(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'Hi, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
-        assert reality == my_expectation
-
-        john = Person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-
-        reality = john.say_hi()
-        assert reality == my_expectation
-
-
-    def test_mary():
-
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_mary` for the :ref:`say_hi method<test say_hi method>`
 
   .. code-block:: python
-    :lineno-start: 182
+    :lineno-start: 196
     :emphasize-lines: 13-18, 20-21
 
         reality = src.person.say_hi(
@@ -1718,7 +1623,7 @@ what is the staticmethod decorator?
 * I change my expectation to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 194
+    :lineno-start: 208
     :emphasize-lines: 9-10
 
         mary = Person(
@@ -1735,7 +1640,56 @@ what is the staticmethod decorator?
 
     # Exceptions seen
 
-  the test passes.
+  the test passes because
+
+  - given
+
+    .. code-block:: python
+
+      first_name = 'mary'
+      last_name = 'public'
+      sex = 'F'
+      year_of_birth = 2000
+
+  - when ``mary = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
+
+    .. code-block:: python
+
+      mary = Person(
+          first_name=first_name,
+          last_name=last_name,
+          sex=sex,
+          year_of_birth=year_of_birth,
+      )
+          Person.__init__(
+              self,
+              first_name='mary',
+              last_name='public',
+              sex='F',
+              year_of_birth=2000,
+          )
+              self.first_name = 'mary'
+              self.last_name = 'public'
+              self.year_of_birth = 2000
+
+    ``self`` is the :ref:`instance of the class<what is a class?>` aka ``mary``.
+
+  - When ``reality = mary.say_hi()`` runs
+
+    .. code-block:: python
+
+      reality = mary.say_hi()
+          return (
+              f'Hi, my name is {self.first_name}'
+              f' {self.last_name} and I am'
+              f' {2026-self.year_of_birth}.'
+          )
+          # inside mary, self == mary
+          return (
+              f'Hi, my name is {mary.first_name}'
+              f' {mary.last_name} and I am'
+              f' {2026-mary.year_of_birth}.'
+          )
 
 * I remove the commented line
 
@@ -1784,36 +1738,6 @@ what is the staticmethod decorator?
 
 
     # Exceptions seen
-    # AssertionError
-    # NameError
-    # TypeError
-    # AttributeError
-
-* I remove the commented lines and ``person=None`` from the :ref:`say_hi method<test say_hi method>`
-
-  .. code-block:: python
-    :lineno-start: 4
-
-    class Person:
-
-        def __init__(
-            self, first_name, last_name,
-            year_of_birth, sex
-        ):
-            self.first_name = first_name
-            self.last_name = last_name
-            self.year_of_birth = year_of_birth
-            return None
-
-        def say_hi(self):
-            return (
-                f'Hi, my name is {self.first_name}'
-                f' {self.last_name} and I am'
-                f' {2026-self.year_of_birth}.'
-            )
-
-
-    def test_joe():
 
 * I add a git_ commit message in the other terminal_
 
@@ -1823,20 +1747,40 @@ what is the staticmethod decorator?
     git commit -am 'add say_hi method'
 
 ----
-BOOM
-----
+
+*********************************************************************************
+separate and equal Person class
+*********************************************************************************
 
 ----
-BOOM
-----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
 
 ----
-BOOM
-----
 
-----
-BOOM
-----
+* I go back to the terminal_ where the tests are running
+
+* I change ``reality`` for :ref:`test_mary` to be the result of a call to :ref:`the Person class<test person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to :ref:`the person class<test person class>` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 194
+    :emphasize-lines: 1-2
+
+        # mary = Person(
+        mary = src.person.Person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+        reality = mary.say_hi()
+        assert reality == my_expectation
+
+
+    # Exceptions seen
 
 *********************************************************************************
 test_person
