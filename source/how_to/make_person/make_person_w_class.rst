@@ -295,7 +295,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
     which raises :ref:`TypeError<what causes TypeError?>` because the :ref:`definition<how to make a function>` for ``__init__`` does not allow calling it with inputs (the parentheses are empty) and the test sends four :ref:`keyword arguments<test_keyword_arguments>` as input.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
 
-* I add the name in parentheses so that the ``__init__`` :ref:`constructor method<the constructor method>` can take input
+* I add the name in parentheses so that the :ref:`__init__ constructor method<the constructor method>` can take input
 
   .. code-block:: python
     :lineno-start: 4
@@ -423,7 +423,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
   - Still the same as making the :ref:`factory function<test person factory>`.
 
-* I add ``year_of_birth`` to the :ref:`definition<how to make a function>` of the ``__init__`` :ref:`method<what is a method?>`
+* I add ``year_of_birth`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ method<the constructor method>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -475,7 +475,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
   - Same as with the :ref:`factory function<test person factory>`.
 
-* I add ``sex`` to the :ref:`definition<how to make a function>` of the ``__init__`` :ref:`constructor method<the constructor method>`
+* I add ``sex`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ constructor method<the constructor method>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -593,7 +593,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
 ----
 
-* I add ``self.first_name`` to the :ref:`definition<how to make a function>` of the ``__init__`` :ref:`constructor method<the constructor method>`
+* I add ``self.first_name`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ constructor method<the constructor method>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -613,7 +613,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
   the terminal_ still shows :ref:`AttributeError<what causes AttributeError?>` because this is just a reference to the name, not a definition.
 
-* I point ``self.first_name`` to the value for ``first_name`` when the ``__init__`` :ref:`method<what is a method?>` is called
+* I point ``self.first_name`` to the value for ``first_name`` when the :ref:`__init__ method<the constructor method>` is called
 
   .. code-block:: python
     :lineno-start: 4
@@ -640,7 +640,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
                     has no attribute 'last_name'.
                     Did you mean: 'first_name'?
 
-* I add ``self.last_name`` and point it to the value for ``last_name`` when the ``__init__`` :ref:`method<what is a method?>` is called
+* I add ``self.last_name`` and point it to the value for ``last_name`` when the :ref:`__init__ method<the constructor method>` is called
 
   .. code-block:: python
     :lineno-start: 4
@@ -667,7 +667,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
     AttributeError: 'Person' object
                     has no attribute 'year_of_birth'
 
-* I add ``self.year_of_birth`` and point it to the value for ``year_of_birth`` when the ``__init__`` :ref:`constructor method<the constructor method>` is called
+* I add ``self.year_of_birth`` and point it to the value for ``year_of_birth`` when the :ref:`__init__ constructor method<the constructor method>` is called
 
   .. code-block:: python
     :lineno-start: 4
@@ -2429,7 +2429,7 @@ separate and equal Person class
 
   because I have not defined a :ref:`class attribute<what is a class attribute?>` named ``first_name``.
 
-* I add ``self.first_name`` to the ``__init__`` :ref:`constructor method<the constructor method>`
+* I add ``self.first_name`` to the :ref:`__init__ constructor method<the constructor method>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -2461,7 +2461,7 @@ separate and equal Person class
 
   because I have not defined a :ref:`class attribute<what is a class attribute?>` named ``last_name``.
 
-* I add ``self.last_name`` to the ``__init__`` :ref:`constructor method<the constructor method>`
+* I add ``self.last_name`` to the :ref:`__init__ constructor method<the constructor method>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -2488,7 +2488,7 @@ separate and equal Person class
 
   because I have not defined a :ref:`class attribute<what is a class attribute?>` named ``year_of_birth``.
 
-* I add ``self.year_of_birth`` to the ``__init__`` :ref:`constructor method<the constructor method>`
+* I add ``self.year_of_birth`` to the :ref:`__init__ constructor method<the constructor method>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -2545,33 +2545,6 @@ separate and equal Person class
     instance.say_hello() == instance.say_hello(instance)
 
   I do not need to pass the :ref:`instance<how to test if something is an instance of a class>` as input to the :ref:`say_hello method<test say_hello method>` since it is ``self``.
-
-* I remove the commented lines from the :ref:`Person class<test Person class>` in ``person.py``
-
-  .. code-block:: python
-    :linenos:
-
-    class Person:
-
-        def __init__(
-            self, first_name, last_name,
-            sex, year_of_birth
-        ):
-            self.first_name = first_name
-            self.last_name = last_name
-            self.year_of_birth = year_of_birth
-
-        def say_hello(self):
-            return (
-                f'Hello, my name is {self.first_name}'
-                f' {self.last_name} and I am'
-                f' {2026-self.year_of_birth}.'
-            )
-
-
-    def say_hello(
-        first_name, last_name, year_of_birth
-    ):
 
 * I remove the commented lines from :ref:`test_john` in ``test_person.py``
 
@@ -2845,7 +2818,7 @@ separate and equal Person class
 ----
 
 *********************************************************************************
-test_attributes_and_methods_of_person_instance
+test_attributes_and_methods_of_person_class
 *********************************************************************************
 
 Python has the `dir built-in function`_ which shows the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<everything is an object>` it is given in parentheses. It allows me to see what makes up an :ref:`object<everything is an object>` without looking at the code or reading the documentation. I can then run tests to see what each thing does.
@@ -2863,21 +2836,23 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 * I add a new test with the `dir built-in function`_ in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 9-12
+    :lineno-start: 157
+    :emphasize-lines: 11-14
 
-            reality = a_random_person.say_hello()
-            my_expectation = (
-                f'Hello, my name is {self.random_first_name}'
-                f' {self.random_last_name}'
-                f' and I am {self.age}'
-            )
-            self.assertEqual(reality, my_expectation)
+        mary = src.person.Person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
 
-        def test_attributes_and_methods_of_person_class(self):
-            reality = dir(src.person.Person)
-            my_expectation = None
-            self.assertEqual(reality, my_expectation)
+        reality = mary.say_hello()
+        assert reality == my_expectation
+
+    def test_attributes_and_methods_of_person_class():
+        reality = dir(src.person.Person)
+        my_expectation = None
+        assert reality == my_expectation
 
 
     # Exceptions seen
@@ -2886,12 +2861,12 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 
   .. code-block:: python
 
-    AssertionError: Lists differ:
-        ['__class__', '__delattr__', '__dict__',
-         '[377 chars]llo']
-     != None
+    AssertionError:
+        assert ['__class__', '__delattr__', '__dict__',
+                '__dir__', '__doc__', '__eq__', ...]
+            == None
 
-  because dir_ returned a :ref:`list <what is a list?>` (anything in square brackets ``[ ]``) and ``my_expectation`` is :ref:`None<what is None?>`
+  because dir_ returned a :ref:`list <what is a list?>` (anything in square brackets ``[ ]``) and ``my_expectation`` is :ref:`None<what is None?>`.
 
 ----
 
@@ -2904,166 +2879,200 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
   .. code-block:: python
-    :lineno-start: 89
+    :lineno-start: 167
     :emphasize-lines: 3-7
 
-        def test_attributes_and_methods_of_person_class(self):
-            reality = dir(src.person.Person)
-            # my_expectation = None
-            my_expectation = [
-                '__class__', '__delattr__', '__dict__',
-                [371 chars]llo'
-            ]
-            self.assertEqual(reality, my_expectation)
+    def test_attributes_and_methods_of_person_class():
+        reality = dir(src.person.Person)
+        # my_expectation = None
+        my_expectation = [
+            '__class__', '__delattr__', '__dict__',
+            '__dir__', '__doc__', '__eq__', ...
+        ]
+        assert reality == my_expectation
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows SyntaxError_
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    E       [371 chars]llo'
-    E                     ^
-    E   SyntaxError: unterminated string literal
-                     (detected at line 94)
+    E         AssertionError:
+                  assert ['__class__',...'__eq__', ...]
+                      == ['__class__',...'__eq__', ...]
+    E
+    E         At index 6 diff: '__firstlineno__' != Ellipsis
+    E         Left contains 23 more items,
+                  first extra item: '__format__'
+    E         Use -v to get more diff
 
-  because I have a closing :ref:`quote<quotes>` (``'``) without a matching opening one and :ref:`enclosures must be closed once open<enclosures>`
-
-* I add the opening :ref:`quote<quotes>`
-
-  .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 6
-
-        def test_attributes_and_methods_of_person_class(self):
-            reality = dir(src.person.Person)
-            # my_expectation = None
-            my_expectation = [
-                '__class__', '__delattr__', '__dict__',
-                '[371 chars]llo'
-            ]
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend and shows :ref:`AssertionError<what causes AssertionError?>`
+* I click in the terminal_ where the tests are running then press :kbd:`v` on the keyboard for `pytest-watcher`_ to show me more of the difference between ``reality`` and ``my_expectation`` and it shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: Lists differ:
-        ['__c[32 chars]_', '__dir__', '__doc__', '__eq__',
-         '__firstli[329 chars]llo']
-     != ['__c[32 chars]_', '[371 chars]llo']
+    E         ...Full output truncated (31 lines hidden),
+                 use '-vv' to show
 
-  it shows me the entire :ref:`list<what is a list?>` below the message
+* I press :kbd:`w` on the keyboard in the terminal_ where the tests are running, to show the menu for `pytest-watcher`_ and it shows
+
+  .. code-block:: python
+    :emphasize-lines: 2, 10
+
+    [pytest-watcher]
+    Current runner args: [-v]
+
+    Controls:
+    > Enter : Invoke test runner
+    > r     : reset all runner args
+    > c     : change runner args
+    > f     : run only failed tests (--lf)
+    > p     : drop to pdb on fail (--pdb)
+    > v     : increase verbosity (-v)
+    > e     : Erase terminal screen
+    > q     : quit pytest-watcher
+
+* I press :kbd:`c` on the keyboard to change runner args, and the terminal_ shows
+
+  .. code-block:: python
+    :emphasize-lines: 7, 14
+
+    [pytest-watcher]
+    Current runner args: []
+
+    Controls:
+    > Enter : Invoke test runner
+    > r     : reset all runner args
+    > c     : change runner args
+    > f     : run only failed tests (--lf)
+    > p     : drop to pdb on fail (--pdb)
+    > v     : increase verbosity (-v)
+    > e     : Erase terminal screen
+    > q     : quit pytest-watcher
+
+    Enter new runner args: -vv
+
+* I press :kbd:`-+v+v` on the keyboard then press :kbd:`enter` to show the full difference, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        assert [
+            '__class__', '__delattr__', '__dict__', '__dir__',
+            '__doc__', '__eq__', '__firstlineno__', '__format__',
+            '__ge__', '__getattribute__', '__getstate__', '__gt__',
+            '__hash__', '__init__', '__init_subclass__', '__le__',
+            '__lt__', '__module__', '__ne__', '__new__', '__reduce__',
+            '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__',
+            '__static_attributes__', '__str__', '__subclasshook__',
+            '__weakref__', 'say_hello'
+        ]
+     == [
+            '__class__', '__delattr__', '__dict__', '__dir__',
+            '__doc__', '__eq__', Ellipsis
+        ]
+
+  it shows me the entire :ref:`list<what is a list?>`.
 
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
   .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 4-37
+    :lineno-start: 167
+    :emphasize-lines: 4-39
     :emphasize-text: __init__ say_hello
 
-        def test_attributes_and_methods_of_person_class(self):
-            reality = dir(src.person.Person)
-            # my_expectation = None
-            # my_expectation = [
-            #     '__class__', '__delattr__', '__dict__',
-            #     '[371 chars]llo'
-            # ]
-            my_expectation = E       - ['__class__',
-    E       -  '__delattr__',
-    E       -  '__dict__',
-    E       -  '__dir__',
-    E       -  '__doc__',
-    E       -  '__eq__',
-    E       -  '__firstlineno__',
-    E       -  '__format__',
-    E       -  '__ge__',
-    E       -  '__getattribute__',
-    E       -  '__getstate__',
-    E       -  '__gt__',
-    E       -  '__hash__',
-    E       -  '__init__',
-    E       -  '__init_subclass__',
-    E       -  '__le__',
-    E       -  '__lt__',
-    E       -  '__module__',
-    E       -  '__ne__',
-    E       -  '__new__',
-    E       -  '__reduce__',
-    E       -  '__reduce_ex__',
-    E       -  '__repr__',
-    E       -  '__setattr__',
-    E       -  '__sizeof__',
-    E       -  '__static_attributes__',
-    E       -  '__str__',
-    E       -  '__subclasshook__',
-    E       -  '__weakref__',
-    E       -  'say_hello']
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'E' is not defined
-
-* I use the ``find and replace`` feature of the `Integrated Development Environment (IDE)`_ to remove the extra characters, then remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 3-34
-    :emphasize-text: __init__ say_hello
-
-        def test_attributes_and_methods_of_person_class(self):
-            reality = dir(src.person.Person)
-            my_expectation = [
-                '__class__',
-                '__delattr__',
-                '__dict__',
-                '__dir__',
-                '__doc__',
-                '__eq__',
-                '__firstlineno__',
-                '__format__',
-                '__ge__',
-                '__getattribute__',
-                '__getstate__',
-                '__gt__',
-                '__hash__',
-                '__init__',
-                '__init_subclass__',
-                '__le__',
-                '__lt__',
-                '__module__',
-                '__ne__',
-                '__new__',
-                '__reduce__',
-                '__reduce_ex__',
-                '__repr__',
-                '__setattr__',
-                '__sizeof__',
-                '__static_attributes__',
-                '__str__',
-                '__subclasshook__',
-                '__weakref__',
-                'say_hello',
-            ]
-            self.assertEqual(reality, my_expectation)
+    def test_attributes_and_methods_of_person_class():
+        reality = dir(src.person.Person)
+        # my_expectation = None
+        # my_expectation = [
+        #     '__class__', '__delattr__', '__dict__',
+        #     '__dir__', '__doc__', '__eq__', ...
+        # ]
+        my_expectation = [
+            '__class__',
+            '__delattr__',
+            '__dict__',
+            '__dir__',
+            '__doc__',
+            '__eq__',
+            '__firstlineno__',
+            '__format__',
+            '__ge__',
+            '__getattribute__',
+            '__getstate__',
+            '__gt__',
+            '__hash__',
+            '__init__',
+            '__init_subclass__',
+            '__le__',
+            '__lt__',
+            '__module__',
+            '__ne__',
+            '__new__',
+            '__reduce__',
+            '__reduce_ex__',
+            '__repr__',
+            '__setattr__',
+            '__sizeof__',
+            '__static_attributes__',
+            '__str__',
+            '__subclasshook__',
+            '__weakref__',
+            'say_hello'
+        ]
+        assert reality == my_expectation
 
 
     # Exceptions seen
 
   - the test passes.
-  - the ``__init__`` and ``say_hello`` :ref:`methods<what is a method?>` I defined are in the list
-  - there are names in the list that I did not define, which leads to the question of :ref:`where did they come from?<family ties>`
-  - The attributes I defined in the ``__init__`` :ref:`method<what is a method?>` are not in the list, because the test called dir_ on ``src.person.Person`` which is the :ref:`class<what is a class?>`, not an instance (copy) of the class
+  - The :ref:`__init__<the constructor method>` and :ref:`say_hello methods<test say_hello method>` I defined are in the :ref:`list of attributes and methods<test_attributes_and_methods_of_person_class>`.
+  - There are names in the :ref:`list<what is a list?>` that I did not define, which leads to the question of :ref:`where did they come from?<everything is an object>`
+  - The :ref:`attributes<what is a class attribute?>` I defined in the :ref:`__init__ method<the constructor method>` are not in the :ref:`list<what is a list?>`, because the test called dir_ on ``src.person.Person`` which is the :ref:`class<what is a class?>`, not :ref:`an instance of the class<how to test if something is an instance of a class>`.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 167
+
+    def test_attributes_and_methods_of_person_class():
+        reality = dir(src.person.Person)
+        my_expectation = [
+            '__class__',
+            '__delattr__',
+            '__dict__',
+            '__dir__',
+            '__doc__',
+            '__eq__',
+            '__firstlineno__',
+            '__format__',
+            '__ge__',
+            '__getattribute__',
+            '__getstate__',
+            '__gt__',
+            '__hash__',
+            '__init__',
+            '__init_subclass__',
+            '__le__',
+            '__lt__',
+            '__module__',
+            '__ne__',
+            '__new__',
+            '__reduce__',
+            '__reduce_ex__',
+            '__repr__',
+            '__setattr__',
+            '__sizeof__',
+            '__static_attributes__',
+            '__str__',
+            '__subclasshook__',
+            '__weakref__',
+            'say_hello'
+        ]
+        assert reality == my_expectation
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -3077,7 +3086,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 ----
 
 *********************************************************************************
-test_attributes_and_methods_of_person_class
+test_attributes_and_methods_of_person_instance
 *********************************************************************************
 
 ----
@@ -3088,73 +3097,93 @@ test_attributes_and_methods_of_person_class
 
 ----
 
-I add a test for the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of an instance/copy of the ``Person`` :ref:`class<what is a class?>` to see the difference between it and the original
+I add a test to see the difference between the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of :ref:`an instance of a class<how to test if something is an instance of a class>` and the actual :ref:`class<what is a class?>`
 
 .. code-block:: python
-  :lineno-start: 118
+  :lineno-start: 196
   :emphasize-lines: 8-14, 16-49
 
-              '__str__',
-              '__subclasshook__',
-              '__weakref__',
-              'say_hello',
-          ]
-          self.assertEqual(reality, my_expectation)
+            '__str__',
+            '__subclasshook__',
+            '__weakref__',
+            'say_hello'
+        ]
+        assert reality == my_expectation
 
-      def test_attributes_and_methods_of_person_instance(self):
-          an_instance_of_person = src.person.Person(
-              first_name=self.random_first_name,
-              last_name=self.random_last_name,
-              year_of_birth=self.random_year_of_birth,
-              sex=pick_one('F', 'M')
-          )
+    def test_attributes_and_methods_of_person_instance():
+        an_instance_of_person = src.person.Person(
+            first_name='first_name',
+            last_name='last_name',
+            sex='M',
+            year_of_birth=2026,
+        )
 
-          reality = dir(an_instance_of_person)
-          my_expectation = [
-              '__class__',
-              '__delattr__',
-              '__dict__',
-              '__dir__',
-              '__doc__',
-              '__eq__',
-              '__firstlineno__',
-              '__format__',
-              '__ge__',
-              '__getattribute__',
-              '__getstate__',
-              '__gt__',
-              '__hash__',
-              '__init__',
-              '__init_subclass__',
-              '__le__',
-              '__lt__',
-              '__module__',
-              '__ne__',
-              '__new__',
-              '__reduce__',
-              '__reduce_ex__',
-              '__repr__',
-              '__setattr__',
-              '__sizeof__',
-              '__static_attributes__',
-              '__str__',
-              '__subclasshook__',
-              '__weakref__',
-              'say_hello',
-          ]
-          self.assertEqual(reality, my_expectation)
+        reality = dir(an_instance_of_person)
+        my_expectation = [
+            '__class__',
+            '__delattr__',
+            '__dict__',
+            '__dir__',
+            '__doc__',
+            '__eq__',
+            '__firstlineno__',
+            '__format__',
+            '__ge__',
+            '__getattribute__',
+            '__getstate__',
+            '__gt__',
+            '__hash__',
+            '__init__',
+            '__init_subclass__',
+            '__le__',
+            '__lt__',
+            '__module__',
+            '__ne__',
+            '__new__',
+            '__reduce__',
+            '__reduce_ex__',
+            '__repr__',
+            '__setattr__',
+            '__sizeof__',
+            '__static_attributes__',
+            '__str__',
+            '__subclasshook__',
+            '__weakref__',
+            'say_hello'
+        ]
+        assert reality == my_expectation
 
 
-  # Exceptions
+    # Exceptions seen
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
+  :emphasize-lines: 11
+  :emphasize-text: first_name last_name year_of_birth
 
-  AssertionError: Lists differ:
-      ['__c[393 chars]ef__', 'first_name', 'last_name',
-        'say_hello', 'year_of_birth']
-   != ['__c[393 chars]ef__', 'say_hello']
+  AssertionError:
+      assert [
+          '__class__', '__delattr__', '__dict__', '__dir__',
+          '__doc__', '__eq__', '__firstlineno__', '__format__',
+          '__ge__', '__getattribute__', '__getstate__', '__gt__',
+          '__hash__', '__init__', '__init_subclass__', '__le__',
+          '__lt__', '__module__', '__ne__', '__new__', '__reduce__',
+          '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__',
+          '__static_attributes__', '__str__', '__subclasshook__',
+          '__weakref__',
+          'first_name', 'last_name', 'say_hello', 'year_of_birth'
+      ]
+   == [
+          '__class__', '__delattr__', '__dict__', '__dir__',
+          '__doc__', '__eq__', '__firstlineno__', '__format__',
+          '__ge__', '__getattribute__', '__getstate__', '__gt__',
+          '__hash__', '__init__', '__init_subclass__', '__le__',
+          '__lt__', '__module__', '__ne__', '__new__', '__reduce__',
+          '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__',
+          '__static_attributes__', '__str__', '__subclasshook__',
+          '__weakref__', 'say_hello'
+      ]
 
 because ``first_name``, ``last_name`` and ``year_of_birth`` are missing. Why is there no ``sex``?
 
@@ -3166,49 +3195,57 @@ because ``first_name``, ``last_name`` and ``year_of_birth`` are missing. Why is 
 
 ----
 
-I add the missing :ref:`attributes<what is an attribute?>` to ``my_expectation``
+I add the missing :ref:`attributes<what is a class attribute?>` to ``my_expectation``
 
 .. code-block:: python
   :lineno-start: 133
-  :emphasize-lines: 32-33, 35
+  :emphasize-lines: 40-41, 43
 
-          reality = dir(an_instance_of_person)
-          my_expectation = [
-              '__class__',
-              '__delattr__',
-              '__dict__',
-              '__dir__',
-              '__doc__',
-              '__eq__',
-              '__firstlineno__',
-              '__format__',
-              '__ge__',
-              '__getattribute__',
-              '__getstate__',
-              '__gt__',
-              '__hash__',
-              '__init__',
-              '__init_subclass__',
-              '__le__',
-              '__lt__',
-              '__module__',
-              '__ne__',
-              '__new__',
-              '__reduce__',
-              '__reduce_ex__',
-              '__repr__',
-              '__setattr__',
-              '__sizeof__',
-              '__static_attributes__',
-              '__str__',
-              '__subclasshook__',
-              '__weakref__',
-              'first_name',
-              'last_name',
-              'say_hello',
-              'year_of_birth',
-          ]
-          self.assertEqual(reality, my_expectation)
+  def test_attributes_and_methods_of_person_instance():
+      an_instance_of_person = src.person.Person(
+          first_name='first_name',
+          last_name='last_name',
+          sex='M',
+          year_of_birth=2026,
+      )
+
+      reality = dir(an_instance_of_person)
+      my_expectation = [
+          '__class__',
+          '__delattr__',
+          '__dict__',
+          '__dir__',
+          '__doc__',
+          '__eq__',
+          '__firstlineno__',
+          '__format__',
+          '__ge__',
+          '__getattribute__',
+          '__getstate__',
+          '__gt__',
+          '__hash__',
+          '__init__',
+          '__init_subclass__',
+          '__le__',
+          '__lt__',
+          '__module__',
+          '__ne__',
+          '__new__',
+          '__reduce__',
+          '__reduce_ex__',
+          '__repr__',
+          '__setattr__',
+          '__sizeof__',
+          '__static_attributes__',
+          '__str__',
+          '__subclasshook__',
+          '__weakref__',
+          'first_name',
+          'last_name',
+          'say_hello',
+          'year_of_birth',
+      ]
+      assert reality == my_expectation
 
 
   # Exceptions seen
@@ -3223,148 +3260,159 @@ the test passes.
 
 ----
 
-* I add ``sex`` to the list
+* I add ``sex`` to the :ref:`list<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 133
-    :emphasize-lines: 35
+    :lineno-start: 242
+    :emphasize-lines: 5
 
-            reality = dir(an_instance_of_person)
-            my_expectation = [
-                '__class__',
-                '__delattr__',
-                '__dict__',
-                '__dir__',
-                '__doc__',
-                '__eq__',
-                '__firstlineno__',
-                '__format__',
-                '__ge__',
-                '__getattribute__',
-                '__getstate__',
-                '__gt__',
-                '__hash__',
-                '__init__',
-                '__init_subclass__',
-                '__le__',
-                '__lt__',
-                '__module__',
-                '__ne__',
-                '__new__',
-                '__reduce__',
-                '__reduce_ex__',
-                '__repr__',
-                '__setattr__',
-                '__sizeof__',
-                '__static_attributes__',
-                '__str__',
-                '__subclasshook__',
-                '__weakref__',
-                'first_name',
-                'last_name',
-                'say_hello',
-                'sex',
-                'year_of_birth',
-            ]
-            self.assertEqual(reality, my_expectation)
+            'first_name',
+            'last_name',
+            'say_hello',
+            'year_of_birth',
+            'sex'
+        ]
+        assert reality == my_expectation
+
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # AttributeError
+    # SyntaxError
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :emphasize-lines: 22
+    :emphasize-text: sex
 
-    AssertionError: Lists differ:
-        ['__c[400 chars]'first_name', 'last_name',
-         'say_hello', 'year_of_birth']
-     != ['__c[400 chars]'first_name', 'last_name',
-         'say_hello', 'sex', 'year_of_birth']
+      AssertionError:
+          assert [
+              '__class__', '__delattr__', '__dict__', '__dir__',
+              '__doc__', '__eq__', '__firstlineno__', '__format__',
+              '__ge__', '__getattribute__', '__getstate__', '__gt__',
+              '__hash__', '__init__', '__init_subclass__', '__le__',
+              '__lt__', '__module__', '__ne__', '__new__', '__reduce__',
+              '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__',
+              '__static_attributes__', '__str__', '__subclasshook__',
+              '__weakref__',
+              'first_name', 'last_name', 'say_hello', 'year_of_birth'
+          ]
+       == [
+              '__class__', '__delattr__', '__dict__', '__dir__',
+              '__doc__', '__eq__', '__firstlineno__', '__format__',
+              '__ge__', '__getattribute__', '__getstate__', '__gt__',
+              '__hash__', '__init__', '__init_subclass__', '__le__',
+              '__lt__', '__module__', '__ne__', '__new__', '__reduce__',
+              '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__',
+              '__static_attributes__', '__str__', '__subclasshook__',
+              '__weakref__', 'first_name', 'last_name', 'say_hello',
+              'year_of_birth', 'sex'
+          ]
 
-  the ``sex`` :ref:`attribute<what is a class attribute?>` is not defined anywhere in the ``Person`` :ref:`class<what is a class?>`
+  the ``sex`` :ref:`attribute<what is a class attribute?>` is not defined anywhere in the :ref:`Person class<test Person class>`.
 
-* I add ``self.sex`` to the ``__init__`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` in ``person.py``
+* I add ``self.sex`` to the :ref:`__init__ method<the constructor method>` of the :ref:`Person class<test Person class>` in ``person.py``
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 21
+    :linenos:
+    :emphasize-lines: 27
 
-        # pass
-        # def __init__():
-        # def __init__(first_name):
-        # def __init__(self, first_name):
-        # def __init__(self, first_name, last_name):
+    # Person
+    # Person = None
+    # def Person():
+    # def Person(first_name):
+    # def Person(first_name, last_name):
+    # def Person(first_name, last_name, sex):
+    # def Person(
+    # class Person(
+    #     first_name, last_name,
+    #     sex, year_of_birth,
+    # ):
+    class Person:
+
+        # say_hello
+        # say_hello = None
+
         def __init__(
-            # self, first_name, last_name,
-            # self, first_name, last_name=None,
-            self, first_name, last_name='doe',
-            # year_of_birth,
-            # year_of_birth, sex,
-            # year_of_birth, sex=None,
-            year_of_birth=None, sex=None,
+            # first_name, last_name,
+            self, first_name, last_name,
+            sex, year_of_birth
         ):
-            # first_name = first_name
+            # return None
+            # pass
             self.first_name = first_name
-            # last_name = last_name
             self.last_name = last_name
-            # year_of_birth = year_of_birth
             self.year_of_birth = year_of_birth
             self.sex = sex
-            return None
 
-  the test passes
+        # def say_hello():
+        # def say_hello(argument):
+        def say_hello(self):
+            # return None
+            # return 'Hi, my name is mary public and I am 26.'
+            # return argument
+            return (
+                # f'Hi, my name is {argument.first_name}'
+                # f' {argument.last_name} and I am'
+                # f' {2026-argument.year_of_birth}.'
+                f'Hi, my name is {self.first_name}'
+                f' {self.last_name} and I am'
+                f' {2026-self.year_of_birth}.'
+            )
+
+
+    def say_hello(
+        first_name, last_name, year_of_birth
+    ):
+
+  the test passes.
 
 * I remove the commented lines
 
   .. code-block:: python
     :linenos:
 
-    import datetime
-
-
-    def calculate_age(year_of_birth):
-        return (
-            datetime.datetime.today().year
-          - year_of_birth
-        )
-
-
-    def say_hello(a_dictionary):
-        return (
-            f'Hello, my name is {a_dictionary.get("first_name")}'
-            f' {a_dictionary.get("last_name")}'
-            f' and I am {a_dictionary.get("age")}'
-        )
-
-
-    def factory(
-            first_name, year_of_birth,
-            last_name='doe', sex='M',
-        ):
-        return {
-            'first_name': first_name,
-            'last_name': last_name,
-            'sex': sex,
-            'age': calculate_age(year_of_birth),
-        }
-
-
     class Person:
 
         def __init__(
-            self, first_name, last_name='doe',
-            year_of_birth=None, sex=None,
+            # first_name, last_name,
+            self, first_name, last_name,
+            sex, year_of_birth
         ):
             self.first_name = first_name
             self.last_name = last_name
             self.year_of_birth = year_of_birth
             self.sex = sex
-            return None
 
         def say_hello(self):
-            age = calculate_age(self.year_of_birth)
             return (
-                f'Hello, my name is {self.first_name}'
-                f' {self.last_name}'
-                f' and I am {age}'
+                f'Hi, my name is {self.first_name}'
+                f' {self.last_name} and I am'
+                f' {2026-self.year_of_birth}.'
             )
+
+
+    def say_hello(
+        first_name, last_name, year_of_birth
+    ):
+        return (
+            f'Hi, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+
+
+    def factory(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
+        return (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
 
 * I add a git_ commit message in the other terminal_
 
