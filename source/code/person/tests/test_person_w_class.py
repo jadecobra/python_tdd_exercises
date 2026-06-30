@@ -31,6 +31,16 @@ def test_joe():
     )
     assert reality == my_expectation
 
+    joe = src.person.Person(
+        first_name=first_name,
+        last_name=last_name,
+        sex=sex,
+        year_of_birth=year_of_birth,
+    )
+
+    reality = joe.say_hello()
+    assert reality == my_expectation
+
 
 def test_jane():
     first_name = 'jane'
@@ -60,6 +70,16 @@ def test_jane():
         f' {last_name} and I am'
         f' {2026-year_of_birth}.'
     )
+    assert reality == my_expectation
+
+    jane = src.person.Person(
+        first_name=first_name,
+        last_name=last_name,
+        sex=sex,
+        year_of_birth=year_of_birth,
+    )
+
+    reality = jane.say_hello()
     assert reality == my_expectation
 
 
@@ -93,6 +113,16 @@ def test_john():
     )
     assert reality == my_expectation
 
+    john = src.person.Person(
+        first_name=first_name,
+        last_name=last_name,
+        sex=sex,
+        year_of_birth=year_of_birth,
+    )
+
+    reality = john.say_hello()
+    assert reality == my_expectation
+
 
 def test_mary():
     first_name = 'mary'
@@ -124,9 +154,103 @@ def test_mary():
     )
     assert reality == my_expectation
 
+    mary = src.person.Person(
+        first_name=first_name,
+        last_name=last_name,
+        sex=sex,
+        year_of_birth=year_of_birth,
+    )
+
+    reality = mary.say_hello()
+    assert reality == my_expectation
+
+def test_attributes_and_methods_of_person_class():
+    reality = dir(src.person.Person)
+    my_expectation = [
+        '__class__',
+        '__delattr__',
+        '__dict__',
+        '__dir__',
+        '__doc__',
+        '__eq__',
+        '__firstlineno__',
+        '__format__',
+        '__ge__',
+        '__getattribute__',
+        '__getstate__',
+        '__gt__',
+        '__hash__',
+        '__init__',
+        '__init_subclass__',
+        '__le__',
+        '__lt__',
+        '__module__',
+        '__ne__',
+        '__new__',
+        '__reduce__',
+        '__reduce_ex__',
+        '__repr__',
+        '__setattr__',
+        '__sizeof__',
+        '__static_attributes__',
+        '__str__',
+        '__subclasshook__',
+        '__weakref__',
+        'say_hello'
+    ]
+    assert reality == my_expectation
+
+def test_attributes_and_methods_of_person_instance():
+    an_instance_of_person = src.person.Person(
+        first_name='first_name',
+        last_name='last_name',
+        sex='M',
+        year_of_birth=2026,
+    )
+
+    reality = dir(an_instance_of_person)
+    my_expectation = [
+        '__class__',
+        '__delattr__',
+        '__dict__',
+        '__dir__',
+        '__doc__',
+        '__eq__',
+        '__firstlineno__',
+        '__format__',
+        '__ge__',
+        '__getattribute__',
+        '__getstate__',
+        '__gt__',
+        '__hash__',
+        '__init__',
+        '__init_subclass__',
+        '__le__',
+        '__lt__',
+        '__module__',
+        '__ne__',
+        '__new__',
+        '__reduce__',
+        '__reduce_ex__',
+        '__repr__',
+        '__setattr__',
+        '__sizeof__',
+        '__static_attributes__',
+        '__str__',
+        '__subclasshook__',
+        '__weakref__',
+        'first_name',
+        'last_name',
+        'say_hello',
+        'year_of_birth',
+        'sex'
+    ]
+    assert reality == my_expectation
+
 
 # Exceptions seen
 # AssertionError
 # NameError
 # TypeError
 # AttributeError
+# SyntaxError

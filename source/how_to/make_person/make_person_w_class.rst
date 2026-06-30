@@ -3428,7 +3428,7 @@ the test passes.
 close the project
 *********************************************************************************
 
-* I close ``person.py``
+* I close ``person.py`` and ``test_person.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
@@ -3453,27 +3453,17 @@ close the project
 review
 *************************************************************************************
 
-* I ran tests to write one :ref:`function<what is a function?>` that makes a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` so I do not have to make one :ref:`function<what is a function?>` for each person.
-* I also ran tests to make another :ref:`function<what is a function?>` that uses :ref:`f-strings<what is string interpolation?>` to make a string_ that represents the person I make saying hi when I give it ``first_name``, ``last_name``, and ``year_of_birth``.
+* I ran tests to write a :ref:`class<what is a class?>` that makes a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` and has a :ref:`method<what is a method?>` so I do not have to pass the same values every time I want to do something with a person.
+
 * I saw the following :ref:`Exceptions<errors>`
 
   - :ref:`AssertionError<what causes AssertionError?>`
   - :ref:`NameError<test_catching_name_error_in_tests>`
   - :ref:`TypeError<what causes TypeError?>`
   - :ref:`AttributeError<what causes AttributeError?>`
+  - SyntaxError_
 
-* My tests and solutions have a few problems,
-
-  - Each test is basically the same two tests, there has to be a way that I can use one test for all the people.
-  - The :ref:`factory<test person factory>` and :ref:`say_hello functions<test say_hello function>` use three of the same inputs
-
-    * ``first_name``
-    * ``last_name``
-    * ``year_of_birth``
-
-    There has to be a better way, where I can give those values once, and get a representation for a person when I call the :ref:`factory function<test person factory>` and a message when I call the :ref:`say_hello function<test say_hello function>`.
-
-For now, I am going to :ref:`clean up the functions project<separate and equal functions>` so the tests and solutions are in separate files.
+* My tests have a problem, each test is now the same three tests. There has to be a way that I can use one test for all the people.
 
 ----
 
@@ -3481,7 +3471,7 @@ For now, I am going to :ref:`clean up the functions project<separate and equal f
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a person with f-strings: tests and solution>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a person with a class: tests and solution>`
 
 ----
 

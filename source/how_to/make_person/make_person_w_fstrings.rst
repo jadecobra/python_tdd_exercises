@@ -3409,7 +3409,7 @@ review
 
     There has to be `a better way<how to make a person with a class>`, where I can give those values once, and get a representation for a person when I call the :ref:`factory function<test person factory>` and a message when I call the :ref:`say_hello function<test say_hello function>`.
 
-For now, I am going to :ref:`clean up the functions project<separate and equal functions>` so the tests and solutions are in separate files.
+For now, I am going to :ref:`clean up the functions project<separate and equal functions>` so the tests and solutions are in separate files_.
 
 ----
 
