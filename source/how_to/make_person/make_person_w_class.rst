@@ -3491,7 +3491,7 @@ You know
 * :ref:`how to place values in strings<telephone>`
 * :ref:`how to make a person say hi with f-strings<how to make a person with f-strings>`
 
-:ref:`Would you like to see me separate the tests and functions in the functions project?<separate and equal functions>`
+:ref:`Would you like to test classes?<everything is an object>`
 
 ----
 
