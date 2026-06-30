@@ -2069,8 +2069,8 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   .. code-block:: python
 
-    AssertionError: assert 'Hi, my name ... and I am 30.'
-                        == 'Hi, my name ... and I am 35.'
+    AssertionError: assert 'Hello, my name ... and I am 30.'
+                        == 'Hello, my name ... and I am 35.'
 
   - because the :ref:`say_hello function<test say_hello function>` always returns ``'Hello, my name is joe blow and I am 30.'`` when it is called. It has to return a string_ based on the input it gets for me to be able to use it to make messages based on the person.
   - I need better error messages.
@@ -2102,8 +2102,8 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   .. code-block:: python
 
-    AssertionError: assert 'Hi, my name ... and I am 30.'
-                        == 'Hi, my name ... and I am 35.'
+    AssertionError: assert 'Hello, my name ... and I am 30.'
+                        == 'Hello, my name ... and I am 35.'
 
   the first names now match and I still need better error messages.
 
@@ -2135,8 +2135,8 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   .. code-block:: python
 
-    AssertionError: assert 'Hi, my name ... and I am 30.'
-                        == 'Hi, my name ... and I am 35.'
+    AssertionError: assert 'Hello, my name ... and I am 30.'
+                        == 'Hello, my name ... and I am 35.'
 
   the ages are different.
 
@@ -2213,8 +2213,8 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   .. code-block:: python
 
-    AssertionError: assert 'Hi, my name ...and I am 446.'
-                        == 'Hi, my name ...and I am 446.'
+    AssertionError: assert 'Hello, my name ...and I am 446.'
+                        == 'Hello, my name ...and I am 446.'
 
   - The first names are different.
   - I want more detail in the error messages.
@@ -2286,8 +2286,8 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   .. code-block:: python
 
-    AssertionError: assert 'Hi, my name ... and I am 26.'
-                        == 'Hi, my name ... and I am 26.'
+    AssertionError: assert 'Hello, my name ... and I am 26.'
+                        == 'Hello, my name ... and I am 26.'
 
   - The last names are different.
   - I want better messages that show as much of the difference in the summary.
@@ -3229,8 +3229,8 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
   .. code-block:: python
 
-    AssertionError: assert 'Hi, my name ... and I am 26.'
-                        == 'Hi, my name ...and I am 446.'
+    AssertionError: assert 'Hello, my name ... and I am 26.'
+                        == 'Hello, my name ...and I am 446.'
 
   because the :ref:`say_hello function<test say_hello function>` always returns ``'Hello, my name is mary public and I am 26.'`` and this test expects ``'Hello, my name is john smith and I am 446.'``
 
@@ -3293,8 +3293,8 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
   .. code-block:: python
 
-    AssertionError: assert 'Hi, my name ...nd I am 2000.'
-                        == 'Hi, my name ... and I am 26.'
+    AssertionError: assert 'Hello, my name ...nd I am 2000.'
+                        == 'Hello, my name ... and I am 26.'
 
   It looks like ``26`` is the age.
 

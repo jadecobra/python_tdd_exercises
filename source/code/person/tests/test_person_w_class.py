@@ -242,8 +242,8 @@ def test_attributes_and_methods_of_person_instance():
         'first_name',
         'last_name',
         'say_hello',
+        'sex',
         'year_of_birth',
-        'sex'
     ]
     assert reality == my_expectation
 

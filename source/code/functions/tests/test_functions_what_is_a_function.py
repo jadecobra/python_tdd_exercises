@@ -32,3 +32,8 @@ def test_constant_function():
         return 'the same thing'
 
     assert constant() == 'the same thing'
+
+
+# Exceptions seen
+# AssertionError
+# NameError

@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with f-strings. Use f-strings + one factory function (instead of one function per person) that takes first_name, last_name, sex, year_of_birth and returns 'name, surname, X, YYYY'. Add say_hello using f-strings for 'Hello, my name is ... and I am N.'. Start in the person project; uv run pytest-watcher . --now. Progressively introduce f-strings in the return, required args then keyword arguments, move factory and say_hello to src/person.py (AttributeError: module 'src.person' has no attribute 'factory'), use local variables in tests to remove repetition of the data, remove commented lines. Ends with 4 tests calling src.person.factory + src.person.say_hello + # Exceptions seen (AssertionError, NameError, TypeError, AttributeError). Shows why even with f-strings the 4 tests are repetitive. What is next: separate and equal functions. Code: person/tests/test_person_w_fstrings.py and person/solutions/person_w_fstrings.py.
-  :keywords: Jacob Itegboje, Pumping Python, how to make a person with f-strings, python f-strings, f-string factory function, one function instead of one per person, src.person, import src.person, AttributeError module 'src.person' has no attribute 'factory', TypeError missing required positional argument, uv run pytest-watcher, red green refactor f-strings, variables remove repetition in tests, first_name last_name sex year_of_birth, say_hello f-string age 2026-year_of_birth, remove the commented lines, test_joe test_jane test_john test_mary, person factory with f-strings, separate tests and solution, what is next separate and equal functions
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with a class. Use class + __init__ (the constructor method) + self to store first_name, last_name, sex, year_of_birth once; add say_hello method so you call joe.say_hello() without repeating the values. Start in person project from prior chapter; uv run pytest-watcher . --now. RED: Person(...) -> TypeError (no __init__), empty __init__ -> TypeError got unexpected keyword 'last_name', add self. attrs; GREEN: implement using f-string with self; move to src/person.py (AttributeError); use locals in tests + kw calls for factory/say_hello/Person; add dir() tests on class vs instance. REFACTOR remove commented lines. Ends with 6 tests (joe/jane/john/mary + 2 dir tests); # Exceptions seen includes SyntaxError. Review: each test repeats the same three calls; class avoids repeating the data values. Code from person/tests/test_person_w_class.py and person/solutions/person_w_class.py. What is next: test classes (everything is an object).
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with a class, python class __init__ constructor self, Person class say_hello method, src.person.Person, src.person.factory, TypeError: Person.__init__() got an unexpected keyword argument 'last_name', Did you mean, AttributeError class has no attribute 'first_name' on class vs instance, dir(src.person.Person), dir(instance), uv run pytest-watcher . --now, red green refactor class, remove the commented lines, test_joe, test_attributes_and_methods_of_person_class, test_attributes_and_methods_of_person_instance, first_name last_name sex year_of_birth, 2026 - year_of_birth, repetition of three calls per test, class groups attributes and methods, what is next everything is an object
 
 .. include:: ../../links.rst
 
@@ -8,8 +8,7 @@
 .. _classes: class_
 .. _constructor: https://grokipedia.com/page/Constructor_(object-oriented_programming)
 .. _constructor method: constructor_
-.. _staticmethod: https://docs.python.org/3/library/functions.html#staticmethod
-.. _staticmethod decorator: staticmethod_
+.. _staticmethod decorator: https://docs.python.org/3/library/functions.html#staticmethod
 
 #################################################################################
 how to make a person with a class
@@ -136,7 +135,7 @@ I made a :ref:`function<what is a function?>` that makes a string_ to represent 
 
 ----
 
-I add make a copy of a :ref:`class<what is a class?>` to represent ``joe`` in :ref:`test_joe` in ``test_person.py``
+I make a copy of a :ref:`class<what is a class?>` to represent ``joe`` in :ref:`test_joe` in ``test_person.py``
 
 .. code-block:: python
   :lineno-start:
@@ -250,7 +249,7 @@ because there is no definition for ``Person`` in ``test_person.py``.
 the constructor method
 *********************************************************************************
 
-A `constructor method`_ is used to define what happens when :ref:`an instance (a copy)`copy of a  :ref:`class<what is a class?>` is made.
+A `constructor method`_ is used to define what happens when :ref:`an instance (a copy) of a class<how to test if something is an instance of a class>` is made.
 
 * I add a `constructor method`_ to the :ref:`Person class<test Person class>` so it can take arguments
 
@@ -986,8 +985,8 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
   .. code-block:: python
 
-    AssertionError: assert 'Hi, my name ... and I am 30.'
-                        == 'Hi, my name ... and I am 35.'
+    AssertionError: assert 'Hello, my name ... and I am 30.'
+                        == 'Hello, my name ... and I am 35.'
 
 * I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>` with the input like the :ref:`say_hello function<test say_hello function>` in ``person.py`` in the ``src`` folder_
 
@@ -1041,7 +1040,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
   .. code-block:: python
     :lineno-start: 15
-    :emphasize-lines:
+    :emphasize-lines: 6
 
         # def say_hello():
         # def say_hello(first_name):
@@ -2368,8 +2367,8 @@ separate and equal Person class
 
   .. code-block:: python
 
-    AssertionError: assert 'Hi, my name ... and I am 26.'
-                        == 'Hi, my name ...and I am 446.'
+    AssertionError: assert 'Hello, my name ... and I am 26.'
+                        == 'Hello, my name ...and I am 446.'
 
 * I change :ref:`the return statement` of the :ref:`say_hello method<test say_hello method>` to return the input, in ``person.py``
 
@@ -3083,6 +3082,8 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
     'add test_attributes_and_methods_of_person_class'
 
 
+.. caution:: Your list of attributes and methods can be different because of your Python version.
+
 ----
 
 *********************************************************************************
@@ -3269,8 +3270,8 @@ the test passes.
             'first_name',
             'last_name',
             'say_hello',
+            'sex',
             'year_of_birth',
-            'sex'
         ]
         assert reality == my_expectation
 
@@ -3309,7 +3310,7 @@ the test passes.
               '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__',
               '__static_attributes__', '__str__', '__subclasshook__',
               '__weakref__', 'first_name', 'last_name', 'say_hello',
-              'year_of_birth', 'sex'
+              'sex', 'year_of_birth'
           ]
 
   the ``sex`` :ref:`attribute<what is a class attribute?>` is not defined anywhere in the :ref:`Person class<test Person class>`.
@@ -3352,13 +3353,13 @@ the test passes.
         # def say_hello(argument):
         def say_hello(self):
             # return None
-            # return 'Hi, my name is mary public and I am 26.'
+            # return 'Hello, my name is mary public and I am 26.'
             # return argument
             return (
-                # f'Hi, my name is {argument.first_name}'
+                # f'Hello, my name is {argument.first_name}'
                 # f' {argument.last_name} and I am'
                 # f' {2026-argument.year_of_birth}.'
-                f'Hi, my name is {self.first_name}'
+                f'Hello, my name is {self.first_name}'
                 f' {self.last_name} and I am'
                 f' {2026-self.year_of_birth}.'
             )
@@ -3389,7 +3390,7 @@ the test passes.
 
         def say_hello(self):
             return (
-                f'Hi, my name is {self.first_name}'
+                f'Hello, my name is {self.first_name}'
                 f' {self.last_name} and I am'
                 f' {2026-self.year_of_birth}.'
             )
@@ -3399,7 +3400,7 @@ the test passes.
         first_name, last_name, year_of_birth
     ):
         return (
-            f'Hi, my name is {first_name}'
+            f'Hello, my name is {first_name}'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
@@ -3490,8 +3491,10 @@ You know
 * :ref:`how to make functions that take input<functions that take input>`
 * :ref:`how to place values in strings<telephone>`
 * :ref:`how to make a person say hi with f-strings<how to make a person with f-strings>`
+* :ref:`how to separate tests from solutions<separate and equal functions>`
+* :ref:`how to make a person with a class<how to make a person with a class>`
 
-:ref:`Would you like to test classes?<everything is an object>`
+:ref:`Would you like to test classes<everything is an object>`
 
 ----
 

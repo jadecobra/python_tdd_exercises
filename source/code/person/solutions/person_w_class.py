@@ -12,7 +12,7 @@ class Person:
 
     def say_hello(self):
         return (
-            f'Hi, my name is {self.first_name}'
+            f'Hello, my name is {self.first_name}'
             f' {self.last_name} and I am'
             f' {2026-self.year_of_birth}.'
         )
@@ -22,7 +22,7 @@ def say_hello(
     first_name, last_name, year_of_birth
 ):
     return (
-        f'Hi, my name is {first_name}'
+        f'Hello, my name is {first_name}'
         f' {last_name} and I am'
         f' {2026-year_of_birth}.'
     )
