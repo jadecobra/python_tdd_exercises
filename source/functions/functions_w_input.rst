@@ -238,9 +238,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 because
 
-- I called ``identity`` which belongs to ``test_identity_function`` with one input (:ref:`None<what is None?>`).
+- the :ref:`call<how to call a function>` to ``identity`` which belongs to ``test_identity_function`` uses one input (:ref:`None<what is None?>`).
 - The :ref:`function definition (signature)<how to make a function that takes input>` of ``identity`` does not allow any inputs when it is called, since the parentheses are empty.
-- I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+- :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 ----
 
@@ -1450,9 +1450,9 @@ the test passes.
 
   because
 
-  - I called ``positional_arguments`` which belongs to ``test_positional_arguments`` with one input (``'first'``).
+  - the :ref:`call<how to call a function>` to ``positional_arguments`` which belongs to ``test_positional_arguments`` uses one input (``'first'``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``positional_arguments`` does not allow any inputs when it is called since the parentheses are empty.
-  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I make the :ref:`function<what is a function?>` take input by adding a name in parentheses
 
@@ -1501,9 +1501,9 @@ the test passes.
 
   because
 
-  - I called ``positional_arguments`` which belongs to ``test_positional_arguments`` with two inputs(``'first'`` and ``'last'``).
+  - the :ref:`call<how to call a function>` to ``positional_arguments`` which belongs to ``test_positional_arguments`` uses two inputs(``'first'`` and ``'last'``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``positional_arguments`` only allows one input.
-  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I make the :ref:`function<what is a function?>` take two inputs by changing the name of the first input to be clearer, and adding a name in parentheses
 
@@ -1555,7 +1555,7 @@ the test passes.
 
     AssertionError: assert None == ('first', 'last')
 
-  because when I call ``positional_arguments`` with ``'first'`` and ``'last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because when I call ``positional_arguments`` uses ``'first'`` and ``'last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
@@ -2080,9 +2080,9 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
   because
 
-  - I called ``keyword_arguments`` which belongs to ``test_keyword_arguments`` with a name (``first_input``) and a value for the name (``'first'``).
+  - the :ref:`call<how to call a function>` to ``keyword_arguments`` which belongs to ``test_keyword_arguments`` uses a name (``first_input``) and a value for the name (``'first'``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``keyword_arguments`` does not allow any inputs when it is called since the parentheses are empty.
-  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I make the :ref:`function<what is a function?>` take input by adding a name in parentheses
 
@@ -2158,9 +2158,9 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
   because
 
-  - I called ``keyword_arguments`` which belongs to ``test_keyword_arguments`` with two names (``first_input`` and ``last_input``) and values for the names (``'first'`` and ``'last'``).
+  - the :ref:`call<how to call a function>` to ``keyword_arguments`` which belongs to ``test_keyword_arguments`` uses two names (``first_input`` and ``last_input``) and values for the names (``'first'`` and ``'last'``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``keyword_arguments`` only allows one input when it is called.
-  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I make the :ref:`function<what is a function?>` take two inputs by adding another name in parentheses
 
@@ -2250,7 +2250,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
     AssertionError: assert None == ('first', 'last')
 
-  because when I call ``keyword_arguments`` with ``first_input='first'`` and ``last_input='last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution
+  because when I call ``keyword_arguments`` uses ``first_input='first'`` and ``last_input='last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution
 
   .. code-block:: python
 
@@ -3081,9 +3081,9 @@ I can call :ref:`functions<what is a function?>` with both :ref:`positional<test
 
   because
 
-  - I called ``args_and_kwargs`` which belongs to ``test_args_and_kwargs`` with a :ref:`keyword argument<test_keyword_arguments>` (``last_input='last'``).
+  - the :ref:`call<how to call a function>` to ``args_and_kwargs`` which belongs to ``test_args_and_kwargs`` uses a :ref:`keyword argument<test_keyword_arguments>` (``last_input='last'``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``args_and_kwargs`` does not allow any inputs when it is called since the parentheses are empty.
-  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I add the name in parentheses
 
@@ -3115,7 +3115,11 @@ I can call :ref:`functions<what is a function?>` with both :ref:`positional<test
         test_args_and_kwargs.<locals>.args_and_kwargs()
         got multiple values for argument 'last_input'
 
-  because the :ref:`definition<how to make a function that takes input>` for ``args_and_kwargs`` takes one argument (``last_input``), and the :ref:`assertion<what is an assertion?>` calls the :ref:`function<what is a function?>` with two arguments ``('first', last_input='last')``. How does Python_ know which value to use for ``last_input`` if I use the :ref:`position<test_positional_arguments>` and the :ref:`keyword<test_keyword_arguments>`?
+  because
+
+  - the :ref:`call<how to call a function>` to ``args_and_kwargs`` which belongs to :ref:`test_args_and_kwargs` with :ref:`positional<test_positional_arguments>` and :ref:`keyword arguments<test_keyword_arguments>` (``'first'`` and ``last_input='last'``).
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``args_and_kwargs`` takes one argument (``last_input``). How does Python_ know which value to use for ``last_input`` if I use the :ref:`position<test_positional_arguments>` and the :ref:`name<test_keyword_arguments>`?
+  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I add another name in parentheses to make it clearer
 
@@ -3143,7 +3147,7 @@ I can call :ref:`functions<what is a function?>` with both :ref:`positional<test
 
   the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because I have not fixed the problem, I gave confusing values in the call. Python_ still cannot tell the difference between the two values because I gave a :ref:`positional argument<test_positional_arguments>` which from the :ref:`function definition<how to make a function that takes input>` is ``last_input`` and I gave a value with the name ``last_input``.
 
-* The call tells it that the values for ``last_input`` are both ``'first'`` and ``'last'``, it would be like defining the :ref:`function<what is a function?>` with the same name twice
+* The call tells gives the values for ``last_input`` as both ``'first'`` and ``'last'``, it would be like defining the :ref:`function<what is a function?>` with the same name twice
 
   .. code-block:: python
     :lineno-start: 145
@@ -3184,7 +3188,7 @@ I can call :ref:`functions<what is a function?>` with both :ref:`positional<test
 
     AssertionError: assert None == ('first', 'last')
 
-  because when I call ``args_and_kwargs`` with ``'first'`` and ``last_input='last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution
+  because when I call ``args_and_kwargs`` uses ``'first'`` and ``last_input='last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution
 
   .. code-block:: python
 

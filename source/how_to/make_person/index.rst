@@ -138,7 +138,7 @@ test_joe
 
     TypeError: 'NoneType' object is not callable
 
-  because I called ``joe`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
+  because the :ref:`assertion calls<how to call a function>` ``joe`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
 
   .. code-block:: python
 
@@ -312,7 +312,7 @@ because there is no definition for ``jane`` in this file_.
 
     TypeError: 'NoneType' object is not callable
 
-  because I called ``jane`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
+  because the :ref:`assertion calls<how to call a function>` ``jane`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
 
   .. code-block:: python
 
@@ -482,7 +482,7 @@ because there is no definition for ``john`` in this file_, yet.
 
     TypeError: 'NoneType' object is not callable
 
-  because I called ``john`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
+  because the :ref:`assertion calls<how to call a function>` ``john`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
 
   .. code-block:: python
 
@@ -659,7 +659,7 @@ because there is no definition for ``mary``, it is just a name.
 
     TypeError: 'NoneType' object is not callable
 
-  because I called ``mary`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
+  because the :ref:`assertion calls<how to call a function>` ``mary`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
 
   .. code-block:: python
 

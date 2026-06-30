@@ -179,7 +179,7 @@ the test passes.
 
   - I called the :ref:`factory function<test person factory>` with zero inputs.
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has one required argument (``first_name``).
-  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I add ``'jane'`` to the call to the :ref:`factory function<test person factory>` in :ref:`test_jane`
 
@@ -283,7 +283,7 @@ the test passes.
 
   - I called the :ref:`factory function<test person factory>` with one input (``jane``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has two required arguments (``first_name`` and ``last_name``).
-  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I add ``'doe'`` to the call to the :ref:`factory function<test person factory>` in :ref:`test_jane`
 
@@ -346,7 +346,7 @@ the test passes.
 
   - I called the :ref:`factory function<test person factory>` with three :ref:`keyword arguments<test_keyword_arguments>` input (``first_name``, ``last_name`` and ``sex``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has two required arguments (``first_name`` and ``last_name``).
-  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I add ``sex`` in the parentheses of the ``factory`` :ref:`function definition<how to make a function that takes input>`
 
@@ -466,7 +466,7 @@ the test passes.
 
   - I called the :ref:`factory function<test person factory>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``sex``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has four required arguments (``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
-  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I add ``year_of_birth=1996`` to the call to the :ref:`factory function<test person factory>` in :ref:`test_jane`
 
@@ -505,7 +505,7 @@ the test passes.
 
   - I called in :ref:`test_joe` the :ref:`factory function<test person factory>` with zero arguments.
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has four required arguments (``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
-  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * Since there are more than two, I add :ref:`keyword arguments<test_keyword_arguments>` to the call to the :ref:`factory function<test person factory>` in :ref:`test_joe`
 
@@ -1921,7 +1921,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   - I called the :ref:`say_hello function<test say_hello function>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``year_of_birth``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` allows zero input, because the parentheses are empty.
-  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I add ``first_name`` in parentheses
 
@@ -1970,7 +1970,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   - I called the :ref:`say_hello function<test say_hello function>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``year_of_birth``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` allows two arguments (``first_name``, ``last_name``).
-  - I am violating the :ref:`function signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I add ``year_of_birth`` in parentheses
 

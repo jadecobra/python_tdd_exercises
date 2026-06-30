@@ -467,7 +467,7 @@ Right now, ``w_pass`` is just a name. To use a :ref:`function<what is a function
 
     TypeError: 'NoneType' object is not callable
 
-  because I called ``w_pass`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
+  because the :ref:`assertion calls<how to call a function>` ``w_pass`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
 
   .. code-block:: python
 
@@ -711,7 +711,7 @@ the test passes.
 
     TypeError: 'NoneType' object is not callable
 
-  because I called ``w_return`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
+  because the :ref:`assertion calls<how to call a function>` ``w_return`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
 
   .. code-block:: python
 
@@ -968,7 +968,7 @@ the test passes.
 
     TypeError: 'NoneType' object is not callable
 
-  because I called ``w_return_none`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
+  because the :ref:`assertion calls<how to call a function>` ``w_return_none`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
 
   .. code-block:: python
 
@@ -1282,7 +1282,7 @@ the test passes.
 
     TypeError: 'NoneType' object is not callable
 
-  because I called ``return_leaves_the_function`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
+  because the :ref:`assertion calls<how to call a function>` ``return_leaves_the_function`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
 
   .. code-block:: python
 
@@ -1579,7 +1579,7 @@ the test passes.
 
     TypeError: 'NoneType' object is not callable
 
-  because I called ``constant`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
+  because the :ref:`assertion calls<how to call a function>` ``constant`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
 
   .. code-block:: python
 
