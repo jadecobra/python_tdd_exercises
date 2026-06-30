@@ -40,10 +40,11 @@ table of contents
   make TDD manually<make_tdd/make_tdd_manually>
   what is a module?<exceptions/ModuleNotFoundError>
   make_tdd/run_tests_automatically
-  what is an assertion?<exceptions/AssertionError/index>
+  exceptions/AssertionError/index
   functions/index
   make a person with strings<how_to/make_person/index>
   functions/functions_w_input
+  exceptions/TypeError/index
   how_to/telephone/index
   make a person with f-strings<how_to/make_person/make_person_w_fstrings>
   functions/functions_w_separation

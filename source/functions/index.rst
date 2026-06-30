@@ -547,7 +547,13 @@ Right now, ``w_pass`` is just a name. To use a :ref:`function<what is a function
     # NameError
     # TypeError
 
-* I open another terminal_ then add a git_ commit message
+* I open another terminal_ then `change directory` to ``functions``
+
+  .. code-block:: python
+
+    cd functions
+
+* I add a git_ commit message
 
   .. code-block:: python
     :emphasize-lines: 1-2
