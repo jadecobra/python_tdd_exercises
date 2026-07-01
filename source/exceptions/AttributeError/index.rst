@@ -1,6 +1,6 @@
 .. meta::
-  :description: What causes AttributeError in Python? Step-by-step TDD tutorial that deliberately triggers AttributeError: module 'src.attribute_error' has no attribute 'variable_01' (and with Did you mean suggestions), type object 'AClass' has no attribute 'attribute_01', plus side-effect TypeError when calling methods defined without self (AClass.method_04(AClass) / takes 0 positional arguments but 1 was given) and SyntaxError during class vs function edits. Fix by adding 10 module variables, 10 functions, 10 class attributes and 10 methods (mixed with/without self, all returning or set to None) using bare attribute access in tests (no assert statement needed; the access itself must not raise for the test to pass). Covers uv init attribute_error, src/ package layout, import src.attribute_error, tests/__init__.py, uv add pytest-watcher, uv run pytest-watcher . --now, git commits after each RED/GREEN/REFACTOR step, that variables/functions are attributes of modules, class attributes and methods are attributes of classes, and "in Python everything is an object". Builds on AssertionError (re-uses initial test_failure with "AssertionError: True is not false") and None chapters. Part of the Pumping Python TDD book by Jacob Itegboje.
-  :keywords: Jacob Itegboje, Pumping Python, python AttributeError, what causes AttributeError, AttributeError: module 'src.attribute_error' has no attribute, AttributeError type object 'AClass' has no attribute, AttributeError Did you mean, python AttributeError fix, TDD AttributeError, red green refactor attributes, uv init attribute_error, src.attribute_error, bare attribute access unittest, no assert needed for AttributeError test, python module has no attribute, python class has no attribute, methods without self TypeError, python everything is an object, attributes of modules vs classes, class attributes tutorial, what is a method python, python TDD src layout, pytest-watcher AttributeError, AssertionError True is not false in AttributeError chapter, NameError TypeError SyntaxError alongside AttributeError, Pumping Python exceptions, python TDD for beginners AttributeError
+  :description: What causes AttributeError in Python? Step-by-step TDD tutorial that deliberately triggers AttributeError: module 'src.attribute_error' has no attribute 'variable_00' (and with "Did you mean" suggestions in later steps), plus side-effect ModuleNotFoundError: No module named 'src.attribute_error', NameError during bare name assignment in GREEN steps, and TypeError: 'NoneType' object is not callable (when a name assigned None is called as a function). Fix by adding 10 module variables (chained = None) then 10 functions (each returning the previous) in src/attribute_error.py; tests use bare attribute access and calls (no assert statement needed for the main tests; the access itself must not raise). Demonstrates that variables and functions are attributes of the module and "in Python everything is an object". Re-uses the initial test_failure from AssertionError. Covers uv init attribute_error, mkdir tests + src, tests/__init__.py, mv main.py, requirements.txt with pytest + pytest-watcher, uv add --requirement requirements.txt, uv run pytest-watcher . --now, git commit after every RED/GREEN/REFACTOR (including "remove the commented lines" on the impl), src package layout for "import src.attribute_error". Part of the Pumping Python TDD book by Jacob Itegboje.
+  :keywords: Jacob Itegboje, Pumping Python, python AttributeError, what causes AttributeError, AttributeError: module 'src.attribute_error' has no attribute, AttributeError Did you mean, python AttributeError fix, TDD AttributeError, red green refactor attributes, uv init attribute_error, src.attribute_error, bare attribute access unittest, no assert needed for AttributeError test, python module has no attribute, variables are attributes of modules, functions are attributes of modules, python everything is an object, python TDD src layout, pytest-watcher AttributeError, AssertionError True is not false, 'NoneType' object is not callable, ModuleNotFoundError No module named src, NameError name is not defined, 10 variables 10 functions, uv add --requirement, uv run pytest-watcher . --now, git commit after each step, remove the commented lines, Pumping Python exceptions, python TDD for beginners AttributeError, src package layout
 
 .. include:: ../../links.rst
 
@@ -30,12 +30,12 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../../code/attribute_error/test_attribute_error.py
+.. literalinclude:: ../../code/attribute_error/tests/test_attribute_error.py
   :language: python
   :linenos:
 
 *********************************************************************************
-questions about TypeError
+questions about AttributeError
 *********************************************************************************
 
 Questions to think about as I go through the chapter
@@ -177,7 +177,7 @@ start the project
 
 * I open ``test_attribute_error.py``
 
-* I delete all the text then add :ref:`the first failing test<test_failure>` to ``test_a.py``
+* I delete all the text then add :ref:`the first failing test<test_failure>` to ``test_attribute_error.py``
 
   .. code-block:: python
     :linenos:
@@ -539,6 +539,12 @@ test_attribute_error_w_variables
 
   the test passes because ``variable_01`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_01``.
 
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── variable_01 = variable_00
+
 * I add a statement for ``variable_02`` to ``test_attribute_error.py``
 
   .. code-block:: python
@@ -575,6 +581,12 @@ test_attribute_error_w_variables
     variable_02 = variable_01
 
   the test passes because ``variable_02`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_02``.
+
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── variable_02 = variable_01
 
 * I add a line for ``variable_03`` to ``test_attribute_error.py``
 
@@ -614,6 +626,12 @@ test_attribute_error_w_variables
     variable_03 = variable_02
 
   the test passes because ``variable_03`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_03``.
+
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── variable_03 = variable_02
 
 * I add a line for ``variable_04`` to ``test_attribute_error.py``
 
@@ -655,6 +673,12 @@ test_attribute_error_w_variables
     variable_04 = variable_03
 
   the test passes because ``variable_04`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_04``.
+
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── variable_04 = variable_03
 
 * I add a line for ``variable_05`` to ``test_attribute_error.py``
 
@@ -699,6 +723,12 @@ test_attribute_error_w_variables
 
   the test passes because ``variable_05`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_05``.
 
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── variable_05 = variable_04
+
 * I add a line for ``variable_06`` to ``test_attribute_error.py``
 
   .. code-block:: python
@@ -742,6 +772,12 @@ test_attribute_error_w_variables
     variable_06 = variable_05
 
   the test passes because ``variable_06`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_06``.
+
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── variable_06 = variable_05
 
 * I add a line for ``variable_07`` to ``test_attribute_error.py``
 
@@ -788,6 +824,12 @@ test_attribute_error_w_variables
     variable_07 = variable_06
 
   the test passes because ``variable_07`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_07``.
+
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── variable_07 = variable_06
 
 * I add a line for ``variable_08`` to ``test_attribute_error.py``
 
@@ -836,6 +878,12 @@ test_attribute_error_w_variables
     variable_08 = variable_07
 
   the test passes because ``variable_08`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_08``.
+
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── variable_08 = variable_07
 
 * I add a line for ``variable_09`` to ``test_attribute_error.py``
 
@@ -886,6 +934,12 @@ test_attribute_error_w_variables
     variable_09 = variable_08
 
   the test passes because ``variable_09`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_09``.
+
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── variable_09 = variable_08
 
 * I remove the commented lines
 
@@ -1007,6 +1061,12 @@ test_attribute_error_w_functions
 
   the test passes because ``function_00`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_00()``.
 
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── def function_00(): return variable_09
+
 ----
 
 =================================================================================
@@ -1059,6 +1119,12 @@ test_attribute_error_w_functions
 
   the test passes because ``function_01`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_01()``.
 
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── def function_01(): return function_00()
+
 * I add a :ref:`call<how to call a function>` to ``function_02`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
   .. code-block:: python
@@ -1092,6 +1158,12 @@ test_attribute_error_w_functions
     def function_02(): return function_01()
 
   the test passes because ``function_02`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_02()``.
+
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── def function_02(): return function_01()
 
 * I add a :ref:`call<how to call a function>` to ``function_03`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
@@ -1128,6 +1200,12 @@ test_attribute_error_w_functions
     def function_03(): return function_02()
 
   the test passes because ``function_03`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_03()``.
+
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── def function_03(): return function_02()
 
 * I add a :ref:`call<how to call a function>` to ``function_04`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
@@ -1166,6 +1244,12 @@ test_attribute_error_w_functions
     def function_04(): return function_03()
 
   the test passes because ``function_04`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_04()``.
+
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── def function_04(): return function_03()
 
 * I add a :ref:`call<how to call a function>` to ``function_05`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
@@ -1206,6 +1290,12 @@ test_attribute_error_w_functions
     def function_05(): return function_04()
 
   the test passes because ``function_05`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_05()``.
+
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── def function_05(): return function_04()
 
 * I add a :ref:`call<how to call a function>` to ``function_06`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
@@ -1248,6 +1338,12 @@ test_attribute_error_w_functions
     def function_06(): return function_05()
 
   the test passes because ``function_06`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_06()``.
+
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── def function_06(): return function_05()
 
 * I add a :ref:`call<how to call a function>` to ``function_07`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
@@ -1292,6 +1388,12 @@ test_attribute_error_w_functions
     def function_07(): return function_06()
 
   the test passes because ``function_07`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_07()``.
+
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── def function_07(): return function_06()
 
 * I add a :ref:`call<how to call a function>` to ``function_08`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
@@ -1338,6 +1440,12 @@ test_attribute_error_w_functions
     def function_08(): return function_07()
 
   the test passes because ``function_08`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_08()``.
+
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── def function_08(): return function_07()
 
 * I add a :ref:`call<how to call a function>` to ``function_09`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
@@ -1386,6 +1494,12 @@ test_attribute_error_w_functions
     def function_09(): return function_08()
 
   the test passes because ``function_09`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_09()``.
+
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── def function_09(): return function_08()
 
 * I add a git_ commit message in the other terminal_
 
