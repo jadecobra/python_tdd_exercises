@@ -535,7 +535,7 @@ test_attribute_error_w_variables
     # variable_00
     variable_00 = None
     # variable_01
-    variable_01 = None
+    variable_01 = variable_00
 
   the test passes because ``variable_01`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_01``.
 
@@ -571,8 +571,8 @@ test_attribute_error_w_variables
     # variable_00
     variable_00 = None
     # variable_01
-    variable_01 = None
-    variable_02 = None
+    variable_01 = variable_00
+    variable_02 = variable_01
 
   the test passes because ``variable_02`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_02``.
 
@@ -609,9 +609,9 @@ test_attribute_error_w_variables
     # variable_00
     variable_00 = None
     # variable_01
-    variable_01 = None
-    variable_02 = None
-    variable_03 = None
+    variable_01 = variable_00
+    variable_02 = variable_01
+    variable_03 = variable_02
 
   the test passes because ``variable_03`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_03``.
 
@@ -649,10 +649,10 @@ test_attribute_error_w_variables
     # variable_00
     variable_00 = None
     # variable_01
-    variable_01 = None
-    variable_02 = None
-    variable_03 = None
-    variable_04 = None
+    variable_01 = variable_00
+    variable_02 = variable_01
+    variable_03 = variable_02
+    variable_04 = variable_03
 
   the test passes because ``variable_04`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_04``.
 
@@ -691,10 +691,10 @@ test_attribute_error_w_variables
     # variable_00
     variable_00 = None
     # variable_01
-    variable_01 = None
-    variable_02 = None
-    variable_03 = None
-    variable_04 = None
+    variable_01 = variable_00
+    variable_02 = variable_01
+    variable_03 = variable_02
+    variable_04 = variable_03
     variable_05 = variable_04
 
   the test passes because ``variable_05`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_05``.
@@ -734,10 +734,10 @@ test_attribute_error_w_variables
     # variable_00
     variable_00 = None
     # variable_01
-    variable_01 = None
-    variable_02 = None
-    variable_03 = None
-    variable_04 = None
+    variable_01 = variable_00
+    variable_02 = variable_01
+    variable_03 = variable_02
+    variable_04 = variable_03
     variable_05 = variable_04
     variable_06 = variable_05
 
@@ -779,10 +779,10 @@ test_attribute_error_w_variables
     # variable_00
     variable_00 = None
     # variable_01
-    variable_01 = None
-    variable_02 = None
-    variable_03 = None
-    variable_04 = None
+    variable_01 = variable_00
+    variable_02 = variable_01
+    variable_03 = variable_02
+    variable_04 = variable_03
     variable_05 = variable_04
     variable_06 = variable_05
     variable_07 = variable_06
@@ -826,10 +826,10 @@ test_attribute_error_w_variables
     # variable_00
     variable_00 = None
     # variable_01
-    variable_01 = None
-    variable_02 = None
-    variable_03 = None
-    variable_04 = None
+    variable_01 = variable_00
+    variable_02 = variable_01
+    variable_03 = variable_02
+    variable_04 = variable_03
     variable_05 = variable_04
     variable_06 = variable_05
     variable_07 = variable_06
@@ -875,10 +875,10 @@ test_attribute_error_w_variables
     # variable_00
     variable_00 = None
     # variable_01
-    variable_01 = None
-    variable_02 = None
-    variable_03 = None
-    variable_04 = None
+    variable_01 = variable_00
+    variable_02 = variable_01
+    variable_03 = variable_02
+    variable_04 = variable_03
     variable_05 = variable_04
     variable_06 = variable_05
     variable_07 = variable_06
@@ -893,10 +893,10 @@ test_attribute_error_w_variables
     :linenos:
 
     variable_00 = None
-    variable_01 = None
-    variable_02 = None
-    variable_03 = None
-    variable_04 = None
+    variable_01 = variable_00
+    variable_02 = variable_01
+    variable_03 = variable_02
+    variable_04 = variable_03
     variable_05 = variable_04
     variable_06 = variable_05
     variable_07 = variable_06
@@ -969,7 +969,7 @@ test_attribute_error_w_functions
     variable_09 = variable_08
 
 
-    function_00 = None
+    function_00 = variable_09
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1002,8 +1002,8 @@ test_attribute_error_w_functions
     variable_09 = variable_08
 
 
-    # function_00 = None
-    def function_00(): return None
+    # function_00 = variable_09
+    def function_00(): return variable_09
 
   the test passes because ``function_00`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_00()``.
 
@@ -1023,7 +1023,7 @@ test_attribute_error_w_functions
     variable_09 = variable_08
 
 
-    def function_00(): return None
+    def function_00(): return variable_09
 
   time to make it a drill.
 
@@ -1052,27 +1052,23 @@ test_attribute_error_w_functions
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 5-6
+    :emphasize-lines: 2
 
-    def function_00():
-        return None
-
-
-    def function_01():
-        return None
+    def function_00(): return variable_09
+    def function_01(): return function_00()
 
   the test passes because ``function_01`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_01()``.
 
 * I add a :ref:`call<how to call a function>` to ``function_02`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 17
     :emphasize-lines: 4
 
-        def test_attribute_error_w_functions():
-            src.attribute_error.function_00()
-            src.attribute_error.function_01()
-            src.attribute_error.function_02()
+    def test_attribute_error_w_functions():
+        src.attribute_error.function_00()
+        src.attribute_error.function_01()
+        src.attribute_error.function_02()
 
 
     # Exceptions seen
@@ -1088,15 +1084,12 @@ test_attribute_error_w_functions
 * I add a :ref:`definition<how to make a function>` for ``function_02`` to ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 5-6
+    :lineno-start: 13
+    :emphasize-lines: 3
 
-    def function_01():
-        return None
-
-
-    def function_02():
-        return None
+    def function_00(): return variable_09
+    def function_01(): return function_00()
+    def function_02(): return function_01()
 
   the test passes because ``function_02`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_02()``.
 
@@ -1106,11 +1099,11 @@ test_attribute_error_w_functions
     :lineno-start: 17
     :emphasize-lines: 5
 
-        def test_attribute_error_w_functions():
-            src.attribute_error.function_00()
-            src.attribute_error.function_01()
-            src.attribute_error.function_02()
-            src.attribute_error.function_03()
+    def test_attribute_error_w_functions():
+        src.attribute_error.function_00()
+        src.attribute_error.function_01()
+        src.attribute_error.function_02()
+        src.attribute_error.function_03()
 
 
     # Exceptions seen
@@ -1126,15 +1119,13 @@ test_attribute_error_w_functions
 * I add a :ref:`definition<how to make a function>` for ``function_03`` to ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 5-6
+    :lineno-start: 13
+    :emphasize-lines: 4
 
-    def function_02():
-        return None
-
-
-    def function_03():
-        return None
+    def function_00(): return variable_09
+    def function_01(): return function_00()
+    def function_02(): return function_01()
+    def function_03(): return function_02()
 
   the test passes because ``function_03`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_03()``.
 
@@ -1144,12 +1135,12 @@ test_attribute_error_w_functions
     :lineno-start: 17
     :emphasize-lines: 6
 
-        def test_attribute_error_w_functions():
-            src.attribute_error.function_00()
-            src.attribute_error.function_01()
-            src.attribute_error.function_02()
-            src.attribute_error.function_03()
-            src.attribute_error.function_04()
+    def test_attribute_error_w_functions():
+        src.attribute_error.function_00()
+        src.attribute_error.function_01()
+        src.attribute_error.function_02()
+        src.attribute_error.function_03()
+        src.attribute_error.function_04()
 
 
     # Exceptions seen
@@ -1165,15 +1156,14 @@ test_attribute_error_w_functions
 * I add a :ref:`definition<how to make a function>` for ``function_04`` to ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 5-6
+    :lineno-start: 13
+    :emphasize-lines: 5
 
-    def function_03():
-        return None
-
-
-    def function_04():
-        return None
+    def function_00(): return variable_09
+    def function_01(): return function_00()
+    def function_02(): return function_01()
+    def function_03(): return function_02()
+    def function_04(): return function_03()
 
   the test passes because ``function_04`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_04()``.
 
@@ -1183,13 +1173,13 @@ test_attribute_error_w_functions
     :lineno-start: 17
     :emphasize-lines: 7
 
-        def test_attribute_error_w_functions():
-            src.attribute_error.function_00()
-            src.attribute_error.function_01()
-            src.attribute_error.function_02()
-            src.attribute_error.function_03()
-            src.attribute_error.function_04()
-            src.attribute_error.function_05()
+    def test_attribute_error_w_functions():
+        src.attribute_error.function_00()
+        src.attribute_error.function_01()
+        src.attribute_error.function_02()
+        src.attribute_error.function_03()
+        src.attribute_error.function_04()
+        src.attribute_error.function_05()
 
 
     # Exceptions seen
@@ -1205,15 +1195,15 @@ test_attribute_error_w_functions
 * I add a :ref:`definition<how to make a function>` for ``function_05`` to ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 5-6
+    :lineno-start: 13
+    :emphasize-lines: 6
 
-    def function_04():
-        return None
-
-
-    def function_05():
-        return None
+    def function_00(): return variable_09
+    def function_01(): return function_00()
+    def function_02(): return function_01()
+    def function_03(): return function_02()
+    def function_04(): return function_03()
+    def function_05(): return function_04()
 
   the test passes because ``function_05`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_05()``.
 
@@ -1223,14 +1213,14 @@ test_attribute_error_w_functions
     :lineno-start: 17
     :emphasize-lines: 8
 
-        def test_attribute_error_w_functions():
-            src.attribute_error.function_00()
-            src.attribute_error.function_01()
-            src.attribute_error.function_02()
-            src.attribute_error.function_03()
-            src.attribute_error.function_04()
-            src.attribute_error.function_05()
-            src.attribute_error.function_06()
+    def test_attribute_error_w_functions():
+        src.attribute_error.function_00()
+        src.attribute_error.function_01()
+        src.attribute_error.function_02()
+        src.attribute_error.function_03()
+        src.attribute_error.function_04()
+        src.attribute_error.function_05()
+        src.attribute_error.function_06()
 
 
     # Exceptions seen
@@ -1246,15 +1236,16 @@ test_attribute_error_w_functions
 * I add a :ref:`definition<how to make a function>` for ``function_06`` to ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 5-6
+    :lineno-start: 13
+    :emphasize-lines: 7
 
-    def function_05():
-        return None
-
-
-    def function_06():
-        return None
+    def function_00(): return variable_09
+    def function_01(): return function_00()
+    def function_02(): return function_01()
+    def function_03(): return function_02()
+    def function_04(): return function_03()
+    def function_05(): return function_04()
+    def function_06(): return function_05()
 
   the test passes because ``function_06`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_06()``.
 
@@ -1264,15 +1255,15 @@ test_attribute_error_w_functions
     :lineno-start: 17
     :emphasize-lines: 9
 
-        def test_attribute_error_w_functions():
-            src.attribute_error.function_00()
-            src.attribute_error.function_01()
-            src.attribute_error.function_02()
-            src.attribute_error.function_03()
-            src.attribute_error.function_04()
-            src.attribute_error.function_05()
-            src.attribute_error.function_06()
-            src.attribute_error.function_07()
+    def test_attribute_error_w_functions():
+        src.attribute_error.function_00()
+        src.attribute_error.function_01()
+        src.attribute_error.function_02()
+        src.attribute_error.function_03()
+        src.attribute_error.function_04()
+        src.attribute_error.function_05()
+        src.attribute_error.function_06()
+        src.attribute_error.function_07()
 
 
     # Exceptions seen
@@ -1288,15 +1279,17 @@ test_attribute_error_w_functions
 * I add a :ref:`definition<how to make a function>` for ``function_07`` to ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 5-6
+    :lineno-start: 13
+    :emphasize-lines: 8
 
-    def function_06():
-        return None
-
-
-    def function_07():
-        return None
+    def function_00(): return variable_09
+    def function_01(): return function_00()
+    def function_02(): return function_01()
+    def function_03(): return function_02()
+    def function_04(): return function_03()
+    def function_05(): return function_04()
+    def function_06(): return function_05()
+    def function_07(): return function_06()
 
   the test passes because ``function_07`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_07()``.
 
@@ -1306,16 +1299,16 @@ test_attribute_error_w_functions
     :lineno-start: 17
     :emphasize-lines: 10
 
-        def test_attribute_error_w_functions():
-            src.attribute_error.function_00()
-            src.attribute_error.function_01()
-            src.attribute_error.function_02()
-            src.attribute_error.function_03()
-            src.attribute_error.function_04()
-            src.attribute_error.function_05()
-            src.attribute_error.function_06()
-            src.attribute_error.function_07()
-            src.attribute_error.function_08()
+    def test_attribute_error_w_functions():
+        src.attribute_error.function_00()
+        src.attribute_error.function_01()
+        src.attribute_error.function_02()
+        src.attribute_error.function_03()
+        src.attribute_error.function_04()
+        src.attribute_error.function_05()
+        src.attribute_error.function_06()
+        src.attribute_error.function_07()
+        src.attribute_error.function_08()
 
 
     # Exceptions seen
@@ -1331,15 +1324,18 @@ test_attribute_error_w_functions
 * I add a :ref:`definition<how to make a function>` for ``function_08`` to ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 5-6
+    :lineno-start: 13
+    :emphasize-lines: 9
 
-    def function_07():
-        return None
-
-
-    def function_08():
-        return None
+    def function_00(): return variable_09
+    def function_01(): return function_00()
+    def function_02(): return function_01()
+    def function_03(): return function_02()
+    def function_04(): return function_03()
+    def function_05(): return function_04()
+    def function_06(): return function_05()
+    def function_07(): return function_06()
+    def function_08(): return function_07()
 
   the test passes because ``function_08`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_08()``.
 
@@ -1349,17 +1345,17 @@ test_attribute_error_w_functions
     :lineno-start: 17
     :emphasize-lines: 11
 
-        def test_attribute_error_w_functions():
-            src.attribute_error.function_00()
-            src.attribute_error.function_01()
-            src.attribute_error.function_02()
-            src.attribute_error.function_03()
-            src.attribute_error.function_04()
-            src.attribute_error.function_05()
-            src.attribute_error.function_06()
-            src.attribute_error.function_07()
-            src.attribute_error.function_08()
-            src.attribute_error.function_09()
+    def test_attribute_error_w_functions():
+        src.attribute_error.function_00()
+        src.attribute_error.function_01()
+        src.attribute_error.function_02()
+        src.attribute_error.function_03()
+        src.attribute_error.function_04()
+        src.attribute_error.function_05()
+        src.attribute_error.function_06()
+        src.attribute_error.function_07()
+        src.attribute_error.function_08()
+        src.attribute_error.function_09()
 
 
     # Exceptions seen
@@ -1375,15 +1371,19 @@ test_attribute_error_w_functions
 * I add a :ref:`definition<how to make a function>` for ``function_09`` to ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 5-6
+    :lineno-start: 13
+    :emphasize-lines: 10
 
-    def function_08():
-        return None
-
-
-    def function_09():
-        return None
+    def function_00(): return variable_09
+    def function_01(): return function_00()
+    def function_02(): return function_01()
+    def function_03(): return function_02()
+    def function_04(): return function_03()
+    def function_05(): return function_04()
+    def function_06(): return function_05()
+    def function_07(): return function_06()
+    def function_08(): return function_07()
+    def function_09(): return function_08()
 
   the test passes because ``function_09`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_09()``.
 
@@ -1395,9 +1395,7 @@ test_attribute_error_w_functions
     git commit -am \
     'add test_attribute_error_w_functions'
 
-
-* :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
-* :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
+:ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
 
 ----
 
