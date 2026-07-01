@@ -264,7 +264,7 @@ start the project
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno:
+    :linenos:
     :emphasize-lines: 2-3
 
     def test_failure():
@@ -2465,16 +2465,17 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
   I think of ``src.telephone.text`` like an address
 
+  .. code-block:: shell
+
+    src
+    └── telephone.py
+        └── def text(the_input):
+                return f'I got: {the input}'
+
   - ``text`` is something in ``telephone``, in this case it is a :ref:`function<what is a function?>` in ``telephone``
   - ``telephone`` is something in ``src``, in this case it is ``telephone.py`` (a :ref:`module<what is a module?>`) in the ``src`` folder_
   - ``src`` is something Python_ can import (a :ref:`module<what is a module?>`, `Python package`_ or folder_)
 
-    .. code-block:: shell
-
-      src
-      └── telephone.py
-          └── def text(the_input):
-                  return f'I got: {the input}'
 
 ----
 

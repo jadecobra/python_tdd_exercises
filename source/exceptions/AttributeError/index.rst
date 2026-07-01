@@ -2,7 +2,7 @@
   :description: What causes AttributeError in Python? Step-by-step TDD tutorial that deliberately triggers AttributeError: module 'src.attribute_error' has no attribute 'variable_01' (and with Did you mean suggestions), type object 'AClass' has no attribute 'attribute_01', plus side-effect TypeError when calling methods defined without self (AClass.method_04(AClass) / takes 0 positional arguments but 1 was given) and SyntaxError during class vs function edits. Fix by adding 10 module variables, 10 functions, 10 class attributes and 10 methods (mixed with/without self, all returning or set to None) using bare attribute access in tests (no assert statement needed; the access itself must not raise for the test to pass). Covers uv init attribute_error, src/ package layout, import src.attribute_error, tests/__init__.py, uv add pytest-watcher, uv run pytest-watcher . --now, git commits after each RED/GREEN/REFACTOR step, that variables/functions are attributes of modules, class attributes and methods are attributes of classes, and "in Python everything is an object". Builds on AssertionError (re-uses initial test_failure with "AssertionError: True is not false") and None chapters. Part of the Pumping Python TDD book by Jacob Itegboje.
   :keywords: Jacob Itegboje, Pumping Python, python AttributeError, what causes AttributeError, AttributeError: module 'src.attribute_error' has no attribute, AttributeError type object 'AClass' has no attribute, AttributeError Did you mean, python AttributeError fix, TDD AttributeError, red green refactor attributes, uv init attribute_error, src.attribute_error, bare attribute access unittest, no assert needed for AttributeError test, python module has no attribute, python class has no attribute, methods without self TypeError, python everything is an object, attributes of modules vs classes, class attributes tutorial, what is a method python, python TDD src layout, pytest-watcher AttributeError, AssertionError True is not false in AttributeError chapter, NameError TypeError SyntaxError alongside AttributeError, Pumping Python exceptions, python TDD for beginners AttributeError
 
-.. include:: ../links.rst
+.. include:: ../../links.rst
 
 .. _AttributeError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError
 
@@ -10,13 +10,9 @@
 what causes AttributeError?
 #################################################################################
 
-.. raw:: html
-
-  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/4-KGDO3zMYk?si=TdPbniUMkoz0M7CI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 ----
 
-So far, all the tests show that I get AttributeError_ when I use a name that is NOT in an :ref:`object<everything is an object>`.
+AttributeError_ happens when a name that is NOT in an :ref:`object (everything in Python is an object)<everything is an object>` is used.
 
 ----
 
@@ -34,9 +30,18 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/tests/test_attribute_error.py
+.. literalinclude:: ../../code/attribute_error/test_attribute_error.py
   :language: python
   :linenos:
+
+*********************************************************************************
+questions about TypeError
+*********************************************************************************
+
+Questions to think about as I go through the chapter
+
+* :ref:`what causes AttributeError?`
+* :ref:`what is an attribute?`
 
 ----
 
@@ -46,6 +51,21 @@ start the project
 
 * I name this project ``attribute_error``
 * I open a terminal_
+* I `change directory`_ to the ``attribute_error`` folder_ in the ``pumping_python`` folder_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd attribute_error
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    cd: no such file or directory: attribute_error
+
+  there is no folder_ with the name ``attribute_error`` in this folder_.
+
 * I use uv_ to make a directory_ for the project and initialize it
 
   .. code-block:: python
@@ -75,38 +95,6 @@ start the project
 
     .../pumping_python/attribute_error
 
-* I use mkdir_ to make a folder_ named ``src``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    mkdir src
-
-  the terminal_ goes back to the command line.
-
-* I use the `mv program`_ to change the name of ``main.py`` to ``attribute_error.py`` and move it to the ``src`` folder_
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        mv main.py src/attribute_error.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        Move-Item main.py src/attribute_error.py
-
-  the terminal_ goes back to the command line.
-
 * I `make a directory`_ for the tests
 
   .. code-block:: shell
@@ -126,7 +114,7 @@ start the project
     .. tab-item:: WSL/Linux/Mac
       :sync: unix
 
-      .. code-block:: shell
+      .. code-block:: python
         :emphasize-lines: 1
 
         touch tests/__init__.py
@@ -134,7 +122,7 @@ start the project
     .. tab-item:: no WSL
       :sync: no_wsl
 
-      .. code-block:: shell
+      .. code-block:: python
         :emphasize-lines: 1
 
         New-Item tests/__init__.py
@@ -149,7 +137,7 @@ start the project
     .. tab-item:: WSL/Linux/Mac
       :sync: unix
 
-      .. code-block:: shell
+      .. code-block:: python
         :emphasize-lines: 1
 
         touch tests/test_attribute_error.py
@@ -157,28 +145,46 @@ start the project
     .. tab-item:: no WSL
       :sync: no_wsl
 
-      .. code-block:: shell
+      .. code-block:: python
         :emphasize-lines: 1
 
         New-Item tests/test_attribute_error.py
 
   the terminal_ goes back to the command line.
 
+* I use the `mv program`_ to change the name of ``main.py`` to ``test_attribute_error.py`` and move it to the ``tests`` folder_
+
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        mv main.py tests/test_attribute_error.py
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        Move-Item main.py tests/test_attribute_error.py
+
+  the terminal_ goes back to the command line.
+
 * I open ``test_attribute_error.py``
 
-* I add :ref:`the first failing test<test_failure>` to ``test_attribute_error.py``
+* I delete all the text then add :ref:`the first failing test<test_failure>` to ``test_a.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1, 4, 6-7
+    :emphasize-lines: 1-2
 
-    import unittest
-
-
-    class TestAttributeError(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
+    def test_failure():
+        assert False is True
 
 * I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
 
@@ -198,6 +204,15 @@ start the project
 
   the terminal_ goes back to the command line.
 
+* I use uv_ to install `pytest-watcher`_ with the requirements file_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    uv add --requirement requirements.txt
+
+  the terminal_ shows that it installed `pytest-watcher`_ and its dependencies.
+
 * I add the new files_ and folder_ to git_ for tracking
 
   .. code-block:: python
@@ -216,15 +231,6 @@ start the project
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-* I use uv_ to install `pytest-watcher`_ with the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv add --requirement requirements.txt
-
-  the terminal_ shows that it installed `pytest-watcher`_ and its dependencies.
-
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
@@ -236,20 +242,18 @@ start the project
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :emphasize-lines: 8, 10
+    :emphasize-lines: 6, 8, 10
 
     ======================== FAILURES ========================
-    ________________ TestAttributeError.test_failure _________________
+    ______________________ test_failure ______________________
 
-    self = <tests.test_attribute_error.AttributeError testMethod=test_failure>
+        def test_failure():
+    >       assert False is True
+    E       assert False is True
 
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
-
-    tests/test_attribute_error.py:7: AssertionError
+    test_attribute_error.py:2: AssertionError
     ================ short test summary info =================
-    FAILED tests/test_attribute_error.py::TestAttributeError::test_failure - AssertionError: True is not false
+    FAILED test_attribute_error.py::test_failure - assert False is True
     =================== 1 failed in X.YZs ====================
 
   because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`
@@ -264,14 +268,12 @@ start the project
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 7-8
+    :linenos:
+    :emphasize-lines: 5-6
     :emphasize-text: AssertionError
 
-    class TestAttributeError(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
+    def test_failure():
+        assert False is True
 
 
     # Exceptions seen
@@ -280,18 +282,86 @@ start the project
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
+    :linenos:
+    :emphasize-lines: 2-3
 
-            self.assertFalse(False)
+    def test_failure():
+        # assert False is True
+        assert False is False
+
+
+    # Exceptions seen
+    # AssertionError
 
   the test passes.
+
+* I add an `import statement`_ at the top of  ``test_attribute_error.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import src.attribute_error
+
+  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+
+  .. code-block:: python
+
+    ModuleNotFoundError: No module named 'src'
+
+  because Python_ cannot find anything named ``src`` in this project.
+
+* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 3
+    :emphasize-text: ModuleNotFoundError
+
+    # Exceptions seen
+    # AssertionError
+    # ModuleNotFoundError
+
+* I open a new terminal_ then `change directories`_ to ``attribute_error``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd attribute_error
+
+* I use mkdir_ to make a folder_ named ``src`` in the project
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mkdir src
+
+* I go back to the terminal_ where the tests are running
+* I go to ``test_attribute_error.py`` and use :kbd:`ctrl/command+s` on the keyboard to run the test again. The terminal_ shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+
+  .. code-block:: python
+
+    ModuleNotFoundError: No module named 'src.attribute_error'
+
+  because there is nothing named ``attribute_error`` in the ``src`` folder_
+
+* I go to the second terminal_
+* I use touch_ to make ``attribute_error.py`` in the ``src`` folder_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch src/attribute_error.py
+
+* I go to the terminal_ where the tests are running and it shows the test is green again.
 
 ----
 
 *********************************************************************************
 test_attribute_error_w_variables
 *********************************************************************************
+
+:ref:`AttributeError<what causes AttributeError?>` happens when I use a :ref:`variable<what is a variable?>` that does not exist in an :ref:`object<what is a class?>`.
 
 ----
 
@@ -301,52 +371,48 @@ test_attribute_error_w_variables
 
 ----
 
-* I add an `import statement`_ at the top of  ``test_attribute_error.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
-
-    import src.attribute_error
-    import unittest
-
 * I change :ref:`test_failure` to ``test_attribute_error_w_variables``
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 3-4
+    :linenos:
+    :emphasize-lines: 4-5
 
-    class TestAttributeError(unittest.TestCase):
+    import src.attribute_error
 
-        def test_attribute_error_w_variables(self):
-            src.attribute_error.variable_00
+
+    def test_attribute_error_w_variables():
+        src.attribute_error.variable_00
 
 
     # Exceptions seen
 
-  I think of ``src.attribute_error.variable_00`` as an address
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-  - ``src`` is the ``src`` folder_
-  - ``src.attribute_error`` points to ``attribute_error.py`` in the ``src`` folder_
-  - ``src.attribute_error.variable_00`` points to ``variable_00`` in ``attribute_error.py`` in the ``src`` folder_
-  - since there is nothing in ``attribute_error.py`` named ``variable_00``, Python_ cannot find ``variable_00`` inside ``attribute_error.py`` and raises AttributeError_
-
-  .. code-block:: shell
+  .. code-block:: python
 
     AttributeError: module 'src.attribute_error'
                     has no attribute 'variable_00'
 
-  ``variable_00`` is NOT an attribute of ``attribute_error.py`` in the ``src`` folder_
+  because when ``src.attribute.variable_00`` runs, Python_ follows this path
+
+  .. code-block:: shell
+
+      src
+      └── attribute_error.py
+          └── variable_00 # does not exist in attribute_error.py
+
+  which raises :ref:`AttributeError<what causes AttributeError?>` since there is nothing named ``variable_00`` in ``attribute_error.py`` in the ``src`` folder_, it is empty.
 
 * I add AttributeError_ to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 3
+    :lineno-start: 8
+    :emphasize-lines: 4
     :emphasize-text: AttributeError
 
     # Exceptions seen
     # AssertionError
+    # ModuleNotFoundError
     # AttributeError
 
 ----
@@ -357,9 +423,9 @@ test_attribute_error_w_variables
 
 ----
 
-* I open ``attribute_error.py`` from the ``src`` folder_ of my `Integrated Development Environment (IDE)`_
+* I open ``attribute_error.py`` from the ``src`` folder_
 
-* I delete all the text in the file_, then add the name to ``attribute_error.py``
+* I add ``variable_00`` to ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
@@ -378,25 +444,42 @@ test_attribute_error_w_variables
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 4
+    :lineno-start: 8
+    :emphasize-lines: 5
     :emphasize-text: NameError
 
     # Exceptions seen
     # AssertionError
+    # ModuleNotFoundError
     # AttributeError
     # NameError
 
-* I point ``variable_00`` to :ref:`None<what is None?>`, in ``attribute_error.py``
+* I point ``variable_00`` to :ref:`None<what is None?>` to define it, in ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
+    # variable_00
     variable_00 = None
 
-  - the test passes because ``variable_00`` is now an :ref:`attribute/property<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_
-  - I can use it from outside the file_ with ``src.attribute_error.variable_00``
+  the test passes because
+
+  - When ``import src.attribute_error`` runs, Python_ brings in an :ref:`object<what is a class?>` for the ``attribute_error.py`` file_ from the ``src`` folder_ so I can use it in ``test_attribute_error.py`` as ``src.attribute_error``.
+  - When ``src.attribute_error.variable_00`` runs, Python_ looks at what the ``variable_00`` :ref:`variable<what is a variable?>` from the :ref:`object<what is a class?>` it imported for the ``attribute_error.py`` file_ from the ``src`` folder_ (``src.attribute_error``) points to.
+
+  I think of ``src.attribute_error.variable_00`` like an address
+
+  .. code-block:: shell
+
+    src
+    └── attribute_error.py
+        └── variable_00 = None
+
+  - ``variable_00`` is something in ``attribute_error``, in this case it is a :ref:`variable<what is a variable?>` in ``attribute_error``
+  - ``attribute_error`` is something in ``src``, in this case it is ``attribute_error.py`` (a :ref:`module<what is a module?>`) in the ``src`` folder_
+  - ``src`` is something Python_ can import (a :ref:`module<what is a module?>`, `Python package`_ or folder_)
+  - ``variable_00`` is now an :ref:`attribute/property<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_. I can use it from outside the file_ with ``src.attribute_error.variable_00``
 
 ----
 
@@ -406,15 +489,15 @@ test_attribute_error_w_variables
 
 ----
 
-* I do the same test a few more times as a drill in ``test_attribute_error.py``
+* I add a statement for ``variable_01`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 4
     :emphasize-lines: 3
 
-        def test_attribute_error_w_variables(self):
-            src.attribute_error.variable_00
-            src.attribute_error.variable_01
+    def test_attribute_error_w_variables():
+        src.attribute_error.variable_00
+        src.attribute_error.variable_01
 
 
     # Exceptions seen
@@ -427,12 +510,13 @@ test_attribute_error_w_variables
                     has no attribute 'variable_01'.
                     Did you mean: 'variable_00'?
 
-* I add the name to ``attribute_error.py``
+* I add ``variable_01`` to ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2
+    :emphasize-lines: 3
 
+    # variable_00
     variable_00 = None
     variable_01
 
@@ -446,23 +530,25 @@ test_attribute_error_w_variables
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2
+    :emphasize-lines: 3-4
 
+    # variable_00
     variable_00 = None
+    # variable_01
     variable_01 = None
 
-  the test passes.
+  the test passes because ``variable_01`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_01``.
 
-* I add another statement to ``test_attribute_error.py``
+* I add a statement for ``variable_02`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 4
     :emphasize-lines: 4
 
-        def test_attribute_error_w_variables(self):
-            src.attribute_error.variable_00
-            src.attribute_error.variable_01
-            src.attribute_error.variable_02
+    def test_attribute_error_w_variables():
+        src.attribute_error.variable_00
+        src.attribute_error.variable_01
+        src.attribute_error.variable_02
 
 
     # Exceptions seen
@@ -476,30 +562,32 @@ test_attribute_error_w_variables
                     has no attribute 'variable_02'.
                     Did you mean: 'variable_00'?
 
-* I add the name and point it to :ref:`None<what is None?>` in ``attribute_error.py``
+* I add ``variable_02`` and point it to :ref:`None<what is None?>` in ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 3
+    :emphasize-lines: 5
 
+    # variable_00
     variable_00 = None
+    # variable_01
     variable_01 = None
     variable_02 = None
 
-  the test passes.
+  the test passes because ``variable_02`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_02``.
 
-* I add a line for ``src.attribute_error.variable_03`` in ``test_attribute_error.py``
+* I add a line for ``variable_03`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 4
     :emphasize-lines: 5
 
 
-        def test_attribute_error_w_variables(self):
-            src.attribute_error.variable_00
-            src.attribute_error.variable_01
-            src.attribute_error.variable_02
-            src.attribute_error.variable_03
+    def test_attribute_error_w_variables():
+        src.attribute_error.variable_00
+        src.attribute_error.variable_01
+        src.attribute_error.variable_02
+        src.attribute_error.variable_03
 
 
     # Exceptions seen
@@ -512,32 +600,34 @@ test_attribute_error_w_variables
                     has no attribute 'variable_03'.
                     Did you mean: 'variable_00'?
 
-* I add the :ref:`variable<what is a variable?>` to ``attribute_error.py``
+* I add ``variable_03`` to ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4
+    :emphasize-lines: 6
 
+    # variable_00
     variable_00 = None
+    # variable_01
     variable_01 = None
     variable_02 = None
     variable_03 = None
 
-  the test passes.
+  the test passes because ``variable_03`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_03``.
 
-* I add a line for ``src.attribute_error.variable_04`` in ``test_attribute_error.py``
+* I add a line for ``variable_04`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 4
     :emphasize-lines: 6
 
 
-        def test_attribute_error_w_variables(self):
-            src.attribute_error.variable_00
-            src.attribute_error.variable_01
-            src.attribute_error.variable_02
-            src.attribute_error.variable_03
-            src.attribute_error.variable_04
+    def test_attribute_error_w_variables():
+        src.attribute_error.variable_00
+        src.attribute_error.variable_01
+        src.attribute_error.variable_02
+        src.attribute_error.variable_03
+        src.attribute_error.variable_04
 
 
     # Exceptions seen
@@ -550,34 +640,36 @@ test_attribute_error_w_variables
                     has no attribute 'variable_04'.
                     Did you mean: 'variable_00'?
 
-* I add the :ref:`variable<what is a variable?>` to ``attribute_error.py``
+* I add ``variable_04`` to ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5
+    :emphasize-lines: 7
 
+    # variable_00
     variable_00 = None
+    # variable_01
     variable_01 = None
     variable_02 = None
     variable_03 = None
     variable_04 = None
 
-  the test passes.
+  the test passes because ``variable_04`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_04``.
 
-* I add a line for ``src.attribute_error.variable_05`` in ``test_attribute_error.py``
+* I add a line for ``variable_05`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 4
     :emphasize-lines: 7
 
 
-        def test_attribute_error_w_variables(self):
-            src.attribute_error.variable_00
-            src.attribute_error.variable_01
-            src.attribute_error.variable_02
-            src.attribute_error.variable_03
-            src.attribute_error.variable_04
-            src.attribute_error.variable_05
+    def test_attribute_error_w_variables():
+        src.attribute_error.variable_00
+        src.attribute_error.variable_01
+        src.attribute_error.variable_02
+        src.attribute_error.variable_03
+        src.attribute_error.variable_04
+        src.attribute_error.variable_05
 
 
     # Exceptions seen
@@ -590,36 +682,37 @@ test_attribute_error_w_variables
                     has no attribute 'variable_05'.
                     Did you mean: 'variable_00'?
 
-* I add the :ref:`variable<what is a variable?>` to ``attribute_error.py``
+* I add ``variable_05`` to ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 6
+    :emphasize-lines: 8
 
+    # variable_00
     variable_00 = None
+    # variable_01
     variable_01 = None
     variable_02 = None
     variable_03 = None
     variable_04 = None
-    variable_05 = None
+    variable_05 = variable_04
 
-  the test passes.
+  the test passes because ``variable_05`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_05``.
 
-* I add a line for ``src.attribute_error.variable_06`` to ``test_attribute_error.py``
+* I add a line for ``variable_06`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 4
     :emphasize-lines: 8
 
-
-        def test_attribute_error_w_variables(self):
-            src.attribute_error.variable_00
-            src.attribute_error.variable_01
-            src.attribute_error.variable_02
-            src.attribute_error.variable_03
-            src.attribute_error.variable_04
-            src.attribute_error.variable_05
-            src.attribute_error.variable_06
+    def test_attribute_error_w_variables():
+        src.attribute_error.variable_00
+        src.attribute_error.variable_01
+        src.attribute_error.variable_02
+        src.attribute_error.variable_03
+        src.attribute_error.variable_04
+        src.attribute_error.variable_05
+        src.attribute_error.variable_06
 
 
     # Exceptions seen
@@ -632,38 +725,39 @@ test_attribute_error_w_variables
                     has no attribute 'variable_06'.
                     Did you mean: 'variable_00'?
 
-* I add the :ref:`variable<what is a variable?>` to ``attribute_error.py``
+* I add ``variable_06`` to ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 7
+    :emphasize-lines: 9
 
+    # variable_00
     variable_00 = None
+    # variable_01
     variable_01 = None
     variable_02 = None
     variable_03 = None
     variable_04 = None
-    variable_05 = None
-    variable_06 = None
+    variable_05 = variable_04
+    variable_06 = variable_05
 
-  the test passes.
+  the test passes because ``variable_06`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_06``.
 
-* I add a line for ``src.attribute_error.variable_07`` to ``test_attribute_error.py``
+* I add a line for ``variable_07`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 4
     :emphasize-lines: 9
 
-
-        def test_attribute_error_w_variables(self):
-            src.attribute_error.variable_00
-            src.attribute_error.variable_01
-            src.attribute_error.variable_02
-            src.attribute_error.variable_03
-            src.attribute_error.variable_04
-            src.attribute_error.variable_05
-            src.attribute_error.variable_06
-            src.attribute_error.variable_07
+    def test_attribute_error_w_variables():
+        src.attribute_error.variable_00
+        src.attribute_error.variable_01
+        src.attribute_error.variable_02
+        src.attribute_error.variable_03
+        src.attribute_error.variable_04
+        src.attribute_error.variable_05
+        src.attribute_error.variable_06
+        src.attribute_error.variable_07
 
 
     # Exceptions seen
@@ -676,39 +770,41 @@ test_attribute_error_w_variables
                     has no attribute 'variable_07'.
                     Did you mean: 'variable_00'?
 
-* I add the :ref:`variable<what is a variable?>` to ``attribute_error.py``
+* I add ``variable_07`` to ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 8
+    :emphasize-lines: 10
 
+    # variable_00
     variable_00 = None
+    # variable_01
     variable_01 = None
     variable_02 = None
     variable_03 = None
     variable_04 = None
-    variable_05 = None
-    variable_06 = None
-    variable_07 = None
+    variable_05 = variable_04
+    variable_06 = variable_05
+    variable_07 = variable_06
 
-  the test passes.
+  the test passes because ``variable_07`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_07``.
 
-* I add a line for ``src.attribute_error.variable_08`` to ``test_attribute_error.py``
+* I add a line for ``variable_08`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 4
     :emphasize-lines: 10
 
-        def test_attribute_error_w_variables(self):
-            src.attribute_error.variable_00
-            src.attribute_error.variable_01
-            src.attribute_error.variable_02
-            src.attribute_error.variable_03
-            src.attribute_error.variable_04
-            src.attribute_error.variable_05
-            src.attribute_error.variable_06
-            src.attribute_error.variable_07
-            src.attribute_error.variable_08
+    def test_attribute_error_w_variables():
+        src.attribute_error.variable_00
+        src.attribute_error.variable_01
+        src.attribute_error.variable_02
+        src.attribute_error.variable_03
+        src.attribute_error.variable_04
+        src.attribute_error.variable_05
+        src.attribute_error.variable_06
+        src.attribute_error.variable_07
+        src.attribute_error.variable_08
 
 
     # Exceptions seen
@@ -721,42 +817,43 @@ test_attribute_error_w_variables
                     has no attribute 'variable_08'.
                     Did you mean: 'variable_00'?
 
-* I add the :ref:`variable<what is a variable?>` to ``attribute_error.py``
+* I add ``variable_08`` to ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 9
+    :emphasize-lines: 11
 
+    # variable_00
     variable_00 = None
+    # variable_01
     variable_01 = None
     variable_02 = None
     variable_03 = None
     variable_04 = None
-    variable_05 = None
-    variable_06 = None
-    variable_07 = None
-    variable_08 = None
+    variable_05 = variable_04
+    variable_06 = variable_05
+    variable_07 = variable_06
+    variable_08 = variable_07
 
-  the test passes.
+  the test passes because ``variable_08`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_08``.
 
-* I add a line for ``src.attribute_error.variable_09`` to ``test_attribute_error.py``
+* I add a line for ``variable_09`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 4
     :emphasize-lines: 11
 
-
-        def test_attribute_error_w_variables(self):
-            src.attribute_error.variable_00
-            src.attribute_error.variable_01
-            src.attribute_error.variable_02
-            src.attribute_error.variable_03
-            src.attribute_error.variable_04
-            src.attribute_error.variable_05
-            src.attribute_error.variable_06
-            src.attribute_error.variable_07
-            src.attribute_error.variable_08
-            src.attribute_error.variable_09
+    def test_attribute_error_w_variables():
+        src.attribute_error.variable_00
+        src.attribute_error.variable_01
+        src.attribute_error.variable_02
+        src.attribute_error.variable_03
+        src.attribute_error.variable_04
+        src.attribute_error.variable_05
+        src.attribute_error.variable_06
+        src.attribute_error.variable_07
+        src.attribute_error.variable_08
+        src.attribute_error.variable_09
 
 
     # Exceptions seen
@@ -769,45 +866,50 @@ test_attribute_error_w_variables
                     has no attribute 'variable_09'.
                     Did you mean: 'variable_00'?
 
-* I add the :ref:`variable<what is a variable?>` to ``attribute_error.py``
+* I add ``variable_09`` to ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 10
+    :emphasize-lines: 12
+
+    # variable_00
+    variable_00 = None
+    # variable_01
+    variable_01 = None
+    variable_02 = None
+    variable_03 = None
+    variable_04 = None
+    variable_05 = variable_04
+    variable_06 = variable_05
+    variable_07 = variable_06
+    variable_08 = variable_07
+    variable_09 = variable_08
+
+  the test passes because ``variable_09`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_09``.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
 
     variable_00 = None
     variable_01 = None
     variable_02 = None
     variable_03 = None
     variable_04 = None
-    variable_05 = None
-    variable_06 = None
-    variable_07 = None
-    variable_08 = None
-    variable_09 = None
+    variable_05 = variable_04
+    variable_06 = variable_05
+    variable_07 = variable_06
+    variable_08 = variable_07
+    variable_09 = variable_08
 
-  the test passes.
-
-* I open a new terminal_ then change directories to ``assertion_error``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cd assertion_error
-
-  the terminal_ shows I am in the ``assertion_error`` folder_
-
-  .. code-block:: python
-
-    .../pumping_python/assertion_error
-
-* I add a git_ commit message
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_assert_keyword'
+    'add test_attribute_error_w_variables'
 
 :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`.
 
@@ -825,6 +927,7 @@ test_attribute_error_w_functions
 
 ----
 
+* I go back to the terminal_ where the tests are running
 I add a test for :ref:`functions<what is a function?>` to ``test_attribute_error.py``
 
 .. code-block:: python
@@ -835,7 +938,7 @@ I add a test for :ref:`functions<what is a function?>` to ``test_attribute_error
           src.attribute_error.variable_08
           src.attribute_error.variable_09
 
-      def test_attribute_error_w_functions(self):
+      def test_attribute_error_w_functions():
           src.attribute_error.function_00()
 
 
@@ -947,7 +1050,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 19
     :emphasize-lines: 3
 
-        def test_attribute_error_w_functions(self):
+        def test_attribute_error_w_functions():
             src.attribute_error.function_00()
             src.attribute_error.function_01()
 
@@ -983,7 +1086,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 13
     :emphasize-lines: 4
 
-        def test_attribute_error_w_functions(self):
+        def test_attribute_error_w_functions():
             src.attribute_error.function_00()
             src.attribute_error.function_01()
             src.attribute_error.function_02()
@@ -1020,7 +1123,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 19
     :emphasize-lines: 5
 
-        def test_attribute_error_w_functions(self):
+        def test_attribute_error_w_functions():
             src.attribute_error.function_00()
             src.attribute_error.function_01()
             src.attribute_error.function_02()
@@ -1058,7 +1161,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 19
     :emphasize-lines: 6
 
-        def test_attribute_error_w_functions(self):
+        def test_attribute_error_w_functions():
             src.attribute_error.function_00()
             src.attribute_error.function_01()
             src.attribute_error.function_02()
@@ -1097,7 +1200,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 19
     :emphasize-lines: 7
 
-        def test_attribute_error_w_functions(self):
+        def test_attribute_error_w_functions():
             src.attribute_error.function_00()
             src.attribute_error.function_01()
             src.attribute_error.function_02()
@@ -1137,7 +1240,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 19
     :emphasize-lines: 8
 
-        def test_attribute_error_w_functions(self):
+        def test_attribute_error_w_functions():
             src.attribute_error.function_00()
             src.attribute_error.function_01()
             src.attribute_error.function_02()
@@ -1178,7 +1281,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 19
     :emphasize-lines: 9
 
-        def test_attribute_error_w_functions(self):
+        def test_attribute_error_w_functions():
             src.attribute_error.function_00()
             src.attribute_error.function_01()
             src.attribute_error.function_02()
@@ -1220,7 +1323,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 19
     :emphasize-lines: 10
 
-        def test_attribute_error_w_functions(self):
+        def test_attribute_error_w_functions():
             src.attribute_error.function_00()
             src.attribute_error.function_01()
             src.attribute_error.function_02()
@@ -1263,7 +1366,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 19
     :emphasize-lines: 11
 
-        def test_attribute_error_w_functions(self):
+        def test_attribute_error_w_functions():
             src.attribute_error.function_00()
             src.attribute_error.function_01()
             src.attribute_error.function_02()
@@ -1344,7 +1447,7 @@ I add a test for :ref:`class attributes<what is a class attribute?>` to ``test_a
           src.attribute_error.function_08()
           src.attribute_error.function_09()
 
-      def test_attribute_error_w_class_attributes(self):
+      def test_attribute_error_w_class_attributes():
           src.attribute_error.AClass.attribute_00
 
 
@@ -1477,7 +1580,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 31
     :emphasize-lines: 3
 
-        def test_attribute_error_w_class_attributes(self):
+        def test_attribute_error_w_class_attributes():
             src.attribute_error.AClass.attribute_00
             src.attribute_error.AClass.attribute_01
 
@@ -1511,7 +1614,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 31
     :emphasize-lines: 4
 
-        def test_attribute_error_w_class_attributes(self):
+        def test_attribute_error_w_class_attributes():
             src.attribute_error.AClass.attribute_00
             src.attribute_error.AClass.attribute_01
             src.attribute_error.AClass.attribute_02
@@ -1547,7 +1650,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 31
     :emphasize-lines: 5
 
-        def test_attribute_error_w_class_attributes(self):
+        def test_attribute_error_w_class_attributes():
             src.attribute_error.AClass.attribute_00
             src.attribute_error.AClass.attribute_01
             src.attribute_error.AClass.attribute_02
@@ -1585,7 +1688,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 31
     :emphasize-lines: 6
 
-        def test_attribute_error_w_class_attributes(self):
+        def test_attribute_error_w_class_attributes():
             src.attribute_error.AClass.attribute_00
             src.attribute_error.AClass.attribute_01
             src.attribute_error.AClass.attribute_02
@@ -1625,7 +1728,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 31
     :emphasize-lines: 7
 
-        def test_attribute_error_w_class_attributes(self):
+        def test_attribute_error_w_class_attributes():
             src.attribute_error.AClass.attribute_00
             src.attribute_error.AClass.attribute_01
             src.attribute_error.AClass.attribute_02
@@ -1667,7 +1770,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 31
     :emphasize-lines: 8
 
-        def test_attribute_error_w_class_attributes(self):
+        def test_attribute_error_w_class_attributes():
             src.attribute_error.AClass.attribute_00
             src.attribute_error.AClass.attribute_01
             src.attribute_error.AClass.attribute_02
@@ -1711,7 +1814,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 31
     :emphasize-lines: 9
 
-        def test_attribute_error_w_class_attributes(self):
+        def test_attribute_error_w_class_attributes():
             src.attribute_error.AClass.attribute_00
             src.attribute_error.AClass.attribute_01
             src.attribute_error.AClass.attribute_02
@@ -1757,7 +1860,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 31
     :emphasize-lines: 10
 
-        def test_attribute_error_w_class_attributes(self):
+        def test_attribute_error_w_class_attributes():
             src.attribute_error.AClass.attribute_00
             src.attribute_error.AClass.attribute_01
             src.attribute_error.AClass.attribute_02
@@ -1805,7 +1908,7 @@ the terminal_ is my friend, and shows AttributeError_
     :lineno-start: 31
     :emphasize-lines: 11
 
-        def test_attribute_error_w_class_attributes(self):
+        def test_attribute_error_w_class_attributes():
             src.attribute_error.AClass.attribute_00
             src.attribute_error.AClass.attribute_01
             src.attribute_error.AClass.attribute_02
@@ -1893,7 +1996,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
             src.attribute_error.AClass().attribute_08
             src.attribute_error.AClass().attribute_09
 
-        def test_attribute_error_w_class_methods(self):
+        def test_attribute_error_w_class_methods():
             src.attribute_error.AClass.method_00()
 
 
@@ -2005,7 +2108,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 3
 
-        def test_attribute_error_w_class_methods(self):
+        def test_attribute_error_w_class_methods():
             src.attribute_error.AClass.method_00()
             src.attribute_error.AClass.method_01
 
@@ -2053,7 +2156,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 4
 
-        def test_attribute_error_w_class_methods(self):
+        def test_attribute_error_w_class_methods():
             src.attribute_error.AClass.method_00()
             src.attribute_error.AClass.method_01
             src.attribute_error.AClass().method_02()
@@ -2100,11 +2203,11 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add ``self`` to the parentheses of ``method_02``
 
   .. code-block:: python
-    :lineno-start: 72
+    :lineno-start: 42
     :emphasize-lines: 1-2
 
         # def method_02():
-        def method_02(self):
+        def method_02():
             return None
 
   the test passes because this happens when ``AClass().method_02()`` is called
@@ -2112,7 +2215,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   .. code-block:: python
 
     AClass().method_02()
-        AClass.method_02(self)
+        AClass.method_02()
 
   where ``self`` is ``AClass``.
 
@@ -2127,7 +2230,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
         @staticmethod
         def method_02():
-        # def method_02(self):
+        # def method_02():
             return None
 
   the test is still green because this now happens when ``AClass().method_02()`` is called
@@ -2157,7 +2260,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 5
 
-        def test_attribute_error_w_class_methods(self):
+        def test_attribute_error_w_class_methods():
             src.attribute_error.AClass.method_00()
             src.attribute_error.AClass.method_01
             src.attribute_error.AClass().method_02()
@@ -2177,7 +2280,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 72
+    :lineno-start: 42
     :emphasize-lines: 5-6
 
         @staticmethod
@@ -2195,7 +2298,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 6
 
-        def test_attribute_error_w_class_methods(self):
+        def test_attribute_error_w_class_methods():
             src.attribute_error.AClass.method_00()
             src.attribute_error.AClass.method_01
             src.attribute_error.AClass().method_02()
@@ -2216,7 +2319,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 46
     :emphasize-lines: 4-5
 
         def method_03():
@@ -2244,7 +2347,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to the :ref:`definition<how to make a function>` for ``method_04``
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 46
     :emphasize-lines: 4
 
         def method_03():
@@ -2269,7 +2372,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 7
 
-        def test_attribute_error_w_class_methods(self):
+        def test_attribute_error_w_class_methods():
             src.attribute_error.AClass.method_00()
             src.attribute_error.AClass.method_01
             src.attribute_error.AClass().method_02()
@@ -2291,7 +2394,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 79
+    :lineno-start: 49
     :emphasize-lines: 5-6
 
         @staticmethod
@@ -2309,7 +2412,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 8
 
-        def test_attribute_error_w_class_methods(self):
+        def test_attribute_error_w_class_methods():
             src.attribute_error.AClass.method_00()
             src.attribute_error.AClass.method_01
             src.attribute_error.AClass().method_02()
@@ -2355,7 +2458,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 9
 
-        def test_attribute_error_w_class_methods(self):
+        def test_attribute_error_w_class_methods():
             src.attribute_error.AClass.method_00()
             src.attribute_error.AClass.method_01
             src.attribute_error.AClass().method_02()
@@ -2396,7 +2499,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 10
 
-        def test_attribute_error_w_class_methods(self):
+        def test_attribute_error_w_class_methods():
             src.attribute_error.AClass.method_00()
             src.attribute_error.AClass.method_01
             src.attribute_error.AClass().method_02()
@@ -2474,7 +2577,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 11
 
-        def test_attribute_error_w_class_methods(self):
+        def test_attribute_error_w_class_methods():
             src.attribute_error.AClass.method_00()
             src.attribute_error.AClass.method_01
             src.attribute_error.AClass().method_02()
@@ -2632,19 +2735,22 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-I know
+You know
 
 * :ref:`how to make a Python test driven development environment manually`
+* :ref:`what a Python module is<what is a module?>`
+* :ref:`how to run tests automatically`
 * :ref:`what causes AssertionError<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
-* :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`how to make dictionaries with functions<how to make a person>`
-* :ref:`how to make classes<classes>`
-* :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
-* :ref:`what happens when classes have one or more parents<family ties>`
-* :ref:`what causes AttributeError<what causes AttributeError?>`
+* :ref:`how to make a person with strings`
+* :ref:`how to make functions that take input<functions that take input>`
+* :ref:`what causes TypeError?`
+* :ref:`how to place values in strings<telephone>`
+* :ref:`how to make a person say hi with f-strings<how to make a person with f-strings>`
+* :ref:`how to separate tests from solutions<separate and equal functions>`
+* :ref:`what causes AttributeError?`
 
-:ref:`Would you like to test None (the simplest object)?<what is None?>`
+:ref:`Would you like to test using a class to remove repetition of inputs from functions?<how to make a person with a class>`
 
 ----
 

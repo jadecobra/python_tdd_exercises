@@ -45,14 +45,14 @@ table of contents
   make a person with strings<how_to/make_person/index>
   functions/functions_w_input
   exceptions/TypeError/index
-  how_to/telephone/index
+  how_to/telephone/
   make a person with f-strings<how_to/make_person/make_person_w_fstrings>
   functions/functions_w_separation
+  exceptions/AttributeError/index
   make a person with a class<how_to/make_person/make_person_w_class>
   classes/inheritance
   make a person<how_to/make_person>
   classes/index
-  what causes AttributeError?<exceptions/AttributeError>
   data_structures/none/index
   what are booleans?<data_structures/booleans/index>
   truth table<truth_table/index>

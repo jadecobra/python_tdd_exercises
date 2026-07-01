@@ -345,7 +345,7 @@ The simplest :ref:`function<what is a function?>` I can make is with the pass_ k
 what is a variable?
 *********************************************************************************
 
-I can define a name in Python with a variable. It is a name that is used for any :ref:`object<what is a class?>`. For example, in Mathematics_ we use ``x`` to represent any number.
+I can define a name in Python with a variable. A variable is a name that is used to point to an :ref:`object<what is a class?>`. For example, in Mathematics_ we use ``x`` to represent any number.
 
 Every time I use the name, Python_ "knows" that I am referring to the :ref:`object<what is a class?>` pointed the name to.
 
