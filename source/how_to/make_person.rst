@@ -4382,7 +4382,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             self.assertEqual(reality, my_expectation)
 
             john = src.person.factory(
-                first_name = 'john',
+                first_name='john',
                 last_name='smith',
                 year_of_birth=1580,
             )
