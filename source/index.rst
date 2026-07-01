@@ -49,6 +49,7 @@ table of contents
   make a person with f-strings<how_to/make_person/make_person_w_fstrings>
   functions/functions_w_separation
   exceptions/AttributeError/index
+  exceptions/TypeError/type_error_w_separation
   make a person with a class<how_to/make_person/make_person_w_class>
   classes/inheritance
   make a person<how_to/make_person>

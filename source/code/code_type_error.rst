@@ -3,12 +3,46 @@
 TypeError: tests and solution
 #################################################################################
 
+----
+
 *********************************************************************************
-TypeError tests
+what causes TypeError?: tests
 *********************************************************************************
 
-the code from ``type_error/tests/test_type_error.py`` from :ref:`TypeError<what causes TypeError?>`
+the code from ``type_error/tests/test_type_error.py`` from :ref:`what causes TypeError?`
 
-.. literalinclude:: type_error/test_type_error.py
+.. literalinclude:: type_error/tests/test_type_error.py
+  :language: python
+  :linenos:
+
+----
+
+*********************************************************************************
+separate and equal TypeError: tests and solutions
+*********************************************************************************
+
+=================================================================================
+separate and equal TypeError tests
+=================================================================================
+
+----
+
+the code from ``type_error/tests/test_type_error.py`` from :ref:`separate and equal TypeError`
+
+.. literalinclude:: type_error/tests/test_type_error.py
+  :language: python
+  :linenos:
+
+----
+
+=================================================================================
+separate and equal TypeError solutions
+=================================================================================
+
+----
+
+the code from ``type_error/src/type_error.py`` from :ref:`separate and equal TypeError`
+
+.. literalinclude:: type_error/solutions/type_error.py
   :language: python
   :linenos:
