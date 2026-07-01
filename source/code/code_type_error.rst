@@ -9,38 +9,6 @@ TypeError tests
 
 the code from ``type_error/tests/test_type_error.py`` from :ref:`TypeError<what causes TypeError?>`
 
-.. literalinclude:: tests/test_type_error.py
-  :language: python
-  :linenos:
-
-*********************************************************************************
-TypeError solutions
-*********************************************************************************
-
-the solution in ``type_error/src/type_error.py`` from :ref:`TypeError<what causes TypeError?>`
-
-.. literalinclude:: solutions/type_error.py
-  :language: python
-  :linenos:
-
-----
-
-*********************************************************************************
-TypeError with the Calculator tests
-*********************************************************************************
-
-the code from ``calculator/tests/test_calculator.py`` from :ref:`TypeError<what causes TypeError?>`
-
-.. literalinclude:: calculator/tests/test_calculator_4.py
-  :language: python
-  :linenos:
-
-*********************************************************************************
-TypeError with the Calculator solutions
-*********************************************************************************
-
-the solution in ``calculator/src/calculator.py`` from :ref:`TypeError<what causes TypeError?>`
-
-.. literalinclude:: calculator/solutions/calculator_4.py
+.. literalinclude:: type_error/test_type_error.py
   :language: python
   :linenos:

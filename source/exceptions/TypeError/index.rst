@@ -22,7 +22,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/type_error/tests/test_type_error.py
+.. literalinclude:: ../code/type_error/test_type_error.py
   :language: python
   :linenos:
 

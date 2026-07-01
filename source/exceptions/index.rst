@@ -38,7 +38,7 @@ Here are some questions you can answer after going through these chapters
 * :ref:`what is Exception handling?<how to handle Exceptions (Errors)>`
 * :ref:`what causes AssertionError?<what causes AssertionError?>`
 * :ref:`what causes AttributeError?<what causes AttributeError?>`
-* :ref:`what causes TypeError?<TypeError>`
+* :ref:`what causes TypeError?`
 * :ref:`what causes ModuleNotFoundError?<what is a module?>`
 * :ref:`what causes NameError?<test_catching_name_error_in_tests>`
 * :ref:`what causes IndexError?<test_index_error>`

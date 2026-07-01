@@ -59,7 +59,6 @@ table of contents
   make a calculator<calculator/calculator_1/index>
   make TDD automatically<make_tdd/make_tdd_automatically>
   handling Exceptions<exceptions/exception_handling/index>
-  exceptions/type_error/index
   data_structures/lists/index
   data_structures/dictionaries/index
   make TDD project 3<make_tdd/make_tdd_automatically_w_variables/index>
