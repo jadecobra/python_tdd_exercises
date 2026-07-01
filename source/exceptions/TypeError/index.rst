@@ -1,6 +1,6 @@
 .. meta::
-  :description: Facing a Python TypeError? Learn to fix common errors like 'unsupported operand type' and 'int object is not callable'. Watch the full tutorial to debug now.
-  :keywords: Jacob Itegboje, python typeerror unsupported operand type, python typeerror 'int' object is not callable, python typeerror can only concatenate str, how to fix typeerror in python, python typeerror string and integer, python typeerror list indices must be integers, python typeerror 'str' object is not callable, python typeerror float object is not iterable
+  :description: What causes TypeError when calling Python functions? TDD tutorial: wrong number of positional arguments, wrong keyword names, or multiple values for one argument. Red-green-refactor the type_error project with uv run pytest-watcher. Match call to function signature (definition). See "missing 1 required positional argument: 'the_input'", "takes 2 positional arguments but 3 were given", "got an unexpected keyword argument 'fourth'", "got multiple values for argument 'first'". Learn to call with correct count and names for positional_arguments, keyword_arguments, and args/kwargs mixes. Jacob Itegboje Pumping Python TDD series.
+  :keywords: Jacob Itegboje, Pumping Python, what causes TypeError, python TypeError function call, TypeError missing required positional argument, TypeError takes positional arguments but were given, TypeError got an unexpected keyword argument, TypeError got multiple values for argument, python positional vs keyword arguments, match function signature call, TDD TypeError, test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs, function definition vs call, uv pytest-watcher type_error project, python exceptions tutorial, red green refactor arguments, how to call a function with input
 
 .. include:: ../../links.rst
 
@@ -12,7 +12,7 @@ what causes TypeError?
 
 ----
 
-TypeError_ happens when an :ref:`object<everything is an object>` is used in a way that it should not be.
+TypeError_ happens when an :ref:`object (everything in Python is an object)<what is a class?>` is used in a way that it should not be.
 
 ----
 
@@ -655,7 +655,7 @@ test_type_error_w_positional_arguments
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I have to call a function with the same number of inputs tht are in its definition<test_type_error_w_positional_arguments>`.
+:ref:`I have to call a function with the same number of inputs that are in its definition<test_type_error_w_positional_arguments>`.
 
 ----
 
@@ -3080,7 +3080,19 @@ test_type_error_w_args_and_kwargs
 
 :ref:`I have to call a function with the same number or names of arguments that are in its definition<test_type_error_w_args_and_kwargs>`.
 
+----
 
+*********************************************************************************
+review
+*********************************************************************************
+
+I ran to test for :ref:`TypeError<what causes TypeError?>` based on what I have seen so far with
+
+* :ref:`positional arguments<test_type_error_w_positional_arguments>`
+* :ref:`keyword arguments<test_type_error_w_keyword_arguments>`
+* :ref:`positional and keyword arguments<test_type_error_w_args_and_kwargs>`
+
+My problem with the tests is that they all show the correct way to call the :ref:`functions<what is a function?>` I made in the file_. If someone reads the file_ or runs it, there is no way for them to know how any of the calls are related to :ref:`TypeError<what causes TypeError?>` unless they go through the process with me, there has to be a better way.
 
 ----
 
@@ -3088,7 +3100,7 @@ test_type_error_w_args_and_kwargs
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in these chapter?<TypeError: tests and solution>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<TypeError: tests and solution>`
 
 ----
 
