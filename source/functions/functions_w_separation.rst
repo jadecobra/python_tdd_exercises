@@ -72,7 +72,7 @@ move w_pass
 
 ----
 
-I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_pass` to use the result of a call to the :ref:`w_pass function<test_making_a_function_w_pass>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`w_pass function<test_making_a_function_w_pass>` in ``test_functions.py``
+I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_pass` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`w_pass function<test_making_a_function_w_pass>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`w_pass function<test_making_a_function_w_pass>` in ``test_functions.py``
 
 .. code-block:: python
   :linenos:
@@ -148,7 +148,7 @@ because ``src`` is not defined in ``test_functions.py``.
 
 * I go back to the terminal_ where the tests are running.
 
-* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) on the keyboard in ``test_functions.py`` to run the test again and it shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) on the keyboard in ``test_functions.py`` to run the tests again and the terminal_ shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
 
@@ -221,7 +221,7 @@ because ``src`` is not defined in ``test_functions.py``.
 
     def test_making_a_function_w_return():
 
-  the test is still green because the call that was made to :ref:`the w_pass function<test_making_a_function_w_pass>` that was in ``test_functions.py`` is now to :ref:`the w_pass function<test_making_a_function_w_pass>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.w_pass`` is called, Python_ follows this path
+  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`the w_pass function<test_making_a_function_w_pass>` that was in ``test_functions.py`` is now to :ref:`the w_pass function<test_making_a_function_w_pass>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.w_pass`` is called, Python_ follows this path
 
   .. code-block:: shell
 
@@ -254,7 +254,7 @@ move w_return
 
 * I go back to the terminal_ where the tests are running.
 
-* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return` to use the result of a call to the :ref:`w_return function<test_making_a_function_w_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`w_return function<test_making_a_function_w_return>` in ``test_functions.py``
+* I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`w_return function<test_making_a_function_w_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`w_return function<test_making_a_function_w_return>` in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 8
@@ -321,7 +321,7 @@ the test passes.
 
     def test_making_a_function_w_return_none():
 
-  the test is still green because the call that was made to :ref:`the w_return function<test_making_a_function_w_return>` that was in ``test_functions.py`` is now to :ref:`the w_return function<test_making_a_function_w_return>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.w_return`` is called, Python_ follows this path
+  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`the w_return function<test_making_a_function_w_return>` that was in ``test_functions.py`` is now to :ref:`the w_return function<test_making_a_function_w_return>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.w_return`` is called, Python_ follows this path
 
   .. code-block:: shell
 
@@ -351,7 +351,7 @@ move w_return_none
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return_none` to use the result of a call to the :ref:`w_return_none function<test_making_a_function_w_return_none>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`w_return_none function<test_making_a_function_w_return_none>` in ``test_functions.py``
+* I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return_none` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`w_return_none function<test_making_a_function_w_return_none>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`w_return_none function<test_making_a_function_w_return_none>` in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 12
@@ -418,7 +418,7 @@ the test passes.
 
     def test_what_happens_after_functions_return():
 
-  the test is still green because the call that was made to :ref:`the w_return_none function<test_making_a_function_w_return_none>` that was in ``test_functions.py`` is now to :ref:`the w_return_none function<test_making_a_function_w_return_none>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.w_return_none`` is called, Python_ follows this path
+  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`the w_return_none function<test_making_a_function_w_return_none>` that was in ``test_functions.py`` is now to :ref:`the w_return_none function<test_making_a_function_w_return_none>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.w_return_none`` is called, Python_ follows this path
 
   .. code-block:: shell
 
@@ -448,7 +448,7 @@ move return_leaves_the_function
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_what_happens_after_functions_return` to use the result of a call to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` in ``test_functions.py``
+* I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_what_happens_after_functions_return` to use the result of a :ref:`call<how to call a function with input>` to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -523,7 +523,7 @@ the test passes.
 
     def test_constant_function():
 
-  the test is still green because the call that was made to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` that was in ``test_functions.py`` is now to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.return_leaves_the_function`` is called, Python_ follows this path
+  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` that was in ``test_functions.py`` is now to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.return_leaves_the_function`` is called, Python_ follows this path
 
   .. code-block:: shell
 
@@ -553,7 +553,7 @@ move constant function
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_constant_function` to use the result of a call to the :ref:`constant function<test_constant_function>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`constant function<test_constant_function>` in ``test_functions.py``
+* I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_constant_function` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`constant function<test_constant_function>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`constant function<test_constant_function>` in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -621,7 +621,7 @@ the test passes.
 
     def test_identity_function():
 
-  the test is still green because the call that was made to :ref:`the constant function<test_constant_function>` that was in ``test_functions.py`` is now to :ref:`the constant function<test_constant_function>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.constant`` is called, Python_ follows this path
+  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`the constant function<test_constant_function>` that was in ``test_functions.py`` is now to :ref:`the constant function<test_constant_function>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.constant`` is called, Python_ follows this path
 
   .. code-block:: shell
 
@@ -721,7 +721,7 @@ the test passes.
 
     def test_why_use_a_function():
 
-  the test is still green because the call that was made to :ref:`the identity function<test_identity_function>` that was in ``test_functions.py`` is now to :ref:`the identity function<test_identity_function>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.identity`` is called, Python_ follows this path
+  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`the identity function<test_identity_function>` that was in ``test_functions.py`` is now to :ref:`the identity function<test_identity_function>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.identity`` is called, Python_ follows this path
 
   .. code-block:: shell
 
@@ -814,7 +814,7 @@ move positional_arguments function
 
   because :ref:`test_keyword_arguments` also calls :ref:`the positional_arguments function<test_positional_arguments>` of ``test_functions.py``. This is a risky change.
 
-* I use a :ref:`variable<what is a variable?>` to reroute the call to the :ref:`positional_arguments function<test_positional_arguments>` from :ref:`test_keyword_arguments` to the :ref:`positional_arguments function<test_positional_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I use a :ref:`variable<what is a variable?>` to reroute the :ref:`call<how to call a function with input>` to the :ref:`positional_arguments function<test_positional_arguments>` from :ref:`test_keyword_arguments` to the :ref:`positional_arguments function<test_positional_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 114
@@ -1177,7 +1177,7 @@ move args_and_kwargs function
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_args_and_kwargs` to use the result of a call to the :ref:`args_and_kwargs function<test_args_and_kwargs>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of the result of a call to the :ref:`args_and_kwargs function<test_args_and_kwargs>` in ``test_functions.py``
+* I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_args_and_kwargs` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`args_and_kwargs function<test_args_and_kwargs>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of the result of a :ref:`call<how to call a function with input>` to the :ref:`args_and_kwargs function<test_args_and_kwargs>` in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 136
@@ -1257,7 +1257,7 @@ the test passes.
 
     def test_optional_arguments():
 
-  the test is still green because the call that was made to the :ref:`args_and_kwargs function<test_args_and_kwargs>` that was in ``test_functions.py`` is now to the :ref:`args_and_kwargs function<test_args_and_kwargs>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.args_and_kwargs`` is called, Python_ follows this path
+  the test is still green because the :ref:`call<how to call a function with input>` that was made to the :ref:`args_and_kwargs function<test_args_and_kwargs>` that was in ``test_functions.py`` is now to the :ref:`args_and_kwargs function<test_args_and_kwargs>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.args_and_kwargs`` is called, Python_ follows this path
 
   .. code-block:: shell
 

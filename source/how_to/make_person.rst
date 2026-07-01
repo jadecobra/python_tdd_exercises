@@ -4323,8 +4323,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
     .. code-block:: python
 
-      age = person.get('last_name')
-              jane.get('last_name')
+      age = person.get('age')
+              jane.get('age')
               {
                   'first_name': 'jane',
                   'last_name': 'doe',
