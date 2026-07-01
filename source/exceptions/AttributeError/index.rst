@@ -1428,16 +1428,17 @@ close the project
 review
 *********************************************************************************
 
-I ran tests for :ref:`AttributeError<what causes AttributeError?>` with
+I ran tests for :ref:`AttributeError<what causes AttributeError?>` that showed
 
-* :ref:`variables<test_attribute_error_w_variables>`
-* :ref:`functions<test_attribute_error_w_functions>`
+* :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`.
+* :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`.
 
 I also saw these :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
+* :ref:`TypeError<what causes TypeError?>`
 
 My problem with the tests is that they all show the correct way to use :ref:`attributes<what is a class attribute?>` I made in ``attribute_error.py``. If someone reads the file_ or runs it, there is no way for them to know how the code relates to :ref:`AttributeError<what causes AttributeError?>` unless they go through the process with me, there has to be a better way.
 
