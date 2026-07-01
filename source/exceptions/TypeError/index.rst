@@ -3092,7 +3092,7 @@ I ran to test for :ref:`TypeError<what causes TypeError?>` based on what I have 
 * :ref:`keyword arguments<test_type_error_w_keyword_arguments>`
 * :ref:`positional and keyword arguments<test_type_error_w_args_and_kwargs>`
 
-My problem with the tests is that they all show the correct way to call the :ref:`functions<what is a function?>` I made in the file_. If someone reads the file_ or runs it, there is no way for them to know how any of the calls are related to :ref:`TypeError<what causes TypeError?>` unless they go through the process with me, there has to be a better way.
+My problem with the tests is that they all show the correct way to call the :ref:`functions<what is a function?>` I made in the file_. If someone reads the file_ or runs it, there is no way for them to know how any of the :ref:`calls<how to call a function with input>` are related to :ref:`TypeError<what causes TypeError?>` unless they go through the process with me, there has to be a better way.
 
 ----
 
