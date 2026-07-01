@@ -928,28 +928,29 @@ test_attribute_error_w_functions
 ----
 
 * I go back to the terminal_ where the tests are running
-I add a test for :ref:`functions<what is a function?>` to ``test_attribute_error.py``
+* I add a test with a :ref:`function call<how to call a function>`, to ``test_attribute_error.py``
 
-.. code-block:: python
-  :lineno-start: 15
-  :emphasize-lines: 5-6
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 4-5
 
-          src.attribute_error.variable_07
-          src.attribute_error.variable_08
-          src.attribute_error.variable_09
-
-      def test_attribute_error_w_functions():
-          src.attribute_error.function_00()
+        src.attribute_error.variable_09
 
 
-  # Exceptions seen
+    def test_attribute_error_w_functions():
+        src.attribute_error.function_00()
 
-the terminal_ is my friend, and shows AttributeError_
 
-.. code-block:: python
+    # Exceptions seen
 
-  AttributeError: module 'src.attribute_error'
-                  has no attribute 'function_00'
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: python
+
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'function_00'
+
+  because there is nothing named ``function_00`` in ``attribute_error.py`` in the ``src`` folder_.
 
 ----
 
@@ -962,19 +963,10 @@ the terminal_ is my friend, and shows AttributeError_
 * I add the name and point it to :ref:`None<what is None?>` in ``attribute_error.py``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 13
+    :lineno-start: 10
+    :emphasize-lines: 4
 
-    variable_00 = None
-    variable_01 = None
-    variable_02 = None
-    variable_03 = None
-    variable_04 = None
-    variable_05 = None
-    variable_06 = None
-    variable_07 = None
-    variable_08 = None
-    variable_09 = None
+    variable_09 = variable_08
 
 
     function_00 = None
@@ -990,12 +982,13 @@ the terminal_ is my friend, and shows AttributeError_
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 5
+    :lineno-start: 21
+    :emphasize-lines: 6
     :emphasize-text: TypeError
 
     # Exceptions seen
     # AssertionError
+    # ModuleNotFoundError
     # AttributeError
     # NameError
     # TypeError
@@ -1003,16 +996,16 @@ the terminal_ is my friend, and shows AttributeError_
 * I change the :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 1-3
+    :lineno-start: 10
+    :emphasize-lines: 4-5
+
+    variable_09 = variable_08
+
 
     # function_00 = None
-    def function_00():
-        return None
+    def function_00(): return None
 
-  - the test passes because ``function_00`` is now an :ref:`attribute/property<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_
-  - I can call it from outside the file_ with ``src.attribute_error.function_00()``
-
+  the test passes because ``function_00`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_00()``.
 
 ----
 
@@ -1027,32 +1020,22 @@ the terminal_ is my friend, and shows AttributeError_
   .. code-block:: python
     :linenos:
 
-    variable_00 = None
-    variable_01 = None
-    variable_02 = None
-    variable_03 = None
-    variable_04 = None
-    variable_05 = None
-    variable_06 = None
-    variable_07 = None
-    variable_08 = None
-    variable_09 = None
+    variable_09 = variable_08
 
 
-    def function_00():
-        return None
+    def function_00(): return None
 
   time to make it a drill.
 
-* I add a call to ``src.attribute_error.function_01`` in :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``function_01`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 17
     :emphasize-lines: 3
 
-        def test_attribute_error_w_functions():
-            src.attribute_error.function_00()
-            src.attribute_error.function_01()
+    def test_attribute_error_w_functions():
+        src.attribute_error.function_00()
+        src.attribute_error.function_01()
 
 
     # Exceptions seen
@@ -1065,7 +1048,7 @@ the terminal_ is my friend, and shows AttributeError_
                     has no attribute 'function_01'.
                     Did you mean: 'function_00'?
 
-* I add the :ref:`function<what is a function?>` to ``attribute_error.py``
+* I add a :ref:`definition<how to make a function>` for ``function_01`` to ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -1078,9 +1061,9 @@ the terminal_ is my friend, and shows AttributeError_
     def function_01():
         return None
 
-  the test passes.
+  the test passes because ``function_01`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_01()``.
 
-* I add a line for ``src.attribute_error.function_02`` to :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``function_02`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -1102,7 +1085,7 @@ the terminal_ is my friend, and shows AttributeError_
                     has no attribute 'function_02'.
                     Did you mean: 'function_00'?
 
-* I add a :ref:`function<what is a function?>` for it in ``attribute_error.py``
+* I add a :ref:`definition<how to make a function>` for ``function_02`` to ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 17
@@ -1115,12 +1098,12 @@ the terminal_ is my friend, and shows AttributeError_
     def function_02():
         return None
 
-  the test passes.
+  the test passes because ``function_02`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_02()``.
 
-* I add a line for ``src.attribute_error.function_03`` to :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``function_03`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 17
     :emphasize-lines: 5
 
         def test_attribute_error_w_functions():
@@ -1140,7 +1123,7 @@ the terminal_ is my friend, and shows AttributeError_
                     has no attribute 'function_03'.
                     Did you mean: 'function_00'?
 
-* I add a :ref:`function<what is a function?>` for it in ``attribute_error.py``
+* I add a :ref:`definition<how to make a function>` for ``function_03`` to ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -1153,12 +1136,12 @@ the terminal_ is my friend, and shows AttributeError_
     def function_03():
         return None
 
-  the test passes.
+  the test passes because ``function_03`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_03()``.
 
-* I add a line for ``src.attribute_error.function_04`` to :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``function_04`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 17
     :emphasize-lines: 6
 
         def test_attribute_error_w_functions():
@@ -1179,7 +1162,7 @@ the terminal_ is my friend, and shows AttributeError_
                     has no attribute 'function_04'.
                     Did you mean: 'function_00'?
 
-* I add a :ref:`function<what is a function?>` for it in ``attribute_error.py``
+* I add a :ref:`definition<how to make a function>` for ``function_04`` to ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -1192,12 +1175,12 @@ the terminal_ is my friend, and shows AttributeError_
     def function_04():
         return None
 
-  the test passes.
+  the test passes because ``function_04`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_04()``.
 
-* I add a line for ``src.attribute_error.function_05`` to :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``function_05`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 17
     :emphasize-lines: 7
 
         def test_attribute_error_w_functions():
@@ -1219,7 +1202,7 @@ the terminal_ is my friend, and shows AttributeError_
                     has no attribute 'function_05'.
                     Did you mean: 'function_00'?
 
-* I add a :ref:`function<what is a function?>` for it in ``attribute_error.py``
+* I add a :ref:`definition<how to make a function>` for ``function_05`` to ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 29
@@ -1232,12 +1215,12 @@ the terminal_ is my friend, and shows AttributeError_
     def function_05():
         return None
 
-  the test passes.
+  the test passes because ``function_05`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_05()``.
 
-* I add a line for ``src.attribute_error.function_06`` to :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``function_06`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 17
     :emphasize-lines: 8
 
         def test_attribute_error_w_functions():
@@ -1260,7 +1243,7 @@ the terminal_ is my friend, and shows AttributeError_
                     has no attribute 'function_06'.
                     Did you mean: 'function_00'?
 
-* I add a :ref:`function<what is a function?>` for it in ``attribute_error.py``
+* I add a :ref:`definition<how to make a function>` for ``function_06`` to ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 33
@@ -1273,12 +1256,12 @@ the terminal_ is my friend, and shows AttributeError_
     def function_06():
         return None
 
-  the test passes.
+  the test passes because ``function_06`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_06()``.
 
-* I add a line for ``src.attribute_error.function_07`` to :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``function_07`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 17
     :emphasize-lines: 9
 
         def test_attribute_error_w_functions():
@@ -1302,7 +1285,7 @@ the terminal_ is my friend, and shows AttributeError_
                     has no attribute 'function_07'.
                     Did you mean: 'function_00'?
 
-* I add a :ref:`function<what is a function?>` for it in ``attribute_error.py``
+* I add a :ref:`definition<how to make a function>` for ``function_07`` to ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 37
@@ -1315,12 +1298,12 @@ the terminal_ is my friend, and shows AttributeError_
     def function_07():
         return None
 
-  the test passes.
+  the test passes because ``function_07`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_07()``.
 
-* I add a line for ``src.attribute_error.function_08`` to :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``function_08`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 17
     :emphasize-lines: 10
 
         def test_attribute_error_w_functions():
@@ -1345,7 +1328,7 @@ the terminal_ is my friend, and shows AttributeError_
                     has no attribute 'function_08'.
                     Did you mean: 'function_00'?
 
-* I add a :ref:`function<what is a function?>` for it in ``attribute_error.py``
+* I add a :ref:`definition<how to make a function>` for ``function_08`` to ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 41
@@ -1358,12 +1341,12 @@ the terminal_ is my friend, and shows AttributeError_
     def function_08():
         return None
 
-  the test passes.
+  the test passes because ``function_08`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_08()``.
 
-* I add a line for ``src.attribute_error.function_09`` to :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``function_09`` from :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 17
     :emphasize-lines: 11
 
         def test_attribute_error_w_functions():
@@ -1389,7 +1372,7 @@ the terminal_ is my friend, and shows AttributeError_
                     has no attribute 'function_09'.
                     Did you mean: 'function_00'?
 
-* I add a :ref:`function<what is a function?>` for it in ``attribute_error.py``
+* I add a :ref:`definition<how to make a function>` for ``function_09`` to ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 45
@@ -1402,7 +1385,7 @@ the terminal_ is my friend, and shows AttributeError_
     def function_09():
         return None
 
-  the test passes.
+  the test passes because ``function_09`` is now an :ref:`attribute<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_09()``.
 
 * I add a git_ commit message in the other terminal_
 
