@@ -22,7 +22,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/type_error/test_type_error.py
+.. literalinclude:: ../../code/type_error/test_type_error.py
   :language: python
   :linenos:
 
@@ -34,6 +34,8 @@ Questions to think about as I go through the chapter
 
 * :ref:`what causes TypeError?`
 * :ref:`what happens when I call a function and do not send the right number of inputs?<test_type_error_w_positional_arguments>`
+* :ref:`what happens when I call a function and do not use the right names?<test_type_error_w_keyword_arguments>`
+* :ref:`what happens when I call a function with multiple values for the same argument?<test_type_error_w_args_and_kwargs>`
 
 ----
 
