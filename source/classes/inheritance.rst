@@ -6,20 +6,8 @@
 
 .. _isinstance: https://docs.python.org/3/library/functions.html#isinstance
 .. _isinstance built-in function: isinstance_
-.. _assertNotIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance
-.. _unittest.TestCase.assertNotIsInstance: assertNotIsInstance_
-.. _assertNotIsInstance method: assertNotIsInstance_
-.. _assertIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance
-.. _unittest.TestCase.assertIsInstance: assertIsInstance_
-.. _assertIsInstance method: assertIsInstance_
 .. _issubclass: https://docs.python.org/3/library/functions.html#issubclass
 .. _issubclass built-in function: issubclass_
-.. _assertNotIsSubclass: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotIsSubclass
-.. _assertNotIsSubclass method: assertNotIsSubclass_
-.. _unittest.TestCase.assertNotIsSubclass: assertNotIsSubclass_
-.. _assertIsSubclass: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertIsSubclass
-.. _assertIsSubclass method: assertIsSubclass_
-.. _unittest.TestCase.assertIsSubclass: assertIsSubclass_
 
 
 #################################################################################
@@ -1997,10 +1985,15 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a_string_an_object`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 46
     :emphasize-lines: 2
 
+    def test_is_a_string_an_object():
+        assert not isinstance(str, object)
+        assert issubclass(str, object)
 
+
+    def test_is_a_tuple_an_object():
 
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -2009,18 +2002,23 @@ the test passes.
 
     E       assert not True
 
-  because ``                    `` is not :ref:`True<test_what_is_true>`.
+  because ``assert not isinstance(str, object)`` is not :ref:`True<test_what_is_true>`.
 
 * I change the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 46
     :emphasize-lines: 2-3
 
+    def test_is_a_string_an_object():
+        # assert not isinstance(str, object)
+        assert isinstance(str, object)
+        assert issubclass(str, object)
 
 
+    def test_is_a_tuple_an_object():
 
-  the test passes because ______ is a
+  the test passes because str_ is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
   - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
@@ -2029,17 +2027,27 @@ the test passes.
 * I remove the commented line from :ref:`test_is_a_string_an_object`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 46
+
+    def test_is_a_string_an_object():
+        assert isinstance(str, object)
+        assert issubclass(str, object)
 
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a`
+    def test_is_a_tuple_an_object():
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a_tuple_an_object`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 51
     :emphasize-lines: 2
 
+    def test_is_a_tuple_an_object():
+        assert not isinstance(tuple, object)
+        assert issubclass(tuple, object)
 
 
+    def test_is_a_list_an_object():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2047,37 +2055,53 @@ the test passes.
 
     E       assert not True
 
-  because ``                    `` is not :ref:`True<test_what_is_true>`.
+  because ``assert not isinstance(tuple, object)`` is not :ref:`True<test_what_is_true>`.
 
-* I change the :ref:`assertion<what is an assertion?>`
+* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test what is true>`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 51
     :emphasize-lines: 2-3
 
+    def test_is_a_tuple_an_object():
+        # assert not isinstance(tuple, object)
+        assert isinstance(tuple, object)
+        assert issubclass(tuple, object)
 
 
+    def test_is_a_list_an_object():
 
-  the test passes because ______ is a
+  the test passes because tuple_ is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
   - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
   - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
 
-* I remove the commented line from :ref:`test_is_a`
+* I remove the commented line from :ref:`test_is_a_tuple_an_object`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 51
+
+    def test_is_a_tuple_an_object():
+        assert isinstance(tuple, object)
+        assert issubclass(tuple, object)
 
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a`
+    def test_is_a_list_an_object():
+
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a_list_an_object`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 56
     :emphasize-lines: 2
 
+    def test_is_a_list_an_object():
+        assert not isinstance(list, object)
+        assert issubclass(list, object)
 
 
+    def test_is_a_set_an_object():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2085,37 +2109,52 @@ the test passes.
 
     E       assert not True
 
-  because ``                    `` is not :ref:`True<test_what_is_true>`.
+  because ``assert not isinstance(list, object)`` is not :ref:`True<test_what_is_true>`.
 
 * I change the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 56
     :emphasize-lines: 2-3
 
+    def test_is_a_list_an_object():
+        # assert not isinstance(list, object)
+        assert isinstance(list, object)
+        assert issubclass(list, object)
 
 
+    def test_is_a_set_an_object():
 
-  the test passes because ______ is a
+  the test passes because :ref:`list<what is a list?>` is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
   - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
   - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
 
-* I remove the commented line from :ref:`test_is_a`
+* I remove the commented line from :ref:`test_is_a_list_an_object`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 56
+
+    def test_is_a_list_an_object():
+        assert isinstance(list, object)
+        assert issubclass(list, object)
 
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a`
+    def test_is_a_set_an_object():
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a_set_an_object`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 61
     :emphasize-lines: 2
 
+    def test_is_a_set_an_object():
+        assert not isinstance(set, object)
+        assert issubclass(set, object)
 
 
+    def test_is_a_dictionary_an_object():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2123,37 +2162,52 @@ the test passes.
 
     E       assert not True
 
-  because ``                    `` is not :ref:`True<test_what_is_true>`.
+  because ``assert not isinstance(set, object)`` is not :ref:`True<test_what_is_true>`.
 
 * I change the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 61
     :emphasize-lines: 2-3
 
+    def test_is_a_set_an_object():
+        # assert not isinstance(set, object)
+        assert isinstance(set, object)
+        assert issubclass(set, object)
 
 
+    def test_is_a_dictionary_an_object():
 
-  the test passes because ______ is a
+  the test passes because set_ is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
   - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
   - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
 
-* I remove the commented line from :ref:`test_is_a`
+* I remove the commented line from :ref:`test_is_a_set_an_object`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 61
+
+    def test_is_a_set_an_object():
+        assert isinstance(set, object)
+        assert issubclass(set, object)
 
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a`
+    def test_is_a_dictionary_an_object():
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a_dictionary_an_object`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 66
     :emphasize-lines: 2
 
+    def test_is_a_dictionary_an_object():
+        assert not isinstance(dict, object)
+        assert issubclass(dict, object)
 
 
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2161,30 +2215,40 @@ the test passes.
 
     E       assert not True
 
-  because ``                    `` is not :ref:`True<test_what_is_true>`.
+  because ``assert not isinstance(dict, object)`` is not :ref:`True<test_what_is_true>`.
 
-* I change the :ref:`assertion<what is an assertion?>`
+* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 66
     :emphasize-lines: 2-3
 
+    def test_is_a_dictionary_an_object():
+        # assert not isinstance(dict, object)
+        assert isinstance(dict, object)
+        assert issubclass(dict, object)
 
 
+    # Exceptions seen
 
-  the test passes because ______ is a
+
+  the test passes because :ref:`dict<what is a dictionary?>` is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
   - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
   - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
 
-* I remove the commented line from :ref:`test_is_a`
+* I remove the commented line from :ref:`test_is_a_dictionary_an_object`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 66
+
+    def test_is_a_dictionary_an_object():
+        assert isinstance(dict, object)
+        assert issubclass(dict, object)
 
 
-
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -2193,7 +2257,7 @@ the test passes.
 
     git commit -am 'test instance vs subclass'
 
-The difference between a :ref:`subclass (child)<how to test if something is a subclass of a class>` and an :ref:`an instance (a copy)<how to test if something is an instance of a class>` is the ``()`` after the name
+The difference between a :ref:`subclass (child)<how to test if something is a subclass of a class>` I make, and an :ref:`an instance (a copy)<how to test if something is an instance of a class>` is the ``()`` after the name
 
 .. code-block:: python
 
@@ -2205,7 +2269,7 @@ points the ``a_name`` :ref:`variable<what is a variable?>` to ``ClassName``
 
   a_name = ClassName()
 
-points the ``a_name`` :ref:`variable<what is a variable?>` to the result of calling ``ClassName()``
+points the ``a_name`` :ref:`variable<what is a variable?>` to the result of calling ``ClassName()``.
 
 ----
 
@@ -2227,20 +2291,21 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test to ``test_classes.py``
+* I add a test to ``test_classes.py`` with a call to the `dir built-in function`_ to get the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of :ref:`object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 66
-    :emphasize-lines: 5-8
+    :emphasize-lines: 6-9
 
-        def test_is_a_dictionary_an_object(self):
-            assert issubclass(dict, object)
-            self.assertIsSubclass(dict, object)
+    def test_is_a_dictionary_an_object():
+        assert isinstance(dict, object)
+        assert issubclass(dict, object)
 
-        def test_attributes_and_methods_of_objects(self):
-            reality = dir(object)
-            my_expectation = []
-            self.assertEqual(reality, my_expectation)
+
+    def test_attributes_and_methods_of_objects():
+        reality = dir(object)
+        my_expectation = []
+        assert reality == my_expectation
 
 
     # Exceptions seen
@@ -2249,9 +2314,13 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 
   .. code-block:: python
 
-    AssertionError: Lists differ:
-        ['__class__', '__delattr__', '__dir__', '_[272 chars]k__']
-     != []
+    E       AssertionError:
+                assert ['__class__',...ormat__', ...]
+                    == []
+    E
+    E         Left contains 24 more items,
+              first extra item: '__class__'
+    E         Use -v to get more diff
 
 ----
 
@@ -2261,125 +2330,121 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 
 ----
 
+* I click in the terminal_ where the tests are running then press :kbd:`v` on the keyboard for `pytest-watcher`_ to show me more of the difference between ``reality`` and ``my_expectation`` and it shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E         ...Full output truncated (24w lines hidden),
+                 use '-vv' to show
+
+* I press :kbd:`w` on the keyboard in the terminal_ where the tests are running, to show the menu for `pytest-watcher`_ and it shows
+
+  .. code-block:: python
+    :emphasize-lines: 2, 10
+
+    [pytest-watcher]
+    Current runner args: [-v]
+
+    Controls:
+    > Enter : Invoke test runner
+    > r     : reset all runner args
+    > c     : change runner args
+    > f     : run only failed tests (--lf)
+    > p     : drop to pdb on fail (--pdb)
+    > v     : increase verbosity (-v)
+    > e     : Erase terminal screen
+    > q     : quit pytest-watcher
+
+* I press :kbd:`c` on the keyboard to change runner args, and the terminal_ shows
+
+  .. code-block:: python
+    :emphasize-lines: 7, 14
+
+    [pytest-watcher]
+    Current runner args: []
+
+    Controls:
+    > Enter : Invoke test runner
+    > r     : reset all runner args
+    > c     : change runner args
+    > f     : run only failed tests (--lf)
+    > p     : drop to pdb on fail (--pdb)
+    > v     : increase verbosity (-v)
+    > e     : Erase terminal screen
+    > q     : quit pytest-watcher
+
+    Enter new runner args: -vv
+
+* I press :kbd:`-+v+v` on the keyboard then press :kbd:`enter` to show the full difference, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        assert [
+          '__class__', '__delattr__', '__dir__',
+          '__doc__', '__eq__', '__format__', '__ge__',
+          '__getattribute__', '__getstate__', '__gt__',
+          '__hash__', '__init__', '__init_subclass__',
+          '__le__', '__lt__', '__ne__', '__new__',
+          '__reduce__', '__reduce_ex__', '__repr__',
+          '__setattr__', '__sizeof__', '__str__',
+          '__subclasshook__'
+      ] == []
+
+  it shows me the entire :ref:`list<what is a list?>`.
+
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
   .. code-block:: python
-    :lineno-start: 70
-    :emphasize-lines: 3-7
-
-        def test_attributes_and_methods_of_objects(self):
-            reality = dir(object)
-            # my_expectation = []
-            my_expectation = [
-                '__class__', '__delattr__', '__dir__',
-                '_[272 chars]k__'
-            ]
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: Lists differ:
-        ['__c[32 chars]', '__doc__', '__eq__',
-         '__format__', '__ge__'[231 chars]k__']
-     != ['__c[32 chars]', '_[272 chars]k__']
-
-  it shows me the entire :ref:`list<what is a list?>` below the message
-
-* I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
-
-  .. code-block:: python
-    :lineno-start: 70
-    :emphasize-lines: 4-31
+    :lineno-start: 71
+    :emphasize-lines: 3-13
     :emphasize-text: __init__
 
-        def test_attributes_and_methods_of_objects(self):
-            reality = dir(object)
-            # my_expectation = []
-            # my_expectation = [
-            #     '__class__', '__delattr__', '__dir__',
-            #     '_[272 chars]k__'
-            # ]
-            my_expectation = E       - ['__class__',
-    E       -  '__delattr__',
-    E       -  '__dir__',
-    E       -  '__doc__',
-    E       -  '__eq__',
-    E       -  '__format__',
-    E       -  '__ge__',
-    E       -  '__getattribute__',
-    E       -  '__getstate__',
-    E       -  '__gt__',
-    E       -  '__hash__',
-    E       -  '__init__',
-    E       -  '__init_subclass__',
-    E       -  '__le__',
-    E       -  '__lt__',
-    E       -  '__ne__',
-    E       -  '__new__',
-    E       -  '__reduce__',
-    E       -  '__reduce_ex__',
-    E       -  '__repr__',
-    E       -  '__setattr__',
-    E       -  '__sizeof__',
-    E       -  '__str__',
-    E       -  '__subclasshook__']
-            self.assertEqual(reality, my_expectation)
+    def test_attributes_and_methods_of_objects():
+        reality = dir(object)
+        # my_expectation = []
+        my_expectation = [
+            '__class__', '__delattr__', '__dir__',
+            '__doc__', '__eq__', '__format__',
+            '__ge__', '__getattribute__',
+            '__getstate__', '__gt__', '__hash__',
+            '__init__', '__init_subclass__', '__le__',
+            '__lt__', '__ne__', '__new__', '__reduce__',
+            '__reduce_ex__', '__repr__', '__setattr__',
+            '__sizeof__', '__str__', '__subclasshook__'
+        ]
+        assert reality == my_expectation
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  - The test passes.
+  - The :ref:`__init__<the constructor method>` is in the :ref:`list of attributes and methods<test_attributes_and_methods_of_person_class>`
+  - All :ref:`classes<what is a class?>` automatically get these :ref:`attributes<what is a class attribute>`, they inherit them because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
+
+* I remove the commented line
 
   .. code-block:: python
+    :lineno-start: 71
 
-    NameError: name 'E' is not defined
-
-* I use the ``find and replace`` feature of the `Integrated Development Environment (IDE)`_ to remove the extra characters, then remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 70
-    :emphasize-lines: 3-28
-    :emphasize-text: __init__
-
-        def test_attributes_and_methods_of_objects(self):
-            reality = dir(object)
-            my_expectation = [
-                '__class__',
-                '__delattr__',
-                '__dir__',
-                '__doc__',
-                '__eq__',
-                '__format__',
-                '__ge__',
-                '__getattribute__',
-                '__getstate__',
-                '__gt__',
-                '__hash__',
-                '__init__',
-                '__init_subclass__',
-                '__le__',
-                '__lt__',
-                '__ne__',
-                '__new__',
-                '__reduce__',
-                '__reduce_ex__',
-                '__repr__',
-                '__setattr__',
-                '__sizeof__',
-                '__str__',
-                '__subclasshook__'
-            ]
-            self.assertEqual(reality, my_expectation)
+    def test_attributes_and_methods_of_objects():
+        reality = dir(object)
+        my_expectation = [
+            '__class__', '__delattr__', '__dir__',
+            '__doc__', '__eq__', '__format__', '__ge__',
+            '__getattribute__', '__getstate__', '__gt__',
+            '__hash__', '__init__', '__init_subclass__',
+            '__le__', '__lt__', '__ne__', '__new__',
+            '__reduce__', '__reduce_ex__', '__repr__',
+            '__setattr__', '__sizeof__', '__str__',
+            '__subclasshook__'
+        ]
+        assert reality == my_expectation
 
 
     # Exceptions seen
 
-  the test passes. All :ref:`classes<what is a class?>` automatically get these attributes, they inherit them because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
+  the test passes.
 
   The ``__init__`` :ref:`method<what is a method?>` is also inherited which means when I defined it in :ref:`test_classy_person_says_hello` I overwrote the inherited one.
 
@@ -2391,7 +2456,7 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
     git commit -am \
     'add test_attributes_and_methods_of_objects'
 
-:ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
+:ref:`Everything in Python is an object<everything is an object>` because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
 
 ----
 
@@ -2462,11 +2527,18 @@ what is next?
 You now know
 
 * :ref:`how to make a Python test driven development environment manually`
+* :ref:`what a Python module is<what is a module?>`
+* :ref:`how to run tests automatically`
 * :ref:`what causes AssertionError<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
-* :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`how to make dictionaries with functions<how to make a person>`
-* :ref:`how to make classes<classes>`
+* :ref:`how to make a person with strings`
+* :ref:`how to make functions that take input<functions that take input>`
+* :ref:`what causes TypeError?`
+* :ref:`how to place values in strings<telephone>`
+* :ref:`how to make a person say hi with f-strings<how to make a person with f-strings>`
+* :ref:`how to separate tests from solutions<separate and equal functions>`
+* :ref:`how to make a person with a class<how to make a person with a class>`
+* :ref:`that everything in Python is an object<everything is an object>`
 
 :ref:`Would you like to use class attributes to remove repetition from the assertion_error project?<AssertionError 2: use class attributes>`
 
