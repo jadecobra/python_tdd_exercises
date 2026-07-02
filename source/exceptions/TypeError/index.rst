@@ -240,14 +240,14 @@ start the project
     !!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!
     ===================== 1 error in L.MNs =====================
 
-  because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`
+  because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`.
 
   .. admonition:: if the terminal_ does not show the same error, then check
 
     * if your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
     * if you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
-    fix those errors and try to run ``uv run pytest-watcher . --now`` again
+    and try ``uv run pytest-watcher . --now`` again
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_type_error.py``
 

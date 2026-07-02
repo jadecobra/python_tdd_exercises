@@ -219,45 +219,56 @@ start the project
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :emphasize-lines: 8, 10
+    :emphasize-lines: 6, 8, 10
 
-    ============================ FAILURES ==========================
-    ___________________ TestClasses.test_failure ___________________
+    ======================== FAILURES ========================
+    ______________________ test_failure ______________________
 
-    self = <tests.test_classes.TestClasses testMethod=test_failure>
+        def test_failure():
+    >       assert False is True
+    E       assert False is True
 
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
+    test_classes.py:2: AssertionError
+    ================ short test summary info =================
+    FAILED test_classes.py::test_failure - assert False is True
+    =================== 1 failed in X.YZs ====================
 
-    tests/test_classes.py:7: AssertionError
-    =================== short test summary info ====================
-    FAILED tests/test_classes.py::TestClasses::test_failure - AssertionError: True is not false
-    ================= 1 failed, 6 passed in X.YZs ==================
+  because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`.
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
+  .. admonition:: if the terminal_ does not show the same error, then check
+
+    * if your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+    * if you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
+
+    and try ``uv run pytest-watcher . --now`` again
+
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_classes.py``
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 7-8
+    :linenos:
+    :emphasize-lines: 5-6
     :emphasize-text: AssertionError
 
-    class TestClasses(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
+    def test_failure():
+        assert False is True
 
 
     # Exceptions seen
     # AssertionError
 
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
+* I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
+    :linenos:
+    :emphasize-lines: 2-3
 
-            self.assertFalse(False)
+    def test_failure():
+        # assert False is True
+        assert True is True
+
+
+    # Exceptions seen
+    # AssertionError
 
   the test passes.
 

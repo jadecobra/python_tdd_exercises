@@ -104,7 +104,7 @@ Pick a time that works best for you
         <div class="price-card highlight">
             <h1>nighttime ninjas</h1>
             <h4>pro</h4>
-            <div class="price">$399.96</div>
+            <div class="price">$799.92</div>
             <p class="time-slot">8PM - 10PM CST</p>
             <ul>
                 <li>May 18 - July 24</li>
