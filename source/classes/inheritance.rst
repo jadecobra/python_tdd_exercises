@@ -47,7 +47,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/person/tests/test_classes.py
+.. literalinclude:: ../code/classes/test_classes.py
   :language: python
   :linenos:
 
@@ -2516,7 +2516,7 @@ close the project
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<classes: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<everything is an object: tests>`
 
 ----
 
@@ -2540,7 +2540,7 @@ You now know
 * :ref:`how to make a person with a class<how to make a person with a class>`
 * :ref:`that everything in Python is an object<everything is an object>`
 
-:ref:`Would you like to use class attributes to remove repetition from the assertion_error project?<AssertionError 2: use class attributes>`
+:ref:`Would you like to test another way to write tests?<another way to write tests>`
 
 ----
 

@@ -4,6 +4,18 @@ classes: tests and solutions
 #################################################################################
 
 *********************************************************************************
+everything is an object: tests
+*********************************************************************************
+
+the code from ``classes/tests/test_classes.py`` from :ref:`everything is an object`
+
+.. literalinclude:: classes/test_classes.py
+  :language: python
+  :linenos:
+
+----
+
+*********************************************************************************
 classes tests
 *********************************************************************************
 
@@ -25,31 +37,6 @@ the solutions in ``person/src/person.py`` from :ref:`classes<what is a class?>`
   :language: python
   :linenos:
 
-----
-
-*********************************************************************************
-inheritance tests
-*********************************************************************************
-
-the code from ``person/tests/test_classes.py`` from :ref:`inheritance<family ties>`
-
-.. literalinclude:: person/tests/test_classes.py
-  :language: python
-  :linenos:
-
-
-*********************************************************************************
-inheritance solutions
-*********************************************************************************
-
-
-the solutions in ``person/src/classes.py`` from :ref:`inheritance<family ties>`
-
-.. literalinclude:: person/solutions/classes.py
-  :language: python
-  :linenos:
-
-----
 
 *********************************************************************************
 AssertionError 2: tests
