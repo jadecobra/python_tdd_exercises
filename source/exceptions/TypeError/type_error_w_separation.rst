@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Separate tests from solutions (keep them "separate and equal") in the type_error project using TDD. Move the functions out of test_type_error.py into src/type_error.py. Use "import src.type_error" then reroute calls to src.type_error.function_00 etc, mkdir src, touch src/type_error.py, "remove the commented lines" (local defs left in test). See real errors while separating: "NameError: name 'src' is not defined", "ModuleNotFoundError: No module named 'src'", "ModuleNotFoundError: No module named 'src.type_error'", "AttributeError: module 'src.type_error' has no attribute 'function_00'". Finish with all 9 functions (function_00 through function_08 with special signatures for _02/_07/_08) in src/type_error.py and three tests calling exclusively via the src. prefix: test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs (including mixed positional+keyword calls like function_08('positional', argument='keyword')). uv run pytest-watcher . --now, git commits after each step. Review lesson: I can write solutions in a different module from the tests. Jacob Itegboje Pumping Python TDD series.
+  :keywords: Jacob Itegboje, Pumping Python, separate and equal TypeError, separate tests from solutions, src/type_error.py, import src.type_error, src.type_error.function_00, "NameError: name 'src' is not defined", "ModuleNotFoundError: No module named 'src'", "ModuleNotFoundError: No module named 'src.type_error'", "AttributeError: module 'src.type_error' has no attribute 'function_00'", test_type_error_w_separation, test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs, remove the commented lines, move functions to src folder, function_00 to function_08, src package layout, TDD separation refactor, uv pytest-watcher, git commit, "I can write solutions in a different module from the tests", TypeError continuation chapter, python src type_error
 
 .. include:: ../../links.rst
 
@@ -223,7 +223,7 @@ because ``src`` is not defined in ``test_type_error.py``.
     def function_00(one):
         return None
 
-  the test passes the test passes because
+  the test passes because
 
   - When ``import src.type_error`` runs, Python_ brings in an :ref:`object<what is a class?>` for the ``type_error.py`` file_ from the ``src`` folder_ so I can use it in ``test_type_error.py`` as ``src.type_error``.
   - When ``src.type_error.function_00`` is :ref:`called<how to call a function with input>`, Python_ :ref:`calls<how to call a function with input>` the ``function_00`` :ref:`function<what is a function?>` from the :ref:`object<what is a class?>` it imported for the ``type_error.py`` file_ from the ``src`` folder_ (``src.type_error``).
@@ -836,7 +836,7 @@ because ``src`` is not defined in ``test_type_error.py``.
         └── def function_08(one, two):
                 return None
 
-* I remove the commented lines from :ref:`test_type_error_w_positional_arguments` in ``type_error.py``
+* I remove the commented lines from :ref:`test_type_error_w_positional_arguments` in ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 43
@@ -1662,53 +1662,6 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I remove the commented lines from ``type_error.py``
-
-  .. code-block:: python
-    :linenos:
-
-    def function_00(the_input):
-        return None
-
-
-    def function_01(first, second):
-        return None
-
-
-    def function_02(
-        third, second, first
-    ):
-        return None
-
-
-    def function_03(
-        first, second, third, fourth
-    ):
-        return None
-
-
-    def function_04(argument):
-        return None
-
-
-    def function_05(argument_0, argument_1):
-        return None
-
-
-    def function_06(argument_0, argument_1, argument_2):
-        return None
-
-
-    def function_07(
-        argument_0, argument_1,
-        argument_2, argument_n
-    ):
-        return None
-
-
-    def function_08(argument, name):
-        return None
-
 * I remove the commented lines from :ref:`test_type_error_w_keyword_arguments` in ``test_type_error.py``
 
   .. code-block:: python
@@ -1917,9 +1870,75 @@ because ``src`` is not defined in ``test_type_error.py``.
 
     # Exceptions seen
 
-  the test is still green.
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-* I remove the commented lines from :ref:`test_type_error_w_args_and_kwargs`
+  .. code-block:: python
+
+    TypeError: function_08() got
+               multiple values for argument 'argument'
+
+* I change the order of the arguments in the :ref:`definition<how to make a function that takes input>` of ``function_08`` in ``type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 72
+
+    # def function_08():
+    # def function_08(one, two):
+    # def function_08(argument, two):
+    # def function_08(argument, name):
+    def function_08(name, argument):
+        return None
+
+  the test passes.
+
+* I remove the commented lines from ``type_error.py``
+
+  .. code-block:: python
+    :linenos:
+
+    def function_00(the_input):
+        return None
+
+
+    def function_01(first, second):
+        return None
+
+
+    def function_02(
+        third, second, first
+    ):
+        return None
+
+
+    def function_03(
+        first, second, third, fourth
+    ):
+        return None
+
+
+    def function_04(argument):
+        return None
+
+
+    def function_05(argument_0, argument_1):
+        return None
+
+
+    def function_06(argument_0, argument_1, argument_2):
+        return None
+
+
+    def function_07(
+        argument_0, argument_1,
+        argument_2, argument_n
+    ):
+        return None
+
+
+    def function_08(name, argument):
+        return None
+
+* I remove the commented lines from :ref:`test_type_error_w_args_and_kwargs` in ``test_type_error.py``
 
   .. code-block:: python
 
@@ -1963,7 +1982,7 @@ because ``src`` is not defined in ``test_type_error.py``.
     # ModuleNotFoundError
     # AttributeError
 
-* I remove ``functions_00`` to ``functions_09`` from ``test_type_error.py`` because they are no longer :ref:`called<how to call a function with input>`
+* I remove ``functions_00`` to ``functions_08`` from ``test_type_error.py`` because they are no longer :ref:`called<how to call a function with input>`
 
   .. code-block:: python
     :linenos:
@@ -1973,13 +1992,15 @@ because ``src`` is not defined in ``test_type_error.py``.
 
     def test_type_error_w_positional_arguments():
 
-  all the tests are passing because ``functions_00`` to ``functions_09`` are now :ref:`attributes<what is a class attribute>` of ``type_error.py`` in the ``src`` folder_ and I can :ref:`call<how to call a function with input>` them from outside the file_ with ``src.type_error.function_name()``
+  all the tests are passing because ``functions_00`` to ``functions_08`` are now :ref:`attributes<what is a class attribute>` of ``type_error.py`` in the ``src`` folder_ and I can :ref:`call<how to call a function with input>` them from outside the file_ with ``src.type_error.function_name()``
 
   .. code-block:: shell
 
     src
     └── type_error.py
         └── def function_name(): return None
+
+  where ``function_name`` is the name of the :ref:`function<what is a function?>`.
 
 * I add a git_ commit message in the other terminal_
 
@@ -1997,13 +2018,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 review
 *********************************************************************************
 
-I ran to test for :ref:`TypeError<what causes TypeError?>` based on what I have seen so far with
-
-* :ref:`positional arguments<test_type_error_w_positional_arguments>`
-* :ref:`keyword arguments<test_type_error_w_keyword_arguments>`
-* :ref:`positional and keyword arguments<test_type_error_w_args_and_kwargs>`
-
-My problem with the tests is that they all show the correct way to call the :ref:`functions<what is a function?>` I made in the file_. If someone reads the file_ or runs it, there is no way for them to know how any of the :ref:`calls<how to call a function with input>` are related to :ref:`TypeError<what causes TypeError?>` unless they go through the process with me, there has to be a better way.
+:ref:`I can write solutions in a different module from the tests<separate and equal>`.
 
 ----
 

@@ -29,7 +29,7 @@ separate and equal TypeError tests
 
 the code from ``type_error/tests/test_type_error.py`` from :ref:`separate and equal TypeError`
 
-.. literalinclude:: type_error/tests/test_type_error.py
+.. literalinclude:: type_error/tests/test_type_error_w_separation.py
   :language: python
   :linenos:
 
@@ -43,6 +43,6 @@ separate and equal TypeError solutions
 
 the code from ``type_error/src/type_error.py`` from :ref:`separate and equal TypeError`
 
-.. literalinclude:: type_error/solutions/type_error.py
+.. literalinclude:: type_error/solutions/type_error_w_separation.py
   :language: python
   :linenos:

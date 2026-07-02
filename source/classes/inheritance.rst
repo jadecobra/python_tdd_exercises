@@ -26,7 +26,7 @@
 everything is an object
 #################################################################################
 
-The :ref:`object class<what is a class?>` is the mother of all things in Python_.
+The :ref:`object class<what is a class?>` is the mother of all things in Python_. I think of classes_ as :ref:`attributes (variables)<what is a class attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together.
 
 ----
 
@@ -66,69 +66,147 @@ I have these tests by the end of the chapter
 ----
 
 *********************************************************************************
-requirements
+start the project
 *********************************************************************************
 
-* :ref:`how to make a person`
-* :ref:`what is a class?`
-
-----
-
-*********************************************************************************
-continue the project
-*********************************************************************************
-
-* I `change directory`_ to the ``person`` folder_
+* I name this project ``classes``
+* I open a terminal_
+* I `change directory`_ to the ``classes`` folder_ in the ``pumping_python`` folder_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd person
+    cd classes
 
-  the terminal_ shows I am in the ``person`` folder_
-
-  .. code-block:: python
-
-    .../pumping_python/person
-
-* I make a new file_ in the ``tests`` folder_ named ``test_classes.py``
+  the terminal_ shows
 
   .. code-block:: python
-    :emphasize-lines: 1
 
-    touch tests/test_classes.py
+    cd: no such file or directory: classes
 
-* I make a new file_ in the ``src`` folder_ named ``classes.py``
+* I use uv_ to make a directory_ for the project and initialize it
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch src/classes.py
+    uv init classes
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    Initialized project `classes`
+    at `.../pumping_python/classes`
+
+* I `change directory`_ to ``classes``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd classes
+
+  the terminal_ shows I am in the ``classes`` folder_
+
+  .. code-block:: python
+
+    .../pumping_python/classes
+
+* I `make a directory`_ for the tests
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mkdir tests
+
+* I make the ``tests`` directory_ a `Python package`_
+
+  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        touch tests/__init__.py
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        New-Item tests/__init__.py
+
+* I use the `mv program`_ to change the name of ``main.py`` to ``test_classes.py`` and move it to the ``tests`` folder_
+
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        mv main.py tests/test_classes.py
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        Move-Item main.py tests/test_classes.py
 
 * I open ``test_classes.py``
 
-* I add :ref:`the first failing test<test_failure>` to ``test_classes.py``
+* I delete the text in the file_ then add :ref:`the first failing test<test_failure>` to ``test_classes.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1, 4, 6-7
+    :emphasize-lines: 1-2
 
-    import unittest
+    def test_failure():
+        assert False is True
 
+* I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
 
-    class TestClasses(unittest.TestCase):
+  .. code-block:: python
+    :emphasize-lines: 1
 
-        def test_failure(self):
-            self.assertFalse(True)
+    echo "pytest" > requirements.txt
 
-* I go back to the terminal_ to add the new files_ and folders_ to git_ for tracking
+* I add `pytest-watcher`_ to the requirements file_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    echo "pytest-watcher" >> requirements.txt
+
+* I use uv_ to install `pytest-watcher`_ with the requirements file_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    uv add --requirement requirements.txt
+
+* I add the new files_ and folder_ to git_ for tracking
 
   .. code-block:: python
     :emphasize-lines: 1
 
     git add .
 
-  the terminal_ goes back to the command line.
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'setup project'
 
 * I use ``pytest-watcher`` to run the tests
 
@@ -2982,7 +3060,7 @@ close the project
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
-* I `change directory`_ to the parent of ``person``
+* I `change directory`_ to the parent of ``classes``
 
   .. code-block:: shell
     :emphasize-lines: 1
