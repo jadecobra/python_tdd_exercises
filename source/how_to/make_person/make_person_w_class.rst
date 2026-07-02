@@ -3489,10 +3489,9 @@ You know
 * :ref:`how to place values in strings<telephone>`
 * :ref:`how to make a person say hi with f-strings<how to make a person with f-strings>`
 * :ref:`how to separate tests from solutions<separate and equal functions>`
-* :ref:`what causes AttributeError?`
 * :ref:`how to make a person with a class<how to make a person with a class>`
 
-:ref:`Would you like to test classes<everything is an object>`
+:ref:`Would you like to know where the extra attributes and methods of the Person class came from?<everything is an object>`
 
 ----
 

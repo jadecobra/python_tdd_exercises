@@ -3040,7 +3040,7 @@ So far, you know
 * :ref:`how to make a person say hi with f-strings<how to make a person with f-strings>`
 * :ref:`how to separate tests from solutions<separate and equal functions>`
 
-:ref:`Would you like to test using a class to remove repetition of inputs from functions?<how to make a person with a class>`
+:ref:`Would you like to see me separate the tests and functions in the type_error project?<separate and equal TypeError>`
 
 ----
 

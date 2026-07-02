@@ -46,13 +46,17 @@ def test_type_error_w_keyword_arguments():
         argument_2={0, 1, 2, 'n'},
         argument_n={'key': 'value'},
     )
-    src.type_error.function_08(argument='positional', name='keyword')
+    src.type_error.function_08(
+        argument='positional', name='keyword'
+    )
 
 
 def test_type_error_w_args_and_kwargs():
     src.type_error.function_00('argument')
     src.type_error.function_01(1, 0)
-    src.type_error.function_02(third=True, second=False, first=None)
+    src.type_error.function_02(
+        third=True, second=False, first=None
+    )
     src.type_error.function_03(
         second=[0, 1, 2, 'n'],
         first=(0, 1, 2, 'n'),
@@ -75,10 +79,14 @@ def test_type_error_w_args_and_kwargs():
         argument_0=(0, 1, 2, 'n'),
         argument_1=[0, 1, 2, 'n'],
     )
-    src.type_error.function_08('positional', argument='keyword')
+    src.type_error.function_08(
+        'positional', argument='keyword'
+    )
 
 
 # Exceptions seen
 # AssertionError
 # NameError
 # TypeError
+# ModuleNotFoundError
+# AttributeError
