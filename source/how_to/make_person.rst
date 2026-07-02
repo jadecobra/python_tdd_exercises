@@ -4924,7 +4924,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 extract get_current_year function
 *********************************************************************************
 
-Each test has uses ``datetime.datetime.now().year`` to get the current year.
+Each test uses ``datetime.datetime.now().year`` to get the current year.
 
 * I go back to the terminal_ where the tests are running
 

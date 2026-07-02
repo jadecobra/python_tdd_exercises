@@ -1643,7 +1643,7 @@ An :ref:`instance<how to test if something is an instance of a class>` is a copy
 
     TypeError: issubclass() arg 1 must be a class
 
-  because the argument I put in the parentheses on the left is an :ref:`instance<how to test if something is an instance of a class>` not a :ref:`class<what is a class?>`.
+  because the first argument given in a :ref:`call<how to call a function with input>` to the :ref:`issubclass function<how to test if something is a subclass of a class>`  is an :ref:`instance<how to test if something is an instance of a class>` not a :ref:`class<what is a class?>`.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -1939,6 +1939,252 @@ the test passes.
 
 
     def test_is_a_float_an_object():
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a_float_an_object`
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 2
+
+    def test_is_a_float_an_object():
+        assert not isinstance(float, object)
+        assert issubclass(float, object)
+
+
+    def test_is_a_string_an_object():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert not True
+
+  because ``assert not isinstance(float, object)`` is not :ref:`True<test_what_is_true>`.
+
+* I change the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 2-3
+
+    def test_is_a_float_an_object():
+        # assert not isinstance(float, object)
+        assert isinstance(float, object)
+        assert issubclass(float, object)
+
+
+    def test_is_a_string_an_object():
+
+  the test passes because float_ is a
+
+  - :ref:`built-in function<what is a function?>` that comes with Python_
+  - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
+  - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
+
+* I remove the commented line from :ref:`test_is_a_float_an_object`
+
+  .. code-block:: python
+    :lineno-start: 41
+
+    def test_is_a_float_an_object():
+        assert isinstance(float, object)
+        assert issubclass(float, object)
+
+
+    def test_is_a_string_an_object():
+
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a_string_an_object`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 2
+
+
+
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert not True
+
+  because ``                    `` is not :ref:`True<test_what_is_true>`.
+
+* I change the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 2-3
+
+
+
+
+  the test passes because ______ is a
+
+  - :ref:`built-in function<what is a function?>` that comes with Python_
+  - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
+  - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
+
+* I remove the commented line from :ref:`test_is_a_string_an_object`
+
+  .. code-block:: python
+    :lineno-start:
+
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 2
+
+
+
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert not True
+
+  because ``                    `` is not :ref:`True<test_what_is_true>`.
+
+* I change the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 2-3
+
+
+
+
+  the test passes because ______ is a
+
+  - :ref:`built-in function<what is a function?>` that comes with Python_
+  - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
+  - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
+
+* I remove the commented line from :ref:`test_is_a`
+
+  .. code-block:: python
+    :lineno-start:
+
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 2
+
+
+
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert not True
+
+  because ``                    `` is not :ref:`True<test_what_is_true>`.
+
+* I change the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 2-3
+
+
+
+
+  the test passes because ______ is a
+
+  - :ref:`built-in function<what is a function?>` that comes with Python_
+  - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
+  - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
+
+* I remove the commented line from :ref:`test_is_a`
+
+  .. code-block:: python
+    :lineno-start:
+
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 2
+
+
+
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert not True
+
+  because ``                    `` is not :ref:`True<test_what_is_true>`.
+
+* I change the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 2-3
+
+
+
+
+  the test passes because ______ is a
+
+  - :ref:`built-in function<what is a function?>` that comes with Python_
+  - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
+  - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
+
+* I remove the commented line from :ref:`test_is_a`
+
+  .. code-block:: python
+    :lineno-start:
+
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_a`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 2
+
+
+
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert not True
+
+  because ``                    `` is not :ref:`True<test_what_is_true>`.
+
+* I change the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 2-3
+
+
+
+
+  the test passes because ______ is a
+
+  - :ref:`built-in function<what is a function?>` that comes with Python_
+  - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
+  - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
+
+* I remove the commented line from :ref:`test_is_a`
+
+  .. code-block:: python
+    :lineno-start:
+
+
+
 
 * I add a git_ commit message in the other terminal_
 
