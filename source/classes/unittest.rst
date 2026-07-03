@@ -56,6 +56,21 @@ I have these tests by the end of the chapter
   :language: python
   :linenos:
 
+*********************************************************************************
+Questions about unittest
+*********************************************************************************
+
+Questions to think about as I go through the chapter
+
+* :ref:`What are two ways to test if something is not something else?<test_assert_is_not>`
+* :ref:`What are two ways to test if something is something?<test_assert_is>`
+* :ref:`What are two ways to test if two things are not equal?<test_assert_not_equal>`
+* :ref:`What are two ways to test if two things are equal?<test_assert_equal>`
+* :ref:`What are two ways to test if something is not an instance<test_assert_not_is_instance>`
+* :ref:`What are two ways to test if something is an instance<test_assert_is_instance>`
+* :ref:`What are two ways to test if something is not a subclass<test_assert_not_is_subclass>`
+* :ref:`What are two ways to test if something is a subclass<test_assert_is_subclass>`
+
 ----
 
 *********************************************************************************
@@ -2382,8 +2397,10 @@ Which of the error messages in this chapter do you like better?
 ----
 
 *********************************************************************************
-remove repetition
+extract TESTER variable
 *********************************************************************************
+
+I can use a :ref:`variable<what is a variable?>` to remove repetition of making the ``unittest.TestCase()`` :ref:`instance<how to test if something is an instance>` in every test.
 
 * I add a :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` at the top of the file_
 
@@ -2398,10 +2415,205 @@ remove repetition
 
     def test_attributes_and_methods_of_unittest():
 
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``unittest.TestCase()`` from the :ref:`test_assert_is_not`
+* I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assert_is_not`
 
   .. code-block:: python
     :lineno-start: 81
+    :emphasize-lines: 7-8
+
+    def test_assert_is_not():
+        # unittest.TestCase.assertIsNot()
+        # unittest.TestCase().assertIsNot()
+        # unittest.TestCase().assertIsNot(None, None)
+        # assert None is not None
+        assert None is not False
+        # unittest.TestCase().assertIsNot(None, False)
+        TESTER.assertIsNot(None, False)
+
+
+    def test_assert_is():
+
+  the test is still green.
+
+* I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assert_is`
+
+  .. code-block:: python
+    :lineno-start: 91
+    :emphasize-lines: 7-8
+
+    def test_assert_is():
+        # assert False is True
+        assert False is False
+        # unittest.TestCase.assertIs()
+        # unittest.TestCase().assertIs()
+        # unittest.TestCase().assertIs(False, True)
+        # unittest.TestCase().assertIs(False, False)
+        TESTER.assertIs(False, False)
+
+
+    def test_assert_not_equal():
+
+  still green.
+
+* I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assert_not_equal`
+
+  .. code-block:: python
+    :lineno-start: 101
+    :emphasize-lines: 6-7
+
+    def test_assert_not_equal():
+        # unittest.TestCase().assertNotEqual()
+        # unittest.TestCase().assertNotEqual(True, True)
+        # assert True != True
+        assert True != 0
+        # unittest.TestCase().assertNotEqual(True, 0)
+        TESTER.assertNotEqual(True, 0)
+
+
+    def test_assert_equal():
+
+  green.
+
+* I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assert_equal`
+
+  .. code-block:: python
+    :lineno-start: 110
+    :emphasize-lines: 5-6
+
+    def test_assert_equal():
+        # assert 0.0 == '0.0'
+        assert 0.0 == 0.0
+        # unittest.TestCase().assertEqual(0.0, '0.0')
+        # unittest.TestCase().assertEqual(0.0, 0.0)
+        TESTER.assertEqual(0.0, 0.0)
+
+
+    def test_assert_not_is_instance():
+
+  still green.
+
+* I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assert_not_is_instance`
+
+  .. code-block:: python
+    :lineno-start: 118
+    :emphasize-lines: 8-9
+
+    def test_assert_not_is_instance():
+        # unittest.TestCase.assertNotIsInstance()
+        # unittest.TestCase().assertNotIsInstance()
+        assert not isinstance(
+            # unittest.TestCase(), unittest.TestCase
+            unittest.TestCase, unittest.TestCase
+        )
+        # unittest.TestCase().assertNotIsInstance(
+        TESTER.assertNotIsInstance(
+            # unittest.TestCase(), unittest.TestCase
+            unittest.TestCase, unittest.TestCase
+        )
+
+
+    def test_assert_is_instance():
+
+  the test is still green.
+
+* I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assert_is_instance`
+
+  .. code-block:: python
+    :lineno-start: 132
+    :emphasize-lines: 11-12
+
+    def test_assert_is_instance():
+        a_class = unittest.TestCase
+        an_instance = a_class()
+        # unittest.TestCase.assertIsInstance()
+        # unittest.TestCase().assertIsInstance()
+        assert isinstance(
+            # unittest.TestCase, unittest.TestCase
+            # unittest.TestCase(), unittest.TestCase
+            an_instance, a_class
+        )
+        # unittest.TestCase().assertIsInstance(
+        TESTER.assertIsInstance(
+            # unittest.TestCase, unittest.TestCase
+            # unittest.TestCase(), unittest.TestCase
+            an_instance, a_class
+        )
+
+
+    def test_assert_not_is_subclass():
+
+  still green.
+
+* I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assert_not_is_subclass`
+
+  .. code-block:: python
+    :lineno-start: 150
+    :emphasize-lines: 7-8
+
+    def test_assert_not_is_subclass():
+        # unittest.TestCase().assertNotIsSubclass()
+        assert not issubclass(
+            # unittest.TestCase, object
+            unittest.TestCase, list
+        )
+        # unittest.TestCase().assertNotIsSubclass(
+        TESTER.assertNotIsSubclass(
+            # unittest.TestCase(), object
+            # unittest.TestCase, object
+            unittest.TestCase, dict
+        )
+
+
+    def test_assert_is_subclass():
+
+  green.
+
+* I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assert_is_subclass`
+
+  .. code-block:: python
+    :lineno-start: 164
+    :emphasize-lines: 6-7
+
+    def test_assert_is_subclass():
+        # assert issubclass(unittest.TestCase(), set)
+        # assert issubclass(unittest.TestCase, set)
+        assert issubclass(unittest.TestCase, object)
+        # unittest.TestCase.assertIsSubclass()
+        # unittest.TestCase().assertIsSubclass(
+        TESTER.assertIsSubclass(
+            # unittest.TestCase(), set
+            # unittest.TestCase, set
+            unittest.TestCase, object
+        )
+
+
+    # Exceptions seen
+
+  still green.
+
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract TESTER variable'
+
+
+The ``unittest.TestCase()`` :ref:`instance<how to test if something is an instance>` is made once then used in every test for its `assert methods`_.
+
+
+
+----
+
+*********************************************************************************
+remove repetition with variables
+*********************************************************************************
+
+
+
+
 
 ----
 
@@ -2461,7 +2673,7 @@ close the project
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<unittest: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<another way to write tests: tests>`
 
 ----
 
