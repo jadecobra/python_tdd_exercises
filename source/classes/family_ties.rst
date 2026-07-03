@@ -19,7 +19,7 @@ The tests from :ref:`everything is an object` show that in Python everything :re
 
 Making new :ref:`objects<everything is an object>` can be easier with :ref:`Inheritance<test_attributes_and_methods_of_objects>` because I do not have to write things that have already been written again, I can :ref:`inherit<test_attributes_and_methods_of_objects>` them instead and change the new :ref:`objects<everything is an object>` to do what I want.
 
-It can also be more complicated because I can make new :ref:`instances<how to test if something is an instance of a class>` to :ref:`inherit<test_attributes_and_methods_of_objects>` from one :ref:`class<what is a class?>` and customize it for what I need instead of making new :ref:`classes<what is a class?>` that require me to keep track of `Python's Method Resolution Order`_.
+It can also be more complicated because I can make new :ref:`instances<how to test if something is an instance>` to :ref:`inherit<test_attributes_and_methods_of_objects>` from one :ref:`class<what is a class?>` and customize it for what I need instead of making new :ref:`classes<what is a class?>` that require me to keep track of `Python's Method Resolution Order`_.
 
 ----
 
@@ -27,7 +27,7 @@ It can also be more complicated because I can make new :ref:`instances<how to te
 what is Python's Method Resolution Order?
 *********************************************************************************
 
-When :ref:`an instance of a class<how to test if something is an instance of a class>` is made, Python_ calls every ``__init__`` :ref:`method<what is a method?>` of the parent and its parent going through every ancestor until it gets to the last one that is needed to make the :ref:`instance<how to test if something is an instance of a class>`.
+When :ref:`an instance<how to test if something is an instance>` is made, Python_ calls every ``__init__`` :ref:`method<what is a method?>` of the parent and its parent going through every ancestor until it gets to the last one that is needed to make the :ref:`instance<how to test if something is an instance>`.
 
 ----
 
@@ -203,7 +203,7 @@ continue the project
 test_making_a_class_w_inheritance
 *********************************************************************************
 
-I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<what is a class?>` with :ref:`inheritance<test_attributes_and_methods_of_objects>` by stating the parent :ref:`class<what is a class?>` and that :ref:`an instance (a copy)<how to test if something is an instance of a class>` and a :ref:`subclass (child)<how to test if something is a subclass of a class>` are different.
+I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<what is a class?>` with :ref:`inheritance<test_attributes_and_methods_of_objects>` by stating the parent :ref:`class<what is a class?>` and that :ref:`an instance (a copy)<how to test if something is an instance>` and a :ref:`subclass (child)<how to test if something is a subclass>` are different.
 
 ----
 
@@ -309,7 +309,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<wh
         <class 'src.family_ties.Doe'> is not
         an instance of <class 'src.person.Person'>
 
-  because ``Doe`` is not an :ref:`instance (a copy)<how to test if something is an instance of a class>` of ``Person``.
+  because ``Doe`` is not an :ref:`instance (a copy)<how to test if something is an instance>` of ``Person``.
 
 * I change the :ref:`assertion<what is an assertion?>` in :ref:`test_making_a_class_w_inheritance` in ``test_family_ties.py``
 
@@ -327,7 +327,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<wh
 
     # Exceptions seen
 
-  the test passes. ``Doe`` is NOT an :ref:`instance<how to test if something is an instance of a class>` of the ``Person`` :ref:`class<what is a class?>`, they are siblings - both children of :ref:`object<everything is an object>`.
+  the test passes. ``Doe`` is NOT an :ref:`instance<how to test if something is an instance>` of the ``Person`` :ref:`class<what is a class?>`, they are siblings - both children of :ref:`object<everything is an object>`.
 
 ----
 
@@ -337,7 +337,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<wh
 
 ----
 
-* I add a call to :ref:`assertIsSubclass<another way to test if something is a subclass of a class>`
+* I add a call to :ref:`assertIsSubclass<another way to test if something is a subclass>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -453,7 +453,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<wh
   - I have to use ``src.person.Person`` in ``family_ties.py`` because I am testing from the root folder_ of the project (the parent folder_ of ``src`` and ``tests``).
   - The test needs to know where ``person.py`` is in relation to where I ran the tests from.
   - This is a problem because if ``family_ties.py`` is run from inside ``src`` the `import statement`_ will not be able to find ``src.person`` from inside ``src``. Same thing if I run the tests from inside ``tests`` :ref:`(a problem for another time)<test_module_not_found_error>`.
-  - The test passes because ``Doe`` is now a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Person``.
+  - The test passes because ``Doe`` is now a :ref:`child (subclass)<how to test if something is a subclass>` of ``Person``.
 
 ----
 
@@ -463,7 +463,7 @@ more about instances vs subclasses
 
 ----
 
-* I add a call to :ref:`assertIsInstance<another way to test if something is an instance of a class>` to show that ``src.family_ties.Doe`` is not an :ref:`instance<how to test if something is an instance of a class>`
+* I add a call to :ref:`assertIsInstance<another way to test if something is an instance>` to show that ``src.family_ties.Doe`` is not an :ref:`instance<how to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -497,9 +497,9 @@ more about instances vs subclasses
         <class 'src.family_ties.Doe'> is not
         an instance of <class 'src.family_ties.Doe'>
 
-  because a :ref:`class<what is a class?>` is not an :ref:`instance<how to test if something is an instance of a class>`.
+  because a :ref:`class<what is a class?>` is not an :ref:`instance<how to test if something is an instance>`.
 
-* I change :ref:`assertIsInstance<another way to test if something is an instance of a class>` to :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
+* I change :ref:`assertIsInstance<another way to test if something is an instance>` to :ref:`assertNotIsInstance<another way to test if something is NOT an instance>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -583,7 +583,7 @@ what happens when a child calls the parent?
 
 ----
 
-* I add a call to the :ref:`assertIsInstance method<another way to test if something is an instance of a class>`, this time with an :ref:`instance<how to test if something is an instance of a class>` of ``Doe``
+* I add a call to the :ref:`assertIsInstance method<another way to test if something is an instance>`, this time with an :ref:`instance<how to test if something is an instance>` of ``Doe``
 
   .. code-block:: python
     :lineno-start: 24
@@ -610,7 +610,7 @@ what happens when a child calls the parent?
     TypeError: Person.__init__() missing 1
                required positional argument: 'first_name'
 
-  I called ``Doe`` to make an :ref:`instance<how to test if something is an instance of a class>`. How did ``Person.__init__`` get called?
+  I called ``Doe`` to make an :ref:`instance<how to test if something is an instance>`. How did ``Person.__init__`` get called?
 
 * Here is what is happens when ``src.class.Doe()`` runs
 
@@ -660,7 +660,7 @@ how to call the parent from the child
             super().__init__()
 
   - the `super built-in function`_ calls the ``__init__`` :ref:`method<what is a method?>` of the parent :ref:`class<what is a class?>`
-  - ``super()`` is the parent - ":ref:`super class<how to call the parent from the child>`" for parent, ":ref:`subclass<how to test if something is a subclass of a class>`" for child
+  - ``super()`` is the parent - ":ref:`super class<how to call the parent from the child>`" for parent, ":ref:`subclass<how to test if something is a subclass>`" for child
   - ``super`` is ``Person`` in this case
   - ``super().__init__()`` is ``Person.__init__()`` in this case
   - the terminal_ still shows :ref:`TypeError<what causes TypeError?>`
@@ -712,7 +712,7 @@ how to call the parent from the child
     Doe.__init__('the_first')
 
   - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` of ``Doe`` only takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it was called with two (``self`` and ``'the_first'``)
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>`.
+  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
 
 * I add a parameter for ``first_name`` to the ``__init__`` :ref:`method<what is a method?>` of ``Doe`` in ``family_ties.py``
 
@@ -746,7 +746,7 @@ how to call the parent from the child
     Person.__init__()
 
   - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` of ``Person`` requires a :ref:`positional argument<test_positional_arguments>` for ``first_name`` and it was called with ``self``
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>`.
+  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
 
 * I add the required parameter to ``super().__init__()`` in ``Doe``
 
@@ -766,7 +766,7 @@ how to call the parent from the child
 
   the test passes because
 
-  - :ref:`an instance (a copy)<how to test if something is an instance of a class>` of ``Doe`` is an :ref:`an instance (a copy)<how to test if something is an instance of a class>` of ``Person``
+  - :ref:`an instance (a copy)<how to test if something is an instance>` of ``Doe`` is an :ref:`an instance (a copy)<how to test if something is an instance>` of ``Person``
   - ``Person`` is the parent of ``Doe``
   - the test shows that this happens when ``src.family_ties.Doe('the_first')`` runs
 
@@ -821,7 +821,7 @@ how to call the parent from the child
 
     # Exceptions seen
 
-  the test passes because ``Doe`` has the same :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` as ``Person`` because ``Doe`` is a :ref:`child<how to test if something is a subclass of a class>` of ``Parent``.
+  the test passes because ``Doe`` has the same :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` as ``Person`` because ``Doe`` is a :ref:`child<how to test if something is a subclass>` of ``Parent``.
 
 * I add a :ref:`variable<what is a variable?>`
 
@@ -1171,7 +1171,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
   - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Blow`` only takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it got called with two (``self`` and ``first_name``).
 
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>`.
+  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
 
 
 * I add ``first_name`` to the parentheses of the ``__init__`` :ref:`method definition<how to make a function>`
@@ -1201,7 +1201,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
   - the ``Doe`` :ref:`class<what is a class?>` has a default value for the ``last_name`` :ref:`attribute<what is a class attribute?>` that is the :ref:`default value<test_optional_arguments>` for the ``last_name`` :ref:`attribute<what is a class attribute?>` of ``Person``
   - the ``Blow`` :ref:`class<what is a class?>` has a different :ref:`default value<test_optional_arguments>` for the value of the  ``last_name`` :ref:`attribute<what is a class attribute?>`
-  - ``Doe`` and ``Blow`` are :ref:`children (subclasses)<how to test if something is a subclass of a class>` of ``Person``
+  - ``Doe`` and ``Blow`` are :ref:`children (subclasses)<how to test if something is a subclass>` of ``Person``
 
 * I remove the commented lines
 
@@ -1259,7 +1259,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     # Exceptions seen
 
-  the test passes. I can make :ref:`an instance of a class<how to test if something is an instance of a class>` and change the values of its :ref:`attributes<what is a class attribute?>` without making a new :ref:`class<what is a class?>`.
+  the test passes. I can make :ref:`an instance<how to test if something is an instance>` and change the values of its :ref:`attributes<what is a class attribute?>` without making a new :ref:`class<what is a class?>`.
 
 * I add an :ref:`assertion<what is an assertion?>` for ``jane``
 
@@ -1379,7 +1379,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
            Smith.__init__('john')
 
   - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` of ``Smith`` takes only one :ref:`positional argument<test_positional_arguments>` (``self``) and it got called with two (``self`` and ``'john'``)
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>`.
+  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
 
 * I add ``first_name`` to the parentheses of the ``__init__`` :ref:`method<what is a method?>`
 
@@ -1484,7 +1484,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     # Exceptions seen
 
-  * From the :ref:`class definition<how to make a class>` of ``Doe``, this happens when :ref:`an instance (a copy)<how to test if something is an instance of a class>` of ``Doe`` is made
+  * From the :ref:`class definition<how to make a class>` of ``Doe``, this happens when :ref:`an instance (a copy)<how to test if something is an instance>` of ``Doe`` is made
 
     .. code-block:: python
 
@@ -1497,7 +1497,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     because :ref:`a method uses the default value for the parameter because it is called without the parameter<test_optional_arguments>`.
 
-  * From the :ref:`class definitions<how to make a class>` of ``Smith`` and ``Blow`` this happens when :ref:`an instance (a copy)<how to test if something is an instance of a class>` of ``Smith`` or ``Blow`` is made
+  * From the :ref:`class definitions<how to make a class>` of ``Smith`` and ``Blow`` this happens when :ref:`an instance (a copy)<how to test if something is an instance>` of ``Smith`` or ``Blow`` is made
 
     .. code-block:: python
 
@@ -1507,7 +1507,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     where ``ClassName`` is ``Smith`` or ``Blow``
 
-  * From the :ref:`class definition of Person<test_factory_person_says_hello>`, this happens when :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the ``Person`` :ref:`class<what is a class?>` is made
+  * From the :ref:`class definition of Person<test_factory_person_says_hello>`, this happens when :ref:`an instance (a copy)<how to test if something is an instance>` of the ``Person`` :ref:`class<what is a class?>` is made
 
     .. code-block:: python
 
@@ -1689,7 +1689,7 @@ the test passes.
   the test passes. This is a repetition because
 
   - the :ref:`default value<test_optional_arguments>` for ``Person`` is ``doe``
-  - ``Jane`` is a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Person``
+  - ``Jane`` is a :ref:`child (subclass)<how to test if something is a subclass>` of ``Person``
 
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_multiple_parents` to make sure ``Jane`` is a ``Doe``, in ``test_family_ties.py``
 
@@ -1985,7 +1985,7 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes because ``mary`` and ``jane`` are :ref:`instances<how to test if something is an instance of a class>` of ``Jane``
+  the test passes because ``mary`` and ``jane`` are :ref:`instances<how to test if something is an instance>` of ``Jane``
 
 ----
 
@@ -2052,7 +2052,7 @@ the test passes.
           Person.__init__()
 
   - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` takes two required :ref:`positional arguments<test_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>`
+  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`
 
 * I add the ``__init__`` :ref:`method<what is a method?>` to ``Joe``
 
@@ -2122,7 +2122,7 @@ the test passes.
 
   the test passes. I cheated, which means I need a better test.
 
-* I add :ref:`assertIsSubclass<another way to test if something is a subclass of a class>` to :ref:`test_classes_w_multiple_parents` to make sure ``Joe`` is a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Blow``, in ``test_family_ties.py``
+* I add :ref:`assertIsSubclass<another way to test if something is a subclass>` to :ref:`test_classes_w_multiple_parents` to make sure ``Joe`` is a :ref:`child (subclass)<how to test if something is a subclass>` of ``Blow``, in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 51
@@ -2238,7 +2238,7 @@ the test passes.
 
 ----
 
-* I change ``mary`` to be an :ref:`instance<how to test if something is an instance of a class>` of ``Mary``, a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Jane``
+* I change ``mary`` to be an :ref:`instance<how to test if something is an instance>` of ``Mary``, a :ref:`child (subclass)<how to test if something is a subclass>` of ``Jane``
 
   .. code-block:: python
     :lineno-start: 66
@@ -2376,7 +2376,7 @@ the test passes.
                 self.first_name = 'mary'
                 self.last_name = 'doe' # use the default value
 
-* I add a call to the :ref:`assertNotIsSubclass method<another way to test if something is NOT a subclass of a class>` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add a call to the :ref:`assertNotIsSubclass method<another way to test if something is NOT a subclass>` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 66
@@ -2402,7 +2402,7 @@ the test passes.
         <class 'src.family_ties.Mary'> is
         a subclass of <class 'src.family_ties.Jane'>
 
-* I change :ref:`assertNotIsSubclass<another way to test if something is NOT a subclass of a class>` to the :ref:`assertIsSubclass method<another way to test if something is a subclass of a class>`
+* I change :ref:`assertNotIsSubclass<another way to test if something is NOT a subclass>` to the :ref:`assertIsSubclass method<another way to test if something is a subclass>`
 
   .. code-block:: python
     :lineno-start: 66
@@ -2461,7 +2461,7 @@ what happens when a child has more than one parent?
         <class 'src.family_ties.Mary'> is not
         a subclass of <class 'src.family_ties.Joe'>
 
-  because ``Mary`` is not a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Joe``.
+  because ``Mary`` is not a :ref:`child (subclass)<how to test if something is a subclass>` of ``Joe``.
 
 * I add ``Joe`` as a parent of ``Mary`` in ``family_ties.py``
 
@@ -2500,7 +2500,7 @@ what happens when a child has more than one parent?
            Joe.__init__('mary')
 
   - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Joe`` only takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it got called with two (``self`` and ``mary``)
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>`.
+  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
 
 * I change the ``__init__`` :ref:`method<what is a method?>` of ``Joe`` to take a ``first_name`` argument
 
@@ -2742,8 +2742,8 @@ what happens when a child has more than one parent?
 
   The order of the parents matters.
 
-  - If the order is ``(Jane, Joe)`` then :ref:`instances<how to test if something is an instance of a class>` of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Jane``.
-  - If the order is ``(Joe, Jane)`` then :ref:`instances<how to test if something is an instance of a class>` of ``Mary`` do NOT get the ``eye_color`` :ref:`attribute<what is a class attribute?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` does not get called.
+  - If the order is ``(Jane, Joe)`` then :ref:`instances<how to test if something is an instance>` of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Jane``.
+  - If the order is ``(Joe, Jane)`` then :ref:`instances<how to test if something is an instance>` of ``Mary`` do NOT get the ``eye_color`` :ref:`attribute<what is a class attribute?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` does not get called.
 
 * I change the order of the parents to ``(Joe, Jane)`` again
 
@@ -2829,10 +2829,10 @@ what happens when a child has more than one parent?
 
   The order of the parents matters.
 
-  - If the order is ``(Jane, Joe)`` then :ref:`instances<how to test if something is an instance of a class>`  of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Jane``.
+  - If the order is ``(Jane, Joe)`` then :ref:`instances<how to test if something is an instance>`  of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Jane``.
   - If the order is ``(Joe, Jane)`` then
 
-    * :ref:`instances<how to test if something is an instance of a class>`  of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Joe``
+    * :ref:`instances<how to test if something is an instance>`  of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Joe``
     * the  ``__init__`` :ref:`method<what is a method?>` of ``Jane`` does not get called
 
 
@@ -2941,7 +2941,7 @@ what happens when a child has more than one parent?
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` to make sure that ``John`` is a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Smith``
+* I add an :ref:`assertion<what is an assertion?>` to make sure that ``John`` is a :ref:`child (subclass)<how to test if something is a subclass>` of ``Smith``
 
   .. code-block:: python
     :lineno-start: 83
@@ -3022,9 +3022,9 @@ what happens when a child has more than one parent?
   the test passes. This is a repetition because
 
   - ``John`` is a ``Smith``
-  - the ``last_name`` :ref:`attribute<what is a class attribute?>` of :ref:`instances<how to test if something is an instance of a class>` of ``Smith`` is ``'smith'``
+  - the ``last_name`` :ref:`attribute<what is a class attribute?>` of :ref:`instances<how to test if something is an instance>` of ``Smith`` is ``'smith'``
 
-* I add a call to the `super built-in function`_ so :ref:`instances<how to test if something is an instance of a class>` of ``John`` can inherit the ``last_name`` :ref:`class attribute<what is a class attribute?>`
+* I add a call to the `super built-in function`_ so :ref:`instances<how to test if something is an instance>` of ``John`` can inherit the ``last_name`` :ref:`class attribute<what is a class attribute?>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -3088,7 +3088,7 @@ what happens when a child has more than one parent?
 
 ----
 
-* I add ``lil``, an :ref:`instance<how to test if something is an instance of a class>` of a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``John`` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add ``lil``, an :ref:`instance<how to test if something is an instance>` of a :ref:`child (subclass)<how to test if something is a subclass>` of ``John`` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 83
@@ -3373,7 +3373,7 @@ what happens when a child has more than one parent?
           )
 
   - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Mary`` was called with a :ref:`keyword argument<test_keyword_arguments>` and it only takes ``self``
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>`.
+  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
 
 * I add ``first_name`` with a :ref:`default value<test_optional_arguments>` to the ``__init__`` :ref:`method<what is a method?>` of ``Mary``
 
@@ -3760,7 +3760,7 @@ what happens when a child has more than one parent?
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for ``lil.eye_color`` to test if :ref:`instances<how to test if something is an instance of a class>` of ``Lil`` inherit ``eye_color`` from ``Jane`` or ``Joe``, in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add an :ref:`assertion<what is an assertion?>` for ``lil.eye_color`` to test if :ref:`instances<how to test if something is an instance>` of ``Lil`` inherit ``eye_color`` from ``Jane`` or ``Joe``, in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 90
@@ -3807,10 +3807,10 @@ what happens when a child has more than one parent?
 
     # Exceptions seen
 
-  - :ref:`instances<how to test if something is an instance of a class>` of ``Lil`` :ref:`inherit<test_attributes_and_methods_of_objects>` ``eye_color`` from ``Mary``
-  - :ref:`instances<how to test if something is an instance of a class>` of ``Mary`` :ref:`inherit<test_attributes_and_methods_of_objects>` ``eye_color`` from ``Joe``
-  - :ref:`instances<how to test if something is an instance of a class>` of ``Lil`` :ref:`inherit<test_attributes_and_methods_of_objects>` ``last_name`` from ``John``
-  - :ref:`instances<how to test if something is an instance of a class>` of ``John`` :ref:`inherit<test_attributes_and_methods_of_objects>` ``last_name`` from ``Smith``
+  - :ref:`instances<how to test if something is an instance>` of ``Lil`` :ref:`inherit<test_attributes_and_methods_of_objects>` ``eye_color`` from ``Mary``
+  - :ref:`instances<how to test if something is an instance>` of ``Mary`` :ref:`inherit<test_attributes_and_methods_of_objects>` ``eye_color`` from ``Joe``
+  - :ref:`instances<how to test if something is an instance>` of ``Lil`` :ref:`inherit<test_attributes_and_methods_of_objects>` ``last_name`` from ``John``
+  - :ref:`instances<how to test if something is an instance>` of ``John`` :ref:`inherit<test_attributes_and_methods_of_objects>` ``last_name`` from ``Smith``
 
 ----
 
@@ -4012,7 +4012,7 @@ what happens when a child has more than one parent?
     lil = src.person.Person('lil', john.last_name)
     lil.eye_color = mary.eye_color
 
-  which would have just been Python_ making these calls to make :ref:`instances (copies)<how to test if something is an instance of a class>` of the ``Person`` :ref:`class<what is a class?>`
+  which would have just been Python_ making these calls to make :ref:`instances (copies)<how to test if something is an instance>` of the ``Person`` :ref:`class<what is a class?>`
 
   .. code-block:: python
 

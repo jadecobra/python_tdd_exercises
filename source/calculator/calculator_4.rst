@@ -404,7 +404,7 @@ the test passes.
 how to test if something is an instance of an object in a program
 *********************************************************************************
 
-I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a string_, the same way the other :ref:`functions<what is a function?>` raise TypeError_ when one of the inputs is a string_. I can use the `isinstance function`_ which is like the :ref:`assertIsInstance method<another way to test if something is an instance of a class>` from when I tested :ref:`None<what is None?>`, it checks if one thing is an instance or child of a :ref:`class<what is a class?>`
+I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a string_, the same way the other :ref:`functions<what is a function?>` raise TypeError_ when one of the inputs is a string_. I can use the `isinstance function`_ which is like the :ref:`assertIsInstance method<another way to test if something is an instance>` from when I tested :ref:`None<what is None?>`, it checks if one thing is an instance or child of a :ref:`class<what is a class?>`
 
 * I change the :ref:`assertEqual method<another way to test if two things are Equal>` to assertRaises_ in :ref:`test_calculator_with_strings<test_calculator_raises_type_error_w_strings>`
 
@@ -446,7 +446,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
 
   .. note::
 
-    - the `isinstance function`_ like the :ref:`assertIsInstance method<another way to test if something is an instance of a class>` checks if the first input it is given is an instance (child) of the :ref:`class<what is a class?>` it is given as the second input. It is part of `Python's Built-in Functions`_
+    - the `isinstance function`_ like the :ref:`assertIsInstance method<another way to test if something is an instance>` checks if the first input it is given is an instance (child) of the :ref:`class<what is a class?>` it is given as the second input. It is part of `Python's Built-in Functions`_
     - the :ref:`if statement<if statements>` ``if isinstance(first_input, str) or isinstance(second_input, str):`` is :ref:`True<test_what_is_true>` if
 
       * ``first_input`` is a string_ and ``second_input`` is NOT a string_

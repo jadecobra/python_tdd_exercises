@@ -565,7 +565,7 @@ the test passes.
 
   also a comment from :ref:`the assertion_error chapter<what is an assertion?>`
 
-* I add a call to the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance of a class>` to test if :ref:`False<test_what_is_false>` is :ref:`an instance<how to test if something is an instance of a class>` of the :ref:`bool class<what are booleans?>`
+* I add a call to the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance>` to test if :ref:`False<test_what_is_false>` is :ref:`an instance<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -588,9 +588,9 @@ the test passes.
 
     AssertionError: False is an instance of <class 'bool'>
 
-  because :ref:`False<test_what_is_false>` is :ref:`an instance<how to test if something is an instance of a class>` of the :ref:`bool class<what are booleans?>`.
+  because :ref:`False<test_what_is_false>` is :ref:`an instance<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`.
 
-* I change :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>` to the :ref:`assertIsInstance method<another way to test if something is an instance of a class>`
+* I change :ref:`assertNotIsInstance<another way to test if something is NOT an instance>` to the :ref:`assertIsInstance method<another way to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -609,7 +609,7 @@ the test passes.
 
   the test passes.
 
-* I add a failing line for the other :ref:`boolean<what are booleans?>` with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
+* I add a failing line for the other :ref:`boolean<what are booleans?>` with :ref:`assertNotIsInstance<another way to test if something is NOT an instance>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -634,9 +634,9 @@ the test passes.
 
     AssertionError: True is an instance of <class 'bool'>
 
-  because :ref:`True<test_what_is_true>` is :ref:`an instance<how to test if something is an instance of a class>` of the :ref:`bool class<what are booleans?>`.
+  because :ref:`True<test_what_is_true>` is :ref:`an instance<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`.
 
-* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<another way to test if something is an instance of a class>`
+* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<another way to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -657,7 +657,7 @@ the test passes.
 
   the test passes.
 
-* I add :ref:`assertIsInstance<another way to test if something is an instance of a class>` to test if :ref:`None<what is None?>` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the :ref:`bool class<what are booleans?>`
+* I add :ref:`assertIsInstance<another way to test if something is an instance>` to test if :ref:`None<what is None?>` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -685,7 +685,7 @@ the test passes.
 
   because :ref:`None<what is None?>` is NOT a :ref:`boolean<what are booleans?>`.
 
-* I make the line :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
+* I make the line :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<another way to test if something is NOT an instance>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -911,7 +911,7 @@ the test passes.
 
   the test passes.
 
-* I add a new failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
+* I add a new failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -940,7 +940,7 @@ the test passes.
 
   - I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``
 
-* I make the line :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<another way to test if something is an instance of a class>`
+* I make the line :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<another way to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -961,7 +961,7 @@ the test passes.
 
   the test passes.
 
-* I add another failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
+* I add another failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -1012,7 +1012,7 @@ the test passes.
 
   the test passes.
 
-* I add another failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
+* I add another failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -1043,7 +1043,7 @@ the test passes.
   - because ``1`` is an integer_
   - I use ``1`` for all the integers_ (whole numbers) that are bigger than ``0``
 
-* I make the failing line :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<another way to test if something is an instance of a class>`
+* I make the failing line :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<another way to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -1068,7 +1068,7 @@ the test passes.
 
   the test passes.
 
-* I add one more failing line to test if :ref:`None<what is None?>` is an integer_ with :ref:`assertIsInstance<another way to test if something is an instance of a class>`
+* I add one more failing line to test if :ref:`None<what is None?>` is an integer_ with :ref:`assertIsInstance<another way to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -1098,7 +1098,7 @@ the test passes.
 
     AssertionError: None is not an instance of <class 'int'>
 
-* I make the line :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
+* I make the line :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<another way to test if something is NOT an instance>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -1313,9 +1313,9 @@ the test passes.
 
     # NOTES
 
-  the test passes. Time for :ref:`instance tests<how to test if something is an instance of a class>`.
+  the test passes. Time for :ref:`instance tests<how to test if something is an instance>`.
 
-* I add a failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
+* I add a failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1342,7 +1342,7 @@ the test passes.
   - because ``-0.1`` is a float_
   - I use ``-0.1`` for all the binary floating point numbers that are smaller than ``0.0``
 
-* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<another way to test if something is an instance of a class>`
+* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<another way to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1363,7 +1363,7 @@ the test passes.
 
   the test passes.
 
-* I add the next :ref:`instance test<how to test if something is an instance of a class>` with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
+* I add the next :ref:`instance test<how to test if something is an instance>` with :ref:`assertNotIsInstance<another way to test if something is NOT an instance>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1391,7 +1391,7 @@ the test passes.
 
   because ``0.0`` is a binary floating point number
 
-* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<another way to test if something is an instance of a class>`
+* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<another way to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1414,7 +1414,7 @@ the test passes.
 
   the test passes.
 
-* I add a failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
+* I add a failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1445,7 +1445,7 @@ the test passes.
   - because ``0.1`` is a float_
   - I use ``0.1`` for all the binary floating point numbers that are bigger than ``0.0``
 
-* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<another way to test if something is an instance of a class>`
+* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<another way to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1470,7 +1470,7 @@ the test passes.
 
   the test passes.
 
-* I add one more failing line with the :ref:`assertIsInstance method<another way to test if something is an instance of a class>`
+* I add one more failing line with the :ref:`assertIsInstance method<another way to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1502,7 +1502,7 @@ the test passes.
 
   because :ref:`None<what is None?>` is not a :ref:`boolean<what are booleans?>`.
 
-* I make the statement :ref:`True<test_what_is_true>` with the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance of a class>`
+* I make the statement :ref:`True<test_what_is_true>` with the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1679,7 +1679,7 @@ the test passes.
 
   the test passes.
 
-* I add a failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
+* I add a failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance>`
 
   .. code-block:: python
     :lineno-start: 35
@@ -1770,7 +1770,7 @@ the test passes.
 
   the test passes.
 
-* I add another failing line with :ref:`assertIsInstance<another way to test if something is an instance of a class>`
+* I add another failing line with :ref:`assertIsInstance<another way to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 35
@@ -1969,7 +1969,7 @@ the test passes.
 
   the test passes.
 
-* I add a failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
+* I add a failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance>`
 
   .. code-block:: python
     :lineno-start: 42
@@ -2059,7 +2059,7 @@ the test passes.
 
   the test passes.
 
-* I add one more :ref:`instance test<how to test if something is an instance of a class>`
+* I add one more :ref:`instance test<how to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 42
@@ -2260,7 +2260,7 @@ the test passes.
 
   the test passes.
 
-* I add a failing :ref:`instance test<how to test if something is an instance of a class>`
+* I add a failing :ref:`instance test<how to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -2303,7 +2303,7 @@ the test passes.
 
   the test passes.
 
-* I add another failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
+* I add another failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -2350,7 +2350,7 @@ the test passes.
 
   the test passes.
 
-* I add one more failing line with the :ref:`assertIsInstance method<another way to test if something is an instance of a class>`
+* I add one more failing line with the :ref:`assertIsInstance method<another way to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -2552,7 +2552,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`instance test<how to test if something is an instance of a class>`
+* I add an :ref:`instance test<how to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 56
@@ -2593,7 +2593,7 @@ the test passes.
 
   the test passes.
 
-* I add another :ref:`instance test<how to test if something is an instance of a class>`
+* I add another :ref:`instance test<how to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 56
@@ -2787,7 +2787,7 @@ the test passes.
 
   the test passes.
 
-* I add a failing :ref:`instance test<how to test if something is an instance of a class>`
+* I add a failing :ref:`instance test<how to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 62
@@ -2831,7 +2831,7 @@ the test passes.
 
   the test passes.
 
-* I add another :ref:`instance test<how to test if something is an instance of a class>`
+* I add another :ref:`instance test<how to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 62
@@ -2881,7 +2881,7 @@ the test passes.
 
   the test passes.
 
-* I add the last failing :ref:`instance test<how to test if something is an instance of a class>` with :ref:`assertIsInstance<another way to test if something is an instance of a class>`
+* I add the last failing :ref:`instance test<how to test if something is an instance>` with :ref:`assertIsInstance<another way to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 62
@@ -2911,7 +2911,7 @@ the test passes.
 
   because :ref:`None<what is None?>` is not a :ref:`dictionary<what is a dictionary?>`.
 
-* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
+* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<another way to test if something is NOT an instance>`
 
   .. code-block:: python
     :lineno-start: 62
@@ -3041,10 +3041,10 @@ I used `assert methods`_ to test what :ref:`None<what is None?>` is and what it 
 
 * Two from :ref:`the inheritance chapter<everything is an object>`:
 
-  * :ref:`assertIsInstance<another way to test if something is an instance of a class>` which checks if something is :ref:`an instance of a given class<how to test if something is an instance of a class>`
-  * :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>` which checks if something is :ref:`NOT an instance of a given class<how to test if something is NOT an instance of a class>`
+  * :ref:`assertIsInstance<another way to test if something is an instance>` which checks if something is :ref:`an instance of a given class<how to test if something is an instance>`
+  * :ref:`assertNotIsInstance<another way to test if something is NOT an instance>` which checks if something is :ref:`NOT an instance of a given class<how to test if something is NOT an instance>`
 
-  to show that :ref:`None<what is None?>` is not an :ref:`instance<how to test if something is an instance of a class>` of the other :ref:`basic types<data structures>`.
+  to show that :ref:`None<what is None?>` is not an :ref:`instance<how to test if something is an instance>` of the other :ref:`basic types<data structures>`.
 
 * And two new `assert methods`_ for :ref:`None<what is None?>`:
 

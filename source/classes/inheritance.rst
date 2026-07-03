@@ -263,7 +263,7 @@ start the project
 ----
 
 *********************************************************************************
-how to test if something is NOT an instance of a class
+how to test if something is NOT an instance
 *********************************************************************************
 
 I can make a :ref:`class<what is a class?>` with the :ref:`class<what is a class?>` keyword, use :ref:`CapWords format<CapWords>` for the name and use a name that tells what the group of :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` do.
@@ -278,9 +278,9 @@ I can make a :ref:`class<what is a class?>` with the :ref:`class<what is a class
           the body of the method
           ...
 
-I can test if an :ref:`object<everything is an object>` is NOT :ref:`an instance (a copy)<how to test if something is an instance of a class>` of another :ref:`object<everything is an object>` with the `isinstance built-in function`_ from `The Python Standard Library`_.
+I can test if an :ref:`object<everything is an object>` is NOT :ref:`an instance (a copy)<how to test if something is an instance>` of another :ref:`object<everything is an object>` with the `isinstance built-in function`_ from `The Python Standard Library`_.
 
-isinstance_ checks if the thing in the parentheses on the left is an :ref:`instance (a copy)<how to test if something is an instance of a class>` of the :ref:`class<what is a class?>` on the right in the parentheses.
+isinstance_ checks if the thing in the parentheses on the left is an :ref:`instance (a copy)<how to test if something is an instance>` of the :ref:`class<what is a class?>` on the right in the parentheses.
 
 ----
 
@@ -358,12 +358,12 @@ because the statement ``not isinstance(WPass(), object)`` is not :ref:`True<test
 ----
 
 *********************************************************************************
-how to test if something is an instance of a class
+how to test if something is an instance
 *********************************************************************************
 
-I can test if an :ref:`object<everything is an object>` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of another :ref:`object<everything is an object>` with the `isinstance built-in function`_ from `The Python Standard Library`_.
+I can test if an :ref:`object<everything is an object>` is :ref:`an instance (a copy)<how to test if something is an instance>` of another :ref:`object<everything is an object>` with the `isinstance built-in function`_ from `The Python Standard Library`_.
 
-isinstance_ checks if the thing in the parentheses on the left is an :ref:`instance (a copy)<how to test if something is an instance of a class>` of the :ref:`class<what is a class?>` on the right in the parentheses.
+isinstance_ checks if the thing in the parentheses on the left is an :ref:`instance (a copy)<how to test if something is an instance>` of the :ref:`class<what is a class?>` on the right in the parentheses.
 
 * I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
@@ -379,7 +379,7 @@ isinstance_ checks if the thing in the parentheses on the left is an :ref:`insta
     # Exceptions seen
 
   * The test passes because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
-  * The :ref:`assertion<what is an assertion?>` - ``assert isinstance(WPass(), object)`` checks if the result of a :ref:`call<how to call a function>` to ``WPass`` is an :ref:`instance<how to test if something is an instance of a class>` of the :ref:`object class (the mother of all classes)<what is a class?>`.
+  * The :ref:`assertion<what is an assertion?>` - ``assert isinstance(WPass(), object)`` checks if the result of a :ref:`call<how to call a function>` to ``WPass`` is an :ref:`instance<how to test if something is an instance>` of the :ref:`object class (the mother of all classes)<what is a class?>`.
   * The :ref:`class definition<how to make a class>` simply says pass_ and the test passes.
   * pass_ is a special keyword that allows the :ref:`class definition<how to make a class>` to follow Python_ language rules (the :ref:`class<what is a class?>` must have a body).
 
@@ -526,7 +526,7 @@ I can also make a :ref:`class<what is a class?>` with parentheses/brackets ``( )
     def test_making_a_class_w_pass():
 
   * The test is still green because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
-  * The :ref:`assertion<what is an assertion?>` - ``assert isinstance(WParentheses(), object)`` checks if the result of a :ref:`call<how to call a function>` to ``WParentheses`` is an :ref:`instance<how to test if something is an instance of a class>` of the :ref:`object class (the mother of all classes)<what is a class?>`.
+  * The :ref:`assertion<what is an assertion?>` - ``assert isinstance(WParentheses(), object)`` checks if the result of a :ref:`call<how to call a function>` to ``WParentheses`` is an :ref:`instance<how to test if something is an instance>` of the :ref:`object class (the mother of all classes)<what is a class?>`.
   * This :ref:`class definition<how to make a class>` has parentheses after the name.
   * The :ref:`class definition<how to make a class>` simply says pass_ and the test passes.
   * pass_ is a special keyword that allows the :ref:`class definition<how to make a class>` to follow Python_ language rules (the :ref:`class<what is a class?>` must have a body).
@@ -717,7 +717,7 @@ I can make a :ref:`class<what is a class?>` with :ref:`object (the mother of all
     git commit -am \
     'add test_making_a_class_w_object'
 
-I have three different :ref:`classes<what is a class?>`, and the tests show that they are all :ref:`instances<how to test if something is an instance of a class>` of the :ref:`object class<what is a class?>`
+I have three different :ref:`classes<what is a class?>`, and the tests show that they are all :ref:`instances<how to test if something is an instance>` of the :ref:`object class<what is a class?>`
 
 .. code-block:: python
 
@@ -831,12 +831,12 @@ the test passes.
 ----
 
 *********************************************************************************
-how to test if something is NOT a subclass of a class
+how to test if something is NOT a subclass
 *********************************************************************************
 
 I can test if an :ref:`object<everything is an object>` is NOT a :ref:`subclass (child) <what is a class?>` of another :ref:`object<everything is an object>` with the `issubclass built-in function`_ from `The Python Standard Library`_.
 
-issubclass_ checks if the thing in the parentheses on the left is a :ref:`subclass<how to test if something is a subclass of a class>` of the :ref:`class<what is a class?>` on the right in the parentheses.
+issubclass_ checks if the thing in the parentheses on the left is a :ref:`subclass<how to test if something is a subclass>` of the :ref:`class<what is a class?>` on the right in the parentheses.
 
 ----
 
@@ -883,12 +883,12 @@ I want to test if a :ref:`boolean<what are booleans?>` is an :ref:`object<everyt
 ----
 
 *********************************************************************************
-how to test if something is a subclass of a class
+how to test if something is a subclass
 *********************************************************************************
 
 I can test if an :ref:`object<everything is an object>` is a :ref:`subclass (child) <what is a class?>` of another :ref:`object<everything is an object>` with the `issubclass built-in function`_ from `The Python Standard Library`_.
 
-issubclass_ checks if the thing in the parentheses on the left is a :ref:`subclass<how to test if something is a subclass of a class>` of the :ref:`class<what is a class?>` on the right in the parentheses.
+issubclass_ checks if the thing in the parentheses on the left is a :ref:`subclass<how to test if something is a subclass>` of the :ref:`class<what is a class?>` on the right in the parentheses.
 
 ----
 
@@ -1604,7 +1604,7 @@ the test passes.
 instance vs subclass
 *********************************************************************************
 
-An :ref:`instance<how to test if something is an instance of a class>` is a copy of an :ref:`object<what is a class?>` and a :ref:`subclass<how to test if something is a subclass of a class>` is a child of an :ref:`object<what is a class?>`. They are different.
+An :ref:`instance<how to test if something is an instance>` is a copy of an :ref:`object<what is a class?>` and a :ref:`subclass<how to test if something is a subclass>` is a child of an :ref:`object<what is a class?>`. They are different.
 
 =================================================================================
 :red:`RED`: make it fail
@@ -1612,7 +1612,7 @@ An :ref:`instance<how to test if something is an instance of a class>` is a copy
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_making_a_class_w_pass` to show that :ref:`an instance (a copy)<how to test if something is an instance of a class>` is different from a :ref:`subclass (child)<how to test if something is a subclass of a class>`
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_making_a_class_w_pass` to show that :ref:`an instance (a copy)<how to test if something is an instance>` is different from a :ref:`subclass (child)<how to test if something is a subclass>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -1631,7 +1631,7 @@ An :ref:`instance<how to test if something is an instance of a class>` is a copy
 
     TypeError: issubclass() arg 1 must be a class
 
-  because the first argument given in a :ref:`call<how to call a function with input>` to the :ref:`issubclass function<how to test if something is a subclass of a class>`  is an :ref:`instance<how to test if something is an instance of a class>` not a :ref:`class<what is a class?>`.
+  because the first argument given in a :ref:`call<how to call a function with input>` to the :ref:`issubclass function<how to test if something is a subclass>`  is an :ref:`instance<how to test if something is an instance>` not a :ref:`class<what is a class?>`.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -1689,7 +1689,7 @@ the test passes.
 
     def test_making_a_class_w_parentheses():
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_making_a_class_w_parentheses` to show that :ref:`an instance (a copy)<how to test if something is an instance of a class>` is different from a :ref:`subclass (child)<how to test if something is a subclass of a class>`
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_making_a_class_w_parentheses` to show that :ref:`an instance (a copy)<how to test if something is an instance>` is different from a :ref:`subclass (child)<how to test if something is a subclass>`
 
   .. code-block:: python
     :lineno-start: 15
@@ -1708,7 +1708,7 @@ the test passes.
 
     TypeError: issubclass() arg 1 must be a class
 
-  because ``WParentheses()`` is an :ref:`instance<how to test if something is an instance of a class>` and the argument I put in the parentheses on the left should be a :ref:`class<what is a class?>`.
+  because ``WParentheses()`` is an :ref:`instance<how to test if something is an instance>` and the argument I put in the parentheses on the left should be a :ref:`class<what is a class?>`.
 
 * I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
@@ -1757,7 +1757,7 @@ the test passes.
 
     TypeError: issubclass() arg 1 must be a class
 
-  because ``WObject()`` is an :ref:`instance<how to test if something is an instance of a class>` not a :ref:`subclass<how to test if something is a subclass of a class>`.
+  because ``WObject()`` is an :ref:`instance<how to test if something is an instance>` not a :ref:`subclass<how to test if something is a subclass>`.
 
 * I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
@@ -1860,8 +1860,8 @@ the test passes.
   the test passes because :ref:`bool<what are booleans?>` is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
-  - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
-  - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
+  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<what is a class?>`
+  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<what is a class?>`
 
 * I remove the commented line from :ref:`test_is_a_boolean_an_object`
 
@@ -1913,8 +1913,8 @@ the test passes.
   the test passes because int_ is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
-  - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
-  - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
+  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<what is a class?>`
+  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<what is a class?>`
 
 * I remove the commented line from :ref:`test_is_an_integer_an_object`
 
@@ -1966,8 +1966,8 @@ the test passes.
   the test passes because float_ is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
-  - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
-  - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
+  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<what is a class?>`
+  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<what is a class?>`
 
 * I remove the commented line from :ref:`test_is_a_float_an_object`
 
@@ -2021,8 +2021,8 @@ the test passes.
   the test passes because str_ is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
-  - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
-  - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
+  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<what is a class?>`
+  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<what is a class?>`
 
 * I remove the commented line from :ref:`test_is_a_string_an_object`
 
@@ -2074,8 +2074,8 @@ the test passes.
   the test passes because tuple_ is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
-  - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
-  - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
+  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<what is a class?>`
+  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<what is a class?>`
 
 * I remove the commented line from :ref:`test_is_a_tuple_an_object`
 
@@ -2128,8 +2128,8 @@ the test passes.
   the test passes because :ref:`list<what is a list?>` is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
-  - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
-  - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
+  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<what is a class?>`
+  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<what is a class?>`
 
 * I remove the commented line from :ref:`test_is_a_list_an_object`
 
@@ -2181,8 +2181,8 @@ the test passes.
   the test passes because set_ is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
-  - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
-  - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
+  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<what is a class?>`
+  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<what is a class?>`
 
 * I remove the commented line from :ref:`test_is_a_set_an_object`
 
@@ -2235,8 +2235,8 @@ the test passes.
   the test passes because :ref:`dict<what is a dictionary?>` is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
-  - is an :ref:`instance<how to test if something is an instance of a class>` of :ref:`object<what is a class?>`
-  - is a :ref:`subclass<how to test if something is a subclass of a class>` of :ref:`object<what is a class?>`
+  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<what is a class?>`
+  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<what is a class?>`
 
 * I remove the commented line from :ref:`test_is_a_dictionary_an_object`
 
@@ -2257,7 +2257,7 @@ the test passes.
 
     git commit -am 'test instance vs subclass'
 
-The difference between a :ref:`subclass (child)<how to test if something is a subclass of a class>` I make, and an :ref:`an instance (a copy)<how to test if something is an instance of a class>` is the ``()`` after the name
+The difference between a :ref:`subclass (child)<how to test if something is a subclass>` I make, and an :ref:`an instance (a copy)<how to test if something is an instance>` is the ``()`` after the name
 
 .. code-block:: python
 

@@ -279,7 +279,7 @@ test_what_is_false
 
 ----
 
-I change :ref:`test_failure` to :ref:`test_what_is_false`, then use the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance of a class>` I learned from :ref:`everything is an object` to check if :ref:`False<test_what_is_false>` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the :ref:`bool class<what are booleans?>`
+I change :ref:`test_failure` to :ref:`test_what_is_false`, then use the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance>` I learned from :ref:`everything is an object` to check if :ref:`False<test_what_is_false>` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
 
 .. code-block:: python
   :linenos:
@@ -313,7 +313,7 @@ this was also in :ref:`test_is_none_a_boolean`.
 
 ----
 
-I change :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>` to the :ref:`assertIsInstance method<another way to test if something is an instance of a class>`
+I change :ref:`assertNotIsInstance<another way to test if something is NOT an instance>` to the :ref:`assertIsInstance method<another way to test if something is an instance>`
 
 .. code-block:: python
   :lineno-start: 6
@@ -690,7 +690,7 @@ test_what_is_true
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for :ref:`True<test_what_is_true>` with the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance of a class>` I learned from :ref:`everything is an object` to check if :ref:`True<test_what_is_true>` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the :ref:`bool class<what are booleans?>`
+* I add a test for :ref:`True<test_what_is_true>` with the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance>` I learned from :ref:`everything is an object` to check if :ref:`True<test_what_is_true>` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -725,7 +725,7 @@ test_what_is_true
 
 ----
 
-I change :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>` to the :ref:`assertIsInstance method<another way to test if something is an instance of a class>`
+I change :ref:`assertNotIsInstance<another way to test if something is NOT an instance>` to the :ref:`assertIsInstance method<another way to test if something is an instance>`
 
 .. code-block:: python
   :lineno-start: 13

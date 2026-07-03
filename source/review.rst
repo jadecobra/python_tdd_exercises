@@ -189,8 +189,8 @@ None review
 * :ref:`Is None a dictionary?<test_is_none_a_dictionary>`
 * :ref:`how can I test if something is NOT the same object as None?<test_assertion_error_w_none>`
 * :ref:`how can I test if something is the same object as None?<test_assertion_error_w_none>`
-* :ref:`how can I test if something is an instance of a class?<how to test if something is an instance of a class>`
-* :ref:`how can I test if something is NOT an instance of class<how to test if something is an instance of a class>`
+* :ref:`how can I test if something is an instance?<how to test if something is an instance>`
+* :ref:`how can I test if something is NOT an instance of class<how to test if something is an instance>`
 * :ref:`what is another way to test if something is the same object as None?<another way to test if something is the same object as None>`
 * :ref:`what is another way to test if something is NOT the same object as None?<another way to test if something is NOT the same object as None>`
 

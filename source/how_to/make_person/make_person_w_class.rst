@@ -249,7 +249,7 @@ because there is no definition for ``Person`` in ``test_person.py``.
 the constructor method
 *********************************************************************************
 
-A `constructor method`_ is used to define what happens when :ref:`an instance (a copy) of a class<how to test if something is an instance of a class>` is made.
+A `constructor method`_ is used to define what happens when :ref:`an instance (a copy) of a class<how to test if something is an instance>` is made.
 
 * I add a `constructor method`_ to the :ref:`Person class<test Person class>` so it can take arguments
 
@@ -318,7 +318,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
         Person.__init__() got
         multiple values for argument 'first_name'
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance of a class>` takes the :ref:`instance of the class<how to test if something is an instance of a class>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
   The test calls the :ref:`function<what is a function?>` with four :ref:`keyword arguments<test_keyword_arguments>` ``(first_name, last_name, sex and year_of_birth')``. How does Python_ know which value to use for the first argument if I use the :ref:`position<test_positional_arguments>` and a :ref:`keyword<test_keyword_arguments>`?
 
@@ -340,7 +340,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
     def test_joe():
 
   - ``self`` is Python_ convention, I can use any name I want.
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>`.
+  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
   - The terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     .. code-block:: shell
@@ -369,7 +369,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
           )
 
     which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows two arguments (``self`` and ``first_name``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>`.
+  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
   - I have seen this before, so far it is the same as making the :ref:`factory function<test person factory>`.
 
@@ -418,7 +418,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
           )
 
     which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows three arguments (``self``,  ``first_name`` and ``last_name``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>`.
+  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
   - Still the same as making the :ref:`factory function<test person factory>`.
 
@@ -470,7 +470,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
           )
 
     which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows three arguments (``self``,  ``first_name``, ``last_name`` and ``sex``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
-  - ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>`.
+  - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
   - Same as with the :ref:`factory function<test person factory>`.
 
@@ -719,7 +719,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
               self.last_name = 'blow'
               self.year_of_birth = 1996
 
-    ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>`.
+    ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
 
   - When ``reality = src.person.say_hello(first_name=joe.first_name, last_name=joe.last_name,year_of_birth=joe.year_of_birth)`` runs
 
@@ -1011,7 +1011,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
   the test passes. This is still repeating the values for ``first_name``, ``last_name`` and ``year_of_birth``.
 
-* I change the call to the :ref:`say_hello method<test say_hello method>` in :ref:`test_joe` to take in an :ref:`instance (copy)<how to test if something is an instance of a class>` of the :ref:`Person class<test person class>` since it will already have the :ref:`attributes<what is a class attribute?>`
+* I change the call to the :ref:`say_hello method<test say_hello method>` in :ref:`test_joe` to take in an :ref:`instance (copy)<how to test if something is an instance>` of the :ref:`Person class<test person class>` since it will already have the :ref:`attributes<what is a class attribute?>`
 
   .. code-block:: python
     :lineno-start: 65
@@ -1088,7 +1088,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
   the test passes.
 
-* I change :ref:`the return statement` of the :ref:`say_hello method<test say_hello method>` to use the :ref:`attributes<what is a class attribute?>` of the :ref:`class instance<how to test if something is an instance of a class>` it receives as input
+* I change :ref:`the return statement` of the :ref:`say_hello method<test say_hello method>` to use the :ref:`attributes<what is a class attribute?>` of the :ref:`class instance<how to test if something is an instance>` it receives as input
 
   .. code-block:: python
     :lineno-start: 15
@@ -1147,7 +1147,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
               self.last_name = 'blow'
               self.year_of_birth = 1996
 
-    ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>` aka ``joe``.
+    ``self`` is the :ref:`instance of the class<how to test if something is an instance>` aka ``joe``.
 
   - When ``reality = Person.say_hello(person=joe, first_name=joe.first_name, last_name=joe.last_name,year_of_birth=joe.year_of_birth)`` runs
 
@@ -1256,9 +1256,9 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
     def test_john():
 
-  the test passes. This is still a repetition. I give an :ref:`instance (copy)<how to test if something is an instance of a class>` of the :ref:`Person class<test person class>` as input to the :ref:`say_hello method<test Person class>` of the :ref:`Person class<test person class>` (``Person.say_hello``).
+  the test passes. This is still a repetition. I give an :ref:`instance (copy)<how to test if something is an instance>` of the :ref:`Person class<test person class>` as input to the :ref:`say_hello method<test Person class>` of the :ref:`Person class<test person class>` (``Person.say_hello``).
 
-* I change the call to the :ref:`say_hello method<test say_hello method>` in :ref:`test_jane` because the :ref:`say_hello method<test say_hello method>` is in the :ref:`Person class<test Person class>` so its :ref:`copies<how to test if something is an instance of a class>` also have the :ref:`say_hello method<test say_hello method>`
+* I change the call to the :ref:`say_hello method<test say_hello method>` in :ref:`test_jane` because the :ref:`say_hello method<test say_hello method>` is in the :ref:`Person class<test Person class>` so its :ref:`copies<how to test if something is an instance>` also have the :ref:`say_hello method<test say_hello method>`
 
   .. code-block:: python
     :lineno-start: 119
@@ -1283,7 +1283,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
     TypeError: Person.say_hello() got
                multiple values for argument 'person'
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance of a class>` takes the :ref:`instance of the class<how to test if something is an instance of a class>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 ----
 
@@ -1486,7 +1486,7 @@ what is the staticmethod decorator?
               self.last_name = 'blow'
               self.year_of_birth = 1996
 
-    ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>` aka ``joe``.
+    ``self`` is the :ref:`instance of the class<how to test if something is an instance>` aka ``joe``.
 
   - When ``reality = joe.say_hello()`` runs
 
@@ -1689,7 +1689,7 @@ what is the staticmethod decorator?
               self.last_name = 'public'
               self.year_of_birth = 2000
 
-    ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>` aka ``mary``.
+    ``self`` is the :ref:`instance of the class<how to test if something is an instance>` aka ``mary``.
 
   - When ``reality = mary.say_hello()`` runs
 
@@ -2115,7 +2115,7 @@ separate and equal Person class
     TypeError: Person.__init__() got
                multiple values for argument 'first_name'
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance of a class>` takes the :ref:`instance of the class<how to test if something is an instance of a class>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 * I add ``self`` to :ref:`the constructor method`
 
@@ -2393,7 +2393,7 @@ separate and equal Person class
         assert <src.person.Person object at 0xffffb012cd34>
             == 'Hello, my name is mary public and I am 26.'
 
-  because ``argument`` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the :ref:`Person class<test Person class>`.
+  because ``argument`` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`Person class<test Person class>`.
 
 * I change :ref:`the return statement` to use :ref:`class attributes<what is a class attribute?>` in an :ref:`f-string<what is string interpolation?>`
 
@@ -2532,7 +2532,7 @@ separate and equal Person class
         first_name, last_name, year_of_birth
     ):
 
-  the test is still green because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance of a class>` takes the :ref:`instance of the class<how to test if something is an instance of a class>` (``self``) it belongs to as the first argument which means
+  the test is still green because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument which means
 
   .. code-block:: python
 
@@ -2541,7 +2541,7 @@ separate and equal Person class
     instance.say_hello() == instance.say_hello(Person())
     instance.say_hello() == instance.say_hello(instance)
 
-  I do not need to pass the :ref:`instance<how to test if something is an instance of a class>` as input to the :ref:`say_hello method<test say_hello method>` since it is ``self``.
+  I do not need to pass the :ref:`instance<how to test if something is an instance>` as input to the :ref:`say_hello method<test say_hello method>` since it is ``self``.
 
 * I remove the commented lines from :ref:`test_john` in ``test_person.py``
 
@@ -3000,7 +3000,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
   - the test passes.
   - The :ref:`__init__<the constructor method>` and :ref:`say_hello methods<test say_hello method>` I defined are in the :ref:`list of attributes and methods<test_attributes_and_methods_of_person_class>`.
   - There are names in the :ref:`list<what is a list?>` that I did not define, which leads to the question of :ref:`where did they come from?<everything is an object>`
-  - The :ref:`attributes<what is a class attribute?>` I defined in the :ref:`__init__ method<the constructor method>` are not in the :ref:`list<what is a list?>`, because the test called dir_ on ``src.person.Person`` which is the :ref:`class<what is a class?>`, not :ref:`an instance of the class<how to test if something is an instance of a class>`.
+  - The :ref:`attributes<what is a class attribute?>` I defined in the :ref:`__init__ method<the constructor method>` are not in the :ref:`list<what is a list?>`, because the test called dir_ on ``src.person.Person`` which is the :ref:`class<what is a class?>`, not :ref:`an instance of the class<how to test if something is an instance>`.
 
 * I add a git_ commit message in the other terminal_
 
@@ -3025,7 +3025,7 @@ test_attributes_and_methods_of_person_instance
 
 ----
 
-I add a test to see the difference between the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of :ref:`an instance of a class<how to test if something is an instance of a class>` and the actual :ref:`class<what is a class?>`
+I add a test to see the difference between the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of :ref:`an instance<how to test if something is an instance>` and the actual :ref:`class<what is a class?>`
 
 .. code-block:: python
   :lineno-start: 196
