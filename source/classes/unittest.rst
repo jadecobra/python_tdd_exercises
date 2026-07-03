@@ -2721,7 +2721,7 @@ The problem with this solution is that anyone reading it has to know what the ``
 extract TestUnittest class
 *********************************************************************************
 
-I can put the test :ref:`functions<what is a function?>` together in a :ref:`class<what is a class>` since they are related.
+I can put the test :ref:`functions<what is a function?>` together in a :ref:`class<what is a class?>` since they are related.
 
 ----
 
@@ -2876,7 +2876,15 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
         TestUnittest.test_attributes_and_methods_of_unittest()
         takes 0 positional arguments but 1 was given
 
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assert_is_not`
 
+  .. code-block:: python
+    :lineno-start: 81
+    :emphasize-lines: 4
+
+    BOOM? BOOM? BOOM? BOOM?
+
+  the test passes.
 
 * I indent :ref:`test_assert_is_not` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
 
