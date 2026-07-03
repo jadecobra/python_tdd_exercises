@@ -2783,10 +2783,10 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
 ----
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` since I can use it if I do not want to add ``self`` to the :ref:`method definition<how to make a function>`. This way I do not send more information than what the :ref:`method<what is a method?>` needs when it does not use anything in the :ref:`class<what is a class?>`
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``test_failure`` since I can use it if I do not want to add ``self`` to the :ref:`method definition<how to make a function>`. This way I do not send more information than what the :ref:`method<what is a method?>` needs when it does not use anything in the :ref:`class<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 4
+    :lineno-start: 7
     :emphasize-lines: 4
 
     # class Unittest(object):
@@ -2808,9 +2808,10 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 * I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 5-6
+    :lineno-start: 7
+    :emphasize-lines: 6-7
 
+    # class Unittest(object):
     class TestUnittest(object):
 
         @staticmethod
@@ -2832,7 +2833,50 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
 ----
 
-* I
+* I move :ref:`test_attributes_and_methods_of_unittest` to replace ``test_failure`` As a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 4-23
+
+    # class Unittest(object):
+    class TestUnittest(object):
+
+        def test_attributes_and_methods_of_unittest():
+            reality = dir(unittest)
+            my_expectation = [
+                'BaseTestSuite', 'FunctionTestCase',
+                'IsolatedAsyncioTestCase', 'SkipTest',
+                'TestCase', 'TestLoader', 'TestProgram',
+                'TestResult', 'TestSuite', 'TextTestResult',
+                'TextTestRunner', '__all__', '__builtins__',
+                '__cached__', '__dir__', '__doc__',
+                '__file__', '__getattr__', '__loader__',
+                '__name__', '__package__', '__path__',
+                '__spec__', '__unittest', 'addModuleCleanup',
+                'case', 'defaultTestLoader', 'doModuleCleanups',
+                'enterModuleContext', 'expectedFailure',
+                'installHandler', 'loader', 'main',
+                'registerResult', 'removeHandler', 'removeResult',
+                'result', 'runner', 'signals', 'skip', 'skipIf',
+                'skipUnless', 'suite', 'util'
+            ]
+            assert reality == my_expectation
+
+
+    def test_attributes_and_methods_of_testcase():
+
+  .. caution:: Indentation matters in Python_. It is how it knows what blocks belong to what :ref:`function/method<what is a function?>`, :ref:`class<what is a class?>` or :ref:`module<what is a module?>`
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestUnittest.test_attributes_and_methods_of_unittest()
+        takes 0 positional arguments but 1 was given
+
+
 
 * I indent :ref:`test_assert_is_not` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
 
