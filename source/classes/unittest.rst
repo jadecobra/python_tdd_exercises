@@ -338,7 +338,8 @@ I want to see what comes with the `unittest module`_.
   .. code-block:: python
 
     E       AssertionError:
-        assert ['BaseTestSui...tLoader', ...] == []
+              assert ['BaseTestSui...tLoader', ...]
+           == []
     E
     E         Left contains 44 more items,
               first extra item: 'BaseTestSuite'
@@ -478,8 +479,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 .. code-block:: python
 
-  E       AssertionError:
-      assert ['__call__', ...__doc__', ...] == []
+  E       AssertionError: assert
+            ['__call__', ...__doc__', ...] == []
   E
   E         Left contains 108 more items,
             first extra item: '__call__'
@@ -793,7 +794,7 @@ test_assert_is_not
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to compare with the `assertIsNot method`_
+* I add an :ref:`assertion<what is an assertion?>` to compare it with the `assertIsNot method`_
 
   .. code-block:: python
     :lineno-start: 78
@@ -835,17 +836,16 @@ test_assert_is_not
 
   the test passes.
 
-* I remove the commented lines and assertIsNot_ from the TODO list
+* I remove assertIsNot_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 84
 
-    def test_assert_is_not():
-        assert None is not False
         unittest.TestCase().assertIsNot(None, False)
 
 
     'assertIs'
+    'assertNotEqual'
 
 * I add a git_ commit message in the other terminal_
 
@@ -895,9 +895,13 @@ test_assert_is
 
   .. code-block:: python
     :lineno-start: 78
-    :emphasize-lines: 6-7
+    :emphasize-lines: 10-11
 
     def test_assert_is_not():
+        # unittest.TestCase.assertIsNot()
+        # unittest.TestCase().assertIsNot()
+        # unittest.TestCase().assertIsNot(None, None)
+        # assert None is not None
         assert None is not False
         unittest.TestCase().assertIsNot(None, False)
 
@@ -925,7 +929,7 @@ test_assert_is
 I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 83
+  :lineno-start: 87
   :emphasize-lines: 2-3
 
   def test_assert_is():
@@ -948,7 +952,7 @@ the test passes.
 * I add a :ref:`call<how to call a function with input>` to the `assertIs method`_
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 87
     :emphasize-lines: 4
 
     def test_assert_is():
@@ -972,7 +976,7 @@ the test passes.
 * I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of a :ref:`class<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 87
     :emphasize-lines: 4-5
 
     def test_assert_is():
@@ -997,7 +1001,7 @@ the test passes.
 * I add two things to the :ref:`call<how to call a function with input>` to `unittest.TestCase.assertIs`_
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 87
     :emphasize-lines: 5-6
 
     def test_assert_is():
@@ -1021,7 +1025,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 87
     :emphasize-lines: 6-7
 
     def test_assert_is():
@@ -1038,17 +1042,16 @@ the test passes.
 
   the test passes.
 
-* I remove the commented lines and assertIs_ from the TODO list
+* I remove assertIs_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 93
 
-    def test_assert_is():
-        assert False is False
         unittest.TestCase().assertIs(False, False)
 
 
     'assertNotEqual'
+    'assertEqual'
 
 * I add a git_ commit message in the other terminal_
 
@@ -1095,11 +1098,15 @@ test_assert_not_equal
 * I add a test for assertNotEqual_
 
   .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 6-7
+    :lineno-start: 87
+    :emphasize-lines: 10-11
 
     def test_assert_is():
+        # assert False is True
         assert False is False
+        # unittest.TestCase.assertIs()
+        # unittest.TestCase().assertIs()
+        # unittest.TestCase().assertIs(False, True)
         unittest.TestCase().assertIs(False, False)
 
 
@@ -1117,7 +1124,7 @@ test_assert_not_equal
                2 required positional arguments:
                'first', and 'second'
 
-  the :ref:`definition<how to make a function that takes input>` of the `assertNotEqual method`_  of the `TestCase class`_  of the unittest_ library (``unittest.TestCase.assertNotEqual``) has two required :ref:`positional arguments<test_positional_arguments>`.
+  the :ref:`definition<how to make a function that takes input>` of the `assertNotEqual method`_  of the `TestCase class`_  of the unittest_ library (``unittest.TestCase.assertNotEqual``) has two required :ref:`positional arguments<test_positional_arguments>` (``first`` and ``second``).
 
 ----
 
@@ -1130,7 +1137,7 @@ test_assert_not_equal
 * I add two things to the :ref:`call<how to call a function with input>` to `unittest.TestCase.assertNotEqual`_
 
   .. code-block:: python
-    :lineno-start: 88
+    :lineno-start: 96
     :emphasize-lines: 2-3
 
     def test_assert_not_equal():
@@ -1151,7 +1158,7 @@ test_assert_not_equal
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 88
+    :lineno-start: 96
     :emphasize-lines: 3-4
 
     def test_assert_not_equal():
@@ -1172,10 +1179,10 @@ test_assert_not_equal
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to compare with the `assertNotEqual method`_
+* I add an :ref:`assertion<what is an assertion?>` to compare it with the `assertNotEqual method`_
 
   .. code-block:: python
-    :lineno-start: 88
+    :lineno-start: 96
     :emphasize-lines: 4
 
     def test_assert_not_equal():
@@ -1196,7 +1203,7 @@ test_assert_not_equal
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 88
+    :lineno-start: 96
     :emphasize-lines: 4-5
 
     def test_assert_not_equal():
@@ -1212,17 +1219,16 @@ test_assert_not_equal
 
   the test passes.
 
-* I remove the commented lines and assertNotEqual_ from the TODO list
+* I remove assertNotEqual_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 88
+    :lineno-start: 101
 
-    def test_assert_not_equal():
-        assert True != 0
         unittest.TestCase().assertNotEqual(True, 0)
 
 
     'assertEqual'
+    'assertNotIsInstance'
 
 * I add a git_ commit message in the other terminal_
 
@@ -1269,16 +1275,19 @@ test_assert_equal
 * I add a test for the `assertEqual method`_
 
   .. code-block:: python
-    :lineno-start: 88
-    :emphasize-lines: 6-7
+    :lineno-start: 96
+    :emphasize-lines: 9-10
 
-    def test_assert_equal_not():
-        assert None is not False
-        unittest.TestCase().assertEqualNot(None, False)
+    def test_assert_not_equal():
+        # unittest.TestCase().assertNotEqual()
+        # unittest.TestCase().assertNotEqual(True, True)
+        # assert True != True
+        assert True != 0
+        unittest.TestCase().assertNotEqual(True, 0)
 
 
     def test_assert_equal():
-        assert False is True
+        assert 0.0 == '0.0'
 
 
     'assertEqual'
@@ -1300,7 +1309,7 @@ test_assert_equal
 I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 93
+  :lineno-start: 104
   :emphasize-lines: 2-3
 
   def test_assert_equal():
@@ -1323,7 +1332,7 @@ the test passes.
 * I add a :ref:`call<how to call a function with input>` to the `assertEqual method`_
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 104
     :emphasize-lines: 4
 
     def test_assert_equal():
@@ -1345,7 +1354,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 104
     :emphasize-lines: 4-5
 
     def test_assert_equal():
@@ -1363,14 +1372,13 @@ the test passes.
 * I remove the commented lines and assertEqual_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 108
 
-    def test_assert_equal():
-        assert 0.0 == 0.0
         unittest.TestCase().assertEqual(0.0, 0.0)
 
 
     'assertNotIsInstance'
+    'assertIsInstance'
 
 * I add a git_ commit message in the other terminal_
 
@@ -1417,11 +1425,13 @@ test_assert_not_is_instance
 * I add a test for the `assertNotIsInstance method`_
 
   .. code-block:: python
-    :lineno-start: 93
-    :emphasize-lines: 6-7
+    :lineno-start: 104
+    :emphasize-lines: 8-9
 
     def test_assert_equal():
+        # assert 0.0 == '0.0'
         assert 0.0 == 0.0
+        # unittest.TestCase().assertEqual(0.0, '0.0')
         unittest.TestCase().assertEqual(0.0, 0.0)
 
 
@@ -1441,8 +1451,8 @@ test_assert_not_is_instance
 
   - The :ref:`definition<how to make a function that takes input>` of the `assertNotIsInstance method`_  of the `TestCase class`_  of the unittest_ library (``unittest.TestCase.assertIsNot``) has three required :ref:`positional arguments<test_positional_arguments>` (``self``, ``obj`` and ``cls``)
   - A :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
-  - ``obj`` is for the :ref:`instance<how to test if something is an instance>` being tested
-  - ``cls`` is for the :ref:`class<what is a class?>`
+  - ``obj`` is for the :ref:`instance<how to test if something is an instance>` being tested.
+  - ``cls`` is for the :ref:`class<what is a class?>`.
 
 ----
 
@@ -1455,7 +1465,7 @@ test_assert_not_is_instance
 * I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of a :ref:`class<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 98
+    :lineno-start: 111
     :emphasize-lines: 2-3
 
     def test_assert_not_is_instance():
@@ -1476,7 +1486,7 @@ test_assert_not_is_instance
 * I add two things to the :ref:`call<how to call a function with input>` to `unittest.TestCase.assertNotIsInstance`_
 
   .. code-block:: python
-    :lineno-start: 98
+    :lineno-start: 111
     :emphasize-lines: 4-6
 
     def test_assert_not_is_instance():
@@ -1501,7 +1511,7 @@ test_assert_not_is_instance
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 98
+    :lineno-start: 111
     :emphasize-lines: 5-6
 
     def test_assert_not_is_instance():
@@ -1525,10 +1535,10 @@ test_assert_not_is_instance
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to compare with the `assertNotIsInstance method`_
+* I add an :ref:`assertion<what is an assertion?>` to compare it with the `assertNotIsInstance method`_
 
   .. code-block:: python
-    :lineno-start: 98
+    :lineno-start: 111
     :emphasize-lines: 4-6
 
     def test_assert_not_is_instance():
@@ -1554,7 +1564,7 @@ test_assert_not_is_instance
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 98
+    :lineno-start: 111
     :emphasize-lines: 5-6
 
     def test_assert_not_is_instance():
@@ -1575,21 +1585,19 @@ test_assert_not_is_instance
 
   the test passes.
 
-* I remove the commented lines and assertNotIsInstance_ from the TODO list
+* I remove assertNotIsInstance_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 98
+    :lineno-start: 118
 
-    def test_assert_not_is_instance():
-        assert not isinstance(
-            unittest.TestCase, unittest.TestCase
-        )
         unittest.TestCase().assertNotIsInstance(
+            # unittest.TestCase(), unittest.TestCase
             unittest.TestCase, unittest.TestCase
         )
 
 
     'assertIsInstance'
+    'assertNotIsSubclass'
 
 * I add a git_ commit message in the other terminal_
 
@@ -1639,20 +1647,17 @@ test_assert_is_instance
 * I add a test for `assertIsInstance`_
 
   .. code-block:: python
-    :lineno-start: 98
-    :emphasize-lines: 10-11
+    :lineno-start: 118
+    :emphasize-lines: 7-8
 
-    def test_assert_not_is_instance():
-        assert not isinstance(
-            unittest.TestCase, unittest.TestCase
-        )
         unittest.TestCase().assertNotIsInstance(
+            # unittest.TestCase(), unittest.TestCase
             unittest.TestCase, unittest.TestCase
         )
 
 
     def test_assert_is_instance():
-        unittest.TestCase().assertIsInstance()
+        unittest.TestCase.assertIsInstance()
 
 
     'assertIsInstance'
@@ -1662,12 +1667,12 @@ test_assert_is_instance
   .. code-block:: python
 
     TypeError: TestCase.assertIsInstance() missing
-               2 required positional arguments:
-               'obj', and 'cls'
+               3 required positional arguments:
+               'self', 'obj', and 'cls'
 
   - A :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
-  - ``obj`` is for the :ref:`instance<how to test if something is an instance>` being tested
-  - ``cls`` is for the :ref:`class<what is a class?>`
+  - ``obj`` is for the :ref:`instance<how to test if something is an instance>` being tested.
+  - ``cls`` is for the :ref:`class<what is a class?>`.
 
 ----
 
@@ -1680,7 +1685,7 @@ test_assert_is_instance
 * I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of a :ref:`class<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 107
+    :lineno-start: 124
     :emphasize-lines: 2-3
 
     def test_assert_is_instance():
@@ -1701,10 +1706,11 @@ test_assert_is_instance
 * I add two things to the :ref:`call<how to call a function with input>` to `unittest.TestCase.assertIsInstance`_
 
   .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 3-5
+    :lineno-start: 124
+    :emphasize-lines: 3-6
 
     def test_assert_is_instance():
+        # unittest.TestCase.assertIsInstance()
         # unittest.TestCase().assertIsInstance()
         unittest.TestCase().assertIsInstance(
             unittest.TestCase, unittest.TestCase
@@ -1727,10 +1733,11 @@ test_assert_is_instance
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 4-5
+    :lineno-start: 124
+    :emphasize-lines: 5-6
 
     def test_assert_is_instance():
+        # unittest.TestCase.assertIsInstance()
         # unittest.TestCase().assertIsInstance()
         unittest.TestCase().assertIsInstance(
             # unittest.TestCase, unittest.TestCase
@@ -1750,13 +1757,14 @@ test_assert_is_instance
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to compare with the `assertIsInstance method`_
+* I add an :ref:`assertion<what is an assertion?>` to compare it with the `assertIsInstance method`_
 
   .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 3-5
+    :lineno-start: 124
+    :emphasize-lines: 4-6
 
     def test_assert_is_instance():
+        # unittest.TestCase.assertIsInstance()
         # unittest.TestCase().assertIsInstance()
         assert isinstance(
             unittest.TestCase, unittest.TestCase
@@ -1778,10 +1786,11 @@ test_assert_is_instance
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 4-5
+    :lineno-start: 124
+    :emphasize-lines: 5-6
 
     def test_assert_is_instance():
+        # unittest.TestCase.assertIsInstance()
         # unittest.TestCase().assertIsInstance()
         assert isinstance(
             # unittest.TestCase, unittest.TestCase
@@ -1800,12 +1809,13 @@ test_assert_is_instance
 * I add :ref:`variables<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 107
+    :lineno-start: 124
     :emphasize-lines: 2-3
 
     def test_assert_is_instance():
         a_class = unittest.TestCase
         an_instance = a_class()
+        # unittest.TestCase.assertIsInstance()
         # unittest.TestCase().assertIsInstance()
         assert isinstance(
             # unittest.TestCase, unittest.TestCase
@@ -1818,16 +1828,18 @@ test_assert_is_instance
 
 
     'assertIsInstance'
+    'assertNotIsSubclass'
 
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``unittest.TestCase`` and ``unittest.TestCase()``
 
   .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 7-8, 12-13
+    :lineno-start: 124
+    :emphasize-lines: 8-9, 13-14
 
     def test_assert_is_instance():
         a_class = unittest.TestCase
         an_instance = a_class()
+        # unittest.TestCase.assertIsInstance()
         # unittest.TestCase().assertIsInstance()
         assert isinstance(
             # unittest.TestCase, unittest.TestCase
@@ -1842,26 +1854,23 @@ test_assert_is_instance
 
 
     'assertIsInstance'
-    'assertNotIsSubclass'
 
   the test is still green.
 
-* I remove the commented lines and assertIsInstance_ from the TODO list
+* I remove assertIsInstance_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 107
+    :lineno-start: 134
 
-    def test_assert_is_instance():
-        a_class = unittest.TestCase
-        an_instance = a_class()
-
-        assert isinstance(an_instance, a_class)
         unittest.TestCase().assertIsInstance(
+            # unittest.TestCase, unittest.TestCase
+            # unittest.TestCase(), unittest.TestCase
             an_instance, a_class
         )
 
 
     'assertNotIsSubclass'
+    'assertIsSubclass'
 
 * I add a git_ commit message in the other terminal_
 
@@ -1911,11 +1920,12 @@ test_assert_not_is_subclass
 * I add a test for `assertNotIsSubclass`_
 
   .. code-block:: python
-    :lineno-start: 111
-    :emphasize-lines: 7-8
+    :lineno-start: 134
+    :emphasize-lines: 8-9
 
-        assert isinstance(an_instance, a_class)
         unittest.TestCase().assertIsInstance(
+            # unittest.TestCase, unittest.TestCase
+            # unittest.TestCase(), unittest.TestCase
             an_instance, a_class
         )
 
@@ -1934,8 +1944,8 @@ test_assert_not_is_subclass
                2 required positional arguments:
                'cls', and 'superclass'
 
-  - ``cls`` is for the :ref:`subclass<how to test if something is a subclass>` being tested
-  - ``superclass`` is for the :ref:`parent class<what is a class?>` of the :ref:`subclass<how to test if something is a subclass>` being tested
+  - ``cls`` is for the :ref:`subclass<how to test if something is a subclass>` being tested.
+  - ``superclass`` is for the :ref:`parent class<what is a class?>` of the :ref:`subclass<how to test if something is a subclass>` being tested.
 
 ----
 
@@ -1948,7 +1958,7 @@ test_assert_not_is_subclass
 * I add two things to the :ref:`call<how to call a function with input>` to `unittest.TestCase.assertNotIsSubclass`_
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 141
     :emphasize-lines: 3-5
 
     def test_assert_not_is_subclass():
@@ -1973,7 +1983,7 @@ test_assert_not_is_subclass
 * I change the :ref:`assertion<what is an assertion?>` to use a :ref:`class<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 141
     :emphasize-lines: 4-5
 
     def test_assert_not_is_subclass():
@@ -1999,7 +2009,7 @@ test_assert_not_is_subclass
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 141
     :emphasize-lines: 5-6
 
     def test_assert_not_is_subclass():
@@ -2023,10 +2033,10 @@ test_assert_not_is_subclass
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to compare with the `assertNotIsSubclass method`_
+* I add an :ref:`assertion<what is an assertion?>` to compare it with the `assertNotIsSubclass method`_
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 141
     :emphasize-lines: 3-5
 
     def test_assert_not_is_subclass():
@@ -2052,7 +2062,7 @@ test_assert_not_is_subclass
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 141
     :emphasize-lines: 4-5
 
     def test_assert_not_is_subclass():
@@ -2073,16 +2083,14 @@ test_assert_not_is_subclass
 
   the test passes because the `unittest.TestCase class`_ is not a :ref:`subclass<how to test if something is a subclass>` of the :ref:`list class (the class for lists)<what is a list?>`.
 
-* I remove the commented lines and assertNotIsSubclass_ from the TODO list
+* I remove assertNotIsSubclass_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 147
 
-    def test_assert_not_is_subclass():
-        assert not issubclass(
-            unittest.TestCase, list
-        )
         unittest.TestCase().assertNotIsSubclass(
+            # unittest.TestCase(), object
+            # unittest.TestCase, object
             unittest.TestCase, dict
         )
 
@@ -2139,14 +2147,12 @@ test_assert_is_subclass
 * I add a test for the `assertIsSubclass method`_
 
   .. code-block:: python
-    :lineno-start: 117
-    :emphasize-lines: 10-11
+    :lineno-start: 147
+    :emphasize-lines: 8-9
 
-    def test_assert_not_is_subclass():
-        assert not issubclass(
-            unittest.TestCase, list
-        )
         unittest.TestCase().assertNotIsSubclass(
+            # unittest.TestCase(), object
+            # unittest.TestCase, object
             unittest.TestCase, dict
         )
 
@@ -2171,10 +2177,10 @@ test_assert_is_subclass
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to use :ref:`a class<what is a class>`
+* I change the :ref:`instance<how to test if something is an instance>` to a :ref:`class<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 126
+    :lineno-start: 154
     :emphasize-lines: 2-3
 
     def test_assert_is_subclass():
@@ -2193,7 +2199,7 @@ test_assert_is_subclass
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 126
+    :lineno-start: 154
     :emphasize-lines: 3-4
 
     def test_assert_is_subclass():
@@ -2209,16 +2215,14 @@ test_assert_is_subclass
 * I add a call to assertIsSubclass_
 
   .. code-block:: python
-    :lineno-start: 126
-    :emphasize-lines: 5-7
+    :lineno-start: 154
+    :emphasize-lines: 5
 
     def test_assert_is_subclass():
         # assert issubclass(unittest.TestCase(), set)
         # assert issubclass(unittest.TestCase, set)
         assert issubclass(unittest.TestCase, object)
-        unittest.TestCase.assertIsSubclass(
-            unittest.TestCase(), set
-        )
+        unittest.TestCase.assertIsSubclass()
 
 
     'assertIsSubclass'
@@ -2235,11 +2239,11 @@ test_assert_is_subclass
   - ``cls`` is for the :ref:`subclass<how to test if something is a subclass>` being tested
   - ``superclass`` is for the :ref:`parent class<what is a class?>` of the :ref:`subclass<how to test if something is a subclass>` being tested.
 
-* I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of a :ref:`class<what is a class>`, then add two things to the parentheses
+* I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of a :ref:`class<what is a class?>`, then add two things to the parentheses
 
   .. code-block:: python
-    :lineno-start: 126
-    :emphasize-lines: 4-8
+    :lineno-start: 154
+    :emphasize-lines: 5-8
 
     def test_assert_is_subclass():
         # assert issubclass(unittest.TestCase(), set)
@@ -2247,7 +2251,7 @@ test_assert_is_subclass
         assert issubclass(unittest.TestCase, object)
         # unittest.TestCase.assertIsSubclass()
         unittest.TestCase().assertIsSubclass(
-            unittest.TestCase(), tuple
+            unittest.TestCase(), set
         )
 
 
@@ -2263,11 +2267,11 @@ test_assert_is_subclass
 
   because :ref:`an instance is not a class<instance vs subclass>`.
 
-* I change the :ref:`assertion<what is an assertion?>` to use a :ref:`class<what is a class?>`
+* I change the :ref:`instance<how to test if something is an instance>` to a :ref:`class<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 126
-    :emphasize-lines: 6-7
+    :lineno-start: 154
+    :emphasize-lines: 7-8
 
     def test_assert_is_subclass():
         # assert issubclass(unittest.TestCase(), set)
@@ -2275,8 +2279,8 @@ test_assert_is_subclass
         assert issubclass(unittest.TestCase, object)
         # unittest.TestCase.assertIsSubclass()
         unittest.TestCase().assertIsSubclass(
-            # unittest.TestCase(), tuple
-            unittest.TestCase, tuple
+            # unittest.TestCase(), set
+            unittest.TestCase, set
         )
 
 
@@ -2288,28 +2292,32 @@ test_assert_is_subclass
 
     AssertionError:
         <class 'unittest.case.TestCase'>
-        is not an instance of
-        <class 'unittest.case.TestCase'>
-
-  because a :ref:`class<what is a class?>` is not an :ref:`instance<how to test if something is an instance>` of itself.
+        is not a subclass of <class 'set'>
 
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 126
-    :emphasize-lines: 4-5
+    :lineno-start: 154
+    :emphasize-lines: 8-9
 
     def test_assert_is_subclass():
-        # unittest.TestCase().assertIsSubclass()
+        # assert issubclass(unittest.TestCase(), set)
+        # assert issubclass(unittest.TestCase, set)
+        assert issubclass(unittest.TestCase, object)
+        # unittest.TestCase.assertIsSubclass()
         unittest.TestCase().assertIsSubclass(
-            # unittest.TestCase, unittest.TestCase
-            unittest.TestCase(), unittest.TestCase
+            # unittest.TestCase(), set
+            # unittest.TestCase, set
+            unittest.TestCase, object
         )
 
 
     'assertIsSubclass'
 
-  the test passes.
+
+    # Exceptions seen
+
+  the test passes because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
 
 ----
 
@@ -2319,118 +2327,24 @@ test_assert_is_subclass
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to compare with the `assertIsSubclass method`_
+* I remove assertIsSubclass_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 126
-    :emphasize-lines: 3-5
+    :lineno-start: 154
 
     def test_assert_is_subclass():
-        # unittest.TestCase().assertIsSubclass()
-        assert issubclass(
-            unittest.TestCase, unittest.TestCase
-        )
+        # assert issubclass(unittest.TestCase(), set)
+        # assert issubclass(unittest.TestCase, set)
+        assert issubclass(unittest.TestCase, object)
+        # unittest.TestCase.assertIsSubclass()
         unittest.TestCase().assertIsSubclass(
-            # unittest.TestCase, unittest.TestCase
-            unittest.TestCase(), unittest.TestCase
+            # unittest.TestCase(), set
+            # unittest.TestCase, set
+            unittest.TestCase, object
         )
 
 
-    'assertIsSubclass'
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: assert False
-
-* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 126
-    :emphasize-lines: 4-5
-
-    def test_assert_is_subclass():
-        # unittest.TestCase().assertIsSubclass()
-        assert issubclass(
-            # unittest.TestCase, unittest.TestCase
-            unittest.TestCase(), unittest.TestCase
-        )
-        unittest.TestCase().assertIsSubclass(
-            # unittest.TestCase, unittest.TestCase
-            unittest.TestCase(), unittest.TestCase
-        )
-
-
-    'assertIsSubclass'
-
-  the test passes.
-
-* I add :ref:`variables<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 126
-    :emphasize-lines: 2-3
-
-    def test_assert_is_subclass():
-        a_class = unittest.TestCase
-        an_instance = a_class()
-        # unittest.TestCase().assertIsSubclass()
-        assert issubclass(
-            # unittest.TestCase, unittest.TestCase
-            unittest.TestCase(), unittest.TestCase
-        )
-        unittest.TestCase().assertIsSubclass(
-            # unittest.TestCase, unittest.TestCase
-            unittest.TestCase(), unittest.TestCase
-        )
-
-
-    'assertIsSubclass'
-
-* I use the :ref:`variables<what is a variable?>` to remove repetition of ``unittest.TestCase`` and ``unittest.TestCase()``
-
-  .. code-block:: python
-    :lineno-start: 126
-    :emphasize-lines: 7-8, 12-13
-
-    def test_assert_is_subclass():
-        a_class = unittest.TestCase
-        an_instance = a_class()
-        # unittest.TestCase().assertIsSubclass()
-        assert issubclass(
-            # unittest.TestCase, unittest.TestCase
-            # unittest.TestCase(), unittest.TestCase
-            an_instance, a_class
-        )
-        unittest.TestCase().assertIsSubclass(
-            # unittest.TestCase, unittest.TestCase
-            # unittest.TestCase(), unittest.TestCase
-            an_instance, a_class
-        )
-
-
-    'assertIsSubclass'
-    'assertNotIsSubclass'
-
-  the test is still green.
-
-* I remove the commented lines and assertIsSubclass_ from the TODO list
-
-  .. code-block:: python
-    :lineno-start: 126
-
-    def test_assert_is_subclass():
-        a_class = unittest.TestCase
-        an_instance = a_class()
-
-        assert issubclass(an_instance, a_class)
-        unittest.TestCase().assertIsSubclass(
-            an_instance, a_class
-        )
-
-
-    'assertNotIsSubclass'
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -2446,23 +2360,48 @@ I imagine Python_ follows this path when `unittest.TestCase.assertIsSubclass`_ i
 
   unittest
   └── class TestCase:
-      └── def assertIsSubclass(self, obj, cls):
-          └── assert not issubclass(obj, cls)
+      └── def assertIsSubclass(self, cls, superclass):
+          └── assert not issubclass(cls, superclass)
 
-Compare the error message for ``unittest.TestCase().assertIsSubclass(unittest.TestCase, unittest.TestCase)`` with the one for ``assert issubclass(unittest.TestCase, set)``
+Compare the error message for ``unittest.TestCase().assertIsSubclass(unittest.TestCase, tuple)`` with the one for ``assert issubclass(unittest.TestCase, set)``
 
 .. code-block:: shell
 
   AssertionError:
       <class 'unittest.case.TestCase'>
-      is not an instance of
-      <class 'unittest.case.TestCase'>
+      is not a subclass of <class 'tuple'>
 
 vs
 
 .. code-block:: python
 
   AssertionError: assert False
+
+Which of the error messages in this chapter do you like better?
+
+----
+
+*********************************************************************************
+remove repetition
+*********************************************************************************
+
+* I add a :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` at the top of the file_
+
+  .. code-block:: python
+    :linenos:
+
+    import unittest
+
+
+    TESTER = unittest.TestCase()
+
+
+    def test_attributes_and_methods_of_unittest():
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``unittest.TestCase()`` from the :ref:`test_assert_is_not`
+
+  .. code-block:: python
+    :lineno-start: 81
 
 ----
 
