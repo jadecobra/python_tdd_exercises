@@ -28,7 +28,7 @@ I want to give those values once, and get a representation for a person. I can d
 what is a class?
 *********************************************************************************
 
-I think of classes_ as :ref:`attributes (variables)<what is a class attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together.
+I think of classes_ as :ref:`attributes (variables)<what is a class attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together (a classification).
 
 ----
 
