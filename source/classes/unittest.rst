@@ -1245,18 +1245,166 @@ I imagine Python_ follows this path when `unittest.TestCase.assertNotEqual`_ is 
           def assertNotEqual(self, first, second):
               assert first != second
 
-Compare the error message for ``assertNotEqual(None, None)`` with the one for ``assert None is not None``
+Compare the error message for ``assertNotEqual(True, True)`` with the one for ``assert True != True``
 
 .. code-block:: python
 
-  AssertionError: unexpectedly identical: None
+  AssertionError: True == True
 
 vs
 
 .. code-block:: python
 
-  assert None is not None
+  E       assert True != True
 
+----
+
+*********************************************************************************
+test_assert_equal
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a test for the `assertEqual method`_
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 6-7
+
+    def test_assert_equal_not():
+        assert None is not False
+        unittest.TestCase().assertEqualNot(None, False)
+
+
+    def test_assert_equal():
+        assert False is True
+
+
+    'assertEqual'
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 0.0 == '0.0'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
+
+.. code-block:: python
+  :lineno-start: 93
+  :emphasize-lines: 2-3
+
+  def test_assert_equal():
+      # assert 0.0 == '0.0'
+      assert 0.0 == 0.0
+
+
+  'assertEqual'
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`call<how to call a function with input>` to the `assertEqual method`_
+
+  .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 4
+
+    def test_assert_equal():
+        # assert 0.0 == '0.0'
+        assert 0.0 == 0.0
+        unittest.TestCase().assertEqual(0.0, '0.0')
+
+
+    'assertEqual'
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 0.0 != '0.0'
+
+  because a float_ is not a string_.
+
+* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 4-5
+
+    def test_assert_equal():
+        # assert 0.0 == '0.0'
+        assert 0.0 == 0.0
+        # unittest.TestCase().assertEqual(0.0, '0.0')
+        unittest.TestCase().assertEqual(0.0, 0.0)
+
+
+    'assertEqual'
+    'assertNotIsInstance'
+
+  the test passes.
+
+* I remove the commented lines and assertEqual_ from the TODO list
+
+  .. code-block:: python
+    :lineno-start: 93
+
+    def test_assert_equal():
+        assert 0.0 == 0.0
+        unittest.TestCase().assertEqual(0.0, 0.0)
+
+
+    'assertNotIsInstance'
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_assert_equal'
+
+I imagine Python_ follows this path when `unittest.TestCase.assertEqual`_ is called
+
+.. code-block:: shell
+
+  unittest
+  └── class TestCase:
+
+          def assertEqual(self, first, second):
+              assert first is second
+
+Compare the error message for ``assertEqual(0.0, '0.0')`` with the one for ``assert 0.0 == '0.0'``
+
+.. code-block:: python
+
+  AssertionError: 0.0 != '0.0'
+
+vs
+
+.. code-block:: python
+
+  AssertionError: assert 0.0 == '0.0'
 
 ----
 
