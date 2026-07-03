@@ -1615,7 +1615,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertNotIsInstance`
 
 Compare the error message for ``unittest.TestCase().assertNotIsInstance(unittest.TestCase(), unittest.TestCase)`` with the one for ``assert not isinstance(unittest.TestCase(), unittest.TestCase)``
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError:
       <unittest.case.TestCase testMethod=runTest>
@@ -1626,6 +1626,234 @@ vs
 .. code-block:: python
 
   E       AssertionError: assert not True
+
+----
+
+*********************************************************************************
+test_assert_is_instance
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a test for `assertIsInstance`_
+
+  .. code-block:: python
+    :lineno-start: 98
+    :emphasize-lines: 10-11
+
+    def test_assert_not_is_instance():
+        assert not isinstance(
+            unittest.TestCase, unittest.TestCase
+        )
+        unittest.TestCase().assertNotIsInstance(
+            unittest.TestCase, unittest.TestCase
+        )
+
+
+    def test_assert_is_instance():
+        unittest.TestCase().assertIsInstance()
+
+
+    'assertIsInstance'
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestCase.assertIsInstance() missing
+               2 required positional arguments:
+               'obj', and 'cls'
+
+  - A :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance of a class>` takes the :ref:`instance of the class<how to test if something is an instance of a class>` (``self``) it belongs to as the first argument.
+  - ``obj`` is for the :ref:`instance<how to test if something is an instance of a class>`
+  - ``cls`` is for the :ref:`class<what is a class?>`
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance of a class>` instead of a :ref:`class<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 2-3
+
+    def test_assert_is_instance():
+        # unittest.TestCase.assertIsInstance()
+        unittest.TestCase().assertIsInstance()
+
+
+    'assertIsInstance'
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestCase.assertIsInstance()
+               missing 2 required positional arguments:
+               'obj' and 'cls'
+
+* I add two things to the :ref:`call<how to call a function with input>` to `unittest.TestCase.assertIsInstance`_
+
+  .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 4-6
+
+    def test_assert_is_instance():
+        # unittest.TestCase.assertIsInstance()
+        # unittest.TestCase().assertIsInstance()
+        unittest.TestCase().assertIsInstance(
+            unittest.TestCase(), unittest.TestCase
+        )
+
+
+    'assertIsInstance'
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <unittest.case.TestCase testMethod=runTest>
+        is an instance of <class 'unittest.case.TestCase'>
+
+* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 5-6
+
+    def test_assert_is_instance():
+        # unittest.TestCase.assertIsInstance()
+        # unittest.TestCase().assertIsInstance()
+        unittest.TestCase().assertIsInstance(
+            # unittest.TestCase(), unittest.TestCase
+            unittest.TestCase, unittest.TestCase
+        )
+
+
+    'assertIsInstance'
+
+  the test passes because a :ref:`class<what is a class?>` is not an :ref:`instance<how to test if something is an instance of a class>` of itself.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>` to compare with the `assertIsInstance method`_
+
+  .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 4-6
+
+    def test_assert_is_instance():
+        # unittest.TestCase.assertIsInstance()
+        # unittest.TestCase().assertIsInstance()
+        assert not isinstance(
+            unittest.TestCase(), unittest.TestCase
+        )
+        unittest.TestCase().assertIsInstance(
+            # unittest.TestCase(), unittest.TestCase
+            unittest.TestCase, unittest.TestCase
+        )
+
+
+    'assertIsInstance'
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       AssertionError: assert not True
+
+* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 5-6
+
+    def test_assert_is_instance():
+        # unittest.TestCase.assertIsInstance()
+        # unittest.TestCase().assertIsInstance()
+        assert not isinstance(
+            # unittest.TestCase(), unittest.TestCase
+            unittest.TestCase, unittest.TestCase
+        )
+        unittest.TestCase().assertIsInstance(
+            # unittest.TestCase(), unittest.TestCase
+            unittest.TestCase, unittest.TestCase
+        )
+
+
+    'assertIsInstance'
+    'assertIsInstance'
+
+  the test passes.
+
+* I remove the commented lines and assertIsInstance_ from the TODO list
+
+  .. code-block:: python
+    :lineno-start: 107
+
+    def test_assert_is_instance():
+        assert not isinstance(
+            unittest.TestCase, unittest.TestCase
+        )
+        unittest.TestCase().assertIsInstance(
+            unittest.TestCase, unittest.TestCase
+        )
+
+
+    'assertIsInstance'
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_assert_is_instance'
+
+I imagine Python_ follows this path when `unittest.TestCase.assertIsInstance`_ is called
+
+.. code-block:: shell
+
+  unittest
+  └── class TestCase:
+
+          def assertIsInstance(self, obj, cls):
+              assert not isinstance(obj, cls)
+
+Compare the error message for ``unittest.TestCase().assertIsInstance(unittest.TestCase(), unittest.TestCase)`` with the one for ``assert not isinstance(unittest.TestCase(), unittest.TestCase)``
+
+.. code-block:: shell
+
+  AssertionError:
+      <unittest.case.TestCase testMethod=runTest>
+      is an instance of <class 'unittest.case.TestCase'>
+
+vs
+
+.. code-block:: python
+
+  E       AssertionError: assert not True
+
+
+
+
 
 ----
 
