@@ -2397,7 +2397,7 @@ Which of the error messages in this chapter do you like better?
 ----
 
 *********************************************************************************
-extract TESTER variable
+extract TOOLBOX variable
 *********************************************************************************
 
 I can use a :ref:`variable<what is a variable?>` to remove repetition of making the ``unittest.TestCase()`` :ref:`instance<how to test if something is an instance>` in every test.
@@ -2410,7 +2410,7 @@ I can use a :ref:`variable<what is a variable?>` to remove repetition of making 
     import unittest
 
 
-    TESTER = unittest.TestCase()
+    TOOLBOX = unittest.TestCase()
 
 
     def test_attributes_and_methods_of_unittest():
@@ -2428,17 +2428,29 @@ I can use a :ref:`variable<what is a variable?>` to remove repetition of making 
         # assert None is not None
         assert None is not False
         # unittest.TestCase().assertIsNot(None, False)
-        TESTER.assertIsNot(None, False)
+        TOOLBOX.assertIsNot(None, False)
 
 
     def test_assert_is():
 
   the test is still green.
 
+* I remove the commented lines from :ref:`test_assert_is_not`
+
+  .. code-block:: python
+    :lineno-start: 81
+
+    def test_assert_is_not():
+        assert None is not False
+        TOOLBOX.assertIsNot(None, False)
+
+
+    def test_assert_is():
+
 * I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assert_is`
 
   .. code-block:: python
-    :lineno-start: 91
+    :lineno-start: 86
     :emphasize-lines: 7-8
 
     def test_assert_is():
@@ -2448,17 +2460,29 @@ I can use a :ref:`variable<what is a variable?>` to remove repetition of making 
         # unittest.TestCase().assertIs()
         # unittest.TestCase().assertIs(False, True)
         # unittest.TestCase().assertIs(False, False)
-        TESTER.assertIs(False, False)
+        TOOLBOX.assertIs(False, False)
 
 
     def test_assert_not_equal():
 
   still green.
 
+* I remove the commented lines from :ref:`test_assert_is`
+
+  .. code-block:: python
+    :lineno-start: 86
+
+    def test_assert_is():
+        assert False is False
+        TOOLBOX.assertIs(False, False)
+
+
+    def test_assert_not_equal():
+
 * I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assert_not_equal`
 
   .. code-block:: python
-    :lineno-start: 101
+    :lineno-start: 91
     :emphasize-lines: 6-7
 
     def test_assert_not_equal():
@@ -2467,17 +2491,29 @@ I can use a :ref:`variable<what is a variable?>` to remove repetition of making 
         # assert True != True
         assert True != 0
         # unittest.TestCase().assertNotEqual(True, 0)
-        TESTER.assertNotEqual(True, 0)
+        TOOLBOX.assertNotEqual(True, 0)
 
 
     def test_assert_equal():
 
   green.
 
+* I remove the commented lines from :ref:`test_assert_not_equal`
+
+  .. code-block:: python
+    :lineno-start: 91
+
+    def test_assert_not_equal():
+        assert True != 0
+        TOOLBOX.assertNotEqual(True, 0)
+
+
+    def test_assert_equal():
+
 * I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assert_equal`
 
   .. code-block:: python
-    :lineno-start: 110
+    :lineno-start: 96
     :emphasize-lines: 5-6
 
     def test_assert_equal():
@@ -2485,17 +2521,29 @@ I can use a :ref:`variable<what is a variable?>` to remove repetition of making 
         assert 0.0 == 0.0
         # unittest.TestCase().assertEqual(0.0, '0.0')
         # unittest.TestCase().assertEqual(0.0, 0.0)
-        TESTER.assertEqual(0.0, 0.0)
+        TOOLBOX.assertEqual(0.0, 0.0)
 
 
     def test_assert_not_is_instance():
 
   still green.
 
+* I remove the commented lines from :ref:`test_assert_equal`
+
+  .. code-block:: python
+    :lineno-start: 96
+
+    def test_assert_equal():
+        assert 0.0 == 0.0
+        TOOLBOX.assertEqual(0.0, 0.0)
+
+
+    def test_assert_not_is_instance():
+
 * I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assert_not_is_instance`
 
   .. code-block:: python
-    :lineno-start: 118
+    :lineno-start: 101
     :emphasize-lines: 8-9
 
     def test_assert_not_is_instance():
@@ -2506,7 +2554,7 @@ I can use a :ref:`variable<what is a variable?>` to remove repetition of making 
             unittest.TestCase, unittest.TestCase
         )
         # unittest.TestCase().assertNotIsInstance(
-        TESTER.assertNotIsInstance(
+        TOOLBOX.assertNotIsInstance(
             # unittest.TestCase(), unittest.TestCase
             unittest.TestCase, unittest.TestCase
         )
@@ -2533,7 +2581,7 @@ I can use a :ref:`variable<what is a variable?>` to remove repetition of making 
             an_instance, a_class
         )
         # unittest.TestCase().assertIsInstance(
-        TESTER.assertIsInstance(
+        TOOLBOX.assertIsInstance(
             # unittest.TestCase, unittest.TestCase
             # unittest.TestCase(), unittest.TestCase
             an_instance, a_class
@@ -2557,7 +2605,7 @@ I can use a :ref:`variable<what is a variable?>` to remove repetition of making 
             unittest.TestCase, list
         )
         # unittest.TestCase().assertNotIsSubclass(
-        TESTER.assertNotIsSubclass(
+        TOOLBOX.assertNotIsSubclass(
             # unittest.TestCase(), object
             # unittest.TestCase, object
             unittest.TestCase, dict
@@ -2580,7 +2628,7 @@ I can use a :ref:`variable<what is a variable?>` to remove repetition of making 
         assert issubclass(unittest.TestCase, object)
         # unittest.TestCase.assertIsSubclass()
         # unittest.TestCase().assertIsSubclass(
-        TESTER.assertIsSubclass(
+        TOOLBOX.assertIsSubclass(
             # unittest.TestCase(), set
             # unittest.TestCase, set
             unittest.TestCase, object
@@ -2598,21 +2646,329 @@ I can use a :ref:`variable<what is a variable?>` to remove repetition of making 
     :emphasize-lines: 1-2
 
     git commit -am \
-    'extract TESTER variable'
+    'extract TOOLBOX variable'
 
 
-The ``unittest.TestCase()`` :ref:`instance<how to test if something is an instance>` is made once then used in every test for its `assert methods`_.
-
-
+The ``unittest.TestCase()`` :ref:`instance<how to test if something is an instance>` is now made once then used in every test for its `assert methods`_.
 
 ----
 
 *********************************************************************************
-remove repetition with variables
+extract TestUnittest class
 *********************************************************************************
 
+Since `unittest.TestCase`_ is a :ref:`class<what is a class?>` I can make a :ref:`class<what is a class?>` that :ref:`inherits from it<everything is an object>` and it will automatically have all the :ref:`attributes and methods of unittest.TestCase<test_attributes_and_methods_of_unittest_testcase>`
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
+* I add a :ref:`class<what is a class?>` named ``TestUnittest``
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 4, 6
+
+        assert reality == my_expectation
 
 
+    class TestUnittest(object):
+
+        pass
+
+
+    def test_assert_is_not():
+
+  all tests are still passing.
+
+* I indent :ref:`test_assert_is_not` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+
+  .. code-block:: python
+    :lineno-start: 81
+    :emphasize-lines: 3-11
+
+    class TestUnittest(object):
+
+        # pass
+        def test_assert_is_not():
+            # unittest.TestCase.assertIsNot()
+            # unittest.TestCase().assertIsNot()
+            # unittest.TestCase().assertIsNot(None, None)
+            # assert None is not None
+            assert None is not False
+            # unittest.TestCase().assertIsNot(None, False)
+            TOOLBOX.assertIsNot(None, False)
+
+
+    def test_assert_is():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestUnittest.test_assert_is_not()
+               takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` since I can use it if I do not want to add ``self`` to the :ref:`method definition<how to make a function>`. This way I do not send more information than what the :ref:`method<what is a method?>` needs when it does not use anything in the :ref:`class<what is a class?>`
+
+.. code-block:: python
+  :lineno-start: 81
+  :emphasize-lines: 4
+
+  class TestUnittest(object):
+
+      # pass
+      @staticmethod
+      def test_assert_is_not():
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I move :ref:`test_assert_is` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+
+  .. code-block:: python
+    :lineno-start: 92
+    :emphasize-lines: 3-10
+
+            TOOLBOX.assertIsNot(None, False)
+
+        def test_assert_is():
+            # assert False is True
+            assert False is False
+            # unittest.TestCase.assertIs()
+            # unittest.TestCase().assertIs()
+            # unittest.TestCase().assertIs(False, True)
+            # unittest.TestCase().assertIs(False, False)
+            TOOLBOX.assertIs(False, False)
+
+
+    def test_assert_not_equal():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestUnittest.test_assert_is()
+               takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assert_is`
+
+  .. code-block:: python
+    :lineno-start: 92
+    :emphasize-lines: 3
+
+            TOOLBOX.assertIsNot(None, False)
+
+        @staticmethod
+        def test_assert_is():
+
+  the test passes.
+
+* I indent :ref:`test_assert_not_equal` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+
+  .. code-block:: python
+    :lineno-start: 102
+    :emphasize-lines: 3-9
+
+            TOOLBOX.assertIs(False, False)
+
+        def test_assert_not_equal():
+            # unittest.TestCase().assertNotEqual()
+            # unittest.TestCase().assertNotEqual(True, True)
+            # assert True != True
+            assert True != 0
+            # unittest.TestCase().assertNotEqual(True, 0)
+            TOOLBOX.assertNotEqual(True, 0)
+
+
+    def test_assert_equal():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestUnittest.test_assert_not_equal()
+               takes 0 positional arguments but 1 was given
+
+  because ...
+
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assert_not_equal`
+
+  .. code-block:: python
+    :lineno-start: 102
+    :emphasize-lines: 3
+
+            TOOLBOX.assertNotIsInstance(
+                # unittest.TestCase(), unittest.TestCase
+                unittest.TestCase, unittest.TestCase
+            )
+
+        @staticmethod
+        def test_assert_is_instance():
+
+  the test passes.
+
+* I move :ref:`test_assert_equal` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 3-8
+
+            TOOLBOX.assertNotEqual(True, 0)
+
+        def test_assert_equal():
+            # assert 0.0 == '0.0'
+            assert 0.0 == 0.0
+            # unittest.TestCase().assertEqual(0.0, '0.0')
+            # unittest.TestCase().assertEqual(0.0, 0.0)
+            TOOLBOX.assertEqual(0.0, 0.0)
+
+
+    def test_assert_not_is_instance():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestUnittest.test_assert_equal()
+               takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assert_equal`
+
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 3
+
+            TOOLBOX.assertNotEqual(True, 0)
+
+        @staticmethod
+        def test_assert_equal():
+
+  the test passes.
+
+* I move :ref:`test_assert_not_is_instance` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+
+  .. code-block:: python
+    :lineno-start: 119
+    :emphasize-lines: 3-14
+
+            TOOLBOX.assertEqual(0.0, 0.0)
+
+        def test_assert_not_is_instance():
+            # unittest.TestCase.assertNotIsInstance()
+            # unittest.TestCase().assertNotIsInstance()
+            assert not isinstance(
+                # unittest.TestCase(), unittest.TestCase
+                unittest.TestCase, unittest.TestCase
+            )
+            # unittest.TestCase().assertNotIsInstance(
+            TOOLBOX.assertNotIsInstance(
+                # unittest.TestCase(), unittest.TestCase
+                unittest.TestCase, unittest.TestCase
+            )
+
+
+    def test_assert_is_instance():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestUnittest.test_assert_not_is_instance()
+               takes 0 positional arguments but 1 was given
+
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assert_not_is_instance`
+
+  .. code-block:: python
+    :lineno-start: 119
+    :emphasize-lines: 3
+
+            TOOLBOX.assertEqual(0.0, 0.0)
+
+        @staticmethod
+        def test_assert_not_is_instance():
+
+  the test passes.
+
+* I move :ref:`test_assert_is_instance` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+
+  .. code-block:: python
+    :lineno-start: 130
+    :emphasize-lines: 6-21
+
+            TOOLBOX.assertNotIsInstance(
+                # unittest.TestCase(), unittest.TestCase
+                unittest.TestCase, unittest.TestCase
+            )
+
+        def test_assert_is_instance():
+            a_class = unittest.TestCase
+            an_instance = a_class()
+            # unittest.TestCase.assertIsInstance()
+            # unittest.TestCase().assertIsInstance()
+            assert isinstance(
+                # unittest.TestCase, unittest.TestCase
+                # unittest.TestCase(), unittest.TestCase
+                an_instance, a_class
+            )
+            # unittest.TestCase().assertIsInstance(
+            TOOLBOX.assertIsInstance(
+                # unittest.TestCase, unittest.TestCase
+                # unittest.TestCase(), unittest.TestCase
+                an_instance, a_class
+            )
+
+
+    def test_assert_not_is_subclass():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestUnittest.test_assert_is_instance()
+               takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assert_is_instance`
+
+  .. code-block:: python
+    :lineno-start: 119
+    :emphasize-lines: 3
+
+            TOOLBOX.assertEqual(0.0, 0.0)
+
+        @staticmethod
+        def test_assert_not_is_instance():
+
+  the test passes.
 
 
 ----
