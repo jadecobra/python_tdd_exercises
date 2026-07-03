@@ -2400,7 +2400,7 @@ Which of the error messages in this chapter do you like better?
 extract TOOLBOX variable
 *********************************************************************************
 
-I can use a :ref:`variable<what is a variable?>` to remove repetition of making the ``unittest.TestCase()`` :ref:`instance<how to test if something is an instance>` in every test.
+I make an :ref:`instance<how to test if something is an instance>` of the `unittest.TestCase class`_ to use its `assert methods`_ in every test. I can use a :ref:`variable<what is a variable?>` to remove repetition of that process (``unittest.TestCase()``) from every test.
 
 * I add a :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` at the top of the file_
 
@@ -2564,10 +2564,26 @@ I can use a :ref:`variable<what is a variable?>` to remove repetition of making 
 
   the test is still green.
 
+* I remove the commented lines from :ref:`test_assert_not_is_instance`
+
+  .. code-block:: python
+    :lineno-start: 101
+
+    def test_assert_not_is_instance():
+        assert not isinstance(
+            unittest.TestCase, unittest.TestCase
+        )
+        TOOLBOX.assertNotIsInstance(
+            unittest.TestCase, unittest.TestCase
+        )
+
+
+    def test_assert_is_instance():
+
 * I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assert_is_instance`
 
   .. code-block:: python
-    :lineno-start: 132
+    :lineno-start: 110
     :emphasize-lines: 11-12
 
     def test_assert_is_instance():
@@ -2592,10 +2608,27 @@ I can use a :ref:`variable<what is a variable?>` to remove repetition of making 
 
   still green.
 
+* I remove the commented lines from :ref:`test_assert_is_instance`
+
+  .. code-block:: python
+    :lineno-start: 110
+
+    def test_assert_is_instance():
+        a_class = unittest.TestCase
+        an_instance = a_class()
+
+        assert isinstance(an_instance, a_class)
+        TOOLBOX.assertIsInstance(
+            an_instance, a_class
+        )
+
+
+    def test_assert_not_is_subclass():
+
 * I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assert_not_is_subclass`
 
   .. code-block:: python
-    :lineno-start: 150
+    :lineno-start: 120
     :emphasize-lines: 7-8
 
     def test_assert_not_is_subclass():
@@ -2616,10 +2649,26 @@ I can use a :ref:`variable<what is a variable?>` to remove repetition of making 
 
   green.
 
+* I remove the commented lines from :ref:`test_assert_not_is_subclass`
+
+  .. code-block:: python
+    :lineno-start: 120
+
+    def test_assert_not_is_subclass():
+        assert not issubclass(
+            unittest.TestCase, list
+        )
+        TOOLBOX.assertNotIsSubclass(
+            unittest.TestCase, dict
+        )
+
+
+    def test_assert_is_subclass():
+
 * I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assert_is_subclass`
 
   .. code-block:: python
-    :lineno-start: 164
+    :lineno-start: 129
     :emphasize-lines: 6-7
 
     def test_assert_is_subclass():
@@ -2639,6 +2688,19 @@ I can use a :ref:`variable<what is a variable?>` to remove repetition of making 
 
   still green.
 
+* I remove the commented lines from :ref:`test_assert_is_subclass`
+
+  .. code-block:: python
+    :lineno-start: 129
+
+    def test_assert_is_subclass():
+        assert issubclass(unittest.TestCase, object)
+        TOOLBOX.assertIsSubclass(
+            unittest.TestCase, object
+        )
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -2651,13 +2713,15 @@ I can use a :ref:`variable<what is a variable?>` to remove repetition of making 
 
 The ``unittest.TestCase()`` :ref:`instance<how to test if something is an instance>` is now made once then used in every test for its `assert methods`_.
 
+The problem with this solution is that anyone reading it has to know what the ``TOOLBOX`` :ref:`variable<what is a variable?>` points to at the beginning of the file_ to understand why the :ref:`calls<how to call a function with input>` work.
+
 ----
 
 *********************************************************************************
 extract TestUnittest class
 *********************************************************************************
 
-Since `unittest.TestCase`_ is a :ref:`class<what is a class?>` I can make a :ref:`class<what is a class?>` that :ref:`inherits from it<everything is an object>` and it will automatically have all the :ref:`attributes and methods of unittest.TestCase<test_attributes_and_methods_of_unittest_testcase>`
+I can put the test :ref:`functions<what is a function?>` together in a :ref:`class<what is a class>` since they are related.
 
 ----
 
@@ -2669,23 +2733,106 @@ Since `unittest.TestCase`_ is a :ref:`class<what is a class?>` I can make a :ref
 
 * I go back to the terminal_ where the tests are running
 
-* I add a :ref:`class<what is a class?>` named ``TestUnittest``
+* I add a :ref:`class<what is a class?>` named ``Unittest``
 
   .. code-block:: python
-    :lineno-start: 78
-    :emphasize-lines: 4, 6
+    :lineno-start: 4
+    :emphasize-lines: 4, 6-7
 
-        assert reality == my_expectation
+    TOOLBOX = unittest.TestCase()
 
+
+    class Unittest(object):
+
+        def test_failure():
+            TOOLBOX.assertEqual(True, False)
+
+
+    def test_attributes_and_methods_of_unittest():
+
+  this is a problem. I expect ``TOOLBOX.assertEqual(True, False)`` to fail since :ref:`True<test_what_is_true>` is not equal to :ref:`False<test_what_is_false>`
+
+* I add ``Test`` to the name of the :ref:`class<what is a class?>`
+
+  .. code-block::
+    :lineno-start: 4
+    :emphasize-lines: 4-5
+
+    TOOLBOX = unittest.TestCase()
+
+
+    # class Unittest(object):
+    class TestUnittest(object):
+
+        def test_failure():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestUnittest.test_failure() takes 0
+               positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` since I can use it if I do not want to add ``self`` to the :ref:`method definition<how to make a function>`. This way I do not send more information than what the :ref:`method<what is a method?>` needs when it does not use anything in the :ref:`class<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 4
+
+    # class Unittest(object):
+    class TestUnittest(object):
+
+        @staticmethod
+        def test_failure():
+            TOOLBOX.assertEqual(True, False)
+
+
+    def test_attributes_and_methods_of_unittest():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True != False
+
+* I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 5-6
 
     class TestUnittest(object):
 
-        pass
+        @staticmethod
+        def test_failure():
+            # TOOLBOX.assertEqual(True, False)
+            TOOLBOX.assertEqual(True, True)
 
 
-    def test_assert_is_not():
+    def test_attributes_and_methods_of_unittest():
 
-  all tests are still passing.
+
+  the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I
 
 * I indent :ref:`test_assert_is_not` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
 
@@ -2717,35 +2864,19 @@ Since `unittest.TestCase`_ is a :ref:`class<what is a class?>` I can make a :ref
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
-----
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assert_is_not`
 
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
+  .. code-block:: python
+    :lineno-start: 81
+    :emphasize-lines: 4
 
-----
+    class TestUnittest(object):
 
-I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` since I can use it if I do not want to add ``self`` to the :ref:`method definition<how to make a function>`. This way I do not send more information than what the :ref:`method<what is a method?>` needs when it does not use anything in the :ref:`class<what is a class?>`
+        # pass
+        @staticmethod
+        def test_assert_is_not():
 
-.. code-block:: python
-  :lineno-start: 81
-  :emphasize-lines: 4
-
-  class TestUnittest(object):
-
-      # pass
-      @staticmethod
-      def test_assert_is_not():
-
-the test passes.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
+  the test passes.
 
 * I move :ref:`test_assert_is` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
 
@@ -2970,6 +3101,15 @@ the test passes.
 
   the test passes.
 
+----
+
+*********************************************************************************
+extract TestUnittest class
+*********************************************************************************
+
+Since `unittest.TestCase`_ is a :ref:`class<what is a class?>` I can make a :ref:`class<what is a class?>` that :ref:`inherits from it<everything is an object>` and it will automatically have all the :ref:`attributes and methods of unittest.TestCase<test_attributes_and_methods_of_unittest_testcase>`
+
+----
 
 ----
 
