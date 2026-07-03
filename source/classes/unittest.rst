@@ -691,7 +691,7 @@ test_assert_is_not
                 'self', 'expr1', and 'expr2'
 
   - because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance of a class>` takes the :ref:`instance of the class<how to test if something is an instance of a class>` (``self``) it belongs to as the first argument.
-  - The :ref:`definition<how to make a function that takes input>` of the `assertIsNot method`_  of the `TestCase class`_  of the unittest_ library (``unittest.TestCase.assertIsNot``) has two required positional arguments. I imagine Python_ follows this path when `unittest.TestCase.assertIsNot`_ is called
+  - The :ref:`definition<how to make a function that takes input>` of the `assertIsNot method`_  of the `TestCase class`_  of the unittest_ library (``unittest.TestCase.assertIsNot``) has two required :ref:`positional arguments<test_positional_arguments>`. I imagine Python_ follows this path when `unittest.TestCase.assertIsNot`_ is called
 
     .. code-block:: shell
 
@@ -794,7 +794,7 @@ test_assert_is_not
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to compare it the `assertIsNot method`_
+* I add an :ref:`assertion<what is an assertion?>` to compare it with the `assertIsNot method`_
 
   .. code-block:: python
     :lineno-start: 78
@@ -809,25 +809,12 @@ test_assert_is_not
 
 
     'assertIsNot'
-    'assertIs'
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
     E       assert None is not None
-
-  I like the error message for ``assertIsNot(None, None)`` better than the one for ``assert None is not None``
-
-  .. code-block:: python
-
-    AssertionError: unexpectedly identical: None
-
-  vs
-
-  .. code-block:: python
-
-    assert None is not None
 
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
@@ -845,16 +832,9 @@ test_assert_is_not
 
 
     'assertIsNot'
+    'assertIs'
 
-  the test passes. I imagine Python_ follows this path when `unittest.TestCase.assertIsNot`_ is called
-
-  .. code-block:: shell
-
-    unittest
-    └── class TestCase:
-
-            def assertIsNot(self, expr1, expr2):
-                assert expr1 is not expr2
+  the test passes.
 
 * I remove the commented lines and assertIsNot_ from the TODO list
 
@@ -875,6 +855,30 @@ test_assert_is_not
 
     git commit -am \
     'add test_assert_is_not'
+
+I imagine Python_ follows this path when `unittest.TestCase.assertIsNot`_ is called
+
+.. code-block:: shell
+
+  unittest
+  └── class TestCase:
+
+          def assertIsNot(self, expr1, expr2):
+              assert expr1 is not expr2
+
+Compare the error message for ``assertIsNot(None, None)`` with the one for ``assert None is not None``
+
+.. code-block:: python
+
+  AssertionError: unexpectedly identical: None
+
+vs
+
+.. code-block:: python
+
+  assert None is not None
+
+Which do you like better?
 
 ----
 
@@ -961,12 +965,11 @@ the test passes.
 
   .. code-block:: python
 
-     TypeError: TestCase.assertIs() missing
-                3 required positional arguments:
-                'self', 'expr1', and 'expr2'
+    TypeError: TestCase.assertIs() missing
+               3 required positional arguments:
+               'self', 'expr1', and 'expr2'
 
-  - because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance of a class>` takes the :ref:`instance of the class<how to test if something is an instance of a class>` (``self``) it belongs to as the first argument.
-
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance of a class>` takes the :ref:`instance of the class<how to test if something is an instance of a class>` (``self``) it belongs to as the first argument.
 
 * I change the call to use :ref:`an instance<how to test if something is an instance of a class>` instead of a :ref:`class<what is a class?>`
 
@@ -1035,27 +1038,7 @@ the test passes.
     'assertIs'
     'assertNotEqual'
 
-  the test passes. I like the error message for ``assertIs(False, True)`` better than the one for ``assert False is True``
-
-  .. code-block:: python
-
-    AssertionError: False is not True
-
-  vs
-
-  .. code-block:: python
-
-    E       assert False is True
-
-  I imagine Python_ follows this path when `unittest.TestCase.assertIs`_ is called
-
-  .. code-block:: shell
-
-    unittest
-    └── class TestCase:
-
-            def assertIs(self, expr1, expr2):
-                assert expr1 is expr2
+  the test passes.
 
 * I remove the commented lines and assertIs_ from the TODO list
 
@@ -1076,6 +1059,204 @@ the test passes.
 
     git commit -am \
     'add test_assert_is'
+
+I imagine Python_ follows this path when `unittest.TestCase.assertIs`_ is called
+
+.. code-block:: shell
+
+  unittest
+  └── class TestCase:
+
+          def assertIs(self, expr1, expr2):
+              assert expr1 is expr2
+
+Compare the error message for ``assertIs(False, True)`` with the one for ``assert False is True``
+
+.. code-block:: python
+
+  AssertionError: False is not True
+
+vs
+
+.. code-block:: python
+
+  E       assert False is True
+
+----
+
+*********************************************************************************
+test_assert_not_equal
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a test for assertNotEqual_
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 6-7
+
+    def test_assert_is():
+        assert False is False
+        unittest.TestCase().assertIs(False, False)
+
+
+    def test_assert_not_equal():
+        unittest.TestCase().assertNotEqual()
+
+
+    'assertNotEqual'
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestCase.assertNotEqual() missing
+               2 required positional arguments:
+               'first', and 'second'
+
+  the :ref:`definition<how to make a function that takes input>` of the `assertNotEqual method`_  of the `TestCase class`_  of the unittest_ library (``unittest.TestCase.assertNotEqual``) has two required :ref:`positional arguments<test_positional_arguments>`.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add two things to the :ref:`call<how to call a function with input>` to `unittest.TestCase.assertNotEqual`_
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 2-3
+
+    def test_assert_not_equal():
+        # unittest.TestCase().assertNotEqual()
+        unittest.TestCase().assertNotEqual(True, True)
+
+
+    'assertNotEqual'
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True == True
+
+  because :ref:`True is True<test_what_is_true>`.
+
+* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 3-4
+
+    def test_assert_not_equal():
+        # unittest.TestCase().assertNotEqual()
+        # unittest.TestCase().assertNotEqual(True, True)
+        unittest.TestCase().assertNotEqual(True, 0)
+
+
+    'assertNotEqual'
+
+  the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>` to compare it with the `assertNotEqual method`_
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 4
+
+    def test_assert_not_equal():
+        # unittest.TestCase().assertNotEqual()
+        # unittest.TestCase().assertNotEqual(True, True)
+        assert True != True
+        unittest.TestCase().assertNotEqual(True, 0)
+
+
+    'assertNotEqual'
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert True != True
+
+* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 4-5
+
+    def test_assert_not_equal():
+        # unittest.TestCase().assertNotEqual()
+        # unittest.TestCase().assertNotEqual(True, True)
+        # assert True != True
+        assert True != 0
+        unittest.TestCase().assertNotEqual(True, 0)
+
+
+    'assertNotEqual'
+    'assertEqual'
+
+  the test passes.
+
+* I remove the commented lines and assertNotEqual_ from the TODO list
+
+  .. code-block:: python
+    :lineno-start: 88
+
+    def test_assert_not_equal():
+        assert True != 0
+        unittest.TestCase().assertNotEqual(True, 0)
+
+
+    'assertEqual'
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_assert_not_equal'
+
+I imagine Python_ follows this path when `unittest.TestCase.assertNotEqual`_ is called
+
+.. code-block:: shell
+
+  unittest
+  └── class TestCase:
+
+          def assertNotEqual(self, first, second):
+              assert first != second
+
+Compare the error message for ``assertNotEqual(None, None)`` with the one for ``assert None is not None``
+
+.. code-block:: python
+
+  AssertionError: unexpectedly identical: None
+
+vs
+
+.. code-block:: python
+
+  assert None is not None
+
 
 ----
 
