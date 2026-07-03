@@ -2685,7 +2685,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
             == ({3, 1, 'n', ...ey': 'value'})
 
   - The order is reversed.
-  - I want better error messages.
+  - :ref:`I want better error messages<another way to write tests>`.
 
 * I change the order of the inputs in the :ref:`the return statement`
 

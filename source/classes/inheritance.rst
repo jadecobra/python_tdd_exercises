@@ -1,6 +1,6 @@
 .. meta::
-  :description: Step-by-step Python TDD tutorial for beginners explaining why everything in Python inherits from the base 'object' class. Learn how to use isinstance() and issubclass() in unittest, and understand the difference between subclasses and instances. Verify that None, bool, int, float, str, tuple, list, set, and dict are all children of object. Learn to inspect built-in classes with dir(object) and understand the inherited dunder methods. Resolve common beginner bugs: TypeError: issubclass() arg 1 must be a class, NameError: name 'src' is not defined, AttributeError: module has no attribute, and NameError: name 'E' is not defined.
-  :keywords: Jacob Itegboje, Pumping Python, python inheritance tutorial for beginners, everything in python is an object, why does all python classes inherit from object, is None an instance of object, is bool a subclass of object python, is int a subclass of object python, is float a subclass of object python, is str a subclass of object python, is list a subclass of object python, is tuple a subclass of object python, is set a subclass of object python, is dict a subclass of object python, difference between subclass and instance python, python isinstance vs issubclass tutorial, unittest assertIsInstance, unittest assertNotIsInstance, unittest assertIsSubclass, unittest assertNotIsSubclass, how to use dir on object class python, dunder methods of object class python, python object __init__ dunder, python object __str__ dunder, python object __repr__ dunder, TypeError issubclass arg 1 must be a class, NameError name src is not defined, AttributeError module classes has no attribute, AssertionError assert not True, NameError name E is not defined pytest, python test driven development classes object, class vs instance parentheses python, learning python dunder class doc init repr str
+  :description: Step-by-step Python TDD tutorial for beginners on "everything is an object": use bare `assert isinstance()` and `assert issubclass()` (plain pytest test functions, no unittest.TestCase) to prove None (special-cased), bool, int, float, str, tuple, list, set and dict all inherit from the base `object` class. Create classes with `pass`, `()` and `(object)`. Distinguish instance (with `()`) vs subclass using TypeError from issubclass(instance). Inspect dunder methods with `dir(object)`. Real errors shown: "AssertionError: assert not True", "TypeError: issubclass() arg 1 must be a class", NameError before defs. Project uses `uv init classes`, tests layout, requirements + `uv add`, pytest-watcher and git. Part of Jacob Itegboje Pumping Python series.
+  :keywords: Jacob Itegboje, Pumping Python, everything is an object, python inherits from object, is None an object python, isinstance issubclass tutorial, bare assert isinstance, class pass parentheses object, instance vs subclass python, TypeError issubclass arg 1 must be a class, AssertionError assert not True, dir(object) dunder, test_is_none_an_object, uv init classes pytest-watcher, WPass WParentheses, python TDD everything is an object, class vs instance parentheses, python object base class dunder methods, None is not a class for issubclass, python test driven development classes object, learning python inheritance for beginners
 
 .. include:: ../links.rst
 
@@ -2334,7 +2334,7 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 
   .. code-block:: python
 
-    E         ...Full output truncated (24w lines hidden),
+    E         ...Full output truncated (24 lines hidden),
                  use '-vv' to show
 
 * I press :kbd:`w` on the keyboard in the terminal_ where the tests are running, to show the menu for `pytest-watcher`_ and it shows
@@ -2375,34 +2375,17 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 
     Enter new runner args: -vv
 
-* I press :kbd:`-+v+v` on the keyboard then press :kbd:`enter` to show the full difference, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError:
-        assert [
-          '__class__', '__delattr__', '__dir__',
-          '__doc__', '__eq__', '__format__', '__ge__',
-          '__getattribute__', '__getstate__', '__gt__',
-          '__hash__', '__init__', '__init_subclass__',
-          '__le__', '__lt__', '__ne__', '__new__',
-          '__reduce__', '__reduce_ex__', '__repr__',
-          '__setattr__', '__sizeof__', '__str__',
-          '__subclasshook__'
-      ] == []
-
-  it shows me the entire :ref:`list<what is a list?>`.
+* I press :kbd:`-+v+v` on the keyboard then press :kbd:`enter` to show the full difference, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with the full :ref:`list<what is a list?>`.
 
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
   .. code-block:: python
     :lineno-start: 71
-    :emphasize-lines: 3-13
+    :emphasize-lines: 3-12
     :emphasize-text: __init__
 
     def test_attributes_and_methods_of_objects():
         reality = dir(object)
-        # my_expectation = []
         my_expectation = [
             '__class__', '__delattr__', '__dir__',
             '__doc__', '__eq__', '__format__',
@@ -2419,34 +2402,9 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
     # Exceptions seen
 
   - The test passes.
-  - The :ref:`__init__<the constructor method>` is in the :ref:`list of attributes and methods<test_attributes_and_methods_of_person_class>`
+  - The :ref:`__init__ method<the constructor method>` is in the :ref:`list of attributes and methods<test_attributes_and_methods_of_person_class>`
   - All :ref:`classes<what is a class?>` automatically get these :ref:`attributes<what is a class attribute>`, they inherit them because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 71
-
-    def test_attributes_and_methods_of_objects():
-        reality = dir(object)
-        my_expectation = [
-            '__class__', '__delattr__', '__dir__',
-            '__doc__', '__eq__', '__format__', '__ge__',
-            '__getattribute__', '__getstate__', '__gt__',
-            '__hash__', '__init__', '__init_subclass__',
-            '__le__', '__lt__', '__ne__', '__new__',
-            '__reduce__', '__reduce_ex__', '__repr__',
-            '__setattr__', '__sizeof__', '__str__',
-            '__subclasshook__'
-        ]
-        assert reality == my_expectation
-
-
-    # Exceptions seen
-
-  the test passes.
-
-  The ``__init__`` :ref:`method<what is a method?>` is also inherited which means when I defined it in :ref:`test_classy_person_says_hello` I overwrote the inherited one.
+  - The ``__init__`` :ref:`method<what is a method?>` is also inherited which means when I defined it in :ref:`test_classy_person_says_hello` I overwrote the inherited one.
 
 * I add a git_ commit message in the other terminal_
 
@@ -2491,7 +2449,7 @@ Everything in Python_ is an :ref:`object<everything is an object>`
 close the project
 *********************************************************************************
 
-* I close ``test_classes.py`` and ``classes.py`` in the :ref:`editor(s)<2 editors>`
+* I close ``test_classes.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 

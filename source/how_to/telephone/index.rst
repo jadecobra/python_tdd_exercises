@@ -1603,7 +1603,7 @@ Can I pass a :ref:`dictionary (any key-value pairs in curly braces '{ }' separat
     assert "I got: {'key..., 1, 2, 'n']}"
         == 'I got: {key0...[0, 1, 2, n]}'
 
-  I want more detail in my error messages.
+  :ref:`I want more detail in my error messages<another way to write tests>`.
 
 ----
 

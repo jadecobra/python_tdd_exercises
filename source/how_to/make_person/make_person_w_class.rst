@@ -318,7 +318,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
         Person.__init__() got
         multiple values for argument 'first_name'
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance of a class>` takes the :ref:`instance of the class<how to test if something is an instance of a class>` (``self``) it belongs to as the first argument.
 
   The test calls the :ref:`function<what is a function?>` with four :ref:`keyword arguments<test_keyword_arguments>` ``(first_name, last_name, sex and year_of_birth')``. How does Python_ know which value to use for the first argument if I use the :ref:`position<test_positional_arguments>` and a :ref:`keyword<test_keyword_arguments>`?
 
@@ -340,7 +340,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
     def test_joe():
 
   - ``self`` is Python_ convention, I can use any name I want.
-  - ``self`` is the :ref:`instance of the class<what is a class?>`.
+  - ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>`.
   - The terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     .. code-block:: shell
@@ -369,7 +369,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
           )
 
     which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows two arguments (``self`` and ``first_name``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
-  - ``self`` is the :ref:`instance of the class<what is a class?>`.
+  - ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
   - I have seen this before, so far it is the same as making the :ref:`factory function<test person factory>`.
 
@@ -418,7 +418,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
           )
 
     which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows three arguments (``self``,  ``first_name`` and ``last_name``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
-  - ``self`` is the :ref:`instance of the class<what is a class?>`.
+  - ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
   - Still the same as making the :ref:`factory function<test person factory>`.
 
@@ -470,7 +470,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
           )
 
     which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows three arguments (``self``,  ``first_name``, ``last_name`` and ``sex``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
-  - ``self`` is the :ref:`instance of the class<what is a class?>`.
+  - ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
   - Same as with the :ref:`factory function<test person factory>`.
 
@@ -719,7 +719,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
               self.last_name = 'blow'
               self.year_of_birth = 1996
 
-    ``self`` is the :ref:`instance of the class<what is a class?>`.
+    ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>`.
 
   - When ``reality = src.person.say_hello(first_name=joe.first_name, last_name=joe.last_name,year_of_birth=joe.year_of_birth)`` runs
 
@@ -1147,7 +1147,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
               self.last_name = 'blow'
               self.year_of_birth = 1996
 
-    ``self`` is the :ref:`instance of the class<what is a class?>` aka ``joe``.
+    ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>` aka ``joe``.
 
   - When ``reality = Person.say_hello(person=joe, first_name=joe.first_name, last_name=joe.last_name,year_of_birth=joe.year_of_birth)`` runs
 
@@ -1283,7 +1283,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
     TypeError: Person.say_hello() got
                multiple values for argument 'person'
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance of a class>` takes the :ref:`instance of the class<how to test if something is an instance of a class>` (``self``) it belongs to as the first argument.
 
 ----
 
@@ -1486,7 +1486,7 @@ what is the staticmethod decorator?
               self.last_name = 'blow'
               self.year_of_birth = 1996
 
-    ``self`` is the :ref:`instance of the class<what is a class?>` aka ``joe``.
+    ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>` aka ``joe``.
 
   - When ``reality = joe.say_hello()`` runs
 
@@ -1689,7 +1689,7 @@ what is the staticmethod decorator?
               self.last_name = 'public'
               self.year_of_birth = 2000
 
-    ``self`` is the :ref:`instance of the class<what is a class?>` aka ``mary``.
+    ``self`` is the :ref:`instance of the class<how to test if something is an instance of a class>` aka ``mary``.
 
   - When ``reality = mary.say_hello()`` runs
 
@@ -2115,7 +2115,7 @@ separate and equal Person class
     TypeError: Person.__init__() got
                multiple values for argument 'first_name'
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance of a class>` takes the :ref:`instance of the class<how to test if something is an instance of a class>` (``self``) it belongs to as the first argument.
 
 * I add ``self`` to :ref:`the constructor method`
 
@@ -2532,7 +2532,7 @@ separate and equal Person class
         first_name, last_name, year_of_birth
     ):
 
-  the test is still green because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument which means
+  the test is still green because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance of a class>` takes the :ref:`instance of the class<how to test if something is an instance of a class>` (``self``) it belongs to as the first argument which means
 
   .. code-block:: python
 
@@ -2949,43 +2949,17 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 
     Enter new runner args: -vv
 
-* I press :kbd:`-+v+v` on the keyboard then press :kbd:`enter` to show the full difference, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError:
-        assert [
-            '__class__', '__delattr__', '__dict__',
-            '__dir__', '__doc__', '__eq__', '__firstlineno__',
-            '__format__', '__ge__', '__getattribute__',
-            '__getstate__', '__gt__', '__hash__', '__init__',
-            '__init_subclass__', '__le__', '__lt__', '__module__',
-            '__ne__', '__new__', '__reduce__', '__reduce_ex__',
-            '__repr__', '__setattr__', '__sizeof__',
-            '__static_attributes__', '__str__', '__subclasshook__',
-            '__weakref__', 'say_hello'
-        ]
-     == [
-            '__class__', '__delattr__', '__dict__', '__dir__',
-            '__doc__', '__eq__', Ellipsis
-        ]
-
-  it shows me the entire :ref:`list<what is a list?>`.
+* I press :kbd:`-+v+v` on the keyboard then press :kbd:`enter` to show the full difference, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with the full :ref:`list<what is a list?>`.
 
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
   .. code-block:: python
     :lineno-start: 167
-    :emphasize-lines: 4-39
+    :emphasize-lines: 3-34
     :emphasize-text: __init__ say_hello
 
     def test_attributes_and_methods_of_person_class():
         reality = dir(src.person.Person)
-        # my_expectation = None
-        # my_expectation = [
-        #     '__class__', '__delattr__', '__dict__',
-        #     '__dir__', '__doc__', '__eq__', ...
-        # ]
         my_expectation = [
             '__class__',
             '__delattr__',
@@ -3027,50 +3001,6 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
   - The :ref:`__init__<the constructor method>` and :ref:`say_hello methods<test say_hello method>` I defined are in the :ref:`list of attributes and methods<test_attributes_and_methods_of_person_class>`.
   - There are names in the :ref:`list<what is a list?>` that I did not define, which leads to the question of :ref:`where did they come from?<everything is an object>`
   - The :ref:`attributes<what is a class attribute?>` I defined in the :ref:`__init__ method<the constructor method>` are not in the :ref:`list<what is a list?>`, because the test called dir_ on ``src.person.Person`` which is the :ref:`class<what is a class?>`, not :ref:`an instance of the class<how to test if something is an instance of a class>`.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 167
-
-    def test_attributes_and_methods_of_person_class():
-        reality = dir(src.person.Person)
-        my_expectation = [
-            '__class__',
-            '__delattr__',
-            '__dict__',
-            '__dir__',
-            '__doc__',
-            '__eq__',
-            '__firstlineno__',
-            '__format__',
-            '__ge__',
-            '__getattribute__',
-            '__getstate__',
-            '__gt__',
-            '__hash__',
-            '__init__',
-            '__init_subclass__',
-            '__le__',
-            '__lt__',
-            '__module__',
-            '__ne__',
-            '__new__',
-            '__reduce__',
-            '__reduce_ex__',
-            '__repr__',
-            '__setattr__',
-            '__sizeof__',
-            '__static_attributes__',
-            '__str__',
-            '__subclasshook__',
-            '__weakref__',
-            'say_hello'
-        ]
-        assert reality == my_expectation
-
-
-    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 

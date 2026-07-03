@@ -2071,7 +2071,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
                         == 'Hello, my name ... and I am 35.'
 
   - because the :ref:`say_hello function<test say_hello function>` always returns ``'Hello, my name is joe blow and I am 30.'`` when it is called. It has to return a string_ based on the input it gets for me to be able to use it to make messages based on the person.
-  - I need better error messages.
+  - :ref:`I need better error messages<another way to write tests>`.
 
 * I change :ref:`the return statement` of the :ref:`say_hello function<test say_hello function>` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
 
@@ -2103,7 +2103,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     AssertionError: assert 'Hello, my name ... and I am 30.'
                         == 'Hello, my name ... and I am 35.'
 
-  the first names now match and I still need better error messages.
+  the first names now match and :ref:`I still need better error messages<another way to write tests>`.
 
 * I add ``last_name`` to :ref:`the return statement`
 
@@ -2215,7 +2215,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
                         == 'Hello, my name ...and I am 446.'
 
   - The first names are different.
-  - I want more detail in the error messages.
+  - :ref:`I want more detail in the error messages<another way to write tests>`.
 
 * I change ``my_expectation`` to match ``reality`` in :ref:`test_john`
 
