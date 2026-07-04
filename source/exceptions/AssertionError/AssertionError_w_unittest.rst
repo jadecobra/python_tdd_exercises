@@ -10,6 +10,8 @@ AssertionError: use unittest
 
 ----
 
+I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`assertion_error<what is an assertion?>` project.
+
 I used the :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` in :ref:`classes` to remove repetition of :ref:`variables<what is a variable?>` by making them :ref:`class attributes<what is a class attribute?>` that the test :ref:`methods<what is a method?>` can all use.
 
 I want to do the same thing with the :ref:`assertion_project<what is an assertion?>`.

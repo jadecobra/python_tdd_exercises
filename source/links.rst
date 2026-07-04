@@ -119,7 +119,6 @@
 .. _sys: https://docs.python.org/3/library/sys.html#module-sys
 .. _sys module: sys_
 .. _source code: https://grokipedia.com/page/Source_code
-.. _click here to see the source code for unittest: https://github.com/python/cpython/blob/3.14/Lib/unittest/__init__.py
 .. _starred expressions: https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
 .. _str.split: https://docs.python.org/3/library/stdtypes.html#str.split
 .. _str: https://docs.python.org/3/library/stdtypes.html#str
@@ -136,16 +135,12 @@
 .. _tuples: tuple_
 .. _type: https://docs.python.org/3/glossary.html#term-type
 .. _types: type_
-.. _unittest: https://docs.python.org/3/library/unittest.html
-.. _unittest module: unittest_
 .. _unittest.TestCase.assertRaises: assertRaises_
 .. _unittest.TestCase.assertRaisesRegex: assertRaisesRegex_
 .. _unittest.TestCase.setUp: setUp_
 .. _unittest.TestCase.setUp method: setUp_
 .. _unittest.TestCase.maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
-.. _unittest.TestCase: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase
-.. _unittest.TestCase class: `unittest.TestCase`_
 .. _uv: https://docs.astral.sh/uv/
 .. _uv Python package manager: uv_
 .. _subTest method: https://docs.python.org/3/library/unittest.html#unittest.TestCase.subTest
@@ -167,7 +162,6 @@
 .. _OverflowError: https://docs.python.org/3/library/exceptions.html#OverflowError
 .. _PowerShell: https://learn.microsoft.com/en-us/powershell/
 .. _PowerShell file: PowerShell_
-.. _TestCase: https://docs.python.org/3/library/unittest.html#unittest.TestCase
 .. _ValueError: https://docs.python.org/3/library/exceptions.html#ValueError
 
 ----

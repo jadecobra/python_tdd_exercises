@@ -499,7 +499,7 @@ how to manually run tests
   because I do not have any tests, yet.
 
   - ``python3`` is the `Python program`_
-  - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<what is a module?>` ( unittest_ in this case)
+  - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<what is a module?>` ( :ref:`unittest<another way to write tests` in this case)
   - which leads to the question of :ref:`what is a module?<what is a module?>` Any file_ that ends in ``.py`` is a :ref:`Python module<what is a module?>`.
 
 ----
@@ -644,7 +644,7 @@ how to make a Python file for the tests in the 'tests' directory
 
     NO TESTS RAN
 
-  because the ``tests`` folder_ is NOT a `Python package`_ and unittest_ cannot find my test. I need to add a file_ named ``__init__.py`` to the ``tests`` folder, to make it a `Python package`_ for unittest_ to find the test.
+  because the ``tests`` folder_ is NOT a `Python package`_ and :ref:`unittest<another way to write tests` cannot find my test. I need to add a file_ named ``__init__.py`` to the ``tests`` folder, to make it a `Python package`_ for :ref:`unittest<another way to write tests` to find the test.
 
 ----
 
@@ -710,7 +710,7 @@ how to make the tests a Python package
 
     NO TESTS RAN
 
-  because unittest_ does not know that ``person.py`` in the ``tests`` folder is a test file_. I did not start the name with ``test_``. I have to change the name.
+  because :ref:`unittest<another way to write tests` does not know that ``person.py`` in the ``tests`` folder is a test file_. I did not start the name with ``test_``. I have to change the name.
 
 * I close ``person.py``
 
@@ -760,7 +760,7 @@ how to make the tests a Python package
 
   .. admonition:: if you do not see ``__pycache__`` in the tree do not worry,
 
-    the important thing is that you renamed ``person.py`` to ``test_person.py`` for unittest_ to find the test.
+    the important thing is that you renamed ``person.py`` to ``test_person.py`` for :ref:`unittest<another way to write tests` to find the test.
 
 * I run the test again
 
@@ -817,7 +817,7 @@ how to make the tests a Python package
 
     FAILED (errors=1)
 
-  Success! I have my first failure. I can use any name for the test file_. It must start with ``test_`` or unittest_ will NOT run the tests in the file_.
+  Success! I have my first failure. I can use any name for the test file_. It must start with ``test_`` or :ref:`unittest<another way to write tests` will NOT run the tests in the file_.
 
   This is the :red:`RED` part of the :ref:`Test Driven Development Cycle<what is the Test Driven Development cycle?>`. The message in the terminal_ is about the failure, I like to read these from the bottom up. Here is an explanation of each line, starting from the last line on the screen
 

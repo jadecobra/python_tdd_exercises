@@ -4,6 +4,10 @@
 
 .. include:: ../links.rst
 
+.. _unittest.TestCase: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase
+.. _TestCase: https://docs.python.org/3/library/unittest.html#unittest.TestCase
+.. _unittest: https://docs.python.org/3/library/unittest.html
+.. _unittest module: unittest_
 .. _assertNotIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance
 .. _unittest.TestCase.assertNotIsInstance: assertNotIsInstance_
 .. _assertNotIsInstance method: assertNotIsInstance_
@@ -30,7 +34,9 @@
 .. _assertIsNot method: assertIsNot_
 .. _unittest.TestCase.assertIsNot: assertIsNot_
 .. _assertNotEqual method: assertNotEqual_
+.. _unittest.TestCase class: `unittest.TestCase`_
 .. _TestCase class: `unittest.TestCase`_
+.. _click here to see the source code for unittest: https://github.com/python/cpython/blob/3.14/Lib/unittest/__init__.py
 
 #################################################################################
 another way to write tests
@@ -4315,6 +4321,7 @@ I can write tests with the `unittest.TestCase class`_ which comes with `assert m
 * :ref:`assertNotIsSubclass<test_assert_not_is_subclass>`
 * :ref:`assertIsSubclass<test_assert_is_subclass>`
 
+
 :ref:`How many questions can you answer about unittest?<questions about unittest>`
 
 ----
@@ -4323,7 +4330,8 @@ I can write tests with the `unittest.TestCase class`_ which comes with `assert m
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<another way to write tests: tests>`
+* :ref:`Do you want to see all the CODE I typed in this chapter?<another way to write tests: tests>`
+* `click here to see the source code for unittest`_
 
 ----
 
