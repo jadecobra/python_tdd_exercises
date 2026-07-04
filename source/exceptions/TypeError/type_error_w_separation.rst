@@ -33,14 +33,14 @@ open the project
 *********************************************************************************
 
 * I open a terminal_
-* I `change directory`_ to the ``type_error`` folder_ in the ``pumping_python`` folder_
+* I `change directory`_ to the :ref:`type_error folder<what causes TypeError?>` in the ``pumping_python`` folder_
 
   .. code-block:: python
     :emphasize-lines: 1
 
     cd type_error
 
-  the terminal_ shows I am in the ``type_error`` folder_
+  the terminal_ shows I am in the :ref:`type_error folder<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -146,7 +146,7 @@ because ``src`` is not defined in ``test_type_error.py``.
     # TypeError
     # ModuleNotFoundError
 
-* I open another terminal_ then make sure I am in the ``type_error`` folder_
+* I open another terminal_ then make sure I am in the :ref:`type_error folder<what causes TypeError?>`
 
 * I use mkdir_ to make a folder_ named ``src``
 

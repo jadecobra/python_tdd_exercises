@@ -12,10 +12,6 @@ AssertionError: use unittest
 
 I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`assertion_error<what is an assertion?>` project.
 
-I used the :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` in :ref:`classes` to remove repetition of :ref:`variables<what is a variable?>` by making them :ref:`class attributes<what is a class attribute?>` that the test :ref:`methods<what is a method?>` can all use.
-
-I want to do the same thing with the :ref:`assertion_project<what is an assertion?>`.
-
 ----
 
 *********************************************************************************
@@ -24,45 +20,27 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../../code/assertion_error/test_assertion_error_2.py
+.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
   :language: python
   :linenos:
 
 ----
 
 *********************************************************************************
-continue the project
+open the project
 *********************************************************************************
 
-* Make sure you are in the ``pumping_python`` folder_ with pwd_ in the terminal_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    pwd
-
-  if the terminal_ does not show
-
-  .. code-block:: shell
-
-    .../pumping_python
-
-  `change directory`_ to the ``pumping_python`` folder
-
-* Once in ``pumping_python``, `change directory`_ to the project
+* I open a terminal_
+* I `change directory`_ to the :ref:`assertion_error folder<what is an assertion?>` in the ``pumping_python`` folder_Make sure you are in the ``pumping_python`` folder_ with pwd_ in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     cd assertion_error
 
-  the terminal_ shows
+* I open ``test_assertion_error.py``
 
-  .. code-block:: shell
-
-    .../pumping_python/assertion_error
-
-* I run the tests with `pytest-watcher`_
+* I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -73,36 +51,162 @@ continue the project
   the terminal_ is my friend, and shows
 
   .. code-block:: shell
-    :emphasize-lines: 5
 
-    rootdir: .../pumping_python/assertion_error
-    configfile: pyproject.toml
-    collected 6 items
+    tests/test_assertion_error.py .......             [100%]
 
-    tests/test_assertion_error.py ......              [100%]
-
-    ================== 6 passed in A.BCs ===================
-
-* I hold :kbd:`ctrl` (Windows_) or :kbd:`option` (MacOS_) on the keyboard, then click on ``tests/test_assertion_error.py`` with the mouse to open it
+    ================== 7 passed in A.BCs ===================
 
 ----
 
 *********************************************************************************
-remove repetition with class attributes
+test_assert_keyword with unittest
 *********************************************************************************
 
-* I add the :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to the ``TestAssertionError`` :ref:`class<what is a class?>` with :ref:`a class attribute<what is a class attribute?>`
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add a :ref:`class<what is a class?>` named ``AssertionError`` to ``test_assertion_error.py``
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 3-4
+    :linenos:
+    :emphasize-lines: 1, 3-4
 
-    class TestAssertionError(unittest.TestCase):
+    class AssertionError(object):
 
-        def setUp(self):
-            self.an_integer = 0
+        def test_failure(self):
+            self.assertFalse(True)
 
-        def test_assert_keyword(self):
+
+    def test_assert_keyword():
+
+  the test is still green.
+
+* I change the name of the :ref:`class<what is a class?>` to ``TestAssertionError``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2
+
+    # class AssertionError(object):
+    class TestAssertionError(object):
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: 'TestAssertionError' object
+                    has no attribute 'assertFalse'
+
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 141
+    :emphasize-lines: 6
+    :emphasize-text: AttributeError
+
+    # None is None and equal to None
+
+
+    # Exceptions seen
+    # AssertionError
+    # AttributeError
+
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: shell
+
+    NameError: name 'unittest' is not defined.
+               Did you forget to import 'unittest'?
+
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 141
+    :emphasize-lines: 6
+    :emphasize-text: AttributeError
+
+    # None is None and equal to None
+
+
+    # Exceptions seen
+    # AssertionError
+    # AttributeError
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add an `import statement`_ at the top of the file_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import unittest
+
+
+    class AssertionError(unittest.TestCase):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError>`
+
+*********************************************************************************
+test_assertion_error_w_none with unittest
+*********************************************************************************
+
+----
+
+*********************************************************************************
+test_assertion_error_w_none with unittest
+*********************************************************************************
+
+----
+
+*********************************************************************************
+test_assertion_error_w_false with unittest
+*********************************************************************************
+
+----
+
+*********************************************************************************
+test_assertion_error_w_true with unittest
+*********************************************************************************
+
+----
+
+*********************************************************************************
+test_assertion_error_w_equality with unittest
+*********************************************************************************
+
+----
+
+*********************************************************************************
+test_assertion_error_w_is_vs_equal with unittest
+*********************************************************************************
+
+----
+
+*********************************************************************************
+will_not_run with unittest
+*********************************************************************************
+
+----
+
+*********************************************************************************
+test_failure with unittest
+*********************************************************************************
+
+----
+
+*********************************************************************************
+use class attributes to remove repetition
+*********************************************************************************
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_none`
 
