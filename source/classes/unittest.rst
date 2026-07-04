@@ -446,7 +446,7 @@ I want to see what comes with the `unittest module`_.
 
   .. caution:: Your list of attributes and methods may be different depending on your Python version
 
-* I open a new terminal_ then make sure I am in ``classes`` folder_
+* I open a new terminal_ then make sure I am in the ``classes`` folder_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -4310,7 +4310,7 @@ close the project
 review
 *********************************************************************************
 
-I can write tests with the `unittest.TestCase class`_ which comes with `assert methods`_ I can use in place of basic assert_ statements:
+I can write tests with the `unittest.TestCase class`_ which comes with `assert methods`_ I can use in place of basic :ref:`assert statements<what is an assertion?>`:
 
 * :ref:`assertIsNot<test_assert_is_not>`
 * :ref:`assertIs<test_assert_is>`

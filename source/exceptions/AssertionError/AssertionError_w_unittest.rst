@@ -59,7 +59,7 @@ open the project
 ----
 
 *********************************************************************************
-test_assert_keyword with unittest
+add TestAssertionError class
 *********************************************************************************
 
 =================================================================================
@@ -114,6 +114,23 @@ test_assert_keyword with unittest
     # AssertionError
     # AttributeError
 
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add :ref:`unitest.TestCase<test_attributes_and_methods_of_unittest_testcase>` as the parent :ref:`class<what is a class?>` of ``TestAssertionError``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-3
+
+    # class AssertionError(object):
+    # class TestAssertionError(object):
+    class TestAssertionError(unittest.TestCase):
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -125,23 +142,14 @@ test_assert_keyword with unittest
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 141
-    :emphasize-lines: 6
-    :emphasize-text: AttributeError
-
-    # None is None and equal to None
-
+    :lineno-start: 145
+    :emphasize-lines: 4
+    :emphasize-text: NameError
 
     # Exceptions seen
     # AssertionError
     # AttributeError
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
+    # NameError
 
 * I add an `import statement`_ at the top of the file_
 
@@ -152,19 +160,240 @@ test_assert_keyword with unittest
     import unittest
 
 
-    class AssertionError(unittest.TestCase):
+    # class AssertionError(object):
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 2-3
+
+        def test_failure(self):
+            # self.assertFalse(True)
+            self.assertFalse(False)
+
+
+    def test_assert_keyword():
+
+  the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    import unittest
+
+
+    class TestAssertionError(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertFalse(False)
+
+
+    def test_assert_keyword():
+
+* I open a new terminal_ then make sure I am in the ``assertion_error`` folder_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd assertion_error
+
+* I add a git_ commit message in the new terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add TestAssertionError class'
+
+----
+
+*********************************************************************************
+test_assert_keyword
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+
+* I move :ref:`test_assert_keyword` to make it a :ref:`method<what is a method?>` of the :ref:`TestAssertionError class<add TestAssertionError class>` and replace ``test_failure``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 3-4, 6, 8
+
+    class TestAssertionError(unittest.TestCase):
+
+        def test_assert_keyword():
+            assert 1 + 1 == 2
+
+            assert '1' + '1' == '11'
+
+            assert 'I am' + ' alive' == 'I am alive'
+
+
+    def test_assertion_error_w_none():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestAssertionError.test_assert_keyword()
+        takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 142
+    :emphasize-lines: 5
+    :emphasize-text: TypeError
+
+    # Exceptions seen
+    # AssertionError
+    # AttributeError
+    # NameError
+    # TypeError
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``self`` to the parentheses of :ref:`test_assert_keyword`
+
+.. code-block:: python
+  :lineno-start: 4
+  :emphasize-lines: 3-4
+
+  class TestAssertionError(unittest.TestCase):
+
+      # def test_assert_keyword():
+      def test_assert_keyword(self):
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I call the :ref:`assertNotEqual method<test_assert_not_equal>` for the three :ref:`assertions<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4, 7, 10
+
+        # def test_assert_keyword():
+        def test_assert_keyword(self):
+            assert 1 + 1 == 2
+            self.assertNotEqual(1+1, 2)
+
+            assert '1' + '1' == '11'
+            self.assertNotEqual('1'+'1', '11')
+
+            assert 'I am' + ' alive' == 'I am alive'
+            self.assertNotEqual('I am'+' alive', 'I am alive')
+
+
+    def test_assertion_error_w_none():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 2 == 2
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assert_equal<test_assert_equal>` for ``(1+1, 2)``
+
+  .. code-block:: python
+    :lineno-start: 6
+
+        # def test_assert_keyword():
+        def test_assert_keyword(self):
+            assert 1 + 1 == 2
+            # self.assertNotEqual(1+1, 2)
+            self.assertEqual(1+1, 2)
+
+  the terminal_
 
 *********************************************************************************
 test_assertion_error_w_none with unittest
 *********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
 
 ----
 
 *********************************************************************************
 test_assertion_error_w_none with unittest
 *********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
 
 ----
 
@@ -172,11 +401,51 @@ test_assertion_error_w_none with unittest
 test_assertion_error_w_false with unittest
 *********************************************************************************
 
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
 ----
 
 *********************************************************************************
 test_assertion_error_w_true with unittest
 *********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
 
 ----
 
@@ -184,11 +453,51 @@ test_assertion_error_w_true with unittest
 test_assertion_error_w_equality with unittest
 *********************************************************************************
 
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
 ----
 
 *********************************************************************************
 test_assertion_error_w_is_vs_equal with unittest
 *********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
 
 ----
 
@@ -196,11 +505,51 @@ test_assertion_error_w_is_vs_equal with unittest
 will_not_run with unittest
 *********************************************************************************
 
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
 ----
 
 *********************************************************************************
 test_failure with unittest
 *********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
 
 ----
 

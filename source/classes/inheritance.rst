@@ -402,7 +402,7 @@ isinstance_ checks if the thing in the parentheses on the left is an :ref:`insta
 
     # Exceptions seen
 
-* I open a new terminal_ then make sure I am in ``classes`` folder_
+* I open a new terminal_ then make sure I am in the ``classes`` folder_
 
   .. code-block:: python
     :emphasize-lines: 1
