@@ -3873,7 +3873,7 @@ the test passes because
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to the `assertIsSubclass method`_
+* I change the :ref:`call<how to call a function with input>` to ``self.TOOLBOX.assertIsSubclass``
 
   .. code-block:: python
     :lineno-start: 148
@@ -3956,16 +3956,11 @@ the test passes because
 
         def test_assert_is_subclass(self):
 
-* I add an :ref:`assertion<what is an assertion?>` to show that ``self`` in the :ref:`TestUnittest class<extract TestUnittest class>` is an :ref:`instance<how to test if something is an instance>` of the `unittest.TestCase class`_ because it is the :ref:`parent class<what is a class?>`
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_assert_is_instance` to show that ``self`` in the :ref:`TestUnittest class<extract TestUnittest class>` is an :ref:`instance<how to test if something is an instance>` of the `unittest.TestCase class`_
 
   .. code-block:: python
     :lineno-start: 125
-
-* I change the :ref:`call<how to call a function with input>` to the `assertIsInstance method`_ in :ref:`test_assert_is_instance`
-
-  .. code-block:: python
-    :lineno-start: 125
-    :emphasize-lines: 9-10
+    :emphasize-lines: 13-15
 
         # @staticmethod
         # def test_assert_is_instance():
@@ -3976,19 +3971,97 @@ the test passes because
             assert isinstance(an_instance, a_class)
             # TOOLBOX.assertIsInstance(
             # self.TOOLBOX.assertIsInstance(
-            self.assertIsInstance(
+            self.TOOLBOX.assertIsInstance(
                 an_instance, a_class
+            )
+            self.assertNotIsInstance(
+                self, unittest.TestCase
             )
 
         def test_assert_not_is_subclass(self):
 
-  green.
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <
+            tests.test_unittest.TestUnittest
+            testMethod=test_assert_is_instance
+        > is an instance of
+        <class 'unittest.case.TestCase'>
+
+* I change assertNotIsInstance_ to assertIsInstance_
+
+  .. code-block:: python
+    :lineno-start: 125
+    :emphasize-lines: 13-14
+
+        # @staticmethod
+        # def test_assert_is_instance():
+        def test_assert_is_instance(self):
+            a_class = unittest.TestCase
+            an_instance = a_class()
+
+            assert isinstance(an_instance, a_class)
+            # TOOLBOX.assertIsInstance(
+            # self.TOOLBOX.assertIsInstance(
+            self.TOOLBOX.assertIsInstance(
+                an_instance, a_class
+            )
+            # self.assertNotIsInstance(
+            self.assertIsInstance(
+                self, unittest.TestCase
+            )
+
+        def test_assert_not_is_subclass(self):
+
+  the test passes.
+
+* I change the :ref:`call<how to call a function with input>` to ``self.TOOLBOX.assertIsInstance``
+
+  .. code-block:: python
+    :lineno-start: 125
+    :emphasize-lines: 10-11
+
+    # @staticmethod
+        # def test_assert_is_instance():
+        def test_assert_is_instance(self):
+            a_class = unittest.TestCase
+            an_instance = a_class()
+
+            assert isinstance(an_instance, a_class)
+            # TOOLBOX.assertIsInstance(
+            # self.TOOLBOX.assertIsInstance(
+            # self.TOOLBOX.assertIsInstance(
+            self.assertIsInstance(
+                an_instance, a_class
+            )
+            # self.assertNotIsInstance(
+            self.assertIsInstance(
+                self, unittest.TestCase
+            )
+
+        def test_assert_not_is_subclass(self):
 
 * I remove the commented lines from :ref:`test_assert_is_instance`
 
   .. code-block:: python
     :lineno-start: 125
 
+        def test_assert_is_instance(self):
+            a_class = unittest.TestCase
+            an_instance = a_class()
+
+            assert isinstance(an_instance, a_class)
+            self.assertIsInstance(
+                an_instance, a_class
+            )
+            self.assertIsInstance(
+                self, unittest.TestCase
+            )
+
+        def test_assert_not_is_subclass(self):
 
 * I change the :ref:`call<how to call a function with input>` to the `assert method`_ in :ref:`test_assert_`
 
