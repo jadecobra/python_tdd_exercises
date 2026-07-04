@@ -2847,24 +2847,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
             my_expectation = [
                 'BaseTestSuite', 'FunctionTestCase',
                 'IsolatedAsyncioTestCase', 'SkipTest',
-                'TestCase', 'TestLoader', 'TestProgram',
-                'TestResult', 'TestSuite', 'TextTestResult',
-                'TextTestRunner', '__all__', '__builtins__',
-                '__cached__', '__dir__', '__doc__',
-                '__file__', '__getattr__', '__loader__',
-                '__name__', '__package__', '__path__',
-                '__spec__', '__unittest', 'addModuleCleanup',
-                'case', 'defaultTestLoader', 'doModuleCleanups',
-                'enterModuleContext', 'expectedFailure',
-                'installHandler', 'loader', 'main',
-                'registerResult', 'removeHandler', 'removeResult',
-                'result', 'runner', 'signals', 'skip', 'skipIf',
-                'skipUnless', 'suite', 'util'
-            ]
-            assert reality == my_expectation
-
-
-    def test_attributes_and_methods_of_testcase():
+                ...
 
   .. caution:: Indentation matters in Python_. It is how it knows what blocks belong to what :ref:`function/method<what is a function?>`, :ref:`class<what is a class?>` or :ref:`module<what is a module?>`
 
@@ -2876,32 +2859,123 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
         TestUnittest.test_attributes_and_methods_of_unittest()
         takes 0 positional arguments but 1 was given
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assert_is_not`
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_attributes_and_methods_of_unittest`
 
   .. code-block:: python
-    :lineno-start: 81
+    :lineno-start: 7
     :emphasize-lines: 4
 
-    BOOM? BOOM? BOOM? BOOM?
+    # class Unittest(object):
+    class TestUnittest(object):
+
+        @staticmethod
+        def test_attributes_and_methods_of_unittest():
 
   the test passes.
 
-* I indent :ref:`test_assert_is_not` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+* I add a :ref:`call<how to call a function with input>` to the `assertNotEqual method`_
 
   .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 3-11
+    :lineno-start: 30
+    :emphasize-lines: 2
 
-    class TestUnittest(object):
+            assert reality == my_expectation
+            TOOLBOX.assertNotEqual(reality, my_expectation)
 
-        # pass
+
+    def test_attributes_and_methods_of_unittest_testcase():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
+
+* I change assertNotEqual_ to assertEqual_
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 2-3
+
+            assert reality == my_expectation
+            # TOOLBOX.assertNotEqual(reality, my_expectation)
+            TOOLBOX.assertEqual(reality, my_expectation)
+
+
+    def test_attributes_and_methods_of_unittest_testcase():
+
+  the test passes.
+
+* I move :ref:`test_attributes_and_methods_of_unittest_testcase` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 3-50
+
+            TOOLBOX.assertEqual(reality, my_expectation)
+
+        def test_attributes_and_methods_of_unittest_testcase():
+            reality = dir(unittest.TestCase)
+            my_expectation = [
+                '__call__', '__class__', '__delattr__',
+                ...
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestUnittest.test_attributes_and_methods_of_unittest_testcase()
+        takes 0 positional arguments but 1 was given
+
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_attributes_and_methods_of_unittest_testcase`
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 3
+
+            TOOLBOX.assertEqual(reality, my_expectation)
+
+        @staticmethod
+        def test_attributes_and_methods_of_unittest_testcase():
+
+  the test passes.
+
+* I add a :ref:`call<how to call a function with input>` to the `assertNotEqual method`_
+
+  .. code-block:: python
+    :lineno-start: 84
+    :emphasize-lines: 2
+
+            assert reality == my_expectation
+            TOOLBOX.assertNotEqual(reality, my_expectation)
+
+
+    def test_assert_is_not():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
+
+* I change assertNotEqual_ to assertEqual_
+
+  .. code-block:: python
+    :lineno-start: 84
+    :emphasize-lines: 2-3
+
+            assert reality == my_expectation
+            # TOOLBOX.assertNotEqual(reality, my_expectation)
+            TOOLBOX.assertEqual(reality, my_expectation)
+
+
+    def test_assert_is_not():
+
+  the test passes.
+
+* I indent (move with four spaces) :ref:`test_assert_is_not` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+
+  .. code-block:: python
+    :lineno-start: 86
+    :emphasize-lines: 3-5
+
+            TOOLBOX.assertEqual(reality, my_expectation)
+
         def test_assert_is_not():
-            # unittest.TestCase.assertIsNot()
-            # unittest.TestCase().assertIsNot()
-            # unittest.TestCase().assertIsNot(None, None)
-            # assert None is not None
             assert None is not False
-            # unittest.TestCase().assertIsNot(None, False)
             TOOLBOX.assertIsNot(None, False)
 
 
@@ -2911,20 +2985,20 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
   .. code-block:: python
 
-    TypeError: TestUnittest.test_assert_is_not()
-               takes 0 positional arguments but 1 was given
+    TypeError:
+        TestUnittest.test_assert_is_not()
+        takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assert_is_not`
 
   .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 4
+    :lineno-start: 86
+    :emphasize-lines: 3
 
-    class TestUnittest(object):
+            TOOLBOX.assertEqual(reality, my_expectation)
 
-        # pass
         @staticmethod
         def test_assert_is_not():
 
@@ -2933,18 +3007,13 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 * I move :ref:`test_assert_is` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
 
   .. code-block:: python
-    :lineno-start: 92
-    :emphasize-lines: 3-10
+    :lineno-start: 91
+    :emphasize-lines: 3-5
 
             TOOLBOX.assertIsNot(None, False)
 
         def test_assert_is():
-            # assert False is True
             assert False is False
-            # unittest.TestCase.assertIs()
-            # unittest.TestCase().assertIs()
-            # unittest.TestCase().assertIs(False, True)
-            # unittest.TestCase().assertIs(False, False)
             TOOLBOX.assertIs(False, False)
 
 
@@ -2954,15 +3023,16 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
   .. code-block:: python
 
-    TypeError: TestUnittest.test_assert_is()
-               takes 0 positional arguments but 1 was given
+    TypeError:
+        TestUnittest.test_assert_is()
+        takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assert_is`
 
   .. code-block:: python
-    :lineno-start: 92
+    :lineno-start: 91
     :emphasize-lines: 3
 
             TOOLBOX.assertIsNot(None, False)
@@ -2975,17 +3045,13 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 * I indent :ref:`test_assert_not_equal` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
 
   .. code-block:: python
-    :lineno-start: 102
-    :emphasize-lines: 3-9
+    :lineno-start: 96
+    :emphasize-lines: 3-5
 
             TOOLBOX.assertIs(False, False)
 
         def test_assert_not_equal():
-            # unittest.TestCase().assertNotEqual()
-            # unittest.TestCase().assertNotEqual(True, True)
-            # assert True != True
             assert True != 0
-            # unittest.TestCase().assertNotEqual(True, 0)
             TOOLBOX.assertNotEqual(True, 0)
 
 
@@ -2995,40 +3061,35 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
   .. code-block:: python
 
-    TypeError: TestUnittest.test_assert_not_equal()
-               takes 0 positional arguments but 1 was given
+    TypeError:
+        TestUnittest.test_assert_not_equal()
+        takes 0 positional arguments but 1 was given
 
   because ...
 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assert_not_equal`
 
   .. code-block:: python
-    :lineno-start: 102
+    :lineno-start: 96
     :emphasize-lines: 3
 
-            TOOLBOX.assertNotIsInstance(
-                # unittest.TestCase(), unittest.TestCase
-                unittest.TestCase, unittest.TestCase
-            )
+            TOOLBOX.assertIs(False, False)
 
         @staticmethod
-        def test_assert_is_instance():
+        def test_assert_not_equal():
 
   the test passes.
 
 * I move :ref:`test_assert_equal` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
 
   .. code-block:: python
-    :lineno-start: 111
-    :emphasize-lines: 3-8
+    :lineno-start: 101
+    :emphasize-lines: 3-5
 
             TOOLBOX.assertNotEqual(True, 0)
 
         def test_assert_equal():
-            # assert 0.0 == '0.0'
             assert 0.0 == 0.0
-            # unittest.TestCase().assertEqual(0.0, '0.0')
-            # unittest.TestCase().assertEqual(0.0, 0.0)
             TOOLBOX.assertEqual(0.0, 0.0)
 
 
@@ -3038,15 +3099,16 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
   .. code-block:: python
 
-    TypeError: TestUnittest.test_assert_equal()
-               takes 0 positional arguments but 1 was given
+    TypeError:
+        TestUnittest.test_assert_equal()
+        takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assert_equal`
 
   .. code-block:: python
-    :lineno-start: 111
+    :lineno-start: 101
     :emphasize-lines: 3
 
             TOOLBOX.assertNotEqual(True, 0)
@@ -3059,21 +3121,16 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 * I move :ref:`test_assert_not_is_instance` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
 
   .. code-block:: python
-    :lineno-start: 119
-    :emphasize-lines: 3-14
+    :lineno-start: 106
+    :emphasize-lines: 3-9
 
             TOOLBOX.assertEqual(0.0, 0.0)
 
         def test_assert_not_is_instance():
-            # unittest.TestCase.assertNotIsInstance()
-            # unittest.TestCase().assertNotIsInstance()
             assert not isinstance(
-                # unittest.TestCase(), unittest.TestCase
                 unittest.TestCase, unittest.TestCase
             )
-            # unittest.TestCase().assertNotIsInstance(
             TOOLBOX.assertNotIsInstance(
-                # unittest.TestCase(), unittest.TestCase
                 unittest.TestCase, unittest.TestCase
             )
 
@@ -3084,13 +3141,14 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
   .. code-block:: python
 
-    TypeError: TestUnittest.test_assert_not_is_instance()
-               takes 0 positional arguments but 1 was given
+    TypeError:
+        TestUnittest.test_assert_not_is_instance()
+        takes 0 positional arguments but 1 was given
 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assert_not_is_instance`
 
   .. code-block:: python
-    :lineno-start: 119
+    :lineno-start: 106
     :emphasize-lines: 3
 
             TOOLBOX.assertEqual(0.0, 0.0)
@@ -3103,28 +3161,19 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 * I move :ref:`test_assert_is_instance` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
 
   .. code-block:: python
-    :lineno-start: 130
-    :emphasize-lines: 6-21
+    :lineno-start: 113
+    :emphasize-lines: 6-7, 9-12
 
             TOOLBOX.assertNotIsInstance(
-                # unittest.TestCase(), unittest.TestCase
                 unittest.TestCase, unittest.TestCase
             )
 
         def test_assert_is_instance():
             a_class = unittest.TestCase
             an_instance = a_class()
-            # unittest.TestCase.assertIsInstance()
-            # unittest.TestCase().assertIsInstance()
-            assert isinstance(
-                # unittest.TestCase, unittest.TestCase
-                # unittest.TestCase(), unittest.TestCase
-                an_instance, a_class
-            )
-            # unittest.TestCase().assertIsInstance(
+
+            assert isinstance(an_instance, a_class)
             TOOLBOX.assertIsInstance(
-                # unittest.TestCase, unittest.TestCase
-                # unittest.TestCase(), unittest.TestCase
                 an_instance, a_class
             )
 
@@ -3135,23 +3184,893 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
   .. code-block:: python
 
-    TypeError: TestUnittest.test_assert_is_instance()
-               takes 0 positional arguments but 1 was given
+    TypeError:
+        TestUnittest.test_assert_is_instance()
+        takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assert_is_instance`
 
   .. code-block:: python
-    :lineno-start: 119
-    :emphasize-lines: 3
+    :lineno-start: 113
+    :emphasize-lines: 5
 
-            TOOLBOX.assertEqual(0.0, 0.0)
+            TOOLBOX.assertNotIsInstance(
+                unittest.TestCase, unittest.TestCase
+            )
+
+        @staticmethod
+        def test_assert_is_instance():
+
+  the test passes.
+
+* I move :ref:`test_assert_not_is_subclass` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+
+  .. code-block:: python
+    :lineno-start: 123
+    :emphasize-lines: 5-12
+
+            TOOLBOX.assertIsInstance(
+                an_instance, a_class
+            )
+
+        def test_assert_not_is_subclass():
+            assert not issubclass(
+                unittest.TestCase, list
+            )
+            TOOLBOX.assertNotIsSubclass(
+                unittest.TestCase, dict
+            )
+
+
+    def test_assert_is_subclass():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestUnittest.test_assert_not_is_subclass()
+        takes 0 positional arguments but 1 was given
+
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assert_not_is_subclass`
+
+  .. code-block:: python
+    :lineno-start: 113
+    :emphasize-lines: 5
+
+            TOOLBOX.assertIsInstance(
+                an_instance, a_class
+            )
+
+        @staticmethod
+        def test_assert_not_is_subclass():
+
+  the test passes.
+
+* I move :ref:`test_assert_is_subclass` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+
+  .. code-block:: python
+    :lineno-start: 132
+    :emphasize-lines: 5-9
+
+            TOOLBOX.assertNotIsSubclass(
+                unittest.TestCase, dict
+            )
+
+        def test_assert_is_subclass():
+            assert issubclass(unittest.TestCase, object)
+            TOOLBOX.assertIsSubclass(
+                unittest.TestCase, object
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestUnittest.test_assert_is_subclass()
+        takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_assert_is_subclass`
+
+  .. code-block:: python
+    :lineno-start: 132
+    :emphasize-lines: 5
+
+            TOOLBOX.assertNotIsSubclass(
+                unittest.TestCase, dict
+            )
+
+        @staticmethod
+        def test_assert_is_subclass():
+
+  the test passes.
+
+----
+
+* I add the ``TOOLBOX`` :ref:`variable<what is a variable?>` to :ref:`TestUnittest<extract TestUnittest class>` to make it a :ref:`class attribute<what is a class attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 4
+
+    # class Unittest(object):
+    class TestUnittest(object):
+
+        TOOLBOX = unittest.TestCase()
+
+        @staticmethod
+        def test_attributes_and_methods_of_unittest():
+
+* I use the new :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_attributes_and_methods_of_unittest`
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 4
+
+            assert reality == my_expectation
+            # TOOLBOX.assertNotEqual(reality, my_expectation)
+            # TOOLBOX.assertEqual(reality, my_expectation)
+            self.TOOLBOX.assertEqual(reality, my_expectation)
+
+        @staticmethod
+        def test_attributes_and_methods_of_unittest_testcase():
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'self' is not defined
+
+* I add ``self`` to the parentheses of :ref:`test_attributes_and_methods_of_unittest`
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 7-8
+
+    # class Unittest(object):
+    class TestUnittest(object):
+
+        TOOLBOX = unittest.TestCase()
+
+        @staticmethod
+        # def test_attributes_and_methods_of_unittest():
+        def test_attributes_and_methods_of_unittest(self):
+
+  the terminal_ is my friend, and shows
+
+  .. code-block:: python
+
+    E       fixture 'self' not found
+
+* I remove the :ref:`staticmethod decorator<what is the staticmethod decorator?>` since I am using ``self`` in the :ref:`test_attributes_and_methods_of_unittest`
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 6
+
+    # class Unittest(object):
+    class TestUnittest(object):
+
+        TOOLBOX = unittest.TestCase()
+
+        # @staticmethod
+        # def test_attributes_and_methods_of_unittest():
+        def test_attributes_and_methods_of_unittest(self):
+            reality = dir(unittest)
+
+  the test is green again.
+
+* I use the new :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_attributes_and_methods_of_unittest_testcase`
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 3-4
+
+            assert reality == my_expectation
+            # TOOLBOX.assertNotEqual(reality, my_expectation)
+            # TOOLBOX.assertEqual(reality, my_expectation)
+            self.TOOLBOX.assertEqual(reality, my_expectation)
+
+        @staticmethod
+        def test_assert_is_not():
+
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'self' is not defined
+
+* I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_attributes_and_methods_of_unittest_testcase`
+
+  .. code-block:: python
+    :lineno-start: 36
+    :emphasize-lines: 3-5
+
+            self.TOOLBOX.assertEqual(reality, my_expectation)
+
+        # @staticmethod
+        # def test_attributes_and_methods_of_unittest_testcase():
+        def test_attributes_and_methods_of_unittest_testcase(self):
+            reality = dir(unittest.TestCase)
+
+  green again.
+
+* I use the :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_assert_is_not`
+
+  .. code-block:: python
+    :lineno-start: 94
+    :emphasize-lines: 4-5
+
+        @staticmethod
+        def test_assert_is_not():
+            assert None is not False
+            # TOOLBOX.assertIsNot(None, False)
+            self.TOOLBOX.assertIsNot(None, False)
+
+        @staticmethod
+        def test_assert_is():
+
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'self' is not defined
+
+* I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_assert_is_not`
+
+  .. code-block:: python
+    :lineno-start: 94
+    :emphasize-lines: 1-3
+
+        # @staticmethod
+        # def test_assert_is_not():
+        def test_assert_is_not(self):
+
+  the test is green again.
+
+* I use the :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_assert_is`
+
+  .. code-block:: python
+    :lineno-start: 101
+    :emphasize-lines: 4-5
+
+        @staticmethod
+        def test_assert_is():
+            assert False is False
+            # TOOLBOX.assertIs(False, False)
+            self.TOOLBOX.assertIs(False, False)
+
+        @staticmethod
+        def test_assert_not_equal():
+
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'self' is not defined
+
+* I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_assert_is`
+
+  .. code-block:: python
+    :lineno-start: 101
+    :emphasize-lines: 1-3
+
+        # @staticmethod
+        # def test_assert_is():
+        def test_assert_is(self):
+
+  green again.
+
+* I use the :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_assert_not_equal`
+
+  .. code-block:: python
+    :lineno-start: 108
+    :emphasize-lines: 4-5
+
+        @staticmethod
+        def test_assert_not_equal():
+            assert True != 0
+            # TOOLBOX.assertNotEqual(True, 0)
+            self.TOOLBOX.assertNotEqual(True, 0)
+
+        @staticmethod
+        def test_assert_equal():
+
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'self' is not defined
+
+* I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_assert_not_equal`
+
+  .. code-block:: python
+    :lineno-start: 108
+    :emphasize-lines: 1-3
+
+        # @staticmethod
+        # def test_assert_not_equal():
+        def test_assert_not_equal(self):
+
+  the test is green again.
+
+* I use the :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_assert_equal`
+
+  .. code-block:: python
+    :lineno-start: 115
+    :emphasize-lines: 4-5
+
+        @staticmethod
+        def test_assert_equal():
+            assert 0.0 == 0.0
+            # TOOLBOX.assertEqual(0.0, 0.0)
+            self.TOOLBOX.assertEqual(0.0, 0.0)
 
         @staticmethod
         def test_assert_not_is_instance():
 
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'self' is not defined
+
+* I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_assert_equal`
+
+  .. code-block:: python
+    :lineno-start: 115
+    :emphasize-lines: 1-3
+
+        # @staticmethod
+        # def test_assert_equal():
+        def test_assert_equal(self):
+
+  green again.
+
+* I use the :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_assert_not_is_instance`
+
+  .. code-block:: python
+    :lineno-start: 122
+    :emphasize-lines: 6-7
+
+        @staticmethod
+        def test_assert_not_is_instance():
+            assert not isinstance(
+                unittest.TestCase, unittest.TestCase
+            )
+            # TOOLBOX.assertNotIsInstance(
+            self.TOOLBOX.assertNotIsInstance(
+                unittest.TestCase, unittest.TestCase
+            )
+
+        @staticmethod
+        def test_assert_is_instance():
+
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'self' is not defined
+
+* I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_assert_not_is_instance`
+
+  .. code-block:: python
+    :lineno-start: 122
+    :emphasize-lines: 1-3
+
+        # @staticmethod
+        # def test_assert_not_is_instance():
+        def test_assert_not_is_instance(self):
+
+  the test is green again.
+
+* I use the :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_assert_is_instance`
+
+  .. code-block:: python
+    :lineno-start: 133
+    :emphasize-lines: 7-8
+
+        @staticmethod
+        def test_assert_is_instance():
+            a_class = unittest.TestCase
+            an_instance = a_class()
+
+            assert isinstance(an_instance, a_class)
+            # TOOLBOX.assertIsInstance(
+            self.TOOLBOX.assertIsInstance(
+                an_instance, a_class
+            )
+
+        @staticmethod
+        def test_assert_not_is_subclass():
+
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'self' is not defined
+
+* I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_assert_is_instance`
+
+  .. code-block:: python
+    :lineno-start: 133
+    :emphasize-lines: 1-3
+
+        # @staticmethod
+        # def test_assert_is_instance():
+        def test_assert_is_instance(self):
+
+  the test is green again.
+
+* I use the :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_assert_not_is_subclass`
+
+  .. code-block:: python
+    :lineno-start: 145
+    :emphasize-lines: 6-7
+
+        @staticmethod
+        def test_assert_not_is_subclass():
+            assert not issubclass(
+                unittest.TestCase, list
+            )
+            # TOOLBOX.assertNotIsSubclass(
+            self.TOOLBOX.assertNotIsSubclass(
+                unittest.TestCase, dict
+            )
+
+        @staticmethod
+        def test_assert_is_subclass():
+
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'self' is not defined
+
+* I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_assert_not_is_subclass`
+
+  .. code-block:: python
+    :lineno-start: 145
+    :emphasize-lines: 1-3
+
+        # @staticmethod
+        # def test_assert_not_is_subclass():
+        def test_assert_not_is_subclass(self):
+
+  the test is green again.
+
+* I use the :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_assert_is_subclass`
+
+  .. code-block:: python
+    :lineno-start: 156
+    :emphasize-lines: 4-5
+
+        @staticmethod
+        def test_assert_is_subclass():
+            assert issubclass(unittest.TestCase, object)
+            # TOOLBOX.assertIsSubclass(
+            self.TOOLBOX.assertIsSubclass(
+                unittest.TestCase, object
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'self' is not defined
+
+* I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_assert_is_subclass`
+
+  .. code-block:: python
+    :lineno-start: 156
+    :emphasize-lines: 1-3
+
+        # @staticmethod
+        # def test_assert_is_subclass():
+        def test_assert_is_subclass(self):
+
+  the test is green again.
+
+* I remove the ``TOOLBOX`` :ref:`variable<what is a variable?>` because it is no longer used
+
+  .. code-block:: python
+    :linenos:
+
+    import unittest
+
+
+    # class Unittest(object):
+    class TestUnittest(object):
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'extract TestUnittest class'
+
+----
+
+*********************************************************************************
+use unittest.TestCase
+*********************************************************************************
+
+I can use the `unittest.TestCase class`_ as a parent of the :ref:`TestUnittest class<extract TestUnittest class>` which will allow me to use ``self`` to access its :ref:`attributes and methods<test_attributes_and_methods_of_unittest_testcase>`.
+
+It also means I will not need the ``TOOLBOX`` :ref:`class attribute<what is a class attribute?>` which points to an :ref:`instance<how to test if something is an instance>` of the `unittest.TestCase class`_.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I change the :ref:`call<how to call a function with input>` to the `assertEqual method`_ in :ref:`test_attributes_and_methods_of_unittest`
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 4-5
+
+            assert reality == my_expectation
+            # TOOLBOX.assertNotEqual(reality, my_expectation)
+            # TOOLBOX.assertEqual(reality, my_expectation)
+            # self.TOOLBOX.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, my_expectation)
+
+        # @staticmethod
+        # def test_attributes_and_methods_of_unittest_testcase():
+        def test_attributes_and_methods_of_unittest_testcase(self):
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: 'TestUnittest' object
+                    has no attribute 'assertEqual'
+
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 165
+    :emphasize-lines: 5
+    :emphasize-text: AttributeError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # AttributeError
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add `unittest.TestCase`_ as the parent of the :ref:`TestUnittest class<extract TestUnittest class>` so that it can :ref:`have all the attributes and methods<everything is an object>` of `unittest.TestCase`_
+
+.. code-block:: python
+  :lineno-start: 4
+  :emphasize-lines: 2-3
+
+  # class Unittest(object):
+  # class TestUnittest(object):
+  class TestUnittest(unittest.TestCase):
+
+      TOOLBOX = unittest.TestCase()
+
+      # @staticmethod
+      # def test_attributes_and_methods_of_unittest():
+      def test_attributes_and_methods_of_unittest(self):
+          reality = dir(unittest)
+
+the test passes because
+
+* :ref:`TestUnittest<extract TestUnittest class>` is now a :ref:`subclass (child)<how to test if something is a subclass>` of the `unittest.TestCase class`_.
+* :ref:`children inherit the attributes and methods of their parents<everything is an object>`.
+* ``self`` is :ref:`TestUnittest()<extract TestUnittest class>` inside :ref:`TestUnittest<extract TestUnittest class>`.
+* ``self`` has all the :ref:`attributes and methods of unittest.TestCase<test_attributes_and_methods_of_unittest_testcase>` because `unittest.TestCase`_ is the :ref:`parent class<what is a class?>`.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented lines from :ref:`test_attributes_and_methods_of_unittest` and :ref:`TestUnittest<extract TestUnittest class>`
+
+  .. code-block:: python
+    :linenos:
+
+    import unittest
+
+
+    class TestUnittest(unittest.TestCase):
+
+        TOOLBOX = unittest.TestCase()
+
+        def test_attributes_and_methods_of_unittest(self):
+            reality = dir(unittest)
+
+  .. code-block:: python
+    :lineno-start: 26
+
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+        # @staticmethod
+        # def test_attributes_and_methods_of_unittest_testcase():
+        def test_attributes_and_methods_of_unittest_testcase(self):
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_assert_is_subclass` to show that :ref:`TestUnittest<extract TestUnittest class>` is a :ref:`subclass<how to test if something is a subclass>` of the `unittest.TestCase class`_
+
+  .. code-block:: python
+    :lineno-start: 148
+    :emphasize-lines: 10-12
+
+        # @staticmethod
+        # def test_assert_is_subclass():
+        def test_assert_is_subclass(self):
+            assert issubclass(unittest.TestCase, object)
+            # TOOLBOX.assertIsSubclass(
+            self.TOOLBOX.assertIsSubclass(
+                unittest.TestCase, object
+            )
+            self.assertNotIsSubclass(
+                TestUnittest, unittest.TestCase
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <class 'tests.test_unittest.TestUnittest'>
+        is a subclass of
+        <class 'unittest.case.TestCase'>
+
+* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 148
+    :emphasize-lines: 9-10
+
+        # @staticmethod
+        # def test_assert_is_subclass():
+        def test_assert_is_subclass(self):
+            assert issubclass(unittest.TestCase, object)
+            # TOOLBOX.assertIsSubclass(
+            self.TOOLBOX.assertIsSubclass(
+                unittest.TestCase, object
+            )
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                TestUnittest, unittest.TestCase
+            )
+
+
+    # Exceptions seen
+
   the test passes.
+
+* I change the :ref:`call<how to call a function with input>` to the `assertIsSubclass method`_
+
+  .. code-block:: python
+    :lineno-start: 148
+    :emphasize-lines: 6-7
+
+        # @staticmethod
+        # def test_assert_is_subclass():
+        def test_assert_is_subclass(self):
+            assert issubclass(unittest.TestCase, object)
+            # TOOLBOX.assertIsSubclass(
+            # self.TOOLBOX.assertIsSubclass(
+            self.assertIsSubclass(
+                unittest.TestCase, object
+            )
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                TestUnittest, unittest.TestCase
+            )
+
+
+    # Exceptions seen
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_assert_is_subclass`
+
+  .. code-block:: python
+    :lineno-start: 148
+
+        def test_assert_is_subclass(self):
+            assert issubclass(unittest.TestCase, object)
+            self.assertIsSubclass(
+                unittest.TestCase, object
+            )
+            self.assertIsSubclass(
+                TestUnittest, unittest.TestCase
+            )
+
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # AttributeError
+
+* I change the :ref:`call<how to call a function with input>` to the `assertNotIsSubclass method`_ in :ref:`test_assert_not_is_subclass`
+
+  .. code-block:: python
+    :lineno-start: 137
+    :emphasize-lines: 8-9
+
+        # @staticmethod
+        # def test_assert_not_is_subclass():
+        def test_assert_not_is_subclass(self):
+            assert not issubclass(
+                unittest.TestCase, list
+            )
+            # TOOLBOX.assertNotIsSubclass(
+            # self.TOOLBOX.assertNotIsSubclass(
+            self.assertNotIsSubclass(
+                unittest.TestCase, dict
+            )
+
+        def test_assert_is_subclass(self):
+
+  still green.
+
+* I remove the commented lines from :ref:`test_assert_not_is_subclass`
+
+  .. code-block:: python
+    :lineno-start: 137
+
+        def test_assert_not_is_subclass(self):
+            assert not issubclass(
+                unittest.TestCase, list
+            )
+            self.assertNotIsSubclass(
+                unittest.TestCase, dict
+            )
+
+        def test_assert_is_subclass(self):
+
+* I add an :ref:`assertion<what is an assertion?>` to show that ``self`` in the :ref:`TestUnittest class<extract TestUnittest class>` is an :ref:`instance<how to test if something is an instance>` of the `unittest.TestCase class`_ because it is the :ref:`parent class<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start: 125
+
+* I change the :ref:`call<how to call a function with input>` to the `assertIsInstance method`_ in :ref:`test_assert_is_instance`
+
+  .. code-block:: python
+    :lineno-start: 125
+    :emphasize-lines: 9-10
+
+        # @staticmethod
+        # def test_assert_is_instance():
+        def test_assert_is_instance(self):
+            a_class = unittest.TestCase
+            an_instance = a_class()
+
+            assert isinstance(an_instance, a_class)
+            # TOOLBOX.assertIsInstance(
+            # self.TOOLBOX.assertIsInstance(
+            self.assertIsInstance(
+                an_instance, a_class
+            )
+
+        def test_assert_not_is_subclass(self):
+
+  green.
+
+* I remove the commented lines from :ref:`test_assert_is_instance`
+
+  .. code-block:: python
+    :lineno-start: 125
+
+
+* I change the :ref:`call<how to call a function with input>` to the `assert method`_ in :ref:`test_assert_`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 8-9
+
+
+
+  still green.
+
+* I remove the commented lines from :ref:`test_assert_`
+
+  .. code-block:: python
+    :lineno-start:
+
+
+* I change the :ref:`call<how to call a function with input>` to the `assert method`_ in :ref:`test_assert_`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 8-9
+
+
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_assert_`
+
+  .. code-block:: python
+    :lineno-start:
+
+
+* I change the :ref:`call<how to call a function with input>` to the `assert method`_ in :ref:`test_assert_`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 8-9
+
+
+
+  still green.
+
+* I remove the commented lines from :ref:`test_assert_`
+
+  .. code-block:: python
+    :lineno-start:
+
+
+* I change the :ref:`call<how to call a function with input>` to the `assert method`_ in :ref:`test_assert_`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 8-9
+
+
+
+  green.
+
+* I remove the commented lines from :ref:`test_assert_`
+
+  .. code-block:: python
+    :lineno-start:
+
+
+* I change the :ref:`call<how to call a function with input>` to the `assert method`_ in :ref:`test_assert_`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 8-9
+
+
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_assert_`
+
+  .. code-block:: python
+    :lineno-start:
+
+
+
 
 ----
 
@@ -3159,7 +4078,6 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 extract TestUnittest class
 *********************************************************************************
 
-Since `unittest.TestCase`_ is a :ref:`class<what is a class?>` I can make a :ref:`class<what is a class?>` that :ref:`inherits from it<everything is an object>` and it will automatically have all the :ref:`attributes and methods of unittest.TestCase<test_attributes_and_methods_of_unittest_testcase>`
 
 ----
 
