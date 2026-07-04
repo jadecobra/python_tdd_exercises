@@ -1,19 +1,15 @@
 .. meta::
-  :description: Step-by-step Python TDD tutorial for beginners explaining why everything in Python inherits from the base 'object' class. Learn how to use isinstance() and issubclass() in unittest, and understand the difference between subunittest and instances. Verify that None, bool, int, float, str, tuple, list, set, and dict are all children of object. Learn to inspect built-in unittest with dir(object) and understand the inherited dunder methods. Resolve common beginner bugs: TypeError: issubclass() arg 1 must be a class, NameError: name 'src' is not defined, AttributeError: module has no attribute, and NameError: name 'E' is not defined.
-  :keywords: Jacob Itegboje, Pumping Python, python inheritance tutorial for beginners, everything in python is an object, why does all python unittest inherit from object, is None an instance of object, is bool a subclass of object python, is int a subclass of object python, is float a subclass of object python, is str a subclass of object python, is list a subclass of object python, is tuple a subclass of object python, is set a subclass of object python, is dict a subclass of object python, difference between subclass and instance python, python isinstance vs issubclass tutorial, unittest assertIsInstance, unittest assertNotIsInstance, unittest assertIsSubclass, unittest assertNotIsSubclass, how to use dir on object class python, dunder methods of object class python, python object __init__ dunder, python object __str__ dunder, python object __repr__ dunder, TypeError issubclass arg 1 must be a class, NameError name src is not defined, AttributeError module unittest has no attribute, AssertionError assert not True, NameError name E is not defined pytest, python test driven development unittest object, class vs instance parentheses python, learning python dunder class doc init repr str
+  :description:
+  :keywords:
 
 .. include:: ../links.rst
 
-.. _isinstance: https://docs.python.org/3/library/functions.html#isinstance
-.. _isinstance built-in function: isinstance_
 .. _assertNotIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance
 .. _unittest.TestCase.assertNotIsInstance: assertNotIsInstance_
 .. _assertNotIsInstance method: assertNotIsInstance_
 .. _assertIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance
 .. _unittest.TestCase.assertIsInstance: assertIsInstance_
 .. _assertIsInstance method: assertIsInstance_
-.. _issubclass: https://docs.python.org/3/library/functions.html#issubclass
-.. _issubclass built-in function: issubclass_
 .. _assertNotIsSubclass: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotIsSubclass
 .. _assertNotIsSubclass method: assertNotIsSubclass_
 .. _unittest.TestCase.assertNotIsSubclass: assertNotIsSubclass_
@@ -52,7 +48,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/person/tests/test_unittest.py
+.. literalinclude:: ../code/tests/test_unittest.py
   :language: python
   :linenos:
 
@@ -3718,6 +3714,8 @@ It also means I will not need the ``TOOLBOX`` :ref:`class attribute<what is a cl
 
 ----
 
+* I go back to the terminal_ where the tests are running.
+
 * I change the :ref:`call<how to call a function with input>` to the `assertEqual method`_ in :ref:`test_attributes_and_methods_of_unittest`
 
   .. code-block:: python
@@ -3808,10 +3806,12 @@ the test passes because
 
         def test_attributes_and_methods_of_unittest(self):
             reality = dir(unittest)
+            my_expectation = [
 
   .. code-block:: python
     :lineno-start: 26
 
+            ]
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
@@ -4063,123 +4063,213 @@ the test passes because
 
         def test_assert_not_is_subclass(self):
 
-* I change the :ref:`call<how to call a function with input>` to the `assert method`_ in :ref:`test_assert_`
+* I change the :ref:`call<how to call a function with input>` to the `assertNotIsInstance method`_ in :ref:`test_assert_not_is_instance`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 114
     :emphasize-lines: 8-9
 
+        # @staticmethod
+        # def test_assert_not_is_instance():
+        def test_assert_not_is_instance(self):
+            assert not isinstance(
+                unittest.TestCase, unittest.TestCase
+            )
+            # TOOLBOX.assertNotIsInstance(
+            # self.TOOLBOX.assertNotIsInstance(
+            self.assertNotIsInstance(
+                unittest.TestCase, unittest.TestCase
+            )
 
-
-  still green.
-
-* I remove the commented lines from :ref:`test_assert_`
-
-  .. code-block:: python
-    :lineno-start:
-
-
-* I change the :ref:`call<how to call a function with input>` to the `assert method`_ in :ref:`test_assert_`
-
-  .. code-block:: python
-    :lineno-start:
-    :emphasize-lines: 8-9
-
-
+        def test_assert_is_instance(self):
 
   the test is still green.
 
-* I remove the commented lines from :ref:`test_assert_`
+* I remove the commented lines from :ref:`test_assert_not_is_instance`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 114
 
+        def test_assert_not_is_instance(self):
+            assert not isinstance(
+                unittest.TestCase, unittest.TestCase
+            )
+            self.assertNotIsInstance(
+                unittest.TestCase, unittest.TestCase
+            )
 
-* I change the :ref:`call<how to call a function with input>` to the `assert method`_ in :ref:`test_assert_`
+        def test_assert_is_instance(self):
+
+* I change the :ref:`call<how to call a function with input>` to assertEqual in :ref:`test_assert_equal`
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines: 8-9
+    :lineno-start: 107
+    :emphasize-lines: 6-7
 
+        # @staticmethod
+        # def test_assert_equal():
+        def test_assert_equal(self):
+            assert 0.0 == 0.0
+            # TOOLBOX.assertEqual(0.0, 0.0)
+            # self.TOOLBOX.assertEqual(0.0, 0.0)
+            self.assertEqual(0.0, 0.0)
 
+        def test_assert_not_is_instance(self):
 
   still green.
 
-* I remove the commented lines from :ref:`test_assert_`
+* I remove the commented lines from :ref:`test_assert_equal`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 107
 
+        def test_assert_equal(self):
+            assert 0.0 == 0.0
+            self.assertEqual(0.0, 0.0)
 
-* I change the :ref:`call<how to call a function with input>` to the `assert method`_ in :ref:`test_assert_`
+        def test_assert_not_is_instance(self):
+
+* I change the :ref:`call<how to call a function with input>` to the `assertNotEqual method`_ in :ref:`test_assert_not_equal`
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines: 8-9
+    :lineno-start: 100
+    :emphasize-lines: 6-7
 
+        # @staticmethod
+        # def test_assert_not_equal():
+        def test_assert_not_equal(self):
+            assert True != 0
+            # TOOLBOX.assertNotEqual(True, 0)
+            # self.TOOLBOX.assertNotEqual(True, 0)
+            self.assertNotEqual(True, 0)
 
+        def test_assert_equal(self):
+
+  still green.
+
+* I remove the commented lines from :ref:`test_assert_not_equal`
+
+  .. code-block:: python
+    :lineno-start: 100
+
+        def test_assert_not_equal(self):
+            assert True != 0
+            self.assertNotEqual(True, 0)
+
+        def test_assert_equal(self):
+
+* I change the :ref:`call<how to call a function with input>` to the `assertIs method`_ in :ref:`test_assert_is`
+
+  .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 6-7
+
+        # @staticmethod
+        # def test_assert_is():
+        def test_assert_is(self):
+            assert False is False
+            # TOOLBOX.assertIs(False, False)
+            # self.TOOLBOX.assertIs(False, False)
+            self.assertIs(False, False)
+
+        def test_assert_not_equal(self):
 
   green.
 
-* I remove the commented lines from :ref:`test_assert_`
+* I remove the commented lines from :ref:`test_assert_is`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 93
 
+        def test_assert_is(self):
+            assert False is False
+            self.assertIs(False, False)
 
-* I change the :ref:`call<how to call a function with input>` to the `assert method`_ in :ref:`test_assert_`
+        def test_assert_not_equal(self):
+
+* I change the :ref:`call<how to call a function with input>` to the `assertIsNot method`_ in :ref:`test_assert_is_not`
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines: 8-9
+    :lineno-start: 86
+    :emphasize-lines: 6-7
 
+        # @staticmethod
+        # def test_assert_is_not():
+        def test_assert_is_not(self):
+            assert None is not False
+            # TOOLBOX.assertIsNot(None, False)
+            # self.TOOLBOX.assertIsNot(None, False)
+            self.assertIsNot(None, False)
 
+        def test_assert_is(self):
 
   the test is still green.
 
-* I remove the commented lines from :ref:`test_assert_`
+* I remove the commented lines from :ref:`test_assert_is_not`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 86
 
+        def test_assert_is_not(self):
+            assert None is not False
+            self.assertIsNot(None, False)
 
+        def test_assert_is(self):
 
+* I change the :ref:`call<how to call a function with input>` to the `assertEqual method`_ in :ref:`test_attributes_and_methods_of_unittest_testcase`
 
-----
+  .. code-block:: python
+    :lineno-start: 81
+    :emphasize-lines: 4-5
 
-*********************************************************************************
-extract TestUnittest class
-*********************************************************************************
+            assert reality == my_expectation
+            # TOOLBOX.assertNotEqual(reality, my_expectation)
+            # TOOLBOX.assertEqual(reality, my_expectation)
+            # self.TOOLBOX.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, my_expectation)
 
+        def test_assert_is_not(self):
 
-----
+  the test is still green.
 
-----
+* I remove the commented lines from :ref:`test_attributes_and_methods_of_unittest_testcase`
 
-*********************************************************************************
-review
-*********************************************************************************
+  .. code-block:: python
+    :lineno-start: 27
 
-I can make a :ref:`class<what is a class?>` with
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
-* :ref:`pass<test_making_a_class_w_pass>`
-* :ref:`parentheses<test_making_a_class_w_parentheses>`
-* :ref:`object<test_making_a_class_w_object>`
+        def test_attributes_and_methods_of_unittest_testcase(self):
+            reality = dir(unittest.TestCase)
+            my_expectation = [
 
-Everything in Python_ is an :ref:`object<everything is an object>`
+  .. code-block:: python
+    :lineno-start: 78
 
-* :ref:`None is an object<test_is_none_an_object>`
-* :ref:`A boolean is an object<test_is_a_boolean_an_object>`
-* :ref:`An integer is an object<test_is_an_integer_an_object>`
-* :ref:`A float is an object<test_is_a_float_an_object>`
-* :ref:`A string is an object<test_is_a_string_an_object>`
-* :ref:`A tuple is an object<test_is_a_tuple_an_object>`
-* :ref:`A list is an object<test_is_a_list_an_object>`
-* :ref:`A set is an object<test_is_a_set_an_object>`
-* :ref:`A dictionary is an object<test_is_a_dictionary_an_object>`
-* :ref:`An instance is NOT a subclass<instance vs subclass>`
+            ]
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
-:ref:`How many questions can you answer about unittest?<questions about unittest>`
+        def test_assert_is_not(self):
+
+* I remove the ``TOOLBOX`` :ref:`class attribute<what is a class attribute?>` since it is no longer used
+
+  .. code-block:: python
+    :lineno-start: 4
+
+    class TestUnittest(unittest.TestCase):
+
+        def test_attributes_and_methods_of_unittest(self):
+
+  all the tests are still passing.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'use unittest.TestCase'
 
 ----
 
@@ -4187,7 +4277,7 @@ Everything in Python_ is an :ref:`object<everything is an object>`
 close the project
 *********************************************************************************
 
-* I close ``test_unittest.py`` and ``unittest.py`` in the :ref:`editor(s)<2 editors>`
+* I close ``test_unittest.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
@@ -4205,6 +4295,25 @@ close the project
     .../pumping_python
 
   I am back in the ``pumping_python`` directory_.
+
+----
+
+*********************************************************************************
+review
+*********************************************************************************
+
+I can write tests with the `unittest.TestCase class`_ which comes with `assert methods`_ I can use in place of basic assert_ statements:
+
+* :ref:`assertIsNot<test_assert_is_not>`
+* :ref:`assertIs<test_assert_is>`
+* :ref:`assertNotEqual<test_assert_not_equal>`
+* :ref:`assertEqual<test_assert_equal>`
+* :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+* :ref:`assertIsInstance<test_assert_is_instance>`
+* :ref:`assertNotIsSubclass<test_assert_not_is_subclass>`
+* :ref:`assertIsSubclass<test_assert_is_subclass>`
+
+:ref:`How many questions can you answer about unittest?<questions about unittest>`
 
 ----
 
