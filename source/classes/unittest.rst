@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Another way to write tests in Python TDD: use the unittest.TestCase class (from the standard library) and its built-in assert methods as alternatives to bare `assert` statements. Step-by-step RED/GREEN/REFACTOR on the "unittest" project (uv init, mkdir tests, pytest-watcher): inspect dir(unittest) and dir(unittest.TestCase), demonstrate two ways for each of assertIsNot ("X is not Y"), assertIs, assertNotEqual, assertEqual, assertNotIsInstance / isinstance, assertIsInstance, assertNotIsSubclass / issubclass, assertIsSubclass. Covers calling on the class, on an instance, refactoring through TOOLBOX class attr and @staticmethod to self. methods inside TestCase subclass. Exact errors reproduced: "unexpectedly identical: None", "assert False is True", TypeError missing arguments for assertIsNot(), AssertionError from dir lists. Part of Jacob Itegboje Pumping Python TDD series for beginners.
+  :keywords: Jacob Itegboje, Pumping Python, another way to write tests, unittest.TestCase, unittest assert methods, assertIsNot, assertIs, assertNotEqual, assertEqual, assertNotIsInstance, assertIsInstance, assertNotIsSubclass, assertIsSubclass, two ways to test, bare assert vs self.assert, dir(unittest), TestCase dir, unexpectedly identical: None, uv init unittest pytest-watcher, TestCase subclass, TOOLBOX refactor, self. methods, python TDD unittest, standard library testing, is vs == vs assertIs, isinstance issubclass unittest, python beginner unittest tutorial
 
 .. include:: ../links.rst
 
@@ -36,7 +36,7 @@
 another way to write tests
 #################################################################################
 
-I used unittest_ in :ref:`how to make a Python test driven development environment manually` yp run tests manually before I learned to :ref:`run them automatically<how to run tests automatically>` with `pytest-watcher`_.
+I used unittest_ in :ref:`how to make a Python test driven development environment manually` to run tests manually before I learned to :ref:`run them automatically<how to run tests automatically>` with `pytest-watcher`_.
 
 The unittest_ :ref:`library<what is a module?>` is part of `The Python Standard Library`_ and can also be used to write tests. You can think of it as a toolbox with different tools I can use to test code.
 
@@ -293,7 +293,7 @@ I want to see what comes with the `unittest module`_.
 
 ----
 
-* I change ``test_failure`` to :ref:`test_attributes_and_methods_of_unittest` in ``test_classes.py``
+* I change ``test_failure`` to :ref:`test_attributes_and_methods_of_unittest` in ``test_unittest.py``
 
   .. code-block:: python
     :linenos:
@@ -437,6 +437,8 @@ I want to see what comes with the `unittest module`_.
   the test passes because when ``import unittest`` runs, Python_ brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the `unittest module`_ from `The Python Standard Library`_ so I can use it in ``test_unittest.py`` as ``unittest``.
 
   This means that there is a file_ or folder_ on the computer named ``unittest`` that got added when I installed Python_.
+
+  .. caution:: Your list of attributes and methods may be different depending on your Python version
 
 * I open a new terminal_ then make sure I am in ``classes`` folder_
 
@@ -633,8 +635,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   assertEqual_          ``assert X == Y``
   assertNotIsInstance_  ``assert not isinstance(X, Y)``
   assertIsInstance_     ``assert isinstance(X, Y)``
-  assertNotIsSubClass_  ``assert not issubclass(X, Y)``
-  assertIsSubClass_     ``assert issubclass(X, Y)``
+  assertNotIsSubclass_  ``assert not issubclass(X, Y)``
+  assertIsSubclass_     ``assert issubclass(X, Y)``
   ===================== ===============================
 
 * I type these names below the test as a TODO list to test what I can do with them
@@ -4346,7 +4348,7 @@ You now know
 * :ref:`that everything in Python is an object<everything is an object>`
 * :ref:`how to use the unittest library<another way to write tests>`
 
-:ref:`Would you like to use class attributes to remove repetition from the assertion_error project?<AssertionError 2: use class attributes>`
+:ref:`Would you like to use unittest with the assertion_error project?<AssertionError: use unittest>`
 
 ----
 

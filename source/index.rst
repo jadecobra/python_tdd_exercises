@@ -52,6 +52,7 @@ table of contents
   exceptions/TypeError/type_error_w_separation
   make a person with a class<how_to/make_person/make_person_w_class>
   classes/inheritance
+  classes/unittest
   make a person<how_to/make_person>
   classes/index
   data_structures/none/index
