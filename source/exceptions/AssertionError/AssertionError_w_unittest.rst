@@ -551,6 +551,53 @@ test_assertion_error_w_none with unittest
 
 * I move :ref:`test_assertion_error_w_none` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError class>`
 
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 7-26
+
+
+            reality = 'I am' + ' alive'
+            my_expectation = 'I am alive'
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+
+        def test_assertion_error_w_none():
+            assert None is None
+
+            assert False is not None
+
+            assert True is not None
+
+            assert 0 is not None
+
+            assert 0.0 is not None
+
+            assert '' is not None
+
+            assert () is not None
+
+            assert [] is not None
+
+            assert set() is not None
+
+            assert {} is not None
+
+
+    def test_assertion_error_w_false():
+
+  .. caution:: Indentation matters in Python_. It is how it knows what blocks belong to what :ref:`function/method<what is a function?>`, :ref:`class<what is a class?>` or :ref:`module<what is a module?>` (Use 4 spaces)
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestAssertionError.test_assertion_error_w_none()
+        takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
 ----
 
 =================================================================================
@@ -559,6 +606,17 @@ test_assertion_error_w_none with unittest
 
 ----
 
+I add ``self`` to the parentheses of :ref:`test_assertion_error_w_none`
+
+.. code-block:: python
+  :lineno-start: 23
+  :emphasize-lines: 1-2
+
+      # def test_assertion_error_w_none():
+      def test_assertion_error_w_none(self):
+
+the test passes.
+
 ----
 
 =================================================================================
@@ -566,6 +624,10 @@ test_assertion_error_w_none with unittest
 =================================================================================
 
 ----
+
+
+
+* I remove the commented lines from :ref:`test_assertion_error_w_none`
 
 * I add a git_ commit message in the other terminal_
 
@@ -603,6 +665,8 @@ test_assertion_error_w_false with unittest
 
 ----
 
+* I remove the commented lines from :ref:`test_assertion_error_w_false`
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -638,6 +702,8 @@ test_assertion_error_w_true with unittest
 =================================================================================
 
 ----
+
+* I remove the commented lines from :ref:`test_assertion_error_w_true`
 
 * I add a git_ commit message in the other terminal_
 
@@ -675,6 +741,8 @@ test_assertion_error_w_equality with unittest
 
 ----
 
+* I remove the commented lines from :ref:`test_assertion_error_w_equality`
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -710,6 +778,8 @@ test_assertion_error_w_is_vs_equal with unittest
 =================================================================================
 
 ----
+
+* I remove the commented lines from :ref:`test_assertion_error_w_is_vs_equal`
 
 * I add a git_ commit message in the other terminal_
 
@@ -747,6 +817,8 @@ will_not_run with unittest
 
 ----
 
+* I remove the commented lines from :ref:`will_not_run`
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -782,6 +854,8 @@ test_failure with unittest
 =================================================================================
 
 ----
+
+* I remove the commented lines from :ref:`test_failure`
 
 * I add a git_ commit message in the other terminal_
 
