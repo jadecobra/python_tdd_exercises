@@ -11,4 +11,35 @@
 
         gtag('config', 'G-0VPJ6HXTE8');
     </script>
+
+    {# 
+      Fix for sphinx-autobuild live reload when the docs are viewed 
+      from inside an Apple container (or any remote context) via 
+      host.internal / 192.168.64.1 while the server is bound to 0.0.0.0.
+
+      The autobuild middleware hard-codes ws://0.0.0.0:... which doesn't 
+      work for outbound connections. We patch WebSocket early so that
+      any WS URL containing 0.0.0.0 is rewritten to use the hostname
+      the page was actually loaded with (host.internal, localhost, etc.).
+      This restores automatic refresh in the container's VS Code browser.
+    #}
+    <script>
+    (function () {
+      try {
+        const OriginalWebSocket = window.WebSocket;
+        window.WebSocket = function (url, protocols) {
+          if (typeof url === 'string' && url.indexOf('0.0.0.0') !== -1) {
+            const fixedUrl = url.replace(/0\.0\.0\.0/g, location.hostname);
+            console.debug('[live-reload-fix] Rewrote WS URL', url, '→', fixedUrl);
+            return new OriginalWebSocket(fixedUrl, protocols);
+          }
+          return new OriginalWebSocket(url, protocols);
+        };
+        // Also patch the prototype in case it's used as constructor differently
+        window.WebSocket.prototype = OriginalWebSocket.prototype;
+      } catch (e) {
+        console.warn('[live-reload-fix] Could not patch WebSocket', e);
+      }
+    })();
+    </script>
 {% endblock %}

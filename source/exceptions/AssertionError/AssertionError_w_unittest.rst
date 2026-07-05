@@ -332,10 +332,11 @@ the test passes.
 
     AssertionError: 2 == 2
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assert_equal<test_assert_equal>` for ``(1+1, 2)``
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``(1+1, 2)``
 
   .. code-block:: python
     :lineno-start: 6
+    :emphasize-lines: 4-5
 
         # def test_assert_keyword():
         def test_assert_keyword(self):
@@ -343,7 +344,198 @@ the test passes.
             # self.assertNotEqual(1+1, 2)
             self.assertEqual(1+1, 2)
 
-  the terminal_
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '11' == '11'
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``('1'+'1', '11')``
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 8-9
+
+        # def test_assert_keyword():
+        def test_assert_keyword(self):
+            assert 1 + 1 == 2
+            # self.assertNotEqual(1+1, 2)
+            self.assertEqual(1+1, 2)
+
+            assert '1' + '1' == '11'
+            # self.assertNotEqual('1'+'1', '11')
+            self.assertEqual('1'+'1', '11')
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'I am alive' == 'I am alive'
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``('I am'+' alive', 'I am alive')``
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 12-13
+
+        # def test_assert_keyword():
+        def test_assert_keyword(self):
+            assert 1 + 1 == 2
+            # self.assertNotEqual(1+1, 2)
+            self.assertEqual(1+1, 2)
+
+            assert '1' + '1' == '11'
+            # self.assertNotEqual('1'+'1', '11')
+            self.assertEqual('1'+'1', '11')
+
+            assert 'I am' + ' alive' == 'I am alive'
+            # self.assertNotEqual('I am'+' alive', 'I am alive')
+            self.assertEqual('I am'+' alive', 'I am alive')
+
+
+    def test_assertion_error_w_none():
+
+  the test passes.
+
+* I add :ref:`variables<what is a variable?>` for ``'I am' + ' alive'`` and ``'I am alive'``
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 5-6
+
+            assert '1' + '1' == '11'
+            # self.assertNotEqual('1'+'1', '11')
+            self.assertEqual('1'+'1', '11')
+
+            reality = 'I am' + ' alive'
+            my_expectation = 'I am alive'
+            assert 'I am' + ' alive' == 'I am alive'
+            # self.assertNotEqual('I am'+' alive', 'I am alive')
+            self.assertEqual('I am'+' alive', 'I am alive')
+
+
+    def test_assertion_error_w_none():
+
+* I use the :ref:`variables<what is a variable?>` to remove repetition of ``'I am' + ' alive'`` and ``'I am alive'``
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 3-4, 6-7
+
+            reality = 'I am' + ' alive'
+            my_expectation = 'I am alive'
+            # assert 'I am' + ' alive' == 'I am alive'
+            assert reality == my_expectation
+            # self.assertNotEqual('I am'+' alive', 'I am alive')
+            # self.assertEqual('I am'+' alive', 'I am alive')
+            self.assertEqual(reality, my_expectation)
+
+
+    def test_assertion_error_w_none():
+
+  the test is still green.
+
+* I add :ref:`variables<what is a variable?>` for ``'1' + '1'`` and ``'11'``
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 7-8
+
+        # def test_assert_keyword():
+        def test_assert_keyword(self):
+            assert 1 + 1 == 2
+            # self.assertNotEqual(1+1, 2)
+            self.assertEqual(1+1, 2)
+
+            reality = '1' + '1'
+            my_expectation = '11'
+            assert '1' + '1' == '11'
+            # self.assertNotEqual('1'+'1', '11')
+            self.assertEqual('1'+'1', '11')
+
+* I use the :ref:`variables<what is a variable?>` to remove repetition of ``'1' + '1'`` and ``'11'``
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 3-4, 6-7
+
+            reality = '1' + '1'
+            my_expectation = '11'
+            # assert '1' + '1' == '11'
+            assert reality == my_expectation
+            # self.assertNotEqual('1'+'1', '11')
+            # self.assertEqual('1'+'1', '11')
+            self.assertEqual(reality, my_expectation)
+
+  still green.
+
+* I add :ref:`variables<what is a variable?>` for ``1 + 1`` and ``2``
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 3-4
+
+        # def test_assert_keyword():
+        def test_assert_keyword(self):
+            reality = 1 + 1
+            my_expectation = 2
+            assert 1 + 1 == 2
+            # self.assertNotEqual(1+1, 2)
+            self.assertEqual(1+1, 2)
+
+* I use the :ref:`variables<what is a variable?>` to remove repetition of ``1 + 1`` and ``2``
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 5-6, 8-9
+
+        # def test_assert_keyword():
+        def test_assert_keyword(self):
+            reality = 1 + 1
+            my_expectation = 2
+            # assert 1 + 1 == 2
+            assert reality == my_expectation
+            # self.assertNotEqual(1+1, 2)
+            # self.assertEqual(1+1, 2)
+            self.assertEqual(reality, my_expectation)
+
+  green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 4
+
+    class TestAssertionError(unittest.TestCase):
+
+        def test_assert_keyword(self):
+            reality = 1 + 1
+            my_expectation = 2
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            reality = '1' + '1'
+            my_expectation = '11'
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            reality = 'I am' + ' alive'
+            my_expectation = 'I am alive'
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+
+    def test_assertion_error_w_none():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    move test_assert_keyword to TestAssertionError
+
+----
 
 *********************************************************************************
 test_assertion_error_w_none with unittest
@@ -354,6 +546,10 @@ test_assertion_error_w_none with unittest
 =================================================================================
 
 ----
+
+* I go back to the terminal_ where the tests are running
+
+* I move :ref:`test_assertion_error_w_none` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError class>`
 
 ----
 
@@ -371,29 +567,13 @@ test_assertion_error_w_none with unittest
 
 ----
 
-*********************************************************************************
-test_assertion_error_w_none with unittest
-*********************************************************************************
+* I add a git_ commit message in the other terminal_
 
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
+  .. code-block:: python
+    :emphasize-lines: 1-2
 
-----
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
+    git commit -am \
+    move test_assertion_error_w_none to TestAssertionError
 
 ----
 
@@ -406,7 +586,7 @@ test_assertion_error_w_false with unittest
 =================================================================================
 
 ----
-
+* I go back to the terminal_ where the tests are running
 ----
 
 =================================================================================
@@ -420,6 +600,16 @@ test_assertion_error_w_false with unittest
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    move test_assertion_error_w_false to TestAssertionError
 
 ----
 
@@ -432,7 +622,7 @@ test_assertion_error_w_true with unittest
 =================================================================================
 
 ----
-
+* I go back to the terminal_ where the tests are running
 ----
 
 =================================================================================
@@ -446,6 +636,16 @@ test_assertion_error_w_true with unittest
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    move test_assertion_error_w_true to TestAssertionError
 
 ----
 
@@ -458,7 +658,7 @@ test_assertion_error_w_equality with unittest
 =================================================================================
 
 ----
-
+* I go back to the terminal_ where the tests are running
 ----
 
 =================================================================================
@@ -472,6 +672,16 @@ test_assertion_error_w_equality with unittest
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    move test_assertion_error_w_equality to TestAssertionError
 
 ----
 
@@ -484,7 +694,7 @@ test_assertion_error_w_is_vs_equal with unittest
 =================================================================================
 
 ----
-
+* I go back to the terminal_ where the tests are running
 ----
 
 =================================================================================
@@ -498,6 +708,16 @@ test_assertion_error_w_is_vs_equal with unittest
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    move test_assertion_error_w_is_vs_equal to TestAssertionError
 
 ----
 
@@ -510,7 +730,7 @@ will_not_run with unittest
 =================================================================================
 
 ----
-
+* I go back to the terminal_ where the tests are running
 ----
 
 =================================================================================
@@ -524,6 +744,16 @@ will_not_run with unittest
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    move will_not_run to TestAssertionError
 
 ----
 
@@ -536,7 +766,7 @@ test_failure with unittest
 =================================================================================
 
 ----
-
+* I go back to the terminal_ where the tests are running
 ----
 
 =================================================================================
@@ -552,6 +782,17 @@ test_failure with unittest
 =================================================================================
 
 ----
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    move test_failure to TestAssertionError
+
+----
+
 
 *********************************************************************************
 use class attributes to remove repetition
