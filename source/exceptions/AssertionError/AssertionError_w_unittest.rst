@@ -306,7 +306,7 @@ the test passes.
 
 ----
 
-* I call the :ref:`assertNotEqual method<test_assert_not_equal>` for the three :ref:`assertions<what is an assertion?>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the three :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -331,6 +331,12 @@ the test passes.
   .. code-block:: python
 
     AssertionError: 2 == 2
+
+  compare this with the error message for ``assert 1 + 1 == 11``
+
+  .. code-block:: python
+
+    E   assert (1 + 1) == 11
 
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``(1+1, 2)``
 
@@ -396,6 +402,8 @@ the test passes.
     def test_assertion_error_w_none():
 
   the test passes.
+
+----
 
 * I add :ref:`variables<what is a variable?>` for ``'I am' + ' alive'`` and ``'I am alive'``
 
@@ -553,14 +561,13 @@ test_assertion_error_w_none with unittest
 
   .. code-block:: python
     :lineno-start: 17
-    :emphasize-lines: 7-26
+    :emphasize-lines: 6-25
 
 
             reality = 'I am' + ' alive'
             my_expectation = 'I am alive'
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
-
 
         def test_assertion_error_w_none():
             assert None is None
@@ -609,7 +616,7 @@ test_assertion_error_w_none with unittest
 I add ``self`` to the parentheses of :ref:`test_assertion_error_w_none`
 
 .. code-block:: python
-  :lineno-start: 23
+  :lineno-start: 22
   :emphasize-lines: 1-2
 
       # def test_assertion_error_w_none():
@@ -625,9 +632,516 @@ the test passes.
 
 ----
 
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertIs method<test_assert_is>` for each :ref:`assertion<what is an assertion?>` in :ref:`test_assertion_error_w_none`
 
+  .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 4, 7, 10, 13, 16, 19, 22, 25, 28, 31
+
+        # def test_assertion_error_w_none():
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNot(None, None)
+
+            assert False is not None
+            self.assertIs(False, None)
+
+            assert True is not None
+            self.assertIs(True, None)
+
+            assert 0 is not None
+            self.assertIs(0, None)
+
+            assert 0.0 is not None
+            self.assertIs(0.0, None)
+
+            assert '' is not None
+            self.assertIs('', None)
+
+            assert () is not None
+            self.assertIs((), None)
+
+            assert [] is not None
+            self.assertIs([], None)
+
+            assert set() is not None
+            self.assertIs(set(), None)
+
+            assert {} is not None
+            self.assertIs({}, None)
+
+
+    def test_assertion_error_w_false():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: unexpectedly identical: None
+
+  compare this with the error message for ``assert None is not None``
+
+  .. code-block:: python
+
+    E       assert None is not None
+
+* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 4-5
+
+        # def test_assertion_error_w_none():
+        def test_assertion_error_w_none(self):
+            assert None is None
+            # self.assertIsNot(None, None)
+            self.assertIs(None, None)
+
+            assert False is not None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False is not None
+
+  compare this with the error message for ``assert False is None``
+
+  .. code-block:: python
+
+    E    assert False is None
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 2-3
+
+            assert False is not None
+            # self.assertIs(False, None)
+            self.assertIsNot(False, None)
+
+            assert True is not None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not None
+
+  compare this with the error message for ``assert True is None``
+
+  .. code-block:: python
+
+    E    assert True is None
+
+* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 2-3
+
+            assert True is not None
+            # self.assertIs(True, None)
+            self.assertIsNot(True, None)
+
+            assert 0 is not None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 0 is not None
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 36
+    :emphasize-lines: 2-3
+
+            assert 0 is not None
+            # self.assertIs(0, None)
+            self.assertIsNot(0, None)
+
+            assert 0.0 is not None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 0.0 is not None
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 40
+    :emphasize-lines: 2-3
+
+            assert 0.0 is not None
+            # self.assertIs(0.0, None)
+            self.assertIsNot(0.0, None)
+
+            assert '' is not None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '' is not None
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 2-3
+
+            assert '' is not None
+            # self.assertIs('', None)
+            self.assertIsNot('', None)
+
+            assert () is not None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: () is not None
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 48
+    :emphasize-lines: 2-3
+
+            assert () is not None
+            # self.assertIs((), None)
+            self.assertIsNot((), None)
+
+            assert [] is not None
+
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: [] is not None
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 2-3
+
+            assert [] is not None
+            # self.assertIs([], None)
+            self.assertIsNot([], None)
+
+            assert set() is not None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: set()  is not None
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 56
+    :emphasize-lines: 2-3
+
+            assert set() is not None
+            # self.assertIs(set(), None)
+            self.assertIsNot(set(), None)
+
+            assert {} is not None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: {} is not None
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 60
+    :emphasize-lines: 2-3
+
+            assert {} is not None
+            # self.assertIs({}, None)
+            self.assertIsNot({}, None)
+
+
+    def test_assertion_error_w_false():
+
+  the test passes.
+
+----
+
+* I add a :ref:`variable<what is a variable?>` for ``{}``
+
+  .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 3
+
+            self.assertIsNot(set(), None)
+
+            a_dictionary = {}
+            assert {} is not None
+            # self.assertIs({}, None)
+            self.assertIsNot({}, None)
+
+
+    def test_assertion_error_w_false():
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``{}``
+
+  .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 4-5, 7-8
+
+            self.assertIsNot(set(), None)
+
+            a_dictionary = {}
+            # assert {} is not None
+            assert a_dictionary is not None
+            # self.assertIs({}, None)
+            # self.assertIsNot({}, None)
+            self.assertIsNot(a_dictionary, None)
+
+
+    def test_assertion_error_w_false():
+
+  the test is still green.
+
+* I add a :ref:`variable<what is a variable?>` for ``set()``
+
+  .. code-block:: python
+    :lineno-start: 54
+    :emphasize-lines: 3
+
+            self.assertIsNot([], None)
+
+            a_set = set()
+            assert set() is not None
+            # self.assertIs(set(), None)
+            self.assertIsNot(set(), None)
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``set()``
+
+  .. code-block:: python
+    :lineno-start: 54
+    :emphasize-lines: 4-5, 7-8
+
+            self.assertIsNot([], None)
+
+            a_set = set()
+            # assert set() is not None
+            assert a_set is not None
+            # self.assertIs(set(), None)
+            # self.assertIsNot(set(), None)
+            self.assertIsNot(a_set, None)
+
+  still green.
+
+* I add a :ref:`variable<what is a variable?>` for ``[]``
+
+  .. code-block:: python
+    :lineno-start: 50
+    :emphasize-lines: 3
+
+            self.assertIsNot((), None)
+
+            a_list = []
+            assert [] is not None
+            # self.assertIs([], None)
+            self.assertIsNot([], None)
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``[]``
+
+  .. code-block:: python
+    :lineno-start: 50
+    :emphasize-lines: 4-5, 7-8
+
+            self.assertIsNot((), None)
+
+            a_list = []
+            # assert [] is not None
+            assert a_list is not None
+            # self.assertIs([], None)
+            # self.assertIsNot([], None)
+            self.assertIsNot(a_list, None)
+
+  green.
+
+* I add a :ref:`variable<what is a variable?>` for ``()``
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 3
+
+            self.assertIsNot('', None)
+
+            a_tuple = ()
+            assert () is not None
+            # self.assertIs((), None)
+            self.assertIsNot((), None)
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``()``
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 4-5, 7-8
+
+            self.assertIsNot('', None)
+
+            a_tuple = ()
+            # assert () is not None
+            assert a_tuple is not None
+            # self.assertIs((), None)
+            # self.assertIsNot((), None)
+            self.assertIsNot(a_tuple, None)
+
+  still green.
+
+* I add a :ref:`variable<what is a variable?>` for ``''``
+
+  .. code-block:: python
+    :lineno-start: 42
+    :emphasize-lines: 3
+
+            self.assertIsNot(0.0, None)
+
+            a_string = ''
+            assert '' is not None
+            # self.assertIs('', None)
+            self.assertIsNot('', None)
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``''``
+
+  .. code-block:: python
+    :lineno-start: 42
+    :emphasize-lines: 4-5, 7-8
+
+            self.assertIsNot(0.0, None)
+
+            a_string = ''
+            # assert '' is not None
+            assert a_string is not None
+            # self.assertIs('', None)
+            # self.assertIsNot('', None)
+            self.assertIsNot(a_string, None)
+
+  the test is still green.
+
+* I add a :ref:`variable<what is a variable?>` for ``0.0``
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 3
+
+            self.assertIsNot(0, None)
+
+            a_float = 0.0
+            assert 0.0 is not None
+            # self.assertIs(0.0, None)
+            self.assertIsNot(0.0, None)
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0.0``
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 4-5, 7-8
+
+            self.assertIsNot(0, None)
+
+            a_float = 0.0
+            # assert 0.0 is not None
+            assert a_float is not None
+            # self.assertIs(0.0, None)
+            # self.assertIsNot(0.0, None)
+            self.assertIsNot(a_float, None)
+
+  still green.
+
+* I add a :ref:`variable<what is a variable?>` for ``0``
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 3
+
+            self.assertIsNot(True, None)
+
+            an_integer = 0
+            assert 0 is not None
+            # self.assertIs(0, None)
+            self.assertIsNot(0, None)
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 4-5, 7-8
+
+            self.assertIsNot(True, None)
+
+            an_integer = 0
+            # assert 0 is not None
+            assert an_integer is not None
+            # self.assertIs(0, None)
+            # self.assertIsNot(0, None)
+            self.assertIsNot(an_integer, None)
+
+  green.
 
 * I remove the commented lines from :ref:`test_assertion_error_w_none`
+
+  .. code-block:: python
+    :lineno-start: 20
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIs(None, None)
+
+            assert False is not None
+            self.assertIsNot(False, None)
+
+            assert True is not None
+            self.assertIsNot(True, None)
+
+            an_integer = 0
+            assert an_integer is not None
+            self.assertIsNot(an_integer, None)
+
+            a_float = 0.0
+            assert a_float is not None
+            self.assertIsNot(a_float, None)
+
+            a_string = ''
+            assert a_string is not None
+            self.assertIsNot(a_string, None)
+
+            a_tuple = ()
+            assert a_tuple is not None
+            self.assertIsNot(a_tuple, None)
+
+            a_list = []
+            assert a_list is not None
+            self.assertIsNot(a_list, None)
+
+            a_set = set()
+            assert a_set is not None
+            self.assertIsNot(a_set, None)
+
+            a_dictionary = {}
+            assert a_dictionary is not None
+            self.assertIsNot(a_dictionary, None)
+
+
+    def test_assertion_error_w_false():
 
 * I add a git_ commit message in the other terminal_
 
@@ -648,7 +1162,10 @@ test_assertion_error_w_false with unittest
 =================================================================================
 
 ----
+
 * I go back to the terminal_ where the tests are running
+* 
+
 ----
 
 =================================================================================
@@ -682,7 +1199,7 @@ test_assertion_error_w_true with unittest
 *********************************************************************************
 
 =================================================================================
-:red:`RED`: make it fail
+:red:`RED`: make it fail7
 =================================================================================
 
 ----
@@ -817,7 +1334,7 @@ will_not_run with unittest
 
 ----
 
-* I remove the commented lines from :ref:`will_not_run`
+* I remove the commented lines from :ref:`will not run<pytest only calls the function if the name starts with test>`
 
 * I add a git_ commit message in the other terminal_
 
@@ -869,7 +1386,7 @@ test_failure with unittest
 
 
 *********************************************************************************
-use class attributes to remove repetition
+remove repetition with class attributes
 *********************************************************************************
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_none`
