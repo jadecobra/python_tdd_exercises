@@ -1567,7 +1567,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``()``
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 84
     :emphasize-lines: 3
 
             self.assertIsNot('', False)
@@ -1580,7 +1580,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``()``
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 84
     :emphasize-lines: 4-5, 7-8
 
             self.assertIsNot('', False)
@@ -1597,7 +1597,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``''``
 
   .. code-block:: python
-    :lineno-start: 42
+    :lineno-start: 80
     :emphasize-lines: 3
 
             self.assertIsNot(0.0, False)
@@ -1610,7 +1610,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``''``
 
   .. code-block:: python
-    :lineno-start: 42
+    :lineno-start: 80
     :emphasize-lines: 4-5, 7-8
 
             self.assertIsNot(0.0, False)
@@ -1627,7 +1627,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``0.0``
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 76
     :emphasize-lines: 3
 
             self.assertIsNot(0, False)
@@ -1640,7 +1640,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``0.0``
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 76
     :emphasize-lines: 4-5, 7-8
 
             self.assertIsNot(0, False)
@@ -1657,7 +1657,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``0``
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 72
     :emphasize-lines: 3
 
             self.assertIsNot(True, False)
@@ -1670,7 +1670,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 72
     :emphasize-lines: 4-5, 7-8
 
             self.assertIsNot(True, False)
@@ -1684,8 +1684,51 @@ the test passes.
 
   green.
 
-
 * I remove the commented lines from :ref:`test_assertion_error_w_false`
+
+  .. code-block:: python
+    :lineno-start: 60
+
+        def test_assertion_error_w_false(self):
+            assert None is not False
+            self.assertIsNot(None, False)
+
+            assert False is False
+            self.assertIs(False, False)
+
+            assert True is not False
+            self.assertIsNot(True, False)
+
+            an_integer = 0
+            assert an_integer is not False
+            self.assertIsNot(an_integer, False)
+
+            a_float = 0.0
+            assert a_float is not False
+            self.assertIsNot(a_float, False)
+
+            a_string = ''
+            assert a_string is not False
+            self.assertIsNot(a_string, False)
+
+            a_tuple = ()
+            assert a_tuple is not False
+            self.assertIsNot(a_tuple, False)
+
+            a_list = []
+            assert a_list is not False
+            self.assertIsNot(a_list, False)
+
+            a_set = set()
+            assert a_set is not False
+            self.assertIsNot(a_set, False)
+
+            a_dictionary = {}
+            assert a_dictionary is not False
+            self.assertIsNot(a_dictionary, False)
+
+
+    def test_assertion_error_w_true():
 
 * I add a git_ commit message in the other terminal_
 
