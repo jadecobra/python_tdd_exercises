@@ -4369,7 +4369,7 @@ pytest only calls the function if the name starts with test
 
     # NOTES
 
-  the test passes.
+  the test passes. I leave the commented line as a reminder of what will cause the failure.
 
 * I add a git_ commit message
 

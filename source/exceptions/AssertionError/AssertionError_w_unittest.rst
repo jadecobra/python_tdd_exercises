@@ -2929,7 +2929,36 @@ test_failure with unittest
 =================================================================================
 
 ----
+
 * I go back to the terminal_ where the tests are running
+
+* I move :ref:`test_failure<pytest only calls the function if the name starts with test>` to :ref:`TestAssertionError<add TestAssertionError class>`
+
+  .. code-block:: python
+    :lineno-start: 162
+    :emphasize-lines: 5-7
+
+        def will_not_run():
+            assert False == True
+            self.assertEqual(False, True)
+
+        def test_failure():
+            # assert False == True
+            assert False == False
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestAssertionError.test_failure()
+        takes 0 positional arguments but 1 was given
+
+  because ...
+
 ----
 
 =================================================================================
@@ -2937,6 +2966,22 @@ test_failure with unittest
 =================================================================================
 
 ----
+
+I add ``self`` to the parentheses of :ref:`test_failure<pytest only calls the function if the name starts with test>` to :ref:`TestAssertionError<add TestAssertionError class>`
+
+.. code-block:: python
+  :lineno-start: 166
+  :emphasize-lines: 1-2
+
+      # def test_failure():
+      def test_failure(self):
+          # assert False == True
+          assert False == False
+
+
+  # NOTES
+
+the test is green again.
 
 ----
 
@@ -2946,10 +2991,60 @@ test_failure with unittest
 
 ----
 
-* I remove the commented lines from :ref:`test_failure`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 166
+    :emphasize-lines: 5
+
+        # def test_failure():
+        def test_failure(self):
+            # assert False == True
+            assert False == False
+            self.assertNotEqual(False, False)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False == False
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>`
+
+  .. code-block:: python
+    :lineno-start: 166
+    :emphasize-lines: 5-6
+
+        # def test_failure():
+        def test_failure(self):
+            # assert False == True
+            assert False == False
+            # self.assertNotEqual(False, False)
+            self.assertEqual(False, False)
+
+
+    # NOTES
+
+  the test passes.
+
+* I remove the commented lines from :ref:`test_failure<pytest only calls the function if the name starts with test>`
+
+  .. code-block:: python
+    :lineno-start: 162
+
+        def will_not_run():
+            assert False == True
+            self.assertEqual(False, True)
+
+        def test_failure(self):
+            assert False == False
+            self.assertEqual(False, False)
+
+
+    # NOTES
 
 * I add a git_ commit message in the other terminal_
 
@@ -2966,10 +3061,24 @@ test_failure with unittest
 remove repetition with class attributes
 *********************************************************************************
 
+Three of the tests have the exact same :ref:`variables<what is a variable?>`. I can make them :ref:`class attributes<what is a class attribute?>` to remove repetition of making the same :ref:`variables<what is a variable?>` in the tests.
+
+* I add a :ref:`class attribute<what is a class attribute?>` for ``an_integer = 0`` to :ref:`TestAssertionError<add TestAssertionError class>`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 3
+
+    class TestAssertionError(unittest.TestCase):
+
+        an_integer = 0
+
+        def test_assert_keyword(self):
+
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 24
     :emphasize-lines: 11-15
 
         def test_assertion_error_w_none(self):
@@ -2989,38 +3098,16 @@ remove repetition with class attributes
             self.assertIsNot(self.an_integer, None)
 
             a_float = 0.0
-            assert a_float is not None
-            self.assertIsNot(a_float, None)
-
-            a_string = 'a string'
-            assert a_string is not None
-            self.assertIsNot(a_string, None)
-
-            a_tuple = (0, 1, 2, 'n')
-            assert a_tuple is not None
-            self.assertIsNot(a_tuple, None)
-
-            a_list = [0, 1, 2, 'n']
-            assert a_list is not None
-            self.assertIsNot(a_list, None)
-
-            a_set = {0, 1, 2, 'n'}
-            assert a_set is not None
-            self.assertIsNot(a_set, None)
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not None
-            self.assertIsNot(a_dictionary, None)
-
-        def test_assertion_error_w_false(self):
 
   the test is still green.
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 11-15
+    :lineno-start: 62
+    :emphasize-lines: 13-17
+
+            self.assertIsNot(a_dictionary, None)
 
         def test_assertion_error_w_false(self):
             assert None is not False
@@ -3039,38 +3126,16 @@ remove repetition with class attributes
             self.assertIsNot(self.an_integer, False)
 
             a_float = 0.0
-            assert a_float is not False
-            self.assertIsNot(a_float, False)
-
-            a_string = 'a string'
-            assert a_string is not False
-            self.assertIsNot(a_string, False)
-
-            a_tuple = (0, 1, 2, 'n')
-            assert a_tuple is not False
-            self.assertIsNot(a_tuple, False)
-
-            a_list = [0, 1, 2, 'n']
-            assert a_list is not False
-            self.assertIsNot(a_list, False)
-
-            a_set = {0, 1, 2, 'n'}
-            assert a_set is not False
-            self.assertIsNot(a_set, False)
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not False
-            self.assertIsNot(a_dictionary, False)
-
-        def test_assertion_error_w_true(self):
 
   still green.
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 105
-    :emphasize-lines: 11-15
+    :lineno-start: 102
+    :emphasize-lines: 13-17
+
+            self.assertIsNot(a_dictionary, False)
 
         def test_assertion_error_w_true(self):
             assert None is not True
@@ -3089,67 +3154,30 @@ remove repetition with class attributes
             self.assertIsNot(self.an_integer, True)
 
             a_float = 0.0
-            assert a_float is not True
-            self.assertIsNot(a_float, True)
-
-            a_string = 'a string'
-            assert a_string is not True
-            self.assertIsNot(a_string, True)
-
-            a_tuple = (0, 1, 2, 'n')
-            assert a_tuple is not True
-            self.assertIsNot(a_tuple, True)
-
-            a_list = [0, 1, 2, 'n']
-            assert a_list is not True
-            self.assertIsNot(a_list, True)
-
-            a_set = {0, 1, 2, 'n'}
-            assert a_set is not True
-            self.assertIsNot(a_set, True)
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not True
-            self.assertIsNot(a_dictionary, True)
-
-        def test_assertion_error_w_equality(self):
 
   green.
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>`
+* I add a :ref:`class attribute<what is a class attribute?>` for ``a_float = 0.0``
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 3
+    :lineno-start: 4
+    :emphasize-lines: 4
 
-        def setUp(self):
-            self.an_integer = 0
-            self.a_float = 0.0
+    class TestAssertionError(unittest.TestCase):
+
+        an_integer = 0
+        a_float = 0.0
 
         def test_assert_keyword(self):
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 17-21
+    :lineno-start: 39
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIs(None, None)
-
-            assert False is not None
-            self.assertIsNot(False, None)
-
-            assert True is not None
-            self.assertIsNot(True, None)
-
-            # an_integer = 0
-            # assert an_integer is not None
-            # self.assertIsNot(an_integer, None)
-            assert self.an_integer is not None
             self.assertIsNot(self.an_integer, None)
 
             # a_float = 0.0
@@ -3158,50 +3186,16 @@ remove repetition with class attributes
             assert self.a_float is not None
             self.assertIsNot(self.a_float, None)
 
-            a_string = 'a string'
-            assert a_string is not None
-            self.assertIsNot(a_string, None)
-
-            a_tuple = (0, 1, 2, 'n')
-            assert a_tuple is not None
-            self.assertIsNot(a_tuple, None)
-
-            a_list = [0, 1, 2, 'n']
-            assert a_list is not None
-            self.assertIsNot(a_list, None)
-
-            a_set = {0, 1, 2, 'n'}
-            assert a_set is not None
-            self.assertIsNot(a_set, None)
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not None
-            self.assertIsNot(a_dictionary, None)
-
-        def test_assertion_error_w_false(self):
+            a_string = ''
 
   still green.
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 17-21
+    :lineno-start: 81
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_false(self):
-            assert None is not False
-            self.assertIsNot(None, False)
-
-            assert False is False
-            self.assertIs(False, False)
-
-            assert True is not False
-            self.assertIsNot(True, False)
-
-            # an_integer = 0
-            # assert an_integer is not False
-            # self.assertIsNot(an_integer, False)
-            assert self.an_integer is not False
             self.assertIsNot(self.an_integer, False)
 
             # a_float = 0.0
@@ -3210,50 +3204,16 @@ remove repetition with class attributes
             assert self.a_float is not False
             self.assertIsNot(self.a_float, False)
 
-            a_string = 'a string'
-            assert a_string is not False
-            self.assertIsNot(a_string, False)
-
-            a_tuple = (0, 1, 2, 'n')
-            assert a_tuple is not False
-            self.assertIsNot(a_tuple, False)
-
-            a_list = [0, 1, 2, 'n']
-            assert a_list is not False
-            self.assertIsNot(a_list, False)
-
-            a_set = {0, 1, 2, 'n'}
-            assert a_set is not False
-            self.assertIsNot(a_set, False)
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not False
-            self.assertIsNot(a_dictionary, False)
-
-        def test_assertion_error_w_true(self):
+            a_string = ''
 
   the test is still green.
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 110
-    :emphasize-lines: 17-21
+    :lineno-start: 123
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_true(self):
-            assert None is not True
-            self.assertIsNot(None, True)
-
-            assert False is not True
-            self.assertIsNot(False, True)
-
-            assert True is True
-            self.assertIs(True, True)
-
-            # an_integer = 0
-            # assert an_integer is not True
-            # self.assertIsNot(an_integer, True)
-            assert self.an_integer is not True
             self.assertIsNot(self.an_integer, True)
 
             # a_float = 0.0
@@ -3262,852 +3222,325 @@ remove repetition with class attributes
             assert self.a_float is not True
             self.assertIsNot(self.a_float, True)
 
-            a_string = 'a string'
-            assert a_string is not True
-            self.assertIsNot(a_string, True)
-
-            a_tuple = (0, 1, 2, 'n')
-            assert a_tuple is not True
-            self.assertIsNot(a_tuple, True)
-
-            a_list = [0, 1, 2, 'n']
-            assert a_list is not True
-            self.assertIsNot(a_list, True)
-
-            a_set = {0, 1, 2, 'n'}
-            assert a_set is not True
-            self.assertIsNot(a_set, True)
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not True
-            self.assertIsNot(a_dictionary, True)
-
-        def test_assertion_error_w_equality(self):
+            a_string = ''
 
   still green.
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>`
+* I add a :ref:`class attribute<what is a class attribute?>` for ``a_string = ''``
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 4
+    :lineno-start: 4
+    :emphasize-lines: 5
 
-        def setUp(self):
-            self.an_integer = 0
-            self.a_float = 0.0
-            self.a_string = 'a string'
+    class TestAssertionError(unittest.TestCase):
+
+        an_integer = 0
+        a_float = 0.0
+        a_string = ''
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = 'a string'`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 23-27
+    :lineno-start: 46
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIs(None, None)
-
-            assert False is not None
-            self.assertIsNot(False, None)
-
-            assert True is not None
-            self.assertIsNot(True, None)
-
-            # an_integer = 0
-            # assert an_integer is not None
-            # self.assertIsNot(an_integer, None)
-            assert self.an_integer is not None
-            self.assertIsNot(self.an_integer, None)
-
-            # a_float = 0.0
-            # assert a_float is not None
-            # self.assertIsNot(a_float, None)
-            assert self.a_float is not None
             self.assertIsNot(self.a_float, None)
 
-            # a_string = 'a string'
+            # a_string = ''
             # assert a_string is not None
             # self.assertIsNot(a_string, None)
             assert self.a_string is not None
             self.assertIsNot(self.a_string, None)
 
-            a_tuple = (0, 1, 2, 'n')
-            assert a_tuple is not None
-            self.assertIsNot(a_tuple, None)
-
-            a_list = [0, 1, 2, 'n']
-            assert a_list is not None
-            self.assertIsNot(a_list, None)
-
-            a_set = {0, 1, 2, 'n'}
-            assert a_set is not None
-            self.assertIsNot(a_set, None)
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not None
-            self.assertIsNot(a_dictionary, None)
-
-        def test_assertion_error_w_false(self):
+            a_tuple = ()
 
   green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = 'a string'`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 71
-    :emphasize-lines: 23-27
+    :lineno-start: 90
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_false(self):
-            assert None is not False
-            self.assertIsNot(None, False)
-
-            assert False is False
-            self.assertIs(False, False)
-
-            assert True is not False
-            self.assertIsNot(True, False)
-
-            # an_integer = 0
-            # assert an_integer is not False
-            # self.assertIsNot(an_integer, False)
-            assert self.an_integer is not False
-            self.assertIsNot(self.an_integer, False)
-
-            # a_float = 0.0
-            # assert a_float is not False
-            # self.assertIsNot(a_float, False)
-            assert self.a_float is not False
             self.assertIsNot(self.a_float, False)
 
-            # a_string = 'a string'
+            # a_string = ''
             # assert a_string is not False
             # self.assertIsNot(a_string, False)
             assert self.a_string is not False
             self.assertIsNot(self.a_string, False)
 
-            a_tuple = (0, 1, 2, 'n')
-            assert a_tuple is not False
-            self.assertIsNot(a_tuple, False)
-
-            a_list = [0, 1, 2, 'n']
-            assert a_list is not False
-            self.assertIsNot(a_list, False)
-
-            a_set = {0, 1, 2, 'n'}
-            assert a_set is not False
-            self.assertIsNot(a_set, False)
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not False
-            self.assertIsNot(a_dictionary, False)
-
-        def test_assertion_error_w_true(self):
+            a_tuple = ()
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = 'a string'`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 115
-    :emphasize-lines: 23-27
+    :lineno-start: 134
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_true(self):
-            assert None is not True
-            self.assertIsNot(None, True)
-
-            assert False is not True
-            self.assertIsNot(False, True)
-
-            assert True is True
-            self.assertIs(True, True)
-
-            # an_integer = 0
-            # assert an_integer is not True
-            # self.assertIsNot(an_integer, True)
-            assert self.an_integer is not True
-            self.assertIsNot(self.an_integer, True)
-
-            # a_float = 0.0
-            # assert a_float is not True
-            # self.assertIsNot(a_float, True)
-            assert self.a_float is not True
             self.assertIsNot(self.a_float, True)
 
-            # a_string = 'a string'
+            # a_string = ''
             # assert a_string is not True
             # self.assertIsNot(a_string, True)
             assert self.a_string is not True
             self.assertIsNot(self.a_string, True)
 
-            a_tuple = (0, 1, 2, 'n')
-            assert a_tuple is not True
-            self.assertIsNot(a_tuple, True)
-
-            a_list = [0, 1, 2, 'n']
-            assert a_list is not True
-            self.assertIsNot(a_list, True)
-
-            a_set = {0, 1, 2, 'n'}
-            assert a_set is not True
-            self.assertIsNot(a_set, True)
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not True
-            self.assertIsNot(a_dictionary, True)
-
-        def test_assertion_error_w_equality(self):
+            a_tuple = ()
 
   the test is still green.
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>`
+* I add a :ref:`class attribute<what is a class attribute?>` for ``a_tuple = ()``
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 5
+    :lineno-start: 4
+    :emphasize-lines: 6
 
-        def setUp(self):
-            self.an_integer = 0
-            self.a_float = 0.0
-            self.a_string = 'a string'
-            self.a_tuple = (0, 1, 2, 'n')
+    class TestAssertionError(unittest.TestCase):
+
+        an_integer = 0
+        a_float = 0.0
+        a_string = ''
+        a_tuple = ()
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = (0, 1, 2, 'n')`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 29-33
+    :lineno-start: 53
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIs(None, None)
-
-            assert False is not None
-            self.assertIsNot(False, None)
-
-            assert True is not None
-            self.assertIsNot(True, None)
-
-            # an_integer = 0
-            # assert an_integer is not None
-            # self.assertIsNot(an_integer, None)
-            assert self.an_integer is not None
-            self.assertIsNot(self.an_integer, None)
-
-            # a_float = 0.0
-            # assert a_float is not None
-            # self.assertIsNot(a_float, None)
-            assert self.a_float is not None
-            self.assertIsNot(self.a_float, None)
-
-            # a_string = 'a string'
-            # assert a_string is not None
-            # self.assertIsNot(a_string, None)
-            assert self.a_string is not None
             self.assertIsNot(self.a_string, None)
 
-            # a_tuple = (0, 1, 2, 'n')
+            # a_tuple = ()
             # assert a_tuple is not None
             # self.assertIsNot(a_tuple, None)
             assert self.a_tuple is not None
             self.assertIsNot(self.a_tuple, None)
 
-            a_list = [0, 1, 2, 'n']
-            assert a_list is not None
-            self.assertIsNot(a_list, None)
-
-            a_set = {0, 1, 2, 'n'}
-            assert a_set is not None
-            self.assertIsNot(a_set, None)
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not None
-            self.assertIsNot(a_dictionary, None)
-
-        def test_assertion_error_w_false(self):
+            a_list = []
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = (0, 1, 2, 'n')`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 74
-    :emphasize-lines: 29-33
+    :lineno-start: 99
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_false(self):
-            assert None is not False
-            self.assertIsNot(None, False)
-
-            assert False is False
-            self.assertIs(False, False)
-
-            assert True is not False
-            self.assertIsNot(True, False)
-
-            # an_integer = 0
-            # assert an_integer is not False
-            # self.assertIsNot(an_integer, False)
-            assert self.an_integer is not False
-            self.assertIsNot(self.an_integer, False)
-
-            # a_float = 0.0
-            # assert a_float is not False
-            # self.assertIsNot(a_float, False)
-            assert self.a_float is not False
-            self.assertIsNot(self.a_float, False)
-
-            # a_string = 'a string'
-            # assert a_string is not False
-            # self.assertIsNot(a_string, False)
-            assert self.a_string is not False
             self.assertIsNot(self.a_string, False)
 
-            # a_tuple = (0, 1, 2, 'n')
+            # a_tuple = ()
             # assert a_tuple is not False
             # self.assertIsNot(a_tuple, False)
             assert self.a_tuple is not False
             self.assertIsNot(self.a_tuple, False)
 
-            a_list = [0, 1, 2, 'n']
-            assert a_list is not False
-            self.assertIsNot(a_list, False)
-
-            a_set = {0, 1, 2, 'n'}
-            assert a_set is not False
-            self.assertIsNot(a_set, False)
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not False
-            self.assertIsNot(a_dictionary, False)
-
-        def test_assertion_error_w_true(self):
+            a_list = []
 
   green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = (0, 1, 2, 'n')`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 120
-    :emphasize-lines: 29-33
+    :lineno-start: 145
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_true(self):
-            assert None is not True
-            self.assertIsNot(None, True)
-
-            assert False is not True
-            self.assertIsNot(False, True)
-
-            assert True is True
-            self.assertIs(True, True)
-
-            # an_integer = 0
-            # assert an_integer is not True
-            # self.assertIsNot(an_integer, True)
-            assert self.an_integer is not True
-            self.assertIsNot(self.an_integer, True)
-
-            # a_float = 0.0
-            # assert a_float is not True
-            # self.assertIsNot(a_float, True)
-            assert self.a_float is not True
-            self.assertIsNot(self.a_float, True)
-
-            # a_string = 'a string'
-            # assert a_string is not True
-            # self.assertIsNot(a_string, True)
-            assert self.a_string is not True
             self.assertIsNot(self.a_string, True)
 
-            # a_tuple = (0, 1, 2, 'n')
+            # a_tuple = ()
             # assert a_tuple is not True
             # self.assertIsNot(a_tuple, True)
             assert self.a_tuple is not True
             self.assertIsNot(self.a_tuple, True)
 
-            a_list = [0, 1, 2, 'n']
-            assert a_list is not True
-            self.assertIsNot(a_list, True)
-
-            a_set = {0, 1, 2, 'n'}
-            assert a_set is not True
-            self.assertIsNot(a_set, True)
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not True
-            self.assertIsNot(a_dictionary, True)
-
-        def test_assertion_error_w_equality(self):
+            a_list = []
 
   still green.
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>`
+* I add a :ref:`class attribute<what is a class attribute?>` for ``a_list = []``
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 6
+    :lineno-start: 4
+    :emphasize-lines: 7
 
-        def setUp(self):
-            self.an_integer = 0
-            self.a_float = 0.0
-            self.a_string = 'a string'
-            self.a_tuple = (0, 1, 2, 'n')
-            self.a_list = [0, 1, 2, 'n']
+    class TestAssertionError(unittest.TestCase):
+
+        an_integer = 0
+        a_float = 0.0
+        a_string = ''
+        a_tuple = ()
+        a_list = []
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = [0, 1, 2, 'n']`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 35-39
+    :lineno-start: 60
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIs(None, None)
-
-            assert False is not None
-            self.assertIsNot(False, None)
-
-            assert True is not None
-            self.assertIsNot(True, None)
-
-            # an_integer = 0
-            # assert an_integer is not None
-            # self.assertIsNot(an_integer, None)
-            assert self.an_integer is not None
-            self.assertIsNot(self.an_integer, None)
-
-            # a_float = 0.0
-            # assert a_float is not None
-            # self.assertIsNot(a_float, None)
-            assert self.a_float is not None
-            self.assertIsNot(self.a_float, None)
-
-            # a_string = 'a string'
-            # assert a_string is not None
-            # self.assertIsNot(a_string, None)
-            assert self.a_string is not None
-            self.assertIsNot(self.a_string, None)
-
-            # a_tuple = (0, 1, 2, 'n')
-            # assert a_tuple is not None
-            # self.assertIsNot(a_tuple, None)
-            assert self.a_tuple is not None
             self.assertIsNot(self.a_tuple, None)
 
-            # a_list = [0, 1, 2, 'n']
+            # a_list = []
             # assert a_list is not None
             # self.assertIsNot(a_list, None)
             assert self.a_list is not None
             self.assertIsNot(self.a_list, None)
 
-            a_set = {0, 1, 2, 'n'}
-            assert a_set is not None
-            self.assertIsNot(a_set, None)
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not None
-            self.assertIsNot(a_dictionary, None)
-
-        def test_assertion_error_w_false(self):
+            a_set = set()
 
   the test is still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = [0, 1, 2, 'n']`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 77
-    :emphasize-lines: 35-39
+    :lineno-start: 108
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_false(self):
-            assert None is not False
-            self.assertIsNot(None, False)
-
-            assert False is False
-            self.assertIs(False, False)
-
-            assert True is not False
-            self.assertIsNot(True, False)
-
-            # an_integer = 0
-            # assert an_integer is not False
-            # self.assertIsNot(an_integer, False)
-            assert self.an_integer is not False
-            self.assertIsNot(self.an_integer, False)
-
-            # a_float = 0.0
-            # assert a_float is not False
-            # self.assertIsNot(a_float, False)
-            assert self.a_float is not False
-            self.assertIsNot(self.a_float, False)
-
-            # a_string = 'a string'
-            # assert a_string is not False
-            # self.assertIsNot(a_string, False)
-            assert self.a_string is not False
-            self.assertIsNot(self.a_string, False)
-
-            # a_tuple = (0, 1, 2, 'n')
-            # assert a_tuple is not False
-            # self.assertIsNot(a_tuple, False)
-            assert self.a_tuple is not False
             self.assertIsNot(self.a_tuple, False)
 
-            # a_list = [0, 1, 2, 'n']
+            # a_list = []
             # assert a_list is not False
             # self.assertIsNot(a_list, False)
             assert self.a_list is not False
             self.assertIsNot(self.a_list, False)
 
-            a_set = {0, 1, 2, 'n'}
-            assert a_set is not False
-            self.assertIsNot(a_set, False)
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not False
-            self.assertIsNot(a_dictionary, False)
-
-        def test_assertion_error_w_true(self):
+            a_set = set()
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = [0, 1, 2, 'n']`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 125
-    :emphasize-lines: 35-39
+    :lineno-start: 156
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_true(self):
-            assert None is not True
-            self.assertIsNot(None, True)
-
-            assert False is not True
-            self.assertIsNot(False, True)
-
-            assert True is True
-            self.assertIs(True, True)
-
-            # an_integer = 0
-            # assert an_integer is not True
-            # self.assertIsNot(an_integer, True)
-            assert self.an_integer is not True
-            self.assertIsNot(self.an_integer, True)
-
-            # a_float = 0.0
-            # assert a_float is not True
-            # self.assertIsNot(a_float, True)
-            assert self.a_float is not True
-            self.assertIsNot(self.a_float, True)
-
-            # a_string = 'a string'
-            # assert a_string is not True
-            # self.assertIsNot(a_string, True)
-            assert self.a_string is not True
-            self.assertIsNot(self.a_string, True)
-
-            # a_tuple = (0, 1, 2, 'n')
-            # assert a_tuple is not True
-            # self.assertIsNot(a_tuple, True)
-            assert self.a_tuple is not True
             self.assertIsNot(self.a_tuple, True)
 
-            # a_list = [0, 1, 2, 'n']
+            # a_list = []
             # assert a_list is not True
             # self.assertIsNot(a_list, True)
             assert self.a_list is not True
             self.assertIsNot(self.a_list, True)
 
-            a_set = {0, 1, 2, 'n'}
-            assert a_set is not True
-            self.assertIsNot(a_set, True)
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not True
-            self.assertIsNot(a_dictionary, True)
-
-        def test_assertion_error_w_equality(self):
+            a_set = set()
 
   green.
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>`
+* I add a :ref:`class attribute<what is a class attribute?>` for ``a_set = set()``
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 7
+    :lineno-start: 4
+    :emphasize-lines: 8
 
-        def setUp(self):
-            self.an_integer = 0
-            self.a_float = 0.0
-            self.a_string = 'a string'
-            self.a_tuple = (0, 1, 2, 'n')
-            self.a_list = [0, 1, 2, 'n']
-            self.a_set = {0, 1, 2, 'n'}
+    class TestAssertionError(unittest.TestCase):
+
+        an_integer = 0
+        a_float = 0.0
+        a_string = ''
+        a_tuple = ()
+        a_list = []
+        a_set = set()
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = {0, 1, 2, 'n'}`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 41-45
+    :lineno-start: 67
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIs(None, None)
-
-            assert False is not None
-            self.assertIsNot(False, None)
-
-            assert True is not None
-            self.assertIsNot(True, None)
-
-            # an_integer = 0
-            # assert an_integer is not None
-            # self.assertIsNot(an_integer, None)
-            assert self.an_integer is not None
-            self.assertIsNot(self.an_integer, None)
-
-            # a_float = 0.0
-            # assert a_float is not None
-            # self.assertIsNot(a_float, None)
-            assert self.a_float is not None
-            self.assertIsNot(self.a_float, None)
-
-            # a_string = 'a string'
-            # assert a_string is not None
-            # self.assertIsNot(a_string, None)
-            assert self.a_string is not None
-            self.assertIsNot(self.a_string, None)
-
-            # a_tuple = (0, 1, 2, 'n')
-            # assert a_tuple is not None
-            # self.assertIsNot(a_tuple, None)
-            assert self.a_tuple is not None
-            self.assertIsNot(self.a_tuple, None)
-
-            # a_list = [0, 1, 2, 'n']
-            # assert a_list is not None
-            # self.assertIsNot(a_list, None)
-            assert self.a_list is not None
             self.assertIsNot(self.a_list, None)
 
-            # a_set = {0, 1, 2, 'n'}
+            # a_set = set()
             # assert a_set is not None
             # self.assertIsNot(a_set, None)
             assert self.a_set is not None
             self.assertIsNot(self.a_set, None)
 
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not None
-            self.assertIsNot(a_dictionary, None)
-
-        def test_assertion_error_w_false(self):
+            a_dictionary = {}
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = {0, 1, 2, 'n'}`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 80
-    :emphasize-lines: 41-45
+    :lineno-start: 117
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_false(self):
-            assert None is not False
-            self.assertIsNot(None, False)
-
-            assert False is False
-            self.assertIs(False, False)
-
-            assert True is not False
-            self.assertIsNot(True, False)
-
-            # an_integer = 0
-            # assert an_integer is not False
-            # self.assertIsNot(an_integer, False)
-            assert self.an_integer is not False
-            self.assertIsNot(self.an_integer, False)
-
-            # a_float = 0.0
-            # assert a_float is not False
-            # self.assertIsNot(a_float, False)
-            assert self.a_float is not False
-            self.assertIsNot(self.a_float, False)
-
-            # a_string = 'a string'
-            # assert a_string is not False
-            # self.assertIsNot(a_string, False)
-            assert self.a_string is not False
-            self.assertIsNot(self.a_string, False)
-
-            # a_tuple = (0, 1, 2, 'n')
-            # assert a_tuple is not False
-            # self.assertIsNot(a_tuple, False)
-            assert self.a_tuple is not False
-            self.assertIsNot(self.a_tuple, False)
-
-            # a_list = [0, 1, 2, 'n']
-            # assert a_list is not False
-            # self.assertIsNot(a_list, False)
-            assert self.a_list is not False
             self.assertIsNot(self.a_list, False)
 
-            # a_set = {0, 1, 2, 'n'}
+            # a_set = set()
             # assert a_set is not False
             # self.assertIsNot(a_set, False)
             assert self.a_set is not False
             self.assertIsNot(self.a_set, False)
 
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not False
-            self.assertIsNot(a_dictionary, False)
-
-        def test_assertion_error_w_true(self):
+            a_dictionary = {}
 
   the test is still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = {0, 1, 2, 'n'}`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 130
-    :emphasize-lines: 41-45
+    :lineno-start: 167
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_true(self):
-            assert None is not True
-            self.assertIsNot(None, True)
-
-            assert False is not True
-            self.assertIsNot(False, True)
-
-            assert True is True
-            self.assertIs(True, True)
-
-            # an_integer = 0
-            # assert an_integer is not True
-            # self.assertIsNot(an_integer, True)
-            assert self.an_integer is not True
-            self.assertIsNot(self.an_integer, True)
-
-            # a_float = 0.0
-            # assert a_float is not True
-            # self.assertIsNot(a_float, True)
-            assert self.a_float is not True
-            self.assertIsNot(self.a_float, True)
-
-            # a_string = 'a string'
-            # assert a_string is not True
-            # self.assertIsNot(a_string, True)
-            assert self.a_string is not True
-            self.assertIsNot(self.a_string, True)
-
-            # a_tuple = (0, 1, 2, 'n')
-            # assert a_tuple is not True
-            # self.assertIsNot(a_tuple, True)
-            assert self.a_tuple is not True
-            self.assertIsNot(self.a_tuple, True)
-
-            # a_list = [0, 1, 2, 'n']
-            # assert a_list is not True
-            # self.assertIsNot(a_list, True)
-            assert self.a_list is not True
             self.assertIsNot(self.a_list, True)
 
-            # a_set = {0, 1, 2, 'n'}
+            # a_set = set()
             # assert a_set is not True
             # self.assertIsNot(a_set, True)
             assert self.a_set is not True
             self.assertIsNot(self.a_set, True)
 
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not True
-            self.assertIsNot(a_dictionary, True)
-
-        def test_assertion_error_w_equality(self):
+            a_dictionary = {}
 
   still green.
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>`
+* I add a :ref:`class attribute<what is a class attribute?>` for ``a_dictionary = {}``
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 8
+    :lineno-start: 4
+    :emphasize-lines: 9
 
-        def setUp(self):
-            self.an_integer = 0
-            self.a_float = 0.0
-            self.a_string = 'a string'
-            self.a_tuple = (0, 1, 2, 'n')
-            self.a_list = [0, 1, 2, 'n']
-            self.a_set = {0, 1, 2, 'n'}
-            self.a_dictionary = {'key': 'value'}
+    class TestAssertionError(unittest.TestCase):
+
+        an_integer = 0
+        a_float = 0.0
+        a_string = ''
+        a_tuple = ()
+        a_list = []
+        a_set = set()
+        a_dictionary = {}
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {'key': 'value'}`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 31
-    :emphasize-lines: 47-51
+    :lineno-start: 74
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIs(None, None)
-
-            assert False is not None
-            self.assertIsNot(False, None)
-
-            assert True is not None
-            self.assertIsNot(True, None)
-
-            # an_integer = 0
-            # assert an_integer is not None
-            # self.assertIsNot(an_integer, None)
-            assert self.an_integer is not None
-            self.assertIsNot(self.an_integer, None)
-
-            # a_float = 0.0
-            # assert a_float is not None
-            # self.assertIsNot(a_float, None)
-            assert self.a_float is not None
-            self.assertIsNot(self.a_float, None)
-
-            # a_string = 'a string'
-            # assert a_string is not None
-            # self.assertIsNot(a_string, None)
-            assert self.a_string is not None
-            self.assertIsNot(self.a_string, None)
-
-            # a_tuple = (0, 1, 2, 'n')
-            # assert a_tuple is not None
-            # self.assertIsNot(a_tuple, None)
-            assert self.a_tuple is not None
-            self.assertIsNot(self.a_tuple, None)
-
-            # a_list = [0, 1, 2, 'n']
-            # assert a_list is not None
-            # self.assertIsNot(a_list, None)
-            assert self.a_list is not None
-            self.assertIsNot(self.a_list, None)
-
-            # a_set = {0, 1, 2, 'n'}
-            # assert a_set is not None
-            # self.assertIsNot(a_set, None)
-            assert self.a_set is not None
             self.assertIsNot(self.a_set, None)
 
-            # a_dictionary = {'key': 'value'}
+            # a_dictionary = {}
             # assert a_dictionary is not None
             # self.assertIsNot(a_dictionary, None)
             assert self.a_dictionary is not None
@@ -4117,59 +3550,15 @@ remove repetition with class attributes
 
   the test is still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {'key': 'value'}`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 47-51
+    :lineno-start: 126
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_false(self):
-            assert None is not False
-            self.assertIsNot(None, False)
-
-            assert False is False
-            self.assertIs(False, False)
-
-            assert True is not False
-            self.assertIsNot(True, False)
-
-            # an_integer = 0
-            # assert an_integer is not False
-            # self.assertIsNot(an_integer, False)
-            assert self.an_integer is not False
-            self.assertIsNot(self.an_integer, False)
-
-            # a_float = 0.0
-            # assert a_float is not False
-            # self.assertIsNot(a_float, False)
-            assert self.a_float is not False
-            self.assertIsNot(self.a_float, False)
-
-            # a_string = 'a string'
-            # assert a_string is not False
-            # self.assertIsNot(a_string, False)
-            assert self.a_string is not False
-            self.assertIsNot(self.a_string, False)
-
-            # a_tuple = (0, 1, 2, 'n')
-            # assert a_tuple is not False
-            # self.assertIsNot(a_tuple, False)
-            assert self.a_tuple is not False
-            self.assertIsNot(self.a_tuple, False)
-
-            # a_list = [0, 1, 2, 'n']
-            # assert a_list is not False
-            # self.assertIsNot(a_list, False)
-            assert self.a_list is not False
-            self.assertIsNot(self.a_list, False)
-
-            # a_set = {0, 1, 2, 'n'}
-            # assert a_set is not False
-            # self.assertIsNot(a_set, False)
-            assert self.a_set is not False
             self.assertIsNot(self.a_set, False)
 
-            # a_dictionary = {'key': 'value'}
+            # a_dictionary = {}
             # assert a_dictionary is not False
             # self.assertIsNot(a_dictionary, False)
             assert self.a_dictionary is not False
@@ -4179,59 +3568,15 @@ remove repetition with class attributes
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {'key': 'value'}`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 135
-    :emphasize-lines: 47-51
+    :lineno-start: 178
+    :emphasize-lines: 3-7
 
-        def test_assertion_error_w_true(self):
-            assert None is not True
-            self.assertIsNot(None, True)
-
-            assert False is not True
-            self.assertIsNot(False, True)
-
-            assert True is True
-            self.assertIs(True, True)
-
-            # an_integer = 0
-            # assert an_integer is not True
-            # self.assertIsNot(an_integer, True)
-            assert self.an_integer is not True
-            self.assertIsNot(self.an_integer, True)
-
-            # a_float = 0.0
-            # assert a_float is not True
-            # self.assertIsNot(a_float, True)
-            assert self.a_float is not True
-            self.assertIsNot(self.a_float, True)
-
-            # a_string = 'a string'
-            # assert a_string is not True
-            # self.assertIsNot(a_string, True)
-            assert self.a_string is not True
-            self.assertIsNot(self.a_string, True)
-
-            # a_tuple = (0, 1, 2, 'n')
-            # assert a_tuple is not True
-            # self.assertIsNot(a_tuple, True)
-            assert self.a_tuple is not True
-            self.assertIsNot(self.a_tuple, True)
-
-            # a_list = [0, 1, 2, 'n']
-            # assert a_list is not True
-            # self.assertIsNot(a_list, True)
-            assert self.a_list is not True
-            self.assertIsNot(self.a_list, True)
-
-            # a_set = {0, 1, 2, 'n'}
-            # assert a_set is not True
-            # self.assertIsNot(a_set, True)
-            assert self.a_set is not True
             self.assertIsNot(self.a_set, True)
 
-            # a_dictionary = {'key': 'value'}
+            # a_dictionary = {}
             # assert a_dictionary is not True
             # self.assertIsNot(a_dictionary, True)
             assert self.a_dictionary is not True
@@ -4246,7 +3591,7 @@ remove repetition with class attributes
 * I remove the commented lines from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 135
+    :lineno-start: 134
 
         def test_assertion_error_w_true(self):
             assert None is not True
@@ -4284,7 +3629,7 @@ remove repetition with class attributes
 * I remove the commented lines from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 82
 
         def test_assertion_error_w_false(self):
             assert None is not False
@@ -4322,7 +3667,7 @@ remove repetition with class attributes
 * I remove the commented lines from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 30
 
         def test_assertion_error_w_none(self):
             assert None is None
@@ -4357,107 +3702,6 @@ remove repetition with class attributes
 
         def test_assertion_error_w_false(self):
 
-----
-
-* In this case, I do not need the :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` because the :ref:`class attributes<what is a class attribute?>` are the same for every test and I do not need anything to run before each test. I move them out
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 3-9
-
-    class TestAssertionError(unittest.TestCase):
-
-        self.an_integer = 0
-        self.a_float = 0.0
-        self.a_string = 'a string'
-        self.a_tuple = (0, 1, 2, 'n')
-        self.a_list = [0, 1, 2, 'n']
-        self.a_set = {0, 1, 2, 'n'}
-        self.a_dictionary = {'key': 'value'}
-
-        # def setUp(self):
-        #    self.an_integer = 0
-        #    self.a_float = 0.0
-        #    self.a_string = 'a string'
-        #    self.a_tuple = (0, 1, 2, 'n')
-        #    self.a_list = [0, 1, 2, 'n']
-        #    self.a_set = {0, 1, 2, 'n'}
-        #    self.a_dictionary = {'key': 'value'}
-
-        def test_assert_keyword(self):
-
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'self' is not defined
-
-  because ``self`` is not defined outside the :ref:`methods<what is a method?>` I can declare the :ref:`class attributes<what is a class attribute?>` the same way I do :ref:`variables<what is a variable?>` as long as it is indented under the :ref:`class definition<how to make a class>`
-
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>`
-
-  .. code-block:: python
-    :lineno-start: 200
-    :emphasize-text: NameError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-
-* I remove ``self.``
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 3-9, 11-17
-
-    class TestAssertionError(unittest.TestCase):
-
-        # self.an_integer = 0
-        # self.a_float = 0.0
-        # self.a_string = 'a string'
-        # self.a_tuple = (0, 1, 2, 'n')
-        # self.a_list = [0, 1, 2, 'n']
-        # self.a_set = {0, 1, 2, 'n'}
-        # self.a_dictionary = {'key': 'value'}
-
-        an_integer = 0
-        a_float = 0.0
-        a_string = 'a string'
-        a_tuple = (0, 1, 2, 'n')
-        a_list = [0, 1, 2, 'n']
-        a_set = {0, 1, 2, 'n'}
-        a_dictionary = {'key': 'value'}
-
-        # def setUp(self):
-        #     self.an_integer = 0
-        #     self.a_float = 0.0
-        #     self.a_string = 'a string'
-        #     self.a_tuple = (0, 1, 2, 'n')
-        #     self.a_list = [0, 1, 2, 'n']
-        #     self.a_set = {0, 1, 2, 'n'}
-        #     self.a_dictionary = {'key': 'value'}
-
-        def test_assert_keyword(self):
-
-  the test is green again.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 4
-
-    class TestAssertionError(unittest.TestCase):
-
-        an_integer = 0
-        a_float = 0.0
-        a_string = 'a string'
-        a_tuple = (0, 1, 2, 'n')
-        a_list = [0, 1, 2, 'n']
-        a_set = {0, 1, 2, 'n'}
-        a_dictionary = {'key': 'value'}
-
-        def test_assert_keyword(self):
-
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -4465,9 +3709,7 @@ remove repetition with class attributes
 
     git commit -am 'extract class attributes'
 
-  the terminal_ shows a summary of the changes then goes back to the command line.
-
-:ref:`I can use class attributes to remove repetition<remove repetition with class attributes>`
+:ref:`I can use class attributes to remove repetition<remove repetition with class attributes>`. I make them once and other things in the :ref:`class<what is a class?>` can reference them.
 
 ----
 
@@ -4508,7 +3750,7 @@ I can use :ref:`class attributes<what is a class attribute?>` for things that re
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<AssertionError 2: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<AssertionError: use unittest: tests>`
 
 ----
 
