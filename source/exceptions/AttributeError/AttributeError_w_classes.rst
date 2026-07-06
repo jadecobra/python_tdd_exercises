@@ -728,16 +728,14 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add a test for :ref:`methods<what is a method?>` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 6-7
+    :lineno-start: 40
+    :emphasize-lines: 4-5
 
-            src.attribute_error.AClass().attribute_06
-            src.attribute_error.AClass().attribute_07
-            src.attribute_error.AClass().attribute_08
-            src.attribute_error.AClass().attribute_09
+        src.attribute_error.AClass().attribute_09
 
-        def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass.method_00()
+
+    def test_attribute_error_w_class_methods():
+        src.attribute_error.AClass.method_00()
 
 
     # Exceptions seen
@@ -757,7 +755,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
 ----
 
-* I add the name to ``AClass`` and point it to :ref:`None<what is None?>`, in ``attribute_error.py``
+* I add the name to ``AClass`` and point it to ``attribute_09``, in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -765,18 +763,18 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     class AClass(object):
 
-        attribute_00 = None
-        attribute_01 = None
-        attribute_02 = None
-        attribute_03 = None
-        attribute_04 = None
-        attribute_05 = None
-        attribute_06 = None
-        attribute_07 = None
-        attribute_08 = None
-        attribute_09 = None
+        attribute_00 = function_09()
+        attribute_01 = attribute_00
+        attribute_02 = attribute_01
+        attribute_03 = attribute_02
+        attribute_04 = attribute_03
+        attribute_05 = attribute_04
+        attribute_06 = attribute_05
+        attribute_07 = attribute_06
+        attribute_08 = attribute_07
+        attribute_09 = attribute_08
 
-        method_00 = None
+        method_00 = attribute_09
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -789,29 +787,82 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I use the def_ keyword to change it from a :ref:`variable (attribute)<what is a variable?>` to a :ref:`method<what is a method?>`
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 14-16
+    :lineno-start: 36
+    :emphasize-lines: 3-4
 
-    class AClass(object):
+        attribute_09 = attribute_08
 
-        attribute_00 = None
-        attribute_01 = None
-        attribute_02 = None
-        attribute_03 = None
-        attribute_04 = None
-        attribute_05 = None
-        attribute_06 = None
-        attribute_07 = None
-        attribute_08 = None
-        attribute_09 = None
+        # method_00 = attribute_09
+        def method_00(): return attribute_09
 
-        # method_00 = None
-        def method_00():
-            return None
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'attribute_09' is not defined
+
+  because there is nothing inside ``method_00`` named ``attribute_09`` and it cannot get to ``attribute_09`` of ``AClass``, yet.
+
+* I add ``self.`` before the name to reference the :ref:`class attribute<what is a class attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 2-3
+
+        # method_00 = attribute_09
+        # def method_00(): return attribute_09
+        def method_00(): return self.attribute_09
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'self' is not defined
+
+* I add ``self`` to the parentheses of ``method_00``
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines:
+
+        # method_00 = attribute_09
+        # def method_00(): return attribute_09
+        def method_00(): return self.attribute_09
+        def method_00(self): return self.attribute_09
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: AClass.method_00() missing
+               1 required positional argument: 'self'
+
+  because I :ref:`called the method<how to call a function>` with the :ref:`class<what is a class?>` not an :ref:`instance of the class<how to test if something is an instance>`.
+
+* I use an :ref:`instance of the class<how to test if something is an instance>` to :ref:`call the method<how to call a function>` in ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 2-3
+
+    def test_attribute_error_w_class_methods():
+        # src.attribute_error.AClass.method_00()
+        src.attribute_error.AClass().method_00()
+
+
+    # Exceptions seen
 
   - the test passes because ``method_00`` is now an :ref:`attribute/property<what is a class attribute?>` of the ``AClass`` :ref:`class<what is a class?>`
   - ``AClass`` is an :ref:`attribute<what is a class attribute?>` of the ``attribute_error.py`` :ref:`module<what is a module?>` in the ``src`` folder_
-  - I can call ``method_00`` from outside the file_ with ``src.attribute_error.AClass.method_00()`` or ``src.attribute_error.AClass().method_00()``
+  - I can :ref:`call<how to call a function>` ``method_00`` from outside the file_ with ``src.attribute_error.AClass().method_00()``
+
+  .. code-block:: shell
+
+    src.attribute_error.AClass().method_00
+    src
+    └── attribute_error.py
+        └── class AClass(object):
+            └── def method_00(self): return self.attribute_09
 
 ----
 
@@ -821,28 +872,39 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
 ----
 
-* I remove the commented line
+* I remove the commented line from ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 43
+
+    def test_attribute_error_w_class_methods():
+        src.attribute_error.AClass().method_00()
+
+
+    # Exceptions seen
+
+* I remove the commented lines from ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 25
 
     class AClass(object):
 
-        attribute_00 = None
-        attribute_01 = None
-        attribute_02 = None
-        attribute_03 = None
-        attribute_04 = None
-        attribute_05 = None
-        attribute_06 = None
-        attribute_07 = None
-        attribute_08 = None
-        attribute_09 = None
+        attribute_00 = function_09()
+        attribute_01 = attribute_00
+        attribute_02 = attribute_01
+        attribute_03 = attribute_02
+        attribute_04 = attribute_03
+        attribute_05 = attribute_04
+        attribute_06 = attribute_05
+        attribute_07 = attribute_06
+        attribute_08 = attribute_07
+        attribute_09 = attribute_08
 
-        def method_00():
-            return None
+        def method_00(): return self.attribute_09
+        def method_00(self): return self.attribute_09
 
-* You know the "drill", I add a line for ``src.attribute_error.AClass.method_01`` to ``test_attribute_error.py``
+* You know the "drill", I add a :ref:`call to<how to call a function>` for ``src.attribute_error.AClass().method_01()`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
