@@ -621,6 +621,7 @@ I add ``self`` to the parentheses of :ref:`test_assertion_error_w_none`
 
       # def test_assertion_error_w_none():
       def test_assertion_error_w_none(self):
+          assert None is None
 
 the test passes.
 
@@ -632,7 +633,7 @@ the test passes.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertIs method<test_assert_is>` for each :ref:`assertion<what is an assertion?>` in :ref:`test_assertion_error_w_none`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertIsNot<test_assert_is_not>` and :ref:`assertIs methods<test_assert_is>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
     :lineno-start: 22
@@ -685,7 +686,7 @@ the test passes.
 
     E       assert None is not None
 
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` to make the statement :ref:`True<test_what_is_true>`
+* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` for ``(None, None)``
 
   .. code-block:: python
     :lineno-start: 22
@@ -711,7 +712,7 @@ the test passes.
 
     E    assert False is None
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` to make the statement :ref:`True<test_what_is_true>`
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(False, None)``
 
   .. code-block:: python
     :lineno-start: 28
@@ -735,7 +736,7 @@ the test passes.
 
     E    assert True is None
 
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` to make the statement :ref:`True<test_what_is_true>`
+* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` for ``(True, None)``
 
   .. code-block:: python
     :lineno-start: 32
@@ -753,7 +754,7 @@ the test passes.
 
     AssertionError: 0 is not None
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` to make the statement :ref:`True<test_what_is_true>`
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(0, None)``
 
   .. code-block:: python
     :lineno-start: 36
@@ -771,7 +772,7 @@ the test passes.
 
     AssertionError: 0.0 is not None
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` to make the statement :ref:`True<test_what_is_true>`
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(0.0, None)``
 
   .. code-block:: python
     :lineno-start: 40
@@ -789,7 +790,7 @@ the test passes.
 
     AssertionError: '' is not None
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` to make the statement :ref:`True<test_what_is_true>`
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``('', None)``
 
   .. code-block:: python
     :lineno-start: 44
@@ -807,7 +808,7 @@ the test passes.
 
     AssertionError: () is not None
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` to make the statement :ref:`True<test_what_is_true>`
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``((), None)``
 
   .. code-block:: python
     :lineno-start: 48
@@ -826,7 +827,7 @@ the test passes.
 
     AssertionError: [] is not None
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` to make the statement :ref:`True<test_what_is_true>`
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``([], None)``
 
   .. code-block:: python
     :lineno-start: 52
@@ -844,7 +845,7 @@ the test passes.
 
     AssertionError: set()  is not None
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` to make the statement :ref:`True<test_what_is_true>`
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(set(), None)``
 
   .. code-block:: python
     :lineno-start: 56
@@ -862,7 +863,7 @@ the test passes.
 
     AssertionError: {} is not None
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` to make the statement :ref:`True<test_what_is_true>`
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``({}, None)``
 
   .. code-block:: python
     :lineno-start: 60
@@ -1164,7 +1165,46 @@ test_assertion_error_w_false with unittest
 ----
 
 * I go back to the terminal_ where the tests are running
-* 
+
+* I move :ref:`test_assertion_error_w_false` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError class>`
+
+  .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 3-4, 6, 8, 10, 12, 14, 16, 18, 20, 22
+
+            self.assertIsNot(a_dictionary, None)
+
+        def test_assertion_error_w_false():
+            assert None is not False
+
+            assert False is False
+
+            assert True is not False
+
+            assert 0 is not False
+
+            assert 0.0 is not False
+
+            assert '' is not False
+
+            assert () is not False
+
+            assert [] is not False
+
+            assert set() is not False
+
+            assert {} is not False
+
+
+    def test_assertion_error_w_true():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestAssertionError.test_assertion_error_w_false()
+        takes 0 positional arguments but 1 was given
 
 ----
 
@@ -1174,6 +1214,18 @@ test_assertion_error_w_false with unittest
 
 ----
 
+I add ``self`` to the parentheses of :ref:`test_assertion_error_w_false`
+
+.. code-block:: python
+  :lineno-start: 60
+  :emphasize-lines: 1-2
+
+      # def test_assertion_error_w_false():
+      def test_assertion_error_w_false(self):
+          assert None is not
+
+the test passes.
+
 ----
 
 =================================================================================
@@ -1181,6 +1233,91 @@ test_assertion_error_w_false with unittest
 =================================================================================
 
 ----
+
+* I add calls to :ref:`assertIsNot<test_assert_is_not>` and :ref:`assertIs<test_assert_is>` to :ref:`test_assertion_error_w_false`
+
+  .. code-block:: python
+    :lineno-start: 60
+    :emphasize-lines: 7, 10, 13, 16, 19, 22, 25, 28, 31
+
+        # def test_assertion_error_w_false():
+        def test_assertion_error_w_false(self):
+            assert None is not False
+            self.assertIs(None, False)
+
+            assert False is False
+            self.assertIsNot(False, False)
+
+            assert True is not False
+            self.assertIs(True, False)
+
+            assert 0 is not False
+            self.assertIs(0, False)
+
+            assert 0.0 is not False
+            self.assertIs(0.0, False)
+
+            assert '' is not False
+            self.assertIs('', False)
+
+            assert () is not False
+            self.assertIs((), False)
+
+            assert [] is not False
+            self.assertIs([], False)
+
+            assert set() is not False
+            self.assertIs(set(), False)
+
+            assert {} is not False
+            self.assertIs({}, False)
+
+
+    def test_assertion_error_w_true():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assert_is_not<test_assert_is_not>` for ``--``
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assert_is_not<test_assert_is_not>` for ``--``
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assert_is_not<test_assert_is_not>` for ``--``
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assert_is_not<test_assert_is_not>` for ``--``
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assert_is_not<test_assert_is_not>` for ``--``
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assert_is_not<test_assert_is_not>` for ``--``
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+
+
 
 * I remove the commented lines from :ref:`test_assertion_error_w_false`
 
