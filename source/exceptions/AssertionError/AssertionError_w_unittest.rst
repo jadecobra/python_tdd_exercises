@@ -1238,7 +1238,7 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 60
-    :emphasize-lines: 7, 10, 13, 16, 19, 22, 25, 28, 31
+    :emphasize-lines: 4, 7, 10, 13, 16, 19, 22, 25, 28, 31
 
         # def test_assertion_error_w_false():
         def test_assertion_error_w_false(self):
@@ -1822,11 +1822,11 @@ the test passes.
 
 ----
 
-* I add calls to :ref:`assertIsNot<test_assert_is_not>` and :ref:`assertIs<test_assert_is>` to :ref:`test_assertion_error_w_true`
+* I add :ref:`calls<how to call a function with input>` to :ref:`assertIsNot<test_assert_is_not>` and :ref:`assertIs<test_assert_is>` to :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
     :lineno-start: 98
-    :emphasize-lines: 7, 10, 13, 16, 19, 22, 25, 28, 31
+    :emphasize-lines: 4, 7, 10, 13, 16, 19, 22, 25, 28, 31
 
         # def test_assertion_error_w_true():
         def test_assertion_error_w_true(self):
@@ -2342,6 +2342,38 @@ test_assertion_error_w_equality with unittest
 
 * I go back to the terminal_ where the tests are running
 
+* I move :ref:`test_assertion_error_w_equality` to make it a :ref:`method<what is a method?>` of the :ref:`TestAssertionError<add TestAssertionError class>`
+
+  .. code-block:: python
+    :lineno-start: 134
+    :emphasize-lines: 3-4, 6, 8, 10, 12, 14
+
+            self.assertIsNot(a_dictionary, True)
+
+        def test_assertion_error_w_equality():
+            assert None == None
+
+            assert False != None
+
+            assert False != True
+
+            assert False == False
+
+            assert True != None
+
+            assert True == True
+
+
+    def test_assertion_error_w_is_vs_equal():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestAssertionError.test_assertion_error_w_equality()
+        takes 0 positional arguments but 1 was given
+
 ----
 
 =================================================================================
@@ -2349,6 +2381,20 @@ test_assertion_error_w_equality with unittest
 =================================================================================
 
 ----
+
+I add ``self`` to the parentheses of :ref:`test_assertion_error_w_equality`
+
+.. code-block:: python
+  :lineno-start: 134
+  :emphasize-lines: 3-4
+
+          self.assertIsNot(a_dictionary, True)
+
+      # def test_assertion_error_w_equality():
+      def test_assertion_error_w_equality(self):
+          assert None == None
+
+the test passes.
 
 ----
 
@@ -2358,7 +2404,188 @@ test_assertion_error_w_equality with unittest
 
 ----
 
+* I add :ref:`calls<how to call a function with input>` to :ref:`assertNotEqual<test_assert_not_equal>` and :ref:`assertEqual<test_assert_equal>` to :ref:`test_assertion_error_w_equality`
+
+  .. code-block:: python
+    :lineno-start: 136
+    :emphasize-lines: 4, 7, 10, 13, 16, 19
+
+        # def test_assertion_error_w_equality():
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            self.assertNotEqual(None, None)
+
+            assert False != None
+            self.assertEqual(False, None)
+
+            assert False != True
+            self.assertEqual(False, True)
+
+            assert False == False
+            self.assertNotEqual(False, False)
+
+            assert True != None
+            self.assertEqual(True, None)
+
+            assert True == True
+            self.assertNotEqual(True, True)
+
+
+    def test_assertion_error_w_is_vs_equal():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None == None
+
+  compare this with the error for ``assert None != None``
+
+  .. code-block:: python
+
+    E   assert None != None
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``(None, None)``
+
+  .. code-block:: python
+    :lineno-start: 136
+    :emphasize-lines: 4-5
+
+        # def test_assertion_error_w_equality():
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            # self.assertNotEqual(None, None)
+            self.assertEqual(None, None)
+
+            assert False != None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False != None
+
+* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_equal>` for ``(False, None)``
+
+  .. code-block:: python
+    :lineno-start: 142
+    :emphasize-lines: 2-3
+
+            assert False != None
+            # self.assertEqual(False, None)
+            self.assertNotEqual(False, None)
+
+            assert False != True
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False != True
+
+  compare this with the error for ``assert False == True``
+
+  .. code-block:: python
+
+    E    assert False == True
+
+* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_equal>` for ``(False, True)``
+
+  .. code-block:: python
+    :lineno-start: 146
+    :emphasize-lines: 2-3
+
+            assert False != True
+            # self.assertEqual(False, True)
+            self.assertNotEqual(False, True)
+
+            assert False == False
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False == False
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``(False, False)``
+
+  .. code-block:: python
+    :lineno-start: 150
+    :emphasize-lines: 2-3
+
+            assert False == False
+            # self.assertNotEqual(False, False)
+            self.assertEqual(False, False)
+
+            assert True != None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True != None
+
+* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_equal>` for ``(True, None)``
+
+  .. code-block:: python
+    :lineno-start: 154
+    :emphasize-lines: 2-3
+
+            assert True != None
+            # self.assertEqual(True, None)
+            self.assertNotEqual(True, None)
+
+            assert True == True
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True == True
+
+* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_equal>` for ``(True, True)``
+
+  .. code-block:: python
+    :lineno-start: 158
+    :emphasize-lines: 2-3
+
+            assert True == True
+            # self.assertNotEqual(True, True)
+            self.assertEqual(True, True)
+
+
+    def test_assertion_error_w_is_vs_equal():
+
+  the test passes.
+
 * I remove the commented lines from :ref:`test_assertion_error_w_equality`
+
+  .. code-block:: python
+    :lineno-start: 134
+
+            self.assertIsNot(a_dictionary, True)
+
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            self.assertEqual(None, None)
+
+            assert False != None
+            self.assertNotEqual(False, None)
+
+            assert False != True
+            self.assertNotEqual(False, True)
+
+            assert False == False
+            self.assertEqual(False, False)
+
+            assert True != None
+            self.assertNotEqual(True, None)
+
+            assert True == True
+            self.assertEqual(True, True)
+
+
+    def test_assertion_error_w_is_vs_equal():
 
 * I add a git_ commit message in the other terminal_
 
@@ -2398,6 +2625,9 @@ test_assertion_error_w_is_vs_equal with unittest
 
 * I remove the commented lines from :ref:`test_assertion_error_w_is_vs_equal`
 
+  .. code-block:: python
+    :lineno-start:
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -2436,6 +2666,9 @@ will_not_run with unittest
 
 * I remove the commented lines from :ref:`will not run<pytest only calls the function if the name starts with test>`
 
+  .. code-block:: python
+    :lineno-start:
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -2473,6 +2706,9 @@ test_failure with unittest
 ----
 
 * I remove the commented lines from :ref:`test_failure`
+
+  .. code-block:: python
+    :lineno-start:
 
 * I add a git_ commit message in the other terminal_
 
