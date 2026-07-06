@@ -374,12 +374,12 @@ test_attribute_error_w_class_attributes
     :lineno-start: 30
     :emphasize-lines: 6
 
-        def test_attribute_error_w_class_attributes(self):
-            src.attribute_error.AClass.attribute_00
-            src.attribute_error.AClass.attribute_01
-            src.attribute_error.AClass.attribute_02
-            src.attribute_error.AClass.attribute_03
-            src.attribute_error.AClass.attribute_04
+    def test_attribute_error_w_class_attributes():
+        src.attribute_error.AClass.attribute_00
+        src.attribute_error.AClass().attribute_01
+        src.attribute_error.AClass.attribute_02
+        src.attribute_error.AClass().attribute_03
+        src.attribute_error.AClass.attribute_04
 
 
     # Exceptions seen
@@ -400,11 +400,11 @@ test_attribute_error_w_class_attributes
 
     class AClass(object):
 
-        attribute_00 = None
-        attribute_01 = None
-        attribute_02 = None
-        attribute_03 = None
-        attribute_04 = None
+        attribute_00 = function_09()
+        attribute_01 = attribute_00
+        attribute_02 = attribute_01
+        attribute_03 = attribute_02
+        attribute_04 = attribute_03
 
   the test passes because ``attribute_04`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_04`` or ``src.attribute_error.AClass().attribute_04``
 
@@ -424,13 +424,13 @@ test_attribute_error_w_class_attributes
     :lineno-start: 30
     :emphasize-lines: 7
 
-        def test_attribute_error_w_class_attributes(self):
-            src.attribute_error.AClass.attribute_00
-            src.attribute_error.AClass.attribute_01
-            src.attribute_error.AClass.attribute_02
-            src.attribute_error.AClass.attribute_03
-            src.attribute_error.AClass.attribute_04
-            src.attribute_error.AClass().attribute_05
+    def test_attribute_error_w_class_attributes():
+        src.attribute_error.AClass.attribute_00
+        src.attribute_error.AClass().attribute_01
+        src.attribute_error.AClass.attribute_02
+        src.attribute_error.AClass().attribute_03
+        src.attribute_error.AClass.attribute_04
+        src.attribute_error.AClass().attribute_05
 
 
     # Exceptions seen
@@ -451,12 +451,12 @@ test_attribute_error_w_class_attributes
 
     class AClass(object):
 
-        attribute_00 = None
-        attribute_01 = None
-        attribute_02 = None
-        attribute_03 = None
-        attribute_04 = None
-        attribute_05 = None
+        attribute_00 = function_09()
+        attribute_01 = attribute_00
+        attribute_02 = attribute_01
+        attribute_03 = attribute_02
+        attribute_04 = attribute_03
+        attribute_05 = attribute_04
 
   the test passes because ``attribute_05`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_05`` or ``src.attribute_error.AClass().attribute_05``
 
@@ -467,7 +467,7 @@ test_attribute_error_w_class_attributes
     src
     └── attribute_error.py
         └── class AClass(object):
-            └── attribute_05 = attribute_03
+            └── attribute_05 = attribute_04
 
 * I add a line for ``src.attribute_error.AClass().attribute_06`` to ``test_attribute_error.py``
 
@@ -475,14 +475,14 @@ test_attribute_error_w_class_attributes
     :lineno-start: 30
     :emphasize-lines: 8
 
-        def test_attribute_error_w_class_attributes(self):
-            src.attribute_error.AClass.attribute_00
-            src.attribute_error.AClass.attribute_01
-            src.attribute_error.AClass.attribute_02
-            src.attribute_error.AClass.attribute_03
-            src.attribute_error.AClass.attribute_04
-            src.attribute_error.AClass().attribute_05
-            src.attribute_error.AClass().attribute_06
+    def test_attribute_error_w_class_attributes():
+        src.attribute_error.AClass.attribute_00
+        src.attribute_error.AClass().attribute_01
+        src.attribute_error.AClass.attribute_02
+        src.attribute_error.AClass().attribute_03
+        src.attribute_error.AClass.attribute_04
+        src.attribute_error.AClass().attribute_05
+        src.attribute_error.AClass().attribute_06
 
 
     # Exceptions seen
@@ -503,13 +503,13 @@ test_attribute_error_w_class_attributes
 
     class AClass(object):
 
-        attribute_00 = None
-        attribute_01 = None
-        attribute_02 = None
-        attribute_03 = None
-        attribute_04 = None
-        attribute_05 = None
-        attribute_06 = None
+        attribute_00 = function_09()
+        attribute_01 = attribute_00
+        attribute_02 = attribute_01
+        attribute_03 = attribute_02
+        attribute_04 = attribute_03
+        attribute_05 = attribute_04
+        attribute_06 = attribute_05
 
   the test passes because ``attribute_06`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_06`` or ``src.attribute_error.AClass().attribute_06``
 
@@ -522,21 +522,21 @@ test_attribute_error_w_class_attributes
         └── class AClass(object):
             └── attribute_06 = attribute_05
 
-* I add a line for ``src.attribute_error.AClass().attribute_07`` to ``test_attribute_error.py``
+* I add a line for ``src.attribute_error.AClass.attribute_07`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 30
     :emphasize-lines: 9
 
-        def test_attribute_error_w_class_attributes(self):
-            src.attribute_error.AClass.attribute_00
-            src.attribute_error.AClass.attribute_01
-            src.attribute_error.AClass.attribute_02
-            src.attribute_error.AClass.attribute_03
-            src.attribute_error.AClass.attribute_04
-            src.attribute_error.AClass().attribute_05
-            src.attribute_error.AClass().attribute_06
-            src.attribute_error.AClass().attribute_07
+    def test_attribute_error_w_class_attributes():
+        src.attribute_error.AClass.attribute_00
+        src.attribute_error.AClass().attribute_01
+        src.attribute_error.AClass.attribute_02
+        src.attribute_error.AClass().attribute_03
+        src.attribute_error.AClass.attribute_04
+        src.attribute_error.AClass().attribute_05
+        src.attribute_error.AClass().attribute_06
+        src.attribute_error.AClass.attribute_07
 
 
     # Exceptions seen
@@ -557,14 +557,14 @@ test_attribute_error_w_class_attributes
 
     class AClass(object):
 
-        attribute_00 = None
-        attribute_01 = None
-        attribute_02 = None
-        attribute_03 = None
-        attribute_04 = None
-        attribute_05 = None
-        attribute_06 = None
-        attribute_07 = None
+        attribute_00 = function_09()
+        attribute_01 = attribute_00
+        attribute_02 = attribute_01
+        attribute_03 = attribute_02
+        attribute_04 = attribute_03
+        attribute_05 = attribute_04
+        attribute_06 = attribute_05
+        attribute_07 = attribute_06
 
   the test passes because ``attribute_07`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_07`` or ``src.attribute_error.AClass().attribute_07``
 
@@ -577,22 +577,22 @@ test_attribute_error_w_class_attributes
         └── class AClass(object):
             └── attribute_07 = attribute_06
 
-* I add a line for ``src.attribute_error.AClass().attribute_08`` to ``test_attribute_error.py``
+* I add a line for ``src.attribute_error.AClass.attribute_08`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 30
     :emphasize-lines: 10
 
-        def test_attribute_error_w_class_attributes(self):
-            src.attribute_error.AClass.attribute_00
-            src.attribute_error.AClass.attribute_01
-            src.attribute_error.AClass.attribute_02
-            src.attribute_error.AClass.attribute_03
-            src.attribute_error.AClass.attribute_04
-            src.attribute_error.AClass().attribute_05
-            src.attribute_error.AClass().attribute_06
-            src.attribute_error.AClass().attribute_07
-            src.attribute_error.AClass().attribute_08
+    def test_attribute_error_w_class_attributes():
+        src.attribute_error.AClass.attribute_00
+        src.attribute_error.AClass().attribute_01
+        src.attribute_error.AClass.attribute_02
+        src.attribute_error.AClass().attribute_03
+        src.attribute_error.AClass.attribute_04
+        src.attribute_error.AClass().attribute_05
+        src.attribute_error.AClass().attribute_06
+        src.attribute_error.AClass.attribute_07
+        src.attribute_error.AClass.attribute_08
 
 
     # Exceptions seen
@@ -613,15 +613,15 @@ test_attribute_error_w_class_attributes
 
     class AClass(object):
 
-        attribute_00 = None
-        attribute_01 = None
-        attribute_02 = None
-        attribute_03 = None
-        attribute_04 = None
-        attribute_05 = None
-        attribute_06 = None
-        attribute_07 = None
-        attribute_08 = None
+        attribute_00 = function_09()
+        attribute_01 = attribute_00
+        attribute_02 = attribute_01
+        attribute_03 = attribute_02
+        attribute_04 = attribute_03
+        attribute_05 = attribute_04
+        attribute_06 = attribute_05
+        attribute_07 = attribute_06
+        attribute_08 = attribute_07
 
   the test passes because ``attribute_08`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_08`` or ``src.attribute_error.AClass().attribute_08``
 
@@ -640,17 +640,17 @@ test_attribute_error_w_class_attributes
     :lineno-start: 30
     :emphasize-lines: 11
 
-        def test_attribute_error_w_class_attributes(self):
-            src.attribute_error.AClass.attribute_00
-            src.attribute_error.AClass.attribute_01
-            src.attribute_error.AClass.attribute_02
-            src.attribute_error.AClass.attribute_03
-            src.attribute_error.AClass.attribute_04
-            src.attribute_error.AClass().attribute_05
-            src.attribute_error.AClass().attribute_06
-            src.attribute_error.AClass().attribute_07
-            src.attribute_error.AClass().attribute_08
-            src.attribute_error.AClass().attribute_09
+    def test_attribute_error_w_class_attributes():
+        src.attribute_error.AClass.attribute_00
+        src.attribute_error.AClass().attribute_01
+        src.attribute_error.AClass.attribute_02
+        src.attribute_error.AClass().attribute_03
+        src.attribute_error.AClass.attribute_04
+        src.attribute_error.AClass().attribute_05
+        src.attribute_error.AClass().attribute_06
+        src.attribute_error.AClass.attribute_07
+        src.attribute_error.AClass.attribute_08
+        src.attribute_error.AClass().attribute_09
 
 
     # Exceptions seen
@@ -671,16 +671,16 @@ test_attribute_error_w_class_attributes
 
     class AClass(object):
 
-        attribute_00 = None
-        attribute_01 = None
-        attribute_02 = None
-        attribute_03 = None
-        attribute_04 = None
-        attribute_05 = None
-        attribute_06 = None
-        attribute_07 = None
-        attribute_08 = None
-        attribute_09 = None
+        attribute_00 = function_09()
+        attribute_01 = attribute_00
+        attribute_02 = attribute_01
+        attribute_03 = attribute_02
+        attribute_04 = attribute_03
+        attribute_05 = attribute_04
+        attribute_06 = attribute_05
+        attribute_07 = attribute_06
+        attribute_08 = attribute_07
+        attribute_09 = attribute_08
 
   the test passes because ``attribute_09`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_09`` or ``src.attribute_error.AClass().attribute_09``
 
@@ -700,7 +700,6 @@ test_attribute_error_w_class_attributes
 
     git commit -am \
     'add test_attribute_error_w_class_attributes'
-
 
 * :ref:`A variable in a class is an attribute of the class<test_attribute_error_w_class_attributes>`
 * :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
@@ -1444,10 +1443,13 @@ review
 
 All the tests I have run for :ref:`AttributeError<what causes AttributeError?>` show that :ref:`because in Python everything is an object<everything is an object>`
 
-* :ref:`A variable in an object is an attribute of the object<test_attribute_error_w_class_attributes>`
-* :ref:`A function in an object is an attribute of the object<test_attribute_error_w_class_methods>`
+* :ref:`A variable in a class is an attribute of the class<test_attribute_error_w_class_attributes>`
+* :ref:`A function in a class is an attribute of the class<test_attribute_error_w_class_methods>`
+* :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
+* :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
+* :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
 
-My problem with the tests is still that they all show the correct way to use :ref:`attributes<what is a class attribute?>` I made in ``attribute_error.py``. If someone reads the file_ or runs it, there is no way for them to know how the code relates to :ref:`AttributeError<what causes AttributeError?>` unless they go through the process with me, there has to be a better way.
+I still have the problem that the tests all show the correct way to use :ref:`attributes<what is a class attribute?>` I made in ``attribute_error.py``. If someone reads the file_ or runs it, there is no way for them to know how the code relates to :ref:`AttributeError<what causes AttributeError?>` unless they go through the process with me, there has to be a better way.
 
 ----
 
