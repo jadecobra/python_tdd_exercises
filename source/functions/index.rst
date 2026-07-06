@@ -1751,7 +1751,7 @@ you have covered a bit so far and know
 * :ref:`how to make a Python test driven development environment manually`
 * :ref:`what a Python module is<what is a module?>`
 * :ref:`how to run tests automatically`
-* :ref:`what causes AssertionError<what causes AssertionError?>`
+* :ref:`what an assertion is<what is an assertion?>`
 * :ref:`how to make functions<what is a function?>`
 
 :ref:`Would you like to make a person with strings?<how to make a person with strings>`

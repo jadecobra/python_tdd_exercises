@@ -3031,16 +3031,16 @@ So far, you know
 * :ref:`how to make a Python test driven development environment manually`
 * :ref:`what a Python module is<what is a module?>`
 * :ref:`how to run tests automatically`
-* :ref:`what causes AssertionError<what causes AssertionError?>`
+* :ref:`what an assertion is<what is an assertion?>`
 * :ref:`how to make functions<what is a function?>`
 * :ref:`how to make a person with strings`
 * :ref:`how to make functions that take input<functions that take input>`
 * :ref:`what causes TypeError?`
 * :ref:`how to place values in strings<telephone>`
-* :ref:`how to make a person say hi with f-strings<how to make a person with f-strings>`
+* :ref:`how to make a person say hello with f-strings<how to make a person with f-strings>`
 * :ref:`how to separate tests from solutions<separate and equal functions>`
 
-:ref:`Would you like to see me separate the tests and functions in the type_error project?<separate and equal TypeError>`
+:ref:`Would you like to test AttributeError?<what causes AttributeError?>`
 
 ----
 

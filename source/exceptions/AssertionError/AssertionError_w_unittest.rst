@@ -3764,7 +3764,7 @@ As a reminder, you know
 * :ref:`how to make a Python test driven development environment manually`
 * :ref:`what a Python module is<what is a module?>`
 * :ref:`how to run tests automatically`
-* :ref:`what causes AssertionError<what causes AssertionError?>`
+* :ref:`what an assertion is<what is an assertion?>`
 * :ref:`how to make functions<what is a function?>`
 * :ref:`how to make a person with strings`
 * :ref:`how to make functions that take input<functions that take input>`

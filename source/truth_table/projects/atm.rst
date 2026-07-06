@@ -3056,7 +3056,7 @@ what is next?
 you know
 
 * :ref:`how to make a Python test driven development environment manually`
-* :ref:`what causes AssertionError<what causes AssertionError?>`
+* :ref:`what an assertion is<what is an assertion?>`
 * :ref:`how to make functions<what is a function?>`
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`how to pass values from tests to functions<telephone>`
