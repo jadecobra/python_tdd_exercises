@@ -296,7 +296,7 @@ I add ``self`` to the parentheses of :ref:`test_assert_keyword`
       # def test_assert_keyword():
       def test_assert_keyword(self):
 
-the test passes.
+the test is green again.
 
 ----
 
@@ -541,7 +541,7 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    move test_assert_keyword to TestAssertionError
+    'move test_assert_keyword to TestAssertionError'
 
 ----
 
@@ -623,7 +623,7 @@ I add ``self`` to the parentheses of :ref:`test_assertion_error_w_none`
       def test_assertion_error_w_none(self):
           assert None is None
 
-the test passes.
+the test is green again.
 
 ----
 
@@ -1150,7 +1150,7 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    move test_assertion_error_w_none to TestAssertionError
+    'move test_assertion_error_w_none to TestAssertionError'
 
 ----
 
@@ -1224,7 +1224,7 @@ I add ``self`` to the parentheses of :ref:`test_assertion_error_w_false`
       def test_assertion_error_w_false(self):
           assert None is not False
 
-the test passes.
+the test is green again.
 
 ----
 
@@ -1736,7 +1736,7 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    move test_assertion_error_w_false to TestAssertionError
+    'move test_assertion_error_w_false to TestAssertionError'
 
 ----
 
@@ -1812,7 +1812,7 @@ I add ``self`` to the parentheses of :ref:`test_assertion_error_w_true`
         def test_assertion_error_w_true(self):
             assert None is not True
 
-the test passes.
+the test is green again.
 
 ----
 
@@ -2326,7 +2326,7 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    move test_assertion_error_w_true to TestAssertionError
+    'move test_assertion_error_w_true to TestAssertionError'
 
 ----
 
@@ -2394,7 +2394,7 @@ I add ``self`` to the parentheses of :ref:`test_assertion_error_w_equality`
       def test_assertion_error_w_equality(self):
           assert None == None
 
-the test passes.
+the test is green again.
 
 ----
 
@@ -2593,7 +2593,7 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    move test_assertion_error_w_equality to TestAssertionError
+    'move test_assertion_error_w_equality to TestAssertionError'
 
 ----
 
@@ -2606,7 +2606,35 @@ test_assertion_error_w_is_vs_equal with unittest
 =================================================================================
 
 ----
+
 * I go back to the terminal_ where the tests are running
+
+* I move :ref:`test_assertion_error_w_is_vs_equal` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError class>`
+
+  .. code-block:: python
+    :lineno-start: 153
+    :emphasize-lines: 3-4, 6
+
+            self.assertEqual(True, True)
+
+        def test_assertion_error_w_is_vs_equal():
+            assert 0 is not 0.0
+
+            assert 0 == 0.0
+
+
+    def will_not_run():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestAssertionError.test_assertion_error_w_is_vs_equal()
+        takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
 ----
 
 =================================================================================
@@ -2614,6 +2642,19 @@ test_assertion_error_w_is_vs_equal with unittest
 =================================================================================
 
 ----
+
+I add ``self`` to the :ref:`definition<how to make a function that takes input>` of :ref:`test_assertion_error_w_is_vs_equal`
+
+.. code-block:: python
+  :lineno-start: 153
+
+          self.assertEqual(True, True)
+
+      # def test_assertion_error_w_is_vs_equal():
+      def test_assertion_error_w_is_vs_equal(self):
+          assert 0 is not 0.0
+
+the test is green again.
 
 ----
 
@@ -2623,10 +2664,104 @@ test_assertion_error_w_is_vs_equal with unittest
 
 ----
 
+* I add a :ref:`call<how to call a function with input>` to :ref:`assertIs<test_assert_is>` for ``assert 0 is not 0.0``
+
+  .. code-block:: python
+    :lineno-start: 155
+    :emphasize-lines: 4
+
+        # def test_assertion_error_w_is_vs_equal():
+        def test_assertion_error_w_is_vs_equal(self):
+            assert 0 is not 0.0
+            self.assertIs(0, 0.0)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+
+  .. code-block:: python
+
+    AssertionError: 0 is not 0.0
+
+  compare the :ref:`assertions<what is an assertion?>`: ``assertIs(0, 0.0)`` vs ``assert 0 is 0.0``.
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>`
+
+  .. code-block:: python
+    :lineno-start: 155
+    :emphasize-lines: 4-5
+
+        # def test_assertion_error_w_is_vs_equal():
+        def test_assertion_error_w_is_vs_equal(self):
+            assert 0 is not 0.0
+            # self.assertIs(0, 0.0)
+            self.assertIsNot(0, 0.0)
+
+            assert 0 == 0.0
+
+  the test passes. Compare the :ref:`assertions<what is an assertion?>`: ``assertIsNot(0, 0.0)`` vs ``assert 0 is not 0.0``.
+
+* I add a :ref:`call<how to call a function with input>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``assert 0 == 0.0``
+
+  .. code-block:: python
+    :lineno-start: 155
+    :emphasize-lines: 8
+
+        # def test_assertion_error_w_is_vs_equal():
+        def test_assertion_error_w_is_vs_equal(self):
+            assert 0 is not 0.0
+            # self.assertIs(0, 0.0)
+            self.assertIsNot(0, 0.0)
+
+            assert 0 == 0.0
+            self.assertNotEqual(0, 0.0)
+
+
+    def will_not_run():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+
+  .. code-block:: python
+
+    AssertionError: 0 == 0.0
+
+  compare the :ref:`assertions<what is an assertion?>`: ``assertNotEqual(0, 0.0)`` vs ``assert 0 != 0.0``.
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>`
+
+  .. code-block:: python
+    :lineno-start: 155
+    :emphasize-lines: 8-9
+
+        # def test_assertion_error_w_is_vs_equal():
+        def test_assertion_error_w_is_vs_equal(self):
+            assert 0 is not 0.0
+            # self.assertIs(0, 0.0)
+            self.assertIsNot(0, 0.0)
+
+            assert 0 == 0.0
+            # self.assertNotEqual(0, 0.0)
+            self.assertEqual(0, 0.0)
+
+
+    def will_not_run():
+
+  the test passes. Compare the :ref:`assertions<what is an assertion?>`: ``assertIsNot(0, 0.0)`` vs ``assert 0 is not 0.0``.
+
 * I remove the commented lines from :ref:`test_assertion_error_w_is_vs_equal`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 153
+
+            self.assertEqual(True, True)
+
+        def test_assertion_error_w_is_vs_equal(self):
+            assert 0 is not 0.0
+            self.assertIsNot(0, 0.0)
+
+            assert 0 == 0.0
+            self.assertEqual(0, 0.0)
+
+
+    def will_not_run():
 
 * I add a git_ commit message in the other terminal_
 
@@ -2634,7 +2769,7 @@ test_assertion_error_w_is_vs_equal with unittest
     :emphasize-lines: 1-2
 
     git commit -am \
-    move test_assertion_error_w_is_vs_equal to TestAssertionError
+    'move test_assertion_error_w_is_vs_equal to TestAssertionError'
 
 ----
 
@@ -2675,7 +2810,7 @@ will_not_run with unittest
     :emphasize-lines: 1-2
 
     git commit -am \
-    move will_not_run to TestAssertionError
+    'move will_not_run to TestAssertionError'
 
 ----
 
@@ -2716,7 +2851,7 @@ test_failure with unittest
     :emphasize-lines: 1-2
 
     git commit -am \
-    move test_failure to TestAssertionError
+    'move test_failure to TestAssertionError'
 
 ----
 
