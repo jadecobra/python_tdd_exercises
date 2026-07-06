@@ -5,12 +5,12 @@
 .. include:: ../../links.rst
 
 #################################################################################
-AssertionError: use unittest
+TypeError: use unittest
 #################################################################################
 
 ----
 
-I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`assertion_error<what is an assertion?>` project.
+I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`type_error<what is an assertion?>` project.
 
 ----
 
@@ -20,7 +20,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
+.. literalinclude:: ../../code/type_error/test_type_error_w_unittest.py
   :language: python
   :linenos:
 
@@ -31,14 +31,14 @@ open the project
 *********************************************************************************
 
 * I open a terminal_
-* I `change directory`_ to the :ref:`assertion_error folder<what is an assertion?>` in the ``pumping_python`` folder_Make sure you are in the ``pumping_python`` folder_ with pwd_ in the terminal_
+* I `change directory`_ to the :ref:`type_error folder<what is an assertion?>` in the ``pumping_python`` folder_Make sure you are in the ``pumping_python`` folder_ with pwd_ in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    cd assertion_error
+    cd type_error
 
-* I open ``test_assertion_error.py``
+* I open ``test_type_error.py``
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -52,14 +52,14 @@ open the project
 
   .. code-block:: shell
 
-    tests/test_assertion_error.py .......             [100%]
+    tests/test_type_error.py .......             [100%]
 
     ================== 7 passed in A.BCs ===================
 
 ----
 
 *********************************************************************************
-add TestAssertionError class
+add TestTypeError class
 *********************************************************************************
 
 =================================================================================
@@ -68,7 +68,7 @@ add TestAssertionError class
 
 ----
 
-* I add a :ref:`class<what is a class?>` named ``AssertionError`` to ``test_assertion_error.py``
+* I add a :ref:`class<what is a class?>` named ``AssertionError`` to ``test_type_error.py``
 
   .. code-block:: python
     :linenos:
@@ -84,20 +84,20 @@ add TestAssertionError class
 
   the test is still green.
 
-* I change the name of the :ref:`class<what is a class?>` to ``TestAssertionError``
+* I change the name of the :ref:`class<what is a class?>` to ``TestTypeError``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1-2
 
     # class AssertionError(object):
-    class TestAssertionError(object):
+    class TestTypeError(object):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
-    AttributeError: 'TestAssertionError' object
+    AttributeError: 'TestTypeError' object
                     has no attribute 'assertFalse'
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
@@ -122,15 +122,15 @@ add TestAssertionError class
 
 ----
 
-* I add :ref:`unitest.TestCase<test_attributes_and_methods_of_unittest_testcase>` as the parent :ref:`class<what is a class?>` of ``TestAssertionError``
+* I add :ref:`unitest.TestCase<test_attributes_and_methods_of_unittest_testcase>` as the parent :ref:`class<what is a class?>` of ``TestTypeError``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 2-3
 
     # class AssertionError(object):
-    # class TestAssertionError(object):
-    class TestAssertionError(unittest.TestCase):
+    # class TestTypeError(object):
+    class TestTypeError(unittest.TestCase):
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -199,7 +199,7 @@ add TestAssertionError class
     import unittest
 
 
-    class TestAssertionError(unittest.TestCase):
+    class TestTypeError(unittest.TestCase):
 
         def test_failure(self):
             self.assertFalse(False)
@@ -207,12 +207,12 @@ add TestAssertionError class
 
     def test_assert_keyword():
 
-* I open a new terminal_ then make sure I am in the ``assertion_error`` folder_
+* I open a new terminal_ then make sure I am in the ``type_error`` folder_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd assertion_error
+    cd type_error
 
 * I add a git_ commit message in the new terminal_
 
@@ -220,7 +220,7 @@ add TestAssertionError class
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add TestAssertionError class'
+    'add TestTypeError class'
 
 ----
 
@@ -236,13 +236,13 @@ test_assert_keyword
 
 * I go back to the terminal_ where the tests are running.
 
-* I move :ref:`test_assert_keyword` to make it a :ref:`method<what is a method?>` of the :ref:`TestAssertionError class<add TestAssertionError class>` and replace ``test_failure``
+* I move :ref:`test_assert_keyword` to make it a :ref:`method<what is a method?>` of the :ref:`TestTypeError class<add TestTypeError class>` and replace ``test_failure``
 
   .. code-block:: python
     :lineno-start: 4
     :emphasize-lines: 3-4, 6, 8
 
-    class TestAssertionError(unittest.TestCase):
+    class TestTypeError(unittest.TestCase):
 
         def test_assert_keyword():
             assert 1 + 1 == 2
@@ -252,14 +252,14 @@ test_assert_keyword
             assert 'I am' + ' alive' == 'I am alive'
 
 
-    def test_assertion_error_w_none():
+    def test_type_error_w_none():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
     TypeError:
-        TestAssertionError.test_assert_keyword()
+        TestTypeError.test_assert_keyword()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -291,7 +291,7 @@ I add ``self`` to the parentheses of :ref:`test_assert_keyword`
   :lineno-start: 4
   :emphasize-lines: 3-4
 
-  class TestAssertionError(unittest.TestCase):
+  class TestTypeError(unittest.TestCase):
 
       # def test_assert_keyword():
       def test_assert_keyword(self):
@@ -324,7 +324,7 @@ the test is green again.
             self.assertNotEqual('I am'+' alive', 'I am alive')
 
 
-    def test_assertion_error_w_none():
+    def test_type_error_w_none():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -399,7 +399,7 @@ the test is green again.
             self.assertEqual('I am'+' alive', 'I am alive')
 
 
-    def test_assertion_error_w_none():
+    def test_type_error_w_none():
 
   the test passes.
 
@@ -422,7 +422,7 @@ the test is green again.
             self.assertEqual('I am'+' alive', 'I am alive')
 
 
-    def test_assertion_error_w_none():
+    def test_type_error_w_none():
 
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'I am' + ' alive'`` and ``'I am alive'``
 
@@ -439,7 +439,7 @@ the test is green again.
             self.assertEqual(reality, my_expectation)
 
 
-    def test_assertion_error_w_none():
+    def test_type_error_w_none():
 
   the test is still green.
 
@@ -514,7 +514,7 @@ the test is green again.
   .. code-block:: python
     :lineno-start: 4
 
-    class TestAssertionError(unittest.TestCase):
+    class TestTypeError(unittest.TestCase):
 
         def test_assert_keyword(self):
             reality = 1 + 1
@@ -533,7 +533,7 @@ the test is green again.
             self.assertEqual(reality, my_expectation)
 
 
-    def test_assertion_error_w_none():
+    def test_type_error_w_none():
 
 * I add a git_ commit message in the other terminal_
 
@@ -541,12 +541,12 @@ the test is green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_assert_keyword to TestAssertionError'
+    'move test_assert_keyword to TestTypeError'
 
 ----
 
 *********************************************************************************
-test_assertion_error_w_none with unittest
+test_type_error_w_none with unittest
 *********************************************************************************
 
 =================================================================================
@@ -557,7 +557,7 @@ test_assertion_error_w_none with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_assertion_error_w_none` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError class>`
+* I move :ref:`test_type_error_w_none` to make it a :ref:`method<what is a method?>` of :ref:`TestTypeError<add TestTypeError class>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -569,7 +569,7 @@ test_assertion_error_w_none with unittest
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
-        def test_assertion_error_w_none():
+        def test_type_error_w_none():
             assert None is None
 
             assert False is not None
@@ -591,7 +591,7 @@ test_assertion_error_w_none with unittest
             assert {} is not None
 
 
-    def test_assertion_error_w_false():
+    def test_type_error_w_false():
 
   .. caution:: Indentation matters in Python_. It is how it knows what blocks belong to what :ref:`function/method<what is a function?>`, :ref:`class<what is a class?>` or :ref:`module<what is a module?>` (Use 4 spaces)
 
@@ -600,7 +600,7 @@ test_assertion_error_w_none with unittest
   .. code-block:: python
 
     TypeError:
-        TestAssertionError.test_assertion_error_w_none()
+        TestTypeError.test_type_error_w_none()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -613,14 +613,14 @@ test_assertion_error_w_none with unittest
 
 ----
 
-I add ``self`` to the parentheses of :ref:`test_assertion_error_w_none`
+I add ``self`` to the parentheses of :ref:`test_type_error_w_none`
 
 .. code-block:: python
   :lineno-start: 22
   :emphasize-lines: 1-2
 
-      # def test_assertion_error_w_none():
-      def test_assertion_error_w_none(self):
+      # def test_type_error_w_none():
+      def test_type_error_w_none(self):
           assert None is None
 
 the test is green again.
@@ -633,14 +633,14 @@ the test is green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertIsNot<test_assert_is_not>` and :ref:`assertIs methods<test_assert_is>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_none`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertIsNot<test_assert_is_not>` and :ref:`assertIs methods<test_assert_is>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_type_error_w_none`
 
   .. code-block:: python
     :lineno-start: 22
     :emphasize-lines: 4, 7, 10, 13, 16, 19, 22, 25, 28, 31
 
-        # def test_assertion_error_w_none():
-        def test_assertion_error_w_none(self):
+        # def test_type_error_w_none():
+        def test_type_error_w_none(self):
             assert None is None
             self.assertIsNot(None, None)
 
@@ -672,7 +672,7 @@ the test is green again.
             self.assertIs({}, None)
 
 
-    def test_assertion_error_w_false():
+    def test_type_error_w_false():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -692,8 +692,8 @@ the test is green again.
     :lineno-start: 22
     :emphasize-lines: 4-5
 
-        # def test_assertion_error_w_none():
-        def test_assertion_error_w_none(self):
+        # def test_type_error_w_none():
+        def test_type_error_w_none(self):
             assert None is None
             # self.assertIsNot(None, None)
             self.assertIs(None, None)
@@ -874,7 +874,7 @@ the test is green again.
             self.assertIsNot({}, None)
 
 
-    def test_assertion_error_w_false():
+    def test_type_error_w_false():
 
   the test passes.
 
@@ -894,7 +894,7 @@ the test is green again.
             self.assertIsNot({}, None)
 
 
-    def test_assertion_error_w_false():
+    def test_type_error_w_false():
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``{}``
 
@@ -912,7 +912,7 @@ the test is green again.
             self.assertIsNot(a_dictionary, None)
 
 
-    def test_assertion_error_w_false():
+    def test_type_error_w_false():
 
   the test is still green.
 
@@ -1096,14 +1096,14 @@ the test is green again.
 
   green.
 
-* I remove the commented lines from :ref:`test_assertion_error_w_none`
+* I remove the commented lines from :ref:`test_type_error_w_none`
 
   .. code-block:: python
     :lineno-start: 20
 
             self.assertEqual(reality, my_expectation)
 
-        def test_assertion_error_w_none(self):
+        def test_type_error_w_none(self):
             assert None is None
             self.assertIs(None, None)
 
@@ -1142,7 +1142,7 @@ the test is green again.
             self.assertIsNot(a_dictionary, None)
 
 
-    def test_assertion_error_w_false():
+    def test_type_error_w_false():
 
 * I add a git_ commit message in the other terminal_
 
@@ -1150,12 +1150,12 @@ the test is green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_assertion_error_w_none to TestAssertionError'
+    'move test_type_error_w_none to TestTypeError'
 
 ----
 
 *********************************************************************************
-test_assertion_error_w_false with unittest
+test_type_error_w_false with unittest
 *********************************************************************************
 
 =================================================================================
@@ -1166,7 +1166,7 @@ test_assertion_error_w_false with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_assertion_error_w_false` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError class>`
+* I move :ref:`test_type_error_w_false` to make it a :ref:`method<what is a method?>` of :ref:`TestTypeError<add TestTypeError class>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -1174,7 +1174,7 @@ test_assertion_error_w_false with unittest
 
             self.assertIsNot(a_dictionary, None)
 
-        def test_assertion_error_w_false():
+        def test_type_error_w_false():
             assert None is not False
 
             assert False is False
@@ -1196,14 +1196,14 @@ test_assertion_error_w_false with unittest
             assert {} is not False
 
 
-    def test_assertion_error_w_true():
+    def test_type_error_w_true():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
     TypeError:
-        TestAssertionError.test_assertion_error_w_false()
+        TestTypeError.test_type_error_w_false()
         takes 0 positional arguments but 1 was given
 
 ----
@@ -1214,14 +1214,14 @@ test_assertion_error_w_false with unittest
 
 ----
 
-I add ``self`` to the parentheses of :ref:`test_assertion_error_w_false`
+I add ``self`` to the parentheses of :ref:`test_type_error_w_false`
 
 .. code-block:: python
   :lineno-start: 60
   :emphasize-lines: 1-2
 
-      # def test_assertion_error_w_false():
-      def test_assertion_error_w_false(self):
+      # def test_type_error_w_false():
+      def test_type_error_w_false(self):
           assert None is not False
 
 the test is green again.
@@ -1234,14 +1234,14 @@ the test is green again.
 
 ----
 
-* I add calls to :ref:`assertIsNot<test_assert_is_not>` and :ref:`assertIs<test_assert_is>` to :ref:`test_assertion_error_w_false`
+* I add calls to :ref:`assertIsNot<test_assert_is_not>` and :ref:`assertIs<test_assert_is>` to :ref:`test_type_error_w_false`
 
   .. code-block:: python
     :lineno-start: 60
     :emphasize-lines: 4, 7, 10, 13, 16, 19, 22, 25, 28, 31
 
-        # def test_assertion_error_w_false():
-        def test_assertion_error_w_false(self):
+        # def test_type_error_w_false():
+        def test_type_error_w_false(self):
             assert None is not False
             self.assertIs(None, False)
 
@@ -1273,7 +1273,7 @@ the test is green again.
             self.assertIs({}, False)
 
 
-    def test_assertion_error_w_true():
+    def test_type_error_w_true():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1287,8 +1287,8 @@ the test is green again.
     :lineno-start: 60
     :emphasize-lines: 4-5
 
-        # def test_assertion_error_w_false():
-        def test_assertion_error_w_false(self):
+        # def test_type_error_w_false():
+        def test_type_error_w_false(self):
             assert None is not False
             # self.assertIs(None, False)
             self.assertIsNot(None, False)
@@ -1462,7 +1462,7 @@ the test is green again.
             self.assertIsNot({}, False)
 
 
-    def test_assertion_error_w_true():
+    def test_type_error_w_true():
 
   the test passes.
 
@@ -1482,7 +1482,7 @@ the test is green again.
             self.assertIsNot({}, False)
 
 
-    def test_assertion_error_w_true():
+    def test_type_error_w_true():
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``{}``
 
@@ -1500,7 +1500,7 @@ the test is green again.
             self.assertIsNot(a_dictionary, False)
 
 
-    def test_assertion_error_w_true():
+    def test_type_error_w_true():
 
   the test is still green.
 
@@ -1684,12 +1684,12 @@ the test is green again.
 
   green.
 
-* I remove the commented lines from :ref:`test_assertion_error_w_false`
+* I remove the commented lines from :ref:`test_type_error_w_false`
 
   .. code-block:: python
     :lineno-start: 60
 
-        def test_assertion_error_w_false(self):
+        def test_type_error_w_false(self):
             assert None is not False
             self.assertIsNot(None, False)
 
@@ -1728,7 +1728,7 @@ the test is green again.
             self.assertIsNot(a_dictionary, False)
 
 
-    def test_assertion_error_w_true():
+    def test_type_error_w_true():
 
 * I add a git_ commit message in the other terminal_
 
@@ -1736,12 +1736,12 @@ the test is green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_assertion_error_w_false to TestAssertionError'
+    'move test_type_error_w_false to TestTypeError'
 
 ----
 
 *********************************************************************************
-test_assertion_error_w_true with unittest
+test_type_error_w_true with unittest
 *********************************************************************************
 
 =================================================================================
@@ -1752,7 +1752,7 @@ test_assertion_error_w_true with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_assertion_error_w_true` to make it a :ref:`method<what is a method?>` of the :ref:`TestAssertionError class<add TestAssertionError class>`
+* I move :ref:`test_type_error_w_true` to make it a :ref:`method<what is a method?>` of the :ref:`TestTypeError class<add TestTypeError class>`
 
   .. code-block:: python
     :lineno-start: 96
@@ -1760,7 +1760,7 @@ test_assertion_error_w_true with unittest
 
             self.assertIsNot(a_dictionary, False)
 
-        def test_assertion_error_w_true():
+        def test_type_error_w_true():
             assert None is not True
 
             assert False is not True
@@ -1782,14 +1782,14 @@ test_assertion_error_w_true with unittest
             assert {} is not True
 
 
-    def test_assertion_error_w_equality():
+    def test_type_error_w_equality():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
     TypeError:
-        TestAssertionError.test_assertion_error_w_true()
+        TestTypeError.test_type_error_w_true()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -1802,14 +1802,14 @@ test_assertion_error_w_true with unittest
 
 ----
 
-I add ``self`` to the parentheses of :ref:`test_assertion_error_w_true`
+I add ``self`` to the parentheses of :ref:`test_type_error_w_true`
 
 .. code-block:: python
   :lineno-start: 98
   :emphasize-lines: 1-2
 
-        # def test_assertion_error_w_true():
-        def test_assertion_error_w_true(self):
+        # def test_type_error_w_true():
+        def test_type_error_w_true(self):
             assert None is not True
 
 the test is green again.
@@ -1822,14 +1822,14 @@ the test is green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to :ref:`assertIsNot<test_assert_is_not>` and :ref:`assertIs<test_assert_is>` to :ref:`test_assertion_error_w_true`
+* I add :ref:`calls<how to call a function with input>` to :ref:`assertIsNot<test_assert_is_not>` and :ref:`assertIs<test_assert_is>` to :ref:`test_type_error_w_true`
 
   .. code-block:: python
     :lineno-start: 98
     :emphasize-lines: 4, 7, 10, 13, 16, 19, 22, 25, 28, 31
 
-        # def test_assertion_error_w_true():
-        def test_assertion_error_w_true(self):
+        # def test_type_error_w_true():
+        def test_type_error_w_true(self):
             assert None is not True
             self.assertIs(None, True)
 
@@ -1861,7 +1861,7 @@ the test is green again.
             self.assertIs({}, True)
 
 
-    def test_assertion_error_w_equality():
+    def test_type_error_w_equality():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1875,8 +1875,8 @@ the test is green again.
     :lineno-start: 98
     :emphasize-lines: 4-5
 
-        # def test_assertion_error_w_true():
-        def test_assertion_error_w_true(self):
+        # def test_type_error_w_true():
+        def test_type_error_w_true(self):
             assert None is not True
             # self.assertIs(None, True)
             self.assertIsNot(None, True)
@@ -2050,7 +2050,7 @@ the test is green again.
             self.assertIsNot({}, True)
 
 
-    def test_assertion_error_w_equality():
+    def test_type_error_w_equality():
 
   the test passes.
 
@@ -2070,7 +2070,7 @@ the test is green again.
             self.assertIsNot({}, True)
 
 
-    def test_assertion_error_w_equality():
+    def test_type_error_w_equality():
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``{}``
 
@@ -2088,7 +2088,7 @@ the test is green again.
             self.assertIsNot(a_dictionary, True)
 
 
-    def test_assertion_error_w_equality():
+    def test_type_error_w_equality():
 
   the test is still green.
 
@@ -2272,14 +2272,14 @@ the test is green again.
 
   green.
 
-* I remove the commented lines from :ref:`test_assertion_error_w_true`
+* I remove the commented lines from :ref:`test_type_error_w_true`
 
   .. code-block:: python
     :lineno-start: 96
 
             self.assertIsNot(a_dictionary, False)
 
-        def test_assertion_error_w_true(self):
+        def test_type_error_w_true(self):
             assert None is not True
             self.assertIsNot(None, True)
 
@@ -2318,7 +2318,7 @@ the test is green again.
             self.assertIsNot(a_dictionary, True)
 
 
-    def test_assertion_error_w_equality():
+    def test_type_error_w_equality():
 
 * I add a git_ commit message in the other terminal_
 
@@ -2326,12 +2326,12 @@ the test is green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_assertion_error_w_true to TestAssertionError'
+    'move test_type_error_w_true to TestTypeError'
 
 ----
 
 *********************************************************************************
-test_assertion_error_w_equality with unittest
+test_type_error_w_equality with unittest
 *********************************************************************************
 
 =================================================================================
@@ -2342,7 +2342,7 @@ test_assertion_error_w_equality with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_assertion_error_w_equality` to make it a :ref:`method<what is a method?>` of the :ref:`TestAssertionError<add TestAssertionError class>`
+* I move :ref:`test_type_error_w_equality` to make it a :ref:`method<what is a method?>` of the :ref:`TestTypeError<add TestTypeError class>`
 
   .. code-block:: python
     :lineno-start: 134
@@ -2350,7 +2350,7 @@ test_assertion_error_w_equality with unittest
 
             self.assertIsNot(a_dictionary, True)
 
-        def test_assertion_error_w_equality():
+        def test_type_error_w_equality():
             assert None == None
 
             assert False != None
@@ -2364,14 +2364,14 @@ test_assertion_error_w_equality with unittest
             assert True == True
 
 
-    def test_assertion_error_w_is_vs_equal():
+    def test_type_error_w_is_vs_equal():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
     TypeError:
-        TestAssertionError.test_assertion_error_w_equality()
+        TestTypeError.test_type_error_w_equality()
         takes 0 positional arguments but 1 was given
 
 ----
@@ -2382,7 +2382,7 @@ test_assertion_error_w_equality with unittest
 
 ----
 
-I add ``self`` to the parentheses of :ref:`test_assertion_error_w_equality`
+I add ``self`` to the parentheses of :ref:`test_type_error_w_equality`
 
 .. code-block:: python
   :lineno-start: 134
@@ -2390,8 +2390,8 @@ I add ``self`` to the parentheses of :ref:`test_assertion_error_w_equality`
 
           self.assertIsNot(a_dictionary, True)
 
-      # def test_assertion_error_w_equality():
-      def test_assertion_error_w_equality(self):
+      # def test_type_error_w_equality():
+      def test_type_error_w_equality(self):
           assert None == None
 
 the test is green again.
@@ -2404,14 +2404,14 @@ the test is green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to :ref:`assertNotEqual<test_assert_not_equal>` and :ref:`assertEqual<test_assert_equal>` to :ref:`test_assertion_error_w_equality`
+* I add :ref:`calls<how to call a function with input>` to :ref:`assertNotEqual<test_assert_not_equal>` and :ref:`assertEqual<test_assert_equal>` to :ref:`test_type_error_w_equality`
 
   .. code-block:: python
     :lineno-start: 136
     :emphasize-lines: 4, 7, 10, 13, 16, 19
 
-        # def test_assertion_error_w_equality():
-        def test_assertion_error_w_equality(self):
+        # def test_type_error_w_equality():
+        def test_type_error_w_equality(self):
             assert None == None
             self.assertNotEqual(None, None)
 
@@ -2431,7 +2431,7 @@ the test is green again.
             self.assertNotEqual(True, True)
 
 
-    def test_assertion_error_w_is_vs_equal():
+    def test_type_error_w_is_vs_equal():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2451,8 +2451,8 @@ the test is green again.
     :lineno-start: 136
     :emphasize-lines: 4-5
 
-        # def test_assertion_error_w_equality():
-        def test_assertion_error_w_equality(self):
+        # def test_type_error_w_equality():
+        def test_type_error_w_equality(self):
             assert None == None
             # self.assertNotEqual(None, None)
             self.assertEqual(None, None)
@@ -2554,18 +2554,18 @@ the test is green again.
             self.assertEqual(True, True)
 
 
-    def test_assertion_error_w_is_vs_equal():
+    def test_type_error_w_is_vs_equal():
 
   the test passes.
 
-* I remove the commented lines from :ref:`test_assertion_error_w_equality`
+* I remove the commented lines from :ref:`test_type_error_w_equality`
 
   .. code-block:: python
     :lineno-start: 134
 
             self.assertIsNot(a_dictionary, True)
 
-        def test_assertion_error_w_equality(self):
+        def test_type_error_w_equality(self):
             assert None == None
             self.assertEqual(None, None)
 
@@ -2585,7 +2585,7 @@ the test is green again.
             self.assertEqual(True, True)
 
 
-    def test_assertion_error_w_is_vs_equal():
+    def test_type_error_w_is_vs_equal():
 
 * I add a git_ commit message in the other terminal_
 
@@ -2593,12 +2593,12 @@ the test is green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_assertion_error_w_equality to TestAssertionError'
+    'move test_type_error_w_equality to TestTypeError'
 
 ----
 
 *********************************************************************************
-test_assertion_error_w_is_vs_equal with unittest
+test_type_error_w_is_vs_equal with unittest
 *********************************************************************************
 
 =================================================================================
@@ -2609,7 +2609,7 @@ test_assertion_error_w_is_vs_equal with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_assertion_error_w_is_vs_equal` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError class>`
+* I move :ref:`test_type_error_w_is_vs_equal` to make it a :ref:`method<what is a method?>` of :ref:`TestTypeError<add TestTypeError class>`
 
   .. code-block:: python
     :lineno-start: 153
@@ -2617,7 +2617,7 @@ test_assertion_error_w_is_vs_equal with unittest
 
             self.assertEqual(True, True)
 
-        def test_assertion_error_w_is_vs_equal():
+        def test_type_error_w_is_vs_equal():
             assert 0 is not 0.0
 
             assert 0 == 0.0
@@ -2630,7 +2630,7 @@ test_assertion_error_w_is_vs_equal with unittest
   .. code-block:: python
 
     TypeError:
-        TestAssertionError.test_assertion_error_w_is_vs_equal()
+        TestTypeError.test_type_error_w_is_vs_equal()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -2643,15 +2643,15 @@ test_assertion_error_w_is_vs_equal with unittest
 
 ----
 
-I add ``self`` to the :ref:`definition<how to make a function that takes input>` of :ref:`test_assertion_error_w_is_vs_equal`
+I add ``self`` to the :ref:`definition<how to make a function that takes input>` of :ref:`test_type_error_w_is_vs_equal`
 
 .. code-block:: python
   :lineno-start: 153
 
           self.assertEqual(True, True)
 
-      # def test_assertion_error_w_is_vs_equal():
-      def test_assertion_error_w_is_vs_equal(self):
+      # def test_type_error_w_is_vs_equal():
+      def test_type_error_w_is_vs_equal(self):
           assert 0 is not 0.0
 
 the test is green again.
@@ -2670,8 +2670,8 @@ the test is green again.
     :lineno-start: 155
     :emphasize-lines: 4
 
-        # def test_assertion_error_w_is_vs_equal():
-        def test_assertion_error_w_is_vs_equal(self):
+        # def test_type_error_w_is_vs_equal():
+        def test_type_error_w_is_vs_equal(self):
             assert 0 is not 0.0
             self.assertIs(0, 0.0)
 
@@ -2689,8 +2689,8 @@ the test is green again.
     :lineno-start: 155
     :emphasize-lines: 4-5
 
-        # def test_assertion_error_w_is_vs_equal():
-        def test_assertion_error_w_is_vs_equal(self):
+        # def test_type_error_w_is_vs_equal():
+        def test_type_error_w_is_vs_equal(self):
             assert 0 is not 0.0
             # self.assertIs(0, 0.0)
             self.assertIsNot(0, 0.0)
@@ -2705,8 +2705,8 @@ the test is green again.
     :lineno-start: 155
     :emphasize-lines: 8
 
-        # def test_assertion_error_w_is_vs_equal():
-        def test_assertion_error_w_is_vs_equal(self):
+        # def test_type_error_w_is_vs_equal():
+        def test_type_error_w_is_vs_equal(self):
             assert 0 is not 0.0
             # self.assertIs(0, 0.0)
             self.assertIsNot(0, 0.0)
@@ -2731,8 +2731,8 @@ the test is green again.
     :lineno-start: 155
     :emphasize-lines: 8-9
 
-        # def test_assertion_error_w_is_vs_equal():
-        def test_assertion_error_w_is_vs_equal(self):
+        # def test_type_error_w_is_vs_equal():
+        def test_type_error_w_is_vs_equal(self):
             assert 0 is not 0.0
             # self.assertIs(0, 0.0)
             self.assertIsNot(0, 0.0)
@@ -2746,14 +2746,14 @@ the test is green again.
 
   the test passes. Compare the :ref:`assertions<what is an assertion?>`: ``assertIsNot(0, 0.0)`` vs ``assert 0 is not 0.0``.
 
-* I remove the commented lines from :ref:`test_assertion_error_w_is_vs_equal`
+* I remove the commented lines from :ref:`test_type_error_w_is_vs_equal`
 
   .. code-block:: python
     :lineno-start: 153
 
             self.assertEqual(True, True)
 
-        def test_assertion_error_w_is_vs_equal(self):
+        def test_type_error_w_is_vs_equal(self):
             assert 0 is not 0.0
             self.assertIsNot(0, 0.0)
 
@@ -2769,7 +2769,7 @@ the test is green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_assertion_error_w_is_vs_equal to TestAssertionError'
+    'move test_type_error_w_is_vs_equal to TestTypeError'
 
 ----
 
@@ -2785,7 +2785,7 @@ will_not_run with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`will not run<pytest only calls the function if the name starts with test>` to the :ref:`TestAssertionError class<add TestAssertionError class>`
+* I move :ref:`will not run<pytest only calls the function if the name starts with test>` to the :ref:`TestTypeError class<add TestTypeError class>`
 
   .. code-block:: python
     :lineno-start: 160
@@ -2916,7 +2916,7 @@ the test is green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move will_not_run to TestAssertionError'
+    'move will_not_run to TestTypeError'
 
 ----
 
@@ -2932,7 +2932,7 @@ test_failure with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_failure<pytest only calls the function if the name starts with test>` to :ref:`TestAssertionError<add TestAssertionError class>`
+* I move :ref:`test_failure<pytest only calls the function if the name starts with test>` to :ref:`TestTypeError<add TestTypeError class>`
 
   .. code-block:: python
     :lineno-start: 162
@@ -2954,7 +2954,7 @@ test_failure with unittest
   .. code-block:: python
 
     TypeError:
-        TestAssertionError.test_failure()
+        TestTypeError.test_failure()
         takes 0 positional arguments but 1 was given
 
   because ...
@@ -2967,7 +2967,7 @@ test_failure with unittest
 
 ----
 
-I add ``self`` to the parentheses of :ref:`test_failure<pytest only calls the function if the name starts with test>` to :ref:`TestAssertionError<add TestAssertionError class>`
+I add ``self`` to the parentheses of :ref:`test_failure<pytest only calls the function if the name starts with test>` to :ref:`TestTypeError<add TestTypeError class>`
 
 .. code-block:: python
   :lineno-start: 166
@@ -3052,7 +3052,7 @@ the test is green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_failure to TestAssertionError'
+    'move test_failure to TestTypeError'
 
 ----
 
@@ -3063,25 +3063,25 @@ remove repetition with class attributes
 
 Three of the tests have the exact same :ref:`variables<what is a variable?>`. I can make them :ref:`class attributes<what is a class attribute?>` to remove repetition of making the same :ref:`variables<what is a variable?>` in the tests.
 
-* I add a :ref:`class attribute<what is a class attribute?>` for ``an_integer = 0`` to :ref:`TestAssertionError<add TestAssertionError class>`
+* I add a :ref:`class attribute<what is a class attribute?>` for ``an_integer = 0`` to :ref:`TestTypeError<add TestTypeError class>`
 
   .. code-block:: python
     :lineno-start: 4
     :emphasize-lines: 3
 
-    class TestAssertionError(unittest.TestCase):
+    class TestTypeError(unittest.TestCase):
 
         an_integer = 0
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_type_error_w_none`
 
   .. code-block:: python
     :lineno-start: 24
     :emphasize-lines: 11-15
 
-        def test_assertion_error_w_none(self):
+        def test_type_error_w_none(self):
             assert None is None
             self.assertIs(None, None)
 
@@ -3101,7 +3101,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   the test is still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_type_error_w_false`
 
   .. code-block:: python
     :lineno-start: 62
@@ -3109,7 +3109,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
             self.assertIsNot(a_dictionary, None)
 
-        def test_assertion_error_w_false(self):
+        def test_type_error_w_false(self):
             assert None is not False
             self.assertIsNot(None, False)
 
@@ -3129,7 +3129,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_type_error_w_true`
 
   .. code-block:: python
     :lineno-start: 102
@@ -3137,7 +3137,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
             self.assertIsNot(a_dictionary, False)
 
-        def test_assertion_error_w_true(self):
+        def test_type_error_w_true(self):
             assert None is not True
             self.assertIsNot(None, True)
 
@@ -3165,14 +3165,14 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
     :lineno-start: 4
     :emphasize-lines: 4
 
-    class TestAssertionError(unittest.TestCase):
+    class TestTypeError(unittest.TestCase):
 
         an_integer = 0
         a_float = 0.0
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_type_error_w_none`
 
   .. code-block:: python
     :lineno-start: 39
@@ -3190,7 +3190,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_type_error_w_false`
 
   .. code-block:: python
     :lineno-start: 81
@@ -3208,7 +3208,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   the test is still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_type_error_w_true`
 
   .. code-block:: python
     :lineno-start: 123
@@ -3234,7 +3234,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
     :lineno-start: 4
     :emphasize-lines: 5
 
-    class TestAssertionError(unittest.TestCase):
+    class TestTypeError(unittest.TestCase):
 
         an_integer = 0
         a_float = 0.0
@@ -3242,7 +3242,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_type_error_w_none`
 
   .. code-block:: python
     :lineno-start: 46
@@ -3260,7 +3260,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_type_error_w_false`
 
   .. code-block:: python
     :lineno-start: 90
@@ -3278,7 +3278,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_type_error_w_true`
 
   .. code-block:: python
     :lineno-start: 134
@@ -3304,7 +3304,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
     :lineno-start: 4
     :emphasize-lines: 6
 
-    class TestAssertionError(unittest.TestCase):
+    class TestTypeError(unittest.TestCase):
 
         an_integer = 0
         a_float = 0.0
@@ -3313,7 +3313,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_type_error_w_none`
 
   .. code-block:: python
     :lineno-start: 53
@@ -3331,7 +3331,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_type_error_w_false`
 
   .. code-block:: python
     :lineno-start: 99
@@ -3349,7 +3349,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_type_error_w_true`
 
   .. code-block:: python
     :lineno-start: 145
@@ -3375,7 +3375,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
     :lineno-start: 4
     :emphasize-lines: 7
 
-    class TestAssertionError(unittest.TestCase):
+    class TestTypeError(unittest.TestCase):
 
         an_integer = 0
         a_float = 0.0
@@ -3385,7 +3385,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_type_error_w_none`
 
   .. code-block:: python
     :lineno-start: 60
@@ -3403,7 +3403,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   the test is still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_type_error_w_false`
 
   .. code-block:: python
     :lineno-start: 108
@@ -3421,7 +3421,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_type_error_w_true`
 
   .. code-block:: python
     :lineno-start: 156
@@ -3447,7 +3447,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
     :lineno-start: 4
     :emphasize-lines: 8
 
-    class TestAssertionError(unittest.TestCase):
+    class TestTypeError(unittest.TestCase):
 
         an_integer = 0
         a_float = 0.0
@@ -3458,7 +3458,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_type_error_w_none`
 
   .. code-block:: python
     :lineno-start: 67
@@ -3476,7 +3476,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_type_error_w_false`
 
   .. code-block:: python
     :lineno-start: 117
@@ -3494,7 +3494,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   the test is still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_type_error_w_true`
 
   .. code-block:: python
     :lineno-start: 167
@@ -3520,7 +3520,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
     :lineno-start: 4
     :emphasize-lines: 9
 
-    class TestAssertionError(unittest.TestCase):
+    class TestTypeError(unittest.TestCase):
 
         an_integer = 0
         a_float = 0.0
@@ -3532,7 +3532,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_type_error_w_none`
 
   .. code-block:: python
     :lineno-start: 74
@@ -3546,11 +3546,11 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             assert self.a_dictionary is not None
             self.assertIsNot(self.a_dictionary, None)
 
-        def test_assertion_error_w_false(self):
+        def test_type_error_w_false(self):
 
   the test is still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_type_error_w_false`
 
   .. code-block:: python
     :lineno-start: 126
@@ -3564,11 +3564,11 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             assert self.a_dictionary is not False
             self.assertIsNot(self.a_dictionary, False)
 
-        def test_assertion_error_w_true(self):
+        def test_type_error_w_true(self):
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_type_error_w_true`
 
   .. code-block:: python
     :lineno-start: 178
@@ -3582,18 +3582,18 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             assert self.a_dictionary is not True
             self.assertIsNot(self.a_dictionary, True)
 
-        def test_assertion_error_w_equality(self):
+        def test_type_error_w_equality(self):
 
   green.
 
 ----
 
-* I remove the commented lines from :ref:`test_assertion_error_w_true`
+* I remove the commented lines from :ref:`test_type_error_w_true`
 
   .. code-block:: python
     :lineno-start: 134
 
-        def test_assertion_error_w_true(self):
+        def test_type_error_w_true(self):
             assert None is not True
             self.assertIsNot(None, True)
 
@@ -3624,14 +3624,14 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             assert self.a_dictionary is not True
             self.assertIsNot(self.a_dictionary, True)
 
-        def test_assertion_error_w_equality(self):
+        def test_type_error_w_equality(self):
 
-* I remove the commented lines from :ref:`test_assertion_error_w_false`
+* I remove the commented lines from :ref:`test_type_error_w_false`
 
   .. code-block:: python
     :lineno-start: 82
 
-        def test_assertion_error_w_false(self):
+        def test_type_error_w_false(self):
             assert None is not False
             self.assertIsNot(None, False)
 
@@ -3662,14 +3662,14 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             assert self.a_dictionary is not False
             self.assertIsNot(self.a_dictionary, False)
 
-        def test_assertion_error_w_true(self):
+        def test_type_error_w_true(self):
 
-* I remove the commented lines from :ref:`test_assertion_error_w_none`
+* I remove the commented lines from :ref:`test_type_error_w_none`
 
   .. code-block:: python
     :lineno-start: 30
 
-        def test_assertion_error_w_none(self):
+        def test_type_error_w_none(self):
             assert None is None
             self.assertIs(None, None)
 
@@ -3700,7 +3700,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             assert self.a_dictionary is not None
             self.assertIsNot(self.a_dictionary, None)
 
-        def test_assertion_error_w_false(self):
+        def test_type_error_w_false(self):
 
 * I add a git_ commit message in the other terminal_
 
@@ -3717,11 +3717,11 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 close the project
 *********************************************************************************
 
-* I close ``test_assertion_error.py``
+* I close ``test_type_error.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
-* I `change directory`_ to the parent of ``assertion_error``
+* I `change directory`_ to the parent of ``type_error``
 
   .. code-block:: python
     :emphasize-lines: 1
