@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Pumping Python TDD: "AssertionError: use unittest" continuation in the assertion_error project. Learn to use the unittest library by moving bare `assert` tests into a `TestAssertionError(unittest.TestCase)` class, adding `self`, and using `assertEqual` / `assertIs` / `assertIsNot` / `assertNotEqual` as another way to write assertions. See the exact unittest error messages: "AssertionError: True is not false", "unexpectedly identical: None", "2 == 2", "False is not None", "0 is not 0.0". Then extract repeated literals (an_integer=0, a_float=0.0, a_string, tuple, list, set, dict) into class attributes to remove duplication across test methods without setUp. Includes will_not_run (skipped because name does not start with test_) vs real test_ methods, reality == my_expectation still green without assert, is vs == identity gotchas, full red-green-refactor with "remove the commented lines", git commits, uv run pytest-watcher. Builds directly on the bare-assert AssertionError chapter.
+  :keywords: Jacob Itegboje, Pumping Python, AssertionError use unittest, unittest.TestCase, another way to write tests, assertEqual, assertIs, assertIsNot, assertNotEqual, self. in test methods, class attributes, remove repetition with class attributes, AssertionError: True is not false, unexpectedly identical: None, AssertionError: 2 == 2, 0 is not 0.0, reality == my_expectation, will_not_run, test_ prefix rule, test_assert_keyword, test_assertion_error_w_none, python TDD unittest, red green refactor unittest, uv pytest-watcher, python is vs == unittest, bare assert vs unittest assert, python class attributes for tests, no setUp needed class attrs, python unittest beginner tutorial
 
 .. include:: ../../links.rst
 
@@ -122,7 +122,7 @@ add TestAssertionError class
 
 ----
 
-* I add :ref:`unitest.TestCase<test_attributes_and_methods_of_unittest_testcase>` as the parent :ref:`class<what is a class?>` of ``TestAssertionError``
+* I add :ref:`unittest.TestCase<test_attributes_and_methods_of_unittest_testcase>` as the parent :ref:`class<what is a class?>` of ``TestAssertionError``
 
   .. code-block:: python
     :linenos:
@@ -843,7 +843,7 @@ the test is green again.
 
   .. code-block:: python
 
-    AssertionError: set()  is not None
+    AssertionError: set() is not None
 
 * I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(set(), None)``
 
@@ -3742,7 +3742,8 @@ close the project
 review
 *********************************************************************************
 
-I can use :ref:`class attributes<what is a class attribute?>` for things that repeat, which allows :ref:`methods<what is a method?>` of the same :ref:`class<what is a class?>` to use them.
+* I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_attributes_and_methods_of_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`
+* I can use :ref:`class attributes<what is a class attribute?>` for things that repeat, which allows :ref:`methods<what is a method?>` of the same :ref:`class<what is a class?>` to use them.
 
 ----
 
