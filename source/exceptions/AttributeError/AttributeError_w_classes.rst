@@ -253,7 +253,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_01'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_02`` to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+* I add ``attribute_01`` to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -265,16 +265,16 @@ test_attribute_error_w_class_attributes
         attribute_01 = attribute_00
 
   - the test passes because in this case it does not matter if I use the :ref:`class<what is a class?>` (``AClass``) or an :ref:`instance of the class<how to test if something is an instance>`  (``AClass()``).
-  - ``attribute_02`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_02`` or ``src.attribute_error.AClass().attribute_02.
+  - ``attribute_01`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_01`` or ``src.attribute_error.AClass().attribute_01``
 
     .. code-block:: shell
 
-      src.attribute_error.AClass.attribute_02
-      src.attribute_error.AClass().attribute_02
+      src.attribute_error.AClass.attribute_01
+      src.attribute_error.AClass().attribute_01
       src
       └── attribute_error.py
           └── class AClass(object):
-              └── attribute_02 = attribute_01
+              └── attribute_01 = attribute_00
 
 * I add a line for ``src.attribute_error.AClass.attribute_02`` to ``test_attribute_error.py``
 
@@ -307,10 +307,10 @@ test_attribute_error_w_class_attributes
     class AClass(object):
 
         attribute_00 = function_09()
-        attribute_00 = attribute_00
         attribute_01 = attribute_00
+        attribute_02 = attribute_01
 
-  the test passes because ``attribute_02`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_02`` or ``src.attribute_error.AClass().attribute_02.
+  the test passes because ``attribute_02`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_02`` or ``src.attribute_error.AClass().attribute_02``
 
   .. code-block:: shell
 
@@ -357,7 +357,7 @@ test_attribute_error_w_class_attributes
         attribute_02 = attribute_01
         attribute_03 = attribute_02
 
-  the test passes because ``attribute_03`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_03`` or ``src.attribute_error.AClass().attribute_03.
+  the test passes because ``attribute_03`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_03`` or ``src.attribute_error.AClass().attribute_03``
 
   .. code-block:: shell
 
@@ -406,7 +406,7 @@ test_attribute_error_w_class_attributes
         attribute_03 = None
         attribute_04 = None
 
-  the test passes because ``attribute_04`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_04`` or ``src.attribute_error.AClass().attribute_04.
+  the test passes because ``attribute_04`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_04`` or ``src.attribute_error.AClass().attribute_04``
 
   .. code-block:: shell
 
@@ -458,7 +458,7 @@ test_attribute_error_w_class_attributes
         attribute_04 = None
         attribute_05 = None
 
-  the test passes because ``attribute_05`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_05`` or ``src.attribute_error.AClass().attribute_05.
+  the test passes because ``attribute_05`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_05`` or ``src.attribute_error.AClass().attribute_05``
 
   .. code-block:: shell
 
@@ -511,7 +511,7 @@ test_attribute_error_w_class_attributes
         attribute_05 = None
         attribute_06 = None
 
-  the test passes because ``attribute_06`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_06`` or ``src.attribute_error.AClass().attribute_06.
+  the test passes because ``attribute_06`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_06`` or ``src.attribute_error.AClass().attribute_06``
 
   .. code-block:: shell
 
@@ -566,7 +566,7 @@ test_attribute_error_w_class_attributes
         attribute_06 = None
         attribute_07 = None
 
-  the test passes because ``attribute_07`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_07`` or ``src.attribute_error.AClass().attribute_07.
+  the test passes because ``attribute_07`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_07`` or ``src.attribute_error.AClass().attribute_07``
 
   .. code-block:: shell
 
@@ -623,7 +623,7 @@ test_attribute_error_w_class_attributes
         attribute_07 = None
         attribute_08 = None
 
-  the test passes because ``attribute_08`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_08`` or ``src.attribute_error.AClass().attribute_08.
+  the test passes because ``attribute_08`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_08`` or ``src.attribute_error.AClass().attribute_08``
 
   .. code-block:: shell
 
@@ -682,7 +682,7 @@ test_attribute_error_w_class_attributes
         attribute_08 = None
         attribute_09 = None
 
-  the test passes because ``attribute_09`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_09`` or ``src.attribute_error.AClass().attribute_09.
+  the test passes because ``attribute_09`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_09`` or ``src.attribute_error.AClass().attribute_09``
 
   .. code-block:: shell
 
