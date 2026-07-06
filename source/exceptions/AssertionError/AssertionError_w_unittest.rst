@@ -1307,7 +1307,7 @@ the test passes.
 
     E       assert False is not False
 
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is_not>` for ``(False, False)``
+* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` for ``(False, False)``
 
   .. code-block:: python
     :lineno-start: 66
@@ -1745,7 +1745,7 @@ test_assertion_error_w_true with unittest
 *********************************************************************************
 
 =================================================================================
-:red:`RED`: make it fail7
+:red:`RED`: make it fail
 =================================================================================
 
 ----
@@ -1756,7 +1756,7 @@ test_assertion_error_w_true with unittest
 
   .. code-block:: python
     :lineno-start: 96
-    :emphasize-lines: :emphasize-lines: 3-4, 6, 8, 10, 12, 14, 16, 18, 20, 22
+    :emphasize-lines: 3-4, 6, 8, 10, 12, 14, 16, 18, 20, 22
 
             self.assertIsNot(a_dictionary, False)
 
@@ -1805,12 +1805,12 @@ test_assertion_error_w_true with unittest
 I add ``self`` to the parentheses of :ref:`test_assertion_error_w_true`
 
 .. code-block:: python
-  :lineno-start: 60
+  :lineno-start: 98
   :emphasize-lines: 1-2
 
-      # def test_assertion_error_w_true():
-      def test_assertion_error_w_true(self):
-          assert None is not
+        # def test_assertion_error_w_true():
+        def test_assertion_error_w_true(self):
+            assert None is not True
 
 the test passes.
 
@@ -1825,7 +1825,7 @@ the test passes.
 * I add calls to :ref:`assertIsNot<test_assert_is_not>` and :ref:`assertIs<test_assert_is>` to :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 98
     :emphasize-lines: 7, 10, 13, 16, 19, 22, 25, 28, 31
 
         # def test_assertion_error_w_true():
@@ -1833,11 +1833,11 @@ the test passes.
             assert None is not True
             self.assertIs(None, True)
 
-            assert False is False
-            self.assertIsNot(False, True)
+            assert False is not True
+            self.assertIs(False, True)
 
-            assert True is not True
-            self.assertIs(True, True)
+            assert True is True
+            self.assertIsNot(True, True)
 
             assert 0 is not True
             self.assertIs(0, True)
@@ -1861,7 +1861,7 @@ the test passes.
             self.assertIs({}, True)
 
 
-    def test_assertion_error_w_true():
+    def test_assertion_error_w_equality():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1872,7 +1872,7 @@ the test passes.
 * I change :ref:`assertIs<test_assert_is>` to :ref:`assert_is_not<test_assert_is_not>` for ``(None, True)``
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 98
     :emphasize-lines: 4-5
 
         # def test_assertion_error_w_true():
@@ -1881,47 +1881,47 @@ the test passes.
             # self.assertIs(None, True)
             self.assertIsNot(None, True)
 
-            assert False is False
+            assert False is not True
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: unexpectedly identical: False
+    AssertionError: False is not True
 
-  compare this with the error message for ``assert False is not True``
-
-  .. code-block:: python
-
-    E       assert False is not True
-
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is_not>` for ``(False, True)``
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(False, True)``
 
   .. code-block:: python
-    :lineno-start: 66
+    :lineno-start: 104
     :emphasize-lines: 2-3
 
-            assert False is False
-            # self.assertIsNot(False, True)
-            self.assertIs(False, True)
+            assert False is not True
+            # self.assertIs(False, True)
+            self.assertIsNot(False, True)
 
-            assert True is not True
+            assert True is True
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: True is not True
+    AssertionError: unexpectedly identical: True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(True, True)``
+  compare this with the error message for ``assert True is not True``
 
   .. code-block:: python
-    :lineno-start: 70
+
+    E       assert True is not True
+
+* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` for ``(True, True)``
+
+  .. code-block:: python
+    :lineno-start: 108
     :emphasize-lines: 2-3
 
-            assert True is not True
-            # self.assertIs(True, True)
-            self.assertIsNot(True, True)
+            assert True is True
+            # self.assertIsNot(True, True)
+            self.assertIs(True, True)
 
             assert 0 is not True
 
@@ -1934,7 +1934,7 @@ the test passes.
 * I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(0, True)``
 
   .. code-block:: python
-    :lineno-start: 74
+    :lineno-start: 112
     :emphasize-lines: 2-3
 
             assert 0 is not True
@@ -1952,7 +1952,7 @@ the test passes.
 * I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(0.0, True)``
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 116
     :emphasize-lines: 2-3
 
             assert 0.0 is not True
@@ -1970,7 +1970,7 @@ the test passes.
 * I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``('', True)``
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 120
     :emphasize-lines: 2-3
 
             assert '' is not True
@@ -1988,7 +1988,7 @@ the test passes.
 * I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``((), True)``
 
   .. code-block:: python
-    :lineno-start: 86
+    :lineno-start: 124
     :emphasize-lines: 2-3
 
             assert () is not True
@@ -2006,7 +2006,7 @@ the test passes.
 * I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``([], True)``
 
   .. code-block:: python
-    :lineno-start: 90
+    :lineno-start: 128
     :emphasize-lines: 2-3
 
             assert [] is not True
@@ -2024,7 +2024,7 @@ the test passes.
 * I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(set(), True)``
 
   .. code-block:: python
-    :lineno-start: 94
+    :lineno-start: 132
     :emphasize-lines: 2-3
 
             assert set() is not True
@@ -2042,7 +2042,7 @@ the test passes.
 * I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``({}, True)``
 
   .. code-block:: python
-    :lineno-start: 98
+    :lineno-start: 136
     :emphasize-lines: 2-3
 
             assert {} is not True
@@ -2050,7 +2050,7 @@ the test passes.
             self.assertIsNot({}, True)
 
 
-    def test_assertion_error_w_true():
+    def test_assertion_error_w_equality():
 
   the test passes.
 
