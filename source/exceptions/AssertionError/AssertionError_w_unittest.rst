@@ -2782,7 +2782,85 @@ will_not_run with unittest
 =================================================================================
 
 ----
+
 * I go back to the terminal_ where the tests are running
+
+* I move :ref:`will not run<pytest only calls the function if the name starts with test>` to the :ref:`TestAssertionError class<add TestAssertionError class>`
+
+  .. code-block:: python
+    :lineno-start: 160
+    :emphasize-lines: 3-4
+
+            self.assertEqual(0, 0.0)
+
+        def will_not_run():
+            assert False == True
+
+
+    def test_failure():
+
+  the test is still green.
+
+* I add a :ref:`call<how to call a function with input>` to :ref:`test_assert_equal`
+
+  .. code-block:: python
+    :lineno-start: 160
+    :emphasize-lines: 5
+
+            self.assertEqual(0, 0.0)
+
+        def will_not_run():
+            assert False == True
+            self.assertEqual(False, True)
+
+
+    def test_failure():
+
+  still green.
+
+* I add ``self`` to the parentheses of :ref:`will not run<pytest only calls the function if the name starts with test>`
+
+  .. code-block:: python
+    :lineno-start: 162
+    :emphasize-lines: 3-4
+
+            self.assertEqual(0, 0.0)
+
+        # def will_not_run():
+        def will_not_run(self):
+            assert False == True
+            self.assertEqual(False, True)
+
+
+    def test_failure():
+
+  green.
+
+* I change the name from :ref:`will not run<pytest only calls the function if the name starts with test>` to ``test_will_not_run``
+
+  .. code-block:: python
+    :lineno-start: 162
+    :emphasize-lines: 4-5
+
+            self.assertEqual(0, 0.0)
+
+        # def will_not_run():
+        # def will_not_run(self):
+        def test_will_not_run(self):
+            assert False == True
+            self.assertEqual(False, True)
+
+
+    def test_failure():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert False == True
+
+  a reminder that the test only runs if :ref:`the method/function name starts with test<pytest only calls the function if the name starts with test>`.
+
 ----
 
 =================================================================================
@@ -2790,6 +2868,25 @@ will_not_run with unittest
 =================================================================================
 
 ----
+
+I undo the change
+
+.. code-block:: python
+  :lineno-start: 160
+  :emphasize-lines: 3, 5
+
+          self.assertEqual(0, 0.0)
+
+      def will_not_run():
+      # def will_not_run(self):
+      # def test_will_not_run(self):
+          assert False == True
+          self.assertEqual(False, True)
+
+
+  def test_failure():
+
+the test is green again.
 
 ----
 
@@ -2802,7 +2899,16 @@ will_not_run with unittest
 * I remove the commented lines from :ref:`will not run<pytest only calls the function if the name starts with test>`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 160
+
+            self.assertEqual(0, 0.0)
+
+        def will_not_run():
+            assert False == True
+            self.assertEqual(False, True)
+
+
+    def test_failure():
 
 * I add a git_ commit message in the other terminal_
 
