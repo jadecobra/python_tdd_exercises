@@ -1513,7 +1513,7 @@ the test passes.
             self.assertIsNot([], False)
 
             a_set = set()
-            assert set() is not None
+            assert set() is not False
             # self.assertIs(set(), False)
             self.assertIsNot(set(), False)
 
@@ -1537,27 +1537,27 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``[]``
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 88
     :emphasize-lines: 3
 
             self.assertIsNot((), False)
 
             a_list = []
-            assert [] is not None
+            assert [] is not False
             # self.assertIs([], False)
             self.assertIsNot([], False)
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``[]``
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 88
     :emphasize-lines: 4-5, 7-8
 
             self.assertIsNot((), False)
 
             a_list = []
-            # assert [] is not None
-            assert a_list is not None
+            # assert [] is not False
+            assert a_list is not False
             # self.assertIs([], False)
             # self.assertIsNot([], False)
             self.assertIsNot(a_list, False)
@@ -1573,7 +1573,7 @@ the test passes.
             self.assertIsNot('', False)
 
             a_tuple = ()
-            assert () is not None
+            assert () is not False
             # self.assertIs((), False)
             self.assertIsNot((), False)
 
@@ -1586,8 +1586,8 @@ the test passes.
             self.assertIsNot('', False)
 
             a_tuple = ()
-            # assert () is not None
-            assert a_tuple is not None
+            # assert () is not False
+            assert a_tuple is not False
             # self.assertIs((), False)
             # self.assertIsNot((), False)
             self.assertIsNot(a_tuple, False)
@@ -1603,7 +1603,7 @@ the test passes.
             self.assertIsNot(0.0, False)
 
             a_string = ''
-            assert '' is not None
+            assert '' is not False
             # self.assertIs('', False)
             self.assertIsNot('', False)
 
@@ -1616,8 +1616,8 @@ the test passes.
             self.assertIsNot(0.0, False)
 
             a_string = ''
-            # assert '' is not None
-            assert a_string is not None
+            # assert '' is not False
+            assert a_string is not False
             # self.assertIs('', False)
             # self.assertIsNot('', False)
             self.assertIsNot(a_string, False)
@@ -1633,7 +1633,7 @@ the test passes.
             self.assertIsNot(0, False)
 
             a_float = 0.0
-            assert 0.0 is not None
+            assert 0.0 is not False
             # self.assertIs(0.0, False)
             self.assertIsNot(0.0, False)
 
@@ -1646,8 +1646,8 @@ the test passes.
             self.assertIsNot(0, False)
 
             a_float = 0.0
-            # assert 0.0 is not None
-            assert a_float is not None
+            # assert 0.0 is not False
+            assert a_float is not False
             # self.assertIs(0.0, False)
             # self.assertIsNot(0.0, False)
             self.assertIsNot(a_float, False)
@@ -1663,7 +1663,7 @@ the test passes.
             self.assertIsNot(True, False)
 
             an_integer = 0
-            assert 0 is not None
+            assert 0 is not False
             # self.assertIs(0, False)
             self.assertIsNot(0, False)
 
@@ -1676,8 +1676,8 @@ the test passes.
             self.assertIsNot(True, False)
 
             an_integer = 0
-            # assert 0 is not None
-            assert an_integer is not None
+            # assert 0 is not False
+            assert an_integer is not False
             # self.assertIs(0, False)
             # self.assertIsNot(0, False)
             self.assertIsNot(an_integer, False)
