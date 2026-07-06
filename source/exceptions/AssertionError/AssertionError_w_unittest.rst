@@ -31,7 +31,7 @@ open the project
 *********************************************************************************
 
 * I open a terminal_
-* I `change directory`_ to the :ref:`assertion_error folder<what is an assertion?>` in the ``pumping_python`` folder_Make sure you are in the ``pumping_python`` folder_ with pwd_ in the terminal_
+* I `change directory`_ to the :ref:`assertion_error folder<what is an assertion?>` in the ``pumping_python`` folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
