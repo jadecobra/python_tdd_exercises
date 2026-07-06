@@ -134,7 +134,7 @@ test_attribute_error_w_class_attributes
     AttributeError: 'function' object
                     has no attribute 'attribute_00'
 
-* I add a :ref:`variable<what is a variable?>` to the :ref:`function <what is a function?>`
+* I add a :ref:`variable<what is a variable?>` for ``attribute_00`` to the :ref:`function <what is a function?>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -206,11 +206,11 @@ test_attribute_error_w_class_attributes
     .. code-block:: shell
 
       src.attribute_error.AClass.attribute_00
+      src.attribute_error.AClass().attribute_00
       src
       └── attribute_error.py
           └── class AClass(object):
               └── attribute_00 = function_09()
-
 
 ----
 
@@ -223,25 +223,24 @@ test_attribute_error_w_class_attributes
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 22
 
-    def function_09():
-        return None
+    def function_09(): return function_08()
 
 
     class AClass(object):
 
-        attribute_00 = None
+        attribute_00 = function_09()
 
-* I add a line for ``src.attribute_error.AClass.attribute_01`` to ``test_attribute_error.py``
+* I add a line for ``src.attribute_error.AClass().attribute_01`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 30
     :emphasize-lines: 3
 
-        def test_attribute_error_w_class_attributes(self):
-            src.attribute_error.AClass.attribute_00
-            src.attribute_error.AClass.attribute_01
+    def test_attribute_error_w_class_attributes():
+        src.attribute_error.AClass.attribute_00
+        src.attribute_error.AClass().attribute_01
 
 
     # Exceptions seen
@@ -254,7 +253,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_01'.
                     Did you mean: 'attribute_00'?
 
-* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+* I add ``attribute_02`` to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -262,21 +261,31 @@ test_attribute_error_w_class_attributes
 
     class AClass(object):
 
-        attribute_00 = None
-        attribute_01 = None
+        attribute_00 = function_09()
+        attribute_01 = attribute_00
 
-  the test passes.
+  - the test passes because in this case it does not matter if I use the :ref:`class<what is a class?>` (``AClass``) or an :ref:`instance of the class<how to test if something is an instance>`  (``AClass()``).
+  - ``attribute_02`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_02`` or ``src.attribute_error.AClass().attribute_02.
+
+    .. code-block:: shell
+
+      src.attribute_error.AClass.attribute_02
+      src.attribute_error.AClass().attribute_02
+      src
+      └── attribute_error.py
+          └── class AClass(object):
+              └── attribute_02 = attribute_01
 
 * I add a line for ``src.attribute_error.AClass.attribute_02`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 30
     :emphasize-lines: 4
 
-        def test_attribute_error_w_class_attributes(self):
-            src.attribute_error.AClass.attribute_00
-            src.attribute_error.AClass.attribute_01
-            src.attribute_error.AClass.attribute_02
+    def test_attribute_error_w_class_attributes():
+        src.attribute_error.AClass.attribute_00
+        src.attribute_error.AClass().attribute_01
+        src.attribute_error.AClass.attribute_02
 
 
     # Exceptions seen
@@ -289,7 +298,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_02'.
                     Did you mean: 'attribute_00'?
 
-* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+* I add ``attribute_02`` to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -297,23 +306,32 @@ test_attribute_error_w_class_attributes
 
     class AClass(object):
 
-        attribute_00 = None
-        attribute_01 = None
-        attribute_02 = None
+        attribute_00 = function_09()
+        attribute_00 = attribute_00
+        attribute_01 = attribute_00
 
-  the test passes.
+  the test passes because ``attribute_02`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_02`` or ``src.attribute_error.AClass().attribute_02.
 
-* I add a line for ``src.attribute_error.AClass.attribute_03`` to ``test_attribute_error.py``
+  .. code-block:: shell
+
+    src.attribute_error.AClass.attribute_02
+    src.attribute_error.AClass().attribute_02
+    src
+    └── attribute_error.py
+        └── class AClass(object):
+            └── attribute_02 = attribute_01
+
+* I add a line for ``src.attribute_error.AClass().attribute_03`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 30
     :emphasize-lines: 5
 
-        def test_attribute_error_w_class_attributes(self):
-            src.attribute_error.AClass.attribute_00
-            src.attribute_error.AClass.attribute_01
-            src.attribute_error.AClass.attribute_02
-            src.attribute_error.AClass.attribute_03
+    def test_attribute_error_w_class_attributes():
+        src.attribute_error.AClass.attribute_00
+        src.attribute_error.AClass().attribute_01
+        src.attribute_error.AClass.attribute_02
+        src.attribute_error.AClass().attribute_03
 
 
     # Exceptions seen
@@ -326,7 +344,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_03'.
                     Did you mean: 'attribute_00'?
 
-* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+* I add ``attribute_03`` to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -334,17 +352,26 @@ test_attribute_error_w_class_attributes
 
     class AClass(object):
 
-        attribute_00 = None
-        attribute_01 = None
-        attribute_02 = None
-        attribute_03 = None
+        attribute_00 = function_09()
+        attribute_01 = attribute_00
+        attribute_02 = attribute_01
+        attribute_03 = attribute_02
 
-  the test passes.
+  the test passes because ``attribute_03`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_03`` or ``src.attribute_error.AClass().attribute_03.
+
+  .. code-block:: shell
+
+    src.attribute_error.AClass.attribute_03
+    src.attribute_error.AClass().attribute_03
+    src
+    └── attribute_error.py
+        └── class AClass(object):
+            └── attribute_03 = attribute_02
 
 * I add a line for ``src.attribute_error.AClass.attribute_04`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 30
     :emphasize-lines: 6
 
         def test_attribute_error_w_class_attributes(self):
@@ -365,7 +392,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_04'.
                     Did you mean: 'attribute_00'?
 
-* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+* I add ``attribute_04`` to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -379,12 +406,22 @@ test_attribute_error_w_class_attributes
         attribute_03 = None
         attribute_04 = None
 
-  the test passes.
+  the test passes because ``attribute_04`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_04`` or ``src.attribute_error.AClass().attribute_04.
+
+  .. code-block:: shell
+
+    src.attribute_error.AClass.attribute_04
+    src.attribute_error.AClass().attribute_04
+    src
+    └── attribute_error.py
+        └── class AClass(object):
+            └── attribute_04 = attribute_03
+
 
 * I add a line for ``src.attribute_error.AClass().attribute_05`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 30
     :emphasize-lines: 7
 
         def test_attribute_error_w_class_attributes(self):
@@ -406,7 +443,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_05'.
                     Did you mean: 'attribute_00'?
 
-* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+* I add ``attribute_05`` to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -421,12 +458,21 @@ test_attribute_error_w_class_attributes
         attribute_04 = None
         attribute_05 = None
 
-  the test passes because in this case it does not matter if I use the :ref:`class<what is a class?>` (``AClass``) or :ref:`an instance of the class<how to test if something is an instance>`  (``AClass()``).
+  the test passes because ``attribute_05`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_05`` or ``src.attribute_error.AClass().attribute_05.
+
+  .. code-block:: shell
+
+    src.attribute_error.AClass.attribute_05
+    src.attribute_error.AClass().attribute_05
+    src
+    └── attribute_error.py
+        └── class AClass(object):
+            └── attribute_05 = attribute_03
 
 * I add a line for ``src.attribute_error.AClass().attribute_06`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 30
     :emphasize-lines: 8
 
         def test_attribute_error_w_class_attributes(self):
@@ -449,7 +495,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_06'.
                     Did you mean: 'attribute_00'?
 
-* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+* I add ``attribute_06`` to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -465,12 +511,21 @@ test_attribute_error_w_class_attributes
         attribute_05 = None
         attribute_06 = None
 
-  the test passes.
+  the test passes because ``attribute_06`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_06`` or ``src.attribute_error.AClass().attribute_06.
+
+  .. code-block:: shell
+
+    src.attribute_error.AClass.attribute_06
+    src.attribute_error.AClass().attribute_06
+    src
+    └── attribute_error.py
+        └── class AClass(object):
+            └── attribute_06 = attribute_05
 
 * I add a line for ``src.attribute_error.AClass().attribute_07`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 30
     :emphasize-lines: 9
 
         def test_attribute_error_w_class_attributes(self):
@@ -494,7 +549,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_07'.
                     Did you mean: 'attribute_00'?
 
-* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+* I add ``attribute_07`` to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -511,12 +566,21 @@ test_attribute_error_w_class_attributes
         attribute_06 = None
         attribute_07 = None
 
-  the test passes.
+  the test passes because ``attribute_07`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_07`` or ``src.attribute_error.AClass().attribute_07.
+
+  .. code-block:: shell
+
+    src.attribute_error.AClass.attribute_07
+    src.attribute_error.AClass().attribute_07
+    src
+    └── attribute_error.py
+        └── class AClass(object):
+            └── attribute_07 = attribute_06
 
 * I add a line for ``src.attribute_error.AClass().attribute_08`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 30
     :emphasize-lines: 10
 
         def test_attribute_error_w_class_attributes(self):
@@ -541,7 +605,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_08'.
                     Did you mean: 'attribute_00'?
 
-* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+* I add ``attribute_08`` to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -559,12 +623,21 @@ test_attribute_error_w_class_attributes
         attribute_07 = None
         attribute_08 = None
 
-  the test passes.
+  the test passes because ``attribute_08`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_08`` or ``src.attribute_error.AClass().attribute_08.
+
+  .. code-block:: shell
+
+    src.attribute_error.AClass.attribute_08
+    src.attribute_error.AClass().attribute_08
+    src
+    └── attribute_error.py
+        └── class AClass(object):
+            └── attribute_08 = attribute_07
 
 * I add a line for ``src.attribute_error.AClass().attribute_09`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 30
     :emphasize-lines: 11
 
         def test_attribute_error_w_class_attributes(self):
@@ -590,7 +663,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_09'.
                     Did you mean: 'attribute_00'?
 
-* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+* I add ``attribute_09`` to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -609,7 +682,16 @@ test_attribute_error_w_class_attributes
         attribute_08 = None
         attribute_09 = None
 
-  the test passes.
+  the test passes because ``attribute_09`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_09`` or ``src.attribute_error.AClass().attribute_09.
+
+  .. code-block:: shell
+
+    src.attribute_error.AClass.attribute_09
+    src.attribute_error.AClass().attribute_09
+    src
+    └── attribute_error.py
+        └── class AClass(object):
+            └── attribute_09 = attribute_08
 
 * I add a git_ commit message in the other terminal_
 
