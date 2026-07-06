@@ -38,7 +38,7 @@ open the project
 
     cd attribute_error
 
-* I open :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I open ``test_attribute_error.py``
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -74,7 +74,7 @@ test_attribute_error_w_class_attributes
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for :ref:`class attributes<what is a class attribute?>` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a test for :ref:`class attributes<what is a class attribute?>` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 17
@@ -120,7 +120,7 @@ test_attribute_error_w_class_attributes
 
   .. code-block:: python
     :lineno-start: 22
-    :emphasize-lines: 5-6
+    :emphasize-lines: 4
 
     def function_09(): return function_08()
 
@@ -137,67 +137,80 @@ test_attribute_error_w_class_attributes
 * I add a :ref:`variable<what is a variable?>` to the :ref:`function <what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 3
+    :lineno-start: 25
+    :emphasize-lines: 1-2, 4-5
 
+    # def AClass(): return function_09()
     def AClass():
 
-        attribute_00 = None
-        return None
+        attribute_00 = function_09()
+        return function_09()
 
-  the terminal_ still shows the same :ref:`Exception<errors>` because I cannot get to a :ref:`variable<what is a variable?>` inside a :ref:`function<what is a function?>` from outside the :ref:`function<what is a function?>`. The :ref:`variable<what is a variable?>` is only used within the :ref:`function<what is a function?>` when it runs.
+  the terminal_ still shows the same :ref:`Exception<errors>` because I cannot get to a :ref:`variable<what is a variable?>` inside a :ref:`function<what is a function?>` from outside the :ref:`function<what is a function?>`. The :ref:`variable<what is a variable?>` is only used inside the :ref:`function<what is a function?>` when it runs.
 
-* I use the :ref:`class<what is a class?>` keyword to change ``AClass`` from a :ref:`function<what is a function?>` to a :ref:`class<what is a class?>`
+* I change ``AClass`` from a :ref:`function<what is a function?>` to a :ref:`class<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 1-2
+    :lineno-start: 25
+    :emphasize-lines: 2-3
 
+    # def AClass(): return function_09()
     # def AClass():
     class AClass(object):
 
-        attribute_00 = None
-        return None
+        attribute_00 = function_09()
+        return function_09()
 
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
 
-    E    return None
-    E    ^^^^^^^^^^^
+    E    return function_09()
+    E    ^^^^^^^^^^^^^^^^^^^^
     E  SyntaxError: 'return' outside function
 
   because I cannot use a :ref:`return statement<the return statement>` outside a :ref:`function<what is a function?>`.
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 35
-    :emphasize-lines: 6
+    :lineno-start: 34
+    :emphasize-lines: 7
     :emphasize-text: SyntaxError
 
     # Exceptions seen
     # AssertionError
+    # ModuleNotFoundError
     # AttributeError
     # NameError
     # TypeError
     # SyntaxError
 
-* I comment out the :ref:`return statement<the return statement>` from ``AClass`` in ``attribute_error.py`` since it is no longer a :ref:`function<what is a function?>`
+* I comment out the :ref:`return statement<the return statement>` from ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 4
+    :lineno-start: 25
+    :emphasize-lines: 6
 
+    # def AClass(): return function_09()
     # def AClass():
     class AClass(object):
 
-        attribute_00 = None
-        # return None
+        attribute_00 = function_09()
+        # return function_09()
 
   - the test passes because ``attribute_00`` is now an :ref:`attribute/property<what is a class attribute?>` of the ``AClass`` :ref:`class<what is a class?>`
   - ``AClass`` is an :ref:`attribute<what is a class attribute?>` of the ``attribute_error.py`` :ref:`module<what is a module?>` in the ``src`` folder_
   - I can use ``attribute_00`` from outside the file_ with ``src.attribute_error.AClass.attribute_00`` or ``src.attribute_error.AClass().attribute_00``
+
+    .. code-block:: shell
+
+      src.attribute_error.AClass.attribute_00
+      src
+      └── attribute_error.py
+          └── class AClass(object):
+              └── attribute_00 = function_09()
+
 
 ----
 
@@ -220,7 +233,7 @@ test_attribute_error_w_class_attributes
 
         attribute_00 = None
 
-* I add a line for ``src.attribute_error.AClass.attribute_01`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a line for ``src.attribute_error.AClass.attribute_01`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 31
@@ -244,7 +257,7 @@ test_attribute_error_w_class_attributes
 * I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 25
     :emphasize-lines: 4
 
     class AClass(object):
@@ -254,7 +267,7 @@ test_attribute_error_w_class_attributes
 
   the test passes.
 
-* I add a line for ``src.attribute_error.AClass.attribute_02`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a line for ``src.attribute_error.AClass.attribute_02`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 31
@@ -279,7 +292,7 @@ test_attribute_error_w_class_attributes
 * I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 25
     :emphasize-lines: 5
 
     class AClass(object):
@@ -290,7 +303,7 @@ test_attribute_error_w_class_attributes
 
   the test passes.
 
-* I add a line for ``src.attribute_error.AClass.attribute_03`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a line for ``src.attribute_error.AClass.attribute_03`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 31
@@ -316,7 +329,7 @@ test_attribute_error_w_class_attributes
 * I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 25
     :emphasize-lines: 6
 
     class AClass(object):
@@ -328,7 +341,7 @@ test_attribute_error_w_class_attributes
 
   the test passes.
 
-* I add a line for ``src.attribute_error.AClass.attribute_04`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a line for ``src.attribute_error.AClass.attribute_04`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 31
@@ -355,7 +368,7 @@ test_attribute_error_w_class_attributes
 * I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 25
     :emphasize-lines: 7
 
     class AClass(object):
@@ -368,7 +381,7 @@ test_attribute_error_w_class_attributes
 
   the test passes.
 
-* I add a line for ``src.attribute_error.AClass().attribute_05`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a line for ``src.attribute_error.AClass().attribute_05`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 31
@@ -396,7 +409,7 @@ test_attribute_error_w_class_attributes
 * I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 25
     :emphasize-lines: 8
 
     class AClass(object):
@@ -410,7 +423,7 @@ test_attribute_error_w_class_attributes
 
   the test passes because in this case it does not matter if I use the :ref:`class<what is a class?>` (``AClass``) or :ref:`an instance of the class<how to test if something is an instance>`  (``AClass()``).
 
-* I add a line for ``src.attribute_error.AClass().attribute_06`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a line for ``src.attribute_error.AClass().attribute_06`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 31
@@ -439,7 +452,7 @@ test_attribute_error_w_class_attributes
 * I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 25
     :emphasize-lines: 9
 
     class AClass(object):
@@ -454,7 +467,7 @@ test_attribute_error_w_class_attributes
 
   the test passes.
 
-* I add a line for ``src.attribute_error.AClass().attribute_07`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a line for ``src.attribute_error.AClass().attribute_07`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 31
@@ -484,7 +497,7 @@ test_attribute_error_w_class_attributes
 * I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 25
     :emphasize-lines: 10
 
     class AClass(object):
@@ -500,7 +513,7 @@ test_attribute_error_w_class_attributes
 
   the test passes.
 
-* I add a line for ``src.attribute_error.AClass().attribute_08`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a line for ``src.attribute_error.AClass().attribute_08`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 31
@@ -531,7 +544,7 @@ test_attribute_error_w_class_attributes
 * I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 25
     :emphasize-lines: 11
 
     class AClass(object):
@@ -548,7 +561,7 @@ test_attribute_error_w_class_attributes
 
   the test passes.
 
-* I add a line for ``src.attribute_error.AClass().attribute_09`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a line for ``src.attribute_error.AClass().attribute_09`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 31
@@ -580,7 +593,7 @@ test_attribute_error_w_class_attributes
 * I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 25
     :emphasize-lines: 12
 
     class AClass(object):
@@ -631,7 +644,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`methods<what is a method?>` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a test for :ref:`methods<what is a method?>` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 38
@@ -666,7 +679,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the name to ``AClass`` and point it to :ref:`None<what is None?>`, in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 25
     :emphasize-lines: 14
 
     class AClass(object):
@@ -695,7 +708,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I use the def_ keyword to change it from a :ref:`variable (attribute)<what is a variable?>` to a :ref:`method<what is a method?>`
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 25
     :emphasize-lines: 14-16
 
     class AClass(object):
@@ -730,7 +743,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I remove the commented line
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 25
 
     class AClass(object):
 
@@ -748,7 +761,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_00():
             return None
 
-* You know the "drill", I add a line for ``src.attribute_error.AClass.method_01`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* You know the "drill", I add a line for ``src.attribute_error.AClass.method_01`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
@@ -772,7 +785,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 25
     :emphasize-lines: 17-18
 
     class AClass(object):
@@ -796,7 +809,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   the test passes because in this case it does not matter if I reference the :ref:`method<what is a method?>` (``AClass.method_01``) or call it  (``AClass.method_01()``).
 
-* I add a line for ``src.attribute_error.AClass.method_02`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a line for ``src.attribute_error.AClass.method_02`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
@@ -900,7 +913,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_02():
             return None
 
-* I add a line for ``src.attribute_error.AClass.method_03`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a line for ``src.attribute_error.AClass.method_03`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
@@ -938,7 +951,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   the test passes because in this case I reference the :ref:`method<what is a method?>` (``AClass().method_03``), I do not call it (``AClass().method_03()``).
 
-* I add a line for ``src.attribute_error.AClass.method_04`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a line for ``src.attribute_error.AClass.method_04`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
@@ -1012,7 +1025,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   with the :ref:`staticmethod decorator<what is the staticmethod decorator?>` it does not matter if I call the :ref:`method<what is a method?>` from :ref:`an instance<how to test if something is an instance>` (``AClass()``) or from the :ref:`class<what is a class?>` (``AClass``).
 
-* I add a line for ``src.attribute_error.AClass.method_05`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a line for ``src.attribute_error.AClass.method_05`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
@@ -1052,7 +1065,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   the test passes.
 
-* I add a line for ``src.attribute_error.AClass.method_06`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a line for ``src.attribute_error.AClass.method_06`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
@@ -1098,7 +1111,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   I called the :ref:`method<what is a method>` with the :ref:`class<what is a class?>` (``AClass.method_06()``) not :ref:`an instance of the class<how to test if something is an instance>` (``AClass().method_06()``).
 
-* I add a line for ``src.attribute_error.AClass.method_07`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a line for ``src.attribute_error.AClass.method_07`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
@@ -1139,7 +1152,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   the test passes.
 
-* I add a line for ``src.attribute_error.AClass.method_08`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a line for ``src.attribute_error.AClass.method_08`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
@@ -1217,7 +1230,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   with the :ref:`staticmethod decorator<what is the staticmethod decorator?>` it does not matter if I call the :ref:`method<what is a method?>` from :ref:`an instance<how to test if something is an instance>` (``AClass()``) or from the :ref:`class<what is a class?>` (``AClass``).
 
-* I add a line for ``src.attribute_error.AClass.method_09`` to :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I add a line for ``src.attribute_error.AClass.method_09`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
@@ -1254,7 +1267,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 25
     :emphasize-lines: 44-45
 
     class AClass(object):
@@ -1322,7 +1335,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 close the project
 *********************************************************************************
 
-* I close ``attribute_error.py`` and :ref:`test_attribute_error.py<what causes AttributeError?>`
+* I close ``attribute_error.py`` and ``test_attribute_error.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
@@ -1360,7 +1373,7 @@ My problem with the tests is still that they all show the correct way to use :re
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<AttributeError: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<AttributeError with classes: tests and solutions>`
 
 ----
 

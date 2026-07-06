@@ -472,6 +472,7 @@ test_attribute_error_w_variables
 
   .. code-block:: shell
 
+    src.attribute_error.variable_00
     src
     └── attribute_error.py
         └── variable_00 = None
@@ -541,6 +542,7 @@ test_attribute_error_w_variables
 
   .. code-block:: shell
 
+    src.attribute_error.variable_01
     src
     └── attribute_error.py
         └── variable_01 = variable_00
@@ -584,6 +586,7 @@ test_attribute_error_w_variables
 
   .. code-block:: shell
 
+    src.attribute_error.variable_02
     src
     └── attribute_error.py
         └── variable_02 = variable_01
@@ -629,6 +632,7 @@ test_attribute_error_w_variables
 
   .. code-block:: shell
 
+    src.attribute_error.variable_03
     src
     └── attribute_error.py
         └── variable_03 = variable_02
@@ -676,6 +680,7 @@ test_attribute_error_w_variables
 
   .. code-block:: shell
 
+    src.attribute_error.variable_04
     src
     └── attribute_error.py
         └── variable_04 = variable_03
@@ -725,6 +730,7 @@ test_attribute_error_w_variables
 
   .. code-block:: shell
 
+    src.attribute_error.variable_05
     src
     └── attribute_error.py
         └── variable_05 = variable_04
@@ -775,6 +781,7 @@ test_attribute_error_w_variables
 
   .. code-block:: shell
 
+    src.attribute_error.variable_06
     src
     └── attribute_error.py
         └── variable_06 = variable_05
@@ -827,6 +834,7 @@ test_attribute_error_w_variables
 
   .. code-block:: shell
 
+    src.attribute_error.variable_07
     src
     └── attribute_error.py
         └── variable_07 = variable_06
@@ -881,6 +889,7 @@ test_attribute_error_w_variables
 
   .. code-block:: shell
 
+    src.attribute_error.variable_08
     src
     └── attribute_error.py
         └── variable_08 = variable_07
@@ -937,6 +946,7 @@ test_attribute_error_w_variables
 
   .. code-block:: shell
 
+    src.attribute_error.variable_09
     src
     └── attribute_error.py
         └── variable_09 = variable_08
@@ -1061,6 +1071,7 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
+    src.attribute_error.function_00()
     src
     └── attribute_error.py
         └── def function_00(): return variable_09
@@ -1119,6 +1130,7 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
+    src.attribute_error.function_01()
     src
     └── attribute_error.py
         └── def function_01(): return function_00()
@@ -1159,6 +1171,7 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
+    src.attribute_error.function_02()
     src
     └── attribute_error.py
         └── def function_02(): return function_01()
@@ -1201,6 +1214,7 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
+    src.attribute_error.function_03()
     src
     └── attribute_error.py
         └── def function_03(): return function_02()
@@ -1245,6 +1259,7 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
+    src.attribute_error.function_04()
     src
     └── attribute_error.py
         └── def function_04(): return function_03()
@@ -1291,6 +1306,7 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
+    src.attribute_error.function_05()
     src
     └── attribute_error.py
         └── def function_05(): return function_04()
@@ -1339,6 +1355,7 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
+    src.attribute_error.function_06()
     src
     └── attribute_error.py
         └── def function_06(): return function_05()
@@ -1389,6 +1406,7 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
+    src.attribute_error.function_07()
     src
     └── attribute_error.py
         └── def function_07(): return function_06()
@@ -1441,6 +1459,7 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
+    src.attribute_error.function_08()
     src
     └── attribute_error.py
         └── def function_08(): return function_07()
@@ -1495,6 +1514,7 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
+    src.attribute_error.function_09()
     src
     └── attribute_error.py
         └── def function_09(): return function_08()
