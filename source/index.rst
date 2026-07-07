@@ -53,6 +53,7 @@ table of contents
   make a person with a class<how_to/make_person/make_person_w_class>
   classes/inheritance
   exceptions/AttributeError/AttributeError_w_classes
+  exceptions/TypeError/TypeError_w_classes
   classes/unittest
   AssertionError/AssertionError_w_unittest
   make a person<how_to/make_person>

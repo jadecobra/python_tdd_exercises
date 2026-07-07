@@ -1580,7 +1580,7 @@ My problem with the tests is that they all show the correct way to use :ref:`att
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<AttributeError: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<what causes AttributeError?: tests and solutions>`
 
 ----
 
