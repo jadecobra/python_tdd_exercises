@@ -715,6 +715,7 @@ test_assert_is_not
 
     .. code-block:: shell
 
+      unittest.TestCase.assertIsNot
       unittest
       └── class TestCase:
           └── def assertIsNot(self, expr1, expr2):
@@ -878,6 +879,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertIsNot`_ is cal
 
 .. code-block:: shell
 
+  unittest.TestCase.assertIsNot
   unittest
   └── class TestCase:
       └── def assertIsNot(self, expr1, expr2):
@@ -1084,6 +1086,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertIs`_ is called
 
 .. code-block:: shell
 
+  unittest.TestCase.assertIs
   unittest
   └── class TestCase:
       └── def assertIs(self, expr1, expr2):
@@ -1261,6 +1264,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertNotEqual`_ is 
 
 .. code-block:: shell
 
+  unittest.TestCase.assertNotEqual
   unittest
   └── class TestCase:
       └── def assertNotEqual(self, first, second):
@@ -1411,6 +1415,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertEqual`_ is cal
 
 .. code-block:: shell
 
+  unittest.TestCase.assertEqual
   unittest
   └── class TestCase:
       └── def assertEqual(self, first, second):
@@ -1630,6 +1635,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertNotIsInstance`
 
 .. code-block:: shell
 
+  unittest.TestCase.assertNotIsInstance
   unittest
   └── class TestCase:
       └── def assertNotIsInstance(self, obj, cls):
@@ -1903,6 +1909,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertIsInstance`_ i
 
 .. code-block:: shell
 
+  unittest.TestCase.assertIsInstance
   unittest
   └── class TestCase:
       └── def assertIsInstance(self, obj, cls):
@@ -2131,6 +2138,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertNotIsSubclass`
 
 .. code-block:: shell
 
+  unittest.TestCase.assertNotIsSubclass
   unittest
   └── class TestCase:
       └── def assertNotIsSubclass(self, cls, superclass):
@@ -2377,6 +2385,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertIsSubclass`_ i
 
 .. code-block:: shell
 
+  unittest.TestCase.assertIsSubclass
   unittest
   └── class TestCase:
       └── def assertIsSubclass(self, cls, superclass):

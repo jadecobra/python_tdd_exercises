@@ -225,10 +225,11 @@ because ``src`` is not defined in ``test_functions.py``.
 
   .. code-block:: shell
 
+    src.functions.w_pass
     src
     └── functions.py
         └── def w_pass():
-                pass
+            └── pass
 
 * I add a git_ commit message in the other terminal_
 
@@ -325,10 +326,11 @@ the test passes.
 
   .. code-block:: shell
 
+    src.functions.w_return
     src
     └── functions.py
         └── def w_return():
-                return
+            └── return
 
 * I add a git_ commit message in the other terminal_
 
@@ -422,10 +424,11 @@ the test passes.
 
   .. code-block:: shell
 
+    src.functions.w_return_none
     src
     └── functions.py
         └── def w_return_none():
-                return None
+            └── return None
 
 * I add a git_ commit message in the other terminal_
 
@@ -527,10 +530,11 @@ the test passes.
 
   .. code-block:: shell
 
+    src.functions.return_leaves_the_function
     src
     └── functions.py
         └── def return_leaves_the_function():
-                return None
+            └── return None
 
 * I add a git_ commit message in the other terminal_
 
@@ -625,10 +629,11 @@ the test passes.
 
   .. code-block:: shell
 
+    src.functions.constant
     src
     └── functions.py
         └── def constant():
-                return 'the same thing'
+            └── return 'the same thing'
 
 * I add a git_ commit message in the other terminal_
 
@@ -725,10 +730,11 @@ the test passes.
 
   .. code-block:: shell
 
+    src.functions.identity
     src
     └── functions.py
         └── def identity(the_input):
-                return the_input
+            └── return the_input
 
 * I add a git_ commit message in the other terminal_
 
@@ -879,7 +885,7 @@ move positional_arguments function
     src
     └── functions.py
         └── def positional_arguments(first_input, last_input):
-                return first_input, last_input
+            └── return first_input, last_input
 
 ----
 
@@ -1100,7 +1106,7 @@ move keyword_arguments function
     src
     └── functions.py
         └── def keyword_arguments(first_input, last_input):
-                return first_input, last_input
+            └── return first_input, last_input
 
 ----
 
@@ -1261,10 +1267,11 @@ the test passes.
 
   .. code-block:: shell
 
+    src.functions.args_and_kwargs
     src
     └── functions.py
         └── def args_and_kwargs(first_input, last_input):
-                return first_input, last_input
+            └── return first_input, last_input
 
 * I add a git_ commit message in the other terminal_
 
@@ -1371,7 +1378,7 @@ move optional_arguments function
         └── def optional_arguments(
                 first_input, last_input='doe',
             ):
-                return first_input, last_input
+            └── return first_input, last_input
 
 ----
 
@@ -1536,7 +1543,7 @@ move unknown_number_of_arguments function
         └── def unknown_number_of_arguments(
                 *positional_arguments, **keyword_arguments
             ):
-                return positional_arguments, keyword_arguments
+            └── return positional_arguments, keyword_arguments
 
 ----
 
