@@ -1,6 +1,8 @@
 .. meta::
   :description:
+    Step-by-step TDD continuation in the attribute_error project showing AttributeError with classes: deliberately trigger "type object 'AClass' has no attribute 'attribute_01'. Did you mean: 'attribute_00'?", SyntaxError: 'return' outside function, NameError: name 'self' is not defined, TypeError missing 1 required positional argument: 'self' when calling method on the class instead of instance. Add 10 class attributes (chained from function_09(), using both AClass.attr and AClass().attr) and 10 methods (with self, some bare attr access and some calls in tests). Demonstrates a class in a module and a function in a class (method) are attributes too. Re-uses the test_attribute_error.py from prior AttributeError chapter (vars + functions). Covers turning a function stub into class, remove the commented lines in REFACTOR, git commit after each step, uv run pytest-watcher. Review lesson: variables/functions/classes/methods are all attributes. Prepares for exception handling and "everything is an object". Part of the Pumping Python TDD book by Jacob Itegboje.
   :keywords:
+    Jacob Itegboje, Pumping Python, AttributeError with classes, python AttributeError class attribute, type object 'AClass' has no attribute, Did you mean attribute_00, AttributeError AClass, SyntaxError return outside function, NameError name 'self' is not defined, TypeError missing 1 required positional argument self, AClass.attribute_00, src.attribute_error.AClass, class in module is attribute, method is attribute of class, test_attribute_error_w_class_attributes, test_attribute_error_w_class_methods, bare attribute access on class and instance, TDD class attributes methods, uv run pytest-watcher, remove the commented lines, red green refactor class, python everything is an object, Pumping Python exceptions AttributeError classes
 
 .. include:: ../../links.rst
 
@@ -1402,8 +1404,9 @@ You know
 * :ref:`how to separate tests from solutions<separate and equal functions>`
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`how to make a person with a class<how to make a person with a class>`
+* :ref:`that everything in Python is an object<everything is an object>`
 
-:ref:`Would you like to know where the extra attributes and methods of the Person class came from?<everything is an object>`
+:ref:`Would you like to see another way to write tests?<another way to write tests>`
 
 ----
 
