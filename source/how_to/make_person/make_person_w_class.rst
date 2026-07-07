@@ -740,12 +740,13 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
     .. code-block:: shell
 
+      src.person.say_hello
       src
       └── person.py
           └── def say_hello(
                   first_name, last_name, year_of_birth
               ):
-                  return (
+              └── return (
                       f'Hello, my name is {first_name}'
                       f' {last_name} and I am'
                       f' {2026-year_of_birth}.'
@@ -2777,28 +2778,21 @@ separate and equal Person class
 
     def test_joe():
 
-  all the tests are still green because the calls that were made to the :ref:`Person class<test Person class>` that was in ``test_person.py`` are now to the :ref:`Person class<test Person class>` in ``person.py`` in the ``src`` folder_. When ``src.person.Person`` is called, Python_ follows this path
+  all the tests are still green because the calls that were made to the :ref:`Person class<test Person class>` that was in ``test_person.py`` are now to the :ref:`Person class<test Person class>` in ``person.py`` in the ``src`` folder_. When ``src.person.Person`` is :ref:`called<how to call a function with input>` with input, Python_ follows this path
 
   .. code-block:: shell
 
+    src.person.Person
     src
     └── person.py
         └── class Person:
-
-                def __init__(
+            └── def __init__(
                     self, first_name, last_name,
                     sex, year_of_birth
                 ):
                     self.first_name = first_name
                     self.last_name = last_name
                     self.year_of_birth = year_of_birth
-
-                def say_hello(self):
-                    return (
-                        f'Hello, my name is {self.first_name}'
-                        f' {self.last_name} and I am'
-                        f' {2026-self.year_of_birth}.'
-                    )
 
 * I add a git_ commit message in the other terminal_
 

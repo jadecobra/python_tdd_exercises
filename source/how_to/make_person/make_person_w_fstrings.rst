@@ -1546,13 +1546,14 @@ the test passes.
 
     .. code-block:: shell
 
+      src.person.factory
       src
       └── person.py
           └── def factory(
                   first_name, last_name,
                   sex, year_of_birth
               ):
-                  return (
+              └── return (
                       f'{first_name}, {last_name},'
                       f' {sex}, {year_of_birth}'
                   )
@@ -1796,13 +1797,14 @@ the test passes.
 
   .. code-block:: shell
 
+    src.person.factory
     src
     └── person.py
         └── def factory(
                 first_name, last_name,
                 sex, year_of_birth
             ):
-                return (
+            └── return (
                     f'{first_name}, {last_name},'
                     f' {sex}, {year_of_birth}'
                 )
@@ -2761,15 +2763,16 @@ separate and equal say_hello
 
   .. code-block:: shell
 
+    src.person.say_hello
     src
     └── person.py
         └── def say_hello(
                 first_name, last_name,
                 year_of_birth
             ):
-                age = 2026 - year_of_birth
-
-                return (
+            ├── age = 2026 - year_of_birth
+            │
+            └── return (
                     f'Hello, my name is {first_name}'
                     f' {last_name} and I am {age}.'
                 )

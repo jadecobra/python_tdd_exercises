@@ -2467,10 +2467,11 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
   .. code-block:: shell
 
+    src.telephone.text
     src
     └── telephone.py
         └── def text(the_input):
-                return f'I got: {the input}'
+            └── return f'I got: {the input}'
 
   - ``text`` is something in ``telephone``, in this case it is a :ref:`function<what is a function?>` in ``telephone``
   - ``telephone`` is something in ``src``, in this case it is ``telephone.py`` (a :ref:`module<what is a module?>`) in the ``src`` folder_
@@ -2525,10 +2526,11 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
   .. code-block:: shell
 
-      src
-      └── telephone.py
-          └── def text(the_input):
-                  return f'I got: {the input}'
+    src.telephone.text
+    src
+    └── telephone.py
+        └── def text(the_input):
+            └── return f'I got: {the input}'
 
   then uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
 
@@ -2631,10 +2633,11 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
   .. code-block:: shell
 
-      src
-      └── telephone.py
-          └── def text(the_input):
-                  return f'I got: {the input}'
+    src.telephone.text
+    src
+    └── telephone.py
+        └── def text(the_input):
+            └── return f'I got: {the input}'
 
   then uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
 
@@ -2818,10 +2821,11 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
   .. code-block:: shell
 
-      src
-      └── telephone.py
-          └── def text(the_input):
-                  return f'I got: {the input}'
+    src.telephone.text
+    src
+    └── telephone.py
+        └── def text(the_input):
+            └── return f'I got: {the input}'
 
   then uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
 
@@ -2988,10 +2992,11 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
   .. code-block:: shell
 
-      src
-      └── telephone.py
-          └── def text(the_input):
-                  return f'I got: {the input}'
+    src.telephone.text
+    src
+    └── telephone.py
+        └── def text(the_input):
+            └── return f'I got: {the input}'
 
 * I add a git_ commit message in the other terminal_
 
