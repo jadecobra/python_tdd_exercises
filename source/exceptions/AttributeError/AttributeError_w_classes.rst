@@ -1002,14 +1002,22 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
+  .. code-block:: shell
+
+    AttributeError: type object 'AClass'
+                    has no attribute 'method_03'.
+                    Did you mean: 'method_00'?
+
 * I add a :ref:`method definition<how to make a function>` for ``method_03`` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 47
-    :emphasize-lines: 1-2
+    :lineno-start: 38
+    :emphasize-lines: 4
 
-        def method_02(): return AClass().method_01()
-        def method_03(): return function_09()
+        def method_00(self): return self.attribute_09
+        def method_01(self): return self.method_00()
+        def method_02(self): return self.method_01()
+        def method_03(self): return self.method_02()
 
   the test passes because ``method_03`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass().method_03()``
 
@@ -1021,91 +1029,18 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         └── class AClass(object):
             └── def method_03(self): return self.method_02()
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` :ref:`method definition<how to make a function>` instead of ``self`` since it does not use anything in the :ref:`class<what is a class?>`. That way I do not send more information than what the :ref:`method<what is a method?>` needs.
-
-  .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 4-6
-
-        def method_01():
-            return None
-
-        @staticmethod
-        def method_02():
-        # def method_02(self):
-            return None
-
-  the test is still green because this now happens when ``AClass().method_02()`` is called
-
-  .. code-block:: python
-
-    AClass().method_02()
-        AClass().method_02()
-
-  with the :ref:`staticmethod decorator<what is the staticmethod decorator?>` it does not matter if I call the :ref:`method<what is a method?>` from :ref:`an instance<how to test if something is an instance>` (``AClass()``) or from the :ref:`class<what is a class?>` (``AClass``).
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 69
-
-        def method_01():
-            return None
-
-        @staticmethod
-        def method_02():
-            return None
-
-* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_03`` from ``test_attribute_error.py``
-
-  .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 5
-
-        def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass().method_00()
-            src.attribute_error.AClass().method_01
-            src.attribute_error.AClass().method_02()
-            src.attribute_error.AClass().method_03
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: shell
-
-    AttributeError: type object 'AClass'
-                    has no attribute 'method_03'.
-                    Did you mean: 'method_00'?
-
-* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
-
-  .. code-block:: python
-    :lineno-start: 72
-    :emphasize-lines: 5-6
-
-        @staticmethod
-        def method_02():
-            return None
-
-        def method_03():
-            return None
-
-  the test passes because in this case I reference the :ref:`method<what is a method?>` (``AClass().method_03``), I do not call it (``AClass().method_03()``).
-
-* I add a line for ``src.attribute_error.AClass().method_04`` to ``test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_04`` from ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 6
 
-        def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass().method_00()
-            src.attribute_error.AClass().method_01
-            src.attribute_error.AClass().method_02()
-            src.attribute_error.AClass().method_03
-            src.attribute_error.AClass().method_04()
+    def test_attribute_error_w_class_methods():
+        src.attribute_error.AClass().method_00()
+        src.attribute_error.AClass().method_01()
+        src.attribute_error.AClass().method_02()
+        src.attribute_error.AClass().method_03()
+        src.attribute_error.AClass().method_04()
 
 
     # Exceptions seen
@@ -1118,55 +1053,27 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
                     has no attribute 'method_04'.
                     Did you mean: 'method_00'?
 
-* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_04`` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 76
-    :emphasize-lines: 4-5
+    :lineno-start: 38
+    :emphasize-lines: 5
 
-        def method_03():
-            return None
+        def method_00(self): return self.attribute_09
+        def method_01(self): return self.method_00()
+        def method_02(self): return self.method_01()
+        def method_03(self): return self.method_02()
+        def method_04(self): return self.method_03()
 
-        def method_04():
-            return None
+  the test passes because ``method_04`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass().method_04()``
 
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+  .. code-block:: shell
 
-  .. code-block:: python
-
-    TypeError: AClass().method_04() takes
-               0 positional arguments but 1 was given
-
-  because this happens when ``AClass().method_04()`` is called
-
-  .. code-block:: python
-
-    AClass().method_04()
-        AClass().method_04(AClass)
-
-  which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_04`` does not allow it take any :ref:`positional arguments<test_positional_arguments>`.
-
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to the :ref:`definition<how to make a function>` for ``method_04``
-
-  .. code-block:: python
-    :lineno-start: 76
-    :emphasize-lines: 4
-
-        def method_03():
-            return None
-
-        @staticmethod
-        def method_04():
-            return None
-
-  the test passes because this now happens when ``AClass().method_04()`` is called
-
-  .. code-block:: python
-
-    AClass().method_04()
-        AClass().method_04()
-
-  with the :ref:`staticmethod decorator<what is the staticmethod decorator?>` it does not matter if I call the :ref:`method<what is a method?>` from :ref:`an instance<how to test if something is an instance>` (``AClass()``) or from the :ref:`class<what is a class?>` (``AClass``).
+    src.attribute_error.AClass().method_04
+    src
+    └── attribute_error.py
+        └── class AClass(object):
+            └── def method_04(self): return self.method_03()
 
 * I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_05`` from ``test_attribute_error.py``
 
@@ -1174,13 +1081,13 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 7
 
-        def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass().method_00()
-            src.attribute_error.AClass().method_01
-            src.attribute_error.AClass().method_02()
-            src.attribute_error.AClass().method_03
-            src.attribute_error.AClass().method_04()
-            src.attribute_error.AClass().method_05
+    def test_attribute_error_w_class_methods():
+        src.attribute_error.AClass().method_00()
+        src.attribute_error.AClass().method_01()
+        src.attribute_error.AClass().method_02()
+        src.attribute_error.AClass().method_03()
+        src.attribute_error.AClass().method_04()
+        src.attribute_error.AClass().method_05()
 
 
     # Exceptions seen
@@ -1193,18 +1100,18 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
                     has no attribute 'method_05'.
                     Did you mean: 'method_00'?
 
-* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_05`` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 79
-    :emphasize-lines: 5-6
+    :lineno-start: 38
+    :emphasize-lines: 6
 
-        @staticmethod
-        def method_04():
-            return None
-
-        def method_05():
-            return None
+        def method_00(self): return self.attribute_09
+        def method_01(self): return self.method_00()
+        def method_02(self): return self.method_01()
+        def method_03(self): return self.method_02()
+        def method_04(self): return self.method_03()
+        def method_05(self): return self.method_04()
 
   the test passes.
 
@@ -1214,14 +1121,14 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 8
 
-        def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass().method_00()
-            src.attribute_error.AClass().method_01
-            src.attribute_error.AClass().method_02()
-            src.attribute_error.AClass().method_03
-            src.attribute_error.AClass().method_04()
-            src.attribute_error.AClass().method_05
-            src.attribute_error.AClass().method_06()
+    def test_attribute_error_w_class_methods():
+        src.attribute_error.AClass().method_00()
+        src.attribute_error.AClass().method_01()
+        src.attribute_error.AClass().method_02()
+        src.attribute_error.AClass().method_03()
+        src.attribute_error.AClass().method_04()
+        src.attribute_error.AClass().method_05()
+        src.attribute_error.AClass().method_06()
 
 
     # Exceptions seen
@@ -1234,25 +1141,21 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
                     has no attribute 'method_06'.
                     Did you mean: 'method_00'?
 
-* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_06`` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 4-5
+    :lineno-start: 38
+    :emphasize-lines: 7
 
-        def method_05():
-            return None
+        def method_00(self): return self.attribute_09
+        def method_01(self): return self.method_00()
+        def method_02(self): return self.method_01()
+        def method_03(self): return self.method_02()
+        def method_04(self): return self.method_03()
+        def method_05(self): return self.method_04()
+        def method_06(self): return self.method_05()
 
-        def method_06():
-            return None
-
-  the test passes because this happens when ``AClass().method_06()`` is called
-
-  .. code-block:: python
-
-    AClass().method_06()
-
-  I called the :ref:`method<what is a method?>` with the :ref:`class<what is a class?>` (``AClass().method_06()``) not :ref:`an instance of the class<how to test if something is an instance>` (``AClass().method_06()``).
+  the test passes.
 
 * I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_07`` from ``test_attribute_error.py``
 
@@ -1260,15 +1163,15 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 9
 
-        def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass().method_00()
-            src.attribute_error.AClass().method_01
-            src.attribute_error.AClass().method_02()
-            src.attribute_error.AClass().method_03
-            src.attribute_error.AClass().method_04()
-            src.attribute_error.AClass().method_05
-            src.attribute_error.AClass().method_06()
-            src.attribute_error.AClass().method_07
+    def test_attribute_error_w_class_methods():
+        src.attribute_error.AClass().method_00()
+        src.attribute_error.AClass().method_01()
+        src.attribute_error.AClass().method_02()
+        src.attribute_error.AClass().method_03()
+        src.attribute_error.AClass().method_04()
+        src.attribute_error.AClass().method_05()
+        src.attribute_error.AClass().method_06()
+        src.attribute_error.AClass().method_07()
 
 
     # Exceptions seen
@@ -1281,17 +1184,20 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
                     has no attribute 'method_07'.
                     Did you mean: 'method_00'?
 
-* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_07`` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 86
-    :emphasize-lines: 4-5
+    :lineno-start: 38
+    :emphasize-lines: 8
 
-        def method_06():
-            return None
-
-        def method_07():
-            return None
+        def method_00(self): return self.attribute_09
+        def method_01(self): return self.method_00()
+        def method_02(self): return self.method_01()
+        def method_03(self): return self.method_02()
+        def method_04(self): return self.method_03()
+        def method_05(self): return self.method_04()
+        def method_06(self): return self.method_05()
+        def method_07(self): return self.method_06()
 
   the test passes.
 
@@ -1301,16 +1207,16 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 10
 
-        def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass().method_00()
-            src.attribute_error.AClass().method_01
-            src.attribute_error.AClass().method_02()
-            src.attribute_error.AClass().method_03
-            src.attribute_error.AClass().method_04()
-            src.attribute_error.AClass().method_05
-            src.attribute_error.AClass().method_06()
-            src.attribute_error.AClass().method_07
-            src.attribute_error.AClass().method_08()
+    def test_attribute_error_w_class_methods():
+        src.attribute_error.AClass().method_00()
+        src.attribute_error.AClass().method_01()
+        src.attribute_error.AClass().method_02()
+        src.attribute_error.AClass().method_03()
+        src.attribute_error.AClass().method_04()
+        src.attribute_error.AClass().method_05()
+        src.attribute_error.AClass().method_06()
+        src.attribute_error.AClass().method_07()
+        src.attribute_error.AClass().method_08()
 
 
     # Exceptions seen
@@ -1323,55 +1229,23 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
                     has no attribute 'method_08'.
                     Did you mean: 'method_00'?
 
-* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_08`` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 4-5
+    :lineno-start: 38
+    :emphasize-lines: 9
 
-        def method_07():
-            return None
+        def method_00(self): return self.attribute_09
+        def method_01(self): return self.method_00()
+        def method_02(self): return self.method_01()
+        def method_03(self): return self.method_02()
+        def method_04(self): return self.method_03()
+        def method_05(self): return self.method_04()
+        def method_06(self): return self.method_05()
+        def method_07(self): return self.method_06()
+        def method_08(self): return self.method_07()
 
-        def method_08():
-            return None
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: AClass().method_08() takes
-               0 positional arguments but 1 was given
-
-  because this happens when ``AClass().method_08()`` is called
-
-  .. code-block:: python
-
-    AClass().method_08()
-        AClass().method_08(AClass)
-
-  which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_08`` does not allow it take any :ref:`positional arguments<test_positional_arguments>` (the parentheses are empty).
-
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to the :ref:`method definition<how to make a function>` since it does not use anything in the :ref:`class<what is a class?>`
-
-  .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 4
-
-        def method_07():
-            return None
-
-        @staticmethod
-        def method_08():
-            return None
-
-  the test passes because this now happens when ``AClass().method_08()`` is called
-
-  .. code-block:: python
-
-    AClass().method_08()
-        AClass().method_08()
-
-  with the :ref:`staticmethod decorator<what is the staticmethod decorator?>` it does not matter if I call the :ref:`method<what is a method?>` from :ref:`an instance<how to test if something is an instance>` (``AClass()``) or from the :ref:`class<what is a class?>` (``AClass``).
+  the test passes.
 
 * I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_09`` from ``test_attribute_error.py``
 
@@ -1379,21 +1253,22 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 11
 
-        def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass().method_00()
-            src.attribute_error.AClass().method_01
-            src.attribute_error.AClass().method_02()
-            src.attribute_error.AClass().method_03
-            src.attribute_error.AClass().method_04()
-            src.attribute_error.AClass().method_05
-            src.attribute_error.AClass().method_06()
-            src.attribute_error.AClass().method_07
-            src.attribute_error.AClass().method_08()
-            src.attribute_error.AClass().method_09
+    def test_attribute_error_w_class_methods():
+        src.attribute_error.AClass().method_00()
+        src.attribute_error.AClass().method_01()
+        src.attribute_error.AClass().method_02()
+        src.attribute_error.AClass().method_03()
+        src.attribute_error.AClass().method_04()
+        src.attribute_error.AClass().method_05()
+        src.attribute_error.AClass().method_06()
+        src.attribute_error.AClass().method_07()
+        src.attribute_error.AClass().method_08()
+        src.attribute_error.AClass().method_09()
 
 
     # Exceptions seen
     # AssertionError
+    # ModuleNotFoundError
     # AttributeError
     # NameError
     # TypeError
@@ -1407,59 +1282,45 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
                     has no attribute 'method_09'.
                     Did you mean: 'method_00'?
 
-* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_09`` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 25
-    :emphasize-lines: 44-45
+    :emphasize-lines: 23
 
     class AClass(object):
 
-        attribute_00 = None
-        attribute_01 = None
-        attribute_02 = None
-        attribute_03 = None
-        attribute_04 = None
-        attribute_05 = None
-        attribute_06 = None
-        attribute_07 = None
-        attribute_08 = None
-        attribute_09 = None
+        attribute_00 = function_09()
+        attribute_01 = attribute_00
+        attribute_02 = attribute_01
+        attribute_03 = attribute_02
+        attribute_04 = attribute_03
+        attribute_05 = attribute_04
+        attribute_06 = attribute_05
+        attribute_07 = attribute_06
+        attribute_08 = attribute_07
+        attribute_09 = attribute_08
 
-        def method_00():
-            return None
+        def method_00(self): return self.attribute_09
+        def method_01(self): return self.method_00()
+        def method_02(self): return self.method_01()
+        def method_03(self): return self.method_02()
+        def method_04(self): return self.method_03()
+        def method_05(self): return self.method_04()
+        def method_06(self): return self.method_05()
+        def method_07(self): return self.method_06()
+        def method_08(self): return self.method_07()
+        def method_09(self): return self.method_08()
 
-        def method_01():
-            return None
+  the test passes because ``method_09`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass().method_09()``
 
-        @staticmethod
-        def method_02():
-            return None
+  .. code-block:: shell
 
-        def method_03():
-            return None
-
-        @staticmethod
-        def method_04():
-            return None
-
-        def method_05():
-            return None
-
-        def method_06():
-            return None
-
-        def method_07():
-            return None
-
-        @staticmethod
-        def method_08():
-            return None
-
-        def method_09():
-            return None
-
-  the test passes because in this case I reference the :ref:`method<what is a method?>` (``AClass().method_09``), I do not call it (``AClass().method_09()``).
+    src.attribute_error.AClass().method_09
+    src
+    └── attribute_error.py
+        └── class AClass(object):
+            └── def method_09(self): return self.method_08()
 
 * I add a git_ commit message in the other terminal_
 
@@ -1469,8 +1330,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     git commit -am \
     'add test_attribute_error_w_class_methods'
 
-
-* :ref:`A function in a class is an attribute of the class and is called a method<test_attribute_error_w_class_methods>`
+:ref:`A function in a class is an attribute of the class and is called a method<test_attribute_error_w_class_methods>`
 
 ----
 
@@ -1503,7 +1363,7 @@ close the project
 review
 *********************************************************************************
 
-All the tests I have run for :ref:`AttributeError<what causes AttributeError?>` show that :ref:`because in Python everything is an object<everything is an object>`
+All the tests I have run for :ref:`AttributeError<what causes AttributeError?>` show that
 
 * :ref:`A variable in a class is an attribute of the class<test_attribute_error_w_class_attributes>`
 * :ref:`A function in a class is an attribute of the class<test_attribute_error_w_class_methods>`
