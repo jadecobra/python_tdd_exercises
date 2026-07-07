@@ -99,7 +99,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -127,7 +127,7 @@ test_attribute_error_w_class_attributes
 
     def AClass(): return function_09()
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -245,7 +245,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -290,7 +290,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -336,7 +336,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -384,7 +384,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -435,7 +435,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -487,7 +487,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -541,7 +541,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -597,7 +597,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -655,7 +655,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -735,12 +735,12 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
 
     def test_attribute_error_w_class_methods():
-        src.attribute_error.AClass.method_00()
+        src.attribute_error.AClass().method_00()
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -774,7 +774,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         attribute_08 = attribute_07
         attribute_09 = attribute_08
 
-        method_00 = attribute_09
+        method_00 = None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -823,18 +823,18 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: python
     :lineno-start: 38
-    :emphasize-lines:
+    :emphasize-lines: 3-4
 
         # method_00 = attribute_09
         # def method_00(): return attribute_09
-        def method_00(): return self.attribute_09
+        # def method_00(): return self.attribute_09
         def method_00(self): return self.attribute_09
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: AClass.method_00() missing
+    TypeError: AClass().method_00() missing
                1 required positional argument: 'self'
 
   because I :ref:`called the method<how to call a function>` with the :ref:`class<what is a class?>` not an :ref:`instance of the class<how to test if something is an instance>`.
@@ -846,7 +846,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :emphasize-lines: 2-3
 
     def test_attribute_error_w_class_methods():
-        # src.attribute_error.AClass.method_00()
+        # src.attribute_error.AClass().method_00()
         src.attribute_error.AClass().method_00()
 
 
@@ -872,17 +872,6 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
 ----
 
-* I remove the commented line from ``test_attribute_error.py``
-
-  .. code-block:: python
-    :lineno-start: 43
-
-    def test_attribute_error_w_class_methods():
-        src.attribute_error.AClass().method_00()
-
-
-    # Exceptions seen
-
 * I remove the commented lines from ``attribute_error.py``
 
   .. code-block:: python
@@ -901,23 +890,33 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         attribute_08 = attribute_07
         attribute_09 = attribute_08
 
-        def method_00(): return self.attribute_09
         def method_00(self): return self.attribute_09
 
-* You know the "drill", I add a :ref:`call to<how to call a function>` for ``src.attribute_error.AClass().method_01()`` to ``test_attribute_error.py``
+* I remove the commented line from ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 43
+
+    def test_attribute_error_w_class_methods():
+        src.attribute_error.AClass().method_00()
+
+
+    # Exceptions seen
+
+* You know the "drill", I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_01``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 3
 
-        def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass.method_00()
-            src.attribute_error.AClass.method_01
+    def test_attribute_error_w_class_methods():
+        src.attribute_error.AClass().method_00()
+        src.attribute_error.AClass().method_01()
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -928,45 +927,37 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 17-18
+    :lineno-start: 38
+    :emphasize-lines: 2
 
-    class AClass(object):
+        def method_00(self): return self.attribute_09
+        def method_01(self): return self.method_00()
 
-        attribute_00 = None
-        attribute_01 = None
-        attribute_02 = None
-        attribute_03 = None
-        attribute_04 = None
-        attribute_05 = None
-        attribute_06 = None
-        attribute_07 = None
-        attribute_08 = None
-        attribute_09 = None
+  the test passes because ``method_01`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass().method_01()``
 
-        def method_00():
-            return None
+  .. code-block:: shell
 
-        def method_01():
-            return None
+    src.attribute_error.AClass().method_01
+    src
+    └── attribute_error.py
+        └── class AClass(object):
+            └── def method_01(self): return self.method_00()
 
-  the test passes because in this case it does not matter if I reference the :ref:`method<what is a method?>` (``AClass.method_01``) or call it  (``AClass.method_01()``).
-
-* I add a line for ``src.attribute_error.AClass.method_02`` to ``test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_02`` from ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 4
 
-        def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass.method_00()
-            src.attribute_error.AClass.method_01
-            src.attribute_error.AClass().method_02()
+    def test_attribute_error_w_class_methods():
+        src.attribute_error.AClass().method_00()
+        src.attribute_error.AClass().method_01()
+        src.attribute_error.AClass().method_02()
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -977,49 +968,58 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 4-5
+    :lineno-start: 38
+    :emphasize-lines: 3
 
-        def method_01():
-            return None
+        def method_00(self): return self.attribute_09
+        def method_01(self): return self.method_00()
+        def method_02(self): return self.method_01()
 
-        def method_02():
-            return None
+  the test passes because ``method_02`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass().method_02()``
 
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+  .. code-block:: shell
 
-  .. code-block:: python
+    src.attribute_error.AClass().method_02
+    src
+    └── attribute_error.py
+        └── class AClass(object):
+            └── def method_02(self): return self.method_01()
 
-    TypeError: AClass.method_02() takes
-               0 positional arguments but 1 was given
-
-  because this happens when ``AClass().method_02()`` is called
-
-  .. code-block:: python
-
-    AClass().method_02()
-        AClass.method_02(AClass)
-
-  which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_02`` does not allow it take any :ref:`positional arguments<test_positional_arguments>` (the parentheses are empty).
-
-* I add ``self`` to the parentheses of ``method_02``
+* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_03`` from ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 72
+    :lineno-start: 43
+    :emphasize-lines: 5
+
+    def test_attribute_error_w_class_methods():
+        src.attribute_error.AClass().method_00()
+        src.attribute_error.AClass().method_01()
+        src.attribute_error.AClass().method_02()
+        src.attribute_error.AClass().method_03()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+* I add a :ref:`method definition<how to make a function>` for ``method_03`` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 47
     :emphasize-lines: 1-2
 
-        # def method_02():
-        def method_02(self):
-            return None
+        def method_02(): return AClass().method_01()
+        def method_03(): return function_09()
 
-  the test passes because this happens when ``AClass().method_02()`` is called
+  the test passes because ``method_03`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass().method_03()``
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    AClass().method_02()
-        AClass.method_02(self)
-
-  where ``self`` is ``AClass``.
+    src.attribute_error.AClass().method_03
+    src
+    └── attribute_error.py
+        └── class AClass(object):
+            └── def method_03(self): return self.method_02()
 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` :ref:`method definition<how to make a function>` instead of ``self`` since it does not use anything in the :ref:`class<what is a class?>`. That way I do not send more information than what the :ref:`method<what is a method?>` needs.
 
@@ -1040,7 +1040,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   .. code-block:: python
 
     AClass().method_02()
-        AClass.method_02()
+        AClass().method_02()
 
   with the :ref:`staticmethod decorator<what is the staticmethod decorator?>` it does not matter if I call the :ref:`method<what is a method?>` from :ref:`an instance<how to test if something is an instance>` (``AClass()``) or from the :ref:`class<what is a class?>` (``AClass``).
 
@@ -1056,22 +1056,22 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_02():
             return None
 
-* I add a line for ``src.attribute_error.AClass.method_03`` to ``test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_03`` from ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 5
 
         def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass.method_00()
-            src.attribute_error.AClass.method_01
+            src.attribute_error.AClass().method_00()
+            src.attribute_error.AClass().method_01
             src.attribute_error.AClass().method_02()
             src.attribute_error.AClass().method_03
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1094,15 +1094,15 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   the test passes because in this case I reference the :ref:`method<what is a method?>` (``AClass().method_03``), I do not call it (``AClass().method_03()``).
 
-* I add a line for ``src.attribute_error.AClass.method_04`` to ``test_attribute_error.py``
+* I add a line for ``src.attribute_error.AClass().method_04`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 6
 
         def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass.method_00()
-            src.attribute_error.AClass.method_01
+            src.attribute_error.AClass().method_00()
+            src.attribute_error.AClass().method_01
             src.attribute_error.AClass().method_02()
             src.attribute_error.AClass().method_03
             src.attribute_error.AClass().method_04()
@@ -1110,7 +1110,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1134,7 +1134,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: python
 
-    TypeError: AClass.method_04() takes
+    TypeError: AClass().method_04() takes
                0 positional arguments but 1 was given
 
   because this happens when ``AClass().method_04()`` is called
@@ -1142,7 +1142,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   .. code-block:: python
 
     AClass().method_04()
-        AClass.method_04(AClass)
+        AClass().method_04(AClass)
 
   which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_04`` does not allow it take any :ref:`positional arguments<test_positional_arguments>`.
 
@@ -1164,28 +1164,28 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   .. code-block:: python
 
     AClass().method_04()
-        AClass.method_04()
+        AClass().method_04()
 
   with the :ref:`staticmethod decorator<what is the staticmethod decorator?>` it does not matter if I call the :ref:`method<what is a method?>` from :ref:`an instance<how to test if something is an instance>` (``AClass()``) or from the :ref:`class<what is a class?>` (``AClass``).
 
-* I add a line for ``src.attribute_error.AClass.method_05`` to ``test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_05`` from ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 7
 
         def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass.method_00()
-            src.attribute_error.AClass.method_01
+            src.attribute_error.AClass().method_00()
+            src.attribute_error.AClass().method_01
             src.attribute_error.AClass().method_02()
             src.attribute_error.AClass().method_03
             src.attribute_error.AClass().method_04()
-            src.attribute_error.AClass.method_05
+            src.attribute_error.AClass().method_05
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1208,25 +1208,25 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   the test passes.
 
-* I add a line for ``src.attribute_error.AClass.method_06`` to ``test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_06`` from ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 8
 
         def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass.method_00()
-            src.attribute_error.AClass.method_01
+            src.attribute_error.AClass().method_00()
+            src.attribute_error.AClass().method_01
             src.attribute_error.AClass().method_02()
             src.attribute_error.AClass().method_03
             src.attribute_error.AClass().method_04()
-            src.attribute_error.AClass.method_05
-            src.attribute_error.AClass.method_06()
+            src.attribute_error.AClass().method_05
+            src.attribute_error.AClass().method_06()
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1246,34 +1246,34 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_06():
             return None
 
-  the test passes because this happens when ``AClass.method_06()`` is called
+  the test passes because this happens when ``AClass().method_06()`` is called
 
   .. code-block:: python
 
-    AClass.method_06()
+    AClass().method_06()
 
-  I called the :ref:`method<what is a method>` with the :ref:`class<what is a class?>` (``AClass.method_06()``) not :ref:`an instance of the class<how to test if something is an instance>` (``AClass().method_06()``).
+  I called the :ref:`method<what is a method?>` with the :ref:`class<what is a class?>` (``AClass().method_06()``) not :ref:`an instance of the class<how to test if something is an instance>` (``AClass().method_06()``).
 
-* I add a line for ``src.attribute_error.AClass.method_07`` to ``test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_07`` from ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 9
 
         def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass.method_00()
-            src.attribute_error.AClass.method_01
+            src.attribute_error.AClass().method_00()
+            src.attribute_error.AClass().method_01
             src.attribute_error.AClass().method_02()
             src.attribute_error.AClass().method_03
             src.attribute_error.AClass().method_04()
-            src.attribute_error.AClass.method_05
-            src.attribute_error.AClass.method_06()
-            src.attribute_error.AClass.method_07
+            src.attribute_error.AClass().method_05
+            src.attribute_error.AClass().method_06()
+            src.attribute_error.AClass().method_07
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1295,27 +1295,27 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   the test passes.
 
-* I add a line for ``src.attribute_error.AClass.method_08`` to ``test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_08`` from ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 10
 
         def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass.method_00()
-            src.attribute_error.AClass.method_01
+            src.attribute_error.AClass().method_00()
+            src.attribute_error.AClass().method_01
             src.attribute_error.AClass().method_02()
             src.attribute_error.AClass().method_03
             src.attribute_error.AClass().method_04()
-            src.attribute_error.AClass.method_05
-            src.attribute_error.AClass.method_06()
-            src.attribute_error.AClass.method_07
+            src.attribute_error.AClass().method_05
+            src.attribute_error.AClass().method_06()
+            src.attribute_error.AClass().method_07
             src.attribute_error.AClass().method_08()
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1339,7 +1339,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: python
 
-    TypeError: AClass.method_08() takes
+    TypeError: AClass().method_08() takes
                0 positional arguments but 1 was given
 
   because this happens when ``AClass().method_08()`` is called
@@ -1347,7 +1347,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   .. code-block:: python
 
     AClass().method_08()
-        AClass.method_08(AClass)
+        AClass().method_08(AClass)
 
   which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_08`` does not allow it take any :ref:`positional arguments<test_positional_arguments>` (the parentheses are empty).
 
@@ -1369,25 +1369,25 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   .. code-block:: python
 
     AClass().method_08()
-        AClass.method_08()
+        AClass().method_08()
 
   with the :ref:`staticmethod decorator<what is the staticmethod decorator?>` it does not matter if I call the :ref:`method<what is a method?>` from :ref:`an instance<how to test if something is an instance>` (``AClass()``) or from the :ref:`class<what is a class?>` (``AClass``).
 
-* I add a line for ``src.attribute_error.AClass.method_09`` to ``test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_09`` from ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 11
 
         def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass.method_00()
-            src.attribute_error.AClass.method_01
+            src.attribute_error.AClass().method_00()
+            src.attribute_error.AClass().method_01
             src.attribute_error.AClass().method_02()
             src.attribute_error.AClass().method_03
             src.attribute_error.AClass().method_04()
-            src.attribute_error.AClass.method_05
-            src.attribute_error.AClass.method_06()
-            src.attribute_error.AClass.method_07
+            src.attribute_error.AClass().method_05
+            src.attribute_error.AClass().method_06()
+            src.attribute_error.AClass().method_07
             src.attribute_error.AClass().method_08()
             src.attribute_error.AClass().method_09
 
@@ -1399,7 +1399,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     # TypeError
     # SyntaxError
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
