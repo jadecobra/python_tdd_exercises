@@ -1111,6 +1111,19 @@ test_type_error_w_keyword_arguments
 
     # Exceptions seen
 
+* I open a new terminal_ then change directories to ``type_error``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd type_error
+
+  the terminal_ shows I am in the ``type_error`` folder_
+
+  .. code-block:: python
+
+    .../pumping_python/type_error
+
 * I add a git_ commit message in the other terminal
 
   .. code-block:: python
