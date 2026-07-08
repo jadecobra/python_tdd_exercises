@@ -1,15 +1,11 @@
 .. meta::
-  :description: Learn Python TDD with the telephone metaphor: pass input objects (starting with None, then booleans, integers, floats, strings, tuples, lists, sets, dictionaries, classes) to a function and use an f-string to produce output strings like 'I got: None'. Use uv init + pytest-watcher, bare 'reality == my_expectation' asserts with locals in test functions, then separate the solution into src/telephone.py from tests/test_telephone.py. Debug NameError: name 'text' is not defined, TypeError takes 0 positional arguments but 1 was given, TypeError: 'NoneType' object is not callable, ModuleNotFoundError: No module named 'src.telephone', AttributeError: module 'src.telephone' has no attribute 'text', and AssertionError from mismatched expectations. Demonstrates another way to organize tests with separate solution from tests.
-  :keywords: Jacob Itegboje, Python TDD tutorial, red green refactor practical example, uv init python project, pytest-watcher automatic testing, passing arguments in python, python pass None to function, python pass list to function, python pass dictionary to function, python pass tuple vs list, python pass class as argument, telephone input process output, separate solution from tests, src/telephone.py, reality == my_expectation bare assert, I got: None, f-string interpolation any object, TypeError: 'NoneType' object is not callable, TypeError: takes 0 positional arguments but 1 was given, NameError: name is not defined python, AttributeError: module has no attribute, ModuleNotFoundError: No module named 'src.telephone', python string interpolation f-string, python unit testing for beginners, python project structure src tests, how to write a failing test first, test driven development python step by step
+  :description:
+  :keywords:
 
 .. include:: ../../links.rst
 
-.. _f-string: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
-.. _f-strings: `f-string`_
-.. _string interpolation: https://peps.python.org/pep-0498/
-
 #################################################################################
-telephone
+test telephone with unittest
 #################################################################################
 
 Part of `Computer Programming`_ is sending :ref:`input data<data structures>` to a process and getting :ref:`output data<data structures>` back
@@ -34,7 +30,7 @@ where
 * reality is what happens when I do something with code
 * my expectation is what I think will happen when I do something with code
 
-The exercises in this chapter show how I can pass :ref:`objects<what is a class?>` to a :ref:`function<what is a function?>` and use it to make a string_ (anything in :ref:`quotes`).
+The exercises in this chapter show how I can pass :ref:`objects<what is a class?>` to a :ref:`function<what is a function?>` and use it to make a string_ (anything in :ref:`quotes`). It will also show :ref:`another way to organize tests<separate and equal>`.
 
 ----
 
@@ -3272,25 +3268,7 @@ close the project
 review
 *********************************************************************************
 
-Here are the tests I ran to see what happens when I pass :ref:`objects<what is a class?>` from a test to a program_ and place them in an :ref:`f-string<what is string interpolation?>` which is one way to do :ref:`string interpolation<what is string interpolation?>`
-
-* `test_passing_a_string`_
-* `test_passing_none`_
-* `test_passing_booleans`_
-* `test_passing_an_integer`_
-* `test_passing_a_float`_
-* `test_passing_a_tuple`_
-* `test_passing_a_list`_
-* `test_passing_a_dictionary`_
-* `test_passing_a_class`_
-
-I also saw these :ref:`Exceptions<errors>`
-
-* :ref:`AssertionError<what causes AssertionError?>`
-* :ref:`NameError<test_catching_name_error_in_tests>`
-* :ref:`TypeError<what causes TypeError?>`
-* :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
-* :ref:`AttributeError<what causes AttributeError?>`
+I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`.
 
 ----
 
@@ -3317,8 +3295,12 @@ You now know:
 * :ref:`how to make functions that take input<functions that take input>`
 * :ref:`what causes TypeError?`
 * :ref:`how to place values in strings<telephone>`
-
-:ref:`would you like to test making a person with f-strings?<how to make a person with f-strings>`
+* :ref:`how to make a person say hello with f-strings<how to make a person with f-strings>`
+* :ref:`how to separate tests from solutions<separate and equal functions>`
+* :ref:`what causes AttributeError<what causes AttributeError?>`
+* :ref:`how to make a person with a class<how to make a person with a class>`
+* :ref:`that everything in Python is an object<everything is an object>`
+* :ref:`how to use the unittest library<another way to write tests>`
 
 ----
 

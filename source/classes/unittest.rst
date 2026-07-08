@@ -4366,18 +4366,20 @@ You now know
 * :ref:`that everything in Python is an object<everything is an object>`
 * :ref:`how to use the unittest library<another way to write tests>`
 
+----
+
+Would you like to test the other projects with unittest?
+
 .. toctree::
   :titlesonly:
   :maxdepth: 1
 
   ../exceptions/AssertionError/AssertionError_w_unittest
-  ../exceptions/AttributeError/AttributeError_w_unittest
   inheritance_w_unittest
   ../functions/functions_w_unittest
   ../how_to/make_person/make_person_w_unittest
   ../how_to/telephone/telephone_w_unittest
 
-:ref:`Would you like to use unittest with the assertion_error project?<AssertionError: use unittest>`
 
 ----
 

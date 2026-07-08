@@ -1,11 +1,11 @@
 .. meta::
-  :description: Pumping Python TDD: "AssertionError: use unittest" continuation in the assertion_error project. Learn to use the unittest library by moving bare `assert` tests into a `TestAssertionError(unittest.TestCase)` class, adding `self`, and using `assertEqual` / `assertIs` / `assertIsNot` / `assertNotEqual` as another way to write assertions. See the exact unittest error messages: "AssertionError: True is not false", "unexpectedly identical: None", "2 == 2", "False is not None", "0 is not 0.0". Then extract repeated literals (an_integer=0, a_float=0.0, a_string, tuple, list, set, dict) into class attributes to remove duplication across test methods without setUp. Includes will_not_run (skipped because name does not start with test_) vs real test_ methods, reality == my_expectation still green without assert, is vs == identity gotchas, full red-green-refactor with "remove the commented lines", git commits, uv run pytest-watcher. Builds directly on the bare-assert AssertionError chapter.
+  :description: Pumping Python TDD: "test AssertionError with unittest" continuation in the assertion_error project. Learn to use the unittest library by moving bare `assert` tests into a `TestAssertionError(unittest.TestCase)` class, adding `self`, and using `assertEqual` / `assertIs` / `assertIsNot` / `assertNotEqual` as another way to write assertions. See the exact unittest error messages: "AssertionError: True is not false", "unexpectedly identical: None", "2 == 2", "False is not None", "0 is not 0.0". Then extract repeated literals (an_integer=0, a_float=0.0, a_string, tuple, list, set, dict) into class attributes to remove duplication across test methods without setUp. Includes will_not_run (skipped because name does not start with test_) vs real test_ methods, reality == my_expectation still green without assert, is vs == identity gotchas, full red-green-refactor with "remove the commented lines", git commits, uv run pytest-watcher. Builds directly on the bare-assert AssertionError chapter.
   :keywords: Jacob Itegboje, Pumping Python, AssertionError use unittest, unittest.TestCase, another way to write tests, assertEqual, assertIs, assertIsNot, assertNotEqual, self. in test methods, class attributes, remove repetition with class attributes, AssertionError: True is not false, unexpectedly identical: None, AssertionError: 2 == 2, 0 is not 0.0, reality == my_expectation, will_not_run, test_ prefix rule, test_assert_keyword, test_assertion_error_w_none, python TDD unittest, red green refactor unittest, uv pytest-watcher, python is vs == unittest, bare assert vs unittest assert, python class attributes for tests, no setUp needed class attrs, python unittest beginner tutorial
 
 .. include:: ../../links.rst
 
 #################################################################################
-AssertionError: use unittest
+test AssertionError with unittest
 #################################################################################
 
 ----
@@ -3742,7 +3742,7 @@ close the project
 review
 *********************************************************************************
 
-* I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`
+* I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`.
 * I can use :ref:`class attributes<what is a class attribute?>` for things that repeat, which allows :ref:`methods<what is a method?>` of the same :ref:`class<what is a class?>` to use them.
 
 ----
@@ -3751,7 +3751,7 @@ review
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<AssertionError: use unittest: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test AssertionError with unittest: tests>`
 
 ----
 
@@ -3776,8 +3776,6 @@ As a reminder, you know
 * :ref:`how to make a person with a class<how to make a person with a class>`
 * :ref:`that everything in Python is an object<everything is an object>`
 * :ref:`how to use the unittest library<another way to write tests>`
-
-:ref:`Would you like to test the person project with unittest?<test person with unittest>`
 
 ----
 

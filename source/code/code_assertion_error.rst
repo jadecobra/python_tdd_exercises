@@ -18,10 +18,10 @@ the code from ``assertion_error/tests/test_assertion_error.py`` from :ref:`Asser
 ----
 
 *********************************************************************************
-AssertionError: use unittest: tests
+test AssertionError with unittest: tests
 *********************************************************************************
 
-the code from ``assertion_error/tests/test_assertion_error.py`` from :ref:`AssertionError: use unittest`
+the code from ``assertion_error/tests/test_assertion_error.py`` from :ref:`test AssertionError with unittest`
 
 .. literalinclude:: assertion_error/test_assertion_error_w_unittest.py
   :language: python

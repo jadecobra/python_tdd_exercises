@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test person with unittest. Use the unittest library and unittest.TestCase in the :ref:`person<how to make a person with a class>` project. Open with uv run pytest-watcher showing prior tests passing. RED: TestPerson(object) + self.assertEqual raises AttributeError: 'TestPerson' object has no attribute 'assertEqual'; add import and inherit TestCase; convert test_failure then move test_joe (jane, john, mary, dir tests) into methods and insert self (TypeError: TestPerson.test_joe() takes 0 positional arguments but 1 was given). Demo self.assertNotEqual vs bare assert for richer AssertionError messages like 'joe, blow, M, 1996' == 'joe, blow, M, 1996'. GREEN with self.assertEqual. REFACTOR remove commented lines and git commit -am repeatedly. Final snapshot keeps bare assert + self.assertEqual side-by-side in each test method. Review: I can use unittest.TestCase methods or bare asserts; the person tests still repeat the same three checks (factory, say_hello fn, say_hello method) for every person. Uses TestPerson(unittest.TestCase), 2026 year math, dir on class and instance.
-  :keywords: Jacob Itegboje, Pumping Python, test person with unittest, unittest.TestCase, self.assertEqual, self.assertNotEqual, bare assert and self.assertEqual, AttributeError: 'TestPerson' object has no attribute 'assertEqual', TypeError: TestPerson.test_joe() takes 0 positional arguments but 1 was given, AssertionError: 'joe, blow, M, 1996' == 'joe, blow, M, 1996', move test to class method add self, remove the commented lines, git commit -am, uv run pytest-watcher . --now, red green refactor, person project, repetition of the three tests for each person, still have the problem, TestPerson class, dir on Person class and instance, 2026 - year_of_birth
+  :description:
+  :keywords:
 
 .. include:: ../../links.rst
 
@@ -1718,7 +1718,7 @@ close the project
 review
 *************************************************************************************
 
-* I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`
+* I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`.
 
 * My tests for a person still have the problem where they are the same three tests. There has to be a way that I can use one test for all the people.
 
@@ -1751,8 +1751,8 @@ You know
 * :ref:`how to separate tests from solutions<separate and equal functions>`
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`how to make a person with a class<how to make a person with a class>`
-
-:ref:`Would you like to know where the extra attributes and methods of the Person class came from?<everything is an object>`
+* :ref:`that everything in Python is an object<everything is an object>`
+* :ref:`how to use the unittest library<another way to write tests>`
 
 ----
 
