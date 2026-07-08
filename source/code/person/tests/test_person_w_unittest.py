@@ -90,7 +90,6 @@ class TestPerson(unittest.TestCase):
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
-
     def test_john(self):
         first_name = 'john'
         last_name = 'smith'

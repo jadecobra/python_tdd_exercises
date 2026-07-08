@@ -1689,16 +1689,11 @@ the test passes.
 
 ----
 
-
-
-
-----
-
 *********************************************************************************
 close the project
 *********************************************************************************
 
-* I close ``person.py`` and ``test_person.py``
+* I close ``test_person.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
@@ -1723,17 +1718,9 @@ close the project
 review
 *************************************************************************************
 
-* I ran tests to write a :ref:`class<what is a class?>` that makes a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` and has a :ref:`method<what is a method?>` so I do not have to pass the same values every time I want to do something with a person.
+* I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`
 
-* I saw the following :ref:`Exceptions<errors>`
-
-  - :ref:`AssertionError<what causes AssertionError?>`
-  - :ref:`NameError<test_catching_name_error_in_tests>`
-  - :ref:`TypeError<what causes TypeError?>`
-  - :ref:`AttributeError<what causes AttributeError?>`
-  - SyntaxError_
-
-* My tests have a problem, each test is now the same three tests. There has to be a way that I can use one test for all the people.
+* My tests for a person still have the problem where they are the same three tests. There has to be a way that I can use one test for all the people.
 
 ----
 
@@ -1741,7 +1728,7 @@ review
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a person with a class: tests and solution>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test person with unittest with unittest: tests>`
 
 ----
 
