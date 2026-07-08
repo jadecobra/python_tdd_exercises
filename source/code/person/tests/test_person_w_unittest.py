@@ -177,7 +177,7 @@ class TestPerson(unittest.TestCase):
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
-    def test_attributes_and_methods_of_person_class(self):
+    def test_dir_person_class(self):
         reality = dir(src.person.Person)
         my_expectation = [
             '__class__',
@@ -214,7 +214,7 @@ class TestPerson(unittest.TestCase):
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
-    def test_attributes_and_methods_of_person_instance(self):
+    def test_dir_person_instance(self):
         an_instance_of_person = src.person.Person(
             first_name='first_name',
             last_name='last_name',

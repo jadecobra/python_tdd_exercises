@@ -15,11 +15,11 @@
 family ties
 #################################################################################
 
-The tests from :ref:`everything is an object` show that in Python everything :ref:`inherits<test_attributes_and_methods_of_objects>`. This allows me to make new :ref:`objects<everything is an object>` that get their magic powers from other :ref:`objects<everything is an object>`.
+The tests from :ref:`everything is an object` show that in Python everything :ref:`inherits<test_dir_object>`. This allows me to make new :ref:`objects<everything is an object>` that get their magic powers from other :ref:`objects<everything is an object>`.
 
-Making new :ref:`objects<everything is an object>` can be easier with :ref:`Inheritance<test_attributes_and_methods_of_objects>` because I do not have to write things that have already been written again, I can :ref:`inherit<test_attributes_and_methods_of_objects>` them instead and change the new :ref:`objects<everything is an object>` to do what I want.
+Making new :ref:`objects<everything is an object>` can be easier with :ref:`Inheritance<test_dir_object>` because I do not have to write things that have already been written again, I can :ref:`inherit<test_attributes_and_methods_of_objects>` them instead and change the new :ref:`objects<everything is an object>` to do what I want.
 
-It can also be more complicated because I can make new :ref:`instances<how to test if something is an instance>` to :ref:`inherit<test_attributes_and_methods_of_objects>` from one :ref:`class<what is a class?>` and customize it for what I need instead of making new :ref:`classes<what is a class?>` that require me to keep track of `Python's Method Resolution Order`_.
+It can also be more complicated because I can make new :ref:`instances<how to test if something is an instance>` to :ref:`inherit<test_dir_object>` from one :ref:`class<what is a class?>` and customize it for what I need instead of making new :ref:`classes<what is a class?>` that require me to keep track of `Python's Method Resolution Order`_.
 
 ----
 
@@ -35,7 +35,7 @@ When :ref:`an instance<how to test if something is an instance>` is made, Python
 how to make a class with a parent
 *********************************************************************************
 
-To use :ref:`inheritance<test_attributes_and_methods_of_objects>` I put the "parent" in parentheses when I :ref:`make<how to make a class>` the new :ref:`object<everything is an object>` (the child) to make the relationship.
+To use :ref:`inheritance<test_dir_object>` I put the "parent" in parentheses when I :ref:`make<how to make a class>` the new :ref:`object<everything is an object>` (the child) to make the relationship.
 
 .. code-block:: python
 
@@ -203,7 +203,7 @@ continue the project
 test_making_a_class_w_inheritance
 *********************************************************************************
 
-I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<what is a class?>` with :ref:`inheritance<test_attributes_and_methods_of_objects>` by stating the parent :ref:`class<what is a class?>` and that :ref:`an instance (a copy)<how to test if something is an instance>` and a :ref:`subclass (child)<how to test if something is a subclass>` are different.
+I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<what is a class?>` with :ref:`inheritance<test_dir_object>` by stating the parent :ref:`class<what is a class?>` and that :ref:`an instance (a copy)<how to test if something is an instance>` and a :ref:`subclass (child)<how to test if something is a subclass>` are different.
 
 ----
 
@@ -993,7 +993,7 @@ I want to test how the :ref:`attributes<what is a class attribute?>` of :ref:`cl
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a new test for :ref:`Inheritance<test_attributes_and_methods_of_objects>` with an :ref:`assertion<what is an assertion?>`, in ``test_family_ties.py``
+* I add a new test for :ref:`Inheritance<test_dir_object>` with an :ref:`assertion<what is an assertion?>`, in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 28
@@ -3807,10 +3807,10 @@ what happens when a child has more than one parent?
 
     # Exceptions seen
 
-  - :ref:`instances<how to test if something is an instance>` of ``Lil`` :ref:`inherit<test_attributes_and_methods_of_objects>` ``eye_color`` from ``Mary``
-  - :ref:`instances<how to test if something is an instance>` of ``Mary`` :ref:`inherit<test_attributes_and_methods_of_objects>` ``eye_color`` from ``Joe``
-  - :ref:`instances<how to test if something is an instance>` of ``Lil`` :ref:`inherit<test_attributes_and_methods_of_objects>` ``last_name`` from ``John``
-  - :ref:`instances<how to test if something is an instance>` of ``John`` :ref:`inherit<test_attributes_and_methods_of_objects>` ``last_name`` from ``Smith``
+  - :ref:`instances<how to test if something is an instance>` of ``Lil`` :ref:`inherit<test_dir_object>` ``eye_color`` from ``Mary``
+  - :ref:`instances<how to test if something is an instance>` of ``Mary`` :ref:`inherit<test_dir_object>` ``eye_color`` from ``Joe``
+  - :ref:`instances<how to test if something is an instance>` of ``Lil`` :ref:`inherit<test_dir_object>` ``last_name`` from ``John``
+  - :ref:`instances<how to test if something is an instance>` of ``John`` :ref:`inherit<test_dir_object>` ``last_name`` from ``Smith``
 
 ----
 

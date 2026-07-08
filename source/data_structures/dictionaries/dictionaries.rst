@@ -774,7 +774,7 @@ the test passes. I cannot use :ref:`dictionaries<what is a dictionary?>`, sets_ 
 ----
 
 *********************************************************************************
-test_attributes_and_methods_of_dictionaries
+test_dir_dictionaries
 *********************************************************************************
 
 =================================================================================
@@ -792,7 +792,7 @@ I add a new test with the `dir built-in function`_ to see the :ref:`attributes<w
           with self.assertRaises(TypeError):
               {a_dictionary: 'BOOM!!!'}
 
-      def test_attributes_and_methods_of_dictionaries(self):
+      def test_dir_dictionaries(self):
           self.assertEqual(
               dir(dict),
               []
@@ -829,7 +829,7 @@ It also gives me a message about how to show the full difference between the two
     :lineno-start: 44
     :emphasize-lines: 2
 
-        def test_attributes_and_methods_of_dictionaries(self):
+        def test_dir_dictionaries(self):
             self.maxDiff = None
             self.assertEqual(
                 dir(dict),
@@ -848,7 +848,7 @@ It also gives me a message about how to show the full difference between the two
     :lineno-start: 44
     :emphasize-lines: 6-51
 
-        def test_attributes_and_methods_of_dictionaries(self):
+        def test_dir_dictionaries(self):
             self.maxDiff = None
             self.assertEqual(
                 dir(dict),
@@ -3614,7 +3614,7 @@ I ran tests to show that I can make a :ref:`dictionary<what is a dictionary?>` w
 * :ref:`test_making_a_dictionary_w_a_set_as_a_key`
 * :ref:`test_making_a_dictionary_w_a_dictionary_as_a_key`
 
-I also ran these tests for the :ref:`methods of dictionaries<test_attributes_and_methods_of_dictionaries>`
+I also ran these tests for the :ref:`methods of dictionaries<test_dir_dictionaries>`
 
 * :ref:`test_clear_empties_a_dictionary`
 * :ref:`test_copy_a_dictionary`

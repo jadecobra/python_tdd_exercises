@@ -148,7 +148,7 @@ test_lists
 *********************************************************************************
 
 #. :ref:`test_making_a_list`
-#. :ref:`test_attributes_and_methods_of_lists`
+#. :ref:`test_dir_lists`
 #. :ref:`test_append_adds_item_to_end_of_a_list`
 #. :ref:`test_clear_empties_a_list`
 #. :ref:`test_copy_a_list`
@@ -188,7 +188,7 @@ test_dictionaries
 #. :ref:`test_making_a_dictionary_w_a_list_as_a_key`
 #. :ref:`test_making_a_dictionary_w_a_set_as_a_key`
 #. :ref:`test_making_a_dictionary_w_a_dictionary_as_a_key`
-#. :ref:`test_attributes_and_methods_of_dictionaries`
+#. :ref:`test_dir_dictionaries`
 #. :ref:`test_clear_empties_a_dictionary`
 #. :ref:`test_copy_a_dictionary`
 #. :ref:`test_fromkeys_makes_a_dictionary_from_an_iterable`
@@ -225,7 +225,7 @@ test_classes
 #. :ref:`test_factory_person_says_hello`
 #. :ref:`test_update_factory_person_year_of_birth`
 #. :ref:`test_update_classy_person_year_of_birth`
-#. :ref:`test_attributes_and_methods_of_person_class`
+#. :ref:`test_dir_person_class`
 
 ----
 

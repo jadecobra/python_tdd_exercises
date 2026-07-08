@@ -1,6 +1,6 @@
 .. meta::
   :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with a class. Use class + __init__ (the constructor method) + self to store first_name, last_name, sex, year_of_birth once; add say_hello method so you call joe.say_hello() without repeating the values. Start in person project from prior chapter; uv run pytest-watcher . --now. RED: Person(...) -> TypeError (no __init__), empty __init__ -> TypeError got unexpected keyword 'last_name', add self. attrs; GREEN: implement using f-string with self; move to src/person.py (AttributeError); use locals in tests + kw calls for factory/say_hello/Person; add dir() tests on class vs instance. REFACTOR remove commented lines. Ends with 6 tests (joe/jane/john/mary + 2 dir tests); # Exceptions seen includes SyntaxError. Review: each test repeats the same three calls; class avoids repeating the data values. Code from person/tests/test_person_w_class.py and person/solutions/person_w_class.py. What is next: test classes (everything is an object).
-  :keywords: Jacob Itegboje, Pumping Python, how to make a person with a class, python class __init__ constructor self, Person class say_hello method, src.person.Person, src.person.factory, TypeError: Person.__init__() got an unexpected keyword argument 'last_name', Did you mean, AttributeError class has no attribute 'first_name' on class vs instance, dir(src.person.Person), dir(instance), uv run pytest-watcher . --now, red green refactor class, remove the commented lines, test_joe, test_attributes_and_methods_of_person_class, test_attributes_and_methods_of_person_instance, first_name last_name sex year_of_birth, 2026 - year_of_birth, repetition of three calls per test, class groups attributes and methods, what is next everything is an object
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with a class, python class __init__ constructor self, Person class say_hello method, src.person.Person, src.person.factory, TypeError: Person.__init__() got an unexpected keyword argument 'last_name', Did you mean, AttributeError class has no attribute 'first_name' on class vs instance, dir(src.person.Person), dir(instance), uv run pytest-watcher . --now, red green refactor class, remove the commented lines, test_joe, test_dir_person_class, test_dir_person_instance, first_name last_name sex year_of_birth, 2026 - year_of_birth, repetition of three calls per test, class groups attributes and methods, what is next everything is an object
 
 .. include:: ../../links.rst
 
@@ -2809,7 +2809,7 @@ separate and equal Person class
 ----
 
 *********************************************************************************
-test_attributes_and_methods_of_person_class
+test_dir_person_class
 *********************************************************************************
 
 Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<everything is an object>` it is given in parentheses. It allows me to see what makes up an :ref:`object<everything is an object>` without looking at the code or reading the documentation. I can then run tests to see what each thing does.
@@ -2841,7 +2841,7 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
         assert reality == my_expectation
 
 
-    def test_attributes_and_methods_of_person_class():
+    def test_dir_person_class():
         reality = dir(src.person.Person)
         my_expectation = None
         assert reality == my_expectation
@@ -2874,7 +2874,7 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
     :lineno-start: 168
     :emphasize-lines: 3-7
 
-    def test_attributes_and_methods_of_person_class():
+    def test_dir_person_class():
         reality = dir(src.person.Person)
         # my_expectation = None
         my_expectation = [
@@ -2953,7 +2953,7 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
     :emphasize-lines: 3-34
     :emphasize-text: __init__ say_hello
 
-    def test_attributes_and_methods_of_person_class():
+    def test_dir_person_class():
         reality = dir(src.person.Person)
         my_expectation = [
             '__class__',
@@ -2993,7 +2993,7 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
     # Exceptions seen
 
   - the test passes.
-  - The :ref:`__init__<the constructor method>` and :ref:`say_hello methods<test say_hello method>` I defined are in the :ref:`list of attributes and methods<test_attributes_and_methods_of_person_class>`.
+  - The :ref:`__init__<the constructor method>` and :ref:`say_hello methods<test say_hello method>` I defined are in the :ref:`list of attributes and methods<test_dir_person_class>`.
   - There are names in the :ref:`list<what is a list?>` that I did not define, which leads to the question of :ref:`where did they come from?<everything is an object>`
   - The :ref:`attributes<what is a class attribute?>` I defined in the :ref:`__init__ method<the constructor method>` are not in the :ref:`list<what is a list?>`, because the test called dir_ on ``src.person.Person`` which is the :ref:`class<what is a class?>`, not :ref:`an instance of the class<how to test if something is an instance>`.
 
@@ -3003,7 +3003,7 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_attributes_and_methods_of_person_class'
+    'add test_dir_person_class'
 
 
 .. caution:: Your list of attributes and methods can be different because of your Python version.
@@ -3011,7 +3011,7 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
 ----
 
 *********************************************************************************
-test_attributes_and_methods_of_person_instance
+test_dir_person_instance
 *********************************************************************************
 
 =================================================================================
@@ -3034,7 +3034,7 @@ I add a test to see the difference between the :ref:`attributes<what is a class 
         assert reality == my_expectation
 
 
-    def test_attributes_and_methods_of_person_instance():
+    def test_dir_person_instance():
         an_instance_of_person = src.person.Person(
             first_name='first_name',
             last_name='last_name',
@@ -3125,7 +3125,7 @@ I add the missing :ref:`attributes<what is a class attribute?>` to ``my_expectat
   :lineno-start: 205
   :emphasize-lines: 40-41, 43
 
-  def test_attributes_and_methods_of_person_instance():
+  def test_dir_person_instance():
       an_instance_of_person = src.person.Person(
           first_name='first_name',
           last_name='last_name',
@@ -3343,7 +3343,7 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_attributes_and_methods_of_person_instance'
+    'add test_dir_person_instance'
 
 ----
 

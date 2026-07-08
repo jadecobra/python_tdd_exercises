@@ -319,7 +319,7 @@ I can make a list_ with ``list()``, or with square brackets(``[]``) which uses l
 ----
 
 *********************************************************************************
-test_attributes_and_methods_of_lists
+test_dir_lists
 *********************************************************************************
 
 =================================================================================
@@ -346,7 +346,7 @@ I add a failing test
 
           self.assertEqual(list(0, 1, 2, 'n'), [0, 1, 2, 'n'])
 
-      def test_attributes_and_methods_of_lists(self):
+      def test_dir_lists(self):
           self.assertEqual(
               dir(list),
               []
@@ -380,7 +380,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
     :lineno-start: 10
     :emphasize-lines: 2
 
-        def test_attributes_and_methods_of_lists(self):
+        def test_dir_lists(self):
             self.maxDiff = None
             self.assertEqual(
                 dir(list),
@@ -395,7 +395,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
     :lineno-start: 10
     :emphasize-lines: 5-54
 
-        def test_attributes_and_methods_of_lists(self):
+        def test_dir_lists(self):
                 self.maxDiff = None
                 self.assertEqual(
                     dir(list),
@@ -3142,7 +3142,7 @@ close the project
 review
 *********************************************************************************
 
-I ran tests to show that I can make a list_ with ``list()`` or square brackets (``[]``), then I ran these tests for the :ref:`methods of lists<test_attributes_and_methods_of_lists>` from append_ to sort_
+I ran tests to show that I can make a list_ with ``list()`` or square brackets (``[]``), then I ran these tests for the :ref:`methods of lists<test_dir_lists>` from append_ to sort_
 
 * :ref:`test_append_adds_item_to_end_of_a_list`
 * :ref:`test_clear_empties_a_list`

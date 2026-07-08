@@ -165,7 +165,7 @@ def test_mary():
     assert reality == my_expectation
 
 
-def test_attributes_and_methods_of_person_class():
+def test_dir_person_class():
     reality = dir(src.person.Person)
     my_expectation = [
         '__class__',
@@ -202,7 +202,7 @@ def test_attributes_and_methods_of_person_class():
     assert reality == my_expectation
 
 
-def test_attributes_and_methods_of_person_instance():
+def test_dir_person_instance():
     an_instance_of_person = src.person.Person(
         first_name='first_name',
         last_name='last_name',

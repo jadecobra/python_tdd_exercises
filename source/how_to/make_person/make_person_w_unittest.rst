@@ -100,7 +100,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-* I add :ref:`unittest.TestCase<test_attributes_and_methods_of_unittest_testcase>` as the parent :ref:`class<what is a class?>` of ``TestPerson``
+* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<what is a class?>` of ``TestPerson``
 
   .. code-block:: python
     :linenos:
@@ -1160,7 +1160,7 @@ test_mary with unittest
             assert reality == my_expectation
 
 
-    def test_attributes_and_methods_of_person_class():
+    def test_dir_person_class():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1253,7 +1253,7 @@ the test passes.
             self.assertNotEqual(reality, my_expectation)
 
 
-    def test_attributes_and_methods_of_person_class():
+    def test_dir_person_class():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1330,7 +1330,7 @@ the test passes.
             self.assertEqual(reality, my_expectation)
 
 
-    def test_attributes_and_methods_of_person_class():
+    def test_dir_person_class():
 
   the test passes.
 
@@ -1385,7 +1385,7 @@ the test passes.
             self.assertEqual(reality, my_expectation)
 
 
-    def test_attributes_and_methods_of_person_class():
+    def test_dir_person_class():
 
 * I add a git_ commit message in the other terminal_
 
@@ -1397,7 +1397,7 @@ the test passes.
 ----
 
 *********************************************************************************
-test_attributes_and_methods_of_person_class with unittest
+test_dir_person_class with unittest
 *********************************************************************************
 
 =================================================================================
@@ -1408,7 +1408,7 @@ test_attributes_and_methods_of_person_class with unittest
 
 * I go back to the terminal_ where the tests are running.
 
-* I move :ref:`test_attributes_and_methods_of_person_class` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
+* I move :ref:`test_dir_person_class` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
 
   .. code-block:: python
     :lineno-start: 175
@@ -1418,7 +1418,7 @@ test_attributes_and_methods_of_person_class with unittest
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
-        def test_attributes_and_methods_of_person_class():
+        def test_dir_person_class():
             reality = dir(src.person.Person)
             my_expectation = [
 
@@ -1430,14 +1430,14 @@ test_attributes_and_methods_of_person_class with unittest
             assert reality == my_expectation
 
 
-    def test_attributes_and_methods_of_person_instance():
+    def test_dir_person_instance():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
     TypeError:
-        TestPerson.test_attributes_and_methods_of_person_class()
+        TestPerson.test_dir_person_class()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -1450,7 +1450,7 @@ test_attributes_and_methods_of_person_class with unittest
 
 ----
 
-I add ``self`` to the parentheses of :ref:`test_attributes_and_methods_of_person_class`
+I add ``self`` to the parentheses of :ref:`test_dir_person_class`
 
 .. code-block:: python
   :lineno-start: 175
@@ -1460,8 +1460,8 @@ I add ``self`` to the parentheses of :ref:`test_attributes_and_methods_of_person
           assert reality == my_expectation
           self.assertEqual(reality, my_expectation)
 
-      # def test_attributes_and_methods_of_person_class():
-      def test_attributes_and_methods_of_person_class(self):
+      # def test_dir_person_class():
+      def test_dir_person_class(self):
 
 the test passes.
 
@@ -1473,7 +1473,7 @@ the test passes.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_attributes_and_methods_of_person_class`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_dir_person_class`
 
   .. code-block:: python
     :lineno-start: 214
@@ -1483,11 +1483,11 @@ the test passes.
             self.assertNotEqual(reality, my_expectation)
 
 
-    def test_attributes_and_methods_of_person_instance():
+    def test_dir_person_instance():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`factory function<test person factory>`, in :ref:`test_attributes_and_methods_of_person_class`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`factory function<test person factory>`, in :ref:`test_dir_person_class`
 
   .. code-block:: python
     :lineno-start: 214
@@ -1498,11 +1498,11 @@ the test passes.
             self.assertEqual(reality, my_expectation)
 
 
-    def test_attributes_and_methods_of_person_instance():
+    def test_dir_person_instance():
 
   the test passes.
 
-* I remove the commented lines from :ref:`test_attributes_and_methods_of_person_class`
+* I remove the commented lines from :ref:`test_dir_person_class`
 
   .. code-block:: python
     :lineno-start: 175
@@ -1511,7 +1511,7 @@ the test passes.
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
-        def test_attributes_and_methods_of_person_class(self):
+        def test_dir_person_class(self):
             reality = dir(src.person.Person)
             my_expectation = [
 
@@ -1523,7 +1523,7 @@ the test passes.
             self.assertEqual(reality, my_expectation)
 
 
-    def test_attributes_and_methods_of_person_instance():
+    def test_dir_person_instance():
 
 * I add a git_ commit message in the other terminal_
 
@@ -1531,12 +1531,12 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am
-    'move test_attributes_and_methods_of_person_class to TestPerson'
+    'move test_dir_person_class to TestPerson'
 
 ----
 
 *********************************************************************************
-test_attributes_and_methods_of_person_instance with unittest
+test_dir_person_instance with unittest
 *********************************************************************************
 
 =================================================================================
@@ -1547,39 +1547,45 @@ test_attributes_and_methods_of_person_instance with unittest
 
 * I go back to the terminal_ where the tests are running.
 
-* I move :ref:`test_attributes_and_methods_of_person_instance` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
+* I move :ref:`test_dir_person_instance` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
 
   .. code-block:: python
-    :lineno-start: 175
-    :emphasize-lines: 5-7
+    :lineno-start: 213
+    :emphasize-lines: 4-10
 
-            reality = mary.say_hello()
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
-        def test_attributes_and_methods_of_person_instance():
-            reality = dir(src.person.Person)
+        def test_dir_person_instance():
+            an_instance_of_person = src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                year_of_birth=2026,
+            )
+
+            reality = dir(an_instance_of_person)
             my_expectation = [
 
   .. code-block:: python
-    :lineno-start: 212
+    :lineno-start: 260
     :emphasize-lines: 1-2
 
             ]
             assert reality == my_expectation
 
 
-    def # Exceptions seen
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
     TypeError:
-        TestPerson.test_attributes_and_methods_of_person_instance()
+        TestPerson.test_dir_person_instance()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because ...
 
 ----
 
@@ -1589,18 +1595,17 @@ test_attributes_and_methods_of_person_instance with unittest
 
 ----
 
-I add ``self`` to the parentheses of :ref:`test_attributes_and_methods_of_person_instance`
+I add ``self`` to the parentheses of :ref:`test_dir_person_instance`
 
 .. code-block:: python
-  :lineno-start: 175
-  :emphasize-lines: 5-6
+  :lineno-start: 213
+  :emphasize-lines: 4-5
 
-          reality = mary.say_hello()
           assert reality == my_expectation
           self.assertEqual(reality, my_expectation)
 
-      # def test_attributes_and_methods_of_person_instance():
-      def test_attributes_and_methods_of_person_instance(self):
+      # def test_dir_person_instance():
+      def test_dir_person_instance(self):
 
 the test passes.
 
@@ -1612,24 +1617,24 @@ the test passes.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_attributes_and_methods_of_person_instance`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_dir_person_instance`
 
   .. code-block:: python
-    :lineno-start: 214
+    :lineno-start: 262
     :emphasize-lines: 2
 
             assert reality == my_expectation
             self.assertNotEqual(reality, my_expectation)
 
 
-    def # Exceptions seen
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`factory function<test person factory>`, in :ref:`test_attributes_and_methods_of_person_instance`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`factory function<test person factory>`, in :ref:`test_dir_person_instance`
 
   .. code-block:: python
-    :lineno-start: 214
+    :lineno-start: 262
     :emphasize-lines: 2-3
 
             assert reality == my_expectation
@@ -1637,32 +1642,42 @@ the test passes.
             self.assertEqual(reality, my_expectation)
 
 
-    def # Exceptions seen
+    # Exceptions seen
 
   the test passes.
 
-* I remove the commented lines from :ref:`test_attributes_and_methods_of_person_instance`
+* I remove the commented lines from :ref:`test_dir_person_instance`
 
   .. code-block:: python
-    :lineno-start: 175
+    :lineno-start: 214
 
-            reality = mary.say_hello()
-            assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
-        def test_attributes_and_methods_of_person_instance(self):
-            reality = dir(src.person.Person)
+        def test_dir_person_instance(self):
+            an_instance_of_person = src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                year_of_birth=2026,
+            )
+
+            reality = dir(an_instance_of_person)
             my_expectation = [
 
   .. code-block:: python
-    :lineno-start: 213
+    :lineno-start: 260
 
             ]
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
 
-    def # Exceptions seen
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # AttributeError
+    # SyntaxError
 
 * I add a git_ commit message in the other terminal_
 
@@ -1670,7 +1685,7 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am
-    'move test_attributes_and_methods_of_person_instance to TestPerson'
+    'move test_dir_person_instance to TestPerson'
 
 ----
 

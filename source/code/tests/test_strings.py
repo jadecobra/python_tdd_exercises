@@ -15,7 +15,7 @@ class TestStrings(unittest.TestCase):
         self.assertEqual(str({0, 1, 2, 'n'}), "{0, 1, 2, 'n'}")
         self.assertEqual(str({'key': 'value'}), "{'key': 'value'}")
 
-    def test_attributes_and_methods_of_strings(self):
+    def test_dir_strings(self):
         self.maxDiff = None
         self.assertEqual(
             dir(str),

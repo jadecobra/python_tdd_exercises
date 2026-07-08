@@ -122,7 +122,7 @@ add TestAssertionError class
 
 ----
 
-* I add :ref:`unittest.TestCase<test_attributes_and_methods_of_unittest_testcase>` as the parent :ref:`class<what is a class?>` of ``TestAssertionError``
+* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<what is a class?>` of ``TestAssertionError``
 
   .. code-block:: python
     :linenos:
@@ -3742,7 +3742,7 @@ close the project
 review
 *********************************************************************************
 
-* I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_attributes_and_methods_of_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`
+* I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`
 * I can use :ref:`class attributes<what is a class attribute?>` for things that repeat, which allows :ref:`methods<what is a method?>` of the same :ref:`class<what is a class?>` to use them.
 
 ----

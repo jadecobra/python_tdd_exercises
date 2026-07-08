@@ -3,7 +3,7 @@ import unittest
 
 class TestUnittest(unittest.TestCase):
 
-    def test_attributes_and_methods_of_unittest(self):
+    def test_dir_unittest(self):
         reality = dir(unittest)
         my_expectation = [
             'BaseTestSuite', 'FunctionTestCase',
@@ -25,7 +25,7 @@ class TestUnittest(unittest.TestCase):
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
-    def test_attributes_and_methods_of_unittest_testcase(self):
+    def test_dir_unittest_testcase(self):
         reality = dir(unittest.TestCase)
         my_expectation = [
             '__call__', '__class__', '__delattr__',

@@ -68,7 +68,7 @@ def test_is_a_dictionary_an_object():
     assert issubclass(dict, object)
 
 
-def test_attributes_and_methods_of_objects():
+def test_dir_object():
     reality = dir(object)
     my_expectation = [
         '__class__', '__delattr__', '__dir__',

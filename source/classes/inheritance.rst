@@ -2274,10 +2274,10 @@ points the ``a_name`` :ref:`variable<what is a variable?>` to the result of call
 ----
 
 *********************************************************************************
-test_attributes_and_methods_of_objects
+test_dir_object
 *********************************************************************************
 
-In :ref:`test_attributes_and_methods_of_person_class` I saw the :ref:`methods<what is a method?>` I added to the ``Person`` :ref:`class<what is a class?>` and also names that I did not add, which led to the question of where they came from.
+In :ref:`test_dir_person_class` I saw the :ref:`methods<what is a method?>` I added to the ``Person`` :ref:`class<what is a class?>` and also names that I did not add, which led to the question of where they came from.
 
 I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object class<what is a class?>` because it is the mother of all :ref:`classes<what is a class?>`.
 
@@ -2302,7 +2302,7 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
         assert issubclass(dict, object)
 
 
-    def test_attributes_and_methods_of_objects():
+    def test_dir_object():
         reality = dir(object)
         my_expectation = []
         assert reality == my_expectation
@@ -2384,7 +2384,7 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
     :emphasize-lines: 3-12
     :emphasize-text: __init__
 
-    def test_attributes_and_methods_of_objects():
+    def test_dir_object():
         reality = dir(object)
         my_expectation = [
             '__class__', '__delattr__', '__dir__',
@@ -2402,7 +2402,7 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
     # Exceptions seen
 
   - The test passes.
-  - The :ref:`__init__ method<the constructor method>` is in the :ref:`list of attributes and methods<test_attributes_and_methods_of_person_class>`
+  - The :ref:`__init__ method<the constructor method>` is in the :ref:`list of attributes and methods<test_dir_person_class>`
   - All :ref:`classes<what is a class?>` automatically get these :ref:`attributes<what is a class attribute>`, they inherit them because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
   - The ``__init__`` :ref:`method<what is a method?>` is also inherited which means when I defined it in :ref:`test_classy_person_says_hello` I overwrote the inherited one.
 
@@ -2412,7 +2412,7 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_attributes_and_methods_of_objects'
+    'add test_dir_object'
 
 :ref:`Everything in Python is an object<everything is an object>` because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
 

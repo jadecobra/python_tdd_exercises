@@ -286,7 +286,7 @@ start the project
 ----
 
 *********************************************************************************
-test_attributes_and_methods_of_unittest
+test_dir_unittest
 *********************************************************************************
 
 I want to see what comes with the `unittest module`_.
@@ -299,13 +299,13 @@ I want to see what comes with the `unittest module`_.
 
 ----
 
-* I change ``test_failure`` to :ref:`test_attributes_and_methods_of_unittest` in ``test_unittest.py``
+* I change ``test_failure`` to :ref:`test_dir_unittest` in ``test_unittest.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1-4
 
-    def test_attributes_and_methods_of_unittest():
+    def test_dir_unittest():
         reality = dir(unittest)
         my_expectation = []
         assert reality == my_expectation
@@ -348,7 +348,7 @@ I want to see what comes with the `unittest module`_.
     import unittest
 
 
-    def test_attributes_and_methods_of_unittest():
+    def test_dir_unittest():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -416,7 +416,7 @@ I want to see what comes with the `unittest module`_.
     :emphasize-lines: 3-19
     :emphasize-text: TestCase
 
-    def test_attributes_and_methods_of_unittest():
+    def test_dir_unittest():
         reality = dir(unittest)
         my_expectation = [
             'BaseTestSuite', 'FunctionTestCase',
@@ -459,15 +459,15 @@ I want to see what comes with the `unittest module`_.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_attributes_and_methods_of_unittest'
+    'add test_dir_unittest'
 
 ----
 
 *********************************************************************************
-test_attributes_and_methods_of_unittest_testcase
+test_dir_unittest_testcase
 *********************************************************************************
 
-One of the names in the list of :ref:`attributes and methods of unittest<test_attributes_and_methods_of_unittest>` is ``TestCase``, this is the :ref:`class (toolbox)<what is a class?>` that contains the things I will use to write tests for code.
+One of the names in the list of :ref:`attributes and methods of unittest<test_dir_unittest>` is ``TestCase``, this is the :ref:`class (toolbox)<what is a class?>` that contains the things I will use to write tests for code.
 
 ----
 
@@ -477,7 +477,7 @@ One of the names in the list of :ref:`attributes and methods of unittest<test_at
 
 ----
 
-I add a new test for the :ref:`attributes and methods of TestCase<test_attributes_and_methods_of_unittest_testcase>`
+I add a new test for the :ref:`attributes and methods of TestCase<test_dir_unittest_testcase>`
 
 .. code-block:: python
   :lineno-start: 23
@@ -486,7 +486,7 @@ I add a new test for the :ref:`attributes and methods of TestCase<test_attribute
       assert reality == my_expectation
 
 
-  def test_attributes_and_methods_of_unittest_testcase():
+  def test_dir_unittest_testcase():
       reality = dir(unittest.TestCase)
       my_expectation = []
       assert reality == my_expectation
@@ -567,7 +567,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     :emphasize-lines: 3-48
     :emphasize-text: assertIsNot assertIs assertIsInstance assertNotIsInstance assertIsSubclass assertNotIsSubclass assertEqual assertNotEqual
 
-    def test_attributes_and_methods_of_unittest_testcase():
+    def test_dir_unittest_testcase():
         reality = dir(unittest.TestCase)
         my_expectation = [
             '__call__', '__class__', '__delattr__',
@@ -622,7 +622,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     # Exceptions seen
 
   - The test passes.
-  - The :ref:`__init__ method<the constructor method>` is in the :ref:`list of attributes and methods<test_attributes_and_methods_of_unittest_testcase>` because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
+  - The :ref:`__init__ method<the constructor method>` is in the :ref:`list of attributes and methods<test_dir_unittest_testcase>` because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
 
 ----
 
@@ -672,7 +672,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_attributes_and_methods_of_unittest_testcase'
+    'add test_dir_unittest_testcase'
 
 ----
 
@@ -2426,7 +2426,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
     TOOLBOX = unittest.TestCase()
 
 
-    def test_attributes_and_methods_of_unittest():
+    def test_dir_unittest():
 
 * I use the :ref:`variable<what is a variable?>` for ``unittest.TestCase()`` in :ref:`test_assert_is_not`
 
@@ -2761,7 +2761,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
             TOOLBOX.assertEqual(True, False)
 
 
-    def test_attributes_and_methods_of_unittest():
+    def test_dir_unittest():
 
   this is a problem. I expect ``TOOLBOX.assertEqual(True, False)`` to fail since :ref:`True<test_what_is_true>` is not equal to :ref:`False<test_what_is_false>`
 
@@ -2810,7 +2810,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
             TOOLBOX.assertEqual(True, False)
 
 
-    def test_attributes_and_methods_of_unittest():
+    def test_dir_unittest():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2833,7 +2833,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
             TOOLBOX.assertEqual(True, True)
 
 
-    def test_attributes_and_methods_of_unittest():
+    def test_dir_unittest():
 
 
   the test passes.
@@ -2846,7 +2846,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
 ----
 
-* I move :ref:`test_attributes_and_methods_of_unittest` to replace ``test_failure`` As a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+* I move :ref:`test_dir_unittest` to replace ``test_failure`` As a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -2855,7 +2855,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
     # class Unittest(object):
     class TestUnittest(object):
 
-        def test_attributes_and_methods_of_unittest():
+        def test_dir_unittest():
             reality = dir(unittest)
             my_expectation = [
                 'BaseTestSuite', 'FunctionTestCase',
@@ -2869,10 +2869,10 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
   .. code-block:: python
 
     TypeError:
-        TestUnittest.test_attributes_and_methods_of_unittest()
+        TestUnittest.test_dir_unittest()
         takes 0 positional arguments but 1 was given
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_attributes_and_methods_of_unittest`
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_dir_unittest`
 
   .. code-block:: python
     :lineno-start: 7
@@ -2882,7 +2882,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
     class TestUnittest(object):
 
         @staticmethod
-        def test_attributes_and_methods_of_unittest():
+        def test_dir_unittest():
 
   the test passes.
 
@@ -2896,7 +2896,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
             TOOLBOX.assertNotEqual(reality, my_expectation)
 
 
-    def test_attributes_and_methods_of_unittest_testcase():
+    def test_dir_unittest_testcase():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
@@ -2911,11 +2911,11 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
             TOOLBOX.assertEqual(reality, my_expectation)
 
 
-    def test_attributes_and_methods_of_unittest_testcase():
+    def test_dir_unittest_testcase():
 
   the test passes.
 
-* I move :ref:`test_attributes_and_methods_of_unittest_testcase` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+* I move :ref:`test_dir_unittest_testcase` to make it a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
 
   .. code-block:: python
     :lineno-start: 32
@@ -2923,7 +2923,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
             TOOLBOX.assertEqual(reality, my_expectation)
 
-        def test_attributes_and_methods_of_unittest_testcase():
+        def test_dir_unittest_testcase():
             reality = dir(unittest.TestCase)
             my_expectation = [
                 '__call__', '__class__', '__delattr__',
@@ -2934,10 +2934,10 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
   .. code-block:: python
 
     TypeError:
-        TestUnittest.test_attributes_and_methods_of_unittest_testcase()
+        TestUnittest.test_dir_unittest_testcase()
         takes 0 positional arguments but 1 was given
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_attributes_and_methods_of_unittest_testcase`
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_dir_unittest_testcase`
 
   .. code-block:: python
     :lineno-start: 32
@@ -2946,7 +2946,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
             TOOLBOX.assertEqual(reality, my_expectation)
 
         @staticmethod
-        def test_attributes_and_methods_of_unittest_testcase():
+        def test_dir_unittest_testcase():
 
   the test passes.
 
@@ -3320,9 +3320,9 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
         TOOLBOX = unittest.TestCase()
 
         @staticmethod
-        def test_attributes_and_methods_of_unittest():
+        def test_dir_unittest():
 
-* I use the new :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_attributes_and_methods_of_unittest`
+* I use the new :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_dir_unittest`
 
   .. code-block:: python
     :lineno-start: 32
@@ -3334,7 +3334,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
             self.TOOLBOX.assertEqual(reality, my_expectation)
 
         @staticmethod
-        def test_attributes_and_methods_of_unittest_testcase():
+        def test_dir_unittest_testcase():
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -3342,7 +3342,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
     NameError: name 'self' is not defined
 
-* I add ``self`` to the parentheses of :ref:`test_attributes_and_methods_of_unittest`
+* I add ``self`` to the parentheses of :ref:`test_dir_unittest`
 
   .. code-block:: python
     :lineno-start: 7
@@ -3354,8 +3354,8 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
         TOOLBOX = unittest.TestCase()
 
         @staticmethod
-        # def test_attributes_and_methods_of_unittest():
-        def test_attributes_and_methods_of_unittest(self):
+        # def test_dir_unittest():
+        def test_dir_unittest(self):
 
   the terminal_ is my friend, and shows
 
@@ -3363,7 +3363,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
     E       fixture 'self' not found
 
-* I remove the :ref:`staticmethod decorator<what is the staticmethod decorator?>` since I am using ``self`` in the :ref:`test_attributes_and_methods_of_unittest`
+* I remove the :ref:`staticmethod decorator<what is the staticmethod decorator?>` since I am using ``self`` in the :ref:`test_dir_unittest`
 
   .. code-block:: python
     :lineno-start: 7
@@ -3375,13 +3375,13 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
         TOOLBOX = unittest.TestCase()
 
         # @staticmethod
-        # def test_attributes_and_methods_of_unittest():
-        def test_attributes_and_methods_of_unittest(self):
+        # def test_dir_unittest():
+        def test_dir_unittest(self):
             reality = dir(unittest)
 
   the test is green again.
 
-* I use the new :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_attributes_and_methods_of_unittest_testcase`
+* I use the new :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_dir_unittest_testcase`
 
   .. code-block:: python
     :lineno-start: 88
@@ -3401,7 +3401,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
     NameError: name 'self' is not defined
 
-* I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_attributes_and_methods_of_unittest_testcase`
+* I add ``self`` to the parentheses and comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` for :ref:`test_dir_unittest_testcase`
 
   .. code-block:: python
     :lineno-start: 36
@@ -3410,8 +3410,8 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
             self.TOOLBOX.assertEqual(reality, my_expectation)
 
         # @staticmethod
-        # def test_attributes_and_methods_of_unittest_testcase():
-        def test_attributes_and_methods_of_unittest_testcase(self):
+        # def test_dir_unittest_testcase():
+        def test_dir_unittest_testcase(self):
             reality = dir(unittest.TestCase)
 
   green again.
@@ -3719,7 +3719,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 use unittest.TestCase
 *********************************************************************************
 
-I can use the `unittest.TestCase class`_ as a parent of the :ref:`TestUnittest class<extract TestUnittest class>` which will allow me to use ``self`` to access its :ref:`attributes and methods<test_attributes_and_methods_of_unittest_testcase>`.
+I can use the `unittest.TestCase class`_ as a parent of the :ref:`TestUnittest class<extract TestUnittest class>` which will allow me to use ``self`` to access its :ref:`attributes and methods<test_dir_unittest_testcase>`.
 
 It also means I will not need the ``TOOLBOX`` :ref:`class attribute<what is a class attribute?>` which points to an :ref:`instance<how to test if something is an instance>` of the `unittest.TestCase class`_.
 
@@ -3733,7 +3733,7 @@ It also means I will not need the ``TOOLBOX`` :ref:`class attribute<what is a cl
 
 * I go back to the terminal_ where the tests are running.
 
-* I change the :ref:`call<how to call a function with input>` to the `assertEqual method`_ in :ref:`test_attributes_and_methods_of_unittest`
+* I change the :ref:`call<how to call a function with input>` to the `assertEqual method`_ in :ref:`test_dir_unittest`
 
   .. code-block:: python
     :lineno-start: 30
@@ -3746,8 +3746,8 @@ It also means I will not need the ``TOOLBOX`` :ref:`class attribute<what is a cl
             self.assertEqual(reality, my_expectation)
 
         # @staticmethod
-        # def test_attributes_and_methods_of_unittest_testcase():
-        def test_attributes_and_methods_of_unittest_testcase(self):
+        # def test_dir_unittest_testcase():
+        def test_dir_unittest_testcase(self):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -3790,8 +3790,8 @@ I add `unittest.TestCase`_ as the parent of the :ref:`TestUnittest class<extract
       TOOLBOX = unittest.TestCase()
 
       # @staticmethod
-      # def test_attributes_and_methods_of_unittest():
-      def test_attributes_and_methods_of_unittest(self):
+      # def test_dir_unittest():
+      def test_dir_unittest(self):
           reality = dir(unittest)
 
 the test passes because
@@ -3799,7 +3799,7 @@ the test passes because
 * :ref:`TestUnittest<extract TestUnittest class>` is now a :ref:`subclass (child)<how to test if something is a subclass>` of the `unittest.TestCase class`_.
 * :ref:`children inherit the attributes and methods of their parents<everything is an object>`.
 * ``self`` is :ref:`TestUnittest()<extract TestUnittest class>` inside :ref:`TestUnittest<extract TestUnittest class>`.
-* ``self`` has all the :ref:`attributes and methods of unittest.TestCase<test_attributes_and_methods_of_unittest_testcase>` because `unittest.TestCase`_ is the :ref:`parent class<what is a class?>`.
+* ``self`` has all the :ref:`attributes and methods of unittest.TestCase<test_dir_unittest_testcase>` because `unittest.TestCase`_ is the :ref:`parent class<what is a class?>`.
 
 ----
 
@@ -3809,7 +3809,7 @@ the test passes because
 
 ----
 
-* I remove the commented lines from :ref:`test_attributes_and_methods_of_unittest` and :ref:`TestUnittest<extract TestUnittest class>`
+* I remove the commented lines from :ref:`test_dir_unittest` and :ref:`TestUnittest<extract TestUnittest class>`
 
   .. code-block:: python
     :linenos:
@@ -3821,7 +3821,7 @@ the test passes because
 
         TOOLBOX = unittest.TestCase()
 
-        def test_attributes_and_methods_of_unittest(self):
+        def test_dir_unittest(self):
             reality = dir(unittest)
             my_expectation = [
 
@@ -3833,8 +3833,8 @@ the test passes because
             self.assertEqual(reality, my_expectation)
 
         # @staticmethod
-        # def test_attributes_and_methods_of_unittest_testcase():
-        def test_attributes_and_methods_of_unittest_testcase(self):
+        # def test_dir_unittest_testcase():
+        def test_dir_unittest_testcase(self):
 
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_assert_is_subclass` to show that :ref:`TestUnittest<extract TestUnittest class>` is a :ref:`subclass<how to test if something is a subclass>` of the `unittest.TestCase class`_
 
@@ -4233,7 +4233,7 @@ the test passes because
 
         def test_assert_is(self):
 
-* I change the :ref:`call<how to call a function with input>` to the `assertEqual method`_ in :ref:`test_attributes_and_methods_of_unittest_testcase`
+* I change the :ref:`call<how to call a function with input>` to the `assertEqual method`_ in :ref:`test_dir_unittest_testcase`
 
   .. code-block:: python
     :lineno-start: 81
@@ -4249,7 +4249,7 @@ the test passes because
 
   the test is still green.
 
-* I remove the commented lines from :ref:`test_attributes_and_methods_of_unittest_testcase`
+* I remove the commented lines from :ref:`test_dir_unittest_testcase`
 
   .. code-block:: python
     :lineno-start: 27
@@ -4257,7 +4257,7 @@ the test passes because
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
-        def test_attributes_and_methods_of_unittest_testcase(self):
+        def test_dir_unittest_testcase(self):
             reality = dir(unittest.TestCase)
             my_expectation = [
 
@@ -4277,7 +4277,7 @@ the test passes because
 
     class TestUnittest(unittest.TestCase):
 
-        def test_attributes_and_methods_of_unittest(self):
+        def test_dir_unittest(self):
 
   all the tests are still passing.
 

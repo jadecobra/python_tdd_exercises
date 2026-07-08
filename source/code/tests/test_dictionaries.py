@@ -41,7 +41,7 @@ class TestDictionaries(unittest.TestCase):
         with self.assertRaises(TypeError):
             {a_dictionary: 'BOOM!!!'}
 
-    def test_attributes_and_methods_of_dictionaries(self):
+    def test_dir_dictionaries(self):
         self.maxDiff = None
         self.assertEqual(
             dir(dict),

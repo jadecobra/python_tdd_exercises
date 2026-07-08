@@ -7,7 +7,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual(list(), [])
         self.assertEqual(list((0, 1, 2, 'n')), [0, 1, 2, 'n'])
 
-    def test_attributes_and_methods_of_lists(self):
+    def test_dir_lists(self):
         self.maxDiff = None
         self.assertEqual(
             dir(list),
