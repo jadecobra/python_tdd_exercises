@@ -1,6 +1,6 @@
 .. meta::
-  :description: What causes TypeError when calling Python functions? TDD tutorial: wrong number of positional arguments, wrong keyword names, or multiple values for one argument. Red-green-refactor the type_error project with uv run pytest-watcher. Match call to function signature (definition). See "missing 1 required positional argument: 'the_input'", "takes 2 positional arguments but 3 were given", "got an unexpected keyword argument 'fourth'", "got multiple values for argument 'first'". Learn to call with correct count and names for positional_arguments, keyword_arguments, and args/kwargs mixes. Jacob Itegboje Pumping Python TDD series.
-  :keywords: Jacob Itegboje, Pumping Python, what causes TypeError, python TypeError function call, TypeError missing required positional argument, TypeError takes positional arguments but were given, TypeError got an unexpected keyword argument, TypeError got multiple values for argument, python positional vs keyword arguments, match function signature call, TDD TypeError, test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs, function definition vs call, uv pytest-watcher type_error project, python exceptions tutorial, red green refactor arguments, how to call a function with input
+  :description: What causes TypeError when calling Python functions? TDD tutorial in the type_error project (uv init, tests/test_type_error.py, uv run pytest-watcher . --now): match the call to the function definition (signature). Deliberately raise TypeError with wrong positional count ("takes 0 positional arguments but 1 was given", "missing 1 required positional argument: 'the_input'", "takes 2 positional arguments but 3 were given"), wrong keyword names ("got an unexpected keyword argument 'argument_0'. Did you mean 'argument'?"), and double-binding ("got multiple values for argument 'argument'"). Three tests: test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs. Nested defs are moved to module level so multiple tests can call the same functions; final snapshot only shows correct calls (the pedagogical problem that later separation/assertRaises work addresses). Side-effect NameError when a function name is not defined yet; initial AssertionError from test_failure. Jacob Itegboje Pumping Python TDD series.
+  :keywords: Jacob Itegboje, Pumping Python, what causes TypeError, python TypeError function call, TypeError missing required positional argument, TypeError takes positional arguments but were given, TypeError got an unexpected keyword argument, TypeError Did you mean, TypeError got multiple values for argument, match function signature definition call, positional vs keyword arguments, test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs, NameError name is not defined, AssertionError True is not false, uv init type_error, uv run pytest-watcher . --now, red green refactor TypeError, remove the commented lines, nested function locals TypeError, module level functions for shared calls, how to call a function with input, python exceptions TDD tutorial
 
 .. include:: ../../links.rst
 
@@ -422,7 +422,7 @@ test_type_error_w_positional_arguments
 
     NameError: name 'function_01' is not defined
 
-  because ...
+  because there is nothing named ``function_01`` in ``test_type_error.py``.
 
 * I add a :ref:`definition<how to make a function that takes input>` for ``function_01``
 
@@ -697,7 +697,7 @@ test_type_error_w_keyword_arguments
 
     NameError: name 'function_04' is not defined
 
-  because ...
+  because there is nothing named ``function_04`` in ``test_type_error.py``.
 
 ----
 
@@ -817,7 +817,7 @@ test_type_error_w_keyword_arguments
   because
 
   - The :ref:`call<how to call a function with input>` to ``function_05`` which belongs to :ref:`test_type_error_w_keyword_arguments` uses :ref:`keyword arguments<test_keyword_arguments>` (``argument_0='value1'`` and ``argument_1=(0, 1, 2, 'n')``).
-  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``function_05`` only allows one input with the name ``keyword``.
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``function_05`` only allows one input with the name ``argument``.
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I change the name of the input to match :ref:`the call<how to call a function with input>`
@@ -1344,7 +1344,7 @@ test_type_error_w_args_and_kwargs
 
     NameError: name 'function_01' is not defined
 
-  because ``function_01``  belongs to the :ref:`test_type_error_w_positional_arguments function<test_type_error_w_positional_arguments>` and I cannot reach it from outside.
+  because ``function_01`` belongs to the :ref:`test_type_error_w_positional_arguments function<test_type_error_w_positional_arguments>` and I cannot reach it from outside.
 
 * I move ``function_01`` out of :ref:`test_type_error_w_positional_arguments` so that it can be called from anywhere in the file_
 
@@ -1436,7 +1436,7 @@ test_type_error_w_args_and_kwargs
 
     NameError: name 'function_02' is not defined
 
-  because ``function_02``  belongs to the :ref:`test_type_error_w_positional_arguments function<test_type_error_w_positional_arguments>` and I cannot reach it from outside.
+  because ``function_02`` belongs to the :ref:`test_type_error_w_positional_arguments function<test_type_error_w_positional_arguments>` and I cannot reach it from outside.
 
 * I move ``function_02`` out of :ref:`test_type_error_w_positional_arguments` so that it can be called from anywhere in the file_
 
@@ -1543,7 +1543,7 @@ test_type_error_w_args_and_kwargs
     TypeError: function_02() got
                multiple values for argument 'first'
 
-  because ...
+  because the :ref:`call<how to call a function with input>` to ``function_02`` from :ref:`test_type_error_w_args_and_kwargs` uses ``True`` as the first :ref:`positional argument<test_positional_arguments>` which is named ``first`` in the :ref:`definition<how to make a function that takes input>`, and uses ``None`` as the value for ``first`` as a :ref:`keyword argument<test_keyword_arguments>`.
 
 * I change it to a :ref:`keyword argument<test_keyword_arguments>` to make it clearer
 
@@ -1603,7 +1603,7 @@ test_type_error_w_args_and_kwargs
 
     NameError: name 'function_03' is not defined
 
-  because ``function_03``  belongs to the :ref:`test_type_error_w_positional_arguments function<test_type_error_w_positional_arguments>` and I cannot reach it from outside.
+  because ``function_03`` belongs to the :ref:`test_type_error_w_positional_arguments function<test_type_error_w_positional_arguments>` and I cannot reach it from outside.
 
 * I move ``function_03`` out of :ref:`test_type_error_w_positional_arguments`
 
@@ -1707,7 +1707,7 @@ test_type_error_w_args_and_kwargs
 
     NameError: name 'function_07' is not defined
 
-  because ``function_07``  belongs to the :ref:`test_type_error_w_keyword_arguments function<test_type_error_w_keyword_arguments>` and I cannot reach it from outside.
+  because ``function_07`` belongs to the :ref:`test_type_error_w_keyword_arguments function<test_type_error_w_keyword_arguments>` and I cannot reach it from outside.
 
 * I move ``function_07`` out of :ref:`test_type_error_w_keyword_arguments`
 
@@ -1836,7 +1836,7 @@ test_type_error_w_args_and_kwargs
   - The :ref:`call<how to call a function with input>` to ``function_07`` from :ref:`test_type_error_w_args_and_kwargs` uses a :ref:`keyword argument<test_keyword_arguments>` that is not in the :ref:`function definition (signature)<how to make a function that takes input>`.
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* I change the :ref:`keyword argument<test_keyword_arguments>` to match the :ref:`function definition<how to call a function with input>`
+* I change the :ref:`keyword argument<test_keyword_arguments>` to match the :ref:`function definition<how to make a function that takes input>`
 
   .. code-block:: python
     :lineno-start: 78
@@ -1893,7 +1893,7 @@ test_type_error_w_args_and_kwargs
 
     NameError: name 'function_00' is not defined
 
-  because ...
+  because ``function_00`` belongs to the :ref:`test_type_error_w_positional_arguments function<test_type_error_w_positional_arguments>` and I cannot reach it from outside.
 
 * I move ``function_00`` out of :ref:`test_type_error_w_positional_arguments`
 
@@ -2009,7 +2009,7 @@ test_type_error_w_args_and_kwargs
 
     NameError: name 'function_04' is not defined
 
-  because ``function_04``  belongs to the :ref:`test_type_error_w_keyword_arguments function<test_type_error_w_keyword_arguments>` and I cannot reach it from outside.
+  because ``function_04`` belongs to the :ref:`test_type_error_w_keyword_arguments function<test_type_error_w_keyword_arguments>` and I cannot reach it from outside.
 
 * I move ``function_04`` out of :ref:`test_type_error_w_keyword_arguments`
 
@@ -2286,7 +2286,7 @@ test_type_error_w_args_and_kwargs
 
     NameError: name 'function_06' is not defined
 
-  because ``function_06``  belongs to the :ref:`test_type_error_w_keyword_arguments function<test_type_error_w_keyword_arguments>` and I cannot reach it from outside.
+  because ``function_06`` belongs to the :ref:`test_type_error_w_keyword_arguments function<test_type_error_w_keyword_arguments>` and I cannot reach it from outside.
 
 * I move ``function_06`` out of :ref:`test_type_error_w_keyword_arguments`
 
@@ -3099,7 +3099,7 @@ test_type_error_w_args_and_kwargs
 review
 *********************************************************************************
 
-I ran to test for :ref:`TypeError<what causes TypeError?>` based on what I have seen so far with
+I ran tests for :ref:`TypeError<what causes TypeError?>` with
 
 * :ref:`positional arguments<test_type_error_w_positional_arguments>`
 * :ref:`keyword arguments<test_type_error_w_keyword_arguments>`

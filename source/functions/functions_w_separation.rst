@@ -8,7 +8,7 @@
 separate and equal functions
 #################################################################################
 
-All the :ref:`functions<what is a function?>` in :ref:`the functions project<what is a function?>` were written in ``test_functions.py``. I want to move them to ``functions.py`` in the ``src`` folder_ so that I can keep the tests and solutions separate like I did with the other projects.
+All the :ref:`functions<what is a function?>` in :ref:`the functions project<what is a function?>` were written in ``test_functions.py``. I want to move them to ``functions.py`` in the ``src`` folder_ so that I can keep the tests and solutions separate.
 
 ----
 

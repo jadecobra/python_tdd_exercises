@@ -23,7 +23,7 @@ def test_passing_a_float():
 
 def test_passing_a_string():
     a_string = 'hello'
-    assert text('hello') == f'I got: {a_string}'
+    assert text(a_string) == f'I got: {a_string}'
 
 
 def test_passing_a_tuple():

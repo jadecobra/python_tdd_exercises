@@ -8,29 +8,7 @@
 telephone with separation
 #################################################################################
 
-Part of `Computer Programming`_ is sending :ref:`input data<data structures>` to a process and getting :ref:`output data<data structures>` back
-
-.. code-block:: python
-
-    input_data -> process -> output_data
-
-I send things (:ref:`input data<data structures>`) to a program_ to test it, and check if what I think will happen (my expectation) is the same as the results I get (reality). This helps me answer two questions:
-
-* what is the same?
-* what is different?
-
-The difference helps me know what to change to get what I want. I use :ref:`assertions<what is an assertion?>` to test if the result of a :ref:`call to a function with input<functions that take input>` is the same as my expectation.
-
-.. code-block:: python
-
-  assert reality == my_expectation
-
-where
-
-* reality is what happens when I do something with code
-* my expectation is what I think will happen when I do something with code
-
-The exercises in this chapter show how I can pass :ref:`objects<what is a class?>` to a :ref:`function<what is a function?>` and use it to make a string_ (anything in :ref:`quotes`).
+The ``text`` :ref:`function<what is a function?>` in :ref:`the telephone project<telephone>` was written in ``test_telephone.py``. I want to move it to ``telephone.py`` in the ``src`` folder_ so that I can keep the tests and solution separate.
 
 ----
 
@@ -1275,15 +1253,7 @@ close the project
 review
 *********************************************************************************
 
-
-
-I also saw these :ref:`Exceptions<errors>`
-
-* :ref:`AssertionError<what causes AssertionError?>`
-* :ref:`NameError<test_catching_name_error_in_tests>`
-* :ref:`TypeError<what causes TypeError?>`
-* :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
-* :ref:`AttributeError<what causes AttributeError?>`
+:ref:`I can write solutions in a different module from the tests<separate and equal>`.
 
 ----
 

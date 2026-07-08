@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): telephone — pass objects into a function and place them in a string with f-strings (string interpolation). Project telephone; uv init, tests package, uv run pytest-watcher . --now. Starts with test_failure → AssertionError: assert False is True. test_passing_none: NameError name 'text' is not defined; nested text() takes 0 positional arguments but 1 was given (TypeError); then assert None == 'I got: None'. Hoist text to module level for booleans; hardcoded returns break earlier tests until return f'I got: {the_input}'. Walks None, True/False, int 1234, float 5.678, string 'hello', tuple/list/set/dict, and classes (object, bool, int, …) showing Python’s string representation (e.g. "I got: <class 'object'>", set order vs same-variable f-string). REFACTOR: variables + f-strings, remove the commented lines, git commit. Ends with module-level text + 10 tests + # Exceptions seen AssertionError, NameError, TypeError. What is next: how to make a person with f-strings.
+  :keywords: Jacob Itegboje, Pumping Python, telephone python tdd, f-string, string interpolation, pass objects to a function, return f'I got: {the_input}', test_passing_none, NameError name 'text' is not defined, TypeError takes 0 positional arguments but 1 was given, AssertionError assert None == 'I got: None', I got: False, I got: True, an_integer 1234, a_float 5.678, hello string, tuple list set dictionary class string representation, <class 'object'>, set order assertion, reality == my_expectation, uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, how to place values in strings, how to make a person with f-strings
 
 .. include:: ../../links.rst
 
@@ -352,7 +352,7 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
 
   .. code-block:: python
 
-    TypeError: test_passing_none.<locals>`.text()
+    TypeError: test_passing_none.<locals>.text()
                takes 0 positional arguments but 1 was given
 
   because the :ref:`assertion<what is an assertion?>` called the ``text`` :ref:`function<what is a function?>` which belongs to :ref:`test_passing_none` with input (:ref:`None<what is None?>`) and the :ref:`function definition<how to make a function that takes input>` does not allow any inputs, the parentheses are empty.
@@ -504,7 +504,7 @@ Can I pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
 
     NameError: name 'text' is not defined
 
-  because the ``text`` :ref:`function<what is a function?>`  belongs to the :ref:`test_passing_none function<test_passing_none>` and I cannot reach it from outside.
+  because the ``text`` :ref:`function<what is a function?>` belongs to the :ref:`test_passing_none function<test_passing_none>` and I cannot reach it from outside.
 
 ----
 
@@ -611,7 +611,7 @@ how to write an f-string
     AssertionError: assert 'I got: {the_input}'
                         == 'I got: False'
 
-* I make :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>`
+* I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
     :linenos:
@@ -802,7 +802,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   text(1234)
       text(the_input)
-          the_input = None
+          the_input = 1234
           return f'I got: {the_input}'
           return  'I got:  1234      '
 
@@ -1123,7 +1123,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
     def test_passing_a_string():
         a_string = 'hello'
-        assert text('hello') == f'I got: {a_string}'
+        assert text(a_string) == f'I got: {a_string}'
 
 
     # Exceptions seen
@@ -1230,7 +1230,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
     def test_passing_a_tuple():
         a_tuple = (0, 1, 2, 'n')
-        # assert text((0, 1, 2, 'n')) == 'I got: (0, 1, 2, 'n')'
+        # assert text((0, 1, 2, 'n')) == 'I got: (0, 1, 2, n)'
         assert text((0, 1, 2, 'n')) == "I got: (0, 1, 2, 'n')"
 
 
@@ -1283,7 +1283,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 test_passing_a_list
 *********************************************************************************
 
-Can I pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) from a test to a :ref:`function?<what is a function?>`
+Can I pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) from a test to a :ref:`function<what is a function?>`?
 
 ----
 
@@ -1396,7 +1396,7 @@ Python_ changed the :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 34
 
     def test_passing_a_list():
         a_list = [0, 1, 2, 'n']
@@ -1422,7 +1422,7 @@ Python_ changed the :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what 
 test_passing_a_set
 *********************************************************************************
 
-Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) from a test to a :ref:`function?<what is a function?>`
+Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) from a test to a :ref:`function<what is a function?>`?
 
 ----
 
@@ -1584,7 +1584,7 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 test_passing_a_dictionary
 *********************************************************************************
 
-Can I pass a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas<what is a dictionary?>` as input to a :ref:`function<what is a function?>`?
+Can I pass a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>` as input to a :ref:`function<what is a function?>`?
 
 ----
 
@@ -1605,7 +1605,7 @@ Can I pass a :ref:`dictionary (any key-value pairs in curly braces '{ }' separat
 
     def test_passing_a_set():
         a_set = {0, 1, 2, 'n'}
-        assert text(a_set) == f'I got: {a_set}'
+        assert text(a_set) == f"I got: {a_set}"
 
 
     def test_passing_a_dictionary():
@@ -1737,7 +1737,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 44
 
     def test_passing_a_dictionary():
         a_dictionary = {
@@ -2294,6 +2294,9 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
 
     # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
 
 * I add a git_ commit message in the other terminal_
 
@@ -2340,13 +2343,14 @@ review
 
 Here are the tests I ran to see what happens when I pass :ref:`objects<what is a class?>` from a test to a program_ and place them in an :ref:`f-string<what is string interpolation?>` which is one way to do :ref:`string interpolation<what is string interpolation?>`
 
-* `test_passing_a_string`_
 * `test_passing_none`_
 * `test_passing_booleans`_
 * `test_passing_an_integer`_
 * `test_passing_a_float`_
+* `test_passing_a_string`_
 * `test_passing_a_tuple`_
 * `test_passing_a_list`_
+* `test_passing_a_set`_
 * `test_passing_a_dictionary`_
 * `test_passing_a_class`_
 
@@ -2355,7 +2359,6 @@ I also saw these :ref:`Exceptions<errors>`
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`TypeError<what causes TypeError?>`
-* :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 

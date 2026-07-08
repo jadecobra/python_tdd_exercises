@@ -40,12 +40,11 @@ Would you like to test separating tests from solutions in the other projects?
   :titlesonly:
   :maxdepth: 1
 
-  ../exceptions/TypeError/TypeError_w_separation
-  ../functions/functions_w_separation
-  ../how_to/telephone/telephone_w_separation
+  ../../functions/functions_w_separation
+  ../../how_to/telephone/telephone_w_separation
+  ../../exceptions/TypeError/TypeError_w_separation
 
-
-:ref:`would you like to test making a person with f-strings?<how to make a person with f-strings>`
+:ref:`would you like to separate the tests from the solutions in the functions project?<separate and equal functions>`
 
 ----
 

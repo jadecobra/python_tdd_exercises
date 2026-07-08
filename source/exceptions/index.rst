@@ -25,7 +25,7 @@ The tests in this chapter cover these Exceptions_
   exceptions/AssertionError/index
   ModuleNotFoundError
   AttributeError
-  type_error/index
+  TypeError/index
   handling Exceptions<exception_handling/index>
 
 *********************************************************************************
