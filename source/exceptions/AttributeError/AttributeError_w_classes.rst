@@ -737,7 +737,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
 
     def test_attribute_error_w_class_methods():
-        src.attribute_error.AClass().method_00()
+        src.attribute_error.AClass.method_00()
 
 
     # Exceptions seen
@@ -836,7 +836,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: python
 
-    TypeError: AClass().method_00() missing
+    TypeError: AClass.method_00() missing
                1 required positional argument: 'self'
 
   because I :ref:`called the method<how to call a function>` with the :ref:`class<what is a class?>` not an :ref:`instance of the class<how to test if something is an instance>`.
@@ -848,7 +848,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :emphasize-lines: 2-3
 
     def test_attribute_error_w_class_methods():
-        # src.attribute_error.AClass().method_00()
+        # src.attribute_error.AClass.method_00()
         src.attribute_error.AClass().method_00()
 
 

@@ -1430,7 +1430,7 @@ what is the staticmethod decorator?
             self, person=None
         ):
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2812,7 +2812,7 @@ separate and equal Person class
 test_attributes_and_methods_of_person_class
 *********************************************************************************
 
-Python has the `dir built-in function`_ which shows the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<everything is an object>` it is given in parentheses. It allows me to see what makes up an :ref:`object<everything is an object>` without looking at the code or reading the documentation. I can then run tests to see what each thing does.
+Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<everything is an object>` it is given in parentheses. It allows me to see what makes up an :ref:`object<everything is an object>` without looking at the code or reading the documentation. I can then run tests to see what each thing does.
 
 ----
 
@@ -2828,7 +2828,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 
   .. code-block:: python
     :lineno-start: 157
-    :emphasize-lines: 11-14
+    :emphasize-lines: 12-15
 
         mary = src.person.Person(
             first_name=first_name,
@@ -2839,6 +2839,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 
         reality = mary.say_hello()
         assert reality == my_expectation
+
 
     def test_attributes_and_methods_of_person_class():
         reality = dir(src.person.Person)
@@ -2870,7 +2871,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
   .. code-block:: python
-    :lineno-start: 167
+    :lineno-start: 168
     :emphasize-lines: 3-7
 
     def test_attributes_and_methods_of_person_class():
@@ -2948,7 +2949,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
   .. code-block:: python
-    :lineno-start: 167
+    :lineno-start: 168
     :emphasize-lines: 3-34
     :emphasize-text: __init__ say_hello
 
@@ -3022,8 +3023,8 @@ test_attributes_and_methods_of_person_instance
 I add a test to see the difference between the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of :ref:`an instance<how to test if something is an instance>` and the actual :ref:`class<what is a class?>`
 
 .. code-block:: python
-  :lineno-start: 196
-  :emphasize-lines: 8-14, 16-49
+  :lineno-start: 197
+  :emphasize-lines: 9-15, 17-50
 
             '__str__',
             '__subclasshook__',
@@ -3031,6 +3032,7 @@ I add a test to see the difference between the :ref:`attributes<what is a class 
             'say_hello'
         ]
         assert reality == my_expectation
+
 
     def test_attributes_and_methods_of_person_instance():
         an_instance_of_person = src.person.Person(
@@ -3120,7 +3122,7 @@ because ``first_name``, ``last_name`` and ``year_of_birth`` are missing. Why is 
 I add the missing :ref:`attributes<what is a class attribute?>` to ``my_expectation``
 
 .. code-block:: python
-  :lineno-start: 133
+  :lineno-start: 205
   :emphasize-lines: 40-41, 43
 
   def test_attributes_and_methods_of_person_instance():
@@ -3185,8 +3187,8 @@ the test passes.
 * I add ``sex`` to the :ref:`list<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 242
-    :emphasize-lines: 5
+    :lineno-start: 244
+    :emphasize-lines: 4
 
             'first_name',
             'last_name',

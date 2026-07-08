@@ -2499,7 +2499,7 @@ You now know
 * :ref:`how to make a person with a class<how to make a person with a class>`
 * :ref:`that everything in Python is an object<everything is an object>`
 
-:ref:`Would you like to see another way to write tests?<another way to write tests>`
+:ref:`Would you like to test AttributeError with classes?<AttributeError with classes>`
 
 ----
 

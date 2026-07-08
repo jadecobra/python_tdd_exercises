@@ -3777,7 +3777,7 @@ As a reminder, you know
 * :ref:`that everything in Python is an object<everything is an object>`
 * :ref:`how to use the unittest library<another way to write tests>`
 
-:ref:`Would you like to test TypeError with classes?<TypeError with classes>`
+:ref:`Would you like to test the person project with unittest?<test person with unittest>`
 
 ----
 

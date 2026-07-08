@@ -19,13 +19,27 @@ how to make a person with strings: tests
 how to make a person with f-strings: tests and solution
 *********************************************************************************
 
-* the code from ``person/tests/test_person.py`` from :ref:`how to make a person with f-strings`
+=================================================================================
+how to make a person with f-strings: tests
+=================================================================================
 
-  .. literalinclude:: person/tests/test_person_w_fstrings.py
+----
 
-* the code from ``person/src/person.py`` from :ref:`how to make a person with f-strings`
+the code from ``person/tests/test_person.py`` from :ref:`how to make a person with f-strings`
 
-  .. literalinclude:: person/solutions/person_w_fstrings.py
+.. literalinclude:: person/tests/test_person_w_fstrings.py
+
+----
+
+=================================================================================
+how to make a person with f-strings: solutions
+=================================================================================
+
+----
+
+the code from ``person/src/person.py`` from :ref:`how to make a person with f-strings`
+
+.. literalinclude:: person/solutions/person_w_fstrings.py
 
 ----
 
@@ -33,10 +47,35 @@ how to make a person with f-strings: tests and solution
 how to make a person with a class: tests and solution
 *********************************************************************************
 
-* the code from ``person/tests/test_person.py`` from :ref:`how to make a person with a class`
+=================================================================================
+how to make a person with a class: tests
+=================================================================================
 
-  .. literalinclude:: person/tests/test_person_w_class.py
+----
 
-* the code from ``person/src/person.py`` from :ref:`how to make a person with a class`
+the code from ``person/tests/test_person.py`` from :ref:`how to make a person with a class`
 
-  .. literalinclude:: person/solutions/person_w_class.py
+.. literalinclude:: person/tests/test_person_w_class.py
+
+----
+
+=================================================================================
+how to make a person with a class: solutions
+=================================================================================
+
+----
+
+the code from ``person/src/person.py`` from :ref:`how to make a person with a class`
+
+.. literalinclude:: person/solutions/person_w_class.py
+
+----
+
+*********************************************************************************
+test person with unittest: tests
+*********************************************************************************
+
+the code from ``person/tests/test_person.py`` from :ref:`test person with unittest`
+
+.. literalinclude:: person/tests/test_person_w_unittest.py
+
