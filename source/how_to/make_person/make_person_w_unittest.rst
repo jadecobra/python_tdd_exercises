@@ -1205,15 +1205,15 @@ the test passes.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_mary`
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 136
     :emphasize-lines: 19, 32, 43
 
         # def test_mary():
         def test_mary(self):
             first_name = 'mary'
-            last_name = 'smith'
-            sex = 'M'
-            year_of_birth = 1580
+            last_name = 'public'
+            sex = 'F'
+            year_of_birth = 2000
 
             reality = src.person.factory(
                 first_name=first_name,
@@ -1253,19 +1253,19 @@ the test passes.
             self.assertNotEqual(reality, my_expectation)
 
 
-    def test_mary():
+    def test_attributes_and_methods_of_person_class():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'mary, smith, M, 1580'
-                 == 'mary, smith, M, 1580'
+     AssertionError: 'mary, public, F, 2000'
+                  == 'mary, public, F, 2000
 
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`factory function<test person factory>`, in :ref:`test_mary`
 
   .. code-block:: python
-    :lineno-start: 110
+    :lineno-start: 153
     :emphasize-lines: 2-3
 
             assert reality == my_expectation
@@ -1289,13 +1289,13 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: 'Hello, my name is mary smith and I am 446.'
-                 == 'Hello, my name is mary smith and I am 446.'
+    AssertionError: 'Hello, my name is mary public and I am 26.'
+                 == 'Hello, my name is mary public and I am 26.'
 
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say_hello function<test say_hello function>`, in :ref:`test_mary`
 
   .. code-block:: python
-    :lineno-start: 124
+    :lineno-start: 167
     :emphasize-lines: 2-3
 
             assert reality == my_expectation
@@ -1315,13 +1315,13 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: 'Hello, my name is mary smith and I am 446.'
-                 == 'Hello, my name is mary smith and I am 446.'
+    AssertionError: 'Hello, my name is mary public and I am 26.'
+                 == 'Hello, my name is mary public and I am 26.'
 
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say hello method<test say_hello method>` of the :ref:`Person class<test Person class>`, in :ref:`test_mary`
 
   .. code-block:: python
-    :lineno-start: 135
+    :lineno-start: 178
     :emphasize-lines: 3-4
 
             reality = mary.say_hello()
@@ -1330,62 +1330,62 @@ the test passes.
             self.assertEqual(reality, my_expectation)
 
 
-    def test_mary():
+    def test_attributes_and_methods_of_person_class():
 
   the test passes.
 
 * I remove the commented lines from :ref:`test_mary`
 
   .. code-block:: python
-    :lineno-start: 91
+    :lineno-start: 134
 
-            self.assertEqual(reality, my_expectation)
+        self.assertEqual(reality, my_expectation)
 
-        def test_mary(self):
-            first_name = 'mary'
-            last_name = 'smith'
-            sex = 'M'
-            year_of_birth = 1580
+    def test_mary(self):
+        first_name = 'mary'
+        last_name = 'public'
+        sex = 'F'
+        year_of_birth = 2000
 
-            reality = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'{first_name}, {last_name},'
-                f' {sex}, {year_of_birth}'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+        self.assertEqual(reality, my_expectation)
 
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+        reality = src.person.say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality == my_expectation
+        self.assertEqual(reality, my_expectation)
 
-            mary = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
+        mary = src.person.Person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
 
-            reality = mary.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+        reality = mary.say_hello()
+        assert reality == my_expectation
+        self.assertEqual(reality, my_expectation)
 
 
-    def test_mary():
+def test_attributes_and_methods_of_person_class():
 
 * I add a git_ commit message in the other terminal_
 
