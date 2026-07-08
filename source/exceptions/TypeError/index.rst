@@ -32,7 +32,7 @@ questions about TypeError
 
 Questions to think about as I go through the chapter
 
-* :ref:`what causes TypeError?`
+* :ref:`what causes TypeError<what causes TypeError?>`
 * :ref:`what happens when I call a function and do not send the right number of inputs?<test_type_error_w_positional_arguments>`
 * :ref:`what happens when I call a function and do not use the right names?<test_type_error_w_keyword_arguments>`
 * :ref:`what happens when I call a function with multiple values for the same argument?<test_type_error_w_args_and_kwargs>`
@@ -3130,7 +3130,7 @@ so far you know
 * :ref:`how to make functions<what is a function?>`
 * :ref:`how to make a person with strings`
 * :ref:`how to make functions that take input<functions that take input>`
-* :ref:`what causes TypeError?`
+* :ref:`what causes TypeError<what causes TypeError?>`
 
 :ref:`Would you like to test using a function to make a string from input?<telephone>`
 

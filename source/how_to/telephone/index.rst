@@ -283,7 +283,7 @@ start the project
 test_passing_none
 *********************************************************************************
 
-I can pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`function<what is a function?>`?
+Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`function<what is a function?>`?
 
 ----
 
@@ -352,7 +352,7 @@ I can pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
 
   .. code-block:: python
 
-    TypeError: test_passing_none.<locals>.text()
+    TypeError: test_passing_none.<locals>`.text()
                takes 0 positional arguments but 1 was given
 
   because the :ref:`assertion<what is an assertion?>` called the ``text`` :ref:`function<what is a function?>` which belongs to :ref:`test_passing_none` with input (:ref:`None<what is None?>`) and the :ref:`function definition<how to make a function that takes input>` does not allow any inputs, the parentheses are empty.
@@ -467,7 +467,7 @@ The problem with this solution is that the ``text`` :ref:`function<what is a fun
 test_passing_booleans
 *********************************************************************************
 
-I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<what is a function?>.
+Can I pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<what is a function?>`?
 
 ----
 
@@ -482,7 +482,7 @@ I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
 * I add a test for :ref:`booleans (there are only two)<what are booleans?>`, first with an :ref:`assertion<what is an assertion?>` for :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 18
+    :linenos:
     :emphasize-lines: 8-9
 
     def test_passing_none():
@@ -534,9 +534,10 @@ I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
 
   .. code-block:: python
 
-    AssertionError: assert 'I got: None' == 'I got: False'
+    AssertionError: assert 'I got: None'
+                        == 'I got: False'
 
-  because the ``text`` :ref:`function<what is a function?>` always returns ``'I got: None'`` and this :ref:`assertion<what is an assertion?>` expects ``'I got: False'``
+  because the ``text`` :ref:`function<what is a function?>` always returns ``'I got: None'`` and this :ref:`assertion<what is an assertion?>` expects ``'I got: False'``.
 
 * I change :ref:`the return statement` to give the test what it wants
 
@@ -566,7 +567,7 @@ I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
 what is string interpolation?
 *********************************************************************************
 
-`String Interpolation`_ is the placing of :ref:`objects<what is a class?>` in strings_. It allows me to make one string_ that can have changing values.
+`String Interpolation`_ is how to place :ref:`objects<what is a class?>` in strings_. It allows me to make one string_ that can have values that change.
 
 I can use an `f-string`_ (short for formatted string literal) for `string interpolation`_.
 
@@ -590,10 +591,9 @@ how to write an f-string
 
 .. code-block:: python
 
-  f'characters {object}'
+  f'characters {object} more characters'
 
-
-* I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>`
+* I add ``the_input`` to the string_ in :ref:`the return statement`
 
   .. code-block:: python
     :linenos:
@@ -602,6 +602,25 @@ how to write an f-string
     def text(the_input):
         # return 'I got: None'
         # return 'I got: False'
+        return 'I got: {the_input}'
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'I got: {the_input}'
+                        == 'I got: False'
+
+* I make :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5
+
+    def text(the_input):
+        # return 'I got: None'
+        # return 'I got: False'
+        # return 'I got: {the_input}'
         return f'I got: {the_input}'
 
 
@@ -648,7 +667,7 @@ how to write an f-string
 
   .. code-block:: python
     :lineno-start: 9
-    :emphasize-lines: 2
+    :emphasize-lines: 3
     :emphasize-text: "
 
     def test_passing_booleans():
@@ -662,7 +681,8 @@ how to write an f-string
 
   .. code-block:: python
 
-    E       assert 'I got: True' == 'I got: "True"
+    E       assert 'I got: True'
+                == 'I got: "True"
 
 * I remove the :ref:`quotes` around :ref:`True<test_what_is_true>` in my expectation
 
@@ -718,7 +738,7 @@ how to write an f-string
 test_passing_an_integer
 *********************************************************************************
 
-Can I pass an integer_ (a whole number without decimals) as input to a :ref:`function<what is a function?>`?.
+Can I pass an integer_ (a whole number without decimals) as input to a :ref:`function<what is a function?>`?
 
 ----
 
@@ -752,7 +772,8 @@ Can I pass an integer_ (a whole number without decimals) as input to a :ref:`fun
 
   .. code-block:: python
 
-    E       assert 'I got: 1234' == 'I got: "1234"'
+    E       assert 'I got: 1234'
+                == 'I got: "1234"'
 
 ----
 
@@ -853,7 +874,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 test_passing_a_float
 *********************************************************************************
 
-Can I pass a float_ (binary floating point decimal number) as input to a :ref:`function<what is a function?>`?.
+Can I pass a float_ (binary floating point decimal number) as input to a :ref:`function<what is a function?>`?
 
 ----
 
@@ -886,7 +907,8 @@ Can I pass a float_ (binary floating point decimal number) as input to a :ref:`f
 
   .. code-block:: python
 
-    E       assert 'I got: 5.678' == 'I got: "5.678"'
+    E       assert 'I got: 5.678'
+                == 'I got: "5.678"'
 
 ----
 
@@ -988,7 +1010,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 test_passing_a_string
 *********************************************************************************
 
-Can I pass a string_ as input to a :ref:`function<what is a function?>`?.
+Can I pass a string_ as input to a :ref:`function<what is a function?>`?
 
 ----
 
@@ -1012,7 +1034,7 @@ Can I pass a string_ as input to a :ref:`function<what is a function?>`?.
 
 
     def test_passing_a_string():
-        assert text('hi') == f'I got: hello'
+        assert text('hello') == 'I got: hi'
 
 
     # Exceptions seen
@@ -1021,7 +1043,8 @@ Can I pass a string_ as input to a :ref:`function<what is a function?>`?.
 
   .. code-block:: python
 
-    AssertionError: assert 'I got: hi' == 'I got: hello'
+    AssertionError: assert 'I got: hello'
+                        == 'I got: hi'
 
 ----
 
@@ -1038,8 +1061,8 @@ I change my expectation to match reality
   :emphasize-lines: 2-3
 
   def test_passing_a_string():
-      # assert text('hi') == f'I got: hello'
-      assert text('hi') == f'I got: hi'
+      # assert text('hello') == 'I got: hi'
+      assert text('hello') == 'I got: hello'
 
 
   # Exceptions seen
@@ -1048,11 +1071,11 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
 .. code-block:: python
 
-  text('hi')
+  text('hello')
       text(the_input)
-          the_input = 'hi'
+          the_input = 'hello'
           return f'I got: {the_input}'
-          return  'I got:  hi        '
+          return  'I got:  hello     '
 
 ----
 
@@ -1062,31 +1085,31 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
 ----
 
-* I add a :ref:`variable<what is a variable?>` for ``'hi'``
+* I add a :ref:`variable<what is a variable?>` for ``'hello'``
 
   .. code-block:: python
     :lineno-start: 24
     :emphasize-lines: 2
 
     def test_passing_a_string():
-        a_string = 'hi'
-        # assert text('hi') == f'I got: hello'
-        assert text('hi') == f'I got: hi'
+        a_string = 'hello'
+        # assert text('hello') == 'I got: hi'
+        assert text('hello') == 'I got: hello'
 
 
     # Exceptions seen
 
-* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<what is string interpolation?>` to remove repetition of ``'hi'``
+* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<what is string interpolation?>` to remove repetition of ``'hello'``
 
   .. code-block:: python
     :lineno-start: 24
-    :emphasize-lines: 2-5
+    :emphasize-lines: 4-5
 
     def test_passing_a_string():
-        a_string = 'hi'
-        # assert text('hi') == f'I got: hello'
-        # assert text('hi') == f'I got: hi'
-        assert text(a_string) == f'I got: {a_string}'
+        a_string = 'hello'
+        # assert text('hello') == 'I got: hi'
+        # assert text('hello') == 'I got: hello'
+        assert text('hello') == f'I got: {a_string}'
 
 
     # Exceptions seen
@@ -1099,8 +1122,8 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :lineno-start: 24
 
     def test_passing_a_string():
-        a_string = 'hi'
-        assert text(a_string) == f'I got: {a_string}'
+        a_string = 'hello'
+        assert text('hello') == f'I got: {a_string}'
 
 
     # Exceptions seen
@@ -1141,12 +1164,12 @@ Can I pass a tuple_ (anything in parentheses ``( )`` separated by a comma) as in
     :emphasize-lines: 6-7
 
     def test_passing_a_string():
-        a_string = 'hi'
-        assert text(a_string) == f'I got: {a_string}'
+        a_string = 'hello'
+        assert text('hello') == f'I got: {a_string}'
 
 
     def test_passing_a_tuple():
-        assert text((0, 1, 2, 'n')) == 'I got: (1, 2, 3, n)'
+        assert text((0, 1, 2, 'n')) == 'I got: (0, 1, 2, n)'
 
 
     # Exceptions seen
@@ -1154,9 +1177,10 @@ Can I pass a tuple_ (anything in parentheses ``( )`` separated by a comma) as in
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :emphasize-text: "
 
     E       assert "I got: (0, 1, 2, 'n')"
-                == 'I got: (1, 2, 3, n)'
+                == 'I got: (0, 1, 2, n)'
 
 ----
 
@@ -1174,7 +1198,7 @@ I change the tuple_ in my expectation to match reality
   :emphasize-text: "
 
   def test_passing_a_tuple():
-      # assert text((0, 1, 2, 'n')) == 'I got: (1, 2, 3, n)'
+      # assert text((0, 1, 2, 'n')) == 'I got: (0, 1, 2, n)'
       assert text((0, 1, 2, 'n')) == "I got: (0, 1, 2, 'n')"
 
 
@@ -1202,7 +1226,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: 3-4
+    :emphasize-lines: 2
 
     def test_passing_a_tuple():
         a_tuple = (0, 1, 2, 'n')
@@ -1220,7 +1244,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
     def test_passing_a_tuple():
         a_tuple = (0, 1, 2, 'n')
-        # assert text((0, 1, 2, 'n')) == 'I got: (0, 1, 2, 'n')'
+        # assert text((0, 1, 2, 'n')) == 'I got: (0, 1, 2, n)'
         # assert text((0, 1, 2, 'n')) == "I got: (0, 1, 2, 'n')"
         assert text(a_tuple) == f'I got: {a_tuple}'
 
@@ -1244,9 +1268,10 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit --all --message 'add test_passing_a_tuple'
+    git commit --all --message \
+    'add test_passing_a_tuple'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -1483,7 +1508,7 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 
       {0, 'n', 2, 1} == {0, 1, 2, 'n'}
 
-  - these two are not the same string
+  - these two are not the same string_
 
     .. code-block:: python
 
@@ -1506,14 +1531,14 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 * I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<what is string interpolation?>` to remove repetition of ``{0, 1, 2, 'n'}``
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 39
     :emphasize-lines: 4-5
 
     def test_passing_a_set():
         a_set = {0, 1, 2, 'n'}
         # assert text({0, 1, 2, 'n'}) == 'I got: {0, 1, 2, "n"}'
         # assert text({0, 1, 2, 'n'}) == "I got: {0, 1, 2, 'n'}"
-        assert text(a_set) == f'I got: {a_set}'
+        assert text(a_set) == f"I got: {a_set}"
 
 
     # Exceptions seen
@@ -1532,11 +1557,11 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 39
 
     def test_passing_a_set():
         a_set = {0, 1, 2, 'n'}
-        assert text(a_set) == f'I got: {a_set}'
+        assert text(a_set) == f"I got: {a_set}"
 
 
     # Exceptions seen
@@ -1544,9 +1569,10 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit --all --message 'add test_passing_a_set'
+    git commit --all --message \
+    'add test_passing_a_set'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -1642,8 +1668,9 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
   text({'key0': 'value0', 'keyN': [0, 1, 2, 'n'],})
       text(the_input)
           the_input = {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}
-          return f'I got: {the_input    }'
-          return  "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
+          return f'I got: {the_input}'
+          return ("I got: {'key0': 'value0',"
+                           'keyN': [0, 1, 2, 'n']}")
 
 ----
 
@@ -1727,9 +1754,10 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'add test_passing_a_dictionary'
+    git commit -am \
+    'add test_passing_a_dictionary'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -1782,7 +1810,7 @@ Can I pass any :ref:`object<everything is an object>` as input to a :ref:`functi
     E       assert "I got: <class 'object'>"
                 == 'I got: object'
 
-  :ref:`object<everything is an object>` is the :ref:`mother class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from, and :ref:`everything in Python is an object<everything is an object>`.
+  :ref:`object<everything is an object>` is the :ref:`mother class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from because :ref:`everything in Python is an object<everything is an object>`.
 
 ----
 
@@ -1842,7 +1870,8 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   .. code-block:: python
 
-    E       assert "I got: <class 'bool'>" == 'I got: bool'
+    E       assert "I got: <class 'bool'>"
+                == 'I got: bool'
 
 * I change my expectation to match reality
 
@@ -1881,7 +1910,8 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   .. code-block:: python
 
-    E       assert "I got: <class 'int'>" == 'I got: int'
+    E       assert "I got: <class 'int'>"
+                == 'I got: int'
 
 * I change my expectation to match reality
 
@@ -1924,7 +1954,8 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   .. code-block:: python
 
-    E       assert "I got: <class 'float'>" == 'I got: float'
+    E       assert "I got: <class 'float'>"
+                == 'I got: float'
 
 * I change my expectation to match reality
 
@@ -1971,7 +2002,8 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   .. code-block:: python
 
-    E       assert "I got: <class 'str'>" == 'I got: str'
+    E       assert "I got: <class 'str'>"
+                == 'I got: str'
 
 * I change my expectation to match reality
 
@@ -2022,7 +2054,8 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   .. code-block:: python
 
-    E       assert "I got: <class 'tuple'>" == 'I got: tuple'
+    E       assert "I got: <class 'tuple'>"
+                == 'I got: tuple'
 
 * I change my expectation to match reality
 
@@ -2077,7 +2110,8 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   .. code-block:: python
 
-    E       assert "I got: <class 'tuple'>" == 'I got: tuple'
+    E       assert "I got: <class 'list'>"
+                == 'I got: list'
 
 * I change my expectation to match reality
 
@@ -2136,7 +2170,8 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   .. code-block:: python
 
-    E       assert "I got: <class 'set'>" == 'I got: set'
+    E       assert "I got: <class 'set'>"
+                == 'I got: set'
 
 * I change my expectation to match reality
 
@@ -2199,7 +2234,8 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   .. code-block:: python
 
-    E       assert "I got: <class 'dict'>" == 'I got: dict'
+    E       assert "I got: <class 'dict'>"
+                == 'I got: dict'
 
 * I change my expectation to match reality
 
@@ -2262,9 +2298,10 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit --all --message 'add test_passing_a_class'
+    git commit --all --message \
+    'add test_passing_a_class'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -2343,7 +2380,7 @@ You now know:
 * :ref:`how to make functions<what is a function?>`
 * :ref:`how to make a person with strings`
 * :ref:`how to make functions that take input<functions that take input>`
-* :ref:`what causes TypeError?`
+* :ref:`what causes TypeError<what causes TypeError?>`
 * :ref:`how to place values in strings<telephone>`
 
 :ref:`would you like to test making a person with f-strings?<how to make a person with f-strings>`

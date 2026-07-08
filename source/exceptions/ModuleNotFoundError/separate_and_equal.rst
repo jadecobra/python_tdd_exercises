@@ -29,7 +29,7 @@ You now know:
 * :ref:`how to make functions<what is a function?>`
 * :ref:`how to make a person with strings`
 * :ref:`how to make functions that take input<functions that take input>`
-* :ref:`what causes TypeError?`
+* :ref:`what causes TypeError<what causes TypeError?>`
 * :ref:`how to place values in strings<telephone>`
 
 ----
