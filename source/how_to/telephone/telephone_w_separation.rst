@@ -28,24 +28,7 @@ I have these tests by the end of the chapter
 open the project
 *********************************************************************************
 
-* I name this project ``telephone``
 * I open a terminal_
-* I use uv_ to make a directory_ for the project and initialize it
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv init telephone
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    Initialized project `telephone`
-    at `.../pumping_python/telephone`
-
-  then goes back to the command line.
-
 * I change directory_ to the project
 
   .. code-block:: python
@@ -59,133 +42,7 @@ open the project
 
     .../pumping_python/telephone
 
-* I `make a directory`_ for the tests
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    mkdir tests
-
-  the terminal_ goes back to the command line.
-
-* I make the ``tests`` directory_ a `Python package`_
-
-  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        touch tests/__init__.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        New-Item tests/__init__.py
-
-  the terminal_ goes back to the command line.
-
-* I use the `mv program`_ to change the name of ``main.py`` to ``test_telephone.py`` and move it to the ``tests`` folder_
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        mv main.py tests/test_telephone.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        Move-Item main.py tests/test_telephone.py
-
-  the terminal_ goes back to the command line.
-
 * I open ``test_telephone.py``
-
-* I delete all the text then add :ref:`the first failing test<test_failure>` to ``test_telephone.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-2
-
-    def test_failure():
-        assert False is True
-
-* I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest" > requirements.txt
-
-  the terminal_ goes back to the command line.
-
-* I add `pytest-watcher`_ to the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest-watcher" >> requirements.txt
-
-  the terminal_ goes back to the command line.
-
-* I use uv_ to install `pytest-watcher`_ with the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv add --requirement requirements.txt
-
-  the terminal_ shows that it installed `pytest-watcher`_ and its dependencies.
-
-* I add the new files_ and folders_ to git_ for tracking
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    git add .
-
-  the terminal_ goes back to the command line.
-
-* I add a git_ commit message
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    git commit --all --message 'setup project'
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    [main (root-commit) a0b12c3] setup project
-     8 files changed, X insertions(+)
-     create mode 100644 .gitignore
-     create mode 100644 .python-version
-     create mode 100644 README.md
-     create mode 100644 pyproject.toml
-     create mode 100644 requirements.txt
-     create mode 100644 tests/__init__.py
-     create mode 100644 tests/test_telephone.py
-     create mode 100644 uv.lock
-
-  then goes back to the command line.
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -195,75 +52,19 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
-    :emphasize-lines: 6, 8, 10
 
-    ======================== FAILURES ========================
-    ______________________ test_failure ______________________
+    test_telephone.py ..........                        [100%]
 
-        def test_failure():
-    >       assert False is True
-    E       assert False is True
-
-    test_telephone.py:2: AssertionError
-    ================ short test summary info =================
-    FAILED test_telephone.py::test_failure - assert False is True
-    =================== 1 failed in X.YZs ====================
-
-  because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`.
-
-  .. admonition:: if the terminal_ does not show the same error, then check
-
-    * if your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-    * if you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
-
-    and try ``uv run pytest-watcher . --now`` again
-
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5-6
-    :emphasize-text: AssertionError
-
-    def test_failure():
-        assert False is True
-
-
-    # Exceptions seen
-    # AssertionError
-
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2-3
-
-    def test_failure():
-        # assert False is True
-        assert False is False
-
-
-    # Exceptions seen
-    # AssertionError
-
-  the test passes.
+    =================== 10 passed in A.BCs ===================
 
 ----
 
 *********************************************************************************
-separate and equal
+move test_passing_none
 *********************************************************************************
-
-So far all :ref:`functions<what is a function?>` I have written have been in the same file_ as the tests, some are even in the same :ref:`function<what is a function?>` as the :ref:`assertions<what is an assertion?>` of the tests.
-
-In earlier tests I found it better to keep :ref:`functions<what is a function?>` outside of :ref:`functions<what is a function?>` so that anything could call them from outside.
-
-I can also place them in other :ref:`modules<what is a module?>` then use the `import statement`_ to bring in the :ref:`function<what is a function?>` so I can test it. This helps me keep tests and solutions separate. It also means I can send tests only, solutions only or both.
-
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -271,35 +72,32 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
 ----
 
-* I go back to the terminal_ where the tests are running
+I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_none` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`test_passing_none function<test_passing_none>` of the ``telephone`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`test_passing_none function<test_passing_none>` in ``test_telephone.py``
 
-* I change the :ref:`assertion<what is an assertion?>` to call the ``text`` :ref:`function<what is a function?>` of the ``telephone`` :ref:`module<what is a module?>` in the ``src`` folder_
+.. code-block:: python
+  :linenos:
+  :emphasize-lines: 6-9
 
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 6-9
-
-    def text(the_input):
-        return f'I got: {the_input}'
+  def text(the_input):
+      return f'I got: {the_input}'
 
 
-    def test_passing_none():
-        # assert text(None) == 'I got: None'
-        reality = src.telephone.text(None)
-        my_expectation = 'I got: None'
-        assert reality == my_expectation
+  def test_passing_none():
+      reality = src.telephone.text(None)
+      my_expectation = 'I got: None'
+      # assert text(None) == 'I got: None'
+      assert reality == my_expectation
 
 
-    def test_passing_booleans():
+  def test_passing_booleans():
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+.. code-block:: python
 
-    NameError: name 'src' is not defined
+  NameError: name 'src' is not defined
 
-  because there is nothing with that name in ``test_telephone.py``.
-
+because there is nothing with that name in ``test_telephone.py``.
 
 ----
 
@@ -319,6 +117,7 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
 
     def text(the_input):
+        return f'I got: {the_input}'
 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
@@ -331,7 +130,7 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 * I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 73
+    :lineno-start: 72
     :emphasize-lines: 5
     :emphasize-text: ModuleNotFoundError
 
@@ -341,7 +140,7 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
     # TypeError
     # ModuleNotFoundError
 
-* I go to the other terminal_
+* I open another terminal_ and make sure I am in the ``telephone`` folder_
 
 * I use mkdir_ to make a folder_ named ``src``
 
@@ -352,20 +151,21 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
   the terminal_ goes back to the command line.
 
-* I go back to the terminal_ where the tests are running
+* I go back to the terminal_ where the tests are running.
 
 * I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) in ``test_telephone.py`` to run the test again, and the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
-    AttributeError: module 'src' has no attribute 'telephone'
+    AttributeError: module 'src'
+                    has no attribute 'telephone'
 
   because there is nothing named ``telephone`` in the ``src`` folder_.
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 73
+    :lineno-start: 72
     :emphasize-lines: 6
     :emphasize-text: AttributeError
 
