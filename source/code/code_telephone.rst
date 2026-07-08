@@ -4,21 +4,41 @@ telephone: tests and solution
 #################################################################################
 
 *********************************************************************************
-tests
+telephone tests
 *********************************************************************************
 
 the code from ``telephone/tests/test_telephone.py`` from :ref:`telephone`
 
-.. literalinclude:: tests/test_telephone.py
+.. literalinclude:: telephone/tests/test_telephone.py
   :language: python
   :linenos:
 
 *********************************************************************************
-solution
+telephone with separation: tests and solution
 *********************************************************************************
 
-the solution in ``telephone/src/telephone.py`` from :ref:`telephone`
+=================================================================================
+telephone with separation: tests
+=================================================================================
 
-.. literalinclude:: solutions/telephone.py
+----
+
+the code in ``telephone/tests/test_telephone.py`` from :ref:`telephone with separation`
+
+.. literalinclude:: telephone/tests/test_telephone_w_separation.py
+  :language: python
+  :linenos:
+
+----
+
+=================================================================================
+telephone with separation: solution
+=================================================================================
+
+----
+
+the code in ``telephone/src/telephone.py`` from :ref:`telephone with separation`
+
+.. literalinclude:: telephone/solutions/telephone_w_separation.py
   :language: python
   :linenos:

@@ -46,20 +46,15 @@ table of contents
   functions/functions_w_input
   exceptions/TypeError/index
   how_to/telephone/index
+  exceptions/ModuleNotFoundError/separate_and_equal
   make a person with f-strings<how_to/make_person/make_person_w_fstrings>
-  functions/functions_w_separation
   exceptions/AttributeError/index
-  exceptions/TypeError/TypeError_w_separation
   make a person with a class<how_to/make_person/make_person_w_class>
   classes/inheritance
-  exceptions/AttributeError/AttributeError_w_classes
-  exceptions/TypeError/TypeError_w_classes
-  classes/unittest
   make a person<how_to/make_person>
   data_structures/none/index
   what are booleans?<data_structures/booleans/index>
   truth table<truth_table/index>
-  make a calculator<calculator/calculator_1/index>
   make TDD automatically<make_tdd/make_tdd_automatically>
   handling Exceptions<exceptions/exception_handling/index>
   data_structures/lists/index

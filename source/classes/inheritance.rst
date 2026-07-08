@@ -2499,7 +2499,17 @@ You now know
 * :ref:`how to make a person with a class<how to make a person with a class>`
 * :ref:`that everything in Python is an object<everything is an object>`
 
-:ref:`Would you like to test AttributeError with classes?<AttributeError with classes>`
+----
+
+Would you like to test the other projects with classes?
+
+.. toctree::
+  :titlesonly:
+  :maxdepth: 1
+
+  ../exceptions/AttributeError/AttributeError_w_classes
+  ../exceptions/TypeError/TypeError_w_classes
+  unittest
 
 ----
 
