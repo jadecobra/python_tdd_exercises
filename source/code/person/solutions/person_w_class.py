@@ -1,7 +1,6 @@
 class Person:
 
     def __init__(
-        # first_name, last_name,
         self, first_name, last_name,
         sex, year_of_birth
     ):

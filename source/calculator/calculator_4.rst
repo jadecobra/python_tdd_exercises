@@ -1766,7 +1766,7 @@ you know
 * :ref:`how to make a Python Test Driven Development environment automatically<how to make a Python test driven development environment 2>`
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
-* :ref:`how to raise TypeError<TypeError>`
+* :ref:`how to raise TypeError<what causes TypeError?>`
 * :ref:`how to make the calculator check if its inputs are numbers<test_calculator_sends_message_when_input_is_not_a_number>`
 
 :ref:`Would you like to test Lists?<lists>`

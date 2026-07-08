@@ -5172,7 +5172,7 @@ you have covered a bit so far and know
 * :ref:`how to make a person with strings`
 * :ref:`how to make functions that take input<functions that take input>`
 
-I am going for a walk. :ref:`Would you like to test TypeError?<TypeError>`
+I am going for a walk. :ref:`Would you like to test TypeError?<what causes TypeError?>`
 
 ----
 
