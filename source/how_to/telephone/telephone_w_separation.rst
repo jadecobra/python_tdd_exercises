@@ -72,7 +72,7 @@ move test_passing_none
 
 ----
 
-I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_none` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`test_passing_none function<test_passing_none>` of the ``telephone`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`test_passing_none function<test_passing_none>` in ``test_telephone.py``
+I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_none` to use the result of a :ref:`call<how to call a function with input>` to the ``text`` :ref:`function<what is a function?>` of the ``telephone`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the ``text`` :ref:`function<what is a function?>` in ``test_telephone.py``
 
 .. code-block:: python
   :linenos:
@@ -294,9 +294,9 @@ because there is nothing with that name in ``test_telephone.py``.
     :emphasize-lines: 2-5
 
     def test_passing_booleans():
-        # assert text(False) == 'I got: False'
         reality = src.telephone.text(False)
         my_expectation = 'I got: False'
+        # assert text(False) == 'I got: False'
         assert reality == my_expectation
         assert text(True) == 'I got: True'
 
@@ -313,7 +313,7 @@ because there is nothing with that name in ``test_telephone.py``.
         └── def text(the_input):
             └── return f'I got: {the input}'
 
-  then uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+  using the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
 
   .. code-block:: python
 
@@ -327,16 +327,17 @@ because there is nothing with that name in ``test_telephone.py``.
 
   .. code-block:: python
     :lineno-start: 14
-    :emphasize-lines: 6-9
+    :emphasize-lines: 7-10
 
     def test_passing_booleans():
         # assert text(False) == 'I got: False'
         reality = src.telephone.text(False)
         my_expectation = 'I got: False'
         assert reality == my_expectation
-        # assert text(True) == 'I got: True'
+
         reality = src.telephone.text(True)
         my_expectation = 'I got: True'
+        # assert text(True) == 'I got: True'
         assert reality == my_expectation
 
 
@@ -365,13 +366,14 @@ because there is nothing with that name in ``test_telephone.py``.
 
   .. code-block:: python
     :lineno-start: 24
-    :emphasize-lines: 3-6
+    :emphasize-lines: 4-7
 
     def test_passing_an_integer():
         an_integer = 1234
-        # assert text(an_integer) == f'I got: {an_integer}'
+
         reality = src.telephone.text(an_integer)
         my_expectation = f'I got: {an_integer}'
+        # assert text(an_integer) == f'I got: {an_integer}'
         assert reality == my_expectation
 
 
@@ -398,13 +400,14 @@ because there is nothing with that name in ``test_telephone.py``.
 
   .. code-block:: python
     :lineno-start: 32
-    :emphasize-lines: 3-6
+    :emphasize-lines: 4-7
 
     def test_passing_a_float():
         a_float = 5.678
-        # assert text(a_float) == f'I got: {a_float}'
+
         reality = src.telephone.text(a_float)
         my_expectation = f'I got: {a_float}'
+        # assert text(a_float) == f'I got: {a_float}'
         assert reality == my_expectation
 
 
@@ -420,7 +423,7 @@ because there is nothing with that name in ``test_telephone.py``.
         └── def text(the_input):
             └── return f'I got: {the input}'
 
-  then uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+  using the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
 
   .. code-block:: python
 
@@ -453,17 +456,20 @@ because there is nothing with that name in ``test_telephone.py``.
 
   .. code-block:: python
     :lineno-start: 40
-    :emphasize-lines: 3-6
+    :emphasize-lines: 4-7
 
     def test_passing_a_string():
         a_string = 'hi'
-        # assert text(a_string) == f'I got: {a_string}'
+
         reality = src.telephone.text(a_string)
         my_expectation = f'I got: {a_string}'
+        # assert text(a_string) == f'I got: {a_string}'
         assert reality == my_expectation
 
 
     def test_passing_a_tuple():
+
+  still green.
 
 * I remove the commented line
 
@@ -484,19 +490,20 @@ because there is nothing with that name in ``test_telephone.py``.
 
   .. code-block:: python
     :lineno-start: 48
-    :emphasize-lines: 3-6
+    :emphasize-lines: 4-7
 
     def test_passing_a_tuple():
         a_tuple = (0, 1, 2, 'n')
-        # assert text(a_tuple) == f'I got: {a_tuple}'
+
         reality = src.telephone.text(a_tuple)
         my_expectation = f'I got: {a_tuple}'
+        # assert text(a_tuple) == f'I got: {a_tuple}'
         assert reality == my_expectation
 
 
     def test_passing_a_list():
 
-  still green.
+  green.
 
 * I remove the commented line
 
@@ -517,19 +524,20 @@ because there is nothing with that name in ``test_telephone.py``.
 
   .. code-block:: python
     :lineno-start: 56
-    :emphasize-lines: 3-6
+    :emphasize-lines: 4-7
 
     def test_passing_a_list():
         a_list = [0, 1, 2, 'n']
-        # assert text(a_list) == f'I got: {a_list}'
+
         reality = src.telephone.text(a_list)
         my_expectation = f'I got: {a_list}'
+        # assert text(a_list) == f'I got: {a_list}'
         assert reality == my_expectation
 
 
     def test_passing_a_set():
 
-  green.
+  still green.
 
 * I remove the commented line
 
@@ -554,15 +562,16 @@ because there is nothing with that name in ``test_telephone.py``.
 
     def test_passing_a_set():
         a_set = {0, 1, 2, 'n'}
-        # assert text(a_set) == f'I got: {a_set}'
+
         reality = src.telephone.text(a_set)
         my_expectation = f'I got: {a_set}'
+        # assert text(a_set) == f'I got: {a_set}'
         assert reality == my_expectation
 
 
     def test_passing_a_dictionary():
 
-  still green.
+  the test is still green.
 
 * I remove the commented line
 
@@ -579,7 +588,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
     def test_passing_a_dictionary():
 
-* I change the call in ``reality`` for :ref:`test_passing_a_dictionary`
+* I change the value the ``reality`` :ref:`variable<what is a variable>` of :ref:`test_passing_a_dictionary` points to from the result of a :ref:`call<how to call a function with input>` to the ``text`` :ref:`function<what is a function?>` of the ``test_telephone`` :ref:`module<what is a module?>`, to the result of a :ref:`call<how to call a function with input>` to the ``text`` :ref:`function<what is a function?>` of the ``telephone`` :ref:`module<what is a module>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 72
@@ -598,7 +607,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
     def test_passing_a_class():
 
-  the test is still green because when ``src.telephone.text`` is called, Python_ follows this path
+  still green because when ``src.telephone.text`` is called, Python_ follows this path
 
   .. code-block:: shell
 
@@ -608,7 +617,7 @@ because there is nothing with that name in ``test_telephone.py``.
         └── def text(the_input):
             └── return f'I got: {the input}'
 
-  then uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+  using the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
 
   .. code-block:: python
 
@@ -624,7 +633,8 @@ because there is nothing with that name in ``test_telephone.py``.
                 'keyN': [0, 1, 2, 'n'],
             }
             return f'I got: {the_input}'
-            return  "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
+            return ("I got: {'key0': 'value0',"
+                             'keyN': [0, 1, 2, 'n']}")
 
 * I remove the commented line
 
@@ -651,49 +661,49 @@ because there is nothing with that name in ``test_telephone.py``.
     :emphasize-lines: 2-5, 7-10, 12-15, 17-20, 22-25, 27-30, 32-35, 37-40, 42-45
 
     def test_passing_a_class():
-        # assert text(object) == "I got: <class 'object'>"
         reality = src.telephone.text(object)
         my_expectation = "I got: <class 'object'>"
+        # assert text(object) == "I got: <class 'object'>"
         assert reality == my_expectation
 
-        # assert text(bool) == "I got: <class 'bool'>"
         reality = src.telephone.text(bool)
         my_expectation = "I got: <class 'bool'>"
+        # assert text(bool) == "I got: <class 'bool'>"
         assert reality == my_expectation
 
-        # assert text(int) == "I got: <class 'int'>"
         reality = src.telephone.text(int)
         my_expectation = "I got: <class 'int'>"
+        # assert text(int) == "I got: <class 'int'>"
         assert reality == my_expectation
 
-        # assert text(float) == "I got: <class 'float'>"
         reality = src.telephone.text(float)
         my_expectation = "I got: <class 'float'>"
+        # assert text(float) == "I got: <class 'float'>"
         assert reality == my_expectation
 
-        # assert text(str) == "I got: <class 'str'>"
         reality = src.telephone.text(str)
         my_expectation = "I got: <class 'str'>"
+        # assert text(str) == "I got: <class 'str'>"
         assert reality == my_expectation
 
-        # assert text(tuple) == "I got: <class 'tuple'>"
         reality = src.telephone.text(tuple)
         my_expectation = "I got: <class 'tuple'>"
+        # assert text(tuple) == "I got: <class 'tuple'>"
         assert reality == my_expectation
 
-        # assert text(list) == "I got: <class 'list'>"
         reality = src.telephone.text(list)
         my_expectation = "I got: <class 'list'>"
+        # assert text(list) == "I got: <class 'list'>"
         assert reality == my_expectation
 
-        # assert text(set) == "I got: <class 'set'>"
         reality = src.telephone.text(set)
         my_expectation = "I got: <class 'set'>"
+        # assert text(set) == "I got: <class 'set'>"
         assert reality == my_expectation
 
-        # assert text(dict) == "I got: <class 'dict'>"
         reality = src.telephone.text(dict)
         my_expectation = "I got: <class 'dict'>"
+        # assert text(dict) == "I got: <class 'dict'>"
         assert reality == my_expectation
 
 
