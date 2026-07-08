@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test person with unittest. Use the unittest library and unittest.TestCase in the :ref:`person<how to make a person with a class>` project. Open with uv run pytest-watcher showing prior tests passing. RED: TestPerson(object) + self.assertEqual raises AttributeError: 'TestPerson' object has no attribute 'assertEqual'; add import and inherit TestCase; convert test_failure then move test_joe (jane, john, mary, dir tests) into methods and insert self (TypeError: TestPerson.test_joe() takes 0 positional arguments but 1 was given). Demo self.assertNotEqual vs bare assert for richer AssertionError messages like 'joe, blow, M, 1996' == 'joe, blow, M, 1996'. GREEN with self.assertEqual. REFACTOR remove commented lines and git commit -am repeatedly. Final snapshot keeps bare assert + self.assertEqual side-by-side in each test method. Review: I can use unittest.TestCase methods or bare asserts; the person tests still repeat the same three checks (factory, say_hello fn, say_hello method) for every person. Uses TestPerson(unittest.TestCase), 2026 year math, dir on class and instance.
+  :keywords: Jacob Itegboje, Pumping Python, test person with unittest, unittest.TestCase, self.assertEqual, self.assertNotEqual, bare assert and self.assertEqual, AttributeError: 'TestPerson' object has no attribute 'assertEqual', TypeError: TestPerson.test_joe() takes 0 positional arguments but 1 was given, AssertionError: 'joe, blow, M, 1996' == 'joe, blow, M, 1996', move test to class method add self, remove the commented lines, git commit -am, uv run pytest-watcher . --now, red green refactor, person project, repetition of the three tests for each person, still have the problem, TestPerson class, dir on Person class and instance, 2026 - year_of_birth
 
 .. include:: ../../links.rst
 
@@ -52,9 +52,9 @@ open the project
 
   .. code-block:: python
 
-    tests/test_person.py ....                           [100%]
+    tests/test_person.py ......                         [100%]
 
-    =================== 4 passed in A.BCs ====================
+    =================== 6 passed in A.BCs ====================
 
 ----
 
@@ -1260,7 +1260,7 @@ the test passes.
   .. code-block:: python
 
      AssertionError: 'mary, public, F, 2000'
-                  == 'mary, public, F, 2000
+                  == 'mary, public, F, 2000'
 
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`factory function<test person factory>`, in :ref:`test_mary`
 
@@ -1728,7 +1728,7 @@ review
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<test person with unittest with unittest: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test person with unittest: tests>`
 
 ----
 

@@ -56,6 +56,7 @@ table of contents
   exceptions/TypeError/TypeError_w_classes
   classes/unittest
   exceptions/AssertionError/AssertionError_w_unittest
+  how_to/make_person/make_person_w_unittest
   make a person<how_to/make_person>
   data_structures/none/index
   what are booleans?<data_structures/booleans/index>
