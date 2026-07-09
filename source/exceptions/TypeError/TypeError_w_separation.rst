@@ -172,6 +172,14 @@ because ``src`` is not defined in ``test_type_error.py``.
 
     touch src/type_error.py
 
+* I add the new file_ to git_ for tracking
+
+  .. code-block:: python
+
+    git add src/type_error.py
+
+  the terminal_ goes back to the command line.
+
 * I go back to the terminal_ where the tests are running and it shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python

@@ -163,6 +163,14 @@ because ``src`` is not defined in ``test_functions.py``.
 
     touch src/functions.py
 
+* I add the new file_ to git_ for tracking
+
+  .. code-block:: python
+
+    git add src/functions.py
+
+  the terminal_ goes back to the command line.
+
 * I go back to the terminal_ where the tests are running and it shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
@@ -3045,6 +3053,8 @@ So far, you know
 * :ref:`what causes TypeError<what causes TypeError?>`
 * :ref:`how to place values in strings<telephone>`
 * :ref:`how to separate tests from solutions<separate and equal>`
+
+:ref:`would you like to separate the tests from the solution in the telephone project?<separate and equal telephone>`
 
 ----
 

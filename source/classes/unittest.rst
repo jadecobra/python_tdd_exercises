@@ -4380,6 +4380,7 @@ Would you like to test the other projects with unittest?
   ../how_to/make_person/make_person_w_unittest
   ../how_to/telephone/telephone_w_unittest
 
+:ref:`click here to see me test the assertion_error project with unittest<AssertionError with unittest>`
 
 ----
 

@@ -14,16 +14,16 @@ the code from ``telephone/tests/test_telephone.py`` from :ref:`telephone`
   :linenos:
 
 *********************************************************************************
-telephone with separation: tests and solution
+separate and equal telephone: tests and solution
 *********************************************************************************
 
 =================================================================================
-telephone with separation: tests
+separate and equal telephone: tests
 =================================================================================
 
 ----
 
-the code in ``telephone/tests/test_telephone.py`` from :ref:`telephone with separation`
+the code in ``telephone/tests/test_telephone.py`` from :ref:`separate and equal telephone`
 
 .. literalinclude:: telephone/tests/test_telephone_w_separation.py
   :language: python
@@ -32,12 +32,12 @@ the code in ``telephone/tests/test_telephone.py`` from :ref:`telephone with sepa
 ----
 
 =================================================================================
-telephone with separation: solution
+separate and equal telephone: solution
 =================================================================================
 
 ----
 
-the code in ``telephone/src/telephone.py`` from :ref:`telephone with separation`
+the code in ``telephone/src/telephone.py`` from :ref:`separate and equal telephone`
 
 .. literalinclude:: telephone/solutions/telephone_w_separation.py
   :language: python

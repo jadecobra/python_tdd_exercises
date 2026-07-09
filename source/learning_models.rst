@@ -55,7 +55,7 @@ An Infinite Learning Model
 
 * I change the text in ``test_learning.py`` with
 
-  .. literalinclude:: /code/tests/test_learning_models.py
+  .. literalinclude:: code/tests/test_learning_models.py
 
 * the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 

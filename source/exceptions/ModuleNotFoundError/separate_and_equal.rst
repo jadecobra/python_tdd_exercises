@@ -44,7 +44,7 @@ Would you like to test separating tests from solutions in the other projects?
   ../../how_to/telephone/telephone_w_separation
   ../../exceptions/TypeError/TypeError_w_separation
 
-:ref:`would you like to separate the tests from the solutions in the functions project?<separate and equal functions>`
+:ref:`click here to see me separate the tests from the solutions in the functions project<separate and equal functions>`
 
 ----
 

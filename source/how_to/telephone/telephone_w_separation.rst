@@ -1,11 +1,11 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): telephone with separation — keep tests and solution separate and equal. Move the module-level text function from test_telephone.py into src/telephone.py. RED: call src.telephone.text(None) before import → NameError: name 'src' is not defined. GREEN: import src → ModuleNotFoundError: No module named 'src'; mkdir src → AttributeError: module 'src' has no attribute 'telephone'; import src.telephone → ModuleNotFoundError: No module named 'src.telephone'; touch src/telephone.py → AttributeError: module 'src.telephone' has no attribute 'text'; copy def text(the_input) into src/telephone.py until green. REFACTOR: reroute every test (None, booleans, int 1234, float 5.678, string 'hello', tuple/list/set/dict, classes object/bool/int/…) to src.telephone.text with reality == my_expectation, remove the commented lines, delete local text from the test file. Then close tests and rebuild telephone.py from failures only: text = None → TypeError NoneType not callable; def text() → takes 0 positional arguments but 1 was given; return f'I got: {value}'. uv run pytest-watcher . --now; git commits. Review: I can write solutions in a different module from the tests. Ends with 10 tests + Exceptions seen AssertionError NameError TypeError ModuleNotFoundError AttributeError.
+  :keywords: Jacob Itegboje, Pumping Python, telephone with separation, separate and equal telephone, separate tests from solutions, src/telephone.py, import src.telephone, src.telephone.text, NameError name 'src' is not defined, ModuleNotFoundError No module named 'src', ModuleNotFoundError No module named 'src.telephone', AttributeError module 'src' has no attribute 'telephone', AttributeError module 'src.telephone' has no attribute 'text', TypeError NoneType object is not callable, takes 0 positional arguments but 1 was given, return f'I got: {value}', I got: None, I got: hello, I got: <class 'object'>, reality == my_expectation, remove the commented lines, uv run pytest-watcher . --now, red green refactor, git commit -am separate solution from tests, test_telephone_w_separation, telephone TDD src package layout, I can write solutions in a different module from the tests
 
 .. include:: ../../links.rst
 
 #################################################################################
-telephone with separation
+separate and equal telephone
 #################################################################################
 
 The ``text`` :ref:`function<what is a function?>` in :ref:`the telephone project<telephone>` was written in ``test_telephone.py``. I want to move it to ``telephone.py`` in the ``src`` folder_ so that I can keep the tests and solution separate.
@@ -18,7 +18,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../../code/tests/test_telephone.py
+.. literalinclude:: ../../code/telephone/tests/test_telephone_w_separation.py
   :language: python
   :linenos:
 
@@ -221,6 +221,14 @@ because there is nothing with that name in ``test_telephone.py``.
 
   the terminal_ goes back to the command line.
 
+* I add the new file_ to git_ for tracking
+
+  .. code-block:: python
+
+    git add src/telephone.py
+
+  the terminal_ goes back to the command line.
+
 * I go back to the terminal_ where the tests are running and it shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
@@ -252,7 +260,7 @@ because there is nothing with that name in ``test_telephone.py``.
     src
     └── telephone.py
         └── def text(the_input):
-            └── return f'I got: {the input}'
+            └── return f'I got: {the_input}'
 
   - ``text`` is something in ``telephone``, in this case it is a :ref:`function<what is a function?>` in ``telephone``
   - ``telephone`` is something in ``src``, in this case it is ``telephone.py`` (a :ref:`module<what is a module?>`) in the ``src`` folder_
@@ -311,7 +319,7 @@ because there is nothing with that name in ``test_telephone.py``.
     src
     └── telephone.py
         └── def text(the_input):
-            └── return f'I got: {the input}'
+            └── return f'I got: {the_input}'
 
   using the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
 
@@ -421,7 +429,7 @@ because there is nothing with that name in ``test_telephone.py``.
     src
     └── telephone.py
         └── def text(the_input):
-            └── return f'I got: {the input}'
+            └── return f'I got: {the_input}'
 
   using the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
 
@@ -459,7 +467,7 @@ because there is nothing with that name in ``test_telephone.py``.
     :emphasize-lines: 4-7
 
     def test_passing_a_string():
-        a_string = 'hi'
+        a_string = 'hello'
 
         reality = src.telephone.text(a_string)
         my_expectation = f'I got: {a_string}'
@@ -477,7 +485,7 @@ because there is nothing with that name in ``test_telephone.py``.
     :lineno-start: 40
 
     def test_passing_a_string():
-        a_string = 'hi'
+        a_string = 'hello'
 
         reality = src.telephone.text(a_string)
         my_expectation = f'I got: {a_string}'
@@ -558,7 +566,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
   .. code-block:: python
     :lineno-start: 64
-    :emphasize-lines: 3-6
+    :emphasize-lines: 4-7
 
     def test_passing_a_set():
         a_set = {0, 1, 2, 'n'}
@@ -588,7 +596,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
     def test_passing_a_dictionary():
 
-* I change the value the ``reality`` :ref:`variable<what is a variable>` of :ref:`test_passing_a_dictionary` points to from the result of a :ref:`call<how to call a function with input>` to the ``text`` :ref:`function<what is a function?>` of the ``test_telephone`` :ref:`module<what is a module?>`, to the result of a :ref:`call<how to call a function with input>` to the ``text`` :ref:`function<what is a function?>` of the ``telephone`` :ref:`module<what is a module>` in the ``src`` folder_
+* I change the value the ``reality`` :ref:`variable<what is a variable?>` of :ref:`test_passing_a_dictionary` points to from the result of a :ref:`call<how to call a function with input>` to the ``text`` :ref:`function<what is a function?>` of the ``test_telephone`` :ref:`module<what is a module?>`, to the result of a :ref:`call<how to call a function with input>` to the ``text`` :ref:`function<what is a function?>` of the ``telephone`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 72
@@ -615,7 +623,7 @@ because there is nothing with that name in ``test_telephone.py``.
     src
     └── telephone.py
         └── def text(the_input):
-            └── return f'I got: {the input}'
+            └── return f'I got: {the_input}'
 
   using the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
 
@@ -777,7 +785,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
     def test_passing_booleans():
 
-  all the tests are still green because all the calls to the ``text`` :ref:`function<what is a function?>` that of ``test_telephone.py`` now go to the ``text`` :ref:`function<what is a function?>` in ``telephone.py`` in the ``src`` folder_. When ``src.telephone.text`` is called Python_ follows this path
+  all the tests are still green because all the :ref:`calls<how to call a function with input>` that were to the ``text`` :ref:`function<what is a function?>` of ``test_telephone.py`` in the ``tests`` folder_, now go to the ``text`` :ref:`function<what is a function?>` of ``telephone.py`` in the ``src`` folder_. When ``src.telephone.text`` is called Python_ follows this path
 
   .. code-block:: shell
 
@@ -785,7 +793,7 @@ because there is nothing with that name in ``test_telephone.py``.
     src
     └── telephone.py
         └── def text(the_input):
-            └── return f'I got: {the input}'
+            └── return f'I got: {the_input}'
 
 * I add a git_ commit message in the other terminal_
 
@@ -979,7 +987,7 @@ Since the solution is separate from the tests, I can write the program_ that mak
     FAILED ...::test_passing_a_float -
         AssertionError: assert 5.678 == 'I got: 5.678'
     FAILED ...::test_passing_a_string -
-        AssertionError: assert 'hi' == 'I got: hi'
+        AssertionError: assert 'hello' == 'I got: hello'
     FAILED ...::test_passing_a_tuple -
         assert (0, 1, 2, 'n') == "I got: (0, 1, 2, 'n')"
     FAILED ...::test_passing_a_list -
@@ -1068,7 +1076,7 @@ review
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<telephone with separation: tests and solution>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<separate and equal telephone: tests and solution>`
 
 ----
 
@@ -1088,6 +1096,8 @@ You know
 * :ref:`what causes TypeError<what causes TypeError?>`
 * :ref:`how to place values in strings<telephone>`
 * :ref:`how to separate tests from solutions<separate and equal>`
+
+:ref:`would you like to separate the tests from the solution in the TypeError project?<separate and equal TypeError>`
 
 ----
 
