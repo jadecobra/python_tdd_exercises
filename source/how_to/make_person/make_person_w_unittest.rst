@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test person with unittest — move the person project's bare assert tests onto unittest.TestCase. Open person; uv run pytest-watcher . --now (6 passed). Add class TestPerson(object) with test_failure → AttributeError: 'TestPerson' object has no attribute 'assertEqual'. Parent unittest.TestCase → NameError name 'unittest' is not defined; import unittest → AssertionError: False != True then green with assertEqual(True, True). For each of test_joe, test_jane, test_john, test_mary, test_dir_person_class, test_dir_person_instance: move into TestPerson → TypeError takes 0 positional arguments but 1 was given (need self); add self.assertNotEqual → AssertionError e.g. 'joe, blow, M, 1996' == 'joe, blow, M, 1996' / 'Hello, my name is joe blow and I am 30.'; switch to self.assertEqual; keep bare assert + self.assertEqual; remove the commented lines; git commit. Ends with TestPerson + 6 methods + # Exceptions seen AssertionError NameError TypeError AttributeError SyntaxError. Review: unittest.TestCase methods or bare assert; tests still repeat the same three calls per person. What is next: test telephone with unittest.
+  :keywords: Jacob Itegboje, Pumping Python, test person with unittest, person unittest, TestPerson, unittest.TestCase, import unittest, AttributeError has no attribute assertEqual, NameError name 'unittest' is not defined, AssertionError False != True, TypeError takes 0 positional arguments but 1 was given, self first argument method, assertNotEqual, assertEqual, joe blow M 1996, Hello my name is joe blow and I am 30, jane doe, john smith, mary public, test_dir_person_class, test_dir_person_instance, dir(Person), reality == my_expectation, bare assert and assertEqual, uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, same three tests per person, another way to write tests, test_person_w_unittest
 
 .. include:: ../../links.rst
 
@@ -571,7 +571,7 @@ test_jane with unittest
     TypeError: TestPerson.test_jane() takes
                0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because ...
 
 ----
 
@@ -587,12 +587,12 @@ I add ``self`` to the parentheses of :ref:`test_jane`
   :lineno-start: 46
   :emphasize-lines: 5-6
 
-            reality = joe.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+          reality = joe.say_hello()
+          assert reality == my_expectation
+          self.assertEqual(reality, my_expectation)
 
-        # def test_jane():
-        def test_jane(self):
+      # def test_jane():
+      def test_jane(self):
 
 the test passes.
 
@@ -720,7 +720,7 @@ the test passes.
     AssertionError: 'Hello, my name is jane doe and I am 35.'
                  == 'Hello, my name is jane doe and I am 35.'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say hello method<test say_hello method>` of the :ref:`Person class<test Person class>`, in :ref:`test_jane`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say_hello method<test say_hello method>` of the :ref:`Person class<test Person class>`, in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 92
@@ -883,7 +883,7 @@ test_john with unittest
 I add ``self`` to the parentheses of :ref:`test_john`
 
 .. code-block:: python
-  :lineno-start: 46
+  :lineno-start: 89
   :emphasize-lines: 5-6
 
           reality = jane.say_hello()
@@ -1019,7 +1019,7 @@ the test passes.
     AssertionError: 'Hello, my name is john smith and I am 446.'
                  == 'Hello, my name is john smith and I am 446.'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say hello method<test say_hello method>` of the :ref:`Person class<test Person class>`, in :ref:`test_john`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say_hello method<test say_hello method>` of the :ref:`Person class<test Person class>`, in :ref:`test_john`
 
   .. code-block:: python
     :lineno-start: 135
@@ -1318,7 +1318,7 @@ the test passes.
     AssertionError: 'Hello, my name is mary public and I am 26.'
                  == 'Hello, my name is mary public and I am 26.'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say hello method<test say_hello method>` of the :ref:`Person class<test Person class>`, in :ref:`test_mary`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say_hello method<test say_hello method>` of the :ref:`Person class<test Person class>`, in :ref:`test_mary`
 
   .. code-block:: python
     :lineno-start: 178
@@ -1487,7 +1487,7 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`factory function<test person factory>`, in :ref:`test_dir_person_class`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` in :ref:`test_dir_person_class`
 
   .. code-block:: python
     :lineno-start: 214
@@ -1631,7 +1631,7 @@ the test passes.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`factory function<test person factory>`, in :ref:`test_dir_person_instance`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` in :ref:`test_dir_person_instance`
 
   .. code-block:: python
     :lineno-start: 262
@@ -1754,7 +1754,7 @@ You know
 * :ref:`that everything in Python is an object<everything is an object>`
 * :ref:`how to use the unittest library<another way to write tests>`
 
-:ref:`would you like to use the unittest library to test the telephone project?<test telephone with unittest>`
+:ref:`Would you like to test the telephone project with the unittest library?<test telephone with unittest>`
 
 ----
 
