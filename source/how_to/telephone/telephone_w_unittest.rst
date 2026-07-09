@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test telephone with unittest — move the telephone project's bare assert tests onto unittest.TestCase. Open telephone; uv run pytest-watcher . --now (10 passed). Add class Telephone then rename to TestTelephone → AttributeError: 'TestTelephone' object has no attribute 'assertEqual'. Parent unittest.TestCase → NameError name 'unittest' is not defined; import unittest → AssertionError: True != False then green with assertEqual(True, True). For each test (test_passing_none, booleans, int 1234, float 5.678, string 'hello', tuple/list/set/dict, classes object/bool/int/…): move into TestTelephone → TypeError takes 0 positional arguments but 1 was given (need self); add assertNotEqual → AssertionError e.g. 'I got: None' == 'I got: None' / "I got: [0, 1, 2, 'n']"; switch to assertEqual; keep bare assert + self.assertEqual; remove the commented lines; git commit. Ends with TestTelephone + 10 methods + # Exceptions seen AssertionError NameError TypeError ModuleNotFoundError AttributeError. Review: unittest.TestCase methods or bare assert statements.
+  :keywords: Jacob Itegboje, Pumping Python, test telephone with unittest, telephone unittest, TestTelephone, unittest.TestCase, import unittest, AttributeError has no attribute assertEqual, NameError name 'unittest' is not defined, AssertionError True != False, TypeError takes 0 positional arguments but 1 was given, self first argument method, assertNotEqual, assertEqual, 'I got: None' == 'I got: None', I got: False, I got: True, an_integer 1234, a_float 5.678, hello, I got: [0, 1, 2, 'n'], I got: <class 'object'>, reality == my_expectation, bare assert and assertEqual, uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, another way to write tests, test_telephone_w_unittest
 
 .. include:: ../../links.rst
 
@@ -205,7 +205,7 @@ add TestTelephone class
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move TestTelephone class to TestTelephone'
+    'add TestTelephone class'
 
 ----
 
@@ -387,7 +387,7 @@ test_passing_booleans with unittest
         TestTelephone.test_passing_booleans()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` ...
 
 ----
 
@@ -400,7 +400,7 @@ test_passing_booleans with unittest
 I add ``self`` to the parentheses of :ref:`test_passing_booleans`
 
 .. code-block:: python
-  :lineno-start: 5
+  :lineno-start: 11
   :emphasize-lines: 3-4
 
           self.assertEqual(reality, my_expectation)
@@ -1046,8 +1046,8 @@ green again.
 
   .. code-block:: python
 
-    AssertionError: "I got: (0, 1, 2, 'n')"
-                 == "I got: (0, 1, 2, 'n')"
+    AssertionError: "I got: [0, 1, 2, 'n']"
+                 == "I got: [0, 1, 2, 'n']"
 
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_tuple`
 
@@ -1629,7 +1629,7 @@ test_passing_a_class with unittest
 I add ``self`` to the parentheses of :ref:`test_passing_a_class`
 
 .. code-block:: python
-  :lineno-start: 5
+  :lineno-start: 81
   :emphasize-lines: 3-4
 
           self.assertEqual(reality, my_expectation)

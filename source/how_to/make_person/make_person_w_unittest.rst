@@ -1754,6 +1754,8 @@ You know
 * :ref:`that everything in Python is an object<everything is an object>`
 * :ref:`how to use the unittest library<another way to write tests>`
 
+:ref:`would you like to use the unittest library to test the telephone project?<test telephone with unittest>`
+
 ----
 
 *********************************************************************************
