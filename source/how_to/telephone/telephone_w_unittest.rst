@@ -1177,7 +1177,7 @@ green.
 
         # def test_passing_a_list():
         def test_passing_a_list(self):
-            a_list = (0, 1, 2, 'n')
+            a_list = [0, 1, 2, 'n']
 
             reality = src.telephone.text(a_list)
             my_expectation = f'I got: {a_list}'
@@ -1185,7 +1185,7 @@ green.
             self.assertNotEqual(reality, my_expectation)
 
 
-    def test_passing_a_list():
+    def test_passing_a_set():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1209,7 +1209,8 @@ green.
             reality = src.telephone.text(a_list)
             my_expectation = f'I got: {a_list}'
             assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
+            # self.assertNotEqual(reality, my_expectation)
+            self.assertEqual(reality, my_expectation)
 
 
     def test_passing_a_set():
@@ -1224,7 +1225,7 @@ green.
             self.assertEqual(reality, my_expectation)
 
         def test_passing_a_list(self):
-            a_list = (0, 1, 2, 'n')
+            a_list = [0, 1, 2, 'n']
 
             reality = src.telephone.text(a_list)
             my_expectation = f'I got: {a_list}'
@@ -1232,7 +1233,7 @@ green.
             self.assertEqual(reality, my_expectation)
 
 
-    def test_passing_a_list():
+    def test_passing_a_set():
 
 * I add a git_ commit message in the other terminal_
 
