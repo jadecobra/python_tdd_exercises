@@ -926,6 +926,176 @@ green again.
 ----
 
 *********************************************************************************
+test_constant_function with unittest
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+
+* I move :ref:`test_constant_function` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 3-4
+
+            self.assertIs(result, None)
+
+        def test_constant_function():
+            assert src.functions.constant() == 'the same thing'
+
+
+    def test_identity_function():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestFunctions.test_constant_function()
+        takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``self`` to the parentheses of :ref:`test_constant_function`
+
+.. code-block:: python
+  :lineno-start: 31
+  :emphasize-lines: 1-2
+
+      # def test_constant_function():
+      def test_constant_function(self):
+          assert src.functions.constant() is None
+
+green.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 4-6
+
+        # def test_constant_function():
+        def test_constant_function(self):
+            assert src.functions.constant() is None
+            self.assertIsNot(
+                src.functions.constant(), None
+            )
+
+
+    def test_identity_function():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: unexpectedly identical: None
+
+* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 4-5
+
+        # def test_constant_function():
+        def test_constant_function(self):
+            assert src.functions.constant() is None
+            # self.assertIsNot(
+            self.assertIs(
+                src.functions.constant(), None
+            )
+
+
+    def test_identity_function():
+
+  the test passes.
+
+* I add a :ref:`variable<what is a variable?>` for ``src.functions.constant()``
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 3
+
+        # def test_constant_function():
+        def test_constant_function(self):
+            result = src.functions.constant()
+            assert src.functions.constant() is None
+            # self.assertIsNot(
+            self.assertIs(
+                src.functions.constant(), None
+            )
+
+
+    def test_identity_function():
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.constant()``
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 4-5, 8-9
+
+        # def test_constant_function():
+        def test_constant_function(self):
+            result = src.functions.constant()
+            # assert src.functions.constant() is None
+            assert result is None
+            # self.assertIsNot(
+            self.assertIs(
+                # src.functions.constant(), None
+                result, None
+            )
+
+
+    def test_identity_function():
+
+* I remove the commented lines from :ref:`test_constant_function`
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 7
+
+            self.assertIs(result, None)
+
+        def test_constant_function(self):
+            result = src.functions.constant()
+
+            assert result is None
+            self.assertIs(result, None)
+
+
+    def test_identity_function():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move test_constant_function to TestFunctions'
+
+----
+
+*********************************************************************************
 close the project
 *********************************************************************************
 
