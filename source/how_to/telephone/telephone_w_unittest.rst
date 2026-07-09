@@ -146,7 +146,7 @@ add TestTelephone class
     # class TestTelephone(object):
     class TestTelephone(unittest.TestCase):
 
-  the terminal_ is my friend, and shows :ref:`Telephone<what causes Telephone?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1302,7 +1302,7 @@ I add ``self`` to the parentheses of :ref:`test_passing_a_set`
       # def test_passing_a_set():
       def test_passing_a_set(self):
 
-green.
+green again.
 
 ----
 
@@ -1336,8 +1336,8 @@ green.
 
   .. code-block:: python
 
-    AssertionError: "I got: (0, 1, 2, 'n')"
-                 == "I got: (0, 1, 2, 'n')"
+    AssertionError: "I got: {0, 1, 2, 'n'}"
+                 == "I got: {0, 1, 2, 'n'}"
 
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_set`
 
@@ -1387,6 +1387,154 @@ green.
 
     git commit -am \
     'move test_passing_a_set to TestTelephone'
+
+----
+
+*********************************************************************************
+test_passing_a_dictionary with unittest
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+
+* I move :ref:`test_passing_a_dictionary` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 3-7, 9-11
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_passing_a_dictionary():
+            a_dictionary = {
+                'key0': 'value0',
+                'keyN': [0, 1, 2, 'n'],
+            }
+
+            reality = src.telephone.text(a_dictionary)
+            my_expectation = f'I got: {a_dictionary}'
+            assert reality == my_expectation
+
+
+    def test_passing_a_class():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestTelephone.test_passing_a_dictionary()
+        takes 0 positional arguments but 1 was given
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``self`` to the parentheses of :ref:`test_passing_a_dictionary`
+
+.. code-block:: python
+  :lineno-start: 70
+  :emphasize-lines: 3-4
+
+          self.assertEqual(reality, my_expectation)
+
+      # def test_passing_a_dictionary():
+      def test_passing_a_dictionary(self):
+
+green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_dictionary`
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 10
+
+            self.assertEqual(reality, my_expectation)
+
+        # def test_passing_a_dictionary():
+        def test_passing_a_dictionary(self):
+            a_set = {0, 1, 2, 'n'}
+
+            reality = src.telephone.text(a_set)
+            my_expectation = f'I got: {a_set}'
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
+
+
+    def test_passing_a_class():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: "I got: {0, 1, 2, 'n'}"
+                 == "I got: {0, 1, 2, 'n'}"
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_dictionary`
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 10-11
+
+            self.assertEqual(reality, my_expectation)
+
+        # def test_passing_a_dictionary():
+        def test_passing_a_dictionary(self):
+            a_set = {0, 1, 2, 'n'}
+
+            reality = src.telephone.text(a_set)
+            my_expectation = f'I got: {a_set}'
+            assert reality == my_expectation
+            # self.assertNotEqual(reality, my_expectation)
+            self.assertEqual(reality, my_expectation)
+
+
+    def test_passing_a_class():
+
+  the test passes.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 70
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_passing_a_dictionary(self):
+            a_set = {0, 1, 2, 'n'}
+
+            reality = src.telephone.text(a_set)
+            my_expectation = f'I got: {a_set}'
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+
+    def test_passing_a_class():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move test_passing_a_dictionary to TestTelephone'
 
 ----
 
