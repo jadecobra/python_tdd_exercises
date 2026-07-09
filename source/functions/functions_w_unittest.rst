@@ -728,6 +728,204 @@ green.
 ----
 
 *********************************************************************************
+test_what_happens_after_functions_return with unittest
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+
+* I move :ref:`test_what_happens_after_functions_return` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 3-7
+
+            self.assertIs(result, None)
+
+        def test_what_happens_after_functions_return():
+            assert (
+                src.functions
+                   .return_leaves_the_function()
+            ) is None
+
+
+    def test_constant_function():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestFunctions.test_what_happens_after_functions_return()
+        takes 0 positional arguments but 1 was given
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``self`` to the parentheses of :ref:`test_what_happens_after_functions_return`
+
+.. code-block:: python
+  :lineno-start: 25
+  :emphasize-lines: 1-2
+
+      # def test_what_happens_after_functions_return():
+      def test_what_happens_after_functions_return(self):
+
+green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 7-13
+
+        # def test_what_happens_after_functions_return():
+        def test_what_happens_after_functions_return(self):
+            assert (
+                src.functions
+                   .return_leaves_the_function()
+            ) is None
+            self.assertIsNot(
+                (
+                    src.functions
+                       .return_leaves_the_function()
+                ),
+                None
+            )
+
+
+    def test_constant_function():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: unexpectedly identical: None
+
+* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 7-8
+
+        # def test_what_happens_after_functions_return():
+        def test_what_happens_after_functions_return(self):
+            assert (
+                src.functions
+                   .return_leaves_the_function()
+            ) is None
+            # self.assertIsNot(
+            self.assertIs(
+                (
+                    src.functions
+                       .return_leaves_the_function()
+                ),
+                None
+            )
+
+
+    def test_constant_function():
+
+  the test passes.
+
+* I add a :ref:`variable<what is a variable?>` for ``src.functions.return_leaves_the_function()``
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 3
+
+        # def test_what_happens_after_functions_return():
+        def test_what_happens_after_functions_return(self):
+            result = src.functions.return_leaves_the_function()
+            assert (
+                src.functions
+                   .return_leaves_the_function()
+            ) is None
+            # self.assertIsNot(
+            self.assertIs(
+                (
+                    src.functions
+                       .return_leaves_the_function()
+                ),
+                None
+            )
+
+
+    def test_constant_function():
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.return_leaves_the_function()``
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 4-7, 9-17
+
+        # def test_what_happens_after_functions_return():
+        def test_what_happens_after_functions_return(self):
+            result = src.functions.return_leaves_the_function()
+            # assert (
+            #     src.functions
+            #        .return_leaves_the_function()
+            # ) is None
+            # self.assertIsNot(
+            # self.assertIs(
+            #     (
+            #         src.functions
+            #            .return_leaves_the_function()
+            #     ),
+            #     None
+            # )
+            assert result is None
+            self.assertIs(result, None)
+
+
+    def test_constant_function():
+
+* I remove the commented lines from :ref:`test_what_happens_after_functions_return`
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 7
+
+            self.assertIs(result, None)
+
+        def test_what_happens_after_functions_return(self):
+            result = src.functions.return_leaves_the_function()
+
+            assert result is None
+            self.assertIs(result, None)
+
+
+    def test_constant_function():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move test_what_happens_after_functions_return to TestFunctions'
+
+----
+
+*********************************************************************************
 close the project
 *********************************************************************************
 
