@@ -558,6 +558,176 @@ green again.
 ----
 
 *********************************************************************************
+test_making_a_function_w_return_none with unittest
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+
+* I move :ref:`test_making_a_function_w_return_none` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 3-4
+
+            self.assertIs(result, None)
+
+        def test_making_a_function_w_return_none():
+            assert src.functions.w_return_none() is None
+
+
+    def test_what_happens_after_functions_return():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestFunctions.test_making_a_function_w_return_none()
+        takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``self`` to the parentheses of :ref:`test_making_a_function_w_return_none`
+
+.. code-block:: python
+  :lineno-start: 19
+  :emphasize-lines: 1-2
+
+      # def test_making_a_function_w_return_none():
+      def test_making_a_function_w_return_none(self):
+          assert src.functions.w_return_none() is None
+
+green.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 4-6
+
+        # def test_making_a_function_w_return_none():
+        def test_making_a_function_w_return_none(self):
+            assert src.functions.w_return_none() is None
+            self.assertIsNot(
+                src.functions.w_return_none(), None
+            )
+
+
+    def test_what_happens_after_functions_return():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: unexpectedly identical: None
+
+* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 4-5
+
+        # def test_making_a_function_w_return_none():
+        def test_making_a_function_w_return_none(self):
+            assert src.functions.w_return_none() is None
+            # self.assertIsNot(
+            self.assertIs(
+                src.functions.w_return_none(), None
+            )
+
+
+    def test_what_happens_after_functions_return():
+
+  the test passes.
+
+* I add a :ref:`variable<what is a variable?>` for ``src.functions.w_return_none()``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 3
+
+        # def test_making_a_function_w_return_none():
+        def test_making_a_function_w_return_none(self):
+            result = src.functions.w_return_none()
+            assert src.functions.w_return_none() is None
+            # self.assertIsNot(
+            self.assertIs(
+                src.functions.w_return_none(), None
+            )
+
+
+    def test_what_happens_after_functions_return():
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.w_return_none()``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 4-5, 8-9
+
+        # def test_making_a_function_w_return_none():
+        def test_making_a_function_w_return_none(self):
+            result = src.functions.w_return_none()
+            # assert src.functions.w_return_none() is None
+            assert result is None
+            # self.assertIsNot(
+            self.assertIs(
+                # src.functions.w_return_none(), None
+                result, None
+            )
+
+
+    def test_what_happens_after_functions_return():
+
+* I remove the commented lines from :ref:`test_making_a_function_w_return_none`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 7
+
+            self.assertIs(result, None)
+
+        def test_making_a_function_w_return_none(self):
+            result = src.functions.w_return_none()
+
+            assert result is None
+            self.assertIs(result, None)
+
+
+    def test_what_happens_after_functions_return():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move test_making_a_function_w_return_none to TestFunctions'
+
+----
+
+*********************************************************************************
 close the project
 *********************************************************************************
 
