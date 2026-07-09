@@ -970,7 +970,7 @@ test_passing_a_tuple with unittest
 * I move :ref:`test_passing_a_tuple` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 46
     :emphasize-lines: 3-4, 6-8
 
             self.assertEqual(reality, my_expectation)
@@ -983,7 +983,7 @@ test_passing_a_tuple with unittest
             assert reality == my_expectation
 
 
-    def test_passing_a_tuple():
+    def test_passing_a_list():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -992,8 +992,6 @@ test_passing_a_tuple with unittest
     TypeError:
         TestTelephone.test_passing_a_tuple()
         takes 0 positional arguments but 1 was given
-
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 ----
 
@@ -1006,7 +1004,7 @@ test_passing_a_tuple with unittest
 I add ``self`` to the parentheses of :ref:`test_passing_a_tuple`
 
 .. code-block:: python
-  :lineno-start: 38
+  :lineno-start: 46
   :emphasize-lines: 3-4
 
           self.assertEqual(reality, my_expectation)
@@ -1014,7 +1012,7 @@ I add ``self`` to the parentheses of :ref:`test_passing_a_tuple`
       # def test_passing_a_tuple():
       def test_passing_a_tuple(self):
 
-the test is green again.
+green again.
 
 ----
 
@@ -1027,7 +1025,7 @@ the test is green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_tuple`
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 46
     :emphasize-lines: 10
 
             self.assertEqual(reality, my_expectation)
@@ -1042,18 +1040,19 @@ the test is green again.
             self.assertNotEqual(reality, my_expectation)
 
 
-    def test_passing_a_tuple():
+    def test_passing_a_list():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'I got: hello' == 'I got: hello'
+    AssertionError: "I got: (0, 1, 2, 'n')"
+                 == "I got: (0, 1, 2, 'n')"
 
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_tuple`
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 46
     :emphasize-lines: 10-11
 
             self.assertEqual(reality, my_expectation)
@@ -1069,14 +1068,14 @@ the test is green again.
             self.assertEqual(reality, my_expectation)
 
 
-    def test_passing_a_tuple():
+    def test_passing_a_list():
 
   the test passes.
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 46
 
             self.assertEqual(reality, my_expectation)
 
@@ -1089,7 +1088,7 @@ the test is green again.
             self.assertEqual(reality, my_expectation)
 
 
-    def test_passing_a_tuple():
+    def test_passing_a_list():
 
 * I add a git_ commit message in the other terminal_
 
