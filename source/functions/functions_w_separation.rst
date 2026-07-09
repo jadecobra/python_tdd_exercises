@@ -3044,10 +3044,7 @@ So far, you know
 * :ref:`how to make functions that take input<functions that take input>`
 * :ref:`what causes TypeError<what causes TypeError?>`
 * :ref:`how to place values in strings<telephone>`
-* :ref:`how to make a person say hello with f-strings<how to make a person with f-strings>`
-* :ref:`how to separate tests from solutions<separate and equal functions>`
-
-:ref:`Would you like to test AttributeError?<what causes AttributeError?>`
+* :ref:`how to separate tests from solutions<separate and equal>`
 
 ----
 

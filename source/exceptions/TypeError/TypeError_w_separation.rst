@@ -2056,11 +2056,9 @@ so far you know
 * :ref:`how to make functions that take input<functions that take input>`
 * :ref:`what causes TypeError<what causes TypeError?>`
 * :ref:`how to place values in strings<telephone>`
-* :ref:`how to make a person say hello with f-strings<how to make a person with f-strings>`
-* :ref:`how to separate tests from solutions<separate and equal functions>`
-* :ref:`what causes AttributeError<what causes AttributeError?>`
+* :ref:`how to separate tests from solutions<separate and equal>`
 
-:ref:`Would you like to test using a class to remove repetition of inputs from functions?<how to make a person with a class>`
+:ref:`Would you like to test making a person with f-strings?<how to make a person with f-strings>`
 
 -----
 

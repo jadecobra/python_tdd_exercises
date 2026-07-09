@@ -711,10 +711,10 @@ because there is nothing with that name in ``test_telephone.py``.
 
   the test is still green.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_passing_a_class`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 83
 
     def test_passing_a_class():
         reality = src.telephone.text(object)
@@ -741,17 +741,14 @@ because there is nothing with that name in ``test_telephone.py``.
         my_expectation = "I got: <class 'tuple'>"
         assert reality == my_expectation
 
-        # assert text(list) == "I got: <class 'list'>"
         reality = src.telephone.text(list)
         my_expectation = "I got: <class 'list'>"
         assert reality == my_expectation
 
-        # assert text(set) == "I got: <class 'set'>"
         reality = src.telephone.text(set)
         my_expectation = "I got: <class 'set'>"
         assert reality == my_expectation
 
-        # assert text(dict) == "I got: <class 'dict'>"
         reality = src.telephone.text(dict)
         my_expectation = "I got: <class 'dict'>"
         assert reality == my_expectation
@@ -760,6 +757,7 @@ because there is nothing with that name in ``test_telephone.py``.
     # Exceptions seen
     # AssertionError
     # NameError
+    # TypeError
     # ModuleNotFoundError
     # AttributeError
 
@@ -779,7 +777,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
     def test_passing_booleans():
 
-  all the tests are still green because all the calls to the ``text`` :ref:`function<what is a function?>` that was in ``test_telephone.py`` are now to the ``text`` :ref:`function<what is a function?>` in ``telephone.py`` in the ``src`` folder_. When ``src.telephone.text`` is called Python_ follows this path
+  all the tests are still green because all the calls to the ``text`` :ref:`function<what is a function?>` that of ``test_telephone.py`` now go to the ``text`` :ref:`function<what is a function?>` in ``telephone.py`` in the ``src`` folder_. When ``src.telephone.text`` is called Python_ follows this path
 
   .. code-block:: shell
 
@@ -799,15 +797,13 @@ because there is nothing with that name in ``test_telephone.py``.
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can write solutions in a different module from the tests<separate and equal>`.
-
 ----
 
 *********************************************************************************
 test_telephone
 *********************************************************************************
 
-Now that the solution is separate from the tests, I can write the program_ that makes the tests pass without looking at ``test_telephone.py``.
+Since the solution is separate from the tests, I can write the program_ that makes the tests pass without looking at ``test_telephone.py``.
 
 ----
 
@@ -819,7 +815,7 @@ Now that the solution is separate from the tests, I can write the program_ that 
 
 * I close ``test_telephone.py``
 
-* I delete the text in ``telephone.py`` and the terminal_ shows 9 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
+* I delete the text in ``telephone.py`` and the terminal_ shows 10 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -1026,9 +1022,10 @@ Now that the solution is separate from the tests, I can write the program_ that 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit --all --message 'test telephone'
+    git commit --all --message \
+    'test telephone'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -1079,7 +1076,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-You now know:
+You know
 
 * :ref:`how to make a Python test driven development environment manually`
 * :ref:`what a Python module is<what is a module?>`
@@ -1090,8 +1087,7 @@ You now know:
 * :ref:`how to make functions that take input<functions that take input>`
 * :ref:`what causes TypeError<what causes TypeError?>`
 * :ref:`how to place values in strings<telephone>`
-
-:ref:`would you like to test making a person with f-strings?<how to make a person with f-strings>`
+* :ref:`how to separate tests from solutions<separate and equal>`
 
 ----
 

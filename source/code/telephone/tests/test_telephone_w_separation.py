@@ -34,7 +34,7 @@ def test_passing_a_float():
 
 
 def test_passing_a_string():
-    a_string = 'hi'
+    a_string = 'hello'
 
     reality = src.telephone.text(a_string)
     my_expectation = f'I got: {a_string}'
@@ -101,17 +101,14 @@ def test_passing_a_class():
     my_expectation = "I got: <class 'tuple'>"
     assert reality == my_expectation
 
-    # assert text(list) == "I got: <class 'list'>"
     reality = src.telephone.text(list)
     my_expectation = "I got: <class 'list'>"
     assert reality == my_expectation
 
-    # assert text(set) == "I got: <class 'set'>"
     reality = src.telephone.text(set)
     my_expectation = "I got: <class 'set'>"
     assert reality == my_expectation
 
-    # assert text(dict) == "I got: <class 'dict'>"
     reality = src.telephone.text(dict)
     my_expectation = "I got: <class 'dict'>"
     assert reality == my_expectation
@@ -120,5 +117,6 @@ def test_passing_a_class():
 # Exceptions seen
 # AssertionError
 # NameError
+# TypeError
 # ModuleNotFoundError
 # AttributeError
