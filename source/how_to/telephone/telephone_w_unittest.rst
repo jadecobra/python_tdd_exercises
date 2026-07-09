@@ -1450,7 +1450,7 @@ I add ``self`` to the parentheses of :ref:`test_passing_a_dictionary`
       # def test_passing_a_dictionary():
       def test_passing_a_dictionary(self):
 
-green again.
+the test is green again.
 
 ----
 
@@ -1464,16 +1464,19 @@ green again.
 
   .. code-block:: python
     :lineno-start: 70
-    :emphasize-lines: 10
+    :emphasize-lines: 13
 
             self.assertEqual(reality, my_expectation)
 
         # def test_passing_a_dictionary():
         def test_passing_a_dictionary(self):
-            a_set = {0, 1, 2, 'n'}
+            a_dictionary = {
+                'key0': 'value0',
+                'keyN': [0, 1, 2, 'n'],
+            }
 
-            reality = src.telephone.text(a_set)
-            my_expectation = f'I got: {a_set}'
+            reality = src.telephone.text(a_dictionary)
+            my_expectation = f'I got: {a_dictionary}'
             assert reality == my_expectation
             self.assertNotEqual(reality, my_expectation)
 
@@ -1484,23 +1487,27 @@ green again.
 
   .. code-block:: python
 
-    AssertionError: "I got: {0, 1, 2, 'n'}"
-                 == "I got: {0, 1, 2, 'n'}"
+    AssertionError:
+        "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
+     == "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
 
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_dictionary`
 
   .. code-block:: python
     :lineno-start: 70
-    :emphasize-lines: 10-11
+    :emphasize-lines: 13-14
 
             self.assertEqual(reality, my_expectation)
 
         # def test_passing_a_dictionary():
         def test_passing_a_dictionary(self):
-            a_set = {0, 1, 2, 'n'}
+            a_dictionary = {
+                'key0': 'value0',
+                'keyN': [0, 1, 2, 'n'],
+            }
 
-            reality = src.telephone.text(a_set)
-            my_expectation = f'I got: {a_set}'
+            reality = src.telephone.text(a_dictionary)
+            my_expectation = f'I got: {a_dictionary}'
             assert reality == my_expectation
             # self.assertNotEqual(reality, my_expectation)
             self.assertEqual(reality, my_expectation)
@@ -1518,10 +1525,13 @@ green again.
             self.assertEqual(reality, my_expectation)
 
         def test_passing_a_dictionary(self):
-            a_set = {0, 1, 2, 'n'}
+            a_dictionary = {
+                'key0': 'value0',
+                'keyN': [0, 1, 2, 'n'],
+            }
 
-            reality = src.telephone.text(a_set)
-            my_expectation = f'I got: {a_set}'
+            reality = src.telephone.text(a_dictionary)
+            my_expectation = f'I got: {a_dictionary}'
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
