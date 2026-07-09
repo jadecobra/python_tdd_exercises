@@ -205,15 +205,13 @@ add TestTelephone class
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add TestTelephone class'
+    'move TestTelephone class to TestTelephone'
 
 ----
 
 *********************************************************************************
 test_passing_none with unittest
 *********************************************************************************
-
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -222,39 +220,32 @@ test_passing_none with unittest
 ----
 
 * I go back to the terminal_ where the tests are running.
-* 
 
-* I change ``test_failure`` to :ref:`test_passing_none` with an :ref:`assertion<what is an assertion?>` for a :ref:`function call<how to call a function>` with :ref:`None<what is None?>` (the simplest :ref:`Python data structure<data structures>`) as input, in ``test_telephone.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-2
-
-    def test_passing_none():
-        assert text(None) == 'I got: None'
-
-
-    # Exceptions seen
-    # AssertionError
-
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+* I move :ref:`test_passing_none` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>` and replace ``test_failure``
 
   .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 3-6
 
-    NameError: name 'text' is not defined
+    class TestTelephone(unittest.TestCase):
 
-  because I have not :ref:`defined the function<how to make a function that takes input>` yet.
+        def test_passing_none():
+            reality = src.telephone.text(None)
+            my_expectation = 'I got: None'
+            assert reality == my_expectation
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
+
+    def test_passing_booleans():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 3
-    :emphasize-text: NameError
 
-    # Exceptions seen
-    # AssertionError
-    # NameError
+    TypeError:
+        TestTelephone.test_passing_none()
+        takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 ----
 
@@ -264,85 +255,24 @@ test_passing_none with unittest
 
 ----
 
-* I add the :ref:`function<what is a function?>`
+I add ``self`` to the parentheses of :ref:`test_passing_none`
 
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2-3
+.. code-block:: python
+  :lineno-start: 5
+  :emphasize-lines: 3-4
 
-    def test_passing_none():
-        def text():
-            return None
+    class TestTelephone(unittest.TestCase):
 
-        assert text(None) == 'I got: None'
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: test_passing_none.<locals>.text()
-               takes 0 positional arguments but 1 was given
-
-  because the :ref:`assertion<what is an assertion?>` called the ``text`` :ref:`function<what is a function?>` which belongs to :ref:`test_passing_none` with input (:ref:`None<what is None?>`) and the :ref:`function definition<how to make a function that takes input>` does not allow any inputs, the parentheses are empty.
-
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
-
-  .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 4
-    :emphasize-text: TypeError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # TypeError
-
-* I add a name to the :ref:`function definition<how to make a function that takes input>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2-3
-
-    def test_passing_none():
-        # def text():
-        def text(the_input):
-            return None
-
-        assert text(None) == 'I got: None'
+        # def test_passing_none():
+        def test_passing_none(self):
+            reality = src.telephone.text(None)
+            my_expectation = 'I got: None'
+            assert reality == my_expectation
 
 
-    # Exceptions seen
+    def test_passing_booleans():
 
-  - ``the_input`` is the name I used for the input, I can use any name I want.
-  - the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-    .. code-block:: python
-
-      E       assert None == 'I got: None'
-
-  because the :ref:`assertion<what is an assertion?>` expects ``'I got: None'`` and the ``text`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`.
-
-* I copy the string_ from the terminal_ and paste it in the :ref:`return statement<the return statement>` to replace :ref:`None<what is None?>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4-5
-
-    def test_passing_none():
-        # def text():
-        def text(the_input):
-            # return None
-            return 'I got: None'
-
-        assert text(None) == 'I got: None'
-
-
-    # Exceptions seen
-
-  the test passes.
+the test is green again.
 
 ----
 
@@ -352,55 +282,81 @@ test_passing_none with unittest
 
 ----
 
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`assertion<what is an assertion>` in :ref:`test_passing_none`
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 8
+
+    class TestTelephone(unittest.TestCase):
+
+        # def test_passing_none():
+        def test_passing_none(self):
+            reality = src.telephone.text(None)
+            my_expectation = 'I got: None'
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
+
+
+    def test_passing_booleans():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'I got: None'
+                 == 'I got: None'
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_none`
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 8-9
+
+    class TestTelephone(unittest.TestCase):
+
+        # def test_passing_none():
+        def test_passing_none(self):
+            reality = src.telephone.text(None)
+            my_expectation = 'I got: None'
+            assert reality == my_expectation
+            # self.assertNotEqual(reality, my_expectation)
+            self.assertEqual(reality, my_expectation)
+
+
+    def test_passing_booleans():
+
+  the test passes
+
 * I remove the commented lines
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 5
 
-    def test_passing_none():
-        def text(the_input):
-            return 'I got: None'
+    class TestTelephone(unittest.TestCase):
 
-        assert text(None) == 'I got: None'
+        def test_passing_none(self):
+            reality = src.telephone.text(None)
+            my_expectation = 'I got: None'
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
 
-    # Exceptions seen
+    def test_passing_booleans():
 
-* I open a new terminal_ then change directories to ``telephone``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cd telephone
-
-  the terminal_ shows I am in the ``telephone`` folder_
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :emphasize-lines: 1-2
 
-    .../pumping_python/telephone
-
-* I add a git_ commit message in the new terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    git commit -am 'add test_passing_none'
-
-  the terminal_ shows a summary of the changes then goes back to the command line.
-
-:ref:`I can pass None as input to a function<test_passing_none>`.
-
-The problem with this solution is that the ``text`` :ref:`function<what is a function?>` does not care about what it gets, it always returns ``'I got: None'`` when it is called. I want it to return the :ref:`object<what is a class?>` it gets as part of the string_.
+    git commit -am \
+    'move test_passing_none to TestTelephone'
 
 ----
 
 *********************************************************************************
 test_passing_booleans with unittest
 *********************************************************************************
-
-I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<what is a function?>.
-
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -410,32 +366,7 @@ I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for :ref:`booleans (there are only two)<what are booleans?>`, first with an :ref:`assertion<what is an assertion?>` for :ref:`False<test_what_is_false>`
 
-  .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 8-9
-
-    def test_passing_none():
-        def text(the_input):
-            return 'I got: None'
-
-        assert text(None) == 'I got: None'
-
-
-    def test_passing_booleans():
-        assert text(False) == 'I got: False'
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'text' is not defined
-
-  because the ``text`` :ref:`function<what is a function?>`  belongs to the :ref:`test_passing_none function<test_passing_none>` and I cannot reach it from outside.
 
 ----
 
@@ -445,116 +376,6 @@ I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
 
 ----
 
-* I move the ``text`` :ref:`function<what is a function?>` out of :ref:`test_passing_none` so that it can be called from anywhere in the file_
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-2
-
-    def text(the_input):
-        return 'I got: None'
-
-
-    def test_passing_none():
-        assert text(None) == 'I got: None'
-
-
-    def test_passing_booleans():
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: assert 'I got: None' == 'I got: False'
-
-  because the ``text`` :ref:`function<what is a function?>` always returns ``'I got: None'`` and this :ref:`assertion<what is an assertion?>` expects ``'I got: False'``
-
-* I change :ref:`the return statement` to give the test what it wants
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2-3
-
-    def text(the_input):
-        # return 'I got: None'
-        return 'I got: False'
-
-
-    def test_passing_none():
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: assert 'I got: False' == 'I got: None'
-
-  - because the ``text`` :ref:`function<what is a function?>` now always returns ``'I got: False'`` and the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_none` expects ``'I got: None'``. My change broke the :ref:`assertion<what is an assertion?>` that was passing before.
-  - :ref:`The return statement<the return statement>` has to use the input it gets as part of the output.
-
-----
-
-*********************************************************************************
-what is string interpolation?
-*********************************************************************************
-
-`String Interpolation`_ is the placing of :ref:`objects<what is a class?>` in strings_. It allows me to make one string_ that can have changing values.
-
-I can use an `f-string`_ (short for formatted string literal) for `string interpolation`_.
-
-A string_ is anything inside :ref:`quotes`, for example
-
-* ``'single quotes'``
-* ``'''triple single quotes'''``
-* ``"double quotes"``
-* ``"""triple double quotes"""``
-
-----
-
-=================================================================================
-how to write an f-string
-=================================================================================
-
-----
-
-* ``f`` before the opening :ref:`quote<quotes>`
-* ``{ }`` around the :ref:`object<what is a class?>` being placed in the string_
-
-.. code-block:: python
-
-  f'characters {object}'
-
-
-* I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3-4
-
-    def text(the_input):
-        # return 'I got: None'
-        # return 'I got: False'
-        return f'I got: {the_input}'
-
-
-    def test_passing_none():
-
-  the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
-
-  .. code-block:: python
-
-    text(None)
-        text(the_input)
-            the_input = None
-            return f'I got: {the_input}'
-            return  'I got:  None      '
-
-  .. code-block:: python
-
-    text(False)
-        text(the_input)
-            the_input = False
-            return f'I got: {the_input}'
-            return  'I got:  False     '
 
 ----
 
@@ -575,61 +396,7 @@ how to write an f-string
 
     def test_passing_none():
 
-* I add an :ref:`assertion<what is an assertion?>` for :ref:`True (the other boolean)<test_what_is_true>` to :ref:`test_passing_booleans`
 
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 2
-    :emphasize-text: "
-
-    def test_passing_booleans():
-        assert text(False) == 'I got: False'
-        assert text(True) == 'I got: "True"'
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       assert 'I got: True' == 'I got: "True"
-
-* I remove the :ref:`quotes` around :ref:`True<test_what_is_true>` in my expectation
-
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 3-4
-
-    def test_passing_booleans():
-        assert text(False) == 'I got: False'
-        # assert text(True) == 'I got: "True"'
-        assert text(True) == 'I got: True'
-
-
-    # Exceptions seen
-
-  the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
-
-  .. code-block:: python
-
-    text(True)
-        text(the_input)
-            the_input = True
-            return f'I got: {the_input}'
-            return  'I got:  True      '
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 9
-
-    def test_passing_booleans():
-        assert text(False) == 'I got: False'
-        assert text(True) == 'I got: True'
-
-
-    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -637,9 +404,9 @@ how to write an f-string
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'add test_passing_booleans'
+    'move test_passing_booleans to TestTelephone'
 
-  the terminal_ shows a summary of the changes then goes back to the command line.
+
 
 :ref:`I can pass booleans as input to a function<test_passing_booleans>`.
 
@@ -649,10 +416,6 @@ how to write an f-string
 test_passing_an_integer with unittest
 *********************************************************************************
 
-Can I pass an integer_ (a whole number without decimals) as input to a :ref:`function<what is a function?>`?.
-
-----
-
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
@@ -661,29 +424,6 @@ Can I pass an integer_ (a whole number without decimals) as input to a :ref:`fun
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for an integer_
-
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 6-7
-    :emphasize-text: "
-
-    def test_passing_booleans():
-        assert text(False) == 'I got: False'
-        assert text(True) == 'I got: True'
-
-
-    def test_passing_an_integer():
-        assert text(1234) == 'I got: "1234"'
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       assert 'I got: 1234' == 'I got: "1234"'
 
 ----
 
@@ -693,28 +433,6 @@ Can I pass an integer_ (a whole number without decimals) as input to a :ref:`fun
 
 ----
 
-I remove the :ref:`quotes` around the integer_ in my expectation
-
-.. code-block:: python
-  :lineno-start: 14
-  :emphasize-lines: 2-3
-
-  def test_passing_an_integer():
-      # assert text(1234) == 'I got: "1234"'
-      assert text(1234) == 'I got: 1234'
-
-
-  # Exceptions seen
-
-the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
-
-.. code-block:: python
-
-  text(1234)
-      text(the_input)
-          the_input = None
-          return f'I got: {the_input}'
-          return  'I got:  1234      '
 
 ----
 
@@ -723,37 +441,6 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 =================================================================================
 
 ----
-
-* I add a :ref:`variable<what is a variable?>` for ``1234``
-
-  .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 2
-
-    def test_passing_an_integer():
-        an_integer = 1234
-        # assert text(1234) == 'I got: "1234"'
-        assert text(1234) == 'I got: 1234'
-
-
-    # Exceptions seen
-
-* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<what is string interpolation?>` to remove repetition of ``1234``
-
-  .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 4-5
-
-    def test_passing_an_integer():
-        an_integer = 1234
-        # assert text(1234) == 'I got: "1234"'
-        # assert text(1234) == 'I got: 1234'
-        assert text(an_integer) == f'I got: {an_integer}'
-
-
-    # Exceptions seen
-
-  the test is still green.
 
 * I remove the commented lines
 
@@ -772,21 +459,13 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_passing_an_integer'
-
-  the terminal_ shows a summary of the changes then goes back to the command line.
-
-:ref:`I can pass an integer as input to a function<test_passing_an_integer>`.
+    git commit -am 'move test_passing_an_integer to TestTelephone'
 
 ----
 
 *********************************************************************************
 test_passing_a_float with unittest
 *********************************************************************************
-
-Can I pass a float_ (binary floating point decimal number) as input to a :ref:`function<what is a function?>`?.
-
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -795,29 +474,6 @@ Can I pass a float_ (binary floating point decimal number) as input to a :ref:`f
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for a float_ (binary floating point decimal numbers)
-
-  .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 6-7
-    :emphasize-text: "
-
-    def test_passing_an_integer():
-        an_integer = 1234
-        assert text(an_integer) == f'I got: {an_integer}'
-
-
-    def test_passing_a_float():
-        assert text(5.678) == 'I got: "5.678"'
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       assert 'I got: 5.678' == 'I got: "5.678"'
 
 ----
 
@@ -827,28 +483,7 @@ Can I pass a float_ (binary floating point decimal number) as input to a :ref:`f
 
 ----
 
-I remove the :ref:`quotes` around the float_ in my expectation
 
-.. code-block:: python
-  :lineno-start: 19
-  :emphasize-lines: 2-3
-
-  def test_passing_a_float():
-      # assert text(5.678) == 'I got: "5.678"'
-      assert text(5.678) == 'I got: 5.678'
-
-
-  # Exceptions seen
-
-the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
-
-.. code-block:: python
-
-  text(5.678)
-      text(the_input)
-          the_input = 5.678
-          return f'I got: {the_input}'
-          return  'I got:  5.678     '
 
 ----
 
@@ -858,36 +493,6 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
 ----
 
-* I add a :ref:`variable<what is a variable?>` for ``5.678``
-
-  .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 2
-
-    def test_passing_a_float():
-        a_float = 5.678
-        # assert text(5.678) == 'I got: "5.678"'
-        assert text(5.678) == 'I got: 5.678'
-
-
-    # Exceptions seen
-
-* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<what is string interpolation?>` to remove repetition of ``5.678``
-
-  .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 4-5
-
-    def test_passing_a_float():
-        a_float = 5.678
-        # assert text(5.678) == 'I got: "5.678"'
-        # assert text(5.678) == 'I got: 5.678'
-        assert text(a_float) == f'I got: {a_float}'
-
-
-    # Exceptions seen
-
-  the test is still green.
 
 * I remove the commented lines
 
@@ -907,11 +512,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'add test_passing_a_float'
-
-  the terminal_ shows a summary of the changes then goes back to the command line.
-
-:ref:`I can pass a float as input to a function<test_passing_a_float>`.
+    'move test_passing_a_float to TestTelephone'
 
 ----
 
@@ -931,28 +532,7 @@ Can I pass a string_ as input to a :ref:`function<what is a function?>`?.
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for a string_ (anything in :ref:`quotes`)
 
-  .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 6-7
-
-    def test_passing_a_float():
-        a_float = 5.678
-        assert text(a_float) == f'I got: {a_float}'
-
-
-    def test_passing_a_string():
-        assert text('hi') == f'I got: hello'
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: assert 'I got: hi' == 'I got: hello'
 
 ----
 
@@ -962,28 +542,7 @@ Can I pass a string_ as input to a :ref:`function<what is a function?>`?.
 
 ----
 
-I change my expectation to match reality
 
-.. code-block:: python
-  :lineno-start: 24
-  :emphasize-lines: 2-3
-
-  def test_passing_a_string():
-      # assert text('hi') == f'I got: hello'
-      assert text('hi') == f'I got: hi'
-
-
-  # Exceptions seen
-
-the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
-
-.. code-block:: python
-
-  text(hi)
-      text(the_input)
-          the_input = hi
-          return f'I got: {the_input}'
-          return  'I got:  hi        '
 
 ----
 
@@ -1041,9 +600,9 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_passing_a_string'
+    git commit -am 'move test_passing_a_string to TestTelephone'
 
-  the terminal_ shows a summary of the changes then goes back to the command line.
+
 
 :ref:`I can pass a string as input to a function<test_passing_a_string>`.
 
@@ -1177,9 +736,9 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit --all --message 'add test_passing_a_tuple'
+    git commit --all --message 'move test_passing_a_tuple to TestTelephone'
 
-  the terminal_ shows a summary of the changes then goes back to the command line.
+
 
 :ref:`I can pass a tuple as input to a function<test_passing_a_tuple>`.
 
@@ -1316,9 +875,9 @@ Python_ changed the :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_passing_a_list'
+    git commit -am 'move test_passing_a_list to TestTelephone'
 
-  the terminal_ shows a summary of the changes then goes back to the command line.
+
 
 :ref:`I can pass a list as input to a function<test_passing_a_list>`.
 
@@ -1477,9 +1036,9 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit --all --message 'add test_passing_a_set'
+    git commit --all --message 'move test_passing_a_set to TestTelephone'
 
-  the terminal_ shows a summary of the changes then goes back to the command line.
+
 
 :ref:`I can pass a set as input to a function<test_passing_a_set>`.
 
@@ -1660,9 +1219,9 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_passing_a_dictionary'
+    git commit -am 'move test_passing_a_dictionary to TestTelephone'
 
-  the terminal_ shows a summary of the changes then goes back to the command line.
+
 
 :ref:`I can pass a dictionary as input to a function<test_passing_a_dictionary>`.
 
@@ -2195,9 +1754,9 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit --all --message 'add test_passing_a_class'
+    git commit --all --message 'move test_passing_a_class to TestTelephone'
 
-  the terminal_ shows a summary of the changes then goes back to the command line.
+
 
 :ref:`I can pass any object as input to a function<test_passing_a_class>`.
 
@@ -2937,7 +2496,7 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
     git commit -am \
     'separate solution from tests'
 
-  the terminal_ shows a summary of the changes then goes back to the command line.
+
 
 :ref:`I can write solutions in a different module from the tests<separate and equal>`.
 
@@ -3170,7 +2729,7 @@ Now that the solution is separate from the tests, I can write the program_ that 
 
     git commit --all --message 'test telephone'
 
-  the terminal_ shows a summary of the changes then goes back to the command line.
+
 
 ----
 
