@@ -521,6 +521,145 @@ green again.
 ----
 
 *********************************************************************************
+test_passing_an_integer with unittest
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+
+* I move :ref:`test_passing_an_integer` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>` and replace ``test_failure``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 3-6
+
+    class TestTelephone(unittest.TestCase):
+
+        def test_passing_an_integer():
+            reality = src.telephone.text(None)
+            my_expectation = 'I got: None'
+            assert reality == my_expectation
+
+
+    def test_passing_booleans():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestTelephone.test_passing_an_integer()
+        takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``self`` to the parentheses of :ref:`test_passing_an_integer`
+
+.. code-block:: python
+  :lineno-start: 5
+  :emphasize-lines: 3-4
+
+    class TestTelephone(unittest.TestCase):
+
+        # def test_passing_an_integer():
+        def test_passing_an_integer(self):
+
+the test is green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_an_integer`
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 8
+
+    class TestTelephone(unittest.TestCase):
+
+        # def test_passing_an_integer():
+        def test_passing_an_integer(self):
+            reality = src.telephone.text(None)
+            my_expectation = 'I got: None'
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
+
+
+    def test_passing_booleans():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'I got: None'
+                 == 'I got: None'
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_an_integer`
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 8-9
+
+    class TestTelephone(unittest.TestCase):
+
+        # def test_passing_an_integer():
+        def test_passing_an_integer(self):
+            reality = src.telephone.text(None)
+            my_expectation = 'I got: None'
+            assert reality == my_expectation
+            # self.assertNotEqual(reality, my_expectation)
+            self.assertEqual(reality, my_expectation)
+
+
+    def test_passing_booleans():
+
+  the test passes.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 5
+
+    class TestTelephone(unittest.TestCase):
+
+        def test_passing_an_integer(self):
+            reality = src.telephone.text(None)
+            my_expectation = 'I got: None'
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+
+    def test_passing_booleans():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move test_passing_an_integer to TestTelephone'
+
+----
+
+*********************************************************************************
 close the project
 *********************************************************************************
 
