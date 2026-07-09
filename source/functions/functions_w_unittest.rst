@@ -332,14 +332,6 @@ the test is green again.
         # def test_making_a_function_w_pass():
         def test_making_a_function_w_pass(self):
             result = src.functions.w_pass()
-            assert src.functions.w_pass() is None
-            # self.assertIsNot(
-            self.assertIs(
-                src.functions.w_pass(), None
-            )
-
-
-    def test_making_a_function_w_return():
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.w_pass()``
 
@@ -501,14 +493,6 @@ green again.
         # def test_making_a_function_w_return():
         def test_making_a_function_w_return(self):
             result = src.functions.w_return()
-            assert src.functions.w_return() is None
-            # self.assertIsNot(
-            self.assertIs(
-                src.functions.w_return(), None
-            )
-
-
-    def test_making_a_function_w_return_none():
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.w_return()``
 
@@ -671,14 +655,6 @@ green.
         # def test_making_a_function_w_return_none():
         def test_making_a_function_w_return_none(self):
             result = src.functions.w_return_none()
-            assert src.functions.w_return_none() is None
-            # self.assertIsNot(
-            self.assertIs(
-                src.functions.w_return_none(), None
-            )
-
-
-    def test_what_happens_after_functions_return():
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.w_return_none()``
 
@@ -855,21 +831,6 @@ green again.
         # def test_what_happens_after_functions_return():
         def test_what_happens_after_functions_return(self):
             result = src.functions.return_leaves_the_function()
-            assert (
-                src.functions
-                   .return_leaves_the_function()
-            ) is None
-            # self.assertIsNot(
-            self.assertIs(
-                (
-                    src.functions
-                       .return_leaves_the_function()
-                ),
-                None
-            )
-
-
-    def test_constant_function():
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.return_leaves_the_function()``
 
@@ -902,7 +863,6 @@ green again.
 
   .. code-block:: python
     :lineno-start: 23
-    :emphasize-lines: 7
 
             self.assertIs(result, None)
 
@@ -959,7 +919,7 @@ test_constant_function with unittest
         TestFunctions.test_constant_function()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>`...
 
 ----
 
@@ -977,9 +937,9 @@ I add ``self`` to the parentheses of :ref:`test_constant_function`
 
       # def test_constant_function():
       def test_constant_function(self):
-          assert src.functions.constant() is None
+          assert src.functions.constant() == 'the same thing'
 
-green.
+green again.
 
 ----
 
@@ -989,7 +949,7 @@ green.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>`
 
   .. code-block:: python
     :lineno-start: 31
@@ -997,9 +957,10 @@ green.
 
         # def test_constant_function():
         def test_constant_function(self):
-            assert src.functions.constant() is None
-            self.assertIsNot(
-                src.functions.constant(), None
+            assert src.functions.constant() == 'the same thing'
+            self.assertNotEqual(
+                src.functions.constant(),
+                'the same thing'
             )
 
 
@@ -1009,9 +970,9 @@ green.
 
   .. code-block:: python
 
-    AssertionError: unexpectedly identical: None
+    AssertionError: 'the same thing' == 'the same thing'
 
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>`
 
   .. code-block:: python
     :lineno-start: 31
@@ -1019,10 +980,11 @@ green.
 
         # def test_constant_function():
         def test_constant_function(self):
-            assert src.functions.constant() is None
-            # self.assertIsNot(
-            self.assertIs(
-                src.functions.constant(), None
+            assert src.functions.constant() == 'the same thing'
+            # self.assertNotEqual(
+            self.assertEqual(
+                src.functions.constant(),
+                'the same thing'
             )
 
 
@@ -1030,40 +992,35 @@ green.
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` for ``src.functions.constant()``
+* I add :ref:`variables<what is a variable?>` for ``src.functions.constant()`` and ``'the same thing'``
 
   .. code-block:: python
     :lineno-start: 31
-    :emphasize-lines: 3
+    :emphasize-lines: 3-4
 
         # def test_constant_function():
         def test_constant_function(self):
             result = src.functions.constant()
-            assert src.functions.constant() is None
-            # self.assertIsNot(
-            self.assertIs(
-                src.functions.constant(), None
-            )
+            expectation = 'the same thing'
 
-
-    def test_identity_function():
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.constant()``
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.constant()`` and ``'the same thing'``
 
   .. code-block:: python
     :lineno-start: 31
-    :emphasize-lines: 4-5, 8-9
+    :emphasize-lines: 5, 7-12
 
         # def test_constant_function():
         def test_constant_function(self):
             result = src.functions.constant()
-            # assert src.functions.constant() is None
-            assert result is None
-            # self.assertIsNot(
-            self.assertIs(
-                # src.functions.constant(), None
-                result, None
-            )
+            expectation = 'the same thing'
+            # assert src.functions.constant() == 'the same thing'
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     src.functions.constant(),
+            #     'the same thing'
+            # )
+            assert result == expectation
+            self.assertEqual(result, expectation)
 
 
     def test_identity_function():
@@ -1072,15 +1029,15 @@ green.
 
   .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: 7
 
             self.assertIs(result, None)
 
         def test_constant_function(self):
             result = src.functions.constant()
+            expectation = 'the same thing'
 
-            assert result is None
-            self.assertIs(result, None)
+            assert result == expectation
+            self.assertEqual(result, expectation)
 
 
     def test_identity_function():
