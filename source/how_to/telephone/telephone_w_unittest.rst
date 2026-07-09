@@ -1564,7 +1564,7 @@ test_passing_a_class with unittest
 
   .. code-block:: python
     :lineno-start: 81
-    :emphasize-lines: 3-6
+    :emphasize-lines: 3-6, 8-10, 12-14, 16-18, 20-22, 24-26, 28-30, 32-34, 36-38
 
             self.assertEqual(reality, my_expectation)
 
@@ -1651,21 +1651,124 @@ green again.
 
   .. code-block:: python
     :lineno-start: 81
-    :emphasize-lines: 8, 13
+    :emphasize-lines: 8, 13, 18, 23, 28, 33, 38, 43, 48
 
             self.assertEqual(reality, my_expectation)
 
         # def test_passing_a_class():
         def test_passing_a_class(self):
-            reality = src.telephone.text(False)
-            my_expectation = 'I got: False'
+            reality = src.telephone.text(object)
+            my_expectation = "I got: <class 'object'>"
             assert reality == my_expectation
             self.assertNotEqual(reality, my_expectation)
+
+            reality = src.telephone.text(bool)
+            my_expectation = "I got: <class 'bool'>"
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
+
+            reality = src.telephone.text(int)
+            my_expectation = "I got: <class 'int'>"
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
+
+            reality = src.telephone.text(float)
+            my_expectation = "I got: <class 'float'>"
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
+
+            reality = src.telephone.text(str)
+            my_expectation = "I got: <class 'str'>"
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
+
+            reality = src.telephone.text(tuple)
+            my_expectation = "I got: <class 'tuple'>"
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
+
+            reality = src.telephone.text(list)
+            my_expectation = "I got: <class 'list'>"
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
+
+            reality = src.telephone.text(set)
+            my_expectation = "I got: <class 'set'>"
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
+
+            reality = src.telephone.text(dict)
+            my_expectation = "I got: <class 'dict'>"
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+     AssertionError: "I got: <class 'object'>"
+                  == "I got: <class 'object'>"
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for :ref:`object<everything is an object>`
+
+  .. code-block:: python
+    :lineno-start: 81
+    :emphasize-lines: 8-9
+
+            self.assertEqual(reality, my_expectation)
+
+        # def test_passing_a_class():
+        def test_passing_a_class(self):
+            reality = src.telephone.text(object)
+            my_expectation = "I got: <class 'object'>"
+            assert reality == my_expectation
+            # self.assertNotEqual(reality, my_expectation)
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(bool)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: "I got: <class 'bool'>"
+                 == "I got: <class 'bool'>"
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for :ref:`bool<what are booleans?>`
+
+  .. code-block:: python
+    :lineno-start: 91
+    :emphasize-lines: 4-5
+
+            reality = src.telephone.text(bool)
+            my_expectation = "I got: <class 'bool'>"
+            assert reality == my_expectation
+            # self.assertNotEqual(reality, my_expectation)
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(int)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: "I got: <class 'int'>"
+                 == "I got: <class 'int'>"
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for int_
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 4-5
 
             reality = src.telephone.text(True)
             my_expectation = 'I got: True'
             assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
+            # self.assertNotEqual(reality, my_expectation)
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen:
@@ -1674,31 +1777,120 @@ green again.
 
   .. code-block:: python
 
-    AssertionError: 'I got: False' == 'I got: False'
+    AssertionError: "I got: <class 'float'>"
+                 == "I got: <class 'float'>"
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_class`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for float_
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 6-7
+    :lineno-start: 21
+    :emphasize-lines: 4-5
 
-        # def test_passing_a_class():
-        def test_passing_a_class(self):
-            reality = src.telephone.text(False)
-            my_expectation = 'I got: False'
+            reality = src.telephone.text(True)
+            my_expectation = 'I got: True'
             assert reality == my_expectation
             # self.assertNotEqual(reality, my_expectation)
             self.assertEqual(reality, my_expectation)
 
-            reality = src.telephone.text(True)
+
+    # Exceptions seen:
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'I got: True' == 'I got: True'
+    AssertionError: "I got: <class 'str'>"
+                 == "I got: <class 'str'>"
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_class`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for str_
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 4-5
+
+            reality = src.telephone.text(True)
+            my_expectation = 'I got: True'
+            assert reality == my_expectation
+            # self.assertNotEqual(reality, my_expectation)
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen:
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: "I got: <class 'tuple'>"
+                 == "I got: <class 'tuple'>"
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for tuple_
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 4-5
+
+            reality = src.telephone.text(True)
+            my_expectation = 'I got: True'
+            assert reality == my_expectation
+            # self.assertNotEqual(reality, my_expectation)
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen:
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: "I got: <class 'list'>"
+                 == "I got: <class 'list'>"
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for :ref:`list<what is a list?>`
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 4-5
+
+            reality = src.telephone.text(True)
+            my_expectation = 'I got: True'
+            assert reality == my_expectation
+            # self.assertNotEqual(reality, my_expectation)
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen:
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: "I got: <class 'set'>"
+                 == "I got: <class 'set'>"
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for set_
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 4-5
+
+            reality = src.telephone.text(True)
+            my_expectation = 'I got: True'
+            assert reality == my_expectation
+            # self.assertNotEqual(reality, my_expectation)
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen:
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: "I got: <class 'dict'>"
+                 == "I got: <class 'dict'>"
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for :ref:`dict<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 21
