@@ -261,10 +261,10 @@ I add ``self`` to the parentheses of :ref:`test_passing_none`
   :lineno-start: 5
   :emphasize-lines: 3-4
 
-    class TestTelephone(unittest.TestCase):
+  class TestTelephone(unittest.TestCase):
 
-        # def test_passing_none():
-        def test_passing_none(self):
+      # def test_passing_none():
+      def test_passing_none(self):
 
 the test is green again.
 
@@ -404,10 +404,10 @@ I add ``self`` to the parentheses of :ref:`test_passing_booleans`
   :lineno-start: 5
   :emphasize-lines: 3-4
 
-            self.assertEqual(reality, my_expectation)
+          self.assertEqual(reality, my_expectation)
 
-        # def test_passing_booleans():
-        def test_passing_booleans(self):
+      # def test_passing_booleans():
+      def test_passing_booleans(self):
 
 green again.
 
@@ -532,21 +532,23 @@ test_passing_an_integer with unittest
 
 * I go back to the terminal_ where the tests are running.
 
-* I move :ref:`test_passing_an_integer` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>` and replace ``test_failure``
+* I move :ref:`test_passing_an_integer` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 3-6
+    :lineno-start: 22
+    :emphasize-lines: 3-4, 6-8
 
-    class TestTelephone(unittest.TestCase):
+            self.assertEqual(reality, my_expectation)
 
         def test_passing_an_integer():
-            reality = src.telephone.text(None)
-            my_expectation = 'I got: None'
+            an_integer = 1234
+
+            reality = src.telephone.text(an_integer)
+            my_expectation = f'I got: {an_integer}'
             assert reality == my_expectation
 
 
-    def test_passing_booleans():
+    def test_passing_a_float():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -569,13 +571,13 @@ test_passing_an_integer with unittest
 I add ``self`` to the parentheses of :ref:`test_passing_an_integer`
 
 .. code-block:: python
-  :lineno-start: 5
+  :lineno-start: 22
   :emphasize-lines: 3-4
 
-    class TestTelephone(unittest.TestCase):
+          self.assertEqual(reality, my_expectation)
 
-        # def test_passing_an_integer():
-        def test_passing_an_integer(self):
+      # def test_passing_an_integer():
+      def test_passing_an_integer(self):
 
 the test is green again.
 
@@ -590,64 +592,70 @@ the test is green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_an_integer`
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 8
+    :lineno-start: 22
+    :emphasize-lines: 10
 
-    class TestTelephone(unittest.TestCase):
+            self.assertEqual(reality, my_expectation)
 
         # def test_passing_an_integer():
         def test_passing_an_integer(self):
-            reality = src.telephone.text(None)
-            my_expectation = 'I got: None'
+            an_integer = 1234
+
+            reality = src.telephone.text(an_integer)
+            my_expectation = f'I got: {an_integer}'
             assert reality == my_expectation
             self.assertNotEqual(reality, my_expectation)
 
 
-    def test_passing_booleans():
+    def test_passing_a_float():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'I got: None'
-                 == 'I got: None'
+    AssertionError: 'I got: 1234'
+                 == 'I got: 1234'
 
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_an_integer`
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 8-9
+    :lineno-start: 22
+    :emphasize-lines: 10-11
 
-    class TestTelephone(unittest.TestCase):
+            self.assertEqual(reality, my_expectation)
 
         # def test_passing_an_integer():
         def test_passing_an_integer(self):
-            reality = src.telephone.text(None)
-            my_expectation = 'I got: None'
+            an_integer = 1234
+
+            reality = src.telephone.text(an_integer)
+            my_expectation = f'I got: {an_integer}'
             assert reality == my_expectation
             # self.assertNotEqual(reality, my_expectation)
             self.assertEqual(reality, my_expectation)
 
 
-    def test_passing_booleans():
+    def test_passing_a_float():
 
   the test passes.
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 22
 
-    class TestTelephone(unittest.TestCase):
+            self.assertEqual(reality, my_expectation)
 
         def test_passing_an_integer(self):
-            reality = src.telephone.text(None)
-            my_expectation = 'I got: None'
+            an_integer = 1234
+
+            reality = src.telephone.text(an_integer)
+            my_expectation = f'I got: {an_integer}'
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
 
-    def test_passing_booleans():
+    def test_passing_a_float():
 
 * I add a git_ commit message in the other terminal_
 
