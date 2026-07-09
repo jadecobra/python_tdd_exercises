@@ -38,7 +38,7 @@ class TestTelephone(unittest.TestCase):
         self.assertEqual(reality, my_expectation)
 
     def test_passing_a_string(self):
-        a_string = 'hi'
+        a_string = 'hello'
 
         reality = src.telephone.text(a_string)
         my_expectation = f'I got: {a_string}'
@@ -130,5 +130,6 @@ class TestTelephone(unittest.TestCase):
 # Exceptions seen
 # AssertionError
 # NameError
+# TypeError
 # ModuleNotFoundError
 # AttributeError

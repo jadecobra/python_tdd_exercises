@@ -1761,17 +1761,16 @@ green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for int_
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 97
     :emphasize-lines: 4-5
 
-            reality = src.telephone.text(True)
-            my_expectation = 'I got: True'
+            reality = src.telephone.text(int)
+            my_expectation = "I got: <class 'int'>"
             assert reality == my_expectation
             # self.assertNotEqual(reality, my_expectation)
             self.assertEqual(reality, my_expectation)
 
-
-    # Exceptions seen:
+            reality = src.telephone.text(float)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1783,17 +1782,16 @@ green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for float_
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 103
     :emphasize-lines: 4-5
 
-            reality = src.telephone.text(True)
-            my_expectation = 'I got: True'
+            reality = src.telephone.text(float)
+            my_expectation = "I got: <class 'float'>"
             assert reality == my_expectation
             # self.assertNotEqual(reality, my_expectation)
             self.assertEqual(reality, my_expectation)
 
-
-    # Exceptions seen:
+            reality = src.telephone.text(str)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1805,17 +1803,16 @@ green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for str_
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 109
     :emphasize-lines: 4-5
 
-            reality = src.telephone.text(True)
-            my_expectation = 'I got: True'
+            reality = src.telephone.text(str)
+            my_expectation = "I got: <class 'str'>"
             assert reality == my_expectation
             # self.assertNotEqual(reality, my_expectation)
             self.assertEqual(reality, my_expectation)
 
-
-    # Exceptions seen:
+            reality = src.telephone.text(tuple)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1827,17 +1824,16 @@ green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for tuple_
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 115
     :emphasize-lines: 4-5
 
-            reality = src.telephone.text(True)
-            my_expectation = 'I got: True'
+            reality = src.telephone.text(tuple)
+            my_expectation = "I got: <class 'tuple'>"
             assert reality == my_expectation
             # self.assertNotEqual(reality, my_expectation)
             self.assertEqual(reality, my_expectation)
 
-
-    # Exceptions seen:
+            reality = src.telephone.text(list)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1849,17 +1845,16 @@ green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for :ref:`list<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 121
     :emphasize-lines: 4-5
 
-            reality = src.telephone.text(True)
-            my_expectation = 'I got: True'
+            reality = src.telephone.text(list)
+            my_expectation = "I got: <class 'list'>"
             assert reality == my_expectation
             # self.assertNotEqual(reality, my_expectation)
             self.assertEqual(reality, my_expectation)
 
-
-    # Exceptions seen:
+            reality = src.telephone.text(set)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1871,17 +1866,16 @@ green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for set_
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 127
     :emphasize-lines: 4-5
 
-            reality = src.telephone.text(True)
-            my_expectation = 'I got: True'
+            reality = src.telephone.text(set)
+            my_expectation = "I got: <class 'set'>"
             assert reality == my_expectation
             # self.assertNotEqual(reality, my_expectation)
             self.assertEqual(reality, my_expectation)
 
-
-    # Exceptions seen:
+            reality = src.telephone.text(dict)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1893,17 +1887,17 @@ green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for :ref:`dict<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 133
     :emphasize-lines: 4-5
 
-            reality = src.telephone.text(True)
-            my_expectation = 'I got: True'
+            reality = src.telephone.text(dict)
+            my_expectation = "I got: <class 'dict'>"
             assert reality == my_expectation
             # self.assertNotEqual(reality, my_expectation)
             self.assertEqual(reality, my_expectation)
 
 
-    # Exceptions seen:
+    # Exceptions seen
 
   the test passes.
 
@@ -1915,18 +1909,58 @@ green again.
             self.assertEqual(reality, my_expectation)
 
         def test_passing_a_class(self):
-            reality = src.telephone.text(False)
-            my_expectation = 'I got: False'
+            reality = src.telephone.text(object)
+            my_expectation = "I got: <class 'object'>"
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
-            reality = src.telephone.text(True)
-            my_expectation = 'I got: True'
+            reality = src.telephone.text(bool)
+            my_expectation = "I got: <class 'bool'>"
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(int)
+            my_expectation = "I got: <class 'int'>"
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(float)
+            my_expectation = "I got: <class 'float'>"
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(str)
+            my_expectation = "I got: <class 'str'>"
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(tuple)
+            my_expectation = "I got: <class 'tuple'>"
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(list)
+            my_expectation = "I got: <class 'list'>"
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(set)
+            my_expectation = "I got: <class 'set'>"
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(dict)
+            my_expectation = "I got: <class 'dict'>"
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
 
-    # Exceptions seen:
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # ModuleNotFoundError
+    # AttributeError
 
 * I add a git_ commit message in the other terminal_
 
@@ -1942,7 +1976,7 @@ green again.
 close the project
 *********************************************************************************
 
-* I close ``telephone.py``
+* I close ``test_telephone.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
