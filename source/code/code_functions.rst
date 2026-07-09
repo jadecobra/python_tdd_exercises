@@ -30,6 +30,14 @@ the code from ``functions/tests/test_functions.py`` from :ref:`functions that ta
 separate and equal functions: tests and solutions
 *********************************************************************************
 
+----
+
+=================================================================================
+separate and equal functions tests
+=================================================================================
+
+----
+
 the code from ``functions/tests/test_functions.py`` from :ref:`separate and equal functions`
 
 .. literalinclude:: functions/tests/test_functions_w_separation.py
@@ -38,11 +46,30 @@ the code from ``functions/tests/test_functions.py`` from :ref:`separate and equa
 
 ----
 
+=================================================================================
+separate and equal functions solutions
+=================================================================================
+
+----
+
 the code from ``functions/src/functions.py`` from :ref:`separate and equal functions`
 
 .. literalinclude:: functions/solutions/functions_w_separation.py
   :language: python
   :linenos:
+
+----
+
+*********************************************************************************
+test functions with unittest: tests
+*********************************************************************************
+
+the code from ``functions/tests/test_functions.py`` from :ref:`test functions with unittest`
+
+.. literalinclude:: functions/tests/test_functions_w_unittest.py
+  :language: python
+  :linenos:
+
 
 ----
 

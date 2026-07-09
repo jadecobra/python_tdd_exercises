@@ -18,7 +18,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/functions/tests/test_functions_w_separation.py
+.. literalinclude:: ../code/functions/tests/test_functions_w_unittest.py
   :language: python
   :linenos:
 
@@ -3025,7 +3025,7 @@ I can use the :ref:`unittest library<another way to write tests>` to write tests
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<separate and equal functions: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test functions with unittest: tests>`
 
 ----
 
