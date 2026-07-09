@@ -12,7 +12,7 @@ separate and equal TypeError
 
 ----
 
-I want to move the :ref:`functions<what is a function?>` to ``type_error.py`` in the ``src`` folder_ so that I can keep the tests and solutions separate.
+I want to move the :ref:`functions<what is a function?>` from ``test_type_error.py`` in the ``tests`` folder_ to ``type_error.py`` in the ``src`` folder_ so that I can keep the tests and solutions separate.
 
 ----
 
