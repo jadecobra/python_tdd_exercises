@@ -2009,7 +2009,7 @@ I can use the :ref:`unittest library<another way to write tests>` to write tests
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<telephone: tests and solution>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test telephone with unittest: tests>`
 
 ----
 
@@ -2017,7 +2017,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-You now know:
+You know:
 
 * :ref:`how to make a Python test driven development environment manually`
 * :ref:`what a Python module is<what is a module?>`
