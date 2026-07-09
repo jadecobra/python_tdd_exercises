@@ -42,3 +42,13 @@ the code in ``telephone/src/telephone.py`` from :ref:`separate and equal telepho
 .. literalinclude:: telephone/solutions/telephone_w_separation.py
   :language: python
   :linenos:
+
+*********************************************************************************
+test telephone with unittest: tests
+*********************************************************************************
+
+the code in ``telephone/tests/test_telephone.py`` from :ref:`test telephone with unittest`
+
+.. literalinclude:: telephone/tests/test_telephone_w_unittest.py
+  :language: python
+  :linenos:

@@ -77,7 +77,7 @@ add TestAssertionError class
     class AssertionError(object):
 
         def test_failure(self):
-            self.assertFalse(True)
+            self.assertEqual(True, False)
 
 
     def test_assert_keyword():
@@ -98,7 +98,7 @@ add TestAssertionError class
   .. code-block:: python
 
     AttributeError: 'TestAssertionError' object
-                    has no attribute 'assertFalse'
+                    has no attribute 'assertEqual'
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -166,7 +166,7 @@ add TestAssertionError class
 
   .. code-block:: python
 
-    AssertionError: True is not false
+    AssertionError: True != False
 
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
@@ -175,8 +175,8 @@ add TestAssertionError class
     :emphasize-lines: 2-3
 
         def test_failure(self):
-            # self.assertFalse(True)
-            self.assertFalse(False)
+            # self.assertEqual(True, False)
+            self.assertEqual(False, False)
 
 
     def test_assert_keyword():
@@ -202,7 +202,7 @@ add TestAssertionError class
     class TestAssertionError(unittest.TestCase):
 
         def test_failure(self):
-            self.assertFalse(False)
+            self.assertEqual(False, False)
 
 
     def test_assert_keyword():

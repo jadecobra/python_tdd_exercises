@@ -8,29 +8,7 @@
 test telephone with unittest
 #################################################################################
 
-Part of `Computer Programming`_ is sending :ref:`input data<data structures>` to a process and getting :ref:`output data<data structures>` back
-
-.. code-block:: python
-
-    input_data -> process -> output_data
-
-I send things (:ref:`input data<data structures>`) to a program_ to test it, and check if what I think will happen (my expectation) is the same as the results I get (reality). This helps me answer two questions:
-
-* what is the same?
-* what is different?
-
-The difference helps me know what to change to get what I want. I use :ref:`assertions<what is an assertion?>` to test if the result of a :ref:`call to a function with input<functions that take input>` is the same as my expectation.
-
-.. code-block:: python
-
-  assert reality == my_expectation
-
-where
-
-* reality is what happens when I do something with code
-* my expectation is what I think will happen when I do something with code
-
-The exercises in this chapter show how I can pass :ref:`objects<what is a class?>` to a :ref:`function<what is a function?>` and use it to make a string_ (anything in :ref:`quotes`). It will also show :ref:`another way to organize tests<separate and equal>`.
+I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`telephone` project.
 
 ----
 
@@ -40,34 +18,17 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../../code/tests/test_telephone.py
+.. literalinclude:: ../../code/telephone/tests/test_telephone_w_unittest.py
   :language: python
   :linenos:
 
 ----
 
 *********************************************************************************
-start the project
+open the project
 *********************************************************************************
 
-* I name this project ``telephone``
 * I open a terminal_
-* I use uv_ to make a directory_ for the project and initialize it
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv init telephone
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    Initialized project `telephone`
-    at `.../pumping_python/telephone`
-
-  then goes back to the command line.
-
 * I change directory_ to the project
 
   .. code-block:: python
@@ -81,133 +42,7 @@ start the project
 
     .../pumping_python/telephone
 
-* I `make a directory`_ for the tests
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    mkdir tests
-
-  the terminal_ goes back to the command line.
-
-* I make the ``tests`` directory_ a `Python package`_
-
-  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        touch tests/__init__.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        New-Item tests/__init__.py
-
-  the terminal_ goes back to the command line.
-
-* I use the `mv program`_ to change the name of ``main.py`` to ``test_telephone.py`` and move it to the ``tests`` folder_
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        mv main.py tests/test_telephone.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        Move-Item main.py tests/test_telephone.py
-
-  the terminal_ goes back to the command line.
-
 * I open ``test_telephone.py``
-
-* I delete all the text then add :ref:`the first failing test<test_failure>` to ``test_telephone.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-2
-
-    def test_failure():
-        assert False is True
-
-* I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest" > requirements.txt
-
-  the terminal_ goes back to the command line.
-
-* I add `pytest-watcher`_ to the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest-watcher" >> requirements.txt
-
-  the terminal_ goes back to the command line.
-
-* I use uv_ to install `pytest-watcher`_ with the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv add --requirement requirements.txt
-
-  the terminal_ shows that it installed `pytest-watcher`_ and its dependencies.
-
-* I add the new files_ and folders_ to git_ for tracking
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    git add .
-
-  the terminal_ goes back to the command line.
-
-* I add a git_ commit message
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    git commit --all --message 'setup project'
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    [main (root-commit) a0b12c3] setup project
-     8 files changed, X insertions(+)
-     create mode 100644 .gitignore
-     create mode 100644 .python-version
-     create mode 100644 README.md
-     create mode 100644 pyproject.toml
-     create mode 100644 requirements.txt
-     create mode 100644 tests/__init__.py
-     create mode 100644 tests/test_telephone.py
-     create mode 100644 uv.lock
-
-  then goes back to the command line.
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -217,69 +52,166 @@ start the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
-    :emphasize-lines: 6, 8, 10
 
-    ======================== FAILURES ========================
-    ______________________ test_failure ______________________
+    test_telephone.py ..........                        [100%]
 
-        def test_failure():
-    >       assert False is True
-    E       assert False is True
+    =================== 10 passed in D.EFs ===================
 
-    test_telephone.py:2: AssertionError
-    ================ short test summary info =================
-    FAILED test_telephone.py::test_failure - assert False is True
-    =================== 1 failed in X.YZs ====================
+----
 
-  because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`.
+*********************************************************************************
+add TestTelephone class
+*********************************************************************************
 
-  .. admonition:: if the terminal_ does not show the same error, then check
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
 
-    * if your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-    * if you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
+----
 
-    and try ``uv run pytest-watcher . --now`` again
-
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
+* I add a :ref:`class<what is a class?>` named ``Telephone`` to ``test_telephone.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5-6
-    :emphasize-text: AssertionError
+    :emphasize-lines: 4, 6-7
 
-    def test_failure():
-        assert False is True
+    import src.telephone
 
 
-    # Exceptions seen
-    # AssertionError
+    class Telephone(object):
 
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
+        def test_failure(self):
+            self.assertEqual(True, False)
+
+
+    def test_passing_none():
+
+  the test is still green.
+
+* I change the name of the :ref:`class<what is a class?>` to ``TestTelephone``
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 1-2
+
+    # class Telephone(object):
+    class TestTelephone(object):
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: 'TestTelephone' object
+                    has no attribute 'assertEqual'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<what is a class?>` of ``TestTelephone``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 2-3
 
-    def test_failure():
-        # assert False is True
-        assert False is False
+    # class Telephone(object):
+    # class TestTelephone(object):
+    class TestTelephone(unittest.TestCase):
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: shell
+
+    NameError: name 'unittest' is not defined.
+               Did you forget to import 'unittest'?
+
+* I add an `import statement`_ at the top of the file_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
+
+    import src.telephone
+    import unittest
 
 
-    # Exceptions seen
-    # AssertionError
+    # class Telephone(object):
+    # class TestTelephone(object):
+    class TestTelephone(unittest.TestCase):
+
+  the terminal_ is my friend, and shows :ref:`Telephone<what causes Telephone?>`
+
+  .. code-block:: python
+
+    AssertionError: True != False
+
+* I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 2-3
+
+        def test_failure(self):
+            # self.assertEqual(True, False)
+            self.assertEqual(True, True)
+
+
+    def test_passing_none():
 
   the test passes.
 
 ----
 
-*********************************************************************************
-test_passing_none
-*********************************************************************************
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
 
-I can pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`function<what is a function?>`?
+----
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    import src.telephone
+    import unittest
+
+
+    class TestTelephone(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertEqual(True, True)
+
+
+    def test_passing_none():
+
+* I open a new terminal_ then make sure I am in the ``telephone`` folder_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd telephone
+
+* I add a git_ commit message in the new terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add TestTelephone class'
+
+----
+
+*********************************************************************************
+test_passing_none with unittest
+*********************************************************************************
 
 ----
 
@@ -288,6 +220,9 @@ I can pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
 =================================================================================
 
 ----
+
+* I go back to the terminal_ where the tests are running.
+* 
 
 * I change ``test_failure`` to :ref:`test_passing_none` with an :ref:`assertion<what is an assertion?>` for a :ref:`function call<how to call a function>` with :ref:`None<what is None?>` (the simplest :ref:`Python data structure<data structures>`) as input, in ``test_telephone.py``
 
@@ -460,7 +395,7 @@ The problem with this solution is that the ``text`` :ref:`function<what is a fun
 ----
 
 *********************************************************************************
-test_passing_booleans
+test_passing_booleans with unittest
 *********************************************************************************
 
 I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<what is a function?>.
@@ -711,7 +646,7 @@ how to write an f-string
 ----
 
 *********************************************************************************
-test_passing_an_integer
+test_passing_an_integer with unittest
 *********************************************************************************
 
 Can I pass an integer_ (a whole number without decimals) as input to a :ref:`function<what is a function?>`?.
@@ -846,7 +781,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 ----
 
 *********************************************************************************
-test_passing_a_float
+test_passing_a_float with unittest
 *********************************************************************************
 
 Can I pass a float_ (binary floating point decimal number) as input to a :ref:`function<what is a function?>`?.
@@ -981,7 +916,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 ----
 
 *********************************************************************************
-test_passing_a_string
+test_passing_a_string with unittest
 *********************************************************************************
 
 Can I pass a string_ as input to a :ref:`function<what is a function?>`?.
@@ -1115,7 +1050,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 ----
 
 *********************************************************************************
-test_passing_a_tuple
+test_passing_a_tuple with unittest
 *********************************************************************************
 
 Can I pass a tuple_ (anything in parentheses ``( )`` separated by a comma) as input to a :ref:`function<what is a function?>`?
@@ -1251,7 +1186,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 ----
 
 *********************************************************************************
-test_passing_a_list
+test_passing_a_list with unittest
 *********************************************************************************
 
 Can I pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) from a test to a :ref:`function?<what is a function?>`
@@ -1390,7 +1325,7 @@ Python_ changed the :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what 
 ----
 
 *********************************************************************************
-test_passing_a_set
+test_passing_a_set with unittest
 *********************************************************************************
 
 Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) from a test to a :ref:`function?<what is a function?>`
@@ -1551,7 +1486,7 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 ----
 
 *********************************************************************************
-test_passing_a_dictionary
+test_passing_a_dictionary with unittest
 *********************************************************************************
 
 Can I pass a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas<what is a dictionary?>` as input to a :ref:`function<what is a function?>`?
@@ -1734,7 +1669,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 ----
 
 *********************************************************************************
-test_passing_a_class
+test_passing_a_class with unittest
 *********************************************************************************
 
 Can I pass any :ref:`object<everything is an object>` as input to a :ref:`function<what is a function?>`?
@@ -3009,7 +2944,7 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 ----
 
 *********************************************************************************
-test_telephone
+test_telephone with unittest
 *********************************************************************************
 
 Now that the solution is separate from the tests, I can write the program_ that makes the tests pass without looking at ``test_telephone.py``.
