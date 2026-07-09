@@ -953,7 +953,7 @@ green again.
 
   .. code-block:: python
     :lineno-start: 31
-    :emphasize-lines: 4-6
+    :emphasize-lines: 4-7
 
         # def test_constant_function():
         def test_constant_function(self):
@@ -972,7 +972,7 @@ green again.
 
     AssertionError: 'the same thing' == 'the same thing'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 31
@@ -1002,6 +1002,7 @@ green again.
         def test_constant_function(self):
             result = src.functions.constant()
             expectation = 'the same thing'
+            assert src.functions.constant() == 'the same thing'
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.constant()`` and ``'the same thing'``
 
@@ -1049,6 +1050,232 @@ green again.
 
     git commit -am \
     'move test_constant_function to TestFunctions'
+
+----
+
+*********************************************************************************
+test_identity_function with unittest
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+
+* I move :ref:`test_identity_function` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+
+  .. code-block:: python
+    :lineno-start: 36
+    :emphasize-lines: 3-5
+
+            self.assertEqual(result, expectation)
+
+        def test_identity_function():
+            assert src.functions.identity(None) == None
+            assert src.functions.identity(object) == object
+
+
+    def test_why_use_a_function():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestFunctions.test_identity_function()
+        takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``self`` to the parentheses of :ref:`test_identity_function`
+
+.. code-block:: python
+  :lineno-start: 38
+  :emphasize-lines: 1-2
+
+      # def test_identity_function():
+      def test_identity_function(self):
+
+the test is green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>`
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 4-6, 8-10
+
+        # def test_identity_function():
+        def test_identity_function(self):
+            assert src.functions.identity(None) == None
+            self.assertNotEqual(
+                src.functions.identity(None), None
+            )
+            assert src.functions.identity(object) == object
+            self.assertNotEqual(
+                src.functions.identity(object), object
+            )
+
+
+    def test_why_use_a_function():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None == None
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 4-5
+
+        # def test_identity_function():
+        def test_identity_function(self):
+            assert src.functions.identity(None) == None
+            # self.assertNotEqual(
+            self.assertEqual(
+                src.functions.identity(None), None
+            )
+            assert src.functions.identity(object) == object
+            self.assertNotEqual(
+                src.functions.identity(object), object
+            )
+
+
+    def test_why_use_a_function():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: <class 'object'> == <class 'object'>
+
+  the test passes.
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 9-10
+
+        # def test_identity_function():
+        def test_identity_function(self):
+            assert src.functions.identity(None) == None
+            # self.assertNotEqual(
+            self.assertEqual(
+                src.functions.identity(None), None
+            )
+            assert src.functions.identity(object) == object
+            # self.assertNotEqual(
+            self.assertEqual(
+                src.functions.identity(object), object
+            )
+
+
+    def test_why_use_a_function():
+
+* I add :ref:`variables<what is a variable?>` for ``src.functions.identity``
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 3, 10
+
+        # def test_identity_function():
+        def test_identity_function(self):
+            result = src.functions.identity(None)
+            assert src.functions.identity(None) == None
+            # self.assertNotEqual(
+            self.assertEqual(
+                src.functions.identity(None), None
+            )
+
+            result = src.functions.identity(object)
+            assert src.functions.identity(object) == object
+            # self.assertNotEqual(
+            self.assertEqual(
+                src.functions.identity(object), object
+            )
+
+
+    def test_why_use_a_function():
+
+* I use the :ref:`variables<what is a variable?>` to remove repetition of ``src.functions.identity``
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 4-5, 8-9, 13-14, 17-18
+
+        # def test_identity_function():
+        def test_identity_function(self):
+            result = src.functions.identity(None)
+            # assert src.functions.identity(None) == None
+            assert result == None
+            # self.assertNotEqual(
+            self.assertEqual(
+                # src.functions.identity(None), None
+                result, None
+            )
+
+            result = src.functions.identity(object)
+            # assert src.functions.identity(object) == object
+            assert result == object
+            # self.assertNotEqual(
+            self.assertEqual(
+                # src.functions.identity(object), object
+                result, object
+            )
+
+
+    def test_why_use_a_function():
+
+* I remove the commented lines from :ref:`test_identity_function`
+
+  .. code-block:: python
+    :lineno-start: 36
+
+            self.assertEqual(result, expectation)
+
+        def test_identity_function(self):
+            result = src.functions.identity(None)
+
+            assert result == None
+            self.assertEqual(result, None)
+
+            result = src.functions.identity(object)
+
+            assert result == object
+            self.assertEqual(result, object)
+
+
+    def test_why_use_a_function():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move test_identity_function to TestFunctions'
 
 ----
 
