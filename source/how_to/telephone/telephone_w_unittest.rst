@@ -298,8 +298,7 @@ the test is green again.
 
   .. code-block:: python
 
-    AssertionError: 'I got: None'
-                 == 'I got: None'
+    AssertionError: 'I got: None' == 'I got: None'
 
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_none`
 
@@ -446,8 +445,7 @@ green again.
 
   .. code-block:: python
 
-    AssertionError: 'I got: False'
-                 == 'I got: False'
+    AssertionError: 'I got: False' == 'I got: False'
 
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_passing_booleans`
 
@@ -469,8 +467,7 @@ green again.
 
   .. code-block:: python
 
-    AssertionError: 'I got: True'
-                 == 'I got: True'
+    AssertionError: 'I got: True' == 'I got: True'
 
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_passing_booleans`
 
@@ -613,8 +610,7 @@ green.
 
   .. code-block:: python
 
-    AssertionError: 'I got: 1234'
-                 == 'I got: 1234'
+    AssertionError: 'I got: 1234' == 'I got: 1234'
 
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_an_integer`
 
@@ -760,8 +756,7 @@ green again.
 
   .. code-block:: python
 
-    AssertionError: 'I got: 5.678'
-                 == 'I got: 5.678'
+    AssertionError: 'I got: 5.678' == 'I got: 5.678'
 
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_float`
 
@@ -811,6 +806,152 @@ green again.
 
     git commit -am \
     'move test_passing_a_float to TestTelephone'
+
+----
+
+*********************************************************************************
+test_passing_a_string with unittest
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+
+* I move :ref:`test_passing_a_string` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 3-4, 6-8
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_passing_a_string():
+            a_string = 'hello'
+
+            reality = src.telephone.text(a_string)
+            my_expectation = f'I got: {a_string}'
+            assert reality == my_expectation
+
+
+    def test_passing_a_tuple():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestTelephone.test_passing_a_string()
+        takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``self`` to the parentheses of :ref:`test_passing_a_string`
+
+.. code-block:: python
+  :lineno-start: 38
+  :emphasize-lines: 3-4
+
+          self.assertEqual(reality, my_expectation)
+
+      # def test_passing_a_string():
+      def test_passing_a_string(self):
+
+the test is green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_string`
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 10
+
+            self.assertEqual(reality, my_expectation)
+
+        # def test_passing_a_string():
+        def test_passing_a_string(self):
+            a_string = 'hello'
+
+            reality = src.telephone.text(a_string)
+            my_expectation = f'I got: {a_string}'
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
+
+
+    def test_passing_a_tuple():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'I got: hello' == 'I got: hello'
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_string`
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 10-11
+
+            self.assertEqual(reality, my_expectation)
+
+        # def test_passing_a_string():
+        def test_passing_a_string(self):
+            a_string = 'hello'
+
+            reality = src.telephone.text(a_string)
+            my_expectation = f'I got: {a_string}'
+            assert reality == my_expectation
+            # self.assertNotEqual(reality, my_expectation)
+            self.assertEqual(reality, my_expectation)
+
+
+    def test_passing_a_tuple():
+
+  the test passes.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 38
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_passing_a_string(self):
+            a_string = 'hello'
+
+            reality = src.telephone.text(a_string)
+            my_expectation = f'I got: {a_string}'
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+
+    def test_passing_a_tuple():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move test_passing_a_string to TestTelephone'
 
 ----
 
