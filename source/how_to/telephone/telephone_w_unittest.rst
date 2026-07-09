@@ -579,7 +579,7 @@ I add ``self`` to the parentheses of :ref:`test_passing_an_integer`
       # def test_passing_an_integer():
       def test_passing_an_integer(self):
 
-the test is green again.
+green.
 
 ----
 
@@ -664,6 +664,153 @@ the test is green again.
 
     git commit -am \
     'move test_passing_an_integer to TestTelephone'
+
+----
+
+*********************************************************************************
+test_passing_a_float with unittest
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+
+* I move :ref:`test_passing_a_float` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 3-4, 6-8
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_passing_a_float():
+            a_float = 5.678
+
+            reality = src.telephone.text(a_float)
+            my_expectation = f'I got: {a_float}'
+            assert reality == my_expectation
+
+
+    def test_passing_a_string():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestTelephone.test_passing_a_float()
+        takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` ...
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``self`` to the parentheses of :ref:`test_passing_a_float`
+
+.. code-block:: python
+  :lineno-start: 30
+  :emphasize-lines: 3-4
+
+          self.assertEqual(reality, my_expectation)
+
+      # def test_passing_a_float():
+      def test_passing_a_float(self):
+
+green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_float`
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 10
+
+            self.assertEqual(reality, my_expectation)
+
+        # def test_passing_a_float():
+        def test_passing_a_float(self):
+            a_float = 5.678
+
+            reality = src.telephone.text(a_float)
+            my_expectation = f'I got: {a_float}'
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
+
+
+    def test_passing_a_string():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'I got: 5.678'
+                 == 'I got: 5.678'
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_float`
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 10-11
+
+            self.assertEqual(reality, my_expectation)
+
+        # def test_passing_a_float():
+        def test_passing_a_float(self):
+            a_float = 5.678
+
+            reality = src.telephone.text(a_float)
+            my_expectation = f'I got: {a_float}'
+            assert reality == my_expectation
+            # self.assertNotEqual(reality, my_expectation)
+            self.assertEqual(reality, my_expectation)
+
+
+    def test_passing_a_string():
+
+  the test passes.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 30
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_passing_a_float(self):
+            a_float = 5.678
+
+            reality = src.telephone.text(a_float)
+            my_expectation = f'I got: {a_float}'
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+
+    def test_passing_a_string():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move test_passing_a_float to TestTelephone'
 
 ----
 
