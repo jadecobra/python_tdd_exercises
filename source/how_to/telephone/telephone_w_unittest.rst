@@ -162,7 +162,11 @@ add TestTelephone class
 
   .. code-block:: python
     :lineno-start: 5
-    :emphasize-lines: 2-3
+    :emphasize-lines: 6-7
+
+    # class Telephone(object):
+    # class TestTelephone(object):
+    class TestTelephone(unittest.TestCase):
 
         def test_failure(self):
             # self.assertEqual(True, False)

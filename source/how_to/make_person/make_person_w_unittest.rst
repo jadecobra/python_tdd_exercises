@@ -287,7 +287,7 @@ I add ``self`` to the parentheses of :ref:`test_joe`
       # def test_joe():
       def test_joe(self):
 
-the test passes.
+the test is green again.
 
 ----
 
@@ -893,7 +893,7 @@ I add ``self`` to the parentheses of :ref:`test_john`
       # def test_john():
       def test_john(self):
 
-the test passes.
+green again.
 
 ----
 
@@ -1192,7 +1192,7 @@ I add ``self`` to the parentheses of :ref:`test_mary`
       # def test_mary():
       def test_mary(self):
 
-the test passes.
+green.
 
 ----
 
@@ -1463,7 +1463,7 @@ I add ``self`` to the parentheses of :ref:`test_dir_person_class`
       # def test_dir_person_class():
       def test_dir_person_class(self):
 
-the test passes.
+green again.
 
 ----
 
@@ -1607,7 +1607,7 @@ I add ``self`` to the parentheses of :ref:`test_dir_person_instance`
       # def test_dir_person_instance():
       def test_dir_person_instance(self):
 
-the test passes.
+the test is green again.
 
 ----
 
