@@ -123,10 +123,10 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1
+    :emphasize-lines: 2
 
-    import unittest
     import src.person
+    import unittest
 
 
     # class TestPerson(object):
@@ -169,8 +169,8 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   .. code-block:: python
     :linenos:
 
-    import unittest
     import src.person
+    import unittest
 
 
     class TestPerson(unittest.TestCase):

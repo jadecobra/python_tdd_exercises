@@ -8,7 +8,7 @@
 test functions with unittest
 #################################################################################
 
-All the :ref:`functions<what is a function?>` in :ref:`the functions project<what is a function?>` were written in ``test_functions.py``. I want to move them to ``functions.py`` in the ``src`` folder_ so that I can keep the tests and solutions separate like I did with the other projects.
+I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`functions` project.
 
 ----
 
@@ -58,7 +58,160 @@ open the project
 
     test_functions.py ............                      [100%]
 
-    =================== 12 passed in X.YZs ===================
+    =================== 12 passed in G.HIs ===================
+
+----
+
+*********************************************************************************
+add TestFunctions class
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add a :ref:`class<what is a class?>` named ``Functions`` to ``test_functions.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4, 6-7
+
+    import src.functions
+
+
+    class Functions(object):
+
+        def test_failure(self):
+            self.assertEqual(True, False)
+
+
+    def test_making_a_function_w_pass():
+
+  the test is still green.
+
+* I change the name of the :ref:`class<what is a class?>` to ``TestFunctions``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5
+
+    import src.functions
+
+
+    # class Functions(object):
+    class TestFunctions(object):
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: 'TestFunctions' object
+                    has no attribute 'assertEqual'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<what is a class?>` of ``TestFunctions``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6
+
+    import src.functions
+
+
+    # class Functions(object):
+    # class TestFunctions(object):
+    class TestFunctions(unittest.TestCase):
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: shell
+
+    NameError: name 'unittest' is not defined.
+               Did you forget to import 'unittest'?
+
+* I add an `import statement`_ at the top of the file_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
+
+    import src.functions
+    import unittest
+
+
+    # class Functions(object):
+    # class TestFunctions(object):
+    class TestFunctions(unittest.TestCase):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True != False
+
+* I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 2-3
+
+        def test_failure(self):
+            # self.assertEqual(True, False)
+            self.assertEqual(True, True)
+
+
+    def test_passing_none():
+
+  the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    import src.functions
+    import unittest
+
+
+    class TestFunctions(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertEqual(True, True)
+
+
+    def test_passing_none():
+
+* I open a new terminal_ then make sure I am in the ``functions`` folder_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd functions
+
+* I add a git_ commit message in the new terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add TestFunctions class'
 
 ----
 

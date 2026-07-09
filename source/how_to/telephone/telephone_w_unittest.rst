@@ -94,8 +94,11 @@ add TestTelephone class
 * I change the name of the :ref:`class<what is a class?>` to ``TestTelephone``
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 1-2
+    :linenos:
+    :emphasize-lines: 4-5
+
+    import src.telephone
+
 
     # class Telephone(object):
     class TestTelephone(object):
@@ -119,7 +122,10 @@ add TestTelephone class
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2-3
+    :emphasize-lines: 5-6
+
+    import src.telephone
+
 
     # class Telephone(object):
     # class TestTelephone(object):
