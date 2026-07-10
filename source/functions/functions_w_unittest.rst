@@ -3463,9 +3463,8 @@ I add ``self`` to the parentheses of :ref:`test_optional_arguments`
 
       # def test_optional_arguments():
       def test_optional_arguments(self):
-          first, last = 'first', 'last'
 
-the test is green again.
+green again.
 
 ----
 
@@ -3475,60 +3474,179 @@ the test is green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_optional_arguments`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_optional_arguments`
 
   .. code-block:: python
     :lineno-start: 209
-    :emphasize-lines: 11-16
+    :emphasize-lines: 15-20
 
         # def test_optional_arguments():
         def test_optional_arguments(self):
-            first, last = 'first', 'last'
+            optional_arguments = (
+                src.functions.optional_arguments
+            )
+
+            first_name, last_name = 'jane', 'doe'
 
             assert (
-                src.functions.optional_arguments(
-                    first, last_input=last,
+                optional_arguments(
+                    first_name,
                 )
-            == (first, last)
+            == (first_name, last_name)
             )
             self.assertNotEqual(
-                src.functions.optional_arguments(
-                    first, last_input=last,
+                optional_arguments(
+                    first_name,
                 ),
-                (first, last)
+                (first_name, last_name)
+            )
+
+  .. code-block:: python
+    :lineno-start: 230
+    :emphasize-lines: 8-13
+
+            first_name, blow = 'joe', 'blow'
+            assert (
+                optional_arguments(
+                    first_name, blow
+                )
+            == (first_name, blow)
+            )
+            self.assertNotEqual(
+                optional_arguments(
+                    first_name, blow
+                ),
+                (first_name, blow)
+            )
+
+  .. code-block:: python
+    :lineno-start: 244
+    :emphasize-lines: 8-13
+
+            first_name = 'john'
+            assert (
+                optional_arguments(
+                    first_input=first_name
+                )
+            == (first_name, last_name)
+            )
+            self.assertNotEqual(
+                optional_arguments(
+                    first_input=first_name
+                ),
+                (first_name, last_name)
+            )
+
+  .. code-block:: python
+    :lineno-start: 258
+    :emphasize-lines: 9-15
+
+            last_name = 'smith'
+            assert (
+                optional_arguments(
+                    last_input=last_name,
+                    first_input=first_name,
+                )
+            == (first_name, last_name)
+            )
+            self.assertNotEqual(
+                optional_arguments(
+                    last_input=last_name,
+                    first_input=first_name,
+                ),
+                (first_name, last_name)
             )
 
 
     def test_unknown_number_of_arguments():
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
-  .. code-block:: python
-
-    AssertionError: ('first', 'last') == ('first', 'last')
-
-* I change the :ref:`call<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_optional_arguments`
+* I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_optional_arguments`
 
   .. code-block:: python
     :lineno-start: 209
-    :emphasize-lines: 11-12
+    :emphasize-lines: 15-16
 
         # def test_optional_arguments():
         def test_optional_arguments(self):
-            first, last = 'first', 'last'
+            optional_arguments = (
+                src.functions.optional_arguments
+            )
+
+            first_name, last_name = 'jane', 'doe'
 
             assert (
-                src.functions.optional_arguments(
-                    first, last_input=last,
+                optional_arguments(
+                    first_name,
                 )
-            == (first, last)
+            == (first_name, last_name)
             )
             # self.assertNotEqual(
-            self.assertNotEqual(
-                src.functions.optional_arguments(
-                    first, last_input=last,
+            self.assertEqual(
+                optional_arguments(
+                    first_name,
                 ),
-                (first, last)
+                (first_name, last_name)
+            )
+
+  .. code-block:: python
+    :lineno-start: 231
+    :emphasize-lines: 8-9
+
+            first_name, blow = 'joe', 'blow'
+            assert (
+                optional_arguments(
+                    first_name, blow
+                )
+            == (first_name, blow)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                optional_arguments(
+                    first_name, blow
+                ),
+                (first_name, blow)
+            )
+
+  .. code-block:: python
+    :lineno-start: 246
+    :emphasize-lines: 8-9
+
+            first_name = 'john'
+            assert (
+                optional_arguments(
+                    first_input=first_name
+                )
+            == (first_name, last_name)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                optional_arguments(
+                    first_input=first_name
+                ),
+                (first_name, last_name)
+            )
+
+  .. code-block:: python
+    :lineno-start: 261
+    :emphasize-lines: 9-10
+
+            last_name = 'smith'
+            assert (
+                optional_arguments(
+                    last_input=last_name,
+                    first_input=first_name,
+                )
+            == (first_name, last_name)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                optional_arguments(
+                    last_input=last_name,
+                    first_input=first_name,
+                ),
+                (first_name, last_name)
             )
 
 
@@ -3536,63 +3654,223 @@ the test is green again.
 
   the test passes.
 
-* I add :ref:`variables<what is a variable?>` for the :ref:`call<how to call a function with input>` to ``src.functions.optional_arguments`` and my expectation
+* I add :ref:`variables<what is a variable?>` for the :ref:`calls<how to call a function with input>` to ``src.functions.optional_arguments`` and my expectations
 
   .. code-block:: python
     :lineno-start: 209
-    :emphasize-lines: 5-8
+    :emphasize-lines: 9-10
 
         # def test_optional_arguments():
         def test_optional_arguments(self):
-            first, last = 'first', 'last'
-
-            reality = src.functions.optional_arguments(
-                first, last_input=last,
+            optional_arguments = (
+                src.functions.optional_arguments
             )
-            my_expectation = (first, last)
+
+            first_name, last_name = 'jane', 'doe'
+
+            reality = optional_arguments(first_name)
+            my_expectation = (first_name, last_name)
             assert (
-                src.functions.optional_arguments(
-                    first, last_input=last,
+                optional_arguments(
+                    first_name,
                 )
-            == (first, last)
+            == (first_name, last_name)
             )
             # self.assertNotEqual(
-            self.assertNotEqual(
-                src.functions.optional_arguments(
-                    first, last_input=last,
+            self.assertEqual(
+                optional_arguments(
+                    first_name,
                 ),
-                (first, last)
+                (first_name, last_name)
+            )
+
+  .. code-block:: python
+    :lineno-start: 233
+    :emphasize-lines: 3-6
+
+            first_name, blow = 'joe', 'blow'
+
+            reality = optional_arguments(
+                first_name, blow
+            )
+            my_expectation = (first_name, blow)
+            assert (
+                optional_arguments(
+                    first_name, blow
+                )
+            == (first_name, blow)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                optional_arguments(
+                    first_name, blow
+                ),
+                (first_name, blow)
+            )
+
+  .. code-block:: python
+    :lineno-start: 253
+    :emphasize-lines: 3-6
+
+            first_name = 'john'
+
+            reality = optional_arguments(
+                first_input=first_name
+            )
+            my_expectation = (first_name, last_name)
+            assert (
+                optional_arguments(
+                    first_input=first_name
+                )
+            == (first_name, last_name)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                optional_arguments(
+                    first_input=first_name
+                ),
+                (first_name, last_name)
+            )
+
+  .. code-block:: python
+    :lineno-start: 273
+    :emphasize-lines: 3-7
+
+            last_name = 'smith'
+
+            reality = optional_arguments(
+                last_input=last_name,
+                first_input=first_name,
+            )
+            my_expectation = (first_name, last_name)
+            assert (
+                optional_arguments(
+                    last_input=last_name,
+                    first_input=first_name,
+                )
+            == (first_name, last_name)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                optional_arguments(
+                    last_input=last_name,
+                    first_input=first_name,
+                ),
+                (first_name, last_name)
             )
 
 
     def test_unknown_number_of_arguments():
 
-* I use the :ref:`variables<what is a variable?>` to remove repetition of the :ref:`call<how to call a function with input>` to ``src.functions.optional_arguments`` and my expectation, from :ref:`test_optional_arguments`
+* I use the :ref:`variables<what is a variable?>` to remove repetition of the :ref:`calls<how to call a function with input>` to ``src.functions.optional_arguments`` and my expectations, from :ref:`test_optional_arguments`
 
   .. code-block:: python
     :lineno-start: 209
-    :emphasize-lines: 9-15, 17-23
+    :emphasize-lines: 11-16, 18-25
 
         # def test_optional_arguments():
         def test_optional_arguments(self):
-            first, last = 'first', 'last'
-
-            reality = src.functions.optional_arguments(
-                first, last_input=last,
+            optional_arguments = (
+                src.functions.optional_arguments
             )
-            my_expectation = (first, last)
+
+            first_name, last_name = 'jane', 'doe'
+
+            reality = optional_arguments(first_name)
+            my_expectation = (first_name, last_name)
             # assert (
-            #     src.functions.optional_arguments(
-            #         first, last_input=last,
+            #     optional_arguments(
+            #         first_name,
             #     )
-            # == (first, last)
+            # == (first_name, last_name)
             # )
             # self.assertNotEqual(
-            # self.assertNotEqual(
-            #     src.functions.optional_arguments(
-            #         first, last_input=last,
+            # self.assertEqual(
+            #     optional_arguments(
+            #         first_name,
             #     ),
-            #     (first, last)
+            #     (first_name, last_name)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 235
+    :emphasize-lines: 7-12, 14-21
+
+            first_name, blow = 'joe', 'blow'
+
+            reality = optional_arguments(
+                first_name, blow
+            )
+            my_expectation = (first_name, blow)
+            # assert (
+            #     optional_arguments(
+            #         first_name, blow
+            #     )
+            # == (first_name, blow)
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     optional_arguments(
+            #         first_name, blow
+            #     ),
+            #     (first_name, blow)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 257
+    :emphasize-lines: 7-12, 14-21
+
+            first_name = 'john'
+
+            reality = optional_arguments(
+                first_input=first_name
+            )
+            my_expectation = (first_name, last_name)
+            # assert (
+            #     optional_arguments(
+            #         first_input=first_name
+            #     )
+            # == (first_name, last_name)
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     optional_arguments(
+            #         first_input=first_name
+            #     ),
+            #     (first_name, last_name)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 279
+    :emphasize-lines: 8-13, 15-24
+
+            last_name = 'smith'
+
+            reality = optional_arguments(
+                last_input=last_name,
+                first_input=first_name,
+            )
+            my_expectation = (first_name, last_name)
+            # assert (
+            #     optional_arguments(
+            #         last_input=last_name,
+            #         first_input=first_name,
+            #     )
+            # == (first_name, last_name)
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     optional_arguments(
+            #         last_input=last_name,
+            #         first_input=first_name,
+            #     ),
+            #     (first_name, last_name)
             # )
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
@@ -3610,12 +3888,51 @@ the test is green again.
             self.assertEqual(reality, my_expectation)
 
         def test_optional_arguments(self):
-            first, last = 'first', 'last'
-
-            reality = src.functions.optional_arguments(
-                first, last_input=last,
+            optional_arguments = (
+                src.functions.optional_arguments
             )
-            my_expectation = (first, last)
+
+            first_name, last_name = 'jane', 'doe'
+
+            reality = optional_arguments(first_name)
+            my_expectation = (first_name, last_name)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 221
+
+            first_name, blow = 'joe', 'blow'
+
+            reality = optional_arguments(
+                first_name, blow
+            )
+            my_expectation = (first_name, blow)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 230
+
+            first_name = 'john'
+
+            reality = optional_arguments(
+                first_input=first_name
+            )
+            my_expectation = (first_name, last_name)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 239
+
+            last_name = 'smith'
+
+            reality = optional_arguments(
+                last_input=last_name,
+                first_input=first_name,
+            )
+            my_expectation = (first_name, last_name)
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
