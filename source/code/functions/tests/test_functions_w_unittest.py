@@ -6,46 +6,45 @@ class TestFunctions(unittest.TestCase):
 
     def test_making_a_function_w_pass(self):
         result = src.functions.w_pass()
-        assert result is None
-        self.assertEqual(result, None)
 
+        assert result is None
+        self.assertIs(result, None)
 
     def test_making_a_function_w_return(self):
         result = src.functions.w_return()
-        assert result is None
-        self.assertEqual(result, None)
 
+        assert result is None
+        self.assertIs(result, None)
 
     def test_making_a_function_w_return_none(self):
         result = src.functions.w_return_none()
-        assert result is None
-        self.assertEqual(result, None)
 
+        assert result is None
+        self.assertIs(result, None)
 
     def test_what_happens_after_functions_return(self):
-        result = (
-            src.functions
-              .return_leaves_the_function()
-        )
-        assert result is None
-        self.assertEqual(result, None)
+        result = src.functions.return_leaves_the_function()
 
+        assert result is None
+        self.assertIs(result, None)
 
     def test_constant_function(self):
         result = src.functions.constant()
-        my_expectation = 'the same thing'
-        assert result == my_expectation
-        self.assertEqual(result, my_expectation)
+        expectation = 'the same thing'
 
+        assert result == expectation
+        self.assertEqual(result, expectation)
 
     def test_identity_function(self):
         result = src.functions.identity(None)
+
         assert result == None
         self.assertEqual(result, None)
 
         result = src.functions.identity(object)
-        self.assertEqual(result, object)
 
+        assert result == object
+        self.assertEqual(result, object)
 
     def test_why_use_a_function(self):
         def add_x(number):
@@ -101,13 +100,11 @@ class TestFunctions(unittest.TestCase):
         assert result == expectation
         self.assertEqual(result, expectation)
 
-
     def test_positional_arguments(self):
         positional_arguments = (
             src.functions.positional_arguments
         )
         first, last = 'first', 'last'
-        self.assertEqual(reality, my_expectation)
 
         reality = positional_arguments(first, last)
         my_expectation = (first, last)
@@ -127,7 +124,9 @@ class TestFunctions(unittest.TestCase):
         a_tuple = (1, 2, 3, 'n')
         a_list = [1, 2, 3, 'n']
 
-        reality = positional_arguments(a_tuple, a_list)
+        reality = positional_arguments(
+            a_tuple, a_list
+        )
         my_expectation = (a_tuple, a_list)
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
@@ -137,7 +136,6 @@ class TestFunctions(unittest.TestCase):
         )
         a_set = {1, 2, 3, 'n'}
         a_dictionary = {'key': 'value'}
-        self.assertEqual(reality, my_expectation)
 
         reality = keyword_arguments(
             a_set, a_dictionary,
@@ -145,7 +143,6 @@ class TestFunctions(unittest.TestCase):
         my_expectation = (a_set, a_dictionary)
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
-
 
     def test_keyword_arguments(self):
         keyword_arguments = (
@@ -199,7 +196,6 @@ class TestFunctions(unittest.TestCase):
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
-
     def test_args_and_kwargs(self):
         first, last = 'first', 'last'
 
@@ -209,7 +205,6 @@ class TestFunctions(unittest.TestCase):
         my_expectation = (first, last)
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
-
 
     def test_optional_arguments(self):
         optional_arguments = (
@@ -250,7 +245,6 @@ class TestFunctions(unittest.TestCase):
         my_expectation = (first_name, last_name)
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
-
 
     def test_unknown_number_of_arguments(self):
         unknown_number_of_arguments = (
@@ -296,7 +290,9 @@ class TestFunctions(unittest.TestCase):
 
         a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
 
-        reality = unknown_number_of_arguments(**a_dictionary)
+        reality = unknown_number_of_arguments(
+            **a_dictionary
+        )
         my_expectation = ((), a_dictionary)
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)

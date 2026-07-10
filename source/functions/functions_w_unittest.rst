@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test functions with unittest — move the functions project's bare assert tests onto unittest.TestCase. Open functions; uv run pytest-watcher . --now (12 passed). Add class Functions then rename to TestFunctions → AttributeError: 'TestFunctions' object has no attribute 'assertEqual'. Parent unittest.TestCase → NameError name 'unittest' is not defined (pytest: Did you forget to import 'unittest'?); import unittest → AssertionError: True != False then green with assertEqual(False, False). For each of the 12 tests (test_making_a_function_w_pass through test_unknown_number_of_arguments): move into TestFunctions (first method replaces test_failure) → TypeError takes 0 positional arguments but 1 was given (need self); add assertIsNot / assertNotEqual → AssertionError e.g. unexpectedly identical: None, 'the same thing' == 'the same thing', None == None, <class 'object'> == <class 'object>', ('first', 'last') == ('first', 'last'); switch to assertIs / assertEqual; keep bare assert + self.assert*; use result / reality / my_expectation locals; remove the commented lines; git commit. Ends with TestFunctions + 12 methods + # Exceptions seen AssertionError NameError TypeError SyntaxError ModuleNotFoundError AttributeError. Review: unittest.TestCase methods or bare assert. What is next: test person with unittest.
+  :keywords: Jacob Itegboje, Pumping Python, test functions with unittest, functions unittest, TestFunctions, unittest.TestCase, import unittest, AttributeError has no attribute assertEqual, NameError name 'unittest' is not defined, Did you forget to import unittest, AssertionError True != False, TypeError takes 0 positional arguments but 1 was given, self first argument method, assertIsNot, assertIs, assertNotEqual, assertEqual, unexpectedly identical None, the same thing, identity function None object, positional arguments, keyword arguments, args and kwargs, optional arguments, unknown_number_of_arguments, reality == my_expectation, bare assert and assertEqual, uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, another way to write tests, test_functions_w_unittest
 
 .. include:: ../links.rst
 
@@ -1170,8 +1170,6 @@ the test is green again.
 
     AssertionError: <class 'object'> == <class 'object'>
 
-  the test passes.
-
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
 
   .. code-block:: python
@@ -1193,6 +1191,8 @@ the test is green again.
 
 
     def test_why_use_a_function():
+
+  the test passes.
 
 * I add :ref:`variables<what is a variable?>` for ``src.functions.identity``
 
@@ -4701,7 +4701,7 @@ green.
 close the project
 *********************************************************************************
 
-* I close ``functions.py``
+* I close ``test_functions.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
@@ -4760,7 +4760,7 @@ So far, you know
 * :ref:`that everything in Python is an object<everything is an object>`
 * :ref:`how to use the unittest library<another way to write tests>`
 
-:ref:`Would you like to test the person project with the unittest library?<test telephone with unittest>`
+:ref:`Would you like to test the person project with the unittest library?<test person with unittest>`
 
 ----
 
