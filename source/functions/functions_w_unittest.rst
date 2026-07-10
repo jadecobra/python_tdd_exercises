@@ -1359,10 +1359,545 @@ green again.
 
   .. code-block:: python
     :lineno-start: 49
-    :emphasize-lines: 7, 9, 11, 13, 15, 17, 19, 21, 23, 25
+    :emphasize-lines: 7, 9
 
         # def test_why_use_a_function():
         def test_why_use_a_function(self):
+            def add_x(number):
+                return 3 + number
+
+            assert add_x(0) == 3
+            self.assertNotEqual(add_x(0), 3)
+            assert add_x(1) == 4
+            self.assertNotEqual(add_x(1), 4)
+
+  .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 2, 4, 6, 8
+
+            assert add_x(2) == 5
+            self.assertNotEqual(add_x(2), 5)
+            assert add_x(3) == 6
+            self.assertNotEqual(add_x(3), 6)
+            assert add_x(4) == 7
+            self.assertNotEqual(add_x(4), 7)
+            assert add_x(5) == 8
+            self.assertNotEqual(add_x(5), 8)
+
+  .. code-block:: python
+    :lineno-start: 66
+    :emphasize-lines: 2, 4, 6, 8
+
+            assert add_x(6) == 9
+            self.assertNotEqual(add_x(6), 9)
+            assert add_x(7) == 10
+            self.assertNotEqual(add_x(7), 10)
+            assert add_x(8) == 11
+            self.assertNotEqual(add_x(8), 11)
+            assert add_x(9) == 12
+            self.assertNotEqual(add_x(9), 12)
+
+
+    def test_positional_arguments():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 3 == 3
+
+* I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_why_use_a_function`
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 7-8, 10-11
+
+        # def test_why_use_a_function():
+        def test_why_use_a_function(self):
+            def add_x(number):
+                return 3 + number
+
+            assert add_x(0) == 3
+            # self.assertNotEqual(add_x(0), 3)
+            self.assertEqual(add_x(0), 3)
+            assert add_x(1) == 4
+            # self.assertNotEqual(add_x(1), 4)
+            self.assertEqual(add_x(1), 4)
+
+  .. code-block:: python
+    :lineno-start: 60
+    :emphasize-lines: 2-3, 5-6
+
+            assert add_x(2) == 5
+            # self.assertNotEqual(add_x(2), 5)
+            self.assertEqual(add_x(2), 5)
+            assert add_x(3) == 6
+            # self.assertNotEqual(add_x(3), 6)
+            self.assertEqual(add_x(3), 6)
+
+  .. code-block:: python
+    :lineno-start: 66
+    :emphasize-lines: 2-3, 5-6
+
+            assert add_x(4) == 7
+            # self.assertNotEqual(add_x(4), 7)
+            self.assertEqual(add_x(4), 7)
+            assert add_x(5) == 8
+            # self.assertNotEqual(add_x(5), 8)
+            self.assertEqual(add_x(5), 8)
+
+  .. code-block:: python
+    :lineno-start: 72
+    :emphasize-lines: 2-3, 5-6
+
+            assert add_x(6) == 9
+            # self.assertNotEqual(add_x(6), 9)
+            self.assertEqual(add_x(6), 9)
+            assert add_x(7) == 10
+            # self.assertNotEqual(add_x(7), 10)
+            self.assertEqual(add_x(7), 10)
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 2-3, 5-6
+
+            assert add_x(8) == 11
+            # self.assertNotEqual(add_x(8), 11)
+            self.assertEqual(add_x(8), 11)
+            assert add_x(9) == 12
+            # self.assertNotEqual(add_x(9), 12)
+            self.assertEqual(add_x(9), 12)
+
+
+    def test_positional_arguments():
+
+  the test passes.
+
+* I add :ref:`variables<what is a variable?>` for ``add_x`` and the expectations
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 6-7
+
+        # def test_why_use_a_function():
+        def test_why_use_a_function(self):
+            def add_x(number):
+                return 3 + number
+
+            result = add_x(0)
+            expectation = 3
+            assert add_x(0) == 3
+            # self.assertNotEqual(add_x(0), 3)
+            self.assertEqual(add_x(0), 3)
+
+  .. code-block:: python
+    :lineno-start: 60
+    :emphasize-lines: 1-2
+
+            result = add_x(1)
+            expectation = 4
+            assert add_x(1) == 4
+            # self.assertNotEqual(add_x(1), 4)
+            self.assertEqual(add_x(1), 4)
+
+  .. code-block:: python
+    :lineno-start: 66
+    :emphasize-lines: 1-2
+
+            result = add_x(2)
+            expectation = 5
+            assert add_x(2) == 5
+            # self.assertNotEqual(add_x(2), 5)
+            self.assertEqual(add_x(2), 5)
+
+  .. code-block:: python
+    :lineno-start: 72
+    :emphasize-lines: 1-2
+
+            result = add_x(3)
+            expectation = 6
+            assert add_x(3) == 6
+            # self.assertNotEqual(add_x(3), 6)
+            self.assertEqual(add_x(3), 6)
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 1-2
+
+            result = add_x(4)
+            expectation = 7
+            assert add_x(4) == 7
+            # self.assertNotEqual(add_x(4), 7)
+            self.assertEqual(add_x(4), 7)
+
+  .. code-block:: python
+    :lineno-start: 84
+    :emphasize-lines: 1-2
+
+            result = add_x(5)
+            expectation = 8
+            assert add_x(5) == 8
+            # self.assertNotEqual(add_x(5), 8)
+            self.assertEqual(add_x(5), 8)
+
+  .. code-block:: python
+    :lineno-start: 90
+    :emphasize-lines: 1-2
+
+            result = add_x(6)
+            expectation = 9
+            assert add_x(6) == 9
+            # self.assertNotEqual(add_x(6), 9)
+            self.assertEqual(add_x(6), 9)
+
+  .. code-block:: python
+    :lineno-start: 96
+    :emphasize-lines: 1-2
+
+            result = add_x(7)
+            expectation = 10
+            assert add_x(7) == 10
+            # self.assertNotEqual(add_x(7), 10)
+            self.assertEqual(add_x(7), 10)
+
+  .. code-block:: python
+    :lineno-start: 102
+    :emphasize-lines: 1-2
+
+            result = add_x(8)
+            expectation = 11
+            assert add_x(8) == 11
+            # self.assertNotEqual(add_x(8), 11)
+            self.assertEqual(add_x(8), 11)
+
+  .. code-block:: python
+    :lineno-start: 108
+    :emphasize-lines: 1-2
+
+            result = add_x(9)
+            expectation = 12
+            assert add_x(9) == 12
+            # self.assertNotEqual(add_x(9), 12)
+            self.assertEqual(add_x(9), 12)
+
+
+    def test_positional_arguments():
+
+* I use the :ref:`variables<what is a variable?>` to remove repetition of ``add_x`` and the expectations
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 8-12
+
+        # def test_why_use_a_function():
+        def test_why_use_a_function(self):
+            def add_x(number):
+                return 3 + number
+
+            result = add_x(0)
+            expectation = 3
+            # assert add_x(0) == 3
+            # self.assertNotEqual(add_x(0), 3)
+            # self.assertEqual(add_x(0), 3)
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 62
+    :emphasize-lines: 3-7
+
+            result = add_x(1)
+            expectation = 4
+            # assert add_x(1) == 4
+            # self.assertNotEqual(add_x(1), 4)
+            # self.assertEqual(add_x(1), 4)
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 3-7
+
+            result = add_x(2)
+            expectation = 5
+            # assert add_x(2) == 5
+            # self.assertNotEqual(add_x(2), 5)
+            # self.assertEqual(add_x(2), 5)
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 3-7
+
+            result = add_x(3)
+            expectation = 6
+            # assert add_x(3) == 6
+            # self.assertNotEqual(add_x(3), 6)
+            # self.assertEqual(add_x(3), 6)
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 86
+    :emphasize-lines: 3-7
+
+            result = add_x(4)
+            expectation = 7
+            # assert add_x(4) == 7
+            # self.assertNotEqual(add_x(4), 7)
+            # self.assertEqual(add_x(4), 7)
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 94
+    :emphasize-lines: 3-7
+
+            result = add_x(5)
+            expectation = 8
+            # assert add_x(5) == 8
+            # self.assertNotEqual(add_x(5), 8)
+            # self.assertEqual(add_x(5), 8)
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 102
+    :emphasize-lines: 3-7
+
+            result = add_x(6)
+            expectation = 9
+            # assert add_x(6) == 9
+            # self.assertNotEqual(add_x(6), 9)
+            # self.assertEqual(add_x(6), 9)
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 110
+    :emphasize-lines: 3-7
+
+            result = add_x(7)
+            expectation = 10
+            # assert add_x(7) == 10
+            # self.assertNotEqual(add_x(7), 10)
+            # self.assertEqual(add_x(7), 10)
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 118
+    :emphasize-lines: 3-7
+
+            result = add_x(8)
+            expectation = 11
+            # assert add_x(8) == 11
+            # self.assertNotEqual(add_x(8), 11)
+            # self.assertEqual(add_x(8), 11)
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 126
+    :emphasize-lines: 3-7
+
+            result = add_x(9)
+            expectation = 12
+            # assert add_x(9) == 12
+            # self.assertNotEqual(add_x(9), 12)
+            # self.assertEqual(add_x(9), 12)
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+
+    def test_positional_arguments():
+
+* I remove the commented lines from :ref:`test_why_use_a_function`
+
+  .. code-block:: python
+    :lineno-start: 47
+
+            self.assertEqual(result, object)
+
+        def test_why_use_a_function(self):
+            def add_x(number):
+                return 3 + number
+
+            result = add_x(0)
+            expectation = 3
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 58
+
+            result = add_x(1)
+            expectation = 4
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 63
+
+            result = add_x(2)
+            expectation = 5
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 68
+
+            result = add_x(3)
+            expectation = 6
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 73
+
+            result = add_x(4)
+            expectation = 7
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 78
+
+            result = add_x(5)
+            expectation = 8
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 83
+
+            result = add_x(6)
+            expectation = 9
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 88
+
+            result = add_x(7)
+            expectation = 10
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 93
+
+            result = add_x(8)
+            expectation = 11
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+  .. code-block:: python
+    :lineno-start: 98
+
+            result = add_x(9)
+            expectation = 12
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+
+    def test_positional_arguments():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move test_why_use_a_function to TestFunctions'
+
+----
+
+*********************************************************************************
+test_positional_arguments with unittest
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+
+* I move :ref:`test_positional_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+
+  .. code-block:: python
+    :lineno-start: 47
+    :emphasize-lines: 3-5, 7-16
+
+            self.assertEqual(result, object)
+
+        def test_positional_arguments():
+            def add_x(number):
+                return 3 + number
+
+            assert add_x(0) == 3
+            assert add_x(1) == 4
+            assert add_x(2) == 5
+            assert add_x(3) == 6
+            assert add_x(4) == 7
+            assert add_x(5) == 8
+            assert add_x(6) == 9
+            assert add_x(7) == 10
+            assert add_x(8) == 11
+            assert add_x(9) == 12
+
+
+    def test_keyword_arguments():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestFunctions.test_positional_arguments()
+        takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``self`` to the parentheses of :ref:`test_positional_arguments`
+
+.. code-block:: python
+  :lineno-start: 49
+  :emphasize-lines: 1-2
+
+      # def test_positional_arguments():
+      def test_positional_arguments(self):
+          def add_x(number):
+
+green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_positional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 7, 9, 11, 13, 15, 17, 19, 21, 23, 25
+
+        # def test_positional_arguments():
+        def test_positional_arguments(self):
             def add_x(number):
                 return 3 + number
 
@@ -1388,7 +1923,7 @@ green again.
             self.assertNotEqual(add_x(9), 12)
 
 
-    def test_positional_arguments():
+    def test_keyword_arguments():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1396,14 +1931,14 @@ green again.
 
     AssertionError: 3 == 3
 
-* I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_why_use_a_function`
+* I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 49
     :emphasize-lines: 7-8, 10-11, 13-14, 16-17, 19-20, 22-23, 25-26, 28-29, 31-32, 34-35
 
-        # def test_why_use_a_function():
-        def test_why_use_a_function(self):
+        # def test_positional_arguments():
+        def test_positional_arguments(self):
             def add_x(number):
                 return 3 + number
 
@@ -1439,7 +1974,7 @@ green again.
             self.assertEqual(add_x(9), 12)
 
 
-    def test_positional_arguments():
+    def test_keyword_arguments():
 
   the test passes.
 
@@ -1449,8 +1984,8 @@ green again.
     :lineno-start: 49
     :emphasize-lines: 6-7, 12-13, 18-19, 24-25, 30-31, 36-37, 42-43, 48-49, 54-55, 60-61
 
-        # def test_why_use_a_function():
-        def test_why_use_a_function(self):
+        # def test_positional_arguments():
+        def test_positional_arguments(self):
             def add_x(number):
                 return 3 + number
 
@@ -1515,7 +2050,7 @@ green again.
             self.assertEqual(add_x(9), 12)
 
 
-    def test_positional_arguments():
+    def test_keyword_arguments():
 
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``add_x`` and the expectations
 
@@ -1523,8 +2058,8 @@ green again.
     :lineno-start: 49
     :emphasize-lines: 8-12, 16-20, 24-28, 32-36, 40-44, 48-52, 56-60, 64-68, 72-76, 80-84
 
-        # def test_why_use_a_function():
-        def test_why_use_a_function(self):
+        # def test_positional_arguments():
+        def test_positional_arguments(self):
             def add_x(number):
                 return 3 + number
 
@@ -1609,16 +2144,16 @@ green again.
             self.assertEqual(result, expectation)
 
 
-    def test_positional_arguments():
+    def test_keyword_arguments():
 
-* I remove the commented lines from :ref:`test_why_use_a_function`
+* I remove the commented lines from :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 47
 
             self.assertEqual(result, object)
 
-        def test_why_use_a_function(self):
+        def test_positional_arguments(self):
             def add_x(number):
                 return 3 + number
 
@@ -1673,7 +2208,7 @@ green again.
             self.assertEqual(result, expectation)
 
 
-    def test_positional_arguments():
+    def test_keyword_arguments():
 
 * I add a git_ commit message in the other terminal_
 
@@ -1681,7 +2216,7 @@ green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_why_use_a_function to TestFunctions'
+    'move test_positional_arguments to TestFunctions'
 
 ----
 
