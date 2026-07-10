@@ -24,8 +24,8 @@ def test_making_a_class_w_object():
 
 def test_is_none_an_object():
     assert isinstance(None, object)
-    # assert issubclass(None, object)
     # fails because None is not a class
+    # assert issubclass(None, object)
 
 
 def test_is_a_boolean_an_object():

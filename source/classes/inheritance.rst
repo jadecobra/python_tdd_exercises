@@ -1808,7 +1808,7 @@ the test passes.
 
   because :ref:`None<what is None?>` is not a :ref:`class<what is a class?>`.
 
-* I comment the line out with a note to help me remember
+* I add a note and comment the line out
 
   .. code-block:: python
     :lineno-start: 25
@@ -1816,8 +1816,8 @@ the test passes.
 
     def test_is_none_an_object():
         assert isinstance(None, object)
-        # assert issubclass(None, object)
         # fails because None is not a class
+        # assert issubclass(None, object)
 
 
     def test_is_a_boolean_an_object():

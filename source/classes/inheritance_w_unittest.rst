@@ -305,14 +305,12 @@ the test is green again.
 
   .. code-block:: python
     :lineno-start: 15
-    :emphasize-lines: 4-6
+    :emphasize-lines: 4
 
         # def test_making_a_class_w_pass():
         def test_making_a_class_w_pass(self):
             assert isinstance(WPass(), object)
-            self.assertNotIsInstance(
-                WPass(), object
-            )
+            self.assertNotIsInstance(WPass(), object)
 
             assert issubclass(WPass, object)
 
@@ -336,10 +334,8 @@ the test is green again.
         # def test_making_a_class_w_pass():
         def test_making_a_class_w_pass(self):
             assert isinstance(WPass(), object)
-            # self.assertNotIsInstance(
-            self.assertIsInstance(
-                WPass(), object
-            )
+            # self.assertNotIsInstance(WPass(), object)
+            self.assertIsInstance(WPass(), object)
 
             assert issubclass(WPass, object)
 
@@ -352,20 +348,16 @@ the test is green again.
 
   .. code-block:: python
     :lineno-start: 15
-    :emphasize-lines: 10-12
+    :emphasize-lines: 8
 
         # def test_making_a_class_w_pass():
         def test_making_a_class_w_pass(self):
             assert isinstance(WPass(), object)
-            # self.assertNotIsInstance(
-            self.assertIsInstance(
-                WPass(), object
-            )
+            # self.assertNotIsInstance(WPass(), object)
+            self.assertIsInstance(WPass(), object)
 
             assert issubclass(WPass, object)
-            self.assertNotIsSubclass(
-                WPass, object
-            )
+            self.assertNotIsSubclass(WPass, object)
 
 
     def test_making_a_class_w_parentheses():
@@ -382,21 +374,17 @@ the test is green again.
 
   .. code-block:: python
     :lineno-start: 15
-    :emphasize-lines: 10-11
+    :emphasize-lines: 8-9
 
         # def test_making_a_class_w_pass():
         def test_making_a_class_w_pass(self):
             assert isinstance(WPass(), object)
-            # self.assertNotIsInstance(
-            self.assertIsInstance(
-                WPass(), object
-            )
+            # self.assertNotIsInstance(WPass(), object)
+            self.assertIsInstance(WPass(), object)
 
             assert issubclass(WPass, object)
-            # self.assertNotIsSubclass(
-            self.assertIsSubclass(
-                WPass, object
-            )
+            # self.assertNotIsSubclass(WPass, object)
+            self.assertIsSubclass(WPass, object)
 
 
     def test_making_a_class_w_parentheses():
@@ -412,14 +400,10 @@ the test is green again.
 
         def test_making_a_class_w_pass(self):
             assert isinstance(WPass(), object)
-            self.assertIsInstance(
-                WPass(), object
-            )
+            self.assertIsInstance(WPass(), object)
 
             assert issubclass(WPass, object)
-            self.assertIsSubclass(
-                WPass, object
-            )
+            self.assertIsSubclass(WPass, object)
 
 
     def test_making_a_class_w_parentheses():
@@ -446,16 +430,13 @@ test_making_a_class_w_parentheses with unittest
 
 * I go back to the terminal_ where the tests are running.
 
-* I move :ref:`test_making_a_class_w_parentheses` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>` and replace ``test_failure``
+* I move :ref:`test_making_a_class_w_parentheses` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 6-8
+    :lineno-start: 20
+    :emphasize-lines: 3-5
 
-            assert issubclass(WPass, object)
-            self.assertIsSubclass(
-                WPass, object
-            )
+            self.assertIsSubclass(WPass, object)
 
         def test_making_a_class_w_parentheses():
             assert isinstance(WParentheses(), object)
@@ -485,7 +466,7 @@ test_making_a_class_w_parentheses with unittest
 I add ``self`` to the parentheses of :ref:`test_making_a_class_w_parentheses`
 
 .. code-block:: python
-  :lineno-start: 26
+  :lineno-start: 22
   :emphasize-lines: 1-2
 
       # def test_making_a_class_w_parentheses():
@@ -504,7 +485,7 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assert_not_is_instance>`
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 22
     :emphasize-lines: 4-6
 
         # def test_making_a_class_w_parentheses():
@@ -530,7 +511,7 @@ green again.
 * I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 22
     :emphasize-lines: 4-5
 
         # def test_making_a_class_w_parentheses():
@@ -551,7 +532,7 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubclass method<test_assert_not_is_subclass>`
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 22
     :emphasize-lines: 10-12
 
         # def test_making_a_class_w_parentheses():
@@ -581,7 +562,7 @@ green again.
 * I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 22
     :emphasize-lines: 10-11
 
         # def test_making_a_class_w_parentheses():
@@ -606,23 +587,17 @@ green again.
 * I remove the commented lines from :ref:`test_making_a_class_w_parentheses`
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 20
+    :emphasize-lines: 5, 8
 
-            assert issubclass(WPass, object)
-            self.assertIsSubclass(
-                WPass, object
-            )
+            self.assertIsSubclass(WPass, object)
 
         def test_making_a_class_w_parentheses(self):
             assert isinstance(WParentheses(), object)
-            self.assertIsInstance(
-                WParentheses(), object
-            )
+            self.assertIsInstance(WParentheses(), object)
 
             assert issubclass(WParentheses, object)
-            self.assertIsSubclass(
-                WParentheses, object
-            )
+            self.assertIsSubclass(WParentheses, object)
 
 
     def test_making_a_class_w_object():
@@ -649,16 +624,13 @@ test_making_a_class_w_object with unittest
 
 * I go back to the terminal_ where the tests are running.
 
-* I move :ref:`test_making_a_class_w_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>` and replace ``test_failure``
+* I move :ref:`test_making_a_class_w_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
   .. code-block:: python
-    :lineno-start: 32
-    :emphasize-lines: 6-8
+    :lineno-start: 27
+    :emphasize-lines: 3-5
 
-            assert issubclass(WParentheses, object)
-            self.assertIsSubclass(
-                WParentheses, object
-            )
+            self.assertIsSubclass(WParentheses, object)
 
         def test_making_a_class_w_object():
             assert isinstance(WObject(), object)
@@ -688,13 +660,13 @@ test_making_a_class_w_object with unittest
 I add ``self`` to the parentheses of :ref:`test_making_a_class_w_object`
 
 .. code-block:: python
-  :lineno-start: 37
+  :lineno-start: 29
   :emphasize-lines: 1-2
 
       # def test_making_a_class_w_object():
       def test_making_a_class_w_object(self):
 
-green again.
+green.
 
 ----
 
@@ -707,15 +679,13 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assert_not_is_instance>`
 
   .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 4-6
+    :lineno-start: 29
+    :emphasize-lines: 4
 
         # def test_making_a_class_w_object():
         def test_making_a_class_w_object(self):
             assert isinstance(WObject(), object)
-            self.assertNotIsInstance(
-                WObject(), object
-            )
+            self.assertNotIsInstance(WObject(), object)
 
             assert issubclass(WObject, object)
 
@@ -733,16 +703,14 @@ green again.
 * I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 29
     :emphasize-lines: 4-5
 
         # def test_making_a_class_w_object():
         def test_making_a_class_w_object(self):
             assert isinstance(WObject(), object)
-            # self.assertNotIsInstance(
-            self.assertIsInstance(
-                WObject(), object
-            )
+            # self.assertNotIsInstance(WObject(), object)
+            self.assertIsInstance(WObject(), object)
 
             assert issubclass(WObject, object)
 
@@ -754,21 +722,17 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubclass method<test_assert_not_is_subclass>`
 
   .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 10-12
+    :lineno-start: 29
+    :emphasize-lines: 8
 
         # def test_making_a_class_w_object():
         def test_making_a_class_w_object(self):
             assert isinstance(WObject(), object)
-            # self.assertNotIsInstance(
-            self.assertIsInstance(
-                WObject(), object
-            )
+            # self.assertNotIsInstance(WObject(), object)
+            self.assertIsInstance(WObject(), object)
 
             assert issubclass(WObject, object)
-            self.assertNotIsSubclass(
-                WObject, object
-            )
+            self.assertNotIsSubclass(WObject, object)
 
 
     def test_is_none_an_object():
@@ -784,22 +748,18 @@ green again.
 * I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
 
   .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 10-11
+    :lineno-start: 29
+    :emphasize-lines: 8-9
 
         # def test_making_a_class_w_object():
         def test_making_a_class_w_object(self):
             assert isinstance(WObject(), object)
-            # self.assertNotIsInstance(
-            self.assertIsInstance(
-                WObject(), object
-            )
+            # self.assertNotIsInstance(WObject(), object)
+            self.assertIsInstance(WObject(), object)
 
             assert issubclass(WObject, object)
-            # self.assertNotIsSubclass(
-            self.assertNotIsSubclass(
-                WObject, object
-            )
+            # self.assertNotIsSubclass(WObject, object)
+            self.assertIsSubclass(WObject, object)
 
 
     def test_is_none_an_object():
@@ -809,23 +769,16 @@ green again.
 * I remove the commented lines from :ref:`test_making_a_class_w_object`
 
   .. code-block:: python
-    :lineno-start: 32
+    :lineno-start: 27
 
-            assert issubclass(WParentheses, object)
-            self.assertIsSubclass(
-                WParentheses, object
-            )
+            self.assertIsSubclass(WParentheses, object)
 
         def test_making_a_class_w_object(self):
             assert isinstance(WObject(), object)
-            self.assertIsInstance(
-                WObject(), object
-            )
+            self.assertIsInstance(WObject(), object)
 
             assert issubclass(WObject, object)
-            self.assertNotIsSubclass(
-                WObject, object
-            )
+            self.assertIsSubclass(WObject, object)
 
 
     def test_is_none_an_object():
@@ -852,21 +805,18 @@ test_is_none_an_object with unittest
 
 * I go back to the terminal_ where the tests are running.
 
-* I move :ref:`test_is_none_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>` and replace ``test_failure``
+* I move :ref:`test_is_none_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 6-8
+    :lineno-start: 34
+    :emphasize-lines: 3-6
 
-            assert issubclass(WObject, object)
-            self.assertNotIsSubclass(
-                WObject, object
-            )
+            self.assertIsSubclass(WObject, object)
 
         def test_is_none_an_object():
             assert isinstance(None, object)
-            # assert issubclass(None, object)
             # fails because None is not a class
+            # assert issubclass(None, object)
 
 
     def test_is_a_boolean_an_object():
@@ -879,7 +829,7 @@ test_is_none_an_object with unittest
         TestClasses.test_is_none_an_object()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes ...
 
 ----
 
@@ -892,7 +842,7 @@ test_is_none_an_object with unittest
 I add ``self`` to the parentheses of :ref:`test_is_none_an_object`
 
 .. code-block:: python
-  :lineno-start: 48
+  :lineno-start: 36
   :emphasize-lines: 1-2
 
       # def test_is_none_an_object():
@@ -911,17 +861,16 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assert_not_is_instance>`
 
   .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 4-6
+    :lineno-start: 36
+    :emphasize-lines: 4
 
         # def test_is_none_an_object():
         def test_is_none_an_object(self):
             assert isinstance(None, object)
-            self.assertNotIsInstance(
-                None, object
-            )
+            self.assertNotIsInstance(None, object)
 
-            assert issubclass(None, object)
+            # fails because None is not a class
+            # assert issubclass(None, object)
 
 
     def test_is_a_boolean_an_object():
@@ -931,105 +880,88 @@ green again.
   .. code-block:: shell
 
     AssertionError:
-        <tests.test_classes.WPass object at 0xffffabcde0f12>
-        is an instance of <class 'object'>
+        None is an instance of <class 'object'>
 
 * I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
 
   .. code-block:: python
-    :lineno-start: 48
+    :lineno-start: 36
     :emphasize-lines: 4-5
 
         # def test_is_none_an_object():
         def test_is_none_an_object(self):
             assert isinstance(None, object)
-            # self.assertNotIsInstance(
-            self.assertIsInstance(
-                None, object
-            )
+            # self.assertNotIsInstance(None, object)
+            self.assertIsInstance(None, object)
 
-            assert issubclass(None, object)
+            # fails because None is not a class
+            # assert issubclass(None, object)
 
 
     def test_is_a_boolean_an_object():
 
   the test passes.
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubclass method<test_assert_not_is_subclass>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsSubclass method<test_assert_is_subclass>`
 
   .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 10-12
+    :lineno-start: 36
+    :emphasize-lines: 9
 
         # def test_is_none_an_object():
         def test_is_none_an_object(self):
             assert isinstance(None, object)
-            # self.assertNotIsInstance(
-            self.assertIsInstance(
-                None, object
-            )
+            # self.assertNotIsInstance(None, object)
+            self.assertIsInstance(None, object)
 
-            assert issubclass(None, object)
-            self.assertNotIsSubclass(
-                None, object
-            )
+            # fails because None is not a class
+            # assert issubclass(None, object)
+            self.assertIsSubclass(None, object)
 
 
     def test_is_a_boolean_an_object():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AssertionError:
-        <class 'tests.test_classes.None'>
-        is a subclass of <class 'object'>
+    AssertionError: None is not a class
 
-* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
+* I comment out the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 10-11
+    :lineno-start: 36
+    :emphasize-lines: 9
 
         # def test_is_none_an_object():
         def test_is_none_an_object(self):
             assert isinstance(None, object)
-            # self.assertNotIsInstance(
-            self.assertIsInstance(
-                None, object
-            )
+            # self.assertNotIsInstance(None, object)
+            self.assertIsInstance(None, object)
 
-            assert issubclass(None, object)
-            # self.assertNotIsSubclass(
-            self.assertNotIsSubclass(
-                None, object
-            )
+            # fails because None is not a class
+            # assert issubclass(None, object)
+            # self.assertIsSubclass(None, object)
 
 
     def test_is_a_boolean_an_object():
 
   the test passes.
 
-* I remove the commented lines from :ref:`test_is_none_an_object`
+* I remove the other commented lines from :ref:`test_is_none_an_object`
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 34
 
-            assert issubclass(WParentheses, object)
-            self.assertIsSubclass(
-                WParentheses, object
-            )
+            self.assertIsSubclass(WObject, object)
 
         def test_is_none_an_object(self):
             assert isinstance(None, object)
-            self.assertIsInstance(
-                None, object
-            )
+            self.assertIsInstance(None, object)
 
-            assert issubclass(None, object)
-            self.assertNotIsSubclass(
-                None, object
-            )
+            # fails because None is not a class
+            # assert issubclass(None, object)
+            # self.assertIsSubclass(None, object)
 
 
     def test_is_a_boolean_an_object():

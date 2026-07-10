@@ -35,8 +35,8 @@ class TestClass(unittest.TestCase):
         assert isinstance(None, object)
         self.assertIsInstance(None, object)
         # assert issubclass(None, object)
-        # self.assertIsSubclass(None, object)
         # fails because None is not a class
+        # self.assertIsSubclass(None, object)
 
     def test_is_a_boolean_an_object(self):
         assert isinstance(bool, object)
