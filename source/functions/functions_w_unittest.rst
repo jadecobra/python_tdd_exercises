@@ -1709,6 +1709,8 @@ green again.
 
     def test_positional_arguments():
 
+  the test is still green.
+
 * I remove the commented lines from :ref:`test_why_use_a_function`
 
   .. code-block:: python
@@ -2103,7 +2105,7 @@ green.
 
   the test passes.
 
-* I add :ref:`variables<what is a variable?>` for ``positional_arguments``, ``keyword_arguments`` and the expectations
+* I add :ref:`variables<what is a variable?>` for the :ref:`calls<how to call a function with input>` to ``positional_arguments``, ``keyword_arguments`` and their expectations
 
   .. code-block:: python
     :lineno-start: 103
@@ -2213,11 +2215,11 @@ green.
 
     def test_keyword_arguments():
 
-* I use the :ref:`variables<what is a variable?>` to remove repetition of ``positional_arguments``, ``keyword_arguments`` and the expectations from :ref:`test_positional_arguments`
+* I use the :ref:`variables<what is a variable?>` to remove repetition of the :ref:`calls<how to call a function with input>` to ``positional_arguments``, ``keyword_arguments`` and their expectations, from :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 103
-    :emphasize-lines: 10-20
+    :emphasize-lines: 10-13, 15-20
 
         # def test_positional_arguments():
         def test_positional_arguments(self):
@@ -2242,7 +2244,7 @@ green.
 
   .. code-block:: python
     :lineno-start: 124
-    :emphasize-lines: 3-13
+    :emphasize-lines: 3-6, 8-13
 
             reality = positional_arguments(last, first)
             my_expectation = (last, first)
@@ -2260,7 +2262,7 @@ green.
 
   .. code-block:: python
     :lineno-start: 138
-    :emphasize-lines: 3-12
+    :emphasize-lines: 3-6, 8-12
 
             reality = positional_arguments(0, 1)
             my_expectation = (0, 1)
@@ -2277,7 +2279,7 @@ green.
 
   .. code-block:: python
     :lineno-start: 151
-    :emphasize-lines: 8-18
+    :emphasize-lines: 8-11, 13-18
 
             a_tuple = (1, 2, 3, 'n')
             a_list = [1, 2, 3, 'n']
@@ -2300,7 +2302,7 @@ green.
 
   .. code-block:: python
     :lineno-start: 170
-    :emphasize-lines: 11-25
+    :emphasize-lines: 11-16, 18-25
 
             keyword_arguments = (
                 src.functions.keyword_arguments
@@ -2409,6 +2411,729 @@ green.
 
     git commit -am \
     'move test_positional_arguments to TestFunctions'
+
+----
+
+*********************************************************************************
+test_keyword_arguments with unittest
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+
+* I move :ref:`test_keyword_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+
+  .. code-block:: python
+    :lineno-start: 145
+    :emphasize-lines: 3-7
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_keyword_arguments():
+            keyword_arguments = (
+                src.functions.keyword_arguments
+            )
+            first, last = 'first', 'last'
+
+  .. code-block:: python
+    :lineno-start: 153
+    :emphasize-lines: 1-18
+
+            assert (
+                keyword_arguments(
+                    first_input=first, last_input=last,
+                )
+            == (first, last)
+            )
+            assert (
+                keyword_arguments(
+                    last_input=last, first_input=first,
+                )
+            == (first, last)
+            )
+            assert (
+                keyword_arguments(
+                    last_input=0, first_input=1,
+                )
+            == (1, 0)
+            )
+
+  .. code-block:: python
+    :lineno-start: 172
+    :emphasize-lines: 1-9
+
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
+            assert (
+                keyword_arguments(
+                    first_input=a_tuple,
+                    last_input=a_list,
+                )
+            == (a_tuple, a_list)
+            )
+
+  .. code-block:: python
+    :lineno-start: 182
+    :emphasize-lines: 1-12
+
+            positional_arguments = (
+                src.functions.positional_arguments
+            )
+            a_set = {1, 2, 3, 'n'}
+            a_dictionary = {'key': 'value'}
+            assert (
+                positional_arguments(
+                    last_input=a_dictionary,
+                    first_input=a_set,
+                )
+            == (a_set, a_dictionary)
+            )
+
+
+    def test_args_and_kwargs():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestFunctions.test_keyword_arguments()
+        takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``self`` to the parentheses of :ref:`test_keyword_arguments`
+
+.. code-block:: python
+  :lineno-start: 147
+  :emphasize-lines: 1-2
+
+      # def test_keyword_arguments():
+      def test_keyword_arguments(self):
+
+green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_keyword_arguments`
+
+  .. code-block:: python
+    :lineno-start: 147
+    :emphasize-lines: 14-19
+
+        # def test_keyword_arguments():
+        def test_keyword_arguments(self):
+            keyword_arguments = (
+                src.functions.keyword_arguments
+            )
+            first, last = 'first', 'last'
+
+            assert (
+                keyword_arguments(
+                    first_input=first, last_input=last,
+                )
+            == (first, last)
+            )
+            self.assertNotEqual(
+                keyword_arguments(
+                    first_input=first, last_input=last,
+                ),
+                (first, last)
+            )
+
+  .. code-block:: python
+    :lineno-start: 166
+    :emphasize-lines: 7-12
+
+            assert (
+                keyword_arguments(
+                    last_input=last, first_input=first,
+                )
+            == (first, last)
+            )
+            self.assertNotEqual(
+                keyword_arguments(
+                    last_input=last, first_input=first,
+                ),
+                (first, last)
+            )
+
+  .. code-block:: python
+    :lineno-start: 178
+    :emphasize-lines: 7-12
+
+            assert (
+                keyword_arguments(
+                    last_input=0, first_input=1,
+                )
+            == (1, 0)
+            )
+            self.assertNotEqual(
+                keyword_arguments(
+                    last_input=0, first_input=1,
+                ),
+                (1, 0)
+            )
+
+  .. code-block:: python
+    :lineno-start: 191
+    :emphasize-lines: 10-16
+
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
+            assert (
+                keyword_arguments(
+                    first_input=a_tuple,
+                    last_input=a_list,
+                )
+            == (a_tuple, a_list)
+            )
+            self.assertEqual(
+                keyword_arguments(
+                    first_input=a_tuple,
+                    last_input=a_list,
+                ),
+                (a_tuple, a_list)
+            )
+
+  .. code-block:: python
+    :lineno-start: 208
+    :emphasize-lines: 13-19
+
+            positional_arguments = (
+                src.functions.positional_arguments
+            )
+            a_set = {1, 2, 3, 'n'}
+            a_dictionary = {'key': 'value'}
+            assert (
+                positional_arguments(
+                    last_input=a_dictionary,
+                    first_input=a_set,
+                )
+            == (a_set, a_dictionary)
+            )
+            self.assertNotEqual(
+                positional_arguments(
+                    last_input=a_dictionary,
+                    first_input=a_set,
+                ),
+                (a_set, a_dictionary)
+            )
+
+
+    def test_args_and_kwargs():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
+
+* I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_keyword_arguments`
+
+  .. code-block:: python
+    :lineno-start: 147
+    :emphasize-lines: 14-15
+
+        # def test_keyword_arguments():
+        def test_keyword_arguments(self):
+            keyword_arguments = (
+                src.functions.keyword_arguments
+            )
+            first, last = 'first', 'last'
+
+            assert (
+                keyword_arguments(
+                    first_input=first, last_input=last,
+                )
+            == (first, last)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                keyword_arguments(
+                    first_input=first, last_input=last,
+                ),
+                (first, last)
+            )
+
+  .. code-block:: python
+    :lineno-start: 167
+    :emphasize-lines: 7-8
+
+            assert (
+                keyword_arguments(
+                    last_input=last, first_input=first,
+                )
+            == (first, last)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                keyword_arguments(
+                    last_input=last, first_input=first,
+                ),
+                (first, last)
+            )
+
+  .. code-block:: python
+    :lineno-start: 180
+    :emphasize-lines: 7-8
+
+            assert (
+                keyword_arguments(
+                    last_input=0, first_input=1,
+                )
+            == (1, 0)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                keyword_arguments(
+                    last_input=0, first_input=1,
+                ),
+                (1, 0)
+            )
+
+  .. code-block:: python
+    :lineno-start: 194
+    :emphasize-lines: 10-11
+
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
+            assert (
+                keyword_arguments(
+                    first_input=a_tuple,
+                    last_input=a_list,
+                )
+            == (a_tuple, a_list)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                keyword_arguments(
+                    first_input=a_tuple,
+                    last_input=a_list,
+                ),
+                (a_tuple, a_list)
+            )
+
+  .. code-block:: python
+    :lineno-start: 212
+    :emphasize-lines: 13-14
+
+            positional_arguments = (
+                src.functions.positional_arguments
+            )
+            a_set = {1, 2, 3, 'n'}
+            a_dictionary = {'key': 'value'}
+            assert (
+                positional_arguments(
+                    last_input=a_dictionary,
+                    first_input=a_set,
+                )
+            == (a_set, a_dictionary)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                positional_arguments(
+                    last_input=a_dictionary,
+                    first_input=a_set,
+                ),
+                (a_set, a_dictionary)
+            )
+
+
+    def test_args_and_kwargs():
+
+  the test passes.
+
+* I add :ref:`variables<what is a variable?>` for the :ref:`calls<how to call a function with input>` to ``keyword_arguments``, ``positional_arguments`` and their expectations
+
+  .. code-block:: python
+    :lineno-start: 147
+    :emphasize-lines: 8-11
+
+        # def test_keyword_arguments():
+        def test_keyword_arguments(self):
+            keyword_arguments = (
+                src.functions.keyword_arguments
+            )
+            first, last = 'first', 'last'
+
+            reality = keyword_arguments(
+                first_input=first, last_input=last,
+            )
+            my_expectation = (first, last)
+            assert (
+                keyword_arguments(
+                    first_input=first, last_input=last,
+                )
+            == (first, last)
+            )
+            # self.assertNotEqual(
+
+  .. code-block:: python
+    :lineno-start: 165
+    :emphasize-lines: 8-11
+
+            self.assertEqual(
+                keyword_arguments(
+                    first_input=first, last_input=last,
+                ),
+                (first, last)
+            )
+
+            reality = keyword_arguments(
+                last_input=last, first_input=first,
+            )
+            my_expectation = (first, last)
+            assert (
+                keyword_arguments(
+                    last_input=last, first_input=first,
+                )
+            == (first, last)
+            )
+            # self.assertNotEqual(
+
+  .. code-block:: python
+    :lineno-start: 183
+    :emphasize-lines: 8-11
+
+            self.assertEqual(
+                keyword_arguments(
+                    last_input=last, first_input=first,
+                ),
+                (first, last)
+            )
+
+            reality = keyword_arguments(
+                last_input=0, first_input=1,
+            )
+            my_expectation = (1, 0)
+            assert (
+                keyword_arguments(
+                    last_input=0, first_input=1,
+                )
+            == (1, 0)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                keyword_arguments(
+                    last_input=0, first_input=1,
+                ),
+                (1, 0)
+            )
+
+  .. code-block:: python
+    :lineno-start: 208
+    :emphasize-lines: 4-8
+
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
+
+            reality = keyword_arguments(
+                first_input=a_tuple,
+                last_input=a_list,
+            )
+            my_expectation = (a_tuple, a_list)
+            assert (
+                keyword_arguments(
+                    first_input=a_tuple,
+                    last_input=a_list,
+                )
+            == (a_tuple, a_list)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                keyword_arguments(
+                    first_input=a_tuple,
+                    last_input=a_list,
+                ),
+                (a_tuple, a_list)
+            )
+
+  .. code-block:: python
+    :lineno-start: 232
+    :emphasize-lines: 7-11
+
+            positional_arguments = (
+                src.functions.positional_arguments
+            )
+            a_set = {1, 2, 3, 'n'}
+            a_dictionary = {'key': 'value'}
+
+            reality = positional_arguments(
+                last_input=a_dictionary,
+                first_input=a_set,
+            )
+            my_expectation = (a_set, a_dictionary)
+            assert (
+                positional_arguments(
+                    last_input=a_dictionary,
+                    first_input=a_set,
+                )
+            == (a_set, a_dictionary)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                positional_arguments(
+                    last_input=a_dictionary,
+                    first_input=a_set,
+                ),
+                (a_set, a_dictionary)
+            )
+
+
+    def test_args_and_kwargs():
+
+* I use the :ref:`variables<what is a variable?>` to remove repetition of the :ref:`calls<how to call a function with input>` to ``keyword_arguments``, ``positional_arguments`` and their expectations, from :ref:`test_keyword_arguments`
+
+  .. code-block:: python
+    :lineno-start: 147
+    :emphasize-lines: 12-26
+
+        # def test_keyword_arguments():
+        def test_keyword_arguments(self):
+            keyword_arguments = (
+                src.functions.keyword_arguments
+            )
+            first, last = 'first', 'last'
+
+            reality = keyword_arguments(
+                first_input=first, last_input=last,
+            )
+            my_expectation = (first, last)
+            # assert (
+            #     keyword_arguments(
+            #         first_input=first, last_input=last,
+            #     )
+            # == (first, last)
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     keyword_arguments(
+            #         first_input=first, last_input=last,
+            #     ),
+            #     (first, last)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 174
+    :emphasize-lines: 5-19
+
+            reality = keyword_arguments(
+                last_input=last, first_input=first,
+            )
+            my_expectation = (first, last)
+            # assert (
+            #     keyword_arguments(
+            #         last_input=last, first_input=first,
+            #     )
+            # == (first, last)
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     keyword_arguments(
+            #         last_input=last, first_input=first,
+            #     ),
+            #     (first, last)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 194
+    :emphasize-lines: 5-19
+
+            reality = keyword_arguments(
+                last_input=0, first_input=1,
+            )
+            my_expectation = (1, 0)
+            # assert (
+            #     keyword_arguments(
+            #         last_input=0, first_input=1,
+            #     )
+            # == (1, 0)
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     keyword_arguments(
+            #         last_input=0, first_input=1,
+            #     ),
+            #     (1, 0)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 214
+    :emphasize-lines: 9-25
+
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
+
+            reality = keyword_arguments(
+                first_input=a_tuple,
+                last_input=a_list,
+            )
+            my_expectation = (a_tuple, a_list)
+            # assert (
+            #     keyword_arguments(
+            #         first_input=a_tuple,
+            #         last_input=a_list,
+            #     )
+            # == (a_tuple, a_list)
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     keyword_arguments(
+            #         first_input=a_tuple,
+            #         last_input=a_list,
+            #     ),
+            #     (a_tuple, a_list)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 240
+    :emphasize-lines: 12-28
+
+            positional_arguments = (
+                src.functions.positional_arguments
+            )
+            a_set = {1, 2, 3, 'n'}
+            a_dictionary = {'key': 'value'}
+
+            reality = positional_arguments(
+                last_input=a_dictionary,
+                first_input=a_set,
+            )
+            my_expectation = (a_set, a_dictionary)
+            # assert (
+            #     positional_arguments(
+            #         last_input=a_dictionary,
+            #         first_input=a_set,
+            #     )
+            # == (a_set, a_dictionary)
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     positional_arguments(
+            #         last_input=a_dictionary,
+            #         first_input=a_set,
+            #     ),
+            #     (a_set, a_dictionary)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+
+    def test_args_and_kwargs():
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_keyword_arguments`
+
+  .. code-block:: python
+    :lineno-start: 145
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_keyword_arguments(self):
+            keyword_arguments = (
+                src.functions.keyword_arguments
+            )
+            first, last = 'first', 'last'
+
+  .. code-block:: python
+    :lineno-start: 153
+
+            reality = keyword_arguments(
+                first_input=first, last_input=last,
+            )
+            my_expectation = (first, last)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 160
+
+            reality = keyword_arguments(
+                last_input=last, first_input=first,
+            )
+            my_expectation = (first, last)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 167
+
+            reality = keyword_arguments(
+                last_input=0, first_input=1,
+            )
+            my_expectation = (1, 0)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 174
+
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
+
+            reality = keyword_arguments(
+                first_input=a_tuple,
+                last_input=a_list,
+            )
+            my_expectation = (a_tuple, a_list)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 185
+
+            positional_arguments = (
+                src.functions.positional_arguments
+            )
+            a_set = {1, 2, 3, 'n'}
+            a_dictionary = {'key': 'value'}
+
+  .. code-block:: python
+    :lineno-start: 191
+
+            reality = positional_arguments(
+                last_input=a_dictionary,
+                first_input=a_set,
+            )
+            my_expectation = (a_set, a_dictionary)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+
+    def test_args_and_kwargs():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move test_keyword_arguments to TestFunctions'
 
 ----
 
