@@ -941,7 +941,7 @@ I add ``self`` to the parentheses of :ref:`calculate_age<extract calculate_age>`
         this_year = datetime.date.today().year
 
         # def calculate_age(year_of_birth):
-        def calculate_age(self,year_of_birth):
+        def calculate_age(self, year_of_birth):
             return self.this_year - year_of_birth
 
         def test_joe(self):
@@ -1114,13 +1114,82 @@ the test passes.
 
             mary = src.person.Person(
 
+* The :ref:`this_year class attribute<extract this_year attribute>` is now used in only one place :ref:`the calculate_age method<extract calculate_age>`. I can call what it points to directly
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 7-11
+
+    class TestPerson(unittest.TestCase):
+
+        this_year = datetime.date.today().year
+
+        # def calculate_age(year_of_birth):
+        def calculate_age(self, year_of_birth):
+            # return self.this_year - year_of_birth
+            return (
+                datetime.date.today().year
+              - year_of_birth
+            )
+
+        def test_joe(self):
+
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` since :ref:`calculate_age<extract calculate_age>` no longer uses anything from the :ref:`TestPerson class<add TestPerson class>`
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 2
+
+        # def calculate_age(year_of_birth):
+        @staticmethod
+        def calculate_age(self, year_of_birth):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestPerson.calculate_age() missing
+        1 required positional argument: 'year_of_birth'
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+* I remove ``self`` from the parentheses
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 3-4
+
+        # def calculate_age(year_of_birth):
+        @staticmethod
+        # def calculate_age(self, year_of_birth):
+        def calculate_age(year_of_birth):
+
+  the test is green again.
+
+* I remove the commented lines and :ref:`this_year attribute<extract this_year attribute>` since it is no longer used
+
+  .. code-block:: python
+    :lineno-start: 6
+
+    class TestPerson(unittest.TestCase):
+
+        @staticmethod
+        def calculate_age(year_of_birth):
+            return (
+                datetime.date.today().year
+              - year_of_birth
+            )
+
+        def test_joe(self):
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
     git commit -am \
-    'extract this_year attribute'
+    'extract calculate_age'
 
 *********************************************************************************
 close the project
