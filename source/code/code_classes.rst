@@ -16,70 +16,12 @@ the code from ``classes/tests/test_classes.py`` from :ref:`everything is an obje
 ----
 
 *********************************************************************************
-classes tests
-*********************************************************************************
-
-the code from ``person/tests/test_person.py`` from :ref:`classes<what is a class?>`
-
-.. literalinclude:: person/tests/test_person_classes.py
-  :language: python
-  :linenos:
-
-
-*********************************************************************************
-classes solutions
+test objects with unittest: tests
 *********************************************************************************
 
 
-the solutions in ``person/src/person.py`` from :ref:`classes<what is a class?>`
+the solutions in ``classes/tests/test_classes.py`` from :ref:`test objects with unittest`
 
-.. literalinclude:: person/solutions/person_classes.py
-  :language: python
-  :linenos:
-
-
-*********************************************************************************
-AssertionError 2: tests
-*********************************************************************************
-
-the code from ``assertion_error/test_assertion_error.py`` from :ref:`AssertionError 2: use class attributes`
-
-.. literalinclude:: assertion_error/test_assertion_error_2.py
-  :language: python
-  :linenos:
-
-----
-
-*********************************************************************************
-booleans 4: tests
-*********************************************************************************
-
-the code from ``booleans/tests/test_booleans.py`` from :ref:`booleans 4: inheritance`
-
-.. literalinclude:: booleans/test_booleans_classes.py
-  :language: python
-  :linenos:
-
-----
-
-*********************************************************************************
-how to make a calculator 8: tests
-*********************************************************************************
-
-the code from ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 8`
-
-.. literalinclude:: calculator/tests/test_calculator_8.py
-  :language: python
-  :linenos:
-
-
-*********************************************************************************
-how to make a calculator 8: solutions
-*********************************************************************************
-
-
-the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calculator 8`
-
-.. literalinclude:: calculator/solutions/calculator_8.py
+.. literalinclude:: classes/tests/test_classes_w_unittest.py
   :language: python
   :linenos:

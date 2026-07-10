@@ -2494,7 +2494,7 @@ You now know
 * :ref:`what causes TypeError<what causes TypeError?>`
 * :ref:`how to place values in strings<telephone>`
 * :ref:`how to make a person say hello with f-strings<how to make a person with f-strings>`
-* :ref:`how to separate tests from solutions<separate and equal functions>`
+* :ref:`how to separate tests from solutions<separate and equal>`
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`how to make a person with a class<how to make a person with a class>`
 * :ref:`that everything in Python is an object<everything is an object>`

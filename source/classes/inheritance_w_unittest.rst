@@ -34,15 +34,15 @@ open the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd functions
+    cd classes
 
-  the terminal_ shows I am in the ``functions`` folder_
+  the terminal_ shows I am in the ``classes`` folder_
 
   .. code-block:: python
 
-    .../pumping_python/functions
+    .../pumping_python/classes
 
-* I open ``test_functions.py``
+* I open ``test_classes.py``
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -56,14 +56,14 @@ open the project
 
   .. code-block:: python
 
-    test_functions.py ............                      [100%]
+    test_classes.py ............                      [100%]
 
     =================== 12 passed in G.HIs ===================
 
 ----
 
 *********************************************************************************
-add TestFunctions class
+add TestClasses class
 *********************************************************************************
 
 =================================================================================
@@ -72,42 +72,42 @@ add TestFunctions class
 
 ----
 
-* I add a :ref:`class<what is a class?>` named ``Functions`` to ``test_functions.py``
+* I add a :ref:`class<what is a class?>` named ``Classes`` to ``test_classes.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 4, 6-7
 
-    import src.functions
+    import src.classes
 
 
-    class Functions(object):
+    class Classes(object):
 
         def test_failure(self):
             self.assertEqual(True, False)
 
 
-    def test_making_a_function_w_pass():
+    def test_making_a_class_w_pass():
 
   the test is still green.
 
-* I change the name of the :ref:`class<what is a class?>` to ``TestFunctions``
+* I change the name of the :ref:`class<what is a class?>` to ``TestClasses``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 4-5
 
-    import src.functions
+    import src.classes
 
 
-    # class Functions(object):
-    class TestFunctions(object):
+    # class Classes(object):
+    class TestClasses(object):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
-    AttributeError: 'TestFunctions' object
+    AttributeError: 'TestClasses' object
                     has no attribute 'assertEqual'
 
 ----
@@ -118,18 +118,18 @@ add TestFunctions class
 
 ----
 
-* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<what is a class?>` of ``TestFunctions``
+* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<what is a class?>` of ``TestClasses``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 5-6
 
-    import src.functions
+    import src.classes
 
 
-    # class Functions(object):
-    # class TestFunctions(object):
-    class TestFunctions(unittest.TestCase):
+    # class Classes(object):
+    # class TestClasses(object):
+    class TestClasses(unittest.TestCase):
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -144,13 +144,13 @@ add TestFunctions class
     :linenos:
     :emphasize-lines: 2
 
-    import src.functions
+    import src.classes
     import unittest
 
 
-    # class Functions(object):
-    # class TestFunctions(object):
-    class TestFunctions(unittest.TestCase):
+    # class Classes(object):
+    # class TestClasses(object):
+    class TestClasses(unittest.TestCase):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -164,16 +164,16 @@ add TestFunctions class
     :lineno-start: 5
     :emphasize-lines: 6-7
 
-    # class Functions(object):
-    # class TestFunctions(object):
-    class TestFunctions(unittest.TestCase):
+    # class Classes(object):
+    # class TestClasses(object):
+    class TestClasses(unittest.TestCase):
 
         def test_failure(self):
             # self.assertEqual(True, False)
             self.assertEqual(False, False)
 
 
-    def test_making_a_function_w_pass():
+    def test_making_a_class_w_pass():
 
   the test passes.
 
@@ -190,24 +190,24 @@ add TestFunctions class
   .. code-block:: python
     :linenos:
 
-    import src.functions
+    import src.classes
     import unittest
 
 
-    class TestFunctions(unittest.TestCase):
+    class TestClasses(unittest.TestCase):
 
         def test_failure(self):
             self.assertEqual(False, False)
 
 
-    def test_making_a_function_w_pass():
+    def test_making_a_class_w_pass():
 
-* I open a new terminal_ then make sure I am in the ``functions`` folder_
+* I open a new terminal_ then make sure I am in the ``classes`` folder_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd functions
+    cd classes
 
 * I add a git_ commit message in the new terminal_
 
@@ -215,7 +215,7 @@ add TestFunctions class
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add TestFunctions class'
+    'add TestClasses class'
 
 ----
 
@@ -256,7 +256,7 @@ close the project
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<classes: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test objects with unittest: tests>`
 
 ----
 
@@ -276,11 +276,13 @@ You know
 * :ref:`what causes TypeError<what causes TypeError?>`
 * :ref:`how to place values in strings<telephone>`
 * :ref:`how to make a person say hello with f-strings<how to make a person with f-strings>`
-* :ref:`how to separate tests from solutions<separate and equal functions>`
+* :ref:`how to separate tests from solutions<separate and equal>`
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`how to make a person with a class<how to make a person with a class>`
 * :ref:`that everything in Python is an object<everything is an object>`
 * :ref:`how to use the unittest library<another way to write tests>`
+
+:ref:`Would you like to test the classes project with the unittest library?<test classes with unittest>`
 
 ----
 
