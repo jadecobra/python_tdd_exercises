@@ -2275,6 +2275,169 @@ green again.
 ----
 
 *********************************************************************************
+test_dir_of_object with unittest
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+
+* I move :ref:`test_dir_of_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
+
+  .. code-block:: python
+    :lineno-start: 98
+    :emphasize-lines: 3-5
+
+            self.assertIsSubclass(dict, object)
+
+        def test_dir_of_object():
+            assert isinstance(dict, object)
+            assert issubclass(dict, object)
+
+
+    # Exceptions seen():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestClasses.test_dir_of_object()
+        takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``self`` to the parentheses of :ref:`test_dir_of_object`
+
+.. code-block:: python
+  :lineno-start: 100
+  :emphasize-lines: 1-2
+
+      # def test_dir_of_object():
+      def test_dir_of_object(self):
+
+green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubclass methods<test_assert_not_is_subclass>`
+
+  .. code-block:: python
+    :lineno-start: 100
+    :emphasize-lines: 4, 7
+
+        # def test_dir_of_object():
+        def test_dir_of_object(self):
+            assert isinstance(dict, object)
+            self.assertNotIsInstance(dict, object)
+
+            assert issubclass(dict, object)
+            self.assertNotIsSubclass(dict, object)
+
+
+    # Exceptions seen():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <class 'dict'>
+        is an instance of <class 'object'>
+
+* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+
+  .. code-block:: python
+    :lineno-start: 100
+    :emphasize-lines: 4-5
+
+        # def test_dir_of_object():
+        def test_dir_of_object(self):
+            assert isinstance(dict, object)
+            # self.assertNotIsInstance(dict, object)
+            self.assertIsInstance(dict, object)
+
+            assert issubclass(dict, object)
+            self.assertNotIsSubclass(dict, object)
+
+
+    # Exceptions seen():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <class 'dict'>
+        is a subclass of <class 'object'>
+
+* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
+
+  .. code-block:: python
+    :lineno-start: 100
+    :emphasize-lines: 8-9
+
+        # def test_dir_of_object():
+        def test_dir_of_object(self):
+            assert isinstance(dict, object)
+            # self.assertNotIsInstance(dict, object)
+            self.assertIsInstance(dict, object)
+
+            assert issubclass(dict, object)
+            # self.assertNotIsSubclass(dict, object)
+            self.assertIsSubclass(dict, object)
+
+
+    # Exceptions seen():
+
+  the test passes.
+
+* I remove the commented lines from :ref:`test_dir_of_object`
+
+  .. code-block:: python
+    :lineno-start: 98
+
+            self.assertIsSubclass(dict, object)
+
+        def test_dir_of_object(self):
+            assert isinstance(dict, object)
+            self.assertIsInstance(dict, object)
+
+            assert issubclass(dict, object)
+            self.assertIsSubclass(dict, object)
+
+
+    # Exceptions seen():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move test_dir_of_object to TestClasses'
+
+----
+
+*********************************************************************************
 review
 *********************************************************************************
 
