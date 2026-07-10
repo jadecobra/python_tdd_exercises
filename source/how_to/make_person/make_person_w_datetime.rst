@@ -636,6 +636,8 @@ test age with current year
           assert reality == my_expectation
           self.assertEqual(reality, my_expectation)
 
+          joe = src.person.Person(
+
   the test is still green.
 
 * I change the age calculation in ``my_expectation`` of :ref:`say_hello<test say_hello method>` in :ref:`test_jane` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
@@ -657,6 +659,8 @@ test age with current year
             )
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
+
+            jane = src.person.Person(
 
   still green.
 
@@ -680,6 +684,8 @@ test age with current year
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
+            john = src.person.Person(
+
   green.
 
 * I change the age calculation in ``my_expectation`` of :ref:`say_hello<test say_hello method>` in :ref:`test_mary` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
@@ -701,6 +707,8 @@ test age with current year
             )
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
+
+            mary = src.person.Person(
 
   still green.
 
@@ -762,6 +770,8 @@ Each test :ref:`calls datetime.date.today()<test_dir_datetime_date_today>` to ge
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
+            joe = src.person.Person(
+
   still green.
 
 * I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in :ref:`test_jane`
@@ -784,6 +794,8 @@ Each test :ref:`calls datetime.date.today()<test_dir_datetime_date_today>` to ge
             )
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
+
+            jane = src.person.Person(
 
   green.
 
@@ -808,6 +820,8 @@ Each test :ref:`calls datetime.date.today()<test_dir_datetime_date_today>` to ge
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
+            john = src.person.Person(
+
   still green.
 
 * I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in :ref:`test_mary`
@@ -830,6 +844,8 @@ Each test :ref:`calls datetime.date.today()<test_dir_datetime_date_today>` to ge
             )
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
+
+            mary = src.person.Person(
 
   the test is still green.
 
@@ -896,6 +912,8 @@ Each test does a calculation for the age. I can make a :ref:`method<what is a me
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
+            joe = src.person.Person(
+
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
@@ -956,6 +974,8 @@ the test passes.
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
+            joe = src.person.Person(
+
 * I use the :ref:`method<what is a method?>` for ``self.this_year-year_of_birth`` in :ref:`test_jane`
 
   .. code-block:: python
@@ -978,6 +998,8 @@ the test passes.
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
+            jane = src.person.Person(
+
   the test is still green.
 
 * I remove the commented lines from :ref:`test_jane`
@@ -998,10 +1020,12 @@ the test passes.
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
+            jane = src.person.Person(
+
 * I use the :ref:`method<what is a method?>` for ``self.this_year-year_of_birth`` in :ref:`test_john`
 
   .. code-block:: python
-    :lineno-start: 125
+    :lineno-start: 119
     :emphasize-lines: 11-12
 
             reality = src.person.say_hello(
@@ -1020,12 +1044,34 @@ the test passes.
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
+            john = src.person.Person(
+
   still green.
+
+* I remove the commented lines from :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 119
+
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                f' {self.calculate_age(year_of_birth)}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            john = src.person.Person(
 
 * I use the :ref:`method<what is a method?>` for ``self.this_year-year_of_birth`` in :ref:`test_mary`
 
   .. code-block:: python
-    :lineno-start: 171
+    :lineno-start: 162
     :emphasize-lines: 11-12
 
             reality = src.person.say_hello(
@@ -1044,7 +1090,29 @@ the test passes.
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
+            mary = src.person.Person(
+
   green.
+
+* I remove the commented lines from :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 162
+
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                f' {self.calculate_age(year_of_birth)}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            mary = src.person.Person(
 
 * I add a git_ commit message in the other terminal_
 
