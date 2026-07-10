@@ -1400,11 +1400,7 @@ green again.
 
     def test_positional_arguments():
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 3 == 3
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
 * I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_why_use_a_function`
 
@@ -1829,25 +1825,60 @@ test_positional_arguments with unittest
 * I move :ref:`test_positional_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 47
-    :emphasize-lines: 3-5, 7-16
+    :lineno-start: 101
+    :emphasize-lines: 3-7
 
-            self.assertEqual(result, object)
+            self.assertEqual(result, expectation)
 
         def test_positional_arguments():
-            def add_x(number):
-                return 3 + number
+            positional_arguments = (
+                src.functions.positional_arguments
+            )
+            first, last = 'first', 'last'
 
-            assert add_x(0) == 3
-            assert add_x(1) == 4
-            assert add_x(2) == 5
-            assert add_x(3) == 6
-            assert add_x(4) == 7
-            assert add_x(5) == 8
-            assert add_x(6) == 9
-            assert add_x(7) == 10
-            assert add_x(8) == 11
-            assert add_x(9) == 12
+  .. code-block:: python
+    :lineno-start: 109
+    :emphasize-lines: 1-12
+
+            assert (
+                positional_arguments(first, last)
+            == (first, last)
+            )
+            assert (
+                positional_arguments(last, first)
+            == (last, first)
+            )
+            assert (
+                positional_arguments(0, 1)
+            == (0, 1)
+            )
+
+  .. code-block:: python
+    :lineno-start: 122
+    :emphasize-lines: 1-6
+
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
+            assert (
+                positional_arguments(a_tuple, a_list)
+            == (a_tuple, a_list)
+            )
+
+  .. code-block:: python
+    :lineno-start: 129
+    :emphasize-lines: 1-11
+
+            keyword_arguments = (
+                src.functions.keyword_arguments
+            )
+            a_set = {1, 2, 3, 'n'}
+            a_dictionary = {'key': 'value'}
+            assert (
+                keyword_arguments(
+                    a_set, a_dictionary,
+                )
+            == (a_set, a_dictionary)
+            )
 
 
     def test_keyword_arguments():
@@ -1860,7 +1891,7 @@ test_positional_arguments with unittest
         TestFunctions.test_positional_arguments()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+  because ...
 
 ----
 
@@ -1873,14 +1904,13 @@ test_positional_arguments with unittest
 I add ``self`` to the parentheses of :ref:`test_positional_arguments`
 
 .. code-block:: python
-  :lineno-start: 49
+  :lineno-start: 103
   :emphasize-lines: 1-2
 
       # def test_positional_arguments():
       def test_positional_arguments(self):
-          def add_x(number):
 
-green again.
+green.
 
 ----
 
@@ -1893,319 +1923,481 @@ green again.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 7, 9, 11, 13, 15, 17, 19, 21, 23, 25
+    :lineno-start: 103
+    :emphasize-lines: 12-15
 
         # def test_positional_arguments():
         def test_positional_arguments(self):
-            def add_x(number):
-                return 3 + number
+            positional_arguments = (
+                src.functions.positional_arguments
+            )
+            first, last = 'first', 'last'
 
-            assert add_x(0) == 3
-            self.assertNotEqual(add_x(0), 3)
-            assert add_x(1) == 4
-            self.assertNotEqual(add_x(1), 4)
-            assert add_x(2) == 5
-            self.assertNotEqual(add_x(2), 5)
-            assert add_x(3) == 6
-            self.assertNotEqual(add_x(3), 6)
-            assert add_x(4) == 7
-            self.assertNotEqual(add_x(4), 7)
-            assert add_x(5) == 8
-            self.assertNotEqual(add_x(5), 8)
-            assert add_x(6) == 9
-            self.assertNotEqual(add_x(6), 9)
-            assert add_x(7) == 10
-            self.assertNotEqual(add_x(7), 10)
-            assert add_x(8) == 11
-            self.assertNotEqual(add_x(8), 11)
-            assert add_x(9) == 12
-            self.assertNotEqual(add_x(9), 12)
+            assert (
+                positional_arguments(first, last)
+            == (first, last)
+            )
+            self.assertNotEqual(
+                positional_arguments(first, last),
+                (first, last)
+            )
+
+  .. code-block:: python
+    :lineno-start: 118
+    :emphasize-lines: 5-8
+
+            assert (
+                positional_arguments(last, first)
+            == (last, first)
+            )
+            self.assertNotEqual(
+                positional_arguments(last, first),
+                (last, first)
+            )
+
+  .. code-block:: python
+    :lineno-start: 126
+    :emphasize-lines: 5-7
+
+            assert (
+                positional_arguments(0, 1)
+            == (0, 1)
+            )
+            self.assertNotEqual(
+                positional_arguments(0, 1), (0, 1)
+            )
+
+  .. code-block:: python
+    :lineno-start: 134
+    :emphasize-lines: 7-10
+
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
+            assert (
+                positional_arguments(a_tuple, a_list)
+            == (a_tuple, a_list)
+            )
+            self.assertNotEqual(
+                positional_arguments(a_tuple, a_list),
+                (a_tuple, a_list)
+            )
+
+  .. code-block:: python
+    :lineno-start: 145
+    :emphasize-lines: 12-17
+
+            keyword_arguments = (
+                src.functions.keyword_arguments
+            )
+            a_set = {1, 2, 3, 'n'}
+            a_dictionary = {'key': 'value'}
+            assert (
+                keyword_arguments(
+                    a_set, a_dictionary,
+                )
+            == (a_set, a_dictionary)
+            )
+            self.assertNotEqual(
+                keyword_arguments(
+                    a_set, a_dictionary,
+                ),
+                (a_set, a_dictionary)
+            )
 
 
     def test_keyword_arguments():
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 3 == 3
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
 * I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 7-8, 10-11, 13-14, 16-17, 19-20, 22-23, 25-26, 28-29, 31-32, 34-35
+    :lineno-start: 103
+    :emphasize-lines: 12-13
 
         # def test_positional_arguments():
         def test_positional_arguments(self):
-            def add_x(number):
-                return 3 + number
+            positional_arguments = (
+                src.functions.positional_arguments
+            )
+            first, last = 'first', 'last'
 
-            assert add_x(0) == 3
-            # self.assertNotEqual(add_x(0), 3)
-            self.assertEqual(add_x(0), 3)
-            assert add_x(1) == 4
-            # self.assertNotEqual(add_x(1), 4)
-            self.assertEqual(add_x(1), 4)
-            assert add_x(2) == 5
-            # self.assertNotEqual(add_x(2), 5)
-            self.assertEqual(add_x(2), 5)
-            assert add_x(3) == 6
-            # self.assertNotEqual(add_x(3), 6)
-            self.assertEqual(add_x(3), 6)
-            assert add_x(4) == 7
-            # self.assertNotEqual(add_x(4), 7)
-            self.assertEqual(add_x(4), 7)
-            assert add_x(5) == 8
-            # self.assertNotEqual(add_x(5), 8)
-            self.assertEqual(add_x(5), 8)
-            assert add_x(6) == 9
-            # self.assertNotEqual(add_x(6), 9)
-            self.assertEqual(add_x(6), 9)
-            assert add_x(7) == 10
-            # self.assertNotEqual(add_x(7), 10)
-            self.assertEqual(add_x(7), 10)
-            assert add_x(8) == 11
-            # self.assertNotEqual(add_x(8), 11)
-            self.assertEqual(add_x(8), 11)
-            assert add_x(9) == 12
-            # self.assertNotEqual(add_x(9), 12)
-            self.assertEqual(add_x(9), 12)
+            assert (
+                positional_arguments(first, last)
+            == (first, last)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                positional_arguments(first, last),
+                (first, last)
+            )
+
+  .. code-block:: python
+    :lineno-start: 119
+    :emphasize-lines: 5-6
+
+            assert (
+                positional_arguments(last, first)
+            == (last, first)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                positional_arguments(last, first),
+                (last, first)
+            )
+
+  .. code-block:: python
+    :lineno-start: 128
+    :emphasize-lines: 5-6
+
+            assert (
+                positional_arguments(0, 1)
+            == (0, 1)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                positional_arguments(0, 1), (0, 1)
+            )
+
+  .. code-block:: python
+    :lineno-start: 137
+    :emphasize-lines: 7-8
+
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
+            assert (
+                positional_arguments(a_tuple, a_list)
+            == (a_tuple, a_list)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                positional_arguments(a_tuple, a_list),
+                (a_tuple, a_list)
+            )
+
+  .. code-block:: python
+    :lineno-start: 149
+    :emphasize-lines: 12-13
+
+            keyword_arguments = (
+                src.functions.keyword_arguments
+            )
+            a_set = {1, 2, 3, 'n'}
+            a_dictionary = {'key': 'value'}
+            assert (
+                keyword_arguments(
+                    a_set, a_dictionary,
+                )
+            == (a_set, a_dictionary)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                keyword_arguments(
+                    a_set, a_dictionary,
+                ),
+                (a_set, a_dictionary)
+            )
 
 
     def test_keyword_arguments():
 
   the test passes.
 
-* I add :ref:`variables<what is a variable?>` for ``add_x`` and the expectations
+* I add :ref:`variables<what is a variable?>` for ``positional_arguments``, ``keyword_arguments`` and the expectations
 
   .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 6-7, 12-13, 18-19, 24-25, 30-31, 36-37, 42-43, 48-49, 54-55, 60-61
+    :lineno-start: 103
+    :emphasize-lines: 8-9
 
         # def test_positional_arguments():
         def test_positional_arguments(self):
-            def add_x(number):
-                return 3 + number
+            positional_arguments = (
+                src.functions.positional_arguments
+            )
+            first, last = 'first', 'last'
 
-            result = add_x(0)
-            expectation = 3
-            assert add_x(0) == 3
-            # self.assertNotEqual(add_x(0), 3)
-            self.assertEqual(add_x(0), 3)
+            reality = positional_arguments(first, last)
+            my_expectation = (first, last)
+            assert (
+                positional_arguments(first, last)
+            == (first, last)
+            )
+            # self.assertNotEqual(
 
-            result = add_x(1)
-            expectation = 4
-            assert add_x(1) == 4
-            # self.assertNotEqual(add_x(1), 4)
-            self.assertEqual(add_x(1), 4)
+  .. code-block:: python
+    :lineno-start: 117
+    :emphasize-lines: 6-7
 
-            result = add_x(2)
-            expectation = 5
-            assert add_x(2) == 5
-            # self.assertNotEqual(add_x(2), 5)
-            self.assertEqual(add_x(2), 5)
+            self.assertEqual(
+                positional_arguments(first, last),
+                (first, last)
+            )
 
-            result = add_x(3)
-            expectation = 6
-            assert add_x(3) == 6
-            # self.assertNotEqual(add_x(3), 6)
-            self.assertEqual(add_x(3), 6)
+            reality = positional_arguments(last, first)
+            my_expectation = (last, first)
+            assert (
+                positional_arguments(last, first)
+            == (last, first)
+            )
+            # self.assertNotEqual(
 
-            result = add_x(4)
-            expectation = 7
-            assert add_x(4) == 7
-            # self.assertNotEqual(add_x(4), 7)
-            self.assertEqual(add_x(4), 7)
+  .. code-block:: python
+    :lineno-start: 129
+    :emphasize-lines: 6-7
 
-            result = add_x(5)
-            expectation = 8
-            assert add_x(5) == 8
-            # self.assertNotEqual(add_x(5), 8)
-            self.assertEqual(add_x(5), 8)
+            self.assertEqual(
+                positional_arguments(last, first),
+                (last, first)
+            )
 
-            result = add_x(6)
-            expectation = 9
-            assert add_x(6) == 9
-            # self.assertNotEqual(add_x(6), 9)
-            self.assertEqual(add_x(6), 9)
+            reality = positional_arguments(0, 1)
+            my_expectation = (0, 1)
+            assert (
+                positional_arguments(0, 1)
+            == (0, 1)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                positional_arguments(0, 1), (0, 1)
+            )
 
-            result = add_x(7)
-            expectation = 10
-            assert add_x(7) == 10
-            # self.assertNotEqual(add_x(7), 10)
-            self.assertEqual(add_x(7), 10)
+  .. code-block:: python
+    :lineno-start: 145
+    :emphasize-lines: 4-6
 
-            result = add_x(8)
-            expectation = 11
-            assert add_x(8) == 11
-            # self.assertNotEqual(add_x(8), 11)
-            self.assertEqual(add_x(8), 11)
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
 
-            result = add_x(9)
-            expectation = 12
-            assert add_x(9) == 12
-            # self.assertNotEqual(add_x(9), 12)
-            self.assertEqual(add_x(9), 12)
+            reality = positional_arguments(
+                a_tuple, a_list
+            )
+            my_expectation = (a_tuple, a_list)
+            assert (
+                positional_arguments(a_tuple, a_list)
+            == (a_tuple, a_list)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                positional_arguments(a_tuple, a_list),
+                (a_tuple, a_list)
+            )
+
+  .. code-block:: python
+    :lineno-start: 162
+    :emphasize-lines: 7-10
+
+            keyword_arguments = (
+                src.functions.keyword_arguments
+            )
+            a_set = {1, 2, 3, 'n'}
+            a_dictionary = {'key': 'value'}
+
+            reality = keyword_arguments(
+                a_set, a_dictionary,
+            )
+            my_expectation = (a_set, a_dictionary)
+            assert (
+                keyword_arguments(
+                    a_set, a_dictionary,
+                )
+            == (a_set, a_dictionary)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                keyword_arguments(
+                    a_set, a_dictionary,
+                ),
+                (a_set, a_dictionary)
+            )
 
 
     def test_keyword_arguments():
 
-* I use the :ref:`variables<what is a variable?>` to remove repetition of ``add_x`` and the expectations
+* I use the :ref:`variables<what is a variable?>` to remove repetition of ``positional_arguments``, ``keyword_arguments`` and the expectations from :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 8-12, 16-20, 24-28, 32-36, 40-44, 48-52, 56-60, 64-68, 72-76, 80-84
+    :lineno-start: 103
+    :emphasize-lines: 10-20
 
         # def test_positional_arguments():
         def test_positional_arguments(self):
-            def add_x(number):
-                return 3 + number
+            positional_arguments = (
+                src.functions.positional_arguments
+            )
+            first, last = 'first', 'last'
 
-            result = add_x(0)
-            expectation = 3
-            # assert add_x(0) == 3
-            # self.assertNotEqual(add_x(0), 3)
-            # self.assertEqual(add_x(0), 3)
-            assert result == expectation
-            self.assertEqual(result, expectation)
+            reality = positional_arguments(first, last)
+            my_expectation = (first, last)
+            # assert (
+            #     positional_arguments(first, last)
+            # == (first, last)
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     positional_arguments(first, last),
+            #     (first, last)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
-            result = add_x(1)
-            expectation = 4
-            # assert add_x(1) == 4
-            # self.assertNotEqual(add_x(1), 4)
-            # self.assertEqual(add_x(1), 4)
-            assert result == expectation
-            self.assertEqual(result, expectation)
+  .. code-block:: python
+    :lineno-start: 124
+    :emphasize-lines: 3-13
 
-            result = add_x(2)
-            expectation = 5
-            # assert add_x(2) == 5
-            # self.assertNotEqual(add_x(2), 5)
-            # self.assertEqual(add_x(2), 5)
-            assert result == expectation
-            self.assertEqual(result, expectation)
+            reality = positional_arguments(last, first)
+            my_expectation = (last, first)
+            # assert (
+            #     positional_arguments(last, first)
+            # == (last, first)
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     positional_arguments(last, first),
+            #     (last, first)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
-            result = add_x(3)
-            expectation = 6
-            # assert add_x(3) == 6
-            # self.assertNotEqual(add_x(3), 6)
-            # self.assertEqual(add_x(3), 6)
-            assert result == expectation
-            self.assertEqual(result, expectation)
+  .. code-block:: python
+    :lineno-start: 138
+    :emphasize-lines: 3-12
 
-            result = add_x(4)
-            expectation = 7
-            # assert add_x(4) == 7
-            # self.assertNotEqual(add_x(4), 7)
-            # self.assertEqual(add_x(4), 7)
-            assert result == expectation
-            self.assertEqual(result, expectation)
+            reality = positional_arguments(0, 1)
+            my_expectation = (0, 1)
+            # assert (
+            #     positional_arguments(0, 1)
+            # == (0, 1)
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     positional_arguments(0, 1), (0, 1)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
-            result = add_x(5)
-            expectation = 8
-            # assert add_x(5) == 8
-            # self.assertNotEqual(add_x(5), 8)
-            # self.assertEqual(add_x(5), 8)
-            assert result == expectation
-            self.assertEqual(result, expectation)
+  .. code-block:: python
+    :lineno-start: 151
+    :emphasize-lines: 8-18
 
-            result = add_x(6)
-            expectation = 9
-            # assert add_x(6) == 9
-            # self.assertNotEqual(add_x(6), 9)
-            # self.assertEqual(add_x(6), 9)
-            assert result == expectation
-            self.assertEqual(result, expectation)
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
 
-            result = add_x(7)
-            expectation = 10
-            # assert add_x(7) == 10
-            # self.assertNotEqual(add_x(7), 10)
-            # self.assertEqual(add_x(7), 10)
-            assert result == expectation
-            self.assertEqual(result, expectation)
+            reality = positional_arguments(
+                a_tuple, a_list
+            )
+            my_expectation = (a_tuple, a_list)
+            # assert (
+            #     positional_arguments(a_tuple, a_list)
+            # == (a_tuple, a_list)
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     positional_arguments(a_tuple, a_list),
+            #     (a_tuple, a_list)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
-            result = add_x(8)
-            expectation = 11
-            # assert add_x(8) == 11
-            # self.assertNotEqual(add_x(8), 11)
-            # self.assertEqual(add_x(8), 11)
-            assert result == expectation
-            self.assertEqual(result, expectation)
+  .. code-block:: python
+    :lineno-start: 170
+    :emphasize-lines: 11-25
 
-            result = add_x(9)
-            expectation = 12
-            # assert add_x(9) == 12
-            # self.assertNotEqual(add_x(9), 12)
-            # self.assertEqual(add_x(9), 12)
-            assert result == expectation
-            self.assertEqual(result, expectation)
+            keyword_arguments = (
+                src.functions.keyword_arguments
+            )
+            a_set = {1, 2, 3, 'n'}
+            a_dictionary = {'key': 'value'}
+
+            reality = keyword_arguments(
+                a_set, a_dictionary,
+            )
+            my_expectation = (a_set, a_dictionary)
+            # assert (
+            #     keyword_arguments(
+            #         a_set, a_dictionary,
+            #     )
+            # == (a_set, a_dictionary)
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     keyword_arguments(
+            #         a_set, a_dictionary,
+            #     ),
+            #     (a_set, a_dictionary)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
 
     def test_keyword_arguments():
+
+  the test is still green.
 
 * I remove the commented lines from :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 47
+    :lineno-start: 101
 
-            self.assertEqual(result, object)
+            self.assertEqual(result, expectation)
 
         def test_positional_arguments(self):
-            def add_x(number):
-                return 3 + number
+            positional_arguments = (
+                src.functions.positional_arguments
+            )
+            first, last = 'first', 'last'
 
-            result = add_x(0)
-            expectation = 3
-            assert result == expectation
-            self.assertEqual(result, expectation)
+  .. code-block:: python
+    :lineno-start: 109
 
-            result = add_x(1)
-            expectation = 4
-            assert result == expectation
-            self.assertEqual(result, expectation)
+            reality = positional_arguments(first, last)
+            my_expectation = (first, last)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
-            result = add_x(2)
-            expectation = 5
-            assert result == expectation
-            self.assertEqual(result, expectation)
+  .. code-block:: python
+    :lineno-start: 114
 
-            result = add_x(3)
-            expectation = 6
-            assert result == expectation
-            self.assertEqual(result, expectation)
+            reality = positional_arguments(last, first)
+            my_expectation = (last, first)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
-            result = add_x(4)
-            expectation = 7
-            assert result == expectation
-            self.assertEqual(result, expectation)
+  .. code-block:: python
+    :lineno-start: 119
 
-            result = add_x(5)
-            expectation = 8
-            assert result == expectation
-            self.assertEqual(result, expectation)
+            reality = positional_arguments(0, 1)
+            my_expectation = (0, 1)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
-            result = add_x(6)
-            expectation = 9
-            assert result == expectation
-            self.assertEqual(result, expectation)
+  .. code-block:: python
+    :lineno-start: 124
 
-            result = add_x(7)
-            expectation = 10
-            assert result == expectation
-            self.assertEqual(result, expectation)
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
 
-            result = add_x(8)
-            expectation = 11
-            assert result == expectation
-            self.assertEqual(result, expectation)
+            reality = positional_arguments(
+                a_tuple, a_list
+            )
+            my_expectation = (a_tuple, a_list)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
-            result = add_x(9)
-            expectation = 12
-            assert result == expectation
-            self.assertEqual(result, expectation)
+  .. code-block:: python
+    :lineno-start: 134
+
+            keyword_arguments = (
+                src.functions.keyword_arguments
+            )
+            a_set = {1, 2, 3, 'n'}
+            a_dictionary = {'key': 'value'}
+
+            reality = keyword_arguments(
+                a_set, a_dictionary,
+            )
+            my_expectation = (a_set, a_dictionary)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
 
     def test_keyword_arguments():
