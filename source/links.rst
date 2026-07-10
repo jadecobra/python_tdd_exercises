@@ -22,13 +22,6 @@
 .. _computer program: https://grokipedia.com/page/Computer_program
 .. _directory: https://grokipedia.com/page/Directory_(computing)
 .. _directories: directory_
-.. _datetime: https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime
-.. _datetime module: datetime_
-.. _datetime.datetime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects
-.. _datetime.datetime object: `datetime.datetime`_
-.. _datetime object: `datetime.datetime`_
-.. _datetime.datetime.strptime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime
-.. _datetime.timedelta: https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects
 .. _def: https://docs.python.org/3/reference/lexical_analysis.html#keywords
 .. _dir: https://docs.python.org/3/library/functions.html#dir
 .. _dir built-in function: dir_

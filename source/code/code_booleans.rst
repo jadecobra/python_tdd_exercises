@@ -9,7 +9,7 @@ booleans: tests
 what are booleans?: tests
 *********************************************************************************
 
-the code from ``booleans/tests/test_booleans.py`` from :ref:`booleans<what are booleans?>`
+the code in ``booleans/tests/test_booleans.py`` from :ref:`booleans<what are booleans?>`
 
 .. literalinclude:: booleans/test_booleans.py
   :language: python

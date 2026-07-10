@@ -97,7 +97,7 @@ class TestClasses(unittest.TestCase):
         assert issubclass(dict, object)
         self.assertIsSubclass(dict, object)
 
-    def test_dir_of_object(self):
+    def test_dir_object(self):
         reality = dir(object)
         my_expectation = [
             '__class__', '__delattr__', '__dir__',

@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test objects with unittest — move the classes project's bare assert isinstance/issubclass tests onto unittest.TestCase. Open classes; uv run pytest-watcher . --now (13 passed). Add class Classes then rename to TestClasses → AttributeError: 'TestClasses' object has no attribute 'assertEqual'. Parent unittest.TestCase → NameError name 'unittest' is not defined (pytest: Did you forget to import 'unittest'?); import unittest → AssertionError: True != False then green with assertEqual(True, True). For each of the 13 tests (test_making_a_class_w_pass through test_dir_object): move into TestClasses (first method replaces test_failure) → TypeError takes 0 positional arguments but 1 was given (need self); add assertNotIsInstance / assertNotIsSubclass (or assertNotEqual for dir) → AssertionError e.g. WPass is an instance of object, WPass is a subclass of object, None is an instance of object, None is not a class; switch to assertIsInstance / assertIsSubclass / assertEqual; keep bare assert + self.assert*; remove the commented lines; git commit. Ends with TestClasses + 13 methods + # Exceptions seen AssertionError NameError TypeError AttributeError. Review: unittest.TestCase methods or bare assert. What is next: test functions with unittest.
+  :keywords: Jacob Itegboje, Pumping Python, test objects with unittest, classes unittest, TestClasses, unittest.TestCase, import unittest, AttributeError has no attribute assertEqual, NameError name 'unittest' is not defined, Did you forget to import unittest, AssertionError True != False, TypeError takes 0 positional arguments but 1 was given, self first argument method, assertNotIsInstance, assertIsInstance, assertNotIsSubclass, assertIsSubclass, assertNotEqual, assertEqual, WPass WParentheses WObject, None is not a class, issubclass None, bool int float str tuple list set dict object, dir(object), reality == my_expectation, bare assert and assertIsInstance, uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, another way to write tests, test_classes_w_unittest, everything is an object
 
 .. include:: ../links.rst
 
@@ -505,7 +505,7 @@ green again.
   .. code-block:: shell
 
     AssertionError:
-        <tests.test_classes.WPass object at 0xffff56789b123>
+        <tests.test_classes.WParentheses object at 0xffff45ab67cd8>
         is an instance of <class 'object'>
 
 * I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
@@ -697,7 +697,7 @@ green.
   .. code-block:: shell
 
     AssertionError:
-        <tests.test_classes.WPass object at 0xffffabcde0f12>
+        <tests.test_classes.WObject object at 0xffff345a6b789>
         is an instance of <class 'object'>
 
 * I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
@@ -2136,7 +2136,7 @@ test_is_a_dictionary_an_object with unittest
             assert issubclass(dict, object)
 
 
-    def test_dir_of_object():
+    def test_dir_object():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -2190,7 +2190,7 @@ green again.
             self.assertNotIsSubclass(dict, object)
 
 
-    def test_dir_of_object():
+    def test_dir_object():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2216,7 +2216,7 @@ green again.
             self.assertNotIsSubclass(dict, object)
 
 
-    def test_dir_of_object():
+    def test_dir_object():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2243,7 +2243,7 @@ green again.
             self.assertIsSubclass(dict, object)
 
 
-    def test_dir_of_object():
+    def test_dir_object():
 
   the test passes.
 
@@ -2262,7 +2262,7 @@ green again.
             self.assertIsSubclass(dict, object)
 
 
-    def test_dir_of_object():
+    def test_dir_object():
 
 * I add a git_ commit message in the other terminal_
 
@@ -2275,7 +2275,7 @@ green again.
 ----
 
 *********************************************************************************
-test_dir_of_object with unittest
+test_dir_object with unittest
 *********************************************************************************
 
 =================================================================================
@@ -2286,7 +2286,7 @@ test_dir_of_object with unittest
 
 * I go back to the terminal_ where the tests are running.
 
-* I move :ref:`test_dir_of_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
+* I move :ref:`test_dir_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
   .. code-block:: python
     :lineno-start: 98
@@ -2294,7 +2294,7 @@ test_dir_of_object with unittest
 
             self.assertIsSubclass(dict, object)
 
-        def test_dir_of_object():
+        def test_dir_object():
             reality = dir(object)
             my_expectation = [
                 '__class__', '__delattr__', '__dir__',
@@ -2316,7 +2316,7 @@ test_dir_of_object with unittest
   .. code-block:: python
 
     TypeError:
-        TestClasses.test_dir_of_object()
+        TestClasses.test_dir_object()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -2329,14 +2329,14 @@ test_dir_of_object with unittest
 
 ----
 
-I add ``self`` to the parentheses of :ref:`test_dir_of_object`
+I add ``self`` to the parentheses of :ref:`test_dir_object`
 
 .. code-block:: python
   :lineno-start: 100
   :emphasize-lines: 1-2
 
-      # def test_dir_of_object():
-      def test_dir_of_object(self):
+      # def test_dir_object():
+      def test_dir_object(self):
 
 the test is green again.
 
@@ -2354,8 +2354,8 @@ the test is green again.
     :lineno-start: 100
     :emphasize-lines: 15
 
-        # def test_dir_of_object():
-        def test_dir_of_object(self):
+        # def test_dir_object():
+        def test_dir_object(self):
             reality = dir(object)
             my_expectation = [
                 '__class__', '__delattr__', '__dir__',
@@ -2373,16 +2373,26 @@ the test is green again.
 
     # Exceptions seen
 
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>`
+
+  .. code-block:: python
+    :lineno-start: 113
+    :emphasize-lines: 2-3
+
+            assert reality == my_expectation
+            # self.assertNotEqual(reality, my_expectation)
+            self.assertEqual(reality, my_expectation)
+
   the test passes.
 
-* I remove the commented lines from :ref:`test_dir_of_object`
+* I remove the commented lines from :ref:`test_dir_object`
 
   .. code-block:: python
     :lineno-start: 98
 
             self.assertIsSubclass(dict, object)
 
-        def test_dir_of_object(self):
+        def test_dir_object(self):
             reality = dir(object)
             my_expectation = [
 
@@ -2406,7 +2416,7 @@ the test is green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_dir_of_object to TestClasses'
+    'move test_dir_object to TestClasses'
 
 ----
 
@@ -2422,7 +2432,7 @@ I can use the :ref:`unittest library<another way to write tests>` to write tests
 close the project
 *********************************************************************************
 
-* I close ``test_classes.py`` and ``classes.py`` in the :ref:`editor(s)<2 editors>`
+* I close ``test_classes.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
@@ -2473,7 +2483,7 @@ You know
 * :ref:`that everything in Python is an object<everything is an object>`
 * :ref:`how to use the unittest library<another way to write tests>`
 
-:ref:`Would you like to test the classes project with the unittest library?<test classes with unittest>`
+:ref:`Would you like to test the functions project with the unittest library?<test functions with unittest>`
 
 ----
 

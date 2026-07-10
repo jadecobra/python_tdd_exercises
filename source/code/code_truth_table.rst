@@ -7,7 +7,7 @@ truth table: tests and solutions
 Nullary and Unary Operations tests
 *********************************************************************************
 
-the code from ``truth_table/tests/test_nullary_unary.py`` from :ref:`truth table: Nullary and Unary Operations`
+the code in ``truth_table/tests/test_nullary_unary.py`` from :ref:`truth table: Nullary and Unary Operations`
 
 .. literalinclude:: truth_table/tests/test_nullary_unary.py
   :language: python
@@ -25,7 +25,7 @@ Binary Operations 1 tests
 
 ----
 
-the code from ``truth_table/tests/test_binary.py`` from :ref:`truth table: Binary Operations 1`
+the code in ``truth_table/tests/test_binary.py`` from :ref:`truth table: Binary Operations 1`
 
 .. literalinclude:: truth_table/tests/test_binary_1.py
   :language: python
@@ -39,7 +39,7 @@ Binary Operations 2 tests
 
 ----
 
-the code from ``truth_table/tests/test_binary.py`` from :ref:`truth table: Binary Operations 2`
+the code in ``truth_table/tests/test_binary.py`` from :ref:`truth table: Binary Operations 2`
 
 .. literalinclude:: truth_table/tests/test_binary_2.py
   :language: python
@@ -53,7 +53,7 @@ Binary Operations 3 tests
 
 ----
 
-the code from ``truth_table/tests/test_binary.py`` from :ref:`truth table: Binary Operations 3`
+the code in ``truth_table/tests/test_binary.py`` from :ref:`truth table: Binary Operations 3`
 
 .. literalinclude:: truth_table/tests/test_binary_3.py
   :language: python
@@ -67,7 +67,7 @@ Binary Operations 4 tests
 
 ----
 
-the code from ``truth_table/tests/test_binary.py`` from :ref:`truth table: Binary Operations 4`
+the code in ``truth_table/tests/test_binary.py`` from :ref:`truth table: Binary Operations 4`
 
 .. literalinclude:: truth_table/tests/test_binary.py
   :language: python
@@ -91,13 +91,13 @@ the solutions in ``truth_table/src/truth_table.py`` from :ref:`truth table`
 Traffic Light: tests and solutions
 *********************************************************************************
 
-the code from ``traffic_light/tests/test_traffic_light.py`` from :ref:`Traffic Light`
+the code in ``traffic_light/tests/test_traffic_light.py`` from :ref:`Traffic Light`
 
 .. literalinclude:: truth_table/tests/test_traffic_light.py
   :language: python
   :linenos:
 
-the code from ``traffic_light/src/traffic_light.py`` from :ref:`Traffic Light`
+the code in ``traffic_light/src/traffic_light.py`` from :ref:`Traffic Light`
 
 .. literalinclude:: truth_table/solutions/traffic_light.py
   :language: python
@@ -109,13 +109,13 @@ the code from ``traffic_light/src/traffic_light.py`` from :ref:`Traffic Light`
 Automated Teller Machine: tests and solutions
 *********************************************************************************
 
-the code from ``atm/tests/test_atm.py`` from :ref:`Automated Teller Machine`
+the code in ``atm/tests/test_atm.py`` from :ref:`Automated Teller Machine`
 
 .. literalinclude:: truth_table/tests/test_atm.py
   :language: python
   :linenos:
 
-the code from ``atm/src/atm.py`` from :ref:`Automated Teller Machine`
+the code in ``atm/src/atm.py`` from :ref:`Automated Teller Machine`
 
 .. literalinclude:: truth_table/solutions/atm.py
   :language: python
@@ -127,13 +127,13 @@ the code from ``atm/src/atm.py`` from :ref:`Automated Teller Machine`
 Microwave: tests and solutions
 *********************************************************************************
 
-the code from ``microwave/tests/test_microwave.py`` from :ref:`Microwave`
+the code in ``microwave/tests/test_microwave.py`` from :ref:`Microwave`
 
 .. literalinclude:: truth_table/tests/test_microwave.py
   :language: python
   :linenos:
 
-the code from ``microwave/src/microwave.py`` from :ref:`Microwave`
+the code in ``microwave/src/microwave.py`` from :ref:`Microwave`
 
 .. literalinclude:: truth_table/solutions/microwave.py
   :language: python
@@ -145,13 +145,13 @@ the code from ``microwave/src/microwave.py`` from :ref:`Microwave`
 Car: tests and solutions
 *********************************************************************************
 
-the code from ``car/tests/test_car.py`` from :ref:`Car`
+the code in ``car/tests/test_car.py`` from :ref:`Car`
 
 .. literalinclude:: truth_table/tests/test_car.py
   :language: python
   :linenos:
 
-the code from ``car/src/car.py`` from :ref:`Car`
+the code in ``car/src/car.py`` from :ref:`Car`
 
 .. literalinclude:: truth_table/solutions/car.py
   :language: python
@@ -163,13 +163,13 @@ the code from ``car/src/car.py`` from :ref:`Car`
 Elevator: tests and solutions
 *********************************************************************************
 
-the code from ``elevator/tests/test_elevator.py`` from :ref:`Elevator`
+the code in ``elevator/tests/test_elevator.py`` from :ref:`Elevator`
 
 .. literalinclude:: truth_table/tests/test_elevator.py
   :language: python
   :linenos:
 
-the code from ``elevator/src/elevator.py`` from :ref:`Elevator`
+the code in ``elevator/src/elevator.py`` from :ref:`Elevator`
 
 .. literalinclude:: truth_table/solutions/elevator.py
   :language: python
@@ -181,13 +181,13 @@ the code from ``elevator/src/elevator.py`` from :ref:`Elevator`
 Parking Garage: tests and solutions
 *********************************************************************************
 
-the code from ``parking_garage/tests/test_parking_garage.py`` from :ref:`Parking Garage`
+the code in ``parking_garage/tests/test_parking_garage.py`` from :ref:`Parking Garage`
 
 .. literalinclude:: truth_table/tests/test_parking_garage.py
   :language: python
   :linenos:
 
-the code from ``parking_garage/src/parking_garage.py`` from :ref:`Parking Garage`
+the code in ``parking_garage/src/parking_garage.py`` from :ref:`Parking Garage`
 
 .. literalinclude:: truth_table/solutions/parking_garage.py
   :language: python

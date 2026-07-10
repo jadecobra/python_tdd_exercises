@@ -4,10 +4,6 @@
 
 .. include:: ../links.rst
 
-.. _now: https://docs.python.org/3/library/datetime.html#datetime.datetime.now
-.. _now method: now_
-.. _today: https://docs.python.org/3/library/datetime.html#datetime.date.today
-.. _today method: today_
 .. _random.choice: https://docs.python.org/3/library/random.html#random.choice
 .. _choice method: `random.choice`_
 .. _random.choice method: `random.choice`_

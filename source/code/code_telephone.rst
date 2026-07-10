@@ -7,7 +7,7 @@ telephone: tests and solution
 telephone tests
 *********************************************************************************
 
-the code from ``telephone/tests/test_telephone.py`` from :ref:`telephone`
+the code in ``telephone/tests/test_telephone.py`` from :ref:`telephone`
 
 .. literalinclude:: telephone/tests/test_telephone.py
   :language: python

@@ -6,7 +6,7 @@ functions: tests and solutions
 what is a function?: tests
 *********************************************************************************
 
-the code from ``functions/tests/test_functions.py`` from :ref:`what is a function?`
+the code in ``functions/tests/test_functions.py`` from :ref:`what is a function?`
 
 .. literalinclude:: functions/tests/test_functions_what_is_a_function.py
   :language: python
@@ -18,7 +18,7 @@ the code from ``functions/tests/test_functions.py`` from :ref:`what is a functio
 functions that take input: tests
 *********************************************************************************
 
-the code from ``functions/tests/test_functions.py`` from :ref:`functions that take input`
+the code in ``functions/tests/test_functions.py`` from :ref:`functions that take input`
 
 .. literalinclude:: functions/tests/test_functions_w_input.py
   :language: python
@@ -38,7 +38,7 @@ separate and equal functions tests
 
 ----
 
-the code from ``functions/tests/test_functions.py`` from :ref:`separate and equal functions`
+the code in ``functions/tests/test_functions.py`` from :ref:`separate and equal functions`
 
 .. literalinclude:: functions/tests/test_functions_w_separation.py
   :language: python
@@ -52,7 +52,7 @@ separate and equal functions solutions
 
 ----
 
-the code from ``functions/src/functions.py`` from :ref:`separate and equal functions`
+the code in ``functions/src/functions.py`` from :ref:`separate and equal functions`
 
 .. literalinclude:: functions/solutions/functions_w_separation.py
   :language: python
@@ -64,7 +64,7 @@ the code from ``functions/src/functions.py`` from :ref:`separate and equal funct
 test functions with unittest: tests
 *********************************************************************************
 
-the code from ``functions/tests/test_functions.py`` from :ref:`test functions with unittest`
+the code in ``functions/tests/test_functions.py`` from :ref:`test functions with unittest`
 
 .. literalinclude:: functions/tests/test_functions_w_unittest.py
   :language: python
@@ -77,7 +77,7 @@ the code from ``functions/tests/test_functions.py`` from :ref:`test functions wi
 functions 3: tests
 *********************************************************************************
 
-the code from ``functions/tests/test_functions.py`` (after refactor) from :ref:`functions 3: use class attributes`
+the code in ``functions/tests/test_functions.py`` (after refactor) from :ref:`functions 3: use class attributes`
 
 .. literalinclude:: functions/test_functions_w_input.py
   :language: python

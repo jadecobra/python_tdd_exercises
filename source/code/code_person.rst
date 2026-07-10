@@ -7,7 +7,7 @@ how to make a person: tests and solution
 how to make a person with strings: tests
 *********************************************************************************
 
-* the code from ``person/tests/test_person.py`` from :ref:`how to make a person with strings`
+* the code in ``person/tests/test_person.py`` from :ref:`how to make a person with strings`
 
   .. literalinclude:: person/tests/test_person_w_strings.py
     :language: python
@@ -25,7 +25,7 @@ how to make a person with f-strings: tests
 
 ----
 
-the code from ``person/tests/test_person.py`` from :ref:`how to make a person with f-strings`
+the code in ``person/tests/test_person.py`` from :ref:`how to make a person with f-strings`
 
 .. literalinclude:: person/tests/test_person_w_fstrings.py
 
@@ -37,7 +37,7 @@ how to make a person with f-strings: solutions
 
 ----
 
-the code from ``person/src/person.py`` from :ref:`how to make a person with f-strings`
+the code in ``person/src/person.py`` from :ref:`how to make a person with f-strings`
 
 .. literalinclude:: person/solutions/person_w_fstrings.py
 
@@ -53,7 +53,7 @@ how to make a person with a class: tests
 
 ----
 
-the code from ``person/tests/test_person.py`` from :ref:`how to make a person with a class`
+the code in ``person/tests/test_person.py`` from :ref:`how to make a person with a class`
 
 .. literalinclude:: person/tests/test_person_w_class.py
 
@@ -65,7 +65,7 @@ how to make a person with a class: solutions
 
 ----
 
-the code from ``person/src/person.py`` from :ref:`how to make a person with a class`
+the code in ``person/src/person.py`` from :ref:`how to make a person with a class`
 
 .. literalinclude:: person/solutions/person_w_class.py
 
@@ -75,7 +75,34 @@ the code from ``person/src/person.py`` from :ref:`how to make a person with a cl
 test person with unittest: tests
 *********************************************************************************
 
-the code from ``person/tests/test_person.py`` from :ref:`test person with unittest`
+the code in ``person/tests/test_person.py`` from :ref:`test person with unittest`
 
 .. literalinclude:: person/tests/test_person_w_unittest.py
 
+----
+
+*********************************************************************************
+test person with datetime: tests and solution
+*********************************************************************************
+
+=================================================================================
+test person with datetime: tests
+=================================================================================
+
+----
+
+the code in ``person/tests/test_person.py`` from :ref:`test person with datetime`
+
+.. literalinclude:: person/tests/test_person_w_datetime.py
+
+----
+
+=================================================================================
+test person with datetime: solutions
+=================================================================================
+
+----
+
+the code in ``person/src/person.py`` from :ref:`test person with datetime`
+
+.. literalinclude:: person/solutions/person_w_datetime.py
