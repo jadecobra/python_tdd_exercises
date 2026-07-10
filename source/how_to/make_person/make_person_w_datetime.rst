@@ -616,25 +616,93 @@ where ``YYYY`` is the current year.
 test_joe with datetime
 *********************************************************************************
 
-I change the age calculation in ``my_expectation`` of :ref:`say_hello<test say_hello method>` in :ref:`test_joe` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
+* I change the age calculation in ``my_expectation`` of :ref:`say_hello<test say_hello method>` in :ref:`test_joe` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
 
-.. code-block:: python
-  :lineno-start: 27
-  :emphasize-lines: 3-6
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 9-10
 
-        reality = src.person.say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'Hello, my name is {first_name}'
-            f' {last_name} and I am'
-            # f' {2026-year_of_birth}.'
-            f' {datetime.date.today().year-year_of_birth}.'
-        )
-        assert reality == my_expectation
-        self.assertEqual(reality, my_expectation)
+          reality = src.person.say_hello(
+              first_name=first_name,
+              last_name=last_name,
+              year_of_birth=year_of_birth,
+          )
+          my_expectation = (
+              f'Hello, my name is {first_name}'
+              f' {last_name} and I am'
+              # f' {2026-year_of_birth}.'
+              f' {datetime.date.today().year-year_of_birth}.'
+          )
+          assert reality == my_expectation
+          self.assertEqual(reality, my_expectation)
+
+  the test is still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 9-10
+
+          reality = src.person.say_hello(
+              first_name=first_name,
+              last_name=last_name,
+              year_of_birth=year_of_birth,
+          )
+          my_expectation = (
+              f'Hello, my name is {first_name}'
+              f' {last_name} and I am'
+              f' {datetime.date.today().year-year_of_birth}.'
+          )
+          assert reality == my_expectation
+          self.assertEqual(reality, my_expectation)
+
+----
+
+*********************************************************************************
+test_jane with datetime
+*********************************************************************************
+
+* I change the age calculation in ``my_expectation`` of :ref:`say_hello<test say_hello method>` in :ref:`test_jane` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 9-10
+
+          reality = src.person.say_hello(
+              first_name=first_name,
+              last_name=last_name,
+              year_of_birth=year_of_birth,
+          )
+          my_expectation = (
+              f'Hello, my name is {first_name}'
+              f' {last_name} and I am'
+              # f' {2026-year_of_birth}.'
+              f' {datetime.date.today().year-year_of_birth}.'
+          )
+          assert reality == my_expectation
+          self.assertEqual(reality, my_expectation)
+
+  the test is still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 9-10
+
+          reality = src.person.say_hello(
+              first_name=first_name,
+              last_name=last_name,
+              year_of_birth=year_of_birth,
+          )
+          my_expectation = (
+              f'Hello, my name is {first_name}'
+              f' {last_name} and I am'
+              f' {datetime.date.today().year-year_of_birth}.'
+          )
+          assert reality == my_expectation
+          self.assertEqual(reality, my_expectation)
 
 ----
 
