@@ -655,9 +655,9 @@ test_making_a_class_w_object with unittest
     :lineno-start: 32
     :emphasize-lines: 6-8
 
-            assert issubclass(WPass, object)
+            assert issubclass(WParentheses, object)
             self.assertIsSubclass(
-                WPass, object
+                WParentheses, object
             )
 
         def test_making_a_class_w_object():
@@ -727,7 +727,7 @@ green again.
   .. code-block:: shell
 
     AssertionError:
-        <tests.test_classes.WPass object at 0xffff56789b123>
+        <tests.test_classes.WPass object at 0xffffabcde0f12>
         is an instance of <class 'object'>
 
 * I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
@@ -797,7 +797,7 @@ green again.
 
             assert issubclass(WObject, object)
             # self.assertNotIsSubclass(
-            self.assertIsSubclass(
+            self.assertNotIsSubclass(
                 WObject, object
             )
 
@@ -811,9 +811,9 @@ green again.
   .. code-block:: python
     :lineno-start: 32
 
-            assert issubclass(WPass, object)
+            assert issubclass(WParentheses, object)
             self.assertIsSubclass(
-                WPass, object
+                WParentheses, object
             )
 
         def test_making_a_class_w_object(self):
@@ -823,7 +823,7 @@ green again.
             )
 
             assert issubclass(WObject, object)
-            self.assertIsSubclass(
+            self.assertNotIsSubclass(
                 WObject, object
             )
 
