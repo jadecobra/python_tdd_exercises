@@ -3950,6 +3950,754 @@ green again.
 ----
 
 *********************************************************************************
+test_unknown_number_of_arguments with unittest
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+
+* I move :ref:`test_unknown_number_of_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+
+  .. code-block:: python
+    :lineno-start: 247
+    :emphasize-lines: 3-6, 8-15
+
+                self.assertEqual(reality, my_expectation)
+
+        def test_unknown_number_of_arguments():
+            unknown_number_of_arguments = (
+                src.functions.unknown_number_of_arguments
+            )
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3}
+            assert (
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                )
+            == (a_tuple, a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 263
+    :emphasize-lines: 1-8
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+            assert (
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                )
+            == (a_tuple, a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 272
+    :emphasize-lines: 1-8
+
+            a_tuple = (0, 1, 2)
+            a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+            assert (
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                )
+            == (a_tuple, a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 281
+    :emphasize-lines: 1-5
+
+            a_tuple = (1, 2, 3, 'n')
+            assert (
+                unknown_number_of_arguments(*a_tuple)
+            == (a_tuple, {})
+            )
+
+  .. code-block:: python
+    :lineno-start: 287
+    :emphasize-lines: 1-5
+
+            a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
+            assert (
+                unknown_number_of_arguments(**a_dictionary)
+            == ((), a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 293
+    :emphasize-lines: 1-4
+
+            assert (
+                unknown_number_of_arguments()
+            == ((), {})
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestFunctions.test_unknown_number_of_arguments()
+        takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``self`` to the parentheses of :ref:`test_unknown_number_of_arguments`
+
+.. code-block:: python
+  :lineno-start: 249
+  :emphasize-lines: 1-2
+
+      # def test_unknown_number_of_arguments():
+      def test_unknown_number_of_arguments(self):
+
+green.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_unknown_number_of_arguments`
+
+  .. code-block:: python
+    :lineno-start: 249
+    :emphasize-lines: 15-20
+
+        # def test_unknown_number_of_arguments():
+        def test_unknown_number_of_arguments(self):
+            unknown_number_of_arguments = (
+                src.functions.unknown_number_of_arguments
+            )
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3}
+            assert (
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                )
+            == (a_tuple, a_dictionary)
+            )
+            self.assertNotEqual(
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                ),
+                (a_tuple, a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 270
+    :emphasize-lines: 9-14
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+            assert (
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                )
+            == (a_tuple, a_dictionary)
+            )
+            self.assertNotEqual(
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                ),
+                (a_tuple, a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 285
+    :emphasize-lines: 9-14
+
+            a_tuple = (0, 1, 2)
+            a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+            assert (
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                )
+            == (a_tuple, a_dictionary)
+            )
+            self.assertNotEqual(
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                ),
+                (a_tuple, a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 300
+    :emphasize-lines: 6-9
+
+            a_tuple = (1, 2, 3, 'n')
+            assert (
+                unknown_number_of_arguments(*a_tuple)
+            == (a_tuple, {})
+            )
+            self.assertNotEqual(
+                unknown_number_of_arguments(*a_tuple),
+                (a_tuple, {})
+            )
+
+  .. code-block:: python
+    :lineno-start: 310
+    :emphasize-lines: 6-9
+
+            a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
+            assert (
+                unknown_number_of_arguments(**a_dictionary)
+            == ((), a_dictionary)
+            )
+            self.assertNotEqual(
+                unknown_number_of_arguments(**a_dictionary),
+                ((), a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 320
+    :emphasize-lines: 5-8
+
+            assert (
+                unknown_number_of_arguments()
+            == ((), {})
+            )
+            self.assertNotEqual(
+                unknown_number_of_arguments(),
+                ((), {})
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
+
+* I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_unknown_number_of_arguments`
+
+  .. code-block:: python
+    :lineno-start: 249
+    :emphasize-lines: 15-16
+
+        # def test_unknown_number_of_arguments():
+        def test_unknown_number_of_arguments(self):
+            unknown_number_of_arguments = (
+                src.functions.unknown_number_of_arguments
+            )
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3}
+            assert (
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                )
+            == (a_tuple, a_dictionary)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                ),
+                (a_tuple, a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 271
+    :emphasize-lines: 9-10
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+            assert (
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                )
+            == (a_tuple, a_dictionary)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                ),
+                (a_tuple, a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 287
+    :emphasize-lines: 9-10
+
+            a_tuple = (0, 1, 2)
+            a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+            assert (
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                )
+            == (a_tuple, a_dictionary)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                ),
+                (a_tuple, a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 303
+    :emphasize-lines: 6-7
+
+            a_tuple = (1, 2, 3, 'n')
+            assert (
+                unknown_number_of_arguments(*a_tuple)
+            == (a_tuple, {})
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                unknown_number_of_arguments(*a_tuple),
+                (a_tuple, {})
+            )
+
+  .. code-block:: python
+    :lineno-start: 314
+    :emphasize-lines: 6-7
+
+            a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
+            assert (
+                unknown_number_of_arguments(**a_dictionary)
+            == ((), a_dictionary)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                unknown_number_of_arguments(**a_dictionary),
+                ((), a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 271
+    :emphasize-lines: 5-6
+
+            assert (
+                unknown_number_of_arguments()
+            == ((), {})
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                unknown_number_of_arguments(),
+                ((), {})
+            )
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add :ref:`variables<what is a variable?>` for the :ref:`calls<how to call a function with input>` to ``src.functions.unknown_number_of_arguments`` and my expectations
+
+  .. code-block:: python
+    :lineno-start: 249
+    :emphasize-lines: 10-13
+
+        # def test_unknown_number_of_arguments():
+        def test_unknown_number_of_arguments(self):
+            unknown_number_of_arguments = (
+                src.functions.unknown_number_of_arguments
+            )
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3}
+
+            reality = unknown_number_of_arguments(
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (a_tuple, a_dictionary)
+            assert (
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                )
+            == (a_tuple, a_dictionary)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                ),
+                (a_tuple, a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 276
+    :emphasize-lines: 4-7
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+
+            reality = unknown_number_of_arguments(
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (a_tuple, a_dictionary)
+            assert (
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                )
+            == (a_tuple, a_dictionary)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                ),
+                (a_tuple, a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 297
+    :emphasize-lines: 4-7
+
+            a_tuple = (0, 1, 2)
+            a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+
+            reality = unknown_number_of_arguments(
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (a_tuple, a_dictionary)
+            assert (
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                )
+            == (a_tuple, a_dictionary)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                ),
+                (a_tuple, a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 318
+    :emphasize-lines: 3-4
+
+            a_tuple = (1, 2, 3, 'n')
+
+            reality = unknown_number_of_arguments(*a_tuple)
+            my_expectation = (a_tuple, {})
+            assert (
+                unknown_number_of_arguments(*a_tuple)
+            == (a_tuple, {})
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                unknown_number_of_arguments(*a_tuple),
+                (a_tuple, {})
+            )
+
+  .. code-block:: python
+    :lineno-start: 332
+    :emphasize-lines: 3-6
+
+            a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
+
+            reality = unknown_number_of_arguments(
+                **a_dictionary
+            )
+            my_expectation = ((), a_dictionary)
+            assert (
+                unknown_number_of_arguments(**a_dictionary)
+            == ((), a_dictionary)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                unknown_number_of_arguments(**a_dictionary),
+                ((), a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 348
+    :emphasize-lines: 1-2
+
+            reality = unknown_number_of_arguments()
+            my_expectation = ((), {})
+            assert (
+                unknown_number_of_arguments()
+            == ((), {})
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                unknown_number_of_arguments(),
+                ((), {})
+            )
+
+
+    # Exceptions seen
+
+* I use the :ref:`variables<what is a variable?>` to remove repetition of the :ref:`calls<how to call a function with input>` to ``src.functions.unknown_number_of_arguments`` and my expectations, from :ref:`test_unknown_number_of_arguments`
+
+  .. code-block:: python
+    :lineno-start: 249
+    :emphasize-lines: 14-19, 21-28
+
+        # def test_unknown_number_of_arguments():
+        def test_unknown_number_of_arguments(self):
+            unknown_number_of_arguments = (
+                src.functions.unknown_number_of_arguments
+            )
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3}
+
+            reality = unknown_number_of_arguments(
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (a_tuple, a_dictionary)
+            # assert (
+            #     unknown_number_of_arguments(
+            #         *a_tuple, **a_dictionary
+            #     )
+            # == (a_tuple, a_dictionary)
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     unknown_number_of_arguments(
+            #         *a_tuple, **a_dictionary
+            #     ),
+            #     (a_tuple, a_dictionary)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 278
+    :emphasize-lines: 8-13, 15-22
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+
+            reality = unknown_number_of_arguments(
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (a_tuple, a_dictionary)
+            # assert (
+            #     unknown_number_of_arguments(
+            #         *a_tuple, **a_dictionary
+            #     )
+            # == (a_tuple, a_dictionary)
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     unknown_number_of_arguments(
+            #         *a_tuple, **a_dictionary
+            #     ),
+            #     (a_tuple, a_dictionary)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 301
+    :emphasize-lines: 8-13, 15-22
+
+            a_tuple = (0, 1, 2)
+            a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+
+            reality = unknown_number_of_arguments(
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (a_tuple, a_dictionary)
+            # assert (
+            #     unknown_number_of_arguments(
+            #         *a_tuple, **a_dictionary
+            #     )
+            # == (a_tuple, a_dictionary)
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     unknown_number_of_arguments(
+            #         *a_tuple, **a_dictionary
+            #     ),
+            #     (a_tuple, a_dictionary)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 324
+    :emphasize-lines: 5-8, 10-15
+
+            a_tuple = (1, 2, 3, 'n')
+
+            reality = unknown_number_of_arguments(*a_tuple)
+            my_expectation = (a_tuple, {})
+            # assert (
+            #     unknown_number_of_arguments(*a_tuple)
+            # == (a_tuple, {})
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     unknown_number_of_arguments(*a_tuple),
+            #     (a_tuple, {})
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 340
+    :emphasize-lines: 7-10, 12-19
+
+            a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
+
+            reality = unknown_number_of_arguments(
+                **a_dictionary
+            )
+            my_expectation = ((), a_dictionary)
+            # assert (
+            #     unknown_number_of_arguments(**a_dictionary)
+            # == ((), a_dictionary)
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     unknown_number_of_arguments(**a_dictionary),
+            #     ((), a_dictionary)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 358
+    :emphasize-lines: 3-6, 8-13
+
+            reality = unknown_number_of_arguments()
+            my_expectation = ((), {})
+            # assert (
+            #     unknown_number_of_arguments()
+            # == ((), {})
+            # )
+            # self.assertNotEqual(
+            # self.assertEqual(
+            #     unknown_number_of_arguments(),
+            #     ((), {})
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_unknown_number_of_arguments`
+
+  .. code-block:: python
+    :lineno-start: 247
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_unknown_number_of_arguments(self):
+            unknown_number_of_arguments = (
+                src.functions.unknown_number_of_arguments
+            )
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3}
+
+            reality = unknown_number_of_arguments(
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (a_tuple, a_dictionary)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 264
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+
+            reality = unknown_number_of_arguments(
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (a_tuple, a_dictionary)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 274
+
+            a_tuple = (0, 1, 2)
+            a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+
+            reality = unknown_number_of_arguments(
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (a_tuple, a_dictionary)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 284
+
+            a_tuple = (1, 2, 3, 'n')
+
+            reality = unknown_number_of_arguments(*a_tuple)
+            my_expectation = (a_tuple, {})
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 291
+
+            a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
+
+            reality = unknown_number_of_arguments(
+                **a_dictionary
+            )
+            my_expectation = ((), a_dictionary)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 300
+
+            reality = unknown_number_of_arguments()
+            my_expectation = ((), {})
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # SyntaxError
+    # ModuleNotFoundError
+    # AttributeError
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move test_unknown_number_of_arguments to TestFunctions'
+
+----
+
+*********************************************************************************
 close the project
 *********************************************************************************
 
