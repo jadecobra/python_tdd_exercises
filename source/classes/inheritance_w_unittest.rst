@@ -1278,7 +1278,7 @@ the test is green again.
   .. code-block:: python
     :lineno-start: 49
 
-            # self.assertIsSubclass(None, object)
+            self.assertIsSubclass(bool, object)
 
         def test_is_an_integer_an_object(self):
             assert isinstance(int, object)
@@ -1318,7 +1318,7 @@ test_is_a_float_an_object with unittest
     :lineno-start: 56
     :emphasize-lines: 3-5
 
-            self.assertIsSubclass(bool, object)
+            self.assertIsSubclass(int, object)
 
         def test_is_a_float_an_object():
             assert isinstance(float, object)
@@ -1439,7 +1439,7 @@ the test is green again.
   .. code-block:: python
     :lineno-start: 56
 
-            # self.assertIsSubclass(None, object)
+            self.assertIsSubclass(int, object)
 
         def test_is_a_float_an_object(self):
             assert isinstance(float, object)
