@@ -1479,7 +1479,7 @@ test_is_a_string_an_object with unittest
     :lineno-start: 63
     :emphasize-lines: 3-5
 
-            self.assertIsSubclass(int, object)
+            self.assertIsSubclass(float, object)
 
         def test_is_a_string_an_object():
             assert isinstance(str, object)
@@ -1600,7 +1600,7 @@ the test is green again.
   .. code-block:: python
     :lineno-start: 63
 
-            self.assertIsSubclass(int, object)
+            self.assertIsSubclass(float, object)
 
         def test_is_a_string_an_object(self):
             assert isinstance(str, object)
