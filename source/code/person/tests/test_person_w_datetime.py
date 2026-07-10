@@ -184,7 +184,7 @@ class TestPerson(unittest.TestCase):
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
-    def test_person_when_year_of_birth_is_none(self):
+    # def test_person_when_year_of_birth_is_none(self):
         # raises AssertionError
         # an_instance_of_person = src.person.Person(
         #     first_name='first_name',

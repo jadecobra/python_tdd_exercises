@@ -57,6 +57,7 @@
 .. _Linux packages: apt_
 .. _ls: https://grokipedia.com/page/Ls
 .. _maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
+.. _self.maxDiff: maxDiff_
 .. _mkdir: https://man7.org/Linux/man-pages/man1/mkdir.1.html
 .. _mkdir program: mkdir_
 .. _make a directory: mkdir_

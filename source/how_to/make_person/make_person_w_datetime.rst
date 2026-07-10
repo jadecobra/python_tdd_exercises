@@ -71,9 +71,645 @@ open the project
 
     tests/test_person.py ......                         [100%]
 
-    =================== 6 passed in A.BCs ====================
+    =================== 6 passed in M.NOs ====================
 
 ----
+
+*********************************************************************************
+test_dir_datetime
+*********************************************************************************
+
+I want to see what comes with the `datetime module`_.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add :ref:`test_dir_datetime` to ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 262
+    :emphasize-lines: 3-6
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_dir_datetime(self):
+            reality = dir(datetime)
+            my_expectation = []
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: shell
+
+    NameError: name 'datetime' is not defined.
+               Did you forget to import 'datetime'?
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add an `import statement`_ for `datetime`_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import datetime
+    import src.person
+    import unittest
+
+
+    class TestPerson(unittest.TestCase):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        Lists differ: [
+            'MAXYEAR', 'MINYEAR', 'UTC',
+            '__all__', '[179 chars]nfo'
+        ] != []
+
+  it also shows the entire difference between the :ref:`lists<what is a list?>`
+
+* I copy (:kbd:`ctrl/command+c`) the values from the terminal_, paste (:kbd:`ctrl/command+v`) them as ``my_expectation`` and remove the extra characters
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 5-25
+    :emphasize-text: datetime
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_dir_datetime(self):
+            reality = dir(datetime)
+            my_expectation = [
+                'MAXYEAR',
+                'MINYEAR',
+                'UTC',
+                '__all__',
+                '__builtins__',
+                '__cached__',
+                '__doc__',
+                '__file__',
+                '__loader__',
+                '__name__',
+                '__package__',
+                '__spec__',
+                'date',
+                'datetime',
+                'datetime_CAPI',
+                'time',
+                'timedelta',
+                'timezone',
+                'tzinfo'
+            ]
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes because when ``import datetime`` runs, Python_ brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the `datetime module`_ from `The Python Standard Library`_ so I can use it in ``test_person.py`` as ``datetime``.
+
+  This means that there is a file_ or folder_ on the computer named ``datetime`` that got added when I installed Python_.
+
+  .. caution:: Your list of attributes and methods may be different depending on your Python version
+
+----
+
+*********************************************************************************
+test_dir_datetime_date
+*********************************************************************************
+
+A few names stand out in the :ref:`list of attributes and methods of datetime<test_dir_datetime>`
+
+* ``date`` - I assume this handles dates
+* ``time`` - I assume this handles time
+* ``datetime`` - I assume a combination of date and time
+
+What I want is something that will give me the current year.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add :ref:`test_dir_datetime_date` to ``test_person.py``
+
+.. code-block:: python
+  :lineno-start: 288
+  :emphasize-lines: 3-6
+
+          self.assertEqual(reality, my_expectation)
+
+      def test_dir_datetime_date(self):
+          reality = dir(datetime.date)
+          my_expectation = []
+          self.assertEqual(reality, my_expectation)
+
+
+  # Exceptions seen
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: shell
+
+  AssertionError:
+      Lists differ: [
+          '__add__', '__class__', '__delattr__',
+          '_[585 chars]ear'
+      ] != []
+
+with a message about how to see the entire difference
+
+.. code-block:: python
+
+  Diff is 787 characters long.
+  Set self.maxDiff to None to see it.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I set `self.maxDiff`_ to :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 288
+    :emphasize-lines: 6
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_dir_datetime_date(self):
+            reality = dir(datetime.date)
+            my_expectation = []
+            self.maxDiff = None
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ shows the entire difference between ``reality`` and ``my_expectation``.
+
+* I copy (:kbd:`ctrl/command+c`) the values from the terminal_, paste (:kbd:`ctrl/command+v`) them as ``my_expectation`` and remove the extra characters
+
+  .. code-block:: python
+    :lineno-start: 290
+    :emphasize-lines: 3-21
+    :emphasize-text: year today
+
+
+        def test_dir_datetime_date(self):
+            reality = dir(datetime.date)
+            my_expectation = [
+                '__add__', '__class__', '__delattr__',
+                '__dir__', '__doc__', '__eq__',
+                '__format__', '__ge__', '__getattribute__',
+                '__getstate__', '__gt__', '__hash__',
+                '__init__', '__init_subclass__', '__le__',
+                '__lt__', '__ne__', '__new__', '__radd__',
+                '__reduce__', '__reduce_ex__',
+                '__replace__', '__repr__', '__rsub__',
+                '__setattr__', '__sizeof__', '__str__',
+                '__sub__', '__subclasshook__', 'ctime',
+                'day', 'fromisocalendar', 'fromisoformat',
+                'fromordinal', 'fromtimestamp',
+                'isocalendar', 'isoformat', 'isoweekday',
+                'max', 'min', 'month', 'replace',
+                'resolution', 'strftime', 'strptime',
+                'timetuple', 'today', 'toordinal',
+                'weekday', 'year'
+            ]
+            self.maxDiff = None
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+----
+
+*********************************************************************************
+test_dir_datetime_date_year
+*********************************************************************************
+
+I see ``year`` in the :ref:`list of attributes and methods of datetime.date<test_dir_datetime_date>`.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a test for the ``year`` :ref:`attribute<what is a class attribute?>` of the ``date`` :ref:`attribute<what is a class attribute?>` of the `datetime module`_ inj ``test_person.py``
+
+.. code-block:: python
+  :lineno-start: 312
+  :emphasize-lines: 3-6
+
+          self.assertEqual(reality, my_expectation)
+
+      def test_dir_datetime_date_year(self):
+          reality = dir(datetime.date.year)
+          my_expectation = []
+          self.assertEqual(reality, my_expectation)
+
+
+  # Exceptions seen
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with only :ref:`attributes<what is a class attribute?>` that start and end with double underscore (``__``)
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change the value of ``reality`` to ``datetime.date.year``
+
+  .. code-block:: python
+    :lineno-start: 314
+    :emphasize-lines: 2-3
+
+        def test_dir_datetime_date_year(self):
+            # reality = dir(datetime.date.year)
+            reality = datetime.date.year
+            my_expectation = []
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <attribute 'year' of 'datetime.date' objects>
+     != []
+
+* I try :ref:`calling<how to call a function>` ``date``
+
+  .. code-block:: python
+    :lineno-start: 314
+    :emphasize-lines: 3-4
+
+        def test_dir_datetime_date_year(self):
+            # reality = dir(datetime.date.year)
+            # reality = datetime.date.year
+            reality = datetime.date().year
+            my_expectation = []
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: function missing
+               required argument 'year' (pos 1)
+
+  I want something that automatically knows the date and gives me the year.
+
+----
+
+*********************************************************************************
+test_dir_datetime_date_today
+*********************************************************************************
+
+I also saw ``today`` in the :ref:`list of attributes and methods of datetime.date<test_dir_datetime_date>`.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I change :ref:`test_dir_datetime_date_year` to a test for the ``today`` :ref:`attribute<what is a class attribute?>` of the ``date`` :ref:`attribute<what is a class attribute?>` of the `datetime module`_ in ``test_person.py``
+
+.. code-block:: python
+  :lineno-start: 312
+  :emphasize-lines: 3, 6-7
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_dir_datetime_date_today(self):
+            # reality = dir(datetime.date.year)
+            # reality = datetime.date.year
+            # reality = datetime.date().year
+            reality = datetime.date.today
+            my_expectation = []
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  AssertionError:
+      <built-in method today
+       of type object at 0xffff0fab2345>
+   != []
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change the value of ``reality`` to a :ref:`call<how to call a function>` to ``datetime.date.today``
+
+  .. code-block:: python
+    :lineno-start: 314
+    :emphasize-lines: 5-6
+
+        def test_dir_datetime_date_today(self):
+            # reality = dir(datetime.date.year)
+            # reality = datetime.date.year
+            # reality = datetime.date().year
+            # reality = datetime.date.today
+            reality = datetime.date.today()
+            my_expectation = []
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: datetime.date(YYYY, MM, DD) != []
+
+  where ``YYYY`` is the current year, ``MM`` is the current month and ``DD`` is the current date. Progress!
+
+* When I :ref:`called<how to call a function>` ``datetime.date()`` it asked for the ``year`` argument, and the result of the :ref:`call<how to call a function>` is ``datetime.date(YYYY, MM, DD)`` which looks like a :ref:`call<how to call a function>` to ``datetime.date()``. I wonder if it also has a ``year`` :ref:`attribute<what is a class attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 314
+    :emphasize-lines: 6-7
+
+        def test_dir_datetime_date_today(self):
+            # reality = dir(datetime.date.year)
+            # reality = datetime.date.year
+            # reality = datetime.date().year
+            # reality = datetime.date.today
+            # reality = datetime.date.today()
+            reality = dir(datetime.date.today())
+            my_expectation = []
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with a message about setting `self.maxDiff`_ to see the full difference
+
+* I set `self.maxDiff`_ to :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 314
+    :emphasize-lines: 9
+
+        def test_dir_datetime_date_today(self):
+            # reality = dir(datetime.date.year)
+            # reality = datetime.date.year
+            # reality = datetime.date().year
+            # reality = datetime.date.today
+            # reality = datetime.date.today()
+            reality = dir(datetime.date.today())
+            my_expectation = []
+            self.maxDiff = None
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ shows the entire difference between ``reality`` and ``my_expectation`` and there is a ``year`` :ref:`attribute<what is a class attribute?>` because they are the same as :ref:`the attributes and methods of datetime.date<test_dir_datetime_date>`
+
+* I change ``my_expectation``
+
+  .. code-block:: python
+    :lineno-start: 314
+    :emphasize-lines: 8-9
+
+        def test_dir_datetime_date_today(self):
+            # reality = dir(datetime.date.year)
+            # reality = datetime.date.year
+            # reality = datetime.date().year
+            # reality = datetime.date.today
+            # reality = datetime.date.today()
+            reality = dir(datetime.date.today())
+            # my_expectation = []
+            my_expectation = dir(datetime.date)
+            self.maxDiff = None
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+----
+
+*********************************************************************************
+test_datetime_date_today_year
+*********************************************************************************
+
+It looks like I have a way to get the current year.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add :ref:`test_dir_datetime_date_today_year` to a test for the ``year`` :ref:`attribute<what is a class attribute?>` of the result of a :ref:`call<how to call a function>` to the ``date`` :ref:`method<what is a method?>` of the `datetime module`_ in ``test_person.py``
+
+.. code-block:: python
+  :lineno-start: 324
+  :emphasize-lines: 3-6
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_datetime_date_today_year(self):
+            reality = datetime.date.today().year
+            my_expectation = 1900
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  AssertionError: YYYY != 1900
+
+where ``YYYY`` is the current year.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change ``my_expectation`` to match ``reality`` and the test passes.
+
+* I remove :ref:`test_dir_datetime_date`, :ref:`test_dir_datetime_date_today` add :ref:`test_datetime_date_today_year`
+
+  .. code-block:: python
+    :lineno-start: 256
+
+                'first_name',
+                'last_name',
+                'say_hello',
+                'sex',
+                'year_of_birth',
+            ]
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+:ref:`I have a way to automatically get the current year that will always be correct<test_datetime_date_today_year>`.
+
+----
+
+*********************************************************************************
+test_datetime_date_today_year
+*********************************************************************************
+
+It looks like I have a way to get the current year.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add :ref:`test_dir_datetime_date_today_year` to a test for the ``year`` :ref:`attribute<what is a class attribute?>` of the result of a :ref:`call<how to call a function>` to the ``date`` :ref:`method<what is a method?>` of the `datetime module`_ in ``test_person.py``
+
+.. code-block:: python
+  :lineno-start: 324
+  :emphasize-lines: 3-6
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_datetime_date_today_year(self):
+            reality = datetime.date.today().year
+            my_expectation = 1900
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  AssertionError: YYYY != 1900
+
+where ``YYYY`` is the current year.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change ``my_expectation`` to match ``reality`` and the test passes.
+
+* I remove :ref:`test_dir_datetime_date`, :ref:`test_dir_datetime_date_today` add :ref:`test_datetime_date_today_year` because I no longer need them
+
+  .. code-block:: python
+    :lineno-start: 256
+
+                'first_name',
+                'last_name',
+                'say_hello',
+                'sex',
+                'year_of_birth',
+            ]
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* I open a new terminal_ then make sure I am in the ``classes`` folder_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd classes
+
+
+
+* I add a git_ commit message in the new terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_dir_datetime'
+
+
 
 *********************************************************************************
 close the project
