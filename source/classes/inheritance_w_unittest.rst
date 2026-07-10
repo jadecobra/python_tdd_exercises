@@ -2146,7 +2146,7 @@ test_is_a_dictionary_an_object with unittest
         TestClasses.test_is_a_dictionary_an_object()
         takes 0 positional arguments but 1 was given
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) ...
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
 ----
 
@@ -2165,7 +2165,7 @@ I add ``self`` to the parentheses of :ref:`test_is_a_dictionary_an_object`
       # def test_is_a_dictionary_an_object():
       def test_is_a_dictionary_an_object(self):
 
-green.
+green again.
 
 ----
 
@@ -2197,7 +2197,7 @@ green.
   .. code-block:: shell
 
     AssertionError:
-        <class 'dict>
+        <class 'dict'>
         is an instance of <class 'object'>
 
 * I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
