@@ -8,13 +8,15 @@
 .. _isinstance built-in function: isinstance_
 .. _issubclass: https://docs.python.org/3/library/functions.html#issubclass
 .. _issubclass built-in function: issubclass_
+.. _object: https://docs.python.org/3/glossary.html#term-object
+.. _objects: object_
 
 
 #################################################################################
 everything is an object
 #################################################################################
 
-The :ref:`object class<what is a class?>` is the mother of all things in Python_. I think of classes_ as :ref:`attributes (variables)<what is a class attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together.
+The :ref:`object class<what is a class?>` is the mother of all things in Python_. I think of :ref:`classes<what is a class?>` as :ref:`attributes (variables)<what is a class attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together.
 
 ----
 

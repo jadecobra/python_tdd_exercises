@@ -613,42 +613,28 @@ where ``YYYY`` is the current year.
 ----
 
 *********************************************************************************
-test_datetime_date_today_year
+test_joe with datetime
 *********************************************************************************
 
-It looks like I have a way to get the current year.
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add :ref:`test_dir_datetime_date_today_year` to a test for the ``year`` :ref:`attribute<what is a class attribute?>` of the result of a :ref:`call<how to call a function>` to the ``date`` :ref:`method<what is a method?>` of the `datetime module`_ in ``test_person.py``
+I change the age calculation in ``my_expectation`` of :ref:`say_hello<test say_hello method>` in :ref:`test_joe` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
 
 .. code-block:: python
-  :lineno-start: 324
+  :lineno-start: 27
   :emphasize-lines: 3-6
 
-            self.assertEqual(reality, my_expectation)
-
-        def test_datetime_date_today_year(self):
-            reality = datetime.date.today().year
-            my_expectation = 1900
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: python
-
-  AssertionError: YYYY != 1900
-
-where ``YYYY`` is the current year.
+        reality = src.person.say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            # f' {2026-year_of_birth}.'
+            f' {datetime.date.today().year-year_of_birth}.'
+        )
+        assert reality == my_expectation
+        self.assertEqual(reality, my_expectation)
 
 ----
 
