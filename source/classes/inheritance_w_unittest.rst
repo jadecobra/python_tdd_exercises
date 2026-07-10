@@ -1030,7 +1030,7 @@ I add ``self`` to the parentheses of :ref:`test_is_a_boolean_an_object`
       # def test_is_a_boolean_an_object():
       def test_is_a_boolean_an_object(self):
 
-green.
+the test is green again.
 
 ----
 
@@ -1040,11 +1040,11 @@ green.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assert_not_is_instance>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubclass methods<test_assert_not_is_subclass>`
 
   .. code-block:: python
     :lineno-start: 44
-    :emphasize-lines: 4
+    :emphasize-lines: 4, 7
 
         # def test_is_a_boolean_an_object():
         def test_is_a_boolean_an_object(self):
@@ -1052,6 +1052,7 @@ green.
             self.assertNotIsInstance(bool, object)
 
             assert issubclass(bool, object)
+            self.assertNotIsSubclass(bool, object)
 
 
     def test_is_an_integer_an_object():
@@ -1061,7 +1062,7 @@ green.
   .. code-block:: shell
 
     AssertionError:
-        <tests.test_classes.WPass object at 0xffffabcde0f12>
+        <class 'bool'>
         is an instance of <class 'object'>
 
 * I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
@@ -1069,25 +1070,6 @@ green.
   .. code-block:: python
     :lineno-start: 44
     :emphasize-lines: 4-5
-
-        # def test_is_a_boolean_an_object():
-        def test_is_a_boolean_an_object(self):
-            assert isinstance(bool, object)
-            # self.assertNotIsInstance(bool, object)
-            self.assertIsInstance(bool, object)
-
-            assert issubclass(bool, object)
-
-
-    def test_is_an_integer_an_object():
-
-  the test passes.
-
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubclass method<test_assert_not_is_subclass>`
-
-  .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 8
 
         # def test_is_a_boolean_an_object():
         def test_is_a_boolean_an_object(self):
@@ -1106,7 +1088,7 @@ green.
   .. code-block:: shell
 
     AssertionError:
-        <class 'tests.test_classes.bool'>
+        <class 'bool'>
         is a subclass of <class 'object'>
 
 * I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
@@ -1135,7 +1117,7 @@ green.
   .. code-block:: python
     :lineno-start: 42
 
-            self.assertIsSubclass(WParentheses, object)
+            # self.assertIsSubclass(None, object)
 
         def test_is_a_boolean_an_object(self):
             assert isinstance(bool, object)
