@@ -3366,6 +3366,273 @@ the test is green again.
 ----
 
 *********************************************************************************
+test_optional_arguments with unittest
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+
+* I move :ref:`test_optional_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
+
+  .. code-block:: python
+    :lineno-start: 207
+    :emphasize-lines: 3-6, 8, 10-15
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_optional_arguments():
+            optional_arguments = (
+                src.functions.optional_arguments
+            )
+
+            first_name, last_name = 'jane', 'doe'
+
+            assert (
+                optional_arguments(
+                    first_name,
+                )
+            == (first_name, last_name)
+            )
+
+  .. code-block:: python
+    :lineno-start: 223
+    :emphasize-lines: 1-7
+
+            first_name, blow = 'joe', 'blow'
+            assert (
+                optional_arguments(
+                    first_name, blow
+                )
+            == (first_name, blow)
+            )
+
+  .. code-block:: python
+    :lineno-start: 231
+    :emphasize-lines: 1-7
+
+            first_name = 'john'
+            assert (
+                optional_arguments(
+                    first_input=first_name
+                )
+            == (first_name, last_name)
+            )
+
+  .. code-block:: python
+    :lineno-start: 239
+    :emphasize-lines: 1-8
+
+            last_name = 'smith'
+            assert (
+                optional_arguments(
+                    last_input=last_name,
+                    first_input=first_name,
+                )
+            == (first_name, last_name)
+            )
+
+
+    def test_unknown_number_of_arguments():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestFunctions.test_optional_arguments()
+        takes 0 positional arguments but 1 was given
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``self`` to the parentheses of :ref:`test_optional_arguments`
+
+.. code-block:: python
+  :lineno-start: 209
+  :emphasize-lines: 1-2
+
+      # def test_optional_arguments():
+      def test_optional_arguments(self):
+          first, last = 'first', 'last'
+
+the test is green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_optional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 209
+    :emphasize-lines: 11-16
+
+        # def test_optional_arguments():
+        def test_optional_arguments(self):
+            first, last = 'first', 'last'
+
+            assert (
+                src.functions.optional_arguments(
+                    first, last_input=last,
+                )
+            == (first, last)
+            )
+            self.assertNotEqual(
+                src.functions.optional_arguments(
+                    first, last_input=last,
+                ),
+                (first, last)
+            )
+
+
+    def test_unknown_number_of_arguments():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: ('first', 'last') == ('first', 'last')
+
+* I change the :ref:`call<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_optional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 209
+    :emphasize-lines: 11-12
+
+        # def test_optional_arguments():
+        def test_optional_arguments(self):
+            first, last = 'first', 'last'
+
+            assert (
+                src.functions.optional_arguments(
+                    first, last_input=last,
+                )
+            == (first, last)
+            )
+            # self.assertNotEqual(
+            self.assertNotEqual(
+                src.functions.optional_arguments(
+                    first, last_input=last,
+                ),
+                (first, last)
+            )
+
+
+    def test_unknown_number_of_arguments():
+
+  the test passes.
+
+* I add :ref:`variables<what is a variable?>` for the :ref:`call<how to call a function with input>` to ``src.functions.optional_arguments`` and my expectation
+
+  .. code-block:: python
+    :lineno-start: 209
+    :emphasize-lines: 5-8
+
+        # def test_optional_arguments():
+        def test_optional_arguments(self):
+            first, last = 'first', 'last'
+
+            reality = src.functions.optional_arguments(
+                first, last_input=last,
+            )
+            my_expectation = (first, last)
+            assert (
+                src.functions.optional_arguments(
+                    first, last_input=last,
+                )
+            == (first, last)
+            )
+            # self.assertNotEqual(
+            self.assertNotEqual(
+                src.functions.optional_arguments(
+                    first, last_input=last,
+                ),
+                (first, last)
+            )
+
+
+    def test_unknown_number_of_arguments():
+
+* I use the :ref:`variables<what is a variable?>` to remove repetition of the :ref:`call<how to call a function with input>` to ``src.functions.optional_arguments`` and my expectation, from :ref:`test_optional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 209
+    :emphasize-lines: 9-15, 17-23
+
+        # def test_optional_arguments():
+        def test_optional_arguments(self):
+            first, last = 'first', 'last'
+
+            reality = src.functions.optional_arguments(
+                first, last_input=last,
+            )
+            my_expectation = (first, last)
+            # assert (
+            #     src.functions.optional_arguments(
+            #         first, last_input=last,
+            #     )
+            # == (first, last)
+            # )
+            # self.assertNotEqual(
+            # self.assertNotEqual(
+            #     src.functions.optional_arguments(
+            #         first, last_input=last,
+            #     ),
+            #     (first, last)
+            # )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+
+    def test_unknown_number_of_arguments():
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_optional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 207
+
+            self.assertEqual(reality, my_expectation)
+
+        def test_optional_arguments(self):
+            first, last = 'first', 'last'
+
+            reality = src.functions.optional_arguments(
+                first, last_input=last,
+            )
+            my_expectation = (first, last)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+
+    def test_unknown_number_of_arguments():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move test_optional_arguments to TestFunctions'
+
+----
+
+*********************************************************************************
 close the project
 *********************************************************************************
 
