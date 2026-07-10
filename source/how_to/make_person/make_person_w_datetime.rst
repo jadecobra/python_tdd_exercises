@@ -860,7 +860,7 @@ Each test :ref:`calls datetime.date.today()<test_dir_datetime_date_today>` to ge
 ----
 
 *********************************************************************************
-extract calculate_age
+extract calculate_age method
 *********************************************************************************
 
 Each test does a calculation for the age. I can make a :ref:`method<what is a method?>` to remove the repetition.
@@ -930,7 +930,7 @@ Each test does a calculation for the age. I can make a :ref:`method<what is a me
 
 ----
 
-I add ``self`` to the parentheses of :ref:`calculate_age<extract calculate_age>`
+I add ``self`` to the parentheses of :ref:`calculate_age<extract calculate_age method>`
 
 .. code-block:: python
   :lineno-start: 6
@@ -1114,7 +1114,7 @@ the test passes.
 
             mary = src.person.Person(
 
-* The :ref:`this_year class attribute<extract this_year attribute>` is now used in only one place :ref:`the calculate_age method<extract calculate_age>`. I can call what it points to directly
+* The :ref:`this_year class attribute<extract this_year attribute>` is now used in only one place :ref:`the calculate_age method<extract calculate_age method>`. I can call what it points to directly
 
   .. code-block:: python
     :lineno-start: 6
@@ -1134,7 +1134,7 @@ the test passes.
 
         def test_joe(self):
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` since :ref:`calculate_age<extract calculate_age>` no longer uses anything from the :ref:`TestPerson class<add TestPerson class>`
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` since :ref:`calculate_age<extract calculate_age method>` no longer uses anything from the :ref:`TestPerson class<add TestPerson class>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -1183,13 +1183,226 @@ the test passes.
 
         def test_joe(self):
 
+  this works because Python_ follows the following path when ``self.calculate_age(year_of_birth)`` is :ref:`called<how to call a function with input>`
+
+  .. code-block:: shell
+
+    self.calculate_age(year_of_birth)
+    └── class TestPerson(unittest.TestCase)
+        │   @staticmethod
+        └── def calculate_age(year_of_birth):
+            └── return (
+                    datetime.date.today().year
+                  - year_of_birth
+                )
+
+  when ``datetime.date.today()`` runs, I imagine Python_ follows this path
+
+  .. code-block:: shell
+
+    datetime.date.today()
+    datetime
+        └── class date
+            └── today()
+                └── return self.date(YYYY, MM, DD)
+
+  using substitution for :ref:`the return statement`
+
+  .. code-block:: python
+
+    return (
+        datetime.date.today().year
+      - year_of_birth
+    )
+    return (
+        datetime.date(YYYY, MM, DD).year
+      - year_of_birth
+    )
+    return (YYYY - year_of_birth)
+
+  where ``YYYY`` is the current year.
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
     git commit -am \
-    'extract calculate_age'
+    'extract calculate_age method'
+
+----
+
+*********************************************************************************
+add calculate_age
+*********************************************************************************
+
+The tests use the right calculation for the age, and the solution still uses a fixed value (``2026``)
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+* I open ``person.py`` from the ``src`` folder_
+* I add a :ref:`function<what is a function?>` to calculate the age, with the same body as the :ref:`calculate_age method<extract calculate_age method>`, in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 9-13
+
+        def say_hello(self):
+            return (
+                f'Hello, my name is {self.first_name}'
+                f' {self.last_name} and I am'
+                f' {2026-self.year_of_birth}.'
+            )
+
+
+    def calculate_age(year_of_birth):
+        return (
+            datetime.date.today().year
+          - year_of_birth
+        )
+
+
+    def say_hello(
+        first_name, last_name, year_of_birth
+    ):
+
+* I use the :ref:`function<what is a function?>` in the :ref:`say_hello method<test say_hello method>` of the :ref:`Person class<test Person class>`
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 5-6
+
+        def say_hello(self):
+            return (
+                f'Hello, my name is {self.first_name}'
+                f' {self.last_name} and I am'
+                # f' {2026-self.year_of_birth}.'
+                f' {calculate_age(self.year_of_birth)}.'
+            )
+
+
+    def calculate_age(year_of_birth):
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: shell
+
+    NameError: name 'datetime' is not defined.
+               Did you forget to import 'datetime'?
+
+  I did.
+
+* I add an `import statement`_ at the top of ``person.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import datetime
+
+
+    class Person:
+
+  all tests are green again.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 12
+
+        def say_hello(self):
+            return (
+                f'Hello, my name is {self.first_name}'
+                f' {self.last_name} and I am'
+                f' {calculate_age(self.year_of_birth)}.'
+            )
+
+
+    def calculate_age(year_of_birth):
+
+* I use the :ref:`function<what is a function?>` in the :ref:`say_hello function<test say_hello function>`
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 7-8
+
+    def say_hello(
+        first_name, last_name, year_of_birth
+    ):
+        return (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            # f' {2026-year_of_birth}.'
+            f' {calculate_age(year_of_birth)}.'
+        )
+
+
+    def factory(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
+
+  still green.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 30
+
+    def say_hello(
+        first_name, last_name, year_of_birth
+    ):
+        return (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {calculate_age(year_of_birth)}.'
+        )
+
+
+    def factory(
+
+* I change the calculation in the :ref:`calculate_age method<extract calculate_age method>` to make sure the tests work, in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 2
+
+        @staticmethod
+        def calculate_age(year_of_birth):
+            return 1900 - year_of_birth
+            return (
+                datetime.date.today().year
+              - year_of_birth
+            )
+
+        def test_joe(self):
+
+  - The terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for all four people.
+  - The ages of the expectations are all negative numbers, this is a problem.
+  - The results of the :ref:`call<how to call a function with input>` all have the right age. Lovely!
+
+* I change the calculate in the :ref:`calculate_age method<extract calculate_age method>` back
+
+  .. code-block:: python
+    :lineno-start: 8
+
+        @staticmethod
+        def calculate_age(year_of_birth):
+            return (
+                datetime.date.today().year
+              - year_of_birth
+            )
+
+        def test_joe(self):
+
+  green again.
 
 *********************************************************************************
 close the project
