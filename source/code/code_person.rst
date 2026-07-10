@@ -82,7 +82,7 @@ the code in ``person/tests/test_person.py`` from :ref:`test person with unittest
 ----
 
 *********************************************************************************
-test person with datetime: tests and solution
+test person with datetime: tests and solutions
 *********************************************************************************
 
 =================================================================================

@@ -557,7 +557,7 @@ It looks like I have a way to get the current year.
 
 ----
 
-I add :ref:`test_dir_datetime_date_today_year` to a test for the ``year`` :ref:`attribute<what is a class attribute?>` of the result of a :ref:`call<how to call a function>` to the ``date`` :ref:`method<what is a method?>` of the `datetime module`_ in ``test_person.py``
+I add :ref:`test_datetime_date_today_year` to test the ``year`` :ref:`attribute<what is a class attribute?>` of the result of a :ref:`call<how to call a function>` to the ``date`` :ref:`method<what is a method?>` of the `datetime module`_ (``datetime.date.today().year``) in ``test_person.py``
 
 .. code-block:: python
   :lineno-start: 324
@@ -613,7 +613,7 @@ where ``YYYY`` is the current year.
 ----
 
 *********************************************************************************
-test_joe with datetime
+test age with current year
 *********************************************************************************
 
 * I change the age calculation in ``my_expectation`` of :ref:`say_hello<test say_hello method>` in :ref:`test_joe` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
@@ -636,73 +636,273 @@ test_joe with datetime
           assert reality == my_expectation
           self.assertEqual(reality, my_expectation)
 
-  the test is still green
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 9-10
-
-          reality = src.person.say_hello(
-              first_name=first_name,
-              last_name=last_name,
-              year_of_birth=year_of_birth,
-          )
-          my_expectation = (
-              f'Hello, my name is {first_name}'
-              f' {last_name} and I am'
-              f' {datetime.date.today().year-year_of_birth}.'
-          )
-          assert reality == my_expectation
-          self.assertEqual(reality, my_expectation)
-
-----
-
-*********************************************************************************
-test_jane with datetime
-*********************************************************************************
+  the test is still green.
 
 * I change the age calculation in ``my_expectation`` of :ref:`say_hello<test say_hello method>` in :ref:`test_jane` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
 
   .. code-block:: python
-    :lineno-start: 70
+    :lineno-start: 71
     :emphasize-lines: 9-10
 
-          reality = src.person.say_hello(
-              first_name=first_name,
-              last_name=last_name,
-              year_of_birth=year_of_birth,
-          )
-          my_expectation = (
-              f'Hello, my name is {first_name}'
-              f' {last_name} and I am'
-              # f' {2026-year_of_birth}.'
-              f' {datetime.date.today().year-year_of_birth}.'
-          )
-          assert reality == my_expectation
-          self.assertEqual(reality, my_expectation)
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                # f' {2026-year_of_birth}.'
+                f' {datetime.date.today().year-year_of_birth}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
-  the test is still green
+  still green.
 
-* I remove the commented line
+* I change the age calculation in ``my_expectation`` of :ref:`say_hello<test say_hello method>` in :ref:`test_john` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
 
   .. code-block:: python
-    :lineno-start: 70
+    :lineno-start: 115
     :emphasize-lines: 9-10
 
-          reality = src.person.say_hello(
-              first_name=first_name,
-              last_name=last_name,
-              year_of_birth=year_of_birth,
-          )
-          my_expectation = (
-              f'Hello, my name is {first_name}'
-              f' {last_name} and I am'
-              f' {datetime.date.today().year-year_of_birth}.'
-          )
-          assert reality == my_expectation
-          self.assertEqual(reality, my_expectation)
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                # f' {2026-year_of_birth}.'
+                f' {datetime.date.today().year-year_of_birth}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  green.
+
+* I change the age calculation in ``my_expectation`` of :ref:`say_hello<test say_hello method>` in :ref:`test_mary` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
+
+  .. code-block:: python
+    :lineno-start: 159
+    :emphasize-lines: 9-10
+
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                # f' {2026-year_of_birth}.'
+                f' {datetime.date.today().year-year_of_birth}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  still green.
+
+* I open a new terminal_ then make sure I am in the ``person`` folder_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd person
+
+* I add a git_ commit message in the new terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'use datetime to calculate age'
+
+----
+
+*********************************************************************************
+extract this_year attribute
+*********************************************************************************
+
+Each test :ref:`calls datetime.date.today()<test_dir_datetime_date_today>` to get the :ref:`year attribute<test_datetime_date_today_year>`.
+
+* I go back to the terminal_ where the tests are running
+
+* I add a :ref:`class attribute<what is a class attribute?>` to :ref:`TestPerson<add TestPerson class>` for the current year
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 3
+
+    class TestPerson(unittest.TestCase):
+
+        this_year = datetime.date.today().year
+
+        def test_joe(self):
+
+* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 10-11
+
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                # f' {2026-year_of_birth}.'
+                # f' {datetime.date.today().year-year_of_birth}.'
+                f' {self.this_year-year_of_birth}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  still green.
+
+* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 74
+    :emphasize-lines: 10-11
+
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                # f' {2026-year_of_birth}.'
+                # f' {datetime.date.today().year-year_of_birth}.'
+                f' {self.this_year-year_of_birth}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  green.
+
+* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 119
+    :emphasize-lines: 10-11
+
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                # f' {2026-year_of_birth}.'
+                # f' {datetime.date.today().year-year_of_birth}.'
+                f' {self.this_year-year_of_birth}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  still green.
+
+* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 164
+    :emphasize-lines: 10-11
+
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                # f' {2026-year_of_birth}.'
+                # f' {datetime.date.today().year-year_of_birth}.'
+                f' {self.this_year-year_of_birth}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  the test is still green.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract this_year attribute'
+
+----
+
+*********************************************************************************
+extract calculate_age
+*********************************************************************************
+
+Each test does a calculation for the age. I can make a :ref:`method<what is a method?>` to remove the repetition.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
+* I add a :ref:`method<what is a method?>` to :ref:`TestPerson<add TestPerson class>` to calculate the age
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 5-6
+
+    class TestPerson(unittest.TestCase):
+
+        this_year = datetime.date.today().year
+
+        def calculate_age(year_of_birth):
+            return self.this_year - year_of_birth
+
+        def test_joe(self):
+
+* I use the :ref:`method<what is a method?>` for ``self.this_year-year_of_birth`` in :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 11-12
+
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                # f' {2026-year_of_birth}.'
+                # f' {datetime.date.today().year-year_of_birth}.'
+                # f' {self.this_year-year_of_birth}.'
+                f' {self.calculate_age(year_of_birth)}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestPerson.calculate_age() takes
+        1 positional argument but 2 were given
 
 ----
 
@@ -712,58 +912,147 @@ test_jane with datetime
 
 ----
 
-* I change ``my_expectation`` to match ``reality`` and the test passes.
+I add ``self`` to the parentheses of :ref:`calculate_age<extract calculate_age>`
 
-* I remove :ref:`test_dir_datetime_date`, :ref:`test_dir_datetime_date_today` add :ref:`test_datetime_date_today_year` because I no longer need them
+.. code-block:: python
+  :lineno-start: 6
+  :emphasize-lines: 5-6
+
+    class TestPerson(unittest.TestCase):
+
+        this_year = datetime.date.today().year
+
+        # def calculate_age(year_of_birth):
+        def calculate_age(self,year_of_birth):
+            return self.this_year - year_of_birth
+
+        def test_joe(self):
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented lines from :ref:`test_joe`
 
   .. code-block:: python
-    :lineno-start: 256
+    :lineno-start: 33
 
-                'first_name',
-                'last_name',
-                'say_hello',
-                'sex',
-                'year_of_birth',
-            ]
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                f' {self.calculate_age(year_of_birth)}.'
+            )
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
-
-    # Exceptions seen
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* I open a new terminal_ then make sure I am in the ``classes`` folder_
+* I use the :ref:`method<what is a method?>` for ``self.this_year-year_of_birth`` in :ref:`test_jane`
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :lineno-start: 76
+    :emphasize-lines: 11-12
 
-    cd classes
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                # f' {2026-year_of_birth}.'
+                # f' {datetime.date.today().year-year_of_birth}.'
+                # f' {self.this_year-year_of_birth}.'
+                f' {self.calculate_age(year_of_birth)}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
+  the test is still green.
 
+* I remove the commented lines from :ref:`test_jane`
 
-* I add a git_ commit message in the new terminal_
+  .. code-block:: python
+    :lineno-start: 76
+
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                f' {self.calculate_age(year_of_birth)}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+* I use the :ref:`method<what is a method?>` for ``self.this_year-year_of_birth`` in :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 125
+    :emphasize-lines: 11-12
+
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                # f' {2026-year_of_birth}.'
+                # f' {datetime.date.today().year-year_of_birth}.'
+                # f' {self.this_year-year_of_birth}.'
+                f' {self.calculate_age(year_of_birth)}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  still green.
+
+* I use the :ref:`method<what is a method?>` for ``self.this_year-year_of_birth`` in :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 171
+    :emphasize-lines: 11-12
+
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                # f' {2026-year_of_birth}.'
+                # f' {datetime.date.today().year-year_of_birth}.'
+                # f' {self.this_year-year_of_birth}.'
+                f' {self.calculate_age(year_of_birth)}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  green.
+
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_dir_datetime'
-
-
+    'extract this_year attribute'
 
 *********************************************************************************
 close the project

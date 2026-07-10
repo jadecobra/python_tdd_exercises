@@ -623,7 +623,7 @@ I can make a :ref:`class<what is a class?>` with :ref:`object (the mother of all
 
 ----
 
-* I a :ref:`class definition<how to make a class>` for ``WObject``
+* I add a :ref:`class definition<how to make a class>` for ``WObject``
 
   .. code-block:: python
     :lineno-start: 4
