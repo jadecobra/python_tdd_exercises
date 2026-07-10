@@ -56,9 +56,9 @@ open the project
 
   .. code-block:: python
 
-    test_classes.py ............                      [100%]
+    test_classes.py .............                       [100%]
 
-    =================== 12 passed in G.HIs ===================
+    =================== 13 passed in J.KLs ===================
 
 ----
 
@@ -76,9 +76,15 @@ add TestClasses class
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4, 6-7
+    :emphasize-lines: 10, 13-14
 
-    import src.classes
+    class WPass: pass
+
+
+    class WParentheses(): pass
+
+
+    class WObject(object): pass
 
 
     class Classes(object):
@@ -94,14 +100,17 @@ add TestClasses class
 * I change the name of the :ref:`class<what is a class?>` to ``TestClasses``
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 7
     :emphasize-lines: 4-5
 
-    import src.classes
+    class WObject(object): pass
 
 
-    # class Classes(object):
+    # class Class(object):
     class TestClasses(object):
+
+        def test_failure(self):
+            self.assertEqual(True, False)
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -109,6 +118,19 @@ add TestClasses class
 
     AttributeError: 'TestClasses' object
                     has no attribute 'assertEqual'
+
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 5
+    :emphasize-text: AttributeError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # AttributeError
 
 ----
 
@@ -121,13 +143,13 @@ add TestClasses class
 * I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<what is a class?>` of ``TestClasses``
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 7
     :emphasize-lines: 5-6
 
-    import src.classes
+    class WObject(object): pass
 
 
-    # class Classes(object):
+    # class Class(object):
     # class TestClasses(object):
     class TestClasses(unittest.TestCase):
 
@@ -142,15 +164,12 @@ add TestClasses class
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2
+    :emphasize-lines: 1
 
-    import src.classes
     import unittest
 
 
-    # class Classes(object):
-    # class TestClasses(object):
-    class TestClasses(unittest.TestCase):
+    class WPass: pass
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -158,19 +177,19 @@ add TestClasses class
 
     AssertionError: True != False
 
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
+* I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 13
     :emphasize-lines: 6-7
 
-    # class Classes(object):
+    # class Class(object):
     # class TestClasses(object):
     class TestClasses(unittest.TestCase):
 
         def test_failure(self):
             # self.assertEqual(True, False)
-            self.assertEqual(False, False)
+            self.assertEqual(True, True)
 
 
     def test_making_a_class_w_pass():
@@ -188,16 +207,15 @@ add TestClasses class
 * I remove the commented lines
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 10
 
-    import src.classes
-    import unittest
+    class WObject(object): pass
 
 
     class TestClasses(unittest.TestCase):
 
         def test_failure(self):
-            self.assertEqual(False, False)
+            self.assertEqual(True, True)
 
 
     def test_making_a_class_w_pass():
