@@ -1637,7 +1637,7 @@ test_is_a_tuple_an_object with unittest
 * I move :ref:`test_is_a_tuple_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 70
     :emphasize-lines: 3-5
 
             self.assertIsSubclass(str, object)
@@ -1657,6 +1657,8 @@ test_is_a_tuple_an_object with unittest
         TestClasses.test_is_a_tuple_an_object()
         takes 0 positional arguments but 1 was given
 
+  because ...
+
 ----
 
 =================================================================================
@@ -1668,7 +1670,7 @@ test_is_a_tuple_an_object with unittest
 I add ``self`` to the parentheses of :ref:`test_is_a_tuple_an_object`
 
 .. code-block:: python
-  :lineno-start: 65
+  :lineno-start: 72
   :emphasize-lines: 1-2
 
       # def test_is_a_tuple_an_object():
@@ -1687,7 +1689,7 @@ the test is green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubclass methods<test_assert_not_is_subclass>`
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 72
     :emphasize-lines: 4, 7
 
         # def test_is_a_tuple_an_object():
@@ -1712,7 +1714,7 @@ the test is green again.
 * I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 72
     :emphasize-lines: 4-5
 
         # def test_is_a_tuple_an_object():
@@ -1738,7 +1740,7 @@ the test is green again.
 * I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 72
     :emphasize-lines: 8-9
 
         # def test_is_a_tuple_an_object():
@@ -1759,7 +1761,7 @@ the test is green again.
 * I remove the commented lines from :ref:`test_is_a_tuple_an_object`
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 70
 
             self.assertIsSubclass(str, object)
 
