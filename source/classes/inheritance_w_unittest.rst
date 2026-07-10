@@ -977,6 +977,187 @@ green again.
 ----
 
 *********************************************************************************
+test_is_a_boolean_an_object with unittest
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+
+* I move :ref:`test_is_a_boolean_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
+
+  .. code-block:: python
+    :lineno-start: 42
+    :emphasize-lines: 3-5
+
+            # self.assertIsSubclass(None, object)
+
+        def test_is_a_boolean_an_object():
+            assert isinstance(bool, object)
+            assert issubclass(bool, object)
+
+
+    def test_is_an_integer_an_object():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        TestClasses.test_is_a_boolean_an_object()
+        takes 0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``self`` to the parentheses of :ref:`test_is_a_boolean_an_object`
+
+.. code-block:: python
+  :lineno-start: 44
+  :emphasize-lines: 1-2
+
+      # def test_is_a_boolean_an_object():
+      def test_is_a_boolean_an_object(self):
+
+green.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assert_not_is_instance>`
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 4
+
+        # def test_is_a_boolean_an_object():
+        def test_is_a_boolean_an_object(self):
+            assert isinstance(bool, object)
+            self.assertNotIsInstance(bool, object)
+
+            assert issubclass(bool, object)
+
+
+    def test_is_an_integer_an_object():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <tests.test_classes.WPass object at 0xffffabcde0f12>
+        is an instance of <class 'object'>
+
+* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 4-5
+
+        # def test_is_a_boolean_an_object():
+        def test_is_a_boolean_an_object(self):
+            assert isinstance(bool, object)
+            # self.assertNotIsInstance(bool, object)
+            self.assertIsInstance(bool, object)
+
+            assert issubclass(bool, object)
+
+
+    def test_is_an_integer_an_object():
+
+  the test passes.
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubclass method<test_assert_not_is_subclass>`
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 8
+
+        # def test_is_a_boolean_an_object():
+        def test_is_a_boolean_an_object(self):
+            assert isinstance(bool, object)
+            # self.assertNotIsInstance(bool, object)
+            self.assertIsInstance(bool, object)
+
+            assert issubclass(bool, object)
+            self.assertNotIsSubclass(bool, object)
+
+
+    def test_is_an_integer_an_object():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <class 'tests.test_classes.bool'>
+        is a subclass of <class 'object'>
+
+* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 8-9
+
+        # def test_is_a_boolean_an_object():
+        def test_is_a_boolean_an_object(self):
+            assert isinstance(bool, object)
+            # self.assertNotIsInstance(bool, object)
+            self.assertIsInstance(bool, object)
+
+            assert issubclass(bool, object)
+            # self.assertNotIsSubclass(bool, object)
+            self.assertIsSubclass(bool, object)
+
+
+    def test_is_an_integer_an_object():
+
+  the test passes.
+
+* I remove the commented lines from :ref:`test_is_a_boolean_an_object`
+
+  .. code-block:: python
+    :lineno-start: 42
+
+            self.assertIsSubclass(WParentheses, object)
+
+        def test_is_a_boolean_an_object(self):
+            assert isinstance(bool, object)
+            self.assertIsInstance(bool, object)
+
+            assert issubclass(bool, object)
+            self.assertIsSubclass(bool, object)
+
+
+    def test_is_an_integer_an_object():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move test_is_a_boolean_an_object to TestClasses'
+
+----
+
+*********************************************************************************
 review
 *********************************************************************************
 
