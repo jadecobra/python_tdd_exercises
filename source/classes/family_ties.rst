@@ -17,7 +17,7 @@ family ties
 
 The tests from :ref:`everything is an object` show that in Python everything :ref:`inherits<test_dir_object>`. This allows me to make new :ref:`objects<everything is an object>` that get their magic powers from other :ref:`objects<everything is an object>`.
 
-Making new :ref:`objects<everything is an object>` can be easier with :ref:`Inheritance<test_dir_object>` because I do not have to write things that have already been written again, I can :ref:`inherit<test_attributes_and_methods_of_objects>` them instead and change the new :ref:`objects<everything is an object>` to do what I want.
+Making new :ref:`objects<everything is an object>` can be easier with :ref:`Inheritance<test_dir_object>` because I do not have to write things that have already been written again, I can :ref:`inherit<test_dir_of_object>` them instead and change the new :ref:`objects<everything is an object>` to do what I want.
 
 It can also be more complicated because I can make new :ref:`instances<how to test if something is an instance>` to :ref:`inherit<test_dir_object>` from one :ref:`class<what is a class?>` and customize it for what I need instead of making new :ref:`classes<what is a class?>` that require me to keep track of `Python's Method Resolution Order`_.
 
