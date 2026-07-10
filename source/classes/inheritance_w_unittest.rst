@@ -238,6 +238,390 @@ add TestClasses class
 ----
 
 *********************************************************************************
+test_making_a_class_w_pass with unittest
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+
+* I move :ref:`test_making_a_class_w_pass` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>` and replace ``test_failure``
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 3-5
+
+    class TestClasses(unittest.TestCase):
+
+        def test_making_a_class_w_pass():
+            assert isinstance(WPass(), object)
+            assert issubclass(WPass, object)
+
+
+    def test_making_a_class_w_parentheses():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestClasses.test_making_a_class_w_pass() takes
+               0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``self`` to the parentheses of :ref:`test_making_a_class_w_pass`
+
+.. code-block:: python
+  :lineno-start: 15
+  :emphasize-lines: 1-2
+
+      # def test_making_a_class_w_pass():
+      def test_making_a_class_w_pass(self):
+
+the test is green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assert_not_is_instance>`
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 4-6
+
+        # def test_making_a_class_w_pass():
+        def test_making_a_class_w_pass(self):
+            assert isinstance(WPass(), object)
+            self.assertNotIsInstance(
+                WPass(), object
+            )
+            assert issubclass(WPass, object)
+
+
+    def test_making_a_class_w_parentheses():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <tests.test_classes.WPass object at 0xffff01234a567>
+        is an instance of <class 'object'>
+
+* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 4-5
+
+        # def test_making_a_class_w_pass():
+        def test_making_a_class_w_pass(self):
+            assert isinstance(WPass(), object)
+            # self.assertNotIsInstance(
+            self.assertIsInstance(
+                WPass(), object
+            )
+            assert issubclass(WPass, object)
+
+
+    def test_making_a_class_w_parentheses():
+
+  the test passes.
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubclass method<test_assert_not_is_subclass>`
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 9-11
+
+        # def test_making_a_class_w_pass():
+        def test_making_a_class_w_pass(self):
+            assert isinstance(WPass(), object)
+            # self.assertNotIsInstance(
+            self.assertIsInstance(
+                WPass(), object
+            )
+            assert issubclass(WPass, object)
+            self.assertNotIsSubclass(
+                WPass, object
+            )
+
+
+    def test_making_a_class_w_parentheses():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <class 'tests.test_classes.WPass'>
+        is a subclass of <class 'object'>
+
+* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 9-10
+
+        # def test_making_a_class_w_pass():
+        def test_making_a_class_w_pass(self):
+            assert isinstance(WPass(), object)
+            # self.assertNotIsInstance(
+            self.assertIsInstance(
+                WPass(), object
+            )
+            assert issubclass(WPass, object)
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                WPass, object
+            )
+
+
+    def test_making_a_class_w_parentheses():
+
+  the test passes.
+
+* I remove the commented lines from :ref:`test_making_a_class_w_pass`
+
+  .. code-block:: python
+    :lineno-start: 13
+
+    class TestClasses(unittest.TestCase):
+
+        def test_making_a_class_w_pass(self):
+            assert isinstance(WPass(), object)
+            self.assertIsInstance(
+                WPass(), object
+            )
+
+            assert issubclass(WPass, object)
+            self.assertIsSubclass(
+                WPass, object
+            )
+
+
+    def test_making_a_class_w_parentheses():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move test_making_a_class_w_pass to TestClasses'
+
+----
+
+*********************************************************************************
+test_making_a_class_w_pass with unittest
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+
+* I move :ref:`test_making_a_class_w_pass` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>` and replace ``test_failure``
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 3-5
+
+    class TestClasses(unittest.TestCase):
+
+        def test_making_a_class_w_pass():
+            assert isinstance(WPass(), object)
+            assert issubclass(WPass, object)
+
+
+    def test_making_a_class_w_parentheses():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestClasses.test_making_a_class_w_pass() takes
+               0 positional arguments but 1 was given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``self`` to the parentheses of :ref:`test_making_a_class_w_pass`
+
+.. code-block:: python
+  :lineno-start: 15
+  :emphasize-lines: 1-2
+
+      # def test_making_a_class_w_pass():
+      def test_making_a_class_w_pass(self):
+
+the test is green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assert_not_is_instance>`
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 4-6
+
+        # def test_making_a_class_w_pass():
+        def test_making_a_class_w_pass(self):
+            assert isinstance(WPass(), object)
+            self.assertNotIsInstance(
+                WPass(), object
+            )
+            assert issubclass(WPass, object)
+
+
+    def test_making_a_class_w_parentheses():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <tests.test_classes.WPass object at 0xffff01234a567>
+        is an instance of <class 'object'>
+
+* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 4-5
+
+        # def test_making_a_class_w_pass():
+        def test_making_a_class_w_pass(self):
+            assert isinstance(WPass(), object)
+            # self.assertNotIsInstance(
+            self.assertIsInstance(
+                WPass(), object
+            )
+            assert issubclass(WPass, object)
+
+
+    def test_making_a_class_w_parentheses():
+
+  the test passes.
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubclass method<test_assert_not_is_subclass>`
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 9-11
+
+        # def test_making_a_class_w_pass():
+        def test_making_a_class_w_pass(self):
+            assert isinstance(WPass(), object)
+            # self.assertNotIsInstance(
+            self.assertIsInstance(
+                WPass(), object
+            )
+            assert issubclass(WPass, object)
+            self.assertNotIsSubclass(
+                WPass, object
+            )
+
+
+    def test_making_a_class_w_parentheses():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <class 'tests.test_classes.WPass'>
+        is a subclass of <class 'object'>
+
+* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 9-10
+
+        # def test_making_a_class_w_pass():
+        def test_making_a_class_w_pass(self):
+            assert isinstance(WPass(), object)
+            # self.assertNotIsInstance(
+            self.assertIsInstance(
+                WPass(), object
+            )
+            assert issubclass(WPass, object)
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                WPass, object
+            )
+
+
+    def test_making_a_class_w_parentheses():
+
+  the test passes.
+
+* I remove the commented lines from :ref:`test_making_a_class_w_pass`
+
+  .. code-block:: python
+    :lineno-start: 13
+
+    class TestClasses(unittest.TestCase):
+
+        def test_making_a_class_w_pass(self):
+            assert isinstance(WPass(), object)
+            self.assertIsInstance(
+                WPass(), object
+            )
+
+            assert issubclass(WPass, object)
+            self.assertIsSubclass(
+                WPass, object
+            )
+
+
+    def test_making_a_class_w_parentheses():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'move test_making_a_class_w_pass to TestClasses'
+
+----
+
+*********************************************************************************
 review
 *********************************************************************************
 
