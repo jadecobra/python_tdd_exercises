@@ -2290,16 +2290,26 @@ test_dir_of_object with unittest
 
   .. code-block:: python
     :lineno-start: 98
-    :emphasize-lines: 3-5
+    :emphasize-lines: 3-15
 
             self.assertIsSubclass(dict, object)
 
         def test_dir_of_object():
-            assert isinstance(dict, object)
-            assert issubclass(dict, object)
+            reality = dir(object)
+            my_expectation = [
+                '__class__', '__delattr__', '__dir__',
+                '__doc__', '__eq__', '__format__', '__ge__',
+                '__getattribute__', '__getstate__', '__gt__',
+                '__hash__', '__init__', '__init_subclass__',
+                '__le__', '__lt__', '__ne__', '__new__',
+                '__reduce__', '__reduce_ex__', '__repr__',
+                '__setattr__', '__sizeof__', '__str__',
+                '__subclasshook__'
+            ]
+            assert reality == my_expectation
 
 
-    # Exceptions seen():
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -2328,7 +2338,7 @@ I add ``self`` to the parentheses of :ref:`test_dir_of_object`
       # def test_dir_of_object():
       def test_dir_of_object(self):
 
-green again.
+the test is green again.
 
 ----
 
@@ -2338,75 +2348,30 @@ green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubclass methods<test_assert_not_is_subclass>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>`
 
   .. code-block:: python
     :lineno-start: 100
-    :emphasize-lines: 4, 7
+    :emphasize-lines: 15
 
         # def test_dir_of_object():
         def test_dir_of_object(self):
-            assert isinstance(dict, object)
-            self.assertNotIsInstance(dict, object)
-
-            assert issubclass(dict, object)
-            self.assertNotIsSubclass(dict, object)
-
-
-    # Exceptions seen():
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError:
-        <class 'dict'>
-        is an instance of <class 'object'>
-
-* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
-
-  .. code-block:: python
-    :lineno-start: 100
-    :emphasize-lines: 4-5
-
-        # def test_dir_of_object():
-        def test_dir_of_object(self):
-            assert isinstance(dict, object)
-            # self.assertNotIsInstance(dict, object)
-            self.assertIsInstance(dict, object)
-
-            assert issubclass(dict, object)
-            self.assertNotIsSubclass(dict, object)
+            reality = dir(object)
+            my_expectation = [
+                '__class__', '__delattr__', '__dir__',
+                '__doc__', '__eq__', '__format__', '__ge__',
+                '__getattribute__', '__getstate__', '__gt__',
+                '__hash__', '__init__', '__init_subclass__',
+                '__le__', '__lt__', '__ne__', '__new__',
+                '__reduce__', '__reduce_ex__', '__repr__',
+                '__setattr__', '__sizeof__', '__str__',
+                '__subclasshook__'
+            ]
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
 
 
-    # Exceptions seen():
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError:
-        <class 'dict'>
-        is a subclass of <class 'object'>
-
-* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
-
-  .. code-block:: python
-    :lineno-start: 100
-    :emphasize-lines: 8-9
-
-        # def test_dir_of_object():
-        def test_dir_of_object(self):
-            assert isinstance(dict, object)
-            # self.assertNotIsInstance(dict, object)
-            self.assertIsInstance(dict, object)
-
-            assert issubclass(dict, object)
-            # self.assertNotIsSubclass(dict, object)
-            self.assertIsSubclass(dict, object)
-
-
-    # Exceptions seen():
+    # Exceptions seen
 
   the test passes.
 
@@ -2418,14 +2383,22 @@ green again.
             self.assertIsSubclass(dict, object)
 
         def test_dir_of_object(self):
-            assert isinstance(dict, object)
-            self.assertIsInstance(dict, object)
+            reality = dir(object)
+            my_expectation = [
 
-            assert issubclass(dict, object)
-            self.assertIsSubclass(dict, object)
+  .. code-block:: python
+    :lineno-start: 111
+
+            ]
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
 
-    # Exceptions seen():
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # AttributeError
 
 * I add a git_ commit message in the other terminal_
 
