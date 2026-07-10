@@ -18,7 +18,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/person/tests/test_classes.py
+.. literalinclude:: ../code/classes/test_classes_w_unittest.py
   :language: python
   :linenos:
 
@@ -76,7 +76,7 @@ add TestClasses class
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 10, 13-14
+    :emphasize-lines: 10, 12-13
 
     class WPass: pass
 

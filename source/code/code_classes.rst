@@ -22,6 +22,6 @@ test objects with unittest: tests
 
 the solutions in ``classes/tests/test_classes.py`` from :ref:`test objects with unittest`
 
-.. literalinclude:: classes/tests/test_classes_w_unittest.py
+.. literalinclude:: classes/test_classes_w_unittest.py
   :language: python
   :linenos:
