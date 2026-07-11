@@ -51,6 +51,7 @@ table of contents
   exceptions/AttributeError/index
   make a person with a class<how_to/make_person/make_person_w_class>
   classes/inheritance
+  make a person with datetime<how_to/make_person/make_person_w_datetime>
   make a person<how_to/make_person>
   data_structures/none/index
   what are booleans?<data_structures/booleans/index>

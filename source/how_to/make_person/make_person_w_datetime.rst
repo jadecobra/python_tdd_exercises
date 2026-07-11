@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test person with datetime — fix the person project's hardcoded 2026 age so say_hello stays correct every year. Open person; uv run pytest-watcher . --now (6 passed from unittest chapter). Explore the datetime module with test_dir_datetime → NameError: name 'datetime' is not defined. Did you forget to import 'datetime'?; import datetime; paste dir(datetime) as my_expectation (MAXYEAR, date, datetime, timedelta, …; list may differ by Python version). Drill datetime.date, self.maxDiff = None, TypeError: function missing required argument 'year', then datetime.date.today().year. Replace f' {2026-year_of_birth}.' with datetime.date.today().year-year_of_birth in test_joe/jane/john/mary. Extract this_year class attribute, then calculate_age method: TypeError takes 1 positional argument but 2 were given (need self); @staticmethod then remove self. Port calculate_age to person.py (import datetime; NameError if forgotten). Assert age <= 120 (john 1580 → AssertionError; change to 1980). Assert isinstance(year_of_birth, int); optional year_of_birth=None; bool is an int so False skips the isinstance guard and fails the age bound; float/str/tuple fail. Review: datetime for current year; bare asserts stop the test so cases are commented out — need a better way to test exceptions. Catalog: test_person_w_datetime.py + person_w_datetime.py.
+  :keywords: Jacob Itegboje, Pumping Python, test person with datetime, person project hardcoded 2026 age, datetime module, import datetime, NameError name 'datetime' is not defined, Did you forget to import 'datetime', dir(datetime), datetime.date, datetime.date.today().year, self.maxDiff = None, TypeError function missing required argument 'year', TypeError calculate_age takes 1 positional argument but 2 were given, @staticmethod, extract this_year, extract calculate_age, assert age <= 120, john smith year_of_birth 1580, year_of_birth 1980, isinstance year_of_birth int, boolean is also an integer, year_of_birth=None, TypeError unsupported operand type(s) for - 'int' and 'NoneType', test_when_year_of_birth_is_not_integer, uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, person say_hello age calculation, test_person_w_datetime, person_w_datetime
 
 .. include:: ../../links.rst
 
@@ -23,7 +23,7 @@ test person with datetime
 
 ----
 
-The :ref:`person<how to make a person with a class>` project has a problem with the calculation of the ages. It only shows the right age if the program is run in ``2026``, because the year is hardcoded. If I run it in a different year or change the year on my computer, the ages will be wrong and the tests for :ref:`say_hello<test say_hello method>` will fail.
+The :ref:`person<test person with unittest>` project has a problem with the calculation of the ages. It only shows the right age if the program is run in ``2026``, because the year is hardcoded. If I run it in a different year or change the year on my computer, the ages will be wrong and the tests for :ref:`say_hello<test say_hello method>` will fail.
 
 I want the calculation to always be right, which means the program should always know the correct year.
 
@@ -148,7 +148,7 @@ I want to see what comes with the `datetime module`_.
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_, paste (:kbd:`ctrl/command+v`) them as ``my_expectation`` and remove the extra characters
 
   .. code-block:: python
-    :lineno-start: 4
+    :lineno-start: 263
     :emphasize-lines: 5-25
     :emphasize-text: datetime
 
@@ -268,7 +268,8 @@ with a message about how to see the entire difference
 
     # Exceptions seen
 
-  the terminal_ shows the entire difference between ``reality`` and ``my_expectation``.
+  - The terminal_ shows the entire difference between ``reality`` and ``my_expectation``.
+  - `maxDiff`_ is an :ref:`attribute<what causes AttributeError?>` of the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` that sets the maximum number of characters to show when comparing 2 :ref:`objects<what is a class?>` in the terminal_, when it is set to :ref:`None<what is None?>` it shows the full difference.
 
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_, paste (:kbd:`ctrl/command+v`) them as ``my_expectation`` and remove the extra characters
 
@@ -323,7 +324,7 @@ I see ``year`` in the :ref:`list of attributes and methods of datetime.date<test
 
 ----
 
-I add a test for the ``year`` :ref:`attribute<what is a class attribute?>` of the ``date`` :ref:`attribute<what is a class attribute?>` of the `datetime module`_ inj ``test_person.py``
+I add a test for the ``year`` :ref:`attribute<what is a class attribute?>` of the ``date`` :ref:`attribute<what is a class attribute?>` of the `datetime module`_ in ``test_person.py``
 
 .. code-block:: python
   :lineno-start: 312
@@ -557,7 +558,7 @@ It looks like I have a way to get the current year.
 
 ----
 
-I add :ref:`test_datetime_date_today_year` to test the ``year`` :ref:`attribute<what is a class attribute?>` of the result of a :ref:`call<how to call a function>` to the ``date`` :ref:`method<what is a method?>` of the `datetime module`_ (``datetime.date.today().year``) in ``test_person.py``
+I add :ref:`test_datetime_date_today_year` to test the ``year`` :ref:`attribute<what is a class attribute?>` of the result of a :ref:`call<how to call a function>` to the ``today`` :ref:`method<what is a method?>` of the ``date`` :ref:`class<what is a class?>` of the `datetime module`_ (``datetime.date.today().year``) in ``test_person.py``
 
 .. code-block:: python
   :lineno-start: 324
@@ -591,7 +592,7 @@ where ``YYYY`` is the current year.
 
 * I change ``my_expectation`` to match ``reality`` and the test passes.
 
-* I remove :ref:`test_dir_datetime_date`, :ref:`test_dir_datetime_date_today` add :ref:`test_datetime_date_today_year`
+* I remove all the datetime_ tests now that I know :ref:`datetime.date.today().year<test_datetime_date_today_year>` works
 
   .. code-block:: python
     :lineno-start: 256
@@ -1396,7 +1397,7 @@ The tests use the right calculation for the age, and the solution still uses a f
   - The ages of the expectations are all negative numbers, this is a problem.
   - The results of the :ref:`call<how to call a function with input>` all have the right age. Lovely!
 
-* I change the calculate in the :ref:`calculate_age method<extract calculate_age method>` back
+* I change the calculation in the :ref:`calculate_age method<extract calculate_age method>` back
 
   .. code-block:: python
     :lineno-start: 8
@@ -1426,7 +1427,7 @@ The tests use the right calculation for the age, and the solution still uses a f
 assert person is alive
 *********************************************************************************
 
-I want the :ref:`calculate_age function<add calculate_age function>` to make sure that the age of the person is  not more than 120 because I do not know that there are any people alive older than that, yet. For example ``john smith`` has a ``year_of_birth`` of ``1580`` which makes him too old to be alive.
+I want the :ref:`calculate_age function<add calculate_age function>` to make sure that the age of the person is not more than 120 because I do not know that there are any people alive older than that, yet. For example ``john smith`` has a ``year_of_birth`` of ``1580`` which makes him too old to be alive.
 
 ----
 
@@ -1518,7 +1519,7 @@ the test passes.
 * I remove the commented line from the :ref:`calculate_age function<add calculate_age function>` in ``person.py``
 
   .. code-block:: python
-    :Lineno-start: 23
+    :lineno-start: 23
 
     def calculate_age(year_of_birth):
         age = (
@@ -1567,7 +1568,7 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
-        def test_when_year_of_birth_is_not_integer(self):
+        def test_when_year_of_birth_is_not_an_integer(self):
             person = src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
@@ -1646,7 +1647,9 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
 
   .. code-block:: python
 
-    FAILED ...::TestPerson::test_john - AssertionError
+    FAILED ...::
+        TestPerson::test_when_year_of_birth_is_not_an_integer
+        - AssertionError
 
 * I add a comment, then change ``year_of_birth`` from the :ref:`default value<test_optional_arguments>` to a :ref:`boolean<what are booleans?>` in :ref:`test_when_year_of_birth_is_not_an_integer<assert year_of_birth is an integer>`, in ``test_person.py``
 
@@ -1654,7 +1657,7 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
     :lineno-start: 190
     :emphasize-lines: 6-7
 
-        def test_when_year_of_birth_is_not_integer(self):
+        def test_when_year_of_birth_is_not_an_integer(self):
             person = src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
@@ -1674,7 +1677,7 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
     :lineno-start: 190
     :emphasize-lines: 7-8
 
-        def test_when_year_of_birth_is_not_integer(self):
+        def test_when_year_of_birth_is_not_an_integer(self):
             person = src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
@@ -1695,7 +1698,7 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
     :lineno-start: 190
     :emphasize-lines: 8-9
 
-        def test_when_year_of_birth_is_not_integer(self):
+        def test_when_year_of_birth_is_not_an_integer(self):
             person = src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
@@ -1717,7 +1720,7 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
     :lineno-start: 190
     :emphasize-lines: 9-10
 
-        def test_when_year_of_birth_is_not_integer(self):
+        def test_when_year_of_birth_is_not_an_integer(self):
             person = src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
@@ -1732,13 +1735,13 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
 
         def test_dir_person_class(self):
 
-* I add a comment, the comment out the :ref:`call<how to call a function>` to :ref:`person.say_hello<test say_hello method>`
+* I add a comment, then comment out the :ref:`call<how to call a function>` to :ref:`person.say_hello<test say_hello method>`
 
   .. code-block:: python
     :lineno-start: 190
     :emphasize-lines: 10, 12-14
 
-        def test_when_year_of_birth_is_not_integer(self):
+        def test_when_year_of_birth_is_not_an_integer(self):
             person = src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
@@ -1807,9 +1810,9 @@ close the project
 review
 *************************************************************************************
 
-* I can use the :ref:`datetime library<test person with datetime>` to automatically get the current year for the calculate of a person's age.
-* I can use :ref:`assertions<what is an assertion?>` to make sure certain conditions are met before a program does something.
-* My tests have a new problem - when they cause an :ref:`Exception<errors>` the test stops and does not continue. My solution was to add notes and comment out the problems, which means the only way to know that the code causes the errors if by removing those comments. :ref:`There has to be a better way<exception handling in tests>`
+* I can use the :ref:`datetime library<test person with datetime>` to automatically get the current year for the calculation of a person's age.
+* I can use :ref:`assertions<what is an assertion?>` to make sure certain :ref:`conditions<if statements>` are met before a program does something.
+* My tests have a new problem - when they cause an :ref:`Exception<errors>` the test stops in a :red:`RED` state. My solution was to add notes and comment out the problems, which means the only way to know that the code causes the errors is by removing those comments. :ref:`There has to be a better way<how to test that an Exception is raised>`
 * :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` also still have the problem where they are the same three tests. There has to be a better way.
 
 ----
