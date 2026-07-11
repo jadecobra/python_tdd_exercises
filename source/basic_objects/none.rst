@@ -725,7 +725,7 @@ the test passes.
 
     AssertionError: None is not an instance of <class 'bool'>
 
-  because :ref:`None is NOT a boolean<test_is_none_a_boolean?>`.
+  because :ref:`None is NOT a boolean<test_is_none_a_boolean>`.
 
 * I make the line :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<test_assert_not_is_instance>`
 
@@ -907,7 +907,7 @@ the test passes.
 
   the test passes.
 
-* I add another :ref:`assertion<what is an assertion?>`
+* I add an :ref:`assertion<what is an assertion?>` for
 
   .. code-block:: python
     :lineno-start: 17
@@ -1133,6 +1133,8 @@ the test passes.
   .. code-block:: shell
 
     AssertionError: None is not an instance of <class 'int'>
+
+  because :ref:`None is NOT an integer<test_is_none_an_integer>`.
 
 * I make the line :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<test_assert_not_is_instance>`
 
@@ -1447,7 +1449,7 @@ the test passes.
 
   the test passes.
 
-* I add a failing line with :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+* I add a failing line with :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``0.1``
 
   .. code-block:: python
     :lineno-start: 26
@@ -1475,8 +1477,8 @@ the test passes.
 
     AssertionError: 0.1 is an instance of <class 'float'>
 
-  - because ``0.1`` is a float_
-  - I use ``0.1`` for all the binary floating point numbers that are bigger than ``0.0``
+  - because ``0.1`` is a float_.
+  - I use ``0.1`` for all the binary floating point numbers that are bigger than ``0.0``.
 
 * I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assert_is_instance>`
 
@@ -1533,7 +1535,7 @@ the test passes.
 
     AssertionError: None is not an instance of <class 'float'>
 
-  because :ref:`None<what is None?>` is not a :ref:`boolean<what are booleans?>`.
+  because :ref:`None is NOT a float<test_is_none_a_float>`.
 
 * I make the statement :ref:`True<test_what_is_true>` with the :ref:`assertNotIsInstance method<test_assert_not_is_instance>`
 
@@ -1610,6 +1612,10 @@ the test passes.
 test_is_none_a_string
 *********************************************************************************
 
+Is :ref:`None<what is None?>` a string_?
+
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
@@ -1621,16 +1627,9 @@ test_is_none_a_string
 * I add a test to see if :ref:`None<what is None?>` is a string_ (anything inside :ref:`quotes`)
 
   .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 10-11
+    :lineno-start: 33
+    :emphasize-lines: 3-4
 
-        def test_is_none_a_float(self):
-            self.assertIsNotNone(-0.1)
-            self.assertIsNotNone(0.0)
-            self.assertIsNotNone(0.1)
-            self.assertIsInstance(-0.1, float)
-            self.assertIsInstance(0.0, float)
-            self.assertIsInstance(0.1, float)
             self.assertNotIsInstance(None, float)
 
         def test_is_none_a_string(self):
@@ -1678,7 +1677,7 @@ the test passes.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNone<another way to test if something is None>`
+* I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNone<another way to test if something is None>` for a string_ that is not empty
 
   .. code-block:: python
     :lineno-start: 35
@@ -1693,7 +1692,7 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: 'text' is not None
+    AssertionError: 'characters' is not None
 
 * I change the :ref:`assert method<test_dir_unittest_testcase>` to make the statement :ref:`True<test_what_is_true>`
 
@@ -1712,7 +1711,7 @@ the test passes.
 
   the test passes.
 
-* I add a failing line with :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+* I add a failing line with :ref:`assertNotIsInstance<test_assert_not_is_instance>` for the empty string (``""``)
 
   .. code-block:: python
     :lineno-start: 35
@@ -1723,7 +1722,7 @@ the test passes.
             self.assertIsNotNone('')
             # self.assertIsNone("characters")
             self.assertIsNotNone("characters")
-            self.assertNotIsInstance('', str)
+            self.assertNotIsInstance("", str)
 
 
     # NOTES
@@ -1748,15 +1747,15 @@ the test passes.
             self.assertIsNotNone('')
             # self.assertIsNone("characters")
             self.assertIsNotNone("characters")
-            # self.assertNotIsInstance('', str)
-            self.assertIsInstance('', str)
+            # self.assertNotIsInstance("", str)
+            self.assertIsInstance("", str)
 
 
     # NOTES
 
   the test passes.
 
-* I add another :ref:`assertion<what is an assertion?>`
+* I add an :ref:`assertion<what is an assertion?>` for ``'characters'``
 
   .. code-block:: python
     :lineno-start: 35
@@ -1767,9 +1766,9 @@ the test passes.
             self.assertIsNotNone('')
             # self.assertIsNone("characters")
             self.assertIsNotNone("characters")
-            # self.assertNotIsInstance('', str)
-            self.assertIsInstance('', str)
-            self.assertNotIsInstance("characters", str)
+            # self.assertNotIsInstance("", str)
+            self.assertIsInstance("", str)
+            self.assertNotIsInstance('characters', str)
 
 
     # NOTES
@@ -1778,7 +1777,7 @@ the test passes.
 
   .. code-block:: shell
 
-    AssertionError: 'text' is an instance of <class 'str'>
+    AssertionError: 'characters' is an instance of <class 'str'>
 
   because anything in :ref:`quotes` is a string_.
 
@@ -1793,10 +1792,10 @@ the test passes.
             self.assertIsNotNone('')
             # self.assertIsNone("characters")
             self.assertIsNotNone("characters")
-            # self.assertNotIsInstance('', str)
-            self.assertIsInstance('', str)
-            # self.assertNotIsInstance("characters", str)
-            self.assertIsInstance("characters", str)
+            # self.assertNotIsInstance("", str)
+            self.assertIsInstance("", str)
+            # self.assertNotIsInstance('characters', str)
+            self.assertIsInstance('characters', str)
 
 
     # NOTES
@@ -1814,10 +1813,10 @@ the test passes.
             self.assertIsNotNone('')
             # self.assertIsNone("characters")
             self.assertIsNotNone("characters")
-            # self.assertNotIsInstance('', str)
-            self.assertIsInstance('', str)
-            # self.assertNotIsInstance("characters", str)
-            self.assertIsInstance("characters", str)
+            # self.assertNotIsInstance("", str)
+            self.assertIsInstance("", str)
+            # self.assertNotIsInstance('characters', str)
+            self.assertIsInstance('characters', str)
             self.assertIsInstance(None, str)
 
 
@@ -1828,6 +1827,8 @@ the test passes.
   .. code-block:: shell
 
     AssertionError: None is not an instance of <class 'str'>
+
+  because :ref:`None is NOT a string<test_is_none_a_string>`.
 
 * I change the :ref:`assert method<test_dir_unittest_testcase>`
 
@@ -1840,10 +1841,10 @@ the test passes.
             self.assertIsNotNone('')
             # self.assertIsNone("characters")
             self.assertIsNotNone("characters")
-            # self.assertNotIsInstance('', str)
-            self.assertIsInstance('', str)
-            # self.assertNotIsInstance("characters", str)
-            self.assertIsInstance("characters", str)
+            # self.assertNotIsInstance("", str)
+            self.assertIsInstance("", str)
+            # self.assertNotIsInstance('characters', str)
+            self.assertIsInstance('characters', str)
             # self.assertIsInstance(None, str)
             self.assertNotIsInstance(None, str)
 
@@ -1860,8 +1861,8 @@ the test passes.
         def test_is_none_a_string(self):
             self.assertIsNotNone('')
             self.assertIsNotNone("characters")
-            self.assertIsInstance('', str)
-            self.assertIsInstance("characters", str)
+            self.assertIsInstance("", str)
+            self.assertIsInstance('characters', str)
             self.assertNotIsInstance(None, str)
 
 
@@ -1898,6 +1899,10 @@ the test passes.
 *********************************************************************************
 test_is_none_a_tuple
 *********************************************************************************
+
+Is :ref:`None<what is None?>` a tuple_?
+
+----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -2118,7 +2123,7 @@ the test passes.
 
     AssertionError: None is not an instance of <class 'tuple'>
 
-  because :ref:`None<what is None?>` is not a tuple_.
+  because :ref:`None is NOT a tuple<test_is_none_a_tuple>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -2193,6 +2198,10 @@ the test passes.
 *********************************************************************************
 test_is_none_a_list
 *********************************************************************************
+
+Is :ref:`None<what is None?>` a :ref:`list<what is a list?>`?
+
+----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -2409,7 +2418,7 @@ the test passes.
 
     AssertionError: None is not an instance of <class 'list'>
 
-  because :ref:`None<what is None?>` is not a :ref:`list<what is a list?>`.
+  because :ref:`None is NOT a list<test_is_none_a_list>`.
 
 * I make the statement :ref:`True<test_what_is_true>`
 
@@ -2483,6 +2492,10 @@ the test passes.
 test_is_none_a_set
 *********************************************************************************
 
+Is :ref:`None<what is None?>` a set_?
+
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
@@ -2547,7 +2560,7 @@ the test passes.
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>`
+* I add an :ref:`assertion<what is an assertion?>` for
 
   .. code-block:: python
     :lineno-start: 56
@@ -2650,6 +2663,8 @@ the test passes.
 
     AssertionError: None is not an instance of <class 'set'>
 
+  because :ref:`None is NOT a set<test_is_none_a_set>`.
+
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
@@ -2716,6 +2731,10 @@ the test passes.
 *********************************************************************************
 test_is_none_a_dictionary
 *********************************************************************************
+
+Is :ref:`None<what is None?>` a :ref:`dictionary<what is a dictionary?>`?
+
+----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -2942,7 +2961,7 @@ the test passes.
 
     AssertionError: None is not an instance of <class 'dict'>
 
-  because :ref:`None<what is None?>` is not a :ref:`dictionary<what is a dictionary?>`.
+  because :ref:`None is NOT a dictionary<test_is_none_a_dictionary>`.
 
 * I make the statement :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<test_assert_not_is_instance>`
 
