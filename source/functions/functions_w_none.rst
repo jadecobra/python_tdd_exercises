@@ -76,9 +76,19 @@ I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<
 
 .. code-block:: python
   :lineno-start: 5
-  :emphasize-lines: 8
 
   class TestFunctions(unittest.TestCase):
+
+      first = 'first'
+      last = 'last'
+      a_tuple = (0, 1, 2, 'n')
+      a_list = [0, 1, 2, 'n']
+      a_set = {0, 1, 2, 'n'}
+      a_dictionary = {'key': 'value'}
+
+.. code-block:: python
+  :lineno-start: 14
+  :emphasize-lines: 6
 
       def test_making_a_function_w_pass(self):
           result = src.functions.w_pass()
@@ -106,7 +116,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to :ref:`assertIsNone<another way to test if something is None>`
 
 .. code-block:: python
-  :lineno-start: 8
+  :lineno-start: 14
   :emphasize-lines: 6-7
 
       def test_making_a_function_w_pass(self):
@@ -132,7 +142,7 @@ the test passes.
 * I remove the commented line, ``assert result is None`` and ``self.assertIs(result, None)``
 
   .. code-block:: python
-    :lineno-start: 8
+    :lineno-start: 14
 
         def test_making_a_function_w_pass(self):
             result = src.functions.w_pass()
@@ -143,7 +153,7 @@ the test passes.
 * I no longer need the ``result`` :ref:`variable<what is a variable?>` since it is only used once. I :ref:`call<how to call a function>` ``src.functions.w_pass`` directly
 
   .. code-block:: python
-    :lineno-start: 8
+    :lineno-start: 14
     :emphasize-lines: 2-4
 
         def test_making_a_function_w_pass(self):
@@ -158,7 +168,7 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 8
+    :lineno-start: 14
 
         def test_making_a_function_w_pass(self):
             self.assertIsNone(src.functions.w_pass())
@@ -180,7 +190,7 @@ test_making_a_function_w_return with assertIsNone
 I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<another way to test if something is NOT None>` in :ref:`test_making_a_function_w_return`
 
 .. code-block:: python
-  :lineno-start: 10
+  :lineno-start: 17
   :emphasize-lines: 6
 
       def test_making_a_function_w_return(self):
@@ -209,7 +219,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to :ref:`assertIsNone<another way to test if something is None>`
 
 .. code-block:: python
-  :lineno-start: 10
+  :lineno-start: 17
   :emphasize-lines: 6-7
 
       def test_making_a_function_w_return(self):
@@ -235,7 +245,7 @@ the test passes.
 * I remove the commented line, ``assert result is None`` and ``self.assertIs(result, None)``
 
   .. code-block:: python
-    :lineno-start: 10
+    :lineno-start: 17
 
         def test_making_a_function_w_return(self):
             result = src.functions.w_return()
@@ -246,7 +256,7 @@ the test passes.
 * I :ref:`call<how to call a function>` ``src.functions.w_return`` directly
 
   .. code-block:: python
-    :lineno-start: 10
+    :lineno-start: 17
     :emphasize-lines: 2-4
 
         def test_making_a_function_w_return(self):
@@ -261,7 +271,7 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 10
+    :lineno-start: 17
 
         def test_making_a_function_w_return(self):
             self.assertIsNone(src.functions.w_return())
@@ -283,7 +293,7 @@ test_making_a_function_w_return_none with assertIsNone
 I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<another way to test if something is NOT None>` in :ref:`test_making_a_function_w_return_none`
 
 .. code-block:: python
-  :lineno-start: 13
+  :lineno-start: 20
   :emphasize-lines: 6
 
       def test_making_a_function_w_return_none(self):
@@ -312,7 +322,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to :ref:`assertIsNone<another way to test if something is None>`
 
 .. code-block:: python
-  :lineno-start: 13
+  :lineno-start: 20
   :emphasize-lines: 6-7
 
       def test_making_a_function_w_return_none(self):
@@ -338,7 +348,7 @@ the test passes.
 * I remove the commented line, ``assert result is None`` and ``self.assertIs(result, None)``
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 20
 
         def test_making_a_function_w_return_none(self):
             result = src.functions.w_return_none()
@@ -349,7 +359,7 @@ the test passes.
 * I no longer need the ``result`` :ref:`variable<what is a variable?>` since it is only used once
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 20
     :emphasize-lines: 2-6
 
         def test_making_a_function_w_return_none(self):
@@ -366,7 +376,7 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 20
 
         def test_making_a_function_w_return_none(self):
             self.assertIsNone(
@@ -390,7 +400,7 @@ test_what_happens_after_functions_return with assertIsNone
 I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<another way to test if something is NOT None>` in :ref:`test_what_happens_after_functions_return`
 
 .. code-block:: python
-  :lineno-start: 18
+  :lineno-start: 25
   :emphasize-lines: 6
 
       def test_what_happens_after_functions_return(self):
@@ -419,7 +429,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to :ref:`assertIsNone<another way to test if something is None>`
 
 .. code-block:: python
-  :lineno-start: 18
+  :lineno-start: 25
   :emphasize-lines: 6-7
 
       def test_what_happens_after_functions_return(self):
@@ -445,7 +455,7 @@ the test passes.
 * I remove the commented line, ``assert result is None`` and ``self.assertIs(result, None)``
 
   .. code-block:: python
-    :lineno-start: 18
+    :lineno-start: 25
 
         def test_what_happens_after_functions_return(self):
             result = src.functions.return_leaves_the_function()
@@ -456,7 +466,7 @@ the test passes.
 * I no longer need the ``result`` :ref:`variable<what is a variable?>` since it is only used once. I :ref:`call<how to call a function>` ``src.functions.return_leaves_the_function`` directly
 
   .. code-block:: python
-    :lineno-start: 18
+    :lineno-start: 25
     :emphasize-lines: 2-6
 
         def test_what_happens_after_functions_return(self):
@@ -473,7 +483,114 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 18
+    :lineno-start: 25
+
+        def test_what_happens_after_functions_return(self):
+            self.assertIsNone(
+                src.functions.return_leaves_the_function()
+            )
+
+        def test_constant_function(self):
+
+----
+
+*********************************************************************************
+test identity with assertIsNone
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<another way to test if something is NOT None>` in :ref:`test_what_happens_after_functions_return`
+
+.. code-block:: python
+  :lineno-start: 25
+  :emphasize-lines: 6
+
+      def test_what_happens_after_functions_return(self):
+          result = src.functions.return_leaves_the_function()
+
+          assert result is None
+          self.assertIs(result, None)
+          self.assertIsNotNone(result)
+
+      def test_constant_function(self):
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  AssertionError: unexpectedly None
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to :ref:`assertIsNone<another way to test if something is None>`
+
+.. code-block:: python
+  :lineno-start: 25
+  :emphasize-lines: 6-7
+
+      def test_what_happens_after_functions_return(self):
+          result = src.functions.return_leaves_the_function()
+
+          assert result is None
+          self.assertIs(result, None)
+          # self.assertIsNotNone(result)
+          self.assertIsNone(result)
+
+      def test_constant_function(self):
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented line, ``assert result is None`` and ``self.assertIs(result, None)``
+
+  .. code-block:: python
+    :lineno-start: 25
+
+        def test_what_happens_after_functions_return(self):
+            result = src.functions.return_leaves_the_function()
+            self.assertIsNone(result)
+
+        def test_constant_function(self):
+
+* I no longer need the ``result`` :ref:`variable<what is a variable?>` since it is only used once. I :ref:`call<how to call a function>` ``src.functions.return_leaves_the_function`` directly
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 2-6
+
+        def test_what_happens_after_functions_return(self):
+            # result = src.functions.return_leaves_the_function()
+            # self.assertIsNone(result)
+            self.assertIsNone(
+                src.functions.return_leaves_the_function()
+            )
+
+        def test_constant_function(self):
+
+  the test is still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 25
 
         def test_what_happens_after_functions_return(self):
             self.assertIsNone(
