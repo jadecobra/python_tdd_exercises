@@ -29,7 +29,7 @@ I send things (:ref:`input data<basic objects>`) to a program_ to test it, and c
 * what is the same?
 * what is different?
 
-The difference helps me know what to change to get what I want. I do this with the :ref:`assertEqual method<another way to test if two things are Equal>`, which takes 2 inputs and checks if they are the same
+The difference helps me know what to change to get what I want. I do this with the :ref:`assertEqual method<test_assert_equal>`, which takes 2 inputs and checks if they are the same
 
 .. code-block:: python
 

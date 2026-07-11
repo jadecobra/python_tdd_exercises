@@ -493,7 +493,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 
     AssertionError: {0: Title(tag='h1')} is not None : {}
 
-* I change assertIsNone_ to :ref:`assertEqual method<another way to test if two things are Equal>`
+* I change assertIsNone_ to :ref:`assertEqual method<test_assert_equal>`
 
   .. code-block:: python
     :lineno-start: 19
@@ -976,7 +976,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 
     AssertionError: False != ''
 
-* I change the :ref:`assertEqual method<another way to test if two things are Equal>` to :ref:`assertFalse<another way to test if something is grouped as False>` and remove the expectation
+* I change the :ref:`assertEqual method<test_assert_equal>` to :ref:`assertFalse<another way to test if something is grouped as False>` and remove the expectation
 
   .. code-block:: python
     :lineno-start: 28

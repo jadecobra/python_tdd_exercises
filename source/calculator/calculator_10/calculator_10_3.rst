@@ -173,7 +173,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
     AssertionError: '0' is not None : 0
 
-* I change the assertIsNone_ to :ref:`assertEqual method<another way to test if two things are Equal>`
+* I change the assertIsNone_ to :ref:`assertEqual method<test_assert_equal>`
 
   .. code-block:: python
     :lineno-start: 56

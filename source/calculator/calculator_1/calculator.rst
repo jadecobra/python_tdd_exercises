@@ -297,7 +297,7 @@ test_addition
         def test_addition(self):
             self.assertEqual(src.calculator.add(0, 1), 1)
 
-  - the :ref:`assertEqual method<another way to test if two things are Equal>` from :ref:`AssertionError<what causes AssertionError?>` checks if the two things in parentheses are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
+  - the :ref:`assertEqual method<test_assert_equal>` from :ref:`AssertionError<what causes AssertionError?>` checks if the two things in parentheses are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
 
   - I think of
 
@@ -1983,7 +1983,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 All the tests are passing, though they all look the same, :ref:`there has to be a better way<how to make a calculator 2>`.
 
-The ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` are made once as :ref:`class attributes<test_attribute_error_w_class_attributes>` and used later in each test with ``self.random_first_number`` and ``self.random_second_number``, the same way I use `unittest.TestCase assert methods`_ like :ref:`assertEqual method<another way to test if two things are Equal>` with ``self.assertEqual``
+The ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` are made once as :ref:`class attributes<test_attribute_error_w_class_attributes>` and used later in each test with ``self.random_first_number`` and ``self.random_second_number``, the same way I use `unittest.TestCase assert methods`_ like :ref:`assertEqual method<test_assert_equal>` with ``self.assertEqual``
 
 ----
 

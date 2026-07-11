@@ -79,8 +79,8 @@ AssertionError review
 * :ref:`what is another way to test if something is NOT the same object as False?<another way to test if something is NOT the same object as False>`
 * :ref:`what is another way to test if something is the same object as True?<another way to test if something is the same object as True>`
 * :ref:`what is another way to test if something is NOT the same object as True?<another way to test if something is NOT the same object as True>`
-* :ref:`what is another way to test if two things are NOT Equal?<another way to test if two things are NOT Equal>`
-* :ref:`what is another way to test if two things are Equal?<another way to test if two things are Equal>`
+* :ref:`what is another way to test if two things are NOT Equal?<test_assert_not_equal>`
+* :ref:`what is another way to test if two things are Equal?<test_assert_equal>`
 * :ref:`what is the difference between is and equal<test_assertion_error_w_is_vs_equal>`
 
 ----

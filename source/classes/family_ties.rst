@@ -337,7 +337,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
 
 ----
 
-* I add a call to :ref:`assertIsSubclass<another way to test if something is a subclass>`
+* I add a call to :ref:`assertIsSubclass<test_assert_is_subclass>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -2122,7 +2122,7 @@ the test passes.
 
   the test passes. I cheated, which means I need a better test.
 
-* I add :ref:`assertIsSubclass<another way to test if something is a subclass>` to :ref:`test_classes_w_multiple_parents` to make sure ``Joe`` is a :ref:`child (subclass)<how to test if something is a subclass>` of ``Blow``, in ``test_family_ties.py``
+* I add :ref:`assertIsSubclass<test_assert_is_subclass>` to :ref:`test_classes_w_multiple_parents` to make sure ``Joe`` is a :ref:`child (subclass)<how to test if something is a subclass>` of ``Blow``, in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 51
@@ -2376,7 +2376,7 @@ the test passes.
                 self.first_name = 'mary'
                 self.last_name = 'doe' # use the default value
 
-* I add a call to the :ref:`assertNotIsSubclass method<another way to test if something is NOT a subclass>` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add a call to the :ref:`assertNotIsSubclass method<test_assert_not_is_subclass>` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 66
@@ -2402,7 +2402,7 @@ the test passes.
         <class 'src.family_ties.Mary'> is
         a subclass of <class 'src.family_ties.Jane'>
 
-* I change :ref:`assertNotIsSubclass<another way to test if something is NOT a subclass>` to the :ref:`assertIsSubclass method<another way to test if something is a subclass>`
+* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to the :ref:`assertIsSubclass method<test_assert_is_subclass>`
 
   .. code-block:: python
     :lineno-start: 66
