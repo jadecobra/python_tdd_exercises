@@ -37,7 +37,7 @@ These are the tests I have at the end of the chapter
 ----
 
 *********************************************************************************
-continue the project
+open the project
 *********************************************************************************
 
 * Make sure you are in the ``pumping_python`` folder_ with pwd_ in the terminal_

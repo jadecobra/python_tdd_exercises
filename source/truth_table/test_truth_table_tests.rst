@@ -26,7 +26,7 @@ requirements
 * :ref:`Binary Operations<truth table: Binary Operations>`
 
 *********************************************************************************
-continue the project
+open the project
 *********************************************************************************
 
 * Make sure you are in the ``pumping_python`` folder_ with pwd_ in the terminal_

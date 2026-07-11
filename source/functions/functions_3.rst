@@ -27,7 +27,7 @@ I have these tests by the end of the chapter
 ----
 
 *********************************************************************************
-continue the project
+open the project
 *********************************************************************************
 
 * I `change directory`_ to the ``functions`` folder_

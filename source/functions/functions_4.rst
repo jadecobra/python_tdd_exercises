@@ -13,7 +13,7 @@ In :ref:`test functions with assertIsNotNone and assertIsNone` I used :ref:`clas
 ----
 
 *********************************************************************************
-continue the project
+open the project
 *********************************************************************************
 
 * I `change directory`_ to the ``functions`` folder_
