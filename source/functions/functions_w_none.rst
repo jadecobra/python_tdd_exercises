@@ -180,10 +180,8 @@ test_making_a_function_w_return with None
 I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<another way to test if something is NOT None>` in :ref:`test_making_a_function_w_return`
 
 .. code-block:: python
-  :lineno-start: 5
-  :emphasize-lines: 8
-
-  class TestFunctions(unittest.TestCase):
+  :lineno-start: 10
+  :emphasize-lines: 6
 
       def test_making_a_function_w_return(self):
           result = src.functions.w_return()
@@ -192,7 +190,7 @@ I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<
           self.assertIs(result, None)
           self.assertIsNotNone(result)
 
-      def test_making_a_function_w_return(self):
+      def test_making_a_function_w_return_none(self):
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -211,7 +209,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to :ref:`assertIsNone<another way to test if something is None>`
 
 .. code-block:: python
-  :lineno-start: 8
+  :lineno-start: 10
   :emphasize-lines: 6-7
 
       def test_making_a_function_w_return(self):
@@ -222,7 +220,7 @@ I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to
           # self.assertIsNotNone(result)
           self.assertIsNone(result)
 
-      def test_making_a_function_w_return(self):
+      def test_making_a_function_w_return_none(self):
 
 the test passes.
 
@@ -237,18 +235,18 @@ the test passes.
 * I remove the commented line, ``assert result is None`` and ``self.assertIs(result, None)``
 
   .. code-block:: python
-    :lineno-start: 8
+    :lineno-start: 10
 
         def test_making_a_function_w_return(self):
             result = src.functions.w_return()
             self.assertIsNone(result)
 
-        def test_making_a_function_w_return(self):
+        def test_making_a_function_w_return_none(self):
 
-* I no longer need the ``result`` :ref:`variable<what is a variable?>` since it is only used once. I :ref:`call<how to call a function>` ``src.functions.w_return()`` directly
+* I :ref:`call<how to call a function>` ``src.functions.w_return()`` directly
 
   .. code-block:: python
-    :lineno-start: 8
+    :lineno-start: 10
     :emphasize-lines: 2-4
 
         def test_making_a_function_w_return(self):
@@ -256,19 +254,122 @@ the test passes.
             # self.assertIsNone(result)
             self.assertIsNone(src.functions.w_return())
 
-        def test_making_a_function_w_return(self):
+        def test_making_a_function_w_return_none(self):
 
   the test is still green.
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 8
+    :lineno-start: 10
 
         def test_making_a_function_w_return(self):
             self.assertIsNone(src.functions.w_return())
 
-        def test_making_a_function_w_return(self):
+        def test_making_a_function_w_return_none(self):
+
+----
+
+*********************************************************************************
+test_making_a_function_w_return_none with None
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<another way to test if something is NOT None>` in :ref:`test_making_a_function_w_return_none`
+
+.. code-block:: python
+  :lineno-start: 13
+  :emphasize-lines: 6
+
+      def test_making_a_function_w_return_none(self):
+          result = src.functions.w_return()
+
+          assert result is None
+          self.assertIs(result, None)
+          self.assertIsNotNone(result)
+
+      def test_what_happens_after_functions_return(self):
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  AssertionError: unexpectedly None
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to :ref:`assertIsNone<another way to test if something is None>`
+
+.. code-block:: python
+  :lineno-start: 13
+  :emphasize-lines: 6-7
+
+      def test_making_a_function_w_return_none(self):
+          result = src.functions.w_return()
+
+          assert result is None
+          self.assertIs(result, None)
+          # self.assertIsNotNone(result)
+          self.assertIsNone(result)
+
+      def test_what_happens_after_functions_return(self):
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented line, ``assert result is None`` and ``self.assertIs(result, None)``
+
+  .. code-block:: python
+    :lineno-start: 13
+
+        def test_making_a_function_w_return_none(self):
+            result = src.functions.w_return()
+            self.assertIsNone(result)
+
+        def test_what_happens_after_functions_return(self):
+
+* I no longer need the ``result`` :ref:`variable<what is a variable?>` since it is only used once
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2-4
+
+        def test_making_a_function_w_return_none(self):
+            # result = src.functions.w_return()
+            # self.assertIsNone(result)
+            self.assertIsNone(src.functions.w_return())
+
+        def test_what_happens_after_functions_return(self):
+
+  the test is still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 13
+
+        def test_making_a_function_w_return_none(self):
+            self.assertIsNone(src.functions.w_return())
+
+        def test_what_happens_after_functions_return(self):
 
 
 
