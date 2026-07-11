@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial on None — the simplest data structure / singleton. Step-by-step red-green-refactor with unittest: test_what_is_none using assertIs / assertIsNone / assertIsNotNone, then exhaustive "is None a boolean / int / float / str / tuple / list / set / dict?" tests using assertIsNotNone + assertIsInstance + assertNotIsInstance. Learn exactly why None is not False, not 0, not '', not [], not {}, not 0.0; identity ("is") vs equality ("=="); common None gotchas; and how to test for absence of value. Reproduces real AssertionError messages including "unexpectedly identical: None", "unexpectedly None", and "X is not None". Builds directly on the AssertionError chapters (bare assert, assertIs, test_failure patterns) before booleans/truthiness. Full uv init + pytest-watcher + git workflow. Part of Jacob Itegboje's Pumping Python series.
-  :keywords: Jacob Itegboje, Pumping Python, python None, what is None python, NoneType, python None vs False, python None vs 0, python None vs empty list, python None vs empty dict, is None vs == None, assertIsNone, assertIsNotNone, assertIs, assertIsNot, assertIsInstance, assertNotIsInstance, testing for None, None singleton, None identity, None in unittest, TDD None, None is not False, unexpectedly identical None, AssertionError unexpectedly None, False is not None, 0 is not None, simplest data structure python, Python basic objects TDD, red green refactor None, python None best practices, None vs falsy values, uv pytest-watcher none project
+  :description: Beginner Python TDD tutorial — what is None? (the simplest object / singleton). Project ``none``: uv init, pytest-watcher, git. test_what_is_none keeps assertIs(None, None) beside assertIsNone(None); then red-green-refactor "is None a boolean / int / float / str / tuple / list / set / dict?" with assertIsNotNone, assertIsInstance, assertNotIsInstance. Shows None is not False, 0, 0.0, '', (), [], set(), or {}. Real AssertionError strings: "unexpectedly identical: None", "unexpectedly None", "False is not None", "0 is not None", "{} is not None", "None is not an instance of <class 'bool'>". Introduces assertIsNone / assertIsNotNone (parallel to assert x is None / is not None); reuses assertIsInstance / assertNotIsInstance; digression that {} is empty dict while set() is empty set. Builds on AssertionError (assertIs / assertIsNot) before booleans/truthiness. Part of Jacob Itegboje's Pumping Python series.
+  :keywords: Jacob Itegboje, Pumping Python, what is None, python None, NoneType, simplest object python, None singleton, assertIsNone, assertIsNotNone, assertIs, assertIsNot, assertIsInstance, assertNotIsInstance, unexpectedly identical None, unexpectedly None, False is not None, 0 is not None, set() is not None, {} is not None, None is not False, None is not 0, None vs empty list, None vs empty dict, is None vs == None, empty set vs empty dict, set() vs {}, testing for None unittest, TDD None, red green refactor None, uv run pytest-watcher, remove the commented lines, test_what_is_none, test_is_none_a_boolean, test_is_none_a_dictionary, Python basic objects TDD
 
 .. include:: ../links.rst
 
@@ -400,7 +400,7 @@ I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to
 
   # Exceptions seen
 
-- the test passes because :ref:`None is None<what is None?>` and :ref:`assertIsNotNone<another way to test if something is NOT None>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<everything is an object>` given in parentheses is NOT :ref:`None<what is None?>`.
+- the test passes because :ref:`None is None<what is None?>` and :ref:`assertIsNone<another way to test if something is None>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<everything is an object>` given in parentheses is NOT :ref:`None<what is None?>`.
 - ``assertIs(something, None)`` and ``assertIsNone(something)`` are the same.
 
 ----
@@ -2656,7 +2656,7 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 56
     :emphasize-lines: 8-9
 
         def test_is_none_a_set(self):
@@ -2677,7 +2677,7 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 56
 
         def test_is_none_a_set(self):
             self.assertIsNotNone(set())
@@ -3086,8 +3086,8 @@ review
 
 * I used two new :ref:`assert methods<test_dir_unittest_testcase>` for :ref:`None<what is None?>`:
 
-  * :ref:`assertIsNone<another way to test if something is None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is NOT :ref:`None<what is None?>`. It replaced :ref:`assertIs<test_assert_is>` from the :ref:`assertion_error project<what is an assertion?>` except in :ref:`test_what_is_none`
-  * :ref:`assertIsNotNone<another way to test if something is NOT None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is :ref:`None<what is None?>`. It replaced :ref:`assertIsNot<test_assert_is_not>` from the :ref:`assertion_error project<what is an assertion?>`
+  * :ref:`assertIsNotNone<another way to test if something is NOT None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is :ref:`None<what is None?>`.
+  * :ref:`assertIsNone<another way to test if something is None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is NOT :ref:`None<what is None?>`.
 
 :ref:`How many questions can you answer after going through this chapter?<questions about None>`
 
@@ -3108,17 +3108,34 @@ what is next?
 so far you have seen
 
 * :ref:`how to make a Python test driven development environment manually`
+* :ref:`what a Python module is<what is a module?>`
+* :ref:`how to run tests automatically`
 * :ref:`what an assertion is<what is an assertion?>`
 * :ref:`how to make functions<what is a function?>`
-* :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`how to make dictionaries with functions<how to make a person>`
-* :ref:`how to make classes<classes>`
-* :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
-* :ref:`what happens when classes have one or more parents<family ties>`
+* :ref:`how to make a person with strings`
+* :ref:`how to make functions that take input<functions that take input>`
+* :ref:`what causes TypeError<what causes TypeError?>`
+* :ref:`how to place values in strings<telephone>`
+* :ref:`how to make a person say hello with f-strings<how to make a person with f-strings>`
+* :ref:`how to separate tests from solutions<separate and equal>`
 * :ref:`what causes AttributeError<what causes AttributeError?>`
-* :ref:`what None is and is not<what is None?>`
+* :ref:`how to make a person with a class<how to make a person with a class>`
+* :ref:`that everything in Python is an object<everything is an object>`
+* :ref:`how to use the unittest library<another way to write tests>`
+* :ref:`how to calculate age with the datetime library<test person with datetime>`
 
-:ref:`Would you like to use the assertIsNotNone and assertIsNone methods with the assertion_error project?<AssertionError 3: use assertIsNotNone and assertIsNone>`
+----
+
+Would you like to use :ref:`assertIsNotNone<another way to test if something is NOT None>` and  :ref:`assertIsNone<another way to test if something is None>` to test these projects?
+
+.. toctree::
+  :titlesonly:
+  :maxdepth: 1
+
+  ../exceptions/AssertionError/AssertionError_w_none
+  ../functions/functions_w_none
+
+:ref:`Would you like to use the assertIsNotNone and assertIsNone methods with the assertion_error project?<test AssertionError with assertIsNotNone and assertIsNone>`
 
 ----
 

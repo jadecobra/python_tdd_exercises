@@ -3752,7 +3752,7 @@ you now know
 * :ref:`what happens when classes have one or more parents<family ties>`
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`what None is and is not<what is None?>`
-* :ref:`how to use the assertIsNotNone and assertIsNone methods<AssertionError 3: use assertIsNotNone and assertIsNone>`
+* :ref:`how to use the assertIsNotNone and assertIsNone methods<test AssertionError with assertIsNotNone and assertIsNone>`
 * :ref:`what booleans are<what are booleans?>`
 
 :ref:`Would you like to test the truth table?<truth table>` It will help you understand writing programs_ that make decisions based on :ref:`conditions<if statements>`.
