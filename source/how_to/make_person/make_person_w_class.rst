@@ -3418,6 +3418,13 @@ I know
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`how to make a person with a class<how to make a person with a class>`
 
+.. toctree::
+  :titlesonly:
+  :maxdepth: 1
+
+  ../classes/inheritance
+  ../classes/unittest
+
 :ref:`Would you like to know where the extra attributes and methods of the Person class came from?<everything is an object>`
 
 ----

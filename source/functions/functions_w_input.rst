@@ -14,17 +14,17 @@
 functions that take input
 #################################################################################
 
-To review, a function_ is code that is callable_, which means I can write code to do something one time, and call the name for it to do that thing at a different time from when I write it.
+To review, a :ref:`function<what is a function?>` is code that is callable_, which means I can write code to do something one time, and call the name for it to do that thing at a different time from when I write it.
 
-functions_ can make code simpler, easier to read, test, reuse, maintain and improve - all the good things.
+:ref:`functions<what is a function?>` can make code simpler, easier to read, test, reuse, maintain and improve - all the good things.
 
 Part of `Computer Programming`_ is sending :ref:`input data<basic objects>` to a process and getting :ref:`output data<basic objects>` back
 
 .. code-block:: python
 
-    input_data -> process -> output_data
+    input_object -> process -> output_object
 
-where ``process`` is the function_. I think of it like mapping a function ``f`` in Mathematics_ with inputs ``x`` and output ``y``
+where ``process`` is the :ref:`function<what is a function?>`. I think of it like mapping a function ``f`` in Mathematics_ with inputs ``x`` and output ``y``
 
 .. math::
 
@@ -35,9 +35,9 @@ in other words
 .. code-block:: python
 
                   f(x) -> y
-  function(input_data) -> output_data
+  function(input_object) -> output_object
 
-the :ref:`function<what is a function?>` does something (the process) with ``input_data`` and returns ``output_data`` as the result.
+the :ref:`function<what is a function?>` does something (the process) with ``input_object`` and returns ``output_object`` as the result.
 
 ----
 
@@ -45,7 +45,7 @@ the :ref:`function<what is a function?>` does something (the process) with ``inp
 how to make a function that takes input
 *********************************************************************************
 
-functions_ are made with
+:ref:`functions<what is a function?>` are made with
 
 * the def_ keyword
 * a name
@@ -54,9 +54,9 @@ functions_ are made with
 
 .. code-block:: python
 
-  def name_of_function(input_data):
+  def name_of_function(input_object):
       the body of the function
-      return output_data
+      return output_object
 
 ----
 
@@ -66,7 +66,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/functions/tests/test_functions_w_input.py
+.. literalinclude:: ../code/functions/tests/test_:ref:`functions<what is a function?>`w_input.py
   :language: python
   :linenos:
 
@@ -305,7 +305,7 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 
     E       assert None == object
 
-  - because when I call ``identity`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  - because when I call ``identity`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_:ref:`functions<what is a function?>`return>`
 
     .. code-block:: python
 
@@ -1134,7 +1134,7 @@ the test passes.
         # assert 2 + 1 == 2
         assert 2 + 1 == 3
 
-  the test is still green because when I call ``add_x`` with a number as input, it returns ``2`` plus the number as output. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  the test is still green because when I call ``add_x`` with a number as input, it returns ``2`` plus the number as output. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_:ref:`functions<what is a function?>`return>`
 
   .. code-block:: python
 
@@ -1555,7 +1555,7 @@ the test passes.
 
     AssertionError: assert None == ('first', 'last')
 
-  because when I call ``positional_arguments`` uses ``'first'`` and ``'last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because when I call ``positional_arguments`` uses ``'first'`` and ``'last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_:ref:`functions<what is a function?>`return>`
 
   .. code-block:: python
 
@@ -1630,7 +1630,7 @@ the test passes.
 
     AssertionError: assert ('last', 'first') == ('first', 'last')
 
-  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``'last'`` as ``first_input`` and ``'first'`` as ``last_input``. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``'last'`` as ``first_input`` and ``'first'`` as ``last_input``. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_:ref:`functions<what is a function?>`return>`
 
   .. code-block:: python
 
@@ -2327,7 +2327,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
     AssertionError: assert ('first', 'last') == ('last', 'first')
 
-  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``'last'`` as ``last_input`` and ``'first'`` as ``first_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``'last'`` as ``last_input`` and ``'first'`` as ``first_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_:ref:`functions<what is a function?>`return>`
 
   .. code-block:: python
 
@@ -2473,7 +2473,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
     E       assert (1, 0) == (0, 1)
 
-  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``0`` as ``last_input`` and ``1`` as ``first_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``0`` as ``last_input`` and ``1`` as ``first_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_:ref:`functions<what is a function?>`return>`
 
   .. code-block:: python
 
@@ -2579,7 +2579,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
         assert ([1, 2, 3, 'n...0, 1, 2, 'n'))
             == ((1, 2, 3, 'n...0, 1, 2, 'n'])
 
-  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``[0, 1, 2, 'n']`` as ``first_input`` and ``(0, 1, 2, 'n')`` as ``last_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``[0, 1, 2, 'n']`` as ``first_input`` and ``(0, 1, 2, 'n')`` as ``last_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_:ref:`functions<what is a function?>`return>`
 
   .. code-block:: python
 
@@ -3746,7 +3746,7 @@ are the same, they always ``return first_input, last_input``, their names are di
   def args_and_kwargs(first_input, last_input):
   def optional_arguments(first_input, last_input='doe'):
 
-``first_input`` and ``last_input`` are also names (:ref:`variables<what is a variable?>`), they can be any names. The difference that matters in the tests is how I call the functions_
+``first_input`` and ``last_input`` are also names (:ref:`variables<what is a variable?>`), they can be any names. The difference that matters in the tests is how I call the :ref:`functions<what is a function?>`
 
 .. code-block:: python
   :emphasize-text: last
@@ -5172,7 +5172,16 @@ I have covered a bit so far and know
 * :ref:`how to make a person with strings`
 * :ref:`how to make functions that take input<functions that take input>`
 
-I am going for a walk. :ref:`Would you like to test TypeError?<what causes TypeError?>`
+I am going for a walk.
+
+.. toctree::
+  :titlesonly:
+  :maxdepth: 1
+
+  ../exceptions/TypeError/index
+  ../how_to/telephone/index
+
+:ref:`Would you like to test TypeError?<what causes TypeError?>`
 
 ----
 

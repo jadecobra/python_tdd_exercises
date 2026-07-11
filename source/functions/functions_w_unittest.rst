@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test functions with unittest — move the functions project's bare assert tests onto unittest.TestCase. Open functions; uv run pytest-watcher . --now (12 passed). Add class Functions then rename to TestFunctions → AttributeError: 'TestFunctions' object has no attribute 'assertEqual'. Parent unittest.TestCase → NameError name 'unittest' is not defined (pytest: Did you forget to import 'unittest'?); import unittest → AssertionError: True != False then green with assertEqual(False, False). For each of the 12 tests (test_making_a_function_w_pass through test_unknown_number_of_arguments): move into TestFunctions (first method replaces test_failure) → TypeError takes 0 positional arguments but 1 was given (need self); add assertIsNot / assertNotEqual → AssertionError e.g. unexpectedly identical: None, 'the same thing' == 'the same thing', None == None, <class 'object'> == <class 'object>', ('first', 'last') == ('first', 'last'); switch to assertIs / assertEqual; keep bare assert + self.assert*; use result / reality / my_expectation locals; remove the commented lines; git commit. Ends with TestFunctions + 12 methods + # Exceptions seen AssertionError NameError TypeError SyntaxError ModuleNotFoundError AttributeError. Review: unittest.TestCase methods or bare assert. What is next: test person with unittest.
-  :keywords: Jacob Itegboje, Pumping Python, test functions with unittest, functions unittest, TestFunctions, unittest.TestCase, import unittest, AttributeError has no attribute assertEqual, NameError name 'unittest' is not defined, Did you forget to import unittest, AssertionError True != False, TypeError takes 0 positional arguments but 1 was given, self first argument method, assertIsNot, assertIs, assertNotEqual, assertEqual, unexpectedly identical None, the same thing, identity function None object, positional arguments, keyword arguments, args and kwargs, optional arguments, unknown_number_of_arguments, reality == my_expectation, bare assert and assertEqual, uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, another way to write tests, test_functions_w_unittest
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test functions with unittest — move the functions project's bare assert tests onto unittest.TestCase, then extract class attributes to remove repetition. Open functions; uv run pytest-watcher . --now (12 passed). Add class Functions then rename to TestFunctions → AttributeError: 'TestFunctions' object has no attribute 'assertEqual'. Parent unittest.TestCase → NameError name 'unittest' is not defined (pytest: Did you forget to import 'unittest'?); import unittest → AssertionError: True != False then green with assertEqual(False, False). For each of the 12 tests (test_making_a_function_w_pass through test_unknown_number_of_arguments): move into TestFunctions (first method replaces test_failure) → TypeError takes 0 positional arguments but 1 was given (need self); add assertIsNot / assertNotEqual → AssertionError e.g. unexpectedly identical: None, 'the same thing' == 'the same thing', None == None, <class 'object'> == <class 'object>', ('first', 'last') == ('first', 'last'); switch to assertIs / assertEqual; keep bare assert + self.assert*; use result / reality / my_expectation; remove the commented lines; git commit. Then extract class attributes first, last, a_tuple, a_list, a_set, a_dictionary and replace locals with self.first / self.last / self.a_tuple … in test_positional_arguments, test_keyword_arguments, and test_args_and_kwargs (keyword order still binds by name; my_expectation stays (self.first, self.last)). Ends with TestFunctions + 6 class attrs + 12 methods + # Exceptions seen AssertionError NameError TypeError SyntaxError ModuleNotFoundError AttributeError. Review: unittest.TestCase methods or bare assert; class attributes for values that repeat. What is next: test person with unittest.
+  :keywords: Jacob Itegboje, Pumping Python, test functions with unittest, functions unittest, TestFunctions, unittest.TestCase, import unittest, class attributes, self.first self.last, a_tuple a_list a_set a_dictionary, extract class attributes, AttributeError has no attribute assertEqual, NameError name 'unittest' is not defined, Did you forget to import unittest, AssertionError True != False, TypeError takes 0 positional arguments but 1 was given, self first argument method, assertIsNot, assertIs, assertNotEqual, assertEqual, unexpectedly identical None, the same thing, identity function None object, positional arguments, keyword arguments, args and kwargs, optional arguments, unknown_number_of_arguments, reality == my_expectation, bare assert and assertEqual, uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, another way to write tests, test_functions_w_unittest
 
 .. include:: ../links.rst
 
@@ -8,7 +8,7 @@
 test functions with unittest
 #################################################################################
 
-I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`functions` project. I also want to use :ref:`class attributes<what is a class attribute?>` to remove repetition of some values from the tests.
+I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`functions<what is a function?>` project. I also want to use :ref:`class attributes<what is a class attribute?>` to remove repetition of some values from the tests.
 
 ----
 
@@ -5016,7 +5016,7 @@ extract a_list class attribute
 extract a_set class attribute
 *********************************************************************************
 
-* I add :ref:`class attribute<what is a class attribute?>` for ``{0, 1, 2, 'n'}``
+* I add a :ref:`class attribute<what is a class attribute?>` for ``{0, 1, 2, 'n'}``
 
   .. code-block:: python
     :lineno-start: 5
@@ -5032,7 +5032,7 @@ extract a_set class attribute
 
         def test_making_a_function_w_pass(self):
 
-* I use the new :ref:`class attributes<what is a class attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_positional_arguments`
+* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 152
@@ -5097,7 +5097,7 @@ extract a_set class attribute
 extract a_dictionary class attribute
 *********************************************************************************
 
-* I add :ref:`class attribute<what is a class attribute?>` for ``a_dictionary``
+* I add a :ref:`class attribute<what is a class attribute?>` for ``a_dictionary``
 
   .. code-block:: python
     :lineno-start: 5
@@ -5317,7 +5317,7 @@ extract a_dictionary class attribute
     :emphasize-lines: 1-2
 
     git commit -am \
-    'extract a_dictionary class attributes'
+    'extract a_dictionary class attribute'
 
 :ref:`I can use class attributes to remove repetition<what is a class attribute?>`
 

@@ -38,19 +38,12 @@ table of contents
   start here<setup/index>
   conventions
   make TDD manually<make_tdd/make_tdd_manually>
-  what is a module?<exceptions/ModuleNotFoundError>
-  make_tdd/run_tests_automatically
-  exceptions/AssertionError/index
   functions/index
   make a person with strings<how_to/make_person/index>
   functions/functions_w_input
-  exceptions/TypeError/index
-  how_to/telephone/index
   exceptions/ModuleNotFoundError/separate_and_equal
   make a person with f-strings<how_to/make_person/make_person_w_fstrings>
-  exceptions/AttributeError/index
   make a person with a class<how_to/make_person/make_person_w_class>
-  classes/inheritance
   make a person with datetime<how_to/make_person/make_person_w_datetime>
   basic_objects/none
   make a person<how_to/make_person>

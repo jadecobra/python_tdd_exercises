@@ -16,7 +16,7 @@ Part of `Computer Programming`_ is sending :ref:`input data<basic objects>` to a
 
 .. code-block:: python
 
-    input_data -> process -> output_data
+    input_object -> process -> output_object
 
 I send things (:ref:`input data<basic objects>`) to a program_ to test it, and check if what I think will happen (my expectation) is the same as the results I get (reality). This helps me answer two questions:
 

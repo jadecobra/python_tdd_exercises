@@ -1006,7 +1006,18 @@ how to view all the commands typed in a terminal
 what is next?
 *************************************************************************************
 
-I know :ref:`how to make a Python test driven development environment manually`, :ref:`Would you like to find out what a module is?<what is a module?>`
+
+I know :ref:`how to make a Python test driven development environment manually`
+
+.. toctree::
+  :titlesonly:
+  :maxdepth: 1
+
+  ../exceptions/ModuleNotFoundError/index
+  run_tests_automatically
+  ../exceptions/AssertionError/index
+
+:ref:`Would you like to find out what a module is?<what is a module?>`
 
 -----
 
