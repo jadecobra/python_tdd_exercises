@@ -35,8 +35,8 @@ class TestNone(unittest.TestCase):
     def test_is_none_a_string(self):
         self.assertIsNotNone('')
         self.assertIsNotNone("characters")
-        self.assertIsInstance('', str)
-        self.assertIsInstance("characters", str)
+        self.assertIsInstance("", str)
+        self.assertIsInstance('characters', str)
         self.assertNotIsInstance(None, str)
 
     def test_is_none_a_tuple(self):
