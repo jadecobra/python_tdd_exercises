@@ -403,7 +403,7 @@ test_type_error_w_positional_arguments
 
 ----
 
-* I add a call to ``function_01``
+* I add a :ref:`call<how to call a function with input>` to ``function_01``
 
   .. code-block:: python
     :lineno-start: 6
@@ -474,7 +474,7 @@ test_type_error_w_positional_arguments
 
   the test passes because :ref:`the call to the function<how to call a function with input>` matches its :ref:`definition<how to make a function that takes input>`.
 
-* I add a call to ``function_02``
+* I add a :ref:`call<how to call a function with input>` to ``function_02``
 
   .. code-block:: python
     :lineno-start: 12
@@ -545,7 +545,7 @@ test_type_error_w_positional_arguments
 
   the test passes because :ref:`the call to the function<how to call a function with input>` matches its :ref:`definition<how to make a function that takes input>`.
 
-* I add a call to ``function_03``
+* I add a :ref:`call<how to call a function with input>` to ``function_03``
 
   .. code-block:: python
     :lineno-start: 18
@@ -763,7 +763,7 @@ test_type_error_w_keyword_arguments
 
 ----
 
-* I add a call to ``function_05`` with :ref:`keyword arguments<test_keyword_arguments>`
+* I add a :ref:`call<how to call a function with input>` to ``function_05`` with :ref:`keyword arguments<test_keyword_arguments>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -873,7 +873,7 @@ test_type_error_w_keyword_arguments
 
   the test passes because :ref:`the call to the function<how to call a function with input>` matches its :ref:`definition<how to make a function that takes input>`.
 
-* I add a call to ``function_06`` with :ref:`keyword arguments<test_keyword_arguments>`
+* I add a :ref:`call<how to call a function with input>` to ``function_06`` with :ref:`keyword arguments<test_keyword_arguments>`
 
   .. code-block:: python
     :lineno-start: 34
@@ -964,7 +964,7 @@ test_type_error_w_keyword_arguments
 
   the test passes because :ref:`the call to the function<how to call a function with input>` matches its :ref:`definition<how to make a function that takes input>`.
 
-* I add a call to ``function_07`` with :ref:`keyword arguments<test_keyword_arguments>`
+* I add a :ref:`call<how to call a function with input>` to ``function_07`` with :ref:`keyword arguments<test_keyword_arguments>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -1265,7 +1265,7 @@ test_type_error_w_args_and_kwargs
 
 ----
 
-* I add another call to ``function_08``
+* I add a :ref:`call<how to call a function with input>` to ``function_08``
 
   .. code-block:: python
     :lineno-start: 60
@@ -1408,7 +1408,7 @@ test_type_error_w_args_and_kwargs
 
   the test passes because :ref:`the call to the function<how to call a function with input>` matches its :ref:`definition<how to make a function that takes input>`.
 
-* I add a call to ``function_02`` with arguments that are not clear
+* I add a :ref:`call<how to call a function with input>` to ``function_02`` with arguments that are not clear
 
   .. code-block:: python
     :lineno-start: 60

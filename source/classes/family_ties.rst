@@ -337,7 +337,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
 
 ----
 
-* I add a call to :ref:`assertIsSubclass<test_assert_is_subclass>`
+* I add a :ref:`call<how to call a function with input>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -463,7 +463,7 @@ more about instances vs subclasses
 
 ----
 
-* I add a call to :ref:`assertIsInstance<test_assert_is_instance>` to show that ``src.family_ties.Doe`` is not an :ref:`instance<how to test if something is an instance>`
+* I add a :ref:`call<how to call a function with input>` to :ref:`assertIsInstance<test_assert_is_instance>` to show that ``src.family_ties.Doe`` is not an :ref:`instance<how to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -583,7 +583,7 @@ what happens when a child calls the parent?
 
 ----
 
-* I add a call to the :ref:`assertIsInstance method<test_assert_is_instance>`, this time with an :ref:`instance<how to test if something is an instance>` of ``Doe``
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsInstance method<test_assert_is_instance>`, this time with an :ref:`instance<how to test if something is an instance>` of ``Doe``
 
   .. code-block:: python
     :lineno-start: 24
@@ -1733,7 +1733,7 @@ the test passes.
 
   the test passes.
 
-* I add a call to the `super built-in function`_ to use to remove the repetition of ``last_name``
+* I add a :ref:`call<how to call a function with input>` to the `super built-in function`_ to use to remove the repetition of ``last_name``
 
   .. code-block:: python
     :lineno-start: 22
@@ -2161,7 +2161,7 @@ the test passes.
 
   the test passes.
 
-* I no longer need ``self.last_name = 'blow'`` because it is a repetition. I add a call to the `super built-in function`_
+* I no longer need ``self.last_name = 'blow'`` because it is a repetition. I add a :ref:`call<how to call a function with input>` to the `super built-in function`_
 
   .. code-block:: python
     :lineno-start: 28
@@ -2346,7 +2346,7 @@ the test passes.
   - ``Doe`` is a ``Person``
   - the :ref:`default value<test_optional_arguments>` for ``last_name`` in ``Person`` is ``'doe'``
 
-* I add a call to the `super built-in function`_ to remove the repetition
+* I add a :ref:`call<how to call a function with input>` to the `super built-in function`_ to remove the repetition
 
   .. code-block:: python
     :lineno-start: 44
@@ -2376,7 +2376,7 @@ the test passes.
                 self.first_name = 'mary'
                 self.last_name = 'doe' # use the default value
 
-* I add a call to the :ref:`assertNotIsSubclass method<test_assert_not_is_subclass>` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubclass method<test_assert_not_is_subclass>` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 66
@@ -3024,7 +3024,7 @@ what happens when a child has more than one parent?
   - ``John`` is a ``Smith``
   - the ``last_name`` :ref:`attribute<what is a class attribute?>` of :ref:`instances<how to test if something is an instance>` of ``Smith`` is ``'smith'``
 
-* I add a call to the `super built-in function`_ so :ref:`instances<how to test if something is an instance>` of ``John`` can inherit the ``last_name`` :ref:`class attribute<what is a class attribute?>`
+* I add a :ref:`call<how to call a function with input>` to the `super built-in function`_ so :ref:`instances<how to test if something is an instance>` of ``John`` can inherit the ``last_name`` :ref:`class attribute<what is a class attribute?>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -3261,7 +3261,7 @@ what happens when a child has more than one parent?
 
   the test passes. This is a repetition, and a problem if the value of the ``last_name`` :ref:`attribute<what is a class attribute?>` of the parent changes.
 
-* I add a call to the `super built-in function`_ to remove the repetition
+* I add a :ref:`call<how to call a function with input>` to the `super built-in function`_ to remove the repetition
 
   .. code-block:: python
     :lineno-start: 50
@@ -3329,7 +3329,7 @@ what happens when a child has more than one parent?
 
   the ``__init__`` :ref:`method<what is a method?>` of ``Mary`` did not get called.
 
-* I add a call to the `super built-in function`_ in ``Smith``
+* I add a :ref:`call<how to call a function with input>` to the `super built-in function`_ in ``Smith``
 
   .. code-block:: python
     :lineno-start: 17
@@ -3500,7 +3500,7 @@ what happens when a child has more than one parent?
 
   the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` did not get called.
 
-* I add a call to the `super built-in function`_ in ``Blow``
+* I add a :ref:`call<how to call a function with input>` to the `super built-in function`_ in ``Blow``
 
   .. code-block:: python
     :lineno-start: 10

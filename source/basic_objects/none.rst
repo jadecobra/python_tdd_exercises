@@ -607,7 +607,7 @@ the test passes.
 
   also from the :ref:`assertion_error project<what is an assertion?>`
 
-* I add a call to the :ref:`assertNotIsInstance method<test_assert_not_is_instance>` to test if :ref:`False<test_what_is_false>` is :ref:`an instance<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assert_not_is_instance>` to test if :ref:`False<test_what_is_false>` is :ref:`an instance<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -822,14 +822,9 @@ Is :ref:`None<what is None?>` an integer_?
 * I add a test to see if :ref:`None<what is None?>` is an integer_ (a whole number without decimals)
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 8-9
+    :lineno-start: 15
+    :emphasize-lines: 3-4
 
-        def test_is_none_a_boolean(self):
-            self.assertIsNotNone(False)
-            self.assertIsNotNone(True)
-            self.assertIsInstance(False, bool)
-            self.assertIsInstance(True, bool)
             self.assertNotIsInstance(None, bool)
 
         def test_is_none_an_integer(self):
@@ -978,9 +973,8 @@ the test passes.
 
       AssertionError: -1 is an instance of <class 'int'>
 
-    because ``-1`` is an integer_
-
-  - I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``
+  - because ``-1`` is an integer_.
+  - I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``.
 
 * I make the line :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assert_is_instance>`
 
@@ -1082,8 +1076,8 @@ the test passes.
 
     AssertionError: 1 is an instance of <class 'int'>
 
-  - because ``1`` is an integer_
-  - I use ``1`` for all the integers_ (whole numbers) that are bigger than ``0``
+  - because ``1`` is an integer_.
+  - I use ``1`` for all the integers_ (whole numbers) that are bigger than ``0``.
 
 * I make the failing line :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assert_is_instance>`
 
@@ -1214,6 +1208,10 @@ the test passes.
 test_is_none_a_float
 *********************************************************************************
 
+Is :ref:`None<what is None?>` a float_?
+
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
@@ -1224,16 +1222,9 @@ test_is_none_a_float
 * I add a test to see if :ref:`None<what is None?>` is a float_ (binary floating point decimal number)
 
 .. code-block:: python
-  :lineno-start: 17
-  :emphasize-lines: 10-11
+  :lineno-start: 24
+  :emphasize-lines: 3-4
 
-      def test_is_none_an_integer(self):
-          self.assertIsNotNone(-1)
-          self.assertIsNotNone(0)
-          self.assertIsNotNone(1)
-          self.assertIsInstance(-1, int)
-          self.assertIsInstance(0, int)
-          self.assertIsInstance(1, int)
           self.assertNotIsInstance(None, int)
 
       def test_is_none_a_float(self):
@@ -1279,7 +1270,7 @@ the test passes.
 
 ----
 
-* I add a call to :ref:`assertIsNone<another way to test if something is None>`
+* I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNone<another way to test if something is None>` for ``0.0``
 
   .. code-block:: python
     :lineno-start: 26
@@ -1316,7 +1307,7 @@ the test passes.
 
   the test passes.
 
-* I add another call to :ref:`assertIsNone<another way to test if something is None>`
+* I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNone<another way to test if something is None>` for ``0.1``
 
   .. code-block:: python
     :lineno-start: 26
@@ -1357,7 +1348,7 @@ the test passes.
 
   the test passes. Time for :ref:`instance tests<how to test if something is an instance>`.
 
-* I add a failing line with :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+* I add a failing line with :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``-0.1``
 
   .. code-block:: python
     :lineno-start: 26
@@ -1381,8 +1372,8 @@ the test passes.
 
     AssertionError: -0.1 is an instance of <class 'float'>
 
-  - because ``-0.1`` is a float_
-  - I use ``-0.1`` for all the binary floating point numbers that are smaller than ``0.0``
+  - because ``-0.1`` is a float_.
+  - I use ``-0.1`` for all the binary floating point numbers that are smaller than ``0.0``.
 
 * I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assert_is_instance>`
 
@@ -1405,7 +1396,7 @@ the test passes.
 
   the test passes.
 
-* I add the next :ref:`instance test<how to test if something is an instance>` with :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+* I add the next :ref:`instance test<how to test if something is an instance>` with :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``0.0``
 
   .. code-block:: python
     :lineno-start: 26
@@ -1431,7 +1422,7 @@ the test passes.
 
     AssertionError: 0.0 is an instance of <class 'float'>
 
-  because ``0.0`` is a binary floating point number
+  because ``0.0`` is a binary floating point number.
 
 * I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assert_is_instance>`
 
@@ -1687,7 +1678,7 @@ the test passes.
 
 ----
 
-* I add a call to :ref:`assertIsNone<another way to test if something is None>`
+* I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNone<another way to test if something is None>`
 
   .. code-block:: python
     :lineno-start: 35

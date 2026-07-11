@@ -929,7 +929,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
   the test passes.
 
-* I add a call to the :ref:`Person class<test person class>` and :ref:`say_hello method<test say_hello method>` in :ref:`test_jane`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`Person class<test person class>` and :ref:`say_hello method<test say_hello method>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 69

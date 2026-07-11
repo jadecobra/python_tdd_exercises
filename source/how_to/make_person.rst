@@ -5041,7 +5041,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
         def test_factory_w_keyword_arguments(self):
 
-* I add a call to the :ref:`function<what is a function?>` for the value of ``age`` in ``my_expectation`` in :ref:`test_factory_w_keyword_arguments`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`function<what is a function?>` for the value of ``age`` in ``my_expectation`` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 44
@@ -5092,7 +5092,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
         def test_factory_w_optional_arguments(self):
 
-* I add a call to the :ref:`function<what is a function?>` for the value of ``age`` in ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`function<what is a function?>` for the value of ``age`` in ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
     :lineno-start: 62
@@ -5143,7 +5143,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
         def test_factory_person_says_hello(self):
 
-* I add a call to the :ref:`function<what is a function?>` for the value of ``age`` for ``joe`` in :ref:`test_factory_person_says_hello`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`function<what is a function?>` for the value of ``age`` for ``joe`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
     :lineno-start: 73
@@ -5178,7 +5178,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
   the test is still green.
 
-* I add a call to the :ref:`function<what is a function?>` for the value of ``age`` for ``jane``
+* I add a :ref:`call<how to call a function with input>` to the :ref:`function<what is a function?>` for the value of ``age`` for ``jane``
 
   .. code-block:: python
     :lineno-start: 96
@@ -5209,7 +5209,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
   still green.
 
-* I add a call to the :ref:`function<what is a function?>` for the value of ``age`` for ``john``
+* I add a :ref:`call<how to call a function with input>` to the :ref:`function<what is a function?>` for the value of ``age`` for ``john``
 
   .. code-block:: python
     :lineno-start: 114
@@ -5241,7 +5241,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
   green.
 
-* I add a call to the :ref:`function<what is a function?>` for the value of ``age`` for ``mary``
+* I add a :ref:`call<how to call a function with input>` to the :ref:`function<what is a function?>` for the value of ``age`` for ``mary``
 
   .. code-block:: python
     :lineno-start: 133

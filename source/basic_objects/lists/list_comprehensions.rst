@@ -1802,7 +1802,7 @@ the numbers on the left are the squares of the even numbers from the right
 
 ----
 
-* I add a call to the ``condition`` :ref:`function<what is a function?>`
+* I add a :ref:`call<how to call a function with input>` to the ``condition`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 91
@@ -1821,7 +1821,7 @@ the numbers on the left are the squares of the even numbers from the right
 
   the numbers on the left are squares of the numbers on the right
 
-* I add a call to the ``process`` :ref:`function<what is a function?>`
+* I add a :ref:`call<how to call a function with input>` to the ``process`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 91
@@ -1863,7 +1863,7 @@ the numbers on the left are the squares of the even numbers from the right
 
   the numbers on the left are the squares of the odd numbers from the right
 
-* I add a call to ``condition`` with :ref:`logical negation(NOT)<test_logical_negation>`
+* I add a :ref:`call<how to call a function with input>` to ``condition`` with :ref:`logical negation(NOT)<test_logical_negation>`
 
   .. code-block:: python
     :lineno-start: 95
@@ -1882,7 +1882,7 @@ the numbers on the left are the squares of the even numbers from the right
 
   the numbers on the left are squares of the numbers on the right
 
-* I add a call to ``process``
+* I add a :ref:`call<how to call a function with input>` to ``process``
 
   .. code-block:: python
     :lineno-start: 95

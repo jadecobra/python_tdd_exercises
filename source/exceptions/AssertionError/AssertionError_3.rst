@@ -87,7 +87,7 @@ continue the project
 use assertIsNotNone and assertIsNone
 *********************************************************************************
 
-* I add a call to :ref:`assertIsNotNone<another way to test if something is NOT None>` in :ref:`test_assertion_error_w_none`
+* I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<another way to test if something is NOT None>` in :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
     :lineno-start: 30

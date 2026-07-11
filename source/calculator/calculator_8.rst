@@ -147,7 +147,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
 ----
 
-* I add a call to the :ref:`add function<test_addition>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`add function<test_addition>`
 
   .. code-block:: python
     :lineno-start: 179

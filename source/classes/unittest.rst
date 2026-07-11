@@ -2239,7 +2239,7 @@ test_assert_is_subclass
 
   the test passes.
 
-* I add a call to assertIsSubclass_
+* I add a :ref:`call<how to call a function with input>` to assertIsSubclass_
 
   .. code-block:: python
     :lineno-start: 154

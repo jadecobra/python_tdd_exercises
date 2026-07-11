@@ -442,7 +442,7 @@ requirements
         (wake_time, sleep_time)
     )
 
-* I want to get the hours part of ``wake_time`` and ``sleep_time`` which are the characters before ``:``. I add a call to the `help system`_ to see which :ref:`methods<what is a method?>` of strings_ can help me break one apart or get specific parts from it
+* I want to get the hours part of ``wake_time`` and ``sleep_time`` which are the characters before ``:``. I add a :ref:`call<how to call a function with input>` to the `help system`_ to see which :ref:`methods<what is a method?>` of strings_ can help me break one apart or get specific parts from it
 
   .. code-block:: python
 

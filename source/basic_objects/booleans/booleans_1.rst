@@ -597,7 +597,7 @@ the test passes because ``bool(False)`` is equal to :ref:`False<test_what_is_fal
 
 ----
 
-* It turns out that I can skip bool_ and get the same result. I add another call to the `assertFalse method`_
+* It turns out that I can skip bool_ and get the same result. I add a :ref:`call<how to call a function with input>` to the `assertFalse method`_
 
   .. code-block:: python
     :lineno-start: 6
@@ -997,7 +997,7 @@ the test passes because ``bool(True)`` is equal to :ref:`True<test_what_is_true>
 
 ----
 
-* I can skip bool_ and get the same result. I add another call to the `assertTrue method`_
+* I can skip bool_ and get the same result. I add a :ref:`call<how to call a function with input>` to the `assertTrue method`_
 
   .. code-block:: python
     :lineno-start: 13
