@@ -4782,7 +4782,7 @@ code from the chapter
 what is next?
 *****************************************************************************************
 
-You know
+I know
 
 * :ref:`how to make a directory`
 * :ref:`how to see what is in a directory`

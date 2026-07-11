@@ -535,17 +535,7 @@ I know
 * :ref:`that everything in Python is an object<everything is an object>`
 * :ref:`how to use the unittest library<another way to write tests>`
 * :ref:`how to calculate age with the datetime library<test person with datetime>`
-
-----
-
-Would you like to use :ref:`assertIsNotNone<another way to test if something is NOT None>` and  :ref:`assertIsNone<another way to test if something is None>` to test these projects?
-
-.. toctree::
-  :titlesonly:
-  :maxdepth: 1
-
-  ../exceptions/AssertionError/AssertionError_w_none
-  ../functions/functions_w_none
+* :ref:`what None is<what is None?>`
 
 :ref:`Would you like to use the assertIsNotNone and assertIsNone methods with the functions project?<test functions with assertIsNotNone and assertIsNone>`
 

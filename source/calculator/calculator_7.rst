@@ -2520,7 +2520,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-you know
+I know
 
 * :ref:`how to make a Python test driven development environment manually`
 * :ref:`what an assertion is<what is an assertion?>`

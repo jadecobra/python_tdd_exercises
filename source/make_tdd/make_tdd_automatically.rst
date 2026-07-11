@@ -589,7 +589,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-you have gone through a few things
+I have gone through a few things
 
 * :ref:`how to make a Python test driven development environment manually`
 * :ref:`what a Python module is<what is a module?>`

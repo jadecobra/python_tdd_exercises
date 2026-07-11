@@ -639,7 +639,7 @@ how to view all the commands I typed to automate running tests
 what is next?
 *************************************************************************************
 
-You know
+I know
 
 * :ref:`how to make a Python test driven development environment manually`
 * :ref:`what a Python module is<what is a module?>`

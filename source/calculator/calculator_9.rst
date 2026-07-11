@@ -2194,7 +2194,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-Your magic powers are growing. You know
+Your magic powers are growing. I know
 
 * :ref:`how to make a Python test driven development environment manually`
 * :ref:`what an assertion is<what is an assertion?>`

@@ -107,7 +107,7 @@ This is one way to make a :ref:`Python Test Driven Development project<what is a
 what is next?
 *************************************************************************************
 
-You have seen me make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called ``magic`` on any Linux_, MacOS_ and Windows_computers. :ref:`Would you like to test AssertionError next?<what causes AssertionError?>`
+I made a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called ``magic`` on any Linux_, MacOS_ and Windows_computers. :ref:`Would you like to test AssertionError next?<what causes AssertionError?>`
 
 -----
 

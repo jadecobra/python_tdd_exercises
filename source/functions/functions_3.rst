@@ -747,7 +747,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-Here is another reminder, you know
+Here is another reminder, I know
 
 * :ref:`how to make a Python test driven development environment manually`
 * :ref:`what an assertion is<what is an assertion?>`

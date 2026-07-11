@@ -3105,7 +3105,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-so far you have seen
+so far I have seen
 
 * :ref:`how to make a Python test driven development environment manually`
 * :ref:`what a Python module is<what is a module?>`
@@ -3123,6 +3123,7 @@ so far you have seen
 * :ref:`that everything in Python is an object<everything is an object>`
 * :ref:`how to use the unittest library<another way to write tests>`
 * :ref:`how to calculate age with the datetime library<test person with datetime>`
+* :ref:`what None is<what is None?>`
 
 ----
 

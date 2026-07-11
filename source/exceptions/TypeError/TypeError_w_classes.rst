@@ -1011,7 +1011,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-so far you know
+so far I know
 
 * :ref:`how to make a Python test driven development environment manually`
 * :ref:`what a Python module is<what is a module?>`

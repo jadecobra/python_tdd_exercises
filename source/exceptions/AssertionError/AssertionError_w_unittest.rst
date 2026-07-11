@@ -3758,7 +3758,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-As a reminder, you know
+As a reminder, I know
 
 * :ref:`how to make a Python test driven development environment manually`
 * :ref:`what a Python module is<what is a module?>`

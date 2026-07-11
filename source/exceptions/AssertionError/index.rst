@@ -4442,7 +4442,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-Congratulations! You now know
+I now know
 
 * :ref:`how to make a Python test driven development environment manually`
 * :ref:`what a Python module is<what is a module?>`
