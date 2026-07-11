@@ -41,7 +41,6 @@ table of contents
   functions/index
   make a person with strings<how_to/make_person/index>
   functions/functions_w_input
-  exceptions/ModuleNotFoundError/separate_and_equal
   make a person with f-strings<how_to/make_person/make_person_w_fstrings>
   make a person with a class<how_to/make_person/make_person_w_class>
   make a person with datetime<how_to/make_person/make_person_w_datetime>

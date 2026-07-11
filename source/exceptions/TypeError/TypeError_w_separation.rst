@@ -2066,7 +2066,7 @@ so far I know
 * :ref:`how to place values in strings<telephone>`
 * :ref:`how to separate tests from solutions<separate and equal>`
 
-:ref:`Would you like to test making a person with f-strings?<how to make a person with f-strings>`
+:ref:`Would you like to test AttributeError?<what causes AttributeError?>`
 
 -----
 

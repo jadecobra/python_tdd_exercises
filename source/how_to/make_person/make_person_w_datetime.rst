@@ -1848,6 +1848,12 @@ I know
 * :ref:`how to use the unittest library<another way to write tests>`
 * :ref:`how to calculate age with the datetime library<test person with datetime>`
 
+.. toctree::
+  :titlesonly:
+  :maxdepth: 1
+
+  ../../basic_objects/none
+
 :ref:`Would you like to test None (the simplest object)?<what is None?>`
 
 ----

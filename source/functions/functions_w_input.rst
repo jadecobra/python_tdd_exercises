@@ -26,15 +26,9 @@ Part of `Computer Programming`_ is sending :ref:`input data<basic objects>` to a
 
 where ``process`` is the :ref:`function<what is a function?>`. I think of it like mapping a function ``f`` in Mathematics_ with inputs ``x`` and output ``y``
 
-.. math::
-
-  f(x) -> y
-
-in other words
-
 .. code-block:: python
 
-                  f(x) -> y
+                    f(x) -> y
   function(input_object) -> output_object
 
 the :ref:`function<what is a function?>` does something (the process) with ``input_object`` and returns ``output_object`` as the result.
@@ -49,7 +43,7 @@ how to make a function that takes input
 
 * the def_ keyword
 * a name
-* parentheses and a colon at the end
+* parentheses with the inputs allowed, and a colon at the end
 * the code that makes up the :ref:`function<what is a function?>` (its body) comes after the colon
 
 .. code-block:: python
@@ -66,7 +60,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/functions/tests/test_:ref:`functions<what is a function?>`w_input.py
+.. literalinclude:: ../code/functions/tests/test_functions_w_input.py
   :language: python
   :linenos:
 
@@ -5180,6 +5174,7 @@ I am going for a walk.
 
   ../exceptions/TypeError/index
   ../how_to/telephone/index
+  ../exceptions/ModuleNotFoundError/separate_and_equal
 
 :ref:`Would you like to test TypeError?<what causes TypeError?>`
 
