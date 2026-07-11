@@ -99,7 +99,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -127,7 +127,7 @@ test_attribute_error_w_class_attributes
 
     def AClass(): return function_09()
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -245,7 +245,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -290,7 +290,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -336,7 +336,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -384,7 +384,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -435,7 +435,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -487,7 +487,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -541,7 +541,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -597,7 +597,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -655,7 +655,7 @@ test_attribute_error_w_class_attributes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -742,7 +742,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -855,7 +855,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -904,7 +904,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1009,7 +1009,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1048,7 +1048,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1123,7 +1123,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1164,7 +1164,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1211,7 +1211,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1253,7 +1253,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1337,7 +1337,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     # TypeError
     # SyntaxError
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 

@@ -44,7 +44,6 @@ table of contents
   make a person with f-strings<how_to/make_person/make_person_w_fstrings>
   make a person with a class<how_to/make_person/make_person_w_class>
   make a person with datetime<how_to/make_person/make_person_w_datetime>
-  make TDD automatically<make_tdd/make_tdd_automatically>
   make a person with conditions<how_to/make_person/make_person_w_conditions>
   make a person<how_to/make_person>
   handling Exceptions<exceptions/exception_handling/index>

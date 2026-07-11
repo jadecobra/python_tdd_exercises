@@ -32,6 +32,7 @@ I test :ref:`booleans<what are booleans?>` in the chapters below
   :maxdepth: 1
 
   booleans_1
+  ../../make_tdd/make_tdd_automatically
   ../../truth_table/index
   booleans_2
   booleans_3

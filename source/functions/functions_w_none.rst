@@ -705,7 +705,7 @@ what is next?
   ../../basic_objects/booleans
   ../../truth_table/index
 
-:ref:`Would you like to test the person project with conditions?<test person with conditions>`
+:ref:`Would you like to test the person project with conditions?<how to make a person with conditions>`
 
 ----
 
