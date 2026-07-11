@@ -12,7 +12,7 @@ what causes TypeError?
 
 ----
 
-TypeError_ happens when an :ref:`object (everything in Python is an object)<what is a class?>` is used in a way that it should not be.
+TypeError_ happens when an :ref:`object (everything in Python is an object)<everything is an object>` is used in a way that it should not be.
 
 ----
 

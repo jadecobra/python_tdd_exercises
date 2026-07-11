@@ -18,6 +18,12 @@ everything is an object
 
 The :ref:`object class<what is a class?>` is the mother of all things in Python_. I think of :ref:`classes<what is a class?>` as :ref:`attributes (variables)<what is a class attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together.
 
+As a reminder
+
+* :ref:`A class is a group of attributes (variables) and methods that belong together (a classification)<what is a class?>`
+* :ref:`A class attribute is a variable in a class<what is a class attribute?>`
+* :ref:`A method is a function in a class<what is a method?>`
+
 ----
 
 *********************************************************************************

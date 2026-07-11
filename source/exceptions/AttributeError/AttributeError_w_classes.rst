@@ -14,7 +14,7 @@ AttributeError with classes
 
 :ref:`test_attribute_error_w_variables` and :ref:`test_attribute_error_w_functions` show that :ref:`variables<what is a variable?>` and :ref:`functions<what is a function?>` in a :ref:`module<what is a module?>` are :ref:`attributes<what is a class attribute?>` of the :ref:`module<what is a module?>`.
 
-Is a :ref:`class<what is a class?>` in a :ref:`module<what is a module?>` also an :ref:`attribute<what is a class attribute?>` of the :ref:`module<what is a module?>`?
+Is a :ref:`class<everything is an object>` in a :ref:`module<what is a module?>` also an :ref:`attribute<what is a class attribute?>` of the :ref:`module<what is a module?>`?
 
 *********************************************************************************
 preview
@@ -150,7 +150,7 @@ test_attribute_error_w_class_attributes
 
   the terminal_ still shows the same :ref:`Exception<errors>` because I cannot get to a :ref:`variable<what is a variable?>` inside a :ref:`function<what is a function?>` from outside the :ref:`function<what is a function?>`. The :ref:`variable<what is a variable?>` is only used inside the :ref:`function<what is a function?>` when it runs.
 
-* I change ``AClass`` from a :ref:`function<what is a function?>` to a :ref:`class<what is a class?>`
+* I change ``AClass`` from a :ref:`function<what is a function?>` to a :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -201,7 +201,7 @@ test_attribute_error_w_class_attributes
         attribute_00 = function_09()
         # return function_09()
 
-  - the test passes because ``attribute_00`` is now an :ref:`attribute/property<what is a class attribute?>` of the ``AClass`` :ref:`class<what is a class?>`
+  - the test passes because ``attribute_00`` is now an :ref:`attribute/property<what is a class attribute?>` of the ``AClass`` :ref:`class<everything is an object>`
   - ``AClass`` is an :ref:`attribute<what is a class attribute?>` of the ``attribute_error.py`` :ref:`module<what is a module?>` in the ``src`` folder_
   - I can use ``attribute_00`` from outside the file_ with ``src.attribute_error.AClass.attribute_00`` or ``src.attribute_error.AClass().attribute_00``
 
@@ -266,7 +266,7 @@ test_attribute_error_w_class_attributes
         attribute_00 = function_09()
         attribute_01 = attribute_00
 
-  - the test passes because in this case it does not matter if I use the :ref:`class<what is a class?>` (``AClass``) or an :ref:`instance of the class<how to test if something is an instance>`  (``AClass()``).
+  - the test passes because in this case it does not matter if I use the :ref:`class<everything is an object>` (``AClass``) or an :ref:`instance of the class<how to test if something is an instance>`  (``AClass()``).
   - ``attribute_01`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``attribute_error.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_01`` or ``src.attribute_error.AClass().attribute_01``
 
     .. code-block:: shell
@@ -714,7 +714,7 @@ test_attribute_error_w_class_attributes
 test_attribute_error_w_class_methods
 *********************************************************************************
 
-The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what is a function?>` and :ref:`classes<what is a class?>` in a :ref:`module<what is a module?>` are :ref:`attributes of the module<what is a class attribute?>`, and :ref:`variables<what is a variable?>` in a :ref:`class<what is a class?>` are :ref:`attributes of the class<what is a class attribute?>`.
+The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what is a function?>` and :ref:`classes<everything is an object>` in a :ref:`module<what is a module?>` are :ref:`attributes of the module<what is a class attribute?>`, and :ref:`variables<what is a variable?>` in a :ref:`class<everything is an object>` are :ref:`attributes of the class<what is a class attribute?>`.
 
 :ref:`Methods of a class<what is a method?>` are also :ref:`attributes of the class<what is a class attribute?>`.
 
@@ -839,7 +839,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     TypeError: AClass.method_00() missing
                1 required positional argument: 'self'
 
-  because I :ref:`called the method<how to call a function>` with the :ref:`class<what is a class?>` not an :ref:`instance of the class<how to test if something is an instance>`.
+  because I :ref:`called the method<how to call a function>` with the :ref:`class<everything is an object>` not an :ref:`instance of the class<how to test if something is an instance>`.
 
 * I use an :ref:`instance of the class<how to test if something is an instance>` to :ref:`call the method<how to call a function>` in ``test_attribute_error.py``
 
@@ -854,7 +854,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     # Exceptions seen
 
-  - the test passes because ``method_00`` is now an :ref:`attribute/property<what is a class attribute?>` of the ``AClass`` :ref:`class<what is a class?>`
+  - the test passes because ``method_00`` is now an :ref:`attribute/property<what is a class attribute?>` of the ``AClass`` :ref:`class<everything is an object>`
   - ``AClass`` is an :ref:`attribute<what is a class attribute?>` of the ``attribute_error.py`` :ref:`module<what is a module?>` in the ``src`` folder_
   - I can :ref:`call<how to call a function>` ``method_00`` from outside the file_ with ``src.attribute_error.AClass().method_00()``
 

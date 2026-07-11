@@ -68,7 +68,7 @@ add TestPerson class
 
 ----
 
-I add a :ref:`class<what is a class?>` named ``TestPerson`` to ``test_person.py``
+I add a :ref:`class<everything is an object>` named ``TestPerson`` to ``test_person.py``
 
 .. code-block:: python
   :linenos:
@@ -100,7 +100,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<what is a class?>` of ``TestPerson``
+* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<everything is an object>` of ``TestPerson``
 
   .. code-block:: python
     :linenos:

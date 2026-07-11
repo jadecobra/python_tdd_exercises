@@ -12,7 +12,7 @@
 .. _assert statements: assert_
 .. _assert keyword: assert_
 .. _assert method: https://docs.python.org/3/library/unittest.html#assert-methods
-.. _assert methods: `assert method`_
+.. _assert methods: :ref:`assert method<test_dir_unittest_testcase>`
 
 #################################################################################
 what is an assertion?
@@ -462,7 +462,7 @@ AssertionError_ is raised if the statement after `the assert keyword`_ is :ref:`
 
   assert False is True
 
-With this statement, I tell Python_ - "DO NOT CONTINUE, if :ref:`False<test_what_is_false>` is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`", or said a different way "GO TO THE NEXT LINE, ONLY if :ref:`False<test_what_is_false>` is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`".
+With this statement, I tell Python_ - "DO NOT CONTINUE, if :ref:`False<test_what_is_false>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`", or said a different way "GO TO THE NEXT LINE, ONLY if :ref:`False<test_what_is_false>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`".
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -925,7 +925,7 @@ the test passes.
 
     E   AssertionError: assert '' is None
 
-  because a string_ is not the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`.
+  because a string_ is not the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -942,7 +942,7 @@ the test passes.
 
     # NOTES
 
-  the test passes because a string_ is not the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`.
+  the test passes because a string_ is not the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
 
 * I add a note about strings_
 
@@ -984,7 +984,7 @@ the test passes.
 
     E   assert {} is None
 
-  because a tuple_ is not the same :ref:`object<what is a class?>` :ref:`None<what is None?>`.
+  because a tuple_ is not the same :ref:`object<everything is an object>` :ref:`None<what is None?>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1001,7 +1001,7 @@ the test passes.
 
     # NOTES
 
-  the test passes because a tuple_ is not the same :ref:`object<what is a class?>` :ref:`None<what is None?>`.
+  the test passes because a tuple_ is not the same :ref:`object<everything is an object>` :ref:`None<what is None?>`.
 
 * I add a note about tuples_
 
@@ -1044,7 +1044,7 @@ the test passes.
 
     E   assert [] is None
 
-  because a :ref:`list<what is a list?>` is not the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`.
+  because a :ref:`list<what is a list?>` is not the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1061,7 +1061,7 @@ the test passes.
 
     # NOTES
 
-  the test passes because a :ref:`list<what is a list?>` is not the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`.
+  the test passes because a :ref:`list<what is a list?>` is not the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
 
 * I add a note about :ref:`lists<what is a list?>`
 
@@ -1319,7 +1319,7 @@ I can use :ref:`assertions<what is an assertion?>` to test if something is the s
 
     E       assert None is False
 
-  because :ref:`None<what is None?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  because :ref:`None<what is None?>` is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 ----
 
@@ -1343,7 +1343,7 @@ I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_
 
     # NOTES
 
-the test passes because :ref:`None<what is None?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+the test passes because :ref:`None<what is None?>` is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 ----
 
@@ -1459,7 +1459,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     E       assert True is False
 
-  because :ref:`True<test_what_is_true>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  because :ref:`True<test_what_is_true>` is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1476,7 +1476,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the test passes because :ref:`True<test_what_is_true>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  the test passes because :ref:`True<test_what_is_true>` is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 * I add a note about :ref:`True<test_what_is_true>`
 
@@ -1521,7 +1521,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     E       assert 0 is False
 
-  because an integer_ is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  because an integer_ is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1538,7 +1538,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the test passes because an integer_ is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  the test passes because an integer_ is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 * I add a note about integers_
 
@@ -1584,7 +1584,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     E       assert 0.0 is False
 
-  because a float_ is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  because a float_ is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1601,7 +1601,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the test passes because a float_ is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  the test passes because a float_ is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 * I add a note about floats_
 
@@ -1648,7 +1648,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     E       AssertionError: assert '' is False
 
-  because a string_ is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  because a string_ is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1666,7 +1666,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the test passes because a string_ is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  the test passes because a string_ is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 * I add a note about strings_
 
@@ -1714,7 +1714,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     E   assert () is False
 
-  because a tuple_ is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  because a tuple_ is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1731,7 +1731,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the test passes because a tuple_ is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  the test passes because a tuple_ is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 * I add a note about tuples_
 
@@ -1780,7 +1780,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     E   assert [] is False
 
-  because a :ref:`list<what is a list?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  because a :ref:`list<what is a list?>` is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1797,7 +1797,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the test passes because a :ref:`list<what is a list?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  the test passes because a :ref:`list<what is a list?>` is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 * I add a note about :ref:`lists<what is a list?>`
 
@@ -1847,7 +1847,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     E   assert set() is False
 
-  because a set_ is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  because a set_ is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1864,7 +1864,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the test passes because a set_ is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  the test passes because a set_ is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 * I add a note about sets_
 
   .. code-block:: python
@@ -1914,7 +1914,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     E   assert {} is False
 
-  because a :ref:`dictionary<what is a dictionary?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  because a :ref:`dictionary<what is a dictionary?>` is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1931,7 +1931,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the test passes because a :ref:`dictionary<what is a dictionary?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  the test passes because a :ref:`dictionary<what is a dictionary?>` is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
@@ -2058,7 +2058,7 @@ test AssertionError with True
 
     E       assert None is True
 
-  because :ref:`None<what is None?>` is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+  because :ref:`None<what is None?>` is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
 ----
 
@@ -2082,7 +2082,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 
   # NOTES
 
-the test passes because :ref:`None<what is None?>` is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+the test passes because :ref:`None<what is None?>` is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
 ----
 
@@ -2145,7 +2145,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     E       assert False is True
 
-  because :ref:`False<test_what_is_false>` is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+  because :ref:`False<test_what_is_false>` is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -2164,7 +2164,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the test passes because :ref:`False<test_what_is_false>` is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+  the test passes because :ref:`False<test_what_is_false>` is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
 * I add a note about :ref:`False<test_what_is_false>`
 
@@ -2288,7 +2288,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     E       assert 0 is True
 
-  because an integer_ is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+  because an integer_ is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -2305,7 +2305,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the test passes because an integer_ is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+  the test passes because an integer_ is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
 * I add a note about integers_
 
@@ -2361,7 +2361,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     E       assert 0.0 is True
 
-  because a float_ is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+  because a float_ is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -2378,7 +2378,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the test passes because a float_ is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+  the test passes because a float_ is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
 * I add a note about floats_
 
@@ -2435,7 +2435,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     E       AssertionError: assert '' is True
 
-  because a string_ is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+  because a string_ is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -2452,7 +2452,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the test passes because a string_ is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+  the test passes because a string_ is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
 * I add a note about strings_
 
@@ -2584,7 +2584,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     E   assert [] is True
 
-  because a :ref:`list<what is a list?>` is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+  because a :ref:`list<what is a list?>` is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -2601,7 +2601,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the test passes because a :ref:`list<what is a list?>` is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+  the test passes because a :ref:`list<what is a list?>` is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
 * I add a note about :ref:`lists<what is a list?>`
 
@@ -2661,7 +2661,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     E   assert set() is True
 
-  because a set_ is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+  because a set_ is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -2678,7 +2678,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the test passes because a set_ is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+  the test passes because a set_ is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
 * I add a note about sets_
 
@@ -2739,7 +2739,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     E   assert {} is True
 
-  because a :ref:`dictionary<what is a dictionary?>` is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+  because a :ref:`dictionary<what is a dictionary?>` is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -2756,7 +2756,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the test passes because a :ref:`dictionary<what is a dictionary?>` is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+  the test passes because a :ref:`dictionary<what is a dictionary?>` is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
@@ -3460,7 +3460,7 @@ This means that things can be equal without being the same exact :ref:`object<ev
 
     E   assert 0 is 0.0
 
-  because an integer_ is not the same :ref:`object<what is a class?>` as a float_.
+  because an integer_ is not the same :ref:`object<everything is an object>` as a float_.
 
 ----
 
@@ -3484,7 +3484,7 @@ I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:
 
     # NOTES
 
-the test passes because an integer_ is not the same :ref:`object<what is a class?>` as a float_.
+the test passes because an integer_ is not the same :ref:`object<everything is an object>` as a float_.
 
 ----
 

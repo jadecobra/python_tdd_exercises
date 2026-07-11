@@ -337,7 +337,7 @@ after that review you can confidently say you know something about Python_, you 
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
-* :ref:`what you can do with classes<what is a class?>`
+* :ref:`what you can do with classes<everything is an object>`
 * :ref:`how to raise ModuleNotFoundError<what is a module?>`
 
 :ref:`Do you remember how to make a Python test driven development environment?<how to make a Python test driven development environment>`

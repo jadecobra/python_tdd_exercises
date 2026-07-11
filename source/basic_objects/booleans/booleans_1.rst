@@ -24,7 +24,7 @@ booleans: only two
 
 ----
 
-I want to test what groups the :ref:`objects<what is a class?>` seen so far - :ref:`None<what is None?>`, integers_, floats_, strings_, tuples_, :ref:`lists`, sets_ and :ref:`dictionaries<what is a dictionary?>`, fall into Python_ divides them into two groups - :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>`. What do you think will happen?
+I want to test what groups the :ref:`objects<everything is an object>` seen so far - :ref:`None<what is None?>`, integers_, floats_, strings_, tuples_, :ref:`lists`, sets_ and :ref:`dictionaries<what is a dictionary?>`, fall into Python_ divides them into two groups - :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>`. What do you think will happen?
 
 *********************************************************************************
 preview
@@ -279,7 +279,7 @@ test_what_is_false
 
 ----
 
-I change :ref:`test_failure` to :ref:`test_what_is_false`, then use the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance>` I learned from :ref:`everything is an object` to check if :ref:`False<test_what_is_false>` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
+I change :ref:`test_failure` to :ref:`test_what_is_false`, then use the :ref:`assertNotIsInstance method<test_assert_not_is_instance>` I learned from :ref:`everything is an object` to check if :ref:`False<test_what_is_false>` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
 
 .. code-block:: python
   :linenos:
@@ -313,7 +313,7 @@ this was also in :ref:`test_is_none_a_boolean`.
 
 ----
 
-I change :ref:`assertNotIsInstance<another way to test if something is NOT an instance>` to the :ref:`assertIsInstance method<another way to test if something is an instance>`
+I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to the :ref:`assertIsInstance method<test_assert_is_instance>`
 
 .. code-block:: python
   :lineno-start: 6
@@ -494,7 +494,7 @@ another way to test if something is grouped as False
 
 ----
 
-The `unittest.TestCase class`_ has a :ref:`method<what is a method?>` I can use to test if the result of calling the `bool built-in function`_ with an :ref:`object<everything is an object>` is :ref:`False<test_what_is_false>` - assertFalse_, it was in :ref:`the first failing test<test_failure>`
+The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to test if the result of calling the `bool built-in function`_ with an :ref:`object<everything is an object>` is :ref:`False<test_what_is_false>` - assertFalse_, it was in :ref:`the first failing test<test_failure>`
 
 .. code-block:: python
 
@@ -690,7 +690,7 @@ test_what_is_true
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for :ref:`True<test_what_is_true>` with the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance>` I learned from :ref:`everything is an object` to check if :ref:`True<test_what_is_true>` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
+* I add a test for :ref:`True<test_what_is_true>` with the :ref:`assertNotIsInstance method<test_assert_not_is_instance>` I learned from :ref:`everything is an object` to check if :ref:`True<test_what_is_true>` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -725,7 +725,7 @@ test_what_is_true
 
 ----
 
-I change :ref:`assertNotIsInstance<another way to test if something is NOT an instance>` to the :ref:`assertIsInstance method<another way to test if something is an instance>`
+I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to the :ref:`assertIsInstance method<test_assert_is_instance>`
 
 .. code-block:: python
   :lineno-start: 13
@@ -903,7 +903,7 @@ another way to test if something is grouped as True
 
 ----
 
-The `unittest.TestCase class`_ has a :ref:`method<what is a method?>` I can use to test if the result of calling the `bool built-in function`_ with an :ref:`object<everything is an object>` is :ref:`True<test_what_is_true>` - assertTrue_. It raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<everything is an object>` in parentheses is grouped as :ref:`False<test_what_is_false>`.
+The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to test if the result of calling the `bool built-in function`_ with an :ref:`object<everything is an object>` is :ref:`True<test_what_is_true>` - assertTrue_. It raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<everything is an object>` in parentheses is grouped as :ref:`False<test_what_is_false>`.
 
 ----
 

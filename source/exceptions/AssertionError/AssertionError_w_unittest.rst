@@ -68,7 +68,7 @@ add TestAssertionError class
 
 ----
 
-* I add a :ref:`class<what is a class?>` named ``AssertionError`` to ``test_assertion_error.py``
+* I add a :ref:`class<everything is an object>` named ``AssertionError`` to ``test_assertion_error.py``
 
   .. code-block:: python
     :linenos:
@@ -84,7 +84,7 @@ add TestAssertionError class
 
   the test is still green.
 
-* I change the name of the :ref:`class<what is a class?>` to ``TestAssertionError``
+* I change the name of the :ref:`class<everything is an object>` to ``TestAssertionError``
 
   .. code-block:: python
     :linenos:
@@ -122,7 +122,7 @@ add TestAssertionError class
 
 ----
 
-* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<what is a class?>` of ``TestAssertionError``
+* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<everything is an object>` of ``TestAssertionError``
 
   .. code-block:: python
     :linenos:
@@ -593,7 +593,7 @@ test_assertion_error_w_none with unittest
 
     def test_assertion_error_w_false():
 
-  .. caution:: Indentation matters in Python_. It is how it knows what blocks belong to what :ref:`function/method<what is a function?>`, :ref:`class<what is a class?>` or :ref:`module<what is a module?>` (Use 4 spaces)
+  .. caution:: Indentation matters in Python_. It is how it knows what blocks belong to what :ref:`function/method<what is a function?>`, :ref:`class<everything is an object>` or :ref:`module<what is a module?>` (Use 4 spaces)
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -3709,7 +3709,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
     git commit -am 'extract class attributes'
 
-:ref:`I can use class attributes to remove repetition<remove repetition with class attributes>`. I make them once and other things in the :ref:`class<what is a class?>` can reference them.
+:ref:`I can use class attributes to remove repetition<remove repetition with class attributes>`. I make them once and other things in the :ref:`class<everything is an object>` can reference them.
 
 ----
 
@@ -3743,7 +3743,7 @@ review
 *********************************************************************************
 
 * I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`.
-* I can use :ref:`class attributes<what is a class attribute?>` for things that repeat, which allows :ref:`methods<what is a method?>` of the same :ref:`class<what is a class?>` to use them.
+* I can use :ref:`class attributes<what is a class attribute?>` for things that repeat, which allows :ref:`methods<what is a method?>` of the same :ref:`class<everything is an object>` to use them.
 
 ----
 

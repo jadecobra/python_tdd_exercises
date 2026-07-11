@@ -17,7 +17,7 @@ how to test that an Exception is raised
 
 ----
 
-When an :ref:`Exception<errors>` is raised, it stops the program from running. I can use the `assertRaises method`_ from the `unittest.TestCase class`_ to test that some code raises an :ref:`Exception<errors>`.
+When an :ref:`Exception<errors>` is raised, it stops the program from running. I can use the `assertRaises method`_ from the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` to test that some code raises an :ref:`Exception<errors>`.
 
 assertRaises_ checks that the code in its context, raises the :ref:`Exception<errors>` it is given in parentheses
 

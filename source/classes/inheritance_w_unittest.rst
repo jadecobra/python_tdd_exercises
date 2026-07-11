@@ -72,7 +72,7 @@ add TestClasses class
 
 ----
 
-* I add a :ref:`class<what is a class?>` named ``Classes`` to ``test_classes.py``
+* I add a :ref:`class<everything is an object>` named ``Classes`` to ``test_classes.py``
 
   .. code-block:: python
     :linenos:
@@ -97,7 +97,7 @@ add TestClasses class
 
   the test is still green.
 
-* I change the name of the :ref:`class<what is a class?>` to ``TestClasses``
+* I change the name of the :ref:`class<everything is an object>` to ``TestClasses``
 
   .. code-block:: python
     :lineno-start: 7
@@ -140,7 +140,7 @@ add TestClasses class
 
 ----
 
-* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<what is a class?>` of ``TestClasses``
+* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<everything is an object>` of ``TestClasses``
 
   .. code-block:: python
     :lineno-start: 7

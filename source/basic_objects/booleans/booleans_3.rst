@@ -8,7 +8,7 @@
 booleans 4: inheritance
 #################################################################################
 
-:ref:`Inheritance<family ties>` showed that a :ref:`class<what is a class?>` can have more than one parent, and the parents are not the same.
+:ref:`Inheritance<family ties>` showed that a :ref:`class<everything is an object>` can have more than one parent, and the parents are not the same.
 
 Earlier on, I tested if :ref:`booleans are Integers<booleans 4: inheritance>` and the tests showed that :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>` are both integers_ and :ref:`booleans<what are booleans?>`.
 
@@ -102,7 +102,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change :ref:`assertIsInstance<another way to test if something is an instance>` to :ref:`assertNotIsInstance<another way to test if something is NOT an instance>`
+I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>`
 
 .. code-block:: python
   :lineno-start: 52
@@ -153,7 +153,7 @@ you have gone through a lot of things and know
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
-* :ref:`what you can do with classes<what is a class?>`
+* :ref:`what you can do with classes<everything is an object>`
 
 :ref:`Would you like to use one of the class methods with the calculator?<how to make a calculator 8>`
 

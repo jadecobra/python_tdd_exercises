@@ -89,7 +89,7 @@ continue the project
 remove repetition with class attributes
 *********************************************************************************
 
-* I add the :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to the ``TestAssertionError`` :ref:`class<what is a class?>` with :ref:`a class attribute<what is a class attribute?>`
+* I add the :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to the ``TestAssertionError`` :ref:`class<everything is an object>` with :ref:`a class attribute<what is a class attribute?>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -1636,7 +1636,7 @@ close the project
 review
 *********************************************************************************
 
-I can use :ref:`class attributes<what is a class attribute?>` for things that repeat, which allows :ref:`methods<what is a method?>` of the same :ref:`class<what is a class?>` to use them.
+I can use :ref:`class attributes<what is a class attribute?>` for things that repeat, which allows :ref:`methods<what is a method?>` of the same :ref:`class<everything is an object>` to use them.
 
 ----
 

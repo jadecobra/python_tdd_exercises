@@ -34,7 +34,7 @@ where
 * reality is what happens when I do something with code
 * my expectation is what I think will happen when I do something with code
 
-The exercises in this chapter show how I can pass :ref:`objects<what is a class?>` to a :ref:`function<what is a function?>` and use it to make a string_ (anything in :ref:`quotes`).
+The exercises in this chapter show how I can pass :ref:`objects<everything is an object>` to a :ref:`function<what is a function?>` and use it to make a string_ (anything in :ref:`quotes`).
 
 ----
 
@@ -459,7 +459,7 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
 
 :ref:`I can pass None as input to a function<test_passing_none>`.
 
-The problem with this solution is that the ``text`` :ref:`function<what is a function?>` does not care about what it gets, it always returns ``'I got: None'`` when it is called. I want it to return the :ref:`object<what is a class?>` it gets as part of the string_.
+The problem with this solution is that the ``text`` :ref:`function<what is a function?>` does not care about what it gets, it always returns ``'I got: None'`` when it is called. I want it to return the :ref:`object<everything is an object>` it gets as part of the string_.
 
 ----
 
@@ -567,7 +567,7 @@ Can I pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
 what is string interpolation?
 *********************************************************************************
 
-`String Interpolation`_ is how to place :ref:`objects<what is a class?>` in strings_. It allows me to make one string_ that can have values that change.
+`String Interpolation`_ is how to place :ref:`objects<everything is an object>` in strings_. It allows me to make one string_ that can have values that change.
 
 I can use an `f-string`_ (short for formatted string literal) for `string interpolation`_.
 
@@ -587,7 +587,7 @@ how to write an f-string
 ----
 
 * ``f`` before the opening :ref:`quote<quotes>`
-* ``{ }`` around the :ref:`object<what is a class?>` being placed in the string_
+* ``{ }`` around the :ref:`object<everything is an object>` being placed in the string_
 
 .. code-block:: python
 
@@ -626,7 +626,7 @@ how to write an f-string
 
     def test_passing_none():
 
-  the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+  the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
   .. code-block:: python
 
@@ -698,7 +698,7 @@ how to write an f-string
 
     # Exceptions seen
 
-  the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+  the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
   .. code-block:: python
 
@@ -796,7 +796,7 @@ I remove the :ref:`quotes` around the integer_ in my expectation
 
   # Exceptions seen
 
-the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
 .. code-block:: python
 
@@ -931,7 +931,7 @@ I remove the :ref:`quotes` around the float_ in my expectation
 
   # Exceptions seen
 
-the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
 .. code-block:: python
 
@@ -1067,7 +1067,7 @@ I change my expectation to match reality
 
   # Exceptions seen
 
-the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
 .. code-block:: python
 
@@ -1204,7 +1204,7 @@ I change the tuple_ in my expectation to match reality
 
   # Exceptions seen
 
-the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
 .. code-block:: python
 
@@ -1342,7 +1342,7 @@ I change the :ref:`list<what is a list?>` in my expectation to match reality
 
   # Exceptions seen
 
-the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
 .. code-block:: python
 
@@ -1483,7 +1483,7 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 
 * I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times
 
-  - if the result of ``text({0, 1, 2, 'n'})`` is equal to ``"I got: {0, 1, 2, 'n'}"`` the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+  - if the result of ``text({0, 1, 2, 'n'})`` is equal to ``"I got: {0, 1, 2, 'n'}"`` the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
     .. code-block:: python
 
@@ -1543,7 +1543,7 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 
     # Exceptions seen
 
-  - I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and the test stays green with no random failures because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``.
+  - I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and the test stays green with no random failures because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``.
   - It can guarantee the order when I use a :ref:`variable<what is a variable?>` and the :ref:`f-string<what is string interpolation?>` to refer to the same exact set_.
 
 ----
@@ -1661,7 +1661,7 @@ I change ``my_expectation`` to match ``reality``
 
   # Exceptions seen
 
-the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
 .. code-block:: python
 
@@ -1781,7 +1781,7 @@ Can I pass any :ref:`object<everything is an object>` as input to a :ref:`functi
 
 * I go back to the terminal_ where the tests are running
 
-* I add a failing test to see what happens when I pass a :ref:`class <what is a class?>` from a test to the ``text`` :ref:`function<what is a function?>`, in ``test_telephone.py``
+* I add a failing test to see what happens when I pass a :ref:`class <everything is an object>` from a test to the ``text`` :ref:`function<what is a function?>`, in ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 44
@@ -1810,7 +1810,7 @@ Can I pass any :ref:`object<everything is an object>` as input to a :ref:`functi
     E       assert "I got: <class 'object'>"
                 == 'I got: object'
 
-  :ref:`object<everything is an object>` is the :ref:`mother class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from because :ref:`everything in Python is an object<everything is an object>`.
+  :ref:`object<everything is an object>` is the :ref:`mother class<everything is an object>` that all :ref:`Python classes<everything is an object>` come from because :ref:`everything in Python is an object<everything is an object>`.
 
 ----
 
@@ -1834,7 +1834,7 @@ I change my expectation to match reality
 
   # Exceptions seen
 
-the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
 .. code-block:: python
 
@@ -1890,7 +1890,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<what is a class?>` for whole numbers without decimals)
+* I add an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<everything is an object>` for whole numbers without decimals)
 
   .. code-block:: python
     :lineno-start: 54
@@ -1932,7 +1932,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<what is a class?>` for binary floating point decimal numbers)
+* I add an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<everything is an object>` for binary floating point decimal numbers)
 
   .. code-block:: python
     :lineno-start: 54
@@ -1978,7 +1978,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for anything in :ref:`quotes`)
+* I add an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<everything is an object>` for anything in :ref:`quotes`)
 
   .. code-block:: python
     :lineno-start: 54
@@ -2028,7 +2028,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for anything in parentheses ``( )`` separated by a comma)
+* I add an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<everything is an object>` for anything in parentheses ``( )`` separated by a comma)
 
   .. code-block:: python
     :lineno-start: 54
@@ -2140,7 +2140,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
+* I add an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<everything is an object>` anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
 
   .. code-block:: python
     :lineno-start: 54
@@ -2266,7 +2266,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
     # Exceptions seen
 
-  the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+  the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
   .. code-block:: python
 
@@ -2341,7 +2341,7 @@ close the project
 review
 *********************************************************************************
 
-Here are the tests I ran to see what happens when I pass :ref:`objects<what is a class?>` from a test to a program_ and place them in an :ref:`f-string<what is string interpolation?>` which is one way to do :ref:`string interpolation<what is string interpolation?>`
+Here are the tests I ran to see what happens when I pass :ref:`objects<everything is an object>` from a test to a program_ and place them in an :ref:`f-string<what is string interpolation?>` which is one way to do :ref:`string interpolation<what is string interpolation?>`
 
 * `test_passing_none`_
 * `test_passing_booleans`_

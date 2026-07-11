@@ -80,7 +80,7 @@ I used the `setUp method`_ in :ref:`list comprehensions` to make sure that I hav
 
 ----
 
-I add the `setUp method`_ to the ``TestCalculator`` :ref:`class<what is a class?>`
+I add the `setUp method`_ to the ``TestCalculator`` :ref:`class<everything is an object>`
 
 .. code-block:: python
   :lineno-start: 10
@@ -237,7 +237,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   One of the :ref:`data types<basic objects>` from the test gets to the :ref:`add function<test_addition>` so it returns a number and not a message. How can I tell which :ref:`data type<basic objects>` caused the failure?
 
-* the `unittest.TestCase class`_ has a way to tell which item is causing my failure when I am using a :ref:`for loop<what is a for loop?>`, I add it to the test
+* the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a way to tell which item is causing my failure when I am using a :ref:`for loop<what is a for loop?>`, I add it to the test
 
   .. code-block:: python
     :lineno-start: 176

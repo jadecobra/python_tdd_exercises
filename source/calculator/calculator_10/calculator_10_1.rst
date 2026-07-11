@@ -215,7 +215,7 @@ test_streamlit_calculator_title
 
   ``streamlit.testing.v1.AppTest.from_file`` tests the website I am making with streamlit_
 
-  - AppTest_ is a :ref:`class<what is a class?>` from ``v1`` in ``testing`` in the `streamlit library`_
+  - AppTest_ is a :ref:`class<everything is an object>` from ``v1`` in ``testing`` in the `streamlit library`_
   - ``.from_file`` uses the `from_file method`_ to run the :ref:`Python module<what is a module?>` that I use to make the application
 
 ----
@@ -348,7 +348,7 @@ test_streamlit_calculator_title
 
     AssertionError: Title(tag='h1') != 'Calculator'
 
-* I use the ``value`` :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``Title`` :ref:`class<what is a class?>`
+* I use the ``value`` :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``Title`` :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 7

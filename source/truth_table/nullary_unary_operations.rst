@@ -75,7 +75,7 @@ test_logical_true
 
 * I change the name of ``test_truth_table.py`` to ``test_nullary_unary.py``
 
-* I change the name of the :ref:`class<what is a class?>` from ``TestTruthTable`` to ``TestNullaryOperations`` and :ref:`test_failure` to :ref:`test_logical_true` in ``test_nullary_unary.py``
+* I change the name of the :ref:`class<everything is an object>` from ``TestTruthTable`` to ``TestNullaryOperations`` and :ref:`test_failure` to :ref:`test_logical_true` in ``test_nullary_unary.py``
 
   .. code-block:: python
     :linenos:

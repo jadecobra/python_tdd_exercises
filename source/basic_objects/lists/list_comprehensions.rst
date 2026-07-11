@@ -684,7 +684,7 @@ the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_
 
         def test_making_a_list_w_a_for_loop(self):
 
-* then I use them in ``test_making_a_list_w_a_for_loop`` with ``self.a_list`` and ``self.iterable`` the way I can use the `assert methods`_ with ``self.``
+* then I use them in ``test_making_a_list_w_a_for_loop`` with ``self.a_list`` and ``self.iterable`` the way I can use the :ref:`assert methods<test_dir_unittest_testcase>` with ``self.``
 
   .. code-block:: python
     :lineno-start: 11
@@ -774,9 +774,9 @@ the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_
 use the setUp method
 ****************************************************************************************
 
-The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<lists>` for each test before, I need a better way. The `unittest.TestCase class`_ has a :ref:`method<what is a method?>` I can use to make sure the :ref:`class attributes<test_attribute_error_w_class_attributes>` are always reset at the beginning of the test, so that the values are new for each test.
+The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<lists>` for each test before, I need a better way. The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to make sure the :ref:`class attributes<test_attribute_error_w_class_attributes>` are always reset at the beginning of the test, so that the values are new for each test.
 
-* I add the `setUp method`_ to the ``TestListComprehensions`` :ref:`class<what is a class?>`
+* I add the `setUp method`_ to the ``TestListComprehensions`` :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 6

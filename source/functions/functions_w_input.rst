@@ -202,7 +202,7 @@ the test passes.
 how to call a function with input
 *********************************************************************************
 
-I can call a :ref:`function<what is a function?>` with input by placing an :ref:`object<what is a class?>` in parentheses when I call it.
+I can call a :ref:`function<what is a function?>` with input by placing an :ref:`object<everything is an object>` in parentheses when I call it.
 
 ----
 
@@ -314,7 +314,7 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 
     which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`None is only equal to None<what is None?>`
 
-  - :ref:`object<what is a class?>` is the mother of everything in Python_. :ref:`everything in Python is an object (they inherit from it)<everything is an object>`. I am not all the way genius, yet.
+  - :ref:`object<everything is an object>` is the mother of everything in Python_. :ref:`everything in Python is an object (they inherit from it)<everything is an object>`. I am not all the way genius, yet.
 
 * I make the ``identity`` :ref:`function<what is a function?>` return what it gets
 
@@ -2044,7 +2044,7 @@ the test passes.
 what is a keyword argument?
 *********************************************************************************
 
-A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`function call<how to call a function>`. Where key is a name, and the value is any :ref:`object<what is a class?>`.
+A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`function call<how to call a function>`. Where key is a name, and the value is any :ref:`object<everything is an object>`.
 
 ----
 

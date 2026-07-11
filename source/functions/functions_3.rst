@@ -731,7 +731,7 @@ I can place the constants directly under the ``TestFunctions`` class:
 
 then :ref:`test_positional_arguments`, :ref:`test_keyword_arguments` and :ref:`test_args_and_kwargs` use ``self.first`` and so on, instead repeated values.
 
-I can use :ref:`class attributes<what is a class attribute?>` for things that repeat (when they are constants), which allows :ref:`methods<what is a method?>` of the same :ref:`class<what is a class?>` to use them without :ref:`the setUp method<how to use the setUp method to reset class attributes for every test>`.
+I can use :ref:`class attributes<what is a class attribute?>` for things that repeat (when they are constants), which allows :ref:`methods<what is a method?>` of the same :ref:`class<everything is an object>` to use them without :ref:`the setUp method<how to use the setUp method to reset class attributes for every test>`.
 
 ----
 

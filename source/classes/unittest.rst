@@ -440,7 +440,7 @@ I want to see what comes with the `unittest module`_.
 
     # Exceptions seen
 
-  the test passes because when ``import unittest`` runs, Python_ brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the `unittest module`_ from `The Python Standard Library`_ so I can use it in ``test_unittest.py`` as ``unittest``.
+  the test passes because when ``import unittest`` runs, Python_ brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the `unittest module`_ from `The Python Standard Library`_ so I can use it in ``test_unittest.py`` as ``unittest``.
 
   This means that there is a file_ or folder_ on the computer named ``unittest`` that got added when I installed Python_.
 
@@ -467,7 +467,7 @@ I want to see what comes with the `unittest module`_.
 test_dir_unittest_testcase
 *********************************************************************************
 
-One of the names in the list of :ref:`attributes and methods of unittest<test_dir_unittest>` is ``TestCase``, this is the :ref:`class (toolbox)<what is a class?>` that contains the things I will use to write tests for code.
+One of the names in the list of :ref:`attributes and methods of unittest<test_dir_unittest>` is ``TestCase``, this is the :ref:`class (toolbox)<everything is an object>` that contains the things I will use to write tests for code.
 
 ----
 
@@ -744,7 +744,7 @@ test_assert_is_not
 
 ----
 
-* I change the call to use :ref:`an instance<how to test if something is an instance>` instead of a :ref:`class<what is a class?>`
+* I change the call to use :ref:`an instance<how to test if something is an instance>` instead of a :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 78
@@ -994,7 +994,7 @@ the test passes.
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
-* I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of a :ref:`class<what is a class?>`
+* I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of a :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 87
@@ -1476,7 +1476,7 @@ test_assert_not_is_instance
   - The :ref:`definition<how to make a function that takes input>` of the `assertNotIsInstance method`_  of the `TestCase class`_  of the unittest_ library (``unittest.TestCase.assertIsNot``) has three required :ref:`positional arguments<test_positional_arguments>` (``self``, ``obj`` and ``cls``)
   - A :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
   - ``obj`` is for the :ref:`instance<how to test if something is an instance>` being tested.
-  - ``cls`` is for the :ref:`class<what is a class?>`.
+  - ``cls`` is for the :ref:`class<everything is an object>`.
 
 ----
 
@@ -1486,7 +1486,7 @@ test_assert_not_is_instance
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of a :ref:`class<what is a class?>`
+* I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of a :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 111
@@ -1549,7 +1549,7 @@ test_assert_not_is_instance
 
     'assertNotIsInstance'
 
-  the test passes because a :ref:`class<what is a class?>` is not an :ref:`instance<how to test if something is an instance>` of itself.
+  the test passes because a :ref:`class<everything is an object>` is not an :ref:`instance<how to test if something is an instance>` of itself.
 
 ----
 
@@ -1697,7 +1697,7 @@ test_assert_is_instance
 
   - A :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
   - ``obj`` is for the :ref:`instance<how to test if something is an instance>` being tested.
-  - ``cls`` is for the :ref:`class<what is a class?>`.
+  - ``cls`` is for the :ref:`class<everything is an object>`.
 
 ----
 
@@ -1707,7 +1707,7 @@ test_assert_is_instance
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of a :ref:`class<what is a class?>`
+* I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of a :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 124
@@ -1753,7 +1753,7 @@ test_assert_is_instance
         is not an instance of
         <class 'unittest.case.TestCase'>
 
-  because a :ref:`class<what is a class?>` is not an :ref:`instance<how to test if something is an instance>` of itself.
+  because a :ref:`class<everything is an object>` is not an :ref:`instance<how to test if something is an instance>` of itself.
 
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
@@ -1971,7 +1971,7 @@ test_assert_not_is_subclass
                'cls', and 'superclass'
 
   - ``cls`` is for the :ref:`subclass<how to test if something is a subclass>` being tested.
-  - ``superclass`` is for the :ref:`parent class<what is a class?>` of the :ref:`subclass<how to test if something is a subclass>` being tested.
+  - ``superclass`` is for the :ref:`parent class<everything is an object>` of the :ref:`subclass<how to test if something is a subclass>` being tested.
 
 ----
 
@@ -2006,7 +2006,7 @@ test_assert_not_is_subclass
 
   because :ref:`an instance is not a class<instance vs subclass>`.
 
-* I change the :ref:`assertion<what is an assertion?>` to use a :ref:`class<what is a class?>`
+* I change the :ref:`assertion<what is an assertion?>` to use a :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 141
@@ -2204,7 +2204,7 @@ test_assert_is_subclass
 
 ----
 
-* I change the :ref:`instance<how to test if something is an instance>` to a :ref:`class<what is a class?>`
+* I change the :ref:`instance<how to test if something is an instance>` to a :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 154
@@ -2264,9 +2264,9 @@ test_assert_is_subclass
 
   - A :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
   - ``cls`` is for the :ref:`subclass<how to test if something is a subclass>` being tested
-  - ``superclass`` is for the :ref:`parent class<what is a class?>` of the :ref:`subclass<how to test if something is a subclass>` being tested.
+  - ``superclass`` is for the :ref:`parent class<everything is an object>` of the :ref:`subclass<how to test if something is a subclass>` being tested.
 
-* I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of a :ref:`class<what is a class?>`, then add two things to the parentheses
+* I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of a :ref:`class<everything is an object>`, then add two things to the parentheses
 
   .. code-block:: python
     :lineno-start: 154
@@ -2294,7 +2294,7 @@ test_assert_is_subclass
 
   because :ref:`an instance is not a class<instance vs subclass>`.
 
-* I change the :ref:`instance<how to test if something is an instance>` to a :ref:`class<what is a class?>`
+* I change the :ref:`instance<how to test if something is an instance>` to a :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 154
@@ -2724,7 +2724,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
     'extract TOOLBOX variable'
 
 
-The ``unittest.TestCase()`` :ref:`instance<how to test if something is an instance>` is now made once then used in every test for its `assert methods`_.
+The :ref:`unittest.TestCase() instance<test_dir_unittest_testcase>` is now made once then used in every test for its `assert methods`_.
 
 The problem with this solution is that anyone reading it has to know what the ``TOOLBOX`` :ref:`variable<what is a variable?>` points to at the beginning of the file_ to understand why the :ref:`calls<how to call a function with input>` work.
 
@@ -2734,7 +2734,7 @@ The problem with this solution is that anyone reading it has to know what the ``
 extract TestUnittest class
 *********************************************************************************
 
-I can put the test :ref:`functions<what is a function?>` together in a :ref:`class<what is a class?>` since they are related.
+I can put the test :ref:`functions<what is a function?>` together in a :ref:`class<everything is an object>` since they are related.
 
 ----
 
@@ -2746,7 +2746,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
 * I go back to the terminal_ where the tests are running
 
-* I add a :ref:`class<what is a class?>` named ``Unittest``
+* I add a :ref:`class<everything is an object>` named ``Unittest``
 
   .. code-block:: python
     :lineno-start: 4
@@ -2765,7 +2765,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
   this is a problem. I expect ``TOOLBOX.assertEqual(True, False)`` to fail since :ref:`True<test_what_is_true>` is not equal to :ref:`False<test_what_is_false>`
 
-* I add ``Test`` to the name of the :ref:`class<what is a class?>`
+* I add ``Test`` to the name of the :ref:`class<everything is an object>`
 
   .. code-block::
     :lineno-start: 4
@@ -2796,7 +2796,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
 ----
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``test_failure`` since I can use it if I do not want to add ``self`` to the :ref:`method definition<how to make a function>`. This way I do not send more information than what the :ref:`method<what is a method?>` needs when it does not use anything in the :ref:`class<what is a class?>`
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``test_failure`` since I can use it if I do not want to add ``self`` to the :ref:`method definition<how to make a function>`. This way I do not send more information than what the :ref:`method<what is a method?>` needs when it does not use anything in the :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -2862,7 +2862,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
                 'IsolatedAsyncioTestCase', 'SkipTest',
                 ...
 
-  .. caution:: Indentation matters in Python_. It is how it knows what blocks belong to what :ref:`function/method<what is a function?>`, :ref:`class<what is a class?>` or :ref:`module<what is a module?>` (Use 4 spaces)
+  .. caution:: Indentation matters in Python_. It is how it knows what blocks belong to what :ref:`function/method<what is a function?>`, :ref:`class<everything is an object>` or :ref:`module<what is a module?>` (Use 4 spaces)
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -3799,7 +3799,7 @@ the test passes because
 * :ref:`TestUnittest<extract TestUnittest class>` is now a :ref:`subclass (child)<how to test if something is a subclass>` of the `unittest.TestCase class`_.
 * :ref:`children inherit the attributes and methods of their parents<everything is an object>`.
 * ``self`` is :ref:`TestUnittest()<extract TestUnittest class>` inside :ref:`TestUnittest<extract TestUnittest class>`.
-* ``self`` has all the :ref:`attributes and methods of unittest.TestCase<test_dir_unittest_testcase>` because `unittest.TestCase`_ is the :ref:`parent class<what is a class?>`.
+* ``self`` has all the :ref:`attributes and methods of unittest.TestCase<test_dir_unittest_testcase>` because `unittest.TestCase`_ is the :ref:`parent class<everything is an object>`.
 
 ----
 

@@ -5,7 +5,7 @@
 .. include:: ../../links.rst
 
 .. _Substitution: https://grokipedia.com/page/Substitution_(logic)#substitution-logic
-.. _unittest.TestCase assert methods: `assert methods`_
+.. _unittest.TestCase assert methods: :ref:`assert methods<test_dir_unittest_testcase>`
 
 #################################################################################
 how to make a calculator 1

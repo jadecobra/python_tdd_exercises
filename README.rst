@@ -48,7 +48,7 @@ who is this for?
 how can I use this?
 *********************************************************************************
 
-Start with how to make a Python test driven development environment manually because it is required by every other chapter, each chapter suggests the next chapter to do, or you can choose how you go through the chapters based on what you like. You can also go through the :ref:`how tos` section step by step, the other chapters cover :ref:`errors`, :ref:`data structures`, :ref:`functions<what is a function?>`, and :ref:`classes<what is a class?>`
+Start with how to make a Python test driven development environment manually because it is required by every other chapter, each chapter suggests the next chapter to do, or you can choose how you go through the chapters based on what you like. You can also go through the :ref:`how tos` section step by step, the other chapters cover :ref:`errors`, :ref:`data structures`, :ref:`functions<what is a function?>`, and :ref:`classes<everything is an object>`
 
 Here are a few things I would do if I were in your shoes to make the process more fun
 

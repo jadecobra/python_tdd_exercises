@@ -1290,7 +1290,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-* I add another `assert method`_ to see what happened to ``a_dictionary``
+* I add another :ref:`assert method<test_dir_unittest_testcase>` to see what happened to ``a_dictionary``
 
   .. code-block:: python
     :lineno-start: 110

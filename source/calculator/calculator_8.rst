@@ -10,7 +10,7 @@
 how to make a calculator 8
 #################################################################################
 
-I can use the ``__getattribute__`` :ref:`method<what is a method?>` that comes with every :ref:`Python object<what is a class?>` in the :ref:`calculator tests<how to make a calculator>`
+I can use the ``__getattribute__`` :ref:`method<what is a method?>` that comes with every :ref:`Python object<everything is an object>` in the :ref:`calculator tests<how to make a calculator>`
 
 ----
 
@@ -1175,7 +1175,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
     TypeError: TestCalculator.get_division_result() takes 2 positional arguments but 3 were given
 
-  I forgot to make ``get_division_result`` a staticmethod_ since it does not do anything with the rest of the :ref:`class<what is a class?>`
+  I forgot to make ``get_division_result`` a staticmethod_ since it does not do anything with the rest of the :ref:`class<everything is an object>`
 
 * I :ref:`wrap<what is a decorator function?>` ``get_division_result`` with the `staticmethod decorator`_
 
@@ -2247,7 +2247,7 @@ you have gone through a lot of things and know
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
-* :ref:`what you can do with classes<what is a class?>`
+* :ref:`what you can do with classes<everything is an object>`
 
 :ref:`Would you like to know what causes ModuleNotFoundError?<what is a module?>`
 

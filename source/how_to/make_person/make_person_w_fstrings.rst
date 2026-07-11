@@ -10,7 +10,7 @@ how to make a person with f-strings
 
 ----
 
-Since I can pass :ref:`objects<what is a class?>` into a string_ with :ref:`f-strings<what is string interpolation?>`. I can write one :ref:`function<what is a function?>` that makes a person instead of making one :ref:`function<what is a function?>` for each person.
+Since I can pass :ref:`objects<everything is an object>` into a string_ with :ref:`f-strings<what is string interpolation?>`. I can write one :ref:`function<what is a function?>` that makes a person instead of making one :ref:`function<what is a function?>` for each person.
 
 ----
 
@@ -1533,8 +1533,8 @@ the test passes.
 
   the test passes because
 
-  - when ``import src.person`` runs, Python_ brings in an :ref:`object<what is a class?>` for the ``person.py`` file_ from the ``src`` folder_ so I can use it in ``test_person.py`` as ``src.person``
-  - when ``src.person.factory`` is called, Python_ calls the :ref:`factory function<test person factory>` from the :ref:`object<what is a class?>` it imported for the ``person.py`` file_ from the ``src`` folder_ (``src.person``)
+  - when ``import src.person`` runs, Python_ brings in an :ref:`object<everything is an object>` for the ``person.py`` file_ from the ``src`` folder_ so I can use it in ``test_person.py`` as ``src.person``
+  - when ``src.person.factory`` is called, Python_ calls the :ref:`factory function<test person factory>` from the :ref:`object<everything is an object>` it imported for the ``person.py`` file_ from the ``src`` folder_ (``src.person``)
 
   I think of ``src.person.factory`` like an address
 
@@ -2352,7 +2352,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
     # Exceptions seen
 
-  the test passes because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+  the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
   .. code-block:: python
 

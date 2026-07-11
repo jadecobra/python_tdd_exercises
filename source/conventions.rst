@@ -22,7 +22,7 @@ CapWords
 
 ----
 
-:ref:`class<what is a class?>` names in Python_ are written in the CapWords format, where the first letter of every word in the name is capitalized, for example
+:ref:`class<everything is an object>` names in Python_ are written in the CapWords format, where the first letter of every word in the name is capitalized, for example
 
 .. code-block:: python
 
@@ -38,7 +38,7 @@ how to use class methods and attributes
 
 ----
 
-:ref:`class attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a method?>` can be used inside a :ref:`class<what is a class?>` with ``self``
+:ref:`class attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a method?>` can be used inside a :ref:`class<everything is an object>` with ``self``
 
 for example
 

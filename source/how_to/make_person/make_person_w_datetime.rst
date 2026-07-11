@@ -182,7 +182,7 @@ I want to see what comes with the `datetime module`_.
 
     # Exceptions seen
 
-  the test passes because when ``import datetime`` runs, Python_ brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the `datetime module`_ from `The Python Standard Library`_ so I can use it in ``test_person.py`` as ``datetime``.
+  the test passes because when ``import datetime`` runs, Python_ brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the `datetime module`_ from `The Python Standard Library`_ so I can use it in ``test_person.py`` as ``datetime``.
 
   This means that there is a file_ or folder_ on the computer named ``datetime`` that got added when I installed Python_.
 
@@ -269,7 +269,7 @@ with a message about how to see the entire difference
     # Exceptions seen
 
   - The terminal_ shows the entire difference between ``reality`` and ``my_expectation``.
-  - `maxDiff`_ is an :ref:`attribute<what causes AttributeError?>` of the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` that sets the maximum number of characters to show when comparing 2 :ref:`objects<what is a class?>` in the terminal_, when it is set to :ref:`None<what is None?>` it shows the full difference.
+  - `maxDiff`_ is an :ref:`attribute<what causes AttributeError?>` of the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` that sets the maximum number of characters to show when comparing 2 :ref:`objects<everything is an object>` in the terminal_, when it is set to :ref:`None<what is None?>` it shows the full difference.
 
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_, paste (:kbd:`ctrl/command+v`) them as ``my_expectation`` and remove the extra characters
 
@@ -558,7 +558,7 @@ It looks like I have a way to get the current year.
 
 ----
 
-I add :ref:`test_datetime_date_today_year` to test the ``year`` :ref:`attribute<what is a class attribute?>` of the result of a :ref:`call<how to call a function>` to the ``today`` :ref:`method<what is a method?>` of the ``date`` :ref:`class<what is a class?>` of the `datetime module`_ (``datetime.date.today().year``) in ``test_person.py``
+I add :ref:`test_datetime_date_today_year` to test the ``year`` :ref:`attribute<what is a class attribute?>` of the result of a :ref:`call<how to call a function>` to the ``today`` :ref:`method<what is a method?>` of the ``date`` :ref:`class<everything is an object>` of the `datetime module`_ (``datetime.date.today().year``) in ``test_person.py``
 
 .. code-block:: python
   :lineno-start: 324

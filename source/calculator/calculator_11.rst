@@ -607,11 +607,11 @@ test_home_page
   the test passes.
 
   - ``client = src.website.app.test_client()`` points the name ``client`` to the Flask_ app in ``website.py``
-  - ``response = client.get('/')`` points the name ``response`` to the result of the call to the ``get`` :ref:`method<what is a method?>` of the :ref:`client object<what is a class?>`
+  - ``response = client.get('/')`` points the name ``response`` to the result of the call to the ``get`` :ref:`method<what is a method?>` of the :ref:`client object<everything is an object>`
   - the ``get`` :ref:`method<what is a method?>` calls the `GET request method`_ which is an `HTTP request method`_ to get information from a server
-  - ``client.get('/')`` returns a :ref:`response object<what is a class?>`
+  - ``client.get('/')`` returns a :ref:`response object<everything is an object>`
   - ``'/'`` is short for root or home in this case, the homepage of the website I am making also known as ``index.html``
-  - ``response.status_code`` gets the ``status_code`` :ref:`attribute<test_attribute_error_w_class_attributes>` or the :ref:`response object<what is a class?>`
+  - ``response.status_code`` gets the ``status_code`` :ref:`attribute<test_attribute_error_w_class_attributes>` or the :ref:`response object<everything is an object>`
   - the above can also be written as ``src.website.app.test_client().get('/').status_code``
   - ``404`` is `HTTP status code`_, it is short for `404 Not Found`_ which means the page cannot be found
   - I want a ``200`` `HTTP status code`_, it is short for `200 OK`_ and means the request was successful
@@ -1601,7 +1601,7 @@ I change the assertion to look for the title and not the entire page
 
       def test_calculations(self):
 
-the test passes because the `assertIn method`_ of the `unittest.TestCase class`_ checks if the thing on the left is in the :ref:`object<everything is an object>` on the right
+the test passes because the `assertIn method`_ of the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` checks if the thing on the left is in the :ref:`object<everything is an object>` on the right
 
 ----
 
@@ -2548,7 +2548,7 @@ Your magic powers are growing. You know
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
-* :ref:`what you can do with classes<what is a class?>`
+* :ref:`what you can do with classes<everything is an object>`
 * :ref:`how to make a website with flask<how to make a calculator 9>`
 
 :ref:`Would you like to see another way to make a website for the Calculator?<how to make a calculator 10>`

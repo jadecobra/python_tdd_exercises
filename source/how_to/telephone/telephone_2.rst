@@ -391,7 +391,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
 
     class TestTelephone(unittest.TestCase):
 
-  - ``import src.telephone`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the ``telephone.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_telephone.py``
+  - ``import src.telephone`` brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the ``telephone.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_telephone.py``
   - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
     .. code-block:: shell
@@ -1734,7 +1734,7 @@ I can pass an :ref:`object<everything is an object>` from a test to a :ref:`func
 
 * I go back to the terminal_ where the tests are running
 
-* I add a failing test to see what happens when I pass a :ref:`class <what is a class?>` from a test to the ``text`` :ref:`function<what is a function?>`, in ``test_telephone.py``
+* I add a failing test to see what happens when I pass a :ref:`class <everything is an object>` from a test to the ``text`` :ref:`function<what is a function?>`, in ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 56
@@ -1764,7 +1764,7 @@ I can pass an :ref:`object<everything is an object>` from a test to a :ref:`func
     AssertionError: "I got: <class 'object'>"
                  != 'I got:         object'
 
-  :ref:`object<everything is an object>` is the :ref:`mother class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from, and :ref:`everything in Python is an object<everything is an object>`
+  :ref:`object<everything is an object>` is the :ref:`mother class<everything is an object>` that all :ref:`Python classes<everything is an object>` come from, and :ref:`everything in Python is an object<everything is an object>`
 
 ----
 
@@ -1800,7 +1800,7 @@ the test passes.
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>` with the ``TestTelephone`` :ref:`class<what is a class?>` to ``test_passing_a_class`` in ``test_telephone.py``
+* I add another :ref:`assertion<what is an assertion?>` with the ``TestTelephone`` :ref:`class<everything is an object>` to ``test_passing_a_class`` in ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 65
@@ -1849,7 +1849,7 @@ the test passes.
 
   - ``tests`` is the folder_
   - ``test_telephone`` is ``test_telephone.py`` in the ``tests`` folder_
-  - ``TestTelephone`` is the :ref:`class (object)<what is a class?>` that is defined on line 5 of ``test_telephone.py`` in the ``tests`` folder_
+  - ``TestTelephone`` is the :ref:`class (object)<everything is an object>` that is defined on line 5 of ``test_telephone.py`` in the ``tests`` folder_
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -1945,7 +1945,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<what is a class?>` for whole numbers without decimals)
+* I add an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<everything is an object>` for whole numbers without decimals)
 
   .. code-block:: python
     :lineno-start: 88
@@ -1985,7 +1985,7 @@ the test passes.
 
   the test passes
 
-* I add an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<what is a class?>` for binary floating point decimal numbers)
+* I add an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<everything is an object>` for binary floating point decimal numbers)
 
   .. code-block:: python
     :lineno-start: 93
@@ -2025,7 +2025,7 @@ the test passes.
 
   the test passes
 
-* I add an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for anything in :ref:`quotes`)
+* I add an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<everything is an object>` for anything in :ref:`quotes`)
 
   .. code-block:: python
     :lineno-start: 98
@@ -2065,7 +2065,7 @@ the test passes.
 
   the test passes
 
-* I add an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for anything in parentheses ``( )`` separated by a comma)
+* I add an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<everything is an object>` for anything in parentheses ``( )`` separated by a comma)
 
   .. code-block:: python
     :lineno-start: 103
@@ -2143,7 +2143,7 @@ the test passes.
 
   the test passes
 
-* I add an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
+* I add an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<everything is an object>` anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
 
   .. code-block:: python
     :lineno-start: 113
@@ -2524,7 +2524,7 @@ close the project
 review
 *********************************************************************************
 
-Here are the tests I ran to see what happens when I pass :ref:`objects<what is a class?>` from a test to a program_ and place them in an `f-string`_ which is one way to do :ref:`string interpolation<what is string interpolation?>`
+Here are the tests I ran to see what happens when I pass :ref:`objects<everything is an object>` from a test to a program_ and place them in an `f-string`_ which is one way to do :ref:`string interpolation<what is string interpolation?>`
 
 * `test_passing_a_string`_
 * `test_passing_none`_

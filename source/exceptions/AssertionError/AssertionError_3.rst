@@ -10,7 +10,7 @@ AssertionError 3: use assertIsNotNone and assertIsNone
 
 ----
 
-I used the :ref:`assertIsNotNone<one more way to test if something is NOT None>` and :ref:`assertIsNone methods<one more way to test if something is None>` to test :ref:`None<what is None?>`. I want to use them to replace :ref:`assertIs and assertIsNot in test_assertion_error_w_none<test_assertion_error_w_none>`.
+I used the :ref:`assertIsNotNone<another way to test if something is NOT None>` and :ref:`assertIsNone methods<another way to test if something is None>` to test :ref:`None<what is None?>`. I want to use them to replace :ref:`assertIs and assertIsNot in test_assertion_error_w_none<test_assertion_error_w_none>`.
 
 ----
 
@@ -87,7 +87,7 @@ continue the project
 use assertIsNotNone and assertIsNone
 *********************************************************************************
 
-* I add a call to :ref:`assertIsNotNone<one more way to test if something is NOT None>` in :ref:`test_assertion_error_w_none`
+* I add a call to :ref:`assertIsNotNone<another way to test if something is NOT None>` in :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
     :lineno-start: 30
@@ -109,7 +109,7 @@ use assertIsNotNone and assertIsNone
 
   because :ref:`None is None<what is None?>`
 
-* I change :ref:`assertIsNotNone<one more way to test if something is NOT None>` to a call to :ref:`the assertIsNone method<one more way to test if something is None>`
+* I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to a call to :ref:`the assertIsNone method<another way to test if something is None>`
 
   .. code-block:: python
     :lineno-start: 30
@@ -126,7 +126,7 @@ use assertIsNotNone and assertIsNone
 
   the test passes
 
-* I add :ref:`assertIsNone<one more way to test if something is None>` for :ref:`False<test_what_is_false>`
+* I add :ref:`assertIsNone<another way to test if something is None>` for :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 36
@@ -145,7 +145,7 @@ use assertIsNotNone and assertIsNone
 
     AssertionError: False is not None
 
-* I change the call from :ref:`assertIsNone<one more way to test if something is None>` to :ref:`assertIsNotNone<one more way to test if something is NOT None>`
+* I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
     :lineno-start: 36
@@ -161,7 +161,7 @@ use assertIsNotNone and assertIsNone
 
   the test passes because :ref:`False<test_what_is_false>` is not :ref:`None<what is None?>`.
 
-* I add :ref:`assertIsNone<one more way to test if something is None>` for :ref:`True<test_what_is_true>`
+* I add :ref:`assertIsNone<another way to test if something is None>` for :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 41
@@ -180,7 +180,7 @@ use assertIsNotNone and assertIsNone
 
     AssertionError: True is not None
 
-* I change the call from :ref:`assertIsNone<one more way to test if something is None>` to :ref:`assertIsNotNone<one more way to test if something is NOT None>`
+* I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
     :lineno-start: 41
@@ -196,7 +196,7 @@ use assertIsNotNone and assertIsNone
 
   the test passes because :ref:`True<test_what_is_true>` is not :ref:`None<what is None?>`.
 
-* I add :ref:`assertIsNone<one more way to test if something is None>` for an integer_ (a whole number without decimals)
+* I add :ref:`assertIsNone<another way to test if something is None>` for an integer_ (a whole number without decimals)
 
   .. code-block:: python
     :lineno-start: 46
@@ -215,7 +215,7 @@ use assertIsNotNone and assertIsNone
 
     AssertionError: 0 is not None
 
-* I change the call from :ref:`assertIsNone<one more way to test if something is None>` to :ref:`assertIsNotNone<one more way to test if something is NOT None>`
+* I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
     :lineno-start: 46
@@ -231,7 +231,7 @@ use assertIsNotNone and assertIsNone
 
   the test passes because an integer_ (a whole number without decimals) is not :ref:`None<what is None?>`.
 
-* I add :ref:`assertIsNone<one more way to test if something is None>` for a float_ (binary floating point decimal number)
+* I add :ref:`assertIsNone<another way to test if something is None>` for a float_ (binary floating point decimal number)
 
   .. code-block:: python
     :lineno-start: 51
@@ -250,7 +250,7 @@ use assertIsNotNone and assertIsNone
 
     AssertionError: 0.0 is not None
 
-* I change the call from :ref:`assertIsNone<one more way to test if something is None>` to :ref:`assertIsNotNone<one more way to test if something is NOT None>`
+* I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
     :lineno-start: 51
@@ -266,7 +266,7 @@ use assertIsNotNone and assertIsNone
 
   the test passes because a float_ (binary floating point decimal number) is not :ref:`None<what is None?>`.
 
-* I add :ref:`assertIsNone<one more way to test if something is None>` for a string_ (anything in :ref:`quotes`)
+* I add :ref:`assertIsNone<another way to test if something is None>` for a string_ (anything in :ref:`quotes`)
 
   .. code-block:: python
     :lineno-start: 56
@@ -285,7 +285,7 @@ use assertIsNotNone and assertIsNone
 
     AssertionError: 'a string' is not None
 
-* I change the call from :ref:`assertIsNone<one more way to test if something is None>` to :ref:`assertIsNotNone<one more way to test if something is NOT None>`
+* I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
     :lineno-start: 56
@@ -301,7 +301,7 @@ use assertIsNotNone and assertIsNone
 
   the test passes because a string_ (anything in :ref:`quotes`) is not :ref:`None<what is None?>`.
 
-* I add :ref:`assertIsNone<one more way to test if something is None>` for a tuple_ (anything in parentheses ``( )`` separated by a comma)
+* I add :ref:`assertIsNone<another way to test if something is None>` for a tuple_ (anything in parentheses ``( )`` separated by a comma)
 
   .. code-block:: python
     :lineno-start: 61
@@ -320,7 +320,7 @@ use assertIsNotNone and assertIsNone
 
     AssertionError: (0, 1, 2, 'n') is not None
 
-* I change the call from :ref:`assertIsNone<one more way to test if something is None>` to :ref:`assertIsNotNone<one more way to test if something is NOT None>`
+* I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
     :lineno-start: 61
@@ -336,7 +336,7 @@ use assertIsNotNone and assertIsNone
 
   the test passes because a tuple_ (anything in parentheses ``( )`` separated by a comma) is not :ref:`None<what is None?>`.
 
-* I add :ref:`assertIsNone<one more way to test if something is None>` for a :ref:`list (anything in square brackets '[ ]')<what is a list?>`
+* I add :ref:`assertIsNone<another way to test if something is None>` for a :ref:`list (anything in square brackets '[ ]')<what is a list?>`
 
   .. code-block:: python
     :lineno-start: 66
@@ -355,7 +355,7 @@ use assertIsNotNone and assertIsNone
 
     AssertionError: [0, 1, 2, 'n'] is not None
 
-* I change the call from :ref:`assertIsNone<one more way to test if something is None>` to :ref:`assertIsNotNone<one more way to test if something is NOT None>`
+* I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
     :lineno-start: 66
@@ -371,7 +371,7 @@ use assertIsNotNone and assertIsNone
 
   the test passes because a :ref:`list (anything in square brackets '[ ]')<what is a list?>` is not :ref:`None<what is None?>`.
 
-* I add :ref:`assertIsNone<one more way to test if something is None>` for a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
+* I add :ref:`assertIsNone<another way to test if something is None>` for a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
 
   .. code-block:: python
     :lineno-start: 71
@@ -390,7 +390,7 @@ use assertIsNotNone and assertIsNone
 
     AssertionError: {0, 1, 2, 'n'} is not None
 
-* I change the call from :ref:`assertIsNone<one more way to test if something is None>` to :ref:`assertIsNotNone<one more way to test if something is NOT None>`
+* I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
     :lineno-start: 71
@@ -406,7 +406,7 @@ use assertIsNotNone and assertIsNone
 
   the test passes because a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is not :ref:`None<what is None?>`.
 
-* I add :ref:`assertIsNone<one more way to test if something is None>` for a :ref:`dictionary (key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`
+* I add :ref:`assertIsNone<another way to test if something is None>` for a :ref:`dictionary (key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 76
@@ -424,7 +424,7 @@ use assertIsNotNone and assertIsNone
 
     AssertionError: {0, 1, 2, 'n'} is not None
 
-* I change the call from :ref:`assertIsNone<one more way to test if something is None>` to :ref:`assertIsNotNone<one more way to test if something is NOT None>`
+* I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
     :lineno-start: 76
@@ -501,7 +501,7 @@ close the project
 review
 *********************************************************************************
 
-I can use :ref:`assertIsNotNone<one more way to test if something is NOT None>` and :ref:`assertIsNone methods<one more way to test if something is None>` to remove repetition of :ref:`None<what is None?>` from :ref:`assertions<what is an assertion?>` that test if something is :ref:`None<what is None?>` or not - ``assertIs(x, None)`` and ``assertIsNot(x, None)``.
+I can use :ref:`assertIsNotNone<another way to test if something is NOT None>` and :ref:`assertIsNone methods<another way to test if something is None>` to remove repetition of :ref:`None<what is None?>` from :ref:`assertions<what is an assertion?>` that test if something is :ref:`None<what is None?>` or not - ``assertIs(x, None)`` and ``assertIsNot(x, None)``.
 
 ----
 

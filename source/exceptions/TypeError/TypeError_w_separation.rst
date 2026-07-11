@@ -233,8 +233,8 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes because
 
-  - When ``import src.type_error`` runs, Python_ brings in an :ref:`object<what is a class?>` for the ``type_error.py`` file_ from the ``src`` folder_ so I can use it in ``test_type_error.py`` as ``src.type_error``.
-  - When ``src.type_error.function_00`` is :ref:`called<how to call a function with input>`, Python_ :ref:`calls<how to call a function with input>` the ``function_00`` :ref:`function<what is a function?>` from the :ref:`object<what is a class?>` it imported for the ``type_error.py`` file_ from the ``src`` folder_ (``src.type_error``).
+  - When ``import src.type_error`` runs, Python_ brings in an :ref:`object<everything is an object>` for the ``type_error.py`` file_ from the ``src`` folder_ so I can use it in ``test_type_error.py`` as ``src.type_error``.
+  - When ``src.type_error.function_00`` is :ref:`called<how to call a function with input>`, Python_ :ref:`calls<how to call a function with input>` the ``function_00`` :ref:`function<what is a function?>` from the :ref:`object<everything is an object>` it imported for the ``type_error.py`` file_ from the ``src`` folder_ (``src.type_error``).
 
   I think of ``src.type_error.function_00`` like an address
 

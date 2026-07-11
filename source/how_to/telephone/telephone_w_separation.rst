@@ -249,8 +249,8 @@ because there is nothing with that name in ``test_telephone.py``.
 
   the test passes because
 
-  - when ``import src.telephone`` runs, Python_ brings in an :ref:`object<what is a class?>` for the ``telephone.py`` file_ from the ``src`` folder_ so I can use it in ``test_telephone.py`` as ``src.telephone``
-  - when ``src.telephone.text(None)`` runs, Python_ calls the ``text`` :ref:`function<what is a function?>` from the :ref:`object<what is a class?>` it imported for the ``telephone.py`` file_ from the ``src`` folder_ (``src.telephone``)
+  - when ``import src.telephone`` runs, Python_ brings in an :ref:`object<everything is an object>` for the ``telephone.py`` file_ from the ``src`` folder_ so I can use it in ``test_telephone.py`` as ``src.telephone``
+  - when ``src.telephone.text(None)`` runs, Python_ calls the ``text`` :ref:`function<what is a function?>` from the :ref:`object<everything is an object>` it imported for the ``telephone.py`` file_ from the ``src`` folder_ (``src.telephone``)
 
   I think of ``src.telephone.text`` like an address
 
@@ -321,7 +321,7 @@ because there is nothing with that name in ``test_telephone.py``.
         └── def text(the_input):
             └── return f'I got: {the_input}'
 
-  using the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+  using the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
   .. code-block:: python
 
@@ -431,7 +431,7 @@ because there is nothing with that name in ``test_telephone.py``.
         └── def text(the_input):
             └── return f'I got: {the_input}'
 
-  using the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+  using the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
   .. code-block:: python
 
@@ -625,7 +625,7 @@ because there is nothing with that name in ``test_telephone.py``.
         └── def text(the_input):
             └── return f'I got: {the_input}'
 
-  using the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+  using the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
   .. code-block:: python
 

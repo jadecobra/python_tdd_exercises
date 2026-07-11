@@ -345,9 +345,9 @@ The simplest :ref:`function<what is a function?>` I can make is with the pass_ k
 what is a variable?
 *********************************************************************************
 
-I can define a name in Python with a variable. A variable is a name that is used to point to an :ref:`object<what is a class?>`. For example, in Mathematics_ we use ``x`` to represent any number.
+I can define a name in Python with a variable. A variable is a name that is used to point to an :ref:`object<everything is an object>`. For example, in Mathematics_ we use ``x`` to represent any number.
 
-Every time I use the name, Python_ "knows" that I am referring to the :ref:`object<what is a class?>` pointed the name to.
+Every time I use the name, Python_ "knows" that I am referring to the :ref:`object<everything is an object>` pointed the name to.
 
 ----
 
@@ -1350,7 +1350,7 @@ the test passes.
   - The `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`, it exits after the `return statement`_.
   - It never gets to ``return None`` because it leaves after ``return 'something'``.
   - The second `return statement`_ will never run. It is not reachable (this is called dead code).
-  - This means I can treat a :ref:`call to a function<how to call a function>` as the :ref:`object<what is a class?>` it returns.
+  - This means I can treat a :ref:`call to a function<how to call a function>` as the :ref:`object<everything is an object>` it returns.
 
   .. tip::
 

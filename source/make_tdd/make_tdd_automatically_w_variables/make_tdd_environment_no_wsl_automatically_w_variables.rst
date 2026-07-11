@@ -28,7 +28,7 @@ I change the name of the project in 5 places every time I use the program to mak
 - project folder_
 - file_ for the program_ in the ``src`` folder_
 - file_ for the test in the ``tests`` folder_
-- :ref:`test class<what is a class?>` in the test file_
+- :ref:`test class<everything is an object>` in the test file_
 - `virtual environment`_ in the ``.venv`` folder_
 
 The program_ should always make this structure
