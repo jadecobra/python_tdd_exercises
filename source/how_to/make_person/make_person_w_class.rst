@@ -744,7 +744,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
       src
       └── person.py
           └── def say_hello(
-                  first_name, last_name, year_of_birth
+                  first_name, last_name, year_of_birth,
               ):
               └── return (
                       f'Hello, my name is {first_name}'
@@ -1048,7 +1048,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
         # def say_hello(first_name, last_name):
         # def say_hello(first_name, last_name, year_of_birth):
         def say_hello(
-            person, first_name, last_name, year_of_birth
+            person, first_name, last_name, year_of_birth,
         ):
             # return None
             # return 'Hello, my name is joe blow and I am 30.'
@@ -1100,7 +1100,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
         # def say_hello(first_name, last_name):
         # def say_hello(first_name, last_name, year_of_birth):
         def say_hello(
-            person, first_name, last_name, year_of_birth
+            person, first_name, last_name, year_of_birth,
         ):
             # return None
             # return 'Hello, my name is joe blow and I am 30.'
@@ -1216,7 +1216,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
         # def say_hello(first_name, last_name):
         # def say_hello(first_name, last_name, year_of_birth):
         def say_hello(
-            # person, first_name, last_name, year_of_birth
+            # person, first_name, last_name, year_of_birth,
             person
         ):
             # return None
@@ -1304,7 +1304,7 @@ what is the staticmethod decorator?
         # def say_hello(first_name, last_name, year_of_birth):
         @staticmethod
         def say_hello(
-            # person, first_name, last_name, year_of_birth
+            # person, first_name, last_name, year_of_birth,
             person
         ):
             # return None
@@ -1361,7 +1361,7 @@ what is the staticmethod decorator?
     # def say_hello(first_name, last_name, year_of_birth):
     @staticmethod
     def say_hello(
-        # person, first_name, last_name, year_of_birth
+        # person, first_name, last_name, year_of_birth,
         # person
         person=None
     ):
@@ -1385,7 +1385,7 @@ what is the staticmethod decorator?
         # def say_hello(first_name, last_name, year_of_birth):
         @staticmethod
         def say_hello(
-            # person, first_name, last_name, year_of_birth
+            # person, first_name, last_name, year_of_birth,
             # person
             person=None
         ):
@@ -1424,7 +1424,7 @@ what is the staticmethod decorator?
         # def say_hello(first_name, last_name, year_of_birth):
         @staticmethod
         def say_hello(
-            # person, first_name, last_name, year_of_birth
+            # person, first_name, last_name, year_of_birth,
             # person
             # person=None
             self, person=None
@@ -1449,7 +1449,7 @@ what is the staticmethod decorator?
         # def say_hello(first_name, last_name, year_of_birth):
         # @staticmethod
         def say_hello(
-            # person, first_name, last_name, year_of_birth
+            # person, first_name, last_name, year_of_birth,
             # person
             # person=None
             self, person=None
@@ -1803,7 +1803,7 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
@@ -1823,7 +1823,7 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -1847,7 +1847,7 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -1871,7 +1871,7 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -1897,7 +1897,7 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -1923,7 +1923,7 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -1953,7 +1953,7 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
@@ -2022,7 +2022,7 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the terminal_ is my friend, and shows SyntaxError_
@@ -2067,7 +2067,7 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
@@ -2099,14 +2099,14 @@ separate and equal Person class
 
         def __init__(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
             # return None
             pass
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -2129,14 +2129,14 @@ separate and equal Person class
         def __init__(
             # first_name, last_name,
             self, first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
             # return None
             pass
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
@@ -2160,7 +2160,7 @@ separate and equal Person class
         def __init__(
             # first_name, last_name,
             self, first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
@@ -2183,7 +2183,7 @@ separate and equal Person class
         def __init__(
             # first_name, last_name,
             self, first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -2208,7 +2208,7 @@ separate and equal Person class
         def __init__(
             # first_name, last_name,
             self, first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
             # return None
             pass
@@ -2218,7 +2218,7 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
@@ -2240,7 +2240,7 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -2263,7 +2263,7 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the test passes.
@@ -2383,7 +2383,7 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -2415,7 +2415,7 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
@@ -2441,7 +2441,7 @@ separate and equal Person class
         def __init__(
             # first_name, last_name,
             self, first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
             # return None
             # pass
@@ -2468,7 +2468,7 @@ separate and equal Person class
         def __init__(
             # first_name, last_name,
             self, first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
             # return None
             # pass
@@ -2495,7 +2495,7 @@ separate and equal Person class
         def __init__(
             # first_name, last_name,
             self, first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
             # return None
             # pass
@@ -2530,7 +2530,7 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the test is still green because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument which means
@@ -2788,7 +2788,7 @@ separate and equal Person class
         └── class Person:
             └── def __init__(
                     self, first_name, last_name,
-                    sex, year_of_birth
+                    sex, year_of_birth,
                 ):
                     self.first_name = first_name
                     self.last_name = last_name
@@ -3263,7 +3263,7 @@ the test passes.
         def __init__(
             # first_name, last_name,
             self, first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
             # return None
             # pass
@@ -3289,7 +3289,7 @@ the test passes.
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
   the test passes.
@@ -3303,7 +3303,7 @@ the test passes.
 
         def __init__(
             self, first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
             self.first_name = first_name
             self.last_name = last_name
@@ -3319,7 +3319,7 @@ the test passes.
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
         return (
             f'Hello, my name is {first_name}'
@@ -3330,7 +3330,7 @@ the test passes.
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return (
             f'{first_name}, {last_name},'

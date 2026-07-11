@@ -8,7 +8,7 @@ class TestPerson(unittest.TestCase):
     @staticmethod
     def calculate_age(year_of_birth):
         return (
-            datetime.datetime.now().year
+            datetime.date.today().year
           - year_of_birth
         )
 
@@ -69,7 +69,7 @@ class TestPerson(unittest.TestCase):
         )
         my_expectation = (
             f'{first_name}, {last_name},'
-            f' {self.calculate_age(year_of_birth)}.'
+            f' {sex}, {year_of_birth}'
         )
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
@@ -102,7 +102,10 @@ class TestPerson(unittest.TestCase):
         first_name = 'john'
         last_name = 'smith'
         sex = 'M'
-        year_of_birth = 1580
+        year_of_birth = 1980
+        # year_of_birth = 1580
+        # raises AssertionError
+        # because older than 120
 
         reality = src.person.factory(
             first_name=first_name,
@@ -184,13 +187,19 @@ class TestPerson(unittest.TestCase):
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
-    # def test_person_when_year_of_birth_is_none(self):
-        # raises AssertionError
-        # an_instance_of_person = src.person.Person(
-        #     first_name='first_name',
-        #     last_name='last_name',
-        #     sex='M',
-        # )
+    def test_when_year_of_birth_is_not_integer(self):
+        person = src.person.Person(
+            first_name='first_name',
+            last_name='last_name',
+            sex='M',
+            # year_of_birth=None,    # fails
+            # year_of_birth=False,   # fails
+            # year_of_birth=2026.0,  # fails
+            # year_of_birth='2026',  # fails
+            # year_of_birth=(2026,), # fails
+        )
+        # person.say_hello()
+        # fails if year_of_birth is not an integer
 
     def test_dir_person_class(self):
         reality = dir(src.person.Person)

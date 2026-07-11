@@ -23,11 +23,11 @@ test person with datetime
 
 ----
 
-The :ref:`person<how to make a person with a class>` project has a problem with the calculation of the ages. It only shows the right age if the program is run in ``2026``, because the year is hardcoded. If I run it in a different year or change the year on my computer, the tests for :ref:`say_hello<test say_hello method>` will fail.
+The :ref:`person<how to make a person with a class>` project has a problem with the calculation of the ages. It only shows the right age if the program is run in ``2026``, because the year is hardcoded. If I run it in a different year or change the year on my computer, the ages will be wrong and the tests for :ref:`say_hello<test say_hello method>` will fail.
 
 I want the calculation to always be right, which means the program should always know the correct year.
 
-I can do that with the `datetime module`_ from `The Python Standard Library`_. You can think of it as a toolbox with different tools I can use to do things with dates and times.
+I can use the `datetime module`_ from `The Python Standard Library`_. You can think of it as a toolbox with different tools I can use to do things with dates and times. I can also use :ref:`assertions<what is an assertion?>` to make sure I get the right year of birth for the calculations.
 
 ----
 
@@ -1233,7 +1233,7 @@ the test passes.
 ----
 
 *********************************************************************************
-add calculate_age
+add calculate_age function
 *********************************************************************************
 
 The tests use the right calculation for the age, and the solution still uses a fixed value (``2026``)
@@ -1270,7 +1270,7 @@ The tests use the right calculation for the age, and the solution still uses a f
 
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
 
 * I use the :ref:`function<what is a function?>` in the :ref:`say_hello method<test say_hello method>` of the :ref:`Person class<test Person class>`
@@ -1298,6 +1298,14 @@ The tests use the right calculation for the age, and the solution still uses a f
                Did you forget to import 'datetime'?
 
   I did.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
 
 * I add an `import statement`_ at the top of ``person.py``
 
@@ -1334,7 +1342,7 @@ The tests use the right calculation for the age, and the solution still uses a f
     :emphasize-lines: 7-8
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
         return (
             f'Hello, my name is {first_name}'
@@ -1346,7 +1354,7 @@ The tests use the right calculation for the age, and the solution still uses a f
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
 
   still green.
@@ -1357,7 +1365,7 @@ The tests use the right calculation for the age, and the solution still uses a f
     :lineno-start: 30
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
         return (
             f'Hello, my name is {first_name}'
@@ -1404,11 +1412,377 @@ The tests use the right calculation for the age, and the solution still uses a f
 
   green again.
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add calculate_age function'
+
+----
+
+*********************************************************************************
+assert person is alive
+*********************************************************************************
+
+I want the :ref:`calculate_age function<add calculate_age function>` to make sure that the age of the person is  not more than 120 because I do not know that there are any people alive older than that, yet. For example ``john smith`` has a ``year_of_birth`` of ``1580`` which makes him too old to be alive.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+* I add a :ref:`variable<what is a variable?>` with an :ref:`assert statement<what is an assertion?>` to :ref:`calculate_age function<add calculate_age function>` in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 2-3, 7-8
+
+    def calculate_age(year_of_birth):
+        # return (
+        age = (
+            datetime.date.today().year
+          - year_of_birth
+        )
+        assert age <= 120
+        return age
+
+
+    def say_hello(
+        first_name, last_name, year_of_birth,
+    ):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       AssertionError
+
+  another problem, the error message does not tell me much. At least the ``short test summary info`` shows me what test the error happened in
+
+  .. code-block:: python
+
+    FAILED ...::TestPerson::test_john - AssertionError
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the value of ``year_of_birth`` in :ref:`test_john` in ``test_person.py``
+
+.. code-block:: python
+  :lineno-start: 23
+  :emphasize-lines: 5-6
+
+      def test_john(self):
+          first_name = 'john'
+          last_name = 'smith'
+          sex = 'M'
+          # year_of_birth = 1580
+          year_of_birth = 1980
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a comment about the bad ``year_of_birth``
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 5-8
+
+        def test_john(self):
+            first_name = 'john'
+            last_name = 'smith'
+            sex = 'M'
+            year_of_birth = 1980
+            # year_of_birth = 1580
+            # raises AssertionError
+            # because older than 120
+
+* I remove the commented line from the :ref:`calculate_age function<add calculate_age function>` in ``person.py``
+
+  .. code-block:: python
+    :Lineno-start: 23
+
+    def calculate_age(year_of_birth):
+        age = (
+            datetime.date.today().year
+          - year_of_birth
+        )
+        assert age <= 120
+        return age
+
+
+    def say_hello(
+        first_name, last_name, year_of_birth,
+    ):
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'assert person is alive'
+
+----
+
+*********************************************************************************
+assert year_of_birth is an integer
+*********************************************************************************
+
+I want the :ref:`Person class<test Person class>` to make sure that the value for ``year_of_birth`` is an integer_ (whole number without decimals).
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+* I add a new test
+
+  .. code-block:: python
+    :lineno-start: 186
+    :emphasize-lines: 5-11
+
+            reality = mary.say_hello()
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+        def test_when_year_of_birth_is_not_integer(self):
+            person = src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+            )
+            person.say_hello()
+
+        def test_dir_person_class(self):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        Person.__init__() missing
+        1 required positional argument: 'year_of_birth'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I make ``year_of_birth`` an :ref:`optional argument<test_optional_arguments>` in the :ref:`Person class<test Person class>` in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 5-6
+
+    class Person:
+
+        def __init__(
+            self, first_name, last_name,
+            # sex, year_of_birth,
+            sex, year_of_birth=None,
+        ):
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for -:
+               'int' and 'NoneType'
+
+  because :ref:`I cannot do Arithmetic with None<test_type_error_w_objects_that_do_not_mix>`.
+
+* I add an :ref:`assertion<what is an assertion?>` with the :ref:`isinstance built-in function<how to test if something is an instance>` to make sure the :ref:`function<what is a function?>` only gets integers
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 2
+
+    def calculate_age(year_of_birth):
+        assert isinstance(year_of_birth, int)
+        age = (
+            datetime.date.today().year
+          - year_of_birth
+        )
+        assert age <= 120
+        return age
+
+
+    def say_hello(
+        first_name, last_name, year_of_birth,
+    ):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       AssertionError
+
+  the error message is still a problem. The ``short test summary info`` shows me what test the error happened in
+
+  .. code-block:: python
+
+    FAILED ...::TestPerson::test_john - AssertionError
+
+* I add a comment, then change ``year_of_birth`` from the :ref:`default value<test_optional_arguments>` to a :ref:`boolean<what are booleans?>` in :ref:`test_when_year_of_birth_is_not_an_integer<assert year_of_birth is an integer>`, in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 190
+    :emphasize-lines: 6-7
+
+        def test_when_year_of_birth_is_not_integer(self):
+            person = src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                # year_of_birth=None,    # fails
+                year_of_birth=False,
+            )
+            person.say_hello()
+
+        def test_dir_person_class(self):
+
+  the terminal shows :ref:`AssertionError<what causes AssertionError?>` for the age being greater than ``120``. Wait a minute! I was expecting that to fail at ``assert isinstance(year_of_birth, int)``. This means :ref:`a boolean is also an integer<is False an integer or a float?>`.
+
+* I add a comment then change ``year_of_birth`` to a float_
+
+  .. code-block:: python
+    :lineno-start: 190
+    :emphasize-lines: 7-8
+
+        def test_when_year_of_birth_is_not_integer(self):
+            person = src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                # year_of_birth=None,    # fails
+                # year_of_birth=False,   # fails
+                year_of_birth=2026.0,
+            )
+            person.say_hello()
+
+        def test_dir_person_class(self):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+* I add a comment then change ``year_of_birth`` to a string_
+
+  .. code-block:: python
+    :lineno-start: 190
+    :emphasize-lines: 8-9
+
+        def test_when_year_of_birth_is_not_integer(self):
+            person = src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                # year_of_birth=None,    # fails
+                # year_of_birth=False,   # fails
+                # year_of_birth=2026.0,  # fails
+                year_of_birth='2026',
+            )
+            person.say_hello()
+
+        def test_dir_person_class(self):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+* I add a comment then change ``year_of_birth`` to a tuple_
+
+  .. code-block:: python
+    :lineno-start: 190
+    :emphasize-lines: 9-10
+
+        def test_when_year_of_birth_is_not_integer(self):
+            person = src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                # year_of_birth=None,    # fails
+                # year_of_birth=False,   # fails
+                # year_of_birth=2026.0,  # fails
+                # year_of_birth='2026',  # fails
+                year_of_birth=(2026,),
+            )
+            person.say_hello()
+
+        def test_dir_person_class(self):
+
+* I add a comment, the comment out the :ref:`call<how to call a function>` to :ref:`person.say_hello<test say_hello method>`
+
+  .. code-block:: python
+    :lineno-start: 190
+    :emphasize-lines: 10, 12-14
+
+        def test_when_year_of_birth_is_not_integer(self):
+            person = src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                # year_of_birth=None,    # fails
+                # year_of_birth=False,   # fails
+                # year_of_birth=2026.0,  # fails
+                # year_of_birth='2026',  # fails
+                # year_of_birth=(2026,), # fails
+            )
+            # person.say_hello()
+            # fails if year_of_birth
+            # is not an integer
+
+        def test_dir_person_class(self):
+
+  the test is green because there is no :ref:`assertion<what is an assertion?>` or :ref:`calls<how to call a function>` that cause :ref:`AssertionError<what causes AssertionError?>`.
+
+* I remove the commented line from the :ref:`Person class<test Person class>` in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+
+    class Person:
+
+        def __init__(
+            self, first_name, last_name,
+            sex, year_of_birth=None,
+        ):
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'assert year_of_birth is an integer'
+
+----
+
 *********************************************************************************
 close the project
 *********************************************************************************
 
-* I close ``test_person.py``
+* I close ``test_person.py`` and ``person.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
@@ -1433,9 +1807,10 @@ close the project
 review
 *************************************************************************************
 
-* I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`.
-
-* My tests for a person still have the problem where they are the same three tests. There has to be a way that I can use one test for all the people.
+* I can use the :ref:`datetime library<test person with datetime>` to automatically get the current year for the calculate of a person's age.
+* I can use :ref:`assertions<what is an assertion?>` to make sure certain conditions are met before a program does something.
+* My tests have a new problem - when they cause an :ref:`Exception<errors>` the test stops and does not continue. My solution was to add notes and comment out the problems, which means the only way to know that the code causes the errors if by removing those comments. :ref:`There has to be a better way<exception handling in tests>`
+* :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` also still have the problem where they are the same three tests. There has to be a better way.
 
 ----
 

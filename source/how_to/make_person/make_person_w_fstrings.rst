@@ -438,7 +438,7 @@ the test passes.
     # def factory(first_name, last_name, sex):
     def factory(
         first_name, last_name,
-        sex, year_of_birth
+        sex, year_of_birth,
     ):
         # return 'joe, blow, M, 1996'
         # return f'{first_name}, blow, M, 1996'
@@ -538,7 +538,7 @@ the test passes.
 
     def factory(
         first_name, last_name,
-        sex, year_of_birth
+        sex, year_of_birth,
     ):
         return (
             f'{first_name}, {last_name},'
@@ -1400,7 +1400,7 @@ the test passes.
 
     def factory(
         first_name, last_name,
-        sex, year_of_birth
+        sex, year_of_birth,
     ):
         return (
             f'{first_name}, {last_name},'
@@ -1491,7 +1491,7 @@ the test passes.
 
     def factory(
         first_name, last_name,
-        sex, year_of_birth
+        sex, year_of_birth,
     ):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
@@ -1524,7 +1524,7 @@ the test passes.
 
     def factory(
         first_name, last_name,
-        sex, year_of_birth
+        sex, year_of_birth,
     ):
         return (
             f'{first_name}, {last_name},'
@@ -1549,7 +1549,7 @@ the test passes.
       └── person.py
           └── def factory(
                   first_name, last_name,
-                  sex, year_of_birth
+                  sex, year_of_birth,
               ):
               └── return (
                       f'{first_name}, {last_name},'
@@ -1800,7 +1800,7 @@ the test passes.
     └── person.py
         └── def factory(
                 first_name, last_name,
-                sex, year_of_birth
+                sex, year_of_birth,
             ):
             └── return (
                     f'{first_name}, {last_name},'
@@ -2443,7 +2443,7 @@ separate and equal say_hello
 
     def factory(
         first_name, last_name,
-        sex, year_of_birth
+        sex, year_of_birth,
     ):
         return (
             f'{first_name}, {last_name},'
@@ -2961,7 +2961,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     # def factory(first_name, last_name, sex):
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return None
 
@@ -2985,7 +2985,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     # def factory(first_name, last_name, sex):
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return 'mary, public, F, 2000'
 
@@ -3013,7 +3013,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     # def factory(first_name, last_name, sex):
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return 'mary, public, F, 2000'
 
@@ -3130,7 +3130,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     # def say_hello(first_name):
     # def say_hello(first_name, last_name):
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
         return None
 
@@ -3156,7 +3156,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     # def say_hello(first_name):
     # def say_hello(first_name, last_name):
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
         # return None
         return 'Hello, my name is mary public and I am 26.'
@@ -3187,10 +3187,10 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     # def factory(first_name, last_name, sex):
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         # return 'mary, public, F, 2000'
-        return first_name, last_name, sex, year_of_birth
+        return first_name, last_name, sex, year_of_birth,
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3215,10 +3215,10 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     # def factory(first_name, last_name, sex):
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         # return 'mary, public, F, 2000'
-        # return first_name, last_name, sex, year_of_birth
+        # return first_name, last_name, sex, year_of_birth,
         return (
             f'{first_name}, {last_name},'
             f' {sex}, {year_of_birth}'
@@ -3245,11 +3245,11 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     # def say_hello(first_name):
     # def say_hello(first_name, last_name):
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
         # return None
         # return 'Hello, my name is mary public and I am 26.'
-        return first_name, last_name, year_of_birth
+        return first_name, last_name, year_of_birth,
 
 
     # factory
@@ -3275,11 +3275,11 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     # def say_hello(first_name):
     # def say_hello(first_name, last_name):
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
         # return None
         # return 'Hello, my name is mary public and I am 26.'
-        # return first_name, last_name, year_of_birth
+        # return first_name, last_name, year_of_birth,
         return (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am {year_of_birth}.'
@@ -3309,11 +3309,11 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     # def say_hello(first_name):
     # def say_hello(first_name, last_name):
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
         # return None
         # return 'Hello, my name is mary public and I am 26.'
-        # return first_name, last_name, year_of_birth
+        # return first_name, last_name, year_of_birth,
         return (
             f'Hello, my name is {first_name}'
             # f' {last_name} and I am {year_of_birth}.'
@@ -3332,7 +3332,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :linenos:
 
     def say_hello(
-        first_name, last_name, year_of_birth
+        first_name, last_name, year_of_birth,
     ):
         return (
             f'Hello, my name is {first_name}'
@@ -3343,7 +3343,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return (
             f'{first_name}, {last_name},'
