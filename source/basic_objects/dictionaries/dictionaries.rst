@@ -1,6 +1,6 @@
 .. meta::
   :description: In-depth TDD tutorial for Python dictionaries as key-value data structures. Master creating dicts, accessing items, methods like keys/values/items, iteration, and testing with assertions and unittest. Learn through red-green-refactor with examples that distinguish dicts from other structures, building on the AssertionError, None, and booleans chapters. Covers common patterns and beginner gotchas for dicts.
-  :keywords: Jacob Itegboje, Pumping Python, python dictionaries tutorial, python dict key value, dict methods python, testing dictionaries unittest, TDD dict python, python data structures dictionaries, dict vs list, python dict iteration, unittest assert dict, red green refactor dictionaries, python dict best practices, python dict for beginners, key value pair testing, python dict TDD tutorial
+  :keywords: Jacob Itegboje, Pumping Python, python dictionaries tutorial, python dict key value, dict methods python, testing dictionaries unittest, TDD dict python, Python basic objects dictionaries, dict vs list, python dict iteration, unittest assert dict, red green refactor dictionaries, python dict best practices, python dict for beginners, key value pair testing, python dict TDD tutorial
 
 .. include:: ../../links.rst
 
@@ -294,7 +294,7 @@ the test passes. These are two ways to make an empty :ref:`dictionary<what is a 
 
   the test passes.
 
-:ref:`I know how to make a dictionary<test_making_a_dictionary>`. I used a string_ as a :ref:`key<test_keys_of_a_dictionary>` in this test. Next I test other :ref:`Python basic data types<data structures>` to see which ones I can use as :ref:`keys<test_keys_of_a_dictionary>`
+:ref:`I know how to make a dictionary<test_making_a_dictionary>`. I used a string_ as a :ref:`key<test_keys_of_a_dictionary>` in this test. Next I test other :ref:`Python basic data types<basic objects>` to see which ones I can use as :ref:`keys<test_keys_of_a_dictionary>`
 
 ----
 
@@ -3604,7 +3604,7 @@ review
 
 Dictionaries_ are also known as Mappings, they contain :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and any :ref:`object<everything is an object>` can be used as values.
 
-I ran tests to show that I can make a :ref:`dictionary<what is a dictionary?>` with ``dict()`` or curly braces ``{}``, then I ran these tests to see what :ref:`Python basic data types<data structures>` I can use as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+I ran tests to show that I can make a :ref:`dictionary<what is a dictionary?>` with ``dict()`` or curly braces ``{}``, then I ran these tests to see what :ref:`Python basic data types<basic objects>` I can use as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 * :ref:`test_making_a_dictionary_w_none_as_a_key`
 * :ref:`test_making_a_dictionary_w_a_boolean_as_a_key`

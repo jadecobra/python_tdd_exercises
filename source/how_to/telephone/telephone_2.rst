@@ -18,13 +18,13 @@ telephone 2
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/QEiyAO7aEVQ?si=gN_vRO0VrSyWR7R6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Part of `Computer Programming`_ is sending :ref:`input data<data structures>` to a process and getting :ref:`output data<data structures>` back
+Part of `Computer Programming`_ is sending :ref:`input data<basic objects>` to a process and getting :ref:`output data<basic objects>` back
 
 .. code-block:: python
 
     input_data -> process -> output_data
 
-I send things (:ref:`input data<data structures>`) to a program_ to test it, and check if what I think will happen (my expectation) is the same as the results I get (reality). This helps me answer two questions:
+I send things (:ref:`input data<basic objects>`) to a program_ to test it, and check if what I think will happen (my expectation) is the same as the results I get (reality). This helps me answer two questions:
 
 * what is the same?
 * what is different?
@@ -40,7 +40,7 @@ where
 * ``reality`` is what happens when I do something with code
 * ``my_expectation`` is what I think will happen when I do something with code
 
-The exercises in this chapter show how I can pass :ref:`input data<data structures>` from a test to a :ref:`function<what is a function?>` in a :ref:`module<what is a module?>`.
+The exercises in this chapter show how I can pass :ref:`input data<basic objects>` from a test to a :ref:`function<what is a function?>` in a :ref:`module<what is a module?>`.
 
 ----
 
@@ -739,7 +739,7 @@ I can pass :ref:`None<what is None?>` from a test to a :ref:`function<what is a 
 
 * I go back to the terminal_ where the tests are running
 
-* I add a failing test for :ref:`None<what is None?>` (the simplest :ref:`Python data structure<data structures>`) to ``test_telephone.py``
+* I add a failing test for :ref:`None<what is None?>` (the simplest :ref:`Python data structure<basic objects>`) to ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 7

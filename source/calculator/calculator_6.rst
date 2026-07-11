@@ -150,9 +150,9 @@ The `setUp method`_ runs before every test, giving ``random_first_number`` and `
 test_calculator_w_a_for_loop
 *************************************************************************************
 
-I tested the :ref:`calculator functions<how to make a calculator>` with :ref:`None<what is None?>`, strings_ and :ref:`lists`, I want to test them with the other :ref:`basic Python data types<data structures>`: :ref:`booleans<what are booleans?>`, tuples_, sets_ and :ref:`dictionaries<what is a dictionary?>`.
+I tested the :ref:`calculator functions<how to make a calculator>` with :ref:`None<what is None?>`, strings_ and :ref:`lists`, I want to test them with the other :ref:`basic Python data types<basic objects>`: :ref:`booleans<what are booleans?>`, tuples_, sets_ and :ref:`dictionaries<what is a dictionary?>`.
 
-Since I know how to use a :ref:`for loop<what is a for loop?>` and :ref:`list comprehensions`, I can do this with one test for all of them instead of a different test with 4 or more :ref:`assertions<what is an assertion?>` for each :ref:`data type<data structures>`
+Since I know how to use a :ref:`for loop<what is a for loop?>` and :ref:`list comprehensions`, I can do this with one test for all of them instead of a different test with 4 or more :ref:`assertions<what is an assertion?>` for each :ref:`data type<basic objects>`
 
 ----
 
@@ -235,7 +235,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     AssertionError: ABC.DEFGHIJKLMNOPQR != 'brmph?! Numbers only. Try again...'
 
-  One of the :ref:`data types<data structures>` from the test gets to the :ref:`add function<test_addition>` so it returns a number and not a message. How can I tell which :ref:`data type<data structures>` caused the failure?
+  One of the :ref:`data types<basic objects>` from the test gets to the :ref:`add function<test_addition>` so it returns a number and not a message. How can I tell which :ref:`data type<basic objects>` caused the failure?
 
 * the `unittest.TestCase class`_ has a way to tell which item is causing my failure when I am using a :ref:`for loop<what is a for loop?>`, I add it to the test
 
@@ -265,7 +265,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for two of the :ref:`data types<data structures>` I am testing
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for two of the :ref:`data types<basic objects>` I am testing
 
   .. code-block:: python
     :emphasize-lines: 3, 4

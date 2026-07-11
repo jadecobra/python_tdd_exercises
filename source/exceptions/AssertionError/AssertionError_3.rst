@@ -1,5 +1,5 @@
 .. meta::
-  :description: Continuation (part 3) of the beginner Python TDD AssertionError tutorial in the existing assertion_error project: after class attributes (from AssertionError 2), use the None-specific assertIsNone and assertIsNotNone (introduced with full RED/GREEN/REFACTOR + "unexpectedly None" / "X is not None" errors + caution box in the None chapter) to remove repetition of None checks from test_assertion_error_w_none. Replace patterns like assertIs(x, None) / assertIsNot(x, None) / bare assert for None tests while retaining class attrs (an_integer etc.) and mixing with general assertIsNot where appropriate (e.g. assertIsNot(False, None)). "I have these tests by the end" is test_assertion_error_3.py. Teaches when the convenience methods are useful for None. Continues uv run pytest-watcher + git in the shared project. Links from the data_structures/none chapter.
+  :description: Continuation (part 3) of the beginner Python TDD AssertionError tutorial in the existing assertion_error project: after class attributes (from AssertionError 2), use the None-specific assertIsNone and assertIsNotNone (introduced with full RED/GREEN/REFACTOR + "unexpectedly None" / "X is not None" errors + caution box in the None chapter) to remove repetition of None checks from test_assertion_error_w_none. Replace patterns like assertIs(x, None) / assertIsNot(x, None) / bare assert for None tests while retaining class attrs (an_integer etc.) and mixing with general assertIsNot where appropriate (e.g. assertIsNot(False, None)). "I have these tests by the end" is test_assertion_error_3.py. Teaches when the convenience methods are useful for None. Continues uv run pytest-watcher + git in the shared project. Links from the basic_objects/none chapter.
   :keywords: Jacob Itegboje, Pumping Python, AssertionError 3, AssertionError 3: use assertIsNotNone and assertIsNone, assertIsNone, assertIsNotNone, python None assert methods, remove repetition None checks unittest, test_assertion_error_w_none, AssertionError unexpectedly None, AssertionError X is not None, class attributes continuation, assertion_error project, uv pytest-watcher, red green refactor assertIsNone, None is not False with class attrs, Pumping Python TDD AssertionError chapter 3, what is None continuation
 
 .. include:: ../../links.rst
@@ -439,7 +439,7 @@ use assertIsNotNone and assertIsNone
 
   the test passes because a :ref:`dictionary (key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>` is not :ref:`None<what is None?>`.
 
-* I remove the commented lines and :ref:`assertions<what is an assertion?>` that use :ref:`assertIsNot<another way to test if something is NOT the same object as None>`, :ref:`assertIs<another way to test if something is the same object as None>`, and basic `assert statements`_ from :ref:`test_assertion_error_w_none`
+* I remove the commented lines and :ref:`assertions<what is an assertion?>` that use :ref:`assertIsNot<test_assert_is_not>`, :ref:`assertIs<test_assert_is>`, and basic `assert statements`_ from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
     :lineno-start: 30

@@ -1779,7 +1779,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     SUBFAILED(operation='divide', bad_input=(0, 1, 2, 'n')) ... - TypeError: unsupported operand type(s) for /: 'tuple' and 'float'
 
-  another :ref:`data type<data structures>`, there has to be a better way
+  another :ref:`data type<basic objects>`, there has to be a better way
 
 ----
 

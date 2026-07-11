@@ -103,15 +103,15 @@ table of contents
   what is a function?<functions/index>
   what causes AttributeError?<exceptions/AttributeError>
   pass values<how_to/telephone>
-  data_structures/none
-  data_structures/booleans/index
+  basic_objects/none
+  basic_objects/booleans/index
   truth table<truth_table/index>
   make a calculator<calculator/calculator_1/index>
   make TDD project 2<make_tdd/make_tdd_automatically>
   handling Exceptions<exceptions/exception_handling/index>
   exceptions/type_error/index
-  data_structures/lists/index
-  data_structures/dictionaries/index
+  basic_objects/lists/index
+  basic_objects/dictionaries/index
   make TDD project 3<make_tdd/make_tdd_automatically_w_variables/index>
   make a person<how_to/make_person>
   classes/index
@@ -121,7 +121,7 @@ table of contents
 
   connect the dots<dot_notation>
   exceptions/index
-  data_structures/index
+  basic_objects/index
   how_to/index
   catalog of tests<catalog_of_tests>
   all the code in this book<catalog_of_code>

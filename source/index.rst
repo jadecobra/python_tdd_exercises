@@ -52,21 +52,21 @@ table of contents
   make a person with a class<how_to/make_person/make_person_w_class>
   classes/inheritance
   make a person with datetime<how_to/make_person/make_person_w_datetime>
-  data_structures/none/index
+  basic_objects/none/index
   make a person<how_to/make_person>
-  what are booleans?<data_structures/booleans/index>
+  what are booleans?<basic_objects/booleans/index>
   truth table<truth_table/index>
   make TDD automatically<make_tdd/make_tdd_automatically>
   handling Exceptions<exceptions/exception_handling/index>
-  data_structures/lists/index
-  data_structures/dictionaries/index
+  basic_objects/lists/index
+  basic_objects/dictionaries/index
   make TDD project 3<make_tdd/make_tdd_automatically_w_variables/index>
   questions the book answers<review>
   make TDD manually<make_tdd/make_tdd_manually>
 
   connect the dots<dot_notation>
   exceptions/index
-  data_structures/index
+  basic_objects/index
   how to<how_to/index>
   catalog of tests<catalog_of_tests>
   all the code in this book<catalog_of_code>

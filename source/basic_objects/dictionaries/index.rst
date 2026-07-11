@@ -1,6 +1,6 @@
 .. meta::
   :description: Beginner TDD tutorial for Python dictionaries: key-value pairs, methods, iteration, and testing. Learn to create, access, update, and test dicts with unittest and assertions in a red-green-refactor workflow. Covers dict as a core data structure, difference from lists, and practical examples building on the AssertionError and None/Booleans chapters.
-  :keywords: Jacob Itegboje, Pumping Python, python dictionaries, python dict tutorial beginners, key value pairs python, python dictionary methods, TDD python dict, unittest test dict, python data structures dict, dict vs list python, testing dictionaries python, python dict TDD, red green refactor dict, python dict best practices, python dict tutorial
+  :keywords: Jacob Itegboje, Pumping Python, python dictionaries, python dict tutorial beginners, key value pairs python, python dictionary methods, TDD python dict, unittest test dict, Python basic objects dict, dict vs list python, testing dictionaries python, python dict TDD, red green refactor dict, python dict best practices, python dict tutorial
 
 .. include:: ../../links.rst
 
@@ -15,9 +15,9 @@
 what is a dictionary?
 #################################################################################
 
-A dictionary_ also known as a Mapping is a way to keep :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`, the :ref:`values<test_values_of_a_dictionary>` can be any :ref:`Python object<what is a class?>`. I add tests to see which of :ref:`the Python basic data types<data structures>` I can use as :ref:`keys<test_keys_of_a_dictionary>` .
+A dictionary_ also known as a Mapping is a way to keep :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`, the :ref:`values<test_values_of_a_dictionary>` can be any :ref:`Python object<what is a class?>`. I add tests to see which of :ref:`the Python basic data types<basic objects>` I can use as :ref:`keys<test_keys_of_a_dictionary>` .
 
-I think this is the most important :ref:`data structure<data structures>` because it can hold all the other :ref:`data structures`, same as with :ref:`lists<lists>` and tuples_. In programming I have had to work with JSON_ which I can read and write as dictionaries_
+I think this is the most important :ref:`data structure<basic objects>` because it can hold all the other :ref:`data structures`, same as with :ref:`lists<lists>` and tuples_. In programming I have had to work with JSON_ which I can read and write as dictionaries_
 
 ----
 

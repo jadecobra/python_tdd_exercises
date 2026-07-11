@@ -73,8 +73,8 @@ AssertionError review
 * :ref:`how can I test if something is NOT the same object as True?<test_assertion_error_w_true>`
 * :ref:`how can I test if two things are NOT Equal?<test_assertion_error_w_equality>`
 * :ref:`how can I test if two things are Equal?<test_assertion_error_w_equality>`
-* :ref:`what is another way to test if something is the same object as None?<another way to test if something is the same object as None>`
-* :ref:`what is another way to test if something is NOT the same object as None?<another way to test if something is NOT the same object as None>`
+* :ref:`what is another way to test if something is the same object as None?<test_assert_is>`
+* :ref:`what is another way to test if something is NOT the same object as None?<test_assert_is_not>`
 * :ref:`what is another way to test if something is the same object as False?<another way to test if something is the same object as False>`
 * :ref:`what is another way to test if something is NOT the same object as False?<another way to test if something is NOT the same object as False>`
 * :ref:`what is another way to test if something is the same object as True?<another way to test if something is the same object as True>`
@@ -191,8 +191,8 @@ None review
 * :ref:`how can I test if something is the same object as None?<test_assertion_error_w_none>`
 * :ref:`how can I test if something is an instance?<how to test if something is an instance>`
 * :ref:`how can I test if something is NOT an instance of class<how to test if something is an instance>`
-* :ref:`what is another way to test if something is the same object as None?<another way to test if something is the same object as None>`
-* :ref:`what is another way to test if something is NOT the same object as None?<another way to test if something is NOT the same object as None>`
+* :ref:`what is another way to test if something is the same object as None?<test_assert_is>`
+* :ref:`what is another way to test if something is NOT the same object as None?<test_assert_is_not>`
 
 ----
 

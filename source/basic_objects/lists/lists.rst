@@ -1,6 +1,6 @@
 .. meta::
   :description: Comprehensive TDD tutorial for Python lists: indexing, slicing, methods, mutation, and testing. Master lists as a fundamental mutable sequence data structure through step-by-step red-green-refactor with unittest and assertions. Connects to earlier coverage of None/booleans/identity testing in the AssertionError chapters.
-  :keywords: Jacob Itegboje, Pumping Python, python lists tutorial, list methods python, python list indexing, python list slicing, TDD lists, unittest test list, python data structures lists, mutable list python, testing lists with assertions, red green refactor lists, python list best practices, python list for beginners, list TDD tutorial, python list operations
+  :keywords: Jacob Itegboje, Pumping Python, python lists tutorial, list methods python, python list indexing, python list slicing, TDD lists, unittest test list, Python basic objects lists, mutable list python, testing lists with assertions, red green refactor lists, python list best practices, python list for beginners, list TDD tutorial, python list operations
 
 .. include:: ../../links.rst
 

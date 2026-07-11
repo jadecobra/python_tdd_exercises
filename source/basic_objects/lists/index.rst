@@ -1,6 +1,6 @@
 .. meta::
   :description: Beginner TDD tutorial for Python lists: methods, indexing, slicing, and mutation. Learn lists as a core data structure through hands-on testing with unittest, assertions, and the red-green-refactor cycle. Builds on earlier chapters covering None, booleans, and identity vs equality testing.
-  :keywords: Jacob Itegboje, Pumping Python, python lists, python list tutorial beginners, list methods python, python list indexing slicing, TDD python lists, unittest test lists, python data structures lists, mutable sequences python, testing lists python, python list TDD, red green refactor list, python list best practices, python list tutorial
+  :keywords: Jacob Itegboje, Pumping Python, python lists, python list tutorial beginners, list methods python, python list indexing slicing, TDD python lists, unittest test lists, Python basic objects lists, mutable sequences python, testing lists python, python list TDD, red green refactor list, python list best practices, python list tutorial
 
 .. include:: ../../links.rst
 
@@ -64,7 +64,7 @@ the chapters
   make a calculator 5<../../calculator/calculator_5>
   list_comprehensions
   make a calculator 6<../../calculator/calculator_6>
-  ../../data_structures/booleans/booleans_3
+  ../../basic_objects/booleans/booleans_3
   ../../functions/functions_3
 
 ----

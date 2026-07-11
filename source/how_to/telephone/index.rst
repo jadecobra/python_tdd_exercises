@@ -12,13 +12,13 @@
 telephone
 #################################################################################
 
-Part of `Computer Programming`_ is sending :ref:`input data<data structures>` to a process and getting :ref:`output data<data structures>` back
+Part of `Computer Programming`_ is sending :ref:`input data<basic objects>` to a process and getting :ref:`output data<basic objects>` back
 
 .. code-block:: python
 
     input_data -> process -> output_data
 
-I send things (:ref:`input data<data structures>`) to a program_ to test it, and check if what I think will happen (my expectation) is the same as the results I get (reality). This helps me answer two questions:
+I send things (:ref:`input data<basic objects>`) to a program_ to test it, and check if what I think will happen (my expectation) is the same as the results I get (reality). This helps me answer two questions:
 
 * what is the same?
 * what is different?
@@ -293,7 +293,7 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
 
 ----
 
-* I change ``test_failure`` to :ref:`test_passing_none` with an :ref:`assertion<what is an assertion?>` for a :ref:`function call<how to call a function>` with :ref:`None<what is None?>` (the simplest :ref:`Python data structure<data structures>`) as input, in ``test_telephone.py``
+* I change ``test_failure`` to :ref:`test_passing_none` with an :ref:`assertion<what is an assertion?>` for a :ref:`function call<how to call a function>` with :ref:`None<what is None?>` (the simplest :ref:`Python data structure<basic objects>`) as input, in ``test_telephone.py``
 
   .. code-block:: python
     :linenos:

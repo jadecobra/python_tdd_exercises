@@ -18,7 +18,7 @@ To review, a function_ is code that is callable_, which means I can write code t
 
 functions_ can make code simpler, easier to read, test, reuse, maintain and improve - all the good things.
 
-Part of `Computer Programming`_ is sending :ref:`input data<data structures>` to a process and getting :ref:`output data<data structures>` back
+Part of `Computer Programming`_ is sending :ref:`input data<basic objects>` to a process and getting :ref:`output data<basic objects>` back
 
 .. code-block:: python
 

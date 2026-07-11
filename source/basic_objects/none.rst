@@ -1,6 +1,6 @@
 .. meta::
   :description: Beginner Python TDD tutorial on None — the simplest data structure / singleton. Step-by-step red-green-refactor with unittest: test_what_is_none using assertIs / assertIsNone / assertIsNotNone, then exhaustive "is None a boolean / int / float / str / tuple / list / set / dict?" tests using assertIsNotNone + assertIsInstance + assertNotIsInstance. Learn exactly why None is not False, not 0, not '', not [], not {}, not 0.0; identity ("is") vs equality ("=="); common None gotchas; and how to test for absence of value. Reproduces real AssertionError messages including "unexpectedly identical: None", "unexpectedly None", and "X is not None". Builds directly on the AssertionError chapters (bare assert, assertIs, test_failure patterns) before booleans/truthiness. Full uv init + pytest-watcher + git workflow. Part of Jacob Itegboje's Pumping Python series.
-  :keywords: Jacob Itegboje, Pumping Python, python None, what is None python, NoneType, python None vs False, python None vs 0, python None vs empty list, python None vs empty dict, is None vs == None, assertIsNone, assertIsNotNone, assertIs, assertIsNot, assertIsInstance, assertNotIsInstance, testing for None, None singleton, None identity, None in unittest, TDD None, None is not False, unexpectedly identical None, AssertionError unexpectedly None, False is not None, 0 is not None, simplest data structure python, python data structures TDD, red green refactor None, python None best practices, None vs falsy values, uv pytest-watcher none project
+  :keywords: Jacob Itegboje, Pumping Python, python None, what is None python, NoneType, python None vs False, python None vs 0, python None vs empty list, python None vs empty dict, is None vs == None, assertIsNone, assertIsNotNone, assertIs, assertIsNot, assertIsInstance, assertNotIsInstance, testing for None, None singleton, None identity, None in unittest, TDD None, None is not False, unexpectedly identical None, AssertionError unexpectedly None, False is not None, 0 is not None, simplest data structure python, Python basic objects TDD, red green refactor None, python None best practices, None vs falsy values, uv pytest-watcher none project
 
 .. include:: ../../links.rst
 
@@ -16,13 +16,17 @@
 None (the simplest object)
 #################################################################################
 
-.. raw:: html
-
-  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/NKvM2yqyIrQ?si=rXBUptys2D9ns9d8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 ----
 
-I want to use `assert methods`_ to compare :ref:`None<what is None?>` with the other :ref:`Python data structures<data structures>` to see what it is and what it is not.
+None_ is used when there is no value. In Mathematics_ we use ``0`` to represent no quantity. In some languages or domains we use ``NULL``, in forms we use ``N/A`` when the options do not apply. In Python_ we can use None_, it is the simplest object.
+
+I used :ref:`assertIs<test_assert_is>` and :ref:`assertIsNot<test_assert_is_not>` in :ref:`test_assertion_error_w_none` in the :ref:`assertion_error project<what is an assertion?>`, where I saw that
+
+* :ref:`True<test_what_is_true>` is NOT :ref:`None<what is None?>` and NOT equal to :ref:`None<what is None?>`
+* :ref:`False<test_what_is_false>` is NOT :ref:`None<what is None?>` and NOT equal to :ref:`None<what is None?>`
+* :ref:`None is None<what is None?>` and equal to :ref:`None<what is None?>`
+
+I want to use `assert methods`_ to compare :ref:`None<what is None?>` with the other :ref:`Python basic objects<basic objects>` to see what it is and what it is not.
 
 ----
 
@@ -308,7 +312,7 @@ test_what_is_none
 
 ----
 
-I change :ref:`assertIsNot<another way to test if something is NOT the same object as None>` to :ref:`assertIs<another way to test if something is the same object as None>`
+I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
 
 .. code-block:: python
   :lineno-start: 6
@@ -3044,14 +3048,14 @@ I used `assert methods`_ to test what :ref:`None<what is None?>` is and what it 
   * :ref:`assertIsInstance<another way to test if something is an instance>` which checks if something is :ref:`an instance of a given class<how to test if something is an instance>`
   * :ref:`assertNotIsInstance<another way to test if something is NOT an instance>` which checks if something is :ref:`NOT an instance of a given class<how to test if something is NOT an instance>`
 
-  to show that :ref:`None<what is None?>` is not an :ref:`instance<how to test if something is an instance>` of the other :ref:`basic types<data structures>`.
+  to show that :ref:`None<what is None?>` is not an :ref:`instance<how to test if something is an instance>` of the other :ref:`basic types<basic objects>`.
 
 * And two new `assert methods`_ for :ref:`None<what is None?>`:
 
-  * :ref:`assertIsNone<one more way to test if something is None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is NOT :ref:`None<what is None?>`. It replaced :ref:`assertIs<another way to test if something is the same object as None>` from :ref:`the assertion_error project<what is an assertion?>` except in :ref:`test_what_is_none`
-  * :ref:`assertIsNotNone<one more way to test if something is NOT None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is :ref:`None<what is None?>`. It replaced :ref:`assertIsNot<another way to test if something is NOT the same object as None>` from :ref:`the assertion_error project<what is an assertion?>`
+  * :ref:`assertIsNone<one more way to test if something is None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is NOT :ref:`None<what is None?>`. It replaced :ref:`assertIs<test_assert_is>` from :ref:`the assertion_error project<what is an assertion?>` except in :ref:`test_what_is_none`
+  * :ref:`assertIsNotNone<one more way to test if something is NOT None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is :ref:`None<what is None?>`. It replaced :ref:`assertIsNot<test_assert_is_not>` from :ref:`the assertion_error project<what is an assertion?>`
 
-I also used :ref:`Python's basic data structures<data structures>` in the tests
+I also used :ref:`Python's basic data structures<basic objects>` in the tests
 
 * :ref:`None<what is None?>` - the simplest
 * integers_ - whole numbers, negative and positive, including ``0``
