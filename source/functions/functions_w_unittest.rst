@@ -5011,14 +5011,14 @@ extract a_list class attributes
 ----
 
 *********************************************************************************
-extract first_number, second_number class attributes
+extract a_set class attributes
 *********************************************************************************
 
-* I add :ref:`class attribute<what is a class attribute?>` for ``0`` and ``1``
+* I add :ref:`class attribute<what is a class attribute?>` for ``{0, 1, 2, 'n'}``
 
   .. code-block:: python
     :lineno-start: 5
-    :emphasize-lines: 7-8
+    :emphasize-lines: 7
 
     class TestFunctions(unittest.TestCase):
 
@@ -5026,12 +5026,11 @@ extract first_number, second_number class attributes
         last = 'last'
         a_tuple = (0, 1, 2, 'n')
         a_list = [0, 1, 2, 'n']
-        first_number = 0
-        second_number = 1
+        a_set = {0, 1, 2, 'n'}
 
-        def test_why_use_a_function(self):
+        def test_making_a_function_w_pass(self):
 
-* I use the new :ref:`class attributes<what is a class attribute?>` to remove repetition of ``0`` and ``1`` from :ref:`test_positional_arguments`
+* I use the new :ref:`class attributes<what is a class attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 140
@@ -5083,41 +5082,7 @@ extract first_number, second_number class attributes
 
   still green.
 
-* I remove the commented lines from :ref:`test_positional_arguments`
-
-  .. code-block:: python
-    :lineno-start: 140
-
-        def test_positional_arguments(self):
-            reality = src.functions.positional_arguments(
-                self.first, self.last,
-            )
-            my_expectation = (self.first, self.last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.positional_arguments(
-                self.last, self.first,
-            )
-            my_expectation = (self.last, self.first)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.positional_arguments(
-                self.first_number, self.second_number,
-            )
-            my_expectation = (
-                self.first_number, self.second_number
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.positional_arguments(
-                self.a_tuple, self.a_list,
-            )
-            my_expectation = (self.a_tuple, self.a_list)
-            self.assertEqual(reality, my_expectation)
-
-        def test_keyword_arguments(self):
-
-* I use the new :ref:`class attributes<what is a class attribute?>` to remove repetition of ``0`` and ``1`` from :ref:`test_keyword_arguments`
+* I use the new :ref:`class attributes<what is a class attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 167
@@ -5188,80 +5153,13 @@ extract first_number, second_number class attributes
 
         def test_args_and_kwargs(self):
 
-* I remove the commented lines from :ref:`test_keyword_arguments`
-
-  .. code-block:: python
-    :lineno-start: 167
-
-        def test_keyword_arguments(self):
-            reality = src.functions.w_keyword_arguments(
-                first_input=self.first,
-                last_input=self.last,
-            )
-            my_expectation = (self.first, self.last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.w_keyword_arguments(
-                last_input=self.last,
-                first_input=self.first,
-            )
-            my_expectation = (self.first, self.last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.w_keyword_arguments(
-                self.last, self.first,
-            )
-            my_expectation = (self.last, self.first)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.w_keyword_arguments(
-                last_input=self.first_number,
-                first_input=self.second_number,
-            )
-            my_expectation = (
-                self.second_number, self.first_number
-            )
-            self.assertEqual(reality, my_expectation)
-
-            a_set = {0, 1, 2, 'n'}
-            a_dictionary = {'key': 'value'}
-            reality = src.functions.w_keyword_arguments(
-                first_input=a_set,
-                last_input=a_dictionary,
-            )
-            my_expectation = (a_set, a_dictionary)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.positional_arguments(
-                first_input=self.a_list,
-                last_input=self.a_tuple,
-            )
-            my_expectation = (self.a_list, self.a_tuple)
-            self.assertEqual(reality, my_expectation)
-
-        def test_args_and_kwargs(self):
-
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
     git commit -am \
-    'extract first_number, second_number class attributes'
-
-----
-
-*********************************************************************************
-extract a_set class attribute
-*********************************************************************************
-
-* I add a git_ commit message in the other terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit -am \
-    'extract a_set class attribute'
+    'extract a_set class attributes'
 
 ----
 
