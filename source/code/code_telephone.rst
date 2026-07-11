@@ -43,6 +43,8 @@ the code in ``telephone/src/telephone.py`` from :ref:`separate and equal telepho
   :language: python
   :linenos:
 
+----
+
 *********************************************************************************
 test telephone with unittest: tests
 *********************************************************************************

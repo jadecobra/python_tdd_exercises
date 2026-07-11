@@ -30,12 +30,12 @@ the code in ``assertion_error/tests/test_assertion_error.py`` from :ref:`test As
 ----
 
 *********************************************************************************
-AssertionError: assertIsNotNone and assertIsNone: tests
+test AssertionError with assertIsNotNone and assertIsNone: tests
 *********************************************************************************
 
-the code in ``assertion_error/tests/test_assertion_error.py`` from :ref:`AssertionError: use assertIsNotNone and assertIsNone`
+the code in ``assertion_error/tests/test_assertion_error.py`` from :ref:`test AssertionError with assertIsNotNone and assertIsNone`
 
-  .. literalinclude:: assertion_error/test_assertion_error_3.py
+  .. literalinclude:: assertion_error/test_assertion_error_w_none.py
     :language: python
     :linenos:
 

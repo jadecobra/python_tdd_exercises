@@ -74,36 +74,11 @@ the code in ``functions/tests/test_functions.py`` from :ref:`test functions with
 ----
 
 *********************************************************************************
-functions 3: tests
+test functions with assertIsNotNone and assertIsNone
 *********************************************************************************
 
-the code in ``functions/tests/test_functions.py`` (after refactor) from :ref:`functions 3: use class attributes`
+the code in ``functions/tests/test_functions.py`` from :ref:`test functions with assertIsNotNone and assertIsNone`
 
-.. literalinclude:: functions/test_functions_w_input.py
+.. literalinclude:: functions/test_functions_w_none.py
   :language: python
   :linenos:
-
-----
-
-*********************************************************************************
-functions: solutions
-*********************************************************************************
-
-the solutions in ``functions/src/functions.py`` from :ref:`functions<what is a function?>`
-
-.. literalinclude:: functions/functions.py
-  :language: python
-  :linenos:
-
-
-.. ----
-
-.. *********************************************************************************
-.. functions 3: solutions
-.. *********************************************************************************
-
-.. the solutions in ``functions/tests/test_functions.py`` from :ref:`functions 4: use for loops`
-
-.. .. literalinclude:: functions/test_functions_list_comprehensions.py
-..   :language: python
-..   :linenos:

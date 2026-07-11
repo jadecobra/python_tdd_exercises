@@ -8,7 +8,7 @@
 functions 4: use variables
 #################################################################################
 
-In :ref:`functions 3: use class attributes` I used :ref:`class attributes<what is a class attribute?>` to remove repetition from the :ref:`functions project<what is a function?>`. I want to use :ref:`variables<what is a variable?>` to do the same thing.
+In :ref:`test functions with assertIsNotNone and assertIsNone` I used :ref:`class attributes<what is a class attribute?>` to remove repetition from the :ref:`functions project<what is a function?>`. I want to use :ref:`variables<what is a variable?>` to do the same thing.
 
 ----
 
