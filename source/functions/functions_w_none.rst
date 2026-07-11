@@ -140,7 +140,7 @@ the test passes.
 
         def test_making_a_function_w_return(self):
 
-* I no longer need the ``result`` :ref:`variable<what is a variable?>` since it is only used once. I :ref:`call<how to call a function>` ``src.functions.w_pass()`` directly
+* I no longer need the ``result`` :ref:`variable<what is a variable?>` since it is only used once. I :ref:`call<how to call a function>` ``src.functions.w_pass`` directly
 
   .. code-block:: python
     :lineno-start: 8
@@ -243,7 +243,7 @@ the test passes.
 
         def test_making_a_function_w_return_none(self):
 
-* I :ref:`call<how to call a function>` ``src.functions.w_return()`` directly
+* I :ref:`call<how to call a function>` ``src.functions.w_return`` directly
 
   .. code-block:: python
     :lineno-start: 10
@@ -453,16 +453,18 @@ the test passes.
 
         def test_constant_function(self):
 
-* I no longer need the ``result`` :ref:`variable<what is a variable?>` since it is only used once
+* I no longer need the ``result`` :ref:`variable<what is a variable?>` since it is only used once. I :ref:`call<how to call a function>` ``src.functions.return_leaves_the_function`` directly
 
   .. code-block:: python
     :lineno-start: 18
-    :emphasize-lines: 2-4
+    :emphasize-lines: 2-6
 
         def test_what_happens_after_functions_return(self):
             # result = src.functions.return_leaves_the_function()
             # self.assertIsNone(result)
-            self.assertIsNone(src.functions.return_leaves_the_function())
+            self.assertIsNone(
+                src.functions.return_leaves_the_function()
+            )
 
         def test_constant_function(self):
 
@@ -474,18 +476,11 @@ the test passes.
     :lineno-start: 18
 
         def test_what_happens_after_functions_return(self):
-            self.assertIsNone(src.functions.return_leaves_the_function())
+            self.assertIsNone(
+                src.functions.return_leaves_the_function()
+            )
 
         def test_constant_function(self):
-
-
-
-
-
-
-
-
-
 
 * I open a new terminal_ then change directories to ``functions``
 
@@ -500,7 +495,7 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'use assertIsNotNone and assertIsNone'
+    'use assertIsNone'
 
 ----
 
@@ -533,7 +528,7 @@ close the project
 review
 *********************************************************************************
 
-I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`.
+I can use :ref:`assertIsNone methods<another way to test if something is None>` and :ref:`assertIsNotNone<another way to test if something is NOT None>` for :ref:`assertions<what is an assertion?>` that test if something is :ref:`None<what is None?>` or not - ``assertIs(x, None)`` and ``assertIsNot(x, None)``.
 
 ----
 

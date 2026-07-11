@@ -4698,6 +4698,160 @@ green.
 ----
 
 *********************************************************************************
+extract class attributes
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add :ref:`class attributes<what is a class attribute?>` for ``'first'`` and ``'last'``
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 3-4
+
+    class TestFunctions(unittest.TestCase):
+
+        first = 'first'
+        last = 'last'
+
+        def test_making_a_function_w_pass(self):
+
+* I use the :ref:`class attributes<what is a class attribute?>` to remove repetition of ``'first'`` and ``'last'`` from :ref:`test_positional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 106
+    :emphasize-lines: 5, 7-8
+
+        def test_positional_arguments(self):
+            positional_arguments = (
+                src.functions.positional_arguments
+            )
+            # first, last = 'first', 'last'
+
+            # reality = positional_arguments(first, last)
+            # my_expectation = (first, last)
+            reality = positional_arguments(
+                self.first, self.last
+            )
+            my_expectation = (self.first, self.last)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 121
+    :emphasize-lines: 1-2
+
+            # reality = positional_arguments(last, first)
+            # my_expectation = (last, first)
+            reality = positional_arguments(
+                self.last, self.first
+            )
+            my_expectation = (self.last, self.first)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            reality = positional_arguments(0, 1)
+
+  the test is still green.
+
+* I use the :ref:`class attributes<what is a class attribute?>` to remove repetition of ``'first'`` and ``'last'`` from :ref:`test_keyword_arguments`
+
+  .. code-block:: python
+    :lineno-start: 158
+    :emphasize-lines: 5, 8-10, 12-13
+
+        def test_keyword_arguments(self):
+            keyword_arguments = (
+                src.functions.keyword_arguments
+            )
+            # first, last = 'first', 'last'
+
+            reality = keyword_arguments(
+                # first_input=first, last_input=last,
+                first_input=self.first,
+                last_input=self.last,
+            )
+            # my_expectation = (first, last)
+            my_expectation = (self.first, self.last)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 174
+    :emphasize-lines: 2-4, 6-7
+
+            reality = keyword_arguments(
+                # last_input=last, first_input=first,
+                last_input=self.last,
+                first_input=self.first,
+            )
+            # my_expectation = (first, last)
+            my_expectation = (self.first, self.last)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            reality = keyword_arguments(
+                last_input=0, first_input=1,
+            )
+
+  still green.
+
+* I use the :ref:`class attributes<what is a class attribute?>` to remove ``'first'`` and ``'last'`` from :ref:`test_args_and_kwargs`
+
+  .. code-block:: python
+    :lineno-start: 216
+    :emphasize-lines: 2, 5-6, 8-9
+
+        def test_args_and_kwargs(self):
+            # first, last = 'first', 'last'
+
+            reality = src.functions.args_and_kwargs(
+                # first, last_input=last,
+                self.first, last_input=self.last,
+            )
+            # my_expectation = (first, last)
+            my_expectation = (self.first, self.last)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+        def test_optional_arguments(self):
+
+  green.
+
+* I remove the commented lines from :ref:`test_args_and_kwargs`
+
+  .. code-block:: python
+    :lineno-start: 224
+
+        def test_args_and_kwargs(self):
+            reality = src.functions.args_and_kwargs(
+                self.first, last_input=self.last,
+            )
+            my_expectation = (self.first, self.last)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+        def test_optional_arguments(self):
+
+----
+
+
+
+
+
+
+
+
+
+
+
+
+
+*********************************************************************************
 close the project
 *********************************************************************************
 

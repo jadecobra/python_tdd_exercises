@@ -4,6 +4,13 @@ import unittest
 
 class TestFunctions(unittest.TestCase):
 
+    first = 'first'
+    last = 'last'
+    a_tuple = (0, 1, 2, 'n')
+    a_list = [0, 1, 2, 'n']
+    first_number = 0
+    second_number = 1
+
     def test_making_a_function_w_pass(self):
         result = src.functions.w_pass()
 
@@ -104,9 +111,10 @@ class TestFunctions(unittest.TestCase):
         positional_arguments = (
             src.functions.positional_arguments
         )
-        first, last = 'first', 'last'
 
-        reality = positional_arguments(first, last)
+        reality = positional_arguments(
+            self.first, self.last
+        )
         my_expectation = (first, last)
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
