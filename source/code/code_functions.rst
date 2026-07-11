@@ -74,7 +74,7 @@ the code in ``functions/tests/test_functions.py`` from :ref:`test functions with
 ----
 
 *********************************************************************************
-test functions with assertIsNotNone and assertIsNone
+test functions with assertIsNotNone and assertIsNone: tests
 *********************************************************************************
 
 the code in ``functions/tests/test_functions.py`` from :ref:`test functions with assertIsNotNone and assertIsNone`

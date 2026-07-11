@@ -10,7 +10,7 @@ test AssertionError with assertIsNotNone and assertIsNone
 
 ----
 
-I used the :ref:`assertIsNotNone<another way to test if something is NOT None>` and :ref:`assertIsNone methods<another way to test if something is None>` to test :ref:`None<what is None?>`. I want to use them in :ref:`test_assertion_error_w_none<test_assertion_error_w_none>`.
+I want to use the :ref:`assertIsNotNone<another way to test if something is NOT None>` and :ref:`assertIsNone methods<another way to test if something is None>` to test :ref:`None<what is None?>` in :ref:`test_assertion_error_w_none<test_assertion_error_w_none>`.
 
 ----
 
@@ -503,8 +503,6 @@ use assertIsNotNone and assertIsNone
 
     git commit -am \
     'use assertIsNotNone and assertIsNone'
-
-  the terminal_ shows a summary of the changes then goes back to the command line.
 
 :ref:`I can use assertIsNotNone and assertIsNone for assertIsNot(x, None) and assertIs(x, None)<use assertIsNotNone and assertIsNone>`.
 
