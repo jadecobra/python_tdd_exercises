@@ -35,10 +35,9 @@ class TestFunctions(unittest.TestCase):
         self.assertEqual(result, expectation)
 
     def test_identity_function(self):
-        result = src.functions.identity(None)
-
-        assert result == None
-        self.assertEqual(result, None)
+        self.assertIsNone(
+            src.functions.identity(None)
+        )
 
         result = src.functions.identity(object)
 

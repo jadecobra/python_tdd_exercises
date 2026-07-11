@@ -63,7 +63,7 @@ open the project
 ----
 
 *********************************************************************************
-test_making_a_function_w_pass with assertIsNone
+test w_pass with assertIsNone
 *********************************************************************************
 
 =================================================================================
@@ -178,7 +178,7 @@ the test passes.
 ----
 
 *********************************************************************************
-test_making_a_function_w_return with assertIsNone
+test w_return with assertIsNone
 *********************************************************************************
 
 =================================================================================
@@ -281,7 +281,7 @@ the test passes.
 ----
 
 *********************************************************************************
-test_making_a_function_w_return_none with assertIsNone
+test w_return_none with assertIsNone
 *********************************************************************************
 
 =================================================================================
@@ -388,7 +388,7 @@ the test passes.
 ----
 
 *********************************************************************************
-test_what_happens_after_functions_return with assertIsNone
+test return_leaves_the_function with assertIsNone
 *********************************************************************************
 
 =================================================================================
@@ -504,20 +504,25 @@ test identity with assertIsNone
 
 ----
 
-I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<another way to test if something is NOT None>` in :ref:`test_what_happens_after_functions_return`
+I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<another way to test if something is NOT None>` in :ref:`test_identity_function`
 
 .. code-block:: python
-  :lineno-start: 25
+  :lineno-start: 37
   :emphasize-lines: 6
 
-      def test_what_happens_after_functions_return(self):
-          result = src.functions.return_leaves_the_function()
+      def test_identity_function(self):
+          result = src.functions.identity(None)
 
-          assert result is None
-          self.assertIs(result, None)
+          assert result == None
+          self.assertEqual(result, None)
           self.assertIsNotNone(result)
 
-      def test_constant_function(self):
+          result = src.functions.identity(object)
+
+          assert result == object
+          self.assertEqual(result, object)
+
+      def test_why_use_a_function(self):
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -536,18 +541,23 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to :ref:`assertIsNone<another way to test if something is None>`
 
 .. code-block:: python
-  :lineno-start: 25
+  :lineno-start: 37
   :emphasize-lines: 6-7
 
-      def test_what_happens_after_functions_return(self):
-          result = src.functions.return_leaves_the_function()
+      def test_identity_function(self):
+          result = src.functions.identity(None)
 
-          assert result is None
-          self.assertIs(result, None)
+          assert result == None
+          self.assertEqual(result, None)
           # self.assertIsNotNone(result)
           self.assertIsNone(result)
 
-      def test_constant_function(self):
+          result = src.functions.identity(object)
+
+          assert result == object
+          self.assertEqual(result, object)
+
+      def test_why_use_a_function(self):
 
 the test passes.
 
@@ -559,45 +569,55 @@ the test passes.
 
 ----
 
-* I remove the commented line, ``assert result is None`` and ``self.assertIs(result, None)``
+* I remove the commented line, ``assert result == None`` and ``self.assertEqual(result, None)``
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 37
 
-        def test_what_happens_after_functions_return(self):
+        def test_identity_function(self):
             result = src.functions.return_leaves_the_function()
             self.assertIsNone(result)
 
         def test_constant_function(self):
 
-* I no longer need the ``result`` :ref:`variable<what is a variable?>` since it is only used once. I :ref:`call<how to call a function>` ``src.functions.return_leaves_the_function`` directly
+* I no longer need the ``result`` :ref:`variable<what is a variable?>` since it is only used once for ``src.functions.identity(None)``. I :ref:`call the function<how to call a function>` directly
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 37
     :emphasize-lines: 2-6
 
-        def test_what_happens_after_functions_return(self):
-            # result = src.functions.return_leaves_the_function()
+        def test_identity_function(self):
+            # result = src.functions.identity(None)
             # self.assertIsNone(result)
             self.assertIsNone(
-                src.functions.return_leaves_the_function()
+                src.functions.identity(None)
             )
 
-        def test_constant_function(self):
+            result = src.functions.identity(object)
+
+            assert result == object
+            self.assertEqual(result, object)
+
+        def test_why_use_a_function(self):
 
   the test is still green.
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 37
 
-        def test_what_happens_after_functions_return(self):
+        def test_identity_function(self):
             self.assertIsNone(
-                src.functions.return_leaves_the_function()
+                src.functions.identity(None)
             )
 
-        def test_constant_function(self):
+            result = src.functions.identity(object)
+
+            assert result == object
+            self.assertEqual(result, object)
+
+        def test_why_use_a_function(self):
 
 * I open a new terminal_ then change directories to ``functions``
 
@@ -611,8 +631,7 @@ the test passes.
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    git commit -am \
-    'use assertIsNone'
+    git commit -am 'use assertIsNone'
 
 ----
 
