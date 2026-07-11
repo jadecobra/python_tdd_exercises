@@ -105,7 +105,7 @@ open the project
 
 * I can use `pytest-watcher`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a :ref:`Python file<what is a module?>` changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
 
-  pytest_ is a `Python package`_ like :ref:`unittest<another way to write tests` that is used for testing. It is not part of `The Python Standard Library`_.
+  pytest_ is a `Python package`_ like :ref:`unittest<another way to write tests>` that is used for testing. It is not part of `The Python Standard Library`_.
 
   I use uv_ to run `pytest-watcher`_ in the terminal_
 
@@ -209,7 +209,7 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
     echo "pytest" > requirements.txt
 
   - ``>`` is an operator that is used to send output from a program_ to the given file_
-  - pytest_ is a `Python package`_ like :ref:`unittest<another way to write tests`, that is used for testing
+  - pytest_ is a `Python package`_ like :ref:`unittest<another way to write tests>`, that is used for testing
   - ``requirements.txt`` is the name of the file_ where I add names of `Python packages`_ for the `uv Python Package Manager`_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file_.
 
 * I use tree_ to see what the project looks like now

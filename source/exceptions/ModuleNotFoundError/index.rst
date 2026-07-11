@@ -132,7 +132,7 @@ start the project
 
     assert False is True
 
-* I use the `unittest module`_ to run tests
+* I use the :ref:`unittest module<another way to write tests>` to run tests
 
   .. code-block:: python
     :emphasize-lines: 1
