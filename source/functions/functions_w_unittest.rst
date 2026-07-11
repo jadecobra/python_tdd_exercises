@@ -4701,6 +4701,8 @@ green.
 extract first, last class attributes
 *********************************************************************************
 
+I want to use :ref:`class attributes<what is a class attribute?>` to remove repetition from the tests.
+
 * I go back to the terminal_ where the tests are running
 
 * I add :ref:`class attributes<what is a class attribute?>` for ``'first'`` and ``'last'``
@@ -4844,7 +4846,7 @@ extract first, last class attributes
 ----
 
 *********************************************************************************
-extract a_tuple class attributes
+extract a_tuple class attribute
 *********************************************************************************
 
 * I add a :ref:`class attribute<what is a class attribute?>` for ``(0, 1, 2, 'n')``
@@ -4925,7 +4927,7 @@ extract a_tuple class attributes
 ----
 
 *********************************************************************************
-extract a_list class attributes
+extract a_list class attribute
 *********************************************************************************
 
 * I add a :ref:`class attribute<what is a class attribute?>` for ``[0, 1, 2, 'n']``
@@ -5011,7 +5013,7 @@ extract a_list class attributes
 ----
 
 *********************************************************************************
-extract a_set class attributes
+extract a_set class attribute
 *********************************************************************************
 
 * I add :ref:`class attribute<what is a class attribute?>` for ``{0, 1, 2, 'n'}``
@@ -5033,49 +5035,22 @@ extract a_set class attributes
 * I use the new :ref:`class attributes<what is a class attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 140
-    :emphasize-lines: 20, 22-23, 25-28
+    :lineno-start: 152
+    :emphasize-lines: 4, 8-9, 11-12
 
-        def test_positional_arguments(self):
-            # first, last = 'first', 'last'
+            keyword_arguments = (
+                src.functions.keyword_arguments
+            )
+            # a_set = {0, 1, 2, 'n'}
+            a_dictionary = {'key': 'value'}
 
-            reality = src.functions.positional_arguments(
-                # first, last,
-                self.first, self.last,
+            reality = keyword_arguments(
+                # a_set, a_dictionary,
+                self.a_set, a_dictionary,
             )
-            # my_expectation = (first, last)
-            my_expectation = (self.first, self.last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.positional_arguments(
-                # last, first,
-                self.last, self.first,
-            )
-            # my_expectation = (last, first)
-            my_expectation = (self.last, self.first)
-            self.assertEqual(reality, my_expectation)
-
-            # first_number, second_number = 0, 1
-            reality = src.functions.positional_arguments(
-                # first_number, second_number,
-                self.first_number, self.second_number,
-            )
-            # my_expectation = (first_number, second_number)
-            my_expectation = (
-                self.first_number, self.second_number
-            )
-            self.assertEqual(reality, my_expectation)
-
-            # a_tuple = (0, 1, 2, 'n')
-            # a_list = [0, 1, 2, 'n']
-            reality = src.functions.positional_arguments(
-                # a_tuple, a_list,
-                # self.a_tuple, a_list,
-                self.a_tuple, self.a_list,
-            )
-            # my_expectation = (a_tuple, a_list)
-            # my_expectation = (self.a_tuple, a_list)
-            my_expectation = (self.a_tuple, self.a_list)
+            # my_expectation = (a_set, a_dictionary)
+            my_expectation = (self.a_set, a_dictionary)
+            assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
         def test_keyword_arguments(self):
@@ -5085,70 +5060,23 @@ extract a_set class attributes
 * I use the new :ref:`class attributes<what is a class attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 167
-    :emphasize-lines: 30, 32-34, 36-39
+    :lineno-start: 215
+    :emphasize-lines: 4, 9-10, 12-13
 
-        def test_keyword_arguments(self):
-            # first, last = 'first', 'last'
-
-            reality = src.functions.w_keyword_arguments(
-                # first_input=first, last_input=last,
-                first_input=self.first,
-                last_input=self.last,
+            positional_arguments = (
+                src.functions.positional_arguments
             )
-            # my_expectation = (first, last)
-            my_expectation = (self.first, self.last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.w_keyword_arguments(
-                # last_input=last, first_input=first,
-                last_input=self.last,
-                first_input=self.first,
-            )
-            # my_expectation = (first, last)
-            my_expectation = (self.first, self.last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.w_keyword_arguments(
-                # last, first,
-                self.last, self.first,
-            )
-            # my_expectation = (last, first)
-            my_expectation = (self.last, self.first)
-            self.assertEqual(reality, my_expectation)
-
-            # zero, one = 0, 1
-            reality = src.functions.w_keyword_arguments(
-                # last_input=zero, first_input=one,
-                last_input=self.first_number,
-                first_input=self.second_number,
-            )
-            # my_expectation = (one, zero)
-            my_expectation = (
-                self.second_number, self.first_number
-            )
-            self.assertEqual(reality, my_expectation)
-
-            a_set = {0, 1, 2, 'n'}
+            # a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
-            reality = src.functions.w_keyword_arguments(
-                first_input=a_set,
-                last_input=a_dictionary,
-            )
-            my_expectation = (a_set, a_dictionary)
-            self.assertEqual(reality, my_expectation)
 
-            # a_tuple = (0, 1, 2, 'n')
-            # a_list = [0, 1, 2, 'n']
-            reality = src.functions.positional_arguments(
-                # first_input=a_list,
-                # last_input=a_tuple,
-                first_input=self.a_list,
-                last_input=self.a_tuple,
+            reality = positional_arguments(
+                last_input=a_dictionary,
+                # first_input=a_set,
+                first_input=self.a_set,
             )
-            # my_expectation = (a_list, a_tuple)
-            # my_expectation = (a_list, self.a_tuple)
-            my_expectation = (self.a_list, self.a_tuple)
+            # my_expectation = (a_set, a_dictionary)
+            my_expectation = (self.a_set, a_dictionary)
+            assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
         def test_args_and_kwargs(self):
@@ -5159,7 +5087,7 @@ extract a_set class attributes
     :emphasize-lines: 1-2
 
     git commit -am \
-    'extract a_set class attributes'
+    'extract a_set class attribute'
 
 ----
 
@@ -5167,14 +5095,80 @@ extract a_set class attributes
 extract a_dictionary class attribute
 *********************************************************************************
 
+* I add :ref:`class attribute<what is a class attribute?>` for ``{0, 1, 2, 'n'}``
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 7
+
+    class TestFunctions(unittest.TestCase):
+
+        first = 'first'
+        last = 'last'
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
+        a_dictionary = {0, 1, 2, 'n'}
+
+        def test_making_a_function_w_pass(self):
+
+* I use the new :ref:`class attributes<what is a class attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_positional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 152
+    :emphasize-lines: 4, 8-9, 11-12
+
+            keyword_arguments = (
+                src.functions.keyword_arguments
+            )
+            # a_dictionary = {0, 1, 2, 'n'}
+            a_dictionary = {'key': 'value'}
+
+            reality = keyword_arguments(
+                # a_dictionary, a_dictionary,
+                self.a_dictionary, a_dictionary,
+            )
+            # my_expectation = (a_dictionary, a_dictionary)
+            my_expectation = (self.a_dictionary, a_dictionary)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+        def test_keyword_arguments(self):
+
+  still green.
+
+* I use the new :ref:`class attributes<what is a class attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_keyword_arguments`
+
+  .. code-block:: python
+    :lineno-start: 215
+    :emphasize-lines: 4, 9-10, 12-13
+
+            positional_arguments = (
+                src.functions.positional_arguments
+            )
+            # a_dictionary = {0, 1, 2, 'n'}
+            a_dictionary = {'key': 'value'}
+
+            reality = positional_arguments(
+                last_input=a_dictionary,
+                # first_input=a_dictionary,
+                first_input=self.a_dictionary,
+            )
+            # my_expectation = (a_dictionary, a_dictionary)
+            my_expectation = (self.a_dictionary, a_dictionary)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+        def test_args_and_kwargs(self):
 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    git commit -am
-    'extract a_dict class attribute'
+    git commit -am \
+    'extract a_dictionary class attributes'
+
+----
 
 :ref:`I can use class attributes to remove repetition<what is a class attribute?>`
 
