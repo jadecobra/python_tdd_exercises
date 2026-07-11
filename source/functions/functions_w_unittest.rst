@@ -8,7 +8,7 @@
 test functions with unittest
 #################################################################################
 
-I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`functions` project.
+I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`functions` project. I also want to use :ref:`class attributes<what is a class attribute?>` to remove repetition of some values from the tests.
 
 ----
 
@@ -1859,8 +1859,8 @@ test_positional_arguments with unittest
     :lineno-start: 122
     :emphasize-lines: 1-6
 
-            a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
+            a_tuple = (0, 1, 2, 'n')
+            a_list = [0, 1, 2, 'n']
             assert (
                 positional_arguments(a_tuple, a_list)
             == (a_tuple, a_list)
@@ -1873,7 +1873,7 @@ test_positional_arguments with unittest
             keyword_arguments = (
                 src.functions.keyword_arguments
             )
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
             assert (
                 keyword_arguments(
@@ -1973,8 +1973,8 @@ green.
     :lineno-start: 134
     :emphasize-lines: 7-10
 
-            a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
+            a_tuple = (0, 1, 2, 'n')
+            a_list = [0, 1, 2, 'n']
             assert (
                 positional_arguments(a_tuple, a_list)
             == (a_tuple, a_list)
@@ -1991,7 +1991,7 @@ green.
             keyword_arguments = (
                 src.functions.keyword_arguments
             )
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
             assert (
                 keyword_arguments(
@@ -2065,8 +2065,8 @@ green.
     :lineno-start: 137
     :emphasize-lines: 7-8
 
-            a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
+            a_tuple = (0, 1, 2, 'n')
+            a_list = [0, 1, 2, 'n']
             assert (
                 positional_arguments(a_tuple, a_list)
             == (a_tuple, a_list)
@@ -2084,7 +2084,7 @@ green.
             keyword_arguments = (
                 src.functions.keyword_arguments
             )
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
             assert (
                 keyword_arguments(
@@ -2167,8 +2167,8 @@ green.
     :lineno-start: 145
     :emphasize-lines: 4-6
 
-            a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
+            a_tuple = (0, 1, 2, 'n')
+            a_list = [0, 1, 2, 'n']
 
             reality = positional_arguments(
                 a_tuple, a_list
@@ -2191,7 +2191,7 @@ green.
             keyword_arguments = (
                 src.functions.keyword_arguments
             )
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
 
             reality = keyword_arguments(
@@ -2281,8 +2281,8 @@ green.
     :lineno-start: 151
     :emphasize-lines: 8-11, 13-18
 
-            a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
+            a_tuple = (0, 1, 2, 'n')
+            a_list = [0, 1, 2, 'n']
 
             reality = positional_arguments(
                 a_tuple, a_list
@@ -2307,7 +2307,7 @@ green.
             keyword_arguments = (
                 src.functions.keyword_arguments
             )
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
 
             reality = keyword_arguments(
@@ -2375,8 +2375,8 @@ green.
   .. code-block:: python
     :lineno-start: 124
 
-            a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
+            a_tuple = (0, 1, 2, 'n')
+            a_list = [0, 1, 2, 'n']
 
             reality = positional_arguments(
                 a_tuple, a_list
@@ -2391,7 +2391,7 @@ green.
             keyword_arguments = (
                 src.functions.keyword_arguments
             )
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
 
             reality = keyword_arguments(
@@ -2467,8 +2467,8 @@ test_keyword_arguments with unittest
     :lineno-start: 172
     :emphasize-lines: 1-9
 
-            a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
+            a_tuple = (0, 1, 2, 'n')
+            a_list = [0, 1, 2, 'n']
             assert (
                 keyword_arguments(
                     first_input=a_tuple,
@@ -2484,7 +2484,7 @@ test_keyword_arguments with unittest
             positional_arguments = (
                 src.functions.positional_arguments
             )
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
             assert (
                 positional_arguments(
@@ -2598,8 +2598,8 @@ green again.
     :lineno-start: 191
     :emphasize-lines: 10-16
 
-            a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
+            a_tuple = (0, 1, 2, 'n')
+            a_list = [0, 1, 2, 'n']
             assert (
                 keyword_arguments(
                     first_input=a_tuple,
@@ -2622,7 +2622,7 @@ green again.
             positional_arguments = (
                 src.functions.positional_arguments
             )
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
             assert (
                 positional_arguments(
@@ -2711,8 +2711,8 @@ green again.
     :lineno-start: 194
     :emphasize-lines: 10-11
 
-            a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
+            a_tuple = (0, 1, 2, 'n')
+            a_list = [0, 1, 2, 'n']
             assert (
                 keyword_arguments(
                     first_input=a_tuple,
@@ -2736,7 +2736,7 @@ green again.
             positional_arguments = (
                 src.functions.positional_arguments
             )
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
             assert (
                 positional_arguments(
@@ -2840,8 +2840,8 @@ green again.
     :lineno-start: 208
     :emphasize-lines: 4-8
 
-            a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
+            a_tuple = (0, 1, 2, 'n')
+            a_list = [0, 1, 2, 'n']
 
             reality = keyword_arguments(
                 first_input=a_tuple,
@@ -2871,7 +2871,7 @@ green again.
             positional_arguments = (
                 src.functions.positional_arguments
             )
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
 
             reality = positional_arguments(
@@ -2983,8 +2983,8 @@ green again.
     :lineno-start: 214
     :emphasize-lines: 9-15, 17-25
 
-            a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
+            a_tuple = (0, 1, 2, 'n')
+            a_list = [0, 1, 2, 'n']
 
             reality = keyword_arguments(
                 first_input=a_tuple,
@@ -3016,7 +3016,7 @@ green again.
             positional_arguments = (
                 src.functions.positional_arguments
             )
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
 
             reality = positional_arguments(
@@ -3093,8 +3093,8 @@ green again.
   .. code-block:: python
     :lineno-start: 174
 
-            a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
+            a_tuple = (0, 1, 2, 'n')
+            a_list = [0, 1, 2, 'n']
 
             reality = keyword_arguments(
                 first_input=a_tuple,
@@ -3110,7 +3110,7 @@ green again.
             positional_arguments = (
                 src.functions.positional_arguments
             )
-            a_set = {1, 2, 3, 'n'}
+            a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
 
   .. code-block:: python
@@ -4013,7 +4013,7 @@ test_unknown_number_of_arguments with unittest
     :lineno-start: 281
     :emphasize-lines: 1-5
 
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
             assert (
                 unknown_number_of_arguments(*a_tuple)
             == (a_tuple, {})
@@ -4147,7 +4147,7 @@ green.
     :lineno-start: 300
     :emphasize-lines: 6-9
 
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
             assert (
                 unknown_number_of_arguments(*a_tuple)
             == (a_tuple, {})
@@ -4261,7 +4261,7 @@ green.
     :lineno-start: 303
     :emphasize-lines: 6-7
 
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
             assert (
                 unknown_number_of_arguments(*a_tuple)
             == (a_tuple, {})
@@ -4393,7 +4393,7 @@ green.
     :lineno-start: 318
     :emphasize-lines: 3-4
 
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
 
             reality = unknown_number_of_arguments(*a_tuple)
             my_expectation = (a_tuple, {})
@@ -4539,7 +4539,7 @@ green.
     :lineno-start: 324
     :emphasize-lines: 5-8, 10-15
 
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
 
             reality = unknown_number_of_arguments(*a_tuple)
             my_expectation = (a_tuple, {})
@@ -4651,7 +4651,7 @@ green.
   .. code-block:: python
     :lineno-start: 284
 
-            a_tuple = (1, 2, 3, 'n')
+            a_tuple = (0, 1, 2, 'n')
 
             reality = unknown_number_of_arguments(*a_tuple)
             my_expectation = (a_tuple, {})
@@ -4698,8 +4698,10 @@ green.
 ----
 
 *********************************************************************************
-extract class attributes
+extract first, last class attributes
 *********************************************************************************
+
+* I go back to the terminal_ where the tests are running
 
 * I add :ref:`class attributes<what is a class attribute?>` for ``'first'`` and ``'last'``
 
@@ -4718,7 +4720,7 @@ extract class attributes
 
   .. code-block:: python
     :lineno-start: 106
-    :emphasize-lines: 5, 7-8
+    :emphasize-lines: 5, 7-12
 
         def test_positional_arguments(self):
             positional_arguments = (
@@ -4737,7 +4739,7 @@ extract class attributes
 
   .. code-block:: python
     :lineno-start: 121
-    :emphasize-lines: 1-2
+    :emphasize-lines: 1-6
 
             # reality = positional_arguments(last, first)
             # my_expectation = (last, first)
@@ -4831,9 +4833,21 @@ extract class attributes
 
         def test_optional_arguments(self):
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract first, last class attributes'
+
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>`
+*********************************************************************************
+extract a_tuple class attributes
+*********************************************************************************
+
+* I add a :ref:`class attribute<what is a class attribute?>` for ``(0, 1, 2, 'n')``
 
   .. code-block:: python
     :lineno-start: 5
@@ -4850,119 +4864,71 @@ extract class attributes
 * I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``(0, 1, 2, 'n')`` from :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 137
-    :emphasize-lines: 27, 30-31, 33-34
+    :lineno-start: 131
+    :emphasize-lines: 6, 10-11, 13-14
 
-        def test_positional_arguments(self):
-            # first, last = 'first', 'last'
-
-            reality = src.functions.positional_arguments(
-                # first, last,
-                self.first, self.last,
-            )
-            # my_expectation = (first, last)
-            my_expectation = (self.first, self.last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.positional_arguments(
-                # last, first,
-                self.last, self.first,
-            )
-            # my_expectation = (last, first)
-            my_expectation = (self.last, self.first)
-            self.assertEqual(reality, my_expectation)
-
-            first_number, second_number = 0, 1
-            reality = src.functions.positional_arguments(
-                first_number, second_number,
-            )
-            my_expectation = (first_number, second_number)
+            reality = positional_arguments(0, 1)
+            my_expectation = (0, 1)
+            assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
             # a_tuple = (0, 1, 2, 'n')
             a_list = [0, 1, 2, 'n']
-            reality = src.functions.positional_arguments(
-                # a_tuple, a_list,
-                self.a_tuple, a_list,
+
+            reality = positional_arguments(
+                # a_tuple, a_list
+                self.a_tuple, a_list
             )
             # my_expectation = (a_tuple, a_list)
             my_expectation = (self.a_tuple, a_list)
+            assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
-
-        def test_keyword_arguments(self):
 
   still green.
 
 * I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``(0, 1, 2, 'n')`` from :ref:`test_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 173
-    :emphasize-lines: 46, 50-51, 53-54
+    :lineno-start: 187
+    :emphasize-lines: 8, 12-13, 16-17
 
-        def test_keyword_arguments(self):
-            # first, last = 'first', 'last'
-
-            reality = src.functions.w_keyword_arguments(
-                # first_input=first, last_input=last,
-                first_input=self.first,
-                last_input=self.last,
+            reality = keyword_arguments(
+                last_input=0, first_input=1,
             )
-            # my_expectation = (first, last)
-            my_expectation = (self.first, self.last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.w_keyword_arguments(
-                # last_input=last, first_input=first,
-                last_input=self.last,
-                first_input=self.first,
-            )
-            # my_expectation = (first, last)
-            my_expectation = (self.first, self.last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.w_keyword_arguments(
-                # last, first,
-                self.last, self.first,
-            )
-            # my_expectation = (last, first)
-            my_expectation = (self.last, self.first)
-            self.assertEqual(reality, my_expectation)
-
-            zero, one = 0, 1
-            reality = src.functions.w_keyword_arguments(
-                last_input=zero, first_input=one,
-            )
-            my_expectation = (one, zero)
-            self.assertEqual(reality, my_expectation)
-
-            a_set = {0, 1, 2, 'n'}
-            a_dictionary = {'key': 'value'}
-            reality = src.functions.w_keyword_arguments(
-                first_input=a_set,
-                last_input=a_dictionary,
-            )
-            my_expectation = (a_set, a_dictionary)
+            my_expectation = (1, 0)
+            assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
             # a_tuple = (0, 1, 2, 'n')
             a_list = [0, 1, 2, 'n']
-            reality = src.functions.positional_arguments(
-                first_input=a_list,
-                # last_input=a_tuple,
-                last_input=self.a_tuple,
-            )
-            # my_expectation = (a_list, a_tuple)
-            my_expectation = (a_list, self.a_tuple)
-            self.assertEqual(reality, my_expectation)
 
-        def test_args_and_kwargs(self):
+            reality = keyword_arguments(
+                # first_input=a_tuple,
+                first_input=self.a_tuple,
+                last_input=a_list,
+            )
+            # my_expectation = (a_tuple, a_list)
+            my_expectation = (self.a_tuple, a_list)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
   the test is still green.
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract a_tuple class attribute'
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>`
+*********************************************************************************
+extract a_list class attributes
+*********************************************************************************
+
+* I add a :ref:`class attribute<what is a class attribute?>` for ``[0, 1, 2, 'n']``
 
   .. code-block:: python
     :lineno-start: 5
@@ -4980,122 +4946,75 @@ extract class attributes
 * I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``[0, 1, 2, 'n']`` from :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 138
-    :emphasize-lines: 28, 31-32, 34-35
+    :lineno-start: 132
+    :emphasize-lines: 7, 11-12, 15-16
 
-        def test_positional_arguments(self):
-            # first, last = 'first', 'last'
-
-            reality = src.functions.positional_arguments(
-                # first, last,
-                self.first, self.last,
-            )
-            # my_expectation = (first, last)
-            my_expectation = (self.first, self.last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.positional_arguments(
-                # last, first,
-                self.last, self.first,
-            )
-            # my_expectation = (last, first)
-            my_expectation = (self.last, self.first)
-            self.assertEqual(reality, my_expectation)
-
-            first_number, second_number = 0, 1
-            reality = src.functions.positional_arguments(
-                first_number, second_number,
-            )
-            my_expectation = (first_number, second_number)
+            reality = positional_arguments(0, 1)
+            my_expectation = (0, 1)
+            assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
             # a_tuple = (0, 1, 2, 'n')
             # a_list = [0, 1, 2, 'n']
-            reality = src.functions.positional_arguments(
-                # a_tuple, a_list,
-                # self.a_tuple, a_list,
-                self.a_tuple, self.a_list,
+
+            reality = positional_arguments(
+                # a_tuple, a_list
+                # self.a_tuple, a_list
+                self.a_tuple, self.a_list
             )
             # my_expectation = (a_tuple, a_list)
             # my_expectation = (self.a_tuple, a_list)
             my_expectation = (self.a_tuple, self.a_list)
+            assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
-
-        def test_keyword_arguments(self):
 
   still green.
 
 * I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``[0, 1, 2, 'n']`` from :ref:`test_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 176
-    :emphasize-lines: 47, 49, 51, 55-56
+    :lineno-start: 190
+    :emphasize-lines: 9, 14-15, 18-19
 
-        def test_keyword_arguments(self):
-            # first, last = 'first', 'last'
-
-            reality = src.functions.w_keyword_arguments(
-                # first_input=first, last_input=last,
-                first_input=self.first,
-                last_input=self.last,
+            reality = keyword_arguments(
+                last_input=0, first_input=1,
             )
-            # my_expectation = (first, last)
-            my_expectation = (self.first, self.last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.w_keyword_arguments(
-                # last_input=last, first_input=first,
-                last_input=self.last,
-                first_input=self.first,
-            )
-            # my_expectation = (first, last)
-            my_expectation = (self.first, self.last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.w_keyword_arguments(
-                # last, first,
-                self.last, self.first,
-            )
-            # my_expectation = (last, first)
-            my_expectation = (self.last, self.first)
-            self.assertEqual(reality, my_expectation)
-
-            zero, one = 0, 1
-            reality = src.functions.w_keyword_arguments(
-                last_input=zero, first_input=one,
-            )
-            my_expectation = (one, zero)
-            self.assertEqual(reality, my_expectation)
-
-            a_set = {0, 1, 2, 'n'}
-            a_dictionary = {'key': 'value'}
-            reality = src.functions.w_keyword_arguments(
-                first_input=a_set,
-                last_input=a_dictionary,
-            )
-            my_expectation = (a_set, a_dictionary)
+            my_expectation = (1, 0)
+            assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
             # a_tuple = (0, 1, 2, 'n')
             # a_list = [0, 1, 2, 'n']
-            reality = src.functions.positional_arguments(
-                # first_input=a_list,
-                # last_input=a_tuple,
-                first_input=self.a_list,
-                last_input=self.a_tuple,
-            )
-            # my_expectation = (a_list, a_tuple)
-            # my_expectation = (a_list, self.a_tuple)
-            my_expectation = (self.a_list, self.a_tuple)
-            self.assertEqual(reality, my_expectation)
 
-        def test_args_and_kwargs(self):
+            reality = keyword_arguments(
+                # first_input=a_tuple,
+                first_input=self.a_tuple,
+                # last_input=a_list,
+                last_input=self.a_list,
+            )
+            # my_expectation = (a_tuple, a_list)
+            # my_expectation = (self.a_tuple, a_list)
+            my_expectation = (self.a_tuple, self.a_list)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
   green.
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract a_list class attribute'
+
 ----
 
-* I add :ref:`class attribute<what is a class attribute?>`
+*********************************************************************************
+extract first_number, second_number class attributes
+*********************************************************************************
+
+* I add :ref:`class attribute<what is a class attribute?>` for ``0`` and ``1``
 
   .. code-block:: python
     :lineno-start: 5
@@ -5322,21 +5241,44 @@ extract class attributes
 
         def test_args_and_kwargs(self):
 
-* I add a git_ commit message
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'extract class attributes'
-
-:ref:`I can use class attributes to remove repetition<what is a class attribute?>`
+    git commit -am \
+    'extract first_number, second_number class attributes'
 
 ----
 
+*********************************************************************************
+extract a_set class attribute
+*********************************************************************************
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract a_set class attribute'
+
+----
+
+*********************************************************************************
+extract a_dictionary class attribute
+*********************************************************************************
 
 
+* I add a git_ commit message in the other terminal_
 
+  .. code-block:: python
+    :emphasize-lines: 1-2
 
+    git commit -am
+    'extract a_dict class attribute'
+
+:ref:`I can use class attributes to remove repetition<what is a class attribute?>`
 
 
 
@@ -5374,7 +5316,8 @@ close the project
 review
 *********************************************************************************
 
-I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`.
+* I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`.
+* I can use :ref:`class attributes<what is a class attribute?>` for things that repeat (when they are constants), which allows :ref:`methods<what is a method?>` of the same :ref:`class<everything is an object>` to use them.
 
 ----
 

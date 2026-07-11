@@ -834,8 +834,8 @@ move positional_arguments function
     :lineno-start: 114
     :emphasize-lines: 11-13
 
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
         assert (
             keyword_arguments(
                 first_input=a_tuple,
@@ -847,7 +847,7 @@ move positional_arguments function
         positional_arguments = (
             src.functions.positional_arguments
         )
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         a_dictionary = {'key': 'value'}
         assert (
             positional_arguments(
@@ -953,7 +953,7 @@ move keyword_arguments function
     :lineno-start: 74
     :emphasize-lines: 11-12
 
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         a_dictionary = {'key': 'value'}
         assert (
             keyword_arguments(
@@ -1014,8 +1014,8 @@ move keyword_arguments function
          == (1, 0)
         )
 
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
         assert (
             keyword_arguments(
                 first_input=a_tuple,
@@ -1027,7 +1027,7 @@ move keyword_arguments function
         positional_arguments = (
             src.functions.positional_arguments
         )
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         a_dictionary = {'key': 'value'}
         assert (
             positional_arguments(
@@ -1077,8 +1077,8 @@ move keyword_arguments function
     :lineno-start: 67
     :emphasize-lines: 8-10
 
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
         assert (
             positional_arguments(a_tuple, a_list)
          == (a_tuple, a_list)
@@ -1087,7 +1087,7 @@ move keyword_arguments function
         keyword_arguments = (
             src.functions.keyword_arguments
         )
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         a_dictionary = {'key': 'value'}
         assert (
             keyword_arguments(
@@ -1148,8 +1148,8 @@ move keyword_arguments function
          == (0, 1)
         )
 
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
         assert (
             positional_arguments(a_tuple, a_list)
          == (a_tuple, a_list)
@@ -1158,7 +1158,7 @@ move keyword_arguments function
         keyword_arguments = (
             src.functions.keyword_arguments
         )
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         a_dictionary = {'key': 'value'}
         assert (
             keyword_arguments(
@@ -1598,7 +1598,7 @@ move unknown_number_of_arguments function
          == (a_tuple, a_dictionary)
         )
 
-        a_tuple = (1, 2, 3, 'n')
+        a_tuple = (0, 1, 2, 'n')
         assert (
             unknown_number_of_arguments(*a_tuple)
          == (a_tuple, {})

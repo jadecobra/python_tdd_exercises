@@ -113,8 +113,8 @@ class TestFunctions(unittest.TestCase):
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
 
         reality = positional_arguments(
             a_tuple, a_list
@@ -126,7 +126,7 @@ class TestFunctions(unittest.TestCase):
         keyword_arguments = (
             src.functions.keyword_arguments
         )
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         a_dictionary = {'key': 'value'}
 
         reality = keyword_arguments(
@@ -163,8 +163,8 @@ class TestFunctions(unittest.TestCase):
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
-        a_tuple = (1, 2, 3, 'n')
-        a_list = [1, 2, 3, 'n']
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
 
         reality = keyword_arguments(
             first_input=a_tuple,
@@ -177,7 +177,7 @@ class TestFunctions(unittest.TestCase):
         positional_arguments = (
             src.functions.positional_arguments
         )
-        a_set = {1, 2, 3, 'n'}
+        a_set = {0, 1, 2, 'n'}
         a_dictionary = {'key': 'value'}
 
         reality = positional_arguments(
@@ -273,7 +273,7 @@ class TestFunctions(unittest.TestCase):
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
-        a_tuple = (1, 2, 3, 'n')
+        a_tuple = (0, 1, 2, 'n')
 
         reality = unknown_number_of_arguments(*a_tuple)
         my_expectation = (a_tuple, {})
