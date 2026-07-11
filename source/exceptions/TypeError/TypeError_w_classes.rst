@@ -1011,22 +1011,20 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-so far I know
-
-* :ref:`how to make a Python test driven development environment manually`
-* :ref:`what a Python module is<what is a module?>`
-* :ref:`how to run tests automatically`
-* :ref:`what an assertion is<what is an assertion?>`
-* :ref:`how to make functions<what is a function?>`
-* :ref:`how to make a person with strings`
-* :ref:`how to make functions that take input<functions that take input>`
-* :ref:`what causes TypeError<what causes TypeError?>`
-* :ref:`how to place values in strings<telephone>`
-* :ref:`how to make a person say hello with f-strings<how to make a person with f-strings>`
-* :ref:`how to separate tests from solutions<separate and equal>`
-* :ref:`what causes AttributeError<what causes AttributeError?>`
-* :ref:`how to make a person with a class<how to make a person with a class>`
-* :ref:`that everything in Python is an object<everything is an object>`
+* :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know what a Python module is<what is a module?>`.
+* :ref:`I know how to run tests automatically<how to run tests automatically>`.
+* :ref:`I know what an assertion is<what is an assertion?>`.
+* :ref:`I know how to make functions<what is a function?>`.
+* :ref:`I know how to make a person with strings<how to make a person with strings>`.
+* :ref:`I know how to make functions that take input<functions that take input>`.
+* :ref:`I know what causes TypeError<what causes TypeError?>`.
+* :ref:`I know how to place values in strings<telephone>`.
+* :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
+* :ref:`I know how to separate tests from solutions<separate and equal>`.
+* :ref:`I know what causes AttributeError<what causes AttributeError?>`.
+* :ref:`I know how to make a person with a class<how to make a person with a class>`.
+* :ref:`I know that everything in Python is an object<everything is an object>`.
 
 :ref:`Would you like to see another way to write tests?<another way to write tests>`
 

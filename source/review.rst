@@ -258,7 +258,7 @@ TypeError review
 
 Questions to think about as I go through the chapter
 
-* :ref:`what causes TypeError<what causes TypeError?>`
+* :ref:`I know what causes TypeError<what causes TypeError?>`.
 * :ref:`are data structures callable?<test_type_error_w_the_uncallables>`
 * :ref:`what happens when I call a function and do not send the right number of inputs?<test_type_error_w_function_signatures>`
 * :ref:`what happens when I try objects that do not mix?<test_type_error_w_objects_that_do_not_mix>`
@@ -320,11 +320,9 @@ testing
 what is next?
 *************************************************************************************
 
-after that review I can confidently say I know something about Python_, I know
-
-* :ref:`how to make a Python test driven development environment manually`
-* :ref:`what an assertion is<what is an assertion?>`
-* :ref:`how to make functions<what is a function?>`
+* :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know what an assertion is<what is an assertion?>`.
+* :ref:`I know how to make functions<what is a function?>`.
 * :ref:`how to pass values from tests to functions<telephone>`
 * :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<what are booleans?>`

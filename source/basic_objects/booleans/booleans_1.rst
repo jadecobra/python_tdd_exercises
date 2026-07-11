@@ -3740,17 +3740,15 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-you now know
-
-* :ref:`how to make a Python test driven development environment manually`
-* :ref:`what an assertion is<what is an assertion?>`
-* :ref:`how to make functions<what is a function?>`
+* :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know what an assertion is<what is an assertion?>`.
+* :ref:`I know how to make functions<what is a function?>`.
 * :ref:`how to pass values from tests to functions<telephone>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`how to make classes<classes>`
 * :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
 * :ref:`what happens when classes have one or more parents<family ties>`
-* :ref:`what causes AttributeError<what causes AttributeError?>`
+* :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`what None is and is not<what is None?>`
 * :ref:`how to use the assertIsNotNone and assertIsNone methods<test AssertionError with assertIsNotNone and assertIsNone>`
 * :ref:`what booleans are<what are booleans?>`

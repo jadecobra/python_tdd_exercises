@@ -3181,13 +3181,11 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-I know
-
-* :ref:`how to make a Python test driven development environment manually`
-* :ref:`what an assertion is<what is an assertion?>`
-* :ref:`how to make functions<what is a function?>`
+* :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know what an assertion is<what is an assertion?>`.
+* :ref:`I know how to make functions<what is a function?>`.
 * :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`what None is<what is None?>`
+* :ref:`I know what None is<what is None?>`.
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`

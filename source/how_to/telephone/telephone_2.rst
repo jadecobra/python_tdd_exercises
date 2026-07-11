@@ -2557,11 +2557,9 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-I now know:
-
-* :ref:`how to make a Python test driven development environment manually`
-* :ref:`what an assertion is<what is an assertion?>`
-* :ref:`how to make functions<what is a function?>`
+* :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know what an assertion is<what is an assertion?>`.
+* :ref:`I know how to make functions<what is a function?>`.
 * :ref:`how to pass values from tests to functions<telephone>`
 
 :ref:`would you like to test using dictionaries and functions to make a person?<how to make a person>`

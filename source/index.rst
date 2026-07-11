@@ -44,11 +44,9 @@ table of contents
   make a person with f-strings<how_to/make_person/make_person_w_fstrings>
   make a person with a class<how_to/make_person/make_person_w_class>
   make a person with datetime<how_to/make_person/make_person_w_datetime>
-  basic_objects/none
-  make a person<how_to/make_person>
-  what are booleans?<basic_objects/booleans/index>
-  truth table<truth_table/index>
   make TDD automatically<make_tdd/make_tdd_automatically>
+  make a person with conditions<how_to/make_person/make_person_w_conditions>
+  make a person<how_to/make_person>
   handling Exceptions<exceptions/exception_handling/index>
   basic_objects/lists/index
   basic_objects/dictionaries/index
@@ -115,19 +113,7 @@ If you take one small step at a time you eventually get where you want to go
 join a HATCH with other Python Pumpers
 *********************************************************************************
 
-If you would like to work with me. I teach this course everyday from Monday to Friday in groups of 5. You can :ref:`sign up for the 8-week course here<join a HATCH>`
-
-----
-
-*********************************************************************************
-do you like videos?
-*********************************************************************************
-
-:ref:`There are videos for every chapter, check them out here<pumping python videos>`
-
-.. raw:: html
-
-  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=_H3teEnFxh8QC0Xo&amp;list=PL5lANtH-CRODKvc0QPDAOlsis6f9z-MDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+If you would like to work with me. I teach this course everyday from Monday to Friday in groups of five. You can :ref:`sign up for the 8-week course here<join a HATCH>`
 
 ----
 

@@ -639,11 +639,9 @@ how to view all the commands I typed to automate running tests
 what is next?
 *************************************************************************************
 
-I know
-
-* :ref:`how to make a Python test driven development environment manually`
-* :ref:`what a Python module is<what is a module?>`
-* :ref:`how to run tests automatically`
+* :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know what a Python module is<what is a module?>`.
+* :ref:`I know how to run tests automatically<how to run tests automatically>`.
 
 :ref:`Would you like to know what causes AssertionError<what causes AssertionError?>`
 

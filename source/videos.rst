@@ -18,7 +18,7 @@ If you prefer videos to text, here are videos for some of the chapters in the bo
 
     <iframe style="border-radius:12px" width="560"  height="315" src="https://www.youtube-nocookie.com/embed/CLC1YAHHbjU?si=0agM3_IhWmUYpTln" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-* :ref:`what an assertion is<what is an assertion?>`
+* :ref:`I know what an assertion is<what is an assertion?>`.
 
   .. raw:: html
 
@@ -98,7 +98,7 @@ If you prefer videos to text, here are videos for some of the chapters in the bo
 
     <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/xjfTE33FZyM?si=QGhkDEvHmMaJKLXB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-* :ref:`what causes TypeError<what causes TypeError?>`
+* :ref:`I know what causes TypeError<what causes TypeError?>`.
 
   .. raw:: html
 
@@ -116,7 +116,7 @@ If you prefer videos to text, here are videos for some of the chapters in the bo
 
     <iframe style="border-radius:12px" width="560"  height="315" src="https://www.youtube-nocookie.com/embed/MAzF1fF-mwg?si=4mUekNwDAFGboUlM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-* :ref:`what causes AttributeError<what causes AttributeError?>`
+* :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 
   .. raw:: html
 

@@ -824,14 +824,12 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-I know
-
-* :ref:`how to make a Python test driven development environment manually`
-* :ref:`what a Python module is<what is a module?>`
-* :ref:`how to run tests automatically`
-* :ref:`what an assertion is<what is an assertion?>`
-* :ref:`how to make functions<what is a function?>`
-* :ref:`how to make a person with strings`
+* :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know what a Python module is<what is a module?>`.
+* :ref:`I know how to run tests automatically<how to run tests automatically>`.
+* :ref:`I know what an assertion is<what is an assertion?>`.
+* :ref:`I know how to make functions<what is a function?>`.
+* :ref:`I know how to make a person with strings<how to make a person with strings>`.
 
 :ref:`Would you like to test functions with input?<functions that take input>`
 

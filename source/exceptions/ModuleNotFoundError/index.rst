@@ -908,10 +908,8 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-I know
-
-* :ref:`how to make a Python test driven development environment manually`
-* :ref:`what a Python module is<what is a module?>`
+* :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know what a Python module is<what is a module?>`.
 
 :ref:`Would you like to see how to run tests automatically?<how to run tests automatically>`
 
