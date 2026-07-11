@@ -63,7 +63,7 @@ open the project
 ----
 
 *********************************************************************************
-test_making_a_function_w_pass with None
+test_making_a_function_w_pass with assertIsNone
 *********************************************************************************
 
 =================================================================================
@@ -168,7 +168,7 @@ the test passes.
 ----
 
 *********************************************************************************
-test_making_a_function_w_return with None
+test_making_a_function_w_return with assertIsNone
 *********************************************************************************
 
 =================================================================================
@@ -271,7 +271,7 @@ the test passes.
 ----
 
 *********************************************************************************
-test_making_a_function_w_return_none with None
+test_making_a_function_w_return_none with assertIsNone
 *********************************************************************************
 
 =================================================================================
@@ -287,7 +287,7 @@ I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<
   :emphasize-lines: 6
 
       def test_making_a_function_w_return_none(self):
-          result = src.functions.w_return()
+          result = src.functions.w_return_none()
 
           assert result is None
           self.assertIs(result, None)
@@ -316,7 +316,7 @@ I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to
   :emphasize-lines: 6-7
 
       def test_making_a_function_w_return_none(self):
-          result = src.functions.w_return()
+          result = src.functions.w_return_none()
 
           assert result is None
           self.assertIs(result, None)
@@ -341,7 +341,7 @@ the test passes.
     :lineno-start: 13
 
         def test_making_a_function_w_return_none(self):
-            result = src.functions.w_return()
+            result = src.functions.w_return_none()
             self.assertIsNone(result)
 
         def test_what_happens_after_functions_return(self):
@@ -350,12 +350,14 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 2-4
+    :emphasize-lines: 2-6
 
         def test_making_a_function_w_return_none(self):
-            # result = src.functions.w_return()
+            # result = src.functions.w_return_none()
             # self.assertIsNone(result)
-            self.assertIsNone(src.functions.w_return())
+            self.assertIsNone(
+                src.functions.w_return_none()
+            )
 
         def test_what_happens_after_functions_return(self):
 
@@ -367,9 +369,114 @@ the test passes.
     :lineno-start: 13
 
         def test_making_a_function_w_return_none(self):
-            self.assertIsNone(src.functions.w_return())
+            self.assertIsNone(
+                src.functions.w_return_none()
+            )
 
         def test_what_happens_after_functions_return(self):
+
+----
+
+*********************************************************************************
+test_what_happens_after_functions_return with assertIsNone
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<another way to test if something is NOT None>` in :ref:`test_what_happens_after_functions_return`
+
+.. code-block:: python
+  :lineno-start: 18
+  :emphasize-lines: 6
+
+      def test_what_happens_after_functions_return(self):
+          result = src.functions.return_leaves_the_function()
+
+          assert result is None
+          self.assertIs(result, None)
+          self.assertIsNotNone(result)
+
+      def test_constant_function(self):
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  AssertionError: unexpectedly None
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to :ref:`assertIsNone<another way to test if something is None>`
+
+.. code-block:: python
+  :lineno-start: 18
+  :emphasize-lines: 6-7
+
+      def test_what_happens_after_functions_return(self):
+          result = src.functions.return_leaves_the_function()
+
+          assert result is None
+          self.assertIs(result, None)
+          # self.assertIsNotNone(result)
+          self.assertIsNone(result)
+
+      def test_constant_function(self):
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented line, ``assert result is None`` and ``self.assertIs(result, None)``
+
+  .. code-block:: python
+    :lineno-start: 18
+
+        def test_what_happens_after_functions_return(self):
+            result = src.functions.return_leaves_the_function()
+            self.assertIsNone(result)
+
+        def test_constant_function(self):
+
+* I no longer need the ``result`` :ref:`variable<what is a variable?>` since it is only used once
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 2-4
+
+        def test_what_happens_after_functions_return(self):
+            # result = src.functions.return_leaves_the_function()
+            # self.assertIsNone(result)
+            self.assertIsNone(src.functions.return_leaves_the_function())
+
+        def test_constant_function(self):
+
+  the test is still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 18
+
+        def test_what_happens_after_functions_return(self):
+            self.assertIsNone(src.functions.return_leaves_the_function())
+
+        def test_constant_function(self):
 
 
 
