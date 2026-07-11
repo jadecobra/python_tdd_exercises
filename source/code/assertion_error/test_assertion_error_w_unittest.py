@@ -184,7 +184,7 @@ class TestAssertionError(unittest.TestCase):
 # False is False and equal to False
 # False is not None and NOT equal to None
 # None is not True and NOT equal to True
-# None is not False and NOT equal to True
+# None is not False and NOT equal to False
 # None is None and equal to None
 
 

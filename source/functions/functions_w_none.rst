@@ -4734,7 +4734,7 @@ I can use the :ref:`unittest library<another way to write tests>` to write tests
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<test functions with unittest: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test functions with assertIsNotNone and assertIsNone>`
 
 ----
 
@@ -4759,6 +4759,8 @@ So far, I know
 * :ref:`how to make a person with a class<how to make a person with a class>`
 * :ref:`that everything in Python is an object<everything is an object>`
 * :ref:`how to use the unittest library<another way to write tests>`
+* :ref:`how to calculate age with the datetime library<test person with datetime>`
+* :ref:`what None is<what is None?>`
 
 :ref:`Would you like to test the person project with the unittest library?<test person with unittest>`
 

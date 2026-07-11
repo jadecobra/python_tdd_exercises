@@ -28,15 +28,44 @@ class TestAssertionError(unittest.TestCase):
         self.assertEqual(reality, my_expectation)
 
     def test_assertion_error_w_none(self):
+        assert None is None
+        self.assertIs(None, None)
         self.assertIsNone(None)
+
+        assert False is not None
+        self.assertIsNot(False, None)
         self.assertIsNotNone(False)
+
+        assert True is not None
+        self.assertIsNot(True, None)
         self.assertIsNotNone(True)
+
+        assert self.an_integer is not None
+        self.assertIsNot(self.an_integer, None)
         self.assertIsNotNone(self.an_integer)
+
+        assert self.a_float is not None
+        self.assertIsNot(self.a_float, None)
         self.assertIsNotNone(self.a_float)
+
+        assert self.a_string is not None
+        self.assertIsNot(self.a_string, None)
         self.assertIsNotNone(self.a_string)
-        self.assertNotNone(self.a_tuple)
+
+        assert self.a_tuple is not None
+        self.assertIsNot(self.a_tuple, None)
+        self.assertIsNotNone(self.a_tuple)
+
+        assert self.a_list is not None
+        self.assertIsNot(self.a_list, None)
         self.assertIsNotNone(self.a_list)
-        self.assertIsNoneNone(self.a_set)
+
+        assert self.a_set is not None
+        self.assertIsNot(self.a_set, None)
+        self.assertIsNotNone(self.a_set)
+
+        assert self.a_dictionary is not None
+        self.assertIsNot(self.a_dictionary, None)
         self.assertIsNotNone(self.a_dictionary)
 
     def test_assertion_error_w_false(self):
@@ -165,7 +194,7 @@ class TestAssertionError(unittest.TestCase):
 # False is False and equal to False
 # False is not None and NOT equal to None
 # None is not True and NOT equal to True
-# None is not False and NOT equal to True
+# None is not False and NOT equal to False
 # None is None and equal to None
 
 

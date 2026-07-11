@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Continuation of the assertion_error Python TDD project after unittest and the None chapter. Open the existing project (uv run pytest-watcher . --now, 7 passed), edit tests/test_assertion_error.py, and add assertIsNone / assertIsNotNone next to bare assert and assertIs / assertIsNot in test_assertion_error_w_none. Deliberately trigger AssertionError with the wrong method first: assertIsNotNone(None) → "unexpectedly None"; assertIsNone(False) → "False is not None"; same pattern for True, 0, 0.0, '', (), [], set(), {}. Then green with assertIsNone(None) and assertIsNotNone for every non-None value (False, True, empty containers, class attributes an_integer/a_float/…). Remove the commented wrong calls; keep the triple form (assert + assertIs* + assertIsNone/assertIsNotNone). Git commit 'use assertIsNotNone and assertIsNone'. Shows how None-specific unittest methods remove repeating None in assertIs(x, None) / assertIsNot(x, None) while still teaching raise-by-negation error strings. Pumping Python by Jacob Itegboje.
+  :keywords: Jacob Itegboje, Pumping Python, AssertionError assertIsNone, assertIsNotNone, unexpectedly None, False is not None, True is not None, 0 is not None, 0.0 is not None, '' is not None, () is not None, [] is not None, set() is not None, {} is not None, test_assertion_error_w_none, replace assertIs(x, None), assertIsNot(x, None), another way to test if something is None, another way to test if something is NOT None, None chapter continuation, assertion_error project, uv run pytest-watcher, remove the commented lines, red green refactor assertIsNone, python unittest assertIsNone beginner, TDD None identity tests, class attributes empty string list dict set tuple, test AssertionError with assertIsNotNone and assertIsNone
 
 .. include:: ../../links.rst
 
@@ -10,7 +10,7 @@ test AssertionError with assertIsNotNone and assertIsNone
 
 ----
 
-I used the :ref:`assertIsNotNone<another way to test if something is NOT None>` and :ref:`assertIsNone methods<another way to test if something is None>` to test :ref:`None<what is None?>`. I want to use them to replace :ref:`assertIs<test_assert_is>` and :ref:`assertIsNot<test_assert_is_not>` in :ref:`test_assertion_error_w_none<test_assertion_error_w_none>`.
+I used the :ref:`assertIsNotNone<another way to test if something is NOT None>` and :ref:`assertIsNone methods<another way to test if something is None>` to test :ref:`None<what is None?>`. I want to use them in :ref:`test_assertion_error_w_none<test_assertion_error_w_none>`.
 
 ----
 
@@ -20,7 +20,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../../code/assertion_error/test_assertion_error_3.py
+.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_none.py
   :language: python
   :linenos:
 
@@ -389,7 +389,7 @@ use assertIsNotNone and assertIsNone
 
             assert self.a_dictionary is not None
             self.assertIsNot(self.a_dictionary, None)
-            self.assertisNone(self.a_dictionary)
+            self.assertIsNone(self.a_dictionary)
 
         def test_assertion_error_w_false(self):
 
@@ -407,7 +407,7 @@ use assertIsNotNone and assertIsNone
 
             assert self.a_dictionary is not None
             self.assertIsNot(self.a_dictionary, None)
-            # self.assertisNone(self.a_dictionary)
+            # self.assertIsNone(self.a_dictionary)
             self.assertIsNotNone(self.a_dictionary)
 
         def test_assertion_error_w_false(self):
@@ -506,7 +506,7 @@ use assertIsNotNone and assertIsNone
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can use assertIsNotNone and assertIsNone instead of assertIsNot(x, None) and assertIs(x, None)<use assertIsNotNone and assertIsNone>`.
+:ref:`I can use assertIsNotNone and assertIsNone for assertIsNot(x, None) and assertIs(x, None)<use assertIsNotNone and assertIsNone>`.
 
 ----
 
@@ -539,7 +539,7 @@ close the project
 review
 *********************************************************************************
 
-I can use :ref:`assertIsNotNone<another way to test if something is NOT None>` and :ref:`assertIsNone methods<another way to test if something is None>` to remove repetition of :ref:`None<what is None?>` from :ref:`assertions<what is an assertion?>` that test if something is :ref:`None<what is None?>` or not - ``assertIs(x, None)`` and ``assertIsNot(x, None)``.
+I can use :ref:`assertIsNotNone<another way to test if something is NOT None>` and :ref:`assertIsNone methods<another way to test if something is None>` for :ref:`assertions<what is an assertion?>` that test if something is :ref:`None<what is None?>` or not - ``assertIs(x, None)`` and ``assertIsNot(x, None)``.
 
 ----
 
