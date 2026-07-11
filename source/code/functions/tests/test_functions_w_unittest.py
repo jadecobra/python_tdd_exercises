@@ -8,8 +8,8 @@ class TestFunctions(unittest.TestCase):
     last = 'last'
     a_tuple = (0, 1, 2, 'n')
     a_list = [0, 1, 2, 'n']
-    first_number = 0
-    second_number = 1
+    a_set = {0, 1, 2, 'n'}
+    a_dictionary = {'key': 'value'}
 
     def test_making_a_function_w_pass(self):
         result = src.functions.w_pass()
@@ -115,12 +115,14 @@ class TestFunctions(unittest.TestCase):
         reality = positional_arguments(
             self.first, self.last
         )
-        my_expectation = (first, last)
+        my_expectation = (self.first, self.last)
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
-        reality = positional_arguments(last, first)
-        my_expectation = (last, first)
+        reality = positional_arguments(
+            self.last, self.first
+        )
+        my_expectation = (self.last, self.first)
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
@@ -129,26 +131,24 @@ class TestFunctions(unittest.TestCase):
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
-        a_tuple = (0, 1, 2, 'n')
-        a_list = [0, 1, 2, 'n']
-
         reality = positional_arguments(
-            a_tuple, a_list
+            self.a_tuple, self.a_list
         )
-        my_expectation = (a_tuple, a_list)
+
+        my_expectation = (self.a_tuple, self.a_list)
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
         keyword_arguments = (
             src.functions.keyword_arguments
         )
-        a_set = {0, 1, 2, 'n'}
-        a_dictionary = {'key': 'value'}
 
         reality = keyword_arguments(
-            a_set, a_dictionary,
+            self.a_set, self.a_dictionary,
         )
-        my_expectation = (a_set, a_dictionary)
+        my_expectation = (
+            self.a_set, self.a_dictionary
+        )
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
@@ -156,19 +156,20 @@ class TestFunctions(unittest.TestCase):
         keyword_arguments = (
             src.functions.keyword_arguments
         )
-        first, last = 'first', 'last'
 
         reality = keyword_arguments(
-            first_input=first, last_input=last,
+            first_input=self.first,
+            last_input=self.last,
         )
-        my_expectation = (first, last)
+        my_expectation = (self.first, self.last)
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
         reality = keyword_arguments(
-            last_input=last, first_input=first,
+            last_input=self.last,
+            first_input=self.first,
         )
-        my_expectation = (first, last)
+        my_expectation = (self.first, self.last)
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
@@ -179,38 +180,33 @@ class TestFunctions(unittest.TestCase):
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
-        a_tuple = (0, 1, 2, 'n')
-        a_list = [0, 1, 2, 'n']
-
         reality = keyword_arguments(
-            first_input=a_tuple,
-            last_input=a_list,
+            first_input=self.a_tuple,
+            last_input=self.a_list,
         )
-        my_expectation = (a_tuple, a_list)
+        my_expectation = (self.a_tuple, self.a_list)
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
         positional_arguments = (
             src.functions.positional_arguments
         )
-        a_set = {0, 1, 2, 'n'}
-        a_dictionary = {'key': 'value'}
 
         reality = positional_arguments(
-            last_input=a_dictionary,
-            first_input=a_set,
+            last_input=self.a_dictionary,
+            first_input=self.a_set,
         )
-        my_expectation = (a_set, a_dictionary)
+        my_expectation = (
+            self.a_set, self.a_dictionary
+        )
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
     def test_args_and_kwargs(self):
-        first, last = 'first', 'last'
-
         reality = src.functions.args_and_kwargs(
-            first, last_input=last,
+            self.first, last_input=self.last,
         )
-        my_expectation = (first, last)
+        my_expectation = (self.first, self.last)
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 

@@ -4718,7 +4718,7 @@ I want to use :ref:`class attributes<what is a class attribute?>` to remove repe
 
         def test_making_a_function_w_pass(self):
 
-* I use the :ref:`class attributes<what is a class attribute?>` to remove repetition of ``'first'`` and ``'last'`` from :ref:`test_positional_arguments`
+* I use the :ref:`class attributes<what is a class attribute?>` for ``first`` and ``last`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 106
@@ -4756,7 +4756,7 @@ I want to use :ref:`class attributes<what is a class attribute?>` to remove repe
 
   the test is still green.
 
-* I use the :ref:`class attributes<what is a class attribute?>` to remove repetition of ``'first'`` and ``'last'`` from :ref:`test_keyword_arguments`
+* I use the :ref:`class attributes<what is a class attribute?>` for ``first`` and ``last`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 158
@@ -4798,7 +4798,7 @@ I want to use :ref:`class attributes<what is a class attribute?>` to remove repe
 
   still green.
 
-* I use the :ref:`class attributes<what is a class attribute?>` to remove ``'first'`` and ``'last'`` from :ref:`test_args_and_kwargs`
+* I use the :ref:`class attributes<what is a class attribute?>` for ``first`` and ``last`` in :ref:`test_args_and_kwargs`
 
   .. code-block:: python
     :lineno-start: 216
@@ -4863,7 +4863,7 @@ extract a_tuple class attribute
 
         def test_why_use_a_function(self):
 
-* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``(0, 1, 2, 'n')`` from :ref:`test_positional_arguments`
+* I use the new :ref:`class attribute<what is a class attribute?>` for ``a_tuple`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 131
@@ -4888,7 +4888,7 @@ extract a_tuple class attribute
 
   still green.
 
-* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``(0, 1, 2, 'n')`` from :ref:`test_keyword_arguments`
+* I use the new :ref:`class attribute<what is a class attribute?>` for ``a_tuple`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 187
@@ -4945,7 +4945,7 @@ extract a_list class attribute
 
         def test_why_use_a_function(self):
 
-* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``[0, 1, 2, 'n']`` from :ref:`test_positional_arguments`
+* I use the new :ref:`class attribute<what is a class attribute?>` for ``a_list`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 132
@@ -4972,7 +4972,7 @@ extract a_list class attribute
 
   still green.
 
-* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``[0, 1, 2, 'n']`` from :ref:`test_keyword_arguments`
+* I use the new :ref:`class attribute<what is a class attribute?>` for ``a_list`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 190
@@ -5081,6 +5081,8 @@ extract a_set class attribute
 
         def test_args_and_kwargs(self):
 
+  still green
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -5095,11 +5097,11 @@ extract a_set class attribute
 extract a_dictionary class attribute
 *********************************************************************************
 
-* I add :ref:`class attribute<what is a class attribute?>` for ``{0, 1, 2, 'n'}``
+* I add :ref:`class attribute<what is a class attribute?>` for ``a_dictionary``
 
   .. code-block:: python
     :lineno-start: 5
-    :emphasize-lines: 7
+    :emphasize-lines: 8
 
     class TestFunctions(unittest.TestCase):
 
@@ -5107,54 +5109,203 @@ extract a_dictionary class attribute
         last = 'last'
         a_tuple = (0, 1, 2, 'n')
         a_list = [0, 1, 2, 'n']
-        a_dictionary = {0, 1, 2, 'n'}
+        a_set = {0, 1, 2, 'n'}
+        a_dictionary = {'key': 'value'}
 
         def test_making_a_function_w_pass(self):
 
-* I use the new :ref:`class attributes<what is a class attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_positional_arguments`
+* I use the new :ref:`class attribute<what is a class attribute?>` for ``a_dictionary`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 152
-    :emphasize-lines: 4, 8-9, 11-12
+    :lineno-start: 153
+    :emphasize-lines: 5, 9-10, 13-16
 
             keyword_arguments = (
                 src.functions.keyword_arguments
             )
-            # a_dictionary = {0, 1, 2, 'n'}
-            a_dictionary = {'key': 'value'}
+            # a_set = {0, 1, 2, 'n'}
+            # a_dictionary = {'key': 'value'}
 
             reality = keyword_arguments(
-                # a_dictionary, a_dictionary,
-                self.a_dictionary, a_dictionary,
+                # a_set, a_dictionary,
+                # self.a_set, a_dictionary,
+                self.a_set, self.a_dictionary,
             )
-            # my_expectation = (a_dictionary, a_dictionary)
-            my_expectation = (self.a_dictionary, a_dictionary)
+            # my_expectation = (a_set, a_dictionary)
+            # my_expectation = (self.a_set, a_dictionary)
+            my_expectation = (
+                self.a_set, self.a_dictionary
+            )
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
         def test_keyword_arguments(self):
 
-  still green.
+  the test is still green.
 
-* I use the new :ref:`class attributes<what is a class attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_keyword_arguments`
+* I remove the commented lines from :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 215
-    :emphasize-lines: 4, 9-10, 12-13
+    :lineno-start: 105
+
+            result = add_x(9)
+            expectation = 12
+            assert result == expectation
+            self.assertEqual(result, expectation)
+
+        def test_positional_arguments(self):
+            positional_arguments = (
+                src.functions.positional_arguments
+            )
+
+            reality = positional_arguments(
+                self.first, self.last
+            )
+            my_expectation = (self.first, self.last)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 122
+
+            reality = positional_arguments(
+                self.last, self.first
+            )
+            my_expectation = (self.last, self.first)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 129
+
+            reality = positional_arguments(0, 1)
+            my_expectation = (0, 1)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 134
+
+            reality = positional_arguments(
+                self.a_tuple, self.a_list
+            )
+
+            my_expectation = (self.a_tuple, self.a_list)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            keyword_arguments = (
+                src.functions.keyword_arguments
+            )
+
+  .. code-block:: python
+    :lineno-start: 142
+
+            reality = keyword_arguments(
+                self.a_set, self.a_dictionary,
+            )
+            my_expectation = (
+                self.a_set, self.a_dictionary
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+        def test_keyword_arguments(self):
+
+* I use the new :ref:`class attributes<what is a class attribute?>` for ``a_dictionary`` in :ref:`test_keyword_arguments`
+
+  .. code-block:: python
+    :lineno-start: 203
+    :emphasize-lines: 5, 8-9, 14-17
 
             positional_arguments = (
                 src.functions.positional_arguments
             )
-            # a_dictionary = {0, 1, 2, 'n'}
-            a_dictionary = {'key': 'value'}
+            # a_set = {0, 1, 2, 'n'}
+            # a_dictionary = {'key': 'value'}
 
             reality = positional_arguments(
-                last_input=a_dictionary,
-                # first_input=a_dictionary,
-                first_input=self.a_dictionary,
+                # last_input=a_dictionary,
+                last_input=self.a_dictionary,
+                # first_input=a_set,
+                first_input=self.a_set,
             )
-            # my_expectation = (a_dictionary, a_dictionary)
-            my_expectation = (self.a_dictionary, a_dictionary)
+            # my_expectation = (a_set, a_dictionary)
+            # my_expectation = (self.a_set, a_dictionary)
+            my_expectation = (
+                self.a_set, self.a_dictionary
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+        def test_args_and_kwargs(self):
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_keyword_arguments`
+
+  .. code-block:: python
+    :lineno-start: 155
+
+        def test_keyword_arguments(self):
+            keyword_arguments = (
+                src.functions.keyword_arguments
+            )
+
+            reality = keyword_arguments(
+                first_input=self.first,
+                last_input=self.last,
+            )
+            my_expectation = (self.first, self.last)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 168
+
+            reality = keyword_arguments(
+                last_input=self.last,
+                first_input=self.first,
+            )
+            my_expectation = (self.first, self.last)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 176
+
+            reality = keyword_arguments(
+                last_input=0, first_input=1,
+            )
+            my_expectation = (1, 0)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 183
+
+            reality = keyword_arguments(
+                first_input=self.a_tuple,
+                last_input=self.a_list,
+            )
+            my_expectation = (self.a_tuple, self.a_list)
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+  .. code-block:: python
+    :lineno-start: 191
+
+            positional_arguments = (
+                src.functions.positional_arguments
+            )
+
+            reality = positional_arguments(
+                last_input=self.a_dictionary,
+                first_input=self.a_set,
+            )
+            my_expectation = (
+                self.a_set, self.a_dictionary
+            )
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
@@ -5168,16 +5319,9 @@ extract a_dictionary class attribute
     git commit -am \
     'extract a_dictionary class attributes'
 
-----
-
 :ref:`I can use class attributes to remove repetition<what is a class attribute?>`
 
-
-
-
-
-
-
+----
 
 *********************************************************************************
 close the project
@@ -5209,7 +5353,7 @@ review
 *********************************************************************************
 
 * I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`.
-* I can use :ref:`class attributes<what is a class attribute?>` for things that repeat (when they are constants), which allows :ref:`methods<what is a method?>` of the same :ref:`class<everything is an object>` to use them.
+* I can use :ref:`class attributes<what is a class attribute?>` for things that repeat so that :ref:`methods<what is a method?>` of the same :ref:`class<everything is an object>` can use them.
 
 ----
 
