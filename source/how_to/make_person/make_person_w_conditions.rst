@@ -13,9 +13,9 @@ how to make a person with conditions
 
 ----
 
-I want to be able to check if a person can get a license to drive, and if they can vote. In other words, I want something in the :ref:`person project<test person with datetime>` to make decisions based on :ref:`conditions<if statements>`, for example
+I want to be able to check if a person can vote, and if they can get a license. In other words, I want something in the :ref:`person project<test person with datetime>` to make decisions based on :ref:`conditions<if statements>`, for example
 
-* If a person is older than 18 and passes the driving test, the person can get a license.
+* If a person is older than 18 and passes the test, the person can get a license.
 * If a person is older than 18 and is a citizen, the person can vote.
 
 ----
@@ -249,26 +249,26 @@ can john vote?
 
 ----
 
-* I add a :ref:`call<how to call a function>` to ``can_vote`` from :ref:`test_john`
+I add a :ref:`call<how to call a function>` to ``can_vote`` from :ref:`test_john`
 
-  .. code-block:: python
-    :lineno-start: 145
-    :emphasize-lines: 4
+.. code-block:: python
+  :lineno-start: 145
+  :emphasize-lines: 4
 
-            reality = john.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-            self.assertEqual(john.can_vote(), False)
+          reality = john.say_hello()
+          assert reality == my_expectation
+          self.assertEqual(reality, my_expectation)
+          self.assertEqual(john.can_vote(), False)
 
-        def test_mary(self):
+      def test_mary(self):
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    AssertionError: True != False
+  AssertionError: True != False
 
-  the ``can_vote`` :ref:`method<what is a method?>` has to make a decision based on something.
+The ``can_vote`` :ref:`method<what is a method?>` has to make a decision based on something.
 
 ----
 
@@ -315,7 +315,8 @@ I want ``can_vote`` to return
   .. code-block:: python
 
     TypeError: Person.__init__() got
-               an unexpected keyword argument 'is_citizen'
+               an unexpected keyword argument
+               'is_citizen'
 
   because the :ref:`definition<how to make a function with input>` for the :ref:`__init__ method<the constructor method>` only takes five inputs (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``) and I :ref:`called<how to call a function with input>` it with ``is_citizen`` which is not one of those names.
 
@@ -402,7 +403,7 @@ I want ``can_vote`` to return
 
     NameError: name 'self' is not defined
 
-* I remove the :ref:`staticmethod decorator<what is the staticmethod decorator?>` from the ``can_vote`` :ref:`method<what is a method?>` then add ``self`` in the parentheses
+* I remove the :ref:`staticmethod decorator<what is the staticmethod decorator?>` from the ``can_vote`` :ref:`method<what is a method?>` then add ``self`` to the parentheses
 
   .. code-block:: python
     :lineno-start: 18
@@ -845,6 +846,19 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: False != True
 
+The ``can_get_license`` :ref:`method<what is a method?>` has to make a decision based on something.
+
+----
+
+*********************************************************************************
+add passed_test attribute
+*********************************************************************************
+
+I want ``can_get_license`` to return
+
+* :red:`False` for ``no`` the person cannot get a license if the person did not pass the test.
+* :green:`True` for ``yes`` the person can get a license if the person passed the test.
+
 ----
 
 =================================================================================
@@ -853,11 +867,44 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I add a :ref:`method definition<how to make a function that takes input>` to the :ref:`Person class<test Person class>` in ``person.py``
+* I add ``passed_test`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<test Person class>` for ``mary``
+
+  .. code-block:: python
+    :lineno-start: 184
+    :emphasize-lines: 7
+
+            mary = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+                is_citizen=False,
+                passed_test=True,
+            )
+
+            reality = mary.say_hello()
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+            self.assertEqual(mary.can_vote(), False)
+            self.assertEqual(mary.can_get_license(), True)
+
+        def test_person_is_citizen_younger_than_18(self):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person.__init__() got
+               an unexpected keyword argument
+               'passed_test'
+
+  because the :ref:`definition<how to make a function with input>` for the :ref:`__init__ method<the constructor method>` only takes six inputs (``self``, ``first_name``, ``last_name``, ``sex``, ``year_of_birth`` and ``is_citizen``). I :ref:`called<how to call a function with input>` it with ``passed_test`` which is not one of those names.
+
+* I add ``passed_test`` to the parentheses of the :ref:`__init__ method<the constructor method>`, in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 14-15
+    :emphasize-lines: 7
 
     class Person:
 
@@ -865,65 +912,109 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             self, first_name, last_name,
             sex, year_of_birth=None,
             is_citizen=True,
+            passed_test,
+        ):
+
+  the terminal_ is my friend, and shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: parameter without a default
+         follows parameter with a default
+
+  because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
+
+* I give ``passed_test`` a value to make it :ref:`optional<test_optional_arguments>`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 7-8
+
+    class Person:
+
+        def __init__(
+            self, first_name, last_name,
+            sex, year_of_birth=None,
+            is_citizen=True,
+            # passed_test,
+            passed_test=False,
+        ):
+
+  the terminal_ goes back to the :ref:`AssertionError<what causes AssertionError?>`.
+
+* I add a :ref:`class attribute<what is a class attribute?>` for ``passed_test`` so I can use it in the ``can_get_license`` :ref:`method<what is a method?>`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 15
+
+    class Person:
+
+        def __init__(
+            self, first_name, last_name,
+            sex, year_of_birth=None,
+            is_citizen=True,
+            # passed_test,
+            passed_test=False,
         ):
             self.first_name = first_name
             self.last_name = last_name
             self.year_of_birth = year_of_birth
             self.sex = sex
             self.is_citizen = is_citizen
+            self.passed_test = passed_test
 
-        def can_get_license():
-            return False
+        @staticmethod
 
-        def can_vote(self):
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`.
 
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: Person.can_get_license()
-               takes 0 positional arguments but 1 was given
-
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>`
+* I use ``self.passed_test`` in the ``can_get_license`` :ref:`method<what is a method?>`
 
   .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 1
+    :lineno-start: 20
+    :emphasize-lines: 3-4
 
         @staticmethod
         def can_get_license():
-            return False
+            # return False
+            return self.passed_test
 
         def can_vote(self):
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_class` and :ref:`test_dir_person_instance`.
-
-* I add ``can_get_license`` to :ref:`test_dir_person_class` in ``test_person.py``
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
-    :lineno-start: 254
-    :emphasize-lines: 1
 
-                'can_get_license',
-                'can_vote',
-                'say_hello'
-            ]
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+    NameError: name 'self' is not defined
 
-        def test_dir_person_instance(self):
-
-* I add ``can_get_license`` to :ref:`test_dir_person_instance`
+* I remove the :ref:`staticmethod decorator<what is the staticmethod decorator?>` from the ``can_get_license`` :ref:`method<what is a method?>` then add ``self`` to the parentheses
 
   .. code-block:: python
-    :lineno-start: 299
-    :emphasize-lines: 1
+    :lineno-start: 20
+    :emphasize-lines: 1-3
+
+        # @staticmethod
+        # def can_get_license():
+        def can_get_license(self):
+            # return False
+            return self.passed_test
+
+        def can_vote(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_instance` because I added a new :ref:`attribute<what is a class attribute?>` (``passed_test``).
+
+* I add ``passed_test`` to ``my_expectation`` in :ref:`test_dir_person_instance` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 301
+    :emphasize-lines: 6
 
                 'can_get_license',
                 'can_vote',
                 'first_name',
                 'is_citizen',
                 'last_name',
+                'passed_test',
                 'say_hello',
                 'sex',
                 'year_of_birth',
@@ -937,6 +1028,39 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the test passes.
 
 ----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+I remove the commented lines from ``person.py``
+
+.. code-block:: python
+  :lineno-start: 4
+
+  class Person:
+
+      def __init__(
+          self, first_name, last_name,
+          sex, year_of_birth=None,
+          is_citizen=True,
+          passed_test=False,
+      ):
+          self.first_name = first_name
+          self.last_name = last_name
+          self.year_of_birth = year_of_birth
+          self.sex = sex
+          self.is_citizen = is_citizen
+          self.passed_test = passed_test
+
+      def can_get_license(self):
+          return self.passed_test
+
+      def can_vote(self):
+
+
 
 ----
 
