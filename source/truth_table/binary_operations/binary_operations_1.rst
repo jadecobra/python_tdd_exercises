@@ -3,8 +3,6 @@
   :keywords: Jacob Itegboje, Pumping Python, truth table Binary Operations 1, python binary operations tutorial, test_binary_1.py, contradiction always False, logical_conjunction AND first and second, project_second returns second input, converse_non_implication not first and second, TDD red green refactor truth table, AttributeError module has no attribute contradiction, TypeError takes 0 positional arguments but 2 were given, AssertionError True is not false, AssertionError False is not true, python if statement nested if, python and operator vs nested if, conditional expression ternary operator, bool truthy falsy refactor, assertTrue assertFalse four input combinations, broken light switch logic, voting eligibility truth table, MFA multi-factor authentication logic, new customer coupon discount rule, programming truth tables beginners, boolean logic gates python unittest
 
 .. include:: ../../links.rst
-.. _if statement: https://docs.python.org/3/tutorial/controlflow.html#if-statements
-.. _if statements: `if statement`_
 .. _conditional expression: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _conditional expressions: `conditional expression`_
 .. _ternary operator: `conditional expression`_
@@ -800,22 +798,9 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
   - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
 
-  I can use `if statements`_ to make it choose what to do based on the inputs.
+  I can use :ref:`if statements` to make it choose what to do based on the inputs.
 
-----
-
-*********************************************************************************
-if statements
-*********************************************************************************
-
-An `if statement`_ is a way for a program_ to choose what to do based on something else. I can use `if statements`_ to make a :ref:`function<what is a function?>` choose between two things. They are written this way in Python_
-
-.. code-block:: python
-
-  if something:
-      then do this
-
-* I add an `if statement`_ for when the first input is :red:`False` to the :ref:`logical_conjunction function<test_logical_conjunction>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` for when the first input is :red:`False` to the :ref:`logical_conjunction function<test_logical_conjunction>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -835,7 +820,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   because this happens when ``if first_input == False:`` runs, Python_ checks if ``first_input`` is equal to :red:`False`
 
-  - if ``first_input`` is NOT equal to :red:`False`, it leaves the `if statement`_ and continues to run the rest of the :ref:`function<what is a function?>` - ``return second_input``, which returns the value of ``second_input`` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return second_input``, which returns the value of ``second_input`` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
   - if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return False`` and leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_conjunction` in ``test_binary.py``
@@ -877,7 +862,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   the test is still green.
 
-* There is only one case where :ref:`logical_conjunction<test_logical_conjunction>` returns :green:`True`, I add an `if statement`_ for it in ``truth_table.py``
+* There is only one case where :ref:`logical_conjunction<test_logical_conjunction>` returns :green:`True`, I add an :ref:`if statement<if statements>` for it in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -937,7 +922,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   green.
 
-* I add :ref:`bool<how to test if something is grouped as True>` to the `if statements`_
+* I add :ref:`bool<how to test if something is grouped as True>` to the :ref:`if statements`
 
   .. code-block:: python
     :lineno-start: 21
@@ -959,7 +944,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   still green because ``bool(something)`` returns :green:`True` if the :ref:`object<everything is an object>` in parentheses is grouped as :green:`True`.
 
-* Since ``bool(True)`` is the same as :green:`True`, ``bool(first_input) == True`` is the same thing as ``True == True`` when ``first_input`` is :green:`True`, which is a repetition. I remove ``== True`` from the `if statements`_
+* Since ``bool(True)`` is the same as :green:`True`, ``bool(first_input) == True`` is the same thing as ``True == True`` when ``first_input`` is :green:`True`, which is a repetition. I remove ``== True`` from the :ref:`if statements`
 
   .. code-block:: python
     :lineno-start: 21
@@ -1025,7 +1010,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   this means that ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``.
 
-* I can use :ref:`AND<test_logical_conjunction>` to put two `if statements`_ together when one is indented under the other
+* I can use :ref:`AND<test_logical_conjunction>` to put two :ref:`if statements` together when one is indented under the other
 
   .. code-block:: python
 
@@ -1038,7 +1023,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
     if something and something_else:
 
-  I use :ref:`AND<test_logical_conjunction>` to put the two `if statements`_ together
+  I use :ref:`AND<test_logical_conjunction>` to put the two :ref:`if statements` together
 
   .. code-block:: python
     :lineno-start: 21
@@ -1093,10 +1078,10 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   still green because this happens when the :ref:`logical_conjunction function<test_logical_conjunction>` is called. When ``if first_input and second_input:`` runs, Python_ checks if ``first_input`` is grouped as :green:`True`
 
-  - if ``first_input`` is grouped as :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is grouped as :red:`False`, it leaves the :ref:`if statement<if statements>` to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
   - if ``first_input`` is grouped as :green:`True`, it checks if ``second_input`` is grouped as :green:`True`
 
-    * if ``second_input`` is grouped as :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+    * if ``second_input`` is grouped as :red:`False`, it leaves the :ref:`if statement<if statements>` to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
     * if ``second_input`` is grouped as :green:`True`, it runs ``return True``, which returns :green:`True` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
 ----
@@ -1105,7 +1090,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 conditional expressions
 *********************************************************************************
 
-* There is a way to write the `if statement`_ and `else clause`_ on one line instead of four lines. It is called a `ternary operator`_ or `conditional expression`_. I add one to the :ref:`function<what is a function?>`
+* There is a way to write the :ref:`if statement<if statements>` and `else clause`_ on one line instead of four lines. It is called a `ternary operator`_ or `conditional expression`_. I add one to the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -1995,7 +1980,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   because the :ref:`converse_non_implication function<test_converse_non_implication>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
-* I add an `if statement`_ for this case to the :ref:`converse_non_implication function<test_converse_non_implication>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` for this case to the :ref:`converse_non_implication function<test_converse_non_implication>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 29
@@ -2013,7 +1998,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   because this happens when the :ref:`converse_non_implication function<test_converse_non_implication>` is called. When ``if first_input == False:`` runs, Python_ checks if ``first_input`` is equal to as :red:`False`
 
-  - if ``first_input`` is NOT equal to :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
   - if ``first_input`` is equal to :red:`False`, it runs ``return True``, which returns :green:`True` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
 * I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_converse_non_implication` in ``test_binary.py``
@@ -2061,7 +2046,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   because the :ref:`function<what is a function?>` returned :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
-* I add an `if statement`_ for the one case that returns :green:`True`, to the one in :ref:`the converse_non_implication function<test_converse_non_implication>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` for the one case that returns :green:`True`, to the one in :ref:`the converse_non_implication function<test_converse_non_implication>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 29
@@ -2091,7 +2076,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   the test is still green.
 
-* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the first `if statement`_ in terms of :green:`True`
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the first :ref:`if statement<if statements>` in terms of :green:`True`
 
   .. code-block:: python
     :lineno-start: 29
@@ -2177,7 +2162,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   - ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
   - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``.
 
-* I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two `if statements`_ together
+* I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
   .. code-block:: python
     :lineno-start: 29
@@ -2197,7 +2182,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
                 return True
         return False
 
-  the test is still green, because I can put two `if statements`_ together when one is indented under the other
+  the test is still green, because I can put two :ref:`if statements` together when one is indented under the other
 
   .. code-block:: python
 

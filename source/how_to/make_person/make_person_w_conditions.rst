@@ -4,6 +4,9 @@
 
 .. include:: ../../links.rst
 
+.. _if statement: https://docs.python.org/3/tutorial/controlflow.html#if-statements
+.. _if statements: `if statement`_
+
 #################################################################################
 how to make a person with conditions
 #################################################################################
@@ -82,7 +85,7 @@ can joe vote?
             self.assertEqual(reality, my_expectation)
 
             reality = joe.can_vote()
-            self.assertIs(reality, True)
+            self.assertEqual(reality, True)
 
         def test_jane(self):
 
@@ -208,10 +211,9 @@ can joe vote?
 * I add a git_ commit message in the new terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1-2
+    :emphasize-lines: 1
 
-    git commit -am \
-    'add can_vote'
+    git commit -am 'add can_vote'
 
 ----
 
@@ -230,7 +232,7 @@ I add a :ref:`call<how to call a function>` to ``can_vote`` from :ref:`test_jane
           self.assertEqual(reality, my_expectation)
 
           reality = jane.can_vote()
-          self.assertIs(reality, True)
+          self.assertEqual(reality, True)
 
       def test_john(self):
 
@@ -248,29 +250,41 @@ can john vote?
 
 ----
 
-* I add a :ref:`call<how to call a function>` to :ref:`test_john`
+* I add a :ref:`call<how to call a function>` to ``can_vote`` from :ref:`test_john`
 
   .. code-block:: python
     :lineno-start: 54
     :emphasize-lines: 5-6
 
-            reality = joe.say_hello()
+            reality = john.say_hello()
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
-            reality = joe.can_vote()
-            self.assertIs(reality, True)
+            reality = john.can_vote()
+            self.assertEqual(reality, False)
 
-        def test_jane(self):
+        def test_mary(self):
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
-    AttributeError: 'Person' object
-                    has no attribute 'can_vote'
+    AssertionError: True != False
+
+  the ``can_vote`` :ref:`method<what is a method?>` has to make a decision based on something.
 
 ----
+
+*********************************************************************************
+add is_citizen attribute
+*********************************************************************************
+
+I want ``can_vote`` to return
+
+* :red:`False` for ``no`` the person cannot vote
+* :green:`True` for ``yes`` the person can vote
+
+based on if the person is a citizen.
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -278,86 +292,320 @@ can john vote?
 
 ----
 
-* I open ``person.py`` from the ``src`` folder_
-* I add a :ref:`function definition<how to make a function>` to the :ref:`Person class<add Person class>` in ``person.py``
+* I add ``is_citizen`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<add Person class>` for ``john``
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 12-13
+    :lineno-start: 142
+    :emphasize-lines: 6
 
-      class Person:
+            john = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+                is_citizen=False,
+            )
 
-          def __init__(
-              self, first_name, last_name,
-              sex, year_of_birth=None,
-          ):
-              self.first_name = first_name
-              self.last_name = last_name
-              self.year_of_birth = year_of_birth
-              self.sex = sex
+            reality = john.say_hello()
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
-          def can_vote():
-              return True
+            reality = john.can_vote()
+            self.assertEqual(reality, False)
 
-          def say_hello(self):
-              return (
-                  f'Hello, my name is {self.first_name}'
-                  f' {self.last_name} and I am'
-                  f' {calculate_age(self.year_of_birth)}.'
-              )
+        def test_mary(self):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: Person.can_vote() takes
-               0 positional arguments but 1 was given
+    TypeError: Person.__init__() got
+               an unexpected keyword argument 'is_citizen'
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>`
+  because the :ref:`definition<how to make a function with input>` for the :ref:`__init__ method<the constructor method>` only takes five inputs (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``) and I :ref:`called<how to call a function with input>` it with ``is_citizen`` which is not in the parentheses.
+
+* I add ``is_citizen`` to the parentheses of the :ref:`__init__ method<the constructor method>`, in ``person.py``
 
   .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 1
+    :lineno-start: 4
+    :emphasize-lines: 6
+
+    class Person:
+
+        def __init__(
+            self, first_name, last_name,
+            sex, year_of_birth=None,
+            is_citizen,
+        ):
+
+  the terminal_ is my friend, and shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: parameter without a default
+         follows parameter with a default
+
+  because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
+
+* I give ``is_citizen`` a value to make it :ref:`optional<test_optional_arguments>`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 6-7
+
+    class Person:
+
+        def __init__(
+            self, first_name, last_name,
+            sex, year_of_birth=None,
+            # is_citizen,
+            is_citizen=True,
+        ):
+
+  the terminal_ goes back to the :ref:`AssertionError<what causes AssertionError?>`
+
+* I add a :ref:`class attribute<what is a class attribute?>` for ``is_citizen`` so I can use it in the ``can_vote`` :ref:`method<what is a method?>`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 13
+
+    class Person:
+
+        def __init__(
+            self, first_name, last_name,
+            sex, year_of_birth=None,
+            # is_citizen,
+            is_citizen=True,
+        ):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.year_of_birth = year_of_birth
+            self.sex = sex
+            self.is_citizen = is_citizen
+
+        @staticmethod
+
+* I use the :ref:`class attribute<what is a class attribute?>` in the ``can_vote`` :ref:`method<what is a method?>`
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 3-4
 
         @staticmethod
         def can_vote():
-            return True
+            # return True
+            return self.is_citizen
 
         def say_hello(self):
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
-    FAILED ...::TestPerson::test_dir_person_class -
-        AssertionError: assert ['__class__',...'__eq__', ...] ==...
-    FAILED ...::TestPerson::test_dir_person_instance -
-        AssertionError: assert ['__class__',...'__eq__', ...] ==...
+    NameError: name 'self' is not defined
 
-  the tests for the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Person class and an instance of it<add Person class>` are failing because I added a :ref:`method<what is a method?>` to it.
-
-* I add ``can_vote`` to :ref:`test_dir_person_class`
+* I remove the :ref:`staticmethod decorator<what is the staticmethod decorator?>` from the ``can_vote`` :ref:`method<what is a method?>` then add ``self`` in the parentheses
 
   .. code-block:: python
-    :lineno-start: 239
-    :emphasize-lines: 1-2
+    :lineno-start: 18
+    :emphasize-lines: 1-3
+
+        # @staticmethod
+        # def can_vote():
+        def can_vote(self):
+            # return True
+            return self.is_citizen
+
+        def say_hello(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_instance` because I added a new :ref:`attribute<what is a class attribute?>` (``is_citizen``)
+
+* I add ``is_citizen`` to ``my_expectation`` in :ref:`test_dir_person_instance` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 291
+    :emphasize-lines: 3
 
                 'can_vote',
+                'first_name',
+                'is_citizen',
+                'last_name',
                 'say_hello',
+                'sex',
+                'year_of_birth',
             ]
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
-        def test_dir_person_instance(self):
 
-* I add ``can_vote`` to :ref:`test_dir_person_instance`
+    # Exceptions seen
+
+  the test passes. ``joe`` and ``jane`` do not need to pass a value for the ``is_citizen`` parameter because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
+
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :lineno-start: 284
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
+
+    git commit -am 'add is_citizen attribute'
+
+
+*********************************************************************************
+can mary vote?
+*********************************************************************************
+
+I want ``can_vote`` to return
+
+* :red:`False` for ``no`` the person cannot vote
+* :green:`True` for ``yes`` the person can vote
+
+based on if the person is a citizen.
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add ``is_citizen`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<add Person class>` for ``john``
+
+  .. code-block:: python
+    :lineno-start: 142
+    :emphasize-lines: 6
+
+            john = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+                is_citizen=False,
+            )
+
+            reality = john.say_hello()
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            reality = john.can_vote()
+            self.assertEqual(reality, False)
+
+        def test_mary(self):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person.__init__() got
+               an unexpected keyword argument 'is_citizen'
+
+  because the :ref:`definition<how to make a function with input>` for the :ref:`__init__ method<the constructor method>` only takes five inputs (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``) and I :ref:`called<how to call a function with input>` it with ``is_citizen`` which is not in the parentheses.
+
+* I add ``is_citizen`` to the parentheses of the :ref:`__init__ method<the constructor method>`, in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 6
+
+    class Person:
+
+        def __init__(
+            self, first_name, last_name,
+            sex, year_of_birth=None,
+            is_citizen,
+        ):
+
+  the terminal_ is my friend, and shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: parameter without a default
+         follows parameter with a default
+
+  because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
+
+* I give ``is_citizen`` a value to make it :ref:`optional<test_optional_arguments>`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 6-7
+
+    class Person:
+
+        def __init__(
+            self, first_name, last_name,
+            sex, year_of_birth=None,
+            # is_citizen,
+            is_citizen=True,
+        ):
+
+  the terminal_ goes back to the :ref:`AssertionError<what causes AssertionError?>`
+
+* I add a :ref:`class attribute<what is a class attribute?>` for ``is_citizen`` so I can use it in the ``can_vote`` :ref:`method<what is a method?>`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 13
+
+    class Person:
+
+        def __init__(
+            self, first_name, last_name,
+            sex, year_of_birth=None,
+            # is_citizen,
+            is_citizen=True,
+        ):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.year_of_birth = year_of_birth
+            self.sex = sex
+            self.is_citizen = is_citizen
+
+        @staticmethod
+
+* I use the :ref:`class attribute<what is a class attribute?>` in the ``can_vote`` :ref:`method<what is a method?>`
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 3-4
+
+        @staticmethod
+        def can_vote():
+            # return True
+            return self.is_citizen
+
+        def say_hello(self):
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'self' is not defined
+
+* I remove the :ref:`staticmethod decorator<what is the staticmethod decorator?>` from the ``can_vote`` :ref:`method<what is a method?>` then add ``self`` in the parentheses
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 1-3
+
+        # @staticmethod
+        # def can_vote():
+        def can_vote(self):
+            # return True
+            return self.is_citizen
+
+        def say_hello(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_instance` because I added a new :ref:`attribute<what is a class attribute?>` (``is_citizen``)
+
+* I add ``is_citizen`` to ``my_expectation`` in :ref:`test_dir_person_instance` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 291
+    :emphasize-lines: 3
 
                 'can_vote',
                 'first_name',
+                'is_citizen',
                 'last_name',
                 'say_hello',
                 'sex',
@@ -371,16 +619,83 @@ can john vote?
 
   the test passes.
 
-  These tests are good because it helps document what is in the :ref:`class<what is a class?>` and catches things immediately it changes.
+----
 
-  They are a problem because :ref:`class attributes<what is a class attribute>` can change between Python_ versions, I have to remember the correct order of names and I am keeping two lists. There has to be a better way.
 
-* I open a new terminal_ then make sure I am in the ``person`` folder_
+
+
+
+----
+
+*********************************************************************************
+if statements
+*********************************************************************************
+
+An `if statement`_ is a way for a program_ to choose what to do based on something else. I can use `if statements`_ to make a :ref:`function<what is a function?>` choose between two things. They are written this way in Python_
+
+.. code-block:: python
+
+  if something:
+      then do this
+
+* I add an :ref:`if statement<if statements>` to the ``can_vote`` :ref:`method<what is a method?>`
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :lineno-start: 18
+    :emphasize-lines: 3-4
 
-    cd person
+        @staticmethod
+        def can_vote():
+            if self.is_citizen == True:
+                return True
+
+        def say_hello(self):
+
+
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None != False
+
+  because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`.
+
+* I add :ref:`the return statement` to make the line visible
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 5
+
+        # @staticmethod
+        def can_vote(self):
+            if self.is_citizen == True:
+                return True
+            return None
+
+        def say_hello(self):
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
+
+* I change :ref:`None<what is None?>` to :ref:`False<test_what_is_false>` in :ref:`the return statement`
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 5-6
+
+        # @staticmethod
+        def can_vote(self):
+            if self.is_citizen == True:
+                return True
+            # return None
+            return False
+
+        def say_hello(self):
+
+ because this happens when ``if self.is_citizen == True:`` runs, Python_ checks if ``self.is_citizen`` is equal to :ref:`True<test_what_is_true>`
+
+  - if ``self.is_citizen`` is NOT equal to :green:`True`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`method<what is a method?>` - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``self.is_citizen`` is equal to :green:`True`, it goes to the next line - ``return True``, which returns :ref:`True`
 
 * I add a git_ commit message in the new terminal_
 
