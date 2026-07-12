@@ -1544,7 +1544,7 @@ the test passes.
 ----
 
 *********************************************************************************
-assert year_of_birth is an integer
+test_when_year_of_birth_is_not_an_integer
 *********************************************************************************
 
 I want the :ref:`Person class<test Person class>` to make sure that the value for ``year_of_birth`` is an integer_ (whole number without decimals).
@@ -1651,7 +1651,7 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
         TestPerson::test_when_year_of_birth_is_not_an_integer
         - AssertionError
 
-* I add a comment, then change ``year_of_birth`` from the :ref:`default value<test_optional_arguments>` to a :ref:`boolean<what are booleans?>` in :ref:`test_when_year_of_birth_is_not_an_integer<assert year_of_birth is an integer>`, in ``test_person.py``
+* I add a comment, then change ``year_of_birth`` from the :ref:`default value<test_optional_arguments>` to a :ref:`boolean<what are booleans?>` in :ref:`test_when_year_of_birth_is_not_an_integer`, in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 190
@@ -1775,9 +1775,10 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'assert year_of_birth is an integer'
+    git commit -am
+    'add test_when_year_of_birth_is_not_an_integer'
 
 ----
 

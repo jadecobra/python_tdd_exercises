@@ -134,7 +134,6 @@
 .. _unittest.TestCase.setUp: setUp_
 .. _unittest.TestCase.setUp method: setUp_
 .. _unittest.TestCase.maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
-.. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
 .. _uv: https://docs.astral.sh/uv/
 .. _uv Python package manager: uv_
 .. _subTest method: https://docs.python.org/3/library/unittest.html#unittest.TestCase.subTest
