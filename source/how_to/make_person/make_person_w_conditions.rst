@@ -16,8 +16,16 @@ how to make a person with conditions
 
 I want to be able to check if a person can vote, and if they can get a license. In other words, I want something in the :ref:`person project<test person with datetime>` to make decisions based on :ref:`conditions<if statements>`, for example
 
-* If a person is older than ``18`` and passes the test, the person can get a license.
-* If a person is older than ``18`` and is a citizen, the person can vote.
+* If a person is younger than ``18``
+
+  - the person cannot get a license.
+  - the person cannot vote.
+
+* If a person is ``18`` or older
+
+  - and passes a test, the person can get a license.
+  - and is a citizen, the person can vote.
+
 
 ----
 
@@ -549,7 +557,7 @@ I can do that with an :ref:`if statement<if statements>`
             self.assertEqual(reality, my_expectation)
             self.assertEqual(mary.can_vote(), False)
 
-        def test_person_is_underage_citizen(self):
+        def test_underage_citizen(self):
             person = src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
@@ -820,7 +828,7 @@ I add a :ref:`call<how to call a function with input>` to ``can_get_license`` fr
           self.assertEqual(mary.can_vote(), False)
           self.assertEqual(mary.can_get_license(), True)
 
-      def test_person_is_underage_citizen(self):
+      def test_underage_citizen(self):
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -857,7 +865,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             self.assertEqual(mary.can_vote(), False)
             self.assertEqual(mary.can_get_license(), True)
 
-        def test_person_is_underage_citizen(self):
+        def test_underage_citizen(self):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1121,13 +1129,13 @@ I want the :ref:`can_get_license method<add can_get_license method>` to use two 
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_person_is_underage_citizen<add condition to can_vote>` for a person who is younger than 18 and passed the test
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_underage_citizen<add condition to can_vote>` for a person who is younger than 18 and passed the test
 
   .. code-block:: python
     :lineno-start: 202
     :emphasize-lines: 8, 11-13
 
-        def test_person_is_underage_citizen(self):
+        def test_underage_citizen(self):
             person = src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
