@@ -450,17 +450,41 @@ based on if the person is a citizen.
 
     git commit -am 'add is_citizen attribute'
 
+----
 
 *********************************************************************************
 can mary vote?
 *********************************************************************************
 
-I want ``can_vote`` to return
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
 
-* :red:`False` for ``no`` the person cannot vote
-* :green:`True` for ``yes`` the person can vote
+----
 
-based on if the person is a citizen.
+I add a :ref:`call<how to call a function>` to ``can_vote`` from :ref:`test_mary`
+
+.. code-block:: python
+  :lineno-start: 189
+  :emphasize-lines: 5-6
+
+          reality = mary.say_hello()
+          assert reality == my_expectation
+          self.assertEqual(reality, my_expectation)
+
+          reality = mary.can_vote()
+          self.assertEqual(reality, False)
+
+      def test_when_year_of_birth_is_not_an_integer(self):
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: shell
+
+  AssertionError: True != False
+
+the ``can_vote`` :ref:`method<what is a method?>` has to make a decision based on something.
+
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -468,156 +492,30 @@ based on if the person is a citizen.
 
 ----
 
-* I add ``is_citizen`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<add Person class>` for ``john``
+I add ``is_citizen`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<add Person class>` for ``mary``
 
-  .. code-block:: python
-    :lineno-start: 142
-    :emphasize-lines: 6
+.. code-block:: python
+  :lineno-start: 189
+  :emphasize-lines: 6
 
-            john = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-                is_citizen=False,
-            )
+          mary = src.person.Person(
+              first_name=first_name,
+              last_name=last_name,
+              sex=sex,
+              year_of_birth=year_of_birth,
+              is_citizen=False,
+          )
 
-            reality = john.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+          reality = mary.say_hello()
+          assert reality == my_expectation
+          self.assertEqual(reality, my_expectation)
 
-            reality = john.can_vote()
-            self.assertEqual(reality, False)
+          reality = mary.can_vote()
+          self.assertEqual(reality, False)
 
-        def test_mary(self):
+      def test_when_year_of_birth_is_not_an_integer(self):
 
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: Person.__init__() got
-               an unexpected keyword argument 'is_citizen'
-
-  because the :ref:`definition<how to make a function with input>` for the :ref:`__init__ method<the constructor method>` only takes five inputs (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``) and I :ref:`called<how to call a function with input>` it with ``is_citizen`` which is not in the parentheses.
-
-* I add ``is_citizen`` to the parentheses of the :ref:`__init__ method<the constructor method>`, in ``person.py``
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 6
-
-    class Person:
-
-        def __init__(
-            self, first_name, last_name,
-            sex, year_of_birth=None,
-            is_citizen,
-        ):
-
-  the terminal_ is my friend, and shows SyntaxError_
-
-  .. code-block:: python
-
-    SyntaxError: parameter without a default
-         follows parameter with a default
-
-  because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
-
-* I give ``is_citizen`` a value to make it :ref:`optional<test_optional_arguments>`
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 6-7
-
-    class Person:
-
-        def __init__(
-            self, first_name, last_name,
-            sex, year_of_birth=None,
-            # is_citizen,
-            is_citizen=True,
-        ):
-
-  the terminal_ goes back to the :ref:`AssertionError<what causes AssertionError?>`
-
-* I add a :ref:`class attribute<what is a class attribute?>` for ``is_citizen`` so I can use it in the ``can_vote`` :ref:`method<what is a method?>`
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 13
-
-    class Person:
-
-        def __init__(
-            self, first_name, last_name,
-            sex, year_of_birth=None,
-            # is_citizen,
-            is_citizen=True,
-        ):
-            self.first_name = first_name
-            self.last_name = last_name
-            self.year_of_birth = year_of_birth
-            self.sex = sex
-            self.is_citizen = is_citizen
-
-        @staticmethod
-
-* I use the :ref:`class attribute<what is a class attribute?>` in the ``can_vote`` :ref:`method<what is a method?>`
-
-  .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 3-4
-
-        @staticmethod
-        def can_vote():
-            # return True
-            return self.is_citizen
-
-        def say_hello(self):
-
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'self' is not defined
-
-* I remove the :ref:`staticmethod decorator<what is the staticmethod decorator?>` from the ``can_vote`` :ref:`method<what is a method?>` then add ``self`` in the parentheses
-
-  .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 1-3
-
-        # @staticmethod
-        # def can_vote():
-        def can_vote(self):
-            # return True
-            return self.is_citizen
-
-        def say_hello(self):
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_instance` because I added a new :ref:`attribute<what is a class attribute?>` (``is_citizen``)
-
-* I add ``is_citizen`` to ``my_expectation`` in :ref:`test_dir_person_instance` in ``test_person.py``
-
-  .. code-block:: python
-    :lineno-start: 291
-    :emphasize-lines: 3
-
-                'can_vote',
-                'first_name',
-                'is_citizen',
-                'last_name',
-                'say_hello',
-                'sex',
-                'year_of_birth',
-            ]
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the test passes.
+the test passes.
 
 ----
 
