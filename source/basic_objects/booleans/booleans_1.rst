@@ -303,7 +303,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: False is an instance of <class 'bool'>
 
-this was also in :ref:`test_is_none_a_boolean`.
+this was also in :ref:`test_none_v_boolean`.
 
 ----
 
@@ -715,7 +715,7 @@ test_what_is_true
 
     AssertionError: True is an instance of <class 'bool'>
 
-  this was also in :ref:`test_is_none_a_boolean`.
+  this was also in :ref:`test_none_v_boolean`.
 
 ----
 

@@ -22,7 +22,7 @@ def test_making_a_class_w_object():
     assert issubclass(WObject, object)
 
 
-def test_is_none_an_object():
+def test_none_v_object():
     assert isinstance(None, object)
     # fails because None is not a class
     # assert issubclass(None, object)

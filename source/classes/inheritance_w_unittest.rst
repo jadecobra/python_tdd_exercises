@@ -637,7 +637,7 @@ test_making_a_class_w_object with unittest
             assert issubclass(WObject, object)
 
 
-    def test_is_none_an_object():
+    def test_none_v_object():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -690,7 +690,7 @@ green.
             assert issubclass(WObject, object)
 
 
-    def test_is_none_an_object():
+    def test_none_v_object():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -715,7 +715,7 @@ green.
             assert issubclass(WObject, object)
 
 
-    def test_is_none_an_object():
+    def test_none_v_object():
 
   the test passes.
 
@@ -735,7 +735,7 @@ green.
             self.assertNotIsSubclass(WObject, object)
 
 
-    def test_is_none_an_object():
+    def test_none_v_object():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -762,7 +762,7 @@ green.
             self.assertIsSubclass(WObject, object)
 
 
-    def test_is_none_an_object():
+    def test_none_v_object():
 
   the test passes.
 
@@ -781,7 +781,7 @@ green.
             self.assertIsSubclass(WObject, object)
 
 
-    def test_is_none_an_object():
+    def test_none_v_object():
 
 * I add a git_ commit message in the other terminal_
 
@@ -794,7 +794,7 @@ green.
 ----
 
 *********************************************************************************
-test_is_none_an_object with unittest
+test_none_v_object with unittest
 *********************************************************************************
 
 =================================================================================
@@ -805,7 +805,7 @@ test_is_none_an_object with unittest
 
 * I go back to the terminal_ where the tests are running.
 
-* I move :ref:`test_is_none_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
+* I move :ref:`test_none_v_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
   .. code-block:: python
     :lineno-start: 34
@@ -813,7 +813,7 @@ test_is_none_an_object with unittest
 
             self.assertIsSubclass(WObject, object)
 
-        def test_is_none_an_object():
+        def test_none_v_object():
             assert isinstance(None, object)
             # fails because None is not a class
             # assert issubclass(None, object)
@@ -826,7 +826,7 @@ test_is_none_an_object with unittest
   .. code-block:: python
 
     TypeError:
-        TestClasses.test_is_none_an_object()
+        TestClasses.test_none_v_object()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes ...
@@ -839,14 +839,14 @@ test_is_none_an_object with unittest
 
 ----
 
-I add ``self`` to the parentheses of :ref:`test_is_none_an_object`
+I add ``self`` to the parentheses of :ref:`test_none_v_object`
 
 .. code-block:: python
   :lineno-start: 36
   :emphasize-lines: 1-2
 
-      # def test_is_none_an_object():
-      def test_is_none_an_object(self):
+      # def test_none_v_object():
+      def test_none_v_object(self):
 
 green again.
 
@@ -864,8 +864,8 @@ green again.
     :lineno-start: 36
     :emphasize-lines: 4
 
-        # def test_is_none_an_object():
-        def test_is_none_an_object(self):
+        # def test_none_v_object():
+        def test_none_v_object(self):
             assert isinstance(None, object)
             self.assertNotIsInstance(None, object)
 
@@ -888,8 +888,8 @@ green again.
     :lineno-start: 36
     :emphasize-lines: 4-5
 
-        # def test_is_none_an_object():
-        def test_is_none_an_object(self):
+        # def test_none_v_object():
+        def test_none_v_object(self):
             assert isinstance(None, object)
             # self.assertNotIsInstance(None, object)
             self.assertIsInstance(None, object)
@@ -908,8 +908,8 @@ green again.
     :lineno-start: 36
     :emphasize-lines: 9
 
-        # def test_is_none_an_object():
-        def test_is_none_an_object(self):
+        # def test_none_v_object():
+        def test_none_v_object(self):
             assert isinstance(None, object)
             # self.assertNotIsInstance(None, object)
             self.assertIsInstance(None, object)
@@ -933,8 +933,8 @@ green again.
     :lineno-start: 36
     :emphasize-lines: 9
 
-        # def test_is_none_an_object():
-        def test_is_none_an_object(self):
+        # def test_none_v_object():
+        def test_none_v_object(self):
             assert isinstance(None, object)
             # self.assertNotIsInstance(None, object)
             self.assertIsInstance(None, object)
@@ -948,14 +948,14 @@ green again.
 
   the test passes.
 
-* I remove the other commented lines from :ref:`test_is_none_an_object`
+* I remove the other commented lines from :ref:`test_none_v_object`
 
   .. code-block:: python
     :lineno-start: 34
 
             self.assertIsSubclass(WObject, object)
 
-        def test_is_none_an_object(self):
+        def test_none_v_object(self):
             assert isinstance(None, object)
             self.assertIsInstance(None, object)
 
@@ -972,7 +972,7 @@ green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_is_none_an_object to TestClasses'
+    'move test_none_v_object to TestClasses'
 
 ----
 

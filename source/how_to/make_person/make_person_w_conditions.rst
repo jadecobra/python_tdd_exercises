@@ -16,8 +16,8 @@ how to make a person with conditions
 
 I want to be able to check if a person can vote, and if they can get a license. In other words, I want something in the :ref:`person project<test person with datetime>` to make decisions based on :ref:`conditions<if statements>`, for example
 
-* If a person is older than 18 and passes the test, the person can get a license.
-* If a person is older than 18 and is a citizen, the person can vote.
+* If a person is older than ``18`` and passes the test, the person can get a license.
+* If a person is older than ``18`` and is a citizen, the person can vote.
 
 ----
 
@@ -522,10 +522,10 @@ I want ``can_vote`` to return
 add condition to can_vote
 *********************************************************************************
 
-I want the :ref:`can_vote method<add can_vote method>` to use two :ref:`conditions<if statements>` when choosing if a person can vote
+I want the :ref:`can_vote method<add can_vote method>` to use two :ref:`conditions<if statements>` to make a decision
 
 * is the person a citizen?
-* is the person older than 18?
+* is the person older than ``18``?
 
 I can do that with an :ref:`if statement<if statements>`
 
@@ -549,7 +549,7 @@ I can do that with an :ref:`if statement<if statements>`
             self.assertEqual(reality, my_expectation)
             self.assertEqual(mary.can_vote(), False)
 
-        def test_person_is_citizen_younger_than_18(self):
+        def test_person_is_underage_citizen(self):
             person = src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
@@ -568,7 +568,7 @@ I can do that with an :ref:`if statement<if statements>`
     AssertionError: True != False
 
   - because ``can_vote`` returns the value of ``is_citizen``, it does not care about the age of the person.
-  - I use a calculation (``datetime.date.today().year-17``) as the year of birth so that the person will always be younger than 18 in any year the test is run.
+  - I use a calculation (``datetime.date.today().year-17``) as the year of birth so that the person will always be younger than ``18`` in any year the test is run.
 
 ----
 
@@ -820,7 +820,7 @@ I add a :ref:`call<how to call a function with input>` to ``can_get_license`` fr
           self.assertEqual(mary.can_vote(), False)
           self.assertEqual(mary.can_get_license(), True)
 
-      def test_person_is_citizen_younger_than_18(self):
+      def test_person_is_underage_citizen(self):
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -857,7 +857,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             self.assertEqual(mary.can_vote(), False)
             self.assertEqual(mary.can_get_license(), True)
 
-        def test_person_is_citizen_younger_than_18(self):
+        def test_person_is_underage_citizen(self):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1107,7 +1107,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 add condition to can_get_license
 *********************************************************************************
 
-I want the :ref:`can_get_license method<add can_get_license method>` to use two :ref:`conditions<if statements>` when choosing if a person can get a license
+I want the :ref:`can_get_license method<add can_get_license method>` to use two :ref:`conditions<if statements>` to make a decision
 
 * did the person pass the test?
 * is the person older than 18?
@@ -1121,13 +1121,13 @@ I want the :ref:`can_get_license method<add can_get_license method>` to use two 
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_person_is_citizen_younger_than_18<add condition to can_vote>` for a person who is younger than 18 and passed the test
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_person_is_underage_citizen<add condition to can_vote>` for a person who is younger than 18 and passed the test
 
   .. code-block:: python
     :lineno-start: 202
     :emphasize-lines: 8, 11-13
 
-        def test_person_is_citizen_younger_than_18(self):
+        def test_person_is_underage_citizen(self):
             person = src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
@@ -1447,6 +1447,201 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with this solut
 
     git commit -am \
     'extract age class attribute'
+
+----
+
+*********************************************************************************
+extract check_age method
+*********************************************************************************
+
+:ref:`can_get_license<add can_get_license method>` and :ref:`can_vote<add can_vote method>` look the same, they both
+
+- return :red:`False` if ``self.age`` is less than ``18``
+- return something else if ``self.age`` is NOT less than ``18``
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a :ref:`method<what is a method?>` to the :ref:`__init__ method<the constructor method>` that checks if the age is less than ``18`` and returns something else if it is not
+
+.. code-block:: python
+  :lineno-start: 27
+  :emphasize-lines: 8-11
+
+      def can_vote(self):
+          # age = calculate_age(self.year_of_birth)
+          # if age < 18:
+          if self.age < 18:
+              return False
+          return self.is_citizen
+
+      def check_age(age, response):
+          if age < 18:
+              return False
+          return response
+
+      def say_hello(self):
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` because I added a new :ref:`method<what is a method?>`.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add ``check_age`` to ``my_expectation`` in :ref:`test_dir_person_class` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 263
+    :emphasize-lines: 3
+
+                'can_get_license',
+                'can_vote',
+                'check_age',
+                'say_hello'
+            ]
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+        def test_dir_person_instance(self):
+
+* I add ``check_age`` to ``my_expectation`` in :ref:`test_dir_person_instance`
+
+  .. code-block:: python
+    :lineno-start: 310
+    :emphasize-lines: 4
+
+                'age',
+                'can_get_license',
+                'can_vote',
+                'check_age',
+                'first_name',
+                'is_citizen',
+                'last_name',
+                'passed_test',
+                'say_hello',
+                'sex',
+                'year_of_birth',
+            ]
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I :ref:`call<how to call a function with input>` the :ref:`check_age method<extract check_age method>` from the :ref:`can_vote method<add can_vote method>` in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 4-9
+
+        def can_vote(self):
+            # age = calculate_age(self.year_of_birth)
+            # if age < 18:
+            # if self.age < 18:
+            #     return False
+            # return self.is_citizen
+            return self.check_age(
+                self.age, self.is_citizen
+            )
+
+        def check_age(age, response):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person.check_age() takes
+               2 positional arguments but 3 were given
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to the :ref:`check_age method<extract check_age method>` since it does not use things from the :ref:`Person class<test Person class>`, only what it receives as input
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 1
+
+        @staticmethod
+        def check_age(age, response):
+            if age < 18:
+                return False
+            return response
+
+        def say_hello(self):
+
+  the test passes.
+
+* I remove the commented lines from the :ref:`can_vote method<add can_vote method>`
+
+  .. code-block:: python
+    :lineno-start: 27
+
+        def can_vote(self):
+            return self.check_age(
+                self.age, self.is_citizen
+            )
+
+        @staticmethod
+        def check_age(age, response):
+
+* I :ref:`call<how to call a function with input>` the :ref:`check_age method<extract check_age method>`  from the :ref:`can_get_license method<add can_get_license method>`
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 4-9
+
+        def can_get_license(self):
+            # age = calculate_age(self.year_of_birth)
+            # if age < 18:
+            # if self.age < 18:
+            #     return False
+            # return self.passed_test
+            return self.check_age(
+                self.age, self.passed_test
+            )
+
+        def can_vote(self):
+
+  the tests are still green.
+
+* I remove the commented lines from the :ref:`can_get_license method<add can_get_license method>`
+
+  .. code-block:: python
+    :lineno-start: 20
+
+        def can_get_license(self):
+            return self.check_age(
+                self.age, self.passed_test
+            )
+
+        def can_vote(self):
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract check_age method'
 
 ----
 

@@ -102,14 +102,14 @@ test_none
 *********************************************************************************
 
 #. :ref:`test_what_is_none`
-#. :ref:`test_is_none_a_boolean`
-#. :ref:`test_is_none_an_integer`
-#. :ref:`test_is_none_a_float`
-#. :ref:`test_is_none_a_string`
-#. :ref:`test_is_none_a_tuple`
-#. :ref:`test_is_none_a_list`
-#. :ref:`test_is_none_a_set`
-#. :ref:`test_is_none_a_dictionary`
+#. :ref:`test_none_v_boolean`
+#. :ref:`test_none_v_integer`
+#. :ref:`test_none_v_float`
+#. :ref:`test_none_v_string`
+#. :ref:`test_none_v_tuple`
+#. :ref:`test_none_v_list`
+#. :ref:`test_none_v_set`
+#. :ref:`test_none_v_dictionary`
 
 *********************************************************************************
 test_booleans

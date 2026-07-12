@@ -1,6 +1,6 @@
 .. meta::
   :description: Step-by-step Python TDD tutorial for beginners on "everything is an object": use bare `assert isinstance()` and `assert issubclass()` (plain pytest test functions, no unittest.TestCase) to prove None (special-cased), bool, int, float, str, tuple, list, set and dict all inherit from the base `object` class. Create classes with `pass`, `()` and `(object)`. Distinguish instance (with `()`) vs subclass using TypeError from issubclass(instance). Inspect dunder methods with `dir(object)`. Real errors shown: "AssertionError: assert not True", "TypeError: issubclass() arg 1 must be a class", NameError before defs. Project uses `uv init classes`, tests layout, requirements + `uv add`, pytest-watcher and git. Part of Jacob Itegboje Pumping Python series.
-  :keywords: Jacob Itegboje, Pumping Python, everything is an object, python inherits from object, is None an object python, isinstance issubclass tutorial, bare assert isinstance, class pass parentheses object, instance vs subclass python, TypeError issubclass arg 1 must be a class, AssertionError assert not True, dir(object) dunder, test_is_none_an_object, uv init classes pytest-watcher, WPass WParentheses, python TDD everything is an object, class vs instance parentheses, python object base class dunder methods, None is not a class for issubclass, python test driven development classes object, learning python inheritance for beginners
+  :keywords: Jacob Itegboje, Pumping Python, everything is an object, python inherits from object, is None an object python, isinstance issubclass tutorial, bare assert isinstance, class pass parentheses object, instance vs subclass python, TypeError issubclass arg 1 must be a class, AssertionError assert not True, dir(object) dunder, test_none_v_object, uv init classes pytest-watcher, WPass WParentheses, python TDD everything is an object, class vs instance parentheses, python object base class dunder methods, None is not a class for issubclass, python test driven development classes object, learning python inheritance for beginners
 
 .. include:: ../links.rst
 
@@ -35,7 +35,7 @@ Questions to think about as I go through the chapter
 * :ref:`how can I make a class with pass?<test_making_a_class_w_pass>`
 * :ref:`how can I make a class with parentheses?<test_making_a_class_w_parentheses>`
 * :ref:`how can I make a class with object?<test_making_a_class_w_object>`
-* :ref:`is None an object?<test_is_none_an_object>`
+* :ref:`is None an object?<test_none_v_object>`
 * :ref:`is a boolean an object?<test_is_a_boolean_an_object>`
 * :ref:`is an integer an object?<test_is_an_integer_an_object>`
 * :ref:`is a float an object?<test_is_a_float_an_object>`
@@ -748,7 +748,7 @@ I like to write my :ref:`classes<what is a class?>` with ``(object)``, so that a
 ----
 
 *********************************************************************************
-test_is_none_an_object
+test_none_v_object
 *********************************************************************************
 
 I want to test if :ref:`None<what is None?>` is an :ref:`object<everything is an object>`.
@@ -773,7 +773,7 @@ I want to test if :ref:`None<what is None?>` is an :ref:`object<everything is an
         assert isinstance(WObject(), object)
 
 
-    def test_is_none_an_object():
+    def test_none_v_object():
         assert not isinstance(None, object)
 
 
@@ -801,7 +801,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
   :lineno-start: 22
   :emphasize-lines: 2-3
 
-    def test_is_none_an_object():
+    def test_none_v_object():
         # assert not isinstance(None, object)
         assert isinstance(None, object)
 
@@ -823,7 +823,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 22
 
-    def test_is_none_an_object():
+    def test_none_v_object():
         assert isinstance(None, object)
 
 
@@ -834,7 +834,7 @@ the test passes.
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_is_none_an_object'
+    git commit -am 'add test_none_v_object'
 
 ----
 
@@ -870,7 +870,7 @@ I want to test if a :ref:`boolean<what are booleans?>` is an :ref:`object<everyt
     :lineno-start: 22
     :emphasize-lines: 5-6
 
-    def test_is_none_an_object():
+    def test_none_v_object():
         assert isinstance(None, object)
 
 
@@ -1757,7 +1757,7 @@ the test passes.
         assert issubclass(WObject(), object)
 
 
-    def test_is_none_an_object():
+    def test_none_v_object():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1779,7 +1779,7 @@ the test passes.
         assert issubclass(WObject, object)
 
 
-    def test_is_none_an_object():
+    def test_none_v_object():
 
   the test passes.
 
@@ -1793,15 +1793,15 @@ the test passes.
         assert issubclass(WObject, object)
 
 
-    def test_is_none_an_object():
+    def test_none_v_object():
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_is_none_an_object`
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_none_v_object`
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 3
 
-    def test_is_none_an_object():
+    def test_none_v_object():
         assert isinstance(None, object)
         assert issubclass(None, object)
 
@@ -1822,7 +1822,7 @@ the test passes.
     :lineno-start: 25
     :emphasize-lines: 3-4
 
-    def test_is_none_an_object():
+    def test_none_v_object():
         assert isinstance(None, object)
         # fails because None is not a class
         # assert issubclass(None, object)
@@ -2438,7 +2438,7 @@ I can make a :ref:`class<what is a class?>` with
 
 Everything in Python_ is an :ref:`object<everything is an object>`
 
-* :ref:`None is an object<test_is_none_an_object>`
+* :ref:`None is an object<test_none_v_object>`
 * :ref:`A boolean is an object<test_is_a_boolean_an_object>`
 * :ref:`An integer is an object<test_is_an_integer_an_object>`
 * :ref:`A float is an object<test_is_a_float_an_object>`

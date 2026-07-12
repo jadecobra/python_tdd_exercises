@@ -145,7 +145,7 @@ Questions to think about as I go through the chapter
 * :ref:`how can I make a class with pass?<test_making_a_class_w_pass>`
 * :ref:`how can I make a class with parentheses?<test_making_a_class_w_parentheses>`
 * :ref:`how can I make a class with object?<test_making_a_class_w_object>`
-* :ref:`is None an object?<test_is_none_an_object>`
+* :ref:`is None an object?<test_none_v_object>`
 * :ref:`is a boolean an object?<test_is_a_boolean_an_object>`
 * :ref:`is an integer an object?<test_is_an_integer_an_object>`
 * :ref:`is a float an object?<test_is_a_float_an_object>`
@@ -179,14 +179,14 @@ None review
 *********************************************************************************
 
 * :ref:`what is None?<test_what_is_none>`
-* :ref:`Is None a boolean?<test_is_none_a_boolean>`
-* :ref:`Is None an integer?<test_is_none_an_integer>`
-* :ref:`Is None a float?<test_is_none_a_float>`
-* :ref:`Is None a string?<test_is_none_a_string>`
-* :ref:`Is None a tuple?<test_is_none_a_tuple>`
-* :ref:`Is None a list?<test_is_none_a_list>`
-* :ref:`Is None a set?<test_is_none_a_set>`
-* :ref:`Is None a dictionary?<test_is_none_a_dictionary>`
+* :ref:`Is None a boolean?<test_none_v_boolean>`
+* :ref:`Is None an integer?<test_none_v_integer>`
+* :ref:`Is None a float?<test_none_v_float>`
+* :ref:`Is None a string?<test_none_v_string>`
+* :ref:`Is None a tuple?<test_none_v_tuple>`
+* :ref:`Is None a list?<test_none_v_list>`
+* :ref:`Is None a set?<test_none_v_set>`
+* :ref:`Is None a dictionary?<test_none_v_dictionary>`
 * :ref:`how can I test if something is NOT the same object as None?<test_assertion_error_w_none>`
 * :ref:`how can I test if something is the same object as None?<test_assertion_error_w_none>`
 * :ref:`how can I test if something is an instance?<how to test if something is an instance>`
