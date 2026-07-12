@@ -16,7 +16,7 @@ how to make a person with conditions
 I want to be able to check if a person can get a license to drive, and if they can vote. In other words, I want something in the :ref:`person project<test person with datetime>` to make decisions based on :ref:`conditions<if statements>`, for example
 
 * If a person is older than 18 and passes the driving test, the person can get a license.
-* If a person is older than 18 and is a citizen, the person can vote
+* If a person is older than 18 and is a citizen, the person can vote.
 
 ----
 
@@ -78,14 +78,12 @@ can joe vote?
 
   .. code-block:: python
     :lineno-start: 54
-    :emphasize-lines: 5-6
+    :emphasize-lines: 4
 
             reality = joe.say_hello()
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
-
-            reality = joe.can_vote()
-            self.assertEqual(reality, True)
+            self.assertEqual(joe.can_vote(), True)
 
         def test_jane(self):
 
@@ -105,7 +103,7 @@ can joe vote?
 ----
 
 * I open ``person.py`` from the ``src`` folder_
-* I add a :ref:`function definition<how to make a function>` to the :ref:`Person class<add Person class>` in ``person.py``
+* I add a :ref:`function definition<how to make a function>` to the :ref:`Person class<test Person class>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -156,16 +154,18 @@ can joe vote?
   .. code-block:: python
 
     FAILED ...::TestPerson::test_dir_person_class -
-        AssertionError: assert ['__class__',...'__eq__', ...] ==...
+        AssertionError: assert
+            ['__class__',...'__eq__', ...] ==...
     FAILED ...::TestPerson::test_dir_person_instance -
-        AssertionError: assert ['__class__',...'__eq__', ...] ==...
+        AssertionError: assert
+            ['__class__',...'__eq__', ...] ==...
 
-  the tests for the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Person class and an instance of it<add Person class>` are failing because I added a :ref:`method<what is a method?>` to it.
+  the tests for the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Person class and an instance of it<test Person class>` are failing because I added a :ref:`method<what is a method?>` to it.
 
 * I add ``can_vote`` to :ref:`test_dir_person_class`
 
   .. code-block:: python
-    :lineno-start: 239
+    :lineno-start: 237
     :emphasize-lines: 1-2
 
                 'can_vote',
@@ -179,7 +179,7 @@ can joe vote?
 * I add ``can_vote`` to :ref:`test_dir_person_instance`
 
   .. code-block:: python
-    :lineno-start: 284
+    :lineno-start: 282
     :emphasize-lines: 1
 
                 'can_vote',
@@ -199,7 +199,7 @@ can joe vote?
 
   These tests are good because it helps document what is in the :ref:`class<what is a class?>` and catches things immediately it changes.
 
-  They are a problem because :ref:`class attributes<what is a class attribute>` can change between Python_ versions, I have to remember the correct order of names and I am keeping two lists. There has to be a better way.
+  They are a problem because :ref:`class attributes<what is a class attribute?>` can change between Python_ versions, I have to remember the correct order of names and I am keeping two lists. There has to be a better way.
 
 * I open a new terminal_ then make sure I am in the ``person`` folder_
 
@@ -213,7 +213,7 @@ can joe vote?
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add can_vote'
+    git commit -am 'add can_vote method'
 
 ----
 
@@ -224,15 +224,13 @@ can jane vote?
 I add a :ref:`call<how to call a function>` to ``can_vote`` from :ref:`test_jane`
 
 .. code-block:: python
-  :lineno-start: 100
-  :emphasize-lines: 5-6
+  :lineno-start: 98
+  :emphasize-lines: 4
 
           reality = jane.say_hello()
           assert reality == my_expectation
           self.assertEqual(reality, my_expectation)
-
-          reality = jane.can_vote()
-          self.assertEqual(reality, True)
+          self.assertEqual(jane.can_vote(), True)
 
       def test_john(self):
 
@@ -253,15 +251,13 @@ can john vote?
 * I add a :ref:`call<how to call a function>` to ``can_vote`` from :ref:`test_john`
 
   .. code-block:: python
-    :lineno-start: 54
-    :emphasize-lines: 5-6
+    :lineno-start: 145
+    :emphasize-lines: 4
 
             reality = john.say_hello()
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
-
-            reality = john.can_vote()
-            self.assertEqual(reality, False)
+            self.assertEqual(john.can_vote(), False)
 
         def test_mary(self):
 
@@ -281,10 +277,8 @@ add is_citizen attribute
 
 I want ``can_vote`` to return
 
-* :red:`False` for ``no`` the person cannot vote
-* :green:`True` for ``yes`` the person can vote
-
-based on if the person is a citizen.
+* :red:`False` for ``no`` the person cannot vote if the person is not a citizen.
+* :green:`True` for ``yes`` the person can vote if the person is a citizen.
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -292,10 +286,10 @@ based on if the person is a citizen.
 
 ----
 
-* I add ``is_citizen`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<add Person class>` for ``john``
+* I add ``is_citizen`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<test Person class>` for ``john``
 
   .. code-block:: python
-    :lineno-start: 142
+    :lineno-start: 138
     :emphasize-lines: 6
 
             john = src.person.Person(
@@ -309,9 +303,7 @@ based on if the person is a citizen.
             reality = john.say_hello()
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
-
-            reality = john.can_vote()
-            self.assertEqual(reality, False)
+            self.assertEqual(john.can_vote(), False)
 
         def test_mary(self):
 
@@ -322,7 +314,7 @@ based on if the person is a citizen.
     TypeError: Person.__init__() got
                an unexpected keyword argument 'is_citizen'
 
-  because the :ref:`definition<how to make a function with input>` for the :ref:`__init__ method<the constructor method>` only takes five inputs (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``) and I :ref:`called<how to call a function with input>` it with ``is_citizen`` which is not in the parentheses.
+  because the :ref:`definition<how to make a function with input>` for the :ref:`__init__ method<the constructor method>` only takes five inputs (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``) and I :ref:`called<how to call a function with input>` it with ``is_citizen`` which is not one of those names.
 
 * I add ``is_citizen`` to the parentheses of the :ref:`__init__ method<the constructor method>`, in ``person.py``
 
@@ -362,7 +354,7 @@ based on if the person is a citizen.
             is_citizen=True,
         ):
 
-  the terminal_ goes back to the :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ goes back to the :ref:`AssertionError<what causes AssertionError?>`.
 
 * I add a :ref:`class attribute<what is a class attribute?>` for ``is_citizen`` so I can use it in the ``can_vote`` :ref:`method<what is a method?>`
 
@@ -385,6 +377,8 @@ based on if the person is a citizen.
             self.is_citizen = is_citizen
 
         @staticmethod
+
+  still :ref:`AssertionError<what causes AssertionError?>`.
 
 * I use the :ref:`class attribute<what is a class attribute?>` in the ``can_vote`` :ref:`method<what is a method?>`
 
@@ -419,12 +413,12 @@ based on if the person is a citizen.
 
         def say_hello(self):
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_instance` because I added a new :ref:`attribute<what is a class attribute?>` (``is_citizen``)
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_instance` because I added a new :ref:`attribute<what is a class attribute?>` (``is_citizen``).
 
 * I add ``is_citizen`` to ``my_expectation`` in :ref:`test_dir_person_instance` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 291
+    :lineno-start: 285
     :emphasize-lines: 3
 
                 'can_vote',
@@ -441,7 +435,40 @@ based on if the person is a citizen.
 
     # Exceptions seen
 
-  the test passes. ``joe`` and ``jane`` do not need to pass a value for the ``is_citizen`` parameter because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
+  the test passes.
+
+  ``joe`` and ``jane`` do not need to pass a value for the ``is_citizen`` parameter because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented lines from ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+
+    class Person:
+
+        def __init__(
+            self, first_name, last_name,
+            sex, year_of_birth=None,
+            is_citizen=True,
+        ):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.year_of_birth = year_of_birth
+            self.sex = sex
+            self.is_citizen = is_citizen
+
+        def can_vote(self):
+            return self.is_citizen
+
+        def say_hello(self):
 
 * I add a git_ commit message in the other terminal_
 
@@ -462,18 +489,16 @@ can mary vote?
 
 ----
 
-I add a :ref:`call<how to call a function>` to ``can_vote`` from :ref:`test_mary`
+I add a :ref:`call<how to call a function>` to ``can_vote`` from :ref:`test_mary` in ``test_person.py``
 
 .. code-block:: python
-  :lineno-start: 189
-  :emphasize-lines: 5-6
+  :lineno-start: 190
+  :emphasize-lines: 4
 
           reality = mary.say_hello()
           assert reality == my_expectation
           self.assertEqual(reality, my_expectation)
-
-          reality = mary.can_vote()
-          self.assertEqual(reality, False)
+          self.assertEqual(mary.can_vote(), False)
 
       def test_when_year_of_birth_is_not_an_integer(self):
 
@@ -483,8 +508,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: True != False
 
-the ``can_vote`` :ref:`method<what is a method?>` has to make a decision based on something.
-
+because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -492,36 +516,28 @@ the ``can_vote`` :ref:`method<what is a method?>` has to make a decision based o
 
 ----
 
-I add ``is_citizen`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<add Person class>` for ``mary``
+I add ``is_citizen`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<test Person class>` for ``mary``
 
 .. code-block:: python
-  :lineno-start: 189
+  :lineno-start: 183
   :emphasize-lines: 6
 
-          mary = src.person.Person(
-              first_name=first_name,
-              last_name=last_name,
-              sex=sex,
-              year_of_birth=year_of_birth,
-              is_citizen=False,
-          )
+            mary = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+                is_citizen=False,
+            )
 
-          reality = mary.say_hello()
-          assert reality == my_expectation
-          self.assertEqual(reality, my_expectation)
+            reality = mary.say_hello()
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+            self.assertEqual(mary.can_vote(), False)
 
-          reality = mary.can_vote()
-          self.assertEqual(reality, False)
-
-      def test_when_year_of_birth_is_not_an_integer(self):
+        def test_when_year_of_birth_is_not_an_integer(self):
 
 the test passes.
-
-----
-
-
-
-
 
 ----
 
@@ -536,64 +552,128 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
   if something:
       then do this
 
-* I add an :ref:`if statement<if statements>` to the ``can_vote`` :ref:`method<what is a method?>`
+I want the ``can_vote`` :ref:`method<what is a method?>` to use two conditions when deciding if a person can vote
 
-  .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 3-4
+* is the person a citizen
+* is the person older than 18
 
-        @staticmethod
-        def can_vote():
-            if self.is_citizen == True:
-                return True
+----
 
-        def say_hello(self):
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a test with a person who is a citizen and younger than 18
+
+.. code-block:: python
+  :lineno-start: 191
+  :emphasize-lines: 6-14
+
+          reality = mary.say_hello()
+          assert reality == my_expectation
+          self.assertEqual(reality, my_expectation)
+          self.assertEqual(mary.can_vote(), False)
+
+      def test_person_is_citizen_younger_than_18(self):
+          person = src.person.Person(
+              first_name='first_name',
+              last_name='last_name',
+              sex='M',
+              year_of_birth=datetime.date.today().year-17,
+              is_citizen=True,
+          )
+          self.assertEqual(person.can_vote(), False)
+
+      def test_when_year_of_birth_is_not_an_integer(self):
+
+the terminal_ is my friend, and shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: True != False
+
+I use a calculation (``datetime.date.today().year-17``) as the year of birth so that the person will always be younger than 18 in any year the test is run.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add an :ref:`if statement<if statements>` with a :ref:`call<how to call a function with input>` to the :ref:`calculate_age function<add calculate_age function>` from the ``can_vote`` :ref:`method<what is a method?>` in ``person.py``
+
+.. code-block:: python
+  :lineno-start: 17
+  :emphasize-lines: 3-4
+
+      def can_vote(self):
+          age = calculate_age(self.year_of_birth)
+          if age < 18:
+              return False
+          return self.is_citizen
+
+      def say_hello(self):
+
+the test passes because this happens when ``if age < 18:`` runs, Python_ checks if ``age`` which is the result of ``calculate_age(self.year_of_birth)`` is less than ``18``
+
+* If ``age`` is greater than or equal to ``18``, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`method<what is a method?>` - ``return self.is_citizen``, which returns
+
+  - :red:`False` as the output if the person is a citizen
+
+  .. code-block:: shell
+
+    self.is_citizen = False
+    age >= 18
+
+    person.can_vote
+    └──def can_vote(self):
+       ├── if age < 18:
+       │      return False
+       └── return self.is_citizen
 
 
+  - :green:`True` as the output, if the person is not a citizen
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  .. code-block:: shell
 
-  .. code-block:: python
+    self.is_citizen = True
+    age >= 18
 
-    AssertionError: None != False
+    person.can_vote
+    └──def can_vote(self):
+       ├── if age < 18:
+       │      return False
+       └── return self.is_citizen
 
-  because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`.
+  then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
-* I add :ref:`the return statement` to make the line visible
+* If ``age`` is less than ``18``, it goes to the next line - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
-  .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 5
+  .. code-block:: shell
 
-        # @staticmethod
-        def can_vote(self):
-            if self.is_citizen == True:
-                return True
-            return None
+    self.is_citizen = False
+    age < 18
 
-        def say_hello(self):
+    person.can_vote
+    └──def can_vote(self):
+       └── if age < 18:
+           └── return False
+           return self.is_citizen
 
-  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
+  .. code-block:: shell
 
-* I change :ref:`None<what is None?>` to :ref:`False<test_what_is_false>` in :ref:`the return statement`
+    self.is_citizen = True
+    age < 18
 
-  .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 5-6
-
-        # @staticmethod
-        def can_vote(self):
-            if self.is_citizen == True:
-                return True
-            # return None
-            return False
-
-        def say_hello(self):
-
- because this happens when ``if self.is_citizen == True:`` runs, Python_ checks if ``self.is_citizen`` is equal to :ref:`True<test_what_is_true>`
-
-  - if ``self.is_citizen`` is NOT equal to :green:`True`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`method<what is a method?>` - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-  - if ``self.is_citizen`` is equal to :green:`True`, it goes to the next line - ``return True``, which returns :ref:`True`
+    person.can_vote
+    └──def can_vote(self):
+       └── if age < 18:
+           └── return False
+           return self.is_citizen
 
 * I add a git_ commit message in the new terminal_
 
@@ -601,7 +681,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add can_vote'
+    'add condition for voting'
 
 ----
 
