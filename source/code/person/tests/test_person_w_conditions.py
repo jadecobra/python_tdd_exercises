@@ -263,7 +263,7 @@ class TestPerson(unittest.TestCase):
             'can_get_license',
             'can_vote',
             'check_age',
-            'say_hello'
+            'say_hello',
         ]
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)

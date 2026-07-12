@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with conditions — add can_vote and can_get_license so the person project decides with if statements. Open person; uv run pytest-watcher . --now (7 passed from datetime chapter). RED: joe.can_vote() → AttributeError: 'Person' object has no attribute 'can_vote'. GREEN: add can_vote; TypeError takes 0 positional arguments but 1 was given → @staticmethod or self; update test_dir_person_class / test_dir_person_instance (dir lists are version-fragile). Add is_citizen (default True): unexpected keyword argument, then SyntaxError parameter without a default follows parameter with a default; optional is_citizen=True; return self.is_citizen. john/mary is_citizen=False. Age gate: test_underage_citizen with year_of_birth=datetime.date.today().year-17 → AssertionError: True != False until if age < 18: return False. Mirror for can_get_license + passed_test (default False); jane/mary pass the test. Extract self.age in __init__ (calculate_age once); unittest.skip on test_when_year_of_birth_is_not_an_integer ('will always fail'). Extract check_age(age, response) as @staticmethod; can_vote/can_get_license call check_age. Review: if for decisions; dir tests hard to maintain; skip hides exceptions; four person tests still repetitive. Leads to booleans and better exception testing. Catalog: test_person_w_conditions.py + person_w_conditions.py.
-  :keywords: Jacob Itegboje, Pumping Python, how to make a person with conditions, if statements, can_vote, can_get_license, is_citizen, passed_test, age < 18, check_age, @staticmethod, self.age, calculate_age, AttributeError can_vote, TypeError positional arguments, SyntaxError parameter without a default, AssertionError True != False, unittest.skip will always fail, test_underage_citizen, test_dir_person_class, test_dir_person_instance, year_of_birth today year-17, red green refactor, remove the commented lines, git commit -am, uv run pytest-watcher . --now, person project voting license, test_person_w_conditions, person_w_conditions
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with conditions — add can_vote and can_get_license so the person project decides with if statements. Open person; uv run pytest-watcher . --now (7 passed from datetime chapter). RED: joe.can_vote() → AttributeError: 'Person' object has no attribute 'can_vote'. GREEN: add can_vote; TypeError takes 0 positional arguments but 1 was given → @staticmethod then self; update test_dir_person_class / test_dir_person_instance (dir lists are version-fragile). Add is_citizen (default True): unexpected keyword argument, then SyntaxError parameter without a default follows parameter with a default; optional is_citizen=True; return self.is_citizen. john/mary is_citizen=False. Age gate: test_underage_citizen with year_of_birth=datetime.date.today().year-17 → AssertionError: True != False until if age < 18: return False (under 18 blocked; 18+ uses is_citizen). Mirror for can_get_license + passed_test (default False); jane/mary pass the test. Extract self.age in __init__ (calculate_age once); unittest.skip on test_when_year_of_birth_is_not_an_integer ('will always fail'). Extract check_age(age, response) as @staticmethod; can_vote/can_get_license call check_age. Review: if for decisions; dir tests hard to maintain; skip hides exceptions; four person tests still repetitive. Leads to booleans and better exception testing. Catalog: test_person_w_conditions.py + person_w_conditions.py.
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with conditions, if statements, can_vote, can_get_license, is_citizen, passed_test, age < 18, 18 or older, check_age, @staticmethod, self.age, calculate_age, AttributeError can_vote, TypeError positional arguments, SyntaxError parameter without a default, AssertionError True != False, unittest.skip will always fail, test_underage_citizen, test_dir_person_class, test_dir_person_instance, year_of_birth today year-17, red green refactor, remove the commented lines, git commit -am, uv run pytest-watcher . --now, person project voting license, test_person_w_conditions, person_w_conditions
 
 .. include:: ../../links.rst
 
@@ -206,7 +206,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test passes.
 
-  These tests are good because it helps document what is in the :ref:`class<what is a class?>` and catches things immediately it changes.
+  These tests are good because they help document what is in the :ref:`class<what is a class?>` and catch its changes immediately.
 
   They are a problem because :ref:`class attributes<what is a class attribute?>` can change between Python_ versions, I have to remember the correct order of names and I am keeping two lists. There has to be a better way.
 
@@ -359,7 +359,7 @@ I want ``can_vote`` to return
 
   the terminal_ goes back to the :ref:`AssertionError<what causes AssertionError?>`.
 
-* I add a :ref:`class attribute<what is a class attribute?>` for ``is_citizen`` so I can use it in the :ref:`can_vote method<add can_vote method>`
+* I add an :ref:`instance attribute<what is a class attribute?>` for ``is_citizen`` so I can use it in the :ref:`can_vote method<add can_vote method>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -920,7 +920,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the terminal_ goes back to the :ref:`AssertionError<what causes AssertionError?>`.
 
-* I add a :ref:`class attribute<what is a class attribute?>` for ``passed_test`` so I can use it in the :ref:`can_get_license method<add can_get_license method>`
+* I add an :ref:`instance attribute<what is a class attribute?>` for ``passed_test`` so I can use it in the :ref:`can_get_license method<add can_get_license method>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -1119,7 +1119,7 @@ add condition to can_get_license
 I want the :ref:`can_get_license method<add can_get_license method>` to use two :ref:`conditions<if statements>` to make a decision
 
 * did the person pass the test?
-* is the person older than 18?
+* is the person ``18`` or older?
 
 ----
 
@@ -1249,7 +1249,7 @@ the test passes because this happens when ``if age < 18:`` runs, Python_ checks 
 ----
 
 *********************************************************************************
-extract age class attribute
+extract age instance attribute
 *********************************************************************************
 
 Three of the :ref:`methods<what is a method?>` of the :ref:`Person class<test Person class>` :ref:`call<how to call a function with input>` the :ref:`calculate_age function<add calculate_age function>`.
@@ -1262,7 +1262,7 @@ Three of the :ref:`methods<what is a method?>` of the :ref:`Person class<test Pe
 
 ----
 
-I add a :ref:`class attribute<what is a class attribute?>` to the :ref:`__init__ method<the constructor method>` so that the age is calculated once when an :ref:`instance<how to test if something is an instance>` is made, not every time one of the :ref:`methods is called<how to call a function with input>`.
+I add an :ref:`instance attribute<what is a class attribute?>` to the :ref:`__init__ method<the constructor method>` so that the age is calculated once when an :ref:`instance<how to test if something is an instance>` is made, not every time one of the :ref:`methods is called<how to call a function with input>`.
 
 .. code-block:: python
   :lineno-start: 4
@@ -1456,7 +1456,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with this solut
     :emphasize-lines: 1-2
 
     git commit -am \
-    'extract age class attribute'
+    'extract age instance attribute'
 
 ----
 
@@ -1477,7 +1477,7 @@ extract check_age method
 
 ----
 
-I add a :ref:`method<what is a method?>` to the :ref:`__init__ method<the constructor method>` that checks if the age is less than ``18`` and returns something else if it is not
+I add a :ref:`method<what is a method?>` to the :ref:`Person class<test Person class>` that checks if the age is less than ``18`` and returns something else if it is not
 
 .. code-block:: python
   :lineno-start: 27
@@ -1516,7 +1516,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                 'can_get_license',
                 'can_vote',
                 'check_age',
-                'say_hello'
+                'say_hello',
             ]
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
@@ -1546,6 +1546,11 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 
     # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # AttributeError
+    # SyntaxError
 
   the test passes.
 
@@ -1613,7 +1618,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         @staticmethod
         def check_age(age, response):
 
-* I :ref:`call<how to call a function with input>` the :ref:`check_age method<extract check_age method>`  from the :ref:`can_get_license method<add can_get_license method>`
+* I :ref:`call<how to call a function with input>` the :ref:`check_age method<extract check_age method>` from the :ref:`can_get_license method<add can_get_license method>`
 
   .. code-block:: python
     :lineno-start: 20
@@ -1689,7 +1694,7 @@ I can use :ref:`if statements<if statements>` to write a program_ that makes dec
 My tests have problems:
 
 * The attribute tests - :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person class<test_dir_person_instance>` and they are a problem to maintain. There has to be a better way.
-* I skipped :ref:`test_when_year_of_birth_is_not_an_integer` because it is always in a :red:`RED` state since causes an :ref:`Exception<errors>`. The only way to know that the code causes the :ref:`Exception<errors>` is to remove the `unittest.skip decorator`_. :ref:`There has to be a better way<how to test that an Exception is raised>`
+* I skipped :ref:`test_when_year_of_birth_is_not_an_integer` because it is always in a :red:`RED` state since it causes an :ref:`Exception<errors>`. The only way to know that the code causes the :ref:`Exception<errors>` is to remove the `unittest.skip decorator`_. :ref:`There has to be a better way<how to test that an Exception is raised>`
 * :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` also still have the problem where they are the same three tests. There has to be a better way.
 
 ----
