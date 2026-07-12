@@ -233,10 +233,10 @@ start the project
 
   because :ref:`True is NOT equal to False<test_assertion_error_w_equality>`.
 
-  .. admonition:: if the terminal_ does not show the same error, then check
+  .. admonition:: if the terminal_ does not show the same error, then check if
 
-    * if your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-    * if you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
+    * your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+    * you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
     and try ``uv run pytest-watcher . --now`` again
 

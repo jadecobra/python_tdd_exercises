@@ -234,10 +234,10 @@ start the project
     FAILED tests/test_booleans.py::TestBooleans::test_failure - AssertionError: True is not false
     =================== 1 failed in X.YZs ====================
 
-  .. admonition:: if the terminal_ does not show the same error, then check
+  .. admonition:: if the terminal_ does not show the same error, then check if
 
-    * if your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-    * if you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
+    * your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+    * you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
     and try ``uv run pytest-watcher . --now`` again
 
@@ -784,7 +784,7 @@ the test passes.
 
   because :ref:`True is True<test_what_is_true>`.
 
-* I change :ref:`assertIsNot<another way to test if something is NOT the same object as True>` to :ref:`assertIs<another way to test if something is the same object as True>`
+* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
 
   .. code-block:: python
     :lineno-start: 13
