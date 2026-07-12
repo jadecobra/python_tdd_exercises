@@ -1425,17 +1425,28 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with this solut
 
   green.
 
-* I remove the commented lines from the :ref:`say_hello method<test say_hello method>`
+* I remove the commented line from the :ref:`say_hello method<test say_hello method>`
 
   .. code-block:: python
+    :lineno-start: 34
 
+        def say_hello(self):
+            return (
+                f'Hello, my name is {self.first_name}'
+                f' {self.last_name} and I am'
+                f' {self.age}.'
+            )
+
+
+    def calculate_age(year_of_birth):
 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'assert year_of_birth is an integer'
+    git commit -am \
+    'extract age class attribute'
 
 ----
 
