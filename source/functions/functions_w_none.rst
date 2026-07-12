@@ -698,13 +698,6 @@ what is next?
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.
 
-.. toctree::
-  :titlesonly:
-  :maxdepth: 1
-
-  ../../basic_objects/booleans
-  ../../truth_table/index
-
 :ref:`Would you like to test the person project with conditions?<how to make a person with conditions>`
 
 ----

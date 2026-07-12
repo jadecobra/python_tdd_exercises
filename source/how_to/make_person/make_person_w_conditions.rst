@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with conditions — add can_vote and can_get_license so the person project decides with if statements. Open person; uv run pytest-watcher . --now (7 passed from datetime chapter). RED: joe.can_vote() → AttributeError: 'Person' object has no attribute 'can_vote'. GREEN: add can_vote; TypeError takes 0 positional arguments but 1 was given → @staticmethod or self; update test_dir_person_class / test_dir_person_instance (dir lists are version-fragile). Add is_citizen (default True): unexpected keyword argument, then SyntaxError parameter without a default follows parameter with a default; optional is_citizen=True; return self.is_citizen. john/mary is_citizen=False. Age gate: test_underage_citizen with year_of_birth=datetime.date.today().year-17 → AssertionError: True != False until if age < 18: return False. Mirror for can_get_license + passed_test (default False); jane/mary pass the test. Extract self.age in __init__ (calculate_age once); unittest.skip on test_when_year_of_birth_is_not_an_integer ('will always fail'). Extract check_age(age, response) as @staticmethod; can_vote/can_get_license call check_age. Review: if for decisions; dir tests hard to maintain; skip hides exceptions; four person tests still repetitive. Leads to booleans and better exception testing. Catalog: test_person_w_conditions.py + person_w_conditions.py.
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with conditions, if statements, can_vote, can_get_license, is_citizen, passed_test, age < 18, check_age, @staticmethod, self.age, calculate_age, AttributeError can_vote, TypeError positional arguments, SyntaxError parameter without a default, AssertionError True != False, unittest.skip will always fail, test_underage_citizen, test_dir_person_class, test_dir_person_instance, year_of_birth today year-17, red green refactor, remove the commented lines, git commit -am, uv run pytest-watcher . --now, person project voting license, test_person_w_conditions, person_w_conditions
 
 .. include:: ../../links.rst
 
@@ -522,7 +522,8 @@ I want ``can_vote`` to return
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    git commit -am 'add is_citizen attribute'
+    git commit -am \
+    'add is_citizen attribute'
 
 ----
 
@@ -533,7 +534,7 @@ add condition to can_vote
 I want the :ref:`can_vote method<add can_vote method>` to use two :ref:`conditions<if statements>` to make a decision
 
 * is the person a citizen?
-* is the person older than ``18``?
+* is the person younger than ``18``?
 
 I can do that with an :ref:`if statement<if statements>`
 
@@ -604,7 +605,7 @@ I can do that with an :ref:`if statement<if statements>`
 
 * If ``age`` is greater than or equal to ``18``, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`method<what is a method?>` - ``return self.is_citizen``, which returns
 
-  - :red:`False` as the output if the person is a citizen
+  - :red:`False` as the output if the person is not a citizen
 
     .. code-block:: shell
 
@@ -617,7 +618,7 @@ I can do that with an :ref:`if statement<if statements>`
          │      return False
          └── return self.is_citizen
 
-  - :green:`True` as the output, if the person is not a citizen
+  - :green:`True` as the output, if the person is a citizen
 
     .. code-block:: shell
 
@@ -1104,7 +1105,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    git commit -am
+    git commit -am \
     'add passed_test attribute'
 
 ``john`` and ``joe`` do not need to pass a value for the ``passed_test`` parameter because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
@@ -1157,7 +1158,7 @@ I want the :ref:`can_get_license method<add can_get_license method>` to use two 
 
     AssertionError: True != False
 
-  because ``can_get_a_license`` currently returns the value of ``passed_test``. It does not care about the age of the person.
+  because ``can_get_license`` currently returns the value of ``passed_test``. It does not care about the age of the person.
 
 ----
 
@@ -1419,6 +1420,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with this solut
 
   .. code-block:: python
     :lineno-start: 34
+    :emphasize-lines: 5-6
 
         def say_hello(self):
             return (
@@ -1682,7 +1684,7 @@ close the project
 review
 *************************************************************************************
 
-I can use :ref:`if statements<if statements>` to make a program make a decision based on :ref:`conditions<if statements>`
+I can use :ref:`if statements<if statements>` to write a program_ that makes decisions based on :ref:`conditions<if statements>`.
 
 My tests have problems:
 
@@ -1720,6 +1722,14 @@ what is next?
 * :ref:`I know that everything in Python is an object<everything is an object>`.
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 * :ref:`I know how to use the datetime library<test person with datetime>`.
+* :ref:`I know what None is<what is None?>`.
+
+.. toctree::
+  :titlesonly:
+  :maxdepth: 1
+
+  ../../basic_objects/booleans/index
+  ../../truth_table/index
 
 :ref:`Would you like to test booleans (there are only two)?<what are booleans?>`
 
