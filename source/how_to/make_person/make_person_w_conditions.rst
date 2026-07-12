@@ -1682,9 +1682,12 @@ close the project
 review
 *************************************************************************************
 
-* I can use the :ref:`datetime library<test person with datetime>` to automatically get the current year for the calculation of a person's age.
-* I can use :ref:`assertions<what is an assertion?>` to make sure certain :ref:`conditions<if statements>` are met before a program does something.
-* My tests have a new problem - when they cause an :ref:`Exception<errors>` the test stops in a :red:`RED` state. My solution was to add notes and comment out the problems, which means the only way to know that the code causes the errors is by removing those comments. :ref:`There has to be a better way<how to test that an Exception is raised>`
+I can use :ref:`if statements<if statements>` to make a program make a decision based on :ref:`conditions<if statements>`
+
+My tests have problems:
+
+* The attribute tests - :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person class<test_dir_person_instance>` and they are a problem to maintain. There has to be a better way.
+* I skipped :ref:`test_when_year_of_birth_is_not_an_integer` because it is always in a :red:`RED` state since causes an :ref:`Exception<errors>`. The only way to know that the code causes the :ref:`Exception<errors>` is to remove the `unittest.skip decorator`_. :ref:`There has to be a better way<how to test that an Exception is raised>`
 * :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` also still have the problem where they are the same three tests. There has to be a better way.
 
 ----
@@ -1693,7 +1696,7 @@ review
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<test person with datetime: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a person with conditions: tests and solutions>`
 
 ----
 
@@ -1718,7 +1721,7 @@ what is next?
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 
-:ref:`Would you like to test None (the simplest object)?<what is None?>`
+:ref:`Would you like to test booleans (there are only two)?<what are booleans?>`
 
 ----
 

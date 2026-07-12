@@ -120,3 +120,35 @@ the code in ``person/src/person.py`` from :ref:`test person with datetime`
 .. literalinclude:: person/solutions/person_w_datetime.py
   :language: python
   :linenos:
+
+----
+
+*********************************************************************************
+how to make a person with conditions: tests and solutions
+*********************************************************************************
+
+=================================================================================
+how to make a person with conditions: tests
+=================================================================================
+
+----
+
+the code in ``person/tests/test_person.py`` from :ref:`how to make a person with conditions`
+
+.. literalinclude:: person/tests/test_person_w_conditions.py
+  :language: python
+  :linenos:
+
+----
+
+=================================================================================
+how to make a person with conditions: solutions
+=================================================================================
+
+----
+
+the code in ``person/src/person.py`` from :ref:`how to make a person with conditions`
+
+.. literalinclude:: person/solutions/person_w_conditions.py
+  :language: python
+  :linenos:

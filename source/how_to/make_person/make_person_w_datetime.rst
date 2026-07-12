@@ -1813,7 +1813,7 @@ review
 
 * I can use the :ref:`datetime library<test person with datetime>` to automatically get the current year for the calculation of a person's age.
 * I can use :ref:`assertions<what is an assertion?>` to make sure certain :ref:`conditions<if statements>` are met before a program does something.
-* My tests have a new problem - when they cause an :ref:`Exception<errors>` the test stops in a :red:`RED` state. My solution was to add notes and comment out the problems, which means the only way to know that the code causes the errors is by removing those comments. :ref:`There has to be a better way<how to test that an Exception is raised>`
+* My tests have a new problem - when they cause an :ref:`Exception<errors>` the test stops in a :red:`RED` state. My solution was to add notes and comment out the problems, which means the only way to know that the code causes the :ref:`Exception<errors>` is to remove the comments. :ref:`There has to be a better way<how to test that an Exception is raised>`
 * :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` also still have the problem where they are the same three tests. There has to be a better way.
 
 ----
