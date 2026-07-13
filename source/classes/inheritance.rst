@@ -2277,7 +2277,7 @@ points the ``a_name`` :ref:`variable<what is a variable?>` to ``ClassName``
 
   a_name = ClassName()
 
-points the ``a_name`` :ref:`variable<what is a variable?>` to the result of calling ``ClassName()``.
+points the ``a_name`` :ref:`variable<what is a variable?>` to the result of calling ``ClassName()``. An :ref:`an instance (a copy)<how to test if something is an instance>` is the result of calling the :ref:`class<what is a class?>`.
 
 ----
 
