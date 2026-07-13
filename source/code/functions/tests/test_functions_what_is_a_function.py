@@ -37,3 +37,4 @@ def test_constant_function():
 # Exceptions seen
 # AssertionError
 # NameError
+# TypeError

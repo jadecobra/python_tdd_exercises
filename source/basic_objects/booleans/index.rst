@@ -2735,10 +2735,10 @@ Is a string_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what
 * I add a test for if a string_ (anything in :ref:`quotes`) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 67
     :emphasize-lines: 3-4
 
-            self.assertTrue(a_positive_float)
+            self.assertIsNot(a_positive_float, True)
 
         def test_is_a_string_falsy_or_truthy(self):
             self.assertTrue(bool(str()))
@@ -2765,7 +2765,7 @@ Is a string_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what
 I change assertTrue_ to assertFalse_ for ``bool(str())``
 
 .. code-block:: python
-  :lineno-start: 62
+  :lineno-start: 69
   :emphasize-lines: 2-3
 
       def test_is_a_string_falsy_or_truthy(self):
@@ -2788,7 +2788,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 67
+    :lineno-start: 74
     :emphasize-lines: 8
 
     # NOTES
@@ -2800,16 +2800,11 @@ the test passes.
     # True is NOT False
     # bool(str()) is False
     # bool(zero) is False
-    # bool(None) is False
-    # False is False
-    # False is an integer
-    # False is a boolean
-    # False is NOT True
 
 * I add an :ref:`assertion<what is an assertion?>` for ``str()`` without bool_
 
   .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 69
     :emphasize-lines: 4
 
         def test_is_a_string_falsy_or_truthy(self):
@@ -2827,12 +2822,17 @@ the test passes.
     AssertionError: '' is not true
 
   - because the result of ``bool(str())`` which is ``bool('')`` is :ref:`False<test_what_is_false>`.
-  - ``str()`` is another way to write ``''`` or ``""`` or ``''''''`` or ``""""""`` (the empty string_).
+  - ``str()`` is another way to write the empty string_:
+
+    * ``''`` - single :ref:`quotes`
+    * ``""`` - double :ref:`quotes`
+    * ``''''''`` - triple single :ref:`quotes`
+    * ``""""""`` - triple double :ref:`quotes`
 
 * I change assertTrue_ to assertFalse_ for ``str()``
 
   .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 69
     :emphasize-lines: 4-5
 
         def test_is_a_string_falsy_or_truthy(self):
@@ -2844,8 +2844,14 @@ the test passes.
 
     # NOTES
 
-  - the test passes because the result of ``bool(str())`` is :ref:`False<test_what_is_false>`
-  - the empty string_ is grouped as :ref:`True<test_what_is_true>`
+  - The test passes because the result of ``bool(str())`` is :ref:`False<test_what_is_false>`.
+  - The empty string_ is grouped as :ref:`True<test_what_is_true>`.
+
+* I add an :ref:`assertion<what is an assertion?>` for if the empty string_ is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+
+  .. code-block:: python
+    :lineno-start: 
+
   - :ref:`a string is not the same object as False<test_assertion_error_w_false>`
 
 * I add an :ref:`assertion<what is an assertion?>` to test if a string_ with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
