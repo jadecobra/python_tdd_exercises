@@ -230,7 +230,7 @@ start the project
     class TestBooleans(unittest.TestCase):
 
         def test_failure(self):
-            self.assertFalse(True)
+            self.assertEqual(False, True)
 
 
     # Exceptions seen
@@ -239,10 +239,15 @@ start the project
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
+    :lineno-start: 6
+    :emphasize-lines: 2-3
 
-            self.assertFalse(False)
+        def test_failure(self):
+            # self.assertEqual(False, True)
+            self.assertEqual(False, False)
+
+
+    # Exceptions seen
 
   the test passes.
 
@@ -258,14 +263,11 @@ test_what_is_false
 
 ----
 
-I change :ref:`test_failure` to :ref:`test_what_is_false`, then use the :ref:`assertNotIsInstance method<test_assert_not_is_instance>` I learned from :ref:`everything is an object` to check if :ref:`False<test_what_is_false>` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
+I change :ref:`test_failure` to :ref:`test_what_is_false` with an :ref:`instance test<test_assert_not_is_instance>`
 
 .. code-block:: python
-  :linenos:
-  :emphasize-lines: 6-7
-
-  import unittest
-
+  :lineno-start: 4
+  :emphasize-lines: 3-4
 
   class TestBooleans(unittest.TestCase):
 
@@ -282,7 +284,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: False is an instance of <class 'bool'>
 
-this was also in :ref:`test_none_v_boolean`.
+this was also in :ref:`test_is_none_a_boolean`.
 
 ----
 
@@ -333,9 +335,9 @@ the test passes.
     # Exceptions seen
     # AssertionError
 
-  I know this from :ref:`testing None<what is None?>`.
+  also from :ref:`test_is_none_a_boolean`.
 
-* I use the :ref:`assertIsNot method<another way to test if something is NOT the same object as False>` like I did in :ref:`test_assertion_error_w_false`
+* I use the :ref:`assertIsNot method<test_assert_is_not>` like I did in :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
     :lineno-start: 6
@@ -357,7 +359,7 @@ the test passes.
 
   because :ref:`False is False<test_what_is_false>`.
 
-* I change :ref:`assertIsNot<another way to test if something is NOT the same object as False>` to :ref:`assertIs<another way to test if something is the same object as False>`
+* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -669,7 +671,7 @@ test_what_is_true
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for :ref:`True<test_what_is_true>` with the :ref:`assertNotIsInstance method<test_assert_not_is_instance>` I learned from :ref:`everything is an object` to check if :ref:`True<test_what_is_true>` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
+* I add a test for :ref:`True<test_what_is_true>` with the :ref:`assertNotIsInstance method<test_assert_not_is_instance>` to check if :ref:`True<test_what_is_true>` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -694,7 +696,7 @@ test_what_is_true
 
     AssertionError: True is an instance of <class 'bool'>
 
-  this was also in :ref:`test_none_v_boolean`.
+  this was also in :ref:`test_is_none_a_boolean`.
 
 ----
 

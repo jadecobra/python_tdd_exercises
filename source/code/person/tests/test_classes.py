@@ -31,7 +31,7 @@ class TestClasses(unittest.TestCase):
         assert issubclass(a_class, object)
         self.assertIsSubclass(a_class, object)
 
-    def test_none_v_object(self):
+    def test_is_none_a_object(self):
         assert isinstance(None, object)
         self.assertIsInstance(None, object)
 

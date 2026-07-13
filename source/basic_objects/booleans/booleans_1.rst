@@ -303,7 +303,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: False is an instance of <class 'bool'>
 
-this was also in :ref:`test_none_v_boolean`.
+this was also in :ref:`test_is_none_a_boolean`.
 
 ----
 
@@ -356,7 +356,7 @@ the test passes.
 
   I know this from :ref:`testing None<what is None?>`.
 
-* I use the :ref:`assertIsNot method<another way to test if something is NOT the same object as False>` like I did in :ref:`test_assertion_error_w_false`
+* I use the :ref:`assertIsNot method<test_assert_is_not>` like I did in :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
     :lineno-start: 6
@@ -378,7 +378,7 @@ the test passes.
 
   because :ref:`False is False<test_what_is_false>`.
 
-* I change :ref:`assertIsNot<another way to test if something is NOT the same object as False>` to :ref:`assertIs<another way to test if something is the same object as False>`
+* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -715,7 +715,7 @@ test_what_is_true
 
     AssertionError: True is an instance of <class 'bool'>
 
-  this was also in :ref:`test_none_v_boolean`.
+  this was also in :ref:`test_is_none_a_boolean`.
 
 ----
 
