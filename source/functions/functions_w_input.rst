@@ -1545,7 +1545,7 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes, because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in the test sends ``'first'`` as ``first_input`` and ``'last'`` as ``last_input``.
+  the test passes, because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function?>` in the test sends ``'first'`` as ``first_input`` and ``'last'`` as ``last_input``.
 
 * The problem with giving arguments this way is that they always have to be in the order in the :ref:`function definition<how to make a function that takes input>` or I get something different. I add an :ref:`assertion<what is an assertion?>` to show this
 
@@ -1581,7 +1581,7 @@ the test passes.
 
     AssertionError: assert ('last', 'first') == ('first', 'last')
 
-  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``'last'`` as ``first_input`` and ``'first'`` as ``last_input``. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input>` in this :ref:`assertion<what is an assertion?>` sends ``'last'`` as ``first_input`` and ``'first'`` as ``last_input``. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
@@ -1743,7 +1743,7 @@ the test passes.
 
     E       assert (0, 1) == (1, 0)
 
-  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``0`` as ``first_input`` and ``1`` as ``last_input``. Using substitution
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input>` in this :ref:`assertion<what is an assertion?>` sends ``0`` as ``first_input`` and ``1`` as ``last_input``. Using substitution
 
   .. code-block:: python
 
@@ -1830,7 +1830,7 @@ the test passes.
           assert ([1, 2, 3, 'n...0, 1, 2, 'n'))
               == ((1, 2, 3, 'n...0, 1, 2, 'n'])
 
-  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this test sends ``(0, 1, 2, 'n')`` as ``first_input`` and ``[0, 1, 2, 'n']`` as ``last_input``. Using substitution
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input>` in this test sends ``(0, 1, 2, 'n')`` as ``first_input`` and ``[0, 1, 2, 'n']`` as ``last_input``. Using substitution
 
   .. code-block:: python
 
@@ -2245,7 +2245,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
     # Exceptions seen
 
-  the test passes, because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in the test sends ``first_input='first'`` and ``last_input='last'``.
+  the test passes, because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input>` in the test sends ``first_input='first'`` and ``last_input='last'``.
 
 * The problem with giving arguments this way is I must use the exact names. The advantage of giving arguments this way is that they do not have to match the order in the :ref:`function definition<how to make a function that takes input>`. I add an :ref:`assertion<what is an assertion?>` with the `keyword arguments`_ given out of order
 
@@ -2278,7 +2278,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
     AssertionError: assert ('first', 'last') == ('last', 'first')
 
-  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``'last'`` as ``last_input`` and ``'first'`` as ``first_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input>` in this :ref:`assertion<what is an assertion?>` sends ``'last'`` as ``last_input`` and ``'first'`` as ``first_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
@@ -2424,7 +2424,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
     E       assert (1, 0) == (0, 1)
 
-  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``0`` as ``last_input`` and ``1`` as ``first_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input>` in this :ref:`assertion<what is an assertion?>` sends ``0`` as ``last_input`` and ``1`` as ``first_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
@@ -2530,7 +2530,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
         assert ([1, 2, 3, 'n...0, 1, 2, 'n'))
             == ((1, 2, 3, 'n...0, 1, 2, 'n'])
 
-  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``[0, 1, 2, 'n']`` as ``first_input`` and ``(0, 1, 2, 'n')`` as ``last_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input>` in this :ref:`assertion<what is an assertion?>` sends ``[0, 1, 2, 'n']`` as ``first_input`` and ``(0, 1, 2, 'n')`` as ``last_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
@@ -2744,7 +2744,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
         a_set, a_dictionary,
     )
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_positional_arguments` to show that I can call the :ref:`keyword_arguments function<test_keyword_arguments>` with :ref:`positional arguments<test_positional_arguments>`
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_positional_arguments` to show that I can :ref:`call<how to call a function with input>` the :ref:`keyword_arguments function<test_keyword_arguments>` with :ref:`positional arguments<test_positional_arguments>`
 
   .. code-block:: python
     :lineno-start: 81
@@ -3098,7 +3098,7 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 
   the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because I have not fixed the problem, I gave confusing values in the call. Python_ still cannot tell the difference between the two values because I gave a :ref:`positional argument<test_positional_arguments>` which from the :ref:`function definition<how to make a function that takes input>` is ``last_input`` and I gave a value with the name ``last_input``.
 
-* The call tells gives the values for ``last_input`` as both ``'first'`` and ``'last'``, it would be like defining the :ref:`function<what is a function?>` with the same name twice
+* The :ref:`call<how to call a function with input>` gives the values for ``last_input`` as both ``'first'`` and ``'last'``, it would be like defining the :ref:`function<what is a function?>` with the same name twice
 
   .. code-block:: python
     :lineno-start: 145
@@ -3211,7 +3211,7 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 
     # Exceptions seen
 
-* I the new :ref:`variables<what is a variable?>` to remove repetition of ``'first'`` and ``'last'``
+* I use the new :ref:`variables<what is a variable?>` to remove repetition of ``'first'`` and ``'last'``
 
   .. code-block:: python
     :lineno-start: 145
@@ -3373,7 +3373,7 @@ the test passes.
 
 ----
 
-* I remove ``last_input=last_name`` from the call to ``optional_arguments`` to show that it is a required argument
+* I remove ``last_input=last_name`` from the :ref:`call<how to call a function with input>` to ``optional_arguments`` to show that it is a required argument
 
   .. code-block:: python
     :lineno-start: 159
@@ -3446,7 +3446,7 @@ the test passes.
 
   :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
-* I add another :ref:`assertion<what is an assertion?>` to show that I can still call the :ref:`function<what is a function?>` with different values
+* I add another :ref:`assertion<what is an assertion?>` to show that I can still call the :ref:`call the function<how to call a function with input>` with different values
 
   .. code-block:: python
     :lineno-start: 168
@@ -4710,7 +4710,7 @@ how Python reads starred expressions
   - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the things in ``something`` as :ref:`positional arguments<test_positional_arguments>`.
   - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
 
-* I add an :ref:`assertion<what is an assertion?>` with a call to ``unknown_number_of_arguments`` using only :ref:`positional arguments<test_positional_arguments>`
+* I add an :ref:`assertion<what is an assertion?>` with a :ref:`call<how to call a function with input>` to ``unknown_number_of_arguments`` using only :ref:`positional arguments<test_positional_arguments>`
 
   .. code-block:: python
     :lineno-start: 242
