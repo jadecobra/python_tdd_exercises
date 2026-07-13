@@ -1610,8 +1610,42 @@ the test passes.
 
     # NOTES
 
-  - the test passes because the result of ``bool(None)`` is :ref:`False<test_what_is_false>`.
-  - :ref:`None is not the same object as False<test_assertion_error_w_false>`.
+  the test passes because the result of ``bool(None)`` is :ref:`False<test_what_is_false>`.
+
+* I add an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 3
+
+            # self.assertTrue(None)
+            self.assertFalse(None)
+            self.assertIs(None, False)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None is not False
+
+  the test passes because :ref:`None is not the same object as False<test_assertion_error_w_false>`
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(None, False)``
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 3-4
+
+            # self.assertTrue(None)
+            self.assertFalse(None)
+            # self.assertIs(None, False)
+            self.assertIsNot(None, False)
+
+
+    # NOTES
 
 * I remove the commented lines from :ref:`test_is_none_falsy_or_truthy`
 
@@ -1621,6 +1655,7 @@ the test passes.
         def test_is_none_falsy_or_truthy(self):
             self.assertFalse(bool(None))
             self.assertFalse(None)
+            self.assertIsNot(None, False)
 
 
     # NOTES
@@ -1633,7 +1668,9 @@ the test passes.
     git commit --all --message \
     'add test_is_none_falsy_or_truthy'
 
-:ref:`None is grouped as False<test_is_none_falsy_or_truthy>`. :ref:`The AssertionError chapter<what causes AssertionError?>` showed that :ref:`None is not False<test_assertion_error_w_false>` and :ref:`False is not None<test_assertion_error_w_none>`.
+* :ref:`False is not None<test_assertion_error_w_none>`.
+* :ref:`None is not False<test_assertion_error_w_false>`
+* :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`.
 
 ----
 
@@ -1653,12 +1690,10 @@ Is an integer_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_wh
 * I add a test for if an integer_ (a whole number without decimals) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 34
-    :emphasize-lines: 5-6
+    :lineno-start: 39
+    :emphasize-lines: 3-4
 
-        def test_is_none_falsy_or_truthy(self):
-            self.assertFalse(bool(None))
-            self.assertFalse(None)
+            self.assertIsNot(None, False)
 
         def test_is_an_integer_falsy_or_truthy(self):
             self.assertFalse(bool(-1))
@@ -2713,9 +2748,9 @@ the test passes.
 
     # NOTES
 
-  - the test passes because the result of ``bool("string with things")`` is :ref:`True<test_what_is_true>`
-  - a string_ with things is grouped as :ref:`True<test_what_is_true>`
-  - :ref:`a string is not the same object as True<test_assertion_error_w_true>`
+  - The test passes because the result of ``bool("string with things")`` is :ref:`True<test_what_is_true>`.
+  - A string_ with things is grouped as :ref:`True<test_what_is_true>`.
+  - :ref:`A string is not the same object as True<test_assertion_error_w_true>`.
 
 * I add a :ref:`variable<what is a variable?>` for ``"string with things"``
 
