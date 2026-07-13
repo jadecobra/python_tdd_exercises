@@ -2969,40 +2969,45 @@ the test passes.
     :lineno-start: 79
     :emphasize-lines: 3
 
+            # self.assertFalse("string with things")
+            self.assertTrue("string with things")
+            self.assertIs("string with things")
+
+
+    # NOTES
+
 * I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``("string with things", True)``
 
   .. code-block:: python
     :lineno-start: 79
     :emphasize-lines: 3-4
 
+            # self.assertFalse("string with things")
+            self.assertTrue("string with things")
+            # self.assertIs("string with things")
+            self.assertIsNot("string with things")
+
+
+    # NOTES
+
   the test passes because :ref:`a string is not the same object as True<test_assertion_error_w_true>`.
 
 * I add a :ref:`variable<what is a variable?>` for ``"string with things"``
 
   .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 7
+    :lineno-start: 75
+    :emphasize-lines: 3
 
-        def test_is_a_string_falsy_or_truthy(self):
-            # self.assertTrue(bool(str()))
-            self.assertFalse(bool(str()))
-            # self.assertTrue(str())
-            self.assertFalse(str())
+            self.assertIsNot(str(), False)
 
             a_string = "string with things"
             # self.assertFalse(bool("string with things"))
-            self.assertTrue(bool("string with things"))
-            # self.assertFalse("string with things")
-            self.assertTrue("string with things")
-
-
-    # NOTES
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``"string with things"``
 
   .. code-block:: python
-    :lineno-start: 54
-    :emphasize-lines: 3-4, 6-7
+    :lineno-start: 77
+    :emphasize-lines: 3-4, 6-7, 9-10
 
             a_string = "string with things"
             # self.assertFalse(bool("string with things"))
@@ -3011,6 +3016,9 @@ the test passes.
             # self.assertFalse("string with things")
             # self.assertTrue("string with things")
             self.assertTrue(a_string)
+            # self.assertIs("string with things")
+            # self.assertIsNot("string with things")
+            self.assertIsNot(a_string)
 
 
     # NOTES
@@ -3020,15 +3028,17 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 48
+    :lineno-start: 69
 
         def test_is_a_string_falsy_or_truthy(self):
             self.assertFalse(bool(str()))
             self.assertFalse(str())
+            self.assertIsNot(str(), False)
 
             a_string = "string with things"
             self.assertTrue(bool(a_string))
             self.assertTrue(a_string)
+            self.assertIsNot(a_string)
 
 
     # NOTES
@@ -3036,22 +3046,24 @@ the test passes.
 * I change the new comments to make them clearer
 
   .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 2, 8
+    :lineno-start: 80
+    :emphasize-lines: 2, 9
 
     # NOTES
     # bool(a string with things) is True
-    # bool(positive number) is True
-    # bool(negative number) is True
-    # True is NOT False
-    # True is NOT equal to False
+    # bool(a positive number) is True
+    # bool(a negative number) is True
+    # True is True
+    # True is an integer
     # True is a boolean
+    # True is NOT False
     # bool(the empty string) is False
     # bool(zero) is False
     # bool(None) is False
-    # False is NOT True
-    # False is NOT equal to True
+    # False is False
+    # False is an integer
     # False is a boolean
+    # False is NOT True
 
 * I add a git_ commit message in the other terminal_
 
@@ -3061,9 +3073,7 @@ the test passes.
     git commit --all --message \
     'add test_is_a_string_falsy_or_truthy'
 
-* :ref:`the empty string is grouped as False, a string with things is grouped as True<test_is_a_string_falsy_or_truthy>`
-* :ref:`zero is grouped as False, and positive and negative numbers are grouped as True<test_is_a_float_falsy_or_truthy>`
-* :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
+:ref:`The empty string is grouped as False. A string with things is grouped as True<test_is_a_string_falsy_or_truthy>`.
 
 -----
 
