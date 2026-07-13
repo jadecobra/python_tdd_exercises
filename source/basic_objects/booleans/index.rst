@@ -1612,7 +1612,7 @@ the test passes.
 
   the test passes because the result of ``bool(None)`` is :ref:`False<test_what_is_false>`.
 
-* I add an :ref:`assertion<what is an assertion?>` for if :ref:`None<what is None?>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if :ref:`None<what is None?>` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -1795,7 +1795,7 @@ the test passes.
   - The test passes because the result of ``bool(-1)`` is :ref:`True<test_what_is_true>`.
   - A negative integer_ is grouped as :ref:`True<test_what_is_true>`.
 
-* I add an :ref:`assertion<what is an assertion?>` for if an integer_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if a negative integer_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 42
@@ -1955,16 +1955,50 @@ the test passes.
 
     # NOTES
 
-  - The test passes because the result of ``bool(0)`` is :ref:`False<test_what_is_false>`.
-  - :ref:`An integer is not the same object as False<test_assertion_error_w_false>`.
+  the test passes because the result of ``bool(0)`` is :ref:`False<test_what_is_false>`.
+
+* I add an :ref:`assertion<what is an assertion?>` for if ``0`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+
+  .. code-block:: python
+    :lineno-start: 53
+    :emphasize-lines: 3
+
+            # self.assertTrue(0)
+            self.assertFalse(0)
+            self.assertIs(0, False)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 0 is not False
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(0, False)``
+
+  .. code-block:: python
+    :lineno-start: 53
+    :emphasize-lines: 3-4
+
+            # self.assertTrue(0)
+            self.assertFalse(0)
+            # self.assertIs(0, False)
+            self.assertIsNot(0, False)
+
+
+    # NOTES
+
+  the test passes because :ref:`an integer is not the same object as False<test_assertion_error_w_false>`.
 
 * I add an :ref:`assertion<what is an assertion?>` to test if ``1`` is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 56
     :emphasize-lines: 3
 
-            self.assertFalse(0)
+            self.assertIsNot(0, False)
 
             self.assertFalse(bool(1))
 
@@ -1983,10 +2017,10 @@ the test passes.
 * I change assertFalse_ to assertTrue_ for ``bool(1)``
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 56
     :emphasize-lines: 3
 
-            self.assertFalse(0)
+            self.assertIsNot(0, False)
 
             # self.assertFalse(bool(1))
             self.assertTrue(bool(1))
@@ -1999,7 +2033,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 62
     :emphasize-lines: 2
 
     # NOTES
@@ -2010,24 +2044,19 @@ the test passes.
     # True is a boolean
     # True is NOT False
     # bool(0) is False
-    # bool(None) is False
-    # False is False
-    # False is an integer
-    # False is a boolean
-    # False is NOT True
 
 * I add an :ref:`assertion<what is an assertion?>` for ``1`` without bool_
 
   .. code-block:: python
-    :lineno-start: 52
+    :lineno-start: 58
     :emphasize-lines: 3
 
-          # self.assertFalse(bool(1))
-          self.assertTrue(bool(1))
-          self.assertFalse(1)
+            # self.assertFalse(bool(1))
+            self.assertTrue(bool(1))
+            self.assertFalse(1)
 
 
-  # NOTES
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2040,7 +2069,7 @@ the test passes.
 * I change assertFalse_ to assertTrue_ for ``1``
 
   .. code-block:: python
-    :lineno-start: 52
+    :lineno-start: 58
     :emphasize-lines: 3-4
 
             # self.assertFalse(bool(1))
@@ -2053,30 +2082,58 @@ the test passes.
 
   - The test passes because the result of ``bool(1)`` is :ref:`True<test_what_is_true>`.
   - A positive integer_ is grouped as :ref:`True<test_what_is_true>`.
-  - :ref:`An integer is not the same object as True<test_assertion_error_w_true>`.
 
-* I add a :ref:`variable<what is a variable?>` for ``1``
+* I add an :ref:`assertion<what is an assertion?>` for if a positive integer_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 60
     :emphasize-lines: 3
 
-            self.assertFalse(0)
-
-            a_positive_integer = 1
-            # self.assertFalse(bool(1))
-            self.assertTrue(bool(1))
             # self.assertFalse(1)
             self.assertTrue(1)
+            self.assertIs(1, True)
 
 
     # NOTES
 
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 1 is not True
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(-1, True)``
+
+  .. code-block:: python
+    :lineno-start: 60
+    :emphasize-lines: 3-4
+
+            # self.assertFalse(1)
+            self.assertTrue(1)
+            # self.assertIs(1, True)
+            self.assertIsNot(1, True)
+
+
+    # NOTES
+
+  the test passes because :ref:`An integer is not the same object as True<test_assertion_error_w_true>`.
+
+* I add a :ref:`variable<what is a variable?>` for ``1``
+
+  .. code-block:: python
+    :lineno-start: 56
+    :emphasize-lines: 3
+
+            self.assertIsNot(0, False)
+
+            a_positive_integer = 1
+            # self.assertFalse(bool(1))
+
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``1``
 
   .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 3-4, 6-7
+    :lineno-start: 58
+    :emphasize-lines: 3-4, 6-7, 9-10
 
             a_positive_integer = 1
             # self.assertFalse(bool(1))
@@ -2085,6 +2142,9 @@ the test passes.
             # self.assertFalse(1)
             # self.assertTrue(1)
             self.assertTrue(a_positive_integer)
+            # self.assertIs(1, True)
+            # self.assertIsNot(1, True)
+            self.assertIsNot(a_positive_integer, True)
 
 
     # NOTES
@@ -2100,13 +2160,16 @@ the test passes.
             a_negative_integer = -1
             self.assertTrue(bool(a_negative_integer))
             self.assertTrue(a_negative_integer)
+            self.assertIsNot(a_negative_integer, True)
 
             self.assertFalse(bool(0))
             self.assertFalse(0)
+            self.assertIsNot(0, False)
 
             a_positive_integer = 1
             self.assertTrue(bool(a_positive_integer))
             self.assertTrue(a_positive_integer)
+            self.assertIsNot(a_positive_integer, True)
 
 
     # NOTES
@@ -2119,7 +2182,7 @@ the test passes.
     git commit --all --message \
     'add test_is_an_integer_falsy_or_truthy'
 
-:ref:`0 is grouped as False. Positive and Negative Integers are grouped as True<test_is_an_integer_falsy_or_truthy>`
+:ref:`0 is grouped as False. Positive and Negative Integers are grouped as True<test_is_an_integer_falsy_or_truthy>`.
 
 ----
 
