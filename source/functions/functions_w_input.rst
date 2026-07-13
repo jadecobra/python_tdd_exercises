@@ -3139,7 +3139,7 @@ I can call :ref:`functions<what is a function?>` with both :ref:`positional<test
 
     AssertionError: assert None == ('first', 'last')
 
-  because when I :ref:`call<how to call a function with input>` ``args_and_kwargs`` uses ``'first'`` and ``last_input='last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution
+  because when I :ref:`call<how to call a function with input>` ``args_and_kwargs`` with ``'first'`` and ``last_input='last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution
 
   .. code-block:: python
 
