@@ -886,7 +886,7 @@ I want to test if a :ref:`boolean<what are booleans?>` is an :ref:`object<everyt
 
     E       assert not True
 
-  because :ref:`bool<how to test if something is grouped as True>` is a :ref:`child of object<what is a class?>`.
+  because :ref:`bool<how to test if something is grouped as True>` is a :ref:`child of object<everything is an object>`.
 
 ----
 
@@ -990,7 +990,7 @@ I want to test if an integer_ (a whole number without decimals) is an :ref:`obje
 
     E       assert not True
 
-  because int_ is a :ref:`child of object<what is a class?>`.
+  because int_ is a :ref:`child of object<everything is an object>`.
 
 ----
 
@@ -1084,7 +1084,7 @@ I want to test if a float_ (a binary floating point decimal number) is an :ref:`
 
     E       assert not True
 
-  because float_ is a :ref:`child of object<what is a class?>`.
+  because float_ is a :ref:`child of object<everything is an object>`.
 
 ----
 
@@ -1178,7 +1178,7 @@ I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<every
 
     E       assert not True
 
-  because str_ is a :ref:`child of object<what is a class?>`.
+  because str_ is a :ref:`child of object<everything is an object>`.
 
 ----
 
@@ -1272,7 +1272,7 @@ I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma
 
     E       assert not True
 
-  because tuple_ is a :ref:`child of object<what is a class?>`.
+  because tuple_ is a :ref:`child of object<everything is an object>`.
 
 ----
 
@@ -1366,7 +1366,7 @@ I want to test if a :ref:`list<what is a list?>` (anything in square brackets ``
 
     E       assert not True
 
-  because :ref:`list<what is a list?>` is a :ref:`child of object<what is a class?>`.
+  because :ref:`list<what is a list?>` is a :ref:`child of object<everything is an object>`.
 
 ----
 
@@ -1459,7 +1459,7 @@ I want to test if a set_ (anything in curly braces ``{ }``, not :ref:`key-value 
 
     E       assert not True
 
-  because set_ is a :ref:`child of object<what is a class?>`.
+  because set_ is a :ref:`child of object<everything is an object>`.
 
 ----
 
@@ -1552,7 +1552,7 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 
     E       assert not True
 
-  because :ref:`dict<what is a dictionary?>` is a :ref:`child of object<what is a class?>`.
+  because :ref:`dict<what is a dictionary?>` is a :ref:`child of object<everything is an object>`.
 
 ----
 
@@ -1612,7 +1612,7 @@ the test passes.
 instance vs subclass
 *********************************************************************************
 
-An :ref:`instance<how to test if something is an instance>` is a copy of an :ref:`object<what is a class?>` and a :ref:`subclass<how to test if something is a subclass>` is a child of an :ref:`object<what is a class?>`. They are different.
+An :ref:`instance<how to test if something is an instance>` is a copy of an :ref:`object<everything is an object>` and a :ref:`subclass<how to test if something is a subclass>` is a child of an :ref:`object<everything is an object>`. They are different.
 
 =================================================================================
 :red:`RED`: make it fail
@@ -1868,8 +1868,8 @@ the test passes.
   the test passes because :ref:`bool<what are booleans?>` is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
-  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<what is a class?>`
-  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<what is a class?>`
+  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<everything is an object>`
+  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<everything is an object>`
 
 * I remove the commented line from :ref:`test_is_a_boolean_an_object`
 
@@ -1921,8 +1921,8 @@ the test passes.
   the test passes because int_ is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
-  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<what is a class?>`
-  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<what is a class?>`
+  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<everything is an object>`
+  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<everything is an object>`
 
 * I remove the commented line from :ref:`test_is_an_integer_an_object`
 
@@ -1974,8 +1974,8 @@ the test passes.
   the test passes because float_ is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
-  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<what is a class?>`
-  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<what is a class?>`
+  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<everything is an object>`
+  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<everything is an object>`
 
 * I remove the commented line from :ref:`test_is_a_float_an_object`
 
@@ -2029,8 +2029,8 @@ the test passes.
   the test passes because str_ is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
-  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<what is a class?>`
-  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<what is a class?>`
+  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<everything is an object>`
+  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<everything is an object>`
 
 * I remove the commented line from :ref:`test_is_a_string_an_object`
 
@@ -2082,8 +2082,8 @@ the test passes.
   the test passes because tuple_ is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
-  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<what is a class?>`
-  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<what is a class?>`
+  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<everything is an object>`
+  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<everything is an object>`
 
 * I remove the commented line from :ref:`test_is_a_tuple_an_object`
 
@@ -2136,8 +2136,8 @@ the test passes.
   the test passes because :ref:`list<what is a list?>` is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
-  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<what is a class?>`
-  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<what is a class?>`
+  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<everything is an object>`
+  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<everything is an object>`
 
 * I remove the commented line from :ref:`test_is_a_list_an_object`
 
@@ -2189,8 +2189,8 @@ the test passes.
   the test passes because set_ is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
-  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<what is a class?>`
-  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<what is a class?>`
+  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<everything is an object>`
+  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<everything is an object>`
 
 * I remove the commented line from :ref:`test_is_a_set_an_object`
 
@@ -2243,8 +2243,8 @@ the test passes.
   the test passes because :ref:`dict<what is a dictionary?>` is a
 
   - :ref:`built-in function<what is a function?>` that comes with Python_
-  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<what is a class?>`
-  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<what is a class?>`
+  - is an :ref:`instance<how to test if something is an instance>` of :ref:`object<everything is an object>`
+  - is a :ref:`subclass<how to test if something is a subclass>` of :ref:`object<everything is an object>`
 
 * I remove the commented line from :ref:`test_is_a_dictionary_an_object`
 
@@ -2299,7 +2299,7 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test to ``test_classes.py`` with a call to the `dir built-in function`_ to get the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of :ref:`object<what is a class?>`
+* I add a test to ``test_classes.py`` with a call to the `dir built-in function`_ to get the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 66

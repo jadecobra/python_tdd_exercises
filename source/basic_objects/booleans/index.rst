@@ -398,7 +398,7 @@ the test passes.
 how to test if something is is an instance of more than one object
 *********************************************************************************
 
-The :ref:`instance methods<how to test if something is an instance>` can take a tuple_ of :ref:`classes<what is a class?>`.
+The :ref:`instance methods<how to test if something is an instance>` can take a tuple_ of :ref:`classes<everything is an object>`.
 
 * I put :ref:`bool<what are booleans?>` and int_ together
 
@@ -1071,7 +1071,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   AssertionError: True
       is an instance of <class 'bool'>
 
-this was also in :ref:`test_is_none_a_boolean`, without the tuple_ of :ref:`classes<what is a class?>`.
+this was also in :ref:`test_is_none_a_boolean`, without the tuple_ of :ref:`classes<everything is an object>`.
 
 ----
 

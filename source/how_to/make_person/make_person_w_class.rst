@@ -125,7 +125,7 @@ open the project
 test Person class
 *********************************************************************************
 
-I made a :ref:`function<what is a function?>` that makes a string_ to represent a person when I give it ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``. I can also represent a person with a :ref:`class<what is a class?>` because it is :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` that belong together.
+I made a :ref:`function<what is a function?>` that makes a string_ to represent a person when I give it ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``. I can also represent a person with a :ref:`class<everything is an object>` because it is :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` that belong together.
 
 ----
 
@@ -135,7 +135,7 @@ I made a :ref:`function<what is a function?>` that makes a string_ to represent 
 
 ----
 
-I make a copy of a :ref:`class<what is a class?>` to represent ``joe`` in :ref:`test_joe` in ``test_person.py``
+I make a copy of a :ref:`class<everything is an object>` to represent ``joe`` in :ref:`test_joe` in ``test_person.py``
 
 .. code-block:: python
   :lineno-start:
@@ -241,7 +241,7 @@ because there is no definition for ``Person`` in ``test_person.py``.
               year_of_birth=year_of_birth,
           ) # has no constructor method
 
-    which raises :ref:`TypeError<what causes TypeError?>` since :ref:`classes<what is a class?>` do not take arguments like a :ref:`function<what is a function?>` without a :ref:`method<what is a method?>` that handles those arguments and I called this one with four arguments.
+    which raises :ref:`TypeError<what causes TypeError?>` since :ref:`classes<everything is an object>` do not take arguments like a :ref:`function<what is a function?>` without a :ref:`method<what is a method?>` that handles those arguments and I called this one with four arguments.
 
 ----
 
@@ -543,7 +543,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 test say_hello method
 *********************************************************************************
 
-I made a person :ref:`say hi with a function<test say_hello function>`, I can also do the same thing with a :ref:`class<what is a class?>` because it is :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` that belong together.
+I made a person :ref:`say hi with a function<test say_hello function>`, I can also do the same thing with a :ref:`class<everything is an object>` because it is :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` that belong together.
 
 ----
 
@@ -1292,7 +1292,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 what is the staticmethod decorator?
 *********************************************************************************
 
-* I can use the `staticmethod decorator`_ if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything in the :ref:`class<what is a class?>` that way I am not sending more information than what the :ref:`method<what is a method?>` needs. I add ``@staticmethod`` to the :ref:`say_hello method<test say_hello method>`
+* I can use the `staticmethod decorator`_ if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything in the :ref:`class<everything is an object>` that way I am not sending more information than what the :ref:`method<what is a method?>` needs. I add ``@staticmethod`` to the :ref:`say_hello method<test say_hello method>`
 
   .. code-block:: python
     :lineno-start: 15
@@ -2001,7 +2001,7 @@ separate and equal Person class
 
   which raises :ref:`AttributeError<what causes AttributeError?>` since :ref:`None<what is None?>` does not have anything named ``say_hello`` in it.
 
-* I change ``Person`` to a :ref:`class<what is a class?>`
+* I change ``Person`` to a :ref:`class<everything is an object>`
 
   .. code-block:: python
     :linenos:
@@ -2145,7 +2145,7 @@ separate and equal Person class
 
     AttributeError: 'Person' object has no attribute 'say_hello'
 
-  better, I can add an :ref:`attribute<what is a class attribute?>` to a :ref:`class<what is a class?>`.
+  better, I can add an :ref:`attribute<what is a class attribute?>` to a :ref:`class<everything is an object>`.
 
 * I add the name to the :ref:`Person class<test Person class>`
 
@@ -2995,7 +2995,7 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
   - the test passes.
   - The :ref:`__init__<the constructor method>` and :ref:`say_hello methods<test say_hello method>` I defined are in the :ref:`list of attributes and methods<test_dir_person_class>`.
   - There are names in the :ref:`list<what is a list?>` that I did not define, which leads to the question of :ref:`where did they come from?<everything is an object>`
-  - The :ref:`attributes<what is a class attribute?>` I defined in the :ref:`__init__ method<the constructor method>` are not in the :ref:`list<what is a list?>`, because the test called dir_ on ``src.person.Person`` which is the :ref:`class<what is a class?>`, not :ref:`an instance of the class<how to test if something is an instance>`.
+  - The :ref:`attributes<what is a class attribute?>` I defined in the :ref:`__init__ method<the constructor method>` are not in the :ref:`list<what is a list?>`, because the test called dir_ on ``src.person.Person`` which is the :ref:`class<everything is an object>`, not :ref:`an instance of the class<how to test if something is an instance>`.
 
 * I add a git_ commit message in the other terminal_
 
@@ -3020,7 +3020,7 @@ test_dir_person_instance
 
 ----
 
-I add a test to see the difference between the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of :ref:`an instance<how to test if something is an instance>` and the actual :ref:`class<what is a class?>`
+I add a test to see the difference between the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of :ref:`an instance<how to test if something is an instance>` and the actual :ref:`class<everything is an object>`
 
 .. code-block:: python
   :lineno-start: 197
@@ -3376,7 +3376,7 @@ close the project
 review
 *************************************************************************************
 
-* I ran tests to write a :ref:`class<what is a class?>` that makes a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` and has a :ref:`method<what is a method?>` so I do not have to pass the same values every time I want to do something with a person.
+* I ran tests to write a :ref:`class<everything is an object>` that makes a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` and has a :ref:`method<what is a method?>` so I do not have to pass the same values every time I want to do something with a person.
 
 * I saw the following :ref:`Exceptions<errors>`
 

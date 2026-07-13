@@ -206,7 +206,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test passes.
 
-  These tests are good because they help document what is in the :ref:`class<what is a class?>` and catch its changes immediately.
+  These tests are good because they help document what is in the :ref:`class<everything is an object>` and catch its changes immediately.
 
   They are a problem because :ref:`class attributes<what is a class attribute?>` can change between Python_ versions, I have to remember the correct order of names and I am keeping two lists. There has to be a better way.
 
