@@ -372,7 +372,7 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
 
     E   assert (1 + 1) == 11
 
-  because Python_ does not care if the statement is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` as long as it follows the rules. Once I make it an :ref:`assertion<what is an assertion?>` with `the assert keyword`_ it tells the computer ``DO NOT CONTINUE, if "1 + 1 == 11" is False``
+  because Python_ does not care if the statement is :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` as long as it follows the rules. Once I make it an :ref:`assertion<what is an assertion?>` with `the assert keyword`_ it tells the computer ``DO NOT CONTINUE, if "1 + 1 == 11" is False``
 
 ----
 
