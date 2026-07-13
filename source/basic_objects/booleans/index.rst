@@ -2102,7 +2102,7 @@ the test passes.
 
     AssertionError: 1 is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(-1, True)``
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(1, True)``
 
   .. code-block:: python
     :lineno-start: 60
@@ -2233,15 +2233,15 @@ Is a float_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_
 I change assertFalse_ to assertTrue_ for ``bool(-0.1)``
 
 .. code-block:: python
-  :lineno-start: 50
+  :lineno-start: 54
   :emphasize-lines: 2-3
 
-        def test_is_a_float_falsy_or_truth(self):
-            # self.assertFalse(bool(-0.1))
-            self.assertTrue(bool(-0.1))
+      def test_is_a_float_falsy_or_truthy(self):
+          # self.assertFalse(bool(-0.1))
+          self.assertTrue(bool(-0.1))
 
 
-    # NOTES
+  # NOTES
 
 the test passes.
 
@@ -2256,7 +2256,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 59
     :emphasize-lines: 2
 
     # NOTES
@@ -2267,14 +2267,15 @@ the test passes.
     # True is an integer
     # True is a boolean
     # True is NOT False
+    # bool(0) is False
 
 * I add an :ref:`assertion<what is an assertion?>` for ``-0.1`` without bool_
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 54
     :emphasize-lines: 4
 
-        def test_is_a_float_falsy_or_truth(self):
+        def test_is_a_float_falsy_or_truthy(self):
             # self.assertFalse(bool(-0.1))
             self.assertTrue(bool(-0.1))
             self.assertFalse(-0.1)
@@ -2293,10 +2294,10 @@ the test passes.
 * I change assertFalse_ to assertTrue_ for ``-0.1``
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 54
     :emphasize-lines: 4-5
 
-        def test_is_a_float_falsy_or_truth(self):
+        def test_is_a_float_falsy_or_truthy(self):
             # self.assertFalse(bool(-0.1))
             self.assertTrue(bool(-0.1))
             # self.assertFalse(-0.1)
@@ -2308,15 +2309,15 @@ the test passes.
   - The test passes because the result of ``bool(-0.1)`` is :ref:`True<test_what_is_true>`.
   - A negative float_ is grouped as :ref:`True<test_what_is_true>`.
 
-* I add an :ref:`assertion<what is an assertion?>` for if a negative integer_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if a negative float_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 42
+    :lineno-start: 57
     :emphasize-lines: 3
 
-            # self.assertFalse(-1)
-            self.assertTrue(-1)
-            self.assertIs(-1, True)
+            # self.assertFalse(-0.1)
+            self.assertTrue(-0.1)
+            self.assertIs(-0.1, True)
 
 
     # NOTES
@@ -2325,18 +2326,18 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: -1 is not True
+    AssertionError: -0.1 is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(-1, True)``
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(-0.1, True)``
 
   .. code-block:: python
-    :lineno-start: 42
+    :lineno-start: 57
     :emphasize-lines: 3-4
 
-            # self.assertFalse(-1)
-            self.assertTrue(-1)
-            # self.assertIs(-1, True)
-            self.assertIsNot(-1, True)
+            # self.assertFalse(-0.1)
+            self.assertTrue(-0.1)
+            # self.assertIs(-0.1, True)
+            self.assertIsNot(-0.1, True)
 
 
     # NOTES
@@ -2346,26 +2347,20 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``-0.1``
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 54
     :emphasize-lines: 2
 
-        def test_is_a_float_falsy_or_truth(self):
+        def test_is_a_float_falsy_or_truthy(self):
             a_negative_float = -0.1
             # self.assertFalse(bool(-0.1))
-            self.assertTrue(bool(-0.1))
-            # self.assertFalse(-0.1)
-            self.assertTrue(-0.1)
-
-
-    # NOTES
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``-0.1``
 
   .. code-block:: python
-    :lineno-start: 50
-    :emphasize-lines: 4-5, 7-8
+    :lineno-start: 54
+    :emphasize-lines: 4-5, 7-8, 10-11
 
-        def test_is_a_float_falsy_or_truth(self):
+        def test_is_a_float_falsy_or_truthy(self):
             a_negative_float = -0.1
             # self.assertFalse(bool(-0.1))
             # self.assertTrue(bool(-0.1))
@@ -2373,6 +2368,9 @@ the test passes.
             # self.assertFalse(-0.1)
             # self.assertTrue(-0.1)
             self.assertTrue(a_negative_float)
+            # self.assertIs(-0.1, True)
+            # self.assertIsNot(-0.1, True)
+            self.assertIsNot(a_negative_float, True)
 
 
     # NOTES
@@ -2382,15 +2380,15 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if ``0.0`` is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 64
     :emphasize-lines: 3
 
-                self.assertTrue(a_negative_float)
+            self.assertIsNot(a_negative_float, True)
 
-                self.assertTrue(bool(0.0))
+            self.assertTrue(bool(0.0))
 
 
-        # NOTES
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2403,10 +2401,10 @@ the test passes.
 * I change assertTrue_ to assertFalse_ for ``0.0``
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 64
     :emphasize-lines: 3-4
 
-            self.assertTrue(a_negative_float)
+            self.assertIsNot(a_negative_float, True)
 
             # self.assertTrue(bool(0.0))
             self.assertFalse(bool(0.0))
@@ -2419,7 +2417,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 70
     :emphasize-lines: 9
 
     # NOTES
@@ -2441,7 +2439,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``0.0`` without bool_
 
   .. code-block:: python
-    :lineno-start: 59
+    :lineno-start: 66
     :emphasize-lines: 3
 
             # self.assertTrue(bool(0.0))
@@ -2462,7 +2460,7 @@ the test passes.
 * I change assertTrue_ to assertFalse_ for ``0.0``
 
   .. code-block:: python
-    :lineno-start: 59
+    :lineno-start: 66
     :emphasize-lines: 3-4
 
             # self.assertTrue(bool(0.0))
@@ -2473,16 +2471,16 @@ the test passes.
 
     # NOTES
 
-  - The test passes because the result of ``bool(0.0)`` is :ref:`False<test_what_is_false>`.
+  the test passes because the result of ``bool(0.0)`` is :ref:`False<test_what_is_false>`.
 
-* I add an :ref:`assertion<what is an assertion?>` for if ``0`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I add an :ref:`assertion<what is an assertion?>` for if ``0.0`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 68
     :emphasize-lines: 3
 
-            # self.assertTrue(0)
-            self.assertFalse(0)
+            # self.assertTrue(0.0)
+            self.assertFalse(0.0)
             self.assertIs(0, False)
 
 
@@ -2494,31 +2492,29 @@ the test passes.
 
     AssertionError: 0 is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(0, False)``
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(0.0, False)``
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 68
     :emphasize-lines: 3-4
 
-            # self.assertTrue(0)
-            self.assertFalse(0)
+            # self.assertTrue(0.0)
+            self.assertFalse(0.0)
             # self.assertIs(0, False)
             self.assertIsNot(0, False)
 
 
     # NOTES
 
-  the test passes because
-
-  - :ref:`A float is not the same object as False<test_assertion_error_w_false>`.
+  the test passes because :ref:`a float is not the same object as False<test_assertion_error_w_false>`.
 
 * I add an :ref:`assertion<what is an assertion?>` to test if ``0.1`` is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 71
     :emphasize-lines: 3
 
-            self.assertFalse(0.0)
+            self.assertIsNot(0, False)
 
             self.assertFalse(bool(0.1))
 
@@ -2537,10 +2533,10 @@ the test passes.
 * I change assertFalse_ to assertTrue_ for ``bool(0.1)``
 
   .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 71
     :emphasize-lines: 3-4
 
-            self.assertFalse(0.0)
+            self.assertIsNot(0, False)
 
             # self.assertFalse(bool(0.1))
             self.assertTrue(bool(0.1))
@@ -2561,15 +2557,11 @@ the test passes.
     # bool(-0.1) is True
     # bool(1) is True
     # bool(-1) is True
-    # True is True
-    # True is an integer
-    # True is a boolean
-    # True is NOT False
 
-* I add an :ref:`assertion<what is an assertion?>` for ``0.1``without bool_
+* I add an :ref:`assertion<what is an assertion?>` for ``0.1`` without bool_
 
   .. code-block:: python
-    :lineno-start: 64
+    :lineno-start: 73
     :emphasize-lines: 3
 
             # self.assertFalse(bool(0.1))
@@ -2590,7 +2582,7 @@ the test passes.
 * I change assertTrue_ to assertFalse_ for ``0.1``
 
   .. code-block:: python
-    :lineno-start: 64
+    :lineno-start: 73
     :emphasize-lines: 3-4
 
             # self.assertFalse(bool(0.1))
@@ -2604,15 +2596,15 @@ the test passes.
   - The test passes because the result of ``bool(0.1)`` is :ref:`True<test_what_is_true>`.
   - A positive float_ is grouped as :ref:`True<test_what_is_true>`.
 
-* I add an :ref:`assertion<what is an assertion?>` for if a positive integer_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for if a positive float_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 75
     :emphasize-lines: 3
 
-            # self.assertFalse(1)
-            self.assertTrue(1)
-            self.assertIs(1, True)
+            # self.assertFalse(0.1)
+            self.assertTrue(0.1)
+            self.assertIs(0.1, True)
 
 
     # NOTES
@@ -2621,48 +2613,40 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: 1 is not True
+    AssertionError: 0.1 is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(-1, True)``
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(0.1, True)``
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 75
     :emphasize-lines: 3-4
 
-            # self.assertFalse(1)
-            self.assertTrue(1)
-            # self.assertIs(1, True)
-            self.assertIsNot(1, True)
+            # self.assertFalse(0.1)
+            self.assertTrue(0.1)
+            # self.assertIs(0.1, True)
+            self.assertIsNot(0.1, True)
 
 
     # NOTES
 
-  the test passes because :ref:`An integer is not the same object as True<test_assertion_error_w_true>`.
-
-  - :ref:`A float is not the same object as True<test_assertion_error_w_true>`.
+  the test passes because :ref:`a float is not the same object as True<test_assertion_error_w_true>`.
 
 * I add a :ref:`variable<what is a variable?>` for ``0.1``
 
   .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 71
     :emphasize-lines: 3
 
-            self.assertFalse(0.0)
+            self.assertIsNot(0, False)
 
             a_positive_float = 0.1
             # self.assertFalse(bool(0.1))
-            self.assertTrue(bool(0.1))
-            # self.assertFalse(0.1)
-            self.assertTrue(0.1)
-
-
-    # NOTES
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``0.1``
 
   .. code-block:: python
-    :lineno-start: 64
-    :emphasize-lines: 3-4, 6-7
+    :lineno-start: 73
+    :emphasize-lines: 3-4, 6-7, 9-10
 
             a_positive_float = 0.1
             # self.assertFalse(bool(0.1))
@@ -2671,6 +2655,9 @@ the test passes.
             # self.assertFalse(0.1)
             # self.assertTrue(0.1)
             self.assertTrue(a_positive_float)
+            # self.assertIs(0.1, True)
+            # self.assertIsNot(0.1, True)
+            self.assertIsNot(a_positive_float, True)
 
 
     # NOTES
@@ -2680,19 +2667,22 @@ the test passes.
 * I remove the commented lines from :ref:`test_is_a_float_falsy_or_truthy`
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 54
 
-        def test_is_a_float_falsy_or_truth(self):
+        def test_is_a_float_falsy_or_truthy(self):
             a_negative_float = -0.1
             self.assertTrue(bool(a_negative_float))
             self.assertTrue(a_negative_float)
+            self.assertIsNot(a_negative_float, True)
 
             self.assertFalse(bool(0.0))
             self.assertFalse(0.0)
+            self.assertIsNot(0, False)
 
             a_positive_float = 0.1
             self.assertTrue(bool(a_positive_float))
             self.assertTrue(a_positive_float)
+            self.assertIsNot(a_positive_float, True)
 
 
     # NOTES
@@ -2700,7 +2690,7 @@ the test passes.
 * I make ``# bool(0.1) is True``, ``# bool(-0.1) is True``, ``# bool(1) is True``, ``# bool(-1) is True``, ``# bool(0.0) is False`` and ``# bool(0) is False`` simpler comments because floats_ and integers_ are numbers and :ref:`0.0 is equal to 0<test_assertion_error_w_is_vs_equal>`
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 70
     :emphasize-lines: 2-3, 8
 
     # NOTES

@@ -172,7 +172,7 @@ because there is no definition for ``Person`` in ``test_person.py``.
 
     def test_joe():
 
-  - I can :ref:`make a class with the pass keyword<test_making_a_:ref:`class<everything is an object>`w_pass>`.
+  - I can :ref:`make a class with the pass keyword<test_making_a_class_w_pass>`.
   - The terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     .. code-block:: python
