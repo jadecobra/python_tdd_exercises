@@ -4,8 +4,6 @@
 
 .. include:: ../../links.rst
 
-.. _class: https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes
-.. _classes: class_
 .. _constructor: https://grokipedia.com/page/Constructor_(object-oriented_programming)
 .. _constructor method: constructor_
 .. _staticmethod decorator: https://docs.python.org/3/library/functions.html#staticmethod
@@ -22,52 +20,9 @@ The :ref:`factory<test person factory>` and :ref:`say_hello functions<test say_h
 * ``last_name``
 * ``year_of_birth``
 
-I want to give those values once, and get a representation for a person. I can do that with a class_
+I want to give those values once, and get a representation for a person. I can do that with a :ref:`class<everything is an object>`.
 
-*********************************************************************************
-what is a class?
-*********************************************************************************
-
-I think of classes_ as :ref:`attributes (variables)<what is a class attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together (a classification).
-
-----
-
-*********************************************************************************
-what is a class attribute?
-*********************************************************************************
-
-A :ref:`class attribute<what is a class attribute?>` is a :ref:`variable<what is a variable?>` that belongs to a class_.
-
-----
-
-*********************************************************************************
-what is a method?
-*********************************************************************************
-
-A :ref:`method<what is a method?>` is a :ref:`function<what is a function?>` that belongs to a class_.
-
-----
-
-*********************************************************************************
-how to make a class
-*********************************************************************************
-
-classes_ are made with
-
-* the class_ keyword
-* a name in :ref:`CapWords format<CapWords>` that tells what the group of :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` does - naming things is its own challenge
-* :ref:`attributes<what is a class attribute?>`
-* :ref:`methods<what is a method?>`
-
-.. code-block:: python
-
-  class NameOfClass:
-
-      attribute = SOMETHING
-
-      def method():
-          the body of the method
-          return output
+I think of :ref:`classes<everything is an object>` as :ref:`attributes (variables)<what is a class attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together (a classification).
 
 ----
 
@@ -217,7 +172,7 @@ because there is no definition for ``Person`` in ``test_person.py``.
 
     def test_joe():
 
-  - I can :ref:`make a class with the pass keyword<test_making_a_class_w_pass>`.
+  - I can :ref:`make a class with the pass keyword<test_making_a_:ref:`class<everything is an object>`w_pass>`.
   - The terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     .. code-block:: python
@@ -2854,7 +2809,7 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
   .. code-block:: python
 
     AssertionError:
-        assert ['__class__', '__delattr__', '__dict__',
+        assert ['__:ref:`class<everything is an object>`_', '__delattr__', '__dict__',
                 '__dir__', '__doc__', '__eq__', ...]
             == None
 
@@ -2878,7 +2833,7 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
         reality = dir(src.person.Person)
         # my_expectation = None
         my_expectation = [
-            '__class__', '__delattr__', '__dict__',
+            '__:ref:`class<everything is an object>`_', '__delattr__', '__dict__',
             '__dir__', '__doc__', '__eq__', ...
         ]
         assert reality == my_expectation
@@ -2891,8 +2846,8 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
   .. code-block:: python
 
     E         AssertionError:
-                  assert ['__class__',...'__eq__', ...]
-                      == ['__class__',...'__eq__', ...]
+                  assert ['__:ref:`class<everything is an object>`_',...'__eq__', ...]
+                      == ['__:ref:`class<everything is an object>`_',...'__eq__', ...]
     E
     E         At index 6 diff: '__firstlineno__' != Ellipsis
     E         Left contains 23 more items,
@@ -2956,7 +2911,7 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
     def test_dir_person_class():
         reality = dir(src.person.Person)
         my_expectation = [
-            '__class__',
+            '__:ref:`class<everything is an object>`_',
             '__delattr__',
             '__dict__',
             '__dir__',
@@ -2970,7 +2925,7 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
             '__gt__',
             '__hash__',
             '__init__',
-            '__init_subclass__',
+            '__init_sub:ref:`class<everything is an object>`_',
             '__le__',
             '__lt__',
             '__module__',
@@ -3044,7 +2999,7 @@ I add a test to see the difference between the :ref:`attributes<what is a class 
 
         reality = dir(an_instance_of_person)
         my_expectation = [
-            '__class__',
+            '__:ref:`class<everything is an object>`_',
             '__delattr__',
             '__dict__',
             '__dir__',
@@ -3058,7 +3013,7 @@ I add a test to see the difference between the :ref:`attributes<what is a class 
             '__gt__',
             '__hash__',
             '__init__',
-            '__init_subclass__',
+            '__init_sub:ref:`class<everything is an object>`_',
             '__le__',
             '__lt__',
             '__module__',
@@ -3088,10 +3043,10 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError:
       assert [
-          '__class__', '__delattr__', '__dict__', '__dir__',
+          '__:ref:`class<everything is an object>`_', '__delattr__', '__dict__', '__dir__',
           '__doc__', '__eq__', '__firstlineno__', '__format__',
           '__ge__', '__getattribute__', '__getstate__', '__gt__',
-          '__hash__', '__init__', '__init_subclass__', '__le__',
+          '__hash__', '__init__', '__init_sub:ref:`class<everything is an object>`_', '__le__',
           '__lt__', '__module__', '__ne__', '__new__', '__reduce__',
           '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__',
           '__static_attributes__', '__str__', '__subclasshook__',
@@ -3099,10 +3054,10 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
           'first_name', 'last_name', 'say_hello', 'year_of_birth'
       ]
    == [
-          '__class__', '__delattr__', '__dict__', '__dir__',
+          '__:ref:`class<everything is an object>`_', '__delattr__', '__dict__', '__dir__',
           '__doc__', '__eq__', '__firstlineno__', '__format__',
           '__ge__', '__getattribute__', '__getstate__', '__gt__',
-          '__hash__', '__init__', '__init_subclass__', '__le__',
+          '__hash__', '__init__', '__init_sub:ref:`class<everything is an object>`_', '__le__',
           '__lt__', '__module__', '__ne__', '__new__', '__reduce__',
           '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__',
           '__static_attributes__', '__str__', '__subclasshook__',
@@ -3135,7 +3090,7 @@ I add the missing :ref:`attributes<what is a class attribute?>` to ``my_expectat
 
       reality = dir(an_instance_of_person)
       my_expectation = [
-          '__class__',
+          '__:ref:`class<everything is an object>`_',
           '__delattr__',
           '__dict__',
           '__dir__',
@@ -3149,7 +3104,7 @@ I add the missing :ref:`attributes<what is a class attribute?>` to ``my_expectat
           '__gt__',
           '__hash__',
           '__init__',
-          '__init_subclass__',
+          '__init_sub:ref:`class<everything is an object>`_',
           '__le__',
           '__lt__',
           '__module__',
@@ -3214,10 +3169,10 @@ the test passes.
 
       AssertionError:
           assert [
-              '__class__', '__delattr__', '__dict__', '__dir__',
+              '__:ref:`class<everything is an object>`_', '__delattr__', '__dict__', '__dir__',
               '__doc__', '__eq__', '__firstlineno__', '__format__',
               '__ge__', '__getattribute__', '__getstate__', '__gt__',
-              '__hash__', '__init__', '__init_subclass__', '__le__',
+              '__hash__', '__init__', '__init_sub:ref:`class<everything is an object>`_', '__le__',
               '__lt__', '__module__', '__ne__', '__new__', '__reduce__',
               '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__',
               '__static_attributes__', '__str__', '__subclasshook__',
@@ -3225,10 +3180,10 @@ the test passes.
               'first_name', 'last_name', 'say_hello', 'year_of_birth'
           ]
        == [
-              '__class__', '__delattr__', '__dict__', '__dir__',
+              '__:ref:`class<everything is an object>`_', '__delattr__', '__dict__', '__dir__',
               '__doc__', '__eq__', '__firstlineno__', '__format__',
               '__ge__', '__getattribute__', '__getstate__', '__gt__',
-              '__hash__', '__init__', '__init_subclass__', '__le__',
+              '__hash__', '__init__', '__init_sub:ref:`class<everything is an object>`_', '__le__',
               '__lt__', '__module__', '__ne__', '__new__', '__reduce__',
               '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__',
               '__static_attributes__', '__str__', '__subclasshook__',

@@ -10,19 +10,59 @@
 .. _issubclass built-in function: issubclass_
 .. _object: https://docs.python.org/3/glossary.html#term-object
 .. _objects: object_
-
+.. _class: https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes
+.. _classes: class_
 
 #################################################################################
 everything is an object
 #################################################################################
 
-The :ref:`object class<what is a class?>` is the mother of all things in Python_. I think of :ref:`classes<what is a class?>` as :ref:`attributes (variables)<what is a class attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together.
+The :ref:`object class<what is a class?>` is the mother of all things in Python_.
 
-As a reminder
+*********************************************************************************
+what is a class?
+*********************************************************************************
 
-* :ref:`A class is a group of attributes (variables) and methods that belong together (a classification)<what is a class?>`
-* :ref:`A class attribute is a variable in a class<what is a class attribute?>`
-* :ref:`A method is a function in a class<what is a method?>`
+I think of classes_ as :ref:`attributes (variables)<what is a class attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together (a classification).
+
+----
+
+*********************************************************************************
+what is a class attribute?
+*********************************************************************************
+
+A :ref:`class attribute<what is a class attribute?>` is a :ref:`variable<what is a variable?>` that belongs to a class_.
+
+----
+
+*********************************************************************************
+what is a method?
+*********************************************************************************
+
+A :ref:`method<what is a method?>` is a :ref:`function<what is a function?>` that belongs to a class_.
+
+----
+
+*********************************************************************************
+how to make a class
+*********************************************************************************
+
+classes_ are made with
+
+* the class_ keyword
+* a name in :ref:`CapWords format<CapWords>` that tells what the group of :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` does - naming things is its own challenge
+* :ref:`attributes<what is a class attribute?>`
+* :ref:`methods<what is a method?>`
+
+.. code-block:: python
+
+  class NameOfClass:
+
+      attribute = SOMETHING
+
+      def method():
+          the body of the method
+          return output
 
 ----
 

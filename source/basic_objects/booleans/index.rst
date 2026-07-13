@@ -1904,7 +1904,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 51
+    :lineno-start: 55
     :emphasize-lines: 7
 
     # NOTES
@@ -1923,7 +1923,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``0`` without bool_
 
   .. code-block:: python
-    :lineno-start: 47
+    :lineno-start: 51
     :emphasize-lines: 3
 
             # self.assertTrue(bool(0))
@@ -1944,7 +1944,7 @@ the test passes.
 * I change assertTrue_ to assertFalse_ for ``0``
 
   .. code-block:: python
-    :lineno-start: 47
+    :lineno-start: 51
     :emphasize-lines: 3-4
 
             # self.assertTrue(bool(0))
