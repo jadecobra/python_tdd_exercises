@@ -166,8 +166,7 @@ the test passes.
 
     # False is a boolean
     # False is an integer
-    # False is not a float
-
+I add a c
 
     # Exceptions Encountered
     # AssertionError

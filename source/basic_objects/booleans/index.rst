@@ -337,7 +337,7 @@ the test passes.
 
   also from :ref:`test_is_none_a_boolean`.
 
-* I use the :ref:`assertIsNot method<test_assert_is_not>` like I did in :ref:`test_assertion_error_w_false`
+* :ref:`test_when_year_of_birth_is_not_an_integer` showed me that :ref:`False<test_what_is_false>` is an integer_. I add an :ref:`assertion<what is an assertion?>` for it
 
   .. code-block:: python
     :lineno-start: 6
@@ -346,6 +346,397 @@ the test passes.
         def test_what_is_false(self):
             # self.assertNotIsInstance(False, bool)
             self.assertIsInstance(False, bool)
+            self.assertNotIsInstance(False, int)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: False
+        is an instance of <class 'int'>
+
+  in Python_, False_ is a :ref:`boolean<what are booleans?>` and an integer_.
+
+* I add a comment
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 2
+
+    # NOTES
+    # False is an integer
+    # False is a boolean
+
+
+    # Exceptions seen
+    # AssertionError
+
+* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4-5
+
+        def test_what_is_false(self):
+            # self.assertNotIsInstance(False, bool)
+            self.assertIsInstance(False, bool)
+            # self.assertNotIsInstance(False, int)
+            self.assertIsInstance(False, int)
+
+
+    # NOTES
+
+  the test passes.
+
+----
+
+*********************************************************************************
+how to test if something is is an instance of more than one object
+*********************************************************************************
+
+The :ref:`instance methods<how to test if something is an instance>` can take a tuple_ of :ref:`classes<what is a class?>`.
+
+* I put :ref:`bool<what are booleans?>` and int_ together
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 6
+
+        def test_what_is_false(self):
+            # self.assertNotIsInstance(False, bool)
+            self.assertIsInstance(False, bool)
+            # self.assertNotIsInstance(False, int)
+            self.assertIsInstance(False, int)
+            self.assertNotIsInstance(False, (bool, int))
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: False
+        is an instance of <class 'bool'>
+
+* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>` for ``(False, (bool, int))``
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 6-7
+
+        def test_what_is_false(self):
+            # self.assertNotIsInstance(False, bool)
+            self.assertIsInstance(False, bool)
+            # self.assertNotIsInstance(False, int)
+            self.assertIsInstance(False, int)
+            # self.assertNotIsInstance(False, (bool, int))
+            self.assertIsInstance(False, (bool, int))
+
+
+    # NOTES
+
+  the test passes.
+
+* I comment out the first :ref:`assertions<what is an assertion?>` since they are covered by the new one
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 3, 5
+
+        def test_what_is_false(self):
+            # self.assertNotIsInstance(False, bool)
+            # self.assertIsInstance(False, bool)
+            # self.assertNotIsInstance(False, int)
+            # self.assertIsInstance(False, int)
+            # self.assertNotIsInstance(False, (bool, int))
+            self.assertIsInstance(False, (bool, int))
+
+
+    # NOTES
+
+* I add an :ref:`assertion<what is an assertion?>` to test if :ref:`False<test_what_is_false>` is a float_
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 3
+
+            # self.assertNotIsInstance(False, (bool, int))
+            self.assertIsInstance(False, (bool, int))
+            self.assertIsInstance(False, float)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: False
+        is not an instance of <class 'float'>
+
+* I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``(False, float)``
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 3-4
+
+            # self.assertNotIsInstance(False, (bool, int))
+            self.assertIsInstance(False, (bool, int))
+            # self.assertIsInstance(False, float)
+            self.assertNotIsInstance(False, float)
+
+
+    # NOTES
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` to test if :ref:`False<test_what_is_false>` is a string_
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 3
+
+            # self.assertIsInstance(False, float)
+            self.assertNotIsInstance(False, float)
+            self.assertIsInstance(False, str)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: False
+        is not an instance of <class 'str'>
+
+* I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``(False, str)``
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 3-4
+
+            # self.assertIsInstance(False, float)
+            self.assertNotIsInstance(False, float)
+            # self.assertIsInstance(False, str)
+            self.assertNotIsInstance(False, str)
+
+
+    # NOTES
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` to test if :ref:`False<test_what_is_false>` is a tuple_
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 3
+
+            # self.assertIsInstance(False, str)
+            self.assertNotIsInstance(False, str)
+            self.assertIsInstance(False, tuple)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: False
+        is not an instance of <class 'tuple'>
+
+* I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``(False, tuple)``
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 3-4
+
+            # self.assertIsInstance(False, str)
+            self.assertNotIsInstance(False, str)
+            # self.assertIsInstance(False, tuple)
+            self.assertNotIsInstance(False, tuple)
+
+
+    # NOTES
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` to test if :ref:`False<test_what_is_false>` is a :ref:`list<what is a list?>`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 3
+
+            # self.assertIsInstance(False, tuple)
+            self.assertNotIsInstance(False, tuple)
+            self.assertIsInstance(False, list)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: False
+        is not an instance of <class 'list'>
+
+* I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``(False, list)``
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 3-4
+
+            # self.assertIsInstance(False, tuple)
+            self.assertNotIsInstance(False, tuple)
+            # self.assertIsInstance(False, list)
+            self.assertNotIsInstance(False, list)
+
+
+    # NOTES
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` to test if :ref:`False<test_what_is_false>` is a set_
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 3
+
+            # self.assertIsInstance(False, list)
+            self.assertNotIsInstance(False, list)
+            self.assertIsInstance(False, set)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: False
+        is not an instance of <class 'set'>
+
+* I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``(False, set)``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 3-4
+
+            # self.assertIsInstance(False, list)
+            self.assertNotIsInstance(False, list)
+            # self.assertIsInstance(False, set)
+            self.assertNotIsInstance(False, set)
+
+
+    # NOTES
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` to test if :ref:`False<test_what_is_false>` is a :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 3
+
+            # self.assertIsInstance(False, set)
+            self.assertNotIsInstance(False, set)
+            self.assertIsInstance(False, dict)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: False
+        is not an instance of <class 'dict'>
+
+* I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``(False, dict)``
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 3-4
+
+            # self.assertIsInstance(False, set)
+            self.assertNotIsInstance(False, set)
+            # self.assertIsInstance(False, dict)
+            self.assertNotIsInstance(False, dict)
+
+
+    # NOTES
+
+  the test passes.
+
+* I use a tuple_ with float_, str_, tuple_, :ref:`list<what is a list?>`, set_ and :ref:`dict<what is a dictionary>` with a :ref:`call<how to call a function with input>` to :ref:`assertIsInstance<test_assert_is_instance>`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 2-8
+
+            self.assertNotIsInstance(False, dict)
+            self.assertIsInstance(
+                False,
+                (
+                    float, tuple, str,
+                    list, set, dict
+                )
+            )
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: False
+        is not an instance of any of (
+            <class 'float'>, <class 'tuple'>,
+            <class 'str'>, <class 'list'>,
+            <class 'set'>, <class 'dict'>
+        )
+
+* I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 2-3
+
+            self.assertNotIsInstance(False, dict)
+            # self.assertIsInstance(
+            self.assertNotIsInstance(
+                False,
+                (
+                    float, tuple, str,
+                    list, set, dict
+                )
+            )
+
+
+    # NOTES
+
+  the test passes.
+
+* I use the :ref:`assertIsNot method<test_assert_is_not>` like I did in :ref:`test_assertion_error_w_false`
+
+  .. code-block:: python
+    :lineno-start: 26
+    :emphasize-lines: 8
+
+            self.assertNotIsInstance(
+                False,
+                (
+                    float, tuple, str,
+                    list, set, dict
+                )
+            )
             self.assertIsNot(False, False)
 
 
@@ -362,12 +753,16 @@ the test passes.
 * I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 4-5
+    :lineno-start: 26
+    :emphasize-lines: 8-9
 
-        def test_what_is_false(self):
-            # self.assertNotIsInstance(False, bool)
-            self.assertIsInstance(False, bool)
+            self.assertNotIsInstance(
+                False,
+                (
+                    float, tuple, str,
+                    list, set, dict
+                )
+            )
             # self.assertIsNot(False, False)
             self.assertIs(False, False)
 
@@ -382,9 +777,7 @@ the test passes.
 how to test if something is grouped as False
 *********************************************************************************
 
-----
-
-I can test if Python_ groups an :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>` with the `bool built-in function`_ from `The Python Standard Library`_.
+I can test if Python_ groups an :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>` with the `bool built-in function`_ from `The Python Standard Library`_. It returns :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` for the thing given in parentheses.
 
 ----
 
@@ -405,7 +798,7 @@ I can test if Python_ groups an :ref:`object<everything is an object>` as :ref:`
             self.assertIsInstance(False, bool)
             # self.assertIsNot(False, False)
             self.assertIs(False, False)
-            self.assertEqual(bool(False), True)
+            self.assertIsNot(bool(False), False)
 
 
     # NOTES
@@ -414,17 +807,17 @@ I can test if Python_ groups an :ref:`object<everything is an object>` as :ref:`
 
   .. code-block:: python
 
-    AssertionError: False != True
+    AssertionError: unexpectedly identical: False
 
-  because this happens when ``self.assertEqual(bool(False), True)`` runs
+  because this happens when ``assertIsNot(bool(False), False)`` runs
 
   .. code-block:: python
 
-    self.assertEqual(bool(False), True)
-    self.assertEqual(False      , True)
+    assertIsNot(bool(False), False)
+    assertIsNot(False      , False)
 
-  - which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`False<test_what_is_false>`, which is the result of ``bool(False)`` is not equal to :ref:`True<test_what_is_true>`
-  - ``bool(anything)`` returns :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` for the thing in parentheses
+  - which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`False<test_what_is_false>`, which is the result of ``bool(False)`` is :ref:`False<test_what_is_false>`.
+  - ``bool(anything)`` returns :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` for the thing in parentheses.
 
 * I add a comment
 
@@ -433,7 +826,7 @@ I can test if Python_ groups an :ref:`object<everything is an object>` as :ref:`
     :emphasize-lines: 2
 
     # NOTES
-    # False is NOT equal to True
+    # False is False
     # False is a boolean
 
 
@@ -448,7 +841,7 @@ I can test if Python_ groups an :ref:`object<everything is an object>` as :ref:`
 
 ----
 
-I change the expectation of the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
+I change the expectation of the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 6
@@ -459,8 +852,8 @@ I change the expectation of the :ref:`assertion<what is an assertion?>` to make 
           self.assertIsInstance(False, bool)
           # self.assertIsNot(False, False)
           self.assertIs(False, False)
-          # self.assertEqual(bool(False), True)
-          self.assertEqual(bool(False), False)
+          # self.assertIsNot(bool(False), False)
+          self.assertIs(bool(False), False)
 
 
   # NOTES
@@ -475,17 +868,17 @@ another way to test if something is grouped as False
 
 ----
 
-The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to test if the result of calling the `bool built-in function`_ with an :ref:`object<everything is an object>` is :ref:`False<test_what_is_false>` - assertFalse_, it was in :ref:`the first failing test<test_failure>`
+The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to test if the result of calling the `bool built-in function`_ with an :ref:`object<everything is an object>` is :ref:`False<test_what_is_false>` - assertFalse_.
 
 .. code-block:: python
 
-  self.assertFalse(True)
+  self.assertFalse(something)
 
 which is like
 
 .. code-block:: python
 
-  self.assertEqual(bool(True), False)
+  self.assertIs(bool(something), False)
 
 it raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<everything is an object>` in parentheses is grouped as :ref:`True<test_what_is_true>`.
 
@@ -508,8 +901,8 @@ it raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object
             self.assertIsInstance(False, bool)
             # self.assertIsNot(False, False)
             self.assertIs(False, False)
-            # self.assertEqual(bool(False), True)
-            self.assertEqual(bool(False), False)
+            # self.assertIsNot(bool(False), False)
+            self.assertIs(bool(False), False)
             self.assertFalse(bool(True))
 
 
@@ -521,14 +914,14 @@ it raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object
 
     AssertionError: True is not false
 
-  because this happens when ``self.assertEqual(bool(False), True)`` runs
+  because this happens when ``assertFalse(bool(True))`` runs
 
   .. code-block:: python
 
-    self.assertFalse(bool(True))
-    self.assertFalse(True)
+    assertFalse(bool(True))
+    assertFalse(True)
 
-  which raises :ref:`AssertionError<what causes AssertionError?>` since the result of ``bool(True)`` is :ref:`True<test_what_is_true>`.
+  which raises :ref:`AssertionError<what causes AssertionError?>` since the result of ``bool(True)`` is :ref:`True<test_what_is_true>` not :ref:`False<test_what_is_false>`.
 
 * I add a comment
 
@@ -538,7 +931,7 @@ it raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object
 
     # NOTES
     # True is NOT False
-    # False is NOT equal to True
+    # False is False
     # False is a boolean
 
 ----
@@ -549,7 +942,7 @@ it raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object
 
 ----
 
-I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in parentheses
+I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the parentheses
 
 .. code-block:: python
   :lineno-start: 6
@@ -560,8 +953,8 @@ I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in p
           self.assertIsInstance(False, bool)
           # self.assertIsNot(False, False)
           self.assertIs(False, False)
-          # self.assertEqual(bool(False), True)
-          self.assertEqual(bool(False), False)
+          # self.assertIsNot(bool(False), False)
+          self.assertIs(bool(False), False)
           # self.assertFalse(bool(True))
           self.assertFalse(bool(False))
 
@@ -578,7 +971,7 @@ the test passes because ``bool(False)`` is equal to :ref:`False<test_what_is_fal
 
 ----
 
-* It turns out that I can skip bool_ and get the same result. I add a :ref:`call<how to call a function with input>` to the `assertFalse method`_
+* I can skip bool_ and get the same result. I add another :ref:`call<how to call a function with input>` to the `assertFalse method`_
 
   .. code-block:: python
     :lineno-start: 6
@@ -589,8 +982,8 @@ the test passes because ``bool(False)`` is equal to :ref:`False<test_what_is_fal
             self.assertIsInstance(False, bool)
             # self.assertIsNot(False, False)
             self.assertIs(False, False)
-            # self.assertEqual(bool(False), True)
-            self.assertEqual(bool(False), False)
+            # self.assertIsNot(bool(False), False)
+            self.assertIs(bool(False), False)
             # self.assertFalse(bool(True))
             self.assertFalse(bool(False))
             self.assertFalse(True)
@@ -617,8 +1010,8 @@ the test passes because ``bool(False)`` is equal to :ref:`False<test_what_is_fal
             self.assertIsInstance(False, bool)
             # self.assertIsNot(False, False)
             self.assertIs(False, False)
-            # self.assertEqual(bool(False), True)
-            self.assertEqual(bool(False), False)
+            # self.assertIsNot(bool(False), False)
+            self.assertIs(bool(False), False)
             # self.assertFalse(bool(True))
             self.assertFalse(bool(False))
             # self.assertFalse(True)
@@ -630,6 +1023,161 @@ the test passes because ``bool(False)`` is equal to :ref:`False<test_what_is_fal
   the test passes because ``bool(False)`` is equal to :ref:`False<test_what_is_false>`.
 
   The `assertFalse method`_ raises :ref:`AssertionError<what causes AssertionError?>` if the result of a call to the `bool built-in function`_ with an :ref:`object<everything is an object>` is :ref:`True<test_what_is_true>`.
+
+----
+
+*********************************************************************************
+is False an integer?
+*********************************************************************************
+
+
+
+----
+
+*********************************************************************************
+is False a float?
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add an :ref:`assertion<what is an assertion?>` to see if :ref:`False<test_what_is_false>` is a float_
+
+.. code-block:: python
+  :lineno-start: 6
+  :emphasize-lines: 6
+
+      def test_what_is_false(self):
+          # self.assertNotIsInstance(False, bool)
+          self.assertIsInstance(False, bool)
+          # self.assertNotIsInstance(False, int)
+          self.assertIsInstance(False, int)
+          self.assertIsInstance(False, float)
+          # self.assertIsNot(False, False)
+          self.assertIs(False, False)
+          # self.assertIsNot(bool(False), False)
+          self.assertIs(bool(False), False)
+          # self.assertFalse(bool(True))
+          self.assertFalse(bool(False))
+          # self.assertFalse(True)
+          self.assertFalse(False)
+
+
+  # NOTES
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: shell
+
+  AssertionError: False
+      is an instance of <class 'int'>
+
+in Python_, False_ is a :ref:`boolean<what are booleans?>` and an integer_
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+
+.. code-block:: python
+  :lineno-start: 8
+  :emphasize-lines: 1
+
+          self.assertIsInstance(False, int)
+
+the test passes.
+
+* I add another :ref:`assertion<what is an assertion?>` to see if :ref:`False<test_what_is_false>` is a float_
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4
+
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertIsInstance(False, int)
+            self.assertIsInstance(False, float)
+            self.assertFalse(False)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: False is not an instance of <class 'float'>
+
+  :ref:`False<test_what_is_false>` is not a float_
+
+* I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 2
+
+            self.assertIsInstance(False, int)
+            self.assertNotIsInstance(False, float)
+            self.assertFalse(False)
+
+  the test passes.
+
+* I can use an :ref:`iterable<what is an iterable?>` with the :ref:`assertIsInstance method<test_assert_is_instance>`, the same way I do with the `isinstance function`_ in the ``numbers_only`` :ref:`function<what is a function?>` in the :ref:`calculator<how to make a calculator>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4
+
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertIsInstance(False, int)
+            self.assertNotIsInstance(False, (bool, int))
+            self.assertNotIsInstance(False, float)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: False is an instance of (<class 'bool'>, <class 'int'>)
+
+* I change the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 1
+
+            self.assertIsInstance(False, (bool, int))
+
+  the test passes.
+
+* I remove the first two :ref:`assertions<what is an assertion?>` in the test since they are covered by the new one
+
+  .. code-block:: python
+    :lineno-start: 6
+
+        def test_what_is_false(self):
+            self.assertIsInstance(False, (bool, int))
+            self.assertNotIsInstance(False, float)
+            self.assertFalse(False)
+
+* I add a comment
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 3
+
+    # False is a boolean
+    # False is an integer
+    # False is not a float
+
+
+    # Exceptions Encountered
+    # AssertionError
 
 * I remove the commented lines
 
@@ -790,7 +1338,7 @@ how to test if something is grouped as True
 
 ----
 
-I will use the `bool built-in function`_ from `The Python Standard Library`_ to test if Python_ groups an :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
+I will use the `bool built-in function`_ from `The Python Standard Library`_ to test if Python_ groups an :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>` since it returns :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` for the thing given in parentheses.
 
 ----
 
