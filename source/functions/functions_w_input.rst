@@ -567,53 +567,6 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for ``1 + 3``
-
-  .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 8
-
-    def test_why_use_a_function():
-        # assert 1 + 0 == 0
-        assert 1 + 0 == 1
-        # assert 1 + 1 == 1
-        assert 1 + 1 == 2
-        # assert 1 + 2 == 2
-        assert 1 + 2 == 3
-        assert 1 + 3 == 3
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       assert (1 + 3) == 3
-
-  because ``1 + 3`` is NOT equal to ``3``.
-
-* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 8-9
-
-    def test_why_use_a_function():
-        # assert 1 + 0 == 0
-        assert 1 + 0 == 1
-        # assert 1 + 1 == 1
-        assert 1 + 1 == 2
-        # assert 1 + 4 == 2
-        assert 1 + 4 == 3
-        # assert 1 + 3 == 3
-        assert 1 + 3 == 4
-
-
-    # Exceptions seen
-
-  the test passes.
-
 * I add an :ref:`assertion<what is an assertion?>` for ``1 + 4``
 
   .. code-block:: python

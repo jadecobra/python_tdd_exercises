@@ -2845,22 +2845,44 @@ the test passes.
     # NOTES
 
   - The test passes because the result of ``bool(str())`` is :ref:`False<test_what_is_false>`.
-  - The empty string_ is grouped as :ref:`True<test_what_is_true>`.
+  - The empty string_ is grouped as :ref:`False<test_what_is_false>`.
 
 * I add an :ref:`assertion<what is an assertion?>` for if the empty string_ is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 
+    :lineno-start: 72
+    :emphasize-lines: 3
 
-  - :ref:`a string is not the same object as False<test_assertion_error_w_false>`
+            # self.assertTrue(str())
+            self.assertFalse(str())
+            self.assertIs(str(), False)
+
+
+    # NOTES
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(str(), False)``
+
+  .. code-block:: python
+    :lineno-start: 72
+    :emphasize-lines: 3-4
+
+            # self.assertTrue(str())
+            self.assertFalse(str())
+            # self.assertIs(str(), False)
+            self.assertIsNot(str(), False)
+
+
+    # NOTES
+
+  the test passes because :ref:`a string is not the same object as False<test_assertion_error_w_false>`
 
 * I add an :ref:`assertion<what is an assertion?>` to test if a string_ with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 66
+    :lineno-start: 75
     :emphasize-lines: 3
 
-            self.assertFalse(str())
+            self.assertIsNot(str(), False)
 
             self.assertFalse(bool("string with things"))
 
@@ -2878,10 +2900,10 @@ the test passes.
 * I change assertFalse_ to assertTrue_ for ``bool("string with things")``
 
   .. code-block:: python
-    :lineno-start: 66
+    :lineno-start: 75
     :emphasize-lines: 3-4
 
-            self.assertFalse(str())
+            self.assertIsNot(str(), False)
 
             # self.assertFalse(bool("string with things"))
             self.assertTrue(bool("string with things"))
@@ -2894,7 +2916,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 72
+    :lineno-start: 81
     :emphasize-lines: 2
 
     # NOTES
@@ -2902,14 +2924,11 @@ the test passes.
     # bool(a positive number) is True
     # bool(a negative number) is True
     # True is True
-    # True is an integer
-    # True is a boolean
-    # True is NOT False
 
 * I add an :ref:`assertion<what is an assertion?>` for ``"string with things"`` without bool_
 
   .. code-block:: python
-    :lineno-start: 68
+    :lineno-start: 77
     :emphasize-lines: 3
 
             # self.assertFalse(bool("string with things"))
@@ -2930,7 +2949,7 @@ the test passes.
 * I change assertFalse_ to assertTrue_
 
   .. code-block:: python
-    :lineno-start: 68
+    :lineno-start: 77
     :emphasize-lines: 3-4
 
             # self.assertFalse(bool("string with things"))
@@ -2943,7 +2962,20 @@ the test passes.
 
   - The test passes because the result of ``bool("string with things")`` is :ref:`True<test_what_is_true>`.
   - A string_ with things is grouped as :ref:`True<test_what_is_true>`.
-  - :ref:`A string is not the same object as True<test_assertion_error_w_true>`.
+
+* I add an :ref:`assertion<what is an assertion?>` for if a string_ with things is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 79
+    :emphasize-lines: 3
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``("string with things", True)``
+
+  .. code-block:: python
+    :lineno-start: 79
+    :emphasize-lines: 3-4
+
+  the test passes because :ref:`a string is not the same object as True<test_assertion_error_w_true>`.
 
 * I add a :ref:`variable<what is a variable?>` for ``"string with things"``
 
