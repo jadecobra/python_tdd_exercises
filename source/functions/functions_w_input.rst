@@ -2247,7 +2247,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
   the test passes, because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in the test sends ``first_input='first'`` and ``last_input='last'``.
 
-* The problem with giving arguments this way, is I must use the exact names. The advantage of giving arguments this way is that they do not have to be in the order in the :ref:`function definition<how to make a function that takes input>`. I add an :ref:`assertion<what is an assertion?>` with the `keyword arguments`_ given out of order
+* The problem with giving arguments this way is I must use the exact names. The advantage of giving arguments this way is that they do not have to match the order in the :ref:`function definition<how to make a function that takes input>`. I add an :ref:`assertion<what is an assertion?>` with the `keyword arguments`_ given out of order
 
   .. code-block:: python
     :lineno-start: 97
