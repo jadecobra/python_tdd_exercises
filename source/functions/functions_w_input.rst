@@ -76,7 +76,7 @@ Questions to think about as I go through the chapter
 
 * :ref:`how can I make a function take input?<how to make a function that takes input>`
 * :ref:`how can I use a function to remove repetition?<test_why_use_a_function>`
-* :ref:`how can I call a function with input?<how to call a function with input>`
+* :ref:`how can I :ref:`call<how to call a function with input>` a function with input?<how to call a function with input>`
 * :ref:`what is the identity function?<test_identity_function>`
 * :ref:`what is a positional argument?<test_positional_arguments>`
 * :ref:`what is a keyword argument?<test_keyword_arguments>`
@@ -200,7 +200,7 @@ the test passes.
 how to call a function with input
 *********************************************************************************
 
-I can call a :ref:`function<what is a function?>` with input by placing an :ref:`object<everything is an object>` in parentheses when I call it.
+I can call a :ref:`function<what is a function?>` with input by placing an :ref:`object<everything is an object>` in parentheses when I :ref:`call<how to call a function with input>` it.
 
 ----
 
@@ -303,7 +303,7 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 
     E       assert None == object
 
-  - because when I call ``identity`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  - because when I :ref:`call<how to call a function with input>` ``identity`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
     .. code-block:: python
 
@@ -1085,7 +1085,7 @@ the test passes.
         # assert 2 + 1 == 2
         assert 2 + 1 == 3
 
-  the test is still green because when I call ``add_x`` with a number as input, it returns ``2`` plus the number as output. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  the test is still green because when I :ref:`call<how to call a function with input>` ``add_x`` with a number as input, it returns ``2`` plus the number as output. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
@@ -1506,7 +1506,7 @@ the test passes.
 
     AssertionError: assert None == ('first', 'last')
 
-  because when I call ``positional_arguments`` uses ``'first'`` and ``'last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because when I :ref:`call<how to call a function with input>` ``positional_arguments`` with ``'first'`` and ``'last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
@@ -2072,7 +2072,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
     # Exceptions seen
 
-  the test passes because I use the same name in the :ref:`function definition<how to make a function that takes input>` when I call it with a `keyword argument`_.
+  the test passes because I use the same name in the :ref:`function definition<how to make a function that takes input>` when I :ref:`call<how to call a function with input>` it with a `keyword argument`_.
 
 * I add another input to the :ref:`function call<how to call a function with input>`
 
@@ -2166,7 +2166,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
     # Exceptions seen
 
-  the test passes because I use the same name in the :ref:`function definition<how to make a function that takes input>` when I call it with a `keyword argument`_.
+  the test passes because I use the same name in the :ref:`function definition<how to make a function that takes input>` when I :ref:`call<how to call a function with input>` it with a `keyword argument`_.
 
 * I change the expectation of the :ref:`assertion<what is an assertion?>`
 
@@ -2201,7 +2201,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
     AssertionError: assert None == ('first', 'last')
 
-  because when I call ``keyword_arguments`` uses ``first_input='first'`` and ``last_input='last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution
+  because when I :ref:`call<how to call a function with input>` ``keyword_arguments`` with ``first_input='first'`` and ``last_input='last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution
 
   .. code-block:: python
 
@@ -2586,7 +2586,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
     def positional_arguments(first_input, last_input):
     def keyword_arguments(first_input, last_input):
 
-  The difference that matters in the tests is how I call them
+  The difference that matters in the tests is how I :ref:`call<how to call a function with input>` them
 
   - I have to give the input in order when I use :ref:`positional arguments<test_positional_arguments>`
 
@@ -2620,7 +2620,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
       keyword_arguments('last', 'first')
                 return ('last', 'first')
 
-  - I can give the input in any order when I use `keyword arguments`_ because I use the names from the :ref:`function definition<how to make a function that takes input>` when I call it
+  - I can give the input in any order when I use `keyword arguments`_ because I use the names from the :ref:`function definition<how to make a function that takes input>` when I :ref:`call<how to call a function with input>` it
 
     .. code-block:: python
       :emphasize-text: first
@@ -3139,7 +3139,7 @@ I can call :ref:`functions<what is a function?>` with both :ref:`positional<test
 
     AssertionError: assert None == ('first', 'last')
 
-  because when I call ``args_and_kwargs`` uses ``'first'`` and ``last_input='last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution
+  because when I :ref:`call<how to call a function with input>` ``args_and_kwargs`` uses ``'first'`` and ``last_input='last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution
 
   .. code-block:: python
 
@@ -3430,7 +3430,7 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes because I do not need to give a value for the ``last_input`` parameter when I call the :ref:`function<what is a function?>` since the :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the :ref:`function<what is a function?>` is ``doe``
+  the test passes because I do not need to give a value for the ``last_input`` parameter when I :ref:`call<how to call a function with input>` the :ref:`function<what is a function?>` since the :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the :ref:`function<what is a function?>` is ``doe``
 
   .. code-block:: python
 
@@ -3697,7 +3697,7 @@ are the same, they always ``return first_input, last_input``, their names are di
   def args_and_kwargs(first_input, last_input):
   def optional_arguments(first_input, last_input='doe'):
 
-``first_input`` and ``last_input`` are also names (:ref:`variables<what is a variable?>`), they can be any names. The difference that matters in the tests is how I call the :ref:`functions<what is a function?>`
+``first_input`` and ``last_input`` are also names (:ref:`variables<what is a variable?>`), they can be any names. The difference that matters in the tests is how I :ref:`call<how to call a function with input>` the :ref:`functions<what is a function?>`
 
 .. code-block:: python
   :emphasize-text: last
@@ -3993,7 +3993,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to see what happens if I call the :ref:`function<what is a function?>` with 3 :ref:`keyword arguments<test_keyword_arguments>`
+* I add an :ref:`assertion<what is an assertion?>` to see what happens if I :ref:`call<how to call a function with input>` the :ref:`function<what is a function?>` with 3 :ref:`keyword arguments<test_keyword_arguments>`
 
   .. code-block:: python
     :lineno-start: 209
@@ -4041,7 +4041,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 
   the test passes because the :ref:`function<what is a function?>` can take any number of :ref:`keyword arguments<test_keyword_arguments>` without knowing how many are in the call.
 
-* I add an :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with 3 :ref:`positional arguments<test_positional_arguments>`
+* I add an :ref:`assertion<what is an assertion?>` to see what happens when I :ref:`call<how to call a function with input>` the :ref:`function<what is a function?>` with 3 :ref:`positional arguments<test_positional_arguments>`
 
   .. code-block:: python
     :lineno-start: 216
@@ -4804,7 +4804,7 @@ how Python reads starred expressions
 how Python reads double starred expressions
 *********************************************************************************
 
-I add another :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with ONLY :ref:`keyword arguments<test_keyword_arguments>`
+I add another :ref:`assertion<what is an assertion?>` to see what happens when I :ref:`call<how to call a function with input>` the :ref:`function<what is a function?>` with ONLY :ref:`keyword arguments<test_keyword_arguments>`
 
 ----
 
@@ -4910,7 +4910,7 @@ the test passes.
 
 ----
 
-* I add one more :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` with no inputs
+* I add one more :ref:`assertion<what is an assertion?>` to see what happens when I :ref:`call<how to call a function with input>` the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` with no inputs
 
   .. code-block:: python
     :lineno-start: 262
@@ -5084,7 +5084,7 @@ review
 I ran tests to show that I can make :ref:`functions<what is a function?>` that take input
 
 * :ref:`I can use a function to remove repetition<test_why_use_a_function>`.
-* :ref:`I can call a function with input by placing an input in parentheses when I call it<how to call a function with input>`.
+* :ref:`I can call a function with input by placing an input in parentheses when I :ref:`call<how to call a function with input>` it<how to call a function with input>`.
 * :ref:`The identity or passthrough function returns its input as output<test_identity_function>`.
 * :ref:`I can call a function with positional arguments<test_positional_arguments>`.
 * :ref:`I can call a function with keyword arguments<test_keyword_arguments>`.

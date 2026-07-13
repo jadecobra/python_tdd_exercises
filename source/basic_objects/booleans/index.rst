@@ -3771,6 +3771,7 @@ the test passes.
 
 -----
 
+BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM 
 *********************************************************************************
 test_is_a_set_falsy_or_truthy
 *********************************************************************************
