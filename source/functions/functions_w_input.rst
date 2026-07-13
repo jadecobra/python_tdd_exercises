@@ -30,9 +30,10 @@ where ``process`` is the :ref:`function<what is a function?>`. I think of it lik
 
                     f(x) -> y
   function(input_object) -> output_object
-  stomach (food        ) -> poop
-  factory (materials   ) -> product
   solar_panel (sunlight) -> electricity
+  factory (materials   ) -> product
+  chef    (ingredients ) -> food
+  stomach (food        ) -> poop
 
 the :ref:`function<what is a function?>` does something (the process) with ``input_object`` and returns ``output_object`` as the result. For example
 
