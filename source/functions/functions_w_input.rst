@@ -1512,7 +1512,7 @@ the test passes.
 
     positional_arguments('first'    , 'last'    )
     positional_arguments(first_input, last_input)
-        return None
+    └── return None
 
   .. code-block:: python
 
@@ -1587,7 +1587,7 @@ the test passes.
 
     positional_arguments('last'     , 'first'   )
     positional_arguments(first_input, last_input)
-        return first_input, last_input
+    └── return first_input, last_input
         return 'last'     , 'first'
 
   .. code-block:: python
@@ -1749,7 +1749,7 @@ the test passes.
 
     positional_arguments(0          , 1         )
     positional_arguments(first_input, last_input)
-        return first_input, last_input
+    └── return first_input, last_input
         return 0          , 1
 
   .. code-block:: python
@@ -1841,13 +1841,13 @@ the test passes.
 
     positional_arguments(a_list        , a_tuple       )
     positional_arguments([0, 1, 2, 'n'], (0, 1, 2, 'n'))
-        return first_input   , last_input
+    └── return first_input   , last_input
         return [0, 1, 2, 'n'], (0, 1, 2, 'n')
 
   .. code-block:: python
 
     assert positional_arguments(a_list, a_tuple)
-                              == (a_tuple, a_list)
+                            == (a_tuple, a_list)
     assert ([0, 1, 2, 'n'], (0, 1, 2, 'n'))
         == ((0, 1, 2, 'n'), [0, 1, 2, 'n'])
 
@@ -2207,7 +2207,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
     keyword_arguments(first_input='first', last_input='last')
     keyword_arguments(first_input        , last_input       )
-        return None
+    └── return None
 
   .. code-block:: python
 
@@ -2285,7 +2285,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
     keyword_arguments(last_input='last', first_input='first')
     keyword_arguments(first_input='first', last_input='last')
     keyword_arguments(first_input        , last_input       )
-        return first_input, last_input
+    └── return first_input, last_input
         return 'first'    , 'last'
 
   .. code-block:: python
@@ -2431,7 +2431,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
     keyword_arguments(last_input=0, first_input=1)
     keyword_arguments(first_input=1, last_input=0)
     keyword_arguments(first_input  , last_input  )
-        return first_input, last_input
+    └── return first_input, last_input
         return 1          , 0
 
   .. code-block:: python
@@ -2538,7 +2538,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
         first_input=[0, 1, 2, 'n'], last_input=(0, 1, 2, 'n')
     )
     keyword_arguments(first_input, last_input)
-        return first_input   , last_input
+    └── return first_input   , last_input
         return [0, 1, 2, 'n'], (0, 1, 2, 'n')
 
   .. code-block:: python
@@ -3145,7 +3145,7 @@ I can call :ref:`functions<what is a function?>` with both :ref:`positional<test
 
     args_and_kwargs('first'    , last_input='last')
     args_and_kwargs(first_input, last_input       )
-        return None
+    └── return None
 
   .. code-block:: python
 
@@ -4205,9 +4205,9 @@ how Python reads starred and double starred expressions
     unknown_number_of_arguments(
         *positional_arguments, **keyword_arguments
     )
-        positional_arguments = (0, 1)
-        keyword_arguments = {'a': 2, 'b': 3}
-        return  positional_arguments, keyword_arguments
+    ├── positional_arguments = (0, 1)
+    ├── keyword_arguments = {'a': 2, 'b': 3}
+    └── return  positional_arguments, keyword_arguments
         return ((0, 1              ), {'a': 2, 'b': 3  })
 
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
@@ -4257,9 +4257,9 @@ how Python reads starred and double starred expressions
     unknown_number_of_arguments(
         *positional_arguments, **keyword_arguments
     )
-        positional_arguments = (0, 1)
-        keyword_arguments = {'a': 2, 'b': 3, 'c':4}
-        return  positional_arguments, keyword_arguments
+    ├── positional_arguments = (0, 1)
+    ├── keyword_arguments = {'a': 2, 'b': 3, 'c':4}
+    └── return  positional_arguments, keyword_arguments
         return ((0, 1              ), {'a': 2, 'b': 3, 'c':4})
 
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
@@ -4313,9 +4313,9 @@ how Python reads starred and double starred expressions
     unknown_number_of_arguments(
         *positional_arguments, **keyword_arguments
     )
-        positional_arguments = (0, 1, 2)
-        keyword_arguments = {'a': 3, 'b': 4, 'c':5}
-        return  positional_arguments, keyword_arguments
+    ├── positional_arguments = (0, 1, 2)
+    ├── keyword_arguments = {'a': 3, 'b': 4, 'c':5}
+    └── return  positional_arguments, keyword_arguments
         return ((0, 1, 2           ), {'a': 3, 'b': 4, 'c':5})
 
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
@@ -4419,9 +4419,9 @@ how Python reads starred expressions
     unknown_number_of_arguments(
         *positional_arguments, **keyword_arguments
     )
-        positional_arguments = (a_tuple, a_dictionary)
-        keyword_arguments = {}
-        return  positional_arguments, keyword_arguments
+    ├── positional_arguments = (a_tuple, a_dictionary)
+    ├── keyword_arguments = {}
+    └── return  positional_arguments, keyword_arguments
         return ((0, 1), {'a': 2, 'b': 3}), {})
 
 * I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as separate arguments
@@ -4544,9 +4544,9 @@ how Python reads starred expressions
     unknown_number_of_arguments(
         *positional_arguments, **keyword_arguments
     )
-        positional_arguments = (a_tuple, a_dictionary)
-        keyword_arguments = {}
-        return  positional_arguments, keyword_arguments
+    ├── positional_arguments = (a_tuple, a_dictionary)
+    ├── keyword_arguments = {}
+    └── return  positional_arguments, keyword_arguments
         return ((0, 1), {'a': 2, 'b': 3, 'c': 4}), {})
 
 * I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as separate arguments
@@ -4665,9 +4665,9 @@ how Python reads starred expressions
     unknown_number_of_arguments(
         *positional_arguments, **keyword_arguments
     )
-        positional_arguments = (a_tuple, a_dictionary)
-        keyword_arguments = {}
-        return  positional_arguments, keyword_arguments
+    ├── positional_arguments = (a_tuple, a_dictionary)
+    ├── keyword_arguments = {}
+    └── return  positional_arguments, keyword_arguments
         return ((0, 1, 2), {'a': 3, 'b': 4, 'c': 5}), {})
 
 * I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as separate arguments
@@ -4771,9 +4771,9 @@ how Python reads starred expressions
     unknown_number_of_arguments(
         *positional_arguments, **keyword_arguments
     )
-        positional_arguments = (0, 1, 2, 'n')
-        keyword_arguments = {}
-        return  positional_arguments, keyword_arguments
+    ├── positional_arguments = (0, 1, 2, 'n')
+    ├── keyword_arguments = {}
+    └── return  positional_arguments, keyword_arguments
         return ((0, 1, 2, 'n')      , {})
 
 
@@ -4867,9 +4867,9 @@ Using substitution
   unknown_number_of_arguments(
       *positional_arguments, **keyword_arguments
   )
-      positional_arguments = ()
-      keyword_arguments = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
-      return  positional_arguments, keyword_arguments
+  ├── positional_arguments = ()
+  ├── keyword_arguments = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
+  └── return  positional_arguments, keyword_arguments
       return (()                  , {'a': 1, 'b': 2, 'c': 3, 'd': 'n'})
 
 
@@ -4950,9 +4950,9 @@ the test passes.
     unknown_number_of_arguments(
         *positional_arguments, **keyword_arguments
     )
-        positional_arguments = ()
-        keyword_arguments = {}
-        return  positional_arguments, keyword_arguments
+    ├── positional_arguments = ()
+    ├── keyword_arguments = {}
+    └── return  positional_arguments, keyword_arguments
         return (()                  , {}               )
 
 
