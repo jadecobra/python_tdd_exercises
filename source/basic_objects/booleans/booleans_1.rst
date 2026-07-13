@@ -2264,7 +2264,7 @@ the test passes.
             # self.assertTrue(str())
             self.assertFalse(str())
 
-            self.assertFalse(bool("a string with things"))
+            self.assertFalse(bool("string with things"))
 
 
     # NOTES
@@ -2275,7 +2275,7 @@ the test passes.
 
     AssertionError: True is not false
 
-  because the result of ``bool("a string with things")`` is :ref:`True<test_what_is_true>`.
+  because the result of ``bool("string with things")`` is :ref:`True<test_what_is_true>`.
 
 * I change assertFalse_ to assertTrue_
 
@@ -2289,8 +2289,8 @@ the test passes.
             # self.assertTrue(str())
             self.assertFalse(str())
 
-            # self.assertFalse(bool("a string with things"))
-            self.assertTrue(bool("a string with things"))
+            # self.assertFalse(bool("string with things"))
+            self.assertTrue(bool("string with things"))
 
 
     # NOTES
@@ -2304,7 +2304,7 @@ the test passes.
     :emphasize-lines: 2
 
     # NOTES
-    # bool("a string with things") is True
+    # bool("string with things") is True
     # bool(positive number) is True
     # bool(negative number) is True
     # True is NOT False
@@ -2323,9 +2323,9 @@ the test passes.
     :lineno-start: 54
     :emphasize-lines: 3
 
-            # self.assertFalse(bool("a string with things"))
-            self.assertTrue(bool("a string with things"))
-            self.assertFalse("a string with things")
+            # self.assertFalse(bool("string with things"))
+            self.assertTrue(bool("string with things"))
+            self.assertFalse("string with things")
 
 
     # NOTES
@@ -2334,9 +2334,9 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: 'a string with things' is not false
+    AssertionError: 'string with things' is not false
 
-  because the result of ``bool("a string with things")`` is :ref:`True<test_what_is_true>`.
+  because the result of ``bool("string with things")`` is :ref:`True<test_what_is_true>`.
 
 * I change assertFalse_ to assertTrue_
 
@@ -2344,19 +2344,19 @@ the test passes.
     :lineno-start: 54
     :emphasize-lines: 3-4
 
-            # self.assertFalse(bool("a string with things"))
-            self.assertTrue(bool("a string with things"))
-            # self.assertFalse("a string with things")
-            self.assertTrue("a string with things")
+            # self.assertFalse(bool("string with things"))
+            self.assertTrue(bool("string with things"))
+            # self.assertFalse("string with things")
+            self.assertTrue("string with things")
 
 
     # NOTES
 
-  - the test passes because the result of ``bool("a string with things")`` is :ref:`True<test_what_is_true>`
+  - the test passes because the result of ``bool("string with things")`` is :ref:`True<test_what_is_true>`
   - a string_ with things is grouped as :ref:`True<test_what_is_true>`
   - :ref:`a string is not the same object as True<test_assertion_error_w_true>`
 
-* I add a :ref:`variable<what is a variable?>` for ``"a string with things"``
+* I add a :ref:`variable<what is a variable?>` for ``"string with things"``
 
   .. code-block:: python
     :lineno-start: 48
@@ -2368,27 +2368,27 @@ the test passes.
             # self.assertTrue(str())
             self.assertFalse(str())
 
-            a_string = "a string with things"
-            # self.assertFalse(bool("a string with things"))
-            self.assertTrue(bool("a string with things"))
-            # self.assertFalse("a string with things")
-            self.assertTrue("a string with things")
+            a_string = "string with things"
+            # self.assertFalse(bool("string with things"))
+            self.assertTrue(bool("string with things"))
+            # self.assertFalse("string with things")
+            self.assertTrue("string with things")
 
 
     # NOTES
 
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``"a string with things"``
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``"string with things"``
 
   .. code-block:: python
     :lineno-start: 54
     :emphasize-lines: 3-4, 6-7
 
-            a_string = "a string with things"
-            # self.assertFalse(bool("a string with things"))
-            # self.assertTrue(bool("a string with things"))
+            a_string = "string with things"
+            # self.assertFalse(bool("string with things"))
+            # self.assertTrue(bool("string with things"))
             self.assertTrue(bool(a_string))
-            # self.assertFalse("a string with things")
-            # self.assertTrue("a string with things")
+            # self.assertFalse("string with things")
+            # self.assertTrue("string with things")
             self.assertTrue(a_string)
 
 
@@ -2405,7 +2405,7 @@ the test passes.
             self.assertFalse(bool(str()))
             self.assertFalse(str())
 
-            a_string = "a string with things"
+            a_string = "string with things"
             self.assertTrue(bool(a_string))
             self.assertTrue(a_string)
 
@@ -2463,7 +2463,7 @@ test_is_a_tuple_falsy_or_truthy
     :lineno-start: 52
     :emphasize-lines: 5-6
 
-            a_string = "a string with things"
+            a_string = "string with things"
             self.assertTrue(bool(a_string))
             self.assertTrue(a_string)
 

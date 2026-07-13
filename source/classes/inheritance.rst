@@ -1639,7 +1639,7 @@ An :ref:`instance<how to test if something is an instance>` is a copy of an :ref
 
     TypeError: issubclass() arg 1 must be a class
 
-  because the first argument given in a :ref:`call<how to call a function with input>` to the :ref:`issubclass function<how to test if something is a subclass>`  is an :ref:`instance<how to test if something is an instance>` not a :ref:`class<what is a class?>`.
+  because the first argument given in this :ref:`call<how to call a function with input>` to the :ref:`issubclass function<how to test if something is a subclass>`  is an :ref:`instance<how to test if something is an instance>` not a :ref:`class<what is a class?>`.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
 

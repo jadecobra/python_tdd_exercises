@@ -49,7 +49,7 @@ class TestBooleans(unittest.TestCase):
         self.assertFalse(bool(str()))
         self.assertFalse(str())
 
-        a_string = "a string with things"
+        a_string = "string with things"
         self.assertTrue(bool(a_string))
         self.assertTrue(a_string)
 
