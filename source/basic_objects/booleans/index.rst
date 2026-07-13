@@ -4123,19 +4123,25 @@ what is next?
 *************************************************************************************
 
 * :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know what a Python module is<what is a module?>`.
+* :ref:`I know how to run tests automatically<how to run tests automatically>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.
 * :ref:`I know how to make functions<what is a function?>`.
-* :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`how to make dictionaries with functions<how to make a person>`
-* :ref:`how to make classes<classes>`
-* :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
-* :ref:`what happens when classes have one or more parents<family ties>`
+* :ref:`I know how to make a person with strings<how to make a person with strings>`.
+* :ref:`I know how to make functions that take input<functions that take input>`.
+* :ref:`I know what causes TypeError<what causes TypeError?>`.
+* :ref:`I know how to place values in strings<telephone>`.
+* :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
+* :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
-* :ref:`what None is and is not<what is None?>`
-* :ref:`how to use the assertIsNotNone and assertIsNone methods<test AssertionError with assertIsNotNone and assertIsNone>`
-* :ref:`what booleans are<what are booleans?>`
+* :ref:`I know how to make a person with a class<how to make a person with a class>`.
+* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know how to use the unittest library<another way to write tests>`.
+* :ref:`I know how to use the datetime library<test person with datetime>`.
+* :ref:`I know what None is<what is None?>`.
+* :ref:`I know how to make a person with conditions<how to make a person with conditions>`.
 
-:ref:`Would you like to test the truth table?<truth table>` It will help you understand writing programs_ that make decisions based on :ref:`conditions<if statements>`.
+:ref:`Would you like to test the truth table?<truth table>` It helps understand writing programs_ that make decisions based on :ref:`conditions<if statements>`.
 
 ----
 
