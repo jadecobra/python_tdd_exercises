@@ -2904,7 +2904,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 test_args_and_kwargs
 *********************************************************************************
 
-I can call :ref:`functions<what is a function?>` with both :ref:`positional<test_positional_arguments>`.
+Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a function?>` with both :ref:`positional<test_positional_arguments>` and :ref:`keyword arguments<test_keyword_arguments>`?
 
 ----
 
