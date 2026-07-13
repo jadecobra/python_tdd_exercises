@@ -1817,13 +1817,13 @@ the test passes.
 * I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(-1, True)``
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 42
     :emphasize-lines: 3-4
 
-            # self.assertTrue(None)
-            self.assertFalse(None)
-            # self.assertIs(None, False)
-            self.assertIsNot(None, False)
+            # self.assertFalse(-1)
+            self.assertTrue(-1)
+            # self.assertIs(-1, True)
+            self.assertIsNot(-1, True)
 
 
     # NOTES
@@ -1833,24 +1833,19 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` for ``-1``
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 39
     :emphasize-lines: 2
 
         def test_is_an_integer_falsy_or_truthy(self):
             a_negative_integer = -1
             # self.assertFalse(bool(-1))
             self.assertTrue(bool(-1))
-            # self.assertFalse(-1)
-            self.assertTrue(-1)
-
-
-    # NOTES
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``-1``
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 4-5, 7-8
+    :lineno-start: 39
+    :emphasize-lines: 4-5, 7-8, 10-11
 
         def test_is_an_integer_falsy_or_truthy(self):
             a_negative_integer = -1
@@ -1860,6 +1855,9 @@ the test passes.
             # self.assertFalse(-1)
             # self.assertTrue(-1)
             self.assertTrue(a_negative_integer)
+            # self.assertIs(-1, True)
+            # self.assertIsNot(-1, True)
+            self.assertIsNot(a_negative_integer, True)
 
 
     # NOTES
@@ -1869,10 +1867,10 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to test if ``0`` is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 45
+    :lineno-start: 49
     :emphasize-lines: 3
 
-            self.assertTrue(a_negative_integer)
+            self.assertIsNot(a_negative_integer, True)
 
             self.assertTrue(bool(0))
 
@@ -1890,7 +1888,7 @@ the test passes.
 * I change assertTrue_ to assertFalse_ for ``bool(0)``
 
   .. code-block:: python
-    :lineno-start: 45
+    :lineno-start: 49
     :emphasize-lines: 3-4
 
             self.assertTrue(a_negative_integer)

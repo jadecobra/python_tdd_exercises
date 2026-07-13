@@ -297,7 +297,7 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
 
   still the same as making the :ref:`factory function<test_factory_w_keyword_arguments>`
 
-* I add ``year_of_birth`` to the :ref:`definition<how to make a function>` of the ``__init__`` :ref:`method<what is a method?>`
+* I add ``year_of_birth`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ method<the constructor method>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -560,7 +560,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   because the ``__init__`` :ref:`method definition<how to make a function>` does not have a parameter named ``sex``
 
-* I add ``sex`` to the :ref:`definition<how to make a function>` of the ``__init__`` :ref:`method<what is a method?>`
+* I add ``sex`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ method<the constructor method>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -712,7 +712,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   because I used a fixed value (``jane``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``joe``. I have to get the value from the :ref:`object<everything is an object>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
 
-* I add a :ref:`variable<what is a variable?>` to the ``__init__`` :ref:`method<what is a method?>` to use it to allow changing the ``first_name`` :ref:`attribute<what is a class attribute?>` anytime a copy of the ``Person`` :ref:`class<everything is an object>` is made
+* I add a :ref:`variable<what is a variable?>` to the :ref:`__init__ method<the constructor method>` to use it to allow changing the ``first_name`` :ref:`attribute<what is a class attribute?>` anytime a copy of the ``Person`` :ref:`class<everything is an object>` is made
 
   .. code-block:: python
     :lineno-start: 27
@@ -828,7 +828,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   because I used a fixed value (``doe``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``blow``. I have to get the value from the :ref:`object<everything is an object>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
 
-* I add a :ref:`variable<what is a variable?>` to the ``__init__`` :ref:`method<what is a method?>` to use it to allow changing the ``last_name`` :ref:`attribute<what is a class attribute?>` anytime a copy of the ``Person`` :ref:`class<everything is an object>` is made
+* I add a :ref:`variable<what is a variable?>` to the :ref:`__init__ method<the constructor method>` to use it to allow changing the ``last_name`` :ref:`attribute<what is a class attribute?>` anytime a copy of the ``Person`` :ref:`class<everything is an object>` is made
 
   .. code-block:: python
     :lineno-start: 32
@@ -860,7 +860,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         'Hello, my name is joe doe and I am 30'
      != 'Hello, my name is joe blow and I am 30'
 
-* I change ``last_name`` to a :ref:`class attribute<what is a class attribute?>` in the ``__init__`` :ref:`method<what is a method?>` by adding ``self.`` before it
+* I change ``last_name`` to a :ref:`class attribute<what is a class attribute?>` in the :ref:`__init__ method<the constructor method>` by adding ``self.`` before it
 
   .. code-block:: python
     :lineno-start: 37
@@ -890,7 +890,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
      != 'Hello, my name is jane doe and I am 35'
 
   - the first names are the same and last names and ages are different
-  - the ``__init__`` :ref:`method<what is a method?>` used :ref:`None<what is None?>` for the value of ``self.last_name`` because the :ref:`default value<test_optional_arguments>` for the ``last_name`` parameter of the :ref:`method<what is a method?>` is :ref:`None<what is None?>`. This means that
+  - the :ref:`__init__ method<the constructor method>` used :ref:`None<what is None?>` for the value of ``self.last_name`` because the :ref:`default value<test_optional_arguments>` for the ``last_name`` parameter of the :ref:`method<what is a method?>` is :ref:`None<what is None?>`. This means that
 
     .. code-block:: python
 
@@ -913,7 +913,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
     because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
-* I change the :ref:`default value<test_optional_arguments>` for ``last_name`` in the ``__init__`` :ref:`method<what is a method?>` to ``'doe'`` to give the test what it wants
+* I change the :ref:`default value<test_optional_arguments>` for ``last_name`` in the :ref:`__init__ method<the constructor method>` to ``'doe'`` to give the test what it wants
 
   .. code-block:: python
     :lineno-start: 37
@@ -998,7 +998,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   because I used a fixed value (``1991``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``datetime.datetime.now().year-1996``. I have to get the value from the :ref:`object<everything is an object>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
 
-* I add a :ref:`variable<what is a variable?>` to the ``__init__`` :ref:`method<what is a method?>` to use it to allow changing the ``year_of_birth`` :ref:`attribute<what is a class attribute?>` anytime a copy of the ``Person`` :ref:`class<everything is an object>` is made
+* I add a :ref:`variable<what is a variable?>` to the :ref:`__init__ method<the constructor method>` to use it to allow changing the ``year_of_birth`` :ref:`attribute<what is a class attribute?>` anytime a copy of the ``Person`` :ref:`class<everything is an object>` is made
 
   .. code-block:: python
     :lineno-start: 38
@@ -1028,7 +1028,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         'Hello, my name is joe blow and I am 35'
      != 'Hello, my name is joe blow and I am 30'
 
-* I change ``year_of_birth`` to a :ref:`class attribute<what is a class attribute?>` in the ``__init__`` :ref:`method<what is a method?>` by adding ``self.`` before it
+* I change ``year_of_birth`` to a :ref:`class attribute<what is a class attribute?>` in the :ref:`__init__ method<the constructor method>` by adding ``self.`` before it
 
   .. code-block:: python
     :lineno-start: 38
@@ -1053,7 +1053,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   the test passes. What a beautiful life.
 
-* ``self.first_name``, ``self.last_name`` and ``self.year_of_birth`` are now defined twice in the :ref:`class<everything is an object>`. I remove the first definition since the :ref:`attributes<what is a class attribute?>` are also made in the ``__init__`` :ref:`method<what is a method?>` and that gets called when copies of the ``Person`` :ref:`class<everything is an object>` are made, no need to have a default person be ``jane doe`` born in ``1991``
+* ``self.first_name``, ``self.last_name`` and ``self.year_of_birth`` are now defined twice in the :ref:`class<everything is an object>`. I remove the first definition since the :ref:`attributes<what is a class attribute?>` are also made in the :ref:`__init__ method<the constructor method>` and that gets called when copies of the ``Person`` :ref:`class<everything is an object>` are made, no need to have a default person be ``jane doe`` born in ``1991``
 
   .. code-block:: python
     :lineno-start: 27
@@ -2951,7 +2951,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
   - the test passes.
   - the ``__init__`` and ``say_hello`` :ref:`methods<what is a method?>` I defined are in the list
   - there are names in the list that I did not define, which leads to the question of :ref:`where did they come from?<family ties>`
-  - The attributes I defined in the ``__init__`` :ref:`method<what is a method?>` are not in the list, because the test called dir_ on ``src.person.Person`` which is the :ref:`class<everything is an object>`, not an instance (copy) of the class
+  - The attributes I defined in the :ref:`__init__ method<the constructor method>` are not in the list, because the test called dir_ on ``src.person.Person`` which is the :ref:`class<everything is an object>`, not an instance (copy) of the class
 
 * I add a git_ commit message in the other terminal_
 
@@ -3166,7 +3166,7 @@ the test passes.
 
   the ``sex`` :ref:`attribute<what is a class attribute?>` is not defined anywhere in the ``Person`` :ref:`class<everything is an object>`
 
-* I add ``self.sex`` to the ``__init__`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<everything is an object>` in ``person.py``
+* I add ``self.sex`` to the :ref:`__init__ method<the constructor method>` of the ``Person`` :ref:`class<everything is an object>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 41

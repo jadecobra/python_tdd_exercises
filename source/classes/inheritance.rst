@@ -2412,7 +2412,7 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
   - The test passes.
   - The :ref:`__init__ method<the constructor method>` is in the :ref:`list of attributes and methods<test_dir_person_class>`
   - All :ref:`classes<what is a class?>` automatically get these :ref:`attributes<what is a class attribute?>`, they inherit them because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
-  - The ``__init__`` :ref:`method<what is a method?>` is also inherited which means when I defined it in :ref:`test_classy_person_says_hello` I overwrote the inherited one.
+  - The :ref:`__init__ method<the constructor method>` is also inherited which means when I defined it in :ref:`test_classy_person_says_hello` I overwrote the inherited one.
 
 * I add a git_ commit message in the other terminal_
 

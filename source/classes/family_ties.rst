@@ -27,7 +27,7 @@ It can also be more complicated because I can make new :ref:`instances<how to te
 what is Python's Method Resolution Order?
 *********************************************************************************
 
-When :ref:`an instance<how to test if something is an instance>` is made, Python_ calls every ``__init__`` :ref:`method<what is a method?>` of the parent and its parent going through every ancestor until it gets to the last one that is needed to make the :ref:`instance<how to test if something is an instance>`.
+When :ref:`an instance<how to test if something is an instance>` is made, Python_ calls every :ref:`__init__ method<the constructor method>` of the parent and its parent going through every ancestor until it gets to the last one that is needed to make the :ref:`instance<how to test if something is an instance>`.
 
 ----
 
@@ -621,7 +621,7 @@ what happens when a child calls the parent?
     # call the parent of Doe (Person)
     Person.__init__()
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<everything is an object>` takes one required argument for ``first_name``.
+  which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of the ``Person`` :ref:`class<everything is an object>` takes one required argument for ``first_name``.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -645,7 +645,7 @@ how to call the parent from the child
 
 ----
 
-* I add the `super built-in function`_ to ``Doe`` to call the parent ``__init__`` :ref:`method<what is a method?>` (``Parent.__init__``) directly from ``Doe``, in ``family_ties.py``
+* I add the `super built-in function`_ to ``Doe`` to call the parent :ref:`__init__ method<the constructor method>` (``Parent.__init__``) directly from ``Doe``, in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 5
@@ -659,7 +659,7 @@ how to call the parent from the child
         def __init__(self):
             super().__init__()
 
-  - the `super built-in function`_ calls the ``__init__`` :ref:`method<what is a method?>` of the parent :ref:`class<everything is an object>`
+  - the `super built-in function`_ calls the :ref:`__init__ method<the constructor method>` of the parent :ref:`class<everything is an object>`
   - ``super()`` is the parent - ":ref:`super class<how to call the parent from the child>`" for parent, ":ref:`subclass<how to test if something is a subclass>`" for child
   - ``super`` is ``Person`` in this case
   - ``super().__init__()`` is ``Person.__init__()`` in this case
@@ -680,7 +680,7 @@ how to call the parent from the child
       # super is the parent (Person)
       Person.__init__()
 
-    which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<everything is an object>` takes one required argument for ``first_name``.
+    which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of the ``Person`` :ref:`class<everything is an object>` takes one required argument for ``first_name``.
 
 * I add a value for ``first_name`` to the call to ``src.family_ties.Doe()`` in :ref:`test_making_a_class_w_inheritance` in ``test_family_ties.py``
 
@@ -711,10 +711,10 @@ how to call the parent from the child
     src.family_ties.Doe('the_first')
     Doe.__init__('the_first')
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` of ``Doe`` only takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it was called with two (``self`` and ``'the_first'``)
+  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the :ref:`__init__ method<the constructor method>` of ``Doe`` only takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it was called with two (``self`` and ``'the_first'``)
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
 
-* I add a parameter for ``first_name`` to the ``__init__`` :ref:`method<what is a method?>` of ``Doe`` in ``family_ties.py``
+* I add a parameter for ``first_name`` to the :ref:`__init__ method<the constructor method>` of ``Doe`` in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 5
@@ -745,7 +745,7 @@ how to call the parent from the child
         super().__init__() # call the parent
     Person.__init__()
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` of ``Person`` requires a :ref:`positional argument<test_positional_arguments>` for ``first_name`` and it was called with ``self``
+  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the :ref:`__init__ method<the constructor method>` of ``Person`` requires a :ref:`positional argument<test_positional_arguments>` for ``first_name`` and it was called with ``self``
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
 
 * I add the required parameter to ``super().__init__()`` in ``Doe``
@@ -1141,7 +1141,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
   the value for ``last_name`` does not get sent to the parent (``Person.__init__``)
 
-* I add the ``__init__`` :ref:`method<what is a method?>` to customize the last name
+* I add the :ref:`__init__ method<the constructor method>` to customize the last name
 
   .. code-block:: python
     :lineno-start: 10
@@ -1169,7 +1169,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
     joe = src.family_ties.Blow('joe')
           Blow.__init__('joe')
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Blow`` only takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it got called with two (``self`` and ``first_name``).
+  - which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of ``Blow`` only takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it got called with two (``self`` and ``first_name``).
 
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
 
@@ -1352,7 +1352,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
                Person.__init__('john', last_name='doe')
                self.last_name = 'doe' # use the default value
 
-* I add the ``__init__`` :ref:`method<what is a method?>` to ``Smith``
+* I add the :ref:`__init__ method<the constructor method>` to ``Smith``
 
   .. code-block:: Python
     :lineno-start: 16
@@ -1378,10 +1378,10 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
     john = src.family_ties.Smith('john')
            Smith.__init__('john')
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` of ``Smith`` takes only one :ref:`positional argument<test_positional_arguments>` (``self``) and it got called with two (``self`` and ``'john'``)
+  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the :ref:`__init__ method<the constructor method>` of ``Smith`` takes only one :ref:`positional argument<test_positional_arguments>` (``self``) and it got called with two (``self`` and ``'john'``)
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
 
-* I add ``first_name`` to the parentheses of the ``__init__`` :ref:`method<what is a method?>`
+* I add ``first_name`` to the parentheses of the :ref:`__init__ method<the constructor method>`
 
   .. code-block:: python
     :lineno-start: 16
@@ -1607,9 +1607,9 @@ Can a :ref:`class<everything is an object>` have more than one parent? How are t
            # call the parent of Jane (Person)
            Person.__init__()
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Person`` requires one positional argument (``first_name``) and it got called with zero
+  which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of ``Person`` requires one positional argument (``first_name``) and it got called with zero
 
-* I add the ``__init__`` :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``Jane``
+* I add the :ref:`__init__ method<the constructor method>` to the :ref:`definition<how to make a class>` of ``Jane``
 
   .. code-block:: python
     :lineno-start: 22
@@ -1765,7 +1765,7 @@ the test passes.
                super().__init__()
            Doe.__init__()
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Doe`` requires two positional arguments (``self`` and ``first_name``) and it got called with one (``self``)
+  which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of ``Doe`` requires two positional arguments (``self`` and ``first_name``) and it got called with one (``self``)
 
 * I add ``jane`` as the value for ``first_name`` in the call to the parent
 
@@ -1836,9 +1836,9 @@ the test passes.
     mary = src.family_ties.Jane('mary')
            Jane.__init__('mary')
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it was called with two (``self`` and ``'mary'``)
+  which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it was called with two (``self`` and ``'mary'``)
 
-* I add ``first_name`` to the parentheses for the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` in ``family_ties.py``
+* I add ``first_name`` to the parentheses for the :ref:`__init__ method<the constructor method>` of ``Jane`` in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 22
@@ -1870,7 +1870,7 @@ the test passes.
     jane = src.family_ties.Jane()
            Jane.__init__()
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` takes two required :ref:`positional arguments<test_positional_arguments>` (``self`` and ``first_name``) and the call only sends one (``self``).
+  which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` takes two required :ref:`positional arguments<test_positional_arguments>` (``self`` and ``first_name``) and the call only sends one (``self``).
 
 * I add a :ref:`default value<test_optional_arguments>` to make ``first_name`` optional
 
@@ -2051,10 +2051,10 @@ the test passes.
     joe = src.family_ties.Joe()
           Person.__init__()
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` takes two required :ref:`positional arguments<test_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
+  - which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` takes two required :ref:`positional arguments<test_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`
 
-* I add the ``__init__`` :ref:`method<what is a method?>` to ``Joe``
+* I add the :ref:`__init__ method<the constructor method>` to ``Joe``
 
   .. code-block:: python
     :lineno-start: 28
@@ -2106,7 +2106,7 @@ the test passes.
         'Joe' object has no attribute 'last_name'.
         Did you mean: 'first_name'?
 
-* I add ``last_name`` to the ``__init__`` :ref:`method<what is a method?>` of ``Joe`` in ``family_ties.py``
+* I add ``last_name`` to the :ref:`__init__ method<the constructor method>` of ``Joe`` in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 28
@@ -2298,7 +2298,7 @@ the test passes.
                self.first_name = 'jane'
                self.last_name = 'doe' # use the default value
 
-* I add the ``__init__`` :ref:`method<what is a method?>` to ``Mary``
+* I add the :ref:`__init__ method<the constructor method>` to ``Mary``
 
   .. code-block:: python
     :lineno-start: 35
@@ -2499,10 +2499,10 @@ what happens when a child has more than one parent?
            # call the next parent of Mary
            Joe.__init__('mary')
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Joe`` only takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it got called with two (``self`` and ``mary``)
+  - which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of ``Joe`` only takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it got called with two (``self`` and ``mary``)
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
 
-* I change the ``__init__`` :ref:`method<what is a method?>` of ``Joe`` to take a ``first_name`` argument
+* I change the :ref:`__init__ method<the constructor method>` of ``Joe`` to take a ``first_name`` argument
 
   .. code-block:: python
     :lineno-start: 29
@@ -2521,7 +2521,7 @@ what happens when a child has more than one parent?
     TypeError: Joe.__init__() missing 1
                required positional argument: 'first_name'
 
-  I broke the ``joe = src.family_ties.Joe()`` call because the ``__init__`` :ref:`method<what is a method?>` now has two required :ref:`positional arguments<test_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
+  I broke the ``joe = src.family_ties.Joe()`` call because the :ref:`__init__ method<the constructor method>` now has two required :ref:`positional arguments<test_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
 
 * I add a :ref:`default value<test_optional_arguments>` to make ``first_name`` optional
 
@@ -2635,7 +2635,7 @@ what happens when a child has more than one parent?
                self.first_name = 'mary'
                self.last_name = 'blow'
 
-  the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` did not get called even though it is a parent of ``Mary``
+  the :ref:`__init__ method<the constructor method>` of ``Jane`` did not get called even though it is a parent of ``Mary``
 
 * I add an :ref:`assertion<what is an assertion?>` to show this in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
@@ -2704,7 +2704,7 @@ what happens when a child has more than one parent?
 
     AttributeError: 'Mary' object has no attribute 'eye_color'
 
-  because the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` did not get called.
+  because the :ref:`__init__ method<the constructor method>` of ``Jane`` did not get called.
 
 * I change the order of the parents of ``Mary`` from ``(Joe, Jane)`` back to ``(Jane, Joe)`` in ``family_ties.py``
 
@@ -2743,7 +2743,7 @@ what happens when a child has more than one parent?
   The order of the parents matters.
 
   - If the order is ``(Jane, Joe)`` then :ref:`instances<how to test if something is an instance>` of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Jane``.
-  - If the order is ``(Joe, Jane)`` then :ref:`instances<how to test if something is an instance>` of ``Mary`` do NOT get the ``eye_color`` :ref:`attribute<what is a class attribute?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` does not get called.
+  - If the order is ``(Joe, Jane)`` then :ref:`instances<how to test if something is an instance>` of ``Mary`` do NOT get the ``eye_color`` :ref:`attribute<what is a class attribute?>` since the :ref:`__init__ method<the constructor method>` of ``Jane`` does not get called.
 
 * I change the order of the parents to ``(Joe, Jane)`` again
 
@@ -2833,7 +2833,7 @@ what happens when a child has more than one parent?
   - If the order is ``(Joe, Jane)`` then
 
     * :ref:`instances<how to test if something is an instance>`  of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Joe``
-    * the  ``__init__`` :ref:`method<what is a method?>` of ``Jane`` does not get called
+    * the  :ref:`__init__ method<the constructor method>` of ``Jane`` does not get called
 
 
 * I remove the commented lines from ``Joe`` and ``Mary`` in ``family_ties.py``
@@ -2925,9 +2925,9 @@ what happens when a child has more than one parent?
     john = src.family_ties.John()
            Person.__init__()
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Person`` takes two :ref:`positional arguments<test_positional_arguments>` (``self`` and ``first_name``) and it got called with one (``self``)
+  which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of ``Person`` takes two :ref:`positional arguments<test_positional_arguments>` (``self`` and ``first_name``) and it got called with one (``self``)
 
-* I add the ``__init__`` :ref:`method<what is a method?>` to ``John`` in ``family_ties.py``
+* I add the :ref:`__init__ method<the constructor method>` to ``John`` in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 43
@@ -3203,7 +3203,7 @@ what happens when a child has more than one parent?
               self.first_name = 'john'
               self.last_name = 'smith'
 
-* I add the ``__init__`` :ref:`method<what is a method?>` with a value for the ``first_name`` :ref:`attribute<what is a class attribute?>` into ``Lil`` in ``family_ties.py``
+* I add the :ref:`__init__ method<the constructor method>` with a value for the ``first_name`` :ref:`attribute<what is a class attribute?>` into ``Lil`` in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 50
@@ -3292,9 +3292,9 @@ what happens when a child has more than one parent?
               super().__init__('lil')
           John.__init__('lil')
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``John`` takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it was called with two (``self`` and ``lil``)
+  which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of ``John`` takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it was called with two (``self`` and ``lil``)
 
-* I change the ``__init__`` :ref:`method<what is a method?>` in ``John`` to take in a parameter for ``first_name`` with a :ref:`default value<test_optional_arguments>` to make it optional
+* I change the :ref:`__init__ method<the constructor method>` in ``John`` to take in a parameter for ``first_name`` with a :ref:`default value<test_optional_arguments>` to make it optional
 
   .. code-block:: python
     :lineno-start: 44
@@ -3327,7 +3327,7 @@ what happens when a child has more than one parent?
               self.first_name = first_name
               self.last_name = last_name
 
-  the ``__init__`` :ref:`method<what is a method?>` of ``Mary`` did not get called.
+  the :ref:`__init__ method<the constructor method>` of ``Mary`` did not get called.
 
 * I add a :ref:`call<how to call a function with input>` to the `super built-in function`_ in ``Smith``
 
@@ -3372,10 +3372,10 @@ what happens when a child has more than one parent?
               last_name='smith'
           )
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Mary`` was called with a :ref:`keyword argument<test_keyword_arguments>` and it only takes ``self``
+  - which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of ``Mary`` was called with a :ref:`keyword argument<test_keyword_arguments>` and it only takes ``self``
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
 
-* I add ``first_name`` with a :ref:`default value<test_optional_arguments>` to the ``__init__`` :ref:`method<what is a method?>` of ``Mary``
+* I add ``first_name`` with a :ref:`default value<test_optional_arguments>` to the :ref:`__init__ method<the constructor method>` of ``Mary``
 
   .. code-block:: python
     :lineno-start: 42
@@ -3396,7 +3396,7 @@ what happens when a child has more than one parent?
                an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
-* I add ``last_name`` to the ``__init__`` :ref:`method<what is a method?>`
+* I add ``last_name`` to the :ref:`__init__ method<the constructor method>`
 
   .. code-block:: python
     :lineno-start: 42
@@ -3461,7 +3461,7 @@ what happens when a child has more than one parent?
               self.first_name = 'lil'
               self.last_name = 'blow'
 
-  the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` did not get called.
+  the :ref:`__init__ method<the constructor method>` of ``Jane`` did not get called.
 
 * I change the order of the parents of ``Lil`` to ``(Mary, John)`` to see if the value will change to ``john.last_name``
 
@@ -3498,7 +3498,7 @@ what happens when a child has more than one parent?
               self.first_name = 'lil'
               self.last_name = 'blow'
 
-  the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` did not get called.
+  the :ref:`__init__ method<the constructor method>` of ``Jane`` did not get called.
 
 * I add a :ref:`call<how to call a function with input>` to the `super built-in function`_ in ``Blow``
 
@@ -3548,7 +3548,7 @@ what happens when a child has more than one parent?
           # call the next parent of Mary
           Jane.__init__('lil', last_name='blow')
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` does not have a parameter named ``last_name``. Confused?
+  which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of ``Jane`` does not have a parameter named ``last_name``. Confused?
 
 * I add ``last_name`` to ``Jane``
 
