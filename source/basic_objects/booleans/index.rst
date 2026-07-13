@@ -1631,8 +1631,6 @@ the test passes.
 
     AssertionError: None is not False
 
-  the test passes because :ref:`None is not the same object as False<test_assertion_error_w_false>`
-
 * I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(None, False)``
 
   .. code-block:: python
@@ -1646,6 +1644,8 @@ the test passes.
 
 
     # NOTES
+
+  the test passes because :ref:`None is not the same object as False<test_assertion_error_w_false>`.
 
 * I remove the commented lines from :ref:`test_is_none_falsy_or_truthy`
 
@@ -1798,12 +1798,12 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if an integer_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 42
     :emphasize-lines: 3
 
-            # self.assertTrue(None)
-            self.assertFalse(None)
-            self.assertIs(None, False)
+            # self.assertFalse(-1)
+            self.assertTrue(-1)
+            self.assertIs(-1, True)
 
 
     # NOTES
@@ -1812,11 +1812,9 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: None is not False
+    AssertionError: -1 is not True
 
-  the test passes because :ref:`None is not the same object as False<test_assertion_error_w_false>`
-
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(None, False)``
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(-1, True)``
 
   .. code-block:: python
     :lineno-start: 37
@@ -1830,7 +1828,7 @@ the test passes.
 
     # NOTES
 
-  - :ref:`An integer is not the same object as True<test_assertion_error_w_true>`.
+  the test passes because :ref:`An integer is not the same object as True<test_assertion_error_w_true>`.
 
 * I add a :ref:`variable<what is a variable?>` for ``-1``
 
