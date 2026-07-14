@@ -3547,7 +3547,7 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes because I do not need to give a value for the ``last_input`` parameter in the call to ``src.functions.optional_arguments`` since the :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the ``optional_arguments`` :ref:`function<what is a function?>` is ``doe``. This means that
+  the test passes because I do not need to give a value for the ``last_input`` parameter in the call to ``optional_arguments`` since the :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the ``optional_arguments`` :ref:`function<what is a function?>` is ``doe``. This means that
 
   .. code-block:: python
 
