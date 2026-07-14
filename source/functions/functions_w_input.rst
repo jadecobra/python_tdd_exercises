@@ -4010,7 +4010,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
             unknown_number_of_arguments(
                 0, 1, a=2, b=3, c=4,
             )
-         == None
+         == ()
         )
 
 
