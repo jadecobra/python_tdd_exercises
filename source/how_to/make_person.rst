@@ -2686,7 +2686,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
 
   because the :ref:`function definition<how to make a function>` only takes one input and the test sends four.
 
-* I add a :ref:`starred expressions<starred expressions>` like I did in :ref:`test_unknown_number_of_arguments` so that the ``pick_one`` :ref:`function<what is a function?>` can take any number of :ref:`positional arguments<test_positional_arguments>`
+* I add a :ref:`starred expressions<single starred expressions>` like I did in :ref:`test_unknown_number_of_arguments` so that the ``pick_one`` :ref:`function<what is a function?>` can take any number of :ref:`positional arguments<test_positional_arguments>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -2705,7 +2705,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
                  # randomly return
                  # 'jane' or 'joe' or 'john' or 'person'
 
-  :ref:`Python reads the positional arguments as a tuple<how Python reads starred expressions>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expressions<starred expressions>` (``*choices``).
+  :ref:`Python reads the positional arguments as a tuple<how Python reads starred expressions>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expressions<single starred expressions>` (``*choices``).
 
 * I use the new :ref:`function<what is a function?>` for the ``last_name`` :ref:`variable<what is a variable?>`
 
@@ -2737,7 +2737,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
                 # randomly return
                 # 'doe' or 'smith' or 'blow' or 'public'
 
-  :ref:`Python reads the positional arguments as a tuple<how Python reads starred expressions>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expressions<starred expressions>` (``*choices``).
+  :ref:`Python reads the positional arguments as a tuple<how Python reads starred expressions>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expressions<single starred expressions>` (``*choices``).
 
 * I use the new :ref:`function<what is a function?>` for the ``sex`` :ref:`variable<what is a variable?>`
 
@@ -2769,7 +2769,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
               random.choice(('F', 'M'))
           # randomly return 'F' or 'M'
 
-  :ref:`Python reads the positional arguments as a tuple<how Python reads starred expressions>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expressions<starred expressions>` (``*choices``).
+  :ref:`Python reads the positional arguments as a tuple<how Python reads starred expressions>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expressions<single starred expressions>` (``*choices``).
 
 * I remove the commented lines
 

@@ -83,7 +83,7 @@ Questions to think about as I go through the chapter
 * :ref:`how can I make arguments a choice in a function?<test_optional_arguments>`
 * :ref:`how can I make a function take any number of positional arguments?<test_unknown_number_of_arguments>`
 * :ref:`how can I make a function take any number of keyword arguments?<test_unknown_number_of_arguments>`
-* :ref:`what can I do with starred expressions?<starred expressions>`
+* :ref:`what can I do with single starred expressions?<single starred expressions>`
 * :ref:`what can I do with double starred expressions?<double starred expressions>`
 * :ref:`how does Python read starred expressions?<how Python reads starred expressions>`
 * :ref:`how does Python read double starred expressions?<how Python reads double starred expressions>`
@@ -4105,12 +4105,12 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 ----
 
 *********************************************************************************
-starred expressions
+single starred expressions
 *********************************************************************************
 
-Python_ also has a way for a :ref:`function<what is a function?>` to take any number of :ref:`positional arguments<test_positional_arguments>` without knowing how many they are. It is the starred expressions (``*``).
+Python_ also has a way for a :ref:`function<what is a function?>` to take any number of :ref:`positional arguments<test_positional_arguments>` without knowing how many they are. It is the single starred expression (``*``).
 
-* I use a starred expressions to replace the :ref:`positional arguments<test_positional_arguments>`
+* I use a single starred expression (``*``) to replace the :ref:`positional arguments<test_positional_arguments>`
 
   .. code-block:: python
     :lineno-start: 200
