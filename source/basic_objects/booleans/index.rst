@@ -3771,7 +3771,6 @@ the test passes.
 
 -----
 
-BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM BOOM 
 *********************************************************************************
 test_is_a_set_falsy_or_truthy
 *********************************************************************************
@@ -3788,12 +3787,10 @@ Is a set_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is
 * I add a test for if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 5-6
+    :lineno-start: 97
+    :emphasize-lines: 3-4
 
-            a_list = [0, 1, 2, 'n']
-            self.assertTrue(bool(a_list))
-            self.assertTrue(a_list)
+            self.assertIsNot(a_list, True)
 
         def test_is_a_set_falsy_or_truthy(self):
             self.assertTrue(bool(set()))
@@ -3817,10 +3814,10 @@ Is a set_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is
 
 ----
 
-I change assertTrue_ to assertFalse_
+I change assertTrue_ to assertFalse_ for ``bool(set())``
 
 .. code-block:: python
-  :lineno-start: 72
+  :lineno-start: 99
   :emphasize-lines: 2-3
 
       def test_is_a_set_falsy_or_truthy(self):
@@ -3843,8 +3840,8 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 77
-    :emphasize-lines: 10
+    :lineno-start: 104
+    :emphasize-lines: 11
 
     # NOTES
     # bool(a list with things) is True
@@ -3852,23 +3849,17 @@ the test passes.
     # bool(a string with things) is True
     # bool(a positive number) is True
     # bool(a negative number) is True
-    # True is NOT False
-    # True is NOT equal to False
+    # True is True
+    # True is an integer
     # True is a boolean
+    # True is NOT False
     # bool(the empty set) is False
     # bool(the empty list) is False
-    # bool(the empty tuple) is False
-    # bool(the empty string) is False
-    # bool(zero) is False
-    # bool(None) is False
-    # False is NOT True
-    # False is NOT equal to True
-    # False is a boolean
 
 * I add an :ref:`assertion<what is an assertion?>` without bool_
 
   .. code-block:: python
-    :lineno-start: 72
+    :lineno-start: 99
     :emphasize-lines: 4
 
         def test_is_a_set_falsy_or_truthy(self):
@@ -3887,10 +3878,10 @@ the test passes.
 
   because the result of ``bool(set())`` is :ref:`False<test_what_is_false>`.
 
-* I change assertTrue_ to assertFalse_
+* I change assertTrue_ to assertFalse_ for ``bool(set())``
 
   .. code-block:: python
-    :lineno-start: 72
+    :lineno-start: 99
     :emphasize-lines: 4-5
 
         def test_is_a_set_falsy_or_truthy(self):
@@ -3904,6 +3895,9 @@ the test passes.
 
   - the test passes because the result of ``bool(set())`` is :ref:`False<test_what_is_false>`
   - the empty set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is grouped as :ref:`True<test_what_is_true>`
+
+* I add a :ref:`call to assertIs<test_assert_is>`
+
   - :ref:`a set is not the same object as False<test_assertion_error_w_false>`
 
 * I add an :ref:`assertion<what is an assertion?>` to test if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`

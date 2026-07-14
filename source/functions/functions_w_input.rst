@@ -1508,7 +1508,7 @@ the test passes.
 
   because when I :ref:`call<how to call a function with input>` ``positional_arguments`` with ``'first'`` and ``'last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     positional_arguments('first'    , 'last'    )
     positional_arguments(first_input, last_input)
@@ -1545,7 +1545,7 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes, because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function?>` in the test sends ``'first'`` as ``first_input`` and ``'last'`` as ``last_input``.
+  the test passes, because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input> ` in the test sends ``'first'`` as ``first_input`` and ``'last'`` as ``last_input``.
 
 * The problem with giving arguments this way is that they always have to be in the order in the :ref:`function definition<how to make a function that takes input>` or I get something different. I add an :ref:`assertion<what is an assertion?>` to show this
 
@@ -1583,7 +1583,7 @@ the test passes.
 
   because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input>` in this :ref:`assertion<what is an assertion?>` sends ``'last'`` as ``first_input`` and ``'first'`` as ``last_input``. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     positional_arguments('last'     , 'first'   )
     positional_arguments(first_input, last_input)
@@ -1745,7 +1745,7 @@ the test passes.
 
   because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input>` in this :ref:`assertion<what is an assertion?>` sends ``0`` as ``first_input`` and ``1`` as ``last_input``. Using substitution
 
-  .. code-block:: python
+  .. code-block:: shell
 
     positional_arguments(0          , 1         )
     positional_arguments(first_input, last_input)
@@ -1837,7 +1837,7 @@ the test passes.
     a_tuple = (0, 1, 2, 'n')
     a_list = [0, 1, 2, 'n']
 
-  .. code-block:: python
+  .. code-block:: shell
 
     positional_arguments(a_list        , a_tuple       )
     positional_arguments([0, 1, 2, 'n'], (0, 1, 2, 'n'))
@@ -2203,7 +2203,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
   because when I :ref:`call<how to call a function with input>` ``keyword_arguments`` with ``first_input='first'`` and ``last_input='last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution
 
-  .. code-block:: python
+  .. code-block:: shell
 
     keyword_arguments(first_input='first', last_input='last')
     keyword_arguments(first_input        , last_input       )
@@ -2280,7 +2280,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
   because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input>` in this :ref:`assertion<what is an assertion?>` sends ``'last'`` as ``last_input`` and ``'first'`` as ``first_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     keyword_arguments(last_input='last', first_input='first')
     keyword_arguments(first_input='first', last_input='last')
@@ -2426,7 +2426,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
   because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input>` in this :ref:`assertion<what is an assertion?>` sends ``0`` as ``last_input`` and ``1`` as ``first_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     keyword_arguments(last_input=0, first_input=1)
     keyword_arguments(first_input=1, last_input=0)
@@ -2532,7 +2532,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
   because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input>` in this :ref:`assertion<what is an assertion?>` sends ``[0, 1, 2, 'n']`` as ``first_input`` and ``(0, 1, 2, 'n')`` as ``last_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     keyword_arguments(
         first_input=[0, 1, 2, 'n'], last_input=(0, 1, 2, 'n')
@@ -3141,7 +3141,7 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 
   because when I :ref:`call<how to call a function with input>` ``args_and_kwargs`` with ``'first'`` and ``last_input='last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution
 
-  .. code-block:: python
+  .. code-block:: shell
 
     args_and_kwargs('first'    , last_input='last')
     args_and_kwargs(first_input, last_input       )
@@ -3547,7 +3547,7 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes because nce I do not need to give a value for the ``last_input`` parameter in the call to ``src.functions.optional_arguments`` since the :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the ``optional_arguments`` :ref:`function<what is a function?>` is ``doe``. This means that
+  the test passes because I do not need to give a value for the ``last_input`` parameter in the call to ``src.functions.optional_arguments`` since the :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the ``optional_arguments`` :ref:`function<what is a function?>` is ``doe``. This means that
 
   .. code-block:: python
 
@@ -4197,7 +4197,7 @@ how Python reads starred and double starred expressions
 
   Using substitution
 
-  .. code-block:: python
+  .. code-block:: shell
 
     unknown_number_of_arguments(
         0, 1                 , a=2, b=3
@@ -4249,7 +4249,7 @@ how Python reads starred and double starred expressions
 
   Using substitution
 
-  .. code-block:: python
+  .. code-block:: shell
 
     unknown_number_of_arguments(
         0, 1                 , a=2, b=3, c=4
@@ -4305,7 +4305,7 @@ how Python reads starred and double starred expressions
 
   Using substitution
 
-  .. code-block:: python
+  .. code-block:: shell
 
     unknown_number_of_arguments(
         0, 1, 2              , a=3, b=4, c=5
@@ -4409,7 +4409,7 @@ how Python reads starred expressions
 
   Using substitution
 
-  .. code-block:: python
+  .. code-block:: shell
 
     a_tuple = (0, 1)
     a_dictionary = {'a': 2, 'b': 3}
@@ -4534,7 +4534,7 @@ how Python reads starred expressions
 
   Using substitution
 
-  .. code-block:: python
+  .. code-block:: shell
 
     a_tuple = (0, 1)
     a_dictionary = {'a': 2, 'b': 3, 'c': 4}
@@ -4944,7 +4944,7 @@ the test passes.
 
   Using substitution
 
-  .. code-block:: python
+  .. code-block:: shell
 
     unknown_number_of_arguments()
     unknown_number_of_arguments(
