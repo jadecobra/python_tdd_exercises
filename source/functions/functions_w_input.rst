@@ -1545,7 +1545,7 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes, because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input> ` in the test sends ``'first'`` as ``first_input`` and ``'last'`` as ``last_input``.
+  the test passes, because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input>` in the test sends ``'first'`` as ``first_input`` and ``'last'`` as ``last_input``.
 
 * The problem with giving arguments this way is that they always have to be in the order in the :ref:`function definition<how to make a function that takes input>` or I get something different. I add an :ref:`assertion<what is an assertion?>` to show this
 
@@ -3430,7 +3430,7 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes because I do not need to give a value for the ``last_input`` parameter when I :ref:`call<how to call a function with input>` the :ref:`function<what is a function?>` since the :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the :ref:`function<what is a function?>` is ``doe``
+  the test passes because I do not need to give a value for the ``last_input`` parameter when I :ref:`call<how to call a function with input>` the :ref:`function<what is a function?>` since there is :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the :ref:`function<what is a function?>` is ``doe``
 
   .. code-block:: python
 
@@ -3547,7 +3547,7 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes because I do not need to give a value for the ``last_input`` parameter in the call to ``optional_arguments`` since the :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the ``optional_arguments`` :ref:`function<what is a function?>` is ``doe``. This means that
+  the test passes because I do not need to give a value for the ``last_input`` parameter in the call to ``optional_arguments`` since there is a :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the ``optional_arguments`` :ref:`function<what is a function?>` is ``doe``. This means that
 
   .. code-block:: python
 
@@ -4655,7 +4655,7 @@ how Python reads starred expressions
 
   Using substitution
 
-  .. code-block:: python
+  .. code-block:: shell
 
     a_tuple = (0, 1, 2)
     a_dictionary = {'a': 3, 'b': 4, 'c': 5}
@@ -4765,7 +4765,7 @@ how Python reads starred expressions
 
   Using substitution
 
-  .. code-block:: python
+  .. code-block:: shell
 
     unknown_number_of_arguments(*a_tuple)
     unknown_number_of_arguments(
@@ -4861,7 +4861,7 @@ these three statements are the same
 
 Using substitution
 
-.. code-block:: python
+.. code-block:: shell
 
   unknown_number_of_arguments(**a_dictionary)
   unknown_number_of_arguments(
