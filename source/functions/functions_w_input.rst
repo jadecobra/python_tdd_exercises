@@ -3430,7 +3430,7 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes because I do not need to give a value for the ``last_input`` parameter when I :ref:`call<how to call a function with input>` the :ref:`function<what is a function?>` since there is :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the :ref:`function<what is a function?>` is ``doe``
+  the test passes because I do not need to give a value for the ``last_input`` parameter when I :ref:`call<how to call a function with input>` the :ref:`function<what is a function?>` since there is a :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the :ref:`function<what is a function?>` (``doe``).
 
   .. code-block:: python
 
@@ -3547,7 +3547,7 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes because I do not need to give a value for the ``last_input`` parameter in the call to ``optional_arguments`` since there is a :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the ``optional_arguments`` :ref:`function<what is a function?>` is ``doe``. This means that
+  the test passes because I do not need to give a value for the ``last_input`` parameter in the call to ``optional_arguments`` since there is a :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the ``optional_arguments`` :ref:`function<what is a function?>` (``doe``). This means that
 
   .. code-block:: python
 
