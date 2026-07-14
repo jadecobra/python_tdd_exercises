@@ -3893,7 +3893,7 @@ double starred expressions
 
 Python_ has a way for a :ref:`function<what is a function?>` to take any number of :ref:`keyword arguments<test_keyword_arguments>` without knowing how many they are. It is the double starred expressions (``**``).
 
-* I use a double starred expressions to replace ``a`` in the parentheses
+* I use a double starred expression to replace ``a`` in the parentheses
 
   .. code-block:: python
     :lineno-start: 200
