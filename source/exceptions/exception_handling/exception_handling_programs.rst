@@ -711,7 +711,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-* :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.
 * :ref:`I know how to make functions<what is a function?>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
@@ -720,7 +720,7 @@ what is next?
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to make a Python Test Driven Development environment automatically<how to make a Python test driven development environment 2>`
+* :ref:`how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment 2>`
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 

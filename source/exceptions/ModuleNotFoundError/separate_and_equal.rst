@@ -20,7 +20,7 @@ I can also place them in another :ref:`module<what is a module?>` then use the `
 what is next?
 *************************************************************************************
 
-* :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
 * :ref:`I know what a Python module is<what is a module?>`.
 * :ref:`I know how to run tests automatically<how to run tests automatically>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.

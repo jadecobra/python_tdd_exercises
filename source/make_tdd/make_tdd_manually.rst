@@ -5,7 +5,7 @@
 .. include:: ../links.rst
 
 #################################################################################
-how to make a Python test driven development environment manually
+how to make a Python Test Driven Development environment manually
 #################################################################################
 
 .. raw:: html
@@ -1007,7 +1007,7 @@ what is next?
 *************************************************************************************
 
 
-I know :ref:`how to make a Python test driven development environment manually`
+I know :ref:`how to make a Python Test Driven Development environment manually`
 
 .. toctree::
   :titlesonly:

@@ -2520,7 +2520,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-* :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.
 * :ref:`I know how to make functions<what is a function?>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
@@ -2538,7 +2538,7 @@ what is next?
 
 I edited ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` for the last few projects. I want to automate the process so that I can call the program and it does all the steps for me when I give it the name of the project.
 
-:ref:`Would you like to know how to make a Python Test Driven Development environment automatically with variables?<how to make a Python test driven development environment 3>`
+:ref:`Would you like to know how to make a Python Test Driven Development environment automatically with variables?<how to make a Python Test Driven Development environment 3>`
 
 ----
 

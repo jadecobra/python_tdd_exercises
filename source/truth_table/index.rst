@@ -14,17 +14,21 @@ truth table
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=7_bVE9tCltIq1uBF&amp;list=PL5lANtH-CROCjQaiFJP0-XEjHfCiwgwt1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Sometimes I want programs_ to choose what to do based on inputs or :ref:`conditions<if statements>`, and can make this happen with :ref:`if statements<if statements>`. For example, If I want to know if a person can vote, the inputs could be
+Sometimes I want programs_ to choose what to do based on inputs or :ref:`conditions<if statements>`, and can make this happen with :ref:`if statements<if statements>`. For example,
 
-* Is the person alive?
-* Is the person old enough?
-* Is the person a citizen?
+* If I want to know if a person can vote, the inputs could be
 
-I can add these to a program so that when it gets information about the person it returns  :ref:`True<test_what_is_true>` for "Yes, they can vote" or :ref:`False<test_what_is_false>` for "No, they can NOT vote".
+  - Is the person younger than 18?
+  - Is the person a citizen?
 
-These are exercises on writing :ref:`conditional expressions` in Python_ with the `Truth Table`_ from Mathematics_ and the :ref:`assertFalse<another way to test if something is grouped as False>` and :ref:`assertTrue methods<another way to test if something is grouped as True>` from :ref:`booleans<what are booleans?>`.
+* If I want to know if a person can get a license, the inputs could be
 
-The operations in these chapters are fundamental to how the computer works. All operations from the `Truth Table`_ always return :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` which can also be thought of as ``1`` or ``0``.
+  - Is the person younger than 18?
+  - Did the person pass the test?
+
+These are exercises in writing :ref:`conditional expressions` in Python_ with the `Truth Table`_ from Mathematics_ and the :ref:`assertFalse<another way to test if something is grouped as False>` and :ref:`assertTrue methods<another way to test if something is grouped as True>`.
+
+The operations in these chapters are fundamental to how the computer works. All operations from the `Truth Table`_ always return :ref:`False (which can be thought of as 0)<test_the_value_of_false>` or :ref:`True (which can be thought of as 1)<test_the_value_of_true>`.
 
 ----
 

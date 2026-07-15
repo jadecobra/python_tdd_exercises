@@ -1711,7 +1711,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-* :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
 * :ref:`I know what a Python module is<what is a module?>`.
 * :ref:`I know how to run tests automatically<how to run tests automatically>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.
@@ -1735,6 +1735,7 @@ what is next?
   :maxdepth: 1
 
   ../../basic_objects/booleans/index
+  ../../make_tdd/make_tdd_automatically
   ../../truth_table/index
 
 :ref:`Would you like to test booleans (there are only two)?<what are booleans?>`

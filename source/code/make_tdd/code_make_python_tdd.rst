@@ -65,7 +65,7 @@ makePythonTdd with no variables
 makePythonTdd with variables
 *********************************************************************************
 
-* Here is the program_ from :ref:`how to make a Python test driven development environment 3`
+* Here is the program_ from :ref:`how to make a Python Test Driven Development environment 3`
 
   .. tab-set::
     :sync-group: os

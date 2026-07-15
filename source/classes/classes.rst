@@ -3371,7 +3371,7 @@ what is next?
 You have gone through a lot of things and know:
 
 
-* :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.
 * :ref:`I know how to make functions<what is a function?>`.
 * :ref:`how to pass values from tests to functions<telephone>`

@@ -334,7 +334,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-* :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.
 * :ref:`I know how to make functions<what is a function?>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
@@ -349,7 +349,7 @@ what is next?
 * :ref:`what you can do with Lists<lists>`
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`what you can do with dictionaries<dictionaries>`
-* :ref:`how to make a Python Test Driven Development environment automatically with variables<how to make a Python test driven development environment 3>`
+* :ref:`how to make a Python Test Driven Development environment automatically with variables<how to make a Python Test Driven Development environment 3>`
 
 :ref:`would you like to test using dictionaries and functions to make a person?<how to make a person>`
 

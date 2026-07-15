@@ -5030,7 +5030,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-* :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
 * :ref:`I know what a Python module is<what is a module?>`.
 * :ref:`I know how to run tests automatically<how to run tests automatically>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.
@@ -5053,9 +5053,10 @@ what is next?
   :titlesonly:
   :maxdepth: 1
 
+  ../../make_tdd/make_tdd_automatically
   ../../truth_table/index
 
-:ref:`Would you like to test the truth table?<truth table>` It helps understand writing programs_ that make decisions based on :ref:`conditions<if statements>`.
+So far I have done the same steps to make a :ref:`Python Test Driven Development environment<how to make a Python Test Driven Development environment manually>`. :ref:`Would you like to see me turn those steps into a program to automatically make a Test Driven Development project with one command?<how to make a Python Test Driven Development environment automatically>`.
 
 ----
 

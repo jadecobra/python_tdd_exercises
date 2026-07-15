@@ -42,7 +42,7 @@
 another way to write tests
 #################################################################################
 
-I used unittest_ in :ref:`how to make a Python test driven development environment manually` to run tests manually before I learned to :ref:`run them automatically<how to run tests automatically>` with `pytest-watcher`_.
+I used unittest_ in :ref:`how to make a Python Test Driven Development environment manually` to run tests manually before I learned to :ref:`run them automatically<how to run tests automatically>` with `pytest-watcher`_.
 
 The unittest_ :ref:`library<what is a module?>` is part of `The Python Standard Library`_ and can also be used to write tests. You can think of it as a toolbox with different tools I can use to test code.
 
@@ -4348,7 +4348,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-* :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
 * :ref:`I know what a Python module is<what is a module?>`.
 * :ref:`I know how to run tests automatically<how to run tests automatically>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.

@@ -5,7 +5,7 @@
 .. include:: ../links.rst
 
 #################################################################################
-how to make a Python test driven development environment
+how to make a Python Test Driven Development environment
 #################################################################################
 
 .. raw:: html

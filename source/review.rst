@@ -320,7 +320,7 @@ testing
 what is next?
 *************************************************************************************
 
-* :ref:`I know how to make a Python test driven development environment manually<how to make a Python test driven development environment manually>`.
+* :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.
 * :ref:`I know how to make functions<what is a function?>`.
 * :ref:`how to pass values from tests to functions<telephone>`
@@ -338,7 +338,7 @@ what is next?
 * :ref:`what you can do with classes<everything is an object>`
 * :ref:`how to raise ModuleNotFoundError<what is a module?>`
 
-:ref:`Do you remember how to make a Python test driven development environment?<how to make a Python test driven development environment>`
+:ref:`Do you remember how to make a Python Test Driven Development environment?<how to make a Python Test Driven Development environment>`
 
 ----
 
