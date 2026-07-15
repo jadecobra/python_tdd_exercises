@@ -4314,7 +4314,7 @@ the test passes.
 
   the test passes.
 
-* I add a comment
+* I add a comment about a :ref:`dictionary<what is a dictionary?>` with things
 
   .. code-block:: python
     :lineno-start: 121
@@ -4323,34 +4323,6 @@ the test passes.
     # NOTES
     # bool(a dictionary with things) is True
     # bool(a set with things) is True
-    # bool(a list with things) is True
-    # bool(a tuple with things) is True
-    # bool(a string with things) is True
-    # bool(a positive number) is True
-    # bool(a negative number) is True
-    # True is True
-    # True is an integer
-    # True is a boolean
-    # True is NOT False
-
-  .. code-block:: python
-    :lineno-start: 133
-
-    # bool(the empty dictionary) is False
-    # bool(the empty set) is False
-    # bool(the empty list) is False
-    # bool(the empty tuple) is False
-    # bool(the empty string) is False
-    # bool(zero) is False
-    # bool(None) is False
-    # False is False
-    # False is an integer
-    # False is a boolean
-    # False is NOT True
-
-
-    # Exceptions seen
-    # AssertionError
 
 * I add an :ref:`assertion<what is an assertion?>` for ``{'key': 'value'}`` without bool_
 
@@ -4485,6 +4457,513 @@ the test passes.
     'add test_is_a_dictionary_falsy_or_truthy'
 
 :ref:`The empty dictionary is grouped as False. A dictionary with things is grouped as True<test_is_a_dictionary_falsy_or_truthy>`.
+
+----
+
+*********************************************************************************
+test_the_value_of_false
+*********************************************************************************
+
+Since :ref:`False<test_what_is_false>` is an int_, what is its value?
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+* I add a  test for the value of :ref:`False<test_what_is_false>`
+
+  .. code-block:: python
+    :lineno-start: 117
+    :emphasize-lines: 3-4
+
+            self.assertIsNot(a_dictionary, True)
+
+        def test_the_value_of_false(self):
+            self.assertEqual(False+1, None)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 1 != None
+
+  - The value of :ref:`False<test_what_is_false>` is ``0``.
+  - :ref:`0 is grouped as False<test_is_an_integer_falsy_or_truthy>`
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the expectation to match
+
+.. code-block:: python
+  :lineno-start: 119
+  :emphasize-lines: 2-3
+
+      def test_the_value_of_false(self):
+          # self.assertEqual(False+1, None)
+          self.assertEqual(False+1, 1)
+
+
+  # NOTES
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>` with subtraction
+
+  .. code-block:: python
+    :lineno-start: 119
+    :emphasize-lines: 4
+
+        def test_the_value_of_false(self):
+            # self.assertEqual(False+1, None)
+            self.assertEqual(False+1, 1)
+            self.assertEqual(False-1, 1)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: -1 != 1
+
+  the value of :ref:`False<test_what_is_false>` is ``0``.
+
+* I change my expectation to match reality
+
+  .. code-block:: python
+    :lineno-start: 119
+    :emphasize-lines: 4-5
+
+        def test_the_value_of_false(self):
+            # self.assertEqual(False+1, None)
+            self.assertEqual(False+1, 1)
+            # self.assertEqual(False-1, 1)
+            self.assertEqual(False-1, -1)
+
+
+    # NOTES
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` with multiplication
+
+  .. code-block:: python
+    :lineno-start: 122
+    :emphasize-lines: 3
+
+            # self.assertEqual(False-1, 1)
+            self.assertEqual(False-1, -1)
+            self.assertEqual(False*1, -1)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 0 != -1
+
+  the value of :ref:`False<test_what_is_false>` is ``0``.,
+
+* I change my expectation
+
+  .. code-block:: python
+    :lineno-start: 122
+    :emphasize-lines: 3-4
+
+            # self.assertEqual(False-1, 1)
+            self.assertEqual(False-1, -1)
+            # self.assertEqual(False*1, -1)
+            self.assertEqual(False*1, 0)
+
+
+    # NOTES
+
+  the test passes.
+
+* what happens if I divide a number by :ref:`False<test_what_is_false>`?
+
+  .. code-block:: python
+    :lineno-start: 124
+    :emphasize-lines: 3
+
+            # self.assertEqual(False*1, -1)
+            self.assertEqual(False*1, 0)
+            1 / False
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` because :ref:`False<test_what_is_false>` is ``0``
+
+  .. code-block:: python
+
+    ZeroDivisionError: division by zero
+
+* I add :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 151
+    :emphasize-lines: 6
+    :emphasize-text: ZeroDivisionError
+
+    # False is NOT True
+
+
+    # Exceptions seen
+    # AssertionError
+    # ZeroDivisionError
+
+* I comment the line out then add a note about :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+
+  .. code-block:: python
+    :lineno-start: 124
+    :emphasize-lines: 4-5
+
+            # self.assertEqual(False*1, -1)
+            self.assertEqual(False*1, 0)
+
+            # raises ZeroDivisionError
+            # 1 / False
+
+
+    # NOTES
+
+  the test goes back to green.
+
+* I remove the other commented lines from :ref:`test_the_value_of_false`
+
+  .. code-block:: python
+    :lineno-start: 119
+
+        def test_the_value_of_false(self):
+            self.assertEqual(False+1, 1)
+            self.assertEqual(False-1, -1)
+            self.assertEqual(False*1, 0)
+
+            # raises ZeroDivisionError
+            # 1 / False
+
+
+    # NOTES
+
+* I add a comment
+
+  .. code-block:: python
+    :lineno-start: 128
+
+    # NOTES
+    # bool(a dictionary with things) is True
+    # bool(a set with things) is True
+    # bool(a list with things) is True
+    # bool(a tuple with things) is True
+    # bool(a string with things) is True
+    # bool(a positive number) is True
+    # bool(a negative number) is True
+    # True is True
+    # True is an integer
+    # True is a boolean
+    # True is NOT False
+
+  .. code-block:: python
+    :lineno-start: 140
+    :emphasize-lines: 10
+
+    # bool(the empty dictionary) is False
+    # bool(the empty set) is False
+    # bool(the empty list) is False
+    # bool(the empty tuple) is False
+    # bool(the empty string) is False
+    # bool(zero) is False
+    # bool(None) is False
+    # False is False
+    # False is an integer
+    # the value of False is 0
+    # False is a boolean
+    # False is NOT True
+
+
+    # Exceptions seen
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add test_the_value_of_false'
+
+:ref:`In Python, the value of False is 0<test_the_value_of_false>`.
+
+----
+
+*********************************************************************************
+test_the_value_of_true
+*********************************************************************************
+
+If the value of :ref:`False<test_what_is_false>` is ``0``, what is the value of :ref:`True<test_what_is_true>`?
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a test to find out the value of :ref:`True<test_what_is_true>`
+
+.. code-block:: python
+  :lineno-start: 124
+  :emphasize-lines: 4-5
+
+            # raises ZeroDivisionError
+            # 1 / False
+
+        def test_the_value_of_true(self):
+            self.assertEqual(True+1, 1)
+
+
+    # NOTES
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  AssertionError: 2 != 1
+
+The value of :ref:`True<test_what_is_true>` is ``1``.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the expectation
+
+.. code-block:: python
+  :lineno-start: 127
+  :emphasize-lines: 2-3
+
+      def test_the_value_of_true(self):
+          # self.assertEqual(True+1, 1)
+          self.assertEqual(True+1, 2)
+
+
+  # NOTES
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 127
+    :emphasize-lines: 4
+
+        def test_the_value_of_true(self):
+            # self.assertEqual(True+1, 1)
+            self.assertEqual(True+1, 2)
+            self.assertEqual(True-1, 2)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 0 != 2
+
+  The value of :ref:`True<test_what_is_true>` is ``1``.
+
+* I change my expectation to match reality
+
+  .. code-block:: python
+    :lineno-start: 127
+    :emphasize-lines: 4-5
+
+        def test_the_value_of_true(self):
+            # self.assertEqual(True+1, 1)
+            self.assertEqual(True+1, 2)
+            # self.assertEqual(True-1, 2)
+            self.assertEqual(True-1, 0)
+
+
+    # NOTES
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` with multiplication
+
+  .. code-block:: python
+    :lineno-start: 130
+    :emphasize-lines: 3
+
+            # self.assertEqual(True-1, 2)
+            self.assertEqual(True-1, 0)
+            self.assertEqual(True*1, 0)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 1 != 0
+
+  The value of :ref:`True<test_what_is_true>` is ``1``.
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 130
+    :emphasize-lines: 3-4
+
+            # self.assertEqual(True-1, 2)
+            self.assertEqual(True-1, 0)
+            # self.assertEqual(True*1, 0)
+            self.assertEqual(True*1, 1)
+
+
+    # NOTES
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` with :ref:`division<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 132
+    :emphasize-lines: 3
+
+            # self.assertEqual(True*1, 0)
+            self.assertEqual(True*1, 1)
+            self.assertEqual(True/2, 1)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 0.5 != 1
+
+  The value of :ref:`True<test_what_is_true>` is ``1``.
+
+* I change the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 132
+    :emphasize-lines: 3-4
+
+            # self.assertEqual(True*1, 0)
+            self.assertEqual(True*1, 1)
+            # self.assertEqual(True/2, 1)
+            self.assertEqual(True/1, 1)
+
+
+    # NOTES
+
+  the test passes.
+
+* I remove the commented lines from :ref:`test_the_value_of_true`
+
+  .. code-block:: python
+    :lineno-start: 127
+
+        def test_the_value_of_true(self):
+            self.assertEqual(True+1, 2)
+            self.assertEqual(True-1, 0)
+            self.assertEqual(True*1, 1)
+            self.assertEqual(True/1, 1)
+
+
+    # NOTES
+
+* I add a comment about the value of :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 134
+    :emphasize-lines: 11
+
+    # NOTES
+    # bool(a dictionary with things) is True
+    # bool(a set with things) is True
+    # bool(a list with things) is True
+    # bool(a tuple with things) is True
+    # bool(a string with things) is True
+    # bool(a positive number) is True
+    # bool(a negative number) is True
+    # True is True
+    # True is an integer
+    # the value of True is 1
+    # True is a boolean
+    # True is NOT False
+
+  .. code-block:: python
+    :lineno-start: 147
+
+    # bool(the empty dictionary) is False
+    # bool(the empty set) is False
+    # bool(the empty list) is False
+    # bool(the empty tuple) is False
+    # bool(the empty string) is False
+    # bool(zero) is False
+    # bool(None) is False
+    # False is False
+    # False is an integer
+    # the value of False is 0
+    # False is a boolean
+    # False is NOT True
+
+
+    # Exceptions seen
+    # AssertionError
+    # ZeroDivisionError
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add test_the_value_of_true'
+
+:ref:`In Python the value of True is 1<test_the_value_of_true>`.
 
 ----
 
