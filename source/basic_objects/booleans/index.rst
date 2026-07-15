@@ -3211,7 +3211,7 @@ the test passes.
     # NOTES
 
   - The test passes because the result of ``bool(tuple())`` is :ref:`False<test_what_is_false>`.
-  - The empty tuple_ is grouped as :ref:`True<test_what_is_true>`.
+  - The empty tuple_ is grouped as :ref:`False<test_what_is_false>`.
 
 * I add an :ref:`assertion<what is an assertion?>` for if the empty tuple_ is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
@@ -3326,8 +3326,8 @@ the test passes.
 
     # NOTES
 
-  - the test passes because the result of ``bool((0, 1, 2, 'n'))`` is :ref:`True<test_what_is_true>`
-  - a tuple_ with things is grouped as :ref:`True<test_what_is_true>`
+  - The test passes because the result of ``bool((0, 1, 2, 'n'))`` is :ref:`True<test_what_is_true>`.
+  - A tuple_ with things is grouped as :ref:`True<test_what_is_true>`.
 
 * I add a :ref:`call<how to call a function with input>` to :ref:`assertIs<test_assert_is>` to test if a tuple_ with things is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
@@ -3893,24 +3893,51 @@ the test passes.
 
     # NOTES
 
-  - the test passes because the result of ``bool(set())`` is :ref:`False<test_what_is_false>`
-  - the empty set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is grouped as :ref:`True<test_what_is_true>`
+  - The test passes because the result of ``bool(set())`` is :ref:`False<test_what_is_false>`.
+  - The empty set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is grouped as :ref:`False<test_what_is_false>`.
 
-* I add a :ref:`call to assertIs<test_assert_is>`
-
-  - :ref:`a set is not the same object as False<test_assertion_error_w_false>`
-
-* I add an :ref:`assertion<what is an assertion?>` to test if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
+* I add a :ref:`call to assertIs<test_assert_is>` to test if the empty set_ is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 72
-    :emphasize-lines: 7
+    :lineno-start: 102
+    :emphasize-lines: 3
 
-        def test_is_a_set_falsy_or_truthy(self):
-            # self.assertTrue(bool(set()))
-            self.assertFalse(bool(set()))
             # self.assertTrue(set())
             self.assertFalse(set())
+            self.assertIs(set(), False)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: set() is not False
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(set(), False)``
+
+  .. code-block:: python
+    :lineno-start: 102
+    :emphasize-lines: 3-4
+
+            # self.assertTrue(set())
+            self.assertFalse(set())
+            # self.assertIs(set(), False)
+            self.assertIsNot(set(), False)
+
+
+    # NOTES
+
+  the test passes because :ref:`a set is not the same object as False<test_assertion_error_w_false>`.
+
+* I add an :ref:`assertion<what is an assertion?>` to test if a set_ with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 105
+    :emphasize-lines: 3
+
+            self.assertIsNot(set(), False)
 
             self.assertFalse(bool({0, 1, 2, 'n'}))
 
@@ -3925,11 +3952,13 @@ the test passes.
 
   because the result of ``bool({0, 1, 2, 'n'})`` is :ref:`True<test_what_is_true>`.
 
-* I change assertFalse_ to assertTrue_
+* I change assertFalse_ to assertTrue_ for ``bool({0, 1, 2, 'n'})``
 
   .. code-block:: python
-    :lineno-start: 78
-    :emphasize-lines: 1-2
+    :lineno-start: 105
+    :emphasize-lines: 3-4
+
+            self.assertIsNot(set(), False)
 
             # self.assertFalse(bool({0, 1, 2, 'n'}))
             self.assertTrue(bool({0, 1, 2, 'n'}))
@@ -3942,33 +3971,18 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 111
     :emphasize-lines: 2
 
     # NOTES
     # bool(a set with things) is True
     # bool(a list with things) is True
     # bool(a tuple with things) is True
-    # bool(a string with things) is True
-    # bool(a positive number) is True
-    # bool(a negative number) is True
-    # True is NOT False
-    # True is NOT equal to False
-    # True is a boolean
-    # bool(the empty set) is False
-    # bool(the empty list) is False
-    # bool(the empty tuple) is False
-    # bool(the empty string) is False
-    # bool(zero) is False
-    # bool(None) is False
-    # False is NOT True
-    # False is NOT equal to True
-    # False is a boolean
 
-* I add an :ref:`assertion<what is an assertion?>` without bool_
+* I add an :ref:`assertion<what is an assertion?>` for ``{0, 1, 2, 'n'}`` without bool_
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 107
     :emphasize-lines: 3
 
             # self.assertFalse(bool({0, 1, 2, 'n'}))
@@ -3986,10 +4000,10 @@ the test passes.
 
   because the result of ``bool({0, 1, 2, 'n'})`` is :ref:`True<test_what_is_true>`.
 
-* I change assertFalse_ to assertTrue_
+* I change assertFalse_ to assertTrue_ for ``{0, 1, 2, 'n'}``
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 107
     :emphasize-lines: 3-4
 
             # self.assertFalse(bool({0, 1, 2, 'n'}))
@@ -4000,36 +4014,60 @@ the test passes.
 
     # NOTES
 
-  - the test passes because the result of ``bool({0, 1, 2, 'n'})`` is :ref:`True<test_what_is_true>`
-  - a set_ with things is grouped as :ref:`True<test_what_is_true>`
-  - :ref:`a set is not the same object as True<test_assertion_error_w_true>`
+  - The test passes because the result of ``bool({0, 1, 2, 'n'})`` is :ref:`True<test_what_is_true>`.
+  - A set_ with things is grouped as :ref:`True<test_what_is_true>`.
 
-* I add a :ref:`variable<what is a variable?>` for ``{0, 1, 2, 'n'}``
+* I add an :ref:`assertion<what is an assertion?>` for if a set_ with things is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 72
-    :emphasize-lines: 7
+    :lineno-start: 109
+    :emphasize-lines: 3
 
-        def test_is_a_set_falsy_or_truthy(self):
-            # self.assertTrue(bool(set()))
-            self.assertFalse(bool(set()))
-            # self.assertTrue(set())
-            self.assertFalse(set())
-
-            a_set = {0, 1, 2, 'n'}
-            # self.assertFalse(bool({0, 1, 2, 'n'}))
-            self.assertTrue(bool({0, 1, 2, 'n'}))
             # self.assertFalse({0, 1, 2, 'n'})
             self.assertTrue({0, 1, 2, 'n'})
+            self.assertIs({0, 1, 2, 'n'}, True)
 
 
     # NOTES
 
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: {0, 1, 2, 'n'} is not True
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``{0, 1, 2, 'n'}``
+
+  .. code-block:: python
+    :lineno-start: 109
+    :emphasize-lines: 3-4
+
+            # self.assertFalse({0, 1, 2, 'n'})
+            self.assertTrue({0, 1, 2, 'n'})
+            # self.assertIs({0, 1, 2, 'n'}, True)
+            self.assertIsNot({0, 1, 2, 'n'}, True)
+
+
+    # NOTES
+
+  the test passes because :ref:`a set is not the same object as True<test_assertion_error_w_true>`.
+
+* I add a :ref:`variable<what is a variable?>` for ``{0, 1, 2, 'n'}``
+
+  .. code-block:: python
+    :lineno-start: 105
+    :emphasize-lines: 2
+
+            self.assertIsNot(set(), False)
+
+            a_set = {0, 1, 2, 'n'}
+            # self.assertFalse(bool({0, 1, 2, 'n'}))
+
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``{0, 1, 2, 'n'}``
 
   .. code-block:: python
-    :lineno-start: 78
-    :emphasize-lines: 3-4, 6-7
+    :lineno-start: 107
+    :emphasize-lines: 3-4, 6-7, 9-10
 
             a_set = {0, 1, 2, 'n'}
             # self.assertFalse(bool({0, 1, 2, 'n'}))
@@ -4038,24 +4076,29 @@ the test passes.
             # self.assertFalse({0, 1, 2, 'n'})
             # self.assertTrue({0, 1, 2, 'n'})
             self.assertTrue(a_set)
+            # self.assertIs({0, 1, 2, 'n'}, True)
+            # self.assertIsNot({0, 1, 2, 'n'}, True)
+            self.assertIsNot(a_set, True)
 
 
     # NOTES
 
   the test is still green.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_is_a_set_falsy_or_truthy`
 
   .. code-block:: python
-    :lineno-start: 72
+    :lineno-start: 99
 
         def test_is_a_set_falsy_or_truthy(self):
             self.assertFalse(bool(set()))
             self.assertFalse(set())
+            self.assertIsNot(set(), False)
 
             a_set = {0, 1, 2, 'n'}
             self.assertTrue(bool(a_set))
             self.assertTrue(a_set)
+            self.assertIsNot(a_set, True)
 
 
     # NOTES
@@ -4068,12 +4111,7 @@ the test passes.
     git commit --all --message \
     'add test_is_a_set_falsy_or_truthy'
 
-* :ref:`the empty set is grouped as False, a set with things is grouped as True<test_is_a_set_falsy_or_truthy>`
-* :ref:`the empty list is grouped as False, a list with things is grouped as True<test_is_a_list_falsy_or_truthy>`
-* :ref:`the empty tuple is grouped as False, a tuple with things is grouped as True<test_is_a_tuple_falsy_or_truthy>`
-* :ref:`the empty string is grouped as False, a string with things is grouped as True<test_is_a_string_falsy_or_truthy>`
-* :ref:`zero is grouped as False, and positive and negative numbers are grouped as True<test_is_a_float_falsy_or_truthy>`
-* :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
+:ref:`The empty set is grouped as False. A set with things is grouped as True<test_is_a_set_falsy_or_truthy>`.
 
 -----
 
@@ -4093,12 +4131,10 @@ Is a :ref:`dictionary<what is a dictionary?>` grouped as :ref:`False<test_what_i
 * I add a test for if a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>` is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 76
-    :emphasize-lines: 5-6
+    :lineno-start: 107
+    :emphasize-lines: 3-4
 
-            a_set = {0, 1, 2, 'n'}
-            self.assertTrue(bool(a_set))
-            self.assertTrue(a_set)
+            self.assertIsNot(a_set, True)
 
         def test_is_a_dictionary_falsy_or_truthy(self):
             self.assertTrue(bool(dict()))
@@ -4122,10 +4158,10 @@ Is a :ref:`dictionary<what is a dictionary?>` grouped as :ref:`False<test_what_i
 
 ----
 
-I change assertTrue_ to assertFalse_
+I change assertTrue_ to assertFalse_ for ``bool(dict())``
 
 .. code-block:: python
-  :lineno-start: 80
+  :lineno-start: 109
   :emphasize-lines: 2-3
 
       def test_is_a_dictionary_falsy_or_truthy(self):
@@ -4148,8 +4184,8 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 85
-    :emphasize-lines: 11
+    :lineno-start: 114
+    :emphasize-lines: 12
 
     # NOTES
     # bool(a set with things) is True
@@ -4158,24 +4194,17 @@ the test passes.
     # bool(a string with things) is True
     # bool(a positive number) is True
     # bool(a negative number) is True
-    # True is NOT False
-    # True is NOT equal to False
+    # True is True
+    # True is an integer
     # True is a boolean
+    # True is NOT False
     # bool(the empty dictionary) is False
     # bool(the empty set) is False
-    # bool(the empty list) is False
-    # bool(the empty tuple) is False
-    # bool(the empty string) is False
-    # bool(zero) is False
-    # bool(None) is False
-    # False is NOT True
-    # False is NOT equal to True
-    # False is a boolean
 
-* I add an :ref:`assertion<what is an assertion?>` without bool_
+* I add an :ref:`assertion<what is an assertion?>` for ``dict()`` without bool_
 
   .. code-block:: python
-    :lineno-start: 80
+    :lineno-start: 109
     :emphasize-lines: 4
 
         def test_is_a_dictionary_falsy_or_truthy(self):
@@ -4192,13 +4221,13 @@ the test passes.
 
     AssertionError: {} is not true
 
-  - because the result of ``bool(dict())`` is :ref:`False<test_what_is_false>`
-  - ``dict()`` is another way to write ``{}`` (the empty :ref:`dictionary<what is a dictionary?>`)
+  - because the result of ``bool(dict())`` is :ref:`False<test_what_is_false>`.
+  - ``dict()`` is another way to write ``{}`` (the empty :ref:`dictionary<what is a dictionary?>`).
 
-* I change assertTrue_ to assertFalse_
+* I change assertTrue_ to assertFalse_ for ``dict()``
 
   .. code-block:: python
-    :lineno-start: 80
+    :lineno-start: 109
     :emphasize-lines: 4-5
 
         def test_is_a_dictionary_falsy_or_truthy(self):
@@ -4210,21 +4239,51 @@ the test passes.
 
     # NOTES
 
-  - the test passes because the result of ``bool(dict())`` is :ref:`False<test_what_is_false>`
-  - the empty :ref:`dictionary<what is a dictionary?>` is grouped as :ref:`True<test_what_is_true>`
-  - :ref:`a dictionary is not the same object as False<test_assertion_error_w_false>`
+  - The test passes because the result of ``bool(dict())`` is :ref:`False<test_what_is_false>`.
+  - The empty :ref:`dictionary<what is a dictionary?>` is grouped as :ref:`False<test_what_is_false>`.
+
+* I add a :ref:`call to assertIs<test_assert_is>` for if the empty :ref:`dictionary<what is a dictionary?>` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+
+  .. code-block:: python
+    :lineno-start: 112
+    :emphasize-lines: 3
+
+            # self.assertTrue(dict())
+            self.assertFalse(dict())
+            self.assertIs(dict(), False)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: {} is not False
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``dict()``
+
+  .. code-block:: python
+    :lineno-start: 112
+    :emphasize-lines: 3-4
+
+            # self.assertTrue(dict())
+            self.assertFalse(dict())
+            # self.assertIs(dict(), False)
+            self.assertIsNot(dict(), False)
+
+
+    # NOTES
+
+  the test passes because :ref:`a dictionary is not the same object as False<test_assertion_error_w_false>`.
 
 * I add an :ref:`assertion<what is an assertion?>` to test if a :ref:`dictionary<what is a dictionary?>` with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 80
-    :emphasize-lines: 7
+    :lineno-start: 115
+    :emphasize-lines: 3
 
-        def test_is_a_dictionary_falsy_or_truthy(self):
-            # self.assertTrue(bool(dict()))
-            self.assertFalse(bool(dict()))
-            # self.assertTrue(dict())
-            self.assertFalse(dict())
+            self.assertIsNot(dict(), False)
 
             self.assertFalse(bool({'key': 'value'}))
 
@@ -4239,11 +4298,13 @@ the test passes.
 
   because the result of ``bool({'key': 'value'})`` is :ref:`True<test_what_is_true>`.
 
-* I change assertFalse_ to assertTrue_
+* I change assertFalse_ to assertTrue_ ``bool({'key': 'value'})``
 
   .. code-block:: python
-    :lineno-start: 86
-    :emphasize-lines: 1-2
+    :lineno-start: 115
+    :emphasize-lines: 3-4
+
+            self.assertIsNot(dict(), False)
 
             # self.assertFalse(bool({'key': 'value'}))
             self.assertTrue(bool({'key': 'value'}))
@@ -4256,7 +4317,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 90
+    :lineno-start: 121
     :emphasize-lines: 2
 
     # NOTES
@@ -4267,9 +4328,14 @@ the test passes.
     # bool(a string with things) is True
     # bool(a positive number) is True
     # bool(a negative number) is True
-    # True is NOT False
-    # True is NOT equal to False
+    # True is True
+    # True is an integer
     # True is a boolean
+    # True is NOT False
+
+  .. code-block:: python
+    :lineno-start: 133
+
     # bool(the empty dictionary) is False
     # bool(the empty set) is False
     # bool(the empty list) is False
@@ -4277,18 +4343,19 @@ the test passes.
     # bool(the empty string) is False
     # bool(zero) is False
     # bool(None) is False
-    # False is NOT True
-    # False is NOT equal to True
+    # False is False
+    # False is an integer
     # False is a boolean
+    # False is NOT True
 
 
     # Exceptions seen
     # AssertionError
 
-* I add an :ref:`assertion<what is an assertion?>` without bool_
+* I add an :ref:`assertion<what is an assertion?>` for ``{'key': 'value'}`` without bool_
 
   .. code-block:: python
-    :lineno-start: 86
+    :lineno-start: 117
     :emphasize-lines: 3
 
             # self.assertFalse(bool({'key': 'value'}))
@@ -4306,10 +4373,10 @@ the test passes.
 
   because the result of ``bool({'key': 'value'})`` is :ref:`True<test_what_is_true>`.
 
-* I change assertFalse_ to assertTrue_
+* I change assertFalse_ to assertTrue_ for ``{'key': 'value'}``
 
   .. code-block:: python
-    :lineno-start: 86
+    :lineno-start: 117
     :emphasize-lines: 3-4
 
             # self.assertFalse(bool({'key': 'value'}))
@@ -4320,36 +4387,60 @@ the test passes.
 
     # NOTES
 
-  - the test passes because the result of ``bool({'key': 'value'})`` is :ref:`True<test_what_is_true>`
-  - a :ref:`dictionary<what is a dictionary?>` with things is grouped as :ref:`True<test_what_is_true>`
-  - :ref:`a dictionary is not the same object as True<test_assertion_error_w_true>`
+  - The test passes because the result of ``bool({'key': 'value'})`` is :ref:`True<test_what_is_true>`.
+  - A :ref:`dictionary<what is a dictionary?>` with things is grouped as :ref:`True<test_what_is_true>`.
 
-* I add a :ref:`variable<what is a variable?>` for ``{'key': 'value'}``
+* I add a :ref:`call to assertIs<test_assert_is>` to test if a :ref:`dictionary<what is a dictionary?>` with things is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 80
-    :emphasize-lines: 7
+    :lineno-start: 119
+    :emphasize-lines: 3
 
-        def test_is_a_dictionary_falsy_or_truthy(self):
-            # self.assertTrue(bool(dict()))
-            self.assertFalse(bool(dict()))
-            # self.assertTrue(dict())
-            self.assertFalse(dict())
-
-            a_dictionary = {'key': 'value'}
-            # self.assertFalse(bool({'key': 'value'}))
-            self.assertTrue(bool({'key': 'value'}))
             # self.assertFalse({'key': 'value'})
             self.assertTrue({'key': 'value'})
+            self.assertIs({'key': 'value'}, True)
 
 
     # NOTES
 
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: {'key': 'value'} is not True
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``{'key': 'value'}``
+
+  .. code-block:: python
+    :lineno-start: 119
+    :emphasize-lines: 3-4
+
+            # self.assertFalse({'key': 'value'})
+            self.assertTrue({'key': 'value'})
+            # self.assertIs({'key': 'value'}, True)
+            self.assertIsNot({'key': 'value'}, True)
+
+
+    # NOTES
+
+  the test passes because :ref:`a dictionary is not the same object as True<test_assertion_error_w_true>`.
+
+* I add a :ref:`variable<what is a variable?>` for ``{'key': 'value'}``
+
+  .. code-block:: python
+    :lineno-start: 115
+    :emphasize-lines: 3
+
+        self.assertIsNot(dict(), False)
+
+        a_dictionary = {'key': 'value'}
+        # self.assertFalse(bool({'key': 'value'}))
+
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``{'key': 'value'}``
 
   .. code-block:: python
-    :lineno-start: 86
-    :emphasize-lines: 3-4, 6-7
+    :lineno-start: 117
+    :emphasize-lines: 3-4, 6-7, 9-10
 
             a_dictionary = {'key': 'value'}
             # self.assertFalse(bool({'key': 'value'}))
@@ -4358,24 +4449,29 @@ the test passes.
             # self.assertFalse({'key': 'value'})
             # self.assertTrue({'key': 'value'})
             self.assertTrue(a_dictionary)
+            # self.assertIs({'key': 'value'}, True)
+            # self.assertIsNot({'key': 'value'}, True)
+            self.assertIsNot(a_dictionary, True)
 
 
     # NOTES
 
   the test is still green.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_is_a_dictionary_falsy_or_truthy`
 
   .. code-block:: python
-    :lineno-start: 80
+    :lineno-start: 109
 
         def test_is_a_dictionary_falsy_or_truthy(self):
             self.assertFalse(bool(dict()))
             self.assertFalse(dict())
+            self.assertIsNot(dict(), False)
 
             a_dictionary = {'key': 'value'}
             self.assertTrue(bool(a_dictionary))
             self.assertTrue(a_dictionary)
+            self.assertIsNot(a_dictionary, True)
 
 
     # NOTES
@@ -4388,13 +4484,7 @@ the test passes.
     git commit --all --message \
     'add test_is_a_dictionary_falsy_or_truthy'
 
-* :ref:`the empty dictionary is grouped as False and a set with things is grouped as True<test_is_a_dictionary_falsy_or_truthy>`
-* :ref:`the empty set is grouped as False and a set with things is grouped as True<test_is_a_set_falsy_or_truthy>`
-* :ref:`the empty list is grouped as False and a list with things is grouped as True<test_is_a_list_falsy_or_truthy>`
-* :ref:`the empty tuple is grouped as False and a tuple with things is grouped as True<test_is_a_tuple_falsy_or_truthy>`
-* :ref:`the empty string is grouped as False and a string with things is grouped as True<test_is_a_string_falsy_or_truthy>`
-* :ref:`zero is grouped as False, and positive and negative numbers are grouped as True<test_is_a_float_falsy_or_truthy>`
-* :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
+:ref:`The empty dictionary is grouped as False. A dictionary with things is grouped as True<test_is_a_dictionary_falsy_or_truthy>`.
 
 ----
 
