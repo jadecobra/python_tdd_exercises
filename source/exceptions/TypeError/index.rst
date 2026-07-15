@@ -361,7 +361,7 @@ test_type_error_w_positional_arguments
 
   because
 
-  - The :ref:`call<how to call a function with input>` to ``function_00`` which belongs to :ref:`test_type_error_w_positional_arguments` with one input (``'a'``).
+  - The :ref:`call<how to call a function with input>` to ``function_00`` which belongs to :ref:`test_type_error_w_positional_arguments` used one input (``'a'``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``function_00`` does not allow any inputs when it is called since the parentheses are empty.
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
@@ -1236,7 +1236,7 @@ test_type_error_w_args_and_kwargs
 
     # Exceptions seen
 
-  the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because the call gives ``'positional'`` as the value for the first argument which is ``argument`` in the :ref:`definition<how to make a function that takes input>`, and it gives ``'keyword'`` as the value for ``argument`` as a :ref:`keyword argument<test_keyword_arguments>`.
+  the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because the :ref:`call<how to call a function with input>` gives ``'positional'`` as the value for the first argument which is ``argument`` in the :ref:`definition<how to make a function that takes input>`, and it gives ``'keyword'`` as the value for ``argument`` as a :ref:`keyword argument<test_keyword_arguments>`.
 
 * I change the order of the inputs
 
@@ -1939,7 +1939,7 @@ test_type_error_w_args_and_kwargs
     TypeError: function_00() missing
                1 required positional argument: 'the_input'
 
-  because the :ref:`function definition<how to make a function that takes input>` requires that it be :ref:`called<how to call a function with input>` with one input and it got :ref:`called<how to call a function with input>` with zero inputs.
+  because the :ref:`function definition<how to make a function that takes input>` requires :ref:`calls<how to call a function with input>` with one input and it got :ref:`called<how to call a function with input>` with zero inputs.
 
 * I change the :ref:`call<how to call a function with input>` to match the :ref:`signature<how to make a function that takes input>`
 
