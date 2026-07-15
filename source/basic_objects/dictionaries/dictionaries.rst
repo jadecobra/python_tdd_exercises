@@ -131,7 +131,7 @@ start the project
     .. code-block:: python
       :emphasize-lines: 1
 
-      ./makePythonTdd.ps1
+      .\makePythonTdd.ps1
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 

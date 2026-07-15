@@ -29,7 +29,7 @@ An Infinite Learning Model
 
     .. code-block:: shell
 
-      ./makePythonTdd.ps1 learning
+      .\makePythonTdd.ps1 learning
 
   it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 

@@ -121,7 +121,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ./makePythonTdd.ps1
+    .\makePythonTdd.ps1
 
   the terminal_ is my friend, and shows
 
@@ -238,7 +238,7 @@ Here are a few other examples
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    ./makePythonTdd.ps1 pro_magic_plus
+    .\makePythonTdd.ps1 pro_magic_plus
 
   the terminal_ is my friend, and shows
 
@@ -289,7 +289,7 @@ Here are a few other examples
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    ./makePythonTdd.ps1 person
+    .\makePythonTdd.ps1 person
 
   the terminal_ is my friend, and shows
 

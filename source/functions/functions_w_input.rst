@@ -4847,7 +4847,7 @@ the terminal_ is my friend, and shows
 because passing in the values this way means I am sending in only :ref:`keyword arguments<test_keyword_arguments>` (``**a_dictionary``) so I get a tuple_ with
 
 - an empty tuple_ since there are no :ref:`positional arguments<test_positional_arguments>`
-- a empty :ref:`dictionary<what is a dictionary?>` of the :ref:`keyword arguments<test_keyword_arguments>`
+- a :ref:`dictionary<what is a dictionary?>` of the :ref:`keyword arguments<test_keyword_arguments>`
 
 given
 
