@@ -4988,16 +4988,13 @@ close the project
 
     .../pumping_python
 
-  I am back in the ``pumping_python`` directory_.
-
 ----
 
 *********************************************************************************
 review
 *********************************************************************************
 
-I know that :ref:`bool is an object<test_is_a_boolean_an_object>`
-* bool_ only has two instances - :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>`
+I know that :ref:`bool is an object<test_is_a_boolean_an_object>`. It only has two instances - :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>`
 
 In Python_ the following :ref:`objects<everything is an object>` are grouped as
 
@@ -5013,7 +5010,7 @@ In Python_ the following :ref:`objects<everything is an object>` are grouped as
   * a container with things is :ref:`True<test_what_is_true>`
   * positive and negative numbers are :ref:`True<test_what_is_true>`
 
-These things come in handy when I want :ref:`programs to make decisions<if statements>`, because they can choose what to do based on if the :ref:`data<basic objects>` is grouped as :ref:`False<test_what_is_false>` (``0``, empty or :ref:`None<what is None?>` ) or is grouped as :ref:`True<test_what_is_true>` (positive and negative numbers or has something in it).
+This comes in handy when I want :ref:`programs to make decisions<if statements>`, because they can choose what to do based on if an :ref:`objects<everything is an object>` is grouped as :ref:`False<test_what_is_false>` (``0``, empty or :ref:`None<what is None?>` ) or is grouped as :ref:`True<test_what_is_true>` (positive and negative numbers or has something in it).
 
 :ref:`How many questions can you answer after going through this chapter?<questions about Booleans>`
 
@@ -5049,6 +5046,12 @@ what is next?
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.
 * :ref:`I know how to make a person with conditions<how to make a person with conditions>`.
+
+.. toctree::
+  :titlesonly:
+  :maxdepth: 1
+
+  ../../truth_table/index
 
 :ref:`Would you like to test the truth table?<truth table>` It helps understand writing programs_ that make decisions based on :ref:`conditions<if statements>`.
 
