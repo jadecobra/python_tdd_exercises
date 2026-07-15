@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner tutorial on Python booleans: True and False as the two boolean values. Learn boolean operators (and, or, not), truthiness and falsiness (why 0, '', [], {}, None are falsy but not the same as False), and how booleans control if statements and program flow. Builds directly on the AssertionError TDD chapters that tested True/False identity with `is True` / `is not True`, `is False`, assertIs / assertIsNot, and the key lesson that 0 is not False, empty containers are not False, etc. even though they are falsy. Covers common beginner mistakes confusing truthiness with boolean identity or equality. Includes the full context from the red-green-refactor tests for None/True/False singletons.
-  :keywords: Jacob Itegboje, Pumping Python, python booleans, what are booleans python, python True False, boolean operators python and or not, python truthiness, python falsiness, python if boolean, 0 is not False python, empty list is not False, None is not False, is True vs == True, python boolean identity, assertIs True, testing booleans unittest, python TDD booleans, boolean vs truthy, common python boolean mistakes, booleans in data structures, python True False tutorial beginners, bool() python, truth table python, python boolean best practices, falsy values are not False
+  :description: What are booleans in Python? TDD chapter (project booleans, uv init, pytest-watcher) that divides basic objects into False and True groups with unittest. Builds test_what_is_false / test_what_is_true (bool and int instances; not float/str/tuple/list/set/dict; assertIs identity; bool() then assertFalse/assertTrue). Then falsy/truthy drills for None, integers, floats, strings, tuples, lists, sets, dictionaries — each with bool(x), bare assertFalse/assertTrue, and assertIsNot vs False/True so 0, 0.0, '', empty containers, and None are falsy but not the False object. Ends with numeric values: False is 0 (ZeroDivisionError on 1/False), True is 1. Introduces assertFalse / assertTrue raise-by-negation. Real errors: AssertionError False != True, True is not false, 0 is not False, 0.0 is not False. Next: truth table. Part of Jacob Itegboje's Pumping Python series.
+  :keywords: Jacob Itegboje, Pumping Python, what are booleans, python True False, bool built-in, python truthiness, python falsiness, assertTrue, assertFalse, assertIs, assertIsNot, assertIsInstance, bool and int, False is 0, True is 1, ZeroDivisionError 1/False, 0 is not False, 0.0 is not False, empty list is not False, None is not False, None falsy, empty string falsy, empty dict falsy, TDD booleans, red green refactor, uv run pytest-watcher, test_what_is_false, test_what_is_true, test_is_none_falsy_or_truthy, bool() python, truth table next, Pumping Python basic objects
 
 .. include:: ../../links.rst
 
@@ -182,7 +182,7 @@ start the project
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    git commit -all --message \
+    git commit --all --message \
     'setup project'
 
 * I use `pytest-watcher`_ to run the tests automatically
@@ -395,7 +395,7 @@ the test passes.
 ----
 
 *********************************************************************************
-how to test if something is is an instance of more than one object
+how to test if something is an instance of more than one object
 *********************************************************************************
 
 The :ref:`instance methods<how to test if something is an instance>` can take a tuple_ of :ref:`classes<everything is an object>`.
@@ -1056,7 +1056,7 @@ I add :ref:`test_what_is_true` with :ref:`assertNotIsInstance<test_assert_not_is
   :lineno-start: 18
   :emphasize-lines: 3-4
 
-          self.assertFalse(False)
+      self.assertFalse(False)
 
       def test_what_is_true(self):
           self.assertNotIsInstance(True, (bool, int))
@@ -1509,7 +1509,7 @@ Is :ref:`None<what is None?>` grouped as :ref:`False<test_what_is_false>` or :re
     :lineno-start: 32
     :emphasize-lines: 3-4
 
-            self.assertTrue(True)
+        self.assertTrue(True)
 
         def test_is_none_falsy_or_truthy(self):
             self.assertTrue(bool(None))
@@ -1693,7 +1693,7 @@ Is an integer_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_wh
     :lineno-start: 39
     :emphasize-lines: 3-4
 
-            self.assertIsNot(None, False)
+        self.assertIsNot(None, False)
 
         def test_is_an_integer_falsy_or_truthy(self):
             self.assertFalse(bool(-1))
@@ -2481,7 +2481,7 @@ the test passes.
 
             # self.assertTrue(0.0)
             self.assertFalse(0.0)
-            self.assertIs(0, False)
+            self.assertIs(0.0, False)
 
 
     # NOTES
@@ -2490,7 +2490,7 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: 0 is not False
+    AssertionError: 0.0 is not False
 
 * I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(0.0, False)``
 
@@ -2500,8 +2500,8 @@ the test passes.
 
             # self.assertTrue(0.0)
             self.assertFalse(0.0)
-            # self.assertIs(0, False)
-            self.assertIsNot(0, False)
+            # self.assertIs(0.0, False)
+            self.assertIsNot(0.0, False)
 
 
     # NOTES
@@ -2514,7 +2514,7 @@ the test passes.
     :lineno-start: 71
     :emphasize-lines: 3
 
-            self.assertIsNot(0, False)
+            self.assertIsNot(0.0, False)
 
             self.assertFalse(bool(0.1))
 
@@ -2536,7 +2536,7 @@ the test passes.
     :lineno-start: 71
     :emphasize-lines: 3-4
 
-            self.assertIsNot(0, False)
+            self.assertIsNot(0.0, False)
 
             # self.assertFalse(bool(0.1))
             self.assertTrue(bool(0.1))
@@ -2637,7 +2637,7 @@ the test passes.
     :lineno-start: 71
     :emphasize-lines: 3
 
-            self.assertIsNot(0, False)
+            self.assertIsNot(0.0, False)
 
             a_positive_float = 0.1
             # self.assertFalse(bool(0.1))
@@ -2677,7 +2677,7 @@ the test passes.
 
             self.assertFalse(bool(0.0))
             self.assertFalse(0.0)
-            self.assertIsNot(0, False)
+            self.assertIsNot(0.0, False)
 
             a_positive_float = 0.1
             self.assertTrue(bool(a_positive_float))
@@ -3728,7 +3728,7 @@ the test passes.
             a_list = [0, 1, 2, 'n']
             # self.assertFalse(bool([0, 1, 2, 'n']))
             # self.assertTrue(bool([0, 1, 2, 'n']))
-            self.assertTrue(a_list)
+            self.assertTrue(bool(a_list))
             # self.assertFalse([0, 1, 2, 'n'])
             # self.assertTrue([0, 1, 2, 'n'])
             self.assertTrue(a_list)
@@ -3752,7 +3752,7 @@ the test passes.
             self.assertIsNot(list(), False)
 
             a_list = [0, 1, 2, 'n']
-            self.assertTrue(a_list)
+            self.assertTrue(bool(a_list))
             self.assertTrue(a_list)
             self.assertIsNot(a_list, True)
 
@@ -4475,7 +4475,7 @@ Since :ref:`False<test_what_is_false>` is an int_, what is its value?
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a  test for the value of :ref:`False<test_what_is_false>`
+* I add a test for the value of :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 117
@@ -5010,7 +5010,9 @@ In Python_ the following :ref:`objects<everything is an object>` are grouped as
   * a container with things is :ref:`True<test_what_is_true>`
   * positive and negative numbers are :ref:`True<test_what_is_true>`
 
-This comes in handy when I want :ref:`programs to make decisions<if statements>`, because they can choose what to do based on if an :ref:`objects<everything is an object>` is grouped as :ref:`False<test_what_is_false>` (``0``, empty or :ref:`None<what is None?>` ) or is grouped as :ref:`True<test_what_is_true>` (positive and negative numbers or has something in it).
+This comes in handy when I want :ref:`programs to make decisions<if statements>`, because they can choose what to do based on if an :ref:`object<everything is an object>` is grouped as :ref:`False<test_what_is_false>` (``0``, empty or :ref:`None<what is None?>` ) or is grouped as :ref:`True<test_what_is_true>` (positive and negative numbers or has something in it).
+
+I can use :ref:`assertFalse<another way to test if something is grouped as False>` in place of ``assertIs(bool(x), False)`` and :ref:`assertTrue<another way to test if something is grouped as True>` for ``assertIs(bool(x), True)``.
 
 :ref:`How many questions can you answer after going through this chapter?<questions about Booleans>`
 

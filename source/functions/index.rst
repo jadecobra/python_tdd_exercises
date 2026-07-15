@@ -435,7 +435,11 @@ the test passes.
 how to call a function
 *********************************************************************************
 
-Right now, ``w_pass`` is just a name. To use a :ref:`function<what is a function?>` I have to call it, like a telephone number. The way to do that is with parentheses (``()``) after the name.
+I can call a :ref:`function<what is a function?>` with by placing parentheses (``()``) after the name when I use it after it is defined.
+
+.. code-block:: python
+
+  name_of_function()
 
 ----
 

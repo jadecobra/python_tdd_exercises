@@ -76,7 +76,7 @@ Questions to think about as I go through the chapter
 
 * :ref:`how can I make a function take input?<how to make a function that takes input>`
 * :ref:`how can I use a function to remove repetition?<test_why_use_a_function>`
-* :ref:`how can I :ref:`call<how to call a function with input>` a function with input?<how to call a function with input>`
+* :ref:`how can I call a function with input?<how to call a function with input>`
 * :ref:`what is the identity function?<test_identity_function>`
 * :ref:`what is a positional argument?<test_positional_arguments>`
 * :ref:`what is a keyword argument?<test_keyword_arguments>`
@@ -200,7 +200,11 @@ the test passes.
 how to call a function with input
 *********************************************************************************
 
-I can call a :ref:`function<what is a function?>` with input by placing an :ref:`object<everything is an object>` in parentheses when I :ref:`call<how to call a function with input>` it.
+I can call a :ref:`function<what is a function?>` with input by placing an :ref:`object<everything is an object>` in parentheses (``()``) when I use the name after it is defined.
+
+.. code-block:: python
+
+  name_of_function(input_object)
 
 ----
 
@@ -2965,7 +2969,7 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 
   .. code-block:: python
     :lineno-start: 153
-    :emphasize-lines: 6
+    :emphasize-lines: 5
     :emphasize-text: SyntaxError
 
     # Exceptions seen
@@ -4421,7 +4425,7 @@ how Python reads starred expressions
     )
     ├── positional_arguments = (a_tuple, a_dictionary)
     ├── keyword_arguments = {}
-    └── return  positional_arguments, keyword_arguments
+    └── return  positional_arguments     , keyword_arguments
         return ((0, 1), {'a': 2, 'b': 3}), {})
 
 * I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as separate arguments
