@@ -76,7 +76,7 @@ mass migration
 
 ----
 
-I change the :ref:`call<how to call a function with input>` to ``function_00`` in :ref:`test_type_error_w_positional_arguments` to a :ref:`call<how to call a function with input>` to ``function_00`` of ``type_error.py`` in the ``src`` folder_
+I change the :ref:`call<how to call a function with input>` to ``function_00`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_00`` of ``type_error.py`` in the ``src`` folder_
 
 .. code-block:: python
   :lineno-start: 43
@@ -263,7 +263,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to ``function_01`` in :ref:`test_type_error_w_positional_arguments` to a :ref:`call<how to call a function with input>` to ``function_01`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_01`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_01`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 46
@@ -330,16 +330,12 @@ because ``src`` is not defined in ``test_type_error.py``.
         └── def function_01(one, two):
             └── return None
 
-* I change the :ref:`call<how to call a function with input>` to ``function_02`` in :ref:`test_type_error_w_positional_arguments` to a :ref:`call<how to call a function with input>` to ``function_02`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_02`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_02`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 6-7
+    :lineno-start: 50
+    :emphasize-lines: 2-3
 
-    def test_type_error_w_positional_arguments():
-        # function_00('a')
-        src.type_error.function_00('a')
-        # function_01('a', 'b')
         src.type_error.function_01('a', 'b')
         # function_02('a', 'b', 'c')
         src.type_error.function_02('a', 'b', 'c')
@@ -399,18 +395,12 @@ because ``src`` is not defined in ``test_type_error.py``.
         └── def function_02(one, two, three):
             └── return None
 
-* I change the :ref:`call<how to call a function with input>` to ``function_03`` in :ref:`test_type_error_w_positional_arguments` to a :ref:`call<how to call a function with input>` to ``function_03`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_03`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_03`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 8-9
+    :lineno-start: 52
+    :emphasize-lines: 2-3
 
-    def test_type_error_w_positional_arguments():
-        # function_00('a')
-        src.type_error.function_00('a')
-        # function_01('a', 'b')
-        src.type_error.function_01('a', 'b')
-        # function_02('a', 'b', 'c')
         src.type_error.function_02('a', 'b', 'c')
         # function_03('a', 'b', 'c', 'd')
         src.type_error.function_03('a', 'b', 'c', 'd')
@@ -470,20 +460,12 @@ because ``src`` is not defined in ``test_type_error.py``.
         └── def function_03(one, two, three, four):
             └── return None
 
-* I change the :ref:`call<how to call a function with input>` to ``function_04`` in :ref:`test_type_error_w_positional_arguments` to a :ref:`call<how to call a function with input>` to ``function_04`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_04`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_04`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 10-11
+    :lineno-start: 54
+    :emphasize-lines: 2-3
 
-    def test_type_error_w_positional_arguments():
-        # function_00('a')
-        src.type_error.function_00('a')
-        # function_01('a', 'b')
-        src.type_error.function_01('a', 'b')
-        # function_02('a', 'b', 'c')
-        src.type_error.function_02('a', 'b', 'c')
-        # function_03('a', 'b', 'c', 'd')
         src.type_error.function_03('a', 'b', 'c', 'd')
         # function_04('a')
         src.type_error.function_04('a')
@@ -543,26 +525,16 @@ because ``src`` is not defined in ``test_type_error.py``.
         └── def function_04(one):
             └── return None
 
-* I change the :ref:`call<how to call a function with input>` to ``function_05`` in :ref:`test_type_error_w_positional_arguments` to a :ref:`call<how to call a function with input>` to ``function_05`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_05`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_05`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 12-13
+    :lineno-start: 56
+    :emphasize-lines: 2-3
 
-    def test_type_error_w_positional_arguments():
-        # function_00('a')
-        src.type_error.function_00('a')
-        # function_01('a', 'b')
-        src.type_error.function_01('a', 'b')
-        # function_02('a', 'b', 'c')
-        src.type_error.function_02('a', 'b', 'c')
-        # function_03('a', 'b', 'c', 'd')
-        src.type_error.function_03('a', 'b', 'c', 'd')
-        # function_04('a')
-        src.type_error.function_04('a')
-        # function_05('a', 'b')
-        src.type_error.function_05('a', 'b')
-        function_06('a', 'b', 'c')
+          src.type_error.function_04('a')
+          # function_05('a', 'b')
+          src.type_error.function_05('a', 'b')
+          function_06('a', 'b', 'c')
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -618,28 +590,17 @@ because ``src`` is not defined in ``test_type_error.py``.
         └── def function_05(one, two):
             └── return None
 
-* I change the :ref:`call<how to call a function with input>` to ``function_06`` in :ref:`test_type_error_w_positional_arguments` to a :ref:`call<how to call a function with input>` to ``function_06`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_06`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_06`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 14-15
+    :lineno-start: 58
+    :emphasize-lines: 2-3
 
-    def test_type_error_w_positional_arguments():
-        # function_00('a')
-        src.type_error.function_00('a')
-        # function_01('a', 'b')
-        src.type_error.function_01('a', 'b')
-        # function_02('a', 'b', 'c')
-        src.type_error.function_02('a', 'b', 'c')
-        # function_03('a', 'b', 'c', 'd')
-        src.type_error.function_03('a', 'b', 'c', 'd')
-        # function_04('a')
-        src.type_error.function_04('a')
-        # function_05('a', 'b')
         src.type_error.function_05('a', 'b')
         # function_06('a', 'b', 'c')
         src.type_error.function_06('a', 'b', 'c')
         function_07('a', 'b', 'c', 'd')
+
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -695,30 +656,19 @@ because ``src`` is not defined in ``test_type_error.py``.
         └── def function_06(one, two, three):
             └── return None
 
-* I change the :ref:`call<how to call a function with input>` to ``function_07`` in :ref:`test_type_error_w_positional_arguments` to a :ref:`call<how to call a function with input>` to ``function_07`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_07`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_07`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 16-17
+    :lineno-start: 60
+    :emphasize-lines: 2-3
 
-    def test_type_error_w_positional_arguments():
-        # function_00('a')
-        src.type_error.function_00('a')
-        # function_01('a', 'b')
-        src.type_error.function_01('a', 'b')
-        # function_02('a', 'b', 'c')
-        src.type_error.function_02('a', 'b', 'c')
-        # function_03('a', 'b', 'c', 'd')
-        src.type_error.function_03('a', 'b', 'c', 'd')
-        # function_04('a')
-        src.type_error.function_04('a')
-        # function_05('a', 'b')
-        src.type_error.function_05('a', 'b')
-        # function_06('a', 'b', 'c')
         src.type_error.function_06('a', 'b', 'c')
         # function_07('a', 'b', 'c', 'd')
         src.type_error.function_07('a', 'b', 'c', 'd')
         function_08('last', 'one')
+
+
+    def test_type_error_w_keyword_arguments():
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -774,28 +724,12 @@ because ``src`` is not defined in ``test_type_error.py``.
         └── def function_07(one, two, three, four):
             └── return None
 
-* I change the :ref:`call<how to call a function with input>` to ``function_08`` in :ref:`test_type_error_w_positional_arguments` to a :ref:`call<how to call a function with input>` to ``function_08`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_08`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_08`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 18-19
+    :lineno-start: 62
+    :emphasize-lines: 2-3
 
-    def test_type_error_w_positional_arguments():
-        # function_00('a')
-        src.type_error.function_00('a')
-        # function_01('a', 'b')
-        src.type_error.function_01('a', 'b')
-        # function_02('a', 'b', 'c')
-        src.type_error.function_02('a', 'b', 'c')
-        # function_03('a', 'b', 'c', 'd')
-        src.type_error.function_03('a', 'b', 'c', 'd')
-        # function_04('a')
-        src.type_error.function_04('a')
-        # function_05('a', 'b')
-        src.type_error.function_05('a', 'b')
-        # function_06('a', 'b', 'c')
-        src.type_error.function_06('a', 'b', 'c')
-        # function_07('a', 'b', 'c', 'd')
         src.type_error.function_07('a', 'b', 'c', 'd')
         # function_08('last', 'one')
         src.type_error.function_08('last', 'one')
@@ -860,7 +794,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 * I remove the commented lines from :ref:`test_type_error_w_positional_arguments` in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 46
 
     def test_type_error_w_positional_arguments():
         src.type_error.function_00('a')
@@ -878,10 +812,10 @@ because ``src`` is not defined in ``test_type_error.py``.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to ``function_00`` in :ref:`test_type_error_w_keyword_arguments` to a :ref:`call<how to call a function with input>` to ``function_00`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_00`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_00`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 58
     :emphasize-lines: 2-3
 
     def test_type_error_w_keyword_arguments():
@@ -899,7 +833,7 @@ because ``src`` is not defined in ``test_type_error.py``.
     TypeError: function_00() got
                an unexpected keyword argument 'the_input'
 
-* I add ``the_input`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_00`` in ``type_error.py``
+* I add ``the_input`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_00`` in ``type_error.py``
 
   .. code-block:: python
     :linenos:
@@ -937,10 +871,10 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to ``function_01`` in :ref:`test_type_error_w_keyword_arguments` to a :ref:`call<how to call a function with input>` to ``function_01`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_01`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_01`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 58
     :emphasize-lines: 4-5
 
     def test_type_error_w_keyword_arguments():
@@ -959,7 +893,7 @@ because ``src`` is not defined in ``test_type_error.py``.
     TypeError: function_01() got
                an unexpected keyword argument 'first'
 
-* I add ``first`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_01`` in ``type_error.py``
+* I add ``first`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_01`` in ``type_error.py``
 
   .. code-block:: python
     :lineno-start: 8
@@ -1023,16 +957,12 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to ``function_02`` in :ref:`test_type_error_w_keyword_arguments` to a :ref:`call<how to call a function with input>` to ``function_02`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_02`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_02`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 9-10
+    :lineno-start: 62
+    :emphasize-lines: 5-6
 
-    def test_type_error_w_keyword_arguments():
-        # function_00(the_input=0)
-        src.type_error.function_00(the_input=0)
-        # function_01(
         src.type_error.function_01(
             first='first',
             second={'key': 'value'},
@@ -1051,7 +981,7 @@ because ``src`` is not defined in ``test_type_error.py``.
     TypeError: function_02() got
                an unexpected keyword argument 'third'
 
-* I add ``third`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_02`` in ``type_error.py``
+* I add ``third`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_02`` in ``type_error.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -1146,22 +1076,13 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to ``function_03`` in :ref:`test_type_error_w_keyword_arguments` to a :ref:`call<how to call a function with input>` to ``function_03`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_03`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_03`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 15-16
+    :lineno-start: 67
+    :emphasize-lines: 6-7
 
-    def test_type_error_w_keyword_arguments():
-        # function_00(the_input=0)
-        src.type_error.function_00(the_input=0)
-        # function_01(
-        src.type_error.function_01(
-            first='first',
-            second={'key': 'value'},
-        )
-        # function_03(
-        src.type_error.function_03(
+        src.type_error.function_02(
             third=(0, 1, 2, 'n'),
             second=[0, 1, 2, 'n'],
             first={0, 1, 2, 'n'},
@@ -1181,7 +1102,7 @@ because ``src`` is not defined in ``test_type_error.py``.
     TypeError: function_03() got
                an unexpected keyword argument 'first'
 
-* I add ``first`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_03`` in ``type_error.py``
+* I add ``first`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_03`` in ``type_error.py``
 
   .. code-block:: python
     :lineno-start: 27
@@ -1214,7 +1135,7 @@ because ``src`` is not defined in ``test_type_error.py``.
     # def function_03(one, two, three, four, first):
     def function_03(
         one, two, three, four,
-        first, second
+        first, second,
     ):
         return None
 
@@ -1241,8 +1162,8 @@ because ``src`` is not defined in ``test_type_error.py``.
     # def function_03(one, two, three, four, first):
     def function_03(
         one, two, three, four,
-        # first, second
-        first, second, third
+        # first, second,
+        first, second, third,
     ):
         return None
 
@@ -1270,9 +1191,9 @@ because ``src`` is not defined in ``test_type_error.py``.
     # def function_03(one, two, three, four, first):
     def function_03(
         one, two, three, four,
-        # first, second
+        # first, second,
         # first, second, third,
-        first, second, third, fourth
+        first, second, third, fourth,
     ):
         return None
 
@@ -1302,33 +1223,18 @@ because ``src`` is not defined in ``test_type_error.py``.
         # one, two, three, four,
         # first, second
         # first, second, third,
-        first, second, third, fourth
+        first, second, third, fourth,
     ):
         return None
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to ``function_04`` in :ref:`test_type_error_w_keyword_arguments` to a :ref:`call<how to call a function with input>` to ``function_04`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_04`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_04`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 22-23
+    :lineno-start: 73
+    :emphasize-lines: 7-8
 
-    def test_type_error_w_keyword_arguments():
-        # function_00(the_input=0)
-        src.type_error.function_00(the_input=0)
-        # function_01(
-        src.type_error.function_01(
-            first='first',
-            second={'key': 'value'},
-        )
-        # function_02(
-        src.type_error.function_02(
-            third=(0, 1, 2, 'n'),
-            second=[0, 1, 2, 'n'],
-            first={0, 1, 2, 'n'},
-        )
-        # function_03(
         src.type_error.function_03(
             first=None,
             second=False,
@@ -1337,6 +1243,10 @@ because ``src`` is not defined in ``test_type_error.py``.
         )
         # function_04(argument='value')
         src.type_error.function_04(argument='value')
+        function_05(
+            argument_0='value_1',
+            argument_1=(0, 1, 2, 'n'),
+        )
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1358,34 +1268,12 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to ``function_05`` in :ref:`test_type_error_w_keyword_arguments` to a :ref:`call<how to call a function with input>` to ``function_05`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_05`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_05`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 24-25
+    :lineno-start: 80
+    :emphasize-lines: 2-3
 
-    def test_type_error_w_keyword_arguments():
-        # function_00(the_input=0)
-        src.type_error.function_00(the_input=0)
-        # function_01(
-        src.type_error.function_01(
-            first='first',
-            second={'key': 'value'},
-        )
-        # function_02(
-        src.type_error.function_02(
-            third=(0, 1, 2, 'n'),
-            second=[0, 1, 2, 'n'],
-            first={0, 1, 2, 'n'},
-        )
-        # function_03(
-        src.type_error.function_03(
-            first=None,
-            second=False,
-            third=True,
-            fourth=4,
-        )
-        # function_04(argument='value')
         src.type_error.function_04(argument='value')
         # function_05(
         src.type_error.function_05(
@@ -1433,13 +1321,12 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to ``function_06`` in :ref:`test_type_error_w_keyword_arguments` to a :ref:`call<how to call a function with input>` to ``function_06`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_06`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_06`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 78
-    :emphasize-lines: 6-7
+    :lineno-start: 82
+    :emphasize-lines: 5-6
 
-        # function_05(
         src.type_error.function_05(
             argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
@@ -1458,7 +1345,7 @@ because ``src`` is not defined in ``test_type_error.py``.
     TypeError: function_06() got
                an unexpected keyword argument 'argument_0'
 
-* I change ``one`` to ``argument_0`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_06`` in ``type_error.py``
+* I change ``one`` to ``argument_0`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_06`` in ``type_error.py``
 
   .. code-block:: python
     :lineno-start: 52
@@ -1512,13 +1399,12 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to ``function_07`` in :ref:`test_type_error_w_keyword_arguments` to a :ref:`call<how to call a function with input>` to ``function_07`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_07`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_07`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 7-8
+    :lineno-start: 87
+    :emphasize-lines: 6-7
 
-        # function_06(
         src.type_error.function_06(
             argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
@@ -1623,22 +1509,22 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to ``function_08`` in :ref:`test_type_error_w_keyword_arguments` to a :ref:`call<how to call a function with input>` to ``function_08`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_08`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_08`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 8-11
+    :lineno-start: 93
+    :emphasize-lines: 7-8
 
-        # function_07(
         src.type_error.function_07(
             argument_0=(0, 1, 2, 'n'),
             argument_1=[0, 1, 2, 'n'],
             argument_2={0, 1, 2, 'n'},
             argument_n={'key': 'value'},
         )
-        # function_08(argument='positional', name='keyword')
+        # function_08(
         src.type_error.function_08(
-            argument='positional', name='keyword'
+            argument='positional',
+            name='keyword',
         )
 
 
@@ -1672,7 +1558,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 * I change ``two`` to ``name`` in the parentheses
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 72
     :emphasize-lines: 3-4
 
     # def function_08():
@@ -1686,7 +1572,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 * I remove the commented lines from :ref:`test_type_error_w_keyword_arguments` in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 58
 
     def test_type_error_w_keyword_arguments():
         src.type_error.function_00(the_input=0)
@@ -1694,11 +1580,19 @@ because ``src`` is not defined in ``test_type_error.py``.
             first='first',
             second={'key': 'value'},
         )
+
+  .. code-block:: python
+    :lineno-start: 64
+
         src.type_error.function_02(
             third=(0, 1, 2, 'n'),
             second=[0, 1, 2, 'n'],
             first={0, 1, 2, 'n'},
         )
+
+  .. code-block:: python
+    :lineno-start: 69
+
         src.type_error.function_03(
             first=None,
             second=False,
@@ -1706,23 +1600,40 @@ because ``src`` is not defined in ``test_type_error.py``.
             fourth=4,
         )
         src.type_error.function_04(argument='value')
+
+  .. code-block:: python
+    :lineno-start: 76
+
         src.type_error.function_05(
             argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
         )
+
+  .. code-block:: python
+    :lineno-start: 80
+
         src.type_error.function_06(
             argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
             argument_2=[0, 1, 2, 'n'],
         )
+
+  .. code-block:: python
+    :lineno-start: 85
+
         src.type_error.function_07(
             argument_0=(0, 1, 2, 'n'),
             argument_1=[0, 1, 2, 'n'],
             argument_2={0, 1, 2, 'n'},
             argument_n={'key': 'value'},
         )
+
+  .. code-block:: python
+    :lineno-start: 91
+
         src.type_error.function_08(
-            argument='positional', name='keyword'
+            argument='positional',
+            name='keyword',
         )
 
 
@@ -1730,7 +1641,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to ``function_00`` in :ref:`test_type_error_w_args_and_kwargs` to a :ref:`call<how to call a function with input>` to ``function_00`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_00`` in :ref:`test_type_error_w_args_and_kwargs` to be a :ref:`call<how to call a function with input>` to ``function_00`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 93
