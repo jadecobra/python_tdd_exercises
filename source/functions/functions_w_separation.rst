@@ -1523,7 +1523,7 @@ move unknown_number_of_arguments function
 
   .. code-block:: python
     :lineno-start: 38
-    :emphasize-lines: 5-8
+    :emphasize-lines: 7-10
 
     def optional_arguments(
         first_input, last_input='doe',

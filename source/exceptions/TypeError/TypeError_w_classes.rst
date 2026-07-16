@@ -436,12 +436,9 @@ because ``AClass`` is not defined in ``type_error.py``.
 * Here is another silly example. I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_04`` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 90
-    :emphasize-lines: 6
+    :lineno-start: 93
+    :emphasize-lines: 3
 
-    def test_type_error_w_class_methods():
-        src.type_error.AClass.method_00()
-        src.type_error.AClass().method_01()
         src.type_error.AClass().method_02()
         src.type_error.AClass.method_03()
         src.type_error.AClass.method_04()
@@ -457,7 +454,7 @@ because ``AClass`` is not defined in ``type_error.py``.
                     has no attribute 'method_04'.
                     Did you mean: 'method_00'?
 
-* I add :ref:`method definition<how to make a function>` for ``method_04`` to ``AClass`` in ``type_error.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_04`` to ``AClass`` in ``type_error.py``
 
   .. code-block:: python
     :lineno-start: 56
@@ -498,13 +495,9 @@ because ``AClass`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_05`` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 90
-    :emphasize-lines: 7
+    :lineno-start: 94
+    :emphasize-lines: 3
 
-    def test_type_error_w_class_methods():
-        src.type_error.AClass.method_00()
-        src.type_error.AClass().method_01()
-        src.type_error.AClass().method_02()
         src.type_error.AClass.method_03()
         src.type_error.AClass.method_04()
         src.type_error.AClass().method_05()
@@ -551,6 +544,8 @@ because ``AClass`` is not defined in ``type_error.py``.
 
     NameError: name 'method_02' is not defined
 
+  because there is no ``method_02`` at the :ref:`module<what is a module?>` level of ``type_error.py``. It is inside ``AClass`` in ``type_error.py``, I have to be specific.
+
 * I add ``self.`` before ``method_02``
 
   .. code-block:: python
@@ -567,14 +562,9 @@ because ``AClass`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_06`` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 90
-    :emphasize-lines: 8
+    :lineno-start: 95
+    :emphasize-lines: 3
 
-    def test_type_error_w_class_methods():
-        src.type_error.AClass.method_00()
-        src.type_error.AClass().method_01()
-        src.type_error.AClass().method_02()
-        src.type_error.AClass.method_03()
         src.type_error.AClass.method_04()
         src.type_error.AClass().method_05()
         src.type_error.AClass().method_06()
@@ -628,15 +618,9 @@ because ``AClass`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_07`` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 90
-    :emphasize-lines: 9
+    :lineno-start: 96
+    :emphasize-lines: 3
 
-    def test_type_error_w_class_methods():
-        src.type_error.AClass.method_00()
-        src.type_error.AClass().method_01()
-        src.type_error.AClass().method_02()
-        src.type_error.AClass.method_03()
-        src.type_error.AClass.method_04()
         src.type_error.AClass().method_05()
         src.type_error.AClass().method_06()
         src.type_error.AClass.method_07()
@@ -680,15 +664,9 @@ because ``AClass`` is not defined in ``type_error.py``.
 * I use an :ref:`instance of the class<how to test if something is an instance>` to :ref:`call the method<how to call a function>` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 90
-    :emphasize-lines: 9-10
+    :lineno-start: 96
+    :emphasize-lines: 3-4
 
-    def test_type_error_w_class_methods():
-        src.type_error.AClass.method_00()
-        src.type_error.AClass().method_01()
-        src.type_error.AClass().method_02()
-        src.type_error.AClass.method_03()
-        src.type_error.AClass.method_04()
         src.type_error.AClass().method_05()
         src.type_error.AClass().method_06()
         # src.type_error.AClass.method_07()
@@ -707,7 +685,7 @@ because ``AClass`` is not defined in ``type_error.py``.
   because
 
   - ``method_00`` takes no input (the parentheses are empty).
-  - I called it with an :ref:`instance of the class<how to test if something is an instance>` (``self``) which passes the :ref:`instance<how to test if something is an instance>` as input.
+  - I called it with an :ref:`instance of the class<how to test if something is an instance>` (``AClass()``) which passes the :ref:`instance<how to test if something is an instance>` as input.
 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator>` to ``method_00`` of ``AClass`` in ``type_error.py``
 
@@ -725,17 +703,9 @@ because ``AClass`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_08()`` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 90
-    :emphasize-lines: 11
+    :lineno-start: 98
+    :emphasize-lines: 3
 
-    def test_type_error_w_class_methods():
-        src.type_error.AClass.method_00()
-        src.type_error.AClass().method_01()
-        src.type_error.AClass().method_02()
-        src.type_error.AClass.method_03()
-        src.type_error.AClass.method_04()
-        src.type_error.AClass().method_05()
-        src.type_error.AClass().method_06()
         # src.type_error.AClass.method_07()
         src.type_error.AClass().method_07()
         src.type_error.AClass.method_08()
@@ -775,17 +745,9 @@ because ``AClass`` is not defined in ``type_error.py``.
 * I use an :ref:`instance of the class<how to test if something is an instance>` to :ref:`call the method<how to call a function>` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 90
-    :emphasize-lines: 11-12
+    :lineno-start: 98
+    :emphasize-lines: 3-4
 
-    def test_type_error_w_class_methods():
-        src.type_error.AClass.method_00()
-        src.type_error.AClass().method_01()
-        src.type_error.AClass().method_02()
-        src.type_error.AClass.method_03()
-        src.type_error.AClass.method_04()
-        src.type_error.AClass().method_05()
-        src.type_error.AClass().method_06()
         # src.type_error.AClass.method_07()
         src.type_error.AClass().method_07()
         # src.type_error.AClass.method_08()
@@ -804,7 +766,7 @@ because ``AClass`` is not defined in ``type_error.py``.
   because
 
   - ``method_04`` takes no input (the parentheses are empty).
-  - I called it with an :ref:`instance of the class<how to test if something is an instance>` (``self``) which passes the :ref:`instance<how to test if something is an instance>` as input.
+  - I called it with an :ref:`instance of the class<how to test if something is an instance>` (``AClass()``) which passes the :ref:`instance<how to test if something is an instance>` as input.
 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``method_04`` of ``AClass`` in ``type_error.py``
 
@@ -832,19 +794,9 @@ because ``AClass`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_09()`` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 90
-    :emphasize-lines: 13
+    :lineno-start: 100
+    :emphasize-lines: 3
 
-    def test_type_error_w_class_methods():
-        src.type_error.AClass.method_00()
-        src.type_error.AClass().method_01()
-        src.type_error.AClass().method_02()
-        src.type_error.AClass.method_03()
-        src.type_error.AClass.method_04()
-        src.type_error.AClass().method_05()
-        src.type_error.AClass().method_06()
-        # src.type_error.AClass.method_07()
-        src.type_error.AClass().method_07()
         # src.type_error.AClass.method_08()
         src.type_error.AClass().method_08()
         src.type_error.AClass().method_09()
@@ -882,7 +834,7 @@ because ``AClass`` is not defined in ``type_error.py``.
   because
 
   - ``method_03`` takes no input (the parentheses are empty).
-  - I called it with an :ref:`instance of the class<how to test if something is an instance>` (``self``) which passes the :ref:`instance<how to test if something is an instance>` as input.
+  - I called it with an :ref:`instance of the class<how to test if something is an instance>` (``AClass()``) which passes the :ref:`instance<how to test if something is an instance>` as input.
 
 * I add the :ref:`@staticmethod<what is the staticmethod decorator?>` to ``method_03`` of ``AClass`` in ``type_error.py``
 
