@@ -2242,10 +2242,24 @@ test_type_error_w_args_and_kwargs
 
 ----
 
+*********************************************************************************
+test TypeError with required and unexpected arguments
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
 * I add a :ref:`call<how to call a function with input>` to ``function_03`` from :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 46
     :emphasize-lines: 2-6
 
     def test_type_error_w_keyword_arguments():
@@ -2255,23 +2269,6 @@ test_type_error_w_args_and_kwargs
             third=True,
         )
         function_04(argument='value')
-        function_05(
-            argument_0='value1',
-            argument_1=(0, 1, 2, 'n'),
-        )
-        function_06(
-            argument_0='value1',
-            argument_1=(0, 1, 2, 'n'),
-            argument_2=[0, 1, 2, 'n'],
-        )
-        function_07(
-            argument_0=(0, 1, 2, 'n'),
-            argument_1=[0, 1, 2, 'n'],
-            argument_2={0, 1, 2, 'n'},
-            argument_n={'key': 'value'},
-        )
-
-    def test_type_error_w_args_and_kwargs():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -2282,27 +2279,43 @@ test_type_error_w_args_and_kwargs
 
   because the :ref:`signature<how to make a function that takes input>` only allows :ref:`calls<how to call a function with input>` with four inputs, and it got :ref:`called<how to call a function with input>` with three.
 
-* I add ``fourth`` with a value to the :ref:`call<how to call a function with input>`
+----
 
-  .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 6
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
 
-    def test_type_error_w_keyword_arguments():
-        function_03(
-            first=None,
-            second=False,
-            third=True,
-            fourth=4,
-        )
-        function_04(argument='value')
+----
 
-  the test passes because :ref:`the call to the function<how to call a function with input>` matches its :ref:`definition<how to make a function that takes input>`.
+I add ``fourth`` with a value to the :ref:`call<how to call a function with input>`
+
+.. code-block:: python
+  :lineno-start: 46
+  :emphasize-lines: 6
+
+  def test_type_error_w_keyword_arguments():
+      function_03(
+          first=None,
+          second=False,
+          third=True,
+          fourth=4,
+      )
+      function_04(argument='value')
+
+the test passes because :ref:`the call to the function<how to call a function with input>` matches its :ref:`definition<how to make a function that takes input>`.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
 
 * I add a :ref:`call<how to call a function with input>` to ``function_02`` from :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 46
     :emphasize-lines: 2-7
 
     def test_type_error_w_keyword_arguments():
@@ -2323,14 +2336,15 @@ test_type_error_w_args_and_kwargs
 
   .. code-block:: python
 
-    TypeError: function_02() got an unexpected keyword argument 'fourth'
+    TypeError: function_02() got
+               an unexpected keyword argument 'fourth'
 
   because the :ref:`signature<how to make a function that takes input>` only allows :ref:`calls<how to call a function with input>` with three inputs, and it got :ref:`called<how to call a function with input>` with four.
 
 * I remove the unexpected :ref:`keyword argument<test_keyword_arguments>` from the :ref:`call<how to call a function with input>`
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 46
     :emphasize-lines: 3
 
     def test_type_error_w_keyword_arguments():
@@ -2352,7 +2366,7 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function with input>` to ``function_01`` from :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 46
     :emphasize-lines: 2-4
 
     def test_type_error_w_keyword_arguments():
@@ -2378,7 +2392,7 @@ test_type_error_w_args_and_kwargs
 * I change the :ref:`call<how to call a function with input>` to match the :ref:`signature<how to make a function that takes input>`
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 46
     :emphasize-lines: 3
 
     def test_type_error_w_keyword_arguments():
@@ -2392,7 +2406,7 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function with input>` to ``function_00`` from :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 46
     :emphasize-lines: 2
 
     def test_type_error_w_keyword_arguments():
@@ -2409,10 +2423,10 @@ test_type_error_w_args_and_kwargs
     TypeError: function_00() got
                an unexpected keyword argument 'second'
 
-* I remove ``second`` from the :ref:`call<how to call a function with input>`
+* I remove ``second`` from the :ref:`call<how to call a function with input>` from :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 46
     :emphasize-lines: 2-3
 
     def test_type_error_w_keyword_arguments():
@@ -2433,7 +2447,7 @@ test_type_error_w_args_and_kwargs
 * I remove ``first`` from the :ref:`call<how to call a function with input>`
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 46
     :emphasize-lines: 3-4
 
     def test_type_error_w_keyword_arguments():
@@ -2468,12 +2482,12 @@ test_type_error_w_args_and_kwargs
             second={'key': 'value'},
         )
 
-  the test passes because :ref:`the call to the function<how to call a function with input>` matches its :ref:`definition<how to make a function that takes input>`.
+  the test passes because :ref:`use the same name in the definition of the function when I call it with keyword arguments<test_type_error_w_keyword_arguments>`.
 
-* I move the :ref:`call<how to call a function with input>` to ``function_08`` that uses :ref:`keyword arguments<test_keyword_arguments>` from :ref:`test_type_error_w_args_and_kwargs` to :ref:`test_type_error_w_keyword_arguments`
+* I move the :ref:`call<how to call a function with input>` to ``function_08`` from :ref:`test_type_error_w_args_and_kwargs` that uses :ref:`keyword arguments<test_keyword_arguments>` to :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 74
+    :lineno-start: 77
     :emphasize-lines: 7
 
         function_07(
@@ -2482,42 +2496,33 @@ test_type_error_w_args_and_kwargs
             argument_2={0, 1, 2, 'n'},
             argument_n={'key': 'value'},
         )
-        function_08(argument='positional', name='keyword')
+        function_08(
+            argument='positional',
+            name='keyword',
+        )
 
 
     def test_type_error_w_args_and_kwargs():
-        def function_08(name, argument):
-            return None
 
-        function_00('argument')
-        function_01(1, 0)
-        function_02(third=True, second=False, first=None)
-        function_03(
-            second=[0, 1, 2, 'n'],
-            first=(0, 1, 2, 'n'),
-            third={0, 1, 2, 'n'},
-            fourth={'key': 'value'}
-        )
-        function_04('value')
-        function_05(
-            (0, 1, 2, 'n'),
-            [0, 1, 2, 'n'],
-        )
-        function_06(
-            (0, 1, 2, 'n'),
-            [0, 1, 2, 'n'],
-            argument_2={0, 1, 2, 'n'},
-        )
+  .. code-block:: python
+    :lineno-start: 115
+
         function_07(
             argument_n={'key': 'value'},
             argument_2={0, 1, 2, 'n'},
             argument_0=(0, 1, 2, 'n'),
             argument_1=[0, 1, 2, 'n'],
         )
-        function_08('positional', argument='keyword')
+        function_08(
+            'positional',
+            argument='keyword',
+        )
 
 
     # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -2528,12 +2533,12 @@ test_type_error_w_args_and_kwargs
 * I move ``function_08`` out of :ref:`test_type_error_w_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 32
     :emphasize-lines: 8-9
 
     def function_07(
         argument_0, argument_1,
-        argument_2, argument_n,
+        argument_2, argument_n
     ):
         return None
 
@@ -2545,45 +2550,20 @@ test_type_error_w_args_and_kwargs
     def test_type_error_w_positional_arguments():
 
   .. code-block:: python
-    :lineno-start: 87
+    :lineno-start: 93
+    :emphasize-lines: 2
 
     def test_type_error_w_args_and_kwargs():
         function_00('argument')
         function_01(1, 0)
         function_02(third=True, second=False, first=None)
-        function_03(
-            second=[0, 1, 2, 'n'],
-            first=(0, 1, 2, 'n'),
-            third={0, 1, 2, 'n'},
-            fourth={'key': 'value'}
-        )
-        function_04('value')
-        function_05(
-            (0, 1, 2, 'n'),
-            [0, 1, 2, 'n'],
-        )
-        function_06(
-            (0, 1, 2, 'n'),
-            [0, 1, 2, 'n'],
-            argument_2={0, 1, 2, 'n'},
-        )
-        function_07(
-            argument_n={'key': 'value'},
-            argument_2={0, 1, 2, 'n'},
-            argument_0=(0, 1, 2, 'n'),
-            argument_1=[0, 1, 2, 'n'],
-        )
-        function_08('positional', argument='keyword')
-
-
-    # Exceptions seen
 
   the test is green again.
 
 * I remove the commented lines from :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 47
+    :lineno-start: 50
 
     def test_type_error_w_keyword_arguments():
         function_00(the_input=0)
@@ -2591,6 +2571,10 @@ test_type_error_w_args_and_kwargs
             first='first',
             second={'key': 'value'},
         )
+
+  .. code-block:: python
+    :lineno-start: 56
+
         function_02(
             third=(0, 1, 2, 'n'),
             second=[0, 1, 2, 'n'],
@@ -2602,9 +2586,13 @@ test_type_error_w_args_and_kwargs
             third=True,
             fourth=4,
         )
+
+  .. code-block:: python
+    :lineno-start: 67
+
         function_04(argument='value')
         function_05(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
         )
         function_06(
@@ -2612,21 +2600,30 @@ test_type_error_w_args_and_kwargs
             argument_1=(0, 1, 2, 'n'),
             argument_2=[0, 1, 2, 'n'],
         )
+
+  .. code-block:: python
+    :lineno-start: 77
+
         function_07(
             argument_0=(0, 1, 2, 'n'),
             argument_1=[0, 1, 2, 'n'],
             argument_2={0, 1, 2, 'n'},
             argument_n={'key': 'value'},
         )
-        function_08(argument='positional', name='keyword')
+        function_08(
+            argument='positional',
+            name='keyword',
+        )
 
 
     def test_type_error_w_args_and_kwargs():
 
+----
+
 * I add a :ref:`call<how to call a function with input>` to ``function_04`` from :ref:`test_type_error_w_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 43
     :emphasize-lines: 6
 
     def test_type_error_w_positional_arguments():
@@ -2646,15 +2643,12 @@ test_type_error_w_args_and_kwargs
     TypeError: function_04() missing
                1 required positional argument: 'argument'
 
-* I add a value to the :ref:`call<how to call a function with input>`
+* I add a value to the :ref:`call<how to call a function with input>` to ``function_04``
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 6-7
+    :lineno-start: 46
+    :emphasize-lines: 3-4
 
-    def test_type_error_w_positional_arguments():
-        function_00('a')
-        function_01('a', 'b')
         function_02('a', 'b', 'c')
         function_03('a', 'b', 'c', 'd')
         # function_04()
@@ -2668,14 +2662,9 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function with input>` to ``function_05`` from :ref:`test_type_error_w_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 8
+    :lineno-start: 48
+    :emphasize-lines: 3
 
-    def test_type_error_w_positional_arguments():
-        function_00('a')
-        function_01('a', 'b')
-        function_02('a', 'b', 'c')
-        function_03('a', 'b', 'c', 'd')
         # function_04()
         function_04('a')
         function_05('a', 'b', 'c')
@@ -2690,17 +2679,12 @@ test_type_error_w_args_and_kwargs
     TypeError: function_05() takes
                2 positional arguments but 3 were given
 
-* I remove a value from the :ref:`call<how to call a function with input>`
+* I remove a value from the :ref:`call<how to call a function with input>` to ``function_05``
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 8-9
+    :lineno-start: 48
+    :emphasize-lines: 3-4
 
-    def test_type_error_w_positional_arguments():
-        function_00('a')
-        function_01('a', 'b')
-        function_02('a', 'b', 'c')
-        function_03('a', 'b', 'c', 'd')
         # function_04()
         function_04('a')
         # function_05('a', 'b', 'c')
@@ -2714,16 +2698,9 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function with input>` to ``function_06`` from :ref:`test_type_error_w_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 10
+    :lineno-start: 50
+    :emphasize-lines: 3
 
-    def test_type_error_w_positional_arguments():
-        function_00('a')
-        function_01('a', 'b')
-        function_02('a', 'b', 'c')
-        function_03('a', 'b', 'c', 'd')
-        # function_04()
-        function_04('a')
         # function_05('a', 'b', 'c')
         function_05('a', 'b')
         function_06('a', 'b')
@@ -2738,19 +2715,12 @@ test_type_error_w_args_and_kwargs
     TypeError: function_06() missing
                1 required positional argument: 'argument_2'
 
-* I add a value to the :ref:`call<how to call a function with input>`
+* I add a value to the :ref:`call<how to call a function with input>` to ``function_06``
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 10-11
+    :lineno-start: 50
+    :emphasize-lines: 3-4
 
-    def test_type_error_w_positional_arguments():
-        function_00('a')
-        function_01('a', 'b')
-        function_02('a', 'b', 'c')
-        function_03('a', 'b', 'c', 'd')
-        # function_04()
-        function_04('a')
         # function_05('a', 'b', 'c')
         function_05('a', 'b')
         # function_06('a', 'b')
@@ -2764,18 +2734,9 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function with input>` to ``function_07`` from :ref:`test_type_error_w_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 12
+    :lineno-start: 52
+    :emphasize-lines: 3
 
-    def test_type_error_w_positional_arguments():
-        function_00('a')
-        function_01('a', 'b')
-        function_02('a', 'b', 'c')
-        function_03('a', 'b', 'c', 'd')
-        # function_04()
-        function_04('a')
-        # function_05('a', 'b', 'c')
-        function_05('a', 'b')
         # function_06('a', 'b')
         function_06('a', 'b', 'c')
         function_07('a', 'b', 'c', 'd', 'e')
@@ -2790,21 +2751,12 @@ test_type_error_w_args_and_kwargs
     TypeError: function_07() takes
                4 positional arguments but 5 were given
 
-* I remove a value from the :ref:`call<how to call a function with input>`
+* I remove a value from the :ref:`call<how to call a function with input>` to ``function_07``
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 12-13
+    :lineno-start: 52
+    :emphasize-lines: 3-4
 
-    def test_type_error_w_positional_arguments():
-        function_00('a')
-        function_01('a', 'b')
-        function_02('a', 'b', 'c')
-        function_03('a', 'b', 'c', 'd')
-        # function_04()
-        function_04('a')
-        # function_05('a', 'b', 'c')
-        function_05('a', 'b')
         # function_06('a', 'b')
         function_06('a', 'b', 'c')
         # function_07('a', 'b', 'c', 'd', 'e')
@@ -2818,20 +2770,9 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function with input>` to ``function_08`` from :ref:`test_type_error_w_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 14
+    :lineno-start: 54
+    :emphasize-lines: 3
 
-    def test_type_error_w_positional_arguments():
-        function_00('a')
-        function_01('a', 'b')
-        function_02('a', 'b', 'c')
-        function_03('a', 'b', 'c', 'd')
-        # function_04()
-        function_04('a')
-        # function_05('a', 'b', 'c')
-        function_05('a', 'b')
-        # function_06('a', 'b')
-        function_06('a', 'b', 'c')
         # function_07('a', 'b', 'c', 'd', 'e')
         function_07('a', 'b', 'c', 'd')
         function_08('last')
@@ -2846,23 +2787,12 @@ test_type_error_w_args_and_kwargs
     TypeError: function_08() missing
                1 required positional argument: 'argument'
 
-* I add a value to the :ref:`call<how to call a function with input>`
+* I add a value to the :ref:`call<how to call a function with input>` to ``function_08
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 14-15
+    :lineno-start: 54
+    :emphasize-lines: 3-4
 
-    def test_type_error_w_positional_arguments():
-        function_00('a')
-        function_01('a', 'b')
-        function_02('a', 'b', 'c')
-        function_03('a', 'b', 'c', 'd')
-        # function_04()
-        function_04('a')
-        # function_05('a', 'b', 'c')
-        function_05('a', 'b')
-        # function_06('a', 'b')
-        function_06('a', 'b', 'c')
         # function_07('a', 'b', 'c', 'd', 'e')
         function_07('a', 'b', 'c', 'd')
         # function_08('last')
@@ -2876,7 +2806,7 @@ test_type_error_w_args_and_kwargs
 * I remove the commented lines from :ref:`test_type_error_w_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 43
 
     def test_type_error_w_positional_arguments():
         function_00('a')
