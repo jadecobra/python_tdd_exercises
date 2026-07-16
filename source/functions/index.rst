@@ -441,6 +441,12 @@ I can call a :ref:`function<what is a function?>` with by placing parentheses (`
 
   name_of_function()
 
+A call to a :ref:`function<what is a function>` gets the output of the :ref:`function<what is a function?>`
+
+.. code-block:: python
+
+  name_of_function() -> output_object
+
 ----
 
 =================================================================================
@@ -520,7 +526,12 @@ I can call a :ref:`function<what is a function?>` with by placing parentheses (`
 
     # Exceptions seen
 
-  - The test passes because I get :ref:`None<what is None?>` when I call ``w_pass``.
+  - The test passes because I get :ref:`None<what is None?>` when I :ref:`call<how to call a function>` ``w_pass``
+
+    .. code-block:: python
+
+      w_pass() -> None
+
   - The :ref:`assertion<what is an assertion?>` - ``assert w_pass() is None`` checks if the result of a call to ``w_pass``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
   - The :ref:`function definition<how to make a function>` simply says pass_ and the test passes.
   - pass_ is a keyword that allows the :ref:`function definition<how to make a function>` to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body).
@@ -693,7 +704,7 @@ the test passes.
 
   the test passes.
 
-* I add parentheses to call ``w_return`` inside :ref:`test_making_a_function_w_return`
+* I add parentheses to :ref:`call<how to call a function>` ``w_return`` inside :ref:`test_making_a_function_w_return`
 
   .. code-block:: python
     :lineno-start: 8
@@ -744,7 +755,11 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes.
+  the test passes because I get :ref:`None<what is None?>` when I :ref:`call<how to call a function>` ``w_return``
+
+  .. code-block:: python
+
+    w_return() -> None
 
 ----
 
@@ -931,7 +946,7 @@ the test passes.
     assert w_return_none is 2
     assert None          is 2
 
-  which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`None is not the same object as an integer (whole number without decimals)<test_assertion_error_w_none>`.
+  which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`None is not the same object as an integer (a whole number without decimals)<test_assertion_error_w_none>`.
 
 * I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
@@ -1053,7 +1068,11 @@ the test passes.
 
     AssertionError: assert 'something' is None
 
-  because when I call ``w_return_none`` I get ``'something'``. Using substitution
+  because when I :ref:`call<how to call a function>` ``w_return_none`` I get ``'something'``
+
+  .. code-block:: python
+
+    w_return_none() -> None
 
   .. code-block:: python
 

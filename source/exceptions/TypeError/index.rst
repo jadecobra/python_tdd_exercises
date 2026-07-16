@@ -1775,7 +1775,7 @@ test_type_error_w_args_and_kwargs
   because
 
   - The :ref:`call<how to call a function with input>` to ``function_07`` from :ref:`test_type_error_w_args_and_kwargs` uses a :ref:`keyword argument<test_keyword_arguments>` that is not in the :ref:`function definition (signature)<how to make a function that takes input>`.
-  - :ref:`The call a function must use the same names that are in its definition if I call it with keyword arguments<test_type_error_w_keyword_arguments>`.
+  - :ref:`The call to a function must use the same names that are in its definition if I call it with keyword arguments<test_type_error_w_keyword_arguments>`.
 
 * I change the :ref:`keyword argument<test_keyword_arguments>` to match the :ref:`function definition<how to make a function that takes input>`
 
@@ -2481,7 +2481,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
             second={'key': 'value'},
         )
 
-  the test passes because :ref:`use the same name in the definition of the function when I call it with keyword arguments<test_type_error_w_keyword_arguments>`.
+  the test passes because :ref:`I used the same name in the definition of the function when I called it with keyword arguments<test_type_error_w_keyword_arguments>`.
 
 * I move the :ref:`call<how to call a function with input>` to ``function_08`` from :ref:`test_type_error_w_args_and_kwargs` that uses :ref:`keyword arguments<test_keyword_arguments>` to :ref:`test_type_error_w_keyword_arguments`
 
