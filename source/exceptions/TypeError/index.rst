@@ -958,7 +958,7 @@ test_type_error_w_keyword_arguments
 
   .. code-block:: python
     :lineno-start: 35
-    :emphasize-lines: 6-7
+    :emphasize-lines: 6-10
 
         function_05(
             argument_0='value1',
@@ -966,7 +966,10 @@ test_type_error_w_keyword_arguments
         )
 
         # def function_06(argument_0, argument_1):
-        def function_06(argument_0, argument_1, argument_2):
+        def function_06(
+            argument_0, argument_1,
+            argument_2,
+        ):
             return None
 
         function_06(
@@ -983,7 +986,7 @@ test_type_error_w_keyword_arguments
 * I add a :ref:`call<how to call a function with input>` to ``function_07`` with :ref:`keyword arguments<test_keyword_arguments>`
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 47
     :emphasize-lines: 7-12
 
         function_06(
@@ -1011,7 +1014,7 @@ test_type_error_w_keyword_arguments
 * I add a :ref:`definition<how to make a function that takes input>` for ``function_07``
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 47
     :emphasize-lines: 7-11
 
         function_06(
@@ -1022,7 +1025,7 @@ test_type_error_w_keyword_arguments
 
         def function_07(
             argument_0, argument_1,
-            argument_2
+            argument_2,
         ):
             return None
 
@@ -1055,7 +1058,7 @@ test_type_error_w_keyword_arguments
 * I add ``argument_n`` to the parentheses so that :ref:`the call<how to call a function with input>` to ``function_07`` and its :ref:`definition<how to make a function that takes input>` match
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 47
     :emphasize-lines: 9-10
 
         function_06(
@@ -1094,15 +1097,24 @@ test_type_error_w_keyword_arguments
 
         function_04(argument='value')
 
+  .. code-block:: python
+    :lineno-start: 32
+
         def function_05(argument_0, argument_1):
             return None
 
         function_05(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
         )
 
-        def function_06(argument_0, argument_1, argument_2):
+  .. code-block:: python
+    :lineno-start: 37
+
+        def function_06(
+            argument_0, argument_1,
+            argument_2,
+        ):
             return None
 
         function_06(
@@ -1111,9 +1123,12 @@ test_type_error_w_keyword_arguments
             argument_2=[0, 1, 2, 'n'],
         )
 
+  .. code-block:: python
+    :lineno-start: 49
+
         def function_07(
             argument_0, argument_1,
-            argument_2, argument_n,
+            argument_2, argument_n
         ):
             return None
 
@@ -1126,19 +1141,6 @@ test_type_error_w_keyword_arguments
 
 
     # Exceptions seen
-
-* I open a new terminal_ then change directories to ``type_error``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cd type_error
-
-  the terminal_ shows I am in the ``type_error`` folder_
-
-  .. code-block:: python
-
-    .../pumping_python/type_error
 
 * I add a git_ commit message in the other terminal
 
