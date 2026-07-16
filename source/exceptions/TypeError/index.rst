@@ -839,7 +839,7 @@ test_type_error_w_keyword_arguments
 * I change the name of the input in the :ref:`definition<how to make a function that takes input>` to match :ref:`the call<how to call a function with input>`
 
   .. code-block:: python
-    :lineno-start: 27
+    :lineno-start: 28
     :emphasize-lines: 3-4
 
         function_04(argument='value')
@@ -869,7 +869,7 @@ test_type_error_w_keyword_arguments
 * I add ``argument_0`` to the parentheses so that :ref:`the call<how to call a function with input>` to ``function_05`` and its :ref:`definition<how to make a function that takes input>` match
 
   .. code-block:: python
-    :lineno-start: 27
+    :lineno-start: 28
     :emphasize-lines: 4-5
 
         function_04(argument='value')
@@ -892,7 +892,7 @@ test_type_error_w_keyword_arguments
 * I add a :ref:`call<how to call a function with input>` to ``function_06`` with :ref:`keyword arguments<test_keyword_arguments>`
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 35
     :emphasize-lines: 6-10
 
         function_05(
@@ -918,7 +918,7 @@ test_type_error_w_keyword_arguments
 * I add a :ref:`definition<how to make a function that takes input>` for ``function_06``
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 35
     :emphasize-lines: 6-7
 
         function_05(
@@ -957,7 +957,7 @@ test_type_error_w_keyword_arguments
 * I add ``argument_2`` to the parentheses so that :ref:`the call<how to call a function with input>` to ``function_06`` and its :ref:`definition<how to make a function that takes input>` match
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 35
     :emphasize-lines: 6-7
 
         function_05(
