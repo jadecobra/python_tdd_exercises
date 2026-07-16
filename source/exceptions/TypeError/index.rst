@@ -1323,7 +1323,7 @@ test_type_error_w_args_and_kwargs
 
   .. code-block:: python
     :lineno-start: 69
-    :emphasize-lines: 8-9
+    :emphasize-lines: 6-7
 
         function_08(
             'positional',
