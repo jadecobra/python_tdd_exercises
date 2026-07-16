@@ -1189,7 +1189,7 @@ test_type_error_w_args_and_kwargs
     def test_type_error_w_args_and_kwargs():
         function_08(
             'positional',
-            argument='keyword'
+            argument='keyword',
         )
 
 
@@ -1223,7 +1223,7 @@ test_type_error_w_args_and_kwargs
 
         function_08(
             'positional',
-            argument='keyword'
+            argument='keyword',
         )
 
 
@@ -1271,7 +1271,7 @@ test_type_error_w_args_and_kwargs
 
         function_08(
             'positional',
-            argument='keyword'
+            argument='keyword',
         )
 
 
@@ -1287,20 +1287,20 @@ test_type_error_w_args_and_kwargs
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to ``function_08``
+* I add another :ref:`call<how to call a function with input>` to ``function_08``
 
   .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 8
+    :lineno-start: 69
+    :emphasize-lines: 5-8
 
-    def test_type_error_w_args_and_kwargs():
-        # def function_08(argument):
-        # def function_08(argument, name):
-        def function_08(name, argument):
-            return None
-
-        function_08('positional', argument='keyword')
-        function_08('positional', name='keyword')
+        function_08(
+            'positional',
+            argument='keyword',
+        )
+        function_08(
+            'positional',
+            name='keyword',
+        )
 
 
     # Exceptions seen
@@ -1319,21 +1319,21 @@ test_type_error_w_args_and_kwargs
   - The :ref:`call<how to call a function with input>` to ``function_08`` which belongs to :ref:`test_type_error_w_args_and_kwargs` uses ``'positional'`` as the value for the first argument which is ``name`` in the :ref:`definition<how to make a function that takes input>`, and uses ``'keyword'`` as the value for ``name`` as a :ref:`keyword argument<test_keyword_arguments>`.
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``function_08`` takes two arguments (``name`` and ``argument``). How does Python_ know which value to use for ``name`` if I use the :ref:`position<test_positional_arguments>` and the :ref:`name<test_keyword_arguments>`?
 
-* I use :ref:`keyword arguments<test_keyword_arguments>` in the :ref:`call<how to call a function with input>` to be clearer
+* I use :ref:`keyword arguments<test_keyword_arguments>` to make the :ref:`call<how to call a function with input>` clearer
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 69
     :emphasize-lines: 8-9
 
-    def test_type_error_w_args_and_kwargs():
-        # def function_08(argument):
-        # def function_08(argument, name):
-        def function_08(name, argument):
-            return None
-
-        function_08('positional', argument='keyword')
-        # function_08('positional', name='keyword')
-        function_08(argument='positional', name='keyword')
+        function_08(
+            'positional',
+            argument='keyword',
+        )
+        function_08(
+            # 'positional',
+            argument='positional',
+            name='keyword',
+        )
 
 
     # Exceptions seen
@@ -1353,12 +1353,11 @@ test_type_error_w_args_and_kwargs
             return None
 
         function_01(1, first=0)
-        function_08('positional', argument='keyword')
-        # function_08('positional', name='keyword')
-        function_08(argument='positional', name='keyword')
 
-
-    # Exceptions seen
+        function_08(
+            'positional',
+            argument='keyword',
+        )
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -1366,7 +1365,7 @@ test_type_error_w_args_and_kwargs
 
     NameError: name 'function_01' is not defined
 
-  because ``function_01`` belongs to the :ref:`test_type_error_w_positional_arguments function<test_type_error_w_positional_arguments>` and I cannot reach it from outside.
+  because ``function_01`` belongs to the :ref:`test_type_error_w_positional_arguments function<test_type_error_w_positional_arguments>` and I cannot reach it from outside :ref:`test_type_error_w_positional_arguments`.
 
 * I move ``function_01`` out of :ref:`test_type_error_w_positional_arguments` so that it can be called from anywhere in the file_
 
@@ -1386,17 +1385,6 @@ test_type_error_w_args_and_kwargs
         function_01('a', 'b')
 
         def function_02(first, second, third):
-            return None
-
-        function_02('a', 'b', 'c')
-
-        def function_03(first, second, third, fourth):
-            return None
-
-        function_03('a', 'b', 'c', 'd')
-
-
-    def test_type_error_w_keyword_arguments():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1407,10 +1395,10 @@ test_type_error_w_args_and_kwargs
 
   because the :ref:`call<how to call a function with input>` to ``function_01`` from :ref:`test_type_error_w_args_and_kwargs` uses ``1`` as the value for the first argument which is ``first`` in the :ref:`definition<how to make a function that takes input>`, and uses ``0`` as the value for ``first`` as a :ref:`keyword argument<test_keyword_arguments>`.
 
-* I change the :ref:`call<how to call a function with input>` to only use :ref:`positional arguments<test_positional_arguments>` to make it clearer
+* I change the :ref:`call<how to call a function with input>` from :ref:`test_type_error_w_args_and_kwargs` to only use :ref:`positional arguments<test_positional_arguments>` to make it clearer
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 63
     :emphasize-lines: 7-8
 
     def test_type_error_w_args_and_kwargs():
@@ -1421,12 +1409,11 @@ test_type_error_w_args_and_kwargs
 
         # function_01(1, first=0)
         function_01(1, 0)
-        function_08('positional', argument='keyword')
-        # function_08('positional', name='keyword')
-        function_08(argument='positional', name='keyword')
 
-
-    # Exceptions seen
+        function_08(
+            'positional',
+            argument='keyword',
+        )
 
   the test passes because :ref:`the call to the function<how to call a function with input>` matches its :ref:`definition<how to make a function that takes input>`.
 
