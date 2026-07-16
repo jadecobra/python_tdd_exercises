@@ -1512,7 +1512,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_08`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_08`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 97
     :emphasize-lines: 7-8
 
         src.type_error.function_07(
@@ -1644,7 +1644,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_00`` in :ref:`test_type_error_w_args_and_kwargs` to be a :ref:`call<how to call a function with input>` to ``function_00`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 97
     :emphasize-lines: 2-3
 
     def test_type_error_w_args_and_kwargs():
@@ -1656,7 +1656,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_01`` to ``src.type_error.function_01``
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 97
     :emphasize-lines: 4-5
 
     def test_type_error_w_args_and_kwargs():
@@ -1670,17 +1670,14 @@ because ``src`` is not defined in ``test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_02`` to ``src.type_error.function_02``
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 101
     :emphasize-lines: 6-9
 
-    def test_type_error_w_args_and_kwargs():
-        # function_00('argument')
-        src.type_error.function_00('argument')
-        # function_01(1, 0)
         src.type_error.function_01(1, 0)
-        # function_02(third=True, second=False, first=None)
+        # function_02(
         src.type_error.function_02(
-            third=True, second=False, first=None
+            third=True, second=False,
+            first=None,
         )
 
   green.
@@ -1688,19 +1685,19 @@ because ``src`` is not defined in ``test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_03`` to ``src.type_error.function_03``
 
   .. code-block:: python
-    :lineno-start: 98
+    :lineno-start: 103
     :emphasize-lines: 5-6
 
-        # function_02(third=True, second=False, first=None)
         src.type_error.function_02(
-            third=True, second=False, first=None
+            third=True, second=False,
+            first=None,
         )
         # function_03(
         src.type_error.function_03(
             second=[0, 1, 2, 'n'],
             first=(0, 1, 2, 'n'),
             third={0, 1, 2, 'n'},
-            fourth={'key': 'value'}
+            fourth={'key': 'value'},
         )
 
   still green.
@@ -1708,15 +1705,14 @@ because ``src`` is not defined in ``test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_04`` to ``src.type_error.function_04``
 
   .. code-block:: python
-    :lineno-start: 102
-    :emphasize-lines: 8-9
+    :lineno-start: 108
+    :emphasize-lines: 7-8
 
-        # function_03(
         src.type_error.function_03(
             second=[0, 1, 2, 'n'],
             first=(0, 1, 2, 'n'),
             third={0, 1, 2, 'n'},
-            fourth={'key': 'value'}
+            fourth={'key': 'value'},
         )
         # function_04('value')
         src.type_error.function_04('value')
@@ -1726,10 +1722,9 @@ because ``src`` is not defined in ``test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_05`` to ``src.type_error.function_05``
 
   .. code-block:: python
-    :lineno-start: 109
-    :emphasize-lines: 3-4
+    :lineno-start: 115
+    :emphasize-lines: 2-3
 
-        # function_04('value')
         src.type_error.function_04('value')
         # function_05(
         src.type_error.function_05(
@@ -1742,10 +1737,9 @@ because ``src`` is not defined in ``test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_06`` to ``src.type_error.function_06``
 
   .. code-block:: python
-    :lineno-start: 111
-    :emphasize-lines: 6-7
+    :lineno-start: 117
+    :emphasize-lines: 5-6
 
-        # function_05(
         src.type_error.function_05(
             (0, 1, 2, 'n'),
             [0, 1, 2, 'n'],
@@ -1762,10 +1756,9 @@ because ``src`` is not defined in ``test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_07`` to ``src.type_error.function_07``
 
   .. code-block:: python
-    :lineno-start: 116
-    :emphasize-lines: 7-8
+    :lineno-start: 122
+    :emphasize-lines: 6-7
 
-        # function_06(
         src.type_error.function_06(
             (0, 1, 2, 'n'),
             [0, 1, 2, 'n'],
@@ -1784,19 +1777,19 @@ because ``src`` is not defined in ``test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_08`` to ``src.type_error.function_08``
 
   .. code-block:: python
-    :lineno-start: 122
-    :emphasize-lines: 8-11
+    :lineno-start: 128
+    :emphasize-lines: 7-8
 
-        # function_07(
         src.type_error.function_07(
             argument_n={'key': 'value'},
             argument_2={0, 1, 2, 'n'},
             argument_0=(0, 1, 2, 'n'),
             argument_1=[0, 1, 2, 'n'],
         )
-        # function_08('positional', argument='keyword')
+        # function_08(
         src.type_error.function_08(
-            'positional', argument='keyword'
+            'positional',
+            argument='keyword',
         )
 
 
@@ -1833,8 +1826,10 @@ because ``src`` is not defined in ``test_type_error.py``.
 
 
     def function_01(first, second):
-        return None
+        return
 
+  .. code-block:: python
+    :lineno-start: 9
 
     def function_02(
         third, second, first
@@ -1843,10 +1838,12 @@ because ``src`` is not defined in ``test_type_error.py``.
 
 
     def function_03(
-        first, second, third, fourth
+        first, second, third, fourth,
     ):
         return None
 
+  .. code-block:: python
+    :lineno-start: 21
 
     def function_04(argument):
         return None
@@ -1855,6 +1852,8 @@ because ``src`` is not defined in ``test_type_error.py``.
     def function_05(argument_0, argument_1):
         return None
 
+  .. code-block:: python
+    :lineno-start: 29
 
     def function_06(argument_0, argument_1, argument_2):
         return None
@@ -1873,38 +1872,60 @@ because ``src`` is not defined in ``test_type_error.py``.
 * I remove the commented lines from :ref:`test_type_error_w_args_and_kwargs` in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 97
 
     def test_type_error_w_args_and_kwargs():
         src.type_error.function_00('argument')
         src.type_error.function_01(1, 0)
         src.type_error.function_02(
-            third=True, second=False, first=None
+            third=True, second=False,
+            first=None,
         )
+
+  .. code-block:: python
+    :lineno-start: 104
+
         src.type_error.function_03(
             second=[0, 1, 2, 'n'],
             first=(0, 1, 2, 'n'),
             third={0, 1, 2, 'n'},
-            fourth={'key': 'value'}
+            fourth={'key': 'value'},
         )
+
+  .. code-block:: python
+    :lineno-start: 110
+
         src.type_error.function_04('value')
         src.type_error.function_05(
             (0, 1, 2, 'n'),
             [0, 1, 2, 'n'],
         )
+
+  .. code-block:: python
+    :lineno-start: 115
+
         src.type_error.function_06(
             (0, 1, 2, 'n'),
             [0, 1, 2, 'n'],
             argument_2={0, 1, 2, 'n'},
         )
+
+  .. code-block:: python
+    :lineno-start: 120
+
         src.type_error.function_07(
             argument_n={'key': 'value'},
             argument_2={0, 1, 2, 'n'},
             argument_0=(0, 1, 2, 'n'),
             argument_1=[0, 1, 2, 'n'],
         )
+
+  .. code-block:: python
+    :lineno-start: 126
+
         src.type_error.function_08(
-            'positional', argument='keyword'
+            'positional',
+            argument='keyword',
         )
 
 
