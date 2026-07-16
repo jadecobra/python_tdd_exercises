@@ -256,7 +256,7 @@ start the project
     FAILED test_attribute_error.py::test_failure - assert False is True
     =================== 1 failed in X.YZs ====================
 
-  because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`.
+  because :ref:`False<test_what_is_false>` is NOT :ref:`True<test_what_is_true>`.
 
   .. admonition:: if the terminal_ does not show the same error, then check if
 

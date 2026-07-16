@@ -67,7 +67,7 @@ start the project
     .. tab-item:: WSL/Linux/Mac
       :sync: unix
 
-      .. code-block:: shell
+      .. code-block:: python
         :emphasize-lines: 1
 
         mv main.py src/calculator.py
@@ -75,7 +75,7 @@ start the project
     .. tab-item:: no WSL
       :sync: no_wsl
 
-      .. code-block:: shell
+      .. code-block:: python
         :emphasize-lines: 1
 
         Move-Item main.py src/calculator.py
@@ -101,7 +101,7 @@ start the project
     .. tab-item:: WSL/Linux/Mac
       :sync: unix
 
-      .. code-block:: shell
+      .. code-block:: python
         :emphasize-lines: 1
 
         touch tests/__init__.py
@@ -109,7 +109,7 @@ start the project
     .. tab-item:: no WSL
       :sync: no_wsl
 
-      .. code-block:: shell
+      .. code-block:: python
         :emphasize-lines: 1
 
         New-Item tests/__init__.py

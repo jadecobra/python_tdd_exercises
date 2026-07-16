@@ -164,7 +164,7 @@ start the project
     .. tab-item:: WSL/Linux/Mac
       :sync: unix
 
-      .. code-block:: shell
+      .. code-block:: python
         :emphasize-lines: 1
 
         touch tests/__init__.py
@@ -172,7 +172,7 @@ start the project
     .. tab-item:: no WSL
       :sync: no_wsl
 
-      .. code-block:: shell
+      .. code-block:: python
         :emphasize-lines: 1
 
         New-Item tests/__init__.py
@@ -185,7 +185,7 @@ start the project
     .. tab-item:: WSL/Linux/Mac
       :sync: unix
 
-      .. code-block:: shell
+      .. code-block:: python
         :emphasize-lines: 1
 
         mv main.py tests/test_classes.py
@@ -193,7 +193,7 @@ start the project
     .. tab-item:: no WSL
       :sync: no_wsl
 
-      .. code-block:: shell
+      .. code-block:: python
         :emphasize-lines: 1
 
         Move-Item main.py tests/test_classes.py
@@ -269,7 +269,7 @@ start the project
     FAILED test_classes.py::test_failure - assert False is True
     =================== 1 failed in X.YZs ====================
 
-  because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`.
+  because :ref:`False<test_what_is_false>` is NOT :ref:`True<test_what_is_true>`.
 
   .. admonition:: if the terminal_ does not show the same error, then check if
 

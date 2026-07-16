@@ -32,7 +32,7 @@ questions about TypeError
 
 Questions to think about as I go through the chapter
 
-* :ref:`I know what causes TypeError<what causes TypeError?>`.
+* :ref:`what causes TypeError?`
 * :ref:`what happens when I call a function and do not send the right number of inputs?<test_type_error_w_positional_arguments>`
 * :ref:`what happens when I call a function and do not use the right names?<test_type_error_w_keyword_arguments>`
 * :ref:`what happens when I call a function with multiple values for the same argument?<test_type_error_w_args_and_kwargs>`
@@ -108,7 +108,7 @@ start the project
     .. tab-item:: WSL/Linux/Mac
       :sync: unix
 
-      .. code-block:: shell
+      .. code-block:: python
         :emphasize-lines: 1
 
         touch tests/__init__.py
@@ -116,7 +116,7 @@ start the project
     .. tab-item:: no WSL
       :sync: no_wsl
 
-      .. code-block:: shell
+      .. code-block:: python
         :emphasize-lines: 1
 
         New-Item tests/__init__.py
@@ -131,7 +131,7 @@ start the project
     .. tab-item:: WSL/Linux/Mac
       :sync: unix
 
-      .. code-block:: shell
+      .. code-block:: python
         :emphasize-lines: 1
 
         mv main.py tests/test_type_error.py
@@ -139,7 +139,7 @@ start the project
     .. tab-item:: no WSL
       :sync: no_wsl
 
-      .. code-block:: shell
+      .. code-block:: python
         :emphasize-lines: 1
 
         Move-Item main.py tests/test_type_error.py
@@ -240,7 +240,7 @@ start the project
     !!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!
     ===================== 1 error in L.MNs =====================
 
-  because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`.
+  because :ref:`False<test_what_is_false>` is NOT :ref:`True<test_what_is_true>`.
 
   .. admonition:: if the terminal_ does not show the same error, then check if
 
@@ -614,7 +614,7 @@ test_type_error_w_positional_arguments
 
     # Exceptions seen
 
-  the test passes because :ref:`the call to the function<how to call a function with input>` matches its :ref:`definition<how to make a function that takes input>`
+  the test passes because :ref:`the call to the function<how to call a function with input>` matches its :ref:`definition<how to make a function that takes input>`.
 
 * I remove the commented lines
 
@@ -627,15 +627,24 @@ test_type_error_w_positional_arguments
 
         function_00('a')
 
+  .. code-block:: python
+    :lineno-start: 7
+
         def function_01(first, second):
             return None
 
         function_01('a', 'b')
 
+  .. code-block:: python
+    :lineno-start: 12
+
         def function_02(first, second, third):
             return None
 
         function_02('a', 'b', 'c')
+
+  .. code-block:: python
+    :lineno-start: 17
 
         def function_03(first, second, third, fourth):
             return None
@@ -645,7 +654,14 @@ test_type_error_w_positional_arguments
 
     # Exceptions seen
 
-* I open another terminal_ then add a git_ commit message
+* I open a new terminal_ then change directories to ``type_error``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd type_error
+
+* I add a git_ commit message in the new terminal_
 
   .. code-block:: python
     :emphasize-lines: 1-2
@@ -737,7 +753,7 @@ test_type_error_w_keyword_arguments
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``function_04`` does not allow any inputs since the parentheses are empty.
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* I add ``keyword`` in the parentheses so that :ref:`the call<how to call a function with input>` to ``function_04`` and its :ref:`definition<how to make a function that takes input>` match
+* I add ``argument`` in the parentheses so that :ref:`the call<how to call a function with input>` to ``function_04`` and its :ref:`definition<how to make a function that takes input>` match
 
   .. code-block:: python
     :lineno-start: 23
