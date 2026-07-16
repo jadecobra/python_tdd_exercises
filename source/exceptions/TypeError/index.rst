@@ -1152,7 +1152,7 @@ test_type_error_w_keyword_arguments
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I have to call a function with the same names that are in its definition<test_type_error_w_keyword_arguments>`.
+:ref:`I have to call a function with the same names that are in its definition if I call it with keyword arguments<test_type_error_w_keyword_arguments>`.
 
 ----
 
@@ -1652,7 +1652,7 @@ test_type_error_w_args_and_kwargs
 
   .. code-block:: python
     :lineno-start: 80
-    :emphasize-lines: 9-14
+    :emphasize-lines: 9-15
 
         function_03(
             # [0, 1, 2, 'n'],
@@ -1679,7 +1679,7 @@ test_type_error_w_args_and_kwargs
 
     NameError: name 'function_07' is not defined
 
-  because ``function_07`` belongs to the :ref:`test_type_error_w_keyword_arguments function<test_type_error_w_keyword_arguments>` and I cannot reach it from outside.
+  because ``function_07`` belongs to the :ref:`test_type_error_w_keyword_arguments function<test_type_error_w_keyword_arguments>` and I cannot reach it from outside :ref:`test_type_error_w_keyword_arguments`.
 
 * I move ``function_07`` out of :ref:`test_type_error_w_keyword_arguments`
 
@@ -1693,37 +1693,16 @@ test_type_error_w_args_and_kwargs
 
     def function_07(
         argument_0, argument_1,
-        argument_2, argument_n,
+        argument_2, argument_n
     ):
         return None
 
 
     def test_type_error_w_positional_arguments():
-        def function_00(the_input):
-            return None
 
-        function_00('a')
-        function_01('a', 'b')
-        function_02('a', 'b', 'c')
-        function_03('a', 'b', 'c', 'd')
-
-
-    def test_type_error_w_keyword_arguments():
-        def function_04(argument):
-            return None
-
-        function_04(argument='value')
-
-        def function_05(argument_0, argument_1):
-            return None
-
-        function_05(
-            argument_0='value1',
-            argument_1=(0, 1, 2, 'n'),
-        )
-
-        def function_06(argument_0, argument_1, argument_2):
-            return None
+  .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 6-11
 
         function_06(
             argument_0='value1',
@@ -1736,6 +1715,7 @@ test_type_error_w_args_and_kwargs
             argument_2={0, 1, 2, 'n'},
             argument_n={'key': 'value'},
         )
+
 
     def test_type_error_w_args_and_kwargs():
 
@@ -1755,7 +1735,7 @@ test_type_error_w_args_and_kwargs
 * I change the :ref:`call<how to call a function with input>` to use a :ref:`keyword argument<test_keyword_arguments>`, then change its position
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 88
     :emphasize-lines: 2, 4
 
         function_07(
@@ -1765,19 +1745,17 @@ test_type_error_w_args_and_kwargs
             argument_0=(0, 1, 2, 'n'),
             argument_1=[0, 1, 2, 'n'],
         )
-        function_08('positional', argument='keyword')
-        # function_08('positional', name='keyword')
-        function_08(argument='positional', name='keyword')
-
-
-    # Exceptions seen
+        function_08(
+            'positional',
+            argument='keyword',
+        )
 
   the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because the :ref:`call<how to call a function with input>` uses an argument in the first position and uses a :ref:`keyword argument<test_keyword_arguments>` with the name of the argument in the first position.
 
 * I use a :ref:`keyword argument<test_keyword_arguments>` to make it clearer
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 88
     :emphasize-lines: 3-4
 
         function_07(
@@ -1788,12 +1766,6 @@ test_type_error_w_args_and_kwargs
             argument_0=(0, 1, 2, 'n'),
             argument_1=[0, 1, 2, 'n'],
         )
-        function_08('positional', argument='keyword')
-        # function_08('positional', name='keyword')
-        function_08(argument='positional', name='keyword')
-
-
-    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1811,7 +1783,7 @@ test_type_error_w_args_and_kwargs
 * I change the :ref:`keyword argument<test_keyword_arguments>` to match the :ref:`function definition<how to make a function that takes input>`
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 88
     :emphasize-lines: 4-5
 
         function_07(
@@ -1823,19 +1795,13 @@ test_type_error_w_args_and_kwargs
             argument_0=(0, 1, 2, 'n'),
             argument_1=[0, 1, 2, 'n'],
         )
-        function_08('positional', argument='keyword')
-        # function_08('positional', name='keyword')
-        function_08(argument='positional', name='keyword')
-
-
-    # Exceptions seen
 
   the test passes because :ref:`the call to the function<how to call a function with input>` matches its :ref:`definition<how to make a function that takes input>`.
 
-* I add a :ref:`call<how to call a function>` to ``function_00``
+* I add a :ref:`call<how to call a function>` to ``function_00`` from :ref:`test_type_error_w_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 65
     :emphasize-lines: 7
 
     def test_type_error_w_args_and_kwargs():
@@ -1846,18 +1812,6 @@ test_type_error_w_args_and_kwargs
 
         function_00()
         # function_01(1, first=0)
-        function_01(1, 0)
-        # function_02(False, first=None)
-        # function_02(second=False, first=None)
-        # function_02(True, second=False, first=None)
-        function_02(third=True, second=False, first=None)
-        function_03(
-            # [0, 1, 2, 'n'],
-            second=[0, 1, 2, 'n'],
-            first=(0, 1, 2, 'n'),
-            third={0, 1, 2, 'n'},
-            fourth={'key': 'value'}
-        )
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
