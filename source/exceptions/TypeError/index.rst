@@ -1,6 +1,6 @@
 .. meta::
-  :description: What causes TypeError when calling Python functions? TDD tutorial in the type_error project (uv init, tests/test_type_error.py, uv run pytest-watcher . --now): match the call to the function definition (signature). Deliberately raise TypeError with wrong positional count ("takes 0 positional arguments but 1 was given", "missing 1 required positional argument: 'the_input'", "takes 2 positional arguments but 3 were given"), wrong keyword names ("got an unexpected keyword argument 'argument_0'. Did you mean 'argument'?"), and double-binding ("got multiple values for argument 'argument'"). Three tests: test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs. Nested defs are moved to module level so multiple tests can call the same functions; final snapshot only shows correct calls (the pedagogical problem that later separation/assertRaises work addresses). Side-effect NameError when a function name is not defined yet; initial AssertionError from test_failure. Jacob Itegboje Pumping Python TDD series.
-  :keywords: Jacob Itegboje, Pumping Python, what causes TypeError, python TypeError function call, TypeError missing required positional argument, TypeError takes positional arguments but were given, TypeError got an unexpected keyword argument, TypeError Did you mean, TypeError got multiple values for argument, match function signature definition call, positional vs keyword arguments, test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs, NameError name is not defined, AssertionError True is not false, uv init type_error, uv run pytest-watcher . --now, red green refactor TypeError, remove the commented lines, nested function locals TypeError, module level functions for shared calls, how to call a function with input, python exceptions TDD tutorial
+  :description: What causes TypeError when calling Python functions? TDD tutorial in the type_error project (uv init, tests/test_type_error.py, uv run pytest-watcher . --now): match the call to the function definition (signature). Deliberately raise TypeError with wrong positional count ("takes 0 positional arguments but 1 was given", "missing 1 required positional argument: 'the_input'", "takes 2 positional arguments but 3 were given"), wrong keyword names ("got an unexpected keyword argument 'argument_0'. Did you mean 'argument'?"), and double-binding ("got multiple values for argument 'argument'"). Three tests: test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs. Nested defs are moved to module level so multiple tests can call the same functions; final snapshot only shows correct calls (the pedagogical problem that later separation/assertRaises work addresses). Side-effect NameError when a function name is not defined yet; initial collection failure from assert False is True (AssertionError). Jacob Itegboje Pumping Python TDD series.
+  :keywords: Jacob Itegboje, Pumping Python, what causes TypeError, python TypeError function call, TypeError missing required positional argument, TypeError takes positional arguments but were given, TypeError got an unexpected keyword argument, TypeError Did you mean, TypeError got multiple values for argument, match function signature definition call, positional vs keyword arguments, test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs, NameError name is not defined, AssertionError assert False is True, uv init type_error, uv run pytest-watcher . --now, red green refactor TypeError, remove the commented lines, nested function locals TypeError, module level functions for shared calls, how to call a function with input, python exceptions TDD tutorial
 
 .. include:: ../../links.rst
 
@@ -788,7 +788,7 @@ test_type_error_w_keyword_arguments
         function_04(argument='value')
 
         function_05(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
         )
 
@@ -813,7 +813,7 @@ test_type_error_w_keyword_arguments
             return None
 
         function_05(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
         )
 
@@ -832,7 +832,7 @@ test_type_error_w_keyword_arguments
 
   because
 
-  - The :ref:`call<how to call a function with input>` to ``function_05`` which belongs to :ref:`test_type_error_w_keyword_arguments` uses :ref:`keyword arguments<test_keyword_arguments>` (``argument_0='value1'`` and ``argument_1=(0, 1, 2, 'n')``).
+  - The :ref:`call<how to call a function with input>` to ``function_05`` which belongs to :ref:`test_type_error_w_keyword_arguments` uses :ref:`keyword arguments<test_keyword_arguments>` (``argument_0='value_1'`` and ``argument_1=(0, 1, 2, 'n')``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``function_05`` only allows one input, with the name ``argument``.
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
@@ -849,7 +849,7 @@ test_type_error_w_keyword_arguments
             return None
 
         function_05(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
         )
 
@@ -880,7 +880,7 @@ test_type_error_w_keyword_arguments
             return None
 
         function_05(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
         )
 
@@ -896,12 +896,12 @@ test_type_error_w_keyword_arguments
     :emphasize-lines: 6-10
 
         function_05(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
         )
 
         function_06(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
             argument_2=[0, 1, 2, 'n'],
         )
@@ -922,7 +922,7 @@ test_type_error_w_keyword_arguments
     :emphasize-lines: 6-7
 
         function_05(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
         )
 
@@ -930,7 +930,7 @@ test_type_error_w_keyword_arguments
             return None
 
         function_06(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
             argument_2=[0, 1, 2, 'n'],
         )
@@ -950,7 +950,7 @@ test_type_error_w_keyword_arguments
 
   because
 
-  - The :ref:`call<how to call a function with input>` to ``function_06`` which belongs to :ref:`test_type_error_w_keyword_arguments` uses :ref:`keyword arguments<test_keyword_arguments>` (``argument_0='value1'``, ``argument_1=(0, 1, 2, 'n')`` and ``argument_2=[0, 1, 2, 'n']``).
+  - The :ref:`call<how to call a function with input>` to ``function_06`` which belongs to :ref:`test_type_error_w_keyword_arguments` uses :ref:`keyword arguments<test_keyword_arguments>` (``argument_0='value_1'``, ``argument_1=(0, 1, 2, 'n')`` and ``argument_2=[0, 1, 2, 'n']``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``function_06`` only allows two inputs.
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
@@ -961,7 +961,7 @@ test_type_error_w_keyword_arguments
     :emphasize-lines: 6-10
 
         function_05(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
         )
 
@@ -973,7 +973,7 @@ test_type_error_w_keyword_arguments
             return None
 
         function_06(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
             argument_2=[0, 1, 2, 'n'],
         )
@@ -990,7 +990,7 @@ test_type_error_w_keyword_arguments
     :emphasize-lines: 7-12
 
         function_06(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
             argument_2=[0, 1, 2, 'n'],
         )
@@ -1018,7 +1018,7 @@ test_type_error_w_keyword_arguments
     :emphasize-lines: 7-11
 
         function_06(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
             argument_2=[0, 1, 2, 'n'],
         )
@@ -1062,7 +1062,7 @@ test_type_error_w_keyword_arguments
     :emphasize-lines: 9-10
 
         function_06(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
             argument_2=[0, 1, 2, 'n'],
         )
@@ -1118,7 +1118,7 @@ test_type_error_w_keyword_arguments
             return None
 
         function_06(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
             argument_2=[0, 1, 2, 'n'],
         )
@@ -1421,7 +1421,7 @@ test_type_error_w_args_and_kwargs
 
   .. code-block:: python
     :lineno-start: 69
-    :emphasize-lines: 9
+    :emphasize-lines: 3
 
         # function_01(1, first=0)
         function_01(1, 0)
@@ -1431,7 +1431,6 @@ test_type_error_w_args_and_kwargs
             'positional',
             argument='keyword',
         )
-    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -1683,7 +1682,7 @@ test_type_error_w_args_and_kwargs
 
   .. code-block:: python
     :lineno-start: 9
-    :emphasize-lines: 5-9, 43-48
+    :emphasize-lines: 5-9
 
     def function_03(first, second, third, fourth):
         return None
@@ -1703,7 +1702,7 @@ test_type_error_w_args_and_kwargs
     :emphasize-lines: 6-11
 
         function_06(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
             argument_2=[0, 1, 2, 'n'],
         )
@@ -1885,7 +1884,7 @@ test_type_error_w_args_and_kwargs
             third={0, 1, 2, 'n'},
             fourth={'key': 'value'},
         )
-        function_04('value1', 'value2')
+        function_04('value_1', 'value2')
 
         function_07(
             # {0, 1, 2, 'n'},
@@ -1953,7 +1952,7 @@ test_type_error_w_args_and_kwargs
     :lineno-start: 89
     :emphasize-lines: 2
 
-        # function_04('value1', 'value2')
+        # function_04('value_1', 'value2')
         function_04('value')
 
         function_07(
@@ -1974,7 +1973,7 @@ test_type_error_w_args_and_kwargs
     :lineno-start: 89
     :emphasize-lines: 3
 
-        # function_04('value1', 'value2')
+        # function_04('value_1', 'value2')
         function_04('value')
         function_05((0, 1, 2, 'n'))
 
@@ -2046,7 +2045,7 @@ test_type_error_w_args_and_kwargs
     :lineno-start: 89
     :emphasize-lines: 3-7
 
-        # function_04('value1', 'value2')
+        # function_04('value_1', 'value2')
         function_04('value')
         # function_05((0, 1, 2, 'n'))
         function_05(
@@ -2124,7 +2123,7 @@ test_type_error_w_args_and_kwargs
             argument_1=(0, 1, 2, 'n'),
         )
         function_06(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
             argument_2=[0, 1, 2, 'n'],
         )
@@ -2596,7 +2595,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
             argument_1=(0, 1, 2, 'n'),
         )
         function_06(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
             argument_2=[0, 1, 2, 'n'],
         )
@@ -2787,7 +2786,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
     TypeError: function_08() missing
                1 required positional argument: 'argument'
 
-* I add a value to the :ref:`call<how to call a function with input>` to ``function_08
+* I add a value to the :ref:`call<how to call a function with input>` to ``function_08``
 
   .. code-block:: python
     :lineno-start: 54
@@ -2843,7 +2842,7 @@ I ran tests for :ref:`TypeError<what causes TypeError?>` with
 * :ref:`keyword arguments<test_type_error_w_keyword_arguments>`
 * :ref:`positional and keyword arguments<test_type_error_w_args_and_kwargs>`
 
-My problem with the tests is that they all show the correct way to call the :ref:`functions<what is a function?>` I made in the file_. If someone reads the file_ or runs it, there is no way for them to know how any of the :ref:`calls<how to call a function with input>` are related to :ref:`TypeError<what causes TypeError?>` unless they go through the process with me, there has to be a better way.
+My problem with the tests is that they all show the correct way to call the :ref:`functions<what is a function?>` I made in the file_. If someone reads the file_ or runs it, there is no way for them to know how any of the :ref:`calls<how to call a function with input>` are related to :ref:`TypeError<what causes TypeError?>` unless they go through the process with me, :ref:`there has to be a better way<TypeError with assertRaises>`.
 
 ----
 

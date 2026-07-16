@@ -32,11 +32,11 @@ def test_type_error_w_keyword_arguments():
     )
     src.type_error.function_04(argument='value')
     src.type_error.function_05(
-        argument_0='value1',
+        argument_0='value_1',
         argument_1=(0, 1, 2, 'n'),
     )
     src.type_error.function_06(
-        argument_0='value1',
+        argument_0='value_1',
         argument_1=(0, 1, 2, 'n'),
         argument_2=[0, 1, 2, 'n'],
     )

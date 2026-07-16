@@ -79,8 +79,8 @@ mass migration
 I change the :ref:`call<how to call a function with input>` to ``function_00`` in :ref:`test_type_error_w_positional_arguments` to a :ref:`call<how to call a function with input>` to ``function_00`` of ``type_error.py`` in the ``src`` folder_
 
 .. code-block:: python
-  :lineno-start: 40
-  :emphasize-lines: 1-2
+  :lineno-start: 43
+  :emphasize-lines: 2-3
 
   def test_type_error_w_positional_arguments():
       # function_00('a')
@@ -136,7 +136,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 121
+    :lineno-start: 133
     :emphasize-lines: 5
     :emphasize-text: ModuleNotFoundError
 
@@ -1385,7 +1385,7 @@ because ``src`` is not defined in ``test_type_error.py``.
         src.type_error.function_04(argument='value')
         # function_05(
         src.type_error.function_05(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
         )
 
@@ -1437,12 +1437,12 @@ because ``src`` is not defined in ``test_type_error.py``.
 
         # function_05(
         src.type_error.function_05(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
         )
         # function_06(
         src.type_error.function_06(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
             argument_2=[0, 1, 2, 'n'],
         )
@@ -1516,7 +1516,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
         # function_06(
         src.type_error.function_06(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
             argument_2=[0, 1, 2, 'n'],
         )
@@ -1703,11 +1703,11 @@ because ``src`` is not defined in ``test_type_error.py``.
         )
         src.type_error.function_04(argument='value')
         src.type_error.function_05(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
         )
         src.type_error.function_06(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
             argument_2=[0, 1, 2, 'n'],
         )

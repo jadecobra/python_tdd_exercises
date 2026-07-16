@@ -75,7 +75,7 @@ def test_type_error_w_keyword_arguments():
         argument_1=(0, 1, 2, 'n'),
     )
     function_06(
-        argument_0='value1',
+        argument_0='value_1',
         argument_1=(0, 1, 2, 'n'),
         argument_2=[0, 1, 2, 'n'],
     )
