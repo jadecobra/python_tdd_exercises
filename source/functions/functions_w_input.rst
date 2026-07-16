@@ -192,7 +192,11 @@ I add a :ref:`function<what is a function?>` for ``identity``
 
   # Exceptions seen
 
-the test passes.
+the test passes because I get :ref:`None<what is None?>` when I :ref:`call<how to call a function with input>` ``identity``
+
+.. code-block:: python
+
+  identity() -> None
 
 ----
 
@@ -314,7 +318,7 @@ Does it pass when another value is given or does it always return :ref:`None<wha
       assert identity(object) == object
       assert None             == object
 
-    which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`None is only equal to None<what is None?>`
+    I get :ref:`AssertionError<what causes AssertionError?>` since :ref:`None is only equal to None<what is None?>`
 
   - :ref:`object<everything is an object>` is the mother of everything in Python_. :ref:`everything in Python is an object (they inherit from it)<everything is an object>`. I am not all the way genius, yet.
 
@@ -338,6 +342,11 @@ Does it pass when another value is given or does it always return :ref:`None<wha
     # Exceptions seen
 
   the test passes.
+
+  .. code-block:: python
+
+    identity(None  ) -> None
+    identity(object) -> object
 
 * I remove the commented lines
 
@@ -1089,16 +1098,29 @@ the test passes.
         # assert 2 + 1 == 2
         assert 2 + 1 == 3
 
-  the test is still green because when I :ref:`call<how to call a function with input>` ``add_x`` with a number as input, it returns ``2`` plus the number as output. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  the test is still green because when I :ref:`call<how to call a function with input>` ``add_x`` with a number as input, it returns ``2`` plus the number as output.
+
+  .. code-block:: python
+
+    add_x(number) -> 2 + number
+
+  Inside ``add_x`` when ``add_x(0)`` runs
+
+  .. code-block:: shell
+
+    add_x(0)
+    def add_x(number):
+    ├── number = 0
+    └── return 2 + number
+        return 2 + 0
+        return 2
+
+  Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
     assert add_x(0) == 2
-           # inside add_x
-               add_x(number)
-               add_x(0)
-           # add_x returns 2 + number
-             2 + 0  == 2
+    assert 2        == 2
 
   ``2 + 0`` is equal to ``2``.
 
@@ -1191,6 +1213,12 @@ the test passes.
   .. code-block:: python
 
     E       assert 3 == 2
+
+  because
+
+  .. code-block:: python
+
+    add_x(number) -> 3 + number
 
 * I change the results part of the :ref:`assertions<what is an assertion?>` one at a time
 
