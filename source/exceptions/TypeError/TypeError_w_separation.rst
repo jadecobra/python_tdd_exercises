@@ -1957,15 +1957,27 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   where ``function_name`` is the name of the :ref:`function<what is a function?>`.
 
-* I add a git_ commit message in the other terminal_
+* I open a terminal_ then `change directory`_ to the :ref:`type_error folder<what causes TypeError?>`
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd type_error
+
+* I add ``type_error.py`` to git_ for tracking
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git add src/type_error.py
+
+* I add a git_ commit message in the new terminal_
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
     git commit --all --message \
     'move functions to type_error.py'
-
-:ref:`I have to call a function with the same number or names of arguments that are in its definition<test_type_error_w_args_and_kwargs>`.
 
 ----
 
