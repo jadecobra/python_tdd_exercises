@@ -3375,8 +3375,8 @@ what is next?
   :titlesonly:
   :maxdepth: 1
 
-  ../classes/inheritance
-  ../classes/unittest
+  ../../classes/inheritance
+  ../../classes/unittest
 
 :ref:`Would you like to know where the extra attributes and methods of the Person class came from?<everything is an object>`
 

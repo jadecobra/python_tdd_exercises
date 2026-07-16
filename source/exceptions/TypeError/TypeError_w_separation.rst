@@ -1,6 +1,6 @@
 .. meta::
-  :description: Separate tests from solutions (keep them "separate and equal") in the type_error project using TDD. Move the functions out of test_type_error.py into src/type_error.py. Use "import src.type_error" then reroute calls to src.type_error.function_00 etc, mkdir src, touch src/type_error.py, "remove the commented lines" (local defs left in test). See real errors while separating: "NameError: name 'src' is not defined", "ModuleNotFoundError: No module named 'src'", "ModuleNotFoundError: No module named 'src.type_error'", "AttributeError: module 'src.type_error' has no attribute 'function_00'". Finish with all 9 functions (function_00 through function_08 with special signatures for _02/_07/_08) in src/type_error.py and three tests calling exclusively via the src. prefix: test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs (including mixed positional+keyword calls like function_08('positional', argument='keyword')). uv run pytest-watcher . --now, git commits after each step. Review lesson: I can write solutions in a different module from the tests. Jacob Itegboje Pumping Python TDD series.
-  :keywords: Jacob Itegboje, Pumping Python, separate and equal TypeError, separate tests from solutions, src/type_error.py, import src.type_error, src.type_error.function_00, "NameError: name 'src' is not defined", "ModuleNotFoundError: No module named 'src'", "ModuleNotFoundError: No module named 'src.type_error'", "AttributeError: module 'src.type_error' has no attribute 'function_00'", test_type_error_w_separation, test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs, remove the commented lines, move functions to src folder, function_00 to function_08, src package layout, TDD separation refactor, uv pytest-watcher, git commit, "I can write solutions in a different module from the tests", TypeError continuation chapter, python src type_error
+  :description: Separate tests from solutions ("separate and equal") in the type_error project with TDD. Move function_00–function_08 from tests/test_type_error.py into src/type_error.py: import src.type_error, mkdir src, touch src/type_error.py, reroute calls to src.type_error.function_N, remove commented local calls, then delete the local defs. Real errors on the way: "NameError: name 'src' is not defined", "ModuleNotFoundError: No module named 'src'", "ModuleNotFoundError: No module named 'src.type_error'", "AttributeError: module 'src.type_error' has no attribute 'function_00'", plus TypeError while renaming signatures so keyword tests match (unexpected keyword, missing required positional, function_08 multiple values for 'argument' until def function_08(name, argument)). Three tests keep working: test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs (mixed call function_08('positional', argument='keyword')). uv run pytest-watcher . --now, git commits. Review: I can write solutions in a different module from the tests. Jacob Itegboje Pumping Python TDD.
+  :keywords: Jacob Itegboje, Pumping Python, separate and equal TypeError, separate tests from solutions, src/type_error.py, import src.type_error, src.type_error.function_00, NameError name 'src' is not defined, ModuleNotFoundError No module named 'src', ModuleNotFoundError No module named 'src.type_error', AttributeError module 'src.type_error' has no attribute, TypeError unexpected keyword argument, TypeError multiple values for argument, function_08(name, argument), test_type_error_w_separation, remove the commented lines, uv pytest-watcher, git commit, I can write solutions in a different module from the tests, TypeError continuation, python src package
 
 .. include:: ../../links.rst
 
@@ -531,10 +531,10 @@ because ``src`` is not defined in ``test_type_error.py``.
     :lineno-start: 56
     :emphasize-lines: 2-3
 
-          src.type_error.function_04('a')
-          # function_05('a', 'b')
-          src.type_error.function_05('a', 'b')
-          function_06('a', 'b', 'c')
+        src.type_error.function_04('a')
+        # function_05('a', 'b')
+        src.type_error.function_05('a', 'b')
+        function_06('a', 'b', 'c')
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -1056,13 +1056,13 @@ because ``src`` is not defined in ``test_type_error.py``.
     FAILED ...::test_type_error_w_keyword_arguments -
         TypeError: function_02() missing
                    3 required positional arguments:
-                   'one', 'two', and 'three
+                   'one', 'two', and 'three'
 
 * I remove ``one``, ``two`` and ``three`` from the parentheses
 
   .. code-block:: python
     :lineno-start: 16
-    :emphasize-lines: 6
+    :emphasize-lines: 7
 
     # def function_02():
     # def function_02(one, two, three):
@@ -1214,7 +1214,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   .. code-block:: python
     :lineno-start: 27
-    :emphasize-lines: 5
+    :emphasize-lines: 8
 
     # def function_03():
     # def function_03(one, two, three, four):
@@ -1345,7 +1345,7 @@ because ``src`` is not defined in ``test_type_error.py``.
     TypeError: function_06() got
                an unexpected keyword argument 'argument_0'
 
-* I change ``one`` to ``argument_0`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_06`` in ``type_error.py``
+* I change ``one`` to ``argument_0`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_06`` in ``type_error.py``
 
   .. code-block:: python
     :lineno-start: 52
@@ -1534,10 +1534,10 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   .. code-block:: python
 
-    TypeError: function_07() got
+    TypeError: function_08() got
                an unexpected keyword argument 'argument'
 
-* I change ``one`` to ``argument_0`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_08`` in ``type_error.py``
+* I change ``one`` to ``argument`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_08`` in ``type_error.py``
 
   .. code-block:: python
     :lineno-start: 72
@@ -1671,7 +1671,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   .. code-block:: python
     :lineno-start: 101
-    :emphasize-lines: 6-9
+    :emphasize-lines: 2-6
 
         src.type_error.function_01(1, 0)
         # function_02(
@@ -1936,7 +1936,7 @@ because ``src`` is not defined in ``test_type_error.py``.
     # ModuleNotFoundError
     # AttributeError
 
-* I remove ``functions_00`` to ``functions_08`` from ``test_type_error.py`` because they are no longer :ref:`called<how to call a function with input>`
+* I remove ``function_00`` to ``function_08`` from ``test_type_error.py`` because they are no longer :ref:`called<how to call a function with input>`
 
   .. code-block:: python
     :linenos:
@@ -1946,7 +1946,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
     def test_type_error_w_positional_arguments():
 
-  all the tests are passing because ``functions_00`` to ``functions_08`` are now :ref:`attributes<what is a class attribute?>` of ``type_error.py`` in the ``src`` folder_ and I can :ref:`call<how to call a function with input>` them from outside the file_ with ``src.type_error.function_name()``
+  all the tests are passing because ``function_00`` to ``function_08`` are now :ref:`attributes<what is a class attribute?>` of ``type_error.py`` in the ``src`` folder_ and I can :ref:`call<how to call a function with input>` them from outside the file_ with ``src.type_error.function_name()``
 
   .. code-block:: shell
 
