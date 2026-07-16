@@ -755,11 +755,7 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes because I get :ref:`None<what is None?>` when I :ref:`call<how to call a function>` ``w_return``
-
-  .. code-block:: python
-
-    w_return() -> None
+  the test passes.
 
 ----
 
@@ -789,7 +785,12 @@ The return_ keyword is used to define what a :ref:`function<what is a function?>
 
     # Exceptions seen
 
-  - The test is still green because I get :ref:`None<what is None?>` when I call ``w_return``.
+  - The test is still green because I get :ref:`None<what is None?>` when I :ref:`call<how to call a function>```w_return``
+
+    .. code-block:: python
+
+      w_return() -> None
+
   - The :ref:`assertion<what is an assertion?>` - ``assert w_return() is None`` checks if the result of a call to ``w_return``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
   - The :ref:`function definition<how to make a function>` simply says return_ and the test passes.
   - return_ is a keyword that defines what the :ref:`function<what is a function?>` gives as output.
@@ -1068,11 +1069,13 @@ the test passes.
 
     AssertionError: assert 'something' is None
 
-  because when I :ref:`call<how to call a function>` ``w_return_none`` I get ``'something'``
+  because I get ``'something'`` when I :ref:`call<how to call a function>` ``w_return_none``
 
   .. code-block:: python
 
     w_return_none() -> None
+
+  Using substitution
 
   .. code-block:: python
 
@@ -1102,7 +1105,7 @@ the test passes.
 
     # Exceptions seen
 
-  - The test is green again because I get :ref:`None<what is None?>` when I call ``w_return_none``.
+  - The test is green again because I get :ref:`None<what is None?>` when I :ref:`call<how to call a function>```w_return_none``.
   - The :ref:`assertion<what is an assertion?>` - ``assert w_return_none() is None`` checks if the result of a call to ``w_return_none``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
 
 * I remove the commented lines
@@ -1362,7 +1365,13 @@ the test passes.
 
     E       AssertionError: assert 'something' is None
 
-  because when I call ``return_leaves_the_function`` I get ``'something'``. Using substitution
+  because I get ``'something'`` when I :ref:`call<how to call a function>` ``return_leaves_the_function``
+
+  .. code-block:: python
+
+    w_return_leaves_the_function() -> 'something'
+
+  Using substitution
 
   .. code-block:: python
 
@@ -1371,6 +1380,13 @@ the test passes.
 
   - which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`a string is not None<test_assertion_error_w_none>`.
   - The `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`, it exits after the `return statement`_.
+
+    .. code-block:: shell
+
+      def return_leaves_the_function():
+      └── return 'something'
+          return None
+
   - It never gets to ``return None`` because it leaves after ``return 'something'``.
   - The second `return statement`_ will never run. It is not reachable (this is called dead code).
   - This means I can treat a :ref:`call to a function<how to call a function>` as the :ref:`object<everything is an object>` it returns.
@@ -1580,7 +1596,7 @@ the test passes.
 
   the test passes.
 
-* I add parentheses to call ``constant``
+* I add parentheses to :ref:`call<how to call a function>` ``constant``
 
   .. code-block:: python
     :lineno-start: 30
@@ -1680,7 +1696,11 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes.
+  the test passes because I get ``'the same thing'`` when I call ``constant``
+
+  .. code-block:: python
+
+    constant() -> 'the same thing'
 
 * I remove the commented lines
 
