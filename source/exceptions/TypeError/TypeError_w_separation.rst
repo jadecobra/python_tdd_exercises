@@ -1826,7 +1826,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
 
     def function_01(first, second):
-        return
+        return None
 
   .. code-block:: python
     :lineno-start: 9

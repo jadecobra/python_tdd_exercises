@@ -13,7 +13,7 @@ def function_02(
 
 
 def function_03(
-    first, second, third, fourth
+    first, second, third, fourth,
 ):
     return None
 
