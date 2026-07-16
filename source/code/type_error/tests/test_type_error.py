@@ -22,13 +22,16 @@ def function_05(argument_0, argument_1):
     return None
 
 
-def function_06(argument_0, argument_1, argument_2):
+def function_06(
+    argument_0, argument_1,
+    argument_2,
+):
     return None
 
 
 def function_07(
     argument_0, argument_1,
-    argument_2, argument_n,
+    argument_2, argument_n
 ):
     return None
 
@@ -68,7 +71,7 @@ def test_type_error_w_keyword_arguments():
     )
     function_04(argument='value')
     function_05(
-        argument_0='value1',
+        argument_0='value_1',
         argument_1=(0, 1, 2, 'n'),
     )
     function_06(
@@ -82,18 +85,24 @@ def test_type_error_w_keyword_arguments():
         argument_2={0, 1, 2, 'n'},
         argument_n={'key': 'value'},
     )
-    function_08(argument='positional', name='keyword')
+    function_08(
+        argument='positional',
+        name='keyword',
+    )
 
 
 def test_type_error_w_args_and_kwargs():
     function_00('argument')
     function_01(1, 0)
-    function_02(third=True, second=False, first=None)
+    function_02(
+        third=True, second=False,
+        first=None,
+    )
     function_03(
         second=[0, 1, 2, 'n'],
         first=(0, 1, 2, 'n'),
         third={0, 1, 2, 'n'},
-        fourth={'key': 'value'}
+        fourth={'key': 'value'},
     )
     function_04('value')
     function_05(
@@ -111,7 +120,10 @@ def test_type_error_w_args_and_kwargs():
         argument_0=(0, 1, 2, 'n'),
         argument_1=[0, 1, 2, 'n'],
     )
-    function_08('positional', argument='keyword')
+    function_08(
+        'positional',
+        argument='keyword',
+    )
 
 
 # Exceptions seen
