@@ -833,10 +833,10 @@ test_type_error_w_keyword_arguments
   because
 
   - The :ref:`call<how to call a function with input>` to ``function_05`` which belongs to :ref:`test_type_error_w_keyword_arguments` uses :ref:`keyword arguments<test_keyword_arguments>` (``argument_0='value1'`` and ``argument_1=(0, 1, 2, 'n')``).
-  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``function_05`` only allows one input with the name ``argument``.
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``function_05`` only allows one input, with the name ``argument``.
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* I change the name of the input to match :ref:`the call<how to call a function with input>`
+* I change the name of the input in the :ref:`definition<how to make a function that takes input>` to match :ref:`the call<how to call a function with input>`
 
   .. code-block:: python
     :lineno-start: 27
