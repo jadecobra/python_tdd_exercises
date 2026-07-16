@@ -1477,7 +1477,7 @@ test_type_error_w_args_and_kwargs
 
   because the :ref:`call<how to call a function with input>` to ``function_02`` from :ref:`test_type_error_w_args_and_kwargs` uses ``False`` as the first :ref:`positional argument<test_positional_arguments>` which is named ``first`` in the :ref:`definition<how to make a function that takes input>`, and uses ``None`` as the value for ``first`` as a :ref:`keyword argument<test_keyword_arguments>`.
 
-* I change the first value in the :ref:`call<how to call a function with input>` from :ref:`test_args_and_kwargs` to a :ref:`keyword argument<test_keyword_arguments>` to make it clearer
+* I change the first value in the :ref:`call<how to call a function with input>` from :ref:`test_type_error_w_args_and_kwargs` to a :ref:`keyword argument<test_keyword_arguments>` to make it clearer
 
   .. code-block:: python
     :lineno-start: 63
@@ -1537,7 +1537,7 @@ test_type_error_w_args_and_kwargs
 
   because the :ref:`call<how to call a function with input>` to ``function_02`` from :ref:`test_type_error_w_args_and_kwargs` uses ``True`` as the first :ref:`positional argument<test_positional_arguments>` which is named ``first`` in the :ref:`definition<how to make a function that takes input>`, and uses ``None`` as the value for ``first`` as a :ref:`keyword argument<test_keyword_arguments>`.
 
-* I change the :ref:`call<how to call a function with input>` from :ref:`test_args_and_kwargs` to use a :ref:`keyword argument<test_keyword_arguments>` for ``True``, to make it clearer
+* I change the :ref:`call<how to call a function with input>` from :ref:`test_type_error_w_args_and_kwargs` to use a :ref:`keyword argument<test_keyword_arguments>` for ``True``, to make it clearer
 
   .. code-block:: python
     :lineno-start: 69
@@ -1624,12 +1624,12 @@ test_type_error_w_args_and_kwargs
     TypeError: function_03() got
                multiple values for argument 'first'
 
-  because the :ref:`call<how to call a function with input>` uses an argument in the first position and uses a :ref:`keyword argument<test_keyword_arguments>` with the same name as the argument in the first position in teh :ref:`definition<how to make a function that takes input>`.
+  because the :ref:`call<how to call a function with input>` uses an argument in the first position and uses a :ref:`keyword argument<test_keyword_arguments>` with the same name as the argument in the first position.
 
 * I add a :ref:`keyword argument<test_keyword_arguments>` for the first value in the :ref:`call<how to call a function with input>` to ``function_03`` from :ref:`test_type_error_w_args_and_kwargs` to make it clearer
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 74
     :emphasize-lines: 6-7
 
         function_02(
@@ -1649,8 +1649,8 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function with input>` to ``function_07`` from :ref:`test_type_error_w_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 80
-    :emphasize-lines: 9-15
+    :lineno-start: 78
+    :emphasize-lines: 9-14
 
         function_03(
             # [0, 1, 2, 'n'],
@@ -1699,7 +1699,7 @@ test_type_error_w_args_and_kwargs
     def test_type_error_w_positional_arguments():
 
   .. code-block:: python
-    :lineno-start: 52
+    :lineno-start: 50
     :emphasize-lines: 6-11
 
         function_06(
@@ -1726,14 +1726,14 @@ test_type_error_w_args_and_kwargs
 
   because
 
-  - The :ref:`call<how to call a function with input>` to ``function_07`` from :ref:`test_type_error_w_args_and_kwargs` uses an argument in the first position and uses a :ref:`keyword argument<test_keyword_arguments>` with the name of the argument in the first position.
-  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``function_07`` takes four arguments. How does Python_ know which value to use for ``argument_0`` if I use both the :ref:`position<test_positional_arguments>` and the :ref:`name<test_keyword_arguments>` of the argument?
+  - The :ref:`call<how to call a function with input>` to ``function_07`` from :ref:`test_type_error_w_args_and_kwargs` uses an argument in the first position and uses a :ref:`keyword argument<test_keyword_arguments>` with the same name as the argument in the first position.
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``function_07`` takes four arguments. How does Python_ know which value to use for ``argument_0`` if I use both the :ref:`position<test_positional_arguments>` and the :ref:`name<test_keyword_arguments>` of the argument for two values?
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I change the :ref:`call<how to call a function with input>` to use a :ref:`keyword argument<test_keyword_arguments>`, then change its position
 
   .. code-block:: python
-    :lineno-start: 88
+    :lineno-start: 86
     :emphasize-lines: 2, 4
 
         function_07(
@@ -1748,12 +1748,12 @@ test_type_error_w_args_and_kwargs
             argument='keyword',
         )
 
-  the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because the :ref:`call<how to call a function with input>` uses an argument in the first position and uses a :ref:`keyword argument<test_keyword_arguments>` with the name of the argument in the first position.
+  the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because the :ref:`call<how to call a function with input>` uses an argument in the first position and uses a :ref:`keyword argument<test_keyword_arguments>` with the same name as the argument in the first position.
 
 * I use a :ref:`keyword argument<test_keyword_arguments>` to make it clearer
 
   .. code-block:: python
-    :lineno-start: 88
+    :lineno-start: 86
     :emphasize-lines: 3-4
 
         function_07(
@@ -1776,12 +1776,12 @@ test_type_error_w_args_and_kwargs
   because
 
   - The :ref:`call<how to call a function with input>` to ``function_07`` from :ref:`test_type_error_w_args_and_kwargs` uses a :ref:`keyword argument<test_keyword_arguments>` that is not in the :ref:`function definition (signature)<how to make a function that takes input>`.
-  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
+  - :ref:`The call a function must use the same names that are in its definition if I call it with keyword arguments<test_type_error_w_keyword_arguments>`.
 
 * I change the :ref:`keyword argument<test_keyword_arguments>` to match the :ref:`function definition<how to make a function that takes input>`
 
   .. code-block:: python
-    :lineno-start: 88
+    :lineno-start: 86
     :emphasize-lines: 4-5
 
         function_07(
@@ -1799,7 +1799,7 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function>` to ``function_00`` from :ref:`test_type_error_w_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 63
     :emphasize-lines: 7
 
     def test_type_error_w_args_and_kwargs():
@@ -1836,6 +1836,15 @@ test_type_error_w_args_and_kwargs
     :lineno-start: 24
     :emphasize-lines: 2
 
+    def test_type_error_w_positional_arguments():
+        function_00('a')
+        function_01('a', 'b')
+        function_02('a', 'b', 'c')
+        function_03('a', 'b', 'c', 'd')
+
+
+    def test_type_error_w_keyword_arguments():
+
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
@@ -1845,10 +1854,10 @@ test_type_error_w_args_and_kwargs
 
   because the :ref:`function definition<how to make a function that takes input>` requires :ref:`calls<how to call a function with input>` with one input and it got :ref:`called<how to call a function with input>` with zero inputs.
 
-* I change the :ref:`call<how to call a function with input>` to match the :ref:`signature<how to make a function that takes input>`
+* I change the :ref:`call<how to call a function with input>` from :ref:`test_type_error_w_args_and_kwargs` to match the :ref:`signature<how to make a function that takes input>`
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 64
     :emphasize-lines: 7-8
 
     def test_type_error_w_args_and_kwargs():
@@ -1860,34 +1869,21 @@ test_type_error_w_args_and_kwargs
         # function_00()
         function_00('argument')
         # function_01(1, first=0)
-        function_01(1, 0)
-        # function_02(False, first=None)
-        # function_02(second=False, first=None)
-        # function_02(True, second=False, first=None)
-        function_02(third=True, second=False, first=None)
-        function_03(
-            # [0, 1, 2, 'n'],
-            second=[0, 1, 2, 'n'],
-            first=(0, 1, 2, 'n'),
-            third={0, 1, 2, 'n'},
-            fourth={'key': 'value'}
-        )
 
   the test passes because :ref:`the call to the function<how to call a function with input>` matches its :ref:`definition<how to make a function that takes input>`.
 
-* I add a :ref:`call<how to call a function with input>` to ``function_04``
+* I add a :ref:`call<how to call a function with input>` to ``function_04`` from :ref:`test_type_error_w_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 73
-    :emphasize-lines: 9
+    :lineno-start: 81
+    :emphasize-lines: 8
 
-        function_02(third=True, second=False, first=None)
         function_03(
             # [0, 1, 2, 'n'],
             second=[0, 1, 2, 'n'],
             first=(0, 1, 2, 'n'),
             third={0, 1, 2, 'n'},
-            fourth={'key': 'value'}
+            fourth={'key': 'value'},
         )
         function_04('value1', 'value2')
 
@@ -1900,9 +1896,6 @@ test_type_error_w_args_and_kwargs
             argument_0=(0, 1, 2, 'n'),
             argument_1=[0, 1, 2, 'n'],
         )
-        function_08('positional', argument='keyword')
-        # function_08('positional', name='keyword')
-        function_08(argument='positional', name='keyword')
 
 
     # Exceptions seen
@@ -1913,7 +1906,7 @@ test_type_error_w_args_and_kwargs
 
     NameError: name 'function_04' is not defined
 
-  because ``function_04`` belongs to the :ref:`test_type_error_w_keyword_arguments function<test_type_error_w_keyword_arguments>` and I cannot reach it from outside.
+  because ``function_04`` belongs to the :ref:`test_type_error_w_keyword_arguments function<test_type_error_w_keyword_arguments>` and I cannot reach it from outside :ref:`test_type_error_w_keyword_arguments`.
 
 * I move ``function_04`` out of :ref:`test_type_error_w_keyword_arguments`
 
@@ -1931,45 +1924,19 @@ test_type_error_w_args_and_kwargs
 
     def function_07(
         argument_0, argument_1,
-        argument_2, argument_n,
+        argument_2, argument_n
     ):
         return None
 
-
-    def test_type_error_w_positional_arguments():
-        function_00('a')
-        function_01('a', 'b')
-        function_02('a', 'b', 'c')
-        function_03('a', 'b', 'c', 'd')
-
+  .. code-block:: python
+    :lineno-start: 35
+    :emphasize-lines: 2
 
     def test_type_error_w_keyword_arguments():
         function_04(argument='value')
 
         def function_05(argument_0, argument_1):
             return None
-
-        function_05(
-            argument_0='value1',
-            argument_1=(0, 1, 2, 'n'),
-        )
-
-        def function_06(argument_0, argument_1, argument_2):
-            return None
-
-        function_06(
-            argument_0='value1',
-            argument_1=(0, 1, 2, 'n'),
-            argument_2=[0, 1, 2, 'n'],
-        )
-        function_07(
-            argument_0=(0, 1, 2, 'n'),
-            argument_1=[0, 1, 2, 'n'],
-            argument_2={0, 1, 2, 'n'},
-            argument_n={'key': 'value'},
-        )
-
-    def test_type_error_w_args_and_kwargs():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1978,22 +1945,14 @@ test_type_error_w_args_and_kwargs
     TypeError: function_04() takes
                1 positional argument but 2 were given
 
-  because the :ref:`definition<how to make a function that takes input>` only allows it take one input, and it got :ref:`called<how to call a function with input>` with two.
+  because the :ref:`definition<how to make a function that takes input>` only allows one input, and it got :ref:`called<how to call a function with input>` with two.
 
-* I change the :ref:`call<how to call a function with input>` to match the :ref:`signature<how to make a function that takes input>`
+* I change the :ref:`call<how to call a function with input>` from :ref:`test_type_error_w_args_and_kwargs` to match the :ref:`signature<how to make a function that takes input>`
 
   .. code-block:: python
-    :lineno-start: 74
-    :emphasize-lines: 9-10
+    :lineno-start: 89
+    :emphasize-lines: 2
 
-        function_02(third=True, second=False, first=None)
-        function_03(
-            # [0, 1, 2, 'n'],
-            second=[0, 1, 2, 'n'],
-            first=(0, 1, 2, 'n'),
-            third={0, 1, 2, 'n'},
-            fourth={'key': 'value'}
-        )
         # function_04('value1', 'value2')
         function_04('value')
 
@@ -2006,29 +1965,15 @@ test_type_error_w_args_and_kwargs
             argument_0=(0, 1, 2, 'n'),
             argument_1=[0, 1, 2, 'n'],
         )
-        function_08('positional', argument='keyword')
-        # function_08('positional', name='keyword')
-        function_08(argument='positional', name='keyword')
-
-
-    # Exceptions seen
 
   the test passes because :ref:`the call to the function<how to call a function with input>` matches its :ref:`definition<how to make a function that takes input>`.
 
-* I add a :ref:`call<how to call a function with input>` to ``function_05``
+* I add a :ref:`call<how to call a function with input>` to ``function_05`` from :ref:`test_type_error_w_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 74
-    :emphasize-lines: 11
+    :lineno-start: 89
+    :emphasize-lines: 3
 
-        function_02(third=True, second=False, first=None)
-        function_03(
-            # [0, 1, 2, 'n'],
-            second=[0, 1, 2, 'n'],
-            first=(0, 1, 2, 'n'),
-            third={0, 1, 2, 'n'},
-            fourth={'key': 'value'}
-        )
         # function_04('value1', 'value2')
         function_04('value')
         function_05((0, 1, 2, 'n'))
@@ -2042,12 +1987,6 @@ test_type_error_w_args_and_kwargs
             argument_0=(0, 1, 2, 'n'),
             argument_1=[0, 1, 2, 'n'],
         )
-        function_08('positional', argument='keyword')
-        # function_08('positional', name='keyword')
-        function_08(argument='positional', name='keyword')
-
-
-    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -2059,7 +1998,7 @@ test_type_error_w_args_and_kwargs
 
   .. code-block:: python
     :lineno-start: 17
-    :emphasize-lines: 5-6, 25-28
+    :emphasize-lines: 5-6
 
     def function_04(argument):
         return None
@@ -2071,41 +2010,26 @@ test_type_error_w_args_and_kwargs
 
     def function_07(
         argument_0, argument_1,
-        argument_2, argument_n,
+        argument_2, argument_n
     ):
         return None
 
-
-    def test_type_error_w_positional_arguments():
-        function_00('a')
-        function_01('a', 'b')
-        function_02('a', 'b', 'c')
-        function_03('a', 'b', 'c', 'd')
-
+  .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 3-6
 
     def test_type_error_w_keyword_arguments():
         function_04(argument='value')
         function_05(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
         )
 
-        def function_06(argument_0, argument_1, argument_2):
+        def function_06(
+            argument_0, argument_1,
+            argument_2,
+        ):
             return None
-
-        function_06(
-            argument_0='value1',
-            argument_1=(0, 1, 2, 'n'),
-            argument_2=[0, 1, 2, 'n'],
-        )
-        function_07(
-            argument_0=(0, 1, 2, 'n'),
-            argument_1=[0, 1, 2, 'n'],
-            argument_2={0, 1, 2, 'n'},
-            argument_n={'key': 'value'},
-        )
-
-    def test_type_error_w_args_and_kwargs():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -2116,10 +2040,10 @@ test_type_error_w_args_and_kwargs
 
   because the :ref:`definition<how to make a function that takes input>` expects a :ref:`call<how to call a function with input>` with two inputs and only got one input.
 
-* I change the :ref:`call<how to call a function with input>` to match the :ref:`signature<how to make a function that takes input>`
+* I change the :ref:`call<how to call a function with input>` from :ref:`test_type_error_w_args_and_kwargs` to make it match the :ref:`signature<how to make a function that takes input>`
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 89
     :emphasize-lines: 3-7
 
         # function_04('value1', 'value2')
@@ -2130,33 +2054,14 @@ test_type_error_w_args_and_kwargs
             [0, 1, 2, 'n'],
         )
 
-        function_07(
-            # {0, 1, 2, 'n'},
-            # {'key': 'value'},
-            # argument_4={'key': 'value'},
-            argument_n={'key': 'value'},
-            argument_2={0, 1, 2, 'n'},
-            argument_0=(0, 1, 2, 'n'),
-            argument_1=[0, 1, 2, 'n'],
-        )
-        function_08('positional', argument='keyword')
-        # function_08('positional', name='keyword')
-        function_08(argument='positional', name='keyword')
-
-
-    # Exceptions seen
-
   the test passes because :ref:`the call to the function<how to call a function with input>` matches its :ref:`definition<how to make a function that takes input>`.
 
-* I add a :ref:`call<how to call a function with input>` to ``function_06``
+* I add a :ref:`call<how to call a function with input>` to ``function_06`` from :ref:`test_type_error_w_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 82
-    :emphasize-lines: 8-13
+    :lineno-start: 92
+    :emphasize-lines: 5-10
 
-        # function_04('value1', 'value2')
-        function_04('value')
-        # function_05((0, 1, 2, 'n'))
         function_05(
             (0, 1, 2, 'n'),
             [0, 1, 2, 'n'],
@@ -2167,7 +2072,6 @@ test_type_error_w_args_and_kwargs
             argument_2={0, 1, 2, 'n'},
             argument_n={'key': 'value'},
         )
-
         function_07(
             # {0, 1, 2, 'n'},
             # {'key': 'value'},
@@ -2177,12 +2081,6 @@ test_type_error_w_args_and_kwargs
             argument_0=(0, 1, 2, 'n'),
             argument_1=[0, 1, 2, 'n'],
         )
-        function_08('positional', argument='keyword')
-        # function_08('positional', name='keyword')
-        function_08(argument='positional', name='keyword')
-
-
-    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -2190,40 +2088,39 @@ test_type_error_w_args_and_kwargs
 
     NameError: name 'function_06' is not defined
 
-  because ``function_06`` belongs to the :ref:`test_type_error_w_keyword_arguments function<test_type_error_w_keyword_arguments>` and I cannot reach it from outside.
+  because ``function_06`` belongs to the :ref:`test_type_error_w_keyword_arguments function<test_type_error_w_keyword_arguments>`.
 
 * I move ``function_06`` out of :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 5-6, 29-33
+    :emphasize-lines: 5-8
 
     def function_05(argument_0, argument_1):
         return None
 
 
-    def function_06(argument_0, argument_1, argument_2):
+    def function_06(
+        argument_0, argument_1,
+        argument_2,
+    ):
         return None
 
 
     def function_07(
         argument_0, argument_1,
-        argument_2, argument_n,
+        argument_2, argument_n
     ):
         return None
 
-
-    def test_type_error_w_positional_arguments():
-        function_00('a')
-        function_01('a', 'b')
-        function_02('a', 'b', 'c')
-        function_03('a', 'b', 'c', 'd')
-
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 7-11
 
     def test_type_error_w_keyword_arguments():
         function_04(argument='value')
         function_05(
-            argument_0='value1',
+            argument_0='value_1',
             argument_1=(0, 1, 2, 'n'),
         )
         function_06(
@@ -2237,6 +2134,7 @@ test_type_error_w_args_and_kwargs
             argument_2={0, 1, 2, 'n'},
             argument_n={'key': 'value'},
         )
+
 
     def test_type_error_w_args_and_kwargs():
 
@@ -2250,15 +2148,12 @@ test_type_error_w_args_and_kwargs
 
   because the :ref:`function got called<how to call a function with input>` with a :ref:`name (keyword)<test_keyword_arguments>` that is not in its :ref:`definition<how to make a function that takes input>`
 
-* I remove ``argument_n={'key': 'value'}`` from the :ref:`call<how to call a function with input>`
+* I remove ``argument_n={'key': 'value'}`` from the :ref:`call<how to call a function with input>` from :ref:`test_type_error_w_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 82
-    :emphasize-lines: 12
+    :lineno-start: 92
+    :emphasize-lines: 9
 
-        # function_04('value1', 'value2')
-        function_04('value')
-        # function_05((0, 1, 2, 'n'))
         function_05(
             (0, 1, 2, 'n'),
             [0, 1, 2, 'n'],
@@ -2270,28 +2165,12 @@ test_type_error_w_args_and_kwargs
             # argument_n={'key': 'value'},
         )
 
-        function_07(
-            # {0, 1, 2, 'n'},
-            # {'key': 'value'},
-            # argument_4={'key': 'value'},
-            argument_n={'key': 'value'},
-            argument_2={0, 1, 2, 'n'},
-            argument_0=(0, 1, 2, 'n'),
-            argument_1=[0, 1, 2, 'n'],
-        )
-        function_08('positional', argument='keyword')
-        # function_08('positional', name='keyword')
-        function_08(argument='positional', name='keyword')
-
-
-    # Exceptions seen
-
   the test passes because :ref:`the call to the function<how to call a function with input>` matches its :ref:`definition<how to make a function that takes input>`.
 
 * I remove the commented lines from :ref:`test_type_error_w_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 65
 
     def test_type_error_w_args_and_kwargs():
         def function_08(name, argument):
@@ -2299,13 +2178,24 @@ test_type_error_w_args_and_kwargs
 
         function_00('argument')
         function_01(1, 0)
-        function_02(third=True, second=False, first=None)
+
+  .. code-block:: python
+    :lineno-start: 71
+
+        function_02(
+            third=True, second=False,
+            first=None,
+        )
         function_03(
             second=[0, 1, 2, 'n'],
             first=(0, 1, 2, 'n'),
             third={0, 1, 2, 'n'},
-            fourth={'key': 'value'}
+            fourth={'key': 'value'},
         )
+
+  .. code-block:: python
+    :lineno-start: 81
+
         function_04('value')
         function_05(
             (0, 1, 2, 'n'),
@@ -2316,14 +2206,28 @@ test_type_error_w_args_and_kwargs
             [0, 1, 2, 'n'],
             argument_2={0, 1, 2, 'n'},
         )
+
+  .. code-block:: python
+    :lineno-start: 91
+
         function_07(
             argument_n={'key': 'value'},
             argument_2={0, 1, 2, 'n'},
             argument_0=(0, 1, 2, 'n'),
             argument_1=[0, 1, 2, 'n'],
         )
-        function_08('positional', argument='keyword')
-        function_08(argument='positional', name='keyword')
+        function_08(
+            'positional',
+            argument='keyword',
+        )
+
+  .. code-block:: python
+    :lineno-start: 101
+
+        function_08(
+            argument='positional',
+            name='keyword',
+        )
 
 
     # Exceptions seen
