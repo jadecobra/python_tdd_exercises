@@ -782,7 +782,7 @@ test_type_error_w_keyword_arguments
 * I add a :ref:`call<how to call a function with input>` to ``function_05`` with :ref:`keyword arguments<test_keyword_arguments>`
 
   .. code-block:: python
-    :lineno-start: 27
+    :lineno-start: 28
     :emphasize-lines: 3-6
 
         function_04(argument='value')
@@ -804,7 +804,7 @@ test_type_error_w_keyword_arguments
 * I add a :ref:`definition<how to make a function that takes input>` for ``function_05``
 
   .. code-block:: python
-    :lineno-start: 27
+    :lineno-start: 28
     :emphasize-lines: 3-4
 
         function_04(argument='value')
