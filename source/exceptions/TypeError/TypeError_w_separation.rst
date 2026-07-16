@@ -148,6 +148,10 @@ because ``src`` is not defined in ``test_type_error.py``.
 
 * I open another terminal_ then make sure I am in the :ref:`type_error folder<what causes TypeError?>`
 
+  .. code-block:: python
+
+    cd type_error
+
 * I use mkdir_ to make a folder_ named ``src``
 
   .. code-block:: python
@@ -192,7 +196,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 121
+    :lineno-start: 133
     :emphasize-lines: 6
     :emphasize-text: AttributeError
 
@@ -246,10 +250,10 @@ because ``src`` is not defined in ``test_type_error.py``.
         └── def function_00(one):
             └── return None
 
-  - ``function_00`` is something in ``type_error``, in this case it is a :ref:`function<what is a function?>` in ``type_error``
-  - ``type_error`` is something in ``src``, in this case it is ``type_error.py`` (a :ref:`module<what is a module?>`) in the ``src`` folder_
-  - ``src`` is something Python_ can import (a :ref:`module<what is a module?>`, `Python package`_ or folder_)
-  - ``function_00`` is now an :ref:`attribute/property<what is a class attribute?>` of ``type_error.py`` in the ``src`` folder_. I can use it from outside the file_ with ``src.type_error.function_00``
+  - ``function_00`` is something in ``type_error``, in this case it is a :ref:`function<what is a function?>` in ``type_error``.
+  - ``type_error`` is something in ``src``, in this case it is ``type_error.py`` (a :ref:`module<what is a module?>`) in the ``src`` folder_.
+  - ``src`` is something Python_ can import (a :ref:`module<what is a module?>`, `Python package`_ or folder_).
+  - ``function_00`` is now an :ref:`attribute/property<what is a class attribute?>` of ``type_error.py`` in the ``src`` folder_. I can use it from outside the file_ with ``src.type_error.function_00``.
 
 ----
 
@@ -262,7 +266,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_01`` in :ref:`test_type_error_w_positional_arguments` to a :ref:`call<how to call a function with input>` to ``function_01`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 46
     :emphasize-lines: 4-5
 
     def test_type_error_w_positional_arguments():
