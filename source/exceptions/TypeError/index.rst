@@ -866,7 +866,7 @@ test_type_error_w_keyword_arguments
         got an unexpected keyword argument 'argument_1'.
         Did you mean 'argument_0'?
 
-* I add ``argument_0`` to the parentheses so that :ref:`the call<how to call a function with input>` to ``function_05`` and its :ref:`definition<how to make a function that takes input>` match
+* I add ``argument_1`` to the parentheses so that :ref:`the call<how to call a function with input>` to ``function_05`` and its :ref:`definition<how to make a function that takes input>` match
 
   .. code-block:: python
     :lineno-start: 28
@@ -1160,7 +1160,7 @@ test_type_error_w_keyword_arguments
 test_type_error_w_args_and_kwargs
 *************************************************************************************
 
-:ref:`TypeError<what causes TypeError?>` happens when I :ref:`call a function<how to call a function with input>` in a way that is different from its :ref:`signature<how to make a function that takes input>`. I cannot give two values for the same argument in the :ref:`function definition<how to make a function that takes input>` when I :ref:`call the function<how to call a function with input>`.
+:ref:`TypeError<what causes TypeError?>` happens when I :ref:`call a function<how to call a function with input>` in a way that is different from its :ref:`signature<how to make a function that takes input>`. I cannot give two values for the same argument in the :ref:`function definition<how to make a function that takes input>` when I :ref:`call a function<how to call a function with input>`.
 
 ----
 
@@ -1175,8 +1175,8 @@ test_type_error_w_args_and_kwargs
 * I add a test with a call to ``function_08`` with a :ref:`positional and keyword argument<test_args_and_kwargs>`
 
   .. code-block:: python
-    :lineno-start: 51
-    :emphasize-lines: 9-10
+    :lineno-start: 55
+    :emphasize-lines: 9-13
 
         function_07(
             argument_0=(0, 1, 2, 'n'),
@@ -1187,7 +1187,10 @@ test_type_error_w_args_and_kwargs
 
 
     def test_type_error_w_args_and_kwargs():
-        function_08('positional', argument='keyword')
+        function_08(
+            'positional',
+            argument='keyword'
+        )
 
 
     # Exceptions seen
@@ -1211,14 +1214,17 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`function definition<how to make a function that takes input>` for ``function_08``
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 63
     :emphasize-lines: 2-3
 
     def test_type_error_w_args_and_kwargs():
         def function_08(argument):
             return None
 
-        function_08('positional', argument='keyword')
+        function_08(
+            'positional',
+            argument='keyword'
+        )
 
 
     # Exceptions seen
@@ -1241,7 +1247,7 @@ test_type_error_w_args_and_kwargs
 * I add another name to the parentheses
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 63
     :emphasize-lines: 2-3
 
     def test_type_error_w_args_and_kwargs():
@@ -1249,17 +1255,12 @@ test_type_error_w_args_and_kwargs
         def function_08(argument, name):
             return None
 
-        function_08('positional', argument='keyword')
-
-
-    # Exceptions seen
-
   the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because the :ref:`call<how to call a function with input>` gives ``'positional'`` as the value for the first argument which is ``argument`` in the :ref:`definition<how to make a function that takes input>`, and it gives ``'keyword'`` as the value for ``argument`` as a :ref:`keyword argument<test_keyword_arguments>`.
 
-* I change the order of the inputs
+* I change the order of the names in the parentheses of the :ref:`function definition<how to make a function that takes input>`
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 63
     :emphasize-lines: 3-4
 
     def test_type_error_w_args_and_kwargs():
@@ -1268,7 +1269,10 @@ test_type_error_w_args_and_kwargs
         def function_08(name, argument):
             return None
 
-        function_08('positional', argument='keyword')
+        function_08(
+            'positional',
+            argument='keyword'
+        )
 
 
     # Exceptions seen
@@ -1286,7 +1290,7 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function with input>` to ``function_08``
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 63
     :emphasize-lines: 8
 
     def test_type_error_w_args_and_kwargs():
@@ -1318,7 +1322,7 @@ test_type_error_w_args_and_kwargs
 * I use :ref:`keyword arguments<test_keyword_arguments>` in the :ref:`call<how to call a function with input>` to be clearer
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 63
     :emphasize-lines: 8-9
 
     def test_type_error_w_args_and_kwargs():
@@ -1339,7 +1343,7 @@ test_type_error_w_args_and_kwargs
 * I add a :ref:`call<how to call a function with input>` to ``function_01`` with a :ref:`positional and keyword argument<test_args_and_kwargs>`
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 63
     :emphasize-lines: 7
 
     def test_type_error_w_args_and_kwargs():
