@@ -1603,21 +1603,19 @@ test_type_error_w_args_and_kwargs
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 7
+    :emphasize-lines: 8
 
-      def test_type_error_w_positional_arguments():
-          def function_00(the_input):
-              return None
+    def test_type_error_w_positional_arguments():
+        def function_00(the_input):
+            return None
 
-          function_00('a')
-          function_01('a', 'b')
-          function_02('a', 'b', 'c')
-
-
-          function_03('a', 'b', 'c', 'd')
+        function_00('a')
+        function_01('a', 'b')
+        function_02('a', 'b', 'c')
+        function_03('a', 'b', 'c', 'd')
 
 
-      def test_type_error_w_keyword_arguments():
+    def test_type_error_w_keyword_arguments():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1819,12 +1817,13 @@ test_type_error_w_args_and_kwargs
 
     NameError: name 'function_00' is not defined
 
-  because ``function_00`` belongs to the :ref:`test_type_error_w_positional_arguments function<test_type_error_w_positional_arguments>` and I cannot reach it from outside.
+  because ``function_00`` belongs to the :ref:`test_type_error_w_positional_arguments function<test_type_error_w_positional_arguments>` and I cannot reach it from outside :ref:`test_type_error_w_positional_arguments`.
 
 * I move ``function_00`` out of :ref:`test_type_error_w_positional_arguments`
 
   .. code-block:: python
-    :linenos: 1-2
+    :linenos:
+    :emphasize-lines: 1-2
 
     def function_00(the_input):
         return None
@@ -1833,30 +1832,9 @@ test_type_error_w_args_and_kwargs
     def function_01(first, second):
         return None
 
-
-    def function_02(first, second, third):
-        return None
-
-
-    def function_03(first, second, third, fourth):
-        return None
-
-
-    def function_07(
-        argument_0, argument_1,
-        argument_2, argument_n,
-    ):
-        return None
-
-
-    def test_type_error_w_positional_arguments():
-        function_00('a')
-        function_01('a', 'b')
-        function_02('a', 'b', 'c')
-        function_03('a', 'b', 'c', 'd')
-
-
-    def test_type_error_w_keyword_arguments():
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 2
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
