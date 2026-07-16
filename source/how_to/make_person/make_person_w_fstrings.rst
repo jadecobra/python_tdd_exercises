@@ -1791,7 +1791,7 @@ the test passes.
 
     def test_jane():
 
-  all the tests are still green because the calls that were made to the :ref:`factory function<test person factory>` that was in ``test_person.py`` are now to the :ref:`factory function<test person factory>` in ``person.py`` in the ``src`` folder_. When ``src.person.factory`` is called, Python_ follows this path
+  all the tests are still green because the calls that were made to the :ref:`factory function<test person factory>` that was in ``test_person.py`` are now made to the :ref:`factory function<test person factory>` in ``person.py`` in the ``src`` folder_. When ``src.person.factory`` is called, Python_ follows this path
 
   .. code-block:: shell
 
@@ -2757,7 +2757,7 @@ separate and equal say_hello
 
     def test_joe():
 
-  all the tests are still green because the calls that were made to the :ref:`say_hello function<test say_hello function>` that was in ``test_person.py`` are now to the :ref:`say_hello function<test say_hello function>` in ``person.py`` in the ``src`` folder_. When ``src.person.say_hello`` is called, Python_ follows this path
+  all the tests are still green because the calls that were made to the :ref:`say_hello function<test say_hello function>` that was in ``test_person.py`` are now made to the :ref:`say_hello function<test say_hello function>` in ``person.py`` in the ``src`` folder_. When ``src.person.say_hello`` is called, Python_ follows this path
 
   .. code-block:: shell
 

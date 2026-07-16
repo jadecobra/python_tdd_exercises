@@ -2545,8 +2545,6 @@ what is next?
 * :ref:`I know how to make a person with a class<how to make a person with a class>`.
 * :ref:`I know that everything in Python is an object<everything is an object>`.
 
-----
-
 Would you like to test the other projects with classes?
 
 .. toctree::

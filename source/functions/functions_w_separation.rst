@@ -882,7 +882,7 @@ move positional_arguments function
     def positional_arguments(first_input, last_input):
         return first_input, last_input
 
-  the tests pass because the calls that were made to the :ref:`positional_arguments function<test_positional_arguments>` that was in ``test_functions.py`` are now to the :ref:`positional_arguments function<test_positional_arguments>` in ``functions.py`` in the ``src`` folder_.
+  the tests pass because the calls that were made to the :ref:`positional_arguments function<test_positional_arguments>` that was in ``test_functions.py`` are now made to the :ref:`positional_arguments function<test_positional_arguments>` in ``functions.py`` in the ``src`` folder_.
 
   When ``positional_arguments`` is called in :ref:`test_positional_arguments` and :ref:`test_keyword_arguments`, Python_ follows this path
 
@@ -1103,7 +1103,7 @@ move keyword_arguments function
 
     def test_keyword_arguments():
 
-  the tests pass because the calls that were made to :ref:`the keyword_arguments function<test_keyword_arguments>` that was in ``test_functions.py`` are now to :ref:`the keyword_arguments function<test_keyword_arguments>` in ``functions.py`` in the ``src`` folder_.
+  the tests pass because the calls that were made to :ref:`the keyword_arguments function<test_keyword_arguments>` that was in ``test_functions.py`` are now made to :ref:`the keyword_arguments function<test_keyword_arguments>` in ``functions.py`` in the ``src`` folder_.
 
   When ``keyword_arguments`` is called in :ref:`test_keyword_arguments` and :ref:`test_positional_arguments`, Python_ follows this path
 
@@ -1373,7 +1373,7 @@ move optional_arguments function
     ):
         return first_input, last_input
 
-  the test passes because the calls that were made to the :ref:`optional_arguments function<test_optional_arguments>` that was in ``test_functions.py`` are now to the :ref:`optional_arguments function<test_optional_arguments>` in ``functions.py`` in the ``src`` folder_.
+  the test passes because the calls that were made to the :ref:`optional_arguments function<test_optional_arguments>` that was in ``test_functions.py`` are now made to the :ref:`optional_arguments function<test_optional_arguments>` in ``functions.py`` in the ``src`` folder_.
 
   When ``optional_arguments`` is called in :ref:`test_optional_arguments`, Python_ follows this path
 
@@ -1536,7 +1536,7 @@ move unknown_number_of_arguments function
     ):
         return positional_arguments, keyword_arguments
 
-  the test passes because the calls that were made to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` that was in ``test_functions.py`` are now to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` in ``functions.py`` in the ``src`` folder_.
+  the test passes because the calls that were made to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` that was in ``test_functions.py`` are now made to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` in ``functions.py`` in the ``src`` folder_.
 
   When ``unknown_number_of_arguments`` is called in :ref:`test_unknown_number_of_arguments`, Python_ follows this path
 

@@ -75,19 +75,20 @@ test_type_error_w_class_methods
 I add a test with a :ref:`call<how to call a function with input>` to ``AClass.method`` from ``test_type_error.py``
 
 .. code-block:: python
-  :lineno-start: 82
-  :emphasize-lines: 6-7
+  :lineno-start: 84
+  :emphasize-lines: 7-8
 
-      src.type_error.function_08(
-          'positional', argument='keyword'
-      )
-
-
-  def test_type_error_w_class_methods():
-      src.type_error.AClass.method_00()
+        src.type_error.function_08(
+            'positional',
+            argument='keyword',
+        )
 
 
-  # Exceptions seen
+    def test_type_error_w_class_methods():
+        src.type_error.AClass.method_00()
+
+
+    # Exceptions seen
 
 the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -202,7 +203,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_01`` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 87
+    :lineno-start: 90
     :emphasize-lines: 3
 
     def test_type_error_w_class_methods():
@@ -256,10 +257,13 @@ because ``AClass`` is not defined in ``type_error.py``.
 
   Both :ref:`methods<what is a method?>` look the same. The difference is in how I :ref:`call<how to call a function>` them ``AClass.method_00()`` vs ``AClass().method_01()``.
 
+  - ``AClass.method_00()`` :ref:`calls<how to call a function>` ``method_00`` of the ``AClass`` :ref:`class<everything is an object>`.
+  - ``AClass().method_01()`` :ref:`calls<how to call a function>` ``method_01`` of an :ref:`instance<how to test if something is an instance>` of the ``AClass`` :ref:`class<everything is an object>`.
+
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_02`` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 87
+    :lineno-start: 90
     :emphasize-lines: 4
 
     def test_type_error_w_class_methods():
@@ -354,7 +358,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_03`` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 87
+    :lineno-start: 90
     :emphasize-lines: 5
 
     def test_type_error_w_class_methods():
@@ -432,7 +436,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 * Here is another silly example. I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_04`` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 87
+    :lineno-start: 90
     :emphasize-lines: 6
 
     def test_type_error_w_class_methods():
@@ -494,7 +498,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_05`` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 87
+    :lineno-start: 90
     :emphasize-lines: 7
 
     def test_type_error_w_class_methods():
@@ -563,7 +567,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_06`` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 87
+    :lineno-start: 90
     :emphasize-lines: 8
 
     def test_type_error_w_class_methods():
@@ -624,7 +628,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_07`` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 87
+    :lineno-start: 90
     :emphasize-lines: 9
 
     def test_type_error_w_class_methods():
@@ -676,7 +680,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 * I use an :ref:`instance of the class<how to test if something is an instance>` to :ref:`call the method<how to call a function>` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 87
+    :lineno-start: 90
     :emphasize-lines: 9-10
 
     def test_type_error_w_class_methods():
@@ -721,7 +725,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_08()`` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 87
+    :lineno-start: 90
     :emphasize-lines: 11
 
     def test_type_error_w_class_methods():
@@ -771,7 +775,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 * I use an :ref:`instance of the class<how to test if something is an instance>` to :ref:`call the method<how to call a function>` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 87
+    :lineno-start: 90
     :emphasize-lines: 11-12
 
     def test_type_error_w_class_methods():
@@ -828,7 +832,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_09()`` from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 87
+    :lineno-start: 90
     :emphasize-lines: 13
 
     def test_type_error_w_class_methods():
@@ -946,7 +950,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 * I remove the commented lines from ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 87
+    :lineno-start: 90
 
     def test_type_error_w_class_methods():
         src.type_error.AClass.method_00()
