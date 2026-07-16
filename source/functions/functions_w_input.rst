@@ -1454,7 +1454,11 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes.
+  the test passes because
+
+  .. code-block:: python
+
+    positional_arguments(the_input) -> None
 
 * I add another input to the :ref:`function call<how to call a function with input>`
 
@@ -1538,20 +1542,20 @@ the test passes.
 
     AssertionError: assert None == ('first', 'last')
 
-  because when I :ref:`call<how to call a function with input>` ``positional_arguments`` with ``'first'`` and ``'last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because when I :ref:`call<how to call a function with input>` ``positional_arguments`` with ``'first'`` and ``'last'`` as inputs, it returns :ref:`None<what is None?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    positional_arguments('first'    , 'last'    )
-    positional_arguments(first_input, last_input)
-    └── return None
+    positional_arguments(first_input, last_input) -> None
+
+  Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
     assert positional_arguments('first', 'last') == ('first', 'last')
     assert None                                  == ('first', 'last')
 
-  which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`None<what is None?>` is NOT equal to a tuple_.
+  I get :ref:`AssertionError<what causes AssertionError?>` since :ref:`None<what is None?>` is NOT equal to a tuple_.
 
 * I change :ref:`the return statement` to make the :ref:`function<what is a function?>` return its inputs as output (like :ref:`the identity function<test_identity_function>`)
 
@@ -1577,7 +1581,22 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes, because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input>` in the test sends ``'first'`` as ``first_input`` and ``'last'`` as ``last_input``.
+  the test passes, because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input>` in the test sends ``'first'`` as ``first_input`` and ``'last'`` as ``last_input``
+
+  .. code-block:: python
+
+    positional_arguments(first_input, last_input) -> first_input, last_input
+
+  Inside ``positional_arguments`` when ``positional_arguments('first', 'last')`` runs
+
+  .. code-block:: shell
+
+    positional_arguments('first', 'last')
+    def positional_arguments(first_input, last_input)
+    ├── first_input = 'first'
+    ├── last_input = 'last'
+    └── return first_input, last_input
+        return 'first'    , 'last'
 
 * The problem with giving arguments this way is that they always have to be in the order in the :ref:`function definition<how to make a function that takes input>` or I get something different. I add an :ref:`assertion<what is an assertion?>` to show this
 
@@ -1615,12 +1634,22 @@ the test passes.
 
   because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input>` in this :ref:`assertion<what is an assertion?>` sends ``'last'`` as ``first_input`` and ``'first'`` as ``last_input``. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
+  .. code-block:: python
+
+    positional_arguments(first_input, last_input) -> first_input, last_input
+
+  Inside ``positional_arguments`` when ``positional_arguments('last', 'first')`` runs
+
   .. code-block:: shell
 
-    positional_arguments('last'     , 'first'   )
-    positional_arguments(first_input, last_input)
+    positional_arguments('last', 'first')
+    def positional_arguments(first_input, last_input)
+    ├── first_input = 'last'
+    ├── last_input = 'first'
     └── return first_input, last_input
         return 'last'     , 'first'
+
+  Using substitution
 
   .. code-block:: python
 
