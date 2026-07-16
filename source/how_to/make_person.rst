@@ -2705,7 +2705,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
                  # randomly return
                  # 'jane' or 'joe' or 'john' or 'person'
 
-  :ref:`Python reads the positional arguments as a tuple<how Python reads starred expressions>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expressions<single starred expressions>` (``*choices``).
+  :ref:`Python reads the positional arguments as a tuple<how Python treats starred expressions>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expressions<single starred expressions>` (``*choices``).
 
 * I use the new :ref:`function<what is a function?>` for the ``last_name`` :ref:`variable<what is a variable?>`
 
@@ -2737,7 +2737,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
                 # randomly return
                 # 'doe' or 'smith' or 'blow' or 'public'
 
-  :ref:`Python reads the positional arguments as a tuple<how Python reads starred expressions>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expressions<single starred expressions>` (``*choices``).
+  :ref:`Python reads the positional arguments as a tuple<how Python treats starred expressions>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expressions<single starred expressions>` (``*choices``).
 
 * I use the new :ref:`function<what is a function?>` for the ``sex`` :ref:`variable<what is a variable?>`
 
@@ -2769,7 +2769,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
               random.choice(('F', 'M'))
           # randomly return 'F' or 'M'
 
-  :ref:`Python reads the positional arguments as a tuple<how Python reads starred expressions>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expressions<single starred expressions>` (``*choices``).
+  :ref:`Python reads the positional arguments as a tuple<how Python treats starred expressions>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expressions<single starred expressions>` (``*choices``).
 
 * I remove the commented lines
 
@@ -2991,7 +2991,7 @@ the test is green again, because this happens
                     year_of_birth=year_of_birth
                 )
 
-:ref:`Python sends the dictionary as keyword arguments<how Python reads double starred expressions>` since I used a :ref:`double starred expressions<double starred expressions>` (``**a_person``).
+:ref:`Python sends the dictionary as keyword arguments<how Python treats double starred expressions>` since I used a :ref:`double starred expressions<double starred expressions>` (``**a_person``).
 
 ----
 

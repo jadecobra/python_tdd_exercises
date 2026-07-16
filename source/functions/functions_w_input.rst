@@ -30,10 +30,10 @@ where ``process`` is the :ref:`function<what is a function?>`. I think of it lik
 
                     f(x) -> y
   function(input_object) -> output_object
-  solar_panel (sunlight) -> electricity
-  factory (materials   ) -> product
-  chef    (ingredients ) -> food
-  stomach (food        ) -> poop
+   solar_panel(sunlight) -> electricity
+      factory(materials) -> product
+       chef(ingredients) -> food
+           stomach(food) -> poop
 
 the :ref:`function<what is a function?>` does something (the process) with ``input_object`` and returns ``output_object`` as the result. For example
 
@@ -85,8 +85,8 @@ Questions to think about as I go through the chapter
 * :ref:`how can I make a function take any number of keyword arguments?<test_unknown_number_of_arguments>`
 * :ref:`what can I do with single starred expressions?<single starred expressions>`
 * :ref:`what can I do with double starred expressions?<double starred expressions>`
-* :ref:`how does Python read starred expressions?<how Python reads starred expressions>`
-* :ref:`how does Python read double starred expressions?<how Python reads double starred expressions>`
+* :ref:`how does Python read starred expressions?<how Python treats starred expressions>`
+* :ref:`how does Python read double starred expressions?<how Python treats double starred expressions>`
 
 ----
 
@@ -4336,7 +4336,7 @@ Python_ also has a way for a :ref:`function<what is a function?>` to take any nu
 ----
 
 *********************************************************************************
-how Python reads starred and double starred expressions
+how Python treats starred and double starred expressions
 *********************************************************************************
 
 * I change :ref:`the return statement` because I want the :ref:`function<what is a function?>` to return its input (remember the :ref:`identity function<test_identity_function>`?)
@@ -4379,20 +4379,33 @@ how Python reads starred and double starred expressions
   - a tuple_ (anything in parentheses ``( )`` separated by a comma) for the :ref:`positional arguments<test_positional_arguments>`
   - a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>` for the :ref:`keyword arguments<test_keyword_arguments>`
 
+  .. code-block:: python
+
+    unknown_number_of_arguments(
+        *positional_arguments, **keyword_arguments
+    ) -> first_input, last_input
+
+  When ``unknown_number_of_arguments(0, 1, a=2, b=3)`` runs
+
+  .. code-block:: shell
+
+    unknown_number_of_arguments(0, 1, a=2, b=3)
+
+    def unknown_number_of_arguments(
+        *positional_arguments, **keyword_arguments
+    )
+    ├── positional_arguments = (0, 1)
+    ├── keyword_arguments    = {'a': 2, 'b': 3}
+    └── return  positional_arguments, keyword_arguments
+        return ((0, 1              ), {'a': 2, 'b': 3  })
+
   Using substitution
 
   .. code-block:: shell
 
-    unknown_number_of_arguments(
-        0, 1                 , a=2, b=3
-    )
-    unknown_number_of_arguments(
-        *positional_arguments, **keyword_arguments
-    )
-    ├── positional_arguments = (0, 1)
-    ├── keyword_arguments = {'a': 2, 'b': 3}
-    └── return  positional_arguments, keyword_arguments
-        return ((0, 1              ), {'a': 2, 'b': 3  })
+    assert unknown_number_of_arguments(0, 1, a=2, b=3)
+                                   == None
+    assert None                    == None
 
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
   - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`.
@@ -4431,18 +4444,17 @@ how Python reads starred and double starred expressions
   - a tuple_ (anything in parentheses ``( )`` separated by a comma) for the :ref:`positional arguments<test_positional_arguments>`
   - a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>` for the :ref:`keyword arguments<test_keyword_arguments>`
 
-  Using substitution
+  When ``unknown_number_of_arguments(0, 1, a=2, b=3, c=4)`` runs
 
   .. code-block:: shell
 
-    unknown_number_of_arguments(
-        0, 1                 , a=2, b=3, c=4
-    )
-    unknown_number_of_arguments(
+    unknown_number_of_arguments(0, 1, a=2, b=3, c=4)
+
+    def unknown_number_of_arguments(
         *positional_arguments, **keyword_arguments
     )
     ├── positional_arguments = (0, 1)
-    ├── keyword_arguments = {'a': 2, 'b': 3, 'c':4}
+    ├── keyword_arguments    = {'a': 2, 'b': 3, 'c': 4}
     └── return  positional_arguments, keyword_arguments
         return ((0, 1              ), {'a': 2, 'b': 3, 'c':4})
 
@@ -4487,18 +4499,17 @@ how Python reads starred and double starred expressions
   - a tuple_ (anything in parentheses ``( )`` separated by a comma) for the :ref:`positional arguments<test_positional_arguments>`
   - a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>` for the :ref:`keyword arguments<test_keyword_arguments>`
 
-  Using substitution
+  When ``unknown_number_of_arguments(0, 1, 2, a=3, b=4, c=5)`` runs
 
   .. code-block:: shell
 
-    unknown_number_of_arguments(
-        0, 1, 2              , a=3, b=4, c=5
-    )
-    unknown_number_of_arguments(
+    unknown_number_of_arguments(0, 1, 2, a=3, b=4, c=5)
+
+    def unknown_number_of_arguments(
         *positional_arguments, **keyword_arguments
     )
     ├── positional_arguments = (0, 1, 2)
-    ├── keyword_arguments = {'a': 3, 'b': 4, 'c':5}
+    ├── keyword_arguments    = {'a': 3, 'b': 4, 'c':5}
     └── return  positional_arguments, keyword_arguments
         return ((0, 1, 2           ), {'a': 3, 'b': 4, 'c':5})
 
@@ -4527,7 +4538,7 @@ how Python reads starred and double starred expressions
 ----
 
 *********************************************************************************
-how Python reads starred expressions
+how Python treats starred expressions
 *********************************************************************************
 
 * I add :ref:`variables<what is a variable?>` for the tuple_ and :ref:`dictionary<what is a dictionary?>` of the first :ref:`assertion<what is an assertion?>`
@@ -4591,21 +4602,26 @@ how Python reads starred expressions
   - a tuple_ of the arguments_ since they are both :ref:`positional<test_positional_arguments>`
   - an empty :ref:`dictionary<what is a dictionary?>` since there are no :ref:`keyword arguments<test_keyword_arguments>`
 
-  Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
-
-  .. code-block:: shell
+  .. code-block:: python
 
     a_tuple = (0, 1)
     a_dictionary = {'a': 2, 'b': 3}
+
+  When ``unknown_number_of_arguments(a_tuple, a_dictionary)`` runs
+
+  .. code-block:: shell
+
     unknown_number_of_arguments(
         a_tuple, a_dictionary
     )
-    unknown_number_of_arguments(
+
+    def unknown_number_of_arguments(
         *positional_arguments, **keyword_arguments
     )
     ├── positional_arguments = (a_tuple, a_dictionary)
-    ├── keyword_arguments = {}
-    └── return  positional_arguments     , keyword_arguments
+    ├── keyword_arguments    = {}
+    └── return   positional_arguments    , keyword_arguments
+        return ((a_tuple, a_dictionary)  , {})
         return ((0, 1), {'a': 2, 'b': 3}), {})
 
 * I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as separate arguments
@@ -4716,21 +4732,26 @@ how Python reads starred expressions
   - a tuple_ of the arguments_ since they are both :ref:`positional<test_positional_arguments>`
   - an empty :ref:`dictionary<what is a dictionary?>` since there are no :ref:`keyword arguments<test_keyword_arguments>`
 
-  Using substitution
-
-  .. code-block:: shell
+  .. code-block:: python
 
     a_tuple = (0, 1)
     a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+
+  When ``unknown_number_of_arguments(a_tuple, a_dictionary)`` runs
+
+  .. code-block:: shell
+
     unknown_number_of_arguments(
         a_tuple, a_dictionary
     )
-    unknown_number_of_arguments(
+
+    def unknown_number_of_arguments(
         *positional_arguments, **keyword_arguments
     )
     ├── positional_arguments = (a_tuple, a_dictionary)
-    ├── keyword_arguments = {}
-    └── return  positional_arguments, keyword_arguments
+    ├── keyword_arguments    = {}
+    └── return   positional_arguments            , keyword_arguments
+        return ((a_tuple, a_dictionary)          , {})
         return ((0, 1), {'a': 2, 'b': 3, 'c': 4}), {})
 
 * I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as separate arguments
@@ -4837,21 +4858,26 @@ how Python reads starred expressions
   - a tuple_ of the arguments_ since they are both :ref:`positional<test_positional_arguments>`
   - an empty :ref:`dictionary<what is a dictionary?>` since there are no :ref:`keyword arguments<test_keyword_arguments>`
 
-  Using substitution
-
-  .. code-block:: shell
+  .. code-block:: python
 
     a_tuple = (0, 1, 2)
     a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+
+  When ``unknown_number_of_arguments(a_tuple, a_dictionary)`` runs
+
+  .. code-block:: shell
+
     unknown_number_of_arguments(
         a_tuple, a_dictionary
     )
-    unknown_number_of_arguments(
+
+    def unknown_number_of_arguments(
         *positional_arguments, **keyword_arguments
     )
     ├── positional_arguments = (a_tuple, a_dictionary)
-    ├── keyword_arguments = {}
-    └── return  positional_arguments, keyword_arguments
+    ├── keyword_arguments    = {}
+    └── return   positional_arguments, keyword_arguments
+        return ((a_tuple, a_dictionary)             , {})
         return ((0, 1, 2), {'a': 3, 'b': 4, 'c': 5}), {})
 
 * I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as separate arguments
@@ -4887,9 +4913,15 @@ how Python reads starred expressions
 
   .. code-block:: python
 
-    unknown_number_of_arguments(*a_tuple  , **a_dictionary            )
-    unknown_number_of_arguments(*(0, 1, 2), **{'a': 2, 'b': 3, 'c': 4})
-    unknown_number_of_arguments(0, 1, 2   , a=3, b=4, c=5             )
+    unknown_number_of_arguments(
+        *a_tuple  , **a_dictionary
+    )
+    unknown_number_of_arguments(
+        *(0, 1, 2), **{'a': 2, 'b': 3, 'c': 4}
+    )
+    unknown_number_of_arguments(
+        0, 1, 2, a=3, b=4, c=5
+    )
 
   - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the things in ``something`` as :ref:`positional arguments<test_positional_arguments>`.
   - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
@@ -4947,19 +4979,20 @@ how Python reads starred expressions
     unknown_number_of_arguments(*(0, 1, 2, 'n'))
     unknown_number_of_arguments(0, 1, 2, 'n'   )
 
-  Using substitution
+  When ``unknown_number_of_arguments(a_tuple)`` runs
 
   .. code-block:: shell
 
-    unknown_number_of_arguments(*a_tuple)
-    unknown_number_of_arguments(
+    unknown_number_of_arguments(a_tuple)
+
+    def unknown_number_of_arguments(
         *positional_arguments, **keyword_arguments
     )
-    ├── positional_arguments = (0, 1, 2, 'n')
-    ├── keyword_arguments = {}
-    └── return  positional_arguments, keyword_arguments
-        return ((0, 1, 2, 'n')      , {})
-
+    ├── positional_arguments = a_tuple
+    ├── keyword_arguments    = {}
+    └── return positional_arguments, keyword_arguments
+        return (a_tuple            , {})
+        return ((0, 1, 2, 'n')     , {})
 
   - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the things in ``something`` as :ref:`positional arguments<test_positional_arguments>`.
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
@@ -4985,7 +5018,7 @@ how Python reads starred expressions
 ----
 
 *********************************************************************************
-how Python reads double starred expressions
+how Python treats double starred expressions
 *********************************************************************************
 
 I add another :ref:`assertion<what is an assertion?>` to see what happens when I :ref:`call<how to call a function with input>` the :ref:`function<what is a function?>` with ONLY :ref:`keyword arguments<test_keyword_arguments>`
@@ -5043,19 +5076,19 @@ these three statements are the same
   unknown_number_of_arguments({'a': 1, 'b': 2, 'c': 3, 'd': 'n'})
   unknown_number_of_arguments(  a = 1,  b = 2,  c = 3,  d = 'n' )
 
-Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+When ``unknown_number_of_arguments(a_dictionary)`` runs
 
 .. code-block:: shell
 
-  unknown_number_of_arguments(**a_dictionary)
-  unknown_number_of_arguments(
+  unknown_number_of_arguments(a_dictionary)
+
+  def unknown_number_of_arguments(
       *positional_arguments, **keyword_arguments
   )
   ├── positional_arguments = ()
-  ├── keyword_arguments = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
+  ├── keyword_arguments    = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
   └── return  positional_arguments, keyword_arguments
-      return (()                  , {'a': 1, 'b': 2, 'c': 3, 'd': 'n'})
-
+      return ((), {'a': 1, 'b': 2, 'c': 3, 'd': 'n'})
 
 - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
 - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`.
@@ -5126,19 +5159,19 @@ the test passes.
   - an empty tuple_ since there are no :ref:`positional arguments<test_positional_arguments>`
   - an empty :ref:`dictionary<what is a dictionary?>` since there are no :ref:`keyword arguments<test_keyword_arguments>`
 
-  Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  When ``unknown_number_of_arguments()`` runs
 
   .. code-block:: shell
 
-    unknown_number_of_arguments()
-    unknown_number_of_arguments(
+    unknown_number_of_arguments(a_dictionary)
+
+    def unknown_number_of_arguments(
         *positional_arguments, **keyword_arguments
     )
     ├── positional_arguments = ()
-    ├── keyword_arguments = {}
+    ├── keyword_arguments    = {}
     └── return  positional_arguments, keyword_arguments
         return (()                  , {}               )
-
 
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
   - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`.
@@ -5180,6 +5213,9 @@ the test passes.
          == (a_tuple, a_dictionary)
         )
 
+  .. code-block:: python
+    :lineno-start: 215
+
         a_tuple = (0, 1)
         a_dictionary = {'a': 2, 'b': 3, 'c': 4}
         assert (
@@ -5188,6 +5224,9 @@ the test passes.
             )
          == (a_tuple, a_dictionary)
         )
+
+  .. code-block:: python
+    :lineno-start: 224
 
         a_tuple = (0, 1, 2)
         a_dictionary = {'a': 3, 'b': 4, 'c': 5}
@@ -5198,17 +5237,26 @@ the test passes.
          == (a_tuple, a_dictionary)
         )
 
+  .. code-block:: python
+    :lineno-start: 233
+
         a_tuple = (0, 1, 2, 'n')
         assert (
             unknown_number_of_arguments(*a_tuple)
          == (a_tuple, {})
         )
 
+  .. code-block:: python
+    :lineno-start: 239
+
         a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
         assert (
             unknown_number_of_arguments(**a_dictionary)
          == ((), a_dictionary)
         )
+
+  .. code-block:: python
+    :lineno-start: 245
 
         assert (
             unknown_number_of_arguments()
