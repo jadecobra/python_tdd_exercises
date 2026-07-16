@@ -1104,7 +1104,7 @@ the test passes.
 
     add_x(number) -> 2 + number
 
-  Inside ``add_x`` when ``add_x(0)`` runs
+  When ``add_x(0)`` runs
 
   .. code-block:: shell
 
@@ -1588,7 +1588,7 @@ the test passes.
 
     positional_arguments(first_input, last_input) -> first_input, last_input
 
-  Inside ``positional_arguments`` when ``positional_arguments('first', 'last')`` runs
+  When ``positional_arguments('first', 'last')`` runs
 
   .. code-block:: shell
 
@@ -1640,7 +1640,7 @@ the test passes.
 
     positional_arguments(first_input, last_input) -> first_input, last_input
 
-  Inside ``positional_arguments`` when ``positional_arguments('last', 'first')`` runs
+  When ``positional_arguments('last', 'first')`` runs
 
   .. code-block:: shell
 
@@ -1794,7 +1794,7 @@ the test passes.
 
     positional_arguments(first_input, last_input) -> first_input, last_input
 
-  Inside ``positional_arguments`` when ``positional_arguments(0, 1)`` runs
+  When ``positional_arguments(0, 1)`` runs
 
   .. code-block:: shell
 
@@ -1897,7 +1897,7 @@ the test passes.
     a_tuple = (0, 1, 2, 'n')
     a_list = [0, 1, 2, 'n']
 
-  Inside ``positional_arguments`` when ``positional_arguments(a_tuple, a_list)`` runs
+  When ``positional_arguments(a_tuple, a_list)`` runs
 
   .. code-block:: shell
 
@@ -2312,7 +2312,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
     keyword_arguments(first_input, last_input) -> first_input, last_input
 
-  Inside ``keyword_arguments`` when ``keyword_arguments(first_input='first', last_input='last')`` runs
+  When ``keyword_arguments(first_input='first', last_input='last')`` runs
 
   .. code-block:: shell
 
@@ -2361,7 +2361,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
     keyword_arguments(first_input, last_input) -> first_input, last_input
 
-  Inside ``keyword_arguments`` when ``keyword_arguments(last_input='last', first_input='first')`` runs
+  When ``keyword_arguments(last_input='last', first_input='first')`` runs
 
   .. code-block:: shell
 
@@ -2504,7 +2504,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
   because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the :ref:`call<how to call a function with input>` in this :ref:`assertion<what is an assertion?>` sends ``0`` as ``last_input`` and ``1`` as ``first_input``, the order does not matter because I used the :ref:`names<test_keyword_arguments>`.
 
-  Inside ``keyword_arguments`` when ``keyword_arguments(last_input=0, first_input=1)`` runs
+  When ``keyword_arguments(last_input=0, first_input=1)`` runs
 
   .. code-block:: shell
 
@@ -2589,7 +2589,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
     a_tuple = (0, 1, 2, 'n')
     a_list = [0, 1, 2, 'n']
 
-  Inside ``keyword_arguments`` when ``keyword_arguments(first_input=a_list, last_input=a_tuple)`` runs
+  When ``keyword_arguments(first_input=a_list, last_input=a_tuple)`` runs
 
   .. code-block:: shell
 
@@ -2810,7 +2810,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
         a_set, a_dictionary,
     )
 
-  - Inside ``positional_arguments`` when ``positional_arguments(last_input=a_dictionary, first_input=a_set)`` runs
+  - When ``positional_arguments(last_input=a_dictionary, first_input=a_set)`` runs
 
     .. code-block:: shell
 
@@ -2825,7 +2825,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
       └── return first_input, last_input
           return a_set      , a_dictionary
 
-  - Inside ``positional_arguments`` when ``positional_arguments(a_set, a_dictionary)`` runs
+  - When ``positional_arguments(a_set, a_dictionary)`` runs
 
     .. code-block:: shell
 
@@ -2921,7 +2921,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
         first_input=a_set,
     )
 
-  - Inside ``keyword_arguments`` when ``keyword_arguments(a_set, a_dictionary)`` runs
+  - When ``keyword_arguments(a_set, a_dictionary)`` runs
 
     .. code-block:: shell
 
@@ -2933,7 +2933,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
       └── return first_input, last_input
           return a_set      , a_dictionary
 
-  - Inside ``keyword_arguments`` when ``keyword_arguments(last_input=a_dictionary, first_input=a_set)`` runs
+  - When ``keyword_arguments(last_input=a_dictionary, first_input=a_set)`` runs
 
     .. code-block:: shell
 
@@ -3333,6 +3333,10 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 
   the test passes.
 
+  .. code-block:: python
+
+    args_and_kwargs(first_input, last_input) -> first_input, last_input
+
 * I add :ref:`variables<what is a variable?>` for ``'first'`` and ``'last'``
 
   .. code-block:: python
@@ -3350,31 +3354,11 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 
         first, last = 'first', 'last'
 
-        assert (
-            args_and_kwargs(
-                # last_input='last', 'first',
-                'first', last_input='last',
-            )
-         == ('first', 'last')
-        )
-
-
-    # Exceptions seen
-
 * I use the new :ref:`variables<what is a variable?>` to remove repetition of ``'first'`` and ``'last'``
 
   .. code-block:: python
-    :lineno-start: 145
-    :emphasize-lines: 15-16
-
-    def test_args_and_kwargs():
-        # def args_and_kwargs():
-        # def args_and_kwargs(last_input):
-        # def args_and_kwargs(last_input, first_input):
-        # def args_and_kwargs(last_input, last_input):
-        def args_and_kwargs(first_input, last_input):
-            # return None
-            return first_input, last_input
+    :lineno-start: 154
+    :emphasize-lines: 6-7, 9-10
 
         first, last = 'first', 'last'
 
@@ -3447,14 +3431,8 @@ I can make an argument_ of a :ref:`function<what is a function?>` optional, whic
 * I add a test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 145
-    :emphasize-lines: 15-22
-
-    def test_args_and_kwargs():
-        def args_and_kwargs(first_input, last_input):
-            return first_input, last_input
-
-        first, last = 'first', 'last'
+    :lineno-start: 151
+    :emphasize-lines: 9-16
 
         assert (
             args_and_kwargs(
@@ -3584,15 +3562,39 @@ the test passes.
 
   .. code-block:: python
 
-    optional_arguments('jane')
     optional_arguments(first_input, last_input='doe')
+                   -> (first_input, last_input      )
 
-  is the same as
+  it means these two calls are the same
 
   .. code-block:: python
 
-    optional_arguments('jane'     , last_input='doe')
-    optional_arguments(first_input, last_input='doe')
+    optional_arguments('jane')
+    optional_arguments('jane', last_input='doe')
+
+  - When ``optional_arguments('jane')`` runs
+
+    .. code-block:: shell
+
+      optional_arguments('jane')
+
+      def optional_arguments(first_input, last_input='doe')
+      ├── first_input = 'jane'
+      ├── last_input  = 'doe'
+      └── return first_input, last_input
+          return 'jane'     , 'doe'
+
+  - When ``optional_arguments(first_input, last_input='doe')`` runs
+
+    .. code-block:: shell
+
+      optional_arguments('jane', last_input='doe')
+
+      def optional_arguments(first_input, last_input='doe')
+      ├── first_input = 'jane'
+      ├── last_input  = 'doe'
+      └── return first_input, last_input
+          return 'jane'     , 'doe'
 
   :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
@@ -3645,7 +3647,30 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes.
+  the test passes
+
+  .. code-block:: python
+
+    optional_arguments(first_input, last_input='doe')
+                   -> (first_input, last_input      )
+
+  .. code-block:: python
+
+    first_name, blow = 'joe', 'blow'
+
+  When ``optional_arguments(first_name, blow)`` runs
+
+  .. code-block:: shell
+    :emphasize-lines: 5
+    :emphasize-text: blow
+
+    optional_arguments(first_name, last_name)
+
+    def optional_arguments(first_input, last_input='doe')
+    ├── first_input = first_name
+    ├── last_input  = blow # because a value is given in the call
+    └── return first_input, last_input
+        return 'joe'     , 'blow'
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -3788,6 +3813,9 @@ the test passes.
          == (first_name, last_name)
         )
 
+  .. code-block:: python
+    :lineno-start: 174
+
         first_name, blow = 'joe', 'blow'
         assert (
             optional_arguments(
@@ -3796,6 +3824,9 @@ the test passes.
          == (first_name, blow)
         )
 
+  .. code-block:: python
+    :lineno-start: 182
+
         first_name = 'john'
         assert (
             optional_arguments(
@@ -3803,6 +3834,9 @@ the test passes.
             )
          == (first_name, last_name)
         )
+
+  .. code-block:: python
+    :lineno-start: 190
 
         last_name = 'smith'
         assert (
@@ -3853,13 +3887,13 @@ are the same, they always ``return first_input, last_input``, their names are di
   :emphasize-text: last
 
   positional_arguments('first', 'last')
-               return 'first', 'last'
+             -> return 'first', 'last'
 
 .. code-block:: python
   :emphasize-text: last
 
   positional_arguments('last', 'first')
-                return 'last', 'first'
+             -> return 'last', 'first'
 
 .. code-block:: python
   :emphasize-text: last
@@ -3867,49 +3901,49 @@ are the same, they always ``return first_input, last_input``, their names are di
   positional_arguments(
       first_input=[0, 1, 2, 'n'], last_input=(0, 1, 2, 'n')
   )
-      return [0, 1, 2, 'n'], (0, 1, 2, 'n')
+   -> return [0, 1, 2, 'n'], (0, 1, 2, 'n')
 
 .. code-block:: python
   :emphasize-text: last
 
   keyword_arguments(first_input='first', last_input='last')
-            return 'first'             , 'last'
+         -> return 'first'             , 'last'
 
 .. code-block:: python
   :emphasize-text: last
 
   keyword_arguments(last_input='last', first_input='first')
-              return 'first', 'last'
+          -> return 'first', 'last'
 
 .. code-block:: python
   :emphasize-text: last
 
   keyword_arguments('last', 'first')
-             return 'last', 'first'
+          -> return 'last', 'first'
 
 .. code-block:: python
   :emphasize-text: last
 
   args_and_kwargs('first', last_input='last')
-           return 'first', 'last'
+        -> return 'first', 'last'
 
 .. code-block:: python
   :emphasize-text: last
 
   optional_arguments('jane', last_input='doe')
-              return 'jane', 'doe'
+           -> return 'jane', 'doe'
 
 .. code-block:: python
   :emphasize-text: last
 
   optional_arguments('jane')
-              return 'jane', 'doe'
+           -> return 'jane', 'doe'
 
 .. code-block:: python
   :emphasize-text: last
 
   optional_arguments('joe', 'blow')
-              return 'joe', 'blow'
+           -> return 'joe', 'blow'
 
 .. code-block:: python
   :emphasize-text: last
@@ -3917,7 +3951,7 @@ are the same, they always ``return first_input, last_input``, their names are di
   optional_arguments(
       first_input='john', last_input='smith'
   )
-      return 'john', 'smith'
+   -> return 'john', 'smith'
 
 .. tip::
 
@@ -5299,4 +5333,4 @@ If this has been a 7 star experience for you, please `CLICK HERE to leave a 5 st
   <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69141d0f0902d6a2a1b2436b" data-style-height="52px" data-style-width="100%" data-token="5db17dde-bcdc-460f-81f3-d8ab689b6e4d">
     <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">CLICK HERE to leave a 5 star review of pumping python, if this has been a 7 star experience for you</a>
   </div>
-  <!-- End TrustBox widget -->
+  <!-- End TrustBox widget -->s
