@@ -67,6 +67,7 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../code/functions/tests/test_functions_w_input.py
   :language: python
   :linenos:
+  :caption: functions/tests/test_functions.py
 
 *********************************************************************************
 questions about functions that take input

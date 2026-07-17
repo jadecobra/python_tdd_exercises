@@ -21,6 +21,7 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../../code/tests/test_exceptions.py
   :language: python
   :linenos:
+  :caption: exceptions/tests/test_exceptions.py
 
 ----
 

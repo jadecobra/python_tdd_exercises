@@ -25,6 +25,7 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../../code/type_error/tests/test_type_error_w_classes.py
   :language: python
   :linenos:
+  :caption: type_error/tests/test_type_error.py
 
 *********************************************************************************
 questions about TypeError with classes
@@ -1023,7 +1024,7 @@ Is every :ref:`object callable<how to make a function>`?
     TypeError: 'NoneType' object is not callable
 
   - the ``()`` to the right of ``src.type_error.none`` makes it a call
-  - the name ``none`` points to :ref:`None<what is None?>` which is NOT :ref:`callable<how to make a function>`. Using substitution 
+  - the name ``none`` points to :ref:`None<what is None?>` which is NOT :ref:`callable<how to make a function>`. Using substitution
 
     .. code-block:: python
 

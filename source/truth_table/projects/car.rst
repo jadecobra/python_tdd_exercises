@@ -35,6 +35,7 @@ These are the tests I have at the end of the chapter
 .. literalinclude:: ../../code/truth_table/tests/test_car.py
   :language: python
   :linenos:
+  :caption: truth_table/tests/test_car.py
 
 ----
 

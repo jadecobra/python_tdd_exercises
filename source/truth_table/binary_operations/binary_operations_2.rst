@@ -33,6 +33,7 @@ These are the tests I have at the end of the chapter
 .. literalinclude:: ../../code/truth_table/tests/test_binary_2.py
   :language: python
   :linenos:
+  :caption: truth_table/tests/test_binary.py
 
 ----
 

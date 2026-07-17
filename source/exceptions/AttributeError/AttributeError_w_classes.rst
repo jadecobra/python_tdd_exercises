@@ -25,6 +25,7 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../../code/attribute_error/tests/test_attribute_error_w_classes.py
   :language: python
   :linenos:
+  :caption: attribute_error/tests/test_attribute_error.py
 
 ----
 

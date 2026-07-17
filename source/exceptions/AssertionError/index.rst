@@ -46,6 +46,7 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../../code/assertion_error/test_assertion_error.py
   :language: python
   :linenos:
+  :caption: assertion_error/tests/test_assertion_error.py
 
 *********************************************************************************
 questions about AssertionError

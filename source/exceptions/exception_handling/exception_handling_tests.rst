@@ -31,6 +31,7 @@ I have these tests by the end of the chapter
   :language: python
   :linenos:
   :lines: 1-40
+  :caption: exceptions/tests/test_exceptions.py
 
 ----
 

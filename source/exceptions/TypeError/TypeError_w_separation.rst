@@ -25,6 +25,7 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../../code/type_error/tests/test_type_error_w_separation.py
   :language: python
   :linenos:
+  :caption: type_error/tests/test_type_error.py
 
 ----
 

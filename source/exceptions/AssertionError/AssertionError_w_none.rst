@@ -23,6 +23,7 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../../code/assertion_error/test_assertion_error_w_none.py
   :language: python
   :linenos:
+  :caption: assertion_error/tests/test_assertion_error.py
 
 ----
 

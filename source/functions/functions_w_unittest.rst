@@ -21,6 +21,7 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../code/functions/tests/test_functions_w_unittest.py
   :language: python
   :linenos:
+  :caption: functions/tests/test_functions.py
 
 ----
 

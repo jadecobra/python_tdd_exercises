@@ -30,6 +30,7 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../../code/module_not_found_error/test_module_not_found_error.py
   :language: python
   :linenos:
+  :caption: module_not_found_error/tests/test_module_not_found_error.py
 
 ----
 

@@ -18,23 +18,40 @@ preview
 
 These are the tests I have at the end of the chapters
 
-* Traffic Light Tests
-
-  .. literalinclude:: ../../code/truth_table/tests/test_traffic_light.py
-    :language: python
-    :linenos:
-
 * Automated Teller Machine Tests
 
   .. literalinclude:: ../../code/truth_table/tests/test_atm.py
     :language: python
     :linenos:
+    :caption: atm/tests/test_atm.py
+
+* Car Tests
+
+  .. literalinclude:: ../../code/truth_table/tests/test_car.py
+    :language: python
+    :linenos:
+    :caption: car/tests/test_car.py
+
+* Elevator Tests
+
+  .. literalinclude:: ../../code/truth_table/tests/test_elevator.py
+    :language: python
+    :linenos:
+    :caption: elevator/tests/test_elevator.py
 
 * Microwave Tests
 
   .. literalinclude:: ../../code/truth_table/tests/test_microwave.py
     :language: python
     :linenos:
+    :caption: microwave/tests/test_microwave.py
+
+* Traffic Light Tests
+
+  .. literalinclude:: ../../code/truth_table/tests/test_traffic_light.py
+    :language: python
+    :linenos:
+    :caption: traffic_light/tests/test_traffic_light.py
 
 ----
 
@@ -45,11 +62,11 @@ the projects
 .. toctree::
   :titlesonly:
 
-  Traffic Light<traffic_light>
   Automated Teller Machine<atm>
-  Microwave<microwave>
   Car Starter<car>
   Elevator<elevator>
+  Microwave<microwave>
+  Traffic Light<traffic_light>
 
 ----
 

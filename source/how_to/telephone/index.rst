@@ -47,6 +47,7 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../../code/telephone/tests/test_telephone.py
   :language: python
   :linenos:
+  :caption: telephone/tests/test_telephone.py
 
 ----
 

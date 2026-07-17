@@ -49,6 +49,7 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../code/functions/tests/test_functions_what_is_a_function.py
   :language: python
   :linenos:
+  :caption: functions/tests/test_functions.py
 
 *********************************************************************************
 questions about functions

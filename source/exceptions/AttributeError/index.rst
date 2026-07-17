@@ -33,6 +33,7 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../../code/attribute_error/tests/test_attribute_error.py
   :language: python
   :linenos:
+  :caption: attribute_error/tests/test_attribute_error.py
 
 *********************************************************************************
 questions about AttributeError

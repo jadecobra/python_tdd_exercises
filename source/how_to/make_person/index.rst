@@ -30,6 +30,7 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../../code/person/tests/test_person_w_strings.py
   :language: python
   :linenos:
+  :caption: person/tests/test_person.py
 
 -----
 
