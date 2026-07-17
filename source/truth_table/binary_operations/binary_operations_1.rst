@@ -1,5 +1,5 @@
 .. meta::
-  :description: Truth table Binary Operations 1 in Python for beginners using TDD in the truth_table project. Rename test_truth_table.py to test_binary.py and implement the first four of sixteen binary operations—contradiction (always False), logical_conjunction (AND: first and second), project_second (returns second input), converse_non_implication (not first and second)—each tested with four assertTrue/assertFalse pairs for TT/TF/FT/FF inputs. Red-Green-Refactor through AttributeError module has no attribute, TypeError takes 0 positional arguments but 2 were given, AssertionError True is not false and False is not true. Learn if statements, nested if vs the and operator, conditional expressions (ternary operator), and bool() truthy/falsy refactoring. Real-world examples: broken light switch, voting eligibility, MFA password+code login, discount for new customer with coupon. Preview test_binary_1.py. Requires Nullary and Unary Operations. Jacob Itegboje Pumping Python.
+  :description: Truth table Binary Operations 1 in Python for beginners using TDD in the truth_table project. Create tests/test_binary.py (touch/New-Item) and implement the first four of sixteen binary operations—contradiction (always False), logical_conjunction (AND: first and second), project_second (returns second input), converse_non_implication (not first and second)—each tested with four assertTrue/assertFalse pairs for TT/TF/FT/FF inputs. Red-Green-Refactor through AttributeError module has no attribute, TypeError takes 0 positional arguments but 2 were given, AssertionError True is not false and False is not true. Learn if statements, nested if vs the and operator, conditional expressions (ternary operator), and bool() truthy/falsy refactoring. Real-world examples: broken light switch, voting eligibility, MFA password+code login, discount for new customer with coupon. Preview test_binary_1.py. Requires Nullary and Unary Operations. Jacob Itegboje Pumping Python.
   :keywords: Jacob Itegboje, Pumping Python, truth table Binary Operations 1, python binary operations tutorial, test_binary_1.py, contradiction always False, logical_conjunction AND first and second, project_second returns second input, converse_non_implication not first and second, TDD red green refactor truth table, AttributeError module has no attribute contradiction, TypeError takes 0 positional arguments but 2 were given, AssertionError True is not false, AssertionError False is not true, python if statement nested if, python and operator vs nested if, conditional expression ternary operator, bool truthy falsy refactor, assertTrue assertFalse four input combinations, broken light switch logic, voting eligibility truth table, MFA multi-factor authentication logic, new customer coupon discount rule, programming truth tables beginners, boolean logic gates python unittest
 
 .. include:: ../../links.rst
@@ -234,7 +234,7 @@ first input     second input   return
 
   because the test called the :ref:`contradiction function<test_contradiction>` with two arguments (:green:`True` and :green:`True`) and the :ref:`definition<how to make a function>` does not allow any arguments (the parentheses are empty).
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` , in ``test_truth_table.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` , in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -730,8 +730,8 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
   .. code-block:: python
 
 
-    assertFalse(src.truth_table.logical_conjunction(True, True))
-    assertFalse(True                                           )
+    assertFalse(src.truth_table.logical_conjunction(True, False))
+    assertFalse(True                                            )
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_binary.py``
 
@@ -1236,7 +1236,7 @@ conditional expressions
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 15-16, 18-43
+    :emphasize-lines: 15-16, 18-24
 
     def logical_conjunction(first_input, second_input):
         # return False
@@ -1354,7 +1354,7 @@ conditional expressions
     def logical_conjunction(first_input, second_input):
         return first_input and second_input
 
-* I add a :ref:`variable<what is a variable?>` for ``src.truth_table.logical_conjunction`` in :ref:`test_logical_conjunction` of ``test_truth_table.py``
+* I add a :ref:`variable<what is a variable?>` for ``src.truth_table.logical_conjunction`` in :ref:`test_logical_conjunction` of ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 14
@@ -2177,7 +2177,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   - :green:`True` if the first input is :red:`False`
   - :red:`False` if the above condition is NOT met
 
-  because Python_ checks if ``first_input`` is equal to as :red:`False`, when the :ref:`converse_non_implication function<test_converse_non_implication>` is :ref:`called<how to call a function with input>`. When ``if first_input == False:`` runs
+  because Python_ checks if ``first_input`` is equal to :red:`False`, when the :ref:`converse_non_implication function<test_converse_non_implication>` is :ref:`called<how to call a function with input>`. When ``if first_input == False:`` runs
 
   - if ``first_input`` is NOT equal to :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
@@ -2682,7 +2682,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   I can use either of these two :ref:`return statements<the return statement>`. Only the first one will run in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
-* I add a :ref:`variable<what is a variable?>` for ``src.truth_table.converse_non_implication`` in ``test_truth_table.py``
+* I add a :ref:`variable<what is a variable?>` for ``src.truth_table.converse_non_implication`` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 38
@@ -2780,6 +2780,9 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
 
     # Exceptions seen
+    # AttributeError
+    # TypeError
+    # AssertionError
 
 * I add a git_ commit message in the other terminal_
 

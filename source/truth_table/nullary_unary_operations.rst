@@ -882,7 +882,7 @@ not the_input   :red:`False`  :green:`True` :ref:`logical_negation (NOT)<test_lo
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed for Nullary and Unary Operations?<Nullary and Unary Operations tests>`
+:ref:`Do you want to see all the CODE I typed for Nullary and Unary Operations?<Nullary and Unary Operations: tests and solutions>`
 
 ----
 
