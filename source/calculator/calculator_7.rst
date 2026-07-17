@@ -843,7 +843,7 @@ test calculator with dictionary values
 
 ----
 
-I can use the :ref:`values method of dictionaries<test_values_of_a_dictionary>` to make a :ref:`list<lists>` to test the :ref:`calculator<how to make a calculator>` in :ref:`test_calculator_w_list_items`
+I can use the :ref:`values method of dictionaries<test_values_of_a_dictionary>` to make a :ref:`list<what is a list?>` to test the :ref:`calculator<how to make a calculator>` in :ref:`test_calculator_w_list_items`
 
 .. code-block:: python
   :lineno-start: 58
@@ -2532,7 +2532,7 @@ what is next?
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
-* :ref:`what you can do with Lists<lists>`
+* :ref:`what you can do with Lists<what is a list?>`
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`what you can do with dictionaries<dictionaries>`
 

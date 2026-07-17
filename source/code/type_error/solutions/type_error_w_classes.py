@@ -1,3 +1,15 @@
+def none(): return None
+def false(): return False
+def true(): return True
+def an_integer(): return 1234
+def a_float(): return 5.678
+def a_string(): return 'a string'
+def a_tuple(): return (0, 1, 2, 'n')
+def a_list(): return [0, 1, 2, 'n']
+def a_set(): return {0, 1, 2, 'n'}
+def a_dictionary(): return {'key': 'value'}
+
+
 def function_00(the_input):
     return None
 
@@ -13,7 +25,7 @@ def function_02(
 
 
 def function_03(
-    first, second, third, fourth
+    first, second, third, fourth,
 ):
     return None
 

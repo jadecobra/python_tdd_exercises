@@ -17,7 +17,7 @@ what is a dictionary?
 
 A dictionary_ also known as a Mapping is a way to keep :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`, the :ref:`values<test_values_of_a_dictionary>` can be any :ref:`Python object<everything is an object>`. I add tests to see which of :ref:`the Python basic data types<basic objects>` I can use as :ref:`keys<test_keys_of_a_dictionary>` .
 
-I think this is the most important :ref:`data structure<basic objects>` because it can hold all the other :ref:`data structures`, same as with :ref:`lists<lists>` and tuples_. In programming I have had to work with JSON_ which I can read and write as dictionaries_
+I think this is the most important :ref:`data structure<basic objects>` because it can hold all the other :ref:`data structures`, same as with :ref:`lists<what is a list?>` and tuples_. In programming I have had to work with JSON_ which I can read and write as dictionaries_
 
 ----
 

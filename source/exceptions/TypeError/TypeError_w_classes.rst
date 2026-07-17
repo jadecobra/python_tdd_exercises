@@ -873,12 +873,18 @@ because ``AClass`` is not defined in ``type_error.py``.
         @staticmethod
         def method_01(): return None
 
+  .. code-block:: python
+    :lineno-start: 52
+
         def method_02(self):
             return self.method_01()
 
         @staticmethod
         def method_03():
             return AClass().method_02()
+
+  .. code-block:: python
+    :lineno-start: 59
 
         @staticmethod
         def method_04():
@@ -887,11 +893,17 @@ because ``AClass`` is not defined in ``type_error.py``.
         def method_05(self):
             return self.method_02()
 
+  .. code-block:: python
+    :lineno-start: 66
+
         def method_06(self):
             return self.method_01()
 
         def method_07(self):
             return self.method_00()
+
+  .. code-block:: python
+    :lineno-start: 72
 
         def method_08(self):
             return self.method_04()
@@ -918,11 +930,6 @@ because ``AClass`` is not defined in ``type_error.py``.
 
 
     # Exceptions seen
-    # AssertionError
-    # NameError
-    # TypeError
-    # ModuleNotFoundError
-    # AttributeError
 
 * I open a new terminal_ then make sure I am in the ``type_error`` folder_
 
@@ -955,25 +962,21 @@ There are :ref:`objects<everything is an object>` that can NOT be called
 
 ----
 
-* I add an `import statement`_ at the top of ``test_type_error.py``
+* I go back to the terminal_ that is running the tests.
+* I add a test to ``test_type_error.py``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
+    :lineno-start: 100
+    :emphasize-lines: 4-5
 
-    import src.type_error
-    import unittest
+        src.type_error.AClass().method_09()
 
-* I change :ref:`test_failure` to ``test_type_error_w_the_uncallables`` with a failing line
 
-  .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 3-4
+    def test_type_error_w_the_uncallables():
+        src.type_error.none()
 
-    class TestTypeError(unittest.TestCase):
 
-        def test_type_error_w_the_uncallables(self):
-            src.type_error.none()
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -981,17 +984,7 @@ There are :ref:`objects<everything is an object>` that can NOT be called
 
     AttributeError: module 'src.type_error' has no attribute 'none'
 
-  there is nothing in ``type_error.py`` in the ``src`` folder_ yet
-
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
-
-  .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 3
-
-    # Exceptions seen
-    # AssertionError
-    # AttributeError
+  there is nothing named ``none`` in ``type_error.py`` in the ``src`` folder_ yet
 
 ----
 
@@ -1001,7 +994,7 @@ There are :ref:`objects<everything is an object>` that can NOT be called
 
 ----
 
-* I open ``type_error.py`` from the ``src`` folder_ of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None<what is None?>`
+* I add ``none`` and point it to :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:
@@ -1016,20 +1009,15 @@ There are :ref:`objects<everything is an object>` that can NOT be called
     TypeError: 'NoneType' object is not callable
 
   - the ``()`` to the right of ``src.type_error.none`` makes it a call
-  - the name ``none`` points to :ref:`None<what is None?>` which is NOT :ref:`callable<how to make a function>`
+  - the name ``none`` points to :ref:`None<what is None?>` which is NOT :ref:`callable<how to make a function>`. Using substitution
 
-  :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
+    .. code-block:: python
 
-* I add TypeError_ to the list of :ref:`Exceptions<errors>` seen in ``test_type_error.py``
+      none = None   # point the name to the object
+      none()        # call the name
+      None()        # substitute the value for the name
 
-  .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 4
-
-    # Exceptions seen
-    # AssertionError
-    # AttributeError
-    # TypeError
+    ``None()`` raises :ref:`TypeError<what causes TypeError?>` because :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
 * I make ``none`` a :ref:`function<what is a function?>` in ``type_error.py`` to make it :ref:`callable<how to make a function>`
 
@@ -1037,7 +1025,11 @@ There are :ref:`objects<everything is an object>` that can NOT be called
     :linenos:
     :emphasize-lines: 1-2
 
-    def none():
+    # none = None
+    def none(): return None
+
+
+    def function_00(the_input):
         return None
 
   the test passes.
@@ -1052,423 +1044,15 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
 ----
 
-* I add another failing line to ``test_type_error.py``
+* I add an :ref:`assertion<what is an assertion?>` for ``false`` to ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 90
     :emphasize-lines: 3
 
-        def test_type_error_w_the_uncallables(self):
-            src.type_error.none()
-            src.type_error.false()
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: shell
-
-    AttributeError: module 'src.type_error' has no attribute 'false'
-
-  nothing is named ``false`` in ``type_error.py``
-
-* I add the name to ``type_error.py`` and point it to :ref:`False<test_what_is_false>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5
-
-    def none():
-        return None
-
-
-    false = False
-
-  the terminal_ is my friend, and shows TypeError_
-
-  .. code-block:: shell
-
-    TypeError: 'bool' object is not callable
-
-  :ref:`I cannot call a boolean like a function<test_type_error_w_the_uncallables>`
-
-* I change the :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4-5
-
-    def none():
-        return None
-
-    def false():
-        return False
-
-  the test is green again
-
-* I add a line to test the other :ref:`boolean<what are booleans?>` in ``test_type_error.py``
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 4
-
-        def test_type_error_w_the_uncallables(self):
-            src.type_error.none()
-            src.type_error.false()
-            src.type_error.true()
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: shell
-
-    AttributeError: module 'src.type_error' has no attribute 'true'
-
-  there is nothing named ``true`` in ``type_error.py``
-
-* I add the name and point it to :ref:`True<test_what_is_true>` in ``type_error.py``
-
-  .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 5
-
-    def false():
-        return False
-
-
-    true = True
-
-  the terminal_ is my friend, and shows TypeError_
-
-  .. code-block:: shell
-
-    TypeError: 'bool' object is not callable
-
-* I make it a :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 5-6
-
-    def false():
-        return False
-
-
-    def true():
-        return True
-
-  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a boolean or None<test_type_error_w_the_uncallables>`
-
-* I add a line that will fail to ``test_type_error.py``
-
-  .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 4
-
-            src.type_error.none()
-            src.type_error.false()
-            src.type_error.true()
-            src.type_error.an_integer()
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: shell
-
-    AttributeError: module 'src.type_error' has no attribute 'an_integer'
-
-* I add the name and point it to an integer_ in ``type_error.py``
-
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 5
-
-    def true():
-        return True
-
-
-    an_integer = 1234
-
-  the terminal_ is my friend, and shows TypeError_
-
-* I change the :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 5-6
-
-    def true():
-        return True
-
-
-    def an_integer():
-        return 1234
-
-  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call an integer, a boolean or None<test_type_error_w_the_uncallables>`
-
-* I add a line for a float_ in ``test_type_error.py``
-
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 4
-
-            src.type_error.false()
-            src.type_error.true()
-            src.type_error.an_integer()
-            src.type_error.a_float()
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: shell
-
-    AttributeError: module 'src.type_error' has no attribute 'a_float'
-
-* I add the name and point it to a float_ in ``type_error.py``
-
-  .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 5
-
-    def an_integer():
-        return 1234
-
-
-    a_float = 1.234
-
-  the terminal_ is my friend, and shows TypeError_
-
-  .. code-block:: shell
-
-    TypeError: 'float' object is not callable
-
-* I make ``a_float`` a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
-
-  .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 5-6
-
-    def an_integer():
-        return 1234
-
-
-    def a_float():
-        return 1.234
-
-  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a float, integer, boolean or None<test_type_error_w_the_uncallables>`
-
-* I add a line for a string_ (anything in :ref:`quotes`) in ``test_type_error.py``
-
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 4
-
-            src.type_error.true()
-            src.type_error.an_integer()
-            src.type_error.a_float()
-            src.type_error.a_string()
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: shell
-
-    AttributeError: module 'src.type_error' has no attribute 'a_string'
-
-* I add the name and point it to a string_ in ``type_error.py``
-
-  .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 5
-
-    def a_float():
-        return 1.234
-
-
-    a_string = 'a string'
-
-  the terminal_ is my friend, and shows TypeError_
-
-  .. code-block:: shell
-
-    TypeError: 'str' object is not callable
-
-* I change ``a_string`` to a :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 5-6
-
-    def a_float():
-        return 1.234
-
-
-    def a_string():
-        return 'a string'
-
-  the test passes. I can call a :ref:`function<what is a function?>`. :ref:`I cannot call a string, float, integer, boolean or None<test_type_error_w_the_uncallables>`
-
-* I add a failing line for a tuple_ (anything in parentheses ``()``, separated by a comma) in ``test_type_error.py``
-
-  .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 4
-
-            src.type_error.an_integer()
-            src.type_error.a_float()
-            src.type_error.a_string()
-            src.type_error.a_tuple()
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: shell
-
-    AttributeError: module 'src.type_error' has no attribute 'a_tuple'
-
-* I add the name and point it to a tuple_ in ``type_error.py``
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 5
-
-    def a_string():
-        return 'a string'
-
-
-    a_tuple = (0, 1, 2, 'n')
-
-  the terminal_ is my friend, and shows TypeError_
-
-  .. code-block:: shell
-
-    TypeError: 'tuple' object is not callable
-
-* I change it to a :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 5-6
-
-    def a_string():
-        return 'a string'
-
-
-    def a_tuple():
-        return (0, 1, 2, 'n')
-
-  the test passes. I can call a :ref:`function<what is a function?>`. :ref:`I cannot call a tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`
-
-* I add another line to ``test_type_error.py``
-
-  .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 4
-
-            src.type_error.a_float()
-            src.type_error.a_string()
-            src.type_error.a_tuple()
-            src.type_error.a_list()
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: shell
-
-    AttributeError: module 'src.type_error' has no attribute 'a_list'
-
-* I add the name and point it to a :ref:`list<lists>` (anything in square brackets (``[]``) in ``type_error.py``
-
-  .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 5
-
-    def a_tuple():
-        return (0, 1, 2, 'n')
-
-
-    a_list = [0, 1, 2, 'n']
-
-  the terminal_ is my friend, and shows TypeError_
-
-  .. code-block:: shell
-
-    TypeError: 'list' object is not callable
-
-* I change ``a_list`` to a :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 5-6
-
-    def a_tuple():
-        return (0, 1, 2, 'n')
-
-
-    def a_list():
-        return [0, 1, 2, 'n']
-
-  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`
-
-* I add another failing line to ``test_type_error.py``
-
-  .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 4
-
-            src.type_error.a_string()
-            src.type_error.a_tuple()
-            src.type_error.a_list()
-            src.type_error.a_set()
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: shell
-
-    AttributeError: module 'src.type_error' has no attribute 'a_set'
-
-* I add the name and point it to a set_ in ``type_error.py``
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 5
-
-    def a_list():
-        return [0, 1, 2, 'n']
-
-
-    a_set = {0, 1, 2, 'n'}
-
-  the terminal_ is my friend, and shows TypeError_
-
-  .. code-block:: shell
-
-    TypeError: 'set' object is not callable
-
-* I make it a :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 5-6
-
-    def a_list():
-        return [0, 1, 2, 'n']
-
-
-    def a_set():
-        return {0, 1, 2, 'n'}
-
-  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a set, list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`
-
-* I add the last failing line for this test to ``test_type_error.py``
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 11
-
-        def test_type_error_w_the_uncallables(self):
-            src.type_error.none()
-            src.type_error.false()
-            src.type_error.true()
-            src.type_error.an_integer()
-            src.type_error.a_float()
-            src.type_error.a_string()
-            src.type_error.a_tuple()
-            src.type_error.a_list()
-            src.type_error.a_set()
-            src.type_error.a_dictionary()
+    def test_type_error_w_the_uncallables():
+        src.type_error.none()
+        src.type_error.false()
 
 
     # Exceptions seen
@@ -1477,19 +1061,561 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
   .. code-block:: shell
 
-    AttributeError: module 'src.type_error' has no attribute 'a_dictionary'
+    AttributeError: module 'src.type_error'
+                    has no attribute 'false'
 
-* I add the name and point it to a :ref:`dictionary<what is a dictionary?>` in ``type_error.py``
+  ``false`` is not in ``type_error.py``
+
+* I add ``false`` to ``type_error.py`` and point it to :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 5
+    :linenos:
+    :emphasize-lines: 3
 
-    def a_set():
-        return {0, 1, 2, 'n'}
+    # none = None
+    def none(): return None
+    false = False
 
 
+    def function_00(the_input):
+        return None
+
+  the terminal_ is my friend, and shows TypeError_
+
+  .. code-block:: shell
+
+    TypeError: 'bool' object is not callable
+
+  ``false`` points to :ref:`False<test_what_is_false>` which is NOT :ref:`callable<how to make a function>`. Using substitution
+
+  .. code-block:: python
+
+    false = False
+    false()
+    False()
+
+  ``False()`` raises :ref:`TypeError<what causes TypeError?>` because :ref:`I cannot call a boolean like a function<test_type_error_w_the_uncallables>`
+
+* I change ``false`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3-4
+
+    # none = None
+    def none(): return None
+    # false = False
+    def false(): return False
+
+
+    def function_00(the_input):
+        return None
+
+  the test is green again.
+
+* I add an :ref:`assertion<what is an assertion>` for the other :ref:`boolean<what are booleans?>` to ``test_type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 103
+    :emphasize-lines: 4
+
+    def test_type_error_w_the_uncallables():
+        src.type_error.none()
+        src.type_error.false()
+        src.type_error.true()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.type_error'
+                    has no attribute 'true'
+
+  there is nothing named ``true`` in ``type_error.py``
+
+* I add ``true`` and point it to :ref:`True<test_what_is_true>` in ``type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 3
+    :emphasize-lines: 3
+
+    # false = False
+    def false(): return False
+    true = True
+
+
+    def function_00(the_input):
+        return None
+
+  the terminal_ is my friend, and shows TypeError_
+
+  .. code-block:: shell
+
+    TypeError: 'bool' object is not callable
+
+* I change ``true`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
+
+  .. code-block:: python
+    :lineno-start: 3
+    :emphasize-lines: 3-4
+
+    # false = False
+    def false(): return False
+    # true = True
+    def true(): return True
+
+
+    def function_00(the_input):
+        return None
+
+  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a boolean or None<test_type_error_w_the_uncallables>`
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>` for an integer_, to ``test_type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 105
+    :emphasize-lines: 3
+
+        src.type_error.false()
+        src.type_error.true()
+        src.type_error.an_integer()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.type_error'
+                    has no attribute 'an_integer'
+
+* I add ``an_integer`` and point it to ``1234`` in ``type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 3
+
+    # true = True
+    def true(): return True
+    an_integer = 1234
+
+
+    def function_00(the_input):
+        return None
+
+  the terminal_ is my friend, and shows TypeError_
+
+  .. code-block:: python
+
+    TypeError: 'int' object is not callable
+
+  the name ``an_integer`` points to an integer_ (``1234``) which is NOT :ref:`callable<how to make a function>`. Using substitution
+
+  .. code-block:: python
+
+    an_integer = 1234  # point the name to the object
+    an_integer()       # call the name
+    1234()             # substitute the value for the name
+
+  ``1234()`` raises :ref:`TypeError<what causes TypeError?>` because :ref:`I cannot call an integer like a function<test_type_error_w_the_uncallables>`.
+
+* I change ``an_integer`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 3-4
+
+    # true = True
+    def true(): return True
+    # an_integer = 1234
+    def an_integer(): return 1234
+
+
+    def function_00(the_input):
+        return None
+
+  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call an integer, a boolean or None<test_type_error_w_the_uncallables>`.
+
+* I add an :ref:`assertion<what is an assertion?>` for a float_ to ``test_type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 106
+    :emphasize-lines: 3
+
+        src.type_error.true()
+        src.type_error.an_integer()
+        src.type_error.a_float()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.type_error'
+                    has no attribute 'a_float'
+
+* I add ``a_float`` and point it to ``5.678`` in ``type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 3
+
+    # an_integer = 1234
+    def an_integer(): return 1234
+    a_float = 5.678
+
+
+    def function_00(the_input):
+        return None
+
+  the terminal_ is my friend, and shows TypeError_
+
+  .. code-block:: shell
+
+    TypeError: 'float' object is not callable
+
+  ``a_float`` points to a float_ (``5.678``) which is NOT :ref:`callable<how to make a function>`. Using substitution
+
+  .. code-block:: python
+
+    a_float = 5.678
+    a_float()
+    5.678()
+
+  ``5.678()`` raises :ref:`TypeError<what causes TypeError?>` because :ref:`I cannot call a float like a function<test_type_error_w_the_uncallables>`.
+
+* I change ``a_float`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 3-4
+
+    # an_integer = 1234
+    def an_integer(): return 1234
+    # a_float = 5.678
+    def a_float(): return 5.678
+
+
+    def function_00(the_input):
+        return None
+
+  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a float, integer, boolean or None<test_type_error_w_the_uncallables>`.
+
+* I add an :ref:`assertion<what is an assertion?>` for a string_ (anything in :ref:`quotes`) to ``test_type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 3
+
+        src.type_error.an_integer()
+        src.type_error.a_float()
+        src.type_error.a_string()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.type_error'
+                    has no attribute 'a_string'
+
+* I add ``a_string`` and point it to ``'a string'`` in ``type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 3
+
+    # a_float = 5.678
+    def a_float(): return 5.678
+    a_string = 'a string'
+
+
+    def function_00(the_input):
+        return None
+
+  the terminal_ is my friend, and shows TypeError_
+
+  .. code-block:: shell
+
+    TypeError: 'str' object is not callable
+
+  the name ``a_string`` points to a string_ (``'a string'``) which is NOT :ref:`callable<how to make a function>`. Using substitution
+
+  .. code-block:: python
+
+    a_string = 'a string' # point the name to the object
+    a_string()            # call the name
+    'a string'()          # substitute the value for the name
+
+  ``'a string'()`` raises :ref:`TypeError<what causes TypeError?>` because :ref:`I cannot call a string like a function<test_type_error_w_the_uncallables>`.
+
+* I change ``a_string`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 3-4
+
+    # a_float = 5.678
+    def a_float(): return 5.678
+    # a_string = 'a string'
+    def a_string(): return 'a string'
+
+
+    def function_00(the_input):
+        return None
+
+  the test passes. I can call a :ref:`function<what is a function?>`. :ref:`I cannot call a string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
+
+* I add an :ref:`assertion<what is an assertion?>` for a tuple_ (anything in parentheses ``()``, separated by a comma) to ``test_type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 108
+    :emphasize-lines: 3
+
+        src.type_error.a_float()
+        src.type_error.a_string()
+        src.type_error.a_tuple()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.type_error'
+                    has no attribute 'a_tuple'
+
+* I add ``a_tuple`` and point it to ``(0, 1, 2, 'n')`` in ``type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 3
+
+    # a_string = 'a string'
+    def a_string(): return 'a string'
+    a_tuple = (0, 1, 2, 'n')
+
+
+    def function_00(the_input):
+        return None
+
+  the terminal_ is my friend, and shows TypeError_
+
+  .. code-block:: shell
+
+    TypeError: 'tuple' object is not callable
+
+  the name ``a_tuple`` points to a tuple_ (``(0, 1, 2, 'n')``) which is NOT :ref:`callable<how to make a function>`. Using substitution
+
+  .. code-block:: python
+
+    a_tuple = (0, 1, 2, 'n')
+    a_tuple()
+    (0, 1, 2, 'n')()
+
+  ``(0, 1, 2, 'n')()`` raises :ref:`TypeError<what causes TypeError?>` because :ref:`I cannot call a tuple like a function<test_type_error_w_the_uncallables>`.
+
+* I change ``a_tuple`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 3-4
+
+    # a_string = 'a string'
+    def a_string(): return 'a string'
+    # a_tuple = (0, 1, 2, 'n')
+    def a_tuple(): return (0, 1, 2, 'n')
+
+
+    def function_00(the_input):
+        return None
+
+  the test passes. I can call a :ref:`function<what is a function?>`. :ref:`I cannot call a tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
+
+* I add an :ref:`assertion<what is an assertion?>` for a :ref:`list<what is a list?>` to ``test_type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 109
+    :emphasize-lines: 3
+
+        src.type_error.a_string()
+        src.type_error.a_tuple()
+        src.type_error.a_list()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.type_error'
+                    has no attribute 'a_list'
+
+* I add ``a_list`` and point it to ``[0, 1, 2, 'n']`` in ``type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 3
+
+    # a_tuple = (0, 1, 2, 'n')
+    def a_tuple(): return (0, 1, 2, 'n')
+    a_list = [0, 1, 2, 'n']
+
+
+    def function_00(the_input):
+        return None
+
+  the terminal_ is my friend, and shows TypeError_
+
+  .. code-block:: shell
+
+    TypeError: 'list' object is not callable
+
+  ``a_list`` points to a :ref:`list<what is a list?>` (``[0, 1, 2, 'n']``) which is NOT :ref:`callable<how to make a function>`. Using substitution
+
+  .. code-block:: python
+
+    a_list = [0, 1, 2, 'n']
+    a_list()
+    [0, 1, 2, 'n']()
+
+  ``[0, 1, 2, 'n']()`` raises :ref:`TypeError<what causes TypeError?>` because :ref:`I cannot call a list like a function<test_type_error_w_the_uncallables>`.
+
+* I change ``a_list`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 3-4
+
+    # a_tuple = (0, 1, 2, 'n')
+    def a_tuple(): return (0, 1, 2, 'n')
+    # a_list = [0, 1, 2, 'n']
+    def a_list(): return [0, 1, 2, 'n']
+
+
+    def function_00(the_input):
+        return None
+
+
+  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
+
+* I add an :ref:`assertion<what is an assertion?>` for a set_ to ``test_type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 110
+    :emphasize-lines: 3
+
+        src.type_error.a_tuple()
+        src.type_error.a_list()
+        src.type_error.a_set()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.type_error'
+                    has no attribute 'a_set'
+
+* I add ``a_set`` and point it to ``{0, 1, 2, 'n'}`` in ``type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 3
+
+    # a_list = [0, 1, 2, 'n']
+    def a_list(): return [0, 1, 2, 'n']
+    a_set = {0, 1, 2, 'n'}
+
+
+    def function_00(the_input):
+        return None
+
+  the terminal_ is my friend, and shows TypeError_
+
+  .. code-block:: shell
+
+    TypeError: 'set' object is not callable
+
+  ``a_set`` points to a set_ (``{0, 1, 2, 'n'}``) which is NOT :ref:`callable<how to make a function>`. Using substitution
+
+  .. code-block:: python
+
+    a_set = {0, 1, 2, 'n'}
+    a_set()
+    {0, 1, 2, 'n'}()
+
+  ``{0, 1, 2, 'n'}()`` raises :ref:`TypeError<what causes TypeError?>` because :ref:`I cannot call a set like a function<test_type_error_w_the_uncallables>`.
+
+* I change ``a_set`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 3-4
+
+    # a_list = [0, 1, 2, 'n']
+    def a_list(): return [0, 1, 2, 'n']
+    # a_set = {0, 1, 2, 'n'}
+    def a_set(): return {0, 1, 2, 'n'}
+
+
+    def function_00(the_input):
+        return None
+
+  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a set, list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
+
+* I add an :ref:`assertion<what is an assertion?>` for a :ref:`dictionary<what is a dictionary?>` to ``test_type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 3
+
+        src.type_error.a_list()
+        src.type_error.a_set()
+        src.type_error.a_dictionary()
+
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # ModuleNotFoundError
+    # AttributeError
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.type_error'
+                    has no attribute 'a_dictionary'
+
+* I add ``a_dictionary`` and point it to ``{'key': 'value'}`` in ``type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 3
+
+    # a_set = {0, 1, 2, 'n'}
+    def a_set(): return {0, 1, 2, 'n'}
     a_dictionary = {'key': 'value'}
+
+
+    def function_00(the_input):
+        return None
 
   the terminal_ is my friend, and shows TypeError_
 
@@ -1497,22 +1623,60 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
     TypeError: 'dict' object is not callable
 
-* I change it to a :ref:`function<what is a function?>`
+  ``a_dictionary`` points to a :ref:`dictionary<what is a dictionary>` (``{'key': 'value'}``) which is NOT :ref:`callable<how to make a function>`. Using substitution
 
   .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 5-6
 
-    def a_set():
-        return {0, 1, 2, 'n'}
+    a_dictionary = {'key': 'value'}
+    a_dictionary()
+    {'key': 'value'}()
+
+  ``{'key': 'value'}()`` raises :ref:`TypeError<what causes TypeError?>` because :ref:`I cannot call a dictionary like a function<test_type_error_w_the_uncallables>`.
+
+* I change ``a_dictionary`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 3-4
+
+    # a_set = {0, 1, 2, 'n'}
+    def a_set(): return {0, 1, 2, 'n'}
+    # a_dictionary = {'key': 'value'}
+    def a_dictionary(): return {'key': 'value'}
 
 
-    def a_dictionary():
-        return {'key': 'value'}
+    def function_00(the_input):
+        return None
 
-  the test is green again. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a dictionary, set, list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`
+  the test is green again. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a dictionary, set, list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
 
-It is safe to say that :ref:`I cannot call data structures because they are NOT callable<test_type_error_w_the_uncallables>`. I can call :ref:`functions<what is a function?>`, they are :ref:`callable<how to make a function>`
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    def none(): return None
+    def false(): return False
+    def true(): return True
+    def an_integer(): return 1234
+    def a_float(): return 5.678
+    def a_string(): return 'a string'
+    def a_tuple(): return (0, 1, 2, 'n')
+    def a_list(): return [0, 1, 2, 'n']
+    def a_set(): return {0, 1, 2, 'n'}
+    def a_dictionary(): return {'key': 'value'}
+
+
+    def function_00(the_input):
+        return None
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add test_type_error_w_the_uncallables'
 
 *********************************************************************************
 review
@@ -1522,9 +1686,10 @@ The tests show that
 
 * If I :ref:`call a method<how to call a function>` with an :ref:`instance<how to test if something is an instance>`, it takes the :ref:`instance<how to test if something is an instance>` as the first argument (``self``)
 * I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if the :ref:`method<what is a method?>` does not use anything that belongs to the :ref:`class<everything is an object>` it is part of.
+* :ref:`There are that are not callable<test_type_error_w_the_uncallables>`.
 
 
-All the tests so far show that I get :ref:`TypeError<what causes TypeError?>` when I :ref:`call a function/method<how to call a function>` in a way that is different from its :ref:`definition<how to make a function>`.
+All the tests so far show that I get :ref:`TypeError<what causes TypeError?>` when I :ref:`call an object<everything is an object>` in a way that is different from its :ref:`definition<how to make a function>`.
 
 ----
 

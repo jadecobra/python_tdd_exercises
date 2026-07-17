@@ -237,7 +237,7 @@ the test passes.
 
 :ref:`The calculator raises TypeError when None is given as input<test_calculator_raises_type_error_w_none>`.
 
-What does it do if the input is a :ref:`boolean<what are booleans?>`, string_, tuple_, :ref:`list<lists>`, set_ or a :ref:`dictionary<dictionaries>`?
+What does it do if the input is a :ref:`boolean<what are booleans?>`, string_, tuple_, :ref:`list<what is a list?>`, set_ or a :ref:`dictionary<dictionaries>`?
 
 ----
 
@@ -1767,7 +1767,7 @@ what is next?
 * :ref:`how to raise TypeError<what causes TypeError?>`
 * :ref:`how to make the calculator check if its inputs are numbers<test_calculator_sends_message_when_input_is_not_a_number>`
 
-:ref:`Would you like to test Lists?<lists>`
+:ref:`Would you like to test Lists?<what is a list?>`
 
 -----
 

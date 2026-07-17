@@ -658,7 +658,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             with self.assertRaises(TypeError):
                 {[3, 2, 1]: 'BOOM!!!'}
 
-  the test passes. I cannot use a :ref:`list<lists>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
+  the test passes. I cannot use a :ref:`list<what is a list?>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -1717,7 +1717,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     NameError: name 'dict_items' is not defined
 
-  this new :ref:`object<everything is an object>` has a :ref:`list<lists>` and :ref:`I know how to work with lists<lists>`, just like :ref:`dict_items<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
+  this new :ref:`object<everything is an object>` has a :ref:`list<what is a list?>` and :ref:`I know how to work with lists<what is a list?>`, just like :ref:`dict_items<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -1731,7 +1731,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     # TypeError
     # NameError
 
-* I remove the stuff around the :ref:`list<lists>`
+* I remove the stuff around the :ref:`list<what is a list?>`
 
   .. code-block:: python
     :lineno-start: 129
@@ -1946,9 +1946,9 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
     NameError: name 'dict_keys' is not defined
 
-  the ``dict_keys`` :ref:`object<everything is an object>` has a :ref:`list<lists>`
+  the ``dict_keys`` :ref:`object<everything is an object>` has a :ref:`list<what is a list?>`
 
-* I use the :ref:`list<lists>` in the ``dict_keys`` :ref:`object<everything is an object>` as the expectation
+* I use the :ref:`list<what is a list?>` in the ``dict_keys`` :ref:`object<everything is an object>` as the expectation
 
   .. code-block:: python
     :lineno-start: 140
@@ -3179,7 +3179,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
     NameError: name 'dict_values' is not defined
 
-* I remove the things around the :ref:`list<lists>` in the ``dict_values`` :ref:`object<everything is an object>`
+* I remove the things around the :ref:`list<what is a list?>` in the ``dict_values`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 212
@@ -3660,7 +3660,7 @@ what is next?
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
-* :ref:`what you can do with Lists<lists>`
+* :ref:`what you can do with Lists<what is a list?>`
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`what you can do with dictionaries<dictionaries>`
 

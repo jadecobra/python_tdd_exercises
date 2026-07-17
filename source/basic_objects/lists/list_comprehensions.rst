@@ -190,7 +190,7 @@ start the project
 test_making_a_list_w_a_for_loop
 *********************************************************************************
 
-I can make a :ref:`list<lists>` with ``list()`` or with square brackets (``[]``), I can also add items one at a time with the :ref:`append method<test_append_adds_item_to_end_of_a_list>`
+I can make a :ref:`list<what is a list?>` with ``list()`` or with square brackets (``[]``), I can also add items one at a time with the :ref:`append method<test_append_adds_item_to_end_of_a_list>`
 
 ----
 
@@ -258,7 +258,7 @@ the test passes.
 what is a for loop?
 *********************************************************************************
 
-I just called the :ref:`append method<test_append_adds_item_to_end_of_a_list>` 10 times in a row, the only things that changed were the numbers I added to the :ref:`list<lists>`, there is a better way. I can use a `for loop`_.
+I just called the :ref:`append method<test_append_adds_item_to_end_of_a_list>` 10 times in a row, the only things that changed were the numbers I added to the :ref:`list<what is a list?>`, there is a better way. I can use a `for loop`_.
 
 A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is an iterable?>` (a collection of items)
 
@@ -336,7 +336,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   ``range(0, 10)`` makes a `range object`_ that goes from the first number in the parentheses to the second number minus ``1``, in this case it goes from ``0`` to ``9``
 
-* The `for loop`_ is simpler than calling the :ref:`append method<test_append_adds_item_to_end_of_a_list>` for each item I want to add to a :ref:`list<lists>`, and there is an easier way. I can do the same thing with ``list()``
+* The `for loop`_ is simpler than calling the :ref:`append method<test_append_adds_item_to_end_of_a_list>` for each item I want to add to a :ref:`list<what is a list?>`, and there is an easier way. I can do the same thing with ``list()``
 
   .. code-block:: python
     :lineno-start: 12
@@ -487,7 +487,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
     def a_for_loop(a_container):
         return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-  the test passes. The problem with this solution is that it will fail when I have a range of numbers that is different. I want a solution that can take any :ref:`iterable<what is an iterable?>` and return the right :ref:`list<lists>`
+  the test passes. The problem with this solution is that it will fail when I have a range of numbers that is different. I want a solution that can take any :ref:`iterable<what is an iterable?>` and return the right :ref:`list<what is a list?>`
 
 * I import the `random module`_ to use random numbers in ``test_list_comprehensions.py``
 
@@ -587,7 +587,7 @@ Why did I use a `for loop`_ when I can use ``list()`` to do the same thing with 
 test_making_a_list_w_extend
 ****************************************************************************************
 
-I can also use the :ref:`extend method<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` to make a :ref:`list<lists>` from an :ref:`iterable<what is an iterable?>`
+I can also use the :ref:`extend method<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` to make a :ref:`list<what is a list?>` from an :ref:`iterable<what is an iterable?>`
 
 ----
 
@@ -646,7 +646,7 @@ the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>` to see what changed in the :ref:`list<lists>`
+* I add another :ref:`assertion<what is an assertion?>` to see what changed in the :ref:`list<what is a list?>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -671,7 +671,7 @@ the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_
 
   the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ and is not better than ``list()``
 
-* I made the same :ref:`variables<what is a variable?>` twice, one for the empty :ref:`list<lists>` and one for the :ref:`iterable<what is an iterable?>`, I add :ref:`class attributes (variables)<test_attribute_error_w_class_attributes>` to remove the repetition
+* I made the same :ref:`variables<what is a variable?>` twice, one for the empty :ref:`list<what is a list?>` and one for the :ref:`iterable<what is an iterable?>`, I add :ref:`class attributes (variables)<test_attribute_error_w_class_attributes>` to remove the repetition
 
   .. code-block:: python
     :lineno-start: 6
@@ -774,7 +774,7 @@ the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_
 use the setUp method
 ****************************************************************************************
 
-The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<lists>` for each test before, I need a better way. The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to make sure the :ref:`class attributes<test_attribute_error_w_class_attributes>` are always reset at the beginning of the test, so that the values are new for each test.
+The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<what is a list?>` for each test before, I need a better way. The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to make sure the :ref:`class attributes<test_attribute_error_w_class_attributes>` are always reset at the beginning of the test, so that the values are new for each test.
 
 * I add the `setUp method`_ to the ``TestListComprehensions`` :ref:`class<everything is an object>`
 
@@ -845,7 +845,7 @@ The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_li
 test_making_a_list_w_a_list_comprehension
 ****************************************************************************************
 
-Time for the title of this chapter. I can use a `list comprehension`_ to make a :ref:`list<lists>` from an :ref:`iterable<what is an iterable?>` with one line
+Time for the title of this chapter. I can use a `list comprehension`_ to make a :ref:`list<what is a list?>` from an :ref:`iterable<what is an iterable?>` with one line
 
 ----
 
@@ -992,7 +992,7 @@ the test passes.
 
   the difference between them is that in the first case I have to
 
-  * make a :ref:`list<lists>`
+  * make a :ref:`list<what is a list?>`
   * loop through the :ref:`iterable<what is an iterable?>`
   * do the operation I want on every item of the :ref:`iterable<what is an iterable?>`
 
@@ -1006,7 +1006,7 @@ the test passes.
 test_making_a_list_w_conditions
 ****************************************************************************************
 
-What if I had to make a :ref:`list<lists>` from an :ref:`iterable<what is an iterable?>` based on a condition?
+What if I had to make a :ref:`list<what is a list?>` from an :ref:`iterable<what is an iterable?>` based on a condition?
 
 ----
 
@@ -1058,7 +1058,7 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
 
 ----
 
-How can I make the ``even_numbers`` :ref:`list<lists>` with ``list()`` without changing the :ref:`iterable<what is an iterable?>`? Since I can make the :ref:`list<lists>` with a `for loop`_, I can do it with a `list comprehension`_. I change the expectation
+How can I make the ``even_numbers`` :ref:`list<what is a list?>` with ``list()`` without changing the :ref:`iterable<what is an iterable?>`? Since I can make the :ref:`list<what is a list?>` with a `for loop`_, I can do it with a `list comprehension`_. I change the expectation
 
 .. code-block:: python
   :lineno-start: 42
@@ -1299,7 +1299,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the test passes. Adding the :ref:`function<what is a function?>` adds extra lines, and makes managing the code easier because I now only have to make a change in one place in the test when I need
 
-* I add a new empty :ref:`list<lists>` to test another :ref:`condition<if statements>` in ``test_list_comprehensions.py``
+* I add a new empty :ref:`list<what is a list?>` to test another :ref:`condition<if statements>` in ``test_list_comprehensions.py``
 
   .. code-block:: python
     :lineno-start: 40
@@ -1463,7 +1463,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     AssertionError: <filter object at 0xffffab1c23d4> != [0, 2, ...]
 
-  I have to make the `filter object`_ a :ref:`list<lists>`
+  I have to make the `filter object`_ a :ref:`list<what is a list?>`
 
 * I put it in ``list()``
 
@@ -1635,7 +1635,7 @@ the test passes.
 
     x ^ y
 
-* There is a `Python Built-in Function`_ that I can use to process a :ref:`list<lists>`, just like filter_, this one is called map_, I add it to the ``square`` :ref:`function<what is a function?>` with a `lambda function`_
+* There is a `Python Built-in Function`_ that I can use to process a :ref:`list<what is a list?>`, just like filter_, this one is called map_, I add it to the ``square`` :ref:`function<what is a function?>` with a `lambda function`_
 
   .. code-block:: python
     :lineno-start: 28
@@ -1651,7 +1651,7 @@ the test passes.
 
     AssertionError: <map object at 0xffffa1b234c5> != [0, 1, 4, 9, ...]
 
-  I have to change the `map object`_ to a :ref:`list<lists>`
+  I have to change the `map object`_ to a :ref:`list<what is a list?>`
 
 * I add ``list()``
 
@@ -1958,7 +1958,7 @@ I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. 
 review
 *********************************************************************************
 
-I ran tests to show I can make a :ref:`list<lists>` from an :ref:`iterable<what is an iterable?>` with
+I ran tests to show I can make a :ref:`list<what is a list?>` from an :ref:`iterable<what is an iterable?>` with
 
 * :ref:`the list()<test_making_a_list>`
 * :ref:`a for loop<test_making_a_list_w_a_for_loop>`
@@ -1969,7 +1969,7 @@ I ran tests to show I can make a :ref:`list<lists>` from an :ref:`iterable<what 
   - :ref:`transform the list with a process<test_making_a_list_w_processes>`
   - :ref:`transform and filter the list<test_making_a_list_w_processes_and_conditions>`
 
-I can use :ref:`functions<what is a function?>` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a :ref:`list<lists>` with one line. I think of it as
+I can use :ref:`functions<what is a function?>` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a :ref:`list<what is a list?>` with one line. I think of it as
 
 .. code-block:: python
 
@@ -2019,7 +2019,7 @@ what is next?
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
-* :ref:`what you can do with Lists<lists>`
+* :ref:`what you can do with Lists<what is a list?>`
 * :ref:`how to test the calculator with lists<how to make a calculator 4>`
 * :ref:`how to use list comprehensions<list comprehensions>`
 

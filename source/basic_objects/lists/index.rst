@@ -103,7 +103,7 @@ what is next?
 *************************************************************************************
 
 
-* :ref:`what you can do with Lists<lists>`
+* :ref:`what you can do with Lists<what is a list?>`
 * :ref:`list comprehensions: a quick way to make lists<list comprehensions>`
 
 -----

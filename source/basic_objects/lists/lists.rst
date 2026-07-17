@@ -3193,7 +3193,7 @@ what is next?
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
 * :ref:`how to make the calculator check if its inputs are numbers<test_calculator_sends_message_when_input_is_not_a_number>`
-* :ref:`what you can do with Lists<lists>`
+* :ref:`what you can do with Lists<what is a list?>`
 
 :ref:`would you like to test the Calculator with what you know?<how to make a calculator 4>`
 

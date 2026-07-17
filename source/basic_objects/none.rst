@@ -2206,7 +2206,7 @@ Is :ref:`None<what is None?>` a :ref:`list<what is a list?>`?
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a new test to see if :ref:`None<what is None?>` is a :ref:`list<lists>` (anything in square brackets (``[ ]``))
+* I add a new test to see if :ref:`None<what is None?>` is a :ref:`list<what is a list?>` (anything in square brackets (``[ ]``))
 
   .. code-block:: python
     :lineno-start: 47

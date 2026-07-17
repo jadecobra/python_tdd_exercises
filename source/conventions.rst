@@ -222,7 +222,7 @@ lists
 *********************************************************************************
 
 
-A :ref:`list/array<lists>` is a sequence or container of :ref:`objects<everything is an object>` that can be changed after it is defined, it is mutable. They are represented with square brackets (``[]``) and the things in them are separated by commas, for example
+A :ref:`list/array<what is a list?>` is a sequence or container of :ref:`objects<everything is an object>` that can be changed after it is defined, it is mutable. They are represented with square brackets (``[]``) and the things in them are separated by commas, for example
 
 .. code-block:: python
 

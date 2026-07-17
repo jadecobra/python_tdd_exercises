@@ -564,7 +564,7 @@ test_catching_index_error_in_tests
 :ref:`IndexError<test_index_error>` is raised when I try to :ref:`index a list<test_index_returns_first_position_of_item_in_a_list>` with a number that is
 
 - bigger than or the same as the number of items in the :ref:`lists`
-- smaller than the negative of the number of items in the :ref:`list<lists>`
+- smaller than the negative of the number of items in the :ref:`list<what is a list?>`
 
 ----
 
@@ -574,7 +574,7 @@ test_catching_index_error_in_tests
 
 ----
 
-* I want to test catching :ref:`IndexError<test_index_error>`, I add a new test with a :ref:`list<lists>`
+* I want to test catching :ref:`IndexError<test_index_error>`, I add a new test with a :ref:`list<what is a list?>`
 
   .. code-block:: python
     :lineno-start: 19
@@ -587,7 +587,7 @@ test_catching_index_error_in_tests
         def test_catching_index_error_in_tests(self):
             a_list = [0, 1, 2, 'n']
 
-* the first item in a :ref:`list<lists>` has ``0`` as its :ref:`index<test_index_returns_first_position_of_item_in_a_list>` (its position in the container)
+* the first item in a :ref:`list<what is a list?>` has ``0`` as its :ref:`index<test_index_returns_first_position_of_item_in_a_list>` (its position in the container)
 
   .. code-block:: python
     :lineno-start: 23
@@ -627,7 +627,7 @@ test_catching_index_error_in_tests
 
     IndexError: list index out of range
 
-  I cannot use a number that is bigger than the index of the last item in a :ref:`list<lists>` or that is greater than or equal to the length of the list
+  I cannot use a number that is bigger than the index of the last item in a :ref:`list<what is a list?>` or that is greater than or equal to the length of the list
 
 * I add :ref:`IndexError<test_index_error>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -672,7 +672,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
 
 ----
 
-* I can also :ref:`index<test_index_returns_first_position_of_item_in_a_list>` with negative numbers, the one for the last item in the :ref:`list<lists>` is ``-1``, like reading from right to left
+* I can also :ref:`index<test_index_returns_first_position_of_item_in_a_list>` with negative numbers, the one for the last item in the :ref:`list<what is a list?>` is ``-1``, like reading from right to left
 
   .. code-block:: python
     :lineno-start: 23
@@ -731,7 +731,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
             with self.assertRaises(IndexError):
                 a_list[-5]
 
-  the test is green again. I cannot use a number that is smaller than the negative of the total number of items in the :ref:`list<lists>` to :ref:`index the list<test_index_returns_first_position_of_item_in_a_list>`
+  the test is green again. I cannot use a number that is smaller than the negative of the total number of items in the :ref:`list<what is a list?>` to :ref:`index the list<test_index_returns_first_position_of_item_in_a_list>`
 
 * It looks like this is a repetition of the assertRaises_. It is not, even though the test is still green when I remove the second assertRaises_
 
@@ -764,7 +764,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
 :ref:`IndexError<test_index_error>` is raised when I try to :ref:`index a list<test_index_returns_first_position_of_item_in_a_list>` with a number that is
 
 - bigger than or the same as the number of items in the :ref:`lists`
-- smaller than the negative of the number of items in the :ref:`list<lists>`
+- smaller than the negative of the number of items in the :ref:`list<what is a list?>`
 
 ----
 

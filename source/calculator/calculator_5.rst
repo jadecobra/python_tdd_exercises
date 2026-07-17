@@ -70,7 +70,7 @@ open the project
 test_calculator_sends_message_when_input_is_a_list
 *********************************************************************************
 
-I want to see what happens when I send a :ref:`list<lists>` as input to the :ref:`calculator program<how to make a calculator>`, will it send a message or raise :ref:`TypeError<what causes TypeError?>`?
+I want to see what happens when I send a :ref:`list<what is a list?>` as input to the :ref:`calculator program<how to make a calculator>`, will it send a message or raise :ref:`TypeError<what causes TypeError?>`?
 
 ----
 
@@ -80,7 +80,7 @@ I want to see what happens when I send a :ref:`list<lists>` as input to the :ref
 
 ----
 
-I add a test to see what happens when I send a :ref:`list<lists>` as input
+I add a test to see what happens when I send a :ref:`list<what is a list?>` as input
 
 .. code-block:: python
   :lineno-start: 88
@@ -437,7 +437,7 @@ how to multiply a list
 test_calculator_w_list_items
 *********************************************************************************
 
-I can use a :ref:`list<lists>` to test the :ref:`calculator functions<how to make a calculator>` as long as its items are numbers
+I can use a :ref:`list<what is a list?>` to test the :ref:`calculator functions<how to make a calculator>` as long as its items are numbers
 
 ----
 
@@ -887,7 +887,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
 test_calculator_raises_type_error_when_given_more_than_two_inputs
 *********************************************************************************
 
-It is important to remember that the `starred expressions`_ always gives the items from the :ref:`list<what is a list?>` in order, and I cannot use a :ref:`list<lists>` that has more than 2 numbers with these :ref:`calculator functions<how to make a calculator>` since they only take 2 inputs
+It is important to remember that the `starred expressions`_ always gives the items from the :ref:`list<what is a list?>` in order, and I cannot use a :ref:`list<what is a list?>` that has more than 2 numbers with these :ref:`calculator functions<how to make a calculator>` since they only take 2 inputs
 
 ----
 
@@ -952,7 +952,7 @@ the test passes.
 
 ----
 
-* I add a failing line for :ref:`division<test_division>` with the new :ref:`list<lists>`
+* I add a failing line for :ref:`division<test_division>` with the new :ref:`list<what is a list?>`
 
   .. code-block:: python
     :lineno-start: 163
@@ -1117,7 +1117,7 @@ what is next?
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
 * :ref:`how to make the calculator check if its inputs are numbers<test_calculator_sends_message_when_input_is_not_a_number>`
-* :ref:`what you can do with Lists<lists>`
+* :ref:`what you can do with Lists<what is a list?>`
 
 :ref:`would you like to test list comprehensions?<list comprehensions>` They are a quick way to make :ref:`lists`
 

@@ -47,7 +47,8 @@ def test_type_error_w_keyword_arguments():
         argument_n={'key': 'value'},
     )
     src.type_error.function_08(
-        argument='positional', name='keyword'
+        argument='positional',
+        name='keyword',
     )
 
 
@@ -55,13 +56,14 @@ def test_type_error_w_args_and_kwargs():
     src.type_error.function_00('argument')
     src.type_error.function_01(1, 0)
     src.type_error.function_02(
-        third=True, second=False, first=None
+        third=True, second=False,
+        first=None,
     )
     src.type_error.function_03(
         second=[0, 1, 2, 'n'],
         first=(0, 1, 2, 'n'),
         third={0, 1, 2, 'n'},
-        fourth={'key': 'value'}
+        fourth={'key': 'value'},
     )
     src.type_error.function_04('value')
     src.type_error.function_05(
@@ -80,7 +82,8 @@ def test_type_error_w_args_and_kwargs():
         argument_1=[0, 1, 2, 'n'],
     )
     src.type_error.function_08(
-        'positional', argument='keyword'
+        'positional',
+        argument='keyword',
     )
 
 
@@ -95,6 +98,19 @@ def test_type_error_w_class_methods():
     src.type_error.AClass().method_07()
     src.type_error.AClass().method_08()
     src.type_error.AClass().method_09()
+
+
+def test_type_error_w_the_uncallables():
+    src.type_error.none()
+    src.type_error.false()
+    src.type_error.true()
+    src.type_error.an_integer()
+    src.type_error.a_float()
+    src.type_error.a_string()
+    src.type_error.a_tuple()
+    src.type_error.a_list()
+    src.type_error.a_set()
+    src.type_error.a_dictionary()
 
 
 # Exceptions seen

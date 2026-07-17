@@ -70,7 +70,7 @@ open the project
 how to make sure the calculator tests use new numbers for every test
 *********************************************************************************
 
-I used the `setUp method`_ in :ref:`list comprehensions` to make sure that I have a new :ref:`list<lists>` and :ref:`iterable<what is an iterable?>` for every test. I want to do the same thing with the :ref:`calculator<how to make a calculator>`, to make sure that each test uses 2 new different random numbers, not the same random numbers for every test
+I used the `setUp method`_ in :ref:`list comprehensions` to make sure that I have a new :ref:`list<what is a list?>` and :ref:`iterable<what is an iterable?>` for every test. I want to do the same thing with the :ref:`calculator<how to make a calculator>`, to make sure that each test uses 2 new different random numbers, not the same random numbers for every test
 
 ----
 
@@ -1105,7 +1105,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
   the test passes. There are a few problems with doing it this way
 
-  - it makes a :ref:`list<lists>` that is never used
+  - it makes a :ref:`list<what is a list?>` that is never used
   - I could tell which data type caused the failure since I cannot use the `subTest method`_ in the :ref:`list comprehension<list comprehensions>`
   - I would have to repeat all those lines for the other :ref:`function<what is a function?>` in the :ref:`calculator program<how to make a calculator>`
 
@@ -1142,7 +1142,7 @@ close the project
 review
 *********************************************************************************
 
-I ran tests to show I can make a :ref:`list<lists>` from an :ref:`iterable<what is an iterable?>` with
+I ran tests to show I can make a :ref:`list<what is a list?>` from an :ref:`iterable<what is an iterable?>` with
 
 * :ref:`the list()<test_making_a_list>`
 * :ref:`a for loop<test_making_a_list_w_a_for_loop>`
@@ -1153,7 +1153,7 @@ I ran tests to show I can make a :ref:`list<lists>` from an :ref:`iterable<what 
   - :ref:`transform the list with a process<test_making_a_list_w_processes>`
   - :ref:`transform and filter the list<test_making_a_list_w_processes_and_conditions>`
 
-I can use :ref:`functions<what is a function?>` and :ref:`conditions<test_making_a_list_w_conditions>` with :ref:`list comprehensions` to make a :ref:`list<lists>` with one line. I think of it as
+I can use :ref:`functions<what is a function?>` and :ref:`conditions<test_making_a_list_w_conditions>` with :ref:`list comprehensions` to make a :ref:`list<what is a list?>` with one line. I think of it as
 
 .. code-block:: python
 
@@ -1203,7 +1203,7 @@ what is next?
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
-* :ref:`what you can do with Lists<lists>`
+* :ref:`what you can do with Lists<what is a list?>`
 * :ref:`how to use list comprehensions<list comprehensions>`
 
 :ref:`Would you like to test if a boolean is an integer or a float?<how to test if something is grouped as True>`

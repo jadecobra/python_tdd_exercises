@@ -415,7 +415,7 @@ what is next?
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
-* :ref:`what you can do with Lists<lists>`
+* :ref:`what you can do with Lists<what is a list?>`
 * :ref:`how to test the calculator with lists<how to make a calculator 4>`
 * :ref:`how to use list comprehensions<list comprehensions>`
 
