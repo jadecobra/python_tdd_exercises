@@ -14,7 +14,7 @@ how to make a person with conditions
 
 ----
 
-I want to be able to check if a person can vote, and if they can get a license. In other words, I want something in the :ref:`person project<test person with datetime>` to make decisions based on :ref:`conditions<if statements>`, for example
+I want to be able to check if a person can vote, and if they can get a license. In other words, I want something in the :ref:`person project<test person with datetime>` to make decisions based on :ref:`conditions<if statements>`. For example
 
 * If a person is younger than ``18``
 

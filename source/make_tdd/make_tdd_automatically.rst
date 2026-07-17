@@ -21,6 +21,7 @@ So far I do the same steps to make a :ref:`Python Test Driven Development enviro
 - :ref:`add the first failing test to the test file<test_failure>`
 - :ref:`make a requirements file for the Python packages I need<how to write text to a file>`
 - :ref:`install the Python packages I gave in the requirements file<how to install Python packages with uv>`
+- add the files_ and folders_ to git_ for tracking
 - :ref:`run the tests automatically<how to run tests automatically with uv and pytest-watcher>`
 - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
 - make the test pass
