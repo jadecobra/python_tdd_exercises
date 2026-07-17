@@ -1,3 +1,5 @@
+something = False
+
 if something           == True
 if bool(something    ) == True
 if bool(False        ) == True

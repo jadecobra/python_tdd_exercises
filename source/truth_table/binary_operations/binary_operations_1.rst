@@ -82,13 +82,7 @@ open the project
 
     cd truth_table
 
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../pumping_python/truth_table
-
-* I make a new :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
+* I use touch_ to make a new :ref:`Python file<what is a module?>` named ``test_binary.py`` in the ``tests`` directory_
 
   .. tab-set::
     :sync-group: os
@@ -109,16 +103,14 @@ open the project
 
         New-Item tests/test_binary.py
 
-  the terminal_ goes back to the command line.
-
-* I open ``test_binary.py``
-
 * I add ``test_binary.py`` to git_ for tracking
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git add .
+    git add tests/test_binary.py
+
+* I open ``test_binary.py`` from the ``tests`` folder_
 
 * I run the tests with `pytest-watcher`_
 
@@ -218,9 +210,9 @@ first input     second input   return
 
 ----
 
-* I open ``truth_table.py``
+* I open ``truth_table.py`` from the ``src`` folder_
 
-* I add the :ref:`function<what is a function?>` to ``truth_table.py``
+* I add ``contradiction`` to ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -242,7 +234,7 @@ first input     second input   return
 
   because the test called the :ref:`contradiction function<test_contradiction>` with two arguments (:green:`True` and :green:`True`) and the :ref:`definition<how to make a function>` does not allow any arguments (the parentheses are empty).
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` , in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -283,7 +275,21 @@ first input     second input   return
     def contradiction(first_input, second_input):
         return None
 
-  the test passes because :ref:`None is grouped as False<test_is_none_falsy_or_truthy>` (the result of ``bool(None)`` is :red:`False`) and the :ref:`assertion<what is an assertion?>` expects :red:`False`
+  the test passes because :ref:`None is grouped as False  (the result of bool(None) is False)<test_is_none_falsy_or_truthy>` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
+
+  .. code-block:: python
+
+    contradiction(True, True) -> None
+
+  Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+
+  .. code-block:: python
+
+
+    assertFalse(src.truth_table.contradiction(True, True))
+    assertFalse(None                                     )
+    assertFalse(bool(None)                               )
+    assertFalse(False                                    )
 
 ----
 
@@ -305,9 +311,9 @@ first input     second input   return
         # return None
         return False
 
-  the test is still green. :ref:`contradiction<test_contradiction>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
+  the test is still green. :ref:`contradiction<test_contradiction>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`.
 
-* I remove the commented lines
+* I remove the commented lines from ``contradiction``
 
   .. code-block:: python
     :lineno-start: 13
@@ -348,6 +354,10 @@ first input     second input   return
   - if the first input is :green:`True` and the second input is :green:`True`
   - if the first input is :green:`True`
 
+  .. code-block:: python
+
+    contradiction(True, False) -> False
+    contradiction(True, True ) -> False
 
 * I add an :ref:`assertion<what is an assertion?>` for the third case, which is when the first input is :red:`False` and the second input is :green:`True`
 
@@ -380,6 +390,12 @@ first input     second input   return
 
   - if the first input is :red:`False` and the second input is :green:`True`
   - if the first input is :green:`True`
+
+  .. code-block:: python
+
+    contradiction(False, True ) -> False
+    contradiction(True , False) -> False
+    contradiction(True , True ) -> False
 
 * I add an :ref:`assertion<what is an assertion?>` for the fourth case, which is when the first input is :red:`False` and the second input is :red:`False`
 
@@ -414,6 +430,13 @@ first input     second input   return
 
   - if the first input is :red:`False`
   - if the first input is :green:`True`
+
+  .. code-block:: python
+
+    contradiction(False, False) -> False
+    contradiction(False, True ) -> False
+    contradiction(True , False) -> False
+    contradiction(True , True ) -> False
 
 * I add a :ref:`variable<what is a variable?>` for ``src.truth_table.contradiction``
 
@@ -469,7 +492,7 @@ first input     second input   return
 
   the test is still green.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_contradiction`
 
   .. code-block:: python
     :lineno-start: 7
@@ -522,6 +545,8 @@ examples of Contradiction
 
   - is homework done?
   - is the room clean?
+
+  the rule does not take the inputs into consideration
 
   ==============  ============== ==============
   homework done   clean room     can watch TV
@@ -609,21 +634,14 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 8-13
+    :lineno-start: 12
+    :emphasize-lines: 3-6
 
-        def test_contradiction(self):
-            contradiction = src.truth_table.contradiction
-            self.assertFalse(contradiction(True, True))
-            self.assertFalse(contradiction(True, False))
-            self.assertFalse(contradiction(False, True))
             self.assertFalse(contradiction(False, False))
 
         def test_logical_conjunction(self):
             self.assertTrue(
-                src.truth_table.logical_conjunction(
-                    True, True
-                )
+                src.truth_table.logical_conjunction(True, True)
             )
 
 
@@ -637,7 +655,7 @@ first input     second input   return
                     has no attribute 'logical_conjunction'.
                     Did you mean: 'logical_negation'?
 
-  because there is nothing named :ref:`logical_conjunction<test_logical_conjunction>` in ``truth_table.py``
+  because there is nothing named :ref:`logical_conjunction<test_logical_conjunction>` in ``truth_table.py``, yet.
 
 ----
 
@@ -647,7 +665,7 @@ first input     second input   return
 
 ----
 
-I add the :ref:`function<what is a function?>` to ``truth_table.py``
+I add ``logical_conjunction`` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 17
@@ -661,6 +679,10 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
       return True
 
 the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`.
+
+.. code-block:: python
+
+  logical_conjunction(True , True ) -> True
 
 ----
 
@@ -703,9 +725,15 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
 
     AssertionError: True is not false
 
-  because the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
+  because the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>`
+  .. code-block:: python
+
+
+    assertFalse(src.truth_table.logical_conjunction(True, True))
+    assertFalse(True                                           )
+
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 27
@@ -752,10 +780,12 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
         # return True
         return second_input
 
-  the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns
+  the test passes.
 
-  - :red:`False`, if the second input is :red:`False`
-  - :green:`True`, if the second input is :green:`True`
+  .. code-block:: python
+
+    logical_conjunction(True, False) -> False
+    logical_conjunction(True, True ) -> True
 
 * I add an :ref:`assertion<what is an assertion?>` for the third case, which is when the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_logical_conjunction` in ``test_binary.py``
 
@@ -834,10 +864,41 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
   - :red:`False`, if the first input is :red:`False`
   - the second input if the above :ref:`condition<if statements>` is NOT met
 
-  because this happens when ``if first_input == False:`` runs, Python_ checks if ``first_input`` is equal to :red:`False`
+  because Python_ checks if ``first_input`` is equal to :red:`False` when ``if first_input == False:`` runs,
 
   - if ``first_input`` is NOT equal to :red:`False`, it leaves the `if statement`_ and continues to run the rest of the :ref:`function<what is a function?>` - ``return second_input``, which returns the value of ``second_input`` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+    .. code-block:: shell
+
+      logical_conjunction(True , True ) -> True
+      └──def logical_conjunction(first_input, second_input):
+         ├── first_input  == True
+         ├── second_input == True
+         ├── if first_input == False:
+         │      return False
+         └── return second_input
+
+    .. code-block:: shell
+
+      logical_conjunction(True , False) -> False
+      └──def logical_conjunction(first_input, second_input):
+         ├── first_input  == True
+         ├── second_input == False
+         ├── if first_input == False:
+         │      return False
+         └── return second_input
+
   - if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return False`` and leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+    .. code-block:: shell
+
+      logical_conjunction(False, True ) -> False
+      └──def logical_conjunction(first_input, second_input):
+         ├── first_input  == False
+         ├── second_input == False
+         └── if first_input == False:
+             └── return False
+             return second_input
 
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_conjunction` in ``test_binary.py``
 
@@ -896,8 +957,8 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   the test is still green, because the :ref:`function<what is a function?>` returns
 
-  - :green:`True` when the :ref:`conditions<if statements>` are met
-  - :ref:`None<what is None?>` when the :ref:`conditions<if statements>` are NOT met, because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`
+  - :green:`True` when the :ref:`conditions<if statements>` are met.
+  - :ref:`None<what is None?>` when the :ref:`conditions<if statements>` are NOT met, because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`.
 
 * I add a :ref:`return statement<the return statement>` to make it clearer
 
@@ -958,9 +1019,19 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
         # return None
         return False
 
-  still green because ``bool(something)`` returns :green:`True` if the :ref:`object<everything is an object>` in parentheses is grouped as :green:`True`.
+  still green because ``bool(something)`` returns :green:`True` if the :ref:`object<everything is an object>` in parentheses is :ref:`grouped as True<test_what_is_true>`.
 
-* Since ``bool(True)`` is the same as :green:`True`, ``bool(first_input) == True`` is the same thing as ``True == True`` when ``first_input`` is :green:`True`, which is a repetition. I remove ``== True`` from the `if statements`_
+* Since ``bool(True)`` is the same as :green:`True`, ``bool(first_input) == True`` is the same thing as ``True == True`` when ``first_input`` is :green:`True`, which is a repetition.
+
+  .. code-block:: python
+
+    first_input = True
+
+    if bool(first_input) == True:
+    if bool(True       ) == True:
+    if True              == True:
+
+  I remove ``== True`` from the `if statements`_
 
   .. code-block:: python
     :lineno-start: 21
@@ -985,10 +1056,17 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
   the test is still green because
 
   - ``if bool(something)`` checks if ``bool(something)`` returns :ref:`True <test_what_is_true>`
-  - ``if bool(something) == True`` is the same as ``if bool(something)``
   - if the result of ``bool(something)`` is :green:`True` then ``if bool(something)`` is the same thing as ``if True``
+  - ``if bool(something)`` is the same as ``if bool(something) == True``
 
-* I can remove :ref:`bool<how to test if something is grouped as True>`
+  .. code-block:: python
+
+    if bool(something)
+    if bool(something) == True
+    if True            == True
+    if True
+
+* Which means I can remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -1092,13 +1170,61 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
         else:
             return False
 
-  still green because this happens when the :ref:`logical_conjunction function<test_logical_conjunction>` is called. When ``if first_input and second_input:`` runs, Python_ checks if ``first_input`` is grouped as :green:`True`
+  still green because Python_ checks if ``first_input`` is grouped as :green:`True` when the :ref:`logical_conjunction function<test_logical_conjunction>` is :ref:`called<how to call a function with input>`. When ``if first_input and second_input:`` runs,
 
   - if ``first_input`` is grouped as :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+    .. code-block:: shell
+
+      logical_conjunction(False, False) -> False
+      └──def logical_conjunction(first_input, second_input):
+         ├── first_input  == False
+         ├── second_input == False
+         ├── if first_input and second_input:
+         │       return True
+         └── else:
+             └── return False
+
+    .. code-block:: shell
+
+      logical_conjunction(False, True ) -> False
+      └──def logical_conjunction(first_input, second_input):
+         ├── first_input  == False
+         ├── second_input == True
+         ├── if first_input and second_input:
+         │       return True
+         └── else:
+             └── return False
+
   - if ``first_input`` is grouped as :green:`True`, it checks if ``second_input`` is grouped as :green:`True`
 
     * if ``second_input`` is grouped as :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+      .. code-block:: shell
+
+        logical_conjunction(True , False) -> False
+        └──def logical_conjunction(first_input, second_input):
+           ├── first_input  == True
+           ├── second_input == False
+           ├── if first_input and second_input:
+           │       return True
+           └── else:
+               └── return False
+
     * if ``second_input`` is grouped as :green:`True`, it runs ``return True``, which returns :green:`True` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+      .. code-block:: shell
+
+        logical_conjunction(True , True ) -> True
+        └──def logical_conjunction(first_input, second_input):
+           ├── first_input  == True
+           ├── second_input == True
+           └── if first_input and second_input:
+               └── return True
+               else:
+                   return False
+
+  - it only checks ``second_input`` if ``first_input`` is :green:`True`.
 
 ----
 
@@ -1144,7 +1270,12 @@ conditional expressions
   - ``else`` comes after ``first_input and second_input``
   - then :red:`False` without the return comes after ``else``
 
-  this means that
+  .. code-block:: python
+
+    if first_input and second_input: vs return True
+        return True                  vs if first_input and second_input
+    else:                            vs else
+        return False                 vs False
 
   .. code-block:: python
 
@@ -1190,7 +1321,7 @@ conditional expressions
             # else False
         )
 
-  still green! This means that
+  still green!
 
   .. code-block:: python
 
@@ -1211,7 +1342,7 @@ conditional expressions
     else:
         return False
 
-* I remove the commented lines
+* I remove the commented lines from ``logical_conjunction``
 
   .. code-block:: python
     :lineno-start: 17
@@ -1223,7 +1354,7 @@ conditional expressions
     def logical_conjunction(first_input, second_input):
         return first_input and second_input
 
-* I add a :ref:`variable<what is a variable?>` for ``src.truth_table.logical_conjunction`` in :ref:`test_logical_conjunction` in ``test_truth_table.py``
+* I add a :ref:`variable<what is a variable?>` for ``src.truth_table.logical_conjunction`` in :ref:`test_logical_conjunction` of ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 14
@@ -1357,19 +1488,19 @@ examples of Logical Conjunction
   :red:`no`       :red:`no`      :red:`no`
   ==============  ============== ==============
 
-* Music player goes to the next song or pauses, if the inputs are
+* A person can get a license, if the inputs are
 
-  - are headphones connected?
-  - has the current song finished playing?
+  - did the person pass the test?
+  - is the person old enough?
 
-  ====================  ===================== ==============
-  headphones connected  current song finished play next
-  ====================  ===================== ==============
-  :green:`yes`          :green:`yes`          :green:`yes`
-  :green:`yes`          :red:`no`             :red:`no`
-  :red:`no`             :green:`yes`          :red:`no`
-  :red:`no`             :red:`no`             :red:`no`
-  ====================  ===================== ==============
+  ==============  ============== ================
+  passed test     is old enough  can get license
+  ==============  ============== ================
+  :green:`yes`    :green:`yes`   :green:`yes`
+  :green:`yes`    :red:`no`      :red:`no`
+  :red:`no`       :green:`yes`   :red:`no`
+  :red:`no`       :red:`no`      :red:`no`
+  ==============  ============== ================
 
 * Baking a cake, if the inputs are
 
@@ -1398,6 +1529,8 @@ examples of Logical Conjunction
   :red:`no`      :green:`yes`  :red:`no`
   :red:`no`      :red:`no`     :red:`no`
   =============  ============= ================
+
+  how did I learn to write without reading?
 
 * Multi Factor Authentication to log in, if the inputs are
 
@@ -1545,7 +1678,7 @@ first input     second input   return
     AttributeError: module 'src.truth_table'
                     has no attribute 'project_second'
 
-  because I do not have a :ref:`definition<how to make a function>` for the :ref:`project_second function<test_project_second>` in ``truth_table.py``
+  because I do not have a :ref:`definition<how to make a function>` for the :ref:`project_second function<test_project_second>` in ``truth_table.py``.
 
 ----
 
@@ -1555,7 +1688,7 @@ first input     second input   return
 
 ----
 
-I add the :ref:`function<what is a function?>` to ``truth_table.py``
+I add ``project_second`` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 31

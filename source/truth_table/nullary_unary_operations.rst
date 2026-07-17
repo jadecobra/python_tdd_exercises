@@ -174,7 +174,9 @@ test_logical_true
   .. code-block:: python
 
     assertTrue(src.truth_table.logical_true())
-    assertTrue(None)
+    assertTrue(None                          )
+    assertTrue(bool(None)                    )
+    assertTrue(False                         )
 
 * I change :ref:`None<what is None?>` to :ref:`True <test_what_is_true>` in the :ref:`return statement<the return statement>`
 
@@ -201,7 +203,7 @@ test_logical_true
   .. code-block:: python
     :emphasize-lines: 1
 
-    git add .
+    git add tests/test_nullary_unary.py
 
 * I add a git_ commit message
 
