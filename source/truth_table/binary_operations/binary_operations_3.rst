@@ -1195,7 +1195,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
             (first_input and not second_input)
         )
 
-  I can use any of these `return statements`_. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+  I can use any of these :ref:`return statements<the return statement>`. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 * I add a git_ commit message in another terminal_
 
@@ -1814,7 +1814,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
         )
         return first_input and not second_input
 
-  I can use either of these `return statements`_. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+  I can use either of these :ref:`return statements<the return statement>`. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 * I add a git_ commit message in another terminal_
 
@@ -1948,7 +1948,7 @@ because
 
   the test is still green.
 
-* I put the first two `return statements`_ back, then remove the commented lines
+* I put the first two :ref:`return statements<the return statement>` back, then remove the commented lines
 
   .. code-block:: python
     :lineno-start: 64
@@ -3056,7 +3056,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
         )
         return first_input or not second_input
 
-  I can use either of these `return statements`_. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+  I can use either of these :ref:`return statements<the return statement>`. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 * I add a git_ commit message in another terminal_
 

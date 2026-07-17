@@ -1161,7 +1161,7 @@ I have three :ref:`functions<what is a function?>` with different statements, an
 
 their contents are different, their results are the same because ":ref:`all functions return None by default, as if they have an invisible line that says ...<test_making_a_function_w_return_none>`"
 
-I like to write my :ref:`functions<what is a function?>` with explicit `return statements`_, so that anyone can see what the :ref:`function<what is a function?>` returns without having to think about it.
+I like to write my :ref:`functions<what is a function?>` with explicit :ref:`return statements<the return statement>`, so that anyone can see what the :ref:`function<what is a function?>` returns without having to think about it.
 
 ----
 

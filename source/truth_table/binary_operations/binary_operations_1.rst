@@ -997,7 +997,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
         # return None
         return False
 
-  green.
+  green. It now only checks ``second_input`` if ``first_input`` is :green:`True`.
 
 * I add :ref:`bool<how to test if something is grouped as True>` to the `if statements`_
 
@@ -1703,6 +1703,11 @@ I add ``project_second`` to ``truth_table.py``
 
 the test passes. :ref:`project_second<test_project_second>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`, just like :ref:`logical_conjunction<test_logical_conjunction>`
 
+.. code-block:: python
+
+       project_second(True , True ) -> True
+  logical_conjunction(True , True ) -> True
+
 ----
 
 =================================================================================
@@ -1756,7 +1761,12 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
         # return True
         return second_input
 
-  the test passes. :ref:`project_second function<test_project_second>` returns the second input.
+  the test passes. The :ref:`project_second function<test_project_second>` returns the second input.
+
+  .. code-block:: python
+
+    project_second(True , False) -> False
+    project_second(True , True ) -> True
 
 * I remove the commented line
 
@@ -1788,6 +1798,12 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 
   the test is still green.
 
+  .. code-block:: python
+
+    project_second(False, True ) -> True
+    project_second(True , False) -> False
+    project_second(True , True ) -> True
+
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`
 
   ==============  ============== ==============
@@ -1818,6 +1834,13 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
     # Exceptions seen
 
   still green.
+
+  .. code-block:: python
+
+    project_second(False, False) -> False
+    project_second(False, True ) -> True
+    project_second(True , False) -> False
+    project_second(True , True ) -> True
 
 * I add a :ref:`variable<what is a variable?>` for ``src.truth_table.project_second``
 
@@ -1896,7 +1919,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 
     git commit -am 'add project_second'
 
-:ref:`project_second<test_project_second>` always returns the second input, it does not care about the first input
+:ref:`project_second<test_project_second>` always returns the second input. It does not care about the first input, it projects the second input.
 
 ----
 
@@ -2034,7 +2057,7 @@ first input     second input   return
 
 ----
 
-I add the :ref:`function<what is a function?>` to ``truth_table.py``
+I add ``converse_non_implication`` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 25
@@ -2049,6 +2072,10 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 the test passes. :ref:`converse_non_implication<test_converse_non_implication>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`.
 
+.. code-block:: python
+
+  converse_non_implication(True , True ) -> False
+
 ----
 
 =================================================================================
@@ -2057,7 +2084,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_converse_non_implication` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_converse_non_implication` of ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2088,6 +2115,11 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   - if the first input is :green:`True` and the second input is :red:`False`
   - if the first input is :green:`True` and the second input is :green:`True`
+
+  .. code-block:: python
+
+    converse_non_implication(True , False) -> False
+    converse_non_implication(True , True ) -> False
 
 * I add an :ref:`assertion<what is an assertion?>` for the third case, which is when the first input is :red:`False` and the second input is :green:`True`
 
@@ -2145,10 +2177,41 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   - :green:`True` if the first input is :red:`False`
   - :red:`False` if the above condition is NOT met
 
-  because this happens when the :ref:`converse_non_implication function<test_converse_non_implication>` is called. When ``if first_input == False:`` runs, Python_ checks if ``first_input`` is equal to as :red:`False`
+  because Python_ checks if ``first_input`` is equal to as :red:`False`, when the :ref:`converse_non_implication function<test_converse_non_implication>` is :ref:`called<how to call a function with input>`. When ``if first_input == False:`` runs
 
   - if ``first_input`` is NOT equal to :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+    .. code-block:: shell
+
+      converse_non_implication(True , True ) -> False
+      └──def converse_non_implication(first_input, second_input):
+         ├── first_input  == True
+         ├── second_input == True
+         ├── if first_input == False:
+         │       return True
+         └── return False
+
+    .. code-block:: shell
+
+      converse_non_implication(True , False) -> False
+      └──def converse_non_implication(first_input, second_input):
+         ├── first_input  == True
+         ├── second_input == False
+         ├── if first_input == False:
+         │       return True
+         └── return False
+
   - if ``first_input`` is equal to :red:`False`, it runs ``return True``, which returns :green:`True` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+    .. code-block:: shell
+
+      converse_non_implication(False, True ) -> True
+      └──def converse_non_implication(first_input, second_input):
+          ├── first_input  == False
+          ├── second_input == True
+          └── if first_input == False:
+              └── return True
+              return False
 
 * I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_converse_non_implication` in ``test_binary.py``
 
@@ -2207,7 +2270,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
                 return True
         return False
 
-  the test passes.
+  the test passes. The :ref:`converse_non_implication function<test_converse_non_implication>` only checks the second input if the first input is :red:`False`.
 
 * I add :ref:`bool<how to test if something is grouped as True>`
 
@@ -2282,7 +2345,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   still green, because
 
-  * when ``if first_input == False:`` runs, Python_ checks if ``first_input`` is equal to :red:`False`. I can assume the following substitutions
+  * Python_ checks if ``first_input`` is equal to :red:`False` when ``if first_input == False:`` runs. I can assume the following substitutions
 
     - if the value of ``something`` is :red:`False`
 
@@ -2294,7 +2357,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
       .. literalinclude:: ../../code/truth_table/solutions/if_not_something_true.py
         :language: python
 
-  * when ``if second_input == True:`` runs, Python_ checks if ``(second_input)`` is equal to :green:`True`. I can assume the following substitutions
+  * Python_ checks if ``(second_input)`` is equal to :green:`True` when ``if second_input == True:`` runs. I can assume the following substitutions
 
     - if the value of ``something`` is :red:`False`
 
@@ -2365,7 +2428,61 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
         else:
             return False
 
-  still green.
+  still green because Python_ checks if ``first_input`` is grouped as :green:`False` when the :ref:`converse_non_implication function<test_converse_non_implication>` is :ref:`called<how to call a function with input>`. When ``if not first_input and second_input:`` runs,
+
+  - if ``first_input`` is grouped as :green:`True`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+    .. code-block:: shell
+
+      converse_non_implication(True , True ) -> False
+      └──def converse_non_implication(first_input, second_input):
+         ├── first_input  == True
+         ├── second_input == True
+         ├── if not first_input and second_input:
+         │       return True
+         └── else:
+             └── return False
+
+    .. code-block:: shell
+
+      converse_non_implication(True , False) -> False
+      └──def converse_non_implication(first_input, second_input):
+         ├── first_input  == True
+         ├── second_input == False
+         ├── if not first_input and second_input:
+         │       return True
+         └── else:
+             └── return False
+
+  - if ``first_input`` is grouped as :green:`False`, it checks if ``second_input`` is grouped as :green:`True`
+
+    * if ``second_input`` is grouped as :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+      .. code-block:: shell
+
+        converse_non_implication(False, False) -> False
+        └──def converse_non_implication(first_input, second_input):
+           ├── first_input  == False
+           ├── second_input == False
+           ├── if not first_input and second_input:
+           │       return True
+           └── else:
+               └── return False
+
+    * if ``second_input`` is grouped as :green:`True`, it runs ``return True``, which returns :green:`True` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+      .. code-block:: shell
+
+        converse_non_implication(False, True ) -> True
+        └──def converse_non_implication(first_input, second_input):
+           ├── first_input  == False
+           ├── second_input == True
+           └── if not first_input and second_input:
+               └── return True
+               else:
+                   return False
+
+  - it only checks ``second_input`` if ``first_input`` is :red:`False`.
 
 * I use a `conditional expression`_
 
@@ -2394,6 +2511,14 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
         )
 
   green.
+
+  .. code-block:: python
+
+    if not first_input and second_input: vs return True
+        return True                      vs if not first_input and second_input
+    else:                                vs else
+        return False                     vs False
+
 
 * I remove ``True if`` and ``else False`` to make the simpler :ref:`return statement<the return statement>`
 
@@ -2425,7 +2550,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
 * :ref:`converse_non_implication<test_converse_non_implication>` returns ``not first_input and second_input``
 
-  * when ``not first_input`` runs, Python_ replaces it with :ref:`the logical negation (NOT)<test_logical_negation>` of ``first_input``
+  * Python_ replaces ``not first_input`` with :ref:`the logical negation (NOT)<test_logical_negation>` of ``first_input`` when it runs
 
   - if ``first_input`` is :red:`False`
 
@@ -2453,7 +2578,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
       (not first) and second
       (not True ) and True
        False      and True
-       False      # logical_conjunction(False, True)
+       False  # logical_conjunction(False, True) -> False
 
   - if the first input is :green:`True` and the second input is :red:`False`, :ref:`converse_non_implication<test_converse_non_implication>` returns
 
@@ -2463,7 +2588,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
       (not first) and second
       (not True ) and False
        False      and False
-       False      # logical_conjunction(False, False)
+       False  # logical_conjunction(False, False) -> False
 
   - if the first input is :red:`False` and the second input is :green:`True`, :ref:`converse_non_implication<test_converse_non_implication>` returns
 
@@ -2473,7 +2598,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
       (not first) and second
       (not False) and True
        True       and True
-       True       # logical_conjunction(True, True)
+       True   # logical_conjunction(True, True) -> True
 
   - if the first input is :red:`False` and the second input is :red:`False`, :ref:`converse_non_implication<test_converse_non_implication>` returns
 
@@ -2483,7 +2608,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
       (not first) and second
       (not False) and False
        True       and False
-       False      # logical_conjunction(True, False)
+       False  # logical_conjunction(True, False) -> False
 
   ==============  =============== =============== ================
   first           not first       second          (not first)
@@ -2528,6 +2653,20 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   the test is still green.
 
+  .. code-block:: shell
+
+    converse_non_implication(False, False) -> False
+      └──logical_conjunction(True , False) -> False
+
+    converse_non_implication(False, True ) -> True
+      └──logical_conjunction(True , True ) -> True
+
+    converse_non_implication(True , False) -> False
+      └──logical_conjunction(False, False) -> False
+
+    converse_non_implication(True , True ) -> False
+      └──logical_conjunction(False, True ) -> False
+
 * I remove the commented lines
 
   .. code-block:: python
@@ -2541,9 +2680,9 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
         )
         return not first_input and second_input
 
-  I can use either of these two `return statements`_, the first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+  I can use either of these two :ref:`return statements<the return statement>`. Only the first one will run in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
-* I add a :ref:`variable<what is a variable?>` for ``src.truth_table.converse_non_implication``
+* I add a :ref:`variable<what is a variable?>` for ``src.truth_table.converse_non_implication`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 38
@@ -2652,8 +2791,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 :ref:`Converse Non-Implication<test_converse_non_implication>` always returns
 
 * ``not first_input and second_input``
-* the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input
-* :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
+* the :ref:`Logical Conjunction<test_logical_conjunction>` of, the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input.
+* :green:`True`, if the first input is :red:`False` and the second input is :green:`True`.
 
 ----
 

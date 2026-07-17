@@ -996,7 +996,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
     git commit -am 'add logical_nor'
 
-  I can use either of these `return statements`_. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+  I can use either of these :ref:`return statements<the return statement>`. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 :ref:`Logical NOR<test_logical_nor>` returns
 
@@ -1846,7 +1846,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
             not (first_input or second_input)
         )
 
-  I can use any of these `return statements`_. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+  I can use any of these :ref:`return statements<the return statement>`. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 * I add a git_ commit message in the other terminal_
 
@@ -2565,7 +2565,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
         )
         return not first_input or second_input
 
-  I can use either of these `return statements`_. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+  I can use either of these :ref:`return statements<the return statement>`. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 * I add a git_ commit message in another terminal_
 

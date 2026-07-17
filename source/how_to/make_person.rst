@@ -6508,7 +6508,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
         return a_dictionary
         return 'Hello, my name is jade doe and I am 66'
 
-* I remove the commented lines and other `return statements`_
+* I remove the commented lines and other :ref:`return statements<the return statement>`
 
   .. code-block:: python
     :linenos:
