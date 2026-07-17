@@ -157,9 +157,10 @@ test_logical_true
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    def logical_true(): return None
+    def logical_true():
+        return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -178,10 +179,11 @@ test_logical_true
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1-2
+    :emphasize-lines: 2-3
 
-    # def logical_true(): return None
-    def logical_true(): return True
+    def logical_true():
+        # return None
+        return True
 
   the test passes.
 
@@ -190,7 +192,8 @@ test_logical_true
   .. code-block:: python
     :linenos:
 
-    def logical_true(): return True
+    def logical_true():
+        return True
 
 * I open a new terminal_, then add ``tests/test_nullary_unary.py`` to git_ for tracking
 
@@ -264,12 +267,14 @@ test_logical_false
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4
+    :emphasize-lines: 5-6
 
-    def logical_true(): return True
+    def logical_true():
+        return True
 
 
-    def logical_false(): return True
+    def logical_false():
+        return True
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -282,14 +287,12 @@ test_logical_false
 * I change :ref:`True <test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`return statement<the return statement>`
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4-5
+    :lineno-start: 5
+    :emphasize-lines: 2-3
 
-    def logical_true(): return True
-
-
-    # def logical_false(): return True
-    def logical_false(): return False
+    def logical_false():
+        # return True
+        return False
 
   the test passes.
 
@@ -298,10 +301,12 @@ test_logical_false
   .. code-block:: python
     :linenos:
 
-    def logical_true(): return True
+    def logical_true():
+        return True
 
 
-    def logical_false(): return False
+    def logical_false():
+        return False
 
 * I add a git_ commit message in the other terminal_
 
@@ -345,7 +350,7 @@ test_logical_identity
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a new TestCase_ for Unary Operations with a test for :ref:`logical_identity<test_logical_identity>` when it gets :ref:`True<test_what_is_true>` as input
+* I add a new :ref:`TestCase<test_dir_unittest_testcase>` for Unary Operations with a test for :ref:`logical_identity<test_logical_identity>` when it gets :ref:`True<test_what_is_true>` as input, in ``test_truth_table.py``
 
   ==============  =============
   input           output
@@ -354,15 +359,8 @@ test_logical_identity
   ==============  =============
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 14, 16-19
-
-    class TestNullaryOperations(unittest.TestCase):
-
-        def test_logical_true(self):
-            self.assertTrue(
-                src.truth_table.logical_true()
-            )
+    :lineno-start: 12
+    :emphasize-lines: 7, 9-12
 
         def test_logical_false(self):
             self.assertFalse(
@@ -397,7 +395,7 @@ test_logical_identity
 
 ----
 
-* I add the :ref:`function<what is a function?>` to ``truth_table.py``
+* I add a :ref:`function<what is a function?>` named ``logical_identity`` to ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 5
@@ -417,7 +415,7 @@ test_logical_identity
     TypeError: logical_identity() takes
                0 positional arguments but 1 was given
 
-  because the test called the :ref:`logical_identity function<test_logical_identity>` with 1 argument and the definition does not allow any arguments (the parentheses are empty).
+  because the test called the :ref:`logical_identity function<test_logical_identity>` with one argument and the definition does not allow any arguments (the parentheses are empty).
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_nullary_unary.py``
 
@@ -447,7 +445,7 @@ test_logical_identity
 
     AssertionError: False is not true
 
-  because the :ref:`function<what is a function?>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
+  because the :ref:`function<what is a function?>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
 * I change the :ref:`return statement<the return statement>` to give the test what it wants
 
@@ -479,8 +477,8 @@ test_logical_identity
   ==============  =============
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 4-9
+    :lineno-start: 20
+    :emphasize-lines: 5-7
 
         def test_logical_identity(self):
             self.assertTrue(
@@ -532,7 +530,11 @@ test_logical_identity
         # return True
         return the_input
 
-  the test passes.
+  the test passes because the :ref:`logical_identity function<test_logical_identity>` returns its input as output
+
+  .. code-block:: python
+
+    logical_identity(the_input) -> the_input
 
 * I remove the commented lines
 
@@ -629,7 +631,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``t
 
 ----
 
-* I add the :ref:`function<what is a function?>` to ``truth_table.py``
+* I add ``logical_negation`` to ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 9
@@ -751,17 +753,19 @@ how to return the opposite of a boolean
 
 ----
 
-* I can use the not_ keyword to return the opposite of the :ref:`boolean<what are booleans?>` after it. I add it to the :ref:`return statement<the return statement>`
+I can use the not_ keyword to return the opposite of the :ref:`boolean<what are booleans?>` after it.
+
+* I add not_ to the :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2, 5
 
     def logical_negation(the_input):
-        return not the_input
         # return the_input
         # return False
         # return True
+        return not the_input
 
   the test passes.
 
