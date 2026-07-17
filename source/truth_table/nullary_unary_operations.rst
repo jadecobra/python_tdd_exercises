@@ -1,6 +1,6 @@
 .. meta::
-  :description: Learn the foundational building blocks of programming logic: Nullary and Unary operations. This step-by-step TDD tutorial explains how to build functions that take zero or one input, including Logical True, Logical False, Logical Identity, and Logical Negation (NOT). Master the "not" keyword in Python, learn how to return an input as an output, and practice the Red-Green-Refactor cycle with clear unittest examples.
-  :keywords: Jacob Itegboje, Python nullary vs unary operations, Python logical negation tutorial, how to use the not keyword in python, logical identity function example, truth table for one variable, TDD for absolute beginners, python function taking zero arguments, building a logical NOT gate in code, what is a nullary operation, return input as output python, Red Green Refactor boolean logic, python unittest assertTrue and assertFalse, programming logic basics, how to return opposite of a boolean, python logical true vs logical false functions, learning boolean algebra with code, software engineering foundations for beginners
+  :description: Nullary and Unary Operations in Python with Test Driven Development (Pumping Python, Jacob Itegboje). Rename tests/test_truth_table.py to test_nullary_unary.py, import src.truth_table, and build Nullary Operations (logical_true always returns True; logical_false always returns False — zero inputs) then Unary Operations (logical_identity returns the_input; logical_negation aka not returns not the_input — one input). Red-Green-Refactor with AttributeError module has no attribute logical_true/logical_false/logical_identity/logical_negation, TypeError logical_identity() takes 0 positional arguments but 1 was given, AssertionError None is not true, True is not false, False is not true. Reuses assertTrue and assertFalse; ends with unary truth-table review and test_logical_negation_aka_not. Part of the truth_table project after project setup.
+  :keywords: Jacob Itegboje, Pumping Python, nullary operations python, unary operations python, logical_true logical_false, logical_identity the_input, logical_negation not keyword, test_nullary_unary.py, test_logical_negation_aka_not, AttributeError has no attribute logical_true, TypeError takes 0 positional arguments but 1 was given, AssertionError None is not true, assertTrue assertFalse truth table, return opposite of boolean python, TDD red green refactor nullary unary, truth table one variable, python boolean logic beginners
 
 .. include:: ../links.rst
 
@@ -350,7 +350,7 @@ test_logical_identity
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a new :ref:`TestCase<test_dir_unittest_testcase>` for Unary Operations with a test for :ref:`logical_identity<test_logical_identity>` when it gets :ref:`True<test_what_is_true>` as input, in ``test_truth_table.py``
+* I add a new :ref:`TestCase<test_dir_unittest_testcase>` for Unary Operations with a test for :ref:`logical_identity<test_logical_identity>` when it gets :ref:`True<test_what_is_true>` as input, in ``test_nullary_unary.py``
 
   ==============  =============
   input           output
@@ -777,13 +777,7 @@ I can use the not_ keyword to return the opposite of the :ref:`boolean<what are 
     def logical_negation(the_input):
         return not the_input
 
-  This is what happens when the :ref:`logical_negation function<test_logical_negation>` is called
-
-  - it returns :red:`False`, if the input is :ref:`True<test_what_is_true>`
-  - it returns :green:`True`, if the input is :ref:`False<test_what_is_false>`
-  - it returns the opposite of the input, as output
-
-* I add to the name of the test
+* I add to the name of the test as a note, in ``test_nullary_unary.py``
 
   .. code-block:: python
     :lineno-start: 18
@@ -814,7 +808,7 @@ I can use the not_ keyword to return the opposite of the :ref:`boolean<what are 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1-2
+    :emphasize-lines: 1
 
     git commit -am 'add logical_negation'
 
@@ -871,7 +865,7 @@ and for :ref:`Unary operations<Unary Operations>` which take one input
 the :ref:`truth table` for :ref:`Unary Operations<Unary Operations>` is
 
 ==============  ============= ============= ====================================================
-return          True          False         operation
+return          :green:`True` :red:`False`  operation
 ==============  ============= ============= ====================================================
 the_input       :green:`True` :red:`False`  :ref:`logical_identity<test_logical_identity>`
 not the_input   :red:`False`  :green:`True` :ref:`logical_negation (NOT)<test_logical_negation>`
@@ -893,7 +887,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to test binary operations? they take only two inputs<truth table: Binary Operations>`
+:ref:`Would you like to test binary operations? They take only two inputs.<truth table: Binary Operations>`
 
 ----
 

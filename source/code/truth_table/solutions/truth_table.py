@@ -11,7 +11,7 @@ def logical_true():
 
 
 def logical_false():
-    return None
+    return False
 
 
 def tautology(first, second):

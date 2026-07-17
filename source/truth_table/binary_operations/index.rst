@@ -18,10 +18,9 @@ truth table: Binary Operations
 
 .. WARNING:: Welcome to the wonderful world of Boolean Logic. If this is new to you, then prepare for headaches and moving closer to the edge of insanity.
 
-  This is part of the process as you stretch yourself and learn new things that help you solve problems and see the world in a new way.
+  It is part of the process as you stretch yourself, learn new things that help you solve problems and see the world in a new way.
 
   Do you still want to continue?
-
 
 The last chapter covered two types of operations
 
@@ -39,29 +38,29 @@ first input     second input
 :red:`False`    :red:`False`
 ==============  ==============
 
-These combinations give :ref:`16 binary operations<truth table: binary operations>`, and each operation returns :green:`True` or :red:`False`. The :ref:`truth table<truth table: Binary Operations>` shows the 16 operations covered in these chapters and what they return when they receive input.
+These combinations give :ref:`16 binary operations<truth table: binary operations>`, and each operation returns :red:`False` or :green:`True`. The :ref:`truth table<truth table: Binary Operations>` shows the 16 operations covered in these chapters and what they return when they receive input.
 
-=============================================== ============= ============= ============= ============= ==============================================================
-return                                          True,         True,         False,        False,        operation
-                                                True          False         True          False
-=============================================== ============= ============= ============= ============= ==============================================================
-:red:`False`                                    :red:`False`  :red:`False`  :red:`False`  :red:`False`  :ref:`contradiction<test_contradiction>`
-first and second                                :green:`True` :red:`False`  :red:`False`  :red:`False`  :ref:`logical_conjunction<test_logical_conjunction>`
-second                                          :green:`True` :red:`False`  :green:`True` :red:`False`  :ref:`project_second<test_project_second>`
-(not first) and second                          :red:`False`  :red:`False`  :green:`True` :red:`False`  :ref:`converse_non_implication<test_converse_non_implication>`
-not first                                       :red:`False`  :red:`False`  :green:`True` :green:`True` :ref:`negate_first<test_negate_first>`
-not (first and second)                          :red:`False`  :green:`True` :green:`True` :green:`True` :ref:`logical_nand<test_logical_nand>`
-:green:`True`                                   :green:`True` :green:`True` :green:`True` :green:`True` :ref:`tautology<test_tautology>`
-first or second                                 :green:`True` :green:`True` :green:`True` :red:`False`  :ref:`logical_disjunction<test_logical_disjunction>`
-(not (first and second)) and (first or second)  :red:`False`  :green:`True` :green:`True` :red:`False`  :ref:`exclusive_disjunction<test_exclusive_disjunction>`
-first and (not second)                          :red:`False`  :green:`True` :red:`False`  :red:`False`  :ref:`material_non_implication<test_material_non_implication>`
-first                                           :green:`True` :green:`True` :red:`False`  :red:`False`  :ref:`project_first<test_project_first>`
-first or (not second)                           :green:`True` :green:`True` :red:`False`  :green:`True` :ref:`converse_implication<test_converse_implication>`
-not second                                      :red:`False`  :green:`True` :red:`False`  :green:`True` :ref:`negate_second<test_negate_second>`
-not (first or second)                           :red:`False`  :red:`False`  :red:`False`  :green:`True` :ref:`logical_nor<test_logical_nor>`
-(not first or second) and (first or not second) :green:`True` :red:`False`  :red:`False`  :green:`True` :ref:`logical_equality<test_logical_equality>`
-(not first) or second                           :green:`True` :red:`False`  :green:`True` :green:`True` :ref:`material_implication<test_material_implication>`
-=============================================== ============= ============= ============= ============= ==============================================================
+=============================================== ============== ============== ============= ============= ==============================================================
+return                                          :green:`True`, :green:`True`, :red:`False`, :red:`False`, name of operation
+                                                :green:`True`  :red:`False`   :green:`True` :red:`False`
+=============================================== ============== ============== ============= ============= ==============================================================
+:red:`False`                                    :red:`False`   :red:`False`   :red:`False`  :red:`False`  :ref:`contradiction<test_contradiction>`
+first and second                                :green:`True`  :red:`False`   :red:`False`  :red:`False`  :ref:`logical_conjunction<test_logical_conjunction>`
+second                                          :green:`True`  :red:`False`   :green:`True` :red:`False`  :ref:`project_second<test_project_second>`
+(not first) and second                          :red:`False`   :red:`False`   :green:`True` :red:`False`  :ref:`converse_non_implication<test_converse_non_implication>`
+not first                                       :red:`False`   :red:`False`   :green:`True` :green:`True` :ref:`negate_first<test_negate_first>`
+not (first and second)                          :red:`False`   :green:`True`  :green:`True` :green:`True` :ref:`logical_nand<test_logical_nand>`
+:green:`True`                                   :green:`True`  :green:`True`  :green:`True` :green:`True` :ref:`tautology<test_tautology>`
+first or second                                 :green:`True`  :green:`True`  :green:`True` :red:`False`  :ref:`logical_disjunction<test_logical_disjunction>`
+(not (first and second)) and (first or second)  :red:`False`   :green:`True`  :green:`True` :red:`False`  :ref:`exclusive_disjunction<test_exclusive_disjunction>`
+first and (not second)                          :red:`False`   :green:`True`  :red:`False`  :red:`False`  :ref:`material_non_implication<test_material_non_implication>`
+first                                           :green:`True`  :green:`True`  :red:`False`  :red:`False`  :ref:`project_first<test_project_first>`
+first or (not second)                           :green:`True`  :green:`True`  :red:`False`  :green:`True` :ref:`converse_implication<test_converse_implication>`
+not second                                      :red:`False`   :green:`True`  :red:`False`  :green:`True` :ref:`negate_second<test_negate_second>`
+not (first or second)                           :red:`False`   :red:`False`   :red:`False`  :green:`True` :ref:`logical_nor<test_logical_nor>`
+(not first or second) and (first or not second) :green:`True`  :red:`False`   :red:`False`  :green:`True` :ref:`logical_equality<test_logical_equality>`
+(not first) or second                           :green:`True`  :red:`False`   :green:`True` :green:`True` :ref:`material_implication<test_material_implication>`
+=============================================== ============== ============== ============= ============= ==============================================================
 
 ----
 
@@ -74,6 +73,26 @@ These are the tests I have at the end of the chapters
 .. literalinclude:: ../../code/truth_table/tests/test_binary.py
   :language: python
   :linenos:
+  :lines: 1-53
+  :caption: truth_table/tests/test_binary.py
+
+.. literalinclude:: ../../code/truth_table/tests/test_binary.py
+  :language: python
+  :lineno-start: 55
+  :lines: 55-83
+  :caption: truth_table/tests/test_binary.py
+
+.. literalinclude:: ../../code/truth_table/tests/test_binary.py
+  :language: python
+  :lineno-start: 85
+  :lines: 85-132
+  :caption: truth_table/tests/test_binary.py
+
+.. literalinclude:: ../../code/truth_table/tests/test_binary.py
+  :language: python
+  :lineno-start: 135
+  :lines: 135-
+  :caption: truth_table/tests/test_binary.py
 
 ----
 
