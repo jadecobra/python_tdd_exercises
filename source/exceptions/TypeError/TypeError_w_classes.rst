@@ -14,8 +14,6 @@ TypeError with classes
 
 Since :ref:`methods<what is a method?>` are :ref:`functions<what is a function?>` in a :ref:`class<everything is an object>` I can assume that they have the same behavior as what I tested in :ref:`test_type_error_w_positional_arguments`, :ref:`test_type_error_w_keyword_arguments` and :ref:`test_type_error_w_args_and_kwargs`.
 
-The difference is that how :ref:`I call a method<how to call a function>` is affected by if I do it with a :ref:`class<everything is an object>` or an :ref:`instance<how to test if something is an instance>`.
-
 ----
 
 *********************************************************************************
@@ -27,6 +25,15 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../../code/type_error/tests/test_type_error_w_classes.py
   :language: python
   :linenos:
+
+*********************************************************************************
+questions about TypeError with classes
+*********************************************************************************
+
+Questions to think about as I go through the chapter
+
+* :ref:`How do methods behave when I call them with a class or an instance<test_type_error_w_class_methods>`?
+* :ref:`Is every object callable<test_type_error_w_the_uncallables>`?
 
 ----
 
@@ -687,7 +694,7 @@ because ``AClass`` is not defined in ``type_error.py``.
   - ``method_00`` takes no input (the parentheses are empty).
   - I called it with an :ref:`instance of the class<how to test if something is an instance>` (``AClass()``) which passes the :ref:`instance<how to test if something is an instance>` as input.
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator>` to ``method_00`` of ``AClass`` in ``type_error.py``
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``method_00`` of ``AClass`` in ``type_error.py``
 
   .. code-block:: python
     :lineno-start: 44
@@ -952,7 +959,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 test_type_error_w_the_uncallables
 *********************************************************************************
 
-There are :ref:`objects<everything is an object>` that can NOT be called
+Is every :ref:`object callable<how to make a function>`?
 
 ----
 
@@ -1113,7 +1120,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
   the test is green again.
 
-* I add an :ref:`assertion<what is an assertion>` for the other :ref:`boolean<what are booleans?>` to ``test_type_error.py``
+* I add an :ref:`assertion<what is an assertion?>` for the other :ref:`boolean<what are booleans?>` to ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 103
@@ -1623,7 +1630,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
     TypeError: 'dict' object is not callable
 
-  ``a_dictionary`` points to a :ref:`dictionary<what is a dictionary>` (``{'key': 'value'}``) which is NOT :ref:`callable<how to make a function>`. Using substitution
+  ``a_dictionary`` points to a :ref:`dictionary<what is a dictionary?>` (``{'key': 'value'}``) which is NOT :ref:`callable<how to make a function>`. Using substitution
 
   .. code-block:: python
 
@@ -1690,6 +1697,8 @@ The tests show that
 
 
 All the tests so far show that I get :ref:`TypeError<what causes TypeError?>` when I :ref:`call an object<everything is an object>` in a way that is different from its :ref:`definition<how to make a function>`.
+
+:ref:`How many questions can you answer about TypeError with class?<questions about TypeError with classes>`
 
 ----
 
