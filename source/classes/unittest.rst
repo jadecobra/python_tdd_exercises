@@ -4364,8 +4364,6 @@ what is next?
 * :ref:`I know that everything in Python is an object<everything is an object>`.
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 
-----
-
 Would you like to test the other projects with unittest?
 
 .. toctree::
@@ -4378,7 +4376,7 @@ Would you like to test the other projects with unittest?
   ../how_to/make_person/make_person_w_unittest
   ../how_to/telephone/telephone_w_unittest
 
-:ref:`click here to see me test the assertion_error project with unittest<test AssertionError with unittest>`
+:ref:`Would you like to test the assertion_error project with unittest<test AssertionError with unittest>`
 
 ----
 

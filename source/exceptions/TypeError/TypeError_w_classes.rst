@@ -1,6 +1,6 @@
 .. meta::
-  :description: TypeError with classes: calling methods on the class vs instances of the class in Python. TDD tutorial continuing the type_error project with uv run pytest-watcher. Match method calls (AClass.method_00() vs AClass().method_01()) to definitions; implicit self first argument for instance methods. Demonstrates AttributeError "module 'src.type_error' has no attribute 'AClass'", "type object 'AClass' has no attribute 'method_00'", NameError during method setup, TypeError "'NoneType' object is not callable", "AClass.method_01() takes 0 positional arguments but 1 was given", "missing 1 required positional argument: 'self'". Use @staticmethod when no class state needed. Red-green-refactor, remove the commented lines from test and src. Jacob Itegboje Pumping Python TDD.
-  :keywords: Jacob Itegboje, Pumping Python, TypeError with classes, python TypeError methods, AClass.method_00, AClass().method_01, staticmethod decorator, takes 0 positional arguments but 1 was given, missing 1 required positional argument: 'self', type object 'AClass' has no attribute, module 'src.type_error' has no attribute 'AClass', test_type_error_w_class_methods, uv run pytest-watcher, TDD class methods, self first argument, class vs instance method call, red green refactor, remove the commented lines, src.type_error, what causes TypeError
+  :description: TypeError with classes: call methods on the class vs an instance in the type_error project (uv run pytest-watcher). test_type_error_w_class_methods builds AClass method_00–method_09; match AClass.method_N() vs AClass().method_N() to the definition; instance methods take self; @staticmethod when the method needs no class state. Representative errors: AttributeError "module 'src.type_error' has no attribute 'AClass'", "type object 'AClass' has no attribute 'method_00'", NameError name 'method_00'/'self' not defined, TypeError "'NoneType' object is not callable", "AClass.method_01() takes 0 positional arguments but 1 was given", "AClass.method_02() missing 1 required positional argument: 'self'". test_type_error_w_the_uncallables shows None, bool, int, float, str, tuple, list, set, dict are not callable ("'X' object is not callable") then turns each name into a function. Red-green-refactor; remove the commented lines from tests and src. Review: self on instance call, staticmethod, objects that are not callable. Jacob Itegboje Pumping Python TDD.
+  :keywords: Jacob Itegboje, Pumping Python, TypeError with classes, python TypeError methods, AClass.method_00, AClass().method_01, staticmethod decorator, takes 0 positional arguments but 1 was given, missing 1 required positional argument: 'self', type object 'AClass' has no attribute, module 'src.type_error' has no attribute 'AClass', test_type_error_w_class_methods, test_type_error_w_the_uncallables, NoneType object is not callable, bool object is not callable, int object is not callable, dict object is not callable, uv run pytest-watcher, TDD class methods, self first argument, class vs instance method call, red green refactor, remove the commented lines, src.type_error, what causes TypeError
 
 .. include:: ../../links.rst
 
@@ -114,7 +114,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 
 ----
 
-* I open ``type_error.py``
+* I open ``type_error.py`` from the ``src`` folder_
 
 * I add a :ref:`class definition<how to make a class>` for ``AClass`` to ``type_error.py``
 
@@ -480,7 +480,7 @@ because ``AClass`` is not defined in ``type_error.py``.
   .. code-block:: python
 
     TypeError: AClass.method_02() missing
-               1 required positional argument: 'self
+               1 required positional argument: 'self'
 
   because
 
@@ -532,6 +532,13 @@ because ``AClass`` is not defined in ``type_error.py``.
 
         def method_05():
             return method_02()
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: AClass.method_05() takes
+               0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
@@ -639,7 +646,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: type object 'AClass'
                     has no attribute 'method_07'.
                     Did you mean: 'method_00'?
 
@@ -815,7 +822,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: 'AClass' object
                     has no attribute 'method_09'.
                     Did you mean: 'method_00'?
 
@@ -1054,7 +1061,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I add an :ref:`assertion<what is an assertion?>` for ``false`` to ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 90
+    :lineno-start: 103
     :emphasize-lines: 3
 
     def test_type_error_w_the_uncallables():
@@ -1693,12 +1700,12 @@ The tests show that
 
 * If I :ref:`call a method<how to call a function>` with an :ref:`instance<how to test if something is an instance>`, it takes the :ref:`instance<how to test if something is an instance>` as the first argument (``self``)
 * I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if the :ref:`method<what is a method?>` does not use anything that belongs to the :ref:`class<everything is an object>` it is part of.
-* :ref:`There are that are not callable<test_type_error_w_the_uncallables>`.
+* :ref:`There are objects that are not callable<test_type_error_w_the_uncallables>`.
 
 
 All the tests so far show that I get :ref:`TypeError<what causes TypeError?>` when I :ref:`call an object<everything is an object>` in a way that is different from its :ref:`definition<how to make a function>`.
 
-:ref:`How many questions can you answer about TypeError with class?<questions about TypeError with classes>`
+:ref:`How many questions can you answer about TypeError with classes?<questions about TypeError with classes>`
 
 ----
 
