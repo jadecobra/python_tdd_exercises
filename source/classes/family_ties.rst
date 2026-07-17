@@ -171,7 +171,7 @@ open the project
     FAILED tests/test_family_ties.py::TestFamilyTies::test_failure - AssertionError: True is not false
     ================= 1 failed, 6 passed in X.YZs ==================
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 4

@@ -277,7 +277,7 @@ start the project
 
     and try ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -3380,7 +3380,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen, in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 65

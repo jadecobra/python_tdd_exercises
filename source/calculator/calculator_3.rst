@@ -112,7 +112,7 @@ the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero
 
 ----
 
-* I add :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
+* I add :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen, in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 58

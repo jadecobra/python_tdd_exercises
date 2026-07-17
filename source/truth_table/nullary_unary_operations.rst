@@ -20,7 +20,7 @@ truth table: Nullary and Unary Operations
 preview
 *********************************************************************************
 
-These are the tests I have at the end of the chapters
+These are the tests I have at the end of the chapter
 
 .. literalinclude:: ../code/truth_table/tests/test_nullary_unary.py
   :language: python
@@ -73,17 +73,45 @@ test_logical_true
 
 ----
 
-* I change the name of ``test_truth_table.py`` to ``test_nullary_unary.py``
+* I go to the other terminal_
 
-* I change the name of the :ref:`class<everything is an object>` from ``TestTruthTable`` to ``TestNullaryOperations`` and :ref:`test_failure` to :ref:`test_logical_true` in ``test_nullary_unary.py``
+* I use mv_ to change the name of ``test_truth_table.py`` to ``test_nullary_unary.py``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mv tests/test_truth_table.py tests/test_nullary_unary.py
+
+* I open ``test_nullary_unary.py`` from the ``tests`` folder_
+
+* I add an `import statement`_ at the top of ``test_nullary_unary.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5, 7-10
+    :emphasize-lines: 1
 
     import src.truth_table
     import unittest
 
+* I change the name of the :ref:`class<everything is an object>` from ``TestTruthTable`` to ``TestNullaryOperations``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5
+
+    import src.truth_table
+    import unittest
+
+
+    class TestNullaryOperations(unittest.TestCase):
+
+        def test_failure(self):
+
+* I change :ref:`test_failure` to :ref:`test_logical_true`
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 3-6
 
     class TestNullaryOperations(unittest.TestCase):
 
@@ -94,7 +122,6 @@ test_logical_true
 
 
     # Exceptions seen
-    # AssertionError
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -113,7 +140,7 @@ test_logical_true
 
 ----
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_nullary_unary.py``
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_nullary_unary.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -124,16 +151,15 @@ test_logical_true
     # AssertionError
     # AttributeError
 
-* I open ``truth_table.py`` from the ``src`` folder_ of my `Integrated Development Environment (IDE)`_
+* I open ``truth_table.py`` from the ``src`` folder_
 
 * I remove all the text in the file_ then add a :ref:`function<what is a function?>` to ``truth_table.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1-2
+    :emphasize-lines: 1
 
-    def logical_true():
-        return None
+    def logical_true(): return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -141,17 +167,21 @@ test_logical_true
 
     AssertionError: None is not true
 
-  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects :green:`True`.
+  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects :green:`True`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+
+  .. code-block:: python
+
+    assertTrue(src.truth_table.logical_true())
+    assertTrue(None)
 
 * I change :ref:`None<what is None?>` to :ref:`True <test_what_is_true>` in the :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2-3
+    :emphasize-lines: 1-2
 
-    def logical_true():
-        # return None
-        return True
+    # def logical_true(): return None
+    def logical_true(): return True
 
   the test passes.
 
@@ -160,10 +190,9 @@ test_logical_true
   .. code-block:: python
     :linenos:
 
-    def logical_true():
-        return True
+    def logical_true(): return True
 
-* I open a new terminal_, then add the new files_ and folder_ to git_ for tracking
+* I open a new terminal_, then add ``tests/test_nullary_unary.py`` to git_ for tracking
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -177,7 +206,7 @@ test_logical_true
 
     git commit -am 'add logical_true'
 
-:ref:`logical_true does not take any input and always returns True<test_logical_true>`.
+:ref:`logical_true always returns True because it is True<test_logical_true>`.
 
 ----
 
@@ -235,14 +264,12 @@ test_logical_false
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5-6
+    :emphasize-lines: 4
 
-    def logical_true():
-        return True
+    def logical_true(): return True
 
 
-    def logical_false():
-        return True
+    def logical_false(): return True
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -255,22 +282,26 @@ test_logical_false
 * I change :ref:`True <test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`return statement<the return statement>`
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 2-3
+    :linenos:
+    :emphasize-lines: 4-5
 
-    def logical_false():
-        # return True
-        return False
+    def logical_true(): return True
+
+
+    # def logical_false(): return True
+    def logical_false(): return False
 
   the test passes.
 
 * I remove the commented line
 
   .. code-block:: python
-    :lineno-start: 5
+    :linenos:
 
-    def logical_false():
-        return False
+    def logical_true(): return True
+
+
+    def logical_false(): return False
 
 * I add a git_ commit message in the other terminal_
 
@@ -279,16 +310,17 @@ test_logical_false
 
     git commit -am 'add logical_false'
 
-* :ref:`logical_true<test_logical_true>` always returns :green:`True`
-* :ref:`logical_false<test_logical_false>` always returns :red:`False`
-* the two Nullary Operations do not take input
+:ref:`logical_false always returns False because it is False<test_logical_false>`.
 
-  ==============  ========================================
-  return          operation
-  ==============  ========================================
-  :green:`True`   :ref:`logical_true<test_logical_true>`
-  :red:`False`    :ref:`logical_false<test_logical_false>`
-  ==============  ========================================
+
+The two Nullary Operations do not take input
+
+==============  ========================================
+return          operation
+==============  ========================================
+:green:`True`   :ref:`logical_true<test_logical_true>`
+:red:`False`    :ref:`logical_false<test_logical_false>`
+==============  ========================================
 
 ----
 
@@ -387,7 +419,7 @@ test_logical_identity
 
   because the test called the :ref:`logical_identity function<test_logical_identity>` with 1 argument and the definition does not allow any arguments (the parentheses are empty).
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_nullary_unary.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_nullary_unary.py``
 
   .. code-block:: python
     :lineno-start: 26

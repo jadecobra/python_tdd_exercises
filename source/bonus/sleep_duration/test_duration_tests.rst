@@ -36,7 +36,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 :green:`GREEN`: make it pass
 *********************************************************************************
 
-* I add a list of :ref:`Exceptions<errors>` seen in ``test_sleep_duration.py``
+* I add a list of :ref:`Exceptions<errors>` seen, in ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -75,7 +75,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     TypeError: 'NoneType' object is not callable
 
-  another error for the list of :ref:`Exceptions<errors>` seen in ``test_sleep_duration.py``
+  another error for the list of :ref:`Exceptions<errors>` seen, in ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -113,7 +113,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     None != datetime.datetime(2006, 11, 21, 13, 28)
     None != datetime.datetime(2006, 11, 21, 19, 8)
 
-  which I add to the list of :ref:`Exceptions<errors>` seen in ``test_sleep_duration.py``
+  which I add to the list of :ref:`Exceptions<errors>` seen, in ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -380,7 +380,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     ValueError: wake_time: "3201/08/13 15:20" is earlier than sleep_time: "1074/03/31 16:44"
     ValueError: wake_time: "9810/07/30 04:29" is earlier than sleep_time: "9792/03/04 12:44"
 
-  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``. The ``duration`` :ref:`function<what is a function?>` needs a :ref:`condition<if statements>` to make sure it raises ValueError_ only when ``wake_time`` is earlier than ``sleep_time``. I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_sleep_duration.py``
+  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``. The ``duration`` :ref:`function<what is a function?>` needs a :ref:`condition<if statements>` to make sure it raises ValueError_ only when ``wake_time`` is earlier than ``sleep_time``. I add the error to the list of :ref:`Exceptions<errors>` seen, in ``test_sleep_duration.py``
 
   .. code-block:: python
 

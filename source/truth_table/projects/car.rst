@@ -259,7 +259,7 @@ start the project
 
     and try ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_car.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_car.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -420,7 +420,7 @@ because I do not have a definition for ``src`` in this file_
 
   because the test called the ``starter`` :ref:`function<what is a function?>` with two keyword arguments (``key_is_close`` and ``start_is_pressed``) and this definition only takes calls with 0 arguments
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_car.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_car.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -767,7 +767,7 @@ the test passes.
 
   because I cannot :ref:`negate<test_logical_negation>` :ref:`and<test_logical_conjunction>` this way
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_car.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen, in ``test_car.py``
 
   .. code-block:: python
     :lineno-start: 31
@@ -1955,7 +1955,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
 
 because the test called the ``starter`` :ref:`function<what is a function?>` with 4 keyword arguments (``key_is_close``, ``brake_is_pressed``, ``start_is_pressed`` and ``in_park``) and the definition only takes calls with 2 required arguments (``key_is_close`` and ``start_is_pressed``) and 1 optional argument (``brake_is_pressed``)
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_car.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_car.py``
 
   .. code-block:: python
     :lineno-start: 16

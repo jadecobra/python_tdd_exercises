@@ -451,7 +451,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
     TypeError: a_for_loop() takes 0 positional arguments
                but 1 was given
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_list_comprehensions.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_list_comprehensions.py``
 
   .. code-block:: python
     :lineno-start: 22

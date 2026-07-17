@@ -260,7 +260,7 @@ start the project
 
     and try ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_functions.py``
 
   .. code-block:: python
     :linenos:
@@ -1105,7 +1105,7 @@ the test passes.
 
     # Exceptions seen
 
-  - The test is green again because I get :ref:`None<what is None?>` when I :ref:`call<how to call a function>```w_return_none``.
+  - The test is green again because I get :ref:`None<what is None?>` when I :ref:`call<how to call a function>` ``w_return_none``.
   - The :ref:`assertion<what is an assertion?>` - ``assert w_return_none() is None`` checks if the result of a call to ``w_return_none``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
 
 * I remove the commented lines
@@ -1389,7 +1389,7 @@ the test passes.
 
   - It never gets to ``return None`` because it leaves after ``return 'something'``.
   - The second `return statement`_ will never run. It is not reachable (this is called dead code).
-  - This means I can treat a :ref:`call to a function<how to call a function>` as the :ref:`object<everything is an object>` it returns.
+  - This is why :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`.
 
   .. tip::
 
@@ -1569,7 +1569,7 @@ the test passes.
 
     AssertionError: assert None is 'the same thing'
 
-  because ``constant`` points to :ref:`None<what is None?>`. Using substitution
+  because ``constant`` points to :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
@@ -1618,7 +1618,7 @@ the test passes.
 
     TypeError: 'NoneType' object is not callable
 
-  because the :ref:`assertion calls<how to call a function>` ``constant`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
+  because the :ref:`assertion calls<how to call a function>` ``constant`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 

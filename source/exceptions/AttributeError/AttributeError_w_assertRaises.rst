@@ -171,7 +171,7 @@ test_attribute_error_w_class_attributes
 
   because I cannot use a :ref:`return statement<the return statement>` outside a :ref:`function<what is a function?>`.
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen, in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 34

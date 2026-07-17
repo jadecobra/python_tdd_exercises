@@ -1023,7 +1023,7 @@ Is every :ref:`object callable<how to make a function>`?
     TypeError: 'NoneType' object is not callable
 
   - the ``()`` to the right of ``src.type_error.none`` makes it a call
-  - the name ``none`` points to :ref:`None<what is None?>` which is NOT :ref:`callable<how to make a function>`. Using substitution
+  - the name ``none`` points to :ref:`None<what is None?>` which is NOT :ref:`callable<how to make a function>`. Using substitution 
 
     .. code-block:: python
 

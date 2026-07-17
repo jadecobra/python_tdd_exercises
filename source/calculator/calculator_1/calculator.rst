@@ -220,7 +220,7 @@ start the project
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to put the cursor on line 7
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -334,7 +334,7 @@ test_addition
 
 ----
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen, in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 17
@@ -365,7 +365,7 @@ test_addition
 
   I think of ``src.calculator.add`` as an address, ``add`` is something (:ref:`an attribute<what causes AttributeError?>`) in the empty ``calculator.py`` file_ from the ``src`` folder_
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 18
@@ -409,7 +409,7 @@ test_addition
 
   because the ``add`` :ref:`variable<what is a variable?>` is now a name for :ref:`None<what is None?>`, and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 18

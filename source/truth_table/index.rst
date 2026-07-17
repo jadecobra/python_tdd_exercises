@@ -127,14 +127,7 @@ start the project
 
   the test passes.
 
-* I add an `import statement`_ at the top of the file_
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
-
-    import src.truth_table
-    import unittest
+* I close ``test_truth_table.py``
 
 .. tab-set::
   :sync-group: os

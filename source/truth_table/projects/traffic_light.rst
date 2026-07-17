@@ -261,7 +261,7 @@ start the project
 
     and try ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_traffic_light.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_traffic_light.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -422,7 +422,7 @@ because I do not have a definition for ``src`` in this file_
 
   because the test called the ``show`` :ref:`function<what is a function?>` with two keyword arguments and this definition only takes calls with 0 arguments
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_traffic_light.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_traffic_light.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -1735,7 +1735,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
   because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_traffic_light.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen, in ``test_traffic_light.py``
 
   .. code-block:: python
     :lineno-start: 68
