@@ -629,20 +629,20 @@ how to write an f-string
 
   the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    text(None)
-        text(the_input)
-            the_input = None
-            return f'I got: {the_input}'
+    text(None) -> 'I got: None'
+    └── def text(the_input):
+        ├── the_input = None
+        └── return f'I got: {the_input}'
             return  'I got:  None      '
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    text(False)
-        text(the_input)
-            the_input = False
-            return f'I got: {the_input}'
+    text(False) -> 'I got: False'
+    └── def text(the_input):
+        ├── the_input = False
+        └── return f'I got: {the_input}'
             return  'I got:  False     '
 
 ----
@@ -704,8 +704,8 @@ how to write an f-string
   .. code-block:: python
 
     text(True)
-        text(the_input)
-            the_input = True
+    └── def text(the_input):
+        ├── the_input = True
             return f'I got: {the_input}'
             return  'I got:  True      '
 
@@ -799,12 +799,12 @@ I remove the :ref:`quotes` around the integer_ in my expectation
 
 the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
-.. code-block:: python
+.. code-block:: shell
 
-  text(1234)
-      text(the_input)
-          the_input = 1234
-          return f'I got: {the_input}'
+  text(1234) -> 'I got: 1234'
+  └── def text(the_input):
+      ├── the_input = 1234
+      └── return f'I got: {the_input}'
           return  'I got:  1234      '
 
 ----
@@ -934,12 +934,12 @@ I remove the :ref:`quotes` around the float_ in my expectation
 
 the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
-.. code-block:: python
+.. code-block:: shell
 
-  text(5.678)
-      text(the_input)
-          the_input = 5.678
-          return f'I got: {the_input}'
+  text(5.678) -> 'I got: 5.678'
+  └── def text(the_input):
+      ├── the_input = 5.678
+      └── return f'I got: {the_input}'
           return  'I got:  5.678     '
 
 ----
@@ -1070,12 +1070,12 @@ I change my expectation to match reality
 
 the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
-.. code-block:: python
+.. code-block:: shell
 
-  text('hello')
-      text(the_input)
-          the_input = 'hello'
-          return f'I got: {the_input}'
+  text('hello') -> 'I got: hello'
+  └── def text(the_input):
+      ├── the_input = 'hello'
+      └── return f'I got: {the_input}'
           return  'I got:  hello     '
 
 ----
@@ -1207,13 +1207,13 @@ I change the tuple_ in my expectation to match reality
 
 the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
-.. code-block:: python
+.. code-block:: shell
 
-  text((0, 1, 2, 'n'))
-      text(the_input)
-          the_input = (0, 1, 2, 'n')
-          return f'I got: {the_input    }'
-          return  'I got:  (0, 1, 2, 'n')'
+  text((0, 1, 2, 'n')) -> "I got: (0, 1, 2, 'n')"
+  └── def text(the_input):
+      ├── the_input = (0, 1, 2, 'n')
+      └── return f'I got: {  the_input  }'
+          return  "I got:  (0, 1, 2, 'n')"
 
 ----
 
@@ -1345,13 +1345,13 @@ I change the :ref:`list<what is a list?>` in my expectation to match reality
 
 the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
-.. code-block:: python
+.. code-block:: shell
 
-  text([0, 1, 2, 'n'])
-      text(the_input)
-          the_input = [0, 1, 2, 'n']
-          return f'I got: {the_input    }'
-          return  'I got:  [0, 1, 2, 'n']'
+  text([0, 1, 2, 'n']) -> "I got: [0, 1, 2, 'n']"
+  └── def text(the_input):
+      ├── the_input = [0, 1, 2, 'n']
+      └── return f'I got: {  the_input  }'
+          return  "I got:  [0, 1, 2, 'n']"
 
 Python_ changed the :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what is a list?>` to a :ref:`single quote<quotes>` (``'``).
 
@@ -1486,12 +1486,12 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 
   - if the result of ``text({0, 1, 2, 'n'})`` is equal to ``"I got: {0, 1, 2, 'n'}"`` the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
-    .. code-block:: python
+    .. code-block:: shell
 
-      text({0, 1, 2, 'n'})
-          text(the_input)
-              the_input = {0, 1, 2, 'n'}
-              return f'I got: {the_input    }'
+      text({0, 1, 2, 'n'}) -> "I got: {0, 1, 2, 'n'}"
+      └── def text(the_input):
+          ├── the_input = {0, 1, 2, 'n'}
+          └── return f'I got: {  the_input  }'
               return  'I got:  {0, 1, 2, 'n'}'
 
   - if the result of ``text({0, 1, 2, 'n'})`` is NOT equal to ``"I got: {0, 1, 2, 'n'}"``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
@@ -1664,12 +1664,13 @@ I change ``my_expectation`` to match ``reality``
 
 the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
-.. code-block:: python
+.. code-block:: shell
 
   text({'key0': 'value0', 'keyN': [0, 1, 2, 'n'],})
-      text(the_input)
-          the_input = {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}
-          return f'I got: {the_input}'
+  ├── "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
+  └── def text(the_input):
+      ├── the_input = {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}
+      └── return f'I got: {       the_input        }'
           return ("I got: {'key0': 'value0',"
                            'keyN': [0, 1, 2, 'n']}")
 
@@ -1837,13 +1838,13 @@ I change my expectation to match reality
 
 the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
-.. code-block:: python
+.. code-block:: shell
 
-  text(object)
-      text(the_input)
-          the_input = object
-          return f'I got: {the_input       }'
-          return  "I got:  <class 'object'> "
+  text(object) -> "I got: <class 'object'>"
+  └── def text(the_input):
+      ├── the_input = object
+      └── return f'I got: {   the_input   }'
+          return  "I got:  <class 'object'>"
 
 ----
 
@@ -2267,15 +2268,15 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
     # Exceptions seen
 
-  the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
+  all the tests are passing because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    text(dict)
-        text(the_input)
-            the_input = dict
-            return f'I got: {the_input     }'
-            return  "I got:  <class 'dict'> "
+    text(any object) ->  "I got: <class 'any object'>"
+    └── def text(the_input):
+        ├── the_input = dict
+        └── return f'I got: {     the_input      }'
+            return  "I got:  <class 'any object'> "
 
 * I remove the commented lines
 
