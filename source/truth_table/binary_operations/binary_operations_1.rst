@@ -32,6 +32,13 @@ These are the tests I have at the end of the chapter
   :language: python
   :linenos:
   :caption: truth_table/tests/test_binary.py
+  :lines: 1-21
+
+.. literalinclude:: ../../code/truth_table/tests/test_binary_1.py
+  :language: python
+  :lineno-start: 23
+  :caption: truth_table/tests/test_binary.py
+  :lines: 23-
 
 ----
 

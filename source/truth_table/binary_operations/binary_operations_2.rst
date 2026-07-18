@@ -34,6 +34,25 @@ These are the tests I have at the end of the chapter
   :language: python
   :linenos:
   :caption: truth_table/tests/test_binary.py
+  :lines: 1-21
+
+.. literalinclude:: ../../code/truth_table/tests/test_binary_2.py
+  :language: python
+  :lineno-start: 23
+  :caption: truth_table/tests/test_binary.py
+  :lines: 23-37
+
+.. literalinclude:: ../../code/truth_table/tests/test_binary_2.py
+  :language: python
+  :lineno-start: 39
+  :caption: truth_table/tests/test_binary.py
+  :lines: 39-51
+
+.. literalinclude:: ../../code/truth_table/tests/test_binary_2.py
+  :language: python
+  :lineno-start: 53
+  :caption: truth_table/tests/test_binary.py
+  :lines: 53-
 
 ----
 
@@ -62,12 +81,6 @@ open the project
     :emphasize-lines: 1
 
     cd truth_table
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../pumping_python/truth_table
 
 * I run the tests with `pytest-watcher`_
 
@@ -134,32 +147,17 @@ first input     second input   return
 ==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 38
-  :emphasize-lines: 18-20
+  :lineno-start: 37
+  :emphasize-lines: 3-5
 
-        def test_converse_non_implication(self):
-            converse_non_implication = (
-                src.truth_table.converse_non_implication
-            )
-            self.assertFalse(
-                converse_non_implication(True, True)
-            )
-            self.assertFalse(
-                converse_non_implication(True, False)
-            )
-            self.assertTrue(
-                converse_non_implication(False, True)
-            )
-            self.assertFalse(
-                converse_non_implication(False, False)
-            )
+          self.assertFalse(converse_non_implication(False, False))
 
-        def test_negate_first(self):
-            negate_first = src.truth_table.negate_first
-            self.assertFalse(negate_first(True, True))
+      def test_negate_first(self):
+          negate_first = src.truth_table.negate_first
+          self.assertFalse(negate_first(True, True))
 
 
-    # Exceptions seen
+  # Exceptions seen
 
 the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -180,7 +178,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
 * I open ``truth_table.py`` from the ``src`` folder_
 
-* I add the :ref:`function<what is a function?>` to ``truth_table.py``
+* I add ``negate_first`` to ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 29
@@ -199,6 +197,10 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
   the test passes. :ref:`negate_first<test_negate_first>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`.
 
+  .. code-block:: python
+
+    negate_first(True , True ) -> False
+
 ----
 
 =================================================================================
@@ -216,7 +218,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 39
     :emphasize-lines: 4
 
         def test_negate_first(self):
@@ -229,9 +231,14 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
   the test is still green. :ref:`negate_first<test_negate_first>` returns
 
-  - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
-  - :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
-  - :red:`False`, if the first input is :green:`True`
+  - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`.
+  - :red:`False`, if the first input is :green:`True` and the second input is :green:`True`.
+  - :red:`False`, if the first input is :green:`True`.
+
+  .. code-block:: python
+
+    negate_first(True , False) -> False
+    negate_first(True , True ) -> False
 
 * I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`
 
@@ -278,6 +285,12 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
   - :green:`True`, if the first input is :red:`False`
   - :red:`False`, if the above :ref:`condition<if statements>` is not met
 
+  .. code-block:: python
+
+    negate_first(False, True ) -> True
+    negate_first(True , False) -> False
+    negate_first(True , True ) -> False
+
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False` to :ref:`test_negate_first` in ``test_binary.py``
 
   ==============  ============== ==============
@@ -300,10 +313,53 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
     # Exceptions seen
 
-  the test is still green because this happens when ``if first_input == False:`` runs, Python_ checks if ``first_input`` is equal to :red:`False`
+  the test is still green because Python_ checks if ``first_input`` is equal to :red:`False` when ``if first_input == False:`` runs,
 
   - if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return False`` and leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-  - if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return True `` and leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+    .. code-block:: shell
+
+      negate_first(True , True ) -> False
+      └──def negate_first(first_input, second_input):
+         ├── first_input  == True
+         ├── second_input == True
+         ├── if first_input == False:
+         │       return True
+         └── return False
+
+    .. code-block:: shell
+
+      negate_first(True , False) -> False
+      └──def negate_first(first_input, second_input):
+         ├── first_input  == True
+         ├── second_input == False
+         ├── if first_input == False:
+         │       return True
+         └── return False
+
+  - if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return True`` and leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+    .. code-block:: shell
+
+      negate_first(False, True ) -> True
+      └──def negate_first(first_input, second_input):
+          ├── first_input  == False
+          ├── second_input == True
+          └── if first_input == False:
+              └── return True
+              else:
+                  return False
+
+    .. code-block:: shell
+
+      negate_first(False, False) -> True
+      └──def negate_first(first_input, second_input):
+          ├── first_input  == False
+          ├── second_input == False
+          └── if first_input == False:
+              └── return True
+              else:
+                  return False
 
 * I add :ref:`the bool built-in function<how to test if something is grouped as True>` to the :ref:`if statement<if statements>` in :ref:`the negate_first function<test_negate_first>` in ``truth_table.py``
 
@@ -365,7 +421,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
             return True
         return False
 
-  the test is still green because when ``if first_input == False:`` runs, Python_ checks if ``first_input`` is equal to :red:`False`. I can assume the following substitutions
+  the test is still green because Python_ checks if ``first_input`` is equal to :red:`False` when ``if first_input == False:`` runs
 
   - if the value of ``something`` is :red:`False`
 
@@ -416,6 +472,13 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
   still green.
 
+  .. code-block:: python
+
+    if not first_input: vs return True
+        return True     vs if not first_input
+    else:               vs else
+        return False    vs False
+
 * I remove ``True if`` and ``else False``
 
   .. code-block:: python
@@ -454,9 +517,9 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 :ref:`Negate First<test_negate_first>` always returns
 
 * ``not first_input``
-* :green:`True`, if the first input is :red:`False`
-* :red:`False`, if the first input is :green:`True`
-* the :ref:`Logical Negation (NOT)<test_logical_negation>` of the first input in all cases, it does not care about the second input
+* :green:`True`, if the first input is :red:`False`.
+* :red:`False`, if the first input is :green:`True`.
+* the :ref:`Logical Negation (NOT)<test_logical_negation>` of the first input in all cases. It does not care about the second input, it negates the first input.
 
 ----
 
@@ -466,18 +529,18 @@ examples of Negate First
 
 ----
 
-* approval to do something based on risk and reason, if the inputs are
+* approval to do something based only based on risk, if the inputs are
 
   - is it risky?
   - has a good reason?
 
   ===============  =================  ================
-  is risky?        has reason?        approved
+  is risky?        good reason?       approved
   ===============  =================  ================
-  :green:`yes`     :green:`good`      :red:`no`
-  :green:`yes`     :red:`bad`         :red:`no`
-  :red:`no`        :green:`good`      :green:`yes`
-  :red:`no`        :red:`bad`         :green:`yes`
+  :green:`yes`     :green:`yes`       :red:`no`
+  :green:`yes`     :red:`no`          :red:`no`
+  :red:`no`        :green:`yes`       :green:`yes`
+  :red:`no`        :red:`no`          :green:`yes`
   ===============  =================  ================
 
 * going for a walk, if the inputs are
