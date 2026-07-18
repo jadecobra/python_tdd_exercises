@@ -890,7 +890,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to test binary operations? They take only two inputs.<truth table: Binary Operations>`
+:ref:`Would you like to test binary operations? They only take two inputs.<truth table: Binary Operations>`
 
 ----
 

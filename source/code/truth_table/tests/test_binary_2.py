@@ -7,7 +7,7 @@ class TestBinaryOperations(unittest.TestCase):
     def test_contradiction(self):
         contradiction = src.truth_table.contradiction
         self.assertFalse(contradiction(True, True))
-        self.assertFalse(contradiction(True, False))
+        self.assertFalse(contradiction(True, True))
         self.assertFalse(contradiction(False, True))
         self.assertFalse(contradiction(False, False))
 
@@ -15,18 +15,10 @@ class TestBinaryOperations(unittest.TestCase):
         logical_conjunction = (
             src.truth_table.logical_conjunction
         )
-        self.assertTrue(
-            logical_conjunction(True, True)
-        )
-        self.assertFalse(
-            logical_conjunction(True, False)
-        )
-        self.assertFalse(
-            logical_conjunction(False, True)
-        )
-        self.assertFalse(
-            logical_conjunction(False, False)
-        )
+        self.assertTrue(logical_conjunction(True, True))
+        self.assertFalse(logical_conjunction(True, False))
+        self.assertFalse(logical_conjunction(False, True))
+        self.assertFalse(logical_conjunction(False, False))
 
     def test_project_second(self):
         project_second = src.truth_table.project_second
@@ -39,18 +31,10 @@ class TestBinaryOperations(unittest.TestCase):
         converse_non_implication = (
             src.truth_table.converse_non_implication
         )
-        self.assertFalse(
-            converse_non_implication(True, True)
-        )
-        self.assertFalse(
-            converse_non_implication(True, False)
-        )
-        self.assertTrue(
-            converse_non_implication(False, True)
-        )
-        self.assertFalse(
-            converse_non_implication(False, False)
-        )
+        self.assertFalse(converse_non_implication(True, True))
+        self.assertFalse(converse_non_implication(True, False))
+        self.assertTrue(converse_non_implication(False, True))
+        self.assertFalse(converse_non_implication(False, False))
 
     def test_negate_first(self):
         negate_first = src.truth_table.negate_first

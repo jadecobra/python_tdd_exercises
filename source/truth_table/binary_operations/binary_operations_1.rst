@@ -1432,24 +1432,16 @@ conditional expressions
 
   .. code-block:: python
     :lineno-start: 14
-    :emphasize-lines: 6, 9, 12, 15
+    :emphasize-lines: 5-8
 
         def test_logical_conjunction(self):
             logical_conjunction = (
                 src.truth_table.logical_conjunction
             )
-            self.assertTrue(
-                logical_conjunction(True, True)
-            )
-            self.assertFalse(
-                logical_conjunction(True, False)
-            )
-            self.assertFalse(
-                logical_conjunction(False, True)
-            )
-            self.assertFalse(
-                logical_conjunction(False, False)
-            )
+            self.assertTrue(logical_conjunction(True, True))
+            self.assertFalse(logical_conjunction(True, False))
+            self.assertFalse(logical_conjunction(False, True))
+            self.assertFalse(logical_conjunction(False, False))
 
 
     # Exceptions seen
@@ -1502,7 +1494,7 @@ examples of Logical Conjunction
   :red:`no`       :red:`no`      :red:`no`
   ==============  ============== ================
 
-* Baking a cake, if the inputs are
+* I can bake a cake, if the inputs are
 
   - flour?
   - eggs?
@@ -1548,7 +1540,7 @@ examples of Logical Conjunction
 
   how did I get the right MFA code without the right password?
 
-* selling a product, if the inputs are
+* I can sell a product, if the inputs are
 
   - is there supply?
   - is there demand?
@@ -1643,25 +1635,10 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 18-21
+    :lineno-start: 21
+    :emphasize-lines: 3-6
 
-        def test_logical_conjunction(self):
-            logical_conjunction = (
-                src.truth_table.logical_conjunction
-            )
-            self.assertTrue(
-                logical_conjunction(True, True)
-            )
-            self.assertFalse(
-                logical_conjunction(True, False)
-            )
-            self.assertFalse(
-                logical_conjunction(False, True)
-            )
-            self.assertFalse(
-                logical_conjunction(False, False)
-            )
+            self.assertFalse(logical_conjunction(False, False))
 
         def test_project_second(self):
             self.assertTrue(
@@ -1725,7 +1702,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 23
     :emphasize-lines: 5-7
 
         def test_project_second(self):
@@ -1779,7 +1756,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_project_second` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`, in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 23
     :emphasize-lines: 8-10
 
         def test_project_second(self):
@@ -1813,7 +1790,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 23
     :emphasize-lines: 11-13
 
         def test_project_second(self):
@@ -1845,7 +1822,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 * I add a :ref:`variable<what is a variable?>` for ``src.truth_table.project_second``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 23
     :emphasize-lines: 2
 
         def test_project_second(self):
@@ -1869,7 +1846,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.truth_table.project_second`` from the test
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 23
     :emphasize-lines: 4-5, 8-9, 12-13, 16-17
 
         def test_project_second(self):
@@ -1899,7 +1876,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 23
     :emphasize-lines: 3-6
 
         def test_project_second(self):
@@ -2020,14 +1997,9 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 31
-    :emphasize-lines: 8-13
+    :lineno-start: 36
+    :emphasize-lines: 3-8
 
-        def test_project_second(self):
-            project_second = src.truth_table.project_second
-            self.assertTrue(project_second(True, True))
-            self.assertFalse(project_second(True, False))
-            self.assertTrue(project_second(False, True))
             self.assertFalse(project_second(False, False))
 
         def test_converse_non_implication(self):
@@ -2093,7 +2065,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 30
     :emphasize-lines: 7-11
 
         def test_converse_non_implication(self):
@@ -2130,7 +2102,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 30
     :emphasize-lines: 12-16
 
         def test_converse_non_implication(self):
@@ -2222,7 +2194,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 30
     :emphasize-lines: 17-21
 
         def test_converse_non_implication(self):
@@ -2514,10 +2486,13 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   .. code-block:: python
 
-    if not first_input and second_input: vs return True
-        return True                      vs if not first_input and second_input
-    else:                                vs else
-        return False                     vs False
+    if (                  vs return True
+        not first_input
+        and second_input
+    ):
+        return True       vs if not first_input and second_input
+    else:                 vs else
+        return False      vs False
 
 
 * I remove ``True if`` and ``else False`` to make the simpler :ref:`return statement<the return statement>`
@@ -2685,7 +2660,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I add a :ref:`variable<what is a variable?>` for ``src.truth_table.converse_non_implication`` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 30
     :emphasize-lines: 2-4
 
         def test_converse_non_implication(self):
@@ -2719,7 +2694,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.truth_table.converse_non_implication``
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 30
     :emphasize-lines: 6-7, 12-13, 18-19, 24-25
 
         def test_converse_non_implication(self):
@@ -2759,24 +2734,17 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 30
+    :emphasize-lines: 5-8
 
         def test_converse_non_implication(self):
             converse_non_implication = (
                 src.truth_table.converse_non_implication
             )
-            self.assertFalse(
-                converse_non_implication(True, True)
-            )
-            self.assertFalse(
-                converse_non_implication(True, False)
-            )
-            self.assertTrue(
-                converse_non_implication(False, True)
-            )
-            self.assertFalse(
-                converse_non_implication(False, False)
-            )
+            self.assertFalse(converse_non_implication(True, True))
+            self.assertFalse(converse_non_implication(True, False))
+            self.assertTrue(converse_non_implication(False, True))
+            self.assertFalse(converse_non_implication(False, False))
 
 
     # Exceptions seen
