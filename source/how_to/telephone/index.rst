@@ -701,12 +701,12 @@ how to write an f-string
 
   the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    text(True)
+    text(True) -> 'I got: True'
     └── def text(the_input):
         ├── the_input = True
-            return f'I got: {the_input}'
+        └── return f'I got: {the_input}'
             return  'I got:  True      '
 
 * I remove the commented line
