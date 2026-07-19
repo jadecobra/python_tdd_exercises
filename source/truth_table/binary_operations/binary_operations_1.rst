@@ -878,34 +878,34 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
     .. code-block:: shell
 
       logical_conjunction(True , True ) -> True
-      └──def logical_conjunction(first_input, second_input):
-         ├── first_input  == True
-         ├── second_input == True
-         ├── if first_input == False:
-         │      return False
-         └── return second_input
+      └── def logical_conjunction(first_input, second_input):
+          ├── first_input  == True
+          ├── second_input == True
+          ├── if first_input == False:
+          │      return False
+          └── return second_input
 
     .. code-block:: shell
 
       logical_conjunction(True , False) -> False
-      └──def logical_conjunction(first_input, second_input):
-         ├── first_input  == True
-         ├── second_input == False
-         ├── if first_input == False:
-         │      return False
-         └── return second_input
+      └── def logical_conjunction(first_input, second_input):
+          ├── first_input  == True
+          ├── second_input == False
+          ├── if first_input == False:
+          │      return False
+          └── return second_input
 
-  - if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return False`` and leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return False`` then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
     .. code-block:: shell
 
       logical_conjunction(False, True ) -> False
-      └──def logical_conjunction(first_input, second_input):
-         ├── first_input  == False
-         ├── second_input == False
-         └── if first_input == False:
-             └── return False
-             return second_input
+      └── def logical_conjunction(first_input, second_input):
+          ├── first_input  == False
+          ├── second_input == False
+          └── if first_input == False:
+              └── return False
+              return second_input
 
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_conjunction` in ``test_binary.py``
 
@@ -1184,24 +1184,24 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
     .. code-block:: shell
 
       logical_conjunction(False, False) -> False
-      └──def logical_conjunction(first_input, second_input):
-         ├── first_input  == False
-         ├── second_input == False
-         ├── if first_input and second_input:
-         │       return True
-         └── else:
-             └── return False
+      └── def logical_conjunction(first_input, second_input):
+          ├── first_input  == False
+          ├── second_input == False
+          ├── if first_input and second_input:
+          │       return True
+          └── else:
+              └── return False
 
     .. code-block:: shell
 
       logical_conjunction(False, True ) -> False
-      └──def logical_conjunction(first_input, second_input):
-         ├── first_input  == False
-         ├── second_input == True
-         ├── if first_input and second_input:
-         │       return True
-         └── else:
-             └── return False
+      └── def logical_conjunction(first_input, second_input):
+          ├── first_input  == False
+          ├── second_input == True
+          ├── if first_input and second_input:
+          │       return True
+          └── else:
+              └── return False
 
   - if ``first_input`` is grouped as :green:`True`, it checks if ``second_input`` is grouped as :green:`True`
 
@@ -1210,26 +1210,26 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
       .. code-block:: shell
 
         logical_conjunction(True , False) -> False
-        └──def logical_conjunction(first_input, second_input):
-           ├── first_input  == True
-           ├── second_input == False
-           ├── if first_input and second_input:
-           │       return True
-           └── else:
-               └── return False
+        └── def logical_conjunction(first_input, second_input):
+            ├── first_input  == True
+            ├── second_input == False
+            ├── if first_input and second_input:
+            │       return True
+            └── else:
+                └── return False
 
     * if ``second_input`` is grouped as :green:`True`, it runs ``return True``, which returns :green:`True` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
       .. code-block:: shell
 
         logical_conjunction(True , True ) -> True
-        └──def logical_conjunction(first_input, second_input):
-           ├── first_input  == True
-           ├── second_input == True
-           └── if first_input and second_input:
-               └── return True
-               else:
-                   return False
+        └── def logical_conjunction(first_input, second_input):
+            ├── first_input  == True
+            ├── second_input == True
+            └── if first_input and second_input:
+                └── return True
+                else:
+                    return False
 
   - it only checks ``second_input`` if ``first_input`` is :green:`True`.
 
@@ -2163,29 +2163,29 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     .. code-block:: shell
 
       converse_non_implication(True , True ) -> False
-      └──def converse_non_implication(first_input, second_input):
-         ├── first_input  == True
-         ├── second_input == True
-         ├── if first_input == False:
-         │       return True
-         └── return False
+      └── def converse_non_implication(first_input, second_input):
+          ├── first_input  == True
+          ├── second_input == True
+          ├── if first_input == False:
+          │       return True
+          └── return False
 
     .. code-block:: shell
 
       converse_non_implication(True , False) -> False
-      └──def converse_non_implication(first_input, second_input):
-         ├── first_input  == True
-         ├── second_input == False
-         ├── if first_input == False:
-         │       return True
-         └── return False
+      └── def converse_non_implication(first_input, second_input):
+          ├── first_input  == True
+          ├── second_input == False
+          ├── if first_input == False:
+          │       return True
+          └── return False
 
   - if ``first_input`` is equal to :red:`False`, it runs ``return True``, which returns :green:`True` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
     .. code-block:: shell
 
       converse_non_implication(False, True ) -> True
-      └──def converse_non_implication(first_input, second_input):
+      └── def converse_non_implication(first_input, second_input):
           ├── first_input  == False
           ├── second_input == True
           └── if first_input == False:
@@ -2414,24 +2414,24 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     .. code-block:: shell
 
       converse_non_implication(True , True ) -> False
-      └──def converse_non_implication(first_input, second_input):
-         ├── first_input  == True
-         ├── second_input == True
-         ├── if not first_input and second_input:
-         │       return True
-         └── else:
-             └── return False
+      └── def converse_non_implication(first_input, second_input):
+          ├── first_input  == True
+          ├── second_input == True
+          ├── if not first_input and second_input:
+          │       return True
+          └── else:
+              └── return False
 
     .. code-block:: shell
 
       converse_non_implication(True , False) -> False
-      └──def converse_non_implication(first_input, second_input):
-         ├── first_input  == True
-         ├── second_input == False
-         ├── if not first_input and second_input:
-         │       return True
-         └── else:
-             └── return False
+      └── def converse_non_implication(first_input, second_input):
+          ├── first_input  == True
+          ├── second_input == False
+          ├── if not first_input and second_input:
+          │       return True
+          └── else:
+              └── return False
 
   - if ``first_input`` is grouped as :green:`False`, it checks if ``second_input`` is grouped as :green:`True`
 
@@ -2440,26 +2440,26 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
       .. code-block:: shell
 
         converse_non_implication(False, False) -> False
-        └──def converse_non_implication(first_input, second_input):
-           ├── first_input  == False
-           ├── second_input == False
-           ├── if not first_input and second_input:
-           │       return True
-           └── else:
-               └── return False
+        └── def converse_non_implication(first_input, second_input):
+            ├── first_input  == False
+            ├── second_input == False
+            ├── if not first_input and second_input:
+            │       return True
+            └── else:
+                └── return False
 
     * if ``second_input`` is grouped as :green:`True`, it runs ``return True``, which returns :green:`True` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
       .. code-block:: shell
 
         converse_non_implication(False, True ) -> True
-        └──def converse_non_implication(first_input, second_input):
-           ├── first_input  == False
-           ├── second_input == True
-           └── if not first_input and second_input:
-               └── return True
-               else:
-                   return False
+        └── def converse_non_implication(first_input, second_input):
+            ├── first_input  == False
+            ├── second_input == True
+            └── if not first_input and second_input:
+                └── return True
+                else:
+                    return False
 
   - it only checks ``second_input`` if ``first_input`` is :red:`False`.
 
@@ -2638,16 +2638,16 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   .. code-block:: shell
 
     converse_non_implication(False, False) -> False
-      └──logical_conjunction(True , False) -> False
+     └── logical_conjunction(True , False) -> False
 
     converse_non_implication(False, True ) -> True
-      └──logical_conjunction(True , True ) -> True
+     └── logical_conjunction(True , True ) -> True
 
     converse_non_implication(True , False) -> False
-      └──logical_conjunction(False, False) -> False
+     └── logical_conjunction(False, False) -> False
 
     converse_non_implication(True , True ) -> False
-      └──logical_conjunction(False, True ) -> False
+     └── logical_conjunction(False, True ) -> False
 
 * I remove the commented lines
 
