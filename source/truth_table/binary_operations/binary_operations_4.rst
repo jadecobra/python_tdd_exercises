@@ -1537,7 +1537,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
         else:
             return False
 
-  green, because I can put two :ref:`if statements` together when they both return the same thing and are at the same indentation level
+  green, because I can put two :ref:`if statements` together if they both return the same thing and are at the same indentation level
 
   .. code-block:: python
 
