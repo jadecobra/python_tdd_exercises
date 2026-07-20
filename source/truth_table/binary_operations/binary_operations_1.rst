@@ -2943,17 +2943,17 @@ and
 * :ref:`Logical Conjunction is "AND"<test_logical_conjunction>`
 * :ref:`Logical Negation is "NOT" <test_logical_negation>`
 
-One logic statement has been written with and_, another was written both and_ and :ref:`not<test_logical_negation>`.
+One logic statement has been written with :ref:`and<test_logical_conjunction>`, another was written with both :ref:`and<test_logical_conjunction>` and :ref:`not<test_logical_negation>`.
 
-=============================================== =============  ============= ============= ============= ==============================================================
-return                                          True,          True,         False,        False,        name of operation
-                                                True           False         True          False
-=============================================== =============  ============= ============= ============= ==============================================================
-False                                           :red:`False`   :red:`False`  :red:`False`  :red:`False`  :ref:`contradiction<test_contradiction>`
-first and second                                :green:`True`  :red:`False`  :red:`False`  :red:`False`  :ref:`logical_conjunction<test_logical_conjunction>`
-second                                          :green:`True`  :red:`False`  :green:`True` :red:`False`  :ref:`project_second<test_project_second>`
-(not first) and second                          :red:`False`   :red:`False`  :green:`True` :red:`False`  :ref:`converse_non_implication<test_converse_non_implication>`
-=============================================== =============  ============= ============= ============= ==============================================================
+=============================================== ============== ============== ============= ============= ==============================================================
+return                                          :green:`True`, :green:`True`, :red:`False`, :red:`False`, name of operation
+                                                :green:`True`  :red:`False`   :green:`True` :red:`False`
+=============================================== ============== ============== ============= ============= ==============================================================
+False                                           :red:`False`   :red:`False`   :red:`False`  :red:`False`  :ref:`contradiction<test_contradiction>`
+first and second                                :green:`True`  :red:`False`   :red:`False`  :red:`False`  :ref:`logical_conjunction<test_logical_conjunction>`
+second                                          :green:`True`  :red:`False`   :green:`True` :red:`False`  :ref:`project_second<test_project_second>`
+(not first) and second                          :red:`False`   :red:`False`   :green:`True` :red:`False`  :ref:`converse_non_implication<test_converse_non_implication>`
+=============================================== ============== ============== ============= ============= ==============================================================
 
 ----
 

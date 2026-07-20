@@ -3573,23 +3573,23 @@ All the :ref:`binary operations<truth table: binary operations>` or conditions h
 * :ref:`Logical Conjunction (AND)<test_logical_conjunction>`
 * :ref:`Logical Negation is (NOT)<test_logical_negation>`
 
-=============================================== =============  ============= ============= ============= ==============================================================
-return                                          True,          True,         False,        False,        name of operation
-                                                True           False         True          False
-=============================================== =============  ============= ============= ============= ==============================================================
-False                                           :red:`False`   :red:`False`  :red:`False`  :red:`False`  :ref:`contradiction<test_contradiction>`
-first and second                                :green:`True`  :red:`False`  :red:`False`  :red:`False`  :ref:`logical_conjunction<test_logical_conjunction>`
-second                                          :green:`True`  :red:`False`  :green:`True` :red:`False`  :ref:`project_second<test_project_second>`
-(not first) and second                          :red:`False`   :red:`False`  :green:`True` :red:`False`  :ref:`converse_non_implication<test_converse_non_implication>`
-not first                                       :red:`False`   :red:`False`  :green:`True` :green:`True` :ref:`negate_first<test_negate_first>`
-not (first and second)                          :red:`False`   :green:`True` :green:`True` :green:`True` :ref:`logical_nand<test_logical_nand>`
-True                                            :green:`True`  :green:`True` :green:`True` :green:`True` :ref:`tautology<test_tautology>`
-first or second                                 :green:`True`  :green:`True` :green:`True` :red:`False`  :ref:`logical_disjunction<test_logical_disjunction>`
-(not (first and second)) and (first or second)  :red:`False`   :green:`True` :green:`True` :red:`False`  :ref:`exclusive_disjunction<test_exclusive_disjunction>`
-first and (not second)                          :red:`False`   :green:`True` :red:`False`  :red:`False`  :ref:`material_non_implication<test_material_non_implication>`
-first                                           :green:`True`  :green:`True` :red:`False`  :red:`False`  :ref:`project_first<test_project_first>`
-first or (not second)                           :green:`True`  :green:`True` :red:`False`  :green:`True` :ref:`converse_implication<test_converse_implication>`
-=============================================== =============  ============= ============= ============= ==============================================================
+=============================================== ============== ============== ============= ============= ==============================================================
+return                                          :green:`True`, :green:`True`, :red:`False`, :red:`False`, name of operation
+                                                :green:`True`  :red:`False`   :green:`True` :red:`False`
+=============================================== ============== ============== ============= ============= ==============================================================
+False                                           :red:`False`   :red:`False`   :red:`False`  :red:`False`  :ref:`contradiction<test_contradiction>`
+first and second                                :green:`True`  :red:`False`   :red:`False`  :red:`False`  :ref:`logical_conjunction<test_logical_conjunction>`
+second                                          :green:`True`  :red:`False`   :green:`True` :red:`False`  :ref:`project_second<test_project_second>`
+(not first) and second                          :red:`False`   :red:`False`   :green:`True` :red:`False`  :ref:`converse_non_implication<test_converse_non_implication>`
+not first                                       :red:`False`   :red:`False`   :green:`True` :green:`True` :ref:`negate_first<test_negate_first>`
+not (first and second)                          :red:`False`   :green:`True`  :green:`True` :green:`True` :ref:`logical_nand<test_logical_nand>`
+True                                            :green:`True`  :green:`True`  :green:`True` :green:`True` :ref:`tautology<test_tautology>`
+first or second                                 :green:`True`  :green:`True`  :green:`True` :red:`False`  :ref:`logical_disjunction<test_logical_disjunction>`
+(not (first and second)) and (first or second)  :red:`False`   :green:`True`  :green:`True` :red:`False`  :ref:`exclusive_disjunction<test_exclusive_disjunction>`
+first and (not second)                          :red:`False`   :green:`True`  :red:`False`  :red:`False`  :ref:`material_non_implication<test_material_non_implication>`
+first                                           :green:`True`  :green:`True`  :red:`False`  :red:`False`  :ref:`project_first<test_project_first>`
+first or (not second)                           :green:`True`  :green:`True`  :red:`False`  :green:`True` :ref:`converse_implication<test_converse_implication>`
+=============================================== ============== ============== ============= ============= ==============================================================
 
 ----
 

@@ -7,7 +7,7 @@ class TestBinaryOperations(unittest.TestCase):
     def test_contradiction(self):
         contradiction = src.truth_table.contradiction
         self.assertFalse(contradiction(True, True))
-        self.assertFalse(contradiction(True, True))
+        self.assertFalse(contradiction(True, False))
         self.assertFalse(contradiction(False, True))
         self.assertFalse(contradiction(False, False))
 
