@@ -9,9 +9,7 @@
 pumping python: how I solve problems with test driven development
 #################################################################################
 
-.. raw:: html
 
-  <iframe style="border-radius:12px" width="560"  height="315" src="https://www.youtube-nocookie.com/embed/fxPgowISTA4?si=fHnq4SbtySWs696z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ----
 
@@ -82,9 +80,7 @@ do you like videos?
 
 :ref:`There are videos for every chapter, check them out here<pumping python videos>`
 
-.. raw:: html
 
-  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=_H3teEnFxh8QC0Xo&amp;list=PL5lANtH-CRODKvc0QPDAOlsis6f9z-MDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 *********************************************************************************
 table of contents
@@ -134,7 +130,3 @@ table of contents
 `Check out what people have said about the book on TrustPilot <https://www.trustpilot.com/review/pumpingpython.com>`_
 
 ----
-
-.. raw:: html
-
-  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1uJ4BgylqE1PJ6Ua14laJf?utm_source=generator" width="560" height="375" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>

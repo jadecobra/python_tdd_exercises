@@ -32,3 +32,28 @@ def converse_non_implication(first_input, second_input):
         second_input
     )
     return not first_input and second_input
+
+
+def negate_first(first_input, second_input):
+    return not first_input
+
+
+def logical_nand(first_input, second_input):
+    return logical_negation(
+        logical_conjunction(first_input, second_input)
+    )
+    return not (first_input and second_input)
+
+
+def tautology(first_input, second_input):
+    return True
+
+
+def logical_disjunction(first_input, second_input):
+    return logical_negation(
+        logical_conjunction(
+            logical_negation(first_input),
+            logical_negation(second_input)
+        )
+    )
+    return first_input or second_input

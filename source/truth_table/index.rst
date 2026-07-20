@@ -10,9 +10,7 @@
 truth table
 #################################################################################
 
-.. raw:: html
 
-  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=7_bVE9tCltIq1uBF&amp;list=PL5lANtH-CROCjQaiFJP0-XEjHfCiwgwt1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Sometimes I want programs_ to choose what to do based on inputs or :ref:`conditions<if statements>`, and can make this happen with :ref:`if statements<if statements>`. For example
 
