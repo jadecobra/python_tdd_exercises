@@ -205,7 +205,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the second case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_negate_first` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the second case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_negate_first` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -236,7 +236,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     negate_first(True , False) -> False
     negate_first(True , True ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :red:`False` and the second input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -287,7 +287,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     negate_first(True , False) -> False
     negate_first(True , True ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False` to :ref:`test_negate_first` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False` to :ref:`test_negate_first` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -674,7 +674,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the second case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_nand` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the second case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_nand` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -786,7 +786,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
     logical_nand(True , False) -> True
     logical_nand(True , True ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_nand` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_nand` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1576,7 +1576,7 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_tautology` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_tautology` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1607,7 +1607,7 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
     tautology(True , False) -> True
     tautology(True , True ) -> True
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :red:`False` and the second input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1639,7 +1639,7 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
     tautology(True , False) -> True
     tautology(True , True ) -> True
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1865,7 +1865,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_disjunction` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_disjunction` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1903,7 +1903,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
     logical_disjunction(True , True ) -> True
               tautology(True , True ) -> True
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :red:`False` and the second input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1942,7 +1942,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
     logical_disjunction(True , True ) -> True
               tautology(True , True ) -> True
 
-* I add an :ref:`assertion<what is an assertion?>` for the fourth case, which is when the first input is :red:`False` and the second input is :red:`False`
+* I add an :ref:`assertion<what is an assertion?>` for the fourth case, which is if the first input is :red:`False` and the second input is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return

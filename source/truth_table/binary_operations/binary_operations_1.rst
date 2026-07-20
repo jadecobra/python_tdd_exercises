@@ -328,7 +328,7 @@ first input     second input   return
     def contradiction(first_input, second_input):
         return False
 
-* I add an :ref:`assertion<what is an assertion?>` for the second case, which is when the first input is :green:`True` and the second input is :red:`False`, to ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the second case, which is if the first input is :green:`True` and the second input is :red:`False`, to ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -362,7 +362,7 @@ first input     second input   return
     contradiction(True, False) -> False
     contradiction(True, True ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for the third case, which is when the first input is :red:`False` and the second input is :green:`True`
+* I add an :ref:`assertion<what is an assertion?>` for the third case, which is if the first input is :red:`False` and the second input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -400,7 +400,7 @@ first input     second input   return
     contradiction(True , False) -> False
     contradiction(True , True ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for the fourth case, which is when the first input is :red:`False` and the second input is :red:`False`
+* I add an :ref:`assertion<what is an assertion?>` for the fourth case, which is if the first input is :red:`False` and the second input is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
@@ -628,7 +628,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`logical_conjunction<test_logical_conjunction>` with an :ref:`assertion<what is an assertion?>` for the first case, which is when the first input is :green:`True` and the second input is :green:`True`, in ``test_binary.py``
+* I add a test for :ref:`logical_conjunction<test_logical_conjunction>` with an :ref:`assertion<what is an assertion?>` for the first case, which is if the first input is :green:`True` and the second input is :green:`True`, in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -695,7 +695,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_conjunction` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_conjunction` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -790,7 +790,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
     logical_conjunction(True, False) -> False
     logical_conjunction(True, True ) -> True
 
-* I add an :ref:`assertion<what is an assertion?>` for the third case, which is when the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_logical_conjunction` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the third case, which is if the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_logical_conjunction` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -903,7 +903,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
               └── return False
               return second_input
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_conjunction` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_conjunction` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1696,7 +1696,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the second case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_project_second` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the second case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_project_second` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1756,7 +1756,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
     def project_second(first_input, second_input):
         return second_input
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_project_second` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`, in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_project_second` for the next case, which is if the first input is :red:`False` and the second input is :green:`True`, in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -1784,7 +1784,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
     project_second(True , False) -> False
     project_second(True , True ) -> True
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2059,7 +2059,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_converse_non_implication` of ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_converse_non_implication` of ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2096,7 +2096,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     converse_non_implication(True , False) -> False
     converse_non_implication(True , True ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for the third case, which is when the first input is :red:`False` and the second input is :green:`True`
+* I add an :ref:`assertion<what is an assertion?>` for the third case, which is if the first input is :red:`False` and the second input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2188,7 +2188,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
               └── return True
               return False
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_converse_non_implication` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_converse_non_implication` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return

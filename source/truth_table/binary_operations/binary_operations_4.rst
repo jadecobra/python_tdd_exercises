@@ -209,7 +209,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_negate_second` in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_negate_second` in ``test_truth_table.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -253,7 +253,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
   - if ``second_input`` is NOT equal to :red:`False`, it runs ``return False``
   - if ``second_input`` is equal to :red:`False`, it runs ``return True``
 
-* I add an :ref:`assertion<what is an assertion?>` for the third case, which is when the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_negate_second` in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>` for the third case, which is if the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_negate_second` in ``test_truth_table.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -276,7 +276,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
 
   the test is still green. :ref:`negate_second<test_negate_second>` returns the :ref:`logical negation<test_logical_negation>` of the second input in all 3 cases.
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
@@ -560,7 +560,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the second case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_nor` in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>` for the second case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_nor` in ``test_truth_table.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -586,7 +586,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
   - :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
   - :red:`False`, if the first input is :green:`True`
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :red:`False` and the second input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -612,7 +612,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
   - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
   - :red:`False`, if the first input is :green:`True`
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1139,7 +1139,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_equality` in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_equality` in ``test_truth_table.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1185,7 +1185,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
   - if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` then runs ``return True``
   - if ``second_input`` is equal to :red:`False`, it runs ``return False``
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_logical_equality` in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_logical_equality` in ``test_truth_table.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1242,7 +1242,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
   - if ``first_input`` is equal to :red:`False`, it runs ``return False`` then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_equality` in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_equality` in ``test_truth_table.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2018,7 +2018,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_material_implication` for the next case, which is when the first input is :green:`True` and the second input is :red:`False`,  in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_material_implication` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`,  in ``test_truth_table.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2068,7 +2068,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   - if ``second_input`` is NOT equal to :red:`False`, it runs ``return True``
   - if ``second_input`` is equal to :red:`False`, it runs ``return False``
 
-* I add an :ref:`assertion<what is an assertion?>`  to :ref:`test_material_implication` for the next case, which is when the first input is :red:`False` and the second input is :green:`True` in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>`  to :ref:`test_material_implication` for the next case, which is if the first input is :red:`False` and the second input is :green:`True` in ``test_truth_table.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2104,7 +2104,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
   - the second input in these three cases
 
-* I add an :ref:`assertion<what is an assertion?>` for the fourth case, which is when the first input is :red:`False` and the second input is :red:`False`
+* I add an :ref:`assertion<what is an assertion?>` for the fourth case, which is if the first input is :red:`False` and the second input is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
