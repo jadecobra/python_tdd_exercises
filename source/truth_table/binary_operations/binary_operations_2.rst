@@ -139,7 +139,7 @@ I add a test for :ref:`negate_first<test_negate_first>` with an :ref:`assertion<
 ==============  ============== ==============
 first input     second input   return
 ==============  ============== ==============
-:green:`True`   :red:`False`   :red:`False`
+:green:`True`   :green:`True`  :red:`False`
 ==============  ============== ==============
 
 .. code-block:: python
@@ -245,7 +245,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 39
     :emphasize-lines: 5
 
         def test_negate_first(self):
@@ -296,7 +296,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 39
     :emphasize-lines: 6
 
         def test_negate_first(self):
@@ -417,7 +417,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
             return True
         return False
 
-  the test is still green because Python_ checks if ``first_input`` is equal to :red:`False` when ``if first_input == False:`` runs
+  the test is still green because Python_ checks the value of ``not first_input`` when ``if not first_input:`` runs
 
   - if the value of ``something`` is :red:`False`
 
@@ -525,7 +525,7 @@ examples of Negate First
 
 ----
 
-* approval to do something based only based on risk, if the inputs are
+* approval to do something based only on risk, if the inputs are
 
   - is it risky?
   - has a good reason?
@@ -887,7 +887,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
   still green because :ref:`logical_nand<test_logical_nand>` returns
 
   - :red:`False` if the first input is :green:`True` and the second input is :green:`True`
-  - :red:`True` if the above condition is NOT met
+  - :green:`True` if the above condition is NOT met
 
   .. code-block:: python
 
@@ -1100,7 +1100,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * I rewrite the :ref:`else clause<if statements>` with the :ref:`Logical Negation (NOT)<test_logical_negation>` of ``first_input and second_input`` so I can write the statements with a :ref:`conditional expression (ternary operator)<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 41
     :emphasize-lines: 17-18
 
     def logical_nand(first_input, second_input):
@@ -1156,7 +1156,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * I change ``if first_input and second_input`` to an :ref:`else clause<if statements>`
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 41
     :emphasize-lines: 18-19
 
     def logical_nand(first_input, second_input):
@@ -1239,7 +1239,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
     else:
         return True
 
-  since ``else`` is the :ref:`logical_negation (not)<test_logical_negation>` of the :ref:`if statement<if  statements>`
+  since ``else`` is the :ref:`logical_negation (not)<test_logical_negation>` of the :ref:`if statement<if statements>`
 
   .. code-block:: python
 
@@ -1585,7 +1585,7 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 69
+    :lineno-start: 53
     :emphasize-lines: 4
 
         def test_tautology(self):
@@ -1616,7 +1616,7 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 69
+    :lineno-start: 53
     :emphasize-lines: 5
 
         def test_tautology(self):
@@ -1648,7 +1648,7 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 69
+    :lineno-start: 53
     :emphasize-lines: 6
 
         def test_tautology(self):
@@ -1677,7 +1677,7 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
 
     git commit -am 'add tautology'
 
-:ref:`Tautology<test_tautology>` always returns :green:`True`, it does not care about the inputs. It is the opposite of :ref:`contradiction<test_contradiction>`  which always returns :red:`False`.
+:ref:`Tautology<test_tautology>` always returns :green:`True`, it does not care about the inputs. It is the opposite of :ref:`contradiction<test_contradiction>` which always returns :red:`False`.
 
 ----
 
@@ -1998,7 +1998,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
           ├── second_input == True
           ├── if first_input == False:
           │       if second_input == False:
-          │           return True
+          │           return False
           └── return True
 
     .. code-block:: shell
@@ -2009,7 +2009,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
           ├── second_input == False
           ├── if first_input == False:
           │       if second_input == False:
-          │           return True
+          │           return False
           └── return True
 
   - if ``first_input`` is equal to :red:`False`, it goes to the next line - ``if second_input == False:``, which checks if ``second_input`` is equal to :red:`False`
@@ -2024,20 +2024,20 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
             ├── second_input == True
             └── if first_input == False:
             ┌───┴── if second_input == False:
-            │           return True
+            │           return False
             └── return True
 
     * if ``second_input`` is equal to :red:`False`, it goes to the next line - ``return False`` then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
       .. code-block:: shell
 
-        logical_disjunction(True , False) -> True
+        logical_disjunction(False, False) -> False
         └── def logical_disjunction(first_input, second_input):
-            ├── first_input  == True
+            ├── first_input  == False
             ├── second_input == False
             └── if first_input == False:
                 └── if second_input == False:
-                    └── return True
+                    └── return False
                 return True
 
   - it only checks the second input if the first input is :red:`False`.
@@ -2400,7 +2400,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
   - ``not first_input`` is the :ref:`Logical Negation (NOT)<test_logical_negation>` of ``first_input``
 
-    * if the first input is :green:`True`, this part of the statement is :red:`False` and exits the :ref:`function<what is a function?>`
+    * if the first input is :green:`True`, this part of the statement is :red:`False`
     * if the first input is :red:`False`, this part of the statement is :green:`True`
 
   - ``not second_input`` is the :ref:`Logical Negation (NOT)<test_logical_negation>` of ``second_input``
@@ -2687,7 +2687,7 @@ review
 
   - always returns :green:`True`
   - never returns :red:`False`
-  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`contradiction<test_contradiction>`  which always returns :red:`False`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`contradiction<test_contradiction>` which always returns :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
