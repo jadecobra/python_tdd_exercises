@@ -160,7 +160,7 @@ first input     second input   return
 
 ----
 
-* I add a test for :ref:`contradiction<test_contradiction>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, in ``test_binary.py``
+* I add a test for :ref:`contradiction<test_contradiction>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1991,7 +1991,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`converse_non_implication<test_converse_non_implication>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+* I add a test for :ref:`converse_non_implication<test_converse_non_implication>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return

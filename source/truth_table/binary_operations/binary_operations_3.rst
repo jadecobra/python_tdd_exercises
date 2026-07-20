@@ -1275,7 +1275,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   I can use any of these :ref:`return statements<the return statement>`. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
-* I add a git_ commit message in another terminal_
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1399,7 +1399,7 @@ first input     second input   return
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for :ref:`material_non_implication<test_material_non_implication>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+* I add a test for :ref:`material_non_implication<test_material_non_implication>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1951,7 +1951,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
   I can use either of these :ref:`return statements<the return statement>`. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
-* I add a git_ commit message in another terminal_
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1-2
@@ -2149,7 +2149,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`project_first<test_project_first>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, in ``test_binary.py``
+* I add a test for :ref:`project_first<test_project_first>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2543,7 +2543,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
     def project_first(first_input, second_input):
         return first_input
 
-* I add a git_ commit message in another terminal_
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2644,7 +2644,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`converse_implication<test_converse_implication>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+* I add a test for :ref:`converse_implication<test_converse_implication>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -3290,7 +3290,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   I can use either of these :ref:`return statements<the return statement>`. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
-* I add a git_ commit message in another terminal_
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1

@@ -134,7 +134,7 @@ first input     second input   return
 
 ----
 
-I add a test for :ref:`negate_first<test_negate_first>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+I add a test for :ref:`negate_first<test_negate_first>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
 ==============  ============== ==============
 first input     second input   return
@@ -503,7 +503,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     def negate_first(first_input, second_input):
         return not first_input
 
-* I add a git_ commit message in another terminal_
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -607,7 +607,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`logical_nand<test_logical_nand>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+* I add a test for :ref:`logical_nand<test_logical_nand>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1508,7 +1508,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`tautology<test_tautology>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+* I add a test for :ref:`tautology<test_tautology>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1797,7 +1797,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`logical_disjunction<test_logical_disjunction>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+* I add a test for :ref:`logical_disjunction<test_logical_disjunction>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return

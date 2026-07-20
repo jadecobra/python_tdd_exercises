@@ -32,6 +32,49 @@ These are the tests I have at the end of the chapter
   :language: python
   :linenos:
   :caption: truth_table/tests/test_binary.py
+  :lines: 1-26
+
+.. literalinclude:: ../../code/truth_table/tests/test_binary.py
+  :language: python
+  :lineno-start: 28
+  :caption: truth_table/tests/test_binary.py
+  :lines: 28-42
+
+.. literalinclude:: ../../code/truth_table/tests/test_binary.py
+  :language: python
+  :lineno-start: 44
+  :caption: truth_table/tests/test_binary.py
+  :lines: 44-56
+
+.. literalinclude:: ../../code/truth_table/tests/test_binary.py
+  :language: python
+  :lineno-start: 58
+  :caption: truth_table/tests/test_binary.py
+  :lines: 58-72
+
+.. literalinclude:: ../../code/truth_table/tests/test_binary.py
+  :language: python
+  :lineno-start: 74
+  :caption: truth_table/tests/test_binary.py
+  :lines: 74-88
+
+.. literalinclude:: ../../code/truth_table/tests/test_binary.py
+  :language: python
+  :lineno-start: 90
+  :caption: truth_table/tests/test_binary.py
+  :lines: 90-104
+
+.. literalinclude:: ../../code/truth_table/tests/test_binary.py
+  :language: python
+  :lineno-start: 106
+  :caption: truth_table/tests/test_binary.py
+  :lines: 106-118
+
+.. literalinclude:: ../../code/truth_table/tests/test_binary.py
+  :language: python
+  :lineno-start: 120
+  :caption: truth_table/tests/test_binary.py
+  :lines: 120-
 
 ----
 
@@ -129,7 +172,7 @@ first input     second input   return
 
 ----
 
-I add a new test for :ref:`negate_second<test_negate_second>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_truth_table.py``
+I add a new test for :ref:`negate_second<test_negate_second>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_truth_table.py``
 
 ==============  ============== ==============
 first input     second input   return
@@ -138,25 +181,10 @@ first input     second input   return
 ==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 118
-  :emphasize-lines: 18-20
+  :lineno-start: 99
+  :emphasize-lines: 3-5
 
-      def test_converse_implication(self):
-          converse_implication = (
-              src.truth_table.converse_implication
-          )
-          self.assertTrue(
-              converse_implication(True, True)
-          )
-          self.assertTrue(
-              converse_implication(True, False)
-          )
-          self.assertFalse(
-              converse_implication(False, True)
-          )
-          self.assertTrue(
-              converse_implication(False, False)
-          )
+          self.assertTrue(converse_implication(False, False))
 
       def test_negate_second(self):
           negate_second = src.truth_table.negate_second
@@ -182,10 +210,10 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``tru
 
 ----
 
-I add a :ref:`function<what is a function?>` for :ref:`negate_second<test_negate_second>` to ``truth_table.py``
+I add a :ref:`function definition<how to make a function that takes input>` for :ref:`negate_second<test_negate_second>` to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 94
+  :lineno-start: 92
   :emphasize-lines: 9-10
 
   def converse_implication(first_input, second_input):
@@ -200,6 +228,10 @@ I add a :ref:`function<what is a function?>` for :ref:`negate_second<test_negate
       return False
 
 the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`.
+
+.. code-block:: python
+
+  negate_second(True , True ) -> False
 
 ----
 
@@ -218,7 +250,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 135
+    :lineno-start: 101
     :emphasize-lines: 4
 
         def test_negate_second(self):
@@ -240,7 +272,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
 * I add an :ref:`if statement<if statements>` to :ref:`negate_second<test_negate_second>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 102
+    :lineno-start: 100
     :emphasize-lines: 2-3
 
     def negate_second(first_input, second_input):
@@ -248,10 +280,36 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
             return True
         return False
 
-  the test passes because when :ref:`negate_second<test_negate_second>` is called, it runs ``if second_input == False:``
+  the test passes because when :ref:`negate_second<test_negate_second>` is :ref:`called<how to call a function with input>`, Python_ checks ``if second_input == False:``
 
   - if ``second_input`` is NOT equal to :red:`False`, it runs ``return False``
+
+    .. code-block:: shell
+
+      negate_second(True , True ) -> False
+      └── def negate_second(first_input, second_input):
+          ├── first_input  == True
+          ├── second_input == True
+          ├── if second_input == False:
+          │       return True
+          └── return False
+
   - if ``second_input`` is equal to :red:`False`, it runs ``return True``
+
+    .. code-block:: shell
+
+      negate_second(True , False) -> True
+      └── def negate_second(first_input, second_input):
+          ├── first_input  == True
+          ├── second_input == False
+          └── if second_input == False:
+              └── return True
+              return False
+
+  .. code-block:: python
+
+    negate_second(True , False) -> True
+    negate_second(True , True ) -> False
 
 * I add an :ref:`assertion<what is an assertion?>` for the third case, which is if the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_negate_second` in ``test_truth_table.py``
 
@@ -262,7 +320,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 135
+    :lineno-start: 101
     :emphasize-lines: 5
 
         def test_negate_second(self):
@@ -276,6 +334,12 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
 
   the test is still green. :ref:`negate_second<test_negate_second>` returns the :ref:`logical negation<test_logical_negation>` of the second input in all 3 cases.
 
+  .. code-block:: python
+
+    negate_second(False, True ) -> False
+    negate_second(True , False) -> True
+    negate_second(True , True ) -> False
+
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False`
 
   ==============  ============== ==============
@@ -285,7 +349,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 135
+    :lineno-start: 101
     :emphasize-lines: 6
 
         def test_negate_second(self):
@@ -300,10 +364,17 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
 
   the test is still green.
 
+  .. code-block:: python
+
+    negate_second(False, False) -> True
+    negate_second(False, True ) -> False
+    negate_second(True , False) -> True
+    negate_second(True , True ) -> False
+
 * I add :ref:`the bool built-in function<how to test if something is grouped as True>` to the :ref:`negate_second function<test_negate_second>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 102
+    :lineno-start: 100
     :emphasize-lines: 2-3
 
     def negate_second(first_input, second_input):
@@ -317,7 +388,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the statement in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 102
+    :lineno-start: 100
     :emphasize-lines: 3-4
 
     def negate_second(first_input, second_input):
@@ -332,7 +403,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
 * I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 102
+    :lineno-start: 100
     :emphasize-lines: 4-5
 
     def negate_second(first_input, second_input):
@@ -348,7 +419,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
 * I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
-    :lineno-start: 102
+    :lineno-start: 100
     :emphasize-lines: 5-6
 
     def negate_second(first_input, second_input):
@@ -360,7 +431,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
             return True
         return False
 
-  the test is still green, because when ``if second_input == False:`` runs, Python_ checks if ``second_input`` is equal to :red:`False`. I can assume the following substitutions
+  the test is still green, because Python_ checks if ``second_input`` is equal to :red:`False` when ``if second_input == False:`` runs. I assume the following substitutions
 
   - if the value of ``something`` is :red:`False`
 
@@ -377,7 +448,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
 * I add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 102
+    :lineno-start: 100
     :emphasize-lines: 6-9
 
     def negate_second(first_input, second_input):
@@ -392,10 +463,16 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
 
   still green.
 
+  .. code-block:: python
+
+    if not second_input vs return True
+        return True     vs if not second_input
+    return False        vs else False
+
 * I remove ``True if`` and ``else False`` to make the statement simpler
 
   .. code-block:: python
-    :lineno-start: 102
+    :lineno-start: 100
     :emphasize-lines: 9-10
 
     def negate_second(first_input, second_input):
@@ -412,12 +489,12 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
 * I remove the comments
 
   .. code-block:: python
-    :lineno-start: 102
+    :lineno-start: 100
 
     def negate_second(first_input, second_input):
         return not second_input
 
-* I add a git_ commit message in another terminal_
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -429,7 +506,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
 * ``not second_input``
 * the :ref:`Logical Negation<test_logical_negation>` of the second input
 
-It is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Project Second<test_project_second>` which always returns the second input
+It is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Project Second<test_project_second>` which always returns the second input. It always :ref:`negates<test_logical_negation>` the second input.
 
 ----
 
@@ -493,7 +570,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`logical_nor<test_logical_nor>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_truth_table.py``
+* I add a test for :ref:`logical_nor<test_logical_nor>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_truth_table.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -502,7 +579,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 135
+    :lineno-start: 101
     :emphasize-lines: 8-10
 
         def test_negate_second(self):
@@ -540,7 +617,7 @@ first input     second input   return
 I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 102
+  :lineno-start: 100
   :emphasize-lines: 5-6
 
   def negate_second(first_input, second_input):
@@ -1065,7 +1142,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`Logical Equality<test_logical_equality>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True` to ``test_truth_table.py``
+* I add a test for :ref:`Logical Equality<test_logical_equality>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True` to ``test_truth_table.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1074,7 +1151,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 135
+    :lineno-start: 101
     :emphasize-lines: 23-26
 
         def test_logical_nor(self):
@@ -1937,7 +2014,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`material_implication<test_material_implication>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_truth_table.py``
+* I add a test for :ref:`material_implication<test_material_implication>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_truth_table.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2565,7 +2642,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 
   I can use either of these :ref:`return statements<the return statement>`. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
-* I add a git_ commit message in another terminal_
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
