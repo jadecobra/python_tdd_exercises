@@ -815,25 +815,61 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
   the test is still green because when :ref:`logical_nand<test_logical_nand>` is :ref:`called<how to call a function with input>` it runs ``if first_input == False:``, where Python_ checks if ``first_input`` is equal to :red:`False`
 
 
-  * if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to the next :ref:`if statement<if statements>` in the :ref:`function<what is a function?>` - ``if second_input == False:`` which checks if ``second_input`` is equal to :red:`False`
-
-    - if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return False`` then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  * if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return True`` then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
     .. code-block:: shell
 
-      logical_nand(True, True) -> False
+      logical_nand(False, False) -> True
       └── def logical_nand(first_input, second_input):
-          ├── first_input  == True
+          ├── first_input  == False
+          ├── second_input == False
+          └── if first_input  == False:
+              └── return True
+              if second_input == False:
+                  return True
+              return False
+
+    .. code-block:: shell
+
+      logical_nand(False, True ) -> True
+      └── def logical_nand(first_input, second_input):
+          ├── first_input  == False
           ├── second_input == True
-          ├── if first_input == False:
-          │       return True
-          ├── if first_input == False:
-          │       return True
-          └── return False
+          └── if first_input  == False:
+              └── return True
+              if second_input == False:
+                  return True
+              return False
+
+  * if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to the next :ref:`if statement<if statements>` in the :ref:`function<what is a function?>` - ``if second_input == False:`` which checks if ``second_input`` is equal to :red:`False`
 
     - if ``second_input`` is equal to :red:`False`, it goes to the next line - ``return True`` then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
-  * if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return True`` then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+      .. code-block:: shell
+
+        logical_nand(True , False) -> True
+        └── def logical_nand(first_input, second_input):
+            ├── first_input  == True
+            ├── second_input == False
+            ├── if first_input  == False:
+            │       return True
+            └── if second_input == False:
+                └── return True
+                return False
+
+    - if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return False`` then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+      .. code-block:: shell
+
+        logical_nand(True , True ) -> False
+        └── def logical_nand(first_input, second_input):
+            ├── first_input  == True
+            ├── second_input == True
+            ├── if first_input  == False:
+            │       return True
+            ├── if second_input == False:
+            │       return True
+            └── return False
 
 * There is only one case where :ref:`logical_nand<test_logical_nand>` returns :red:`False` (the first case, when the first input is :green:`True` and the second input is :green:`True`). I add :ref:`if statements` for it, in ``truth_table.py``
 
@@ -857,13 +893,68 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
   - :red:`False` if the first input is :green:`True` and the second input is :green:`True`
   - :red:`True` if the above condition is NOT met
 
-  when ``if first_input == True:`` runs, Python_ checks if ``first_input`` is equal to :green:`True`
+  .. code-block:: python
+
+    logical_nand(False, False) -> True
+    logical_nand(False, True ) -> True
+    logical_nand(True , False) -> True
+    logical_nand(True , True ) -> False
+
+  Python_ checks if ``first_input`` is equal to :green:`True` when ``if first_input == True:`` runs
 
   - if ``first_input`` is NOT equal to :green:`True`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return True`` then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+    .. code-block:: shell
+
+      logical_nand(False, False) -> True
+      └── def logical_nand(first_input, second_input):
+          ├── first_input  == False
+          ├── second_input == False
+          ├── if first_input == True:
+          │       if second_input == True:
+          │           return False
+          └── return True
+
+    .. code-block:: shell
+
+      logical_nand(False, True ) -> True
+      └── def logical_nand(first_input, second_input):
+          ├── first_input  == False
+          ├── second_input == True
+          ├── if first_input == True:
+          │       if second_input == True:
+          │           return False
+          └── return True
+
   - if ``first_input`` is equal to :green:`True`, it goes to the next :ref:`if statement<if statements>` - ``if second_input == True``, which checks if ``second_input`` is equal to :green:`True`
 
     * if ``second_input`` is NOT equal to :green:`True`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return True`` then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+      .. code-block:: shell
+
+        logical_nand(True , False) -> True
+        └── def logical_nand(first_input, second_input):
+            ├── first_input  == True
+            ├── second_input == False
+            └── if first_input == True:
+            ┌───┴── if second_input == True:
+            │           return False
+            └── return True
+
     * if ``second_input`` is equal to :green:`True`, it goes to the next line - ``return False`` then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+      .. code-block:: shell
+
+        logical_nand(True , True ) -> False
+        └── def logical_nand(first_input, second_input):
+            ├── first_input  == True
+            ├── second_input == True
+            └── if first_input == True:
+                └── if second_input == True:
+                    └── return False
+                return True
+
+  - it only checks the second input if the first input is :green:`True`.
 
 * I use :ref:`the bool built-in function<how to test if something is grouped as True>`
 
@@ -1115,6 +1206,16 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
   green.
 
+  .. code-block:: python
+
+    if not (              vs return True
+        first_input
+        and second_input
+    ):
+        return True       vs if not (first_input and second_input)
+    else:                 vs else
+        return False      vs False
+
 * I remove ``True if`` and ``else False`` to make the statement simpler
 
   .. code-block:: python
@@ -1172,7 +1273,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
     return not (something)
 
-  this means ``if something: return False`` is the same as ``return not (something)`` since Python_ groups objects as :red:`False` or :green:`True`
+  this means ``if something: return False`` is the same as ``return not (something)`` since :ref:`Python groups objects as False or True<what are booleans?>`.
 
 * :ref:`logical_nand<test_logical_nand>` returns ``not (first_input and second_input)`` which is the :ref:`Logical Negation (NOT)<test_logical_negation>` of the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and second input, which means that in the four cases
 
@@ -1182,8 +1283,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
       :emphasize-lines: 4
 
       not (first and second)
-      not (True  and True)
-      not (True)  # not logical_conjunction(True, True)
+      not (True  and True)  # not logical_conjunction(True, True)
+      not (True)
       False
 
   - if the first input is :green:`True` and the second input is :red:`False`, :ref:`logical_nand<test_logical_nand>` returns
@@ -1192,8 +1293,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
       :emphasize-lines: 4
 
       not (first and second)
-      not (True  and False)
-      not (False) # not logical_conjunction(True, False)
+      not (True  and False) # not logical_conjunction(True, False)
+      not (False)
       True
 
   - if the first input is :red:`False` and the second input is :green:`True`, :ref:`logical_nand<test_logical_nand>` returns
@@ -1202,8 +1303,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
       :emphasize-lines: 4
 
       not (first and second)
-      not (False and True)
-      not (False) # not logical_conjunction(False, True)
+      not (False and True)  # not logical_conjunction(False, True)
+      not (False)
       True
 
   - if the first input is :red:`False` and the second input is :red:`False`, :ref:`logical_nand<test_logical_nand>` returns
@@ -1212,8 +1313,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
       :emphasize-lines: 4
 
       not (first and second)
-      not (False and False)
-      not (False) # not logical_conjunction(False, False)
+      not (False and False) # not logical_conjunction(False, False)
+      not (False)
       True
 
   ==============  =============== =============== ================
@@ -1231,7 +1332,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
   .. code-block:: python
     :lineno-start: 55
-    :emphasize-lines: 7-11
+    :emphasize-lines: 7-9
 
         # else:
         # if not (first_input and second_input):
@@ -1240,9 +1341,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
         # else:
         #     return
         return logical_negation(
-            logical_conjunction(
-                first_input, second_input
-            )
+            logical_conjunction(first_input, second_input)
         )
         return (
             # True if
@@ -1252,17 +1351,29 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
   the test is still green.
 
+  .. code-block:: shell
+
+    logical_nand(False, False) -> True
+     └── not logical_conjunction(False , False) -> True
+
+    logical_nand(False, True ) -> True
+     └── not logical_conjunction(False , True ) -> True
+
+    logical_nand(True , False) -> True
+     └── not logical_conjunction(True  , False) -> True
+
+    logical_nand(True , True ) -> False
+     └── not logical_conjunction(True  , True ) -> False
+
 * I remove the comments
 
   .. code-block:: python
     :lineno-start: 41
-    :emphasize-lines: 7
+    :emphasize-lines: 5
 
     def logical_nand(first_input, second_input):
         return logical_negation(
-            logical_conjunction(
-                first_input, second_input
-            )
+            logical_conjunction(first_input, second_input)
         )
         return not (first_input and second_input)
 
@@ -1277,11 +1388,11 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
 :ref:`Logical NAND<test_logical_nand>`
 
-* returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
-* returns ``not (first_input and second_input)`` which is the :ref:`Logical Negation (NOT)<test_logical_negation>` of the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and the second input, many words
-* is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Conjunction (AND)<test_logical_conjunction>` which only returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
+* returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`.
+* returns ``not (first_input and second_input)`` which is the :ref:`Logical Negation (NOT)<test_logical_negation>` of the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and the second input, many words.
+* is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Conjunction (AND)<test_logical_conjunction>` which only returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`.
 * is the :ref:`not<test_logical_negation>` of the :ref:`and<test_logical_conjunction>` of the first input and second input, confusing?
-* is :ref:`not and<test_logical_nand>`
+* is the :ref:`negation of and<test_logical_nand>`.
 
 ----
 
@@ -1410,14 +1521,9 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 8-10
+    :lineno-start: 51
+    :emphasize-lines: 3-5
 
-        def test_logical_nand(self):
-            logical_nand = src.truth_table.logical_nand
-            self.assertFalse(logical_nand(True, True))
-            self.assertTrue(logical_nand(True, False))
-            self.assertTrue(logical_nand(False, True))
             self.assertTrue(logical_nand(False, False))
 
         def test_tautology(self):
@@ -1448,21 +1554,23 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 41
-  :emphasize-lines: 10-11
+  :emphasize-lines: 8-9
 
-    def logical_nand(first_input, second_input):
-        return logical_negation(
-            logical_conjunction(
-                first_input, second_input
-            )
-        )
-        return not (first_input and second_input)
+  def logical_nand(first_input, second_input):
+      return logical_negation(
+          logical_conjunction(first_input, second_input)
+      )
+      return not (first_input and second_input)
 
 
-    def tautology(first_input, second_input):
-        return True
+  def tautology(first_input, second_input):
+      return True
 
 the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`.
+
+.. code-block:: python
+
+  tautology(True , True ) -> True
 
 ----
 
@@ -1498,6 +1606,11 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
   - :green:`True`, if the first input is :green:`True`
 
+  .. code-block:: python
+
+    tautology(True , False) -> True
+    tautology(True , True ) -> True
+
 * I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`
 
   ==============  ============== ==============
@@ -1524,6 +1637,12 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
   - if the first input is :red:`False` and the second input is :green:`True`
   - if the first input is :green:`True`
 
+  .. code-block:: python
+
+    tautology(False, True ) -> True
+    tautology(True , False) -> True
+    tautology(True , True ) -> True
+
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`
 
   ==============  ============== ==============
@@ -1547,6 +1666,13 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
     # Exceptions seen
 
   still green, there is only one result for this operation.
+
+  .. code-block:: python
+
+    tautology(False, False) -> True
+    tautology(False, True ) -> True
+    tautology(True , False) -> True
+    tautology(True , True ) -> True
 
 * I add a git_ commit message in the other terminal_
 

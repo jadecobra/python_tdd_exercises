@@ -2501,7 +2501,6 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     else:                 vs else
         return False      vs False
 
-
 * I remove ``True if`` and ``else False`` to make the simpler :ref:`return statement<the return statement>`
 
   .. code-block:: python
@@ -2559,8 +2558,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       (not first) and second
       (not True ) and True
-       False      and True
-       False  # logical_conjunction(False, True) -> False
+       False      and True  # logical_conjunction(False, True)
+       False
 
   - if the first input is :green:`True` and the second input is :red:`False`, :ref:`converse_non_implication<test_converse_non_implication>` returns
 
@@ -2569,8 +2568,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       (not first) and second
       (not True ) and False
-       False      and False
-       False  # logical_conjunction(False, False) -> False
+       False      and False # logical_conjunction(False, False)
+       False
 
   - if the first input is :red:`False` and the second input is :green:`True`, :ref:`converse_non_implication<test_converse_non_implication>` returns
 
@@ -2579,8 +2578,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       (not first) and second
       (not False) and True
-       True       and True
-       True   # logical_conjunction(True, True) -> True
+       True       and True  # logical_conjunction(True, True)
+       True
 
   - if the first input is :red:`False` and the second input is :red:`False`, :ref:`converse_non_implication<test_converse_non_implication>` returns
 
@@ -2589,8 +2588,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       (not first) and second
       (not False) and False
-       True       and False
-       False  # logical_conjunction(True, False) -> False
+       True       and False # logical_conjunction(True, False) -> False
+       False
 
   ==============  =============== =============== ================
   first           not first       second          (not first)
