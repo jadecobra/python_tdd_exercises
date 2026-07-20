@@ -120,7 +120,7 @@ the code in ``truth_table/tests/test_binary.py`` from :ref:`truth table: Binary 
 .. literalinclude:: truth_table/tests/test_binary_3.py
   :language: python
   :linenos:
-  :caption: truth_table/src/truth_table.py
+  :caption: truth_table/tests/test_binary.py
 
 ----
 
@@ -130,7 +130,7 @@ Binary Operations 3: solutions
 
 ----
 
-the code in ``truth_table/src/test_binary.py`` from :ref:`truth table: Binary Operations 3`
+the code in ``truth_table/src/truth_table.py`` from :ref:`truth table: Binary Operations 3`
 
 .. literalinclude:: truth_table/solutions/truth_table_binary_3.py
   :language: python

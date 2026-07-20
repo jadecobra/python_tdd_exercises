@@ -1,5 +1,5 @@
 .. meta::
-  :description: Truth table Binary Operations 3 in Python using TDD—implement exclusive_disjunction (XOR: first != second, True only when inputs differ), material_non_implication (first and not second), project_first (returns first input), and converse_implication (first or not second). Twelve binary operations cumulative in test_binary_3.py; each operation tested with four assertTrue/assertFalse pairs. Show XOR equals logical inequality with !=; refactor long nested if chains and combined (not first and second) or (first and not second) forms into clean boolean expressions and conditional operators. Real-world examples: two light switches one bulb, magnet attract/repel poles, coin toss different outcomes, broken vending machine, broken promise (promised but did not do). Red-Green-Refactor with AttributeError, TypeError, AssertionError. Requires Binary Operations 2. Jacob Itegboje Pumping Python.
+  :description: Truth table Binary Operations 3 in Python using TDD—implement exclusive_disjunction (XOR: first != second, True only when inputs differ), material_non_implication (first and not second), project_first (returns first input), and converse_implication (first or not second). Twelve binary operations cumulative in test_binary_3.py; each operation tested with four assertTrue/assertFalse pairs. Show XOR equals logical inequality with !=; refactor long nested if chains and combined (not first and second) or (first and not second) forms into clean boolean expressions and conditional operators. Real-world examples: two light switches one bulb, magnet attract/repel poles, coin toss different outcomes, broken vending machine, broken promise (promised but did not do). Red-Green-Refactor with AttributeError, TypeError, AssertionError, SyntaxError. Requires Binary Operations 2. Jacob Itegboje Pumping Python.
   :keywords: Jacob Itegboje, Pumping Python, truth table Binary Operations 3, test_binary_3.py, exclusive_disjunction XOR first != second, material_non_implication first and not second, project_first returns first input, converse_implication first or not second, XOR vs logical equality, python != operator truth table, two light switches XOR circuit, magnets attract repel boolean logic, coin toss different outcomes, broken vending machine rule, broken promise logic gate, nested if refactor boolean expression, conditional expression ternary operator, TDD red green refactor, twelve binary operations cumulative, assertTrue assertFalse four combinations, programming truth tables beginners, boolean algebra for programmers
 
 .. include:: ../../links.rst
@@ -60,7 +60,7 @@ These are the tests I have at the end of the chapter
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary_3.py
   :language: python
-  :lineno-start: 69
+  :lineno-start: 85
   :caption: truth_table/tests/test_binary.py
   :lines: 85-
 
@@ -792,7 +792,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   the test is still green.
 
-* I use :ref:`Logical Disjunction (OR)<test_logical_conjunction>` to put the :ref:`if statements` that return the same thing together
+* I use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put the :ref:`if statements` that return the same thing together
 
   .. code-block:: python
     :lineno-start: 62
@@ -1285,7 +1285,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 :ref:`Exclusive Disjunction<test_exclusive_disjunction>` returns
 
 * :green:`True`, if ``first_input`` is NOT EQUAL to ``second_input``.
-* :red:`False`, if ``first_input`` is EQUAL the ``second_input``.
+* :red:`False`, if ``first_input`` is EQUAL to the ``second_input``.
 * ``first_input != second_input`` - which reads as ``first_input`` is NOT equal to ``second_input``.
 * ``not (first_input == second_input)`` - which can be read as the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Equality<test_logical_equality>` of the first input and the second input.
 * ``(not first_input and second_input) or (first_input and not second_input)`` which is the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input, and the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input. Wow! That's a lot.
@@ -2773,7 +2773,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I add an :ref:`if statement<if statements>` to :ref:`converse_implication<test_converse_implication>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 92
     :emphasize-lines: 2-3
 
     def converse_implication(first_input, second_input):
