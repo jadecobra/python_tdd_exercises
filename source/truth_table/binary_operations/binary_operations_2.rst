@@ -622,8 +622,8 @@ first input     second input   return
             self.assertTrue(negate_first(False, False))
 
         def test_logical_nand(self):
-            logical_nand = src.truth_table.logical_nand
-            self.assertFalse(logical_nand(True, True))
+            nand = src.truth_table.logical_nand
+            self.assertFalse(nand(True, True))
 
 
     # Exceptions seen
@@ -687,9 +687,9 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
     :emphasize-lines: 4
 
         def test_logical_nand(self):
-            logical_nand = src.truth_table.logical_nand
-            self.assertFalse(logical_nand(True, True))
-            self.assertTrue(logical_nand(True, False))
+            nand = src.truth_table.logical_nand
+            self.assertFalse(nand(True, True))
+            self.assertTrue(nand(True, False))
 
 
     # Exceptions seen
@@ -738,10 +738,10 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
     :emphasize-lines: 5
 
         def test_logical_nand(self):
-            logical_nand = src.truth_table.logical_nand
-            self.assertFalse(logical_nand(True, True))
-            self.assertTrue(logical_nand(True, False))
-            self.assertTrue(logical_nand(False, True))
+            nand = src.truth_table.logical_nand
+            self.assertFalse(nand(True, True))
+            self.assertTrue(nand(True, False))
+            self.assertTrue(nand(False, True))
 
 
     # Exceptions seen
@@ -799,11 +799,11 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
     :emphasize-lines: 6
 
         def test_logical_nand(self):
-            logical_nand = src.truth_table.logical_nand
-            self.assertFalse(logical_nand(True, True))
-            self.assertTrue(logical_nand(True, False))
-            self.assertTrue(logical_nand(False, True))
-            self.assertTrue(logical_nand(False, False))
+            nand = src.truth_table.logical_nand
+            self.assertFalse(nand(True, True))
+            self.assertTrue(nand(True, False))
+            self.assertTrue(nand(False, True))
+            self.assertTrue(nand(False, False))
 
 
     # Exceptions seen
@@ -1520,7 +1520,7 @@ first input     second input   return
     :lineno-start: 51
     :emphasize-lines: 3-5
 
-            self.assertTrue(logical_nand(False, False))
+            self.assertTrue(nand(False, False))
 
         def test_tautology(self):
             tautology = src.truth_table.tautology
