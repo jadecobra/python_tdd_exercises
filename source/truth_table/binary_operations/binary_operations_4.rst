@@ -2766,6 +2766,20 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 
   still green.
 
+  .. code-block:: shell
+
+    material_implication(False, False) -> True
+    └── logical_disjunction(True , False) -> True
+
+    material_implication(False, True ) -> True
+    └── logical_disjunction(True , True ) -> True
+
+    material_implication(True , False) -> False
+    └── logical_disjunction(False, False) -> False
+
+    material_implication(True , True ) -> True
+    └── logical_disjunction(False, True ) -> True
+
 * I remove the comments
 
   .. code-block:: python
@@ -2817,6 +2831,349 @@ examples of Material Implication
   :red:`no`       :green:`yes`    :green:`yes` (false positive)
   :red:`no`       :red:`no`       :green:`yes`
   ==============  ==============  ==============
+
+----
+
+*********************************************************************************
+extract global variables
+*********************************************************************************
+
+* I go back to the terminal_ where the tests are running.
+* I add :ref:`variables<what is a variable?>` for the four test cases that are repeated in every test, in ``test_truth_table.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-8
+
+    import src.truth_table
+    import unittest
+
+
+    CASE_1 = True, True
+    CASE_2 = True, False
+    CASE_3 = False, True
+    CASE_4 = False, False
+
+
+    class TestBinaryOperations(unittest.TestCase):
+
+        def test_contradiction(self):
+
+* I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_contradiction`
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 3-10
+
+        def test_contradiction(self):
+            contradiction = src.truth_table.contradiction
+            # self.assertFalse(contradiction(True, True))
+            self.assertFalse(contradiction(*CASE_1))
+            # self.assertFalse(contradiction(True, True))
+            self.assertFalse(contradiction(*CASE_2))
+            # self.assertFalse(contradiction(False, True))
+            self.assertFalse(contradiction(*CASE_3))
+            # self.assertFalse(contradiction(False, False))
+            self.assertFalse(contradiction(*CASE_4))
+
+        def test_logical_conjunction(self):
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_logical_conjunction`
+
+  .. code-block:: python
+    :lineno-start: 13
+
+        def test_contradiction(self):
+            contradiction = src.truth_table.contradiction
+            self.assertFalse(contradiction(*CASE_1))
+            self.assertFalse(contradiction(*CASE_2))
+            self.assertFalse(contradiction(*CASE_3))
+            self.assertFalse(contradiction(*CASE_4))
+
+        def test_logical_conjunction(self):
+
+* I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_logical_conjunction`
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 5-8
+
+        def test_logical_conjunction(self):
+            logical_conjunction = (
+                src.truth_table.logical_conjunction
+            )
+            self.assertTrue(logical_conjunction(*CASE_1))
+            self.assertFalse(logical_conjunction(*CASE_2))
+            self.assertFalse(logical_conjunction(*CASE_3))
+            self.assertFalse(logical_conjunction(*CASE_4))
+
+        def test_project_second(self):
+
+  still green.
+
+* I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_project_second`
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 3-6
+
+        def test_project_second(self):
+            project_second = src.truth_table.project_second
+            self.assertTrue(project_second(*CASE_1))
+            self.assertFalse(project_second(*CASE_2))
+            self.assertTrue(project_second(*CASE_3))
+            self.assertFalse(project_second(*CASE_4))
+
+        def test_converse_non_implication(self):
+
+  green.
+
+* I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_converse_non_implication`
+
+  .. code-block:: python
+    :lineno-start: 36
+    :emphasize-lines: 5-8
+
+        def test_converse_non_implication(self):
+            converse_non_implication = (
+                src.truth_table.converse_non_implication
+            )
+            self.assertFalse(converse_non_implication(*CASE_1))
+            self.assertFalse(converse_non_implication(*CASE_2))
+            self.assertTrue(converse_non_implication(*CASE_3))
+            self.assertFalse(converse_non_implication(*CASE_4))
+
+        def test_negate_first(self):
+
+  still green.
+
+* I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_negate_first`
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 3-6
+
+        def test_negate_first(self):
+            negate_first = src.truth_table.negate_first
+            self.assertFalse(negate_first(*CASE_1))
+            self.assertFalse(negate_first(*CASE_2))
+            self.assertTrue(negate_first(*CASE_3))
+            self.assertTrue(negate_first(*CASE_4))
+
+        def test_logical_nand(self):
+
+  the test is still green.
+
+* I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_logical_nand`
+
+  .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 3-6
+
+        def test_logical_nand(self):
+            nand = src.truth_table.logical_nand
+            self.assertFalse(nand(*CASE_1))
+            self.assertTrue(nand(*CASE_2))
+            self.assertTrue(nand(*CASE_3))
+            self.assertTrue(nand(*CASE_4))
+
+        def test_tautology(self):
+
+  still green.
+
+* I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_tautology`
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 3-6
+
+        def test_tautology(self):
+            tautology = src.truth_table.tautology
+            self.assertTrue(tautology(*CASE_1))
+            self.assertTrue(tautology(*CASE_2))
+            self.assertTrue(tautology(*CASE_3))
+            self.assertTrue(tautology(*CASE_4))
+
+        def test_logical_disjunction(self):
+
+  green.
+
+* I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_logical_disjunction`
+
+  .. code-block:: python
+    :lineno-start: 66
+    :emphasize-lines: 5-8
+
+        def test_logical_disjunction(self):
+            logical_disjunction = (
+                src.truth_table.logical_disjunction
+            )
+            self.assertTrue(logical_disjunction(*CASE_1))
+            self.assertTrue(logical_disjunction(*CASE_2))
+            self.assertTrue(logical_disjunction(*CASE_3))
+            self.assertFalse(logical_disjunction(*CASE_4))
+
+        def test_exclusive_disjunction(self):
+
+  still green.
+
+* I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_exclusive_disjunction`
+
+  .. code-block:: python
+    :lineno-start: 75
+    :emphasize-lines: 3-6
+
+        def test_exclusive_disjunction(self):
+            xor = src.truth_table.exclusive_disjunction
+            self.assertFalse(xor(*CASE_1))
+            self.assertTrue(xor(*CASE_2))
+            self.assertTrue(xor(*CASE_3))
+            self.assertFalse(xor(*CASE_4))
+
+        def test_material_non_implication(self):
+
+  the test is still green.
+
+* I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_material_non_implication`
+
+  .. code-block:: python
+    :lineno-start: 82
+    :emphasize-lines: 5-8
+
+        def test_material_non_implication(self):
+            material_non_implication = (
+                src.truth_table.material_non_implication
+            )
+            self.assertFalse(material_non_implication(*CASE_1))
+            self.assertTrue(material_non_implication(*CASE_2))
+            self.assertFalse(material_non_implication(*CASE_3))
+            self.assertFalse(material_non_implication(*CASE_4))
+
+        def test_project_first(self):
+
+  still green.
+
+* I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_project_first`
+
+  .. code-block:: python
+    :lineno-start: 91
+    :emphasize-lines: 3-6
+
+        def test_project_first(self):
+            project_first = src.truth_table.project_first
+            self.assertTrue(project_first(*CASE_1))
+            self.assertTrue(project_first(*CASE_2))
+            self.assertFalse(project_first(*CASE_3))
+            self.assertFalse(project_first(*CASE_4))
+
+        def test_converse_implication(self):
+
+  green.
+
+* I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_converse_implication`
+
+  .. code-block:: python
+    :lineno-start: 98
+    :emphasize-lines: 5-8
+
+        def test_converse_implication(self):
+            converse_implication = (
+                src.truth_table.converse_implication
+            )
+            self.assertTrue(converse_implication(*CASE_1))
+            self.assertTrue(converse_implication(*CASE_2))
+            self.assertFalse(converse_implication(*CASE_3))
+            self.assertTrue(converse_implication(*CASE_4))
+
+        def test_negate_second(self):
+
+  still green.
+
+* I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_negate_second`
+
+  .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 3-6
+
+        def test_negate_second(self):
+            negate_second = src.truth_table.negate_second
+            self.assertFalse(negate_second(*CASE_1))
+            self.assertTrue(negate_second(*CASE_2))
+            self.assertFalse(negate_second(*CASE_3))
+            self.assertTrue(negate_second(*CASE_4))
+
+        def test_logical_nor(self):
+
+  the test is still green.
+
+* I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_logical_nor`
+
+  .. code-block:: python
+    :lineno-start: 114
+    :emphasize-lines: 3-6
+
+        def test_logical_nor(self):
+            logical_nor = src.truth_table.logical_nor
+            self.assertFalse(logical_nor(*CASE_1))
+            self.assertFalse(logical_nor(*CASE_2))
+            self.assertFalse(logical_nor(*CASE_3))
+            self.assertTrue(logical_nor(*CASE_4))
+
+        def test_logical_equality(self):
+
+  still green.
+
+* I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_logical_equality`
+
+  .. code-block:: python
+    :lineno-start: 121
+    :emphasize-lines: 5-8
+
+        def test_logical_equality(self):
+            logical_equality = (
+                src.truth_table.logical_equality
+            )
+            self.assertTrue(logical_equality(*CASE_1))
+            self.assertFalse(logical_equality(*CASE_2))
+            self.assertFalse(logical_equality(*CASE_3))
+            self.assertTrue(logical_equality(*CASE_4))
+
+        def test_material_implication(self):
+
+  green.
+
+* I use the :ref:`variables<what is a variable?>` with a :ref:`single starred expression<single starred expressions>` to remove repetition of ``True, True``, ``True, False``, ``False, True`` and ``False, False`` from :ref:`test_material_implication`
+
+  .. code-block:: python
+    :lineno-start: 130
+    :emphasize-lines: 5-8
+
+        def test_material_implication(self):
+            material_implication = (
+                src.truth_table.material_implication
+            )
+            self.assertTrue(material_implication(*CASE_1))
+            self.assertFalse(material_implication(*CASE_2))
+            self.assertTrue(material_implication(*CASE_3))
+            self.assertTrue(material_implication(*CASE_4))
+
+
+    # Exceptions seen
+    # AttributeError
+    # TypeError
+    # AssertionError
+    # SyntaxError
+
+  still green.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'extract variables for cases'
 
 ----
 
