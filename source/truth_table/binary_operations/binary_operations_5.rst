@@ -1,6 +1,6 @@
 .. meta::
-  :description: Truth table Binary Operations Examples (chapter 5)—no new code; map all sixteen binary operations to four real-world decision problems using full comparison tables and plain-English rules. Security alarm: motion + right code → ON (AND), motion OR right code (OR), NOT (motion AND right code) (NAND), alarm ON only with no motion AND wrong code (NOR). Hiring: HIRE only if strong option AND strong fit (AND); REJECT weak option AND not strong fit (NOR). Store discount: DISCOUNT PRICE with coupon AND member (AND); REGULAR PRICE with no coupon AND not a member (NOR). Plant watering: WATER if soil dry AND rained (AND); DO NOT WATER if soil wet AND no rain (NOR). Every operation from contradiction through material_implication shown with NOT, AND, OR combinations. Choose the right logic gate for your problem. Requires Binary Operations 4. Continues to test_truth_table_tests challenge. Jacob Itegboje Pumping Python.
-  :keywords: Jacob Itegboje, Pumping Python, truth table Binary Operations Examples, binary operations 5 review guide, choose the right logic gate, security alarm motion right code, hiring decision strong option strong fit, store discount coupon member policy, automatic plant watering soil dry rain, all 16 binary operations real world, contradiction tautology NAND NOR XOR, logical_conjunction AND logical_disjunction OR, material_implication material_non_implication, project_first project_second negate_first negate_second, logical_equality exclusive_disjunction, translate business rules to boolean code, truth table comparison tables English rules, boolean logic for beginners, software engineering decision trees, NOT AND OR combinations, test_truth_table_tests next step
+  :description: Truth table Binary Operations Examples (chapter 5)—no new code; map all sixteen binary operations onto four real-world decisions with full comparison tables and plain-English rules. Security alarm (motion, right code → ON/OFF): prefer logical_conjunction for authorized entry (ON only motion AND right code) and material_non_implication for burglar motion AND wrong code. Hiring (strong option, strong fit → HIRE/REJECT): prefer AND for A-players, optional material_non_implication (strong option AND weak fit) or OR (REJECT only weak+weak). Store discount (coupon, member → DISCOUNT/REGULAR): prefer AND loyalty, project_second members-only, OR coupon-or-member, or material_non_implication coupon for non-members. Plant watering (soil dry, rained → WATER/DO NOT WATER): prefer material_non_implication (WATER dry AND no rain), optional project_first (water when dry) or converse_implication (skip wet AND rained). Review grids restate every op with NOT/AND/OR English. Requires Binary Operations 4. Next: test_truth_table_tests. Jacob Itegboje Pumping Python.
+  :keywords: Jacob Itegboje, Pumping Python, truth table Binary Operations Examples, binary operations 5, choose the right logic gate, security alarm motion right code authorized entry burglar, hiring strong option strong fit A players, store discount coupon member loyalty, plant watering soil dry not rain, all 16 binary operations real world, contradiction tautology NAND NOR XOR, logical_conjunction AND logical_disjunction OR, material_non_implication material_implication, project_first project_second converse_implication, logical_equality exclusive_disjunction, translate business rules to boolean code, truth table English rules comparison tables, NOT AND OR combinations, test_truth_table_tests, boolean logic beginners
 
 .. include:: ../../links.rst
 
@@ -343,7 +343,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`weak option`      :red:`weak fit`        :red:`REJECT`
   ======================  =====================  =====================
 
-  :green:`HIRE` only if it is a :green:`strong fit`, I do not care if it is a :green:`strong option` or  :red:`weak option`. I like this person and do not care about whether it is a strong or weak option. How does the team feel about this?
+  :green:`HIRE` only if it is a :green:`strong fit`, I do not care if it is a :green:`strong option` or :red:`weak option`. I like this person and do not care about whether it is a strong or weak option. How does the team feel about this?
 
 * :ref:`converse_non_implication<test_converse_non_implication>`: ``return (not first) and second``
 
@@ -594,7 +594,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`no coupon`        :red:`NOT a member`    :red:`REGULAR PRICE`
   ======================  =====================  =====================
 
-  :green:`DISCOUNT PRICE` only if the person is a :green:`member`, I do not care if they have a :green:`coupon` or  :red:`no coupon`. I give the discount only to members. A loyalty program. Sorry you brought a coupon.
+  :green:`DISCOUNT PRICE` only if the person is a :green:`member`, I do not care if they have a :green:`coupon` or :red:`no coupon`. I give the discount only to members. A loyalty program. Sorry you brought a coupon.
 
 * :ref:`converse_non_implication<test_converse_non_implication>`: ``return (not first) and second``
 
@@ -774,8 +774,8 @@ the :ref:`truth table` shows all the logically possible states of
 I do not need to know or memorize every operation, the only operations that I want in this case are:
 
 * :ref:`logical_conjunction<test_logical_conjunction>`, if I give a :green:`DISCOUNT PRICE` only if the person has a :green:`coupon` AND is a :green:`member` because I want to reward my most loyal customers.
-* :ref:`material_non_implication<test_material_non_implication>`, if I give a :green:`DISCOUNT PRICE` to someone who has a :green:`coupon` and is :red:`NOT a member`. This could be a way to get people to become members though it is not as good as
-* :ref:`project_second<test_project_second>` if I give a :green:`DISCOUNT PRICE` only if the person is a :green:`member` or
+* :ref:`material_non_implication<test_material_non_implication>`, if I give a :green:`DISCOUNT PRICE` to someone who has a :green:`coupon` and is :red:`NOT a member` (a way to pull people in, though it is not as good as rewarding members).
+* :ref:`project_second<test_project_second>` if I give a :green:`DISCOUNT PRICE` only if the person is a :green:`member`, or
 * :ref:`logical_disjunction<test_logical_disjunction>`, if I only charge a :red:`REGULAR PRICE` to the person who :red:`does NOT have a coupon` AND is :red:`not a member`.
 
 ----
@@ -1024,7 +1024,7 @@ the :ref:`truth table` shows all the logically possible states of
 I do not need to know or memorize every operation, the only operations that I want in this case are:
 
 * :ref:`material_non_implication<test_material_non_implication>`, if I :green:`WATER` the plants only if the :green:`soil is dry` AND it did :red:`NOT rain` or
-* :ref:`project_first<test_project_first>` if I :green:`WATER` only if the :red:`soil is dry` because I want the plants to stay wet
+* :ref:`project_first<test_project_first>` if I :green:`WATER` only if the :green:`soil is dry` (I ignore rain and water whenever the soil reads dry)
 * :ref:`converse_implication<test_converse_implication>` to stop me from watering if the :red:`soil is wet` AND :green:`it rained`.
 
 ----
@@ -1081,7 +1081,7 @@ The examples above show
   :ref:`converse_implication<test_converse_implication>`          outputs :red:`OFF` if there is :red:`no motion` AND the :green:`right code` is entered
   :ref:`negate_second<test_negate_second>`                        outputs :green:`ON` only if the :red:`wrong code` is entered
   :ref:`logical_nor<test_logical_nor>`                            outputs :green:`ON` only if there is :red:`no motion` AND the :red:`wrong code` is entered
-  :ref:`logical_equality<test_logical_equality>`                  outputs :green:`ON` only if there is :green:`motion` AND the :green:`right code` is entered, AND if there is :red:`no motion` AND the :red:`wrong code` is entered
+  :ref:`logical_equality<test_logical_equality>`                  outputs :green:`ON` if there is :green:`motion` AND the :green:`right code` is entered, OR if there is :red:`no motion` AND the :red:`wrong code` is entered
   :ref:`material_implication<test_material_implication>`          outputs :red:`OFF` only if there is :green:`motion` AND :red:`NOT the right code` is entered.
   ==============================================================  ===================================================================================================================================================================
 
@@ -1116,7 +1116,7 @@ The examples above show
   ==============================================================  =====================================================================================================================================================
   :ref:`contradiction<test_contradiction>`                        always :red:`REJECT`
   :ref:`logical_conjunction<test_logical_conjunction>`            :green:`HIRE` only if it is a :green:`strong option` AND it is a :green:`strong fit`
-  :ref:`project_second<test_project_second>`                      :green:`HIRE` only if it is a :green:`strong fit`, I do not care if it is a :green:`strong option` or  :red:`weak option`
+  :ref:`project_second<test_project_second>`                      :green:`HIRE` only if it is a :green:`strong fit`, I do not care if it is a :green:`strong option` or :red:`weak option`
   :ref:`converse_non_implication<test_converse_non_implication>`  :green:`HIRE` only if it is a :red:`weak option` AND it is a :green:`strong fit`
   :ref:`negate_first<test_negate_first>`                          :green:`HIRE` only if it is a :red:`weak option`, I do not care if it is a :green:`strong fit` or :red:`weak fit`
   :ref:`logical_nand<test_logical_nand>`                          :red:`REJECT` only if it is a :green:`strong option` AND it is a :green:`strong fit`
@@ -1128,7 +1128,7 @@ The examples above show
   :ref:`converse_implication<test_converse_implication>`          :red:`REJECT` only if it is a :red:`weak option` AND it is a :green:`strong fit`
   :ref:`negate_second<test_negate_second>`                        :green:`HIRE` only if it is a :red:`weak fit`, I do not care if it is a :green:`strong option` or :red:`weak option`
   :ref:`logical_nor<test_logical_nor>`                            :green:`HIRE` only if it is a :red:`weak option` AND :red:`NOT a strong fit`
-  :ref:`logical_equality<test_logical_equality>`                  :green:`HIRE` only if it is a :green:`strong option` AND it is a :green:`strong fit`, AND if it is :red:`NOT a strong option` AND :red:`NOT a strong fit`
+  :ref:`logical_equality<test_logical_equality>`                  :green:`HIRE` if it is a :green:`strong option` AND it is a :green:`strong fit`, OR if it is :red:`NOT a strong option` AND :red:`NOT a strong fit`
   :ref:`material_implication<test_material_implication>`          :red:`REJECT` only if it is a :green:`strong option` AND :red:`NOT a strong fit`
   ==============================================================  =====================================================================================================================================================
 
@@ -1163,7 +1163,7 @@ The examples above show
   ==============================================================  ================================================================================================================================================================
   :ref:`contradiction<test_contradiction>`                        :red:`REGULAR PRICE` always
   :ref:`logical_conjunction<test_logical_conjunction>`            :green:`DISCOUNT PRICE` only if the person has a :green:`coupon` AND is a :green:`member`
-  :ref:`project_second<test_project_second>`                      :green:`DISCOUNT PRICE` only if the person is a :green:`member`, I do not care if they have a :green:`coupon` or  :red:`no coupon`
+  :ref:`project_second<test_project_second>`                      :green:`DISCOUNT PRICE` only if the person is a :green:`member`, I do not care if they have a :green:`coupon` or :red:`no coupon`
   :ref:`converse_non_implication<test_converse_non_implication>`  :green:`DISCOUNT PRICE` only if the person does :red:`NOT have a coupon` AND is a :green:`member`
   :ref:`negate_first<test_negate_first>`                          :green:`DISCOUNT PRICE` only if the person does :red:`NOT have a coupon`, I do not care if it is a member or not
   :ref:`logical_nand<test_logical_nand>`                          :red:`REGULAR PRICE` only if the person has a :green:`coupon` AND is a :green:`member`
@@ -1175,7 +1175,7 @@ The examples above show
   :ref:`converse_implication<test_converse_implication>`          :red:`REGULAR PRICE` only if the person :red:`does NOT have a coupon` AND is a :green:`member`
   :ref:`negate_second<test_negate_second>`                        :green:`DISCOUNT PRICE` only if the person is :red:`NOT a member`, I do not care if they have a coupon or not
   :ref:`logical_nor<test_logical_nor>`                            :green:`DISCOUNT PRICE` only if the person :red:`does NOT have a coupon` AND is :red:`NOT a member`
-  :ref:`logical_equality<test_logical_equality>`                  :green:`DISCOUNT PRICE` if the person has a :green:`coupon` AND is a :green:`member`, AND if the person :red:`does NOT have a coupon` AND is :red:`NOT a member`
+  :ref:`logical_equality<test_logical_equality>`                  :green:`DISCOUNT PRICE` if the person has a :green:`coupon` AND is a :green:`member`, OR if the person :red:`does NOT have a coupon` AND is :red:`NOT a member`
   :ref:`material_implication<test_material_implication>`          :red:`REGULAR PRICE` if the person has a :green:`coupon` AND :red:`NOT a member`
   ==============================================================  ================================================================================================================================================================
 
@@ -1222,7 +1222,7 @@ The examples above show
   :ref:`converse_implication<test_converse_implication>`          :red:`DO NOT WATER` only if the :red:`soil is wet` AND :green:`it rained`
   :ref:`negate_second<test_negate_second>`                        :green:`WATER` only if it did :red:`NOT rain`, I do not care if the  :green:`soil is dry` or if the :red:`soil is wet`
   :ref:`logical_nor<test_logical_nor>`                            :green:`WATER` only if the :red:`soil is wet` AND it did :red:`NOT rain`
-  :ref:`logical_equality<test_logical_equality>`                  :green:`WATER` if the :green:`soil is dry` AND :green:`it rained`, AND if the :red:`soil is wet` AND it did :red:`NOT rain`
+  :ref:`logical_equality<test_logical_equality>`                  :green:`WATER` if the :green:`soil is dry` AND :green:`it rained`, OR if the :red:`soil is wet` AND it did :red:`NOT rain`
   :ref:`material_implication<test_material_implication>`          :red:`DO NOT WATER` if the :green:`soil is dry` AND it did :red:`NOT rain`
   ==============================================================  =====================================================================================================================================================
 

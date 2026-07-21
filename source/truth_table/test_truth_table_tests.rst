@@ -92,7 +92,7 @@ open the project
 
   because ...
 
-  Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done or if you get stuck.
+Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done or if you get stuck.
 
 ----
 
@@ -130,7 +130,7 @@ open the project
 
   because :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
-* I make it a :ref:`function<what is a function?>`
+* I make :ref:`logical_negation<test_logical_negation>` a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -225,12 +225,12 @@ open the project
 
     AssertionError: True is not false
 
-  - the :ref:`assertion<what is an assertion?>` expects the :ref:`opposite<test_logical_negation>` of the input
-  - the :ref:`function<what is a function?>` returned
+  - from what I have seen so far, this test expects
 
-    * :red:`False` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
-    * :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
-    * :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
+    * :green:`True` when the :ref:`function<what is a function?>` returns :red:`False`.
+    * :red:`False` when the :ref:`function<what is a function?>` returns :green:`True`.
+    * :green:`True` when the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` (which is grouped as :red:`False`).
+    * the :ref:`opposite<test_logical_negation>` of the input.
 
 * I use :ref:`not<test_logical_negation>` in the :ref:`return statement<the return statement>`
 
@@ -254,19 +254,12 @@ open the project
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_identity'
 
-* I add a :ref:`function<what is a function?>` for it
+* I add a :ref:`function definition<how to make a function that takes input>` for :ref:`logical_identity<test_logical_identity>`
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 11-12
+    :lineno-start: 8
+    :emphasize-lines: 4-5
 
-    # logical_negation
-    # def logical_negation():
-    def logical_negation(something):
-        # return None
-        # return True
-        # return False
-        # return something
         return not something
 
 
@@ -333,11 +326,11 @@ open the project
 
     AssertionError: False is not true
 
-  the :ref:`function<what is a function?>` returned
+  from what I have seen so far, this test expects
 
-  - :red:`False` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
-  - :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
-  - :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
+  - :green:`True` when the :ref:`function<what is a function?>` returns :red:`False`.
+  - :red:`False` when the :ref:`function<what is a function?>` returns :green:`True`.
+  - :green:`True` when the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` (which is grouped as :red:`False`).
 
 * I change the :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
@@ -359,17 +352,12 @@ open the project
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_true'
 
-* I add the :ref:`function<what is a function?>`
+* I add :ref:`logical_true<test_logical_true>`
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 9-10
+    :lineno-start: 16
+    :emphasize-lines: 4-5
 
-    # def logical_identity():
-    def logical_identity(something):
-        # return None
-        # return True
-        # return False
         return something
 
 
@@ -400,14 +388,12 @@ open the project
                     has no attribute 'logical_false'.
                     Did you mean: 'logical_true'?
 
-* I add the :ref:`function<what is a function?>`
+* I add :ref:`logical_false<test_logical_false>`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 6-7
+    :lineno-start: 21
+    :emphasize-lines: 4-5
 
-    def logical_true():
-        # return None
         return True
 
 
@@ -421,13 +407,12 @@ open the project
     AttributeError: module 'src.truth_table'
                     has no attribute 'tautology'
 
-* I add the :ref:`function<what is a function?>`
+* I add :ref:`tautology<test_tautology>`
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 5-6
+    :lineno-start: 25
+    :emphasize-lines: 4-5
 
-    def logical_false():
         return None
 
 
@@ -475,15 +460,12 @@ open the project
     AttributeError: module 'src.truth_table'
                     has no attribute 'project_second'
 
-* I add the :ref:`function<what is a function?>`
+* I add :ref:`project_second<test_project_second>`
 
   .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 7-8
+    :lineno-start: 31
+    :emphasize-lines: 4-5
 
-    # def tautology():
-    def tautology(first, second):
-        # return None
         return True
 
 
@@ -550,11 +532,11 @@ open the project
 
     AssertionError: False is not true
 
-  the :ref:`function<what is a function?>` returned
+  from what I have seen so far, this test expects
 
-  - :red:`False` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
-  - :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
-  - :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
+  - :green:`True` when the :ref:`function<what is a function?>` returns :red:`False`.
+  - :red:`False` when the :ref:`function<what is a function?>` returns :green:`True`.
+  - :green:`True` when the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` (which is grouped as :red:`False`).
 
 * I change the :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
@@ -598,18 +580,12 @@ open the project
     AttributeError: module 'src.truth_table'
                     has no attribute 'project_first'
 
-* I add a :ref:`function<what is a function?>` for it
+* I add a :ref:`function definition<how to make a function that takes input>` for :ref:`project_first<test_project_first>`
 
   .. code-block:: python
-    :lineno-start: 34
-    :emphasize-lines: 10-11
+    :lineno-start: 40
+    :emphasize-lines: 4-5
 
-    # def project_second():
-    def project_second(first, second):
-        # return None
-        # return True
-        # return False
-        # return first, second
         return second
 
 
@@ -625,7 +601,7 @@ open the project
 
   okay, I have seen this before.
 
-* I add 2 names in the parentheses
+* I add two names in the parentheses
 
   .. code-block:: python
     :lineno-start: 43
@@ -678,11 +654,11 @@ open the project
 
     AssertionError: False is not true
 
-  the :ref:`function<what is a function?>` returned
+  this test expects
 
-  - :red:`False` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
-  - :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
-  - :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
+  - :green:`True` when the :ref:`function<what is a function?>` returns :red:`False`.
+  - :red:`False` when the :ref:`function<what is a function?>` returns :green:`True`.
+  - :green:`True` when the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` (which is grouped as :red:`False`).
 
 * I change the :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
@@ -703,7 +679,7 @@ open the project
 
     AssertionError: (False, True) is not false
 
-  ``second`` is :red:`True` and is equal to the expectation of the :ref:`assertion<what is an assertion?>`.
+  ``first`` is :red:`False` and is equal to the expectation of the :ref:`assertion<what is an assertion?>`.
 
 * I remove ``second`` from the :ref:`return statement<the return statement>` since ``first`` is :ref:`False<test_what_is_false>`
 
@@ -726,18 +702,12 @@ open the project
     AttributeError: module 'src.truth_table'
                     has no attribute 'negate_second'
 
-* I add a :ref:`function<what is a function?>` for :ref:`negate_second<test_negate_second>` with a :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
+* I add a :ref:`function definition<how to make a function that takes input>` for :ref:`negate_second<test_negate_second>` with a :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 10-11
+    :lineno-start: 49
+    :emphasize-lines: 4-5
 
-    # def project_first():
-    def project_first(first, second):
-        # return None
-        # return True
-        # return False
-        # return first, second
         return first
 
 
@@ -750,7 +720,7 @@ open the project
 
     AssertionError: (True, True) is not false
 
-* I add an :ref:`if statement<if statements>` to :ref:`negate_second<test_negate_second>` since ``first`` and ``second`` are both not :ref:`False<test_what_is_false>`
+* I add an :ref:`if statement<if statements>` for ``(True, True)`` to :ref:`negate_second<test_negate_second>` since ``first`` and ``second`` are both not :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 52
@@ -766,7 +736,7 @@ open the project
 
     AssertionError: (False, True) is not false
 
-* I add another :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(False, True)`` to :ref:`negate_second<test_negate_second>`
 
   .. code-block:: python
     :lineno-start: 52
@@ -784,15 +754,12 @@ open the project
     AttributeError: module 'src.truth_table'
                     has no attribute 'negate_first'
 
-* I add a :ref:`function<what is a function?>` for it with a :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
+* I add a :ref:`function definition<how to make a function that takes input>` for :ref:`negate_first<test_negate_first>` with a :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 7-8
+    :lineno-start: 55
+    :emphasize-lines: 4-5
 
-    def negate_second(first, second):
-        if (first, second) == (True, True): return False
-        if (first, second) == (False, True): return False
         return first, second
 
 
@@ -805,7 +772,7 @@ open the project
 
     AssertionError: (True, True)
 
-* I add an :ref:`if statement<if statements>` since ``first`` and ``second`` are both not :ref:`False<test_what_is_false>`
+* I add an :ref:`if statement<if statements>` for ``(True, True)`` to :ref:`negate_first<test_negate_first>` since ``first`` and ``second`` are both not :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -821,7 +788,7 @@ open the project
 
     AssertionError: (True, False) is not false
 
-* I add another :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(True, False)`` to :ref:`negate_first<test_negate_first>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -839,15 +806,12 @@ open the project
     AttributeError: module 'src.truth_table'
                     has no attribute 'material_non_implication'
 
-* I add a :ref:`function<what is a function?>` for :ref:`material_non_implication<test_material_non_implication>` with a :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
+* I add a :ref:`function definition<how to make a function that takes input>` for :ref:`material_non_implication<test_material_non_implication>` with a :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
-    :lineno-start: 58
-    :emphasize-lines: 7-8
+    :lineno-start: 61
+    :emphasize-lines: 4-5
 
-    def negate_first(first, second):
-        if (first, second) == (True, True): return False
-        if (first, second) == (True, False): return False
         return first, second
 
 
@@ -860,7 +824,7 @@ open the project
 
     AssertionError: (True, True) is not false
 
-* I add an :ref:`if statement<if statements>` since ``first`` and ``second`` are both not :ref:`False<test_what_is_false>`
+* I add an :ref:`if statement<if statements>` for ``(True, True)`` to :ref:`material_non_implication<test_material_non_implication>` since ``first`` and ``second`` are both not :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 64
@@ -876,7 +840,7 @@ open the project
 
     AssertionError: (False, True) is not false
 
-* I add another :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(False, True)`` to :ref:`material_non_implication<test_material_non_implication>`
 
   .. code-block:: python
     :lineno-start: 64
@@ -893,7 +857,7 @@ open the project
 
     AssertionError: (False, False) is not false
 
-* I add an :ref:`if statement<if statements>` for it
+* I add an :ref:`if statement<if statements>` for ``(False, False)`` to :ref:`material_non_implication<test_material_non_implication>`
 
   .. code-block:: python
     :lineno-start: 64
@@ -912,16 +876,12 @@ open the project
     AttributeError: module 'src.truth_table'
                     has no attribute 'material_implication'
 
-* I add a :ref:`function<what is a function?>` for :ref:`material_implication<test_material_implication>` with a :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
+* I add a :ref:`function definition<how to make a function that takes input>` for :ref:`material_implication<test_material_implication>` with a :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
-    :lineno-start: 64
-    :emphasize-lines: 8-9
+    :lineno-start: 68
+    :emphasize-lines: 4-5
 
-    def material_non_implication(first, second):
-        if (first, second) == (True, True): return False
-        if (first, second) == (False, True): return False
-        if (first, second) == (False, False): return False
         return first, second
 
 
@@ -934,7 +894,7 @@ open the project
 
     AssertionError: (True, False) is not false
 
-* I add an :ref:`if statement<if statements>` for it
+* I add an :ref:`if statement<if statements>` for ``(True, False)`` to :ref:`material_implication<test_material_implication>`
 
   .. code-block:: python
     :lineno-start: 71
@@ -951,14 +911,12 @@ open the project
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_nor'
 
-* I add a :ref:`function<what is a function?>` for :ref:`logical_nor<test_logical_nor>`
+* I add a :ref:`function definition<how to make a function that takes input>` for :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
-    :lineno-start: 71
-    :emphasize-lines: 6-7
+    :lineno-start: 73
+    :emphasize-lines: 4-5
 
-    def material_implication(first, second):
-        if (first, second) == (True, False): return False
         return first, second
 
 
@@ -971,7 +929,7 @@ open the project
 
     AssertionError: (True, True) is not false
 
-* I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(True, True)`` to :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
     :lineno-start: 76
@@ -987,7 +945,7 @@ open the project
 
     AssertionError: (True, False) is not false
 
-* I add another :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(True, False)`` to :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
     :lineno-start: 76
@@ -1004,7 +962,7 @@ open the project
 
     AssertionError: (False, True) is not false
 
-* I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(False, True)`` to :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
     :lineno-start: 76
@@ -1024,16 +982,12 @@ open the project
                     has no attribute 'logical_nand'.
                     Did you mean: 'logical_nor'?
 
-* I add a :ref:`function<what is a function?>` for :ref:`logical_nand<test_logical_nand>`
+* I add a :ref:`function definition<how to make a function that takes input>` for :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
-    :lineno-start: 76
-    :emphasize-lines: 8-9
+    :lineno-start: 80
+    :emphasize-lines: 4-5
 
-    def logical_nor(first, second):
-        if (first, second) == (True, True): return False
-        if (first, second) == (True, False): return False
-        if (first, second) == (False, True): return False
         return first, second
 
 
@@ -1046,7 +1000,7 @@ open the project
 
     AssertionError: (True, True) is not false
 
-* I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(True, True)`` to :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
     :lineno-start: 83
@@ -1064,14 +1018,12 @@ open the project
                     has no attribute 'logical_equality'.
                     Did you mean: 'logical_identity'?
 
-* I add the :ref:`function<what is a function?>`
+* I add :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 6-7
+    :lineno-start: 85
+    :emphasize-lines: 4-5
 
-    def logical_nand(first, second):
-        if (first, second) == (True, True): return False
         return first, second
 
 
@@ -1084,7 +1036,7 @@ open the project
 
     AssertionError: (True, False) is not false
 
-* I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(True, False)`` to :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
     :lineno-start: 88
@@ -1100,7 +1052,7 @@ open the project
 
     AssertionError: (False, True) is not false
 
-* I add another :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(False, True)`` to :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
     :lineno-start: 88
@@ -1118,15 +1070,12 @@ open the project
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_disjunction'
 
-* I add a :ref:`function<what is a function?>` for :ref:`logical_disjunction<test_logical_disjunction>`
+* I add a :ref:`function definition<how to make a function that takes input>` for :ref:`logical_disjunction<test_logical_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 88
-    :emphasize-lines: 7-8
+    :lineno-start: 91
+    :emphasize-lines: 4-5
 
-    def logical_equality(first, second):
-        if (first, second) == (True, False): return False
-        if (first, second) == (False, True): return False
         return first, second
 
 
@@ -1139,7 +1088,7 @@ open the project
 
     AssertionError: (False, False) is not false
 
-* I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(False, False)`` to :ref:`logical_disjunction<test_logical_disjunction>`
 
   .. code-block:: python
     :lineno-start: 94
@@ -1157,14 +1106,12 @@ open the project
                     has no attribute 'logical_conjunction'.
                     Did you mean: 'logical_disjunction'?
 
-* I add a :ref:`function<what is a function?>` for :ref:`logical_conjunction<test_logical_conjunction>`
+* I add a :ref:`function definition<how to make a function that takes input>` for :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
-    :lineno-start: 94
-    :emphasize-lines: 6-7
+    :lineno-start: 96
+    :emphasize-lines: 4-5
 
-    def logical_disjunction(first, second):
-        if (first, second) == (False, False): return False
         return first, second
 
 
@@ -1177,7 +1124,7 @@ open the project
 
     AssertionError: (True, False) is not false
 
-* I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(True, False)`` to :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
     :lineno-start: 99
@@ -1193,7 +1140,7 @@ open the project
 
     AssertionError: (False, True) is not false
 
-* I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(False, True)`` to :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
     :lineno-start: 99
@@ -1210,7 +1157,7 @@ open the project
 
     AssertionError: (False, False) is not false
 
-* I add another :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(False, False)`` to :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
     :lineno-start: 99
@@ -1229,16 +1176,12 @@ open the project
     AttributeError: module 'src.truth_table'
                     has no attribute 'exclusive_disjunction'
 
-* I add a :ref:`function<what is a function?>` for :ref:`exclusive_disjunction<test_exclusive_disjunction>`
+* I add a :ref:`function definition<how to make a function that takes input>` for :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 99
-    :emphasize-lines: 8-9
+    :lineno-start: 103
+    :emphasize-lines: 4-5
 
-    def logical_conjunction(first, second):
-        if (first, second) == (True, False): return False
-        if (first, second) == (False, True): return False
-        if (first, second) == (False, False): return False
         return first, second
 
 
@@ -1251,7 +1194,7 @@ open the project
 
     AssertionError: (True, True) is not false
 
-* I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(True, True)`` to :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
     :lineno-start: 106
@@ -1267,7 +1210,7 @@ open the project
 
     AssertionError: (False, False) is not false
 
-* I add another :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(False, False)`` to :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
     :lineno-start: 106
@@ -1289,12 +1232,9 @@ open the project
 * I add :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
-    :lineno-start: 106
-    :emphasize-lines: 7-8
+    :lineno-start: 109
+    :emphasize-lines: 4-5
 
-    def exclusive_disjunction(first, second):
-        if (first, second) == (True, True): return False
-        if (first, second) == (False, False): return False
         return first, second
 
 
@@ -1307,7 +1247,7 @@ open the project
 
     AssertionError: (True, True) is not false
 
-* I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(True, True)`` to :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
     :lineno-start: 112
@@ -1323,7 +1263,7 @@ open the project
 
     AssertionError: (True, False) is not false
 
-* I add another :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(True, False)`` to :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
     :lineno-start: 112
@@ -1340,7 +1280,7 @@ open the project
 
     AssertionError: (False, False) is not false
 
-* I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(False, False)`` to :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
     :lineno-start: 112
@@ -1363,13 +1303,9 @@ open the project
 * I add :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
-    :lineno-start: 112
-    :emphasize-lines: 8-9
+    :lineno-start: 116
+    :emphasize-lines: 4-5
 
-    def converse_non_implication(first, second):
-        if (first, second) == (True, True): return False
-        if (first, second) == (True, False): return False
-        if (first, second) == (False, False): return False
         return first, second
 
 
@@ -1382,7 +1318,7 @@ open the project
 
     AssertionError: (False, True) is not false
 
-* I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(False, True)`` to :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
     :lineno-start: 119
@@ -1402,11 +1338,9 @@ open the project
 * I add :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
-    :lineno-start: 119
-    :emphasize-lines: 6-7
+    :lineno-start: 121
+    :emphasize-lines: 4-5
 
-    def converse_implication(first, second):
-        if (first, second) == (False, True): return False
         return first, second
 
 
@@ -1419,7 +1353,7 @@ open the project
 
     AssertionError: (True, True) is not false
 
-* I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(True, True)`` to :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
     :lineno-start: 124
@@ -1435,7 +1369,7 @@ open the project
 
     AssertionError: (True, False) is not false
 
-* I add another :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(True, False)`` to :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
     :lineno-start: 124
@@ -1452,7 +1386,7 @@ open the project
 
     AssertionError: (False, True) is not false
 
-* I add another :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(False, True)`` to :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
     :lineno-start: 124
@@ -1470,7 +1404,7 @@ open the project
 
     AssertionError: (False, False) is not false
 
-* I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for ``(False, False)`` to :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
     :lineno-start: 124
@@ -1489,7 +1423,7 @@ open the project
 
     ======================== 20 passed in G.HIs ========================
 
-All the tests are passing and the world is a better place than when I started! I am going home.
+All the tests are passing! And the world is a better place than when I started.
 
 ----
 
