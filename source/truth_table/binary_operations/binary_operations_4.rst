@@ -1474,17 +1474,75 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
   - if ``first_input`` is NOT equal to :red:`False`, it runs the next :ref:`if statement<if statements>` - ``if second_input == False:``
 
     * if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` then runs ``return True``
+
+      .. code-block:: shell
+
+        logical_equality(True , True ) -> True
+        └── def logical_equality(first_input, second_input):
+            ├── first_input  == True
+            ├── second_input == True
+            ├── if first_input == False:
+            │       if second_input == False:
+            │           return True
+            │       return False
+            ├── if second_input == False:
+            │       return False
+            └── return True
+
     * if ``second_input`` is equal to :red:`False`, it runs ``return False``
+
+      .. code-block:: shell
+
+        logical_equality(True , False) -> False
+        └── def logical_equality(first_input, second_input):
+            ├── first_input  == True
+            ├── second_input == False
+            ├── if first_input == False:
+            │       if second_input == False:
+            │           return True
+            │       return False
+            └── if second_input == False:
+                └── return False
+                return True
 
   - if ``first_input`` is equal to :red:`False`, it runs ``if second_input == False:``
 
     * if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` then runs the next line - ``return False``
+
+      .. code-block:: shell
+
+        logical_equality(False, True ) -> False
+        └── def logical_equality(first_input, second_input):
+            ├── first_input  == False
+            ├── second_input == True
+            └── if first_input == False:
+                ├── if second_input == False:
+                │       return True
+                └── return False
+                if second_input == False:
+                    return False
+                return True
+
     * if ``second_input`` is equal to :red:`False`, it runs ``return True``
+
+      .. code-block:: shell
+
+        logical_equality(False, False) -> True
+        └── def logical_equality(first_input, second_input):
+            ├── first_input  == False
+            ├── second_input == False
+            └── if first_input == False:
+                └── if second_input == False:
+                    └── return True
+                    return False
+                if second_input == False:
+                    return False
+                return True
 
 * I add :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
-    :lineno-start: 115
+    :lineno-start: 113
     :emphasize-lines: 2-5, 8-9
 
     def logical_equality(first_input, second_input):
@@ -1504,7 +1562,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the statements in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 115
+    :lineno-start: 113
     :emphasize-lines: 3-4, 6-7, 11-12
 
     def logical_equality(first_input, second_input):
@@ -1527,7 +1585,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 115
+    :lineno-start: 113
     :emphasize-lines: 4-5, 8-9, 14-15
 
     def logical_equality(first_input, second_input):
@@ -1553,7 +1611,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
-    :lineno-start: 115
+    :lineno-start: 113
     :emphasize-lines: 5-6, 10-11, 17-18
 
     def logical_equality(first_input, second_input):
@@ -1594,7 +1652,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to make two of the cases clearer
 
   .. code-block:: python
-    :lineno-start: 115
+    :lineno-start: 113
     :emphasize-lines: 6, 11-15
 
     def logical_equality(first_input, second_input):
@@ -1636,7 +1694,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I do the same thing for the other two cases
 
   .. code-block:: python
-    :lineno-start: 126
+    :lineno-start: 124
     :emphasize-lines: 10-13
 
         if not first_input and not second_input:
@@ -1658,7 +1716,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I put the :ref:`if statements` that return the same thing together
 
   .. code-block:: python
-    :lineno-start: 115
+    :lineno-start: 113
     :emphasize-lines: 17-18, 23-24
 
     def logical_equality(first_input, second_input):
@@ -1689,7 +1747,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put the two :ref:`if statements` that return :green:`True` together
 
   .. code-block:: python
-    :lineno-start: 131
+    :lineno-start: 129
     :emphasize-lines: 1-16
 
         # if not first_input and second_input:
@@ -1728,17 +1786,9 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 131
-    :emphasize-lines: 9-21
+    :lineno-start: 137
+    :emphasize-lines: 1-13
 
-        # if not first_input and second_input:
-        #     return False
-        # if first_input and not second_input:
-        #     return False
-        # if first_input and second_input:
-        #     return True
-        # if not first_input and not second_input:
-        #     return True
         # if (
         #     (first_input and second_input)
         #     or
@@ -1758,7 +1808,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I remove ``True if`` and ``else False``
 
   .. code-block:: python
-    :lineno-start: 100
+    :lineno-start: 145
     :emphasize-lines: 1-2, 6-7
 
         # return True if (
@@ -1774,7 +1824,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I write the second part of the statement in terms of :ref:`not<test_logical_negation>` because it happens twice
 
   .. code-block:: python
-    :lineno-start: 100
+    :lineno-start: 145
     :emphasize-lines: 5-10
 
         # return True if (
@@ -1796,7 +1846,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
     SyntaxError: invalid syntax
 
-  because I cannot :ref:`negate<test_logical_negation>` :ref:`or<test_logical_disjunction>` this way
+  because I cannot :ref:`negate<test_logical_negation>` :ref:`or<test_logical_disjunction>` this way.
 
 * I "factor" out the :ref:`nots<test_logical_negation>`
 
@@ -1820,7 +1870,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
   the test is green again.
 
-* :ref:`Logical Equality<test_logical_equality>` returns ``((first_input and second_input) or not (first_input or second_input))``, which can be thought of as the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and second input, and the :ref:`Logical Negation(NOT)<test_logical_negation>` of the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the first input and second input also known as the :ref:`Logical NOR<test_logical_nor>` of the first input and second input
+* :ref:`Logical Equality<test_logical_equality>` returns ``((first_input and second_input) or not (first_input or second_input))``, which can be thought of as the :ref:`Logical Disjunction (OR)<test_logical_disjunction>`, of the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and second input, and the :ref:`Logical Negation(NOT)<test_logical_negation>` of the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the first input and second input also known as the :ref:`Logical NOR<test_logical_nor>` of the first input and second input
 
   .. code-block:: python
 
@@ -1831,19 +1881,19 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
   because
 
+  * :ref:`logical_disjunction<test_logical_disjunction>` returns ``first_input or second_input``
+  * :ref:`logical_conjunction<test_logical_conjunction>` returns ``first_input and second_input``
+  * :ref:`logical_nor<test_logical_nor>` returns ``not (first_input or second_input)``
+
   .. code-block:: python
 
     logical_disjunction(first_input, second_input)
 
-    first_input              == (first_input and second_input)
-    logical_conjunction      == (first_input and second_input)
+            first_input == (first_input and second_input)
+    logical_conjunction == (first_input and second_input)
 
-    second_input             == not (first_input or second_input)
-    logical_nor              == not (first_input or second_input)
-
-  * :ref:`logical_disjunction<test_logical_disjunction>` returns ``first_input or second_input``
-  * :ref:`logical_conjunction<test_logical_conjunction>` returns ``first_input and second_input``
-  * :ref:`logical_nor<test_logical_nor>` returns ``not (first_input or second_input)``
+           second_input == not (first_input or second_input)
+            logical_nor == not (first_input or second_input)
 
   or
 
@@ -1917,7 +1967,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
   I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
-    :lineno-start: 100
+    :lineno-start: 145
     :emphasize-lines: 2-5
 
         # return True if (
@@ -1940,44 +1990,12 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
   still green.
 
-* :ref:`logical_equality<test_logical_equality>` returns :green:`True`, if the first input and second input are the equal, which means I can write a much simpler :ref:`return statement<the return statement>` thanks to the equality (``==``) symbol (2 equal signs together :kbd:`=+=` on the keyboard)
+* :ref:`logical_equality<test_logical_equality>` returns :green:`True`, if the first input and second input are equal, which means I can write a much simpler :ref:`return statement<the return statement>` thanks to the equality (``==``) symbol (2 equal signs together :kbd:`=+=` on the keyboard)
 
   .. code-block:: python
-    :lineno-start: 115
-    :emphasize-lines: 34
+    :lineno-start: 145
+    :emphasize-lines: 2
 
-    def logical_equality(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if bool(not first_input) == True:
-        # if bool(not first_input):
-        # if not first_input:
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if bool(not second_input) == True:
-            # if bool(not second_input):
-            # if not second_input:
-        # if second_input == False:
-        # if bool(second_input) == False:
-        # if bool(not second_input) == True:
-        # if bool(not second_input):
-        # if not second_input:
-        # if not first_input and second_input:
-        #     return False
-        # if first_input and not second_input:
-        #     return False
-        # if first_input and second_input:
-        #     return True
-        # if not first_input and not second_input:
-        #     return True
-        # if (
-        #     (first_input and second_input)
-        #     or
-        #     (not first_input and not second_input)
-        # ):
-        #     return True
-        # else:
-        #     return False
         # return True if (
         return first_input == second_input
         return logical_disjunction(
@@ -2002,7 +2020,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 115
+    :lineno-start: 113
 
     def logical_equality(first_input, second_input):
         return first_input == second_input
@@ -2027,9 +2045,9 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
 :ref:`Logical Equality<test_logical_equality>`
 
-* returns ``first_input == second_input``
-* returns :ref:`True<test_what_is_true>` when the first input is equal to the second input
-* returns the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and second input, and the :ref:`Logical Negation(NOT)<test_logical_negation>` of the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the first input and second input. Oh brother!
+* returns ``first_input == second_input``.
+* returns :ref:`True<test_what_is_true>` when the first input is equal to the second input.
+* returns the :ref:`Logical Disjunction (OR)<test_logical_disjunction>`, of the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and second input, and the :ref:`Logical Negation(NOT)<test_logical_negation>` of the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the first input and second input. Oh brother!
 * is the :ref:`opposite<test_logical_negation>` of :ref:`Exclusive Disjunction<test_logical_disjunction>` which returns :green:`True`, only if the first input and second input are NOT equal.
 
 ----
