@@ -750,9 +750,9 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
     logical_nor(True , False) -> False
     logical_nor(True , True ) -> False
 
-  because Python_ checks if ``first_input`` is grouped as :red:`False` when the :ref:`logical_nor function<test_logical_nor>` is :ref:`called<how to call a function with input>`. When ``if first_input == False:`` runs,
+  because Python_ checks if ``first_input`` is equal to :red:`False` when the :ref:`logical_nor function<test_logical_nor>` is :ref:`called<how to call a function with input>`. When ``if first_input == False:`` runs,
 
-  - if ``first_input`` is NOT grouped as :red:`False`, it leaves the :ref:`if statement<if statements>` to run the rest of the :ref:`function<what is a function?>` - ``return False``
+  - if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` to run the rest of the :ref:`function<what is a function?>` - ``return False``
 
     .. code-block:: shell
 
@@ -776,9 +776,9 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
           │           return True
           └── return False
 
-  - if ``first_input`` is grouped as :red:`False`, it checks if ``second_input`` is grouped as :red:`False`
+  - if ``first_input`` is equal to :red:`False`, it checks if ``second_input`` is equal to :red:`False`
 
-    * if ``second_input`` is NOT grouped as :red:`False`, it leaves the ``if first_input == False:`` then runs ``return False``
+    * if ``second_input`` is NOT equal to :red:`False`, it leaves the ``if first_input == False:`` then runs ``return False``
 
       .. code-block:: shell
 
@@ -791,7 +791,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
             │           return True
             └── return False
 
-    * if ``second_input`` is grouped as :red:`False`, it runs ``return True``
+    * if ``second_input`` is equal to :red:`False`, it runs ``return True``
 
       .. code-block:: shell
 
@@ -804,7 +804,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
                     └── return True
                 return False
 
-  - it only checks ``second_input`` if ``first_input`` is grouped as :red:`False`.
+  - it only checks ``second_input`` if ``first_input`` is equal to :red:`False`.
 
 * I add :ref:`the bool built-in function<how to test if something is grouped as True>`
 
@@ -2136,37 +2136,29 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 115
-    :emphasize-lines: 10-16
+    :lineno-start: 122
+    :emphasize-lines: 3-7
 
-        def test_logical_equality(self):
-            logical_equality = (
-                src.truth_table.logical_equality
-            )
-            self.assertTrue(logical_equality(True, True))
-            self.assertFalse(logical_equality(True, False))
-            self.assertFalse(logical_equality(False, True))
             self.assertTrue(logical_equality(False, False))
 
         def test_material_implication(self):
             material_implication = (
                 src.truth_table.material_implication
             )
-            self.assertTrue(
-                material_implication(True, True)
-            )
+            self.assertTrue(material_implication(True, True))
 
 
     # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.truth_table'
-                    has no attribute 'material_implication'
+                    has no attribute 'material_implication'.
+                    Did you mean: 'material_non_implication'?
 
-  because there is no definition for :ref:`material_implication<test_material_implication>` in ``truth_table.py``
+  because there is no definition for :ref:`material_implication<test_material_implication>` in ``truth_table.py``.
 
 ----
 
@@ -2179,15 +2171,9 @@ first input     second input   return
 I add a :ref:`function<what is a function?>` for :ref:`material_implication<test_material_implication>` to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 115
-  :emphasize-lines: 14-15
+  :lineno-start: 122
+  :emphasize-lines: 8-9
 
-  def logical_equality(first_input, second_input):
-      return first_input == second_input
-      return logical_disjunction(
-          logical_conjunction(first_input, second_input),
-          logical_nor(first_input, second_input)
-      )
       return (
           (first_input and second_input)
           or
@@ -2199,6 +2185,10 @@ I add a :ref:`function<what is a function?>` for :ref:`material_implication<test
       return True
 
 the test passes. :ref:`material_implication<test_material_implication>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`.
+
+.. code-block:: python
+
+  material_implication(True , True ) -> True
 
 ----
 
@@ -2217,19 +2207,15 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 158
-    :emphasize-lines: 8-10
+    :lineno-start: 124
+    :emphasize-lines: 6
 
         def test_material_implication(self):
             material_implication = (
                 src.truth_table.material_implication
             )
-            self.assertTrue(
-                material_implication(True, True)
-            )
-            self.assertFalse(
-                material_implication(True, False)
-            )
+            self.assertTrue(material_implication(True, True))
+            self.assertFalse(material_implication(True, False))
 
 
     # Exceptions seen
@@ -2245,7 +2231,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I add an :ref:`if statement<if statements>` to :ref:`material_implication<test_material_implication>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 128
+    :lineno-start: 126
     :emphasize-lines: 2-3
 
     def material_implication(first_input, second_input):
@@ -2258,6 +2244,11 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   - if ``second_input`` is NOT equal to :red:`False`, it runs ``return True``
   - if ``second_input`` is equal to :red:`False`, it runs ``return False``
 
+  .. code-block:: python
+
+    material_implication(True , False) -> False
+    material_implication(True , True ) -> True
+
 * I add an :ref:`assertion<what is an assertion?>`  to :ref:`test_material_implication` for the next case, which is if the first input is :red:`False` and the second input is :green:`True` in ``test_truth_table.py``
 
   ==============  ============== ==============
@@ -2267,32 +2258,32 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 158
-    :emphasize-lines: 11-13
+    :lineno-start: 124
+    :emphasize-lines: 7
 
         def test_material_implication(self):
             material_implication = (
                 src.truth_table.material_implication
             )
-            self.assertTrue(
-                material_implication(True, True)
-            )
-            self.assertFalse(
-                material_implication(True, False)
-            )
-            self.assertTrue(
-                material_implication(False, True)
-            )
+            self.assertTrue(material_implication(True, True))
+            self.assertFalse(material_implication(True, False))
+            self.assertTrue(material_implication(False, True))
 
 
     # Exceptions seen
 
   the test is still green. :ref:`material_implication<test_material_implication>` returns
 
-  - :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
-  - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
-  - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
-  - the second input in these three cases
+  - :green:`True`, if the first input is :red:`False` and the second input is :green:`True`.
+  - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`.
+  - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`.
+  - the second input in these three cases.
+
+  .. code-block:: python
+
+    material_implication(False, True ) -> True
+    material_implication(True , False) -> False
+    material_implication(True , True ) -> True
 
 * I add an :ref:`assertion<what is an assertion?>` for the fourth case, which is if the first input is :red:`False` and the second input is :red:`False`
 
@@ -2303,25 +2294,17 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 158
-    :emphasize-lines: 14-16
+    :lineno-start: 124
+    :emphasize-lines: 8
 
         def test_material_implication(self):
             material_implication = (
                 src.truth_table.material_implication
             )
-            self.assertTrue(
-                material_implication(True, True)
-            )
-            self.assertFalse(
-                material_implication(True, False)
-            )
-            self.assertTrue(
-                material_implication(False, True)
-            )
-            self.assertTrue(
-                material_implication(False, False)
-            )
+            self.assertTrue(material_implication(True, True))
+            self.assertFalse(material_implication(True, False))
+            self.assertTrue(material_implication(False, True))
+            self.assertTrue(material_implication(False, False))
 
 
     # Exceptions seen
@@ -2334,14 +2317,14 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 
   because when :ref:`material_implication<test_material_implication>` gets called, it runs ``if second_input == False:``
 
-  - if ``second_input`` is NOT equal to :red:`False`, it runs ``return True``
-  - if ``second_input`` is equal to :red:`False`, it runs ``return False``
-  - ``second_input`` is :red:`False` in this case, which causes :ref:`AssertionError<what causes AssertionError?>` since the :ref:`assertion<what is an assertion?>` expects :green:`True` and the :ref:`function<what is a function?>` returns :red:`False`
+  - if ``second_input`` is NOT equal to :red:`False`, it runs ``return True``.
+  - if ``second_input`` is equal to :red:`False`, it runs ``return False``.
+  - ``second_input`` is :red:`False` in this case, which causes :ref:`AssertionError<what causes AssertionError?>` since the :ref:`assertion<what is an assertion?>` expects :green:`True` and the :ref:`function<what is a function?>` returns :red:`False`.
 
 * I add an :ref:`if statement<if statements>` to the :ref:`material_implication function<test_material_implication>` for the one case where it returns :red:`False`, in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 128
+    :lineno-start: 126
     :emphasize-lines: 2-4
 
     def material_implication(first_input, second_input):
@@ -2352,10 +2335,73 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 
   the test passes.
 
+  .. code-block:: python
+
+    material_implication(False, False) -> True
+    material_implication(False, True ) -> True
+    material_implication(True , False) -> False
+    material_implication(True , True ) -> True
+
+  Python_ checks ``if first_input == True:`` when :ref:`material_implication<test_material_implication>` is :ref:`called<how to call a function with input>`
+
+  - if ``first_input`` is NOT equal to :green:`True`, it leaves the :ref:`if statement<if statements>` to run the rest of the :ref:`function<what is a function?>` - ``return True``
+
+    .. code-block:: shell
+
+      material_implication(False, False) -> True
+      └── def material_implication(first_input, second_input):
+          ├── first_input  == False
+          ├── second_input == False
+          ├── if first_input == True:
+          │       if second_input == False:
+          │           return False
+          └── return True
+
+    .. code-block:: shell
+
+      material_implication(False, True ) -> True
+      └── def material_implication(first_input, second_input):
+          ├── first_input  == False
+          ├── second_input == True
+          ├── if first_input == True:
+          │       if second_input == False:
+          │           return False
+          └── return True
+
+  - if ``first_input`` is equal to :green:`True`, it checks if ``second_input`` is equal to :red:`False`
+
+    * if ``second_input`` is NOT equal to :red:`False`, it leaves ``if first_input == True:`` to run the rest of the :ref:`function<what is a function?>` - ``return True``
+
+      .. code-block:: shell
+
+        material_implication(True , True ) -> True
+        └── def material_implication(first_input, second_input):
+            ├── first_input  == True
+            ├── second_input == True
+            └── if first_input == True:
+            ┌───┴── if second_input == False:
+            │           return False
+            └── return True
+
+    * if ``second_input`` is equal to :red:`False` it runs ``return False``
+
+      .. code-block:: shell
+
+        material_implication(True , False) -> False
+        └── def material_implication(first_input, second_input):
+            ├── first_input  == True
+            ├── second_input == False
+            └── if first_input == True:
+                └── if second_input == False:
+                    └── return False
+                return True
+
+  - it only checks the second input if the first input is :green:`True`.
+
 * I use :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
-    :lineno-start: 128
+    :lineno-start: 126
     :emphasize-lines: 2-5
 
     def material_implication(first_input, second_input):
@@ -2371,7 +2417,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the second :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 128
+    :lineno-start: 126
     :emphasize-lines: 5-6
 
     def material_implication(first_input, second_input):
@@ -2388,7 +2434,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 128
+    :lineno-start: 126
     :emphasize-lines: 3-4, 7-8
 
     def material_implication(first_input, second_input):
@@ -2407,7 +2453,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
-    :lineno-start: 128
+    :lineno-start: 126
     :emphasize-lines: 4-5, 9-10
 
     def material_implication(first_input, second_input):
@@ -2455,7 +2501,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
   .. code-block:: python
-    :lineno-start: 128
+    :lineno-start: 126
     :emphasize-lines: 5, 10-11
 
     def material_implication(first_input, second_input):
@@ -2488,19 +2534,9 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I add an :ref:`else clause<if statements>` to make it clearer
 
   .. code-block:: python
-    :lineno-start: 128
-    :emphasize-lines: 12-14
+    :lineno-start: 136
+    :emphasize-lines: 2-4
 
-    def material_implication(first_input, second_input):
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-        # if first_input:
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if bool(not second_input) == True:
-            # if bool(not second_input):
-            # if not second_input:
         if first_input and not second_input:
             return False
         else:
@@ -2511,7 +2547,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I change the :ref:`else clause<if statements>` to the :ref:`Logical Negation (NOT)<if statements>` of the :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 138
+    :lineno-start: 136
     :emphasize-lines: 3-4
 
         if first_input and not second_input:
@@ -2525,7 +2561,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 138
+    :lineno-start: 136
     :emphasize-lines: 1-2, 4-10
 
         # if first_input and not second_input:
@@ -2544,7 +2580,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I remove ``True if`` and ``else False`` to make it simpler
 
   .. code-block:: python
-    :lineno-start: 138
+    :lineno-start: 136
     :emphasize-lines: 7, 9
 
         # if first_input and not second_input:
@@ -2563,7 +2599,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I "multiply" :ref:`not<test_logical_negation>` by the symbols in parentheses
 
   .. code-block:: python
-    :lineno-start: 138
+    :lineno-start: 136
     :emphasize-lines: 8-11
 
         # if first_input and not second_input:
@@ -2591,7 +2627,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I change ``not and`` to :ref:`or<test_logical_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 138
+    :lineno-start: 136
     :emphasize-lines: 10-11
 
         # if first_input and not second_input:
@@ -2614,7 +2650,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I remove ``not not`` because they cancel out
 
   .. code-block:: python
-    :lineno-start: 138
+    :lineno-start: 136
     :emphasize-lines: 12-13
 
         # if first_input and not second_input:
@@ -2705,19 +2741,9 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
-    :lineno-start: 128
-    :emphasize-lines: 16-19
+    :lineno-start: 136
+    :emphasize-lines: 6-9
 
-    def material_implication(first_input, second_input):
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-        # if first_input:
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if bool(not second_input) == True:
-            # if bool(not second_input):
-            # if not second_input:
         # if first_input and not second_input:
         #     return False
         # else:
@@ -2743,7 +2769,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I remove the comments
 
   .. code-block:: python
-    :lineno-start: 128
+    :lineno-start: 126
     :emphasize-lines: 6
 
     def material_implication(first_input, second_input):
@@ -2764,11 +2790,11 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 
 :ref:`Material Implication also known as Logical Implication<test_material_implication>` returns
 
-* ``not first_input or second_input``
-* the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input
-* :ref:`False<test_what_is_false>` only if the first input is :green:`True` and the second input is :red:`False`
+* ``not first_input or second_input``.
+* the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input.
+* :ref:`False<test_what_is_false>` only if the first input is :green:`True` and the second input is :red:`False`.
 
-it is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Material Non-Implication<test_material_non_implication>` which returns :green:`True` only if the first input is :green:`True` and the second input is :red:`False`.
+It is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Material Non-Implication<test_material_non_implication>` which returns :green:`True` only if the first input is :green:`True` and the second input is :red:`False`.
 
 ----
 
