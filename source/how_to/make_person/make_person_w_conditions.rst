@@ -5,7 +5,7 @@
 .. include:: ../../links.rst
 
 .. _if statement: https://docs.python.org/3/tutorial/controlflow.html#if-statements
-.. _if statements: `if statement`_
+.. _if statements: :ref:`if statement<if statements>`
 .. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
 
 #################################################################################
