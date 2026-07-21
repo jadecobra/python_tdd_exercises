@@ -10,8 +10,6 @@
 truth table: Binary Operations 3
 #################################################################################
 
-
-
 ----
 
 *********************************************************************************
@@ -196,30 +194,31 @@ because ``truth_table.py`` does not have anything in it with that name.
 
 ----
 
-I add :ref:`exclusive_disjunction<test_exclusive_disjunction>` to ``truth_table.py``
+* I open ``truth_table.py`` from the ``src`` folder_
+* I add :ref:`exclusive_disjunction<test_exclusive_disjunction>` to ``truth_table.py``
 
-.. code-block:: python
-  :lineno-start: 52
-  :emphasize-lines: 11-12
+  .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 11-12
 
-  def logical_disjunction(first_input, second_input):
-      return logical_negation(
-          logical_conjunction(
-              logical_negation(first_input),
-              logical_negation(second_input)
-          )
-      )
-      return first_input or second_input
+    def logical_disjunction(first_input, second_input):
+        return logical_negation(
+            logical_conjunction(
+                logical_negation(first_input),
+                logical_negation(second_input)
+            )
+        )
+        return first_input or second_input
 
 
-  def exclusive_disjunction(first_input, second_input):
-      return False
+    def exclusive_disjunction(first_input, second_input):
+        return False
 
-the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`.
+  the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`.
 
-.. code-block:: python
+  .. code-block:: python
 
-  exclusive_disjunction(True , True ) -> False
+    exclusive_disjunction(True , True ) -> False
 
 ----
 

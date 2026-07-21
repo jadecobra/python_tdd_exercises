@@ -1,6 +1,6 @@
 .. meta::
   :description: Truth table Binary Operations 4 in Python using TDD—complete all sixteen binary operations in test_binary.py by adding negate_second (not second), logical_nor (not (first or second), True only when both False), logical_equality (first == second), and material_implication (not first or second). Full cumulative unittest suite: 16 test methods, 64 assertions across TT/TF/FT/FF. Refactor nested if-statements to return not (first or second), first == second, and not first or second; debug SyntaxError invalid syntax; factor not from if/else and return not (something). Real-world examples: defective product return rule, fire alarm works when power and sensor, logical equality matching pairs, material implication promise logic. Review includes complete sixteen-row truth table (logical_nor returns True only when both inputs False). Requires Binary Operations 3. Jacob Itegboje Pumping Python.
-  :keywords: Jacob Itegboje, Pumping Python, truth table Binary Operations 4, test_binary.py all sixteen operations, negate_second not second, logical_nor not first or second, logical_equality first == second, material_implication not first or second, complete binary truth table 16 gates, TDD red green refactor final binary chapter, SyntaxError invalid syntax boolean refactor, return not something if else pattern, defective product return logic, fire alarm power and sensor rule, logical equality vs exclusive disjunction XOR, material implication promise logic, assertTrue assertFalse 64 assertions, not A or B NOR gate python, programming truth tables beginners, boolean algebra software engineering, unittest truth_table project
+  :keywords: Jacob Itegboje, Pumping Python, truth table Binary Operations 4, test_binary.py all sixteen operations, negate_second not second, logical_nor not (first or second), logical_equality first == second, material_implication not first or second, complete binary truth table 16 gates, TDD red green refactor final binary chapter, SyntaxError invalid syntax boolean refactor, return not something if else pattern, defective product return logic, fire alarm power and sensor rule, logical equality vs exclusive disjunction XOR, material implication promise logic, assertTrue assertFalse 64 assertions, not A or B NOR gate python, programming truth tables beginners, boolean algebra software engineering, unittest truth_table project
 
 .. include:: ../../links.rst
 
@@ -9,8 +9,6 @@
 #################################################################################
 truth table: Binary Operations 4
 #################################################################################
-
-
 
 ----
 
@@ -32,49 +30,49 @@ These are the tests I have at the end of the chapter
   :language: python
   :linenos:
   :caption: truth_table/tests/test_binary.py
-  :lines: 1-26
+  :lines: 1-27
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary.py
   :language: python
-  :lineno-start: 28
+  :lineno-start: 29
   :caption: truth_table/tests/test_binary.py
-  :lines: 28-42
+  :lines: 29-43
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary.py
   :language: python
-  :lineno-start: 44
+  :lineno-start: 45
   :caption: truth_table/tests/test_binary.py
-  :lines: 44-56
+  :lines: 45-57
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary.py
   :language: python
-  :lineno-start: 58
+  :lineno-start: 59
   :caption: truth_table/tests/test_binary.py
-  :lines: 58-72
+  :lines: 59-73
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary.py
   :language: python
-  :lineno-start: 74
+  :lineno-start: 75
   :caption: truth_table/tests/test_binary.py
-  :lines: 74-88
+  :lines: 75-89
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary.py
   :language: python
-  :lineno-start: 90
+  :lineno-start: 91
   :caption: truth_table/tests/test_binary.py
-  :lines: 90-104
+  :lines: 91-105
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary.py
   :language: python
-  :lineno-start: 104
+  :lineno-start: 107
   :caption: truth_table/tests/test_binary.py
-  :lines: 106-118
+  :lines: 107-119
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary.py
   :language: python
-  :lineno-start: 120
+  :lineno-start: 121
   :caption: truth_table/tests/test_binary.py
-  :lines: 120-
+  :lines: 121-
 
 ----
 
@@ -125,12 +123,14 @@ open the project
 
     rootdir: .../pumping_python/truth_table
     configfile: pyproject.toml
-    collected 16 items
+    collected 12 items
 
     tests/test_binary.py ............                  [ 75%]
     tests/test_nullary_unary.py ....                   [100%]
 
-    ================== 16 passed in G.HIs ===================
+    ================== 12 passed in G.HIs ===================
+
+* I hold :kbd:`ctrl` (Windows_) or :kbd:`option` (MacOS_) on the keyboard, then click on ``tests/test_binary.py`` with the mouse to open it
 
 * Over the past 3 chapters I tested
 
@@ -172,7 +172,7 @@ first input     second input   return
 
 ----
 
-I add a new test for :ref:`negate_second<test_negate_second>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_truth_table.py``
+I add a new test for :ref:`negate_second<test_negate_second>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
 ==============  ============== ==============
 first input     second input   return
@@ -210,28 +210,30 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``tru
 
 ----
 
-I add a :ref:`function definition<how to make a function that takes input>` for :ref:`negate_second<test_negate_second>` to ``truth_table.py``
+* I open ``truth_table.py`` from the ``src`` folder_
 
-.. code-block:: python
-  :lineno-start: 92
-  :emphasize-lines: 9-10
+* I add a :ref:`function definition<how to make a function that takes input>` for :ref:`negate_second<test_negate_second>` to ``truth_table.py``
 
-  def converse_implication(first_input, second_input):
-      return logical_disjunction(
-          first_input,
-          logical_negation(second_input)
-      )
-      return first_input or not second_input
+  .. code-block:: python
+    :lineno-start: 92
+    :emphasize-lines: 9-10
+
+    def converse_implication(first_input, second_input):
+        return logical_disjunction(
+            first_input,
+            logical_negation(second_input)
+        )
+        return first_input or not second_input
 
 
-  def negate_second(first_input, second_input):
-      return False
+    def negate_second(first_input, second_input):
+        return False
 
-the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`.
+  the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`.
 
-.. code-block:: python
+  .. code-block:: python
 
-  negate_second(True , True ) -> False
+    negate_second(True , True ) -> False
 
 ----
 
@@ -241,7 +243,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_negate_second` in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_negate_second` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -311,7 +313,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
     negate_second(True , False) -> True
     negate_second(True , True ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for the third case, which is if the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_negate_second` in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>` for the third case, which is if the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_negate_second` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -570,7 +572,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`logical_nor<test_logical_nor>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_truth_table.py``
+* I add a test for :ref:`logical_nor<test_logical_nor>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -636,7 +638,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the second case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_nor` in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>` for the second case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_nor` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1219,7 +1221,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`Logical Equality<test_logical_equality>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True` to ``test_truth_table.py``
+* I add a test for :ref:`Logical Equality<test_logical_equality>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True` to ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1292,7 +1294,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_equality` in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_equality` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1343,7 +1345,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
     logical_equality(True , False) -> False
     logical_equality(True , True ) -> True
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_logical_equality` in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_logical_equality` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1406,7 +1408,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
     logical_equality(True , False) -> False
     logical_equality(True , True ) -> True
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_equality` in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_equality` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2048,7 +2050,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * returns ``first_input == second_input``.
 * returns :ref:`True<test_what_is_true>` when the first input is equal to the second input.
 * returns the :ref:`Logical Disjunction (OR)<test_logical_disjunction>`, of the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and second input, and the :ref:`Logical Negation(NOT)<test_logical_negation>` of the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the first input and second input. Oh brother!
-* is the :ref:`opposite<test_logical_negation>` of :ref:`Exclusive Disjunction<test_logical_disjunction>` which returns :green:`True`, only if the first input and second input are NOT equal.
+* is the :ref:`opposite<test_logical_negation>` of :ref:`Exclusive Disjunction<test_exclusive_disjunction>` which returns :green:`True`, only if the first input and second input are NOT equal.
 
 ----
 
@@ -2127,7 +2129,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`material_implication<test_material_implication>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_truth_table.py``
+* I add a test for :ref:`material_implication<test_material_implication>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2198,7 +2200,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_material_implication` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`,  in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_material_implication` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`,  in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2249,7 +2251,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
     material_implication(True , False) -> False
     material_implication(True , True ) -> True
 
-* I add an :ref:`assertion<what is an assertion?>`  to :ref:`test_material_implication` for the next case, which is if the first input is :red:`False` and the second input is :green:`True` in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>`  to :ref:`test_material_implication` for the next case, which is if the first input is :red:`False` and the second input is :green:`True` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2839,7 +2841,7 @@ extract global variables
 *********************************************************************************
 
 * I go back to the terminal_ where the tests are running.
-* I add :ref:`variables<what is a variable?>` for the four test cases that are repeated in every test, in ``test_truth_table.py``
+* I add :ref:`variables<what is a variable?>` for the four test cases that are repeated in every test, in ``test_binary.py``
 
   .. code-block:: python
     :linenos:
@@ -3181,7 +3183,7 @@ extract global variables
 close the project
 *********************************************************************************
 
-* I close ``test_truth_table.py`` and ``truth_table.py``
+* I close ``test_binary.py`` and ``truth_table.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
@@ -3484,7 +3486,7 @@ not (first or second)                           :red:`False`   :red:`False`   :r
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed for the Truth Table?<truth table: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed for the Truth Table?<Binary Operations: tests and solutions>`
 
 ----
 

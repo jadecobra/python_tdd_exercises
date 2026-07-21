@@ -7,6 +7,7 @@ CASE_2 = True, False
 CASE_3 = False, True
 CASE_4 = False, False
 
+
 class TestBinaryOperations(unittest.TestCase):
 
     def test_contradiction(self):
