@@ -1750,7 +1750,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 
   the terminal_ still shows :ref:`TypeError<what causes TypeError?>`
 
-* I use a :ref:`starred expression<single starred expressions>` to make the :ref:`function<what is a function?>` any number of :ref:`positional_arguments<test_positional_arguments>`
+* I use a :ref:`starred expression<single starred expressions>` to make the :ref:`function<what is a function?>` take any number of :ref:`positional_arguments<test_positional_arguments>`
 
   .. code-block:: python
     :linenos:

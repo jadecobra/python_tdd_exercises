@@ -66,7 +66,7 @@ These are the tests I have at the end of the chapter
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary.py
   :language: python
-  :lineno-start: 106
+  :lineno-start: 104
   :caption: truth_table/tests/test_binary.py
   :lines: 106-118
 
@@ -579,14 +579,9 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 101
-    :emphasize-lines: 8-10
+    :lineno-start: 104
+    :emphasize-lines: 3-5
 
-        def test_negate_second(self):
-            negate_second = src.truth_table.negate_second
-            self.assertFalse(negate_second(True, True))
-            self.assertTrue(negate_second(True, False))
-            self.assertFalse(negate_second(False, True))
             self.assertTrue(negate_second(False, False))
 
         def test_logical_nor(self):
@@ -614,7 +609,7 @@ first input     second input   return
 
 ----
 
-I add the :ref:`function<what is a function?>` to ``truth_table.py``
+I add :ref:`logical_nor<test_logical_nor>` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 100
@@ -628,6 +623,10 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
       return False
 
 the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`.
+
+.. code-block:: python
+
+  logical_nor(True , True ) -> False
 
 ----
 
@@ -646,7 +645,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 147
+    :lineno-start: 100
     :emphasize-lines: 4
 
         def test_logical_nor(self):
@@ -663,6 +662,11 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
   - :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
   - :red:`False`, if the first input is :green:`True`
 
+  .. code-block:: python
+
+    logical_nor(True , False) -> False
+    logical_nor(True , True ) -> False
+
 * I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :red:`False` and the second input is :green:`True`
 
   ==============  ============== ==============
@@ -672,7 +676,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 147
+    :lineno-start: 100
     :emphasize-lines: 5
 
         def test_logical_nor(self):
@@ -689,6 +693,12 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
   - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
   - :red:`False`, if the first input is :green:`True`
 
+  .. code-block:: python
+
+    logical_nor(False, True ) -> False
+    logical_nor(True , False) -> False
+    logical_nor(True , True ) -> False
+
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False`
 
   ==============  ============== ==============
@@ -698,7 +708,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 147
+    :lineno-start: 100
     :emphasize-lines: 6
 
         def test_logical_nor(self):
@@ -713,7 +723,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: False is not true
 
@@ -722,7 +732,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I add :ref:`if statements` for this case to :ref:`logical_nor<test_logical_nor>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 106
+    :lineno-start: 104
     :emphasize-lines: 2-4
 
     def logical_nor(first_input, second_input):
@@ -733,10 +743,17 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
   the test passes.
 
+  .. code-block:: python
+
+    logical_nor(False, False) -> True
+    logical_nor(False, True ) -> False
+    logical_nor(True , False) -> False
+    logical_nor(True , True ) -> False
+
 * I add :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
-    :lineno-start: 106
+    :lineno-start: 104
     :emphasize-lines: 2-5
 
     def logical_nor(first_input, second_input):
@@ -747,12 +764,12 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
                 return True
         return False
 
-  the test still green.
+  the test is still green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the :ref:`if statements` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 106
+    :lineno-start: 104
     :emphasize-lines: 3-4, 6-7
 
     def logical_nor(first_input, second_input):
@@ -770,7 +787,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 106
+    :lineno-start: 104
     :emphasize-lines: 4-5, 8-9
 
     def logical_nor(first_input, second_input):
@@ -790,7 +807,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
-    :lineno-start: 106
+    :lineno-start: 104
     :emphasize-lines: 5-6, 10-11
 
     def logical_nor(first_input, second_input):
@@ -824,7 +841,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
   .. code-block:: python
-    :lineno-start: 94
+    :lineno-start: 104
     :emphasize-lines: 6, 11-12
 
     def logical_nor(first_input, second_input):
@@ -858,7 +875,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 106
+    :lineno-start: 104
     :emphasize-lines: 12-19
 
     def logical_nor(first_input, second_input):
@@ -886,7 +903,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I remove ``True if`` and ``else False``
 
   .. code-block:: python
-    :lineno-start: 106
+    :lineno-start: 104
     :emphasize-lines: 16, 18
 
     def logical_nor(first_input, second_input):
@@ -914,7 +931,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I write the statement in terms of :ref:`not<test_logical_negation>` because it happens 2 times
 
   .. code-block:: python
-    :lineno-start: 120
+    :lineno-start: 118
     :emphasize-lines: 3-6
 
         return (
@@ -932,12 +949,12 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
     SyntaxError: invalid syntax
 
-  because I cannot :ref:`negate<test_logical_negation>` :ref:`or<test_logical_disjunction>` this way
+  because I cannot :ref:`negate<test_logical_negation>` :ref:`or<test_logical_disjunction>` this way.
 
 * I "factor" out the :ref:`nots<test_logical_negation>`
 
   .. code-block:: python
-    :lineno-start: 120
+    :lineno-start: 118
     :emphasize-lines: 4-7
 
         return (
@@ -972,7 +989,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
       not (first_input or second_input)
       not (True        or True        )
       not (True                       )
-      False # not logical_disjunction(True, False)
+      False # not logical_disjunction(True, True)
 
   - if the first input is :green:`True` and the second input is :red:`False`, :ref:`logical_nor<test_logical_nor>` returns
 
@@ -982,7 +999,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
       not (first_input or second_input)
       not (True        or False       )
       not (True                       )
-      False # not logical_disjunction(True, True)
+      False # not logical_disjunction(True, False)
 
   - if the first input is :red:`False` and the second input is :green:`True`, :ref:`logical_nor<test_logical_nor>` returns
 
@@ -992,7 +1009,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
       not (first_input or second_input)
       not (False       or True        )
       not (True                       )
-      False # not logical_disjunction(False, False)
+      False # not logical_disjunction(False, True)
 
   - if the first input is :red:`False` and the second input is :red:`False`, :ref:`logical_nor<test_logical_nor>` returns
 
@@ -1002,7 +1019,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
       not (first_input or second_input)
       not (False       or False       )
       not (False                      )
-      True  # not logical_disjunction(False, True)
+      True  # not logical_disjunction(False, False)
 
   ==============  =============== =============== =====================
   first           second          first or second not (first or second)
@@ -1016,20 +1033,9 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
   I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
-    :lineno-start: 106
-    :emphasize-lines: 15-19
+    :lineno-start: 114
+    :emphasize-lines: 4-8
 
-    def logical_nor(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if bool(not first_input) == True:
-        # if bool(not first_input):
-        # if not first_input:
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if bool(not second_input) == True:
-            # if bool(not second_input):
-            # if not second_input:
         # if not first_input and not second_input:
         #         return True
         # return False
@@ -1050,10 +1056,24 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
   still green.
 
+  .. code-block:: shell
+
+    logical_nor(False, False) -> True
+    └── not logical_disjunction(False, False) -> True
+
+    logical_nor(False, True ) -> False
+    └── not logical_disjunction(False, True ) -> False
+
+    logical_nor(True , False) -> False
+    └── not logical_disjunction(True , False) -> False
+
+    logical_nor(True , True ) -> False
+    └── not logical_disjunction(True , True ) -> False
+
 * I remove the comments
 
   .. code-block:: python
-    :lineno-start: 106
+    :lineno-start: 104
     :emphasize-lines: 7
 
     def logical_nor(first_input, second_input):
@@ -1075,10 +1095,11 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
 :ref:`Logical NOR<test_logical_nor>` returns
 
-* ``not (first_input or second_input)``
-* :green:`True` if the first input is :red:`False` and the second input is :red:`False`
-* the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the first input and second input
-* :ref:`not<test_logical_negation>` :ref:`or<test_logical_disjunction>` of the first input and second input
+* ``not (first_input or second_input)``.
+* :green:`True` if the first input is :red:`False` and the second input is :red:`False`.
+* the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the first input and second input.
+* :ref:`not<test_logical_negation>` :ref:`or<test_logical_disjunction>` of the first input and second input.
+* the :ref:`not<test_logical_negation>` of the :ref:`or<test_logical_disjunction>`.
 
 ----
 
@@ -1151,14 +1172,9 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 101
-    :emphasize-lines: 23-26
+    :lineno-start: 113
+    :emphasize-lines: 3-7
 
-        def test_logical_nor(self):
-            logical_nor = src.truth_table.logical_nor
-            self.assertFalse(logical_nor(True, True))
-            self.assertFalse(logical_nor(True, False))
-            self.assertFalse(logical_nor(False, True))
             self.assertTrue(logical_nor(False, False))
 
         def test_logical_equality(self):
@@ -1178,7 +1194,7 @@ first input     second input   return
                     has no attribute 'logical_equality'.
                     Did you mean: 'logical_identity'?
 
-  because there is no definition for :ref:`logical_equality<test_logical_equality>` in ``truth_table.py``
+  because there is no definition for :ref:`logical_equality<test_logical_equality>` in ``truth_table.py``.
 
 ----
 
@@ -1188,10 +1204,10 @@ first input     second input   return
 
 ----
 
-I add a :ref:`function<what is a function?>` for it in ``truth_table.py``
+I add a :ref:`function definition<how to make a function with input>` for it in ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 106
+  :lineno-start: 104
   :emphasize-lines: 10-11
 
   def logical_nor(first_input, second_input):
@@ -1663,7 +1679,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I remove ``True if`` and ``else False``
 
   .. code-block:: python
-    :lineno-start: 147
+    :lineno-start: 100
     :emphasize-lines: 1-2, 6-7
 
         # return True if (
@@ -1679,7 +1695,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I write the second part of the statement in terms of :ref:`not<test_logical_negation>` because it happens twice
 
   .. code-block:: python
-    :lineno-start: 147
+    :lineno-start: 100
     :emphasize-lines: 5-10
 
         # return True if (
@@ -1706,7 +1722,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 * I "factor" out the :ref:`nots<test_logical_negation>`
 
   .. code-block:: python
-    :lineno-start: 147
+    :lineno-start: 100
     :emphasize-lines: 6-11
 
         # return True if (
@@ -1822,7 +1838,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
   I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
-    :lineno-start: 147
+    :lineno-start: 100
     :emphasize-lines: 2-5
 
         # return True if (
