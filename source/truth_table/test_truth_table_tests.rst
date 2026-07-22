@@ -10,8 +10,6 @@
 truth table: test_truth_table_tests
 #################################################################################
 
-
-
 ----
 
 I want to write a program_ that makes the tests in ``test_truth_table.py`` pass without looking at them
@@ -71,10 +69,10 @@ open the project
     configfile: pyproject.toml
     collected 20 items
 
-    tests/test_binary.py ....................                     [ 80%]
-    tests/test_nullary_unary.py ....                              [100%]
+    tests/test_binary.py ....................          [ 80%]
+    tests/test_nullary_unary.py ....                   [100%]
 
-    ======================== 20 passed in G.HIs ========================
+    ================== 20 passed in G.HIs ===================
 
 ----
 
@@ -1421,7 +1419,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: shell
 
-    ======================== 20 passed in G.HIs ========================
+    ================== 20 passed in G.HIs ===================
 
 All the tests are passing! And the world is a better place than when I started.
 

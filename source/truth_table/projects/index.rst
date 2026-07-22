@@ -6,52 +6,7 @@
 truth table: projects
 #################################################################################
 
-You have seen the `Truth Table`_ from Mathematics_ and I used the :ref:`assertFalse<another way to test if something is grouped as False>` and :ref:`assertTrue<another way to test if something is grouped as True>` :ref:`methods<what is a method?>` from :ref:`AssertionError<what causes AssertionError?>`, :ref:`None<what is None?>` and :ref:`booleans<what are booleans?>` to go through each operation.
-
-Time to write programs that use the truth table
-
-----
-
-*********************************************************************************
-preview
-*********************************************************************************
-
-These are the tests I have at the end of the chapters
-
-* Automated Teller Machine Tests
-
-  .. literalinclude:: ../../code/truth_table/tests/test_atm.py
-    :language: python
-    :linenos:
-    :caption: atm/tests/test_atm.py
-
-* Car Tests
-
-  .. literalinclude:: ../../code/truth_table/tests/test_car.py
-    :language: python
-    :linenos:
-    :caption: car/tests/test_car.py
-
-* Elevator Tests
-
-  .. literalinclude:: ../../code/truth_table/tests/test_elevator.py
-    :language: python
-    :linenos:
-    :caption: elevator/tests/test_elevator.py
-
-* Microwave Tests
-
-  .. literalinclude:: ../../code/truth_table/tests/test_microwave.py
-    :language: python
-    :linenos:
-    :caption: microwave/tests/test_microwave.py
-
-* Traffic Light Tests
-
-  .. literalinclude:: ../../code/truth_table/tests/test_traffic_light.py
-    :language: python
-    :linenos:
-    :caption: traffic_light/tests/test_traffic_light.py
+I used the :ref:`assertFalse<another way to test if something is grouped as False>` and :ref:`assertTrue methods<another way to test if something is grouped as True>` to :ref:`test the operations of the Truth Table<truth table>`. I want to use them in a few projects.
 
 ----
 
@@ -74,4 +29,4 @@ the projects
 what is next?
 *************************************************************************************
 
-:ref:`Traffic Light<Traffic Light>`
+:ref:`Automated Teller Machine`

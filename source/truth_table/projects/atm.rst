@@ -12,10 +12,10 @@ Automated Teller Machine
 
 ----
 
-I want to make an **Automated Teller Machine** that allows withdrawals or denies them, if the inputs are
+I want to make an **Automated Teller Machine** that allows or denies withdrawals, if the inputs are
 
 * is the PIN correct?
-* is the amount I want to take, smaller or bigger than what is in the account?
+* is the amount I want, smaller or bigger than what is in the account?
 
 this is the :ref:`truth table` I get
 
@@ -34,18 +34,29 @@ preview
 
 These are the tests I have at the end of the chapter
 
-.. literalinclude:: ../../code/truth_table/tests/test_atm.py
+.. literalinclude:: ../../code/atm/test_atm.py
   :language: python
   :linenos:
-  :caption: truth_table/tests/test_atm.py
+  :caption: atm/tests/test_atm.py
+  :lines: 1-49
 
-----
+.. literalinclude:: ../../code/atm/test_atm.py
+  :language: python
+  :lineno-start: 51
+  :caption: atm/tests/test_atm.py
+  :lines: 51-90
 
-*********************************************************************************
-requirements
-*********************************************************************************
+.. literalinclude:: ../../code/atm/test_atm.py
+  :language: python
+  :lineno-start: 92
+  :caption: atm/tests/test_atm.py
+  :lines: 92-131
 
-* :ref:`truth table: Binary Operations Examples`
+.. literalinclude:: ../../code/atm/test_atm.py
+  :language: python
+  :lineno-start: 133
+  :caption: atm/tests/test_atm.py
+  :lines: 133-
 
 ----
 
@@ -53,7 +64,98 @@ requirements
 start the project
 *********************************************************************************
 
+* I open a terminal_
+
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      * I open ``makePythonTdd.sh``
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      * I open ``makePythonTdd.ps1``
+
 * I name this project ``atm``
+
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      * I change ``truth_table`` to ``atm`` in ``makePythonTdd.sh``
+
+        .. literalinclude:: ../../code/atm/make_tdd/makePythonTddATM.sh
+          :language: python
+          :linenos:
+          :emphasize-lines: 2-3, 5, 12, 20
+
+      * I run ``makePythonTdd.sh`` in the terminal_ to make the ``atm`` project
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          ./makePythonTdd.sh
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      * I change ``truth_table`` to ``atm`` in ``makePythonTdd.ps1``
+
+        .. literalinclude:: ../../code/atm/make_tdd/makePythonTddATM.ps1
+          :language: Powershell
+          :linenos:
+          :emphasize-lines: 1-2, 4, 11, 19
+
+      * I run ``makePythonTdd.ps1`` in the terminal_ to make the ``atm`` project
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          .\makePythonTdd.ps1
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :emphasize-lines: 10
+
+    ======================== FAILURES =========================
+    ______________ TestATM.test_failure ________________
+
+    self = <tests.test_atm.TestATM testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
+    E       AssertionError: True is not false
+
+    tests/test_atm.py:7: AssertionError
+    ================ short test summary info ==================
+    FAILED tests/test_atm.py::TestATM::test_failure - AssertionError: True is not false
+    ==================== 1 failed in X.YZs ====================
+
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_atm.py:7`` to open it
+* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``test_atm.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 4-5
+
+    class TestATM(unittest.TestCase):
+
+        def test_failure(self):
+            # self.assertFalse(True)
+            self.assertFalse(False)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+
 * I open a terminal_
 * I use uv_ to make a directory_ for the project and initialize it
 

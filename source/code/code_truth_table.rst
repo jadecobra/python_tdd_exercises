@@ -187,24 +187,6 @@ the code in ``truth_table/src/truth_table.py`` from :ref:`truth table: test_trut
 ----
 
 *********************************************************************************
-Automated Teller Machine: tests and solutions
-*********************************************************************************
-
-the code in ``atm/tests/test_atm.py`` from :ref:`Automated Teller Machine`
-
-.. literalinclude:: truth_table/tests/test_atm.py
-  :language: python
-  :linenos:
-
-the code in ``atm/src/atm.py`` from :ref:`Automated Teller Machine`
-
-.. literalinclude:: truth_table/solutions/atm.py
-  :language: python
-  :linenos:
-
-----
-
-*********************************************************************************
 Car: tests and solutions
 *********************************************************************************
 
