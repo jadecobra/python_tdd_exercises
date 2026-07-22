@@ -15,7 +15,7 @@ I want to make a **Microwave** that heats up food, if the inputs are
 * is the door open?
 * was the start button pushed?
 
-this is the :ref:`truth table` I get
+then I get this :ref:`truth table`
 
 ==================  =================  =================
 door                start button       output

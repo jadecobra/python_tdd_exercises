@@ -17,7 +17,7 @@ I want to make an **Automated Teller Machine** that allows or denies withdrawals
 * is the PIN correct?
 * is the amount I want, smaller or bigger than what is in the account?
 
-this is the :ref:`truth table` I get
+then I get this :ref:`truth table`
 
 ==================  ======================= =================
 PIN                 money                   withdrawal

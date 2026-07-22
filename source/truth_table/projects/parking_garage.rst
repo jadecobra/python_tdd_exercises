@@ -17,7 +17,7 @@ I want to make a **ParkingGarage** that heats up food or stays off, if the input
 * is the door open?
 * was the start button pushed?
 
-this is the :ref:`truth table` I get
+then I get this :ref:`truth table`
 
 ==================  =================  =================
 door                start button       output

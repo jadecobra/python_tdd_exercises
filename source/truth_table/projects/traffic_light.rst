@@ -17,7 +17,7 @@ I want to make a **Traffic Light** that changes color because of a timer. If the
 * what color is the light now?
 * is the timer done?
 
-then this is the :ref:`truth table` I get
+then then I get this :ref:`truth table`
 
 =====================  ===================  =================
 current light (first)  timer (second)       show (output)
