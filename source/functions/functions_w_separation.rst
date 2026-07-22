@@ -1771,6 +1771,8 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     TypeError: unknown_number_of_arguments() got
                an unexpected keyword argument 'b'
 
+  because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``b``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+
 * I add ``b`` to the parentheses
 
   .. code-block:: python
@@ -1814,6 +1816,8 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 
     TypeError: unknown_number_of_arguments() got
                an unexpected keyword argument 'c'
+
+  because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``c``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add ``c`` to the parentheses
 
@@ -2113,6 +2117,8 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
      TypeError: optional_arguments() got
                 an unexpected keyword argument 'first_input'
 
+  because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``first_input``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+
 * I add the name in parentheses
 
   .. code-block:: python
@@ -2291,6 +2297,8 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     TypeError: optional_arguments() got
                an unexpected keyword argument 'last_input'.
                Did you mean 'first_input'?
+
+  because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``last_input``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add the name in the parentheses
 
@@ -2530,6 +2538,8 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     TypeError: keyword_arguments() got
                an unexpected keyword argument 'first_input'
 
+  because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``first_input``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+
 * I add ``first_input`` to the parentheses
 
   .. code-block:: python
@@ -2623,6 +2633,8 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     TypeError: positional_arguments() got
                an unexpected keyword argument 'last_input'
 
+  because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``last_input``) that is ...
+
 * I add the name to the parentheses in the :ref:`definition<how to make a function>`
 
   .. code-block:: python
@@ -2640,6 +2652,8 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     TypeError: positional_arguments() got
                an unexpected keyword argument 'first_input'.
                Did you mean 'last_input'?
+
+  because ...
 
 * I add ``last_input`` to the parentheses
 
