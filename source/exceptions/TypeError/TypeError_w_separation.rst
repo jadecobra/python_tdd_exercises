@@ -134,7 +134,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   because there is nothing named ``src`` in this project.
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 133

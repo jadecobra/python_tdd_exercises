@@ -1301,7 +1301,7 @@ the test passes.
             return 'HEATING'
         return 'OFF'
 
-  still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``
+  still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``.
 
 * I remove the commented lines
 

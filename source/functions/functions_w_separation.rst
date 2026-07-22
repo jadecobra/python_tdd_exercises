@@ -2694,7 +2694,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
         assert ({1, 2, 3, 'n...ey': 'value'})
             == ('first', 'last')
 
-* I change :ref:`the return statement` to see the difference between the inputs and output
+* I change :ref:`the return statement` to see the difference between the inputs and the output
 
   .. code-block:: python
     :lineno-start: 57

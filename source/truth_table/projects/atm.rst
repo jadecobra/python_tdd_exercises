@@ -361,15 +361,9 @@ test_right_pin_not_enough_money
   ==================  ======================= =================
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 10-15
+    :lineno-start: 13
+    :emphasize-lines: 3-9
 
-        def test_right_pin_enough_money(self):
-            my_expectation = 'CASH'
-            reality = src.atm.withdraw(
-                right_pin=True,
-                enough_money=True,
-            )
             self.assertEqual(reality, my_expectation)
 
         def test_right_pin_not_enough_money(self):
@@ -532,15 +526,9 @@ PIN                 money                   withdrawal
 ==================  ======================= =================
 
 .. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 9-15
+  :lineno-start: 21
+  :emphasize-lines: 3-9
 
-      def test_right_pin_not_enough_money(self):
-          my_expectation = 'DENIED'
-          reality = src.atm.withdraw(
-              right_pin=True,
-              enough_money=False,
-          )
           self.assertEqual(reality, my_expectation)
 
       def test_wrong_pin_enough_money(self):
@@ -671,7 +659,7 @@ the test passes.
 
         return 'CASH'
 
-  still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``
+  still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``.
 
 * I remove the commented lines
 
@@ -687,13 +675,19 @@ the test passes.
 
         return 'CASH'
 
-  When the ``withdraw`` :ref:`function<what is a function?>` is called
+When the ``withdraw`` :ref:`function<what is a function?>` is called
 
-  * it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered
-  * it returns :red:`'DENIED'` if there is :red:`NOT enough money` in the account
-  * it gives me :green:`'CASH'` if the above :ref:`conditions<if statements>` are NOT met
+* it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered
+* it returns :red:`'DENIED'` if there is :red:`NOT enough money` in the account
+* it gives me :green:`'CASH'` if the above :ref:`conditions<if statements>` are NOT met
 
-  What :ref:`binary operation<truth table: Binary Operations>` is the ``withdraw`` :ref:`function<what is a function?>` using now?
+.. code-block:: python
+
+  withdraw(right_pin=False, enough_money=True ) -> 'DENIED'
+  withdraw(right_pin=True , enough_money=False) -> 'DENIED'
+  withdraw(right_pin=True , enough_money=True ) -> 'CASH'
+
+What :ref:`binary operation<truth table: Binary Operations>` is the ``withdraw`` :ref:`function<what is a function?>` using now?
 
 ----
 
@@ -710,17 +704,13 @@ PIN                 money                   withdrawal
 ==================  ======================= =================
 
 .. code-block:: python
-  :lineno-start: 22
-  :emphasize-lines: 9-13
+  :lineno-start: 29
+  :emphasize-lines: 3-9
 
-      def test_wrong_pin_enough_money(self):
-          my_expectation = 'DENIED'
-          reality = src.atm.withdraw(
-              right_pin=False,
-              enough_money=True,
-          )
           self.assertEqual(reality, my_expectation)
 
+      def test_wrong_pin_not_enough_money(self):
+          my_expectation = 'DENIED'
           reality = src.atm.withdraw(
               right_pin=False,
               enough_money=False,
@@ -731,6 +721,23 @@ PIN                 money                   withdrawal
   # Exceptions seen
 
 the test is still green.
+
+.. code-block:: python
+
+  withdraw(right_pin=False, enough_money=False) -> 'DENIED'
+  withdraw(right_pin=False, enough_money=True ) -> 'DENIED'
+  withdraw(right_pin=True , enough_money=False) -> 'DENIED'
+  withdraw(right_pin=True , enough_money=True ) -> 'CASH'
+
+When the ``withdraw`` :ref:`function<what is a function?>` is called
+
+* it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered
+
+
+* it returns :red:`'DENIED'` if there is :red:`NOT enough money` in the account
+
+
+* it gives me :green:`'CASH'` if the above :ref:`conditions<if statements>` are NOT met
 
 ----
 
@@ -2044,7 +2051,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 requi
 
         return 'CASH'
 
-  When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called`
+  When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
 
   * it returns :red:`'DENIED'` if the card has :green:`expired`
   * it returns :red:`'DENIED'` if the account is :green:`above limit` for daily withdrawals
