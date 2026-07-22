@@ -575,7 +575,7 @@ the test passes.
     def elevator(doors_clear, number_pushed):
         # if number_pushed == False:
         # if bool(number_pushed) == False:
-        if bool(not number_pushed) == True:
+        if not bool( number_pushed) == True:
             return 'NOT MOVE'
 
         return 'MOVE'
@@ -591,8 +591,8 @@ the test passes.
     def elevator(doors_clear, number_pushed):
         # if number_pushed == False:
         # if bool(number_pushed) == False:
-        # if bool(not number_pushed) == True:
-        if bool(not number_pushed):
+        # if not bool( number_pushed) == True:
+        if not bool( number_pushed):
             return 'NOT MOVE'
 
         return 'MOVE'
@@ -608,14 +608,14 @@ the test passes.
     def elevator(doors_clear, number_pushed):
         # if number_pushed == False:
         # if bool(number_pushed) == False:
-        # if bool(not number_pushed) == True:
-        # if bool(not number_pushed):
+        # if not bool( number_pushed) == True:
+        # if not bool( number_pushed):
         if not number_pushed:
             return 'NOT MOVE'
 
         return 'MOVE'
 
-  still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
+  still green, because ``if bool(something) == False`` is the same as ``if not bool( something) == True`` is the same as ``if not bool( something)`` is the same as ``if not something``.
 
 * I remove the commented lines
 
@@ -744,7 +744,7 @@ the test passes.
     def elevator(doors_clear, number_pushed):
     # if doors_clear == False:
     # if bool(doors_clear) == False:
-    if bool(not doors_clear) == True:
+    if not bool( doors_clear) == True:
         return 'NOT MOVE'
 
     if not number_pushed:
@@ -763,8 +763,8 @@ the test passes.
     def elevator(doors_clear, number_pushed):
         # if doors_clear == False:
         # if bool(doors_clear) == False:
-        # if bool(not doors_clear) == True:
-        if bool(not doors_clear):
+        # if not bool( doors_clear) == True:
+        if not bool( doors_clear):
             return 'NOT MOVE'
 
         if not number_pushed:
@@ -783,8 +783,8 @@ the test passes.
     def elevator(doors_clear, number_pushed):
         # if doors_clear == False:
         # if bool(doors_clear) == False:
-        # if bool(not doors_clear) == True:
-        # if bool(not doors_clear):
+        # if not bool( doors_clear) == True:
+        # if not bool( doors_clear):
         if not doors_clear:
             return 'NOT MOVE'
 
@@ -793,7 +793,7 @@ the test passes.
 
         return 'MOVE'
 
-  because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
+  because ``if bool(something) == False`` is the same as ``if not bool( something) == True`` is the same as ``if not bool( something)`` is the same as ``if not something``.
 
 * I add a :ref:`variable<what is a variable?>`
 
@@ -805,7 +805,7 @@ the test passes.
         not_move = 'NOT MOVE'
         # if doors_clear == False:
         # if bool(doors_clear) == False:
-        # if bool(not doors_clear) == True:
+        # if not bool( doors_clear) == True:
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of :red:`'NOT MOVE'` from the :ref:`function<what is a function?>`
 
@@ -817,8 +817,8 @@ the test passes.
         not_move = 'NOT MOVE'
         # if doors_clear == False:
         # if bool(doors_clear) == False:
-        # if bool(not doors_clear) == True:
-        # if bool(not doors_clear):
+        # if not bool( doors_clear) == True:
+        # if not bool( doors_clear):
         if not doors_clear:
             # return 'NOT MOVE'
             return not_move

@@ -2272,7 +2272,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     def converse_non_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        if bool(not first_input) == True:
+        if not bool( first_input) == True:
             # if second_input == True:
             if bool(second_input) == True:
                 return True
@@ -2289,8 +2289,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     def converse_non_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if bool(not first_input) == True:
-        if bool(not first_input):
+        # if not bool( first_input) == True:
+        if not bool( first_input):
             # if second_input == True:
             # if bool(second_input) == True:
             if bool(second_input):
@@ -2308,8 +2308,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     def converse_non_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if bool(not first_input) == True:
-        # if bool(not first_input):
+        # if not bool( first_input) == True:
+        # if not bool( first_input):
         if not first_input:
             # if second_input == True:
             # if bool(second_input) == True:
@@ -2346,7 +2346,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   this means that
 
-  - ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
+  - ``if bool(something) == False`` is the same as ``if not bool( something) == True`` is the same as ``if not bool( something)`` is the same as ``if not something``.
   - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``.
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two `if statements`_ together
@@ -2358,8 +2358,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     def converse_non_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if bool(not first_input) == True:
-        # if bool(not first_input):
+        # if not bool( first_input) == True:
+        # if not bool( first_input):
         # if not first_input:
             # if second_input == True:
             # if bool(second_input) == True:
@@ -2391,8 +2391,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     def converse_non_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if bool(not first_input) == True:
-        # if bool(not first_input):
+        # if not bool( first_input) == True:
+        # if not bool( first_input):
         # if not first_input:
             # if second_input == True:
             # if bool(second_input) == True:
@@ -2468,8 +2468,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     def converse_non_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if bool(not first_input) == True:
-        # if bool(not first_input):
+        # if not bool( first_input) == True:
+        # if not bool( first_input):
         # if not first_input:
             # if second_input == True:
             # if bool(second_input) == True:
@@ -2506,8 +2506,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     def converse_non_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if bool(not first_input) == True:
-        # if bool(not first_input):
+        # if not bool( first_input) == True:
+        # if not bool( first_input):
         # if not first_input:
             # if second_input == True:
             # if bool(second_input) == True:
@@ -2607,8 +2607,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     def converse_non_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if bool(not first_input) == True:
-        # if bool(not first_input):
+        # if not bool( first_input) == True:
+        # if not bool( first_input):
         # if not first_input:
             # if second_input == True:
             # if bool(second_input) == True:
