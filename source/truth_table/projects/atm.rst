@@ -138,7 +138,7 @@ start the project
     ==================== 1 failed in X.YZs ====================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_atm.py:7`` to open it
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``test_atm.py``
+* I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in ``test_atm.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -148,258 +148,10 @@ start the project
 
         def test_failure(self):
             # self.assertFalse(True)
-            self.assertFalse(False)
+            self.assertTrue(True)
 
 
     # Exceptions seen
-
-  the test passes.
-
-
-* I open a terminal_
-* I use uv_ to make a directory_ for the project and initialize it
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv init atm
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    Initialized project `atm` at `.../pumping_python/atm`
-
-  then goes back to the command line.
-
-* I change directory_ to the project
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd atm
-
-  the terminal_ shows I am in the ``atm`` folder_
-
-  .. code-block:: shell
-
-    .../pumping_python/atm
-
-* I use mkdir_ to make a folder_ named ``src``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    mkdir src
-
-  the terminal_ goes back to the command line.
-
-* I use the `mv program`_ to change the name of ``main.py`` to ``atm.py`` and move it to the ``src`` folder_
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        mv main.py src/atm.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        Move-Item main.py src/atm.py
-
-  the terminal_ goes back to the command line.
-
-* I `make a directory`_ for the tests
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    mkdir tests
-
-  the terminal_ goes back to the command line.
-
-* I make the ``tests`` directory_ a `Python package`_
-
-  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        touch tests/__init__.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        New-Item tests/__init__.py
-
-  the terminal_ goes back to the command line.
-
-* I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        touch tests/test_atm.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        New-Item tests/test_atm.py
-
-  the terminal_ goes back to the command line.
-
-* I open ``test_atm.py``
-
-* I add :ref:`the first failing test<test_failure>` to ``test_atm.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1, 4, 6-7
-
-    import unittest
-
-
-    class TestATM(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-* I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest" > requirements.txt
-
-  the terminal_ goes back to the command line.
-
-* I add `pytest-watcher`_ to the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest-watcher" >> requirements.txt
-
-  the terminal_ goes back to the command line.
-
-* I use uv_ to install `pytest-watcher`_ with the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv add --requirement requirements.txt
-
-  the terminal_ shows that it installed `pytest-watcher`_ and its dependencies.
-
-* I use tree_ to look at the structure of the project
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    tree
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .
-    ├── README.md
-    ├── pyproject.toml
-    ├── requirements.txt
-    ├── src
-    │   └── atm.py
-    ├── tests
-    │   ├── __init__.py
-    │   └── test_atm.py
-    └── uv.lock
-
-  if you do not see ``uv.lock`` in your tree, make sure you ran ``uv add --requirement requirements.txt``, then run the tests next
-
-* I use `pytest-watcher`_ to run the tests automatically
-
-  .. code-block:: python
-    :emphasize-lines: 1
-    :emphasize-text: .
-
-    uv run pytest-watcher . --now
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-    :emphasize-lines: 8, 10
-
-    ======================== FAILURES ========================
-    _________________ TestATM.test_failure ___________________
-
-    self = <tests.test_atm.TestATM testMethod=test_failure>
-
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
-
-    tests/test_atm.py:7: AssertionError
-    ================ short test summary info =================
-    FAILED tests/test_atm.py::TestATM::test_failure - AssertionError: True is not false
-    =================== 1 failed in X.YZs ====================
-
-  because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`.
-
-  .. admonition:: if the terminal_ does not show the same error, then check if
-
-    * your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-    * you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
-
-    and try ``uv run pytest-watcher . --now`` again
-
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_atm.py``
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 7-8
-    :emphasize-text: AssertionError
-
-    class TestATM(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-
-    # Exceptions seen
-    # AssertionError
-
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
-
-            self.assertFalse(False)
 
   the test passes.
 
@@ -447,7 +199,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
   NameError: name 'src' is not defined
 
-because I do not have a definition for ``src`` in this file_
+because I do not have a definition for ``src`` in this file_.
 
 ----
 
@@ -484,17 +236,10 @@ because I do not have a definition for ``src`` in this file_
 
   .. code-block:: python
 
-    AttributeError: module 'src.atm' has no attribute 'withdraw'
+    AttributeError: module 'src.atm'
+                    has no attribute 'withdraw'
 
-  because ``atm.py`` in the ``src`` folder_ does not have anything named ``withdraw`` in it
-
-  .. admonition:: If you get :ref:`ModuleNotFoundError<what is a module?>`
-
-    .. code-block:: python
-
-      ModuleNotFoundError: No module named 'src'
-
-    check if you have ``__init__.py`` in the ``tests`` folder_ with underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``, then add :ref:`ModuleNotFoundError<what is a module?>` to the list of :ref:`Exceptions<errors>` seen
+  because ``atm.py`` in the ``src`` folder_ does not have anything named ``withdraw`` in it.
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -510,7 +255,7 @@ because I do not have a definition for ``src`` in this file_
 
 * I open ``atm.py`` from the ``src`` folder_
 
-* I add a :ref:`function<what is a function?>` to ``atm.py``
+* I delete all the text in the file_ then add a :ref:`function<what is a function?>` to ``atm.py``
 
   .. code-block:: python
     :linenos:
@@ -523,9 +268,10 @@ because I do not have a definition for ``src`` in this file_
 
   .. code-block:: python
 
-    TypeError: withdraw() got an unexpected keyword argument 'right_pin'
+    TypeError: withdraw() got
+               an unexpected keyword argument 'right_pin'
 
-  because the test called the ``withdraw`` :ref:`function<what is a function?>` with two keyword arguments and this definition only takes calls with 0 arguments
+  because the test called the ``withdraw`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``right_pin``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_atm.py``
 
@@ -553,9 +299,10 @@ because I do not have a definition for ``src`` in this file_
 
   .. code-block:: python
 
-    TypeError: withdraw() got an unexpected keyword argument 'enough_money'
+    TypeError: withdraw() got
+               an unexpected keyword argument 'enough_money'
 
-  because the test called the ``withdraw`` :ref:`function<what is a function?>` with two keyword arguments and this definition only takes calls with 1 input
+  because the test called the ``withdraw`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``right_pin``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add ``enough_money`` to the :ref:`function signature<what is a function?>`
 

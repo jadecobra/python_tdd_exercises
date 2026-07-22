@@ -834,6 +834,8 @@ because ``src`` is not defined in ``test_type_error.py``.
     TypeError: function_00() got
                an unexpected keyword argument 'the_input'
 
+  because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``the_input``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+
 * I add ``the_input`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_00`` in ``type_error.py``
 
   .. code-block:: python
@@ -893,6 +895,8 @@ because ``src`` is not defined in ``test_type_error.py``.
 
     TypeError: function_01() got
                an unexpected keyword argument 'first'
+
+  because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``first``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add ``first`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_01`` in ``type_error.py``
 
@@ -981,6 +985,8 @@ because ``src`` is not defined in ``test_type_error.py``.
 
     TypeError: function_02() got
                an unexpected keyword argument 'third'
+
+  because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``third``) that ...
 
 * I add ``third`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_02`` in ``type_error.py``
 
@@ -1103,6 +1109,8 @@ because ``src`` is not defined in ``test_type_error.py``.
     TypeError: function_03() got
                an unexpected keyword argument 'first'
 
+  because ...
+
 * I add ``first`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_03`` in ``type_error.py``
 
   .. code-block:: python
@@ -1152,6 +1160,11 @@ because ``src`` is not defined in ``test_type_error.py``.
         TypeError: function_03() got
                    an unexpected keyword argument 'third'
 
+  because there is a
+
+  - :ref:`call<how to call a function with input>` that does not have the same number of arguments as the parentheses of its :ref:`definition<how to make a function that takes input>`.
+  - :ref:`call<how to call a function with input>` that uses a :ref:`name<test_keyword_arguments>` (``third``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+
 * I add ``third`` to the parentheses
 
   .. code-block:: python
@@ -1180,6 +1193,11 @@ because ``src`` is not defined in ``test_type_error.py``.
         TypeError: function_03() got
                    an unexpected keyword argument 'fourth'.
                    Did you mean 'four'?
+
+  because there is a
+
+  - :ref:`call<how to call a function with input>` that does not have the same number of arguments as the parentheses of its :ref:`definition<how to make a function that takes input>`.
+  - :ref:`call<how to call a function with input>` that uses a :ref:`name<test_keyword_arguments>` (``fourth``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add ``fourth`` to the parentheses
 
@@ -1426,6 +1444,8 @@ because ``src`` is not defined in ``test_type_error.py``.
     TypeError: function_07() got
                an unexpected keyword argument 'argument_0'
 
+  because there is a :ref:`call<how to call a function with input>` that uses a :ref:`name<test_keyword_arguments>` (``argument_0``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+
 * I change ``one`` to ``argument_0`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_07`` in ``type_error.py``
 
   .. code-block:: python
@@ -1444,6 +1464,8 @@ because ``src`` is not defined in ``test_type_error.py``.
      TypeError: function_07() got
                 an unexpected keyword argument 'argument_1'.
                 Did you mean 'argument_0'?
+
+  because ...
 
 * I change ``two`` to ``argument_1`` in the parentheses
 
@@ -1466,6 +1488,8 @@ because ``src`` is not defined in ``test_type_error.py``.
      TypeError: function_07() got
                 an unexpected keyword argument 'argument_2'.
                 Did you mean 'argument_0'?
+
+  because there is a :ref:`call<how to call a function with input>` that uses a :ref:`name<test_keyword_arguments>` (``argument_2``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I change ``three`` to ``argument_2`` in the parentheses
 
@@ -1537,6 +1561,8 @@ because ``src`` is not defined in ``test_type_error.py``.
 
     TypeError: function_08() got
                an unexpected keyword argument 'argument'
+
+  because there is a :ref:`call<how to call a function with input>` that uses a :ref:`name<test_keyword_arguments>` (``argument``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I change ``one`` to ``argument`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_08`` in ``type_error.py``
 

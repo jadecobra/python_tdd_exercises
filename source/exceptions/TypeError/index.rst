@@ -73,7 +73,7 @@ start the project
   .. code-block:: shell
 
     Initialized project `type-error`
-    at `.../pumping_python/type_error`
+    at `../pumping_python/type_error`
 
   then goes back to the command line.
 
@@ -752,6 +752,7 @@ test_type_error_w_keyword_arguments
 
   - The :ref:`call<how to call a function with input>` to ``function_04`` which belongs to :ref:`test_type_error_w_keyword_arguments` uses a :ref:`keyword argument<test_keyword_arguments>` (``argument='value'``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``function_04`` does not allow any inputs since the parentheses are empty.
+  - The :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``argument``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I add ``argument`` in the parentheses so that :ref:`the call<how to call a function with input>` to ``function_04`` and its :ref:`definition<how to make a function that takes input>` match
@@ -835,6 +836,7 @@ test_type_error_w_keyword_arguments
 
   - The :ref:`call<how to call a function with input>` to ``function_05`` which belongs to :ref:`test_type_error_w_keyword_arguments` uses :ref:`keyword arguments<test_keyword_arguments>` (``argument_0='value_1'`` and ``argument_1=(0, 1, 2, 'n')``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``function_05`` only allows one input, with the name ``argument``.
+  - The :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``argument_0``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I change the name of the input in the :ref:`definition<how to make a function that takes input>` to match :ref:`the call<how to call a function with input>`
@@ -866,6 +868,8 @@ test_type_error_w_keyword_arguments
             .<locals>.function_05()
         got an unexpected keyword argument 'argument_1'.
         Did you mean 'argument_0'?
+
+  because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``argument_1``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add ``argument_1`` to the parentheses so that :ref:`the call<how to call a function with input>` to ``function_05`` and its :ref:`definition<how to make a function that takes input>` match
 
@@ -953,6 +957,7 @@ test_type_error_w_keyword_arguments
 
   - The :ref:`call<how to call a function with input>` to ``function_06`` which belongs to :ref:`test_type_error_w_keyword_arguments` uses :ref:`keyword arguments<test_keyword_arguments>` (``argument_0='value_1'``, ``argument_1=(0, 1, 2, 'n')`` and ``argument_2=[0, 1, 2, 'n']``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``function_06`` only allows two inputs.
+  - The :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``argument_2``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I add ``argument_2`` to the parentheses so that :ref:`the call<how to call a function with input>` to ``function_06`` and its :ref:`definition<how to make a function that takes input>` match
@@ -1054,6 +1059,7 @@ test_type_error_w_keyword_arguments
 
   - The :ref:`call<how to call a function with input>` to ``function_07`` which belongs to :ref:`test_type_error_w_keyword_arguments` uses :ref:`keyword arguments<test_keyword_arguments>` (``argument_0=(0, 1, 2, 'n')``, ``argument_1=[0, 1, 2, 'n']``, ``argument_2={0, 1, 2, 'n'}`` and ``argument_n={'key': 'value'}``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``function_07`` only allows three inputs.
+  - The :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``argument_n``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I add ``argument_n`` to the parentheses so that :ref:`the call<how to call a function with input>` to ``function_07`` and its :ref:`definition<how to make a function that takes input>` match
@@ -1775,7 +1781,7 @@ test_type_error_w_args_and_kwargs
 
   because
 
-  - The :ref:`call<how to call a function with input>` to ``function_07`` from :ref:`test_type_error_w_args_and_kwargs` uses a :ref:`keyword argument<test_keyword_arguments>` that is not in the :ref:`function definition (signature)<how to make a function that takes input>`.
+  - The :ref:`call<how to call a function with input>` to ``function_07`` from :ref:`test_type_error_w_args_and_kwargs` uses a :ref:`name<test_keyword_arguments>` (``argument_4``) that is not in the :ref:`function definition (signature)<how to make a function that takes input>`.
   - :ref:`The call to a function must use the same names that are in its definition if I call it with keyword arguments<test_type_error_w_keyword_arguments>`.
 
 * I change the :ref:`keyword argument<test_keyword_arguments>` to match the :ref:`function definition<how to make a function that takes input>`
@@ -2146,7 +2152,7 @@ test_type_error_w_args_and_kwargs
                an unexpected keyword argument 'argument_n'.
                Did you mean 'argument_0'?
 
-  because the :ref:`function got called<how to call a function with input>` with a :ref:`name (keyword)<test_keyword_arguments>` that is not in its :ref:`definition<how to make a function that takes input>`
+  because the :ref:`function got called<how to call a function with input>` with a :ref:`name (keyword)<test_keyword_arguments>` (``argument_n``) that is not in its :ref:`definition<how to make a function that takes input>`
 
 * I remove ``argument_n={'key': 'value'}`` from the :ref:`call<how to call a function with input>` from :ref:`test_type_error_w_args_and_kwargs`
 
@@ -2339,7 +2345,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
     TypeError: function_02() got
                an unexpected keyword argument 'fourth'
 
-  because the :ref:`signature<how to make a function that takes input>` only allows :ref:`calls<how to call a function with input>` with three inputs, and it got :ref:`called<how to call a function with input>` with four.
+  because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``fourth``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I remove the unexpected :ref:`keyword argument<test_keyword_arguments>` from the :ref:`call<how to call a function with input>`
 
@@ -2423,6 +2429,8 @@ the test passes because :ref:`the call to the function<how to call a function wi
     TypeError: function_00() got
                an unexpected keyword argument 'second'
 
+  because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``second``) that ...
+
 * I remove ``second`` from the :ref:`call<how to call a function with input>` from :ref:`test_type_error_w_keyword_arguments`
 
   .. code-block:: python
@@ -2443,6 +2451,8 @@ the test passes because :ref:`the call to the function<how to call a function wi
 
     TypeError: function_00() got
                an unexpected keyword argument 'first'
+
+  because the :ref:`call<how to call a function with input>` ...
 
 * I remove ``first`` from the :ref:`call<how to call a function with input>`
 
