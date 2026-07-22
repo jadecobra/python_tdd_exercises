@@ -484,7 +484,7 @@ the test passes.
 
         return 'CASH'
 
-  still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``
+  still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``.
 
 * I remove the commented lines
 
@@ -499,10 +499,15 @@ the test passes.
 
   the test is still green.
 
-This is what happens when the ``withdraw`` :ref:`function<what is a function?>` is called
+When the ``withdraw`` :ref:`function<what is a function?>` is called
 
 * it returns :red:`'DENIED'` if there is :red:`NOT enough money` in the account
-* it gives me :green:`'CASH'` if the :ref:`condition<if statements>`is NOT met
+* it gives me :green:`'CASH'` if the :ref:`condition<if statements>` is NOT met
+
+.. code-block:: python
+
+  withdraw(right_pin=True, enough_money=False) -> 'DENIED'
+  withdraw(right_pin=True, enough_money=True ) -> 'CASH'
 
 What :ref:`binary operation<truth table: Binary Operations>` is the ``withdraw`` :ref:`function<what is a function?>` using?
 
@@ -682,7 +687,7 @@ the test passes.
 
         return 'CASH'
 
-  this is what happens when the ``withdraw`` :ref:`function<what is a function?>` is called
+  When the ``withdraw`` :ref:`function<what is a function?>` is called
 
   * it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered
   * it returns :red:`'DENIED'` if there is :red:`NOT enough money` in the account
@@ -1128,7 +1133,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 argum
 
         return 'CASH'
 
-  this is what happens when the ``withdraw`` :ref:`function<what is a function?>` is called
+  When the ``withdraw`` :ref:`function<what is a function?>` is called
 
   * it returns :red:`'DENIED'` if the account is :green:`above limit` for daily withdrawals
   * it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered
@@ -2039,7 +2044,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 requi
 
         return 'CASH'
 
-  this is what happens when the ``withdraw`` :ref:`function<what is a function?>` is called
+  When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called`
 
   * it returns :red:`'DENIED'` if the card has :green:`expired`
   * it returns :red:`'DENIED'` if the account is :green:`above limit` for daily withdrawals

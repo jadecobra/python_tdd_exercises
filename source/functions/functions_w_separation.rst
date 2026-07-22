@@ -2718,7 +2718,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
   - The order is reversed.
   - :ref:`I want better error messages<another way to write tests>`.
 
-* I change the order of the inputs in the :ref:`the return statement`
+* I change the order of the inputs in :ref:`the return statement`
 
   .. code-block:: python
     :lineno-start: 57
