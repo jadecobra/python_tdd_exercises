@@ -271,7 +271,7 @@ because I do not have a definition for ``src`` in this file_.
     TypeError: withdraw() got
                an unexpected keyword argument 'right_pin'
 
-  because the test called the ``withdraw`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``right_pin``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+  because the test :ref:`called<how to call a function with input>` the ``withdraw`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``right_pin``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_atm.py``
 
@@ -302,7 +302,7 @@ because I do not have a definition for ``src`` in this file_.
     TypeError: withdraw() got
                an unexpected keyword argument 'enough_money'
 
-  because the test called the ``withdraw`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``right_pin``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+  because the test :ref:`called<how to call a function with input>` the ``withdraw`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``right_pin``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add ``enough_money`` to the :ref:`function signature<what is a function?>`
 

@@ -416,7 +416,7 @@ test_logical_identity
     TypeError: logical_identity() takes
                0 positional arguments but 1 was given
 
-  because the test called the :ref:`logical_identity function<test_logical_identity>` with one argument and the definition does not allow any arguments (the parentheses are empty).
+  because the test :ref:`called<how to call a function with input>` the :ref:`logical_identity function<test_logical_identity>` with one argument and the definition does not allow any arguments (the parentheses are empty).
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_nullary_unary.py``
 

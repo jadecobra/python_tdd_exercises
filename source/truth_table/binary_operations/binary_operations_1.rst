@@ -235,7 +235,7 @@ first input     second input   return
     TypeError: contradiction() takes
                0 positional arguments but 2 were given
 
-  because the test called the :ref:`contradiction function<test_contradiction>` with two arguments (:green:`True` and :green:`True`) and the :ref:`definition<how to make a function>` does not allow any arguments (the parentheses are empty).
+  because the test :ref:`called<how to call a function with input>` the :ref:`contradiction function<test_contradiction>` with two arguments (:green:`True` and :green:`True`) and the :ref:`definition<how to make a function>` does not allow any arguments (the parentheses are empty).
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` , in ``test_binary.py``
 
@@ -265,7 +265,7 @@ first input     second input   return
     TypeError: contradiction() takes
                1 positional argument but 2 were given
 
-  because the test called the :ref:`contradiction function<test_contradiction>` with two arguments (:green:`True` and :green:`True`) and I just changed the :ref:`definition<how to make a function>` to only allow calls with one argument.
+  because the test :ref:`called<how to call a function with input>` the :ref:`contradiction function<test_contradiction>` with two arguments (:green:`True` and :green:`True`) and I just changed the :ref:`definition<how to make a function>` to only allow calls with one argument.
 
 * I add ``second_input`` as the name of the second input in parentheses
 

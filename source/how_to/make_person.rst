@@ -433,7 +433,7 @@ test_factory_w_keyword_arguments
     TypeError: factory() got
                an unexpected keyword argument 'first_name'
 
-  because the :ref:`function definition<how to make a function>` for ``factory`` in ``person.py`` in the ``src`` folder_, does not allow calling it with inputs (the parentheses are empty) and the test sends ``'first_name'`` as input.
+  because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``first_name``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -488,7 +488,7 @@ test_factory_w_keyword_arguments
                an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
-  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_keyword_arguments>` (``last_name``) that is not in the :ref:`function definition<how to make a function>`.
+  because the test :ref:`called<how to call a function with input>` the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`name<test_keyword_arguments>` (``last_name``) that is not in the :ref:`function definition<how to make a function>`.
 
 * I add ``last_name`` to the :ref:`function definition<how to make a function>` in ``person.py``
 
@@ -531,7 +531,7 @@ test_factory_w_keyword_arguments
     TypeError: factory() got
                an unexpected keyword argument 'sex'
 
-  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_keyword_arguments>` (``sex``) that is not in the :ref:`function definition<how to make a function>`.
+  because the test :ref:`called<how to call a function with input>` the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`name<test_keyword_arguments>` (``sex``) that is not in the :ref:`function definition<how to make a function>`.
 
 * I add ``sex`` as an input parameter to the :ref:`factory function<test_factory_w_keyword_arguments>` in ``person.py``
 
@@ -579,7 +579,7 @@ test_factory_w_keyword_arguments
     TypeError: factory() got
                an unexpected keyword argument 'year_of_birth'
 
-  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_keyword_arguments>` (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`.
+  because the test :ref:`called<how to call a function with input>` the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`name<test_keyword_arguments>` (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`.
 
 * I add the name to the :ref:`function definition<how to make a function>` in ``person.py``
 
@@ -5877,7 +5877,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     TypeError: factory() got
                an unexpected keyword argument 'first_name'
 
-  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_keyword_arguments>` (``first_name``) that is not in the :ref:`function definition<how to make a function>`
+  because the test :ref:`called<how to call a function with input>` the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`name<test_keyword_arguments>` (``first_name``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add ``first_name`` to the :ref:`function definition<how to make a function>`
 
@@ -5898,7 +5898,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     TypeError: factory() got
                an unexpected keyword argument 'year_of_birth'
 
-  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_keyword_arguments>` (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`
+  because the test :ref:`called<how to call a function with input>` the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`name<test_keyword_arguments>` (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add ``year_of_birth`` to the :ref:`function definition<how to make a function>`
 
@@ -5992,6 +5992,8 @@ Can you make the tests pass without looking at how I solve it below? You can com
                an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
+  because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``last_name``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+
 * I use the ``year_of_birth`` input parameter in the :ref:`return statement<the return statement>` for the :ref:`value<test_values_of_a_dictionary>` of ``age``
 
   .. code-block:: python
@@ -6072,7 +6074,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
                an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
-  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_keyword_arguments>` (``last_name``) that is not in the :ref:`function definition<how to make a function>`
+  because the test :ref:`called<how to call a function with input>` the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_keyword_arguments>` (``last_name``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add a new input parameter to the :ref:`function<what is a function?>`
 
@@ -6094,7 +6096,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     TypeError: factory() missing 1 required
                positional argument: 'last_name'
 
-  because the test called the :ref:`function<what is a function?>` with another argument and Python_ took that argument as a :ref:`positional argument<test_positional_arguments>` for ``last_name``
+  because the test :ref:`called<how to call a function with input>` the :ref:`function<what is a function?>` with another argument and Python_ took that argument as a :ref:`positional argument<test_positional_arguments>` for ``last_name``
 
 * I add a default value for ``last_name`` so Python_ does not take it is a :ref:`positional argument<test_positional_arguments>` when a name is not given
 
@@ -6115,7 +6117,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     TypeError: factory() got
                an unexpected keyword argument 'sex'
 
-  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_keyword_arguments>` (``sex``) that is not in the :ref:`function definition<how to make a function>`
+  because the test :ref:`called<how to call a function with input>` the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_keyword_arguments>` (``sex``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add the name to the :ref:`definition of the function<how to make a function>`
 
