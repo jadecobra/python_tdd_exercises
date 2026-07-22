@@ -2656,7 +2656,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 
   because ...
 
-* I add ``last_input`` to the parentheses
+* I add ``first_input`` to the parentheses
 
   .. code-block:: python
     :lineno-start: 57

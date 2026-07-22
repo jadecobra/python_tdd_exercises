@@ -380,7 +380,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     def negate_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        if not bool( first_input) == True:
+        if not bool(first_input) == True:
             return True
         return False
 
@@ -395,8 +395,8 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     def negate_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool( first_input) == True:
-        if not bool( first_input):
+        # if not bool(first_input) == True:
+        if not bool(first_input):
             return True
         return False
 
@@ -411,8 +411,8 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     def negate_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool( first_input) == True:
-        # if not bool( first_input):
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
         if not first_input:
             return True
         return False
@@ -429,7 +429,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     .. literalinclude:: ../../code/truth_table/solutions/if_not_something_true.py
       :language: python
 
-  ``if bool(something) == False`` is the same as ``if not bool( something) == True`` is the same as ``if not bool( something)`` is the same as ``if not something``.
+  ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``.
 
 * I add an :ref:`else clause<if statements>` to be clearer
 
@@ -440,8 +440,8 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     def negate_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool( first_input) == True:
-        # if not bool( first_input):
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
         if not first_input:
             return True
         else:
@@ -458,8 +458,8 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     def negate_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool( first_input) == True:
-        # if not bool( first_input):
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
         # if not first_input:
         #     return True
         # else:
@@ -484,8 +484,8 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     def negate_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool( first_input) == True:
-        # if not bool( first_input):
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
         # if not first_input:
         #     return True
         # else:
@@ -2067,10 +2067,10 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
     def logical_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        if not bool( first_input) == True:
+        if not bool(first_input) == True:
             # if second_input == False:
             # if bool(second_input) == False:
-            if not bool( second_input) == True:
+            if not bool(second_input) == True:
                 return False
         return True
 
@@ -2085,12 +2085,12 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
     def logical_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool( first_input) == True:
-        if not bool( first_input):
+        # if not bool(first_input) == True:
+        if not bool(first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool( second_input) == True:
-            if not bool( second_input):
+            # if not bool(second_input) == True:
+            if not bool(second_input):
                 return False
         return True
 
@@ -2105,13 +2105,13 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
     def logical_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool( first_input) == True:
-        # if not bool( first_input):
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
         if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool( second_input) == True:
-            # if not bool( second_input):
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
             if not second_input:
                 return False
         return True
@@ -2128,7 +2128,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
     .. literalinclude:: ../../code/truth_table/solutions/if_not_something_true.py
       :language: python
 
-  ``if bool(something) == False`` is the same as ``if not bool( something) == True`` is the same as ``if not bool( something)`` is the same as ``if not something``.
+  ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``.
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
@@ -2139,13 +2139,13 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
     def logical_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool( first_input) == True:
-        # if not bool( first_input):
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
         # if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool( second_input) == True:
-            # if not bool( second_input):
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
             # if not second_input:
         if not first_input and not second_input:
                 return False
@@ -2173,13 +2173,13 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
     def logical_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool( first_input) == True:
-        # if not bool( first_input):
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
         # if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool( second_input) == True:
-            # if not bool( second_input):
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
             # if not second_input:
         if not first_input and not second_input:
             return False
@@ -2211,13 +2211,13 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
     def logical_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool( first_input) == True:
-        # if not bool( first_input):
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
         # if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool( second_input) == True:
-            # if not bool( second_input):
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
             # if not second_input:
         # else:
         if not (not first_input and not second_input):
@@ -2236,13 +2236,13 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
     def logical_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool( first_input) == True:
-        # if not bool( first_input):
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
         # if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool( second_input) == True:
-            # if not bool( second_input):
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
             # if not second_input:
         # else:
         if not (not first_input and not second_input):
@@ -2472,13 +2472,13 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
     def logical_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool( first_input) == True:
-        # if not bool( first_input):
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
         # if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool( second_input) == True:
-            # if not bool( second_input):
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
             # if not second_input:
         # else:
         # if not (not first_input and not second_input):

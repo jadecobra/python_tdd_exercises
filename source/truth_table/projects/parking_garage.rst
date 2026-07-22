@@ -635,7 +635,7 @@ the test passes.
     def parking garage(door_is_open, start_is_pushed):
         # if door_is_open == False:
         # if bool(door_is_open) == False:
-        if not bool( door_is_open) == True:
+        if not bool(door_is_open) == True:
             # if start_is_pushed == True:
             if bool(start_is_pushed) == True:
                 return 'HEATING'
@@ -652,8 +652,8 @@ the test passes.
     def parking garage(door_is_open, start_is_pushed):
         # if door_is_open == False:
         # if bool(door_is_open) == False:
-        # if not bool( door_is_open) == True:
-        if not bool( door_is_open):
+        # if not bool(door_is_open) == True:
+        if not bool(door_is_open):
             # if start_is_pushed == True:
             # if bool(start_is_pushed) == True:
             if bool(start_is_pushed):
@@ -671,8 +671,8 @@ the test passes.
     def parking garage(door_is_open, start_is_pushed):
         # if door_is_open == False:
         # if bool(door_is_open) == False:
-        # if not bool( door_is_open) == True:
-        # if not bool( door_is_open):
+        # if not bool(door_is_open) == True:
+        # if not bool(door_is_open):
         if not door_is_open:
             # if start_is_pushed == True:
             # if bool(start_is_pushed) == True:
@@ -683,7 +683,7 @@ the test passes.
 
   still green, because
 
-  - ``if bool(something) == False`` is the same as ``if not bool( something) == True`` is the same as ``if not something``
+  - ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``
   - ``if bool(something) == True`` is the same as ``if something``
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
@@ -695,8 +695,8 @@ the test passes.
     def parking garage(door_is_open, start_is_pushed):
         # if door_is_open == False:
         # if bool(door_is_open) == False:
-        # if not bool( door_is_open) == True:
-        # if not bool( door_is_open):
+        # if not bool(door_is_open) == True:
+        # if not bool(door_is_open):
         # if not door_is_open:
             # if start_is_pushed == True:
             # if bool(start_is_pushed) == True:
@@ -1252,7 +1252,7 @@ the test passes.
         ):
         # if timer_is_set == False:
         # if bool(timer_is_set) == False:
-        if not bool( timer_is_set) == True:
+        if not bool(timer_is_set) == True:
             return 'OFF'
         if not door_is_open and start_is_pushed:
             return 'HEATING'
@@ -1272,8 +1272,8 @@ the test passes.
         ):
         # if timer_is_set == False:
         # if bool(timer_is_set) == False:
-        # if not bool( timer_is_set) == True:
-        if not bool( timer_is_set):
+        # if not bool(timer_is_set) == True:
+        if not bool(timer_is_set):
             return 'OFF'
         if not door_is_open and start_is_pushed:
             return 'HEATING'
@@ -1293,15 +1293,15 @@ the test passes.
         ):
         # if timer_is_set == False:
         # if bool(timer_is_set) == False:
-        # if not bool( timer_is_set) == True:
-        # if not bool( timer_is_set):
+        # if not bool(timer_is_set) == True:
+        # if not bool(timer_is_set):
         if not timer_is_set:
             return 'OFF'
         if not door_is_open and start_is_pushed:
             return 'HEATING'
         return 'OFF'
 
-  still green, because ``if bool(something) == False`` is the same as ``if not bool( something) == True`` is the same as ``if not something``
+  still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``
 
 * I remove the commented lines
 
