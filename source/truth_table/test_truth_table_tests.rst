@@ -1,6 +1,6 @@
 .. meta::
-  :description: Rebuild a complete boolean logic library from scratch in this ultimate Python TDD challenge. Follow a step-by-step guide to resolving 20 failing tests while learning to debug NameError, TypeError, and AttributeError. Master the full lifecycle of software engineering—from a blank file to passing tests—and refactor complex logic gates like XOR, NAND, and Implication into clean, idiomatic Python.
-  :keywords: Jacob Itegboje, Python TDD challenge, test driven development from scratch, rebuilding truth tables, debugging Python errors tutorial, how to fix TypeError in Python, AttributeError module attribute, logical negation implementation, NAND NOR XOR Python code, TDD Red Green Refactor cycle, Python boolean logic library, programming logic final exam, refactoring nested if-statements, De Morgan's Law in practice, Python unittest examples, binary operations tutorial, software engineering best practices, logic gate implementation guide, truth table test suite, coding from failing tests
+  :description: Ultimate Python TDD challenge—wipe truth_table.py and rebuild all 20 operations (4 nullary/unary + 16 binary) so tests/test_binary.py and tests/test_nullary_unary.py pass without reading the tests. Follow AttributeError (module has no attribute …), NameError, TypeError (NoneType not callable / wrong arity), and AssertionError (None is not true, True is not false) through Red-Green-Refactor. Implement logical_true/false, identity, negation (not), then tautology, project_first/second, negate_first/second, AND/OR/NAND/NOR, XOR, equality, material and converse implication/non-implication, contradiction. Refactor case-by-case ifs into idiomatic and/or/not. uv run pytest-watcher . --now. Jacob Itegboje Pumping Python TDD.
+  :keywords: Jacob Itegboje, Pumping Python, test_truth_table_tests, truth table blank file challenge, 20 failing tests pytest, AttributeError module has no attribute logical_negation, NameError name is not defined, TypeError NoneType not callable, TypeError takes 0 positional arguments but 1 was given, AssertionError None is not true, logical_true logical_false nullary, logical_identity logical_negation not, logical_conjunction AND, logical_disjunction OR, logical_nand logical_nor, exclusive_disjunction XOR, material_implication converse_implication, project_first project_second, TDD red green refactor truth table, pytest-watcher truth_table, uv run pytest-watcher, rebuild boolean logic library Python
 
 .. include:: ../links.rst
 
@@ -933,7 +933,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
     :lineno-start: 76
-    :emphasize-lines:  2
+    :emphasize-lines: 2
 
     def logical_nor(first, second):
         if (first, second) == (True, True): return False
@@ -1433,7 +1433,7 @@ All the tests are passing! And the world is a better place than when I started.
 
 Wait, there is more... Since all the tests are passing, I can play with the :ref:`functions<what is a function?>` I have to make them simpler and understand why my solutions work.
 
-* :ref:`contradiction<test_contradiction>`  returns :red:`False` in 4 cases, with 2 inputs there are only 4 cases. I add a :ref:`return statement<the return statement>`
+* :ref:`contradiction<test_contradiction>`  returns :red:`False` in four cases. There are only four cases with two inputs. I add a :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :lineno-start: 124
@@ -1463,7 +1463,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 119
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2-4
 
     def converse_implication(first, second):
         # if (first, second) == (False, True): return False
@@ -1579,6 +1579,8 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
         # return (not not first) (not and) (not second)
         # return (not not first) or (not second)
         return first or not second
+
+  the test is still green.
 
 * I remove the commented lines
 
@@ -1828,21 +1830,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I add a :ref:`return statement<the return statement>` because ``if something: return False`` can be written as ``return not (something)``
 
   .. code-block:: python
-    :lineno-start: 106
-    :emphasize-lines: 13-24
+    :lineno-start: 118
+    :emphasize-lines: 1-12
 
-    def exclusive_disjunction(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
-        # if first == True and second == True:
-        # if first and second:
-        #     return False
-        # if first == False and second == False:
-        # if not first == True and not second == True:
-        # if not first and not second:
-        # if (not first) (not or) (not second):
-        # if not (first or second):
         # if (
         #     (first and second)
         #     or
@@ -1861,28 +1851,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I "multiply" :ref:`not<test_logical_negation>` by everything in the parentheses since it happens two times in the line
 
   .. code-block:: python
-    :lineno-start: 106
-    :emphasize-lines: 20-29
+    :lineno-start: 125
+    :emphasize-lines: 1-10
 
-    def exclusive_disjunction(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
-        # if first == True and second == True:
-        # if first and second:
-        #     return False
-        # if first == False and second == False:
-        # if not first == True and not second == True:
-        # if not first and not second:
-        # if (not first) (not or) (not second):
-        # if not (first or second):
-        # if (
-        #     (first and second)
-        #     or
-        #     (not (first or second))
-        # ):
-        #     return False
-        # return True
         # return not (
         #     (first and second)
         #     or
@@ -1941,15 +1912,6 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
 
     def converse_non_implication(first, second):
-        return not first and second
-
-
-    def converse_implication(first, second):
-        return first or not second
-
-
-    def contradiction(first, second):
-        return False
 
 ----
 
@@ -2020,7 +1982,6 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
 
     def exclusive_disjunction(first, second):
-        return (not (first and second)) and (first or second)
 
 ----
 
@@ -2040,7 +2001,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   the test is still green.
 
-* I then change the :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
+* I change the :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 94
@@ -2171,7 +2132,6 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
 
     def logical_conjunction(first, second):
-        return first and second
 
 ----
 
@@ -2266,20 +2226,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I add a :ref:`return statement<the return statement>` because ...
 
   .. code-block:: python
-    :lineno-start: 88
-    :emphasize-lines: 12-23
+    :lineno-start: 99
+    :emphasize-lines: 1-12
 
-    def logical_equality(first, second):
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, True): return False
-        # return first, second
-        # if first == True and second == False:
-        # if first == True and not second == True:
-        # if first and not second:
-        #     return False
-        # if first == False and second == True:
-        # if not first == True and second == True:
-        # if not first and second:
         # if (
         #     (first and not second)
         #     or
@@ -2298,27 +2247,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I multiply :ref:`not<test_logical_negation>` by all the symbols in parentheses
 
   .. code-block:: python
-    :lineno-start: 88
-    :emphasize-lines: 19-28
+    :lineno-start: 106
+    :emphasize-lines: 1-10
 
-    def logical_equality(first, second):
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, True): return False
-        # return first, second
-        # if first == True and second == False:
-        # if first == True and not second == True:
-        # if first and not second:
-        #     return False
-        # if first == False and second == True:
-        # if not first == True and second == True:
-        # if not first and second:
-        # if (
-        #     (first and not second)
-        #     or
-        #     (not first and second)
-        # ):
-        #     return False
-        # return True
         # return not (
         #     (first and not second)
         #     or
@@ -2481,7 +2412,6 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
 
     def logical_disjunction(first, second):
-        return first or second
 
 ----
 
@@ -2546,7 +2476,6 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
 
     def logical_equality(first, second):
-        return (not first or second) and (first or not second)
 
 ----
 
@@ -2628,19 +2557,12 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   still green.
 
-* I write the statement with :ref:`not<test_logical_negation>` because it happens 2 times
+* I write the statement with :ref:`not<test_logical_negation>` because it happens two times
 
   .. code-block:: python
-    :lineno-start: 76
-    :emphasize-lines: 12-13
+    :lineno-start: 83
+    :emphasize-lines: 5-6
 
-    def logical_nor(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, True): return False
-        # return first, second
-        # if first == False and second == False:
-        # if not first == True and not second == True:
         # if not first and not second:
         #     return True
         # else:
@@ -2657,16 +2579,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I factor out :ref:`not<test_logical_negation>`
 
   .. code-block:: python
-    :lineno-start: 76
-    :emphasize-lines: 13-14
+    :lineno-start: 83
+    :emphasize-lines: 6-7
 
-    def logical_nor(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, True): return False
-        # return first, second
-        # if first == False and second == False:
-        # if not first == True and not second == True:
         # if not first and not second:
         #     return True
         # else:
@@ -2687,11 +2602,10 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
 
     def logical_nand(first, second):
-        return not (first and second)
 
 ----
 
-* I add :ref:`return statement<the return statement>` for the :ref:`if statement<if statements>` of :ref:`material_implication<test_material_implication>` because ``if something: return False`` can be written as ``return not (something)``
+* I add a :ref:`return statement<the return statement>` for the :ref:`if statement<if statements>` of :ref:`material_implication<test_material_implication>` because ``if something: return False`` can be written as ``return not (something)``
 
   .. code-block:: python
     :lineno-start: 71
@@ -2817,7 +2731,6 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
 
     def logical_nor(first, second):
-        return not (first or second)
 
 ----
 
@@ -2897,7 +2810,6 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
 
     def material_implication(first, second):
-        return not first or second
 
 ----
 
@@ -2966,7 +2878,6 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
 
     def material_non_implication(first, second):
-        return first and not second
 
 ----
 
@@ -3006,7 +2917,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
   still green.
 
 * I remove ``== True``
-
+2879
   .. code-block:: python
     :lineno-start: 52
     :emphasize-lines: 9-10
@@ -3024,7 +2935,91 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   green.
 
-* I remove the commented lines from ``truth_table.py`` because all the other :ref:`functions<what is a function?>` are already simple
+* I remove the commented lines from :ref:`negate_second<test_negate_second>`
+
+  .. code-block:: python
+    :lineno-start: 52
+
+    def negate_second(first, second):
+        return not second
+
+
+    def negate_first(first, second):
+
+* I remove the commented lines from :ref:`project_first<test_project_first>`
+
+  .. code-block:: python
+    :lineno-start: 40
+
+        return second
+
+
+    def project_first(first, second):
+        return first
+
+
+    def negate_second(first, second):
+
+* I remove the commented lines from :ref:`project_second<test_project_second>`
+
+  .. code-block:: python
+    :lineno-start: 31
+
+        return True
+
+
+    def project_second(first, second):
+        return second
+
+
+    def project_first(first, second):
+
+* I remove the commented lines from :ref:`tautology<test_tautology>`
+
+  .. code-block:: python
+    :lineno-start: 24
+
+    def logical_false():
+        return None
+
+
+    def tautology(first, second):
+        return True
+
+
+    def project_second(first, second):
+
+* I change the :ref:`return statement<the return statement>` of :ref:`logical_false<test_logical_false>` since :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 1-2
+
+    def logical_false():
+        # return None
+        return False
+
+  the test is still green.
+
+* I remove the commented line from :ref:`logical_false<test_logical_false>` and :ref:`logical_true<test_logical_true>`
+
+  .. code-block:: python
+    :lineno-start: 16
+
+        return something
+
+
+    def logical_true():
+        return True
+
+
+    def logical_false():
+        return False
+
+
+    def tautology(first, second):
+
+* I remove the commented lines from :ref:`logical_identity<test_logical_identity>` and :ref:`logical_negation<test_logical_negation>`
 
   .. code-block:: python
     :linenos:
@@ -3038,75 +3033,13 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
 
     def logical_true():
-        return True
 
+* I add a git_ commit message in the other terminal_
 
-    def logical_false():
-        return None
+  .. code-block:: python
+    :emphasize-lines: 1
 
-
-    def tautology(first, second):
-        return True
-
-
-    def project_second(first, second):
-        return second
-
-
-    def project_first(first, second):
-        return first
-
-
-    def negate_second(first, second):
-        return not second
-
-
-    def negate_first(first, second):
-        return not first
-
-
-    def material_non_implication(first, second):
-        return first and not second
-
-
-    def material_implication(first, second):
-        return not first or second
-
-
-    def logical_nor(first, second):
-        return not (first or second)
-
-
-    def logical_nand(first, second):
-        return not (first and second)
-
-
-    def logical_equality(first, second):
-        return (not first or second) and (first or not second)
-
-
-    def logical_disjunction(first, second):
-        return first or second
-
-
-    def logical_conjunction(first, second):
-        return first and second
-
-
-    def exclusive_disjunction(first, second):
-        return (not (first and second)) and (first or second)
-
-
-    def converse_non_implication(first, second):
-        return not first and second
-
-
-    def converse_implication(first, second):
-        return first or not second
-
-
-    def contradiction(first, second):
-        return False
+    git commit -am 'test truth_table tests'
 
 ----
 
@@ -3117,7 +3050,6 @@ close the project
 * I close ``truth_table.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
-
 * I `change directory`_ to the parent of ``truth_table``
 
   .. code-block:: shell
@@ -3262,7 +3194,7 @@ All the :ref:`binary operations<truth table: binary operations>` or conditions h
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed for the Truth Table?<truth table: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed for the Truth Table?<Truth Table tests: solutions>`
 
 ----
 
@@ -3271,12 +3203,25 @@ what is next?
 *************************************************************************************
 
 * :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
+* :ref:`I know what a Python module is<what is a module?>`.
+* :ref:`I know how to run tests automatically<how to run tests automatically>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.
 * :ref:`I know how to make functions<what is a function?>`.
+* :ref:`I know how to make a person with strings<how to make a person with strings>`.
+* :ref:`I know how to make functions that take input<functions that take input>`.
+* :ref:`I know what causes TypeError<what causes TypeError?>`.
+* :ref:`I know how to place values in strings<telephone>`.
+* :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
+* :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
-* :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`what is None and NOT None<what is None?>`
-* :ref:`what is True and False in Python<what are booleans?>`
+* :ref:`I know how to make a person with a class<how to make a person with a class>`.
+* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know how to use the unittest library<another way to write tests>`.
+* :ref:`I know how to use the datetime library<test person with datetime>`.
+* :ref:`I know what None is<what is None?>`.
+* :ref:`I know how to make a person with conditions<how to make a person with conditions>`.
+* :ref:`I know how Python groups objects into False or True<what are booleans?>`
+* :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`
 * :ref:`how to write programs that make decisions<truth table>`
 
 :ref:`Would you like to test projects that use the Truth Table?<truth table: projects>`
