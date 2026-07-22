@@ -733,11 +733,51 @@ When the ``withdraw`` :ref:`function<what is a function?>` is called
 
 * it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered
 
+  .. code-block:: shell
+
+    withdraw(right_pin=False, enough_money=False) -> 'DENIED'
+    └── def withdraw(right_pin, enough_money):
+        └── if not right_pin:
+            └── return 'DENIED'
+            if not enough_money:
+                return 'DENIED'
+            return 'CASH'
+
+  .. code-block:: shell
+
+    withdraw(right_pin=False, enough_money=True ) -> 'DENIED'
+    └── def withdraw(right_pin, enough_money):
+        └── if not right_pin:
+            └── return 'DENIED'
+            if not enough_money:
+                return 'DENIED'
+            return 'CASH'
 
 * it returns :red:`'DENIED'` if there is :red:`NOT enough money` in the account
 
+  .. code-block:: shell
+
+    withdraw(right_pin=True , enough_money=False) -> 'DENIED'
+    └── def withdraw(right_pin, enough_money):
+        ├── if not right_pin:
+        │       return 'DENIED'
+        └── if not enough_money:
+            └── return 'DENIED'
+            return 'CASH'
+
+  it only checks if there is :green:`enough money` if the :green:`right PIN` is entered.
 
 * it gives me :green:`'CASH'` if the above :ref:`conditions<if statements>` are NOT met
+
+  .. code-block:: shell
+
+    withdraw(right_pin=True , enough_money=True ) -> 'CASH'
+    └── def withdraw(right_pin, enough_money):
+        ├── if not right_pin:
+        │       return 'DENIED'
+        ├── if not enough_money:
+        │       return 'DENIED'
+        └── return 'CASH'
 
 ----
 
@@ -747,7 +787,7 @@ When the ``withdraw`` :ref:`function<what is a function?>` is called
 
 ----
 
-* I add a :ref:`global variable<what is a variable?>` to remove repetition of :red:`'DENIED'` from the tests because 3 of them use it, in ``test_atm.py``
+* I add a :ref:`global variable<what is a variable?>` to remove repetition of :red:`'DENIED'` from the tests because three of them use it, in ``test_atm.py``
 
   .. code-block:: python
     :linenos:
@@ -762,34 +802,100 @@ When the ``withdraw`` :ref:`function<what is a function?>` is called
 
     class TestATM(unittest.TestCase):
 
-  this way I do not need to use a :ref:`variable<what is a variable?>` in each test, they can all use the :ref:`global variable<what is a variable?>`
+  this way I do not need to use a :ref:`variable<what is a variable?>` in each test, they can all use the :ref:`global variable<what is a variable?>`.
 
-* I use the new :ref:`global variable<what is a variable?>` in :ref:`test_right_pin_not_enough_money_w_limit`
+* I use the new :ref:`global variable<what is a variable?>` for ``my_expectation`` in :ref:`test_right_pin_not_enough_money`
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 18
     :emphasize-lines: 2, 7-8
 
-        def test_right_pin_not_enough_money_w_limit(self):
+        def test_right_pin_not_enough_money(self):
             # my_expectation = 'DENIED'
             reality = src.atm.withdraw(
-                right_pin=False,
+                right_pin=True,
                 enough_money=False,
             )
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, DENIED)
 
-
-    # Exceptions seen
+        def test_wrong_pin_enough_money(self):
 
   the test is still green.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_right_pin_not_enough_money`
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 18
+
+        def test_right_pin_not_enough_money(self):
+            reality = src.atm.withdraw(
+                right_pin=True,
+                enough_money=False,
+            )
+            self.assertEqual(reality, DENIED)
+
+        def test_wrong_pin_enough_money(self):
+
+* I use the new :ref:`global variable<what is a variable?>` for ``my_expectation`` in :ref:`test_wrong_pin_enough_money`
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 2, 7-8
+
+        def test_wrong_pin_enough_money(self):
+            # my_expectation = 'DENIED'
+            reality = src.atm.withdraw(
+                right_pin=False,
+                enough_money=True,
+            )
+            # self.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, DENIED)
+
+        def test_wrong_pin_not_enough_money(self):
+
+  still green.
+
+* I remove the commented lines from :ref:`test_wrong_pin_enough_money`
+
+  .. code-block:: python
+    :lineno-start: 26
+
+        def test_wrong_pin_enough_money(self):
+            reality = src.atm.withdraw(
+                right_pin=False,
+                enough_money=True,
+            )
+            self.assertEqual(reality, DENIED)
 
         def test_right_pin_not_enough_money_w_limit(self):
+
+* I use the :ref:`global variable<what is a variable?>` for ``my_expectation`` in :ref:`test_wrong_pin_not_enough_money`
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 2, 7-8
+
+        def test_wrong_pin_not_enough_money(self):
+            # my_expectation = 'DENIED'
+            reality = src.atm.withdraw(
+                right_pin=False,
+                enough_money=False,
+            )
+            # self.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, DENIED)
+
+
+    # Exceptions seen
+
+  green.
+
+* I remove the commented lines from :ref:`test_wrong_pin_not_enough_money`
+
+  .. code-block:: python
+    :lineno-start: 32
+
+        def test_wrong_pin_not_enough_money(self):
             reality = src.atm.withdraw(
                 right_pin=False,
                 enough_money=False,
@@ -798,72 +904,6 @@ When the ``withdraw`` :ref:`function<what is a function?>` is called
 
 
     # Exceptions seen
-
-* I use the new :ref:`global variable<what is a variable?>` in :ref:`test_wrong_pin_enough_money`
-
-  .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 2, 7-8
-
-        def test_wrong_pin_enough_money(self):
-            # my_expectation = 'DENIED'
-            reality = src.atm.withdraw(
-                right_pin=False,
-                enough_money=True,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, DENIED)
-
-        def test_right_pin_not_enough_money_w_limit(self):
-
-  still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 26
-
-        def test_wrong_pin_enough_money(self):
-            reality = src.atm.withdraw(
-                right_pin=False,
-                enough_money=True,
-            )
-            self.assertEqual(reality, DENIED)
-
-        def test_right_pin_not_enough_money_w_limit(self):
-
-* I use the :ref:`global variable<what is a variable?>` in :ref:`test_right_pin_not_enough_money`
-
-  .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 2, 7-8
-
-        def test_right_pin_not_enough_money(self):
-            # my_expectation = 'DENIED'
-            reality = src.atm.withdraw(
-                right_pin=True,
-                enough_money=False,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, DENIED)
-
-        def test_wrong_pin_enough_money(self):
-
-  green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 18
-
-        def test_right_pin_not_enough_money(self):
-            reality = src.atm.withdraw(
-                right_pin=True,
-                enough_money=False,
-            )
-            self.assertEqual(reality, DENIED)
-
-        def test_wrong_pin_enough_money(self):
 
 ----
 
