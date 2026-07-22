@@ -12,21 +12,7 @@ Automated Teller Machine
 
 ----
 
-I want to make an **Automated Teller Machine** that allows or denies withdrawals, if the inputs are
-
-* is the PIN correct?
-* is the amount I want, smaller or bigger than what is in the account?
-
-then I get this :ref:`truth table`
-
-==================  ======================= =================
-PIN                 money                   withdrawal
-==================  ======================= =================
-:green:`right PIN`  :green:`enough money`   :green:`CASH`
-:green:`right PIN`  :red:`NOT enough money` :red:`DENIED`
-:red:`wrong PIN`    :green:`enough money`   :red:`DENIED`
-:red:`wrong PIN`    :red:`NOT enough money` :red:`DENIED`
-==================  ======================= =================
+I want to make an **Automated Teller Machine** that allows or denies withdrawals.
 
 *********************************************************************************
 preview
@@ -160,6 +146,24 @@ start the project
 *********************************************************************************
 test_right_pin_enough_money
 *********************************************************************************
+
+If the inputs to the **Automated Teller Machine** are
+
+* is the PIN correct?
+* is the amount I want, smaller or bigger than what is in the account?
+
+then I get this :ref:`truth table`
+
+==================  ======================= =================
+PIN                 money                   withdrawal
+==================  ======================= =================
+:green:`right PIN`  :green:`enough money`   :green:`CASH`
+:green:`right PIN`  :red:`NOT enough money` :red:`DENIED`
+:red:`wrong PIN`    :green:`enough money`   :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough money` :red:`DENIED`
+==================  ======================= =================
+
+----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -302,7 +306,7 @@ because I do not have a definition for ``src`` in this file_.
     TypeError: withdraw() got
                an unexpected keyword argument 'enough_money'
 
-  because the test :ref:`called<how to call a function with input>` the ``withdraw`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``right_pin``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+  because the test :ref:`called<how to call a function with input>` the ``withdraw`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``enough_money``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add ``enough_money`` to the :ref:`function signature<what is a function?>`
 
@@ -319,7 +323,7 @@ because I do not have a definition for ``src`` in this file_.
 
     AssertionError: None != 'CASH'
 
-  the ``withdraw`` :ref:`function<what is a function?>` always returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``'CASH'``
+  the ``withdraw`` :ref:`function<what is a function?>` always returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``'CASH'``.
 
 * I change the :ref:`return statement<the return statement>` to give me ``'CASH'``
 
@@ -330,7 +334,11 @@ because I do not have a definition for ``src`` in this file_.
     def withdraw(right_pin, enough_money):
         return 'CASH'
 
-  the test passes, this ATM works. The ``withdraw`` :ref:`function<what is a function?>` always returns :green:`'CASH'`, it does not care about the inputs. Is this :ref:`Tautology<test_tautology>` or :green:`'CASH'` that never ends?
+The ``withdraw`` :ref:`function<what is a function?>` always returns :green:`'CASH'`, it does not care about the inputs. Is this :ref:`Tautology<test_tautology>` or :green:`'CASH'` that never ends?
+
+.. code-block:: python
+
+  withdraw(right_pin=True, enough_money=True) -> 'CASH'
 
 ----
 
@@ -381,7 +389,7 @@ test_right_pin_not_enough_money
 
     AssertionError: 'CASH' != 'DENIED'
 
-  because the ``withdraw`` :ref:`function<what is a function?>` returns :green:`'CASH'` and the :ref:`assertion<what is an assertion?>` expects :red:`'DENIED'`
+  because the ``withdraw`` :ref:`function<what is a function?>` returns :green:`'CASH'` and the :ref:`assertion<what is an assertion?>` expects :red:`'DENIED'`.
 
 ----
 

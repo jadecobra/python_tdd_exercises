@@ -2077,7 +2077,8 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I change the :ref:`return statement<the return statement>` of :ref:`optional_arguments<test_optional_arguments>` to see the difference between the input and the expected output
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 17
+    :emphasize-lines: 6-7
 
     # def optional_arguments():
     # def optional_arguments(argument):
