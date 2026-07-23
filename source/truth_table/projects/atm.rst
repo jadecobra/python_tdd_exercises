@@ -4018,19 +4018,352 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 
 * it returns :red:`'DENIED'` if the card has :green:`expired`.
 
+  .. code-block:: shell
 
+    withdraw(
+        right_pin=True, enough_cash=True,
+        above_daily_limit=False, card_expired=True
+    ) -> 'DENIED'
+    └── def withdraw(
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
+        ├── denied = 'DENIED'
+        └── if card_expired:
+            └── return denied
+            if above_daily_limit:
+                return denied
+            if not right_pin:
+                return denied
+            if not enough_cash:
+                return denied
+            return 'CASH'
+
+  .. code-block:: shell
+
+    withdraw(
+        right_pin=True, enough_cash=True,
+        above_daily_limit=True, card_expired=True
+    ) -> 'DENIED'
+    └── def withdraw(
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
+        ├── denied = 'DENIED'
+        └── if card_expired:
+            └── return denied
+            if above_daily_limit:
+                return denied
+            if not right_pin:
+                return denied
+            if not enough_cash:
+                return denied
+            return 'CASH'
+
+  .. code-block:: shell
+
+    withdraw(
+        right_pin=True, enough_cash=False,
+        above_daily_limit=True, card_expired=True
+    ) -> 'DENIED'
+    └── def withdraw(
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
+        ├── denied = 'DENIED'
+        └── if card_expired:
+            └── return denied
+            if above_daily_limit:
+                return denied
+            if not right_pin:
+                return denied
+            if not enough_cash:
+                return denied
+            return 'CASH'
+
+  .. code-block:: shell
+
+    withdraw(
+        right_pin=True, enough_cash=False,
+        above_daily_limit=False, card_expired=True
+    ) -> 'DENIED'
+    └── def withdraw(
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
+        ├── denied = 'DENIED'
+        └── if card_expired:
+            └── return denied
+            if above_daily_limit:
+                return denied
+            if not right_pin:
+                return denied
+            if not enough_cash:
+                return denied
+            return 'CASH'
+
+  .. code-block:: shell
+
+    withdraw(
+        right_pin=False, enough_cash=True,
+        above_daily_limit=True, card_expired=True
+    ) -> 'DENIED'
+    └── def withdraw(
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
+        ├── denied = 'DENIED'
+        └── if card_expired:
+            └── return denied
+            if above_daily_limit:
+                return denied
+            if not right_pin:
+                return denied
+            if not enough_cash:
+                return denied
+            return 'CASH'
+
+  .. code-block:: shell
+
+    withdraw(
+        right_pin=False, enough_cash=True,
+        above_daily_limit=False, card_expired=True
+    ) -> 'DENIED'
+    └── def withdraw(
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
+        ├── denied = 'DENIED'
+        └── if card_expired:
+            └── return denied
+            if above_daily_limit:
+                return denied
+            if not right_pin:
+                return denied
+            if not enough_cash:
+                return denied
+            return 'CASH'
+
+  .. code-block:: shell
+
+    withdraw(
+        right_pin=False, enough_cash=False,
+        above_daily_limit=True, card_expired=True
+    ) -> 'DENIED'
+    └── def withdraw(
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
+        ├── denied = 'DENIED'
+        └── if card_expired:
+            └── return denied
+            if above_daily_limit:
+                return denied
+            if not right_pin:
+                return denied
+            if not enough_cash:
+                return denied
+            return 'CASH'
+
+  .. code-block:: shell
+
+    withdraw(
+        right_pin=False, enough_cash=False,
+        above_daily_limit=False, card_expired=True
+    ) -> 'DENIED'
+    └── def withdraw(
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
+        ├── denied = 'DENIED'
+        └── if card_expired:
+            └── return denied
+            if above_daily_limit:
+                return denied
+            if not right_pin:
+                return denied
+            if not enough_cash:
+                return denied
+            return 'CASH'
 
 * it returns :red:`'DENIED'` if the account is :green:`above limit` for daily withdrawals.
+
+  .. code-block:: shell
+
+    withdraw(
+        right_pin=True, enough_cash=True,
+        above_daily_limit=True, card_expired=False
+    ) -> 'DENIED'
+    └── def withdraw(
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
+        ├── denied = 'DENIED'
+        ├── if card_expired:
+        │       return denied
+        └── if above_daily_limit:
+            └── return denied
+            if not right_pin:
+                return denied
+            if not enough_cash:
+                return denied
+            return 'CASH'
+
+  .. code-block:: shell
+
+    withdraw(
+        right_pin=True, enough_cash=False,
+        above_daily_limit=True, card_expired=False
+    ) -> 'DENIED'
+    └── def withdraw(
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
+        ├── denied = 'DENIED'
+        ├── if card_expired:
+        │       return denied
+        └── if above_daily_limit:
+            └── return denied
+            if not right_pin:
+                return denied
+            if not enough_cash:
+                return denied
+            return 'CASH'
+
+  .. code-block:: shell
+
+    withdraw(
+        right_pin=False, enough_cash=True,
+        above_daily_limit=True, card_expired=False
+    ) -> 'DENIED'
+    └── def withdraw(
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
+        ├── denied = 'DENIED'
+        ├── if card_expired:
+        │       return denied
+        └── if above_daily_limit:
+            └── return denied
+            if not right_pin:
+                return denied
+            if not enough_cash:
+                return denied
+            return 'CASH'
+
+  .. code-block:: shell
+
+    withdraw(
+        right_pin=False, enough_cash=False,
+        above_daily_limit=True, card_expired=False
+    ) -> 'DENIED'
+    └── def withdraw(
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
+        ├── denied = 'DENIED'
+        ├── if card_expired:
+        │       return denied
+        └── if above_daily_limit:
+            └── return denied
+            if not right_pin:
+                return denied
+            if not enough_cash:
+                return denied
+            return 'CASH'
 
   it only checks if the account is :green:`above limit` for daily withdrawals if the card has :red:`NOT expired`
 * it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered.
 
-  it only checks if the :green:`right PIN` is entered if the account is :green:`above limit` for daily withdrawals.
+  .. code-block:: shell
+
+    withdraw(
+        right_pin=False, enough_cash=True,
+        above_daily_limit=False, card_expired=False
+    ) -> 'DENIED'
+    └── def withdraw(
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
+        ├── denied = 'DENIED'
+        ├── if card_expired:
+        │       return denied
+        ├── if above_daily_limit:
+        │       return denied
+        └── if not right_pin:
+            └── return denied
+            if not enough_cash:
+                return denied
+            return 'CASH'
+
+  .. code-block:: shell
+
+    withdraw(
+        right_pin=False, enough_cash=False,
+        above_daily_limit=False, card_expired=False
+    ) -> 'DENIED'
+    └── def withdraw(
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
+        ├── denied = 'DENIED'
+        ├── if card_expired:
+        │       return denied
+        ├── if above_daily_limit:
+        │       return denied
+        └── if not right_pin:
+            └── return denied
+            if not enough_cash:
+                return denied
+            return 'CASH'
+
+  it only checks if the :green:`right PIN` is entered if the account is :red:`NOT above limit` for daily withdrawals.
 * it returns :red:`'DENIED'` if there is :red:`NOT enough cash` in the account.
+
+  .. code-block:: shell
+
+    withdraw(
+        right_pin=True, enough_cash=False,
+        above_daily_limit=False, card_expired=False
+    ) -> 'DENIED'
+    └── def withdraw(
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
+        ├── denied = 'DENIED'
+        ├── if card_expired:
+        │       return denied
+        ├── if above_daily_limit:
+        │       return denied
+        ├── if not right_pin:
+        │       return denied
+        └── if not enough_cash:
+            └── return denied
+            return 'CASH'
 
   it only checks if there is :green:`enough cash` in the account if the :green:`right PIN` is entered.
 * it gives me :green:`'CASH'` if the above :ref:`conditions<if statements>` are NOT met.
 
+  .. code-block:: shell
+
+    withdraw(
+        right_pin=True, enough_cash=True,
+        above_daily_limit=False, card_expired=False
+    ) -> 'CASH'
+    └── def withdraw(
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
+        ├── denied = 'DENIED'
+        ├── if card_expired:
+        │       return denied
+        ├── if above_daily_limit:
+        │       return denied
+        ├── if not right_pin:
+        │       return denied
+        ├── if not enough_cash:
+        │       return denied
+        └── return 'CASH'
 
 The ``withdraw`` :ref:`function<what is a function?>` can be written with :ref:`Logical Disjunction (OR)<test_logical_disjunction>` or :ref:`Logical Conjunction (AND)<test_logical_conjunction>`. Try it and see which one you like better?
 
