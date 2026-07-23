@@ -7,37 +7,7 @@ DENIED = 'DENIED'
 
 class TestATM(unittest.TestCase):
 
-    def test_right_pin_enough_cash_w_card(self):
-        self.assertEqual(
-            src.atm.withdraw(
-                right_pin=True,
-                enough_cash=True,
-                above_daily_limit=True,
-                card_expired=True,
-            ),
-            DENIED
-        )
-
-        self.assertEqual(
-            src.atm.withdraw(
-                right_pin=True,
-                enough_cash=True,
-                above_daily_limit=True,
-                card_expired=False,
-            ),
-            DENIED
-        )
-
-        self.assertEqual(
-            src.atm.withdraw(
-                right_pin=True,
-                enough_cash=True,
-                above_daily_limit=False,
-                card_expired=True,
-            ),
-            DENIED
-        )
-
+    def test_card_w_below_limit_right_pin_enough_cash(self):
         self.assertEqual(
             src.atm.withdraw(
                 right_pin=True,
@@ -48,7 +18,37 @@ class TestATM(unittest.TestCase):
             'CASH'
         )
 
-    def test_right_pin_not_enough_cash_w_card(self):
+        self.assertEqual(
+            src.atm.withdraw(
+                right_pin=True,
+                enough_cash=True,
+                above_daily_limit=False,
+                card_expired=True,
+            ),
+            DENIED
+        )
+
+    def test_card_w_above_limit_right_pin_enough_cash(self):
+        self.assertEqual(
+            src.atm.withdraw(
+                right_pin=True,
+                enough_cash=True,
+                above_daily_limit=True,
+                card_expired=True,
+            ),
+            DENIED
+        )
+        self.assertEqual(
+            src.atm.withdraw(
+                right_pin=True,
+                enough_cash=True,
+                above_daily_limit=True,
+                card_expired=False,
+            ),
+            DENIED
+        )
+
+    def test_card_w_above_limit_right_pin_not_enough_cash(self):
         self.assertEqual(
             src.atm.withdraw(
                 right_pin=True,
@@ -58,7 +58,6 @@ class TestATM(unittest.TestCase):
             ),
             DENIED
         )
-
         self.assertEqual(
             src.atm.withdraw(
                 right_pin=True,
@@ -69,6 +68,7 @@ class TestATM(unittest.TestCase):
             DENIED
         )
 
+    def test_card_w_below_limit_right_pin_not_enough_cash(self):
         self.assertEqual(
             src.atm.withdraw(
                 right_pin=True,
@@ -78,18 +78,17 @@ class TestATM(unittest.TestCase):
             ),
             DENIED
         )
-
         self.assertEqual(
             src.atm.withdraw(
                 right_pin=True,
                 enough_cash=False,
                 above_daily_limit=False,
-                card_expired=True,
+                card_expired=False,
             ),
             DENIED
         )
 
-    def test_wrong_pin_enough_cash_w_card(self):
+    def test_card_w_above_limit_wrong_pin_enough_cash(self):
         self.assertEqual(
             src.atm.withdraw(
                 right_pin=False,
@@ -99,7 +98,6 @@ class TestATM(unittest.TestCase):
             ),
             DENIED
         )
-
         self.assertEqual(
             src.atm.withdraw(
                 right_pin=False,
@@ -110,6 +108,7 @@ class TestATM(unittest.TestCase):
             DENIED
         )
 
+    def test_card_w_below_limit_wrong_pin_enough_cash(self):
         self.assertEqual(
             src.atm.withdraw(
                 right_pin=False,
@@ -119,7 +118,6 @@ class TestATM(unittest.TestCase):
             ),
             DENIED
         )
-
         self.assertEqual(
             src.atm.withdraw(
                 right_pin=False,
@@ -130,7 +128,7 @@ class TestATM(unittest.TestCase):
             DENIED
         )
 
-    def test_wrong_pin_not_enough_cash_w_card(self):
+    def test_card_w_above_limit_wrong_pin_not_enough_cash(self):
         self.assertEqual(
             src.atm.withdraw(
                 right_pin=False,
@@ -140,7 +138,6 @@ class TestATM(unittest.TestCase):
             ),
             DENIED
         )
-
         self.assertEqual(
             src.atm.withdraw(
                 right_pin=False,
@@ -151,6 +148,7 @@ class TestATM(unittest.TestCase):
             DENIED
         )
 
+    def test_card_w_below_limit_wrong_pin_not_enough_cash(self):
         self.assertEqual(
             src.atm.withdraw(
                 right_pin=False,
@@ -160,7 +158,6 @@ class TestATM(unittest.TestCase):
             ),
             DENIED
         )
-
         self.assertEqual(
             src.atm.withdraw(
                 right_pin=False,
