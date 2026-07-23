@@ -1,5 +1,5 @@
 def withdraw(
-        right_pin, enough_money,
+        right_pin, enough_cash,
         above_daily_limit=False, card_expired=False,
     ):
     denied = 'DENIED'
@@ -13,7 +13,7 @@ def withdraw(
     if not right_pin:
         return denied
 
-    if not enough_money:
+    if not enough_cash:
         return denied
 
     return 'CASH'
