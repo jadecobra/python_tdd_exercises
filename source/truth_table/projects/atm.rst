@@ -2130,7 +2130,7 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
 
         def test_wrong_pin_enough_money_above_limit(self):
 
-  green.
+  the test is still green.
 
 * I remove the commented lines from :ref:`test_right_pin_not_enough_money_below_limit`
 
@@ -2148,6 +2148,91 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
 
         def test_wrong_pin_enough_money_above_limit(self):
 
+* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_right_pin_not_enough_money_above_limit`
+
+  .. code-block:: python
+    :lineno-start: 26
+    :emphasize-lines: 2-15
+
+        def test_right_pin_not_enough_money_above_limit(self):
+            # reality = src.atm.withdraw(
+            #     right_pin=True,
+            #     enough_money=False,
+            #     above_daily_limit=True,
+            # )
+            # self.assertEqual(reality, DENIED)
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=True,
+                    enough_money=False,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
+
+        def test_right_pin_not_enough_money_below_limit(self):
+
+  still green.
+
+* I remove the commented lines from :ref:`test_right_pin_not_enough_money_above_limit`
+
+  .. code-block:: python
+    :lineno-start: 26
+
+        def test_right_pin_not_enough_money_above_limit(self):
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=True,
+                    enough_money=False,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
+
+        def test_right_pin_not_enough_money_below_limit(self):
+
+* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_right_pin_enough_money_above_limit`
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 2-15
+
+        def test_right_pin_enough_money_above_limit(self):
+            # reality = src.atm.withdraw(
+            #     right_pin=True,
+            #     enough_money=True,
+            #     above_daily_limit=True,
+            # )
+            # self.assertEqual(reality, DENIED)
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=True,
+                    enough_money=True,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
+
+        def test_right_pin_not_enough_money_above_limit(self):
+
+  still green.
+
+* I remove the commented lines from :ref:`test_right_pin_enough_money_above_limit`
+
+  .. code-block:: python
+    :lineno-start: 18
+
+        def test_right_pin_enough_money_above_limit(self):
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=True,
+                    enough_money=True,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
+
+        def test_right_pin_not_enough_money_above_limit(self):
 
 ----
 
