@@ -906,7 +906,7 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 * I remove the commented lines from :ref:`test_wrong_pin_enough_money`
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 25
 
         def test_wrong_pin_enough_money(self):
             reality = src.atm.withdraw(
@@ -915,7 +915,7 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
             )
             self.assertEqual(reality, DENIED)
 
-        def test_right_pin_not_enough_money_w_limit(self):
+        def test_wrong_pin_not_enough_money(self):
 
 * I use the :ref:`global variable<what is a variable?>` for ``my_expectation`` in :ref:`test_wrong_pin_not_enough_money`
 
@@ -963,7 +963,7 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 ----
 
 *********************************************************************************
-test_right_pin_enough_money_above_limit
+test_above_limit_right_pin_enough_money
 *********************************************************************************
 
 So far, the :ref:`truth table` for the **Automated Teller Machine** is
@@ -1021,7 +1021,7 @@ PIN                 money                   daily limit             withdrawal
           )
           self.assertEqual(reality, my_expectation)
 
-      def test_right_pin_enough_money_above_limit(self):
+      def test_above_limit_right_pin_enough_money(self):
           reality = src.atm.withdraw(
               right_pin=True,
               enough_money=True,
@@ -1088,7 +1088,7 @@ PIN                 money                   daily limit             withdrawal
           TypeError: withdraw() missing
                      1 required positional argument:
                      'above_daily_limit'
-      FAILED ...test_right_pin_not_enough_money_w_limit -
+      FAILED ...test_wrong_pin_not_enough_money -
           TypeError: withdraw() missing
                      1 required positional argument:
                      'above_daily_limit'
@@ -1229,7 +1229,7 @@ PIN                 money                   daily limit             withdrawal
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_right_pin_enough_money_above_limit'
+    'add test_above_limit_right_pin_enough_money'
 
 When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
 
@@ -1248,7 +1248,7 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 ----
 
 *********************************************************************************
-test_right_pin_enough_money_below_limit
+test_below_limit_right_pin_enough_money
 *********************************************************************************
 
 * I go back to the terminal_ where the tests are running
@@ -1282,7 +1282,7 @@ test_right_pin_enough_money_below_limit
 
   because :ref:`a function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
-* I change the name of the test from :ref:`test_right_pin_enough_money` to :ref:`test_right_pin_enough_money_below_limit`
+* I change the name of the test from :ref:`test_right_pin_enough_money` to :ref:`test_below_limit_right_pin_enough_money`
 
   .. code-block:: python
     :lineno-start: 8
@@ -1290,7 +1290,7 @@ test_right_pin_enough_money_below_limit
 
     class TestATM(unittest.TestCase):
 
-        def test_right_pin_enough_money_below_limit(self):
+        def test_below_limit_right_pin_enough_money(self):
             my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 right_pin=True,
@@ -1298,7 +1298,7 @@ test_right_pin_enough_money_below_limit
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_right_pin_enough_money_above_limit(self):
+        def test_above_limit_right_pin_enough_money(self):
 
 * I add a git_ commit message in the other terminal_
 
@@ -1306,7 +1306,7 @@ test_right_pin_enough_money_below_limit
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_right_pin_enough_money_below_limit'
+    'add test_below_limit_right_pin_enough_money'
 
 When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
 
@@ -1329,7 +1329,7 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 ----
 
 *********************************************************************************
-test_right_pin_not_enough_money_above_limit
+test_above_limit_right_pin_not_enough_money
 *********************************************************************************
 
 The :ref:`truth table` for if the :green:`right PIN` is entered and there is :red:`NOT enough money` in the account, is
@@ -1366,7 +1366,7 @@ PIN                 money                   daily limit             withdrawal
 
   the test is still green.
 
-* I change the name of the test from :ref:`test_right_pin_not_enough_money` to :ref:`test_right_pin_not_enough_money_above_limit`
+* I change the name of the test from :ref:`test_right_pin_not_enough_money` to :ref:`test_above_limit_right_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 24
@@ -1374,7 +1374,7 @@ PIN                 money                   daily limit             withdrawal
 
             self.assertEqual(reality, DENIED)
 
-        def test_right_pin_not_enough_money_above_limit(self):
+        def test_above_limit_right_pin_not_enough_money(self):
             reality = src.atm.withdraw(
                 right_pin=True,
                 enough_money=False,
@@ -1390,7 +1390,7 @@ PIN                 money                   daily limit             withdrawal
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_right_pin_not_enough_money_above_limit'
+    'add test_above_limit_right_pin_not_enough_money'
 
 When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
 
@@ -1417,7 +1417,7 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 ----
 
 *********************************************************************************
-test_right_pin_not_enough_money_below_limit
+test_below_limit_right_pin_not_enough_money
 *********************************************************************************
 
 =================================================================================
@@ -1442,7 +1442,7 @@ test_right_pin_not_enough_money_below_limit
 
             self.assertEqual(reality, DENIED)
 
-        def test_right_pin_not_enough_money_below_limit(self):
+        def test_below_limit_right_pin_not_enough_money(self):
             reality = src.atm.withdraw(
                 right_pin=True,
                 enough_money=False,
@@ -1465,13 +1465,13 @@ test_right_pin_not_enough_money_below_limit
 
 ----
 
-* I change my expectation to match reality in :ref:`test_right_pin_not_enough_money_below_limit`
+* I change my expectation to match reality in :ref:`test_below_limit_right_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 34
     :emphasize-lines: 6
 
-        def test_right_pin_not_enough_money_below_limit(self):
+        def test_below_limit_right_pin_not_enough_money(self):
             reality = src.atm.withdraw(
                 right_pin=True,
                 enough_money=False,
@@ -1507,7 +1507,7 @@ test_right_pin_not_enough_money_below_limit
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_right_pin_not_enough_money_below_limit'
+    'add test_below_limit_right_pin_not_enough_money'
 
 When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
 
@@ -1538,7 +1538,7 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 ----
 
 *********************************************************************************
-test_wrong_pin_enough_money_above_limit
+test_above_limit_wrong_pin_enough_money
 *********************************************************************************
 
 The :ref:`truth table` for if the :red:`wrong PIN` is entered and there is :green:`enough money` in the account, is
@@ -1574,7 +1574,7 @@ PIN                 money                   daily limit             withdrawal
 
   the test is still green.
 
-* I change the name of :ref:`test_wrong_pin_enough_money` to :ref:`test_wrong_pin_enough_money_above_limit`
+* I change the name of :ref:`test_wrong_pin_enough_money` to :ref:`test_above_limit_wrong_pin_enough_money`
 
   .. code-block:: python
     :lineno-start: 39
@@ -1582,7 +1582,7 @@ PIN                 money                   daily limit             withdrawal
 
             self.assertEqual(reality, DENIED)
 
-        def test_wrong_pin_enough_money_above_limit(self):
+        def test_above_limit_wrong_pin_enough_money(self):
             reality = src.atm.withdraw(
                 right_pin=False,
                 enough_money=True,
@@ -1595,7 +1595,7 @@ PIN                 money                   daily limit             withdrawal
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_wrong_pin_enough_money_above_limit'
+    'add test_above_limit_wrong_pin_enough_money'
 
 When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
 
@@ -1614,7 +1614,7 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 ----
 
 *********************************************************************************
-test_wrong_pin_enough_money_below_limit
+test_below_limit_wrong_pin_enough_money
 *********************************************************************************
 
 =================================================================================
@@ -1638,7 +1638,7 @@ test_wrong_pin_enough_money_below_limit
 
             self.assertEqual(reality, DENIED)
 
-        def test_wrong_pin_enough_money_below_limit(self):
+        def test_below_limit_wrong_pin_enough_money(self):
             reality = src.atm.withdraw(
                 right_pin=False,
                 enough_money=True,
@@ -1661,13 +1661,13 @@ test_wrong_pin_enough_money_below_limit
 
 ----
 
-* I change :green:`'CASH'` to :red:`'DENIED'` in :ref:`test_wrong_pin_enough_money_below_limit`
+* I change :green:`'CASH'` to :red:`'DENIED'` in :ref:`test_below_limit_wrong_pin_enough_money`
 
   .. code-block:: python
     :lineno-start: 49
     :emphasize-lines: 6
 
-        def test_wrong_pin_enough_money_below_limit(self):
+        def test_below_limit_wrong_pin_enough_money(self):
             reality = src.atm.withdraw(
                 right_pin=False,
                 enough_money=True,
@@ -1703,7 +1703,7 @@ test_wrong_pin_enough_money_below_limit
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_wrong_pin_enough_money_below_limit'
+    'add test_below_limit_wrong_pin_enough_money'
 
 When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
 
@@ -1726,7 +1726,7 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 ----
 
 *********************************************************************************
-test_wrong_pin_not_enough_money_above_limit
+test_above_limit_wrong_pin_not_enough_money
 *********************************************************************************
 
 The :ref:`truth table` for if the :red:`wrong PIN` is entered and there is :red:`NOT enough money` in the account, is
@@ -1764,7 +1764,7 @@ PIN                 money                   daily limit             withdrawal
 
   the test is still green.
 
-* I change the name of the test from :ref:`test_wrong_pin_not_enough_money` to :ref:`test_wrong_pin_not_enough_money_above_limit`
+* I change the name of the test from :ref:`test_wrong_pin_not_enough_money` to :ref:`test_above_limit_wrong_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 54
@@ -1772,7 +1772,7 @@ PIN                 money                   daily limit             withdrawal
 
             self.assertEqual(reality, DENIED)
 
-        def test_wrong_pin_not_enough_money_above_limit(self):
+        def test_above_limit_wrong_pin_not_enough_money(self):
             reality = src.atm.withdraw(
                 right_pin=False,
                 enough_money=False,
@@ -1785,7 +1785,7 @@ PIN                 money                   daily limit             withdrawal
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_wrong_pin_not_enough_money_above_limit'
+    'add test_above_limit_wrong_pin_not_enough_money'
 
 When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
 
@@ -1812,7 +1812,7 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 ----
 
 *********************************************************************************
-test_wrong_pin_not_enough_money_below_limit
+test_below_limit_wrong_pin_not_enough_money
 *********************************************************************************
 
 =================================================================================
@@ -1837,7 +1837,7 @@ test_wrong_pin_not_enough_money_below_limit
 
             self.assertEqual(reality, DENIED)
 
-        def test_wrong_pin_not_enough_money_below_limit(self):
+        def test_below_limit_wrong_pin_not_enough_money(self):
             reality = src.atm.withdraw(
                 right_pin=False,
                 enough_money=False,
@@ -1861,13 +1861,13 @@ test_wrong_pin_not_enough_money_below_limit
 
 ----
 
-* I change :green:`'CASH'` to :red:`'DENIED'` in :ref:`test_wrong_pin_not_enough_money_below_limit`
+* I change :green:`'CASH'` to :red:`'DENIED'` in :ref:`test_below_limit_wrong_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 64
     :emphasize-lines: 6
 
-        def test_wrong_pin_not_enough_money_below_limit(self):
+        def test_below_limit_wrong_pin_not_enough_money(self):
             reality = src.atm.withdraw(
                 right_pin=False,
                 enough_money=False,
@@ -1925,7 +1925,7 @@ test_wrong_pin_not_enough_money_below_limit
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_wrong_pin_not_enough_money_below_limit'
+    'add test_below_limit_wrong_pin_not_enough_money'
 
 When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
 
@@ -2100,13 +2100,13 @@ remove reality variable
 
 I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the tests. I do not need the ``reality`` :ref:`variable<what is a variable?>` as a middle man because I only use the :ref:`variable<what is a variable?>` once for each test.
 
-* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_wrong_pin_not_enough_money_below_limit`
+* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_below_limit_wrong_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 64
     :emphasize-lines: 2-13
 
-        def test_wrong_pin_not_enough_money_below_limit(self):
+        def test_below_limit_wrong_pin_not_enough_money(self):
             # reality = src.atm.withdraw(
             #     right_pin=False,
             #     enough_money=False,
@@ -2125,12 +2125,12 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
 
   the test is still green.
 
-* I remove the commented lines from :ref:`test_wrong_pin_not_enough_money_below_limit`
+* I remove the commented lines from :ref:`test_below_limit_wrong_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 64
 
-        def test_wrong_pin_not_enough_money_below_limit(self):
+        def test_below_limit_wrong_pin_not_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=False,
@@ -2142,13 +2142,13 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
 
     # Exceptions seen
 
-* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_wrong_pin_not_enough_money_above_limit`
+* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_above_limit_wrong_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 56
     :emphasize-lines: 2-15
 
-        def test_wrong_pin_not_enough_money_above_limit(self):
+        def test_above_limit_wrong_pin_not_enough_money(self):
             # reality = src.atm.withdraw(
             #     right_pin=False,
             #     enough_money=False,
@@ -2164,16 +2164,16 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
                 DENIED
             )
 
-        def test_wrong_pin_not_enough_money_below_limit(self):
+        def test_below_limit_wrong_pin_not_enough_money(self):
 
   still green.
 
-* I remove the commented lines from :ref:`test_wrong_pin_not_enough_money_above_limit`
+* I remove the commented lines from :ref:`test_above_limit_wrong_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 56
 
-        def test_wrong_pin_not_enough_money_above_limit(self):
+        def test_above_limit_wrong_pin_not_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=False,
@@ -2183,15 +2183,15 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
                 DENIED
             )
 
-        def test_wrong_pin_not_enough_money_below_limit(self):
+        def test_below_limit_wrong_pin_not_enough_money(self):
 
-* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_wrong_pin_not_enough_money_below_limit`
+* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_below_limit_wrong_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 49
     :emphasize-lines: 2-13
 
-        def test_wrong_pin_enough_money_below_limit(self):
+        def test_below_limit_wrong_pin_enough_money(self):
             # reality = src.atm.withdraw(
             #     right_pin=False,
             #     enough_money=True,
@@ -2205,16 +2205,16 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
                 DENIED
             )
 
-        def test_wrong_pin_not_enough_money_above_limit(self):
+        def test_above_limit_wrong_pin_not_enough_money(self):
 
   green.
 
-* I remove the commented lines from :ref:`test_wrong_pin_not_enough_money_below_limit`
+* I remove the commented lines from :ref:`test_below_limit_wrong_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 49
 
-        def test_wrong_pin_enough_money_below_limit(self):
+        def test_below_limit_wrong_pin_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=False,
@@ -2223,15 +2223,15 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
                 DENIED
             )
 
-        def test_wrong_pin_not_enough_money_above_limit(self):
+        def test_above_limit_wrong_pin_not_enough_money(self):
 
-* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_wrong_pin_not_enough_money_above_limit`
+* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_above_limit_wrong_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 41
     :emphasize-lines: 2-15
 
-        def test_wrong_pin_enough_money_above_limit(self):
+        def test_above_limit_wrong_pin_enough_money(self):
             # reality = src.atm.withdraw(
             #     right_pin=False,
             #     enough_money=True,
@@ -2247,16 +2247,16 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
                 DENIED
             )
 
-        def test_wrong_pin_enough_money_below_limit(self):
+        def test_below_limit_wrong_pin_enough_money(self):
 
   still green.
 
-* I remove the commented lines from :ref:`test_wrong_pin_not_enough_money_above_limit`
+* I remove the commented lines from :ref:`test_above_limit_wrong_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 41
 
-        def test_wrong_pin_enough_money_above_limit(self):
+        def test_above_limit_wrong_pin_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=False,
@@ -2266,15 +2266,15 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
                 DENIED
             )
 
-        def test_wrong_pin_enough_money_below_limit(self):
+        def test_below_limit_wrong_pin_enough_money(self):
 
-* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_right_pin_not_enough_money_below_limit`
+* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_below_limit_right_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 34
     :emphasize-lines: 2-13
 
-        def test_right_pin_not_enough_money_below_limit(self):
+        def test_below_limit_right_pin_not_enough_money(self):
             # reality = src.atm.withdraw(
             #     right_pin=True,
             #     enough_money=False,
@@ -2288,16 +2288,16 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
                 DENIED
             )
 
-        def test_wrong_pin_enough_money_above_limit(self):
+        def test_above_limit_wrong_pin_enough_money(self):
 
   the test is still green.
 
-* I remove the commented lines from :ref:`test_right_pin_not_enough_money_below_limit`
+* I remove the commented lines from :ref:`test_below_limit_right_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 34
 
-        def test_right_pin_not_enough_money_below_limit(self):
+        def test_below_limit_right_pin_not_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -2306,15 +2306,15 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
                 DENIED
             )
 
-        def test_wrong_pin_enough_money_above_limit(self):
+        def test_above_limit_wrong_pin_enough_money(self):
 
-* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_right_pin_not_enough_money_above_limit`
+* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_above_limit_right_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 26
     :emphasize-lines: 2-15
 
-        def test_right_pin_not_enough_money_above_limit(self):
+        def test_above_limit_right_pin_not_enough_money(self):
             # reality = src.atm.withdraw(
             #     right_pin=True,
             #     enough_money=False,
@@ -2330,16 +2330,16 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
                 DENIED
             )
 
-        def test_right_pin_not_enough_money_below_limit(self):
+        def test_below_limit_right_pin_not_enough_money(self):
 
   still green.
 
-* I remove the commented lines from :ref:`test_right_pin_not_enough_money_above_limit`
+* I remove the commented lines from :ref:`test_above_limit_right_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 26
 
-        def test_right_pin_not_enough_money_above_limit(self):
+        def test_above_limit_right_pin_not_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -2349,15 +2349,15 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
                 DENIED
             )
 
-        def test_right_pin_not_enough_money_below_limit(self):
+        def test_below_limit_right_pin_not_enough_money(self):
 
-* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_right_pin_enough_money_above_limit`
+* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_above_limit_right_pin_enough_money`
 
   .. code-block:: python
     :lineno-start: 18
     :emphasize-lines: 2-15
 
-        def test_right_pin_enough_money_above_limit(self):
+        def test_above_limit_right_pin_enough_money(self):
             # reality = src.atm.withdraw(
             #     right_pin=True,
             #     enough_money=True,
@@ -2373,16 +2373,16 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
                 DENIED
             )
 
-        def test_right_pin_not_enough_money_above_limit(self):
+        def test_above_limit_right_pin_not_enough_money(self):
 
   still green.
 
-* I remove the commented lines from :ref:`test_right_pin_enough_money_above_limit`
+* I remove the commented lines from :ref:`test_above_limit_right_pin_enough_money`
 
   .. code-block:: python
     :lineno-start: 18
 
-        def test_right_pin_enough_money_above_limit(self):
+        def test_above_limit_right_pin_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -2392,15 +2392,15 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
                 DENIED
             )
 
-        def test_right_pin_not_enough_money_above_limit(self):
+        def test_above_limit_right_pin_not_enough_money(self):
 
-* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly and use :green:`'CASH'` for ``my_expectation`` in the :ref:`assertion<what is an assertion?>` of :ref:`test_right_pin_not_enough_money_below_limit`
+* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly and use :green:`'CASH'` for ``my_expectation`` in the :ref:`assertion<what is an assertion?>` of :ref:`test_below_limit_right_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 10
     :emphasize-lines: 2-13
 
-        def test_right_pin_enough_money_below_limit(self):
+        def test_below_limit_right_pin_enough_money(self):
             # my_expectation = 'CASH'
             # reality = src.atm.withdraw(
             #     right_pin=True,
@@ -2414,16 +2414,16 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
                 'CASH'
             )
 
-        def test_right_pin_enough_money_above_limit(self):
+        def test_above_limit_right_pin_enough_money(self):
 
   the test is still green.
 
-* I remove the commented lines from :ref:`test_right_pin_not_enough_money_below_limit`
+* I remove the commented lines from :ref:`test_below_limit_right_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 10
 
-        def test_right_pin_enough_money_below_limit(self):
+        def test_below_limit_right_pin_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -2432,7 +2432,7 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
                 'CASH'
             )
 
-        def test_right_pin_enough_money_above_limit(self):
+        def test_above_limit_right_pin_enough_money(self):
 
 * I add a git_ commit message in the other terminal_
 
@@ -2444,7 +2444,7 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
 ----
 
 *********************************************************************************
-test_right_pin_enough_money_below_limit_w_card
+test_card_w_below_limit_right_pin_enough_money
 *********************************************************************************
 
 The :ref:`truth table` for the **Automated Teller Machine** is now
@@ -2492,7 +2492,7 @@ PIN                 money                 daily limit             card expired  
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a value for the ``card_expired`` parameter to the :ref:`call<how to call a function with input>` to the ``withdraw`` :ref:`function<what is a function?>` for the case where the :green:`right PIN` is entered, there is :green:`enough money` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :red:`NOT expired`, in :ref:`test_right_pin_enough_money_below_limit`
+* I add a value for the ``card_expired`` parameter to the :ref:`call<how to call a function with input>` to the ``withdraw`` :ref:`function<what is a function?>` for the case where the :green:`right PIN` is entered, there is :green:`enough money` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :red:`NOT expired`, in :ref:`test_below_limit_right_pin_enough_money`
 
   ==================  ===================== ======================  ==================  =============
   PIN                 money                 daily limit             card expired        withdrawal
@@ -2504,7 +2504,7 @@ PIN                 money                 daily limit             card expired  
     :lineno-start: 10
     :emphasize-lines: 6
 
-        def test_right_pin_enough_money_below_limit(self):
+        def test_below_limit_right_pin_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -2514,7 +2514,7 @@ PIN                 money                 daily limit             card expired  
                 'CASH'
             )
 
-        def test_right_pin_enough_money_above_limit(self):
+        def test_above_limit_right_pin_enough_money(self):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -2595,13 +2595,13 @@ PIN                 money                 daily limit             card expired  
 
 ----
 
-* I add the value for the ``above_daily_limit`` parameter to :ref:`test_right_pin_enough_money_below_limit` to make it clearer
+* I add the value for the ``above_daily_limit`` parameter to :ref:`test_below_limit_right_pin_enough_money` to make it clearer
 
   .. code-block:: python
     :lineno-start: 10
     :emphasize-lines: 6
 
-        def test_right_pin_enough_money_below_limit(self):
+        def test_below_limit_right_pin_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -2612,7 +2612,7 @@ PIN                 money                 daily limit             card expired  
                 'CASH'
             )
 
-        def test_right_pin_enough_money_above_limit(self):
+        def test_above_limit_right_pin_enough_money(self):
 
   the test is still green.
 
@@ -2628,7 +2628,7 @@ PIN                 money                 daily limit             card expired  
     :lineno-start: 10
     :emphasize-lines: 11-19
 
-        def test_right_pin_enough_money_below_limit(self):
+        def test_below_limit_right_pin_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -2648,7 +2648,7 @@ PIN                 money                 daily limit             card expired  
                 DENIED
             )
 
-        def test_right_pin_enough_money_above_limit(self):
+        def test_above_limit_right_pin_enough_money(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2715,7 +2715,7 @@ PIN                 money                 daily limit             card expired  
 
   the test is still green.
 
-* I change the name of the test from :ref:`test_right_pin_enough_money_below_limit` to :ref:`test_right_pin_enough_money_below_limit_w_card` in ``test_atm.py``
+* I change the name of the test from :ref:`test_below_limit_right_pin_enough_money` to :ref:`test_card_w_below_limit_right_pin_enough_money` in ``test_atm.py``
 
   .. code-block:: python
     :lineno-start: 8
@@ -2723,7 +2723,7 @@ PIN                 money                 daily limit             card expired  
 
     class TestATM(unittest.TestCase):
 
-        def test_right_pin_enough_money_below_limit_w_card(self):
+        def test_card_w_below_limit_right_pin_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -2739,7 +2739,7 @@ PIN                 money                 daily limit             card expired  
   .. code-block:: python
 
     git commit -am \
-    'add test_right_pin_enough_money_below_limit_w_card'
+    'add test_card_w_below_limit_right_pin_enough_money'
 
 When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
 
@@ -2752,7 +2752,7 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 ----
 
 *********************************************************************************
-test_right_pin_enough_money_above_limit_w_card
+test_card_w_above_limit_right_pin_enough_money
 *********************************************************************************
 
 The :ref:`truth table` for if the :green:`right PIN` is entered, AND there is :green:`enough money` in the account, AND it is :green:`above limit` for daily withdrawals is
@@ -2771,7 +2771,7 @@ PIN                 money                 daily limit             card expired  
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a value for the ``card_expired`` parameter to the :ref:`call<how to call a function with input>` to the ``withdraw`` :ref:`function<what is a function?>` for the case where the :green:`right PIN` is entered, there is :green:`enough money` in the account, it is :green:`above limit` for daily withdrawals, and the card has :green:`expired`, in :ref:`test_right_pin_enough_money_above_limit`
+* I add a value for the ``card_expired`` parameter to the :ref:`call<how to call a function with input>` to the ``withdraw`` :ref:`function<what is a function?>` for the case where the :green:`right PIN` is entered, there is :green:`enough money` in the account, it is :green:`above limit` for daily withdrawals, and the card has :green:`expired`, in :ref:`test_above_limit_right_pin_enough_money`
 
   ==================  ===================== ======================  ==================  =============
   PIN                 money                 daily limit             card expired        withdrawal
@@ -2783,7 +2783,7 @@ PIN                 money                 daily limit             card expired  
     :lineno-start: 31
     :emphasize-lines: 7
 
-        def test_right_pin_enough_money_above_limit(self):
+        def test_above_limit_right_pin_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -2794,7 +2794,7 @@ PIN                 money                 daily limit             card expired  
                 DENIED
             )
 
-        def test_right_pin_not_enough_money_above_limit(self):
+        def test_above_limit_right_pin_not_enough_money(self):
 
   the test is still green.
 
@@ -2817,7 +2817,7 @@ PIN                 money                 daily limit             card expired  
     :lineno-start: 31
     :emphasize-lines: 11-19
 
-        def test_right_pin_enough_money_above_limit(self):
+        def test_above_limit_right_pin_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -2837,7 +2837,7 @@ PIN                 money                 daily limit             card expired  
                 'CASH'
             )
 
-        def test_right_pin_not_enough_money_above_limit(self):
+        def test_above_limit_right_pin_not_enough_money(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2853,7 +2853,7 @@ PIN                 money                 daily limit             card expired  
 
 ----
 
-* I change :green:`'CASH'` to :red:`'DENIED'` in :ref:`test_right_pin_enough_money_above_limit`
+* I change :green:`'CASH'` to :red:`'DENIED'` in :ref:`test_above_limit_right_pin_enough_money`
 
   .. code-block:: python
     :lineno-start: 41
@@ -2869,7 +2869,7 @@ PIN                 money                 daily limit             card expired  
                 DENIED
             )
 
-        def test_right_pin_not_enough_money_above_limit(self):
+        def test_above_limit_right_pin_not_enough_money(self):
 
   the test passes.
 
@@ -2892,7 +2892,7 @@ PIN                 money                 daily limit             card expired  
 
 ----
 
-* I change the name of the test from :ref:`test_right_pin_enough_money_above_limit` to :ref:`test_right_pin_enough_money_above_limit_w_card`
+* I change the name of the test from :ref:`test_above_limit_right_pin_enough_money` to :ref:`test_card_w_above_limit_right_pin_enough_money`
 
   .. code-block:: python
     :lineno-start: 21
@@ -2908,7 +2908,7 @@ PIN                 money                 daily limit             card expired  
                 DENIED
             )
 
-        def test_right_pin_enough_money_above_limit_w_card(self):
+        def test_card_w_above_limit_right_pin_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -2924,12 +2924,12 @@ PIN                 money                 daily limit             card expired  
   .. code-block:: python
 
     git commit -am \
-    'add test_right_pin_enough_money_above_limit_w_card'
+    'add test_card_w_above_limit_right_pin_enough_money'
 
 ----
 
 *********************************************************************************
-test_right_pin_not_enough_money_above_limit_w_card
+test_card_w_above_limit_right_pin_not_enough_money
 *********************************************************************************
 
 The :ref:`truth table` for if the :green:`right PIN` is entered AND there is :red:`NOT enough money` in the account, AND it is :green:`above limit` for daily withdrawals is
@@ -2963,7 +2963,7 @@ PIN                 money                   daily limit             card expired
     :lineno-start: 51
     :emphasize-lines: 7
 
-        def test_right_pin_not_enough_money_above_limit(self):
+        def test_above_limit_right_pin_not_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -2974,7 +2974,7 @@ PIN                 money                   daily limit             card expired
                 DENIED
             )
 
-        def test_right_pin_not_enough_money_below_limit(self):
+        def test_below_limit_right_pin_not_enough_money(self):
 
   the test is still green.
 
@@ -2997,7 +2997,7 @@ PIN                 money                   daily limit             card expired
     :lineno-start: 51
     :emphasize-lines: 11-19
 
-        def test_right_pin_not_enough_money_above_limit(self):
+        def test_above_limit_right_pin_not_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -3017,7 +3017,7 @@ PIN                 money                   daily limit             card expired
                 'CASH'
             )
 
-        def test_right_pin_not_enough_money_below_limit(self):
+        def test_below_limit_right_pin_not_enough_money(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3033,7 +3033,7 @@ PIN                 money                   daily limit             card expired
 
 ----
 
-I change my expectation to match reality in :ref:`test_right_pin_not_enough_money_above_limit`
+I change my expectation to match reality in :ref:`test_above_limit_right_pin_not_enough_money`
 
 .. code-block:: python
   :lineno-start: 61
@@ -3049,7 +3049,7 @@ I change my expectation to match reality in :ref:`test_right_pin_not_enough_mone
               DENIED
           )
 
-      def test_right_pin_not_enough_money_below_limit(self):
+      def test_below_limit_right_pin_not_enough_money(self):
 
 the test passes.
 
@@ -3072,7 +3072,7 @@ the test passes.
 
 ----
 
-* I change the name of the test from :ref:`test_right_pin_not_enough_money_above_limit` to :ref:`test_right_pin_not_enough_money_above_limit_w_card`
+* I change the name of the test from :ref:`test_above_limit_right_pin_not_enough_money` to :ref:`test_card_w_above_limit_right_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 41
@@ -3088,7 +3088,7 @@ the test passes.
                 DENIED
             )
 
-        def test_right_pin_not_enough_money_above_limit_w_card(self):
+        def test_card_w_above_limit_right_pin_not_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -3105,12 +3105,12 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_right_pin_not_enough_money_above_limit_w_card'
+    'add test_card_w_above_limit_right_pin_not_enough_money'
 
 ----
 
 *********************************************************************************
-test_right_pin_not_enough_money_below_limit_w_card
+test_card_w_below_limit_right_pin_not_enough_money
 *********************************************************************************
 
 The :ref:`truth table` for if the :green:`right PIN` is entered AND there is :red:`NOT enough money` in the account, AND it is :red:`NOT above limit` for daily withdrawals is
@@ -3143,7 +3143,7 @@ PIN                 money                   daily limit             card expired
     :lineno-start: 71
     :emphasize-lines: 6-7
 
-        def test_right_pin_not_enough_money_below_limit(self):
+        def test_below_limit_right_pin_not_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -3154,7 +3154,7 @@ PIN                 money                   daily limit             card expired
                 DENIED
             )
 
-        def test_wrong_pin_enough_money_above_limit(self):
+        def test_above_limit_wrong_pin_enough_money(self):
 
   the test is still green.
 
@@ -3175,9 +3175,9 @@ PIN                 money                   daily limit             card expired
 
   .. code-block:: python
     :lineno-start: 71
-    :emphasize-lines: 11-20
+    :emphasize-lines: 11-19
 
-        def test_right_pin_not_enough_money_below_limit(self):
+        def test_below_limit_right_pin_not_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -3197,7 +3197,7 @@ PIN                 money                   daily limit             card expired
                 'CASH'
             )
 
-        def test_wrong_pin_enough_money_above_limit(self):
+        def test_above_limit_wrong_pin_enough_money(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3213,7 +3213,7 @@ PIN                 money                   daily limit             card expired
 
 ----
 
-I change :green:`'CASH'` to :red:`'DENIED'` in :ref:`test_right_pin_not_enough_money_below_limit`
+I change :green:`'CASH'` to :red:`'DENIED'` in :ref:`test_below_limit_right_pin_not_enough_money`
 
 .. code-block:: python
   :lineno-start: 81
@@ -3229,7 +3229,7 @@ I change :green:`'CASH'` to :red:`'DENIED'` in :ref:`test_right_pin_not_enough_m
               DENIED
           )
 
-      def test_wrong_pin_enough_money_above_limit(self):
+      def test_above_limit_wrong_pin_enough_money(self):
 
 the test passes.
 
@@ -3252,7 +3252,7 @@ the test passes.
 
 ----
 
-* I change the name of the test from :ref:`test_right_pin_not_enough_money_below_limit` to :ref:`test_right_pin_not_enough_money_below_limit_w_card`
+* I change the name of the test from :ref:`test_below_limit_right_pin_not_enough_money` to :ref:`test_card_w_below_limit_right_pin_not_enough_money`
 
   .. code-block:: python
     :lineno-start: 61
@@ -3268,7 +3268,7 @@ the test passes.
                 DENIED
             )
 
-        def test_right_pin_not_enough_money_below_limit_w_card(self):
+        def test_card_w_below_limit_right_pin_not_enough_money(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=True,
@@ -3285,12 +3285,12 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_right_pin_not_enough_money_below_limit_w_card'
+    'add test_card_w_below_limit_right_pin_not_enough_money'
 
 ----
 
 *********************************************************************************
-test_wrong_pin_enough_money_w_card
+test_card_w_above_limit_wrong_pin_enough_money
 *********************************************************************************
 
 The :ref:`truth table` for if the :red:`wrong PIN` is entered, and there is :green:`enough money` in the account, is
