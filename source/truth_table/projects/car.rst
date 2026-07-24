@@ -145,31 +145,22 @@ start the project
 
 ----
 
-If the inputs to the **Car** are
+If the input to the **Car** ignition is if the start button pressed? I get this :ref:`truth table`
 
-* is the key close to the ignition?
-* was the start button pressed?
-
-I get this :ref:`truth table` for the Car Ignition
-
-================  ==================  ===========
-key               start button        output
-================  ==================  ===========
-:green:`close`    :green:`pressed`    :green:`True`
-:green:`close`    :red:`NOT pressed`  :red:`False`
-:red:`NOT close`  :green:`pressed`    :red:`False`
-:red:`NOT close`  :red:`NOT pressed`  :red:`False`
-================  ==================  ===========
+==================  =============
+start button        output
+==================  =============
+:green:`pressed`    :green:`True`
+:red:`NOT pressed`  :red:`False`
+==================  =============
 
 where :green:`True` is the **Car** comes :green:`ON` and :red:`False` is it stays :red:`OFF`.
 
 ----
 
 *********************************************************************************
-test_key_close_start_pressed
+test_start_pressed
 *********************************************************************************
-
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -177,23 +168,22 @@ test_key_close_start_pressed
 
 ----
 
-I change :ref:`test_failure` to ``test_key_close``, then add an :ref:`assertion<what is an assertion?>` for if the key is :green:`close` and the start button is :green:`pressed`
+I change :ref:`test_failure` to :ref:`test_start_pressed`, then add an :ref:`assertion<what is an assertion?>` for if the start button is :green:`pressed`
 
-================  ==================  ===========
-key               start button        output
-================  ==================  ===========
-:green:`close`    :green:`pressed`    :green:`True`
-================  ==================  ===========
+==================  =============
+start button        output
+==================  =============
+:green:`pressed`    :green:`True`
+==================  =============
 
 .. code-block:: python
   :lineno-start: 4
-  :emphasize-lines: 3-8
+  :emphasize-lines: 3-7
 
   class TestCar(unittest.TestCase):
 
-      def test_key_close_start_pressed(self):
+      def test_start_pressed(self):
           reality = src.car.ignition(
-              key_is_close=True,
               start_is_pressed=True,
           )
           self.assertTrue(reality)
@@ -202,6 +192,7 @@ key               start button        output
   # Exceptions seen
   # AssertionError
 
+
 the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 .. code-block:: python
@@ -209,6 +200,267 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
   NameError: name 'src' is not defined
 
 because I do not have a definition for ``src`` in this ``test_car.py``.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 3
+    :emphasize-text: NameError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+
+* I add an `import statement`_ at the top of the file_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import src.car
+    import unittest
+
+
+    class TestCar(unittest.TestCase):
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.car' has no attribute 'ignition'
+
+  because ``car.py`` in the ``src`` folder_ does not have anything named ``ignition`` in it.
+
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 4
+    :emphasize-text: AttributeError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+
+* I open ``car.py`` from the ``src`` folder_
+
+* I delete all the text in the file_ then add a :ref:`function<what is a function?>` named ``ignition`` to ``car.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2
+
+    def ignition():
+        return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: ignition() got
+               an unexpected keyword argument 'start_is_pressed'
+
+  because the test :ref:`called<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``start_is_pressed``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_car.py``
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 5
+    :emphasize-text: TypeError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+
+* I add ``start_is_pressed`` to the :ref:`function signature<what is a function?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    def ignition(start_is_pressed):
+        return None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None is not true
+
+  because the ``ignition`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects :green:`True`.
+
+* I change the :ref:`return statement<the return statement>` to give the test what it wants
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
+
+    def ignition(start_is_pressed):
+        return True
+
+  the test passes.
+
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_start_pressed'
+
+The ``ignition`` :ref:`function<what is a function?>` always returns :green:`True`.
+
+.. code-block:: python
+
+  ignition(start_is_pressed=True ) -> True
+
+----
+
+*********************************************************************************
+test_start_not_pressed
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the start button is :red:`NOT pressed`
+
+  ==================  =============
+  start button        output
+  ==================  =============
+  :red:`NOT pressed`  :red:`False`
+  ==================  =============
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 3-7
+
+            self.assertTrue(reality)
+
+        def test_start_not_pressed(self):
+            reality = src.car.ignition(
+                start_is_pressed=False,
+            )
+            self.assertFalse(reality)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  because the :ref:`function<what is a function?>` always returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change :ref:`the return statement`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
+
+    def ignition(start_is_pressed):
+        return start_is_pressed
+
+  the test passes.
+
+  .. code-block:: python
+
+    ignition(start_is_pressed=False) -> Fa;se
+    ignition(start_is_pressed=True ) -> True
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_start_not_pressed'
+
+The ``ignition`` :ref:`function<what is a function?>` always returns the value of ``start_is_pressed``. Is this the :ref:`Identity Function<test_logical_identity>`?
+
+I want the car to start only when the key is :green:`close` to the ignition AND the start button is :green:`pressed` and . The inputs to the ignition will then be
+
+* is the key close to the ignition?
+* was the start button pressed?
+
+Which gives me this :ref:`truth table`
+
+================  ==================  =============
+key               start button        output
+================  ==================  =============
+:green:`close`    :green:`pressed`    :green:`True`
+:green:`close`    :red:`NOT pressed`  :red:`False`
+:red:`NOT close`  :green:`pressed`    :red:`False`
+:red:`NOT close`  :red:`NOT pressed`  :red:`False`
+================  ==================  =============
+
+----
+
+*********************************************************************************
+test_key_close_start_pressed
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a value for the ``key_is_close`` parameter to the :ref:`call<how to call a function with input>` to the ``ignition`` :ref:`function<what is a function?>` for if the key is :green:`close` and the start button is :green:`pressed`
+
+  ================  ==================  =============
+  key               start button        output
+  ================  ==================  =============
+  :green:`close`    :green:`pressed`    :green:`True`
+  ================  ==================  =============
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 3
+
+        def test_start_pressed(self):
+            reality = src.car.ignition(
+                key_is_close=True,
+                start_is_pressed=True,
+            )
+            self.assertTrue(reality)
+
+        def test_start_not_pressed(self):
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'src' is not defined
+
+  because I do not have a definition for ``src`` in this ``test_car.py``.
 
 ----
 
@@ -866,7 +1118,7 @@ key               start button        output
 :red:`NOT close`  :red:`NOT pressed`  :red:`False`
 ================  ==================  =============
 
-I want the car to start only when the brake pedal is :green:`pressed`. The inputs for the ignition will then be
+I want the car to start only when the brake pedal is :green:`pressed`. The inputs to the ignition will then be
 
 * is the key close to the ignition?
 * is the brake being pressed?
@@ -906,22 +1158,25 @@ key             brake               start button        output
 
 .. code-block:: python
   :lineno-start: 7
-  :emphasize-lines: 5
+  :emphasize-lines: 4
 
-      def test_key_close(self):
-          my_expectation = True
+      def test_key_close_start_pressed(self):
           reality = src.car.ignition(
               key_is_close=True,
               brake_is_pressed=True,
               start_is_pressed=True,
           )
-          self.assertEqual(reality, my_expectation)
+          self.assertTrue(reality)
+
+      def test_key_close_start_not_pressed(self):
 
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: shell
 
-  TypeError: ignition() got an unexpected keyword argument 'brake_is_pressed'. Did you mean 'start_is_pressed'?
+  TypeError: ignition() got
+             an unexpected keyword argument 'brake_is_pressed'.
+             Did you mean 'start_is_pressed'?
 
 because the test :ref:`called<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``brake_is_pressed``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
@@ -943,21 +1198,25 @@ because the test :ref:`called<how to call a function with input>` the ``ignition
             key_is_close, start_is_pressed,
             brake_is_pressed,
         ):
-        if not (key_is_close and start_is_pressed):
-            return False
-
-        return True
+        return key_is_close and start_is_pressed
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    FAILED ...test_key_close - TypeError: ignition() missing 1 required positional argument: 'brake_is_pressed'
-    FAILED ...test_key_not_close - TypeError: ignition() missing 1 required positional argument: 'brake_is_pressed'
+    FAILED ...test_key_close_start_not_pressed -
+        TypeError: ignition() missing
+            1 required positional argument: 'brake_is_pressed'
+    FAILED ...test_key_not_close_start_not_pressed -
+        TypeError: ignition() missing
+            1 required positional argument: 'brake_is_pressed'
+    FAILED ...test_key_not_close_start_pressed -
+        TypeError: ignition() missing
+            1 required positional argument: 'brake_is_pressed'
 
-  because the tests call the ``ignition`` :ref:`function<what is a function?>` with 2 arguments (``key_is_close`` and ``start_is_pressed``) and I just changed the :ref:`function signature<what is a function?>` to make it take 3 required arguments (``key_is_close``, ``start_is_pressed`` and ``brake_is_pressed``). I have to make ``brake_is_pressed`` a choice.
+  because the tests call the ``ignition`` :ref:`function<what is a function?>` with two arguments (``key_is_close`` and ``start_is_pressed``) and I just changed the :ref:`function signature<what is a function?>` to make it take three required arguments (``key_is_close``, ``start_is_pressed`` and ``brake_is_pressed``). I have to make ``brake_is_pressed`` a :ref:`choice<test_optional_arguments>`.
 
-* I add a :ref:`default value<test_optional_arguments>` to make ``brake_is_pressed`` a choice
+* I add a :ref:`default value<test_optional_arguments>` to make ``brake_is_pressed`` a :ref:`choice<test_optional_arguments>`
 
   .. code-block:: python
     :linenos:
@@ -988,6 +1247,15 @@ because the test :ref:`called<how to call a function with input>` the ``ignition
     )
 
   :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
+
+  .. code-block:: python
+
+    ignition(
+        key_is_close=True, brake_is_pressed=True,
+        start_is_pressed=True
+    ) -> True
+
+* I change the name of the test from :ref:`test_key_close_start_pressed` to :ref:`brake_pressed_key_close_start_pressed`
 
 ----
 
