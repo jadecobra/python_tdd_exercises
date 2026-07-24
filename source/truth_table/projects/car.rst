@@ -433,7 +433,7 @@ test_key_close_start_pressed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a value for the ``key_is_close`` parameter to the :ref:`call<how to call a function with input>` to the ``ignition`` :ref:`function<what is a function?>` for if the key is :green:`close` and the start button is :green:`pressed`
+* I add ``key_is_close`` with a value to the :ref:`call<how to call a function with input>` to the ``ignition`` :ref:`function<what is a function?>` for if the key is :green:`close` and the start button is :green:`pressed`
 
   ================  ==================  =============
   key               start button        output
@@ -454,13 +454,14 @@ test_key_close_start_pressed
 
         def test_start_not_pressed(self):
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    NameError: name 'src' is not defined
+    TypeError: ignition() got
+               an unexpected keyword argument 'key_is_close
 
-  because I do not have a definition for ``src`` in this ``test_car.py``.
+  because the test :ref:`called<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``key_is_close``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 ----
 
@@ -470,131 +471,61 @@ test_key_close_start_pressed
 
 ----
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
-
-  .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 3
-    :emphasize-text: NameError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-
-* I add an `import statement`_ at the top of the file_
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
-
-    import src.car
-    import unittest
-
-
-    class TestCar(unittest.TestCase):
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: python
-
-    AttributeError: module 'src.car' has no attribute 'ignition'
-
-  because ``car.py`` in the ``src`` folder_ does not have anything named ``ignition`` in it.
-
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
-
-  .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 4
-    :emphasize-text: AttributeError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # AttributeError
-
-* I open ``car.py`` from the ``src`` folder_
-
-* I delete all the text in the file_ then add a :ref:`function<what is a function?>` named ``ignition`` to ``car.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-2
-
-    def ignition():
-        return None
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: ignition() got
-               an unexpected keyword argument 'key_is_close'
-
-  because the test :ref:`called<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``key_is_close``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
-
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_car.py``
-
-  .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 5
-    :emphasize-text: TypeError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # AttributeError
-    # TypeError
-
 * I add ``key_is_close`` to the :ref:`function definition<how to make a function that takes input>` in ``car.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1
 
-    def ignition(key_is_close):
-        return None
+    def ignition(start_is_pressed, key_is_close):
+        return start_is_pressed
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: ignition() got
-               an unexpected keyword argument 'start_is_pressed'
+    TypeError: ignition() missing
+               1 required positional argument: 'key_is_close'
 
-  because the test :ref:`called<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``start_is_pressed``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+  because the :ref:`assertion<what is an assertion?>` in :ref:`test_start_not_pressed` :ref:`calls<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` with one argument(``start_is_pressed``) and I just changed the :ref:`function signature<what is a function?>` to make it take two required arguments (``key_is_close`` and ``start_is_pressed``). I have to make ``key_is_close`` a :ref:`choice<test_optional_arguments>`.
 
-* I add ``start_is_pressed`` to the :ref:`function signature<what is a function?>`
+* I add a :ref:`default value<test_optional_arguments>` for ``key_is_close`` to make it a :ref:`choice<test_optional_arguments>`
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1
 
-    def ignition(key_is_close, start_is_pressed):
-        return None
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: None is not true
-
-  because the ``ignition`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects :green:`True`.
-
-* I change the :ref:`return statement<the return statement>` to give the test what it wants
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2
-
-    def ignition(key_is_close, start_is_pressed):
-        return True
+    def ignition(start_is_pressed, key_is_close=False):
+        return start_is_pressed
 
   the test passes.
 
   .. code-block:: python
 
     ignition(key_is_close=True , start_is_pressed=True ) -> True
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I change the name of :ref:`test_start_pressed` to :ref:`test_key_close_start_pressed`
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 3
+
+    class TestCar(unittest.TestCase):
+
+        def test_key_close_start_pressed(self):
+            reality = src.car.ignition(
+                key_is_close=True,
+                start_is_pressed=True,
+            )
+            self.assertTrue(reality)
 
 * I add a git_ commit message in the other terminal_
 
@@ -603,8 +534,6 @@ test_key_close_start_pressed
 
     git commit -am \
     'add test_key_close_start_pressed'
-
-The ``ignition`` :ref:`function<what is a function?>` always returns :green:`True`, it does not care about the inputs. Is this :ref:`Tautology?<test_tautology>`
 
 ----
 
