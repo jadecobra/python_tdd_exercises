@@ -1019,7 +1019,7 @@ PIN                 cash                    withdrawal
 :red:`wrong PIN`    :red:`NOT enough cash`  :red:`DENIED`
 ==================  ======================= =================
 
-I want to add a :ref:`condition<if statements>` for a daily limit on how much can be taken from the account. The inputs for the ATM will then be
+I want to add a :ref:`condition<if statements>` for a daily limit on how much can be taken from the account. The inputs to the **Automated Teller Machine** will then be
 
 * is the PIN correct?
 * is there enough cash in the account for the withdrawal?
@@ -2540,7 +2540,7 @@ PIN                 cash                    daily limit             withdrawal
 :red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`DENIED`
 ==================  ======================= ======================  ==================
 
-What if the bank card has expired? The inputs for the **ATM** will then be
+What if the bank card has expired? The inputs to the **Automated Teller Machine** will then be
 
 * has the card expired?
 * is the PIN correct?
