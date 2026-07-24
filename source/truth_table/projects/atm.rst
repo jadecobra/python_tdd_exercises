@@ -374,8 +374,7 @@ because I do not have a definition for ``src`` in this file_.
     :linenos:
     :emphasize-lines: 2
 
-    def withdraw(right_pin, enough_cash):
-        return 'CASH'
+    def withdraw(right_pin, enough_cash):        return 'CASH'
 
 * I add a git_ commit message in the other terminal_
 
@@ -436,7 +435,7 @@ test_right_pin_not_enough_cash
 
     AssertionError: 'CASH' != 'DENIED'
 
-  because the ``withdraw`` :ref:`function<what is a function?>` returns :green:`'CASH'` and the :ref:`assertion<what is an assertion?>` expects :red:`'DENIED'`.
+  because the ``withdraw`` :ref:`function<what is a function?>` returns :green:`'CASH'` and the :ref:`assertion<what is an assertion?>` expects :red:`'DENIED'`. This **ATM** is broken, it should not give :green:`'CASH'` when there is :red:`NOT enough cash` in the account.
 
 ----
 
@@ -476,9 +475,7 @@ the test passes.
     def withdraw(right_pin, enough_cash):
         # if enough_cash == False:
         if bool(enough_cash) == False:
-            return 'DENIED'
-
-        return 'CASH'
+            return 'DENIED'        return 'CASH'
 
   the test is still green.
 
@@ -493,7 +490,6 @@ the test passes.
         # if bool(enough_cash) == False:
         if not bool(enough_cash) == True:
             return 'DENIED'
-
         return 'CASH'
 
   still green.
@@ -510,7 +506,6 @@ the test passes.
         # if not bool(enough_cash) == True:
         if not bool(enough_cash):
             return 'DENIED'
-
         return 'CASH'
 
   green.
@@ -528,7 +523,6 @@ the test passes.
         # if not bool(enough_cash):
         if not enough_cash:
             return 'DENIED'
-
         return 'CASH'
 
   still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``.
@@ -541,7 +535,6 @@ the test passes.
     def withdraw(right_pin, enough_cash):
         if not enough_cash:
             return 'DENIED'
-
         return 'CASH'
 
 * I add a git_ commit message in the other terminal_
@@ -555,7 +548,7 @@ the test passes.
 When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
 
 * it returns :red:`'DENIED'` if there is :red:`NOT enough cash` in the account
-* it gives me :green:`'CASH'` if the :ref:`condition<if statements>` is NOT met
+* it gives me :green:`'CASH'` if the above :ref:`condition<if statements>` is NOT met
 
 .. code-block:: python
 
@@ -582,7 +575,7 @@ test_wrong_pin_enough_cash
   ==================  ======================= =================
   PIN                 cash                    withdrawal
   ==================  ======================= =================
-  :red:`wrong PIN`    :green:`enough cash`   :red:`DENIED`
+  :red:`wrong PIN`    :green:`enough cash`    :red:`DENIED`
   ==================  ======================= =================
 
   .. code-block:: python
@@ -608,7 +601,7 @@ test_wrong_pin_enough_cash
 
     AssertionError: 'CASH' != 'DENIED'
 
-  because the ``withdraw`` :ref:`function<what is a function?>` returned :green:`'CASH'` and the :ref:`assertion<what is an assertion?>` expects :red:`DENIED`. Why is this ATM giving :green:`'CASH'` when the :red:`wrong PIN` is entered?
+  because the ``withdraw`` :ref:`function<what is a function?>` returned :green:`'CASH'` and the :ref:`assertion<what is an assertion?>` expects :red:`DENIED`. Why is this ATM giving me :green:`'CASH'` when I enter the :red:`wrong PIN`?
 
 ----
 
@@ -627,10 +620,8 @@ I add an :ref:`if statement<if statements>` for this case to ``atm.py``
   def withdraw(right_pin, enough_cash):
       if right_pin == False:
           return 'DENIED'
-
       if not enough_cash:
           return 'DENIED'
-
       return 'CASH'
 
 the test passes.
@@ -653,10 +644,8 @@ the test passes.
         # if right_pin == False:
         if bool(right_pin) == False:
             return 'DENIED'
-
         if not enough_cash:
             return 'DENIED'
-
         return 'CASH'
 
   the test is still green.
@@ -672,10 +661,8 @@ the test passes.
         # if bool(right_pin) == False:
         if not bool(right_pin) == True:
             return 'DENIED'
-
         if not enough_cash:
             return 'DENIED'
-
         return 'CASH'
 
   still green.
@@ -692,10 +679,8 @@ the test passes.
         # if not bool(right_pin) == True:
         if not bool(right_pin):
             return 'DENIED'
-
         if not enough_cash:
             return 'DENIED'
-
         return 'CASH'
 
   green.
@@ -713,10 +698,8 @@ the test passes.
         # if not bool(right_pin):
         if not right_pin:
             return 'DENIED'
-
         if not enough_cash:
             return 'DENIED'
-
         return 'CASH'
 
   still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``.
@@ -729,10 +712,8 @@ the test passes.
     def withdraw(right_pin, enough_cash):
         if not right_pin:
             return 'DENIED'
-
         if not enough_cash:
             return 'DENIED'
-
         return 'CASH'
 
 * I add a git_ commit message in the other terminal_
@@ -745,9 +726,9 @@ the test passes.
 
 When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
 
-* it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered
-* it returns :red:`'DENIED'` if there is :red:`NOT enough cash` in the account
-* it gives me :green:`'CASH'` if the above :ref:`conditions<if statements>` are NOT met
+* it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered.
+* it returns :red:`'DENIED'` if there is :red:`NOT enough cash` in the account.
+* it gives me :green:`'CASH'` if the above :ref:`conditions<if statements>` are NOT met.
 
 .. code-block:: python
 
@@ -763,13 +744,19 @@ What :ref:`binary operation<truth table: Binary Operations>` is the ``withdraw``
 test_wrong_pin_not_enough_cash
 *********************************************************************************
 
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
 * I go back to the terminal_ where the tests are running
 * I add a test with an :ref:`assertion<what is an assertion?>` for the last case, which is when the :red:`wrong PIN` is entered AND there is :red:`NOT enough cash` in the account, to ``test_atm.py``
 
   ==================  ======================= =================
   PIN                 cash                    withdrawal
   ==================  ======================= =================
-  :red:`wrong PIN`    :red:`NOT enough cash` :red:`DENIED`
+  :red:`wrong PIN`    :red:`NOT enough cash`  :red:`DENIED`
   ==================  ======================= =================
 
   .. code-block:: python
@@ -777,6 +764,37 @@ test_wrong_pin_not_enough_cash
     :emphasize-lines: 3-9
 
             self.assertEqual(reality, my_expectation)
+
+        def test_wrong_pin_not_enough_cash(self):
+            my_expectation = 'CASH'
+            reality = src.atm.withdraw(
+                right_pin=False,
+                enough_cash=False,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'DENIED' != 'CASH'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change :green:`'CASH'` to :red:`'DENIED'` in :ref:`test_wrong_pin_not_enough_cash`
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 2
 
         def test_wrong_pin_not_enough_cash(self):
             my_expectation = 'DENIED'
@@ -789,7 +807,7 @@ test_wrong_pin_not_enough_cash
 
     # Exceptions seen
 
-  the test is still green.
+  the test passes.
 
   .. code-block:: python
 
@@ -797,6 +815,14 @@ test_wrong_pin_not_enough_cash
     withdraw(right_pin=False, enough_cash=True ) -> 'DENIED'
     withdraw(right_pin=True , enough_cash=False) -> 'DENIED'
     withdraw(right_pin=True , enough_cash=True ) -> 'CASH'
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_wrong_pin_not_enough_cash'
 
 When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
 
@@ -850,11 +876,9 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 
 ----
 
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
+*********************************************************************************
+extract denied variable
+*********************************************************************************
 
 * I add a :ref:`global variable<what is a variable?>` to remove repetition of :red:`'DENIED'` from the tests because three of them use it, in ``test_atm.py``
 
@@ -870,8 +894,6 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 
 
     class TestATM(unittest.TestCase):
-
-  this way I do not need to use a :ref:`variable<what is a variable?>` in each test, they can all use the :ref:`global variable<what is a variable?>`.
 
 * I use the new :ref:`global variable<what is a variable?>` for ``my_expectation`` in :ref:`test_right_pin_not_enough_cash`
 
@@ -980,7 +1002,7 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_wrong_pin_not_enough_cash'
+    'extract denied variable'
 
 ----
 
@@ -995,8 +1017,8 @@ PIN                 cash                    withdrawal
 ==================  ======================= =================
 :green:`right PIN`  :green:`enough cash`    :green:`CASH`
 :green:`right PIN`  :red:`NOT enough cash`  :red:`DENIED`
-:red:`wrong PIN`    :green:`enough cash`   :red:`DENIED`
-:red:`wrong PIN`    :red:`NOT enough cash` :red:`DENIED`
+:red:`wrong PIN`    :green:`enough cash`    :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough cash`  :red:`DENIED`
 ==================  ======================= =================
 
 I want to add a :ref:`condition<if statements>` for a daily limit on how much can be taken from the account. The inputs for the ATM will then be
@@ -1085,7 +1107,6 @@ PIN                 cash                   daily limit             withdrawal
 
         if not enough_cash:
             return 'DENIED'
-
         return 'CASH'
 
   the terminal_ is my friend, and shows
@@ -1154,7 +1175,6 @@ PIN                 cash                   daily limit             withdrawal
 
         if not enough_cash:
             return 'DENIED'
-
         return 'CASH'
 
   the test passes.
@@ -1219,7 +1239,6 @@ PIN                 cash                   daily limit             withdrawal
         if not enough_cash:
             # return 'DENIED'
             return denied
-
         return 'CASH'
 
   still green.
@@ -1242,7 +1261,6 @@ PIN                 cash                   daily limit             withdrawal
 
         if not enough_cash:
             return denied
-
         return 'CASH'
 
 * I add a git_ commit message in the other terminal_
@@ -2701,7 +2719,6 @@ PIN                 cash                 daily limit             card expired   
 
         if not enough_cash:
             return denied
-
         return 'CASH'
 
   the test passes.
