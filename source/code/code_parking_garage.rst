@@ -1,12 +1,12 @@
 
 #################################################################################
-Automated Teller Machine: tests and solutions
+Parking Garage: tests and solutions
 #################################################################################
 
 ----
 
 *********************************************************************************
-makePythonTdd ATM
+makePythonTdd ParkingGarage
 *********************************************************************************
 
 .. tab-set::
@@ -15,9 +15,9 @@ makePythonTdd ATM
   .. tab-item:: WSL/Linux/Mac
     :sync: unix
 
-    the code in ``makePythonTdd.sh`` from :ref:`Automated Teller Machine`
+    the code in ``makePythonTdd.sh`` from :ref:`Parking Garage`
 
-      .. literalinclude:: atm/make_tdd/makePythonTddATM.sh
+      .. literalinclude:: parking_garage/make_tdd/makePythonTddParkingGarage.sh
         :language: python
         :linenos:
         :emphasize-lines: 2-3, 5, 12, 20
@@ -25,9 +25,9 @@ makePythonTdd ATM
   .. tab-item:: no WSL
     :sync: no_wsl
 
-    the code in ``makePythonTdd.ps1`` from :ref:`Automated Teller Machine`
+    the code in ``makePythonTdd.ps1`` from :ref:`Parking Garage`
 
-      .. literalinclude:: atm/make_tdd/makePythonTddATM.ps1
+      .. literalinclude:: parking_garage/make_tdd/makePythonTddParkingGarage.ps1
         :language: Powershell
         :linenos:
         :emphasize-lines: 1-2, 4, 11, 19
@@ -35,23 +35,23 @@ makePythonTdd ATM
 ----
 
 *********************************************************************************
-Automated Teller Machine: tests
+Parking Garage: tests
 *********************************************************************************
 
-the code in ``atm/tests/test_atm.py`` from :ref:`Automated Teller Machine`
+the code in ``parking_garage/tests/test_parking_garage.py`` from :ref:`Parking Garage`
 
-.. literalinclude:: atm/test_atm.py
+.. literalinclude:: parking_garage/test_parking_garage.py
   :language: python
   :linenos:
 
 ----
 
 *********************************************************************************
-Automated Teller Machine: solution
+Parking Garage: solution
 *********************************************************************************
 
-the code in ``atm/src/atm.py`` from :ref:`Automated Teller Machine`
+the code in ``parking_garage/src/parking_garage.py`` from :ref:`Parking Garage`
 
-.. literalinclude:: atm/atm.py
+.. literalinclude:: parking_garage/parking_garage.py
   :language: python
   :linenos:

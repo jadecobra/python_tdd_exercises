@@ -1,12 +1,12 @@
 
 #################################################################################
-Automated Teller Machine: tests and solutions
+Elevator: tests and solutions
 #################################################################################
 
 ----
 
 *********************************************************************************
-makePythonTdd ATM
+makePythonTdd Elevator
 *********************************************************************************
 
 .. tab-set::
@@ -15,9 +15,9 @@ makePythonTdd ATM
   .. tab-item:: WSL/Linux/Mac
     :sync: unix
 
-    the code in ``makePythonTdd.sh`` from :ref:`Automated Teller Machine`
+    the code in ``makePythonTdd.sh`` from :ref:`Elevator`
 
-      .. literalinclude:: atm/make_tdd/makePythonTddATM.sh
+      .. literalinclude:: elevator/make_tdd/makePythonTddElevator.sh
         :language: python
         :linenos:
         :emphasize-lines: 2-3, 5, 12, 20
@@ -25,9 +25,9 @@ makePythonTdd ATM
   .. tab-item:: no WSL
     :sync: no_wsl
 
-    the code in ``makePythonTdd.ps1`` from :ref:`Automated Teller Machine`
+    the code in ``makePythonTdd.ps1`` from :ref:`Elevator`
 
-      .. literalinclude:: atm/make_tdd/makePythonTddATM.ps1
+      .. literalinclude:: elevator/make_tdd/makePythonTddElevator.ps1
         :language: Powershell
         :linenos:
         :emphasize-lines: 1-2, 4, 11, 19
@@ -35,23 +35,23 @@ makePythonTdd ATM
 ----
 
 *********************************************************************************
-Automated Teller Machine: tests
+Elevator: tests
 *********************************************************************************
 
-the code in ``atm/tests/test_atm.py`` from :ref:`Automated Teller Machine`
+the code in ``elevator/tests/test_elevator.py`` from :ref:`Elevator`
 
-.. literalinclude:: atm/test_atm.py
+.. literalinclude:: elevator/test_elevator.py
   :language: python
   :linenos:
 
 ----
 
 *********************************************************************************
-Automated Teller Machine: solution
+Elevator: solution
 *********************************************************************************
 
-the code in ``atm/src/atm.py`` from :ref:`Automated Teller Machine`
+the code in ``elevator/src/elevator.py`` from :ref:`Elevator`
 
-.. literalinclude:: atm/atm.py
+.. literalinclude:: elevator/elevator.py
   :language: python
   :linenos:

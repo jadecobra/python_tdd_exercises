@@ -1,12 +1,12 @@
 
 #################################################################################
-Automated Teller Machine: tests and solutions
+Microwave: tests and solutions
 #################################################################################
 
 ----
 
 *********************************************************************************
-makePythonTdd ATM
+makePythonTdd Microwave
 *********************************************************************************
 
 .. tab-set::
@@ -15,9 +15,9 @@ makePythonTdd ATM
   .. tab-item:: WSL/Linux/Mac
     :sync: unix
 
-    the code in ``makePythonTdd.sh`` from :ref:`Automated Teller Machine`
+    the code in ``makePythonTdd.sh`` from :ref:`Microwave`
 
-      .. literalinclude:: atm/make_tdd/makePythonTddATM.sh
+      .. literalinclude:: microwave/make_tdd/makePythonTddMicrowave.sh
         :language: python
         :linenos:
         :emphasize-lines: 2-3, 5, 12, 20
@@ -25,9 +25,9 @@ makePythonTdd ATM
   .. tab-item:: no WSL
     :sync: no_wsl
 
-    the code in ``makePythonTdd.ps1`` from :ref:`Automated Teller Machine`
+    the code in ``makePythonTdd.ps1`` from :ref:`Microwave`
 
-      .. literalinclude:: atm/make_tdd/makePythonTddATM.ps1
+      .. literalinclude:: microwave/make_tdd/makePythonTddMicrowave.ps1
         :language: Powershell
         :linenos:
         :emphasize-lines: 1-2, 4, 11, 19
@@ -35,23 +35,23 @@ makePythonTdd ATM
 ----
 
 *********************************************************************************
-Automated Teller Machine: tests
+Microwave: tests
 *********************************************************************************
 
-the code in ``atm/tests/test_atm.py`` from :ref:`Automated Teller Machine`
+the code in ``microwave/tests/test_microwave.py`` from :ref:`Microwave`
 
-.. literalinclude:: atm/test_atm.py
+.. literalinclude:: microwave/test_microwave.py
   :language: python
   :linenos:
 
 ----
 
 *********************************************************************************
-Automated Teller Machine: solution
+Microwave: solution
 *********************************************************************************
 
-the code in ``atm/src/atm.py`` from :ref:`Automated Teller Machine`
+the code in ``microwave/src/microwave.py`` from :ref:`Microwave`
 
-.. literalinclude:: atm/atm.py
+.. literalinclude:: microwave/microwave.py
   :language: python
   :linenos:
