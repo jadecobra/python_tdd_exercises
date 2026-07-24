@@ -1283,6 +1283,15 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 test_below_limit_right_pin_enough_cash
 *********************************************************************************
 
+The :ref:`truth table` for if the :green:`right PIN` is entered AND there is :green:`enough cash` in the account, is
+
+==================  ======================= ======================  ==================
+PIN                 cash                    daily limit             withdrawal
+==================  ======================= ======================  ==================
+:green:`right PIN`  :green:`enough cash`    :green:`above limit`    :red:`DENIED`
+:green:`right PIN`  :green:`enough cash`    :red:`NOT above limit`  :green:`CASH`
+==================  ======================= ======================  ==================
+
 * I go back to the terminal_ where the tests are running
 
 * I do not need to add anything to :ref:`test_right_pin_enough_cash` which is for when the :green:`right PIN` is entered, AND there is :green:`enough cash` in the account, and it is :red:`NOT above limit` for daily withdrawals, because the :ref:`default value<test_optional_arguments>` for the ``above_daily_limit`` parameter of the ``withdraw`` :ref:`function<what is a function?>` is :ref:`False<test_what_is_false>`
@@ -1369,8 +1378,8 @@ The :ref:`truth table` for if the :green:`right PIN` is entered AND there is :re
 ==================  ======================= ======================  ==================
 PIN                 cash                    daily limit             withdrawal
 ==================  ======================= ======================  ==================
-:green:`right PIN`  :red:`NOT enough cash` :green:`above limit`    :red:`DENIED`
-:green:`right PIN`  :red:`NOT enough cash` :red:`NOT above limit`  :red:`DENIED`
+:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :red:`DENIED`
+:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :red:`DENIED`
 ==================  ======================= ======================  ==================
 
 * I go back to the terminal_ where the tests are running
@@ -1379,7 +1388,7 @@ PIN                 cash                    daily limit             withdrawal
   ==================  ======================= ======================  ==================
   PIN                 cash                    daily limit             withdrawal
   ==================  ======================= ======================  ==================
-  :green:`right PIN`  :red:`NOT enough cash` :green:`above limit`    :red:`DENIED`
+  :green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :red:`DENIED`
   ==================  ======================= ======================  ==================
 
   .. code-block:: python
@@ -1452,6 +1461,17 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 test_below_limit_right_pin_not_enough_cash
 *********************************************************************************
 
+The :ref:`truth table` for if the :green:`right PIN` is entered AND there is :red:`NOT enough cash` in the account, is
+
+==================  ======================= ======================  ==================
+PIN                 cash                    daily limit             withdrawal
+==================  ======================= ======================  ==================
+:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :red:`DENIED`
+:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :red:`DENIED`
+==================  ======================= ======================  ==================
+
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
@@ -1465,7 +1485,7 @@ test_below_limit_right_pin_not_enough_cash
   ==================  ======================= ======================  ==================
   PIN                 cash                    daily limit             withdrawal
   ==================  ======================= ======================  ==================
-  :green:`right PIN`  :red:`NOT enough cash` :red:`NOT above limit`  :red:`DENIED`
+  :green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :red:`DENIED`
   ==================  ======================= ======================  ==================
 
   .. code-block:: python
@@ -1578,16 +1598,17 @@ The :ref:`truth table` for if the :red:`wrong PIN` is entered AND there is :gree
 ==================  ======================= ======================  ==================
 PIN                 cash                    daily limit             withdrawal
 ==================  ======================= ======================  ==================
-:red:`wrong PIN`    :green:`enough cash`   :green:`above limit`    :red:`DENIED`
-:red:`wrong PIN`    :green:`enough cash`   :red:`NOT above limit`  :red:`DENIED`
+:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`DENIED`
+:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`DENIED`
 ==================  ======================= ======================  ==================
+
 * I go back to the terminal_ where the tests are running
 * I add a value for the ``above_daily_limit`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_wrong_pin_enough_cash`, for the case where the :red:`wrong PIN` is entered, there is :green:`enough cash` in the account, and it is :green:`above limit` for daily withdrawals
 
   ==================  ======================= ======================  ==================
   PIN                 cash                    daily limit             withdrawal
   ==================  ======================= ======================  ==================
-  :red:`wrong PIN`    :green:`enough cash`   :green:`above limit`    :red:`DENIED`
+  :red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`DENIED`
   ==================  ======================= ======================  ==================
 
   .. code-block:: python
@@ -1649,6 +1670,17 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 test_below_limit_wrong_pin_enough_cash
 *********************************************************************************
 
+The :ref:`truth table` for if the :red:`wrong PIN` is entered AND there is :green:`enough cash` in the account, is
+
+==================  ======================= ======================  ==================
+PIN                 cash                    daily limit             withdrawal
+==================  ======================= ======================  ==================
+:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`DENIED`
+:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`DENIED`
+==================  ======================= ======================  ==================
+
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
@@ -1661,7 +1693,7 @@ test_below_limit_wrong_pin_enough_cash
   ==================  ======================= ======================  ==================
   PIN                 cash                    daily limit             withdrawal
   ==================  ======================= ======================  ==================
-  :red:`wrong PIN`    :green:`enough cash`   :red:`NOT above limit`  :red:`DENIED`
+  :red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`DENIED`
   ==================  ======================= ======================  ==================
 
   .. code-block:: python
@@ -1693,7 +1725,7 @@ test_below_limit_wrong_pin_enough_cash
 
 ----
 
-* I change :green:`'CASH'` to :red:`'DENIED'` in :ref:`test_below_limit_wrong_pin_enough_cash`
+* I change :green:`'CASH'` to :red:`DENIED` in :ref:`test_below_limit_wrong_pin_enough_cash`
 
   .. code-block:: python
     :lineno-start: 49
@@ -1766,8 +1798,8 @@ The :ref:`truth table` for if the :red:`wrong PIN` is entered AND there is :red:
 ==================  ======================= ======================  ==================
 PIN                 cash                    daily limit             withdrawal
 ==================  ======================= ======================  ==================
-:red:`wrong PIN`    :red:`NOT enough cash` :green:`above limit`    :red:`DENIED`
-:red:`wrong PIN`    :red:`NOT enough cash` :red:`NOT above limit`  :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`DENIED`
 ==================  ======================= ======================  ==================
 
 * I go back to the terminal_ where the tests are running
@@ -1776,7 +1808,7 @@ PIN                 cash                    daily limit             withdrawal
   ==================  ======================= ======================  ==================
   PIN                 cash                    daily limit             withdrawal
   ==================  ======================= ======================  ==================
-  :red:`wrong PIN`    :red:`NOT enough cash` :green:`above limit`    :red:`DENIED`
+  :red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`DENIED`
   ==================  ======================= ======================  ==================
 
   .. code-block:: python
@@ -1847,6 +1879,17 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 test_below_limit_wrong_pin_not_enough_cash
 *********************************************************************************
 
+The :ref:`truth table` for if the :red:`wrong PIN` is entered AND there is :red:`NOT enough cash` in the account, is
+
+==================  ======================= ======================  ==================
+PIN                 cash                    daily limit             withdrawal
+==================  ======================= ======================  ==================
+:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`DENIED`
+==================  ======================= ======================  ==================
+
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
@@ -1860,7 +1903,7 @@ test_below_limit_wrong_pin_not_enough_cash
   ==================  ======================= ======================  ==================
   PIN                 cash                    daily limit             withdrawal
   ==================  ======================= ======================  ==================
-  :red:`wrong PIN`    :red:`NOT enough cash` :red:`NOT above limit`  :red:`DENIED`
+  :red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`DENIED`
   ==================  ======================= ======================  ==================
 
   .. code-block:: python
@@ -1893,7 +1936,7 @@ test_below_limit_wrong_pin_not_enough_cash
 
 ----
 
-* I change :green:`'CASH'` to :red:`'DENIED'` in :ref:`test_below_limit_wrong_pin_not_enough_cash`
+* I change :green:`'CASH'` to :red:`DENIED` in :ref:`test_below_limit_wrong_pin_not_enough_cash`
 
   .. code-block:: python
     :lineno-start: 64
@@ -2130,7 +2173,7 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 remove reality variable
 *********************************************************************************
 
-I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the tests. I do not need the ``reality`` :ref:`variable<what is a variable?>` as a middle man because I only use the :ref:`variable<what is a variable?>` once for each test.
+I can :ref:`call<what is a call?>` the ``withdraw`` :ref:`function<what is a function?>` directly in all the :ref:`assertions<what is an assertion?>` of the tests. I do not need the ``reality`` :ref:`variable<what is a variable?>` as a middle man because I only use the :ref:`variable<what is a variable?>` once in each test.
 
 * I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_below_limit_wrong_pin_not_enough_cash`
 
@@ -2217,7 +2260,7 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
 
         def test_below_limit_wrong_pin_not_enough_cash(self):
 
-* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_below_limit_wrong_pin_not_enough_cash`
+* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_below_limit_wrong_pin_enough_cash`
 
   .. code-block:: python
     :lineno-start: 49
@@ -2241,7 +2284,7 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
 
   green.
 
-* I remove the commented lines from :ref:`test_below_limit_wrong_pin_not_enough_cash`
+* I remove the commented lines from :ref:`test_below_limit_wrong_pin_enough_cash`
 
   .. code-block:: python
     :lineno-start: 49
@@ -2257,7 +2300,7 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
 
         def test_above_limit_wrong_pin_not_enough_cash(self):
 
-* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_above_limit_wrong_pin_not_enough_cash`
+* I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_above_limit_wrong_pin_enough_cash`
 
   .. code-block:: python
     :lineno-start: 41
@@ -2283,7 +2326,7 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
 
   still green.
 
-* I remove the commented lines from :ref:`test_above_limit_wrong_pin_not_enough_cash`
+* I remove the commented lines from :ref:`test_above_limit_wrong_pin_enough_cash`
 
   .. code-block:: python
     :lineno-start: 41
@@ -2473,12 +2516,6 @@ I call the ``withdraw`` :ref:`function<what is a function?>` directly in all the
 
     git commit -am 'remove reality variable'
 
-----
-
-*********************************************************************************
-test_card_w_below_limit_right_pin_enough_cash
-*********************************************************************************
-
 The :ref:`truth table` for the **Automated Teller Machine** is now
 
 ==================  ======================= ======================  ==================
@@ -2486,17 +2523,17 @@ PIN                 cash                    daily limit             withdrawal
 ==================  ======================= ======================  ==================
 :green:`right PIN`  :green:`enough cash`    :green:`above limit`    :red:`DENIED`
 :green:`right PIN`  :green:`enough cash`    :red:`NOT above limit`  :green:`CASH`
-:green:`right PIN`  :red:`NOT enough cash` :green:`above limit`    :red:`DENIED`
-:green:`right PIN`  :red:`NOT enough cash` :red:`NOT above limit`  :red:`DENIED`
+:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :red:`DENIED`
+:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :red:`DENIED`
 ==================  ======================= ======================  ==================
 
 ==================  ======================= ======================  ==================
 PIN                 cash                    daily limit             withdrawal
 ==================  ======================= ======================  ==================
-:red:`wrong PIN`    :green:`enough cash`   :green:`above limit`    :red:`DENIED`
-:red:`wrong PIN`    :green:`enough cash`   :red:`NOT above limit`  :red:`DENIED`
-:red:`wrong PIN`    :red:`NOT enough cash` :green:`above limit`    :red:`DENIED`
-:red:`wrong PIN`    :red:`NOT enough cash` :red:`NOT above limit`  :red:`DENIED`
+:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`DENIED`
+:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`DENIED`
 ==================  ======================= ======================  ==================
 
 What if the bank card has expired? The inputs for the **ATM** will then be
@@ -2506,13 +2543,20 @@ What if the bank card has expired? The inputs for the **ATM** will then be
 * is the cash I want smaller or bigger than what is in the account?
 * will the withdrawal put the account above or below the daily limit for withdrawals?
 
+----
+
+*********************************************************************************
+test_card_w_below_limit_right_pin_enough_cash
+*********************************************************************************
+
+
 The :ref:`truth table` for if the :green:`right PIN` is entered, AND there is :green:`enough cash` in the account, AND it is :red:`NOT above limit` for daily withdrawals is
 
 ==================  ===================== ======================  ==================  =============
-PIN                 cash                 daily limit             card expired        withdrawal
+PIN                 cash                  daily limit             card expired        withdrawal
 ==================  ===================== ======================  ==================  =============
-:green:`right PIN`  :green:`enough cash` :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
-:green:`right PIN`  :green:`enough cash` :red:`NOT above limit`  :red:`NOT expired`  :green:`CASH`
+:green:`right PIN`  :green:`enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
+:green:`right PIN`  :green:`enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :green:`CASH`
 ==================  ===================== ======================  ==================  =============
 
 ----
@@ -2527,9 +2571,9 @@ PIN                 cash                 daily limit             card expired   
 * I add a value for the ``card_expired`` parameter to the :ref:`call<how to call a function with input>` to the ``withdraw`` :ref:`function<what is a function?>` for the case where the :green:`right PIN` is entered, there is :green:`enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :red:`NOT expired`, in :ref:`test_below_limit_right_pin_enough_cash`
 
   ==================  ===================== ======================  ==================  =============
-  PIN                 cash                 daily limit             card expired        withdrawal
+  PIN                 cash                  daily limit             card expired        withdrawal
   ==================  ===================== ======================  ==================  =============
-  :green:`right PIN`  :green:`enough cash` :red:`NOT above limit`  :red:`NOT expired`  :green:`CASH`
+  :green:`right PIN`  :green:`enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :green:`CASH`
   ==================  ===================== ======================  ==================  =============
 
   .. code-block:: python
@@ -2627,7 +2671,7 @@ PIN                 cash                 daily limit             card expired   
 
 ----
 
-* I add the value for the ``above_daily_limit`` parameter to :ref:`test_below_limit_right_pin_enough_cash` to make it clearer
+* I add the value for the ``above_daily_limit`` parameter to :ref:`test_below_limit_right_pin_enough_cash` to make the :ref:`assertion<what is an assertion?>` clearer, in ``test_atm.py``
 
   .. code-block:: python
     :lineno-start: 10
@@ -2651,9 +2695,9 @@ PIN                 cash                 daily limit             card expired   
 * I add an :ref:`assertion<what is an assertion?>` for when the :green:`right PIN` is entered, there is :green:`enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :green:`expired`
 
   ==================  ===================== ======================  ==================  =============
-  PIN                 cash                 daily limit             card expired        withdrawal
+  PIN                 cash                  daily limit             card expired        withdrawal
   ==================  ===================== ======================  ==================  =============
-  :green:`right PIN`  :green:`enough cash` :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
+  :green:`right PIN`  :green:`enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
   ==================  ===================== ======================  ==================  =============
 
   .. code-block:: python
@@ -2688,30 +2732,23 @@ PIN                 cash                 daily limit             card expired   
 
     AssertionError: 'CASH' != 'DENIED'
 
+  The **ATM** should not give me :green:`CASH` if the bank card has :green:`expired`.
+
 * I add an :ref:`if statement<if statements>` to the ``withdraw`` :ref:`function<what is a function?>` in ``atm.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 7-8
+    :emphasize-lines: 6-7
 
     def withdraw(
             right_pin, enough_cash,
             above_daily_limit=False, card_expired=False,
         ):
         denied = 'DENIED'
-
         if card_expired == True:
             return denied
-
         if above_daily_limit:
             return denied
-
-        if not right_pin:
-            return denied
-
-        if not enough_cash:
-            return denied
-        return 'CASH'
 
   the test passes.
 
@@ -2730,19 +2767,22 @@ PIN                 cash                 daily limit             card expired   
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 7
+    :emphasize-lines: 6
 
     def withdraw(
-        right_pin, enough_cash,
-        above_daily_limit=False, card_expired=False,
-    ):
+            right_pin, enough_cash,
+            above_daily_limit=False, card_expired=False,
+        ):
         denied = 'DENIED'
-
         if card_expired:
             return denied
-
         if above_daily_limit:
             return denied
+        if not right_pin:
+            return denied
+        if not enough_cash:
+            return denied
+        return 'CASH'
 
   the test is still green.
 
@@ -2789,11 +2829,13 @@ test_card_w_above_limit_right_pin_enough_cash
 The :ref:`truth table` for if the :green:`right PIN` is entered, AND there is :green:`enough cash` in the account, AND it is :green:`above limit` for daily withdrawals is
 
 ==================  ===================== ======================  ==================  =============
-PIN                 cash                 daily limit             card expired        withdrawal
+PIN                 cash                  daily limit             card expired        withdrawal
 ==================  ===================== ======================  ==================  =============
-:green:`right PIN`  :green:`enough cash` :green:`above limit`    :green:`expired`    :red:`DENIED`
-:green:`right PIN`  :green:`enough cash` :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
+:green:`right PIN`  :green:`enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED`
+:green:`right PIN`  :green:`enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
 ==================  ===================== ======================  ==================  =============
+
+----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -2805,13 +2847,13 @@ PIN                 cash                 daily limit             card expired   
 * I add a value for the ``card_expired`` parameter to the :ref:`call<how to call a function with input>` to the ``withdraw`` :ref:`function<what is a function?>` for the case where the :green:`right PIN` is entered, there is :green:`enough cash` in the account, it is :green:`above limit` for daily withdrawals, and the card has :green:`expired`, in :ref:`test_above_limit_right_pin_enough_cash`
 
   ==================  ===================== ======================  ==================  =============
-  PIN                 cash                 daily limit             card expired        withdrawal
+  PIN                 cash                  daily limit             card expired        withdrawal
   ==================  ===================== ======================  ==================  =============
-  :green:`right PIN`  :green:`enough cash` :green:`above limit`    :green:`expired`    :red:`DENIED`
+  :green:`right PIN`  :green:`enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED`
   ==================  ===================== ======================  ==================  =============
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 30
     :emphasize-lines: 7
 
         def test_above_limit_right_pin_enough_cash(self):
@@ -2839,13 +2881,13 @@ PIN                 cash                 daily limit             card expired   
 * I add an :ref:`assertion<what is an assertion?>` for the case where the :green:`right PIN` is entered, there is :green:`enough cash` in the account, it is :green:`above limit` for daily withdrawals, and the card has :red:`NOT expired`
 
   ==================  ===================== ======================  ==================  =============
-  PIN                 cash                 daily limit             card expired        withdrawal
+  PIN                 cash                  daily limit             card expired        withdrawal
   ==================  ===================== ======================  ==================  =============
-  :green:`right PIN`  :green:`enough cash` :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
+  :green:`right PIN`  :green:`enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
   ==================  ===================== ======================  ==================  =============
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 30
     :emphasize-lines: 11-19
 
         def test_above_limit_right_pin_enough_cash(self):
@@ -2884,11 +2926,11 @@ PIN                 cash                 daily limit             card expired   
 
 ----
 
-* I change :green:`'CASH'` to :red:`'DENIED'` in :ref:`test_above_limit_right_pin_enough_cash`
+* I change :green:`'CASH'` to :red:`DENIED` in :ref:`test_above_limit_right_pin_enough_cash`
 
   .. code-block:: python
     :lineno-start: 41
-    :emphasize-lines: 6
+    :emphasize-lines: 8
 
             self.assertEqual(
                 src.atm.withdraw(
@@ -2926,7 +2968,7 @@ PIN                 cash                 daily limit             card expired   
 * I change the name of the test from :ref:`test_above_limit_right_pin_enough_cash` to :ref:`test_card_w_above_limit_right_pin_enough_cash`
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 20
     :emphasize-lines: 11
 
             self.assertEqual(
@@ -2953,6 +2995,7 @@ PIN                 cash                 daily limit             card expired   
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :emphasize-lines: 1-2
 
     git commit -am \
     'add test_card_w_above_limit_right_pin_enough_cash'
@@ -2966,10 +3009,10 @@ test_card_w_above_limit_right_pin_not_enough_cash
 The :ref:`truth table` for if the :green:`right PIN` is entered AND there is :red:`NOT enough cash` in the account, AND it is :green:`above limit` for daily withdrawals is
 
 ==================  ======================= ======================  ==================  =============
-PIN                 cash                   daily limit             card expired        withdrawal
+PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
-:green:`right PIN`  :red:`NOT enough cash` :green:`above limit`    :green:`expired`    :red:`DENIED`
-:green:`right PIN`  :red:`NOT enough cash` :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
+:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED`
+:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
 ==================  ======================= ======================  ==================  =============
 
 ----
@@ -2984,14 +3027,14 @@ PIN                 cash                   daily limit             card expired 
 * I add a value for the ``card_expired`` parameter to the :ref:`call<how to call a function with input>` to the ``withdraw`` :ref:`function<what is a function?>` for the case where the :green:`right PIN` is entered, there is :red:`NOT enough cash` in the account, it is :green:`above limit` for daily withdrawals, and the card has :green:`expired`
 
   ==================  ======================= ======================  ==================  =============
-  PIN                 cash                   daily limit             card expired        withdrawal
+  PIN                 cash                    daily limit             card expired        withdrawal
   ==================  ======================= ======================  ==================  =============
-  :green:`right PIN`  :red:`NOT enough cash` :green:`above limit`    :green:`expired`    :red:`DENIED`
+  :green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED`
   ==================  ======================= ======================  ==================  =============
 
 
   .. code-block:: python
-    :lineno-start: 51
+    :lineno-start: 50
     :emphasize-lines: 7
 
         def test_above_limit_right_pin_not_enough_cash(self):
@@ -3019,13 +3062,13 @@ PIN                 cash                   daily limit             card expired 
 * I add an :ref:`assertion<what is an assertion?>` for when the :green:`right PIN` is entered, there is :red:`NOT enough cash` in the account, it is :green:`above limit` for daily withdrawals, and the card has :red:`NOT expired`
 
   ==================  ======================= ======================  ==================  =============
-  PIN                 cash                   daily limit             card expired        withdrawal
+  PIN                 cash                    daily limit             card expired        withdrawal
   ==================  ======================= ======================  ==================  =============
-  :green:`right PIN`  :red:`NOT enough cash` :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
+  :green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
-    :lineno-start: 51
+    :lineno-start: 50
     :emphasize-lines: 11-19
 
         def test_above_limit_right_pin_not_enough_cash(self):
@@ -3067,7 +3110,7 @@ PIN                 cash                   daily limit             card expired 
 I change my expectation to match reality in :ref:`test_above_limit_right_pin_not_enough_cash`
 
 .. code-block:: python
-  :lineno-start: 61
+  :lineno-start: 60
   :emphasize-lines: 8
 
           self.assertEqual(
@@ -3106,7 +3149,7 @@ the test passes.
 * I change the name of the test from :ref:`test_above_limit_right_pin_not_enough_cash` to :ref:`test_card_w_above_limit_right_pin_not_enough_cash`
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 40
     :emphasize-lines: 11
 
             self.assertEqual(
@@ -3147,10 +3190,10 @@ test_card_w_below_limit_right_pin_not_enough_cash
 The :ref:`truth table` for if the :green:`right PIN` is entered AND there is :red:`NOT enough cash` in the account, AND it is :red:`NOT above limit` for daily withdrawals is
 
 ==================  ======================= ======================  ==================  =============
-PIN                 cash                   daily limit             card expired        withdrawal
+PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
-:green:`right PIN`  :red:`NOT enough cash` :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
-:green:`right PIN`  :red:`NOT enough cash` :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
+:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
+:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
 ==================  ======================= ======================  ==================  =============
 
 ----
@@ -3162,16 +3205,16 @@ PIN                 cash                   daily limit             card expired 
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add values for the ``card_expired`` and ``above_daily_limit`` parameters to the :ref:`call<how to call a function with input>` to the ``withdraw`` :ref:`function<what is a function?>` for the case where the :green:`right PIN` is entered, there is :red:`NOT enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :green:`expired`
+* I add values for the ``card_expired`` and ``above_daily_limit`` parameters to the :ref:`call<how to call a function with input>` to the ``withdraw`` :ref:`function<what is a function?>` for the case where the :green:`right PIN` is entered, there is :red:`NOT enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :green:`expired` in :ref:`test_below_limit_right_pin_not_enough_cash`
 
   ==================  ======================= ======================  ==================  =============
-  PIN                 cash                   daily limit             card expired        withdrawal
+  PIN                 cash                    daily limit             card expired        withdrawal
   ==================  ======================= ======================  ==================  =============
-  :green:`right PIN`  :red:`NOT enough cash` :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
+  :green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 70
     :emphasize-lines: 6-7
 
         def test_below_limit_right_pin_not_enough_cash(self):
@@ -3199,13 +3242,13 @@ PIN                 cash                   daily limit             card expired 
 * I add an :ref:`assertion<what is an assertion?>` for when the :green:`right PIN` is entered, there is :red:`NOT enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :red:`NOT expired`
 
   ==================  ======================= ======================  ==================  =============
-  PIN                 cash                   daily limit             card expired        withdrawal
+  PIN                 cash                    daily limit             card expired        withdrawal
   ==================  ======================= ======================  ==================  =============
-  :green:`right PIN`  :red:`NOT enough cash` :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
+  :green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 70
     :emphasize-lines: 11-19
 
         def test_below_limit_right_pin_not_enough_cash(self):
@@ -3244,10 +3287,10 @@ PIN                 cash                   daily limit             card expired 
 
 ----
 
-I change :green:`'CASH'` to :red:`'DENIED'` in :ref:`test_below_limit_right_pin_not_enough_cash`
+I change :green:`'CASH'` to :red:`DENIED` in :ref:`test_below_limit_right_pin_not_enough_cash`
 
 .. code-block:: python
-  :lineno-start: 81
+  :lineno-start: 80
   :emphasize-lines: 8
 
           self.assertEqual(
@@ -3286,7 +3329,7 @@ the test passes.
 * I change the name of the test from :ref:`test_below_limit_right_pin_not_enough_cash` to :ref:`test_card_w_below_limit_right_pin_not_enough_cash`
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 60
     :emphasize-lines: 11
 
             self.assertEqual(
@@ -3327,10 +3370,10 @@ test_card_w_above_limit_wrong_pin_enough_cash
 The :ref:`truth table` for if the :red:`wrong PIN` is entered, AND there is :green:`enough cash` in the account, AND it is :green:`above limit` for daily withdrawals is
 
 ==================  ======================= ======================  ==================  =============
-PIN                 cash                   daily limit             card expired        withdrawal
+PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
-:red:`wrong PIN`    :green:`enough cash`   :green:`above limit`    :green:`expired`    :red:`DENIED`
-:red:`wrong PIN`    :green:`enough cash`   :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
+:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :green:`expired`    :red:`DENIED`
+:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
 ==================  ======================= ======================  ==================  =============
 
 ----
@@ -3345,13 +3388,13 @@ PIN                 cash                   daily limit             card expired 
 * I add a value for the ``card_expired`` parameter  to the :ref:`assertion<what is an assertion?>` in :ref:`test_above_limit_wrong_pin_enough_cash` for the case where the :red:`wrong PIN` is entered, there is :green:`enough cash` in the account, it is :green:`above limit` for daily withdrawals, and the card has :green:`expired`
 
   ==================  ======================= ======================  ==================  =============
-  PIN                 cash                   daily limit             card expired        withdrawal
+  PIN                 cash                    daily limit             card expired        withdrawal
   ==================  ======================= ======================  ==================  =============
-  :red:`wrong PIN`    :green:`enough cash`   :green:`above limit`    :green:`expired`    :red:`DENIED`
+  :red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :green:`expired`    :red:`DENIED`
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
-    :lineno-start: 91
+    :lineno-start: 90
     :emphasize-lines: 7
 
         def test_above_limit_wrong_pin_enough_cash(self):
@@ -3379,13 +3422,13 @@ PIN                 cash                   daily limit             card expired 
 * I add an :ref:`assertion<what is an assertion?>` for the case where the :red:`wrong PIN` is entered, there is :green:`enough cash` in the account, it is :green:`above limit` for daily withdrawals, and the card has :red:`NOT expired`
 
   ==================  ======================= ======================  ==================  =============
-  PIN                 cash                   daily limit             card expired        withdrawal
+  PIN                 cash                    daily limit             card expired        withdrawal
   ==================  ======================= ======================  ==================  =============
-  :red:`wrong PIN`    :green:`enough cash`   :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
+  :red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
-    :lineno-start: 91
+    :lineno-start: 90
     :emphasize-lines: 11-19
 
         def test_above_limit_wrong_pin_enough_cash(self):
@@ -3427,7 +3470,7 @@ PIN                 cash                   daily limit             card expired 
 I change my expectation to match reality in the second :ref:`assertion<what is an assertion?>` in :ref:`test_above_limit_wrong_pin_enough_cash`
 
 .. code-block:: python
-  :lineno-start: 101
+  :lineno-start: 100
   :emphasize-lines: 8
 
           self.assertEqual(
@@ -3466,7 +3509,7 @@ the test passes.
 * I change the name from :ref:`test_above_limit_wrong_pin_enough_cash` to :ref:`test_card_w_above_limit_wrong_pin_enough_cash`
 
   .. code-block:: python
-    :lineno-start: 81
+    :lineno-start: 80
     :emphasize-lines: 11
 
             self.assertEqual(
@@ -3507,10 +3550,10 @@ test_card_w_below_limit_wrong_pin_enough_cash
 The :ref:`truth table` for if the :red:`wrong PIN` is entered, AND there is :green:`enough cash` in the account, AND it is :red:`NOT above limit` for daily withdrawals is
 
 ==================  ======================= ======================  ==================  =============
-PIN                 cash                   daily limit             card expired        withdrawal
+PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
-:red:`wrong PIN`    :green:`enough cash`   :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
-:red:`wrong PIN`    :green:`enough cash`   :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
+:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
+:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
 ==================  ======================= ======================  ==================  =============
 
 ----
@@ -3524,13 +3567,13 @@ PIN                 cash                   daily limit             card expired 
 * I add values for the ``card_expired`` and ``above_daily_limit`` parameters to the :ref:`assertion<what is an assertion?>` in :ref:`test_below_limit_wrong_pin_enough_cash` for the case where the :red:`wrong PIN` is entered, there is :green:`enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :green:`expired`
 
   ==================  ======================= ======================  ==================  =============
-  PIN                 cash                   daily limit             card expired        withdrawal
+  PIN                 cash                    daily limit             card expired        withdrawal
   ==================  ======================= ======================  ==================  =============
-  :red:`wrong PIN`    :green:`enough cash`   :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
+  :red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
-    :lineno-start: 111
+    :lineno-start: 110
     :emphasize-lines: 6-7
 
         def test_below_limit_wrong_pin_enough_cash(self):
@@ -3558,13 +3601,13 @@ PIN                 cash                   daily limit             card expired 
 * I add an :ref:`assertion<what is an assertion?>` for when the :red:`wrong PIN` is entered, there is :green:`enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :red:`NOT expired`
 
   ==================  ======================= ======================  ==================  =============
-  PIN                 cash                   daily limit             card expired        withdrawal
+  PIN                 cash                    daily limit             card expired        withdrawal
   ==================  ======================= ======================  ==================  =============
-  :red:`wrong PIN`    :green:`enough cash`   :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
+  :red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
-    :lineno-start: 111
+    :lineno-start: 110
     :emphasize-lines: 11-19
 
         def test_below_limit_wrong_pin_enough_cash(self):
@@ -3603,10 +3646,10 @@ PIN                 cash                   daily limit             card expired 
 
 ----
 
-I change :green:`'CASH'` to :red:`'DENIED'` in :ref:`test_below_limit_wrong_pin_enough_cash`
+I change :green:`'CASH'` to :red:`DENIED` in :ref:`test_below_limit_wrong_pin_enough_cash`
 
 .. code-block:: python
-  :lineno-start: 121
+  :lineno-start: 120
   :emphasize-lines: 8
 
           self.assertEqual(
@@ -3645,7 +3688,7 @@ the test passes.
 * I change the name of :ref:`test_below_limit_wrong_pin_enough_cash` to :ref:`test_card_w_below_limit_wrong_pin_enough_cash`
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 100
     :emphasize-lines: 11
 
             self.assertEqual(
@@ -3686,10 +3729,10 @@ test_card_w_above_limit_wrong_pin_not_enough_cash
 The :ref:`truth table` for if the :red:`wrong PIN` is entered, AND there is :red:`NOT enough cash` in the account, AND it is :green:`above limit` for daily withdrawals is
 
 ==================  ======================= ======================  ==================  =============
-PIN                 cash                   daily limit             card expired        withdrawal
+PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
-:red:`wrong PIN`    :red:`NOT enough cash` :green:`above limit`    :green:`expired`    :red:`DENIED`
-:red:`wrong PIN`    :red:`NOT enough cash` :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
 ==================  ======================= ======================  ==================  =============
 
 ----
@@ -3704,13 +3747,13 @@ PIN                 cash                   daily limit             card expired 
 * I add a value for the ``card_expired`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_above_limit_wrong_pin_not_enough_cash` for when the :red:`wrong PIN` is entered, there is :red:`NOT enough cash` in the account, it is :green:`above limit` for daily withdrawals, and the card has :green:`expired`
 
   ==================  ======================= ======================  ==================  =============
-  PIN                 cash                   daily limit             card expired        withdrawal
+  PIN                 cash                    daily limit             card expired        withdrawal
   ==================  ======================= ======================  ==================  =============
-  :red:`wrong PIN`    :red:`NOT enough cash` :green:`above limit`    :green:`expired`    :red:`DENIED`
+  :red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED`
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
-    :lineno-start: 131
+    :lineno-start: 130
     :emphasize-lines: 7
 
         def test_above_limit_wrong_pin_not_enough_cash(self):
@@ -3738,13 +3781,13 @@ PIN                 cash                   daily limit             card expired 
 * I add an :ref:`assertion<what is an assertion?>`, for when the :red:`wrong PIN` is entered, there is :red:`NOT enough cash` in the account, it is :green:`above limit` for daily withdrawals, and the card has :red:`NOT expired`
 
   ==================  ======================= ======================  ==================  =============
-  PIN                 cash                   daily limit             card expired        withdrawal
+  PIN                 cash                    daily limit             card expired        withdrawal
   ==================  ======================= ======================  ==================  =============
-  :red:`wrong PIN`    :red:`NOT enough cash` :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
+  :red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
-    :lineno-start: 131
+    :lineno-start: 130
     :emphasize-lines: 11-19
 
         def test_above_limit_wrong_pin_not_enough_cash(self):
@@ -3786,7 +3829,7 @@ PIN                 cash                   daily limit             card expired 
 I change :green:`'CASH'` to :red:`DENIED` in the second :ref:`assertion<what is an assertion?>` of :ref:`test_above_limit_wrong_pin_not_enough_cash`
 
 .. code-block:: python
-  :lineno-start: 141
+  :lineno-start: 140
   :emphasize-lines: 8
 
           self.assertEqual(
@@ -3825,7 +3868,7 @@ the test passes.
 * I change the name of :ref:`test_above_limit_wrong_pin_not_enough_cash` to :ref:`test_card_w_above_limit_wrong_pin_not_enough_cash`
 
   .. code-block:: python
-    :lineno-start: 121
+    :lineno-start: 120
     :emphasize-lines: 11
 
             self.assertEqual(
@@ -3866,10 +3909,10 @@ test_card_w_below_limit_wrong_pin_not_enough_cash
 The :ref:`truth table` for if the :red:`wrong PIN` is entered, AND there is :red:`NOT enough cash` in the account, AND it is :red:`NOT above limit` for daily withdrawals is
 
 ==================  ======================= ======================  ==================  =============
-PIN                 cash                   daily limit             card expired        withdrawal
+PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
-:red:`wrong PIN`    :red:`NOT enough cash` :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
-:red:`wrong PIN`    :red:`NOT enough cash` :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
 ==================  ======================= ======================  ==================  =============
 
 ----
@@ -3885,13 +3928,13 @@ PIN                 cash                   daily limit             card expired 
 * I add values for the ``card_expired`` and ``above_daily_limit`` parameters to the :ref:`assertion<what is an assertion?>` in :ref:`test_below_limit_wrong_pin_not_enough_cash` for when the :red:`wrong PIN` is entered, there is :red:`NOT enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals and the card has :green:`expired`
 
   ==================  ======================= ======================  ==================  =============
-  PIN                 cash                   daily limit             card expired        withdrawal
+  PIN                 cash                    daily limit             card expired        withdrawal
   ==================  ======================= ======================  ==================  =============
-  :red:`wrong PIN`    :red:`NOT enough cash` :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
+  :red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
-    :lineno-start: 151
+    :lineno-start: 150
     :emphasize-lines: 7
 
         def test_below_limit_wrong_pin_not_enough_cash(self):
@@ -3920,13 +3963,13 @@ PIN                 cash                   daily limit             card expired 
 * I add an :ref:`assertion<what is an assertion?>` for when the :red:`wrong PIN` is entered, there is :red:`NOT enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :red:`NOT expired`
 
   ==================  ======================= ======================  ==================  =============
-  PIN                 cash                   daily limit             card expired        withdrawal
+  PIN                 cash                    daily limit             card expired        withdrawal
   ==================  ======================= ======================  ==================  =============
-  :red:`wrong PIN`    :red:`NOT enough cash` :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
+  :red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
   ==================  ======================= ======================  ==================  =============
 
   .. code-block:: python
-    :lineno-start: 151
+    :lineno-start: 150
     :emphasize-lines: 11-19
 
         def test_below_limit_wrong_pin_not_enough_cash(self):
@@ -3969,7 +4012,7 @@ PIN                 cash                   daily limit             card expired 
 I change my expectation to match reality in :ref:`test_below_limit_wrong_pin_not_enough_cash`
 
 .. code-block:: python
-  :lineno-start: 161
+  :lineno-start: 160
   :emphasize-lines: 8
 
           self.assertEqual(
@@ -4014,7 +4057,7 @@ the test passes.
 * I change the name from :ref:`test_below_limit_wrong_pin_not_enough_cash` to :ref:`test_card_w_below_limit_wrong_pin_not_enough_cash`
 
   .. code-block:: python
-    :lineno-start: 141
+    :lineno-start: 140
     :emphasize-lines: 11
 
             self.assertEqual(
@@ -4396,7 +4439,7 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
         │       return denied
         └── return 'CASH'
 
-The ``withdraw`` :ref:`function<what is a function?>` can be written with :ref:`Logical Disjunction (OR)<test_logical_disjunction>` or :ref:`Logical Conjunction (AND)<test_logical_conjunction>`. Try it and see which one you like better?
+The ``withdraw`` :ref:`function<what is a function?>` can also be written with :ref:`Logical Disjunction (OR)<test_logical_disjunction>` or :ref:`Logical Conjunction (AND)<test_logical_conjunction>`. Try it and see which one you like.
 
 *********************************************************************************
 close the project
@@ -4437,39 +4480,39 @@ I ran tests for an Automated Teller Machine with these inputs:
 the inputs gave me this :ref:`truth table`
 
 ==================  ===================== ======================  ==================  =============
-PIN                 cash                 daily limit             card expired        withdrawal
+PIN                 cash                  daily limit             card expired        withdrawal
 ==================  ===================== ======================  ==================  =============
-:green:`right PIN`  :green:`enough cash` :green:`above limit`    :green:`expired`    :red:`DENIED`
-:green:`right PIN`  :green:`enough cash` :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
-:green:`right PIN`  :green:`enough cash` :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
-:green:`right PIN`  :green:`enough cash` :red:`NOT above limit`  :red:`NOT expired`  :green:`CASH`
+:green:`right PIN`  :green:`enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED`
+:green:`right PIN`  :green:`enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
+:green:`right PIN`  :green:`enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
+:green:`right PIN`  :green:`enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :green:`CASH`
 ==================  ===================== ======================  ==================  =============
 
 ==================  ======================= ======================  ==================  =============
-PIN                 cash                   daily limit             card expired        withdrawal
+PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
-:green:`right PIN`  :red:`NOT enough cash` :green:`above limit`    :green:`expired`    :red:`DENIED`
-:green:`right PIN`  :red:`NOT enough cash` :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
-:green:`right PIN`  :red:`NOT enough cash` :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
-:green:`right PIN`  :red:`NOT enough cash` :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
-==================  ======================= ======================  ==================  =============
-
-==================  ======================= ======================  ==================  =============
-PIN                 cash                   daily limit             card expired        withdrawal
-==================  ======================= ======================  ==================  =============
-:red:`wrong PIN`    :green:`enough cash`   :green:`above limit`    :green:`expired`    :red:`DENIED`
-:red:`wrong PIN`    :green:`enough cash`   :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
-:red:`wrong PIN`    :green:`enough cash`   :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
-:red:`wrong PIN`    :green:`enough cash`   :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
+:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED`
+:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
+:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
+:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
 ==================  ======================= ======================  ==================  =============
 
 ==================  ======================= ======================  ==================  =============
-PIN                 cash                   daily limit             card expired        withdrawal
+PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
-:red:`wrong PIN`    :red:`NOT enough cash` :green:`above limit`    :green:`expired`    :red:`DENIED`
-:red:`wrong PIN`    :red:`NOT enough cash` :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
-:red:`wrong PIN`    :red:`NOT enough cash` :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
-:red:`wrong PIN`    :red:`NOT enough cash` :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
+:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :green:`expired`    :red:`DENIED`
+:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
+:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
+:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
+==================  ======================= ======================  ==================  =============
+
+==================  ======================= ======================  ==================  =============
+PIN                 cash                    daily limit             card expired        withdrawal
+==================  ======================= ======================  ==================  =============
+:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
 ==================  ======================= ======================  ==================  =============
 
 The ATM only gives me ``'CASH'`` when the :green:`right PIN` is entered, there is :green:`enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the bank card has :red:`NOT expired`
@@ -4477,16 +4520,16 @@ The ATM only gives me ``'CASH'`` when the :green:`right PIN` is entered, there i
 What if I want the ATM to give a different message with each denial, so that the user knows why the withdrawal failed? The :ref:`truth table` could then be
 
 ==================  ===================== ======================  ==================  =============
-PIN                 cash                 daily limit             card expired        withdrawal
+PIN                 cash                  daily limit             card expired        withdrawal
 ==================  ===================== ======================  ==================  =============
 :green:`right PIN`  :green:`enough cash` :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
 :green:`right PIN`  :green:`enough cash` :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
 :green:`right PIN`  :green:`enough cash` :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
-:green:`right PIN`  :green:`enough cash` :red:`NOT above limit`  :red:`NOT expired`  :green:`CASH`
+:green:`right PIN`  :green:`enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :green:`CASH`
 ==================  ===================== ======================  ==================  =============
 
 ==================  ======================= ======================  ==================  =============
-PIN                 cash                   daily limit             card expired        withdrawal
+PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
 :green:`right PIN`  :red:`NOT enough cash` :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
 :green:`right PIN`  :red:`NOT enough cash` :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Insufficient Funds`
@@ -4495,21 +4538,21 @@ PIN                 cash                   daily limit             card expired 
 ==================  ======================= ======================  ==================  =============
 
 ==================  ======================= ======================  ==================  =============
-PIN                 cash                   daily limit             card expired        withdrawal
+PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
-:red:`wrong PIN`    :green:`enough cash`   :green:`above limit`    :green:`expired`    :red:`DENIED: You entered the wrong PIN. Try again...`
-:red:`wrong PIN`    :green:`enough cash`   :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
-:red:`wrong PIN`    :green:`enough cash`   :red:`NOT above limit`  :green:`expired`    :red:`DENIED: You entered the wrong PIN. Try again...`
-:red:`wrong PIN`    :green:`enough cash`   :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
+:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :green:`expired`    :red:`DENIED: You entered the wrong PIN. Try again...`
+:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
+:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :green:`expired`    :red:`DENIED: You entered the wrong PIN. Try again...`
+:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
 ==================  ======================= ======================  ==================  =============
 
 ==================  ======================= ======================  ==================  =============
-PIN                 cash                   daily limit             card expired        withdrawal
+PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
-:red:`wrong PIN`    :red:`NOT enough cash` :green:`above limit`    :green:`expired`    :red:`DENIED: You entered the wrong PIN. Try again...`
-:red:`wrong PIN`    :red:`NOT enough cash` :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
-:red:`wrong PIN`    :red:`NOT enough cash` :red:`NOT above limit`  :green:`expired`    :red:`DENIED: You entered the wrong PIN. Try again...`
-:red:`wrong PIN`    :red:`NOT enough cash` :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
+:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: You entered the wrong PIN. Try again...`
+:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
+:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: You entered the wrong PIN. Try again...`
+:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
 ==================  ======================= ======================  ==================  =============
 
 What would I change in the tests and solution?
