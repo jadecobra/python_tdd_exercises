@@ -17,7 +17,6 @@ class TestATM(unittest.TestCase):
             ),
             'CASH'
         )
-
         self.assertEqual(
             src.atm.withdraw(
                 right_pin=True,
