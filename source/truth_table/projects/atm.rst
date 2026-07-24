@@ -187,6 +187,8 @@ start the project
 
     git commit -am 'setup project'
 
+----
+
 If the inputs to the **Automated Teller Machine** are
 
 * is the PIN correct?
@@ -334,7 +336,7 @@ because I do not have a definition for ``src`` in this file_.
     # AttributeError
     # TypeError
 
-* I add ``right_pin`` to the :ref:`function<what is a function?>` in ``atm.py``
+* I add ``right_pin`` to the :ref:`function definition<how to make a function that takes input>` in ``atm.py``
 
   .. code-block:: python
     :linenos:

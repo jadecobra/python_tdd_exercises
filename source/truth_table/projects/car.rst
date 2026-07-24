@@ -1,5 +1,5 @@
 .. meta::
-  :description: 
+  :description:
   :keywords:
 
 .. include:: ../../links.rst
@@ -143,6 +143,8 @@ start the project
 
     git commit -am 'setup project'
 
+----
+
 If the inputs to the **Car** are
 
 * is the key close to the starter?
@@ -162,17 +164,8 @@ key             start button        output
 ----
 
 *********************************************************************************
-test_key_close
+test_key_close_button_pressed
 *********************************************************************************
-
-The :ref:`truth table` for when the key is :green:`close` to the starter is
-
-==============  ==================  =================
-key             start button        output
-==============  ==================  =================
-:green:`close`  :green:`pressed`    :green:`ON`
-:green:`close`  :red:`NOT pressed`  :red:`OFF`
-==============  ==================  =================
 
 ----
 
@@ -196,7 +189,7 @@ key             start button        output
 
   class TestCar(unittest.TestCase):
 
-      def test_key_close(self):
+      def test_key_close_button_pressed(self):
           my_expectation = 'ON'
           reality = src.car.starter(
               key_is_close=True,
@@ -214,7 +207,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
   NameError: name 'src' is not defined
 
-because I do not have a definition for ``src`` in this file_
+because I do not have a definition for ``src`` in this ``test_car.py``.
 
 ----
 
@@ -253,15 +246,7 @@ because I do not have a definition for ``src`` in this file_
 
     AttributeError: module 'src.car' has no attribute 'starter'
 
-  because ``car.py`` in the ``src`` folder_ does not have anything named ``starter`` in it
-
-  .. admonition:: If you get :ref:`ModuleNotFoundError<what is a module?>`
-
-    .. code-block:: python
-
-      ModuleNotFoundError: No module named 'src'
-
-    check if you have ``__init__.py`` in the ``tests`` folder_ with underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``, then add :ref:`ModuleNotFoundError<what is a module?>` to the list of :ref:`Exceptions<errors>` seen
+  because ``car.py`` in the ``src`` folder_ does not have anything named ``starter`` in it.
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -277,7 +262,7 @@ because I do not have a definition for ``src`` in this file_
 
 * I open ``car.py`` from the ``src`` folder_
 
-* I add a :ref:`function<what is a function?>` named ``starter`` to ``car.py``
+* I delete all the text in the file_ then add a :ref:`function<what is a function?>` named ``starter`` to ``car.py``
 
   .. code-block:: python
     :linenos:
@@ -290,9 +275,10 @@ because I do not have a definition for ``src`` in this file_
 
   .. code-block:: python
 
-    TypeError: starter() got an unexpected keyword argument 'key_is_close'
+    TypeError: starter() got
+               an unexpected keyword argument 'key_is_close'
 
-  because the test :ref:`called<how to call a function with input>` the ``starter`` :ref:`function<what is a function?>` with two keyword arguments (``key_is_close`` and ``start_is_pressed``) and this definition only takes calls with 0 arguments
+  because the test :ref:`called<how to call a function with input>` the ``starter`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``key_is_close``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_car.py``
 
@@ -307,7 +293,7 @@ because I do not have a definition for ``src`` in this file_
     # AttributeError
     # TypeError
 
-* I add the :ref:`keyword argument<test_keyword_arguments>` to the :ref:`function<what is a function?>` in ``car.py``
+* I add ``key_is_close`` to the :ref:`function definition<how to make a function that takes input>` in ``car.py``
 
   .. code-block:: python
     :linenos:
@@ -320,9 +306,10 @@ because I do not have a definition for ``src`` in this file_
 
   .. code-block:: python
 
-    TypeError: starter() got an unexpected keyword argument 'start_is_pressed'
+    TypeError: starter() got
+               an unexpected keyword argument 'start_is_pressed'
 
-  because the test :ref:`called<how to call a function with input>` the ``starter`` :ref:`function<what is a function?>` with two keyword arguments (``key_is_close`` and ``start_is_pressed``) and this definition only takes calls with 1 input
+  because the test :ref:`called<how to call a function with input>` the ``starter`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``start_is_pressed``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add ``start_is_pressed`` to the :ref:`function signature<what is a function?>`
 
@@ -339,7 +326,7 @@ because I do not have a definition for ``src`` in this file_
 
     AssertionError: None != 'ON'
 
-  the ``starter`` :ref:`function<what is a function?>` returned :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects :green:`'ON'`
+  because the ``starter`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects :green:`'ON'`.
 
 * I change the :ref:`return statement<the return statement>` to give the test what it wants
 
@@ -350,37 +337,51 @@ because I do not have a definition for ``src`` in this file_
     def starter(key_is_close, start_is_pressed):
         return 'ON'
 
-  the test passes. The ``starter`` :ref:`function<what is a function?>` always returns :green:`ON`, it does not care about the inputs. Is this :ref:`Tautology?<test_tautology>`
+  the test passes.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_key_close_button_pressed'
+
+The ``starter`` :ref:`function<what is a function?>` always returns :green:`ON`, it does not care about the inputs. Is this :ref:`Tautology?<test_tautology>`
+
+.. code-block:: python
+
+  car(key_is_close=True , start_is_pressed=True ) -> 'ON'
 
 ----
 
+*********************************************************************************
+test_key_close_button_not_pressed
+*********************************************************************************
+
 =================================================================================
-:yellow:`REFACTOR`: make it better
+:red:`RED`: make it fail
 =================================================================================
 
 ----
+
+* I go back to the terminal_ where the tests are running
 
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close` and the start button is :red:`NOT pressed`, in ``test_car.py``
 
   ==============  ==================  =================
   key             start               output
   ==============  ==================  =================
-  :green:`close`  :green:`pressed`    :green:`ON`
   :green:`close`  :red:`NOT pressed`  :red:`OFF`
   ==============  ==================  =================
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 9-14
+    :lineno-start: 13
+    :emphasize-lines: 3-9
 
-        def test_key_close(self):
-            my_expectation = 'ON'
-            reality = src.car.starter(
-                key_is_close=True,
-                start_is_pressed=True,
-            )
             self.assertEqual(reality, my_expectation)
 
+        def test_key_close_button_not_pressed(self):
             my_expectation = 'OFF'
             reality = src.car.starter(
                 key_is_close=True,
@@ -397,7 +398,7 @@ because I do not have a definition for ``src`` in this file_
 
     AssertionError: 'ON' != 'OFF'
 
-  because the ``starter`` :ref:`function<what is a function?>` returns :green:`'ON'` and the :ref:`assertion<what is an assertion?>` expects :red:`'OFF'`
+  because the ``starter`` :ref:`function<what is a function?>` returns :green:`'ON'` and the :ref:`assertion<what is an assertion?>` expects :red:`'OFF'`. This **Car** starter is broken, it is always :red:`'ON'`.
 
 * I add an :ref:`if statement<if statements>` to the ``starter`` :ref:`function<what is a function?>` in ``car.py``
 
@@ -408,7 +409,6 @@ because I do not have a definition for ``src`` in this file_
     def starter(key_is_close, start_is_pressed):
         if start_is_pressed == False:
             return 'OFF'
-
         return 'ON'
 
   the test passes.
@@ -423,7 +423,6 @@ because I do not have a definition for ``src`` in this file_
         # if start_is_pressed == False:
         if not start_is_pressed == True:
             return 'OFF'
-
         return 'ON'
 
   the test is still green.
@@ -439,12 +438,11 @@ because I do not have a definition for ``src`` in this file_
         # if not start_is_pressed == True:
         if not start_is_pressed:
             return 'OFF'
-
         return 'ON'
 
   still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``
 
-* I remove the commented lines
+* I remove the commented lines from the ``starter`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -452,30 +450,31 @@ because I do not have a definition for ``src`` in this file_
     def starter(key_is_close, start_is_pressed):
         if not start_is_pressed:
             return 'OFF'
-
         return 'ON'
 
-  this is what happens when the ``starter`` :ref:`function<what is a function?>` is called
+* I add a git_ commit message in the other terminal_
 
-  - it returns :red:`'OFF'` if the start button is :red:`NOT pressed`
-  - it returns :green:`'ON'` if the above :ref:`condition<if statements>` is NOT met
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_key_close_button_not_pressed'
+
+When the ``starter`` :ref:`function<what is a function?>` is called
+
+- it returns :red:`'OFF'` if the start button is :red:`NOT pressed`
+- it returns :green:`'ON'` if the above :ref:`condition<if statements>` is NOT met
+
+.. code-block:: python
+
+  car(key_is_close=True , start_is_pressed=False) -> 'OFF'
+  car(key_is_close=True , start_is_pressed=True ) -> 'ON'
 
 ----
 
 *********************************************************************************
-test_key_far
+test_key_far_button_pressed
 *********************************************************************************
-
-The :ref:`truth table` for when the key is :red:`far` from the starter is
-
-==============  ==================  ==========
-key             start               output
-==============  ==================  ==========
-:red:`far`      :green:`pressed`    :red:`OFF`
-:red:`far`      :red:`NOT pressed`  :red:`OFF`
-==============  ==================  ==========
-
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -483,6 +482,7 @@ key             start               output
 
 ----
 
+* 
 I add a test with an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter and the start button is :green:`pressed`, in ``test_car.py``
 
 ==============  ==================  ==========
@@ -691,7 +691,7 @@ the test passes.
 
         return 'ON'
 
-  this is what happens when the ``starter`` :ref:`function<what is a function?>` is called
+  When the ``starter`` :ref:`function<what is a function?>` is called
 
   - it returns :red:`'OFF'` if the key is :red:`far` from the starter OR the start button is :red:`NOT pressed`
   - it returns :green:`'ON'` if the above :ref:`conditions<if statements>` are NOT met
@@ -910,7 +910,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   TypeError: starter() got an unexpected keyword argument 'brake_is_pressed'. Did you mean 'start_is_pressed'?
 
-because the test :ref:`called<how to call a function with input>` the ``starter`` :ref:`function<what is a function?>` with 3 keyword arguments (``key_is_close``, ``brake_is_pressed`` and ``start_is_pressed``) and the :ref:`function<what is a function?>` only takes calls with 2 arguments (``key_is_close`` and ``start_is_pressed``)
+because the test :ref:`called<how to call a function with input>` the ``starter`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``brake_is_pressed``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 ----
 
@@ -1263,7 +1263,7 @@ key             brake               start button        output
 
         return 'ON'
 
-  this is what happens when the ``starter`` :ref:`function<what is a function?>` is called
+  When the ``starter`` :ref:`function<what is a function?>` is called
 
   - it returns :red:`'OFF'` if the key is :red:`far` from the starter OR the start button is :red:`NOT pressed` OR the brake is :red:`NOT pressed`
   - it returns :green:`'ON'` if none of the conditions are met
@@ -1827,7 +1827,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
 
   TypeError: starter() got an unexpected keyword argument 'in_park'
 
-because the test :ref:`called<how to call a function with input>` the ``starter`` :ref:`function<what is a function?>` with 4 keyword arguments (``key_is_close``, ``brake_is_pressed``, ``start_is_pressed`` and ``in_park``) and the definition only takes calls with 2 required arguments (``key_is_close`` and ``start_is_pressed``) and 1 optional argument (``brake_is_pressed``)
+  because the test :ref:`called<how to call a function with input>` the ``starter`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``in_park``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_car.py``
 
@@ -2131,7 +2131,7 @@ because the test :ref:`called<how to call a function with input>` the ``starter`
 
         return 'ON'
 
-  this is what happens when the ``starter`` :ref:`function<what is a function?>` is called
+  When the ``starter`` :ref:`function<what is a function?>` is called
 
   - it returns :red:`'OFF'` if the key is :red:`far` from the starter OR the start button is :red:`NOT pressed` OR the brake is :red:`NOT pressed` OR the car gear is :red:`NOT in park`
   - it returns :green:`'ON'` if none of the conditions are met
