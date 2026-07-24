@@ -312,7 +312,7 @@ test_streamlit_calculator_title
 
     AssertionError: ElementList(_list=[Title(tag='h1')]) != 'Calculator'
 
-  - when I import a :ref:`module<what is a module?>` nothing happens until I call or use the things in it
+  - when I import a :ref:`module<what is a module?>` nothing happens until I :ref:`call<how to call a function with input>` or use the things in it
   - ``if __name__ == '__main__':`` calls ``main()`` only when ``src/streamlit_calculator.py`` gets called like a script, for example
 
     * in the terminal_

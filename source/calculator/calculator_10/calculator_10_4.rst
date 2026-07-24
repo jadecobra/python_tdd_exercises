@@ -788,7 +788,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
 ----
 
-* when I try another number, the browser and the terminal_ for the application show :ref:`TypeError<what causes TypeError?>`
+* I try another number, the browser and the terminal_ for the application show :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 

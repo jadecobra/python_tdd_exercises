@@ -1534,8 +1534,8 @@ the test passes.
 
   the test passes because
 
-  - when ``import src.person`` runs, Python_ brings in an :ref:`object<everything is an object>` for the ``person.py`` file_ from the ``src`` folder_ so I can use it in ``test_person.py`` as ``src.person``
-  - when ``src.person.factory`` is called, Python_ calls the :ref:`factory function<test person factory>` from the :ref:`object<everything is an object>` it imported for the ``person.py`` file_ from the ``src`` folder_ (``src.person``)
+  - Python_ brings in an :ref:`object<everything is an object>` for the ``person.py`` file_ from the ``src`` folder_ so I can use it in ``test_person.py`` as ``src.person`` when ``import src.person`` runs.
+  - Python_ calls the :ref:`factory function<test person factory>` from the :ref:`object<everything is an object>` it imported for the ``person.py`` file_ from the ``src`` folder_ (``src.person``) when ``src.person.factory`` is called.
 
   I think of ``src.person.factory`` like an address
 

@@ -266,7 +266,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     def duration(sleep_time, wake_time):
         raise ValueError(sleep_time, wake_time)
 
-* When I raise ValueError_ in ``duration`` the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` because the message in the ValueError_ does not match the expectation of the test
+* I raise ValueError_ in ``duration`` the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` because the message in the ValueError_ does not match the expectation of the test
 
   .. code-block:: shell
 
@@ -286,7 +286,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
   which does not tell me anything so I comment it out to get the other message I got with the :ref:`AssertionError<what causes AssertionError?>`, I can raise ValueError_ again or try to return the inputs
 
-* When I get the error with the message about ``wake_time`` being earlier than ``sleep_time``, I copy it from the terminal_ to change the message of the ValueError_
+* I get the error with the message about ``wake_time`` being earlier than ``sleep_time``, I copy it from the terminal_ to change the message of the ValueError_
 
   .. code-block:: python
 

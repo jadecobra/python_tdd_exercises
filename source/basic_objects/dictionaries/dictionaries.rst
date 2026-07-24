@@ -1609,8 +1609,8 @@ the test passes.
 
     The `get method`_ has a :ref:`condition<if statements>`
 
-    - when the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>`, it returns the default argument
-    - when the :ref:`key<test_keys_of_a_dictionary>` is in the :ref:`dictionary<what is a dictionary?>`, it returns its :ref:`value<test_values_of_a_dictionary>`
+    - if the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>`, it returns the default argument
+    - if the :ref:`key<test_keys_of_a_dictionary>` is in the :ref:`dictionary<what is a dictionary?>`, it returns its :ref:`value<test_values_of_a_dictionary>`
 
 * I change the name of the test
 
@@ -2190,7 +2190,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
 ----
 
-* When I called the `pop method`_ without input, the terminal_ showed :ref:`TypeError<what causes TypeError?>`
+* I called the `pop method`_ without input, the terminal_ showed :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2794,9 +2794,9 @@ the test passes.
 
     setdefault_ has a :ref:`condition<if statements>`
 
-    - when the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>` it adds it with a default value of :ref:`None<what is None?>` and returns :ref:`None<what is None?>`
-    - when the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>` and I call setdefault_ with a second argument, it adds the :ref:`key<test_keys_of_a_dictionary>` to the :ref:`dictionary<what is a dictionary?>` with the second argument as the :ref:`value<test_values_of_a_dictionary>` and returns the second argument
-    - when the :ref:`key<test_keys_of_a_dictionary>` is in the :ref:`dictionary<what is a dictionary?>` it returns its :ref:`value<test_values_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
+    - if the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>` it adds it with a default value of :ref:`None<what is None?>` and returns :ref:`None<what is None?>`
+    - if the :ref:`key<test_keys_of_a_dictionary>` is NOT in the :ref:`dictionary<what is a dictionary?>` and I call setdefault_ with a second argument, it adds the :ref:`key<test_keys_of_a_dictionary>` to the :ref:`dictionary<what is a dictionary?>` with the second argument as the :ref:`value<test_values_of_a_dictionary>` and returns the second argument
+    - if the :ref:`key<test_keys_of_a_dictionary>` is in the :ref:`dictionary<what is a dictionary?>` it returns its :ref:`value<test_values_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
 
 * I change the name of the test
 

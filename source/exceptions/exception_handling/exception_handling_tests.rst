@@ -515,7 +515,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
 
 ----
 
-* when I make ``function_name`` a :ref:`function<what is a function?>` in ``exceptions.py``
+* I make ``function_name`` a :ref:`function<what is a function?>` in ``exceptions.py``
 
   .. code-block:: python
     :linenos:
@@ -526,7 +526,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
 
   the test is still green because :ref:`TypeError<what causes TypeError?>` is raised since the call from the test - ``src.exceptions.function_name('the input')`` sends ``'the input'`` as input and the :ref:`function<what is a function?>` does not take input
 
-* when I add a parameter to the definition
+* I add a parameter to the definition
 
   .. code-block:: python
     :linenos:
@@ -610,7 +610,7 @@ test_catching_index_error_in_tests
 
   still green.
 
-* When I use a number that is bigger than the index for the last item
+* If I use a number that is bigger than the index for the last item
 
   .. code-block:: python
     :lineno-start: 23
@@ -699,7 +699,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
 
   still green.
 
-* When I use a negative number that is outside the range
+* If I use a negative number that is outside the range
 
   .. code-block:: python
     :lineno-start: 23
@@ -797,7 +797,7 @@ test_catching_key_error_in_tests
         def test_catching_key_error_in_tests(self):
             {'key': 'value'}
 
-* when I try to get the value of a :ref:`key<test_keys_of_a_dictionary>` that is in the :ref:`dictionary<what is a dictionary?>`
+* If I try to get the value of a :ref:`key<test_keys_of_a_dictionary>` that is in the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 30
@@ -808,7 +808,7 @@ test_catching_key_error_in_tests
 
   the test is green again
 
-* when I use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in the :ref:`dictionary<what is a dictionary?>`
+* If I use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 30
@@ -1148,7 +1148,7 @@ one exception one exception handler
 
   the test is still green, which is NOT the expected behavior. :ref:`Exception<errors>` is not :ref:`IndexError<test_index_error>` and still does NOT get raised. The assertRaises_ exits after the first line that causes :ref:`IndexError<test_index_error>` and does NOT run the other lines.
 
-* When I move the `raise statement`_ above the first :ref:`IndexError<test_index_error>`
+* If I move the `raise statement`_ above the first :ref:`IndexError<test_index_error>`
 
   .. code-block:: python
     :lineno-start: 23

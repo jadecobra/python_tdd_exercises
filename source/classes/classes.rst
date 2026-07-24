@@ -3357,8 +3357,8 @@ To review
 
 .. tip::
 
-  * when I find myself writing or doing the same thing two times, I write a :ref:`function<what is a function?>`
-  * when I find I have two :ref:`functions<what is a function?>` that use the same information, I write a :ref:`class<everything is an object>`
+  * If I find myself writing or doing the same thing two times, I write a :ref:`function<what is a function?>`
+  * If I find I have two :ref:`functions<what is a function?>` that use the same information, I write a :ref:`class<everything is an object>`
 
 :ref:`How many questions can you answer about classes?<questions about classes>`
 

@@ -47,13 +47,13 @@ Make sure your computer runs `Windows 11`_. If you cannot upgrade to `Windows 11
 
 * Click ``Get`` to install
 
-* When the installation is successful the computer asks you for a ``USERNAME``, use something that is easy for you to remember later
+* If the installation is successful the computer asks you for a ``USERNAME``, use something that is easy for you to remember later
 
 * Next it asks for a ``PASSWORD``, use something that is easy for you to remember later
 
   .. attention:: the terminal_ does not show any text while you type your password, use :kbd:`enter/return` on the keyboard when done and it asks you to type the password again to confirm it
 
-* after installing `Windows Subsystem for Linux`_ open `Visual Studio Code`_ and install the `WSL extension <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`_)
+* after you install `Windows Subsystem for Linux`_ open `Visual Studio Code`_ and install the `WSL extension <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`_)
 
 * Press ``F1`` on the keyboard in `Visual Studio Code`_ and select ``WSL:Connect to WSL`` to open a terminal_ in `Windows Subsystem for Linux`_
 
