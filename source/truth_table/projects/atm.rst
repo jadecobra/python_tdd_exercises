@@ -1,6 +1,6 @@
 .. meta::
-  :description: Build a realistic ATM withdrawal system from scratch using Python and Test Driven Development (TDD). This hands-on project tutorial guides beginners through translating complex business rules—including PIN verification, account balance checks, daily withdrawal limits, and card expiration—into clean, modular code. Learn to use the uv package manager, unittest, and pytest-watcher to manage a professional Red-Green-Refactor workflow.
-  :keywords: Jacob Itegboje, Python ATM project tutorial, TDD for beginners exercises, translate truth tables to code, Python boolean logic project, unittest tutorial for beginners, uv package manager tutorial, pytest-watcher automation, Red Green Refactor Python example, ATM withdrawal logic code, Python if statement refactoring, banking software logic gates, Python default parameters tutorial, handling multiple conditions in Python, logic modeling for software engineers, PIN verification system code, account balance truth table, daily limit logic, card expiration check Python, iterative software development
+  :description: Build an Automated Teller Machine with Python TDD (Red-Green-Refactor): translate a truth table for PIN, cash, daily withdrawal limit, and card expiration into src.atm.withdraw. Beginners use uv, unittest, and pytest-watcher; hit NameError, AttributeError, TypeError (unexpected keywords / missing args), SyntaxError (non-default after default), and AssertionError; learn default parameters, keyword calls, if/not short-circuit denies, a DENIED constant, and assertEqual until only right PIN + enough cash + not above limit + not expired returns CASH.
+  :keywords: Jacob Itegboje, Python ATM project tutorial, TDD Red Green Refactor, truth table to code, unittest assertEqual, uv package manager, pytest-watcher, PIN verification, daily withdrawal limit, card expired, default parameters, keyword arguments, SyntaxError parameter without a default, TypeError unexpected keyword argument, NameError src not defined, AttributeError, Logical Negation NOT, if statements, DENIED CASH, pumping python
 
 .. include:: ../../links.rst
 
@@ -189,7 +189,7 @@ start the project
 If the inputs to the **Automated Teller Machine** are
 
 * is the PIN correct?
-* is the cash I want, smaller or bigger than what is in the account?
+* is there enough cash in the account for the withdrawal?
 
 then I get this :ref:`truth table`
 
@@ -374,7 +374,8 @@ because I do not have a definition for ``src`` in this file_.
     :linenos:
     :emphasize-lines: 2
 
-    def withdraw(right_pin, enough_cash):        return 'CASH'
+    def withdraw(right_pin, enough_cash):
+        return 'CASH'
 
 * I add a git_ commit message in the other terminal_
 
@@ -1018,7 +1019,7 @@ PIN                 cash                    withdrawal
 I want to add a :ref:`condition<if statements>` for a daily limit on how much can be taken from the account. The inputs for the ATM will then be
 
 * is the PIN correct?
-* is the cash I want smaller or bigger than what is in the account?
+* is there enough cash in the account for the withdrawal?
 * will the withdrawal put the account above or below the daily limit for withdrawals?
 
 ----
@@ -1082,7 +1083,7 @@ PIN                 cash                    daily limit             withdrawal
     TypeError: withdraw() got
               an unexpected keyword argument 'above_daily_limit'
 
-  because the ``withdraw`` :ref:`function<what is a function?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``above_daily_limit``) that is not in the parentheses of its :ref:`definition<how to call a function with input>`.
+  because the ``withdraw`` :ref:`function<what is a function?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``above_daily_limit``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 ----
 
@@ -2173,7 +2174,7 @@ When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how t
 remove reality variable
 *********************************************************************************
 
-I can :ref:`call<what is a call?>` the ``withdraw`` :ref:`function<what is a function?>` directly in all the :ref:`assertions<what is an assertion?>` of the tests. I do not need the ``reality`` :ref:`variable<what is a variable?>` as a middle man because I only use the :ref:`variable<what is a variable?>` once in each test.
+I can :ref:`call<how to call a function with input>` the ``withdraw`` :ref:`function<what is a function?>` directly in all the :ref:`assertions<what is an assertion?>` of the tests. I do not need the ``reality`` :ref:`variable<what is a variable?>` as a middle man because I only use the :ref:`variable<what is a variable?>` once in each test.
 
 * I :ref:`call<how to call a function with input>` ``src.atm.withdraw`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_below_limit_wrong_pin_not_enough_cash`
 
@@ -2540,7 +2541,7 @@ What if the bank card has expired? The inputs for the **ATM** will then be
 
 * has the card expired?
 * is the PIN correct?
-* is the cash I want smaller or bigger than what is in the account?
+* is there enough cash in the account for the withdrawal?
 * will the withdrawal put the account above or below the daily limit for withdrawals?
 
 ----
@@ -4474,7 +4475,7 @@ I ran tests for an Automated Teller Machine with these inputs:
 
 * has the card expired?
 * is the PIN correct?
-* is the cash I want smaller or bigger than what is in the account?
+* is there enough cash in the account for the withdrawal?
 * will the withdrawal put the account above or below the daily limit for withdrawals?
 
 the inputs gave me this :ref:`truth table`
@@ -4515,43 +4516,43 @@ PIN                 cash                    daily limit             card expired
 :red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
 ==================  ======================= ======================  ==================  =============
 
-The ATM only gives me ``'CASH'`` when the :green:`right PIN` is entered, there is :green:`enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the bank card has :red:`NOT expired`
+The ATM only gives me ``'CASH'`` when the :green:`right PIN` is entered, there is :green:`enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the bank card has :red:`NOT expired`.
 
 What if I want the ATM to give a different message with each denial, so that the user knows why the withdrawal failed? The :ref:`truth table` could then be
 
 ==================  ===================== ======================  ==================  =============
 PIN                 cash                  daily limit             card expired        withdrawal
 ==================  ===================== ======================  ==================  =============
-:green:`right PIN`  :green:`enough cash` :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
-:green:`right PIN`  :green:`enough cash` :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
-:green:`right PIN`  :green:`enough cash` :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
+:green:`right PIN`  :green:`enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
+:green:`right PIN`  :green:`enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
+:green:`right PIN`  :green:`enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
 :green:`right PIN`  :green:`enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :green:`CASH`
 ==================  ===================== ======================  ==================  =============
 
 ==================  ======================= ======================  ==================  =============
 PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
-:green:`right PIN`  :red:`NOT enough cash` :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
-:green:`right PIN`  :red:`NOT enough cash` :green:`above limit`    :red:`NOT expired`  :red:`DENIED: Insufficient Funds`
-:green:`right PIN`  :red:`NOT enough cash` :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
-:green:`right PIN`  :red:`NOT enough cash` :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: Insufficient Funds`
+:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
+:green:`right PIN`  :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You have exceeded the daily withdrawal limit`
+:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
+:green:`right PIN`  :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: There is not enough Cash in the Account`
 ==================  ======================= ======================  ==================  =============
 
 ==================  ======================= ======================  ==================  =============
 PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
-:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :green:`expired`    :red:`DENIED: You entered the wrong PIN. Try again...`
+:red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
 :red:`wrong PIN`    :green:`enough cash`    :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
-:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :green:`expired`    :red:`DENIED: You entered the wrong PIN. Try again...`
+:red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
 :red:`wrong PIN`    :green:`enough cash`    :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
 ==================  ======================= ======================  ==================  =============
 
 ==================  ======================= ======================  ==================  =============
 PIN                 cash                    daily limit             card expired        withdrawal
 ==================  ======================= ======================  ==================  =============
-:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: You entered the wrong PIN. Try again...`
+:red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :green:`expired`    :red:`DENIED: Card Expired`
 :red:`wrong PIN`    :red:`NOT enough cash`  :green:`above limit`    :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
-:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: You entered the wrong PIN. Try again...`
+:red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :green:`expired`    :red:`DENIED: Card Expired`
 :red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED: You entered the wrong PIN. Try again...`
 ==================  ======================= ======================  ==================  =============
 
@@ -4572,15 +4573,28 @@ what is next?
 *************************************************************************************
 
 * :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
+* :ref:`I know what a Python module is<what is a module?>`.
+* :ref:`I know how to run tests automatically<how to run tests automatically>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.
 * :ref:`I know how to make functions<what is a function?>`.
+* :ref:`I know how to make a person with strings<how to make a person with strings>`.
+* :ref:`I know how to make functions that take input<functions that take input>`.
+* :ref:`I know what causes TypeError<what causes TypeError?>`.
+* :ref:`I know how to place values in strings<telephone>`.
+* :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
+* :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
-* :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`what is None and NOT None<what is None?>`
-* :ref:`what is True and False in Python<what are booleans?>`
+* :ref:`I know how to make a person with a class<how to make a person with a class>`.
+* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know how to use the unittest library<another way to write tests>`.
+* :ref:`I know how to use the datetime library<test person with datetime>`.
+* :ref:`I know what None is<what is None?>`.
+* :ref:`I know how to make a person with conditions<how to make a person with conditions>`.
+* :ref:`I know how Python groups objects into False or True<what are booleans?>`
+* :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`
 * :ref:`how to write programs that make decisions<truth table>`
 
-:ref:`Would you like to test making a Microwave?<Microwave>`
+:ref:`Would you like to test making a Car?<Car>`
 
 ----
 

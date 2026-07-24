@@ -11,19 +11,18 @@ Automated Teller Machine: tests
 
 the code in ``atm/tests/test_atm.py`` from :ref:`Automated Teller Machine`
 
-.. literalinclude:: truth_table/tests/test_atm.py
+.. literalinclude:: atm/test_atm.py
   :language: python
   :linenos:
 
 ----
 
 *********************************************************************************
-Automated Teller Machine: solutions
+Automated Teller Machine: solution
 *********************************************************************************
 
 the code in ``atm/src/atm.py`` from :ref:`Automated Teller Machine`
 
-.. literalinclude:: truth_table/solutions/atm.py
+.. literalinclude:: atm/atm.py
   :language: python
   :linenos:
-

@@ -3181,12 +3181,25 @@ what is next?
 *************************************************************************************
 
 * :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
+* :ref:`I know what a Python module is<what is a module?>`.
+* :ref:`I know how to run tests automatically<how to run tests automatically>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.
 * :ref:`I know how to make functions<what is a function?>`.
+* :ref:`I know how to make a person with strings<how to make a person with strings>`.
+* :ref:`I know how to make functions that take input<functions that take input>`.
+* :ref:`I know what causes TypeError<what causes TypeError?>`.
+* :ref:`I know how to place values in strings<telephone>`.
+* :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
+* :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
-* :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`what is None and NOT None<what is None?>`
-* :ref:`what is True and False in Python<what are booleans?>`
+* :ref:`I know how to make a person with a class<how to make a person with a class>`.
+* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know how to use the unittest library<another way to write tests>`.
+* :ref:`I know how to use the datetime library<test person with datetime>`.
+* :ref:`I know what None is<what is None?>`.
+* :ref:`I know how to make a person with conditions<how to make a person with conditions>`.
+* :ref:`I know how Python groups objects into False or True<what are booleans?>`
+* :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`
 * :ref:`how to write programs that make decisions<truth table>`
 
 :ref:`Would you like to test making a Car starter?<car>`
