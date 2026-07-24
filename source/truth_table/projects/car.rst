@@ -164,7 +164,7 @@ key             start button        output
 ----
 
 *********************************************************************************
-test_key_close_button_pressed
+test_key_close_start_pressed
 *********************************************************************************
 
 ----
@@ -189,7 +189,7 @@ key             start button        output
 
   class TestCar(unittest.TestCase):
 
-      def test_key_close_button_pressed(self):
+      def test_key_close_start_pressed(self):
           my_expectation = 'ON'
           reality = src.car.starter(
               key_is_close=True,
@@ -345,7 +345,7 @@ because I do not have a definition for ``src`` in this ``test_car.py``.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_key_close_button_pressed'
+    'add test_key_close_start_pressed'
 
 The ``starter`` :ref:`function<what is a function?>` always returns :green:`ON`, it does not care about the inputs. Is this :ref:`Tautology?<test_tautology>`
 
@@ -356,7 +356,7 @@ The ``starter`` :ref:`function<what is a function?>` always returns :green:`ON`,
 ----
 
 *********************************************************************************
-test_key_close_button_not_pressed
+test_key_close_start_not_pressed
 *********************************************************************************
 
 =================================================================================
@@ -367,10 +367,10 @@ test_key_close_button_not_pressed
 
 * I go back to the terminal_ where the tests are running
 
-* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close` and the start button is :red:`NOT pressed`, in ``test_car.py``
+* I add a test with an :ref:`assertion<what is an assertion?>` for when the key is :green:`close` and the start button is :red:`NOT pressed`, in ``test_car.py``
 
   ==============  ==================  =================
-  key             start               output
+  key             start button        output
   ==============  ==================  =================
   :green:`close`  :red:`NOT pressed`  :red:`OFF`
   ==============  ==================  =================
@@ -381,7 +381,7 @@ test_key_close_button_not_pressed
 
             self.assertEqual(reality, my_expectation)
 
-        def test_key_close_button_not_pressed(self):
+        def test_key_close_start_not_pressed(self):
             my_expectation = 'OFF'
             reality = src.car.starter(
                 key_is_close=True,
@@ -440,7 +440,7 @@ test_key_close_button_not_pressed
             return 'OFF'
         return 'ON'
 
-  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``
+  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``.
 
 * I remove the commented lines from the ``starter`` :ref:`function<what is a function?>`
 
@@ -458,7 +458,7 @@ test_key_close_button_not_pressed
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_key_close_button_not_pressed'
+    'add test_key_close_start_not_pressed'
 
 When the ``starter`` :ref:`function<what is a function?>` is called
 
@@ -473,7 +473,7 @@ When the ``starter`` :ref:`function<what is a function?>` is called
 ----
 
 *********************************************************************************
-test_key_far_button_pressed
+test_key_far_start_pressed
 *********************************************************************************
 
 =================================================================================
@@ -482,27 +482,22 @@ test_key_far_button_pressed
 
 ----
 
-* 
-I add a test with an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter and the start button is :green:`pressed`, in ``test_car.py``
+* I go back to the terminal_ where the tests are running
+* I add a test with an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter and the start button is :green:`pressed`, in ``test_car.py``
 
-==============  ==================  ==========
-key             start               output
-==============  ==================  ==========
-:red:`far`      :green:`pressed`    :red:`OFF`
-==============  ==================  ==========
+  ==============  ==================  ==========
+  key             start button        output
+  ==============  ==================  ==========
+  :red:`far`      :green:`pressed`    :red:`OFF`
+  ==============  ==================  ==========
 
-.. code-block:: python
-  :lineno-start: 15
-  :emphasize-lines: 8-14
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 3-9
 
-            my_expectation = 'OFF'
-            reality = src.car.starter(
-                key_is_close=True,
-                start_is_pressed=False,
-            )
             self.assertEqual(reality, my_expectation)
 
-        def test_key_far(self):
+        def test_key_far_start_pressed(self):
             my_expectation = 'OFF'
             reality = src.car.starter(
                 key_is_close=False,
@@ -513,13 +508,13 @@ key             start               output
 
     # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: 'ON' != 'OFF'
+    AssertionError: 'ON' != 'OFF'
 
-because the ``starter`` :ref:`function<what is a function?>` returns :green:`'ON'` and the :ref:`assertion<what is an assertion?>` expects :red:`'OFF'`
+  because the ``starter`` :ref:`function<what is a function?>` returns :green:`'ON'` and the :ref:`assertion<what is an assertion?>` expects :red:`'OFF'`.
 
 ----
 
@@ -538,10 +533,8 @@ I add an :ref:`if statement<if statements>` to ``car.py``
   def starter(key_is_close, start_is_pressed):
       if key_is_close == False:
           return 'OFF'
-
       if not start_is_pressed:
           return 'OFF'
-
       return 'ON'
 
 the test passes.
@@ -564,10 +557,8 @@ the test passes.
         # if key_is_close == False:
         if not key_is_close == True:
             return 'OFF'
-
         if not start_is_pressed:
             return 'OFF'
-
         return 'ON'
 
   the test is still green.
@@ -583,30 +574,26 @@ the test passes.
         # if not key_is_close == True:
         if not key_is_close:
             return 'OFF'
-
         if not start_is_pressed:
             return 'OFF'
-
         return 'ON'
 
-  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``
+  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``.
 
 * I use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put the two :ref:`if statements` together because they both return the same thing (``'OFF'``)
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4-5, 7-8
+    :emphasize-lines: 4-7
 
     def starter(key_is_close, start_is_pressed):
         # if key_is_close == False:
         # if not key_is_close == True:
         # if not key_is_close:
         #     return 'OFF'
-
         # if not start_is_pressed:
         if not key_is_close or not start_is_pressed:
             return 'OFF'
-
         return 'ON'
 
   the test is still green.
@@ -630,7 +617,6 @@ the test passes.
             (not start_is_pressed)
         ):
             return 'OFF'
-
         return 'ON'
 
   the terminal_ is my friend, and shows SyntaxError_
@@ -675,12 +661,11 @@ the test passes.
         # ):
         if not (key_is_close and start_is_pressed):
             return 'OFF'
-
         return 'ON'
 
-  the test is green again
+  the test is green again.
 
-* I remove the commented lines
+* I remove the commented lines from the ``starter`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -688,37 +673,58 @@ the test passes.
     def starter(key_is_close, start_is_pressed):
         if not (key_is_close and start_is_pressed):
             return 'OFF'
-
         return 'ON'
 
-  When the ``starter`` :ref:`function<what is a function?>` is called
+* I add a git_ commit message in the other terminal_
 
-  - it returns :red:`'OFF'` if the key is :red:`far` from the starter OR the start button is :red:`NOT pressed`
-  - it returns :green:`'ON'` if the above :ref:`conditions<if statements>` are NOT met
+  .. code-block:: python
+    :emphasize-lines: 1-2
 
-  is this :ref:`Logical Conjunction?<test_logical_conjunction>`
+    git commit -am \
+    'add test_key_far_start_pressed'
 
-* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter and the start button is :red:`NOT pressed` to :ref:`test_key_far` in ``test_car.py``
+When the ``starter`` :ref:`function<what is a function?>` is called
+
+- it returns :red:`'OFF'` if the key is :red:`far` from the starter OR the start button is :red:`NOT pressed`
+- it returns :green:`'ON'` if the above :ref:`conditions<if statements>` are NOT met
+
+is this :ref:`Logical Conjunction<test_logical_conjunction>`?
+
+.. code-block:: python
+
+  car(key_is_close=False, start_is_pressed=True ) -> 'OFF'
+  car(key_is_close=True , start_is_pressed=False) -> 'OFF'
+  car(key_is_close=True , start_is_pressed=True ) -> 'ON'
+
+----
+
+*********************************************************************************
+test_key_far_start_pressed
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a test with an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter and the start button is :red:`NOT pressed`, in ``test_car.py``
 
   ==============  ==================  ==========
-  key             start               output
+  key             start button        output
   ==============  ==================  ==========
-  :red:`far`      :green:`pressed`    :red:`OFF`
   :red:`far`      :red:`NOT pressed`  :red:`OFF`
   ==============  ==================  ==========
 
   .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 9-13
+    :lineno-start: 29
+    :emphasize-lines: 3-9
 
-        def test_key_far(self):
-            my_expectation = 'OFF'
-            reality = src.car.starter(
-                key_is_close=False,
-                start_is_pressed=True,
-            )
             self.assertEqual(reality, my_expectation)
 
+        def test_key_far_start_not_pressed(self):
+            my_expectation = 'ON'
             reality = src.car.starter(
                 key_is_close=False,
                 start_is_pressed=False,
@@ -728,9 +734,49 @@ the test passes.
 
     # Exceptions seen
 
-  the test is still green.
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  - I do not need to make a new ``my_expectation`` :ref:`variable<what is a variable?>` because the expectation for the new :ref:`assertion<what is an assertion?>` is the same as the last one (:red:`'OFF'`)
+  .. code-block:: python
+
+    AssertionError: 'OFF' != 'ON'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change ``my_expectation`` to match ``reality`` in :ref:`test_key_far_start_not_pressed`
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 2
+
+        def test_key_far_start_not_pressed(self):
+            my_expectation = 'OFF'
+
+  the test passes.
+
+  .. code-block:: python
+
+    car(key_is_close=False, start_is_pressed=False) -> 'OFF'
+    car(key_is_close=False, start_is_pressed=True ) -> 'OFF'
+    car(key_is_close=True , start_is_pressed=False) -> 'OFF'
+    car(key_is_close=True , start_is_pressed=True ) -> 'ON'
+
+* I add a git_ commit message in the other terminal_
+
+  
+
+
+
+----
+
+*********************************************************************************
+extract off variable
+*********************************************************************************
 
 * I make a :ref:`global variable<what is a variable?>` to remove repetition from the tests
 
@@ -882,6 +928,7 @@ key             brake               start button        output
 
 ----
 
+* I go back to the terminal_ where the tests are running
 I add a value for ``brake_is_pressed`` to the first :ref:`assertion<what is an assertion?>` in :ref:`test_key_close`, for when the key is :green:`close`, the brake is being :green:`pressed` and the start button is :green:`pressed`
 
 ==============  ==================  ==================  ===========
@@ -1141,7 +1188,7 @@ key             brake               start button        output
 
         return 'ON'
 
-  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``
+  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``.
 
 * I use :ref:`Logical Disjunction<test_logical_disjunction>` to put the two :ref:`if statements` together because they return the same thing
 
@@ -1798,6 +1845,7 @@ key             brake             start button        gear                output
 
 ----
 
+* I go back to the terminal_ where the tests are running
 I add a value for ``in_park`` to the :ref:`assertion<what is an assertion?>` for the case where the key is :green:`close`, the brake is being :green:`pressed`, the start button is :green:`pressed` and the car gear is :green:`in park`, to :ref:`test_key_close_brake_pressed`
 
 ==============  ================  ==================  ==================  ================
@@ -1996,7 +2044,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
         if not in_park:
             return 'OFF'
 
-  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``
+  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``.
 
 * I use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put the two :ref:`if statements` together because they both return :red:`'OFF'`
 

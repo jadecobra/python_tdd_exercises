@@ -133,7 +133,7 @@ open the project
 test_identity_function
 *********************************************************************************
 
-A :ref:`function<what is a function?>` can take input, and the simplest thing it can do is return the input as output, it is called :ref:`the Identity or Passthrough function<test_logical_identity>` and is also in the :ref:`Truth Table<truth table>` chapter in :ref:`test_logical_identity`.
+A :ref:`function<what is a function?>` can take input and it :ref:`returns None by default<test_making_a_function_w_return_none>`. The :ref:`the Identity or Passthrough function<test_logical_identity>` returns the input it gets as output.
 
 ----
 

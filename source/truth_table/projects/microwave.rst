@@ -639,7 +639,7 @@ the test passes.
 
         return 'OFF'
 
-  green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``
+  green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``.
 
 * I remove the commented lines
 
@@ -735,7 +735,7 @@ the test passes.
         if not start_is_pushed:
             return 'OFF'
 
-  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``
+  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``.
 
 * I add an :ref:`if statement<if statements>` for when the door is :green:`open`
 
