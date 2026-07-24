@@ -10,9 +10,10 @@
 Automated Teller Machine
 #################################################################################
 
-----
 
-I want to make an **Automated Teller Machine** that allows or denies withdrawals.
+I want to make an **Automated Teller Machine** that gives me :green:`CASH` or :red:`DENIED` when I try to make a withdrawal.
+
+----
 
 *********************************************************************************
 preview
@@ -24,49 +25,49 @@ These are the tests I have at the end of the chapter
   :language: python
   :linenos:
   :caption: atm/tests/test_atm.py
-  :lines: 1-29
+  :lines: 1-28
 
 .. literalinclude:: ../../code/atm/test_atm.py
   :language: python
-  :lineno-start: 31
+  :lineno-start: 30
   :caption: atm/tests/test_atm.py
-  :lines: 31-49
+  :lines: 30-48
 
 .. literalinclude:: ../../code/atm/test_atm.py
   :language: python
-  :lineno-start: 51
+  :lineno-start: 50
   :caption: atm/tests/test_atm.py
-  :lines: 51-69
+  :lines: 50-68
 
 .. literalinclude:: ../../code/atm/test_atm.py
   :language: python
-  :lineno-start: 71
+  :lineno-start: 70
   :caption: atm/tests/test_atm.py
-  :lines: 71-89
+  :lines: 70-88
 
 .. literalinclude:: ../../code/atm/test_atm.py
   :language: python
-  :lineno-start: 91
+  :lineno-start: 90
   :caption: atm/tests/test_atm.py
-  :lines: 91-109
+  :lines: 90-108
 
 .. literalinclude:: ../../code/atm/test_atm.py
   :language: python
-  :lineno-start: 111
+  :lineno-start: 110
   :caption: atm/tests/test_atm.py
-  :lines: 111-129
+  :lines: 110-128
 
 .. literalinclude:: ../../code/atm/test_atm.py
   :language: python
-  :lineno-start: 131
+  :lineno-start: 130
   :caption: atm/tests/test_atm.py
-  :lines: 131-149
+  :lines: 130-148
 
 .. literalinclude:: ../../code/atm/test_atm.py
   :language: python
-  :lineno-start: 151
+  :lineno-start: 150
   :caption: atm/tests/test_atm.py
-  :lines: 151-
+  :lines: 150-
 
 ----
 
@@ -97,7 +98,7 @@ start the project
     .. tab-item:: WSL/Linux/Mac
       :sync: unix
 
-      * I change ``truth_table`` to ``atm`` in ``makePythonTdd.sh``
+      * I change the name of the project to ``atm`` in ``makePythonTdd.sh``
 
         .. literalinclude:: ../../code/atm/make_tdd/makePythonTddATM.sh
           :language: python
@@ -114,7 +115,7 @@ start the project
     .. tab-item:: no WSL
       :sync: no_wsl
 
-      * I change ``truth_table`` to ``atm`` in ``makePythonTdd.ps1``
+      * I change the name of the project to ``atm`` in ``makePythonTdd.ps1``
 
         .. literalinclude:: ../../code/atm/make_tdd/makePythonTddATM.ps1
           :language: Powershell

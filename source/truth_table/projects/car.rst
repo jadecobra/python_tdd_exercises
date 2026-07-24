@@ -1,6 +1,6 @@
 .. meta::
-  :description: Build a realistic ATM withdrawal system from scratch using Python and Test Driven Development (TDD). This hands-on project tutorial guides beginners through translating complex business rules—including PIN verification, account balance checks, daily withdrawal limits, and card expiration—into clean, modular code. Learn to use the uv package manager, unittest, and pytest-watcher to manage a professional Red-Green-Refactor workflow.
-  :keywords: Jacob Itegboje, Python ATM project tutorial, TDD for beginners exercises, translate truth tables to code, Python boolean logic project, unittest tutorial for beginners, uv package manager tutorial, pytest-watcher automation, Red Green Refactor Python example, ATM withdrawal logic code, Python if statement refactoring, banking software logic gates, Python default parameters tutorial, handling multiple conditions in Python, logic modeling for software engineers, PIN verification system code, account balance truth table, daily limit logic, card expiration check Python, iterative software development
+  :description: 
+  :keywords:
 
 .. include:: ../../links.rst
 
@@ -10,7 +10,140 @@
 Car
 #################################################################################
 
-I want to make a **Car** that can be turned on with the push of a button, if the inputs are
+I want to make a **Car** that comes :green:`ON` or stays :red:`OFF` when I push the start button.
+
+----
+
+*********************************************************************************
+preview
+*********************************************************************************
+
+These are the tests I have at the end of the chapter
+
+.. literalinclude:: ../../code/car/test_car.py
+  :language: python
+  :linenos:
+  :caption: truth_table/tests/test_car.py
+
+----
+
+*********************************************************************************
+start the project
+*********************************************************************************
+
+* I open a terminal_
+
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      * I open ``makePythonTdd.sh``
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      * I open ``makePythonTdd.ps1``
+
+* I name this project ``car``
+
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      * I change the name of the project to ``car`` in ``makePythonTdd.sh``
+
+        .. literalinclude:: ../../code/car/make_tdd/makePythonTddCar.sh
+          :language: python
+          :linenos:
+          :emphasize-lines: 2-3, 5, 12, 20
+
+      * I run ``makePythonTdd.sh`` in the terminal_ to make the ``car`` project
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          ./makePythonTdd.sh
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      * I change the name of the project to ``car`` in ``makePythonTdd.ps1``
+
+        .. literalinclude:: ../../code/car/make_tdd/makePythonTddCar.ps1
+          :language: Powershell
+          :linenos:
+          :emphasize-lines: 1-2, 4, 11, 19
+
+      * I run ``makePythonTdd.ps1`` in the terminal_ to make the ``car`` project
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          .\makePythonTdd.ps1
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :emphasize-lines: 10
+
+    ======================== FAILURES =========================
+    _________________ TestCar.test_failure ____________________
+
+    self = <tests.test_car.TestCar testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
+    E       AssertionError: True is not false
+
+    tests/test_car.py:7: AssertionError
+    ================ short test summary info ==================
+    FAILED tests/test_car.py::TestCar::test_failure - AssertionError: True is not false
+    ==================== 1 failed in X.YZs ====================
+
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_car.py:7`` to open it
+* I change :green:`True` to :red:`False` in ``test_car.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 4-5
+
+    class TestCar(unittest.TestCase):
+
+        def test_failure(self):
+            # self.assertFalse(True)
+            self.assertFalse(False)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I open a new terminal_ then `change directory`_ to ``car``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd car
+
+* I add the new files_ and folder_ to git_ for tracking
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git add .
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'setup project'
+
+If the inputs to the **Car** are
 
 * is the key close to the starter?
 * was the start button pressed?
@@ -25,266 +158,6 @@ key             start button        output
 :red:`far`      :green:`pressed`    :red:`OFF`
 :red:`far`      :red:`NOT pressed`  :red:`OFF`
 ==============  ==================  =================
-
-*********************************************************************************
-preview
-*********************************************************************************
-
-These are the tests I have at the end of the chapter
-
-.. literalinclude:: ../../code/truth_table/tests/test_car.py
-  :language: python
-  :linenos:
-  :caption: truth_table/tests/test_car.py
-
-----
-
-*********************************************************************************
-requirements
-*********************************************************************************
-
-* :ref:`truth table: Binary Operations Examples`
-
-----
-
-*********************************************************************************
-start the project
-*********************************************************************************
-
-* I name this project ``car``
-* I open a terminal_
-* I use uv_ to make a directory_ for the project and initialize it
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv init car
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    Initialized project `car` at `.../pumping_python/car`
-
-  then goes back to the command line.
-
-* I use mkdir_ to make a folder_ named ``src``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    mkdir src
-
-  the terminal_ goes back to the command line.
-
-* I use the `mv program`_ to change the name of ``main.py`` to ``car.py`` and move it to the ``src`` folder_
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        mv main.py src/car.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        Move-Item main.py src/car.py
-
-  the terminal_ goes back to the command line.
-
-* I `make a directory`_ for the tests
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    mkdir tests
-
-  the terminal_ goes back to the command line.
-
-* I make the ``tests`` directory_ a `Python package`_
-
-  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        touch tests/__init__.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        New-Item tests/__init__.py
-
-  the terminal_ goes back to the command line.
-
-* I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        touch tests/test_car.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        New-Item tests/test_car.py
-
-  the terminal_ goes back to the command line.
-
-* I open ``test_car.py``
-
-* I add :ref:`the first failing test<test_failure>` to ``test_car.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1, 4, 6-7
-
-    import unittest
-
-
-    class TestCar(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-* I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest" > requirements.txt
-
-  the terminal_ goes back to the command line.
-
-* I add `pytest-watcher`_ to the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest-watcher" >> requirements.txt
-
-  the terminal_ goes back to the command line.
-
-* I use uv_ to install `pytest-watcher`_ with the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv add --requirement requirements.txt
-
-  the terminal_ shows that it installed `pytest-watcher`_ and its dependencies.
-
-* I use tree_ to look at the structure of the project
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    tree
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .
-    ├── README.md
-    ├── pyproject.toml
-    ├── requirements.txt
-    ├── src
-    │   └── car.py
-    ├── tests
-    │   ├── __init__.py
-    │   └── test_car.py
-    └── uv.lock
-
-  if you do not see ``uv.lock`` in your tree, make sure you ran ``uv add --requirement requirements.txt``, then run the tests next
-
-* I use `pytest-watcher`_ to run the tests automatically
-
-  .. code-block:: python
-    :emphasize-lines: 1
-    :emphasize-text: .
-
-    uv run pytest-watcher . --now
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-    :emphasize-lines: 8, 10
-
-    ======================== FAILURES ========================
-    _________________ TestCar.test_failure ___________________
-
-    self = <tests.test_car.TestCar testMethod=test_failure>
-
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
-
-    tests/test_car.py:7: AssertionError
-    ================ short test summary info =================
-    FAILED tests/test_car.py::TestCar::test_failure - AssertionError: True is not false
-    =================== 1 failed in X.YZs ====================
-
-  because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`.
-
-  .. admonition:: if the terminal_ does not show the same error, then check if
-
-    * your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-    * you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
-
-    and try ``uv run pytest-watcher . --now`` again
-
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_car.py``
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 7-8
-    :emphasize-text: AssertionError
-
-    class TestCar(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-
-    # Exceptions seen
-    # AssertionError
-
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
-
-            self.assertFalse(False)
-
-  the test passes.
 
 ----
 

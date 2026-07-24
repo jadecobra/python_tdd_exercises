@@ -7,7 +7,7 @@ OFF = 'OFF'
 
 class TestCar(unittest.TestCase):
 
-    def test_key_close_brake_pressed_w_gear(self):
+    def test_brake_pressed_key_close_w_gear(self):
         self.assertEqual(
             src.car.starter(
                 key_is_close=True,
@@ -48,7 +48,7 @@ class TestCar(unittest.TestCase):
             OFF
         )
 
-    def test_key_close_brake_not_pressed_w_gear(self):
+    def test_brake_not_pressed_key_close_w_gear(self):
         self.assertEqual(
             src.car.starter(
                 key_is_close=True,
@@ -89,7 +89,7 @@ class TestCar(unittest.TestCase):
             OFF
         )
 
-    def test_key_far_brake_pressed_w_gear(self):
+    def test_brake_pressed_key_far_w_gear(self):
         self.assertEqual(
             src.car.starter(
                 key_is_close=False,
@@ -130,7 +130,7 @@ class TestCar(unittest.TestCase):
             OFF
         )
 
-    def test_key_far_brake_not_pressed_w_gear(self):
+    def test_brake_not_pressed_key_far_w_gear(self):
         self.assertEqual(
             src.car.starter(
                 key_is_close=False,
