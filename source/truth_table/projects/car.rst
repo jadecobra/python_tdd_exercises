@@ -1328,7 +1328,7 @@ test_brake_not_pressed_key_close_start_pressed
         # if not brake_is_pressed:
         #     return False
         # if not key_is_close:
-        if not key_is_close or not brake_is_pressed:
+        if not brake_is_pressed or not key_is_close:
             return False
         return start_is_pressed
 
@@ -1340,11 +1340,11 @@ test_brake_not_pressed_key_close_start_pressed
     :lineno-start: 9
     :emphasize-lines: 1-5
 
-        # if not key_is_close or not brake_is_pressed:
+        # if not brake_is_pressed or not key_is_close:
         if (
-            (not key_is_close)
-            (not and)
             (not brake_is_pressed)
+            (not and)
+            (not key_is_close)
         ):
             return False
         return start_is_pressed
@@ -1363,13 +1363,13 @@ test_brake_not_pressed_key_close_start_pressed
     :lineno-start: 9
     :emphasize-lines: 2-7
 
-        # if not key_is_close or not brake_is_pressed:
+        # if not brake_is_pressed or not key_is_close:
         # if (
-        #     (not key_is_close)
-        #     (not and)
         #     (not brake_is_pressed)
+        #     (not and)
+        #     (not key_is_close)
         # ):
-        if not (key_is_close and brake_is_pressed):
+        if not (brake_is_pressed and key_is_close):
             return False
         return start_is_pressed
 
@@ -1381,7 +1381,7 @@ test_brake_not_pressed_key_close_start_pressed
     :lineno-start: 15
     :emphasize-lines: 3-4
 
-        if not (key_is_close and brake_is_pressed):
+        if not (brake_is_pressed and key_is_close):
             return False
         else:
             return start_is_pressed
@@ -1394,10 +1394,10 @@ test_brake_not_pressed_key_close_start_pressed
     :lineno-start: 15
     :emphasize-lines: 3-4
 
-        if not (key_is_close and brake_is_pressed):
+        if not (brake_is_pressed and key_is_close):
             return False
         # else:
-        if not (not (key_is_close and brake_is_pressed)):
+        if not (not (brake_is_pressed and key_is_close)):
             return start_is_pressed
 
   still green.
@@ -1408,11 +1408,11 @@ test_brake_not_pressed_key_close_start_pressed
     :lineno-start: 15
     :emphasize-lines: 4-5
 
-        if not (key_is_close and brake_is_pressed):
+        if not (brake_is_pressed and key_is_close):
             return False
         # else:
-        # if not (not (key_is_close and brake_is_pressed)):
-        if key_is_close and brake_is_pressed:
+        # if not (not (brake_is_pressed and key_is_close)):
+        if brake_is_pressed and key_is_close:
             return start_is_pressed
 
   green.
@@ -1423,11 +1423,11 @@ test_brake_not_pressed_key_close_start_pressed
     :lineno-start: 15
     :emphasize-lines: 1-2, 7-8
 
-        # if not (key_is_close and brake_is_pressed):
+        # if not (brake_is_pressed and key_is_close):
         #     return False
         # else:
-        # if not (not (key_is_close and brake_is_pressed)):
-        if key_is_close and brake_is_pressed:
+        # if not (not (brake_is_pressed and key_is_close)):
+        if brake_is_pressed and key_is_close:
             return start_is_pressed
         else:
             False
@@ -1441,7 +1441,7 @@ test_brake_not_pressed_key_close_start_pressed
         start_is_pressed, key_is_close=False,
         brake_is_pressed=False,
     ):
-        if key_is_close and brake_is_pressed:
+        if brake_is_pressed and key_is_close:
             return start_is_pressed
         else:
             False
@@ -1456,8 +1456,11 @@ test_brake_not_pressed_key_close_start_pressed
 
   When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
 
-  - it returns :red:`False` if the key is :red:`NOT close` to the ignition OR the start button is :red:`NOT pressed` OR the brake is :red:`NOT pressed`
-  - it returns :green:`True` if none of the conditions are met
+  - it checks if the if the brake is :green:`pressed` then if the key is :green:`close` to the ignition
+
+    - if the key is :green:`close` to the ignition AND the brake is :ref:`pressed`, it returns the value of ``start_is_pressed`` (:red:`False` or :green:`True`)
+
+  - it returns :red:`False` if none of the above :ref:`conditions<if statements>` are met
 
 
   .. code-block:: python
@@ -1465,7 +1468,7 @@ test_brake_not_pressed_key_close_start_pressed
     ignition(
         key_is_close=True, start_is_pressed=True,
         brake_is_pressed=False
-    ) -> True
+    ) -> False
     ignition(
         key_is_close=True, start_is_pressed=True,
         brake_is_pressed=True
