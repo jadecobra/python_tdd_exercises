@@ -392,7 +392,7 @@ test_start_not_pressed
 
   .. code-block:: python
 
-    ignition(start_is_pressed=False) -> Fa;se
+    ignition(start_is_pressed=False) -> False
     ignition(start_is_pressed=True ) -> True
 
 * I add a git_ commit message in the other terminal_
@@ -404,10 +404,10 @@ test_start_not_pressed
 
 The ``ignition`` :ref:`function<what is a function?>` always returns the value of ``start_is_pressed``. Is this the :ref:`Identity Function<test_logical_identity>`?
 
-I want the car to start only when the key is :green:`close` to the ignition AND the start button is :green:`pressed` and . The inputs to the ignition will then be
+I want the car to start only when the start button is :green:`pressed` AND the key is :green:`close` to the ignition . The inputs to the ignition will then be
 
-* is the key close to the ignition?
 * was the start button pressed?
+* is the key close to the ignition?
 
 Which gives me this :ref:`truth table`
 
@@ -443,12 +443,12 @@ test_key_close_start_pressed
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 3
+    :emphasize-lines: 4
 
         def test_start_pressed(self):
             reality = src.car.ignition(
-                key_is_close=True,
                 start_is_pressed=True,
+                key_is_close=True,
             )
             self.assertTrue(reality)
 
@@ -487,7 +487,7 @@ test_key_close_start_pressed
     TypeError: ignition() missing
                1 required positional argument: 'key_is_close'
 
-  because the :ref:`assertion<what is an assertion?>` in :ref:`test_start_not_pressed` :ref:`calls<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` with one argument(``start_is_pressed``) and I just changed the :ref:`function signature<what is a function?>` to make it take two required arguments (``key_is_close`` and ``start_is_pressed``). I have to make ``key_is_close`` a :ref:`choice<test_optional_arguments>`.
+  because the :ref:`assertion<what is an assertion?>` :ref:`calls<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` with one argument(``start_is_pressed``) and I just changed the :ref:`<what is a function?>` to make it take two required arguments (``key_is_close`` and ``start_is_pressed``). I have to make ``key_is_close`` a :ref:`choice<test_optional_arguments>`.
 
 * I add a :ref:`default value<test_optional_arguments>` for ``key_is_close`` to make it a :ref:`choice<test_optional_arguments>`
 
@@ -564,7 +564,7 @@ test_key_not_close_start_pressed
 
       def test_key_not_close_start_pressed(self):
           reality = src.car.ignition(
-              start_is_pressed=True
+              start_is_pressed=True,
           )
           self.assertFalse(reality)
 
@@ -627,34 +627,19 @@ the test passes.
 
 ----
 
-* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the new :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
+* I want the ``ignition`` :ref:`function<what is a function?>` to check if the start button is :green:`pressed` before it checks if the key is :green:`close` to the ignition since there is no need to check for the key if the button is :red:`NOT pressed`. I change the :ref:`if statement<if statements>`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2-3
 
     def ignition(start_is_pressed, key_is_close=False):
         # if key_is_close == False:
-        if not key_is_close == True:
-            return False
-        return start_is_pressed
+        #     return False
+        # return start_is_pressed
+        if start_is_pressed:
+            return key_is_close
 
   the test is still green.
-
-* I remove ``== True``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3-4
-
-    def ignition(start_is_pressed, key_is_close=False):
-        # if key_is_close == False:
-        # if not key_is_close == True:
-        if not key_is_close:
-            return False
-        return start_is_pressed
-
-  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``.
 
 * I remove the commented lines from the ``ignition`` :ref:`function<what is a function?>`
 
@@ -662,9 +647,8 @@ the test passes.
     :linenos:
 
     def ignition(start_is_pressed, key_is_close=False):
-        if not key_is_close:
-            return False
-        return start_is_pressed
+        if start_is_pressed:
+            return key_is_close
 
 * I add a git_ commit message in the other terminal_
 
@@ -674,11 +658,7 @@ the test passes.
     git commit -am \
     'add test_key_not_close_start_pressed'
 
-When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
-
-- it returns :red:`False` if the key is :red:`NOT close` to the ignition.
-- it only checks if the start button is :green:`pressed` if the key is :green:`close` to the ignition.
-- it returns :green:`True` (turns :green:`ON`) only if the key is :green:`close` to the ignition AND the start button is :green:`pressed`.
+When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the start button is :green:`pressed`. If the start button is :green:`pressed` it returns the value of ``key_is_close`` (:green:`True` if it is :green:`close`, :red:`False` if it is :red:`NOT close`.
 
 .. code-block:: python
 
@@ -703,19 +683,16 @@ test_key_close_start_not_pressed
 
   .. code-block:: python
     :lineno-start: 18
-    :emphasize-lines: 3-8
+    :emphasize-lines: 6
 
             self.assertFalse(reality)
 
         def test_start_not_pressed(self):
             reality = src.car.ignition(
-                key_is_close=True,
                 start_is_pressed=False,
+                key_is_close=True,
             )
             self.assertFalse(reality)
-
-
-    # Exceptions seen
 
   the test is still green.
 
@@ -729,11 +706,13 @@ test_key_close_start_not_pressed
 
         def test_key_close_start_not_pressed(self):
             reality = src.car.ignition(
-                key_is_close=True,
                 start_is_pressed=False,
+                key_is_close=True,
             )
             self.assertFalse(reality)
 
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -743,11 +722,7 @@ test_key_close_start_not_pressed
     git commit -am \
     'add test_key_close_start_not_pressed'
 
-When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
-
-- it returns :red:`False` if the key is :red:`NOT close` to the ignition.
-- it only checks if the start button is :green:`pressed` if the key is :green:`close` to the ignition.
-- it returns :green:`True` (turns :green:`ON`) only if the key is :green:`close` to the ignition AND the start button is :green:`pressed`.
+When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the start button is :green:`pressed`. If the start button is :green:`pressed` it returns the value of ``key_is_close`` (:green:`True` if it is :green:`close`, :red:`False` if it is :red:`NOT close`.
 
 .. code-block:: python
 
@@ -795,7 +770,9 @@ test_key_not_close_start_not_pressed
 
   .. code-block:: python
 
-    AssertionError: False is not true
+    AssertionError: None is not true
+
+  because :ref:`all functions return None by default<test_making_a_function_w_return_none>`.
 
   I do not give a value for the ``key_is_close`` parameter since
 
@@ -824,7 +801,37 @@ test_key_not_close_start_not_pressed
 
 ----
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` to match ``reality`` in :ref:`test_key_not_close_start_not_pressed`
+* I add a :ref:`return statement<the return statement>` to the ``ignition`` :ref:`function<what is a function?>` to make it clearer, in ``car.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4
+
+    def ignition(start_is_pressed, key_is_close=False):
+        if start_is_pressed:
+            return key_is_close
+        return None
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
+
+* I change :ref:`None<what is None?>` to :red:`False` in the :ref:`return statement<the return statement>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4
+
+    def ignition(start_is_pressed, key_is_close=False):
+        if start_is_pressed:
+            return key_is_close
+        return False
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` to match ``reality`` in :ref:`test_key_not_close_start_not_pressed` in ``test_car.py``
 
   .. code-block:: python
     :lineno-start: 27
@@ -856,47 +863,49 @@ test_key_not_close_start_not_pressed
     git commit -am \
     'add test_key_not_close_start_not_pressed'
 
-When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
+When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`. It checks if the start button is :green:`pressed`.
 
-- it returns :red:`False` if the key is :red:`NOT close` to the ignition.
+* If the start button is :red:`NOT pressed` it returns :red:`False`
 
   .. code-block:: shell
 
     ignition(key_is_close=False, start_is_pressed=False) -> False
-    └── def ignition(key_is_close, start_is_pressed):
-        └── if not key_is_close:
-            └── return False
-            return start_is_pressed
-
-  .. code-block:: shell
-
-    ignition(key_is_close=False, start_is_pressed=True ) -> False
-    └── def ignition(key_is_close, start_is_pressed):
-        └── if not key_is_close:
-            └── return False
-            return start_is_pressed
-
-- it only checks if the start button is :green:`pressed` if the key is :green:`close` to the ignition.
+    └── def ignition(start_is_pressed, key_is_close=False):
+        ├── if start_is_pressed:
+        │       return key_is_close
+        └── return False
 
   .. code-block:: shell
 
     ignition(key_is_close=True , start_is_pressed=False) -> False
-    └── def ignition(key_is_close, start_is_pressed):
-        ├── if not key_is_close:
-        │       return False
-        └── return start_is_pressed
-            return False
+    └── def ignition(start_is_pressed, key_is_close=False):
+        ├── if start_is_pressed:
+        │       return key_is_close
+        └── return False
 
-- it returns :green:`True` (turns :green:`ON`) only if the key is :green:`close` to the ignition AND the start button is :green:`pressed`.
+* If the start button is :green:`pressed` it returns the value of ``key_is_close``
+
+  - if the value of ``key_is_close`` is :red:`False`
+
+    .. code-block:: shell
+
+      ignition(key_is_close=False, start_is_pressed=True ) -> False
+      └── def ignition(start_is_pressed, key_is_close=False):
+          └── if start_is_pressed:
+              └── return key_is_close
+                  return False
+              return False
+
+  - if the value of ``key_is_close`` is :green:`True`
 
   .. code-block:: shell
 
-    ignition(key_is_close=True , start_is_pressed=True ) -> True
-    └── def ignition(key_is_close, start_is_pressed):
-        ├── if not key_is_close:
-        │       return False
-        └── return start_is_pressed
-            return True
+      ignition(key_is_close=True , start_is_pressed=True ) -> True
+      └── def ignition(start_is_pressed, key_is_close=False):
+          └── if start_is_pressed:
+              └── return key_is_close
+                  return True
+              return False
 
 ----
 
@@ -904,7 +913,7 @@ When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how t
 remove reality variable
 *********************************************************************************
 
-I can :ref:`call<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` directly in all the :ref:`assertions<what is an assertion?>` of the tests.
+I can :ref:`call<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` directly in all the :ref:`assertions<what is an assertion?>`.
 
 * I :ref:`call<how to call a function with input>` ``src.car.ignition`` directly in the :ref:`assertion<what is an assertion?>` of :ref:`test_key_not_close_start_not_pressed`
 
@@ -1074,11 +1083,11 @@ key               start button        output
 :red:`NOT close`  :red:`NOT pressed`  :red:`False`
 ================  ==================  =============
 
-I want the car to start only when the brake pedal is :green:`pressed` AND the key is :green:`close` to the ignition AND the start button is :green:`pressed`. The inputs to the ignition will then be
+I want the car to start only when the start button is :green:`pressed` AND the key is :green:`close` to the ignition AND the brake pedal is :green:`pressed`. The inputs to the ignition will then be
 
+* was the start button pressed?
 * is the key close to the ignition?
 * is the brake being pressed?
-* was the start button pressed?
 
 ----
 
