@@ -404,7 +404,7 @@ test_start_not_pressed
 
 The ``ignition`` :ref:`function<what is a function?>` always returns the value of ``start_is_pressed``. Is this the :ref:`Identity Function<test_logical_identity>`?
 
-I want the car to start only when the start button is :green:`pressed` AND the key is :green:`close` to the ignition . The inputs to the ignition will then be
+I want the car to start only when the start button is :green:`pressed` AND the key is :green:`close` to the ignition. The inputs to the ignition will then be
 
 * was the start button pressed?
 * is the key close to the ignition?
@@ -433,7 +433,7 @@ test_key_close_start_pressed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add ``key_is_close`` with a value to the :ref:`call<how to call a function with input>` to the ``ignition`` :ref:`function<what is a function?>` for if the key is :green:`close` and the start button is :green:`pressed`
+* I add ``key_is_close`` with a value to the :ref:`call<how to call a function with input>` to the ``ignition`` :ref:`function<what is a function?>` for if the the start button is :green:`pressed` AND the key is :green:`close` to the ignition
 
   ================  ==================  =============
   key               start button        output
@@ -548,7 +548,7 @@ test_key_not_close_start_pressed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test with an :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition AND the start button is :green:`pressed`, in ``test_car.py``
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the start button is :green:`pressed` AND the key is :red:`NOT close` to the ignition, in ``test_car.py``
 
   ================  ==================  =============
   key               start button        output
@@ -673,7 +673,7 @@ test_key_close_start_not_pressed
 
 * I go back to the terminal_ where the tests are running
 
-* I add a value for the ``key_is_close`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_start_not_pressed` for if the key is :green:`close` and the start button is :red:`NOT pressed`, in ``test_car.py``
+* I add a value for the ``key_is_close`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_start_not_pressed` for if the start button is :red:`NOT pressed` AND the key is :green:`close` to the ignition, in ``test_car.py``
 
   ================  ==================  =============
   key               start button        output
@@ -743,7 +743,7 @@ test_key_not_close_start_not_pressed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test with an :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition AND the start button is :red:`NOT pressed`, in ``test_car.py``
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the start button is :red:`NOT pressed` AND the key is :red:`NOT close` to the ignition, in ``test_car.py``
 
   ================  ==================  =============
   key               start button        output
@@ -1102,7 +1102,7 @@ test_brake_pressed_key_close_start_pressed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a value for ``brake_is_pressed`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_key_close_start_pressed`, for if the key is :green:`close`, the brake is being :green:`pressed` and the start button is :green:`pressed`
+* I add a value for ``brake_is_pressed`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_key_close_start_pressed`, for if the start button is :green:`pressed` AND the key is :green:`close` to the ignition AND the brake is being :green:`pressed`
 
   ==============  ==================  ==================  =============
   key             brake               start button        output
@@ -1112,14 +1112,14 @@ test_brake_pressed_key_close_start_pressed
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 5
+    :emphasize-lines: 6
 
         def test_key_close_start_pressed(self):
             self.assertTrue(
                 src.car.ignition(
+                    start_is_pressed=True,
                     key_is_close=True,
                     brake_is_pressed=True,
-                    start_is_pressed=True,
                 )
             )
 
@@ -1153,9 +1153,9 @@ test_brake_pressed_key_close_start_pressed
         start_is_pressed, key_is_close=False,
         brake_is_pressed,
     ):
-        if not key_is_close:
-            return False
-        return start_is_pressed
+        if start_is_pressed:
+            return key_is_close
+        return False
 
   the terminal_ is my friend, and shows SyntaxError_
 
@@ -1199,7 +1199,7 @@ test_brake_pressed_key_close_start_pressed
   .. code-block:: python
 
     ignition(
-        key_is_close=True, start_is_pressed=True,
+        start_is_pressed=True, key_is_close=True,
         brake_is_pressed=True
     ) -> True
 
@@ -1222,9 +1222,9 @@ test_brake_pressed_key_close_start_pressed
         def test_brake_pressed_key_close_start_pressed(self):
             self.assertTrue(
                 src.car.ignition(
+                    start_is_pressed=True,
                     key_is_close=True,
                     brake_is_pressed=True,
-                    start_is_pressed=True,
                 )
             )
 
@@ -1249,7 +1249,7 @@ test_brake_not_pressed_key_close_start_pressed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a new test with an :ref:`assertion<what is an assertion?>` for if the key is :green:`close`, the brake is :red:`NOT pressed` and the start button is :green:`pressed`
+* I add a new test with an :ref:`assertion<what is an assertion?>` for if the start button is :green:`pressed` AND the key is :green:`close` to the ignition AND the brake is :red:`NOT pressed`
 
   ==============  ==================  ==================  ============
   key             brake               start button        output
@@ -1555,7 +1555,7 @@ test_brake_not_pressed_key_close_start_pressed
 
 ----
 
-* I add a value for ``brake_is_pressed`` to the next :ref:`assertion<what is an assertion?>` for if the key is :green:`close`, the brake is being :green:`pressed` and the start button is :red:`NOT pressed`
+* I add a value for ``brake_is_pressed`` to the next :ref:`assertion<what is an assertion?>` for if the key is :green:`close`, the start button is :red:`NOT pressed` AND the brake is being :green:`pressed`
 
   ==============  ==================  ==================  ===========
   key             brake               start button        output
@@ -1618,7 +1618,7 @@ key             brake               start button        output
 
 
 
-* I add an :ref:`assertion<what is an assertion?>` for if the key is :green:`close`, the brake is :red:`NOT pressed` and the start button is :red:`NOT pressed`, in :ref:`test_key_close_brake_not_pressed` in ``test_car.py``
+* I add an :ref:`assertion<what is an assertion?>` for if the key is :green:`close`, the start button is :red:`NOT pressed` AND the brake is :red:`NOT pressed`, in :ref:`test_key_close_brake_not_pressed` in ``test_car.py``
 
   ==============  ==================  ==================  ===========
   key             brake               start button        output
@@ -1665,7 +1665,7 @@ key             brake               start button        output
 :red:`NOT close`  :green:`pressed`    :red:`NOT pressed`  :red:`False`
 ==============  ==================  ==================  ===========
 
-* I add a value for the ``brake_is_pressed`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_key_close` for the case where the key is :red:`NOT close` to the ignition, the brake is being :green:`pressed` and the start button is :green:`pressed`
+* I add a value for the ``brake_is_pressed`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_key_close` for the case where the key is :red:`NOT close` to the ignition, the start button is :green:`pressed` AND the brake is being :green:`pressed`
 
   ==============  ==================  ==================  ===========
   key             brake               start button        output
@@ -1694,7 +1694,7 @@ key             brake               start button        output
 
   the test is still green.
 
-* I add a value for ``brake_is_pressed`` to the next :ref:`assertion<what is an assertion?>`, for if the key is :red:`NOT close` to the ignition, the brake is being :green:`pressed` and the start button is :red:`NOT pressed`
+* I add a value for ``brake_is_pressed`` to the next :ref:`assertion<what is an assertion?>`, for if the key is :red:`NOT close` to the ignition, the start button is :red:`NOT pressed` AND the brake is being :green:`pressed`
 
   ==============  ==================  ==================  ===========
   key             brake               start button        output
@@ -1763,7 +1763,7 @@ key             brake               start button        output
 :red:`NOT close`  :red:`NOT pressed`  :red:`NOT pressed`  :red:`False`
 ==============  ==================  ==================  ===========
 
-* I add a new test with an :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition, the brake is :red:`NOT pressed` and the start button is :green:`pressed`
+* I add a new test with an :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition, the start button is :green:`pressed` AND the brake is :red:`NOT pressed`
 
   ==============  ==================  ==================  ===========
   key             brake               start button        output
@@ -1795,7 +1795,7 @@ key             brake               start button        output
 
   green.
 
-* I add an :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition, the brake is :red:`NOT pressed` and the start button is :red:`NOT pressed`
+* I add an :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition, the start button is :red:`NOT pressed` AND the brake is :red:`NOT pressed`
 
   ==============  ==================  ==================  ===========
   key             brake               start button        output
