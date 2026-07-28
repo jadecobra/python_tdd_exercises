@@ -169,7 +169,7 @@ test_number_pushed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I change :ref:`test_failure` to :ref:`test_number_pushed` with an :ref:`assertion<what is an assertion?>` for when the button for a floor is :green:`pushed`
+* I change :ref:`test_failure` to :ref:`test_number_pushed` with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :green:`pushed`
 
   ==================  =============
   floor button        output
@@ -339,7 +339,7 @@ test_number_not_pushed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test with an :ref:`assertion<what is an assertion?>` for when the button for a floor is :red:`NOT pushed`
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :red:`NOT pushed`
 
   ==================  =============
   floor button        output
@@ -550,7 +550,7 @@ test_doors_closed_number_not_pushed
 
 ----
 
-I add a test named ``test_doors_closed_number_not_pushed`` with an :ref:`assertion<what is an assertion?>` for when the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed`, in ``test_elevator.py``
+I add a test named :ref:`test_doors_closed_number_not_pushed` with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed`, in ``test_elevator.py``
 
 ================  ==================  =================
 doors             floor button        output
@@ -713,7 +713,7 @@ test_doors_open_number_pushed
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>` for when the doors are :red:`NOT closed` and the button for a floor is :green:`pushed`, in ``test_elevator.py``
+I add a test with an :ref:`assertion<what is an assertion?>` for if the doors are :red:`NOT closed` and the button for a floor is :green:`pushed`, in ``test_elevator.py``
 
 ================  ==================  =================
 doors             floor button        output
@@ -929,7 +929,7 @@ test_doors_open_number_not_pushed
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>` for when the doors are :red:`NOT closed` and the button for the floor is :red:`NOT pushed` to ``test_elevator.py``
+I add a test with an :ref:`assertion<what is an assertion?>` for if the doors are :red:`NOT closed` and the button for the floor is :red:`NOT pushed` to ``test_elevator.py``
 
 ================  ==================  =================
 doors             floor button        output
@@ -1354,7 +1354,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
   - it returns :red:`'NOT MOVE'` if the doors are :red:`NOT closed`
   - it returns :green:`True` if the above :ref:`conditions<if statements>` are NOT met
 
-* I do not need to add a value for the ``above_weight_limit`` parameter to the next :ref:`assertion<what is an assertion?>` for when the doors are :green:`closed`, the button for the floor is :green:`pushed` and the elevator is :red:`NOT above` the weight limit
+* I do not need to add a value for the ``above_weight_limit`` parameter to the next :ref:`assertion<what is an assertion?>` for if the doors are :green:`closed`, the button for the floor is :green:`pushed` and the elevator is :red:`NOT above` the weight limit
 
   ==============  ==================  ==================  ===============
   doors           floor number        weight limit        output
@@ -1414,7 +1414,7 @@ doors           floor number        weight limit        output
 :green:`closed`  :red:`NOT pushed`   :red:`NOT above`    :red:`False`
 ==============  ==================  ==================  ===============
 
-* I add a value for the ``above_weight_limit`` parameter to the :ref:`assertion<what is an assertion?>` for when the doors are :green:`closed`, the button for a floor is :red:`NOT pushed` and the elevator is :green:`above` the weight limit, in :ref:`test_doors_closed_number_not_pushed`
+* I add a value for the ``above_weight_limit`` parameter to the :ref:`assertion<what is an assertion?>` for if the doors are :green:`closed`, the button for a floor is :red:`NOT pushed` and the elevator is :green:`above` the weight limit, in :ref:`test_doors_closed_number_not_pushed`
 
   ==============  ==================  ==================  ===============
   doors           floor number        weight limit        output
@@ -1438,7 +1438,7 @@ doors           floor number        weight limit        output
 
   the test is still green.
 
-* I add an :ref:`assertion<what is an assertion?>` for when the doors are :green:`closed`, the button for the floor is :red:`NOT pushed` and the elevator is :red:`NOT above` the weight limit
+* I add an :ref:`assertion<what is an assertion?>` for if the doors are :green:`closed`, the button for the floor is :red:`NOT pushed` and the elevator is :red:`NOT above` the weight limit
 
   ==============  ==================  ==================  ===============
   doors           floor number        weight limit        output
@@ -1631,7 +1631,7 @@ doors             floor number        weight limit        output
 :red:`NOT closed`  :red:`NOT pushed`   :red:`NOT above`    :red:`False`
 ================  ==================  ==================  ===============
 
-* I add a value for the ``above_weight_limit`` parameter to the :ref:`assertion<what is an assertion?>` for when the doors are :red:`NOT closed`, the button for a floor is :red:`NOT pushed` and the elevator is :green:`above` the weight , in :ref:`test_doors_open_number_not_pushed`
+* I add a value for the ``above_weight_limit`` parameter to the :ref:`assertion<what is an assertion?>` for if the doors are :red:`NOT closed`, the button for a floor is :red:`NOT pushed` and the elevator is :green:`above` the weight , in :ref:`test_doors_open_number_not_pushed`
 
   ================  ==================  ==================  ===============
   doors             floor number        weight limit        output
@@ -1656,7 +1656,7 @@ doors             floor number        weight limit        output
 
   green.
 
-* I add an :ref:`assertion<what is an assertion?>` for when the doors are :red:`NOT closed`, the button for the floor is :red:`NOT pushed` and the elevator is :red:`NOT above` the weight limit
+* I add an :ref:`assertion<what is an assertion?>` for if the doors are :red:`NOT closed`, the button for the floor is :red:`NOT pushed` and the elevator is :red:`NOT above` the weight limit
 
 
   ================  ==================  ==================  ===============
@@ -2428,7 +2428,7 @@ doors           floor number        weight limit        emergency button      ou
 
   still green.
 
-* I add an :ref:`assertion<what is an assertion?>` for when the doors are :green:`closed`, the button for a floor is :red:`NOT pushed`, the elevator is :green:`above` the weight limit, and the emergency button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` for if the doors are :green:`closed`, the button for a floor is :red:`NOT pushed`, the elevator is :green:`above` the weight limit, and the emergency button is :red:`NOT pushed`
 
   ==============  ==================  ==================  ====================  ===============
   doors           floor number        weight limit        emergency button      output
@@ -2520,7 +2520,7 @@ doors           floor number        weight limit        emergency button      ou
 
   still green.
 
-* I add an :ref:`assertion<what is an assertion?>` for when the doors are :green:`closed`, the button for the floor is :red:`NOT pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` for if the doors are :green:`closed`, the button for the floor is :red:`NOT pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :red:`NOT pushed`
 
   ==============  ==================  ==================  ====================  ===============
   doors           floor number        weight limit        emergency button      output
@@ -2646,7 +2646,7 @@ doors             floor number      weight limit        emergency button      ou
 
   still green.
 
-* I add an :ref:`assertion<what is an assertion?>` for when the doors are :red:`NOT closed`, the button for a floor is :green:`pushed`, the elevator is :green:`above` the weight limit, and the emergency button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` for if the doors are :red:`NOT closed`, the button for a floor is :green:`pushed`, the elevator is :green:`above` the weight limit, and the emergency button is :red:`NOT pushed`
 
   ================  ================  ==================  ====================  ===============
   doors             floor number      weight limit        emergency button      output
@@ -2738,7 +2738,7 @@ doors             floor number      weight limit        emergency button      ou
 
   the test is still green.
 
-* I add an :ref:`assertion<what is an assertion?>` for when the doors are :red:`NOT closed`, the button for the floor is :green:`pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` for if the doors are :red:`NOT closed`, the button for the floor is :green:`pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :red:`NOT pushed`
 
   ================  ================  ==================  ====================  ===============
   doors             floor number      weight limit        emergency button      output
@@ -2864,7 +2864,7 @@ doors             floor number        weight limit        emergency button      
 
   the test is still green.
 
-* I add an :ref:`assertion<what is an assertion?>` for when the doors are :red:`NOT closed`, the button for a floor is :red:`NOT pushed`, the elevator is :green:`above` the weight limit, and the emergency button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` for if the doors are :red:`NOT closed`, the button for a floor is :red:`NOT pushed`, the elevator is :green:`above` the weight limit, and the emergency button is :red:`NOT pushed`
 
   ================  ==================  ==================  ====================  ===============
   doors             floor number        weight limit        emergency button      output
@@ -2958,7 +2958,7 @@ doors             floor number        weight limit        emergency button      
 
   green.
 
-* I add an :ref:`assertion<what is an assertion?>` for when the doors are :red:`NOT closed`, the button for the floor is :red:`NOT pushed`, the elevator is :red:`NOT above` the weight limit,  and the emergency button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` for if the doors are :red:`NOT closed`, the button for the floor is :red:`NOT pushed`, the elevator is :red:`NOT above` the weight limit,  and the emergency button is :red:`NOT pushed`
 
   ================  ==================  ==================  ====================  ===============
   doors             floor number        weight limit        emergency button      output
