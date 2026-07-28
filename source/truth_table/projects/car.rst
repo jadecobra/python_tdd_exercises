@@ -477,7 +477,7 @@ test_key_close_start_pressed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add ``key_is_close`` with a value to the :ref:`call<how to call a function with input>` to the ``ignition`` :ref:`function<what is a function?>` for if the the start button is :green:`pressed` AND the key is :green:`close` to the ignition
+* I add ``key_is_close`` with a value to the :ref:`call<how to call a function with input>` to the ``ignition`` :ref:`function<what is a function?>` from :ref:`test_start_pressed` for if the the start button is :green:`pressed` AND the key is :green:`close` to the ignition
 
   ================  ==================  =============
   key               start button        output
@@ -531,7 +531,7 @@ test_key_close_start_pressed
     TypeError: ignition() missing
                1 required positional argument: 'key_is_close'
 
-  because the :ref:`assertion<what is an assertion?>` :ref:`calls<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` with one argument (``start_is_pressed``) and I just changed the :ref:`function<what is a function?>` to make it take two required arguments (``key_is_close`` and ``start_is_pressed``). I have to make ``key_is_close`` a :ref:`choice<test_optional_arguments>`.
+  because the :ref:`assertion<what is an assertion?>` in :ref:`test_start_not_pressed` :ref:`calls<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` with one argument (``start_is_pressed``) and I just changed the :ref:`function<what is a function?>` to make it take two required arguments (``key_is_close`` and ``start_is_pressed``). I have to make ``key_is_close`` a :ref:`choice<test_optional_arguments>`.
 
 * I add a :ref:`default value<test_optional_arguments>` for ``key_is_close`` to make it a :ref:`choice<test_optional_arguments>`
 
