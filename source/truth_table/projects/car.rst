@@ -1828,372 +1828,305 @@ test_brake_pressed_key_not_close_start_not_pressed
 
   the test is still green.
 
-.. code-block:: python
+  .. code-block:: python
 
-  ignition(
-      start_is_pressed=False, key_is_close=False,
-      brake_is_pressed=True
-  ) -> False
-  ignition(
-      start_is_pressed=False, key_is_close=True,
-      brake_is_pressed=False
-  ) -> False
-  ignition(
-      start_is_pressed=False, key_is_close=True,
-      brake_is_pressed=True
-  ) -> False
+    ignition(
+        start_is_pressed=False, key_is_close=False,
+        brake_is_pressed=True
+    ) -> False
+    ignition(
+        start_is_pressed=False, key_is_close=True,
+        brake_is_pressed=False
+    ) -> False
+    ignition(
+        start_is_pressed=False, key_is_close=True,
+        brake_is_pressed=True
+    ) -> False
 
 * I change the name from :ref:`test_key_not_close_start_not_pressed` to :ref:`test_brake_pressed_key_not_close_start_not_pressed`
 
+  .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 10
+
+        def test_brake_not_pressed_key_close_start_not_pressed(self):
+            self.assertFalse(
+                src.car.ignition(
+                    start_is_pressed=False,
+                    key_is_close=True,
+                    brake_is_pressed=False,
+                )
+            )
+
+        def test_brake_pressed_key_not_close_start_not_pressed(self):
+            self.assertFalse(
+                src.car.ignition(
+                    start_is_pressed=False,
+                    key_is_close=False,
+                    brake_is_pressed=True,
+                )
+            )
+
+
+    # Exceptions seen
+
 * I add a git_ commit message in the other terminal_
 
-
-* I add an :ref:`assertion<what is an assertion?>` for if the start button is :red:`NOT pressed` AND the key is :red:`NOT close` to the ignition AND the brake is :red:`NOT pressed`
-
-  ==============  ==================  ==================  ===========
-  key             brake               start button        output
-  ==============  ==================  ==================  ===========
-  :red:`NOT close`  :red:`NOT pressed`  :green:`pressed`    :red:`False`
-  :red:`NOT close`  :red:`NOT pressed`  :red:`NOT pressed`  :red:`False`
-  ==============  ==================  ==================  ===========
-
   .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 9-14
+    :emphasize-lines: 1-2
 
-        def test_key_not_close_brake_not_pressed(self):
-            reality = src.car.ignition(
-                key_is_close=False,
-                brake_is_pressed=False,
-                start_is_pressed=True,
-            )
-            self.assertEqual(reality, OFF)
-
-            reality = src.car.ignition(
-                key_is_close=False,
-                brake_is_pressed=False,
-                start_is_pressed=False,
-            )
-            self.assertEqual(reality, OFF)
-
-
-    # Exceptions seen
-
-  still green.
-
-* I call the ``ignition`` :ref:`function<what is a function?>` directly in :ref:`test_key_not_close_brake_not_pressed`, I do not need the ``reality`` :ref:`variable<what is a variable?>` because it is only used once in each :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 7-15, 22-30
-
-        def test_key_not_close_brake_not_pressed(self):
-            reality = src.car.ignition(
-                key_is_close=False,
-                brake_is_pressed=False,
-                start_is_pressed=True,
-            )
-            # self.assertEqual(reality, OFF)
-            self.assertEqual(
-                src.car.ignition(
-                    key_is_close=False,
-                    brake_is_pressed=False,
-                    start_is_pressed=True,
-                ),
-                OFF
-            )
-
-            reality = src.car.ignition(
-                key_is_close=False,
-                brake_is_pressed=False,
-                start_is_pressed=False,
-            )
-            # self.assertEqual(reality, OFF)
-            self.assertEqual(
-                src.car.ignition(
-                    key_is_close=False,
-                    brake_is_pressed=False,
-                    start_is_pressed=False,
-                ),
-                OFF
-            )
-
-  the test is still green.
-
-* I remove the commented lines and ``reality`` :ref:`variables<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 56
-
-        def test_key_not_close_brake_not_pressed(self):
-            self.assertEqual(
-                src.car.ignition(
-                    key_is_close=False,
-                    brake_is_pressed=False,
-                    start_is_pressed=True,
-                ),
-                OFF
-            )
-
-            self.assertEqual(
-                src.car.ignition(
-                    key_is_close=False,
-                    brake_is_pressed=False,
-                    start_is_pressed=False,
-                ),
-                OFF
-            )
-
-
-    # Exceptions seen
-
-* I do the same thing in :ref:`test_key_not_close_brake_pressed`
-
-  .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 7-15, 22-30
-
-        def test_key_not_close_brake_pressed(self):
-            reality = src.car.ignition(
-                key_is_close=False,
-                brake_is_pressed=True,
-                start_is_pressed=True,
-            )
-            # self.assertEqual(reality, OFF)
-            self.assertEqual(
-                    src.car.ignition(
-                    key_is_close=False,
-                    brake_is_pressed=True,
-                    start_is_pressed=True,
-                ),
-                OFF
-            )
-
-            reality = src.car.ignition(
-                key_is_close=False,
-                brake_is_pressed=True,
-                start_is_pressed=False,
-            )
-            # self.assertEqual(reality, OFF)
-            self.assertEqual(
-                src.car.ignition(
-                    key_is_close=False,
-                    brake_is_pressed=True,
-                    start_is_pressed=False,
-                ),
-                OFF
-            )
-
-        def test_key_not_close_brake_not_pressed(self):
-
-  still green.
-
-* I remove the commented lines and ``reality`` :ref:`variables<what is a variable?>` from :ref:`test_key_not_close_brake_pressed`
-
-  .. code-block:: python
-    :lineno-start: 41
-
-        def test_key_not_close_brake_pressed(self):
-            self.assertEqual(
-                    src.car.ignition(
-                    key_is_close=False,
-                    brake_is_pressed=True,
-                    start_is_pressed=True,
-                ),
-                OFF
-            )
-
-            self.assertEqual(
-                src.car.ignition(
-                    key_is_close=False,
-                    brake_is_pressed=True,
-                    start_is_pressed=False,
-                ),
-                OFF
-            )
-
-        def test_key_not_close_brake_not_pressed(self):
-
-* on to :ref:`test_key_close_brake_not_pressed`
-
-  .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 7-15, 22-30
-
-        def test_key_close_brake_not_pressed(self):
-            reality = src.car.ignition(
-                key_is_close=True,
-                brake_is_pressed=False,
-                start_is_pressed=True,
-            )
-            # self.assertEqual(reality, OFF)
-            self.assertEqual(
-                src.car.ignition(
-                    key_is_close=True,
-                    brake_is_pressed=False,
-                    start_is_pressed=True,
-                ),
-                OFF
-            )
-
-            reality = src.car.ignition(
-                key_is_close=True,
-                brake_is_pressed=False,
-                start_is_pressed=False,
-            )
-            # self.assertEqual(reality, OFF)
-            self.assertEqual(
-                src.car.ignition(
-                    key_is_close=True,
-                    brake_is_pressed=False,
-                    start_is_pressed=False,
-                ),
-                OFF
-            )
-
-        def test_key_not_close_brake_pressed(self):
-
-  green.
-
-* I remove the commented lines and ``reality`` :ref:`variables<what is a variable?>` from :ref:`test_key_close_brake_not_pressed`
-
-  .. code-block:: python
-    :lineno-start: 26
-
-        def test_key_close_brake_not_pressed(self):
-            self.assertEqual(
-                src.car.ignition(
-                    key_is_close=True,
-                    brake_is_pressed=False,
-                    start_is_pressed=True,
-                ),
-                OFF
-            )
-
-            self.assertEqual(
-                src.car.ignition(
-                    key_is_close=True,
-                    brake_is_pressed=False,
-                    start_is_pressed=False,
-                ),
-                OFF
-            )
-
-        def test_key_not_close_brake_pressed(self):
-
-* I call the ``ignition`` :ref:`function<what is a function?>` directly in :ref:`test_key_close_brake_pressed`
-
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 8-16, 23-31
-
-        def test_key_close_brake_pressed(self):
-            my_expectation = True
-            reality = src.car.ignition(
-                key_is_close=True,
-                brake_is_pressed=True,
-                start_is_pressed=True,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(
-                src.car.ignition(
-                    key_is_close=True,
-                    brake_is_pressed=True,
-                    start_is_pressed=True,
-                ),
-                True
-            )
-
-            reality = src.car.ignition(
-                key_is_close=True,
-                brake_is_pressed=True,
-                start_is_pressed=False,
-            )
-            # self.assertEqual(reality, OFF)
-            self.assertEqual(
-                src.car.ignition(
-                    key_is_close=True,
-                    brake_is_pressed=True,
-                    start_is_pressed=False,
-                ),
-                OFF
-            )
-
-        def test_key_close_brake_not_pressed(self):
-
-  still green.
-
-* I remove the commented lines and unused :ref:`variables<what is a variable?>` from :ref:`test_key_close_brake_pressed`
-
-  .. code-block:: python
-    :lineno-start: 10
-
-        def test_key_close_brake_pressed(self):
-            self.assertEqual(
-                src.car.ignition(
-                    key_is_close=True,
-                    brake_is_pressed=True,
-                    start_is_pressed=True,
-                ),
-                True
-            )
-
-            self.assertEqual(
-                src.car.ignition(
-                    key_is_close=True,
-                    brake_is_pressed=True,
-                    start_is_pressed=False,
-                ),
-                OFF
-            )
-
-        def test_key_close_brake_not_pressed(self):
+    git commit -am \
+    'add test_brake_pressed_key_not_close_start_not_pressed'
 
 ----
 
 *********************************************************************************
-test_key_close_brake_pressed_w_gear
+test_brake_not_pressed_key_not_close_start_not_pressed
 *********************************************************************************
 
-the :ref:`truth table` for the car ignition is
+* I go back to the terminal_ where the tests are running
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the start button is :red:`NOT pressed` AND the key is :red:`NOT close` to the ignition AND the brake is :red:`NOT pressed`
 
-==============  ==================  ==================  ===========
-key             brake               start button        output
-==============  ==================  ==================  ===========
-:green:`close`    :green:`pressed`    :green:`pressed`    :green:`True`
-:green:`close`    :green:`pressed`    :red:`NOT pressed`  :red:`False`
-:green:`close`  :red:`NOT pressed`  :green:`pressed`    :red:`False`
-:green:`close`    :red:`NOT pressed`  :red:`NOT pressed`  :red:`False`
-==============  ==================  ==================  ===========
+  ================  ==================  ==================  =============
+  key               brake               start button        output
+  ================  ==================  ==================  =============
+  :red:`NOT close`  :red:`NOT pressed`  :red:`NOT pressed`  :red:`False`
+  ================  ==================  ==================  =============
 
-==============  ==================  ==================  ===========
-key             brake               start button        output
-==============  ==================  ==================  ===========
-:red:`NOT close`  :green:`pressed`    :green:`pressed`    :red:`False`
-:red:`NOT close`  :green:`pressed`    :red:`NOT pressed`  :red:`False`
+  .. code-block:: python
+    :lineno-start: 61
+    :emphasize-lines: 10-17
+
+        def test_brake_pressed_key_not_close_start_not_pressed(self):
+            self.assertFalse(
+                src.car.ignition(
+                    start_is_pressed=False,
+                    key_is_close=False,
+                    brake_is_pressed=True,
+                )
+            )
+
+        def test_brake_not_pressed_key_not_close_start_not_pressed(self):
+            self.assertTrue(
+                src.car.ignition(
+                    start_is_pressed=False,
+                    key_is_close=False,
+                    brake_is_pressed=False,
+                )
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` to match the result of the :ref:`call<how to call a function with input>` to ``src.car.ignition`` in :ref:`test_brake_not_pressed_key_not_close_start_not_pressed`
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 2
+
+        def test_brake_not_pressed_key_not_close_start_not_pressed(self):
+            self.assertFalse(
+                src.car.ignition(
+                    start_is_pressed=False,
+                    key_is_close=False,
+                    brake_is_pressed=False,
+                )
+            )
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+
+    git commit -am \
+    'add test_brake_not_pressed_key_not_close_start_not_pressed'
+
+When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`. It checks if the start button is :green:`pressed`.
+
+* If the start button is :red:`NOT pressed` it returns :red:`False`
+
+  .. code-block:: shell
+
+    ignition(
+        start_is_pressed=False, key_is_close=False,
+        brake_is_pressed=False
+    ) -> False
+      └── def ignition(
+              start_is_pressed, key_is_close=False,
+              brake_is_pressed=False,
+          ):
+          ├── if start_is_pressed:
+          │       if key_is_close:
+          │           return brake_is_pressed
+          └── return False
+
+  .. code-block:: shell
+
+    ignition(
+        start_is_pressed=False, key_is_close=False,
+        brake_is_pressed=True
+    ) -> False
+      └── def ignition(
+              start_is_pressed, key_is_close=False,
+              brake_is_pressed=False,
+          ):
+          ├── if start_is_pressed:
+          │       if key_is_close:
+          │           return brake_is_pressed
+          └── return False
+
+  .. code-block:: shell
+
+    ignition(
+        start_is_pressed=False, key_is_close=True,
+        brake_is_pressed=False
+    ) -> False
+      └── def ignition(
+              start_is_pressed, key_is_close=False,
+              brake_is_pressed=False,
+          ):
+          ├── if start_is_pressed:
+          │       if key_is_close:
+          │           return brake_is_pressed
+          └── return False
+
+  .. code-block:: shell
+
+    ignition(
+        start_is_pressed=False, key_is_close=True,
+        brake_is_pressed=True
+    ) -> False
+      └── def ignition(
+              start_is_pressed, key_is_close=False,
+              brake_is_pressed=False,
+          ):
+          ├── if start_is_pressed:
+          │       if key_is_close:
+          │           return brake_is_pressed
+          └── return False
+
+* If the start button is :green:`pressed` it checks if the key is :green:`close` to the ignition
+
+  - if the key is :red:`NOT close` to the ignition it leaves the :ref:`if statements<if statements>` then returns :red:`False`
+
+    .. code-block:: shell
+
+      ignition(
+          start_is_pressed=True, key_is_close=False,
+          brake_is_pressed=False
+      ) -> False
+      └── def ignition(
+              start_is_pressed, key_is_close=False,
+              brake_is_pressed=False,
+          ):
+          └── if start_is_pressed:
+          ┌───┴── if key_is_close:
+          │           return brake_is_pressed
+          └── return False
+
+    .. code-block:: shell
+
+      ignition(
+          start_is_pressed=True, key_is_close=False,
+          brake_is_pressed=True
+      ) -> False
+      └── def ignition(
+              start_is_pressed, key_is_close=False,
+              brake_is_pressed=False,
+          ):
+          └── if start_is_pressed:
+          ┌───┴── if key_is_close:
+          │           return brake_is_pressed
+          └── return False
+
+  - if the key is :green:`close` to the ignition it returns the value of ``brake_is_pressed``
+
+    * if the brake is :red:`NOT pressed` it returns :red:`False`
+
+      .. code-block:: shell
+
+        ignition(
+            start_is_pressed=True, key_is_close=True,
+            brake_is_pressed=False
+        ) -> False
+        └── def ignition(
+                start_is_pressed, key_is_close=False,
+                brake_is_pressed=False,
+            ):
+            └── if start_is_pressed:
+                └── if key_is_close:
+                    └── return brake_is_pressed
+                        return False
+                return False
+
+    * if the brake is :green:`pressed` it returns :green:`True`
+
+      .. code-block:: shell
+
+        ignition(
+            start_is_pressed=True, key_is_close=True,
+            brake_is_pressed=True
+        ) -> True
+        └── def ignition(
+                start_is_pressed, key_is_close=False,
+                brake_is_pressed=False,
+            ):
+            └── if start_is_pressed:
+                └── if key_is_close:
+                    └── return brake_is_pressed
+                        return True
+                return False
+
+The :ref:`truth table` for the **Car Ignition** is
+
+================  ==================  ==================  =============
+key               brake               start button        output
+================  ==================  ==================  =============
 :red:`NOT close`  :red:`NOT pressed`  :green:`pressed`    :red:`False`
+:red:`NOT close`  :green:`pressed`    :green:`pressed`    :red:`False`
+:green:`close`    :red:`NOT pressed`  :green:`pressed`    :red:`False`
+:green:`close`    :green:`pressed`    :green:`pressed`    :green:`True`
+================  ==================  ==================  =============
+
+================  ==================  ==================  =============
+key               brake               start button        output
+================  ==================  ==================  =============
 :red:`NOT close`  :red:`NOT pressed`  :red:`NOT pressed`  :red:`False`
-==============  ==================  ==================  ===========
+:red:`NOT close`  :green:`pressed`    :red:`NOT pressed`  :red:`False`
+:green:`close`    :red:`NOT pressed`  :red:`NOT pressed`  :red:`False`
+:green:`close`    :green:`pressed`    :red:`NOT pressed`  :red:`False`
+================  ==================  ==================  =============
 
 I want to make sure the car is in park before it can start, so it does not immediately move when it is turned on (that would be a problem). The inputs will then be
 
+* was the start button pressed?
 * is the key close to the ignition?
 * is the brake being pressed?
-* was the start button pressed?
 * is the gear in park?
 
-and the :ref:`truth table` for if the key is :green:`close` and the brake is being :green:`pressed`, is:
-
-==============  ================  ==================  ==================  ================
-key             brake             start button        gear                output
-==============  ================  ==================  ==================  ================
-:green:`close`    :green:`pressed`  :green:`pressed`    :green:`in park`    :green:`True`
-:green:`close`    :green:`pressed`  :green:`pressed`    :red:`NOT in park`  :red:`False`
-:green:`close`    :green:`pressed`  :red:`NOT pressed`  :green:`in park`    :red:`False`
-:green:`close`    :green:`pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
-==============  ================  ==================  ==================  ================
-
 ----
+
+*********************************************************************************
+test_park_w_brake_not_pressed_key_not_close_start_not_pressed
+*********************************************************************************
 
 =================================================================================
 :red:`RED`: make it fail
@@ -2202,34 +2135,36 @@ key             brake             start button        gear                output
 ----
 
 * I go back to the terminal_ where the tests are running
-I add a value for ``in_park`` to the :ref:`assertion<what is an assertion?>` for the case where the key is :green:`close`, the brake is being :green:`pressed`, the start button is :green:`pressed` and the car gear is :green:`in park`, to :ref:`test_key_close_brake_pressed`
+* I add a value for ``in_park`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_brake_not_pressed_key_not_close_start_not_pressed` for the case where the start button is :red:`NOT pressed` AND the key is :red:`NOT close` to the ignition AND the brake is being :red:`NOT pressed` AND the car gear is :green:`in park`, to :ref:`test_brake_not_pressed_key_not_close_start_not_pressed`
 
-==============  ================  ==================  ==================  ================
-key             brake             start button        gear                output
-==============  ================  ==================  ==================  ================
-:green:`close`    :green:`pressed`  :green:`pressed`    :green:`in park`    :green:`True`
-==============  ================  ==================  ==================  ================
+  ================  ==================  ==================  ==================  ============
+  key               brake               start               gear                output
+  ================  ==================  ==================  ==================  ============
+  :red:`NOT close`  :red:`NOT pressed`  :red:`NOT pressed`  :green:`in park`    :red:`False`
+  ================  ==================  ==================  ==================  ============
 
-.. code-block:: python
-  :lineno-start: 10
-  :emphasize-lines: 7
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 7
 
-        def test_key_close_brake_pressed(self):
-            self.assertEqual(
+        def test_brake_not_pressed_key_not_close_start_not_pressed(self):
+            self.assertFalse(
                 src.car.ignition(
-                    key_is_close=True,
-                    brake_is_pressed=True,
-                    start_is_pressed=True,
+                    start_is_pressed=False,
+                    key_is_close=False,
+                    brake_is_pressed=False,
                     in_park=True,
-                ),
-                True
+                )
             )
 
-the terminal shows :ref:`TypeError<what causes TypeError?>`
 
-.. code-block:: python
+    # Exceptions seen
 
-  TypeError: ignition() got an unexpected keyword argument 'in_park'
+  the terminal shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: ignition() got an unexpected keyword argument 'in_park'
 
   because the test :ref:`called<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``in_park``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
@@ -2303,7 +2238,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for if the key is :green:`close`, the brake is being :green:`pressed`, the start button is :green:`pressed` and the car gear is :red:`NOT in park`
+* I add an :ref:`assertion<what is an assertion?>` for if the start button is :green:`pressed` AND the key is :green:`close` to the ignition AND the brake is being :green:`pressed` and the car gear is :red:`NOT in park`
 
   ==============  ================  ==================  ==================  ================
   key             brake             start button        gear                output
@@ -2680,13 +2615,13 @@ The :ref:`truth table` for if the key is :green:`close` and the brake is :red:`N
 ==============  ==================  ==================  ==================  ==========
 key             brake               start               gear                output
 ==============  ==================  ==================  ==================  ==========
-:green:`close`    :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`False`
-:green:`close`    :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`False`
-:green:`close`    :red:`NOT pressed`  :red:`NOT pressed`  :green:`in park`    :red:`False`
-:green:`close`    :red:`NOT pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
+:green:`close`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`False`
+:green:`close`  :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`False`
+:green:`close`  :red:`NOT pressed`  :red:`NOT pressed`  :green:`in park`    :red:`False`
+:green:`close`  :red:`NOT pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
 ==============  ==================  ==================  ==================  ==========
 
-* I add a value for the ``in_park`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_key_close_brake_not_pressed` for if the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :green:`pressed` and the car gear is :green:`in park`
+* I add a value for the ``in_park`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_key_close_brake_not_pressed` for if the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :green:`pressed` AND the car gear is :green:`in park`
 
   ==============  ==================  ==================  ==================  ==========
   key             brake               start               gear                output
@@ -2911,7 +2846,7 @@ key         brake             start               gear                output
 :red:`NOT close`  :green:`pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
 ==========  ================  ==================  ==================  ==========
 
-* I add a value for the ``in_park`` parameter in the first :ref:`assertion<what is an assertion?>` of :ref:`test_key_not_close_brake_pressed`, for if the key is :red:`NOT close` to the ignition, the brake is being :green:`pressed`, the start button is :green:`pressed`, and the car gear is :green:`in park`
+* I add a value for the ``in_park`` parameter in the first :ref:`assertion<what is an assertion?>` of :ref:`test_key_not_close_brake_pressed`, for if the key is :red:`NOT close` to the ignition, the start button is :green:`pressed` AND the brake is being :green:`pressed`, and the car gear is :green:`in park`
 
   ==========  ================  ==================  ==================  ==========
   key         brake             start               gear                output
@@ -2936,7 +2871,7 @@ key         brake             start               gear                output
 
   still green.
 
-* I add an :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition, the brake is being :green:`pressed`, the start button is :green:`pressed` and the car gear is :red:`NOT in park`
+* I add an :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition, the start button is :green:`pressed` AND the brake is being :green:`pressed` and the car gear is :red:`NOT in park`
 
   ==========  ================  ==================  ==================  ==========
   key         brake             start               gear                output
@@ -3418,7 +3353,7 @@ key         brake               start               gear                output
 :red:`NOT close`  :red:`NOT pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
 ==========  ==================  ==================  ==================  ==========
 
-the only time I can start this car is if the key is :green:`close` to the ignition, the brake is being :green:`pressed`, the start button is :green:`pressed` and the car gear is :green:`in park`.
+the only time I can start this car is if the key is :green:`close` to the ignition, the start button is :green:`pressed` AND the brake is being :green:`pressed` AND the car gear is :green:`in park`.
 
 ----
 
