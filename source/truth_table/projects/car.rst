@@ -2164,22 +2164,10 @@ test_park_w_brake_not_pressed_key_not_close_start_not_pressed
 
   .. code-block:: python
 
-    TypeError: ignition() got an unexpected keyword argument 'in_park'
+    TypeError: ignition() got
+               an unexpected keyword argument 'in_park'
 
   because the test :ref:`called<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``in_park``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
-
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_car.py``
-
-  .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 5
-    :emphasize-text: TypeError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # AttributeError
-    # TypeError
 
 ----
 
@@ -2189,24 +2177,20 @@ test_park_w_brake_not_pressed_key_not_close_start_not_pressed
 
 ----
 
-* I add ``in_park`` to the ``ignition`` :ref:`function signature<what is a function?>` in ``car.py``
+* I add ``in_park`` to the :ref:`function signature<what is a function?>` in ``car.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 3
 
     def ignition(
-            key_is_close, start_is_pressed,
-            brake_is_pressed=False, in_park,
-        ):
-        if not (
-            key_is_close
-            and start_is_pressed
-            and brake_is_pressed
-        ):
-            return False
-
-        return True
+        start_is_pressed, key_is_close=False,
+        brake_is_pressed=False, in_park,
+    ):
+        if start_is_pressed:
+            if key_is_close:
+                return brake_is_pressed
+        return False
 
   the terminal_ is my friend, and shows SyntaxError_
 
@@ -2224,11 +2208,18 @@ test_park_w_brake_not_pressed_key_not_close_start_not_pressed
     :emphasize-lines: 3
 
     def ignition(
-        key_is_close, start_is_pressed,
+        start_is_pressed, key_is_close=False,
         brake_is_pressed=False, in_park=False,
     ):
 
   the test passes.
+
+  .. code-block:: python
+
+    ignition(
+        start_is_pressed=False, key_is_close=False,
+        brake_is_pressed=False, in_park=True
+    ) -> False
 
 ----
 
@@ -2238,58 +2229,110 @@ test_park_w_brake_not_pressed_key_not_close_start_not_pressed
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for if the start button is :green:`pressed` AND the key is :green:`close` to the ignition AND the brake is being :green:`pressed` and the car gear is :red:`NOT in park`
+* I add an :ref:`assertion<what is an assertion?>` for if the start button is :red:`NOT pressed` AND the key is :red:`NOT close` to the ignition AND the brake is being :red:`NOT pressed` AND the car gear is :red:`NOT in park`
 
-  ==============  ================  ==================  ==================  ================
-  key             brake             start button        gear                output
-  ==============  ================  ==================  ==================  ================
-  :green:`close`    :green:`pressed`  :green:`pressed`    :green:`in park`    :green:`True`
-  :green:`close`    :green:`pressed`  :green:`pressed`    :red:`NOT in park`  :red:`False`
-  ==============  ================  ==================  ==================  ================
+  ================  ==================  ==================  ==================  ============
+  key               brake               start               gear                output
+  ================  ==================  ==================  ==================  ============
+  :red:`NOT close`  :red:`NOT pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
+  ================  ==================  ==================  ==================  ============
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 12-20
+    :lineno-start: 70
+    :emphasize-lines: 10-17
 
-        def test_key_close_brake_pressed(self):
-            self.assertEqual(
+        def test_brake_not_pressed_key_not_close_start_not_pressed(self):
+            self.assertFalse(
                 src.car.ignition(
-                    key_is_close=True,
-                    brake_is_pressed=True,
-                    start_is_pressed=True,
-                    in_park=True,
-                ),
-                True
-            )
-
-            self.assertEqual(
-                src.car.ignition(
-                    key_is_close=True,
-                    brake_is_pressed=True,
-                    start_is_pressed=True,
-                    in_park=False,
-                ),
-                OFF
-            )
-
-            self.assertEqual(
-                src.car.ignition(
-                    key_is_close=True,
-                    brake_is_pressed=True,
                     start_is_pressed=False,
-                ),
-                OFF
+                    key_is_close=False,
+                    brake_is_pressed=False,
+                    in_park=True,
+                )
             )
+            self.assertTrue(
+                src.car.ignition(
+                    start_is_pressed=False,
+                    key_is_close=False,
+                    brake_is_pressed=False,
+                    in_park=False,
+                )
+            )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: True != False
+    AssertionError: False is not true
 
   because the ``ignition`` :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
 
-* I add an :ref:`if statement<if statements>` to the ``ignition`` :ref:`function<what is a function?>` in ``car.py``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` to match the result of the :ref:`call<how to call a function with input>`
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 10
+
+        def test_brake_not_pressed_key_not_close_start_not_pressed(self):
+            self.assertFalse(
+                src.car.ignition(
+                    start_is_pressed=False,
+                    key_is_close=False,
+                    brake_is_pressed=False,
+                    in_park=True,
+                )
+            )
+            self.assertFalse(
+                src.car.ignition(
+                    start_is_pressed=False,
+                    key_is_close=False,
+                    brake_is_pressed=False,
+                    in_park=False,
+                )
+            )
+
+
+    # Exceptions seen
+
+  the test passes.
+
+  .. code-block:: python
+
+    ignition(
+        start_is_pressed=False, key_is_close=False,
+        brake_is_pressed=False, in_park=False
+    ) -> False
+    ignition(
+        start_is_pressed=False, key_is_close=False,
+        brake_is_pressed=False, in_park=True
+    ) -> False
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_park_w_brake_not_pressed_key_not_close_start_not_pressed'
+
+----
+
+*********************************************************************************
+test_park_w_brake_not_pressed_key_not_close_start_not_pressed
+*********************************************************************************
+
+
+
+
+
+
+
+* I add an :ref:`if statement<if statements>`
+*
+*  to the ``ignition`` :ref:`function<what is a function?>` in ``car.py``
 
   .. code-block:: python
     :linenos:
