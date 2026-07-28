@@ -1,13 +1,11 @@
-def starter(
-        key_is_close, start_is_pushed,
-        brake_is_pressed=False, in_park=False,
-    ):
-    if not (
-        key_is_close
-        and start_is_pushed
+def ignition(
+    start_is_pressed, key_is_close=False,
+    brake_is_pressed=False, in_park=False,
+):
+    if (
+        start_is_pressed
+        and key_is_close
         and brake_is_pressed
-        and in_park
     ):
-        return 'OFF'
-
-    return 'ON'
+        return in_park
+    return False

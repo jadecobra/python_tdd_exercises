@@ -2,173 +2,150 @@ import src.car
 import unittest
 
 
-OFF = 'OFF'
-
-
 class TestCar(unittest.TestCase):
 
-    def test_brake_pressed_key_close_w_gear(self):
-        self.assertEqual(
-            src.car.starter(
+    def test_park_w_brake_pressed_key_close_start_pressed(self):
+        self.assertTrue(
+            src.car.ignition(
+                start_is_pressed=True,
                 key_is_close=True,
                 brake_is_pressed=True,
-                start_is_pushed=True,
                 in_park=True,
-            ),
-            'ON'
+            )
         )
-
-        self.assertEqual(
-            src.car.starter(
+        self.assertFalse(
+            src.car.ignition(
+                start_is_pressed=True,
                 key_is_close=True,
                 brake_is_pressed=True,
-                start_is_pushed=True,
                 in_park=False,
-            ),
-            OFF
+            )
         )
 
-        self.assertEqual(
-            src.car.starter(
-                key_is_close=True,
-                brake_is_pressed=True,
-                start_is_pushed=False,
-                in_park=True,
-            ),
-            OFF
-        )
-
-        self.assertEqual(
-            src.car.starter(
-                key_is_close=True,
-                brake_is_pressed=True,
-                start_is_pushed=False,
-                in_park=False,
-            ),
-            OFF
-        )
-
-    def test_brake_not_pressed_key_close_w_gear(self):
-        self.assertEqual(
-            src.car.starter(
+    def test_park_w_brake_not_pressed_key_close_start_pressed(self):
+        self.assertFalse(
+            src.car.ignition(
+                start_is_pressed=True,
                 key_is_close=True,
                 brake_is_pressed=False,
-                start_is_pushed=True,
                 in_park=True,
-            ),
-            OFF
+            )
         )
-
-        self.assertEqual(
-            src.car.starter(
+        self.assertFalse(
+            src.car.ignition(
+                start_is_pressed=True,
                 key_is_close=True,
                 brake_is_pressed=False,
-                start_is_pushed=True,
                 in_park=False,
-            ),
-            OFF
+            )
         )
 
-        self.assertEqual(
-            src.car.starter(
+    def test_park_w_brake_pressed_key_not_close_start_pressed(self):
+        self.assertFalse(
+            src.car.ignition(
+                start_is_pressed=True,
+                key_is_close=False,
+                brake_is_pressed=True,
+                in_park=True,
+            )
+        )
+        self.assertFalse(
+            src.car.ignition(
+                start_is_pressed=True,
+                key_is_close=False,
+                brake_is_pressed=True,
+                in_park=False,
+            )
+        )
+
+    def test_park_w_brake_not_pressed_key_not_close_start_pressed(self):
+        self.assertFalse(
+            src.car.ignition(
+                start_is_pressed=True,
+                key_is_close=False,
+                brake_is_pressed=False,
+                in_park=True,
+            )
+        )
+        self.assertFalse(
+            src.car.ignition(
+                start_is_pressed=True,
+                key_is_close=False,
+                brake_is_pressed=False,
+                in_park=False,
+            )
+        )
+
+    def test_park_w_brake_pressed_key_close_start_not_pressed(self):
+        self.assertFalse(
+            src.car.ignition(
+                start_is_pressed=False,
+                key_is_close=True,
+                brake_is_pressed=True,
+                in_park=True,
+            )
+        )
+        self.assertFalse(
+            src.car.ignition(
+                start_is_pressed=False,
+                key_is_close=True,
+                brake_is_pressed=True,
+                in_park=False,
+            )
+        )
+
+    def test_park_w_brake_not_pressed_key_close_start_not_pressed(self):
+        self.assertFalse(
+            src.car.ignition(
+                start_is_pressed=False,
                 key_is_close=True,
                 brake_is_pressed=False,
-                start_is_pushed=False,
                 in_park=True,
-            ),
-            OFF
+            )
         )
-
-        self.assertEqual(
-            src.car.starter(
+        self.assertFalse(
+            src.car.ignition(
+                start_is_pressed=False,
                 key_is_close=True,
                 brake_is_pressed=False,
-                start_is_pushed=False,
                 in_park=False,
-            ),
-            OFF
+            )
         )
 
-    def test_brake_pressed_key_far_w_gear(self):
-        self.assertEqual(
-            src.car.starter(
+    def test_park_w_brake_pressed_key_not_close_start_not_pressed(self):
+        self.assertFalse(
+            src.car.ignition(
+                start_is_pressed=False,
                 key_is_close=False,
                 brake_is_pressed=True,
-                start_is_pushed=True,
                 in_park=True,
-            ),
-            OFF
+            )
         )
-
-        self.assertEqual(
-            src.car.starter(
+        self.assertFalse(
+            src.car.ignition(
+                start_is_pressed=False,
                 key_is_close=False,
                 brake_is_pressed=True,
-                start_is_pushed=True,
                 in_park=False,
-            ),
-            OFF
+            )
         )
 
-        self.assertEqual(
-            src.car.starter(
+    def test_brake_not_pressed_key_not_close_start_not_pressed(self):
+        self.assertFalse(
+            src.car.ignition(
+                start_is_pressed=False,
                 key_is_close=False,
-                brake_is_pressed=True,
-                start_is_pushed=False,
+                brake_is_pressed=False,
                 in_park=True,
-            ),
-            OFF
+            )
         )
-
-        self.assertEqual(
-            src.car.starter(
+        self.assertFalse(
+            src.car.ignition(
+                start_is_pressed=False,
                 key_is_close=False,
-                brake_is_pressed=True,
-                start_is_pushed=False,
+                brake_is_pressed=False,
                 in_park=False,
-            ),
-            OFF
-        )
-
-    def test_brake_not_pressed_key_far_w_gear(self):
-        self.assertEqual(
-            src.car.starter(
-                key_is_close=False,
-                brake_is_pressed=False,
-                start_is_pushed=True,
-                in_park=True,
-            ),
-            OFF
-        )
-
-        self.assertEqual(
-            src.car.starter(
-                key_is_close=False,
-                brake_is_pressed=False,
-                start_is_pushed=True,
-                in_park=False,
-            ),
-            OFF
-        )
-
-        self.assertEqual(
-            src.car.starter(
-                key_is_close=False,
-                brake_is_pressed=False,
-                start_is_pushed=False,
-                in_park=True,
-            ),
-            OFF
-        )
-
-        self.assertEqual(
-            src.car.starter(
-                key_is_close=False,
-                brake_is_pressed=False,
-                start_is_pushed=False,
-                in_park=False,
-            ),
-            OFF
+            )
         )
 
 
