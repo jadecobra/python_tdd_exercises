@@ -415,12 +415,12 @@ I want the **Elevator** to :green:`MOVE` only when the button for a floor is :gr
 Which gives me this :ref:`truth table`
 
 =================  ==================  =============
-doors              floor button        output
+floor button       doors               output
 =================  ==================  =============
-:green:`closed`    :green:`pushed`     :green:`True`
-:green:`closed`    :red:`NOT pushed`   :red:`False`
-:red:`NOT closed`  :green:`pushed`     :red:`False`
-:red:`NOT closed`  :red:`NOT pushed`   :red:`False`
+:green:`pushed`    :green:`closed`     :green:`True`
+:green:`pushed`    :red:`NOT closed`   :red:`False`
+:red:`NOT pushed`  :green:`closed`     :red:`False`
+:red:`NOT pushed`  :red:`NOT closed`   :red:`False`
 =================  ==================  =============
 
 ----
@@ -439,9 +439,9 @@ test_doors_closed_number_pushed
 * I add ``doors_closed`` with a value to the :ref:`call<how to call a function with input>` to the ``elevator`` :ref:`function<what is a function?>` from :ref:`test_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed`
 
   =================  ==================  =============
-  doors              floor button        output
+  floor button       doors               output
   =================  ==================  =============
-  :green:`closed`    :green:`pushed`     :green:`True`
+  :green:`pushed`    :green:`closed`     :green:`True`
   =================  ==================  =============
 
   .. code-block:: python
@@ -550,44 +550,44 @@ test_doors_closed_number_not_pushed
 
 ----
 
-I add a test named :ref:`test_doors_closed_number_not_pushed` with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed`, in ``test_elevator.py``
+* I go back to the terminal_ where the tests are running.
+* I add a test named :ref:`test_doors_closed_number_not_pushed` with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed`
 
-================  ==================  =================
-doors             floor button        output
-================  ==================  =================
-:green:`closed`    :red:`NOT pushed`   :red:`False`
-================  ==================  =================
+  =================  ==================  =============
+  floor button       doors               output
+  =================  ==================  =============
+  :green:`pushed`    :red:`NOT closed`   :red:`False`
+  =================  ==================  =============
 
-.. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 9-15
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 9-15
 
-      def test_doors_closed_number_pushed(self):
-          my_expectation = 'MOVE'
-          reality = src.elevator.elevator(
-              doors_closed=True,
-              number_pushed=True,
-          )
-          self.assertEqual(reality, my_expectation)
+        def test_doors_closed_number_pushed(self):
+            self.assertTrue(
+                src.elevator.elevator(
+                    number_pushed=True,
+                    doors_closed=True,
+                )
+            )
 
-      def test_doors_closed_number_not_pushed(self):
-          my_expectation = 'NOT MOVE'
-          reality = src.elevator.elevator(
-              doors_closed=True,
-              number_pushed=False,
-          )
-          self.assertEqual(reality, my_expectation)
+        def test_doors_closed_number_not_pushed(self):
+            self.assertTrue(
+                src.elevator.elevator(
+                    number_pushed=False,
+                    doors_closed=True,
+                )
+            )
 
+        def test_number_not_pushed(self):
 
-  # Exceptions seen
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  .. code-block:: python
 
-.. code-block:: python
+    AssertionError: False is not true
 
-  AssertionError: 'MOVE' != 'NOT MOVE'
-
-because the ``elevator`` :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`'NOT MOVE'`
+  because the ``elevator`` :ref:`function<what is a function?>` returns the value of the ``number_pushed`` parameter.
 
 ----
 
@@ -597,19 +597,62 @@ because the ``elevator`` :ref:`function<what is a function?>` returns :green:`Tr
 
 ----
 
-I add an :ref:`if statement<if statements>` to the ``elevator`` :ref:`function<what is a function?>` in ``elevator.py``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` to match the call to ``src.elevator.elevator`` in :ref:`test_doors_closed_number_not_pushed`
 
-.. code-block:: python
-  :linenos:
-  :emphasize-lines: 2-3
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 2
 
-  def elevator(doors_closed, number_pushed):
-      if number_pushed == False:
-          return 'NOT MOVE'
+      def test_doors_closed_number_not_pushed(self):
+          self.assertFalse(
+              src.elevator.elevator(
+                  number_pushed=False,
+                  doors_closed=True,
+              )
+          )
 
-      return 'MOVE'
+      def test_number_not_pushed(self):
 
-the test passes.
+  the test passes.
+
+  .. code-block:: python
+
+    elevator(number_pushed=True , doors_closed=True ) -> True
+    elevator(number_pushed=True , doors_closed=False) -> False
+
+  If the button for a floor is :green:`pushed`, the **Elevator** only :green:`MOVES` when the doors are :green:`closed`.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines:
+
+    git commit -am \
+    'add test_doors_closed_number_not_pushed'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ----
 
@@ -698,7 +741,7 @@ the test passes.
 
   this is what happens when the ``elevator`` :ref:`function<what is a function?>` is called
 
-  - it returns :red:`'NOT MOVE'` if the button for the floor is :red:`NOT pushed`
+  - it returns :red:`False` if the button for the floor is :red:`NOT pushed`
   - it returns :green:`True` if the above :ref:`condition<if statements>` is NOT met
 
 ----
@@ -750,7 +793,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'MOVE' != 'NOT MOVE'
 
-because the ``elevator`` :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`'NOT MOVE'`
+because the ``elevator`` :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
 
 ----
 
@@ -875,7 +918,7 @@ the test passes.
         # if bool(doors_closed) == False:
         # if not bool(doors_closed) == True:
 
-* I use the :ref:`variable<what is a variable?>` to remove repetition of :red:`'NOT MOVE'` from the :ref:`function<what is a function?>`
+* I use the :ref:`variable<what is a variable?>` to remove repetition of :red:`False` from the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -917,8 +960,8 @@ the test passes.
 
   this is what happens when the ``elevator`` :ref:`function<what is a function?>` is called
 
-  - it returns :red:`'NOT MOVE'` if the button for the floor is :red:`NOT pushed`
-  - it returns :red:`'NOT MOVE'` if the doors are :red:`NOT closed`
+  - it returns :red:`False` if the button for the floor is :red:`NOT pushed`
+  - it returns :red:`False` if the doors are :red:`NOT closed`
   - it returns :green:`True` if the above :ref:`conditions<if statements>` are NOT met
 
 ----
@@ -970,7 +1013,7 @@ the test is still green.
 
 ----
 
-* :red:`'NOT MOVE'` happens in 3 of the 4 tests, I make a :ref:`global variable<what is a variable?>` to remove repetition of the :ref:`variables<what is a variable?>` from the tests
+* :red:`False` happens in 3 of the 4 tests, I make a :ref:`global variable<what is a variable?>` to remove repetition of the :ref:`variables<what is a variable?>` from the tests
 
   .. code-block:: python
     :linenos:
@@ -1211,7 +1254,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
 
       AssertionError: 'MOVE' != 'NOT MOVE'
 
-    because the ``elevator`` :ref:`function<what is a function?>` returned :green:`True` when it was called with the ``above_weight_limit`` parameter and the :ref:`assertion<what is an assertion?>` expects :red:`'NOT MOVE'`
+    because the ``elevator`` :ref:`function<what is a function?>` returned :green:`True` when it was called with the ``above_weight_limit`` parameter and the :ref:`assertion<what is an assertion?>` expects :red:`False`
 
 * I add a :ref:`default value<test_optional_arguments>` to make ``above_weight_limit`` a choice
 
@@ -1251,7 +1294,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
 
     AssertionError: 'MOVE' != 'NOT MOVE'
 
-  because the ``elevator`` :ref:`function<what is a function?>` returned :green:`True`  and the :ref:`assertion<what is an assertion?>` expects :red:`'NOT MOVE'`
+  because the ``elevator`` :ref:`function<what is a function?>` returned :green:`True`  and the :ref:`assertion<what is an assertion?>` expects :red:`False`
 
 * I add an :ref:`if statement<if statements>` to the :ref:`function<what is a function?>` in ``elevator.py``
 
@@ -1349,9 +1392,9 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
 
   this is what happens when the ``elevator`` :ref:`function<what is a function?>` is called
 
-  - it returns :red:`'NOT MOVE'` if the elevator is :green:`above` the weight limit
-  - it returns :red:`'NOT MOVE'` if the button for the floor is :red:`NOT pushed`
-  - it returns :red:`'NOT MOVE'` if the doors are :red:`NOT closed`
+  - it returns :red:`False` if the elevator is :green:`above` the weight limit
+  - it returns :red:`False` if the button for the floor is :red:`NOT pushed`
+  - it returns :red:`False` if the doors are :red:`NOT closed`
   - it returns :green:`True` if the above :ref:`conditions<if statements>` are NOT met
 
 * I do not need to add a value for the ``above_weight_limit`` parameter to the next :ref:`assertion<what is an assertion?>` for if the doors are :green:`closed`, the button for the floor is :green:`pushed` and the elevator is :red:`NOT above` the weight limit
@@ -2208,7 +2251,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
 
     AssertionError: 'MOVE' != 'NOT MOVE'
 
-  because the ``elevator`` :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`'NOT MOVE'`
+  because the ``elevator`` :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
 
 * I add an :ref:`if statement<if statements>` to the ``elevator`` :ref:`function<what is a function?>` in ``elevator.py``
 
@@ -2304,10 +2347,10 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
 
   this is what happens when the ``elevator`` :ref:`function<what is a function?>` is called
 
-  - it returns :red:`'NOT MOVE'` if the emergency button is :green:`pushed`
-  - it returns :red:`'NOT MOVE'` if the elevator is :green:`above` the weight limit
-  - it returns :red:`'NOT MOVE'` if the button for the floor is :red:`NOT pushed`
-  - it returns :red:`'NOT MOVE'` if the doors are :red:`NOT closed`
+  - it returns :red:`False` if the emergency button is :green:`pushed`
+  - it returns :red:`False` if the elevator is :green:`above` the weight limit
+  - it returns :red:`False` if the button for the floor is :red:`NOT pushed`
+  - it returns :red:`False` if the doors are :red:`NOT closed`
   - it returns :green:`True` if the above :ref:`conditions<if statements>` are NOT met
 
 * I add values for the ``above_weight_limit`` and ``emergency`` parameters to :ref:`test_weight_w_doors_closed_number_pushed`, even though I do not need to because they have :ref:`default values<test_optional_arguments>`. This will make things clearer in the last :ref:`assertion<what is an assertion?>` which is for when the doors are :green:`closed`, the button for the floor is :green:`pushed`, the elevator is :red:`NOT above` the weight limit,  and the emergency button is  :red:`NOT pushed`, in ``test_elevator.py``
@@ -3068,13 +3111,13 @@ doors             floor number        weight limit        emergency button      
 
         return 'MOVE'
 
-  - returns :red:`'NOT MOVE'` if the emergency button is :green:`pushed`
-  - returns :red:`'NOT MOVE'` if the elevator is :green:`above` the weight limit
-  - returns :red:`'NOT MOVE'` if the button for the floor is :red:`NOT pushed`
-  - returns :red:`'NOT MOVE'` if the doors are :red:`NOT closed`
+  - returns :red:`False` if the emergency button is :green:`pushed`
+  - returns :red:`False` if the elevator is :green:`above` the weight limit
+  - returns :red:`False` if the button for the floor is :red:`NOT pushed`
+  - returns :red:`False` if the doors are :red:`NOT closed`
   - returns :green:`True` if the above :ref:`conditions<if statements>` are NOT met
 
-* All the :ref:`if statements` return :red:`'NOT MOVE'` which means I could use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put them together though it will be a long statement
+* All the :ref:`if statements` return :red:`False` which means I could use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put them together though it will be a long statement
 
   .. code-block:: python
     :linenos:
