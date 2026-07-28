@@ -175,7 +175,6 @@ test_number_pushed
   floor button        output
   ==================  =============
   :green:`pushed`     :green:`True`
-  :red:`NOT pushed`   :red:`False`
   ==================  =============
 
   .. code-block:: python
@@ -187,7 +186,7 @@ test_number_pushed
         def test_number_pushed(self):
             self.assertTrue(
                 src.elevator.elevator(
-                    number_pushed=True
+                    number_pushed=True,
                 )
             )
 
@@ -315,6 +314,98 @@ test_number_pushed
         return True
 
   the test passes. The ``elevator`` :ref:`function<what is a function?>` always returns :green:`True`, it does not care about the inputs. Is this :ref:`Tautology?<test_tautology>`
+
+  .. code-block:: python
+
+    elevator(number_pushed=True ) -> True
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_number_pushed'
+
+----
+
+*********************************************************************************
+test_number_not_pushed
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a test with an :ref:`assertion<what is an assertion?>` for when the button for a floor is :red:`NOT pushed`
+
+  ==================  =============
+  floor button        output
+  ==================  =============
+  :red:`NOT pushed`   :red:`False`
+  ==================  =============
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 8-13
+
+        def test_number_pushed(self):
+            self.assertTrue(
+                src.elevator.elevator(
+                    number_pushed=True,
+                )
+            )
+
+        def test_number_not_pushed(self):
+            self.assertFalse(
+                src.elevator.elevator(
+                    number_pushed=False,
+                )
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  because the ``elevator`` :ref:`function<what is a function?>` always returns :green:`True` and this :ref:`assertion<what is an assertion?>` expects :red:`False`.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I make the :ref:`function<what is a function?>` return its input
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
+
+    def elevator(number_pushed):
+        return number_pushed
+
+  the test passes.
+
+  .. code-block:: python
+
+    elevator(number_pushed=True ) -> True
+    elevator(number_pushed=False) -> False
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_number_not_pushed'
 
 ----
 
