@@ -1,14 +1,14 @@
-uv init atm
-cd atm
+uv init elevator
+cd elevator
 mkdir src
-Move-Item "main.py" "src/atm.py"
+Move-Item "main.py" "src/elevator.py"
 mkdir tests
 New-Item tests/__init__.py
 
 "import unittest
 
 
-class TestATM(unittest.TestCase):
+class TestElevator(unittest.TestCase):
 
     def test_failure(self):
         self.assertFalse(True)
@@ -16,7 +16,7 @@ class TestATM(unittest.TestCase):
 
 # Exceptions seen
 # AssertionError
-" | Out-File "tests/test_atm.py" -Encoding UTF8
+" | Out-File "tests/test_elevator.py" -Encoding UTF8
 
 "pytest" | Out-File requirements.txt -Encoding UTF8
 "pytest-watcher" >> requirements.txt

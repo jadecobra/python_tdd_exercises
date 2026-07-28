@@ -12,7 +12,149 @@
 Elevator
 #################################################################################
 
-I want to make an **Elevator** that goes up and down when I push a button, if the inputs are
+I want to make an **Elevator** that will :green:`MOVE` to a floor when I push a button for the floor.
+
+*********************************************************************************
+preview
+*********************************************************************************
+
+These are the tests I have at the end of the chapter
+
+.. literalinclude:: ../../code/elevator/test_elevator.py
+  :language: python
+  :linenos:
+  :caption: truth_table/tests/test_elevator.py
+
+----
+
+*********************************************************************************
+start the project
+*********************************************************************************
+
+* I open a terminal_
+
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      * I open ``makePythonTdd.sh``
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      * I open ``makePythonTdd.ps1``
+
+* I name this project ``elevator``
+
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      * I change the name of the project to ``elevator`` in ``makePythonTdd.sh``
+
+        .. literalinclude:: ../../code/elevator/make_tdd/makePythonTddElevator.sh
+          :language: python
+          :linenos:
+          :emphasize-lines: 2-3, 5, 12, 20
+
+      * I run ``makePythonTdd.sh`` in the terminal_ to make the ``elevator`` project
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          ./makePythonTdd.sh
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      * I change the name of the project to ``elevator`` in ``makePythonTdd.ps1``
+
+        .. literalinclude:: ../../code/elevator/make_tdd/makePythonTddElevator.ps1
+          :language: Powershell
+          :linenos:
+          :emphasize-lines: 1-2, 4, 11, 19
+
+      * I run ``makePythonTdd.ps1`` in the terminal_ to make the ``elevator`` project
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          .\makePythonTdd.ps1
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :emphasize-lines: 10
+
+    ======================== FAILURES =========================
+    _________________ TestElevator.test_failure ____________________
+
+    self = <tests.test_elevator.TestElevator testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
+    E       AssertionError: True is not false
+
+    tests/test_elevator.py:7: AssertionError
+    ================ short test summary info ==================
+    FAILED tests/test_elevator.py::TestElevator::test_failure - AssertionError: True is not false
+    ==================== 1 failed in X.YZs ====================
+
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_elevator.py:7`` to open it
+* I change :green:`True` to :red:`False` in ``test_elevator.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 4-5
+
+    class TestElevator(unittest.TestCase):
+
+        def test_failure(self):
+            # self.assertFalse(True)
+            self.assertFalse(False)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I open a new terminal_ then `change directory`_ to ``elevator``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd elevator
+
+* I add the new files_ and folder_ to git_ for tracking
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git add .
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'setup project'
+
+----
+
+I want the elevator to start only when the start button is :green:`pressed`. I get this :ref:`truth table`
+
+==================  =============
+start button        output
+==================  =============
+:green:`pressed`    :green:`True`
+:red:`NOT pressed`  :red:`False`
+==================  =============
+
+where :green:`True` is the **Car** comes :green:`ON` and :red:`False` is it stays :red:`OFF`.
 
 * are the doors clear?
 * was the number for a floor pushed?
@@ -28,265 +170,6 @@ doors             floor button        output
 :red:`NOT clear`  :red:`NOT pushed`   :red:`NOT MOVE`
 ================  ==================  =================
 
-*********************************************************************************
-preview
-*********************************************************************************
-
-These are the tests I have at the end of the chapter
-
-.. literalinclude:: ../../code/truth_table/tests/test_elevator.py
-  :language: python
-  :linenos:
-  :caption: truth_table/tests/test_elevator.py
-
-----
-
-*********************************************************************************
-requirements
-*********************************************************************************
-
-* :ref:`truth table: Binary Operations Examples`
-
-----
-
-*********************************************************************************
-number the project
-*********************************************************************************
-
-* I name this project ``elevator``
-* I open a terminal_
-* I use uv_ to make a directory_ for the project and initialize it
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv init elevator
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    Initialized project `elevator` at `.../pumping_python/elevator`
-
-  then goes back to the command line.
-
-* I use mkdir_ to make a folder_ named ``src``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    mkdir src
-
-  the terminal_ goes back to the command line.
-
-* I use the `mv program`_ to change the name of ``main.py`` to ``elevator.py`` and move it to the ``src`` folder_
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        mv main.py src/elevator.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        Move-Item main.py src/elevator.py
-
-  the terminal_ goes back to the command line.
-
-* I `make a directory`_ for the tests
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    mkdir tests
-
-  the terminal_ goes back to the command line.
-
-* I make the ``tests`` directory_ a `Python package`_
-
-  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        touch tests/__init__.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        New-Item tests/__init__.py
-
-  the terminal_ goes back to the command line.
-
-* I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        touch tests/test_elevator.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        New-Item tests/test_elevator.py
-
-  the terminal_ goes back to the command line.
-
-* I open ``test_elevator.py``
-
-* I add :ref:`the first failing test<test_failure>` to ``test_elevator.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1, 4, 6-7
-
-    import unittest
-
-
-    class TestElevator(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-* I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest" > requirements.txt
-
-  the terminal_ goes back to the command line.
-
-* I add `pytest-watcher`_ to the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest-watcher" >> requirements.txt
-
-  the terminal_ goes back to the command line.
-
-* I use uv_ to install `pytest-watcher`_ with the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv add --requirement requirements.txt
-
-  the terminal_ shows that it installed `pytest-watcher`_ and its dependencies.
-
-* I use tree_ to look at the structure of the project
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    tree
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .
-    ├── README.md
-    ├── pyproject.toml
-    ├── requirements.txt
-    ├── src
-    │   └── elevator.py
-    ├── tests
-    │   ├── __init__.py
-    │   └── test_elevator.py
-    └── uv.lock
-
-  if you do not see ``uv.lock`` in your tree, make sure you ran ``uv add --requirement requirements.txt``, then run the tests next
-
-* I use `pytest-watcher`_ to run the tests automatically
-
-  .. code-block:: python
-    :emphasize-lines: 1
-    :emphasize-text: .
-
-    uv run pytest-watcher . --now
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-    :emphasize-lines: 8, 10
-
-    ======================== FAILURES ========================
-    _________________ TestElevator.test_failure ___________________
-
-    self = <tests.test_elevator.TestElevator testMethod=test_failure>
-
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
-
-    tests/test_elevator.py:7: AssertionError
-    ================ short test summary info =================
-    FAILED tests/test_elevator.py::TestElevator::test_failure - AssertionError: True is not false
-    =================== 1 failed in X.YZs ====================
-
-  because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`.
-
-  .. admonition:: if the terminal_ does not show the same error, then check if
-
-    * your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-    * you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
-
-    and try ``uv run pytest-watcher . --now`` again
-
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_elevator.py``
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 7-8
-    :emphasize-text: AssertionError
-
-    class TestElevator(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-
-    # Exceptions seen
-    # AssertionError
-
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
-
-            self.assertFalse(False)
-
-  the test passes.
 
 ----
 
@@ -3132,16 +3015,8 @@ close the project
 *********************************************************************************
 
 * I close ``test_elevator.py`` and ``elevator.py``
-* I click in the terminal_, then use :kbd:`q` on the doorsboard to leave the tests. The terminal_ goes back to the command line.
-
-* I `change directory`_ to the parent of ``elevator``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
+* I click in the terminal_ where the tests are running
+* I use :kbd:`q` on the keyboard to leave the tests. The terminal_ shows
 
   .. code-block:: shell
 

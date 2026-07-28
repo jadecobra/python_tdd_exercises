@@ -24,6 +24,49 @@ These are the tests I have at the end of the chapter
   :language: python
   :linenos:
   :caption: truth_table/tests/test_car.py
+  :lines: 1-23
+
+.. literalinclude:: ../../code/car/test_car.py
+  :language: python
+  :lineno-start: 25
+  :caption: truth_table/tests/test_car.py
+  :lines: 25-41
+
+.. literalinclude:: ../../code/car/test_car.py
+  :language: python
+  :lineno-start: 43
+  :caption: truth_table/tests/test_car.py
+  :lines: 43-59
+
+.. literalinclude:: ../../code/car/test_car.py
+  :language: python
+  :lineno-start: 61
+  :caption: truth_table/tests/test_car.py
+  :lines: 61-77
+
+.. literalinclude:: ../../code/car/test_car.py
+  :language: python
+  :lineno-start: 79
+  :caption: truth_table/tests/test_car.py
+  :lines: 79-95
+
+.. literalinclude:: ../../code/car/test_car.py
+  :language: python
+  :lineno-start: 97
+  :caption: truth_table/tests/test_car.py
+  :lines: 97-113
+
+.. literalinclude:: ../../code/car/test_car.py
+  :language: python
+  :lineno-start: 115
+  :caption: truth_table/tests/test_car.py
+  :lines: 115-131
+
+.. literalinclude:: ../../code/car/test_car.py
+  :language: python
+  :lineno-start: 133
+  :caption: truth_table/tests/test_car.py
+  :lines: 133-
 
 ----
 
@@ -3916,16 +3959,7 @@ close the project
 
 * I close ``test_car.py`` and ``car.py``
 * I click in the terminal_ where the tests are running
-* I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
-
-* I `change directory`_ to the parent of ``car``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
+* I use :kbd:`q` on the keyboard to leave the tests. The terminal_ shows
 
   .. code-block:: shell
 
