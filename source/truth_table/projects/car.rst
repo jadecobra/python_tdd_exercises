@@ -211,38 +211,39 @@ test_start_pressed
 
 ----
 
-I change :ref:`test_failure` to :ref:`test_start_pressed`, then add an :ref:`assertion<what is an assertion?>` for if the start button is :green:`pressed`
+* I go back to the terminal_ where the tests are running
+* I change :ref:`test_failure` to :ref:`test_start_pressed`, then add an :ref:`assertion<what is an assertion?>` for if the start button is :green:`pressed`
 
-==================  =============
-start button        output
-==================  =============
-:green:`pressed`    :green:`True`
-==================  =============
+  ==================  =============
+  start button        output
+  ==================  =============
+  :green:`pressed`    :green:`True`
+  ==================  =============
 
-.. code-block:: python
-  :lineno-start: 4
-  :emphasize-lines: 3-7
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 3-7
 
-  class TestCar(unittest.TestCase):
+    class TestCar(unittest.TestCase):
 
-      def test_start_pressed(self):
-          reality = src.car.ignition(
-              start_is_pressed=True,
-          )
-          self.assertTrue(reality)
-
-
-  # Exceptions seen
-  # AssertionError
+        def test_start_pressed(self):
+            reality = src.car.ignition(
+                start_is_pressed=True,
+            )
+            self.assertTrue(reality)
 
 
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+    # Exceptions seen
+    # AssertionError
 
-.. code-block:: python
 
-  NameError: name 'src' is not defined
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-because I do not have a definition for ``src`` in this ``test_car.py``.
+  .. code-block:: python
+
+    NameError: name 'src' is not defined
+
+  because I do not have a definition for ``src`` in this ``test_car.py``.
 
 ----
 
