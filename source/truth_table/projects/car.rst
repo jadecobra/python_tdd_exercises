@@ -1969,14 +1969,14 @@ When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how t
         start_is_pressed=False, key_is_close=False,
         brake_is_pressed=False
     ) -> False
-      └── def ignition(
-              start_is_pressed, key_is_close=False,
-              brake_is_pressed=False,
-          ):
-          ├── if start_is_pressed:
-          │       if key_is_close:
-          │           return brake_is_pressed
-          └── return False
+    └── def ignition(
+            start_is_pressed, key_is_close=False,
+            brake_is_pressed=False,
+        ):
+        ├── if start_is_pressed:
+        │       if key_is_close:
+        │           return brake_is_pressed
+        └── return False
 
   .. code-block:: shell
 
@@ -1984,14 +1984,14 @@ When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how t
         start_is_pressed=False, key_is_close=False,
         brake_is_pressed=True
     ) -> False
-      └── def ignition(
-              start_is_pressed, key_is_close=False,
-              brake_is_pressed=False,
-          ):
-          ├── if start_is_pressed:
-          │       if key_is_close:
-          │           return brake_is_pressed
-          └── return False
+    └── def ignition(
+            start_is_pressed, key_is_close=False,
+            brake_is_pressed=False,
+        ):
+        ├── if start_is_pressed:
+        │       if key_is_close:
+        │           return brake_is_pressed
+        └── return False
 
   .. code-block:: shell
 
@@ -1999,14 +1999,14 @@ When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how t
         start_is_pressed=False, key_is_close=True,
         brake_is_pressed=False
     ) -> False
-      └── def ignition(
-              start_is_pressed, key_is_close=False,
-              brake_is_pressed=False,
-          ):
-          ├── if start_is_pressed:
-          │       if key_is_close:
-          │           return brake_is_pressed
-          └── return False
+    └── def ignition(
+            start_is_pressed, key_is_close=False,
+            brake_is_pressed=False,
+        ):
+        ├── if start_is_pressed:
+        │       if key_is_close:
+        │           return brake_is_pressed
+        └── return False
 
   .. code-block:: shell
 
@@ -2014,14 +2014,14 @@ When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how t
         start_is_pressed=False, key_is_close=True,
         brake_is_pressed=True
     ) -> False
-      └── def ignition(
-              start_is_pressed, key_is_close=False,
-              brake_is_pressed=False,
-          ):
-          ├── if start_is_pressed:
-          │       if key_is_close:
-          │           return brake_is_pressed
-          └── return False
+    └── def ignition(
+            start_is_pressed, key_is_close=False,
+            brake_is_pressed=False,
+        ):
+        ├── if start_is_pressed:
+        │       if key_is_close:
+        │           return brake_is_pressed
+        └── return False
 
 * If the start button is :green:`pressed` it checks if the key is :green:`close` to the ignition
 
@@ -3577,10 +3577,312 @@ the test passes.
     git commit -am \
     'add test_park_w_brake_pressed_key_close_start_pressed'
 
-When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
+When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`. It checks if the start button is :green:`pressed` then if the key is :green:`close` to the ignition then if the brake is :green:`pressed`
 
-- it returns :red:`False` if the key is :red:`NOT close` to the ignition OR the start button is :red:`NOT pressed` OR the brake is :red:`NOT pressed` OR the car gear is :red:`NOT in park`
-- it returns :green:`True` if none of the conditions are met
+* If the start button is :red:`NOT pressed` it returns :red:`False`
+
+  .. code-block:: shell
+
+    ignition(
+        start_is_pressed=False, key_is_close=False,
+        brake_is_pressed=False, in_park=True
+    ) -> False
+    └── def ignition(
+            start_is_pressed, key_is_close=False,
+            brake_is_pressed=False, in_park=False,
+        ):
+        └── if (
+        ┌───┴── start_is_pressed
+        │       and key_is_close
+        │       and brake_is_pressed
+        │   ):
+        │       return in_park
+        └── return False
+
+  .. code-block:: shell
+
+    ignition(
+        start_is_pressed=False, key_is_close=False,
+        brake_is_pressed=False, in_park=False
+    ) -> False
+    └── def ignition(
+            start_is_pressed, key_is_close=False,
+            brake_is_pressed=False, in_park=False,
+        ):
+        └── if (
+        ┌───┴── start_is_pressed
+        │       and key_is_close
+        │       and brake_is_pressed
+        │   ):
+        │       return in_park
+        └── return False
+
+  .. code-block:: shell
+
+    ignition(
+        start_is_pressed=False, key_is_close=False,
+        brake_is_pressed=True, in_park=True
+    ) -> False
+    └── def ignition(
+            start_is_pressed, key_is_close=False,
+            brake_is_pressed=False, in_park=False,
+        ):
+        └── if (
+        ┌───┴── start_is_pressed
+        │       and key_is_close
+        │       and brake_is_pressed
+        │   ):
+        │       return in_park
+        └── return False
+
+  .. code-block:: shell
+
+    ignition(
+        start_is_pressed=False, key_is_close=False,
+        brake_is_pressed=True, in_park=False
+    ) -> False
+    └── def ignition(
+            start_is_pressed, key_is_close=False,
+            brake_is_pressed=False, in_park=False,
+        ):
+        └── if (
+        ┌───┴── start_is_pressed
+        │       and key_is_close
+        │       and brake_is_pressed
+        │   ):
+        │       return in_park
+        └── return False
+
+  .. code-block:: shell
+
+    ignition(
+        start_is_pressed=False, key_is_close=True,
+        brake_is_pressed=False, in_park=True
+    ) -> False
+    └── def ignition(
+            start_is_pressed, key_is_close=False,
+            brake_is_pressed=False, in_park=False,
+        ):
+        └── if (
+        ┌───┴── start_is_pressed
+        │       and key_is_close
+        │       and brake_is_pressed
+        │   ):
+        │       return in_park
+        └── return False
+
+  .. code-block:: shell
+
+    ignition(
+        start_is_pressed=False, key_is_close=True,
+        brake_is_pressed=False, in_park=False
+    ) -> False
+    └── def ignition(
+            start_is_pressed, key_is_close=False,
+            brake_is_pressed=False, in_park=False,
+        ):
+        └── if (
+        ┌───┴── start_is_pressed
+        │       and key_is_close
+        │       and brake_is_pressed
+        │   ):
+        │       return in_park
+        └── return False
+
+  .. code-block:: shell
+
+    ignition(
+        start_is_pressed=False, key_is_close=True,
+        brake_is_pressed=True, in_park=True
+    ) -> False
+    └── def ignition(
+            start_is_pressed, key_is_close=False,
+            brake_is_pressed=False, in_park=False,
+        ):
+        └── if (
+        ┌───┴── start_is_pressed
+        │       and key_is_close
+        │       and brake_is_pressed
+        │   ):
+        │       return in_park
+        └── return False
+
+  .. code-block:: shell
+
+    ignition(
+        start_is_pressed=False, key_is_close=True,
+        brake_is_pressed=True, in_park=False
+    ) -> False
+    └── def ignition(
+            start_is_pressed, key_is_close=False,
+            brake_is_pressed=False, in_park=False,
+        ):
+        └── if (
+        ┌───┴── start_is_pressed
+        │       and key_is_close
+        │       and brake_is_pressed
+        │   ):
+        │       return in_park
+        └── return False
+
+* if the start button is :green:`pressed` AND the key is :red:`NOT close` to the ignition it leaves the :ref:`if statements<if statements>` then returns :red:`False`
+
+  .. code-block:: shell
+
+    ignition(
+        start_is_pressed=True, key_is_close=False,
+        brake_is_pressed=False, in_park=False
+    ) -> False
+    └── def ignition(
+            start_is_pressed, key_is_close=False,
+            brake_is_pressed=False, in_park=False,
+        ):
+        └── if (
+            ├── start_is_pressed
+        ┌───┴── and key_is_close
+        │       and brake_is_pressed
+        │   ):
+        │       return in_park
+        └── return False
+
+  .. code-block:: shell
+
+    ignition(
+        start_is_pressed=True, key_is_close=False,
+        brake_is_pressed=False, in_park=True
+    ) -> False
+    └── def ignition(
+            start_is_pressed, key_is_close=False,
+            brake_is_pressed=False, in_park=False,
+        ):
+        └── if (
+            ├── start_is_pressed
+        ┌───┴── and key_is_close
+        │       and brake_is_pressed
+        │   ):
+        │       return in_park
+        └── return False
+
+  .. code-block:: shell
+
+    ignition(
+        start_is_pressed=True, key_is_close=False,
+        brake_is_pressed=True, in_park=True
+    ) -> False
+    └── def ignition(
+            start_is_pressed, key_is_close=False,
+            brake_is_pressed=False, in_park=False,
+        ):
+        └── if (
+            ├── start_is_pressed
+        ┌───┴── and key_is_close
+        │       and brake_is_pressed
+        │   ):
+        │       return in_park
+        └── return False
+
+  .. code-block:: shell
+
+    ignition(
+        start_is_pressed=True, key_is_close=False,
+        brake_is_pressed=True, in_park=False
+    ) -> False
+    └── def ignition(
+            start_is_pressed, key_is_close=False,
+            brake_is_pressed=False, in_park=False,
+        ):
+        └── if (
+            ├── start_is_pressed
+        ┌───┴── and key_is_close
+        │       and brake_is_pressed
+        │   ):
+        │       return in_park
+        └── return False
+
+* if the start button is :green:`pressed` AND the key is :green:`close` to the ignition it checks if the brake is being :green:`pressed`
+
+  - if the start button is :green:`pressed` AND the key is :green:`close` to the ignition AND the brake is :red:`NOT pressed` it leaves the :ref:`if statement<if statements>` then returns :red:`False`
+
+    .. code-block:: shell
+
+      ignition(
+          start_is_pressed=True, key_is_close=True,
+          brake_is_pressed=False, in_park=True
+      ) -> False
+      └── def ignition(
+              start_is_pressed, key_is_close=False,
+              brake_is_pressed=False, in_park=False,
+          ):
+          └── if (
+              ├── start_is_pressed
+              ├── and key_is_close
+          ┌───┴── and brake_is_pressed
+          │   ):
+          │       return in_park
+          └── return False
+
+    .. code-block:: shell
+
+      ignition(
+          start_is_pressed=True, key_is_close=True,
+          brake_is_pressed=False, in_park=False
+      ) -> False
+      └── def ignition(
+              start_is_pressed, key_is_close=False,
+              brake_is_pressed=False, in_park=False,
+          ):
+          └── if (
+              ├── start_is_pressed
+              ├── and key_is_close
+          ┌───┴── and brake_is_pressed
+          │   ):
+          │       return in_park
+          └── return False
+
+  - if the start button is :green:`pressed` AND the key is :green:`close` to the ignition AND the brake is :green:`pressed` it returns the value of ``in_park``
+
+    * if the car gear is :red:`NOT in park` it returns :red:`False`
+
+      .. code-block:: shell
+
+        ignition(
+            start_is_pressed=True, key_is_close=True,
+            brake_is_pressed=True, in_park=False
+        ) -> False
+        └── def ignition(
+                start_is_pressed, key_is_close=False,
+                brake_is_pressed=False, in_park=False,
+            ):
+            └── if (
+                ├── start_is_pressed
+                ├── and key_is_close
+                └── and brake_is_pressed
+                ):
+                └── return in_park
+                    return False
+                return False
+
+    * if the car gear is :green:`in park` it returns :green:`True`
+
+      .. code-block:: shell
+
+        ignition(
+            start_is_pressed=True, key_is_close=True,
+            brake_is_pressed=True, in_park=True
+        ) -> True
+        └── def ignition(
+                start_is_pressed, key_is_close=False,
+                brake_is_pressed=False, in_park=False,
+            ):
+            └── if (
+                ├── start_is_pressed
+                ├── and key_is_close
+                └── and brake_is_pressed
+                ):
+                └── return in_park
+                    return True
+                return False
+
 
 
 *********************************************************************************
@@ -3614,50 +3916,50 @@ review
 
 I ran tests for a car with these inputs:
 
+* was the start button pressed?
 * is the key close to the ignition?
 * is the brake being pressed?
-* was the start button pressed?
 * is the car in park?
 
 the inputs gave me this :ref:`truth table`
 
-==============  ================  ==================  ==================  ================
-key             brake             start button        gear                output
-==============  ================  ==================  ==================  ================
-:green:`close`    :green:`pressed`  :green:`pressed`    :green:`in park`    :green:`True`
-:green:`close`    :green:`pressed`  :green:`pressed`    :red:`NOT in park`  :red:`False`
-:green:`close`    :green:`pressed`  :red:`NOT pressed`  :green:`in park`    :red:`False`
-:green:`close`    :green:`pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
-==============  ================  ==================  ==================  ================
-
-==============  ==================  ==================  ==================  ==========
+==============  ==================  ==================  ==================  =============
 key             brake               start               gear                output
-==============  ==================  ==================  ==================  ==========
-:green:`close`    :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`False`
-:green:`close`    :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`False`
-:green:`close`    :red:`NOT pressed`  :red:`NOT pressed`  :green:`in park`    :red:`False`
-:green:`close`    :red:`NOT pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
-==============  ==================  ==================  ==================  ==========
+==============  ==================  ==================  ==================  =============
+:green:`close`  :green:`pressed`    :green:`pressed`    :green:`in park`    :green:`True`
+:green:`close`  :green:`pressed`    :green:`pressed`    :red:`NOT in park`  :red:`False`
+:green:`close`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`False`
+:green:`close`  :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`False`
+==============  ==================  ==================  ==================  =============
 
-==========  ================  ==================  ==================  ==========
-key         brake             start               gear                output
-==========  ================  ==================  ==================  ==========
-:red:`NOT close`  :green:`pressed`  :green:`pressed`    :green:`in park`    :red:`False`
-:red:`NOT close`  :green:`pressed`  :green:`pressed`    :red:`NOT in park`  :red:`False`
-:red:`NOT close`  :green:`pressed`  :red:`NOT pressed`  :green:`in park`    :red:`False`
-:red:`NOT close`  :green:`pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
-==========  ================  ==================  ==================  ==========
-
-==========  ==================  ==================  ==================  ==========
-key         brake               start               gear                output
-==========  ==================  ==================  ==================  ==========
+================  ==================  ==================  ==================  ============
+key               brake               start               gear                output
+================  ==================  ==================  ==================  ============
+:red:`NOT close`  :green:`pressed`    :green:`pressed`    :green:`in park`    :red:`False`
+:red:`NOT close`  :green:`pressed`    :green:`pressed`    :red:`NOT in park`  :red:`False`
 :red:`NOT close`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`False`
 :red:`NOT close`  :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`False`
+================  ==================  ==================  ==================  ============
+
+==============  ==================  ==================  ==================  ============
+key             brake               start               gear                output
+==============  ==================  ==================  ==================  ============
+:green:`close`  :green:`pressed`    :red:`NOT pressed`  :green:`in park`    :red:`False`
+:green:`close`  :green:`pressed`    :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
+:green:`close`  :red:`NOT pressed`  :red:`NOT pressed`  :green:`in park`    :red:`False`
+:green:`close`  :red:`NOT pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
+==============  ==================  ==================  ==================  ============
+
+================  ==================  ==================  ==================  ============
+key               brake               start               gear                output
+================  ==================  ==================  ==================  ============
+:red:`NOT close`  :green:`pressed`    :red:`NOT pressed`  :green:`in park`    :red:`False`
+:red:`NOT close`  :green:`pressed`    :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
 :red:`NOT close`  :red:`NOT pressed`  :red:`NOT pressed`  :green:`in park`    :red:`False`
 :red:`NOT close`  :red:`NOT pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
-==========  ==================  ==================  ==================  ==========
+================  ==================  ==================  ==================  ============
 
-the only time I can start this car is if the key is :green:`close` to the ignition, the start button is :green:`pressed` AND the brake is being :green:`pressed` AND the car gear is :green:`in park`.
+the only time I can start this car is if the start button is :green:`pressed` AND the key is :green:`close` to the ignition AND the brake is being :green:`pressed` AND the car gear is :green:`in park`.
 
 ----
 
