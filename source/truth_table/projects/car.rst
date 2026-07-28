@@ -2331,7 +2331,7 @@ test_park_w_brake_pressed_key_not_close_start_not_pressed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a value for the ``in_park`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_brake_pressed_key_not_close_start_not_pressed` for if the start button is :red:`NOT pressed` AND the key is :red:`NOT close` to the ignition AND the brake is being :green:`pressed` and the car gear is :green:`in park`
+* I add a value for the ``in_park`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_brake_pressed_key_not_close_start_not_pressed` for if the start button is :red:`NOT pressed` AND the key is :red:`NOT close` to the ignition AND the brake is being :green:`pressed` AND the car gear is :green:`in park`
 
   ================  ================  ==================  ==================  ============
   key               brake             start               gear                output
@@ -2364,7 +2364,7 @@ test_park_w_brake_pressed_key_not_close_start_not_pressed
         brake_is_pressed=True, in_park=True
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for if the start button is :red:`NOT pressed` AND the key is :red:`NOT close` to the ignition AND the brake is being :green:`pressed` and the car gear is :red:`NOT in park`
+* I add an :ref:`assertion<what is an assertion?>` for if the start button is :red:`NOT pressed` AND the key is :red:`NOT close` to the ignition AND the brake is being :green:`pressed` AND the car gear is :red:`NOT in park`
 
   ================  ================  ==================  ==================  ============
   key               brake             start               gear                output
@@ -2503,7 +2503,7 @@ test_park_w_brake_not_pressed_key_close_start_not_pressed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a value for the ``in_park`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_brake_not_pressed_key_close_start_not_pressed` for if the start button is :red:`NOT pressed` AND the key is :green:`close` to the ignition AND the brake is :red:`NOT pressed` and the car gear is :green:`in park`
+* I add a value for the ``in_park`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_brake_not_pressed_key_close_start_not_pressed` for if the start button is :red:`NOT pressed` AND the key is :green:`close` to the ignition AND the brake is :red:`NOT pressed` AND the car gear is :green:`in park`
 
   ==============  ==================  ==================  ==================  ============
   key             brake               start               gear                output
@@ -2536,7 +2536,7 @@ test_park_w_brake_not_pressed_key_close_start_not_pressed
         brake_is_pressed=False, in_park=True
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for if the start button is :red:`NOT pressed` AND the key is :green:`close` to the ignition AND the brake is :red:`NOT pressed` and the car gear is :red:`NOT in park`
+* I add an :ref:`assertion<what is an assertion?>` for if the start button is :red:`NOT pressed` AND the key is :green:`close` to the ignition AND the brake is :red:`NOT pressed` AND the car gear is :red:`NOT in park`
 
   ==============  ==================  ==================  ==================  ============
   key             brake               start               gear                output
@@ -2675,7 +2675,7 @@ test_park_w_brake_pressed_key_close_start_not_pressed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a value for the ``in_park`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_brake_pressed_key_close_start_not_pressed` for if the start button is :red:`NOT pressed` AND the key is :green:`close` to the ignition AND the brake is being :green:`pressed` and the car gear is :green:`in park`
+* I add a value for the ``in_park`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_brake_pressed_key_close_start_not_pressed` for if the start button is :red:`NOT pressed` AND the key is :green:`close` to the ignition AND the brake is being :green:`pressed` AND the car gear is :green:`in park`
 
   ==============  ================  ==================  ==================  ================
   key             brake             start button        gear                output
@@ -2708,7 +2708,7 @@ test_park_w_brake_pressed_key_close_start_not_pressed
         brake_is_pressed=True, in_park=True
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for if the start button is :red:`NOT pressed` AND the key is :green:`close` to the ignition AND the brake is being :green:`pressed` and the car gear is :red:`NOT in park`
+* I add an :ref:`assertion<what is an assertion?>` for if the start button is :red:`NOT pressed` AND the key is :green:`close` to the ignition AND the brake is being :green:`pressed` AND the car gear is :red:`NOT in park`
 
   ==============  ==================  ==================  ==================  ============
   key             brake               start               gear                output
@@ -2805,7 +2805,7 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 34
-    :emphasize-lines: 11
+    :emphasize-lines: 10
 
         def test_brake_not_pressed_key_not_close_start_pressed(self):
             self.assertFalse(
@@ -2847,13 +2847,13 @@ test_park_w_brake_not_pressed_key_not_close_start_pressed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a value for the ``in_park`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_brake_not_pressed_key_not_close_start_pressed` for if the start button is :red:`NOT pressed` AND the key is :green:`close` to the ignition AND the brake is being :green:`pressed` and the car gear is :green:`in park`
+* I add a value for the ``in_park`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_brake_not_pressed_key_not_close_start_pressed` for if the start button is :green:`pressed` AND the key is :red:`NOT close` to the ignition AND the brake is :red:`NOT pressed` AND the car gear is :green:`in park`
 
-  ==============  ================  ==================  ==================  ================
-  key             brake             start button        gear                output
-  ==============  ================  ==================  ==================  ================
-  :green:`close`  :green:`pressed`  :red:`NOT pressed`  :green:`in park`    :red:`False`
-  ==============  ================  ==================  ==================  ================
+  ================  ==================  ==================  ==================  ============
+  key               brake               start               gear                output
+  ================  ==================  ==================  ==================  ============
+  :red:`NOT close`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`False`
+  ================  ==================  ==================  ==================  ============
 
   .. code-block:: python
     :lineno-start: 34
@@ -2862,31 +2862,31 @@ test_park_w_brake_not_pressed_key_not_close_start_pressed
         def test_brake_not_pressed_key_not_close_start_pressed(self):
             self.assertFalse(
                 src.car.ignition(
-                    start_is_pressed=False,
-                    key_is_close=True,
-                    brake_is_pressed=True,
+                    start_is_pressed=True,
+                    key_is_close=False,
+                    brake_is_pressed=False,
                     in_park=True,
                 )
             )
 
-        def test_park_w_brake_not_pressed_key_close_start_not_pressed(self):
+        def test_park_w_brake_pressed_key_close_start_not_pressed(self):
 
   the test is still green.
 
   .. code-block:: python
 
     ignition(
-        start_is_pressed=False, key_is_close=True,
-        brake_is_pressed=True, in_park=True
+        start_is_pressed=True, key_is_close=False,
+        brake_is_pressed=False, in_park=True
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for if the start button is :red:`NOT pressed` AND the key is :green:`close` to the ignition AND the brake is being :green:`pressed` and the car gear is :red:`NOT in park`
+* I add an :ref:`assertion<what is an assertion?>` for if the start button is :green:`pressed` AND the key is :red:`NOT close` to the ignition AND the brake is :red:`NOT pressed` AND the car gear is :red:`NOT in park`
 
-  ==============  ==================  ==================  ==================  ============
-  key             brake               start               gear                output
-  ==============  ==================  ==================  ==================  ============
-  :green:`close`  :green:`pressed`    :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
-  ==============  ==================  ==================  ==================  ============
+  ================  ==================  ==================  ==================  ============
+  key               brake               start               gear                output
+  ================  ==================  ==================  ==================  ============
+  :red:`NOT close`  :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`False`
+  ================  ==================  ==================  ==================  ============
 
   .. code-block:: python
     :lineno-start: 34
@@ -2895,22 +2895,22 @@ test_park_w_brake_not_pressed_key_not_close_start_pressed
         def test_brake_not_pressed_key_not_close_start_pressed(self):
             self.assertFalse(
                 src.car.ignition(
-                    start_is_pressed=False,
-                    key_is_close=True,
-                    brake_is_pressed=True,
+                    start_is_pressed=True,
+                    key_is_close=False,
+                    brake_is_pressed=False,
                     in_park=True,
                 )
             )
             self.assertTrue(
                 src.car.ignition(
-                    start_is_pressed=False,
-                    key_is_close=True,
-                    brake_is_pressed=True,
+                    start_is_pressed=True,
+                    key_is_close=False,
+                    brake_is_pressed=False,
                     in_park=False,
                 )
             )
 
-        def test_park_w_brake_not_pressed_key_close_start_not_pressed(self):
+        def test_park_w_brake_pressed_key_close_start_not_pressed(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2935,34 +2935,34 @@ I change :ref:`assertTrue<another way to test if something is grouped as True>` 
       def test_brake_not_pressed_key_not_close_start_pressed(self):
           self.assertFalse(
               src.car.ignition(
-                  start_is_pressed=False,
-                  key_is_close=True,
-                  brake_is_pressed=True,
+                  start_is_pressed=True,
+                  key_is_close=False,
+                  brake_is_pressed=False,
                   in_park=True,
               )
           )
           self.assertFalse(
               src.car.ignition(
-                  start_is_pressed=False,
-                  key_is_close=True,
-                  brake_is_pressed=True,
+                  start_is_pressed=True,
+                  key_is_close=False,
+                  brake_is_pressed=False,
                   in_park=False,
               )
           )
 
-      def test_park_w_brake_not_pressed_key_close_start_not_pressed(self):
+      def test_park_w_brake_pressed_key_close_start_not_pressed(self):
 
 the test passes.
 
 .. code-block:: python
 
   ignition(
-      start_is_pressed=False, key_is_close=True,
-      brake_is_pressed=True, in_park=True
+      start_is_pressed=True, key_is_close=False,
+      brake_is_pressed=False, in_park=False
   ) -> False
   ignition(
-      start_is_pressed=False, key_is_close=True,
-      brake_is_pressed=True, in_park=False
+      start_is_pressed=True, key_is_close=False,
+      brake_is_pressed=False, in_park=True
   ) -> False
 
 ----
@@ -2976,24 +2976,24 @@ the test passes.
 * I change the name from :ref:`test_brake_not_pressed_key_not_close_start_pressed` to :ref:`test_park_w_brake_not_pressed_key_not_close_start_pressed`
 
   .. code-block:: python
-    :lineno-start: 34
-    :emphasize-lines: 11
+    :lineno-start: 25
+    :emphasize-lines: 10
 
-        def test_brake_not_pressed_key_not_close_start_pressed(self):
+        def test_brake_pressed_key_not_close_start_pressed(self):
             self.assertFalse(
                 src.car.ignition(
                     start_is_pressed=True,
                     key_is_close=False,
-                    brake_is_pressed=False,
+                    brake_is_pressed=True,
                 )
             )
 
         def test_park_w_brake_not_pressed_key_not_close_start_pressed(self):
             self.assertFalse(
                 src.car.ignition(
-                    start_is_pressed=False,
-                    key_is_close=True,
-                    brake_is_pressed=True,
+                    start_is_pressed=True,
+                    key_is_close=False,
+                    brake_is_pressed=False,
                     in_park=True,
                 )
             )
@@ -3198,7 +3198,7 @@ the test passes.
   - it returns :red:`False` if the key is :red:`NOT close` to the ignition OR the start button is :red:`NOT pressed` OR the brake is :red:`NOT pressed` OR the car gear is :red:`NOT in park`
   - it returns :green:`True` if none of the conditions are met
 
-* I add a value for the ``in_park`` parameter in the next :ref:`assertion<what is an assertion?>` for if the key is :green:`close`, the brake is being :green:`pressed`, the start button is :red:`NOT pressed` and the car gear is :green:`in park`, in :ref:`test_key_close_brake_pressed` in ``test_car.py``
+* I add a value for the ``in_park`` parameter in the next :ref:`assertion<what is an assertion?>` for if the key is :green:`close`, the brake is being :green:`pressed`, the start button is :red:`NOT pressed` AND the car gear is :green:`in park`, in :ref:`test_key_close_brake_pressed` in ``test_car.py``
 
   ==============  ================  ==================  ==================  ================
   key             brake             start button        gear                output
@@ -3368,7 +3368,7 @@ key             brake               start               gear                outp
 
   still green.
 
-* I add an :ref:`assertion<what is an assertion?>` for if the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :green:`pressed` and the car gear is :red:`NOT in park`
+* I add an :ref:`assertion<what is an assertion?>` for if the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :green:`pressed` AND the car gear is :red:`NOT in park`
 
   ==============  ==================  ==================  ==================  ==========
   key             brake               start               gear                output
@@ -3415,7 +3415,7 @@ key             brake               start               gear                outp
 
   the test is still green.
 
-* I add a value for ``in_park`` to the next :ref:`assertion<what is an assertion?>`, for if the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :red:`NOT pressed` and the car gear is :green:`in park`
+* I add a value for ``in_park`` to the next :ref:`assertion<what is an assertion?>`, for if the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :red:`NOT pressed` AND the car gear is :green:`in park`
 
   ==============  ==================  ==================  ==================  ==========
   key             brake               start               gear                output
@@ -3464,7 +3464,7 @@ key             brake               start               gear                outp
 
   still green.
 
-* I add an :ref:`assertion<what is an assertion?>` for if the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :red:`NOT pressed` and the car gear is :red:`NOT in park`
+* I add an :ref:`assertion<what is an assertion?>` for if the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :red:`NOT pressed` AND the car gear is :red:`NOT in park`
 
   ==============  ==================  ==================  ==================  ==========
   key             brake               start               gear                output
@@ -3568,7 +3568,7 @@ key         brake             start               gear                output
 :red:`NOT close`  :green:`pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
 ==========  ================  ==================  ==================  ==========
 
-* I add a value for the ``in_park`` parameter in the first :ref:`assertion<what is an assertion?>` of :ref:`test_key_not_close_brake_pressed`, for if the key is :red:`NOT close` to the ignition, the start button is :green:`pressed` AND the brake is being :green:`pressed`, and the car gear is :green:`in park`
+* I add a value for the ``in_park`` parameter in the first :ref:`assertion<what is an assertion?>` of :ref:`test_key_not_close_brake_pressed`, for if the key is :red:`NOT close` to the ignition, the start button is :green:`pressed` AND the brake is being :green:`pressed`, AND the car gear is :green:`in park`
 
   ==========  ================  ==================  ==================  ==========
   key         brake             start               gear                output
@@ -3593,7 +3593,7 @@ key         brake             start               gear                output
 
   still green.
 
-* I add an :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition, the start button is :green:`pressed` AND the brake is being :green:`pressed` and the car gear is :red:`NOT in park`
+* I add an :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition, the start button is :green:`pressed` AND the brake is being :green:`pressed` AND the car gear is :red:`NOT in park`
 
   ==========  ================  ==================  ==================  ==========
   key         brake             start               gear                output
@@ -3640,7 +3640,7 @@ key         brake             start               gear                output
 
   still green.
 
-* I add a value for the ``in_park`` parameter to the next :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition, the brake is being :green:`pressed`, the start button is :red:`NOT pressed`, and the car gear is :green:`in park`
+* I add a value for the ``in_park`` parameter to the next :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition, the brake is being :green:`pressed`, the start button is :red:`NOT pressed`, AND the car gear is :green:`in park`
 
   ==========  ================  ==================  ==================  ==========
   key         brake             start               gear                output
@@ -3689,7 +3689,7 @@ key         brake             start               gear                output
 
   the test is still green.
 
-* I add an :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition, the brake is being :green:`pressed`, the start button is :red:`NOT pressed`, and the car gear is :red:`NOT in park`
+* I add an :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition, the brake is being :green:`pressed`, the start button is :red:`NOT pressed`, AND the car gear is :red:`NOT in park`
 
   ==========  ================  ==================  ==================  ==========
   key         brake             start               gear                output
@@ -3793,7 +3793,7 @@ key         brake               start               gear                output
 :red:`NOT close`  :red:`NOT pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`False`
 ==========  ==================  ==================  ==================  ==========
 
-* I add a value for the ``in_park`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_key_not_close_brake_not_pressed`, for if the key is :red:`NOT close` to the ignition, the brake is :red:`NOT pressed`, the start button is :green:`pressed`, and the car gear is :green:`in park`
+* I add a value for the ``in_park`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_key_not_close_brake_not_pressed`, for if the key is :red:`NOT close` to the ignition, the brake is :red:`NOT pressed`, the start button is :green:`pressed`, AND the car gear is :green:`in park`
 
   ==========  ==================  ==================  ==================  ==========
   key         brake               start               gear                output
@@ -3818,7 +3818,7 @@ key         brake               start               gear                output
 
   the test is still green.
 
-* I add an :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition, the brake is :red:`NOT pressed`, the start button is :green:`pressed`, and the car gear is :red:`NOT in park`
+* I add an :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition, the brake is :red:`NOT pressed`, the start button is :green:`pressed`, AND the car gear is :red:`NOT in park`
 
   ==========  ==================  ==================  ==================  ==========
   key         brake               start               gear                output
@@ -3866,7 +3866,7 @@ key         brake               start               gear                output
 
   still green.
 
-* I add a value for the ``in_park`` parameter to the next :ref:`assertion<what is an assertion?>`, for if the key is :red:`NOT close` to the ignition, the brake is :red:`NOT pressed`, the start button is :red:`NOT pressed`, and the car gear is :green:`in park`
+* I add a value for the ``in_park`` parameter to the next :ref:`assertion<what is an assertion?>`, for if the key is :red:`NOT close` to the ignition, the brake is :red:`NOT pressed`, the start button is :red:`NOT pressed`, AND the car gear is :green:`in park`
 
   ==========  ==================  ==================  ==================  ==========
   key         brake               start               gear                output
@@ -3913,7 +3913,7 @@ key         brake               start               gear                output
 
   green.
 
-* I add an :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition, the brake is :red:`NOT pressed`, the start button is :red:`NOT pressed`, and the car gear is :red:`NOT in park`
+* I add an :ref:`assertion<what is an assertion?>` for if the key is :red:`NOT close` to the ignition, the brake is :red:`NOT pressed`, the start button is :red:`NOT pressed`, AND the car gear is :red:`NOT in park`
 
   ==========  ==================  ==================  ==================  ==========
   key         brake               start               gear                output
