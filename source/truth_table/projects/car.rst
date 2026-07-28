@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Build a car ignition controller with Python TDD (Red-Green-Refactor): translate a four-input truth table (start button, key close, brake pressed, gear in park) into ``src.car.ignition`` that returns True only when every condition is met. Beginners use uv, unittest, and pytest-watcher; hit NameError, AttributeError, TypeError (unexpected keywords / missing args), SyntaxError (non-default after default), and AssertionError; learn default parameters, keyword calls, nested if / Logical Negation (NOT) / Logical Conjunction (AND), and assertTrue/assertFalse until only start pressed AND key close AND brake pressed AND in park starts the car.
+  :keywords: Jacob Itegboje, Python car ignition project, TDD Red Green Refactor, truth table to code, unittest assertTrue assertFalse, uv package manager, pytest-watcher, start button, key close, brake pressed, in park, default parameters, keyword arguments, SyntaxError parameter without a default, TypeError unexpected keyword argument, NameError src not defined, AttributeError, Logical Negation NOT, Logical Conjunction AND, if statements, pumping python
 
 .. include:: ../../links.rst
 
@@ -145,7 +145,7 @@ start the project
 
 ----
 
-If the input to the **Car** ignition is if the start button pressed? I get this :ref:`truth table`
+I want the car to start only when the start button is :green:`pressed`. I get this :ref:`truth table`
 
 ==================  =============
 start button        output
@@ -487,7 +487,7 @@ test_key_close_start_pressed
     TypeError: ignition() missing
                1 required positional argument: 'key_is_close'
 
-  because the :ref:`assertion<what is an assertion?>` :ref:`calls<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` with one argument(``start_is_pressed``) and I just changed the :ref:`<what is a function?>` to make it take two required arguments (``key_is_close`` and ``start_is_pressed``). I have to make ``key_is_close`` a :ref:`choice<test_optional_arguments>`.
+  because the :ref:`assertion<what is an assertion?>` :ref:`calls<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` with one argument (``start_is_pressed``) and I just changed the :ref:`function<what is a function?>` to make it take two required arguments (``key_is_close`` and ``start_is_pressed``). I have to make ``key_is_close`` a :ref:`choice<test_optional_arguments>`.
 
 * I add a :ref:`default value<test_optional_arguments>` for ``key_is_close`` to make it a :ref:`choice<test_optional_arguments>`
 
@@ -1330,7 +1330,7 @@ test_brake_not_pressed_key_close_start_pressed
 
   .. code-block:: python
     :lineno-start: 5
-    :emphasize-lines:
+    :emphasize-lines: 2-3, 5-7
 
         # if brake_is_pressed == False:
         # if not brake_is_pressed:
@@ -1343,7 +1343,7 @@ test_brake_not_pressed_key_close_start_pressed
 
     the test is still green.
 
-* I remove the commented lines from the ``ignition`` :ref:`function<what is a function>`
+* I remove the commented lines from the ``ignition`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -1757,7 +1757,7 @@ test_brake_not_pressed_key_close_start_not_pressed
 
 ----
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another to test if something is grouped as False>` to match reality
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` to match reality
 
   .. code-block:: python
     :lineno-start: 52
@@ -2268,7 +2268,7 @@ test_park_w_brake_not_pressed_key_not_close_start_not_pressed
 
     AssertionError: False is not true
 
-  because the ``ignition`` :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
+  because the ``ignition`` :ref:`function<what is a function?>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
 
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` to match the result of the :ref:`call<how to call a function with input>`
 
@@ -2309,6 +2309,31 @@ test_park_w_brake_not_pressed_key_not_close_start_not_pressed
         start_is_pressed=False, key_is_close=False,
         brake_is_pressed=False, in_park=False
     ) -> False
+
+* I change the name of the test to from:ref:`test_brake_not_pressed_key_not_close_start_not_pressed` to :ref:`test_park_w_brake_not_pressed_key_not_close_start_not_pressed`
+
+  .. code-block:: python
+    :lineno-start: 61
+    :emphasize-lines: 10
+
+        def test_brake_pressed_key_not_close_start_not_pressed(self):
+            self.assertFalse(
+                src.car.ignition(
+                    start_is_pressed=False,
+                    key_is_close=False,
+                    brake_is_pressed=True,
+                )
+            )
+
+        def test_park_w_brake_not_pressed_key_not_close_start_not_pressed(self):
+            self.assertFalse(
+                src.car.ignition(
+                    start_is_pressed=False,
+                    key_is_close=False,
+                    brake_is_pressed=False,
+                    in_park=True,
+                )
+            )
 
 * I add a git_ commit message in the other terminal_
 
@@ -2353,7 +2378,7 @@ test_park_w_brake_pressed_key_not_close_start_not_pressed
                 )
             )
 
-        def test_brake_not_pressed_key_not_close_start_not_pressed(self):
+        def test_park_w_brake_not_pressed_key_not_close_start_not_pressed(self):
 
   the test is still green.
 
@@ -3432,7 +3457,7 @@ test_park_w_brake_pressed_key_close_start_pressed
 
   .. code-block:: python
 
-    AssertionError: False is not true
+    AssertionError: True is not false
 
 ----
 
@@ -3967,7 +3992,7 @@ the only time I can start this car is if the start button is :green:`pressed` AN
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<car: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<Car: tests and solutions>`
 
 ----
 
