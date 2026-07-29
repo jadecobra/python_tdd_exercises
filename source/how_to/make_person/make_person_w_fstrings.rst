@@ -43,7 +43,7 @@ open the project
 
   .. code-block:: shell
 
-    .../pumping_python/ove
+    .../pumping_python/person
 
 * I open ``test_person.py``
 
