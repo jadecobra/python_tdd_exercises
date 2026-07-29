@@ -1079,7 +1079,7 @@ test_below_weight_doors_open_number_not_pushed
 
   .. code-block:: python
     :lineno-start: 31
-    :emphasize-lines: 9
+    :emphasize-lines: 10
 
         def test_above_weight_doors_open_number_not_pushed(self):
             self.assertFalse(
@@ -1102,14 +1102,13 @@ test_below_weight_doors_open_number_not_pushed
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    TypeError: elevator() got
-               an unexpected keyword argument 'above_weight'
+    AssertionError: False is not true
 
-  because the test :ref:`called<how to call a function with input>` the ``elevator`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``above_weight``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+  because the ``elevator`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``above_weight``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 ----
 
@@ -1119,53 +1118,24 @@ test_below_weight_doors_open_number_not_pushed
 
 ----
 
-* I add ``above_weight`` to the :ref:`function signature<what is a function?>` in ``elevator.py``
+
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_below_weight_doors_open_number_not_pushed`
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-4
+    :lineno-start: 40
+    :emphasize-lines: 2
 
-    def elevator(
-        number_pushed, doors_closed=False,
-        above_weight,
-    ):
-        if not number_pushed:
-            return False
-        return doors_closed
+        def test_below_weight_doors_open_number_not_pushed(self):
+            self.assertFalse(
+                src.elevator.elevator(
+                    number_pushed=False,
+                    doors_closed=False,
+                    above_weight=False,
+                )
+            )
 
-  the terminal_ is my friend, and shows SyntaxError_
-
-  .. code-block:: python
-
-    SyntaxError: parameter without a default follows
-                 parameter with a default
-
-  because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
-
-* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen, in ``test_elevator.py``
-
-  .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 6
-    :emphasize-text: SyntaxError
 
     # Exceptions seen
-    # AssertionError
-    # NameError
-    # AttributeError
-    # TypeError
-    # SyntaxError
-
-* I add a :ref:`default value<test_optional_arguments>` to make ``above_weight`` a choice, in ``elevator.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3
-
-    def elevator(
-        number_pushed, doors_closed=False,
-        above_weight=False,
-    ):
 
   the test passes.
 
@@ -1175,37 +1145,10 @@ test_below_weight_doors_open_number_not_pushed
         number_pushed=False, doors_closed=False,
         above_weight=True
     ) -> False
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I change the name of the test from :ref:`test_doors_open_number_not_pushed` to :ref:`test_below_weight_doors_open_number_not_pushed`, in ``test_elevator.py``
-
-  .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 9
-
-        def test_doors_closed_number_not_pushed(self):
-            self.assertFalse(
-                src.elevator.elevator(
-                    number_pushed=False,
-                    doors_closed=True,
-                )
-            )
-
-        def test_below_weight_doors_open_number_not_pushed(self):
-            self.assertFalse(
-                src.elevator.elevator(
-                    number_pushed=False,
-                    doors_closed=False,
-                    above_weight=True,
-                )
-            )
+    elevator(
+        number_pushed=False, doors_closed=False,
+        above_weight=False
+    ) -> False
 
 * I add a git_ commit message in the other terminal_
 
@@ -1214,6 +1157,36 @@ test_below_weight_doors_open_number_not_pushed
 
     git commit -am \
     'add test_below_weight_doors_open_number_not_pushed'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
