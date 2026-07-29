@@ -1469,7 +1469,7 @@ the test passes.
 
   .. code-block:: python
 
-    NameError: name 'src' is not
+    NameError: name 'src' is not defined
 
   because ``src`` is not defined in ``test_person.py``
 
