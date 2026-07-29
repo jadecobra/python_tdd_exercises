@@ -1919,7 +1919,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
   because
 
   - I called the :ref:`say_hello function<test say_hello function>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``year_of_birth``).
-  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` allows zero input, because the parentheses are empty.
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``say_hello`` allows zero input, because the parentheses are empty.
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I add ``first_name`` in parentheses

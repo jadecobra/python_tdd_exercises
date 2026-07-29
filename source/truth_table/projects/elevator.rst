@@ -12,7 +12,7 @@
 Elevator
 #################################################################################
 
-I want to make an **Elevator** that will :green:`True` to a floor when I push a button for the floor.
+I want to make an **Elevator Controller** that will :green:`MOVE` to a floor when I push a button for the floor.
 
 *********************************************************************************
 preview
@@ -46,7 +46,7 @@ start the project
 
       * I open ``makePythonTdd.ps1``
 
-* I name this project ``elevator``
+* I name this project ``controller``
 
   .. tab-set::
     :sync-group: os
@@ -54,14 +54,14 @@ start the project
     .. tab-item:: WSL/Linux/Mac
       :sync: unix
 
-      * I change the name of the project to ``elevator`` in ``makePythonTdd.sh``
+      * I change the name of the project to ``controller`` in ``makePythonTdd.sh``
 
         .. literalinclude:: ../../code/elevator/make_tdd/makePythonTddElevator.sh
           :language: python
           :linenos:
           :emphasize-lines: 2-3, 5, 12, 20
 
-      * I run ``makePythonTdd.sh`` in the terminal_ to make the ``elevator`` project
+      * I run ``makePythonTdd.sh`` in the terminal_ to make the ``controller`` project
 
         .. code-block:: python
           :emphasize-lines: 1
@@ -71,14 +71,14 @@ start the project
     .. tab-item:: no WSL
       :sync: no_wsl
 
-      * I change the name of the project to ``elevator`` in ``makePythonTdd.ps1``
+      * I change the name of the project to ``controller`` in ``makePythonTdd.ps1``
 
         .. literalinclude:: ../../code/elevator/make_tdd/makePythonTddElevator.ps1
           :language: Powershell
           :linenos:
           :emphasize-lines: 1-2, 4, 11, 19
 
-      * I run ``makePythonTdd.ps1`` in the terminal_ to make the ``elevator`` project
+      * I run ``makePythonTdd.ps1`` in the terminal_ to make the ``controller`` project
 
         .. code-block:: python
           :emphasize-lines: 1
@@ -122,7 +122,7 @@ start the project
 
   the test passes.
 
-* I open a new terminal_ then `change directory`_ to ``elevator``
+* I open a new terminal_ then `change directory`_ to ``controller``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -185,7 +185,7 @@ test_number_pushed
 
         def test_number_pushed(self):
             self.assertTrue(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                 )
             )
@@ -240,7 +240,7 @@ test_number_pushed
     AttributeError: module 'src.elevator'
                     has no attribute 'elevator'
 
-  because ``elevator.py`` in the ``src`` folder_ does not have anything named ``elevator`` in it.
+  because ``elevator.py`` in the ``src`` folder_ does not have anything named ``controller`` in it.
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -256,13 +256,13 @@ test_number_pushed
 
 * I open ``elevator.py`` from the ``src`` folder_
 
-* I delete all the text in the file_ then add a :ref:`function<what is a function?>` named ``elevator`` to ``elevator.py``
+* I delete all the text in the file_ then add a :ref:`function<what is a function?>` named ``controller`` to ``elevator.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1-2
 
-    def elevator():
+    def controller():
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -272,7 +272,7 @@ test_number_pushed
     TypeError: elevator() got
                an unexpected keyword argument 'number_pushed'
 
-  because the test :ref:`called<how to call a function with input>` the ``elevator`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``number_pushed``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+  because the test :ref:`called<how to call a function with input>` the ``controller`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``number_pushed``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_elevator.py``
 
@@ -293,7 +293,7 @@ test_number_pushed
     :linenos:
     :emphasize-lines: 1
 
-    def elevator(number_pushed):
+    def controller(number_pushed):
         return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -302,7 +302,7 @@ test_number_pushed
 
     AssertionError: None is not true
 
-  the ``elevator`` :ref:`function<what is a function?>` returned :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
+  the ``controller`` :ref:`function<what is a function?>` returned :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
 
 * I change the :ref:`return statement<the return statement>` to give the test what it wants
 
@@ -310,10 +310,10 @@ test_number_pushed
     :linenos:
     :emphasize-lines: 2
 
-    def elevator(number_pushed):
+    def controller(number_pushed):
         return True
 
-  the test passes. The ``elevator`` :ref:`function<what is a function?>` always returns :green:`True`, it does not care about the inputs. Is this :ref:`Tautology?<test_tautology>`
+  the test passes. The ``controller`` :ref:`function<what is a function?>` always returns :green:`True`, it does not care about the inputs. Is this :ref:`Tautology?<test_tautology>`
 
   .. code-block:: python
 
@@ -353,14 +353,14 @@ test_number_not_pushed
 
         def test_number_pushed(self):
             self.assertTrue(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                 )
             )
 
         def test_number_not_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=False,
                 )
             )
@@ -374,7 +374,7 @@ test_number_not_pushed
 
     AssertionError: True is not false
 
-  because the ``elevator`` :ref:`function<what is a function?>` always returns :green:`True` and this :ref:`assertion<what is an assertion?>` expects :red:`False`.
+  because the ``controller`` :ref:`function<what is a function?>` always returns :green:`True` and this :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
 ----
 
@@ -390,7 +390,7 @@ test_number_not_pushed
     :linenos:
     :emphasize-lines: 2
 
-    def elevator(number_pushed):
+    def controller(number_pushed):
         return number_pushed
 
   the test passes.
@@ -407,7 +407,7 @@ test_number_not_pushed
 
     git commit -am 'add test_number_not_pushed'
 
-I want the **Elevator** to :green:`MOVE` only when the button for a floor is :green:`pushed` AND the doors are :green:`closed`. I do not want anything or anyone falling out of the elevator while it is :green:`MOVING`. The inputs will then be
+I want the **Elevator** to :green:`MOVE` only when the button for a floor is :green:`pushed` AND the doors are :green:`closed`. I do not want anything or anyone falling out of the **Elevator** while it is :green:`MOVING`. The inputs to the **Elevator Controller** will then be
 
 * was the number for a floor pushed?
 * are the doors closed?
@@ -436,7 +436,7 @@ test_doors_closed_number_pushed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add ``doors_closed`` with a value to the :ref:`call<how to call a function with input>` to the ``elevator`` :ref:`function<what is a function?>` from :ref:`test_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed`
+* I add ``doors_closed`` with a value to the :ref:`call<how to call a function with input>` to the ``controller`` :ref:`function<what is a function?>` from :ref:`test_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed`
 
   =================  ==================  =============
   floor button       doors               output
@@ -450,7 +450,7 @@ test_doors_closed_number_pushed
 
         def test_number_pushed(self):
             self.assertTrue(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=True,
                 )
@@ -463,7 +463,7 @@ test_doors_closed_number_pushed
     TypeError: elevator() got
                an unexpected keyword argument 'doors_closed'
 
-  because the test :ref:`called<how to call a function with input>` the ``elevator`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``doors_closed``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+  because the test :ref:`called<how to call a function with input>` the ``controller`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``doors_closed``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 ----
 
@@ -479,7 +479,7 @@ test_doors_closed_number_pushed
     :linenos:
     :emphasize-lines: 1
 
-    def elevator(number_pushed, doors_closed):
+    def controller(number_pushed, doors_closed):
         return number_pushed
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -489,7 +489,7 @@ test_doors_closed_number_pushed
     TypeError: elevator() missing
                1 required positional argument: 'doors_closed'
 
-  because the :ref:`assertion<what is an assertion?>` in :ref:`test_number_not_pushed` :ref:`calls<how to call a function with input>` the ``elevator`` :ref:`function<what is a function?>` with one argument (``number_pushed``) and I just changed the :ref:`function<what is a function?>` to make it take two required arguments (``number_pushed`` and ``doors_closed``). I have to make ``doors_closed`` a :ref:`choice<test_optional_arguments>`.
+  because the :ref:`assertion<what is an assertion?>` in :ref:`test_number_not_pushed` :ref:`calls<how to call a function with input>` the ``controller`` :ref:`function<what is a function?>` with one argument (``number_pushed``) and I just changed the :ref:`function<what is a function?>` to make it take two required arguments (``number_pushed`` and ``doors_closed``). I have to make ``doors_closed`` a :ref:`choice<test_optional_arguments>`.
 
 * I add a :ref:`default value<test_optional_arguments>` for ``doors_closed`` to make it a :ref:`choice<test_optional_arguments>`
 
@@ -497,7 +497,7 @@ test_doors_closed_number_pushed
     :linenos:
     :emphasize-lines: 1
 
-    def elevator(number_pushed, doors_closed=False):
+    def controller(number_pushed, doors_closed=False):
         return number_pushed
 
   the test passes.
@@ -524,7 +524,7 @@ test_doors_closed_number_pushed
 
         def test_doors_closed_number_pushed(self):
             self.assertTrue(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=True,
                 )
@@ -565,7 +565,7 @@ test_doors_open_number_pushed
 
         def test_doors_closed_number_pushed(self):
             self.assertTrue(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=True,
                 )
@@ -573,7 +573,7 @@ test_doors_open_number_pushed
 
         def test_doors_open_number_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=False,
                 )
@@ -587,7 +587,7 @@ test_doors_open_number_pushed
 
     AssertionError: True is not false
 
-  because the ``elevator`` :ref:`function<what is a function?>` returns the value of the ``number_pushed`` parameter.
+  because the ``controller`` :ref:`function<what is a function?>` returns the value of the ``number_pushed`` parameter.
 
 ----
 
@@ -597,13 +597,13 @@ test_doors_open_number_pushed
 
 ----
 
-I add an :ref:`if statement<if statements>` to the ``elevator`` :ref:`function<what is a function?>` in ``elevator.py``
+I add an :ref:`if statement<if statements>` to the ``controller`` :ref:`function<what is a function?>` in ``elevator.py``
 
 .. code-block:: python
   :linenos:
   :emphasize-lines: 2-3
 
-  def elevator(number_pushed, doors_closed=False):
+  def controller(number_pushed, doors_closed=False):
       if not doors_closed:
           return False
       return number_pushed
@@ -629,7 +629,7 @@ the test passes.
     :linenos:
     :emphasize-lines: 2-3, 5-6
 
-    def elevator(number_pushed, doors_closed=False):
+    def controller(number_pushed, doors_closed=False):
         # if not doors_closed:
         if not number_pushed:
             return False
@@ -643,7 +643,7 @@ the test passes.
   .. code-block:: python
     :linenos:
 
-    def elevator(number_pushed, doors_closed=False):
+    def controller(number_pushed, doors_closed=False):
         if not number_pushed:
             return False
         return doors_closed
@@ -665,7 +665,7 @@ test_doors_closed_number_not_pushed
 *********************************************************************************
 
 * I go back to the terminal_ where the tests are running
-* I add ``doors_closed`` with a value to the :ref:`call<how to call a function with input>` to the ``elevator`` :ref:`function<what is a function?>` from :ref:`test_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed`
+* I add ``doors_closed`` with a value to the :ref:`call<how to call a function with input>` to the ``controller`` :ref:`function<what is a function?>` from :ref:`test_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed`
 
   =================  ==================  =============
   floor button       doors               output
@@ -679,7 +679,7 @@ test_doors_closed_number_not_pushed
 
         def test_number_not_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=False,
                     doors_closed=True,
                 )
@@ -704,7 +704,7 @@ test_doors_closed_number_not_pushed
 
         def test_doors_open_number_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=False,
                 )
@@ -712,7 +712,7 @@ test_doors_closed_number_not_pushed
 
         def test_doors_closed_number_not_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=False,
                     doors_closed=True,
                 )
@@ -756,7 +756,7 @@ test_doors_open_number_not_pushed
 
         def test_doors_closed_number_not_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=False,
                     doors_closed=True,
                 )
@@ -764,7 +764,7 @@ test_doors_open_number_not_pushed
 
         def test_doors_open_number_not_pushed(self):
             self.assertTrue(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=False,
                     doors_closed=False,
                 )
@@ -795,7 +795,7 @@ test_doors_open_number_not_pushed
 
         def test_doors_open_number_not_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=False,
                     doors_closed=False,
                 )
@@ -821,14 +821,14 @@ test_doors_open_number_not_pushed
     git commit -am \
     'add test_doors_open_number_not_pushed'
 
-When the ``elevator`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`, it checks if the button for a floor is :red:`NOT pushed`
+When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`, it checks if the button for a floor is :red:`NOT pushed`
 
 * If the button for a floor is :red:`NOT pushed` it returns :red:`False`
 
   .. code-block:: shell
 
     elevator(number_pushed=False, doors_closed=False) -> False
-    └── def elevator(number_pushed, doors_closed=False):
+    └── def controller(number_pushed, doors_closed=False):
         └── if not number_pushed:
             └── return False
             return doors_closed
@@ -836,7 +836,7 @@ When the ``elevator`` :ref:`function<what is a function?>` is :ref:`called<how t
   .. code-block:: shell
 
     elevator(number_pushed=False, doors_closed=True ) -> False
-    └── def elevator(number_pushed, doors_closed=False):
+    └── def controller(number_pushed, doors_closed=False):
         └── if not number_pushed:
             └── return False
             return doors_closed
@@ -845,25 +845,25 @@ When the ``elevator`` :ref:`function<what is a function?>` is :ref:`called<how t
 
   - if the button for a floor is :green:`pushed` AND the elevator doors are :red:`open`, it returns :red:`False`
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-    elevator(number_pushed=False, doors_closed=True ) -> False
-    └── def elevator(number_pushed, doors_closed=False):
-        ├── if not number_pushed:
-        │      return False
-        └── return doors_closed
-            return False
+      elevator(number_pushed=False, doors_closed=True ) -> False
+      └── def controller(number_pushed, doors_closed=False):
+          ├── if not number_pushed:
+          │      return False
+          └── return doors_closed
+              return False
 
   - if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed`, it returns :green:`True`
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-    elevator(number_pushed=True , doors_closed=True ) -> True
-    └── def elevator(number_pushed, doors_closed=False):
-        ├── if not number_pushed:
-        │      return False
-        └── return doors_closed
-            return True
+      elevator(number_pushed=True , doors_closed=True ) -> True
+      └── def controller(number_pushed, doors_closed=False):
+          ├── if not number_pushed:
+          │      return False
+          └── return doors_closed
+              return True
 
 So far, the :ref:`truth table` for the elevator is
 
@@ -876,7 +876,7 @@ floor button       doors               output
 :red:`NOT pushed`  :red:`open`         :red:`False`
 =================  ==================  =============
 
-I want to add a failsafe to the **Elevator** so it will :red:`NOT MOVE` if its total weight when occupied is :green:`above` a certain number, the inputs will then be
+I want to add a failsafe to the **Elevator Controller** so it will :red:`NOT MOVE` if the total weight of the **Elevator** when occupied is :green:`above` a certain number, the inputs to the Controller will then be
 
 * was the number for a floor pushed?
 * are the doors closed?
@@ -915,7 +915,7 @@ test_above_weight_doors_open_number_not_pushed
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add ``above_weight`` to the :ref:`call<how to call a function with input>` to ``src.elevator.elevator`` from :ref:`test_doors_open_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :red:`open` AND the elevator is :green:`above` the weight limit
+* I add ``above_weight`` to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from :ref:`test_doors_open_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :red:`open` AND the elevator is :green:`above` the weight limit
 
   =================  ===============  ============== =============
   floor button       doors            weight limit   output
@@ -929,7 +929,7 @@ test_above_weight_doors_open_number_not_pushed
 
         def test_doors_open_number_not_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=False,
                     doors_closed=False,
                     above_weight=True,
@@ -946,7 +946,7 @@ test_above_weight_doors_open_number_not_pushed
     TypeError: elevator() got
                an unexpected keyword argument 'above_weight'
 
-  because the test :ref:`called<how to call a function with input>` the ``elevator`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``above_weight``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+  because the test :ref:`called<how to call a function with input>` the ``controller`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``above_weight``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 ----
 
@@ -962,7 +962,7 @@ test_above_weight_doors_open_number_not_pushed
     :linenos:
     :emphasize-lines: 1-4
 
-    def elevator(
+    def controller(
         number_pushed, doors_closed=False,
         above_weight,
     ):
@@ -999,7 +999,7 @@ test_above_weight_doors_open_number_not_pushed
     :linenos:
     :emphasize-lines: 3
 
-    def elevator(
+    def controller(
         number_pushed, doors_closed=False,
         above_weight=False,
     ):
@@ -1029,7 +1029,7 @@ test_above_weight_doors_open_number_not_pushed
 
         def test_doors_closed_number_not_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=False,
                     doors_closed=True,
                 )
@@ -1037,7 +1037,7 @@ test_above_weight_doors_open_number_not_pushed
 
         def test_above_weight_doors_open_number_not_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=False,
                     doors_closed=False,
                     above_weight=True,
@@ -1079,7 +1079,7 @@ test_below_weight_doors_open_number_not_pushed
 
         def test_above_weight_doors_open_number_not_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=False,
                     doors_closed=False,
                     above_weight=True,
@@ -1088,7 +1088,7 @@ test_below_weight_doors_open_number_not_pushed
 
         def test_below_weight_doors_open_number_not_pushed(self):
             self.assertTrue(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=False,
                     doors_closed=False,
                     above_weight=False,
@@ -1104,7 +1104,7 @@ test_below_weight_doors_open_number_not_pushed
 
     AssertionError: False is not true
 
-  because the ``elevator`` :ref:`function<what is a function?>` returned :red:`False` and this :ref:`assertion<what is an assertion?>` expects :green:`True`.
+  because the ``controller`` :ref:`function<what is a function?>` returned :red:`False` and this :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
 ----
 
@@ -1122,7 +1122,7 @@ test_below_weight_doors_open_number_not_pushed
 
         def test_below_weight_doors_open_number_not_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=False,
                     doors_closed=False,
                     above_weight=False,
@@ -1166,7 +1166,7 @@ test_above_weight_doors_closed_number_not_pushed
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a value for the ``above_weight`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.elevator`` from :ref:`test_doors_closed_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed` AND the elevator is :green:`above` the weight limit
+* I add a value for the ``above_weight`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from :ref:`test_doors_closed_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed` AND the elevator is :green:`above` the weight limit
 
   =================  ===============  ============== =============
   floor button       doors            weight limit   output
@@ -1180,7 +1180,7 @@ test_above_weight_doors_closed_number_not_pushed
 
         def test_doors_closed_number_not_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=False,
                     doors_closed=True,
                     above_weight=True,
@@ -1214,7 +1214,7 @@ test_above_weight_doors_closed_number_not_pushed
 
         def test_doors_open_number_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=False,
                 )
@@ -1222,7 +1222,7 @@ test_above_weight_doors_closed_number_not_pushed
 
         def test_above_weight_doors_closed_number_not_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=False,
                     doors_closed=True,
                     above_weight=True,
@@ -1264,7 +1264,7 @@ test_below_weight_doors_closed_number_not_pushed
 
         def test_above_weight_doors_closed_number_not_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=False,
                     doors_closed=True,
                     above_weight=True,
@@ -1273,7 +1273,7 @@ test_below_weight_doors_closed_number_not_pushed
 
         def test_below_weight_doors_closed_number_not_pushed(self):
             self.assertTrue(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=False,
                     doors_closed=True,
                     above_weight=False,
@@ -1304,7 +1304,7 @@ test_below_weight_doors_closed_number_not_pushed
 
         def test_below_weight_doors_closed_number_not_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=False,
                     doors_closed=True,
                     above_weight=False,
@@ -1355,7 +1355,7 @@ test_above_weight_doors_open_number_pushed
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a value for the ``above_weight`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.elevator`` from :ref:`test_doors_open_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :red:`open` AND the elevator is :green:`above` the weight limit
+* I add a value for the ``above_weight`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from :ref:`test_doors_open_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :red:`open` AND the elevator is :green:`above` the weight limit
 
   =================  ===============  ============== =============
   floor button       doors            weight limit   output
@@ -1369,7 +1369,7 @@ test_above_weight_doors_open_number_pushed
 
         def test_doors_open_number_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=False,
                     above_weight=True,
@@ -1395,7 +1395,7 @@ test_above_weight_doors_open_number_pushed
 
         def test_doors_closed_number_pushed(self):
             self.assertTrue(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=True,
                 )
@@ -1403,7 +1403,7 @@ test_above_weight_doors_open_number_pushed
 
         def test_above_weight_doors_open_number_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=False,
                     above_weight=True,
@@ -1447,7 +1447,7 @@ test_below_weight_doors_open_number_pushed
 
         def test_above_weight_doors_open_number_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=False,
                     above_weight=True,
@@ -1456,7 +1456,7 @@ test_below_weight_doors_open_number_pushed
 
         def test_below_weight_doors_open_number_pushed(self):
             self.assertTrue(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=False,
                     above_weight=False,
@@ -1471,7 +1471,7 @@ test_below_weight_doors_open_number_pushed
 
     AssertionError: False is not true
 
-  because the ``elevator`` :ref:`function<what is a function?>` returns :red:`False` and this :ref:`assertion<what is an assertion?>` expects :green:`True`.
+  because the ``controller`` :ref:`function<what is a function?>` returns :red:`False` and this :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
 ----
 
@@ -1489,7 +1489,7 @@ test_below_weight_doors_open_number_pushed
 
         def test_below_weight_doors_open_number_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=False,
                     above_weight=False,
@@ -1532,7 +1532,7 @@ test_above_weight_doors_closed_number_pushed
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a value for the ``above_weight`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.elevator`` from :ref:`test_doors_closed_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed` AND the elevator is :green:`above` the weight limit
+* I add a value for the ``above_weight`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from :ref:`test_doors_closed_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed` AND the elevator is :green:`above` the weight limit
 
   =================  ===============  ============== =============
   floor button       doors            weight limit   output
@@ -1546,7 +1546,7 @@ test_above_weight_doors_closed_number_pushed
 
         def test_doors_closed_number_pushed(self):
             self.assertTrue(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=True,
                     above_weight=True,
@@ -1565,7 +1565,7 @@ test_above_weight_doors_closed_number_pushed
 
         def test_doors_closed_number_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=True,
                     above_weight=True,
@@ -1586,7 +1586,7 @@ test_above_weight_doors_closed_number_pushed
     :linenos:
     :emphasize-lines: 5-6
 
-    def elevator(
+    def controller(
         number_pushed, doors_closed=False,
         above_weight=False,
     ):
@@ -1631,7 +1631,7 @@ test_above_weight_doors_closed_number_pushed
 
         def test_above_weight_doors_closed_number_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=True,
                     above_weight=True,
@@ -1673,7 +1673,7 @@ test_below_weight_doors_closed_number_pushed
 
         def test_above_weight_doors_closed_number_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=True,
                     above_weight=True,
@@ -1682,7 +1682,7 @@ test_below_weight_doors_closed_number_pushed
 
         def test_below_weight_doors_closed_number_pushed(self):
             self.assertFalse(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=True,
                     above_weight=False,
@@ -1697,7 +1697,7 @@ test_below_weight_doors_closed_number_pushed
 
     AssertionError: True is not false
 
-  because the ``elevator`` :ref:`function<what is a function?>` returns :green:`True` and this :ref:`assertion<what is an assertion?>` expects :red:`False`.
+  because the ``controller`` :ref:`function<what is a function?>` returns :green:`True` and this :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
 ----
 
@@ -1715,7 +1715,7 @@ test_below_weight_doors_closed_number_pushed
 
         def test_below_weight_doors_closed_number_pushed(self):
             self.assertTrue(
-                src.elevator.elevator(
+                src.elevator.controller(
                     number_pushed=True,
                     doors_closed=True,
                     above_weight=False,
@@ -1753,7 +1753,7 @@ test_below_weight_doors_closed_number_pushed
     git commit -am \
     'add test_below_weight_doors_closed_number_pushed'
 
-When the ``elevator`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`, it checks if the button for a floor is :red:`NOT pushed`
+When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`, it checks if the button for a floor is :red:`NOT pushed`
 
 * If the button for a floor is :red:`NOT pushed` it returns :red:`False`
 
@@ -1763,6 +1763,15 @@ When the ``elevator`` :ref:`function<what is a function?>` is :ref:`called<how t
         number_pushed=False, doors_closed=True,
         above_weight=True
     ) -> False
+    └── def controller(
+            number_pushed, doors_closed=False,
+            above_weight=False,
+        ):
+        └── if not number_pushed:
+            └── return False
+            if above_weight:
+                return False
+            return doors_closed
 
   .. code-block:: shell
 
@@ -1770,6 +1779,15 @@ When the ``elevator`` :ref:`function<what is a function?>` is :ref:`called<how t
         number_pushed=False, doors_closed=True,
         above_weight=False
     ) -> False
+    └── def controller(
+            number_pushed, doors_closed=False,
+            above_weight=False,
+        ):
+        └── if not number_pushed:
+            └── return False
+            if above_weight:
+                return False
+            return doors_closed
 
   .. code-block:: shell
 
@@ -1777,6 +1795,15 @@ When the ``elevator`` :ref:`function<what is a function?>` is :ref:`called<how t
         number_pushed=False, doors_closed=False,
         above_weight=True
     ) -> False
+    └── def controller(
+            number_pushed, doors_closed=False,
+            above_weight=False,
+        ):
+        └── if not number_pushed:
+            └── return False
+            if above_weight:
+                return False
+            return doors_closed
 
   .. code-block:: shell
 
@@ -1784,658 +1811,131 @@ When the ``elevator`` :ref:`function<what is a function?>` is :ref:`called<how t
         number_pushed=False, doors_closed=False,
         above_weight=False
     ) -> False
-        def elevator(
+    └── def controller(
             number_pushed, doors_closed=False,
             above_weight=False,
         ):
-            if not number_pushed:
-                return False
+        └── if not number_pushed:
+            └── return False
             if above_weight:
                 return False
             return doors_closed
 
-* If the button for a floor is :green:`pushed` it returns the value of ``doors_closed``
+* If the button for a floor is :green:`pushed` it checks if the total weight of the **Elevator** is :green:`above` the weight limit
+
+  - if the total weight of the **Elevator** is :green:`above` the weight limit, it returns :red:`False`
+
+    .. code-block:: shell
+
+      elevator(
+          number_pushed=True, doors_closed=True,
+          above_weight=True
+      ) -> False
+      └── def controller(
+              number_pushed, doors_closed=False,
+              above_weight=False,
+          ):
+          ├── if not number_pushed:
+          │       return False
+          └── if above_weight:
+              └── return False
+              return doors_closed
+
+    .. code-block:: shell
+
+      elevator(
+          number_pushed=True, doors_closed=False,
+          above_weight=True
+      ) -> False
+      └── def controller(
+              number_pushed, doors_closed=False,
+              above_weight=False,
+          ):
+          ├── if not number_pushed:
+          │       return False
+          └── if above_weight:
+              └── return False
+              return doors_closed
+
+  - if the total weight of the **Elevator** is :red:`below` the weight limit, it returns the value of ``doors_closed``
+
+    - if the button for a floor is :green:`pushed` AND the total weight of the **Elevator** is :red:`below` the weight limit AND the elevator doors are :red:`open`, it returns :red:`False`
+
+      .. code-block:: shell
+
+        elevator(
+            number_pushed=True, doors_closed=False,
+            above_weight=False
+        ) -> False
+        └── def controller(
+                number_pushed, doors_closed=False,
+                above_weight=False,
+            ):
+            ├── if not number_pushed:
+            │       return False
+            ├── if above_weight:
+            │       return False
+            └── return doors_closed
+                return False
+
+    - if the button for a floor is :green:`pushed` AND the total weight of the **Elevator** is :red:`below` the weight limit AND the elevator doors are :green:`closed`, it returns :green:`True`
+
+      .. code-block:: shell
+
+        elevator(
+            number_pushed=True, doors_closed=True,
+            above_weight=False
+        ) -> True
+        └── def controller(
+                number_pushed, doors_closed=False,
+                above_weight=False,
+            ):
+            ├── if not number_pushed:
+            │       return False
+            ├── if above_weight:
+            │       return False
+            └── return doors_closed
+                return True
+
+The :ref:`truth table` for the **Elevator** is
+
+=================  ===============  ============== =============
+floor button       doors            weight limit   output
+=================  ===============  ============== =============
+:green:`pushed`    :green:`closed`  :green:`above` :red:`False`
+:green:`pushed`    :green:`closed`  :red:`below`   :green:`True`
+:green:`pushed`    :red:`open`      :green:`above` :red:`False`
+:green:`pushed`    :red:`open`      :red:`below`   :red:`False`
+=================  ===============  ============== =============
+
+=================  ===============  ============== =============
+floor button       doors            weight limit   output
+=================  ===============  ============== =============
+:red:`NOT pushed`  :green:`closed`  :green:`above` :red:`False`
+:red:`NOT pushed`  :green:`closed`  :red:`below`   :red:`False`
+:red:`NOT pushed`  :red:`open`      :green:`above` :red:`False`
+:red:`NOT pushed`  :red:`open`      :red:`below`   :red:`False`
+=================  ===============  ============== =============
+
+I want to make sure the **Elevator** can be stopped with a button in an emergency. The inputs to the Controller will then be
 
-  - if the button for a floor is :green:`pushed` AND the elevator doors are :red:`open`, it returns :red:`False`
-
-  .. code-block:: shell
-
-    elevator(number_pushed=False, doors_closed=True ) -> False
-    └── def elevator(number_pushed, doors_closed=False):
-        ├── if not number_pushed:
-        │      return False
-        └── return doors_closed
-            return False
-
-  - if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed`, it returns :green:`True`
-
-  .. code-block:: shell
-
-    elevator(number_pushed=True , doors_closed=True ) -> True
-    └── def elevator(number_pushed, doors_closed=False):
-        ├── if not number_pushed:
-        │      return False
-        └── return doors_closed
-            return True
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
-*********************************************************************************
-test_weight_w_doors_closed_number_not_pushed
-*********************************************************************************
-
-The :ref:`truth table` for when the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed`, is:
-
-==============  ==================  ==================  ===============
-doors           floor number        weight limit        output
-==============  ==================  ==================  ===============
-:green:`closed`  :red:`NOT pushed`   :green:`above`      :red:`False`
-:green:`closed`  :red:`NOT pushed`   :red:`NOT above`    :red:`False`
-==============  ==================  ==================  ===============
-
-* I add a value for the ``above_weight`` parameter to the :ref:`assertion<what is an assertion?>` for if the doors are :green:`closed`, the button for a floor is :red:`NOT pushed` and the elevator is :green:`above` the weight limit, in :ref:`test_doors_closed_number_not_pushed`
-
-  ==============  ==================  ==================  ===============
-  doors           floor number        weight limit        output
-  ==============  ==================  ==================  ===============
-  :green:`closed`  :red:`NOT pushed`   :green:`above`      :red:`False`
-  ==============  ==================  ==================  ===============
-
-  .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 4
-
-        def test_doors_closed_number_not_pushed(self):
-            reality = src.elevator.elevator(
-                doors_closed=True,
-                number_pushed=False,
-                above_weight=True,
-            )
-            self.assertEqual(reality, NOT_MOVE)
-
-        def test_doors_open_number_pushed(self):
-
-  the test is still green.
-
-* I add an :ref:`assertion<what is an assertion?>` for if the doors are :green:`closed`, the button for the floor is :red:`NOT pushed` and the elevator is :red:`NOT above` the weight limit
-
-  ==============  ==================  ==================  ===============
-  doors           floor number        weight limit        output
-  ==============  ==================  ==================  ===============
-  :green:`closed`  :red:`NOT pushed`   :red:`NOT above`    :red:`False`
-  ==============  ==================  ==================  ===============
-
-  .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 9-13
-
-        def test_doors_closed_number_not_pushed(self):
-            reality = src.elevator.elevator(
-                doors_closed=True,
-                number_pushed=False,
-                above_weight=True,
-            )
-            self.assertEqual(reality, NOT_MOVE)
-
-            reality = src.elevator.elevator(
-                doors_closed=True,
-                number_pushed=False,
-            )
-            self.assertEqual(reality, NOT_MOVE)
-
-        def test_doors_open_number_pushed(self):
-
-  still green. I do not need to add a value for the ``above_weight`` parameter because
-
-  .. code-block:: python
-
-    src.elevator.elevator(
-        doors_closed=True,
-        number_pushed=False,
-    )
-
-  is the same as
-
-  .. code-block:: python
-
-    src.elevator.elevator(
-        doors_closed=True,
-        number_pushed=False,
-        above_weight=False,
-    )
-
-  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
-
-* I change the name of the test from :ref:`test_doors_closed_number_not_pushed` to :ref:`test_weight_w_doors_closed_number_not_pushed`
-
-  .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 8
-
-            my_expectation = 'MOVE'
-            reality = src.elevator.elevator(
-                doors_closed=True,
-                number_pushed=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-        def test_weight_w_doors_closed_number_not_pushed(self):
-            reality = src.elevator.elevator(
-                doors_closed=True,
-                number_pushed=False,
-                above_weight=True,
-            )
-            self.assertEqual(reality, NOT_MOVE)
-
-----
-
-*********************************************************************************
-test_weight_w_doors_open_number_pushed
-*********************************************************************************
-
-The :ref:`truth table` for when the doors are :red:`open` and the button for a floor is :green:`pushed`, is:
-
-================  ==================  ==================  ===============
-doors             floor number        weight limit        output
-================  ==================  ==================  ===============
-:red:`open`  :green:`pushed`     :green:`above`      :red:`False`
-:red:`open`  :green:`pushed`     :red:`NOT above`    :red:`False`
-================  ==================  ==================  ===============
-
-* I add a value for the ``above_weight`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_doors_open_number_pushed` for the case where the doors are :red:`open`, the button for a floor is :green:`pushed` and the elevator is :green:`above` the weight limit
-
-  ================  ==================  ==================  ===============
-  doors             floor number        weight limit        output
-  ================  ==================  ==================  ===============
-  :red:`open`  :green:`pushed`     :green:`above`      :red:`False`
-  ================  ==================  ==================  ===============
-
-  .. code-block:: python
-    :lineno-start: 39
-    :emphasize-lines: 5
-
-        def test_doors_open_number_pushed(self):
-            reality = src.elevator.elevator(
-                doors_closed=False,
-                number_pushed=True,
-                above_weight=True,
-            )
-            self.assertEqual(reality, NOT_MOVE)
-
-        def test_doors_open_number_not_pushed(self):
-
-  the test is still green.
-
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_doors_open_number_pushed`, for when the doors are :red:`open`, the button for the floor is :green:`pushed` and the elevator is :red:`NOT above` the weight limit
-
-  ================  ==================  ==================  ===============
-  doors             floor number        weight limit        output
-  ================  ==================  ==================  ===============
-  :red:`open`  :green:`pushed`     :red:`NOT above`    :red:`False`
-  ================  ==================  ==================  ===============
-
-  .. code-block:: python
-    :lineno-start: 39
-    :emphasize-lines: 9-13
-
-        def test_doors_open_number_pushed(self):
-            reality = src.elevator.elevator(
-                doors_closed=False,
-                number_pushed=True,
-                above_weight=True,
-            )
-            self.assertEqual(reality, NOT_MOVE)
-
-            reality = src.elevator.elevator(
-                doors_closed=False,
-                number_pushed=True,
-            )
-            self.assertEqual(reality, NOT_MOVE)
-
-        def test_doors_open_number_not_pushed(self):
-
-  still green. I do not need to add a value for the ``above_weight`` parameter because
-
-  .. code-block:: python
-
-    src.elevator.elevator(
-        doors_closed=False,
-        number_pushed=True,
-    )
-
-  is the same as
-
-  .. code-block:: python
-
-    src.elevator.elevator(
-        doors_closed=False,
-        number_pushed=True,
-        above_weight=False,
-    )
-
-  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
-
-* I change the name of the test from :ref:`test_doors_open_number_pushed` to :ref:`test_weight_w_doors_open_number_pushed`
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 7
-
-            reality = src.elevator.elevator(
-                doors_closed=True,
-                number_pushed=False,
-            )
-            self.assertEqual(reality, NOT_MOVE)
-
-        def test_weight_w_doors_open_number_pushed(self):
-            reality = src.elevator.elevator(
-                doors_closed=False,
-                number_pushed=True,
-                above_weight=True,
-            )
-            self.assertEqual(reality, NOT_MOVE)
-
-----
-
-*********************************************************************************
-test_weight_w_doors_open_number_not_pushed
-*********************************************************************************
-
-The :ref:`truth table` for when the doors are :red:`open` and the button for a floor is :red:`NOT pushed`, is:
-
-================  ==================  ==================  ===============
-doors             floor number        weight limit        output
-================  ==================  ==================  ===============
-:red:`open`  :red:`NOT pushed`   :green:`above`      :red:`False`
-:red:`open`  :red:`NOT pushed`   :red:`NOT above`    :red:`False`
-================  ==================  ==================  ===============
-
-* I add a value for the ``above_weight`` parameter to the :ref:`assertion<what is an assertion?>` for if the doors are :red:`open`, the button for a floor is :red:`NOT pushed` and the elevator is :green:`above` the weight , in :ref:`test_doors_open_number_not_pushed`
-
-  ================  ==================  ==================  ===============
-  doors             floor number        weight limit        output
-  ================  ==================  ==================  ===============
-  :red:`open`  :red:`NOT pushed`   :green:`above`      :red:`False`
-  ================  ==================  ==================  ===============
-
-  .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 5
-
-        def test_doors_open_number_not_pushed(self):
-            reality = src.elevator.elevator(
-                doors_closed=False,
-                number_pushed=False,
-                above_weight=True,
-            )
-            self.assertEqual(reality, NOT_MOVE)
-
-
-    # Exceptions seen
-
-  green.
-
-* I add an :ref:`assertion<what is an assertion?>` for if the doors are :red:`open`, the button for the floor is :red:`NOT pushed` and the elevator is :red:`NOT above` the weight limit
-
-
-  ================  ==================  ==================  ===============
-  doors             floor number        weight limit        output
-  ================  ==================  ==================  ===============
-  :red:`open`  :red:`NOT pushed`   :red:`NOT above`    :red:`False`
-  ================  ==================  ==================  ===============
-
-  .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 9-13
-
-        def test_doors_open_number_not_pushed(self):
-            reality = src.elevator.elevator(
-                doors_closed=False,
-                number_pushed=False,
-                above_weight=True,
-            )
-            self.assertEqual(reality, NOT_MOVE)
-
-            reality = src.elevator.elevator(
-                doors_closed=False,
-                number_pushed=False,
-            )
-            self.assertEqual(reality, NOT_MOVE)
-
-
-    # Exceptions seen
-
-  still green. I do not need to add a value for the ``above_weight`` parameter because
-
-  .. code-block:: python
-
-    src.elevator.elevator(
-        doors_closed=False,
-        number_pushed=False,
-    )
-
-  is the same as
-
-  .. code-block:: python
-
-    src.elevator.elevator(
-        doors_closed=False,
-        number_pushed=False,
-        above_weight=False,
-    )
-
-  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
-
-* I change the name of the test from :ref:`test_doors_open_number_pushed` to :ref:`test_weight_w_doors_open_number_pushed`
-
-  .. code-block:: python
-    :lineno-start: 47
-    :emphasize-lines: 7
-
-            reality = src.elevator.elevator(
-                doors_closed=False,
-                number_pushed=True,
-            )
-            self.assertEqual(reality, NOT_MOVE)
-
-        def test_weight_w_doors_open_number_not_pushed(self):
-            reality = src.elevator.elevator(
-                doors_closed=False,
-                number_pushed=False,
-                above_weight=True,
-            )
-            self.assertEqual(reality, NOT_MOVE)
-
-* I call the ``elevator`` :ref:`function<what is a function?>` directly in :ref:`test_weight_w_doors_open_number_not_pushed`, I do not need the ``reality`` :ref:`variable<what is a variable?>` because it is only used once in each :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 7-15, 21-28
-
-        def test_weight_w_doors_open_number_not_pushed(self):
-            reality = src.elevator.elevator(
-                doors_closed=False,
-                number_pushed=False,
-                above_weight=True,
-            )
-            # self.assertEqual(reality, NOT_MOVE)
-            self.assertEqual(
-                src.elevator.elevator(
-                    doors_closed=False,
-                    number_pushed=False,
-                    above_weight=True,
-                ),
-                NOT_MOVE
-            )
-
-            reality = src.elevator.elevator(
-                doors_closed=False,
-                number_pushed=False,
-            )
-            # self.assertEqual(reality, NOT_MOVE)
-            self.assertEqual(
-                src.elevator.elevator(
-                    doors_closed=False,
-                    number_pushed=False,
-                ),
-                NOT_MOVE
-            )
-
-
-    # Exceptions seen
-
-  the test is still green.
-
-* I remove the commented lines and ``reality`` :ref:`variables<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 56
-
-        def test_weight_w_doors_open_number_not_pushed(self):
-            self.assertEqual(
-                src.elevator.elevator(
-                    doors_closed=False,
-                    above_weight=False,
-                    number_pushed=True,
-                ),
-                NOT_MOVE
-            )
-
-            self.assertEqual(
-                src.elevator.elevator(
-                    doors_closed=False,
-                    above_weight=False,
-                    number_pushed=False,
-                ),
-                NOT_MOVE
-            )
-
-
-    # Exceptions seen
-
-* I do the same thing in :ref:`test_weight_w_doors_open_number_pushed`
-
-  .. code-block:: python
-    :lineno-start: 39
-    :emphasize-lines: 7-15, 21-28
-
-        def test_weight_w_doors_open_number_pushed(self):
-            reality = src.elevator.elevator(
-                doors_closed=False,
-                number_pushed=True,
-                above_weight=True,
-            )
-            # self.assertEqual(reality, NOT_MOVE)
-            self.assertEqual(
-                src.elevator.elevator(
-                    doors_closed=False,
-                    number_pushed=True,
-                    above_weight=True,
-                ),
-                NOT_MOVE
-            )
-
-            reality = src.elevator.elevator(
-                doors_closed=False,
-                number_pushed=True,
-            )
-            # self.assertEqual(reality, NOT_MOVE)
-            self.assertEqual(
-                src.elevator.elevator(
-                    doors_closed=False,
-                    number_pushed=True,
-                ),
-                NOT_MOVE
-            )
-
-        def test_weight_w_doors_open_number_not_pushed(self):
-
-  still green.
-
-* I remove the commented lines and ``reality`` :ref:`variables<what is a variable?>` from :ref:`test_weight_w_doors_open_number_pushed`
-
-  .. code-block:: python
-    :lineno-start: 39
-
-        def test_weight_w_doors_open_number_pushed(self):
-            self.assertEqual(
-                src.elevator.elevator(
-                    doors_closed=False,
-                    number_pushed=True,
-                    above_weight=True,
-                ),
-                NOT_MOVE
-            )
-
-            self.assertEqual(
-                src.elevator.elevator(
-                    doors_closed=False,
-                    number_pushed=True,
-                ),
-                NOT_MOVE
-            )
-
-        def test_weight_w_doors_open_number_not_pushed(self):
-
-* on to :ref:`test_weight_w_doors_closed_number_not_pushed`
-
-  .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 7-15, 21-28
-
-        def test_weight_w_doors_closed_number_not_pushed(self):
-            reality = src.elevator.elevator(
-                doors_closed=True,
-                number_pushed=False,
-                above_weight=True,
-            )
-            # self.assertEqual(reality, NOT_MOVE)
-            self.assertEqual(
-                src.elevator.elevator(
-                    doors_closed=True,
-                    number_pushed=False,
-                    above_weight=True,
-                ),
-                NOT_MOVE
-            )
-
-            reality = src.elevator.elevator(
-                doors_closed=True,
-                number_pushed=False,
-            )
-            # self.assertEqual(reality, NOT_MOVE)
-            self.assertEqual(
-                src.elevator.elevator(
-                    doors_closed=True,
-                    number_pushed=False,
-                ),
-                NOT_MOVE
-            )
-
-        def test_weight_w_doors_open_number_pushed(self):
-
-  green.
-
-* I remove the commented lines and ``reality`` :ref:`variables<what is a variable?>` from :ref:`test_weight_w_doors_closed_number_not_pushed`
-
-  .. code-block:: python
-    :lineno-start: 25
-
-        def test_weight_w_doors_closed_number_not_pushed(self):
-            self.assertEqual(
-                src.elevator.elevator(
-                    doors_closed=True,
-                    number_pushed=False,
-                    above_weight=True,
-                ),
-                NOT_MOVE
-            )
-
-            self.assertEqual(
-                src.elevator.elevator(
-                    doors_closed=True,
-                    number_pushed=False,
-                ),
-                NOT_MOVE
-            )
-
-        def test_weight_w_doors_open_number_pushed(self):
-
-* I call the ``elevator`` :ref:`function<what is a function?>` directly then remove the commented lines and unused :ref:`variables<what is a variable?>` in :ref:`test_weight_w_doors_closed_number_pushed`
-
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 3-8, 12-16
-
-        def test_weight_w_doors_closed_number_pushed(self):
-            self.assertEqual(
-                src.elevator.elevator(
-                    doors_closed=True,
-                    number_pushed=True,
-                    above_weight=True,
-                ),
-                NOT_MOVE
-            )
-
-            self.assertEqual(
-                src.elevator.elevator(
-                    doors_closed=True,
-                    number_pushed=True,
-                ),
-                'MOVE'
-            )
-
-        def test_weight_w_doors_closed_number_not_pushed(self):
-
-  still green.
-
-----
-
-*********************************************************************************
-test_doors_closed_number_pushed_w_emergency
-*********************************************************************************
-
-The :ref:`truth table` for the elevator is
-
-==============  ==================  ==================  ===============
-doors           floor number        weight limit        output
-==============  ==================  ==================  ===============
-:green:`closed`  :green:`pushed`     :green:`above`      :red:`False`
-:green:`closed`  :green:`pushed`     :red:`NOT above`    :green:`True`
-:green:`closed`  :red:`NOT pushed`   :green:`above`      :red:`False`
-:green:`closed`  :red:`NOT pushed`   :red:`NOT above`    :red:`False`
-==============  ==================  ==================  ===============
-
-================  ==================  ==================  ===============
-doors             floor number        weight limit        output
-================  ==================  ==================  ===============
-:red:`open`  :green:`pushed`     :green:`above`      :red:`False`
-:red:`open`  :green:`pushed`     :red:`NOT above`    :red:`False`
-:red:`open`  :red:`NOT pushed`   :green:`above`      :red:`False`
-:red:`open`  :red:`NOT pushed`   :red:`NOT above`    :red:`False`
-================  ==================  ==================  ===============
-
-I want to make sure the elevator can be stopped with a button in an emergency. The inputs will then be
-
-* are the doors closed?
 * was the number for a floor pushed?
+* are the doors closed?
 * is the elevator above the weight limit?
 * was the emergency button pushed?
 
-and the :ref:`truth table` for when the doors are :green:`closed` and the number for a floor is :green:`pushed`, is
+*********************************************************************************
+test_emergency_w_above_weight_doors_closed_number_pushed
+*********************************************************************************
 
-==============  ================  ==================  ====================  ================
-doors           floor number      weight limit        emergency button      output
-==============  ================  ==================  ====================  ================
-:green:`closed`  :green:`pushed`   :green:`above`      :green:`pushed`       :red:`False`
-:green:`closed`  :green:`pushed`   :green:`above`      :red:`NOT pushed`     :red:`False`
-:green:`closed`  :green:`pushed`   :red:`NOT above`    :green:`pushed`       :red:`False`
-:green:`closed`  :green:`pushed`   :red:`NOT above`    :red:`NOT pushed`     :green:`True`
-==============  ================  ==================  ====================  ================
+The :ref:`truth table` for when the number for a floor is :green:`pushed` AND the elevators doors are :green:`closed` AND the elevator is :green:`above` the weight limit, is
+
+=================  ===============  ============== =================  =============
+floor button       doors            weight limit   emergency button   output
+=================  ===============  ============== =================  =============
+:green:`pushed`    :green:`closed`  :green:`above` :green:`pushed`    :red:`False`
+:green:`pushed`    :green:`closed`  :green:`above` :red:`NOT pushed`  :red:`False`
+=================  ===============  ============== =================  =============
 
 ----
 
@@ -2445,47 +1945,39 @@ doors           floor number      weight limit        emergency button      outp
 
 ----
 
-I add a value for ``emergency`` to the first :ref:`assertion<what is an assertion?>` in :ref:`test_weight_w_doors_closed_number_pushed` for the case where the doors are :green:`closed`, the button for a floor is :green:`pushed`, the elevator is :green:`above` the weight limit,  and the emergency button is :green:`pushed`
+* I go back to the terminal_ where the tests are running.
+* I add ``emergency`` to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` in the :ref:`assertion<what is an assertion?>` of :ref:`test_above_weight_doors_closed_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed` AND the elevator is :green:`above` the weight limit AND the emergency button is :green:`pushed`
 
-==============  ================  ==================  ====================  ================
-doors           floor number      weight limit        emergency button      output
-==============  ================  ==================  ====================  ================
-:green:`closed`  :green:`pushed`   :green:`above`      :green:`pushed`       :red:`False`
-==============  ================  ==================  ====================  ================
+  =================  ===============  ============== =================  =============
+  floor button       doors            weight limit   emergency button   output
+  =================  ===============  ============== =================  =============
+  :green:`pushed`    :green:`closed`  :green:`above` :green:`pushed`    :red:`False`
+  =================  ===============  ============== =================  =============
 
-.. code-block:: python
-  :lineno-start: 10
-  :emphasize-lines: 7
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 7
 
-      def test_weight_w_doors_closed_number_pushed(self):
-          self.assertEqual(
-              src.elevator.elevator(
-                  doors_closed=True,
-                  number_pushed=True,
-                  above_weight=True,
-                  emergency=True,
-              ),
-              NOT_MOVE
-          )
+        def test_above_weight_doors_closed_number_pushed(self):
+            self.assertFalse(
+                src.elevator.controller(
+                    number_pushed=True,
+                    doors_closed=True,
+                    above_weight=True,
+                    emergency=True,
+                )
+            )
 
-          self.assertEqual(
-              src.elevator.elevator(
-                  doors_closed=True,
-                  number_pushed=True,
-              ),
-              'MOVE'
-          )
+        def test_below_weight_doors_closed_number_pushed(self):
 
-      def test_weight_w_doors_closed_number_not_pushed(self):
+  the terminal shows :ref:`TypeError<what causes TypeError?>`
 
-the terminal shows :ref:`TypeError<what causes TypeError?>`
+  .. code-block:: python
 
-.. code-block:: python
+    TypeError: elevator() got
+               an unexpected keyword argument 'emergency'
 
-  TypeError: elevator() got
-             an unexpected keyword argument 'emergency'
-
-because the test :ref:`called<how to call a function with input>` the ``elevator`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``emergency``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+  because the test :ref:`called<how to call a function with input>` the ``controller`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``emergency``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 ----
 
@@ -2495,28 +1987,16 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
 
 ----
 
-* I add ``emergency`` to the ``elevator`` :ref:`function signature<what is a function?>` in ``elevator.py``
+* I add ``emergency`` to the ``controller`` :ref:`function signature<what is a function?>` in ``elevator.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 3
 
-    def elevator(
-            doors_closed, number_pushed,
-            above_weight=False, emergency,
-        ):
-        not_move = 'NOT MOVE'
-
-        if above_weight:
-            return not_move
-
-        if not doors_closed:
-            return not_move
-
-        if not number_pushed:
-            return not_move
-
-        return 'MOVE'
+    def controller(
+        number_pushed, doors_closed=False,
+        above_weight=False, elevator,
+    ):
 
   the terminal_ is my friend, and shows SyntaxError_
 
@@ -2532,12 +2012,19 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
     :linenos:
     :emphasize-lines: 3
 
-    def elevator(
-            doors_closed, number_pushed,
-            above_weight=False, emergency=False,
-        ):
+    def controller(
+        number_pushed, doors_closed=False,
+        above_weight=False, elevator=False,
+    ):
 
   the test passes.
+
+  .. code-block:: python
+
+    elevator(
+        number_pushed=True, doors_closed=True,
+        above_weight=True, emergency=True,
+    ) -> False
 
 ----
 
@@ -2547,13 +2034,13 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_weight_w_doors_closed_number_pushed` for when the doors are :green:`closed`, the button for a floor is :green:`pushed`, the elevator is :green:`above` the weight limit, and the emergency button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_above_weight_doors_closed_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed` AND the elevator is :green:`above` the weight limit AND the emergency button is :red:`NOT pushed`
 
-  ==============  ================  ==================  ====================  ================
-  doors           floor number      weight limit        emergency button      output
-  ==============  ================  ==================  ====================  ================
-  :green:`closed`  :green:`pushed`   :green:`above`      :red:`NOT pushed`     :red:`False`
-  ==============  ================  ==================  ====================  ================
+  =================  ===============  ============== =================  =============
+  floor button       doors            weight limit   emergency button   output
+  =================  ===============  ============== =================  =============
+  :green:`pushed`    :green:`closed`  :green:`above` :green:`pushed`    :red:`False`
+  =================  ===============  ============== =================  =============
 
   .. code-block:: python
     :lineno-start: 10
@@ -2561,7 +2048,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
 
         def test_weight_w_doors_closed_number_pushed(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=True,
                     above_weight=True,
@@ -2571,7 +2058,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=True,
                     above_weight=True,
@@ -2581,7 +2068,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=True,
                 ),
@@ -2606,7 +2093,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
 
         def test_weight_w_doors_closed_number_pushed(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=True,
                     above_weight=True,
@@ -2616,7 +2103,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=True,
                     above_weight=True,
@@ -2626,7 +2113,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=True,
                     above_weight=False,
@@ -2636,7 +2123,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=True,
                 ),
@@ -2651,15 +2138,15 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
 
     AssertionError: 'MOVE' != 'NOT MOVE'
 
-  because the ``elevator`` :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
+  because the ``controller`` :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
 
-* I add an :ref:`if statement<if statements>` to the ``elevator`` :ref:`function<what is a function?>` in ``elevator.py``
+* I add an :ref:`if statement<if statements>` to the ``controller`` :ref:`function<what is a function?>` in ``elevator.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 7-8
 
-    def elevator(
+    def controller(
             doors_closed, number_pushed,
             above_weight=False, emergency=False,
         ):
@@ -2725,7 +2212,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
   .. code-block:: python
     :linenos:
 
-    def elevator(
+    def controller(
             doors_closed, number_pushed,
             above_weight=False, emergency=False,
         ):
@@ -2745,7 +2232,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
 
         return 'MOVE'
 
-  this is what happens when the ``elevator`` :ref:`function<what is a function?>` is called
+  this is what happens when the ``controller`` :ref:`function<what is a function?>` is called
 
   - it returns :red:`False` if the emergency button is :green:`pushed`
   - it returns :red:`False` if the elevator is :green:`above` the weight limit
@@ -2767,7 +2254,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
 
         def test_weight_w_doors_closed_number_pushed(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=True,
                     above_weight=True,
@@ -2777,7 +2264,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=True,
                     above_weight=True,
@@ -2787,7 +2274,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=True,
                     above_weight=False,
@@ -2797,7 +2284,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=True,
                     above_weight=False,
@@ -2820,7 +2307,7 @@ because the test :ref:`called<how to call a function with input>` the ``elevator
 
         def test_doors_closed_number_pushed_w_emergency(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=True,
                     above_weight=True,
@@ -2860,7 +2347,7 @@ doors           floor number        weight limit        emergency button      ou
 
         def test_weight_w_doors_closed_number_not_pushed(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=False,
                     above_weight=True,
@@ -2885,7 +2372,7 @@ doors           floor number        weight limit        emergency button      ou
 
         def test_weight_w_doors_closed_number_not_pushed(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=False,
                     above_weight=True,
@@ -2895,7 +2382,7 @@ doors           floor number        weight limit        emergency button      ou
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=False,
                     above_weight=True,
@@ -2905,7 +2392,7 @@ doors           floor number        weight limit        emergency button      ou
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=False,
                 ),
@@ -2930,7 +2417,7 @@ doors           floor number        weight limit        emergency button      ou
 
         def test_weight_w_doors_closed_number_not_pushed(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     above_weight=False,
                     number_pushed=True,
@@ -2940,7 +2427,7 @@ doors           floor number        weight limit        emergency button      ou
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     above_weight=False,
                     number_pushed=True,
@@ -2950,7 +2437,7 @@ doors           floor number        weight limit        emergency button      ou
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     above_weight=False,
                     number_pushed=False,
@@ -2977,7 +2464,7 @@ doors           floor number        weight limit        emergency button      ou
 
         def test_weight_w_doors_closed_number_not_pushed(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=False,
                     above_weight=True,
@@ -2987,7 +2474,7 @@ doors           floor number        weight limit        emergency button      ou
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=False,
                     above_weight=True,
@@ -2997,7 +2484,7 @@ doors           floor number        weight limit        emergency button      ou
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=False,
                     above_weight=False,
@@ -3007,7 +2494,7 @@ doors           floor number        weight limit        emergency button      ou
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=False,
                     above_weight=False,
@@ -3027,7 +2514,7 @@ doors           floor number        weight limit        emergency button      ou
     :emphasize-lines: 11
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=True,
                     above_weight=False,
@@ -3038,7 +2525,7 @@ doors           floor number        weight limit        emergency button      ou
 
         def test_doors_closed_number_not_pushed_w_emergency(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=False,
                     above_weight=True,
@@ -3078,7 +2565,7 @@ doors             floor number      weight limit        emergency button      ou
 
         def test_weight_w_doors_open_number_pushed(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=True,
                     above_weight=True,
@@ -3103,7 +2590,7 @@ doors             floor number      weight limit        emergency button      ou
 
         def test_weight_w_doors_open_number_pushed(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=True,
                     above_weight=True,
@@ -3113,7 +2600,7 @@ doors             floor number      weight limit        emergency button      ou
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=True,
                     above_weight=True,
@@ -3123,7 +2610,7 @@ doors             floor number      weight limit        emergency button      ou
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=True,
                 ),
@@ -3148,7 +2635,7 @@ doors             floor number      weight limit        emergency button      ou
 
         def test_weight_w_doors_open_number_pushed(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=True,
                     above_weight=True,
@@ -3158,7 +2645,7 @@ doors             floor number      weight limit        emergency button      ou
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=True,
                     above_weight=True,
@@ -3168,7 +2655,7 @@ doors             floor number      weight limit        emergency button      ou
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=True,
                     above_weight=False,
@@ -3195,7 +2682,7 @@ doors             floor number      weight limit        emergency button      ou
 
         def test_weight_w_doors_open_number_pushed(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=True,
                     above_weight=True,
@@ -3205,7 +2692,7 @@ doors             floor number      weight limit        emergency button      ou
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=True,
                     above_weight=True,
@@ -3215,7 +2702,7 @@ doors             floor number      weight limit        emergency button      ou
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=True,
                     above_weight=False,
@@ -3225,7 +2712,7 @@ doors             floor number      weight limit        emergency button      ou
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=True,
                     above_weight=False,
@@ -3245,7 +2732,7 @@ doors             floor number      weight limit        emergency button      ou
     :emphasize-lines: 11
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=True,
                     number_pushed=False,
                     above_weight=False,
@@ -3256,7 +2743,7 @@ doors             floor number      weight limit        emergency button      ou
 
         def test_doors_open_number_pushed_w_emergency(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=True,
                     above_weight=True,
@@ -3296,7 +2783,7 @@ doors             floor number        weight limit        emergency button      
 
         def test_weight_w_doors_open_number_not_pushed(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=False,
                     above_weight=True,
@@ -3321,7 +2808,7 @@ doors             floor number        weight limit        emergency button      
 
         def test_weight_w_doors_open_number_not_pushed(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=False,
                     above_weight=True,
@@ -3331,7 +2818,7 @@ doors             floor number        weight limit        emergency button      
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=False,
                     above_weight=True,
@@ -3341,7 +2828,7 @@ doors             floor number        weight limit        emergency button      
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=False,
                 ),
@@ -3367,7 +2854,7 @@ doors             floor number        weight limit        emergency button      
 
         def test_weight_w_doors_open_number_not_pushed(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=False,
                     above_weight=True,
@@ -3377,7 +2864,7 @@ doors             floor number        weight limit        emergency button      
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=False,
                     above_weight=True,
@@ -3387,7 +2874,7 @@ doors             floor number        weight limit        emergency button      
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=False,
                     above_weight=False,
@@ -3415,7 +2902,7 @@ doors             floor number        weight limit        emergency button      
 
         def test_weight_w_doors_open_number_not_pushed(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=False,
                     above_weight=True,
@@ -3425,7 +2912,7 @@ doors             floor number        weight limit        emergency button      
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=False,
                     above_weight=True,
@@ -3435,7 +2922,7 @@ doors             floor number        weight limit        emergency button      
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     number_pushed=False,
                     above_weight=False,
@@ -3445,7 +2932,7 @@ doors             floor number        weight limit        emergency button      
             )
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     above_weight=False,
                     number_pushed=False,
@@ -3466,7 +2953,7 @@ doors             floor number        weight limit        emergency button      
     :emphasize-lines: 11
 
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     above_weight=True,
                     number_pushed=False,
@@ -3477,7 +2964,7 @@ doors             floor number        weight limit        emergency button      
 
         def test_doors_open_number_not_pushed_w_emergency(self):
             self.assertEqual(
-                src.elevator.elevator(
+                src.elevator.controller(
                     doors_closed=False,
                     above_weight=False,
                     number_pushed=True,
@@ -3486,12 +2973,12 @@ doors             floor number        weight limit        emergency button      
                 NOT_MOVE
             )
 
-* To review, the ``elevator`` :ref:`function<what is a function?>`
+* To review, the ``controller`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
 
-    def elevator(
+    def controller(
             doors_closed, number_pushed,
             above_weight=False, emergency=False,
         ):
@@ -3523,7 +3010,7 @@ doors             floor number        weight limit        emergency button      
     :linenos:
     :emphasize-lines: 5-11
 
-    def elevator(
+    def controller(
             doors_closed, number_pushed,
             above_weight=False, emergency=False,
         ):
@@ -3545,7 +3032,7 @@ doors             floor number        weight limit        emergency button      
     :linenos:
     :emphasize-lines: 5-19
 
-    def elevator(
+    def controller(
             doors_closed, number_pushed,
             above_weight=False, emergency=False,
         ):
@@ -3582,7 +3069,7 @@ doors             floor number        weight limit        emergency button      
     :linenos:
     :emphasize-lines: 11-28
 
-    def elevator(
+    def controller(
             doors_closed, number_pushed,
             above_weight=False, emergency=False,
         ):
@@ -3621,7 +3108,7 @@ doors             floor number        weight limit        emergency button      
   .. code-block:: python
     :linenos:
 
-    def elevator(
+    def controller(
             doors_closed, number_pushed,
             above_weight=False, emergency=False,
         ):
