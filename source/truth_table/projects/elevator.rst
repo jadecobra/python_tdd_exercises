@@ -1023,6 +1023,200 @@ test_above_weight_doors_open_number_not_pushed
 
 ----
 
+* I change the name of the test from :ref:`test_doors_open_number_not_pushed` to :ref:`test_above_weight_doors_open_number_not_pushed`, in ``test_elevator.py``
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 9
+
+        def test_doors_closed_number_not_pushed(self):
+            self.assertFalse(
+                src.elevator.elevator(
+                    number_pushed=False,
+                    doors_closed=True,
+                )
+            )
+
+        def test_above_weight_doors_open_number_not_pushed(self):
+            self.assertFalse(
+                src.elevator.elevator(
+                    number_pushed=False,
+                    doors_closed=False,
+                    above_weight=True,
+                )
+            )
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_above_weight_doors_open_number_not_pushed'
+
+----
+
+*********************************************************************************
+test_below_weight_doors_open_number_not_pushed
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :red:`open` and it is :red:`below` the weight limit
+
+  =================  ===============  ============== =============
+  floor button       doors            weight limit   output
+  =================  ===============  ============== =============
+  :red:`NOT pushed`  :green:`closed`  :red:`below`   :red:`False`
+  =================  ===============  ============== =============
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 9
+
+        def test_above_weight_doors_open_number_not_pushed(self):
+            self.assertFalse(
+                src.elevator.elevator(
+                    number_pushed=False,
+                    doors_closed=False,
+                    above_weight=True,
+                )
+            )
+
+        def test_below_weight_doors_open_number_not_pushed(self):
+            self.assertTrue(
+                src.elevator.elevator(
+                    number_pushed=False,
+                    doors_closed=False,
+                    above_weight=False,
+                )
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: elevator() got
+               an unexpected keyword argument 'above_weight'
+
+  because the test :ref:`called<how to call a function with input>` the ``elevator`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``above_weight``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add ``above_weight`` to the :ref:`function signature<what is a function?>` in ``elevator.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-4
+
+    def elevator(
+        number_pushed, doors_closed=False,
+        above_weight,
+    ):
+        if not number_pushed:
+            return False
+        return doors_closed
+
+  the terminal_ is my friend, and shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: parameter without a default follows
+                 parameter with a default
+
+  because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
+
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen, in ``test_elevator.py``
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 6
+    :emphasize-text: SyntaxError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # SyntaxError
+
+* I add a :ref:`default value<test_optional_arguments>` to make ``above_weight`` a choice, in ``elevator.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3
+
+    def elevator(
+        number_pushed, doors_closed=False,
+        above_weight=False,
+    ):
+
+  the test passes.
+
+  .. code-block:: python
+
+    elevator(
+        number_pushed=False, doors_closed=False,
+        above_weight=True
+    ) -> False
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I change the name of the test from :ref:`test_doors_open_number_not_pushed` to :ref:`test_below_weight_doors_open_number_not_pushed`, in ``test_elevator.py``
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 9
+
+        def test_doors_closed_number_not_pushed(self):
+            self.assertFalse(
+                src.elevator.elevator(
+                    number_pushed=False,
+                    doors_closed=True,
+                )
+            )
+
+        def test_below_weight_doors_open_number_not_pushed(self):
+            self.assertFalse(
+                src.elevator.elevator(
+                    number_pushed=False,
+                    doors_closed=False,
+                    above_weight=True,
+                )
+            )
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_below_weight_doors_open_number_not_pushed'
+
+
+
 * I use :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
