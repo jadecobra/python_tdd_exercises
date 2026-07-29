@@ -1624,27 +1624,19 @@ test_above_weight_doors_closed_number_pushed
 * I change the name of the test from :ref:`test_doors_closed_number_pushed` to :ref:`test_above_weight_doors_closed_number_pushed`, in ``test_elevator.py``
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 9
+    :lineno-start: 5
+    :emphasize-lines: 3
 
-        def test_doors_closed_number_pushed(self):
-            self.assertTrue(
-                src.elevator.elevator(
-                    number_pushed=True,
-                    doors_closed=True,
-                )
-            )
+    class TestElevator(unittest.TestCase):
 
         def test_above_weight_doors_closed_number_pushed(self):
             self.assertFalse(
                 src.elevator.elevator(
                     number_pushed=True,
-                    doors_closed=False,
+                    doors_closed=True,
                     above_weight=True,
                 )
             )
-
-        def test_above_weight_doors_closed_number_not_pushed(self):
 
 * I add a git_ commit message in the other terminal_
 
@@ -1676,36 +1668,36 @@ test_below_weight_doors_closed_number_pushed
   =================  ===============  ============== =============
 
   .. code-block:: python
-    :lineno-start: 15
+    :lineno-start: 7
     :emphasize-lines: 10-17
 
         def test_above_weight_doors_closed_number_pushed(self):
             self.assertFalse(
                 src.elevator.elevator(
                     number_pushed=True,
-                    doors_closed=False,
+                    doors_closed=True,
                     above_weight=True,
                 )
             )
 
         def test_below_weight_doors_closed_number_pushed(self):
-            self.assertTrue(
+            self.assertFalse(
                 src.elevator.elevator(
                     number_pushed=True,
-                    doors_closed=False,
+                    doors_closed=True,
                     above_weight=False,
                 )
             )
 
-        def test_above_weight_doors_closed_number_not_pushed(self):
+        def test_above_weight_doors_open_number_pushed(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: False is not true
+    AssertionError: True is not false
 
-  because the ``elevator`` :ref:`function<what is a function?>` returns :red:`False` and this :ref:`assertion<what is an assertion?>` expects :green:`True`.
+  because the ``elevator`` :ref:`function<what is a function?>` returns :green:`True` and this :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
 ----
 
@@ -1715,27 +1707,35 @@ test_below_weight_doors_closed_number_pushed
 
 ----
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_below_weight_doors_closed_number_pushed`
+* I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in :ref:`test_below_weight_doors_closed_number_pushed`
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 16
     :emphasize-lines: 2
 
         def test_below_weight_doors_closed_number_pushed(self):
-            self.assertFalse(
+            self.assertTrue(
                 src.elevator.elevator(
                     number_pushed=True,
-                    doors_closed=False,
+                    doors_closed=True,
                     above_weight=False,
                 )
             )
 
-        def test_above_weight_doors_closed_number_not_pushed(self):
+        def test_above_weight_doors_open_number_pushed(self):
 
   the test passes.
 
   .. code-block:: python
 
+    elevator(
+        number_pushed=True, doors_closed=True,
+        above_weight=True
+    ) -> False
+    elevator(
+        number_pushed=True, doors_closed=True,
+        above_weight=False
+    ) -> True
     elevator(
         number_pushed=True, doors_closed=False,
         above_weight=True
@@ -1753,7 +1753,70 @@ test_below_weight_doors_closed_number_pushed
     git commit -am \
     'add test_below_weight_doors_closed_number_pushed'
 
+When the ``elevator`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`, it checks if the button for a floor is :red:`NOT pushed`
 
+* If the button for a floor is :red:`NOT pushed` it returns :red:`False`
+
+  .. code-block:: shell
+
+    elevator(
+        number_pushed=False, doors_closed=True,
+        above_weight=True
+    ) -> False
+
+  .. code-block:: shell
+
+    elevator(
+        number_pushed=False, doors_closed=True,
+        above_weight=False
+    ) -> False
+
+  .. code-block:: shell
+
+    elevator(
+        number_pushed=False, doors_closed=False,
+        above_weight=True
+    ) -> False
+
+  .. code-block:: shell
+
+    elevator(
+        number_pushed=False, doors_closed=False,
+        above_weight=False
+    ) -> False
+        def elevator(
+            number_pushed, doors_closed=False,
+            above_weight=False,
+        ):
+            if not number_pushed:
+                return False
+            if above_weight:
+                return False
+            return doors_closed
+
+* If the button for a floor is :green:`pushed` it returns the value of ``doors_closed``
+
+  - if the button for a floor is :green:`pushed` AND the elevator doors are :red:`open`, it returns :red:`False`
+
+  .. code-block:: shell
+
+    elevator(number_pushed=False, doors_closed=True ) -> False
+    └── def elevator(number_pushed, doors_closed=False):
+        ├── if not number_pushed:
+        │      return False
+        └── return doors_closed
+            return False
+
+  - if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed`, it returns :green:`True`
+
+  .. code-block:: shell
+
+    elevator(number_pushed=True , doors_closed=True ) -> True
+    └── def elevator(number_pushed, doors_closed=False):
+        ├── if not number_pushed:
+        │      return False
+        └── return doors_closed
+            return True
 
 
 

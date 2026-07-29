@@ -284,7 +284,7 @@ the test passes.
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has two required arguments (``first_name`` and ``last_name``).
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* I add ``'doe'`` to the call to the :ref:`factory function<test person factory>` in :ref:`test_jane`
+* I add ``'doe'`` to the :ref:`call<how to call a function with input>` to the :ref:`factory function<test person factory>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 36
@@ -311,7 +311,7 @@ the test passes.
 
   the first and last names match. More progress.
 
-* I use :ref:`keyword arguments<test_keyword_arguments>` with a value for ``sex`` (since I have more than two) to change the call to the :ref:`factory function<test person factory>` in :ref:`test_jane`
+* I change the call to the :ref:`factory function<test person factory>` to use :ref:`keyword arguments<test_keyword_arguments>`, then add a value for ``sex`` (since I have more than two arguments) to  in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 36
@@ -506,7 +506,7 @@ the test passes.
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has four required arguments (``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* Since there are more than two, I add :ref:`keyword arguments<test_keyword_arguments>` to the call to the :ref:`factory function<test person factory>` in :ref:`test_joe`
+* Since there are more than two arguments, I add :ref:`keyword arguments<test_keyword_arguments>` to the :ref:`call<how to call a function with input>` to the :ref:`factory function<test person factory>` in :ref:`test_joe`
 
   .. code-block:: python
     :lineno-start: 35
