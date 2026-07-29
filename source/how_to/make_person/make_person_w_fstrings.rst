@@ -2803,7 +2803,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
 * I close ``test_person.py``
 
-* I delete all the text in ``person.py`` and the terminal_ shows 9 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
+* I delete all the text in ``person.py`` and the terminal_ shows 4 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
