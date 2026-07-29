@@ -908,8 +908,6 @@ floor button       doors            weight limit   output
 test_above_weight_doors_open_number_not_pushed
 *********************************************************************************
 
-----
-
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
@@ -917,7 +915,7 @@ test_above_weight_doors_open_number_not_pushed
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add ``above_weight`` with a value to the :ref:`call<how to call a function with input>` to ``src.elevator.elevator`` from :ref:`test_doors_open_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :red:`open` and it is :green:`above` the weight limit
+* I add ``above_weight`` to the :ref:`call<how to call a function with input>` to ``src.elevator.elevator`` from :ref:`test_doors_open_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :red:`open` AND the elevator is :green:`above` the weight limit
 
   =================  ===============  ============== =============
   floor button       doors            weight limit   output
@@ -1060,8 +1058,6 @@ test_above_weight_doors_open_number_not_pushed
 test_below_weight_doors_open_number_not_pushed
 *********************************************************************************
 
-----
-
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
@@ -1069,7 +1065,7 @@ test_below_weight_doors_open_number_not_pushed
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a test with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :red:`open` and it is :red:`below` the weight limit
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :red:`open` AND the elevator is :red:`below` the weight limit
 
   =================  ===============  ============== =============
   floor button       doors            weight limit   output
@@ -1079,7 +1075,7 @@ test_below_weight_doors_open_number_not_pushed
 
   .. code-block:: python
     :lineno-start: 31
-    :emphasize-lines: 10
+    :emphasize-lines: 10-17
 
         def test_above_weight_doors_open_number_not_pushed(self):
             self.assertFalse(
@@ -1108,7 +1104,7 @@ test_below_weight_doors_open_number_not_pushed
 
     AssertionError: False is not true
 
-  because the ``elevator`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``above_weight``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+  because the ``elevator`` :ref:`function<what is a function?>` returned :red:`False` and this :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
 ----
 
@@ -1117,7 +1113,6 @@ test_below_weight_doors_open_number_not_pushed
 =================================================================================
 
 ----
-
 
 * I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_below_weight_doors_open_number_not_pushed`
 
@@ -1158,7 +1153,194 @@ test_below_weight_doors_open_number_not_pushed
     git commit -am \
     'add test_below_weight_doors_open_number_not_pushed'
 
+----
 
+*********************************************************************************
+test_above_weight_doors_closed_number_not_pushed
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+* I add a value for the ``above_weight`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.elevator`` from :ref:`test_doors_closed_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed` AND the elevator is :green:`above` the weight limit
+
+  =================  ===============  ============== =============
+  floor button       doors            weight limit   output
+  =================  ===============  ============== =============
+  :red:`NOT pushed`  :green:`closed`  :green:`above` :red:`False`
+  =================  ===============  ============== =============
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 5
+
+        def test_doors_closed_number_not_pushed(self):
+            self.assertFalse(
+                src.elevator.elevator(
+                    number_pushed=False,
+                    doors_closed=True,
+                    above_weight=True,
+                )
+            )
+
+        def test_above_weight_doors_open_number_not_pushed(self):
+
+  the test is still green.
+
+  .. code-block:: python
+
+    elevator(
+        number_pushed=False, doors_closed=True,
+        above_weight=True
+    ) -> False
+    elevator(
+        number_pushed=False, doors_closed=False,
+        above_weight=True
+    ) -> False
+    elevator(
+        number_pushed=False, doors_closed=False,
+        above_weight=False
+    ) -> False
+
+* I change the name of the test from :ref:`test_doors_closed_number_not_pushed` to :ref:`test_above_weight_doors_closed_number_not_pushed`, in ``test_elevator.py``
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 9
+
+        def test_doors_open_number_pushed(self):
+            self.assertFalse(
+                src.elevator.elevator(
+                    number_pushed=True,
+                    doors_closed=False,
+                )
+            )
+
+        def test_above_weight_doors_closed_number_not_pushed(self):
+            self.assertFalse(
+                src.elevator.elevator(
+                    number_pushed=False,
+                    doors_closed=True,
+                    above_weight=True,
+                )
+            )
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_above_weight_doors_closed_number_not_pushed'
+
+----
+
+*********************************************************************************
+test_below_weight_doors_closed_number_not_pushed
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed` AND the elevator is :red:`below` the weight limit
+
+  =================  ===============  ============== =============
+  floor button       doors            weight limit   output
+  =================  ===============  ============== =============
+  :red:`NOT pushed`  :green:`closed`  :red:`below`   :red:`False`
+  =================  ===============  ============== =============
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 10-17
+
+        def test_above_weight_doors_closed_number_not_pushed(self):
+            self.assertFalse(
+                src.elevator.elevator(
+                    number_pushed=False,
+                    doors_closed=True,
+                    above_weight=True,
+                )
+            )
+
+        def test_below_weight_doors_closed_number_not_pushed(self):
+            self.assertTrue(
+                src.elevator.elevator(
+                    number_pushed=False,
+                    doors_closed=True,
+                    above_weight=False,
+                )
+            )
+
+        def test_above_weight_doors_open_number_not_pushed(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_below_weight_doors_closed_number_not_pushed`
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 2
+
+        def test_below_weight_doors_closed_number_not_pushed(self):
+            self.assertFalse(
+                src.elevator.elevator(
+                    number_pushed=False,
+                    doors_closed=True,
+                    above_weight=False,
+                )
+            )
+
+        def test_above_weight_doors_open_number_not_pushed(self):
+
+  the test passes.
+
+  .. code-block:: python
+
+    elevator(
+        number_pushed=False, doors_closed=True,
+        above_weight=True
+    ) -> False
+    elevator(
+        number_pushed=False, doors_closed=True,
+        above_weight=False
+    ) -> False
+    elevator(
+        number_pushed=False, doors_closed=False,
+        above_weight=True
+    ) -> False
+    elevator(
+        number_pushed=False, doors_closed=False,
+        above_weight=False
+    ) -> False
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_below_weight_doors_closed_number_not_pushed'
 
 
 
