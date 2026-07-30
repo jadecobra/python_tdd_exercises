@@ -94,9 +94,6 @@ I made a :ref:`function<what is a function?>` that makes a string_ to represent 
 I make a copy of a :ref:`class<everything is an object>` to represent ``joe`` in :ref:`test_joe` in ``test_person.py``
 
 .. code-block:: python
-  :lineno-start:
-
-.. code-block:: python
   :lineno-start: 4
   :emphasize-lines: 31-36
   :emphasize-text: Person
@@ -675,7 +672,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
     ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
 
-    .. code-block:: python
+    .. code-block:: shell
 
       reality = src.person.say_hello(
           first_name=joe.first_name,
@@ -1443,7 +1440,7 @@ what is the staticmethod decorator?
 
     ``self`` is the :ref:`instance of the class<how to test if something is an instance>` aka ``joe``.
 
-    .. code-block:: python
+    .. code-block:: shell
 
       reality = joe.say_hello()
       └── return (
@@ -1642,7 +1639,7 @@ what is the staticmethod decorator?
 
     ``self`` is the :ref:`instance of the class<how to test if something is an instance>` aka ``mary``.
 
-    .. code-block:: python
+    .. code-block:: shell
 
       reality = mary.say_hello()
       └── return (
@@ -2956,7 +2953,6 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
 
     git commit -am \
     'add test_dir_person_class'
-
 
 .. caution:: Your list of attributes and methods can be different because of your Python version.
 
