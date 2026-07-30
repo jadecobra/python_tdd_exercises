@@ -189,7 +189,7 @@ Where :green:`True` means the **Microwave** will :green:`HEAT UP`, and :red:`Fal
 ----
 
 *********************************************************************************
-test_start_pressed
+test_pressed_start
 *********************************************************************************
 
 =================================================================================
@@ -199,7 +199,7 @@ test_start_pressed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I change :ref:`test_failure` to :ref:`test_start_pressed` with an :ref:`assertion<what is an assertion?>` for if the start button is :green:`pressed`
+* I change :ref:`test_failure` to :ref:`test_pressed_start` with an :ref:`assertion<what is an assertion?>` for if the start button is :green:`pressed`
 
   ==================  =============
   start button        output
@@ -213,10 +213,10 @@ test_start_pressed
 
     class TestMicrowave(unittest.TestCase):
 
-        def test_start_pressed(self):
+        def test_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
-                    start_pressed=True,
+                    pressed_start=True,
                 )
             )
 
@@ -300,9 +300,9 @@ test_start_pressed
   .. code-block:: python
 
     TypeError: microwave() got
-               an unexpected keyword argument 'start_pressed'
+               an unexpected keyword argument 'pressed_start'
 
-  because the test :ref:`called<how to call a function with input>` the ``microwave`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``start_pressed``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+  because the test :ref:`called<how to call a function with input>` the ``microwave`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``pressed_start``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_microwave.py``
 
@@ -317,13 +317,13 @@ test_start_pressed
     # AttributeError
     # TypeError
 
-* I add ``start_pressed`` to the :ref:`function definition<what is a function?>`
+* I add ``pressed_start`` to the :ref:`function definition<what is a function?>`
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1
 
-    def microwave(start_pressed):
+    def microwave(pressed_start):
         return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -340,26 +340,26 @@ test_start_pressed
     :linenos:
     :emphasize-lines: 2
 
-    def microwave(start_pressed):
+    def microwave(pressed_start):
         return True
 
   the test passes. The ``microwave`` :ref:`function<what is a function?>` always returns :green:`True`.
 
   .. code-block:: python
 
-    microwave(start_pressed=True ) -> True
+    microwave(pressed_start=True ) -> True
 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_start_pressed'
+    git commit -am 'add test_pressed_start'
 
 ----
 
 *********************************************************************************
-test_start_not_pressed
+test_not_pressed_start
 *********************************************************************************
 
 =================================================================================
@@ -381,17 +381,17 @@ test_start_not_pressed
     :lineno-start: 7
     :emphasize-lines: 8-13
 
-        def test_start_pressed(self):
+        def test_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
-                    start_pressed=True,
+                    pressed_start=True,
                 )
             )
 
-        def test_start_not_pressed(self):
+        def test_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
-                    start_pressed=False,
+                    pressed_start=False,
                 )
             )
 
@@ -420,22 +420,22 @@ test_start_not_pressed
     :linenos:
     :emphasize-lines: 2
 
-    def microwave(start_pressed):
-        return start_pressed
+    def microwave(pressed_start):
+        return pressed_start
 
   the test passes.
 
   .. code-block:: python
 
-    microwave(start_pressed=True ) -> True
-    microwave(start_pressed=False) -> False
+    microwave(pressed_start=True ) -> True
+    microwave(pressed_start=False) -> False
 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_start_not_pressed'
+    git commit -am 'add test_not_pressed_start'
 
 ----
 
@@ -460,7 +460,7 @@ Where :green:`True` means the **Microwave** will :green:`HEAT UP`, and :red:`Fal
 ----
 
 *********************************************************************************
-test_closed_door_start_not_pressed
+test_open_door_not_pressed_start
 *********************************************************************************
 
 =================================================================================
@@ -470,30 +470,30 @@ test_closed_door_start_not_pressed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test with an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`closed` and the start button is :red:`NOT pressed`, in ``test_microwave.py``
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`open` and the start button is :red:`NOT pressed`, in ``test_microwave.py``
 
   =============== ==================  =============
   door            start button        output
   =============== ==================  =============
-  :red:`red`      :red:`NOT pressed`  :red:`False`
+  :red:`open`     :red:`NOT pressed`  :red:`False`
   =============== ==================  =============
 
   .. code-block:: python
     :lineno-start: 14
     :emphasize-lines: 8-14
 
-        def test_start_not_pressed(self):
+        def test_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
-                    start_pressed=False,
+                    pressed_start=False,
                 )
             )
 
-        def test_closed_door_start_not_pressed(self):
+        def test_open_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
-                    door_closed=False,
-                    start_pressed=False,
+                    closed_door=False,
+                    pressed_start=False,
                 )
             )
 
@@ -504,9 +504,10 @@ test_closed_door_start_not_pressed
 
   .. code-block:: python
 
-    TypeError: microwave() got an unexpected keyword argument 'door_closed
+    TypeError: microwave() got
+               an unexpected keyword argument 'closed_door
 
-  because I do not have a definition for ``src`` in this file_
+  because the test :ref:`called<how to call a function with input>` the ``microwave`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``closed_door``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 ----
 
@@ -515,6 +516,167 @@ test_closed_door_start_not_pressed
 =================================================================================
 
 ----
+
+* I add ``closed_door`` to the :ref:`function signature<how to make a function that takes input>` in ``microwave.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    def microwave(closed_door, pressed_start):
+        return pressed_start
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    FAILED ...test_not_pressed_start - TypeError:
+        microwave() missing
+            1 required positional argument: 'closed_door'
+    FAILED ...test_pressed_start - TypeError:
+        microwave() missing
+            1 required positional argument: 'closed_door'
+
+* I add a :ref:`default value<test_optional_arguments>` for ``closed_door``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    def microwave(closed_door=False, pressed_start):
+        return pressed_start
+
+  the terminal_ is my friend, and shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: parameter without a default follows
+                 parameter with a default
+
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen, in ``test_microwave.py``
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 6
+    :emphasize-text: SyntaxError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # SyntaxError
+
+* I add a :ref:`default value<test_optional_arguments>` for ``pressed_start``, in ``microwave.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    def microwave(closed_door=False, pressed_start=False):
+        return pressed_start
+
+  the test passes.
+
+  .. code-block:: python
+
+    microwave(pressed_start=False, closed_door=False) -> False
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+
+    git commit -am 'add test_open_door_not_pressed_start'
+
+----
+
+*********************************************************************************
+test_open_door_pressed_start
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`open` and the start button is :green:`pressed`, in ``test_microwave.py``
+
+  =============== ==================  =============
+  door            start button        output
+  =============== ==================  =============
+  :red:`open`     :green:`pressed`    :red:`False`
+  =============== ==================  =============
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 8-14
+
+        def test_not_pressed_start(self):
+            self.assertFalse(
+                src.microwave.microwave(
+                    pressed_start=False,
+                )
+            )
+
+        def test_open_door_pressed_start(self):
+            self.assertTrue(
+                src.microwave.microwave(
+                    closed_door=True,
+                    pressed_start=False,
+                )
+            )
+
+        def test_open_door_not_pressed_start(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  because the ``microwave`` :ref:`function<what is a function?>` returns the value of ``pressed_start`` and this :ref:`assertion<what is an assertion?>` expects :green:`True`.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_open_door_pressed_start`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
+
+        def test_open_door_pressed_start(self):
+            self.assertFalse(
+                src.microwave.microwave(
+                    closed_door=True,
+                    pressed_start=False,
+                )
+            )
+
+        def test_open_door_not_pressed_start(self):
+
+  the test passes.
+
+  .. code-block:: python
+
+    microwave(pressed_start=False, closed_door=True ) -> False
+    microwave(pressed_start=False, closed_door=False) -> False
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+
+    git commit -am 'add test_open_door_pressed_start'
+
+
+
 
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
