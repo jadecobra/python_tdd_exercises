@@ -480,7 +480,7 @@ test_closed_door_start_not_pressed
 
   .. code-block:: python
     :lineno-start: 14
-    :emphasize-lines: 8-13
+    :emphasize-lines: 8-14
 
         def test_start_not_pressed(self):
             self.assertFalse(
@@ -500,11 +500,11 @@ test_closed_door_start_not_pressed
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    NameError: name 'src' is not defined
+    TypeError: microwave() got an unexpected keyword argument 'door_closed
 
   because I do not have a definition for ``src`` in this file_
 

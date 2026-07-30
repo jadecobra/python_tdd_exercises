@@ -227,7 +227,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
         Person.__init__() got
         an unexpected keyword argument 'first_name'
 
-  - Here is what is happens when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
+  - Here is what is happens when the ``joe`` :ref:`instance<how to test if something is an instance>` of the ``Person`` :ref:`class<everything is an object>` runs
 
     .. code-block:: shell
 
@@ -679,7 +679,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
           last_name=joe.last_name,
           year_of_birth=joe.year_of_birth,
       )
-      └── reality = src.person.say_hello(
+      └── src.person.say_hello(
               first_name='joe',
               last_name='blow',
               year_of_birth=1996,
@@ -1111,7 +1111,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
           last_name=joe.last_name,
           year_of_birth=joe.year_of_birth,
       )
-      └── reality = src.person.say_hello(
+      └── src.person.say_hello(
               person=joe,
               first_name='joe',
               last_name='blow',
