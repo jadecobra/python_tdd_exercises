@@ -83,20 +83,6 @@ start the project
       :sync: unix
 
       * I open ``makePythonTdd.sh``
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      * I open ``makePythonTdd.ps1``
-
-* I name this project ``car``
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
       * I change the name of the project to ``car`` in ``makePythonTdd.sh``
 
         .. literalinclude:: ../../code/car/make_tdd/makePythonTddCar.sh
@@ -114,6 +100,7 @@ start the project
     .. tab-item:: no WSL
       :sync: no_wsl
 
+      * I open ``makePythonTdd.ps1``
       * I change the name of the project to ``car`` in ``makePythonTdd.ps1``
 
         .. literalinclude:: ../../code/car/make_tdd/makePythonTddCar.ps1

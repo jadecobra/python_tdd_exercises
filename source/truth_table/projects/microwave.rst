@@ -10,7 +10,460 @@
 Microwave
 #################################################################################
 
-I want to make a **Microwave** that heats up food, if the inputs are
+I want to make a **Microwave** that heats up food when I push a button.
+
+*********************************************************************************
+preview
+*********************************************************************************
+
+These are the tests I have at the end of the chapter
+
+.. literalinclude:: ../../code/microwave/test_microwave.py
+  :language: python
+  :linenos:
+  :caption: microwave/tests/test_microwave.py
+  :lines: 1-23
+
+.. literalinclude:: ../../code/microwave/test_microwave.py
+  :language: python
+  :lineno-start: 25
+  :caption: microwave/tests/test_microwave.py
+  :lines: 25-41
+
+.. literalinclude:: ../../code/microwave/test_microwave.py
+  :language: python
+  :lineno-start: 43
+  :caption: microwave/tests/test_microwave.py
+  :lines: 43-59
+
+.. literalinclude:: ../../code/microwave/test_microwave.py
+  :language: python
+  :lineno-start: 61
+  :caption: microwave/tests/test_microwave.py
+  :lines: 61-77
+
+.. literalinclude:: ../../code/microwave/test_microwave.py
+  :language: python
+  :lineno-start: 79
+  :caption: microwave/tests/test_microwave.py
+  :lines: 79-95
+
+.. literalinclude:: ../../code/microwave/test_microwave.py
+  :language: python
+  :lineno-start: 97
+  :caption: microwave/tests/test_microwave.py
+  :lines: 97-113
+
+.. literalinclude:: ../../code/microwave/test_microwave.py
+  :language: python
+  :lineno-start: 115
+  :caption: microwave/tests/test_microwave.py
+  :lines: 115-131
+
+.. literalinclude:: ../../code/microwave/test_microwave.py
+  :language: python
+  :lineno-start: 133
+  :caption: microwave/tests/test_microwave.py
+  :lines: 133-
+
+----
+
+*********************************************************************************
+start the project
+*********************************************************************************
+
+* I open a terminal_
+
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      * I open ``makePythonTdd.sh``
+
+      * I change the name of the project to ``microwave`` in ``makePythonTdd.sh``
+
+        .. literalinclude:: ../../code/microwave/make_tdd/makePythonTddMicrowave.sh
+          :language: python
+          :linenos:
+          :emphasize-lines: 2-3, 5, 12, 20
+
+      * I run ``makePythonTdd.sh`` in the terminal_ to make the ``microwave`` project
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          ./makePythonTdd.sh
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      * I open ``makePythonTdd.ps1``
+
+      * I change the name of the project to ``microwave`` in ``makePythonTdd.ps1``
+
+        .. literalinclude:: ../../code/microwave/make_tdd/makePythonTddMicrowave.ps1
+          :language: Powershell
+          :linenos:
+          :emphasize-lines: 1-2, 4, 11, 19
+
+      * I run ``makePythonTdd.ps1`` in the terminal_ to make the ``microwave`` project
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          .\makePythonTdd.ps1
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :emphasize-lines: 10
+
+    ======================== FAILURES =========================
+    _____________ TestMicrowave.test_failure __________________
+
+    self = <tests.test_microwave.TestMicrowave testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
+    E       AssertionError: True is not false
+
+    tests/test_microwave.py:7: AssertionError
+    ================ short test summary info ==================
+    FAILED tests/test_microwave.py::TestMicrowave::test_failure - AssertionError: True is not false
+    ==================== 1 failed in X.YZs ====================
+
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_microwave.py:7`` to open it
+* I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in ``test_microwave.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 4-5
+
+    class TestMicrowave(unittest.TestCase):
+
+        def test_failure(self):
+            # self.assertFalse(True)
+            self.assertTrue(True)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I open a new terminal_ then `change directory`_ to ``microwave``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd microwave
+
+* I add the new files_ and folder_ to git_ for tracking
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git add .
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'setup project'
+
+----
+
+I want the **Microwave** to :green:`HEAT UP` only when the start button is :green:`pushed`. I get this :ref:`truth table`
+
+==================  =============
+start button        output
+==================  =============
+:green:`pushed`     :green:`True`
+:red:`NOT pushed`   :red:`False`
+==================  =============
+
+Where :green:`True` means the **Microwave** will :green:`HEAT UP`, and :red:`False` means it stays :red:`OFF`.
+
+----
+
+*********************************************************************************
+test_start_pushed
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I change :ref:`test_failure` to :ref:`test_start_pushed` with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :green:`pushed`
+
+  ==================  =============
+  floor button        output
+  ==================  =============
+  :green:`pushed`     :green:`True`
+  ==================  =============
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 3-8
+
+    class TestMicrowave(unittest.TestCase):
+
+        def test_start_pushed(self):
+            self.assertTrue(
+                src.microwave.microwave(
+                    start_pushed=True,
+                )
+            )
+
+
+    # Exceptions seen
+    # AssertionError
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'src' is not defined
+
+  because I do not have a definition for ``src`` in this file_.
+
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 3
+    :emphasize-text: NameError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add an `import statement`_ at the top of the file_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import src.microwave
+    import unittest
+
+
+    class TestMicrowave(unittest.TestCase):
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.microwave'
+                    has no attribute 'microwave'
+
+  because ``microwave.py`` in the ``src`` folder_ does not have anything named ``microwave`` in it.
+
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 4
+    :emphasize-text: AttributeError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+
+* I open ``microwave.py`` from the ``src`` folder_
+
+* I delete all the text in the file_ then add a :ref:`function<what is a function?>` named ``microwave`` to ``microwave.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2
+
+    def microwave():
+        return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: microwave() got
+               an unexpected keyword argument 'start_pushed'
+
+  because the test :ref:`called<how to call a function with input>` the ``microwave`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``start_pushed``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_microwave.py``
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 5
+    :emphasize-text: TypeError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+
+* I add ``start_pushed`` to the :ref:`function signature<what is a function?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    def microwave(start_pushed):
+        return None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None is not true
+
+  the ``microwave`` :ref:`function<what is a function?>` returned :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
+
+* I change the :ref:`return statement<the return statement>` to give the test what it wants
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
+
+    def microwave(start_pushed):
+        return True
+
+  the test passes. The ``microwave`` :ref:`function<what is a function?>` always returns :green:`True`, it does not care about the inputs. Is this :ref:`Tautology?<test_tautology>`
+
+  .. code-block:: python
+
+    microwave(start_pushed=True ) -> True
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_start_pushed'
+
+----
+
+*********************************************************************************
+test_number_not_pushed
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :red:`NOT pushed`
+
+  ==================  =============
+  floor button        output
+  ==================  =============
+  :red:`NOT pushed`   :red:`False`
+  ==================  =============
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 8-13
+
+        def test_start_pushed(self):
+            self.assertTrue(
+                src.microwave.microwave(
+                    start_pushed=True,
+                )
+            )
+
+        def test_number_not_pushed(self):
+            self.assertFalse(
+                src.microwave.microwave(
+                    start_pushed=False,
+                )
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  because the ``microwave`` :ref:`function<what is a function?>` always returns :green:`True` and this :ref:`assertion<what is an assertion?>` expects :red:`False`.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I make the :ref:`function<what is a function?>` return its input
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
+
+    def microwave(start_pushed):
+        return start_pushed
+
+  the test passes.
+
+  .. code-block:: python
+
+    microwave(start_pushed=True ) -> True
+    microwave(start_pushed=False) -> False
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_number_not_pushed'
+
+I want the **Microwave** to :green:`MOVE` only when the button for a floor is :green:`pushed` AND the doors are :green:`closed`. I do not want anything or anyone falling out of the **Microwave** while it is :green:`MOVING`. The inputs to the **Microwave Controller** will then be
+
+* was the number for a floor pushed?
+* are the doors closed?
+
+Which gives me this :ref:`truth table`
+
+=================  ==================  =============
+floor button       doors               output
+=================  ==================  =============
+:green:`pushed`    :green:`closed`     :green:`True`
+:green:`pushed`    :red:`open`         :red:`False`
+:red:`NOT pushed`  :green:`closed`     :red:`False`
+:red:`NOT pushed`  :red:`open`         :red:`False`
+=================  ==================  =============
+
+----
+
+
+
+
+
+
+
+
+
+if the inputs are
 
 * is the door open?
 * was the start button pushed?
@@ -26,264 +479,6 @@ door                start button       output
 :red:`closed`       :red:`NOT pushed`  :red:`OFF`
 ==================  =================  =================
 
-*********************************************************************************
-preview
-*********************************************************************************
-
-These are the tests I have at the end of the chapter
-
-.. literalinclude:: ../../code/truth_table/tests/test_microwave.py
-  :language: python
-  :linenos:
-
-----
-
-*********************************************************************************
-requirements
-*********************************************************************************
-
-* :ref:`truth table: Binary Operations Examples`
-
-----
-
-*********************************************************************************
-start the project
-*********************************************************************************
-
-* I name this project ``microwave``
-* I open a terminal_
-* I use uv_ to make a directory_ for the project and initialize it
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv init microwave
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    Initialized project `microwave` at `.../pumping_python/microwave`
-
-  then goes back to the command line.
-
-* I use mkdir_ to make a folder_ named ``src``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    mkdir src
-
-  the terminal_ goes back to the command line.
-
-* I use the `mv program`_ to change the name of ``main.py`` to ``microwave.py`` and move it to the ``src`` folder_
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        mv main.py src/microwave.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        Move-Item main.py src/microwave.py
-
-  the terminal_ goes back to the command line.
-
-* I `make a directory`_ for the tests
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    mkdir tests
-
-  the terminal_ goes back to the command line.
-
-* I make the ``tests`` directory_ a `Python package`_
-
-  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        touch tests/__init__.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        New-Item tests/__init__.py
-
-  the terminal_ goes back to the command line.
-
-* I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        touch tests/test_microwave.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        New-Item tests/test_microwave.py
-
-  the terminal_ goes back to the command line.
-
-* I open ``test_microwave.py``
-
-* I add :ref:`the first failing test<test_failure>` to ``test_microwave.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1, 4, 6-7
-
-    import unittest
-
-
-    class TestMicrowave(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-* I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest" > requirements.txt
-
-  the terminal_ goes back to the command line.
-
-* I add `pytest-watcher`_ to the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest-watcher" >> requirements.txt
-
-  the terminal_ goes back to the command line.
-
-* I use uv_ to install `pytest-watcher`_ with the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv add --requirement requirements.txt
-
-  the terminal_ shows that it installed `pytest-watcher`_ and its dependencies.
-
-* I use tree_ to look at the structure of the project
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    tree
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .
-    ├── README.md
-    ├── pyproject.toml
-    ├── requirements.txt
-    ├── src
-    │   └── microwave.py
-    ├── tests
-    │   ├── __init__.py
-    │   └── test_microwave.py
-    └── uv.lock
-
-  if you do not see ``uv.lock`` in your tree, make sure you ran ``uv add --requirement requirements.txt``, then run the tests next
-
-* I use `pytest-watcher`_ to run the tests automatically
-
-  .. code-block:: python
-    :emphasize-lines: 1
-    :emphasize-text: .
-
-    uv run pytest-watcher . --now
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-    :emphasize-lines: 8, 10
-
-    ======================== FAILURES ========================
-    ______________________ TestMicrowave.test_failure ________________________
-
-    self = <tests.test_microwave.TestMicrowave testMethod=test_failure>
-
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
-
-    tests/test_microwave.py:7: AssertionError
-    ================ short test summary info =================
-    FAILED tests/test_microwave.py::TestMicrowave::test_failure - AssertionError: True is not false
-    =================== 1 failed in X.YZs ====================
-
-  because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`.
-
-  .. admonition:: if the terminal_ does not show the same error, then check if
-
-    * your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-    * you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
-
-    and try ``uv run pytest-watcher . --now`` again
-
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_microwave.py``
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 7-8
-    :emphasize-text: AssertionError
-
-    class TestMicrowave(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-
-    # Exceptions seen
-    # AssertionError
-
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
-
-            self.assertFalse(False)
-
-  the test passes.
 
 ----
 

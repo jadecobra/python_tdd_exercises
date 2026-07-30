@@ -1,14 +1,14 @@
-uv init atm
-cd atm
+uv init microwave
+cd microwave
 mkdir src
-Move-Item "main.py" "src/atm.py"
+Move-Item "main.py" "src/microwave.py"
 mkdir tests
 New-Item tests/__init__.py
 
 "import unittest
 
 
-class TestATM(unittest.TestCase):
+class TestMicrowave(unittest.TestCase):
 
     def test_failure(self):
         self.assertFalse(True)
@@ -16,7 +16,7 @@ class TestATM(unittest.TestCase):
 
 # Exceptions seen
 # AssertionError
-" | Out-File "tests/test_atm.py" -Encoding UTF8
+" | Out-File "tests/test_microwave.py" -Encoding UTF8
 
 "pytest" | Out-File requirements.txt -Encoding UTF8
 "pytest-watcher" >> requirements.txt

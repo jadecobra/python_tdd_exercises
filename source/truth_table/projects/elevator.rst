@@ -89,8 +89,6 @@ start the project
 
       * I open ``makePythonTdd.ps1``
 
-* I name this project ``elevator``
-
   .. tab-set::
     :sync-group: os
 

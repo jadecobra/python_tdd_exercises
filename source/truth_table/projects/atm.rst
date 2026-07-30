@@ -84,20 +84,6 @@ start the project
       :sync: unix
 
       * I open ``makePythonTdd.sh``
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      * I open ``makePythonTdd.ps1``
-
-* I name this project ``atm``
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
       * I change the name of the project to ``atm`` in ``makePythonTdd.sh``
 
         .. literalinclude:: ../../code/atm/make_tdd/makePythonTddATM.sh
@@ -115,6 +101,7 @@ start the project
     .. tab-item:: no WSL
       :sync: no_wsl
 
+      * I open ``makePythonTdd.ps1``
       * I change the name of the project to ``atm`` in ``makePythonTdd.ps1``
 
         .. literalinclude:: ../../code/atm/make_tdd/makePythonTddATM.ps1
