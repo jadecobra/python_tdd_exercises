@@ -654,8 +654,6 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
       sex = 'M'
       year_of_birth = 1996
 
-  - when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
-
     .. code-block:: shell
 
       joe = Person(
@@ -677,8 +675,6 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
     ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
 
-  - When ``reality = src.person.say_hello(first_name=joe.first_name, last_name=joe.last_name,year_of_birth=joe.year_of_birth)`` runs
-
     .. code-block:: python
 
       reality = src.person.say_hello(
@@ -686,7 +682,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
           last_name=joe.last_name,
           year_of_birth=joe.year_of_birth,
       )
-          reality = src.person.say_hello(
+      └── reality = src.person.say_hello(
               first_name='joe',
               last_name='blow',
               year_of_birth=1996,
@@ -1089,8 +1085,6 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
       sex = 'M'
       year_of_birth = 1996
 
-  - when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
-
     .. code-block:: shell
 
       joe = Person(
@@ -1112,9 +1106,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
     ``self`` is the :ref:`instance of the class<how to test if something is an instance>` aka ``joe``.
 
-  - When ``reality = Person.say_hello(person=joe, first_name=joe.first_name, last_name=joe.last_name,year_of_birth=joe.year_of_birth)`` runs
-
-    .. code-block:: python
+    .. code-block:: shell
 
       reality = Person.say_hello(
           person=joe,
@@ -1122,13 +1114,13 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
           last_name=joe.last_name,
           year_of_birth=joe.year_of_birth,
       )
-          reality = src.person.say_hello(
+      └── reality = src.person.say_hello(
               person=joe,
               first_name='joe',
               last_name='blow',
               year_of_birth=1996,
           )
-              return (
+          └── return (
                   f'Hello, my name is {person.first_name}'
                   f' {person.last_name} and I am'
                   f' {2026-person.year_of_birth}.'
@@ -1430,8 +1422,6 @@ what is the staticmethod decorator?
       sex = 'M'
       year_of_birth = 1996
 
-  - when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
-
     .. code-block:: shell
 
       joe = Person(
@@ -1453,12 +1443,10 @@ what is the staticmethod decorator?
 
     ``self`` is the :ref:`instance of the class<how to test if something is an instance>` aka ``joe``.
 
-  - When ``reality = joe.say_hello()`` runs
-
     .. code-block:: python
 
       reality = joe.say_hello()
-          return (
+      └── return (
               f'Hello, my name is {self.first_name}'
               f' {self.last_name} and I am'
               f' {2026-self.year_of_birth}.'
@@ -1633,8 +1621,6 @@ what is the staticmethod decorator?
       sex = 'F'
       year_of_birth = 2000
 
-  - when ``mary = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
-
     .. code-block:: shell
 
       mary = Person(
@@ -1656,12 +1642,10 @@ what is the staticmethod decorator?
 
     ``self`` is the :ref:`instance of the class<how to test if something is an instance>` aka ``mary``.
 
-  - When ``reality = mary.say_hello()`` runs
-
     .. code-block:: python
 
       reality = mary.say_hello()
-          return (
+      └── return (
               f'Hello, my name is {self.first_name}'
               f' {self.last_name} and I am'
               f' {2026-self.year_of_birth}.'
@@ -1675,7 +1659,7 @@ what is the staticmethod decorator?
 
     and the result is ``'Hello, my name is mary public and I am 26.'``
 
-  - a simple way to think of ``mary.say_hello()``
+  - a simple way to think of ``mary.say_hello()`` is
 
     .. code-block:: python
 
@@ -1946,9 +1930,7 @@ separate and equal Person class
       sex = 'F'
       year_of_birth = 2000
 
-  - when ``mary = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
-
-    .. code-block:: python
+    .. code-block:: shell
 
       mary = Person(
           first_name=first_name,
@@ -1956,15 +1938,13 @@ separate and equal Person class
           sex=sex,
           year_of_birth=year_of_birth,
       )
-          Person(
+      └── Person(
               first_name='mary',
               last_name='public',
               sex='F',
               year_of_birth=2000,
           )
-              return None
-
-  - When ``reality = mary.say_hello()`` runs
+          └── return None
 
     .. code-block:: python
 

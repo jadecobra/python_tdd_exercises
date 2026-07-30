@@ -448,6 +448,8 @@ test_number_not_pushed
 
     git commit -am 'add test_number_not_pushed'
 
+----
+
 I want the **Elevator** to :green:`MOVE` only when the button for a floor is :green:`pushed` AND the doors are :green:`closed`. I do not want anything or anyone falling out of the **Elevator** while it is :green:`MOVING`. The inputs to the **Elevator Controller** will then be
 
 * was the number for a floor pushed?
