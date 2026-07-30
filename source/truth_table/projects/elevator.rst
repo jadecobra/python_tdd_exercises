@@ -436,7 +436,7 @@ test_doors_closed_number_pushed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add ``doors_closed`` with a value to the :ref:`call<how to call a function with input>` to the ``controller`` :ref:`function<what is a function?>` from :ref:`test_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed`
+* I add ``doors_closed`` with a value to the :ref:`call<how to call a function with input>` to the ``controller`` :ref:`function<what is a function?>` from :ref:`test_number_pushed` for if the button for a floor is :green:`pushed` AND the **Elevator** doors are :green:`closed`
 
   =================  ==================  =============
   floor button       doors               output
@@ -551,7 +551,7 @@ test_doors_open_number_pushed
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a test named :ref:`test_doors_open_number_pushed` with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :green:`pushed` AND the elevator doors are :red:`open`
+* I add a test named :ref:`test_doors_open_number_pushed` with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :green:`pushed` AND the **Elevator** doors are :red:`open`
 
   =================  ==================  =============
   floor button       doors               output
@@ -623,7 +623,7 @@ the test passes.
 
 ----
 
-* I want the elevator to only check if the doors are :green:`closed` if the button for a floor is :green:`pushed`. I change the :ref:`if statement<if statements>`
+* I want the **Elevator** to only check if the doors are :green:`closed` if the button for a floor is :green:`pushed`. I change the :ref:`if statement<if statements>`
 
   .. code-block:: python
     :linenos:
@@ -665,7 +665,7 @@ test_doors_closed_number_not_pushed
 *********************************************************************************
 
 * I go back to the terminal_ where the tests are running
-* I add ``doors_closed`` with a value to the :ref:`call<how to call a function with input>` to the ``controller`` :ref:`function<what is a function?>` from :ref:`test_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed`
+* I add ``doors_closed`` with a value to the :ref:`call<how to call a function with input>` to the ``controller`` :ref:`function<what is a function?>` from :ref:`test_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :green:`closed`
 
   =================  ==================  =============
   floor button       doors               output
@@ -742,7 +742,7 @@ test_doors_open_number_not_pushed
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add :ref:`test_doors_open_number_not_pushed` with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :red:`open`, in ``test_elevator.py``
+* I add :ref:`test_doors_open_number_not_pushed` with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :red:`open`, in ``test_elevator.py``
 
   =================  ==================  =============
   floor button       doors               output
@@ -843,7 +843,7 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
 
 * If the button for a floor is :green:`pushed` it returns the value of ``doors_closed``
 
-  - if the button for a floor is :green:`pushed` AND the elevator doors are :red:`open`, it returns :red:`False`
+  - if the button for a floor is :green:`pushed` AND the **Elevator** doors are :red:`open`, it returns :red:`False`
 
     .. code-block:: shell
 
@@ -854,7 +854,7 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
           └── return doors_closed
               return False
 
-  - if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed`, it returns :green:`True`
+  - if the button for a floor is :green:`pushed` AND the **Elevator** doors are :green:`closed`, it returns :green:`True`
 
     .. code-block:: shell
 
@@ -865,7 +865,7 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
           └── return doors_closed
               return True
 
-So far, the :ref:`truth table` for the elevator is
+So far, the :ref:`truth table` for the **Elevator** is
 
 =================  ==================  =============
 floor button       doors               output
@@ -880,7 +880,7 @@ I want to add a failsafe to the **Elevator Controller** so it will :red:`NOT MOV
 
 * was the number for a floor pushed?
 * are the doors closed?
-* is the elevator above the weight limit?
+* is the **Elevator** above the weight limit?
 
 Which gives me this :ref:`truth table`
 
@@ -915,7 +915,7 @@ test_above_weight_doors_open_number_not_pushed
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add ``above_weight`` to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from :ref:`test_doors_open_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :red:`open` AND the elevator is :green:`above` the weight limit
+* I add ``above_weight`` to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from :ref:`test_doors_open_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :red:`open` AND the **Elevator** is :green:`above` the weight limit
 
   =================  ===============  ============== =============
   floor button       doors            weight limit   output
@@ -1065,7 +1065,7 @@ test_below_weight_doors_open_number_not_pushed
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a test with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :red:`open` AND the elevator is :red:`below` the weight limit
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :red:`open` AND the **Elevator** is :red:`below` the weight limit
 
   =================  ===============  ============== =============
   floor button       doors            weight limit   output
@@ -1166,7 +1166,7 @@ test_above_weight_doors_closed_number_not_pushed
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a value for the ``above_weight`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from :ref:`test_doors_closed_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed` AND the elevator is :green:`above` the weight limit
+* I add a value for the ``above_weight`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from :ref:`test_doors_closed_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :green:`closed` AND the **Elevator** is :green:`above` the weight limit
 
   =================  ===============  ============== =============
   floor button       doors            weight limit   output
@@ -1250,7 +1250,7 @@ test_below_weight_doors_closed_number_not_pushed
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a test with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed` AND the elevator is :red:`below` the weight limit
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :green:`closed` AND the **Elevator** is :red:`below` the weight limit
 
   =================  ===============  ============== =============
   floor button       doors            weight limit   output
@@ -1355,7 +1355,7 @@ test_above_weight_doors_open_number_pushed
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a value for the ``above_weight`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from :ref:`test_doors_open_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :red:`open` AND the elevator is :green:`above` the weight limit
+* I add a value for the ``above_weight`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from :ref:`test_doors_open_number_pushed` for if the button for a floor is :green:`pushed` AND the **Elevator** doors are :red:`open` AND the **Elevator** is :green:`above` the weight limit
 
   =================  ===============  ============== =============
   floor button       doors            weight limit   output
@@ -1433,7 +1433,7 @@ test_below_weight_doors_open_number_pushed
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a test with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :green:`pushed` AND the elevator doors are :red:`open` AND the elevator is :red:`below` the weight limit
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :green:`pushed` AND the **Elevator** doors are :red:`open` AND the **Elevator** is :red:`below` the weight limit
 
   =================  ===============  ============== =============
   floor button       doors            weight limit   output
@@ -1532,7 +1532,7 @@ test_above_weight_doors_closed_number_pushed
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a value for the ``above_weight`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from :ref:`test_doors_closed_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed` AND the elevator is :green:`above` the weight limit
+* I add a value for the ``above_weight`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from :ref:`test_doors_closed_number_pushed` for if the button for a floor is :green:`pushed` AND the **Elevator** doors are :green:`closed` AND the **Elevator** is :green:`above` the weight limit
 
   =================  ===============  ============== =============
   floor button       doors            weight limit   output
@@ -1659,7 +1659,7 @@ test_below_weight_doors_closed_number_pushed
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a test with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed` the elevator is :red:`below` the weight limit
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :green:`pushed` AND the **Elevator** doors are :green:`closed` the **Elevator** is :red:`below` the weight limit
 
   =================  ===============  ============== =============
   floor button       doors            weight limit   output
@@ -1859,7 +1859,7 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
 
   - if the total weight of the **Elevator** is :red:`below` the weight limit, it returns the value of ``doors_closed``
 
-    - if the button for a floor is :green:`pushed` AND the total weight of the **Elevator** is :red:`below` the weight limit AND the elevator doors are :red:`open`, it returns :red:`False`
+    - if the button for a floor is :green:`pushed` AND the total weight of the **Elevator** is :red:`below` the weight limit AND the **Elevator** doors are :red:`open`, it returns :red:`False`
 
       .. code-block:: shell
 
@@ -1878,7 +1878,7 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
             └── return doors_closed
                 return False
 
-    - if the button for a floor is :green:`pushed` AND the total weight of the **Elevator** is :red:`below` the weight limit AND the elevator doors are :green:`closed`, it returns :green:`True`
+    - if the button for a floor is :green:`pushed` AND the total weight of the **Elevator** is :red:`below` the weight limit AND the **Elevator** doors are :green:`closed`, it returns :green:`True`
 
       .. code-block:: shell
 
@@ -1921,7 +1921,7 @@ I want to make sure the **Elevator** can be stopped with a button in an emergenc
 
 * was the number for a floor pushed?
 * are the doors closed?
-* is the elevator above the weight limit?
+* is the **Elevator** above the weight limit?
 * was the emergency button pushed?
 
 ----
@@ -1930,7 +1930,7 @@ I want to make sure the **Elevator** can be stopped with a button in an emergenc
 test_emergency_w_above_weight_doors_closed_number_pushed
 *********************************************************************************
 
-The :ref:`truth table` for when the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed` AND the elevator is :green:`above` the weight limit, is
+The :ref:`truth table` for when the button for a floor is :green:`pushed` AND the **Elevator** doors are :green:`closed` AND the **Elevator** is :green:`above` the weight limit, is
 
 =================  ===============  ============== =================  =============
 floor button       doors            weight limit   emergency button   output
@@ -1948,7 +1948,7 @@ floor button       doors            weight limit   emergency button   output
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add ``emergency`` to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from the :ref:`assertion<what is an assertion?>` of :ref:`test_above_weight_doors_closed_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed` AND the elevator is :green:`above` the weight limit AND the emergency button is :green:`pushed`
+* I add ``emergency`` to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from the :ref:`assertion<what is an assertion?>` of :ref:`test_above_weight_doors_closed_number_pushed` for if the button for a floor is :green:`pushed` AND the **Elevator** doors are :green:`closed` AND the **Elevator** is :green:`above` the weight limit AND the emergency button is :green:`pushed`
 
   =================  ===============  ============== =================  =============
   floor button       doors            weight limit   emergency button   output
@@ -2037,7 +2037,7 @@ floor button       doors            weight limit   emergency button   output
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_above_weight_doors_closed_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed` AND the elevator is :green:`above` the weight limit AND the emergency button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_above_weight_doors_closed_number_pushed` for if the button for a floor is :green:`pushed` AND the **Elevator** doors are :green:`closed` AND the **Elevator** is :green:`above` the weight limit AND the emergency button is :red:`NOT pushed`
 
   =================  ===============  ============== =================  =============
   floor button       doors            weight limit   emergency button   output
@@ -2148,7 +2148,7 @@ floor button       doors            weight limit   emergency button   output
 test_emergency_w_below_weight_doors_closed_number_pushed
 *********************************************************************************
 
-The :ref:`truth table` for when the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed` AND the elevator is :red:`below` the weight limit, is
+The :ref:`truth table` for when the button for a floor is :green:`pushed` AND the **Elevator** doors are :green:`closed` AND the **Elevator** is :red:`below` the weight limit, is
 
 =================  ===============  ============== =================  =============
 floor button       doors            weight limit   emergency button   output
@@ -2166,7 +2166,7 @@ floor button       doors            weight limit   emergency button   output
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a value for the ``emergency`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from the :ref:`assertion<what is an assertion?>` of :ref:`test_below_weight_doors_closed_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed` AND the elevator is :red:`below` the weight limit AND the emergency button is :green:`pushed`
+* I add a value for the ``emergency`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from the :ref:`assertion<what is an assertion?>` of :ref:`test_below_weight_doors_closed_number_pushed` for if the button for a floor is :green:`pushed` AND the **Elevator** doors are :green:`closed` AND the **Elevator** is :red:`below` the weight limit AND the emergency button is :green:`pushed`
 
   =================  ===============  ============== =================  =============
   floor button       doors            weight limit   emergency button   output
@@ -2267,7 +2267,7 @@ floor button       doors            weight limit   emergency button   output
 
 ----
 
-* I want the :ref:`function<what is a function?>` to check if the elevator doors are :green:`closed` before it checks if the emergency button is :green:`pushed`
+* I want the :ref:`function<what is a function?>` to check if the **Elevator** doors are :green:`closed` before it checks if the emergency button is :green:`pushed`
 
   .. code-block:: python
     :linenos:
@@ -2308,7 +2308,7 @@ floor button       doors            weight limit   emergency button   output
             return False
         return True
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_below_weight_doors_closed_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :green:`closed` AND the elevator is :red:`below` the weight limit AND the emergency button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_below_weight_doors_closed_number_pushed` for if the button for a floor is :green:`pushed` AND the **Elevator** doors are :green:`closed` AND the **Elevator** is :red:`below` the weight limit AND the emergency button is :red:`NOT pushed`
 
   =================  ===============  ============== =================  =============
   floor button       doors            weight limit   emergency button   output
@@ -2434,7 +2434,7 @@ floor button       doors            weight limit   emergency button   output
 test_emergency_w_above_weight_doors_open_number_pushed
 *********************************************************************************
 
-The :ref:`truth table` for when the button for a floor is :green:`pushed` AND the elevator doors are :red:`open` AND the elevator is :green:`above` the weight limit, is
+The :ref:`truth table` for when the button for a floor is :green:`pushed` AND the **Elevator** doors are :red:`open` AND the **Elevator** is :green:`above` the weight limit, is
 
 =================  ===============  ============== =================  =============
 floor button       doors            weight limit   emergency button   output
@@ -2452,7 +2452,7 @@ floor button       doors            weight limit   emergency button   output
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a value for the ``emergency`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from the :ref:`assertion<what is an assertion?>` of :ref:`test_above_weight_doors_open_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :red:`open` AND the elevator is :green:`above` the weight limit AND the emergency button is :green:`pushed`
+* I add a value for the ``emergency`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from the :ref:`assertion<what is an assertion?>` of :ref:`test_above_weight_doors_open_number_pushed` for if the button for a floor is :green:`pushed` AND the **Elevator** doors are :red:`open` AND the **Elevator** is :green:`above` the weight limit AND the emergency button is :green:`pushed`
 
   =================  ===============  ============== =================  =============
   floor button       doors            weight limit   emergency button   output
@@ -2485,7 +2485,7 @@ floor button       doors            weight limit   emergency button   output
         above_weight=True, emergency=True,
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_above_weight_doors_open_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :red:`open` AND the elevator is :green:`above` the weight limit AND the emergency button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_above_weight_doors_open_number_pushed` for if the button for a floor is :green:`pushed` AND the **Elevator** doors are :red:`open` AND the **Elevator** is :green:`above` the weight limit AND the emergency button is :red:`NOT pushed`
 
   =================  ===============  ============== =================  =============
   floor button       doors            weight limit   emergency button   output
@@ -2617,7 +2617,7 @@ the test passes.
 test_emergency_w_below_weight_doors_open_number_pushed
 *********************************************************************************
 
-The :ref:`truth table` for when the button for a floor is :green:`pushed` AND the elevator doors are :red:`open` AND the elevator is :red:`below` the weight limit, is
+The :ref:`truth table` for when the button for a floor is :green:`pushed` AND the **Elevator** doors are :red:`open` AND the **Elevator** is :red:`below` the weight limit, is
 
 =================  ===============  ============== =================  =============
 floor button       doors            weight limit   emergency button   output
@@ -2635,7 +2635,7 @@ floor button       doors            weight limit   emergency button   output
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a value for the ``emergency`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from the :ref:`assertion<what is an assertion?>` of :ref:`test_below_weight_doors_open_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :red:`open` AND the elevator is :red:`below` the weight limit AND the emergency button is :green:`pushed`
+* I add a value for the ``emergency`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from the :ref:`assertion<what is an assertion?>` of :ref:`test_below_weight_doors_open_number_pushed` for if the button for a floor is :green:`pushed` AND the **Elevator** doors are :red:`open` AND the **Elevator** is :red:`below` the weight limit AND the emergency button is :green:`pushed`
 
   =================  ===============  ============== =================  =============
   floor button       doors            weight limit   emergency button   output
@@ -2676,7 +2676,7 @@ floor button       doors            weight limit   emergency button   output
         above_weight=False, emergency=True,
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_below_weight_doors_open_number_pushed` for if the button for a floor is :green:`pushed` AND the elevator doors are :red:`open` AND the elevator is :red:`below` the weight limit AND the emergency button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_below_weight_doors_open_number_pushed` for if the button for a floor is :green:`pushed` AND the **Elevator** doors are :red:`open` AND the **Elevator** is :red:`below` the weight limit AND the emergency button is :red:`NOT pushed`
 
   =================  ===============  ============== =================  =============
   floor button       doors            weight limit   emergency button   output
@@ -2816,7 +2816,7 @@ the test passes.
 test_emergency_w_above_weight_doors_closed_number_not_pushed
 *********************************************************************************
 
-The :ref:`truth table` for when the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed` AND the elevator is :green:`above` the weight limit, is
+The :ref:`truth table` for when the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :green:`closed` AND the **Elevator** is :green:`above` the weight limit, is
 
 =================  ===============  ============== =================  =============
 floor button       doors            weight limit   emergency button   output
@@ -2834,7 +2834,7 @@ floor button       doors            weight limit   emergency button   output
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a value for the ``emergency`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from the :ref:`assertion<what is an assertion?>` of :ref:`test_above_weight_doors_closed_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed` AND the elevator is :green:`above` the weight limit AND the emergency button is :green:`pushed`
+* I add a value for the ``emergency`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from the :ref:`assertion<what is an assertion?>` of :ref:`test_above_weight_doors_closed_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :green:`closed` AND the **Elevator** is :green:`above` the weight limit AND the emergency button is :green:`pushed`
 
   =================  ===============  ============== =================  =============
   floor button       doors            weight limit   emergency button   output
@@ -2867,7 +2867,7 @@ floor button       doors            weight limit   emergency button   output
         above_weight=True, emergency=True,
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_above_weight_doors_closed_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed` AND the elevator is :green:`above` the weight limit AND the emergency button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_above_weight_doors_closed_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :green:`closed` AND the **Elevator** is :green:`above` the weight limit AND the emergency button is :red:`NOT pushed`
 
   =================  ===============  ============== =================  =============
   floor button       doors            weight limit   emergency button   output
@@ -2999,7 +2999,7 @@ the test passes.
 test_emergency_w_below_weight_doors_closed_number_not_pushed
 *********************************************************************************
 
-The :ref:`truth table` for when the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed` AND the elevator is :red:`below` the weight limit, is
+The :ref:`truth table` for when the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :green:`closed` AND the **Elevator** is :red:`below` the weight limit, is
 
 =================  ===============  ============== =================  =============
 floor button       doors            weight limit   emergency button   output
@@ -3017,7 +3017,7 @@ floor button       doors            weight limit   emergency button   output
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a value for the ``emergency`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from the :ref:`assertion<what is an assertion?>` of :ref:`test_below_weight_doors_closed_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed` AND the elevator is :red:`below` the weight limit AND the emergency button is :green:`pushed`
+* I add a value for the ``emergency`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from the :ref:`assertion<what is an assertion?>` of :ref:`test_below_weight_doors_closed_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :green:`closed` AND the **Elevator** is :red:`below` the weight limit AND the emergency button is :green:`pushed`
 
   =================  ===============  ============== =================  =============
   floor button       doors            weight limit   emergency button   output
@@ -3058,7 +3058,7 @@ floor button       doors            weight limit   emergency button   output
         above_weight=False, emergency=True,
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_below_weight_doors_closed_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :green:`closed` AND the elevator is :red:`below` the weight limit AND the emergency button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_below_weight_doors_closed_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :green:`closed` AND the **Elevator** is :red:`below` the weight limit AND the emergency button is :red:`NOT pushed`
 
   =================  ===============  ============== =================  =============
   floor button       doors            weight limit   emergency button   output
@@ -3198,7 +3198,7 @@ the test passes.
 test_emergency_w_above_weight_doors_open_number_not_pushed
 *********************************************************************************
 
-The :ref:`truth table` for when the button for a floor is :red:`NOT pushed` AND the elevator doors are :red:`open` AND the elevator is :green:`above` the weight limit, is
+The :ref:`truth table` for when the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :red:`open` AND the **Elevator** is :green:`above` the weight limit, is
 
 =================  ===============  ============== =================  =============
 floor button       doors            weight limit   emergency button   output
@@ -3216,7 +3216,7 @@ floor button       doors            weight limit   emergency button   output
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a value for the ``emergency`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from the :ref:`assertion<what is an assertion?>` of :ref:`test_above_weight_doors_open_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :red:`open` AND the elevator is :green:`above` the weight limit AND the emergency button is :green:`pushed`
+* I add a value for the ``emergency`` parameter to the :ref:`call<how to call a function with input>` to ``src.elevator.controller`` from the :ref:`assertion<what is an assertion?>` of :ref:`test_above_weight_doors_open_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :red:`open` AND the **Elevator** is :green:`above` the weight limit AND the emergency button is :green:`pushed`
 
   =================  ===============  ============== =================  =============
   floor button       doors            weight limit   emergency button   output
@@ -3249,7 +3249,7 @@ floor button       doors            weight limit   emergency button   output
         above_weight=True, emergency=True,
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_above_weight_doors_open_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :red:`open` AND the elevator is :green:`above` the weight limit AND the emergency button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_above_weight_doors_open_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :red:`open` AND the **Elevator** is :green:`above` the weight limit AND the emergency button is :red:`NOT pushed`
 
   =================  ===============  ============== =================  =============
   floor button       doors            weight limit   emergency button   output
@@ -3381,7 +3381,7 @@ the test passes.
 test_emergency_w_below_weight_doors_open_number_not_pushed
 *********************************************************************************
 
-The :ref:`truth table` for when the button for a floor is :red:`NOT pushed` AND the elevator doors are :red:`open` AND the elevator is :red:`below` the weight limit, is
+The :ref:`truth table` for when the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :red:`open` AND the **Elevator** is :red:`below` the weight limit, is
 
 =================  ===============  ============== =================  =============
 floor button       doors            weight limit   emergency button   output
@@ -3399,7 +3399,7 @@ floor button       doors            weight limit   emergency button   output
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a value for the ``emergency`` parameter to the :ref:`call<how to call a function with input>` to the ``controller`` :ref:`function<what is a function?>` from the :ref:`assertion<what is an assertion?>` of :ref:`test_below_weight_doors_open_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :red:`open` AND the elevator is :red:`below` the weight limit AND the emergency button is :green:`pushed`
+* I add a value for the ``emergency`` parameter to the :ref:`call<how to call a function with input>` to the ``controller`` :ref:`function<what is a function?>` from the :ref:`assertion<what is an assertion?>` of :ref:`test_below_weight_doors_open_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :red:`open` AND the **Elevator** is :red:`below` the weight limit AND the emergency button is :green:`pushed`
 
   =================  ===============  ============== =================  =============
   floor button       doors            weight limit   emergency button   output
@@ -3441,7 +3441,7 @@ floor button       doors            weight limit   emergency button   output
         above_weight=False, emergency=True,
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_below_weight_doors_open_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the elevator doors are :red:`open` AND the elevator is :red:`below` the weight limit AND the emergency button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_below_weight_doors_open_number_not_pushed` for if the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :red:`open` AND the **Elevator** is :red:`below` the weight limit AND the emergency button is :red:`NOT pushed`
 
   =================  ===============  ============== =================  =============
   floor button       doors            weight limit   emergency button   output
@@ -3579,69 +3579,366 @@ the test passes.
     git commit -am \
     'add test_emergency_w_below_weight_doors_open_number_not_pushed'
 
-
-
-
-
-
-
-
 -----
 
+When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`, it checks if the button for a floor is :red:`NOT pushed`
 
+* If the button for a floor is :red:`NOT pushed` it returns :red:`False`
 
-* To review, the ``controller`` :ref:`function<what is a function?>`
+  .. code-block:: shell
 
-  .. code-block:: python
-    :linenos:
-
-    def controller(
-            doors_closed, number_pushed,
+    elevator(
+        number_pushed=False, doors_closed=True,
+        above_weight=True, emergency=True,
+    ) -> False
+    └── def controller(
+            number_pushed, doors_closed=False,
             above_weight=False, emergency=False,
         ):
-        not_move = 'NOT MOVE'
+        └── if not number_pushed:
+            └── return False
+            if above_weight:
+                return False
+            if not doors_closed:
+                return False
+            if emergency:
+                return False
+            return True
 
-        if emergency:
-            return not_move
+  .. code-block:: shell
 
-        if above_weight:
-            return not_move
+    elevator(
+        number_pushed=False, doors_closed=True,
+        above_weight=True, emergency=False,
+    ) -> False
+    └── def controller(
+            number_pushed, doors_closed=False,
+            above_weight=False, emergency=False,
+        ):
+        └── if not number_pushed:
+            └── return False
+            if above_weight:
+                return False
+            if not doors_closed:
+                return False
+            if emergency:
+                return False
+            return True
 
-        if not doors_closed:
-            return not_move
+  .. code-block:: shell
 
-        if not number_pushed:
-            return not_move
+    elevator(
+        number_pushed=False, doors_closed=True,
+        above_weight=False, emergency=True,
+    ) -> False
+    └── def controller(
+            number_pushed, doors_closed=False,
+            above_weight=False, emergency=False,
+        ):
+        └── if not number_pushed:
+            └── return False
+            if above_weight:
+                return False
+            if not doors_closed:
+                return False
+            if emergency:
+                return False
+            return True
 
-        return 'MOVE'
+  .. code-block:: shell
 
-  - returns :red:`False` if the emergency button is :green:`pushed`
-  - returns :red:`False` if the elevator is :green:`above` the weight limit
-  - returns :red:`False` if the button for the floor is :red:`NOT pushed`
-  - returns :red:`False` if the doors are :red:`open`
-  - returns :green:`True` if the above :ref:`conditions<if statements>` are NOT met
+    elevator(
+        number_pushed=False, doors_closed=True,
+        above_weight=False, emergency=False,
+    ) -> False
+    └── def controller(
+            number_pushed, doors_closed=False,
+            above_weight=False, emergency=False,
+        ):
+        └── if not number_pushed:
+            └── return False
+            if above_weight:
+                return False
+            if not doors_closed:
+                return False
+            if emergency:
+                return False
+            return True
 
-* All the :ref:`if statements` return :red:`False` which means I could use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put them together though it will be a long statement
+  .. code-block:: shell
+
+    elevator(
+        number_pushed=False, doors_closed=False,
+        above_weight=True, emergency=True,
+    ) -> False
+    └── def controller(
+            number_pushed, doors_closed=False,
+            above_weight=False, emergency=False,
+        ):
+        └── if not number_pushed:
+            └── return False
+            if above_weight:
+                return False
+            if not doors_closed:
+                return False
+            if emergency:
+                return False
+            return True
+
+  .. code-block:: shell
+
+    elevator(
+        number_pushed=False, doors_closed=False,
+        above_weight=True, emergency=False,
+    ) -> False
+    └── def controller(
+            number_pushed, doors_closed=False,
+            above_weight=False, emergency=False,
+        ):
+        └── if not number_pushed:
+            └── return False
+            if above_weight:
+                return False
+            if not doors_closed:
+                return False
+            if emergency:
+                return False
+            return True
+
+  .. code-block:: shell
+
+    elevator(
+        number_pushed=False, doors_closed=False,
+        above_weight=False, emergency=True,
+    ) -> False
+    └── def controller(
+            number_pushed, doors_closed=False,
+            above_weight=False, emergency=False,
+        ):
+        └── if not number_pushed:
+            └── return False
+            if above_weight:
+                return False
+            if not doors_closed:
+                return False
+            if emergency:
+                return False
+            return True
+
+  .. code-block:: shell
+
+    elevator(
+        number_pushed=False, doors_closed=False,
+        above_weight=False, emergency=False,
+    ) -> False
+    └── def controller(
+            number_pushed, doors_closed=False,
+            above_weight=False, emergency=False,
+        ):
+        └── if not number_pushed:
+            └── return False
+            if above_weight:
+                return False
+            if not doors_closed:
+                return False
+            if emergency:
+                return False
+            return True
+
+* If the button for a floor is :green:`pushed` it checks if the total weight of the **Elevator** is :green:`above` the weight limit
+
+  - if the total weight of the **Elevator** is :green:`above` the weight limit, it returns :red:`False`
+
+    .. code-block:: shell
+
+      elevator(
+          number_pushed=True, doors_closed=False,
+          above_weight=True, emergency=True,
+      ) -> False
+      └── def controller(
+              number_pushed, doors_closed=False,
+              above_weight=False, emergency=False,
+          ):
+          ├── if not number_pushed:
+          │       return False
+          └── if above_weight:
+              └── return False
+              if not doors_closed:
+                  return False
+              if emergency:
+                  return False
+              return True
+
+    .. code-block:: shell
+
+      elevator(
+          number_pushed=True, doors_closed=False,
+          above_weight=True, emergency=False,
+      ) -> False
+      └── def controller(
+              number_pushed, doors_closed=False,
+              above_weight=False, emergency=False,
+          ):
+          ├── if not number_pushed:
+          │       return False
+          └── if above_weight:
+              └── return False
+              if not doors_closed:
+                  return False
+              if emergency:
+                  return False
+              return True
+
+    .. code-block:: shell
+
+      elevator(
+          number_pushed=True, doors_closed=True,
+          above_weight=True, emergency=True,
+      ) -> False
+      └── def controller(
+              number_pushed, doors_closed=False,
+              above_weight=False, emergency=False,
+          ):
+          ├── if not number_pushed:
+          │       return False
+          └── if above_weight:
+              └── return False
+              if not doors_closed:
+                  return False
+              if emergency:
+                  return False
+              return True
+
+    .. code-block:: shell
+
+      elevator(
+          number_pushed=True, doors_closed=True,
+          above_weight=True, emergency=False,
+      ) -> False
+      └── def controller(
+              number_pushed, doors_closed=False,
+              above_weight=False, emergency=False,
+          ):
+          ├── if not number_pushed:
+          │       return False
+          └── if above_weight:
+              └── return False
+              if not doors_closed:
+                  return False
+              if emergency:
+                  return False
+              return True
+
+  - if the total weight of the **Elevator** is :red:`below` the weight limit, it checks if the **Elevator** doors are :green:`closed`
+
+    - if the **Elevator** doors are :red:`open`, it returns :red:`False`
+
+      .. code-block:: shell
+
+        elevator(
+            number_pushed=True, doors_closed=False,
+            above_weight=False, emergency=True,
+        ) -> False
+        └── def controller(
+                number_pushed, doors_closed=False,
+                above_weight=False, emergency=False,
+            ):
+            ├── if not number_pushed:
+            │       return False
+            ├── if above_weight:
+            │       return False
+            └── if not doors_closed:
+                └── return False
+                if emergency:
+                    return False
+                return True
+
+      .. code-block:: shell
+
+        elevator(
+            number_pushed=True, doors_closed=False,
+            above_weight=False, emergency=False,
+        ) -> False
+        └── def controller(
+                number_pushed, doors_closed=False,
+                above_weight=False, emergency=False,
+            ):
+            ├── if not number_pushed:
+            │       return False
+            ├── if above_weight:
+            │       return False
+            └── if not doors_closed:
+                └── return False
+                if emergency:
+                    return False
+                return True
+
+    - if the **Elevator** doors are :green:`closed`, it checks if the emergency button is :green:`pushed`
+
+      * if the emergency button is :green:`pushed`, it returns :red:`False`
+
+        .. code-block:: shell
+
+          elevator(
+              number_pushed=True, doors_closed=True,
+              above_weight=False, emergency=True,
+          ) -> False
+          └── def controller(
+                  number_pushed, doors_closed=False,
+                  above_weight=False, emergency=False,
+              ):
+              ├── if not number_pushed:
+              │       return False
+              ├── if above_weight:
+              │       return False
+              ├── if not doors_closed:
+              │       return False
+              └── if emergency:
+                  └── return False
+                  return True
+
+      * the button for a floor is :green:`pushed` AND the doors are :green:`closed` AND the **Elevator** is :red:`NOT above` the weight limit, and the emergency button is :red:`NOT pushed`, it returns :green:`True`
+
+        .. code-block:: shell
+
+          elevator(
+              number_pushed=True, doors_closed=True,
+              above_weight=False, emergency=False,
+          ) -> True
+          └── def controller(
+                  number_pushed, doors_closed=False,
+                  above_weight=False, emergency=False,
+              ):
+              ├── if not number_pushed:
+              │       return False
+              ├── if above_weight:
+              │       return False
+              ├── if not doors_closed:
+              │       return False
+              ├── if emergency:
+              │       return False
+              └── return True
+
+* All the :ref:`if statements` in the ``controller`` :ref:`function<what is a function?>` return :red:`False` which means I can use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put them together
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 5-11
 
     def controller(
-            doors_closed, number_pushed,
-            above_weight=False, emergency=False,
-        ):
+        number_pushed, doors_closed=False,
+        above_weight=False, emergency=False,
+    ):
         if (
-            emergency
+            not number_pushed
             or above_weight
             or not doors_closed
-            or not number_pushed
+            or emergency
         ):
-            return 'NOT MOVE'
+            return False
+        return True
 
-        return 'MOVE'
-
-  the tests are still green.
+  the tests are still green and this is a long statement.
 
 * I rewrite the statement in terms of :ref:`NOT<test_logical_negation>` because it happens two times
 
@@ -3764,52 +4061,52 @@ close the project
 review
 *************************************************************************************
 
-I ran tests for a elevator with these inputs:
+I ran tests for an **Elevator Controller** with these inputs:
 
+* was the number for a floor pushed?
 * are the doors closed?
 * is it above the weight limit?
-* was the number for a floor pushed?
 * was the emergency button pushed?
 
-the inputs gave me this :ref:`truth table`
+The inputs gave me this :ref:`truth table`
 
-==============  ================  ==================  ====================  ================
-doors           floor number      weight limit        emergency button      output
-==============  ================  ==================  ====================  ================
-:green:`closed`  :green:`pushed`   :green:`above`      :green:`pushed`       :red:`False`
-:green:`closed`  :green:`pushed`   :green:`above`      :red:`NOT pushed`     :red:`False`
-:green:`closed`  :green:`pushed`   :red:`NOT above`    :green:`pushed`       :red:`False`
-:green:`closed`  :green:`pushed`   :red:`NOT above`    :red:`NOT pushed`     :green:`True`
-==============  ================  ==================  ====================  ================
+=================  ===============  ============== =================  =============
+floor button       doors            weight limit   emergency button   output
+=================  ===============  ============== =================  =============
+:green:`pushed`    :green:`closed`  :green:`above` :green:`pushed`    :red:`False`
+:green:`pushed`    :green:`closed`  :green:`above` :red:`NOT pushed`  :red:`False`
+:green:`pushed`    :green:`closed`  :red:`below`   :green:`pushed`    :red:`False`
+:green:`pushed`    :green:`closed`  :red:`below`   :red:`NOT pushed`  :green:`True`
+=================  ===============  ============== =================  =============
 
-==============  ==================  ==================  ====================  ===============
-doors           floor number        weight limit        emergency button      output
-==============  ==================  ==================  ====================  ===============
-:green:`closed`  :red:`NOT pushed`   :green:`above`      :green:`pushed`       :red:`False`
-:green:`closed`  :red:`NOT pushed`   :green:`above`      :red:`NOT pushed`     :red:`False`
-:green:`closed`  :red:`NOT pushed`   :red:`NOT above`    :green:`pushed`       :red:`False`
-:green:`closed`  :red:`NOT pushed`   :red:`NOT above`    :red:`NOT pushed`     :red:`False`
-==============  ==================  ==================  ====================  ===============
+=================  ===============  ============== =================  =============
+floor button       doors            weight limit   emergency button   output
+=================  ===============  ============== =================  =============
+:green:`pushed`    :red:`open`      :green:`above` :green:`pushed`    :red:`False`
+:green:`pushed`    :red:`open`      :green:`above` :red:`NOT pushed`  :red:`False`
+:green:`pushed`    :red:`open`      :red:`below`   :green:`pushed`    :red:`False`
+:green:`pushed`    :red:`open`      :red:`below`   :red:`NOT pushed`  :red:`False`
+=================  ===============  ============== =================  =============
 
-================  ================  ==================  ====================  ===============
-doors             floor number      weight limit        emergency button      output
-================  ================  ==================  ====================  ===============
-:red:`open`  :green:`pushed`   :green:`above`      :green:`pushed`       :red:`False`
-:red:`open`  :green:`pushed`   :green:`above`      :red:`NOT pushed`     :red:`False`
-:red:`open`  :green:`pushed`   :red:`NOT above`    :green:`pushed`       :red:`False`
-:red:`open`  :green:`pushed`   :red:`NOT above`    :red:`NOT pushed`     :red:`False`
-================  ================  ==================  ====================  ===============
+=================  ===============  ============== =================  =============
+floor button       doors            weight limit   emergency button   output
+=================  ===============  ============== =================  =============
+:red:`NOT pushed`  :green:`closed`  :green:`above` :green:`pushed`    :red:`False`
+:red:`NOT pushed`  :green:`closed`  :green:`above` :red:`NOT pushed`  :red:`False`
+:red:`NOT pushed`  :green:`closed`  :red:`below`   :green:`pushed`    :red:`False`
+:red:`NOT pushed`  :green:`closed`  :red:`below`   :red:`NOT pushed`  :red:`False`
+=================  ===============  ============== =================  =============
 
-================  ==================  ==================  ====================  ===============
-doors             floor number        weight limit        emergency button      output
-================  ==================  ==================  ====================  ===============
-:red:`open`  :red:`NOT pushed`   :green:`above`      :green:`pushed`       :red:`False`
-:red:`open`  :red:`NOT pushed`   :green:`above`      :red:`NOT pushed`     :red:`False`
-:red:`open`  :red:`NOT pushed`   :red:`NOT above`    :green:`pushed`       :red:`False`
-:red:`open`  :red:`NOT pushed`   :red:`NOT above`    :red:`NOT pushed`     :red:`False`
-================  ==================  ==================  ====================  ===============
+=================  ===============  ============== =================  =============
+floor button       doors            weight limit   emergency button   output
+=================  ===============  ============== =================  =============
+:red:`NOT pushed`  :red:`open`      :green:`above` :green:`pushed`    :red:`False`
+:red:`NOT pushed`  :red:`open`      :green:`above` :red:`NOT pushed`  :red:`False`
+:red:`NOT pushed`  :red:`open`      :red:`below`   :green:`pushed`    :red:`False`
+:red:`NOT pushed`  :red:`open`      :red:`below`   :red:`NOT pushed`  :red:`False`
+=================  ===============  ============== =================  =============
 
-the only time this elevator goes up or down is when the doors are :green:`closed`, the button for a floor is :green:`pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :red:`NOT pushed`.
+The only time this elevator :green:`moves` up or down is when the button for a floor is :green:`pushed` AND the doors are :green:`closed` AND the **Elevator** is :red:`NOT above` the weight limit, and the emergency button is :red:`NOT pushed`.
 
 ----
 

@@ -182,7 +182,7 @@ because there is no definition for ``Person`` in ``test_person.py``.
 
     because this happens when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
 
-    .. code-block:: python
+    .. code-block:: shell
 
       joe = Person(
           first_name=first_name,
@@ -232,7 +232,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 
   - Here is what is happens when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
 
-    .. code-block:: python
+    .. code-block:: shell
 
       joe = Person(
           first_name=first_name,
@@ -308,7 +308,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 
     because this happens when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
 
-    .. code-block:: python
+    .. code-block:: shell
 
       joe = Person(
           first_name=first_name,
@@ -357,7 +357,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 
   - because this happens when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
 
-    .. code-block:: python
+    .. code-block:: shell
 
       joe = Person(
           first_name=first_name,
@@ -409,7 +409,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 
   - because this happens when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
 
-    .. code-block:: python
+    .. code-block:: shell
 
       joe = Person(
           first_name=first_name,
@@ -656,7 +656,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
   - when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
 
-    .. code-block:: python
+    .. code-block:: shell
 
       joe = Person(
           first_name=first_name,
@@ -1091,7 +1091,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
   - when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
 
-    .. code-block:: python
+    .. code-block:: shell
 
       joe = Person(
           first_name=first_name,
@@ -1432,7 +1432,7 @@ what is the staticmethod decorator?
 
   - when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
 
-    .. code-block:: python
+    .. code-block:: shell
 
       joe = Person(
           first_name=first_name,
@@ -1635,7 +1635,7 @@ what is the staticmethod decorator?
 
   - when ``mary = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
 
-    .. code-block:: python
+    .. code-block:: shell
 
       mary = Person(
           first_name=first_name,
@@ -2762,9 +2762,9 @@ separate and equal Person class
                     self, first_name, last_name,
                     sex, year_of_birth,
                 ):
-                    self.first_name = first_name
-                    self.last_name = last_name
-                    self.year_of_birth = year_of_birth
+                ├── self.first_name = first_name
+                ├── self.last_name = last_name
+                └── self.year_of_birth = year_of_birth
 
 * I add a git_ commit message in the other terminal_
 
