@@ -247,7 +247,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
               year_of_birth=1996,
           )
 
-    which raises :ref:`TypeError<what causes TypeError?>` because the :ref:`definition<how to make a function>` for ``__init__`` does not allow calling it with inputs (the parentheses are empty) and the test sends four :ref:`keyword arguments<test_keyword_arguments>` as input.
+    which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``first_name``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
 
 * I add the name in parentheses so that the :ref:`__init__ constructor method<the constructor method>` can take input
@@ -324,7 +324,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
               year_of_birth=1996,
           )
 
-    which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows two arguments (``self`` and ``first_name``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
+    which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``first_name``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
   - I have seen this before, so far it is the same as making the :ref:`factory function<test person factory>`.
@@ -373,7 +373,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
               year_of_birth=1996,
           )
 
-    which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows three arguments (``self``,  ``first_name`` and ``last_name``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
+    which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``year_of_birth``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
   - Still the same as making the :ref:`factory function<test person factory>`.
@@ -425,7 +425,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
               year_of_birth=1996,  # not in definition
           )
 
-    which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`definition<how to make a function>` of ``__init__`` only allows three arguments (``self``,  ``first_name``, ``last_name`` and ``sex``) and the test calls it with five (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
+    which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``sex``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
   - Same as with the :ref:`factory function<test person factory>`.
@@ -801,7 +801,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
     TypeError: Person.say_hello() got
                an unexpected keyword argument 'first_name'
 
-  because the :ref:`definition<how to make a function>` for ``say_hello`` does not allow inputs and the test called the :ref:`method<what is a method?>` with one :ref:`keyword argument<test_keyword_arguments>` (``first_name``).
+  because the ``say_hello`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``first_name``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`..
 
 * I add ``first_name`` to the :ref:`method definition<how to make a function>`
 
@@ -824,6 +824,8 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
                an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
+  because the ``say_hello`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``first_name``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+
 * I add ``last_name`` to the :ref:`method definition<how to make a function>`
 
   .. code-block:: python
@@ -844,6 +846,8 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
     TypeError: Person.say_hello() got
                an unexpected keyword argument 'year_of_birth'
+
+  because the ``say_hello`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``year_of_birth``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add ``year_of_birth`` to the :ref:`method definition<how to make a function>`
 
@@ -992,6 +996,8 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
     TypeError: Person.say_hello() got
                an unexpected keyword argument 'person'
+
+  because the ``say_hello`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``person``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add ``person`` to the :ref:`method definition for say_hello<test say_hello method>`
 
@@ -1195,6 +1201,8 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
     TypeError: Person.say_hello() got
                an unexpected keyword argument 'first_name'
+
+  because the ``say_hello`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``first_name``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I remove the ``first_name``, ``last_name`` and ``year_of_birth`` arguments from the call in :ref:`test_jane`
 
@@ -1813,6 +1821,8 @@ separate and equal Person class
     TypeError: Person() got
                an unexpected keyword argument 'first_name'
 
+  because the ``Person`` :ref:`function<what is a function?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``first_name``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+
 * I add ``first_name`` to the parentheses
 
   .. code-block:: python
@@ -1837,6 +1847,8 @@ separate and equal Person class
     TypeError: Person() got
                an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
+
+  because the ``Person`` :ref:`function<what is a function?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``last_name``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add ``first_name`` to the parentheses
 
@@ -1863,6 +1875,8 @@ separate and equal Person class
     TypeError: Person() got
                an unexpected keyword argument 'sex'
 
+  because the ``Person`` :ref:`function<what is a function?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``sex``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+
 * I add ``sex`` to the parentheses
 
   .. code-block:: python
@@ -1888,6 +1902,8 @@ separate and equal Person class
 
     TypeError: Person() got
                an unexpected keyword argument 'year_of_birth'
+
+  because the ``Person`` :ref:`function<what is a function?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``year_of_birth``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 * I add ``year_of_birth`` to the parentheses
 
