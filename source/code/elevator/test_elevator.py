@@ -144,7 +144,7 @@ class TestElevator(unittest.TestCase):
                 number_pushed=False,
                 doors_closed=False,
                 above_weight=False,
-                emergency=True,
+                emergency=False,
             )
         )
 

@@ -1,8 +1,8 @@
 :orphan:
 
 .. meta::
-  :description: Build a safety-critical elevator control system from scratch using Python and Test Driven Development (TDD). This project-based tutorial teaches beginners how to manage multiple boolean inputs—including door sensors, floor requests, weight limits, and emergency stop buttons—to create robust, failsafe logic. Master the professional Red-Green-Refactor cycle using modern tools like uv, unittest, and pytest-watcher.
-  :keywords: Jacob Itegboje, Python elevator logic project, safety-critical systems tutorial, TDD for beginners, building failsafes in Python, multiple boolean conditions example, elevator simulation code, Python unittest tutorial, uv package manager guide, pytest-watcher automated testing, Red Green Refactor Python project, debugging NameError and TypeError, logical conjunction tutorial, translating truth tables to code, weight limit failsafe logic, emergency stop button code, software engineering projects for beginners, Python boolean logic practice, building a controller in Python, robust software development
+  :description: Build an elevator controller with Python TDD (Red-Green-Refactor): translate a four-input truth table (floor button pushed, doors closed, above weight limit, emergency) into ``src.elevator.controller`` that returns True only when the button is pushed AND doors are closed AND not above weight AND emergency is not pushed. Beginners use uv, unittest, and pytest-watcher; hit NameError, AttributeError, TypeError (unexpected keywords / missing args), SyntaxError (non-default after default), and AssertionError; learn default parameters, keyword calls, nested if / Logical Negation (NOT) / Logical Conjunction (AND), and assertTrue/assertFalse until only that one row of the 16-row table moves the elevator.
+  :keywords: Jacob Itegboje, Python elevator controller project, TDD Red Green Refactor, truth table to code, unittest assertTrue assertFalse, uv package manager, pytest-watcher, number_pushed, doors_closed, above_weight, emergency, default parameters, keyword arguments, SyntaxError parameter without a default, TypeError unexpected keyword argument, NameError src not defined, AttributeError, Logical Negation NOT, Logical Conjunction AND, if statements, failsafe logic, pumping python
 
 .. include:: ../../links.rst
 
@@ -89,7 +89,7 @@ start the project
 
       * I open ``makePythonTdd.ps1``
 
-* I name this project ``controller``
+* I name this project ``elevator``
 
   .. tab-set::
     :sync-group: os
@@ -97,14 +97,14 @@ start the project
     .. tab-item:: WSL/Linux/Mac
       :sync: unix
 
-      * I change the name of the project to ``controller`` in ``makePythonTdd.sh``
+      * I change the name of the project to ``elevator`` in ``makePythonTdd.sh``
 
         .. literalinclude:: ../../code/elevator/make_tdd/makePythonTddElevator.sh
           :language: python
           :linenos:
           :emphasize-lines: 2-3, 5, 12, 20
 
-      * I run ``makePythonTdd.sh`` in the terminal_ to make the ``controller`` project
+      * I run ``makePythonTdd.sh`` in the terminal_ to make the ``elevator`` project
 
         .. code-block:: python
           :emphasize-lines: 1
@@ -114,14 +114,14 @@ start the project
     .. tab-item:: no WSL
       :sync: no_wsl
 
-      * I change the name of the project to ``controller`` in ``makePythonTdd.ps1``
+      * I change the name of the project to ``elevator`` in ``makePythonTdd.ps1``
 
         .. literalinclude:: ../../code/elevator/make_tdd/makePythonTddElevator.ps1
           :language: Powershell
           :linenos:
           :emphasize-lines: 1-2, 4, 11, 19
 
-      * I run ``makePythonTdd.ps1`` in the terminal_ to make the ``controller`` project
+      * I run ``makePythonTdd.ps1`` in the terminal_ to make the ``elevator`` project
 
         .. code-block:: python
           :emphasize-lines: 1
@@ -165,7 +165,7 @@ start the project
 
   the test passes.
 
-* I open a new terminal_ then `change directory`_ to ``controller``
+* I open a new terminal_ then `change directory`_ to ``elevator``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2085,7 +2085,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
   floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
-  :green:`pushed`    :green:`closed`  :green:`above` :green:`pushed`    :red:`False`
+  :green:`pushed`    :green:`closed`  :green:`above` :red:`NOT pushed`  :red:`False`
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
@@ -3510,7 +3510,7 @@ floor button       doors            weight limit   emergency button   output
                     number_pushed=False,
                     doors_closed=False,
                     above_weight=False,
-                    emergency=True,
+                    emergency=False,
                 )
             )
 
@@ -3523,7 +3523,7 @@ floor button       doors            weight limit   emergency button   output
 
     AssertionError: False is not true
 
-  because the ``controller`` :ref:`function<what is a function?>` returned :red:`False` and this :ref:`assertion<what is a function?>` expects :green:`True`.
+  because the ``controller`` :ref:`function<what is a function?>` returned :red:`False` and this :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
 ----
 
@@ -3553,7 +3553,7 @@ I change :ref:`assertTrue<another way to test if something is grouped as True>` 
                   number_pushed=False,
                   doors_closed=False,
                   above_weight=False,
-                  emergency=True,
+                  emergency=False,
               )
           )
 
@@ -3611,6 +3611,14 @@ the test passes.
                     doors_closed=False,
                     above_weight=False,
                     emergency=True,
+                )
+            )
+            self.assertFalse(
+                src.elevator.controller(
+                    number_pushed=False,
+                    doors_closed=False,
+                    above_weight=False,
+                    emergency=False,
                 )
             )
 
