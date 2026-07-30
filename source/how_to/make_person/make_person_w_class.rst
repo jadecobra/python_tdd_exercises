@@ -353,7 +353,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 
     TypeError:
         Person.__init__() got
-        an unexpected keyword argument 'year_of_birth'
+        an unexpected keyword argument 'sex'
 
   - because this happens when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
 
@@ -373,12 +373,12 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
               year_of_birth=1996,
           )
 
-    which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``year_of_birth``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+    which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``sex``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
   - Still the same as making the :ref:`factory function<test person factory>`.
 
-* I add ``year_of_birth`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ method<the constructor method>`
+* I add ``sex`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ method<the constructor method>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -393,7 +393,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
         # def __init__(self, first_name, last_name):
         def __init__(
             self, first_name, last_name,
-            year_of_birth,
+            sex,
         ):
             return None
 
@@ -405,7 +405,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
   .. code-block:: python
 
     TypeError: Person.__init__() got
-               an unexpected keyword argument 'sex'
+               an unexpected keyword argument 'year_of_birth'
 
   - because this happens when ``joe = Person(first_name=first_name, last_name=last_name, sex=sex, year_of_birth=year_of_birth)`` runs
 
@@ -425,12 +425,12 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
               year_of_birth=1996,  # not in definition
           )
 
-    which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``sex``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+    which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``year_of_birth``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
   - Same as with the :ref:`factory function<test person factory>`.
 
-* I add ``sex`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ constructor method<the constructor method>`
+* I add ``year_of_birth`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ constructor method<the constructor method>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -445,8 +445,8 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
         # def __init__(self, first_name, last_name):
         def __init__(
             self, first_name, last_name,
-            # year_of_birth,
-            year_of_birth, sex
+            # sex,
+            sex, year_of_birth
         ):
             return None
 
@@ -472,7 +472,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 
         def __init__(
             self, first_name, last_name,
-            year_of_birth, sex
+            sex, year_of_birth,
         ):
             return None
 
@@ -558,7 +558,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
         def __init__(
             self, first_name, last_name,
-            year_of_birth, sex
+            sex, year_of_birth,
         ):
             self.first_name
             return None
@@ -578,7 +578,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
         def __init__(
             self, first_name, last_name,
-            year_of_birth, sex
+            sex, year_of_birth,
         ):
             # self.first_name
             self.first_name = first_name
@@ -605,7 +605,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
         def __init__(
             self, first_name, last_name,
-            year_of_birth, sex
+            sex, year_of_birth,
         ):
             # self.first_name
             self.first_name = first_name
@@ -632,7 +632,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
         def __init__(
             self, first_name, last_name,
-            year_of_birth, sex
+            sex, year_of_birth,
         ):
             # self.first_name
             self.first_name = first_name
@@ -727,7 +727,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
         def __init__(
             self, first_name, last_name,
-            year_of_birth, sex
+            sex, year_of_birth,
         ):
             self.first_name = first_name
             self.last_name = last_name
@@ -781,7 +781,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
         def __init__(
             self, first_name, last_name,
-            year_of_birth, sex
+            sex, year_of_birth,
         ):
             self.first_name = first_name
             self.last_name = last_name
