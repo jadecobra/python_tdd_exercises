@@ -240,7 +240,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
           sex=sex,
           year_of_birth=year_of_birth,
       )
-          Person.__init__(
+      └── Person.__init__(
               first_name='joe',
               last_name='blow',
               sex='M',
@@ -664,16 +664,16 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
           sex=sex,
           year_of_birth=year_of_birth,
       )
-          Person.__init__(
+      └── Person.__init__(
               self,
               first_name='joe',
               last_name='blow',
               sex='M',
               year_of_birth=1996,
           )
-              self.first_name = 'joe'
-              self.last_name = 'blow'
-              self.year_of_birth = 1996
+          ├── self.first_name = 'joe'
+          ├── self.last_name = 'blow'
+          └── self.year_of_birth = 1996
 
     ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
 
@@ -1099,16 +1099,16 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
           sex=sex,
           year_of_birth=year_of_birth,
       )
-          Person.__init__(
+      └── Person.__init__(
               self,
               first_name='joe',
               last_name='blow',
               sex='M',
               year_of_birth=1996,
           )
-              self.first_name = 'joe'
-              self.last_name = 'blow'
-              self.year_of_birth = 1996
+          ├── self.first_name = 'joe'
+          ├── self.last_name = 'blow'
+          └── self.year_of_birth = 1996
 
     ``self`` is the :ref:`instance of the class<how to test if something is an instance>` aka ``joe``.
 
@@ -1440,16 +1440,16 @@ what is the staticmethod decorator?
           sex=sex,
           year_of_birth=year_of_birth,
       )
-          Person.__init__(
+      └── Person.__init__(
               self,
               first_name='joe',
               last_name='blow',
               sex='M',
               year_of_birth=1996,
           )
-              self.first_name = 'joe'
-              self.last_name = 'blow'
-              self.year_of_birth = 1996
+          ├── self.first_name = 'joe'
+          ├── self.last_name = 'blow'
+          └── self.year_of_birth = 1996
 
     ``self`` is the :ref:`instance of the class<how to test if something is an instance>` aka ``joe``.
 
@@ -1643,16 +1643,16 @@ what is the staticmethod decorator?
           sex=sex,
           year_of_birth=year_of_birth,
       )
-          Person.__init__(
+      └── Person.__init__(
               self,
               first_name='mary',
               last_name='public',
               sex='F',
               year_of_birth=2000,
           )
-              self.first_name = 'mary'
-              self.last_name = 'public'
-              self.year_of_birth = 2000
+          ├── self.first_name = 'mary'
+          ├── self.last_name = 'public'
+          └── self.year_of_birth = 2000
 
     ``self`` is the :ref:`instance of the class<how to test if something is an instance>` aka ``mary``.
 
