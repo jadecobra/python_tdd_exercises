@@ -15,7 +15,7 @@ makePythonTdd Elevator
   .. tab-item:: WSL/Linux/Mac
     :sync: unix
 
-    the code in ``makePythonTdd.sh`` from :ref:`Elevator`
+    The code in ``makePythonTdd.sh`` from :ref:`Elevator`
 
     .. literalinclude:: elevator/make_tdd/makePythonTddElevator.sh
       :language: python
@@ -25,7 +25,7 @@ makePythonTdd Elevator
   .. tab-item:: no WSL
     :sync: no_wsl
 
-    the code in ``makePythonTdd.ps1`` from :ref:`Elevator`
+    The code in ``makePythonTdd.ps1`` from :ref:`Elevator`
 
     .. literalinclude:: elevator/make_tdd/makePythonTddElevator.ps1
       :language: Powershell
@@ -38,7 +38,7 @@ makePythonTdd Elevator
 Elevator: tests
 *********************************************************************************
 
-the code in ``elevator/tests/test_elevator.py`` from :ref:`Elevator`
+The code in ``elevator/tests/test_elevator.py`` from :ref:`Elevator`
 
 .. literalinclude:: elevator/test_elevator.py
   :language: python
@@ -94,7 +94,7 @@ the code in ``elevator/tests/test_elevator.py`` from :ref:`Elevator`
 Elevator: solution
 *********************************************************************************
 
-the code in ``elevator/src/elevator.py`` from :ref:`Elevator`
+The code in ``elevator/src/elevator.py`` from :ref:`Elevator`
 
 .. literalinclude:: elevator/elevator.py
   :language: python

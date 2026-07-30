@@ -15,7 +15,7 @@ makePythonTdd TrafficLight
   .. tab-item:: WSL/Linux/Mac
     :sync: unix
 
-    the code in ``makePythonTdd.sh`` from :ref:`Traffic Light`
+    The code in ``makePythonTdd.sh`` from :ref:`Traffic Light`
 
       .. literalinclude:: traffic_light/make_tdd/makePythonTddTrafficLight.sh
         :language: python
@@ -25,7 +25,7 @@ makePythonTdd TrafficLight
   .. tab-item:: no WSL
     :sync: no_wsl
 
-    the code in ``makePythonTdd.ps1`` from :ref:`Traffic Light`
+    The code in ``makePythonTdd.ps1`` from :ref:`Traffic Light`
 
       .. literalinclude:: traffic_light/make_tdd/makePythonTddTrafficLight.ps1
         :language: Powershell
@@ -38,7 +38,7 @@ makePythonTdd TrafficLight
 Traffic Light: tests
 *********************************************************************************
 
-the code in ``traffic_light/tests/test_traffic_light.py`` from :ref:`Traffic Light`
+The code in ``traffic_light/tests/test_traffic_light.py`` from :ref:`Traffic Light`
 
 .. literalinclude:: traffic_light/test_traffic_light.py
   :language: python
@@ -50,7 +50,7 @@ the code in ``traffic_light/tests/test_traffic_light.py`` from :ref:`Traffic Lig
 Traffic Light: solution
 *********************************************************************************
 
-the code in ``traffic_light/src/traffic_light.py`` from :ref:`Traffic Light`
+The code in ``traffic_light/src/traffic_light.py`` from :ref:`Traffic Light`
 
 .. literalinclude:: traffic_light/traffic_light.py
   :language: python

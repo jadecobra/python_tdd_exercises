@@ -6,7 +6,7 @@ functions: tests and solutions
 what is a function?: tests
 *********************************************************************************
 
-the code in ``functions/tests/test_functions.py`` from :ref:`what is a function?`
+The code in ``functions/tests/test_functions.py`` from :ref:`what is a function?`
 
 .. literalinclude:: functions/tests/test_functions_what_is_a_function.py
   :language: python
@@ -18,7 +18,7 @@ the code in ``functions/tests/test_functions.py`` from :ref:`what is a function?
 functions that take input: tests
 *********************************************************************************
 
-the code in ``functions/tests/test_functions.py`` from :ref:`functions that take input`
+The code in ``functions/tests/test_functions.py`` from :ref:`functions that take input`
 
 .. literalinclude:: functions/tests/test_functions_w_input.py
   :language: python
@@ -38,7 +38,7 @@ separate and equal functions tests
 
 ----
 
-the code in ``functions/tests/test_functions.py`` from :ref:`separate and equal functions`
+The code in ``functions/tests/test_functions.py`` from :ref:`separate and equal functions`
 
 .. literalinclude:: functions/tests/test_functions_w_separation.py
   :language: python
@@ -52,7 +52,7 @@ separate and equal functions solutions
 
 ----
 
-the code in ``functions/src/functions.py`` from :ref:`separate and equal functions`
+The code in ``functions/src/functions.py`` from :ref:`separate and equal functions`
 
 .. literalinclude:: functions/solutions/functions_w_separation.py
   :language: python
@@ -64,7 +64,7 @@ the code in ``functions/src/functions.py`` from :ref:`separate and equal functio
 test functions with unittest: tests
 *********************************************************************************
 
-the code in ``functions/tests/test_functions.py`` from :ref:`test functions with unittest`
+The code in ``functions/tests/test_functions.py`` from :ref:`test functions with unittest`
 
 .. literalinclude:: functions/tests/test_functions_w_unittest.py
   :language: python
@@ -77,7 +77,7 @@ the code in ``functions/tests/test_functions.py`` from :ref:`test functions with
 test functions with assertIsNotNone and assertIsNone: tests
 *********************************************************************************
 
-the code in ``functions/tests/test_functions.py`` from :ref:`test functions with assertIsNotNone and assertIsNone`
+The code in ``functions/tests/test_functions.py`` from :ref:`test functions with assertIsNotNone and assertIsNone`
 
 .. literalinclude:: functions/test_functions_w_none.py
   :language: python

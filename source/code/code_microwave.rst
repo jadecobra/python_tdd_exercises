@@ -15,7 +15,7 @@ makePythonTdd Microwave
   .. tab-item:: WSL/Linux/Mac
     :sync: unix
 
-    the code in ``makePythonTdd.sh`` from :ref:`Microwave`
+    The code in ``makePythonTdd.sh`` from :ref:`Microwave`
 
       .. literalinclude:: microwave/make_tdd/makePythonTddMicrowave.sh
         :language: python
@@ -25,7 +25,7 @@ makePythonTdd Microwave
   .. tab-item:: no WSL
     :sync: no_wsl
 
-    the code in ``makePythonTdd.ps1`` from :ref:`Microwave`
+    The code in ``makePythonTdd.ps1`` from :ref:`Microwave`
 
       .. literalinclude:: microwave/make_tdd/makePythonTddMicrowave.ps1
         :language: Powershell
@@ -38,7 +38,7 @@ makePythonTdd Microwave
 Microwave: tests
 *********************************************************************************
 
-the code in ``microwave/tests/test_microwave.py`` from :ref:`Microwave`
+The code in ``microwave/tests/test_microwave.py`` from :ref:`Microwave`
 
 .. literalinclude:: microwave/test_microwave.py
   :language: python
@@ -50,7 +50,7 @@ the code in ``microwave/tests/test_microwave.py`` from :ref:`Microwave`
 Microwave: solution
 *********************************************************************************
 
-the code in ``microwave/src/microwave.py`` from :ref:`Microwave`
+The code in ``microwave/src/microwave.py`` from :ref:`Microwave`
 
 .. literalinclude:: microwave/microwave.py
   :language: python

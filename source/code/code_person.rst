@@ -7,7 +7,7 @@ how to make a person: tests and solution
 how to make a person with strings: tests
 *********************************************************************************
 
-* the code in ``person/tests/test_person.py`` from :ref:`how to make a person with strings`
+* The code in ``person/tests/test_person.py`` from :ref:`how to make a person with strings`
 
   .. literalinclude:: person/tests/test_person_w_strings.py
     :language: python
@@ -25,7 +25,7 @@ how to make a person with f-strings: tests
 
 ----
 
-the code in ``person/tests/test_person.py`` from :ref:`how to make a person with f-strings`
+The code in ``person/tests/test_person.py`` from :ref:`how to make a person with f-strings`
 
 .. literalinclude:: person/tests/test_person_w_fstrings.py
   :language: python
@@ -39,7 +39,7 @@ how to make a person with f-strings: solutions
 
 ----
 
-the code in ``person/src/person.py`` from :ref:`how to make a person with f-strings`
+The code in ``person/src/person.py`` from :ref:`how to make a person with f-strings`
 
 .. literalinclude:: person/solutions/person_w_fstrings.py
   :language: python
@@ -57,7 +57,7 @@ how to make a person with a class: tests
 
 ----
 
-the code in ``person/tests/test_person.py`` from :ref:`how to make a person with a class`
+The code in ``person/tests/test_person.py`` from :ref:`how to make a person with a class`
 
 .. literalinclude:: person/tests/test_person_w_class.py
   :language: python
@@ -71,7 +71,7 @@ how to make a person with a class: solutions
 
 ----
 
-the code in ``person/src/person.py`` from :ref:`how to make a person with a class`
+The code in ``person/src/person.py`` from :ref:`how to make a person with a class`
 
 .. literalinclude:: person/solutions/person_w_class.py
   :language: python
@@ -83,7 +83,7 @@ the code in ``person/src/person.py`` from :ref:`how to make a person with a clas
 test person with unittest: tests
 *********************************************************************************
 
-the code in ``person/tests/test_person.py`` from :ref:`test person with unittest`
+The code in ``person/tests/test_person.py`` from :ref:`test person with unittest`
 
 .. literalinclude:: person/tests/test_person_w_unittest.py
   :language: python
@@ -101,7 +101,7 @@ test person with datetime: tests
 
 ----
 
-the code in ``person/tests/test_person.py`` from :ref:`test person with datetime`
+The code in ``person/tests/test_person.py`` from :ref:`test person with datetime`
 
 .. literalinclude:: person/tests/test_person_w_datetime.py
   :language: python
@@ -115,7 +115,7 @@ test person with datetime: solutions
 
 ----
 
-the code in ``person/src/person.py`` from :ref:`test person with datetime`
+The code in ``person/src/person.py`` from :ref:`test person with datetime`
 
 .. literalinclude:: person/solutions/person_w_datetime.py
   :language: python
@@ -133,7 +133,7 @@ how to make a person with conditions: tests
 
 ----
 
-the code in ``person/tests/test_person.py`` from :ref:`how to make a person with conditions`
+The code in ``person/tests/test_person.py`` from :ref:`how to make a person with conditions`
 
 .. literalinclude:: person/tests/test_person_w_conditions.py
   :language: python
@@ -147,7 +147,7 @@ how to make a person with conditions: solutions
 
 ----
 
-the code in ``person/src/person.py`` from :ref:`how to make a person with conditions`
+The code in ``person/src/person.py`` from :ref:`how to make a person with conditions`
 
 .. literalinclude:: person/solutions/person_w_conditions.py
   :language: python

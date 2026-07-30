@@ -15,7 +15,7 @@ makePythonTdd Car
   .. tab-item:: WSL/Linux/Mac
     :sync: unix
 
-    the code in ``makePythonTdd.sh`` from :ref:`Car`
+    The code in ``makePythonTdd.sh`` from :ref:`Car`
 
     .. literalinclude:: car/make_tdd/makePythonTddCar.sh
       :language: python
@@ -25,7 +25,7 @@ makePythonTdd Car
   .. tab-item:: no WSL
     :sync: no_wsl
 
-    the code in ``makePythonTdd.ps1`` from :ref:`Car`
+    The code in ``makePythonTdd.ps1`` from :ref:`Car`
 
     .. literalinclude:: car/make_tdd/makePythonTddCar.ps1
       :language: Powershell
@@ -38,11 +38,55 @@ makePythonTdd Car
 Car: tests
 *********************************************************************************
 
-the code in ``car/tests/test_car.py`` from :ref:`Car`
+The code in ``car/tests/test_car.py`` from :ref:`Car`
 
 .. literalinclude:: car/test_car.py
   :language: python
   :linenos:
+  :caption: car/tests/test_car.py
+  :lines: 1-23
+
+.. literalinclude:: car/test_car.py
+  :language: python
+  :lineno-start: 25
+  :caption: car/tests/test_car.py
+  :lines: 25-41
+
+.. literalinclude:: car/test_car.py
+  :language: python
+  :lineno-start: 43
+  :caption: car/tests/test_car.py
+  :lines: 43-59
+
+.. literalinclude:: car/test_car.py
+  :language: python
+  :lineno-start: 61
+  :caption: car/tests/test_car.py
+  :lines: 61-77
+
+.. literalinclude:: car/test_car.py
+  :language: python
+  :lineno-start: 79
+  :caption: car/tests/test_car.py
+  :lines: 79-95
+
+.. literalinclude:: car/test_car.py
+  :language: python
+  :lineno-start: 97
+  :caption: car/tests/test_car.py
+  :lines: 97-113
+
+.. literalinclude:: car/test_car.py
+  :language: python
+  :lineno-start: 115
+  :caption: car/tests/test_car.py
+  :lines: 115-131
+
+.. literalinclude:: car/test_car.py
+  :language: python
+  :lineno-start: 133
+  :caption: car/tests/test_car.py
+  :lines: 133-
 
 ----
 
@@ -50,8 +94,9 @@ the code in ``car/tests/test_car.py`` from :ref:`Car`
 Car: solution
 *********************************************************************************
 
-the code in ``car/src/car.py`` from :ref:`Car`
+The code in ``car/src/car.py`` from :ref:`Car`
 
 .. literalinclude:: car/car.py
   :language: python
   :linenos:
+  :caption: car/src/car.py
