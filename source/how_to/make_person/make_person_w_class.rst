@@ -190,7 +190,7 @@ because there is no definition for ``Person`` in ``test_person.py``.
           sex=sex,
           year_of_birth=year_of_birth,
       )
-          Person(
+      └── Person(
               first_name=first_name,
               last_name=last_name,
               sex=sex,
@@ -316,7 +316,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
           sex=sex,
           year_of_birth=year_of_birth,
       )
-          Person.__init__(
+      └── Person.__init__(
               self,
               first_name='joe',
               last_name='blow',    # not in definition
@@ -365,7 +365,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
           sex=sex,
           year_of_birth=year_of_birth,
       )
-          Person.__init__(
+      └── Person.__init__(
               self,
               first_name='joe',
               last_name='blow',
@@ -417,7 +417,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
           sex=sex,
           year_of_birth=year_of_birth,
       )
-          Person.__init__(
+      └── Person.__init__(
               self,
               first_name='joe',
               last_name='blow',
