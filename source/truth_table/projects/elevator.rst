@@ -3919,6 +3919,12 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
               │       return False
               └── return True
 
+----
+
+*********************************************************************************
+refactor controller
+*********************************************************************************
+
 * All the :ref:`if statements` in the ``controller`` :ref:`function<what is a function?>` return :red:`False` which means I can use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put them together
 
   .. code-block:: python
@@ -3940,82 +3946,40 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
 
   the tests are still green and this is a long statement.
 
-* I rewrite the statement in terms of :ref:`NOT<test_logical_negation>` because it happens two times
+* I put the two statements that have ``not`` together
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5-19
+    :lineno-start: 5
+    :emphasize-lines: 3
 
-    def controller(
-            doors_closed, number_pushed,
-            above_weight=False, emergency=False,
-        ):
-        # if (
-        #     emergency
-        #     or above_weight
-        #     or not doors_closed
-        #     or not number_pushed
-        # ):
         if (
-            emergency
+            not number_pushed
+            or not doors_closed
             or above_weight
-            or (
-                (not doors_closed)
-                (not and)
-                (not number_pushed)
-            )
+            or emergency
         ):
-            return 'NOT MOVE'
+            return False
+        return True
 
-        return 'MOVE'
-
-  the terminal_ is my friend, and shows SyntaxError_
-
-  .. code-block:: python
-
-    SyntaxError: invalid syntax
-
-  because I cannot :ref:`negate<test_logical_negation>` :ref:`and<test_logical_conjunction>`, this way
+  still green.
 
 * I "factor" out the :ref:`nots<test_logical_negation>`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 11-28
+    :emphasize-lines: 2-4
 
-    def controller(
-            doors_closed, number_pushed,
-            above_weight=False, emergency=False,
-        ):
-        # if (
-        #     emergency
-        #     or above_weight
-        #     or not doors_closed
-        #     or not number_pushed
-        # ):
-        # if (
-        #     emergency
-        #     or above_weight
-        #     or (
-        #         (not doors_closed)
-        #         (not and)
-        #         (not number_pushed)
-        #     )
-        # ):
         if (
-            emergency
+            # not number_pushed
+            # or not doors_closed
+            not (number_pushed and doors_closed)
             or above_weight
-            or not (
-                doors_closed
-                and
-                number_pushed
-            )
+            or emergency
         ):
-            return 'NOT MOVE'
+            return False
+        return True
 
-        return 'MOVE'
-
-  the tests are green again
+  green.
 
 * I remove the commented lines
 
@@ -4023,23 +3987,25 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
     :linenos:
 
     def controller(
-            doors_closed, number_pushed,
-            above_weight=False, emergency=False,
-        ):
+        number_pushed, doors_closed=False,
+        above_weight=False, emergency=False,
+    ):
         if (
-            emergency
+            not (number_pushed and doors_closed)
             or above_weight
-            or not (
-                doors_closed
-                and
-                number_pushed
-            )
+            or emergency
         ):
-            return 'NOT MOVE'
-
-        return 'MOVE'
+            return False
+        return True
 
   Which do you like better? One :ref:`if statement<if statements>` to bind them all or many simple statements?
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'refactor controller'
 
 *********************************************************************************
 close the project
