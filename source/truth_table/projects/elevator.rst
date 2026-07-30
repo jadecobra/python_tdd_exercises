@@ -23,49 +23,49 @@ These are the tests I have at the end of the chapter
 .. literalinclude:: ../../code/elevator/test_elevator.py
   :language: python
   :linenos:
-  :caption: truth_table/tests/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :lines: 1-23
 
 .. literalinclude:: ../../code/elevator/test_elevator.py
   :language: python
   :lineno-start: 25
-  :caption: truth_table/tests/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :lines: 25-41
 
 .. literalinclude:: ../../code/elevator/test_elevator.py
   :language: python
   :lineno-start: 43
-  :caption: truth_table/tests/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :lines: 43-59
 
 .. literalinclude:: ../../code/elevator/test_elevator.py
   :language: python
   :lineno-start: 61
-  :caption: truth_table/tests/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :lines: 61-77
 
 .. literalinclude:: ../../code/elevator/test_elevator.py
   :language: python
   :lineno-start: 79
-  :caption: truth_table/tests/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :lines: 79-95
 
 .. literalinclude:: ../../code/elevator/test_elevator.py
   :language: python
   :lineno-start: 97
-  :caption: truth_table/tests/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :lines: 97-113
 
 .. literalinclude:: ../../code/elevator/test_elevator.py
   :language: python
   :lineno-start: 115
-  :caption: truth_table/tests/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :lines: 115-131
 
 .. literalinclude:: ../../code/elevator/test_elevator.py
   :language: python
   :lineno-start: 133
-  :caption: truth_table/tests/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :lines: 133-
 
 ----
@@ -4159,7 +4159,7 @@ what is next?
 * :ref:`I know how to make a person with conditions<how to make a person with conditions>`.
 * :ref:`I know how Python groups objects into False or True<what are booleans?>`
 * :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`
-* :ref:`how to write programs that make decisions<truth table>`
+* :ref:`I know how to write programs that make decisions<truth table>`
 
 :ref:`Would you like to test making a Microwave?<Microwave>`
 

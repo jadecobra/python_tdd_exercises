@@ -4586,7 +4586,7 @@ what is next?
 * :ref:`I know how to make a person with conditions<how to make a person with conditions>`.
 * :ref:`I know how Python groups objects into False or True<what are booleans?>`
 * :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`
-* :ref:`how to write programs that make decisions<truth table>`
+* :ref:`I know how to write programs that make decisions<truth table>`
 
 :ref:`Would you like to test making a Car?<Car>`
 
