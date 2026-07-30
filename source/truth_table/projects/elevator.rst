@@ -24,6 +24,49 @@ These are the tests I have at the end of the chapter
   :language: python
   :linenos:
   :caption: truth_table/tests/test_elevator.py
+  :lines: 1-23
+
+.. literalinclude:: ../../code/elevator/test_elevator.py
+  :language: python
+  :lineno-start: 25
+  :caption: truth_table/tests/test_elevator.py
+  :lines: 25-41
+
+.. literalinclude:: ../../code/elevator/test_elevator.py
+  :language: python
+  :lineno-start: 43
+  :caption: truth_table/tests/test_elevator.py
+  :lines: 43-59
+
+.. literalinclude:: ../../code/elevator/test_elevator.py
+  :language: python
+  :lineno-start: 61
+  :caption: truth_table/tests/test_elevator.py
+  :lines: 61-77
+
+.. literalinclude:: ../../code/elevator/test_elevator.py
+  :language: python
+  :lineno-start: 79
+  :caption: truth_table/tests/test_elevator.py
+  :lines: 79-95
+
+.. literalinclude:: ../../code/elevator/test_elevator.py
+  :language: python
+  :lineno-start: 97
+  :caption: truth_table/tests/test_elevator.py
+  :lines: 97-113
+
+.. literalinclude:: ../../code/elevator/test_elevator.py
+  :language: python
+  :lineno-start: 115
+  :caption: truth_table/tests/test_elevator.py
+  :lines: 115-131
+
+.. literalinclude:: ../../code/elevator/test_elevator.py
+  :language: python
+  :lineno-start: 133
+  :caption: truth_table/tests/test_elevator.py
+  :lines: 133-
 
 ----
 

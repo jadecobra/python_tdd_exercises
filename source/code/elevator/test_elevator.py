@@ -2,173 +2,150 @@ import src.elevator
 import unittest
 
 
-NOT_MOVE = 'NOT MOVE'
-
-
 class TestElevator(unittest.TestCase):
 
-    def test_doors_clear_number_pushed_w_emergency(self):
-        self.assertEqual(
-            src.elevator.elevator(
-                doors_clear=True,
+    def test_emergency_w_above_weight_doors_closed_number_pushed(self):
+        self.assertFalse(
+            src.elevator.controller(
                 number_pushed=True,
-                above_weight_limit=True,
+                doors_closed=True,
+                above_weight=True,
                 emergency=True,
-            ),
-            NOT_MOVE
+            )
         )
-
-        self.assertEqual(
-            src.elevator.elevator(
-                doors_clear=True,
+        self.assertFalse(
+            src.elevator.controller(
                 number_pushed=True,
-                above_weight_limit=True,
+                doors_closed=True,
+                above_weight=True,
                 emergency=False,
-            ),
-            NOT_MOVE
+            )
         )
 
-        self.assertEqual(
-            src.elevator.elevator(
-                doors_clear=True,
+    def test_emergency_w_below_weight_doors_closed_number_pushed(self):
+        self.assertFalse(
+            src.elevator.controller(
                 number_pushed=True,
-                above_weight_limit=False,
+                doors_closed=True,
+                above_weight=False,
                 emergency=True,
-            ),
-            NOT_MOVE
+            )
         )
-
-        self.assertEqual(
-            src.elevator.elevator(
-                doors_clear=True,
+        self.assertTrue(
+            src.elevator.controller(
                 number_pushed=True,
-                above_weight_limit=False,
+                doors_closed=True,
+                above_weight=False,
                 emergency=False,
-            ),
-            'MOVE'
+            )
         )
 
-    def test_doors_clear_number_not_pushed_w_emergency(self):
-        self.assertEqual(
-            src.elevator.elevator(
-                doors_clear=True,
-                number_pushed=False,
-                above_weight_limit=True,
-                emergency=True,
-            ),
-            NOT_MOVE
-        )
-
-        self.assertEqual(
-            src.elevator.elevator(
-                doors_clear=True,
-                number_pushed=False,
-                above_weight_limit=True,
-                emergency=False,
-            ),
-            NOT_MOVE
-        )
-
-        self.assertEqual(
-            src.elevator.elevator(
-                doors_clear=True,
-                number_pushed=False,
-                above_weight_limit=False,
-                emergency=True,
-            ),
-            NOT_MOVE
-        )
-
-        self.assertEqual(
-            src.elevator.elevator(
-                doors_clear=True,
-                number_pushed=False,
-                above_weight_limit=False,
-                emergency=False,
-            ),
-            NOT_MOVE
-        )
-
-    def test_doors_not_clear_number_pushed_w_emergency(self):
-        self.assertEqual(
-            src.elevator.elevator(
-                doors_clear=False,
+    def test_emergency_w_above_weight_doors_open_number_pushed(self):
+        self.assertFalse(
+            src.elevator.controller(
                 number_pushed=True,
-                above_weight_limit=True,
+                doors_closed=False,
+                above_weight=True,
                 emergency=True,
-            ),
-            NOT_MOVE
+            )
         )
-
-        self.assertEqual(
-            src.elevator.elevator(
-                doors_clear=False,
+        self.assertFalse(
+            src.elevator.controller(
                 number_pushed=True,
-                above_weight_limit=True,
+                doors_closed=False,
+                above_weight=True,
                 emergency=False,
-            ),
-            NOT_MOVE
+            )
         )
 
-        self.assertEqual(
-            src.elevator.elevator(
-                doors_clear=False,
+    def test_emergency_w_below_weight_doors_open_number_pushed(self):
+        self.assertFalse(
+            src.elevator.controller(
                 number_pushed=True,
-                above_weight_limit=False,
+                doors_closed=False,
+                above_weight=False,
                 emergency=True,
-            ),
-            NOT_MOVE
+            )
         )
-
-        self.assertEqual(
-            src.elevator.elevator(
-                doors_clear=False,
+        self.assertFalse(
+            src.elevator.controller(
                 number_pushed=True,
-                above_weight_limit=False,
+                doors_closed=False,
+                above_weight=False,
                 emergency=False,
-            ),
-            NOT_MOVE
+            )
         )
 
-    def test_doors_not_clear_number_not_pushed_w_emergency(self):
-        self.assertEqual(
-            src.elevator.elevator(
-                doors_clear=False,
+    def test_emergency_w_above_weight_doors_closed_number_not_pushed(self):
+        self.assertFalse(
+            src.elevator.controller(
                 number_pushed=False,
-                above_weight_limit=True,
+                doors_closed=True,
+                above_weight=True,
                 emergency=True,
-            ),
-            NOT_MOVE
+            )
         )
-
-        self.assertEqual(
-            src.elevator.elevator(
-                doors_clear=False,
+        self.assertFalse(
+            src.elevator.controller(
                 number_pushed=False,
-                above_weight_limit=True,
+                doors_closed=True,
+                above_weight=True,
                 emergency=False,
-            ),
-            NOT_MOVE
+            )
         )
 
-        self.assertEqual(
-            src.elevator.elevator(
-                doors_clear=False,
+    def test_emergency_w_below_weight_doors_closed_number_not_pushed(self):
+        self.assertFalse(
+            src.elevator.controller(
                 number_pushed=False,
-                above_weight_limit=False,
+                doors_closed=True,
+                above_weight=False,
                 emergency=True,
-            ),
-            NOT_MOVE
+            )
+        )
+        self.assertFalse(
+            src.elevator.controller(
+                number_pushed=False,
+                doors_closed=True,
+                above_weight=False,
+                emergency=False,
+            )
         )
 
-        self.assertEqual(
-            src.elevator.elevator(
-                doors_clear=False,
-                above_weight_limit=False,
+    def test_emergency_w_above_weight_doors_open_number_not_pushed(self):
+        self.assertFalse(
+            src.elevator.controller(
                 number_pushed=False,
+                doors_closed=False,
+                above_weight=True,
+                emergency=True,
+            )
+        )
+        self.assertFalse(
+            src.elevator.controller(
+                number_pushed=False,
+                doors_closed=False,
+                above_weight=True,
                 emergency=False,
-            ),
-            NOT_MOVE
+            )
+        )
+
+    def test_emergency_w_below_weight_doors_open_number_not_pushed(self):
+        self.assertFalse(
+            src.elevator.controller(
+                number_pushed=False,
+                doors_closed=False,
+                above_weight=False,
+                emergency=True,
+            )
+        )
+        self.assertFalse(
+            src.elevator.controller(
+                number_pushed=False,
+                doors_closed=False,
+                above_weight=False,
+                emergency=True,
+            )
         )
 
 
@@ -177,3 +154,4 @@ class TestElevator(unittest.TestCase):
 # NameError
 # AttributeError
 # TypeError
+# SyntaxError

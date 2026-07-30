@@ -1,32 +1,11 @@
-def elevator(
-        doors_clear, number_pushed,
-        above_weight_limit=False, emergency=False,
-    ):
+def controller(
+    number_pushed, doors_closed=False,
+    above_weight=False, emergency=False,
+):
     if (
-        emergency
-        or above_weight_limit
-        or not (
-            doors_clear
-            and
-            number_pushed
-        )
+        not (number_pushed and doors_closed)
+        or above_weight
+        or emergency
     ):
-        return 'NOT MOVE'
-
-    return 'MOVE'
-
-    not_move = 'NOT MOVE'
-
-    if emergency:
-        return not_move
-
-    if above_weight_limit:
-        return not_move
-
-    if not doors_clear:
-        return not_move
-
-    if not number_pushed:
-        return not_move
-
-    return 'MOVE'
+        return False
+    return True
