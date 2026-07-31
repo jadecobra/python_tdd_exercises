@@ -1231,7 +1231,7 @@ test_not_set_timer_closed_door_not_pressed_start
 ----
 
 *********************************************************************************
-test_set_timer_closed_door_pressed_start
+test_set_timer_open_door_pressed_start
 *********************************************************************************
 
 =================================================================================
@@ -1241,7 +1241,7 @@ test_set_timer_closed_door_pressed_start
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add ``set_timer`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_closed_door_pressed_start`, for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :green:`pressed`
+* I add ``set_timer`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_open_door_pressed_start`, for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :green:`pressed`
 
   =============== ==============  ==================  =============
   door            timer           start button        output
@@ -1253,7 +1253,7 @@ test_set_timer_closed_door_pressed_start
     :lineno-start: 7
     :emphasize-lines: 5
 
-        def test_closed_door_pressed_start(self):
+        def test_open_door_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=True,
@@ -1262,7 +1262,7 @@ test_set_timer_closed_door_pressed_start
                 )
             )
 
-        def test_closed_door_not_pressed_start(self):
+        def test_open_door_not_pressed_start(self):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1312,7 +1312,7 @@ the test passes.
 
 ----
 
-* I change the name of the test from :ref:`test_closed_door_pressed_start` to :ref:`test_set_timer_closed_door_pressed_start`
+* I change the name of the test from :ref:`test_open_door_pressed_start` to :ref:`test_set_timer_open_door_pressed_start`
 
   .. code-block:: python
     :lineno-start: 5
@@ -1320,7 +1320,7 @@ the test passes.
 
     class TestMicrowave(unittest.TestCase):
 
-        def test_set_timer_closed_door_pressed_start(self):
+        def test_set_timer_open_door_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=True,
@@ -1335,16 +1335,16 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_set_timer_closed_door_pressed_start'
+    'add test_set_timer_open_door_pressed_start'
 
 ----
 
 *************************************************************************************
-test_set_timer_closed_door_not_pressed_start
+test_set_timer_open_door_not_pressed_start
 *************************************************************************************
 
 * I go back to the terminal_ where the tests are running
-* I add a value for ``set_timer`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_closed_door_not_pressed_start` for if the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :red:`NOT pressed`
+* I add a value for ``set_timer`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_open_door_not_pressed_start` for if the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :red:`NOT pressed`
 
   =============== ==============  ==================  =============
   door            timer           start button        output
@@ -1356,7 +1356,7 @@ test_set_timer_closed_door_not_pressed_start
     :lineno-start: 16
     :emphasize-lines: 6
 
-        def test_closed_door_not_pressed_start(self):
+        def test_open_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
@@ -1380,13 +1380,13 @@ test_set_timer_closed_door_not_pressed_start
         pressed_start=False
     ) -> False
 
-* I change the name of the test from :ref:`test_closed_door_not_pressed_start` to :ref:`test_set_timer_closed_door_not_pressed_start`
+* I change the name of the test from :ref:`test_open_door_not_pressed_start` to :ref:`test_set_timer_open_door_not_pressed_start`
 
   .. code-block:: python
     :lineno-start: 7
     :emphasize-lines: 10
 
-        def test_set_timer_closed_door_pressed_start(self):
+        def test_set_timer_open_door_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=True,
@@ -1395,7 +1395,7 @@ test_set_timer_closed_door_not_pressed_start
                 )
             )
 
-        def test_set_timer_closed_door_not_pressed_start(self):
+        def test_set_timer_open_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
@@ -1410,12 +1410,12 @@ test_set_timer_closed_door_not_pressed_start
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_set_timer_closed_door_not_pressed_start'
+    'add test_set_timer_open_door_not_pressed_start'
 
 ----
 
 *********************************************************************************
-test_not_set_timer_closed_door_pressed_start
+test_not_set_timer_open_door_pressed_start
 *********************************************************************************
 
 =================================================================================
@@ -1437,7 +1437,7 @@ test_not_set_timer_closed_door_pressed_start
     :lineno-start: 16
     :emphasize-lines: 10-17
 
-        def test_set_timer_closed_door_not_pressed_start(self):
+        def test_set_timer_open_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
@@ -1446,7 +1446,7 @@ test_not_set_timer_closed_door_pressed_start
                 )
             )
 
-        def test_not_set_timer_closed_door_pressed_start(self):
+        def test_not_set_timer_open_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
@@ -1510,12 +1510,12 @@ test_not_set_timer_closed_door_pressed_start
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_not_set_timer_closed_door_pressed_start'
+    'add test_not_set_timer_open_door_pressed_start'
 
 ----
 
 *********************************************************************************
-test_not_set_timer_closed_door_not_pressed_start
+test_not_set_timer_open_door_not_pressed_start
 *********************************************************************************
 
 =================================================================================
@@ -1537,7 +1537,7 @@ test_not_set_timer_closed_door_not_pressed_start
     :lineno-start: 25
     :emphasize-lines: 10-17
 
-        def test_not_set_timer_closed_door_pressed_start(self):
+        def test_not_set_timer_open_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
@@ -1546,7 +1546,7 @@ test_not_set_timer_closed_door_not_pressed_start
                 )
             )
 
-        def test_not_set_timer_closed_door_not_pressed_start(self):
+        def test_not_set_timer_open_door_not_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=True,
@@ -1571,13 +1571,13 @@ test_not_set_timer_closed_door_not_pressed_start
 
 ----
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_set_timer_closed_door_not_pressed_start`
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_set_timer_open_door_not_pressed_start`
 
   .. code-block:: python
     :lineno-start: 34
     :emphasize-lines: 2
 
-        def test_not_set_timer_closed_door_not_pressed_start(self):
+        def test_not_set_timer_open_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
@@ -1615,10 +1615,19 @@ test_not_set_timer_closed_door_not_pressed_start
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_not_set_timer_closed_door_not_pressed_start'
+    'add test_not_set_timer_open_door_not_pressed_start'
 
 ----
 
+
+
+
+
+
+
+----
+BOOM
+----
 
 *********************************************************************************
 test_open_door_timer_not_set
