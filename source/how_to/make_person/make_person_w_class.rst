@@ -1111,7 +1111,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
           last_name=joe.last_name,
           year_of_birth=joe.year_of_birth,
       )
-      └── src.person.say_hello(
+      └── Person.say_hello(
               person=joe,
               first_name='joe',
               last_name='blow',
