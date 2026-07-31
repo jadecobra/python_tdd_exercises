@@ -1006,9 +1006,9 @@ test_above_weight_doors_open_number_not_pushed
     :emphasize-lines: 1-4
 
     def controller(
-        number_pushed, doors_closed=False,
-        above_weight,
-    ):
+            number_pushed, doors_closed=False,
+            above_weight,
+        ):
         if not number_pushed:
             return False
         return doors_closed
@@ -1630,9 +1630,9 @@ test_above_weight_doors_closed_number_pushed
     :emphasize-lines: 5-6
 
     def controller(
-        number_pushed, doors_closed=False,
-        above_weight=False,
-    ):
+            number_pushed, doors_closed=False,
+            above_weight=False,
+        ):
         if not number_pushed:
             return False
         if above_weight:
@@ -1807,14 +1807,14 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
         above_weight=True
     ) -> False
     └── def controller(
-            number_pushed, doors_closed=False,
-            above_weight=False,
-        ):
-        └── if not number_pushed:
-            └── return False
-            if above_weight:
-                return False
-            return doors_closed
+                number_pushed, doors_closed=False,
+                above_weight=False,
+            ):
+            └── if not number_pushed:
+                └── return False
+                if above_weight:
+                    return False
+                return doors_closed
 
   .. code-block:: shell
 
@@ -1823,14 +1823,14 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
         above_weight=False
     ) -> False
     └── def controller(
-            number_pushed, doors_closed=False,
-            above_weight=False,
-        ):
-        └── if not number_pushed:
-            └── return False
-            if above_weight:
-                return False
-            return doors_closed
+                number_pushed, doors_closed=False,
+                above_weight=False,
+            ):
+            └── if not number_pushed:
+                └── return False
+                if above_weight:
+                    return False
+                return doors_closed
 
   .. code-block:: shell
 
@@ -1839,14 +1839,14 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
         above_weight=True
     ) -> False
     └── def controller(
-            number_pushed, doors_closed=False,
-            above_weight=False,
-        ):
-        └── if not number_pushed:
-            └── return False
-            if above_weight:
-                return False
-            return doors_closed
+                number_pushed, doors_closed=False,
+                above_weight=False,
+            ):
+            └── if not number_pushed:
+                └── return False
+                if above_weight:
+                    return False
+                return doors_closed
 
   .. code-block:: shell
 
@@ -1855,14 +1855,14 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
         above_weight=False
     ) -> False
     └── def controller(
-            number_pushed, doors_closed=False,
-            above_weight=False,
-        ):
-        └── if not number_pushed:
-            └── return False
-            if above_weight:
-                return False
-            return doors_closed
+                number_pushed, doors_closed=False,
+                above_weight=False,
+            ):
+            └── if not number_pushed:
+                └── return False
+                if above_weight:
+                    return False
+                return doors_closed
 
 * If the button for a floor is :green:`pushed` it checks if the total weight of the **Elevator** is :green:`above` the weight limit
 
@@ -1875,14 +1875,14 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
           above_weight=True
       ) -> False
       └── def controller(
-              number_pushed, doors_closed=False,
-              above_weight=False,
-          ):
-          ├── if not number_pushed:
-          │       return False
-          └── if above_weight:
-              └── return False
-              return doors_closed
+                  number_pushed, doors_closed=False,
+                  above_weight=False,
+              ):
+              ├── if not number_pushed:
+              │       return False
+              └── if above_weight:
+                  └── return False
+                  return doors_closed
 
     .. code-block:: shell
 
@@ -1891,14 +1891,14 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
           above_weight=True
       ) -> False
       └── def controller(
-              number_pushed, doors_closed=False,
-              above_weight=False,
-          ):
-          ├── if not number_pushed:
-          │       return False
-          └── if above_weight:
-              └── return False
-              return doors_closed
+                  number_pushed, doors_closed=False,
+                  above_weight=False,
+              ):
+              ├── if not number_pushed:
+              │       return False
+              └── if above_weight:
+                  └── return False
+                  return doors_closed
 
   - if the total weight of the **Elevator** is :red:`below` the weight limit, it returns the value of ``doors_closed``
 
@@ -1911,15 +1911,15 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
             above_weight=False
         ) -> False
         └── def controller(
-                number_pushed, doors_closed=False,
-                above_weight=False,
-            ):
-            ├── if not number_pushed:
-            │       return False
-            ├── if above_weight:
-            │       return False
-            └── return doors_closed
-                return False
+                    number_pushed, doors_closed=False,
+                    above_weight=False,
+                ):
+                ├── if not number_pushed:
+                │       return False
+                ├── if above_weight:
+                │       return False
+                └── return doors_closed
+                    return False
 
     - if the button for a floor is :green:`pushed` AND the total weight of the **Elevator** is :red:`below` the weight limit AND the **Elevator** doors are :green:`closed`, it returns :green:`True`
 
@@ -1930,15 +1930,15 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
             above_weight=False
         ) -> True
         └── def controller(
-                number_pushed, doors_closed=False,
-                above_weight=False,
-            ):
-            ├── if not number_pushed:
-            │       return False
-            ├── if above_weight:
-            │       return False
-            └── return doors_closed
-                return True
+                    number_pushed, doors_closed=False,
+                    above_weight=False,
+                ):
+                ├── if not number_pushed:
+                │       return False
+                ├── if above_weight:
+                │       return False
+                └── return doors_closed
+                    return True
 
 The :ref:`truth table` for the **Elevator** is
 
@@ -2039,9 +2039,9 @@ floor button       doors            weight limit   emergency button   output
     :emphasize-lines: 3
 
     def controller(
-        number_pushed, doors_closed=False,
-        above_weight=False, elevator,
-    ):
+            number_pushed, doors_closed=False,
+            above_weight=False, elevator,
+        ):
 
   the terminal_ is my friend, and shows SyntaxError_
 
@@ -2059,9 +2059,9 @@ floor button       doors            weight limit   emergency button   output
     :emphasize-lines: 3
 
     def controller(
-        number_pushed, doors_closed=False,
-        above_weight=False, elevator=False,
-    ):
+            number_pushed, doors_closed=False,
+            above_weight=False, elevator=False,
+        ):
 
   the test passes.
 
@@ -2274,9 +2274,9 @@ floor button       doors            weight limit   emergency button   output
     :emphasize-lines: 9-10
 
     def controller(
-        number_pushed, doors_closed=False,
-        above_weight=False, emergency=False,
-    ):
+            number_pushed, doors_closed=False,
+            above_weight=False, emergency=False,
+        ):
         if not number_pushed:
             return False
         if above_weight:
@@ -2317,9 +2317,9 @@ floor button       doors            weight limit   emergency button   output
     :emphasize-lines: 9-10, 12-15
 
     def controller(
-        number_pushed, doors_closed=False,
-        above_weight=False, emergency=False,
-    ):
+            number_pushed, doors_closed=False,
+            above_weight=False, emergency=False,
+        ):
         if not number_pushed:
             return False
         if above_weight:
@@ -2338,9 +2338,9 @@ floor button       doors            weight limit   emergency button   output
     :linenos:
 
     def controller(
-        number_pushed, doors_closed=False,
-        above_weight=False, emergency=False,
-    ):
+            number_pushed, doors_closed=False,
+            above_weight=False, emergency=False,
+        ):
         if not number_pushed:
             return False
         if above_weight:
@@ -3643,18 +3643,18 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
         above_weight=True, emergency=True,
     ) -> False
     └── def controller(
-            number_pushed, doors_closed=False,
-            above_weight=False, emergency=False,
-        ):
-        └── if not number_pushed:
-            └── return False
-            if above_weight:
-                return False
-            if not doors_closed:
-                return False
-            if emergency:
-                return False
-            return True
+                number_pushed, doors_closed=False,
+                above_weight=False, emergency=False,
+            ):
+            └── if not number_pushed:
+                └── return False
+                if above_weight:
+                    return False
+                if not doors_closed:
+                    return False
+                if emergency:
+                    return False
+                return True
 
   .. code-block:: shell
 
@@ -3663,18 +3663,18 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
         above_weight=True, emergency=False,
     ) -> False
     └── def controller(
-            number_pushed, doors_closed=False,
-            above_weight=False, emergency=False,
-        ):
-        └── if not number_pushed:
-            └── return False
-            if above_weight:
-                return False
-            if not doors_closed:
-                return False
-            if emergency:
-                return False
-            return True
+                number_pushed, doors_closed=False,
+                above_weight=False, emergency=False,
+            ):
+            └── if not number_pushed:
+                └── return False
+                if above_weight:
+                    return False
+                if not doors_closed:
+                    return False
+                if emergency:
+                    return False
+                return True
 
   .. code-block:: shell
 
@@ -3683,18 +3683,18 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
         above_weight=False, emergency=True,
     ) -> False
     └── def controller(
-            number_pushed, doors_closed=False,
-            above_weight=False, emergency=False,
-        ):
-        └── if not number_pushed:
-            └── return False
-            if above_weight:
-                return False
-            if not doors_closed:
-                return False
-            if emergency:
-                return False
-            return True
+                number_pushed, doors_closed=False,
+                above_weight=False, emergency=False,
+            ):
+            └── if not number_pushed:
+                └── return False
+                if above_weight:
+                    return False
+                if not doors_closed:
+                    return False
+                if emergency:
+                    return False
+                return True
 
   .. code-block:: shell
 
@@ -3703,18 +3703,18 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
         above_weight=False, emergency=False,
     ) -> False
     └── def controller(
-            number_pushed, doors_closed=False,
-            above_weight=False, emergency=False,
-        ):
-        └── if not number_pushed:
-            └── return False
-            if above_weight:
-                return False
-            if not doors_closed:
-                return False
-            if emergency:
-                return False
-            return True
+                number_pushed, doors_closed=False,
+                above_weight=False, emergency=False,
+            ):
+            └── if not number_pushed:
+                └── return False
+                if above_weight:
+                    return False
+                if not doors_closed:
+                    return False
+                if emergency:
+                    return False
+                return True
 
   .. code-block:: shell
 
@@ -3723,18 +3723,18 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
         above_weight=True, emergency=True,
     ) -> False
     └── def controller(
-            number_pushed, doors_closed=False,
-            above_weight=False, emergency=False,
-        ):
-        └── if not number_pushed:
-            └── return False
-            if above_weight:
-                return False
-            if not doors_closed:
-                return False
-            if emergency:
-                return False
-            return True
+                number_pushed, doors_closed=False,
+                above_weight=False, emergency=False,
+            ):
+            └── if not number_pushed:
+                └── return False
+                if above_weight:
+                    return False
+                if not doors_closed:
+                    return False
+                if emergency:
+                    return False
+                return True
 
   .. code-block:: shell
 
@@ -3743,18 +3743,18 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
         above_weight=True, emergency=False,
     ) -> False
     └── def controller(
-            number_pushed, doors_closed=False,
-            above_weight=False, emergency=False,
-        ):
-        └── if not number_pushed:
-            └── return False
-            if above_weight:
-                return False
-            if not doors_closed:
-                return False
-            if emergency:
-                return False
-            return True
+                number_pushed, doors_closed=False,
+                above_weight=False, emergency=False,
+            ):
+            └── if not number_pushed:
+                └── return False
+                if above_weight:
+                    return False
+                if not doors_closed:
+                    return False
+                if emergency:
+                    return False
+                return True
 
   .. code-block:: shell
 
@@ -3763,18 +3763,18 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
         above_weight=False, emergency=True,
     ) -> False
     └── def controller(
-            number_pushed, doors_closed=False,
-            above_weight=False, emergency=False,
-        ):
-        └── if not number_pushed:
-            └── return False
-            if above_weight:
-                return False
-            if not doors_closed:
-                return False
-            if emergency:
-                return False
-            return True
+                number_pushed, doors_closed=False,
+                above_weight=False, emergency=False,
+            ):
+            └── if not number_pushed:
+                └── return False
+                if above_weight:
+                    return False
+                if not doors_closed:
+                    return False
+                if emergency:
+                    return False
+                return True
 
   .. code-block:: shell
 
@@ -3783,18 +3783,18 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
         above_weight=False, emergency=False,
     ) -> False
     └── def controller(
-            number_pushed, doors_closed=False,
-            above_weight=False, emergency=False,
-        ):
-        └── if not number_pushed:
-            └── return False
-            if above_weight:
-                return False
-            if not doors_closed:
-                return False
-            if emergency:
-                return False
-            return True
+                number_pushed, doors_closed=False,
+                above_weight=False, emergency=False,
+            ):
+            └── if not number_pushed:
+                └── return False
+                if above_weight:
+                    return False
+                if not doors_closed:
+                    return False
+                if emergency:
+                    return False
+                return True
 
 * If the button for a floor is :green:`pushed` it checks if the total weight of the **Elevator** is :green:`above` the weight limit
 
@@ -3807,18 +3807,18 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
           above_weight=True, emergency=True,
       ) -> False
       └── def controller(
-              number_pushed, doors_closed=False,
-              above_weight=False, emergency=False,
-          ):
-          ├── if not number_pushed:
-          │       return False
-          └── if above_weight:
-              └── return False
-              if not doors_closed:
-                  return False
-              if emergency:
-                  return False
-              return True
+                  number_pushed, doors_closed=False,
+                  above_weight=False, emergency=False,
+              ):
+              ├── if not number_pushed:
+              │       return False
+              └── if above_weight:
+                  └── return False
+                  if not doors_closed:
+                      return False
+                  if emergency:
+                      return False
+                  return True
 
     .. code-block:: shell
 
@@ -3827,18 +3827,18 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
           above_weight=True, emergency=False,
       ) -> False
       └── def controller(
-              number_pushed, doors_closed=False,
-              above_weight=False, emergency=False,
-          ):
-          ├── if not number_pushed:
-          │       return False
-          └── if above_weight:
-              └── return False
-              if not doors_closed:
-                  return False
-              if emergency:
-                  return False
-              return True
+                  number_pushed, doors_closed=False,
+                  above_weight=False, emergency=False,
+              ):
+              ├── if not number_pushed:
+              │       return False
+              └── if above_weight:
+                  └── return False
+                  if not doors_closed:
+                      return False
+                  if emergency:
+                      return False
+                  return True
 
     .. code-block:: shell
 
@@ -3847,18 +3847,18 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
           above_weight=True, emergency=True,
       ) -> False
       └── def controller(
-              number_pushed, doors_closed=False,
-              above_weight=False, emergency=False,
-          ):
-          ├── if not number_pushed:
-          │       return False
-          └── if above_weight:
-              └── return False
-              if not doors_closed:
-                  return False
-              if emergency:
-                  return False
-              return True
+                  number_pushed, doors_closed=False,
+                  above_weight=False, emergency=False,
+              ):
+              ├── if not number_pushed:
+              │       return False
+              └── if above_weight:
+                  └── return False
+                  if not doors_closed:
+                      return False
+                  if emergency:
+                      return False
+                  return True
 
     .. code-block:: shell
 
@@ -3867,17 +3867,17 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
           above_weight=True, emergency=False,
       ) -> False
       └── def controller(
-              number_pushed, doors_closed=False,
-              above_weight=False, emergency=False,
-          ):
-          ├── if not number_pushed:
-          │       return False
-          └── if above_weight:
-              └── return False
-              if not doors_closed:
-                  return False
-              if emergency:
-                  return False
+                  number_pushed, doors_closed=False,
+                  above_weight=False, emergency=False,
+              ):
+              ├── if not number_pushed:
+              │       return False
+              └── if above_weight:
+                  └── return False
+                  if not doors_closed:
+                      return False
+                  if emergency:
+                      return False
               return True
 
   - if the total weight of the **Elevator** is :red:`below` the weight limit, it checks if the **Elevator** doors are :green:`closed`
@@ -3891,18 +3891,18 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
             above_weight=False, emergency=True,
         ) -> False
         └── def controller(
-                number_pushed, doors_closed=False,
-                above_weight=False, emergency=False,
-            ):
-            ├── if not number_pushed:
-            │       return False
-            ├── if above_weight:
-            │       return False
-            └── if not doors_closed:
-                └── return False
-                if emergency:
-                    return False
-                return True
+                    number_pushed, doors_closed=False,
+                    above_weight=False, emergency=False,
+                ):
+                ├── if not number_pushed:
+                │       return False
+                ├── if above_weight:
+                │       return False
+                └── if not doors_closed:
+                    └── return False
+                    if emergency:
+                        return False
+                    return True
 
       .. code-block:: shell
 
@@ -3911,18 +3911,18 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
             above_weight=False, emergency=False,
         ) -> False
         └── def controller(
-                number_pushed, doors_closed=False,
-                above_weight=False, emergency=False,
-            ):
-            ├── if not number_pushed:
-            │       return False
-            ├── if above_weight:
-            │       return False
-            └── if not doors_closed:
-                └── return False
-                if emergency:
-                    return False
-                return True
+                    number_pushed, doors_closed=False,
+                    above_weight=False, emergency=False,
+                ):
+                ├── if not number_pushed:
+                │       return False
+                ├── if above_weight:
+                │       return False
+                └── if not doors_closed:
+                    └── return False
+                    if emergency:
+                        return False
+                    return True
 
     - if the **Elevator** doors are :green:`closed`, it checks if the emergency button is :green:`pushed`
 
@@ -3935,18 +3935,18 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
               above_weight=False, emergency=True,
           ) -> False
           └── def controller(
-                  number_pushed, doors_closed=False,
-                  above_weight=False, emergency=False,
-              ):
-              ├── if not number_pushed:
-              │       return False
-              ├── if above_weight:
-              │       return False
-              ├── if not doors_closed:
-              │       return False
-              └── if emergency:
-                  └── return False
-                  return True
+                      number_pushed, doors_closed=False,
+                      above_weight=False, emergency=False,
+                  ):
+                  ├── if not number_pushed:
+                  │       return False
+                  ├── if above_weight:
+                  │       return False
+                  ├── if not doors_closed:
+                  │       return False
+                  └── if emergency:
+                      └── return False
+                      return True
 
       * the button for a floor is :green:`pushed` AND the doors are :green:`closed` AND the **Elevator** is :red:`NOT above` the weight limit, and the emergency button is :red:`NOT pushed`, it returns :green:`True`
 
@@ -3957,18 +3957,18 @@ When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how
               above_weight=False, emergency=False,
           ) -> True
           └── def controller(
-                  number_pushed, doors_closed=False,
-                  above_weight=False, emergency=False,
-              ):
-              ├── if not number_pushed:
-              │       return False
-              ├── if above_weight:
-              │       return False
-              ├── if not doors_closed:
-              │       return False
-              ├── if emergency:
-              │       return False
-              └── return True
+                      number_pushed, doors_closed=False,
+                      above_weight=False, emergency=False,
+                  ):
+                  ├── if not number_pushed:
+                  │       return False
+                  ├── if above_weight:
+                  │       return False
+                  ├── if not doors_closed:
+                  │       return False
+                  ├── if emergency:
+                  │       return False
+                  └── return True
 
 ----
 
@@ -3983,9 +3983,9 @@ refactor controller
     :emphasize-lines: 5-11
 
     def controller(
-        number_pushed, doors_closed=False,
-        above_weight=False, emergency=False,
-    ):
+            number_pushed, doors_closed=False,
+            above_weight=False, emergency=False,
+        ):
         if (
             not number_pushed
             or above_weight
@@ -4038,9 +4038,9 @@ refactor controller
     :linenos:
 
     def controller(
-        number_pushed, doors_closed=False,
-        above_weight=False, emergency=False,
-    ):
+            number_pushed, doors_closed=False,
+            above_weight=False, emergency=False,
+        ):
         if (
             not (number_pushed and doors_closed)
             or above_weight
