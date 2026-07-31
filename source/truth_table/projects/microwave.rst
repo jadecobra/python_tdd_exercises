@@ -1772,6 +1772,15 @@ I want to add a failsafe to stop the **Microwave** if it gets :green:`too hot`. 
 test_too_hot_w_not_set_timer_open_door_not_pressed_start
 *********************************************************************************
 
+The :ref:`truth table` when the **Microwave** door is :red:`open` AND the timer is :red:`NOT set` AND the start button is :red:`NOT pressed` is
+
+=============== ==============  ==================  ==================  =============
+door            timer           start button        too hot             output
+=============== ==============  ==================  ==================  =============
+:red:`open`     :red:`NOT set`  :red:`NOT pressed`  :green:`too hot`    :red:`False`
+:red:`open`     :red:`NOT set`  :red:`NOT pressed`  :red:`NOT too hot`  :red:`False`
+=============== ==============  ==================  ==================  =============
+
 ----
 
 =================================================================================
@@ -1948,7 +1957,6 @@ the test passes.
                     too_hot=True,
                 )
             )
-
 
 * I add a git_ commit message in the other terminal_
 
