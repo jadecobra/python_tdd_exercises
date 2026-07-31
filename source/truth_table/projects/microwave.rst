@@ -1595,9 +1595,149 @@ test_not_set_timer_open_door_not_pressed_start
 
 ----
 
+When the ``microwave`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`, it checks if the **Microwave** door is :green:`closed`
 
+* If the **Microwave** door is :red:`open`, it returns :red:`False`
 
+  .. code-block:: shell
 
+    microwave(
+        closed_door=False, set_timer=True,
+        pressed_start=True
+    ) -> False
+    └── def microwave(
+                closed_door=False, pressed_start=False,
+                set_timer=False,
+            ):
+            └── if not closed_door:
+                └── return False
+                if not set_timer:
+                    return False
+                return pressed_start
+
+  .. code-block:: shell
+
+    microwave(
+        closed_door=False, set_timer=False,
+        pressed_start=True
+    ) -> False
+    └── def microwave(
+                closed_door=False, pressed_start=False,
+                set_timer=False,
+            ):
+            └── if not closed_door:
+                └── return False
+                if not set_timer:
+                    return False
+                return pressed_start
+
+  .. code-block:: shell
+
+    microwave(
+        closed_door=False, set_timer=False,
+        pressed_start=True
+    ) -> False
+    └── def microwave(
+                closed_door=False, pressed_start=False,
+                set_timer=False,
+            ):
+            └── if not closed_door:
+                └── return False
+                if not set_timer:
+                    return False
+                return pressed_start
+
+  .. code-block:: shell
+
+    microwave(
+        closed_door=False, set_timer=False,
+        pressed_start=False
+    ) -> False
+    └── def microwave(
+                closed_door=False, pressed_start=False,
+                set_timer=False,
+            ):
+            └── if not closed_door:
+                └── return False
+                if not set_timer:
+                    return False
+                return pressed_start
+
+* If the **Microwave** door is :green:`closed`, it checks if the timer is :green:`set`
+
+  - If the timer is :red:`NOT set`, it returns :red:`False`
+
+    .. code-block:: shell
+
+      microwave(
+          closed_door=True, set_timer=False,
+          pressed_start=True
+      ) -> False
+      └── def microwave(
+                  closed_door=False, pressed_start=False,
+                  set_timer=False,
+              ):
+              ├── if not closed_door:
+              │       return False
+              └── if not set_timer:
+                  └── return False
+                  return pressed_start
+
+    .. code-block:: shell
+
+      microwave(
+          closed_door=True, set_timer=False,
+          pressed_start=False
+      ) -> False
+      └── def microwave(
+                  closed_door=False, pressed_start=False,
+                  set_timer=False,
+              ):
+              ├── if not closed_door:
+              │       return False
+              └── if not set_timer:
+                  └── return False
+                  return pressed_start
+
+  - If the timer is :green:`set`, it returns the value of ``pressed_start``
+
+    * If the start button is :red:`NOT pressed`, it returns :red:`False`
+
+      .. code-block:: shell
+
+        microwave(
+            closed_door=True, set_timer=True,
+            pressed_start=False
+        ) -> False
+        └── def microwave(
+                    closed_door=False, pressed_start=False,
+                    set_timer=False,
+                ):
+                ├── if not closed_door:
+                │       return False
+                ├── if not set_timer:
+                │       return False
+                └── return pressed_start
+                    return False
+
+    * If the **Microwave** door is :green:`closed` AND the timer is :green:`set` and the start button is :green:`pressed`, it returns :green:`True`
+
+      .. code-block:: shell
+
+        microwave(
+            closed_door=True, set_timer=True,
+            pressed_start=True
+        ) -> True
+        └── def microwave(
+                    closed_door=False, pressed_start=False,
+                    set_timer=False,
+                ):
+                ├── if not closed_door:
+                │       return False
+                ├── if not set_timer:
+                │       return False
+                └── return pressed_start
+                    return True
 
 
 
