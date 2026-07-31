@@ -1831,7 +1831,7 @@ separate and equal Person class
 
   because the ``Person`` :ref:`function<what is a function?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``last_name``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
-* I add ``first_name`` to the parentheses
+* I add ``last_name`` to the parentheses
 
   .. code-block:: python
     :linenos:
