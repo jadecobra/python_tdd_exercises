@@ -892,61 +892,28 @@ test_closed_door_timer_set_pressed_start
 
 ----
 
-* I add ``set_timer`` to the :ref:`function signature<what is a function?>` in ``microwave.py``
+I add ``set_timer`` to the :ref:`function signature<what is a function?>` in ``microwave.py``
 
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-4
+.. code-block:: python
+  :linenos:
+  :emphasize-lines: 1-4
 
-    def microwave(
-            door_is_open, start_is_pressed,
-            set_timer,
-        ):
-        if door_is_open or not start_is_pressed:
-            return 'OFF'
-        else:
-            return 'HEATING'
+  def microwave(
+          closed_door=False, pressed_start=False,
+          set_timer=False,
+      ):
+      if not closed_door:
+          return False
+      return pressed_start
 
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+the test passes.
 
-  .. code-block:: python
+.. code-block:: python
 
-    FAILED ...test_closed_door - TypeError: microwave() missing 1 required positional argument: 'set_timer'
-    FAILED ...test_open_door - TypeError: microwave() missing 1 required positional argument: 'set_timer'
-
-  because the tests call the ``microwave`` :ref:`function<what is a function?>` with 2 arguments (``door_is_open`` and ``start_is_pressed``) and I just changed the :ref:`function signature<what is a function?>` to make it take 3 required arguments (``door_is_open``, ``start_is_pressed`` and ``set_timer``). I have to make ``set_timer`` a choice.
-
-* I add a :ref:`default value<test_optional_arguments>` to make ``set_timer`` a choice
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3
-
-    def microwave(
-            door_is_open, start_is_pressed,
-            set_timer=False,
-        ):
-
-  the tests are green again, because
-
-  .. code-block:: python
-
-    src.microwave.microwave(
-        door_is_open=True,
-        start_is_pressed=False,
-    )
-
-  is now the same as
-
-  .. code-block:: python
-
-    src.microwave.microwave(
-        door_is_open=True,
-        start_is_pressed=False,
-        set_timer=False,
-    )
-
-  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
+  microwave(
+      closed_door=True, set_timer=True,
+      pressed_start=True
+  ) -> True
 
 ----
 
@@ -956,41 +923,7 @@ test_closed_door_timer_set_pressed_start
 
 ----
 
-* I add a value for ``set_timer`` to the next :ref:`assertion<what is an assertion?>`, for when the **Microwave** door is :green:`open`, the timer is :green:`set` and the start button is :red:`NOT pressed`
-
-  =============  ==============  =================  ===========
-  door           timer           start button       output
-  =============  ==============  =================  ===========
-  :green:`open`  :green:`set`    :green:`pressed`    :red:`OFF`
-  :green:`open`  :green:`set`    :red:`NOT pressed`  :red:`OFF`
-  =============  ==============  =================  ===========
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 13
-
-        def test_open_door(self):
-            my_expectation = 'OFF'
-
-            reality = src.microwave.microwave(
-                door_is_open=True,
-                set_timer=True,
-                start_is_pressed=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.microwave.microwave(
-                door_is_open=True,
-                set_timer=True,
-                start_is_pressed=False,
-            )
-            self.assertEqual(reality, my_expectation)
-
-        def test_closed_door(self):
-
-  the test is still green.
-
-* I change the name of the test from :ref:`test_open_door` to :ref:`test_open_door_timer_set`
+* I change the name of the test from :ref:`test_closed_door_pressed_start` to :ref:`test_set_timer_closed_door_pressed_start`
 
   .. code-block:: python
     :lineno-start: 5
@@ -998,8 +931,97 @@ test_closed_door_timer_set_pressed_start
 
     class TestMicrowave(unittest.TestCase):
 
-        def test_open_door_timer_set(self):
-            my_expectation = 'OFF'
+        def test_set_timer_closed_door_pressed_start(self):
+            self.assertTrue(
+                src.microwave.microwave(
+                    closed_door=True,
+                    set_timer=True,
+                    pressed_start=True,
+                )
+            )
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_set_timer_closed_door_pressed_start'
+
+----
+
+*************************************************************************************
+test_set_timer_closed_door_not_pressed_start
+*************************************************************************************
+
+* I go back to the terminal_ where the tests are running
+* I add a value for ``set_timer`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_closed_door_not_pressed_start` for if the **Microwave** door is :red:`closed`, the timer is :green:`set` and the start button is :red:`NOT pressed`
+
+  =============== ==============  ==================  =============
+  door            timer           start button        output
+  =============== ==============  ==================  =============
+  :green:`closed` :green:`set`    :red:`NOT pressed`  :red:`False`
+  =============== ==============  ==================  =============
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 6
+
+        def test_closed_door_not_pressed_start(self):
+            self.assertFalse(
+                src.microwave.microwave(
+                    closed_door=True,
+                    set_timer=True,
+                    pressed_start=False,
+                )
+            )
+
+        def test_open_door_pressed_start(self):
+
+  the test is still green.
+
+  .. code-block:: python
+
+    microwave(
+        closed_door=True, set_timer=True,
+        pressed_start=True
+    ) -> True
+    microwave(
+        closed_door=True, set_timer=True,
+        pressed_start=False
+    ) -> True
+
+* I change the name of the test from :ref:`test_closed_door_not_pressed_start` to :ref:`test_set_timer_closed_door_not_pressed_start`
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 10
+
+        def test_set_timer_closed_door_pressed_start(self):
+            self.assertTrue(
+                src.microwave.microwave(
+                    closed_door=True,
+                    set_timer=True,
+                    pressed_start=True,
+                )
+            )
+
+        def test_set_timer_closed_door_not_pressed_start(self):
+            self.assertFalse(
+                src.microwave.microwave(
+                    closed_door=True,
+                    set_timer=True,
+                    pressed_start=False,
+                )
+            )
+
+* I add a git_ commit message in the other terminal
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_set_timer_closed_door_not_pressed_start'
 
 ----
 
