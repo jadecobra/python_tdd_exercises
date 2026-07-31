@@ -851,35 +851,38 @@ test_closed_door_timer_set_pressed_start
 
 ----
 
-I add ``timer_set`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_closed_door_pressed_start`, for if the **Microwave** door is :green:`open`, the timer is :green:`set` and the start button is :green:`pressed`
+* I go back to the terminal_ where the tests are running
+* I add ``set_timer`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_closed_door_pressed_start`, for if the **Microwave** door is :green:`open`, the timer is :green:`set` and the start button is :green:`pressed`
 
-=============  ==============  =================  ===========
-door           timer           start button       output
-=============  ==============  =================  ===========
-:green:`open`  :green:`set`    :green:`pressed`    :red:`OFF`
-=============  ==============  =================  ===========
+  =============== ==============  ==================  =============
+  door            timer           start button        output
+  =============== ==============  ==================  =============
+  :green:`closed` :green:`set`    :green:`pressed`    :green:`True`
+  =============== ==============  ==================  =============
 
-.. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 6
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 5
 
-        def test_open_door(self):
-            my_expectation = 'OFF'
-
-            reality = src.microwave.microwave(
-                door_is_open=True,
-                timer_is_set=True,
-                start_is_pressed=True,
+        def test_closed_door_pressed_start(self):
+            self.assertTrue(
+                src.microwave.microwave(
+                    closed_door=True,
+                    set_timer=True,
+                    pressed_start=True,
+                )
             )
-            self.assertEqual(reality, my_expectation)
 
-the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+        def test_closed_door_not_pressed_start(self):
 
-.. code-block:: python
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-  TypeError: microwave() got an unexpected keyword argument 'timer_is_set'
+  .. code-block:: python
 
-because the test :ref:`called<how to call a function with input>` the ``microwave`` :ref:`function<what is a function?>` with 3 keyword arguments (``door_is_open``, ``timer_is_set`` and ``start_is_pressed``) and the :ref:`function<what is a function?>` only takes calls with 2 arguments (``door_is_open`` and ``start_is_pressed``)
+    TypeError: microwave() got
+               an unexpected keyword argument 'set_timer'
+
+  because the test :ref:`called<how to call a function with input>` the ``microwave`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``set_timer``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 ----
 
@@ -889,7 +892,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
 ----
 
-* I add ``timer_is_set`` to the :ref:`function signature<what is a function?>` in ``microwave.py``
+* I add ``set_timer`` to the :ref:`function signature<what is a function?>` in ``microwave.py``
 
   .. code-block:: python
     :linenos:
@@ -897,7 +900,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
     def microwave(
             door_is_open, start_is_pressed,
-            timer_is_set,
+            set_timer,
         ):
         if door_is_open or not start_is_pressed:
             return 'OFF'
@@ -908,12 +911,12 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
   .. code-block:: python
 
-    FAILED ...test_closed_door - TypeError: microwave() missing 1 required positional argument: 'timer_is_set'
-    FAILED ...test_open_door - TypeError: microwave() missing 1 required positional argument: 'timer_is_set'
+    FAILED ...test_closed_door - TypeError: microwave() missing 1 required positional argument: 'set_timer'
+    FAILED ...test_open_door - TypeError: microwave() missing 1 required positional argument: 'set_timer'
 
-  because the tests call the ``microwave`` :ref:`function<what is a function?>` with 2 arguments (``door_is_open`` and ``start_is_pressed``) and I just changed the :ref:`function signature<what is a function?>` to make it take 3 required arguments (``door_is_open``, ``start_is_pressed`` and ``timer_is_set``). I have to make ``timer_is_set`` a choice.
+  because the tests call the ``microwave`` :ref:`function<what is a function?>` with 2 arguments (``door_is_open`` and ``start_is_pressed``) and I just changed the :ref:`function signature<what is a function?>` to make it take 3 required arguments (``door_is_open``, ``start_is_pressed`` and ``set_timer``). I have to make ``set_timer`` a choice.
 
-* I add a :ref:`default value<test_optional_arguments>` to make ``timer_is_set`` a choice
+* I add a :ref:`default value<test_optional_arguments>` to make ``set_timer`` a choice
 
   .. code-block:: python
     :linenos:
@@ -921,7 +924,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
     def microwave(
             door_is_open, start_is_pressed,
-            timer_is_set=False,
+            set_timer=False,
         ):
 
   the tests are green again, because
@@ -940,7 +943,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
     src.microwave.microwave(
         door_is_open=True,
         start_is_pressed=False,
-        timer_is_set=False,
+        set_timer=False,
     )
 
   :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
@@ -953,7 +956,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
 ----
 
-* I add a value for ``timer_is_set`` to the next :ref:`assertion<what is an assertion?>`, for when the **Microwave** door is :green:`open`, the timer is :green:`set` and the start button is :red:`NOT pressed`
+* I add a value for ``set_timer`` to the next :ref:`assertion<what is an assertion?>`, for when the **Microwave** door is :green:`open`, the timer is :green:`set` and the start button is :red:`NOT pressed`
 
   =============  ==============  =================  ===========
   door           timer           start button       output
@@ -971,14 +974,14 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=False,
             )
             self.assertEqual(reality, my_expectation)
@@ -1027,7 +1030,7 @@ door           timer           start button       output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=False,
             )
             self.assertEqual(reality, my_expectation)
@@ -1037,7 +1040,7 @@ door           timer           start button       output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=True,
             )
             self.assertEqual(reality, my_expectation)
@@ -1064,14 +1067,14 @@ door           timer           start button       output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=False,
             )
             self.assertEqual(reality, my_expectation)
@@ -1095,7 +1098,7 @@ door           timer           start button       output
 :red:`closed`  :green:`set`    :red:`NOT pressed`  :red:`OFF`
 =============  ==============  =================  ================
 
-* I add a value for the ``timer_is_set`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_closed_door` for the case where the **Microwave** door is :red:`closed`, the timer is :green:`set` and the start button is :green:`pressed`
+* I add a value for the ``set_timer`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_closed_door` for the case where the **Microwave** door is :red:`closed`, the timer is :green:`set` and the start button is :green:`pressed`
 
   =============  ==============  =================  =============
   door           timer           start button       output
@@ -1111,7 +1114,7 @@ door           timer           start button       output
             my_expectation = 'HEATING'
             reality = src.microwave.microwave(
                 door_is_open=False,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=True,
             )
             self.assertEqual(reality, my_expectation)
@@ -1126,7 +1129,7 @@ door           timer           start button       output
 
   the test is still green.
 
-* I add a value for ``timer_is_set`` to the next :ref:`assertion<what is an assertion?>`, for when the **Microwave** door is :red:`closed`, the timer is :green:`set` and the start button is :red:`NOT pressed`
+* I add a value for ``set_timer`` to the next :ref:`assertion<what is an assertion?>`, for when the **Microwave** door is :red:`closed`, the timer is :green:`set` and the start button is :red:`NOT pressed`
 
   =============  ==============  =================  =============
   door           timer           start button       output
@@ -1143,7 +1146,7 @@ door           timer           start button       output
             my_expectation = 'HEATING'
             reality = src.microwave.microwave(
                 door_is_open=False,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=True,
             )
             self.assertEqual(reality, my_expectation)
@@ -1152,7 +1155,7 @@ door           timer           start button       output
 
             reality = src.microwave.microwave(
                 door_is_open=False,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=False,
             )
             self.assertEqual(reality, my_expectation)
@@ -1170,7 +1173,7 @@ door           timer           start button       output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=False,
             )
             self.assertEqual(reality, my_expectation)
@@ -1179,7 +1182,7 @@ door           timer           start button       output
             my_expectation = 'HEATING'
             reality = src.microwave.microwave(
                 door_is_open=False,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=True,
             )
             self.assertEqual(reality, my_expectation)
@@ -1221,7 +1224,7 @@ door           timer           start button       output
 
             reality = src.microwave.microwave(
                 door_is_open=False,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=False,
             )
             self.assertEqual(reality, my_expectation)
@@ -1231,7 +1234,7 @@ door           timer           start button       output
 
             reality = src.microwave.microwave(
                 door_is_open=False,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=True,
             )
             self.assertEqual(reality, my_expectation)
@@ -1263,9 +1266,9 @@ I add an :ref:`if statement<if statements>` to the ``microwave`` :ref:`function<
 
   def microwave(
           door_is_open, start_is_pressed,
-          timer_is_set=False,
+          set_timer=False,
       ):
-      if timer_is_set == False:
+      if set_timer == False:
           return 'OFF'
 
       if door_is_open or not start_is_pressed:
@@ -1289,8 +1292,8 @@ the test passes.
     :lineno-start: 5
     :emphasize-lines: 1-2
 
-        # if timer_is_set == False:
-        if not timer_is_set == True:
+        # if set_timer == False:
+        if not set_timer == True:
             return 'OFF'
 
   the test is still green.
@@ -1301,9 +1304,9 @@ the test passes.
     :lineno-start: 5
     :emphasize-lines: 2-3
 
-        # if timer_is_set == False:
-        # if not timer_is_set == True:
-        if not timer_is_set:
+        # if set_timer == False:
+        # if not set_timer == True:
+        if not set_timer:
             return 'OFF'
 
   still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``.
@@ -1315,9 +1318,9 @@ the test passes.
 
     def microwave(
             door_is_open, start_is_pressed,
-            timer_is_set=False,
+            set_timer=False,
         ):
-        if not timer_is_set:
+        if not set_timer:
             return 'OFF'
 
         if door_is_open or not start_is_pressed:
@@ -1355,14 +1358,14 @@ the test passes.
 
             reality = src.microwave.microwave(
                 door_is_open=False,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.microwave.microwave(
                 door_is_open=False,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=False,
             )
             self.assertEqual(reality, my_expectation)
@@ -1441,7 +1444,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=True,
                 too_hot=True,
             )
@@ -1453,7 +1456,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
 
   TypeError: microwave() got an unexpected keyword argument 'too_hot'
 
-because the test :ref:`called<how to call a function with input>` the ``microwave`` :ref:`function<what is a function?>` with 4 keyword arguments (``door_is_open``, ``timer_is_set``, ``start_is_pressed`` and ``too_hot``) and the definition only takes calls with 2 required arguments (``door_is_open`` and ``start_is_pressed``) and 1 optional argument (``timer_is_set``)
+because the test :ref:`called<how to call a function with input>` the ``microwave`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``too_hot``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 ----
 
@@ -1471,9 +1474,9 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
     def microwave(
             door_is_open, start_is_pressed,
-            timer_is_set=False, too_hot,
+            set_timer=False, too_hot,
         ):
-        if not timer_is_set:
+        if not set_timer:
             return 'OFF'
 
         if door_is_open or not start_is_pressed:
@@ -1511,7 +1514,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
     def microwave(
             door_is_open, start_is_pressed,
-            timer_is_set=False, too_hot=False,
+            set_timer=False, too_hot=False,
         ):
 
   the test passes.
@@ -1542,7 +1545,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=True,
                 too_hot=True,
             )
@@ -1550,7 +1553,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=True,
                 too_hot=False,
             )
@@ -1558,7 +1561,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=False,
             )
             self.assertEqual(reality, my_expectation)
@@ -1586,7 +1589,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=True,
                 too_hot=True,
             )
@@ -1594,7 +1597,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=True,
                 too_hot=False,
             )
@@ -1602,7 +1605,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=False,
                 too_hot=True,
             )
@@ -1630,7 +1633,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=True,
                 too_hot=True,
             )
@@ -1638,7 +1641,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=True,
                 too_hot=False,
             )
@@ -1646,7 +1649,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=False,
                 too_hot=True,
             )
@@ -1654,7 +1657,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=False,
                 too_hot=False,
             )
@@ -1703,7 +1706,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=True,
                 too_hot=True,
             )
@@ -1712,7 +1715,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=True,
                 too_hot=False,
             )
@@ -1721,7 +1724,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=False,
                 too_hot=True,
             )
@@ -1730,7 +1733,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=False,
                 too_hot=False,
             )
@@ -1750,7 +1753,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=True,
                 too_hot=True,
             )
@@ -1759,7 +1762,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=True,
                     too_hot=True,
                 ),
@@ -1768,7 +1771,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=True,
                 too_hot=False,
             )
@@ -1777,7 +1780,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=True,
                     too_hot=False,
                 ),
@@ -1786,7 +1789,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=False,
                 too_hot=True,
             )
@@ -1795,7 +1798,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=False,
                     too_hot=True,
                 ),
@@ -1804,7 +1807,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=False,
                 too_hot=False,
             )
@@ -1813,7 +1816,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=False,
                     too_hot=False,
                 ),
@@ -1829,7 +1832,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=True,
                     too_hot=True,
                 ),
@@ -1839,7 +1842,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=True,
                     too_hot=False,
                 ),
@@ -1849,7 +1852,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=False,
                     too_hot=True,
                 ),
@@ -1859,7 +1862,7 @@ because the test :ref:`called<how to call a function with input>` the ``microwav
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=False,
                     too_hot=False,
                 ),
@@ -1902,7 +1905,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=True,
                 too_hot=True,
             )
@@ -1928,7 +1931,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=True,
                 too_hot=True,
             )
@@ -1936,7 +1939,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=True,
                 too_hot=False,
             )
@@ -1944,7 +1947,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=False,
             )
             self.assertEqual(reality, my_expectation)
@@ -1970,7 +1973,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=True,
                 too_hot=True,
             )
@@ -1978,7 +1981,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=True,
                 too_hot=False,
             )
@@ -1986,7 +1989,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=False,
                 too_hot=True,
             )
@@ -2014,7 +2017,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=True,
                 too_hot=True,
             )
@@ -2022,7 +2025,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=True,
                 too_hot=False,
             )
@@ -2030,7 +2033,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=False,
                 too_hot=True,
             )
@@ -2038,7 +2041,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=False,
                 too_hot=False,
             )
@@ -2057,7 +2060,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=False,
                     too_hot=False,
                 ),
@@ -2078,7 +2081,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=True,
                 too_hot=True,
             )
@@ -2087,7 +2090,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=True,
                 too_hot=False,
             )
@@ -2096,7 +2099,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=False,
                 too_hot=True,
             )
@@ -2105,7 +2108,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=False,
                 too_hot=False,
             )
@@ -2127,7 +2130,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=True,
                 too_hot=True,
             )
@@ -2135,7 +2138,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=True,
                     too_hot=True,
                 ),
@@ -2144,7 +2147,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=True,
                 too_hot=False,
             )
@@ -2152,7 +2155,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=True,
                     too_hot=False,
                 ),
@@ -2161,7 +2164,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=False,
                 too_hot=True,
             )
@@ -2169,7 +2172,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=False,
                     too_hot=True,
                 ),
@@ -2178,7 +2181,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=True,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=False,
                 too_hot=False,
             )
@@ -2186,7 +2189,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=False,
                     too_hot=False,
                 ),
@@ -2204,7 +2207,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=True,
                     too_hot=True,
                 ),
@@ -2214,7 +2217,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=True,
                     too_hot=False,
                 ),
@@ -2224,7 +2227,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=False,
                     too_hot=True,
                 ),
@@ -2234,7 +2237,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=False,
                     too_hot=False,
                 ),
@@ -2270,7 +2273,7 @@ door           timer           start button       too hot             output
             my_expectation = 'HEATING'
             reality = src.microwave.microwave(
                 door_is_open=False,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=True,
             )
             self.assertEqual(reality, my_expectation)
@@ -2279,7 +2282,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=False,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=False,
             )
             # self.assertEqual(reality, my_expectation)
@@ -2299,13 +2302,13 @@ door           timer           start button       too hot             output
             my_expectation = 'HEATING'
             reality = src.microwave.microwave(
                 door_is_open=False,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=True,
             )
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=True,
                 ),
                 'HEATING'
@@ -2315,14 +2318,14 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=False,
-                timer_is_set=True,
+                set_timer=True,
                 start_is_pressed=False,
             )
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=False,
                 ),
                 OFF
@@ -2341,7 +2344,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=True,
                 ),
                 'HEATING'
@@ -2350,7 +2353,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=False,
                 ),
                 OFF
@@ -2374,7 +2377,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=True,
                     too_hot=True,
                 ),
@@ -2384,7 +2387,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=True,
                 ),
                 'HEATING'
@@ -2393,7 +2396,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=False,
                 ),
                 OFF
@@ -2417,12 +2420,12 @@ door           timer           start button       too hot             output
 
     def microwave(
             door_is_open, start_is_pressed,
-            timer_is_set=False, too_hot=False,
+            set_timer=False, too_hot=False,
         ):
         if too_hot == True:
             return 'OFF'
 
-        if not timer_is_set:
+        if not set_timer:
             return 'OFF'
 
         if door_is_open or not start_is_pressed:
@@ -2452,14 +2455,14 @@ door           timer           start button       too hot             output
 
     def microwave(
             door_is_open, start_is_pressed,
-            timer_is_set=False, too_hot=False,
+            set_timer=False, too_hot=False,
         ):
         # if too_hot == True:
         # if too_hot:
         #     return 'OFF'
 
-        # if not timer_is_set:
-        if too_hot or not timer_is_set:
+        # if not set_timer:
+        if too_hot or not set_timer:
             return 'OFF'
 
         if door_is_open or not start_is_pressed:
@@ -2474,9 +2477,9 @@ door           timer           start button       too hot             output
 
     def microwave(
             door_is_open, start_is_pressed,
-            timer_is_set=False, too_hot=False,
+            set_timer=False, too_hot=False,
         ):
-        if too_hot or not timer_is_set:
+        if too_hot or not set_timer:
             return 'OFF'
 
         if door_is_open or not start_is_pressed:
@@ -2517,7 +2520,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=True,
                     too_hot=True,
                 ),
@@ -2527,7 +2530,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=True,
                     too_hot=False,
                 ),
@@ -2537,7 +2540,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=False,
                 ),
                 OFF
@@ -2565,7 +2568,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=True,
                     too_hot=True,
                 ),
@@ -2575,7 +2578,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=True,
                     too_hot=False,
                 ),
@@ -2585,7 +2588,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=False,
                     too_hot=True,
                 ),
@@ -2615,7 +2618,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=True,
                     too_hot=True,
                 ),
@@ -2625,7 +2628,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=True,
                     too_hot=False,
                 ),
@@ -2635,7 +2638,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=False,
                     too_hot=True,
                 ),
@@ -2645,7 +2648,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=False,
                     too_hot=False,
                 ),
@@ -2665,7 +2668,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=False,
                     too_hot=False,
                 ),
@@ -2676,7 +2679,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=True,
                     too_hot=True,
                 ),
@@ -2711,7 +2714,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=False,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=True,
             )
             # self.assertEqual(reality, my_expectation)
@@ -2719,7 +2722,7 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=False,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=False,
             )
             # self.assertEqual(reality, my_expectation)
@@ -2741,14 +2744,14 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=False,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=True,
             )
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=True,
                 ),
                 OFF
@@ -2756,14 +2759,14 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=False,
-                timer_is_set=False,
+                set_timer=False,
                 start_is_pressed=False,
             )
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=False,
                 ),
                 OFF
@@ -2781,7 +2784,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=True,
                 ),
                 OFF
@@ -2790,7 +2793,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=False,
                 ),
                 OFF
@@ -2808,7 +2811,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=True,
+                    set_timer=True,
                     start_is_pressed=False,
                     too_hot=False,
                 ),
@@ -2819,7 +2822,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=True,
                 ),
                 OFF
@@ -2841,7 +2844,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=True,
                     too_hot=True,
                 ),
@@ -2867,7 +2870,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=True,
                     too_hot=True,
                 ),
@@ -2877,7 +2880,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=True,
                     too_hot=False,
                 ),
@@ -2887,7 +2890,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=False,
                 ),
                 OFF
@@ -2916,7 +2919,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=True,
                     too_hot=True,
                 ),
@@ -2926,7 +2929,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=True,
                     too_hot=False,
                 ),
@@ -2936,7 +2939,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=False,
                     too_hot=True,
                 ),
@@ -2967,7 +2970,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=True,
                     too_hot=True,
                 ),
@@ -2977,7 +2980,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=True,
                     too_hot=False,
                 ),
@@ -2987,7 +2990,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=False,
                     too_hot=True,
                 ),
@@ -2997,7 +3000,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
-                    timer_is_set=False,
+                    set_timer=False,
                     start_is_pressed=False,
                     too_hot=False,
                 ),
@@ -3017,12 +3020,12 @@ door           timer           start button       too hot             output
 
     def microwave(
             door_is_open, start_is_pressed,
-            timer_is_set=False, too_hot=False,
+            set_timer=False, too_hot=False,
         ):
         if (
             not door_is_open
             and start_is_pressed
-            and timer_is_set
+            and set_timer
             and not too_hot
         ):
             return 'HEATING'
@@ -3037,13 +3040,13 @@ door           timer           start button       too hot             output
 
     def microwave(
             door_is_open, start_is_pressed,
-            timer_is_set=False, too_hot=False,
+            set_timer=False, too_hot=False,
         ):
         off = 'OFF'
 
         if too_hot:
             return off
-        if not timer_is_set:
+        if not set_timer:
             return off
         if not start_is_pressed:
             return off
@@ -3060,11 +3063,11 @@ door           timer           start button       too hot             output
 
     def microwave(
             door_is_open, start_is_pressed,
-            timer_is_set=False, too_hot=False,
+            set_timer=False, too_hot=False,
         ):
         if (
             too_hot
-            or not timer_is_set
+            or not set_timer
             or not start_is_pressed
             or door_is_open
         ):

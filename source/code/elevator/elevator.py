@@ -1,7 +1,7 @@
 def controller(
-    number_pushed, doors_closed=False,
-    above_weight=False, emergency=False,
-):
+        number_pushed, doors_closed=False,
+        above_weight=False, emergency=False,
+    ):
     if (
         not (number_pushed and doors_closed)
         or above_weight
