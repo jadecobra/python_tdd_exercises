@@ -2327,6 +2327,11 @@ test_park_w_brake_not_pressed_key_not_close_start_not_pressed
 
 
     # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # SyntaxError
 
   the test passes.
 

@@ -3466,6 +3466,11 @@ floor button       doors            weight limit   emergency button   output
 
 
     # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # SyntaxError
 
   the test is still green.
 
