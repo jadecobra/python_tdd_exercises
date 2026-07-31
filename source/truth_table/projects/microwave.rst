@@ -1966,7 +1966,205 @@ the test passes.
     git commit -am \
     'add test_too_hot_w_not_set_timer_open_door_not_pressed_start'
 
+----
 
+*********************************************************************************
+test_too_hot_w_not_set_timer_open_door_pressed_start
+*********************************************************************************
+
+The :ref:`truth table` when the **Microwave** door is :red:`open` AND the timer is :red:`NOT set` AND the start button is :red:`NOT pressed` is
+
+=============== ==============  ==================  ==================  =============
+door            timer           start button        too hot             output
+=============== ==============  ==================  ==================  =============
+:red:`open`     :red:`NOT set`  :red:`NOT pressed`  :green:`too hot`    :red:`False`
+:red:`open`     :red:`NOT set`  :red:`NOT pressed`  :red:`NOT too hot`  :red:`False`
+=============== ==============  ==================  ==================  =============
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_not_set_timer_open_door_pressed_start` for if the **Microwave** door is :red:`open` AND the timer is :red:`NOT set` AND the start button is :red:`NOT pressed` and the **Microwave** temperature is :red:`NOT too hot`
+
+  =============== ==============  ==================  ==================  =============
+  door            timer           start button        too hot             output
+  =============== ==============  ==================  ==================  =============
+  :red:`open`     :red:`NOT set`  :red:`NOT pressed`  :red:`NOT too hot`  :red:`False`
+  =============== ==============  ==================  ==================  =============
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 7
+
+        def test_not_set_timer_open_door_pressed_start(self):
+            self.assertFalse(
+                src.microwave.microwave(
+                    closed_door=False,
+                    set_timer=False,
+                    pressed_start=False,
+                    too_hot=False,
+                )
+            )
+
+
+    # Exceptions seen
+
+  the terminal shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: microwave() got
+               an unexpected keyword argument 'too_hot'
+
+  because the test :ref:`called<how to call a function with input>` the ``microwave`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``too_hot``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add ``too_hot`` to the ``microwave`` :ref:`function definition<how to make a function that takes input>` in ``microwave.py``
+
+.. code-block:: python
+  :linenos:
+  :emphasize-lines: 3
+
+  def microwave(
+          closed_door=False, pressed_start=False,
+          set_timer=False, too_hot=False,
+      ):
+
+the test passes.
+
+.. code-block:: python
+
+  microwave(
+      closed_door=False, set_timer=False,
+      pressed_start=False, too_hot=False
+  ) -> False
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`open` AND the timer is :red:`NOT set` AND the start button is :red:`NOT pressed` and the **Microwave** temperature is :green:`too hot`, in ``test_microwave.py``
+
+  =============== ==============  ==================  ==================  =============
+  door            timer           start button        too hot             output
+  =============== ==============  ==================  ==================  =============
+  :red:`open`     :red:`NOT set`  :red:`NOT pressed`  :green:`too hot`    :red:`False`
+  =============== ==============  ==================  ==================  =============
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 2-9
+
+        def test_not_set_timer_open_door_pressed_start(self):
+            self.assertTrue(
+                src.microwave.microwave(
+                    closed_door=False,
+                    set_timer=False,
+                    pressed_start=False,
+                    too_hot=True,
+                )
+            )
+            self.assertFalse(
+                src.microwave.microwave(
+                    closed_door=False,
+                    set_timer=False,
+                    pressed_start=False,
+                    too_hot=False,
+                )
+            )
+
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # SyntaxError
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_set_timer_open_door_pressed_start`
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 2
+
+        def test_not_set_timer_open_door_pressed_start(self):
+            self.assertFalse(
+                src.microwave.microwave(
+                    closed_door=False,
+                    set_timer=False,
+                    pressed_start=False,
+                    too_hot=True,
+                )
+            )
+
+  the test passes.
+
+  .. code-block:: python
+
+    microwave(
+        closed_door=False, set_timer=False,
+        pressed_start=False, too_hot=True
+    ) -> False
+    microwave(
+        closed_door=False, set_timer=False,
+        pressed_start=False, too_hot=False
+    ) -> False
+
+* I change the name of the test from :ref:`test_not_set_timer_open_door_pressed_start` to :ref:`test_too_hot_w_not_set_timer_open_door_pressed_start`
+
+  .. code-block:: python
+    :lineno-start: 61
+    :emphasize-lines: 10
+
+        def test_not_set_timer_open_door_pressed_start(self):
+            self.assertFalse(
+                src.microwave.microwave(
+                    closed_door=False,
+                    set_timer=False,
+                    pressed_start=True,
+                )
+            )
+
+        def test_too_hot_w_not_set_timer_open_door_pressed_start(self):
+            self.assertFalse(
+                src.microwave.microwave(
+                    closed_door=False,
+                    set_timer=False,
+                    pressed_start=False,
+                    too_hot=True,
+                )
+            )
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_too_hot_w_not_set_timer_open_door_pressed_start'
 
 
 ----BOOM----
