@@ -580,7 +580,7 @@ test_open_door_not_pressed_start
 
   .. code-block:: python
 
-    microwave(pressed_start=False, closed_door=False) -> False
+    microwave(closed_door=False, pressed_start=False) -> False
 
 * I add a git_ commit message in the other terminal_
 
@@ -621,10 +621,10 @@ test_open_door_pressed_start
             )
 
         def test_open_door_pressed_start(self):
-            self.assertTrue(
+            self.assertFalse(
                 src.microwave.microwave(
-                    closed_door=True,
-                    pressed_start=False,
+                    closed_door=False,
+                    pressed_start=True,
                 )
             )
 
@@ -634,9 +634,7 @@ test_open_door_pressed_start
 
   .. code-block:: python
 
-    AssertionError: False is not true
-
-  because the ``microwave`` :ref:`function<what is a function?>` returns the value of ``pressed_start`` and this :ref:`assertion<what is an assertion?>` expects :green:`True`.
+    AssertionError: True is not false
 
 ----
 
@@ -646,28 +644,23 @@ test_open_door_pressed_start
 
 ----
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_open_door_pressed_start`
+* I add an :ref:`if statement<if statements>` for ``closed_door`` to the ``microwave`` :ref:`function<what is a function?>` in ``microwave.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2
+    :emphasize-lines: 2-3
 
-        def test_open_door_pressed_start(self):
-            self.assertFalse(
-                src.microwave.microwave(
-                    closed_door=True,
-                    pressed_start=False,
-                )
-            )
-
-        def test_open_door_not_pressed_start(self):
+    def microwave(closed_door=False, pressed_start=False):
+        if not closed_door:
+            return False
+        return pressed_start
 
   the test passes.
 
   .. code-block:: python
 
-    microwave(pressed_start=False, closed_door=True ) -> False
-    microwave(pressed_start=False, closed_door=False) -> False
+    microwave(closed_door=False, pressed_start=True ) -> False
+    microwave(closed_door=False, pressed_start=False) -> False
 
 * I add a git_ commit message in the other terminal_
 
@@ -675,518 +668,182 @@ test_open_door_pressed_start
 
     git commit -am 'add test_open_door_pressed_start'
 
+----
 
+*********************************************************************************
+test_closed_door_not_pressed_start
+*********************************************************************************
 
+* I go back to the terminal_ where the tests are running
+* I add a value for the ``closed_door`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_not_pressed_start` for if the **Microwave** door is :green:`closed` and the start button is :red:`NOT pressed`
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
-
-  .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 3
-    :emphasize-text: NameError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-
-* I add an `import statement`_ at the top of the file_ so that I can test ``microwave.py`` from the ``src`` folder_
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
-
-    import src.microwave
-    import unittest
-
-
-    class TestMicrowave(unittest.TestCase):
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  =============== ==================  =============
+  door            start button        output
+  =============== ==================  =============
+  :green:`closed` :red:`NOT pressed`  :red:`False`
+  =============== ==================  =============
 
   .. code-block:: python
-
-    AttributeError: module 'src.microwave' has no attribute 'microwave'
-
-  because ``microwave.py`` in the ``src`` folder_ does not have anything named ``microwave`` in it
-
-  .. admonition:: If you get :ref:`ModuleNotFoundError<what is a module?>`
-
-    .. code-block:: python
-
-      ModuleNotFoundError: No module named 'src'
-
-    check if you have ``__init__.py`` in the ``tests`` folder_ with underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``, then add :ref:`ModuleNotFoundError<what is a module?>` to the list of :ref:`Exceptions<errors>` seen
-
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
-
-  .. code-block:: python
-    :lineno-start: 17
+    :lineno-start: 14
     :emphasize-lines: 4
-    :emphasize-text: AttributeError
 
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # AttributeError
+        def test_not_pressed_start(self):
+            self.assertFalse(
+                src.microwave.microwave(
+                    closed_door=True,
+                    pressed_start=False,
+                )
+            )
 
-* I open ``microwave.py`` from the ``src`` folder_
+        def test_closed_door_pressed_start(self):
 
-* I add a :ref:`function<what is a function?>` named ``microwave`` to ``microwave.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-2
-
-    def microwave():
-        return None
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the test is still green.
 
   .. code-block:: python
 
-    TypeError: microwave() got an unexpected keyword argument 'door_is_open'
+    microwave(closed_door=True , pressed_start=False) -> False
+    microwave(closed_door=False, pressed_start=True ) -> False
+    microwave(closed_door=False, pressed_start=False) -> False
 
-  because the test :ref:`called<how to call a function with input>` the ``microwave`` :ref:`function<what is a function?>` with two keyword arguments and this definition only takes calls with 0 arguments
-
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_microwave.py``
-
-  .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 5
-    :emphasize-text: TypeError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # AttributeError
-    # TypeError
-
-* I add the :ref:`keyword argument<test_keyword_arguments>` to the :ref:`function<what is a function?>` in ``microwave.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
-
-    def microwave(door_is_open):
-        return None
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: microwave() got an unexpected keyword argument 'start_is_pressed'
-
-  because the test :ref:`called<how to call a function with input>` the ``microwave`` :ref:`function<what is a function?>` with two keyword arguments and this definition only takes calls with 1 input
-
-* I add ``start_is_pressed`` to the :ref:`function signature<what is a function?>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
-
-    def microwave(door_is_open, start_is_pressed):
-        return None
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: None != 'OFF'
-
-  the ``microwave`` :ref:`function<what is a function?>` returned :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects :red:`'OFF'`
-
-* I change the :ref:`return statement<the return statement>` to give the test what it wants
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2
-
-    def microwave(door_is_open, start_is_pressed):
-        return 'OFF'
-
-  the test passes. The ``microwave`` :ref:`function<what is a function?>` always returns :red:`OFF`, it does not care about the inputs. Is this :ref:`Contradiction?<test_contradiction>`
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I add an :ref:`assertion<what is an assertion?>` for when the **Microwave** door is :green:`open` and the start button is :red:`NOT pressed`, in ``test_microwave.py``
-
-  ==================  =================  =================
-  door                start button       output
-  ==================  =================  =================
-  :green:`open`       :green:`pressed`    :red:`OFF`
-  :green:`open`       :red:`NOT pressed`  :red:`OFF`
-  ==================  =================  =================
+* I change the name of the test from :ref:`test_not_pressed_start` to :ref:`test_closed_door_not_pressed_start`
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 10-14
+    :emphasize-lines: 8
 
-        def test_open_door(self):
-            my_expectation = 'OFF'
-
-            reality = src.microwave.microwave(
-                door_is_open=True,
-                start_is_pressed=True,
+        def test_pressed_start(self):
+            self.assertTrue(
+                src.microwave.microwave(
+                    pressed_start=True,
+                )
             )
-            self.assertEqual(reality, my_expectation)
 
-            reality = src.microwave.microwave(
-                door_is_open=True,
-                start_is_pressed=False,
+        def test_closed_door_not_pressed_start(self):
+            self.assertFalse(
+                src.microwave.microwave(
+                    closed_door=True,
+                    pressed_start=False,
+                )
             )
-            self.assertEqual(reality, my_expectation)
 
+* I add a git_ commit message in the other terminal_
 
-    # Exceptions seen
+  .. code-block:: python
+
+    git commit -am 'add test_closed_door_not_pressed_start'
+
+----
+
+*********************************************************************************
+test_closed_door_pressed_start
+*********************************************************************************
+
+* I go back to the terminal_ where the tests are running
+* I add a value for the ``closed_door`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_pressed_start` for if the **Microwave** door is :green:`closed` and the start button is :green:`pressed`
+
+  =============== ==================  =============
+  door            start button        output
+  =============== ==================  =============
+  :red:`open`     :green:`pressed`    :red:`False`
+  =============== ==================  =============
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 4
+
+        def test_pressed_start(self):
+            self.assertTrue(
+                src.microwave.microwave(
+                    closed_door=True,
+                    pressed_start=True,
+                )
+            )
+
+        def test_closed_door_not_pressed_start(self):
 
   the test is still green.
 
-----
+  .. code-block:: python
 
-*********************************************************************************
-test_closed_door
-*********************************************************************************
+    microwave(closed_door=True , pressed_start=True ) -> True
+    microwave(closed_door=True , pressed_start=False) -> False
+    microwave(closed_door=False, pressed_start=True ) -> False
+    microwave(closed_door=False, pressed_start=False) -> False
 
-The :ref:`truth table` for if the **Microwave** door is :red:`closed` is
+* I add a git_ commit message in the other terminal_
 
-==================  =================  =================
-door                start button       output
-==================  =================  =================
-:red:`closed`       :green:`pressed`    :green:`HEATING`
-:red:`closed`       :red:`NOT pressed`  :red:`OFF`
-==================  =================  =================
+  .. code-block:: python
 
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
+    git commit -am 'add test_closed_door_pressed_start'
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>` for when the **Microwave** door is :red:`closed` and the start button is :green:`pressed`
+When the ``microwave`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`, it checks if the door is :green:`closed`
 
-==================  =================  =================
-door                start button       output
-==================  =================  =================
-:red:`closed`       :green:`pressed`    :green:`HEATING`
-==================  =================  =================
+* if the door is :red:`open` it returns :red:`False`
 
-.. code-block:: python
-  :lineno-start: 16
-  :emphasize-lines: 7-13
+  .. code-block:: shell
 
-            reality = src.microwave.microwave(
-                door_is_open=True,
-                start_is_pressed=False,
-            )
-            self.assertEqual(reality, my_expectation)
+    microwave(closed_door=False, pressed_start=True ) -> False
+    └── def microwave(closed_door=False, pressed_start=False):
+        └── if not closed_door:
+            └── return False
+            return pressed_start
 
-        def test_closed_door(self):
-            my_expectation = 'HEATING'
-            reality = src.microwave.microwave(
-                door_is_open=False,
-                start_is_pressed=True,
-            )
-            self.assertEqual(reality, my_expectation)
+  .. code-block:: shell
 
+    microwave(closed_door=False, pressed_start=False) -> False
+    └── def microwave(closed_door=False, pressed_start=False):
+        └── if not closed_door:
+            └── return False
+            return pressed_start
 
-    # Exceptions seen
+* if the door is :green:`closed` it returns the value of ``pressed_start``
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  - if the door is :green:`closed` AND the start button is :red:`NOT pressed` it returns :red:`False`
 
-.. code-block:: python
+    .. code-block:: shell
 
-  AssertionError: 'OFF' != 'HEATING'
+      microwave(closed_door=True , pressed_start=False) -> False
+      └── def microwave(closed_door=False, pressed_start=False):
+          ├── if not closed_door:
+          │       return False
+          └── return pressed_start
+              return False
 
-because the ``microwave`` :ref:`function<what is a function?>` returns :red:`'OFF'` and the :ref:`assertion<what is an assertion?>` expects :green:`'HEATING'`
+  - if the door is :green:`closed` AND the start button is :green:`pressed` it returns :green:`True`
 
-----
+    .. code-block:: shell
 
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
+      microwave(closed_door=True , pressed_start=True ) -> True
+      └── def microwave(closed_door=False, pressed_start=False):
+          ├── if not closed_door:
+          │       return False
+          └── return pressed_start
+              return True
 
-----
+So far, the :ref:`truth table` for the **Microwave** is
 
-I add an :ref:`if statement<if statements>` to ``microwave.py``
+=============== ==================  =============
+door            start button        output
+=============== ==================  =============
+:green:`closed` :green:`pressed`    :green:`True`
+:green:`closed` :red:`NOT pressed`  :red:`False`
+:red:`open`     :green:`pressed`    :red:`False`
+:red:`open`     :red:`NOT pressed`  :red:`False`
+=============== ==================  =============
 
-.. code-block:: python
-  :linenos:
-  :emphasize-lines: 2-3
+I want the **Microwave** to only heat up food when the door is :green:`closed` AND the timer is :green:`set` AND the start button is :green:`pressed`. The inputs for the **Microwave** will then be
 
-    def microwave(door_is_open, start_is_pressed):
-        if door_is_open == False:
-            return 'HEATING'
-
-        return 'OFF'
-
-the test passes.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2-3
-
-    def microwave(door_is_open, start_is_pressed):
-        # if door_is_open == False:
-        if not door_is_open == True:
-            return 'HEATING'
-
-        return 'OFF'
-
-  the test is still green.
-
-* I remove ``== True``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3-4
-
-    def microwave(door_is_open, start_is_pressed):
-        # if door_is_open == False:
-        # if not door_is_open == True:
-        if not door_is_open:
-            return 'HEATING'
-
-        return 'OFF'
-
-  green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :linenos:
-
-    def microwave(door_is_open, start_is_pressed):
-        if not door_is_open:
-            return 'HEATING'
-
-        return 'OFF'
-
-  This is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
-
-  - it returns :green:`'HEATING'` if the **Microwave** door is :red:`closed`
-  - it returns :red:`'OFF'` if the :ref:`condition<if statements>`is NOT met
-
-* I add an :ref:`assertion<what is an assertion?>` for when the **Microwave** door is :red:`closed` and the start button is :red:`NOT pressed` to :ref:`test_closed_door` in ``test_microwave.py``
-
-  ==================  =================  =================
-  door                start button       output
-  ==================  =================  =================
-  :red:`closed`       :green:`pressed`    :green:`HEATING`
-  :red:`closed`       :red:`NOT pressed`  :red:`OFF`
-  ==================  =================  =================
-
-  .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 9, 11-15
-
-        def test_closed_door(self):
-            my_expectation = 'HEATING'
-            reality = src.microwave.microwave(
-                door_is_open=False,
-                start_is_pressed=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            my_expectation = 'OFF'
-
-            reality = src.microwave.microwave(
-                door_is_open=False,
-                start_is_pressed=False,
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'HEATING' != 'OFF'
-
-* I add an :ref:`if statement<if statements>` for this case
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2-3
-
-    def microwave(door_is_open, start_is_pressed):
-        if start_is_pressed == False:
-            return 'OFF'
-
-        if not door_is_open:
-            return 'HEATING'
-
-        return 'OFF'
-
-  the test passes.
-
-* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the statement in terms of :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 2
-    :emphasize-lines: 1-2
-
-        # if start_is_pressed == False:
-        if not start_is_pressed == True:
-            return 'OFF'
-
-  the test are still green.
-
-* I remove ``== True``
-
-  .. code-block:: python
-    :lineno-start: 2
-    :emphasize-lines: 2-3
-
-        # if start_is_pressed == False:
-        # if not start_is_pressed == True:
-        if not start_is_pressed:
-            return 'OFF'
-
-  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``.
-
-* I add an :ref:`if statement<if statements>` for when the **Microwave** door is :green:`open`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 7-8
-
-    def microwave(door_is_open, start_is_pressed):
-        # if start_is_pressed == False:
-        # if not start_is_pressed == True:
-        if not start_is_pressed:
-            return 'OFF'
-
-        if door_is_open:
-            return 'OFF'
-
-        if not door_is_open:
-            return 'HEATING'
-
-        return 'OFF'
-
-  green.
-
-* I use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put the two :ref:`if statements` that return :red:`'OFF'` together
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4-5, 7-9
-
-    def microwave(door_is_open, start_is_pressed):
-        # if start_is_pressed == False:
-        # if not start_is_pressed == True:
-        # if not start_is_pressed:
-        #     return 'OFF'
-
-        # if door_is_open:
-        if door_is_open or not start_is_pressed:
-            return 'OFF'
-
-        if not door_is_open:
-            return 'HEATING'
-
-        return 'OFF'
-
-  still green.
-
-* I add an :ref:`else clause<if statements>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 10-11
-
-    def microwave(door_is_open, start_is_pressed):
-        # if start_is_pressed == False:
-        # if not start_is_pressed == True:
-        # if not start_is_pressed:
-        #     return 'OFF'
-
-        # if door_is_open:
-        if door_is_open or not start_is_pressed:
-            return 'OFF'
-        else:
-            return 'HEATING'
-
-        if not door_is_open:
-            return 'HEATING'
-
-        return 'OFF'
-
-  the tests are still green.
-
-* I remove the other :ref:`if statements` and the commented lines, because they are no longer used
-
-  .. code-block:: python
-    :linenos:
-
-    def microwave(door_is_open, start_is_pressed):
-        if door_is_open or not start_is_pressed:
-            return 'OFF'
-        else:
-            return 'HEATING'
-
-  this is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
-
-  - it returns :red:`'OFF'` if the **Microwave** door is :green:`open` OR if the start button is :red:`NOT pressed`, this means
-
-    * it returns :red:`'OFF'` if the **Microwave** door is :green:`open`
-    * it returns :red:`'OFF'` if the start button is :red:`NOT pressed`
-
-  - it returns :green:`'HEATING'` if the **Microwave** door is :red:`closed` AND the start button is :green:`pressed`
-
-----
-
-*********************************************************************************
-test_open_door_timer_set
-*********************************************************************************
-
-So far, the :ref:`truth table` for the Microwave is
-
-==================  =================  =================
-door                start button       output
-==================  =================  =================
-:green:`open`       :green:`pressed`    :red:`OFF`
-:green:`open`       :red:`NOT pressed`  :red:`OFF`
-:red:`closed`       :green:`pressed`    :green:`HEATING`
-:red:`closed`       :red:`NOT pressed`  :red:`OFF`
-==================  =================  =================
-
-I want the microwave to only heat up food when the timer is set, The inputs for the microwave will then be
-
-* is the **Microwave** door open?
-* is the timer set?
+* is the **Microwave** door closed?
+* is the **Microwave** timer set?
 * was the start button pressed?
 
-and the :ref:`truth table` for when the **Microwave** door is :green:`open` and the timer is :green:`set`, will be
-
-=============  ==============  =================  ===========
-door           timer           start button       output
-=============  ==============  =================  ===========
-:green:`open`  :green:`set`    :green:`pressed`    :red:`OFF`
-:green:`open`  :green:`set`    :red:`NOT pressed`  :red:`OFF`
-=============  ==============  =================  ===========
-
 ----
+
+*********************************************************************************
+test_closed_door_timer_set_pressed_start
+*********************************************************************************
 
 =================================================================================
 :red:`RED`: make it fail
@@ -1194,7 +851,7 @@ door           timer           start button       output
 
 ----
 
-I add a value for ``timer_is_set`` to the first :ref:`assertion<what is an assertion?>` in :ref:`test_open_door`, for when the **Microwave** door is :green:`open`, the timer is :green:`set` and the start button is :green:`pressed`
+I add ``timer_set`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_closed_door_pressed_start`, for if the **Microwave** door is :green:`open`, the timer is :green:`set` and the start button is :green:`pressed`
 
 =============  ==============  =================  ===========
 door           timer           start button       output
@@ -1743,7 +1400,7 @@ door           timer           start button       output
 
 I want to add a failsafe to stop the Microwave if it gets too hot. The inputs will then be
 
-* is the **Microwave** door open?
+* is the **Microwave** door closed?
 * is the timer set?
 * was the start button pressed?
 * is the microwave too hot?
@@ -3439,7 +3096,7 @@ review
 
 I ran tests for a Microwave with these inputs:
 
-* is the **Microwave** door open?
+* is the **Microwave** door closed?
 * is the timer set?
 * was the start button pressed?
 * is the microwave too hot?
