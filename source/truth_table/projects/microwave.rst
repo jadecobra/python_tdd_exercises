@@ -2179,7 +2179,7 @@ door            timer           start button        too hot             output
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_set_timer_open_door_not_pressed_start` for the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :red:`NOT pressed` and the **Microwave** temperature is :red:`NOT too hot`
+* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_set_timer_open_door_not_pressed_start` for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :red:`NOT pressed` and the **Microwave** temperature is :red:`NOT too hot`
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
@@ -2208,11 +2208,11 @@ door            timer           start button        too hot             output
   .. code-block:: python
 
     microwave(
-        closed_door=False, set_timer=TRUE,
-        pressed_start=True, too_hot=False
+        closed_door=False, set_timer=True,
+        pressed_start=False, too_hot=False
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :red:`NOT pressed` and the **Microwave** temperature is :green:`too hot`, in ``test_microwave.py``
+* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :red:`NOT pressed` and the **Microwave** temperature is :green:`too hot`, in ``test_microwave.py``
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
