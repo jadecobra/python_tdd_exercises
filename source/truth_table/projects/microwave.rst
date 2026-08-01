@@ -3403,6 +3403,17 @@ When the ``microwave`` :ref:`function<what is a function?>` is :ref:`called<how 
           closed_door=True, set_timer=False,
           pressed_start=True, too_hot=True
       ) -> False
+      └── def microwave(
+                  closed_door=False, pressed_start=False,
+                  set_timer=False, too_hot=False,
+              ):
+              ├── if not closed_door:
+              │       return False
+              └── if not set_timer:
+                  └── return False
+                  if too_hot:
+                      return False
+                  return pressed_start
 
     .. code-block:: shell
 
@@ -3410,6 +3421,17 @@ When the ``microwave`` :ref:`function<what is a function?>` is :ref:`called<how 
           closed_door=True, set_timer=False,
           pressed_start=True, too_hot=False
       ) -> False
+      └── def microwave(
+                  closed_door=False, pressed_start=False,
+                  set_timer=False, too_hot=False,
+              ):
+              ├── if not closed_door:
+              │       return False
+              └── if not set_timer:
+                  └── return False
+                  if too_hot:
+                      return False
+                  return pressed_start
 
     .. code-block:: shell
 
@@ -3417,6 +3439,17 @@ When the ``microwave`` :ref:`function<what is a function?>` is :ref:`called<how 
           closed_door=True, set_timer=False,
           pressed_start=False, too_hot=True
       ) -> False
+      └── def microwave(
+                  closed_door=False, pressed_start=False,
+                  set_timer=False, too_hot=False,
+              ):
+              ├── if not closed_door:
+              │       return False
+              └── if not set_timer:
+                  └── return False
+                  if too_hot:
+                      return False
+                  return pressed_start
 
     .. code-block:: shell
 
@@ -3424,19 +3457,101 @@ When the ``microwave`` :ref:`function<what is a function?>` is :ref:`called<how 
           closed_door=True, set_timer=False,
           pressed_start=False, too_hot=False
       ) -> False
+      └── def microwave(
+                  closed_door=False, pressed_start=False,
+                  set_timer=False, too_hot=False,
+              ):
+              ├── if not closed_door:
+              │       return False
+              └── if not set_timer:
+                  └── return False
+                  if too_hot:
+                      return False
+                  return pressed_start
 
   - If the timer is :green:`set`, it checks if the **Microwave** temperature is :green:`too hot`
 
-    * If the **Microwave** temperature is :green:`too hot`, it returns the value of ``pressed_start``
+    * If the **Microwave** temperature is :green:`too hot`, it returns :red:`False`
+
+      .. code-block:: shell
+
+        microwave(
+            closed_door=True, set_timer=True,
+            pressed_start=True, too_hot=True
+        ) -> False
+        └── def microwave(
+                    closed_door=False, pressed_start=False,
+                    set_timer=False, too_hot=False,
+                ):
+                ├── if not closed_door:
+                │       return False
+                ├── if not set_timer:
+                │       return False
+                └── if too_hot:
+                    └── return False
+                    return pressed_start
+
+      .. code-block:: shell
+
+        microwave(
+            closed_door=True, set_timer=True,
+            pressed_start=False, too_hot=True
+        ) -> False
+        └── def microwave(
+                    closed_door=False, pressed_start=False,
+                    set_timer=False, too_hot=False,
+                ):
+                ├── if not closed_door:
+                │       return False
+                ├── if not set_timer:
+                │       return False
+                └── if too_hot:
+                    └── return False
+                    return pressed_start
+
+    * If the **Microwave** temperature is :red:`NOT too hot`, it returns the value of ``pressed_start``
 
       * If the start button is :red:`NOT pressed`, it returns :red:`False`
 
         .. code-block:: shell
 
+          microwave(
+              closed_door=True, set_timer=True,
+              pressed_start=False, too_hot=False
+          ) -> False
+          └── def microwave(
+                      closed_door=False, pressed_start=False,
+                      set_timer=False, too_hot=False,
+                  ):
+                  ├── if not closed_door:
+                  │       return False
+                  ├── if not set_timer:
+                  │       return False
+                  ├── if too_hot:
+                  │       return False
+                  └── return pressed_start
+                      return False
 
       * If the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the **Microwave** temperature is :red:`NOT too hot` AND the start button is :green:`pressed`, it returns :green:`True`
 
         .. code-block:: shell
+
+          microwave(
+              closed_door=True, set_timer=True,
+              pressed_start=True, too_hot=False
+          ) -> True
+          └── def microwave(
+                      closed_door=False, pressed_start=False,
+                      set_timer=False, too_hot=False,
+                  ):
+                  ├── if not closed_door:
+                  │       return False
+                  ├── if not set_timer:
+                  │       return False
+                  ├── if too_hot:
+                  │       return False
+                  └── return pressed_start
+                      return True
 
 ----
 
