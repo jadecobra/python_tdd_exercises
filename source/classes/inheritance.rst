@@ -689,7 +689,7 @@ I can make a :ref:`class<what is a class?>` with :ref:`object (the mother of all
 
     AssertionError: assert not True
 
-  because ``not isinstance(WParentheses(), object)`` is not :ref:`True<test_what_is_true>`.
+  because ``not isinstance(WObject(), object)`` is not :ref:`True<test_what_is_true>`.
 
 * I change the :ref:`assertion<what is an assertion?>` in :ref:`test_making_a_class_w_object` to make it :ref:`True<test_what_is_true>`
 
