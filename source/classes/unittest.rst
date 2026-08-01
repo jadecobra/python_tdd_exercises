@@ -407,7 +407,7 @@ I want to see what comes with the `unittest module`_.
 
     Enter new runner args: -vv
 
-* I press :kbd:`-+v+v` on the keyboard then press :kbd:`enter` to show the full difference, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with the full :ref:`list<what is a list?>`.
+* I type ``-vv`` then press :kbd:`enter` to show the full difference, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with the full :ref:`list<what is a list?>`.
 
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
@@ -558,7 +558,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     Enter new runner args: -vv
 
-* I press :kbd:`-+v+v` on the keyboard then press :kbd:`enter` to show the full difference, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with the entire :ref:`list<what is a list?>`.
+* I type ``-vv`` then press :kbd:`enter` to show the full difference, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with the entire :ref:`list<what is a list?>`.
 
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
