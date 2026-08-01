@@ -2166,8 +2166,6 @@ The :ref:`truth table` when the **Microwave** door is :red:`open` AND the timer 
 =============== ==============  ==================  ==================  =============
 door            timer           start button        too hot             output
 =============== ==============  ==================  ==================  =============
-:red:`open`     :green:`set`    :green:`pressed`    :green:`too hot`    :red:`False`
-:red:`open`     :green:`set`    :green:`pressed`    :red:`NOT too hot`  :red:`False`
 :red:`open`     :green:`set`    :red:`NOT pressed`  :green:`too hot`    :red:`False`
 :red:`open`     :green:`set`    :red:`NOT pressed`  :red:`NOT too hot`  :red:`False`
 =============== ==============  ==================  ==================  =============
@@ -2186,7 +2184,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
-  :red:`open`     :red:`NOT set`  :green:`pressed`    :red:`NOT too hot`  :red:`False`
+  :red:`open`     :green:`set`    :red:`NOT pressed`  :red:`NOT too hot`  :red:`False`
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python
@@ -2197,29 +2195,21 @@ door            timer           start button        too hot             output
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=False,
-                    pressed_start=True,
+                    set_timer=True,
+                    pressed_start=False,
                     too_hot=False,
                 )
             )
 
-        def test_too_hot_w_not_set_timer_open_door_not_pressed_start(self):
+        def test_too_hot_w_not_set_timer_open_door_pressed_start(self):
 
   the test is still green.
 
   .. code-block:: python
 
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, set_timer=TRUE,
         pressed_start=True, too_hot=False
-    ) -> False
-    microwave(
-        closed_door=False, set_timer=False,
-        pressed_start=False, too_hot=True
-    ) -> False
-    microwave(
-        closed_door=False, set_timer=False,
-        pressed_start=False, too_hot=False
     ) -> False
 
 * I add an :ref:`assertion<what is an assertion?>` for the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :red:`NOT pressed` and the **Microwave** temperature is :green:`too hot`, in ``test_microwave.py``
@@ -2227,7 +2217,7 @@ door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
   =============== ==============  ==================  ==================  =============
-  :red:`open`     :red:`NOT set`  :green:`pressed`    :green:`too hot`    :red:`False`
+  :red:`open`     :green:`set`    :red:`NOT pressed`  :green:`too hot`    :red:`False`
   =============== ==============  ==================  ==================  =============
 
   .. code-block:: python

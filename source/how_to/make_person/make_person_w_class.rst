@@ -2803,7 +2803,7 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
   .. code-block:: python
 
     AssertionError:
-        assert ['__:ref:`class<everything is an object>`_', '__delattr__', '__dict__',
+        assert ['__class__', '__delattr__', '__dict__',
                 '__dir__', '__doc__', '__eq__', ...]
             == None
 
@@ -2827,7 +2827,7 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
         reality = dir(src.person.Person)
         # my_expectation = None
         my_expectation = [
-            '__:ref:`class<everything is an object>`_', '__delattr__', '__dict__',
+            '__class__', '__delattr__', '__dict__',
             '__dir__', '__doc__', '__eq__', ...
         ]
         assert reality == my_expectation
@@ -2840,8 +2840,8 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
   .. code-block:: python
 
     E         AssertionError:
-                  assert ['__:ref:`class<everything is an object>`_',...'__eq__', ...]
-                      == ['__:ref:`class<everything is an object>`_',...'__eq__', ...]
+                  assert ['__class__',...'__eq__', ...]
+                      == ['__class__',...'__eq__', ...]
     E
     E         At index 6 diff: '__firstlineno__' != Ellipsis
     E         Left contains 23 more items,
@@ -2905,7 +2905,7 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
     def test_dir_person_class():
         reality = dir(src.person.Person)
         my_expectation = [
-            '__:ref:`class<everything is an object>`_',
+            '__class__',
             '__delattr__',
             '__dict__',
             '__dir__',
@@ -2992,7 +2992,7 @@ I add a test to see the difference between the :ref:`attributes<what is a class 
 
         reality = dir(an_instance_of_person)
         my_expectation = [
-            '__:ref:`class<everything is an object>`_',
+            '__class__',
             '__delattr__',
             '__dict__',
             '__dir__',
@@ -3036,7 +3036,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError:
       assert [
-          '__:ref:`class<everything is an object>`_', '__delattr__', '__dict__', '__dir__',
+          '__class__', '__delattr__', '__dict__', '__dir__',
           '__doc__', '__eq__', '__firstlineno__', '__format__',
           '__ge__', '__getattribute__', '__getstate__', '__gt__',
           '__hash__', '__init__', '__init_sub:ref:`class<everything is an object>`_', '__le__',
@@ -3047,7 +3047,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
           'first_name', 'last_name', 'say_hello', 'year_of_birth'
       ]
    == [
-          '__:ref:`class<everything is an object>`_', '__delattr__', '__dict__', '__dir__',
+          '__class__', '__delattr__', '__dict__', '__dir__',
           '__doc__', '__eq__', '__firstlineno__', '__format__',
           '__ge__', '__getattribute__', '__getstate__', '__gt__',
           '__hash__', '__init__', '__init_sub:ref:`class<everything is an object>`_', '__le__',
@@ -3083,7 +3083,7 @@ I add the missing :ref:`attributes<what is a class attribute?>` to ``my_expectat
 
       reality = dir(an_instance_of_person)
       my_expectation = [
-          '__:ref:`class<everything is an object>`_',
+          '__class__',
           '__delattr__',
           '__dict__',
           '__dir__',
@@ -3162,7 +3162,7 @@ the test passes.
 
       AssertionError:
           assert [
-              '__:ref:`class<everything is an object>`_', '__delattr__', '__dict__', '__dir__',
+              '__class__', '__delattr__', '__dict__', '__dir__',
               '__doc__', '__eq__', '__firstlineno__', '__format__',
               '__ge__', '__getattribute__', '__getstate__', '__gt__',
               '__hash__', '__init__', '__init_sub:ref:`class<everything is an object>`_', '__le__',
@@ -3173,7 +3173,7 @@ the test passes.
               'first_name', 'last_name', 'say_hello', 'year_of_birth'
           ]
        == [
-              '__:ref:`class<everything is an object>`_', '__delattr__', '__dict__', '__dir__',
+              '__class__', '__delattr__', '__dict__', '__dir__',
               '__doc__', '__eq__', '__firstlineno__', '__format__',
               '__ge__', '__getattribute__', '__getstate__', '__gt__',
               '__hash__', '__init__', '__init_sub:ref:`class<everything is an object>`_', '__le__',
