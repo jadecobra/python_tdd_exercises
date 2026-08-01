@@ -2382,15 +2382,15 @@ door            timer           start button        too hot             output
 
     microwave(
         closed_door=False, set_timer=True,
+        pressed_start=True, too_hot=False
+    ) -> False
+    microwave(
+        closed_door=False, set_timer=True,
         pressed_start=False, too_hot=True
     ) -> False
     microwave(
         closed_door=False, set_timer=True,
         pressed_start=False, too_hot=False
-    ) -> False
-    microwave(
-        closed_door=False, set_timer=True,
-        pressed_start=False, too_hot=True
     ) -> False
 
 * I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :green:`too hot`, in ``test_microwave.py``
@@ -2410,7 +2410,7 @@ door            timer           start button        too hot             output
                 src.microwave.microwave(
                     closed_door=False,
                     set_timer=True,
-                    pressed_start=False,
+                    pressed_start=True,
                     too_hot=True,
                 )
             )
@@ -2418,12 +2418,12 @@ door            timer           start button        too hot             output
                 src.microwave.microwave(
                     closed_door=False,
                     set_timer=True,
-                    pressed_start=False,
+                    pressed_start=True,
                     too_hot=False,
                 )
             )
 
-        def test_too_hot_w_not_set_timer_open_door_pressed_start(self):
+        def test_too_hot_w_set_timer_open_door_not_pressed_start(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2450,7 +2450,7 @@ I change :ref:`assertTrue<another way to test if something is grouped as True>` 
               src.microwave.microwave(
                   closed_door=False,
                   set_timer=True,
-                  pressed_start=False,
+                  pressed_start=True,
                   too_hot=True,
               )
           )
@@ -2459,6 +2459,14 @@ the test passes.
 
 .. code-block:: python
 
+  microwave(
+      closed_door=False, set_timer=True,
+      pressed_start=True, too_hot=True
+  ) -> False
+  microwave(
+      closed_door=False, set_timer=True,
+      pressed_start=True, too_hot=False
+  ) -> False
   microwave(
       closed_door=False, set_timer=True,
       pressed_start=False, too_hot=True
