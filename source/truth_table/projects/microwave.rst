@@ -3559,6 +3559,206 @@ When the ``microwave`` :ref:`function<what is a function?>` is :ref:`called<how 
 refactor microwave function
 *********************************************************************************
 
+* I go back to the terminal_ where the tests are running
+* I add an :ref:`if statement<if statements>` for the ``pressed_start`` parameter to make it clearer, in ``microwave.py``
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 7-9
+
+        if not closed_door:
+            return False
+        if not set_timer:
+            return False
+        if too_hot:
+            return False
+        if not pressed_start:
+            return False
+        return True
+
+  the tests are still green.
+
+* I use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put the :ref:`if statements` together since they all return :red:`False`
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 1-14
+
+        # if not closed_door:
+        #     return False
+        # if not set_timer:
+        #     return False
+        # if too_hot:
+        #     return False
+        # if not pressed_start:
+        #     return False
+        if (
+            not closed_door
+            or not set_timer
+            or too_hot
+            or not pressed_start
+        ):
+            return False
+        return True
+
+  still green.
+
+* I write the new statement in terms of :ref:`not<test_logical_negation>` since it happens three times
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 1-12
+
+        # if (
+        #     not closed_door
+        #     or not set_timer
+        #     or too_hot
+        #     or not pressed_start
+        # ):
+        if (
+            (not closed_door)
+            (not and) (not set_timer)
+            (not and) (not not too_hot)
+            (not and) (not pressed_start)
+        ):
+            return False
+        return True
+
+  the terminal_ is my friend, and shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: invalid syntax
+
+* I "factor" out the :ref:`nots<test_logical_negation>`
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 1-12
+
+        # if (
+        #     (not closed_door)
+        #     (not and) (not set_timer)
+        #     (not and) (not not too_hot)
+        #     (not and) (not pressed_start)
+        # ):
+        if not (
+            closed_door
+            and set_timer
+            and not too_hot
+            and pressed_start
+        ):
+            return False
+        return True
+
+  the tests are green again.
+
+* I add an :ref:`else clause<if statements>` to make it clearer
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 8-9
+
+        if not (
+            closed_door
+            and set_timer
+            and not too_hot
+            and pressed_start
+        ):
+            return False
+        else:
+            return True
+
+  the tests are still green.
+
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the :ref:`else clause<if statements>` in relation to the :ref:`if statement<if statements>`
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 1-7
+
+        # else:
+        if not not (
+            closed_door
+            and set_timer
+            and not too_hot
+            and pressed_start
+        ):
+            return True
+
+  still green.
+
+* I cancel out the :ref:`nots<test_logical_negation>`
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 2
+
+        # else:
+        # if not not (
+        if (
+            closed_door
+            and set_timer
+            and not too_hot
+            and pressed_start
+        ):
+            return True
+
+  green.
+
+* I add a :ref:`conditional expression<conditional expressions>`
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 1-6, 10-23
+
+        # if not (
+        #     closed_door
+        #     and set_timer
+        #     and not too_hot
+        #     and pressed_start
+        # ):
+        #     return False
+        # else:
+        # if not not (
+        # if (
+        #     closed_door
+        #     and set_timer
+        #     and not too_hot
+        #     and pressed_start
+        # ):
+        #     return True
+        return (
+            closed_door
+            and set_timer
+            and not too_hot
+            and pressed_start
+        )
+
+  the tests are still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    def microwave(
+            closed_door=False, pressed_start=False,
+            set_timer=False, too_hot=False,
+        ):
+        return (
+            closed_door
+            and set_timer
+            and not too_hot
+            and pressed_start
+        )
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+
+    git commit -am 'refactor microwave function'
+
 ----
 
 *********************************************************************************
@@ -3585,48 +3785,48 @@ I ran tests for a Microwave with these inputs:
 
 * is the **Microwave** door closed?
 * is the timer set?
+* is the **Microwave** too hot?
 * was the start button pressed?
-* is the microwave too hot?
 
-the inputs gave me this :ref:`truth table`
+and got this :ref:`truth table`
 
-=============  ==============  =================  ==================  ================
-door           timer           start button       too hot             output
-=============  ==============  =================  ==================  ================
-:red:`open`  :green:`set`    :green:`pressed`    :green:`too hot`    :red:`OFF`
-:red:`open`  :green:`set`    :green:`pressed`    :red:`NOT too hot`  :red:`OFF`
-:red:`open`  :green:`set`    :red:`NOT pressed`  :green:`too hot`    :red:`OFF`
-:red:`open`  :green:`set`    :red:`NOT pressed`  :red:`NOT too hot`  :red:`OFF`
-=============  ==============  =================  ==================  ================
+=============== ==============  ==================  ==================  =============
+door            timer           start button        too hot             output
+=============== ==============  ==================  ==================  =============
+:green:`closed` :green:`set`    :green:`pressed`    :green:`too hot`    :red:`False`
+:green:`closed` :green:`set`    :green:`pressed`    :red:`NOT too hot`  :green:`True`
+:green:`closed` :green:`set`    :red:`NOT pressed`  :green:`too hot`    :red:`False`
+:green:`closed` :green:`set`    :red:`NOT pressed`  :red:`NOT too hot`  :red:`False`
+=============== ==============  ==================  ==================  =============
 
-=============  ==============  =================  ==================  ================
-door           timer           start button       too hot             output
-=============  ==============  =================  ==================  ================
-:red:`open`  :red:`NOT set`  :green:`pressed`    :green:`too hot`    :red:`OFF`
-:red:`open`  :red:`NOT set`  :green:`pressed`    :red:`NOT too hot`  :red:`OFF`
-:red:`open`  :red:`NOT set`  :red:`NOT pressed`  :green:`too hot`    :red:`OFF`
-:red:`open`  :red:`NOT set`  :red:`NOT pressed`  :red:`NOT too hot`  :red:`OFF`
-=============  ==============  =================  ==================  ================
+=============== ==============  ==================  ==================  =============
+door            timer           start button        too hot             output
+=============== ==============  ==================  ==================  =============
+:green:`closed` :red:`NOT set`  :green:`pressed`    :green:`too hot`    :red:`False`
+:green:`closed` :red:`NOT set`  :green:`pressed`    :red:`NOT too hot`  :red:`False`
+:green:`closed` :red:`NOT set`  :red:`NOT pressed`  :green:`too hot`    :red:`False`
+:green:`closed` :red:`NOT set`  :red:`NOT pressed`  :red:`NOT too hot`  :red:`False`
+=============== ==============  ==================  ==================  =============
 
-=============  ==============  =================  ==================  ================
-door           timer           start button       too hot             output
-=============  ==============  =================  ==================  ================
-:green:`closed`  :green:`set`    :green:`pressed`    :green:`too hot`    :red:`OFF`
-:green:`closed`  :green:`set`    :green:`pressed`    :red:`NOT too hot`  :green:`HEATING`
-:green:`closed`  :green:`set`    :red:`NOT pressed`  :green:`too hot`    :red:`OFF`
-:green:`closed`  :green:`set`    :red:`NOT pressed`  :red:`NOT too hot`  :red:`OFF`
-=============  ==============  =================  ==================  ================
+=============== ==============  ==================  ==================  =============
+door            timer           start button        too hot             output
+=============== ==============  ==================  ==================  =============
+:red:`open`     :green:`set`    :green:`pressed`    :green:`too hot`    :red:`False`
+:red:`open`     :green:`set`    :green:`pressed`    :red:`NOT too hot`  :red:`False`
+:red:`open`     :green:`set`    :red:`NOT pressed`  :green:`too hot`    :red:`False`
+:red:`open`     :green:`set`    :red:`NOT pressed`  :red:`NOT too hot`  :red:`False`
+=============== ==============  ==================  ==================  =============
 
-=============  ==============  =================  ==================  ================
-door           timer           start button       too hot             output
-=============  ==============  =================  ==================  ================
-:green:`closed`  :red:`NOT set`  :green:`pressed`    :green:`too hot`    :red:`OFF`
-:green:`closed`  :red:`NOT set`  :green:`pressed`    :red:`NOT too hot`  :red:`OFF`
-:green:`closed`  :red:`NOT set`  :red:`NOT pressed`  :green:`too hot`    :red:`OFF`
-:green:`closed`  :red:`NOT set`  :red:`NOT pressed`  :red:`NOT too hot`  :red:`OFF`
-=============  ==============  =================  ==================  ================
+=============== ==============  ==================  ==================  =============
+door            timer           start button        too hot             output
+=============== ==============  ==================  ==================  =============
+:red:`open`     :red:`NOT set`  :green:`pressed`    :green:`too hot`    :red:`False`
+:red:`open`     :red:`NOT set`  :green:`pressed`    :red:`NOT too hot`  :red:`False`
+:red:`open`     :red:`NOT set`  :red:`NOT pressed`  :green:`too hot`    :red:`False`
+:red:`open`     :red:`NOT set`  :red:`NOT pressed`  :red:`NOT too hot`  :red:`False`
+=============== ==============  ==================  ==================  =============
 
-the only time this Microwave heats food is when the **Microwave** door is :green:`closed` AND the timer is :green:`set`, the start button is :green:`pressed` and the microwave temperature is :red:`NOT too hot`.
+The only time this **Microwave** heats food is when the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the **Microwave** temperature is :red:`NOT too hot` AND the start button is :green:`pressed`.
 
 ----
 
