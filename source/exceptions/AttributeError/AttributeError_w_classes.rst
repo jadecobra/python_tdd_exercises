@@ -57,7 +57,7 @@ open the project
 
     tests/test_attribute_error.py ..                  [100%]
 
-    ================== 7 passed in D.EFs ===================
+    ================== 2 passed in D.EFs ===================
 
 ----
 
