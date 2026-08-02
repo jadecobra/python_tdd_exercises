@@ -100,7 +100,7 @@ start the project
         .. literalinclude:: ../../code/elevator/make_tdd/makePythonTddElevator.sh
           :language: python
           :linenos:
-          :emphasize-lines: 2-3, 5, 12, 20
+          :emphasize-lines: 2-3, 5-6, 13, 21
 
       * I run ``makePythonTdd.sh`` in the terminal_ to make the ``elevator`` project
 

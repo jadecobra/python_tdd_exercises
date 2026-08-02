@@ -20,7 +20,7 @@ makePythonTdd TrafficLight
       .. literalinclude:: traffic_light/make_tdd/makePythonTddTrafficLight.sh
         :language: python
         :linenos:
-        :emphasize-lines: 2-3, 5, 12, 20
+        :emphasize-lines: 2-3, 5-6, 13, 21
 
   .. tab-item:: no WSL
     :sync: no_wsl
