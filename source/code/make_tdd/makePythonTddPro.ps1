@@ -2,7 +2,8 @@ $PROJECT_NAME=$args[0]
 uv init $PROJECT_NAME
 cd $PROJECT_NAME
 mkdir src
-Move-Item "main.py" "src/$PROJECT_NAME.py"
+Move-Item "src/$PROJECT_NAME/__init__.py"  "src/$PROJECT_NAME.py"
+Remove-Item "src/$PROJECT_NAME"
 mkdir tests
 New-Item tests/__init__.py
 

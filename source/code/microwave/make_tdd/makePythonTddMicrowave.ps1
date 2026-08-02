@@ -1,7 +1,8 @@
 uv init microwave
 cd microwave
 mkdir src
-Move-Item "main.py" "src/microwave.py"
+Move-Item "src/microwave/__init__.py"  "src/microwave.py"
+Remove-Item "src/microwave"
 mkdir tests
 New-Item tests/__init__.py
 

@@ -1,7 +1,8 @@
 uv init car
 cd car
 mkdir src
-Move-Item "main.py" "src/car.py"
+Move-Item "src/car/__init__.py"  "src/car.py"
+Remove-Item "src/car"
 mkdir tests
 New-Item tests/__init__.py
 

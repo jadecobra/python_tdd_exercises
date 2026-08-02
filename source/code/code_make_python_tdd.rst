@@ -34,7 +34,7 @@ makePythonTdd with no variables
       .. literalinclude:: make_tdd/makePythonTddNoVariables.ps1
         :language: python
         :linenos:
-        :emphasize-lines: 1-2, 4, 11, 19
+        :emphasize-lines: 1-2, 4-5, 12, 20
 
 * change ``more_magic`` to the name of your Project and when the program_ is called to make a `Test Driven Development`_ any time you want
 

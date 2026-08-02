@@ -30,7 +30,7 @@ makePythonTdd Microwave
       .. literalinclude:: microwave/make_tdd/makePythonTddMicrowave.ps1
         :language: Powershell
         :linenos:
-        :emphasize-lines: 1-2, 4, 11, 19
+        :emphasize-lines: 1-2, 4-5, 12, 20
 
 ----
 
