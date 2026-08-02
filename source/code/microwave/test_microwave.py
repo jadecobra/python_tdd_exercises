@@ -2,173 +2,150 @@ import src.microwave
 import unittest
 
 
-OFF = 'OFF'
-
-
 class TestMicrowave(unittest.TestCase):
 
-    def test_too_hot_open_door_timer_set(self):
-        self.assertEqual(
+    def test_too_hot_w_set_timer_closed_door_pressed_start(self):
+        self.assertFalse(
             src.microwave.microwave(
-                door_is_open=True,
-                timer_is_set=True,
-                start_is_pushed=True,
+                closed_door=True,
+                set_timer=True,
+                pressed_start=True,
                 too_hot=True,
-            ),
-            OFF
+            )
         )
-
-        self.assertEqual(
+        self.assertTrue(
             src.microwave.microwave(
-                door_is_open=True,
-                timer_is_set=True,
-                start_is_pushed=True,
+                closed_door=True,
+                set_timer=True,
+                pressed_start=True,
                 too_hot=False,
-            ),
-            OFF
+            )
         )
 
-        self.assertEqual(
+    def test_too_hot_w_set_timer_closed_door_not_pressed_start(self):
+        self.assertFalse(
             src.microwave.microwave(
-                door_is_open=True,
-                timer_is_set=True,
-                start_is_pushed=False,
+                closed_door=True,
+                set_timer=True,
+                pressed_start=False,
                 too_hot=True,
-            ),
-            OFF
+            )
         )
-
-        self.assertEqual(
+        self.assertFalse(
             src.microwave.microwave(
-                door_is_open=True,
-                timer_is_set=True,
-                start_is_pushed=False,
+                closed_door=True,
+                set_timer=True,
+                pressed_start=False,
                 too_hot=False,
-            ),
-            OFF
+            )
         )
 
-    def test_too_hot_open_door_timer_not_set(self):
-        self.assertEqual(
+    def test_too_hot_w_not_set_timer_closed_door_pressed_start(self):
+        self.assertFalse(
             src.microwave.microwave(
-                door_is_open=True,
-                timer_is_set=False,
-                start_is_pushed=True,
+                closed_door=True,
+                set_timer=False,
+                pressed_start=True,
                 too_hot=True,
-            ),
-            OFF
+            )
         )
-
-        self.assertEqual(
+        self.assertFalse(
             src.microwave.microwave(
-                door_is_open=True,
-                timer_is_set=False,
-                start_is_pushed=True,
+                closed_door=True,
+                set_timer=False,
+                pressed_start=True,
                 too_hot=False,
-            ),
-            OFF
+            )
         )
 
-        self.assertEqual(
+    def test_too_hot_w_not_set_timer_closed_door_not_pressed_start(self):
+        self.assertFalse(
             src.microwave.microwave(
-                door_is_open=True,
-                timer_is_set=False,
-                start_is_pushed=False,
+                closed_door=True,
+                set_timer=False,
+                pressed_start=False,
                 too_hot=True,
-            ),
-            OFF
+            )
         )
-
-        self.assertEqual(
+        self.assertFalse(
             src.microwave.microwave(
-                door_is_open=True,
-                timer_is_set=False,
-                start_is_pushed=False,
+                closed_door=True,
+                set_timer=False,
+                pressed_start=False,
                 too_hot=False,
-            ),
-            OFF
+            )
         )
 
-    def test_too_hot_closed_door_timer_set(self):
-        self.assertEqual(
+    def test_too_hot_w_set_timer_open_door_pressed_start(self):
+        self.assertFalse(
             src.microwave.microwave(
-                door_is_open=False,
-                timer_is_set=True,
-                start_is_pushed=True,
+                closed_door=False,
+                set_timer=True,
+                pressed_start=True,
                 too_hot=True,
-            ),
-            OFF
+            )
         )
-
-        self.assertEqual(
+        self.assertFalse(
             src.microwave.microwave(
-                door_is_open=False,
-                timer_is_set=True,
-                start_is_pushed=True,
+                closed_door=False,
+                set_timer=True,
+                pressed_start=True,
                 too_hot=False,
-            ),
-            'HEATING'
+            )
         )
 
-        self.assertEqual(
+    def test_too_hot_w_set_timer_open_door_not_pressed_start(self):
+        self.assertFalse(
             src.microwave.microwave(
-                door_is_open=False,
-                timer_is_set=True,
-                start_is_pushed=False,
+                closed_door=False,
+                set_timer=True,
+                pressed_start=False,
                 too_hot=True,
-            ),
-            OFF
+            )
         )
-
-        self.assertEqual(
+        self.assertFalse(
             src.microwave.microwave(
-                door_is_open=False,
-                timer_is_set=True,
-                start_is_pushed=False,
+                closed_door=False,
+                set_timer=True,
+                pressed_start=False,
                 too_hot=False,
-            ),
-            OFF
+            )
         )
 
-    def test_too_hot_closed_door_timer_not_set(self):
-        self.assertEqual(
+    def test_too_hot_w_not_set_timer_open_door_pressed_start(self):
+        self.assertFalse(
             src.microwave.microwave(
-                door_is_open=False,
-                timer_is_set=False,
-                start_is_pushed=True,
+                closed_door=False,
+                set_timer=False,
+                pressed_start=True,
                 too_hot=True,
-            ),
-            OFF
+            )
         )
-
-        self.assertEqual(
+        self.assertFalse(
             src.microwave.microwave(
-                door_is_open=False,
-                timer_is_set=False,
-                start_is_pushed=True,
+                closed_door=False,
+                set_timer=False,
+                pressed_start=True,
                 too_hot=False,
-            ),
-            OFF
+            )
         )
 
-        self.assertEqual(
+    def test_too_hot_w_not_set_timer_open_door_not_pressed_start(self):
+        self.assertFalse(
             src.microwave.microwave(
-                door_is_open=False,
-                timer_is_set=False,
-                start_is_pushed=False,
+                closed_door=False,
+                set_timer=False,
+                pressed_start=False,
                 too_hot=True,
-            ),
-            OFF
+            )
         )
-
-        self.assertEqual(
+        self.assertFalse(
             src.microwave.microwave(
-                door_is_open=False,
-                timer_is_set=False,
-                start_is_pushed=False,
+                closed_door=False,
+                set_timer=False,
+                pressed_start=False,
                 too_hot=False,
-            ),
-            OFF
+            )
         )
 
 

@@ -29,7 +29,7 @@ table of contents
 
 .. toctree::
   :titlesonly:
-  :maxdepth: 1
+  :maxdepth: 2
 
   self
   hatches/index

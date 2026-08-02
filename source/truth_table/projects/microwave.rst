@@ -1,6 +1,6 @@
 .. meta::
-  :description: Build a safety-critical Microwave control system using Python and Test Driven Development (TDD). This hands-on project tutorial guides beginners through managing four boolean inputs—door sensors, timers, start buttons, and "too hot" failsafes—using truth tables. Master the professional Red-Green-Refactor cycle, learn to debug complex "SyntaxError" and "TypeError" messages, and use modern tools like uv and pytest-watcher to create verified, robust software logic.
-  :keywords: Jacob Itegboje, Python microwave logic tutorial, TDD for beginners project, safety-critical software Python, building a microwave controller code, Python boolean truth table examples, Converse Non-Implication implementation, door sensor safety logic, microwave failsafe code, SyntaxError parameter without a default, TypeError got an unexpected keyword argument, Red Green Refactor Python guide, uv project management, pytest-watcher automated testing, logical negation NOT tutorial, logical disjunction OR example, refactoring nested if statements Python, hardware logic modeling, Python control systems for beginners, truth table to Python code translation
+  :description: Build a microwave heater with Python TDD (Red-Green-Refactor): translate a four-input truth table (closed door, set timer, pressed start, too hot failsafe) into ``src.microwave.microwave`` that returns True only when every condition is met. Beginners use uv, unittest, and pytest-watcher; hit NameError, AttributeError, TypeError (unexpected keywords), SyntaxError (parameter without a default; invalid syntax while factoring not/and/or), and AssertionError; learn default parameters, keyword calls, nested if / Logical Negation (NOT) / Logical Disjunction (OR) / Logical Conjunction (AND), and assertTrue/assertFalse until only closed AND set AND NOT too hot AND pressed heats food.
+  :keywords: Jacob Itegboje, Python microwave project, TDD Red Green Refactor, truth table to code, unittest assertTrue assertFalse, uv package manager, pytest-watcher, closed door, set timer, pressed start, too hot failsafe, default parameters, keyword arguments, SyntaxError parameter without a default, SyntaxError invalid syntax, TypeError unexpected keyword argument, NameError src not defined, AttributeError, Logical Negation NOT, Logical Disjunction OR, Logical Conjunction AND, if statements, De Morgan factoring, pumping python
 
 .. include:: ../../links.rst
 
@@ -744,7 +744,7 @@ test_closed_door_pressed_start
   =============== ==================  =============
   door            start button        output
   =============== ==================  =============
-  :red:`open`     :green:`pressed`    :red:`False`
+  :green:`closed` :green:`pressed`    :green:`True`
   =============== ==================  =============
 
   .. code-block:: python
@@ -2490,12 +2490,12 @@ the test passes.
     :lineno-start: 34
     :emphasize-lines: 10
 
-        def test_set_timer_open_door_pressed_start(self):
+        def test_set_timer_closed_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
-                    closed_door=False,
-                    set_timer=True,
-                    pressed_start=True,
+                    closed_door=True,
+                    set_timer=False,
+                    pressed_start=False,
                 )
             )
 
@@ -2504,7 +2504,7 @@ the test passes.
                 src.microwave.microwave(
                     closed_door=False,
                     set_timer=True,
-                    pressed_start=False,
+                    pressed_start=True,
                     too_hot=True,
                 )
             )
@@ -2954,7 +2954,7 @@ door            timer           start button        too hot             output
                     closed_door=True,
                     set_timer=True,
                     pressed_start=False,
-                    too_hot=False,
+                    too_hot=True,
                 )
             )
             self.assertFalse(
@@ -2994,7 +2994,7 @@ I change :ref:`assertTrue<another way to test if something is grouped as True>` 
                   closed_door=True,
                   set_timer=True,
                   pressed_start=False,
-                  too_hot=False,
+                  too_hot=True,
               )
           )
 
@@ -3040,7 +3040,7 @@ the test passes.
                     closed_door=True,
                     set_timer=True,
                     pressed_start=False,
-                    too_hot=False,
+                    too_hot=True,
                 )
             )
 
@@ -3089,16 +3089,16 @@ door            timer           start button        too hot             output
     :emphasize-lines: 7
 
         def test_set_timer_closed_door_pressed_start(self):
-            self.assertFalse(
+            self.assertTrue(
                 src.microwave.microwave(
                     closed_door=True,
                     set_timer=True,
-                    pressed_start=False,
+                    pressed_start=True,
                     too_hot=False,
                 )
             )
 
-        def test_too_hot_w_not_set_timer_closed_door_pressed_start(self):
+        def test_too_hot_w_set_timer_closed_door_not_pressed_start(self):
 
   the test is still green.
 
@@ -3214,24 +3214,17 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 5
-    :emphasize-lines: 10
+    :emphasize-lines: 3
 
-        def test_set_timer_closed_door_pressed_start(self):
-            self.assertTrue(
-                src.microwave.microwave(
-                    closed_door=True,
-                    set_timer=True,
-                    pressed_start=True,
-                )
-            )
+    class TestMicrowave(unittest.TestCase):
 
         def test_too_hot_w_set_timer_closed_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
                     set_timer=True,
-                    pressed_start=False,
-                    too_hot=False,
+                    pressed_start=True,
+                    too_hot=True,
                 )
             )
 
@@ -3710,7 +3703,7 @@ refactor microwave function
 
   .. code-block:: python
     :lineno-start: 25
-    :emphasize-lines: 1-6, 10-23
+    :emphasize-lines: 1-6, 10-22
 
         # if not (
         #     closed_door
@@ -3781,7 +3774,7 @@ close the project
 review
 *************************************************************************************
 
-I ran tests for a Microwave with these inputs:
+I ran tests for a **Microwave** with these inputs:
 
 * is the **Microwave** door closed?
 * is the timer set?
@@ -3826,7 +3819,7 @@ door            timer           start button        too hot             output
 :red:`open`     :red:`NOT set`  :red:`NOT pressed`  :red:`NOT too hot`  :red:`False`
 =============== ==============  ==================  ==================  =============
 
-The only time this **Microwave** heats food is when the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the **Microwave** temperature is :red:`NOT too hot` AND the start button is :green:`pressed`.
+The only time this **Microwave** :green:`heats` up food is when the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the **Microwave** temperature is :red:`NOT too hot` AND the start button is :green:`pressed`.
 
 ----
 

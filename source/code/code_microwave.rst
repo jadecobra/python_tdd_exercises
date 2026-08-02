@@ -43,6 +43,50 @@ The code in ``microwave/tests/test_microwave.py`` from :ref:`Microwave`
 .. literalinclude:: microwave/test_microwave.py
   :language: python
   :linenos:
+  :caption: microwave/tests/test_microwave.py
+  :lines: 1-23
+
+.. literalinclude:: microwave/test_microwave.py
+  :language: python
+  :lineno-start: 25
+  :caption: microwave/tests/test_microwave.py
+  :lines: 25-41
+
+.. literalinclude:: microwave/test_microwave.py
+  :language: python
+  :lineno-start: 43
+  :caption: microwave/tests/test_microwave.py
+  :lines: 43-59
+
+.. literalinclude:: microwave/test_microwave.py
+  :language: python
+  :lineno-start: 61
+  :caption: microwave/tests/test_microwave.py
+  :lines: 61-77
+
+.. literalinclude:: microwave/test_microwave.py
+  :language: python
+  :lineno-start: 79
+  :caption: microwave/tests/test_microwave.py
+  :lines: 79-95
+
+.. literalinclude:: microwave/test_microwave.py
+  :language: python
+  :lineno-start: 97
+  :caption: microwave/tests/test_microwave.py
+  :lines: 97-113
+
+.. literalinclude:: microwave/test_microwave.py
+  :language: python
+  :lineno-start: 115
+  :caption: microwave/tests/test_microwave.py
+  :lines: 115-131
+
+.. literalinclude:: microwave/test_microwave.py
+  :language: python
+  :lineno-start: 133
+  :caption: microwave/tests/test_microwave.py
+  :lines: 133-
 
 ----
 
