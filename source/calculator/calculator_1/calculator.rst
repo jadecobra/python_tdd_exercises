@@ -66,17 +66,19 @@ start the project
       :sync: unix
 
       .. code-block:: python
-        :emphasize-lines: 1
+        :emphasize-lines: 1-2
 
-        mv main.py src/calculator.py
+        mv src/calculator/__init__.py srccalculator.py
+        rm src/calculator
 
     .. tab-item:: no WSL
       :sync: no_wsl
 
       .. code-block:: python
-        :emphasize-lines: 1
+        :emphasize-lines: 1-2
 
-        Move-Item main.py src/calculator.py
+        Move-Item src/calculator/__init__.py srccalculator.py
+        Remove-Item src/calculator
 
   the terminal_ goes back to the command line.
 

@@ -160,17 +160,19 @@ start the project
       :sync: unix
 
       .. code-block:: python
-        :emphasize-lines: 1
+        :emphasize-lines: 1-2
 
-        mv main.py tests/test_unittest.py
+        mv src/test_unittest/__init__.py  tests/test_unittest.py
+        rm src/test_unittest
 
     .. tab-item:: no WSL
       :sync: no_wsl
 
       .. code-block:: python
-        :emphasize-lines: 1
+        :emphasize-lines: 1-2
 
-        Move-Item main.py tests/test_unittest.py
+        Move-Item src/test_unittest/__init__.py  tests/test_unittest.py
+        Remove-Item src/test_unittest
 
 * I open ``test_unittest.py``
 

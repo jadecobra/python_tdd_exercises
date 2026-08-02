@@ -129,17 +129,19 @@ start the project
       :sync: unix
 
       .. code-block:: python
-        :emphasize-lines: 1
+        :emphasize-lines: 1-2
 
-        mv main.py tests/test_telephone.py
+        mv src/test_telephone/__init__.py  tests/test_telephone.py
+        rm src/test_telephone
 
     .. tab-item:: no WSL
       :sync: no_wsl
 
       .. code-block:: python
-        :emphasize-lines: 1
+        :emphasize-lines: 1-2
 
-        Move-Item main.py tests/test_telephone.py
+        Move-Item src/test_telephone/__init__.py  tests/test_telephone.py
+        Remove-Item src/test_telephone
 
   the terminal_ goes back to the command line.
 

@@ -2,7 +2,8 @@ cd module_not_found_error
 uv init module_not_found_error
 cd module_not_found_error
 mkdir src
-mv main.py src/main.py
+mv src/main/__init__.py srcmain.py
+rm src/main
 mkdir tests
 touch tests/module_not_found_error.py
 python3 -m unittest

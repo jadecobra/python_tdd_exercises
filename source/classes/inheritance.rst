@@ -188,7 +188,8 @@ start the project
       .. code-block:: python
         :emphasize-lines: 1
 
-        mv main.py tests/test_classes.py
+        mv src/test_classes/__init__.py  tests/test_classes.py
+        rm src/test_classes
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -196,7 +197,8 @@ start the project
       .. code-block:: python
         :emphasize-lines: 1
 
-        Move-Item main.py tests/test_classes.py
+        Move-Item src/test_classes/__init__.py  tests/test_classes.py
+        Remove-Item src/test_classes
 
 * I open ``test_classes.py``
 

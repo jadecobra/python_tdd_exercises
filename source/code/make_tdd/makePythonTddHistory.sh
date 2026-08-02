@@ -11,7 +11,8 @@ mkdir src
 tree
 tree -a -L 2
 python3 src/magic.py
-mv main.py src/magic.py
+mv src/magic/__init__.py srcmagic.py
+rm src/magic
 tree -a -L 2
 python3 src/magic.py
 cat src/magic.py

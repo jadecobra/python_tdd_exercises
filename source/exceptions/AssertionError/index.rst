@@ -159,17 +159,19 @@ start the project
       :sync: unix
 
       .. code-block:: python
-        :emphasize-lines: 1
+        :emphasize-lines: 1-2
 
-        mv main.py tests/test_assertion_error.py
+        mv src/test_assertion_error/__init__.py  tests/test_assertion_error.py
+        rm src/test_assertion_error
 
     .. tab-item:: no WSL
       :sync: no_wsl
 
       .. code-block:: python
-        :emphasize-lines: 1
+        :emphasize-lines: 1-2
 
-        Move-Item main.py tests/test_assertion_error.py
+        Move-Item src/test_assertion_error/__init__.py  tests/test_assertion_error.py
+        Remove-Item src/test_assertion_error
 
   the terminal_ goes back to the command line.
 

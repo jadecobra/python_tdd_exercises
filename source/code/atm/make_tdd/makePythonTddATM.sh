@@ -2,7 +2,8 @@
 uv init atm
 cd atm
 mkdir src
-mv main.py src/atm.py
+mv src/atm/__init__.py srcatm.py
+rm src/atm
 mkdir tests
 touch tests/__init__.py
 

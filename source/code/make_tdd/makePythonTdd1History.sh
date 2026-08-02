@@ -11,7 +11,8 @@ mkdir src
 tree
 tree -a -L 1
 python3 src/person.py
-mv main.py src/person.py
+mv src/person/__init__.py srcperson.py
+rm src/person
 tree -a -L 2
 python3 src/person.py
 cat src/person.py

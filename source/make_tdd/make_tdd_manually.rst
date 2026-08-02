@@ -1,5 +1,5 @@
 .. meta::
-  :description: Build your first Python TDD project by hand with uv, the terminal, and unittest. Jacob Itegboje walks through pumping_python folder setup, uv init person, mkdir src and tests, mv main.py to src/person.py, touch tests/__init__.py, rename tests/person.py to test_person.py, and the first RED test with assert False is True raising AssertionError (FAILED errors=1, NO TESTS RAN until test_ prefix and package). Learn cd, mkdir, tree, cat, mv, touch, python3 -m unittest discovery, module-level assert gotchas, and why passing tests still show NO TESTS RAN before pytest-watcher. Pumping Python manual TDD environment chapter 1.
+  :description: Build your first Python TDD project by hand with uv, the terminal, and unittest. Jacob Itegboje walks through pumping_python folder setup, uv init person, mkdir src and tests, mv src/person.py to test_person.py, and the first RED test with assert False is True raising AssertionError (FAILED errors=1, NO TESTS RAN until test_ prefix and package). Learn cd, mkdir, tree, cat, mv, touch, python3 -m unittest discovery, module-level assert gotchas, and why passing tests still show NO TESTS RAN before pytest-watcher. Pumping/__init__.py  to src/person.py, touch tests/__init__.py, rename tests/person.py to test_person.py, and the first RED test with assert False is True raising AssertionError (FAILED errors=1, NO TESTS RAN until test_ prefix and package). Learn cd, mkdir, tree, cat, mv, touch, python3 -m unittest discovery, module-level assert gotchas, and why passing tests still show NO TESTS RAN before pytest-watcher. Pumping python to test_person.py, and the first RED test with assert False is True raising AssertionError (FAILED errors=1, NO TESTS RAN until test_ prefix and package). Learn cd, mkdir, tree, cat, mv, touch, python3 -m unittest discovery, module-level assert gotchas, and why passing tests still show NO TESTS RAN before pytest-watcher. Pumpingthon manual TDD environment chapter 1.
   :keywords: Jacob Itegboje, Pumping Python, manual python tdd setup, uv init project, python unittest first test, assert False is True AssertionError, NO TESTS RAN unittest, test_ prefix discovery, tests __init__.py package, mkdir src tests, mv main.py, tree cat touch terminal, python3 -m unittest, red green refactor first failure, test driven development environment manually, pumping_python person project, IDE auto save danger close file before mv
 
 .. include:: ../links.rst
@@ -396,7 +396,8 @@ how to change the name of a file
   .. code-block:: python
     :emphasize-lines: 1
 
-    mv main.py src/person.py
+    mv src/person/__init__.py srcperson.py
+    rm src/person
 
   the terminal_ goes back to the command line.
 
@@ -979,7 +980,8 @@ how to view all the commands typed in a terminal
     uv init NAME_OF_THE_PROJECT
     cd NAME_OF_THE_PROJECT
     mkdir src
-    mv main.py src/NAME_OF_THE_PROJECT.py
+    mv src/NAME_OF_THE_PROJECT/__init__.py srcNAME_OF_THE_PROJECT.py
+    rm src/NAME_OF_THE_PROJECT
     mkdir tests
     touch tests/__init__.py
     touch tests/test_NAME_OF_THE_PROJECT.py

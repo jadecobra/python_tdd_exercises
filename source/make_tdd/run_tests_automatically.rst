@@ -601,7 +601,8 @@ how to view all the commands I typed to automate running tests
     uv init NAME_OF_THE_PROJECT
     cd NAME_OF_THE_PROJECT
     mkdir src
-    mv main.py src/NAME_OF_THE_PROJECT.py
+    mv src/NAME_OF_THE_PROJECT/__init__.py srcNAME_OF_THE_PROJECT.py
+    rm src/NAME_OF_THE_PROJECT
     mkdir tests
     touch tests/__init__.py
     touch tests/test_NAME_OF_THE_PROJECT.py

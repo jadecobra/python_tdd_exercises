@@ -2,7 +2,8 @@
 uv init microwave
 cd microwave
 mkdir src
-mv main.py src/microwave.py
+mv src/microwave/__init__.py srcmicrowave.py
+rm src/microwave
 mkdir tests
 touch tests/__init__.py
 

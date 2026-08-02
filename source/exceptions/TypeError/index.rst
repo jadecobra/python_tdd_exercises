@@ -133,17 +133,19 @@ start the project
       :sync: unix
 
       .. code-block:: python
-        :emphasize-lines: 1
+        :emphasize-lines: 1-2
 
-        mv main.py tests/test_type_error.py
+        mv src/test_type_error/__init__.py  tests/test_type_error.py
+        rm src/test_type_error
 
     .. tab-item:: no WSL
       :sync: no_wsl
 
       .. code-block:: python
-        :emphasize-lines: 1
+        :emphasize-lines: 1-2
 
-        Move-Item main.py tests/test_type_error.py
+        Move-Item src/test_type_error/__init__.py  tests/test_type_error.py
+        Remove-Item src/test_type_error
 
   the terminal_ goes back to the command line.
 
