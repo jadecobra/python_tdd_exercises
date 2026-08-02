@@ -1,8 +1,7 @@
 #!/bin/bash
 uv init elevator
 cd elevator
-mkdir src
-mv src/elevator/__init__.py src/elevator.py
+touch src/elevator.py
 rmdir src/elevator
 mkdir tests
 touch tests/__init__.py

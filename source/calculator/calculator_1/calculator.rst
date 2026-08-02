@@ -68,7 +68,7 @@ start the project
       .. code-block:: python
         :emphasize-lines: 1-2
 
-        mv src/calculator/__init__.py src/calculator.py
+        touch src/calculator.py
         rmdir src/calculator
 
     .. tab-item:: no WSL
@@ -77,7 +77,7 @@ start the project
       .. code-block:: python
         :emphasize-lines: 1-2
 
-        Move-Item src/calculator/__init__.py src/calculator.py
+        New-Item src/calculator.py
         Remove-Item src/calculator
 
   the terminal_ goes back to the command line.

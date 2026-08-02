@@ -396,7 +396,7 @@ how to change the name of a file
   .. code-block:: python
     :emphasize-lines: 1
 
-    mv src/person/__init__.py src/person.py
+    touch src/person.py
     rmdir src/person
 
   the terminal_ goes back to the command line.
@@ -980,7 +980,7 @@ how to view all the commands typed in a terminal
     uv init NAME_OF_THE_PROJECT
     cd NAME_OF_THE_PROJECT
     mkdir src
-    mv src/NAME_OF_THE_PROJECT/__init__.py src/NAME_OF_THE_PROJECT.py
+    touch src/NAME_OF_THE_PROJECT.py
     rmdir src/NAME_OF_THE_PROJECT
     mkdir tests
     touch tests/__init__.py

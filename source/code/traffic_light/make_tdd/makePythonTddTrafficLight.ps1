@@ -1,7 +1,6 @@
 uv init traffic_light
 cd traffic_light
-mkdir src
-Move-Item "src/traffic_light/__init__.py"  "src/traffic_light.py"
+New-Item "src/traffic_light.py"
 Remove-Item "src/traffic_light"
 mkdir tests
 New-Item tests/__init__.py

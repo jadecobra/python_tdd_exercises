@@ -93,7 +93,7 @@ start the project
       .. code-block:: python
         :emphasize-lines: 1-2
 
-        mv src/person/__init__.py src/person.py
+        touch src/person.py
         rmdir src/person
 
     .. tab-item:: no WSL
@@ -102,7 +102,7 @@ start the project
       .. code-block:: python
         :emphasize-lines: 1-2
 
-        Move-Item src/person/__init__.py src/person.py
+        New-Item src/person.py
         Remove-Item src/person
 
   the terminal_ goes back to the command line.

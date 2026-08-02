@@ -1,7 +1,6 @@
 uv init atm
 cd atm
-mkdir src
-Move-Item "src/atm/__init__.py"  "src/atm.py"
+New-Item "src/atm.py"
 Remove-Item "src/atm"
 mkdir tests
 New-Item tests/__init__.py

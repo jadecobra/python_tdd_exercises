@@ -9,7 +9,7 @@ mv tests/module_not_found_error.py tests/test_module_not_found_error.py
 python3 -m unittest
 touch tests/__init__.py
 python3 -m unittest
-mv src/module_not_found_error/__init__.py src/module_not_found_error.py
+touch src/module_not_found_error.py
 rmdir src/module_not_found_error
 python3 -m unittest
 touch src/module_01.py

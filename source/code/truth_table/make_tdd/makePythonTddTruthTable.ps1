@@ -1,7 +1,6 @@
 uv init truth_table
 cd truth_table
-mkdir src
-Move-Item "src/truth_table/__init__.py"  "src/truth_table.py"
+New-Item "src/truth_table.py"
 Remove-Item "src/truth_table"
 mkdir tests
 New-Item tests/__init__.py

@@ -143,7 +143,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         uv init magic
         cd magic
         mkdir src
-        mv src/magic/__init__.py src/magic.py
+        touch src/magic.py
         rmdir src/magic
         mkdir tests
         touch tests/__init__.py
@@ -165,7 +165,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         uv init magic
         cd magic
         mkdir src
-        Move-Item src/magic/__init__.py src/magic.py
+        New-Item src/magic.py
         Remove-Item src/magic
         mkdir tests
         New-Item tests/__init__.py
@@ -194,7 +194,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         uv init magic
         cd magic
         mkdir src
-        mv src/magic/__init__.py src/magic.py
+        touch src/magic.py
         rmdir src/magic
         mkdir tests
         touch tests/__init__.py
@@ -217,7 +217,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         uv init magic
         cd magic
         mkdir src
-        Move-Item src/magic/__init__.py src/magic.py
+        New-Item src/magic.py
         Remove-Item src/magic
         mkdir tests
         New-Item tests/__init__.py
@@ -245,7 +245,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         uv init magic
         cd magic
         mkdir src
-        mv src/magic/__init__.py src/magic.py
+        touch src/magic.py
         rmdir src/magic
         mkdir tests
         touch tests/__init__.py
@@ -278,7 +278,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         uv init magic
         cd magic
         mkdir src
-        Move-Item src/magic/__init__.py src/magic.py
+        New-Item src/magic.py
         Remove-Item src/magic
         mkdir tests
         New-Item tests/__init__.py
@@ -547,7 +547,7 @@ how to use makePythonTdd to make a different project
       .. literalinclude:: ../code/make_tdd/makePythonTddNoVariables.sh
         :language: python
         :linenos:
-        :emphasize-lines: 2-3, 5-6, 13, 21
+        :emphasize-lines: 2-5, 12, 20
 
       I run ``makePythonTdd.sh`` in the terminal_ to make a project named ``more_magic``
 
@@ -562,7 +562,7 @@ how to use makePythonTdd to make a different project
       .. literalinclude:: ../code/make_tdd/makePythonTddNoVariables.ps1
         :language: Powershell
         :linenos:
-        :emphasize-lines: 1-2, 4-5, 12, 20
+        :emphasize-lines: 1-4, 11, 19
 
       I run ``makePythonTdd.ps1`` in the terminal_ to make a project named ``more_magic``
 

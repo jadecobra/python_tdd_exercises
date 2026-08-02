@@ -1,8 +1,7 @@
 #!/bin/bash
 uv init truth_table
 cd truth_table
-mkdir src
-mv src/truth_table/__init__.py src/truth_table.py
+touch src/truth_table.py
 rmdir src/truth_table
 mkdir tests
 touch tests/__init__.py

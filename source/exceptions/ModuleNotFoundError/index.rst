@@ -95,7 +95,7 @@ start the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    mv src/main/__init__.py src/main.py
+    touch src/main.py
     rmdir src/main
 
   the terminal_ goes back to the command line.

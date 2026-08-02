@@ -1,7 +1,6 @@
 uv init more_magic
 cd more_magic
-mkdir src
-Move-Item "src/more_magic/__init__.py"  "src/more_magic.py"
+New-Item "src/more_magic.py"
 Remove-Item "src/more_magic"
 mkdir tests
 New-Item tests/__init__.py

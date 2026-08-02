@@ -1,8 +1,7 @@
 #!/bin/bash
 uv init more_magic
 cd more_magic
-mkdir src
-mv src/more_magic/__init__.py src/more_magic.py
+touch src/more_magic.py
 rmdir src/more_magic
 mkdir tests
 touch tests/__init__.py

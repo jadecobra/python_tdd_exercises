@@ -20,7 +20,7 @@ makePythonTdd Elevator
     .. literalinclude:: elevator/make_tdd/makePythonTddElevator.sh
       :language: python
       :linenos:
-      :emphasize-lines: 2-3, 5-6, 13, 21
+      :emphasize-lines: 2-5, 12, 20
 
   .. tab-item:: no WSL
     :sync: no_wsl
@@ -30,7 +30,7 @@ makePythonTdd Elevator
     .. literalinclude:: elevator/make_tdd/makePythonTddElevator.ps1
       :language: Powershell
       :linenos:
-      :emphasize-lines: 1-2, 4-5, 12, 20
+      :emphasize-lines: 1-4, 11, 19
 
 ----
 
