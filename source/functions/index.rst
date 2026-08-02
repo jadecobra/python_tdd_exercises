@@ -145,7 +145,7 @@ start the project
         :emphasize-lines: 1-2
 
         mv src/test_functions/__init__.py  tests/test_functions.py
-        rm src/test_functions
+        rmdir src/test_functions
 
     .. tab-item:: no WSL
       :sync: no_wsl

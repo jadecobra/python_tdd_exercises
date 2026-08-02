@@ -37,7 +37,7 @@ with these commands
   mkdir tests
   touch tests/__init__.py
   mv src/test_NAME_OF_THE_PROJECT/__init__.py  tests/test_NAME_OF_THE_PROJECT.py
-  rm src/test_NAME_OF_THE_PROJECT
+  rmdir src/test_NAME_OF_THE_PROJECT
   echo "pytest" > requirements.txt
   echo "pytest-watcher" >> requirements.txt
   uv add --requirement requirements.txt
@@ -143,8 +143,8 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         uv init magic
         cd magic
         mkdir src
-        mv src/magic/__init__.py srcmagic.py
-        rm src/magic
+        mv src/magic/__init__.py src/magic.py
+        rmdir src/magic
         mkdir tests
         touch tests/__init__.py
         touch tests/test_magic.py
@@ -165,7 +165,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         uv init magic
         cd magic
         mkdir src
-        Move-Item src/magic/__init__.py srcmagic.py
+        Move-Item src/magic/__init__.py src/magic.py
         Remove-Item src/magic
         mkdir tests
         New-Item tests/__init__.py
@@ -194,8 +194,8 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         uv init magic
         cd magic
         mkdir src
-        mv src/magic/__init__.py srcmagic.py
-        rm src/magic
+        mv src/magic/__init__.py src/magic.py
+        rmdir src/magic
         mkdir tests
         touch tests/__init__.py
         echo "" > tests/test_magic.py
@@ -217,7 +217,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         uv init magic
         cd magic
         mkdir src
-        Move-Item src/magic/__init__.py srcmagic.py
+        Move-Item src/magic/__init__.py src/magic.py
         Remove-Item src/magic
         mkdir tests
         New-Item tests/__init__.py
@@ -245,8 +245,8 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         uv init magic
         cd magic
         mkdir src
-        mv src/magic/__init__.py srcmagic.py
-        rm src/magic
+        mv src/magic/__init__.py src/magic.py
+        rmdir src/magic
         mkdir tests
         touch tests/__init__.py
 
@@ -278,7 +278,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         uv init magic
         cd magic
         mkdir src
-        Move-Item src/magic/__init__.py srcmagic.py
+        Move-Item src/magic/__init__.py src/magic.py
         Remove-Item src/magic
         mkdir tests
         New-Item tests/__init__.py

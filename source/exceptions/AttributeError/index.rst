@@ -165,7 +165,7 @@ start the project
         :emphasize-lines: 1-2
 
         mv src/test_attribute_error/__init__.py  tests/test_attribute_error.py
-        rm src/test_attribute_error
+        rmdir src/test_attribute_error
 
     .. tab-item:: no WSL
       :sync: no_wsl

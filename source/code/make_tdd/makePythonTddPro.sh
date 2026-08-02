@@ -13,7 +13,7 @@ uv init $PROJECT_NAME
 mkdir -p $PROJECT_NAME/{src,tests}
 cd $PROJECT_NAME
 mv src/$PROJECT_NAME/__init__.py src$PROJECT_NAME.py
-rm src/$PROJECT_NAME
+rmdir src/$PROJECT_NAME
 touch tests/__init__.py
 
 echo "import unittest

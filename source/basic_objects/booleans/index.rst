@@ -124,7 +124,7 @@ start the project
         :emphasize-lines: 1-2
 
         mv src/test_booleans/__init__.py  tests/test_booleans.py
-        rm src/test_booleans
+        rmdir src/test_booleans
 
     .. tab-item:: no WSL
       :sync: no_wsl

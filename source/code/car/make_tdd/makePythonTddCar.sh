@@ -2,8 +2,8 @@
 uv init car
 cd car
 mkdir src
-mv src/car/__init__.py srccar.py
-rm src/car
+mv src/car/__init__.py src/car.py
+rmdir src/car
 mkdir tests
 touch tests/__init__.py
 

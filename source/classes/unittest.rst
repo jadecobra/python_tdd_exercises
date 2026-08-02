@@ -163,7 +163,7 @@ start the project
         :emphasize-lines: 1-2
 
         mv src/test_unittest/__init__.py  tests/test_unittest.py
-        rm src/test_unittest
+        rmdir src/test_unittest
 
     .. tab-item:: no WSL
       :sync: no_wsl

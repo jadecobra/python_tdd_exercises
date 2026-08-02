@@ -136,7 +136,7 @@ start the project
         :emphasize-lines: 1-2
 
         mv src/test_type_error/__init__.py  tests/test_type_error.py
-        rm src/test_type_error
+        rmdir src/test_type_error
 
     .. tab-item:: no WSL
       :sync: no_wsl

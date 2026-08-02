@@ -132,7 +132,7 @@ start the project
         :emphasize-lines: 1-2
 
         mv src/test_telephone/__init__.py  tests/test_telephone.py
-        rm src/test_telephone
+        rmdir src/test_telephone
 
     .. tab-item:: no WSL
       :sync: no_wsl

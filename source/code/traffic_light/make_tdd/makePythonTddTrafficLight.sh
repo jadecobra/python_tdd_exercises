@@ -2,8 +2,8 @@
 uv init traffic_light
 cd traffic_light
 mkdir src
-mv src/traffic_light/__init__.py srctraffic_light.py
-rm src/traffic_light
+mv src/traffic_light/__init__.py src/traffic_light.py
+rmdir src/traffic_light
 mkdir tests
 touch tests/__init__.py
 

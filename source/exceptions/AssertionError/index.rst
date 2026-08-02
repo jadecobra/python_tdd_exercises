@@ -162,7 +162,7 @@ start the project
         :emphasize-lines: 1-2
 
         mv src/test_assertion_error/__init__.py  tests/test_assertion_error.py
-        rm src/test_assertion_error
+        rmdir src/test_assertion_error
 
     .. tab-item:: no WSL
       :sync: no_wsl

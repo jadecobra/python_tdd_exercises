@@ -2,8 +2,8 @@
 uv init elevator
 cd elevator
 mkdir src
-mv src/elevator/__init__.py srcelevator.py
-rm src/elevator
+mv src/elevator/__init__.py src/elevator.py
+rmdir src/elevator
 mkdir tests
 touch tests/__init__.py
 
