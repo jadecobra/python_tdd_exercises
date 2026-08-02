@@ -1,15 +1,15 @@
 #!/bin/bash
-uv init atm
-cd atm
+uv init traffic_light
+cd traffic_light
 mkdir src
-mv main.py src/atm.py
+mv main.py src/traffic_light.py
 mkdir tests
 touch tests/__init__.py
 
 echo "import unittest
 
 
-class TestATM(unittest.TestCase):
+class TestTrafficLight(unittest.TestCase):
 
     def test_failure(self):
         self.assertFalse(True)
@@ -17,7 +17,7 @@ class TestATM(unittest.TestCase):
 
 # Exceptions seen
 # AssertionError
-" > tests/test_atm.py
+" > tests/test_traffic_light.py
 
 echo "pytest" > requirements.txt
 echo "pytest-watcher" >> requirements.txt
