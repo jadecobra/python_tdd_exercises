@@ -26,6 +26,25 @@ I have these tests by the end of the chapter
   :language: python
   :linenos:
   :caption: attribute_error/tests/test_attribute_error.py
+  :lines: 1-14
+
+.. literalinclude:: ../../code/attribute_error/tests/test_attribute_error_w_classes.py
+  :language: python
+  :lineno-start: 17
+  :caption: attribute_error/tests/test_attribute_error.py
+  :lines: 17-27
+
+.. literalinclude:: ../../code/attribute_error/tests/test_attribute_error_w_classes.py
+  :language: python
+  :lineno-start: 30
+  :caption: attribute_error/tests/test_attribute_error.py
+  :lines: 30-40
+
+.. literalinclude:: ../../code/attribute_error/tests/test_attribute_error_w_classes.py
+  :language: python
+  :lineno-start: 43
+  :caption: attribute_error/tests/test_attribute_error.py
+  :lines: 43-
 
 ----
 
@@ -64,10 +83,6 @@ open the project
 *********************************************************************************
 test_attribute_error_w_class_attributes
 *********************************************************************************
-
-
-
-----
 
 =================================================================================
 :red:`RED`: make it fail
