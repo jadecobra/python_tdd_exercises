@@ -184,16 +184,16 @@ I want the **Traffic Light** to change color based on a timer. If the inputs are
 
 then I get this :ref:`truth table`
 
-=====================  ===============  ================
-current light (first)  timer (second)   show (output)
-=====================  ===============  ================
-:red:`RED`             :green:`done`    :green:`GREEN`
-:red:`RED`             :red:`NOT done`  :red:`RED`
-:yellow:`YELLOW`       :green:`done`    :red:`RED`
-:yellow:`YELLOW`       :red:`NOT done`  :yellow:`YELLOW`
-:green:`GREEN`         :green:`done`    :yellow:`YELLOW`
-:green:`GREEN`         :red:`NOT done`  :green:`GREEN`
-=====================  ===============  ================
+================  ===============  ================
+current light     timer            output
+================  ===============  ================
+:red:`RED`        :green:`done`    :green:`GREEN`
+:red:`RED`        :red:`NOT done`  :red:`RED`
+:yellow:`YELLOW`  :green:`done`    :red:`RED`
+:yellow:`YELLOW`  :red:`NOT done`  :yellow:`YELLOW`
+:green:`GREEN`    :green:`done`    :yellow:`YELLOW`
+:green:`GREEN`    :red:`NOT done`  :green:`GREEN`
+================  ===============  ================
 
 ----
 
@@ -220,6 +220,12 @@ current light     timer            output
 
 * I go back to the terminal_ where the tests are running
 * I change :ref:`test_failure` to ``test_red_light``, then add an :ref:`assertion<what is an assertion?>` for if the light is :red:`RED` AND the timer is :green:`done`
+
+  ================  ===============  ================
+  current light     timer            output
+  ================  ===============  ================
+  :red:`RED`        :green:`done`    :green:`GREEN`
+  ================  ===============  ================
 
   .. code-block:: python
     :lineno-start: 5
@@ -447,11 +453,6 @@ current light     timer            output
 
     git commit -am 'add test_red_light'
 
-If the current **Traffic Light** is :red:`RED`, the ``control`` :ref:`function<what is a function?>` returns
-
-* :green:`GREEN` if the timer is :green:`done`
-* :red:`RED` if the timer is :red:`NOT done`
-
 ----
 
 *********************************************************************************
@@ -475,43 +476,45 @@ current light     timer            output
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>` for if the **Traffic Light** is :yellow:`YELLOW` AND the timer is :green:`done`, to ``tests/test_traffic_light.py``
+* I go back to the terminal_ where the tests are running.
 
-================  ===============  ================
-current light     timer            output
-================  ===============  ================
-:yellow:`YELLOW`  :green:`done`    :red:`RED`
-================  ===============  ================
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the **Traffic Light** is :yellow:`YELLOW` AND the timer is :green:`done`, to ``tests/test_traffic_light.py``
 
-.. code-block:: python
-  :lineno-start: 15
-  :emphasize-lines: 9-16
+  ================  ===============  ================
+  current light     timer            output
+  ================  ===============  ================
+  :yellow:`YELLOW`  :green:`done`    :red:`RED`
+  ================  ===============  ================
 
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light='RED',
-                    timer_done=False,
-                ),
-                'RED'
-            )
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 9-16
 
-        def test_yellow_light(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light='YELLOW',
-                    timer_done=True,
-                ),
-                'RED'
-            )
+              self.assertEqual(
+                  src.traffic_light.control(
+                      current_light='RED',
+                      timer_done=False,
+                  ),
+                  'RED'
+              )
+
+          def test_yellow_light(self):
+              self.assertEqual(
+                  src.traffic_light.control(
+                      current_light='YELLOW',
+                      timer_done=True,
+                  ),
+                  'RED'
+              )
 
 
-    # Exceptions seen
+      # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: 'GREEN' != 'RED'
+    AssertionError: 'GREEN' != 'RED'
 
 ----
 
@@ -799,25 +802,23 @@ the test passes.
     control(current_light='YELLOW', timer_done=True ) -> 'RED'
     control(current_light='YELLOW', timer_done=False) -> 'YELLOW'
     control(current_light='GREEN' , timer_done=True ) -> 'YELLOW'
-    control(current_light='GREEN' , timer_done=False) -> 'YELLOW'
+    control(current_light='GREEN' , timer_done=False) -> 'GREEN'
 
+* When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the timer is :green:`done`
 
+  * If the timer is :red:`NOT done`
 
-  This is what happens when the ``control`` :ref:`function<what is a function?>` is called
+    - it returns :yellow:`YELLOW` if the current light is :yellow:`YELLOW`
+    - it returns :green:`GREEN` if the current light is :green:`GREEN`
+    - it returns :red:`RED` if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
 
-* if the timer is :red:`NOT done`
+  * If the timer is :green:`done`
 
-  - it returns :yellow:`YELLOW` if the current light is :yellow:`YELLOW`
-  - it returns :green:`GREEN` if the current light is :green:`GREEN`
-  - it returns :red:`RED` if the current light is NOT :yellow:`YELLOW` and the current light is NOT :green:`GREEN`
+    - it returns :red:`RED` if the current light is :yellow:`YELLOW`
+    - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+    - it returns :green:`GREEN` if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
 
-* if the timer is :green:`done`
-
-  - it returns :red:`RED` if the current light is :yellow:`YELLOW`
-  - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-  - it returns :green:`GREEN` if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
-
-* I add an :ref:`if statement<if statements>` for when the timer is :red:`NOT done` and the light is :red:`RED`, to make it clearer
+  I add an :ref:`if statement<if statements>` for when the timer is :red:`NOT done` AND the light is :red:`RED`, to make it clearer
 
   .. code-block:: python
     :linenos:
@@ -950,14 +951,105 @@ the test passes.
 
         return green
 
-This is what happens when the ``control`` :ref:`function<what is a function?>` is called
+* I add a git_ commit message in the other terminal_
 
-* if the timer is :red:`NOT done` it returns the current light
-* if the timer is :green:`done`
+  .. code-block::
+    :emphasize-lines: 1
 
-  - it returns :red:`RED` if the current light is :yellow:`YELLOW`
-  - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-  - it returns :green:`GREEN` if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
+    git commit -am 'add test_green_light'
+
+When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the timer is :green:`done`
+
+* if the timer is :red:`NOT done` it returns the value of ``current_light``
+
+  .. code-block:: shell
+
+    control(current_light='RED'   , timer_done=False) -> 'RED'
+    └── def control(current_light, timer_done):
+        ├── yellow, green = 'YELLOW', 'GREEN'
+        └── if not timer_done:
+            └── return current_light
+                return 'RED'
+            if current_light == yellow:
+                return 'RED'
+            if current_light == green:
+                return yellow
+            return green
+
+  .. code-block:: shell
+
+    control(current_light='YELLOW', timer_done=False) -> 'YELLOW'
+    └── def control(current_light, timer_done):
+        ├── yellow, green = 'YELLOW', 'GREEN'
+        └── if not timer_done:
+            └── return current_light
+                return 'YELLOW'
+            if current_light == yellow:
+                return 'RED'
+            if current_light == green:
+                return yellow
+            return green
+
+  .. code-block:: shell
+
+    control(current_light='GREEN' , timer_done=False) -> 'YELLOW'
+    └── def control(current_light, timer_done):
+        ├── yellow, green = 'YELLOW', 'GREEN'
+        └── if not timer_done:
+            └── return current_light
+                return 'GREEN'
+            if current_light == yellow:
+                return 'RED'
+            if current_light == green:
+                return yellow
+            return green
+
+* If the timer is :green:`done` it checks the value of ``current_light``
+
+  - If the current light is :yellow:`YELLOW` it returns :red:`RED`
+
+    .. code-block:: shell
+
+      control(current_light='YELLOW', timer_done=True ) -> 'RED'
+      └── def control(current_light, timer_done):
+          ├── yellow, green = 'YELLOW', 'GREEN'
+          ├── if not timer_done:
+          │       return current_light
+          └── if current_light == yellow:
+              └── return 'RED'
+              if current_light == green:
+                  return yellow
+              return green
+
+  - If the current light is :green:`GREEN` it returns :yellow:`YELLOW`
+
+    .. code-block:: shell
+
+      control(current_light='GREEN' , timer_done=True ) -> 'YELLOW'
+      └── def control(current_light, timer_done):
+          ├── yellow, green = 'YELLOW', 'GREEN'
+          ├── if not timer_done:
+          │       return current_light
+          ├── if current_light == yellow:
+          │       return 'RED'
+          └── if current_light == green:
+              └── return yellow
+              return green
+
+  - If the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN` it returns :green:`GREEN`
+
+    .. code-block:: shell
+
+      control(current_light='RED'   , timer_done=True ) -> 'GREEN'
+      └── def control(current_light, timer_done):
+          ├── yellow, green = 'YELLOW', 'GREEN'
+          ├── if not timer_done:
+          │       return current_light
+          ├── if current_light == yellow:
+          │       return 'RED'
+          ├── if current_light == green:
+          │       return yellow
+          └── return green
 
 ----
 
@@ -1257,7 +1349,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
         return green
 
-  This is what happens when the ``control`` :ref:`function<what is a function?>` is called
+  When the ``control`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done` it returns the current light
   * if the timer is :green:`done`
@@ -1297,7 +1389,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
         walk_button=False,
     )
 
-  since the :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
+  since the :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. :ref:`A function uses the default value for a parameter when it is :ref:`called<how to call a function with input>` without the parameter<test_optional_arguments>`.
 
 * I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>` for if the light is :red:`RED`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
 
@@ -1444,7 +1536,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
           walk_button=False,
       )
 
-    since the :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
+    since the :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. :ref:`A function uses the default value for a parameter when it is :ref:`called<how to call a function with input>` without the parameter<test_optional_arguments>`.
 
 * I add a :ref:`variable<what is a variable?>`
 
@@ -1608,7 +1700,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
   - the :ref:`default value<test_optional_arguments>` for ``current_light`` is ``'RED'``
   - the :ref:`default value<test_optional_arguments>` for ``timer_done`` is :ref:`False<test_what_is_false>`
   - the :ref:`default value<test_optional_arguments>` for ``walk_button`` is :ref:`False<test_what_is_false>`
-  - :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`
+  - :ref:`A function uses the default value for a parameter when it is :ref:`called<how to call a function with input>` without the parameter<test_optional_arguments>`
 
 * I change the name of :ref:`test_red_light` to :ref:`test_red_light_w_walk_button` in ``tests/test_traffic_light.py``
 
@@ -1735,7 +1827,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. admonition:: REMINDER
 
-  This is what happens when the ``control`` :ref:`function<what is a function?>` is called
+  When the ``control`` :ref:`function<what is a function?>` is called
 
   .. code-block:: python
     :linenos:
@@ -1878,7 +1970,7 @@ current light     timer            walk button        output
           walk_button=False,
       )
 
-    the :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
+    the :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. :ref:`A function uses the default value for a parameter when it is :ref:`called<how to call a function with input>` without the parameter<test_optional_arguments>`.
 
 * I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>`, for if the light is :yellow:`YELLOW`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
 
@@ -1989,7 +2081,7 @@ current light     timer            walk button        output
 
     - the :ref:`default value<test_optional_arguments>` for the ``timer_done`` parameter is :ref:`False<test_what_is_false>`
     - the :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`
-    - :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`
+    - :ref:`A function uses the default value for a parameter when it is :ref:`called<how to call a function with input>` without the parameter<test_optional_arguments>`
 
 * I change the name of the test from :ref:`test_yellow_light` to :ref:`test_yellow_light_w_walk_button`
 
@@ -2462,7 +2554,7 @@ current light     timer            walk button        output
 
     - the :ref:`default value<test_optional_arguments>` for the ``timer_done`` parameter is :ref:`False<test_what_is_false>`
     - the :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`
-    - :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`
+    - :ref:`A function uses the default value for a parameter when it is :ref:`called<how to call a function with input>` without the parameter<test_optional_arguments>`
 
 * I change the name of the test from :ref:`test_green_light` to :ref:`test_green_light_w_walk_button`
 
@@ -3188,7 +3280,7 @@ current light     timer            walk button        output
 
 .. admonition:: REMINDER
 
-  This is what happens when the ``control`` :ref:`function<what is a function?>` is called
+  When the ``control`` :ref:`function<what is a function?>` is called
 
   .. code-block:: python
     :linenos:
@@ -3345,7 +3437,7 @@ I change the :ref:`return statement<the return statement>` for this case, in the
 
       return green
 
-the test passes. This is what happens when the ``control`` :ref:`function<what is a function?>` is called
+the test passes. When the ``control`` :ref:`function<what is a function?>` is called
 
 * if the timer is :red:`NOT done` it returns the current light
 * if the timer is :green:`done`
@@ -3429,7 +3521,7 @@ the test passes. This is what happens when the ``control`` :ref:`function<what i
 
         return green, 'NO WALK'
 
-  the test passes. This is what happens when the ``control`` :ref:`function<what is a function?>` is called
+  the test passes. When the ``control`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done` it returns the current light
   * if the timer is :green:`done`
@@ -3579,7 +3671,7 @@ the test passes. This is what happens when the ``control`` :ref:`function<what i
 
         def test_yellow_light_w_walk_button(self):
 
-  the test passes. This is what happens when the ``control`` :ref:`function<what is a function?>` is called
+  the test passes. When the ``control`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done`
 
@@ -3726,7 +3818,7 @@ current light     timer           walk button       output
                 (RED, 'WALK')
             )
 
-  the test passes. This is what happens when the ``control`` :ref:`function<what is a function?>` is called
+  the test passes. When the ``control`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done`
 
@@ -3882,7 +3974,7 @@ current light     timer           walk button       output
 
         def test_green_light_w_walk_button(self):
 
-  the test passes. This is what happens when the ``control`` :ref:`function<what is a function?>` is called
+  the test passes. When the ``control`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done`
 
@@ -4039,7 +4131,7 @@ current light     timer           walk button       output
                 (YELLOW, 'NO WALK')
             )
 
-  the test passes. This is what happens when the ``control`` :ref:`function<what is a function?>` is called
+  the test passes. When the ``control`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done`
 
@@ -4197,7 +4289,7 @@ current light     timer           walk button       output
 
     # Exceptions seen
 
-  the test passes. This is what happens when the ``control`` :ref:`function<what is a function?>` is called
+  the test passes. When the ``control`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done`
 
@@ -4925,7 +5017,7 @@ current light     timer           walk button       output
 
         return walk
 
-This is what happens when the ``control`` :ref:`function<what is a function?>` is called
+When the ``control`` :ref:`function<what is a function?>` is called
 
 * if the timer is :red:`NOT done`
 

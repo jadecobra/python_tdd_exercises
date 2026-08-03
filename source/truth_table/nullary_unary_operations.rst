@@ -556,7 +556,7 @@ test_logical_identity
 
     git commit -am 'add logical_identity'
 
-This is what happens when the :ref:`logical_identity function<test_logical_identity>` is called
+When the :ref:`logical_identity function<test_logical_identity>` is called
 
 - it returns :green:`True`, if the input is :ref:`True<test_what_is_true>`
 - it returns :red:`False`, if the input is :ref:`False<test_what_is_false>`
