@@ -1365,8 +1365,6 @@ I want to add a walk button for a person to push when they want to cross the str
 test_green_light_timer_not_done_walk_button
 *********************************************************************************
 
-----
-
 The :ref:`truth table` for if the **Traffic Light** is :green:`GREEN` AND the timer is :red:`NOT done` is
 
 ================  ===============  =================  ================
@@ -1566,8 +1564,6 @@ current light     timer            walk button        output
 test_green_light_timer_done_walk_button
 *********************************************************************************
 
-----
-
 The :ref:`truth table` for if the **Traffic Light** is :green:`GREEN` AND the timer is :green:`done` is
 
 ================  ===============  =================  ================
@@ -1765,8 +1761,6 @@ the test passes.
 test_yellow_light_timer_not_done_walk_button
 *********************************************************************************
 
-----
-
 The :ref:`truth table` for if the **Traffic Light** is :yellow:`YELLOW` AND the timer is :red:`NOT done` is
 
 ================  ===============  =================  ================
@@ -1873,7 +1867,7 @@ the test passes.
   ================  ===============  =================  ================
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 37
     :emphasize-lines: 6
 
         def test_yellow_light_timer_not_done(self):
@@ -1883,7 +1877,7 @@ the test passes.
                     timer_done=False,
                     walk_button=True,
                 ),
-                GREEN
+                YELLOW
             )
             self.assertEqual(
                 src.traffic_light.control(
@@ -1891,11 +1885,10 @@ the test passes.
                     timer_done=False,
                     walk_button=False,
                 ),
-                GREEN
+                YELLOW
             )
 
-
-    # Exceptions seen
+        def test_green_light_timer_done_walk_button(self):
 
   the test is still green.
 
@@ -1913,7 +1906,7 @@ the test passes.
 * I change the name of the test from :ref:`test_yellow_light_timer_not_done` to :ref:`test_yellow_light_timer_not_done_walk_button`
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 28
     :emphasize-lines: 10
 
         def test_yellow_light_timer_done(self):
@@ -1922,7 +1915,7 @@ the test passes.
                     current_light=YELLOW,
                     timer_done=True,
                 ),
-                YELLOW
+                RED
             )
 
         def test_yellow_light_timer_not_done_walk_button(self):
@@ -1932,7 +1925,7 @@ the test passes.
                     timer_done=False,
                     walk_button=True,
                 ),
-                GREEN
+                YELLOW
             )
 
 * I add a git_ commit message in the other terminal_
@@ -1948,8 +1941,6 @@ the test passes.
 *********************************************************************************
 test_yellow_light_timer_done_walk_button
 *********************************************************************************
-
-----
 
 The :ref:`truth table` for if the **Traffic Light** is :yellow:`YELLOW` AND the timer is :green:`done` is
 
@@ -1978,7 +1969,7 @@ current light     timer            walk button        output
   ================  ===============  =================  ================
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 28
     :emphasize-lines: 9-16
 
         def test_yellow_light_timer_done(self):
@@ -1987,7 +1978,7 @@ current light     timer            walk button        output
                     current_light=YELLOW,
                     timer_done=True,
                 ),
-                YELLOW
+                RED
             )
             self.assertEqual(
                 src.traffic_light.control(
@@ -1995,7 +1986,7 @@ current light     timer            walk button        output
                     timer_done=True,
                     walk_button=False,
                 ),
-                RED
+                GREEN
             )
 
         def test_yellow_light_timer_not_done_walk_button(self):
@@ -2004,7 +1995,7 @@ current light     timer            walk button        output
 
   .. code-block:: python
 
-    AssertionError: 'YELLOW' != 'RED'
+    AssertionError: 'RED' != 'GREEN'
 
 ----
 
@@ -2014,10 +2005,10 @@ current light     timer            walk button        output
 
 ----
 
-I change :yellow:`YELLOW` to :red:`RED` in the :ref:`test_yellow_light_timer_done`
+I change :green:`GREEN` to :red:`RED` in the :ref:`test_yellow_light_timer_done`
 
 .. code-block:: python
-  :lineno-start: 54
+  :lineno-start: 36
   :emphasize-lines: 7
 
           self.assertEqual(
@@ -2026,7 +2017,7 @@ I change :yellow:`YELLOW` to :red:`RED` in the :ref:`test_yellow_light_timer_don
                   timer_done=True,
                   walk_button=False,
               ),
-              YELLOW
+              RED
           )
 
       def test_yellow_light_timer_not_done_walk_button(self):
@@ -2065,7 +2056,7 @@ the test passes.
   ================  ===============  =================  ================
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 28
     :emphasize-lines: 6
 
         def test_yellow_light_timer_done(self):
@@ -2075,7 +2066,7 @@ the test passes.
                     timer_done=True,
                     walk_button=True,
                 ),
-                YELLOW
+                RED
             )
             self.assertEqual(
                 src.traffic_light.control(
@@ -2083,7 +2074,7 @@ the test passes.
                     timer_done=True,
                     walk_button=False,
                 ),
-                YELLOW
+                RED
             )
 
         def test_yellow_light_timer_not_done_walk_button(self):
@@ -2112,16 +2103,16 @@ the test passes.
 * I change the name of the test from :ref:`test_yellow_light_timer_done` to :ref:`test_yellow_light_timer_done_walk_button`
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 19
     :emphasize-lines: 10
 
-        def test_yellow_light_timer_not_done(self):
+        def test_red_light_timer_not_done(self):
             self.assertEqual(
                 src.traffic_light.control(
-                    current_light=YELLOW,
+                    current_light=RED,
                     timer_done=False,
                 ),
-                YELLOW
+                RED
             )
 
         def test_yellow_light_timer_done_walk_button(self):
@@ -2131,7 +2122,7 @@ the test passes.
                     timer_done=True,
                     walk_button=True,
                 ),
-                YELLOW
+                RED
             )
 
 * I add a git_ commit message in the other terminal_
