@@ -2569,45 +2569,135 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
 
   .. code-block:: shell
 
-    control(current_light='RED'   , timer_done=False) -> 'RED'
-    └── def control(current_light, timer_done):
-        ├── yellow, green = 'YELLOW', 'GREEN'
-        └── if not timer_done:
-            └── return current_light
-                return 'RED'
-            if current_light == yellow:
-                return 'RED'
-            if current_light == green:
-                return yellow
-            return green
+    control(
+        current_light='RED', timer_done=False,
+        walk_button=True
+    ) -> 'RED'
+    └── def control(
+                current_light, timer_done,
+                walk_button=False,
+            ):
+            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+            └── if not timer_done:
+                └── return current_light
+                    return 'RED'
+                if current_light == yellow:
+                    return red
+                if current_light == green:
+                    return yellow
+                if walk_button:
+                    return red
+                return green
 
   .. code-block:: shell
 
-    control(current_light='YELLOW', timer_done=False) -> 'YELLOW'
-    └── def control(current_light, timer_done):
-        ├── yellow, green = 'YELLOW', 'GREEN'
-        └── if not timer_done:
-            └── return current_light
-                return 'YELLOW'
-            if current_light == yellow:
-                return 'RED'
-            if current_light == green:
-                return yellow
-            return green
+    control(
+        current_light='RED', timer_done=False,
+        walk_button=False
+    ) -> 'RED'
+    └── def control(
+                current_light, timer_done,
+                walk_button=False,
+            ):
+            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+            └── if not timer_done:
+                └── return current_light
+                    return 'RED'
+                if current_light == yellow:
+                    return red
+                if current_light == green:
+                    return yellow
+                if walk_button:
+                    return red
+                return green
 
   .. code-block:: shell
 
-    control(current_light='GREEN' , timer_done=False) -> 'YELLOW'
-    └── def control(current_light, timer_done):
-        ├── yellow, green = 'YELLOW', 'GREEN'
-        └── if not timer_done:
-            └── return current_light
-                return 'GREEN'
-            if current_light == yellow:
-                return 'RED'
-            if current_light == green:
-                return yellow
-            return green
+    control(
+        current_light='YELLOW', timer_done=False,
+        walk_button=True
+    ) -> 'YELLOW'
+    └── def control(
+                current_light, timer_done,
+                walk_button=False,
+            ):
+            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+            └── if not timer_done:
+                └── return current_light
+                    return 'YELLOW'
+                if current_light == yellow:
+                    return red
+                if current_light == green:
+                    return yellow
+                if walk_button:
+                    return red
+                return green
+
+  .. code-block:: shell
+
+    control(
+        current_light='YELLOW', timer_done=False,
+        walk_button=False
+    ) -> 'YELLOW'
+    └── def control(
+                current_light, timer_done,
+                walk_button=False,
+            ):
+            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+            └── if not timer_done:
+                └── return current_light
+                    return 'YELLOW'
+                if current_light == yellow:
+                    return red
+                if current_light == green:
+                    return yellow
+                if walk_button:
+                    return red
+                return green
+
+  .. code-block:: shell
+
+    control(
+        current_light='GREEN', timer_done=False,
+        walk_button=True
+    ) -> 'GREEN'
+    └── def control(
+                current_light, timer_done,
+                walk_button=False,
+            ):
+            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+            └── if not timer_done:
+                └── return current_light
+                    return 'GREEN'
+                if current_light == yellow:
+                    return red
+                if current_light == green:
+                    return yellow
+                if walk_button:
+                    return red
+                return green
+
+  .. code-block:: shell
+
+    control(
+        current_light='GREEN', timer_done=False,
+        walk_button=False
+    ) -> 'GREEN'
+    └── def control(
+                current_light, timer_done,
+                walk_button=False,
+            ):
+            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+            └── if not timer_done:
+                └── return current_light
+                    return 'GREEN'
+                if current_light == yellow:
+                    return red
+                if current_light == green:
+                    return yellow
+                if walk_button:
+                    return red
+                return green
 
 * If the timer is :green:`done` it checks the value of ``current_light``
 
@@ -2615,2356 +2705,174 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
 
     .. code-block:: shell
 
-      control(current_light='YELLOW', timer_done=True ) -> 'RED'
-      └── def control(current_light, timer_done):
-          ├── yellow, green = 'YELLOW', 'GREEN'
-          ├── if not timer_done:
-          │       return current_light
-          └── if current_light == yellow:
-              └── return 'RED'
-              if current_light == green:
-                  return yellow
-              return green
+      control(
+          current_light='YELLOW', timer_done=True,
+          walk_button=True
+      ) -> 'RED'
+      └── def control(
+                  current_light, timer_done,
+                  walk_button=False,
+              ):
+              ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+              ├── if not timer_done:
+              │       return current_light
+              └── if current_light == yellow:
+                  └── return red
+                  if current_light == green:
+                      return yellow
+                  if walk_button:
+                      return red
+                  return green
+
+    .. code-block:: shell
+
+      control(
+          current_light='YELLOW', timer_done=True,
+          walk_button=False
+      ) -> 'RED'
+      └── def control(
+                  current_light, timer_done,
+                  walk_button=False,
+              ):
+              ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+              ├── if not timer_done:
+              │       return current_light
+              └── if current_light == yellow:
+                  └── return red
+                  if current_light == green:
+                      return yellow
+                  if walk_button:
+                      return red
+                  return green
 
   - If the current light is :green:`GREEN` it returns :yellow:`YELLOW`
 
     .. code-block:: shell
 
-      control(current_light='GREEN' , timer_done=True ) -> 'YELLOW'
-      └── def control(current_light, timer_done):
-          ├── yellow, green = 'YELLOW', 'GREEN'
-          ├── if not timer_done:
-          │       return current_light
-          ├── if current_light == yellow:
-          │       return 'RED'
-          └── if current_light == green:
-              └── return yellow
-              return green
-
-  - If the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN` it returns :green:`GREEN`
+      control(
+          current_light='GREEN', timer_done=True,
+          walk_button=True
+      ) -> 'YELLOW'
+      └── def control(
+                  current_light, timer_done,
+                  walk_button=False,
+              ):
+              ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+              ├── if not timer_done:
+              │       return current_light
+              ├── if current_light == yellow:
+              │       return red
+              └── if current_light == green:
+                  └── return yellow
+                  if walk_button:
+                      return red
+                  return green
 
     .. code-block:: shell
 
-      control(current_light='RED'   , timer_done=True ) -> 'GREEN'
-      └── def control(current_light, timer_done):
-          ├── yellow, green = 'YELLOW', 'GREEN'
-          ├── if not timer_done:
-          │       return current_light
-          ├── if current_light == yellow:
-          │       return 'RED'
-          ├── if current_light == green:
-          │       return yellow
-          └── return green
+      control(
+          current_light='GREEN', timer_done=True,
+          walk_button=False
+      ) -> 'YELLOW'
+      └── def control(
+                  current_light, timer_done,
+                  walk_button=False,
+              ):
+              ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+              ├── if not timer_done:
+              │       return current_light
+              ├── if current_light == yellow:
+              │       return red
+              └── if current_light == green:
+                  └── return yellow
+                  if walk_button:
+                      return red
+                  return green
 
+  - If the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN` it checks if the walk button was :green:`pushed`
 
+    * If the walk button was :red:`NOT pushed` it returns :green:`green`
 
+      .. code-block:: shell
 
+        control(
+            current_light='RED', timer_done=True,
+            walk_button=True
+        ) -> 'RED'
+        └── def control(
+                    current_light, timer_done,
+                    walk_button=False,
+                ):
+                ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+                ├── if not timer_done:
+                │       return current_light
+                ├── if current_light == yellow:
+                │       return red
+                ├── if current_light == green:
+                │       return yellow
+                ├── if walk_button:
+                │       return red
+                └── return green
 
+    * If the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN` AND the walk button is :green:`pushed` it returns :red:`RED`
 
+      .. code-block:: shell
 
-
-
-
-
-* I add an :ref:`if statement<if statements>` for ``walk_button``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 16-17
-
-    def control(
-            current_light, timer_done,
+        control(
+            current_light='RED', timer_done=True,
             walk_button=False
-        ):
-        yellow, green = 'YELLOW', 'GREEN'
+        ) -> 'GREEN'
+        └── def control(
+                    current_light, timer_done,
+                    walk_button=False,
+                ):
+                ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+                ├── if not timer_done:
+                │       return current_light
+                ├── if current_light == yellow:
+                │       return red
+                ├── if current_light == green:
+                │       return yellow
+                └── if walk_button:
+                    └── return red
+                    return green
 
-        if not timer_done:
-            return current_light
+The inputs for the **Traffic Light** up till now are
 
-        if current_light == yellow:
-            return 'RED'
+* what color is the light now?
+* is the timer done?
+* was the walk button pushed?
 
-        if current_light == green:
-            return 'YELLOW'
+which gives this :ref:`truth table`
 
-        if walk_button == True:
-            return 'RED'
-
-        return green
-
-  the test passes.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I use :ref:`the bool built-in function<how to test if something is grouped as True>`
-
-  .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 1-2
-
-        # if walk_button == True:
-        if bool(walk_button) == True:
-            return 'RED'
-
-        return green
-
-  the test is still green.
-
-
-
-----
-
-*********************************************************************************
-test_red_light_w_walk_button
-*********************************************************************************
-
-----
-
-The :ref:`truth table` for if the **Traffic Light** is :red:`RED` is
-
-================  ===============  =================  =================
+================  ===============  =================  ================
 current light     timer            walk button        output
-================  ===============  =================  =================
+================  ===============  =================  ================
 :red:`RED`        :green:`done`    :green:`pushed`    :red:`RED`
 :red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN`
 :red:`RED`        :red:`NOT done`  :green:`pushed`    :red:`RED`
 :red:`RED`        :red:`NOT done`  :red:`NOT pushed`  :red:`RED`
-================  ===============  =================  =================
+================  ===============  =================  ================
 
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add an :ref:`assertion<what is an assertion?>` for if the current light is :red:`RED` AND the timer is :green:`done` and the walk button is :green:`pushed`, to :ref:`test_red_light` in ``tests/test_traffic_light.py``
-
-================  ===============  =================  =================
+================  ===============  =================  ================
 current light     timer            walk button        output
-================  ===============  =================  =================
-:red:`RED`        :green:`done`    :green:`pushed`    :red:`RED`
-================  ===============  =================  =================
-
-.. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 2-8
-
-      def test_red_light(self):
-          my_expectation = 'RED'
-          reality = src.traffic_light.control(
-              current_light='RED',
-              timer_done=True,
-              walk_button=True,
-          )
-          self.assertEqual(reality, my_expectation)
-
-          my_expectation = 'GREEN'
-          reality = src.traffic_light.control(
-              current_light='RED',
-              timer_done=True,
-          )
-          self.assertEqual(reality, my_expectation)
-
-          my_expectation = 'RED'
-          reality = src.traffic_light.control(
-              current_light='RED',
-              timer_done=False,
-          )
-          self.assertEqual(reality, my_expectation)
-
-      def test_yellow_light(self):
-
-the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-.. code-block:: python
-
-  TypeError: control() got
-             an unexpected keyword argument 'walk_button'
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I add ``walk_button`` to the ``control`` :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
-
-    def control(current_light, timer_done, walk_button):
-        yellow, green = 'YELLOW', 'GREEN'
-
-        if not timer_done:
-            return current_light
-
-        if current_light == yellow:
-            return 'RED'
-
-        if current_light == green:
-            return 'YELLOW'
-
-        return green
-
-  the terminal_ is my friend, and shows 3 failures with :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    FAILED ...test_green_light - TypeError:
-        control() missing 1 required positional argument
-    FAILED ...test_red_light - TypeError:
-        control() missing 1 required positional argument
-    FAILED ...test_yellow_light - TypeError:
-        control() missing 1 required positional argument
-
-  because all the other tests :ref:`call<how to call a function with input>` the ``control`` :ref:`function<what is a function?>` with two arguments and I changed the :ref:`function signature<what is a function?>` to make it expect three. I need to make the third argument a choice.
-
-* I could add the ``walk_button`` parameter to every :ref:`call<how to call a function with input>` to the ``control`` :ref:`function<what is a function?>` in every test or add a :ref:`default value<test_optional_arguments>` for the new :ref:`keyword argument<test_keyword_arguments>` to make it a choice, NOT a requirement. I make it a choice
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-4
-
-    def control(
-            current_light, timer_done,
-            walk_button=False,
-        ):
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'GREEN' != 'RED'
-
-  yes!
-
-* I add an :ref:`if statement<if statements>` for ``walk_button``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 16-17
-
-    def control(
-            current_light, timer_done,
-            walk_button=False
-        ):
-        yellow, green = 'YELLOW', 'GREEN'
-
-        if not timer_done:
-            return current_light
-
-        if current_light == yellow:
-            return 'RED'
-
-        if current_light == green:
-            return 'YELLOW'
-
-        if walk_button == True:
-            return 'RED'
-
-        return green
-
-  the test passes.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I use :ref:`the bool built-in function<how to test if something is grouped as True>`
-
-  .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 1-2
-
-        # if walk_button == True:
-        if bool(walk_button) == True:
-            return 'RED'
-
-        return green
-
-  the test is still green.
-
-* I remove ``== True``
-
-  .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 2-3
-
-        # if walk_button == True:
-        # if bool(walk_button) == True:
-        if bool(walk_button):
-            return 'RED'
-
-        return green
-
-  still green.
-
-* I remove :ref:`bool<how to test if something is grouped as True>`
-
-  .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 3-4
-
-        # if walk_button == True:
-        # if bool(walk_button) == True:
-        # if bool(walk_button):
-        if walk_button:
-            return 'RED'
-
-  green because ``if bool(something) == True`` is the same as ``if something``
-
-* I add a :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5
-
-    def control(
-            current_light, timer_done,
-            walk_button=False
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        if not timer_done:
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'RED'``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 11-12, 21-22
-
-    def control(
-            current_light, timer_done,
-            walk_button=False
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        if not timer_done:
-            return current_light
-
-        if current_light == yellow:
-            # return 'RED'
-            return red
-
-        if current_light == green:
-            return 'YELLOW'
-
-        # if walk_button == True:
-        # if bool(walk_button) == True:
-        # if bool(walk_button):
-        if walk_button:
-            # return 'RED'
-            return red
-
-        return green
-
-  still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :linenos:
-
-    def control(
-            current_light, timer_done,
-            walk_button=False
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        if not timer_done:
-            return current_light
-
-        if current_light == yellow:
-            return red
-
-        if current_light == green:
-            return yellow
-
-        if walk_button:
-            return red
-
-        return green
-
-  When the ``control`` :ref:`function<what is a function?>` is called
-
-  * if the timer is :red:`NOT done` it returns the current light
-  * if the timer is :green:`done`
-
-    - it returns :red:`RED` if the current light is :yellow:`YELLOW`
-    - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-    - if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
-
-      * it returns :red:`RED` if the walk button is :green:`pushed`
-      * it returns :green:`GREEN` if the walk button is :red:`NOT pushed`
-
-* I do not need to do anything to the :ref:`assertion<what is an assertion?>` for if the light is :red:`RED` AND the timer is :green:`done` and the walk button is :red:`NOT pushed`
-
-  ================  ===============  =================  =================
-  current light     timer            walk button        output
-  ================  ===============  =================  =================
-  :red:`RED`        :green:`done`    :green:`pushed`    :red:`RED`
-  :red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN`
-  ================  ===============  =================  =================
-
-  because
-
-  .. code-block:: python
-
-    src.traffic_light.control(
-        current_light='RED',
-        timer_done=True,
-    )
-
-  is now the same as
-
-  .. code-block:: python
-
-    src.traffic_light.control(
-        current_light='RED',
-        timer_done=True,
-        walk_button=False,
-    )
-
-  since the :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. :ref:`A function uses the default value for a parameter when it is :ref:`called<how to call a function with input>` without the parameter<test_optional_arguments>`.
-
-* I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>` for if the light is :red:`RED` AND the timer is :red:`NOT done` and the walk button is :green:`pushed`
-
-  ================  ===============  =================  =================
-  current light     timer            walk button        output
-  ================  ===============  =================  =================
-  :red:`RED`        :green:`done`    :green:`pushed`    :red:`RED`
-  :red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN`
-  :red:`RED`        :red:`NOT done`  :green:`pushed`    :red:`RED`
-  ================  ===============  =================  =================
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 21
-
-        def test_red_light(self):
-            my_expectation = 'RED'
-            reality = src.traffic_light.control(
-                current_light='RED',
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            my_expectation = 'GREEN'
-            reality = src.traffic_light.control(
-                current_light='RED',
-                timer_done=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            my_expectation = 'RED'
-            reality = src.traffic_light.control(
-                current_light='RED',
-                timer_done=False,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-        def test_yellow_light(self):
-
-  green.
-
-* I change the expectation to make sure the test works
-
-  .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 1
-
-            my_expectation = 'BOOM'
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'RED' != 'BOOM'
-
-  because the ``control`` :ref:`function<what is a function?>` returned ``'RED'`` and the :ref:`assertion<what is an assertion?>` expects ``'BOOM'``
-
-* I change the expectation back
-
-  .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 1
-
-            my_expectation = 'RED'
-            reality = src.traffic_light.control(
-                current_light='RED',
-                timer_done=False,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-        def test_yellow_light(self):
-
-  the test is green again
-
-* I add an :ref:`assertion<what is an assertion?>` for if the light is :red:`RED` AND the timer is :red:`NOT done` and the walk button is :red:`NOT pushed`
-
-  ================  ===============  =================  =================
-  current light     timer            walk button        output
-  ================  ===============  =================  =================
-  :red:`RED`        :green:`done`    :green:`pushed`    :red:`RED`
-  :red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN`
-  :red:`RED`        :red:`NOT done`  :green:`pushed`    :red:`RED`
-  :red:`RED`        :red:`NOT done`  :red:`NOT pushed`  :red:`RED`
-  ================  ===============  =================  =================
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 25-29
-
-        def test_red_light(self):
-            my_expectation = 'RED'
-            reality = src.traffic_light.control(
-                current_light='RED',
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            my_expectation = 'GREEN'
-            reality = src.traffic_light.control(
-                current_light='RED',
-                timer_done=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            my_expectation = 'RED'
-            reality = src.traffic_light.control(
-                current_light='RED',
-                timer_done=False,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.traffic_light.control(
-                current_light='RED',
-                timer_done=False,
-            )
-            self.assertEqual(reality, my_expectation)
-
-        def test_yellow_light(self):
-
-  green.
-
-  * I do not need to make a new ``my_expectation`` :ref:`variable<what is a variable?>` because the expectation for the new :ref:`assertion<what is an assertion?>` is the same as the last one (``'RED'``)
-  * I do not need to provide a value for the ``walk_button`` parameter because
-
-    .. code-block:: python
-
-      src.traffic_light.control(
-          current_light='RED',
-          timer_done=False,
-      )
-
-    is the same as
-
-    .. code-block:: python
-
-      src.traffic_light.control(
-          current_light='RED',
-          timer_done=False,
-          walk_button=False,
-      )
-
-    since the :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. :ref:`A function uses the default value for a parameter when it is :ref:`called<how to call a function with input>` without the parameter<test_optional_arguments>`.
-
-* I add a :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 2
-
-        def test_red_light(self):
-            red = 'RED'
-
-            my_expectation = 'RED'
-
-* I use the ``red`` :ref:`local variable<what is a variable?>` to remove the repetition of ``'RED'`` and ``my_expectation`` when its value is ``'RED'``
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 4, 6-7, 11-12, 16-17, 22, 24-25, 29-30, 33-34, 37-38
-
-        def test_red_light(self):
-            red = 'RED'
-
-            # my_expectation = 'RED'
-            reality = src.traffic_light.control(
-                # current_light='RED',
-                current_light=red,
-                timer_done=True,
-                walk_button=True,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, red)
-
-            my_expectation = 'GREEN'
-            reality = src.traffic_light.control(
-                # current_light='RED',
-                current_light=red,
-                timer_done=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            # my_expectation = 'RED'
-            reality = src.traffic_light.control(
-                # current_light='RED',
-                current_light=red,
-                timer_done=False,
-                walk_button=True,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, red)
-
-            reality = src.traffic_light.control(
-                # current_light='RED',
-                current_light=red,
-                timer_done=False,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, red)
-
-        def test_yellow_light(self):
-
-  still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 7
-
-        def test_red_light(self):
-            red = 'RED'
-
-            reality = src.traffic_light.control(
-                current_light=red,
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, red)
-
-            my_expectation = 'GREEN'
-            reality = src.traffic_light.control(
-                current_light=red,
-                timer_done=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.traffic_light.control(
-                current_light=red,
-                timer_done=False,
-                walk_button=True,
-            )
-            self.assertEqual(reality, red)
-
-            reality = src.traffic_light.control(
-                current_light=red,
-                timer_done=False,
-            )
-            self.assertEqual(reality, red)
-
-        def test_yellow_light(self):
-
-* I add a :ref:`default value<test_optional_arguments>` for the ``current_light`` :ref:`keyword argument<test_keyword_arguments>` to the ``control`` :ref:`function<what is a function?>` ``src/traffic_light/__init__.py`` as a fail safe so that the light is always :red:`RED` if no value is given
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2
-
-    def control(
-            current_light='RED', timer_done,
-            walk_button=False,
-        ):
-
-  the terminal_ is my friend, and shows SyntaxError_
-
-  .. code-block:: python
-
-    SyntaxError: parameter without a default follows parameter with a default
-
-  because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
-
-* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen, in ``tests/test_traffic_light.py``
-
-  .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 6
-    :emphasize-text: SyntaxError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # AttributeError
-    # TypeError
-    # SyntaxError
-
-* I add a :ref:`default value<test_optional_arguments>` for ``timer_done`` to the ``control`` :ref:`function<what is a function?>` ``src/traffic_light/__init__.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2
-
-    def control(
-        current_light='RED', timer_done=False,
-        walk_button=False,
-    ):
-
-  the test is green again. All the arguments in the :ref:`function<what is a function?>` are now choices, which means
-
-  .. code-block:: python
-
-    src.traffic_light.control()
-
-  is the same as
-
-  .. code-block:: python
-
-    src.traffic_light.control(
-        current_light='RED',
-        timer_done=False,
-        walk_button=False,
-    )
-
-  because
-
-  - the :ref:`default value<test_optional_arguments>` for ``current_light`` is ``'RED'``
-  - the :ref:`default value<test_optional_arguments>` for ``timer_done`` is :ref:`False<test_what_is_false>`
-  - the :ref:`default value<test_optional_arguments>` for ``walk_button`` is :ref:`False<test_what_is_false>`
-  - :ref:`A function uses the default value for a parameter when it is :ref:`called<how to call a function with input>` without the parameter<test_optional_arguments>`
-
-* I change the name of :ref:`test_red_light` to :ref:`test_red_light_w_walk_button` in ``tests/test_traffic_light.py``
-
-  .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 3
-
-    class TestTrafficLight(unittest.TestCase):
-
-        def test_red_light_w_walk_button(self):
-            red = 'RED'
-
-* I remove the ``current_light`` parameter from the calls to ``src.traffic_light.show`` in :ref:`test_red_light_w_walk_button` in ``tests/test_traffic_light.py``
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 5, 13, 19, 26
-
-        def test_red_light_w_walk_button(self):
-            red = 'RED'
-
-            reality = src.traffic_light.control(
-                # current_light=red,
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, red)
-
-            my_expectation = 'GREEN'
-            reality = src.traffic_light.control(
-                # current_light=red,
-                timer_done=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.traffic_light.control(
-                # current_light=red,
-                timer_done=False,
-                walk_button=True,
-            )
-            self.assertEqual(reality, red)
-
-            reality = src.traffic_light.control(
-                # current_light=red,
-                timer_done=False,
-            )
-            self.assertEqual(reality, red)
-
-        def test_yellow_light(self):
-
-  the test is still green.
-
-* I remove the ``timer_done`` parameter when it is :ref:`False<test_what_is_false>` from :ref:`test_red_light_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 20, 27
-
-        def test_red_light_w_walk_button(self):
-            red = 'RED'
-
-            reality = src.traffic_light.control(
-                # current_light=red,
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, red)
-
-            my_expectation = 'GREEN'
-            reality = src.traffic_light.control(
-                # current_light=red,
-                timer_done=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.traffic_light.control(
-                # current_light=red,
-                # timer_done=False,
-                walk_button=True,
-            )
-            self.assertEqual(reality, red)
-
-            reality = src.traffic_light.control(
-                # current_light=red,
-                # timer_done=False,
-            )
-            self.assertEqual(reality, red)
-
-        def test_yellow_light(self):
-
-  still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 7
-
-        def test_red_light_w_walk_button(self):
-            red = 'RED'
-
-            reality = src.traffic_light.control(
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, red)
-
-            my_expectation = 'GREEN'
-            reality = src.traffic_light.control(
-                timer_done=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.traffic_light.control(
-                walk_button=True,
-            )
-            self.assertEqual(reality, red)
-
-            reality = src.traffic_light.control()
-            self.assertEqual(reality, red)
-
-        def test_yellow_light(self):
-
-  green.
-
-.. admonition:: REMINDER
-
-  When the ``control`` :ref:`function<what is a function?>` is called
-
-  .. code-block:: python
-    :linenos:
-
-    def control(
-            current_light='RED', timer_done=False,
-            walk_button=False,
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        if not timer_done:
-            return current_light
-
-        if current_light == yellow:
-            return red
-
-        if current_light == green:
-            return yellow
-
-        if walk_button:
-            return red
-
-        return green
-
-  * if the timer is :red:`NOT done` it returns the current light
-  * if the timer is :green:`done`
-
-    - it returns :red:`RED` if the current light is :yellow:`YELLOW`
-    - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-    - if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
-
-      * it returns :red:`RED` if the walk button is :green:`pushed`
-      * it returns :green:`GREEN` if the walk button is :red:`NOT pushed`
-
-----
-
-*********************************************************************************
-test_yellow_light_w_walk_button
-*********************************************************************************
-
-The :ref:`truth table` for if the **Traffic Light** is :yellow:`YELLOW` with the walk button is
-
-================  ===============  =================  =================
-current light     timer            walk button        output
-================  ===============  =================  =================
+================  ===============  =================  ================
 :yellow:`YELLOW`  :green:`done`    :green:`pushed`    :red:`RED`
 :yellow:`YELLOW`  :green:`done`    :red:`NOT pushed`  :red:`RED`
 :yellow:`YELLOW`  :red:`NOT done`  :green:`pushed`    :yellow:`YELLOW`
 :yellow:`YELLOW`  :red:`NOT done`  :red:`NOT pushed`  :yellow:`YELLOW`
-================  ===============  =================  =================
+================  ===============  =================  ================
 
-* I add ``walk_button`` to the :ref:`call<how to call a function with input>` to ``src.traffic_light.show`` for if the light is :yellow:`YELLOW` AND the timer is :green:`done` and the walk button is :green:`pushed`, in the first :ref:`assertion<what is an assertion?>` of :ref:`test_yellow_light` in ``tests/test_traffic_light.py``
-
-  ================  ===============  =================  =================
-  current light     timer            walk button        output
-  ================  ===============  =================  =================
-  :yellow:`YELLOW`  :green:`done`    :green:`pushed`    :red:`RED`
-  ================  ===============  =================  =================
-
-  .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 6
-
-        def test_yellow_light(self):
-            my_expectation = 'RED'
-            reality = src.traffic_light.control(
-                current_light='YELLOW',
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            my_expectation = 'YELLOW'
-            reality = src.traffic_light.control(
-                current_light='YELLOW',
-                timer_done=False,
-            )
-            self.assertEqual(reality, my_expectation)
-
-        def test_green_light(self):
-
-  the test is still green.
-
-* I add an :ref:`assertion<what is an assertion?>` for if the light is :yellow:`YELLOW` AND the timer is :green:`done` and the walk button is :red:`NOT pushed`
-
-  ================  ===============  =================  =================
-  current light     timer            walk button        output
-  ================  ===============  =================  =================
-  :yellow:`YELLOW`  :green:`done`    :green:`pushed`    :red:`RED`
-  :yellow:`YELLOW`  :green:`done`    :red:`NOT pushed`  :red:`RED`
-  ================  ===============  =================  =================
-
-  .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 10-14
-
-        def test_yellow_light(self):
-            my_expectation = 'RED'
-            reality = src.traffic_light.control(
-                current_light='YELLOW',
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.traffic_light.control(
-                current_light='YELLOW',
-                timer_done=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            my_expectation = 'YELLOW'
-            reality = src.traffic_light.control(
-                current_light='YELLOW',
-                timer_done=False,
-            )
-            self.assertEqual(reality, my_expectation)
-
-        def test_green_light(self):
-
-  still green.
-
-  * I do not need to make a new ``my_expectation`` :ref:`variable<what is a variable?>` because the expectation for the new :ref:`assertion<what is an assertion?>` is the same as the last one (``'RED'``)
-  * I do not need to give a value for the ``walk_button`` parameter because
-
-    .. code-block:: python
-
-      src.traffic_light.control(
-          current_light='YELLOW',
-          timer_done=True,
-      )
-
-    is the same as
-
-    .. code-block:: python
-
-      src.traffic_light.control(
-          current_light='YELLOW',
-          timer_done=True,
-          walk_button=False,
-      )
-
-    the :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. :ref:`A function uses the default value for a parameter when it is :ref:`called<how to call a function with input>` without the parameter<test_optional_arguments>`.
-
-* I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>`, for if the light is :yellow:`YELLOW` AND the timer is :red:`NOT done` and the walk button is :green:`pushed`
-
-  ================  ===============  =================  =================
-  current light     timer            walk button        output
-  ================  ===============  =================  =================
-  :yellow:`YELLOW`  :green:`done`    :green:`pushed`    :red:`RED`
-  :yellow:`YELLOW`  :green:`done`    :red:`NOT pushed`  :red:`RED`
-  :yellow:`YELLOW`  :red:`NOT done`  :green:`pushed`    :yellow:`YELLOW`
-  ================  ===============  =================  =================
-
-  .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 20
-
-        def test_yellow_light(self):
-            my_expectation = 'RED'
-            reality = src.traffic_light.control(
-                current_light='YELLOW',
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.traffic_light.control(
-                current_light='YELLOW',
-                timer_done=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            my_expectation = 'YELLOW'
-            reality = src.traffic_light.control(
-                current_light='YELLOW',
-                timer_done=False,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-        def test_green_light(self):
-
-  green.
-
-* I add an :ref:`assertion<what is an assertion?>` for if the light is :yellow:`YELLOW` AND the timer is :red:`NOT done` and the walk button is :red:`NOT pushed`
-
-  ================  ===============  =================  =================
-  current light     timer            walk button        output
-  ================  ===============  =================  =================
-  :yellow:`YELLOW`  :green:`done`    :green:`pushed`    :red:`RED`
-  :yellow:`YELLOW`  :green:`done`    :red:`NOT pushed`  :red:`RED`
-  :yellow:`YELLOW`  :red:`NOT done`  :green:`pushed`    :yellow:`YELLOW`
-  :yellow:`YELLOW`  :red:`NOT done`  :red:`NOT pushed`  :yellow:`YELLOW`
-  ================  ===============  =================  =================
-
-  .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 24-27
-
-        def test_yellow_light(self):
-            my_expectation = 'RED'
-            reality = src.traffic_light.control(
-                current_light='YELLOW',
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.traffic_light.control(
-                current_light='YELLOW',
-                timer_done=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            my_expectation = 'YELLOW'
-            reality = src.traffic_light.control(
-                current_light='YELLOW',
-                timer_done=False,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.traffic_light.control(
-                current_light='YELLOW',
-            )
-            self.assertEqual(reality, my_expectation)
-
-        def test_green_light(self):
-
-  still green.
-
-  * I do not need to make a new ``my_expectation`` :ref:`variable<what is a variable?>` because the expectation for the new :ref:`assertion<what is an assertion?>` is the same as the last one (``'YELLOW'``)
-  * I do not need to give a value for the ``walk_button`` and ``timer_done`` parameters because
-
-    .. code-block:: python
-
-      src.traffic_light.control(
-          current_light='YELLOW',
-      )
-
-    is the same as
-
-    .. code-block:: python
-
-      src.traffic_light.control(
-          current_light='YELLOW',
-          timer_done=False,
-          walk_button=False,
-      )
-
-    - the :ref:`default value<test_optional_arguments>` for the ``timer_done`` parameter is :ref:`False<test_what_is_false>`
-    - the :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`
-    - :ref:`A function uses the default value for a parameter when it is :ref:`called<how to call a function with input>` without the parameter<test_optional_arguments>`
-
-* I change the name of the test from :ref:`test_yellow_light` to :ref:`test_yellow_light_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 4
-
-            reality = src.traffic_light.control()
-            self.assertEqual(reality, red)
-
-        def test_yellow_light_w_walk_button(self):
-            my_expectation = 'RED'
-            reality = src.traffic_light.control(
-                current_light='YELLOW',
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-* I add a :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 2
-
-        def test_yellow_light_w_walk_button(self):
-            yellow = 'YELLOW'
-
-            my_expectation = 'RED'
-
-* I use the new :ref:`variable<what is a variable?>` to remove repetition of ``'YELLOW'`` and the ``my_expectation`` :ref:`variable<what is a variable?>` when its value is ``'YELLOW'``
-
-  .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 6-7, 14-15, 20, 22-23, 27-28, 31-32, 34-35, 39-40
-
-        def test_yellow_light_w_walk_button(self):
-            yellow = 'YELLOW'
-
-            my_expectation = 'RED'
-            reality = src.traffic_light.control(
-                # current_light='YELLOW',
-                current_light=yellow,
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.traffic_light.control(
-                # current_light='YELLOW',
-                current_light=yellow,
-                timer_done=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            # my_expectation = 'YELLOW'
-            reality = src.traffic_light.control(
-                # current_light='YELLOW',
-                current_light=yellow,
-                timer_done=False,
-                walk_button=True,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, yellow)
-
-            reality = src.traffic_light.control(
-                # current_light='YELLOW',
-                current_light=yellow,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, yellow)
-
-        def test_green_light(self):
-
-  the test is still green.
-
-* I add a :ref:`variable<what is a variable?>` for :red:`RED` (a repetition of the :ref:`variable<what is a variable?>` in :ref:`test_red_light_w_walk_button`, oh boy)
-
-  .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 2
-
-        def test_yellow_light_w_walk_button(self):
-            red, yellow = 'RED', 'YELLOW'
-
-            my_expectation = 'RED'
-
-* I use the new :ref:`variable<what is a variable?>` to remove repetition, such irony (I use a repetition to remove a repetition)
-
-  .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 4, 11-12, 19-20
-
-        def test_yellow_light_w_walk_button(self):
-            red, yellow = 'RED', 'YELLOW'
-
-            # my_expectation = 'RED'
-            reality = src.traffic_light.control(
-                # current_light='YELLOW',
-                current_light=yellow,
-                timer_done=True,
-                walk_button=True,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, red)
-
-            reality = src.traffic_light.control(
-                # current_light='YELLOW',
-                current_light=yellow,
-                timer_done=True,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, red)
-
-  still green.
-
-* I make a :ref:`global variable<what is a variable?>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5
-
-    import src.traffic_light
-    import unittest
-
-
-    RED = 'RED'
-
-
-    class TestTrafficLight(unittest.TestCase):
-
-* I use the ``RED`` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_red_light_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 2, 8-9, 20-21, 24-25
-
-        def test_red_light_w_walk_button(self):
-            # red = 'RED'
-
-            reality = src.traffic_light.control(
-                timer_done=True,
-                walk_button=True,
-            )
-            # self.assertEqual(reality, red)
-            self.assertEqual(reality, RED)
-
-            my_expectation = 'GREEN'
-            reality = src.traffic_light.control(
-                timer_done=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.traffic_light.control(
-                walk_button=True,
-            )
-            # self.assertEqual(reality, red)
-            self.assertEqual(reality, RED)
-
-            reality = src.traffic_light.control()
-            # self.assertEqual(reality, red)
-            self.assertEqual(reality, RED)
-
-        def test_yellow_light_w_walk_button(self):
-
-  the test is still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 10
-
-        def test_red_light_w_walk_button(self):
-            reality = src.traffic_light.control(
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, RED)
-
-            my_expectation = 'GREEN'
-            reality = src.traffic_light.control(
-                timer_done=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.traffic_light.control(
-                walk_button=True,
-            )
-            self.assertEqual(reality, RED)
-
-            reality = src.traffic_light.control()
-            self.assertEqual(reality, RED)
-
-        def test_yellow_light_w_walk_button(self):
-
-* I use the ``RED`` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_yellow_light_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start: 31
-    :emphasize-lines: 2-3, 13-14, 22-23
-
-        def test_yellow_light_w_walk_button(self):
-            # red, yellow = 'RED', 'YELLOW'
-            yellow = 'YELLOW'
-
-            # my_expectation = 'RED'
-            reality = src.traffic_light.control(
-                # current_light='YELLOW',
-                current_light=yellow,
-                timer_done=True,
-                walk_button=True,
-            )
-            # self.assertEqual(reality, my_expectation)
-            # self.assertEqual(reality, red)
-            self.assertEqual(reality, RED)
-
-            reality = src.traffic_light.control(
-                # current_light='YELLOW',
-                current_light=yellow,
-                timer_done=True,
-            )
-            # self.assertEqual(reality, my_expectation)
-            # self.assertEqual(reality, red)
-            self.assertEqual(reality, RED)
-
-  still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 31
-
-        def test_yellow_light_w_walk_button(self):
-            yellow = 'YELLOW'
-
-            reality = src.traffic_light.control(
-                current_light=yellow,
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, RED)
-
-            reality = src.traffic_light.control(
-                current_light=yellow,
-                timer_done=True,
-            )
-            self.assertEqual(reality, RED)
-
-            reality = src.traffic_light.control(
-                current_light=yellow,
-                timer_done=False,
-                walk_button=True,
-            )
-            self.assertEqual(reality, yellow)
-
-            reality = src.traffic_light.control(
-                current_light=yellow,
-            )
-            self.assertEqual(reality, yellow)
-
-        def test_green_light(self):
-
-----
-
-*********************************************************************************
-test_green_light_w_walk_button
-*********************************************************************************
-
-The :ref:`truth table` for if the **Traffic Light** is :green:`GREEN` with the walk button is
-
-================  ===============  =================  =================
+================  ===============  =================  ================
 current light     timer            walk button        output
-================  ===============  =================  =================
+================  ===============  =================  ================
 :green:`GREEN`    :green:`done`    :green:`pushed`    :yellow:`YELLOW`
 :green:`GREEN`    :green:`done`    :red:`NOT pushed`  :yellow:`YELLOW`
 :green:`GREEN`    :red:`NOT done`  :green:`pushed`    :green:`GREEN`
 :green:`GREEN`    :red:`NOT done`  :red:`NOT pushed`  :green:`GREEN`
-================  ===============  =================  =================
+================  ===============  =================  ================
 
-* I add ``walk_button`` to the :ref:`call<how to call a function with input>` to ``src.traffic_light.show`` for if the light is :green:`GREEN` AND the timer is :green:`done` and the walk button is :green:`pushed`, in the first :ref:`assertion<what is an assertion?>` of :ref:`test_green_light` in ``tests/test_traffic_light.py``
-
-  ================  ===============  =================  =================
-  current light     timer            walk button        output
-  ================  ===============  =================  =================
-  :green:`GREEN`    :green:`done`    :green:`pushed`    :yellow:`YELLOW`
-  ================  ===============  =================  =================
-
-  .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 6
-
-        def test_green_light(self):
-            my_expectation = 'YELLOW'
-            reality = src.traffic_light.control(
-                current_light='GREEN',
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-  the test is still green.
-
-* I add an :ref:`assertion<what is an assertion?>` for if the light is :green:`GREEN` AND the timer is :green:`done` and the walk button is :red:`NOT pushed`
-
-  ================  ===============  =================  =================
-  current light     timer            walk button        output
-  ================  ===============  =================  =================
-  :green:`GREEN`    :green:`done`    :green:`pushed`    :yellow:`YELLOW`
-  :green:`GREEN`    :green:`done`    :red:`NOT pushed`  :yellow:`YELLOW`
-  ================  ===============  =================  =================
-
-  .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 10-14
-
-        def test_green_light(self):
-            my_expectation = 'YELLOW'
-            reality = src.traffic_light.control(
-                current_light='GREEN',
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.traffic_light.control(
-                current_light='GREEN',
-                timer_done=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            my_expectation = 'GREEN'
-            reality = src.traffic_light.control(
-                current_light='GREEN',
-                timer_done=False,
-            )
-            self.assertEqual(reality, my_expectation)
-
-  still green.
-
-  * I do not need to make a new ``my_expectation`` :ref:`variable<what is a variable?>` because the expectation for the new :ref:`assertion<what is an assertion?>` is the same as the last one (``'YELLOW'``)
-  * I do not need to give a value for the ``walk_button`` parameter because
-
-    .. code-block:: python
-
-      src.traffic_light.control(
-          current_light='GREEN',
-          timer_done=True,
-      )
-
-    is the same as
-
-    .. code-block:: python
-
-      src.traffic_light.control(
-          current_light='GREEN',
-          timer_done=True,
-          walk_button=False,
-      )
-
-    the :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`
-
-* I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>` for if the light is :green:`GREEN` AND the timer is :red:`NOT done` and the walk button is :green:`pushed`
-
-  ================  ===============  =================  =================
-  current light     timer            walk button        output
-  ================  ===============  =================  =================
-  :green:`GREEN`    :green:`done`    :green:`pushed`    :yellow:`YELLOW`
-  :green:`GREEN`    :green:`done`    :red:`NOT pushed`  :yellow:`YELLOW`
-  :green:`GREEN`    :red:`NOT done`  :green:`pushed`    :green:`GREEN`
-  ================  ===============  =================  =================
-
-  .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 20
-
-        def test_green_light(self):
-            my_expectation = 'YELLOW'
-            reality = src.traffic_light.control(
-                current_light='GREEN',
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.traffic_light.control(
-                current_light='GREEN',
-                timer_done=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            my_expectation = 'GREEN'
-            reality = src.traffic_light.control(
-                current_light='GREEN',
-                timer_done=False,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  green.
-
-* I add an :ref:`assertion<what is an assertion?>` for if the light is :green:`GREEN` AND the timer is :red:`NOT done` and the walk button is :red:`NOT pushed`
-
-  ================  ===============  =================  =================
-  current light     timer            walk button        output
-  ================  ===============  =================  =================
-  :green:`GREEN`    :green:`done`    :green:`pushed`    :yellow:`YELLOW`
-  :green:`GREEN`    :green:`done`    :red:`NOT pushed`  :yellow:`YELLOW`
-  :green:`GREEN`    :red:`NOT done`  :green:`pushed`    :green:`GREEN`
-  :green:`GREEN`    :red:`NOT done`  :red:`NOT pushed`  :green:`GREEN`
-  ================  ===============  =================  =================
-
-  .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 24-27
-
-        def test_green_light(self):
-            my_expectation = 'YELLOW'
-            reality = src.traffic_light.control(
-                current_light='GREEN',
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.traffic_light.control(
-                current_light='GREEN',
-                timer_done=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            my_expectation = 'GREEN'
-            reality = src.traffic_light.control(
-                current_light='GREEN',
-                timer_done=False,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.traffic_light.control(
-                current_light='GREEN',
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  still green.
-
-  * I do not need to make a new ``my_expectation`` :ref:`variable<what is a variable?>` because the expectation for the new :ref:`assertion<what is an assertion?>` is the same as the last one (``'GREEN'``)
-  * I do not need to give a value for the ``walk_button`` and ``timer_done`` parameters because
-
-    .. code-block:: python
-
-      src.traffic_light.control(
-          current_light='GREEN',
-      )
-
-    is the same as
-
-    .. code-block:: python
-
-      src.traffic_light.control(
-          current_light='GREEN',
-          timer_done=False,
-          walk_button=False,
-      )
-
-    - the :ref:`default value<test_optional_arguments>` for the ``timer_done`` parameter is :ref:`False<test_what_is_false>`
-    - the :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`
-    - :ref:`A function uses the default value for a parameter when it is :ref:`called<how to call a function with input>` without the parameter<test_optional_arguments>`
-
-* I change the name of the test from :ref:`test_green_light` to :ref:`test_green_light_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start: 54
-    :emphasize-lines: 6
-
-            reality = src.traffic_light.control(
-                current_light=yellow,
-            )
-            self.assertEqual(reality, yellow)
-
-        def test_green_light_w_walk_button(self):
-            my_expectation = 'YELLOW'
-            reality = src.traffic_light.control(
-                current_light='GREEN',
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-* I add a :ref:`global variable<what is a variable?>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5
-
-    import src.traffic_light
-    import unittest
-
-
-    RED, YELLOW = 'RED', 'YELLOW'
-
-
-    class TestTrafficLight(unittest.TestCase):
-
-* I use the ``YELLOW`` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_yellow_light_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start: 31
-    :emphasize-lines: 2, 5-6, 13-14, 20-21, 25-26, 29-30, 32-33
-
-        def test_yellow_light_w_walk_button(self):
-            # yellow = 'YELLOW'
-
-            reality = src.traffic_light.control(
-                # current_light=yellow,
-                current_light=YELLOW,
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, RED)
-
-            reality = src.traffic_light.control(
-                # current_light=yellow,
-                current_light=YELLOW,
-                timer_done=True,
-            )
-            self.assertEqual(reality, RED)
-
-            reality = src.traffic_light.control(
-                # current_light=yellow,
-                current_light=YELLOW,
-                timer_done=False,
-                walk_button=True,
-            )
-            # self.assertEqual(reality, yellow)
-            self.assertEqual(reality, YELLOW)
-
-            reality = src.traffic_light.control(
-                # current_light=yellow,
-                current_light=YELLOW,
-            )
-            # self.assertEqual(reality, yellow)
-            self.assertEqual(reality, YELLOW)
-
-        def test_green_light_w_walk_button(self):
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 31
-
-        def test_yellow_light_w_walk_button(self):
-            reality = src.traffic_light.control(
-                current_light=YELLOW,
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, RED)
-
-            reality = src.traffic_light.control(
-                current_light=YELLOW,
-                timer_done=True,
-            )
-            self.assertEqual(reality, RED)
-
-            reality = src.traffic_light.control(
-                current_light=YELLOW,
-                timer_done=False,
-                walk_button=True,
-            )
-            self.assertEqual(reality, YELLOW)
-
-            reality = src.traffic_light.control(
-                current_light=YELLOW,
-            )
-            self.assertEqual(reality, YELLOW)
-
-        def test_green_light_w_walk_button(self):
-
-* I add a :ref:`global variable<what is a variable?>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5
-
-    import src.traffic_light
-    import unittest
-
-
-    RED, YELLOW, GREEN = 'RED', 'YELLOW', 'GREEN'
-
-
-    class TestTrafficLight(unittest.TestCase):
-
-* I use the ``GREEN`` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_red_light_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 8, 12-13
-
-        def test_red_light_w_walk_button(self):
-            reality = src.traffic_light.control(
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, RED)
-
-            # my_expectation = 'GREEN'
-            reality = src.traffic_light.control(
-                timer_done=True,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, GREEN)
-
-            reality = src.traffic_light.control(
-                walk_button=True,
-            )
-            self.assertEqual(reality, RED)
-
-            reality = src.traffic_light.control()
-            self.assertEqual(reality, RED)
-
-        def test_yellow_light_w_walk_button(self):
-
-  the test is still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 10
-
-        def test_red_light_w_walk_button(self):
-            reality = src.traffic_light.control(
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, RED)
-
-            reality = src.traffic_light.control(
-                timer_done=True,
-            )
-            self.assertEqual(reality, GREEN)
-
-            reality = src.traffic_light.control(
-                walk_button=True,
-            )
-            self.assertEqual(reality, RED)
-
-            reality = src.traffic_light.control()
-            self.assertEqual(reality, RED)
-
-        def test_yellow_light_w_walk_button(self):
-
-* I use the :green:`GREEN` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_green_light_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 4-5, 12-13, 18, 20-21, 25-26, 29-30, 32-33
-
-        def test_green_light_w_walk_button(self):
-            my_expectation = 'YELLOW'
-            reality = src.traffic_light.control(
-                # current_light='GREEN',
-                current_light=GREEN,
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.traffic_light.control(
-                # current_light='GREEN',
-                current_light=GREEN,
-                timer_done=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            # my_expectation = 'GREEN'
-            reality = src.traffic_light.control(
-                # current_light='GREEN',
-                current_light=GREEN,
-                timer_done=False,
-                walk_button=True,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, GREEN)
-
-            reality = src.traffic_light.control(
-                # current_light='GREEN',
-                current_light=GREEN,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, GREEN)
-
-  still green.
-
-* I use the :yellow:`YELLOW` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_green_light_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 2, 9-10, 17-18
-
-        def test_green_light_w_walk_button(self):
-            # my_expectation = 'YELLOW'
-            reality = src.traffic_light.control(
-                # current_light='GREEN',
-                current_light=GREEN,
-                timer_done=True,
-                walk_button=True,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, YELLOW)
-
-            reality = src.traffic_light.control(
-                # current_light='GREEN',
-                current_light=GREEN,
-                timer_done=True,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, YELLOW)
-
-  still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 56
-
-        def test_green_light_w_walk_button(self):
-            reality = src.traffic_light.control(
-                current_light=GREEN,
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, YELLOW)
-
-            reality = src.traffic_light.control(
-                current_light=GREEN,
-                timer_done=True,
-            )
-            self.assertEqual(reality, YELLOW)
-
-            reality = src.traffic_light.control(
-                current_light=GREEN,
-                timer_done=False,
-                walk_button=True,
-            )
-            self.assertEqual(reality, GREEN)
-
-            reality = src.traffic_light.control(
-                current_light=GREEN,
-            )
-            self.assertEqual(reality, GREEN)
-
-
-    # Exceptions seen
-
-* I want to remove the ``reality`` :ref:`variable<what is a variable?>`, because it is only used once for each :ref:`assertion<what is an assertion?>`, I can make the :ref:`call<how to call a function with input>` to ``src.traffic_light.show`` directly, in :ref:`test_green_light_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 7-11, 18-22, 29-33, 38-42
-
-        def test_green_light_w_walk_button(self):
-            reality = src.traffic_light.control(
-                current_light=GREEN,
-                timer_done=True,
-                walk_button=True,
-            )
-            # self.assertEqual(reality, YELLOW)
-            self.assertEqual(
-                reality,
-                YELLOW
-            )
-
-            reality = src.traffic_light.control(
-                current_light=GREEN,
-                timer_done=True,
-            )
-            # self.assertEqual(reality, YELLOW)
-            self.assertEqual(
-                reality,
-                YELLOW
-            )
-
-            reality = src.traffic_light.control(
-                current_light=GREEN,
-                timer_done=False,
-                walk_button=True,
-            )
-            # self.assertEqual(reality, GREEN)
-            self.assertEqual(
-                reality,
-                green.
-            )
-
-            reality = src.traffic_light.control(
-                current_light=GREEN,
-            )
-            # self.assertEqual(reality, GREEN)
-            self.assertEqual(
-                reality,
-                green.
-            )
-
-* I remove the ``reality`` :ref:`variable<what is a variable?>` from the :ref:`assertions<what is an assertion?>` :ref:`test_green_light_w_walk_button`, I no longer need it to be a middle man
-
-  .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 9-14, 24-28, 39-44, 53-56
-
-        def test_green_light_w_walk_button(self):
-            reality = src.traffic_light.control(
-                current_light=GREEN,
-                timer_done=True,
-                walk_button=True,
-            )
-            # self.assertEqual(reality, YELLOW)
-            self.assertEqual(
-                # reality,
-                src.traffic_light.control(
-                    current_light=GREEN,
-                    timer_done=True,
-                    walk_button=True,
-                ),
-                YELLOW
-            )
-
-            reality = src.traffic_light.control(
-                current_light=GREEN,
-                timer_done=True,
-            )
-            # self.assertEqual(reality, YELLOW)
-            self.assertEqual(
-                # reality,
-                src.traffic_light.control(
-                    current_light=GREEN,
-                    timer_done=True,
-                ),
-                YELLOW
-            )
-
-            reality = src.traffic_light.control(
-                current_light=GREEN,
-                timer_done=False,
-                walk_button=True,
-            )
-            # self.assertEqual(reality, GREEN)
-            self.assertEqual(
-                # reality,
-                src.traffic_light.control(
-                    current_light=GREEN,
-                    timer_done=False,
-                    walk_button=True,
-                ),
-                green.
-            )
-
-            reality = src.traffic_light.control(
-                current_light=GREEN,
-            )
-            # self.assertEqual(reality, GREEN)
-            self.assertEqual(
-                # reality,
-                src.traffic_light.control(
-                    current_light=GREEN,
-                ),
-                green.
-            )
-
-  green.
-
-* I remove the commented lines and ``reality`` :ref:`variable<what is a variable?>` from :ref:`test_green_light_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start: 56
-
-        def test_green_light_w_walk_button(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=GREEN,
-                    timer_done=True,
-                    walk_button=True,
-                ),
-                YELLOW
-            )
-
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=GREEN,
-                    timer_done=True,
-                ),
-                YELLOW
-            )
-
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=GREEN,
-                    timer_done=False,
-                    walk_button=True,
-                ),
-                green.
-            )
-
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=GREEN,
-                ),
-                green.
-            )
-
-
-    # Exceptions seen
-
-  still green.
-
-* I do the same thing with :ref:`test_yellow_light_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 7-10, 16-19, 26-29, 34-37
-
-        def test_yellow_light_w_walk_button(self):
-            reality = src.traffic_light.control(
-                current_light=YELLOW,
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(
-                reality,
-                RED
-            )
-
-            reality = src.traffic_light.control(
-                current_light=YELLOW,
-                timer_done=True,
-            )
-            self.assertEqual(
-                reality,
-                RED
-            )
-
-            reality = src.traffic_light.control(
-                current_light=YELLOW,
-                timer_done=False,
-                walk_button=True,
-            )
-            self.assertEqual(
-                reality,
-                YELLOW
-            )
-
-            reality = src.traffic_light.control(
-                current_light=YELLOW,
-            )
-            self.assertEqual(
-                reality,
-                YELLOW
-            )
-
-        def test_green_light_w_walk_button(self):
-
-* I :ref:`call<how to call a function with input>` the ``control`` :ref:`function<what is a function?>` directly in the :ref:`assertions<what is an assertion?>` in :ref:`test_yellow_light_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 8-13, 22-26, 36-41, 49-52
-
-        def test_yellow_light_w_walk_button(self):
-            reality = src.traffic_light.control(
-                current_light=YELLOW,
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(
-                # reality,
-                src.traffic_light.control(
-                    current_light=YELLOW,
-                    timer_done=True,
-                    walk_button=True,
-                ),
-                RED
-            )
-
-            reality = src.traffic_light.control(
-                current_light=YELLOW,
-                timer_done=True,
-            )
-            self.assertEqual(
-                # reality,
-                src.traffic_light.control(
-                    current_light=YELLOW,
-                    timer_done=True,
-                ),
-                RED
-            )
-
-            reality = src.traffic_light.control(
-                current_light=YELLOW,
-                timer_done=False,
-                walk_button=True,
-            )
-            self.assertEqual(
-                # reality,
-                src.traffic_light.control(
-                    current_light=YELLOW,
-                    timer_done=False,
-                    walk_button=True,
-                ),
-                YELLOW
-            )
-
-            reality = src.traffic_light.control(
-                current_light=YELLOW,
-            )
-            self.assertEqual(
-                # reality,
-                src.traffic_light.control(
-                    current_light=YELLOW,
-                ),
-                YELLOW
-            )
-
-        def test_green_light_w_walk_button(self):
-
-  the test is still green.
-
-* I remove the ``reality`` :ref:`variable<what is a variable?>` and comments from :ref:`test_yellow_light_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start: 30
-
-        def test_yellow_light_w_walk_button(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=YELLOW,
-                    timer_done=True,
-                    walk_button=True,
-                ),
-                RED
-            )
-
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=YELLOW,
-                    timer_done=True,
-                ),
-                RED
-            )
-
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=YELLOW,
-                    timer_done=False,
-                    walk_button=True,
-                ),
-                YELLOW
-            )
-
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=YELLOW,
-                ),
-                YELLOW
-            )
-
-        def test_green_light_w_walk_button(self):
-
-* I also do it in :ref:`test_red_light_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 6-9, 14-17, 22-25, 28-31
-
-        def test_red_light_w_walk_button(self):
-            reality = src.traffic_light.control(
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(
-                reality,
-                RED
-            )
-
-            reality = src.traffic_light.control(
-                timer_done=True,
-            )
-            self.assertEqual(
-                reality,
-                green.
-            )
-
-            reality = src.traffic_light.control(
-                walk_button=True,
-            )
-            self.assertEqual(
-                reality,
-                RED
-            )
-
-            reality = src.traffic_light.control()
-            self.assertEqual(
-                reality,
-                RED
-            )
-
-* I :ref:`call<how to call a function with input>` the ``control`` :ref:`function<what is a function?>` directly
-
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 7-11, 19-22, 30-33, 39-40
-
-        def test_red_light_w_walk_button(self):
-            reality = src.traffic_light.control(
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(
-                # reality,
-                src.traffic_light.control(
-                    timer_done=True,
-                    walk_button=True,
-                ),
-                RED
-            )
-
-            reality = src.traffic_light.control(
-                timer_done=True,
-            )
-            self.assertEqual(
-                # reality,
-                src.traffic_light.control(
-                    timer_done=True,
-                ),
-                green.
-            )
-
-            reality = src.traffic_light.control(
-                walk_button=True,
-            )
-            self.assertEqual(
-                # reality,
-                src.traffic_light.control(
-                    walk_button=True,
-                ),
-                RED
-            )
-
-            reality = src.traffic_light.control()
-            self.assertEqual(
-                # reality,
-                src.traffic_light.control(),
-                RED
-            )
-
-  still green.
-
-* I remove the ``reality`` :ref:`variable<what is a variable?>` and the comments from :ref:`test_red_light_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start: 10
-
-        def test_red_light_w_walk_button(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    timer_done=True,
-                    walk_button=True,
-                ),
-                RED
-            )
-
-            self.assertEqual(
-                src.traffic_light.control(
-                    timer_done=True,
-                ),
-                green.
-            )
-
-            self.assertEqual(
-                src.traffic_light.control(
-                    walk_button=True,
-                ),
-                RED
-            )
-
-            self.assertEqual(
-                src.traffic_light.control(),
-                RED
-            )
-
-        def test_yellow_light_w_walk_button(self):
-
-.. admonition:: REMINDER
-
-  When the ``control`` :ref:`function<what is a function?>` is called
-
-  .. code-block:: python
-    :linenos:
-
-    def control(
-            current_light='RED', timer_done=False,
-            walk_button=False,
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        if not timer_done:
-            return current_light
-
-        if current_light == yellow:
-            return red
-
-        if current_light == green:
-            return yellow
-
-        if walk_button:
-            return red
-
-        return green
-
-  * if the timer is :red:`NOT done` it returns the current light
-  * if the timer is :green:`done`
-
-    - it returns :red:`RED` if the current light is :yellow:`YELLOW`
-    - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-    - if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
-
-      * it returns :red:`RED` if the walk button is :green:`pushed`
-      * it returns :green:`GREEN` if the walk button is :red:`NOT pushed`
+I want the **Traffic Light** to show ``WALK`` when a person can cross the street or ``NO WALK`` when a person can NOT cross the street.
 
 ----
 
@@ -4972,50 +2880,13 @@ current light     timer            walk button        output
 test_red_light_w_walk
 *************************************************************************************
 
-The inputs for the **Traffic Light** up till now are
-
-* did the person push the walk button?
-* what color is the light now?
-* is the timer done?
-
-which gives this :ref:`truth table`
-
-================  ===============  =================  =================
-current light     timer            walk button        output
-================  ===============  =================  =================
-:red:`RED`        :green:`done`    :green:`pushed`    :red:`RED`
-:red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN`
-:red:`RED`        :red:`NOT done`  :green:`pushed`    :red:`RED`
-:red:`RED`        :red:`NOT done`  :red:`NOT pushed`  :red:`RED`
-================  ===============  =================  =================
-
-================  ===============  =================  =================
-current light     timer            walk button        output
-================  ===============  =================  =================
-:yellow:`YELLOW`  :green:`done`    :green:`pushed`    :red:`RED`
-:yellow:`YELLOW`  :green:`done`    :red:`NOT pushed`  :red:`RED`
-:yellow:`YELLOW`  :red:`NOT done`  :green:`pushed`    :yellow:`YELLOW`
-:yellow:`YELLOW`  :red:`NOT done`  :red:`NOT pushed`  :yellow:`YELLOW`
-================  ===============  =================  =================
-
-================  ===============  =================  =================
-current light     timer            walk button        output
-================  ===============  =================  =================
-:green:`GREEN`    :green:`done`    :green:`pushed`    :yellow:`YELLOW`
-:green:`GREEN`    :green:`done`    :red:`NOT pushed`  :yellow:`YELLOW`
-:green:`GREEN`    :red:`NOT done`  :green:`pushed`    :green:`GREEN`
-:green:`GREEN`    :red:`NOT done`  :red:`NOT pushed`  :green:`GREEN`
-================  ===============  =================  =================
-
-I want the **Traffic Light** to show ``WALK`` when a person can cross the street or ``NO WALK`` when a person can NOT cross the street. This means the :ref:`truth table` for if the **Traffic Light** is :red:`RED` with the walk sign is
+The :ref:`truth table` for if the **Traffic Light** is :red:`RED` AND the timer is done with the walk sign is
 
 ================  =============== ================= =================================
 current light     timer           walk button       output
 ================  =============== ================= =================================
 :red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
 :red:`RED`        :green:`done`   :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
-:red:`RED`        :red:`NOT done` :green:`pushed`   :red:`RED` + :green:`WALK`
-:red:`RED`        :red:`NOT done` :red:`NOT pushed` :red:`RED` + :green:`WALK`
 ================  =============== ================= =================================
 
 ----
