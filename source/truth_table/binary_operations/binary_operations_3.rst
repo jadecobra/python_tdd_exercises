@@ -194,7 +194,7 @@ because ``truth_table.py`` does not have anything in it with that name.
 
 ----
 
-* I open ``truth_table.py`` from the ``src`` folder_
+* I open ``truth_table/__init__.py`` from the ``src`` folder_
 * I add :ref:`exclusive_disjunction<test_exclusive_disjunction>` to ``truth_table.py``
 
   .. code-block:: python

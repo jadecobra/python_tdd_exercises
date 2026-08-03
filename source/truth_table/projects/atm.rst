@@ -290,7 +290,7 @@ because I do not have a definition for ``src`` in this file_.
     # NameError
     # AttributeError
 
-* I open ``atm.py`` from the ``src`` folder_
+* I open ``atm/__init__.py`` from the ``src`` folder_
 
 * I delete all the text in the file_ then add a :ref:`function<what is a function?>` named ``withdraw`` to ``atm.py``
 

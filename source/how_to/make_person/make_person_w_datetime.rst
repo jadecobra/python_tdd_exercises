@@ -1249,7 +1249,7 @@ The tests use the right calculation for the age, and the solution still uses a f
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I open ``person.py`` from the ``src`` folder_
+* I open ``person/__init__.py`` from the ``src`` folder_
 * I add a :ref:`function<what is a function?>` to calculate the age, with the same body as the :ref:`calculate_age method<extract calculate_age method>`, in ``person.py``
 
   .. code-block:: python

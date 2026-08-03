@@ -172,7 +172,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
 ----
 
-* I open ``truth_table.py`` from the ``src`` folder_
+* I open ``truth_table/__init__.py`` from the ``src`` folder_
 
 * I add ``negate_first`` to ``truth_table.py``
 

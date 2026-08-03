@@ -424,7 +424,7 @@ test_attribute_error_w_variables
 
 ----
 
-* I open ``attribute_error.py`` from the ``src`` folder_
+* I open ``attribute_error/__init__.py`` from the ``src`` folder_
 
 * I add ``variable_00`` to ``attribute_error.py``
 

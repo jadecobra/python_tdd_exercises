@@ -1516,7 +1516,7 @@ the test passes.
     # TypeError
     # AttributeError
 
-* I open ``person.py`` from the ``src`` folder_
+* I open ``person/__init__.py`` from the ``src`` folder_
 * I delete all the text in the file_ then add a copy of the :ref:`factory function<test person factory>` to ``person.py``
 
   .. code-block:: python

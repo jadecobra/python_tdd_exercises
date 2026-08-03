@@ -150,7 +150,7 @@ test_logical_true
     # AssertionError
     # AttributeError
 
-* I open ``truth_table.py`` from the ``src`` folder_
+* I open ``truth_table/__init__.py`` from the ``src`` folder_
 
 * I remove all the text in the file_ then add a :ref:`function<what is a function?>` to ``truth_table.py``
 

@@ -284,7 +284,7 @@ test_pressed_start
     # NameError
     # AttributeError
 
-* I open ``microwave.py`` from the ``src`` folder_
+* I open ``microwave/__init__.py`` from the ``src`` folder_
 
 * I delete all the text in the file_ then add a :ref:`function<what is a function?>` named ``microwave`` to ``microwave.py``
 

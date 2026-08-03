@@ -291,7 +291,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
     # NameError
     # AttributeError
 
-* I open ``family_ties.py`` from the ``src`` folder_
+* I open ``family_ties/__init__.py`` from the ``src`` folder_
 
 * I add a :ref:`class definition<how to make a class>` definition to ``family_ties.py``
 

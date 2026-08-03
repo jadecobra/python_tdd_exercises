@@ -219,7 +219,7 @@ current light     timer            show
 ----
 
 * I go back to the terminal_ where the tests are running
-* I change :ref:`test_failure` to ``test_red_traffic_light``, then add an :ref:`assertion<what is an assertion?>` for when the light is :red:`RED` and the timer is :green:`done`
+* I change :ref:`test_failure` to ``test_red_traffic_light``, then add an :ref:`assertion<what is an assertion?>` for if the light is :red:`RED` AND the timer is :green:`done`
 
   .. code-block:: python
     :lineno-start: 5
@@ -288,18 +288,10 @@ current light     timer            show
 
   because ``traffic_light/__init__.py`` in the ``src`` folder_ does not have anything named ``show`` in it
 
-  .. admonition:: If you get :ref:`ModuleNotFoundError<what is a module?>`
-
-    .. code-block:: python
-
-      ModuleNotFoundError: No module named 'src'
-
-    check if you have ``__init__.py`` in the ``tests`` folder_ with underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``, then add :ref:`ModuleNotFoundError<what is a module?>` to the list of :ref:`Exceptions<errors>` seen
-
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 17
     :emphasize-lines: 4
     :emphasize-text: AttributeError
 
@@ -308,9 +300,9 @@ current light     timer            show
     # NameError
     # AttributeError
 
-* I open ``traffic_light.py`` from the ``src`` folder_
+* I open ``traffic_light/__init__.py`` from the ``src`` folder_
 
-* I add a :ref:`function<what is a function?>` to ``traffic_light.py``
+* I add a :ref:`function<what is a function?>` to ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -323,14 +315,13 @@ current light     timer            show
 
   .. code-block:: python
 
-    TypeError: show() got an unexpected keyword argument 'current_light'
-
-  because the test :ref:`called<how to call a function with input>` the ``show`` :ref:`function<what is a function?>` with two keyword arguments and this definition only takes calls with 0 arguments
+    TypeError: show() got
+               an unexpected keyword argument 'current_light'
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_traffic_light.py``
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 17
     :emphasize-lines: 5
     :emphasize-text: TypeError
 
@@ -340,7 +331,7 @@ current light     timer            show
     # AttributeError
     # TypeError
 
-* I add the :ref:`keyword argument<test_keyword_arguments>` to the :ref:`function<what is a function?>` in ``traffic_light.py``
+* I add ``current_light`` to the :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -353,9 +344,8 @@ current light     timer            show
 
   .. code-block:: python
 
-    TypeError: show() got an unexpected keyword argument 'timer_done'
-
-  because the test :ref:`called<how to call a function with input>` the ``show`` :ref:`function<what is a function?>` with two keyword arguments and this definition only takes calls with 1 input
+    TypeError: show() got an
+               unexpected keyword argument 'timer_done'
 
 * I add ``timer_done`` to the :ref:`function signature<what is a function?>`
 
@@ -372,8 +362,6 @@ current light     timer            show
 
     AssertionError: None != 'GREEN'
 
-  the ``show`` :ref:`function<what is a function?>` always returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``'GREEN'``
-
 * I change the :ref:`return statement<the return statement>` to give the test what it expects
 
   .. code-block:: python
@@ -383,7 +371,11 @@ current light     timer            show
     def show(current_light, timer_done):
         return 'GREEN'
 
-  the test passes. The ``show`` :ref:`function<what is a function?>` always returns :green:`GREEN`, it does not care about the inputs. Is this :ref:`Contradiction<test_contradiction>` or :ref:`Tautology<test_tautology>`?
+  the test passes.
+
+  .. code-block:: python
+
+    show(current_light='RED'   , timer_done=True ) -> 'GREEN'
 
 ----
 
@@ -393,7 +385,7 @@ current light     timer            show
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for when the light is :red:`RED` and the timer is :red:`NOT done`, in ``test_traffic_light.py``
+* I add an :ref:`assertion<what is an assertion?>` for if the light is :red:`RED` AND the timer is :red:`NOT done`, in ``test_traffic_light.py``
 
   ================  ===============  ================
   current light     timer            show
@@ -404,22 +396,23 @@ current light     timer            show
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 9-14
+    :emphasize-lines: 9-15
 
         def test_red_traffic_light(self):
-            my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
-                current_light='RED',
-                timer_done=True,
+            self.assertEqual(
+                src.traffic_light.show(
+                    current_light='RED',
+                    timer_done=True,
+                ),
+                'GREEN'
             )
-            self.assertEqual(reality, my_expectation)
-
-            my_expectation = 'RED'
-            reality = src.traffic_light.show(
-                current_light='RED',
-                timer_done=False,
+            self.assertEqual(
+                src.traffic_light.show(
+                    current_light='RED',
+                    timer_done=False,
+                ),
+                'RED'
             )
-            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -430,97 +423,34 @@ current light     timer            show
 
     AssertionError: 'GREEN' != 'RED'
 
-  because the ``show`` :ref:`function<what is a function?>` returns ``'GREEN'`` and the :ref:`assertion<what is an assertion?>` expects ``'RED'``
-
-* I add an :ref:`if statement<if statements>` for this case, to ``traffic_light.py``
+* I add an :ref:`if statement<if statements>` for this case, to ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 2-3
 
     def show(current_light, timer_done):
-        if timer_done == False:
+        if not timer_done:
             return 'RED'
         return 'GREEN'
 
   the test passes.
 
-* I use :ref:`the bool built-in function<how to test if something is grouped as True>`
+  .. code-block:: python
+
+    show(current_light='RED'   , timer_done=True ) -> 'GREEN'
+    show(current_light='RED'   , timer_done=False) -> 'RED'
+
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2-3
 
-    def show(current_light, timer_done):
-        # if timer_done == False:
-        if bool(timer_done) == False:
-            return 'RED'
-        return 'GREEN'
+    git commit -am 'add test_red_traffic_light'
 
-  the test is still green.
+If the current **Traffic Light** is :red:`RED`, the ``show`` :ref:`function<what is a function?>` returns
 
-* I use :ref:`logical_negation (NOT)<test_logical_negation>` to write the statement in terms of :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3-4
-
-    def show(current_light, timer_done):
-        # if timer_done == False:
-        # if bool(timer_done) == False:
-        if not bool(timer_done) == True:
-            return 'RED'
-        return 'GREEN'
-
-  still green.
-
-* I remove ``== True``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4-5
-
-    def show(current_light, timer_done):
-        # if timer_done == False:
-        # if bool(timer_done) == False:
-        # if not bool(timer_done) == True:
-        if not bool(timer_done):
-            return 'RED'
-        return 'GREEN'
-
-  green.
-
-* I remove :ref:`bool<how to test if something is grouped as True>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5-6
-
-    def show(current_light, timer_done):
-        # if timer_done == False:
-        # if bool(timer_done) == False:
-        # if not bool(timer_done) == True:
-        # if not bool(timer_done):
-        if not timer_done:
-            return 'RED'
-        return 'GREEN'
-
-  still green because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :linenos:
-
-    def show(current_light, timer_done):
-        if not timer_done:
-            return 'RED'
-        return 'GREEN'
-
-  If the current **Traffic Light** is :red:`RED`, the ``show`` :ref:`function<what is a function?>` returns
-
-  * :green:`GREEN` if the timer is :green:`done`
-  * :red:`RED` if the timer is :red:`NOT done`
+* :green:`GREEN` if the timer is :green:`done`
+* :red:`RED` if the timer is :red:`NOT done`
 
 ----
 
@@ -545,7 +475,7 @@ current light     timer            show
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>` for if the **Traffic Light** is :yellow:`YELLOW` and the timer is :green:`done`, to ``test_traffic_light.py``
+I add a test with an :ref:`assertion<what is an assertion?>` for if the **Traffic Light** is :yellow:`YELLOW` AND the timer is :green:`done`, to ``test_traffic_light.py``
 
 ================  ===============  ================
 current light     timer            show
@@ -554,42 +484,34 @@ current light     timer            show
 ================  ===============  ================
 
 .. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 16-22
+  :lineno-start: 15
+  :emphasize-lines: 9-16
 
-      def test_red_traffic_light(self):
-          my_expectation = 'GREEN'
-          reality = src.traffic_light.show(
-              current_light='RED',
-              timer_done=True,
-          )
-          self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                src.traffic_light.show(
+                    current_light='RED',
+                    timer_done=False,
+                ),
+                'RED'
+            )
 
-          my_expectation = 'RED'
-          reality = src.traffic_light.show(
-              current_light='RED',
-              timer_done=False,
-          )
-          self.assertEqual(reality, my_expectation)
-
-      def test_yellow_traffic_light(self):
-          my_expectation = 'RED'
-          reality = src.traffic_light.show(
-              current_light='YELLOW',
-              timer_done=True,
-          )
-          self.assertEqual(reality, my_expectation)
+        def test_yellow_traffic_light(self):
+            self.assertEqual(
+                src.traffic_light.show(
+                    current_light='YELLOW',
+                    timer_done=True,
+                ),
+                'RED'
+            )
 
 
-  # Exceptions seen
+    # Exceptions seen
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
   AssertionError: 'GREEN' != 'RED'
-
-because the ``show`` :ref:`function<what is a function?>` returned ``'GREEN'`` and the :ref:`assertion<what is an assertion?>` expects ``'RED'``
 
 ----
 
@@ -599,29 +521,26 @@ because the ``show`` :ref:`function<what is a function?>` returned ``'GREEN'`` a
 
 ----
 
-I add an :ref:`if statement<if statements>` to ``traffic_light.py``
+I add an :ref:`if statement<if statements>` to ``src/traffic_light/__init__.py``
 
 .. code-block:: python
   :linenos:
-  :emphasize-lines: 5-6
+  :emphasize-lines: 3-4
 
-  def show(current_light, timer_done):
-      if not timer_done:
-          return 'RED'
+    def show(current_light, timer_done):
+        if not timer_done:
+            return 'RED'
+        if current_light == 'YELLOW':
+            return 'RED'
+        return 'GREEN'
 
-      if current_light == 'YELLOW':
-          return 'RED'
+the test passes.
 
-      return 'GREEN'
+.. code-block:: python
 
-the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
-
-* if the timer is :red:`NOT done` it returns :red:`RED`
-
-* if the timer is :green:`done`
-
-  - it returns :red:`RED` if the current light is :yellow:`YELLOW`
-  - it returns :green:`GREEN` if the current light is NOT :yellow:`YELLOW`
+  show(current_light='RED'   , timer_done=True ) -> 'GREEN'
+  show(current_light='RED'   , timer_done=False) -> 'RED'
+  show(current_light='YELLOW', timer_done=True ) -> 'RED'
 
 ----
 
@@ -631,7 +550,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for when the light is :yellow:`YELLOW` and the timer is :red:`NOT done`, to :ref:`test_yellow_traffic_light` in ``test_traffic_light.py``
+* I add an :ref:`assertion<what is an assertion?>` for if the light is :yellow:`YELLOW` AND the timer is :red:`NOT done`, to :ref:`test_yellow_traffic_light` in ``test_traffic_light.py``
 
   ================  ===============  ================
   current light     timer            show
@@ -670,7 +589,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
   because the ``show`` :ref:`function<what is a function?>` returned ``'RED'`` and the :ref:`assertion<what is an assertion?>` expects ``'YELLOW'``
 
-* I add an :ref:`if statement<if statements>` to the one for when the timer is :red:`NOT done`, in ``traffic_light.py``
+* I add an :ref:`if statement<if statements>` to the one for when the timer is :red:`NOT done`, in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -724,7 +643,7 @@ current light     timer            show
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>` for if the **Traffic Light** is :green:`GREEN` and the timer is :green:`done`, to ``test_traffic_light.py``
+I add a test with an :ref:`assertion<what is an assertion?>` for if the **Traffic Light** is :green:`GREEN` AND the timer is :green:`done`, to ``test_traffic_light.py``
 
 ================  ===============  ================
 current light     timer            show
@@ -778,7 +697,7 @@ because the ``show`` :ref:`function<what is a function?>` returned ``'GREEN'`` a
 
 ----
 
-I add an :ref:`if statement<if statements>` to ``traffic_light.py``
+I add an :ref:`if statement<if statements>` to ``src/traffic_light/__init__.py``
 
 .. code-block:: python
   :linenos:
@@ -819,7 +738,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for when the light is :green:`GREEN` and the timer is :red:`NOT done`, to ``test_traffic_light.py``
+* I add an :ref:`assertion<what is an assertion?>` for if the light is :green:`GREEN` AND the timer is :red:`NOT done`, to ``test_traffic_light.py``
 
   ================  ===============  ================
   current light     timer            show
@@ -858,7 +777,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
   because the ``show`` :ref:`function<what is a function?>` returned ``'RED'`` and the :ref:`assertion<what is an assertion?>` expects ``'GREEN'``
 
-* I add an :ref:`if statement<if statements>` to the one for when the timer is :red:`NOT done` in ``traffic_light.py``
+* I add an :ref:`if statement<if statements>` to the one for when the timer is :red:`NOT done` in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1123,9 +1042,8 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
 
-  TypeError: show() got an unexpected keyword argument 'walk_button'
-
-because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments (``current_light`` and ``timer_done``)  and the test called it with 3 arguments (``current_light``, ``timer_done`` and ``walk_button``)
+  TypeError: show() got
+             an unexpected keyword argument 'walk_button'
 
 ----
 
@@ -1135,7 +1053,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
 ----
 
-* I add a :ref:`keyword argument<test_keyword_arguments>` to the ``show`` :ref:`function<what is a function?>` in ``traffic_light.py``
+* I add a :ref:`keyword argument<test_keyword_arguments>` to the ``show`` :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1347,7 +1265,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
       * it returns :red:`RED` if the walk button is :green:`pushed`
       * it returns :green:`GREEN` if the walk button is :red:`NOT pushed`
 
-* I do not need to do anything to the :ref:`assertion<what is an assertion?>` for when the light is :red:`RED`, the timer is :green:`done` and the walk button is :red:`NOT pushed`
+* I do not need to do anything to the :ref:`assertion<what is an assertion?>` for if the light is :red:`RED`, the timer is :green:`done` and the walk button is :red:`NOT pushed`
 
   ================  ===============  =================  =================
   current light     timer            walk button        show
@@ -1377,7 +1295,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
   since the :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
-* I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>` for when the light is :red:`RED`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
+* I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>` for if the light is :red:`RED`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
 
   ================  ===============  =================  =================
   current light     timer            walk button        show
@@ -1453,7 +1371,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
   the test is green again
 
-* I add an :ref:`assertion<what is an assertion?>` for when the light is :red:`RED`, the timer is :red:`NOT done` and the walk button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` for if the light is :red:`RED`, the timer is :red:`NOT done` and the walk button is :red:`NOT pushed`
 
   ================  ===============  =================  =================
   current light     timer            walk button        show
@@ -1621,7 +1539,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
         def test_yellow_traffic_light(self):
 
-* I add a :ref:`default value<test_optional_arguments>` for the ``current_light`` :ref:`keyword argument<test_keyword_arguments>` to the ``show`` :ref:`function<what is a function?>` ``traffic_light.py`` as a fail safe so that the light is always :red:`RED` if no value is given
+* I add a :ref:`default value<test_optional_arguments>` for the ``current_light`` :ref:`keyword argument<test_keyword_arguments>` to the ``show`` :ref:`function<what is a function?>` ``src/traffic_light/__init__.py`` as a fail safe so that the light is always :red:`RED` if no value is given
 
   .. code-block:: python
     :linenos:
@@ -1654,7 +1572,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
     # TypeError
     # SyntaxError
 
-* I add a :ref:`default value<test_optional_arguments>` for ``timer_done`` to the ``show`` :ref:`function<what is a function?>` ``traffic_light.py``
+* I add a :ref:`default value<test_optional_arguments>` for ``timer_done`` to the ``show`` :ref:`function<what is a function?>` ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1865,7 +1783,7 @@ current light     timer            walk button        show
 :yellow:`YELLOW`  :red:`NOT done`  :red:`NOT pushed`  :yellow:`YELLOW`
 ================  ===============  =================  =================
 
-* I add ``walk_button`` to the call to ``src.traffic_light.show`` for when the light is :yellow:`YELLOW`, the timer is :green:`done` and the walk button is :green:`pushed`, in the first :ref:`assertion<what is an assertion?>` of :ref:`test_yellow_traffic_light` in ``test_traffic_light.py``
+* I add ``walk_button`` to the call to ``src.traffic_light.show`` for if the light is :yellow:`YELLOW`, the timer is :green:`done` and the walk button is :green:`pushed`, in the first :ref:`assertion<what is an assertion?>` of :ref:`test_yellow_traffic_light` in ``test_traffic_light.py``
 
   ================  ===============  =================  =================
   current light     timer            walk button        show
@@ -1897,7 +1815,7 @@ current light     timer            walk button        show
 
   the test is still green.
 
-* I add an :ref:`assertion<what is an assertion?>` for when the light is :yellow:`YELLOW`, the timer is :green:`done` and the walk button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` for if the light is :yellow:`YELLOW`, the timer is :green:`done` and the walk button is :red:`NOT pushed`
 
   ================  ===============  =================  =================
   current light     timer            walk button        show
@@ -1958,7 +1876,7 @@ current light     timer            walk button        show
 
     the :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
-* I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>`, for when the light is :yellow:`YELLOW`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
+* I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>`, for if the light is :yellow:`YELLOW`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
 
   ================  ===============  =================  =================
   current light     timer            walk button        show
@@ -1999,7 +1917,7 @@ current light     timer            walk button        show
 
   green.
 
-* I add an :ref:`assertion<what is an assertion?>` for when the light is :yellow:`YELLOW`, the timer is :red:`NOT done` and the walk button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` for if the light is :yellow:`YELLOW`, the timer is :red:`NOT done` and the walk button is :red:`NOT pushed`
 
   ================  ===============  =================  =================
   current light     timer            walk button        show
@@ -2347,7 +2265,7 @@ current light     timer            walk button        show
 :green:`GREEN`    :red:`NOT done`  :red:`NOT pushed`  :green:`GREEN`
 ================  ===============  =================  =================
 
-* I add ``walk_button`` to the call to ``src.traffic_light.show`` for when the light is :green:`GREEN`, the timer is :green:`done` and the walk button is :green:`pushed`, in the first :ref:`assertion<what is an assertion?>` of :ref:`test_green_traffic_light` in ``test_traffic_light.py``
+* I add ``walk_button`` to the call to ``src.traffic_light.show`` for if the light is :green:`GREEN`, the timer is :green:`done` and the walk button is :green:`pushed`, in the first :ref:`assertion<what is an assertion?>` of :ref:`test_green_traffic_light` in ``test_traffic_light.py``
 
   ================  ===============  =================  =================
   current light     timer            walk button        show
@@ -2370,7 +2288,7 @@ current light     timer            walk button        show
 
   the test is still green.
 
-* I add an :ref:`assertion<what is an assertion?>` for when the light is :green:`GREEN`, the timer is :green:`done` and the walk button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` for if the light is :green:`GREEN`, the timer is :green:`done` and the walk button is :red:`NOT pushed`
 
   ================  ===============  =================  =================
   current light     timer            walk button        show
@@ -2429,7 +2347,7 @@ current light     timer            walk button        show
 
     the :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`
 
-* I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>` for when the light is :green:`GREEN`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
+* I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>` for if the light is :green:`GREEN`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
 
   ================  ===============  =================  =================
   current light     timer            walk button        show
@@ -2471,7 +2389,7 @@ current light     timer            walk button        show
 
   green.
 
-* I add an :ref:`assertion<what is an assertion?>` for when the light is :green:`GREEN`, the timer is :red:`NOT done` and the walk button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` for if the light is :green:`GREEN`, the timer is :red:`NOT done` and the walk button is :red:`NOT pushed`
 
   ================  ===============  =================  =================
   current light     timer            walk button        show
@@ -3361,7 +3279,7 @@ current light     timer           walk button       show
 
 ----
 
-I add the value for the ``current_light`` parameter in the call to the ``show`` :ref:`function<what is a function?>` for when the light is :red:`RED`, the timer is :green:`done` and the walk button is :green:`pushed`, to make it clearer, then I change the expectation of the first :ref:`assertion<what is an assertion?>` in :ref:`test_red_traffic_light_w_walk_button`
+I add the value for the ``current_light`` parameter in the call to the ``show`` :ref:`function<what is a function?>` for if the light is :red:`RED`, the timer is :green:`done` and the walk button is :green:`pushed`, to make it clearer, then I change the expectation of the first :ref:`assertion<what is an assertion?>` in :ref:`test_red_traffic_light_w_walk_button`
 
 ================  =============== ================= =================================
 current light     timer           walk button       show
@@ -3397,7 +3315,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change the :ref:`return statement<the return statement>` for this case, in the ``show`` :ref:`function<what is a function?>` in ``traffic_light.py``
+I change the :ref:`return statement<the return statement>` for this case, in the ``show`` :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
 
 .. code-block:: python
   :linenos:
@@ -3443,7 +3361,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
 ----
 
-* I add values for the other parameters, to make it clearer for when the light is :red:`RED`, the timer is :green:`done`, and the walk button is :green:`pushed`, then I change the expectation of the second :ref:`assertion<what is an assertion?>` in :ref:`test_red_traffic_light_w_walk_button` in ``test_traffic_light.py``
+* I add values for the other parameters, to make it clearer for if the light is :red:`RED`, the timer is :green:`done`, and the walk button is :green:`pushed`, then I change the expectation of the second :ref:`assertion<what is an assertion?>` in :ref:`test_red_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
   ================  =============== ================= =================================
   current light     timer           walk button       show
@@ -3481,7 +3399,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
     AssertionError: 'GREEN' != ('GREEN', 'NO WALK')
 
-* I add ``'NO WALK'`` to the :ref:`return statement<the return statement>` for this case in ``traffic_light.py``
+* I add ``'NO WALK'`` to the :ref:`return statement<the return statement>` for this case in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -3519,7 +3437,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
       * it returns ``'RED', 'WALK'`` if the walk button is :green:`pushed`
       * it returns ``'GREEN', 'NO WALK'`` if the walk button is :red:`NOT pushed`
 
-* I change the third :ref:`assertion<what is an assertion?>` for when the light is :red:`RED`, the timer is :red:`NOT done`, and the walk button is :green:`pushed`, in :ref:`test_red_traffic_light_w_walk_button` in ``test_traffic_light.py``
+* I change the third :ref:`assertion<what is an assertion?>` for if the light is :red:`RED`, the timer is :red:`NOT done`, and the walk button is :green:`pushed`, in :ref:`test_red_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
   ================  =============== ================= =================================
   current light     timer           walk button       show
@@ -3567,7 +3485,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
     AssertionError: 'RED' != ('RED', 'WALK')
 
-* I add an :ref:`if statement<if statements>` for this case to the one for when the timer is :red:`NOT done`, in ``traffic_light.py``
+* I add an :ref:`if statement<if statements>` for this case to the one for when the timer is :red:`NOT done`, in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -3708,7 +3626,7 @@ current light     timer           walk button       show
 :yellow:`YELLOW`  :red:`NOT done` :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
 ================  =============== ================= =================================
 
-* I change the expectation of the first :ref:`assertion<what is an assertion?>` for when the light is :yellow:`YELLOW`, the timer is :green:`done` and the walk button is :green:`pushed`, in :ref:`test_yellow_traffic_light_w_walk_button`
+* I change the expectation of the first :ref:`assertion<what is an assertion?>` for if the light is :yellow:`YELLOW`, the timer is :green:`done` and the walk button is :green:`pushed`, in :ref:`test_yellow_traffic_light_w_walk_button`
 
   ================  =============== ================= =================================
   current light     timer           walk button       show
@@ -3736,7 +3654,7 @@ current light     timer           walk button       show
 
     AssertionError: 'RED' != ('RED', 'WALK')
 
-* I add ``'WALK'`` to the :ref:`if statement<if statements>` for this case, in ``traffic_light.py``
+* I add ``'WALK'`` to the :ref:`if statement<if statements>` for this case, in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -3772,7 +3690,7 @@ current light     timer           walk button       show
 
   I have to make the same change to the expectation of the next :ref:`assertion<what is an assertion?>`
 
-* I change the second :ref:`assertion<what is an assertion?>` which is for when the light is :yellow:`YELLOW`, the timer is :green:`done` and the walk button is :red:`NOT pushed`, in :ref:`test_yellow_traffic_light_w_walk_button` in ``test_traffic_light.py``
+* I change the second :ref:`assertion<what is an assertion?>` which is for if the light is :yellow:`YELLOW`, the timer is :green:`done` and the walk button is :red:`NOT pushed`, in :ref:`test_yellow_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
   ================  =============== ================= =================================
   current light     timer           walk button       show
@@ -3820,7 +3738,7 @@ current light     timer           walk button       show
       * it returns ``'RED', 'WALK'`` if the walk button is :green:`pushed`
       * it returns ``'GREEN', 'NO WALK'`` if the walk button is :red:`NOT pushed`
 
-* I change the third :ref:`assertion<what is an assertion?>`, which is for when the light is :yellow:`YELLOW`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
+* I change the third :ref:`assertion<what is an assertion?>`, which is for if the light is :yellow:`YELLOW`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
 
   ================  =============== ================= =================================
   current light     timer           walk button       show
@@ -3868,7 +3786,7 @@ current light     timer           walk button       show
 
     AssertionError: 'YELLOW' != ('YELLOW', 'NO WALK')
 
-* I add an :ref:`if statement<if statements>` to the one for when the timer is :red:`NOT done` in ``traffic_light.py``
+* I add an :ref:`if statement<if statements>` to the one for when the timer is :red:`NOT done` in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -3906,7 +3824,7 @@ current light     timer           walk button       show
 
   I have to make the same change to the next :ref:`assertion<what is an assertion?>` in the test
 
-* I change the last :ref:`assertion<what is an assertion?>`, which is for when the light is :yellow:`YELLOW`, the timer is :red:`NOT done`, and the walk button is :red:`NOT pushed`, in :ref:`test_yellow_traffic_light_w_walk_button` in ``test_traffic_light.py``
+* I change the last :ref:`assertion<what is an assertion?>`, which is for if the light is :yellow:`YELLOW`, the timer is :red:`NOT done`, and the walk button is :red:`NOT pushed`, in :ref:`test_yellow_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
   ================  =============== ================= =================================
   current light     timer           walk button       show
@@ -4085,7 +4003,7 @@ current light     timer           walk button       show
 
   I have to make the same change to the next :ref:`assertion<what is an assertion?>`
 
-* I change the second :ref:`assertion<what is an assertion?>`, which is for when the light is :green:`GREEN`, the timer is :green:`done`, and the walk button is :red:`NOT pushed`, in :ref:`test_green_traffic_light_w_walk_button` in ``test_traffic_light.py``
+* I change the second :ref:`assertion<what is an assertion?>`, which is for if the light is :green:`GREEN`, the timer is :green:`done`, and the walk button is :red:`NOT pushed`, in :ref:`test_green_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
   ================  =============== ================= =================================
   current light     timer           walk button       show
@@ -4134,7 +4052,7 @@ current light     timer           walk button       show
       * it returns ``'RED', 'WALK'`` if the walk button is :green:`pushed`
       * it returns ``'GREEN', 'NO WALK'`` if the walk button is :red:`NOT pushed`
 
-* I change the third :ref:`assertion<what is an assertion?>`, which is for when the light is :green:`GREEN`, the timer is :red:`NOT done`, and the walk button is :green:`pushed`
+* I change the third :ref:`assertion<what is an assertion?>`, which is for if the light is :green:`GREEN`, the timer is :red:`NOT done`, and the walk button is :green:`pushed`
 
   ================  =============== ================= =================================
   current light     timer           walk button       show
@@ -4182,7 +4100,7 @@ current light     timer           walk button       show
 
     AssertionError: 'GREEN' != ('GREEN', 'NO WALK')
 
-* I change the :ref:`return statement<the return statement>` of the :ref:`if statement<if statements>` for when the timer is :red:`NOT done` in the ``show`` :ref:`function<what is a function?>` in ``traffic_light.py``
+* I change the :ref:`return statement<the return statement>` of the :ref:`if statement<if statements>` for when the timer is :red:`NOT done` in the ``show`` :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :lineno-start: 1
@@ -4220,7 +4138,7 @@ current light     timer           walk button       show
 
   the ``show`` :ref:`function<what is a function?>` now returns ``('GREEN', 'NO WALK')`` and the next :ref:`assertion<what is an assertion?>` expects ``'GREEN'``. I have to make the same change in the next :ref:`assertion<what is an assertion?>`
 
-* I change the last :ref:`assertion<what is an assertion?>`, which is for when the light is :green:`GREEN`, the timer is :red:`NOT done`, and the walk button is :red:`NOT pushed`, in :ref:`test_green_traffic_light_w_walk_button` in ``test_traffic_light.py``
+* I change the last :ref:`assertion<what is an assertion?>`, which is for if the light is :green:`GREEN`, the timer is :red:`NOT done`, and the walk button is :red:`NOT pushed`, in :ref:`test_green_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
   ================  =============== ================= =================================
   current light     timer           walk button       show
@@ -4713,7 +4631,7 @@ current light     timer           walk button       show
 :yellow:`REFACTOR`: make it better
 *********************************************************************************
 
-* I add :ref:`variables<what is a variable?>` for ``'WALK'`` and ``'NO WALK'`` to the ``show`` :ref:`function<what is a function?>` in ``traffic_light.py``
+* I add :ref:`variables<what is a variable?>` for ``'WALK'`` and ``'NO WALK'`` to the ``show`` :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -4790,7 +4708,7 @@ current light     timer           walk button       show
 
   still green.
 
-* I write out the :ref:`if statement<if statements>` for when the light is :red:`RED` and the timer is :green:`done`, to make it clearer
+* I write out the :ref:`if statement<if statements>` for if the light is :red:`RED` AND the timer is :green:`done`, to make it clearer
 
   .. code-block:: python
     :lineno-start: 23
@@ -4835,7 +4753,7 @@ current light     timer           walk button       show
 
   still green. This means if none of the :ref:`conditions<if statements>` in the ``show`` :ref:`function<what is a function?>` are met, the light stays :red:`RED` and shows ``'WALK'``
 
-* I no longer need the :ref:`else clause<if statements>` for when the walk button is :green:`pushed` because it returns the default state (``'RED', 'WALK'``) when the list is :red:`RED` and the timer is :green:`done`. I comment it out
+* I no longer need the :ref:`else clause<if statements>` for when the walk button is :green:`pushed` because it returns the default state (``'RED', 'WALK'``) when the list is :red:`RED` AND the timer is :green:`done`. I comment it out
 
   .. code-block:: python
     :lineno-start: 38
@@ -4931,7 +4849,7 @@ current light     timer           walk button       show
 
   still green.
 
-* I no longer need the :ref:`else clause<if statements>` for when the current light is NOT :red:`RED` and the timer is :red:`NOT done` because it returns the default state (``'RED', 'WALK'``) . I comment it out and the other :ref:`if statements` below it to make sure they are not run
+* I no longer need the :ref:`else clause<if statements>` for when the current light is NOT :red:`RED` AND the timer is :red:`NOT done` because it returns the default state (``'RED', 'WALK'``) . I comment it out and the other :ref:`if statements` below it to make sure they are not run
 
   .. code-block:: python
     :lineno-start: 9
@@ -5031,7 +4949,7 @@ What does it return if I call the ``show`` :ref:`function<what is a function?>` 
 close the project
 *********************************************************************************
 
-* I close ``test_traffic_light.py`` and ``traffic_light.py``
+* I close ``test_traffic_light.py`` and ``src/traffic_light/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ shows
 

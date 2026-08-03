@@ -115,7 +115,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 
 ----
 
-* I open ``type_error.py`` from the ``src`` folder_
+* I open ``type_error/__init__.py`` from the ``src`` folder_
 
 * I add a :ref:`class definition<how to make a class>` for ``AClass`` to ``type_error.py``
 

@@ -213,7 +213,7 @@ first input     second input   return
 
 ----
 
-* I open ``truth_table.py`` from the ``src`` folder_
+* I open ``truth_table/__init__.py`` from the ``src`` folder_
 
 * I add ``contradiction`` to ``truth_table.py``
 

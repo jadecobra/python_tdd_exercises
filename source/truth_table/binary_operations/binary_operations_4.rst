@@ -210,7 +210,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``tru
 
 ----
 
-* I open ``truth_table.py`` from the ``src`` folder_
+* I open ``truth_table/__init__.py`` from the ``src`` folder_
 
 * I add a :ref:`function definition<how to make a function that takes input>` for :ref:`negate_second<test_negate_second>` to ``truth_table.py``
 

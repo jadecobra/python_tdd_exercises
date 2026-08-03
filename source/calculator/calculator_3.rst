@@ -126,7 +126,7 @@ the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero
     # TypeError
     # ZeroDivisionError
 
-* I open ``calculator.py`` from the ``src`` folder_
+* I open ``calculator/__init__.py`` from the ``src`` folder_
 
 * I add an :ref:`exception handler<how to use try...except...else>` to the ``divide`` :ref:`function<what is a function?>`
 

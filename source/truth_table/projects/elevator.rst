@@ -295,7 +295,7 @@ test_number_pushed
     # NameError
     # AttributeError
 
-* I open ``elevator.py`` from the ``src`` folder_
+* I open ``elevator/__init__.py`` from the ``src`` folder_
 
 * I delete all the text in the file_ then add a :ref:`function<what is a function?>` named ``controller`` to ``elevator.py``
 

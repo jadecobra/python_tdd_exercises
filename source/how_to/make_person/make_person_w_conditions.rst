@@ -112,7 +112,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-* I open ``person.py`` from the ``src`` folder_
+* I open ``person/__init__.py`` from the ``src`` folder_
 * I add a :ref:`function definition<how to make a function>` to the :ref:`Person class<test Person class>` in ``person.py``
 
   .. code-block:: python

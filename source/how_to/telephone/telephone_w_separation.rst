@@ -238,7 +238,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
   because ``telephone.py`` in the ``src`` folder_ does not have anything named ``text`` inside it.
 
-* I open ``telephone.py`` from the ``src`` folder_
+* I open ``telephone/__init__.py`` from the ``src`` folder_
 * I add a copy of the ``text`` :ref:`function<what is a function?>` to ``telephone.py``
 
   .. code-block:: python
