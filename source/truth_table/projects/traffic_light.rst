@@ -204,7 +204,7 @@ test_red_traffic_light
 The :ref:`truth table` for if the **Traffic Light** is :red:`RED` is
 
 ================  ===============  ================
-current light     timer            show
+current light     timer            output
 ================  ===============  ================
 :red:`RED`        :green:`done`    :green:`GREEN`
 :red:`RED`        :red:`NOT done`  :red:`RED`
@@ -229,7 +229,7 @@ current light     timer            show
 
         def test_red_traffic_light(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light='RED',
                     timer_done=True,
                 ),
@@ -286,7 +286,7 @@ current light     timer            show
     AttributeError: module 'src.traffic_light'
                     has no attribute 'show'
 
-  because ``traffic_light/__init__.py`` in the ``src`` folder_ does not have anything named ``show`` in it
+  because ``traffic_light/__init__.py`` in the ``src`` folder_ does not have anything named ``control`` in it
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -308,14 +308,14 @@ current light     timer            show
     :linenos:
     :emphasize-lines: 1-2
 
-    def show():
+    def control():
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: show() got
+    TypeError: control() got
                an unexpected keyword argument 'current_light'
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_traffic_light.py``
@@ -337,14 +337,14 @@ current light     timer            show
     :linenos:
     :emphasize-lines: 1
 
-    def show(current_light):
+    def control(current_light):
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: show() got an
+    TypeError: control() got an
                unexpected keyword argument 'timer_done'
 
 * I add ``timer_done`` to the :ref:`function signature<what is a function?>`
@@ -353,7 +353,7 @@ current light     timer            show
     :linenos:
     :emphasize-lines: 1
 
-    def show(current_light, timer_done):
+    def control(current_light, timer_done):
         return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -368,14 +368,14 @@ current light     timer            show
     :linenos:
     :emphasize-lines: 2
 
-    def show(current_light, timer_done):
+    def control(current_light, timer_done):
         return 'GREEN'
 
   the test passes.
 
   .. code-block:: python
 
-    show(current_light='RED'   , timer_done=True ) -> 'GREEN'
+    control(current_light='RED'   , timer_done=True ) -> 'GREEN'
 
 ----
 
@@ -388,9 +388,8 @@ current light     timer            show
 * I add an :ref:`assertion<what is an assertion?>` for if the light is :red:`RED` AND the timer is :red:`NOT done`, in ``test_traffic_light.py``
 
   ================  ===============  ================
-  current light     timer            show
+  current light     timer            output
   ================  ===============  ================
-  :red:`RED`        :green:`done`    :green:`GREEN`
   :red:`RED`        :red:`NOT done`  :red:`RED`
   ================  ===============  ================
 
@@ -400,14 +399,14 @@ current light     timer            show
 
         def test_red_traffic_light(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light='RED',
                     timer_done=True,
                 ),
                 'GREEN'
             )
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light='RED',
                     timer_done=False,
                 ),
@@ -429,7 +428,7 @@ current light     timer            show
     :linenos:
     :emphasize-lines: 2-3
 
-    def show(current_light, timer_done):
+    def control(current_light, timer_done):
         if not timer_done:
             return 'RED'
         return 'GREEN'
@@ -438,8 +437,8 @@ current light     timer            show
 
   .. code-block:: python
 
-    show(current_light='RED'   , timer_done=True ) -> 'GREEN'
-    show(current_light='RED'   , timer_done=False) -> 'RED'
+    control(current_light='RED'   , timer_done=True ) -> 'GREEN'
+    control(current_light='RED'   , timer_done=False) -> 'RED'
 
 * I add a git_ commit message in the other terminal_
 
@@ -447,7 +446,7 @@ current light     timer            show
 
     git commit -am 'add test_red_traffic_light'
 
-If the current **Traffic Light** is :red:`RED`, the ``show`` :ref:`function<what is a function?>` returns
+If the current **Traffic Light** is :red:`RED`, the ``control`` :ref:`function<what is a function?>` returns
 
 * :green:`GREEN` if the timer is :green:`done`
 * :red:`RED` if the timer is :red:`NOT done`
@@ -461,7 +460,7 @@ test_yellow_traffic_light
 The :ref:`truth table` for if the **Traffic Light** is :yellow:`YELLOW` is
 
 ================  ===============  ================
-current light     timer            show
+current light     timer            output
 ================  ===============  ================
 :yellow:`YELLOW`  :green:`done`    :red:`RED`
 :yellow:`YELLOW`  :red:`NOT done`  :yellow:`YELLOW`
@@ -478,7 +477,7 @@ current light     timer            show
 I add a test with an :ref:`assertion<what is an assertion?>` for if the **Traffic Light** is :yellow:`YELLOW` AND the timer is :green:`done`, to ``test_traffic_light.py``
 
 ================  ===============  ================
-current light     timer            show
+current light     timer            output
 ================  ===============  ================
 :yellow:`YELLOW`  :green:`done`    :red:`RED`
 ================  ===============  ================
@@ -488,7 +487,7 @@ current light     timer            show
   :emphasize-lines: 9-16
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light='RED',
                     timer_done=False,
                 ),
@@ -497,7 +496,7 @@ current light     timer            show
 
         def test_yellow_traffic_light(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light='YELLOW',
                     timer_done=True,
                 ),
@@ -527,7 +526,7 @@ I add an :ref:`if statement<if statements>` to ``src/traffic_light/__init__.py``
   :linenos:
   :emphasize-lines: 3-4
 
-    def show(current_light, timer_done):
+    def control(current_light, timer_done):
         if not timer_done:
             return 'RED'
         if current_light == 'YELLOW':
@@ -538,9 +537,9 @@ the test passes.
 
 .. code-block:: python
 
-  show(current_light='RED'   , timer_done=True ) -> 'GREEN'
-  show(current_light='RED'   , timer_done=False) -> 'RED'
-  show(current_light='YELLOW', timer_done=True ) -> 'RED'
+  control(current_light='RED'   , timer_done=True ) -> 'GREEN'
+  control(current_light='RED'   , timer_done=False) -> 'RED'
+  control(current_light='YELLOW', timer_done=True ) -> 'RED'
 
 ----
 
@@ -553,9 +552,8 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for if the light is :yellow:`YELLOW` AND the timer is :red:`NOT done`, to :ref:`test_yellow_traffic_light` in ``test_traffic_light.py``
 
   ================  ===============  ================
-  current light     timer            show
+  current light     timer            output
   ================  ===============  ================
-  :yellow:`YELLOW`  :green:`done`    :red:`RED`
   :yellow:`YELLOW`  :red:`NOT done`  :yellow:`YELLOW`
   ================  ===============  ================
 
@@ -565,14 +563,14 @@ the test passes.
 
         def test_yellow_traffic_light(self):
             my_expectation = 'RED'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='YELLOW',
                 timer_done=True,
             )
             self.assertEqual(reality, my_expectation)
 
             my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='YELLOW',
                 timer_done=False,
             )
@@ -587,7 +585,7 @@ the test passes.
 
     AssertionError: 'RED' != 'YELLOW'
 
-  because the ``show`` :ref:`function<what is a function?>` returned ``'RED'`` and the :ref:`assertion<what is an assertion?>` expects ``'YELLOW'``
+  because the ``control`` :ref:`function<what is a function?>` returned ``'RED'`` and the :ref:`assertion<what is an assertion?>` expects ``'YELLOW'``
 
 * I add an :ref:`if statement<if statements>` to the one for when the timer is :red:`NOT done`, in ``src/traffic_light/__init__.py``
 
@@ -595,7 +593,7 @@ the test passes.
     :linenos:
     :emphasize-lines: 3-4
 
-    def show(current_light, timer_done):
+    def control(current_light, timer_done):
         if not timer_done:
             if current_light == 'YELLOW':
                 return 'YELLOW'
@@ -608,7 +606,7 @@ the test passes.
 
   the test passes.
 
-This is what happens when the ``show`` :ref:`function<what is a function?>` is called
+This is what happens when the ``control`` :ref:`function<what is a function?>` is called
 
 * if the timer is :red:`NOT done`
 
@@ -629,7 +627,7 @@ test_green_traffic_light
 The :ref:`truth table` for if the **Traffic Light** is :green:`GREEN` is
 
 ================  ===============  ================
-current light     timer            show
+current light     timer            output
 ================  ===============  ================
 :green:`GREEN`    :green:`done`    :yellow:`YELLOW`
 :green:`GREEN`    :red:`NOT done`  :green:`GREEN`
@@ -646,7 +644,7 @@ current light     timer            show
 I add a test with an :ref:`assertion<what is an assertion?>` for if the **Traffic Light** is :green:`GREEN` AND the timer is :green:`done`, to ``test_traffic_light.py``
 
 ================  ===============  ================
-current light     timer            show
+current light     timer            output
 ================  ===============  ================
 :green:`GREEN`    :green:`done`    :yellow:`YELLOW`
 ================  ===============  ================
@@ -657,14 +655,14 @@ current light     timer            show
 
       def test_yellow_traffic_light(self):
           my_expectation = 'RED'
-          reality = src.traffic_light.show(
+          reality = src.traffic_light.control(
               current_light='YELLOW',
               timer_done=True,
           )
           self.assertEqual(reality, my_expectation)
 
           my_expectation = 'YELLOW'
-          reality = src.traffic_light.show(
+          reality = src.traffic_light.control(
               current_light='YELLOW',
               timer_done=False,
           )
@@ -672,7 +670,7 @@ current light     timer            show
 
       def test_green_traffic_light(self):
           my_expectation = 'YELLOW'
-          reality = src.traffic_light.show(
+          reality = src.traffic_light.control(
               current_light='GREEN',
               timer_done=True,
           )
@@ -687,7 +685,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'GREEN' != 'YELLOW'
 
-because the ``show`` :ref:`function<what is a function?>` returned ``'GREEN'`` and the :ref:`assertion<what is an assertion?>` expects ``'YELLOW'``
+because the ``control`` :ref:`function<what is a function?>` returned ``'GREEN'`` and the :ref:`assertion<what is an assertion?>` expects ``'YELLOW'``
 
 ----
 
@@ -703,7 +701,7 @@ I add an :ref:`if statement<if statements>` to ``src/traffic_light/__init__.py``
   :linenos:
   :emphasize-lines: 10-11
 
-  def show(current_light, timer_done):
+  def control(current_light, timer_done):
       if not timer_done:
           if current_light == 'YELLOW':
               return 'YELLOW'
@@ -717,7 +715,7 @@ I add an :ref:`if statement<if statements>` to ``src/traffic_light/__init__.py``
 
       return 'GREEN'
 
-the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
+the test passes. This is what happens when the ``control`` :ref:`function<what is a function?>` is called
 
 * if the timer is :red:`NOT done`
 
@@ -741,7 +739,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 * I add an :ref:`assertion<what is an assertion?>` for if the light is :green:`GREEN` AND the timer is :red:`NOT done`, to ``test_traffic_light.py``
 
   ================  ===============  ================
-  current light     timer            show
+  current light     timer            output
   ================  ===============  ================
   :green:`GREEN`    :green:`done`    :yellow:`YELLOW`
   :green:`GREEN`    :red:`NOT done`  :green:`GREEN`
@@ -753,14 +751,14 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
         def test_green_traffic_light(self):
             my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='GREEN',
                 timer_done=True,
             )
             self.assertEqual(reality, my_expectation)
 
             my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='GREEN',
                 timer_done=False,
             )
@@ -775,7 +773,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
     AssertionError: 'RED' != 'GREEN'
 
-  because the ``show`` :ref:`function<what is a function?>` returned ``'RED'`` and the :ref:`assertion<what is an assertion?>` expects ``'GREEN'``
+  because the ``control`` :ref:`function<what is a function?>` returned ``'RED'`` and the :ref:`assertion<what is an assertion?>` expects ``'GREEN'``
 
 * I add an :ref:`if statement<if statements>` to the one for when the timer is :red:`NOT done` in ``src/traffic_light/__init__.py``
 
@@ -783,7 +781,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
     :linenos:
     :emphasize-lines: 5-6
 
-    def show(current_light, timer_done):
+    def control(current_light, timer_done):
         if not timer_done:
             if current_light == 'YELLOW':
                 return 'YELLOW'
@@ -799,7 +797,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
         return 'GREEN'
 
-  the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
+  the test passes. This is what happens when the ``control`` :ref:`function<what is a function?>` is called
 
 * if the timer is :red:`NOT done`
 
@@ -819,7 +817,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
     :linenos:
     :emphasize-lines: 7-8
 
-    def show(current_light, timer_done):
+    def control(current_light, timer_done):
         if not timer_done:
             if current_light == 'YELLOW':
                 return 'YELLOW'
@@ -836,7 +834,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
         return 'GREEN'
 
-  the test is still green. The ``show`` :ref:`function<what is a function?>` returns the current light when the timer is :red:`NOT done`
+  the test is still green. The ``control`` :ref:`function<what is a function?>` returns the current light when the timer is :red:`NOT done`
 
 * I add a :ref:`return statement<the return statement>` to return the current light when the timer is :red:`NOT done`
 
@@ -844,7 +842,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
     :linenos:
     :emphasize-lines: 3
 
-    def show(current_light, timer_done):
+    def control(current_light, timer_done):
         if not timer_done:
             return current_light
             if current_light == 'YELLOW':
@@ -869,7 +867,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
   .. code-block:: python
     :linenos:
 
-    def show(current_light, timer_done):
+    def control(current_light, timer_done):
         if not timer_done:
             return current_light
 
@@ -887,7 +885,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
     :linenos:
     :emphasize-lines: 2
 
-    def show(current_light, timer_done):
+    def control(current_light, timer_done):
         yellow, green = 'YELLOW', 'GREEN'
 
         if not timer_done:
@@ -907,7 +905,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
     :linenos:
     :emphasize-lines: 7-8, 11-14, 16-17
 
-    def show(current_light, timer_done):
+    def control(current_light, timer_done):
         yellow, green = 'YELLOW', 'GREEN'
 
         if not timer_done:
@@ -932,7 +930,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
   .. code-block:: python
     :linenos:
 
-    def show(current_light, timer_done):
+    def control(current_light, timer_done):
         yellow, green = 'YELLOW', 'GREEN'
 
         if not timer_done:
@@ -946,7 +944,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
         return green
 
-This is what happens when the ``show`` :ref:`function<what is a function?>` is called
+This is what happens when the ``control`` :ref:`function<what is a function?>` is called
 
 * if the timer is :red:`NOT done` it returns the current light
 * if the timer is :green:`done`
@@ -966,7 +964,7 @@ test_red_traffic_light_w_walk_button
 So far, the :ref:`truth table` for the **Traffic Light** is
 
 ================  ===============  ================
-current light     timer            show
+current light     timer            output
 ================  ===============  ================
 :red:`RED`        :green:`done`    :green:`GREEN`
 :red:`RED`        :red:`NOT done`  :red:`RED`
@@ -985,7 +983,7 @@ I want to add a walk button for a person to push when they want to cross the str
 and the :ref:`truth table` for if the **Traffic Light** is :red:`RED` is
 
 ================  ===============  =================  =================
-current light     timer            walk button        show
+current light     timer            walk button        output
 ================  ===============  =================  =================
 :red:`RED`        :green:`done`    :green:`pushed`    :red:`RED`
 :red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN`
@@ -1004,7 +1002,7 @@ current light     timer            walk button        show
 I add an :ref:`assertion<what is an assertion?>` for when the current light is :red:`RED`, the timer is :green:`done` and the walk button is :green:`pushed`, to :ref:`test_red_traffic_light` in ``test_traffic_light.py``
 
 ================  ===============  =================  =================
-current light     timer            walk button        show
+current light     timer            walk button        output
 ================  ===============  =================  =================
 :red:`RED`        :green:`done`    :green:`pushed`    :red:`RED`
 ================  ===============  =================  =================
@@ -1015,7 +1013,7 @@ current light     timer            walk button        show
 
       def test_red_traffic_light(self):
           my_expectation = 'RED'
-          reality = src.traffic_light.show(
+          reality = src.traffic_light.control(
               current_light='RED',
               timer_done=True,
               walk_button=True,
@@ -1023,14 +1021,14 @@ current light     timer            walk button        show
           self.assertEqual(reality, my_expectation)
 
           my_expectation = 'GREEN'
-          reality = src.traffic_light.show(
+          reality = src.traffic_light.control(
               current_light='RED',
               timer_done=True,
           )
           self.assertEqual(reality, my_expectation)
 
           my_expectation = 'RED'
-          reality = src.traffic_light.show(
+          reality = src.traffic_light.control(
               current_light='RED',
               timer_done=False,
           )
@@ -1042,7 +1040,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
 
-  TypeError: show() got
+  TypeError: control() got
              an unexpected keyword argument 'walk_button'
 
 ----
@@ -1053,13 +1051,13 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-* I add a :ref:`keyword argument<test_keyword_arguments>` to the ``show`` :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
+* I add a :ref:`keyword argument<test_keyword_arguments>` to the ``control`` :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1
 
-    def show(current_light, timer_done, walk_button):
+    def control(current_light, timer_done, walk_button):
         yellow, green = 'YELLOW', 'GREEN'
 
         if not timer_done:
@@ -1077,19 +1075,19 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    FAILED ...test_green_traffic_light - TypeError: show() missing 1 required positional arg...
-    FAILED ...test_red_traffic_light - TypeError: show() missing 1 required positional arg...
-    FAILED ...test_yellow_traffic_light - TypeError: show() missing 1 required positional arg...
+    FAILED ...test_green_traffic_light - TypeError: control() missing 1 required positional arg...
+    FAILED ...test_red_traffic_light - TypeError: control() missing 1 required positional arg...
+    FAILED ...test_yellow_traffic_light - TypeError: control() missing 1 required positional arg...
 
-  because all the other tests call the ``show`` :ref:`function<what is a function?>` with two arguments and I changed the :ref:`function signature<what is a function?>` to make it expect three. I need to make the third argument a choice.
+  because all the other tests call the ``control`` :ref:`function<what is a function?>` with two arguments and I changed the :ref:`function signature<what is a function?>` to make it expect three. I need to make the third argument a choice.
 
-* I could add the ``walk_button`` parameter to every call to the ``show`` :ref:`function<what is a function?>` in every test or add a :ref:`default value<test_optional_arguments>` for the new :ref:`keyword argument<test_keyword_arguments>` to make it a choice, NOT a requirement. I make it a choice
+* I could add the ``walk_button`` parameter to every call to the ``control`` :ref:`function<what is a function?>` in every test or add a :ref:`default value<test_optional_arguments>` for the new :ref:`keyword argument<test_keyword_arguments>` to make it a choice, NOT a requirement. I make it a choice
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1-4
 
-    def show(
+    def control(
             current_light, timer_done,
             walk_button=False,
         ):
@@ -1108,7 +1106,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :linenos:
     :emphasize-lines: 16-17
 
-    def show(
+    def control(
             current_light, timer_done,
             walk_button=False
         ):
@@ -1187,7 +1185,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :linenos:
     :emphasize-lines: 5
 
-    def show(
+    def control(
             current_light, timer_done,
             walk_button=False
         ):
@@ -1201,7 +1199,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :linenos:
     :emphasize-lines: 11-12, 21-22
 
-    def show(
+    def control(
             current_light, timer_done,
             walk_button=False
         ):
@@ -1233,7 +1231,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
   .. code-block:: python
     :linenos:
 
-    def show(
+    def control(
             current_light, timer_done,
             walk_button=False
         ):
@@ -1253,7 +1251,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
         return green
 
-  This is what happens when the ``show`` :ref:`function<what is a function?>` is called
+  This is what happens when the ``control`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done` it returns the current light
   * if the timer is :green:`done`
@@ -1268,7 +1266,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * I do not need to do anything to the :ref:`assertion<what is an assertion?>` for if the light is :red:`RED`, the timer is :green:`done` and the walk button is :red:`NOT pushed`
 
   ================  ===============  =================  =================
-  current light     timer            walk button        show
+  current light     timer            walk button        output
   ================  ===============  =================  =================
   :red:`RED`        :green:`done`    :green:`pushed`    :red:`RED`
   :red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN`
@@ -1278,7 +1276,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    src.traffic_light.show(
+    src.traffic_light.control(
         current_light='RED',
         timer_done=True,
     )
@@ -1287,7 +1285,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    src.traffic_light.show(
+    src.traffic_light.control(
         current_light='RED',
         timer_done=True,
         walk_button=False,
@@ -1298,7 +1296,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>` for if the light is :red:`RED`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
 
   ================  ===============  =================  =================
-  current light     timer            walk button        show
+  current light     timer            walk button        output
   ================  ===============  =================  =================
   :red:`RED`        :green:`done`    :green:`pushed`    :red:`RED`
   :red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN`
@@ -1311,7 +1309,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
         def test_red_traffic_light(self):
             my_expectation = 'RED'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='RED',
                 timer_done=True,
                 walk_button=True,
@@ -1319,14 +1317,14 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             self.assertEqual(reality, my_expectation)
 
             my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='RED',
                 timer_done=True,
             )
             self.assertEqual(reality, my_expectation)
 
             my_expectation = 'RED'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='RED',
                 timer_done=False,
                 walk_button=True,
@@ -1351,7 +1349,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     AssertionError: 'RED' != 'BOOM'
 
-  because the ``show`` :ref:`function<what is a function?>` returned ``'RED'`` and the :ref:`assertion<what is an assertion?>` expects ``'BOOM'``
+  because the ``control`` :ref:`function<what is a function?>` returned ``'RED'`` and the :ref:`assertion<what is an assertion?>` expects ``'BOOM'``
 
 * I change the expectation back
 
@@ -1360,7 +1358,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :emphasize-lines: 1
 
             my_expectation = 'RED'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='RED',
                 timer_done=False,
                 walk_button=True,
@@ -1374,7 +1372,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 * I add an :ref:`assertion<what is an assertion?>` for if the light is :red:`RED`, the timer is :red:`NOT done` and the walk button is :red:`NOT pushed`
 
   ================  ===============  =================  =================
-  current light     timer            walk button        show
+  current light     timer            walk button        output
   ================  ===============  =================  =================
   :red:`RED`        :green:`done`    :green:`pushed`    :red:`RED`
   :red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN`
@@ -1388,7 +1386,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
         def test_red_traffic_light(self):
             my_expectation = 'RED'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='RED',
                 timer_done=True,
                 walk_button=True,
@@ -1396,21 +1394,21 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             self.assertEqual(reality, my_expectation)
 
             my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='RED',
                 timer_done=True,
             )
             self.assertEqual(reality, my_expectation)
 
             my_expectation = 'RED'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='RED',
                 timer_done=False,
                 walk_button=True,
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='RED',
                 timer_done=False,
             )
@@ -1425,7 +1423,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     .. code-block:: python
 
-      src.traffic_light.show(
+      src.traffic_light.control(
           current_light='RED',
           timer_done=False,
       )
@@ -1434,7 +1432,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     .. code-block:: python
 
-      src.traffic_light.show(
+      src.traffic_light.control(
           current_light='RED',
           timer_done=False,
           walk_button=False,
@@ -1463,7 +1461,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             red = 'RED'
 
             # my_expectation = 'RED'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='RED',
                 current_light=red,
                 timer_done=True,
@@ -1473,7 +1471,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             self.assertEqual(reality, red)
 
             my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='RED',
                 current_light=red,
                 timer_done=True,
@@ -1481,7 +1479,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             self.assertEqual(reality, my_expectation)
 
             # my_expectation = 'RED'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='RED',
                 current_light=red,
                 timer_done=False,
@@ -1490,7 +1488,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, red)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='RED',
                 current_light=red,
                 timer_done=False,
@@ -1510,7 +1508,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
         def test_red_traffic_light(self):
             red = 'RED'
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=red,
                 timer_done=True,
                 walk_button=True,
@@ -1518,20 +1516,20 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             self.assertEqual(reality, red)
 
             my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=red,
                 timer_done=True,
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=red,
                 timer_done=False,
                 walk_button=True,
             )
             self.assertEqual(reality, red)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=red,
                 timer_done=False,
             )
@@ -1539,13 +1537,13 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
         def test_yellow_traffic_light(self):
 
-* I add a :ref:`default value<test_optional_arguments>` for the ``current_light`` :ref:`keyword argument<test_keyword_arguments>` to the ``show`` :ref:`function<what is a function?>` ``src/traffic_light/__init__.py`` as a fail safe so that the light is always :red:`RED` if no value is given
+* I add a :ref:`default value<test_optional_arguments>` for the ``current_light`` :ref:`keyword argument<test_keyword_arguments>` to the ``control`` :ref:`function<what is a function?>` ``src/traffic_light/__init__.py`` as a fail safe so that the light is always :red:`RED` if no value is given
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 2
 
-    def show(
+    def control(
             current_light='RED', timer_done,
             walk_button=False,
         ):
@@ -1572,13 +1570,13 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     # TypeError
     # SyntaxError
 
-* I add a :ref:`default value<test_optional_arguments>` for ``timer_done`` to the ``show`` :ref:`function<what is a function?>` ``src/traffic_light/__init__.py``
+* I add a :ref:`default value<test_optional_arguments>` for ``timer_done`` to the ``control`` :ref:`function<what is a function?>` ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 2
 
-    def show(
+    def control(
         current_light='RED', timer_done=False,
         walk_button=False,
     ):
@@ -1587,13 +1585,13 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    src.traffic_light.show()
+    src.traffic_light.control()
 
   is the same as
 
   .. code-block:: python
 
-    src.traffic_light.show(
+    src.traffic_light.control(
         current_light='RED',
         timer_done=False,
         walk_button=False,
@@ -1626,7 +1624,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
         def test_red_traffic_light_w_walk_button(self):
             red = 'RED'
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light=red,
                 timer_done=True,
                 walk_button=True,
@@ -1634,20 +1632,20 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             self.assertEqual(reality, red)
 
             my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light=red,
                 timer_done=True,
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light=red,
                 timer_done=False,
                 walk_button=True,
             )
             self.assertEqual(reality, red)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light=red,
                 timer_done=False,
             )
@@ -1666,7 +1664,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
         def test_red_traffic_light_w_walk_button(self):
             red = 'RED'
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light=red,
                 timer_done=True,
                 walk_button=True,
@@ -1674,20 +1672,20 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             self.assertEqual(reality, red)
 
             my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light=red,
                 timer_done=True,
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light=red,
                 # timer_done=False,
                 walk_button=True,
             )
             self.assertEqual(reality, red)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light=red,
                 # timer_done=False,
             )
@@ -1705,24 +1703,24 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
         def test_red_traffic_light_w_walk_button(self):
             red = 'RED'
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 timer_done=True,
                 walk_button=True,
             )
             self.assertEqual(reality, red)
 
             my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 timer_done=True,
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 walk_button=True,
             )
             self.assertEqual(reality, red)
 
-            reality = src.traffic_light.show()
+            reality = src.traffic_light.control()
             self.assertEqual(reality, red)
 
         def test_yellow_traffic_light(self):
@@ -1731,12 +1729,12 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. admonition:: REMINDER
 
-  This is what happens when the ``show`` :ref:`function<what is a function?>` is called
+  This is what happens when the ``control`` :ref:`function<what is a function?>` is called
 
   .. code-block:: python
     :linenos:
 
-    def show(
+    def control(
             current_light='RED', timer_done=False,
             walk_button=False,
         ):
@@ -1775,7 +1773,7 @@ test_yellow_traffic_light_w_walk_button
 The :ref:`truth table` for if the **Traffic Light** is :yellow:`YELLOW` with the walk button is
 
 ================  ===============  =================  =================
-current light     timer            walk button        show
+current light     timer            walk button        output
 ================  ===============  =================  =================
 :yellow:`YELLOW`  :green:`done`    :green:`pushed`    :red:`RED`
 :yellow:`YELLOW`  :green:`done`    :red:`NOT pushed`  :red:`RED`
@@ -1786,7 +1784,7 @@ current light     timer            walk button        show
 * I add ``walk_button`` to the call to ``src.traffic_light.show`` for if the light is :yellow:`YELLOW`, the timer is :green:`done` and the walk button is :green:`pushed`, in the first :ref:`assertion<what is an assertion?>` of :ref:`test_yellow_traffic_light` in ``test_traffic_light.py``
 
   ================  ===============  =================  =================
-  current light     timer            walk button        show
+  current light     timer            walk button        output
   ================  ===============  =================  =================
   :yellow:`YELLOW`  :green:`done`    :green:`pushed`    :red:`RED`
   ================  ===============  =================  =================
@@ -1797,7 +1795,7 @@ current light     timer            walk button        show
 
         def test_yellow_traffic_light(self):
             my_expectation = 'RED'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='YELLOW',
                 timer_done=True,
                 walk_button=True,
@@ -1805,7 +1803,7 @@ current light     timer            walk button        show
             self.assertEqual(reality, my_expectation)
 
             my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='YELLOW',
                 timer_done=False,
             )
@@ -1818,7 +1816,7 @@ current light     timer            walk button        show
 * I add an :ref:`assertion<what is an assertion?>` for if the light is :yellow:`YELLOW`, the timer is :green:`done` and the walk button is :red:`NOT pushed`
 
   ================  ===============  =================  =================
-  current light     timer            walk button        show
+  current light     timer            walk button        output
   ================  ===============  =================  =================
   :yellow:`YELLOW`  :green:`done`    :green:`pushed`    :red:`RED`
   :yellow:`YELLOW`  :green:`done`    :red:`NOT pushed`  :red:`RED`
@@ -1830,21 +1828,21 @@ current light     timer            walk button        show
 
         def test_yellow_traffic_light(self):
             my_expectation = 'RED'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='YELLOW',
                 timer_done=True,
                 walk_button=True,
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='YELLOW',
                 timer_done=True,
             )
             self.assertEqual(reality, my_expectation)
 
             my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='YELLOW',
                 timer_done=False,
             )
@@ -1859,7 +1857,7 @@ current light     timer            walk button        show
 
     .. code-block:: python
 
-      src.traffic_light.show(
+      src.traffic_light.control(
           current_light='YELLOW',
           timer_done=True,
       )
@@ -1868,7 +1866,7 @@ current light     timer            walk button        show
 
     .. code-block:: python
 
-      src.traffic_light.show(
+      src.traffic_light.control(
           current_light='YELLOW',
           timer_done=True,
           walk_button=False,
@@ -1879,7 +1877,7 @@ current light     timer            walk button        show
 * I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>`, for if the light is :yellow:`YELLOW`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
 
   ================  ===============  =================  =================
-  current light     timer            walk button        show
+  current light     timer            walk button        output
   ================  ===============  =================  =================
   :yellow:`YELLOW`  :green:`done`    :green:`pushed`    :red:`RED`
   :yellow:`YELLOW`  :green:`done`    :red:`NOT pushed`  :red:`RED`
@@ -1892,21 +1890,21 @@ current light     timer            walk button        show
 
         def test_yellow_traffic_light(self):
             my_expectation = 'RED'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='YELLOW',
                 timer_done=True,
                 walk_button=True,
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='YELLOW',
                 timer_done=True,
             )
             self.assertEqual(reality, my_expectation)
 
             my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='YELLOW',
                 timer_done=False,
                 walk_button=True,
@@ -1920,7 +1918,7 @@ current light     timer            walk button        show
 * I add an :ref:`assertion<what is an assertion?>` for if the light is :yellow:`YELLOW`, the timer is :red:`NOT done` and the walk button is :red:`NOT pushed`
 
   ================  ===============  =================  =================
-  current light     timer            walk button        show
+  current light     timer            walk button        output
   ================  ===============  =================  =================
   :yellow:`YELLOW`  :green:`done`    :green:`pushed`    :red:`RED`
   :yellow:`YELLOW`  :green:`done`    :red:`NOT pushed`  :red:`RED`
@@ -1934,28 +1932,28 @@ current light     timer            walk button        show
 
         def test_yellow_traffic_light(self):
             my_expectation = 'RED'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='YELLOW',
                 timer_done=True,
                 walk_button=True,
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='YELLOW',
                 timer_done=True,
             )
             self.assertEqual(reality, my_expectation)
 
             my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='YELLOW',
                 timer_done=False,
                 walk_button=True,
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='YELLOW',
             )
             self.assertEqual(reality, my_expectation)
@@ -1969,7 +1967,7 @@ current light     timer            walk button        show
 
     .. code-block:: python
 
-      src.traffic_light.show(
+      src.traffic_light.control(
           current_light='YELLOW',
       )
 
@@ -1977,7 +1975,7 @@ current light     timer            walk button        show
 
     .. code-block:: python
 
-      src.traffic_light.show(
+      src.traffic_light.control(
           current_light='YELLOW',
           timer_done=False,
           walk_button=False,
@@ -1993,12 +1991,12 @@ current light     timer            walk button        show
     :lineno-start: 27
     :emphasize-lines: 4
 
-            reality = src.traffic_light.show()
+            reality = src.traffic_light.control()
             self.assertEqual(reality, red)
 
         def test_yellow_traffic_light_w_walk_button(self):
             my_expectation = 'RED'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='YELLOW',
                 timer_done=True,
                 walk_button=True,
@@ -2026,7 +2024,7 @@ current light     timer            walk button        show
             yellow = 'YELLOW'
 
             my_expectation = 'RED'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='YELLOW',
                 current_light=yellow,
                 timer_done=True,
@@ -2034,7 +2032,7 @@ current light     timer            walk button        show
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='YELLOW',
                 current_light=yellow,
                 timer_done=True,
@@ -2042,7 +2040,7 @@ current light     timer            walk button        show
             self.assertEqual(reality, my_expectation)
 
             # my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='YELLOW',
                 current_light=yellow,
                 timer_done=False,
@@ -2051,7 +2049,7 @@ current light     timer            walk button        show
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, yellow)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='YELLOW',
                 current_light=yellow,
             )
@@ -2083,7 +2081,7 @@ current light     timer            walk button        show
             red, yellow = 'RED', 'YELLOW'
 
             # my_expectation = 'RED'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='YELLOW',
                 current_light=yellow,
                 timer_done=True,
@@ -2092,7 +2090,7 @@ current light     timer            walk button        show
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, red)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='YELLOW',
                 current_light=yellow,
                 timer_done=True,
@@ -2126,7 +2124,7 @@ current light     timer            walk button        show
         def test_red_traffic_light_w_walk_button(self):
             # red = 'RED'
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 timer_done=True,
                 walk_button=True,
             )
@@ -2134,18 +2132,18 @@ current light     timer            walk button        show
             self.assertEqual(reality, RED)
 
             my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 timer_done=True,
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 walk_button=True,
             )
             # self.assertEqual(reality, red)
             self.assertEqual(reality, RED)
 
-            reality = src.traffic_light.show()
+            reality = src.traffic_light.control()
             # self.assertEqual(reality, red)
             self.assertEqual(reality, RED)
 
@@ -2159,24 +2157,24 @@ current light     timer            walk button        show
     :lineno-start: 10
 
         def test_red_traffic_light_w_walk_button(self):
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 timer_done=True,
                 walk_button=True,
             )
             self.assertEqual(reality, RED)
 
             my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 timer_done=True,
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 walk_button=True,
             )
             self.assertEqual(reality, RED)
 
-            reality = src.traffic_light.show()
+            reality = src.traffic_light.control()
             self.assertEqual(reality, RED)
 
         def test_yellow_traffic_light_w_walk_button(self):
@@ -2192,7 +2190,7 @@ current light     timer            walk button        show
             yellow = 'YELLOW'
 
             # my_expectation = 'RED'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='YELLOW',
                 current_light=yellow,
                 timer_done=True,
@@ -2202,7 +2200,7 @@ current light     timer            walk button        show
             # self.assertEqual(reality, red)
             self.assertEqual(reality, RED)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='YELLOW',
                 current_light=yellow,
                 timer_done=True,
@@ -2221,27 +2219,27 @@ current light     timer            walk button        show
         def test_yellow_traffic_light_w_walk_button(self):
             yellow = 'YELLOW'
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=yellow,
                 timer_done=True,
                 walk_button=True,
             )
             self.assertEqual(reality, RED)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=yellow,
                 timer_done=True,
             )
             self.assertEqual(reality, RED)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=yellow,
                 timer_done=False,
                 walk_button=True,
             )
             self.assertEqual(reality, yellow)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=yellow,
             )
             self.assertEqual(reality, yellow)
@@ -2257,7 +2255,7 @@ test_green_traffic_light_w_walk_button
 The :ref:`truth table` for if the **Traffic Light** is :green:`GREEN` with the walk button is
 
 ================  ===============  =================  =================
-current light     timer            walk button        show
+current light     timer            walk button        output
 ================  ===============  =================  =================
 :green:`GREEN`    :green:`done`    :green:`pushed`    :yellow:`YELLOW`
 :green:`GREEN`    :green:`done`    :red:`NOT pushed`  :yellow:`YELLOW`
@@ -2268,7 +2266,7 @@ current light     timer            walk button        show
 * I add ``walk_button`` to the call to ``src.traffic_light.show`` for if the light is :green:`GREEN`, the timer is :green:`done` and the walk button is :green:`pushed`, in the first :ref:`assertion<what is an assertion?>` of :ref:`test_green_traffic_light` in ``test_traffic_light.py``
 
   ================  ===============  =================  =================
-  current light     timer            walk button        show
+  current light     timer            walk button        output
   ================  ===============  =================  =================
   :green:`GREEN`    :green:`done`    :green:`pushed`    :yellow:`YELLOW`
   ================  ===============  =================  =================
@@ -2279,7 +2277,7 @@ current light     timer            walk button        show
 
         def test_green_traffic_light(self):
             my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='GREEN',
                 timer_done=True,
                 walk_button=True,
@@ -2291,7 +2289,7 @@ current light     timer            walk button        show
 * I add an :ref:`assertion<what is an assertion?>` for if the light is :green:`GREEN`, the timer is :green:`done` and the walk button is :red:`NOT pushed`
 
   ================  ===============  =================  =================
-  current light     timer            walk button        show
+  current light     timer            walk button        output
   ================  ===============  =================  =================
   :green:`GREEN`    :green:`done`    :green:`pushed`    :yellow:`YELLOW`
   :green:`GREEN`    :green:`done`    :red:`NOT pushed`  :yellow:`YELLOW`
@@ -2303,21 +2301,21 @@ current light     timer            walk button        show
 
         def test_green_traffic_light(self):
             my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='GREEN',
                 timer_done=True,
                 walk_button=True,
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='GREEN',
                 timer_done=True,
             )
             self.assertEqual(reality, my_expectation)
 
             my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='GREEN',
                 timer_done=False,
             )
@@ -2330,7 +2328,7 @@ current light     timer            walk button        show
 
     .. code-block:: python
 
-      src.traffic_light.show(
+      src.traffic_light.control(
           current_light='GREEN',
           timer_done=True,
       )
@@ -2339,7 +2337,7 @@ current light     timer            walk button        show
 
     .. code-block:: python
 
-      src.traffic_light.show(
+      src.traffic_light.control(
           current_light='GREEN',
           timer_done=True,
           walk_button=False,
@@ -2350,7 +2348,7 @@ current light     timer            walk button        show
 * I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>` for if the light is :green:`GREEN`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
 
   ================  ===============  =================  =================
-  current light     timer            walk button        show
+  current light     timer            walk button        output
   ================  ===============  =================  =================
   :green:`GREEN`    :green:`done`    :green:`pushed`    :yellow:`YELLOW`
   :green:`GREEN`    :green:`done`    :red:`NOT pushed`  :yellow:`YELLOW`
@@ -2363,21 +2361,21 @@ current light     timer            walk button        show
 
         def test_green_traffic_light(self):
             my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='GREEN',
                 timer_done=True,
                 walk_button=True,
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='GREEN',
                 timer_done=True,
             )
             self.assertEqual(reality, my_expectation)
 
             my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='GREEN',
                 timer_done=False,
                 walk_button=True,
@@ -2392,7 +2390,7 @@ current light     timer            walk button        show
 * I add an :ref:`assertion<what is an assertion?>` for if the light is :green:`GREEN`, the timer is :red:`NOT done` and the walk button is :red:`NOT pushed`
 
   ================  ===============  =================  =================
-  current light     timer            walk button        show
+  current light     timer            walk button        output
   ================  ===============  =================  =================
   :green:`GREEN`    :green:`done`    :green:`pushed`    :yellow:`YELLOW`
   :green:`GREEN`    :green:`done`    :red:`NOT pushed`  :yellow:`YELLOW`
@@ -2406,28 +2404,28 @@ current light     timer            walk button        show
 
         def test_green_traffic_light(self):
             my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='GREEN',
                 timer_done=True,
                 walk_button=True,
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='GREEN',
                 timer_done=True,
             )
             self.assertEqual(reality, my_expectation)
 
             my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='GREEN',
                 timer_done=False,
                 walk_button=True,
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='GREEN',
             )
             self.assertEqual(reality, my_expectation)
@@ -2442,7 +2440,7 @@ current light     timer            walk button        show
 
     .. code-block:: python
 
-      src.traffic_light.show(
+      src.traffic_light.control(
           current_light='GREEN',
       )
 
@@ -2450,7 +2448,7 @@ current light     timer            walk button        show
 
     .. code-block:: python
 
-      src.traffic_light.show(
+      src.traffic_light.control(
           current_light='GREEN',
           timer_done=False,
           walk_button=False,
@@ -2466,14 +2464,14 @@ current light     timer            walk button        show
     :lineno-start: 54
     :emphasize-lines: 6
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=yellow,
             )
             self.assertEqual(reality, yellow)
 
         def test_green_traffic_light_w_walk_button(self):
             my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light='GREEN',
                 timer_done=True,
                 walk_button=True,
@@ -2504,7 +2502,7 @@ current light     timer            walk button        show
         def test_yellow_traffic_light_w_walk_button(self):
             # yellow = 'YELLOW'
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light=yellow,
                 current_light=YELLOW,
                 timer_done=True,
@@ -2512,14 +2510,14 @@ current light     timer            walk button        show
             )
             self.assertEqual(reality, RED)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light=yellow,
                 current_light=YELLOW,
                 timer_done=True,
             )
             self.assertEqual(reality, RED)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light=yellow,
                 current_light=YELLOW,
                 timer_done=False,
@@ -2528,7 +2526,7 @@ current light     timer            walk button        show
             # self.assertEqual(reality, yellow)
             self.assertEqual(reality, YELLOW)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light=yellow,
                 current_light=YELLOW,
             )
@@ -2543,27 +2541,27 @@ current light     timer            walk button        show
     :lineno-start: 31
 
         def test_yellow_traffic_light_w_walk_button(self):
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=YELLOW,
                 timer_done=True,
                 walk_button=True,
             )
             self.assertEqual(reality, RED)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=YELLOW,
                 timer_done=True,
             )
             self.assertEqual(reality, RED)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=YELLOW,
                 timer_done=False,
                 walk_button=True,
             )
             self.assertEqual(reality, YELLOW)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=YELLOW,
             )
             self.assertEqual(reality, YELLOW)
@@ -2592,25 +2590,25 @@ current light     timer            walk button        show
     :emphasize-lines: 8, 12-13
 
         def test_red_traffic_light_w_walk_button(self):
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 timer_done=True,
                 walk_button=True,
             )
             self.assertEqual(reality, RED)
 
             # my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 timer_done=True,
             )
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, GREEN)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 walk_button=True,
             )
             self.assertEqual(reality, RED)
 
-            reality = src.traffic_light.show()
+            reality = src.traffic_light.control()
             self.assertEqual(reality, RED)
 
         def test_yellow_traffic_light_w_walk_button(self):
@@ -2623,23 +2621,23 @@ current light     timer            walk button        show
     :lineno-start: 10
 
         def test_red_traffic_light_w_walk_button(self):
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 timer_done=True,
                 walk_button=True,
             )
             self.assertEqual(reality, RED)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 timer_done=True,
             )
             self.assertEqual(reality, GREEN)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 walk_button=True,
             )
             self.assertEqual(reality, RED)
 
-            reality = src.traffic_light.show()
+            reality = src.traffic_light.control()
             self.assertEqual(reality, RED)
 
         def test_yellow_traffic_light_w_walk_button(self):
@@ -2652,7 +2650,7 @@ current light     timer            walk button        show
 
         def test_green_traffic_light_w_walk_button(self):
             my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='GREEN',
                 current_light=GREEN,
                 timer_done=True,
@@ -2660,7 +2658,7 @@ current light     timer            walk button        show
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='GREEN',
                 current_light=GREEN,
                 timer_done=True,
@@ -2668,7 +2666,7 @@ current light     timer            walk button        show
             self.assertEqual(reality, my_expectation)
 
             # my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='GREEN',
                 current_light=GREEN,
                 timer_done=False,
@@ -2677,7 +2675,7 @@ current light     timer            walk button        show
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, GREEN)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='GREEN',
                 current_light=GREEN,
             )
@@ -2694,7 +2692,7 @@ current light     timer            walk button        show
 
         def test_green_traffic_light_w_walk_button(self):
             # my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='GREEN',
                 current_light=GREEN,
                 timer_done=True,
@@ -2703,7 +2701,7 @@ current light     timer            walk button        show
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, YELLOW)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 # current_light='GREEN',
                 current_light=GREEN,
                 timer_done=True,
@@ -2719,27 +2717,27 @@ current light     timer            walk button        show
     :lineno-start: 56
 
         def test_green_traffic_light_w_walk_button(self):
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=GREEN,
                 timer_done=True,
                 walk_button=True,
             )
             self.assertEqual(reality, YELLOW)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=GREEN,
                 timer_done=True,
             )
             self.assertEqual(reality, YELLOW)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=GREEN,
                 timer_done=False,
                 walk_button=True,
             )
             self.assertEqual(reality, GREEN)
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=GREEN,
             )
             self.assertEqual(reality, GREEN)
@@ -2754,7 +2752,7 @@ current light     timer            walk button        show
     :emphasize-lines: 7-11, 18-22, 29-33, 38-42
 
         def test_green_traffic_light_w_walk_button(self):
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=GREEN,
                 timer_done=True,
                 walk_button=True,
@@ -2765,7 +2763,7 @@ current light     timer            walk button        show
                 YELLOW
             )
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=GREEN,
                 timer_done=True,
             )
@@ -2775,7 +2773,7 @@ current light     timer            walk button        show
                 YELLOW
             )
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=GREEN,
                 timer_done=False,
                 walk_button=True,
@@ -2786,7 +2784,7 @@ current light     timer            walk button        show
                 green.
             )
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=GREEN,
             )
             # self.assertEqual(reality, GREEN)
@@ -2802,7 +2800,7 @@ current light     timer            walk button        show
     :emphasize-lines: 9-14, 24-28, 39-44, 53-56
 
         def test_green_traffic_light_w_walk_button(self):
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=GREEN,
                 timer_done=True,
                 walk_button=True,
@@ -2810,7 +2808,7 @@ current light     timer            walk button        show
             # self.assertEqual(reality, YELLOW)
             self.assertEqual(
                 # reality,
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                     walk_button=True,
@@ -2818,21 +2816,21 @@ current light     timer            walk button        show
                 YELLOW
             )
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=GREEN,
                 timer_done=True,
             )
             # self.assertEqual(reality, YELLOW)
             self.assertEqual(
                 # reality,
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                 ),
                 YELLOW
             )
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=GREEN,
                 timer_done=False,
                 walk_button=True,
@@ -2840,7 +2838,7 @@ current light     timer            walk button        show
             # self.assertEqual(reality, GREEN)
             self.assertEqual(
                 # reality,
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=False,
                     walk_button=True,
@@ -2848,13 +2846,13 @@ current light     timer            walk button        show
                 green.
             )
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=GREEN,
             )
             # self.assertEqual(reality, GREEN)
             self.assertEqual(
                 # reality,
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                 ),
                 green.
@@ -2869,7 +2867,7 @@ current light     timer            walk button        show
 
         def test_green_traffic_light_w_walk_button(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                     walk_button=True,
@@ -2878,7 +2876,7 @@ current light     timer            walk button        show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                 ),
@@ -2886,7 +2884,7 @@ current light     timer            walk button        show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=False,
                     walk_button=True,
@@ -2895,7 +2893,7 @@ current light     timer            walk button        show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                 ),
                 green.
@@ -2913,7 +2911,7 @@ current light     timer            walk button        show
     :emphasize-lines: 7-10, 16-19, 26-29, 34-37
 
         def test_yellow_traffic_light_w_walk_button(self):
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=YELLOW,
                 timer_done=True,
                 walk_button=True,
@@ -2923,7 +2921,7 @@ current light     timer            walk button        show
                 RED
             )
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=YELLOW,
                 timer_done=True,
             )
@@ -2932,7 +2930,7 @@ current light     timer            walk button        show
                 RED
             )
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=YELLOW,
                 timer_done=False,
                 walk_button=True,
@@ -2942,7 +2940,7 @@ current light     timer            walk button        show
                 YELLOW
             )
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=YELLOW,
             )
             self.assertEqual(
@@ -2952,21 +2950,21 @@ current light     timer            walk button        show
 
         def test_green_traffic_light_w_walk_button(self):
 
-* I call the ``show`` :ref:`function<what is a function?>` directly in the :ref:`assertions<what is an assertion?>` in :ref:`test_yellow_traffic_light_w_walk_button`
+* I call the ``control`` :ref:`function<what is a function?>` directly in the :ref:`assertions<what is an assertion?>` in :ref:`test_yellow_traffic_light_w_walk_button`
 
   .. code-block:: python
     :lineno-start: 30
     :emphasize-lines: 8-13, 22-26, 36-41, 49-52
 
         def test_yellow_traffic_light_w_walk_button(self):
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=YELLOW,
                 timer_done=True,
                 walk_button=True,
             )
             self.assertEqual(
                 # reality,
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                     walk_button=True,
@@ -2974,27 +2972,27 @@ current light     timer            walk button        show
                 RED
             )
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=YELLOW,
                 timer_done=True,
             )
             self.assertEqual(
                 # reality,
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                 ),
                 RED
             )
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=YELLOW,
                 timer_done=False,
                 walk_button=True,
             )
             self.assertEqual(
                 # reality,
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=False,
                     walk_button=True,
@@ -3002,12 +3000,12 @@ current light     timer            walk button        show
                 YELLOW
             )
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 current_light=YELLOW,
             )
             self.assertEqual(
                 # reality,
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                 ),
                 YELLOW
@@ -3024,7 +3022,7 @@ current light     timer            walk button        show
 
         def test_yellow_traffic_light_w_walk_button(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                     walk_button=True,
@@ -3033,7 +3031,7 @@ current light     timer            walk button        show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                 ),
@@ -3041,7 +3039,7 @@ current light     timer            walk button        show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=False,
                     walk_button=True,
@@ -3050,7 +3048,7 @@ current light     timer            walk button        show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                 ),
                 YELLOW
@@ -3065,7 +3063,7 @@ current light     timer            walk button        show
     :emphasize-lines: 6-9, 14-17, 22-25, 28-31
 
         def test_red_traffic_light_w_walk_button(self):
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 timer_done=True,
                 walk_button=True,
             )
@@ -3074,7 +3072,7 @@ current light     timer            walk button        show
                 RED
             )
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 timer_done=True,
             )
             self.assertEqual(
@@ -3082,7 +3080,7 @@ current light     timer            walk button        show
                 green.
             )
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 walk_button=True,
             )
             self.assertEqual(
@@ -3090,58 +3088,58 @@ current light     timer            walk button        show
                 RED
             )
 
-            reality = src.traffic_light.show()
+            reality = src.traffic_light.control()
             self.assertEqual(
                 reality,
                 RED
             )
 
-* I call the ``show`` :ref:`function<what is a function?>` directly
+* I call the ``control`` :ref:`function<what is a function?>` directly
 
   .. code-block:: python
     :lineno-start: 10
     :emphasize-lines: 7-11, 19-22, 30-33, 39-40
 
         def test_red_traffic_light_w_walk_button(self):
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 timer_done=True,
                 walk_button=True,
             )
             self.assertEqual(
                 # reality,
-                src.traffic_light.show(
+                src.traffic_light.control(
                     timer_done=True,
                     walk_button=True,
                 ),
                 RED
             )
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 timer_done=True,
             )
             self.assertEqual(
                 # reality,
-                src.traffic_light.show(
+                src.traffic_light.control(
                     timer_done=True,
                 ),
                 green.
             )
 
-            reality = src.traffic_light.show(
+            reality = src.traffic_light.control(
                 walk_button=True,
             )
             self.assertEqual(
                 # reality,
-                src.traffic_light.show(
+                src.traffic_light.control(
                     walk_button=True,
                 ),
                 RED
             )
 
-            reality = src.traffic_light.show()
+            reality = src.traffic_light.control()
             self.assertEqual(
                 # reality,
-                src.traffic_light.show(),
+                src.traffic_light.control(),
                 RED
             )
 
@@ -3154,7 +3152,7 @@ current light     timer            walk button        show
 
         def test_red_traffic_light_w_walk_button(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     timer_done=True,
                     walk_button=True,
                 ),
@@ -3162,21 +3160,21 @@ current light     timer            walk button        show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     timer_done=True,
                 ),
                 green.
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     walk_button=True,
                 ),
                 RED
             )
 
             self.assertEqual(
-                src.traffic_light.show(),
+                src.traffic_light.control(),
                 RED
             )
 
@@ -3184,12 +3182,12 @@ current light     timer            walk button        show
 
 .. admonition:: REMINDER
 
-  This is what happens when the ``show`` :ref:`function<what is a function?>` is called
+  This is what happens when the ``control`` :ref:`function<what is a function?>` is called
 
   .. code-block:: python
     :linenos:
 
-    def show(
+    def control(
             current_light='RED', timer_done=False,
             walk_button=False,
         ):
@@ -3234,7 +3232,7 @@ The inputs for the **Traffic Light** up till now are
 which gives this :ref:`truth table`
 
 ================  ===============  =================  =================
-current light     timer            walk button        show
+current light     timer            walk button        output
 ================  ===============  =================  =================
 :red:`RED`        :green:`done`    :green:`pushed`    :red:`RED`
 :red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN`
@@ -3243,7 +3241,7 @@ current light     timer            walk button        show
 ================  ===============  =================  =================
 
 ================  ===============  =================  =================
-current light     timer            walk button        show
+current light     timer            walk button        output
 ================  ===============  =================  =================
 :yellow:`YELLOW`  :green:`done`    :green:`pushed`    :red:`RED`
 :yellow:`YELLOW`  :green:`done`    :red:`NOT pushed`  :red:`RED`
@@ -3252,7 +3250,7 @@ current light     timer            walk button        show
 ================  ===============  =================  =================
 
 ================  ===============  =================  =================
-current light     timer            walk button        show
+current light     timer            walk button        output
 ================  ===============  =================  =================
 :green:`GREEN`    :green:`done`    :green:`pushed`    :yellow:`YELLOW`
 :green:`GREEN`    :green:`done`    :red:`NOT pushed`  :yellow:`YELLOW`
@@ -3263,7 +3261,7 @@ current light     timer            walk button        show
 I want the **Traffic Light** to show ``WALK`` when a person can cross the street or ``NO WALK`` when a person can NOT cross the street. This means the :ref:`truth table` for if the **Traffic Light** is :red:`RED` with the walk sign is
 
 ================  =============== ================= =================================
-current light     timer           walk button       show
+current light     timer           walk button       output
 ================  =============== ================= =================================
 :red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
 :red:`RED`        :green:`done`   :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
@@ -3279,10 +3277,10 @@ current light     timer           walk button       show
 
 ----
 
-I add the value for the ``current_light`` parameter in the call to the ``show`` :ref:`function<what is a function?>` for if the light is :red:`RED`, the timer is :green:`done` and the walk button is :green:`pushed`, to make it clearer, then I change the expectation of the first :ref:`assertion<what is an assertion?>` in :ref:`test_red_traffic_light_w_walk_button`
+I add the value for the ``current_light`` parameter in the call to the ``control`` :ref:`function<what is a function?>` for if the light is :red:`RED`, the timer is :green:`done` and the walk button is :green:`pushed`, to make it clearer, then I change the expectation of the first :ref:`assertion<what is an assertion?>` in :ref:`test_red_traffic_light_w_walk_button`
 
 ================  =============== ================= =================================
-current light     timer           walk button       show
+current light     timer           walk button       output
 ================  =============== ================= =================================
 :red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
 ================  =============== ================= =================================
@@ -3293,7 +3291,7 @@ current light     timer           walk button       show
 
         def test_red_traffic_light_w_walk_button(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=True,
                     walk_button=True,
@@ -3315,13 +3313,13 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change the :ref:`return statement<the return statement>` for this case, in the ``show`` :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
+I change the :ref:`return statement<the return statement>` for this case, in the ``control`` :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
 
 .. code-block:: python
   :linenos:
   :emphasize-lines: 17
 
-  def show(
+  def control(
           current_light='RED', timer_done=False,
           walk_button=False,
       ):
@@ -3341,7 +3339,7 @@ I change the :ref:`return statement<the return statement>` for this case, in the
 
       return green
 
-the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
+the test passes. This is what happens when the ``control`` :ref:`function<what is a function?>` is called
 
 * if the timer is :red:`NOT done` it returns the current light
 * if the timer is :green:`done`
@@ -3364,7 +3362,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 * I add values for the other parameters, to make it clearer for if the light is :red:`RED`, the timer is :green:`done`, and the walk button is :green:`pushed`, then I change the expectation of the second :ref:`assertion<what is an assertion?>` in :ref:`test_red_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
   ================  =============== ================= =================================
-  current light     timer           walk button       show
+  current light     timer           walk button       output
   ================  =============== ================= =================================
   :red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
   :red:`RED`        :green:`done`   :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
@@ -3376,7 +3374,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
         def test_red_traffic_light_w_walk_button(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=True,
                     walk_button=True,
@@ -3385,7 +3383,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=True,
                     walk_button=False,
@@ -3405,7 +3403,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
     :linenos:
     :emphasize-lines: 19
 
-    def show(
+    def control(
             current_light='RED', timer_done=False,
             walk_button=False,
         ):
@@ -3425,7 +3423,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
         return green, 'NO WALK'
 
-  the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
+  the test passes. This is what happens when the ``control`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done` it returns the current light
   * if the timer is :green:`done`
@@ -3440,7 +3438,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 * I change the third :ref:`assertion<what is an assertion?>` for if the light is :red:`RED`, the timer is :red:`NOT done`, and the walk button is :green:`pushed`, in :ref:`test_red_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
   ================  =============== ================= =================================
-  current light     timer           walk button       show
+  current light     timer           walk button       output
   ================  =============== ================= =================================
   :red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
   :red:`RED`        :green:`done`   :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
@@ -3453,7 +3451,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
         def test_red_traffic_light_w_walk_button(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=True,
                     walk_button=True,
@@ -3462,7 +3460,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=True,
                     walk_button=False,
@@ -3471,7 +3469,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=False,
                     walk_button=True,
@@ -3491,7 +3489,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
     :linenos:
     :emphasize-lines: 8-9
 
-    def show(
+    def control(
             current_light='RED', timer_done=False,
             walk_button=False,
         ):
@@ -3524,7 +3522,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 * I add values for the other parameters in the next :ref:`assertion<what is an assertion?>`, to make it clearer for the case where the light is :red:`RED`, the timer is :red:`NOT done`, and the walk button is :red:`NOT pushed`,  in :ref:`test_red_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
   ================  =============== ================= =================================
-  current light     timer           walk button       show
+  current light     timer           walk button       output
   ================  =============== ================= =================================
   :red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
   :red:`RED`        :green:`done`   :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
@@ -3538,7 +3536,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
         def test_red_traffic_light_w_walk_button(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=True,
                     walk_button=True,
@@ -3547,7 +3545,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=True,
                     walk_button=False,
@@ -3556,7 +3554,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=False,
                     walk_button=True,
@@ -3565,7 +3563,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=False,
                     walk_button=False,
@@ -3575,7 +3573,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
         def test_yellow_traffic_light_w_walk_button(self):
 
-  the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
+  the test passes. This is what happens when the ``control`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done`
 
@@ -3601,7 +3599,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
         def test_red_traffic_light_w_walk(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=True,
                     walk_button=True,
@@ -3618,7 +3616,7 @@ test_yellow_traffic_light_w_walk
 The :ref:`truth table` for if the **Traffic Light** is :yellow:`YELLOW` with the walk sign is
 
 ================  =============== ================= =================================
-current light     timer           walk button       show
+current light     timer           walk button       output
 ================  =============== ================= =================================
 :yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
 :yellow:`YELLOW`  :green:`done`   :red:`NOT pushed` :red:`RED` + :green:`WALK`
@@ -3629,7 +3627,7 @@ current light     timer           walk button       show
 * I change the expectation of the first :ref:`assertion<what is an assertion?>` for if the light is :yellow:`YELLOW`, the timer is :green:`done` and the walk button is :green:`pushed`, in :ref:`test_yellow_traffic_light_w_walk_button`
 
   ================  =============== ================= =================================
-  current light     timer           walk button       show
+  current light     timer           walk button       output
   ================  =============== ================= =================================
   :yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
   ================  =============== ================= =================================
@@ -3640,7 +3638,7 @@ current light     timer           walk button       show
 
         def test_yellow_traffic_light_w_walk_button(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                     walk_button=True,
@@ -3660,7 +3658,7 @@ current light     timer           walk button       show
     :linenos:
     :emphasize-lines: 13
 
-    def show(
+    def control(
             current_light='RED', timer_done=False,
             walk_button=False,
         ):
@@ -3693,7 +3691,7 @@ current light     timer           walk button       show
 * I change the second :ref:`assertion<what is an assertion?>` which is for if the light is :yellow:`YELLOW`, the timer is :green:`done` and the walk button is :red:`NOT pushed`, in :ref:`test_yellow_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
   ================  =============== ================= =================================
-  current light     timer           walk button       show
+  current light     timer           walk button       output
   ================  =============== ================= =================================
   :yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
   :yellow:`YELLOW`  :green:`done`   :red:`NOT pushed` :red:`RED` + :green:`WALK`
@@ -3705,7 +3703,7 @@ current light     timer           walk button       show
 
         def test_yellow_traffic_light_w_walk_button(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                     walk_button=True,
@@ -3714,7 +3712,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                     walk_button=False,
@@ -3722,7 +3720,7 @@ current light     timer           walk button       show
                 (RED, 'WALK')
             )
 
-  the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
+  the test passes. This is what happens when the ``control`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done`
 
@@ -3741,7 +3739,7 @@ current light     timer           walk button       show
 * I change the third :ref:`assertion<what is an assertion?>`, which is for if the light is :yellow:`YELLOW`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
 
   ================  =============== ================= =================================
-  current light     timer           walk button       show
+  current light     timer           walk button       output
   ================  =============== ================= =================================
   :yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
   :yellow:`YELLOW`  :green:`done`   :red:`NOT pushed` :red:`RED` + :green:`WALK`
@@ -3754,7 +3752,7 @@ current light     timer           walk button       show
 
         def test_yellow_traffic_light_w_walk_button(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                     walk_button=True,
@@ -3763,7 +3761,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                     walk_button=False,
@@ -3772,7 +3770,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=False,
                     walk_button=True,
@@ -3792,7 +3790,7 @@ current light     timer           walk button       show
     :linenos:
     :emphasize-lines: 10-11
 
-    def show(
+    def control(
             current_light='RED', timer_done=False,
             walk_button=False,
         ):
@@ -3827,7 +3825,7 @@ current light     timer           walk button       show
 * I change the last :ref:`assertion<what is an assertion?>`, which is for if the light is :yellow:`YELLOW`, the timer is :red:`NOT done`, and the walk button is :red:`NOT pushed`, in :ref:`test_yellow_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
   ================  =============== ================= =================================
-  current light     timer           walk button       show
+  current light     timer           walk button       output
   ================  =============== ================= =================================
   :yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
   :yellow:`YELLOW`  :green:`done`   :red:`NOT pushed` :red:`RED` + :green:`WALK`
@@ -3841,7 +3839,7 @@ current light     timer           walk button       show
 
         def test_yellow_traffic_light_w_walk_button(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                     walk_button=True,
@@ -3850,7 +3848,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                     walk_button=False,
@@ -3859,7 +3857,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=False,
                     walk_button=True,
@@ -3868,7 +3866,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=False,
                     walk_button=False,
@@ -3878,7 +3876,7 @@ current light     timer           walk button       show
 
         def test_green_traffic_light_w_walk_button(self):
 
-  the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
+  the test passes. This is what happens when the ``control`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done`
 
@@ -3902,7 +3900,7 @@ current light     timer           walk button       show
     :emphasize-lines: 10
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=False,
                     walk_button=False,
@@ -3912,7 +3910,7 @@ current light     timer           walk button       show
 
         def test_yellow_traffic_light_w_walk(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                     walk_button=True,
@@ -3929,7 +3927,7 @@ test_green_traffic_light_w_walk
 The :ref:`truth table` for if the **Traffic Light** is :green:`GREEN` with the walk sign is
 
 ================  =============== ================= =================================
-current light     timer           walk button       show
+current light     timer           walk button       output
 ================  =============== ================= =================================
 :green:`GREEN`    :green:`done`   :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
 :green:`GREEN`    :green:`done`   :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
@@ -3940,7 +3938,7 @@ current light     timer           walk button       show
 * I change the expectation of the first :ref:`assertion<what is an assertion?>` for if the light is :green:`GREEN`, the timer is :green:`done`, and the walk button is :green:`pushed`, in :ref:`test_green_traffic_light_w_walk_button`
 
   ================  =============== ================= =================================
-  current light     timer           walk button       show
+  current light     timer           walk button       output
   ================  =============== ================= =================================
   :green:`GREEN`    :green:`done`   :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
   ================  =============== ================= =================================
@@ -3951,7 +3949,7 @@ current light     timer           walk button       show
 
         def test_green_traffic_light_w_walk_button(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                     walk_button=True,
@@ -3971,7 +3969,7 @@ current light     timer           walk button       show
     :linenos:
     :emphasize-lines: 18
 
-    def show(
+    def control(
             current_light='RED', timer_done=False,
             walk_button=False,
         ):
@@ -4006,7 +4004,7 @@ current light     timer           walk button       show
 * I change the second :ref:`assertion<what is an assertion?>`, which is for if the light is :green:`GREEN`, the timer is :green:`done`, and the walk button is :red:`NOT pushed`, in :ref:`test_green_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
   ================  =============== ================= =================================
-  current light     timer           walk button       show
+  current light     timer           walk button       output
   ================  =============== ================= =================================
   :green:`GREEN`    :green:`done`   :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
   :green:`GREEN`    :green:`done`   :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
@@ -4018,7 +4016,7 @@ current light     timer           walk button       show
 
         def test_green_traffic_light_w_walk_button(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                     walk_button=True,
@@ -4027,7 +4025,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                     walk_button=False,
@@ -4035,7 +4033,7 @@ current light     timer           walk button       show
                 (YELLOW, 'NO WALK')
             )
 
-  the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
+  the test passes. This is what happens when the ``control`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done`
 
@@ -4055,7 +4053,7 @@ current light     timer           walk button       show
 * I change the third :ref:`assertion<what is an assertion?>`, which is for if the light is :green:`GREEN`, the timer is :red:`NOT done`, and the walk button is :green:`pushed`
 
   ================  =============== ================= =================================
-  current light     timer           walk button       show
+  current light     timer           walk button       output
   ================  =============== ================= =================================
   :green:`GREEN`    :green:`done`   :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
   :green:`GREEN`    :green:`done`   :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
@@ -4068,7 +4066,7 @@ current light     timer           walk button       show
 
         def test_green_traffic_light_w_walk_button(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                     walk_button=True,
@@ -4077,7 +4075,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                     walk_button=False,
@@ -4086,7 +4084,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=False,
                     walk_button=True,
@@ -4100,13 +4098,13 @@ current light     timer           walk button       show
 
     AssertionError: 'GREEN' != ('GREEN', 'NO WALK')
 
-* I change the :ref:`return statement<the return statement>` of the :ref:`if statement<if statements>` for when the timer is :red:`NOT done` in the ``show`` :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
+* I change the :ref:`return statement<the return statement>` of the :ref:`if statement<if statements>` for when the timer is :red:`NOT done` in the ``control`` :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :lineno-start: 1
     :emphasize-lines: 12
 
-    def show(
+    def control(
             current_light='RED', timer_done=False,
             walk_button=False,
         ):
@@ -4136,12 +4134,12 @@ current light     timer           walk button       show
 
     AssertionError: ('GREEN', 'NO WALK') != 'GREEN'
 
-  the ``show`` :ref:`function<what is a function?>` now returns ``('GREEN', 'NO WALK')`` and the next :ref:`assertion<what is an assertion?>` expects ``'GREEN'``. I have to make the same change in the next :ref:`assertion<what is an assertion?>`
+  the ``control`` :ref:`function<what is a function?>` now returns ``('GREEN', 'NO WALK')`` and the next :ref:`assertion<what is an assertion?>` expects ``'GREEN'``. I have to make the same change in the next :ref:`assertion<what is an assertion?>`
 
 * I change the last :ref:`assertion<what is an assertion?>`, which is for if the light is :green:`GREEN`, the timer is :red:`NOT done`, and the walk button is :red:`NOT pushed`, in :ref:`test_green_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
   ================  =============== ================= =================================
-  current light     timer           walk button       show
+  current light     timer           walk button       output
   ================  =============== ================= =================================
   :green:`GREEN`    :green:`done`   :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
   :green:`GREEN`    :green:`done`   :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
@@ -4155,7 +4153,7 @@ current light     timer           walk button       show
 
         def test_green_traffic_light_w_walk_button(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                     walk_button=True,
@@ -4164,7 +4162,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                     walk_button=False,
@@ -4173,7 +4171,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=False,
                     walk_button=True,
@@ -4182,7 +4180,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=False,
                     walk_button=False,
@@ -4193,7 +4191,7 @@ current light     timer           walk button       show
 
     # Exceptions seen
 
-  the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
+  the test passes. This is what happens when the ``control`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done`
 
@@ -4217,7 +4215,7 @@ current light     timer           walk button       show
     :emphasize-lines: 10
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=False,
                     walk_button=False,
@@ -4227,7 +4225,7 @@ current light     timer           walk button       show
 
         def test_green_traffic_light_w_walk(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                     walk_button=True,
@@ -4265,7 +4263,7 @@ current light     timer           walk button       show
 
         def test_red_traffic_light_w_walk(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=True,
                     walk_button=True,
@@ -4274,7 +4272,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=True,
                     walk_button=False,
@@ -4293,7 +4291,7 @@ current light     timer           walk button       show
 
         def test_red_traffic_light_w_walk(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=True,
                     walk_button=True,
@@ -4303,7 +4301,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=True,
                     walk_button=False,
@@ -4313,7 +4311,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=False,
                     walk_button=True,
@@ -4323,7 +4321,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=False,
                     walk_button=False,
@@ -4343,7 +4341,7 @@ current light     timer           walk button       show
 
         def test_red_traffic_light_w_walk(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=True,
                     walk_button=True,
@@ -4352,7 +4350,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=True,
                     walk_button=False,
@@ -4361,7 +4359,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=False,
                     walk_button=True,
@@ -4370,7 +4368,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=RED,
                     timer_done=False,
                     walk_button=False,
@@ -4388,7 +4386,7 @@ current light     timer           walk button       show
 
         def test_yellow_traffic_light_w_walk(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                     walk_button=True,
@@ -4398,7 +4396,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                     walk_button=False,
@@ -4417,7 +4415,7 @@ current light     timer           walk button       show
 
         def test_yellow_traffic_light_w_walk(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                     walk_button=True,
@@ -4427,7 +4425,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                     walk_button=False,
@@ -4437,7 +4435,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=False,
                     walk_button=True,
@@ -4447,7 +4445,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=False,
                     walk_button=False,
@@ -4465,7 +4463,7 @@ current light     timer           walk button       show
 
         def test_yellow_traffic_light_w_walk(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                     walk_button=True,
@@ -4474,7 +4472,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=True,
                     walk_button=False,
@@ -4483,7 +4481,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=False,
                     walk_button=True,
@@ -4492,7 +4490,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=YELLOW,
                     timer_done=False,
                     walk_button=False,
@@ -4510,7 +4508,7 @@ current light     timer           walk button       show
 
         def test_green_traffic_light_w_walk(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                     walk_button=True,
@@ -4520,7 +4518,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                     walk_button=False,
@@ -4539,7 +4537,7 @@ current light     timer           walk button       show
 
         def test_green_traffic_light_w_walk(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                     walk_button=True,
@@ -4549,7 +4547,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                     walk_button=False,
@@ -4559,7 +4557,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=False,
                     walk_button=True,
@@ -4569,7 +4567,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=False,
                     walk_button=False,
@@ -4587,7 +4585,7 @@ current light     timer           walk button       show
 
         def test_green_traffic_light_w_walk(self):
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                     walk_button=True,
@@ -4596,7 +4594,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=True,
                     walk_button=False,
@@ -4605,7 +4603,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=False,
                     walk_button=True,
@@ -4614,7 +4612,7 @@ current light     timer           walk button       show
             )
 
             self.assertEqual(
-                src.traffic_light.show(
+                src.traffic_light.control(
                     current_light=GREEN,
                     timer_done=False,
                     walk_button=False,
@@ -4631,13 +4629,13 @@ current light     timer           walk button       show
 :yellow:`REFACTOR`: make it better
 *********************************************************************************
 
-* I add :ref:`variables<what is a variable?>` for ``'WALK'`` and ``'NO WALK'`` to the ``show`` :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
+* I add :ref:`variables<what is a variable?>` for ``'WALK'`` and ``'NO WALK'`` to the ``control`` :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 6-7
 
-    def show(
+    def control(
             current_light='RED', timer_done=False,
             walk_button=False,
         ):
@@ -4651,7 +4649,7 @@ current light     timer           walk button       show
     :linenos:
     :emphasize-lines: 10-11, 14-17, 20-21, 24-25, 28-29, 31-32
 
-    def show(
+    def control(
             current_light='RED', timer_done=False,
             walk_button=False,
         ):
@@ -4751,7 +4749,7 @@ current light     timer           walk button       show
 
         return walk
 
-  still green. This means if none of the :ref:`conditions<if statements>` in the ``show`` :ref:`function<what is a function?>` are met, the light stays :red:`RED` and shows ``'WALK'``
+  still green. This means if none of the :ref:`conditions<if statements>` in the ``control`` :ref:`function<what is a function?>` are met, the light stays :red:`RED` and shows ``'WALK'``
 
 * I no longer need the :ref:`else clause<if statements>` for when the walk button is :green:`pushed` because it returns the default state (``'RED', 'WALK'``) when the list is :red:`RED` AND the timer is :green:`done`. I comment it out
 
@@ -4881,7 +4879,7 @@ current light     timer           walk button       show
     :linenos:
     :emphasize-lines: 9-12
 
-    def show(
+    def control(
             current_light='RED', timer_done=False,
             walk_button=False,
         ):
@@ -4902,7 +4900,7 @@ current light     timer           walk button       show
   .. code-block:: python
     :linenos:
 
-    def show(
+    def control(
             current_light='RED', timer_done=False,
             walk_button=False,
         ):
@@ -4921,7 +4919,7 @@ current light     timer           walk button       show
 
         return walk
 
-This is what happens when the ``show`` :ref:`function<what is a function?>` is called
+This is what happens when the ``control`` :ref:`function<what is a function?>` is called
 
 * if the timer is :red:`NOT done`
 
@@ -4941,7 +4939,7 @@ The :ref:`function<what is a function?>` does not look like the :ref:`truth tabl
   if not timer_done and current_light != red:
       return current_light, no_walk
 
-What does it return if I call the ``show`` :ref:`function<what is a function?>` with a color that is NOT :red:`RED`, :yellow:`YELLOW` or :green:`GREEN`. There is one way to find out ...
+What does it return if I call the ``control`` :ref:`function<what is a function?>` with a color that is NOT :red:`RED`, :yellow:`YELLOW` or :green:`GREEN`. There is one way to find out ...
 
 ----
 
@@ -4974,7 +4972,7 @@ I ran tests for a **Traffic Light** that has a timer and a button for people to 
 then this is the :ref:`truth table` for the Traffic Light
 
 ================  =============== ================= =================================
-current light     timer           walk button       show
+current light     timer           walk button       output
 ================  =============== ================= =================================
 :red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
 :red:`RED`        :green:`done`   :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
@@ -4983,7 +4981,7 @@ current light     timer           walk button       show
 ================  =============== ================= =================================
 
 ================  =============== ================= =================================
-current light     timer           walk button       show
+current light     timer           walk button       output
 ================  =============== ================= =================================
 :yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
 :yellow:`YELLOW`  :green:`done`   :red:`NOT pushed` :red:`RED` + :green:`WALK`
@@ -4992,7 +4990,7 @@ current light     timer           walk button       show
 ================  =============== ================= =================================
 
 ================  =============== ================= =================================
-current light     timer           walk button       show
+current light     timer           walk button       output
 ================  =============== ================= =================================
 :green:`GREEN`    :green:`done`   :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
 :green:`GREEN`    :green:`done`   :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
@@ -5012,7 +5010,7 @@ What if there is an emergency vehicle? If the **Traffic Light** changes based on
 and the :ref:`truth table` would be
 
 ================  =============== ================= ====================  =================================
-current light     timer           walk button       emergency             show
+current light     timer           walk button       emergency             output
 ================  =============== ================= ====================  =================================
 :red:`RED`        :green:`done`   :green:`pushed`   :green:`emergency`    :red:`RED` + :red:`NO WALK`
 :red:`RED`        :green:`done`   :green:`pushed`   :red:`NOT emergency`  :green:`GREEN` + :red:`NO WALK`
@@ -5021,7 +5019,7 @@ current light     timer           walk button       emergency             show
 ================  =============== ================= ====================  =================================
 
 ================  =============== ================= ====================  =================================
-current light     timer           walk button       emergency             show
+current light     timer           walk button       emergency             output
 ================  =============== ================= ====================  =================================
 :red:`RED`        :red:`NOT done` :green:`pushed`   :green:`emergency`    :red:`RED` + :red:`NO WALK`
 :red:`RED`        :red:`NOT done` :green:`pushed`   :red:`NOT emergency`  :red:`RED` + :green:`WALK`
@@ -5030,7 +5028,7 @@ current light     timer           walk button       emergency             show
 ================  =============== ================= ====================  =================================
 
 ================  =============== ================= ====================  =================================
-current light     timer           walk button       emergency             show
+current light     timer           walk button       emergency             output
 ================  =============== ================= ====================  =================================
 :yellow:`YELLOW`  :green:`done`   :green:`pushed`   :green:`emergency`    :red:`RED` + :red:`NO WALK`
 :yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`NOT emergency`  :red:`RED` + :green:`WALK`
@@ -5039,7 +5037,7 @@ current light     timer           walk button       emergency             show
 ================  =============== ================= ====================  =================================
 
 ================  =============== ================= ====================  =================================
-current light     timer           walk button       emergency             show
+current light     timer           walk button       emergency             output
 ================  =============== ================= ====================  =================================
 :yellow:`YELLOW`  :red:`NOT done` :green:`pushed`   :green:`emergency`    :red:`RED` + :red:`NO WALK`
 :yellow:`YELLOW`  :red:`NOT done` :green:`pushed`   :red:`NOT emergency`  :yellow:`YELLOW` + :red:`NO WALK`
@@ -5048,7 +5046,7 @@ current light     timer           walk button       emergency             show
 ================  =============== ================= ====================  =================================
 
 ================  =============== ================= ====================  =================================
-current light     timer           walk button       emergency             show
+current light     timer           walk button       emergency             output
 ================  =============== ================= ====================  =================================
 :green:`GREEN`    :green:`done`   :green:`pushed`   :green:`emergency`    :yellow:`YELLOW` + :red:`NO WALK`
 :green:`GREEN`    :green:`done`   :green:`pushed`   :red:`NOT emergency`  :yellow:`YELLOW` + :red:`NO WALK`
@@ -5057,7 +5055,7 @@ current light     timer           walk button       emergency             show
 ================  =============== ================= ====================  =================================
 
 ================  =============== ================= ====================  =================================
-current light     timer           walk button       emergency             show
+current light     timer           walk button       emergency             output
 ================  =============== ================= ====================  =================================
 :green:`GREEN`    :red:`NOT done` :green:`pushed`   :green:`emergency`    :yellow:`YELLOW` + :red:`NO WALK`
 :green:`GREEN`    :red:`NOT done` :green:`pushed`   :red:`NOT emergency`  :green:`GREEN` + :red:`NO WALK`
