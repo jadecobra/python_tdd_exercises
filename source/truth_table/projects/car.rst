@@ -269,7 +269,7 @@ test_start_pressed
 
     AttributeError: module 'src.car' has no attribute 'ignition'
 
-  because ``car.py`` in the ``src`` folder_ does not have anything named ``ignition`` in it.
+  because ``car/__init__.py`` in the ``src`` folder_ does not have anything named ``ignition`` in it.
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 

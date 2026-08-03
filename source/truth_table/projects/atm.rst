@@ -276,7 +276,7 @@ because I do not have a definition for ``src`` in this file_.
     AttributeError: module 'src.atm'
                     has no attribute 'withdraw'
 
-  because ``atm.py`` in the ``src`` folder_ does not have anything named ``withdraw`` in it.
+  because ``atm/__init__.py`` in the ``src`` folder_ does not have anything named ``withdraw`` in it.
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 

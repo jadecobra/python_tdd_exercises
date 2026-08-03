@@ -267,7 +267,7 @@ current light     timer            show
     # AssertionError
     # NameError
 
-* I add an `import statement`_ at the top of the file_ so that I can test ``traffic_light.py`` from the ``src`` folder_
+* I add an `import statement`_ at the top of the file_
 
   .. code-block:: python
     :linenos:
@@ -283,9 +283,10 @@ current light     timer            show
 
   .. code-block:: python
 
-    AttributeError: module 'src.traffic_light' has no attribute 'show'
+    AttributeError: module 'src.traffic_light'
+                    has no attribute 'show'
 
-  because ``traffic_light.py`` in the ``src`` folder_ does not have anything named ``show`` in it
+  because ``traffic_light/__init__.py`` in the ``src`` folder_ does not have anything named ``show`` in it
 
   .. admonition:: If you get :ref:`ModuleNotFoundError<what is a module?>`
 

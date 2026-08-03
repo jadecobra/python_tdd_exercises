@@ -287,7 +287,7 @@ move w_return
     AttributeError: module 'src.functions'
                     has no attribute 'w_return'
 
-  because ``functions.py`` in the ``src`` folder_ does not have anything named ``w_return`` in it.
+  because ``functions/__init__.py`` in the ``src`` folder_ does not have anything named ``w_return`` in it.
 
 ----
 
@@ -385,7 +385,7 @@ move w_return_none
     AttributeError: module 'src.functions'
                     has no attribute 'w_return_none'
 
-  because ``functions.py`` in the ``src`` folder_ does not have anything named ``w_return_none`` in it.
+  because ``functions/__init__.py`` in the ``src`` folder_ does not have anything named ``w_return_none`` in it.
 
 ----
 
