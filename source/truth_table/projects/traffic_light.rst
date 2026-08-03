@@ -2877,19 +2877,17 @@ I want the **Traffic Light** to show ``WALK`` when a person can cross the street
 ----
 
 *************************************************************************************
-test_red_light_w_walk
+test_red_light_timer_done_w_walk
 *************************************************************************************
 
-The :ref:`truth table` for if the **Traffic Light** is :red:`RED` AND the timer is done with the walk sign is
+The :ref:`truth table` for if the **Traffic Light** is :red:`RED` AND the timer is :green:`done` is
 
-================  =============== ================= =================================
-current light     timer           walk button       output
-================  =============== ================= =================================
-:red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
-:red:`RED`        :green:`done`   :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
-================  =============== ================= =================================
-
-----
+================  ===============  =================  =================================
+current light     timer            walk button        output
+================  ===============  =================  =================================
+:red:`RED`        :green:`done`    :green:`pushed`    :red:`RED` + :green:`WALK`
+:red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN` + :red:`NO WALK`
+================  ===============  =================  =================================
 
 =================================================================================
 :red:`RED`: make it fail
@@ -2897,19 +2895,20 @@ current light     timer           walk button       output
 
 ----
 
-I add the value for the ``current_light`` parameter in the :ref:`call<how to call a function with input>` to the ``control`` :ref:`function<what is a function?>` for if the light is :red:`RED` AND the timer is :green:`done` and the walk button is :green:`pushed`, to make it clearer, then I change the expectation of the first :ref:`assertion<what is an assertion?>` in :ref:`test_red_light_w_walk_button`
+* I go back to the terminal_ where the tests are running
+* I change the expectation of the first :ref:`assertion<what is an assertion?>` to ``(RED, 'WALK')`` in :ref:`test_red_light_timer_done_walk_button` for if the current light is :red:`RED` AND the timer is :green:`done` AND the walk button is :green:`pushed`
 
-================  =============== ================= =================================
-current light     timer           walk button       output
-================  =============== ================= =================================
-:red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
-================  =============== ================= =================================
+  ================  ===============  =================  =================================
+  current light     timer            walk button        output
+  ================  ===============  =================  =================================
+  :red:`RED`        :green:`done`    :green:`pushed`    :red:`RED` + :green:`WALK`
+  ================  ===============  =================  =================================
 
-.. code-block:: python
-  :lineno-start: 10
-  :emphasize-lines: 4, 8
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 8
 
-        def test_red_light_w_walk_button(self):
+        def test_red_light_timer_done_walk_button(self):
             self.assertEqual(
                 src.traffic_light.control(
                     current_light=RED,
@@ -2919,11 +2918,11 @@ current light     timer           walk button       output
                 (RED, 'WALK')
             )
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: 'RED' != ('RED', 'WALK')
+    AssertionError: 'RED' != ('RED', 'WALK')
 
 ----
 
@@ -2959,17 +2958,14 @@ I change the :ref:`return statement<the return statement>` for this case, in the
 
       return green
 
-the test passes. When the ``control`` :ref:`function<what is a function?>` is called
+the test passes.
 
-* if the timer is :red:`NOT done` it returns the current light
-* if the timer is :green:`done`
+.. code-block:: python
 
-  - it returns :red:`RED` if the current light is :yellow:`YELLOW`
-  - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-  - if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
-
-    * it returns ``'RED', 'WALK'`` if the walk button is :green:`pushed`
-    * it returns :green:`GREEN` if the walk button is :red:`NOT pushed`
+  control(
+      current_light='RED', timer_done=True,
+      walk_button=True
+  ) -> 'RED', 'WALK'
 
 ----
 
@@ -2979,20 +2975,19 @@ the test passes. When the ``control`` :ref:`function<what is a function?>` is ca
 
 ----
 
-* I add values for the other parameters, to make it clearer for if the light is :red:`RED` AND the timer is :green:`done`, and the walk button is :green:`pushed`, then I change the expectation of the second :ref:`assertion<what is an assertion?>` in :ref:`test_red_light_w_walk_button` in ``tests/test_traffic_light.py``
+* I change the expectation of the second :ref:`assertion<what is an assertion?>` to ``(GREEN, 'NO WALK')`` in :ref:`test_red_light_timer_done_walk_button` if the current light is :red:`RED` AND the timer is :green:`done` AND the walk button is :red:`NOT pushed`, in ``tests/test_traffic_light.py``
 
-  ================  =============== ================= =================================
-  current light     timer           walk button       output
-  ================  =============== ================= =================================
-  :red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
-  :red:`RED`        :green:`done`   :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
-  ================  =============== ================= =================================
+  ================  ===============  =================  =================================
+  current light     timer            walk button        output
+  ================  ===============  =================  =================================
+  :red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN` + :red:`NO WALK`
+  ================  ===============  =================  =================================
 
   .. code-block:: python
     :lineno-start: 10
-    :emphasize-lines: 13, 15, 17
+    :emphasize-lines: 16
 
-        def test_red_light_w_walk_button(self):
+        def test_red_light_timer_done_walk_button(self):
             self.assertEqual(
                 src.traffic_light.control(
                     current_light=RED,
@@ -3001,7 +2996,6 @@ the test passes. When the ``control`` :ref:`function<what is a function?>` is ca
                 ),
                 (RED, 'WALK')
             )
-
             self.assertEqual(
                 src.traffic_light.control(
                     current_light=RED,
@@ -3010,6 +3004,8 @@ the test passes. When the ``control`` :ref:`function<what is a function?>` is ca
                 ),
                 (GREEN, 'NO WALK')
             )
+
+        def test_red_light_timer_not_done_walk_button(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3024,7 +3020,7 @@ the test passes. When the ``control`` :ref:`function<what is a function?>` is ca
     :emphasize-lines: 19
 
     def control(
-            current_light='RED', timer_done=False,
+            current_light, timer_done,
             walk_button=False,
         ):
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
@@ -3043,33 +3039,28 @@ the test passes. When the ``control`` :ref:`function<what is a function?>` is ca
 
         return green, 'NO WALK'
 
-  the test passes. When the ``control`` :ref:`function<what is a function?>` is called
-
-  * if the timer is :red:`NOT done` it returns the current light
-  * if the timer is :green:`done`
-
-    - it returns :red:`RED` if the current light is :yellow:`YELLOW`
-    - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-    - if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
-
-      * it returns ``'RED', 'WALK'`` if the walk button is :green:`pushed`
-      * it returns ``'GREEN', 'NO WALK'`` if the walk button is :red:`NOT pushed`
-
-* I change the third :ref:`assertion<what is an assertion?>` for if the light is :red:`RED` AND the timer is :red:`NOT done`, and the walk button is :green:`pushed`, in :ref:`test_red_light_w_walk_button` in ``tests/test_traffic_light.py``
-
-  ================  =============== ================= =================================
-  current light     timer           walk button       output
-  ================  =============== ================= =================================
-  :red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
-  :red:`RED`        :green:`done`   :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
-  :red:`RED`        :red:`NOT done` :green:`pushed`   :red:`RED` + :green:`WALK`
-  ================  =============== ================= =================================
+  the test passes.
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 22-23, 26
 
-        def test_red_light_w_walk_button(self):
+    control(
+        current_light='RED', timer_done=True,
+        walk_button=True
+    ) -> 'RED', 'WALK'
+    control(
+        current_light='RED', timer_done=True,
+        walk_button=False
+    ) -> 'GREEN', 'NO WALK'
+
+* I change the name of the test from :ref:`test_red_light_timer_done_walk_button` to :ref:`test_red_light_timer_done_w_walk`
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 3
+
+    class TestTrafficLight(unittest.TestCase):
+
+        def test_red_light_timer_done_w_walk(self):
             self.assertEqual(
                 src.traffic_light.control(
                     current_light=RED,
@@ -3079,15 +3070,48 @@ the test passes. When the ``control`` :ref:`function<what is a function?>` is ca
                 (RED, 'WALK')
             )
 
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=RED,
-                    timer_done=True,
-                    walk_button=False,
-                ),
-                (GREEN, 'NO WALK')
-            )
+* I add a git_ commit message in the other terminal_
 
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am 'add test_red_light_timer_done_w_walk'
+
+----
+
+*************************************************************************************
+test_red_light_timer_not_done_w_walk
+*************************************************************************************
+
+The :ref:`truth table` for if the **Traffic Light** is :red:`RED` AND the timer is :red:`NOT done` is
+
+================  ===============  =================  =================================
+current light     timer            walk button        output
+================  ===============  =================  =================================
+:red:`RED`        :red:`NOT done`  :green:`pushed`    :red:`RED` + :green:`WALK`
+:red:`RED`        :red:`NOT done`  :red:`NOT pushed`  :red:`RED` + :green:`WALK`
+================  ===============  =================  =================================
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I change the expectation of the first :ref:`assertion<what is an assertion?>` to ``('RED', 'WALK')`` in :ref:`test_red_light_timer_not_done` for if the light is :red:`RED` AND the timer is :red:`NOT done` AND the walk button is :green:`pushed`
+
+  ================  ===============  =================  =================================
+  current light     timer            walk button        output
+  ================  ===============  =================  =================================
+  :red:`RED`        :red:`NOT done`  :green:`pushed`    :red:`RED` + :green:`WALK`
+  ================  ===============  =================  =================================
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 8
+
+        def test_red_light_timer_not_done_walk_button(self):
             self.assertEqual(
                 src.traffic_light.control(
                     current_light=RED,
@@ -3103,6 +3127,14 @@ the test passes. When the ``control`` :ref:`function<what is a function?>` is ca
 
     AssertionError: 'RED' != ('RED', 'WALK')
 
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
 * I add an :ref:`if statement<if statements>` for this case to the one for if the timer is :red:`NOT done`, in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
@@ -3110,7 +3142,7 @@ the test passes. When the ``control`` :ref:`function<what is a function?>` is ca
     :emphasize-lines: 8-9
 
     def control(
-            current_light='RED', timer_done=False,
+            current_light, timer_done,
             walk_button=False,
         ):
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
@@ -3120,49 +3152,87 @@ the test passes. When the ``control`` :ref:`function<what is a function?>` is ca
                 return current_light, 'WALK'
             return current_light
 
-        if current_light == yellow:
-            return red
-
-        if current_light == green:
-            return yellow
-
-        if walk_button:
-            return red, 'WALK'
-
-        return green, 'NO WALK'
-
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
     AssertionError: ('RED', 'WALK') != 'RED'
 
-  this time for the next :ref:`assertion<what is an assertion?>`
-
-* I add values for the other parameters in the next :ref:`assertion<what is an assertion?>`, to make it clearer for the case where the light is :red:`RED` AND the timer is :red:`NOT done`, and the walk button is :red:`NOT pushed`,  in :ref:`test_red_light_w_walk_button` in ``tests/test_traffic_light.py``
-
-  ================  =============== ================= =================================
-  current light     timer           walk button       output
-  ================  =============== ================= =================================
-  :red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
-  :red:`RED`        :green:`done`   :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
-  :red:`RED`        :red:`NOT done` :green:`pushed`   :red:`RED` + :green:`WALK`
-  :red:`RED`        :red:`NOT done` :red:`NOT pushed` :red:`RED` + :green:`WALK`
-  ================  =============== ================= =================================
+  this time for the next :ref:`assertion<what is an assertion?>` in :ref:`test_red_light_timer_not_done_walk_button`.
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 30-35
 
-        def test_red_light_w_walk_button(self):
+    control(
+        current_light='RED', timer_done=True,
+        walk_button=True
+    ) -> 'RED', 'WALK'
+    control(
+        current_light='RED', timer_done=True,
+        walk_button=False
+    ) -> 'GREEN', 'NO WALK'
+    control(
+        current_light='RED', timer_done=False,
+        walk_button=True
+    ) -> 'RED', 'WALK'
+
+* I change the expectation of the second :ref:`assertion<what is an assertion?>` to ``('RED', 'WALK')`` in :ref:`test_red_light_timer_not_done_walk_button` for if the light is :red:`RED` AND the timer is :red:`NOT done` AND the walk button is :red:`NOT pushed`,  in ``tests/test_traffic_light.py``
+
+  ================  ===============  =================  =================================
+  current light     timer            walk button        output
+  ================  ===============  =================  =================================
+  :red:`RED`        :red:`NOT done`  :red:`NOT pushed`  :red:`RED` + :green:`WALK`
+  ================  ===============  =================  =================================
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 16
+
+        def test_red_light_timer_not_done_walk_button(self):
             self.assertEqual(
                 src.traffic_light.control(
                     current_light=RED,
-                    timer_done=True,
+                    timer_done=False,
                     walk_button=True,
                 ),
                 (RED, 'WALK')
             )
+            self.assertEqual(
+                src.traffic_light.control(
+                    current_light=RED,
+                    timer_done=False,
+                    walk_button=False,
+                ),
+                (RED, 'WALK')
+            )
+
+        def test_yellow_light_timer_done_walk_button(self):
+
+  the test passes.
+
+  .. code-block:: python
+
+    control(
+        current_light='RED', timer_done=True,
+        walk_button=True
+    ) -> 'RED', 'WALK'
+    control(
+        current_light='RED', timer_done=True,
+        walk_button=False
+    ) -> 'GREEN', 'NO WALK'
+    control(
+        current_light='RED', timer_done=False,
+        walk_button=True
+    ) -> 'RED', 'WALK'
+    control(
+        current_light='RED', timer_done=False,
+        walk_button=False
+    ) -> 'RED', 'WALK'
+
+* I change the name of the test from :ref:`test_red_light_timer_not_done_walk_button` to :ref:`test_red_light_timer_not_done_w_walk`
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 11
 
             self.assertEqual(
                 src.traffic_light.control(
@@ -3173,6 +3243,7 @@ the test passes. When the ``control`` :ref:`function<what is a function?>` is ca
                 (GREEN, 'NO WALK')
             )
 
+        def test_red_light_timer_not_done_w_walk(self):
             self.assertEqual(
                 src.traffic_light.control(
                     current_light=RED,
@@ -3182,51 +3253,43 @@ the test passes. When the ``control`` :ref:`function<what is a function?>` is ca
                 (RED, 'WALK')
             )
 
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=RED,
-                    timer_done=False,
-                    walk_button=False,
-                ),
-                (RED, 'WALK')
-            )
-
-        def test_yellow_light_w_walk_button(self):
-
-  the test passes. When the ``control`` :ref:`function<what is a function?>` is called
-
-  * if the timer is :red:`NOT done`
-
-    - it returns ``'RED', 'WALK'`` if the current light is :red:`RED`
-    - it returns the current light if the current light is NOT :red:`RED`
-
-  * if the timer is :green:`done`
-
-    - it returns :red:`RED` if the current light is :yellow:`YELLOW`
-    - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-    - if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
-
-      * it returns ``'RED', 'WALK'`` if the walk button is :green:`pushed`
-      * it returns ``'GREEN', 'NO WALK'`` if the walk button is :red:`NOT pushed`
-
-* I change the name of the test from :ref:`test_red_light_w_walk_button` to :ref:`test_red_light_w_walk`
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 3
+    :emphasize-lines: 1-2
 
-    class TestTrafficLight(unittest.TestCase):
+    git commit -am \
+    'add test_red_light_timer_not_done_w_walk'
 
-        def test_red_light_w_walk(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=RED,
-                    timer_done=True,
-                    walk_button=True,
-                ),
-                (RED, 'WALK')
-            )
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----
+BOOM BOOM BOOM BAP
 ----
 
 *************************************************************************************
@@ -4591,32 +4654,32 @@ I ran tests for a **Traffic Light** that has a timer and a button for people to 
 
 then this is the :ref:`truth table` for the Traffic Light
 
-================  =============== ================= =================================
-current light     timer           walk button       output
-================  =============== ================= =================================
-:red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
-:red:`RED`        :green:`done`   :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
-:red:`RED`        :red:`NOT done` :green:`pushed`   :red:`RED` + :green:`WALK`
-:red:`RED`        :red:`NOT done` :red:`NOT pushed` :red:`RED` + :green:`WALK`
-================  =============== ================= =================================
+================  ===============  =================  =================================
+current light     timer            walk button        output
+================  ===============  =================  =================================
+:red:`RED`        :green:`done`    :green:`pushed`    :red:`RED` + :green:`WALK`
+:red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN` + :red:`NO WALK`
+:red:`RED`        :red:`NOT done`  :green:`pushed`    :red:`RED` + :green:`WALK`
+:red:`RED`        :red:`NOT done`  :red:`NOT pushed`  :red:`RED` + :green:`WALK`
+================  ===============  =================  =================================
 
-================  =============== ================= =================================
-current light     timer           walk button       output
-================  =============== ================= =================================
-:yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
-:yellow:`YELLOW`  :green:`done`   :red:`NOT pushed` :red:`RED` + :green:`WALK`
-:yellow:`YELLOW`  :red:`NOT done` :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
-:yellow:`YELLOW`  :red:`NOT done` :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
-================  =============== ================= =================================
+================  ===============  =================  =================================
+current light     timer            walk button        output
+================  ===============  =================  =================================
+:yellow:`YELLOW`  :green:`done`    :green:`pushed`    :red:`RED` + :green:`WALK`
+:yellow:`YELLOW`  :green:`done`    :red:`NOT pushed`  :red:`RED` + :green:`WALK`
+:yellow:`YELLOW`  :red:`NOT done`  :green:`pushed`    :yellow:`YELLOW` + :red:`NO WALK`
+:yellow:`YELLOW`  :red:`NOT done`  :red:`NOT pushed`  :yellow:`YELLOW` + :red:`NO WALK`
+================  ===============  =================  =================================
 
-================  =============== ================= =================================
-current light     timer           walk button       output
-================  =============== ================= =================================
-:green:`GREEN`    :green:`done`   :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
-:green:`GREEN`    :green:`done`   :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
-:green:`GREEN`    :red:`NOT done` :green:`pushed`   :green:`GREEN` + :red:`NO WALK`
-:green:`GREEN`    :red:`NOT done` :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
-================  =============== ================= =================================
+================  ===============  =================  =================================
+current light     timer            walk button        output
+================  ===============  =================  =================================
+:green:`GREEN`    :green:`done`    :green:`pushed`    :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :green:`done`    :red:`NOT pushed`  :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :red:`NOT done`  :green:`pushed`    :green:`GREEN` + :red:`NO WALK`
+:green:`GREEN`    :red:`NOT done`  :red:`NOT pushed`  :green:`GREEN` + :red:`NO WALK`
+================  ===============  =================  =================================
 
 The **Traffic Light** only shows ``'WALK'`` when the light is :red:`RED`.
 
