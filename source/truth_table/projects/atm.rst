@@ -89,7 +89,7 @@ start the project
         .. literalinclude:: ../../code/atm/make_tdd/makePythonTddATM.sh
           :language: python
           :linenos:
-          :emphasize-lines: 2-5, 12, 20
+          :emphasize-lines: 2-3, 10, 18
 
       * I run ``makePythonTdd.sh`` in the terminal_ to make the ``atm`` project
 
@@ -107,7 +107,7 @@ start the project
         .. literalinclude:: ../../code/atm/make_tdd/makePythonTddATM.ps1
           :language: Powershell
           :linenos:
-          :emphasize-lines: 1-4, 11, 19
+          :emphasize-lines: 1-2, 9, 17
 
       * I run ``makePythonTdd.ps1`` in the terminal_ to make the ``atm`` project
 

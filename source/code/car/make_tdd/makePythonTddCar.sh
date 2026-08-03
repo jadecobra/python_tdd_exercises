@@ -1,8 +1,6 @@
 #!/bin/bash
 uv init car
 cd car
-touch src/car.py
-rmdir src/car
 mkdir tests
 touch tests/__init__.py
 

@@ -1,8 +1,6 @@
 #!/bin/bash
 uv init atm
 cd atm
-touch src/atm.py
-rmdir src/atm
 mkdir tests
 touch tests/__init__.py
 

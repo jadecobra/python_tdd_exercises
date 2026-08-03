@@ -1,8 +1,6 @@
 #!/bin/bash
 uv init microwave
 cd microwave
-touch src/microwave.py
-rmdir src/microwave
 mkdir tests
 touch tests/__init__.py
 

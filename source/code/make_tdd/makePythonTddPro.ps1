@@ -1,8 +1,6 @@
 $PROJECT_NAME=$args[0]
 uv init $PROJECT_NAME
 cd $PROJECT_NAME
-New-Item "src/$PROJECT_NAME.py"
-Remove-Item "src/$PROJECT_NAME"
 mkdir tests
 New-Item tests/__init__.py
 

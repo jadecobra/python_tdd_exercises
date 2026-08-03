@@ -19,7 +19,7 @@ makePythonTdd with no variables
       .. literalinclude:: make_tdd/makePythonTddNoVariables.sh
         :language: python
         :linenos:
-        :emphasize-lines: 2-5, 12, 20
+        :emphasize-lines: 2-3, 10, 18
 
       * use chmod_ in the terminal_ to make the program_ executable
 
@@ -34,7 +34,7 @@ makePythonTdd with no variables
       .. literalinclude:: make_tdd/makePythonTddNoVariables.ps1
         :language: python
         :linenos:
-        :emphasize-lines: 1-4, 11, 19
+        :emphasize-lines: 1-2, 9, 17
 
 * change ``more_magic`` to the name of your Project and when the program_ is called to make a `Test Driven Development`_ any time you want
 

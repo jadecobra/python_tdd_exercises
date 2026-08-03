@@ -1,8 +1,6 @@
 #!/bin/bash
 uv init traffic_light
 cd traffic_light
-touch src/traffic_light.py
-rmdir src/traffic_light
 mkdir tests
 touch tests/__init__.py
 

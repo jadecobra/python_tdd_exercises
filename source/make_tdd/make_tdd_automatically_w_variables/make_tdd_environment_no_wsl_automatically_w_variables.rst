@@ -80,7 +80,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
   .. code-block:: shell
     :linenos:
-    :emphasize-lines: 2-5, 12, 20
+    :emphasize-lines: 2-3, 10, 18
 
     $PROJECT_NAME="dictionaries"
     mkdir $PROJECT_NAME

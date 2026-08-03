@@ -1,7 +1,6 @@
 uv init elevator
 cd elevator
 New-Item "src/elevator.py"
-Remove-Item "src/elevator"
 mkdir tests
 New-Item tests/__init__.py
 

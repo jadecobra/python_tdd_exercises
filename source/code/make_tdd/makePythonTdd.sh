@@ -2,8 +2,6 @@
 PROJECT_NAME=$1
 mkdir $PROJECT_NAME
 cd $PROJECT_NAME
-mkdir src
-touch src/$PROJECT_NAME.py
 mkdir tests
 touch tests/__init__.py
 

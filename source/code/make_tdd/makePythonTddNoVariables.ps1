@@ -1,7 +1,5 @@
 uv init more_magic
 cd more_magic
-New-Item "src/more_magic.py"
-Remove-Item "src/more_magic"
 mkdir tests
 New-Item tests/__init__.py
 

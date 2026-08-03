@@ -124,7 +124,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I use the `mv program`_ to change the name of ``main.py`` to ``test_type_error.py`` and move it to the ``tests`` folder_
+* I make an empty file_ for the tests in the ``tests`` folder_
 
   .. tab-set::
     :sync-group: os
@@ -133,19 +133,17 @@ start the project
       :sync: unix
 
       .. code-block:: python
-        :emphasize-lines: 1-2
+        :emphasize-lines: 1
 
-        mv src/test_type_error/__init__.py  tests/test_type_error.py
-        rmdir src/test_type_error
+        touch tests/test_type_error.py
 
     .. tab-item:: no WSL
       :sync: no_wsl
 
       .. code-block:: python
-        :emphasize-lines: 1-2
+        :emphasize-lines: 1
 
-        Move-Item src/test_type_error/__init__.py  tests/test_type_error.py
-        Remove-Item src/test_type_error
+        New-Item tests/test_type_error.py
 
   the terminal_ goes back to the command line.
 

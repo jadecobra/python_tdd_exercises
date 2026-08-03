@@ -130,7 +130,7 @@ start the project
 
         New-Item tests/__init__.py
 
-* I use the `mv program`_ to change the name of ``main.py`` to ``test_none.py`` and move it to the ``tests`` folder_
+* I make an empty file_ for the tests in the ``tests`` folder_
 
   .. tab-set::
     :sync-group: os
@@ -139,19 +139,17 @@ start the project
       :sync: unix
 
       .. code-block:: python
-        :emphasize-lines: 1-2
+        :emphasize-lines: 1
 
-        mv src/test_none/__init__.py  tests/test_none.py
-        rmdir src/test_none
+        touch tests/test_none.py
 
     .. tab-item:: no WSL
       :sync: no_wsl
 
       .. code-block:: python
-        :emphasize-lines: 1-2
+        :emphasize-lines: 1
 
-        Move-Item src/test_none/__init__.py  tests/test_none.py
-        Remove-Item src/test_none
+        New-Item tests/test_none.py
 
 * I open ``test_none.py``
 

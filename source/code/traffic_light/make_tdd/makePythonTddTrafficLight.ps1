@@ -1,7 +1,5 @@
 uv init traffic_light
 cd traffic_light
-New-Item "src/traffic_light.py"
-Remove-Item "src/traffic_light"
 mkdir tests
 New-Item tests/__init__.py
 
