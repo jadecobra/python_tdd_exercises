@@ -216,7 +216,7 @@ test_red_light_timer_done
 
     class TestTrafficLight(unittest.TestCase):
 
-        def test_red_light(self):
+        def test_red_light_timer_done(self):
             self.assertEqual(
                 src.traffic_light.control(
                     current_light='RED',
@@ -291,7 +291,7 @@ test_red_light_timer_done
 
 * I open ``traffic_light/__init__.py`` from the ``src`` folder_
 
-* I add a :ref:`function<what is a function?>` to ``src/traffic_light/__init__.py``
+* I delete all the text in the file_ then add a :ref:`function<what is a function?>` to ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -452,6 +452,106 @@ test_red_light_timer_not_done
     control(current_light='RED'   , timer_done=True ) -> 'GREEN'
     control(current_light='RED'   , timer_done=False) -> 'RED'
 
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a global :ref:`variable<what is a variable?>` for ``'RED'`` to ``tests/test_traffic_light.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5
+
+    import src.traffic_light
+    import unittest
+
+
+    RED = 'RED'
+
+
+    class TestTrafficLight(unittest.TestCase):
+
+        def test_red_light_timer_done(self):
+
+* I use the new :ref:`variable<what is a variable?>` for ``'RED'`` in :ref:`test_red_light_timer_done`
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 4-5
+
+        def test_red_light_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    # current_light='RED',
+                    current_light=RED,
+                    timer_done=True,
+                ),
+                'GREEN'
+            )
+
+        def test_red_light_timer_not_done(self):
+
+  the test is still green.
+
+* I remove the commented line from :ref:`test_red_light_timer_done`
+
+  .. code-block:: python
+    :lineno-start: 10
+
+        def test_red_light_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    current_light=RED,
+                    timer_done=True,
+                ),
+                'GREEN'
+            )
+
+        def test_red_light_timer_not_done(self):
+
+* I use the new :ref:`variable<what is a variable?>` for ``'RED'`` in :ref:`test_red_light_timer_not_done`
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 4-5, 8-9
+
+        def test_red_light_timer_not_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    # current_light='RED',
+                    current_light=RED,
+                    timer_done=False,
+                ),
+                # 'RED'
+                RED
+            )
+
+
+    # Exceptions seen
+
+  still green.
+
+* I remove the commented lines from :ref:`test_red_light_timer_not_done`
+
+  .. code-block:: python
+    :lineno-start: 19
+
+        def test_red_light_timer_not_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    current_light=RED,
+                    timer_done=False,
+                ),
+                RED
+            )
+
+
+    # Exceptions seen
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -570,7 +670,7 @@ test_yellow_light_timer_not_done
   ================  ===============  ================
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 19
     :emphasize-lines: 10-17
 
         def test_yellow_light_timer_done(self):
