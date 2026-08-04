@@ -2844,6 +2844,31 @@ the test passes because :ref:`the call to the function<how to call a function wi
 ----
 
 *********************************************************************************
+close the project
+*********************************************************************************
+
+* I close ``test_type_error.py``
+* I click in the terminal_ where the tests are running
+* I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
+
+* I `change directory`_ to the parent of ``type_error``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_.
+
+----
+
+*********************************************************************************
 review
 *********************************************************************************
 

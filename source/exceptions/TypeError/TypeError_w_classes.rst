@@ -1693,6 +1693,33 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     git commit --all --message \
     'add test_type_error_w_the_uncallables'
 
+----
+
+*********************************************************************************
+close the project
+*********************************************************************************
+
+* I close ``tests/test_type_error.py`` and ``src/type_error.py``
+* I click in the terminal_ where the tests are running
+* I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
+
+* I `change directory`_ to the parent of ``type_error``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_.
+
+----
+
 *********************************************************************************
 review
 *********************************************************************************

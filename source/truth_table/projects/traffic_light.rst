@@ -443,6 +443,7 @@ test_green_light_timer_done
     def control(timer_done, current_light):
         if timer_done:
             return 'YELLOW'
+
         return 'GREEN'
 
   the test passes.
@@ -562,7 +563,7 @@ test_green_light_timer_done
 ----
 
 *********************************************************************************
-test_yellow_light_timer_done
+test_yellow_light_timer_not_done
 *********************************************************************************
 
 =================================================================================
@@ -619,17 +620,19 @@ test_yellow_light_timer_done
 
 ----
 
-* I add an :ref:`if statement<if statements>` to ``src/traffic_light/__init__.py``
+* I add an :ref:`if statement<if statements>` for when the current light is :yellow:`YELLOW` to ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4-5
+    :emphasize-lines: 5-6
 
     def control(timer_done, current_light):
         if timer_done:
             return 'YELLOW'
+
         if current_light == 'YELLOW':
             return current_light
+
         return 'GREEN'
 
   the test passes.
@@ -662,6 +665,11 @@ test_yellow_light_timer_done
 
 
     class TestTrafficLight(unittest.TestCase):
+
+* I use the new :ref:`variable<what is a variable?>` for ``'YELLOW'`` in :ref:`test_green_light_timer_done`
+
+  .. code-block:: python
+    :lineno-start: 19
 
 * I use the new :ref:`variable<what is a variable?>` for ``'YELLOW'`` in :ref:`test_yellow_light_timer_not_done`
 
@@ -760,20 +768,20 @@ test_yellow_light_timer_done
 
     AssertionError: 'YELLOW' != 'RED'
 
-* I add an :ref:`if statement<if statements>` for when the light is :yellow:`YELLOW` AND the timer is :green:`done`, in ``src/traffic_light/__init__.py``
+* I add an :ref:`if statement<if statements>` for when the timer is :green:`done` AND the light is :yellow:`YELLOW`, in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 3-4
 
-    def control(current_light, timer_done):
-        if not timer_done:
+    def control(timer_done, current_light):
+        if timer_done:
             if current_light == 'YELLOW':
-                return 'YELLOW'
-            return 'RED'
+                return 'RED'
+            return 'YELLOW'
 
         if current_light == 'YELLOW':
-            return 'RED'
+            return current_light
 
         return 'GREEN'
 
@@ -781,10 +789,10 @@ test_yellow_light_timer_done
 
   .. code-block:: python
 
-    control(current_light='RED'   , timer_done=True ) -> 'GREEN'
-    control(current_light='RED'   , timer_done=False) -> 'RED'
-    control(current_light='YELLOW', timer_done=True ) -> 'RED'
+    control(current_light='GREEN' , timer_done=False) -> 'GREEN'
+    control(current_light='GREEN' , timer_done=True ) -> 'YELLOW'
     control(current_light='YELLOW', timer_done=False) -> 'YELLOW'
+    control(current_light='YELLOW', timer_done=True ) -> 'RED'
 
 ----
 
