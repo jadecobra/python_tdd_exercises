@@ -181,18 +181,18 @@ then I get this :ref:`truth table`
 ================  ===============  ================
 current light     timer            output
 ================  ===============  ================
-:red:`RED`        :green:`done`    :green:`GREEN`
-:red:`RED`        :red:`NOT done`  :red:`RED`
-:yellow:`YELLOW`  :green:`done`    :red:`RED`
-:yellow:`YELLOW`  :red:`NOT done`  :yellow:`YELLOW`
-:green:`GREEN`    :green:`done`    :yellow:`YELLOW`
 :green:`GREEN`    :red:`NOT done`  :green:`GREEN`
+:green:`GREEN`    :green:`done`    :yellow:`YELLOW`
+:yellow:`YELLOW`  :red:`NOT done`  :yellow:`YELLOW`
+:yellow:`YELLOW`  :green:`done`    :red:`RED`
+:red:`RED`        :red:`NOT done`  :red:`RED`
+:red:`RED`        :green:`done`    :green:`GREEN`
 ================  ===============  ================
 
 ----
 
 *********************************************************************************
-test_red_light_timer_done
+test_green_light_timer_not_done
 *********************************************************************************
 
 =================================================================================
@@ -202,12 +202,12 @@ test_red_light_timer_done
 ----
 
 * I go back to the terminal_ where the tests are running
-* I change :ref:`test_failure` to :ref:`test_red_light_timer_done`, then add an :ref:`assertion<what is an assertion?>` for if the light is :red:`RED` AND the timer is :green:`done`
+* I change :ref:`test_failure` to :ref:`test_green_light_timer_not_done`, then add an :ref:`assertion<what is an assertion?>` for if the light is :green:`GREEN` AND the timer is :red:`NOT done`
 
   ================  ===============  ================
   current light     timer            output
   ================  ===============  ================
-  :red:`RED`        :green:`done`    :green:`GREEN`
+  :green:`GREEN`    :red:`NOT done`  :green:`GREEN`
   ================  ===============  ================
 
   .. code-block:: python
@@ -216,11 +216,11 @@ test_red_light_timer_done
 
     class TestTrafficLight(unittest.TestCase):
 
-        def test_red_light_timer_done(self):
+        def test_green_light_timer_not_done(self):
             self.assertEqual(
                 src.traffic_light.control(
-                    current_light='RED',
-                    timer_done=True,
+                    timer_done=False,
+                    current_light='GREEN',
                 ),
                 'GREEN'
             )
@@ -228,6 +228,7 @@ test_red_light_timer_done
 
     # Exceptions seen
     # AssertionError
+
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -273,7 +274,7 @@ test_red_light_timer_done
   .. code-block:: python
 
     AttributeError: module 'src.traffic_light'
-                    has no attribute 'show'
+                    has no attribute 'control'
 
   because ``traffic_light/__init__.py`` in the ``src`` folder_ does not have anything named ``control`` in it
 
@@ -305,7 +306,7 @@ test_red_light_timer_done
   .. code-block:: python
 
     TypeError: control() got
-               an unexpected keyword argument 'current_light'
+               an unexpected keyword argument 'timer_done'
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``tests/test_traffic_light.py``
 
@@ -320,13 +321,13 @@ test_red_light_timer_done
     # AttributeError
     # TypeError
 
-* I add ``current_light`` to the :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
+* I add ``timer_done`` to the :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1
 
-    def control(current_light):
+    def control(timer_done):
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -334,15 +335,15 @@ test_red_light_timer_done
   .. code-block:: python
 
     TypeError: control() got an
-               unexpected keyword argument 'timer_done'
+               unexpected keyword argument 'current_light'
 
-* I add ``timer_done`` to the :ref:`function signature<what is a function?>`
+* I add ``current_light`` to the :ref:`function signature<what is a function?>`
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1
 
-    def control(current_light, timer_done):
+    def control(timer_done, current_light):
         return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -364,19 +365,19 @@ test_red_light_timer_done
 
   .. code-block:: python
 
-    control(current_light='RED'   , timer_done=True ) -> 'GREEN'
+    control(current_light='GREEN' , timer_done=False) -> 'GREEN'
 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_red_light_timer_done'
+    git commit -am 'add test_green_light_timer_not_done'
 
 ----
 
 *********************************************************************************
-test_red_light_timer_not_done
+test_green_light_timer_done
 *********************************************************************************
 
 =================================================================================
@@ -386,34 +387,34 @@ test_red_light_timer_not_done
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test with an :ref:`assertion<what is an assertion?>` for if the light is :red:`RED` AND the timer is :red:`NOT done`, in ``tests/test_traffic_light.py``
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the light is :green:`GREEN` AND the timer is :green:`done`, to ``tests/test_traffic_light.py``
 
   ================  ===============  ================
   current light     timer            output
   ================  ===============  ================
-  :red:`RED`        :red:`NOT done`  :red:`RED`
+  :green:`GREEN`    :green:`done`    :yellow:`YELLOW`
   ================  ===============  ================
 
   .. code-block:: python
     :lineno-start: 7
     :emphasize-lines: 10-17
 
-        def test_red_light_timer_done(self):
+        def test_green_light_timer_not_done(self):
             self.assertEqual(
                 src.traffic_light.control(
-                    current_light='RED',
-                    timer_done=True,
+                    timer_done=False,
+                    current_light='GREEN',
                 ),
                 'GREEN'
             )
 
-        def test_red_light_timer_not_done(self):
+        def test_green_light_timer_done(self):
             self.assertEqual(
                 src.traffic_light.control(
-                    current_light='RED',
-                    timer_done=False,
+                    timer_done=True,
+                    current_light='GREEN',
                 ),
-                'RED'
+                'YELLOW'
             )
 
 
@@ -423,7 +424,7 @@ test_red_light_timer_not_done
 
   .. code-block:: python
 
-    AssertionError: 'GREEN' != 'RED'
+    AssertionError: 'GREEN' != 'YELLOW'
 
 ----
 
@@ -439,18 +440,17 @@ test_red_light_timer_not_done
     :linenos:
     :emphasize-lines: 2-3
 
-    def control(current_light, timer_done):
-        if not timer_done:
-            return 'RED'
-
+    def control(timer_done, current_light):
+        if timer_done:
+            return 'YELLOW'
         return 'GREEN'
 
   the test passes.
 
   .. code-block:: python
 
-    control(current_light='RED'   , timer_done=True ) -> 'GREEN'
-    control(current_light='RED'   , timer_done=False) -> 'RED'
+    control(current_light='GREEN' , timer_done=False) -> 'GREEN'
+    control(current_light='GREEN' , timer_done=True ) -> 'YELLOW'
 
 ----
 
@@ -460,7 +460,7 @@ test_red_light_timer_not_done
 
 ----
 
-* I add a global :ref:`variable<what is a variable?>` for ``'RED'`` to ``tests/test_traffic_light.py``
+* I add a global :ref:`variable<what is a variable?>` for ``'GREEN'`` to ``tests/test_traffic_light.py``
 
   .. code-block:: python
     :linenos:
@@ -470,64 +470,64 @@ test_red_light_timer_not_done
     import unittest
 
 
-    RED = 'RED'
+    GREEN = 'GREEN'
 
 
     class TestTrafficLight(unittest.TestCase):
 
-        def test_red_light_timer_done(self):
+        def test_green_light_timer_not_done(self):
 
-* I use the new :ref:`variable<what is a variable?>` for ``'RED'`` in :ref:`test_red_light_timer_done`
+* I use the new :ref:`variable<what is a variable?>` for ``'GREEN'`` in :ref:`test_green_light_timer_not_done`
 
   .. code-block:: python
     :lineno-start: 10
-    :emphasize-lines: 4-5
+    :emphasize-lines: 5-6, 8-9
 
-        def test_red_light_timer_done(self):
+        def test_green_light_timer_not_done(self):
             self.assertEqual(
                 src.traffic_light.control(
-                    # current_light='RED',
-                    current_light=RED,
-                    timer_done=True,
+                    timer_done=False,
+                    # current_light='GREEN',
+                    current_light=GREEN,
                 ),
-                'GREEN'
+                # 'GREEN'
+                GREEN
             )
 
-        def test_red_light_timer_not_done(self):
+        def test_green_light_timer_done(self):
 
   the test is still green.
 
-* I remove the commented line from :ref:`test_red_light_timer_done`
+* I remove the commented lines from :ref:`test_green_light_timer_not_done`
 
   .. code-block:: python
     :lineno-start: 10
 
-        def test_red_light_timer_done(self):
+        def test_green_light_timer_not_done(self):
             self.assertEqual(
                 src.traffic_light.control(
-                    current_light=RED,
-                    timer_done=True,
+                    timer_done=False,
+                    current_light=GREEN,
                 ),
-                'GREEN'
+                GREEN
             )
 
-        def test_red_light_timer_not_done(self):
+        def test_green_light_timer_done(self):
 
-* I use the new :ref:`variable<what is a variable?>` for ``'RED'`` in :ref:`test_red_light_timer_not_done`
+* I use the new :ref:`variable<what is a variable?>` for ``'GREEN'`` in :ref:`test_green_light_timer_done`
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 4-5, 8-9
+    :emphasize-lines: 5-6
 
-        def test_red_light_timer_not_done(self):
+        def test_green_light_timer_done(self):
             self.assertEqual(
                 src.traffic_light.control(
-                    # current_light='RED',
-                    current_light=RED,
-                    timer_done=False,
+                    timer_done=True,
+                    # current_light='GREEN',
+                    current_light=GREEN,
                 ),
-                # 'RED'
-                RED
+                'YELLOW'
             )
 
 
@@ -535,18 +535,18 @@ test_red_light_timer_not_done
 
   still green.
 
-* I remove the commented lines from :ref:`test_red_light_timer_not_done`
+* I remove the commented lines from :ref:`test_green_light_timer_done`
 
   .. code-block:: python
     :lineno-start: 19
 
-        def test_red_light_timer_not_done(self):
+        def test_green_light_timer_done(self):
             self.assertEqual(
                 src.traffic_light.control(
-                    current_light=RED,
-                    timer_done=False,
+                    timer_done=True,
+                    current_light=GREEN,
                 ),
-                RED
+                'YELLOW'
             )
 
 
@@ -557,7 +557,7 @@ test_red_light_timer_not_done
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_red_light_timer_not_done'
+    git commit -am 'add test_green_light_timer_done'
 
 ----
 
@@ -572,34 +572,34 @@ test_yellow_light_timer_done
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a test with an :ref:`assertion<what is an assertion?>` for if the **Traffic Light** is :yellow:`YELLOW` AND the timer is :green:`done`, to ``tests/test_traffic_light.py``
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the **Traffic Light** is :yellow:`YELLOW` AND the timer is :red:`NOT done`, to ``tests/test_traffic_light.py``
 
   ================  ===============  ================
   current light     timer            output
   ================  ===============  ================
-  :yellow:`YELLOW`  :green:`done`    :red:`RED`
+  :yellow:`YELLOW`  :red:`NOT done`  :yellow:`YELLOW`
   ================  ===============  ================
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 19
     :emphasize-lines: 10-17
 
-        def test_red_light_timer_not_done(self):
+        def test_green_light_timer_done(self):
             self.assertEqual(
                 src.traffic_light.control(
-                    current_light='RED',
-                    timer_done=False,
+                    timer_done=True,
+                    current_light=GREEN,
                 ),
-                'RED'
+                'YELLOW'
             )
 
-        def test_yellow_light_timer_done(self):
+        def test_yellow_light_timer_not_done(self):
             self.assertEqual(
                 src.traffic_light.control(
+                    timer_done=False,
                     current_light='YELLOW',
-                    timer_done=True,
                 ),
-                'RED'
+                'YELLOW'
             )
 
 
@@ -609,7 +609,7 @@ test_yellow_light_timer_done
 
   .. code-block:: python
 
-    AssertionError: 'GREEN' != 'RED'
+    AssertionError: 'GREEN' != 'YELLOW'
 
 ----
 
@@ -623,35 +623,95 @@ test_yellow_light_timer_done
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5-6
+    :emphasize-lines: 4-5
 
-      def control(current_light, timer_done):
-          if not timer_done:
-              return 'RED'
-
-          if current_light == 'YELLOW':
-              return 'RED'
-
-          return 'GREEN'
+    def control(timer_done, current_light):
+        if timer_done:
+            return 'YELLOW'
+        if current_light == 'YELLOW':
+            return current_light
+        return 'GREEN'
 
   the test passes.
 
   .. code-block:: python
 
-    control(current_light='RED'   , timer_done=True ) -> 'GREEN'
-    control(current_light='RED'   , timer_done=False) -> 'RED'
-    control(current_light='YELLOW', timer_done=True ) -> 'RED'
+    control(current_light='GREEN' , timer_done=False) -> 'GREEN'
+    control(current_light='GREEN' , timer_done=True ) -> 'YELLOW'
+    control(current_light='YELLOW', timer_done=False) -> 'YELLOW'
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`global variable<what is a global variable?>` for ``'YELLOW'`` to ``tests/test_traffic_light.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5
+
+    import src.traffic_light
+    import unittest
+
+
+    GREEN, YELLOW = 'GREEN', 'YELLOW'
+
+
+    class TestTrafficLight(unittest.TestCase):
+
+* I use the new :ref:`variable<what is a variable?>` for ``'YELLOW'`` in :ref:`test_yellow_light_timer_not_done`
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 5-6, 8-9
+
+        def test_yellow_light_timer_not_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    timer_done=False,
+                    # current_light='YELLOW',
+                    current_light=YELLOW,
+                ),
+                # 'YELLOW'
+                YELLOW
+            )
+
+
+    # Exceptions seen
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_yellow_light_timer_not_done`
+
+  .. code-block:: python
+    :lineno-start: 28
+
+        def test_yellow_light_timer_not_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    timer_done=False,
+                    current_light=YELLOW,
+                ),
+                YELLOW
+            )
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
 
-    git commit -am 'add test_yellow_light_timer_done'
+    git commit -am 'add test_yellow_light_timer_not_done'
 
 ----
 
 *********************************************************************************
-test_yellow_light_timer_not_done
+test_yellow_light_timer_done
 *********************************************************************************
 
 =================================================================================
@@ -661,34 +721,34 @@ test_yellow_light_timer_not_done
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test with an :ref:`assertion<what is an assertion?>` for if the light is :yellow:`YELLOW` AND the timer is :red:`NOT done`, in ``tests/test_traffic_light.py``
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the light is :yellow:`YELLOW` AND the timer is :green:`done`, to ``tests/test_traffic_light.py``
 
   ================  ===============  ================
   current light     timer            output
   ================  ===============  ================
-  :yellow:`YELLOW`  :red:`NOT done`  :yellow:`YELLOW`
+  :yellow:`YELLOW`  :green:`done`    :red:`RED`
   ================  ===============  ================
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 28
     :emphasize-lines: 10-17
-
-        def test_yellow_light_timer_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light='YELLOW',
-                    timer_done=True,
-                ),
-                'RED'
-            )
 
         def test_yellow_light_timer_not_done(self):
             self.assertEqual(
                 src.traffic_light.control(
-                    current_light='YELLOW',
                     timer_done=False,
+                    current_light=YELLOW,
                 ),
-                'YELLOW'
+                YELLOW
+            )
+
+        def test_yellow_light_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    timer_done=True,
+                    current_light=YELLOW,
+                ),
+                'RED'
             )
 
 
@@ -698,9 +758,9 @@ test_yellow_light_timer_not_done
 
   .. code-block:: python
 
-    AssertionError: 'RED' != 'YELLOW'
+    AssertionError: 'YELLOW' != 'RED'
 
-* I add an :ref:`if statement<if statements>` to the one for if the timer is :red:`NOT done`, in ``src/traffic_light/__init__.py``
+* I add an :ref:`if statement<if statements>` for when the light is :yellow:`YELLOW` AND the timer is :green:`done`, in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -726,12 +786,110 @@ test_yellow_light_timer_not_done
     control(current_light='YELLOW', timer_done=True ) -> 'RED'
     control(current_light='YELLOW', timer_done=False) -> 'YELLOW'
 
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`global variable<what is a variable?>` for ``'YELLOW'`` to ``tests/test_traffic_light.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5
+
+    import src.traffic_light
+    import unittest
+
+
+    RED, YELLOW = 'RED', 'YELLOW'
+
+
+    class TestTrafficLight(unittest.TestCase):
+
+* I use the new :ref:`variable<what is a variable?>` for ``'YELLOW'`` in :ref:`test_yellow_light_timer_done`
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 4-5
+
+        def test_yellow_light_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    # current_light='YELLOW',
+                    current_light=YELLOW,
+                    timer_done=True,
+                ),
+                RED
+            )
+
+        def test_yellow_light_timer_done(self):
+
+  the test is still green.
+
+* I remove the commented line from :ref:`test_yellow_light_timer_done`
+
+  .. code-block:: python
+    :lineno-start: 28
+
+        def test_yellow_light_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    current_light=YELLOW,
+                    timer_done=True,
+                ),
+                RED
+            )
+
+        def test_yellow_light_timer_done(self):
+
+* I use the new :ref:`variable<what is a variable?>` for ``'YELLOW'`` in :ref:`test_yellow_light_timer_done`
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 4-5, 8-9
+
+        def test_yellow_light_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    # current_light='YELLOW',
+                    current_light=YELLOW,
+                    timer_done=False,
+                ),
+                # 'YELLOW'
+                YELLOW
+            )
+
+
+    # Exceptions seen
+
+  still green.
+
+* I remove the commented lines from :ref:`test_yellow_light_timer_done`
+
+  .. code-block:: python
+    :lineno-start: 37
+
+        def test_yellow_light_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    current_light=YELLOW,
+                    timer_done=False,
+                ),
+                YELLOW
+            )
+
+
+    # Exceptions seen
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_yellow_light_timer_not_done'
+    git commit -am 'add test_yellow_light_timer_done'
 
 ----
 
@@ -755,16 +913,16 @@ test_green_light_timer_done
   ================  ===============  ================
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 37
     :emphasize-lines: 10-17
 
         def test_yellow_light_timer_not_done(self):
             self.assertEqual(
                 src.traffic_light.control(
-                    current_light='YELLOW',
+                    current_light=YELLOW,
                     timer_done=False,
                 ),
-                'YELLOW'
+                YELLOW
             )
 
         def test_green_light_timer_done(self):
@@ -773,7 +931,7 @@ test_green_light_timer_done
                     current_light='GREEN',
                     timer_done=True,
                 ),
-                'YELLOW'
+                YELLOW
             )
 
 
@@ -852,7 +1010,7 @@ test_green_light_timer_not_done
   ================  ===============  ================
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 46
     :emphasize-lines: 10-17
 
         def test_green_light_timer_done(self):
@@ -861,7 +1019,7 @@ test_green_light_timer_not_done
                     current_light='GREEN',
                     timer_done=True,
                 ),
-                'YELLOW'
+                YELLOW
             )
 
         def test_green_light_timer_not_done(self):
@@ -882,7 +1040,7 @@ test_green_light_timer_not_done
 
     AssertionError: 'RED' != 'GREEN'
 
-* I add an :ref:`if statement<if statements>` to the one for if the timer is :red:`NOT done` in ``src/traffic_light/__init__.py``
+* I add an :ref:`if statement<if statements>` to ``if not timer_done:`` in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -915,6 +1073,142 @@ test_green_light_timer_not_done
     control(current_light='GREEN' , timer_done=True ) -> 'YELLOW'
     control(current_light='GREEN' , timer_done=False) -> 'GREEN'
 
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`global variable<what is a variable?>` for ``'GREEN'`` in ``tests/test_traffic_light.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5
+
+    import src.traffic_light
+    import unittest
+
+
+    RED, YELLOW, GREEN = 'RED', 'YELLOW', 'GREEN'
+
+
+    class TestTrafficLight(unittest.TestCase):
+
+        def test_red_light_timer_done(self):
+
+* I use the new :ref:`variable<what is a variable?>` for ``'GREEN'`` in :ref:`test_red_light_timer_done`
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 7-8
+
+        def test_red_light_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    current_light=RED,
+                    timer_done=True,
+                ),
+                # 'GREEN'
+                GREEN
+            )
+
+        def test_red_light_timer_not_done(self):
+
+  the test is still green.
+
+* I remove the commented line from :ref:`test_red_light_timer_done`
+
+  .. code-block:: python
+    :lineno-start: 10
+
+        def test_red_light_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    current_light=RED,
+                    timer_done=True,
+                ),
+                GREEN
+            )
+
+        def test_red_light_timer_not_done(self):
+
+* I use the new :ref:`variable<what is a variable?>` for ``'GREEN'`` in :ref:`test_green_light_timer_done`
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 4-5
+
+        def test_green_light_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    # current_light='GREEN',
+                    current_light=GREEN,
+                    timer_done=True,
+                ),
+                YELLOW
+            )
+
+        def test_green_light_timer_not_done(self):
+
+  still green.
+
+* I remove the commented line from :ref:`test_green_light_timer_done`
+
+  .. code-block:: python
+    :lineno-start: 46
+
+        def test_green_light_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    current_light=GREEN,
+                    timer_done=True,
+                ),
+                YELLOW
+            )
+
+        def test_green_light_timer_not_done(self):
+
+* I use the new :ref:`variable<what is a variable?>` for ``'GREEN'`` in :ref:`test_green_light_timer_not_done`
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 4-5, 8-9
+
+        def test_green_light_timer_not_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    # current_light='GREEN',
+                    current_light=GREEN,
+                    timer_done=False,
+                ),
+                # 'GREEN'
+                GREEN
+            )
+
+
+    # Exceptions seen
+
+  green.
+
+* I remove the commented lines from :ref:`test_green_light_timer_not_done`
+
+  .. code-block:: python
+    :lineno-start: 55
+
+        def test_green_light_timer_not_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    current_light=GREEN,
+                    timer_done=False,
+                ),
+                GREEN
+            )
+
+
+    # Exceptions seen
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block::
@@ -925,7 +1219,7 @@ test_green_light_timer_not_done
 ----
 
 *********************************************************************************
-refactor control if statements
+refactor if statements
 *********************************************************************************
 
 When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the timer is :red:`NOT done`
@@ -936,7 +1230,7 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
   - it returns :green:`GREEN` if the current light is :green:`GREEN`
   - it returns :red:`RED` if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
 
-* If the timer is :green:`done`
+* If none of the above :ref:`conditions<if statements>` are met
 
   - it returns :red:`RED` if the current light is :yellow:`YELLOW`
   - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
@@ -968,7 +1262,7 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
 
         return 'GREEN'
 
-  the test is still green. The ``control`` :ref:`function<what is a function?>` returns the current light when the timer is :red:`NOT done`
+  the tests are still green. The ``control`` :ref:`function<what is a function?>` returns the current light when the timer is :red:`NOT done`
 
 * I add a :ref:`return statement<the return statement>` to return the current light when the timer is :red:`NOT done`
 
@@ -992,11 +1286,52 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
         if current_light == 'GREEN':
             return 'YELLOW'
 
-        return 'GREEN'
+    return 'GREEN'
 
   still green.
 
-* I remove the other :ref:`if statements<if statements>` from the one for if the timer is :red:`NOT done` (lines 4-9) because they are no longer used
+* I add an :ref:`else clause<if statements>` for if the timer is :green:`done` and move the other :ref:`if statements` under it, to make it clearer
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 10-14
+
+    def control(current_light, timer_done):
+        if not timer_done:
+            return current_light
+            if current_light == 'YELLOW':
+                return 'YELLOW'
+            if current_light == 'GREEN':
+                return 'GREEN'
+            if current_light == 'RED':
+              return 'RED'
+        else:
+            if current_light == 'YELLOW':
+                return 'RED'
+            if current_light == 'GREEN':
+                return 'YELLOW'
+
+            return 'GREEN'
+
+  green.
+
+* I add an :ref:`if statement<if statements>` for if the timer is :green:`done` AND the light is :red:`RED`, to make it clearer
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 5-6
+
+        else:
+            if current_light == 'YELLOW':
+                return 'RED'
+            if current_light == 'GREEN':
+                return 'YELLOW'
+            if current_light == 'RED':
+                return 'GREEN'
+
+  still green.
+
+* I remove the other :ref:`if statements<if statements>` from ``if not timer_done:`` (lines 4-9) because they are no longer used
 
   .. code-block:: python
     :linenos:
@@ -1004,60 +1339,51 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
     def control(current_light, timer_done):
         if not timer_done:
             return current_light
+        else:
+            if current_light == 'YELLOW':
+                return 'RED'
+            if current_light == 'GREEN':
+                return 'YELLOW'
+            if current_light == 'RED':
+                return 'GREEN'
 
-        if current_light == 'YELLOW':
-            return 'RED'
+  the tests are still green.
 
-        if current_light == 'GREEN':
-            return 'YELLOW'
-
-        return 'GREEN'
-
-* I add :ref:`variables<what is a variable?>` for the colors to use them to remove the repetition of ``'YELLOW'`` and ``'GREEN'``
+* I add :ref:`variables<what is a variable?>` for ``'RED'``, ``'YELLOW'`` and ``'GREEN'``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 2
 
     def control(current_light, timer_done):
-        yellow, green = 'YELLOW', 'GREEN'
-
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         if not timer_done:
-            return current_light
 
-        if current_light == 'YELLOW':
-            return 'RED'
-
-        if current_light == 'GREEN':
-            return 'YELLOW'
-
-        return 'GREEN'
-
-* I use the new :ref:`variables<what is a variable?>` to remove the repetition of ``'YELLOW'`` and ``'GREEN'``
+* I use the new :ref:`variables<what is a variable?>` for ``'RED'``, ``'YELLOW'`` and ``'GREEN'``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 7-8, 11-14, 16-17
+    :emphasize-lines: 6-17
 
     def control(current_light, timer_done):
-        yellow, green = 'YELLOW', 'GREEN'
-
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         if not timer_done:
             return current_light
+        else:
+            # if current_light == 'YELLOW':
+            if current_light == yellow:
+                # return 'RED'
+                return red
+            # if current_light == 'GREEN':
+            if current_light == green:
+                # return 'YELLOW'
+                return yellow
+            # if current_light == 'RED':
+            if current_light == red:
+                # return 'GREEN'
+                return green
 
-        # if current_light == 'YELLOW':
-        if current_light == yellow:
-            return 'RED'
-
-        # if current_light == 'GREEN':
-        if current_light == green:
-            # return 'YELLOW'
-            return yellow
-
-        # return 'GREEN'
-        return green
-
-  the test is still green.
+  still green.
 
 * I remove the commented lines from the ``control`` :ref:`function<what is a function?>`
 
@@ -1065,29 +1391,27 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
     :linenos:
 
     def control(current_light, timer_done):
-        yellow, green = 'YELLOW', 'GREEN'
-
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         if not timer_done:
             return current_light
-
-        if current_light == yellow:
-            return 'RED'
-
-        if current_light == green:
-            return yellow
-
-        return green
+        else:
+            if current_light == yellow:
+                return red
+            if current_light == green:
+                return yellow
+            if current_light == red:
+                return green
 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit 'refactor control if statements'
+    git commit 'refactor if statements'
 
 ----
 
-When the ``control`` :ref:`function<what is a function\?>` is :ref:`called<how to call a function with input>` it checks if the timer is :red:`NOT done`
+When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the timer is :red:`NOT done`
 
 * If the timer is :red:`NOT done` it returns the value of ``current_light``
 
@@ -1095,43 +1419,49 @@ When the ``control`` :ref:`function<what is a function\?>` is :ref:`called<how t
 
     control(current_light='RED'   , timer_done=False) -> 'RED'
     └── def control(current_light, timer_done):
-        ├── yellow, green = 'YELLOW', 'GREEN'
+        ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         └── if not timer_done:
             └── return current_light
                 return 'RED'
-            if current_light == yellow:
-                return 'RED'
-            if current_light == green:
-                return yellow
-            return green
+            else:
+                if current_light == yellow:
+                    return red
+                if current_light == green:
+                    return yellow
+                if current_light == red:
+                    return green
 
   .. code-block:: shell
 
     control(current_light='YELLOW', timer_done=False) -> 'YELLOW'
     └── def control(current_light, timer_done):
-        ├── yellow, green = 'YELLOW', 'GREEN'
+        ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         └── if not timer_done:
             └── return current_light
                 return 'YELLOW'
-            if current_light == yellow:
-                return 'RED'
-            if current_light == green:
-                return yellow
-            return green
+            else:
+                if current_light == yellow:
+                    return red
+                if current_light == green:
+                    return yellow
+                if current_light == red:
+                    return green
 
   .. code-block:: shell
 
     control(current_light='GREEN' , timer_done=False) -> 'YELLOW'
     └── def control(current_light, timer_done):
-        ├── yellow, green = 'YELLOW', 'GREEN'
+        ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         └── if not timer_done:
             └── return current_light
                 return 'GREEN'
-            if current_light == yellow:
-                return 'RED'
-            if current_light == green:
-                return yellow
-            return green
+            else:
+                if current_light == yellow:
+                    return red
+                if current_light == green:
+                    return yellow
+                if current_light == red:
+                    return green
 
 * If the timer is :green:`done` it checks the value of ``current_light``
 
@@ -1141,14 +1471,16 @@ When the ``control`` :ref:`function<what is a function\?>` is :ref:`called<how t
 
       control(current_light='YELLOW', timer_done=True ) -> 'RED'
       └── def control(current_light, timer_done):
-          ├── yellow, green = 'YELLOW', 'GREEN'
+          ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
           ├── if not timer_done:
           │       return current_light
-          └── if current_light == yellow:
-              └── return 'RED'
-              if current_light == green:
-                  return yellow
-              return green
+          └── else:
+              └── if current_light == yellow:
+                  └── return red
+                  if current_light == green:
+                      return yellow
+                  if current_light == red:
+                      return green
 
   - If the current light is :green:`GREEN` it returns :yellow:`YELLOW`
 
@@ -1156,281 +1488,35 @@ When the ``control`` :ref:`function<what is a function\?>` is :ref:`called<how t
 
       control(current_light='GREEN' , timer_done=True ) -> 'YELLOW'
       └── def control(current_light, timer_done):
-          ├── yellow, green = 'YELLOW', 'GREEN'
+          ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
           ├── if not timer_done:
           │       return current_light
-          ├── if current_light == yellow:
-          │       return 'RED'
-          └── if current_light == green:
-              └── return yellow
-              return green
+          └── else:
+              ├── if current_light == yellow:
+              │       return red
+              └── if current_light == green:
+                  └── return yellow
+                  if current_light == red:
+                      return green
 
-  - If the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN` it returns :green:`GREEN`
+  - If the current light is :red:`RED` it returns :green:`GREEN`
 
     .. code-block:: shell
 
       control(current_light='RED'   , timer_done=True ) -> 'GREEN'
       └── def control(current_light, timer_done):
-          ├── yellow, green = 'YELLOW', 'GREEN'
+          ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
           ├── if not timer_done:
           │       return current_light
-          ├── if current_light == yellow:
-          │       return 'RED'
-          ├── if current_light == green:
-          │       return yellow
-          └── return green
-
-----
-
-*********************************************************************************
-extract global variables
-*********************************************************************************
-
-* I add :ref:`global variables<what is a variable?>` for :red:`'RED'`, :yellow:`'YELLOW'` and :green:`'GREEN'` ``tests/test_traffic_light.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5
-
-    import src.traffic_light
-    import unittest
-
-
-    RED, YELLOW, GREEN = 'RED', 'YELLOW', 'GREEN'
-
-
-    class TestTrafficLight(unittest.TestCase):
-
-* I use the :ref:`variables<what is a variable?>` for :red:`'RED'` and :green:`'GREEN'` in :ref:`test_red_light_timer_done`
-
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 4-5, 8-9
-
-        def test_red_light_timer_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    # current_light='RED',
-                    current_light=RED,
-                    timer_done=True,
-                ),
-                # 'GREEN'
-                GREEN
-            )
-
-        def test_red_light_timer_not_done(self):
-
-  the test is still green.
-
-* I remove the commented lines from :ref:`test_red_light_timer_done`
-
-  .. code-block:: python
-    :lineno-start: 10
-
-        def test_red_light_timer_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=RED,
-                    timer_done=True,
-                ),
-                GREEN
-            )
-
-        def test_red_light_timer_not_done(self):
-
-* I use the :ref:`variable<what is a variable?>` for :red:`'RED'` in :ref:`test_red_light_timer_not_done`
-
-  .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 4-5, 8-9
-
-        def test_red_light_timer_not_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    # current_light='RED',
-                    current_light=RED,
-                    timer_done=False,
-                ),
-                # 'RED'
-                RED
-            )
-
-        def test_yellow_light_timer_done(self):
-
-  still green.
-
-* I remove the commented lines from :ref:`test_red_light_timer_not_done`
-
-  .. code-block:: python
-    :lineno-start: 19
-
-        def test_red_light_timer_not_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=RED,
-                    timer_done=False,
-                ),
-                RED
-            )
-
-        def test_yellow_light_timer_done(self):
-
-* I use the :ref:`variables<what is a variable?>` for :yellow:`'YELLOW'` and :red:`'RED'` in :ref:`test_yellow_light_timer_done`
-
-  .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 4-5, 8-9
-
-        def test_yellow_light_timer_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    # current_light='YELLOW',
-                    current_light=YELLOW,
-                    timer_done=True,
-                ),
-                # 'RED'
-                RED
-            )
-
-        def test_yellow_light_timer_not_done(self):
-
-  green.
-
-* I remove the commented lines from :ref:`test_yellow_light_timer_done`
-
-  .. code-block:: python
-    :lineno-start: 28
-
-        def test_yellow_light_timer_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=YELLOW,
-                    timer_done=True,
-                ),
-                RED
-            )
-
-        def test_yellow_light_timer_not_done(self):
-
-* I use the :ref:`variable<what is a variable?>` for :yellow:`'YELLOW'` in :ref:`test_yellow_light_timer_not_done`
-
-  .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 4-5, 8-9
-
-        def test_yellow_light_timer_not_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    # current_light='YELLOW',
-                    current_light=YELLOW,
-                    timer_done=False,
-                ),
-                # 'YELLOW'
-                YELLOW
-            )
-
-        def test_green_light_timer_done(self):
-
-  still green.
-
-* I remove the commented lines from :ref:`test_yellow_light_timer_not_done`
-
-  .. code-block:: python
-    :lineno-start: 37
-
-        def test_yellow_light_timer_not_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=YELLOW,
-                    timer_done=False,
-                ),
-                YELLOW
-            )
-
-        def test_green_light_timer_done(self):
-
-* I use the :ref:`variables<what is a variable?>` for :green:`'GREEN'` and :yellow:`'YELLOW'` in :ref:`test_green_light_timer_done`
-
-  .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 4-5, 8-9
-
-        def test_green_light_timer_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    # current_light='GREEN',
-                    current_light=GREEN,
-                    timer_done=True,
-                ),
-                # 'YELLOW'
-                YELLOW
-            )
-
-        def test_green_light_timer_not_done(self):
-
-  the test is still green.
-
-* I remove the commented lines from :ref:`test_green_light_timer_done`
-
-  .. code-block:: python
-    :lineno-start: 46
-
-        def test_green_light_timer_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=GREEN,
-                    timer_done=True,
-                ),
-                YELLOW
-            )
-
-        def test_green_light_timer_not_done(self):
-
-* I use the :ref:`variable<what is a variable?>` for :green:`'GREEN'` in :ref:`test_green_light_timer_not_done`
-
-  .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 4-5, 8-9
-
-        def test_green_light_timer_not_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    # current_light='GREEN',
-                    current_light=GREEN,
-                    timer_done=False,
-                ),
-                # 'GREEN'
-                GREEN
-            )
-
-
-    # Exceptions seen
-
-  still green.
-
-* I remove the commented lines from :ref:`test_green_light_timer_not_done`
-
-  .. code-block:: python
-    :lineno-start: 55
-
-        def test_green_light_timer_not_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=GREEN,
-                    timer_done=False,
-                ),
-                GREEN
-            )
-
-
-    # Exceptions seen
-
-* I add a git_ commit message in the other terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    git commit -am 'extract global variables'
+          └── else:
+              ├── if current_light == yellow:
+              │       return red
+              ├── if current_light == green:
+              │       return yellow
+              └── if current_light == red:
+                  └── return green
+
+* If none of the above :ref:`conditions<if statements>` are met it :ref:`returns None<test_functions_w_return_none>`.
 
 ----
 
@@ -1447,11 +1533,31 @@ current light     timer            output
 :green:`GREEN`    :red:`NOT done`  :green:`GREEN`
 ================  ===============  ================
 
-I want to add a walk button for a person to push when they want to cross the street. The inputs for the **Traffic Light** will then be
+This only considers one set of lights for traffic in one direction, which is not necessary if the street has no cross traffic, it also treats the current light as input. To make it more accurate the inputs have to consider the traffic in both directions
 
-* what color is the light now?
+* what traffic phase is this (cross, parallel or both)?
 * is the timer done?
-* was the walk button pushed?
+
+and the outputs will be the lights for Parallel and Cross Traffic which gives me this :ref:`truth table`
+
+========================= =============== ================  ================
+current phase             timer           parallel light    cross light
+========================= =============== ================  ================
+all :red:`RED`            :green:`done`   :red:`RED`        :red:`RED`
+all :red:`RED`            :red:`NOT done` :red:`RED`        :red:`RED`
+parallel :yellow:`YELLOW` :green:`done`   :yellow:`YELLOW`  :red:`RED`
+parallel :yellow:`YELLOW` :red:`NOT done` :yellow:`YELLOW`  :red:`RED`
+parallel :green:`GREEN`   :green:`done`   :green:`GREEN`    :red:`RED`
+parallel :green:`GREEN`   :red:`NOT done` :green:`GREEN`    :red:`RED`
+all :red:`RED`            :green:`done`   :red:`RED`        :red:`RED`
+all :red:`RED`            :red:`NOT done` :red:`RED`        :red:`RED`
+cross :yellow:`YELLOW`    :green:`done`   :red:`RED`        :yellow:`YELLOW`
+cross :yellow:`YELLOW`    :red:`NOT done` :red:`RED`        :yellow:`YELLOW`
+cross :green:`GREEN`      :green:`done`   :red:`RED`        :green:`GREEN`
+cross :green:`GREEN`      :red:`NOT done` :red:`RED`        :green:`GREEN`
+========================= =============== ================  ================
+
+The all :red:`RED` state makes sure that there are no cars moving through the intersection before changing lights again to avoid accidents.
 
 ----
 
@@ -1532,20 +1638,32 @@ current light     timer            walk button        output
 
     def control(current_light, timer_done, walk_button):
 
-  the terminal_ is my friend, and shows 3 failures with :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    FAILED ...test_green_light - TypeError:
-        control() missing 1 required positional argument: 'walk_button'
-    FAILED ...test_red_light - TypeError:
-        control() missing 1 required positional argument: 'walk_button'
-    FAILED ...test_yellow_light - TypeError:
-        control() missing 1 required positional argument: 'walk_button'
+    FAILED ...test_green_light_timer_done -
+        TypeError: control() missing 1
+                   required positional argument: 'walk_button'
+    FAILED ...test_green_light_timer_not_done -
+        TypeError: control() missing 1
+                   required positional argument: 'walk_button'
+    FAILED ...test_red_light_timer_done -
+        TypeError: control() missing 1
+                   required positional argument: 'walk_button'
+    FAILED ...test_red_light_timer_not_done -
+        TypeError: control() missing 1
+                   required positional argument: 'walk_button'
+    FAILED ...test_yellow_light_timer_done -
+        TypeError: control() missing 1
+                   required positional argument: 'walk_button'
+    FAILED ...test_yellow_light_timer_not_done -
+        TypeError: control() missing 1
+                   required positional argument: 'walk_button'
 
   because all the other :ref:`assertions<what is an assertion?>` :ref:`call<how to call a function with input>` the ``control`` :ref:`function<what is a function?>` with two arguments and I changed the :ref:`function signature<how to make a function that takes input>` to make it expect three.
 
-* I add a :ref:`default value<test_optional_arguments>` for the new :ref:`keyword argument<test_keyword_arguments>` to make it a choice not a requirement
+* I add a :ref:`default value<test_optional_arguments>` for the ``walk_button`` parameter, to make it a choice not a requirement
 
   .. code-block:: python
     :linenos:
@@ -1721,7 +1839,7 @@ current light     timer            walk button        output
 
 ----
 
-I change :yellow:`YELLOW` to :red:`RED` in the :ref:`test_green_light_timer_done`
+I change :red:`RED` to :yellow:`YELLOW` in the :ref:`test_green_light_timer_done`
 
 .. code-block:: python
   :lineno-start: 54
@@ -2657,7 +2775,7 @@ current light     timer            walk button        output
 
 ----
 
-When the ``control`` :ref:`function<what is a function\?>` is :ref:`called<how to call a function with input>` it checks if the timer is :red:`NOT done`
+When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the timer is :red:`NOT done`
 
 * If the timer is :red:`NOT done` it returns the value of ``current_light``
 
@@ -4056,7 +4174,7 @@ current light     timer            walk button        output
 
 ----
 
-When the ``control`` :ref:`function<what is a function\?>` is :ref:`called<how to call a function with input>` it checks if the timer is :red:`NOT done`
+When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the timer is :red:`NOT done`
 
 * If the timer is :red:`NOT done` it checks the value of the current light
 

@@ -1059,7 +1059,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for ``false`` to ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``false`` in ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 103
@@ -1128,7 +1128,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
   the test is green again.
 
-* I add an :ref:`assertion<what is an assertion?>` for the other :ref:`boolean<what are booleans?>` to ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to the other :ref:`boolean<what are booleans?>` in ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 103
@@ -1190,7 +1190,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for an integer_, to ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to an integer_, in ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 105
@@ -1257,7 +1257,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
   the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call an integer, a boolean or None<test_type_error_w_the_uncallables>`.
 
-* I add an :ref:`assertion<what is an assertion?>` for a float_ to ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to a float_ in ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 106
@@ -1324,7 +1324,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
   the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a float, integer, boolean or None<test_type_error_w_the_uncallables>`.
 
-* I add an :ref:`assertion<what is an assertion?>` for a string_ (anything in :ref:`quotes`) to ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to a string_ (anything in :ref:`quotes`) in ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 107
@@ -1391,7 +1391,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
   the test passes. I can call a :ref:`function<what is a function?>`. :ref:`I cannot call a string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
 
-* I add an :ref:`assertion<what is an assertion?>` for a tuple_ (anything in parentheses ``()``, separated by a comma) to ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to a tuple_ (anything in parentheses ``()``, separated by a comma) in ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 108
@@ -1458,7 +1458,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
   the test passes. I can call a :ref:`function<what is a function?>`. :ref:`I cannot call a tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
 
-* I add an :ref:`assertion<what is an assertion?>` for a :ref:`list<what is a list?>` to ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to a :ref:`list<what is a list?>` in ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 109
@@ -1526,7 +1526,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
   the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
 
-* I add an :ref:`assertion<what is an assertion?>` for a set_ to ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to a set_ in ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 110
@@ -1593,7 +1593,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
   the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a set, list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
 
-* I add an :ref:`assertion<what is an assertion?>` for a :ref:`dictionary<what is a dictionary?>` to ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to a :ref:`dictionary<what is a dictionary?>` in ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 111
