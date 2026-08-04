@@ -446,12 +446,12 @@ I want to see what comes with the `unittest module`_.
 
   .. caution:: Your list of attributes and methods may be different depending on your Python version
 
-* I open a new terminal_ then make sure I am in the ``classes`` folder_
+* I open a new terminal_ then make sure I am in the ``unittest`` folder_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd classes
+    cd unittest
 
 * I add a git_ commit message in the new terminal_
 
