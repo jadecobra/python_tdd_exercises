@@ -834,7 +834,7 @@ test_green_light_timer_not_done
 refactor control if statements
 *********************************************************************************
 
-When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the timer is :green:`done`
+When the ``control`` :ref:`function<what is a function\?>` is :ref:`called<how to call a function with input>` it checks if the timer is :red:`NOT done`
 
 * If the timer is :red:`NOT done`
 
@@ -993,9 +993,9 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
 
 ----
 
-When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the timer is :green:`done`
+When the ``control`` :ref:`function<what is a function\?>` is :ref:`called<how to call a function with input>` it checks if the timer is :red:`NOT done`
 
-* if the timer is :red:`NOT done` it returns the value of ``current_light``
+* If the timer is :red:`NOT done` it returns the value of ``current_light``
 
   .. code-block:: shell
 
@@ -2563,9 +2563,9 @@ current light     timer            walk button        output
 
 ----
 
-When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the timer is :green:`done`
+When the ``control`` :ref:`function<what is a function\?>` is :ref:`called<how to call a function with input>` it checks if the timer is :red:`NOT done`
 
-* if the timer is :red:`NOT done` it returns the value of ``current_light``
+* If the timer is :red:`NOT done` it returns the value of ``current_light``
 
   .. code-block:: shell
 
@@ -3962,6 +3962,344 @@ current light     timer            walk button        output
 
 ----
 
+When the ``control`` :ref:`function<what is a function\?>` is :ref:`called<how to call a function with input>` it checks if the timer is :red:`NOT done`
+
+* If the timer is :red:`NOT done` it checks the value of the current light
+
+  - If the current light is :red:`RED` it returns ``('RED', 'WALK')``
+
+    .. code-block:: shell
+
+      control(
+          current_light='RED', timer_done=False,
+          walk_button=True
+      ) -> ('RED', 'WALK')
+      └── def control(
+                  current_light, timer_done,
+                  walk_button=False,
+              ):
+              ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+              └── if not timer_done:
+                  └── if current_light == red:
+                      └── return current_light, 'WALK'
+                      if current_light == yellow:
+                          return current_light, 'DONT WALK'
+                      if current_light == green:
+                          return current_light, 'DONT WALK'
+                  if current_light == yellow:
+                      return red, 'WALK'
+                  if current_light == green:
+                      return yellow, 'DONT WALK'
+                  if walk_button:
+                      return red, 'WALK'
+                  return green, 'DONT WALK'
+
+    .. code-block:: shell
+
+      control(
+          current_light='RED', timer_done=False,
+          walk_button=False
+      ) -> ('RED', 'WALK')
+      └── def control(
+                  current_light, timer_done,
+                  walk_button=False,
+              ):
+              ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+              └── if not timer_done:
+                  └── if current_light == red:
+                      └── return current_light, 'WALK'
+                      if current_light == yellow:
+                          return current_light, 'DONT WALK'
+                      if current_light == green:
+                          return current_light, 'DONT WALK'
+                  if current_light == yellow:
+                      return red, 'WALK'
+                  if current_light == green:
+                      return yellow, 'DONT WALK'
+                  if walk_button:
+                      return red, 'WALK'
+                  return green, 'DONT WALK'
+
+  - If the current light is :yellow:`YELLOW`, it returns ``('YELLOW', 'DONT WALK')``
+
+    .. code-block:: shell
+
+      control(
+          current_light='YELLOW', timer_done=False,
+          walk_button=True
+      ) -> ('YELLOW', 'DONT WALK')
+      └── def control(
+                  current_light, timer_done,
+                  walk_button=False,
+              ):
+              ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+              └── if not timer_done:
+                  ├── if current_light == red:
+                  │       return current_light, 'WALK'
+                  └── if current_light == yellow:
+                      └── return current_light, 'DONT WALK'
+                      if current_light == green:
+                          return current_light, 'DONT WALK'
+                  if current_light == yellow:
+                      return red, 'WALK'
+                  if current_light == green:
+                      return yellow, 'DONT WALK'
+                  if walk_button:
+                      return red, 'WALK'
+                  return green, 'DONT WALK'
+
+    .. code-block:: shell
+
+      control(
+          current_light='YELLOW', timer_done=False,
+          walk_button=False
+      ) -> ('YELLOW', 'DONT WALK')
+      └── def control(
+                  current_light, timer_done,
+                  walk_button=False,
+              ):
+              ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+              └── if not timer_done:
+                  ├── if current_light == red:
+                  │       return current_light, 'WALK'
+                  └── if current_light == yellow:
+                      └── return current_light, 'DONT WALK'
+                      if current_light == green:
+                          return current_light, 'DONT WALK'
+                  if current_light == yellow:
+                      return red, 'WALK'
+                  if current_light == green:
+                      return yellow, 'DONT WALK'
+                  if walk_button:
+                      return red, 'WALK'
+                    return green, 'DONT WALK'
+
+  - If the current light is :green:`GREEN`, it returns ``('GREEN', 'DONT WALK')
+
+    .. code-block:: shell
+
+      control(
+          current_light='GREEN', timer_done=False,
+          walk_button=True
+      ) -> ('GREEN', 'DONT WALK')
+      └── def control(
+                  current_light, timer_done,
+                  walk_button=False,
+              ):
+              ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+              └── if not timer_done:
+                  ├── if current_light == red:
+                  │       return current_light, 'WALK'
+                  ├── if current_light == yellow:
+                  │       return current_light, 'DONT WALK'
+                  └── if current_light == green:
+                      └── return current_light, 'DONT WALK'
+                  if current_light == yellow:
+                      return red, 'WALK'
+                  if current_light == green:
+                      return yellow, 'DONT WALK'
+                  if walk_button:
+                      return red, 'WALK'
+                  return green, 'DONT WALK'
+
+    .. code-block:: shell
+
+      control(
+          current_light='GREEN', timer_done=False,
+          walk_button=False
+      ) -> ('GREEN', 'DONT WALK')
+      └── def control(
+                  current_light, timer_done,
+                  walk_button=False,
+              ):
+              ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+              └── if not timer_done:
+                  ├── if current_light == red:
+                  │       return current_light, 'WALK'
+                  ├── if current_light == yellow:
+                  │       return current_light, 'DONT WALK'
+                  └── if current_light == green:
+                      └── return current_light, 'DONT WALK'
+                  if current_light == yellow:
+                      return red, 'WALK'
+                  if current_light == green:
+                      return yellow, 'DONT WALK'
+                  if walk_button:
+                      return red, 'WALK'
+                  return green, 'DONT WALK'
+
+  - If the timer is :red:`NOT done` AND the current light is NOT :red:`RED` or :yellow:`YELLOW` or :green:`GREEN` it moves the next statement ``if current_light == yellow:``
+
+* If the timer is :green:`done` it checks the value of ``current_light``
+
+  - If the current light is :yellow:`YELLOW` it returns ``('RED', 'WALK')``
+
+    .. code-block:: shell
+
+      control(
+          current_light='YELLOW', timer_done=True,
+          walk_button=True
+      ) -> ('RED', 'WALK')
+      └── def control(
+                  current_light, timer_done,
+                  walk_button=False,
+              ):
+              ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+              ├── if not timer_done:
+              │       if current_light == red:
+              │          return current_light, 'WALK'
+              │       if current_light == yellow:
+              │           return current_light, 'DONT WALK'
+              │       if current_light == green:
+              │           return current_light, 'DONT WALK'
+              └── if current_light == yellow:
+                  └── return red, 'WALK'
+                  if current_light == green:
+                      return yellow, 'DONT WALK'
+                  if walk_button:
+                      return red, 'WALK'
+                  return green, 'DONT WALK'
+
+    .. code-block:: shell
+
+      control(
+          current_light='YELLOW', timer_done=True,
+          walk_button=False
+      ) -> ('RED', 'WALK')
+      └── def control(
+                  current_light, timer_done,
+                  walk_button=False,
+              ):
+              ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+              ├── if not timer_done:
+              │       if current_light == red:
+              │          return current_light, 'WALK'
+              │       if current_light == yellow:
+              │           return current_light, 'DONT WALK'
+              │       if current_light == green:
+              │           return current_light, 'DONT WALK'
+              └── if current_light == yellow:
+                  └── return red, 'WALK'
+                  if current_light == green:
+                      return yellow, 'DONT WALK'
+                  if walk_button:
+                      return red, 'WALK'
+                  return green, 'DONT WALK'
+
+  - If the current light is :green:`GREEN` it returns ``('YELLOW', 'DONT WALK')``
+
+    .. code-block:: shell
+
+      control(
+          current_light='GREEN', timer_done=True,
+          walk_button=True
+      ) -> ('YELLOW', 'DONT WALK')
+      └── def control(
+                  current_light, timer_done,
+                  walk_button=False,
+              ):
+              ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+              ├── if not timer_done:
+              │       if current_light == red:
+              │          return current_light, 'WALK'
+              │       if current_light == yellow:
+              │           return current_light, 'DONT WALK'
+              │       if current_light == green:
+              │           return current_light, 'DONT WALK'
+              ├── if current_light == yellow:
+              │       return red, 'WALK'
+              └── if current_light == green:
+                  └── return yellow, 'DONT WALK'
+                  if walk_button:
+                      return red, 'WALK'
+                  return green, 'DONT WALK'
+
+    .. code-block:: shell
+
+      control(
+          current_light='GREEN', timer_done=True,
+          walk_button=False
+      ) -> ('YELLOW', 'DONT WALK')
+      └── def control(
+                  current_light, timer_done,
+                  walk_button=False,
+              ):
+              ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+              ├── if not timer_done:
+              │       if current_light == red:
+              │          return current_light, 'WALK'
+              │       if current_light == yellow:
+              │           return current_light, 'DONT WALK'
+              │       if current_light == green:
+              │           return current_light, 'DONT WALK'
+              ├── if current_light == yellow:
+              │       return red, 'WALK'
+              └── if current_light == green:
+                  └── return yellow, 'DONT WALK'
+                  if walk_button:
+                      return red, 'WALK'
+                  return green, 'DONT WALK'
+
+  - If the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN` it checks if the walk button was :green:`pushed`
+
+    * If the walk button was :red:`NOT pushed` it returns ``('GREEN', 'DONT WALK')``
+
+      .. code-block:: shell
+
+        control(
+            current_light='RED', timer_done=True,
+            walk_button=False
+        ) -> ('GREEN', 'DONT WALK')
+        └── def control(
+                    current_light, timer_done,
+                    walk_button=False,
+                ):
+                ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+                ├── if not timer_done:
+                │       if current_light == red:
+                │          return current_light, 'WALK'
+                │       if current_light == yellow:
+                │           return current_light, 'DONT WALK'
+                │       if current_light == green:
+                │           return current_light, 'DONT WALK'
+                ├── if current_light == yellow:
+                │       return red, 'WALK'
+                ├── if current_light == green:
+                │       return yellow, 'DONT WALK'
+                ├── if walk_button:
+                │       return red, 'WALK'
+                └── return green, 'DONT WALK'
+
+    * If the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN` AND the walk button is :green:`pushed` it returns ``('RED', 'WALK')``
+
+      .. code-block:: shell
+
+        control(
+            current_light='RED', timer_done=True,
+            walk_button=True
+        ) -> ('RED', 'WALK')
+        └── def control(
+                    current_light, timer_done,
+                    walk_button=False,
+                ):
+                ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+                ├── if not timer_done:
+                │       if current_light == red:
+                │          return current_light, 'WALK'
+                │       if current_light == yellow:
+                │           return current_light, 'DONT WALK'
+                │       if current_light == green:
+                │           return current_light, 'DONT WALK'
+                ├── if current_light == yellow:
+                │       return red, 'WALK'
+                ├── if current_light == green:
+                │       return yellow, 'DONT WALK'
+                └── if walk_button:
+                    └── return red, 'WALK'
+                    return green, 'DONT WALK'
+
+----
+
 *********************************************************************************
 extract more global variables
 *********************************************************************************
@@ -4332,7 +4670,7 @@ extract more global variables
 ----
 
 *********************************************************************************
-:yellow:`REFACTOR`: make it better
+refactor control function
 *********************************************************************************
 
 * I add :ref:`variables<what is a variable?>` for ``'WALK'`` and ``'DONT WALK'`` to the ``control`` :ref:`function<what is a function?>` in ``src/traffic_light/__init__.py``
@@ -4347,21 +4685,15 @@ extract more global variables
         ):
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         walk = (red, 'WALK')
-        no_walk = 'DONT WALK'
+        dont_walk = 'DONT WALK'
 
-* I use the new :ref:`variables<what is a variable?>` to remove repetition
+        if not timer_done:
+
+* I use the new :ref:`variables<what is a variable?>` for their values
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 10-11, 14-17, 20-21, 24-25, 28-29, 31-32
-
-    def control(
-            current_light='RED', timer_done=False,
-            walk_button=False,
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        walk = (red, 'WALK')
-        no_walk = 'DONT WALK'
+    :lineno-start: 9
+    :emphasize-lines: 3-4, 6-7, 9-10, 13-14, 17-18, 21-22, 24-25
 
         if not timer_done:
             if current_light == red:
@@ -4369,9 +4701,10 @@ extract more global variables
                 return walk
             if current_light == yellow:
                 # return current_light, 'DONT WALK'
-                return current_light, no_walk
-            # return current_light, 'DONT WALK'
-            return current_light, no_walk
+                return current_light, dont_walk
+            if current_light == green:
+                # return current_light, 'DONT WALK'
+                return current_light, dont_walk
 
         if current_light == yellow:
             # return red, 'WALK'
@@ -4379,18 +4712,18 @@ extract more global variables
 
         if current_light == green:
             # return yellow, 'DONT WALK'
-            return yellow, no_walk
+            return yellow, dont_walk
 
         if walk_button:
             # return red, 'WALK'
             return walk
 
         # return green, 'DONT WALK'
-        return green, no_walk
+        return green, dont_walk
 
   the tests are still green.
 
-* I write a new :ref:`if statement with an else clause<if statements>`, that covers the 3 cases when the timer is :red:`NOT done`
+* I add a new :ref:`if statement with an else clause<if statements>` to ``if not timer done:``, that covers the 3 cases when the timer is :red:`NOT done`
 
   .. code-block:: python
     :lineno-start: 9
@@ -4398,7 +4731,7 @@ extract more global variables
 
         if not timer_done:
             if current_light != red:
-                return current_light, no_walk
+                return current_light, dont_walk
             else:
                 return walk
             if current_light == red:
@@ -4406,50 +4739,43 @@ extract more global variables
                 return walk
             if current_light == yellow:
                 # return current_light, 'DONT WALK'
-                return current_light, no_walk
-            # return current_light, 'DONT WALK'
-            return current_light, no_walk
+                return current_light, dont_walk
+            if current_light == green:
+                # return current_light, 'DONT WALK'
+                return current_light, dont_walk
 
   still green.
 
-* I write out the :ref:`if statement<if statements>` for if the light is :red:`RED` AND the timer is :green:`done`, to make it clearer
+* I write out the :ref:`if statement<if statements>` for if the light is :red:`RED` AND the timer is :green:`done` with the walk button, to make it clearer
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 9, 11, 14, 17-20
-
-        if current_light == yellow:
-            # return red, 'WALK'
-            return walk
-
-        if current_light == green:
-            # return yellow, 'DONT WALK'
-            return yellow, no_walk
+    :lineno-start: 32
+    :emphasize-lines: 1, 3, 6, 8-12
 
         # if walk_button:
             # return red, 'WALK'
             # return walk
 
         # return green, 'DONT WALK'
-        # return green, no_walk
+        # return green, dont_walk
 
         if current_light == red:
             if not walk_button:
-                return green, no_walk
+                return green, dont_walk
             else:
                 return walk
 
   green.
 
-* the ``walk`` :ref:`variable<what is a variable?>` which is ``'RED', 'WALK'``, happens 3 times in the :ref:`function<what is a function?>`, I add a :ref:`return statement<the return statement>` to make it the default state of the light
+* the ``walk`` :ref:`variable<what is a variable?>` (``'RED', 'WALK'``), happens 3 times in the :ref:`function<what is a function?>`, I add a :ref:`return statement<the return statement>` to make it the default state of the light
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 39
     :emphasize-lines: 7
 
         if current_light == red:
             if not walk_button:
-                return green, no_walk
+                return green, dont_walk
             else:
                 return walk
 
@@ -4457,33 +4783,33 @@ extract more global variables
 
   still green. This means if none of the :ref:`conditions<if statements>` in the ``control`` :ref:`function<what is a function?>` are met, the light stays :red:`RED` and shows ``'WALK'``
 
-* I no longer need the :ref:`else clause<if statements>` for when the walk button is :green:`pushed` because it returns the default state (``'RED', 'WALK'``) when the list is :red:`RED` AND the timer is :green:`done`. I comment it out
+* I no longer need the :ref:`else clause<if statements>` for when the walk button is :green:`pushed` because it returns the default state (``'RED', 'WALK'``) when the light is :red:`RED` AND the timer is :green:`done`. I comment it out
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 39
     :emphasize-lines: 4-5
 
         if current_light == red:
             if not walk_button:
-                return green, no_walk
+                return green, dont_walk
             # else:
-                # return walk
+            #     return walk
 
         return walk
 
   the tests are still green.
 
-* I rewrite the :ref:`if statement<if statements>` for if the current light is :red:`red` AND the timer is :green:`done` AND the walk button is :green:`pushed` with :ref:`Logical Conjunction(AND)<test_logical_conjunction>`
+* I use :ref:`Logical Conjunction(AND)<test_logical_conjunction>` to rewrite the :ref:`if statement<if statements>` for if the current light is :red:`red` AND the timer is :green:`done` AND the walk button is :red:`NOT pushed`
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 39
 
         # if current_light == red:
-            # if not walk_button:
+        #     if not walk_button:
         if current_light == red and not walk_button:
-                return green, no_walk
+                return green, dont_walk
             # else:
-                # return walk
+            #     return walk
 
         return walk
 
@@ -4492,7 +4818,7 @@ extract more global variables
 * I no longer need the :ref:`if statement<if statements>` for :yellow:`YELLOW` because it returns the default state (``'RED', 'WALK'``) when the timer is :green:`done`. I comment it out
 
   .. code-block:: python
-    :lineno-start: 23
+    :lineno-start: 24
     :emphasize-lines: 1, 3
 
         # if current_light == yellow:
@@ -4501,29 +4827,15 @@ extract more global variables
 
         if current_light == green:
             # return yellow, 'DONT WALK'
-            return yellow, no_walk
+            return yellow, dont_walk
 
-        # if walk_button:
-            # return red, 'WALK'
-            # return walk
-
-        # return green, 'DONT WALK'
-        # return green, no_walk
-
-        if current_light == red:
-            if not walk_button:
-                return green, no_walk
-            # else:
-                # return walk
-
-        return walk
 
   green. Why does this work?
 
 * I add an :ref:`if statement<if statements>` for if the timer is :green:`done` to make it clearer
 
   .. code-block:: python
-    :lineno-start: 23
+    :lineno-start: 24
     :emphasize-lines: 5, 6, 8, 19
 
         # if current_light == yellow:
@@ -4533,23 +4845,7 @@ extract more global variables
         if timer_done:
             if current_light == green:
             # return yellow, 'DONT WALK'
-                return yellow, no_walk
-
-        # if walk_button:
-            # return red, 'WALK'
-            # return walk
-
-        # return green, 'DONT WALK'
-        # return green, no_walk
-
-        # if current_light == red:
-            # if not walk_button:
-            if current_light == red and not walk_button:
-                return green, no_walk
-            # else:
-                # return walk
-
-        return walk
+                return yellow, dont_walk
 
   still green.
 
@@ -4561,7 +4857,7 @@ extract more global variables
 
         if not timer_done:
             if current_light != red:
-                return current_light, no_walk
+                return current_light, dont_walk
             # else:
             #     return walk
             # if current_light == red:
@@ -4569,9 +4865,9 @@ extract more global variables
             #     return walk
             # if current_light == yellow:
                 # return current_light, 'DONT WALK'
-                # return current_light, no_walk
+                # return current_light, dont_walk
             # return current_light, 'DONT WALK'
-            # return current_light, no_walk
+            # return current_light, dont_walk
 
         # if current_light == yellow:
             # return red, 'WALK'
@@ -4591,12 +4887,12 @@ extract more global variables
         ):
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         walk = (red, 'WALK')
-        no_walk = 'DONT WALK'
+        dont_walk = 'DONT WALK'
 
         # if not timer_done:
         #     if current_light != red:
         if not timer_done and current_light != red:
-            return current_light, no_walk
+            return current_light, dont_walk
             # else:
 
   still green.
@@ -4612,26 +4908,26 @@ extract more global variables
         ):
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         walk = (red, 'WALK')
-        no_walk = 'DONT WALK'
+        dont_walk = 'DONT WALK'
 
         if not timer_done and current_light != red:
-            return current_light, no_walk
+            return current_light, dont_walk
 
         if timer_done:
             if current_light == green:
-                return yellow, no_walk
+                return yellow, dont_walk
             if current_light == red and not walk_button:
-                return green, no_walk
+                return green, dont_walk
 
         return walk
 
 When the ``control`` :ref:`function<what is a function?>` is called
 
-* if the timer is :red:`NOT done`
+* If the timer is :red:`NOT done`
 
   - it returns the current light, ``'DONT WALK'`` if the current light is NOT :red:`RED`
 
-* if the timer is :green:`done`
+* If the timer is :green:`done`
 
   - it returns ``'YELLOW', 'DONT WALK'`` if the current light is :green:`GREEN`
   - it returns ``'GREEN', 'DONT WALK'`` if the current light is :red:`RED` AND the walk button is :red:`NOT pushed`
@@ -4643,7 +4939,7 @@ The :ref:`function<what is a function?>` does not look like the :ref:`truth tabl
 .. code-block:: python
 
   if not timer_done and current_light != red:
-      return current_light, no_walk
+      return current_light, dont_walk
 
 What does it return if I :ref:`call<how to call a function with input>` the ``control`` :ref:`function<what is a function?>` with a color that is NOT :red:`RED`, :yellow:`YELLOW` or :green:`GREEN`. There is one way to find out ...
 
