@@ -651,7 +651,7 @@ test_yellow_light_timer_not_done
 
 ----
 
-* I add a :ref:`global variable<what is a global variable?>` for ``'YELLOW'`` to ``tests/test_traffic_light.py``
+* I add a :ref:`global variable<what is a variable?>` for ``'YELLOW'`` to ``tests/test_traffic_light.py``
 
   .. code-block:: python
     :linenos:
@@ -1158,7 +1158,7 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
 
   the tests are still green.
 
-* I add an :ref:`if statement<if statementsg>` for if the timer is :red:`NOT done` to be clearer
+* I add an :ref:`if statement<if statements>` for if the timer is :red:`NOT done` to be clearer
 
   .. code-block:: python
     :linenos:
@@ -1382,7 +1382,7 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
           │      return current_light
           └── if timer_done:
               └── if current_light == green:
-                      return yellow
+                  └── return yellow
                   if current_light == yellow:
                       return red
                   if current_light == red:
@@ -1422,7 +1422,21 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
               └── if current_light == red:
                   └── return green
 
-* If none of the above :ref:`conditions<if statements>` are met it :ref:`returns None because ...<test_functions_w_return_none>`.
+* If none of the above :ref:`conditions<if statements>` are met it :ref:`returns None because ...<test_making_a_function_w_return_none>`.
+
+  .. code-block:: shell
+
+    def control(timer_done, current_light):
+    ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+    ├── if not timer_done:
+    │      return current_light
+    └── if timer_done:
+        ├── if current_light == green:
+        │       return yellow
+        ├── if current_light == yellow:
+        │       return red
+        ├── if current_light == red:
+        │       return green
 
 ----
 
@@ -1431,39 +1445,456 @@ The :ref:`truth table` for the **Traffic Light** is
 ================  ===============  ================
 current light     timer            output
 ================  ===============  ================
-:red:`RED`        :green:`done`    :green:`GREEN`
-:red:`RED`        :red:`NOT done`  :red:`RED`
-:yellow:`YELLOW`  :green:`done`    :red:`RED`
-:yellow:`YELLOW`  :red:`NOT done`  :yellow:`YELLOW`
-:green:`GREEN`    :green:`done`    :yellow:`YELLOW`
 :green:`GREEN`    :red:`NOT done`  :green:`GREEN`
+:green:`GREEN`    :green:`done`    :yellow:`YELLOW`
+:yellow:`YELLOW`  :red:`NOT done`  :yellow:`YELLOW`
+:yellow:`YELLOW`  :green:`done`    :red:`RED`
+:red:`RED`        :red:`NOT done`  :red:`RED`
+:red:`RED`        :green:`done`    :green:`GREEN`
 ================  ===============  ================
 
-This only considers one set of lights for traffic in one direction, which is not necessary if the street has no cross traffic, it also treats the current light as input. To make it more accurate the inputs have to consider the traffic in both directions
+This only shows one set of lights for traffic in one direction, which is not needed if the street has no cross traffic, it is not yet a real **Traffic Light**.
+
+I want the ``control`` :ref:`function<what is a function?>` to show what happens in front of me (parallel) and what happens for the traffic crossing the street when the light is :red:`RED` for me, it has to consider traffic in both directions
 
 * what traffic phase is this (cross, parallel or both)?
+
+  - what is the light for me (parallel)?
+  - what is the light for them (cross)?
 * is the timer done?
 
-and the outputs will be the lights for Parallel and Cross Traffic which gives me this :ref:`truth table`
+The outputs will be the lights for Parallel and Cross Traffic which gives me this :ref:`truth table`. The **Traffic Light** has to make sure that there is never a case where cars move through the intersection at the same time to avoid accidents. The following cases must never happen
 
-========================= =============== ================  ================
-current phase             timer           parallel light    cross light
-========================= =============== ================  ================
-all :red:`RED`            :green:`done`   :red:`RED`        :red:`RED`
-all :red:`RED`            :red:`NOT done` :red:`RED`        :red:`RED`
-parallel :yellow:`YELLOW` :green:`done`   :yellow:`YELLOW`  :red:`RED`
-parallel :yellow:`YELLOW` :red:`NOT done` :yellow:`YELLOW`  :red:`RED`
-parallel :green:`GREEN`   :green:`done`   :green:`GREEN`    :red:`RED`
-parallel :green:`GREEN`   :red:`NOT done` :green:`GREEN`    :red:`RED`
-all :red:`RED`            :green:`done`   :red:`RED`        :red:`RED`
-all :red:`RED`            :red:`NOT done` :red:`RED`        :red:`RED`
-cross :yellow:`YELLOW`    :green:`done`   :red:`RED`        :yellow:`YELLOW`
-cross :yellow:`YELLOW`    :red:`NOT done` :red:`RED`        :yellow:`YELLOW`
-cross :green:`GREEN`      :green:`done`   :red:`RED`        :green:`GREEN`
-cross :green:`GREEN`      :red:`NOT done` :red:`RED`        :green:`GREEN`
-========================= =============== ================  ================
+================  ================
+parallel          cross
+================  ================
+:green:`GREEN`    :green:`GREEN`
+:green:`GREEN`    :yellow:`YELLOW`
+:yellow:`YELLOW`  :yellow:`YELLOW`
+:yellow:`YELLOW`  :green:`GREEN`
+================  ================
 
-The all :red:`RED` state makes sure that there are no cars moving through the intersection before changing lights again to avoid accidents.
+That leaves me with this :ref:`truth table`
+
+================  ================  =============== =================== =================
+current           current           timer           next                next
+parallel          cross                             parallel            cross
+================  ================  =============== =================== =================
+:green:`GREEN`    :red:`RED`        :red:`NOT done` :green:`GREEN`      :red:`RED`
+:green:`GREEN`    :red:`RED`        :green:`done`   :yellow:`YELLOW`    :red:`RED`
+:yellow:`YELLOW`  :red:`RED`        :red:`NOT done` :yellow:`YELLOW`    :red:`RED`
+:yellow:`YELLOW`  :red:`RED`        :green:`done`   parallel :red:`RED` :red:`RED`
+:red:`RED`        :red:`RED`        :red:`NOT done` safety :red:`RED`   safety :red:`RED`
+:red:`RED`        :red:`RED`        :green:`done`   :red:`RED`          :green:`GREEN`
+================  ================  =============== =================== =================
+
+================  ================  =============== =================== =================
+current           current           timer           next                next
+parallel          cross                             parallel            cross
+================  ================  =============== =================== =================
+:red:`RED`        :green:`GREEN`    :red:`NOT done` :red:`RED`          :green:`GREEN`
+:red:`RED`        :green:`GREEN`    :green:`done`   :red:`RED`          :yellow:`YELLOW`
+:red:`RED`        :yellow:`YELLOW`  :red:`NOT done` :red:`RED`          :yellow:`YELLOW`
+:red:`RED`        :yellow:`YELLOW`  :green:`done`   cross :red:`RED`    :red:`RED`
+:red:`RED`        :red:`RED`        :red:`NOT done` safety :red:`RED`   safety :red:`RED`
+:red:`RED`        :red:`RED`        :green:`done`   :green:`GREEN`      :red:`RED`
+================  ================  =============== =================== =================
+
+Where ``parallel`` is the light in front of me, and ``cross`` is the light for traffic crossing the street. The all :red:`RED` row (Safety State) makes sure that there are no cars moving through the intersection at the same time to avoid accidents
+
+----
+
+*********************************************************************************
+test_all_red_after_cross_timer_done
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the current parallel light is :red:`RED` AND the current cross light is :red:`RED` AND the timer is :green:`done`
+
+  ================  ================  =============== =================== =================
+  current           current           timer           next                next
+  parallel          cross                             parallel            cross
+  ================  ================  =============== =================== =================
+  :red:`RED`        :red:`RED`        :green:`done`   :green:`GREEN`      :red:`RED`
+  ================  ================  =============== =================== =================
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 10-18
+
+        def test_red_light_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    timer_done=True,
+                    current_light=RED
+                ),
+                GREEN
+            )
+
+        def test_all_red_after_cross_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    current_parallel=RED,
+                    current_cross=RED,
+                    timer_done=True,
+                ),
+                (GREEN, RED)
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: control() got
+               an unexpected keyword argument 'current_parallel'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add ``current_parallel``  to the :ref:`function defition<how to make a function that takes input>` in ``src/traffic_light/__init__.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    def control(timer_done, current_light, current_parallel):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    FAILED ...test_all_red_after_cross_timer_done -
+        TypeError: control() got an
+            unexpected keyword argument 'current_cross'
+    FAILED ...test_green_light_timer_done -
+        TypeError: control() missing
+            1 required positional argument: 'current_parallel'
+    FAILED ...test_green_light_timer_not_done -
+        TypeError: control() missing
+            1 required positional argument: 'current_parallel'
+    FAILED ...test_red_light_timer_done -
+         ypeError: control() missing
+            1 required positional argument: 'current_parallel'
+    FAILED ...test_red_light_timer_not_done -
+         TypeError: control() missing
+            1 required positional argument: 'current_parallel'
+    FAILED ...test_yellow_light_timer_done -
+        TypeError: control() missing
+            1 required positional argument: 'current_parallel'
+    FAILED ...test_yellow_light_timer_not_done -
+         TypeError: control() missing
+            1 required positional argument: 'current_parallel'
+
+* I add a :ref:`default value<test_optional_arguments>` for the ``current_parallel`` parameter
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-4
+
+    def control(
+            timer_done, current_light,
+            current_parallel='RED',
+        ):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: control() got
+               an unexpected keyword argument 'current_cross'
+
+* I add ``current_cross`` to the :ref:`function definition<how to make a function that takes input>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3
+
+    def control(
+            timer_done, current_light,
+            current_parallel='RED', current_cross='RED',
+        ):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+     TypeError: control() missing
+                1 required positional argument: 'current_light'
+
+* I add a :ref:`default value<test_optional_arguments>` for ``current_light`` to the :ref:`function signature<how to make a function that takes input>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
+
+    def control(
+            timer_done, current_light=None,
+            current_parallel='RED', current_cross='RED',
+        ):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'GREEN' != ('GREEN', 'RED')
+
+* I add an :ref:`if statement<if statements>` to ``if timer_done:`` for if the current parallel light is :red:`RED` AND the current cross light is :red:`RED`
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 8-9
+
+        if timer_done:
+            if current_light == green:
+                return yellow
+            if current_light == yellow:
+                return red
+            if current_light == red:
+                return green
+            if current_parallel == red and current_cross == red:
+                return green, red
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>` because it exists the :ref:`if statement<if statements>` early since the :ref:`default value<test_optional_arguments>` for ``current_light`` is :red:`RED`.
+
+* I change the :ref:`default value` for ``current_light`` to :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3
+
+    def control(
+            timer_done, current_light=None,
+            current_parallel='RED', current_cross='RED',
+        ):
+
+  the test passes.
+
+  .. code-block:: python
+
+    control(
+        current_parallel='RED' , current_cross='RED',
+        timer_done=True
+    ) -> 'GREEN', 'RED'
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am
+    'add test_all_red_after_cross_timer_done'
+
+----
+
+*********************************************************************************
+test_all_red_after_cross_timer_not_done
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the current parallel light is :red:`RED` AND the current cross light is :red:`RED` AND the timer is :green:`done`
+
+  ================  ================  =============== =================== =================
+  current           current           timer           next                next
+  parallel          cross                             parallel            cross
+  ================  ================  =============== =================== =================
+  :red:`RED`        :red:`RED`        :red:`NOT done` safety :red:`RED`   safety :red:`RED`
+  ================  ================  =============== =================== =================
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 10-18
+
+        def test_red_light_timer_not_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    timer_done=True,
+                    current_light=RED
+                ),
+                GREEN
+            )
+
+        def test_all_red_after_cross_timer_not_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    current_parallel=RED,
+                    current_cross=RED,
+                    timer_done=True,
+                ),
+                (GREEN, RED)
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: control() got
+               an unexpected keyword argument 'current_parallel'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add ``current_parallel``  to the :ref:`function defition<how to make a function that takes input>` in ``src/traffic_light/__init__.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    def control(timer_done, current_light, current_parallel):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    FAILED ...test_all_red_after_cross_timer_not_done -
+        TypeError: control() got an
+            unexpected keyword argument 'current_cross'
+    FAILED ...test_green_light_timer_not_done -
+        TypeError: control() missing
+            1 required positional argument: 'current_parallel'
+    FAILED ...test_green_light_timer_not_done -
+        TypeError: control() missing
+            1 required positional argument: 'current_parallel'
+    FAILED ...test_red_light_timer_not_done -
+         ypeError: control() missing
+            1 required positional argument: 'current_parallel'
+    FAILED ...test_red_light_timer_not_done -
+         TypeError: control() missing
+            1 required positional argument: 'current_parallel'
+    FAILED ...test_yellow_light_timer_not_done -
+        TypeError: control() missing
+            1 required positional argument: 'current_parallel'
+    FAILED ...test_yellow_light_timer_not_done -
+         TypeError: control() missing
+            1 required positional argument: 'current_parallel'
+
+* I add a :ref:`default value<test_optional_arguments>` for the ``current_parallel`` parameter
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-4
+
+    def control(
+            timer_done, current_light,
+            current_parallel='RED',
+        ):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: control() got
+               an unexpected keyword argument 'current_cross'
+
+* I add ``current_cross`` to the :ref:`function definition<how to make a function that takes input>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3
+
+    def control(
+            timer_done, current_light,
+            current_parallel='RED', current_cross='RED',
+        ):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+     TypeError: control() missing
+                1 required positional argument: 'current_light'
+
+* I add a :ref:`default value<test_optional_arguments>` for ``current_light`` to the :ref:`function signature<how to make a function that takes input>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
+
+    def control(
+            timer_done, current_light=None,
+            current_parallel='RED', current_cross='RED',
+        ):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'GREEN' != ('GREEN', 'RED')
+
+* I add an :ref:`if statement<if statements>` to ``if timer_done:`` for if the current parallel light is :red:`RED` AND the current cross light is :red:`RED`
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 8-9
+
+        if timer_done:
+            if current_light == green:
+                return yellow
+            if current_light == yellow:
+                return red
+            if current_light == red:
+                return green
+            if current_parallel == red and current_cross == red:
+                return green, red
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>` because it exists the :ref:`if statement<if statements>` early since the :ref:`default value<test_optional_arguments>` for ``current_light`` is :red:`RED`.
+
+* I change the :ref:`default value` for ``current_light`` to :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3
+
+    def control(
+            timer_done, current_light=None,
+            current_parallel='RED', current_cross='RED',
+        ):
+
+  the test passes.
+
+  .. code-block:: python
+
+    control(
+        current_parallel='RED' , current_cross='RED',
+        timer_done=True
+    ) -> 'GREEN', 'RED'
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am
+    'add test_all_red_after_cross_timer_not_done'
+
+
 
 ----
 
@@ -2590,7 +3021,7 @@ current light     timer            walk button        output
         walk_button=False
     ) -> 'RED'
 
-* I add a :ref:`variable<what is a variable>` for :red:`'RED'`
+* I add a :ref:`variable<what is a variable?>` for :red:`'RED'`
 
   .. code-block:: python
     :linenos:
@@ -3446,7 +3877,7 @@ current light     timer            walk button        output
         if current_light == yellow:
             return red, 'WALK'
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -3793,7 +4224,7 @@ current light     timer            walk button        output
         if current_light == green:
             return yellow, 'DONT WALK'
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -4729,7 +5160,7 @@ extract more global variables
 
         def test_yellow_light_timer_done_w_walk(self):
 
-* I use the ``WALK`` :ref:`global variable<what is a variable?>` for ``(RED, 'WALK')`` and ``GREEN_DONT_WALK`` :ref:`global variable` for ``(GREEN, 'DONT WALK')`` in :ref:`test_red_light_timer_done_w_walk`
+* I use the ``WALK`` :ref:`global variable<what is a variable?>` for ``(RED, 'WALK')`` and ``GREEN_DONT_WALK`` :ref:`global variable<what is a variable?>` for ``(GREEN, 'DONT WALK')`` in :ref:`test_red_light_timer_done_w_walk`
 
   .. code-block:: python
     :lineno-start: 14
