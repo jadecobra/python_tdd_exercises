@@ -1639,7 +1639,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertNotIsInstance`
   unittest
   └── class TestCase:
       └── def assertNotIsInstance(self, obj, cls):
-          └── assert not isinstance(obj, cls)
+          └── assert isinstance(obj, cls)
 
 Compare the error message for ``unittest.TestCase().assertNotIsInstance(unittest.TestCase(), unittest.TestCase)`` with the one for ``assert not isinstance(unittest.TestCase(), unittest.TestCase)``
 

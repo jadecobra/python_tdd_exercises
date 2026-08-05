@@ -358,7 +358,7 @@ test_green_light_timer_not_done
     :linenos:
     :emphasize-lines: 2
 
-    def control(current_light, timer_done):
+    def control(timer_done, current_light):
         return 'GREEN'
 
   the test passes.
@@ -1105,148 +1105,12 @@ test_red_light_timer_done
 
   .. code-block:: python
 
-    control(current_light='RED'   , timer_done=True ) -> 'GREEN'
-    control(current_light='RED'   , timer_done=False) -> 'RED'
-    control(current_light='YELLOW', timer_done=True ) -> 'RED'
-    control(current_light='YELLOW', timer_done=False) -> 'YELLOW'
-    control(current_light='GREEN' , timer_done=True ) -> 'YELLOW'
     control(current_light='GREEN' , timer_done=False) -> 'GREEN'
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I add a :ref:`global variable<what is a variable?>` for ``'GREEN'`` in ``tests/test_traffic_light.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5
-
-    import src.traffic_light
-    import unittest
-
-
-    RED, YELLOW, GREEN = 'RED', 'YELLOW', 'GREEN'
-
-
-    class TestTrafficLight(unittest.TestCase):
-
-        def test_red_light_timer_done(self):
-
-* I use the new :ref:`variable<what is a variable?>` for ``'GREEN'`` in :ref:`test_red_light_timer_done`
-
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 7-8
-
-        def test_red_light_timer_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=RED,
-                    timer_done=True,
-                ),
-                # 'GREEN'
-                GREEN
-            )
-
-        def test_red_light_timer_not_done(self):
-
-  the test is still green.
-
-* I remove the commented line from :ref:`test_red_light_timer_done`
-
-  .. code-block:: python
-    :lineno-start: 10
-
-        def test_red_light_timer_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=RED,
-                    timer_done=True,
-                ),
-                GREEN
-            )
-
-        def test_red_light_timer_not_done(self):
-
-* I use the new :ref:`variable<what is a variable?>` for ``'GREEN'`` in :ref:`test_green_light_timer_done`
-
-  .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 4-5
-
-        def test_green_light_timer_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    # current_light='GREEN',
-                    current_light=GREEN,
-                    timer_done=True,
-                ),
-                YELLOW
-            )
-
-        def test_green_light_timer_not_done(self):
-
-  still green.
-
-* I remove the commented line from :ref:`test_green_light_timer_done`
-
-  .. code-block:: python
-    :lineno-start: 46
-
-        def test_green_light_timer_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=GREEN,
-                    timer_done=True,
-                ),
-                YELLOW
-            )
-
-        def test_green_light_timer_not_done(self):
-
-* I use the new :ref:`variable<what is a variable?>` for ``'GREEN'`` in :ref:`test_green_light_timer_not_done`
-
-  .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 4-5, 8-9
-
-        def test_green_light_timer_not_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    # current_light='GREEN',
-                    current_light=GREEN,
-                    timer_done=False,
-                ),
-                # 'GREEN'
-                GREEN
-            )
-
-
-    # Exceptions seen
-
-  green.
-
-* I remove the commented lines from :ref:`test_green_light_timer_not_done`
-
-  .. code-block:: python
-    :lineno-start: 55
-
-        def test_green_light_timer_not_done(self):
-            self.assertEqual(
-                src.traffic_light.control(
-                    current_light=GREEN,
-                    timer_done=False,
-                ),
-                GREEN
-            )
-
-
-    # Exceptions seen
+    control(current_light='GREEN' , timer_done=True ) -> 'YELLOW'
+    control(current_light='YELLOW', timer_done=False) -> 'YELLOW'
+    control(current_light='YELLOW', timer_done=True ) -> 'RED'
+    control(current_light='RED'   , timer_done=False) -> 'RED'
+    control(current_light='RED'   , timer_done=True ) -> 'GREEN'
 
 * I add a git_ commit message in the other terminal_
 
@@ -1261,132 +1125,135 @@ test_red_light_timer_done
 refactor if statements
 *********************************************************************************
 
-When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the timer is :red:`NOT done`
+When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the timer is :green:`done`
 
-* If the timer is :red:`NOT done`
+* If the timer is :green:`done`, it checks the color of the current light
 
-  - it returns :yellow:`YELLOW` if the current light is :yellow:`YELLOW`
-  - it returns :green:`GREEN` if the current light is :green:`GREEN`
-  - it returns :red:`RED` if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
+  - If the current light is :yellow:`YELLOW`, it returns :red:`RED`
+  - If the current light is :red:`RED`, it returns :green:`GREEN`
+  - If none of the above :ref:`conditions<if statements>` are met, it returns :yellow:`YELLOW`
 
-* If none of the above :ref:`conditions<if statements>` are met
+* If none of the above :ref:`conditions<if statements>` are met, it checks the color of the current light
 
-  - it returns :red:`RED` if the current light is :yellow:`YELLOW`
-  - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-  - it returns :green:`GREEN` if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
-
-----
+  - If the current light is :yellow:`YELLOW`, it returns :yellow:`YELLOW`
+  - If the current light is :red:`RED`, it returns :red:`RED`
+  - If none of the above :ref:`conditions<if statements>` are met, it returns :green:`GREEN`
 
 * I go back to the terminal_ where the tests are running
-* I add an :ref:`if statement<if statements>` for if the timer is :red:`NOT done` AND the light is :red:`RED`, to make it clearer
+* I add an :ref:`if statement<if statements>` for if the timer is :green:`done` AND the light is :green:`GREEN`, to make it clearer
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 7-8
+    :emphasize-lines: 3-4
 
-    def control(current_light, timer_done):
-        if not timer_done:
-            if current_light == 'YELLOW':
-                return 'YELLOW'
+    def control(timer_done, current_light):
+        if timer_done:
             if current_light == 'GREEN':
-                return 'GREEN'
-            if current_light == 'RED':
-                return 'RED'
-
-        if current_light == 'YELLOW':
-            return 'RED'
-
-        if current_light == 'GREEN':
-            return 'YELLOW'
-
-        return 'GREEN'
-
-  the tests are still green. The ``control`` :ref:`function<what is a function?>` returns the current light when the timer is :red:`NOT done`
-
-* I add a :ref:`return statement<the return statement>` to return the current light when the timer is :red:`NOT done`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3
-
-    def control(current_light, timer_done):
-        if not timer_done:
-            return current_light
-            if current_light == 'YELLOW':
                 return 'YELLOW'
-            if current_light == 'GREEN':
-                return 'GREEN'
-            if current_light == 'RED':
+            if current_light == 'YELLOW':
                 return 'RED'
+            if current_light == 'RED':
+                return 'GREEN'
+            # return 'YELLOW'
 
-        if current_light == 'YELLOW':
-            return 'RED'
+  the tests are still green.
 
-        if current_light == 'GREEN':
-            return 'YELLOW'
-
-    return 'GREEN'
-
-  still green.
-
-* I add an :ref:`else clause<if statements>` for if the timer is :green:`done` and move the other :ref:`if statements` under it, to make it clearer
+* I add an :ref:`if statement<if statementsg>` for if the timer is :red:`NOT done` to be clearer
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 10-14
 
-    def control(current_light, timer_done):
+    def control(timer_done, current_light):
+        if timer_done:
+            if current_light == 'GREEN':
+                return 'YELLOW'
+            if current_light == 'YELLOW':
+                return 'RED'
+            if current_light == 'RED':
+                return 'GREEN'
+            # return 'YELLOW'
         if not timer_done:
-            return current_light
             if current_light == 'YELLOW':
-                return 'YELLOW'
-            if current_light == 'GREEN':
-                return 'GREEN'
+                return current_light
             if current_light == 'RED':
-              return 'RED'
-        else:
-            if current_light == 'YELLOW':
-                return 'RED'
-            if current_light == 'GREEN':
-                return 'YELLOW'
+                return current_light
 
-            return 'GREEN'
-
-  green.
-
-* I add an :ref:`if statement<if statements>` for if the timer is :green:`done` AND the light is :red:`RED`, to make it clearer
-
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 5-6
-
-        else:
-            if current_light == 'YELLOW':
-                return 'RED'
-            if current_light == 'GREEN':
-                return 'YELLOW'
-            if current_light == 'RED':
-                return 'GREEN'
+        return 'GREEN'
 
   still green.
 
-* I remove the other :ref:`if statements<if statements>` from ``if not timer_done:`` (lines 4-9) because they are no longer used
+* I add an :ref:`if statement<if statements>` for if the timer is :red:`NOT done` and the light is :green:`GREEN`, to make it clearer
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 2-3, 9
+
+        if not timer_done:
+            if current_light == 'GREEN':
+                return current_light
+            if current_light == 'YELLOW':
+                return current_light
+            if current_light == 'RED':
+                return current_light
+
+        # return 'GREEN'
+
+  The ``control`` :ref:`function<what is a function?>` returns the current light in every case where the timer is :red:`NOT done`
+
+* I add a :ref:`return statement<the return statement>` to return the current light when the timer is :red:`NOT done`
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 2
+
+        if not timer_done:
+            return current_light
+            if current_light == 'GREEN':
+                return current_light
+            if current_light == 'YELLOW':
+                return current_light
+            if current_light == 'RED':
+                return current_light
+
+        # return 'GREEN'
+
+  green.
+
+* I remove the commented lines and the other :ref:`if statements<if statements>` from the :ref:`else block<if statements>` because they are no longer used
 
   .. code-block:: python
     :linenos:
 
-    def control(current_light, timer_done):
-        if not timer_done:
-            return current_light
-        else:
-            if current_light == 'YELLOW':
-                return 'RED'
+    def control(timer_done, current_light):
+        if timer_done:
             if current_light == 'GREEN':
                 return 'YELLOW'
+            if current_light == 'YELLOW':
+                return 'RED'
             if current_light == 'RED':
                 return 'GREEN'
+        if not timer_done:
+            return current_light
 
-  the tests are still green.
+  still green.
+
+* I move the :ref:`if statement<if statements>` for if the timer is :red:`NOT done` to the top to make the :ref:`function<what is a function?>` return a value quicker before it checks the lights
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-3
+
+    def control(timer_done, current_light):
+        if not timer_done:
+            return current_light
+        if timer_done:
+            if current_light == 'GREEN':
+                return 'YELLOW'
+            if current_light == 'YELLOW':
+                return 'RED'
+            if current_light == 'RED':
+                return 'GREEN'
 
 * I add :ref:`variables<what is a variable?>` for ``'RED'``, ``'YELLOW'`` and ``'GREEN'``
 
@@ -1394,7 +1261,7 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
     :linenos:
     :emphasize-lines: 2
 
-    def control(current_light, timer_done):
+    def control(timer_done, current_light):
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         if not timer_done:
 
@@ -1404,19 +1271,19 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
     :linenos:
     :emphasize-lines: 6-17
 
-    def control(current_light, timer_done):
+    def control(timer_done, current_light):
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         if not timer_done:
             return current_light
-        else:
-            # if current_light == 'YELLOW':
-            if current_light == yellow:
-                # return 'RED'
-                return red
+        if timer_done:
             # if current_light == 'GREEN':
             if current_light == green:
                 # return 'YELLOW'
                 return yellow
+            # if current_light == 'YELLOW':
+            if current_light == yellow:
+                # return 'RED'
+                return red
             # if current_light == 'RED':
             if current_light == red:
                 # return 'GREEN'
@@ -1429,15 +1296,15 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
   .. code-block:: python
     :linenos:
 
-    def control(current_light, timer_done):
+    def control(timer_done, current_light):
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         if not timer_done:
             return current_light
-        else:
-            if current_light == yellow:
-                return red
+        if timer_done:
             if current_light == green:
                 return yellow
+            if current_light == yellow:
+                return red
             if current_light == red:
                 return green
 
@@ -1449,8 +1316,6 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
     git commit 'refactor if statements'
 
 ----
-BOOM BOOM BOOM BOOM
-----
 
 When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the timer is :red:`NOT done`
 
@@ -1458,85 +1323,85 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
 
   .. code-block:: shell
 
-    control(current_light='RED'   , timer_done=False) -> 'RED'
-    └── def control(current_light, timer_done):
+    control(current_light='GREEN', timer_done=False) -> 'GREEN'
+    └── def control(timer_done, current_light):
         ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         └── if not timer_done:
             └── return current_light
-                return 'RED'
-            else:
-                if current_light == yellow:
-                    return red
+                return 'GREEN'
+            if timer_done:
                 if current_light == green:
                     return yellow
+                if current_light == yellow:
+                    return red
                 if current_light == red:
                     return green
 
   .. code-block:: shell
 
     control(current_light='YELLOW', timer_done=False) -> 'YELLOW'
-    └── def control(current_light, timer_done):
+    └── def control(timer_done, current_light):
         ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         └── if not timer_done:
             └── return current_light
                 return 'YELLOW'
-            else:
-                if current_light == yellow:
-                    return red
+            if timer_done:
                 if current_light == green:
                     return yellow
+                if current_light == yellow:
+                    return red
                 if current_light == red:
                     return green
 
   .. code-block:: shell
 
-    control(current_light='GREEN' , timer_done=False) -> 'YELLOW'
-    └── def control(current_light, timer_done):
+    control(current_light='RED', timer_done=False) -> 'RED'
+    └── def control(timer_done, current_light):
         ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         └── if not timer_done:
             └── return current_light
-                return 'GREEN'
-            else:
-                if current_light == yellow:
-                    return red
+                return 'RED'
+            if timer_done:
                 if current_light == green:
                     return yellow
+                if current_light == yellow:
+                    return red
                 if current_light == red:
                     return green
 
 * If the timer is :green:`done` it checks the value of ``current_light``
+
+  - If the current light is :green:`GREEN` it returns :yellow:`YELLOW`
+
+    .. code-block:: shell
+
+      control(current_light='GREEN', timer_done=True ) -> 'YELLOW'
+      └── def control(timer_done, current_light):
+          ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+          ├── if not timer_done:
+          │      return current_light
+          └── if timer_done:
+              └── if current_light == green:
+                      return yellow
+                  if current_light == yellow:
+                      return red
+                  if current_light == red:
+                      return green
 
   - If the current light is :yellow:`YELLOW` it returns :red:`RED`
 
     .. code-block:: shell
 
       control(current_light='YELLOW', timer_done=True ) -> 'RED'
-      └── def control(current_light, timer_done):
+      └── def control(timer_done, current_light):
           ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
           ├── if not timer_done:
-          │       return current_light
-          └── else:
+          │      return current_light
+          └── if timer_done:
+              ├── if current_light == green:
+              │       return yellow
               └── if current_light == yellow:
                   └── return red
-                  if current_light == green:
-                      return yellow
-                  if current_light == red:
-                      return green
-
-  - If the current light is :green:`GREEN` it returns :yellow:`YELLOW`
-
-    .. code-block:: shell
-
-      control(current_light='GREEN' , timer_done=True ) -> 'YELLOW'
-      └── def control(current_light, timer_done):
-          ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-          ├── if not timer_done:
-          │       return current_light
-          └── else:
-              ├── if current_light == yellow:
-              │       return red
-              └── if current_light == green:
-                  └── return yellow
                   if current_light == red:
                       return green
 
@@ -1544,20 +1409,20 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
 
     .. code-block:: shell
 
-      control(current_light='RED'   , timer_done=True ) -> 'GREEN'
-      └── def control(current_light, timer_done):
+      control(current_light='RED', timer_done=True ) -> 'GREEN'
+      └── def control(timer_done, current_light):
           ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
           ├── if not timer_done:
-          │       return current_light
-          └── else:
-              ├── if current_light == yellow:
-              │       return red
+          │      return current_light
+          └── if timer_done:
               ├── if current_light == green:
               │       return yellow
+              ├── if current_light == yellow:
+              │       return red
               └── if current_light == red:
                   └── return green
 
-* If none of the above :ref:`conditions<if statements>` are met it :ref:`returns None<test_functions_w_return_none>`.
+* If none of the above :ref:`conditions<if statements>` are met it :ref:`returns None because ...<test_functions_w_return_none>`.
 
 ----
 
@@ -4991,7 +4856,7 @@ refactor control function
         if not timer_done:
             if current_light != red:
                 return current_light, dont_walk
-            else:
+            if timer_done:
                 return walk
             if current_light == red:
                 # return current_light, 'WALK'
@@ -5021,7 +4886,7 @@ refactor control function
         if current_light == red:
             if not walk_button:
                 return green, dont_walk
-            else:
+            if timer_done:
                 return walk
 
   green.
@@ -5035,7 +4900,7 @@ refactor control function
         if current_light == red:
             if not walk_button:
                 return green, dont_walk
-            else:
+            if timer_done:
                 return walk
 
         return walk
@@ -5051,7 +4916,7 @@ refactor control function
         if current_light == red:
             if not walk_button:
                 return green, dont_walk
-            # else:
+            # if timer_done:
             #     return walk
 
         return walk
@@ -5067,7 +4932,7 @@ refactor control function
         #     if not walk_button:
         if current_light == red and not walk_button:
                 return green, dont_walk
-            # else:
+            # if timer_done:
             #     return walk
 
         return walk
@@ -5117,7 +4982,7 @@ refactor control function
         #     if not walk_button:
             if current_light == red and not walk_button:
                 return green, dont_walk
-            # else:
+            # if timer_done:
             #     return walk
 
         return walk
@@ -5133,7 +4998,7 @@ refactor control function
         if not timer_done:
             if current_light != red:
                 return current_light, dont_walk
-            # else:
+            # if timer_done:
             #     return walk
             # if current_light == red:
                 # return current_light, 'WALK'
@@ -5159,7 +5024,7 @@ refactor control function
             # if current_light != red:
         if not timer_done and current_light != red:
             return current_light, dont_walk
-            # else:
+            # if timer_done:
 
   still green.
 
