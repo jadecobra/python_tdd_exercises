@@ -1701,7 +1701,7 @@ test_all_red_after_cross_timer_done
 ----
 
 *********************************************************************************
-test_all_red_after_cross_timer_not_done
+test_safety_red_after_cross_timer_not_done
 *********************************************************************************
 
 =================================================================================
@@ -1711,7 +1711,7 @@ test_all_red_after_cross_timer_not_done
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test with an :ref:`assertion<what is an assertion?>` for if the current parallel light is :red:`RED` AND the current cross light is :red:`RED` AND the timer is :green:`done`
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the current parallel light is :red:`RED` AND the current cross light is :red:`RED` AND the timer is :red:`NOT done`
 
   ================  ================  =============== =================== =================
   current           current           timer           next                next
@@ -1724,7 +1724,7 @@ test_all_red_after_cross_timer_not_done
     :lineno-start: 55
     :emphasize-lines: 10-18
 
-        def test_red_light_timer_not_done(self):
+        def test_red_light_timer_done(self):
             self.assertEqual(
                 src.traffic_light.control(
                     timer_done=True,
@@ -1733,25 +1733,23 @@ test_all_red_after_cross_timer_not_done
                 GREEN
             )
 
-        def test_all_red_after_cross_timer_not_done(self):
+        def test_safety_red_after_cross_timer_not_done(self):
             self.assertEqual(
                 src.traffic_light.control(
                     current_parallel=RED,
                     current_cross=RED,
-                    timer_done=True,
+                    timer_done=False,
                 ),
-                (GREEN, RED)
+                (RED, RED)
             )
 
+        def test_all_red_after_cross_timer_done(self):
 
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    TypeError: control() got
-               an unexpected keyword argument 'current_parallel'
+    AssertionError: None != ('RED', 'RED')
 
 ----
 
@@ -1761,7 +1759,7 @@ test_all_red_after_cross_timer_not_done
 
 ----
 
-* I add ``current_parallel``  to the :ref:`function defition<how to make a function that takes input>` in ``src/traffic_light/__init__.py``
+* I add an :ref:`if statement<if statements>` for if the current parallel light is :red:`RED` AND the current cross light is :red:`RED`  in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
