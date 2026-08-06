@@ -620,7 +620,7 @@ test_yellow_light_timer_not_done
 
 ----
 
-* I add an :ref:`if statement<if statements>` for when the current light is :yellow:`YELLOW` to ``src/traffic_light/__init__.py``
+* I add an :ref:`if statement<if statements>` for if the current light is :yellow:`YELLOW` to ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -807,7 +807,7 @@ test_yellow_light_timer_done
 
 ----
 
-* I add an :ref:`if statement<if statements>` for when the timer is :green:`done` AND the light is :yellow:`YELLOW`, in ``src/traffic_light/__init__.py``
+* I add an :ref:`if statement<if statements>` for if the timer is :green:`done` AND the light is :yellow:`YELLOW`, in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1201,7 +1201,7 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
 
   The ``control`` :ref:`function<what is a function?>` returns the current light in every case where the timer is :red:`NOT done`
 
-* I add a :ref:`return statement<the return statement>` to return the current light when the timer is :red:`NOT done`
+* I add a :ref:`return statement<the return statement>` to return the current light if the timer is :red:`NOT done`
 
   .. code-block:: python
     :lineno-start: 10
@@ -1455,7 +1455,7 @@ current light     timer            output
 
 This only shows one set of lights for traffic in one direction, which is not needed if the street has no cross traffic, it is not yet a real **Traffic Light**.
 
-I want the ``control`` :ref:`function<what is a function?>` to show what happens in front of me (parallel) and what happens for the traffic crossing the street when the light is :red:`RED` for me, it has to consider traffic in both directions
+I want the ``control`` :ref:`function<what is a function?>` to show what happens in front of me (parallel) and what happens for the traffic crossing the street if the light is :red:`RED` for me, it has to consider traffic in both directions
 
 * what traffic phase is this (cross, parallel or both)?
 
@@ -1477,8 +1477,8 @@ parallel          cross
 That leaves me with this :ref:`truth table`
 
 ================  ================  =============== =================== =================
-current           current           timer           next                next
-parallel          cross                             parallel            cross
+current           current                           next                next
+parallel          cross             timer           parallel            cross
 ================  ================  =============== =================== =================
 :green:`GREEN`    :red:`RED`        :red:`NOT done` :green:`GREEN`      :red:`RED`
 :green:`GREEN`    :red:`RED`        :green:`done`   :yellow:`YELLOW`    :red:`RED`
@@ -1489,8 +1489,8 @@ parallel          cross                             parallel            cross
 ================  ================  =============== =================== =================
 
 ================  ================  =============== =================== =================
-current           current           timer           next                next
-parallel          cross                             parallel            cross
+current           current                           next                next
+parallel          cross             timer           parallel            cross
 ================  ================  =============== =================== =================
 :red:`RED`        :green:`GREEN`    :red:`NOT done` :red:`RED`          :green:`GREEN`
 :red:`RED`        :green:`GREEN`    :green:`done`   :red:`RED`          :yellow:`YELLOW`
@@ -1518,8 +1518,8 @@ test_all_red_after_cross_timer_done
 * I add a test with an :ref:`assertion<what is an assertion?>` for if the current parallel light is :red:`RED` AND the current cross light is :red:`RED` AND the timer is :green:`done`
 
   ================  ================  =============== =================== =================
-  current           current           timer           next                next
-  parallel          cross                             parallel            cross
+  current           current                           next                next
+  parallel          cross             timer           parallel            cross
   ================  ================  =============== =================== =================
   :red:`RED`        :red:`RED`        :green:`done`   :green:`GREEN`      :red:`RED`
   ================  ================  =============== =================== =================
@@ -1714,8 +1714,8 @@ test_safety_red_after_cross_timer_not_done
 * I add a test with an :ref:`assertion<what is an assertion?>` for if the current parallel light is :red:`RED` AND the current cross light is :red:`RED` AND the timer is :red:`NOT done`
 
   ================  ================  =============== =================== =================
-  current           current           timer           next                next
-  parallel          cross                             parallel            cross
+  current           current                           next                next
+  parallel          cross             timer           parallel            cross
   ================  ================  =============== =================== =================
   :red:`RED`        :red:`RED`        :red:`NOT done` safety :red:`RED`   safety :red:`RED`
   ================  ================  =============== =================== =================
@@ -1759,98 +1759,188 @@ test_safety_red_after_cross_timer_not_done
 
 ----
 
-* I add an :ref:`if statement<if statements>` for if the current parallel light is :red:`RED` AND the current cross light is :red:`RED`  in ``src/traffic_light/__init__.py``
+* I add an :ref:`if statement<if statements>` for if the current parallel light is :red:`RED` AND the current cross light is :red:`RED` to ``if not timer_done:`` in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
+    :lineno-start: 6
+    :emphasize-lines: 2-3
 
-    def control(timer_done, current_light, current_parallel):
+        if not timer_done:
+            if current_parallel == red and current_cross == red:
+                return red, red
+            return current_light
+        if timer_done:
 
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes TypeError?>`
 
   .. code-block:: python
 
-    FAILED ...test_all_red_after_cross_timer_not_done -
-        TypeError: control() got an
-            unexpected keyword argument 'current_cross'
     FAILED ...test_green_light_timer_not_done -
-        TypeError: control() missing
-            1 required positional argument: 'current_parallel'
-    FAILED ...test_green_light_timer_not_done -
-        TypeError: control() missing
-            1 required positional argument: 'current_parallel'
+        AssertionError: ('RED', 'RED') != 'GREEN'
     FAILED ...test_red_light_timer_not_done -
-         ypeError: control() missing
-            1 required positional argument: 'current_parallel'
-    FAILED ...test_red_light_timer_not_done -
-         TypeError: control() missing
-            1 required positional argument: 'current_parallel'
+        AssertionError: ('RED', 'RED') != 'RED'
     FAILED ...test_yellow_light_timer_not_done -
-        TypeError: control() missing
-            1 required positional argument: 'current_parallel'
-    FAILED ...test_yellow_light_timer_not_done -
-         TypeError: control() missing
-            1 required positional argument: 'current_parallel'
+        AssertionError: ('RED', 'RED') != 'YELLOW'
 
-* I add a :ref:`default value<test_optional_arguments>` for the ``current_parallel`` parameter
+  because those :ref:`assertions<what is an assertion?>` use the :ref:`default values<test_optional_arguments>` for ``current_parallel`` and ``cross_parallel``
+
+* I add an :ref:`if statements` for if the timer is :red:`NOT done` and the ``current_light`` is :ref:`grouped as True<how to test if something is grouped as True>`
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-4
+    :lineno-start: 6
+    :emphasize-lines: 2-3
 
-    def control(
-            timer_done, current_light,
-            current_parallel='RED',
-        ):
+        if not timer_done:
+            if current_light:
+                return current_light
+            if current_parallel == red and current_cross == red:
+                return red, red
+            # return current_light
+        if timer_done:
 
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: control() got
-               an unexpected keyword argument 'current_cross'
-
-* I add ``current_cross`` to the :ref:`function definition<how to make a function that takes input>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3
-
-    def control(
-            timer_done, current_light,
-            current_parallel='RED', current_cross='RED',
-        ):
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the test passes.
 
   .. code-block:: python
 
-     TypeError: control() missing
-                1 required positional argument: 'current_light'
+    control(
+        current_parallel='RED' , current_cross='RED',
+        timer_done=False
+    ) -> 'RED', 'RED'
+    control(
+        current_parallel='RED' , current_cross='RED',
+        timer_done=True
+    ) -> 'GREEN', 'RED'
 
-* I add a :ref:`default value<test_optional_arguments>` for ``current_light`` to the :ref:`function signature<how to make a function that takes input>`
+* I remove the commented line
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2
+    :lineno-start: 6
 
-    def control(
-            timer_done, current_light=None,
-            current_parallel='RED', current_cross='RED',
-        ):
+        if not timer_done:
+            if current_light:
+                return current_light
+            if current_parallel == red and current_cross == red:
+                return red, red
+
+        if timer_done:
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am
+    'add test_safety_red_after_cross_timer_not_done'
+
+----
+
+*********************************************************************************
+test_cross_yellow_timer_done
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the current parallel light is :red:`RED` AND the current cross light is :yellow:`YELLOW` AND the timer is :green:`done`
+
+  ================  ================  =============== =================== =================
+  current           current                           next                next
+  parallel          cross             timer           parallel            cross
+  ================  ================  =============== =================== =================
+  :red:`RED`        :yellow:`YELLOW`  :green:`done`   cross :red:`RED`    :red:`RED`
+  ================  ================  =============== =================== =================
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 10-18
+
+        def test_red_light_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    timer_done=True,
+                    current_light=RED
+                ),
+                GREEN
+            )
+
+        def test_cross_yellow_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    current_parallel=RED,
+                    current_cross=YELLOW,
+                    timer_done=True,
+                ),
+                (RED, RED)
+            )
+
+        def test_safety_red_after_cross_timer_not_done(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'GREEN' != ('GREEN', 'RED')
+    AssertionError: None != ('RED', 'RED')
 
-* I add an :ref:`if statement<if statements>` to ``if timer_done:`` for if the current parallel light is :red:`RED` AND the current cross light is :red:`RED`
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add an :ref:`if statement<if statements>` for if the current parallel light is :red:`RED` AND the current cross light is :yellow:`YELLOW` to ``if timer_done:`` in ``src/traffic_light/__init__.py``
+
+.. code-block:: python
+  :lineno-start: 12
+  :emphasize-lines: 8-9
+
+      if timer_done:
+          if current_light == green:
+              return yellow
+          if current_light == yellow:
+              return red
+          if current_light == red:
+              return green
+          if current_parallel == red and current_cross == yellow:
+              return red, red
+          if current_parallel == red and current_cross == red:
+              return green, red
+
+the test passes.
+
+.. code-block:: python
+
+  control(
+      current_parallel='RED' , current_cross='YELLOW',
+      timer_done=True
+  ) -> 'RED', 'RED'
+  control(
+      current_parallel='RED' , current_cross='RED',
+      timer_done=False
+  ) -> 'RED', 'RED'
+  control(
+      current_parallel='RED' , current_cross='RED',
+      timer_done=True
+  ) -> 'GREEN', 'RED'
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* Two of the :ref:`if statements` in ``if timer_done:`` are for if the current parallel light is :red:`RED`. I change them to remove repetition of ``if current_parallel == red``
 
   .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 8-9
+    :lineno-start: 12
+    :emphasize-lines: 8-16
 
         if timer_done:
             if current_light == green:
@@ -1859,30 +1949,36 @@ test_safety_red_after_cross_timer_not_done
                 return red
             if current_light == red:
                 return green
-            if current_parallel == red and current_cross == red:
-                return green, red
+            # if current_parallel == red and current_cross == yellow:
+            #     return red, red
+            # if current_parallel == red and current_cross == red:
+            #     return green, red
+            if current_parallel == red:
+                if current_cross == yellow:
+                    return red, red
+                if current_cross == red:
+                    return green, red
 
-  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>` because it exists the :ref:`if statement<if statements>` early since the :ref:`default value<test_optional_arguments>` for ``current_light`` is :red:`RED`.
+  the tests are still green.
 
-* I change the :ref:`default value` for ``current_light`` to :ref:`None<what is None?>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3
-
-    def control(
-            timer_done, current_light=None,
-            current_parallel='RED', current_cross='RED',
-        ):
-
-  the test passes.
+* I remove the commented lines
 
   .. code-block:: python
+    :lineno-start: 12
 
-    control(
-        current_parallel='RED' , current_cross='RED',
-        timer_done=True
-    ) -> 'GREEN', 'RED'
+        if timer_done:
+            if current_light == green:
+                return yellow
+            if current_light == yellow:
+                return red
+            if current_light == red:
+                return green
+
+            if current_parallel == red:
+                if current_cross == yellow:
+                    return red, red
+                if current_cross == red:
+                    return green, red
 
 * I add a git_ commit message in the other terminal_
 
@@ -1890,13 +1986,449 @@ test_safety_red_after_cross_timer_not_done
     :emphasize-lines: 1-2
 
     git commit -am
-    'add test_all_red_after_cross_timer_not_done'
-
-
-
-
+    'add test_cross_yellow_timer_done'
 
 ----
+
+*********************************************************************************
+test_cross_yellow_timer_not_done
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the current parallel light is :red:`RED` AND the current cross light is :yellow:`YELLOW` AND the timer is :red:`NOT done`
+
+  ================  ================  =============== =================== =================
+  current           current                           next                next
+  parallel          cross             timer           parallel            cross
+  ================  ================  =============== =================== =================
+  :red:`RED`        :yellow:`YELLOW`  :red:`NOT done` :red:`RED`          :yellow:`YELLOW`
+  ================  ================  =============== =================== =================
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 10-18
+
+        def test_red_light_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    timer_done=True,
+                    current_light=RED
+                ),
+                GREEN
+            )
+
+        def test_cross_yellow_timer_not_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    current_parallel=RED,
+                    current_cross=YELLOW,
+                    timer_done=False,
+                ),
+                (RED, YELLOW)
+            )
+
+        def test_cross_yellow_timer_done(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None != ('RED', 'YELLOW')
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add an :ref:`if statement<if statements>` for if the current parallel light is :red:`RED` AND the current cross light is :yellow:`YELLOW` to ``if not timer_done:`` in ``src/traffic_light/__init__.py``
+
+.. code-block:: python
+  :lineno-start: 6
+  :emphasize-lines: 4-5
+
+      if not timer_done:
+          if current_light:
+              return current_light
+          if current_parallel == red and current_cross == yellow:
+              return red, yellow
+          if current_parallel == red and current_cross == red:
+              return red, red
+
+      if timer_done:
+
+the test passes.
+
+.. code-block:: python
+
+  control(
+      current_parallel='RED' , current_cross='YELLOW',
+      timer_done=False
+  ) -> 'RED', 'YELLOW'
+  control(
+      current_parallel='RED' , current_cross='YELLOW',
+      timer_done=True
+  ) -> 'RED', 'RED'
+  control(
+      current_parallel='RED' , current_cross='RED',
+      timer_done=False
+  ) -> 'RED', 'RED'
+  control(
+      current_parallel='RED' , current_cross='RED',
+      timer_done=True
+  ) -> 'GREEN', 'RED'
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* Two of the :ref:`if statements` in ``if not timer_done:`` are also for if the current parallel light is :red:`RED`. I change them to remove repetition of ``if current_parallel == red``
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 3-12
+
+        if not timer_done:
+            if current_light:
+                return current_light
+            # if current_parallel == red and current_cross == yellow:
+            #     return red, yellow
+            # if current_parallel == red and current_cross == red:
+            #     return red, red
+            if current_parallel == red:
+                if current_cross == yellow:
+                    return red, yellow
+                if current_cross == red:
+                    return red, red
+
+        if timer_done:
+
+  the tests are still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 6
+
+        if not timer_done:
+            if current_light:
+                return current_light
+
+            if current_parallel == red:
+                if current_cross == yellow:
+                    return red, yellow
+                if current_cross == red:
+                    return red, red
+
+        if timer_done:
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am
+    'add test_cross_yellow_timer_not_done'
+
+----
+
+*********************************************************************************
+test_cross_green_timer_done
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the current parallel light is :red:`RED` AND the current cross light is :green:`GREEN` AND the timer is :green:`done`
+
+  ================  ================  =============== =================== =================
+  current           current                           next                next
+  parallel          cross             timer           parallel            cross
+  ================  ================  =============== =================== =================
+  :red:`RED`        :green:`GREEN`    :green:`done`   :red:`RED`          :yellow:`YELLOW`
+  ================  ================  =============== =================== =================
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 10-18
+
+        def test_red_light_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    timer_done=True,
+                    current_light=RED
+                ),
+                GREEN
+            )
+
+        def test_cross_green_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    current_parallel=RED,
+                    current_cross=GREEN,
+                    timer_done=True,
+                ),
+                (RED, YELLOW)
+            )
+
+        def test_cross_yellow_timer_not_done(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None != ('RED', 'YELLOW')
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add an :ref:`if statement<if statements>` for if the current parallel light is :red:`RED` AND the current cross light is :green:`GREEN` to ``if timer_done:`` in ``src/traffic_light/__init__.py``
+
+.. code-block:: python
+  :lineno-start: 16
+  :emphasize-lines: 10-11
+
+        if timer_done:
+            if current_light == green:
+                return yellow
+            if current_light == yellow:
+                return red
+            if current_light == red:
+                return green
+
+            if current_parallel == red:
+                if current_cross == green:
+                    return red, yellow
+                if current_cross == yellow:
+                    return red, red
+                if current_cross == red:
+                    return green, red
+
+the test passes.
+
+.. code-block:: python
+
+  control(
+      current_parallel='RED' , current_cross='GREEN',
+      timer_done=True
+  ) -> 'RED', 'YELLOW'
+  control(
+      current_parallel='RED' , current_cross='YELLOW',
+      timer_done=False
+  ) -> 'RED', 'YELLOW'
+  control(
+      current_parallel='RED' , current_cross='YELLOW',
+      timer_done=True
+  ) -> 'RED', 'RED'
+  control(
+      current_parallel='RED' , current_cross='RED',
+      timer_done=False
+  ) -> 'RED', 'RED'
+  control(
+      current_parallel='RED' , current_cross='RED',
+      timer_done=True
+  ) -> 'GREEN', 'RED'
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am
+    'add test_cross_green_timer_done'
+
+----
+
+*********************************************************************************
+test_cross_green_timer_not_done
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the current parallel light is :red:`RED` AND the current cross light is :green:`GREEN` AND the timer is :red:`NOT done`
+
+  ================  ================  =============== =================== =================
+  current           current                           next                next
+  parallel          cross             timer           parallel            cross
+  ================  ================  =============== =================== =================
+  :red:`RED`        :green:`GREEN`    :red:`NOT done` :red:`RED`          :green:`GREEN`
+  ================  ================  =============== =================== =================
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 10-18
+
+        def test_red_light_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    timer_done=True,
+                    current_light=RED
+                ),
+                GREEN
+            )
+
+        def test_cross_green_timer_not_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    current_parallel=RED,
+                    current_cross=GREEN,
+                    timer_done=False,
+                ),
+                (RED, GREEN)
+            )
+
+        def test_cross_green_timer_done(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None != ('RED', 'GREEN')
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add an :ref:`if statement<if statements>` for if the current parallel light is :red:`RED` AND the current cross light is :green:`GREEN` to ``if not timer_done:`` in ``src/traffic_light/__init__.py``
+
+.. code-block:: python
+  :lineno-start: 6
+  :emphasize-lines: 6-7
+
+      if not timer_done:
+          if current_light:
+              return current_light
+
+          if current_parallel == red:
+              if current_cross == green:
+                  return red, green
+              if current_cross == yellow:
+                  return red, yellow
+              if current_cross == red:
+                  return red, red
+
+      if timer_done:
+
+the test passes.
+
+.. code-block:: python
+
+  control(
+      current_parallel='RED' , current_cross='GREEN',
+      timer_done=False
+  ) -> 'RED', 'GREEN'
+  control(
+      current_parallel='RED' , current_cross='GREEN',
+      timer_done=True
+  ) -> 'RED', 'YELLOW'
+  control(
+      current_parallel='RED' , current_cross='YELLOW',
+      timer_done=False
+  ) -> 'RED', 'YELLOW'
+  control(
+      current_parallel='RED' , current_cross='YELLOW',
+      timer_done=True
+  ) -> 'RED', 'RED'
+  control(
+      current_parallel='RED' , current_cross='RED',
+      timer_done=False
+  ) -> 'RED', 'RED'
+  control(
+      current_parallel='RED' , current_cross='RED',
+      timer_done=True
+  ) -> 'GREEN', 'RED'
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* The three :ref:`if statements` in ``if not timer_done:`` for if the current parallel light is :red:`RED` all return the current parallel light and the current cross light. I write one :ref:`return statement<the return statement>` for all of them
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 6
+
+        if not timer_done:
+            if current_light:
+                return current_light
+
+            if current_parallel == red:
+                return current_parallel, current_cross
+                if current_cross == green:
+                    return red, green
+                if current_cross == yellow:
+                    return red, yellow
+                if current_cross == red:
+                    return red, red
+
+        if timer_done:
+
+  the tests are still green.
+
+* I remove the :ref:`if statements` for the other cases since they are no longer used
+
+  .. code-block:: python
+    :lineno-start: 6
+
+        if not timer_done:
+            if current_light:
+                return current_light
+
+            if current_parallel == red:
+                return current_parallel, current_cross
+
+        if timer_done:
+
+  still green.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am
+    'add test_cross_green_timer_not_done'
+
+
+
+
+####
+BOOM BOOM BAP
+####
 
 *********************************************************************************
 test_green_light_timer_not_done_walk_button
@@ -5278,7 +5810,7 @@ refactor control function
 
   the tests are still green.
 
-* I add a new :ref:`if statement with an else clause<if statements>` to ``if not timer done:``, that covers the 3 cases when the timer is :red:`NOT done`
+* I add a new :ref:`if statement with an else clause<if statements>` to ``if not timer done:``, that covers the 3 cases if the timer is :red:`NOT done`
 
   .. code-block:: python
     :lineno-start: 9
@@ -5338,7 +5870,7 @@ refactor control function
 
   still green. This means if none of the :ref:`conditions<if statements>` in the ``control`` :ref:`function<what is a function?>` are met, the light stays :red:`RED` and shows ``'WALK'``
 
-* I no longer need the :ref:`else clause<if statements>` for when the walk button is :green:`pushed` because it returns the default state (``'RED', 'WALK'``) when the light is :red:`RED` AND the timer is :green:`done`. I comment it out
+* I no longer need the :ref:`else clause<if statements>` for if the walk button is :green:`pushed` because it returns the default state (``'RED', 'WALK'``) if the light is :red:`RED` AND the timer is :green:`done`. I comment it out
 
   .. code-block:: python
     :lineno-start: 39
@@ -5370,7 +5902,7 @@ refactor control function
 
   still green.
 
-* I no longer need the :ref:`if statement<if statements>` for :yellow:`YELLOW` because it returns the default state (``'RED', 'WALK'``) when the timer is :green:`done`. I comment it out
+* I no longer need the :ref:`if statement<if statements>` for :yellow:`YELLOW` because it returns the default state (``'RED', 'WALK'``) if the timer is :green:`done`. I comment it out
 
   .. code-block:: python
     :lineno-start: 24
@@ -5860,7 +6392,7 @@ current light     timer            walk button        output
 :green:`GREEN`    :red:`NOT done`  :red:`NOT pushed`  :green:`GREEN` + :red:`DONT WALK`
 ================  ===============  =================  =================================
 
-It only shows ``'WALK'`` when the light is :red:`RED`.
+It only shows ``'WALK'`` if the light is :red:`RED`.
 
 What if the **Traffic Light** changes based on if there is an emergency vehicle? The inputs would be
 
