@@ -459,7 +459,7 @@ AssertionError_ is raised if the statement after `the assert keyword`_ is :ref:`
 
   assert False is True
 
-With this statement, I tell Python_ - "DO NOT CONTINUE, if :ref:`False<test_what_is_false>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`", or said a different way "GO TO THE NEXT LINE, ONLY if :ref:`False<test_what_is_false>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`".
+With this statement, I tell Python_ - "DO NOT CONTINUE, if :ref:`False<test_what_is_false>` is NOT the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`", or said a different way "GO TO THE NEXT LINE, ONLY if :ref:`False<test_what_is_false>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`".
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
