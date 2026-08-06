@@ -4296,7 +4296,7 @@ It looks like I can remove the ``current_parallel`` and ``current_cross`` parame
 
   the tests are green again.
 
-* I remove the commented lines from the ``control`` :ref:`function<what is a function?>`timer_done`` again
+* I remove the commented lines from the ``control`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:

@@ -979,7 +979,7 @@ the test passes.
 
   .. code-block:: python
 
-    E   assert {} is None
+    E   assert () is None
 
   because a tuple_ is not the same :ref:`object<everything is an object>` :ref:`None<what is None?>`.
 
