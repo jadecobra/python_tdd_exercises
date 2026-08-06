@@ -18,8 +18,6 @@
 what is an assertion?
 #################################################################################
 
-
-
 ----
 
 An :ref:`assertion<what is an assertion?>` or `assert statement`_ is a way for me to tell Python_, "DO NOT CONTINUE, if this statement is False", or said a different way "GO TO THE NEXT LINE, ONLY if this statement is True".
@@ -301,7 +299,7 @@ start the project
     # Exceptions seen
     # AssertionError
 
-  the test passes.
+  the test passes, the terminal_ shows ``no tests ran``
 
 ----
 
