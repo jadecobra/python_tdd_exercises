@@ -3845,7 +3845,7 @@ the test passes because
 
   .. code-block:: python
     :lineno-start: 148
-    :emphasize-lines: 10-12
+    :emphasize-lines: 9-11
 
         # @staticmethod
         # def test_assert_is_subclass():

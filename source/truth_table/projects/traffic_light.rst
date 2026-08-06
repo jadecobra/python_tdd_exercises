@@ -4034,17 +4034,112 @@ It looks like I can remove the ``current_parallel`` and ``current_cross`` parame
   .. code-block:: python
     :lineno-start: 62
 
-        def test_cross_green_parallel_red_timer_done(self):
+        def test_parallel_red_cross_red_timer_done(self):
             self.assertEqual(
                 src.traffic_light.control(
-                    red_phase='parallel',
+                    red_phase='cross',
+                    timer_done=True,
+                    current_light=RED,
+                ),
+                (RED, GREEN)
+            )
+
+        def test_cross_green_parallel_red_timer_not_done(self):
+
+* I comment out ``current_parallel=YELLOW`` and ``current_cross=RED`` then add ``current_light`` with the value for ``current_parallel`` in :ref:`test_parallel_yellow_cross_red_light_timer_done`
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 5-6, 8
+
+        def test_parallel_yellow_cross_red_light_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    red_phase='cross',
+                    # current_parallel=YELLOW,
+                    # current_cross=RED,
+                    timer_done=True,
+                    current_light=YELLOW,
+                ),
+                (RED, RED)
+            )
+
+        def test_parallel_red_cross_red_timer_not_done(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: ('RED', 'GREEN') != ('RED', 'RED')
+
+  because the :ref:`call<how to call a function with input>` uses the :ref:`default value<test_w_optional_arguments>` (:ref:`RED`) for ``current_parallel``.
+
+* I add ``current_parallel = current_light`` to ``if timer_done:`` to make sure ``current_cross`` is the value of ``current_light`` if ``cross`` traffic is in the :red:`RED` phase, in ``src/traffic_light/__init__.py``
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 3
+
+    if timer_done:
+        if red_phase == 'cross':
+            current_parallel = current_light
+            if current_parallel == green:
+                return yellow, red
+            if current_parallel == yellow:
+                return red, red
+            if current_parallel == red:
+                return red, green
+        # if current_parallel == red:
+        if red_phase == 'parallel':
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: ('RED', 'GREEN') != ('YELLOW', 'RED')
+
+  for :ref:`test_parallel_green_cross_red_timer_done` because the :ref:`call<how to call a function with input>` uses the :ref:`default value<test_w_optional_arguments>` for ``current_light``.
+
+* I comment out ``current_parallel=GREEN`` and ``current_cross=RED`` then add ``current_light`` with the value for ``current_parallel`` in :ref:`test_parallel_green_cross_red_timer_done`, in ``tests/test_traffic_light.py``
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 5-6, 8
+
+        def test_parallel_green_cross_red_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    red_phase='cross',
+                    # current_parallel=GREEN,
+                    # current_cross=RED,
                     timer_done=True,
                     current_light=GREEN,
                 ),
-                (RED, YELLOW)
+                (YELLOW, RED)
             )
 
-        def test_cross_yellow_parallel_red_timer_not_done(self):
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_parallel_green_cross_red_timer_done`
+
+  .. code-block:: python
+
+* I remove the commented lines from :ref:`test_parallel_yellow_cross_red_light_timer_done`
+
+  .. code-block:: python
+    :lineno-start: 41
+
+        def test_parallel_red_cross_red_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    red_phase='cross',
+                    timer_done=True,
+                    current_light=RED,
+                ),
+                (RED, GREEN)
+            )
+
+        def test_cross_green_parallel_red_timer_not_done(self):
 
 * I add ``current_parallel = current_light`` to ``if timer_done:`` to make it clearer that ``current_cross`` is the value of ``current_light`` if ``cross`` traffic is in the :red:`RED` phase, in ``src/traffic_light/__init__.py``
 
