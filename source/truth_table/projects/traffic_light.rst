@@ -1642,7 +1642,7 @@ test_all_red_after_cross_timer_done
     :emphasize-lines: 2
 
     def control(
-            timer_done, current_light=None,
+            timer_done, current_light='RED,
             current_parallel='RED', current_cross='RED',
         ):
 
@@ -1668,7 +1668,7 @@ test_all_red_after_cross_timer_done
             if current_parallel == red and current_cross == red:
                 return green, red
 
-  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>` because it exists the :ref:`if statement<if statements>` early since the :ref:`default value<test_optional_arguments>` for ``current_light`` is :red:`RED`.
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>` because the :ref:`function<what is a function?>` returns :red:`RED` if the timer is :green:`done` AND ``current_light`` is :red:`RED` and the :ref:`default value<test_optional_arguments>` for ``current_light`` in this :ref:`assertion<what is an assertion?>` is :red:`RED`.
 
 * I change the :ref:`default value` for ``current_light`` to :ref:`None<what is None?>`
 
@@ -1891,6 +1891,8 @@ test_safety_red_after_cross_timer_not_done
 
     git commit -am
     'add test_all_red_after_cross_timer_not_done'
+
+
 
 
 

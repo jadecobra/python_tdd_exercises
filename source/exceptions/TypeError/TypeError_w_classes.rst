@@ -261,7 +261,7 @@ because ``AClass`` is not defined in ``type_error.py``.
         @staticmethod
         def method_01(): return None
 
-  the test passes because I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything in the :ref:`class<everything is an object>`.
+  the test passes because I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` whenit does not use anything that belongs to the :ref:`class<everything is an object>`.
 
   Both :ref:`methods<what is a method?>` look the same. The difference is in how I :ref:`call<how to call a function>` them ``AClass.method_00()`` vs ``AClass().method_01()``.
 
@@ -713,7 +713,7 @@ because ``AClass`` is not defined in ``type_error.py``.
         @staticmethod
         def method_00(): return None
 
-  the test passes. I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything in the :ref:`class<everything is an object>`.
+  the test passes. I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` whenit does not use anything that belongs to the :ref:`class<everything is an object>`.
 
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_08()`` from ``test_type_error.py``
 

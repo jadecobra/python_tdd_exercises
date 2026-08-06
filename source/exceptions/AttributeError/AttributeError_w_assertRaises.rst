@@ -960,7 +960,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   where ``self`` is ``AClass``.
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` :ref:`method definition<how to make a function>` instead of ``self`` since it does not use anything in the :ref:`class<everything is an object>`. That way I do not send more information than what the :ref:`method<what is a method?>` needs.
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` :ref:`method definition<how to make a function>` instead of ``self`` sinceit does not use anything that belongs to the :ref:`class<everything is an object>`. That way I do not send more information than what the :ref:`method<what is a method?>` needs.
 
   .. code-block:: python
     :lineno-start: 69
@@ -1290,7 +1290,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_08`` does not allow it take any :ref:`positional arguments<test_positional_arguments>` (the parentheses are empty).
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to the :ref:`method definition<how to make a function>` since it does not use anything in the :ref:`class<everything is an object>`
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to the :ref:`method definition<how to make a function>` sinceit does not use anything that belongs to the :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 89

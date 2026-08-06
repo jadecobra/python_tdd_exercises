@@ -2800,7 +2800,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
 ----
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``test_failure`` since I can use it if I do not want to add ``self`` to the :ref:`method definition<how to make a function>`. This way I do not send more information than what the :ref:`method<what is a method?>` needs when it does not use anything in the :ref:`class<everything is an object>`
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``test_failure`` since I can use it if I do not want to add ``self`` to the :ref:`method definition<how to make a function>`. This way I do not send more information than what the :ref:`method<what is a method?>` needs whenit does not use anything that belongs to the :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 7

@@ -434,7 +434,7 @@ what is the staticmethod decorator?
 
 ----
 
-* I can use the `staticmethod decorator`_ if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything in the :ref:`class<everything is an object>` that way I am not sending more information than what the :ref:`method<what is a method?>` needs. I add ``@staticmethod`` to ``say_hello``
+* I can use the `staticmethod decorator`_ if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` whenit does not use anything that belongs to the :ref:`class<everything is an object>` that way I am not sending more information than what the :ref:`method<what is a method?>` needs. I add ``@staticmethod`` to ``say_hello``
 
   .. code-block:: python
     :lineno-start: 27
