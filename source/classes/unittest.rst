@@ -2850,7 +2850,8 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
 ----
 
-* I move :ref:`test_dir_unittest` to replace ``test_failure`` As a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
+* I remove ``test_failure``
+* I move :ref:`test_dir_unittest` to replace ``test_failure`` as a :ref:`method<what is a method?>` of the :ref:`TestUnittest class<extract TestUnittest class>`
 
   .. code-block:: python
     :lineno-start: 7
