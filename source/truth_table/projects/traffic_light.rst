@@ -3689,6 +3689,167 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
 
   .. code-block:: shell
 
+    control(
+        current_parallel='RED', current_cross='GREEN',
+        timer_done=False
+    ) -> 'RED', 'GREEN'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel='RED', current_cross='RED',
+            ):
+            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+            └── if not timer_done:
+                └── return current_parallel, current_cross
+                    return 'RED'          , 'GREEN'
+                if timer_done:
+                    if red_phase == 'cross':
+                        if current_parallel == green:
+                            return yellow, red
+                        if current_parallel == red:
+                            return red, green
+                    if red_phase == 'parallel':
+                        if current_cross == green:
+                            return red, yellow
+                        if current_cross == red:
+                            return green, red
+                return red, red
+
+  .. code-block:: shell
+
+    control(
+        current_parallel='RED', current_cross='YELLOW',
+        timer_done=False
+    ) -> 'RED', 'YELLOW'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel='RED', current_cross='RED',
+            ):
+            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+            └── if not timer_done:
+                └── return current_parallel, current_cross
+                    return 'RED'           , 'YELLOW'
+                if timer_done:
+                    if red_phase == 'cross':
+                        if current_parallel == green:
+                            return yellow, red
+                        if current_parallel == red:
+                            return red, green
+                    if red_phase == 'parallel':
+                        if current_cross == green:
+                            return red, yellow
+                        if current_cross == red:
+                            return green, red
+                return red, red
+
+  .. code-block:: shell
+
+    control(
+        current_parallel='RED', current_cross='RED',
+        timer_done=False
+    ) -> 'RED', 'RED'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel='RED', current_cross='RED',
+            ):
+            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+            └── if not timer_done:
+                └── return current_parallel, current_cross
+                    return 'RED'           , 'RED'
+                if timer_done:
+                    if red_phase == 'cross':
+                        if current_parallel == green:
+                            return yellow, red
+                        if current_parallel == red:
+                            return red, green
+                    if red_phase == 'parallel':
+                        if current_cross == green:
+                            return red, yellow
+                        if current_cross == red:
+                            return green, red
+                return red, red
+
+
+  .. code-block:: shell
+
+    control(
+        current_parallel='GREEN', current_cross='RED',
+        timer_done=False, red_phase='cross'
+    ) -> 'GREEN', 'RED'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel='RED', current_cross='RED',
+            ):
+            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+            └── if not timer_done:
+                └── return current_parallel, current_cross
+                    return 'GREEN'         , 'RED'
+                if timer_done:
+                    if red_phase == 'cross':
+                        if current_parallel == green:
+                            return yellow, red
+                        if current_parallel == red:
+                            return red, green
+                    if red_phase == 'parallel':
+                        if current_cross == green:
+                            return red, yellow
+                        if current_cross == red:
+                            return green, red
+                return red, red
+
+  .. code-block:: shell
+
+    control(
+        current_parallel='YELLOW', current_cross='RED',
+        timer_done=False, red_phase='cross'
+    ) -> 'YELLOW', 'RED'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel='RED', current_cross='RED',
+            ):
+            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+            └── if not timer_done:
+                └── return current_parallel, current_cross
+                    return 'YELLOW'        , 'RED'
+                if timer_done:
+                    if red_phase == 'cross':
+                        if current_parallel == green:
+                            return yellow, red
+                        if current_parallel == red:
+                            return red, green
+                    if red_phase == 'parallel':
+                        if current_cross == green:
+                            return red, yellow
+                        if current_cross == red:
+                            return green, red
+                return red, red
+
+  .. code-block:: shell
+
+    control(
+        current_parallel='RED', current_cross='RED',
+        timer_done=False, red_phase='cross'
+    ) -> 'RED', 'RED'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel='RED', current_cross='RED',
+            ):
+            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+            └── if not timer_done:
+                └── return current_parallel, current_cross
+                    return 'RED'           , 'RED'
+                if timer_done:
+                    if red_phase == 'cross':
+                        if current_parallel == green:
+                            return yellow, red
+                        if current_parallel == red:
+                            return red, green
+                    if red_phase == 'parallel':
+                        if current_cross == green:
+                            return red, yellow
+                        if current_cross == red:
+                            return green, red
+                return red, red
+
 * If the timer is :green:`done`, it checks if ``cross`` traffic is in the :red:`RED` phase
 
   - If ``cross`` traffic is in the :red:`RED` phase, it checks the value of ``current_parallel``
@@ -3717,54 +3878,35 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
 
   .. code-block:: shell
 
-  control(
-      current_parallel='RED' , current_cross='YELLOW',
-      timer_done=False, red_phase='parallel'
-  ) -> 'RED', 'YELLOW'
-  control(
-      current_parallel='RED' , current_cross='RED',
-      timer_done=False, red_phase='parallel'
-  ) -> 'RED', 'RED'
-  control(
-      current_parallel='GREEN' , current_cross='RED',
-      timer_done=False, red_phase='cross'
-  ) -> 'GREEN', 'RED'
-  control(
-      current_parallel='YELLOW' , current_cross='RED',
-      timer_done=False, red_phase='cross'
-  ) -> 'YELLOW', 'RED'
-  control(
-      current_parallel='RED' , current_cross='RED',
-      timer_done=False, red_phase='cross'
-  ) -> 'RED', 'RED'
+
 
   control(
-      current_parallel='RED' , current_cross='GREEN',
-      timer_done=True, red_phase='parallel'
+      current_parallel='RED', current_cross='GREEN',
+      timer_done=True
   ) -> 'RED', 'YELLOW'
+
+
   control(
-      current_parallel='RED' , current_cross='YELLOW',
-      timer_done=True, red_phase='parallel'
+      current_parallel='RED', current_cross='YELLOW',
+      timer_done=True
   ) -> 'RED', 'RED'
+
+
   control(
-      current_parallel='RED' , current_cross='RED',
-      timer_done=True, red_phase='parallel'
+      current_parallel='RED', current_cross='RED',
+      timer_done=True
   ) -> 'GREEN', 'RED'
 
   control(
-      current_parallel='RED' , current_parallel='RED',
-      timer_done=True, red_phase='cross'
-  ) -> 'RED', 'GREEN'
-  control(
-      current_parallel='GREEN' , current_cross='RED',
+      current_parallel='GREEN', current_cross='RED',
       timer_done=True, red_phase='cross'
   ) -> 'YELLOW', 'RED'
   control(
-      current_parallel='YELLOW' , current_cross='RED',
+      current_parallel='YELLOW', current_cross='RED',
       timer_done=True, red_phase='cross'
   ) -> 'RED', 'RED'
   control(
-      current_parallel='RED' , current_cross='RED',
+      current_parallel='RED', current_cross='RED',
       timer_done=True, red_phase='cross'
   ) -> 'RED', 'GREEN'
 
