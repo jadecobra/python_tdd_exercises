@@ -1461,6 +1461,7 @@ I want the ``control`` :ref:`function<what is a function?>` to show what happens
 
   - what is the light for me (parallel)?
   - what is the light for them (cross)?
+
 * is the timer done?
 
 The outputs will be the lights for Parallel and Cross Traffic which gives me this :ref:`truth table`. The **Traffic Light** has to make sure that there is never a case where cars move through the intersection at the same time to avoid accidents. The following cases must never happen
@@ -3509,10 +3510,16 @@ the test passes.
 ----
 
 *********************************************************************************
-remove current_cross and current_parallel parameters
+remove current_cross and current_parallel
 *********************************************************************************
 
 It looks like I can remove the ``current_parallel`` and ``current_cross`` parameters since the **Traffic Light** uses :red:`RED` phases for one set of lights at a time.
+
+=================================================================================
+remove current_cross and current_parallel from the tests
+=================================================================================
+
+----
 
 * I add ``current_light`` back to the parameters in parentheses
 
@@ -4154,9 +4161,17 @@ It looks like I can remove the ``current_parallel`` and ``current_cross`` parame
 
         def test_parallel_red_cross_red_timer_not_done(self):
 
+----
+
+=================================================================================
+remove current_cross and current_parallel from control function
+=================================================================================
+
+----
+
 * I add :ref:`if statements` for the ones that point ``current_parallel`` and ``current_cross`` to ``current_light`` based on the :red:`RED` traffic phase to remove their repetition, in ``src/traffic_light/__init__.py``
 
-  .. code-block:: python:
+  .. code-block:: python
     :lineno-start: 6
     :emphasize-lines: 2-5
 
@@ -4259,11 +4274,9 @@ It looks like I can remove the ``current_parallel`` and ``current_cross`` parame
             # current_parallel='RED', current_cross='RED',
         ):
 
-  the terminal_ is my friend and shows :ref:`UnboundLocalError<test_catching_name_error_in_tests>` for ``current_parallel`` and ``current_cross`` because those names are used before they are defined in the :ref:`function<what is a function>.`
+  the terminal_ is my friend and shows :ref:`UnboundLocalError<test_catching_name_error_in_tests>` for ``current_parallel`` and ``current_cross`` because those names are used before they are defined in the :ref:`function<what is a function?>`.
 
-  .. NOTE::
-
-    :ref:`UnboundLocalError<test_catching_name_error_in_tests>` is a :ref:`subclass<how to test if something is a subclass>` of :ref:`NameError<test_catching_name_error_in_tests>`
+  :ref:`UnboundLocalError<test_catching_name_error_in_tests>` is a :ref:`subclass<how to test if something is a subclass>` of :ref:`NameError<test_catching_name_error_in_tests>`.
 
 * I add :ref:`UnboundLocalError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen, in ``tests/test_traffic_light.py``
 
@@ -4296,7 +4309,48 @@ It looks like I can remove the ``current_parallel`` and ``current_cross`` parame
 
   the tests are green again.
 
-* I remove the commented lines from the ``control`` :ref:`function<what is a function?>`
+* I move the :ref:`if statements` for when the timer is :green:`done` AND ``cross`` traffic is in the :red:`RED` phase to ``if red_phase == 'cross'`` at the top of the :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 4-10
+
+        if red_phase == 'cross':
+            current_cross = red
+            current_parallel = current_light
+            if timer_done:
+                if current_parallel == green:
+                    return yellow, red
+                if current_parallel == yellow:
+                    return red, red
+                if current_parallel == red:
+                    return red, green
+        if red_phase == 'parallel':
+
+  the tests are still green.
+
+* I move the :ref:`if statements` for when the timer is :green:`done` AND ``parallel`` traffic is in the :red:`RED` phase to ``if red_phase == 'parallel'`` at the top of the :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 4-10
+
+        if red_phase == 'parallel':
+            current_cross = current_light
+            current_parallel = red
+            if timer_done:
+                if current_cross == green:
+                    return red, yellow
+                if current_cross == yellow:
+                    return red, red
+                if current_cross == red:
+                    return green, red
+
+        if not timer_done:
+
+  still green.
+
+* I remove the commented lines and unused statements from the ``control`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -4309,27 +4363,132 @@ It looks like I can remove the ``current_parallel`` and ``current_cross`` parame
         if red_phase == 'cross':
             current_cross = red
             current_parallel = current_light
-        if red_phase == 'parallel':
-            current_cross = current_light
-            current_parallel = red
-
-        if not timer_done:
-            return current_parallel, current_cross
-
-        if timer_done:
-            if red_phase == 'cross':
+            if timer_done:
                 if current_parallel == green:
                     return yellow, red
                 if current_parallel == yellow:
                     return red, red
                 if current_parallel == red:
                     return red, green
-            if red_phase == 'parallel':
+        if red_phase == 'parallel':
+            current_cross = current_light
+            current_parallel = red
+            if timer_done:
                 if current_cross == green:
                     return red, yellow
                 if current_cross == yellow:
                     return red, red
                 if current_cross == red:
+                    return green, red
+
+        if not timer_done:
+            return current_parallel, current_cross
+
+* I use the ``current_light`` :ref:`variable<what is a variable?>` directly in ``if red_phase == 'cross'``
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 5-6, 8-9, 11-12
+
+        if red_phase == 'cross':
+            current_cross = red
+            current_parallel = current_light
+            if timer_done:
+                # if current_parallel == green:
+                if current_light == green:
+                    return yellow, red
+                # if current_parallel == yellow:
+                if current_light == yellow:
+                    return red, red
+                # if current_parallel == red:
+                if current_light == red:
+                    return red, green
+        if red_phase == 'parallel':
+
+  green.
+
+* I add an :ref:`if statement<if statements>` for ``if not timer_done:`` to ``if red_phase == 'cross'``
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4-5
+
+        if red_phase == 'cross':
+            current_cross = red
+            current_parallel = current_light
+            if not timer_done:
+                return current_light, red
+            if timer_done:
+
+  still green.
+
+* I use the ``current_light`` :ref:`variable<what is a variable?>` directly in ``if red_phase == 'parallel'``
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 5-6, 8-9, 11-12
+
+        if red_phase == 'parallel':
+            current_cross = current_light
+            current_parallel = red
+            if timer_done:
+                # if current_cross == green:
+                if current_light == green:
+                    return red, yellow
+                # if current_cross == yellow:
+                if current_light == yellow:
+                    return red, red
+                # if current_cross == red:
+                if current_light == red:
+                    return green, red
+
+        if not timer_done:
+
+  the tests are still green.
+
+* I add an :ref:`if statement<if statements>` for ``if not timer_done:`` to ``if red_phase == 'parallel'``
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 4-5
+
+        if red_phase == 'parallel':
+            current_cross = current_light
+            current_parallel = red
+            if not timer_done:
+
+  still green.
+
+* I remove the commented lines, ``if not timer_done:``, ``current_cross`` and ``current_parallel`` parameters
+
+  .. code-block:: python
+    :linenos:
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_light='RED',
+        ):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        if red_phase == 'cross':
+            if not timer_done:
+                return current_light, red
+            if timer_done:
+                if current_light == green:
+                    return yellow, red
+                if current_light == yellow:
+                    return red, red
+                if current_light == red:
+                    return red, green
+
+        if red_phase == 'parallel':
+            if not timer_done:
+                return red, current_light
+            if timer_done:
+                if current_light == green:
+                    return red, yellow
+                if current_light == yellow:
+                    return red, red
+                if current_light == red:
                     return green, red
 
 * I add a git_ commit message in the other terminal_
@@ -4338,7 +4497,119 @@ It looks like I can remove the ``current_parallel`` and ``current_cross`` parame
     :emphasize-lines: 1-2
 
     git commit -am
-    'remove current_parallel and current_cross parameters'
+    'remove current_cross and current_parallel'
+
+----
+
+*********************************************************************************
+test_fail_safe
+*********************************************************************************
+
+The **Traffic Light** has to make sure that there is never a case where cars move through the intersection at the same time to avoid accidents. The following cases must never happen
+
+================  ================
+parallel          cross
+================  ================
+:green:`GREEN`    :green:`GREEN`
+:green:`GREEN`    :yellow:`YELLOW`
+:yellow:`YELLOW`  :yellow:`YELLOW`
+:yellow:`YELLOW`  :green:`GREEN`
+================  ================
+
+It should be :red:`RED` for both ``cross`` and ``parallel`` traffic for any of the above cases and for any cases that are outside the safe cases like a power failure.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add a test for the safety state in ``tests/test_traffic_light.py``
+
+  .. code-block:: python
+    :lineno-start: 120
+    :emphasize-lines: 10-17
+
+        def test_cross_red_parallel_red_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    red_phase='parallel',
+                    timer_done=True,
+                    current_light=RED,
+                ),
+                (GREEN, RED)
+            )
+
+        def test_failsafe(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    red_phase='BOOM',
+                    timer_done='BOOM',
+                    current_light='BOOM'
+                ),
+                (RED, RED)
+            )
+
+
+    # Exceptions seen
+
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+
+* I add a :ref:`variable<what is a variable?>` for the safety state ``(RED, RED)``
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 2
+
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        safety = red, red
+
+        if red_phase == 'cross':
+
+* I use the :ref:`variable<what is a variable?>` in the two :red:`RED` phases
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 8-9, 20-21
+
+        if red_phase == 'cross':
+            if not timer_done:
+                return current_light, red
+            if timer_done:
+                if current_light == green:
+                    return yellow, red
+                if current_light == yellow:
+                    # return red, red
+                    return safety
+                if current_light == red:
+                    return red, green
+
+        if red_phase == 'parallel':
+            if not timer_done:
+                return red, current_light
+            if timer_done:
+                if current_light == green:
+                    return red, yellow
+                if current_light == yellow:
+                    # return red, red
+                    return safety
+                if current_light == red:
+                    return green, red
+
+  green.
+
+
+
+
+* I add a :ref:`return statement<the return statement>` with the safety state as what the ``control`` :ref:`function<what >`
+
+
 
 
 ####
