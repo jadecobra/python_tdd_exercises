@@ -4220,7 +4220,7 @@ test_assert_keyword
 
     =================== 5 passed in J.KLs ====================
 
-  I have six :ref:`functions<what is a function?>` with :ref:`assertions<what is an assertion?>` and it only recognizes four.
+  I have six :ref:`functions<what is a function?>` with :ref:`assertions<what is an assertion?>` and it only recognizes five.
 
 * I add ``test_`` to the name of the :ref:`function<what is a function?>`
 
