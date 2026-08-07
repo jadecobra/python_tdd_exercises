@@ -4255,6 +4255,12 @@ the test passes.
 
 ----
 
+* I add an :ref:`if statement<if statements>` for when the parallel lights and the cross lights are the same AND are not equal to :red:`RED`
+
+  .. code-block:: python
+    :lineno-start: 21
+
+
 * I add a :ref:`return statement<the return statement>` with the safety state as what the ``control`` :ref:`function<what is a function?>` returns by default
 
   .. code-block:: python
@@ -4303,7 +4309,6 @@ the test passes.
 
   green.
 
-* I break up the :ref:`if statements`
 
 
 * I add a git_ commit message in the other terminal_

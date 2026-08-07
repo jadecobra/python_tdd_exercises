@@ -24,7 +24,7 @@ I have these tests by the end of the chapter
   :language: python
   :linenos:
   :caption: assertion_error/tests/test_assertion_error.py
-  
+
 ----
 
 *********************************************************************************
@@ -69,7 +69,7 @@ add TestAssertionError class
 
 ----
 
-* I add a :ref:`class<everything is an object>` named ``AssertionError`` to ``test_assertion_error.py``
+* I add a :ref:`class<everything is an object>` named ``AssertionError`` with a :ref:`method<what is a method?>` for the :ref:`first failing test<test_failure>` to ``test_assertion_error.py``
 
   .. code-block:: python
     :linenos:
