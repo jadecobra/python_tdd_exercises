@@ -4616,6 +4616,42 @@ extract is_not_light function
 
         return red, red
 
+* I add a :ref:`conditional expression<conditional expressions>` to the :ref:`is_not_light function<extract is_not_light function>`
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 3-5
+
+    def is_not_light(light):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        return not (
+            light == green or light == yellow or light == red
+        )
+        if not (
+            light == green or light == yellow or light == red
+        ):
+            return True
+
+  still green.
+
+* I remove the :ref:`if statement<if statements>` from the :ref:`is_not_light function<extract is_not_light function>`
+
+  .. code-block:: python
+    :lineno-start: 10
+
+    def is_not_light(light):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        return not (
+            light == green or light == yellow or light == red
+        )
+
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel='RED', current_cross='RED',
+        ):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -4631,6 +4667,336 @@ extract triggers_failsafe function
 * I add a :ref:`function<what is a function?>` for the three :ref:`functions` which trigger the fail safe
 
   .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 8-12
+
+    def is_not_light(light):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        return not (
+            light == green or light == yellow or light == red
+        )
+
+
+    def triggers_failsafe(parallel, cross):
+        return (
+            is_not_light(parallel) or is_not_light(cross)
+            or is_not_safe(parallel, cross)
+        )
+
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel='RED', current_cross='RED',
+        ):
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`triggers_failsafe function<extract triggers_failsafe function>` from the ``control`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 7-14
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel='RED', current_cross='RED',
+        ):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+
+        if triggers_failsafe(current_parallel, current_cross):
+            return red, red
+        # if is_not_light(current_parallel):
+        #     return red, red
+        # if is_not_light(current_cross):
+        #     return red, red
+        # if is_not_safe(current_parallel, current_cross):
+        #     return red, red
+
+        if not timer_done:
+
+  the tests are still green.
+
+* I remove the commented lines from the ``control`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 24
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel='RED', current_cross='RED',
+        ):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+
+        if triggers_failsafe(current_parallel, current_cross):
+            return red, red
+
+        if not timer_done:
+            return current_parallel, current_cross
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'extract triggers_failsafe function'
+
+----
+
+*********************************************************************************
+extract global variables for lights
+*********************************************************************************
+
+* I add :ref:`global variables<what is a variable?>` for :green:`GREEN`, :yellow:`YELLOW` and :red:`RED`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    GREEN, YELLOW, RED = 'GREEN', 'YELLOW', 'RED'
+
+
+    def is_not_safe(parallel, cross):
+
+* I use the :ref:`variables` for :green:`GREEN`, :yellow:`YELLOW` and :red:`RED` in the :ref:`is_not_safe function<extract is_not_safe function>`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 2, 4-9
+
+    def is_not_safe(parallel, cross):
+        # red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        return (
+            # (parallel == cross != red)
+            (parallel == cross != RED)
+            # or (parallel == green and cross == yellow)
+            or (parallel == GREEN and cross == YELLOW)
+            # or (parallel == yellow and cross == green)
+            or (parallel == YELLOW and cross == GREEN)
+        )
+
+  still green.
+
+* I remove the commented lines from the :ref:`is_not_safe function<extract is_not_safe function>`
+
+  .. code-block:: python
+    :lineno-start: 4
+
+    def is_not_safe(parallel, cross):
+        return (
+            (parallel == cross != RED)
+            or (parallel == GREEN and cross == YELLOW)
+            or (parallel == YELLOW and cross == GREEN)
+        )
+
+
+    def is_not_light(light):
+
+* I use the :ref:`variables` for :green:`GREEN`, :yellow:`YELLOW` and :red:`RED` in the :ref:`is_not_light function<extract is_not_light function>`
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 2, 4-6
+
+    def is_not_light(light):
+        # red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        return not (
+            # light == green or light == yellow or light == red
+            light == GREEN or light == YELLOW or light == RED
+        )
+
+
+    def triggers_failsafe(parallel, cross):
+
+  green.
+
+* I remove the commented lines from the :ref:`is_not_light function<extract is_not_light function>`
+
+  .. code-block:: python
+    :lineno-start: 12
+
+    def is_not_light(light):
+        return not (
+            light == GREEN or light == YELLOW or light == RED
+        )
+
+
+    def triggers_failsafe(parallel, cross):
+
+* I use the :ref:`variables` for :green:`GREEN`, :yellow:`YELLOW` and :red:`RED` in the ``control`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 3, 6, 9-10
+
+    def control(
+            timer_done, red_phase='parallel',
+            # current_parallel='RED', current_cross='RED',
+            current_parallel=RED, current_cross=RED,
+        ):
+        # red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+
+        if triggers_failsafe(current_parallel, current_cross):
+            # return red, red
+            return RED, RED
+
+        if not timer_done:
+            return current_parallel, current_cross
+
+        if timer_done:
+
+  .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 3-10, 12-19, 21-22
+
+        if timer_done:
+            if red_phase == 'cross':
+                # if current_parallel == green:
+                if current_parallel == GREEN:
+                    # return yellow, red
+                    return YELLOW, RED
+                # if current_parallel == red:
+                if current_parallel == RED:
+                    # return red, green
+                    return RED, GREEN
+            if red_phase == 'parallel':
+                # if current_cross == green:
+                if current_cross == GREEN:
+                    # return red, yellow
+                    return RED, YELLOW
+                # if current_cross == red:
+                if current_cross == RED:
+                    # return green, red
+                    return GREEN, RED
+
+        # return red, red
+        return RED, RED
+
+  still green.
+
+* I remove the commented lines from the ``control`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 25
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel=RED, current_cross=RED,
+        ):
+
+        if triggers_failsafe(current_parallel, current_cross):
+            return RED, RED
+
+        if not timer_done:
+            return current_parallel, current_cross
+
+        if timer_done:
+            if red_phase == 'cross':
+                if current_parallel == GREEN:
+                    return YELLOW, RED
+                if current_parallel == RED:
+                    return RED, GREEN
+            if red_phase == 'parallel':
+                if current_cross == GREEN:
+                    return RED, YELLOW
+                if current_cross == RED:
+                    return GREEN, RED
+
+        return RED, RED
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'extract global variables for lights'
+
+----
+
+*********************************************************************************
+extract next_light function
+*********************************************************************************
+
+* I add a :ref:`function<what is a function?>` for when the timer is :green:`done` and none of the fail safes are triggered
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 8-19
+
+    def triggers_failsafe(parallel, cross):
+        return (
+            is_not_light(parallel) or is_not_light(cross)
+            or is_not_safe(parallel, cross)
+        )
+
+
+    def next_light(red_phase, parallel, cross):
+        if red_phase == 'cross':
+            if parallel == GREEN:
+                return YELLOW, RED
+            if parallel == RED:
+                return RED, GREEN
+        if red_phase == 'parallel':
+            if cross == GREEN:
+                return RED, YELLOW
+            if cross == RED:
+                return GREEN, RED
+        return RED, RED
+
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel=RED, current_cross=RED,
+        ):
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`next_light function<extract next_light function>` from ``if timer_done:`` in the ``control`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 13-15
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel=RED, current_cross=RED,
+        ):
+
+        if triggers_failsafe(current_parallel, current_cross):
+            return RED, RED
+
+        if not timer_done:
+            return current_parallel, current_cross
+
+        if timer_done:
+            return next_light(
+                red_phase, current_parallel, current_cross
+            )
+            if red_phase == 'cross':
+
+  the tests are still green.
+
+* I remove the other statements in the ``control`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 39
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel=RED, current_cross=RED,
+        ):
+
+        if triggers_failsafe(current_parallel, current_cross):
+            return RED, RED
+
+        if not timer_done:
+            return current_parallel, current_cross
+
+        if timer_done:
+            return next_light(
+                red_phase, current_parallel, current_cross
+            )
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+
+    git commit 'extract next_light function'
 
 
 *********************************************************************************
@@ -4653,105 +5019,41 @@ close the project
 review
 *************************************************************************************
 
-I ran tests for a **Traffic Light** that has a timer and a button for people to push when they want to :green:`WALK`. If the inputs are
+I ran tests for a **Traffic Light** that changes lights based on what :red:`RED` phase the traffic is in (``'cross'`` or ``'parallel'``) AND if a timer is :green:`done` or :red:`NOT done`
 
-* what color is the light now?
-* is the timer done?
-* did the person push the walk button?
+The outputs are the next lights for Parallel and Cross Traffic which gave me this :ref:`truth table`
 
-then the :ref:`truth table` for the **Traffic Light** is
+==========  ================  ================  =============== =================== =================
+red         current           current                           next                next
+phase       parallel          cross             timer           parallel            cross
+==========  ================  ================  =============== =================== =================
+'cross'     :green:`GREEN`    :red:`RED`        :red:`NOT done` :green:`GREEN`      :red:`RED`
+'cross'     :green:`GREEN`    :red:`RED`        :green:`done`   :yellow:`YELLOW`    :red:`RED`
+'cross'     :yellow:`YELLOW`  :red:`RED`        :red:`NOT done` :yellow:`YELLOW`    :red:`RED`
+'cross'     :yellow:`YELLOW`  :red:`RED`        :green:`done`   safety :red:`RED`   safety :red:`RED`
+'cross'     :red:`RED`        :red:`RED`        :red:`NOT done` safety :red:`RED`   safety :red:`RED`
+'cross'     :red:`RED`        :red:`RED`        :green:`done`   :red:`RED`          :green:`GREEN`
+==========  ================  ================  =============== =================== =================
 
-================  ===============  =================  =================================
-current light     timer            walk button        output
-================  ===============  =================  =================================
-:red:`RED`        :green:`done`    :green:`pushed`    :green:`GREEN` + :red:`DONT WALK`
-:red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN` + :red:`DONT WALK`
-:red:`RED`        :red:`NOT done`  :green:`pushed`    :red:`RED` + :green:`WALK`
-:red:`RED`        :red:`NOT done`  :red:`NOT pushed`  :red:`RED` + :green:`WALK`
-================  ===============  =================  =================================
 
-================  ===============  =================  =================================
-current light     timer            walk button        output
-================  ===============  =================  =================================
-:yellow:`YELLOW`  :green:`done`    :green:`pushed`    :red:`RED` + :green:`WALK`
-:yellow:`YELLOW`  :green:`done`    :red:`NOT pushed`  :red:`RED` + :green:`WALK`
-:yellow:`YELLOW`  :red:`NOT done`  :green:`pushed`    :yellow:`YELLOW` + :red:`DONT WALK`
-:yellow:`YELLOW`  :red:`NOT done`  :red:`NOT pushed`  :yellow:`YELLOW` + :red:`DONT WALK`
-================  ===============  =================  =================================
+==========  ================  ================  =============== =================== =================
+red         current           current                           next                next
+phase       parallel          cross             timer           parallel            cross
+==========  ================  ================  =============== =================== =================
+'parallel'  :red:`RED`        :green:`GREEN`    :red:`NOT done` :red:`RED`          :green:`GREEN`
+'parallel'  :red:`RED`        :green:`GREEN`    :green:`done`   :red:`RED`          :yellow:`YELLOW`
+'parallel'  :red:`RED`        :yellow:`YELLOW`  :red:`NOT done` :red:`RED`          :yellow:`YELLOW`
+'parallel'  :red:`RED`        :yellow:`YELLOW`  :green:`done`   safety :red:`RED`   safety :red:`RED`
+'parallel'  :red:`RED`        :red:`RED`        :red:`NOT done` safety :red:`RED`   safety :red:`RED`
+'parallel'  :red:`RED`        :red:`RED`        :green:`done`   :green:`GREEN`      :red:`RED`
+==========  ================  ================  =============== =================== =================
 
-================  ===============  =================  =================================
-current light     timer            walk button        output
-================  ===============  =================  =================================
-:green:`GREEN`    :green:`done`    :green:`pushed`    :yellow:`YELLOW` + :red:`DONT WALK`
-:green:`GREEN`    :green:`done`    :red:`NOT pushed`  :yellow:`YELLOW` + :red:`DONT WALK`
-:green:`GREEN`    :red:`NOT done`  :green:`pushed`    :green:`GREEN` + :red:`DONT WALK`
-:green:`GREEN`    :red:`NOT done`  :red:`NOT pushed`  :green:`GREEN` + :red:`DONT WALK`
-================  ===============  =================  =================================
-
+It also makes sure that that there is never a case where cars move through the intersection at the same time to avoid accidents.
 It only shows ``'WALK'`` if the light is :red:`RED`.
 
-What if the **Traffic Light** changes based on if there is an emergency vehicle? The inputs would be
-
-* what color is the light now?
-* is the timer done?
-* did the person push the walk button?
-* is there an emergency vehicle?
-
-and the :ref:`truth table` would be
-
-================  =============== ================= ====================  =================================
-current light     timer           walk button       emergency             output
-================  =============== ================= ====================  =================================
-:red:`RED`        :green:`done`   :green:`pushed`   :green:`emergency`    :red:`RED` + :red:`DONT WALK`
-:red:`RED`        :green:`done`   :green:`pushed`   :red:`NOT emergency`  :green:`GREEN` + :red:`DONT WALK`
-:red:`RED`        :green:`done`   :red:`NOT pushed` :green:`emergency`    :red:`RED` + :red:`DONT WALK`
-:red:`RED`        :green:`done`   :red:`NOT pushed` :red:`NOT emergency`  :green:`GREEN` + :red:`DONT WALK`
-================  =============== ================= ====================  =================================
-
-================  =============== ================= ====================  =================================
-current light     timer           walk button       emergency             output
-================  =============== ================= ====================  =================================
-:red:`RED`        :red:`NOT done` :green:`pushed`   :green:`emergency`    :red:`RED` + :red:`DONT WALK`
-:red:`RED`        :red:`NOT done` :green:`pushed`   :red:`NOT emergency`  :red:`RED` + :green:`WALK`
-:red:`RED`        :red:`NOT done` :red:`NOT pushed` :green:`emergency`    :red:`RED` + :red:`DONT WALK`
-:red:`RED`        :red:`NOT done` :red:`NOT pushed` :red:`NOT emergency`  :red:`RED` + :green:`WALK`
-================  =============== ================= ====================  =================================
-
-================  =============== ================= ====================  =================================
-current light     timer           walk button       emergency             output
-================  =============== ================= ====================  =================================
-:yellow:`YELLOW`  :green:`done`   :green:`pushed`   :green:`emergency`    :red:`RED` + :red:`DONT WALK`
-:yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`NOT emergency`  :red:`RED` + :green:`WALK`
-:yellow:`YELLOW`  :green:`done`   :red:`NOT pushed` :green:`emergency`    :red:`RED` + :red:`DONT WALK`
-:yellow:`YELLOW`  :green:`done`   :red:`NOT pushed` :red:`NOT emergency`  :red:`RED` + :green:`WALK`
-================  =============== ================= ====================  =================================
-
-================  =============== ================= ====================  =================================
-current light     timer           walk button       emergency             output
-================  =============== ================= ====================  =================================
-:yellow:`YELLOW`  :red:`NOT done` :green:`pushed`   :green:`emergency`    :red:`RED` + :red:`DONT WALK`
-:yellow:`YELLOW`  :red:`NOT done` :green:`pushed`   :red:`NOT emergency`  :yellow:`YELLOW` + :red:`DONT WALK`
-:yellow:`YELLOW`  :red:`NOT done` :red:`NOT pushed` :green:`emergency`    :red:`RED` + :red:`DONT WALK`
-:yellow:`YELLOW`  :red:`NOT done` :red:`NOT pushed` :red:`NOT emergency`  :yellow:`YELLOW` + :red:`DONT WALK`
-================  =============== ================= ====================  =================================
-
-================  =============== ================= ====================  =================================
-current light     timer           walk button       emergency             output
-================  =============== ================= ====================  =================================
-:green:`GREEN`    :green:`done`   :green:`pushed`   :green:`emergency`    :yellow:`YELLOW` + :red:`DONT WALK`
-:green:`GREEN`    :green:`done`   :green:`pushed`   :red:`NOT emergency`  :yellow:`YELLOW` + :red:`DONT WALK`
-:green:`GREEN`    :green:`done`   :red:`NOT pushed` :green:`emergency`    :yellow:`YELLOW` + :red:`DONT WALK`
-:green:`GREEN`    :green:`done`   :red:`NOT pushed` :red:`NOT emergency`  :yellow:`YELLOW` + :red:`DONT WALK`
-================  =============== ================= ====================  =================================
-
-================  =============== ================= ====================  =================================
-current light     timer           walk button       emergency             output
-================  =============== ================= ====================  =================================
-:green:`GREEN`    :red:`NOT done` :green:`pushed`   :green:`emergency`    :yellow:`YELLOW` + :red:`DONT WALK`
-:green:`GREEN`    :red:`NOT done` :green:`pushed`   :red:`NOT emergency`  :green:`GREEN` + :red:`DONT WALK`
-:green:`GREEN`    :red:`NOT done` :red:`NOT pushed` :green:`emergency`    :yellow:`YELLOW` + :red:`DONT WALK`
-:green:`GREEN`    :red:`NOT done` :red:`NOT pushed` :red:`NOT emergency`  :green:`GREEN` + :red:`DONT WALK`
-================  =============== ================= ====================  =================================
+What if the **Traffic Light** I add a walk button?
+What if the **Traffic Light** changes based on if there is an emergency vehicle?
+What would the inputs be and what :ref:`truth table` do I get then?
 
 ----
 
