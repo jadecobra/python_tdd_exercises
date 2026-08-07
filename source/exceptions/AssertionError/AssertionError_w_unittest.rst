@@ -737,7 +737,7 @@ the test is green again.
 
     E    assert True is None
 
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` for ``(True, None)``
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(True, None)``
 
   .. code-block:: python
     :lineno-start: 32
