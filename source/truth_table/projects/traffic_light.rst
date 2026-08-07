@@ -4031,7 +4031,7 @@ the test passes.
         ):
             return red, red
 
-        if current_parallel == green and current_cross == green:
+        if current_parallel == current_cross == green:
             return red, red
 
         if not timer_done:
@@ -4093,7 +4093,7 @@ the test passes.
     :lineno-start: 21
     :emphasize-lines: 3-4
 
-        if current_parallel == green and current_cross == green:
+        if current_parallel == current_cross == green:
             return red, red
         if current_parallel == green and current_cross == yellow:
             return red, red
@@ -4149,13 +4149,19 @@ the test passes.
 
     # Exceptions seen
 
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: ('YELLOW', 'GREEN') != ('RED', 'RED')
+
 * I add an :ref:`if statement<if statements>` for if the parallel lights are :yellow:`YELLOW` AND the cross lights are :green:`GREEN`, in ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :lineno-start: 21
     :emphasize-lines: 5-6
 
-        if current_parallel == green and current_cross == green:
+        if current_parallel == current_cross == green:
             return red, red
         if current_parallel == green and current_cross == yellow:
             return red, red
@@ -4192,18 +4198,9 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_failsafe` for if both lights are :yellow:`YELLOW`, in ``tests/test_traffic_light.py``
 
   .. code-block:: python
-    :lineno-start: 170
+    :lineno-start: 179
     :emphasize-lines: 10-18
 
-            self.assertEqual(
-                src.traffic_light.control(
-                    red_phase='BOOM',
-                    current_parallel=GREEN,
-                    current_cross=YELLOW,
-                    timer_done=False,
-                ),
-                (RED, RED)
-            )
             self.assertEqual(
                 src.traffic_light.control(
                     red_phase='BOOM',
@@ -4213,9 +4210,24 @@ the test passes.
                 ),
                 (RED, RED)
             )
+            self.assertEqual(
+                src.traffic_light.control(
+                    red_phase='BOOM',
+                    current_parallel=YELLOW,
+                    current_cross=YELLOW,
+                    timer_done=False,
+                ),
+                (RED, RED)
+            )
 
 
     # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: ('YELLOW', 'YELLOW') != ('RED', 'RED')
 
 * I add an :ref:`if statement<if statements>` for if both lights are :yellow:`YELLOW`, in ``src/traffic_light/__init__.py``
 
@@ -4223,13 +4235,13 @@ the test passes.
     :lineno-start: 21
     :emphasize-lines: 7-8
 
-        if current_parallel == green and current_cross == green:
+        if current_parallel == current_cross == green:
             return red, red
         if current_parallel == green and current_cross == yellow:
             return red, red
         if current_parallel == yellow and current_cross == green:
             return red, red
-        if current_parallel == yellow and current_cross == yellow:
+        if current_parallel == current_cross == yellow:
             return red, red
 
         if not timer_done:
@@ -4261,38 +4273,23 @@ the test passes.
 
 ----
 
-* I move the two :ref:`if statements` for when the parallel lights and the cross lights are the same AND are not equal to :red:`RED`
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 3-4
-
-        if current_parallel == green and current_cross == green:
-            return red, red
-        if current_parallel == yellow and current_cross == yellow:
-            return red, red
-        if current_parallel == green and current_cross == yellow:
-            return red, red
-        if current_parallel == yellow and current_cross == green:
-            return red, red
-
-        if not timer_done:
-
 * I add an :ref:`if statement<if statements>` for if the parallel lights and cross lights are the same AND are not equal to :red:`RED`
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 1-4
+    :emphasize-lines: 1-2, 8-9
 
-        # if current_parallel == green and current_cross == green:
-        #     return red, red
-        # if current_parallel == yellow and current_cross == yellow:
+        # if current_parallel == current_cross == green:
         if current_parallel == current_cross != red:
             return red, red
         if current_parallel == green and current_cross == yellow:
             return red, red
         if current_parallel == yellow and current_cross == green:
             return red, red
+        # if current_parallel == current_cross == yellow:
+        #     return red, red
+
+        if not timer_done:
 
   the tests are still green.
 
@@ -4375,7 +4372,7 @@ the test passes.
 ----
 
 *********************************************************************************
-extract is_unsafe function
+extract is_not_safe function
 *********************************************************************************
 
 * I add a :ref:`function<what is a function?>` to check for when both lights allow traffic at the same time
@@ -4384,13 +4381,13 @@ extract is_unsafe function
     :linenos:
     :emphasize-lines: 1-8
 
-    def is_unsafe(current_parallel, current_cross):
+    def is_not_safe(parallel, cross):
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        if current_parallel == current_cross != red:
+        if parallel == cross != red:
             return True
-        if current_parallel == green and current_cross == yellow:
+        if parallel == green and cross == yellow:
             return True
-        if current_parallel == yellow and current_cross == green:
+        if parallel == yellow and cross == green:
             return True
 
 
@@ -4398,17 +4395,60 @@ extract is_unsafe function
             timer_done, red_phase='parallel',
             current_parallel='RED', current_cross='RED',
         ):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
 
-* I use the :ref:`function<what is a function?>` for the :ref:`if statements` that check if the lights allow traffic both ways
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`is_not_safe function<extract is_not_safe function>` for the :ref:`if statements` that check if the lights allow traffic both ways
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 15
+    :emphasize-lines: 17-28
 
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
 
+        if not (
+            current_parallel == green
+            or current_parallel == yellow
+            or current_parallel == red
+        ):
+            return red, red
 
+        if not (
+            current_cross == green
+            or current_cross == yellow
+            or current_cross == red
+        ):
+            return red, red
 
+        if is_not_safe(current_parallel, current_cross):
+            return red, red
+        if current_parallel == current_cross != red:
+        # if current_parallel == current_cross != red:
+        #     return red, red
+        # if current_parallel == green and current_cross == yellow:
+        #     return red, red
+        # if current_parallel == yellow and current_cross == green:
+        #     return red, red
 
+        if not timer_done:
 
+* I remove the other :ref:`if statements` for the :ref:`if statements` that check if the lights allow traffic both ways, because they are no longer needed.
+
+  .. code-block:: python
+    :lineno-start: 31
+
+        if is_not_safe(current_parallel, current_cross):
+            return red, red
+
+        if not timer_done:
+            return current_parallel, current_cross
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'extract is_not_safe function'
 
 ----
 

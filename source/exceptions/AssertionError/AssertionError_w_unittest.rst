@@ -2544,7 +2544,7 @@ the test is green again.
 
     AssertionError: True == True
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_equal>` for ``(True, True)``
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``(True, True)``
 
   .. code-block:: python
     :lineno-start: 158
