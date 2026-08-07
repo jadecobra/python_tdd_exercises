@@ -2920,7 +2920,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
   # NOTES
 
 - the test passes because :ref:`None is equal to None<what is None?>`
-- ``==`` is two equal signs on the keyboard (:kbd:`=+=`) and means ``is equal`` which makes this statement read as ``1 + 1 is equal to 2``
+- ``==`` is two equal signs on the keyboard (:kbd:`=+=`) and means ``is equal`` which makes this statement read as ``None is equal to None``.
 
 ----
 
