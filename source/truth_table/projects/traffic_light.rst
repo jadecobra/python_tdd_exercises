@@ -4402,7 +4402,7 @@ extract is_not_safe function
 
   .. code-block:: python
     :lineno-start: 15
-    :emphasize-lines: 17-28
+    :emphasize-lines: 17-25
 
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
 
@@ -4432,6 +4432,8 @@ extract is_not_safe function
 
         if not timer_done:
 
+  the tests are still green.
+
 * I remove the other :ref:`if statements` for the :ref:`if statements` that check if the lights allow traffic both ways, because they are no longer needed.
 
   .. code-block:: python
@@ -4443,6 +4445,55 @@ extract is_not_safe function
         if not timer_done:
             return current_parallel, current_cross
 
+* I write a :ref:`conditional expression<conditional expressions>` for the :ref:`if statements` in the :ref:`is_not_safe function<extract is_not_safe function>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3-7
+
+    def is_not_safe(parallel, cross):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        return (
+            (parallel == cross != red)
+            or (parallel == green and cross == yellow)
+            or (parallel == yellow and cross == green)
+        )
+        if parallel == cross != red:
+            return True
+        if parallel == green and cross == yellow:
+            return True
+        if parallel == yellow and cross == green:
+            return True
+
+
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel='RED', current_cross='RED',
+        ):
+
+  still green.
+
+* I remove the other :ref:`if statements` because they are no longer used
+
+  .. code-block:: python
+    :linenos:
+
+    def is_not_safe(parallel, cross):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        return (
+            (parallel == cross != red)
+            or (parallel == green and cross == yellow)
+            or (parallel == yellow and cross == green)
+        )
+
+
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel='RED', current_cross='RED',
+        ):
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -4451,6 +4502,136 @@ extract is_not_safe function
     git commit -am 'extract is_not_safe function'
 
 ----
+
+*********************************************************************************
+extract is_not_light function
+*********************************************************************************
+
+----
+
+* I add a :ref:`function<what is a function?>` to check if the value of a light is :green:`GREEN` or :yellow:`YELLOW` or :red:`RED`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 10-15
+
+    def is_not_safe(parallel, cross):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        return (
+            (parallel == cross != red)
+            or (parallel == green and cross == yellow)
+            or (parallel == yellow and cross == green)
+        )
+
+
+    def is_not_light(light):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        if not (
+            light == green or light == yellow or light == red
+        ):
+            return True
+
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel='RED', current_cross='RED',
+        ):
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`is_not_light function<extract is_not_light function>` for the :ref:`if statements` that check if ``current_parallel`` is :green:`GREEN` or :yellow:`YELLOW` or :red:`RED`
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 7-14
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel='RED', current_cross='RED',
+        ):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+
+        if is_not_light(current_parallel):
+            return red, red
+        # if not (
+        #     current_parallel == green
+        #     or current_parallel == yellow
+        #     or current_parallel == red
+        # ):
+        #     return red, red
+
+  green.
+
+* I add a :ref:`call<how to call a function with input>` to the :ref:`is_not_light function<extract is_not_light function>` for the :ref:`if statements` that check if ``current_cross`` is :green:`GREEN` or :yellow:`YELLOW` or :red:`RED`
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 3-10
+
+        #     return red, red
+
+        if is_not_light(current_cross):
+            return red, red
+        # if not (
+        #     current_cross == green
+        #     or current_cross == yellow
+        #     or current_cross == red
+        # ):
+        #     return red, red
+
+        if is_not_safe(current_parallel, current_cross):
+
+  green.
+
+* I remove the commented lines from the ``control`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 18
+
+    def control(
+            timer_done, red_phase='parallel',
+            current_parallel='RED', current_cross='RED',
+        ):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+
+        if is_not_light(current_parallel):
+            return red, red
+        if is_not_light(current_cross):
+            return red, red
+        if is_not_safe(current_parallel, current_cross):
+            return red, red
+
+        if not timer_done:
+            return current_parallel, current_cross
+
+        if timer_done:
+            if red_phase == 'cross':
+                if current_parallel == green:
+                    return yellow, red
+                if current_parallel == red:
+                    return red, green
+            if red_phase == 'parallel':
+                if current_cross == green:
+                    return red, yellow
+                if current_cross == red:
+                    return green, red
+
+        return red, red
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+
+    git commit -am 'extract is_not_light function'
+
+----
+
+*********************************************************************************
+extract triggers_failsafe function
+*********************************************************************************
+
+* I add a :ref:`function<what is a function?>` for the three :ref:`functions` which trigger the fail safe
+
+  .. code-block:: python
+
 
 *********************************************************************************
 close the project

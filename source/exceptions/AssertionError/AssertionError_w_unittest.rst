@@ -2968,7 +2968,7 @@ test_failure with unittest
 
 ----
 
-I add ``self`` to the parentheses of :ref:`test_failure<pytest only calls the function if the name starts with test>` to :ref:`TestAssertionError<add TestAssertionError class>`
+I add ``self`` to the parentheses of :ref:`test_failure<pytest only calls the function if the name starts with test>` in :ref:`TestAssertionError<add TestAssertionError class>`
 
 .. code-block:: python
   :lineno-start: 166
