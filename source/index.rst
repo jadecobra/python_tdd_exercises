@@ -43,11 +43,10 @@ table of contents
   make a person with a class<how_to/make_person/make_person_w_class>
   make a person with datetime<how_to/make_person/make_person_w_datetime>
   make a person with conditions<how_to/make_person/make_person_w_conditions>
-  make a person<how_to/make_person>
+  make TDD with variables<make_tdd/make_tdd_automatically_w_variables/index>
   handling Exceptions<exceptions/exception_handling/index>
   basic_objects/lists/index
   basic_objects/dictionaries/index
-  make TDD project 3<make_tdd/make_tdd_automatically_w_variables/index>
   questions the book answers<review>
   make TDD manually<make_tdd/make_tdd_manually>
 
