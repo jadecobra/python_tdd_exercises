@@ -50,7 +50,7 @@ The code in ``traffic_light/tests/test_traffic_light.py`` from :ref:`Traffic Lig
 Traffic Light: solution
 *********************************************************************************
 
-The code in ``traffic_light/src/traffic_light.py`` from :ref:`Traffic Light`
+The code in ``traffic_light/src/traffic_light/__init__.py`` from :ref:`Traffic Light`
 
 .. literalinclude:: traffic_light/traffic_light.py
   :language: python

@@ -1,6 +1,6 @@
 .. meta::
-  :description: Build a state-controlled **Traffic Light** system using Python and Test Driven Development (TDD). This hands-on project tutorial teaches beginners how to manage transitions between RED, YELLOW, and GREEN states based on timers and walk-button inputs. Master the Red-Green-Refactor cycle, learn to implement robust failsafes with function default arguments, and debug complex Python SyntaxErrors in a professional development environment.
-  :keywords: Jacob Itegboje, Python **Traffic Light** project, state machine logic tutorial, TDD for beginners Python, building a traffic signal in code, Python truth table to code translation, Python function default arguments examples, Red Green Refactor tutorial, uv project management Python, pytest-watcher automated testing, debugging SyntaxError parameter order, TypeError unexpected keyword argument, sequential logic in programming, Python conditional statements project, building a controller in Python, software engineering logic gates, logic-based state transitions, programming automation for beginners, unittest **Traffic Light** example, Python boolean logic practice
+  :description: Build a two-direction **Traffic Light** controller with Python TDD (Red-Green-Refactor). Start from a single light and timer truth table (GREEN/YELLOW/RED stay-or-advance), then grow to parallel and cross lights with a ``red_phase`` of ``'cross'`` or ``'parallel'``, hold-on-timer-not-done behavior, and an all-RED failsafe for invalid or unsafe color pairs (for example GREEN+GREEN or junk like ``'BAP'``/``'POW'``). Debug NameError, AttributeError, TypeError (unexpected keyword argument), and AssertionError while extracting helpers ``is_not_safe``, ``is_not_light``, ``triggers_failsafe``, and ``next_light``, plus module-level color constants and optional ``red_phase`` defaults. Jacob Itegboje, Pumping Python — uv project setup, pytest-watcher, unittest ``assertEqual``.
+  :keywords: Jacob Itegboje, Pumping Python, Traffic Light TDD, red_phase cross parallel, timer_done, next_light, triggers_failsafe, is_not_safe, is_not_light, failsafe RED RED, truth table project, Red Green Refactor, function default arguments, TypeError unexpected keyword argument, AttributeError module has no attribute control, NameError src not defined, AssertionError tuples differ, unittest assertEqual, uv makePythonTdd, pytest-watcher, sequential state machine Python
 
 .. include:: ../../links.rst
 
@@ -24,43 +24,55 @@ These are the tests I have at the end of the chapter
   :language: python
   :linenos:
   :caption: traffic_light/tests/test_traffic_light.py
-  :lines: 1-9
-
-.. literalinclude:: ../../code/traffic_light/test_traffic_light.py
-  :language: python
-  :lineno-start: 12
-  :caption: traffic_light/tests/test_traffic_light.py
-  :lines: 12-30
+  :lines: 1-30
 
 .. literalinclude:: ../../code/traffic_light/test_traffic_light.py
   :language: python
   :lineno-start: 32
   :caption: traffic_light/tests/test_traffic_light.py
-  :lines: 32-48
+  :lines: 32-52
 
 .. literalinclude:: ../../code/traffic_light/test_traffic_light.py
   :language: python
-  :lineno-start: 50
+  :lineno-start: 54
   :caption: traffic_light/tests/test_traffic_light.py
-  :lines: 50-66
+  :lines: 54-74
 
 .. literalinclude:: ../../code/traffic_light/test_traffic_light.py
   :language: python
-  :lineno-start: 68
+  :lineno-start: 76
   :caption: traffic_light/tests/test_traffic_light.py
-  :lines: 68-84
+  :lines: 76-96
 
 .. literalinclude:: ../../code/traffic_light/test_traffic_light.py
   :language: python
-  :lineno-start: 86
+  :lineno-start: 98
   :caption: traffic_light/tests/test_traffic_light.py
-  :lines: 86-102
+  :lines: 98-118
 
 .. literalinclude:: ../../code/traffic_light/test_traffic_light.py
   :language: python
-  :lineno-start: 104
+  :lineno-start: 120
   :caption: traffic_light/tests/test_traffic_light.py
-  :lines: 104-
+  :lines: 120-140
+
+.. literalinclude:: ../../code/traffic_light/test_traffic_light.py
+  :language: python
+  :lineno-start: 142
+  :caption: traffic_light/tests/test_traffic_light.py
+  :lines: 142-160
+
+.. literalinclude:: ../../code/traffic_light/test_traffic_light.py
+  :language: python
+  :lineno-start: 161
+  :caption: traffic_light/tests/test_traffic_light.py
+  :lines: 161-178
+
+.. literalinclude:: ../../code/traffic_light/test_traffic_light.py
+  :language: python
+  :lineno-start: 179
+  :caption: traffic_light/tests/test_traffic_light.py
+  :lines: 179-
 
 ----
 
@@ -125,12 +137,12 @@ start the project
     >       self.assertFalse(True)
     E       AssertionError: True is not false
 
-    tests/tests/test_traffic_light.py:7: AssertionError
+    tests/test_traffic_light.py:7: AssertionError
     ================ short test summary info ==================
-    FAILED tests/tests/test_traffic_light.py::TestTrafficLight::test_failure - AssertionError: True is not false
+    FAILED tests/test_traffic_light.py::TestTrafficLight::test_failure - AssertionError: True is not false
     ==================== 1 failed in X.YZs ====================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/tests/test_traffic_light.py:7`` to open it
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_traffic_light.py:7`` to open it
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in ``tests/test_traffic_light.py``
 
   .. code-block:: python
@@ -1313,7 +1325,7 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit 'refactor if statements'
+    git commit -am 'refactor if statements'
 
 ----
 
@@ -1484,7 +1496,7 @@ parallel          cross             timer           parallel            cross
 :green:`GREEN`    :red:`RED`        :red:`NOT done` :green:`GREEN`      :red:`RED`
 :green:`GREEN`    :red:`RED`        :green:`done`   :yellow:`YELLOW`    :red:`RED`
 :yellow:`YELLOW`  :red:`RED`        :red:`NOT done` :yellow:`YELLOW`    :red:`RED`
-:yellow:`YELLOW`  :red:`RED`        :green:`done`   :red:`RED`          :red:`RED`
+:yellow:`YELLOW`  :red:`RED`        :green:`done`   safety :red:`RED`   safety :red:`RED`
 :red:`RED`        :red:`RED`        :red:`NOT done` safety :red:`RED`   safety :red:`RED`
 :red:`RED`        :red:`RED`        :green:`done`   :red:`RED`          :green:`GREEN`
 ================  ================  =============== =================== =================
@@ -1496,7 +1508,7 @@ parallel          cross             timer           parallel            cross
 :red:`RED`        :green:`GREEN`    :red:`NOT done` :red:`RED`          :green:`GREEN`
 :red:`RED`        :green:`GREEN`    :green:`done`   :red:`RED`          :yellow:`YELLOW`
 :red:`RED`        :yellow:`YELLOW`  :red:`NOT done` :red:`RED`          :yellow:`YELLOW`
-:red:`RED`        :yellow:`YELLOW`  :green:`done`   :red:`RED`          :red:`RED`
+:red:`RED`        :yellow:`YELLOW`  :green:`done`   safety :red:`RED`   safety :red:`RED`
 :red:`RED`        :red:`RED`        :red:`NOT done` safety :red:`RED`   safety :red:`RED`
 :red:`RED`        :red:`RED`        :green:`done`   :green:`GREEN`      :red:`RED`
 ================  ================  =============== =================== =================
@@ -2437,7 +2449,7 @@ test_parallel_red_cross_red_timer_done
 ----
 
 * I go back to the terminal_ where the tests are running
-* I change the :ref:`assertion<what is an assertion?>` in :ref:`test_red_light_timer_not_done` for if the current parallel light is :red:`RED` AND the current cross light is :red:`RED` AND the timer is :green:`done`
+* I change the :ref:`assertion<what is an assertion?>` in :ref:`test_red_light_timer_done` for if the current parallel light is :red:`RED` AND the current cross light is :red:`RED` AND the timer is :green:`done`
 
   ================  ================  =============== =================== =================
   current           current                           next                next
@@ -2473,7 +2485,8 @@ test_parallel_red_cross_red_timer_done
   because the ``control`` :ref:`function<what is a function?>` cannot tell the difference between
 
   - if the current parallel light is :red:`RED` AND the cross light is :red:`RED` AND the timer is :green:`done` which returns the next parallel light as :green:`GREEN` and the next cross light as :red:`RED`, and
-  - if the current parallel light is :red:`RED` AND the cross light is :red:`RED` AND the timer is :green:`done` which gives returns the next parallel light as :red:`RED` and the next cross light as :green:`GREEN`
+  - if the current parallel light is :red:`RED` AND the cross light is :red:`RED` AND the timer is :green:`done` which returns the next parallel light as :red:`RED` and the next cross light as :green:`GREEN`
+  - the current lights are the same in both cases but the output is different
 
   ================  ================  =============== =================== =================
   current           current                           next                next
@@ -4336,7 +4349,7 @@ the test passes.
 
   still green.
 
-* I remove ``if current_light == yellow: from ``if red_phase == 'parallel':`` since it returns the safety state
+* I remove ``if current_cross == yellow:`` from ``if red_phase == 'parallel':`` since it returns the safety state
 
   .. code-block:: python
     :lineno-start: 39
@@ -4351,7 +4364,7 @@ the test passes.
 
   green.
 
-* I remove ``if current_light == yellow:`` from ``if red_phase == 'cross':`` since it returns the safety state
+* I remove ``if current_parallel == yellow:`` from ``if red_phase == 'cross':`` since it returns the safety state
 
   .. code-block:: python
     :lineno-start: 31
@@ -4759,7 +4772,7 @@ extract global variables for lights
 
     def is_not_safe(parallel, cross):
 
-* I use the :ref:`variables` for :green:`GREEN`, :yellow:`YELLOW` and :red:`RED` in the :ref:`is_not_safe function<extract is_not_safe function>`
+* I use the :ref:`variables<what is a variable?>` for :green:`GREEN`, :yellow:`YELLOW` and :red:`RED` in the :ref:`is_not_safe function<extract is_not_safe function>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -4793,7 +4806,7 @@ extract global variables for lights
 
     def is_not_light(light):
 
-* I use the :ref:`variables` for :green:`GREEN`, :yellow:`YELLOW` and :red:`RED` in the :ref:`is_not_light function<extract is_not_light function>`
+* I use the :ref:`variables<what is a variable?>` for :green:`GREEN`, :yellow:`YELLOW` and :red:`RED` in the :ref:`is_not_light function<extract is_not_light function>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -4824,7 +4837,7 @@ extract global variables for lights
 
     def triggers_failsafe(parallel, cross):
 
-* I use the :ref:`variables` for :green:`GREEN`, :yellow:`YELLOW` and :red:`RED` in the ``control`` :ref:`function<what is a function?>`
+* I use the :ref:`variables<what is a variable?>` for :green:`GREEN`, :yellow:`YELLOW` and :red:`RED` in the ``control`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -4993,11 +5006,13 @@ extract next_light function
                 red_phase, current_parallel, current_cross
             )
 
+        return RED, RED
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
 
-    git commit 'extract next_light function'
+    git commit -am 'extract next_light function'
 
 ----
 
@@ -5451,7 +5466,7 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
                             │           return GREEN, RED
                             └── return RED, RED
 
-* If none of the above :ref:`conditions<if statements>` are met it returns :ref:`None<what is None?>`
+* If none of the above :ref:`conditions<if statements>` are met, it returns ``RED, RED``, which means there will be no traffic in the intersection, the parallel and cross lights will both be :red:`RED`
 
   .. code-block:: shell
 
@@ -5467,6 +5482,7 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
             │       return next_light(
             │           red_phase, current_parallel, current_cross
             │        )
+            └── return RED, RED
 
 *********************************************************************************
 close the project
@@ -5517,7 +5533,7 @@ phase       parallel          cross             timer           parallel        
 'parallel'  :red:`RED`        :red:`RED`        :green:`done`   :green:`GREEN`      :red:`RED`
 ==========  ================  ================  =============== =================== =================
 
-It also makes sure that that there is never a case where cars move through the intersection at the same time to avoid accidents.
+It also makes sure that there is never a case where cars move through the intersection at the same time to avoid accidents.
 
 What if the **Traffic Light** has a walk button and I push it?
 What if the **Traffic Light** changes based on if there is an emergency vehicle?

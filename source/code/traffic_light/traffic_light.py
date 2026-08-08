@@ -50,3 +50,5 @@ def control(
         return next_light(
             red_phase, current_parallel, current_cross
         )
+
+    return RED, RED
