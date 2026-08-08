@@ -1464,7 +1464,7 @@ I want the ``control`` :ref:`function<what is a function?>` to show what happens
 
 * is the timer done?
 
-The outputs will be the lights for Parallel and Cross Traffic which gives me this :ref:`truth table`. The **Traffic Light** has to make sure that there is never a case where cars move through the intersection at the same time to avoid accidents. The following cases must never happen
+The **Traffic Light** has to make sure that there is never a case where cars move through the intersection at the same time to avoid accidents. The following cases must never happen
 
 ================  ================
 parallel          cross
@@ -1475,7 +1475,7 @@ parallel          cross
 :yellow:`YELLOW`  :green:`GREEN`
 ================  ================
 
-That leaves me with this :ref:`truth table`
+The outputs will be the lights for Parallel and Cross Traffic which gives me this :ref:`truth table`
 
 ================  ================  =============== =================== =================
 current           current                           next                next
@@ -3537,7 +3537,7 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
 
     control(
         current_parallel='RED', current_cross='GREEN',
-        timer_done=False
+        timer_done=False, red_phase='parallel'
     ) -> 'RED', 'GREEN'
     └── def control(
                 timer_done, red_phase='parallel',
@@ -3553,7 +3553,7 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
 
     control(
         current_parallel='RED', current_cross='YELLOW',
-        timer_done=False
+        timer_done=False, red_phase='parallel'
     ) -> 'RED', 'YELLOW'
     └── def control(
                 timer_done, red_phase='parallel',
@@ -3569,7 +3569,7 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
 
     control(
         current_parallel='RED', current_cross='RED',
-        timer_done=False
+        timer_done=False, red_phase='parallel'
     ) -> 'RED', 'RED'
     └── def control(
                 timer_done, red_phase='parallel',
@@ -4270,6 +4270,10 @@ the test passes.
         current_parallel='YELLOW', current_cross='GREEN',
         timer_done=False, red_phase='BOOM'
     ) -> 'RED', 'RED'
+    control(
+        current_parallel='YELLOW', current_cross='YELLOW',
+        timer_done=False, red_phase='BOOM'
+    ) -> 'RED', 'RED'
 
 ----
 
@@ -4880,7 +4884,6 @@ extract global variables for lights
             timer_done, red_phase='parallel',
             current_parallel=RED, current_cross=RED,
         ):
-
         if triggers_failsafe(current_parallel, current_cross):
             return RED, RED
 
@@ -4950,13 +4953,12 @@ extract next_light function
 
   .. code-block:: python
     :lineno-start: 39
-    :emphasize-lines: 13-15
+    :emphasize-lines: 12-14
 
     def control(
             timer_done, red_phase='parallel',
             current_parallel=RED, current_cross=RED,
         ):
-
         if triggers_failsafe(current_parallel, current_cross):
             return RED, RED
 
@@ -4980,7 +4982,6 @@ extract next_light function
             timer_done, red_phase='parallel',
             current_parallel=RED, current_cross=RED,
         ):
-
         if triggers_failsafe(current_parallel, current_cross):
             return RED, RED
 
@@ -4998,6 +4999,474 @@ extract next_light function
 
     git commit 'extract next_light function'
 
+----
+
+When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it :ref:`calls<how to call a function with input>` the :ref:`triggers_failsafe function<extract triggers_failsafe function>` to check if the values of ``current_parallel`` or ``current_cross`` trigger the failsafe. The :ref:`triggers_failsafe function<extract triggers_failsafe function>` :ref:`calls<how to call a function with input>` the :ref:`is_not_light function<extract is_not_light function>` or :ref:`is_not_safe function<extract is_not_safe function>` to check the values of ``current_parallel`` and ``current_cross``
+
+* If the failsafe is :green:`triggered`, it turns the parallel and cross lights :red:`RED`
+
+  .. code-block:: shell
+
+    control(
+        current_parallel='RED', current_cross='POW',
+        timer_done=False, red_phase='BOOM'
+    ) -> 'RED', 'RED'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel=RED, current_cross=RED,
+            ):
+            └── if triggers_failsafe(current_parallel, current_cross):
+                ├── def triggers_failsafe(parallel, cross):
+                │   └── return (
+                │       │   is_not_light(parallel)
+                │       └── or is_not_light(cross)
+                │           or is_not_safe(parallel, cross)
+                │       )
+                │       └── def is_not_light(light):
+                │           └── return not (
+                │                   light == GREEN or light == YELLOW
+                │                   or light == RED
+                │               )
+                │               return True
+                └── return RED, RED
+                if not timer_done:
+
+  .. code-block:: shell
+
+    control(
+        current_parallel='BAP', current_cross='RED',
+        timer_done=False, red_phase='BOOM'
+    ) -> 'RED', 'RED'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel=RED, current_cross=RED,
+            ):
+            └── if triggers_failsafe(current_parallel, current_cross):
+                ├── def triggers_failsafe(parallel, cross):
+                │   └── return (
+                │       └── is_not_light(parallel)
+                │           or is_not_light(cross)
+                │           or is_not_safe(parallel, cross)
+                │       )
+                │       └── def is_not_light(light):
+                │           └── return not (
+                │                   light == GREEN or light == YELLOW
+                │                   or light == RED
+                │               )
+                │               return True
+                └── return RED, RED
+                if not timer_done:
+
+  .. code-block:: shell
+
+    control(
+        current_parallel='GREEN', current_cross='GREEN',
+        timer_done=False, red_phase='BOOM'
+    ) -> 'RED', 'RED'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel=RED, current_cross=RED,
+            ):
+            └── if triggers_failsafe(current_parallel, current_cross):
+                ├── def triggers_failsafe(parallel, cross):
+                │   └── return (
+                │       │   is_not_light(parallel) or is_not_light(cross)
+                │       └── or is_not_safe(parallel, cross)
+                │       )
+                │       └── def is_not_safe(parallel, cross):
+                │           └── return (
+                │               └── (parallel == cross != RED)
+                │                   or (parallel == GREEN and cross == YELLOW)
+                │                   or (parallel == YELLOW and cross == GREEN)
+                │               )
+                │               return True
+                └── return RED, RED
+                if not timer_done:
+
+  .. code-block:: shell
+
+    control(
+        current_parallel='GREEN', current_cross='YELLOW',
+        timer_done=False, red_phase='BOOM'
+    ) -> 'RED', 'RED'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel=RED, current_cross=RED,
+            ):
+            └── if triggers_failsafe(current_parallel, current_cross):
+                ├── def triggers_failsafe(parallel, cross):
+                │   └── return (
+                │       │   is_not_light(parallel) or is_not_light(cross)
+                │       └── or is_not_safe(parallel, cross)
+                │       )
+                │       └── def is_not_safe(parallel, cross):
+                │           └── return (
+                │               │   (parallel == cross != RED)
+                │               └── or (parallel == GREEN and cross == YELLOW)
+                │                   or (parallel == YELLOW and cross == GREEN)
+                │               )
+                │               return True
+                └── return RED, RED
+                if not timer_done:
+
+  .. code-block:: shell
+
+    control(
+        current_parallel='YELLOW', current_cross='GREEN',
+        timer_done=False, red_phase='BOOM'
+    ) -> 'RED', 'RED'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel=RED, current_cross=RED,
+            ):
+            └── if triggers_failsafe(current_parallel, current_cross):
+                ├── def triggers_failsafe(parallel, cross):
+                │   └── return (
+                │       │   is_not_light(parallel) or is_not_light(cross)
+                │       └── or is_not_safe(parallel, cross)
+                │       )
+                │       └── def is_not_safe(parallel, cross):
+                │           └── return (
+                │               │   (parallel == cross != RED)
+                │               │   or (parallel == GREEN and cross == YELLOW)
+                │               └── or (parallel == YELLOW and cross == GREEN)
+                │               )
+                │               return True
+                └── return RED, RED
+                if not timer_done:
+
+  .. code-block:: shell
+
+    control(
+        current_parallel='YELLOW', current_cross='YELLOW',
+        timer_done=False, red_phase='BOOM'
+    ) -> 'RED', 'RED'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel=RED, current_cross=RED,
+            ):
+            └── if triggers_failsafe(current_parallel, current_cross):
+                ├── def triggers_failsafe(parallel, cross):
+                │   └── return (
+                │       │   is_not_light(parallel) or is_not_light(cross)
+                │       └── or is_not_safe(parallel, cross)
+                │       )
+                │       └── def is_not_safe(parallel, cross):
+                │           └── return (
+                │               └── (parallel == cross != RED)
+                │                   or (parallel == GREEN and cross == YELLOW)
+                │                   or (parallel == YELLOW and cross == GREEN)
+                │               )
+                │               return True
+                └── return RED, RED
+                if not timer_done:
+
+  If the failsafe is :red:`NOT triggered`, it checks if the timer is :red:`NOT done`
+
+* If the timer is :red:`NOT done`, it returns the values of ``current_parallel`` and ``current_cross``, which means it does not change the parallel or cross lights, it keeps them the same
+
+  .. code-block:: shell
+
+    control(
+        current_parallel='RED', current_cross='GREEN',
+        timer_done=False, red_phase='parallel'
+    ) -> 'RED', 'GREEN'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel=RED, current_cross=RED,
+            ):
+            ├── if triggers_failsafe(current_parallel, current_cross):
+            │       return RED, RED
+            └── if not timer_done:
+                └── return current_parallel, current_cross
+                    return 'RED'           , 'GREEN'
+                if timer_done:
+
+  .. code-block:: shell
+
+    control(
+        current_parallel='RED', current_cross='YELLOW',
+        timer_done=False, red_phase='parallel'
+    ) -> 'RED', 'YELLOW'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel='RED', current_cross='RED',
+            ):
+            ├── if triggers_failsafe(current_parallel, current_cross):
+            │       return RED, RED
+            └── if not timer_done:
+                └── return current_parallel, current_cross
+                    return 'RED'           , 'YELLOW'
+                if timer_done:
+
+  .. code-block:: shell
+
+    control(
+        current_parallel='RED', current_cross='RED',
+        timer_done=False, red_phase='parallel'
+    ) -> 'RED', 'RED'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel='RED', current_cross='RED',
+            ):
+            ├── if triggers_failsafe(current_parallel, current_cross):
+            │       return RED, RED
+            └── if not timer_done:
+                └── return current_parallel, current_cross
+                    return 'RED'           , 'RED'
+                if timer_done:
+
+  .. code-block:: shell
+
+    control(
+        current_parallel='GREEN', current_cross='RED',
+        timer_done=False, red_phase='cross'
+    ) -> 'GREEN', 'RED'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel='RED', current_cross='RED',
+            ):
+            ├── if triggers_failsafe(current_parallel, current_cross):
+            │       return RED, RED
+            └── if not timer_done:
+                └── return current_parallel, current_cross
+                    return 'GREEN'         , 'RED'
+                if timer_done:
+
+  .. code-block:: shell
+
+    control(
+        current_parallel='YELLOW', current_cross='RED',
+        timer_done=False, red_phase='cross'
+    ) -> 'YELLOW', 'RED'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel='RED', current_cross='RED',
+            ):
+            ├── if triggers_failsafe(current_parallel, current_cross):
+            │       return RED, RED
+            └── if not timer_done:
+                └── return current_parallel, current_cross
+                    return 'YELLOW'        , 'RED'
+                if timer_done:
+
+  .. code-block:: shell
+
+    control(
+        current_parallel='RED', current_cross='RED',
+        timer_done=False, red_phase='cross'
+    ) -> 'RED', 'RED'
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel='RED', current_cross='RED',
+            ):
+            ├── if triggers_failsafe(current_parallel, current_cross):
+            │       return RED, RED
+            └── if not timer_done:
+                └── return current_parallel, current_cross
+                    return 'RED'           , 'RED'
+                if timer_done:
+
+* If the timer is :green:`done`, it :ref:`calls<how to call a function with input>` the :ref:`next_light function<extract next_light function>` which checks if ``cross`` traffic is in the :red:`RED` phase
+
+  - If ``cross`` traffic is in the :red:`RED` phase, it checks the value of ``current_parallel``
+
+    * If the current parallel light is :green:`GREEN`, it returns ``YELLOW, RED``, which means the next parallel light will be :yellow:`YELLOW` and the cross light will remain :red:`RED` because it is still in the :red:`RED` phase
+
+      .. code-block:: shell
+
+        control(
+            current_parallel='GREEN', current_cross='RED',
+            timer_done=True, red_phase='cross'
+        ) -> 'YELLOW', 'RED'
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel='RED', current_cross='RED',
+                ):
+                ├── if triggers_failsafe(current_parallel, current_cross):
+                │       return RED, RED
+                ├── if not timer_done:
+                │       return current_parallel, current_cross
+                └── if timer_done:
+                    └── return next_light(
+                            red_phase, current_parallel, current_cross
+                        )
+                        └── def next_light(red_phase, parallel, cross):
+                            └── if red_phase == 'cross':
+                                └── if parallel == GREEN:
+                                    └── return YELLOW, RED
+                                    if parallel == RED:
+
+    * If the current parallel light is :red:`RED`, it returns ``RED, GREEN``, which means the parallel light will stay :red:`RED` since it is now in the :red:`RED` phase and the next cross light will be :green:`GREEN`
+
+      .. code-block:: shell
+
+        control(
+            current_parallel='RED', current_cross='RED',
+            timer_done=True, red_phase='cross'
+        ) -> 'RED', 'GREEN'
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel='RED', current_cross='RED',
+                ):
+                ├── if triggers_failsafe(current_parallel, current_cross):
+                │       return RED, RED
+                ├── if not timer_done:
+                │       return current_parallel, current_cross
+                └── if timer_done:
+                    └── return next_light(
+                            red_phase, current_parallel, current_cross
+                        )
+                        └── def next_light(red_phase, parallel, cross):
+                            └── if red_phase == 'cross':
+                                ├── if parallel == GREEN:
+                                │       return YELLOW, RED
+                                └── if parallel == RED:
+                                    └── return RED, GREEN
+                                if red_phase == 'parallel':
+
+    * If ``cross`` traffic is not in the :red:`RED` phase, it checks if ``parallel`` traffic is in the :red:`RED` phase
+
+  - If ``parallel`` traffic is in the :red:`RED` phase, it checks the value of ``current_cross``
+
+    * If the current cross light is :green:`GREEN`, it returns ``RED, YELLOW``, which means the parallel light will remain :red:`RED` because it is still in the :red:`RED` phase and the next cross light will be :yellow:`YELLOW`
+
+      .. code-block:: shell
+
+        control(
+            current_parallel='RED', current_cross='GREEN',
+            timer_done=True, red_phase='parallel'
+        ) -> 'RED', 'YELLOW'
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel='RED', current_cross='RED',
+                ):
+                ├── if triggers_failsafe(current_parallel, current_cross):
+                │       return RED, RED
+                ├── if not timer_done:
+                │       return current_parallel, current_cross
+                └── if timer_done:
+                    └── return next_light(
+                            red_phase, current_parallel, current_cross
+                        )
+                        └── def next_light(red_phase, parallel, cross):
+                            ├── if red_phase == 'cross':
+                            │       ...
+                            └── if red_phase == 'parallel':
+                                └── if cross == GREEN:
+                                    └── return RED, YELLOW
+                                    if cross == RED:
+
+    * If the current cross light is :red:`RED`, it returns ``GREEN, RED``, which means the next parallel light will be :green:`GREEN` and the cross light will stay :red:`RED` since it is now in the :red:`RED` phase
+
+      .. code-block:: shell
+
+        control(
+            current_parallel='RED', current_cross='RED',
+            timer_done=True, red_phase='parallel'
+        ) -> 'GREEN', 'RED'
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel='RED', current_cross='RED',
+                ):
+                ├── if triggers_failsafe(current_parallel, current_cross):
+                │       return RED, RED
+                ├── if not timer_done:
+                │       return current_parallel, current_cross
+                └── if timer_done:
+                    └── return next_light(
+                            red_phase, current_parallel, current_cross
+                        )
+                        └── def next_light(red_phase, parallel, cross):
+                            ├── if red_phase == 'cross':
+                            │       ...
+                            └── if red_phase == 'parallel':
+                                ├── if cross == GREEN:
+                                │       return RED, YELLOW
+                                └── if cross == RED:
+                                    └── return GREEN, RED
+                                return RED, RED
+
+    * If none of the above :ref:`conditions<if statements>` are met, it returns ``RED, RED``, which means there will be no traffic in the intersection, the parallel and cross lights will both be :red:`RED`
+
+      .. code-block:: shell
+
+        control(
+            current_parallel='YELLOW', current_cross='RED',
+            timer_done=True, red_phase='cross'
+        ) -> 'RED', 'RED'
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel='RED', current_cross='RED',
+                ):
+                ├── if triggers_failsafe(current_parallel, current_cross):
+                │       return RED, RED
+                ├── if not timer_done:
+                │       return current_parallel, current_cross
+                └── if timer_done:
+                    └── return next_light(
+                            red_phase, current_parallel, current_cross
+                        )
+                        └── def next_light(red_phase, parallel, cross):
+                            └── if red_phase == 'cross':
+                                ├── if parallel == GREEN:
+                                │       return YELLOW, RED
+                            ┌───┴── if parallel == RED:
+                            │           return RED, GREEN
+                            │   if red_phase == 'parallel':
+                            │       if cross == GREEN:
+                            │           return RED, YELLOW
+                            │       if cross == RED:
+                            │           return GREEN, RED
+                            └── return RED, RED
+
+      .. code-block:: shell
+
+        control(
+            current_parallel='RED', current_cross='YELLOW',
+            timer_done=True, red_phase='parallel'
+        ) -> 'RED', 'RED'
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel='RED', current_cross='RED',
+                ):
+                ├── if triggers_failsafe(current_parallel, current_cross):
+                │       return RED, RED
+                ├── if not timer_done:
+                │       return current_parallel, current_cross
+                └── if timer_done:
+                    └── return next_light(
+                            red_phase, current_parallel, current_cross
+                        )
+                        └── def next_light(red_phase, parallel, cross):
+                            ├── if red_phase == 'cross':
+                            │       if parallel == GREEN:
+                            │           return YELLOW, RED
+                            │       if parallel == RED:
+                            │           return RED, GREEN
+                            └── if red_phase == 'parallel':
+                                ├── if cross == GREEN:
+                                │       return RED, YELLOW
+                            ┌───┴── if cross == RED:
+                            │           return GREEN, RED
+                            └── return RED, RED
+
+* If none of the above :ref:`conditions<if statements>` are met it returns :ref:`None<what is None?>`
+
+  .. code-block:: shell
+
+    └── def control(
+                timer_done, red_phase='parallel',
+                current_parallel='RED', current_cross='RED',
+            ):
+            ├── if triggers_failsafe(current_parallel, current_cross):
+            │       return RED, RED
+            ├── if not timer_done:
+            │       return current_parallel, current_cross
+            ├── if timer_done:
+            │       return next_light(
+            │           red_phase, current_parallel, current_cross
+            │        )
 
 *********************************************************************************
 close the project
@@ -5049,11 +5518,10 @@ phase       parallel          cross             timer           parallel        
 ==========  ================  ================  =============== =================== =================
 
 It also makes sure that that there is never a case where cars move through the intersection at the same time to avoid accidents.
-It only shows ``'WALK'`` if the light is :red:`RED`.
 
-What if the **Traffic Light** I add a walk button?
+What if the **Traffic Light** has a walk button and I push it?
 What if the **Traffic Light** changes based on if there is an emergency vehicle?
-What would the inputs be and what :ref:`truth table` do I get then?
+What would the inputs be and what :ref:`truth table` do I get?
 
 ----
 
