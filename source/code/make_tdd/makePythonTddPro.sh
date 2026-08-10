@@ -5,6 +5,8 @@ else
     PROJECT_NAME=$1
 fi
 
+# Split on underscores and convert each word to Title Case,
+# then join with no separator
 IFS='_' read -r -a words <<< "$PROJECT_NAME"
 IFS=''
 CLASS_NAME="${words[*]^}"
