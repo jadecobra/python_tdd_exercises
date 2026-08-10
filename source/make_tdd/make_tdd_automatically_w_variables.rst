@@ -1,8 +1,6 @@
-:orphan:
-
 .. meta::
-  :description: Stop manually setting up Python TDD projects. Learn to automate your entire test-driven development environment with one script in just 5 minutes.
-  :keywords: Jacob Itegboje, automate python tdd setup script, python test driven development workflow, how to structure a python project for testing, pytest-watcher for automatic testing, python virtual environment best practices, create python project from template, step-by-step python tdd tutorial, python project automation script
+  :description: Automate makePythonTdd with a PROJECT_NAME variable, then pass the project name as $1 (bash) or $args[0] (PowerShell). Jacob Itegboje edits makePythonTdd.sh and makePythonTdd.ps1 so one command builds uv init, tests package, first unittest test_failure with assertFalse(True), pytest and pytest-watcher, and pytest-watcher . --now. Covers pro_magic then pro_magic_plus CLI args, AssertionError True is not false, Testpro_magic snake_case vs CapWords TestProMagic, tree after setup, and an exceptions project demo. Pumping Python TDD environment with variables chapter.
+  :keywords: Jacob Itegboje, Pumping Python, makePythonTdd.sh, makePythonTdd.ps1, PROJECT_NAME variable shell script, bash $1 first argument, PowerShell $args[0], uv init project name, assertFalse True AssertionError, Testpro_magic snake_case CapWords, pro_magic pro_magic_plus, pytest-watcher --now, make Python Test Driven Development environment automatically with variables
 
 .. include:: ../links.rst
 
@@ -24,6 +22,31 @@ Here are steps I take with ``makePythonTdd`` to make the environment for every p
 
 ----
 
+*********************************************************************************
+preview
+*********************************************************************************
+
+.. tab-set::
+  :sync-group: os
+
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
+
+    .. literalinclude:: ../code/make_tdd/makePythonTdd.sh
+      :language: shell
+      :linenos:
+      :caption: makePythonTdd.sh
+
+  .. tab-item:: no WSL
+    :sync: no_wsl
+
+    .. literalinclude:: ../code/make_tdd/makePythonTdd.ps1
+      :language: shell
+      :linenos:
+      :caption: makePythonTdd.ps1
+
+----
+
 ********************************************************************************************
 how to use a variable in a shell script
 ********************************************************************************************
@@ -36,7 +59,7 @@ I want the program_ to take the name of the project once and use the name to mak
 - file_ for the program_ in the ``src`` folder_
 - file_ for the test in the ``tests`` folder_
 - :ref:`test class<everything is an object>` in the test file_
-- :ref:`virtual environment<what is a virtual environment>` in the ``.venv`` folder_
+- :ref:`virtual environment<what is a virtual environment?>` in the ``.venv`` folder_
 - install dependencies
 - automatically run tests
 
@@ -50,8 +73,15 @@ As a reminder, it will always make this structure
 
 .. code-block:: shell
   :emphasize-text: PROJECT_NAME
+  :emphasize-lines: 8-14
 
   PROJECT_NAME
+  ├── .git
+  ├── .gitignore
+  ├── pyproject.toml
+  ├── .pytest_cache
+  ├── .python-version
+  ├── README.md
   ├── requirements.txt
   ├── src
   │   └── PROJECT_NAME
@@ -59,6 +89,7 @@ As a reminder, it will always make this structure
   ├── tests
   │   ├── __init__.py
   │   └── test_PROJECT_NAME.py
+  ├── uv.lock
   └── .venv
 
 I can use a :ref:`variable<what is a variable?>` for the name of the project
@@ -162,7 +193,7 @@ I can use a :ref:`variable<what is a variable?>` for the name of the project
 
   this program_ does not make the class name in the :ref:`CapWords format<CapWords>` (``TestProMagic``) so it is in :ref:`snake_case` (``Testpro_magic``), :ref:`there has to be a better way<BONUS: makePythonTdd.sh Pro>`.
 
-* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/pro_magic.py`` in the terminal_ to open it
+* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_pro_magic.py`` in the terminal_ to open it
 
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
@@ -231,12 +262,12 @@ I want to be able to call the program_ and give it a name for the project from t
   .. tab-item:: WSL/Linux/Mac
     :sync: unix
 
-    I can do this with ``$1`` in bash_, it is for the first argument given after the name of a program_ when it is called. For example
+    I can do this with ``$1`` in bash_. ``$1`` is for the first argument given after the name of a program_ when it is called. For example
 
   .. tab-item:: no WSL
     :sync: no_wsl
 
-    I can do this with ``$[args]`` in PowerShell_, it is for the first argument given after the name of a program_ when it is called. For example
+    I can do this with ``$args[0]`` in PowerShell_. ``$args[0]`` is for the first argument given after the name of a program_ when it is called. For example
 
 .. code-block:: shell
 
@@ -325,7 +356,7 @@ Here are a few other examples
       .. code-block:: python
         :emphasize-lines: 1
 
-        ./makePythonTdd.ps1 pro_magic_plus
+        .\makePythonTdd.ps1 pro_magic_plus
 
 * the terminal_ is my friend, and shows
 
@@ -408,7 +439,7 @@ Here are a few other examples
       .. code-block:: python
         :emphasize-lines: 1
 
-        ./makePythonTdd.ps1 exceptions
+        .\makePythonTdd.ps1 exceptions
 
   it does all the steps then shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -418,7 +449,7 @@ Here are a few other examples
 
     ______________ Testexceptions.test_failure _________________
 
-    self = <tests.test_person.Testexceptions testMethod=test_failure>
+    self = <tests.test_exceptions.Testexceptions testMethod=test_failure>
 
         def test_failure(self):
     >       self.assertFalse(True)
@@ -429,7 +460,7 @@ Here are a few other examples
     FAILED tests/test_exceptions.py::Testexceptions::test_failure - AssertionError: True is not false
     ===================== 1 failed in X.YZs =====================
 
-the computer makes a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called :ref:`person<how to make a person>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`how to test that an Exception is raised`
+the computer makes a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called :ref:`exceptions<how to test that an Exception is raised>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`how to test that an Exception is raised`
 
 ----
 

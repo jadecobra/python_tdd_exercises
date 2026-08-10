@@ -17,7 +17,7 @@ class Test$($PROJECT_NAME)(unittest.TestCase):
 # AssertionError
 " | Out-File "tests/test_$PROJECT_NAME.py" -Encoding UTF8
 
-"pytest-watcher" | Out-File requirements.txt -Encoding UTF8
+"pytest" | Out-File requirements.txt -Encoding UTF8
 "pytest-watcher" >> requirements.txt
 uv add --requirement requirements.txt
 uv run pytest-watcher . --now

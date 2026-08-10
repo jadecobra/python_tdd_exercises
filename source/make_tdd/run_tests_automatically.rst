@@ -34,6 +34,27 @@ This is one way to automatically run tests in a :ref:`Python Test Driven Develop
   deactivate
   history
 
+I have this program by the end of the chapter
+
+.. tab-set::
+  :sync-group: os
+
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
+
+    .. literalinclude:: ../../code/make_tdd/makePythonTddNoVariables.sh
+      :language: shell
+      :linenos:
+      :caption: makePythonTdd.sh
+
+  .. tab-item:: no WSL
+    :sync: no_wsl
+
+    .. literalinclude:: ../../code/make_tdd/makePythonTddNoVariables.ps1
+      :language: shell
+      :linenos:
+      :caption: makePythonTdd.ps1
+
 ----
 
 *********************************************************************************
