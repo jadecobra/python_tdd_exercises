@@ -10,10 +10,8 @@ IFS=''
 CLASS_NAME="${words[*]^}"
 
 uv init $PROJECT_NAME
-mkdir -p $PROJECT_NAME/{src,tests}
 cd $PROJECT_NAME
-mv src/$PROJECT_NAME/__init__.py src$PROJECT_NAME.py
-rmdir src/$PROJECT_NAME
+mkdir tests
 touch tests/__init__.py
 
 echo "import unittest
@@ -28,9 +26,6 @@ class Test$CLASS_NAME(unittest.TestCase):
 # Exceptions seen
 # AssertionError
 " > tests/test_$PROJECT_NAME.py
-
-code src/$PROJECT_NAME.py
-code tests/test_$PROJECT_NAME.py
 
 echo "pytest" > requirements.txt
 echo "pytest-watcher" >> requirements.txt

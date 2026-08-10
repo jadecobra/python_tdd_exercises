@@ -14,24 +14,7 @@ Since I am the greatest programmer in the world, I should not be doing as much r
 review
 *********************************************************************************
 
-To review, here are steps I take to automate making the environment for every project
 
-on a computer with MacOS_, Linux_ or `Windows`_ with `Windows Subsystem for Linux`_
-
-#. I give the project a name
-#. I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1``
-#. I change the name of the project to the new project name
-#. I open the test file_ in the editor from the terminal_
-#. I make the test pass
-#. I start working on the project
-
-I want to give one command for the program_ with the name of the project and have it do all the steps for me except
-
-* give the project a name
-* make the test pass and
-* work on the project
-
-this way I only need to do 2 or 3 steps instead of 6
 
 As a reminder here is what the structure looks like if the name of the project is ``PROJECT_NAME``
 

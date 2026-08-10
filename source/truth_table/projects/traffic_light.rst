@@ -5575,7 +5575,7 @@ what is next?
 * :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`
 * :ref:`I know how to write programs that make decisions<truth table>`
 
-:ref:`Would you like to test making an Automated Teller Machine?<Automated Teller Machine>`
+I changed the name of the project in a few places every time I ran :ref:`makePythonTdd<how to run tests automatically>`, that is too many steps. :ref:`Would you like to see a better way to make a Python Test Driven Development environment automatically?<how to make a Python Test Driven Development environment automatically with variables>`
 
 ----
 

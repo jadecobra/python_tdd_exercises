@@ -205,7 +205,14 @@ requirements
   .. tab-item:: no WSL
     :sync: no_wsl
 
-    I type tree_
+    I type this in a terminal_ to see the structure
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      tree
+
+    the terminal_ shows
 
     .. code-block:: python
 
