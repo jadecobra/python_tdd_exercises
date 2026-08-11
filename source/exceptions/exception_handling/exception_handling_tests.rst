@@ -27,11 +27,23 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../../code/tests/test_exceptions.py
+.. literalinclude:: ../../code/exception_handling/test_exceptions_in_tests.py
   :language: python
   :linenos:
-  :lines: 1-40
   :caption: exceptions/tests/test_exceptions.py
+  :lines: 1-21
+
+.. literalinclude:: ../../code/exception_handling/test_exceptions_in_tests.py
+  :language: python
+  :lineno-start: 23
+  :caption: exceptions/tests/test_exceptions.py
+  :lines: 23-42
+
+.. literalinclude:: ../../code/exception_handling/test_exceptions_in_tests.py
+  :language: python
+  :lineno-start: 44
+  :caption: exceptions/tests/test_exceptions.py
+  :lines: 44-
 
 ----
 
@@ -1531,16 +1543,28 @@ what is next?
 *************************************************************************************
 
 * :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
+* :ref:`I know what a Python module is<what is a module?>`.
+* :ref:`I know how to run tests automatically<how to run tests automatically>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.
 * :ref:`I know how to make functions<what is a function?>`.
+* :ref:`I know how to make a person with strings<how to make a person with strings>`.
+* :ref:`I know how to make functions that take input<functions that take input>`.
+* :ref:`I know what causes TypeError<what causes TypeError?>`.
+* :ref:`I know how to place values in strings<telephone>`.
+* :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
+* :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
-* :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`what is None and NOT None<what is None?>`
-* :ref:`what is True and False in Python<what are booleans?>`
-* :ref:`I know how to write programs that make decisions<truth table>`
-* :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment 2>` and
-* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
+* :ref:`I know how to make a person with a class<how to make a person with a class>`.
+* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know how to use the unittest library<another way to write tests>`.
+* :ref:`I know how to use the datetime library<test person with datetime>`.
+* :ref:`I know what None is<what is None?>`.
+* :ref:`I know how to make a person with conditions<how to make a person with conditions>`.
+* :ref:`I know how Python groups objects into False or True<what are booleans?>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`.
+* :ref:`I know how to write programs that make decisions<truth table>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically with variables<how to make a Python Test Driven Development environment automatically with variables>`.
+* :ref:`I know how to make a person with Exceptions<how to make a person with exceptions>`
 
 :ref:`Would you like to test handling Exceptions in programs?<how to handle Exceptions (Errors) in programs>`
 

@@ -21,15 +21,32 @@ class TestExceptions(unittest.TestCase):
             src.exceptions.function_name('the input')
 
     def test_catching_index_error_in_tests(self):
-        a_list = [0, 1, 2, 'n']
+        a_string = 'a string'
+        a_string[0]
+        a_string[7]
+        a_string[-1]
+        a_string[-8]
+
         with self.assertRaises(IndexError):
-            a_list[4]
+            a_string[8]
         with self.assertRaises(IndexError):
-            a_list[-5]
+            a_string[-9]
+
+        a_tuple = (0, 1, 2, 'n')
+        a_tuple[1]
+        a_tuple[-2]
+
+        with self.assertRaises(IndexError):
+            a_tuple[100]
+        with self.assertRaises(IndexError):
+            a_tuple[-100]
 
     def test_catching_key_error_in_tests(self):
+        a_dictionary = {'key': 'value'}
+        a_dictionary['key']
+
         with self.assertRaises(KeyError):
-            {'key': 'value'}['does_not_exist']
+            a_dictionary['not_in_dictionary']
 
     def test_catching_zero_division_error_in_tests(self):
         with self.assertRaises(ZeroDivisionError):
