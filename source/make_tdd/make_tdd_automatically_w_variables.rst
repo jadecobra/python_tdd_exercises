@@ -446,7 +446,6 @@ Here are a few other examples
   .. code-block:: shell
 
     ======================== FAILURES ==========================
-
     ______________ Testexceptions.test_failure _________________
 
     self = <tests.test_exceptions.Testexceptions testMethod=test_failure>
@@ -502,12 +501,12 @@ what is next?
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.
 * :ref:`I know how to make a person with conditions<how to make a person with conditions>`.
-* :ref:`I know how Python groups objects into False or True<what are booleans?>`
-* :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`
-* :ref:`I know how to write programs that make decisions<truth table>`
-* :ref:`I know how to make a Python Test Driven Development environment automatically with variables<how to make a Python Test Driven Development environment automatically with variables>`
+* :ref:`I know how Python groups objects into False or True<what are booleans?>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`.
+* :ref:`I know how to write programs that make decisions<truth table>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically with variables<how to make a Python Test Driven Development environment automatically with variables>`.
 
-:ref:`Would you like to test handling Exceptions?<how to handle Exceptions (Errors)>`
+:ref:`Would you like to test making a person with Exceptions?<how to test that an Exception is raised>`
 
 ----
 
