@@ -4,10 +4,16 @@ how to handle Exceptions (Errors): tests and solutions
 #################################################################################
 
 *********************************************************************************
-Exception Handling tests
+Exception Handling in tests
 *********************************************************************************
 
-The code in ``exceptions/tests/test_exceptions.py`` from :ref:`how to handle Exceptions (Errors) in tests`
+=================================================================================
+Exception Handling in tests: tests
+=================================================================================
+
+----
+
+The code in ``exceptions/tests/test_exceptions.py`` from :ref:`how to test that an Exception is raised`
 
 .. literalinclude:: exception_handling/test_exceptions_in_tests.py
   :language: python
@@ -29,44 +35,68 @@ The code in ``exceptions/tests/test_exceptions.py`` from :ref:`how to handle Exc
 
 ----
 
-*********************************************************************************
-Exception Handling in programs tests
-*********************************************************************************
+=================================================================================
+Exception Handling in tests: solution
+=================================================================================
 
-The code in ``exceptions/tests/test_exceptions.py`` from :ref:`how to handle Exceptions (Errors) in programs`
+----
 
-.. literalinclude:: exceptions/test_exceptions_in_programs.py
+The code in ``src/exceptions/__init__.py`` from :ref:`how to test that an Exception is raised`
+
+.. literalinclude:: exception_handling/exceptions_in_tests.py
   :language: python
   :linenos:
-
-*********************************************************************************
-Exception Handling in programs solutions
-*********************************************************************************
-
-the solutions in ``exceptions/src/exceptions.py`` from :ref:`how to handle Exceptions (Errors) in programs`
-
-.. literalinclude:: solutions/exceptions.py
-  :language: python
-  :linenos:
+  :caption: exceptions/src/exceptions/__init__.py
 
 ----
 
 *********************************************************************************
-Exception Handling with the Calculator tests
+Exception Handling in programs tests and solutions
 *********************************************************************************
 
-The code in ``calculator/tests/test_calculator.py`` from :ref:`how to handle Exceptions (Errors) in programs`
+=================================================================================
+Exception Handling in programs: tests
+=================================================================================
 
-.. literalinclude:: calculator/tests/test_calculator_3.py
+----
+
+The code in ``exceptions/tests/test_exceptions.py`` from :ref:`how to handle Exceptions (Errors) in programs`
+
+.. literalinclude:: exception_handling/test_exceptions_in_programs.py
   :language: python
   :linenos:
+  :caption: exceptions/tests/test_exceptions.py
+  :lines: 1-21
 
-*********************************************************************************
-Exception Handling with the Calculator solutions
-*********************************************************************************
+.. literalinclude:: exception_handling/test_exceptions_in_programs.py
+  :language: python
+  :lineno-start: 23
+  :caption: exceptions/tests/test_exceptions.py
+  :lines: 23-42
 
-the solutions in ``calculator/src/calculator.py`` from :ref:`how to handle Exceptions (Errors) in programs`
+.. literalinclude:: exception_handling/test_exceptions_in_programs.py
+  :language: python
+  :lineno-start: 44
+  :caption: exceptions/tests/test_exceptions.py
+  :lines: 44-63
 
-.. literalinclude:: calculator/solutions/calculator_3.py
+.. literalinclude:: exception_handling/test_exceptions_in_programs.py
+  :language: python
+  :lineno-start: 65
+  :caption: exceptions/tests/test_exceptions.py
+  :lines: 65-
+
+----
+
+=================================================================================
+Exception Handling in programs: solutions
+=================================================================================
+
+----
+
+The code in ``src/exceptions/__init__.py`` from :ref:`how to handle Exceptions (Errors) in programs`
+
+.. literalinclude:: exception_handling/exceptions_in_programs.py
   :language: python
   :linenos:
+  :caption: exceptions/src/exceptions/__init__.py
