@@ -1,6 +1,6 @@
 .. meta::
-  :description: Stop silent Python test failures. Learn to use unittest's assertRaises to verify exceptions like ModuleNotFoundError and NameError are properly raised.
-  :keywords: Jacob Itegboje, python unittest assertraises, how to test for exceptions in python, python assert exception, python test specific exception raised, unittest assertraises example, python unit testing exceptions, python tdd exception handling, assertraises typeerror, assertraises keyerror
+  :description: How to test that a Python Exception is raised with unittest assertRaises (with self.assertRaises(...)). TDD RED/GREEN drills for ModuleNotFoundError (import does_not_exist), NameError, AttributeError (src.exceptions.does_not_exist), TypeError (wrong call / None not callable), IndexError on strings and tuples (positive and negative indexes), KeyError, ZeroDivisionError (1/0), and raise Exception. One exception per handler — assertRaises exits after the first matching raise. Pumping Python TDD by Jacob Itegboje.
+  :keywords: Jacob Itegboje, Pumping Python TDD, how to test that an Exception is raised, unittest assertRaises, self.assertRaises context manager, ModuleNotFoundError No module named, NameError is not defined, AttributeError has no attribute, TypeError NoneType not callable, IndexError string index out of range, IndexError tuple index out of range, KeyError not_in_dictionary, ZeroDivisionError division by zero, raise Exception, one exception one exception handler, exceptions/tests/test_exceptions.py, python tdd exception handling
 
 .. include:: ../../links.rst
 
@@ -405,20 +405,28 @@ test_catching_attribute_error_in_tests
 
 ----
 
-I add the `assertRaises method`_ to :ref:`test_catching_attribute_error_in_tests`
+* I add the `assertRaises method`_ to :ref:`test_catching_attribute_error_in_tests`
 
-.. code-block:: python
-  :lineno-start: 15
-  :emphasize-lines: 2-3
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 2-3
 
-      def test_catching_attribute_error_in_tests(self):
-          with self.assertRaises(AttributeError):
-              src.exceptions.does_not_exist
+        def test_catching_attribute_error_in_tests(self):
+            with self.assertRaises(AttributeError):
+                src.exceptions.does_not_exist
 
-the test passes, showing that
+  the test passes, showing that
 
-* assertRaises_ checks that the code in its context (``src.exceptions.does_not_exist``), raises the :ref:`Exception<errors>` (:ref:`AttributeError<what causes AttributeError?>`) it is given in parentheses.
-* :ref:`AttributeError<what causes AttributeError?>` is raised when I try to get something that does NOT exist from an :ref:`object<everything is an object>` that exists.
+  * assertRaises_ checks that the code in its context (``src.exceptions.does_not_exist``), raises the :ref:`Exception<errors>` (:ref:`AttributeError<what causes AttributeError?>`) it is given in parentheses.
+  * :ref:`AttributeError<what causes AttributeError?>` is raised when I try to get something that does NOT exist from an :ref:`object<everything is an object>` that exists.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_catching_attribute_error_in_tests'
 
 ----
 
@@ -529,7 +537,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
 
 ----
 
-* I make ``function_name`` a :ref:`function<what is a function?>` in ``exceptions.py``
+* I make ``function_name`` a :ref:`function<what is a function?>` in ``src/exceptions/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -581,9 +589,9 @@ the test passes, showing that assertRaises_ checks that the code in its context 
 test_catching_index_error_in_tests
 *********************************************************************************
 
-:ref:`IndexError<test_index_error>` is raised when I try to :ref:`index a list<test_index_returns_first_position_of_item_in_a_list>`, set_, tuple_ or string_ with a number that is
+:ref:`IndexError<test_index_error>` is raised when I try to :ref:`index a list<test_index_returns_first_position_of_item_in_a_list>`, tuple_ or string_ with a number that is
 
-- bigger than or the same as the number of items in the :ref:`list`, set_, tuple_ or string_
+- bigger than or the same as the number of items in the :ref:`list`, tuple_ or string_
 - smaller than the negative of the number of items in the :ref:`list<what is a list?>`, tuple_ or string_
 
 ----
@@ -881,7 +889,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
 
     IndexError: tuple index out of range
 
-  I cannot use a number that is smaller than the index of the last item in a tuple_.
+  I cannot use a number that is smaller than the negative of the number of items in a tuple_.
 
 * I add assertRaises_ to :ref:`test_catching_index_error_in_tests`
 
@@ -939,10 +947,10 @@ the test passes, showing that assertRaises_ checks that the code in its context 
     git commit -am \
     'add test_catching_index_error_in_tests'
 
-:ref:`IndexError<test_index_error>` is raised when I try to :ref:`index a list<test_index_returns_first_position_of_item_in_a_list>`, set_, tuple_ or string_ with a number that is
+:ref:`IndexError<test_index_error>` is raised when I try to :ref:`index a list<test_index_returns_first_position_of_item_in_a_list>`, tuple_ or string_ with a number that is
 
-- bigger than or the same as the number of items in the :ref:`list<what is a list?>`, set_, tuple_ or string_.
-- smaller than the negative of the number of items in the :ref:`list<what is a list?>`, set_, tuple_ or string_.
+- bigger than or the same as the number of items in the :ref:`list<what is a list?>`, tuple_ or string_.
+- smaller than the negative of the number of items in the :ref:`list<what is a list?>`, tuple_ or string_.
 
 ----
 
@@ -1051,9 +1059,9 @@ test_catching_key_error_in_tests
 
     # Exceptions seen
 
-  the test passes. showing that
+  the test passes, showing that
 
-  * assertRaises_ checks that the code in its context (``{'key': 'value'}['not_in_dictionary']``), raises the :ref:`Exception<errors>` (:ref:`KeyError<test_key_error>`) it is given in parentheses.
+  * assertRaises_ checks that the code in its context (``a_dictionary['not_in_dictionary']``), raises the :ref:`Exception<errors>` (:ref:`KeyError<test_key_error>`) it is given in parentheses.
   * :ref:`KeyError<test_key_error>` is raised when I try to use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in a :ref:`dictionary<what is a dictionary?>`.
 
 * I add a git_ commit message
@@ -1338,7 +1346,7 @@ the test passes. The `assertRaises method`_ checks that the code under it raises
 
   .. code-block:: python
     :lineno-start: 44
-    :emphasize-lines: 2
+    :emphasize-lines: 5-6
 
         def test_catching_key_error_in_tests(self):
             a_dictionary = {'key': 'value'}
@@ -1394,7 +1402,7 @@ the test passes. The `assertRaises method`_ checks that the code under it raises
 one exception one exception handler
 *********************************************************************************
 
-* As promised here is why the second AssertRaises_ in :ref:`test_catching_index_error_in_tests` is not a repetition
+* As promised here is why the second assertRaises_ in :ref:`test_catching_index_error_in_tests` is not a repetition
 
   .. code-block:: python
     :lineno-start: 23
@@ -1412,7 +1420,7 @@ one exception one exception handler
             # with self.assertRaises(IndexError):
                 a_string[-9]
 
-  the test is still green for ``a_string[-9]`` which should causes :ref:`IndexError<test_index_error>`
+  the test is still green for ``a_string[-9]`` which should cause :ref:`IndexError<test_index_error>`
 
 * If I add a `raise statement`_ before ``a_string[-9]``
 

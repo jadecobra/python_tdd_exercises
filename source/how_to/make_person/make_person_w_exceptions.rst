@@ -10,6 +10,13 @@ how to make a person with exceptions
 
 ----
 
+I had a problem when I :ref:`made a person with conditions<how to make a person with conditions>`
+
+* I skipped :ref:`test_when_year_of_birth_is_not_an_integer` because it is always in a :red:`RED` state since it causes an :ref:`Exception<errors>`.
+* I commented out the bad ``year_of_birth`` in :ref:`test_john` for when a person is too old because it causes an :ref:`Exception<error>`.
+
+Python_ has a way that allows programs to make a choice when they encounter an :ref:`Exception<errors>` and continue running without stopping. It is the 
+
 I want to be able to check if a person can vote, and if they can get a license. In other words, I want something in the :ref:`person project<test person with datetime>` to make decisions based on :ref:`conditions<if statements>`. For example
 
 * If a person is younger than ``18``
