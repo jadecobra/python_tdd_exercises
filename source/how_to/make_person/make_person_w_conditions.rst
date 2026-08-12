@@ -1330,13 +1330,10 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with this solut
                 last_name='last_name',
                 sex='M',
                 # year_of_birth=None,    # fails
-                # year_of_birth=False,   # fails
                 # year_of_birth=2026.0,  # fails
                 # year_of_birth='2026',  # fails
                 # year_of_birth=(2026,), # fails
             )
-            # person.say_hello()
-            # fails if year_of_birth is not an integer
 
         def test_dir_person_class(self):
 
