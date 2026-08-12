@@ -156,7 +156,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   AttributeError: module 'src.person' has no attribute 'Person'
 
-because there is no definition for ``Person`` in ``person.py`` in the ``src`` folder_
+because there is no definition for ``Person`` in ``src/person/__init__.py`` in the ``src`` folder_
 
 ----
 
@@ -166,7 +166,7 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
 
 ----
 
-* I add a :ref:`class<everything is an object>` to ``person.py``
+* I add a :ref:`class<everything is an object>` to ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 12
@@ -361,7 +361,7 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
 
   because the test calls the ``say_hello`` :ref:`function<what is a function?>` which does not yet exist in the ``Person`` :ref:`class<everything is an object>`
 
-* I add a :ref:`method definition<how to make a function>` for it to the ``Person`` :ref:`class<everything is an object>` in ``person.py``
+* I add a :ref:`method definition<how to make a function>` for it to the ``Person`` :ref:`class<everything is an object>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 27
@@ -504,7 +504,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
     AssertionError: None != 'Hello, my name is joe blow and I am 30'
 
-* I copy the value from the terminal_ and paste it in the :ref:`return statement<the return statement>` for the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`class<everything is an object>` in ``person.py``
+* I copy the value from the terminal_ and paste it in the :ref:`return statement<the return statement>` for the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`class<everything is an object>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 40
@@ -665,7 +665,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   Progress. I can make the ``say_hello`` :ref:`function<what is a function?>` use :ref:`attributes<what is a class attribute?>` of the person it receives as input to make the message.
 
-* I change the string_ in the :ref:`return statement<the return statement>` of the ``say_hello`` :ref:`method<what is a function?>` of the ``Person`` :ref:`class<everything is an object>` to an :ref:`f-string<what is string interpolation?>` with the ``first_name`` :ref:`attribute<what is a class attribute?>` of the person it receives, in ``person.py``
+* I change the string_ in the :ref:`return statement<the return statement>` of the ``say_hello`` :ref:`method<what is a function?>` of the ``Person`` :ref:`class<everything is an object>` to an :ref:`f-string<what is string interpolation?>` with the ``first_name`` :ref:`attribute<what is a class attribute?>` of the person it receives, in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 44
@@ -3166,7 +3166,7 @@ the test passes.
 
   the ``sex`` :ref:`attribute<what is a class attribute?>` is not defined anywhere in the ``Person`` :ref:`class<everything is an object>`
 
-* I add ``self.sex`` to the :ref:`__init__ method<the constructor method>` of the ``Person`` :ref:`class<everything is an object>` in ``person.py``
+* I add ``self.sex`` to the :ref:`__init__ method<the constructor method>` of the ``Person`` :ref:`class<everything is an object>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 41
@@ -3266,7 +3266,7 @@ the test passes.
 close the project
 *********************************************************************************
 
-* I close ``test_person.py`` and ``person.py``
+* I close ``test_person.py`` and ``src/person/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 

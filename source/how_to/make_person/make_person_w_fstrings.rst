@@ -1501,7 +1501,7 @@ the test passes.
 
     AttributeError: module 'src.person' has no attribute 'factory'
 
-  because there is nothing named ``factory`` in ``person.py`` in the ``src`` folder_.
+  because there is nothing named ``factory`` in ``src/person/__init__.py`` in the ``src`` folder_.
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -1517,7 +1517,7 @@ the test passes.
     # AttributeError
 
 * I open ``person/__init__.py`` from the ``src`` folder_
-* I delete all the text in the file_ then add a copy of the :ref:`factory function<test person factory>` to ``person.py``
+* I delete all the text in the file_ then add a copy of the :ref:`factory function<test person factory>` to ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1534,13 +1534,13 @@ the test passes.
 
   the test passes because
 
-  - Python_ brings in an :ref:`object<everything is an object>` for the ``person.py`` file_ from the ``src`` folder_ so I can use it in ``test_person.py`` as ``src.person`` when ``import src.person`` runs.
-  - Python_ calls the :ref:`factory function<test person factory>` from the :ref:`object<everything is an object>` it imported for the ``person.py`` file_ from the ``src`` folder_ (``src.person``) when ``src.person.factory`` is called.
+  - Python_ brings in an :ref:`object<everything is an object>` for the ``src/person/__init__.py`` file_ from the ``src`` folder_ so I can use it in ``test_person.py`` as ``src.person`` when ``import src.person`` runs.
+  - Python_ calls the :ref:`factory function<test person factory>` from the :ref:`object<everything is an object>` it imported for the ``src/person/__init__.py`` file_ from the ``src`` folder_ (``src.person``) when ``src.person.factory`` is called.
 
   I think of ``src.person.factory`` like an address
 
   - ``factory`` is something in ``person``, in this case it is a :ref:`function<what is a function?>` in ``person``
-  - ``person`` is something in ``src``, in this case it is ``person.py`` (a :ref:`module<what is a module?>`) in the ``src`` folder_
+  - ``person`` is something in ``src``, in this case it is ``src/person/__init__.py`` (a :ref:`module<what is a module?>`) in the ``src`` folder_
   - ``src`` is something Python_ can import (a :ref:`module<what is a module?>`, `Python package`_ or folder_)
 
     .. code-block:: shell
@@ -1792,7 +1792,7 @@ the test passes.
 
     def test_jane():
 
-  all the tests are still green because the calls that were made to the :ref:`factory function<test person factory>` that was in ``test_person.py`` are now made to the :ref:`factory function<test person factory>` in ``person.py`` in the ``src`` folder_. When ``src.person.factory`` is called, Python_ follows this path
+  all the tests are still green because the calls that were made to the :ref:`factory function<test person factory>` that was in ``test_person.py`` are now made to the :ref:`factory function<test person factory>` in ``src/person/__init__.py`` in the ``src`` folder_. When ``src.person.factory`` is called, Python_ follows this path
 
   .. code-block:: shell
 
@@ -2434,9 +2434,9 @@ separate and equal say_hello
     AttributeError: module 'src.person'
                     has no attribute 'say_hello'
 
-  because there is nothing named ``say_hello`` in the ``person.py`` file_ in the ``src`` folder_.
+  because there is nothing named ``say_hello`` in the ``src/person/__init__.py`` file_ in the ``src`` folder_.
 
-* I add a copy of the :ref:`say_hello function<test say_hello function>` without the commented lines to ``person.py``
+* I add a copy of the :ref:`say_hello function<test say_hello function>` without the commented lines to ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -2758,7 +2758,7 @@ separate and equal say_hello
 
     def test_joe():
 
-  all the tests are still green because the calls that were made to the :ref:`say_hello function<test say_hello function>` that was in ``test_person.py`` are now made to the :ref:`say_hello function<test say_hello function>` in ``person.py`` in the ``src`` folder_. When ``src.person.say_hello`` is called, Python_ follows this path
+  all the tests are still green because the calls that were made to the :ref:`say_hello function<test say_hello function>` that was in ``test_person.py`` are now made to the :ref:`say_hello function<test say_hello function>` in ``src/person/__init__.py`` in the ``src`` folder_. When ``src.person.say_hello`` is called, Python_ follows this path
 
   .. code-block:: shell
 
@@ -2803,7 +2803,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
 * I close ``test_person.py``
 
-* I delete all the text in ``person.py`` and the terminal_ shows 4 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
+* I delete all the text in ``src/person/__init__.py`` and the terminal_ shows 4 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -2827,7 +2827,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
 ----
 
-* I add the name to ``person.py``
+* I add the name to ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -3364,7 +3364,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 close the project
 *********************************************************************************
 
-* I close ``person.py``
+* I close ``src/person/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 

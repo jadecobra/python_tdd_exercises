@@ -942,7 +942,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
     AssertionError: assert 'Hello, my name ... and I am 30.'
                         == 'Hello, my name ... and I am 35.'
 
-* I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>` with the input like the :ref:`say_hello function<test say_hello function>` in ``person.py`` in the ``src`` folder_
+* I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>` with the input like the :ref:`say_hello function<test say_hello function>` in ``src/person/__init__.py`` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 15
@@ -1726,7 +1726,7 @@ separate and equal Person class
 
     AttributeError: module 'src.person' has no attribute 'Person'
 
-  because there is nothing with that name in the ``person.py`` file_ in the ``src`` folder_.
+  because there is nothing with that name in the ``src/person/__init__.py`` file_ in the ``src`` folder_.
 
 ----
 
@@ -1738,7 +1738,7 @@ separate and equal Person class
 
 * I open ``person/__init__.py`` from the ``src`` folder_
 
-* I add the name to ``person.py``
+* I add the name to ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1994,7 +1994,7 @@ separate and equal Person class
     # AttributeError
     # SyntaxError
 
-* I change :ref:`the return statement` to the pass_ keyword, in ``person.py``
+* I change :ref:`the return statement` to the pass_ keyword, in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -2025,7 +2025,7 @@ separate and equal Person class
 
     NameError: name 'first_name' is not defined
 
-  because the only definitions for ``first_name`` are in the :ref:`say_hello<test say_hello function>` and :ref:`factory functions<test person factory>` in ``person.py``.
+  because the only definitions for ``first_name`` are in the :ref:`say_hello<test say_hello function>` and :ref:`factory functions<test person factory>` in ``src/person/__init__.py``.
 
 * I add :ref:`the constructor method` to handle the inputs
 
@@ -2318,7 +2318,7 @@ separate and equal Person class
     AssertionError: assert 'Hello, my name ... and I am 26.'
                         == 'Hello, my name ...and I am 446.'
 
-* I change :ref:`the return statement` of the :ref:`say_hello method<test say_hello method>` to return the input, in ``person.py``
+* I change :ref:`the return statement` of the :ref:`say_hello method<test say_hello method>` to return the input, in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -2727,7 +2727,7 @@ separate and equal Person class
 
     def test_joe():
 
-  all the tests are still green because the calls that were made to the :ref:`Person class<test Person class>` that was in ``test_person.py`` are now made to the :ref:`Person class<test Person class>` in ``person.py`` in the ``src`` folder_. When ``src.person.Person`` is :ref:`called<how to call a function with input>` with input, Python_ follows this path
+  all the tests are still green because the calls that were made to the :ref:`Person class<test Person class>` that was in ``test_person.py`` are now made to the :ref:`Person class<test Person class>` in ``src/person/__init__.py`` in the ``src`` folder_. When ``src.person.Person`` is :ref:`called<how to call a function with input>` with input, Python_ follows this path
 
   .. code-block:: shell
 
@@ -3186,7 +3186,7 @@ the test passes.
 
   the ``sex`` :ref:`attribute<what is a class attribute?>` is not defined anywhere in the :ref:`Person class<test Person class>`.
 
-* I add ``self.sex`` to the :ref:`__init__ method<the constructor method>` of the :ref:`Person class<test Person class>` in ``person.py``
+* I add ``self.sex`` to the :ref:`__init__ method<the constructor method>` of the :ref:`Person class<test Person class>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -3299,7 +3299,7 @@ the test passes.
 close the project
 *********************************************************************************
 
-* I close ``person.py`` and ``test_person.py``
+* I close ``src/person/__init__.py`` and ``test_person.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 

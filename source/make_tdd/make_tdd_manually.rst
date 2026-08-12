@@ -379,7 +379,7 @@ how to make a directory for the source code
 
     python3 src/person.py
 
-  the terminal_ is my friend, and shows the same error from before because there is no file_ named ``person.py`` in the ``src`` folder_.
+  the terminal_ is my friend, and shows the same error from before because there is no file_ named ``src/person/__init__.py`` in the ``src`` folder_.
 
 ----
 
@@ -389,7 +389,7 @@ how to change the name of a file
 
 ----
 
-* I use the `mv program`_ to change the name of ``main.py`` to ``person.py`` and move it to the ``src`` folder_
+* I use the `mv program`_ to change the name of ``main.py`` to ``src/person/__init__.py`` and move it to the ``src`` folder_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -428,7 +428,7 @@ how to change the name of a file
     └── src
         └── person.py
 
-  ``main.py`` is now ``person.py`` in the ``src`` folder_.
+  ``main.py`` is now ``src/person/__init__.py`` in the ``src`` folder_.
 
 * I try to run the ``person`` program_ again
 
@@ -606,7 +606,7 @@ how to make a Python file for the tests in the 'tests' directory
 :red:`RED`: make it fail
 ********************************************************************************************
 
-* I open ``person.py`` from the ``tests`` folder_
+* I open ``src/person/__init__.py`` from the ``tests`` folder_
 
   .. tip::
 
@@ -707,13 +707,13 @@ how to make the tests a Python package
 
     NO TESTS RAN
 
-  because :ref:`unittest<another way to write tests>` does not know that ``person.py`` in the ``tests`` folder is a test file_. I did not start the name with ``test_``. I have to change the name.
+  because :ref:`unittest<another way to write tests>` does not know that ``src/person/__init__.py`` in the ``tests`` folder is a test file_. I did not start the name with ``test_``. I have to change the name.
 
-* I close ``person.py``
+* I close ``src/person/__init__.py``
 
-  .. danger:: if you do not close ``person.py``, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open after you change its name.
+  .. danger:: if you do not close ``src/person/__init__.py``, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open after you change its name.
 
-* I use the `mv program`_ to change the name of ``person.py`` in the ``tests`` folder_ to ``test_person.py``
+* I use the `mv program`_ to change the name of ``src/person/__init__.py`` in the ``tests`` folder_ to ``test_person.py``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -757,7 +757,7 @@ how to make the tests a Python package
 
   .. admonition:: if you do not see ``__pycache__`` in the tree do not worry,
 
-    the important thing is that you renamed ``person.py`` to ``test_person.py`` for :ref:`unittest<another way to write tests>` to find the test.
+    the important thing is that you renamed ``src/person/__init__.py`` to ``test_person.py`` for :ref:`unittest<another way to write tests>` to find the test.
 
 * I run the test again
 

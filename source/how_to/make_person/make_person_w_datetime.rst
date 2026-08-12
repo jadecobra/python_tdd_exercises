@@ -1250,7 +1250,7 @@ The tests use the right calculation for the age, and the solution still uses a f
 
 * I go back to the terminal_ where the tests are running.
 * I open ``person/__init__.py`` from the ``src`` folder_
-* I add a :ref:`function<what is a function?>` to calculate the age, with the same body as the :ref:`calculate_age method<extract calculate_age method>`, in ``person.py``
+* I add a :ref:`function<what is a function?>` to calculate the age, with the same body as the :ref:`calculate_age method<extract calculate_age method>`, in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 12
@@ -1309,7 +1309,7 @@ The tests use the right calculation for the age, and the solution still uses a f
 
 ----
 
-* I add an `import statement`_ at the top of ``person.py``
+* I add an `import statement`_ at the top of ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1439,7 +1439,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a :ref:`variable<what is a variable?>` with an :ref:`assert statement<what is an assertion?>` to :ref:`calculate_age function<add calculate_age function>` in ``person.py``
+* I add a :ref:`variable<what is a variable?>` with an :ref:`assert statement<what is an assertion?>` to :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -1517,7 +1517,7 @@ the test passes.
             # raises AssertionError
             # because older than 120
 
-* I remove the commented line from the :ref:`calculate_age function<add calculate_age function>` in ``person.py``
+* I remove the commented line from the :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -1595,7 +1595,7 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
 
 ----
 
-* I make ``year_of_birth`` an :ref:`optional argument<test_optional_arguments>` in the :ref:`Person class<test Person class>` in ``person.py``
+* I make ``year_of_birth`` an :ref:`optional argument<test_optional_arguments>` in the :ref:`Person class<test Person class>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1761,7 +1761,7 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
 
   the test is green because there is no :ref:`assertion<what is an assertion?>` or :ref:`calls<how to call a function>` that cause :ref:`AssertionError<what causes AssertionError?>`.
 
-* I remove the commented line from the :ref:`Person class<test Person class>` in ``person.py``
+* I remove the commented line from the :ref:`Person class<test Person class>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1787,7 +1787,7 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
 close the project
 *********************************************************************************
 
-* I close ``test_person.py`` and ``person.py``
+* I close ``test_person.py`` and ``src/person/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 

@@ -82,7 +82,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I use the `mv program`_ to change the name of ``main.py`` to ``person.py`` and move it to the ``src`` folder_
+* I use the `mv program`_ to change the name of ``main.py`` to ``src/person/__init__.py`` and move it to the ``src`` folder_
 
   .. tab-set::
     :sync-group: os
@@ -368,7 +368,7 @@ test_factory_w_keyword_arguments
     import src.person
     import unittest
 
-  - ``import src.person`` brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the ``person.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_person.py``
+  - ``import src.person`` brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the ``src/person/__init__.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_person.py``
   - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
     .. code-block:: python
@@ -376,7 +376,7 @@ test_factory_w_keyword_arguments
       AttributeError: module 'src.person'
                       has no attribute 'factory'
 
-    because there is nothing in ``person.py`` named ``factory``
+    because there is nothing in ``src/person/__init__.py`` named ``factory``
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -390,9 +390,9 @@ test_factory_w_keyword_arguments
     # NameError
     # AttributeError
 
-* I open ``person.py`` from the ``src`` folder
+* I open ``src/person/__init__.py`` from the ``src`` folder
 
-* I delete all the text in the file_, then add a :ref:`function<what is a function?>` to ``person.py``
+* I delete all the text in the file_, then add a :ref:`function<what is a function?>` to ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -401,7 +401,7 @@ test_factory_w_keyword_arguments
     def factory():
         return None
 
-  the test passes because when ``src.person.factory()`` is called, Python_ checks ``person.py`` in the ``src`` folder_ for a :ref:`function definition<how to make a function>` with the name ``factory`` and finds it.
+  the test passes because when ``src.person.factory()`` is called, Python_ checks ``src/person/__init__.py`` in the ``src`` folder_ for a :ref:`function definition<how to make a function>` with the name ``factory`` and finds it.
 
 ----
 
@@ -450,7 +450,7 @@ test_factory_w_keyword_arguments
     # AttributeError
     # TypeError
 
-* I add ``first_name`` as an input parameter to the :ref:`function<what is a function?>` in ``person.py``
+* I add ``first_name`` as an input parameter to the :ref:`function<what is a function?>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -492,7 +492,7 @@ test_factory_w_keyword_arguments
 
   because the test :ref:`called<how to call a function with input>` the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`name<test_keyword_arguments>` (``last_name``) that is not in the :ref:`function definition<how to make a function>`.
 
-* I add ``last_name`` to the :ref:`function definition<how to make a function>` in ``person.py``
+* I add ``last_name`` to the :ref:`function definition<how to make a function>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -535,7 +535,7 @@ test_factory_w_keyword_arguments
 
   because the test :ref:`called<how to call a function with input>` the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`name<test_keyword_arguments>` (``sex``) that is not in the :ref:`function definition<how to make a function>`.
 
-* I add ``sex`` as an input parameter to the :ref:`factory function<test_factory_w_keyword_arguments>` in ``person.py``
+* I add ``sex`` as an input parameter to the :ref:`factory function<test_factory_w_keyword_arguments>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -583,7 +583,7 @@ test_factory_w_keyword_arguments
 
   because the test :ref:`called<how to call a function with input>` the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`name<test_keyword_arguments>` (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`.
 
-* I add the name to the :ref:`function definition<how to make a function>` in ``person.py``
+* I add the name to the :ref:`function definition<how to make a function>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -655,7 +655,7 @@ test_factory_w_keyword_arguments
 
   which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``{}``.
 
-* I change :ref:`None<what is None?>` in the :ref:`return statement<the return statement>`, to give the test what it wants, in ``person.py``
+* I change :ref:`None<what is None?>` in the :ref:`return statement<the return statement>`, to give the test what it wants, in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -730,7 +730,7 @@ test_factory_w_keyword_arguments
 
   which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`function<what is a function?>` returns :ref:`the empty dictionary<test_making_a_dictionary>` and the :ref:`assertion<what is an assertion?>` expects one with ``first_name`` as the :ref:`key<test_keys_of_a_dictionary>`.
 
-* I change the :ref:`return statement<the return statement>` to give the test what it wants, in ``person.py``
+* I change the :ref:`return statement<the return statement>` to give the test what it wants, in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -812,7 +812,7 @@ test_factory_w_keyword_arguments
 
   which raises :ref:`AssertionError<what causes AssertionError?>` since I changed the :ref:`value<test_values_of_a_dictionary>` for ``first_name`` to ``'jane'`` in ``my_expectation`` and the :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a different value (``'first_name'``).
 
-* I change the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
+* I change the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -954,7 +954,7 @@ test_factory_w_keyword_arguments
         {'first_name': 'jane', 'last_name': 'last_name'}
     )
 
-* I change the :ref:`return statement<the return statement>` in ``person.py``
+* I change the :ref:`return statement<the return statement>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1062,7 +1062,7 @@ test_factory_w_keyword_arguments
 
   which raises :ref:`AssertionError<what causes AssertionError?>` since I changed the :ref:`value<test_values_of_a_dictionary>` for ``last_name`` to ``'doe'`` in ``my_expectation`` and the :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a different value (``'last_name'``).
 
-* I change the :ref:`value<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
+* I change the :ref:`value<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1228,7 +1228,7 @@ test_factory_w_keyword_arguments
         {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
     )
 
-* I add a new :ref:`key<test_keys_of_a_dictionary>` to the :ref:`return statement<the return statement>` in ``person.py``
+* I add a new :ref:`key<test_keys_of_a_dictionary>` to the :ref:`return statement<the return statement>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1348,7 +1348,7 @@ test_factory_w_keyword_arguments
 
   which raises :ref:`AssertionError<what causes AssertionError?>` since I changed the :ref:`value<test_values_of_a_dictionary>` for ``sex`` to ``'F'`` in ``my_expectation`` and the :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a different value (``'M'``).
 
-* I change the :ref:`value<test_values_of_a_dictionary>` for the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
+* I change the :ref:`value<test_values_of_a_dictionary>` for the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1534,7 +1534,7 @@ test_factory_w_keyword_arguments
          'age': 26}
     )
 
-* I add a new :ref:`key<test_keys_of_a_dictionary>` to the :ref:`return statement<the return statement>` in ``person.py``
+* I add a new :ref:`key<test_keys_of_a_dictionary>` to the :ref:`return statement<the return statement>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1669,7 +1669,7 @@ test_factory_w_keyword_arguments
 
   which raises :ref:`AssertionError<what causes AssertionError?>` since I changed the calculation for ``age`` to ``2026-1996`` in ``my_expectation`` and the :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a different value (``26``).
 
-* I change the :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
+* I change the :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -2077,7 +2077,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
 
   - anytime I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to save the file_, the test runs again and I get a new random :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>`
 
-* I add a calculation for the age with the `today method`_ to the :ref:`return statement<the return statement>` in ``person.py``
+* I add a calculation for the age with the `today method`_ to the :ref:`return statement<the return statement>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -2107,7 +2107,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
 
   because datetime_ is not defined in this file_.
 
-* I add an `import statement`_ for the `datetime module`_ at the top of ``person.py``
+* I add an `import statement`_ for the `datetime module`_ at the top of ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -2121,7 +2121,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
             sex, year_of_birth,
         ):
 
-  the test passes because ``import datetime`` brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the `datetime module`_ so I can use it in ``person.py``.
+  the test passes because ``import datetime`` brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the `datetime module`_ so I can use it in ``src/person/__init__.py``.
 
 ----
 
@@ -2310,7 +2310,7 @@ I want to use random values in the test to make sure the :ref:`factory function<
 
 ----
 
-I use the ``sex`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'sex'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change, in the :ref:`return statement<the return statement>` in ``person.py``
+I use the ``sex`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'sex'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change, in the :ref:`return statement<the return statement>` in ``src/person/__init__.py``
 
 .. code-block:: python
   :lineno-start: 4
@@ -2418,7 +2418,7 @@ I want to use random values in the test to make sure the :ref:`factory function<
 
 ----
 
-I use the ``last_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change in the :ref:`return statement<the return statement>` in ``person.py``
+I use the ``last_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change in the :ref:`return statement<the return statement>` in ``src/person/__init__.py``
 
 .. code-block:: python
   :lineno-start: 4
@@ -2530,7 +2530,7 @@ I want to use random values in the test to make sure the :ref:`factory function<
 
 ----
 
-I use the ``first_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'first_name'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change, in the :ref:`return statement<the return statement>` in ``person.py``
+I use the ``first_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'first_name'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change, in the :ref:`return statement<the return statement>` in ``src/person/__init__.py``
 
 .. code-block:: python
   :lineno-start: 4
@@ -3359,7 +3359,7 @@ I want to see what happens when I try to make a person without a value for the `
 
 ----
 
-* I add a default value for ``last_name`` to make it optional, in the :ref:`factory function<test_factory_w_keyword_arguments>` in ``person.py``
+* I add a default value for ``last_name`` to make it optional, in the :ref:`factory function<test_factory_w_keyword_arguments>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -3394,7 +3394,7 @@ I want to see what happens when I try to make a person without a value for the `
     # TypeError
     # SyntaxError
 
-* I add a default value for ``sex`` to make it optional, in the :ref:`factory function<test_factory_w_keyword_arguments>` in ``person.py``
+* I add a default value for ``sex`` to make it optional, in the :ref:`factory function<test_factory_w_keyword_arguments>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -3520,7 +3520,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   because the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``last_name`` and the :ref:`assertion<what is an assertion?>` expects ``'doe'``.
 
-* I change the default value for ``last_name`` in the :ref:`factory function<test_factory_w_keyword_arguments>` in ``person.py``
+* I change the default value for ``last_name`` in the :ref:`factory function<test_factory_w_keyword_arguments>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -3672,7 +3672,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   because the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``sex`` and the :ref:`assertion<what is an assertion?>` expects ``'M'``.
 
-* I change the default value for ``sex`` in the :ref:`factory function<test_factory_w_keyword_arguments>` in ``person.py``
+* I change the default value for ``sex`` in the :ref:`factory function<test_factory_w_keyword_arguments>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -3869,7 +3869,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the test is still green.
 
-* I remove the commented lines from ``person.py``
+* I remove the commented lines from ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -3955,7 +3955,7 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
     AttributeError: module 'src.person'
                     has no attribute 'say_hello'
 
-  because ``person.py`` does not have a :ref:`function<what is a function?>` named ``say_hello``, yet.
+  because ``src/person/__init__.py`` does not have a :ref:`function<what is a function?>` named ``say_hello``, yet.
 
 ----
 
@@ -3965,7 +3965,7 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
 
 ----
 
-* I add the :ref:`function<what is a function?>` to ``person.py``
+* I add the :ref:`function<what is a function?>` to ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -4051,7 +4051,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     AssertionError:
         None != 'Hello, my name is joe blow and I am 30'
 
-* I copy (:kbd:`ctrl/command+c`) the value from the terminal_ and paste it (:kbd:`ctrl/command+v`) in the :ref:`return statement<the return statement>` in ``person.py``
+* I copy (:kbd:`ctrl/command+c`) the value from the terminal_ and paste it (:kbd:`ctrl/command+v`) in the :ref:`return statement<the return statement>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 19
@@ -4105,7 +4105,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   I have to make sure the ``say_hello`` :ref:`function<what is a function?>` uses the :ref:`values<test_values_of_a_dictionary>` of the ``person`` :ref:`dictionary<what is a dictionary?>` to make the message. I can do that with the :ref:`get method of dictionaries<test_get_value_of_a_key_in_a_dictionary>`.
 
-* I change the string_ to an :ref:`f-string<what is string interpolation?>` with the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` in ``person.py``
+* I change the string_ to an :ref:`f-string<what is string interpolation?>` with the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 19
@@ -5802,7 +5802,7 @@ I want to write the solution without looking at the tests
 
 * I go back to the terminal_ where the tests are running
 * I close ``test_person.py``
-* then I delete all the text in ``person.py``, the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+* then I delete all the text in ``src/person/__init__.py``, the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -5816,7 +5816,7 @@ I want to write the solution without looking at the tests
         AttributeError: module 'src.person' has
                         no attribute 'factory'
 
-  because there is nothing in ``person.py`` with the name ``factory``.
+  because there is nothing in ``src/person/__init__.py`` with the name ``factory``.
 
 Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done or if you get stuck.
 
@@ -6578,7 +6578,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 close the project
 *********************************************************************************
 
-* I close ``person.py``
+* I close ``src/person/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 

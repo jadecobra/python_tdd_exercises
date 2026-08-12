@@ -113,7 +113,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 ----
 
 * I open ``person/__init__.py`` from the ``src`` folder_
-* I add a :ref:`function definition<how to make a function>` to the :ref:`Person class<test Person class>` in ``person.py``
+* I add a :ref:`function definition<how to make a function>` to the :ref:`Person class<test Person class>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -320,7 +320,7 @@ I want ``can_vote`` to return
 
   because the :ref:`definition<how to make a function that takes input>` for the :ref:`__init__ method<the constructor method>` only takes five inputs (``self``, ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``) and I :ref:`called<how to call a function with input>` it with ``is_citizen`` which is not one of those names.
 
-* I add ``is_citizen`` to the parentheses of the :ref:`__init__ method<the constructor method>`, in ``person.py``
+* I add ``is_citizen`` to the parentheses of the :ref:`__init__ method<the constructor method>`, in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -451,7 +451,7 @@ I want ``can_vote`` to return
 
 ----
 
-* I remove the commented lines from ``person.py``
+* I remove the commented lines from ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -588,7 +588,7 @@ I can do that with an :ref:`if statement<if statements>`
 
 ----
 
-* I add an :ref:`if statement<if statements>` with a :ref:`call<how to call a function with input>` to the :ref:`calculate_age function<add calculate_age function>` from the :ref:`can_vote method<add can_vote method>` in ``person.py``
+* I add an :ref:`if statement<if statements>` with a :ref:`call<how to call a function with input>` to the :ref:`calculate_age function<add calculate_age function>` from the :ref:`can_vote method<add can_vote method>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 17
@@ -707,7 +707,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-* I add a :ref:`method definition<how to make a function that takes input>` to the :ref:`Person class<test Person class>` in ``person.py``
+* I add a :ref:`method definition<how to make a function that takes input>` to the :ref:`Person class<test Person class>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -879,7 +879,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   because the :ref:`definition<how to make a function that takes input>` for the :ref:`__init__ method<the constructor method>` only takes six inputs (``self``, ``first_name``, ``last_name``, ``sex``, ``year_of_birth`` and ``is_citizen``). I :ref:`called<how to call a function with input>` it with ``passed_test`` which is not one of those names.
 
-* I add ``passed_test`` to the parentheses of the :ref:`__init__ method<the constructor method>`, in ``person.py``
+* I add ``passed_test`` to the parentheses of the :ref:`__init__ method<the constructor method>`, in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1014,7 +1014,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I remove the commented lines from ``person.py``
+* I remove the commented lines from ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1169,7 +1169,7 @@ I want the :ref:`can_get_license method<add can_get_license method>` to use two 
 
 ----
 
-I add an :ref:`if statement<if statements>` with a :ref:`call<how to call a function with input>` to the :ref:`calculate_age function<add calculate_age function>` from the :ref:`can_get_license method<add can_get_license method>` in ``person.py``
+I add an :ref:`if statement<if statements>` with a :ref:`call<how to call a function with input>` to the :ref:`calculate_age function<add calculate_age function>` from the :ref:`can_get_license method<add can_get_license method>` in ``src/person/__init__.py``
 
 .. code-block:: python
   :lineno-start: 19
@@ -1383,7 +1383,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with this solut
 
 ----
 
-* I use ``self.age`` in the :ref:`can_get_license method<add can_get_license method>` in ``person.py``
+* I use ``self.age`` in the :ref:`can_get_license method<add can_get_license method>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 20
@@ -1563,7 +1563,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I :ref:`call<how to call a function with input>` the :ref:`check_age method<extract check_age method>` from the :ref:`can_vote method<add can_vote method>` in ``person.py``
+* I :ref:`call<how to call a function with input>` the :ref:`check_age method<extract check_age method>` from the :ref:`can_vote method<add can_vote method>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 27
@@ -1665,7 +1665,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 close the project
 *********************************************************************************
 
-* I close ``test_person.py`` and ``person.py``
+* I close ``test_person.py`` and ``src/person/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 

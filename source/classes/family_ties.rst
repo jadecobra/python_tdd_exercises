@@ -403,7 +403,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
 
     E   ModuleNotFoundError: No module named 'person'
 
-  because Python_ cannot find ``person.py`` in the main project folder_ (the parent of ``src`` and ``tests``) where I run the tests from, so it cannot :ref:`import the Module<test_module_not_found_error>`.
+  because Python_ cannot find ``src/person/__init__.py`` in the main project folder_ (the parent of ``src`` and ``tests``) where I run the tests from, so it cannot :ref:`import the Module<test_module_not_found_error>`.
 
 * I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_family_ties.py``
 
@@ -418,7 +418,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
     # AttributeError
     # ModuleNotFoundError
 
-* I add the path of ``person.py`` from the main project folder_ (the parent of ``src`` and ``tests``) to the `import statement`_, in ``family_ties.py``
+* I add the path of ``src/person/__init__.py`` from the main project folder_ (the parent of ``src`` and ``tests``) to the `import statement`_, in ``family_ties.py``
 
   .. code-block:: python
     :linenos:
@@ -449,9 +449,9 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
     # class Doe(person.Person): pass
     class Doe(src.person.Person): pass
 
-  - ``import src.person`` brings in an :ref:`object<everything is an object>` for the ``person.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``family_ties.py``.
+  - ``import src.person`` brings in an :ref:`object<everything is an object>` for the ``src/person/__init__.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``family_ties.py``.
   - I have to use ``src.person.Person`` in ``family_ties.py`` because I am testing from the root folder_ of the project (the parent folder_ of ``src`` and ``tests``).
-  - The test needs to know where ``person.py`` is in relation to where I ran the tests from.
+  - The test needs to know where ``src/person/__init__.py`` is in relation to where I ran the tests from.
   - This is a problem because if ``family_ties.py`` is run from inside ``src`` the `import statement`_ will not be able to find ``src.person`` from inside ``src``. Same thing if I run the tests from inside ``tests`` :ref:`(a problem for another time)<test_module_not_found_error>`.
   - The test passes because ``Doe`` is now a :ref:`child (subclass)<how to test if something is a subclass>` of ``Person``.
 
