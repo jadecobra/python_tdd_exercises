@@ -1359,7 +1359,7 @@ the test passes. The `assertRaises method`_ checks that the code under it raises
 
   the test is green again.
 
-* I cannot use children :ref:`Exceptions<errors>` to catch parent :ref:`Exceptions<errors>`
+* I cannot use a :ref:`child<how to test if something is a subclass>` :ref:`Exceptions<errors>` to catch its parent :ref:`Exception<errors>`.
 
   .. code-block:: python
     :lineno-start: 55

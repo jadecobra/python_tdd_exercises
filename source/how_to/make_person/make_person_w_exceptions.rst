@@ -240,7 +240,7 @@ test_when_person_is_too_old_to_be_alive
 ----
 
 *********************************************************************************
-try to test_when_year_of_birth_is_not_an_integer
+add exception handler to test_when_year_of_birth_is_not_an_integer
 *********************************************************************************
 
 =================================================================================
@@ -540,6 +540,247 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         def test_dir_person_class(self):
 
   the test passes, showing that :ref:`Exception<errors>` is raised when ``year_of_birth`` is not an integer_.
+
+* I remove the commented lines from the :ref:`calculate_age function<extract calculate_age function>`  in ``src/person/__init__.py``
+
+  .. code-block:: python
+    :lineno-start: 44
+
+    def calculate_age(year_of_birth):
+        if not isinstance(year_of_birth, int):
+            raise Exception
+
+        age = (
+            datetime.date.today().year
+          - year_of_birth
+        )
+
+        if age > 120:
+            raise Exception
+        return age
+
+
+    def say_hello(
+        first_name, last_name, year_of_birth,
+    ):
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add exception handler to test_when_year_of_birth_is_not_an_integer'
+
+----
+
+*********************************************************************************
+explicit is better than implicit
+*********************************************************************************
+
+The problem with using :ref:`except:<how to use try...except...else>` is that it catches all :ref:`Exceptions<errors>` which means it does not tell anyone that reads the code what the actual :ref:`Exception<errors>` is.
+
+.. code-block:: python
+
+  try:
+      something
+  except:
+      something else
+
+is the same as
+
+.. code-block:: python
+
+  try:
+      something
+  except Exception:
+      something else
+
+because :ref:`Exception<errors>` is the mother of all the :ref:`Exceptions<errors>` covered so far, they :ref:`inherit<everything is an object>` from it.
+
+From the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``.
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I change the :ref:`except clause<how to use try...except...else>` in :ref:`test_when_person_is_too_old_to_be_alive` for when the ``year_of_birth`` is a tuple_ to be more specific
+
+.. code-block:: python
+  :lineno-start: 268
+  :emphasize-lines: 8
+
+          try:
+              src.person.Person(
+                  first_name='first_name',
+                  last_name='last_name',
+                  sex='M',
+                  year_of_birth=(2026,),
+              )
+          except TypeError:
+              pass
+
+      def test_dir_person_class(self):
+
+the terminal_ is my friend, and shows :ref:`Exception<errors>`
+
+.. code-block:: python
+
+  E           Exception
+
+because :ref:`Exception<errors>` is not :ref:`TypeError<what causes TypeError?>` even though :ref:`TypeError<what causes TypeError?>` is an :ref:`Exception<errors>`. I cannot use a :ref:`child<how to test if something is a subclass>` :ref:`Exceptions<errors>` to catch its parent :ref:`Exception<errors>`.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the :ref:`raise statement<how to raise an Exception>` in the :ref:`calculate_age function<extract calculate_age function>` for when the ``year_of_birth`` is not an integer_ to be more specific
+
+.. code-block:: python
+  :lineno-start: 44
+  :emphasize-lines: 3-4
+
+  def calculate_age(year_of_birth):
+      if not isinstance(year_of_birth, int):
+          # raise Exception
+          raise TypeError
+
+      age = (
+          datetime.date.today().year
+        - year_of_birth
+      )
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I change the :ref:`except clause<how to use try...except...else>` in :ref:`test_when_person_is_too_old_to_be_alive` for when the ``year_of_birth`` is a string_ to catch :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :lineno-start: 258
+    :emphasize-lines: 8
+
+            try:
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth='2026',
+                )
+            except AssertionError:
+                pass
+
+            try:
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    E           TypeError
+
+* I change the :ref:`except clause<how to use try...except...else>` in :ref:`test_when_person_is_too_old_to_be_alive` for when the ``year_of_birth`` is a string_ to catch :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+    :lineno-start: 258
+    :emphasize-lines: 8
+
+            try:
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth='2026',
+                )
+            except TypeError:
+                pass
+
+            try:
+
+  the test passes.
+
+* I change the :ref:`except clause<how to use try...except...else>` in :ref:`test_when_person_is_too_old_to_be_alive` for when the ``year_of_birth`` is a string_ to catch :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+    :lineno-start: 258
+    :emphasize-lines: 8
+
+            try:
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth='2026',
+                )
+            except NameError:
+                pass
+
+            try:
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    E           TypeError
+
+* I change the :ref:`except clause<how to use try...except...else>` in :ref:`test_when_person_is_too_old_to_be_alive` for when the ``year_of_birth`` is a string_ to catch :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+    :lineno-start: 258
+    :emphasize-lines: 8
+
+            try:
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth='2026',
+                )
+            except TypeError:
+                pass
+
+            try:
+
+  the test passes.
+
+# NameError
+# TypeError
+# AttributeError
+# SyntaxError
+
+* I change the :ref:`except clause<how to use try...except...else>` in :ref:`test_when_person_is_too_old_to_be_alive` for when the ``year_of_birth`` is a string_ to be more specific
+
+  .. code-block:: python
+    :lineno-start: 258
+    :emphasize-lines: 8
+
+            try:
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth='2026',
+                )
+            except TypeError:
+                pass
+
+            try:
+
+  the test is still green.
+
+
+
 
 ----
 
