@@ -575,7 +575,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 ----
 
 *********************************************************************************
-explicit is better than implicit
+raise TypeError when year_of_birth is not an integer
 *********************************************************************************
 
 The problem with using :ref:`except:<how to use try...except...else>` is that it catches all :ref:`Exceptions<errors>` which means it does not tell anyone that reads the code what the actual :ref:`Exception<errors>` is.
@@ -606,7 +606,7 @@ From the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``.
 
 ----
 
-I change the :ref:`except clause<how to use try...except...else>` in :ref:`test_when_person_is_too_old_to_be_alive` for when the ``year_of_birth`` is a tuple_ to be more specific
+I change the :ref:`except clause<how to use try...except...else>` in :ref:`def test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a tuple_ to be more specific
 
 .. code-block:: python
   :lineno-start: 268
@@ -656,7 +656,14 @@ I change the :ref:`raise statement<how to raise an Exception>` in the :ref:`calc
         - year_of_birth
       )
 
-the test passes.
+the test passes because the :ref:`try statement<how to use try...except...else>` now only :ref:`catches/handles<how to handle Exceptions (Errors) in programs>` :ref:`TypeError<what causes TypeError?>`.
+
+.. code-block:: python
+
+  try:
+      something
+  except TypeError:
+      something else
 
 ----
 
@@ -666,7 +673,7 @@ the test passes.
 
 ----
 
-* I change the :ref:`except clause<how to use try...except...else>` in :ref:`test_when_person_is_too_old_to_be_alive` for when the ``year_of_birth`` is a string_ to catch :ref:`AssertionError<what causes AssertionError?>`
+* I change the :ref:`except clause<how to use try...except...else>` in :ref:`def test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a string_ to catch :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :lineno-start: 258
@@ -690,7 +697,9 @@ the test passes.
 
     E           TypeError
 
-* I change the :ref:`except clause<how to use try...except...else>` in :ref:`test_when_person_is_too_old_to_be_alive` for when the ``year_of_birth`` is a string_ to catch :ref:`TypeError<what causes TypeError?>`
+  because :ref:`TypeError<what causes TypeError?>` is not :ref:`AssertionError<what causes AssertionError?>` or a :ref:`child<how to test if something is a subclass>` of :ref:`AssertionError<what causes AssertionError?>`.
+
+* I change the :ref:`except clause<how to use try...except...else>` in :ref:`def test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a string_ to catch :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
     :lineno-start: 258
@@ -710,10 +719,10 @@ the test passes.
 
   the test passes.
 
-* I change the :ref:`except clause<how to use try...except...else>` in :ref:`test_when_person_is_too_old_to_be_alive` for when the ``year_of_birth`` is a string_ to catch :ref:`NameError<test_catching_name_error_in_tests>`
+* I change the :ref:`except clause<how to use try...except...else>` in :ref:`def test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a float_ to catch :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
-    :lineno-start: 258
+    :lineno-start: 248
     :emphasize-lines: 8
 
             try:
@@ -721,7 +730,7 @@ the test passes.
                     first_name='first_name',
                     last_name='last_name',
                     sex='M',
-                    year_of_birth='2026',
+                    year_of_birth=2026.0,
                 )
             except NameError:
                 pass
@@ -734,10 +743,12 @@ the test passes.
 
     E           TypeError
 
-* I change the :ref:`except clause<how to use try...except...else>` in :ref:`test_when_person_is_too_old_to_be_alive` for when the ``year_of_birth`` is a string_ to catch :ref:`TypeError<what causes TypeError?>`
+  because :ref:`TypeError<what causes TypeError?>` is not :ref:`NameError<test_catching_name_error_in_tests>` or a :ref:`child<how to test if something is a subclass>` of :ref:`NameError<test_catching_name_error_in_tests>`.
+
+* I change the :ref:`except clause<how to use try...except...else>` in :ref:`def test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a float_ to catch :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
-    :lineno-start: 258
+    :lineno-start: 248
     :emphasize-lines: 8
 
             try:
@@ -745,7 +756,7 @@ the test passes.
                     first_name='first_name',
                     last_name='last_name',
                     sex='M',
-                    year_of_birth='2026',
+                    year_of_birth=2026.0,
                 )
             except TypeError:
                 pass
@@ -754,12 +765,108 @@ the test passes.
 
   the test passes.
 
-# NameError
-# TypeError
-# AttributeError
-# SyntaxError
+* I change the :ref:`except clause<how to use try...except...else>` in :ref:`def test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is :ref:`False<test_what_is_false>` to catch :ref:`AttributeError<what causes AttributeError?>`
 
-* I change the :ref:`except clause<how to use try...except...else>` in :ref:`test_when_person_is_too_old_to_be_alive` for when the ``year_of_birth`` is a string_ to be more specific
+  .. code-block:: python
+    :lineno-start: 238
+    :emphasize-lines: 8
+
+            try:
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth=False,
+                )
+            except AttributeError:
+                pass
+
+            try:
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    E           TypeError
+
+  because :ref:`TypeError<what causes TypeError?>` is not :ref:`AttributeError<what causes AttributeError?>` or a :ref:`child<how to test if something is a subclass>` of :ref:`AttributeError<what causes AttributeError?>`.
+
+* I change the :ref:`except clause<how to use try...except...else>` in :ref:`def test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is :ref:`False<test_what_is_false>` to catch :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+    :lineno-start: 238
+    :emphasize-lines: 8
+
+            try:
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth=False,
+                )
+            except TypeError:
+                pass
+
+            try:
+
+  the test passes.
+
+* I change the :ref:`except clause<how to use try...except...else>` in :ref:`def test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is :ref:`None<what is None?>` to catch ValueError_
+
+  .. code-block:: python
+    :lineno-start: 248
+    :emphasize-lines: 8
+
+        def test_when_person_is_too_old_to_be_alive(self):
+            try:
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth=None,
+                )
+            except ValueError:
+                pass
+
+            try:
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    E           TypeError
+
+  because :ref:`TypeError<what causes TypeError?>` is not ValueError_ or a :ref:`child<how to test if something is a subclass>` of ValueError_.
+
+* I change the :ref:`except clause<how to use try...except...else>` in :ref:`def test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is :ref:`None<what is None?>` to catch :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+    :lineno-start: 238
+    :emphasize-lines: 9
+
+        def def test_when_year_of_birth_is_not_an_integer(self):
+            try:
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth=None,
+                )
+            except TypeError:
+                pass
+
+            try:
+
+  the test passes.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+
+    git commit -am \
+    'raise TypeError when year_of_birth is not an integer'
+
+* I change the :ref:`except clause<how to use try...except...else>` in :ref:`test_when_person_is_too_old_to_be_alive` for when the ``year_of_birth`` is a :ref:`False<test_what_is_false>` to be more specific
 
   .. code-block:: python
     :lineno-start: 258

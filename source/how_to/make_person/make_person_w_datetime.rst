@@ -1559,11 +1559,11 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a new test
+* I add a new test for when ``year_of_birth`` is not an integer_
 
   .. code-block:: python
     :lineno-start: 186
-    :emphasize-lines: 5-11
+    :emphasize-lines: 5-10
 
             reality = mary.say_hello()
             assert reality == my_expectation
@@ -1575,7 +1575,6 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
                 last_name='last_name',
                 sex='M',
             )
-            person.say_hello()
 
         def test_dir_person_class(self):
 
@@ -1648,9 +1647,7 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
 
   .. code-block:: python
 
-    FAILED ...::
-        TestPerson::test_when_year_of_birth_is_not_an_integer
-        - AssertionError
+    FAILED ...test_when_year_of_birth_is_not_an_integer - AssertionError
 
 * I add a comment, then change ``year_of_birth`` from the :ref:`default value<test_optional_arguments>` to a :ref:`boolean<what are booleans?>` in :ref:`test_when_year_of_birth_is_not_an_integer`, in ``test_person.py``
 
@@ -1666,13 +1663,31 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
                 # year_of_birth=None,    # fails
                 year_of_birth=False,
             )
-            person.say_hello()
 
         def test_dir_person_class(self):
 
   the terminal shows :ref:`AssertionError<what causes AssertionError?>` for the age being greater than ``120``. Wait a minute! I was expecting that to fail at ``assert isinstance(year_of_birth, int)``. This means :ref:`a boolean is also an integer<is False an integer or a float?>`.
 
-* I add a comment then change ``year_of_birth`` to a float_
+* I change ``year_of_birth`` to a float_
+
+  .. code-block:: python
+    :lineno-start: 190
+    :emphasize-lines: 6-7
+
+        def test_when_year_of_birth_is_not_an_integer(self):
+            person = src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                # year_of_birth=None,    # fails
+                year_of_birth=2026.0,
+            )
+
+        def test_dir_person_class(self):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+* I add a comment then change ``year_of_birth`` to a string_
 
   .. code-block:: python
     :lineno-start: 190
@@ -1684,16 +1699,15 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
                 last_name='last_name',
                 sex='M',
                 # year_of_birth=None,    # fails
-                # year_of_birth=False,   # fails
-                year_of_birth=2026.0,
+                # year_of_birth=2026.0,  # fails
+                year_of_birth='2026',
             )
-            person.say_hello()
 
         def test_dir_person_class(self):
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-* I add a comment then change ``year_of_birth`` to a string_
+* I add a comment then change ``year_of_birth`` to a tuple_
 
   .. code-block:: python
     :lineno-start: 190
@@ -1705,42 +1719,18 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
                 last_name='last_name',
                 sex='M',
                 # year_of_birth=None,    # fails
-                # year_of_birth=False,   # fails
-                # year_of_birth=2026.0,  # fails
-                year_of_birth='2026',
-            )
-            person.say_hello()
-
-        def test_dir_person_class(self):
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-* I add a comment then change ``year_of_birth`` to a tuple_
-
-  .. code-block:: python
-    :lineno-start: 190
-    :emphasize-lines: 9-10
-
-        def test_when_year_of_birth_is_not_an_integer(self):
-            person = src.person.Person(
-                first_name='first_name',
-                last_name='last_name',
-                sex='M',
-                # year_of_birth=None,    # fails
-                # year_of_birth=False,   # fails
                 # year_of_birth=2026.0,  # fails
                 # year_of_birth='2026',  # fails
                 year_of_birth=(2026,),
             )
-            person.say_hello()
 
         def test_dir_person_class(self):
 
-* I add a comment, then comment out the :ref:`call<how to call a function>` to :ref:`person.say_hello<test say_hello method>`
+* I add a comment
 
   .. code-block:: python
     :lineno-start: 190
-    :emphasize-lines: 10, 12-14
+    :emphasize-lines: 9
 
         def test_when_year_of_birth_is_not_an_integer(self):
             person = src.person.Person(
@@ -1748,14 +1738,10 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
                 last_name='last_name',
                 sex='M',
                 # year_of_birth=None,    # fails
-                # year_of_birth=False,   # fails
                 # year_of_birth=2026.0,  # fails
                 # year_of_birth='2026',  # fails
                 # year_of_birth=(2026,), # fails
             )
-            # person.say_hello()
-            # fails if year_of_birth
-            # is not an integer
 
         def test_dir_person_class(self):
 
