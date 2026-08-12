@@ -107,26 +107,17 @@ class TestPerson(unittest.TestCase):
         first_name = 'john'
         last_name = 'smith'
         sex = 'M'
+        year_of_birth = 1980
+        # year_of_birth = 1580
         # raises AssertionError
         # because older than 120
 
-        year_of_birth = 1580
-        try:
-            reality = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-        except ValueError:
-            year_of_birth = 1980
-            reality = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-
+        reality = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
         my_expectation = (
             f'{first_name}, {last_name},'
             f' {sex}, {year_of_birth}'
@@ -222,21 +213,56 @@ class TestPerson(unittest.TestCase):
             person.can_get_license(), False
         )
 
-    def test_when_year_of_birth_is_not_an_integer(self):
+    def test_when_person_is_too_old_to_be_alive(self):
         try:
             person = src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
-                sex='M',
-                # year_of_birth=None,    # fails
-                # year_of_birth=False,   # fails
-                # year_of_birth=2026.0,  # fails
-                # year_of_birth='2026',  # fails
-                # year_of_birth=(2026,), # fails
+                sex='F',
+                year_of_birth=datetime.date.today().year-121,
             )
-        except Exception:
-            # person.say_hello()
-            # fails if year_of_birth is not an integer
+        except ValueError:
+            pass
+
+    def test_when_year_of_birth_is_not_an_integer(self):
+        try:
+            src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                year_of_birth=None,
+            )
+        except TypeError:
+            pass
+
+        try:
+            src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                year_of_birth=2026.0,
+            )
+        except TypeError:
+            pass
+
+        try:
+            src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                year_of_birth='2026',
+            )
+        except TypeError:
+            pass
+
+        try:
+            src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                year_of_birth=(2026,),
+            )
+        except TypeError:
             pass
 
     def test_dir_person_class(self):

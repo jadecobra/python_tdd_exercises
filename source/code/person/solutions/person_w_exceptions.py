@@ -15,12 +15,7 @@ class Person:
         self.sex = sex
         self.is_citizen = is_citizen
         self.passed_test = passed_test
-
-        try:
-            self.age = calculate_age(year_of_birth)
-        except TypeError:
-            self.year_of_birth = datetime.today().year
-            self.age = calculate_age(self.year_of_birth)
+        self.age = calculate_age(year_of_birth)
 
     def can_get_license(self):
         return self.check_age(
@@ -48,15 +43,15 @@ class Person:
 
 def calculate_age(year_of_birth):
     if not isinstance(year_of_birth, int):
-        raise TypeError('year_of_birth must be an integer')
+        raise TypeError
 
     age = (
         datetime.date.today().year
       - year_of_birth
     )
 
-    if age >= 120:
-        raise ValueError('this person is too old to be alive')
+    if age > 120:
+        raise ValueError
     return age
 
 
