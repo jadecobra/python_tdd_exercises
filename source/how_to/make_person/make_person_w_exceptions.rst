@@ -232,7 +232,7 @@ add exception handler to test_when_year_of_birth_is_not_an_integer
 
 ----
 
-I remove the :ref:`unittest.skip decorator<how to skip a test>` from :ref:`test_when_year_of_birth_is_not_an_integer` and remove the comment from ``year_of_birth=None`` to test when ``year_of_birth`` is :ref:`None`, in ``tests/test_person.py``
+I remove the :ref:`unittest.skip decorator<how to skip a test>` from :ref:`test_when_year_of_birth_is_not_an_integer` and remove the comment from ``year_of_birth=None`` to test when ``year_of_birth`` is :ref:`None<what is None?>`, in ``tests/test_person.py``
 
 .. code-block:: python
   :lineno-start: 224
@@ -268,7 +268,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I change ``assert isinstance(year_of_birth, int)`` to an :ref:`if statement<if statements>` that :ref:`raises an Exception<how to raise an Exception>` when ``year_of_birth`` is not an :ref:`integer` in the :ref:`calculate_age function<extract calculate_age function>` in ``src/person/__init__.py``
+* I change ``assert isinstance(year_of_birth, int)`` to an :ref:`if statement<if statements>` that :ref:`raises an Exception<how to raise an Exception>` when ``year_of_birth`` is not an integer_ in the :ref:`calculate_age function<extract calculate_age function>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 44

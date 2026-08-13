@@ -818,7 +818,7 @@ how to make the tests a Python package
 
   This is the :red:`RED` part of the :ref:`Test Driven Development Cycle<what is the Test Driven Development cycle?>`. The message in the terminal_ is about the failure, I like to read these from the bottom up. Here is an explanation of each line, starting from the last line on the screen
 
-  - ``FAILED (errors=1)``: the number of failures or :ref:`errors`
+  - ``FAILED (errors=1)``: the number of failures or :ref:`errors<how to test that an Exception is raised>`
   - ``Ran 1 test in A.XYZs``: the number of tests it ran and how long they took
   - ``AssertionError``: the :ref:`Error (Exception)<how to test that an Exception is raised>` that happened. Since I used an :ref:`assert statement<what is an assertion?>` I get :ref:`AssertionError<what causes AssertionError?>` because the statement after ``assert`` is :ref:`False<test_what_is_false>` - :ref:`False<test_what_is_false>` is NOT :ref:`True<test_what_is_true>`
   - ``assert False is True``: the line of code that caused :ref:`AssertionError<what causes AssertionError?>`
