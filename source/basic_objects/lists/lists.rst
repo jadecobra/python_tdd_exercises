@@ -271,7 +271,7 @@ the test passes. I can make an empty list_ with ``list()`` or ``[]``
 
     TypeError: 'int' object is not iterable
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 11
@@ -1268,7 +1268,7 @@ the test passes.
 
   the `index method`_ raises ValueError_ when the item is not in the list_
 
-* I add ValueError_ to the list of :ref:`Exceptions<errors>` seen
+* I add ValueError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 104
@@ -1295,7 +1295,7 @@ the test passes.
 
     ValueError: 'not in list' is not in list
 
-* I add assertRaises_ to handle the :ref:`Exception<errors>`
+* I add assertRaises_ to handle the :ref:`Exception<how to test that an Exception is raised>`
 
   .. code-block:: python
     :lineno-start: 91
@@ -2940,7 +2940,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 test_index_error
 *********************************************************************************
 
-IndexError_ is raised when I try to get an item from a list_ and use a number that points to something that is NOT in the list_. When I see this :ref:`Exception<errors>` I know the underlying data structure is a list_
+IndexError_ is raised when I try to get an item from a list_ and use a number that points to something that is NOT in the list_. When I see this :ref:`Exception<how to test that an Exception is raised>` I know the underlying data structure is a list_
 
 ----
 
@@ -3003,7 +3003,7 @@ the test passes.
 
 ----
 
-* I add IndexError_ to the list of :ref:`Exceptions<errors>` seen
+* I add IndexError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 171

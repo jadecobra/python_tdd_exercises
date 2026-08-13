@@ -248,7 +248,7 @@ start the project
 
     and try ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_telephone.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_telephone.py``
 
   .. code-block:: python
     :linenos:
@@ -315,7 +315,7 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
 
   because I have not :ref:`defined the function<how to make a function that takes input>` yet.
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 5
@@ -358,7 +358,7 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
 
   because the :ref:`assertion<what is an assertion?>` called the ``text`` :ref:`function<what is a function?>` which belongs to :ref:`test_passing_none` with input (:ref:`None<what is None?>`) and the :ref:`function definition<how to make a function that takes input>` does not allow any inputs, the parentheses are empty.
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 8
@@ -2356,7 +2356,7 @@ Here are the tests I ran to see what happens when I pass :ref:`objects<everythin
 * `test_passing_a_dictionary`_
 * `test_passing_a_class`_
 
-I also saw these :ref:`Exceptions<errors>`
+I also saw these :ref:`Exceptions<how to test that an Exception is raised>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`

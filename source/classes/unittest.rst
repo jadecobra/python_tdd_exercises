@@ -252,7 +252,7 @@ start the project
 
     and try ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_unittest.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_unittest.py``
 
   .. code-block:: python
     :linenos:
@@ -320,7 +320,7 @@ I want to see what comes with the `unittest module`_.
     NameError: name 'unittest' is not defined.
                 Did you forget to import 'unittest'?
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 7
@@ -721,7 +721,7 @@ test_assert_is_not
           └── def assertIsNot(self, expr1, expr2):
               └── return something
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 89
@@ -3761,7 +3761,7 @@ It also means I will not need the ``TOOLBOX`` :ref:`class attribute<what is a cl
     AttributeError: 'TestUnittest' object
                     has no attribute 'assertEqual'
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 165

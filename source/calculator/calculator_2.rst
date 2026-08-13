@@ -156,7 +156,7 @@ close the project
 review
 *********************************************************************************
 
-I can use assertRaises_ to catch :ref:`Exceptions<errors>` in tests and tested these
+I can use assertRaises_ to catch :ref:`Exceptions<how to test that an Exception is raised>` in tests and tested these
 
 * :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`

@@ -250,7 +250,7 @@ start the project
 
     and try ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_type_error.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_type_error.py``
 
   .. code-block:: python
     :linenos:
@@ -317,7 +317,7 @@ test_type_error_w_positional_arguments
 
   because there is nothing named ``function_00`` in ``test_type_error.py``.
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 5
@@ -366,7 +366,7 @@ test_type_error_w_positional_arguments
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``function_00`` does not allow any inputs when it is called since the parentheses are empty.
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 8

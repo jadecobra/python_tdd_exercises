@@ -138,7 +138,7 @@ I want to add buttons for the numbers and operations.
 
     KeyError: '<-'
 
-* I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 39
@@ -432,7 +432,7 @@ I want to add buttons for the numbers and operations.
     There are multiple elements with the same key='<-'.
     To fix this, please make sure that the key argument is unique for each element you create.
 
-* I add ``streamlit.errors.StreamlitDuplicateElementKey`` to the list of :ref:`Exceptions<errors>` seen, in ``test_streamlit_calculator.py``
+* I add ``streamlit.errors.StreamlitDuplicateElementKey`` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 49
@@ -447,7 +447,7 @@ I want to add buttons for the numbers and operations.
     # KeyError
     # streamlit.errors.StreamlitDuplicateElementKey
 
-* I check the browser and see all the buttons and the :ref:`Exception<errors>`
+* I check the browser and see all the buttons and the :ref:`Exception<how to test that an Exception is raised>`
 
 * I remove the buttons from ``main`` in ``streamlit_calculator.py``
 

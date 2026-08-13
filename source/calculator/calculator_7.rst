@@ -419,7 +419,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 
     KeyError: 'x'
 
-* I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 214
@@ -461,7 +461,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 
     TypeError: numbers_only.<locals>.decorator() got an unexpected keyword argument 'x'
 
-  the same :ref:`Exception<errors>` I had before I added the :ref:`keys<test_keys_of_a_dictionary>` to the :ref:`dictionary<what is a dictionary?>`
+  the same :ref:`Exception<how to test that an Exception is raised>` I had before I added the :ref:`keys<test_keys_of_a_dictionary>` to the :ref:`dictionary<what is a dictionary?>`
 
 * I change ``two_numbers['x']`` to ``two_numbers['first_input']`` to use the new :ref:`keys<test_keys_of_a_dictionary>` in the :ref:`assertions<What is an assertion?>` for :ref:`addition<test_addition>`
 
@@ -481,7 +481,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 
     TypeError: numbers_only.<locals>.decorator() got an unexpected keyword argument 'x'
 
-  the same :ref:`Exception<errors>` I had before I added the :ref:`keys<test_keys_of_a_dictionary>` to the :ref:`dictionary<what is a dictionary?>`
+  the same :ref:`Exception<how to test that an Exception is raised>` I had before I added the :ref:`keys<test_keys_of_a_dictionary>` to the :ref:`dictionary<what is a dictionary?>`
 
 * I comment out the :ref:`assertion<what is an assertion?>` with ``**two_numbers``
 

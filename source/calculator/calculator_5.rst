@@ -930,7 +930,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-I add the `assertRaises method`_ to handle the :ref:`Exception<errors>`
+I add the `assertRaises method`_ to handle the :ref:`Exception<how to test that an Exception is raised>`
 
 .. code-block:: python
   :lineno-start: 163
@@ -1029,7 +1029,7 @@ the test passes.
 
     TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were given
 
-* I handle the :ref:`Exception<errors>`
+* I handle the :ref:`Exception<how to test that an Exception is raised>`
 
   .. code-block:: python
     :lineno-start: 163

@@ -112,7 +112,7 @@ the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero
 
 ----
 
-* I add :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen, in ``test_calculator.py``
+* I add :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 58
@@ -253,8 +253,8 @@ review
 
 I ran tests to show that
 
-* I can cause any :ref:`Exception<errors>` I want with the raise_ keyword
-* I can use the `assertRaises method`_ to catch :ref:`Exceptions<errors>` in tests and tested these
+* I can cause any :ref:`Exception<how to test that an Exception is raised>` I want with the raise_ keyword
+* I can use the `assertRaises method`_ to catch :ref:`Exceptions<how to test that an Exception is raised>` in tests and tested these
 
   - :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
   - :ref:`NameError<test_catching_name_error_in_tests>`
@@ -265,8 +265,8 @@ I ran tests to show that
   - :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
   - :ref:`The Mother of all Exceptions<test_catching_exceptions_in_tests>`
 
-* I can use assertRaisesRegex_ to catch :ref:`Exceptions<errors>` with messages
-* I can use :ref:`try..except...else<how to use try...except...else>` to make programs that can choose what to do when :ref:`Exceptions<errors>` are raised
+* I can use assertRaisesRegex_ to catch :ref:`Exceptions<how to test that an Exception is raised>` with messages
+* I can use :ref:`try..except...else<how to use try...except...else>` to make programs that can choose what to do when :ref:`Exceptions<how to test that an Exception is raised>` are raised
 
 *************************************************************************************
 code from the chapter

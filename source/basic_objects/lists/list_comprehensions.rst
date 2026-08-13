@@ -395,7 +395,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
     NameError: name 'src' is not defined
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 21
@@ -420,7 +420,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'a_for_loop'
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block::
     :lineno-start: 22
@@ -449,7 +449,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
     TypeError: a_for_loop() takes 0 positional arguments
                but 1 was given
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_list_comprehensions.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_list_comprehensions.py``
 
   .. code-block:: python
     :lineno-start: 22

@@ -232,7 +232,7 @@ test_pressed_start
 
   because I do not have a definition for ``src`` in this file_.
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 14
@@ -272,7 +272,7 @@ test_pressed_start
 
   because ``microwave/__init__.py`` in the ``src`` folder_ does not have anything named ``microwave`` in it.
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 15
@@ -304,7 +304,7 @@ test_pressed_start
 
   because the test :ref:`called<how to call a function with input>` the ``microwave`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``pressed_start``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_microwave.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_microwave.py``
 
   .. code-block:: python
     :lineno-start: 15
@@ -553,7 +553,7 @@ test_open_door_not_pressed_start
     SyntaxError: parameter without a default follows
                  parameter with a default
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen, in ``test_microwave.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_microwave.py``
 
   .. code-block:: python
     :lineno-start: 30

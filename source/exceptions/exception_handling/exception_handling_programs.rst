@@ -99,7 +99,7 @@ open the project
 test_catching_exceptions_w_messages
 *********************************************************************************
 
-I can use the `assertRaisesRegex method`_ to test the message that is included with an :ref:`Exception<errors>`, this helps me to tell the difference when I have two :ref:`Exceptions<errors>` that have the same name
+I can use the `assertRaisesRegex method`_ to test the message that is included with an :ref:`Exception<how to test that an Exception is raised>`, this helps me to tell the difference when I have two :ref:`Exceptions<how to test that an Exception is raised>` that have the same name
 
 * I add a failing test to ``test_exceptions.py``
 
@@ -171,7 +171,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 
   the test passes.
 
-* I want the :ref:`function<what is a function?>` to raise :ref:`Exception<errors>` when it is called, I add assertRaises_ to the test in ``test_exceptions.py``
+* I want the :ref:`function<what is a function?>` to raise :ref:`Exception<how to test that an Exception is raised>` when it is called, I add assertRaises_ to the test in ``test_exceptions.py``
 
   .. code-block:: python
     :lineno-start: 42
@@ -198,7 +198,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 
   the test passes.
 
-* I can be more specific when testing for an :ref:`Exception<errors>`, I add assertRaisesRegex_ in ``test_exceptions.py``
+* I can be more specific when testing for an :ref:`Exception<how to test that an Exception is raised>`, I add assertRaisesRegex_ in ``test_exceptions.py``
 
   .. code-block:: python
     :lineno-start: 42
@@ -216,9 +216,9 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 
     AssertionError: "BOOM!!!" does not match ""
 
-  the `assertRaisesRegex method`_ checks that the code in its context raises_ the :ref:`Exception<errors>` it is given, with the message it is given. The default message of the :ref:`Exception<errors>` is the empty string_ (``''``) and the :ref:`assertion<what is an assertion?>` expects ``"BOOM!!!"``
+  the `assertRaisesRegex method`_ checks that the code in its context raises_ the :ref:`Exception<how to test that an Exception is raised>` it is given, with the message it is given. The default message of the :ref:`Exception<how to test that an Exception is raised>` is the empty string_ (``''``) and the :ref:`assertion<what is an assertion?>` expects ``"BOOM!!!"``
 
-* the :ref:`Exception<errors>` is right, the message is not, I add the expected message in ``exceptions.py``
+* the :ref:`Exception<how to test that an Exception is raised>` is right, the message is not, I add the expected message in ``exceptions.py``
 
   .. code-block:: python
     :lineno-start: 5
@@ -227,7 +227,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
     def raise_exception():
         raise Exception('BOOM!!!')
 
-  the test passes. Time to add an :ref:`Exception<errors>` to the program
+  the test passes. Time to add an :ref:`Exception<how to test that an Exception is raised>` to the program
 
 ----
 
@@ -357,7 +357,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 test_catching_success
 *********************************************************************************
 
-I want ``an_exception_handler`` to process its input and return ``failed`` when an :ref:`Exception<errors>` happens or return ``success`` when an :ref:`Exception<errors>` is NOT raised.
+I want ``an_exception_handler`` to process its input and return ``failed`` when an :ref:`Exception<how to test that an Exception is raised>` happens or return ``success`` when an :ref:`Exception<how to test that an Exception is raised>` is NOT raised.
 
 ----
 
@@ -516,15 +516,15 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     AssertionError: None != 'succeeded'
 
-  the result of calling ``src.exceptions.raise_exception`` in ``test_catching_failure`` is an :ref:`Exception<errors>` with a message
+  the result of calling ``src.exceptions.raise_exception`` in ``test_catching_failure`` is an :ref:`Exception<how to test that an Exception is raised>` with a message
 
   .. code-block:: python
 
     Exception: 'BOOM!!!'
 
-  I cam use the :ref:`else clause of the try statement<how to use try...except...else>` to make the :ref:`function<what is a function?>` choose what to do if the :ref:`Exception<errors>` in its :ref:`except block<how to use try...except...else>` is :ref:`raised<how to raise an Exception>` or NOT.
+  I cam use the :ref:`else clause of the try statement<how to use try...except...else>` to make the :ref:`function<what is a function?>` choose what to do if the :ref:`Exception<how to test that an Exception is raised>` in its :ref:`except block<how to use try...except...else>` is :ref:`raised<how to raise an Exception>` or NOT.
 
-* I add a :ref:`try statement<how to use try...except...>` to ``an_exception_handler`` in ``exceptions.py``
+* I add a :ref:`try statement<how to handle Exceptions>` to ``an_exception_handler`` in ``exceptions.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -542,9 +542,9 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     AssertionError: None != 'succeeded'
 
-  the :ref:`try statement<how to use try...except...>` is used to handle :ref:`Exceptions<errors>` in programs
+  the :ref:`try statement<how to handle Exceptions>` is used to handle :ref:`Exceptions<how to test that an Exception is raised>` in programs
 
-* I add an `else clause`_ for when ``a_function()`` runs without raising an :ref:`Exception<errors>`
+* I add an `else clause`_ for when ``a_function()`` runs without raising an :ref:`Exception<how to test that an Exception is raised>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -564,7 +564,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     AssertionError: None != 'succeeded'
 
-  this is still the same :ref:`Exception<errors>` and message
+  this is still the same :ref:`Exception<how to test that an Exception is raised>` and message
 
 * I change the :ref:`return statement<the return statement>` in the `else clause`_
 
@@ -582,7 +582,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test passes.
 
-  The :ref:`try statement<how to use try...except...>` is used to catch or handle :ref:`Exceptions<errors>` in Python_. It allows the program_ to choose what to do when it runs into an :ref:`Exception<errors>`. I think of it as
+  The :ref:`try statement<how to handle Exceptions>` is used to catch or handle :ref:`Exceptions<how to test that an Exception is raised>` in Python_. It allows the program_ to choose what to do when it runs into an :ref:`Exception<how to test that an Exception is raised>`. I think of it as
 
   - ``try`` **this**
   - ``except Exception`` - if **this** raises ``Exception``, run the code in this block
@@ -594,7 +594,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   - ``except Exception`` - if **calling** ``a_function()`` raises ``Exception`` return ``'failed'``
   - ``else`` - if **calling** ``a_function()`` does NOT raise ``Exception`` return ``'succeeded'``
 
-  the :ref:`try statement<how to use try...except...>` is how I think of `Test Driven Development`_ or the scientific method
+  the :ref:`try statement<how to handle Exceptions>` is how I think of `Test Driven Development`_ or the scientific method
 
   -  Try something
   -  if it fails, try something else
@@ -602,7 +602,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   or in the words of a famous singer ...
 
-* I can be more specific with the :ref:`Exception<errors>` in the ``except`` block, for example
+* I can be more specific with the :ref:`Exception<how to test that an Exception is raised>` in the ``except`` block, for example
 
   .. code-block:: python
     :lineno-start: 13
@@ -616,13 +616,13 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
         else:
             return 'succeeded'
 
-  the terminal_ is my friend, and shows :ref:`Exception<errors>` for ``test_catching_failures``
+  the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>` for ``test_catching_failures``
 
   .. code-block:: shell
 
     Exception: BOOM!!!!
 
-  because :ref:`Exception<errors>` is not :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`. The :ref:`try statement<how to use try...except...>` only catches the :ref:`Exception<errors>` given in the ``except`` block and its children, all others are raised
+  because :ref:`Exception<how to test that an Exception is raised>` is not :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`. The :ref:`try statement<how to handle Exceptions>` only catches the :ref:`Exception<how to test that an Exception is raised>` given in the ``except`` block and its children, all others are raised
 
 * I change it back to what works
 
@@ -673,8 +673,8 @@ review
 
 I ran tests to show that
 
-* I can cause any :ref:`Exception<errors>` I want with the raise_ keyword
-* I can use the `assertRaises method`_ to catch :ref:`Exceptions<errors>` in tests and tested these
+* I can cause any :ref:`Exception<how to test that an Exception is raised>` I want with the raise_ keyword
+* I can use the `assertRaises method`_ to catch :ref:`Exceptions<how to test that an Exception is raised>` in tests and tested these
 
   - :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
   - :ref:`NameError<test_catching_name_error_in_tests>`
@@ -685,8 +685,8 @@ I ran tests to show that
   - :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
   - :ref:`The Mother of all Exceptions<test_catching_exceptions_in_tests>`
 
-* I can use assertRaisesRegex_ to catch :ref:`Exceptions<errors>` with messages
-* I can use :ref:`try..except...else<how to use try...except...else>` to make programs that can choose what to do when :ref:`Exceptions<errors>` are raised
+* I can use assertRaisesRegex_ to catch :ref:`Exceptions<how to test that an Exception is raised>` with messages
+* I can use :ref:`try..except...else<how to use try...except...else>` to make programs that can choose what to do when :ref:`Exceptions<how to test that an Exception is raised>` are raised
 
 ----
 

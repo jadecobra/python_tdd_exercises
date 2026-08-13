@@ -134,7 +134,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   because there is nothing named ``src`` in this project.
 
-* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 133
@@ -194,7 +194,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   because there is nothing in ``type_error.py`` in the ``src`` folder_ with the name ``function_00``.
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 133

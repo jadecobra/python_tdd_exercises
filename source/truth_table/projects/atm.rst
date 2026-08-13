@@ -246,7 +246,7 @@ because I do not have a definition for ``src`` in this file_.
 
 ----
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 15
@@ -278,7 +278,7 @@ because I do not have a definition for ``src`` in this file_.
 
   because ``atm/__init__.py`` in the ``src`` folder_ does not have anything named ``withdraw`` in it.
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 16
@@ -310,7 +310,7 @@ because I do not have a definition for ``src`` in this file_.
 
   because the test :ref:`called<how to call a function with input>` the ``withdraw`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``right_pin``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_atm.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_atm.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -2620,7 +2620,7 @@ PIN                 cash                  daily limit             card expired  
 
   because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen, in ``test_atm.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_atm.py``
 
   .. code-block:: python
     :lineno-start: 88

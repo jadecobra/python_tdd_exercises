@@ -14,12 +14,12 @@ how to make a person with Exceptions
 
 I had a problem when I :ref:`made a person with conditions<how to make a person with conditions>`
 
-* I skipped :ref:`test_when_year_of_birth_is_not_an_integer` because it is always in a :red:`RED` state since it causes an :ref:`Exception<errors>`.
-* I commented out the bad ``year_of_birth`` values in :ref:`test_john` for when a person is older than ``120`` because it causes an :ref:`Exception<errors>`.
+* I skipped :ref:`test_when_year_of_birth_is_not_an_integer` because it is always in a :red:`RED` state since it causes an :ref:`Exception<how to test that an Exception is raised>`.
+* I commented out the bad ``year_of_birth`` values in :ref:`test_john` for when a person is older than ``120`` because it causes an :ref:`Exception<how to test that an Exception is raised>`.
 
-Python_ has a way that allows programs to make a choice when they encounter an :ref:`Exception<errors>` and continue running without stopping. It is the :ref:`try statement<how to use try...except...>`.
+Python_ has a way that allows programs to make a choice when they encounter an :ref:`Exception<how to test that an Exception is raised>` and continue running without stopping. It is the :ref:`try statement<how to handle Exceptions>`.
 
-I want to use the :ref:`try statement<how to use try...except...>` to handle making sure the program raises an :ref:`Exception<errors>`
+I want to use the :ref:`try statement<how to handle Exceptions>` to handle making sure the program raises an :ref:`Exception<how to test that an Exception is raised>`
 
 * if the age is older than ``120``
 * if the ``year_of_birth`` is not an integer_
@@ -178,13 +178,13 @@ test_when_person_is_too_old_to_be_alive
         first_name, last_name, year_of_birth,
     ):
 
-  the terminal_ is my friend, and shows :ref:`Exception<errors>`
+  the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
 
   .. code-block:: shell
 
     E           Exception
 
-* I add a :ref:`try statement<how to use try...except...>` to :ref:`test_when_person_is_too_old_to_be_alive` in ``tests/test_person.py``
+* I add a :ref:`try statement<how to handle Exceptions>` to :ref:`test_when_person_is_too_old_to_be_alive` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 216
@@ -204,14 +204,14 @@ test_when_person_is_too_old_to_be_alive
         @unittest.skip('will always fail')
         def test_when_year_of_birth_is_not_an_integer(self):
 
-  the test passes, confirming that when the value for ``year_of_birth`` makes the person older than ``120`` an :ref:`Exception<errors>` is  is :ref:`raised<how to raise an Exception>`.
+  the test passes, confirming that when the value for ``year_of_birth`` makes the person older than ``120`` an :ref:`Exception<how to test that an Exception is raised>` is  is :ref:`raised<how to raise an Exception>`.
 
-  - The :ref:`try statement<how to use try...except...>` is like an :ref:`if statement<if statements>` for :ref:`Exceptions<errors>`. It tells the program_ what to do if an :ref:`Exception<errors>` is  is :ref:`raised<how to raise an Exception>`. A simple way to think of it is
+  - The :ref:`try statement<how to handle Exceptions>` is like an :ref:`if statement<if statements>` for :ref:`Exceptions<how to test that an Exception is raised>`. It tells the program_ what to do if an :ref:`Exception<how to test that an Exception is raised>` is  is :ref:`raised<how to raise an Exception>`. A simple way to think of it is
 
     - ``try`` **something**
-    - ``except`` - if **something** raises an :ref:`Exception<errors>` do something else
+    - ``except`` - if **something** raises an :ref:`Exception<how to test that an Exception is raised>` do something else
 
-  - pass_ is a special keyword that allows the :ref:`try statement<how to use try...except...>` to follow Python_ language rules (the :ref:`except block<how to use try...except...>` must have a body).
+  - pass_ is a special keyword that allows the :ref:`try statement<how to handle Exceptions>` to follow Python_ language rules (the :ref:`except block<how to handle Exceptions>` must have a body).
 
 * I add a git_ commit message
 
@@ -293,13 +293,13 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         first_name, last_name, year_of_birth,
     ):
 
-  the terminal_ is my friend, and shows :ref:`Exception<errors>`
+  the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
 
   .. code-block:: python
 
     E           Exception
 
-* I add a :ref:`try statement<how to use try...except...>` for when ``year_of_birth`` is :ref:`None<what is None?>` to :ref:`test_when_year_of_birth_is_not_an_integer` in ``tests/test_person.py``
+* I add a :ref:`try statement<how to handle Exceptions>` for when ``year_of_birth`` is :ref:`None<what is None?>` to :ref:`test_when_year_of_birth_is_not_an_integer` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 227
@@ -321,7 +321,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         def test_dir_person_class(self):
 
-  the test passes, showing that :ref:`Exception<errors>` is :ref:`raised<how to raise an Exception>` when ``year_of_birth`` is not an integer_.
+  the test passes, showing that :ref:`Exception<how to test that an Exception is raised>` is :ref:`raised<how to raise an Exception>` when ``year_of_birth`` is not an integer_.
 
 ----
 
@@ -354,9 +354,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         def test_dir_person_class(self):
 
-  the terminal_ is my friend, and shows :ref:`Exception<errors>`
+  the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
 
-* I add a :ref:`try statement<how to use try...except...>` for when the ``year_of_birth`` is a float_
+* I add a :ref:`try statement<how to handle Exceptions>` for when the ``year_of_birth`` is a float_
 
   .. code-block:: python
     :lineno-start: 235
@@ -377,7 +377,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
             # year_of_birth='2026',  # fails
 
-  the test passes, showing that :ref:`Exception<errors>` is :ref:`raised<how to raise an Exception>` when ``year_of_birth`` is not an integer_.
+  the test passes, showing that :ref:`Exception<how to test that an Exception is raised>` is :ref:`raised<how to raise an Exception>` when ``year_of_birth`` is not an integer_.
 
 * I make a person with a string_ as the value for ``year_of_birth``
 
@@ -401,9 +401,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         def test_dir_person_class(self):
 
-  the terminal_ is my friend, and shows :ref:`Exception<errors>`
+  the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
 
-* I add a :ref:`try statement<how to use try...except...>` for when the ``year_of_birth`` is a string_
+* I add a :ref:`try statement<how to handle Exceptions>` for when the ``year_of_birth`` is a string_
 
   .. code-block:: python
     :lineno-start: 245
@@ -424,7 +424,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
             # year_of_birth=(2026,), # fails
 
-  the test passes, showing that :ref:`Exception<errors>` is :ref:`raised<how to raise an Exception>` when ``year_of_birth`` is not an integer_.
+  the test passes, showing that :ref:`Exception<how to test that an Exception is raised>` is :ref:`raised<how to raise an Exception>` when ``year_of_birth`` is not an integer_.
 
 * I make a person with a tuple_ as the value for ``year_of_birth``
 
@@ -444,9 +444,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         def test_dir_person_class(self):
 
-  the terminal_ is my friend, and shows :ref:`Exception<errors>`
+  the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
 
-* I add a :ref:`try statement<how to use try...except...>` for when the ``year_of_birth`` is a tuple_, and remove the other comments since I no longer need them
+* I add a :ref:`try statement<how to handle Exceptions>` for when the ``year_of_birth`` is a tuple_, and remove the other comments since I no longer need them
 
   .. code-block:: python
     :lineno-start: 255
@@ -467,7 +467,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         def test_dir_person_class(self):
 
-  the test passes, showing that :ref:`Exception<errors>` is :ref:`raised<how to raise an Exception>` when ``year_of_birth`` is not an integer_.
+  the test passes, showing that :ref:`Exception<how to test that an Exception is raised>` is :ref:`raised<how to raise an Exception>` when ``year_of_birth`` is not an integer_.
 
 * I remove the commented lines from the :ref:`calculate_age function<extract calculate_age function>`  in ``src/person/__init__.py``
 
@@ -506,7 +506,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 raise TypeError when year_of_birth is not an integer
 *********************************************************************************
 
-The problem with using :ref:`except:<how to use try...except...>` is that it catches all :ref:`Exceptions<errors>` which means it does not tell anyone that reads the code what the actual :ref:`Exception<errors>` is.
+The problem with using :ref:`except:<how to handle Exceptions>` is that it catches all :ref:`Exceptions<how to test that an Exception is raised>` which means it does not tell anyone that reads the code what the actual :ref:`Exception<how to test that an Exception is raised>` is.
 
 .. code-block:: python
 
@@ -524,7 +524,7 @@ is the same as
   except Exception:
       something else
 
-because :ref:`Exception<errors>` is the mother of all the :ref:`Exceptions<errors>` covered so far, they :ref:`inherit<everything is an object>` from it.
+because :ref:`Exception<how to test that an Exception is raised>` is the mother of all the :ref:`Exceptions<how to test that an Exception is raised>` covered so far, they :ref:`inherit<everything is an object>` from it.
 
 From the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``. I want to make things clearer.
 
@@ -534,7 +534,7 @@ From the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``. I want
 
 ----
 
-I change the :ref:`except clause<how to use try...except...>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a tuple_ to be more specific
+I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a tuple_ to be more specific
 
 .. code-block:: python
   :lineno-start: 258
@@ -552,13 +552,13 @@ I change the :ref:`except clause<how to use try...except...>` in :ref:`test_when
 
       def test_dir_person_class(self):
 
-the terminal_ is my friend, and shows :ref:`Exception<errors>`
+the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
 
 .. code-block:: python
 
   E           Exception
 
-because :ref:`Exception<errors>` is not :ref:`TypeError<what causes TypeError?>` even though :ref:`TypeError<what causes TypeError?>` is an :ref:`Exception<errors>`. I cannot use a :ref:`child Exception<how to test if something is a subclass>` to catch its parent :ref:`Exception<errors>`.
+because :ref:`Exception<how to test that an Exception is raised>` is not :ref:`TypeError<what causes TypeError?>` even though :ref:`TypeError<what causes TypeError?>` is an :ref:`Exception<how to test that an Exception is raised>`. I cannot use a :ref:`child Exception<how to test if something is a subclass>` to catch its parent :ref:`Exception<how to test that an Exception is raised>`.
 
 ----
 
@@ -584,7 +584,7 @@ I change the :ref:`raise statement<how to raise an Exception>` in the :ref:`calc
         - year_of_birth
       )
 
-the test passes because the :ref:`try statement<how to use try...except...>` now only :ref:`catches/handles<how to handle Exceptions (Errors) in programs>` :ref:`TypeError<what causes TypeError?>`.
+the test passes because the :ref:`try statement<how to handle Exceptions>` now only :ref:`catches/handles<how to handle Exceptions (Errors) in programs>` :ref:`TypeError<what causes TypeError?>`.
 
 .. code-block:: python
 
@@ -601,7 +601,7 @@ the test passes because the :ref:`try statement<how to use try...except...>` now
 
 ----
 
-* I change the :ref:`except clause<how to use try...except...>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a string_ to catch :ref:`AssertionError<what causes AssertionError?>` in ``tests/test_person.py``
+* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a string_ to catch :ref:`AssertionError<what causes AssertionError?>` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 248
@@ -627,7 +627,7 @@ the test passes because the :ref:`try statement<how to use try...except...>` now
 
   because :ref:`TypeError<what causes TypeError?>` is not :ref:`AssertionError<what causes AssertionError?>` or a :ref:`child<how to test if something is a subclass>` of :ref:`AssertionError<what causes AssertionError?>`.
 
-* I change the :ref:`except clause<how to use try...except...>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a string_ to catch :ref:`TypeError<what causes TypeError?>`
+* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a string_ to catch :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
     :lineno-start: 248
@@ -647,7 +647,7 @@ the test passes because the :ref:`try statement<how to use try...except...>` now
 
   the test passes.
 
-* I change the :ref:`except clause<how to use try...except...>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a float_ to catch :ref:`NameError<test_catching_name_error_in_tests>`
+* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a float_ to catch :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
     :lineno-start: 238
@@ -673,7 +673,7 @@ the test passes because the :ref:`try statement<how to use try...except...>` now
 
   because :ref:`TypeError<what causes TypeError?>` is not :ref:`NameError<test_catching_name_error_in_tests>` or a :ref:`child<how to test if something is a subclass>` of :ref:`NameError<test_catching_name_error_in_tests>`.
 
-* I change the :ref:`except clause<how to use try...except...>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a float_ to catch :ref:`TypeError<what causes TypeError?>`
+* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a float_ to catch :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
     :lineno-start: 238
@@ -693,7 +693,7 @@ the test passes because the :ref:`try statement<how to use try...except...>` now
 
   the test passes.
 
-* I change the :ref:`except clause<how to use try...except...>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is :ref:`None<what is None?>` to catch ValueError_
+* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is :ref:`None<what is None?>` to catch ValueError_
 
   .. code-block:: python
     :lineno-start: 227
@@ -720,7 +720,7 @@ the test passes because the :ref:`try statement<how to use try...except...>` now
 
   because :ref:`TypeError<what causes TypeError?>` is not ValueError_ or a :ref:`child<how to test if something is a subclass>` of ValueError_.
 
-* I change the :ref:`except clause<how to use try...except...>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is :ref:`None<what is None?>` to catch :ref:`TypeError<what causes TypeError?>`
+* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is :ref:`None<what is None?>` to catch :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
     :lineno-start: 227
@@ -760,7 +760,7 @@ raise ValueError when age is greater than 120
 
 ----
 
-I change the :ref:`except clause<how to use try...except...>` in :ref:`test_when_person_is_too_old_to_be_alive` to catch ValueError_
+I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_person_is_too_old_to_be_alive` to catch ValueError_
 
 .. code-block:: python
   :lineno-start: 216
@@ -779,13 +779,13 @@ I change the :ref:`except clause<how to use try...except...>` in :ref:`test_when
 
       def test_when_year_of_birth_is_not_an_integer(self):
 
-the terminal_ is my friend, and shows :ref:`Exception<errors>`
+the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
 
 .. code-block:: python
 
   E           Exception
 
-because :ref:`Exception<errors>` is not ValueError_ even though ValueError_ is an :ref:`Exception<errors>`. I cannot use a :ref:`child Exception<how to test if something is a subclass>` to catch its parent :ref:`Exception<errors>`.
+because :ref:`Exception<how to test that an Exception is raised>` is not ValueError_ even though ValueError_ is an :ref:`Exception<how to test that an Exception is raised>`. I cannot use a :ref:`child Exception<how to test if something is a subclass>` to catch its parent :ref:`Exception<how to test that an Exception is raised>`.
 
 ----
 
@@ -876,9 +876,9 @@ close the project
 review
 *************************************************************************************
 
-* I can use the :ref:`try statement<how to use try...except...>` to make sure a program can make a decision when it runs into an :ref:`Exception<errors>`.
-* I can use the :ref:`try statement<how to use try...except...>` in a test to confirm that a program :ref:`raises an Exception<how to raise an Exception>` when certain conditions are met.
-* I can use the :ref:`raise statement<how to raise an Exception>` to make an :ref:`Exception<errors>` happen to stop a program from running past a certain point.
+* I can use the :ref:`try statement<how to handle Exceptions>` to make sure a program can make a decision when it runs into an :ref:`Exception<how to test that an Exception is raised>`.
+* I can use the :ref:`try statement<how to handle Exceptions>` in a test to confirm that a program :ref:`raises an Exception<how to raise an Exception>` when certain conditions are met.
+* I can use the :ref:`raise statement<how to raise an Exception>` to make an :ref:`Exception<how to test that an Exception is raised>` happen to stop a program from running past a certain point.
 
 My tests still have problems:
 
