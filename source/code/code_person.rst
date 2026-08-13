@@ -167,7 +167,7 @@ how to make a person with Exceptions: tests
 
 The code in ``person/tests/test_person.py`` from :ref:`how to make a person with Exceptions`
 
-.. literalinclude:: person/tests/test_person_w_conditions.py
+.. literalinclude:: person/tests/test_person_w_exceptions.py
   :language: python
   :linenos:
 
@@ -181,6 +181,6 @@ how to make a person with Exceptions: solutions
 
 The code in ``person/src/person.py`` from :ref:`how to make a person with Exceptions`
 
-.. literalinclude:: person/solutions/person_w_conditions.py
+.. literalinclude:: person/solutions/person_w_exceptions.py
   :language: python
   :linenos:

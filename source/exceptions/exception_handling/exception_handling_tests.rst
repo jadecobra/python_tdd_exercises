@@ -1,11 +1,14 @@
 .. meta::
-  :description: How to test that a Python Exception is raised with unittest assertRaises (with self.assertRaises(...)). TDD RED/GREEN drills for ModuleNotFoundError (import does_not_exist), NameError, AttributeError (src.exceptions.does_not_exist), TypeError (wrong call / None not callable), IndexError on strings and tuples (positive and negative indexes), KeyError, ZeroDivisionError (1/0), and raise Exception. One exception per handler — assertRaises exits after the first matching raise. Pumping Python TDD by Jacob Itegboje.
+  :description: How to test that a Python Exception is :ref:`raised<how to raise an Exception>` with unittest assertRaises (with self.assertRaises(...)). TDD RED/GREEN drills for ModuleNotFoundError (import does_not_exist), NameError, AttributeError (src.exceptions.does_not_exist), TypeError (wrong call / None not callable), IndexError on strings and tuples (positive and negative indexes), KeyError, ZeroDivisionError (1/0), and raise Exception. One exception per handler — assertRaises exits after the first matching raise. Pumping Python TDD by Jacob Itegboje.
   :keywords: Jacob Itegboje, Pumping Python TDD, how to test that an Exception is raised, unittest assertRaises, self.assertRaises context manager, ModuleNotFoundError No module named, NameError is not defined, AttributeError has no attribute, TypeError NoneType not callable, IndexError string index out of range, IndexError tuple index out of range, KeyError not_in_dictionary, ZeroDivisionError division by zero, raise Exception, one exception one exception handler, exceptions/tests/test_exceptions.py, python tdd exception handling
 
 .. include:: ../../links.rst
 
 .. _NameError: https://docs.python.org/3/library/exceptions.html#NameError
 .. _ZeroDivisionError: https://docs.python.org/3/library/exceptions.html#ZeroDivisionError
+.. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
+.. _exec: https://docs.python.org/3/library/functions.html#exec
+.. _exec built-in function: exec
 
 #################################################################################
 how to test that an Exception is raised
@@ -17,9 +20,7 @@ When an :ref:`Exception<errors>` is raised, it stops the program from running. I
 
 What if I want to test that a program_ raises an :ref:`Exception<errors>`? If the :ref:`Exception<errors>` is raised, the test will not continue past the line that caused it.
 
-I can use the `assertRaises method`_ from the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` to test that some code raises an :ref:`Exception<errors>` and continue past the line that caused it.
-
-assertRaises_ checks that the code in its context, raises the :ref:`Exception<errors>` it is given in parentheses.
+I can use the :ref:`try statement<how to use try...except...else>` to test that some code raises an :ref:`Exception<errors>` and continue past the line that caused it.
 
 *********************************************************************************
 preview
@@ -78,7 +79,7 @@ start the project
 *********************************************************************************
 
 * I open a terminal_
-* I give ``exceptions`` as the ``PROJECT_NAME`` :ref:`variable<what is a variable?>`
+* I give ``exceptions`` as the first argument to the ``makePythonTdd`` program
 
   .. tab-set::
     :sync-group: os
@@ -124,10 +125,17 @@ start the project
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>`
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
+    :lineno-start: 4
+    :emphasize-lines: 4-5
 
+    class Testexceptions(unittest.TestCase):
+
+        def test_failure(self):
+            # self.assertFalse(True)
             self.assertTrue(True)
+
+
+    # Exceptions seen
 
   the test passes.
 
@@ -158,7 +166,7 @@ start the project
 test_catching_module_not_found_error_in_tests
 *********************************************************************************
 
-:ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` is raised when I try to import a :ref:`module<what is a module?>` that does NOT exist.
+:ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` is :ref:`raised<how to raise an Exception>` when I try to import a :ref:`module<what is a module?>` that does NOT exist.
 
 ----
 
@@ -184,33 +192,25 @@ test_catching_module_not_found_error_in_tests
 
 * I change :ref:`test_failure` to ``test_catching_module_not_found_error_in_tests`` with an `import statement`_ in ``test_exceptions.py``
 
-.. code-block:: python
-  :lineno-start: 4
-  :emphasize-lines: 3-4
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 3-4
 
-  class TestExceptions(unittest.TestCase):
+    class TestExceptions(unittest.TestCase):
 
-      def test_catching_module_not_found_error_in_tests(self):
-          import does_not_exist
+        def test_catching_module_not_found_error_in_tests(self):
+            import does_not_exist
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  ModuleNotFoundError: No module named 'does_not_exist'
+    ModuleNotFoundError: No module named 'does_not_exist'
 
-I cannot import a :ref:`module<what is a module?>` that does not exist. A :ref:`module<what is a module?>` is any file_ that ends in ``.py``
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
+  I cannot import a :ref:`module<what is a module?>` that does not exist. A :ref:`module<what is a module?>` is any file_ that ends in ``.py``
 
 * I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -222,22 +222,68 @@ I cannot import a :ref:`module<what is a module?>` that does not exist. A :ref:`
     # AssertionError
     # ModuleNotFoundError
 
-  I can make ``does_not_exist.py`` to solve the problem. What I want to do is catch/handle it in the test to show that ``import does_not_exist`` raises :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` when the file_ does NOT exist and the test can continue running after confirming the :ref:`Exception<errors>`.
+I can make a file_ named ``does_not_exist.py`` to solve the problem. What I want to do is :ref:`catch/handle the Exception<how to use try...except...else>` in the test to show that ``import does_not_exist`` raises :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` when the file_ does NOT exist and the test can continue running after confirming the :ref:`Exception<errors>`.
 
-* I add the `assertRaises method`_ to :ref:`test_catching_module_not_found_error_in_tests`
+----
+
+*********************************************************************************
+how to use try...except...
+*********************************************************************************
+
+The `try statement`_ is like an :ref:`if statement<if statements>` for :ref:`Exceptions<errors>`. It tells the program_ what to do if an :ref:`Exception<errors>` is  is :ref:`raised<how to raise an Exception>`. A simple way to think of it is
+
+* ``try`` **something**
+* ``except`` - if **something** raises an :ref:`Exception<errors>` do something else
+
+If the statement in the :ref:`try clause<how to use try...except...>` raises the :ref:`Exception<errors>` in the :ref:`except clause<how to use try...except...>`, Python_ runs the code in the :ref:`except block<how to use try...except...>`
+
+.. code-block:: shell
+
+      try:
+  ┌───┴── do something
+  └── except Exception:
+      └── do something else
+
+If the statement in the :ref:`try clause<how to use try...except...>` block works, Python_ exits the `try statement`_
+
+.. code-block:: shell
+
+      try:
+  ┌───┴── do something
+  │   except Exception:
+  │       do something else
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add a `try statement`_ to :ref:`test_catching_module_not_found_error_in_tests` to :ref:`handle ModuleNotFoundError<how to use try...except...>`
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2-5
 
         def test_catching_module_not_found_error_in_tests(self):
-            with self.assertRaises(ModuleNotFoundError):
+            try:
                 import does_not_exist
+            except ModuleNotFoundError:
+                pass
 
-  the test passes, showing that
 
-  * assertRaises_ checks that the code in its context (``import does_not_exist``), raises the :ref:`Exception<errors>` (:ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`) it is given in parentheses.
-  * :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` is raised when I try to import a :ref:`module<what is a module?>` that does NOT exist.
+    # Exceptions seen
+
+  the test passes because ``import does_not_exist`` :ref:`raises ModuleNotFoundError<what causes ModuleNotFoundError?>`.
+
+  .. code-block:: shell
+
+        try:
+    ┌───┴── import does_not_exist
+    └── except ModuleNotFoundError:
+        └── pass
 
 * I add a git_ commit message
 
@@ -247,13 +293,15 @@ I cannot import a :ref:`module<what is a module?>` that does not exist. A :ref:`
     git commit -am \
     'add test_catching_module_not_found_error_in_tests'
 
+:ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` is :ref:`raised<how to raise an Exception>` when I try to import a :ref:`module<what is a module?>` that does NOT exist.
+
 ----
 
 *********************************************************************************
 test_catching_name_error_in_tests
 *********************************************************************************
 
-NameError_ is raised when I use a name that is not defined in the file_ I am working in.
+NameError_ is :ref:`raised<how to raise an Exception>` when I try to use a name that is not defined in the file_ I am working in.
 
 ----
 
@@ -263,31 +311,33 @@ NameError_ is raised when I use a name that is not defined in the file_ I am wor
 
 ----
 
-* I add another failing test
+* I add a test for :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 5-6
+    :lineno-start: 9
+    :emphasize-lines: 4-5
 
-        def test_catching_module_not_found_error_in_tests(self):
-            with self.assertRaises(ModuleNotFoundError):
-                import does_not_exist
+            except ModuleNotFoundError:
+                pass
 
         def test_catching_name_error_in_tests(self):
-            does_not_exist
+            not_defined
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows NameError_
 
   .. code-block:: shell
 
-    NameError: name 'does_not_exist' is not defined
+    NameError: name 'not_defined' is not defined
 
-  because there is no definition for ``does_not_exist`` in ``test_exceptions.py``.
+  because there is no definition for ``not_defined`` in ``test_exceptions.py``.
 
 * I add NameError_ to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 14
+    :lineno-start: 16
     :emphasize-lines: 4
 
     # Exceptions seen
@@ -303,20 +353,29 @@ NameError_ is raised when I use a name that is not defined in the file_ I am wor
 
 ----
 
-* I add assertRaises_ to :ref:`test_catching_name_error_in_tests`
+* I add a `try statement`_ to :ref:`test_catching_name_error_in_tests` to :ref:`handle NameError<how to use try...except...>`
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 2-3
+    :lineno-start: 12
+    :emphasize-lines: 2-5
 
-          def test_catching_name_error_in_tests(self):
-              with self.assertRaises(NameError):
-                  does_not_exist
+        def test_catching_name_error_in_tests(self):
+            try:
+                not_defined
+            except NameError:
+                pass
 
-  the test passes, showing that
 
-  * assertRaises_ checks that the code in its context (``does_not_exist``), raises the :ref:`Exception<errors>` (NameError_) it is given in parentheses.
-  * NameError_ is raised when I use a name that is not defined in the file.
+    # Exceptions seen
+
+  the test passes because ``not_defined`` :ref:`raises NameError<test_catching_name_error_in_tests>`.
+
+  .. code-block:: shell
+
+        try:
+    ┌───┴── not_defined
+    └── except NameError:
+        └── pass
 
 * I add a git_ commit message
 
@@ -326,13 +385,15 @@ NameError_ is raised when I use a name that is not defined in the file_ I am wor
     git commit -am \
     'add test_catching_name_error_in_tests'
 
+NameError_ is :ref:`raised<how to raise an Exception>` when I try to use a name that is not defined in the file_.
+
 ----
 
 *********************************************************************************
 test_catching_attribute_error_in_tests
 *********************************************************************************
 
-:ref:`AttributeError<what causes AttributeError?>` is raised when I try to get something that does NOT exist from an :ref:`object<everything is an object>` that exists.
+:ref:`AttributeError<what causes AttributeError?>` is :ref:`raised<how to raise an Exception>` when I try to get something that does NOT exist from an :ref:`object<everything is an object>` that exists.
 
 ----
 
@@ -342,18 +403,20 @@ test_catching_attribute_error_in_tests
 
 ----
 
-* I add a failing test for :ref:`AttributeError<what causes AttributeError?>`
+* I add a test for :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 5-6
+    :lineno-start: 15
+    :emphasize-lines: 4-5
 
-        def test_catching_name_error_in_tests(self):
-            with self.assertRaises(NameError):
-                does_not_exist
+            except NameError:
+                pass
 
         def test_catching_attribute_error_in_tests(self):
             src.exceptions.does_not_exist
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -383,12 +446,12 @@ test_catching_attribute_error_in_tests
   - ``exceptions`` is the ``exceptions`` folder_ in the ``src`` folder_
   - ``src.exceptions.does_not_exist`` is pointing to something named ``does_not_exist`` in ``__init__.py`` in the ``exceptions`` folder_ in the ``src`` folder_
 
-  the failure happens because Python_ cannot find ``does_not_exist`` in the ``__init__.py`` in the ``exceptions`` folder_ in the ``src`` folder_. I tried to get something that does NOT exist from an :ref:`object<everything is an object>` that exists.
+  the failure happens because Python_ cannot find ``does_not_exist`` in the ``__init__.py`` file_ in the ``exceptions`` folder_ in the ``src`` folder_. I tried to get something that does NOT exist from an :ref:`object<everything is an object>` that exists.
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 23
     :emphasize-lines: 5
 
     # Exceptions seen
@@ -405,20 +468,32 @@ test_catching_attribute_error_in_tests
 
 ----
 
-* I add the `assertRaises method`_ to :ref:`test_catching_attribute_error_in_tests`
+* I add a `try statement`_ to :ref:`test_catching_attribute_error_in_tests` to :ref:`handle AttributeError<how to use try...except...>`
 
   .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 2-3
+    :lineno-start: 19
+    :emphasize-lines: 2-5
 
         def test_catching_attribute_error_in_tests(self):
-            with self.assertRaises(AttributeError):
+            try:
                 src.exceptions.does_not_exist
+            except AttributeError:
+                pass
 
-  the test passes, showing that
 
-  * assertRaises_ checks that the code in its context (``src.exceptions.does_not_exist``), raises the :ref:`Exception<errors>` (:ref:`AttributeError<what causes AttributeError?>`) it is given in parentheses.
-  * :ref:`AttributeError<what causes AttributeError?>` is raised when I try to get something that does NOT exist from an :ref:`object<everything is an object>` that exists.
+    # Exceptions seen
+
+  the test passes because ``src.exceptions.does_not_exist`` :ref:`raises AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+        try:
+        └── src.exceptions.does_not_exist
+            └── src
+                └── exceptions
+    ┌───────────────┴── __init__.py
+    └── except AttributeError:
+        └── pass
 
 * I add a git_ commit message
 
@@ -428,13 +503,15 @@ test_catching_attribute_error_in_tests
     git commit -am \
     'add test_catching_attribute_error_in_tests'
 
+:ref:`AttributeError<what causes AttributeError?>` is :ref:`raised<how to raise an Exception>` when I try to get something that does NOT exist from an :ref:`object<everything is an object>` that exists.
+
 ----
 
 *********************************************************************************
 test_catching_type_error_in_tests
 *********************************************************************************
 
-:ref:`TypeError<what causes TypeError?>` is raised when I use :ref:`object<everything is an object>` in a way that it cannot be used.
+:ref:`TypeError<what causes TypeError?>` is :ref:`raised<how to raise an Exception>` when I try to use an :ref:`object<everything is an object>` in a way that it cannot be used.
 
 ----
 
@@ -444,18 +521,20 @@ test_catching_type_error_in_tests
 
 ----
 
-* I add a failing test for :ref:`TypeError<what causes TypeError?>`
+* I add a test for :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 5-6
+    :lineno-start: 22
+    :emphasize-lines: 4-5
 
-        def test_catching_attribute_error_in_tests(self):
-            with self.assertRaises(AttributeError):
-                src.exceptions.does_not_exist
+            except AttributeError:
+                pass
 
         def test_catching_type_error_in_tests(self):
             src.exceptions.function_name('the input')
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -480,6 +559,8 @@ test_catching_type_error_in_tests
 
     NameError: name 'function_name' is not defined
 
+  because there is no definition for ``function_name`` in ``src/exceptions/__init__.py``
+
 * I point ``function_name`` to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
@@ -499,7 +580,7 @@ test_catching_type_error_in_tests
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen, in ``tests/test_exceptions.py``
 
   .. code-block:: python
-    :lineno-start: 23
+    :lineno-start: 29
     :emphasize-lines: 6
 
     # Exceptions seen
@@ -517,17 +598,34 @@ test_catching_type_error_in_tests
 
 ----
 
-I use assertRaises_ to :ref:`test_catching_type_error_in_tests`
+I add a `try statement`_ to :ref:`test_catching_type_error_in_tests` to :ref:`handle TypeError<how to use try...except...>`
 
 .. code-block:: python
-  :lineno-start: 19
-  :emphasize-lines: 2-3
+  :lineno-start: 25
+  :emphasize-lines: 2-5
 
       def test_catching_type_error_in_tests(self):
-          with self.assertRaises(TypeError):
+          try:
               src.exceptions.function_name('the input')
+          except TypeError:
+              pass
 
-the test passes, showing that assertRaises_ checks that the code in its context (``src.exceptions.function_name('the input')``), raises the :ref:`Exception<errors>` (:ref:`TypeError<what causes TypeError?>`) it is given in parentheses.
+
+  # Exceptions seen
+
+the test passes because ``src.exceptions.function_name('the input')`` :ref:`raises TypeError<what causes TypeError?>`.
+
+.. code-block:: shell
+
+      try:
+      └── src.exceptions.function_name('the input')
+          └── src
+              └── exceptions
+                  └── __init__.py
+  ┌───────────────────┴── def function_name():
+  │                           return None
+  └── except TypeError:
+      └── pass
 
 ----
 
@@ -546,7 +644,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
     def function_name():
         return None
 
-  the test is still green because :ref:`TypeError<what causes TypeError?>` is raised since the call from the test - ``src.exceptions.function_name('the input')`` sends ``'the input'`` as input and the ``function_name`` :ref:`function<what is a function?>` does not take input.
+  the test is still green because :ref:`TypeError<what causes TypeError?>` is :ref:`raised<how to raise an Exception>` since the call from the test - ``src.exceptions.function_name('the input')`` sends ``'the input'`` as input and the ``function_name`` :ref:`function<what is a function?>` does not take input (the parentheses are empty).
 
 * I add a parameter to the definition
 
@@ -557,21 +655,79 @@ the test passes, showing that assertRaises_ checks that the code in its context 
     def function_name(parameter_name):
         return None
 
+  the test is still green, because the statement no longer gets to the :ref:`except block<how to use try...except...>`
+
+  .. code-block:: shell
+
+        try:
+        └── src.exceptions.function_name('the input')
+            └── src
+                └── exceptions
+                    └── __init__.py
+                        └── def function_name():
+                            └── return None
+        except TypeError:
+            pass
+
+  I need :ref:`a better try statement<how to use try...except...else>`.
+
+----
+
+*********************************************************************************
+how to use try...except...else
+*********************************************************************************
+
+The :ref:`try statement<how to use try...except...>` has an `else clause`_ that I can use to make a program do something if the :ref:`Exception<errors>` in the :ref:`except clause<how to use try...except>` is not :ref:`raised<how to raise an Exception>`
+
+* I add an `else clause`_ to the :ref:`try statement<how to use try...except...>` to :ref:`raise AssertionError<what causes AssertionError?>` if :ref:`TypeError<what causes TypeError?>` is not :ref:`raised<how to raise an Exception>`
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 6-7
+
+        def test_catching_type_error_in_tests(self):
+            try:
+                src.exceptions.function_name('the input')
+            except TypeError:
+                pass
+            else:
+                raise AssertionError
+
+
+    # Exceptions seen
+
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
-    AssertionError: TypeError not raised
+    E           AssertionError
 
-  because :ref:`TypeError<what causes TypeError?>` is NOT raised since the :ref:`function<what is a function?>` :ref:`call<how to call a function with input>` matches the :ref:`definition<how to make a function that takes input>`. I undo the change
+  because :ref:`TypeError<what causes TypeError?>` is NOT raised since the :ref:`function call<how to call a function with input>` matches the :ref:`definition<how to make a function that takes input>`.
+
+  .. code-block:: shell
+
+        try:
+    ┌───┴── src.exceptions.function_name('the input')
+    │        └── src
+    │            └── exceptions
+    │                └── __init__.py
+    │                    └── def function_name():
+    │                        └── return None
+    │   except TypeError:
+    │       pass
+    └── else:
+        └── raise AssertionError
+
+* I undo the change
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1
 
     def function_name():
-        return None
+        return
 
+  the test is green again.
 
 * I add a git_ commit message
 
@@ -581,17 +737,455 @@ the test passes, showing that assertRaises_ checks that the code in its context 
     git commit -am \
     'add test_catching_type_error_in_tests'
 
-:ref:`TypeError<what causes TypeError?>` is raised when I use :ref:`object<everything is an object>` in a way that it cannot be used.
+:ref:`TypeError<what causes TypeError?>` is :ref:`raised<how to raise an Exception>` when I try to use an :ref:`object<everything is an object>` in a way that it cannot be used.
 
+----
+
+*********************************************************************************
+add else clause to try statements
+*********************************************************************************
+
+* I add the `else clause`_ to :ref:`test_catching_attribute_error_in_tests` to make sure it raises :ref:`AssertionError<what causes AssertionError?>` if :ref:`AttributeError<what causes AttributeError?>` is not :ref:`raised<how to raise an Exception>` by the code in the :ref:`try block<how to use try...except...else>`
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 6-7
+
+        def test_catching_attribute_error_in_tests(self):
+            try:
+                src.exceptions.does_not_exist
+            except AttributeError:
+                pass
+            else:
+                raise AssertionError
+
+        def test_catching_type_error_in_tests(self):
+
+  the test is still green.
+
+* I add the `else clause`_ to :ref:`test_catching_name_error_in_tests` to make sure it raises :ref:`AssertionError<what causes AssertionError?>` if :ref:`NameError<test_catching_name_error_in_tests>` is not :ref:`raised<how to raise an Exception>` by the code in the :ref:`try block<how to use try...except...else>`
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 6-7
+
+        def test_catching_name_error_in_tests(self):
+            try:
+                not_defined
+            except NameError:
+                pass
+            else:
+                raise AssertionError
+
+        def test_catching_attribute_error_in_tests(self):
+
+  still green.
+
+* I add the `else clause`_ to :ref:`test_catching_module_not_found_error_in_tests` to make sure it raises :ref:`AssertionError<what causes AssertionError?>` if :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` is not :ref:`raised<how to raise an Exception>` by the code in the :ref:`try block<how to use try...except...else>`
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 6-7
+
+        def test_catching_module_not_found_error_in_tests(self):
+            try:
+                import does_not_exist
+            except ModuleNotFoundError:
+                pass
+            else:
+                raise AssertError
+
+        def test_catching_name_error_in_tests(self):
+
+  green.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add else clause to try statements'
+
+----
+
+*********************************************************************************
+extract assert_raises method
+*********************************************************************************
+
+The :ref:`try statements<how to use try...except...else>` all look the same, the only differences are the code in the :ref:`try block<how to use try...except...else>` and the :ref:`Exception<errors>` in the :ref:`except clause<how to use try...except...else>`
+
+.. code-block:: python
+
+  try:
+      code
+  except Exception:
+      pass
+  else:
+      raise AssertionError
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add a :ref:`method<what is a method?>` for the :ref:`try statement<how to use try...except...else>`
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 3-10
+
+    class TestExceptions(unittest.TestCase):
+
+        @staticmethod
+        def assert_raises(code, exception):
+            try:
+                code
+            except exception:
+                pass
+            else:
+                raise AssertionError
+
+        def test_catching_module_not_found_error_in_tests(self):
+
+* I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_module_not_found_error_in_tests`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 2-4
+
+        def test_catching_module_not_found_error_in_tests(self):
+            self.assert_raises(
+                import does_not_exist, ModuleNotFoundError
+            )
+            try:
+
+  the terminal_ is my friend, and shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: invalid syntax
+
+  because ``import does_not_exist`` runs before it is passed as input to the :ref:`assert_raises method<extract assert_raises method>`. I need a way to pass it as a value that will be run inside the :ref:`assert_raises method<extract assert_raises method>` not before.
+
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 7
+    :emphasize-text: SyntaxError
+
+    # Exceptions seen
+    # AssertionError
+    # ModuleNotFoundError
+    # NameError
+    # AttributeError
+    # TypeError
+    # SyntaxError
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change the ``import does_not_exist`` line in :ref:`test_catching_module_not_found_error_in_tests` to a string_
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 3
+
+        def test_catching_module_not_found_error_in_tests(self):
+            self.assert_raises(
+                'import does_not_exist', ModuleNotFoundError
+            )
+            try:
+                import does_not_exist
+            except ModuleNotFoundError:
+                pass
+            else:
+                raise AssertError
+
+        def test_catching_name_error_in_tests(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E           AssertionError
+
+  because the string_ (``'import does_not_exist'``) does not :ref:`raise ModuleNotFoundError<how to raise an Exception>`
+
+  .. code-block:: shell
+
+    assert_raises('import does_not_exist', ModuleNotFoundError)
+    └── def assert_raises(code, exception):
+        ├── code = 'import does_not_exist'
+        ├── exception = ModuleNotFoundError
+        └── try:
+        ┌───┴── code
+        │   except exception:
+        │       pass
+        └── else:
+            └── raise AssertionError
+
+  I still need a way to run the code in the string_ inside the :ref:`assert_raises method<extract assert_raises method>`.
+
+----
+
+*********************************************************************************
+the exec function
+*********************************************************************************
+
+I can use the `exec built-in function`_ to run any Python_ code I pass as a string_ to it.
+
+* I add exec_ to the :ref:`try block<how to use try...except...else>` in the :ref:`assert_raises method<extract assert_raises method>`
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 4
+
+        @staticmethod
+        def assert_raises(code, exception):
+            try:
+                exec(code)
+            except exception:
+                pass
+            else:
+                raise AssertionError
+
+        def test_catching_module_not_found_error_in_tests(self):
+
+  the test passes, showing that ``import does_not_exist`` raises :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` which happens when I try to import a :ref:`module<what is a module?>` that does NOT exist.
+
+  .. code-block:: shell
+
+    assert_raises('import does_not_exist', ModuleNotFoundError)
+    └── def assert_raises(code, exception):
+        ├── code = 'import does_not_exist'
+        ├── exception = ModuleNotFoundError
+        └── try:
+        ┌───┴── exec(code)
+        └── except exception:
+            └── pass
+            else:
+                raise AssertionError
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_module_not_found_error_in_tests` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
+
+  .. code-block:: python
+    :lineno-start: 16
+
+        def test_catching_module_not_found_error_in_tests(self):
+            self.assert_raises(
+                import does_not_exist', ModuleNotFoundError
+            )
+
+        def test_catching_name_error_in_tests(self):
+
+* I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_name_error_in_tests`
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2
+
+    def test_catching_name_error_in_tests(self):
+        self.assert_raises('not_defined', ValueError)
+        try:
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'not_defined' is not defined
+
+  because :ref:`NameError<test_catching_name_error_in_tests>` is not :ref:`TypeError<what causes TypeError?>` or a :ref:`child<how to test if something is a subclass>` of :ref:`TypeError<what causes TypeError?>`.
+
+* I change the expected :ref:`Exception<errors>`
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2
+
+        def test_catching_name_error_in_tests(self):
+            self.assert_raises('not_defined', NameError)
+            try:
+                not_defined
+            except NameError:
+                pass
+            else:
+                raise AssertionError
+
+        def test_catching_attribute_error_in_tests(self):
+
+  the test passes, showing that ``not_defined`` raises :ref:`NameError<test_catching_name_error_in_tests>` which happens when I try to use a name that is not defined in the file_.
+
+* I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_name_error_in_tests` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
+
+  .. code-block:: python
+    :lineno-start: 21
+
+        def test_catching_name_error_in_tests(self):
+            self.assert_raises('not_defined', NameError)
+
+        def test_catching_attribute_error_in_tests(self):
+
+* I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_attribute_error_in_tests`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 2-4
+
+        def test_catching_attribute_error_in_tests(self):
+            self.assert_raises(
+                'src.exceptions.does_not_exist', NameError
+            )
+            try:
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.exceptions'
+                    has no attribute 'does_not_exist'
+
+  because :ref:`AttributeError<what causes AttributeError?>` is not :ref:`NameError<test_catching_name_error_in_tests>` or a :ref:`child<how to test if something is a subclass>` of :ref:`NameError<test_catching_name_error_in_tests>`.
+
+* I change the expected :ref:`Exception<errors>`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 3
+
+        def test_catching_attribute_error_in_tests(self):
+            self.assert_raises(
+                'src.exceptions.does_not_exist', AttributeError
+            )
+            try:
+                src.exceptions.does_not_exist
+            except AttributeError:
+                pass
+            else:
+                raise AssertionError
+
+        def test_catching_type_error_in_tests(self):
+
+  the test passes, showing that ``src.exceptions.does_not_exist`` raises :ref:`AttributeError<what causes AttributeError?>` which happens when I try to get something that does NOT exist from an :ref:`object<everything is an object>` that exists.
+
+* I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_attribute_error_in_tests` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
+
+  .. code-block:: python
+    :lineno-start: 24
+
+        def test_catching_attribute_error_in_tests(self):
+            self.assert_raises(
+                'src.exceptions.does_not_exist', AttributeError
+            )
+
+        def test_catching_type_error_in_tests(self):
+
+* I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_type_error_in_tests`
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2
+
+    def test_catching_type_error_in_tests(self):
+        self.assert_raises('not_defined', ValueError)
+        try:
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what cause TypeError?>`
+
+  .. code-block:: python
+
+    NameError: name 'not_defined' is not defined
+
+  because :ref:`TypeError<what cause TypeError?>` is not :ref:`TypeError<what causes TypeError?>` or a :ref:`child<how to test if something is a subclass>` of :ref:`TypeError<what causes TypeError?>`.
+
+* I change the expected :ref:`Exception<errors>`
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2
+
+        def test_catching_type_error_in_tests(self):
+            self.assert_raises('not_defined', NameError)
+            try:
+                not_defined
+            except NameError:
+                pass
+            else:
+                raise AssertionError
+
+        def test_catching_attribute_error_in_tests(self):
+
+  the test passes, showing that ``not_defined`` raises :ref:`TypeError<what cause TypeError?>` which happens when I try to use a name that is not defined in the file_.
+
+* I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_type_error_in_tests` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
+
+  .. code-block:: python
+    :lineno-start: 21
+
+        def test_catching_type_error_in_tests(self):
+            self.assert_raises('not_defined', NameError)
+
+        def test_catching_attribute_error_in_tests(self):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----
+BOOM
 ----
 
 *********************************************************************************
 test_catching_index_error_in_tests
 *********************************************************************************
 
-:ref:`IndexError<test_index_error>` is raised when I try to :ref:`index a list<test_index_returns_first_position_of_item_in_a_list>`, tuple_ or string_ with a number that is
+:ref:`IndexError<test_index_error>` is :ref:`raised<how to raise an Exception>` when I try to :ref:`index a list<test_index_returns_first_position_of_item_in_a_list>`, tuple_ or string_ with a number that is
 
-- bigger than or the same as the number of items in the :ref:`list`, tuple_ or string_
+- bigger than or the same as the number of items in the :ref:`list<what is a list?>`, tuple_ or string_
 - smaller than the negative of the number of items in the :ref:`list<what is a list?>`, tuple_ or string_
 
 ----
@@ -947,7 +1541,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
     git commit -am \
     'add test_catching_index_error_in_tests'
 
-:ref:`IndexError<test_index_error>` is raised when I try to :ref:`index a list<test_index_returns_first_position_of_item_in_a_list>`, tuple_ or string_ with a number that is
+:ref:`IndexError<test_index_error>` is :ref:`raised<how to raise an Exception>` when I try to :ref:`index a list<test_index_returns_first_position_of_item_in_a_list>`, tuple_ or string_ with a number that is
 
 - bigger than or the same as the number of items in the :ref:`list<what is a list?>`, tuple_ or string_.
 - smaller than the negative of the number of items in the :ref:`list<what is a list?>`, tuple_ or string_.
@@ -958,7 +1552,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
 test_catching_key_error_in_tests
 *********************************************************************************
 
-:ref:`KeyError<test_key_error>` is raised when I try to use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in a :ref:`dictionary<what is a dictionary?>`.
+:ref:`KeyError<test_key_error>` is :ref:`raised<how to raise an Exception>` when I try to use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in a :ref:`dictionary<what is a dictionary?>`.
 
 ----
 
@@ -1062,7 +1656,7 @@ test_catching_key_error_in_tests
   the test passes, showing that
 
   * assertRaises_ checks that the code in its context (``a_dictionary['not_in_dictionary']``), raises the :ref:`Exception<errors>` (:ref:`KeyError<test_key_error>`) it is given in parentheses.
-  * :ref:`KeyError<test_key_error>` is raised when I try to use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in a :ref:`dictionary<what is a dictionary?>`.
+  * :ref:`KeyError<test_key_error>` is :ref:`raised<how to raise an Exception>` when I try to use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in a :ref:`dictionary<what is a dictionary?>`.
 
 * I add a git_ commit message
 
@@ -1076,7 +1670,7 @@ test_catching_key_error_in_tests
 test_catching_zero_division_error_in_tests
 *********************************************************************************
 
-ZeroDivisionError_ is raised when I try to divide a number by ``0``.
+ZeroDivisionError_ is :ref:`raised<how to raise an Exception>` when I try to divide a number by ``0``.
 
 =================================================================================
 :red:`RED`: make it fail
@@ -1147,7 +1741,7 @@ ZeroDivisionError_ is raised when I try to divide a number by ``0``.
   the test passes, showing that
 
   * assertRaises_ checks that the code in its context (``1 / 0``), raises the :ref:`Exception<errors>` (ZeroDivisionError_) it is given in parentheses.
-  * ZeroDivisionError_ is raised when I try to divide any number by ``0``, same as I get ``undefined`` when I try it with a :ref:`calculator`, because dividing by ``0`` is undefined in Mathematics_.
+  * ZeroDivisionError_ is :ref:`raised<how to raise an Exception>` when I try to divide any number by ``0``, same as I get ``undefined`` when I try it with a :ref:`calculator`, because dividing by ``0`` is undefined in Mathematics_.
 
 * I add a git_ commit message
 
@@ -1572,7 +2166,8 @@ what is next?
 * :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`.
 * :ref:`I know how to write programs that make decisions<truth table>`.
 * :ref:`I know how to make a Python Test Driven Development environment automatically with variables<how to make a Python Test Driven Development environment automatically with variables>`.
-* :ref:`I know how to make a person with Exceptions<how to make a person with exceptions>`
+* :ref:`I know how to make a person with Exceptions<how to make a person with Exceptions>`.
+* :ref:`I know how to test that an Exception is raised<how to test that an Exception is raised>`.
 
 :ref:`Would you like to test handling Exceptions in programs?<how to handle Exceptions (Errors) in programs>`
 

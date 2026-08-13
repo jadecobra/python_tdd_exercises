@@ -124,7 +124,6 @@
 .. _touch program: touch_
 .. _tree: https://grokipedia.com/page/Tree_(command)
 .. _tree program: tree_
-.. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
 .. _tuple: https://docs.python.org/3/library/stdtypes.html#tuple
 .. _tuples: tuple_
 .. _type: https://docs.python.org/3/glossary.html#term-type

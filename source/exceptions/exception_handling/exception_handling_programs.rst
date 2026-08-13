@@ -522,13 +522,9 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     Exception: 'BOOM!!!'
 
-I need a way for the :ref:`function<what is a function?>` to choose what to do when an :ref:`Exception<errors>` is raised and when one is NOT raised. I can use the `try statement`_ to do this
+  I cam use the :ref:`else clause of the try statement<how to use try...except...else>` to make the :ref:`function<what is a function?>` choose what to do if the :ref:`Exception<errors>` in its :ref:`except block<how to use try...except...else>` is :ref:`raised<how to raise an Exception>` or NOT.
 
----------------------------------------------------------------------------------
-how to use try...except...else
----------------------------------------------------------------------------------
-
-* I add a `try statement`_ to ``an_exception_handler`` in ``exceptions.py``
+* I add a :ref:`try statement<how to use try...except...>` to ``an_exception_handler`` in ``exceptions.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -546,7 +542,7 @@ how to use try...except...else
 
     AssertionError: None != 'succeeded'
 
-  the `try statement`_ is used to handle :ref:`Exceptions<errors>` in programs
+  the :ref:`try statement<how to use try...except...>` is used to handle :ref:`Exceptions<errors>` in programs
 
 * I add an `else clause`_ for when ``a_function()`` runs without raising an :ref:`Exception<errors>`
 
@@ -586,7 +582,7 @@ how to use try...except...else
 
   the test passes.
 
-  The `try statement`_ is used to catch or handle :ref:`Exceptions<errors>` in Python_. It allows the program_ to choose what to do when it runs into an :ref:`Exception<errors>`. I think of it as
+  The :ref:`try statement<how to use try...except...>` is used to catch or handle :ref:`Exceptions<errors>` in Python_. It allows the program_ to choose what to do when it runs into an :ref:`Exception<errors>`. I think of it as
 
   - ``try`` **this**
   - ``except Exception`` - if **this** raises ``Exception``, run the code in this block
@@ -598,7 +594,7 @@ how to use try...except...else
   - ``except Exception`` - if **calling** ``a_function()`` raises ``Exception`` return ``'failed'``
   - ``else`` - if **calling** ``a_function()`` does NOT raise ``Exception`` return ``'succeeded'``
 
-  the `try statement`_ is how I think of `Test Driven Development`_ or the scientific method
+  the :ref:`try statement<how to use try...except...>` is how I think of `Test Driven Development`_ or the scientific method
 
   -  Try something
   -  if it fails, try something else
@@ -626,7 +622,7 @@ how to use try...except...else
 
     Exception: BOOM!!!!
 
-  because :ref:`Exception<errors>` is not :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`. The `try statement`_ only catches the :ref:`Exception<errors>` given in the ``except`` block and its children, all others are raised
+  because :ref:`Exception<errors>` is not :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`. The :ref:`try statement<how to use try...except...>` only catches the :ref:`Exception<errors>` given in the ``except`` block and its children, all others are raised
 
 * I change it back to what works
 
@@ -711,19 +707,29 @@ what is next?
 *************************************************************************************
 
 * :ref:`I know how to make a Python Test Driven Development environment manually<how to make a Python Test Driven Development environment manually>`.
+* :ref:`I know what a Python module is<what is a module?>`.
+* :ref:`I know how to run tests automatically<how to run tests automatically>`.
 * :ref:`I know what an assertion is<what is an assertion?>`.
 * :ref:`I know how to make functions<what is a function?>`.
+* :ref:`I know how to make a person with strings<how to make a person with strings>`.
+* :ref:`I know how to make functions that take input<functions that take input>`.
+* :ref:`I know what causes TypeError<what causes TypeError?>`.
+* :ref:`I know how to place values in strings<telephone>`.
+* :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
+* :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
-* :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`what is None and NOT None<what is None?>`
-* :ref:`what is True and False in Python<what are booleans?>`
-* :ref:`I know how to write programs that make decisions<truth table>`
-* :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment 2>`
-* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
-* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
-
-:ref:`Would you like to handle ZeroDivisionError in the Calculator?<how to make a calculator 3>`
+* :ref:`I know how to make a person with a class<how to make a person with a class>`.
+* :ref:`I know that everything in Python is an object<everything is an object>`.
+* :ref:`I know how to use the unittest library<another way to write tests>`.
+* :ref:`I know how to use the datetime library<test person with datetime>`.
+* :ref:`I know what None is<what is None?>`.
+* :ref:`I know how to make a person with conditions<how to make a person with conditions>`.
+* :ref:`I know how Python groups objects into False or True<what are booleans?>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`.
+* :ref:`I know how to write programs that make decisions<truth table>`.
+* :ref:`I know how to make a Python Test Driven Development environment automatically with variables<how to make a Python Test Driven Development environment automatically with variables>`.
+* :ref:`I know how to make a person with Exceptions<how to make a person with Exceptions>`.
+* :ref:`I know how to test that an Exception is raised<how to test that an Exception is raised>`.
 
 -----
 
