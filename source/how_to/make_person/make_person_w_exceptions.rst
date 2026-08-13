@@ -647,7 +647,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
 
   the test passes.
 
-* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a float_ to catch :ref:`NameError<test_catching_name_error_in_tests>`
+* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a float_ to catch :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
     :lineno-start: 238
@@ -671,7 +671,7 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
 
     E           TypeError
 
-  because :ref:`TypeError<what causes TypeError?>` is not :ref:`NameError<test_catching_name_error_in_tests>` or a :ref:`child<how to test if something is a subclass>` of :ref:`NameError<test_catching_name_error_in_tests>`.
+  because :ref:`TypeError<what causes TypeError?>` is not :ref:`NameError<test_catching_name_error>` or a :ref:`child<how to test if something is a subclass>` of :ref:`NameError<test_catching_name_error>`.
 
 * I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a float_ to catch :ref:`TypeError<what causes TypeError?>`
 

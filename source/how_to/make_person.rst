@@ -332,7 +332,7 @@ test_factory_w_keyword_arguments
     # Exceptions seen
     # AssertionError
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -340,7 +340,7 @@ test_factory_w_keyword_arguments
 
   because there is no definition for ``src`` in ``test_person.py``
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 12
@@ -1877,7 +1877,7 @@ I can do that with the `datetime module`_ from `The Python Standard Library`_ wh
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
@@ -2016,7 +2016,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
                 year_of_birth=year_of_birth,
             )
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
@@ -2098,7 +2098,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
             ),
         }
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
@@ -5836,7 +5836,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     factory
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -6334,7 +6334,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     # def factory(first_name, year_of_birth):
     def factory(
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -6612,7 +6612,7 @@ I ran tests to make
 I also saw these :ref:`Exceptions<how to test that an Exception is raised>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
-* :ref:`NameError<test_catching_name_error_in_tests>`
+* :ref:`NameError<test_catching_name_error>`
 * :ref:`AttributeError<what causes AttributeError?>`
 * :ref:`TypeError<what causes TypeError?>`
 * SyntaxError_

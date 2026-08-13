@@ -121,13 +121,13 @@ test_streamlit_calculator_title
                 'src/streamlit_calculator.py'
             )
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
     NameError: name 'streamlit' is not defined
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :linenos:
@@ -526,7 +526,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
                 {0: Title(tag='h1')}
             )
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -587,7 +587,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
                 }
             )
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 

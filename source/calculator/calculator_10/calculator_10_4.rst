@@ -1186,7 +1186,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     AssertionError: '2' != '3.0'
 
-  and :ref:`NameError<test_catching_name_error_in_tests>`
+  and :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 

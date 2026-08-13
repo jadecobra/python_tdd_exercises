@@ -813,7 +813,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         # method_00 = attribute_09
         def method_00(): return attribute_09
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -831,7 +831,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         # def method_00(): return attribute_09
         def method_00(): return self.attribute_09
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 

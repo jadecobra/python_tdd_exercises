@@ -1,6 +1,4 @@
 .. _and: https://docs.python.org/3/reference/expressions.html#and
-.. _assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
-.. _assertRaises method: assertRaises_
 .. _assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
 .. _assertRaisesRegex method: assertRaisesRegex_
 .. _bash: https://www.gnu.org/software/bash/
@@ -128,8 +126,6 @@
 .. _tuples: tuple_
 .. _type: https://docs.python.org/3/glossary.html#term-type
 .. _types: type_
-.. _unittest.TestCase.assertRaises: assertRaises_
-.. _unittest.TestCase.assertRaisesRegex: assertRaisesRegex_
 .. _unittest.TestCase.setUp: setUp_
 .. _unittest.TestCase.setUp method: setUp_
 .. _unittest.TestCase.maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff

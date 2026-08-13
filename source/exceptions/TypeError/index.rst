@@ -309,7 +309,7 @@ test_type_error_w_positional_arguments
     # Exceptions seen
     # AssertionError
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -317,7 +317,7 @@ test_type_error_w_positional_arguments
 
   because there is nothing named ``function_00`` in ``test_type_error.py``.
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 5
@@ -417,7 +417,7 @@ test_type_error_w_positional_arguments
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -488,7 +488,7 @@ test_type_error_w_positional_arguments
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -559,7 +559,7 @@ test_type_error_w_positional_arguments
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -708,7 +708,7 @@ test_type_error_w_keyword_arguments
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -797,7 +797,7 @@ test_type_error_w_keyword_arguments
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -914,7 +914,7 @@ test_type_error_w_keyword_arguments
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1011,7 +1011,7 @@ test_type_error_w_keyword_arguments
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1202,7 +1202,7 @@ test_type_error_w_args_and_kwargs
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1366,7 +1366,7 @@ test_type_error_w_args_and_kwargs
             argument='keyword',
         )
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1439,7 +1439,7 @@ test_type_error_w_args_and_kwargs
             argument='keyword',
         )
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1583,7 +1583,7 @@ test_type_error_w_args_and_kwargs
             argument='keyword',
         )
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1677,7 +1677,7 @@ test_type_error_w_args_and_kwargs
             argument='keyword',
         )
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1817,7 +1817,7 @@ test_type_error_w_args_and_kwargs
         function_00()
         # function_01(1, first=0)
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1906,7 +1906,7 @@ test_type_error_w_args_and_kwargs
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1994,7 +1994,7 @@ test_type_error_w_args_and_kwargs
             argument_1=[0, 1, 2, 'n'],
         )
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -2088,7 +2088,7 @@ test_type_error_w_args_and_kwargs
             argument_1=[0, 1, 2, 'n'],
         )
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -2534,7 +2534,7 @@ the test passes because :ref:`the call to the function<how to call a function wi
     # NameError
     # TypeError
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 

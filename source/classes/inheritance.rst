@@ -358,7 +358,7 @@ test_making_a_class_w_pass
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -366,7 +366,7 @@ test_making_a_class_w_pass
 
   because ``WPass`` is not defined in this file_.
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 5
@@ -503,7 +503,7 @@ I can also make a :ref:`class<what is a class?>` with parentheses/brackets ``( )
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -657,7 +657,7 @@ I can make a :ref:`class<what is a class?>` with :ref:`object (the mother of all
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 

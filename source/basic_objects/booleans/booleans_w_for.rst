@@ -686,7 +686,7 @@ the test passes.
             self.assertEqual(False*1, 0)
             1 / False
 
-  the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` because :ref:`False<test_what_is_false>` is ``0``
+  the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error>` because :ref:`False<test_what_is_false>` is ``0``
 
 * I add assertRaises_
 

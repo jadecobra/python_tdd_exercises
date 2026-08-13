@@ -231,7 +231,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -239,7 +239,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
 
   because ``src`` is not defined in this file_.
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 4
@@ -377,7 +377,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
     # class Doe(object): pass
     class Doe(person.Person): pass
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -431,7 +431,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
     # class Doe(object): pass
     class Doe(person.Person): pass
 
-  the terminal_ is my friend, it goes back to :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, it goes back to :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 

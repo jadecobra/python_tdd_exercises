@@ -1711,7 +1711,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                 dict_items([('key', 'value')])
             )
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1719,7 +1719,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   this new :ref:`object<everything is an object>` has a :ref:`list<what is a list?>` and :ref:`I know how to work with lists<what is a list?>`, just like :ref:`dict_items<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 145
@@ -1940,7 +1940,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
                 dict_keys(['key'])
             )
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -3173,7 +3173,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
                 dict_values(['value'])
             )
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 

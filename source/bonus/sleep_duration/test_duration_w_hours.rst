@@ -120,7 +120,7 @@ requirements
         None
     )
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
@@ -181,7 +181,7 @@ requirements
 
     duration
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
@@ -860,7 +860,7 @@ I also saw these :ref:`Exceptions<how to test that an Exception is raised>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`TypeError<what causes TypeError?>`
-* :ref:`NameError<test_catching_name_error_in_tests>`
+* :ref:`NameError<test_catching_name_error>`
 * :ref:`AttributeError<what causes AttributeError?>`
 
 Would you like to :ref:`test duration with hours and minutes? <how to measure sleep duration: test_duration_w_hours_and_minutes>`

@@ -8,7 +8,7 @@
 how to make a calculator 2
 #################################################################################
 
-I want to use assertRaises_ to make sure :ref:`test_division` from the :ref:`calculator project<how to make a calculator>` raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+I want to use assertRaises_ to make sure :ref:`test_division` from the :ref:`calculator project<how to make a calculator>` raises :ref:`ZeroDivisionError<test_catching_zero_division_error>`
 
 ----
 
@@ -76,7 +76,7 @@ test catching ZeroDivisionError in test_calculator.py
 
 ----
 
-I add a new :ref:`assertion<what is an assertion?>` to show that the ``divide`` :ref:`function<what is a function?>` raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` when I try to divide a number by ``0``
+I add a new :ref:`assertion<what is an assertion?>` to show that the ``divide`` :ref:`function<what is a function?>` raises :ref:`ZeroDivisionError<test_catching_zero_division_error>` when I try to divide a number by ``0``
 
 .. code-block:: python
   :lineno-start: 42
@@ -95,7 +95,7 @@ I add a new :ref:`assertion<what is an assertion?>` to show that the ``divide`` 
 
   # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error>`
 
 .. code-block:: shell
 
@@ -159,13 +159,13 @@ review
 I can use assertRaises_ to catch :ref:`Exceptions<how to test that an Exception is raised>` in tests and tested these
 
 * :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
-* :ref:`NameError<test_catching_name_error_in_tests>`
+* :ref:`NameError<test_catching_name_error>`
 * :ref:`AttributeError<what causes AttributeError?>`
 * :ref:`TypeError<what causes TypeError?>`
 * :ref:`IndexError<test_index_error>`
 * :ref:`KeyError<test_key_error>`
-* :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` and
-* :ref:`The Mother of all Exceptions<test_catching_exceptions_in_tests>`
+* :ref:`ZeroDivisionError<test_catching_zero_division_error>` and
+* :ref:`The Mother of all Exceptions<test_catching_exceptions>`
 
 *************************************************************************************
 code from the chapter

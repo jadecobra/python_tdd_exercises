@@ -252,7 +252,7 @@ I add a test to ``test_sleep_duration.py`` from `Examples of usage: datetime <ht
   def test_duration_w_date_and_time(self):
   ...
 
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
 .. code-block:: shell
 
@@ -464,7 +464,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
                 )
             )
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
@@ -878,7 +878,7 @@ I also saw these :ref:`Exceptions<how to test that an Exception is raised>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`TypeError<what causes TypeError?>`
-* :ref:`NameError<test_catching_name_error_in_tests>`
+* :ref:`NameError<test_catching_name_error>`
 * :ref:`AttributeError<what causes AttributeError?>`
 * ValueError_
 

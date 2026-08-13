@@ -320,7 +320,7 @@ The simplest :ref:`function<what is a function?>` I can make is with the pass_ k
     # Exceptions seen
     # AssertionError
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -329,7 +329,7 @@ The simplest :ref:`function<what is a function?>` I can make is with the pass_ k
 
   because Python_ does not know what I mean by ``w_pass`` since I do not have a definition for it in ``test_functions.py``.
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 5
@@ -618,7 +618,7 @@ I can also make a function with a `return statement`_.
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -881,7 +881,7 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1200,7 +1200,7 @@ The `return statement`_ is the last thing to run in a :ref:`function<what is a f
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1511,7 +1511,7 @@ There are :ref:`functions<what is a function?>` that always return the same thin
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 

@@ -138,7 +138,7 @@ I make a copy of a :ref:`class<everything is an object>` to represent ``joe`` in
 
   def test_jane():
 
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
 .. code-block:: python
 
@@ -1359,7 +1359,7 @@ what is the staticmethod decorator?
 
     def test_joe():
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1751,7 +1751,7 @@ separate and equal Person class
         first_name, last_name, year_of_birth,
     ):
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -2019,7 +2019,7 @@ separate and equal Person class
         first_name, last_name, year_of_birth,
     ):
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -2112,7 +2112,7 @@ separate and equal Person class
             sex, year_of_birth,
         ):
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -3329,7 +3329,7 @@ review
 * I saw the following :ref:`Exceptions<how to test that an Exception is raised>`
 
   - :ref:`AssertionError<what causes AssertionError?>`
-  - :ref:`NameError<test_catching_name_error_in_tests>`
+  - :ref:`NameError<test_catching_name_error>`
   - :ref:`TypeError<what causes TypeError?>`
   - :ref:`AttributeError<what causes AttributeError?>`
   - SyntaxError_

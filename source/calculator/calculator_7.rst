@@ -867,7 +867,7 @@ I can use the :ref:`values method of dictionaries<test_values_of_a_dictionary>` 
               self.random_first_number+self.random_second_number
           )
 
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
 .. code-block:: python
 
@@ -1564,7 +1564,7 @@ this means all these statements are the same
 
         def test_division(self):
 
-  I have to handle :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` in :ref:`test_calculator_functions` before I can remove :ref:`test_division`
+  I have to handle :ref:`ZeroDivisionError<test_catching_zero_division_error>` in :ref:`test_calculator_functions` before I can remove :ref:`test_division`
 
 * I change ``y`` to ``0`` in :ref:`test_calculator_functions`
 
@@ -1579,7 +1579,7 @@ this means all these statements are the same
 
             arithmetic_tests = {
 
-  the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error>`
 
   .. code-block:: python
 
@@ -1618,7 +1618,7 @@ this means all these statements are the same
     except ZeroDivisionError:
         division_result = 'BOOM!!!'
 
-  if :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` is raised when trying to divide ``x`` by ``y``, point ``division_result`` to ``'BOOM!!!'``
+  if :ref:`ZeroDivisionError<test_catching_zero_division_error>` is raised when trying to divide ``x`` by ``y``, point ``division_result`` to ``'BOOM!!!'``
 
 * I use ``division_result`` in the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>`
 
@@ -1859,7 +1859,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
             # x = self.random_first_number
             # y = self.random_second_number
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 

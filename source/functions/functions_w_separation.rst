@@ -89,7 +89,7 @@ I change the :ref:`call<how to call a function with input>` in the :ref:`asserti
 
   def test_making_a_function_w_return():
 
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
 .. code-block:: python
 
@@ -794,7 +794,7 @@ move positional_arguments function
 
     def test_positional_arguments():
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -821,7 +821,7 @@ move positional_arguments function
         )
         first, last = 'first', 'last'
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -970,7 +970,7 @@ move keyword_arguments function
 
     def test_keyword_arguments():
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1064,7 +1064,7 @@ move keyword_arguments function
         return first_input, last_input
 
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1317,7 +1317,7 @@ move optional_arguments function
 
         first_name, last_name = 'jane', 'doe'
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1479,7 +1479,7 @@ move unknown_number_of_arguments function
 
         a_tuple = (0, 1)
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 

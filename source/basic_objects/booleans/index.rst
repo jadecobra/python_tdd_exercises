@@ -4618,13 +4618,13 @@ the test passes.
 
     # NOTES
 
-  the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` because :ref:`False<test_what_is_false>` is ``0``
+  the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error>` because :ref:`False<test_what_is_false>` is ``0``
 
   .. code-block:: python
 
     ZeroDivisionError: division by zero
 
-* I add :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`ZeroDivisionError<test_catching_zero_division_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 151
@@ -4638,7 +4638,7 @@ the test passes.
     # AssertionError
     # ZeroDivisionError
 
-* I comment the line out then add a note about :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+* I comment the line out then add a note about :ref:`ZeroDivisionError<test_catching_zero_division_error>`
 
   .. code-block:: python
     :lineno-start: 124

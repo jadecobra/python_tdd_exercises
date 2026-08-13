@@ -30,14 +30,14 @@ questions about handling Exceptions
 Questions to think about as I go through the chapter
 
 * :ref:`how can I make sure an Exception is raised?<how to test that an Exception is raised>`
-* :ref:`what causes ModuleNotFoundError?<test_catching_module_not_found_error_in_tests>`
-* :ref:`what causes NameError?<test_catching_name_error_in_tests>`
-* :ref:`what causes AttributeError?<test_catching_attribute_error_in_tests>`
-* :ref:`what causes TypeError?<test_catching_type_error_in_tests>`
-* :ref:`what causes IndexError?<test_catching_index_error_in_tests>`
-* :ref:`what causes KeyError?<test_catching_key_error_in_tests>`
-* :ref:`what causes ZeroDivisionError?<test_catching_zero_division_error_in_tests>`
-* :ref:`what Exception do all the other Exceptions come from<test_catching_exceptions_in_tests>`
+* :ref:`what causes ModuleNotFoundError?<test_catching_module_not_found_error>`
+* :ref:`what causes NameError?<test_catching_name_error>`
+* :ref:`what causes AttributeError?<test_catching_attribute_error>`
+* :ref:`what causes TypeError?<test_catching_type_error>`
+* :ref:`what causes IndexError?<test_catching_index_error>`
+* :ref:`what causes KeyError?<test_catching_key_error>`
+* :ref:`what causes ZeroDivisionError?<test_catching_zero_division_error>`
+* :ref:`what Exception do all the other Exceptions come from<test_catching_exceptions>`
 * :ref:`how can I test an Exception with a specific message<test_catching_exceptions_w_messages>`
 * :ref:`How can a program handle an Exception so it does not stop when one is raised?<how to use try...except...else>`
 
@@ -107,7 +107,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
     :lineno-start: 38
     :emphasize-lines: 5-6
 
-        def test_catching_exceptions_in_tests(self):
+        def test_catching_exceptions(self):
             with self.assertRaises(Exception):
                 raise Exception
 
@@ -140,7 +140,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 
     raise_exception
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
@@ -287,7 +287,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     an_exception_handler
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
@@ -419,7 +419,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     def an_exception_handler(the_input):
         return 'failed'
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
@@ -677,13 +677,13 @@ I ran tests to show that
 * I can use the `assertRaises method`_ to catch :ref:`Exceptions<how to test that an Exception is raised>` in tests and tested these
 
   - :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
-  - :ref:`NameError<test_catching_name_error_in_tests>`
+  - :ref:`NameError<test_catching_name_error>`
   - :ref:`AttributeError<what causes AttributeError?>`
   - :ref:`TypeError<what causes TypeError?>`
   - :ref:`IndexError<test_index_error>`
   - :ref:`KeyError<test_key_error>`
-  - :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
-  - :ref:`The Mother of all Exceptions<test_catching_exceptions_in_tests>`
+  - :ref:`ZeroDivisionError<test_catching_zero_division_error>`
+  - :ref:`The Mother of all Exceptions<test_catching_exceptions>`
 
 * I can use assertRaisesRegex_ to catch :ref:`Exceptions<how to test that an Exception is raised>` with messages
 * I can use :ref:`try..except...else<how to use try...except...else>` to make programs that can choose what to do when :ref:`Exceptions<how to test that an Exception is raised>` are raised

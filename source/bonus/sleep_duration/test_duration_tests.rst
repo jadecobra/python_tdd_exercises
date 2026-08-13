@@ -47,7 +47,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     get_datetime
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
@@ -128,7 +128,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     def get_datetime(the_input):
         return datetime.datetime(2006, 11, 21, 19, 8)
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
@@ -191,7 +191,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     duration
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
@@ -535,7 +535,7 @@ review
 The challenge was to write a program_ that makes the tests in ``test_sleep_duration.py`` pass without looking at them. I wrote something that returns the difference between a given ``wake_time`` and ``sleep_time`` by following these :ref:`Exceptions<how to test that an Exception is raised>` from the terminal_
 
 * :ref:`AttributeError<what causes AttributeError?>`
-* :ref:`NameError<test_catching_name_error_in_tests>`
+* :ref:`NameError<test_catching_name_error>`
 * :ref:`TypeError<what causes TypeError?>`
 * :ref:`AssertionError<what causes AssertionError?>`
 * SyntaxError_

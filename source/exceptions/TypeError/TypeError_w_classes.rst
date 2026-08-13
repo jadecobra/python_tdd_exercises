@@ -150,7 +150,7 @@ because ``AClass`` is not defined in ``type_error.py``.
         # pass
         method_00
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -326,7 +326,7 @@ because ``AClass`` is not defined in ``type_error.py``.
         @staticmethod
         def method_02(): return self.method_01()
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -400,7 +400,7 @@ because ``AClass`` is not defined in ``type_error.py``.
         def method_03():
             return method_02()
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -553,7 +553,7 @@ because ``AClass`` is not defined in ``type_error.py``.
         def method_05(self):
             return method_02()
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 

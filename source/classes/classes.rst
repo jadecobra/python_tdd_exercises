@@ -1166,7 +1166,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
                 f' and I am {age}'
             )
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -2896,7 +2896,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 

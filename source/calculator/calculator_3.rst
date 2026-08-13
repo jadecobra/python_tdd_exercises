@@ -8,7 +8,7 @@
 how to make a calculator 3
 #################################################################################
 
-I want the :ref:`divide function<test_division>` in the :ref:`calculator project<how to make a calculator>` to return a message when ``0`` is given as the second number, so that the program can continue to work after :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` is raised.
+I want the :ref:`divide function<test_division>` in the :ref:`calculator project<how to make a calculator>` to return a message when ``0`` is given as the second number, so that the program can continue to work after :ref:`ZeroDivisionError<test_catching_zero_division_error>` is raised.
 
 ----
 
@@ -98,7 +98,7 @@ I change the assertRaises_ to :ref:`assertEqual method<test_assert_equal>` in :r
 
   # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error>`
 
 .. code-block:: python
 
@@ -112,7 +112,7 @@ the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero
 
 ----
 
-* I add :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_calculator.py``
+* I add :ref:`ZeroDivisionError<test_catching_zero_division_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 58
@@ -150,7 +150,7 @@ the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero
 
 ----
 
-There is a problem, the test uses random numbers, which means at some point ``random_second_number`` will have a value of ``0`` and the first :ref:`assertion<what is an assertion?>` of :ref:`test_division` will raise :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+There is a problem, the test uses random numbers, which means at some point ``random_second_number`` will have a value of ``0`` and the first :ref:`assertion<what is an assertion?>` of :ref:`test_division` will raise :ref:`ZeroDivisionError<test_catching_zero_division_error>`
 
 * I add a :ref:`return statement<the return statement>` to the ``a_random_number`` :ref:`function<what is a function?>` in ``test_calculator.py`` to make it happen
 
@@ -162,7 +162,7 @@ There is a problem, the test uses random numbers, which means at some point ``ra
         return 0
         return random.triangular(-1000.0, 1000.0)
 
-  the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error>`
 
   .. code-block:: python
     :emphasize-lines: 7
@@ -257,13 +257,13 @@ I ran tests to show that
 * I can use the `assertRaises method`_ to catch :ref:`Exceptions<how to test that an Exception is raised>` in tests and tested these
 
   - :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
-  - :ref:`NameError<test_catching_name_error_in_tests>`
+  - :ref:`NameError<test_catching_name_error>`
   - :ref:`AttributeError<what causes AttributeError?>`
   - :ref:`TypeError<what causes TypeError?>`
   - :ref:`IndexError<test_index_error>`
   - :ref:`KeyError<test_key_error>`
-  - :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
-  - :ref:`The Mother of all Exceptions<test_catching_exceptions_in_tests>`
+  - :ref:`ZeroDivisionError<test_catching_zero_division_error>`
+  - :ref:`The Mother of all Exceptions<test_catching_exceptions>`
 
 * I can use assertRaisesRegex_ to catch :ref:`Exceptions<how to test that an Exception is raised>` with messages
 * I can use :ref:`try..except...else<how to use try...except...else>` to make programs that can choose what to do when :ref:`Exceptions<how to test that an Exception is raised>` are raised

@@ -98,7 +98,7 @@ I change the :ref:`call<how to call a function with input>` to ``function_00`` i
 
   def test_type_error_w_keyword_arguments():
 
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
 .. code-block:: python
 

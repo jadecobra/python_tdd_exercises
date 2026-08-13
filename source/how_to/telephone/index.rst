@@ -307,7 +307,7 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
     # Exceptions seen
     # AssertionError
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -315,7 +315,7 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
 
   because I have not :ref:`defined the function<how to make a function that takes input>` yet.
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 5
@@ -499,7 +499,7 @@ Can I pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -2359,7 +2359,7 @@ Here are the tests I ran to see what happens when I pass :ref:`objects<everythin
 I also saw these :ref:`Exceptions<how to test that an Exception is raised>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
-* :ref:`NameError<test_catching_name_error_in_tests>`
+* :ref:`NameError<test_catching_name_error>`
 * :ref:`TypeError<what causes TypeError?>`
 
 ----

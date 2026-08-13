@@ -471,13 +471,13 @@ test_home_page
         def test_home_page(self):
             client = src.website.app.test_client()
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
     NameError: name 'src' is not defined
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 4
@@ -884,7 +884,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
   - ``flask.request.form.get(NAME)`` uses the :ref:`get method<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` of the ``NAME`` :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>` when the user makes a request
   - ``<h2>SMALLER HEADING</h2>`` tells the computer to make ``SMALLER HEADING`` a heading that is smaller than ``h1`` headings
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
@@ -1842,7 +1842,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: '<!doctype html>\n<html lang=en>\n<title>5[225 chars]p>\n' != 'brmph?! I cannot divide by 0.
 
-and in the traceback it shows the :ref:`AssertionError<what causes AssertionError?>` was caused by :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+and in the traceback it shows the :ref:`AssertionError<what causes AssertionError?>` was caused by :ref:`ZeroDivisionError<test_catching_zero_division_error>`
 
 .. code-block:: python
 

@@ -397,7 +397,7 @@ I want ``can_vote`` to return
 
         def say_hello(self):
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -960,7 +960,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         def can_vote(self):
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 

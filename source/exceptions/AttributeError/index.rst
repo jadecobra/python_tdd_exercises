@@ -434,7 +434,7 @@ test_attribute_error_w_variables
 
     variable_00
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
@@ -442,7 +442,7 @@ test_attribute_error_w_variables
 
   because I used a name that is not defined in this file_
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_attribute_error.py``
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 8
@@ -522,7 +522,7 @@ test_attribute_error_w_variables
     variable_00 = None
     variable_01
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
@@ -1570,7 +1570,7 @@ I also saw these :ref:`Exceptions<how to test that an Exception is raised>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
-* :ref:`NameError<test_catching_name_error_in_tests>`
+* :ref:`NameError<test_catching_name_error>`
 * :ref:`TypeError<what causes TypeError?>`
 
 My problem with the tests is that they all show the correct way to use :ref:`attributes<what is a class attribute?>` I made in ``attribute_error.py``. If someone reads the file_ or runs it, there is no way for them to know how the code relates to :ref:`AttributeError<what causes AttributeError?>` unless they go through the process with me, there has to be a better way.

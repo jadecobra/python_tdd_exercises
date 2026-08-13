@@ -56,14 +56,14 @@ test_exceptions
 *********************************************************************************
 
 #. :ref:`test_module_not_found_error`
-#. :ref:`test_catching_module_not_found_error_in_tests`
-#. :ref:`test_catching_name_error_in_tests`
-#. :ref:`test_catching_attribute_error_in_tests`
-#. :ref:`test_catching_type_error_in_tests`
-#. :ref:`test_catching_index_error_in_tests`
-#. :ref:`test_catching_key_error_in_tests`
-#. :ref:`test_catching_zero_division_error_in_tests`
-#. :ref:`test_catching_exceptions_in_tests`
+#. :ref:`test_catching_module_not_found_error`
+#. :ref:`test_catching_name_error`
+#. :ref:`test_catching_attribute_error`
+#. :ref:`test_catching_type_error`
+#. :ref:`test_catching_index_error`
+#. :ref:`test_catching_key_error`
+#. :ref:`test_catching_zero_division_error`
+#. :ref:`test_catching_exceptions`
 #. :ref:`test_catching_exceptions_w_messages`
 #. :ref:`test_catching_failure`
 #. :ref:`test_catching_success`

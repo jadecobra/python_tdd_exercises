@@ -313,14 +313,14 @@ I want to see what comes with the `unittest module`_.
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
     NameError: name 'unittest' is not defined.
                 Did you forget to import 'unittest'?
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 7
@@ -3341,7 +3341,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
         @staticmethod
         def test_dir_unittest_testcase():
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -3400,7 +3400,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
         @staticmethod
         def test_assert_is_not():
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -3436,7 +3436,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
         @staticmethod
         def test_assert_is():
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -3469,7 +3469,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
         @staticmethod
         def test_assert_not_equal():
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -3502,7 +3502,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
         @staticmethod
         def test_assert_equal():
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -3535,7 +3535,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
         @staticmethod
         def test_assert_not_is_instance():
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -3572,7 +3572,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
         @staticmethod
         def test_assert_is_instance():
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -3610,7 +3610,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
         @staticmethod
         def test_assert_not_is_subclass():
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -3647,7 +3647,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
         @staticmethod
         def test_assert_is_subclass():
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -3682,7 +3682,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 

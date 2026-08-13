@@ -2144,7 +2144,7 @@ I want the calculator to show the number when I press a button
 
     ================== 26 failed, 12 passed in A.BCs ===================
 
-  the terminal_ for the application shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ for the application shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -2243,7 +2243,7 @@ I want the calculator to show the number when I press a button
             on_click=show, args=[display, '0'],
         )
 
-  the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>` for 20 sub tests and the terminal_ for the application shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>` for 20 sub tests and the terminal_ for the application shows :ref:`NameError<test_catching_name_error>`
 
 * I add ``display`` to the :ref:`function<what is a function?>` signature of the ``add_buttons_to_column_2`` :ref:`function<what is a function?>`
 
@@ -2312,7 +2312,7 @@ I want the calculator to show the number when I press a button
     ================== 14 failed, 12 passed in X.YZs ===================
 
 
-  and the terminal_ for the application shows :ref:`NameError<test_catching_name_error_in_tests>`
+  and the terminal_ for the application shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 

@@ -85,7 +85,7 @@ I add an :ref:`assertion<what is an assertion?>` to :ref:`test_joe` in ``test_pe
 
     def test_jane():
 
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
 .. code-block:: python
 
@@ -245,7 +245,7 @@ the test passes.
 
     def joe():
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -421,7 +421,7 @@ the test passes.
 
     def joe():
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1465,7 +1465,7 @@ the test passes.
 
     def test_jane():
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1879,7 +1879,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
     def test_jane():
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -2835,7 +2835,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
     factory
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -3018,7 +3018,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
         ):
         return 'mary, public, F, 2000'
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -3394,7 +3394,7 @@ review
 * I saw the following :ref:`Exceptions<how to test that an Exception is raised>`
 
   - :ref:`AssertionError<what causes AssertionError?>`
-  - :ref:`NameError<test_catching_name_error_in_tests>`
+  - :ref:`NameError<test_catching_name_error>`
   - :ref:`TypeError<what causes TypeError?>`
   - :ref:`AttributeError<what causes AttributeError?>`
 

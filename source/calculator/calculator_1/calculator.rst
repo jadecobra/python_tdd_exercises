@@ -318,7 +318,7 @@ test_addition
 
     in other words, ``self.assertEqual(src.calculator.add(0, 1), 1)`` checks if the result of calling ``src.calculator.add`` with ``0`` and ``1`` as input is equal to ``1``
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -334,7 +334,7 @@ test_addition
 
 ----
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_calculator.py``
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 17
@@ -385,7 +385,7 @@ test_addition
 
     add
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1388,7 +1388,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     subtract
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -2036,7 +2036,7 @@ What other :ref:`Exceptions<how to test that an Exception is raised>` do you thi
 
     subtract
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -2286,7 +2286,7 @@ I wrote these tests for a program_ that can :ref:`add<test_addition>`, :ref:`sub
 I also saw these :ref:`Exceptions<how to test that an Exception is raised>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
-* :ref:`NameError<test_catching_name_error_in_tests>`
+* :ref:`NameError<test_catching_name_error>`
 * :ref:`AttributeError<what causes AttributeError?>`
 * :ref:`TypeError<what causes TypeError?>`
 

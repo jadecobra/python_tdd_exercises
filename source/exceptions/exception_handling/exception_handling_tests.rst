@@ -7,6 +7,10 @@
 .. _NameError: https://docs.python.org/3/library/exceptions.html#NameError
 .. _ZeroDivisionError: https://docs.python.org/3/library/exceptions.html#ZeroDivisionError
 .. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
+.. _assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
+.. _assertRaises method: assertRaises_
+.. _unittest.TestCase.assertRaises: assertRaises_
+.. _unittest.TestCase.assertRaisesRegex: assertRaisesRegex_
 .. _exec: https://docs.python.org/3/library/functions.html#exec
 .. _exec built-in function: exec
 
@@ -56,15 +60,19 @@ questions about testing Exceptions
 
 Questions to think about as I go through the chapter
 
+* :ref:`how can I handle an Exception when it happens?<how to handle Exceptions>`
 * :ref:`how can I make sure an Exception is raised?<how to test that an Exception is raised>`
-* :ref:`what causes ModuleNotFoundError?<test_catching_module_not_found_error_in_tests>`
-* :ref:`what causes NameError?<test_catching_name_error_in_tests>`
-* :ref:`what causes AttributeError?<test_catching_attribute_error_in_tests>`
-* :ref:`what causes TypeError?<test_catching_type_error_in_tests>`
-* :ref:`what causes IndexError?<test_catching_index_error_in_tests>`
-* :ref:`what causes KeyError?<test_catching_key_error_in_tests>`
-* :ref:`what causes ZeroDivisionError?<test_catching_zero_division_error_in_tests>`
-* :ref:`what Exception do all the other Exceptions come (inherit) from?<test_catching_exceptions_in_tests>`
+* :ref:`what causes ModuleNotFoundError?<test_catching_module_not_found_error>`
+* :ref:`what causes NameError?<test_catching_name_error>`
+* :ref:`what causes AttributeError?<test_catching_attribute_error>`
+* :ref:`what causes TypeError?<test_catching_type_error>`
+* :ref:`what causes IndexError?<test_catching_index_error>`
+* :ref:`what causes KeyError?<test_catching_key_error>`
+* :ref:`what causes ZeroDivisionError?<test_catching_zero_division_error>`
+* :ref:`what Exception do all the other Exceptions come (inherit) from?<test_catching_exceptions>`
+* :ref:`what is the exec function?<the exec function>`
+* :ref:`why use one exception handler for one exception?<one exception one exception handler>`
+* :ref:`how can I use the else clause when handling Exceptions?<how to use try...except..else>`
 
 ----
 
@@ -165,7 +173,7 @@ start the project
 ----
 
 *********************************************************************************
-test_catching_module_not_found_error_in_tests
+test_catching_module_not_found_error
 *********************************************************************************
 
 :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` is :ref:`raised<how to raise an Exception>` when I try to import a :ref:`module<what is a module?>` that does NOT exist.
@@ -192,7 +200,7 @@ test_catching_module_not_found_error_in_tests
 
         def test_failure(self):
 
-* I change :ref:`test_failure` to ``test_catching_module_not_found_error_in_tests`` with an `import statement`_ in ``test_exceptions.py``
+* I change :ref:`test_failure` to ``test_catching_module_not_found_error`` with an `import statement`_ in ``test_exceptions.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -200,7 +208,7 @@ test_catching_module_not_found_error_in_tests
 
     class TestExceptions(unittest.TestCase):
 
-        def test_catching_module_not_found_error_in_tests(self):
+        def test_catching_module_not_found_error(self):
             import does_not_exist
 
 
@@ -237,7 +245,7 @@ The `try statement`_ is like an :ref:`if statement<if statements>` for :ref:`Exc
 * ``try`` **something**
 * ``except`` - if **something** raises an :ref:`Exception<how to test that an Exception is raised>` do something else
 
-If the statement in the :ref:`try clause<how to handle Exceptions>` raises the :ref:`Exception<how to test that an Exception is raised>` in the :ref:`except clause<how to handle Exceptions>`, Python_ runs the code in the :ref:`except block<how to handle Exceptions>`
+If the statement in the :ref:`try clause<how to handle Exceptions>` :ref:`raises the Exception<how to raise an Exception>` in the :ref:`except clause<how to handle Exceptions>`, Python_ runs the code in the :ref:`except block<how to handle Exceptions>`
 
 .. code-block:: shell
 
@@ -263,13 +271,13 @@ If the statement in the :ref:`try clause<how to handle Exceptions>` block works,
 
 ----
 
-* I add a `try statement`_ to :ref:`test_catching_module_not_found_error_in_tests` to :ref:`handle ModuleNotFoundError<how to handle Exceptions>`
+* I add a `try statement`_ to :ref:`test_catching_module_not_found_error` to :ref:`handle ModuleNotFoundError<how to handle Exceptions>`
 
   .. code-block:: python
     :lineno-start: 6
     :emphasize-lines: 2-5
 
-        def test_catching_module_not_found_error_in_tests(self):
+        def test_catching_module_not_found_error(self):
             try:
                 import does_not_exist
             except ModuleNotFoundError:
@@ -293,14 +301,14 @@ If the statement in the :ref:`try clause<how to handle Exceptions>` block works,
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_catching_module_not_found_error_in_tests'
+    'add test_catching_module_not_found_error'
 
 :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` is :ref:`raised<how to raise an Exception>` when I try to import a :ref:`module<what is a module?>` that does NOT exist.
 
 ----
 
 *********************************************************************************
-test_catching_name_error_in_tests
+test_catching_name_error
 *********************************************************************************
 
 NameError_ is :ref:`raised<how to raise an Exception>` when I try to use a name that is not defined in the file_ I am working in.
@@ -313,7 +321,7 @@ NameError_ is :ref:`raised<how to raise an Exception>` when I try to use a name 
 
 ----
 
-* I add a test for :ref:`NameError<test_catching_name_error_in_tests>`
+* I add a test for :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -322,7 +330,7 @@ NameError_ is :ref:`raised<how to raise an Exception>` when I try to use a name 
             except ModuleNotFoundError:
                 pass
 
-        def test_catching_name_error_in_tests(self):
+        def test_catching_name_error(self):
             not_defined
 
 
@@ -355,13 +363,13 @@ NameError_ is :ref:`raised<how to raise an Exception>` when I try to use a name 
 
 ----
 
-* I add a `try statement`_ to :ref:`test_catching_name_error_in_tests` to :ref:`handle NameError<how to handle Exceptions>`
+* I add a `try statement`_ to :ref:`test_catching_name_error` to :ref:`handle NameError<how to handle Exceptions>`
 
   .. code-block:: python
     :lineno-start: 12
     :emphasize-lines: 2-5
 
-        def test_catching_name_error_in_tests(self):
+        def test_catching_name_error(self):
             try:
                 not_defined
             except NameError:
@@ -370,7 +378,7 @@ NameError_ is :ref:`raised<how to raise an Exception>` when I try to use a name 
 
     # Exceptions seen
 
-  the test passes because ``not_defined`` :ref:`raises NameError<test_catching_name_error_in_tests>`.
+  the test passes because ``not_defined`` :ref:`raises NameError<test_catching_name_error>`.
 
   .. code-block:: shell
 
@@ -385,14 +393,14 @@ NameError_ is :ref:`raised<how to raise an Exception>` when I try to use a name 
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_catching_name_error_in_tests'
+    'add test_catching_name_error'
 
 NameError_ is :ref:`raised<how to raise an Exception>` when I try to use a name that is not defined in the file_.
 
 ----
 
 *********************************************************************************
-test_catching_attribute_error_in_tests
+test_catching_attribute_error
 *********************************************************************************
 
 :ref:`AttributeError<what causes AttributeError?>` is :ref:`raised<how to raise an Exception>` when I try to get something that does NOT exist from an :ref:`object<everything is an object>` that exists.
@@ -414,13 +422,13 @@ test_catching_attribute_error_in_tests
             except NameError:
                 pass
 
-        def test_catching_attribute_error_in_tests(self):
+        def test_catching_attribute_error(self):
             src.exceptions.does_not_exist
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
@@ -470,13 +478,13 @@ test_catching_attribute_error_in_tests
 
 ----
 
-* I add a `try statement`_ to :ref:`test_catching_attribute_error_in_tests` to :ref:`handle AttributeError<how to handle Exceptions>`
+* I add a `try statement`_ to :ref:`test_catching_attribute_error` to :ref:`handle AttributeError<how to handle Exceptions>`
 
   .. code-block:: python
     :lineno-start: 19
     :emphasize-lines: 2-5
 
-        def test_catching_attribute_error_in_tests(self):
+        def test_catching_attribute_error(self):
             try:
                 src.exceptions.does_not_exist
             except AttributeError:
@@ -503,14 +511,14 @@ test_catching_attribute_error_in_tests
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_catching_attribute_error_in_tests'
+    'add test_catching_attribute_error'
 
 :ref:`AttributeError<what causes AttributeError?>` is :ref:`raised<how to raise an Exception>` when I try to get something that does NOT exist from an :ref:`object<everything is an object>` that exists.
 
 ----
 
 *********************************************************************************
-test_catching_type_error_in_tests
+test_catching_type_error
 *********************************************************************************
 
 :ref:`TypeError<what causes TypeError?>` is :ref:`raised<how to raise an Exception>` when I try to use an :ref:`object<everything is an object>` in a way that it cannot be used.
@@ -532,7 +540,7 @@ test_catching_type_error_in_tests
             except AttributeError:
                 pass
 
-        def test_catching_type_error_in_tests(self):
+        def test_catching_type_error(self):
             src.exceptions.function_name('the input')
 
 
@@ -555,7 +563,7 @@ test_catching_type_error_in_tests
 
     function_name
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: shell
 
@@ -600,13 +608,13 @@ test_catching_type_error_in_tests
 
 ----
 
-I add a `try statement`_ to :ref:`test_catching_type_error_in_tests` to :ref:`handle TypeError<how to handle Exceptions>`
+I add a `try statement`_ to :ref:`test_catching_type_error` to :ref:`handle TypeError<how to handle Exceptions>`
 
 .. code-block:: python
   :lineno-start: 25
   :emphasize-lines: 2-5
 
-      def test_catching_type_error_in_tests(self):
+      def test_catching_type_error(self):
           try:
               src.exceptions.function_name('the input')
           except TypeError:
@@ -687,7 +695,7 @@ The :ref:`try statement<how to handle Exceptions>` has an `else clause`_ that I 
     :lineno-start: 25
     :emphasize-lines: 6-7
 
-        def test_catching_type_error_in_tests(self):
+        def test_catching_type_error(self):
             try:
                 src.exceptions.function_name('the input')
             except TypeError:
@@ -737,7 +745,7 @@ The :ref:`try statement<how to handle Exceptions>` has an `else clause`_ that I 
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_catching_type_error_in_tests'
+    'add test_catching_type_error'
 
 :ref:`TypeError<what causes TypeError?>` is :ref:`raised<how to raise an Exception>` when I try to use an :ref:`object<everything is an object>` in a way that it cannot be used.
 
@@ -747,13 +755,13 @@ The :ref:`try statement<how to handle Exceptions>` has an `else clause`_ that I 
 add else clause to try statements
 *********************************************************************************
 
-* I add the `else clause`_ to :ref:`test_catching_attribute_error_in_tests` to make sure it raises :ref:`AssertionError<what causes AssertionError?>` if :ref:`AttributeError<what causes AttributeError?>` is not :ref:`raised<how to raise an Exception>` by the code in the :ref:`try block<how to use try...except...else>`
+* I add the `else clause`_ to :ref:`test_catching_attribute_error` to make sure it raises :ref:`AssertionError<what causes AssertionError?>` if :ref:`AttributeError<what causes AttributeError?>` is not :ref:`raised<how to raise an Exception>` by the code in the :ref:`try block<how to use try...except...else>`
 
   .. code-block:: python
     :lineno-start: 19
     :emphasize-lines: 6-7
 
-        def test_catching_attribute_error_in_tests(self):
+        def test_catching_attribute_error(self):
             try:
                 src.exceptions.does_not_exist
             except AttributeError:
@@ -761,17 +769,17 @@ add else clause to try statements
             else:
                 raise AssertionError
 
-        def test_catching_type_error_in_tests(self):
+        def test_catching_type_error(self):
 
   the test is still green.
 
-* I add the `else clause`_ to :ref:`test_catching_name_error_in_tests` to make sure it raises :ref:`AssertionError<what causes AssertionError?>` if :ref:`NameError<test_catching_name_error_in_tests>` is not :ref:`raised<how to raise an Exception>` by the code in the :ref:`try block<how to use try...except...else>`
+* I add the `else clause`_ to :ref:`test_catching_name_error` to make sure it raises :ref:`AssertionError<what causes AssertionError?>` if :ref:`NameError<test_catching_name_error>` is not :ref:`raised<how to raise an Exception>` by the code in the :ref:`try block<how to use try...except...else>`
 
   .. code-block:: python
     :lineno-start: 13
     :emphasize-lines: 6-7
 
-        def test_catching_name_error_in_tests(self):
+        def test_catching_name_error(self):
             try:
                 not_defined
             except NameError:
@@ -779,17 +787,17 @@ add else clause to try statements
             else:
                 raise AssertionError
 
-        def test_catching_attribute_error_in_tests(self):
+        def test_catching_attribute_error(self):
 
   still green.
 
-* I add the `else clause`_ to :ref:`test_catching_module_not_found_error_in_tests` to make sure it raises :ref:`AssertionError<what causes AssertionError?>` if :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` is not :ref:`raised<how to raise an Exception>` by the code in the :ref:`try block<how to use try...except...else>`
+* I add the `else clause`_ to :ref:`test_catching_module_not_found_error` to make sure it raises :ref:`AssertionError<what causes AssertionError?>` if :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` is not :ref:`raised<how to raise an Exception>` by the code in the :ref:`try block<how to use try...except...else>`
 
   .. code-block:: python
     :lineno-start: 7
     :emphasize-lines: 6-7
 
-        def test_catching_module_not_found_error_in_tests(self):
+        def test_catching_module_not_found_error(self):
             try:
                 import does_not_exist
             except ModuleNotFoundError:
@@ -797,7 +805,7 @@ add else clause to try statements
             else:
                 raise AssertError
 
-        def test_catching_name_error_in_tests(self):
+        def test_catching_name_error(self):
 
   green.
 
@@ -851,15 +859,15 @@ The :ref:`try statements<how to use try...except...else>` all look the same, the
             else:
                 raise AssertionError
 
-        def test_catching_module_not_found_error_in_tests(self):
+        def test_catching_module_not_found_error(self):
 
-* I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_module_not_found_error_in_tests`
+* I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_module_not_found_error`
 
   .. code-block:: python
     :lineno-start: 16
     :emphasize-lines: 2-4
 
-        def test_catching_module_not_found_error_in_tests(self):
+        def test_catching_module_not_found_error(self):
             self.assert_raises(
                 import does_not_exist, ModuleNotFoundError
             )
@@ -896,13 +904,13 @@ The :ref:`try statements<how to use try...except...else>` all look the same, the
 
 ----
 
-* I change the ``import does_not_exist`` line in :ref:`test_catching_module_not_found_error_in_tests` to a string_
+* I change the ``import does_not_exist`` line in :ref:`test_catching_module_not_found_error` to a string_
 
   .. code-block:: python
     :lineno-start: 16
     :emphasize-lines: 3
 
-        def test_catching_module_not_found_error_in_tests(self):
+        def test_catching_module_not_found_error(self):
             self.assert_raises(
                 'import does_not_exist', ModuleNotFoundError
             )
@@ -913,7 +921,7 @@ The :ref:`try statements<how to use try...except...else>` all look the same, the
             else:
                 raise AssertError
 
-        def test_catching_name_error_in_tests(self):
+        def test_catching_name_error(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -961,7 +969,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
             else:
                 raise AssertionError
 
-        def test_catching_module_not_found_error_in_tests(self):
+        def test_catching_module_not_found_error(self):
 
   the test passes, showing that ``import does_not_exist`` raises :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` which happens when I try to import a :ref:`module<what is a module?>` that does NOT exist.
 
@@ -986,43 +994,43 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 
 ----
 
-* I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_module_not_found_error_in_tests` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
+* I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_module_not_found_error` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
 
   .. code-block:: python
     :lineno-start: 16
 
-        def test_catching_module_not_found_error_in_tests(self):
+        def test_catching_module_not_found_error(self):
             self.assert_raises(
                 import does_not_exist', ModuleNotFoundError
             )
 
-        def test_catching_name_error_in_tests(self):
+        def test_catching_name_error(self):
 
-* I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_name_error_in_tests`
+* I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_name_error`
 
   .. code-block:: python
     :lineno-start: 21
     :emphasize-lines: 2
 
-    def test_catching_name_error_in_tests(self):
+    def test_catching_name_error(self):
         self.assert_raises('not_defined', ValueError)
         try:
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
     NameError: name 'not_defined' is not defined
 
-  because :ref:`NameError<test_catching_name_error_in_tests>` is not :ref:`TypeError<what causes TypeError?>` or a :ref:`child<how to test if something is a subclass>` of :ref:`TypeError<what causes TypeError?>`.
+  because :ref:`NameError<test_catching_name_error>` is not :ref:`TypeError<what causes TypeError?>` or a :ref:`child<how to test if something is a subclass>` of :ref:`TypeError<what causes TypeError?>`.
 
-* I change the expected :ref:`Exception<how to test that an Exception is raised>` to :ref:`NameError<test_catching_name_error_in_tests>`
+* I change the expected :ref:`Exception<how to test that an Exception is raised>` to :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
     :lineno-start: 21
     :emphasize-lines: 2
 
-        def test_catching_name_error_in_tests(self):
+        def test_catching_name_error(self):
             self.assert_raises('not_defined', NameError)
             try:
                 not_defined
@@ -1031,27 +1039,27 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
             else:
                 raise AssertionError
 
-        def test_catching_attribute_error_in_tests(self):
+        def test_catching_attribute_error(self):
 
-  the test passes, showing that ``not_defined`` raises :ref:`NameError<test_catching_name_error_in_tests>` which happens when I try to use a name that is not defined in the file_.
+  the test passes, showing that ``not_defined`` raises :ref:`NameError<test_catching_name_error>` which happens when I try to use a name that is not defined in the file_.
 
-* I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_name_error_in_tests` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
+* I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_name_error` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
 
   .. code-block:: python
     :lineno-start: 21
 
-        def test_catching_name_error_in_tests(self):
+        def test_catching_name_error(self):
             self.assert_raises('not_defined', NameError)
 
-        def test_catching_attribute_error_in_tests(self):
+        def test_catching_attribute_error(self):
 
-* I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_attribute_error_in_tests`
+* I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_attribute_error`
 
   .. code-block:: python
     :lineno-start: 24
     :emphasize-lines: 2-4
 
-        def test_catching_attribute_error_in_tests(self):
+        def test_catching_attribute_error(self):
             self.assert_raises(
                 'src.exceptions.does_not_exist', NameError
             )
@@ -1064,7 +1072,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
     AttributeError: module 'src.exceptions'
                     has no attribute 'does_not_exist'
 
-  because :ref:`AttributeError<what causes AttributeError?>` is not :ref:`NameError<test_catching_name_error_in_tests>` or a :ref:`child<how to test if something is a subclass>` of :ref:`NameError<test_catching_name_error_in_tests>`.
+  because :ref:`AttributeError<what causes AttributeError?>` is not :ref:`NameError<test_catching_name_error>` or a :ref:`child<how to test if something is a subclass>` of :ref:`NameError<test_catching_name_error>`.
 
 * I change the expected :ref:`Exception<how to test that an Exception is raised>` to :ref:`AttributeError<what causes AttributeError?>`
 
@@ -1072,7 +1080,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
     :lineno-start: 24
     :emphasize-lines: 3
 
-        def test_catching_attribute_error_in_tests(self):
+        def test_catching_attribute_error(self):
             self.assert_raises(
                 'src.exceptions.does_not_exist', AttributeError
             )
@@ -1083,29 +1091,29 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
             else:
                 raise AssertionError
 
-        def test_catching_type_error_in_tests(self):
+        def test_catching_type_error(self):
 
   the test passes, showing that ``src.exceptions.does_not_exist`` raises :ref:`AttributeError<what causes AttributeError?>` which happens when I try to get something that does NOT exist from an :ref:`object<everything is an object>` that exists.
 
-* I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_attribute_error_in_tests` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
+* I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_attribute_error` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
 
   .. code-block:: python
     :lineno-start: 24
 
-        def test_catching_attribute_error_in_tests(self):
+        def test_catching_attribute_error(self):
             self.assert_raises(
                 'src.exceptions.does_not_exist', AttributeError
             )
 
-        def test_catching_type_error_in_tests(self):
+        def test_catching_type_error(self):
 
-* I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_type_error_in_tests`
+* I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_type_error`
 
   .. code-block:: python
     :lineno-start: 29
     :emphasize-lines: 2-5
 
-        def test_catching_type_error_in_tests(self):
+        def test_catching_type_error(self):
             self.assert_raises(
                 "src.exceptions.function_name('the input')",
                 AttributeError
@@ -1127,7 +1135,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
     :lineno-start: 29
     :emphasize-lines: 4
 
-        def test_catching_type_error_in_tests(self):
+        def test_catching_type_error(self):
             self.assert_raises(
                 "src.exceptions.function_name('the input')",
                 TypeError
@@ -1144,12 +1152,12 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 
   the test passes, showing that ``src.exceptions.function_name('the input')`` raises :ref:`TypeError<what cause TypeError?>` which happens when I try to use an :ref:`object<everything is an object>` in a way that it cannot be used.
 
-* I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_type_error_in_tests` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
+* I remove the :ref:`try block<how to use try...except...else>` from :ref:`test_catching_type_error` because it is now a repetition of the :ref:`assert_raises method<extract assert_raises method>`
 
   .. code-block:: python
     :lineno-start: 29
 
-        def test_catching_type_error_in_tests(self):
+        def test_catching_type_error(self):
             self.assert_raises(
                 "src.exceptions.function_name('the input')",
                 TypeError
@@ -1169,7 +1177,7 @@ I can use the `exec built-in function`_ to run any Python_ code I pass as a stri
 ----
 
 *********************************************************************************
-test_catching_index_error_in_tests
+test_catching_index_error
 *********************************************************************************
 
 :ref:`IndexError<test_index_error>` is :ref:`raised<how to raise an Exception>` when I try to :ref:`index a list<test_index_returns_first_position_of_item_in_a_list>`, tuple_ or string_ with a number that is
@@ -1191,13 +1199,13 @@ test_catching_index_error_in_tests
     :lineno-start: 29
     :emphasize-lines: 7-8
 
-        def test_catching_type_error_in_tests(self):
+        def test_catching_type_error(self):
             self.assert_raises(
                 "src.exceptions.function_name('the input')",
                 TypeError
             )
 
-        def test_catching_index_error_in_tests(self):
+        def test_catching_index_error(self):
             'a string'[0]
 
 
@@ -1211,7 +1219,7 @@ test_catching_index_error_in_tests
     :lineno-start: 35
     :emphasize-lines: 2
 
-        def test_catching_index_error_in_tests(self):
+        def test_catching_index_error(self):
             'a string'[7]
 
 
@@ -1225,7 +1233,7 @@ test_catching_index_error_in_tests
     :lineno-start: 35
     :emphasize-lines: 2
 
-        def test_catching_index_error_in_tests(self):
+        def test_catching_index_error(self):
             'a string'[8]
 
 
@@ -1263,13 +1271,13 @@ test_catching_index_error_in_tests
 
 ----
 
-I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_index_error_in_tests`
+I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`test_catching_index_error`
 
 .. code-block:: python
   :lineno-start: 35
   :emphasize-lines: 2
 
-      def test_catching_index_error_in_tests(self):
+      def test_catching_index_error(self):
           self.assert_raises("'a string'[8]", IndexError)
 
 
@@ -1291,7 +1299,7 @@ I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`tes
     :lineno-start: 35
     :emphasize-lines: 3
 
-        def test_catching_index_error_in_tests(self):
+        def test_catching_index_error(self):
             self.assert_raises("'a string'[8]", IndexError)
             'a string'[-1]
 
@@ -1306,7 +1314,7 @@ I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`tes
     :lineno-start: 35
     :emphasize-lines: 3
 
-        def test_catching_index_error_in_tests(self):
+        def test_catching_index_error(self):
             self.assert_raises("'a string'[8]", IndexError)
             'a string'[-8]
 
@@ -1321,7 +1329,7 @@ I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`tes
     :lineno-start: 35
     :emphasize-lines: 3
 
-        def test_catching_index_error_in_tests(self):
+        def test_catching_index_error(self):
             self.assert_raises("'a string'[8]", IndexError)
             'a string'[-9]
 
@@ -1340,7 +1348,7 @@ I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`tes
     :lineno-start: 35
     :emphasize-lines: 3
 
-        def test_catching_index_error_in_tests(self):
+        def test_catching_index_error(self):
             self.assert_raises("'a string'[8]", IndexError)
             self.assert_raises("'a string'[-9]", IndexError)
 
@@ -1349,13 +1357,13 @@ I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`tes
 
   the test is green again. I cannot use a number that is smaller than the negative of the total number of items in the string_ to :ref:`index the string<test_index_returns_first_position_of_item_in_a_list>`.
 
-* I add a tuple_ to :ref:`test_catching_index_error_in_tests`
+* I add a tuple_ to :ref:`test_catching_index_error`
 
   .. code-block:: python
     :lineno-start: 35
     :emphasize-lines: 5
 
-        def test_catching_index_error_in_tests(self):
+        def test_catching_index_error(self):
             self.assert_raises("'a string'[8]", IndexError)
             self.assert_raises("'a string'[-9]", IndexError)
 
@@ -1372,7 +1380,7 @@ I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`tes
     :lineno-start: 35
     :emphasize-lines: 5
 
-        def test_catching_index_error_in_tests(self):
+        def test_catching_index_error(self):
             self.assert_raises("'a string'[8]", IndexError)
             self.assert_raises("'a string'[-9]", IndexError)
 
@@ -1393,7 +1401,7 @@ I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`tes
     :lineno-start: 35
     :emphasize-lines: 5-7
 
-        def test_catching_index_error_in_tests(self):
+        def test_catching_index_error(self):
             self.assert_raises("'a string'[8]", IndexError)
             self.assert_raises("'a string'[-9]", IndexError)
 
@@ -1450,7 +1458,7 @@ I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`tes
     :lineno-start: 35
     :emphasize-lines: 8-10
 
-        def test_catching_index_error_in_tests(self):
+        def test_catching_index_error(self):
             self.assert_raises("'a string'[8]", IndexError)
             self.assert_raises("'a string'[-9]", IndexError)
 
@@ -1461,7 +1469,7 @@ I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`tes
                 "(0, 1, 2, 'n')[-100]", IndexError
             )
 
-        def test_catching_key_error_in_dictionary(self):
+        def test_catching_key_error(self):
 
   the test passes.
 
@@ -1471,7 +1479,7 @@ I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`tes
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_catching_index_error_in_tests'
+    'add test_catching_index_error'
 
 :ref:`IndexError<test_index_error>` is :ref:`raised<how to raise an Exception>` when I try to :ref:`index a list<test_index_returns_first_position_of_item_in_a_list>`, tuple_ or string_ with a number that is
 
@@ -1481,7 +1489,7 @@ I use the :ref:`assert_raises method<extract assert_raises method>` in :ref:`tes
 ----
 
 *********************************************************************************
-test_catching_key_error_in_tests
+test_catching_key_error
 *********************************************************************************
 
 :ref:`KeyError<test_key_error>` is :ref:`raised<how to raise an Exception>` when I try to use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in a :ref:`dictionary<what is a dictionary?>`.
@@ -1504,7 +1512,7 @@ test_catching_key_error_in_tests
                 "(0, 1, 2, 'n')[-100]", IndexError
             )
 
-        def test_catching_key_error_in_dictionary(self):
+        def test_catching_key_error(self):
             {'key': 'value'}['not_in_dictionary']
 
 
@@ -1518,7 +1526,7 @@ test_catching_key_error_in_tests
     :lineno-start: 46
     :emphasize-lines: 2
 
-        def test_catching_key_error_in_dictionary(self):
+        def test_catching_key_error(self):
             {'key': 'value'}['not_in_dictionary']
 
 
@@ -1555,13 +1563,13 @@ test_catching_key_error_in_tests
 
 ----
 
-* I use the :ref:`assert_raises method<extract assert_raises method>` to :ref:`catch the Exception<how to use try...except...else>` in :ref:`test_catching_key_error_in_tests`
+* I use the :ref:`assert_raises method<extract assert_raises method>` to :ref:`catch the Exception<how to use try...except...else>` in :ref:`test_catching_key_error`
 
   .. code-block:: python
     :lineno-start: 46
     :emphasize-lines: 2-5
 
-        def test_catching_key_error_in_dictionary(self):
+        def test_catching_key_error(self):
             self.assert_raises(
                 "{'key': 'value'}['not_in_dictionary']",
                 KeyError
@@ -1578,12 +1586,14 @@ test_catching_key_error_in_tests
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_catching_key_error_in_tests'
+    'add test_catching_key_error'
 
 :ref:`KeyError<test_key_error>` is :ref:`raised<how to raise an Exception>` when I try to use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in a :ref:`dictionary<what is a dictionary?>`.
 
+----
+
 *********************************************************************************
-test_catching_zero_division_error_in_tests
+test_catching_zero_division_error
 *********************************************************************************
 
 ZeroDivisionError_ is :ref:`raised<how to raise an Exception>` when I try to divide a number by ``0``.
@@ -1598,15 +1608,15 @@ ZeroDivisionError_ is :ref:`raised<how to raise an Exception>` when I try to div
 
   .. code-block:: python
     :lineno-start: 46
-    :emphasize-lines: 4-5
+    :emphasize-lines: 7-8
 
-        def test_catching_key_error_in_dictionary(self):
+        def test_catching_key_error(self):
             self.assert_raises(
                 "{'key': 'value'}['not_in_dictionary']",
                 KeyError
             )
 
-        def test_catching_zero_division_error_in_tests(self):
+        def test_catching_zero_division_error(self):
             1 / 0
 
 
@@ -1646,13 +1656,13 @@ ZeroDivisionError_ is :ref:`raised<how to raise an Exception>` when I try to div
 
 ----
 
-* I use the :ref:`assert_raises method<extract assert_raises method>` to :ref:`catch the Exception<how to use try...except...else>` in :ref:`test_catching_zero_division_error_in_tests`
+* I use the :ref:`assert_raises method<extract assert_raises method>` to :ref:`catch the Exception<how to use try...except...else>` in :ref:`test_catching_zero_division_error`
 
   .. code-block:: python
     :lineno-start: 52
     :emphasize-lines: 2
 
-        def test_catching_zero_division_error_in_tests(self):
+        def test_catching_zero_division_error(self):
             self.assert_raises('1 / 0', ZeroDivisionError)
 
 
@@ -1666,12 +1676,14 @@ ZeroDivisionError_ is :ref:`raised<how to raise an Exception>` when I try to div
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_catching_zero_division_error_in_tests'
+    'add test_catching_zero_division_error'
+
+ZeroDivisionError_ is :ref:`raised<how to raise an Exception>` when I try to divide a number by ``0``.
 
 ----
 
 *********************************************************************************
-test_catching_exceptions_in_tests
+test_catching_exceptions
 *********************************************************************************
 
 =================================================================================
@@ -1680,7 +1692,7 @@ how to raise an Exception
 
 ----
 
-I can cause an :ref:`Exception<how to test that an Exception is raised>` to happen with the `raise statement`.
+I can cause an :ref:`Exception<how to test that an Exception is raised>` to happen with the `raise statement`_.
 
 ----
 
@@ -1696,10 +1708,10 @@ I can cause an :ref:`Exception<how to test that an Exception is raised>` to happ
     :lineno-start: 52
     :emphasize-lines: 4-5
 
-        def test_catching_zero_division_error_in_tests(self):
+        def test_catching_zero_division_error(self):
             self.assert_raises('1 / 0', ZeroDivisionError)
 
-        def test_catching_exceptions_in_tests(self):
+        def test_catching_exceptions(self):
             raise Exception
 
 
@@ -1719,7 +1731,7 @@ I can cause an :ref:`Exception<how to test that an Exception is raised>` to happ
     :lineno-start: 55
     :emphasize-lines: 2
 
-        def test_catching_exceptions_in_tests(self):
+        def test_catching_exceptions(self):
             raise AssertionError
 
 
@@ -1737,7 +1749,7 @@ I can cause an :ref:`Exception<how to test that an Exception is raised>` to happ
     :lineno-start: 55
     :emphasize-lines: 2
 
-        def test_catching_exceptions_in_tests(self):
+        def test_catching_exceptions(self):
             raise Exception
 
 
@@ -1763,7 +1775,7 @@ I use the :ref:`assert_raises method<extract assert_raises method>` to :ref:`cat
   :lineno-start: 55
   :emphasize-lines: 2
 
-      def test_catching_exceptions_in_tests(self):
+      def test_catching_exceptions(self):
           self.assert_raises('raise Exception', Exception)
 
 
@@ -1785,80 +1797,86 @@ the test passes.
     :lineno-start: 46
     :emphasize-lines: 4-5, 9-10
 
-        def test_catching_key_error_in_dictionary(self):
+        def test_catching_key_error(self):
             self.assert_raises(
                 "{'key': 'value'}['not_in_dictionary']",
                 # KeyError
                 Exception
             )
 
-        def test_catching_zero_division_error_in_tests(self):
+        def test_catching_zero_division_error(self):
             # self.assert_raises('1 / 0', ZeroDivisionError)
             self.assert_raises('1 / 0', Exception)
 
-        def test_catching_exceptions_in_tests(self):
+        def test_catching_exceptions(self):
 
   the tests are still green.
 
-  The problem with using :ref:`Exception<how to test that an Exception is raised>` to catch its children, is it does not tell anyone that reads the code what the actual :ref:`Exception<how to test that an Exception is raised>` is.
+  The problem with using :ref:`Exception<how to test that an Exception is raised>` to catch its children, is it does not tell anyone that reads the code what the actual :ref:`Exception<how to test that an Exception is raised>` is. It is better to be specific.
 
-  It is better to be specific. From the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``. I change the :ref:`Exceptions<how to test that an Exception is raised>` back.
+  From the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``. I change the :ref:`Exceptions<how to test that an Exception is raised>` back.
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 5, 9
+    :lineno-start: 46
+    :emphasize-lines: 4, 8
 
-        def test_catching_key_error_in_tests(self):
-            a_dictionary = {'key': 'value'}
-            a_dictionary['key']
+    def test_catching_key_error(self):
+        self.assert_raises(
+            "{'key': 'value'}['not_in_dictionary']",
+            KeyError
+        )
 
-            with self.assertRaises(KeyError):
-                a_dictionary['not_in_dictionary']
+    def test_catching_zero_division_error(self):
+        self.assert_raises('1 / 0', ZeroDivisionError)
 
-        def test_catching_zero_division_error_in_tests(self):
-            with self.assertRaises(ZeroDivisionError):
-                1 / 0
-
-        def test_catching_exceptions_in_tests(self):
+    def test_catching_exceptions(self):
 
 * I cannot use sibling or cousin :ref:`Exceptions<how to test that an Exception is raised>` to catch other :ref:`Exceptions<how to test that an Exception is raised>`
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 5-6
+    :lineno-start: 35
+    :emphasize-lines: 9-10
 
-        def test_catching_key_error_in_tests(self):
-            a_dictionary = {'key': 'value'}
-            a_dictionary['key']
+        def test_catching_index_error(self):
+            self.assert_raises("'a string'[8]", IndexError)
+            self.assert_raises("'a string'[-9]", IndexError)
 
-            # with self.assertRaises(KeyError):
-            with self.assertRaises(ModuleNotFoundError):
-                a_dictionary['not_in_dictionary']
+            self.assert_raises(
+                "(0, 1, 2, 'n')[100]", IndexError
+            )
+            self.assert_raises(
+                # "(0, 1, 2, 'n')[-100]", IndexError
+                "(0, 1, 2, 'n')[-100]", ModuleNotFoundError
+            )
 
-        def test_catching_zero_division_error_in_tests(self):
+        def test_catching_key_error(self):
 
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: shell
 
-    KeyError: 'not_in_dictionary'
+    IndexError: tuple index out of range
 
-  because it is not :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` even though they are both :ref:`Exceptions<how to test that an Exception is raised>`.
+  because :ref:`IndexError<test_index_error>` is not :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` even though they are both :ref:`Exceptions<how to test that an Exception is raised>`.
 
 * I undo the change
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 5-6
+    :lineno-start: 35
+    :emphasize-lines: 9
 
-        def test_catching_key_error_in_tests(self):
-            a_dictionary = {'key': 'value'}
-            a_dictionary['key']
+        def test_catching_index_error(self):
+            self.assert_raises("'a string'[8]", IndexError)
+            self.assert_raises("'a string'[-9]", IndexError)
 
-            with self.assertRaises(KeyError):
-                a_dictionary['not_in_dictionary']
+            self.assert_raises(
+                "(0, 1, 2, 'n')[100]", IndexError
+            )
+            self.assert_raises(
+                "(0, 1, 2, 'n')[-100]", IndexError
+            )
 
-        def test_catching_zero_division_error_in_tests(self):
+        def test_catching_key_error(self):
 
   the test is green again.
 
@@ -1866,12 +1884,13 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 55
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2-5
 
-        def test_catching_exceptions_in_tests(self):
-            # with self.assertRaises(Exception):
-            with self.assertRaises(ZeroDivisionError):
-                raise Exception
+        def test_catching_exceptions(self):
+            # self.assert_raises('raise Exception', Exception)
+            self.assert_raises(
+                'raise Exception', ZeroDivisionError
+            )
 
 
     # Exceptions seen
@@ -1882,7 +1901,7 @@ the test passes.
 
     Exception
 
-  because it is not ZeroDivisionError_ even though it is an :ref:`Exception<how to test that an Exception is raised>`.
+  because :ref:`Exception<how to test that an Exception is raised>` is not ZeroDivisionError_ or a :ref:`child<how to test if something is a subclass>` of ZeroDivisionError_, even though ZeroDivisionError_ is an :ref:`Exception<how to test that an Exception is raised>`.
 
 * I undo the change
 
@@ -1890,66 +1909,391 @@ the test passes.
     :lineno-start: 55
     :emphasize-lines: 2
 
-        def test_catching_exceptions_in_tests(self):
-            with self.assertRaises(Exception):
-                raise Exception
+        def test_catching_exceptions(self):
+            self.assert_raises('raise Exception', Exception)
 
 
     # Exceptions seen
 
   the test is green again.
 
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_catching_exceptions'
+
+I know :ref:`how to test that an Exception is raised`.
+
 ----
+
+*********************************************************************************
+another way to test if an Exception is raised
+*********************************************************************************
+
+:ref:`unittest.TestCase<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to test if code :ref:`raises an Exception<how to raise an Exception?>`, it is called assertRaises_.
+
+assertRaises_ checks that the code in its context :ref:`raises the Exception<how to raise an Exception>` it is given in parentheses.
+
+----
+
+* I add the failing line for :ref:`test_catching_exceptions`
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 3
+
+        def test_catching_exceptions(self):
+            self.assert_raises('raise Exception', Exception)
+            raise Exception
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`.
+
+* I add assertRaises_ to :ref:`handle Exception<how to handle Exceptions>`
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 3-4
+
+        def test_catching_exceptions(self):
+            self.assert_raises('raise Exception', Exception)
+            with self.assertRaises(Exception):
+                raise Exception
+
+
+    # Exceptions seen
+
+  the tests passes, showing that assertRaises_ checks that the code in its context (``raise Exception``), :ref:`raises the Exception<how to raise an Exception>` it is given in parentheses.
+
+* I add a failing line to :ref:`test_catching_zero_division_error`
+
+  .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 3
+
+        def test_catching_zero_division_error(self):
+            self.assert_raises('1 / 0', ZeroDivisionError)
+            1 / 0
+
+        def test_catching_exceptions(self):
+
+  the terminal_ is my friend, and shows ZeroDivisionError_
+
+* I add assertRaises_ to :ref:`handle ZeroDivisionError<how to handle Exceptions>`.
+
+  .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 3-4
+
+        def test_catching_zero_division_error(self):
+            self.assert_raises('1 / 0', ZeroDivisionError)
+            with self.assertRaises(ZeroDivisionError):
+                1 / 0
+
+        def test_catching_exceptions(self):
+
+  the tests passes, showing that assertRaises_ checks that the code in its context (``1 / 0``), :ref:`raises the Exception<how to raise an Exception>` it is given in parentheses (ZeroDivisionError_).
+
+* I add a failing line to :ref:`test_catching_key_error`
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 6
+
+        def test_catching_key_error(self):
+            self.assert_raises(
+                "{'key': 'value'}['not_in_dictionary']",
+                KeyError
+            )
+            {'key': 'value'}['not_in_dictionary']
+
+        def test_catching_zero_division_error(self):
+
+  the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`.
+
+* I add assertRaises_ to :ref:`handle KeyError<how to handle Exceptions>`
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 6-7
+
+        def test_catching_key_error(self):
+            self.assert_raises(
+                "{'key': 'value'}['not_in_dictionary']",
+                KeyError
+            )
+            with self.assertRaises(KeyError):
+                {'key': 'value'}['not_in_dictionary']
+
+        def test_catching_zero_division_error(self):
+
+  the tests passes, showing that assertRaises_ checks that the code in its context (``{'key': 'value'}['not_in_dictionary']``), :ref:`raises the Exception<how to raise an Exception>` it is given in parentheses (:ref:`KeyError<test_key_error>`).
+
+* I add a failure with the `assertRaises method`_ to :ref:`test_catching_index_error`
+
+  .. code-block:: python
+    :lineno-start: 35
+    :emphasize-lines: 5-6
+
+        def test_catching_index_error(self):
+            self.assert_raises("'a string'[8]", IndexError)
+            self.assert_raises("'a string'[-9]", IndexError)
+
+            with self.assertRaises(ZeroDivisionError):
+                'a string'[8]
+
+            self.assert_raises(
+                "(0, 1, 2, 'n')[100]", IndexError
+            )
+
+  the terminal_ is my friend, and shows :ref:`IndexError<test_index_error>`.
+
+* I change ZeroDivisionError_ to :ref:`IndexError<test_index_error>` in :ref:`test_catching_index_error`
+
+  .. code-block:: python
+    :lineno-start: 35
+    :emphasize-lines: 5
+
+        def test_catching_index_error(self):
+            self.assert_raises("'a string'[8]", IndexError)
+            self.assert_raises("'a string'[-9]", IndexError)
+
+            with self.assertRaises(IndexError):
+                'a string'[8]
+
+  the tests passes, showing that assertRaises_ checks that the code in its context (``'a string'[8]``), :ref:`raises the Exception<how to raise an Exception>` it is given in parentheses (:ref:`IndexError<test_index_error>`).
+
+* I add assertRaises_ for the second statement in :ref:`test_catching_index_error`
+
+  .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 3-4
+
+            with self.assertRaises(IndexError):
+                'a string'[0]
+            with self.assertRaises(IndexError):
+                'a string'[8]
+
+            self.assert_raises(
+                "(0, 1, 2, 'n')[100]", IndexError
+            )
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: IndexError not raised
+
+  a better error message than the one from my :ref:`assert_raises method<extract assert_raises method>`
+
+  .. code-block:: python
+
+    AssertionError
+
+* I change the statement to make it raise :ref:`IndexError<test_index_error>`
+
+  .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 4
+
+            with self.assertRaises(IndexError):
+                'a string'[0]
+            with self.assertRaises(IndexError):
+                'a string'[-9]
+
+            self.assert_raises(
+                "(0, 1, 2, 'n')[100]", IndexError
+            )
+
+  the test passes, showing that assertRaises_ checks that the code in its context (``'a string'[-9]``), :ref:`raises the Exception<how to raise an Exception>` it is given in parentheses (:ref:`IndexError<test_index_error>`).
+
+* I add assertRaises_ for the third statement
+
+  .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 8-9
+
+            self.assert_raises(
+                "(0, 1, 2, 'n')[100]", IndexError
+            )
+            self.assert_raises(
+                "(0, 1, 2, 'n')[-100]", IndexError
+            )
+
+            with self.assertRaises(IndexError):
+                (0, 1, 2, 'n')[100]
+
+        def test_catching_key_error(self):
+
+  the test is still green.
+
+* I add assertRaises_ for the fourth statement in :ref:`test_catching_index_error`
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 3-4
+
+            with self.assertRaises(IndexError):
+                (0, 1, 2, 'n')[100]
+            with self.assertRaises(IndexError):
+                (0, 1, 2, 'n')[-100]
+
+        def test_catching_key_error(self):
+
+  still green.
+
+* I use assertRaises_ in :ref:`test_catching_type_error`
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 6-7
+
+        def test_catching_type_error(self):
+            self.assert_raises(
+                "src.exceptions.function_name('the input')",
+                TypeError
+            )
+            with self.assertRaises(TypeError):
+                src.exceptions.function_name('the input')
+
+        def test_catching_index_error(self):
+
+  green, showing that assertRaises_ checks that the code in its context (``src.exceptions.function_name('the input')``), :ref:`raises the Exception<how to raise an Exception>` it is given in parentheses (:ref:`TypeError<what causes TypeError?>`).
+
+* I add assertRaises_ to :ref:`test_catching_attribute_error`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 5-6
+
+        def test_catching_attribute_error(self):
+            self.assert_raises(
+                'src.exceptions.does_not_exist', AttributeError
+            )
+            with self.assertRaises(AttributeError):
+                src.exceptions.does_not_exist
+
+        def test_catching_type_error(self):
+
+  still green, showing that assertRaises_ checks that the code in its context (``src.exceptions.does_not_exist``), :ref:`raises the Exception<how to raise an Exception>` it is given in parentheses (:ref:`AttributeError<what causes AttributeError?>`).
+
+* I use the `assertRaises method`_ in :ref:`test_catching_name_error`
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 3-4
+
+        def test_catching_name_error(self):
+            self.assert_raises('not_defined', NameError)
+            with self.assertRaises(NameError):
+                not_defined
+
+        def test_catching_attribute_error(self):
+
+  the test is still green.
+
+* I use assertRaises_ in :ref:`test_catching_module_not_found_error`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 5-6
+
+        def test_catching_module_not_found_error(self):
+            self.assert_raises(
+                'import does_not_exist', ModuleNotFoundError
+            )
+            with self.assertRaises(ModuleNotFoundError):
+                import src.exceptions
+
+        def test_catching_name_error(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: ModuleNotFoundError not raised
+
+  because ``import src.exceptions`` does not :ref:`raise ModuleNotFoundError<how to raise an Exception>`
+
+* I change the statement
+
+  .. code-block:: python
+    :lineno-start: 16
+
+        def test_catching_module_not_found_error(self):
+            self.assert_raises(
+                'import does_not_exist', ModuleNotFoundError
+            )
+            with self.assertRaises(ModuleNotFoundError):
+                import does_not_exist
+
+        def test_catching_name_error(self):
+
+  the test passes, showing that assertRaises_ checks that the code in its context (``import does_not_exist``), :ref:`raises the Exception<how to raise an Exception>` it is given in parentheses (:ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`).
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'use assertRaises'
 
 *********************************************************************************
 one exception one exception handler
 *********************************************************************************
 
-* As promised here is why the second assertRaises_ in :ref:`test_catching_index_error_in_tests` is not a repetition
+The assertRaises_ in :ref:`test_catching_index_error` all catch the same :ref:`Exception<how to test that an Exception is raised>`, the only difference is the actual statements that cause :ref:`IndexError<test_index_error>`
+
+* If I remove the second assertRaises_
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 10
+    :lineno-start: 43
+    :emphasize-lines: 7
 
-        def test_catching_index_error_in_tests(self):
-            a_string = 'a string'
-            a_string[0]
-            a_string[7]
-            a_string[-1]
-            a_string[-8]
+        def test_catching_index_error(self):
+            self.assert_raises("'a string'[8]", IndexError)
+            self.assert_raises("'a string'[-9]", IndexError)
 
             with self.assertRaises(IndexError):
-                a_string[8]
+                'a string'[8]
             # with self.assertRaises(IndexError):
-                a_string[-9]
+                'a string'[-9]
 
-  the test is still green for ``a_string[-9]`` which should cause :ref:`IndexError<test_index_error>`
+  the test is still green for ``'a string'[-9]`` which should cause :ref:`IndexError<test_index_error>`, this makes it look like a second assertRaises_ is a repetition.
 
 * If I add a `raise statement`_ before ``a_string[-9]``
 
   .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 3
+    :lineno-start: 47
+    :emphasize-lines: 4
 
             with self.assertRaises(IndexError):
-                a_string[8]
-                raise Exception
+                'a string'[8]
             # with self.assertRaises(IndexError):
-                a_string[-9]
+                raise Exception
+                'a string'[-9]
 
-  the test is still green, which is NOT the expected behavior. :ref:`Exception<how to test that an Exception is raised>` is not :ref:`IndexError<test_index_error>` and still does NOT get raised, which means the assertRaises_ exits after the first line that causes :ref:`IndexError<test_index_error>` and does NOT run the other lines.
+  the test is still green, which is not the expected behavior.
+
+  - :ref:`Exception<how to test that an Exception is raised>` is not :ref:`IndexError<test_index_error>` and still does not get :ref:`raised<how to raise an Exception>`, which means the assertRaises_ exits after the first line that causes :ref:`IndexError<test_index_error>` and does not run the other lines.
+  - It should only catch :ref:`IndexError<test_index_error>` NOT :ref:`Exception<how to test that an Exception is raised>` since I cannot use a :ref:`child Exception<how to test if something is a subclass>` to catch its parent.
 
 * If I move the `raise statement`_ above the first :ref:`IndexError<test_index_error>`
 
   .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 2-3
+    :lineno-start: 47
+    :emphasize-lines: 2
 
             with self.assertRaises(IndexError):
                 raise Exception
-                a_string[8]
+                'a string'[8]
             # with self.assertRaises(IndexError):
-                a_string[-9]
+                'a string'[-9]
+
 
   the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
 
@@ -1959,38 +2303,20 @@ one exception one exception handler
 
   because it is NOT :ref:`IndexError<test_index_error>`, this is the expected behavior.
 
-* I remove the failing line and put the assertRaises_ back in the right place
+* I undo the changes
 
   .. code-block:: python
-    :lineno-start: 23
+    :lineno-start: 47
     :emphasize-lines: 3-6
 
-        def test_catching_index_error_in_tests(self):
-            a_string = 'a string'
-            a_string[0]
-            a_string[7]
-            a_string[-1]
-            a_string[-8]
-
             with self.assertRaises(IndexError):
-                a_string[8]
+                'a string'[8]
             with self.assertRaises(IndexError):
-                a_string[-9]
-
-            a_tuple = (0, 1, 2, 'n')
-            a_tuple[1]
-            a_tuple[-2]
-
-            with self.assertRaises(IndexError):
-                a_tuple[100]
-            with self.assertRaises(IndexError):
-                a_tuple[-100]
-
-        def test_catching_key_error_in_tests(self):
+                'a string'[-9]
 
   the test is green again.
 
-I know :ref:`how to test that an Exception is raised`. As a rule of thumb I write one line of code for one :ref:`Exception<how to test that an Exception is raised>`, this way I always know which line caused which :ref:`Exception<how to test that an Exception is raised>`.
+As a rule of thumb I write one line of code for one :ref:`Exception<how to test that an Exception is raised>`, this way I always know which line caused which :ref:`Exception<how to test that an Exception is raised>`.
 
 ----
 
@@ -2024,16 +2350,7 @@ close the exceptions project
 review
 *********************************************************************************
 
-I can use assertRaises_ to catch :ref:`Exceptions<how to test that an Exception is raised>` in tests and tested these
-
-* :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
-* :ref:`NameError<test_catching_name_error_in_tests>`
-* :ref:`AttributeError<what causes AttributeError?>`
-* :ref:`TypeError<what causes TypeError?>`
-* :ref:`IndexError<test_index_error>`
-* :ref:`KeyError<test_key_error>`
-* ZeroDivisionError_ and
-* :ref:`The Mother of all Exceptions<test_catching_exceptions_in_tests>`
+I ran tests to show that I can use the :ref:`try statement<how to handle Exceptions>` and assertRaises_ to catch :ref:`Exceptions<how to test that an Exception is raised>`
 
 ----
 

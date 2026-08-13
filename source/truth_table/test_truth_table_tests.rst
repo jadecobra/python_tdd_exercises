@@ -106,7 +106,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     logical_negation
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 

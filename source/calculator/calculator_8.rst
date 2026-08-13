@@ -1251,7 +1251,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     add
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -1452,7 +1452,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def divide(first_input=None, second_input=None):
         return x / y
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 
@@ -2174,7 +2174,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 All the tests are passing, and there are problems
 
 * What happens when the :ref:`functions<what is a function?>` receive a bad input as the second input or something that is not a :ref:`dictionary<what is a dictionary?>`, set_, :ref:`list<what is a list?>`, string_ or :ref:`boolean<what are booleans?>`? I need a better test
-* It looks like the test for how the :ref:`calculator<how to make a calculator>` handles :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` never runs. I need to make that test better
+* It looks like the test for how the :ref:`calculator<how to make a calculator>` handles :ref:`ZeroDivisionError<test_catching_zero_division_error>` never runs. I need to make that test better
 
 I wonder what else I missed. I am still learning
 
@@ -2214,7 +2214,7 @@ review
 * I rewrote the solution after rewriting the tests and found that
 
   - I did not add a test for bad second inputs
-  - the test for handling :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` has a problem
+  - the test for handling :ref:`ZeroDivisionError<test_catching_zero_division_error>` has a problem
 
 ----
 
