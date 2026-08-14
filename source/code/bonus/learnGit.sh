@@ -1,6 +1,6 @@
-##########################################################################
-#                             How to use Git                             #
-##########################################################################
+###############################################################
+#                  How to use Git                             #
+###############################################################
 
 git help
 git help --all
@@ -127,17 +127,20 @@ tree
 mkdir Directory{1,2,3,N}
 ls
 
-##########################################################################################################
-#                                                                                                        #
-#   Are you on using MacOS - install brew with this command                                              #
+###############################################################
+#                                                             #
+#   Are you on using MacOS?                                   #
+#   - install brew                                            #
 #      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"   #
-#   install tree with this command                                                                       #
-#      brew install tree                                                                                 #
-#                                                                                                        #
-#   Are you on a Linux Machine or using WSL?                                                             #
-#      sudo apt install tree                                                                             #
-#                                                                                                        #
-##########################################################################################################
+#   - install tree                                            #
+#      brew install tree                                      #
+#                                                             #
+#   Are you on a Linux Machine or using WSL?                  #
+#      sudo apt update                                        #
+#      sudo apt install tree -y                               #
+#                                                             #
+###############################################################
+
 
 tree
 touch Directory{1,2,3,N}/File{1,2,3,N}InThisDirectory.extension
@@ -241,13 +244,13 @@ git diff --cached
 q
 git diff HEAD
 q
-git commit -am "I added new Ffives to be tracked by git"
+git commit -am "I add new Ffives to be tracked by git"
 git log
 q
 git log --oneline
 git log --graph
 q
-git commit -amend --message "I Added new Files and Directories in $PROJECTNAME for git to track"
+git commit -amend --message "I add new Files and Directories in $PROJECTNAME for git to track"
 git log
 q
 git log --oneline
@@ -337,7 +340,7 @@ mkdir new_directory_from_a_branch
 touch new_directory_from_a_branch/File{1,2,3,N}InThisDirectory.extension
 git status
 git add .
-git commit --all --message "I added a new File and Directory in a_branch"
+git commit --all --message "I add a new File and Directory in a_branch"
 git diff origin/a_branch
 git push origin a_branch
 git diff
@@ -358,18 +361,18 @@ git branch --all
 git diff main
 git merge main
 nano FileInThisDirectory.extension
-I had a Genius Idea and tested it in new_feature
+I test Genius Idea in new_feature
 # hit ctrl+x on the keyboard
 y
 git status
 git add .
-git commit -am "I had a Genius Idea and tested it in new_feature"
+git commit -am "I test Genius Idea in new_feature"
 git diff main
 git diff remotes/origin/new_feature
 git push origin new_feature
 git checkout main
 git merge --no-ff new_feature
-I Had a Genius idea, tested it in new_feature and merged it into main
+I test Genius Idea in new_feature and merged it into main
 # save and exit
 git diff
 git diff new_feature
@@ -384,7 +387,7 @@ git branch --delete --force new_feature
 clear
 
 ###############################################################
-#                               Tagging                       #
+#                       Tagging                               #
 ###############################################################
 
 git tag

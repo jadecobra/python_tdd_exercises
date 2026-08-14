@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: How to handle Exceptions in Python programs with try/except/else, unittest assertRaisesRegex for Exception messages (BOOM!!! vs empty string), and a homemade assert_raises that raises AssertionError like unittest. TDD RED/GREEN for raise_exception (AttributeError has no attribute, NameError is not defined, TypeError NoneType not callable), then an_exception_handler that returns failed when a function raises and succeeded when it does not. Catching Exception vs ModuleNotFoundError shows a child cannot catch its parent. Pumping Python TDD by Jacob Itegboje.
+  :keywords: Jacob Itegboje, Pumping Python TDD, how to handle Exceptions in programs, try except else, assertRaisesRegex, BOOM!!! does not match empty string, raise Exception message, assert_raises f-string not raised, an_exception_handler failed succeeded, AttributeError raise_exception, NameError is not defined, TypeError NoneType not callable, TypeError takes 0 positional arguments but 1 was given, Exception not ModuleNotFoundError, child cannot catch parent Exception, exceptions/tests/test_exceptions.py, src/exceptions/__init__.py
 
 .. include:: ../../links.rst
 
@@ -18,15 +18,21 @@ I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/exception_handling/test_exceptions_in_programs.py
   :language: python
+  :linenos:
+  :caption: exceptions/tests/test_exceptions.py
+  :lines: 1-14
+
+.. literalinclude:: ../../code/exception_handling/test_exceptions_in_programs.py
+  :language: python
   :lineno-start: 82
   :caption: exceptions/tests/test_exceptions.py
   :lines: 82-94
 
 .. literalinclude:: ../../code/exception_handling/test_exceptions_in_programs.py
   :language: python
-  :lineno-start: 94
+  :lineno-start: 96
   :caption: exceptions/tests/test_exceptions.py
-  :lines: 94-
+  :lines: 96-
 
 ----
 
@@ -170,7 +176,7 @@ test_catching_exceptions_w_messages
 * I want the :ref:`function<what is a function?>` to :ref:`raise Exception<how to raise an Exception>` when it is :ref:`called<how to call a function with input>` as a way to make a failure happen. I add :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`test_catching_exceptions_w_messages` in ``tests/test_exceptions.py``
 
   .. code-block:: python
-    :lineno-start: 42
+    :lineno-start: 82
     :emphasize-lines: 2-3
 
         def test_catching_exceptions_w_messages(self):
@@ -467,6 +473,13 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test passes.
 
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines:
+
+    git commit -am 'add test_catching_failure'
+
 ----
 
 *********************************************************************************
@@ -576,7 +589,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     FAILED ...test_catching_success -
         AssertionError: None != 'succeeded'
 
-  because If ``an_exception_handler`` is :ref:`called<how to call a function with input>`, it :ref:`calls<how to call a function with input>` the input it receives
+  because if ``an_exception_handler`` is :ref:`called<how to call a function with input>`, it :ref:`calls<how to call a function with input>` the input it receives
 
   * If the :ref:`call<how to call a function with input>` to its input :ref:`raises an Exception<how to raise an Exception>`, the program_ stops
 
@@ -669,15 +682,15 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         else:
             return 'succeeded'
 
-  the terminal_ is my friend, and shows :ref:`Exception<how to test if an Exception is raised>` for ``test_catching_failures``
+  the terminal_ is my friend, and shows :ref:`Exception<how to test if an Exception is raised>` for ``test_catching_failure``
 
   .. code-block:: shell
 
-    Exception: BOOM!!!!
+    Exception: BOOM!!!
 
   because :ref:`Exception<how to test if an Exception is raised>` is not :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` and I cannot use a :ref:`child<how to test if something is a subclass>` :ref:`Exceptions<how to test if an Exception is raised>` to catch its parent :ref:`Exception<how to test if an Exception is raised>`.
 
-  The :ref:`try statement<how to handle Exceptions>` only catches the :ref:`Exception<how to test if an Exception is raised>` given in the :ref:`except<how to handle Exceptions>` block and its :ref:`children (subclasses)<how to test if something is a subclass>`, all other :ref:`Exceptions are raised<how to raise an Exception is raised>`.
+  The :ref:`try statement<how to handle Exceptions>` only catches the :ref:`Exception<how to test if an Exception is raised>` given in the :ref:`except<how to handle Exceptions>` clause and its :ref:`children (subclasses)<how to test if something is a subclass>`, all other :ref:`Exceptions are raised<how to raise an Exception>`.
 
 * I change it back to what works
 
@@ -694,6 +707,13 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             return 'succeeded'
 
   the test is green again!
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines:
+
+    git commit -am 'add test_catching_success'
 
 ----
 
@@ -780,20 +800,8 @@ review
 
 I ran tests to show that
 
-* I can cause any :ref:`Exception<how to test if an Exception is raised>` I want with the :ref:`raise<how to raise an Exception>` keyword
-* I can use the `assertRaises method`_ to catch :ref:`Exceptions<how to test if an Exception is raised>` in tests and tested these
-
-  - :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
-  - :ref:`NameError<test_catching_name_error>`
-  - :ref:`AttributeError<what causes AttributeError?>`
-  - :ref:`TypeError<what causes TypeError?>`
-  - :ref:`IndexError<test_index_error>`
-  - :ref:`KeyError<test_key_error>`
-  - :ref:`ZeroDivisionError<test_catching_zero_division_error>`
-  - :ref:`The Mother of all Exceptions<test_catching_exceptions>`
-
-* I can use assertRaisesRegex_ to catch :ref:`Exceptions<how to test if an Exception is raised>` with messages
-* I can use :ref:`try..except...else<how to use try...except...else>` to make programs that can choose what to do when :ref:`Exceptions<how to test if an Exception is raised>` are raised
+* I can use assertRaisesRegex_ to catch :ref:`Exceptions<how to test if an Exception is raised>` with messages.
+* I can use :ref:`try..except...else<how to use try...except...else>` to make programs that can choose what to do when :ref:`Exceptions are raised<how to raise an Exception>`.
 
 ----
 
@@ -805,7 +813,7 @@ I ran tests to show that
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<how to handle Exceptions (Errors): tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<Exception Handling in programs tests and solutions>`
 
 ----
 

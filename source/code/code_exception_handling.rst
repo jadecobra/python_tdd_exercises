@@ -78,19 +78,25 @@ The code in ``exceptions/tests/test_exceptions.py`` from :ref:`how to handle Exc
   :language: python
   :lineno-start: 23
   :caption: exceptions/tests/test_exceptions.py
-  :lines: 23-42
+  :lines: 23-41
 
 .. literalinclude:: exception_handling/test_exceptions_in_programs.py
   :language: python
-  :lineno-start: 44
+  :lineno-start: 43
   :caption: exceptions/tests/test_exceptions.py
-  :lines: 44-63
+  :lines: 43-62
 
 .. literalinclude:: exception_handling/test_exceptions_in_programs.py
   :language: python
-  :lineno-start: 65
+  :lineno-start: 64
   :caption: exceptions/tests/test_exceptions.py
-  :lines: 65-
+  :lines: 64-86
+
+.. literalinclude:: exception_handling/test_exceptions_in_programs.py
+  :language: python
+  :lineno-start: 88
+  :caption: exceptions/tests/test_exceptions.py
+  :lines: 88-
 
 ----
 

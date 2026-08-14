@@ -10,24 +10,32 @@ Here are the tests and solutions in the book
   :titlesonly:
   :maxdepth: 1
 
-  code/make_tdd/code_make_python_tdd
   AssertionError<code/code_assertion_error>
-  None<code/code_none>
-  booleans<code/code_booleans>
-  truth table<code/code_truth_table>
-  how to pass values<code/code_telephone>
-  functions<code/code_functions>
-  how to make a calculator<code/code_calculator>
-  how to test/handle exceptions<code/code_exception_handling>
-  TypeError<code/code_type_error>
-  lists<code/code_lists>
-  list comprehensions<code/code_list_comprehensions>
-  dictionaries<code/code_dictionaries>
-  how to make a person<code/code_person_factory>
-  classes<code/code_classes>
-  ModuleNotFoundError<code/code_module_not_found_error>
+  Automated Teller Machine<code/code_atm>
   AttributeError<code/code_attribute_error>
-  how to measure sleep duration<code/code_sleep_duration>
+  booleans<code/code_booleans>
+  calculator<code/code_calculator>
+  classes<code/code_classes>
+  dictionaries<code/code_dictionaries>
+  Elevator<code/code_elevator>
+  Exceptions<code/code_exception_handling>
+  functions<code/code_functions>
+  directory structure<code/code_learn_directory_structure>
+  git<code/code_learn_git>
+  list comprehensions<code/code_list_comprehensions>
+  lists<code/code_lists>
+  make a Python TDD environment<code/code_make_python_tdd>
+  Microwave<code/code_microwave>
+  ModuleNotFoundError<code/code_module_not_found_error>
+  None<code/code_none>
+  person<code/code_person>
+  sleep duration<code/code_sleep_duration>
+  telephone<code/code_telephone>
+  Traffic Light<code/code_traffic_light>
+  tree<code/code_tree>
+  Truth Table<code/code_truth_table>
+  what causes TypeError?<code/code_type_error>
+  unittest<code/code_unittest>
 
 ----
 

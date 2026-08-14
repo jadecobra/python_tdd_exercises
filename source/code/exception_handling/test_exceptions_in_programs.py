@@ -11,7 +11,7 @@ class TestExceptions(unittest.TestCase):
         except exception:
             pass
         else:
-            raise AssertionError
+            raise AssertionError(f'{exception} not raised')
 
     def test_catching_module_not_found_error(self):
         self.assert_raises(
@@ -96,7 +96,7 @@ class TestExceptions(unittest.TestCase):
     def test_catching_success(self):
         self.assertEqual(
             src.exceptions.an_exception_handler(
-                src.exceptions.do_not_raise_exception
+                src.exceptions.function_name
             ),
             'succeeded'
         )
