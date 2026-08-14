@@ -74,7 +74,7 @@ class TestExceptions(unittest.TestCase):
         with self.assertRaises(ZeroDivisionError):
             1 / 0
 
-    def test_catching_exceptions_in_tests(self):
+    def test_catching_exceptions(self):
         self.assert_raises('raise Exception', Exception)
         with self.assertRaises(Exception):
             raise Exception

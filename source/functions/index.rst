@@ -261,7 +261,7 @@ start the project
 
     and try ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_functions.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_functions.py``
 
   .. code-block:: python
     :linenos:
@@ -329,7 +329,7 @@ The simplest :ref:`function<what is a function?>` I can make is with the pass_ k
 
   because Python_ does not know what I mean by ``w_pass`` since I do not have a definition for it in ``test_functions.py``.
 
-* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 5
@@ -488,7 +488,7 @@ A call to a :ref:`function<what is a function>` gets the output of the :ref:`fun
 
   ``None()`` raises :ref:`TypeError<what causes TypeError?>`.
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 9

@@ -168,7 +168,7 @@ I add a new test with a :ref:`for loop<what is a for loop?>` and an :ref:`assert
   :lineno-start: 164
   :emphasize-lines: 13-14, 16-30
 
-      def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+      def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
           not_two_numbers = [0, 1, 2]
 
           with self.assertRaises(TypeError):
@@ -1200,8 +1200,8 @@ what is next?
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`I know how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
-* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
+* :ref:`how to test if an Exception is raised with assertRaises<how to test if an Exception is raised>`
+* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
 * :ref:`what you can do with Lists<what is a list?>`
 * :ref:`how to use list comprehensions<list comprehensions>`

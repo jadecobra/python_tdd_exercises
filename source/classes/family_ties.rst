@@ -171,7 +171,7 @@ open the project
     FAILED tests/test_family_ties.py::TestFamilyTies::test_failure - AssertionError: True is not false
     ================= 1 failed, 6 passed in X.YZs ==================
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_functions.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -239,7 +239,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
 
   because ``src`` is not defined in this file_.
 
-* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 4
@@ -280,7 +280,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
 
     because there is no definition for ``Doe`` in ``family_ties.py``
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 14
@@ -405,7 +405,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
 
   because Python_ cannot find ``src/person/__init__.py`` in the main project folder_ (the parent of ``src`` and ``tests``) where I run the tests from, so it cannot :ref:`import the Module<test_module_not_found_error>`.
 
-* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_family_ties.py``
+* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 20
@@ -623,7 +623,7 @@ what happens when a child calls the parent?
 
   which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of the ``Person`` :ref:`class<everything is an object>` takes one required argument for ``first_name``.
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 36

@@ -124,7 +124,7 @@ because ``src`` is not defined in ``test_functions.py``.
 
   because there is nothing named ``src`` in this project.
 
-* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 230
@@ -180,7 +180,7 @@ because ``src`` is not defined in ``test_functions.py``.
 
   because there is nothing in ``functions.py`` in the ``src`` folder_ with the name ``w_pass``.
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_functions.py``
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 230
@@ -1702,7 +1702,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 
 ----
 
-* Starting with the last :ref:`Exception<how to test that an Exception is raised>`, I add a :ref:`function definition<how to make a function>` for :ref:`unknown_number_of_arguments<test_unknown_number_of_arguments>` to ``functions.py`` in the ``src`` folder_
+* Starting with the last :ref:`Exception<how to test if an Exception is raised>`, I add a :ref:`function definition<how to make a function>` for :ref:`unknown_number_of_arguments<test_unknown_number_of_arguments>` to ``functions.py`` in the ``src`` folder_
 
   .. code-block:: python
     :linenos:

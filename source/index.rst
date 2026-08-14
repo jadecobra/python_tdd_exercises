@@ -45,7 +45,7 @@ table of contents
   make a person with conditions<how_to/make_person/make_person_w_conditions>
   make TDD with variables<make_tdd/make_tdd_automatically_w_variables>
   make a person with exceptions<how_to/make_person/make_person_w_exceptions>
-  basic_objects/lists/index
+  make a person with tuples<how_to/make_person/make_person_w_tuples>
   basic_objects/dictionaries/index
   questions the book answers<review>
   make TDD manually<make_tdd/make_tdd_manually>
@@ -70,7 +70,7 @@ who is this for?
 * If you just started your journey, CONGRATULATIONS! You picked Python_ from the list of `Programming Languages`_ out there, Celebrate it, this is for you
 * If you are new to `Test Driven Development`_ in Python_, this is for you
 * If you have been telling yourself, "I will learn Python_ some day", today is some day, this is for you
-* If you already use Python_ and do not know any of the :ref:`Exceptions<how to test that an Exception is raised>` below, this is for you
+* If you already use Python_ and do not know any of the :ref:`Exceptions<how to test if an Exception is raised>` below, this is for you
 
   - :ref:`AssertionError<what causes AssertionError?>`
   - :ref:`AttributeError<what causes AttributeError?>`

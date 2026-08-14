@@ -225,7 +225,7 @@ start the project
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``File ".../pumping_python/module_not_found_error/tests/test_module_not_found_error.py", line 1`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ with the cursor at the line where the failure happened.
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_module_not_found_error.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_module_not_found_error.py``
 
   .. code-block:: python
     :linenos:
@@ -328,7 +328,7 @@ test_module_not_found_error
 
   because when ``import src.module_00`` runs, Python_ tries to bring in an :ref:`object (everything in Python is an object)<everything is an object>` for the ``module_00.py`` file_ from the ``src`` folder_.
 
-* I add ModuleNotFoundError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_module_not_found_error.py``
+* I add ModuleNotFoundError_ to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_module_not_found_error.py``
 
   .. code-block:: python
     :lineno-start: 4

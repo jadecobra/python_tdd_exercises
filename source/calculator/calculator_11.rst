@@ -477,7 +477,7 @@ test_home_page
 
     NameError: name 'src' is not defined
 
-* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 4
@@ -516,7 +516,7 @@ test_home_page
 
     ModuleNotFoundError: No module named 'src.website'
 
-* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 11
@@ -533,7 +533,7 @@ test_home_page
 
     AttributeError: module 'src.website' has no attribute 'app'
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 11
@@ -583,7 +583,7 @@ test_home_page
 
     AssertionError: 404 != 'BOOM!!!'
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 13
@@ -666,7 +666,7 @@ test_home_page
   - ``@app.route`` is a :ref:`decorator function<what is a decorator function?>` that routes the pages of the website to the :ref:`function<what is a function?>` it :ref:`wraps<what is a decorator function?>`
   - ``'/'`` is short for root or home in this case, the homepage of the website I am making also known as ``index.html``
 
-* I add `jinja2.exceptions.TemplateNotFound`_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add `jinja2.exceptions.TemplateNotFound`_ to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :emphasize-lines: 6
@@ -679,8 +679,8 @@ test_home_page
     # AssertionError
     # jinja2.exceptions.TemplateNotFound
 
-* I add a new folder_ to the ``src`` folder_ named ``templates``, the terminal_ still shows the same :ref:`Exception<how to test that an Exception is raised>`
-* I add a new file_ in the ``templates`` folder named ``index.html``, the terminal_ still shows the same :ref:`Exception<how to test that an Exception is raised>`
+* I add a new folder_ to the ``src`` folder_ named ``templates``, the terminal_ still shows the same :ref:`Exception<how to test if an Exception is raised>`
+* I add a new file_ in the ``templates`` folder named ``index.html``, the terminal_ still shows the same :ref:`Exception<how to test if an Exception is raised>`
 
 * I go back to ``test_calculator_website.py`` then use :kbd:`ctrl+s` on the keyboard to save the file_ which makes `pytest-watcher`_ run the tests again, and the test passes.
 
@@ -1157,7 +1157,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
 
   I cannot make a `bytes object`_ an `f-string`_
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add SyntaxError_ to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 35
@@ -2539,8 +2539,8 @@ what is next?
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`I know how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
-* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
+* :ref:`how to test if an Exception is raised with assertRaises<how to test if an Exception is raised>`
+* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
 * :ref:`what you can do with Lists<what is a list?>`
 * :ref:`how to use list comprehensions<list comprehensions>`

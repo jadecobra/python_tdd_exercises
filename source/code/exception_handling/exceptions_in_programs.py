@@ -6,7 +6,7 @@ def raise_exception():
     raise Exception('BOOM!!!')
 
 
-def does_not_raise_exception():
+def do_not_raise_exception():
     return None
 
 

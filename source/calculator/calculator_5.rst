@@ -884,7 +884,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
 ----
 
 *********************************************************************************
-test_calculator_raises_type_error_when_given_more_than_two_inputs
+test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs
 *********************************************************************************
 
 It is important to remember that the `starred expressions`_ always gives the items from the :ref:`list<what is a list?>` in order, and I cannot use a :ref:`list<what is a list?>` that has more than 2 numbers with these :ref:`calculator functions<how to make a calculator>` since they only take 2 inputs
@@ -908,7 +908,7 @@ I add a new test to show the problem when I have more than 2 inputs and use a `s
               self.random_first_number-self.random_second_number
           )
 
-      def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+      def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
           not_two_numbers = [0, 1, 2]
 
           src.calculator.add(*not_two_numbers)
@@ -930,13 +930,13 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-I add the `assertRaises method`_ to handle the :ref:`Exception<how to test that an Exception is raised>`
+I add the `assertRaises method`_ to handle the :ref:`Exception<how to test if an Exception is raised>`
 
 .. code-block:: python
   :lineno-start: 163
   :emphasize-lines: 4-5
 
-      def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+      def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
           not_two_numbers = [0, 1, 2]
 
           with self.assertRaises(TypeError):
@@ -958,7 +958,7 @@ the test passes.
     :lineno-start: 163
     :emphasize-lines: 6
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
             not_two_numbers = [0, 1, 2]
 
             with self.assertRaises(TypeError):
@@ -971,7 +971,7 @@ the test passes.
 
     TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were given
 
-* I add assertRaises_
+* I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
     :lineno-start: 166
@@ -1000,7 +1000,7 @@ the test passes.
 
     TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were given
 
-* I add assertRaises_
+* I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
     :lineno-start: 168
@@ -1029,13 +1029,13 @@ the test passes.
 
     TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were given
 
-* I handle the :ref:`Exception<how to test that an Exception is raised>`
+* I handle the :ref:`Exception<how to test if an Exception is raised>`
 
   .. code-block:: python
     :lineno-start: 163
     :emphasize-lines: 10-11
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
             not_two_numbers = [0, 1, 2]
 
             with self.assertRaises(TypeError):
@@ -1087,7 +1087,7 @@ I added these tests to the :ref:`calculator program<how to make a calculator 3>`
 
 * :ref:`test_calculator_sends_message_when_input_is_not_a_number`
 * :ref:`test_calculator_w_list_items`
-* :ref:`test_calculator_raises_type_error_when_given_more_than_two_inputs`
+* :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs`
 
 ----
 
@@ -1113,8 +1113,8 @@ what is next?
 * :ref:`I know how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
 * :ref:`how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment 2>`
-* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
-* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
+* :ref:`how to test if an Exception is raised with assertRaises<how to test if an Exception is raised>`
+* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
 * :ref:`how to make the calculator check if its inputs are numbers<test_calculator_sends_message_when_input_is_not_a_number>`
 * :ref:`what you can do with Lists<what is a list?>`

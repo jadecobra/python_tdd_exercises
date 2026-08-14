@@ -164,7 +164,7 @@ test_attribute_error_w_class_attributes
         attribute_00 = function_09()
         return function_09()
 
-  the terminal_ still shows the same :ref:`Exception<how to test that an Exception is raised>` because I cannot get to a :ref:`variable<what is a variable?>` inside a :ref:`function<what is a function?>` from outside the :ref:`function<what is a function?>`. The :ref:`variable<what is a variable?>` is only used inside the :ref:`function<what is a function?>` when it runs.
+  the terminal_ still shows the same :ref:`Exception<how to test if an Exception is raised>` because I cannot get to a :ref:`variable<what is a variable?>` inside a :ref:`function<what is a function?>` from outside the :ref:`function<what is a function?>`. The :ref:`variable<what is a variable?>` is only used inside the :ref:`function<what is a function?>` when it runs.
 
 * I change ``AClass`` from a :ref:`function<what is a function?>` to a :ref:`class<everything is an object>`
 
@@ -189,7 +189,7 @@ test_attribute_error_w_class_attributes
 
   because I cannot use a :ref:`return statement<the return statement>` outside a :ref:`function<what is a function?>`.
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_attribute_error.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 34

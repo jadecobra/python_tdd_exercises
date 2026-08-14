@@ -58,7 +58,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 *********************************************************************************
 
 
-* The ``duration`` :ref:`function<what is a function?>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to return a difference when ``wake_time`` is later than or the same as ``sleep_time`` and raise ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``. I change the :ref:`assertEqual method<test_assert_equal>` to assertRaisesRegex_ to catch the :ref:`Exception<how to test that an Exception is raised>`, if it is raised by the :ref:`function<what is a function?>`
+* The ``duration`` :ref:`function<what is a function?>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to return a difference when ``wake_time`` is later than or the same as ``sleep_time`` and raise ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``. I change the :ref:`assertEqual method<test_assert_equal>` to assertRaisesRegex_ to catch the :ref:`Exception<how to test if an Exception is raised>`, if it is raised by the :ref:`function<what is a function?>`
 
   .. code-block:: python
 
@@ -128,7 +128,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     ValueError: wake_time: "23:10" is earlier than sleep_time: "23:27"
     ValueError: wake_time: "11:32" is earlier than sleep_time: "13:52"
 
-* I add the error to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_sleep_duration.py``
+* I add the error to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_sleep_duration.py``
 
   .. code-block:: python
 

@@ -69,7 +69,7 @@ open the project
 ----
 
 *********************************************************************************
-test_calculator_raises_type_error_w_none
+test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none
 *********************************************************************************
 
 =================================================================================
@@ -99,7 +99,7 @@ I add a new failing test to show that the :ref:`calculator<how to make a calcula
                   'brmph?! I cannot divide by 0. Try again...'
               )
 
-      def test_calculator_raises_type_error_w_none(self):
+      def test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none(self):
           src.calculator.add(None, None)
 
 
@@ -119,13 +119,13 @@ the terminal_ is my friend, and shows TypeError_
 
 ----
 
-I add assertRaises_
+I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
 .. code-block:: python
   :lineno-start: 57
   :emphasize-lines: 2-3
 
-      def test_calculator_raises_type_error_w_none(self):
+      def test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none(self):
           with self.assertRaises(TypeError):
               src.calculator.add(None, None)
 
@@ -145,7 +145,7 @@ the test passes.
     :lineno-start: 57
     :emphasize-lines: 4
 
-        def test_calculator_raises_type_error_w_none(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none(self):
             with self.assertRaises(TypeError):
                 src.calculator.add(None, None)
             src.calculator.divide(None, None)
@@ -156,7 +156,7 @@ the test passes.
 
     TypeError: unsupported operand type(s) for /: 'NoneType' and 'NoneType'
 
-* I add assertRaises_
+* I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -185,7 +185,7 @@ the test passes.
 
     TypeError: unsupported operand type(s) for *: 'NoneType' and 'NoneType'
 
-* I add assertRaises_
+* I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
     :lineno-start: 60
@@ -220,7 +220,7 @@ the test passes.
     :lineno-start: 57
     :emphasize-lines: 8-9
 
-        def test_calculator_raises_type_error_w_none(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none(self):
             with self.assertRaises(TypeError):
                 src.calculator.add(None, None)
             with self.assertRaises(TypeError):
@@ -235,14 +235,14 @@ the test passes.
 
   the test passes.
 
-:ref:`The calculator raises TypeError when None is given as input<test_calculator_raises_type_error_w_none>`.
+:ref:`The calculator raises TypeError when None is given as input<test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none>`.
 
 What does it do if the input is a :ref:`boolean<what are booleans?>`, string_, tuple_, :ref:`list<what is a list?>`, set_ or a :ref:`dictionary<dictionaries>`?
 
 ----
 
 *********************************************************************************
-test_calculator_raises_type_error_w_strings
+test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings
 *********************************************************************************
 
 =================================================================================
@@ -315,7 +315,7 @@ the test passes.
 
     TypeError: unsupported operand type(s) for /: 'str' and 'str'
 
-* I change :ref:`assertEqual method<test_assert_equal>` to assertRaises_
+* I change :ref:`assertEqual method<test_assert_equal>` to :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
     :lineno-start: 67
@@ -346,7 +346,7 @@ the test passes.
 
     TypeError: can't multiply sequence by non-int of type 'str'
 
-* I add assertRaises_
+* I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
     :lineno-start: 67
@@ -381,7 +381,7 @@ the test passes.
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-* I add assertRaises_
+* I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
     :lineno-start: 67
@@ -406,7 +406,7 @@ how to test if something is an instance of an object in a program
 
 I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a string_, the same way the other :ref:`functions<what is a function?>` raise TypeError_ when one of the inputs is a string_. I can use the `isinstance function`_ which is like the :ref:`assertIsInstance method<test_assert_is_instance>` from when I tested :ref:`None<what is None?>`, it checks if one thing is an instance or child of a :ref:`class<everything is an object>`
 
-* I change the :ref:`assertEqual method<test_assert_equal>` to assertRaises_ in :ref:`test_calculator_with_strings<test_calculator_raises_type_error_w_strings>`
+* I change the :ref:`assertEqual method<test_assert_equal>` to :ref:`assertRaises<another way to test if an Exception is raised>` in :ref:`test_calculator_with_strings<test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings>`
 
   .. code-block:: python
     :lineno-start: 67
@@ -463,7 +463,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
     :lineno-start: 67
     :emphasize-lines: 1
 
-        def test_calculator_raises_type_error_w_strings(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings(self):
             with self.assertRaises(TypeError):
                 src.calculator.add('1', '1')
             with self.assertRaises(TypeError):
@@ -492,13 +492,13 @@ I want the :ref:`calculator functions<how to make a calculator>` to send a messa
 
 ----
 
-I change the assertRaises_ to :ref:`assertEqual method<test_assert_equal>` for the :ref:`add function<test_addition>` in :ref:`test_calculator_raises_type_error_w_none`
+I change the :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertEqual method<test_assert_equal>` for the :ref:`add function<test_addition>` in :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none`
 
 .. code-block:: python
   :lineno-start: 57
   :emphasize-lines: 2,4-5
 
-      def test_calculator_raises_type_error_w_none(self):
+      def test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none(self):
           self.assertEqual(
               src.calculator.add(None, None),
               'brmph?! Numbers only. Try again...'
@@ -553,13 +553,13 @@ the test passes.
 
 ----
 
-* I change the assertRaises_ to :ref:`assertEqual method<test_assert_equal>` for the :ref:`divide function<test_division>`
+* I change the :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertEqual method<test_assert_equal>` for the :ref:`divide function<test_division>`
 
   .. code-block:: python
     :lineno-start: 57
     :emphasize-lines: 6,8-9
 
-        def test_calculator_raises_type_error_w_none(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none(self):
             self.assertEqual(
                 src.calculator.add(None, None),
                 'brmph?! Numbers only. Try again...'
@@ -596,7 +596,7 @@ the test passes.
 
     AssertionError: TypeError not raised
 
-  my change made the :ref:`assertion<what is an assertion?>` in :ref:`test_calculator_raises_type_error_w_strings` fail
+  my change made the :ref:`assertion<what is an assertion?>` in :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings` fail
 
 * I undo the change, then add an :ref:`if statement<if statements>`
 
@@ -619,7 +619,7 @@ the test passes.
 
 ----
 
-* I change the assertRaises_ to :ref:`assertEqual method<test_assert_equal>` for the :ref:`multiply function<test_multiplication>` in :ref:`test_calculator_raises_type_error_w_none` in ``test_calculator.py``
+* I change the :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertEqual method<test_assert_equal>` for the :ref:`multiply function<test_multiplication>` in :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 62
@@ -636,7 +636,7 @@ the test passes.
           with self.assertRaises(TypeError):
               src.calculator.subtract(None, None)
 
-      def test_calculator_raises_type_error_w_strings(self):
+      def test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings(self):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -662,7 +662,7 @@ the test passes.
 
 ----
 
-* I change the assertRaises_ for the :ref:`subtract function<test_subtraction>` to :ref:`assertEqual method<test_assert_equal>` in :ref:`test_calculator_raises_type_error_w_none` in ``test_calculator.py``
+* I change the :ref:`assertRaises<another way to test if an Exception is raised>` for the :ref:`subtract function<test_subtraction>` to :ref:`assertEqual method<test_assert_equal>` in :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 66
@@ -677,7 +677,7 @@ the test passes.
                 'brmph?! Numbers only. Try again...'
             )
 
-        def test_calculator_raises_type_error_w_strings(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings(self):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -709,7 +709,7 @@ the test passes.
     :lineno-start: 57
     :emphasize-lines: 2
 
-        def test_calculator_raises_type_error_w_none(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none(self):
             error_message = 'brmph?! Numbers only. Try again...'
 
             self.assertEqual(
@@ -723,7 +723,7 @@ the test passes.
     :lineno-start: 57
     :emphasize-lines: 6,10,14,18
 
-        def test_calculator_raises_type_error_w_none(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none(self):
             error_message = 'brmph?! Numbers only. Try again...'
 
             self.assertEqual(
@@ -743,7 +743,7 @@ the test passes.
                 error_message
             )
 
-        def test_calculator_raises_type_error_w_strings(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings(self):
 
   the test is still green.
 
@@ -917,13 +917,13 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
 ----
 
-* I change assertRaises_ to :ref:`assertEqual method<test_assert_equal>` for the :ref:`divide function<test_division>` in ``test_calculator.py``
+* I change :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertEqual method<test_assert_equal>` for the :ref:`divide function<test_division>` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 77
     :emphasize-lines: 6,8-9
 
-        def test_calculator_raises_type_error_w_strings(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings(self):
             self.assertEqual(
                 src.calculator.add('1', '1'),
                 'brmph?! Numbers only. Try again...'
@@ -959,13 +959,13 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
 ----
 
-* I change assertRaises_ to :ref:`assertEqual method<test_assert_equal>` for the :ref:`multiply function<test_multiplication>` in :ref:`test_calculator_raises_type_error_w_strings` in ``test_calculator.py``
+* I change :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertEqual method<test_assert_equal>` for the :ref:`multiply function<test_multiplication>` in :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 77
     :emphasize-lines: 10,12-13
 
-        def test_calculator_raises_type_error_w_strings(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings(self):
             self.assertEqual(
                 src.calculator.add('1', '1'),
                 'brmph?! Numbers only. Try again...'
@@ -1004,13 +1004,13 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
 ----
 
-* I change the assertRaises_ to :ref:`assertEqual method<test_assert_equal>` for the :ref:`subtract function<test_subtraction>` in ``test_calculator.py``
+* I change the :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertEqual method<test_assert_equal>` for the :ref:`subtract function<test_subtraction>` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 77
     :emphasize-lines: 14, 16-17
 
-        def test_calculator_raises_type_error_w_strings(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings(self):
             self.assertEqual(
                 src.calculator.add('1', '1'),
                 'brmph?! Numbers only. Try again...'
@@ -1397,13 +1397,13 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
 ----
 
-* I add a :ref:`variable<what is a variable?>` to :ref:`test_calculator_raises_type_error_w_strings`
+* I add a :ref:`variable<what is a variable?>` to :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings`
 
   .. code-block:: python
     :lineno-start: 78
     :emphasize-lines: 1
 
-        def test_calculator_raises_type_error_w_strings(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings(self):
             error_message = 'brmph?! Numbers only. Try again...'
 
             self.assertEqual(
@@ -1417,7 +1417,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
     :lineno-start: 77
     :emphasize-lines: 6,10,14,18
 
-        def test_calculator_raises_type_error_w_strings(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings(self):
             error_message = 'brmph?! Numbers only. Try again...'
 
             self.assertEqual(
@@ -1442,7 +1442,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
   still green.
 
-* I remove the name of :ref:`test_calculator_raises_type_error_w_strings` to make its :ref:`assertions<what is an assertion?>` part of  :ref:`test_calculator_raises_type_error_w_none`
+* I remove the name of :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_strings` to make its :ref:`assertions<what is an assertion?>` part of  :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none`
 
   .. code-block:: python
     :lineno-start: 68
@@ -1490,7 +1490,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
             )
             self.assertEqual(
 
-* I change the name from :ref:`test_calculator_raises_type_error_w_none` to ``test_calculator_sends_message_when_input_is_not_a_number`` to make it clearer
+* I change the name from :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_w_none` to ``test_calculator_sends_message_when_input_is_not_a_number`` to make it clearer
 
   .. code-block:: python
     :lineno-start: 57
@@ -1762,8 +1762,8 @@ what is next?
 * :ref:`I know how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
 * :ref:`how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment 2>`
-* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
-* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
+* :ref:`how to test if an Exception is raised with assertRaises<how to test if an Exception is raised>`
+* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
 * :ref:`how to make the calculator check if its inputs are numbers<test_calculator_sends_message_when_input_is_not_a_number>`
 

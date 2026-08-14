@@ -106,7 +106,7 @@ class TestCalculator(unittest.TestCase):
             self.random_first_number-self.random_second_number
         )
 
-    def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+    def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
         not_two_numbers = [0, 1, 2]
 
         with self.assertRaises(TypeError):

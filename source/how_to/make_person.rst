@@ -277,7 +277,7 @@ start the project
 
     and try ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_person.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -340,7 +340,7 @@ test_factory_w_keyword_arguments
 
   because there is no definition for ``src`` in ``test_person.py``
 
-* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 12
@@ -378,7 +378,7 @@ test_factory_w_keyword_arguments
 
     because there is nothing in ``src/person/__init__.py`` named ``factory``
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 13
@@ -437,7 +437,7 @@ test_factory_w_keyword_arguments
 
   because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``first_name``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 16
@@ -3380,7 +3380,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_person.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 65
@@ -6609,7 +6609,7 @@ I ran tests to make
 
 * a :ref:`function<what is a function?>` that takes in a :ref:`dictionary<what is a dictionary?>` and returns a string_ as output with :ref:`values<test_values_of_a_dictionary>` of :ref:`keys<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
 
-I also saw these :ref:`Exceptions<how to test that an Exception is raised>`
+I also saw these :ref:`Exceptions<how to test if an Exception is raised>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`NameError<test_catching_name_error>`

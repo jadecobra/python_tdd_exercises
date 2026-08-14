@@ -86,13 +86,13 @@ If you prefer videos to text, here are videos for some of the chapters in the bo
 
     <iframe style="border-radius:12px" width="560"  height="315" src="https://www.youtube-nocookie.com/embed/i8fGEqdH3yk?si=eBow2hwdlh01aVUF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-* :ref:`how to test that an Exception is raised`
+* :ref:`how to test if an Exception is raised`
 
   .. raw:: html
 
     <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/dQALevkVBWw?si=G9wK6OfhYF79-ORx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-* :ref:`how to handle Exceptions (Errors) in programs`
+* :ref:`how to handle Exceptions in programs`
 
   .. raw:: html
 

@@ -13,7 +13,7 @@ Exception Handling in tests: tests
 
 ----
 
-The code in ``exceptions/tests/test_exceptions.py`` from :ref:`how to test that an Exception is raised`
+The code in ``exceptions/tests/test_exceptions.py`` from :ref:`how to test if an Exception is raised`
 
 .. literalinclude:: exception_handling/test_exceptions_in_tests.py
   :language: python
@@ -47,7 +47,7 @@ Exception Handling in tests: solution
 
 ----
 
-The code in ``src/exceptions/__init__.py`` from :ref:`how to test that an Exception is raised`
+The code in ``src/exceptions/__init__.py`` from :ref:`how to test if an Exception is raised`
 
 .. literalinclude:: exception_handling/exceptions_in_tests.py
   :language: python
@@ -66,7 +66,7 @@ Exception Handling in programs: tests
 
 ----
 
-The code in ``exceptions/tests/test_exceptions.py`` from :ref:`how to handle Exceptions (Errors) in programs`
+The code in ``exceptions/tests/test_exceptions.py`` from :ref:`how to handle Exceptions in programs`
 
 .. literalinclude:: exception_handling/test_exceptions_in_programs.py
   :language: python
@@ -100,7 +100,7 @@ Exception Handling in programs: solutions
 
 ----
 
-The code in ``src/exceptions/__init__.py`` from :ref:`how to handle Exceptions (Errors) in programs`
+The code in ``src/exceptions/__init__.py`` from :ref:`how to handle Exceptions in programs`
 
 .. literalinclude:: exception_handling/exceptions_in_programs.py
   :language: python

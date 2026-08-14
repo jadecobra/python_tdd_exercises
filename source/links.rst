@@ -90,9 +90,6 @@
 .. _The Python Standard Library: https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library
 .. _pyproject.toml: https://python-poetry.org/docs/pyproject/
 .. _pwd: touch aka_current_working_directory
-.. _raise: https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement
-.. _raises: raise_
-.. _raise statement: raises_
 .. _range: https://docs.python.org/3/library/stdtypes.html?highlight=range#range
 .. _range object: range_
 .. _random: https://docs.python.org/3/library/random.html?highlight=random#module-random

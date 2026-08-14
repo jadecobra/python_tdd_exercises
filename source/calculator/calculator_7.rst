@@ -147,7 +147,7 @@ I add a new test
               self.random_first_number+self.random_first_number
           )
 
-      def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+      def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -349,7 +349,7 @@ this means
                 self.random_first_number-self.random_first_number
             )
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
 
   the test passes.
 
@@ -419,7 +419,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 
     KeyError: 'x'
 
-* I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 214
@@ -461,7 +461,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 
     TypeError: numbers_only.<locals>.decorator() got an unexpected keyword argument 'x'
 
-  the same :ref:`Exception<how to test that an Exception is raised>` I had before I added the :ref:`keys<test_keys_of_a_dictionary>` to the :ref:`dictionary<what is a dictionary?>`
+  the same :ref:`Exception<how to test if an Exception is raised>` I had before I added the :ref:`keys<test_keys_of_a_dictionary>` to the :ref:`dictionary<what is a dictionary?>`
 
 * I change ``two_numbers['x']`` to ``two_numbers['first_input']`` to use the new :ref:`keys<test_keys_of_a_dictionary>` in the :ref:`assertions<What is an assertion?>` for :ref:`addition<test_addition>`
 
@@ -481,7 +481,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 
     TypeError: numbers_only.<locals>.decorator() got an unexpected keyword argument 'x'
 
-  the same :ref:`Exception<how to test that an Exception is raised>` I had before I added the :ref:`keys<test_keys_of_a_dictionary>` to the :ref:`dictionary<what is a dictionary?>`
+  the same :ref:`Exception<how to test if an Exception is raised>` I had before I added the :ref:`keys<test_keys_of_a_dictionary>` to the :ref:`dictionary<what is a dictionary?>`
 
 * I comment out the :ref:`assertion<what is an assertion?>` with ``**two_numbers``
 
@@ -501,7 +501,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
             #     self.random_first_number-self.random_second_number
             # )
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
 
   the test is green again
 
@@ -827,7 +827,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
                 self.random_first_number-self.random_second_number
             )
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
 
   the test passes.
 
@@ -1161,7 +1161,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 165
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
             not_two_numbers = [0, 1, 2]
 
             with self.assertRaises(TypeError):
@@ -2022,13 +2022,13 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 
 ----
 
-* I add a :ref:`for loop<what is a for loop?>` to use the ``self.arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_calculator_raises_type_error_when_given_more_than_two_inputs`
+* I add a :ref:`for loop<what is a for loop?>` to use the ``self.arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs`
 
   .. code-block:: python
     :lineno-start: 150
     :emphasize-lines: 4-8
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
             not_two_numbers = [0, 1, 2]
 
             for operation in self.arithmetic_tests:
@@ -2077,7 +2077,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
   .. code-block:: python
     :lineno-start: 171
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
             not_two_numbers = [0, 1, 2]
 
             for operation in self.arithmetic_tests:
@@ -2129,7 +2129,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
   .. code-block:: python
     :lineno-start: 150
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
             for operation in self.arithmetic_tests:
                 with (
                     self.subTest(operation=operation),
@@ -2211,7 +2211,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                 self.random_first_number-self.random_second_number
             )
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for the 4 operations
 
@@ -2286,7 +2286,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                 self.random_first_number-self.random_first_number
             )
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
 
   the test is still green.
 
@@ -2529,8 +2529,8 @@ what is next?
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`I know how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
-* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
+* :ref:`how to test if an Exception is raised with assertRaises<how to test if an Exception is raised>`
+* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
 * :ref:`what you can do with Lists<what is a list?>`
 * :ref:`how to use list comprehensions<list comprehensions>`

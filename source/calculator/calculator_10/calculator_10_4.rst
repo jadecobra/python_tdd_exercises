@@ -1830,7 +1830,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
                     self.press_button('AC')
 
 
-  the terminal_ is my friend, and shows :ref:`Exceptions<how to test that an Exception is raised>`
+  the terminal_ is my friend, and shows :ref:`Exceptions<how to test if an Exception is raised>`
 
   .. code-block:: python
     :emphasize-lines: NameError

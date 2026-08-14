@@ -139,7 +139,7 @@ test_logical_true
 
 ----
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_nullary_unary.py``
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_nullary_unary.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -418,7 +418,7 @@ test_logical_identity
 
   because the test :ref:`called<how to call a function with input>` the :ref:`logical_identity function<test_logical_identity>` with one argument and the definition does not allow any arguments (the parentheses are empty).
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_nullary_unary.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_nullary_unary.py``
 
   .. code-block:: python
     :lineno-start: 26

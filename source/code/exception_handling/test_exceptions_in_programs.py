@@ -74,7 +74,7 @@ class TestExceptions(unittest.TestCase):
         with self.assertRaises(ZeroDivisionError):
             1 / 0
 
-    def test_catching_exceptions_in_tests(self):
+    def test_catching_exceptions(self):
         self.assert_raises('raise Exception', Exception)
         with self.assertRaises(Exception):
             raise Exception
@@ -96,7 +96,7 @@ class TestExceptions(unittest.TestCase):
     def test_catching_success(self):
         self.assertEqual(
             src.exceptions.an_exception_handler(
-                src.exceptions.does_not_raise_exception
+                src.exceptions.do_not_raise_exception
             ),
             'succeeded'
         )

@@ -790,13 +790,13 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
 ----
 
-* I use ``self.calculator_tests`` in the :ref:`for loop<what is a for loop?>` of  :ref:`test_calculator_raises_type_error_when_given_more_than_two_inputs`
+* I use ``self.calculator_tests`` in the :ref:`for loop<what is a for loop?>` of  :ref:`test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs`
 
   .. code-block:: python
     :lineno-start: 143
     :emphasize-lines: 2-3
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
             # for operation in self.arithmetic_tests:
             for operation in self.calculator_tests:
                 with (
@@ -829,7 +829,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
   .. code-block:: python
     :lineno-start: 143
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
             for operation in self.calculator_tests:
                 with (
                     self.subTest(operation=operation),
@@ -945,7 +945,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                 self.random_first_number-self.random_first_number
             )
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+        def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
 
 ----
 
@@ -2238,8 +2238,8 @@ what is next?
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`I know how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
-* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
+* :ref:`how to test if an Exception is raised with assertRaises<how to test if an Exception is raised>`
+* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
 * :ref:`what you can do with Lists<what is a list?>`
 * :ref:`how to use list comprehensions<list comprehensions>`

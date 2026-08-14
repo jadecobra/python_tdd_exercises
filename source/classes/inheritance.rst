@@ -280,7 +280,7 @@ start the project
 
     and try ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :linenos:
@@ -366,7 +366,7 @@ test_making_a_class_w_pass
 
   because ``WPass`` is not defined in this file_.
 
-* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 5
@@ -1683,7 +1683,7 @@ An :ref:`instance<how to test if something is an instance>` is a copy of an :ref
 
   because the first argument given in this :ref:`call<how to call a function with input>` to the :ref:`issubclass function<how to test if something is a subclass>`  is an :ref:`instance<how to test if something is an instance>` not a :ref:`class<what is a class?>`.
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 59

@@ -271,7 +271,7 @@ the test passes. I can make an empty list_ with ``list()`` or ``[]``
 
     TypeError: 'int' object is not iterable
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 11
@@ -1268,7 +1268,7 @@ the test passes.
 
   the `index method`_ raises ValueError_ when the item is not in the list_
 
-* I add ValueError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add ValueError_ to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 104
@@ -1295,7 +1295,7 @@ the test passes.
 
     ValueError: 'not in list' is not in list
 
-* I add assertRaises_ to handle the :ref:`Exception<how to test that an Exception is raised>`
+* I add :ref:`assertRaises<another way to test if an Exception is raised>` to handle the :ref:`Exception<how to test if an Exception is raised>`
 
   .. code-block:: python
     :lineno-start: 91
@@ -2018,7 +2018,7 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 
     ValueError: list.remove(x): x not in list
 
-* I remove the things around the call then add assertRaises_
+* I remove the things around the call then add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
     :lineno-start: 119
@@ -2210,7 +2210,7 @@ I have to change ``'n'`` to a number or change the other numbers to strings_
 
 ----
 
-I remove the things around the call then add assertRaises_
+I remove the things around the call then add :ref:`assertRaises<another way to test if an Exception is raised>`
 
 .. code-block:: python
   :lineno-start: 129
@@ -2940,7 +2940,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 test_index_error
 *********************************************************************************
 
-IndexError_ is raised when I try to get an item from a list_ and use a number that points to something that is NOT in the list_. When I see this :ref:`Exception<how to test that an Exception is raised>` I know the underlying data structure is a list_
+IndexError_ is raised when I try to get an item from a list_ and use a number that points to something that is NOT in the list_. When I see this :ref:`Exception<how to test if an Exception is raised>` I know the underlying data structure is a list_
 
 ----
 
@@ -2981,7 +2981,7 @@ when I use an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` 
 
 ----
 
-I add assertRaises_
+I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
 .. code-block:: python
   :lineno-start: 164
@@ -3003,7 +3003,7 @@ the test passes.
 
 ----
 
-* I add IndexError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+* I add IndexError_ to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 171
@@ -3065,7 +3065,7 @@ the test passes.
 
     IndexError: pop from empty list
 
-* I add assertRaises_
+* I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
     :lineno-start: 169
@@ -3094,7 +3094,7 @@ the test passes.
 
     IndexError: list index out of range
 
-* I add assertRaises_
+* I add :ref:`assertRaises<another way to test if an Exception is raised>`
 
   .. code-block:: python
     :lineno-start: 171
@@ -3187,8 +3187,8 @@ what is next?
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`I know how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
-* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
+* :ref:`how to test if an Exception is raised with assertRaises<how to test if an Exception is raised>`
+* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
 * :ref:`how to make the calculator check if its inputs are numbers<test_calculator_sends_message_when_input_is_not_a_number>`
 * :ref:`what you can do with Lists<what is a list?>`

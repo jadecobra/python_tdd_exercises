@@ -133,7 +133,7 @@ class TestCalculator(unittest.TestCase):
             self.random_first_number-self.random_first_number
         )
 
-    def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+    def test_calculator_:ref:`raises<how to raise an Exception>`type_error_when_given_more_than_two_inputs(self):
         for operation in self.arithmetic_tests:
             with (
                 self.subTest(operation=operation),
