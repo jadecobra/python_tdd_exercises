@@ -847,7 +847,7 @@ what is next?
 * :ref:`I know how to test if an Exception is raised<how to test if an Exception is raised>`.
 * :ref:`I know how to use Exception handlers in programs<how to handle Exceptions in programs>`.
 
-:ref:`Would you like to test making a Person with tuples?<how to make a person with tuples>`
+:ref:`Would you like to test making a Person with tuples?<how to make a person with loops>`
 
 -----
 

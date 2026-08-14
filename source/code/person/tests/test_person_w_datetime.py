@@ -188,7 +188,7 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(reality, my_expectation)
 
     def test_when_year_of_birth_is_not_an_integer(self):
-        person = src.person.Person(
+        src.person.Person(
             first_name='first_name',
             last_name='last_name',
             sex='M',
