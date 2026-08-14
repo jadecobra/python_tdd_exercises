@@ -90,6 +90,38 @@ class TestPerson(unittest.TestCase):
                 self.assertEqual(person.can_get_license(), passed_test)
 
     def test_person_can_vote(self):
+        for a_person in self.people:
+            with self.subTest(first_name=a_person[0]):
+                is_citizen = person[4]
+
+                person = src.person.Person(
+                    first_name=person[0],
+                    last_name=person[1],
+                    sex=person[2],
+                    year_of_birth=person[3],
+                    is_citizen=is_citizen,
+                    passed_test=person[5],
+                )
+
+                self.assertEqual(person.can_vote(), is_citizen)
+
+    def test_person_can_vote(self):
+        for a_person in self.people:
+            with self.subTest(first_name=a_person[0]):
+                passed_test = person[5]
+
+                person = src.person.Person(
+                    first_name=person[0],
+                    last_name=person[1],
+                    sex=person[2],
+                    year_of_birth=person[3],
+                    is_citizen=is_citizen,
+                    passed_test=passed_test,
+                )
+
+                self.assertEqual(person.can_vote(), is_citizen)
+                self.assertEqual(person.can_get_license(), passed_test)
+
 
     def test_person_can_get_license(self):
 
