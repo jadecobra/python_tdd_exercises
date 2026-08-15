@@ -20,7 +20,7 @@ This means that if I add more people or more cases where ``year_of_birth`` is no
 
 I want to use one test for each of the three tests for each person, and one test for every case where ``year_of_birth`` is not an integer. I can do this with :ref:`for loops<what is a for loop?>`.
 
-A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is an iterable?>` (a collection of items), it is written like this
+A :ref:`for loop<what is a for loop?>` is a way to repeat the same command over an :ref:`iterable<what is an iterable?>` (a collection of items), it is written like this
 
 .. code-block:: python
 
@@ -92,7 +92,6 @@ open the project
     cd person
 
 * I open ``test_person.py`` from the ``tests`` folder_
-
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
@@ -112,8 +111,10 @@ open the project
 ----
 
 *********************************************************************************
-test_when_person_is_too_old_to_be_alive
+extract test_factory_function
 *********************************************************************************
+
+The tests for the :ref:`factory function<test person factory>` in :ref:`test_john`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make a :ref:`call<how to call a function with input>` to the :ref:`factory function<test person factory>` then compare the result with a string_.
 
 =================================================================================
 :red:`RED`: make it fail
@@ -121,159 +122,42 @@ test_when_person_is_too_old_to_be_alive
 
 ----
 
-* I open ``tests/test_person.py``
-* I add :ref:`test_when_person_is_too_old_to_be_alive` for if the age of the person is greater than ``120``, in ``tests/test_person.py``
-
-  .. code-block:: python
-    :lineno-start: 202
-    :emphasize-lines: 15-21
-
-        def test_underage_citizen(self):
-            person = src.person.Person(
-                first_name='first_name',
-                last_name='last_name',
-                sex='M',
-                year_of_birth=datetime.date.today().year-17,
-                is_citizen=True,
-                passed_test=True,
-            )
-            self.assertEqual(person.can_vote(), False)
-            self.assertEqual(
-                person.can_get_license(), False
-            )
-
-        def test_when_person_is_too_old_to_be_alive(self):
-            person = src.person.Person(
-                first_name='first_name',
-                last_name='last_name',
-                sex='F',
-                year_of_birth=datetime.date.today().year-121,
-            )
-
-        @unittest.skip('will always fail')
-        def test_when_year_of_birth_is_not_an_integer(self):
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    E       AssertionError
-
-  I use a calculation (``datetime.date.today().year-121``) as the year of birth so that it will always be ``121`` years ago.
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I open ``src/person/__init__.py``
-
-* I change the :ref:`assert statement<what is an assertion?>` in the :ref:`calculate_age function<extract calculate_age function>` for if the age is less than or equal to ``120`` to :ref:`raise an Exception<how to raise an Exception>` if the age is greater than ``120``
-
-  .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 7-9
-
-    def calculate_age(year_of_birth):
-        assert isinstance(year_of_birth, int)
-        age = (
-            datetime.date.today().year
-          - year_of_birth
-        )
-        # assert age <= 120
-        if age > 120:
-            raise Exception
-        return age
-
-
-    def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
-
-  the terminal_ is my friend, and shows :ref:`Exception<how to test if an Exception is raised>`
-
-  .. code-block:: shell
-
-    E           Exception
-
-* I add a :ref:`try statement<how to handle Exceptions>` to :ref:`test_when_person_is_too_old_to_be_alive` in ``tests/test_person.py``
-
-  .. code-block:: python
-    :lineno-start: 216
-    :emphasize-lines: 2-10
-
-        def test_when_person_is_too_old_to_be_alive(self):
-            try:
-                person = src.person.Person(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='F',
-                    year_of_birth=datetime.date.today().year-121,
-                )
-            except:
-                pass
-
-        @unittest.skip('will always fail')
-        def test_when_year_of_birth_is_not_an_integer(self):
-
-  the test passes, confirming that when the value for ``year_of_birth`` makes the person older than ``120`` an :ref:`Exception<how to test if an Exception is raised>` is  is :ref:`raised<how to raise an Exception>`.
-
-  - The :ref:`try statement<how to handle Exceptions>` is like an :ref:`if statement<if statements>` for :ref:`Exceptions<how to test if an Exception is raised>`. It tells the program_ what to do if an :ref:`Exception<how to test if an Exception is raised>` is  is :ref:`raised<how to raise an Exception>`. A simple way to think of it is
-
-    - ``try`` **something**
-    - ``except`` - if **something** raises an :ref:`Exception<how to test if an Exception is raised>` do something else
-
-  - pass_ is a special keyword that allows the :ref:`try statement<how to handle Exceptions>` to follow Python_ language rules (the :ref:`except block<how to handle Exceptions>` must have a body).
-
-* I add a git_ commit message
-
-  .. code-block:: python
-
-    git commit -am \
-    'add test_when_person_is_too_old_to_be_alive'
-
-----
-
-*********************************************************************************
-add exception handler to test_when_year_of_birth_is_not_an_integer
-*********************************************************************************
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I remove the :ref:`unittest.skip decorator<how to skip a test>` from :ref:`test_when_year_of_birth_is_not_an_integer` and remove the comment from ``year_of_birth=None`` to test when ``year_of_birth`` is :ref:`None<what is None?>`, in ``tests/test_person.py``
+I add a test for the :ref:`factory function<test person factory>` to ``tests/test_person.py``
 
 .. code-block:: python
-  :lineno-start: 224
-  :emphasize-lines: 5, 9, 11-13
+  :lineno-start: 6
+  :emphasize-lines: 10-22
 
-          except:
-              pass
+  class TestPerson(unittest.TestCase):
 
-      def test_when_year_of_birth_is_not_an_integer(self):
-          src.person.Person(
-              first_name='first_name',
-              last_name='last_name',
-              sex='M',
-              year_of_birth=None,
+      @staticmethod
+      def calculate_age(year_of_birth):
+          return (
+              datetime.date.today().year
+            - year_of_birth
           )
-          # year_of_birth=2026.0,  # fails
-          # year_of_birth='2026',  # fails
-          # year_of_birth=(2026,), # fails
 
-      def test_dir_person_class(self):
+      def test_factory_function(self):
+          people = (
+              ('joe', 'blow', 'M', 1996),
+          )
+          for a_person in people:
+              reality = src.person.factory(
+                  first_name=a_person[0],
+                  last_name=a_person[1],
+                  sex=a_person[2],
+                  year_of_birth=a_person[3],
+              )
+              my_expectation = None
+              self.assertEqual(reality, my_expectation)
+
+      def test_joe(self):
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
-  E       AssertionError
+  AssertionError: 'joe, blow, M, 1996' != None
 
 ----
 
@@ -283,60 +167,73 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I change ``assert isinstance(year_of_birth, int)`` to an :ref:`if statement<if statements>` that :ref:`raises an Exception<how to raise an Exception>` when ``year_of_birth`` is not an integer_ in the :ref:`calculate_age function<extract calculate_age function>` in ``src/person/__init__.py``
+I change ``my_expectation`` to match ``reality``
+
+.. code-block:: python
+  :lineno-start: 15
+  :emphasize-lines: 12
+
+      def test_factory_function(self):
+          people = (
+              ('joe', 'blow', 'M', 1996),
+          )
+          for a_person in people:
+              reality = src.person.factory(
+                  first_name=a_person[0],
+                  last_name=a_person[1],
+                  sex=a_person[2],
+                  year_of_birth=a_person[3],
+              )
+              my_expectation = 'joe, blow, M, 1996'
+              self.assertEqual(reality, my_expectation)
+
+      def test_joe(self):
+
+the test passes.
+
+* I made a tuple_ named ``people`` that contains a tuple for ``joe``
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 2-4
 
-    def calculate_age(year_of_birth):
-        # assert isinstance(year_of_birth, int)
-        if not isinstance(year_of_birth, int):
-            raise Exception
+    people = (
+        ('joe', 'blow', 'M', 1996),
+    )
 
-        age = (
-            datetime.date.today().year
-          - year_of_birth
-        )
-        # assert age <= 120
-        if age > 120:
-            raise Exception
-        return age
+* I use a :ref:`for loop<what is a for loop?>` to repeat the same commands for each item in the ``people`` tuple, in this case there is only one item - the tuple_ for ``joe``
 
+  .. code-block:: python
 
-    def say_hello(
-        first_name, last_name, year_of_birth,
+    for a_person in (
+        ('joe', 'blow', 'M', 1996),
     ):
 
-  the terminal_ is my friend, and shows :ref:`Exception<how to test if an Exception is raised>`
+* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of each item in ``joe`` for the parameters when the test :ref:`calls<how to call a function with input>` the :ref:`factory function<test person factory>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    E           Exception
-
-* I add a :ref:`try statement<how to handle Exceptions>` for when ``year_of_birth`` is :ref:`None<what is None?>` to :ref:`test_when_year_of_birth_is_not_an_integer` in ``tests/test_person.py``
-
-  .. code-block:: python
-    :lineno-start: 227
-    :emphasize-lines: 2-10
-
-        def test_when_year_of_birth_is_not_an_integer(self):
-            try:
-                src.person.Person(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth=None,
-                )
-            except:
-                pass
-            # year_of_birth=2026.0,  # fails
-            # year_of_birth='2026',  # fails
-            # year_of_birth=(2026,), # fails
-
-        def test_dir_person_class(self):
-
-  the test passes, showing that :ref:`Exception<how to test if an Exception is raised>` is :ref:`raised<how to raise an Exception>` when ``year_of_birth`` is not an integer_.
+    for a_person in people:
+    ├── a_person = ('joe', 'blow', 'M', 1996)
+    └── reality = src.person.factory(
+            first_name=a_person[0],
+            last_name=a_person[1],
+            sex=a_person[2],
+            year_of_birth=a_person[3],
+        )
+        └── src
+            └── person
+                └── def factory(
+                        first_name, last_name,
+                        sex, year_of_birth,
+                    ):
+                    ├── first_name    = 'joe'
+                    ├── last_name     = 'blow'
+                    ├── sex           = 'M'
+                    ├── year_of_birth = 1996
+                    └── return (
+                            f'{first_name}, {last_name},'
+                            f' {sex}, {year_of_birth}'
+                        )
+                        return 'joe, blow, M, 1996'
 
 ----
 
@@ -346,202 +243,421 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I make a person with a float_ as the value for ``year_of_birth``
+* I add ``jane`` to the tuple_ of ``people``
 
   .. code-block:: python
-    :lineno-start: 235
-    :emphasize-lines: 4-9
+    :lineno-start: 15
+    :emphasize-lines: 3
 
-            except:
-                pass
-
-            src.person.Person(
-                first_name='first_name',
-                last_name='last_name',
-                sex='M',
-                year_of_birth=2026.0,
+        def test_factory_function(self):
+            people = (
+                ('jane', 'doe', 'F', 1991),
+                ('joe', 'blow', 'M', 1996),
             )
+            for a_person in people:
 
-            # year_of_birth='2026',  # fails
-            # year_of_birth=(2026,), # fails
-
-            # fails if year_of_birth is not an integer
-
-        def test_dir_person_class(self):
-
-  the terminal_ is my friend, and shows :ref:`Exception<how to test if an Exception is raised>`
-
-* I add a :ref:`try statement<how to handle Exceptions>` for when the ``year_of_birth`` is a float_
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :lineno-start: 235
-    :emphasize-lines: 4-12
 
-            except:
-                pass
+    AssertionError: 'jane, doe, F, 1991' != 'joe, blow, M, 1996'
 
-            try:
-                src.person.Person(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth=2026.0,
-                )
-            except:
-                pass
+  because the result when the :ref:`factory function<test person factory>` with ``'jane'``, ``'doe'``, ``'F'`` and ``'1991'`` as input is ``'jane, doe, F, 1991'`` not ``'joe, blow, M, 1996'``.
 
-            # year_of_birth='2026',  # fails
+  .. code-block:: shell
 
-  the test passes, showing that :ref:`Exception<how to test if an Exception is raised>` is :ref:`raised<how to raise an Exception>` when ``year_of_birth`` is not an integer_.
-
-* I make a person with a string_ as the value for ``year_of_birth``
-
-  .. code-block:: python
-    :lineno-start: 245
-    :emphasize-lines: 4-9
-
-            except:
-                pass
-
-            src.person.Person(
-                first_name='first_name',
-                last_name='last_name',
-                sex='M',
-                year_of_birth='2026',
-            )
-
-            # year_of_birth=(2026,), # fails
-
-            # fails if year_of_birth is not an integer
-
-        def test_dir_person_class(self):
-
-  the terminal_ is my friend, and shows :ref:`Exception<how to test if an Exception is raised>`
-
-* I add a :ref:`try statement<how to handle Exceptions>` for when the ``year_of_birth`` is a string_
-
-  .. code-block:: python
-    :lineno-start: 245
-    :emphasize-lines: 4-12
-
-            except:
-                pass
-
-            try:
-                src.person.Person(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth='2026',
-                )
-            except:
-                pass
-
-            # year_of_birth=(2026,), # fails
-
-  the test passes, showing that :ref:`Exception<how to test if an Exception is raised>` is :ref:`raised<how to raise an Exception>` when ``year_of_birth`` is not an integer_.
-
-* I make a person with a tuple_ as the value for ``year_of_birth``
-
-  .. code-block:: python
-    :lineno-start: 255
-    :emphasize-lines: 4-9
-
-            except:
-                pass
-
-            src.person.Person(
-                first_name='first_name',
-                last_name='last_name',
-                sex='M',
-                year_of_birth=(2026,),
-            )
-
-        def test_dir_person_class(self):
-
-  the terminal_ is my friend, and shows :ref:`Exception<how to test if an Exception is raised>`
-
-* I add a :ref:`try statement<how to handle Exceptions>` for when the ``year_of_birth`` is a tuple_, and remove the other comments since I no longer need them
-
-  .. code-block:: python
-    :lineno-start: 255
-    :emphasize-lines: 4-12
-
-            except:
-                pass
-
-            try:
-                src.person.Person(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth=(2026,),
-                )
-            except:
-                pass
-
-        def test_dir_person_class(self):
-
-  the test passes, showing that :ref:`Exception<how to test if an Exception is raised>` is :ref:`raised<how to raise an Exception>` when ``year_of_birth`` is not an integer_.
-
-* I remove the commented lines from the :ref:`calculate_age function<extract calculate_age function>`  in ``src/person/__init__.py``
-
-  .. code-block:: python
-    :lineno-start: 44
-
-    def calculate_age(year_of_birth):
-        if not isinstance(year_of_birth, int):
-            raise Exception
-
-        age = (
-            datetime.date.today().year
-          - year_of_birth
+        for a_person in (
+    ┌───┴── ('jane', 'doe', 'F', 1991),
+    │       ('joe', 'blow', 'M', 1996),
+    │   ):
+    ├── a_person = ('jane', 'doe', 'F', 1991)
+    └── reality = src.person.factory(
+            first_name=a_person[0],
+            last_name=a_person[1],
+            sex=a_person[2],
+            year_of_birth=a_person[3],
         )
+        src
+        └── person
+            └── def factory(
+                    first_name, last_name,
+                    sex, year_of_birth,
+                ):
+                ├── first_name    = 'jane'
+                ├── last_name     = 'doe'
+                ├── sex           = 'F'
+                ├── year_of_birth = 1991
+                └── return (
+                        f'{first_name}, {last_name},'
+                        f' {sex}, {year_of_birth}'
+                    )
+                    return 'jane, doe, F, 1991'
 
-        if age > 120:
-            raise Exception
-        return age
+* I change ``my_expectation`` to match ``reality`` for ``jane``
 
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 13-14
 
-    def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+        def test_factory_function(self):
+            people = (
+                ('jane', 'doe', 'F', 1991),
+                ('joe', 'blow', 'M', 1996),
+            )
+            for a_person in people:
+                reality = src.person.factory(
+                    first_name=a_person[0],
+                    last_name=a_person[1],
+                    sex=a_person[2],
+                    year_of_birth=a_person[3],
+                )
+                # my_expectation = 'joe, blow, M, 1996'
+                my_expectation = 'jane, doe, F, 1991'
+                self.assertEqual(reality, my_expectation)
+
+        def test_joe(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'joe, blow, M, 1996' != 'jane, doe, F, 1991'
+
+  because the result when the :ref:`factory function<test person factory>` with ``'joe'``, ``'blow'``, ``'M'`` and ``'1996'`` as input is ``'joe, blow, M, 1996'`` not ``'jane, doe, F, 1991'``. The :ref:`for loop<what is a for loop?>` goes through each item in the ``people`` tuple_ one at a time.
+
+* I change ``my_expectation`` to an :ref:`f-string<what is string interpolation?>`
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 2-6
+
+                # my_expectation = 'joe, blow, M, 1996'
+                # my_expectation = 'jane, doe, F, 1991'
+                my_expectation = (
+                    f'{a_person[0]}, {a_person[1]},'
+                    f' {a_person[2]}, {a_person[3]}'
+                )
+                self.assertEqual(reality, my_expectation)
+
+        def test_joe(self):
+
+  the test passes.
+
+* I add :ref:`variables<what is a variable?>` for ``a_person[0]``, ``a_person[1]``, ``a_person[2]`` and ``a_person[3]``
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 7-10
+
+        def test_factory_function(self):
+            people = (
+                ('jane', 'doe', 'F', 1991),
+                ('joe', 'blow', 'M', 1996),
+            )
+            for a_person in people:
+                first_name = a_person[0]
+                last_name = a_person[1]
+                sex = a_person[2]
+                year_of_birth = a_person[3]
+
+                reality = src.person.factory(
+                    first_name=a_person[0],
+                    last_name=a_person[1],
+                    sex=a_person[2],
+                    year_of_birth=a_person[3],
+                )
+
+* I use the :ref:`variables<what is a variable?>` for ``a_person[0]``, ``a_person[1]``, ``a_person[2]`` and ``a_person[3]``
+
+  .. code-block:: python
+    :lineno-start: 26
+    :emphasize-lines: 2-9, 14-17
+
+                reality = src.person.factory(
+                    # first_name=a_person[0],
+                    # last_name=a_person[1],
+                    # sex=a_person[2],
+                    # year_of_birth=a_person[3],
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                )
+                # my_expectation = 'joe, blow, M, 1996'
+                # my_expectation = 'jane, doe, F, 1991'
+                my_expectation = (
+                    # f'{a_person[0]}, {a_person[1]},'
+                    # f' {a_person[2]}, {a_person[3]}'
+                    f'{first_name}, {last_name},'
+                    f' {sex}, {year_of_birth}'
+                )
+                self.assertEqual(reality, my_expectation)
+
+        def test_joe(self):
+
+  the test is still green.
+
+* I add a tuple_ for ``mary``
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 5
+
+        def test_factory_function(self):
+            people = (
+                ('jane', 'doe', 'F', 1991),
+                ('joe', 'blow', 'M', 1996),
+                ('mary', 'public', 'F', 2000),
+            )
+            for a_person in people:
+
+  still green.
+
+* I add a tuple_ for ``john``
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 6
+
+        def test_factory_function(self):
+            people = (
+                ('jane', 'doe', 'F', 1991),
+                ('joe', 'blow', 'M', 1996),
+                ('mary', 'public', 'F', 2000),
+                ('john', 'smith', 'M', 1980),
+            )
+            for a_person in people:
+
+  green, showing that for each tuple_ in the ``people`` tuple_, the :ref:`assertion<what is an assertion?>` is :ref:`True<test_what_is_true>`.
+
+* I add a tuple_ for a person with a string_ as the ``year_of_birth``
+
+  .. code-block:: python
+    :lineno-start: 15
+
+        def test_factory_function(self):
+            people = (
+                ('jane', 'doe', 'F', 1991),
+                ('joe', 'blow', 'M', 1996),
+                ('mary', 'public', 'F', 2000),
+                ('john', 'smith', 'M', 1980),
+                ('first_name', 'last_name', 'F', '2026'),
+            )
+            for a_person in people:
+
+  the test is still green, because the :ref:`factory function<test person factory>` returns a string with the inputs it gets.
+
+* I remove the commented lines from :ref:`test_factory_function<extract test_factory_function>`
+
+  .. code-block:: python
+    :lineno-start: 15
+
+        def test_factory_function(self):
+            people = (
+                ('jane', 'doe', 'F', 1991),
+                ('joe', 'blow', 'M', 1996),
+                ('mary', 'public', 'F', 2000),
+                ('john', 'smith', 'M', 1980),
+                ('first_name', 'last_name', 'F', '2026'),
+            )
+            for a_person in people:
+                first_name = a_person[0]
+                last_name = a_person[1]
+                sex = a_person[2]
+                year_of_birth = a_person[3]
+
+                reality = src.person.factory(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                )
+                my_expectation = (
+                    f'{first_name}, {last_name},'
+                    f' {sex}, {year_of_birth}'
+                )
+                self.assertEqual(reality, my_expectation)
+
+        def test_joe(self):
+
+* I remove the test for the :ref:`factory function<test person factory>` from :ref:`test_joe` since it is now a repetition
+
+  .. code-block:: python
+    :lineno-start: 41
+
+        def test_joe(self):
+            first_name = 'joe'
+            last_name = 'blow'
+            sex = 'M'
+            year_of_birth = 1996
+
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                f' {self.calculate_age(year_of_birth)}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            joe = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+            reality = joe.say_hello()
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+            self.assertEqual(joe.can_vote(), True)
+            self.assertEqual(joe.can_get_license(), False)
+
+        def test_jane(self):
+
+* I remove the test for the :ref:`factory function<test person factory>` from :ref:`test_jane` since it is now a repetition
+
+  .. code-block:: python
+    :lineno-start: 73
+
+        def test_jane(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+            year_of_birth = 1991
+
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                f' {self.calculate_age(year_of_birth)}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            jane = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+                passed_test=True,
+            )
+
+            reality = jane.say_hello()
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+            self.assertEqual(jane.can_vote(), True)
+            self.assertEqual(jane.can_get_license(), True)
+
+        def test_john(self):
+
+* I remove the test for the :ref:`factory function<test person factory>` from :ref:`test_john` since it is now a repetition
+
+  .. code-block:: python
+    :lineno-start: 106
+
+        def test_john(self):
+            first_name = 'john'
+            last_name = 'smith'
+            sex = 'M'
+            year_of_birth = 1980
+
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                f' {self.calculate_age(year_of_birth)}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            john = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+                is_citizen=False,
+            )
+
+            reality = john.say_hello()
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+            self.assertEqual(john.can_vote(), False)
+            self.assertEqual(john.can_get_license(), False)
+
+        def test_mary(self):
+
+* I remove the test for the :ref:`factory function<test person factory>` from :ref:`test_mary` since it is now a repetition
+
+  .. code-block:: python
+    :lineno-start: 139
+
+        def test_mary(self):
+            first_name = 'mary'
+            last_name = 'public'
+            sex = 'F'
+            year_of_birth = 2000
+
+            reality = src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                f' {self.calculate_age(year_of_birth)}.'
+            )
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            mary = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+                is_citizen=False,
+                passed_test=True,
+            )
+
+            reality = mary.say_hello()
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+            self.assertEqual(mary.can_vote(), False)
+            self.assertEqual(mary.can_get_license(), True)
+
+        def test_underage_citizen(self):
 
 * I add a git_ commit message
 
   .. code-block:: python
-    :emphasize-lines: 1-2
+    :emphasize-lines: 1
 
-    git commit -am \
-    'add exception handler to test_when_year_of_birth_is_not_an_integer'
+    git commit -am 'extract test_factory_function'
+
+The :ref:`for loop<what is a for loop?>` allows me to test any number of people with the same test. I no longer have to write one test for each person.
 
 ----
 
 *********************************************************************************
-raise TypeError when year_of_birth is not an integer
+extract test_say_hello_function
 *********************************************************************************
 
-The problem with using :ref:`except:<how to handle Exceptions>` is that it catches all :ref:`Exceptions<how to test if an Exception is raised>` which means it does not tell anyone that reads the code what the actual :ref:`Exception<how to test if an Exception is raised>` is.
+The tests for the :ref:`say_hello function<test say_hello function>` in :ref:`test_john`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make a :ref:`call<how to call a function with input>` to the :ref:`say_hello function<test say_hello function>` then compare the result with a string_
 
-.. code-block:: python
-
-  try:
-      something
-  except:
-      something else
-
-is the same as
-
-.. code-block:: python
-
-  try:
-      something
-  except Exception:
-      something else
-
-because :ref:`Exception<how to test if an Exception is raised>` is the mother of all the :ref:`Exceptions<how to test if an Exception is raised>` covered so far, they :ref:`inherit<everything is an object>` from it.
-
-From the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``. I want to make things clearer.
+----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -549,31 +665,42 @@ From the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``. I want
 
 ----
 
-I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a tuple_ to be more specific
+I add a test for the :ref:`say_hello function<test say_hello function>`
 
 .. code-block:: python
-  :lineno-start: 258
-  :emphasize-lines: 8
+  :lineno-start: 39
+  :emphasize-lines: 3-14, 16-22
 
-          try:
-              src.person.Person(
-                  first_name='first_name',
-                  last_name='last_name',
-                  sex='M',
-                  year_of_birth=(2026,),
+              self.assertEqual(reality, my_expectation)
+
+      def test_say_hello_function(self):
+          people = (
+              ('jane', 'doe', 'F', 1991),
+              ('joe', 'blow', 'M', 1996),
+              ('mary', 'public', 'F', 2000),
+              ('john', 'smith', 'M', 1980),
+              ('first_name', 'last_name', 'F', '2026'),
+          )
+          for a_person in people:
+              first_name = a_person[0]
+              last_name = a_person[1]
+              year_of_birth = a_person[3]
+
+              reality = src.person.say_hello(
+                  first_name=first_name,
+                  last_name=last_name,
+                  year_of_birth=year_of_birth,
               )
-          except TypeError:
-              pass
+              my_expectation = None
+              self.assertEqual(reality, my_expectation)
 
-      def test_dir_person_class(self):
+      def test_joe(self):
 
-the terminal_ is my friend, and shows :ref:`Exception<how to test if an Exception is raised>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
-  E           Exception
-
-because :ref:`Exception<how to test if an Exception is raised>` is not :ref:`TypeError<what causes TypeError?>` even though :ref:`TypeError<what causes TypeError?>` is an :ref:`Exception<how to test if an Exception is raised>`. I cannot use a :ref:`child Exception<how to test if something is a subclass>` to catch its parent :ref:`Exception<how to test if an Exception is raised>`.
+  AssertionError: 'Hello, my name is jane doe and I am 35.' != None
 
 ----
 
@@ -583,30 +710,10 @@ because :ref:`Exception<how to test if an Exception is raised>` is not :ref:`Typ
 
 ----
 
-I change the :ref:`raise statement<how to raise an Exception>` in the :ref:`calculate_age function<extract calculate_age function>` for when the ``year_of_birth`` is not an integer_ to be more specific, in ``src/person/__init__.py``
+* I change ``my_expectation`` to match the string_ in the terminal_
 
-.. code-block:: python
-  :lineno-start: 44
-  :emphasize-lines: 3-4
-
-  def calculate_age(year_of_birth):
-      if not isinstance(year_of_birth, int):
-          # raise Exception
-          raise TypeError
-
-      age = (
-          datetime.date.today().year
-        - year_of_birth
-      )
-
-the test passes because the :ref:`try statement<how to handle Exceptions>` now only :ref:`catches/handles<how to handle Exceptions in programs>` :ref:`TypeError<what causes TypeError?>`.
-
-.. code-block:: python
-
-  try:
-      something
-  except TypeError:
-      something else
+  .. code-block:: python
+    :lineno-start:
 
 ----
 
@@ -615,260 +722,6 @@ the test passes because the :ref:`try statement<how to handle Exceptions>` now o
 =================================================================================
 
 ----
-
-* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a string_ to catch :ref:`AssertionError<what causes AssertionError?>` in ``tests/test_person.py``
-
-  .. code-block:: python
-    :lineno-start: 248
-    :emphasize-lines: 8
-
-            try:
-                src.person.Person(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth='2026',
-                )
-            except AssertionError:
-                pass
-
-            try:
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    E           TypeError
-
-  because :ref:`TypeError<what causes TypeError?>` is not :ref:`AssertionError<what causes AssertionError?>` or a :ref:`child<how to test if something is a subclass>` of :ref:`AssertionError<what causes AssertionError?>`.
-
-* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a string_ to catch :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-    :lineno-start: 248
-    :emphasize-lines: 8
-
-            try:
-                src.person.Person(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth='2026',
-                )
-            except TypeError:
-                pass
-
-            try:
-
-  the test passes.
-
-* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a float_ to catch :ref:`NameError<test_catching_name_error>`
-
-  .. code-block:: python
-    :lineno-start: 238
-    :emphasize-lines: 8
-
-            try:
-                src.person.Person(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth=2026.0,
-                )
-            except NameError:
-                pass
-
-            try:
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    E           TypeError
-
-  because :ref:`TypeError<what causes TypeError?>` is not :ref:`NameError<test_catching_name_error>` or a :ref:`child<how to test if something is a subclass>` of :ref:`NameError<test_catching_name_error>`.
-
-* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is a float_ to catch :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-    :lineno-start: 238
-    :emphasize-lines: 8
-
-            try:
-                src.person.Person(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth=2026.0,
-                )
-            except TypeError:
-                pass
-
-            try:
-
-  the test passes.
-
-* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is :ref:`None<what is None?>` to catch ValueError_
-
-  .. code-block:: python
-    :lineno-start: 227
-    :emphasize-lines: 9
-
-        def test_when_year_of_birth_is_not_an_integer(self):
-            try:
-                src.person.Person(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth=None,
-                )
-            except ValueError:
-                pass
-
-            try:
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    E           TypeError
-
-  because :ref:`TypeError<what causes TypeError?>` is not ValueError_ or a :ref:`child<how to test if something is a subclass>` of ValueError_.
-
-* I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_year_of_birth_is_not_an_integer` for when the ``year_of_birth`` is :ref:`None<what is None?>` to catch :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-    :lineno-start: 227
-    :emphasize-lines: 9
-
-        def test_when_year_of_birth_is_not_an_integer(self):
-            try:
-                src.person.Person(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth=None,
-                )
-            except TypeError:
-                pass
-
-            try:
-
-  the test passes.
-
-* I add a git_ commit message
-
-  .. code-block:: python
-
-    git commit -am \
-    'raise TypeError when year_of_birth is not an integer'
-
-----
-
-*********************************************************************************
-raise ValueError when age is greater than 120
-*********************************************************************************
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_person_is_too_old_to_be_alive` to catch ValueError_
-
-.. code-block:: python
-  :lineno-start: 216
-  :emphasize-lines: 9
-
-      def test_when_person_is_too_old_to_be_alive(self):
-          try:
-              person = src.person.Person(
-                  first_name='first_name',
-                  last_name='last_name',
-                  sex='F',
-                  year_of_birth=datetime.date.today().year-121,
-              )
-          except ValueError:
-              pass
-
-      def test_when_year_of_birth_is_not_an_integer(self):
-
-the terminal_ is my friend, and shows :ref:`Exception<how to test if an Exception is raised>`
-
-.. code-block:: python
-
-  E           Exception
-
-because :ref:`Exception<how to test if an Exception is raised>` is not ValueError_ even though ValueError_ is an :ref:`Exception<how to test if an Exception is raised>`. I cannot use a :ref:`child Exception<how to test if something is a subclass>` to catch its parent :ref:`Exception<how to test if an Exception is raised>`.
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I change the :ref:`raise statement<how to raise an Exception>` in the :ref:`calculate_age function<extract calculate_age function>` for when the age is greater than ``120`` to be more specific, in ``src/person/__init__.py``
-
-
-  .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 12-13
-
-    def calculate_age(year_of_birth):
-        if not isinstance(year_of_birth, int):
-            # raise Exception
-            raise TypeError
-
-        age = (
-            datetime.date.today().year
-          - year_of_birth
-        )
-
-        if age > 120:
-            # raise Exception
-            raise ValueError
-        return age
-
-
-    def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
-
-  the test passes.
-
-* I remove the commented lines from the :ref:`calculate_age function<extract calculate_age function>`
-
-  .. code-block:: python
-    :lineno-start: 44
-
-    def calculate_age(year_of_birth):
-        if not isinstance(year_of_birth, int):
-            raise TypeError
-
-        age = (
-            datetime.date.today().year
-          - year_of_birth
-        )
-
-        if age > 120:
-            raise ValueError
-        return age
-
-
-    def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
-
-* I add a git_ commit message
-
-  .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit -am \
-    'raise ValueError when age > 120'
 
 ----
 

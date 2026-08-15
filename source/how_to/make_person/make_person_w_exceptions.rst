@@ -76,8 +76,6 @@ open the project
 
     cd person
 
-* I open ``test_person.py`` from the ``tests`` folder_
-
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
@@ -106,7 +104,7 @@ test_when_person_is_too_old_to_be_alive
 
 ----
 
-* I open ``tests/test_person.py``
+* I open ``test_person.py`` from the ``tests`` folder_
 * I add :ref:`test_when_person_is_too_old_to_be_alive` for if the age of the person is greater than ``120``, in ``tests/test_person.py``
 
   .. code-block:: python

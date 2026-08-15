@@ -45,7 +45,7 @@ table of contents
   make a person with conditions<how_to/make_person/make_person_w_conditions>
   make TDD with variables<make_tdd/make_tdd_automatically_w_variables>
   make a person with exceptions<how_to/make_person/make_person_w_exceptions>
-  make a person with loops<how_to/make_person/make_person_w_tuples>
+  make a person with loops<how_to/make_person/make_person_w_loops>
   basic_objects/dictionaries/index
   questions the book answers<review>
   make TDD manually<make_tdd/make_tdd_manually>

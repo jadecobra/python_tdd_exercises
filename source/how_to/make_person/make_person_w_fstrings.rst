@@ -45,7 +45,7 @@ open the project
 
     .../pumping_python/person
 
-* I open ``test_person.py``
+* I open ``test_person.py`` from the ``tests`` folder_
 
 * I use `pytest-watcher`_ to run the tests automatically
 
