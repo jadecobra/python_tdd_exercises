@@ -6,10 +6,22 @@ import unittest
 class TestPerson(unittest.TestCase):
 
     people = (
-        ('jane', 'doe', 'F', 1991, True, True, True, True),
-        ('joe', 'blow', 'M', 1996, True, False, True, False),
-        ('mary', 'public', 'F', 2000, False, True, False, True),
-        ('john', 'smith', 'M', 1980, False, False, False, False),
+        (
+            'jane', 'doe', 'F', 1991,
+            True, True, True, True
+        ),
+        (
+            'joe', 'blow', 'M', 1996,
+            True, False, True, False
+        ),
+        (
+            'mary', 'public', 'F', 2000,
+            False, True, False, True
+        ),
+        (
+            'john', 'smith', 'M', 1980,
+            False, False, False, False
+        ),
     )
 
     @staticmethod
@@ -26,6 +38,7 @@ class TestPerson(unittest.TestCase):
                 last_name = a_person[1]
                 sex = a_person[2]
                 year_of_birth = a_person[3]
+
                 reality = src.person.factory(
                     first_name=first_name,
                     last_name=last_name,
@@ -59,7 +72,7 @@ class TestPerson(unittest.TestCase):
                 assert reality == my_expectation
                 self.assertEqual(reality, my_expectation)
 
-    def test_say_hello_method(self):
+    def test_person_class(self):
         for a_person in self.people:
             with self.subTest(first_name=a_person[0]):
                 first_name = a_person[0]
@@ -87,90 +100,9 @@ class TestPerson(unittest.TestCase):
                 assert reality == my_expectation
                 self.assertEqual(reality, my_expectation)
                 self.assertEqual(person.can_vote(), is_citizen)
-                self.assertEqual(person.can_get_license(), passed_test)
-
-    def test_person_can_vote(self):
-        for a_person in self.people:
-            with self.subTest(first_name=a_person[0]):
-                is_citizen = person[4]
-
-                person = src.person.Person(
-                    first_name=person[0],
-                    last_name=person[1],
-                    sex=person[2],
-                    year_of_birth=person[3],
-                    is_citizen=is_citizen,
-                    passed_test=person[5],
+                self.assertEqual(
+                    person.can_get_license(), passed_test
                 )
-
-                self.assertEqual(person.can_vote(), is_citizen)
-
-    def test_person_can_vote(self):
-        for a_person in self.people:
-            with self.subTest(first_name=a_person[0]):
-                passed_test = person[5]
-
-                person = src.person.Person(
-                    first_name=person[0],
-                    last_name=person[1],
-                    sex=person[2],
-                    year_of_birth=person[3],
-                    is_citizen=is_citizen,
-                    passed_test=passed_test,
-                )
-
-                self.assertEqual(person.can_vote(), is_citizen)
-                self.assertEqual(person.can_get_license(), passed_test)
-
-
-    def test_person_can_get_license(self):
-
-    def test_mary(self):
-        first_name = 'mary'
-        last_name = 'public'
-        sex = 'F'
-        year_of_birth = 2000
-
-        reality = src.person.factory(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-        self.assertEqual(reality, my_expectation)
-
-        reality = src.person.say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'Hello, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {self.calculate_age(year_of_birth)}.'
-        )
-        assert reality == my_expectation
-        self.assertEqual(reality, my_expectation)
-
-        mary = src.person.Person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-            is_citizen=False,
-            passed_test=True,
-        )
-
-        reality = mary.say_hello()
-        assert reality == my_expectation
-        self.assertEqual(reality, my_expectation)
-        self.assertEqual(mary.can_vote(), False)
-        self.assertEqual(mary.can_get_license(), True)
 
     def test_underage_citizen(self):
         person = src.person.Person(

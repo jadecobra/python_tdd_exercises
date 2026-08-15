@@ -128,7 +128,7 @@ test_when_person_is_too_old_to_be_alive
             )
 
         def test_when_person_is_too_old_to_be_alive(self):
-            person = src.person.Person(
+            src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
                 sex='F',
@@ -192,7 +192,7 @@ test_when_person_is_too_old_to_be_alive
 
         def test_when_person_is_too_old_to_be_alive(self):
             try:
-                person = src.person.Person(
+                src.person.Person(
                     first_name='first_name',
                     last_name='last_name',
                     sex='F',
@@ -768,7 +768,7 @@ I change the :ref:`except clause<how to handle Exceptions>` in :ref:`test_when_p
 
       def test_when_person_is_too_old_to_be_alive(self):
           try:
-              person = src.person.Person(
+              src.person.Person(
                   first_name='first_name',
                   last_name='last_name',
                   sex='F',

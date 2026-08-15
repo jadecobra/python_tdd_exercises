@@ -14,12 +14,18 @@ how to make a person with loops
 I have a problem in ``person/tests/test_person.py``
 
 * :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` have the same three tests.
-* :ref:`test_when_year_of_birth_is_not_an_integer` has four tests that are basically the same, the only thing that changes are the values for the ``year_of_birth`` parameter. There has to be a better way.
+* :ref:`test_when_year_of_birth_is_not_an_integer` has four tests that are basically the same, the only thing that changes are the values for the ``year_of_birth`` parameter.
 
-I want to use the :ref:`try statement<how to handle Exceptions>` to handle making sure the program raises an :ref:`Exception<how to test if an Exception is raised>`
+This means that if I add more people or more cases where ``year_of_birth`` is not an integer_ I would have to add more tests.
 
-* if the age is older than ``120``
-* if the ``year_of_birth`` is not an integer_
+I want to use one test for each of the three tests for each person, and one test for every case where ``year_of_birth`` is not an integer. I can do this with :ref:`for loops<what is a for loop?>`.
+
+A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is an iterable?>` (a collection of items), it is written like this
+
+.. code-block:: python
+
+  for item in collection:
+      do something
 
 ----
 
@@ -31,33 +37,45 @@ I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :language: python
-  :lineno-start: 216
+  :linenos:
   :caption: person/tests/test_person.py
-  :lines: 216-225
+  :lines: 1-32
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :language: python
-  :lineno-start: 227
+  :lineno-start: 34
   :caption: person/tests/test_person.py
-  :lines: 227-236
+  :lines: 34-53
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :language: python
-  :lineno-start: 238
+  :lineno-start: 55
   :caption: person/tests/test_person.py
-  :lines: 238-246
+  :lines: 55-73
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :language: python
-  :lineno-start: 248
+  :lineno-start: 75
   :caption: person/tests/test_person.py
-  :lines: 248-256
+  :lines: 75-105
 
 .. literalinclude:: ../../code/person/tests/test_person_w_loops.py
   :language: python
-  :lineno-start: 258
+  :lineno-start: 107
   :caption: person/tests/test_person.py
-  :lines: 258-268
+  :lines: 107-119
+
+.. literalinclude:: ../../code/person/tests/test_person_w_loops.py
+  :language: python
+  :lineno-start: 121
+  :caption: person/tests/test_person.py
+  :lines: 121-128
+
+.. literalinclude:: ../../code/person/tests/test_person_w_loops.py
+  :language: python
+  :lineno-start: 130
+  :caption: person/tests/test_person.py
+  :lines: 130-147
 
 -----
 
@@ -87,9 +105,9 @@ open the project
 
   .. code-block:: python
 
-    tests/test_person.py .......                    [100%]
+    tests/test_person.py .........                  [100%]
 
-    ============ 7 passed, 1 skipped in T.UVs ============
+    ================= 9 passed in W.XYs ==================
 
 ----
 

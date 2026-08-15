@@ -258,7 +258,16 @@ what is a for loop?
 
 I just called the :ref:`append method<test_append_adds_item_to_end_of_a_list>` 10 times in a row, the only things that changed were the numbers I added to the :ref:`list<what is a list?>`, there is a better way. I can use a `for loop`_.
 
-A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is an iterable?>` (a collection of items)
+A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is an iterable?>` (a collection of items), it is written like this
+
+.. code-block:: python
+
+  for item in collection:
+      do something
+
+**do something** will run as many times as there are items in the collection.
+
+----
 
 * I add a `for loop`_ to the test
 
