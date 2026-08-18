@@ -2077,8 +2077,26 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
 ----
 
 *********************************************************************************
-test person can_vote
+extract test_person_can_vote
 *********************************************************************************
+
+The :ref:`can_vote method of the Person class<add can_vote method>` sends two parameters (``age`` and ``response``) when it :ref:`calls the check_age method<extract check_age method>` to return :red:`False` or :green:`True` for if a person cannot vote or can vote.
+
+The inputs are
+
+* is the person younger than 18?
+* is the person a citizen?
+
+The :ref:`truth table` for the :ref:`can_vote<add can_vote method>` is
+
+==============  ============== ==============
+age < 18        is citizen     can vote
+==============  ============== ==============
+:green:`True`   :green:`True`  :red:`False`
+:green:`True`   :red:`False`   :red:`False`
+:red:`False`    :green:`True`  :green:`True`
+:red:`False`    :red:`False`   :red:`False`
+==============  ============== ==============
 
 ----
 
@@ -2088,6 +2106,52 @@ test person can_vote
 
 ----
 
+I add a test with an :ref:`assertion<what is an assertion?>` for if a person is :green:`younger` than 18 AND is a :green:`citizen`
+
+==============  ============== ==============
+age < 18        is citizen     can vote
+==============  ============== ==============
+:green:`True`   :green:`True`  :red:`False`
+==============  ============== ==============
+
+.. code-block:: python
+  :lineno-start: 107
+  :emphasize-lines: 11-24
+
+                  else:
+                      self.assertEqual(
+                          tester.say_hello(),
+                          (
+                              f'Hello, my name is {first_name}'
+                              f' {last_name} and I am'
+                              f' {self.calculate_age(year_of_birth)}.'
+                          )
+                      )
+
+      def test_person_can_vote(self):
+          truth_table = (
+              (datetime.date.today().year-17, True),
+          )
+          for row in truth_table:
+              with self.subTest(row=row):
+                  a_person = src.person.Person(
+                      first_name='first_name',
+                      last_name='last_name',
+                      sex='F',
+                      year_of_birth=row[0],
+                      is_citizen=row[1],
+                  )
+                  self.assertEqual(a_person.can_vote(), True)
+
+      def test_joe(self):
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  SUBFAILED(row=(2009, True)) ...test_person_can_vote -
+      AssertionError: False != True
+
 ----
 
 =================================================================================
@@ -2095,6 +2159,31 @@ test person can_vote
 =================================================================================
 
 ----
+
+I change :green:`True` to :red:`False` in the :ref:`assertion<what is an assertion?>` for if a person is :green:`younger` than 18 AND is a :green:`citizen`
+
+.. code-block:: python
+  :lineno-start: 117
+  :emphasize-lines: 14
+
+      def test_person_can_vote(self):
+          truth_table = (
+              (datetime.date.today().year-17, True),
+          )
+          for row in truth_table:
+              with self.subTest(row=row):
+                  a_person = src.person.Person(
+                      first_name='first_name',
+                      last_name='last_name',
+                      sex='F',
+                      year_of_birth=row[0],
+                      is_citizen=row[1],
+                  )
+                  self.assertEqual(a_person.can_vote(), False)
+
+      def test_joe(self):
+
+the test passes.
 
 ----
 
@@ -2104,13 +2193,54 @@ test person can_vote
 
 ----
 
+* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :green:`younger` than 18 AND is :red:`NOT a citizen`
+
+  ==============  ============== ==============
+  age < 18        is citizen     can vote
+  ==============  ============== ==============
+  :green:`True`   :red:`False`   :red:`False`
+  ==============  ============== ==============
+
+  .. code-block:: python
+    :lineno-start: 117
+    :emphasize-lines: 3
+
+    def test_person_can_vote(self):
+        truth_table = (
+            (datetime.date.today().year-17, True),
+            (datetime.date.today().year-17, False),
+        )
+        for row in truth_table:
+
+  the test is still green.
+
+* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :red:`older or equal` to 18 AND is a :green:`citizen`
+
+  ==============  ============== ==============
+  age < 18        is citizen     can vote
+  ==============  ============== ==============
+  :red:`False`    :green:`True`  :green:`True`
+  ==============  ============== ==============
+
+  .. code-block:: python
+    :lineno-start: 117
+    :emphasize-lines: 3
+
+    def test_person_can_vote(self):
+        truth_table = (
+            (datetime.date.today().year-17, True),
+            (datetime.date.today().year-17, False),
+        )
+        for row in truth_table:
+
+  the test is still green.
 
 * I add a git_ commit message
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'test person can_vote'
+    git commit -am 'extract test_person_can_vote'
 
 ----
 
@@ -2148,6 +2278,22 @@ test person can_get_license
     :emphasize-lines: 1
 
     git commit -am 'test person can_get_license'
+
+----
+
+*********************************************************************************
+extract people class attribute
+*********************************************************************************
+
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'extract people class attribute'
+
+
 
 * I change the :ref:`Exception raised<how to raise an Exception>` in the :ref:`calculate_age function<extract calculate_age function>` if the value of the ``year_of_birth`` parameter is not an integer_
 
