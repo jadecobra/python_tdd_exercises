@@ -78,7 +78,7 @@ open the project
 ----
 
 *********************************************************************************
-test Person class
+extract Person class
 *********************************************************************************
 
 I made a :ref:`function<what is a function?>` that makes a string_ to represent a person when I give it ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``. I can also represent a person with a :ref:`class<everything is an object>` because it is :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` that belong together.
@@ -204,7 +204,7 @@ the constructor method
 
 A `constructor method`_ is used to define what happens when :ref:`an instance (a copy) of a class<how to test if something is an instance>` is made.
 
-* I add a `constructor method`_ to the :ref:`Person class<test Person class>` so it can take arguments
+* I add a `constructor method`_ to the :ref:`Person class<extract Person class>` so it can take arguments
 
   .. code-block:: python
     :lineno-start: 4
@@ -488,7 +488,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add Person class'
+    git commit -am 'extract Person class'
 
 ----
 
@@ -535,7 +535,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
     AttributeError: 'Person' object has no attribute 'first_name'
 
-  because there is nothing named ``first_name`` in the :ref:`Person class<test Person class>`
+  because there is nothing named ``first_name`` in the :ref:`Person class<extract Person class>`
 
 ----
 
@@ -730,7 +730,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
     def test_joe():
 
-* I change the call to ``src.person.say_hello`` in :ref:`test_joe` to a call to the :ref:`say_hello method<test say_hello method>` of the :ref:`Person class<test Person class>`
+* I change the call to ``src.person.say_hello`` in :ref:`test_joe` to a call to the :ref:`say_hello method<test say_hello method>` of the :ref:`Person class<extract Person class>`
 
   .. code-block:: python
     :lineno-start: 47
@@ -762,9 +762,9 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
     AttributeError: type object 'Person'
                     has no attribute 'say_hello'
 
-  because the test calls the :ref:`say_hello method<test say_hello method>` which does not yet exist in the :ref:`Person class<test Person class>`.
+  because the test calls the :ref:`say_hello method<test say_hello method>` which does not yet exist in the :ref:`Person class<extract Person class>`.
 
-* I add a :ref:`method definition<how to make a function>` for it to the :ref:`Person class<test Person class>`
+* I add a :ref:`method definition<how to make a function>` for it to the :ref:`Person class<extract Person class>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -1210,9 +1210,9 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
     def test_john():
 
-  the test passes. This is still a repetition. I give an :ref:`instance (copy)<how to test if something is an instance>` of the :ref:`Person class<test person class>` as input to the :ref:`say_hello method<test Person class>` of the :ref:`Person class<test person class>` (``Person.say_hello``).
+  the test passes. This is still a repetition. I give an :ref:`instance (copy)<how to test if something is an instance>` of the :ref:`Person class<test person class>` as input to the :ref:`say_hello method<extract Person class>` of the :ref:`Person class<test person class>` (``Person.say_hello``).
 
-* I change the call to the :ref:`say_hello method<test say_hello method>` in :ref:`test_jane` because the :ref:`say_hello method<test say_hello method>` is in the :ref:`Person class<test Person class>` so its :ref:`copies<how to test if something is an instance>` also have the :ref:`say_hello method<test say_hello method>`
+* I change the call to the :ref:`say_hello method<test say_hello method>` in :ref:`test_jane` because the :ref:`say_hello method<test say_hello method>` is in the :ref:`Person class<extract Person class>` so its :ref:`copies<how to test if something is an instance>` also have the :ref:`say_hello method<test say_hello method>`
 
   .. code-block:: python
     :lineno-start: 119
@@ -1276,7 +1276,7 @@ what is the staticmethod decorator?
 
   the test passes.
 
-* I change the call to ``Person.say_hello`` in :ref:`test_joe` because the :ref:`say_hello method<test say_hello method>` is in the :ref:`Person class<test Person class>`, there is no need for it to take a copy of the :ref:`Person class<test Person class>` as input since it should be able to use its own :ref:`attributes<what is a class attribute?>`
+* I change the call to ``Person.say_hello`` in :ref:`test_joe` because the :ref:`say_hello method<test say_hello method>` is in the :ref:`Person class<extract Person class>`, there is no need for it to take a copy of the :ref:`Person class<extract Person class>` as input since it should be able to use its own :ref:`attributes<what is a class attribute?>`
 
   .. code-block:: python
     :lineno-start: 73
@@ -1467,7 +1467,7 @@ what is the staticmethod decorator?
 
     I do not need to pass ``joe`` as input to the :ref:`say_hello method<test say_hello method>` since it is ``self``.
 
-* I remove ``person=jane`` from the call to the :ref:`say_hello method<test say_hello method>` in :ref:`test_jane` because the :ref:`say_hello method<test say_hello method>` is in the :ref:`Person class<test Person class>`
+* I remove ``person=jane`` from the call to the :ref:`say_hello method<test say_hello method>` in :ref:`test_jane` because the :ref:`say_hello method<test say_hello method>` is in the :ref:`Person class<extract Person class>`
 
   .. code-block:: python
     :lineno-start: 126
@@ -2096,7 +2096,7 @@ separate and equal Person class
 
   better, I can add an :ref:`attribute<what is a class attribute?>` to a :ref:`class<everything is an object>`.
 
-* I add the name to the :ref:`Person class<test Person class>`
+* I add the name to the :ref:`Person class<extract Person class>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -2343,7 +2343,7 @@ separate and equal Person class
         assert <src.person.Person object at 0xffffb012cd34>
             == 'Hello, my name is mary public and I am 26.'
 
-  because ``argument`` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`Person class<test Person class>`.
+  because ``argument`` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`Person class<extract Person class>`.
 
 * I change :ref:`the return statement` to use :ref:`class attributes<what is a class attribute?>` in an :ref:`f-string<what is string interpolation?>`
 
@@ -2718,7 +2718,7 @@ separate and equal Person class
 
     def test_jane():
 
-* I remove the :ref:`Person class<test Person class>` from ``test_person.py``
+* I remove the :ref:`Person class<extract Person class>` from ``test_person.py``
 
   .. code-block:: python
 
@@ -2727,7 +2727,7 @@ separate and equal Person class
 
     def test_joe():
 
-  all the tests are still green because the calls that were made to the :ref:`Person class<test Person class>` that was in ``test_person.py`` are now made to the :ref:`Person class<test Person class>` in ``src/person/__init__.py`` in the ``src`` folder_. When ``src.person.Person`` is :ref:`called<how to call a function with input>` with input, Python_ follows this path
+  all the tests are still green because the calls that were made to the :ref:`Person class<extract Person class>` that was in ``test_person.py`` are now made to the :ref:`Person class<extract Person class>` in ``src/person/__init__.py`` in the ``src`` folder_. When ``src.person.Person`` is :ref:`called<how to call a function with input>` with input, Python_ follows this path
 
   .. code-block:: shell
 
@@ -3184,9 +3184,9 @@ the test passes.
               'sex', 'year_of_birth'
           ]
 
-  the ``sex`` :ref:`attribute<what is a class attribute?>` is not defined anywhere in the :ref:`Person class<test Person class>`.
+  the ``sex`` :ref:`attribute<what is a class attribute?>` is not defined anywhere in the :ref:`Person class<extract Person class>`.
 
-* I add ``self.sex`` to the :ref:`__init__ method<the constructor method>` of the :ref:`Person class<test Person class>` in ``src/person/__init__.py``
+* I add ``self.sex`` to the :ref:`__init__ method<the constructor method>` of the :ref:`Person class<extract Person class>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:

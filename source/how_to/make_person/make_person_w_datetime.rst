@@ -1275,7 +1275,7 @@ The tests use the right calculation for the age, and the solution still uses a f
         first_name, last_name, year_of_birth,
     ):
 
-* I use the :ref:`function<what is a function?>` in the :ref:`say_hello method<test say_hello method>` of the :ref:`Person class<test Person class>`
+* I use the :ref:`function<what is a function?>` in the :ref:`say_hello method<test say_hello method>` of the :ref:`Person class<extract Person class>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -1548,7 +1548,7 @@ the test passes.
 test_when_year_of_birth_is_not_an_integer
 *********************************************************************************
 
-I want the :ref:`Person class<test Person class>` to make sure that the value for ``year_of_birth`` is an integer_ (whole number without decimals).
+I want the :ref:`Person class<extract Person class>` to make sure that the value for ``year_of_birth`` is an integer_ (whole number without decimals).
 
 ----
 
@@ -1594,7 +1594,7 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
 
 ----
 
-* I make ``year_of_birth`` an :ref:`optional argument<test_optional_arguments>` in the :ref:`Person class<test Person class>` in ``src/person/__init__.py``
+* I make ``year_of_birth`` an :ref:`optional argument<test_optional_arguments>` in the :ref:`Person class<extract Person class>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1747,7 +1747,7 @@ I want the :ref:`Person class<test Person class>` to make sure that the value fo
 
   the test is green because there is no :ref:`assertion<what is an assertion?>` or :ref:`calls<how to call a function>` that cause :ref:`AssertionError<what causes AssertionError?>`.
 
-* I remove the commented line from the :ref:`Person class<test Person class>` in ``src/person/__init__.py``
+* I remove the commented line from the :ref:`Person class<extract Person class>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
