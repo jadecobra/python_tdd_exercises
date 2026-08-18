@@ -156,7 +156,7 @@ close the project
 review
 *********************************************************************************
 
-I can use :ref:`assertRaises<another way to test if an Exception is raised>` to catch :ref:`Exceptions<how to test if an Exception is raised>` in tests and tested these
+I can use :ref:`assertRaises<another way to test if an Exception is raised>` to catch :ref:`Exceptions<how to test that an Exception is raised>` in tests and tested these
 
 * :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 * :ref:`NameError<test_catching_name_error>`
@@ -189,7 +189,7 @@ what is next?
 * :ref:`I know how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
 * :ref:`how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment 2>` and
-* :ref:`how to test if an Exception is raised with assertRaises<how to test if an Exception is raised>`
+* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 
 :ref:`Would you like to test handling Exceptions in programs?<how to handle Exceptions in programs>`
 

@@ -266,7 +266,7 @@ start the project
 
     and try ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_attribute_error.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_attribute_error.py``
 
   .. code-block:: python
     :linenos:
@@ -312,7 +312,7 @@ start the project
 
   because Python_ cannot find anything named ``src`` in this project.
 
-* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
+* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 9
@@ -404,7 +404,7 @@ test_attribute_error_w_variables
 
   which raises :ref:`AttributeError<what causes AttributeError?>` since there is nothing named ``variable_00`` in ``attribute_error.py`` in the ``src`` folder_, it is empty.
 
-* I add AttributeError_ to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_attribute_error.py``
+* I add AttributeError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 8
@@ -442,7 +442,7 @@ test_attribute_error_w_variables
 
   because I used a name that is not defined in this file_
 
-* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_attribute_error.py``
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 8
@@ -1042,7 +1042,7 @@ test_attribute_error_w_functions
 
   because :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_attribute_error.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -1566,7 +1566,7 @@ I ran tests for :ref:`AttributeError<what causes AttributeError?>` that showed
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`.
 * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`.
 
-I also saw these :ref:`Exceptions<how to test if an Exception is raised>`
+I also saw these :ref:`Exceptions<how to test that an Exception is raised>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`

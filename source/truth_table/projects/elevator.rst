@@ -243,7 +243,7 @@ test_number_pushed
 
   because I do not have a definition for ``src`` in this file_.
 
-* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 14
@@ -283,7 +283,7 @@ test_number_pushed
 
   because ``elevator/__init__.py`` in the ``src`` folder_ does not have anything named ``controller`` in it.
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 15
@@ -315,7 +315,7 @@ test_number_pushed
 
   because the test :ref:`called<how to call a function with input>` the ``controller`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``number_pushed``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_elevator.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_elevator.py``
 
   .. code-block:: python
     :lineno-start: 15
@@ -1022,7 +1022,7 @@ test_above_weight_doors_open_number_not_pushed
 
   because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_elevator.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_elevator.py``
 
   .. code-block:: python
     :lineno-start: 41

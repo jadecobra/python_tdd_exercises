@@ -90,7 +90,7 @@ requirements
 
     TypeError: TestCase.assertEqual() missing 2 required positional arguments: 'first' and 'second'
 
-  which I add to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_sleep_duration.py``
+  which I add to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -126,7 +126,7 @@ requirements
 
     NameError: name 'src' is not defined
 
-  I add it to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_sleep_duration.py``
+  I add it to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -167,7 +167,7 @@ requirements
 
     AttributeError: module 'src.sleep_duration' has no attribute 'duration'
 
-  I add the error to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_sleep_duration.py``
+  I add the error to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -856,7 +856,7 @@ The challenge is to write a program_ that calculates the difference between a gi
   - used `random.randint`_ to generate random numbers from the 24 hours in a day and :ref:`how to pass values<telephone>` them in the timestamps
   - then test that the ``duration`` :ref:`function<what is a function?>` subtracts the hour for ``sleep_time`` from the hour for ``wake_time``
 
-I also saw these :ref:`Exceptions<how to test if an Exception is raised>`
+I also saw these :ref:`Exceptions<how to test that an Exception is raised>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`TypeError<what causes TypeError?>`

@@ -243,7 +243,7 @@ the test passes. These are two ways to make an empty :ref:`dictionary<what is a 
 
     TypeError: 'int' object is not iterable
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 11
@@ -701,7 +701,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-I add :ref:`assertRaises<another way to test if an Exception is raised>` to handle the :ref:`Exception<how to test if an Exception is raised>`
+I add :ref:`assertRaises<another way to test if an Exception is raised>` to handle the :ref:`Exception<how to test that an Exception is raised>`
 
 .. code-block:: python
   :lineno-start: 35
@@ -1719,7 +1719,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   this new :ref:`object<everything is an object>` has a :ref:`list<what is a list?>` and :ref:`I know how to work with lists<what is a list?>`, just like :ref:`dict_items<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 
-* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 145
@@ -2138,7 +2138,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
     KeyError: 0
 
-* I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
+* I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 162
@@ -3318,7 +3318,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 test_key_error
 *********************************************************************************
 
-`KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important :ref:`Exception<how to test if an Exception is raised>` to know when working with a :ref:`dictionary<what is a dictionary?>`. It happened earlier in :ref:`my test for the pop method<test_pop_removes_given_key_from_a_dictionary_and_returns_its_value>`
+`KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important :ref:`Exception<how to test that an Exception is raised>` to know when working with a :ref:`dictionary<what is a dictionary?>`. It happened earlier in :ref:`my test for the pop method<test_pop_removes_given_key_from_a_dictionary_and_returns_its_value>`
 
 ----
 
@@ -3628,7 +3628,7 @@ I also ran these tests for the :ref:`methods of dictionaries<test_dir_dictionari
 * :ref:`test_update_a_dictionary`
 * :ref:`test_values_of_a_dictionary`
 
-and a test for the important :ref:`Exception<how to test if an Exception is raised>` to know when working with :ref:`dictionaries<what is a dictionary?>` - :ref:`KeyError<test_key_error>`
+and a test for the important :ref:`Exception<how to test that an Exception is raised>` to know when working with :ref:`dictionaries<what is a dictionary?>` - :ref:`KeyError<test_key_error>`
 
 ----
 
@@ -3657,7 +3657,7 @@ what is next?
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`I know how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to test if an Exception is raised with assertRaises<how to test if an Exception is raised>`
+* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions in programs>`
 * :ref:`how to raise TypeError<what causes TypeError?>`
 * :ref:`what you can do with Lists<what is a list?>`

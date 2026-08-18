@@ -1503,7 +1503,7 @@ the test passes.
 
   because there is nothing named ``factory`` in ``src/person/__init__.py`` in the ``src`` folder_.
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 90
@@ -3391,7 +3391,7 @@ review
 
 * I ran tests to write one :ref:`function<what is a function?>` that makes a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` so I do not have to make one :ref:`function<what is a function?>` for each person.
 * I also ran tests to make another :ref:`function<what is a function?>` that uses :ref:`f-strings<what is string interpolation?>` to make a string_ that represents the person I make saying hi when I give it ``first_name``, ``last_name``, and ``year_of_birth``.
-* I saw the following :ref:`Exceptions<how to test if an Exception is raised>`
+* I saw the following :ref:`Exceptions<how to test that an Exception is raised>`
 
   - :ref:`AssertionError<what causes AssertionError?>`
   - :ref:`NameError<test_catching_name_error>`

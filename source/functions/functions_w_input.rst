@@ -3100,7 +3100,7 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 
 ----
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_functions.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 153

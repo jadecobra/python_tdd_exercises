@@ -2339,7 +2339,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
   I cannot :ref:`negate<test_logical_negation>` :ref:`and<test_logical_conjunction>` this way.
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_binary.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 67

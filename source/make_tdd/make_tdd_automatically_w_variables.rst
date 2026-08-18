@@ -459,7 +459,7 @@ Here are a few other examples
     FAILED tests/test_exceptions.py::Testexceptions::test_failure - AssertionError: True is not false
     ===================== 1 failed in X.YZs =====================
 
-the computer makes a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called :ref:`exceptions<how to test if an Exception is raised>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`how to test if an Exception is raised`
+the computer makes a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called :ref:`exceptions<how to test that an Exception is raised>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`how to test that an Exception is raised`
 
 ----
 
@@ -506,7 +506,7 @@ what is next?
 * :ref:`I know how to write programs that make decisions<truth table>`.
 * :ref:`I know how to make a Python Test Driven Development environment automatically with variables<how to make a Python Test Driven Development environment automatically with variables>`.
 
-:ref:`Would you like to test making a person with Exceptions?<how to test if an Exception is raised>`
+:ref:`Would you like to test making a person with Exceptions?<how to test that an Exception is raised>`
 
 ----
 

@@ -195,7 +195,7 @@ first input     second input   return
 
   because I have not :ref:`defined<how to make a function>` :ref:`contradiction<test_contradiction>` in ``truth_table.py``
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 13
@@ -237,7 +237,7 @@ first input     second input   return
 
   because the test :ref:`called<how to call a function with input>` the :ref:`contradiction function<test_contradiction>` with two arguments (:green:`True` and :green:`True`) and the :ref:`definition<how to make a function>` does not allow any arguments (the parentheses are empty).
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` , in ``test_binary.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` , in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -736,7 +736,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
     assertFalse(src.truth_table.logical_conjunction(True, False))
     assertFalse(True                                            )
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_binary.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 27

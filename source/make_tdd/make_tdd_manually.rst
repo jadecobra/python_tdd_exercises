@@ -818,16 +818,16 @@ how to make the tests a Python package
 
   This is the :red:`RED` part of the :ref:`Test Driven Development Cycle<what is the Test Driven Development cycle?>`. The message in the terminal_ is about the failure, I like to read these from the bottom up. Here is an explanation of each line, starting from the last line on the screen
 
-  - ``FAILED (errors=1)``: the number of failures or :ref:`errors<how to test if an Exception is raised>`
+  - ``FAILED (errors=1)``: the number of failures or :ref:`errors<how to test that an Exception is raised>`
   - ``Ran 1 test in A.XYZs``: the number of tests it ran and how long they took
-  - ``AssertionError``: the :ref:`Error (Exception)<how to test if an Exception is raised>` that happened. Since I used an :ref:`assert statement<what is an assertion?>` I get :ref:`AssertionError<what causes AssertionError?>` because the statement after ``assert`` is :ref:`False<test_what_is_false>` - :ref:`False<test_what_is_false>` is NOT :ref:`True<test_what_is_true>`
+  - ``AssertionError``: the :ref:`Error (Exception)<how to test that an Exception is raised>` that happened. Since I used an :ref:`assert statement<what is an assertion?>` I get :ref:`AssertionError<what causes AssertionError?>` because the statement after ``assert`` is :ref:`False<test_what_is_false>` - :ref:`False<test_what_is_false>` is NOT :ref:`True<test_what_is_true>`
   - ``assert False is True``: the line of code that caused :ref:`AssertionError<what causes AssertionError?>`
-  - the arrows (``^^^^^^^^^^^^^``): point to the part of the line above, that Python_ thinks caused the :ref:`error<how to test if an Exception is raised>`
-  - ``File ".../pumping_python/person/tests/test_person.py", line 2, in <module>``: the line number of the code that caused the :ref:`error<how to test if an Exception is raised>` and the location of the file_ where the :ref:`error<how to test if an Exception is raised>` happened and again the question - :ref:`what is a module?`
-  - ``__import__(name)`` shows another :ref:`error<how to test if an Exception is raised>` that is triggered by the one from ``assert False is True``
-  - ``File "/usr/local/lib/python3.XY/unittest/loader.py", line 367, in _get_module_from_name`` shows the line, :ref:`method<what is a method?>` and file_ where the :ref:`error<how to test if an Exception is raised>` triggered by my ``assert False is True`` happened
+  - the arrows (``^^^^^^^^^^^^^``): point to the part of the line above, that Python_ thinks caused the :ref:`error<how to test that an Exception is raised>`
+  - ``File ".../pumping_python/person/tests/test_person.py", line 2, in <module>``: the line number of the code that caused the :ref:`error<how to test that an Exception is raised>` and the location of the file_ where the :ref:`error<how to test that an Exception is raised>` happened and again the question - :ref:`what is a module?`
+  - ``__import__(name)`` shows another :ref:`error<how to test that an Exception is raised>` that is triggered by the one from ``assert False is True``
+  - ``File "/usr/local/lib/python3.XY/unittest/loader.py", line 367, in _get_module_from_name`` shows the line, :ref:`method<what is a method?>` and file_ where the :ref:`error<how to test that an Exception is raised>` triggered by my ``assert False is True`` happened
   - ``module = self._get_module_from_name(name)`` a failure triggered by the failure triggered by my ``assert False is True``
-  - ``File "/usr/local/lib/python3.XY/unittest/loader.py", line 426, in _find_test_path`` shows the line, :ref:`method<what is a method?>` and file_ where the :ref:`error<how to test if an Exception is raised>` triggered by the one triggered by my ``assert False is True`` happened
+  - ``File "/usr/local/lib/python3.XY/unittest/loader.py", line 426, in _find_test_path`` shows the line, :ref:`method<what is a method?>` and file_ where the :ref:`error<how to test that an Exception is raised>` triggered by the one triggered by my ``assert False is True`` happened
   - ``Traceback (most recent call last):``: all the information shown after this line that is indented to the right shows the calls that led to the failure. The last line is usually the most important one that points to what caused the failure, this is why I like to read it from the bottom up. In this case it is the only one I care about because it is the one I added to cause the failure.
   - ``ERROR: tests.test_person (unittest.loader._FailedTest.tests.test_person)`` is a header with information in :ref:`dot notation` about the failing test
 
@@ -878,7 +878,7 @@ how to make the tests a Python package
 :yellow:`REFACTOR`: make it better
 ********************************************************************************************
 
-* I keep a list of :ref:`Errors/Exceptions<how to test if an Exception is raised>` that show up in the terminal_ as I go through this book to help me know them better, familiarity. I add :ref:`AssertionError<what causes AssertionError?>` to ``test_person.py``
+* I keep a list of :ref:`Errors/Exceptions<how to test that an Exception is raised>` that show up in the terminal_ as I go through this book to help me know them better, familiarity. I add :ref:`AssertionError<what causes AssertionError?>` to ``test_person.py``
 
   .. code-block:: python
     :linenos:

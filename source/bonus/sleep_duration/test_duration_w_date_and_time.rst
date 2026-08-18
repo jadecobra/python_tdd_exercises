@@ -100,7 +100,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
-  I cannot use ``int()`` to change a timestamp string_ to a number when it has a date. I add an `assertRaises`_ to :ref:`handle<how to test if an Exception is raised>` the ValueError_
+  I cannot use ``int()`` to change a timestamp string_ to a number when it has a date. I add an `assertRaises`_ to :ref:`handle<how to test that an Exception is raised>` the ValueError_
 
   .. code-block:: python
 
@@ -871,10 +871,10 @@ The challenge was to write a program_ that calculates the difference between a g
 * `test_get_datetime`_
 * :ref:`test_duration_w_date_and_time <how to measure sleep duration: test_duration_w_date_and_time>` where I used
 
-  - `random.randint`_ and an :ref:`how to test if an Exception is raised` to generate timestamps with random dates and times that are :ref:`how to pass values<telephone>` in strings for ``wake_time`` and ``sleep_time``
+  - `random.randint`_ and an :ref:`how to test that an Exception is raised` to generate timestamps with random dates and times that are :ref:`how to pass values<telephone>` in strings for ``wake_time`` and ``sleep_time``
   - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<what is a function?>` raises ValueError_ with a message and returns the right difference between the 2, if ``wake_time`` is later than or the same as ``sleep_time``
 
-I also saw these :ref:`Exceptions<how to test if an Exception is raised>`
+I also saw these :ref:`Exceptions<how to test that an Exception is raised>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`TypeError<what causes TypeError?>`

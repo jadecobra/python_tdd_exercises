@@ -127,7 +127,7 @@ test_streamlit_calculator_title
 
     NameError: name 'streamlit' is not defined
 
-* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :linenos:
@@ -174,7 +174,7 @@ test_streamlit_calculator_title
 
     AttributeError: module 'streamlit' has no attribute 'testing'
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 13
@@ -259,7 +259,7 @@ test_streamlit_calculator_title
 
     AssertionError: ElementList() != 'Calculator'
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 15
@@ -711,7 +711,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 
   this :ref:`dictionary<what is a dictionary?>` has too many things
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen
+* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
     :lineno-start: 60

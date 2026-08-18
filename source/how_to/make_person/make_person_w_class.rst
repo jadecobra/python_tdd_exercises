@@ -1980,7 +1980,7 @@ separate and equal Person class
 
     SyntaxError: 'return' outside function
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_person.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 221
@@ -3326,7 +3326,7 @@ review
 
 * I ran tests to write a :ref:`class<everything is an object>` that makes a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` and has a :ref:`method<what is a method?>` so I do not have to pass the same values every time I want to do something with a person.
 
-* I saw the following :ref:`Exceptions<how to test if an Exception is raised>`
+* I saw the following :ref:`Exceptions<how to test that an Exception is raised>`
 
   - :ref:`AssertionError<what causes AssertionError?>`
   - :ref:`NameError<test_catching_name_error>`

@@ -112,7 +112,7 @@ the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero
 
 ----
 
-* I add :ref:`ZeroDivisionError<test_catching_zero_division_error>` to the list of :ref:`Exceptions<how to test if an Exception is raised>` seen, in ``test_calculator.py``
+* I add :ref:`ZeroDivisionError<test_catching_zero_division_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 58
@@ -253,8 +253,8 @@ review
 
 I ran tests to show that
 
-* I can cause any :ref:`Exception<how to test if an Exception is raised>` I want with the :ref:`raise<how to raise an Exception>` keyword
-* I can use the `assertRaises method`_ to catch :ref:`Exceptions<how to test if an Exception is raised>` in tests and tested these
+* I can cause any :ref:`Exception<how to test that an Exception is raised>` I want with the :ref:`raise<how to raise an Exception>` keyword
+* I can use the `assertRaises method`_ to catch :ref:`Exceptions<how to test that an Exception is raised>` in tests and tested these
 
   - :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
   - :ref:`NameError<test_catching_name_error>`
@@ -265,8 +265,8 @@ I ran tests to show that
   - :ref:`ZeroDivisionError<test_catching_zero_division_error>`
   - :ref:`The Mother of all Exceptions<test_catching_exceptions>`
 
-* I can use assertRaisesRegex_ to catch :ref:`Exceptions<how to test if an Exception is raised>` with messages
-* I can use :ref:`try..except...else<how to use try...except...else>` to make programs that can choose what to do when :ref:`Exceptions<how to test if an Exception is raised>` are raised
+* I can use assertRaisesRegex_ to catch :ref:`Exceptions<how to test that an Exception is raised>` with messages
+* I can use :ref:`try..except...else<how to use try...except...else>` to make programs that can choose what to do when :ref:`Exceptions<how to test that an Exception is raised>` are raised
 
 *************************************************************************************
 code from the chapter
@@ -290,7 +290,7 @@ what is next?
 * :ref:`I know how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
 * :ref:`how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment 2>`
-* :ref:`how to test if an Exception is raised with assertRaises<how to test if an Exception is raised>`
+* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions in programs>`
 
 :ref:`Would you like to test TypeError?<what causes TypeError?>`
