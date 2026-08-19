@@ -2077,10 +2077,10 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
 ----
 
 *********************************************************************************
-extract test_person_can_vote
+extract test_can_vote_method
 *********************************************************************************
 
-The :ref:`can_vote method of the Person class<add can_vote method>` sends two parameters (``age`` and ``response``) when it :ref:`calls the check_age method<extract check_age method>` to return :red:`False` or :green:`True` for if a person cannot vote or can vote.
+The :ref:`can_vote method of the Person class<add can_vote method>` sends two parameters (``age`` and ``response``) when it :ref:`calls the check_age method<extract check_age method>` to return :red:`False` or :green:`True` for if a person :red:`cannot vote` or :green:`can vote`.
 
 The inputs are
 
@@ -2106,7 +2106,7 @@ age < 18        is citizen     can vote
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>` for if a person is :green:`younger` than 18 AND is a :green:`citizen`
+I add a test with an :ref:`assertion<what is an assertion?>` for if a person is :green:`younger` than ``18`` AND is a :green:`citizen`
 
 ==============  ============== ==============
 age < 18        is citizen     can vote
@@ -2128,7 +2128,7 @@ age < 18        is citizen     can vote
                           )
                       )
 
-      def test_person_can_vote(self):
+      def test_can_vote_method(self):
           truth_table = (
               (datetime.date.today().year-17, True),
           )
@@ -2149,7 +2149,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 .. code-block:: python
 
-  SUBFAILED(row=(2009, True)) ...test_person_can_vote -
+  SUBFAILED(row=(2009, True)) ...test_can_vote_method -
       AssertionError: False != True
 
 ----
@@ -2160,13 +2160,13 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change :green:`True` to :red:`False` in the :ref:`assertion<what is an assertion?>` for if a person is :green:`younger` than 18 AND is a :green:`citizen`
+I change :green:`True` to :red:`False` in the :ref:`assertion<what is an assertion?>` for if a person is :green:`younger` than ``18`` AND is a :green:`citizen`
 
 .. code-block:: python
   :lineno-start: 117
   :emphasize-lines: 14
 
-      def test_person_can_vote(self):
+      def test_can_vote_method(self):
           truth_table = (
               (datetime.date.today().year-17, True),
           )
@@ -2193,7 +2193,7 @@ the test passes.
 
 ----
 
-* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :green:`younger` than 18 AND is :red:`NOT a citizen`
+* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :green:`younger` than ``18`` AND is :red:`NOT a citizen`
 
   ==============  ============== ==============
   age < 18        is citizen     can vote
@@ -2203,18 +2203,18 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 117
-    :emphasize-lines: 3
+    :emphasize-lines: 4
 
-    def test_person_can_vote(self):
-        truth_table = (
-            (datetime.date.today().year-17, True),
-            (datetime.date.today().year-17, False),
-        )
-        for row in truth_table:
+        def test_can_vote_method(self):
+            truth_table = (
+                (datetime.date.today().year-17, True),
+                (datetime.date.today().year-17, False),
+            )
+            for row in truth_table:
 
   the test is still green.
 
-* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :red:`older or equal` to 18 AND is a :green:`citizen`
+* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :red:`older than or is` ``18`` AND is a :green:`citizen`
 
   ==============  ============== ==============
   age < 18        is citizen     can vote
@@ -2224,29 +2224,236 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 117
-    :emphasize-lines: 3
+    :emphasize-lines: 5
 
-    def test_person_can_vote(self):
-        truth_table = (
-            (datetime.date.today().year-17, True),
-            (datetime.date.today().year-17, False),
-        )
-        for row in truth_table:
+        def test_can_vote_method(self):
+            truth_table = (
+                (datetime.date.today().year-17, True),
+                (datetime.date.today().year-17, False),
+                (datetime.date.today().year-18, True),
+            )
+            for row in truth_table:
 
-  the test is still green.
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(row=(2008, True)) ...test_can_vote_method -
+        AssertionError: True != False
+
+* I add the expectation to the tuples_ for the rows in the ``truth_table`` tuple_
+
+  .. code-block:: python
+    :lineno-start: 117
+    :emphasize-lines: 3-5
+
+        def test_can_vote_method(self):
+            truth_table = (
+                (datetime.date.today().year-17, True, False),
+                (datetime.date.today().year-17, False, False),
+                (datetime.date.today().year-18, True, True),
+            )
+            for row in truth_table:
+
+* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the new values as the expectation of the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 123
+    :emphasize-lines: 10-12
+
+            for row in truth_table:
+                with self.subTest(row=row):
+                    a_person = src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='F',
+                        year_of_birth=row[0],
+                        is_citizen=row[1],
+                    )
+                    self.assertEqual(
+                        a_person.can_vote(), row[3]
+                    )
+
+    def test_joe(self):
+
+  the terminal_ is my friend, and shows :ref:`IndexError<test_index_error>`
+
+  .. code-block:: python
+    :emphasize-text: SUBFAILED
+
+    SUBFAILED(row=(2009, True, False)) ...test_can_vote_method -
+        IndexError: tuple index out of range
+    SUBFAILED(row=(2009, False, False)) ...test_can_vote_method -
+        IndexError: tuple index out of range
+    SUBFAILED(row=(2008, True, True)) ...test_can_vote_method -
+        IndexError: tuple index out of range
+
+* I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` to the right number
+
+  .. code-block:: python
+    :lineno-start: 132
+    :emphasize-lines: 2
+
+                    self.assertEqual(
+                        a_person.can_vote(), row[2]
+                    )
+
+  the test passes.
+
+* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :red:`older than or is` ``18`` AND is :red:`NOT a citizen`
+
+  ==============  ============== ==============
+  age < 18        is citizen     can vote
+  ==============  ============== ==============
+  :red:`False`    :red:`False`   :red:`False`
+  ==============  ============== ==============
+
+  .. code-block:: python
+    :lineno-start: 117
+    :emphasize-lines: 6
+
+        def test_can_vote_method(self):
+            truth_table = (
+                (datetime.date.today().year-17, True, False),
+                (datetime.date.today().year-17, False, False),
+                (datetime.date.today().year-18, True, True),
+                (datetime.date.today().year-18, False, False),
+            )
+            for row in truth_table:
+                with self.subTest(row=row):
+                    a_person = src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='F',
+                        year_of_birth=row[0],
+                        is_citizen=row[1],
+                    )
+                    self.assertEqual(
+                        a_person.can_vote(), row[2]
+                    )
+
+        def test_joe(self):
+
+  still green.
+
+* I remove the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` from :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 137
+
+        def test_joe(self):
+            first_name = 'joe'
+            last_name = 'blow'
+            sex = 'M'
+            year_of_birth = 1996
+
+            joe = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+            self.assertEqual(joe.can_get_license(), False)
+
+        def test_jane(self):
+
+* I remove the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` from :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 151
+
+        def test_jane(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+            year_of_birth = 1991
+
+            jane = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+                passed_test=True,
+            )
+            self.assertEqual(jane.can_get_license(), True)
+
+        def test_john(self):
+
+* I remove the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` from :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 166
+
+        def test_john(self):
+            first_name = 'john'
+            last_name = 'smith'
+            sex = 'M'
+            year_of_birth = 1980
+
+            john = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+                is_citizen=False,
+            )
+            self.assertEqual(john.can_get_license(), False)
+
+        def test_mary(self):
+
+* I remove the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` from :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 181
+
+        def test_mary(self):
+            first_name = 'mary'
+            last_name = 'public'
+            sex = 'F'
+            year_of_birth = 2000
+
+            mary = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+                is_citizen=False,
+                passed_test=True,
+            )
+            self.assertEqual(mary.can_get_license(), True)
+
+        def test_underage_citizen(self):
 
 * I add a git_ commit message
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'extract test_person_can_vote'
+    git commit -am 'extract test_can_vote_method'
 
 ----
 
 *********************************************************************************
-test person can_get_license
+extract test_can_get_license_method
 *********************************************************************************
+
+The :ref:`can_get_license method of the Person class<add can_get_license method>` also sends two parameters when it :ref:`calls the check_age method<extract check_age method>` to return :red:`False` or :green:`True` for if a person :red:`cannot get a license` or :green:`can get a license`.
+
+The inputs are
+
+* is the person younger than 18?
+* did the person pass the test?
+
+The :ref:`truth table` for the :ref:`can_get_license<add can_get_license method>` is
+
+==============  ============== ================
+age < 18        passed test    can get license
+==============  ============== ================
+:green:`True`   :green:`True`  :red:`False`
+:green:`True`   :red:`False`   :red:`False`
+:red:`False`    :green:`True`  :green:`True`
+:red:`False`    :red:`False`   :red:`False`
+==============  ============== ================
 
 ----
 
@@ -2256,6 +2463,49 @@ test person can_get_license
 
 ----
 
+I add a test with an :ref:`assertion<what is an assertion?>` for if a person is :red:`older than or is` ``18`` AND has :red:`NOT passed` the test.
+
+==============  ============== ================
+age < 18        passed test    can get license
+==============  ============== ================
+:red:`False`    :red:`False`   :red:`False`
+==============  ============== ================
+
+.. code-block:: python
+  :lineno-start: 133
+  :emphasize-lines: 5-20
+
+                  self.assertEqual(
+                      a_person.can_vote(), row[2]
+                  )
+
+      def test_can_get_license_method(self):
+          truth_table = (
+              (datetime.date.today().year-18, False, False),
+          )
+          for row in truth_table:
+              with self.subTest(row=row):
+                  a_person = src.person.Person(
+                      first_name='first_name',
+                      last_name='last_name',
+                      sex='F',
+                      year_of_birth=row[0],
+                      is_citizen=row[1],
+                  )
+                  self.assertEqual(
+                      a_person.can_vote(), True
+                  )
+
+      def test_joe(self):
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+  :emphasize-text: SUBFAILED
+
+  SUBFAILED(row=(2008, False, False)) ...test_can_get_license_method
+      - AssertionError: False != True
+
 ----
 
 =================================================================================
@@ -2263,6 +2513,18 @@ test person can_get_license
 =================================================================================
 
 ----
+
+I change the expectation of the :ref:`assertion<what is an assertion?>`
+
+.. code-block:: python
+  :lineno-start: 150
+  :emphasize-lines: 2
+
+                  self.assertEqual(
+                      a_person.can_vote(), False
+                  )
+
+the test passes.
 
 ----
 
@@ -2272,12 +2534,135 @@ test person can_get_license
 
 ----
 
+* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :red:`older than or is` ``18`` AND has :green:`passed` the test
+
+  ==============  ============== ================
+  age < 18        passed test    can get license
+  ==============  ============== ================
+  :red:`False`    :green:`True`  :green:`True`
+  ==============  ============== ================
+
+  .. code-block:: python
+    :lineno-start: 137
+    :emphasize-lines: 3
+
+        def test_can_get_license_method(self):
+            truth_table = (
+                (datetime.date.today().year-18, True, True),
+                (datetime.date.today().year-18, False, False),
+            )
+            for row in truth_table:
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(row=(2008, True, True)) ...
+        test_can_get_license_method - AssertionError:
+            True != False
+
+* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` to change the expectation to the last item of the ``row`` tuple_
+
+  .. code-block:: python
+    :lineno-start: 142
+    :emphasize-lines: 11
+
+            for row in truth_table:
+                with self.subTest(row=row):
+                    a_person = src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='F',
+                        year_of_birth=row[0],
+                        is_citizen=row[1],
+                    )
+                    self.assertEqual(
+                        a_person.can_vote(), row[-1]
+                    )
+
+        def test_joe(self):
+
+  the test passes.
+
+* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :green:`younger than` ``18`` AND has :red:`NOT passed` the test
+
+  ==============  ============== ================
+  age < 18        passed test    can get license
+  ==============  ============== ================
+  :green:`True`   :red:`False`   :red:`False`
+  ==============  ============== ================
+
+  .. code-block:: python
+    :lineno-start: 137
+    :emphasize-lines: 3
+
+        def test_can_get_license_method(self):
+            truth_table = (
+                (datetime.date.today().year-17, False, False),
+                (datetime.date.today().year-18, True, True),
+                (datetime.date.today().year-18, False, False),
+            )
+            for row in truth_table:
+
+  the test is still green.
+
+* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :green:`younger than` ``18`` AND has :green:`passed` the test
+
+  ==============  ============== ================
+  age < 18        passed test    can get license
+  ==============  ============== ================
+  :green:`True`   :green:`True`  :red:`False`
+  ==============  ============== ================
+
+  .. code-block:: python
+    :lineno-start: 137
+    :emphasize-lines: 3
+
+        def test_can_get_license_method(self):
+            truth_table = (
+                (datetime.date.today().year-17, True, False),
+                (datetime.date.today().year-17, False, False),
+                (datetime.date.today().year-18, True, True),
+                (datetime.date.today().year-18, False, False),
+            )
+            for row in truth_table:
+
+  still green.
+
+* I remove :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` since they are now repetitions of :ref:`test_can_get_license_method<extract test_can_get_license_method>`
+
+  .. code-block:: python
+    :lineno-start: 137
+
+        def test_can_get_license_method(self):
+            truth_table = (
+                (datetime.date.today().year-17, True, False),
+                (datetime.date.today().year-17, False, False),
+                (datetime.date.today().year-18, True, True),
+                (datetime.date.today().year-18, False, False),
+            )
+            for row in truth_table:
+                with self.subTest(row=row):
+                    a_person = src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='F',
+                        year_of_birth=row[0],
+                        is_citizen=row[1],
+                    )
+                    self.assertEqual(
+                        a_person.can_vote(), row[-1]
+                    )
+
+        def test_underage_citizen(self):
+
 * I add a git_ commit message
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'test person can_get_license'
+    git commit -am \
+    'extract test_can_get_license_method'
 
 ----
 
