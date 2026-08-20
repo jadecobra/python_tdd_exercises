@@ -114,7 +114,7 @@ open the project
 extract test_factory_function
 *********************************************************************************
 
-The tests for the :ref:`factory function<test person factory>` in :ref:`test_john`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make a :ref:`call<how to call a function with input>` to the :ref:`factory function<test person factory>` then compare the result with a string_.
+The tests for the :ref:`factory function<test person factory>` in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make a :ref:`call<how to call a function with input>` to the :ref:`factory function<test person factory>` then compare the result with a string_.
 
 =================================================================================
 :red:`RED`: make it fail
@@ -653,7 +653,7 @@ The :ref:`for loop<what is a for loop?>` allows me to test any number of people 
 extract test_say_hello_function
 *********************************************************************************
 
-The tests for the :ref:`say_hello function<test say_hello function>` in :ref:`test_john`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make a :ref:`call<how to call a function with input>` to the :ref:`say_hello function<test say_hello function>` then compare the result with a string_.
+The tests for the :ref:`say_hello function<test say_hello function>` in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make a :ref:`call<how to call a function with input>` to the :ref:`say_hello function<test say_hello function>` then compare the result with a string_.
 
 ----
 
@@ -1426,7 +1426,7 @@ For each person in the ``people`` tuple_, this test :ref:`calls the say_hello fu
 extract test_say_hello_method
 *********************************************************************************
 
-The tests in :ref:`test_john`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<extract Person class>`, then :ref:`call<how to call a function with input>` its :ref:`say_hello<test say_hello method>` comparing the results in :ref:`assertions<what is an assertion?>`.
+The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<extract Person class>`, then :ref:`call<how to call a function with input>` its :ref:`say_hello<test say_hello method>` comparing the results in :ref:`assertions<what is an assertion?>`.
 
 ----
 
@@ -1769,7 +1769,7 @@ the subTest method
 * I remove the :ref:`assertions<what is an assertion?>` for the :ref:`say_hello method<test say_hello method>` from :ref:`test_joe`
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 104
 
         def test_joe(self):
             first_name = 'joe'
@@ -2275,7 +2275,7 @@ extract people class attribute
 extract test_can_person_vote
 *********************************************************************************
 
-The tests in :ref:`test_john`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<extract Person class>`, then :ref:`call<how to call a function with input>` its :ref:`can_vote method<add can_vote method>` comparing the results in :ref:`assertions<what is an assertion?>`.
+The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_joe`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<extract Person class>`, then :ref:`call<how to call a function with input>` its :ref:`can_vote method<add can_vote method>` comparing the results in :ref:`assertions<what is an assertion?>`.
 
 The :ref:`can_vote method of the Person class<add can_vote method>` sends two parameters (``age`` and ``response``) when it :ref:`calls the check_age method<extract check_age method>` to return :red:`False` or :green:`True` for if a person :red:`cannot vote` or :green:`can vote`.
 
@@ -2312,7 +2312,7 @@ age < 18        is citizen     can vote
 ==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 107
+  :lineno-start: 94
   :emphasize-lines: 11-24
 
                   else:
@@ -2360,7 +2360,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change :green:`True` to :red:`False` in the :ref:`assertion<what is an assertion?>` for if a person is :green:`younger` than ``18`` AND is a :green:`citizen`
 
 .. code-block:: python
-  :lineno-start: 117
+  :lineno-start: 104
   :emphasize-lines: 14
 
       def test_can_person_vote(self):
@@ -2399,7 +2399,7 @@ the test passes.
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 104
     :emphasize-lines: 4
 
         def test_can_person_vote(self):
@@ -2411,7 +2411,7 @@ the test passes.
 
   the test is still green.
 
-* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :red:`older than or is` ``18`` AND is a :green:`citizen`
+* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :red:`NOT younger` than ``18`` AND is a :green:`citizen`
 
   ==============  ============== ==============
   age < 18        is citizen     can vote
@@ -2420,7 +2420,7 @@ the test passes.
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 104
     :emphasize-lines: 5
 
         def test_can_person_vote(self):
@@ -2441,7 +2441,7 @@ the test passes.
 * I add the expectation to the tuples_ for the rows in the ``truth_table`` tuple_
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 104
     :emphasize-lines: 3-5
 
         def test_can_person_vote(self):
@@ -2455,7 +2455,7 @@ the test passes.
 * I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the new values as the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 123
+    :lineno-start: 110
     :emphasize-lines: 10-12
 
             for row in truth_table:
@@ -2488,7 +2488,7 @@ the test passes.
 * I change the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` to the right number
 
   .. code-block:: python
-    :lineno-start: 132
+    :lineno-start: 119
     :emphasize-lines: 2
 
                     self.assertEqual(
@@ -2497,7 +2497,7 @@ the test passes.
 
   the test passes.
 
-* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :red:`older than or is` ``18`` AND is :red:`NOT a citizen`
+* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :red:`NOT younger` than ``18`` AND is :red:`NOT a citizen`
 
   ==============  ============== ==============
   age < 18        is citizen     can vote
@@ -2506,7 +2506,7 @@ the test passes.
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 104
     :emphasize-lines: 6
 
         def test_can_person_vote(self):
@@ -2536,7 +2536,7 @@ the test passes.
 * I remove the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` from :ref:`test_joe`
 
   .. code-block:: python
-    :lineno-start: 137
+    :lineno-start: 124
 
         def test_joe(self):
             first_name = 'joe'
@@ -2557,7 +2557,7 @@ the test passes.
 * I remove the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` from :ref:`test_jane`
 
   .. code-block:: python
-    :lineno-start: 151
+    :lineno-start: 138
 
         def test_jane(self):
             first_name = 'jane'
@@ -2579,7 +2579,7 @@ the test passes.
 * I remove the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` from :ref:`test_john`
 
   .. code-block:: python
-    :lineno-start: 166
+    :lineno-start: 153
 
         def test_john(self):
             first_name = 'john'
@@ -2601,7 +2601,7 @@ the test passes.
 * I remove the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` from :ref:`test_mary`
 
   .. code-block:: python
-    :lineno-start: 181
+    :lineno-start: 168
 
         def test_mary(self):
             first_name = 'mary'
@@ -2624,7 +2624,7 @@ the test passes.
 * I remove the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` from :ref:`test_underage_citizen<add condition to can_vote>`
 
   .. code-block:: python
-    :lineno-start: 197
+    :lineno-start: 184
 
         def test_underage_citizen(self):
             person = src.person.Person(
@@ -2654,7 +2654,7 @@ the test passes.
 extract test_can_person_get_license
 *********************************************************************************
 
-The tests in :ref:`test_john`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<extract Person class>`, then :ref:`call<how to call a function with input>` its :ref:`can_get_license method<add can_get_license method>` comparing the results in :ref:`assertions<what is an assertion?>`.
+The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_joe`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<extract Person class>`, then :ref:`call<how to call a function with input>` its :ref:`can_get_license method<add can_get_license method>` comparing the results in :ref:`assertions<what is an assertion?>`.
 
 The :ref:`can_get_license method of the Person class<add can_get_license method>` also sends two parameters when it :ref:`calls the check_age method<extract check_age method>` to return :red:`False` or :green:`True` for if a person :red:`cannot get a license` or :green:`can get a license`.
 
@@ -2682,7 +2682,7 @@ age < 18        passed test    can get license
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>` for if a person is :red:`older than or is` ``18`` AND has :red:`NOT passed` the test.
+I add a test with an :ref:`assertion<what is an assertion?>` for if a person is :red:`NOT younger` than ``18`` AND has :red:`NOT passed` the test.
 
 ==============  ============== ================
 age < 18        passed test    can get license
@@ -2691,7 +2691,7 @@ age < 18        passed test    can get license
 ==============  ============== ================
 
 .. code-block:: python
-  :lineno-start: 133
+  :lineno-start: 120
   :emphasize-lines: 5-20
 
                   self.assertEqual(
@@ -2709,10 +2709,10 @@ age < 18        passed test    can get license
                       last_name='last_name',
                       sex='F',
                       year_of_birth=row[0],
-                      is_citizen=row[1],
+                      passed_test=row[1],
                   )
                   self.assertEqual(
-                      a_person.can_vote(), True
+                      a_person.can_get_license(), True
                   )
 
       def test_joe(self):
@@ -2736,11 +2736,11 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change the expectation of the :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
-  :lineno-start: 150
+  :lineno-start: 137
   :emphasize-lines: 2
 
                   self.assertEqual(
-                      a_person.can_vote(), False
+                      a_person.can_get_license(), False
                   )
 
 the test passes.
@@ -2753,7 +2753,7 @@ the test passes.
 
 ----
 
-* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :red:`older than or is` ``18`` AND has :green:`passed` the test
+* I add a tuple_ to the ``truth_table`` tuple_ for if a person is :red:`NOT younger` than ``18`` AND has :green:`passed` the test
 
   ==============  ============== ================
   age < 18        passed test    can get license
@@ -2762,7 +2762,7 @@ the test passes.
   ==============  ============== ================
 
   .. code-block:: python
-    :lineno-start: 137
+    :lineno-start: 124
     :emphasize-lines: 3
 
         def test_can_person_get_license(self):
@@ -2783,7 +2783,7 @@ the test passes.
 * I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` to change the expectation to the last item of the ``row`` tuple_
 
   .. code-block:: python
-    :lineno-start: 142
+    :lineno-start: 129
     :emphasize-lines: 11
 
             for row in truth_table:
@@ -2796,7 +2796,7 @@ the test passes.
                         is_citizen=row[1],
                     )
                     self.assertEqual(
-                        a_person.can_vote(), row[-1]
+                        a_person.can_get_license(), row[-1]
                     )
 
         def test_joe(self):
@@ -2812,7 +2812,7 @@ the test passes.
   ==============  ============== ================
 
   .. code-block:: python
-    :lineno-start: 137
+    :lineno-start: 124
     :emphasize-lines: 3
 
         def test_can_person_get_license(self):
@@ -2834,7 +2834,7 @@ the test passes.
   ==============  ============== ================
 
   .. code-block:: python
-    :lineno-start: 137
+    :lineno-start: 124
     :emphasize-lines: 3
 
         def test_can_person_get_license(self):
@@ -2851,7 +2851,7 @@ the test passes.
 * I remove :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  since they are now repetitions of :ref:`test_can_person_get_license<extract test_can_person_get_license>`
 
   .. code-block:: python
-    :lineno-start: 137
+    :lineno-start: 124
 
         def test_can_person_get_license(self):
             truth_table = (
@@ -2870,7 +2870,7 @@ the test passes.
                         is_citizen=row[1],
                     )
                     self.assertEqual(
-                        a_person.can_vote(), row[-1]
+                        a_person.can_get_license(), row[-1]
                     )
 
         def test_when_person_is_too_old_to_be_alive(self):
@@ -2882,6 +2882,77 @@ the test passes.
 
     git commit -am \
     'extract test_can_person_get_license'
+
+----
+
+*********************************************************************************
+extract truth_table class attribute
+*********************************************************************************
+
+The ``truth_table`` tuple_ is used in both :ref:`test_can_person_vote<extract test_can_person_vote>` and :ref:`test_can_person_get_license`
+.
+
+* I add a :ref:`class attribute<what is a class attribute?>` for the ``truth_table`` tuple_ to the :ref:`TestPerson class<add TestPerson class>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 10-15
+
+    class TestPerson(unittest.TestCase):
+
+        people = (
+            ('jane', 'doe', 'F', 1991),
+            ('joe', 'blow', 'M', 1996),
+            ('mary', 'public', 'F', 2000),
+            ('john', 'smith', 'M', 1980),
+            ('first_name', 'last_name', 'F', 'a string'),
+        )
+        truth_table = (
+            (datetime.date.today().year-17, True, False),
+            (datetime.date.today().year-17, False, False),
+            (datetime.date.today().year-18, True, True),
+            (datetime.date.today().year-18, False, False),
+        )
+
+        @staticmethod
+        def calculate_age(year_of_birth):
+
+* I use the :ref:`class attribute<what is a class attribute?>` for ``truth_table`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_can_person_vote<extract test_can_person_vote>`
+
+  .. code-block:: python
+    :lineno-start: 110
+    :emphasize-lines:
+
+        def test_can_person_vote(self):
+            truth_table = (
+                (datetime.date.today().year-17, True, False),
+                (datetime.date.today().year-17, False, False),
+                (datetime.date.today().year-18, True, True),
+                (datetime.date.today().year-18, False, False),
+            )
+            # for row in truth_table:
+            for row in self.truth_table:
+                with self.subTest(row=row):
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_can_person_vote<extract test_can_person_vote>`
+
+  .. code-block:: python
+    :lineno-start: 110
+
+* I use the :ref:`class attribute<what is a class attribute?>` for ``truth_table`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_can_person_vote<extract test_can_person_vote>`
+
+  .. code-block:: python
+    :lineno-start: 110
+    :emphasize-lines:
+
+  still green.
+
+* I remove the commented lines from :ref:`test_can_person_vote<extract test_can_person_vote>`
+
+  .. code-block:: python
+    :lineno-start: 110
 
 ----
 
