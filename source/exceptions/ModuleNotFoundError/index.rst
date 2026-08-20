@@ -6,16 +6,15 @@
 
 .. _ModuleNotFoundError: https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError
 .. _sys.path: https://docs.python.org/3/library/sys.html#sys.path
+.. _module: https://docs.python.org/3/glossary.html#term-module
+.. _Python module: module_
+.. _modules: module_
 
 #################################################################################
 what is a module?
 #################################################################################
 
-
-
-----
-
-A Python_ module_ is any file_ that ends in ``.py``. Any folder_ that contains an ``__init__.py`` is also a Python_ module_.
+A `Python module`_ is any file_ that ends in ``.py``. Any folder_ that contains an ``__init__.py`` is also a Python_ module_.
 
 ----
 
