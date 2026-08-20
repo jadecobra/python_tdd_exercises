@@ -141,12 +141,12 @@ I add a test for the :ref:`factory function<test person factory>` to ``tests/tes
           people = (
               ('joe', 'blow', 'M', 1996),
           )
-          for a_person in people:
+          for person in people:
               reality = src.person.factory(
-                  first_name=a_person[0],
-                  last_name=a_person[1],
-                  sex=a_person[2],
-                  year_of_birth=a_person[3],
+                  first_name=person[0],
+                  last_name=person[1],
+                  sex=person[2],
+                  year_of_birth=person[3],
               )
               my_expectation = None
               self.assertEqual(reality, my_expectation)
@@ -177,12 +177,12 @@ I change ``my_expectation`` to match ``reality``
           people = (
               ('joe', 'blow', 'M', 1996),
           )
-          for a_person in people:
+          for person in people:
               reality = src.person.factory(
-                  first_name=a_person[0],
-                  last_name=a_person[1],
-                  sex=a_person[2],
-                  year_of_birth=a_person[3],
+                  first_name=person[0],
+                  last_name=person[1],
+                  sex=person[2],
+                  year_of_birth=person[3],
               )
               my_expectation = 'joe, blow, M, 1996'
               self.assertEqual(reality, my_expectation)
@@ -203,7 +203,7 @@ the test passes.
 
   .. code-block:: python
 
-    for a_person in (
+    for person in (
         ('joe', 'blow', 'M', 1996),
     ):
 
@@ -211,13 +211,13 @@ the test passes.
 
   .. code-block:: shell
 
-    for a_person in people:
+    for person in people:
     ├── a_person = ('joe', 'blow', 'M', 1996)
     └── reality = src.person.factory(
-            first_name=a_person[0],
-            last_name=a_person[1],
-            sex=a_person[2],
-            year_of_birth=a_person[3],
+            first_name=person[0],
+            last_name=person[1],
+            sex=person[2],
+            year_of_birth=person[3],
         )
         └── src/person/__init__.py
             └── def factory(
@@ -253,7 +253,7 @@ the test passes.
                 ('jane', 'doe', 'F', 1991),
                 ('joe', 'blow', 'M', 1996),
             )
-            for a_person in people:
+            for person in people:
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -265,16 +265,16 @@ the test passes.
 
   .. code-block:: shell
 
-        for a_person in (
+        for person in (
     ┌───┴── ('jane', 'doe', 'F', 1991),
     │       ('joe', 'blow', 'M', 1996),
     │   ):
     ├── a_person = ('jane', 'doe', 'F', 1991)
     └── reality = src.person.factory(
-            first_name=a_person[0],
-            last_name=a_person[1],
-            sex=a_person[2],
-            year_of_birth=a_person[3],
+            first_name=person[0],
+            last_name=person[1],
+            sex=person[2],
+            year_of_birth=person[3],
         )
         └── src/person/__init__.py
             └── def factory(
@@ -302,12 +302,12 @@ the test passes.
                 ('jane', 'doe', 'F', 1991),
                 ('joe', 'blow', 'M', 1996),
             )
-            for a_person in people:
+            for person in people:
                 reality = src.person.factory(
-                    first_name=a_person[0],
-                    last_name=a_person[1],
-                    sex=a_person[2],
-                    year_of_birth=a_person[3],
+                    first_name=person[0],
+                    last_name=person[1],
+                    sex=person[2],
+                    year_of_birth=person[3],
                 )
                 # my_expectation = 'joe, blow, M, 1996'
                 my_expectation = 'jane, doe, F, 1991'
@@ -332,8 +332,8 @@ the test passes.
                 # my_expectation = 'joe, blow, M, 1996'
                 # my_expectation = 'jane, doe, F, 1991'
                 my_expectation = (
-                    f'{a_person[0]}, {a_person[1]},'
-                    f' {a_person[2]}, {a_person[3]}'
+                    f'{person[0]}, {person[1]},'
+                    f' {person[2]}, {person[3]}'
                 )
                 self.assertEqual(reality, my_expectation)
 
@@ -341,7 +341,7 @@ the test passes.
 
   the test passes.
 
-* I add :ref:`variables<what is a variable?>` for ``a_person[0]``, ``a_person[1]``, ``a_person[2]`` and ``a_person[3]``
+* I add :ref:`variables<what is a variable?>` for ``person[0]``, ``person[1]``, ``person[2]`` and ``person[3]``
 
   .. code-block:: python
     :lineno-start: 15
@@ -352,30 +352,30 @@ the test passes.
                 ('jane', 'doe', 'F', 1991),
                 ('joe', 'blow', 'M', 1996),
             )
-            for a_person in people:
-                first_name = a_person[0]
-                last_name = a_person[1]
-                sex = a_person[2]
-                year_of_birth = a_person[3]
+            for person in people:
+                first_name = person[0]
+                last_name = person[1]
+                sex = person[2]
+                year_of_birth = person[3]
 
                 reality = src.person.factory(
-                    first_name=a_person[0],
-                    last_name=a_person[1],
-                    sex=a_person[2],
-                    year_of_birth=a_person[3],
+                    first_name=person[0],
+                    last_name=person[1],
+                    sex=person[2],
+                    year_of_birth=person[3],
                 )
 
-* I use the :ref:`variables<what is a variable?>` for ``a_person[0]``, ``a_person[1]``, ``a_person[2]`` and ``a_person[3]``
+* I use the :ref:`variables<what is a variable?>` for ``person[0]``, ``person[1]``, ``person[2]`` and ``person[3]``
 
   .. code-block:: python
     :lineno-start: 26
     :emphasize-lines: 2-9, 14-17
 
                 reality = src.person.factory(
-                    # first_name=a_person[0],
-                    # last_name=a_person[1],
-                    # sex=a_person[2],
-                    # year_of_birth=a_person[3],
+                    # first_name=person[0],
+                    # last_name=person[1],
+                    # sex=person[2],
+                    # year_of_birth=person[3],
                     first_name=first_name,
                     last_name=last_name,
                     sex=sex,
@@ -384,8 +384,8 @@ the test passes.
                 # my_expectation = 'joe, blow, M, 1996'
                 # my_expectation = 'jane, doe, F, 1991'
                 my_expectation = (
-                    # f'{a_person[0]}, {a_person[1]},'
-                    # f' {a_person[2]}, {a_person[3]}'
+                    # f'{person[0]}, {person[1]},'
+                    # f' {person[2]}, {person[3]}'
                     f'{first_name}, {last_name},'
                     f' {sex}, {year_of_birth}'
                 )
@@ -407,7 +407,7 @@ the test passes.
                 ('joe', 'blow', 'M', 1996),
                 ('mary', 'public', 'F', 2000),
             )
-            for a_person in people:
+            for person in people:
 
   still green.
 
@@ -424,7 +424,7 @@ the test passes.
                 ('mary', 'public', 'F', 2000),
                 ('john', 'smith', 'M', 1980),
             )
-            for a_person in people:
+            for person in people:
 
   green, showing that for each tuple_ in the ``people`` tuple_, the :ref:`assertion<what is an assertion?>` is :ref:`True<test_what_is_true>`.
 
@@ -441,7 +441,7 @@ the test passes.
                 ('john', 'smith', 'M', 1980),
                 ('first_name', 'last_name', 'F', 'a string'),
             )
-            for a_person in people:
+            for person in people:
 
   the test is still green, because the :ref:`factory function<test person factory>` returns a string with the inputs it gets.
 
@@ -458,11 +458,11 @@ the test passes.
                 ('john', 'smith', 'M', 1980),
                 ('first_name', 'last_name', 'F', 'a string'),
             )
-            for a_person in people:
-                first_name = a_person[0]
-                last_name = a_person[1]
-                sex = a_person[2]
-                year_of_birth = a_person[3]
+            for person in people:
+                first_name = person[0]
+                last_name = person[1]
+                sex = person[2]
+                year_of_birth = person[3]
 
                 reality = src.person.factory(
                     first_name=first_name,
@@ -679,10 +679,10 @@ I add a test for the :ref:`say_hello function<test say_hello function>`
               ('john', 'smith', 'M', 1980),
               ('first_name', 'last_name', 'F', 'a string'),
           )
-          for a_person in people:
-              first_name = a_person[0]
-              last_name = a_person[1]
-              year_of_birth = a_person[3]
+          for person in people:
+              first_name = person[0]
+              last_name = person[1]
+              year_of_birth = person[3]
 
               reality = src.person.say_hello(
                   first_name=first_name,
@@ -773,7 +773,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: shell
 
-        for a_person in (
+        for person in (
         │   ('jane', 'doe', 'F', 1991),
         │   ('joe', 'blow', 'M', 1996),
         │   ('mary', 'public', 'F', 2000),
@@ -781,9 +781,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     ┌───┴── ('first_name', 'last_name', 'F', 'a string'),
     │   ):
     ├── a_person = ('first_name', 'last_name', 'F', 'a string')
-    ├── first_name = a_person[0]
-    ├── last_name = a_person[1]
-    ├── year_of_birth = a_person[3]
+    ├── first_name = person[0]
+    ├── last_name = person[1]
+    ├── year_of_birth = person[3]
     └── reality = src.person.say_hello(
             first_name=first_name,
             last_name=last_name,
@@ -837,10 +837,10 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     :lineno-start: 49
     :emphasize-lines: 6-13
 
-            for a_person in people:
-                first_name = a_person[0]
-                last_name = a_person[1]
-                year_of_birth = a_person[3]
+            for person in people:
+                first_name = person[0]
+                last_name = person[1]
+                year_of_birth = person[3]
 
                 try:
                     reality = src.person.say_hello(
@@ -866,7 +866,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: shell
 
-        for a_person in (
+        for person in (
         │   ('jane', 'doe', 'F', 1991),
         │   ('joe', 'blow', 'M', 1996),
         │   ('mary', 'public', 'F', 2000),
@@ -874,9 +874,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     ┌───┴── ('first_name', 'last_name', 'F', 'a string'),
     │   ):
     ├── a_person = ('first_name', 'last_name', 'F', 'a string')
-    ├── first_name = a_person[0]
-    ├── last_name = a_person[1]
-    ├── year_of_birth = a_person[3]
+    ├── first_name = person[0]
+    ├── last_name = person[1]
+    ├── year_of_birth = person[3]
     │   ...
     └── my_expectation = (
         ├── f'Hello, my name is {first_name}'
@@ -1098,10 +1098,10 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                 ('john', 'smith', 'M', 1980),
                 ('first_name', 'last_name', 'F', 'a string'),
             )
-            for a_person in people:
-                first_name = a_person[0]
-                last_name = a_person[1]
-                year_of_birth = a_person[3]
+            for person in people:
+                first_name = person[0]
+                last_name = person[1]
+                year_of_birth = person[3]
 
                 try:
                     reality = src.person.say_hello(
@@ -1271,7 +1271,7 @@ For each person in the ``people`` tuple_, this test :ref:`calls the say_hello fu
 
     .. code-block:: shell
 
-          for a_person in (
+          for person in (
           │   ('jane', 'doe', 'F', 1991),
           │   ('joe', 'blow', 'M', 1996),
           │   ('mary', 'public', 'F', 2000),
@@ -1279,9 +1279,9 @@ For each person in the ``people`` tuple_, this test :ref:`calls the say_hello fu
       ┌───┴── ('first_name', 'last_name', 'F', 'a string'),
       │   ):
       ├── a_person = ('first_name', 'last_name', 'F', 'a string')
-      ├── first_name = a_person[0]
-      ├── last_name = a_person[1]
-      ├── year_of_birth = a_person[3]
+      ├── first_name = person[0]
+      ├── last_name = person[1]
+      ├── year_of_birth = person[3]
       └── try:
               reality = src.person.say_hello(
                   first_name=first_name,
@@ -1321,7 +1321,7 @@ For each person in the ``people`` tuple_, this test :ref:`calls the say_hello fu
 
     .. code-block:: shell
 
-          for a_person in (
+          for person in (
           │   ('jane', 'doe', 'F', 1991),
           │   ('joe', 'blow', 'M', 1996),
           │   ('mary', 'public', 'F', 2000),
@@ -1329,9 +1329,9 @@ For each person in the ``people`` tuple_, this test :ref:`calls the say_hello fu
       ┌───┴── ('first_name', 'last_name', 'F', 'a string'),
       │   ):
       ├── a_person = ('first_name', 'last_name', 'F', 'a string')
-      ├── first_name = a_person[0]
-      ├── last_name = a_person[1]
-      ├── year_of_birth = a_person[3]
+      ├── first_name = person[0]
+      ├── last_name = person[1]
+      ├── year_of_birth = person[3]
       └── try:
               reality = src.person.say_hello(
                   first_name=first_name,
@@ -1371,7 +1371,7 @@ For each person in the ``people`` tuple_, this test :ref:`calls the say_hello fu
 
   .. code-block:: shell
 
-          for a_person in (
+          for person in (
           │   ('jane', 'doe', 'F', 1991),
           │   ('joe', 'blow', 'M', 1996),
           │   ('mary', 'public', 'F', 2000),
@@ -1379,9 +1379,9 @@ For each person in the ``people`` tuple_, this test :ref:`calls the say_hello fu
       │       ('first_name', 'last_name', 'F', 'a string'),
       │   ):
       ├── a_person = ('john', 'smith', 'M', 1980),
-      ├── first_name = a_person[0]
-      ├── last_name = a_person[1]
-      ├── year_of_birth = a_person[3]
+      ├── first_name = person[0]
+      ├── last_name = person[1]
+      ├── year_of_birth = person[3]
       ├── try:
       │       reality = src.person.say_hello(
       │           first_name=first_name,
@@ -1423,7 +1423,7 @@ For each person in the ``people`` tuple_, this test :ref:`calls the say_hello fu
 ----
 
 *********************************************************************************
-extract test_person_class
+extract test_say_hello_method
 *********************************************************************************
 
 The tests in :ref:`test_john`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<extract Person class>`, then :ref:`call<how to call a function with input>` its :ref:`say_hello<test say_hello method>` comparing the results in :ref:`assertions<what is an assertion?>`.
@@ -1444,7 +1444,7 @@ I add a test for the :ref:`Person class<extract Person class>`
 
                   self.assertEqual(reality, my_expectation)
 
-      def test_person_class(self):
+      def test_say_hello_method(self):
           people = (
               ('jane', 'doe', 'F', 1991),
               ('joe', 'blow', 'M', 1996),
@@ -1452,13 +1452,13 @@ I add a test for the :ref:`Person class<extract Person class>`
               ('john', 'smith', 'M', 1980),
               ('first_name', 'last_name', 'F', 'a string'),
           )
-          for a_person in people:
-              first_name = a_person[0]
-              last_name = a_person[1]
-              sex = a_person[2]
-              year_of_birth = a_person[3]
+          for person in people:
+              first_name = person[0]
+              last_name = person[1]
+              sex = person[2]
+              year_of_birth = person[3]
 
-              tester = src.person.Person(
+              a_person = src.person.Person(
                   first_name=first_name,
                   last_name=last_name,
                   sex=sex,
@@ -1466,7 +1466,7 @@ I add a test for the :ref:`Person class<extract Person class>`
               )
 
               self.assertEqual(
-                  tester.say_hello(),
+                  a_person.say_hello(),
                   None
               )
 
@@ -1495,7 +1495,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     :emphasize-lines: 3
 
                 self.assertEqual(
-                    tester.say_hello(),
+                    a_person.say_hello(),
                     'Hello, my name is jane doe and I am 35.'
                 )
 
@@ -1516,7 +1516,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     :emphasize-lines: 3-7
 
                 self.assertEqual(
-                    tester.say_hello(),
+                    a_person.say_hello(),
                     (
                         f'Hello, my name is {first_name}'
                         f' {last_name} and I am'
@@ -1548,21 +1548,21 @@ the subTest method
     :lineno-start: 81
     :emphasize-lines: 7-21
 
-            for a_person in people:
-                first_name = a_person[0]
-                last_name = a_person[1]
-                sex = a_person[2]
-                year_of_birth = a_person[3]
+            for person in people:
+                first_name = person[0]
+                last_name = person[1]
+                sex = person[2]
+                year_of_birth = person[3]
 
                 with self.subTest(first_name=first_name):
-                    tester = src.person.Person(
+                    a_person = src.person.Person(
                         first_name=first_name,
                         last_name=last_name,
                         sex=sex,
                         year_of_birth=year_of_birth,
                     )
                     self.assertEqual(
-                        tester.say_hello(),
+                        a_person.say_hello(),
                         (
                             f'Hello, my name is {first_name}'
                             f' {last_name} and I am'
@@ -1577,7 +1577,7 @@ the subTest method
   .. code-block:: python
     :emphasize-text: SUBFAILED
 
-    SUBFAILED(first_name='first_name') ...test_person_class -
+    SUBFAILED(first_name='first_name') ...test_say_hello_method -
         TypeError: 'a string' is not an integer
 
   ``SUBFAILED(first_name='first_name')`` shows the value I gave in ``with self.subTest(first_name=first_name)`` as the label for the sub test. I can use any name and values I want.
@@ -1588,17 +1588,17 @@ the subTest method
     :lineno-start: 81
     :emphasize-lines: 7-10
 
-            for a_person in people:
-                first_name = a_person[0]
-                last_name = a_person[1]
-                sex = a_person[2]
-                year_of_birth = a_person[3]
+            for person in people:
+                first_name = person[0]
+                last_name = person[1]
+                sex = person[2]
+                year_of_birth = person[3]
 
                 with self.subTest(
                     first_name=first_name,
                     year_of_birth=year_of_birth,
                 ):
-                    tester = src.person.Person(
+                    a_person = src.person.Person(
                         first_name=first_name,
                         last_name=last_name,
                         sex=sex,
@@ -1611,15 +1611,15 @@ the subTest method
     :emphasize-text: year_of_birth SUBFAILED
 
     SUBFAILED(first_name='first_name', year_of_birth='a string') ...
-        test_person_class - TypeError: 'a string' is not an integer
+        test_say_hello_method - TypeError: 'a string' is not an integer
 
-* I add a :ref:`try statement<how to handle Exceptions>` for :ref:`TypeError<what causes TypeError?>` and this error message to :ref:`test_person_class<extract test_person_class>`
+* I add a :ref:`try statement<how to handle Exceptions>` for :ref:`TypeError<what causes TypeError?>` and this error message to :ref:`test_say_hello_method<extract test_say_hello_method>`
 
   .. code-block:: python
     :lineno-start: 73
     :emphasize-lines: 19-39
 
-        def test_person_class(self):
+        def test_say_hello_method(self):
             people = (
                 ('jane', 'doe', 'F', 1991),
                 ('joe', 'blow', 'M', 1996),
@@ -1627,18 +1627,18 @@ the subTest method
                 ('john', 'smith', 'M', 1980),
                 ('first_name', 'last_name', 'F', 'a string'),
             )
-            for a_person in people:
-                first_name = a_person[0]
-                last_name = a_person[1]
-                sex = a_person[2]
-                year_of_birth = a_person[3]
+            for person in people:
+                first_name = person[0]
+                last_name = person[1]
+                sex = person[2]
+                year_of_birth = person[3]
 
                 with self.subTest(
                     first_name=first_name,
                     year_of_birth=year_of_birth,
                 ):
                     try:
-                        tester = src.person.Person(
+                        a_person = src.person.Person(
                             first_name=first_name,
                             last_name=last_name,
                             sex=sex,
@@ -1651,7 +1651,7 @@ the subTest method
                         )
                     else:
                         self.assertEqual(
-                            tester.say_hello(),
+                            a_person.say_hello(),
                             (
                                 f'Hello, my name is {first_name}'
                                 f' {last_name} and I am'
@@ -1690,7 +1690,7 @@ the subTest method
     :emphasize-text: SUBFAILED
 
     SUBFAILED(first_name='first_name', year_of_birth='a string') ...
-        test_person_class - AssertionError:
+        test_say_hello_method - AssertionError:
             'BOOM' != "'a string' is not an integer"
     FAILED tests/test_person.py...
         test_say_hello_function - AssertionError:
@@ -1710,10 +1710,10 @@ the subTest method
                 ('john', 'smith', 'M', 1980),
                 ('first_name', 'last_name', 'F', 'a string'),
             )
-            for a_person in people:
-                first_name = a_person[0]
-                last_name = a_person[1]
-                year_of_birth = a_person[3]
+            for person in people:
+                first_name = person[0]
+                last_name = person[1]
+                year_of_birth = person[3]
 
                 with self.subTest(
                     first_name=first_name,
@@ -1738,7 +1738,7 @@ the subTest method
                         )
                         self.assertEqual(reality, my_expectation)
 
-        def test_person_class(self):
+        def test_say_hello_method(self):
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with the first name and year_of_birth of the person that :ref:`raised the Exception<how to raise an Exception>`
 
@@ -1746,7 +1746,7 @@ the subTest method
     :emphasize-text: SUBFAILED year_of_birth
 
     SUBFAILED(first_name='first_name', year_of_birth='a string') ...
-        test_person_class - AssertionError:
+        test_say_hello_method - AssertionError:
             'BOOM' != "'a string' is not an integer"
     SUBFAILED(first_name='first_name', year_of_birth='a string') ...
         test_say_hello_function - AssertionError:
@@ -1863,7 +1863,7 @@ the subTest method
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'extract test_person_class'
+    git commit -am 'extract test_say_hello_method'
 
 For each person in the ``people`` tuple_, this test :ref:`makes an instance<how to test if something is an instance>` of the :ref:`Person class<extract Person class>` which makes an ``age`` :ref:`attribute<what is a class attribute?>` by :ref:`calling<how to call a function with input>` the :ref:`calculate_age<extract calculate_age function>` with the given ``year_of_birth`` parameter.
 
@@ -1873,7 +1873,7 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
 
     .. code-block:: shell
 
-          for a_person in (
+          for person in (
           │   ('jane', 'doe', 'F', 1991),
           │   ('joe', 'blow', 'M', 1996),
           │   ('mary', 'public', 'F', 2000),
@@ -1881,16 +1881,16 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
       ┌───┴── ('first_name', 'last_name', 'F', 'a string'),
       │   ):
       ├── a_person = ('first_name', 'last_name', 'F', 'a string')
-      ├── first_name = a_person[0]
-      ├── last_name = a_person[1]
-      ├── sex = a_person[2]
-      ├── year_of_birth = a_person[3]
+      ├── first_name = person[0]
+      ├── last_name = person[1]
+      ├── sex = person[2]
+      ├── year_of_birth = person[3]
       └── with self.subTest(
               first_name=first_name,
               year_of_birth=year_of_birth,
           ):
           └── try:
-              └── tester = src.person.Person(
+              └── a_person = src.person.Person(
                       first_name=first_name,
                       last_name=last_name,
                       sex=sex,
@@ -1936,7 +1936,7 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
 
     .. code-block:: shell
 
-          for a_person in (
+          for person in (
           │   ('jane', 'doe', 'F', 1991),
           │   ('joe', 'blow', 'M', 1996),
           │   ('mary', 'public', 'F', 2000),
@@ -1944,16 +1944,16 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
       ┌───┴── ('first_name', 'last_name', 'F', 'a string'),
       │   ):
       ├── a_person = ('first_name', 'last_name', 'F', 'a string')
-      ├── first_name = a_person[0]
-      ├── last_name = a_person[1]
-      ├── sex = a_person[2]
-      ├── year_of_birth = a_person[3]
+      ├── first_name = person[0]
+      ├── last_name = person[1]
+      ├── sex = person[2]
+      ├── year_of_birth = person[3]
       └── with self.subTest(
               first_name=first_name,
               year_of_birth=year_of_birth,
           ):
           └── try:
-              └── tester = src.person.Person(
+              └── a_person = src.person.Person(
                       first_name=first_name,
                       last_name=last_name,
                       sex=sex,
@@ -1999,7 +1999,7 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
 
   .. code-block:: shell
 
-          for a_person in (
+          for person in (
           │   ('jane', 'doe', 'F', 1991),
       ┌───┴── ('joe', 'blow', 'M', 1996),
       │       ('mary', 'public', 'F', 2000),
@@ -2007,16 +2007,16 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
       │       ('first_name', 'last_name', 'F', 'a string'),
       │   ):
       ├── a_person = ('first_name', 'last_name', 'F', 'a string')
-      ├── first_name = a_person[0]
-      ├── last_name = a_person[1]
-      ├── sex = a_person[2]
-      ├── year_of_birth = a_person[3]
+      ├── first_name = person[0]
+      ├── last_name = person[1]
+      ├── sex = person[2]
+      ├── year_of_birth = person[3]
       └── with self.subTest(
               first_name=first_name,
               year_of_birth=year_of_birth,
           ):
           ├── try:
-          │   └── tester = src.person.Person(
+          │   └── a_person = src.person.Person(
           │           first_name=first_name,
           │           last_name=last_name,
           │           sex=sex,
@@ -2049,7 +2049,7 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
           │       ...
           └── else:
               └── self.assertEqual(
-                  ├── tester.say_hello(),
+                  ├── a_person.say_hello(),
                   │   └── src/person/__init__.py
                   │       └── class Person:
                   │           │   ...
@@ -2073,6 +2073,201 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
                                     - year_of_birth
                                   )
 
+----
+
+*********************************************************************************
+extract people class attribute
+*********************************************************************************
+
+:ref:`test_factory_function<extract test_factory_function>`, :ref:`test_say_hello_function<extract test_say_hello_function>` and :ref:`test_say_hello_method<extract test_say_hello_method>` all use the same tuple_ of persons.
+
+* I add a :ref:`class attribute<what is a class attribute?>` for the ``people`` tuple_ to the :ref:`TestPerson class<add TestPerson class>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 3-9
+
+    class TestPerson(unittest.TestCase):
+
+        people = (
+            ('jane', 'doe', 'F', 1991),
+            ('joe', 'blow', 'M', 1996),
+            ('mary', 'public', 'F', 2000),
+            ('john', 'smith', 'M', 1980),
+            ('first_name', 'last_name', 'F', 'a string'),
+        )
+
+        @staticmethod
+        def calculate_age(year_of_birth):
+
+* I use the :ref:`class attribute<what is a class attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_factory_function<extract test_factory_function>`
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 2-10
+
+        def test_factory_function(self):
+            # people = (
+            #     ('jane', 'doe', 'F', 1991),
+            #     ('joe', 'blow', 'M', 1996),
+            #     ('mary', 'public', 'F', 2000),
+            #     ('john', 'smith', 'M', 1980),
+            #     ('first_name', 'last_name', 'F', '2026'),
+            # )
+            # for person in people:
+            for person in self.people:
+                first_name = person[0]
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_factory_function<extract test_factory_function>`
+
+  .. code-block:: python
+    :lineno-start: 23
+
+        def test_factory_function(self):
+            for person in self.people:
+                first_name = person[0]
+                last_name = person[1]
+                sex = person[2]
+                year_of_birth = person[3]
+
+                reality = src.person.factory(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                )
+                my_expectation = (
+                    f'{first_name}, {last_name},'
+                    f' {sex}, {year_of_birth}'
+                )
+                self.assertEqual(reality, my_expectation)
+
+        def test_say_hello_function(self):
+
+* I use the :ref:`class attribute<what is a class attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_function<extract test_say_hello_function>`
+
+  .. code-block:: python
+    :lineno-start: 42
+    :emphasize-lines: 2-10
+
+        def test_say_hello_function(self):
+            # people = (
+            #     ('jane', 'doe', 'F', 1991),
+            #     ('joe', 'blow', 'M', 1996),
+            #     ('mary', 'public', 'F', 2000),
+            #     ('john', 'smith', 'M', 1980),
+            #     ('first_name', 'last_name', 'F', 'a string'),
+            # )
+            # for person in people:
+            for person in self.people:
+                first_name = person[0]
+
+  still green.
+
+* I remove the commented lines from :ref:`test_say_hello_function<extract test_say_hello_function>`
+
+  .. code-block:: python
+    :lineno-start: 42
+
+        def test_say_hello_function(self):
+            for person in self.people:
+                first_name = person[0]
+                last_name = person[1]
+                year_of_birth = person[3]
+
+                with self.subTest(
+                    first_name=first_name,
+                    year_of_birth=year_of_birth,
+                ):
+                    try:
+                        reality = src.person.say_hello(
+                            first_name=first_name,
+                            last_name=last_name,
+                            year_of_birth=year_of_birth,
+                        )
+                    except TypeError as error:
+                        self.assertEqual(
+                            error.args[0],
+                            f"'{year_of_birth}' is not an integer"
+                        )
+                    else:
+                        my_expectation = (
+                            f'Hello, my name is {first_name}'
+                            f' {last_name} and I am'
+                            f' {self.calculate_age(year_of_birth)}.'
+                        )
+                        self.assertEqual(reality, my_expectation)
+
+        def test_say_hello_method(self):
+
+* I use the :ref:`class attribute<what is a class attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_method<extract test_say_hello_method>`
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 2-10
+
+        def test_say_hello_method(self):
+            # people = (
+            #     ('jane', 'doe', 'F', 1991),
+            #     ('joe', 'blow', 'M', 1996),
+            #     ('mary', 'public', 'F', 2000),
+            #     ('john', 'smith', 'M', 1980),
+            #     ('first_name', 'last_name', 'F', 'a string'),
+            # )
+            # for person in people:
+            for person in self.people:
+                first_name = person[0]
+
+  green.
+
+* I remove the commented lines from :ref:`test_say_hello_method<extract test_say_hello_method>`
+
+  .. code-block:: python
+    :lineno-start: 71
+
+        def test_say_hello_method(self):
+            for person in self.people:
+                first_name = person[0]
+                last_name = person[1]
+                sex = person[2]
+                year_of_birth = person[3]
+
+                with self.subTest(
+                    first_name=first_name,
+                    year_of_birth=year_of_birth,
+                ):
+                    try:
+                        a_person = src.person.Person(
+                            first_name=first_name,
+                            last_name=last_name,
+                            sex=sex,
+                            year_of_birth=year_of_birth,
+                        )
+                    except TypeError as error:
+                        self.assertEqual(
+                            error.args[0],
+                            f"'{year_of_birth}' is not an integer"
+                        )
+                    else:
+                        self.assertEqual(
+                            a_person.say_hello(),
+                            (
+                                f'Hello, my name is {first_name}'
+                                f' {last_name} and I am'
+                                f' {self.calculate_age(year_of_birth)}.'
+                            )
+                        )
+
+        def test_joe(self):
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'extract people class attribute'
 
 ----
 
@@ -2080,7 +2275,7 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
 extract test_can_person_vote
 *********************************************************************************
 
-The tests in :ref:`test_john`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<extract Person class>`, then :ref:`call<how to call a function with input>` its :ref:`can_vote method<add can_vote method>` comparing the results in :ref:`assertions<what is an assertion?>`.
+The tests in :ref:`test_john`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<extract Person class>`, then :ref:`call<how to call a function with input>` its :ref:`can_vote method<add can_vote method>` comparing the results in :ref:`assertions<what is an assertion?>`.
 
 The :ref:`can_vote method of the Person class<add can_vote method>` sends two parameters (``age`` and ``response``) when it :ref:`calls the check_age method<extract check_age method>` to return :red:`False` or :green:`True` for if a person :red:`cannot vote` or :green:`can vote`.
 
@@ -2122,7 +2317,7 @@ age < 18        is citizen     can vote
 
                   else:
                       self.assertEqual(
-                          tester.say_hello(),
+                          a_person.say_hello(),
                           (
                               f'Hello, my name is {first_name}'
                               f' {last_name} and I am'
@@ -2426,7 +2621,7 @@ the test passes.
 
         def test_underage_citizen(self):
 
-* I remove the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` from :ref:`test_underage_citizen`
+* I remove the :ref:`assertion<what is an assertion?>` for the :ref:`can_vote method<add can_vote method>` from :ref:`test_underage_citizen<add condition to can_vote>`
 
   .. code-block:: python
     :lineno-start: 197
@@ -2459,7 +2654,7 @@ the test passes.
 extract test_can_person_get_license
 *********************************************************************************
 
-The tests in :ref:`test_john`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<extract Person class>`, then :ref:`call<how to call a function with input>` its :ref:`can_get_license method<add can_get_license method>` comparing the results in :ref:`assertions<what is an assertion?>`.
+The tests in :ref:`test_john`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<extract Person class>`, then :ref:`call<how to call a function with input>` its :ref:`can_get_license method<add can_get_license method>` comparing the results in :ref:`assertions<what is an assertion?>`.
 
 The :ref:`can_get_license method of the Person class<add can_get_license method>` also sends two parameters when it :ref:`calls the check_age method<extract check_age method>` to return :red:`False` or :green:`True` for if a person :red:`cannot get a license` or :green:`can get a license`.
 
@@ -2653,7 +2848,7 @@ the test passes.
 
   still green.
 
-* I remove :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen` since they are now repetitions of :ref:`test_can_person_get_license<extract test_can_person_get_license>`
+* I remove :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  since they are now repetitions of :ref:`test_can_person_get_license<extract test_can_person_get_license>`
 
   .. code-block:: python
     :lineno-start: 137
@@ -2691,17 +2886,15 @@ the test passes.
 ----
 
 *********************************************************************************
-extract people class attribute
+use assertRaises with test_when_person_is_too_old_to_be_alive
 *********************************************************************************
 
 
-* I add a git_ commit message
+----
 
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    git commit -am 'extract people class attribute'
-
+*********************************************************************************
+test_when_year_of_birth_is_not_an_integer
+*********************************************************************************
 
 
 * I change the :ref:`Exception raised<how to raise an Exception>` in the :ref:`calculate_age function<extract calculate_age function>` if the value of the ``year_of_birth`` parameter is not an integer_
