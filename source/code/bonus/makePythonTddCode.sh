@@ -1,16 +1,16 @@
 #!/bin/bash
-PROJECT_NAME=$1
-mkdir $PROJECT_NAME
-cd $PROJECT_NAME
+NAME_OF_THE_PROJECT=$1
+mkdir $NAME_OF_THE_PROJECT
+cd $NAME_OF_THE_PROJECT
 mkdir src
-touch src/$PROJECT_NAME.py
+touch src/$NAME_OF_THE_PROJECT.py
 mkdir tests
 touch tests/__init__.py
 
 echo "import unittest
 
 
-class Test$PROJECT_NAME(unittest.TestCase):
+class Test$NAME_OF_THE_PROJECT(unittest.TestCase):
 
     def test_failure(self):
         self.assertFalse(True)
@@ -18,8 +18,8 @@ class Test$PROJECT_NAME(unittest.TestCase):
 
 # Exceptions seen
 # AssertionError
-" > tests/test_$PROJECT_NAME.py
-code tests/test_$PROJECT_NAME.py
+" > tests/test_$NAME_OF_THE_PROJECT.py
+code tests/test_$NAME_OF_THE_PROJECT.py
 
 python3 -m venv .venv
 source .venv/bin/activate

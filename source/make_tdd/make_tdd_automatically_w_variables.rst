@@ -1,6 +1,6 @@
 .. meta::
-  :description: Automate makePythonTdd with a PROJECT_NAME variable, then pass the project name as $1 (bash) or $args[0] (PowerShell). Jacob Itegboje edits makePythonTdd.sh and makePythonTdd.ps1 so one command builds uv init, tests package, first unittest test_failure with assertFalse(True), pytest and pytest-watcher, and pytest-watcher . --now. Covers pro_magic then pro_magic_plus CLI args, AssertionError True is not false, Testpro_magic snake_case vs CapWords TestProMagic, tree after setup, and an exceptions project demo. Pumping Python TDD environment with variables chapter.
-  :keywords: Jacob Itegboje, Pumping Python, makePythonTdd.sh, makePythonTdd.ps1, PROJECT_NAME variable shell script, bash $1 first argument, PowerShell $args[0], uv init project name, assertFalse True AssertionError, Testpro_magic snake_case CapWords, pro_magic pro_magic_plus, pytest-watcher --now, make Python Test Driven Development environment automatically with variables
+  :description: Automate makePythonTdd with a NAME_OF_THE_PROJECT variable, then pass the project name as $1 (bash) or $args[0] (PowerShell). Jacob Itegboje edits makePythonTdd.sh and makePythonTdd.ps1 so one command builds uv init, tests package, first unittest test_failure with assertFalse(True), pytest and pytest-watcher, and pytest-watcher . --now. Covers pro_magic then pro_magic_plus CLI args, AssertionError True is not false, Testpro_magic snake_case vs CapWords TestProMagic, tree after setup, and an exceptions project demo. Pumping Python TDD environment with variables chapter.
+  :keywords: Jacob Itegboje, Pumping Python, makePythonTdd.sh, makePythonTdd.ps1, NAME_OF_THE_PROJECT variable shell script, bash $1 first argument, PowerShell $args[0], uv init project name, assertFalse True AssertionError, Testpro_magic snake_case CapWords, pro_magic pro_magic_plus, pytest-watcher --now, make Python Test Driven Development environment automatically with variables
 
 .. include:: ../links.rst
 
@@ -72,10 +72,10 @@ This way I give one command for the program_ with the name of the project and ha
 As a reminder, it will always make this structure
 
 .. code-block:: shell
-  :emphasize-text: PROJECT_NAME
+  :emphasize-text: NAME_OF_THE_PROJECT
   :emphasize-lines: 8-14
 
-  PROJECT_NAME
+  NAME_OF_THE_PROJECT
   ├── .git
   ├── .gitignore
   ├── pyproject.toml
@@ -84,11 +84,11 @@ As a reminder, it will always make this structure
   ├── README.md
   ├── requirements.txt
   ├── src
-  │   └── PROJECT_NAME
+  │   └── NAME_OF_THE_PROJECT
   │       └── __init__.py
   ├── tests
   │   ├── __init__.py
-  │   └── test_PROJECT_NAME.py
+  │   └── test_NAME_OF_THE_PROJECT.py
   ├── uv.lock
   └── .venv
 
@@ -102,29 +102,29 @@ I can use a :ref:`variable<what is a variable?>` for the name of the project
 
     * I open ``makePythonTdd.sh``
 
-    * I add ``PROJECT_NAME`` to represent any project name I use to make a project
+    * I add ``NAME_OF_THE_PROJECT`` to represent any project name I use to make a project
 
       .. code-block:: shell
         :linenos:
         :emphasize-lines: 2
-        :emphasize-text: PROJECT_NAME
+        :emphasize-text: NAME_OF_THE_PROJECT
 
         #!/bin/bash
-        PROJECT_NAME="pro_magic"
+        NAME_OF_THE_PROJECT="pro_magic"
 
   .. tab-item:: no WSL
     :sync: no_wsl
 
     * I open ``makePythonTdd.ps1``
 
-    * I add ``$PROJECT_NAME`` to represent any project name I use to make a project
+    * I add ``$NAME_OF_THE_PROJECT`` to represent any project name I use to make a project
 
       .. code-block:: shell
         :linenos:
         :emphasize-lines: 1
-        :emphasize-text: PROJECT_NAME
+        :emphasize-text: NAME_OF_THE_PROJECT
 
-        $PROJECT_NAME="pro_magic"
+        $NAME_OF_THE_PROJECT="pro_magic"
 
 * A :ref:`variable<what is a variable?>` is a name used for a value that can change. For example, we use the word
 
@@ -133,10 +133,10 @@ I can use a :ref:`variable<what is a variable?>` for the name of the project
   * ``child`` to represent any child
   * ``parent`` to represent anyone with a child.
 
-* I use ``PROJECT_NAME`` to represent any project name
+* I use ``NAME_OF_THE_PROJECT`` to represent any project name
 * I name this project ``pro_magic`` because I am a professional
 
-* I change the name of the project to the :ref:`variable<what is a variable?>` (``PROJECT_NAME``) I just added so that I only have to make a change in one place
+* I change the name of the project to the :ref:`variable<what is a variable?>` (``NAME_OF_THE_PROJECT``) I just added so that I only have to make a change in one place
 
 .. tab-set::
   :sync-group: os
@@ -328,8 +328,8 @@ Here are a few other examples
         :emphasize-text: 1
 
         #!/bin/bash
-        PROJECT_NAME=$1
-        uv init $PROJECT_NAME
+        NAME_OF_THE_PROJECT=$1
+        uv init $NAME_OF_THE_PROJECT
 
     * I try the program_ again, this time with a name for the project in the terminal_
 
@@ -348,8 +348,8 @@ Here are a few other examples
         :emphasize-lines: 1
         :emphasize-text: args
 
-        $PROJECT_NAME=$args[0]
-        uv init $PROJECT_NAME
+        $NAME_OF_THE_PROJECT=$args[0]
+        uv init $NAME_OF_THE_PROJECT
 
     * I try the program_ again, this time with a name for the project in the terminal_
 
@@ -420,7 +420,7 @@ Here are a few other examples
     ├── uv.lock
     └── .venv
 
-* I can now make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` with ``makePythonTdd`` when I give it a name for the ``PROJECT_NAME`` :ref:`variable<what is a variable?>`. For example, when I type this in the terminal_
+* I can now make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` with ``makePythonTdd`` when I give it a name for the ``NAME_OF_THE_PROJECT`` :ref:`variable<what is a variable?>`. For example, when I type this in the terminal_
 
   .. tab-set::
     :sync-group: os

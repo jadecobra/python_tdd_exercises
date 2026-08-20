@@ -16,17 +16,17 @@ review
 
 
 
-As a reminder here is what the structure looks like if the name of the project is ``PROJECT_NAME``
+As a reminder here is what the structure looks like if the name of the project is ``NAME_OF_THE_PROJECT``
 
 .. code-block:: shell
 
-  PROJECT_NAME
+  NAME_OF_THE_PROJECT
   ├── requirements.txt
   ├── src
-  │   └── PROJECT_NAME.py
+  │   └── NAME_OF_THE_PROJECT.py
   ├── tests
   │   ├── __init__.py
-  │   └── test_PROJECT_NAME.py
+  │   └── test_NAME_OF_THE_PROJECT.py
   └── .venv
 
 ----

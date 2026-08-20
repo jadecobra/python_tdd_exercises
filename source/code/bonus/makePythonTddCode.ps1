@@ -1,15 +1,15 @@
-$PROJECT_NAME=$args[0]
-mkdir $PROJECT_NAME
-cd $PROJECT_NAME
+$NAME_OF_THE_PROJECT=$args[0]
+mkdir $NAME_OF_THE_PROJECT
+cd $NAME_OF_THE_PROJECT
 mkdir src
-New-Item "src/$PROJECT_NAME.py"
+New-Item "src/$NAME_OF_THE_PROJECT.py"
 mkdir tests
 New-Item tests/__init__.py
 
 "import unittest
 
 
-class Test$($PROJECT_NAME)(unittest.TestCase):
+class Test$($NAME_OF_THE_PROJECT)(unittest.TestCase):
 
     def test_failure(self):
         self.assertFalse(True)
@@ -17,8 +17,8 @@ class Test$($PROJECT_NAME)(unittest.TestCase):
 
 # Exceptions seen
 # AssertionError
-" | Out-File "tests/test_$PROJECT_NAME.py" -Encoding UTF8
-code tests/test_$PROJECT_NAME.py
+" | Out-File "tests/test_$NAME_OF_THE_PROJECT.py" -Encoding UTF8
+code tests/test_$NAME_OF_THE_PROJECT.py
 
 python -m venv .venv
 .venv/scripts/activate.ps1

@@ -1,14 +1,14 @@
 #!/bin/bash
-PROJECT_NAME=$1
-uv init $PROJECT_NAME
-cd $PROJECT_NAME
+NAME_OF_THE_PROJECT=$1
+uv init $NAME_OF_THE_PROJECT
+cd $NAME_OF_THE_PROJECT
 mkdir tests
 touch tests/__init__.py
 
 echo "import unittest
 
 
-class Test$PROJECT_NAME(unittest.TestCase):
+class Test$NAME_OF_THE_PROJECT(unittest.TestCase):
 
     def test_failure(self):
         self.assertFalse(True)
@@ -16,7 +16,7 @@ class Test$PROJECT_NAME(unittest.TestCase):
 
 # Exceptions seen
 # AssertionError
-" > tests/test_$PROJECT_NAME.py
+" > tests/test_$NAME_OF_THE_PROJECT.py
 
 echo "pytest" > requirements.txt
 echo "pytest-watcher" >> requirements.txt

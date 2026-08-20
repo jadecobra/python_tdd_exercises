@@ -73,17 +73,17 @@ It turns out some of this is the same for every project
 * I run automated tests to make sure I have a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`
 * I start writing code for the project
 
-Here is what that structure looks like if the name of the project is ``PROJECT_NAME``
+Here is what that structure looks like if the name of the project is ``NAME_OF_THE_PROJECT``
 
 .. code-block:: shell
 
-  PROJECT_NAME
+  NAME_OF_THE_PROJECT
   ├── .virtual_environment
   ├── requirements_file
   ├── src
-  │   └── PROJECT_NAME.py
+  │   └── NAME_OF_THE_PROJECT.py
   └── tests
-      └── test_PROJECT_NAME.py
+      └── test_NAME_OF_THE_PROJECT.py
 
 ----
 

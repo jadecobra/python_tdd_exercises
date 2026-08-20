@@ -94,7 +94,7 @@ makePythonTdd with variables
         :caption: makePythonTdd.ps1
         :linenos:
 
-* give a name for the ``PROJECT_NAME`` :ref:`variable<what is a variable?>` when the program_ is called to make a `Test Driven Development`_ any time you want. For example typing this command in the terminal_ in the folder_ where the program_ is saved makes a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project with the name :ref:`person<how to make a person>`
+* give a name for the ``NAME_OF_THE_PROJECT`` :ref:`variable<what is a variable?>` when the program_ is called to make a `Test Driven Development`_ any time you want. For example typing this command in the terminal_ in the folder_ where the program_ is saved makes a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project with the name :ref:`person<how to make a person>`
 
   .. tab-set::
     :sync-group: os
@@ -123,7 +123,7 @@ BONUS: makePythonTdd.sh Pro
 
 Since you are the adventurous type and made it this deep in the book, I have added extra lines that
 
-* make the project with ``PROJECT_NAME`` as the name if you do not give a name
+* make the project with ``NAME_OF_THE_PROJECT`` as the name if you do not give a name
 * make the class name in :ref:`CapWords format<CapWords>`
 
   .. tab-set::

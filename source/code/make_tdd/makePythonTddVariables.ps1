@@ -1,13 +1,13 @@
-$PROJECT_NAME="pro_magic"
-uv init $PROJECT_NAME
-cd $PROJECT_NAME
+$NAME_OF_THE_PROJECT="pro_magic"
+uv init $NAME_OF_THE_PROJECT
+cd $NAME_OF_THE_PROJECT
 mkdir tests
 New-Item tests/__init__.py
 
 "import unittest
 
 
-class Test$($PROJECT_NAME)(unittest.TestCase):
+class Test$($NAME_OF_THE_PROJECT)(unittest.TestCase):
 
     def test_failure(self):
         self.assertFalse(True)
@@ -15,7 +15,7 @@ class Test$($PROJECT_NAME)(unittest.TestCase):
 
 # Exceptions seen
 # AssertionError
-" | Out-File "tests/test_$PROJECT_NAME.py" -Encoding UTF8
+" | Out-File "tests/test_$NAME_OF_THE_PROJECT.py" -Encoding UTF8
 
 "pytest" | Out-File requirements.txt -Encoding UTF8
 "pytest-watcher" >> requirements.txt

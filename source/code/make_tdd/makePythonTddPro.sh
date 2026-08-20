@@ -1,18 +1,18 @@
 #!/bin/bash
 if [ -z "$1" ] ; then
-    PROJECT_NAME="PROJECT_NAME"
+    NAME_OF_THE_PROJECT="NAME_OF_THE_PROJECT"
 else
-    PROJECT_NAME=$1
+    NAME_OF_THE_PROJECT=$1
 fi
 
 # Split on underscores and convert each word to Title Case,
 # then join with no separator
-IFS='_' read -r -a words <<< "$PROJECT_NAME"
+IFS='_' read -r -a words <<< "$NAME_OF_THE_PROJECT"
 IFS=''
 CLASS_NAME="${words[*]^}"
 
-uv init $PROJECT_NAME
-cd $PROJECT_NAME
+uv init $NAME_OF_THE_PROJECT
+cd $NAME_OF_THE_PROJECT
 mkdir tests
 touch tests/__init__.py
 
@@ -27,7 +27,7 @@ class Test$CLASS_NAME(unittest.TestCase):
 
 # Exceptions seen
 # AssertionError
-" > tests/test_$PROJECT_NAME.py
+" > tests/test_$NAME_OF_THE_PROJECT.py
 
 echo "pytest" > requirements.txt
 echo "pytest-watcher" >> requirements.txt

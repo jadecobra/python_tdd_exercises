@@ -32,15 +32,15 @@ I change the name of the project in 5 places every time I use the program to mak
 The program_ should always make this structure
 
 .. code-block:: shell
-  :emphasize-text: PROJECT_NAME
+  :emphasize-text: NAME_OF_THE_PROJECT
 
-  PROJECT_NAME
+  NAME_OF_THE_PROJECT
   ├── requirements.txt
   ├── src
-  │   └── PROJECT_NAME.py
+  │   └── NAME_OF_THE_PROJECT.py
   ├── tests
   │   ├── __init__.py
-  │   └── test_PROJECT_NAME.py
+  │   └── test_NAME_OF_THE_PROJECT.py
   └── .venv
 
 Time to use a :ref:`variable<what is a variable?>` for the name of the project
@@ -60,7 +60,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     :linenos:
     :emphasize-lines: 1
 
-    $PROJECT_NAME="dictionaries"
+    $NAME_OF_THE_PROJECT="dictionaries"
     mkdir dictionaries
     cd dictionaries
 
@@ -72,7 +72,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
   * ``child`` to represent any child
   * ``parent`` to represent anyone with a child.
 
-  In this case I use ``$PROJECT_NAME`` to represent any name of a project
+  In this case I use ``$NAME_OF_THE_PROJECT`` to represent any name of a project
 
 * I change every where I have ``dictionaries`` in the program, to use the :ref:`variable<what is a variable?>` I just added so that I only have to make a change in one place
 
@@ -82,18 +82,18 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     :linenos:
     :emphasize-lines: 2-3, 10, 18
 
-    $PROJECT_NAME="dictionaries"
-    mkdir $PROJECT_NAME
-    cd $PROJECT_NAME
+    $NAME_OF_THE_PROJECT="dictionaries"
+    mkdir $NAME_OF_THE_PROJECT
+    cd $NAME_OF_THE_PROJECT
     mkdir src
-    touch src/$PROJECT_NAME.py
+    touch src/$NAME_OF_THE_PROJECT.py
     mkdir tests
     touch tests/__init__.py
 
     "import unittest
 
 
-    class Test$PROJECT_NAME(unittest.TestCase):
+    class Test$NAME_OF_THE_PROJECT(unittest.TestCase):
 
         def test_failure(self):
             self.assertFalse(True)
@@ -101,7 +101,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
     # Exceptions seen
     # AssertionError
-    " | Out-File "tests/test_$PROJECT_NAME.py" - Encoding UTF8
+    " | Out-File "tests/test_$NAME_OF_THE_PROJECT.py" - Encoding UTF8
 
 * Since I already did some work in the :ref:`dictionaries<what is a dictionary?>` project. I do not want the program_ to write over it. I change the name of the project to ``pro_magic`` because I am a professional
 
@@ -110,9 +110,9 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     :emphasize-lines: 1
     :emphasize-text: pro_magic
 
-    $PROJECT_NAME="pro_magic"
-    mkdir $PROJECT_NAME
-    cd $PROJECT_NAME
+    $NAME_OF_THE_PROJECT="pro_magic"
+    mkdir $NAME_OF_THE_PROJECT
+    cd $NAME_OF_THE_PROJECT
 
 * I run the program_ again in the terminal_
 
@@ -229,7 +229,7 @@ Here are a few other examples
     :emphasize-lines: 1
     :emphasize-text: args
 
-    $PROJECT_NAME=$args[0]
+    $NAME_OF_THE_PROJECT=$args[0]
 
 * I try the program_ again, this time with a different name for the project in the terminal_
 
@@ -282,7 +282,7 @@ Here are a few other examples
 
     ...\pumping_python >
 
-* I can now make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` with ``makePythonTdd.ps1`` when I give it a name for the ``PROJECT_NAME`` :ref:`variable<what is a variable?>`. For example, when I type this in the terminal_
+* I can now make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` with ``makePythonTdd.ps1`` when I give it a name for the ``NAME_OF_THE_PROJECT`` :ref:`variable<what is a variable?>`. For example, when I type this in the terminal_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1

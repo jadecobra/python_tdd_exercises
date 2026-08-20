@@ -919,14 +919,6 @@ how to view all the commands typed in a terminal
 
   the terminal_ shows
 
-  .. literalinclude:: ../code/make_tdd/makePythonTdd1History.sh
-    :language: python
-    :emphasize-lines: 2-3, 12, 14, 21, 23
-
-  the `history program`_ shows all the commands I typed in the terminal_ so far.
-
-* I use tree_ to see what my project now looks like
-
   .. tab-set::
     :sync-group: os
 
@@ -951,26 +943,21 @@ how to view all the commands typed in a terminal
 
     uv init NAME_OF_THE_PROJECT
     cd NAME_OF_THE_PROJECT
-    mkdir src
-    touch src/NAME_OF_THE_PROJECT.py
-    rmdir src/NAME_OF_THE_PROJECT
     mkdir tests
     touch tests/__init__.py
     touch tests/test_NAME_OF_THE_PROJECT.py
 
-  where ``NAME_OF_THE_PROJECT`` is the name I give the project
+  where ``NAME_OF_THE_PROJECT`` is the name I give the project.
 
-* these are the steps I took to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`
+* These are the steps I take to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`
 
-  - give the project a name
-  - :ref:`make a directory for the project<how to setup a project with uv>`
-  - :ref:`change directory to the project<how to change directory to the project>`
-  - :ref:`make a directory for the source code<how to make a directory for the source code>`
-  - :ref:`make a Python file to hold the source code in the 'src' folder<how to make an empty file>`
-  - :ref:`make a directory for the tests<how to make a directory for the tests>`
-  - :ref:`make the 'tests' directory a Python package<how to make the tests a Python package>`
-  - :ref:`make a Python file for the tests in the 'tests' directory<how to make a Python file for the tests in the 'tests' directory>`
-  - :ref:`add the first failing test to the test file<test_failure>`
+  - I give the project a name
+  - :ref:`I make a directory for the project<how to setup a project with uv>`
+  - :ref:`I change directory to the project<how to change directory to the project>`
+  - :ref:`I make a directory for the tests<how to make a directory for the tests>`
+  - :ref:`I make the 'tests' directory a Python package<how to make the tests a Python package>`
+  - :ref:`I make a Python file for the tests in the 'tests' directory<how to make a Python file for the tests in the 'tests' directory>`
+  - :ref:`I add the first failing test to the test file<test_failure>`
 
 ----
 
