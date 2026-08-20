@@ -80,25 +80,6 @@ start the project
 
     .../pumping_python/module_not_found_error
 
-* I make a child folder_ in the ``module_not_found_error`` folder_ where I will keep the main :ref:`Python modules<what is a module?>` separate from the other files_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    mkdir src
-
-  the terminal_ goes back to the command line.
-
-* I use the `mv program`_ to move ``main.py`` to the ``src`` folder_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch src/main.py
-    rmdir src/main
-
-  the terminal_ goes back to the command line.
-
 * I make a child folder_ to keep the tests separate from the other files_
 
   .. code-block:: python
@@ -108,14 +89,26 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I use touch_ to add an empty file_ to the ``tests`` folder_
+* I add an empty file_ to the ``tests`` folder_
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    touch tests/module_not_found_error.py
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  the terminal_ goes back to the command line.
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        touch tests/module_not_found_error.py
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        New-Item tests/module_not_found_error.py
 
 * I open ``module_not_found_error.py`` from the ``tests`` folder_
 
@@ -133,10 +126,24 @@ start the project
 
 * I use the :ref:`unittest module<another way to write tests>` to run tests
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the terminal_ shows
 
@@ -151,13 +158,28 @@ start the project
 
   .. danger:: if you do not close ``module_not_found_error.py``, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open after you change its name.
 
-* I use the `mv program`_ to change the name of ``module_not_found_error.py`` in the ``tests`` folder_ to ``test_module_not_found_error.py``
+* I change the name of ``module_not_found_error.py`` in the ``tests`` folder_ to ``test_module_not_found_error.py``
 
-  .. code-block:: python
-    :emphasize-lines: 1-2
+.. tab-set::
+  :sync-group: os
 
-    mv tests/module_not_found_error.py \
-    tests/test_module_not_found_error.py
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
+
+    .. code-block:: python
+      :emphasize-lines: 1-2
+
+      mv tests/module_not_found_error.py \
+      tests/test_module_not_found_error.py
+
+  .. tab-item:: no WSL
+    :sync: no_wsl
+
+    .. code-block:: python
+      :emphasize-lines: 1-2
+
+      Move-Item tests/module_not_found_error.py \
+      tests/test_module_not_found_error.py
 
   the terminal_ goes back to the command line.
 
@@ -167,10 +189,24 @@ start the project
 
 * I try to run the test again
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the terminal_ still shows ``NO TESTS RAN``.
 
@@ -201,15 +237,31 @@ start the project
 
 * I try to run the test again
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :emphasize-lines: 2, 4, 6
 
+    ...
       File ".../pumping_python/module_not_found_error/tests/test_module_not_found_error.py",
         line 1, in <module>
         assert False is True
@@ -251,10 +303,24 @@ start the project
 
 * I run the test again
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the test passes. Time to test :ref:`modules<what is a module?>`
 
@@ -303,10 +369,24 @@ test_module_not_found_error
 
 * I run the test again
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the terminal_ is my friend, and shows ModuleNotFoundError_
 
@@ -366,10 +446,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I run the test again
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   - the test passes because when ``import src.module_00`` runs, Python_ brings in an :ref:`object<everything is an object>` for the ``module_00.py`` file_ from the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``
   - the terminal_ shows ``NO TESTS RAN`` which is confusing since the only way I know the test passed, is because I saw it fail
@@ -398,10 +492,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I run the test again
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
@@ -420,10 +528,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I run the test
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the test passes because ``import src.module_01`` brings in an :ref:`object<everything is an object>` for the ``module_01.py`` file_ from the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``.
 
@@ -444,10 +566,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I go to the terminal_ to run the test
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
@@ -466,10 +602,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I run the test again
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the test passes because ``import src.module_02`` brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the ``module_02.py`` file_ from the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``.
 
@@ -489,10 +639,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I go to the terminal_ to run the test
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
@@ -511,10 +675,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I run the test again
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the test passes because ``import src.module_03`` brings in an :ref:`object<everything is an object>` for the ``module_03.py`` file_ from the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``.
 
@@ -535,10 +713,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I go to the terminal_ to run the test
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
@@ -557,10 +749,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I run the test again
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the test passes because ``import src.module_04`` brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the ``module_04.py`` file_ from the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``.
 
@@ -582,10 +788,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I go to the terminal_ to run the test
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
@@ -604,10 +824,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I run the test again
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the test passes because ``import src.module_05`` brings in an :ref:`object<everything is an object>` for the ``module_05.py`` file_ from the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``.
 
@@ -630,10 +864,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I go to the terminal_ to run the test
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
@@ -652,10 +900,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I run the test again
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   - the test passes because ``import src.doe`` brings in an :ref:`object<everything is an object>` for the ``doe`` folder_ that is in the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``
   - this worked even though I did not add an ``__init__.py`` file_ to the folder_
@@ -680,10 +942,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I go to the terminal_ to run the test
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
@@ -702,10 +978,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I run the test again
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the test passes because ``import src.doe.john`` brings in an :ref:`object<everything is an object>` for the ``john.py`` file_ from the ``doe`` folder_ that is in the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``.
 
@@ -730,10 +1020,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I go to the terminal_ to run the test
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
@@ -752,10 +1056,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I run the test again
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the test passes because ``import src.doe.jane`` brings in an :ref:`object<everything is an object>` for the ``jane.py`` file_ from the ``doe`` folder_ that is in the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``.
 
@@ -783,10 +1101,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I go to the terminal_ to run the test
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
@@ -805,10 +1137,24 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
 * I run the test again
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the test passes because ``import magic`` brings in an :ref:`object<everything is an object>` for the ``magic.py`` that is in the ``module_not_found_error`` folder_ so I can use it in ``test_module_not_found_error.py``.
 
@@ -869,14 +1215,17 @@ how to view all the commands I typed to test ModuleNotFoundError
 
 ----
 
-* I type history_ in the terminal_ to see all the commands I typed for this project
+I type history_ in the terminal_ to see all the commands I typed for this project
 
-  .. code-block:: python
-    :emphasize-lines: 1
+.. code-block:: python
+  :emphasize-lines: 1
 
-    history
+  history
 
-  the terminal_ shows
+the terminal_ shows
+
+.. tab-item:: WSL/Linux/Mac
+  :sync: unix
 
   .. literalinclude:: ../code/module_not_found_error/ModuleNotFoundErrorHistory.sh
     :language: python
@@ -884,14 +1233,30 @@ how to view all the commands I typed to test ModuleNotFoundError
 
   the `history program`_ shows all the commands I typed in the terminal_
 
-  * I ran ``python3 -m unittest`` to see the test fail
-  * I ran ``python3 -m unittest`` every time I made a change until the test passed
-  * I will run ``python3 -m unittest`` again when I add any code, to make sure tests that passed before do not fail and that the new code I add does what I want
+    * I ran ``python3 -m unittest`` to see the test fail
+    * I ran ``python3 -m unittest`` every time I made a change until the test passed
+    * I will run ``python3 -m unittest`` again when I add any code, to make sure tests that passed before do not fail and that the new code I add does what I want
 
-  This means I have to run ``python3 -m unittest`` for each part of the :ref:`Test Driven Development Cycle<what is the Test Driven Development Cycle?>` or any time there is a code change.
+    This means I have to run ``python3 -m unittest`` for each part of the :ref:`Test Driven Development Cycle<what is the Test Driven Development Cycle?>` or any time there is a code change.
 
-  I do not want to type ``python3 -m unittest`` ever again, I want the computer to do it for me.
+    I do not want to type ``python3 -m unittest`` ever again, I want the computer to do it for me.
 
+.. tab-item:: no WSL
+  :sync: no_wsl
+
+  .. literalinclude:: ../code/module_not_found_error/ModuleNotFoundErrorHistory.ps1
+    :language: python
+    :emphasize-lines: 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32
+
+  the `history program`_ shows all the commands I typed in the terminal_
+
+  * I ran ``python -m unittest`` to see the test fail
+  * I ran ``python -m unittest`` every time I made a change until the test passed
+  * I will run ``python -m unittest`` again when I add any code, to make sure tests that passed before do not fail and that the new code I add does what I want
+
+  This means I have to run ``python -m unittest`` for each part of the :ref:`Test Driven Development Cycle<what is the Test Driven Development Cycle?>` or any time there is a code change.
+
+  I do not want to type ``python -m unittest`` ever again, I want the computer to do it for me.
 
 ----
 
