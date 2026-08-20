@@ -8,7 +8,9 @@
 how to make a Python Test Driven Development environment manually
 #################################################################################
 
-This is one way to make a :ref:`Python Test Driven Development project<what is a Test Driven Development Environment?>`. I walk through making the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`. By the end of the chapter you will know these commands better
+This is one way to make a :ref:`Python Test Driven Development project<what is a Test Driven Development Environment?>`. I walk through making the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`.
+
+By the end of the chapter you will know these commands better
 
 .. tab-set::
   :sync-group: os
