@@ -8,3 +8,4 @@ The code in ``module_not_found_error/tests/test_module_not_found_error.py`` from
 .. literalinclude:: module_not_found_error/test_module_not_found_error.py
   :language: python
   :linenos:
+  :caption: module_not_found_error/tests/test_module_not_found_error.py
