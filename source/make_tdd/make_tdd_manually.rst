@@ -340,7 +340,7 @@ how to run a Python program
   .. code-block:: python
     :emphasize-lines: 1
 
-    cat src/person.py
+    cat src/person/__init__.py
 
 ----
 
@@ -466,7 +466,7 @@ how to make a Python file for the tests in the 'tests' directory
 
         python3 -m unittest
 
-  .. tab-item:: no W
+  .. tab-item:: no WSL
     :sync: no_wsl
 
     * I use New-Item_ to add an empty file_ to the ``tests`` directory_ for the actual test
@@ -576,8 +576,6 @@ how to make the tests a Python package
 
     * I use touch_ to add an empty file_ with the name ``__init__.py`` to the ``tests`` folder
 
-      .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-
       .. code-block:: python
         :emphasize-lines: 1
 
@@ -627,68 +625,68 @@ the terminal_ does not feel like my friend, and shows
 
   NO TESTS RAN
 
-because :ref:`unittest<another way to write tests>` does not know that ``src/person/__init__.py`` in the ``tests`` folder is a test file_. I did not start the name with ``test_``. I have to change the name.
+because :ref:`unittest<another way to write tests>` does not know that ``src/person/__init__.py`` in the ``tests`` folder is a test file_.
 
-* I close ``src/person/__init__.py``
+I have to change the name to make sure it starts with ``test_``.
 
-  .. danger:: if you do not close ``src/person/__init__.py``, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open after you change its name.
+* I close ``tests/person.py``
 
-* I use the `mv program`_ to change the name of ``src/person/__init__.py`` in the ``tests`` folder_ to ``test_person.py``
+  .. danger:: if you do not close ``tests/person.py``, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open after you change its name.
 
-  .. code-block:: python
-    :emphasize-lines: 1
+.. tab-set::
+  :sync-group: os
 
-    mv tests/person.py tests/test_person.py
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
 
-  the terminal_ goes back to the command line.
+    * I use the `mv program`_ to change the name of ``src/person/__init__.py`` in the ``tests`` folder_ to ``test_person.py``
 
-* I use tree_ with the ``-L`` option to see what I have so far
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: python
-    :emphasize-lines: 1
+        mv tests/person.py tests/test_person.py
 
-    tree -a -L 2
+    * I use tree_ with the ``-L`` option to see what I have so far
 
-  the terminal_ is my friend, and shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: shell
-    :emphasize-lines: 20
+        tree -a -L 2
 
-    .
-    ├── .git
-    │   ├── config
-    │   ├── description
-    │   ├── FETCH_HEAD
-    │   ├── HEAD
-    │   ├── hooks
-    │   ├── info
-    │   ├── objects
-    │   └── refs
-    ├── .gitignore
-    ├── pyproject.toml
-    ├── .python-version
-    ├── README.md
-    ├── src
-    │   └── person.py
-    └── tests
-        ├── __init__.py
-        ├── __pycache__
-        └── test_person.py
+    * I run the test again
 
-  .. admonition:: if you do not see ``__pycache__`` in the tree do not worry,
+      .. code-block:: python
+        :emphasize-lines: 1
 
-    the important thing is that you renamed ``src/person/__init__.py`` to ``test_person.py`` for :ref:`unittest<another way to write tests>` to find the test.
+        python3 -m unittest
 
-* I run the test again
+  .. tab-item:: no WSL
+    :sync: no_wsl
 
-  .. code-block:: python
-    :emphasize-lines: 1
+    * I use `Move-Item`_ to change the name of ``src/person/__init__.py`` in the ``tests`` folder_ to ``test_person.py``
 
-    python3 -m unittest
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  the terminal_ still shows ``NO TESTS RAN``
+        Move-Item tests/person.py tests/test_person.py
 
-* I add ``assert`` before ``False is True`` in ``tests/test_person.py``
+    * I use tree_ to see what I have so far
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree
+
+    * I run the test again
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
+
+the terminal_ still shows ``NO TESTS RAN``
+
+* I add :ref:`assert<what is an assertion?>` before ``False is True`` in ``tests/test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -721,7 +719,7 @@ because :ref:`unittest<another way to write tests>` does not know that ``src/per
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :emphasize-lines: 9
+    :emphasize-lines: 16, 18
 
     E
     ======================================================
@@ -748,7 +746,9 @@ because :ref:`unittest<another way to write tests>` does not know that ``src/per
 
     FAILED (errors=1)
 
-  Success! I have my first failure. I can use any name for the test file_. It must start with ``test_`` or :ref:`unittest<another way to write tests>` will NOT run the tests in the file_.
+  Success! I have my first failure.
+
+  I can use any name for the test file_ as long as it starts with ``test`` or :ref:`unittest<another way to write tests>` will NOT run the tests in the file_.
 
   This is the :red:`RED` part of the :ref:`Test Driven Development Cycle<what is the Test Driven Development cycle?>`. The message in the terminal_ is about the failure, I like to read these from the bottom up. Here is an explanation of each line, starting from the last line on the screen
 
@@ -765,10 +765,16 @@ because :ref:`unittest<another way to write tests>` does not know that ``src/per
   - ``Traceback (most recent call last):``: all the information shown after this line that is indented to the right shows the calls that led to the failure. The last line is usually the most important one that points to what caused the failure, this is why I like to read it from the bottom up. In this case it is the only one I care about because it is the one I added to cause the failure.
   - ``ERROR: tests.test_person (unittest.loader._FailedTest.tests.test_person)`` is a header with information in :ref:`dot notation` about the failing test
 
-    - I think of ``tests.test_person `` as an address
+    I think of ``tests.test_person`` as an address
 
-      *  ``tests`` is the ``tests`` folder_
-      *  ``test_person`` is the ``test_person.py`` file_ in the ``tests`` folder_
+    *  ``tests`` is the ``tests`` folder_.
+    *  ``test_person`` is the ``test_person.py`` file_ in the ``tests`` folder_.
+
+    .. code-block:: shell
+
+      tests
+      │   __init__.py
+      └── test_person.py
 
 ----
 
@@ -818,7 +824,7 @@ because :ref:`unittest<another way to write tests>` does not know that ``src/per
 
     NO TESTS RAN
 
-  this is confusing, since the only way I know the test passed, is because I saw it fail. Which is why the :red:`RED` part of the cycle is important, it shows that the test works. There has to be a better way. For now *cue CELEBRATION MUSIC AND DANCE!* I am :green:`GREEN!!`
+  This is confusing, since the only way I know the test passed, is because I saw it fail. There has to be a better way. It is why the :red:`RED` part of the cycle is important, it shows that the test works. For now *cue CELEBRATION MUSIC AND DANCE!* I am :green:`GREEN!!`
 
 ----
 
@@ -826,7 +832,7 @@ because :ref:`unittest<another way to write tests>` does not know that ``src/per
 :yellow:`REFACTOR`: make it better
 ********************************************************************************************
 
-* I keep a list of :ref:`Errors/Exceptions<how to test that an Exception is raised>` that show up in the terminal_ as I go through this book to help me know them better, familiarity. I add :ref:`AssertionError<what causes AssertionError?>` to ``test_person.py``
+* I keep a list of :ref:`Errors/Exceptions<how to test that an Exception is raised>` that show up in the terminal_ as I go through this book to help me know them better. I add :ref:`AssertionError<what causes AssertionError?>` to ``tests/test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -840,7 +846,7 @@ because :ref:`unittest<another way to write tests>` does not know that ``src/per
     # Exceptions seen
     # AssertionError
 
-  comments in Python_ are written with ``#`` at the beginning, they do not do anything, they are notes for me. Time to get some practice with :ref:`Python modules<what is a module?>`.
+  comments in Python_ are written with ``#`` at the beginning, they do not do anything, they are notes for me.
 
 * I add the new files_ and folders_ to git_ for tracking
 
@@ -867,7 +873,7 @@ because :ref:`unittest<another way to write tests>` does not know that ``src/per
 close the project
 ********************************************************************************************
 
-* I close ``test_person.py``
+* I close ``tests/test_person.py``
 
 * I click in the terminal and `change directory`_ to the parent of ``person``
 
@@ -882,7 +888,7 @@ close the project
 
     .../pumping_python
 
-  I am back in the ``pumping_python`` folder_
+  I am back in the ``pumping_python`` folder_.
 
 ----
 
@@ -915,9 +921,29 @@ how to view all the commands typed in a terminal
 
   .. literalinclude:: ../code/make_tdd/makePythonTdd1History.sh
     :language: python
-    :emphasize-lines: 2-3, 12, 14, 19, 21, 24, 27
+    :emphasize-lines: 2-3, 12, 14, 21, 23
 
   the `history program`_ shows all the commands I typed in the terminal_ so far.
+
+* I use tree_ to see what my project now looks like
+
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. literalinclude:: ../code/make_tdd/makePythonTdd1History.sh
+        :language: python
+        :emphasize-lines: 2-3, 12, 14, 21, 23
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. literalinclude:: ../code/make_tdd/makePythonTdd1History.ps1
+        :language: python
+        :emphasize-lines: 2-3, 12, 14, 21, 23
+
 
 * these are the commands I used to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`
 
