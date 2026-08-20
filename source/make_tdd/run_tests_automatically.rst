@@ -639,7 +639,6 @@ how to view all the commands I typed to automate running tests
   - give the project a name
   - :ref:`make a directory for the project<how to setup a project with uv>`
   - :ref:`change directory to the project<how to change directory to the project>`
-  - :ref:`make a directory for the source code<how to make a directory for the source code>`
   - :ref:`make a Python file to hold the source code in the 'src' folder<how to make an empty file>`
   - :ref:`make a directory for the tests<how to make a directory for the tests>`
   - :ref:`make the 'tests' directory a Python package<how to make the tests a Python package>`

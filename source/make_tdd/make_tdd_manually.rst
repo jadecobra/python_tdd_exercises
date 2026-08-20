@@ -1,26 +1,12 @@
 .. meta::
-  :description: Build your first Python TDD project by hand with uv, the terminal, and unittest. Jacob Itegboje walks through pumping_python folder setup, uv init person, mkdir src and tests, mv src/person.py to test_person.py, and the first RED test with assert False is True raising AssertionError (FAILED errors=1, NO TESTS RAN until test_ prefix and package). Learn cd, mkdir, tree, cat, mv, touch, python3 -m unittest discovery, module-level assert gotchas, and why passing tests still show NO TESTS RAN before pytest-watcher. Pumping/__init__.py  to src/person.py, touch tests/__init__.py, rename tests/person.py to test_person.py, and the first RED test with assert False is True raising AssertionError (FAILED errors=1, NO TESTS RAN until test_ prefix and package). Learn cd, mkdir, tree, cat, mv, touch, python3 -m unittest discovery, module-level assert gotchas, and why passing tests still show NO TESTS RAN before pytest-watcher. Pumping python to test_person.py, and the first RED test with assert False is True raising AssertionError (FAILED errors=1, NO TESTS RAN until test_ prefix and package). Learn cd, mkdir, tree, cat, mv, touch, python3 -m unittest discovery, module-level assert gotchas, and why passing tests still show NO TESTS RAN before pytest-watcher. Pumpingthon manual TDD environment chapter 1.
-  :keywords: Jacob Itegboje, Pumping Python, manual python tdd setup, uv init project, python unittest first test, assert False is True AssertionError, NO TESTS RAN unittest, test_ prefix discovery, tests __init__.py package, mkdir src tests, mv main.py, tree cat touch terminal, python3 -m unittest, red green refactor first failure, test driven development environment manually, pumping_python person project, IDE auto save danger close file before mv
+  :description: Build your first Python TDD project by hand with uv, the terminal, and unittest. Jacob Itegboje walks through pumping_python folder setup, uv init person (src/person/__init__.py), mkdir tests, touch tests/person.py then tests/__init__.py, mv tests/person.py to tests/test_person.py, and the first RED test with assert False is True raising AssertionError (FAILED errors=1). Unittest prints NO TESTS RAN until the tests package and test_ prefix exist. Module-level assert False is False still shows NO TESTS RAN (Ran 0 tests) even after GREEN. Covers cd, mkdir, tree, cat, mv, touch, python3 -m unittest, Auto Save close-before-mv, git add and commit. Pumping Python manual TDD environment chapter 1, before pytest-watcher.
+  :keywords: Jacob Itegboje, Pumping Python, manual python tdd setup, uv init person, src/person/__init__.py, python unittest first test, assert False is True AssertionError, FAILED errors=1, NO TESTS RAN unittest, test_ prefix discovery, tests __init__.py package, mkdir tests, mv tests/person.py tests/test_person.py, tree cat touch terminal, python3 -m unittest, red green refactor first failure, Auto Save close file before mv, pumping_python person project
 
 .. include:: ../links.rst
 
 #################################################################################
 how to make a Python Test Driven Development environment manually
 #################################################################################
-
-----
-
-*********************************************************************************
-requirements
-*********************************************************************************
-
-* :ref:`start here`
-
-----
-
-*********************************************************************************
-preview
-*********************************************************************************
 
 This is one way to make a :ref:`Python Test Driven Development project<what is a Test Driven Development Environment?>`. I walk through making the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`. By the end of the chapter you will know these commands better
 
@@ -36,7 +22,6 @@ This is one way to make a :ref:`Python Test Driven Development project<what is a
       tree
       mkdir
       touch
-      echo
       cat
       mv
       python3 -m unittest
@@ -51,11 +36,18 @@ This is one way to make a :ref:`Python Test Driven Development project<what is a
       tree
       mkdir
       New-Item
-      echo
       cat
       Move-Item
       python -m unittest
       history
+
+----
+
+*********************************************************************************
+requirements
+*********************************************************************************
+
+* :ref:`start here`
 
 ----
 
@@ -69,7 +61,6 @@ Questions to think about as I go through the chapter
 * :ref:`how can I make a Python Test Driven Development Environment manually?<how to make a Python Test Driven Development environment manually>`
 * :ref:`how can I change directories?<how to change directory>`
 * :ref:`how can I make a directory?<how to make a directory>`
-* :ref:`how can I see directory structure?<how to see directory relationships>`
 * :ref:`how can I make an empty file?<how to make an empty file>`
 * :ref:`how can I write text to a file?<how to write text to a file>`
 * :ref:`how can I see what is inside a file?<how to see what is inside a file>`
@@ -335,7 +326,7 @@ how to run a Python program
 
   Success! The `uv Python package manager`_ made the file_ with some Python_ code in it that I can run.
 
-* I use cat_ to see what is in ``src/person.py``
+* I use cat_ to see what is in ``src/person/__init__.py``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -504,7 +495,7 @@ because I have not set up the test correctly.
 :red:`RED`: make it fail
 ********************************************************************************************
 
-* I open ``src/person/__init__.py`` from the ``tests`` folder_
+* I open ``tests/person.py`` from the ``tests`` folder_
 
   .. tip::
 
@@ -565,7 +556,6 @@ how to make the tests a Python package
 
 ----
 
-
 .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
 .. tab-set::
@@ -625,9 +615,17 @@ the terminal_ does not feel like my friend, and shows
 
   NO TESTS RAN
 
-because :ref:`unittest<another way to write tests>` does not know that ``src/person/__init__.py`` in the ``tests`` folder is a test file_.
+because :ref:`unittest<another way to write tests>` does not know that ``tests/person.py`` is a test file_.
 
 I have to change the name to make sure it starts with ``test_``.
+
+----
+
+=====================================================================================================
+how to change the name of a file
+=====================================================================================================
+
+----
 
 * I close ``tests/person.py``
 
@@ -639,7 +637,7 @@ I have to change the name to make sure it starts with ``test_``.
   .. tab-item:: WSL/Linux/Mac
     :sync: unix
 
-    * I use the `mv program`_ to change the name of ``src/person/__init__.py`` in the ``tests`` folder_ to ``test_person.py``
+    * I use the `mv program`_ to change the name of ``tests/person.py`` to ``tests/test_person.py``
 
       .. code-block:: python
         :emphasize-lines: 1
@@ -663,7 +661,7 @@ I have to change the name to make sure it starts with ``test_``.
   .. tab-item:: no WSL
     :sync: no_wsl
 
-    * I use `Move-Item`_ to change the name of ``src/person/__init__.py`` in the ``tests`` folder_ to ``test_person.py``
+    * I use `Move-Item`_ to change the name of ``tests/person.py`` to ``tests/test_person.py``
 
       .. code-block:: python
         :emphasize-lines: 1
@@ -728,10 +726,10 @@ the terminal_ still shows ``NO TESTS RAN``
     ImportError: Failed to import test module: tests.test_person
     Traceback (most recent call last):
       File "/usr/local/lib/python3.XY/unittest/loader.py",
-        line 426, in _find_test_path
+        line ABC, in _find_test_path
         module = self._get_module_from_name(name)
       File "/usr/local/lib/python3.XY/unittest/loader.py",
-        line 367, in _get_module_from_name
+        line DEF, in _get_module_from_name
         __import__(name)
         ~~~~~~~~~~^^^^^^
       File ".../pumping_python/person/tests/test_person.py",
