@@ -24,17 +24,38 @@ preview
 
 This is one way to make a :ref:`Python Test Driven Development project<what is a Test Driven Development Environment?>`. I walk through making the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`. By the end of the chapter you will know these commands better
 
-.. code-block:: python
+.. tab-set::
+  :sync-group: os
 
-  cd
-  tree
-  mkdir
-  touch
-  echo
-  cat
-  mv
-  python3 -m unittest
-  history
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
+
+    .. code-block:: python
+
+      cd
+      tree
+      mkdir
+      touch
+      echo
+      cat
+      mv
+      python3 -m unittest
+      history
+
+  .. tab-item:: no WSL
+    :sync: no_wsl
+
+    .. code-block:: python
+
+      cd
+      tree
+      mkdir
+      New-Item
+      echo
+      cat
+      Move-Item
+      python -m unittest
+      history
 
 ----
 
@@ -48,7 +69,7 @@ Questions to think about as I go through the chapter
 * :ref:`how can I make a Python Test Driven Development Environment manually?<how to make a Python Test Driven Development environment manually>`
 * :ref:`how can I change directories?<how to change directory>`
 * :ref:`how can I make a directory?<how to make a directory>`
-* :ref:`how can I see directory structure?<how to look at directory relationships>`
+* :ref:`how can I see directory structure?<how to see directory relationships>`
 * :ref:`how can I make an empty file?<how to make an empty file>`
 * :ref:`how can I write text to a file?<how to write text to a file>`
 * :ref:`how can I see what is inside a file?<how to see what is inside a file>`
@@ -67,7 +88,7 @@ how to setup the project
 
 * I choose ``person`` as the name of this project
 
-* I click ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
+* I open a terminal_
 
 * I `change directory`_ to where I will put all the projects from this book. I type cd_ in the terminal_
 
@@ -91,8 +112,6 @@ how to setup the project
 
       mkdir pumping_python
 
-    the terminal_ goes back to the command line.
-
   - I try `changing directory`_ again
 
     .. code-block:: python
@@ -113,23 +132,40 @@ how to setup the project
 
     tree
 
-  - if tree_ is not installed on the computer, the terminal_ shows
+  .. tab-set::
+    :sync-group: os
 
-    .. code-block:: python
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-      tree: command not found
+      - If tree_ is not installed on the computer, the terminal_ shows
 
-    :ref:`you can install it from here<what is covered?>`
+        .. code-block:: python
 
-  - if tree_ is installed on the computer, the terminal_ shows
+          tree: command not found
 
-    .. code-block:: python
+        :ref:`you can install it from here<what is covered?>`
 
-      .
+      - If tree_ is installed on the computer, the terminal_ shows
 
-      0 directories, 0 files
+        .. code-block:: python
 
-    .. note:: If you have done other work in the ``pumping_python`` folder_ there will be files_ and folders_ not 0 directories_ and 0 files_
+          .
+
+          0 directories, 0 files
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      the terminal_ shows
+
+      .. code-block:: python
+
+        .
+
+        0 directories, 0 files
+
+  .. note:: If you have done other work in the ``pumping_python`` folder_ there will be files_ and folders_ not 0 directories_ and 0 files_
 
 * I `change directory`_ to the ``person`` project in the ``pumping_python`` folder_
 
@@ -194,42 +230,35 @@ how to change directory to the project
 
 * I use tree_ to see what uv_ added to the folder_
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    tree -a -L 2
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  the terminal_ shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: shell
+        tree -a -L 2
 
-    .
-    ├── .git
-    │   ├── config
-    │   ├── description
-    │   ├── FETCH_HEAD
-    │   ├── HEAD
-    │   ├── hooks
-    │   ├── info
-    │   ├── objects
-    │   └── refs
-    ├── .gitignore
-    ├── .python-version
-    ├── README.md
-    ├── main.py
-    └── pyproject.toml
+      the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to make it show only the first level of contents of the child folders_.
 
-  it added a few files_ and folders_.
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-  - the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to make it show only the first level of contents of the child folders_
-  - Here is what uv_ made for me
+      .. code-block:: python
+        :emphasize-lines: 1
 
-    - ``.git`` this folder_ makes the project a git_ repository, it makes it easy to keep track of changes I make, and if I publish the repository I can work on the project from any computer anywhere (as long as it is has access to the repository)
-    - ``.gitignore`` is a file_ that tells git_ what files_ in the project to not keep track of, this is useful for things that I do not want or need to share
-    - ``.python-version`` is a file_ that has the version of Python_ I am using, this helps if I do projects with different Python_ versions
-    - ``README.md`` is a file_ that is used to describe the project
-    - ``main.py`` is a :ref:`Python module<what is a module?>` for me to write the code for the project
-    - ``pyproject.toml`` is a file_ that is used to configure Python_ projects for packaging see `pyproject.toml`_ for more
+        tree
+
+  `uv`_ added a few files_ and folders_:
+
+  - ``.git`` this folder_ makes the project a git_ repository, which makes it easy to keep track of changes I make. If I publish the repository I can work on the project from any computer anywhere (as long as it is has access to the repository).
+  - ``.gitignore`` is a file_ that tells git_ what files_ in the project to not keep track of, which helps if there are things I do not want or need to share.
+  - ``.python-version`` is a file_ that has the version of Python_ I am using, it helps if I do projects with different Python_ versions.
+  - ``README.md`` is a file_ that is used to describe the project.
+  - ``src`` is a folder_ that contains the code for the project (the source code).
+  - ``pyproject.toml`` is a file_ that is used to configure Python_ projects for packaging see `pyproject.toml`_ for more
 
 ----
 
@@ -239,27 +268,12 @@ how to see what is inside a file
 
 ----
 
-* I can use the `cat program`_ to look at what is inside ``.gitignore``
+* I can use the `cat program`_ to see what is inside ``.gitignore``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     cat .gitignore
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-      # Python-generated files
-      __pycache__/
-      *.py[oc]
-      build/
-      dist/
-      wheels/
-      *.egg-info
-
-      # Virtual environments
-      .venv
 
 * I use cat_ to see what is inside ``pyproject.toml``
 
@@ -268,19 +282,7 @@ how to see what is inside a file
 
     cat pyproject.toml
 
-  the terminal_ shows
-
-  .. code-block:: python
-
-    [project]
-    name = "person"
-    version = "0.1.0"
-    description = "Add your description here"
-    readme = "README.md"
-    requires-python = ">=3.XY"
-    dependencies = []
-
-* I use cat_ to look at what is in ``.python-version``
+* I use cat_ to see what is in ``.python-version``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -293,21 +295,14 @@ how to see what is inside a file
 
     3.XY
 
-  where ``XY`` are numbers like ``13`` depending on what version of Python_ you have installed
+  where ``XY`` are numbers like ``14`` depending on what version of Python_ is installed.
 
 * I use cat_ to show what is inside ``README.md``
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     cat README.md
-
-  the terminal_ goes back to the command line.
-
-  .. code-block:: python
-
-    .../pumping_python/person
-
-  the file_ is empty
 
 ----
 
@@ -317,133 +312,28 @@ how to run a Python program
 
 ----
 
-I use Python_ to run the ``person`` program_
+* I use Python_ to run the ``person`` program_
 
-.. code-block:: python
-  :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-  python3 src/person.py
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-the terminal_ is my friend, and shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-.. code-block:: text
+        python3 src/person/__init__.py
 
-  python3: can't open file
-           '.../pumping_python/person/src/person.py':
-           [Errno 2] No such file or directory
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-Python_ cannot find the file_ because it does not exist, and there is no folder_ named ``src``, yet.
+      .. code-block:: python
+        :emphasize-lines: 1
 
-----
+        python src/person/__init__.py
 
-=====================================================================================================
-how to make a directory for the source code
-=====================================================================================================
-
-----
-
-* I make a child folder_ in the ``person`` directory_ for the program_ because I want to keep the files_ separate from the other files_ in the project
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    mkdir src
-
-  the terminal_ goes back to the command line.
-
-* I use tree_ to see what changed in the ``person`` directory_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    tree -a -L 1
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 8
-
-    .
-    ├── .git
-    ├── .gitignore
-    ├── main.py
-    ├── pyproject.toml
-    ├── .python-version
-    ├── README.md
-    └── src
-
-* I try to run the ``person`` program_ again
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    python3 src/person.py
-
-  the terminal_ is my friend, and shows the same error from before because there is no file_ named ``src/person/__init__.py`` in the ``src`` folder_.
-
-----
-
-=====================================================================================================
-how to change the name of a file
-=====================================================================================================
-
-----
-
-* I use the `mv program`_ to change the name of ``main.py`` to ``src/person/__init__.py`` and move it to the ``src`` folder_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch src/person.py
-    rmdir src/person
-
-  the terminal_ goes back to the command line.
-
-* I use tree_ to see what folders_ and files_ I now have
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    tree -a -L 2
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 16
-
-    .
-    ├── .git
-    │   ├── config
-    │   ├── description
-    │   ├── FETCH_HEAD
-    │   ├── HEAD
-    │   ├── hooks
-    │   ├── info
-    │   ├── objects
-    │   └── refs
-    ├── .gitignore
-    ├── .python-version
-    ├── README.md
-    ├── pyproject.toml
-    └── src
-        └── person.py
-
-  ``main.py`` is now ``src/person/__init__.py`` in the ``src`` folder_.
-
-* I try to run the ``person`` program_ again
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    python3 src/person.py
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    Hello from person!
-
-  Success! The `uv Python package manager`_ made the file_ with some Python_ code in it, I can successfully run it because the file_ is now in the folder_.
+  Success! The `uv Python package manager`_ made the file_ with some Python_ code in it that I can run.
 
 * I use cat_ to see what is in ``src/person.py``
 
@@ -451,19 +341,6 @@ how to change the name of a file
     :emphasize-lines: 1
 
     cat src/person.py
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    def main():
-        print("Hello from person!")
-
-
-    if __name__ == "__main__":
-        main()
-
-  magic!
 
 ----
 
@@ -479,10 +356,28 @@ how to manually run tests
 
 * I use the :ref:`unittest module<another way to write tests>` from `The Python Standard Library`_ that comes with Python_ to run tests. I type this in the terminal_
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+      ``python3`` is the `Python program`_
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
+
+      ``python`` is the `Python program`_
 
   the terminal_ shows
 
@@ -495,7 +390,6 @@ how to manually run tests
 
   because I do not have any tests, yet.
 
-  - ``python3`` is the `Python program`_
   - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<what is a module?>` ( :ref:`unittest<another way to write tests>` in this case)
   - which leads to the question of :ref:`what is a module?<what is a module?>` Any file_ that ends in ``.py`` is a :ref:`Python module<what is a module?>`.
 
@@ -514,28 +408,28 @@ how to make a directory for the tests
 
     mkdir tests
 
-  the terminal_ goes back to the command line.
+* I use tree_ to see what my project now looks like
 
-* I use tree_ to see what my project looks like
+  .. tab-set::
+    :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-    tree -a -L 1
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  the terminal_ is my friend, and shows
+        tree -a -L 1
 
-  .. code-block:: shell
-    :emphasize-lines: 8
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-    .
-    ├── .git
-    ├── .gitignore
-    ├── pyproject.toml
-    ├── .python-version
-    ├── README.md
-    ├── src
-    └── tests
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree
+
+  there is a new folder_ named ``tests``.
 
 ----
 
@@ -545,60 +439,64 @@ how to make a Python file for the tests in the 'tests' directory
 
 ----
 
-* I use touch_ to add an empty file_ to the ``tests`` directory_ for the actual test
+.. tab-set::
+  :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
 
-    touch tests/person.py
+    * I use touch_ to add an empty file_ to the ``tests`` directory_ for the actual test
 
-  the terminal_ goes back to the command line.
+      .. code-block:: python
+        :emphasize-lines: 1
 
-* I use tree_ to see what the project looks like now
+        touch tests/person.py
 
-  .. code-block:: python
-    :emphasize-lines: 18
+    * I use tree_ to see what the project looks like now
 
-    tree -a -L 2
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  the terminal_ is my friend, and shows
+        tree -a -L 2
 
-  .. code-block:: shell
-    :emphasize-lines: 18
+    * I run the test again
 
-    .
-    ├── .git
-    │   ├── config
-    │   ├── description
-    │   ├── FETCH_HEAD
-    │   ├── HEAD
-    │   ├── hooks
-    │   ├── info
-    │   ├── objects
-    │   └── refs
-    ├── .gitignore
-    ├── pyproject.toml
-    ├── .python-version
-    ├── README.md
-    ├── src
-    │   └── person.py
-    └── tests
-        └── person.py
+      .. code-block:: python
+        :emphasize-lines: 1
 
-* I run the test again
+        python3 -m unittest
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-item:: no W
+    :sync: no_wsl
 
-    python3 -m unittest
+    * I use New-Item_ to add an empty file_ to the ``tests`` directory_ for the actual test
 
-  the terminal_ is my friend, and shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: python
+        New-Item tests/person.py
 
-    NO TESTS RAN
+    * I use tree_ to see what the project looks like now
 
-  because I have not set up the test correctly.
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree
+
+    * I run the test again
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
+
+the terminal_ is my friend, and shows
+
+.. code-block:: python
+
+  NO TESTS RAN
+
+because I have not set up the test correctly.
 
 ----
 
@@ -612,9 +510,9 @@ how to make a Python file for the tests in the 'tests' directory
 
     I can open a file_ from the terminal_ with :kbd:`ctrl` (Windows_/Linux_) or :kbd:`command` (MacOS_) on the keyboard and a click with the mouse on the name of the file_
 
-* I add the Python_ code below in ``tests/person.py``
+* I add Python_ code to ``tests/person.py``
 
-  .. note:: the line numbers below are a guide, no need to copy them
+  .. note:: the line numbers are a guide, no need to copy them
 
   .. code-block:: python
     :linenos:
@@ -622,18 +520,32 @@ how to make a Python file for the tests in the 'tests' directory
 
     False is True
 
-  I expect this line to fail because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`.
+  I expect this line to fail because :ref:`False<test_what_is_false>` is NOT :ref:`True<test_what_is_true>`.
 
 * I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_. I do not want to use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) on the keyboard every time I make a change, I want the computer to do that for me
 
   .. attention:: Turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_
 
-* I try the command again to run the tests in the terminal_
+* I try the command again to run the tests, in the terminal_
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the terminal_ is my friend, and shows
 
@@ -641,7 +553,9 @@ how to make a Python file for the tests in the 'tests' directory
 
     NO TESTS RAN
 
-  because the ``tests`` folder_ is NOT a `Python package`_ and :ref:`unittest<another way to write tests>` cannot find my test. I need to add a file_ named ``__init__.py`` to the ``tests`` folder, to make it a `Python package`_ for :ref:`unittest<another way to write tests>` to find the test.
+  because the ``tests`` folder_ is NOT a `Python package`_ and :ref:`unittest<another way to write tests>` cannot find my test.
+
+  I need to add a file_ named ``__init__.py`` to the ``tests`` folder, to make it a `Python package`_ for :ref:`unittest<another way to write tests>` to find the test.
 
 ----
 
@@ -651,63 +565,69 @@ how to make the tests a Python package
 
 ----
 
-* I use touch_ to add an empty file_ with the name ``__init__.py`` to the ``tests`` folder
 
-  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+.. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+.. tab-set::
+  :sync-group: os
 
-    touch tests/__init__.py
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
 
-  the terminal_ goes back to the command line.
+    * I use touch_ to add an empty file_ with the name ``__init__.py`` to the ``tests`` folder
 
-* I run the tree_ command to see what changed
+      .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+      .. code-block:: python
+        :emphasize-lines: 1
 
-    tree -a -L 2
+        touch tests/__init__.py
 
-  the terminal_ is my friend, and shows
+    * I run the tree_ command to see what changed
 
-  .. code-block:: shell
-    :emphasize-lines: 18
+      .. code-block:: python
+        :emphasize-lines: 1
 
-    .
-    ├── .git
-    │   ├── config
-    │   ├── description
-    │   ├── FETCH_HEAD
-    │   ├── HEAD
-    │   ├── hooks
-    │   ├── info
-    │   ├── objects
-    │   └── refs
-    ├── .gitignore
-    ├── pyproject.toml
-    ├── .python-version
-    ├── README.md
-    ├── src
-    │   └── person.py
-    └── tests
-        ├── __init__.py
-        └── person.py
+        tree -a -L 2
 
-* I try to run the test again
+    * I try to run the test again
 
-  .. code-block:: python
-    :emphasize-lines: 1
+      .. code-block:: python
+        :emphasize-lines: 1
 
-    python3 -m unittest
+        python3 -m unittest
 
-  the terminal_ does not feel like my friend, and shows
+  .. tab-item:: no WSL
+    :sync: no_wsl
 
-  .. code-block:: python
+    * I use New-Item_ to add an empty file_ with the name ``__init__.py`` to the ``tests`` folder
 
-    NO TESTS RAN
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  because :ref:`unittest<another way to write tests>` does not know that ``src/person/__init__.py`` in the ``tests`` folder is a test file_. I did not start the name with ``test_``. I have to change the name.
+        New-Item tests/__init__.py
+
+    * I run the tree_ command to see what changed
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree
+
+    * I try to run the test again
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
+
+the terminal_ does not feel like my friend, and shows
+
+.. code-block:: python
+
+  NO TESTS RAN
+
+because :ref:`unittest<another way to write tests>` does not know that ``src/person/__init__.py`` in the ``tests`` folder is a test file_. I did not start the name with ``test_``. I have to change the name.
 
 * I close ``src/person/__init__.py``
 
@@ -779,10 +699,24 @@ how to make the tests a Python package
 
 * I try to run the test again
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -856,10 +790,24 @@ how to make the tests a Python package
 
 * I go back to the terminal_ to run the test
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    python3 -m unittest
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python3 -m unittest
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        python -m unittest
 
   the test passes! The terminal_ shows
 

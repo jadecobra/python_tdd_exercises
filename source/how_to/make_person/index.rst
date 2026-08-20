@@ -10,7 +10,7 @@ how to make a person with strings
 
 ----
 
-I want to make a contact list of people. I can use strings_ to represent a person, for example
+I want to make a list of people. I can use strings_ to represent a person, for example
 
 * First Name
 * Last Name (Surname)
