@@ -1,8 +1,11 @@
 .. meta::
-  :description: Run Python tests automatically with pytest-watcher and uv on the person project from manual TDD setup. Jacob Itegboje adds requirements.txt with pytest and pytest-watcher, uv add --requirement requirements.txt, uv run pytest-watcher . --now, source .venv/bin/activate and deactivate, code tests/test_person.py from terminal, assert False is True collection error E assert False is True, fix to no tests ran on pass, Press q to stop watcher. Covers virtual environment .venv, pyproject.toml dependencies, uv.lock, NO TESTS RAN vs pytest collected 0 items, and why manual python3 -m unittest is replaced. Pumping Python make TDD project 1 part 2 after what is a module.
-  :keywords: Jacob Itegboje, Pumping Python, pytest-watcher automatic tests, uv add requirement requirements.txt, uv run pytest-watcher --now, python virtual environment activate deactivate, source .venv/bin/activate, echo pytest requirements.txt, NO TESTS RAN unittest, collected 0 items pytest, assert False is True collection error, person project pumping_python, automate python3 -m unittest, test driven development environment manually part 2, pyproject.toml dependencies pytest-watcher, Press q stop pytest-watcher, code tests/test_person.py terminal
+  :description: Run Python tests automatically with pytest-watcher and uv on the person project from manual TDD setup. Jacob Itegboje writes requirements.txt with echo pytest then echo pytest-watcher, uv add --requirement requirements.txt, uv run pytest-watcher . --now, source .venv/bin/activate and deactivate. Module-level assert False is True is ERROR collecting tests/test_person.py (E assert False is True); after assert False is False pytest shows collected 0 items and no tests ran. Press q to stop the watcher (Press w for the menu). Covers virtual environment .venv, pyproject.toml dependencies, uv.lock, and why repeating python3 -m unittest is replaced. Pumping Python make TDD project 1 part 2 after the manual person setup.
+  :keywords: Jacob Itegboje, Pumping Python, pytest-watcher automatic tests, uv add requirement requirements.txt, uv run pytest-watcher --now, python virtual environment activate deactivate, source .venv/bin/activate, echo pytest requirements.txt, no tests ran pytest, collected 0 items, ERROR collecting tests/test_person.py, assert False is True collection error, person project pumping_python, automate python3 -m unittest, pyproject.toml dependencies pytest-watcher, Press q stop pytest-watcher, ctrl click tests/test_person.py terminal
 
 .. include:: ../links.rst
+
+.. _virtual environment: https://docs.python.org/3/library/venv.html#module-venv
+.. _Execution Policy: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies
 
 #################################################################################
 how to run tests automatically
@@ -10,31 +13,24 @@ how to run tests automatically
 
 In the previous chapters
 
-* I ran ``python3 -m unittest`` to see the test fail
-* I ran ``python3 -m unittest`` every time I made a change until the test passed
+.. tab-set::
+  :sync-group: os
 
-I run ``python3 -m unittest`` for each part of the :ref:`Test Driven Development Cycle<what is the Test Driven Development Cycle?>` or any time there is a code change. I want the computer to automatically run the tests for me.
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
 
-----
+    * I ran ``python3 -m unittest`` to see the test fail
+    * I ran ``python3 -m unittest`` every time I made a change until the test passed
 
-*********************************************************************************
-preview
-*********************************************************************************
+  .. tab-item:: no WSL
+    :sync: no_wsl
+
+    * I ran ``python -m unittest`` to see the test fail
+    * I ran ``python -m unittest`` every time I made a change until the test passed
+
+I run that command for each part of the :ref:`Test Driven Development Cycle<what is the Test Driven Development Cycle?>` or any time there is a code change. I want the computer to automatically run the tests for me so I do not have to keep typing the same command over and over again.
 
 This is one way to automatically run tests in a :ref:`Python Test Driven Development project<what is a Test Driven Development Environment?>`. By the end of the chapter you will know these commands better
-
-.. code-block:: python
-
-  cd
-  echo
-  tree
-  cat
-  uv run pytest-watcher
-  source .venv/bin/activate
-  deactivate
-  history
-
-I have this program by the end of the chapter
 
 .. tab-set::
   :sync-group: os
@@ -42,7 +38,48 @@ I have this program by the end of the chapter
   .. tab-item:: WSL/Linux/Mac
     :sync: unix
 
-    .. literalinclude:: ../../code/make_tdd/makePythonTddNoVariables.sh
+    .. code-block:: python
+
+      cd
+      echo
+      tree
+      cat
+      uv run pytest-watcher
+      source .venv/bin/activate
+      deactivate
+      history
+
+  .. tab-item:: no WSL
+    :sync: no_wsl
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      cd
+      Out-File
+      tree
+      cat
+      uv run pytest-watcher
+      .venv/scripts/activate.ps1
+      .venv/scripts/activate.bat
+      deactivate
+      history
+
+----
+
+*********************************************************************************
+preview
+*********************************************************************************
+
+I have this program_ to :ref:`make a Python Test Driven Development project<how to make a Python Test Driven Development environment manually>` and :ref:`automatically run the tests<how to run tests automatically>`
+
+.. tab-set::
+  :sync-group: os
+
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
+
+    .. literalinclude:: ../code/make_tdd/makePythonTddNoVariables.sh
       :language: shell
       :linenos:
       :caption: makePythonTdd.sh
@@ -50,7 +87,7 @@ I have this program by the end of the chapter
   .. tab-item:: no WSL
     :sync: no_wsl
 
-    .. literalinclude:: ../../code/make_tdd/makePythonTddNoVariables.ps1
+    .. literalinclude:: ../code/make_tdd/makePythonTddNoVariables.ps1
       :language: shell
       :linenos:
       :caption: makePythonTdd.ps1
@@ -93,36 +130,24 @@ open the project
 
 * I use tree_ to see what the project looks like, as a reminder
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    tree -a -L 2
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  the terminal_ shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: shell
-    :emphasize-lines: 15
+        tree -a -L 2
 
-    .
-    ├── .git
-    │   ├── config
-    │   ├── description
-    │   ├── FETCH_HEAD
-    │   ├── HEAD
-    │   ├── hooks
-    │   ├── info
-    │   ├── objects
-    │   └── refs
-    ├── .gitignore
-    ├── pyproject.toml
-    ├── .python-version
-    ├── README.md
-    ├── src
-    │   └── person.py
-    └── tests
-        ├── __init__.py
-        ├── __pycache__
-        └── test_person.py
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree
 
 * I can use `pytest-watcher`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a :ref:`Python file<what is a module?>` changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
 
@@ -138,55 +163,37 @@ open the project
   the terminal_ is my friend, and shows
 
   .. code-block:: shell
+    :emphasize-text: error Caused by .venv
 
     Using CPython 3.X.Y
     Creating virtual environment at: .venv
+    ...
     error: Failed to spawn: `pytest-watcher`
       Caused by: No such file or directory (os error 2)
 
-  - because `pytest-watcher`_ is not installed on the computer. I can install `pytest-watcher`_ with the `uv Python Package Manager`_
+  - because `pytest-watcher`_ is not installed on the computer. I can install `pytest-watcher`_ with the `uv Python Package Manager`_.
   - the message also shows ``Creating virtual environment at: .venv``
 
 * I use tree_ to see what the project looks like now
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    tree -a -L 2
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  the terminal_ shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: shell
-    :emphasize-lines: 15
+        tree -a -L 2
 
-    .
-    ├── .git
-    │   ├── config
-    │   ├── description
-    │   ├── FETCH_HEAD
-    │   ├── HEAD
-    │   ├── hooks
-    │   ├── info
-    │   ├── objects
-    │   └── refs
-    ├── .gitignore
-    ├── pyproject.toml
-    ├── .python-version
-    ├── README.md
-    ├── src
-    │   └── person.py
-    ├── tests
-    │   ├── __init__.py
-    │   ├── __pycache__
-    │   └── test_person.py
-    └── .venv
-        ├── bin
-        ├── CACHEDIR.TAG
-        ├── .gitignore
-        ├── lib
-        ├── lib64 -> lib
-        ├── .lock
-        └── pyvenv.cfg
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree
 
   uv_ made a :ref:`virtual environment<what is a virtual environment?>` in a folder_ named ``.venv`` with files_ and folders_.
 
@@ -196,9 +203,9 @@ open the project
 what is a virtual environment?
 *********************************************************************************
 
-A `virtual environment`_ is a separate folder_ where I can install `Python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
+A `virtual environment`_ is a separate folder_ where I can install `Python packages`_ that my project needs. It helps me keep things that belong to the project in one place, separate from other things on the computer.
 
-It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. I do not have to keep every program_ I have ever used for projects that do not need them.
+I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. I do not have to keep every program_ I have ever used for projects that do not need them.
 
 
 ----
@@ -222,39 +229,62 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
 
     Hello, my name is Jacob
 
-* I can also use echo_ to add text to a file_. I use it to make the requirements file_ with pytest_ as what is inside it
+  .. tab-set::
+    :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-    echo "pytest" > requirements.txt
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  - ``>`` is an operator that is used to send output from a program_ to the given file_
+      * I can use echo_ to add text to a file_. I use it to make the requirements file_ with pytest_ as what is inside it
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          echo "pytest" > requirements.txt
+
+        ``>`` is an operator that is used to send output from a program_ to the given file_
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+      * I can use `Out-File`_ to add text to a file_. I use it to make the requirements file_ with pytest_ as what is inside it
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          "pytest" | Out-File requirements.txt -Encoding UTF8
+
+        ``>`` is an operator that is used to send output from a program_ to the given file_
+
   - pytest_ is a `Python package`_ like :ref:`unittest<another way to write tests>`, that is used for testing
   - ``requirements.txt`` is the name of the file_ where I add names of `Python packages`_ for the `uv Python Package Manager`_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file_.
 
 * I use tree_ to see what the project looks like now
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    tree -a -L 1
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  the terminal_ shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: shell
-    :emphasize-lines: 7
+        tree -a -L 1
 
-    .
-    ├── .git
-    ├── .gitignore
-    ├── pyproject.toml
-    ├── .python-version
-    ├── README.md
-    ├── requirements.txt
-    ├── src
-    ├── tests
-    └── .venv
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree
 
   ``requirements.txt`` is now in the ``person`` folder_
 
@@ -273,10 +303,24 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
 
 * I add `pytest-watcher`_ to the requirements file_ as well
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    echo "pytest-watcher" >> requirements.txt
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        echo "pytest-watcher" >> requirements.txt
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        "pytest-watcher" >> requirements.txt
 
   - ``>>`` is an operator that is used to send output from a program_ to the given file_, it adds to what is in the file without writing over it
   - `pytest-watcher`_ is a `Python program`_ that automatically runs pytest_ when I change code in the project
@@ -303,6 +347,14 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
 how to install Python packages with uv
 *********************************************************************************
 
+
+* I use cat_ to show what is in ``pyproject.toml``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cat pyproject.toml
+
 * I use uv_ to install `pytest-watcher`_ from the requirements file_
 
   .. code-block:: python
@@ -317,12 +369,14 @@ how to install Python packages with uv
 
   .. code-block:: shell
 
-    Resolved 9 packages in GHIms
-    ░░░░░░░░░░░░░░░░░░░░ [0/7] Installing wheels...
+    Resolved X packages in GHIms
     ...
-    Installed 7 packages in JKLms
+    ░░░░░░░░░░░░░░░░░░░░ [0/Y] Installing wheels...
+    ...
+    Installed Z packages in JKLms
      + iniconfig==A.B.C
      + packaging==DE.F
+     ~ person==0.1.0 (from file:///.../pumping_python/person)
      + pluggy==G.H.I
      + pygments==J.K.L
      + pytest==M.N.O
@@ -331,51 +385,33 @@ how to install Python packages with uv
 
 * I run tree_ to see what changed in the project
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    tree -a -L 1
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  the terminal_ shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: shell
-    :emphasize-lines: 10
+        tree -a -L 1
 
-    .
-    ├── .git
-    ├── .gitignore
-    ├── pyproject.toml
-    ├── .python-version
-    ├── README.md
-    ├── requirements.txt
-    ├── src
-    ├── tests
-    ├── uv.lock
-    └── .venv
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree
 
   uv_ added ``uv.lock`` a file_ that has the exact versions of the `Python programs`_ that were installed.
 
 * I use cat_ to show what is now in ``pyproject.toml``
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     cat pyproject.toml
-
-  the terminal_ is my friend, and shows
-
-  .. code-block:: python
-    :emphasize-lines: 8-9
-
-    [project]
-    name = "person"
-    version = "0.1.0"
-    description = "Add your description here"
-    readme = "README.md"
-    requires-python = ">=3.XY"
-    dependencies = [
-        "pytest>=M.N.O",
-        "pytest-watcher>=P.Q.R",
-    ]
 
   it added `pytest`_ and `pytest-watcher`_ to the dependencies of the project.
 
@@ -386,12 +422,44 @@ how to activate a virtual environment
 *********************************************************************************
 
 
-When I want to work in a `virtual environment`_, I make sure I am in the parent folder_ of the `virtual environment`. In this case ``person`` is the parent. I activate the `virtual environment`_ in the terminal_ to use it
+When I want to work in a `virtual environment`_, I make sure I am in the parent folder_ of the `virtual environment`_. In this case ``person`` is the parent.
 
-.. code-block:: python
-  :emphasize-lines: 1
+.. tab-set::
+  :sync-group: os
 
-  source .venv/bin/activate
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
+
+    * I activate the `virtual environment`_ in the terminal_ to use it
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      source .venv/bin/activate
+
+  .. tab-item:: no WSL
+    :sync: no_wsl
+
+    * I change the `Execution Policy`_ to allow running of scripts
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+    * I activate the `virtual environment`_ in the terminal_ to use it
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        .venv/Scripts/activate.ps1
+
+      or
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        .venv/Scripts/activate.bat
 
 the terminal_ is my friend, and shows
 
@@ -520,7 +588,7 @@ how to open the test file in the editor from the terminal
     Press w to show menu
 
   - `pytest-watcher`_ "saw" the change I made to ``test_person.py`` and ran the test again
-  - the terminal_ shows ``no tests ran`` which is confusing since the only way I know the test passed, is because I saw it fail
+  - the terminal_ shows ``no tests ran`` which is confusing since the only way I know the test passed, is because I saw it fail.
 
 I can write the rest of the code for the project and get results back quickly because the tests run when I change the code.
 
@@ -609,46 +677,77 @@ how to view all the commands I typed to automate running tests
 
   the terminal_ shows
 
-  .. literalinclude:: ../code/make_tdd/makePythonTdd2History.sh
-    :language: python
-    :emphasize-lines: 4, 7, 9, 14
+  .. tab-set::
+    :sync-group: os
 
-  the `history program`_ shows all the commands I typed in the terminal_
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. literalinclude:: ../code/make_tdd/makePythonTdd2History.sh
+        :language: python
+        :emphasize-lines: 6, 9, 12, 17
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. literalinclude:: ../code/make_tdd/makePythonTdd2History.ps1
+        :language: python
+        :emphasize-lines: 6, 9, 12, 16, 18
+
+  the `history program`_ shows all the commands I typed in the terminal_.
 
 * these are the commands I used to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` then :ref:`run the tests automatically<how to run tests automatically>`
 
-  .. code-block:: python
+  .. tab-set::
+    :sync-group: os
 
-    uv init NAME_OF_THE_PROJECT
-    cd NAME_OF_THE_PROJECT
-    mkdir src
-    touch src/NAME_OF_THE_PROJECT.py
-    rmdir src/NAME_OF_THE_PROJECT
-    mkdir tests
-    touch tests/__init__.py
-    touch tests/test_NAME_OF_THE_PROJECT.py
-    echo "pytest" > requirements.txt
-    echo "pytest-watcher" >> requirements.txt
-    uv add --requirement requirements.txt
-    uv run pytest-watcher . --now
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+
+        uv init NAME_OF_THE_PROJECT
+        cd NAME_OF_THE_PROJECT
+        mkdir tests
+        touch tests/__init__.py
+        touch tests/test_NAME_OF_THE_PROJECT.py
+        echo "pytest" > requirements.txt
+        echo "pytest-watcher" >> requirements.txt
+        uv add --requirement requirements.txt
+        uv run pytest-watcher . --now
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        uv init NAME_OF_THE_PROJECT
+        cd NAME_OF_THE_PROJECT
+        mkdir tests
+        touch tests/__init__.py
+        touch tests/test_NAME_OF_THE_PROJECT.py
+        "pytest" | Out-File requirements.txt
+        "pytest-watcher" >> requirements.txt
+        uv add --requirement requirements.txt
+        uv run pytest-watcher . --now
 
   where ``NAME_OF_THE_PROJECT`` is the name I give the project
 
 * these are the steps I took to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` then :ref:`run the tests automatically<how to run tests automatically>`
 
-  - give the project a name
-  - :ref:`make a directory for the project<how to setup a project with uv>`
-  - :ref:`change directory to the project<how to change directory to the project>`
-  - :ref:`make a Python file to hold the source code in the 'src' folder<how to make an empty file>`
-  - :ref:`make a directory for the tests<how to make a directory for the tests>`
-  - :ref:`make the 'tests' directory a Python package<how to make the tests a Python package>`
-  - :ref:`make a Python file for the tests in the 'tests' directory<how to make a Python file for the tests in the 'tests' directory>`
-  - :ref:`add the first failing test to the test file<test_failure>`
-  - :ref:`make a requirements file for the Python packages I need<how to write text to a file>`
-  - :ref:`install the Python packages I gave in the requirements file<how to install Python packages with uv>`
-  - :ref:`run the tests automatically<how to run tests automatically with uv and pytest-watcher>`
-  - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
-  - make the test pass
+  - I give the project a name
+  - :ref:`I make a directory for the project<how to setup a project with uv>`
+  - :ref:`I change directory to the project<how to change directory to the project>`
+  - :ref:`I make a directory for the tests<how to make a directory for the tests>`
+  - :ref:`I make the 'tests' directory a Python package<how to make the tests a Python package>`
+  - :ref:`I make a Python file for the tests in the 'tests' directory<how to make a Python file for the tests in the 'tests' directory>`
+  - :ref:`I add the first failing test to the test file<test_failure>`
+  - :ref:`I make a requirements file for the Python packages I need<how to write text to a file>`
+  - :ref:`I install the Python packages I gave in the requirements file<how to install Python packages with uv>`
+  - :ref:`I run the tests automatically<how to run tests automatically with uv and pytest-watcher>`
+  - :ref:`I open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
+  - I make the test pass
 
 ----
 

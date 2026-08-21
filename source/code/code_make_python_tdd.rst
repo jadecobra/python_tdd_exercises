@@ -8,7 +8,7 @@ makePythonTdd
 makePythonTdd with no variables
 *********************************************************************************
 
-* Here is the program_ from :ref:`how to run tests automatically`
+* Here is the program_ from :ref:`how to make a Python Test Driven Development environment automatically`
 
   .. tab-set::
     :sync-group: os

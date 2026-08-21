@@ -326,7 +326,22 @@ how to run a Python program
 
         python src/person/__init__.py
 
-  Success! The `uv Python package manager`_ made the file_ with some Python_ code in it that I can run.
+  No errors! The `uv Python package manager`_ made the file_ with some Python_ code in it that I can run.
+
+* I can also use uv_ to run the program_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    uv run person
+
+  terminal_ shows
+
+  .. code-block:: python
+
+    Hello from person!
+
+  Success!
 
 * I use cat_ to see what is in ``src/person/__init__.py``
 
