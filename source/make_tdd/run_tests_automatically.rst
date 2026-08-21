@@ -68,33 +68,6 @@ This is one way to automatically run tests in a :ref:`Python Test Driven Develop
 ----
 
 *********************************************************************************
-preview
-*********************************************************************************
-
-I have this program_ to :ref:`make a Python Test Driven Development project<how to make a Python Test Driven Development environment manually>` and :ref:`automatically run the tests<how to run tests automatically>`
-
-.. tab-set::
-  :sync-group: os
-
-  .. tab-item:: WSL/Linux/Mac
-    :sync: unix
-
-    .. literalinclude:: ../code/make_tdd/makePythonTddNoVariables.sh
-      :language: shell
-      :linenos:
-      :caption: makePythonTdd.sh
-
-  .. tab-item:: no WSL
-    :sync: no_wsl
-
-    .. literalinclude:: ../code/make_tdd/makePythonTddNoVariables.ps1
-      :language: shell
-      :linenos:
-      :caption: makePythonTdd.ps1
-
-----
-
-*********************************************************************************
 questions about how to run tests automatically
 *********************************************************************************
 
@@ -229,41 +202,35 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
 
     Hello, my name is Jacob
 
-  .. tab-set::
-    :sync-group: os
+.. tab-set::
+  :sync-group: os
 
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
 
-      .. code-block:: python
-        :emphasize-lines: 1
-
-      * I can use echo_ to add text to a file_. I use it to make the requirements file_ with pytest_ as what is inside it
-
-        .. code-block:: python
-          :emphasize-lines: 1
-
-          echo "pytest" > requirements.txt
-
-        ``>`` is an operator that is used to send output from a program_ to the given file_
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
+    * I can use echo_ to add text to a file_. I use it to make the requirements file_ with pytest_ as what is inside it
 
       .. code-block:: python
         :emphasize-lines: 1
 
-      * I can use `Out-File`_ to add text to a file_. I use it to make the requirements file_ with pytest_ as what is inside it
+        echo "pytest" > requirements.txt
 
-        .. code-block:: python
-          :emphasize-lines: 1
+      ``>`` is an operator that is used to send output from a program_ to the given file_
 
-          "pytest" | Out-File requirements.txt -Encoding UTF8
+  .. tab-item:: no WSL
+    :sync: no_wsl
 
-        ``>`` is an operator that is used to send output from a program_ to the given file_
+    * I can use `Out-File`_ to add text to a file_. I use it to make the requirements file_ with pytest_ as what is inside it
 
-  - pytest_ is a `Python package`_ like :ref:`unittest<another way to write tests>`, that is used for testing
-  - ``requirements.txt`` is the name of the file_ where I add names of `Python packages`_ for the `uv Python Package Manager`_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file_.
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        "pytest" | Out-File requirements.txt -Encoding UTF8
+
+      ``>`` is an operator that is used to send output from a program_ to the given file_
+
+- pytest_ is a `Python package`_ like :ref:`unittest<another way to write tests>`, that is used for testing
+- ``requirements.txt`` is the name of the file_ where I add names of `Python packages`_ for the `uv Python Package Manager`_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file_.
 
 * I use tree_ to see what the project looks like now
 
@@ -587,8 +554,8 @@ how to open the test file in the editor from the terminal
     Current runner args: []
     Press w to show menu
 
-  - `pytest-watcher`_ "saw" the change I made to ``test_person.py`` and ran the test again
-  - the terminal_ shows ``no tests ran`` which is confusing since the only way I know the test passed, is because I saw it fail.
+  - `pytest-watcher`_ "saw" the change I made to ``test_person.py`` and ran the test .
+  - The terminal_ shows ``no tests ran`` which is confusing since the only way I know the test passed, is because I saw it fail.
 
 I can write the rest of the code for the project and get results back quickly because the tests run when I change the code.
 
@@ -720,7 +687,6 @@ how to view all the commands I typed to automate running tests
       :sync: no_wsl
 
       .. code-block:: python
-        :emphasize-lines: 1
 
         uv init NAME_OF_THE_PROJECT
         cd NAME_OF_THE_PROJECT
@@ -732,7 +698,7 @@ how to view all the commands I typed to automate running tests
         uv add --requirement requirements.txt
         uv run pytest-watcher . --now
 
-  where ``NAME_OF_THE_PROJECT`` is the name I give the project
+  where ``NAME_OF_THE_PROJECT`` is the name I give the project.
 
 * these are the steps I took to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` then :ref:`run the tests automatically<how to run tests automatically>`
 

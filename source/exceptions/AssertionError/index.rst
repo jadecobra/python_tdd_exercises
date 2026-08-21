@@ -43,6 +43,44 @@ I have these tests by the end of the chapter
   :language: python
   :linenos:
   :caption: assertion_error/tests/test_assertion_error.py
+  :lines: 1-6
+
+.. literalinclude:: ../../code/assertion_error/test_assertion_error.py
+  :language: python
+  :lineno-start: 9
+  :caption: assertion_error/tests/test_assertion_error.py
+  :lines: 9-28
+
+.. literalinclude:: ../../code/assertion_error/test_assertion_error.py
+  :language: python
+  :lineno-start: 31
+  :caption: assertion_error/tests/test_assertion_error.py
+  :lines: 31-50
+
+.. literalinclude:: ../../code/assertion_error/test_assertion_error.py
+  :language: python
+  :lineno-start: 53
+  :caption: assertion_error/tests/test_assertion_error.py
+  :lines: 53-72
+
+.. literalinclude:: ../../code/assertion_error/test_assertion_error.py
+  :language: python
+  :lineno-start: 75
+  :caption: assertion_error/tests/test_assertion_error.py
+  :lines: 75-86
+
+.. literalinclude:: ../../code/assertion_error/test_assertion_error.py
+  :language: python
+  :lineno-start: 89
+  :caption: assertion_error/tests/test_assertion_error.py
+  :lines: 89-101
+
+.. literalinclude:: ../../code/assertion_error/test_assertion_error.py
+  :language: python
+  :lineno-start: 104
+  :caption: assertion_error/tests/test_assertion_error.py
+  :lines: 104-
+
 
 *********************************************************************************
 questions about AssertionError
@@ -171,9 +209,9 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I open ``test_assertion_error.py``
+* I open ``test_assertion_error.py`` from the ``tests`` folder
 
-* I delete the text in the file_ then add :ref:`the first failing test<test_failure>` to ``test_assertion_error.py``
+* I add :ref:`the first failing test<test_failure>` to ``tests/test_assertion_error.py``
 
   .. code-block:: python
     :linenos:
@@ -181,23 +219,44 @@ start the project
 
     assert False is True
 
-* I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
+.. tab-set::
+  :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
 
-    echo "pytest" > requirements.txt
+    * I use echo_ to add pytest_ to ``requirements.txt``
 
-  the terminal_ goes back to the command line.
+      .. code-block:: python
+        :emphasize-lines: 1
 
-* I add `pytest-watcher`_ to the requirements file_
+        echo "pytest" > requirements.txt
 
-  .. code-block:: python
-    :emphasize-lines: 1
+    * I add `pytest-watcher`_ to the requirements file_
 
-    echo "pytest-watcher" >> requirements.txt
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  the terminal_ goes back to the command line.
+        echo "pytest-watcher" >> requirements.txt
+
+      the terminal_ goes back to the command line.
+
+  .. tab-item:: no WSL
+    :sync: no_wsl
+
+    * I use `Out-File`_ to add pytest_ to ``requirements.txt``
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        "pytest" | Out-File requirements.txt -Encoding UTF8
+
+    * I add `pytest-watcher`_ to the requirements file_
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        "pytest-watcher" >> requirements.txt
 
 * I use uv_ to install `pytest-watcher`_ with the requirements file_
 
@@ -224,22 +283,7 @@ start the project
 
     git commit --all --message 'setup project'
 
-  the terminal_ shows
-
-  .. code-block:: python
-
-    [main (root-commit) a0b12c3] setup project
-     8 files changed, X insertions(+)
-     create mode 100644 .gitignore
-     create mode 100644 .python-version
-     create mode 100644 README.md
-     create mode 100644 pyproject.toml
-     create mode 100644 requirements.txt
-     create mode 100644 tests/__init__.py
-     create mode 100644 tests/test_assertion_error.py
-     create mode 100644 uv.lock
-
-  then goes back to the command line.
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -299,7 +343,7 @@ start the project
     # Exceptions seen
     # AssertionError
 
-  the test passes, the terminal_ shows ``no tests ran``
+  the test passes, the terminal_ shows ``no tests ran``.
 
 ----
 
@@ -319,7 +363,7 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
 
 ----
 
-* I remove :ref:`the first failing assertion<test_failure>` then add the first statement
+* I remove :ref:`the first failing assertion<test_failure>` then add the first of the two statements I am testing
 
   .. code-block:: python
     :linenos:
@@ -331,8 +375,7 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
     # Exceptions seen
     # AssertionError
 
-  - the test is still passing
-  - ``==`` is two equal signs on the keyboard (:kbd:`=+=`) and means ``is equal`` which makes this statement read as ``1 + 1 is equal to 2``
+  ``==`` is two equal signs on the keyboard (:kbd:`=+=`) and means ``is equal`` which makes this statement read as ``1 + 1 is equal to 2``
 
 * I change the result of the equation
 
@@ -347,7 +390,7 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
     # Exceptions seen
     # AssertionError
 
-  the test is still passing. Why is it still passing? ``1 + 1`` cannot be both ``2`` and ``11``, is Python_ broken?
+  nothing happens. Why is it still passing? ``1 + 1`` cannot be both ``2`` and ``11``, is Python_ broken?
 
 * I want the test to fail if I write a statement that is NOT :ref:`True<test_what_is_true>`. I change it to an `assert statement`_
 
@@ -369,7 +412,7 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
 
     E   assert (1 + 1) == 11
 
-  because Python_ does not care if the statement is :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` as long as it follows the rules. Once I make it an :ref:`assertion<what is an assertion?>` with `the assert keyword`_ it tells the computer ``DO NOT CONTINUE, if "1 + 1 == 11" is False``
+  because if there is no assert_ before the equation, Python_ does not care if the statement is :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` as long as it follows Python_ rules. Once I make it the statement an :ref:`assertion<what is an assertion?>` with `the assert keyword`_ it tells the computer ``DO NOT CONTINUE, if "1 + 1 == 11" is False``.
 
 ----
 
@@ -379,7 +422,7 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
 
 ----
 
-I change the result back to make the statement :ref:`True<test_what_is_true>`
+I change the result back, to make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :linenos:
@@ -403,7 +446,7 @@ the test passes.
 
 ----
 
-* I add the other statement (``'1' + '1' == '11'``)
+* I add the other statement I am testing (``'1' + '1' == '11'``)
 
   .. code-block:: python
     :linenos:
@@ -474,12 +517,12 @@ With this statement, I tell Python_ - "DO NOT CONTINUE, if :ref:`False<test_what
 
     # Exceptions seen
 
-  the test passes because the statement is now :ref:`True<test_what_is_true>`, ``'1' + '1'`` is equal to ``'11'``
+  the test passes because the statement is now :ref:`True<test_what_is_true>`, ``'1' + '1'`` is equal to ``'11'``.
 
-* These two statements are NOT the same
+* These two statements are similar and are NOT the same
 
-  - ``1 + 1 == 2`` checks if the result of :ref:`adding<test_addition>` two numbers is equal to the number on the right side of the equality symbol (``==``).
-  - ``'1' + '1' == '11'`` checks if the result of "adding" 2 strings_ is equal to the string_ on the right side of the equality symbol (``==``). A string_ is anything inside :ref:`quotes`.
+  - ``assert 1 + 1 == 2`` checks if the result of :ref:`adding<test_addition>` two numbers (``1 + 1``) is equal to the number on the right side (``2``) of the equality symbol (``==``).
+  - ``assert '1' + '1' == '11'`` checks if the result of "adding" 2 strings_ (``'1' + '1'``) is equal to the string_ on the right side (``'11'``)of the equality symbol (``==``). A string_ is anything inside :ref:`quotes`.
 
   I add another statement to show how ``'1' + '1' == '11'``
 
