@@ -66,32 +66,32 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../../code/assertion_error/test_assertion_error.py
   :language: python
   :lineno-start: 75
-  :caption: assertion_error/tests/test_assertion_error.py
+  :caption: assertion_error/tests/test_assertion_error.g
   :lines: 75-86
 
 .. literalinclude:: ../../code/assertion_error/test_assertion_error.py
   :language: python
   :lineno-start: 89
   :caption: assertion_error/tests/test_assertion_error.py
-  :lines: 89-101
+  :lines: 89-103
 
 .. literalinclude:: ../../code/assertion_error/test_assertion_error.py
   :language: python
-  :lineno-start: 104
+  :lineno-start: 106
   :caption: assertion_error/tests/test_assertion_error.py
-  :lines: 104-116
+  :lines: 106-118
 
 .. literalinclude:: ../../code/assertion_error/test_assertion_error.py
   :language: python
-  :lineno-start: 117
+  :lineno-start: 119
   :caption: assertion_error/tests/test_assertion_error.py
-  :lines: 117-125
+  :lines: 119-127
 
 .. literalinclude:: ../../code/assertion_error/test_assertion_error.py
   :language: python
-  :lineno-start: 126
+  :lineno-start: 128
   :caption: assertion_error/tests/test_assertion_error.py
-  :lines: 126-
+  :lines: 128-
 
 
 *********************************************************************************
@@ -424,7 +424,7 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
 
     E   assert (1 + 1) == 11
 
-  because if there is no assert_ before the equation, Python_ does not care if the statement is :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` as long as it follows Python_ rules. Once I make it the statement an :ref:`assertion<what is an assertion?>` with `the assert keyword`_ it tells the computer ``DO NOT CONTINUE, if "1 + 1 == 11" is False``.
+  because if there is no assert_ before the equation, Python_ does not care if the statement is :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` as long as it follows Python_ rules. Once I make the statement an :ref:`assertion<what is an assertion?>` with `the assert keyword`_ it tells the computer ``DO NOT CONTINUE, if "1 + 1 == 11" is False``.
 
 ----
 
@@ -534,7 +534,7 @@ With this statement, I tell Python_ - "DO NOT CONTINUE, if :ref:`False<test_what
 * These two statements are similar and are NOT the same
 
   - ``assert 1 + 1 == 2`` checks if the result of :ref:`adding<test_addition>` two numbers (``1 + 1``) is equal to the number on the right side (``2``) of the equality symbol (``==``).
-  - ``assert '1' + '1' == '11'`` checks if the result of "adding" 2 strings_ (``'1' + '1'``) is equal to the string_ on the right side (``'11'``)of the equality symbol (``==``). A string_ is anything inside :ref:`quotes`.
+  - ``assert '1' + '1' == '11'`` checks if the result of "adding" 2 strings_ (``'1' + '1'``) is equal to the string_ on the right side (``'11'``) of the equality symbol (``==``). A string_ is anything inside :ref:`quotes`.
 
   I add another statement to show the "addition" of two strings_
 
@@ -572,7 +572,6 @@ With this statement, I tell Python_ - "DO NOT CONTINUE, if :ref:`False<test_what
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :emphasize-lines: 3-4
 
     E   AssertionError: assert ('I am' + ' alive') == '11'
 
@@ -4186,12 +4185,12 @@ pytest only calls the function if the name starts with test
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 99
+    :lineno-start: 101
     :emphasize-lines: 2-3
 
     def test_failure():
         # assert False == True
-        assert False == False
+        assert False != True
 
 
     # NOTES
@@ -4241,11 +4240,11 @@ close the project
 review
 *********************************************************************************
 
-* I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`None or NOT None<test_assertion_error_w_none>`
-* I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`False or NOT False<test_assertion_error_w_false>`
-* I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`True or NOT True<test_assertion_error_w_true>`
-* I can use :ref:`assertions<what is an assertion?>` to test if two things are :ref:`NOT equal or equal<test_assertion_error_w_equality>`
-* I can use :ref:`functions<what is a function?>` to group :ref:`assertions<what is an assertion?>` and get better error messages from pytest_
+* I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`None or NOT None<test_assertion_error_w_none>`.
+* I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`False or NOT False<test_assertion_error_w_false>`.
+* I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`True or NOT True<test_assertion_error_w_true>`.
+* I can use :ref:`assertions<what is an assertion?>` to test if two things are :ref:`NOT equal or equal<test_assertion_error_w_equality>`.
+* I can use :ref:`functions<what is a function?>` to group :ref:`assertions<what is an assertion?>` and get better error messages from pytest_.
 
 The tests show that
 
