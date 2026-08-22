@@ -187,23 +187,44 @@ start the project
     def test_failure():
         assert False is True
 
-* I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
+.. tab-set::
+  :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
 
-    echo "pytest" > requirements.txt
+    * I use echo_ to add pytest_ to ``requirements.txt``
 
-  the terminal_ goes back to the command line.
+      .. code-block:: python
+        :emphasize-lines: 1
 
-* I add `pytest-watcher`_ to the requirements file_
+        echo "pytest" > requirements.txt
 
-  .. code-block:: python
-    :emphasize-lines: 1
+    * I add `pytest-watcher`_ to the requirements file_
 
-    echo "pytest-watcher" >> requirements.txt
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  the terminal_ goes back to the command line.
+        echo "pytest-watcher" >> requirements.txt
+
+      the terminal_ goes back to the command line.
+
+  .. tab-item:: no WSL
+    :sync: no_wsl
+
+    * I use `Out-File`_ to add pytest_ to ``requirements.txt``
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        "pytest" | Out-File requirements.txt -Encoding UTF8
+
+    * I add `pytest-watcher`_ to the requirements file_
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        "pytest-watcher" >> requirements.txt
 
 * I use uv_ to install `pytest-watcher`_ with the requirements file_
 

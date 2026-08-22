@@ -154,23 +154,44 @@ start the project
     def test_failure():
         assert False is True
 
-* I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
+.. tab-set::
+  :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
 
-    echo "pytest" > requirements.txt
+    * I use echo_ to add pytest_ to ``requirements.txt``
 
-  the terminal_ goes back to the command line.
+      .. code-block:: python
+        :emphasize-lines: 1
 
-* I add `pytest-watcher`_ to the requirements file_
+        echo "pytest" > requirements.txt
 
-  .. code-block:: python
-    :emphasize-lines: 1
+    * I add `pytest-watcher`_ to the requirements file_
 
-    echo "pytest-watcher" >> requirements.txt
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  the terminal_ goes back to the command line.
+        echo "pytest-watcher" >> requirements.txt
+
+      the terminal_ goes back to the command line.
+
+  .. tab-item:: no WSL
+    :sync: no_wsl
+
+    * I use `Out-File`_ to add pytest_ to ``requirements.txt``
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        "pytest" | Out-File requirements.txt -Encoding UTF8
+
+    * I add `pytest-watcher`_ to the requirements file_
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        "pytest-watcher" >> requirements.txt
 
 * I use uv_ to install `pytest-watcher`_ with the requirements file_
 
@@ -197,22 +218,7 @@ start the project
 
     git commit --all --message 'setup project'
 
-  the terminal_ shows
-
-  .. code-block:: python
-
-    [main (root-commit) a0b12c3] setup project
-     8 files changed, X insertions(+)
-     create mode 100644 .gitignore
-     create mode 100644 .python-version
-     create mode 100644 README.md
-     create mode 100644 pyproject.toml
-     create mode 100644 requirements.txt
-     create mode 100644 tests/__init__.py
-     create mode 100644 tests/test_telephone.py
-     create mode 100644 uv.lock
-
-  then goes back to the command line.
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 * I use `pytest-watcher`_ to run the tests automatically
 
