@@ -846,7 +846,7 @@ test_assert_is_not
         # unittest.TestCase.assertIsNot()
         # unittest.TestCase().assertIsNot()
         # unittest.TestCase().assertIsNot(None, None)
-        # assert None is not None
+        # assert None is not the same object as None
         assert None is not False
         unittest.TestCase().assertIsNot(None, False)
 
@@ -922,7 +922,7 @@ test_assert_is
         # unittest.TestCase.assertIsNot()
         # unittest.TestCase().assertIsNot()
         # unittest.TestCase().assertIsNot(None, None)
-        # assert None is not None
+        # assert None is not the same object as None
         assert None is not False
         unittest.TestCase().assertIsNot(None, False)
 
@@ -2442,7 +2442,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
         # unittest.TestCase.assertIsNot()
         # unittest.TestCase().assertIsNot()
         # unittest.TestCase().assertIsNot(None, None)
-        # assert None is not None
+        # assert None is not the same object as None
         assert None is not False
         # unittest.TestCase().assertIsNot(None, False)
         TOOLBOX.assertIsNot(None, False)

@@ -906,7 +906,7 @@ the test is green again.
             self.assertIsNot(set(), None)
 
             a_dictionary = {}
-            # assert {} is not None
+            # assert {} is not the same object as None
             assert a_dictionary is not None
             # self.assertIs({}, None)
             # self.assertIsNot({}, None)
@@ -939,7 +939,7 @@ the test is green again.
             self.assertIsNot([], None)
 
             a_set = set()
-            # assert set() is not None
+            # assert set() is not the same object as None
             assert a_set is not None
             # self.assertIs(set(), None)
             # self.assertIsNot(set(), None)
@@ -969,7 +969,7 @@ the test is green again.
             self.assertIsNot((), None)
 
             a_list = []
-            # assert [] is not None
+            # assert [] is not the same object as None
             assert a_list is not None
             # self.assertIs([], None)
             # self.assertIsNot([], None)
@@ -999,7 +999,7 @@ the test is green again.
             self.assertIsNot('', None)
 
             a_tuple = ()
-            # assert () is not None
+            # assert () is not the same object as None
             assert a_tuple is not None
             # self.assertIs((), None)
             # self.assertIsNot((), None)
@@ -1029,7 +1029,7 @@ the test is green again.
             self.assertIsNot(0.0, None)
 
             a_string = ''
-            # assert '' is not None
+            # assert '' is not the same object as None
             assert a_string is not None
             # self.assertIs('', None)
             # self.assertIsNot('', None)
@@ -1059,7 +1059,7 @@ the test is green again.
             self.assertIsNot(0, None)
 
             a_float = 0.0
-            # assert 0.0 is not None
+            # assert 0.0 is not the same object as None
             assert a_float is not None
             # self.assertIs(0.0, None)
             # self.assertIsNot(0.0, None)
@@ -1089,7 +1089,7 @@ the test is green again.
             self.assertIsNot(True, None)
 
             an_integer = 0
-            # assert 0 is not None
+            # assert 0 is not the same object as None
             assert an_integer is not None
             # self.assertIs(0, None)
             # self.assertIsNot(0, None)
@@ -1494,7 +1494,7 @@ the test is green again.
             self.assertIsNot(set(), False)
 
             a_dictionary = {}
-            # assert {} is not False
+            # assert {} is not the same object as False
             assert a_dictionary is not False
             # self.assertIs({}, False)
             # self.assertIsNot({}, False)
@@ -1527,7 +1527,7 @@ the test is green again.
             self.assertIsNot([], False)
 
             a_set = set()
-            # assert set() is not False
+            # assert set() is not the same object as False
             assert a_set is not False
             # self.assertIs(set(), False)
             # self.assertIsNot(set(), False)
@@ -1557,7 +1557,7 @@ the test is green again.
             self.assertIsNot((), False)
 
             a_list = []
-            # assert [] is not False
+            # assert [] is not the same object as False
             assert a_list is not False
             # self.assertIs([], False)
             # self.assertIsNot([], False)
@@ -1587,7 +1587,7 @@ the test is green again.
             self.assertIsNot('', False)
 
             a_tuple = ()
-            # assert () is not False
+            # assert () is not the same object as False
             assert a_tuple is not False
             # self.assertIs((), False)
             # self.assertIsNot((), False)
@@ -1617,7 +1617,7 @@ the test is green again.
             self.assertIsNot(0.0, False)
 
             a_string = ''
-            # assert '' is not False
+            # assert '' is not the same object as False
             assert a_string is not False
             # self.assertIs('', False)
             # self.assertIsNot('', False)
@@ -1647,7 +1647,7 @@ the test is green again.
             self.assertIsNot(0, False)
 
             a_float = 0.0
-            # assert 0.0 is not False
+            # assert 0.0 is not the same object as False
             assert a_float is not False
             # self.assertIs(0.0, False)
             # self.assertIsNot(0.0, False)
@@ -1677,7 +1677,7 @@ the test is green again.
             self.assertIsNot(True, False)
 
             an_integer = 0
-            # assert 0 is not False
+            # assert 0 is not the same object as False
             assert an_integer is not False
             # self.assertIs(0, False)
             # self.assertIsNot(0, False)
@@ -2082,7 +2082,7 @@ the test is green again.
             self.assertIsNot(set(), True)
 
             a_dictionary = {}
-            # assert {} is not True
+            # assert {} is not the same object as True
             assert a_dictionary is not True
             # self.assertIs({}, True)
             # self.assertIsNot({}, True)
@@ -2115,7 +2115,7 @@ the test is green again.
             self.assertIsNot([], True)
 
             a_set = set()
-            # assert set() is not True
+            # assert set() is not the same object as True
             assert a_set is not True
             # self.assertIs(set(), True)
             # self.assertIsNot(set(), True)
@@ -2145,7 +2145,7 @@ the test is green again.
             self.assertIsNot((), True)
 
             a_list = []
-            # assert [] is not True
+            # assert [] is not the same object as True
             assert a_list is not True
             # self.assertIs([], True)
             # self.assertIsNot([], True)
@@ -2175,7 +2175,7 @@ the test is green again.
             self.assertIsNot('', True)
 
             a_tuple = ()
-            # assert () is not True
+            # assert () is not the same object as True
             assert a_tuple is not True
             # self.assertIs((), True)
             # self.assertIsNot((), True)
@@ -2205,7 +2205,7 @@ the test is green again.
             self.assertIsNot(0.0, True)
 
             a_string = ''
-            # assert '' is not True
+            # assert '' is not the same object as True
             assert a_string is not True
             # self.assertIs('', True)
             # self.assertIsNot('', True)
@@ -2235,7 +2235,7 @@ the test is green again.
             self.assertIsNot(0, True)
 
             a_float = 0.0
-            # assert 0.0 is not True
+            # assert 0.0 is not the same object as True
             assert a_float is not True
             # self.assertIs(0.0, True)
             # self.assertIsNot(0.0, True)
@@ -2265,7 +2265,7 @@ the test is green again.
             self.assertIs(True, True)
 
             an_integer = 0
-            # assert 0 is not True
+            # assert 0 is not the same object as True
             assert an_integer is not True
             # self.assertIs(0, True)
             # self.assertIsNot(0, True)
@@ -3092,7 +3092,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(True, None)
 
             # an_integer = 0
-            # assert an_integer is not None
+            # assert an_integer is not the same object as None
             # self.assertIsNot(an_integer, None)
             assert self.an_integer is not None
             self.assertIsNot(self.an_integer, None)
@@ -3120,7 +3120,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(True, False)
 
             # an_integer = 0
-            # assert an_integer is not False
+            # assert an_integer is not the same object as False
             # self.assertIsNot(an_integer, False)
             assert self.an_integer is not False
             self.assertIsNot(self.an_integer, False)
@@ -3148,7 +3148,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIs(True, True)
 
             # an_integer = 0
-            # assert an_integer is not True
+            # assert an_integer is not the same object as True
             # self.assertIsNot(an_integer, True)
             assert self.an_integer is not True
             self.assertIsNot(self.an_integer, True)
@@ -3181,7 +3181,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.an_integer, None)
 
             # a_float = 0.0
-            # assert a_float is not None
+            # assert a_float is not the same object as None
             # self.assertIsNot(a_float, None)
             assert self.a_float is not None
             self.assertIsNot(self.a_float, None)
@@ -3199,7 +3199,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.an_integer, False)
 
             # a_float = 0.0
-            # assert a_float is not False
+            # assert a_float is not the same object as False
             # self.assertIsNot(a_float, False)
             assert self.a_float is not False
             self.assertIsNot(self.a_float, False)
@@ -3217,7 +3217,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.an_integer, True)
 
             # a_float = 0.0
-            # assert a_float is not True
+            # assert a_float is not the same object as True
             # self.assertIsNot(a_float, True)
             assert self.a_float is not True
             self.assertIsNot(self.a_float, True)
@@ -3251,7 +3251,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_float, None)
 
             # a_string = ''
-            # assert a_string is not None
+            # assert a_string is not the same object as None
             # self.assertIsNot(a_string, None)
             assert self.a_string is not None
             self.assertIsNot(self.a_string, None)
@@ -3269,7 +3269,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_float, False)
 
             # a_string = ''
-            # assert a_string is not False
+            # assert a_string is not the same object as False
             # self.assertIsNot(a_string, False)
             assert self.a_string is not False
             self.assertIsNot(self.a_string, False)
@@ -3287,7 +3287,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_float, True)
 
             # a_string = ''
-            # assert a_string is not True
+            # assert a_string is not the same object as True
             # self.assertIsNot(a_string, True)
             assert self.a_string is not True
             self.assertIsNot(self.a_string, True)
@@ -3322,7 +3322,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_string, None)
 
             # a_tuple = ()
-            # assert a_tuple is not None
+            # assert a_tuple is not the same object as None
             # self.assertIsNot(a_tuple, None)
             assert self.a_tuple is not None
             self.assertIsNot(self.a_tuple, None)
@@ -3340,7 +3340,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_string, False)
 
             # a_tuple = ()
-            # assert a_tuple is not False
+            # assert a_tuple is not the same object as False
             # self.assertIsNot(a_tuple, False)
             assert self.a_tuple is not False
             self.assertIsNot(self.a_tuple, False)
@@ -3358,7 +3358,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_string, True)
 
             # a_tuple = ()
-            # assert a_tuple is not True
+            # assert a_tuple is not the same object as True
             # self.assertIsNot(a_tuple, True)
             assert self.a_tuple is not True
             self.assertIsNot(self.a_tuple, True)
@@ -3394,7 +3394,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_tuple, None)
 
             # a_list = []
-            # assert a_list is not None
+            # assert a_list is not the same object as None
             # self.assertIsNot(a_list, None)
             assert self.a_list is not None
             self.assertIsNot(self.a_list, None)
@@ -3412,7 +3412,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_tuple, False)
 
             # a_list = []
-            # assert a_list is not False
+            # assert a_list is not the same object as False
             # self.assertIsNot(a_list, False)
             assert self.a_list is not False
             self.assertIsNot(self.a_list, False)
@@ -3430,7 +3430,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_tuple, True)
 
             # a_list = []
-            # assert a_list is not True
+            # assert a_list is not the same object as True
             # self.assertIsNot(a_list, True)
             assert self.a_list is not True
             self.assertIsNot(self.a_list, True)
@@ -3467,7 +3467,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_list, None)
 
             # a_set = set()
-            # assert a_set is not None
+            # assert a_set is not the same object as None
             # self.assertIsNot(a_set, None)
             assert self.a_set is not None
             self.assertIsNot(self.a_set, None)
@@ -3485,7 +3485,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_list, False)
 
             # a_set = set()
-            # assert a_set is not False
+            # assert a_set is not the same object as False
             # self.assertIsNot(a_set, False)
             assert self.a_set is not False
             self.assertIsNot(self.a_set, False)
@@ -3503,7 +3503,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_list, True)
 
             # a_set = set()
-            # assert a_set is not True
+            # assert a_set is not the same object as True
             # self.assertIsNot(a_set, True)
             assert self.a_set is not True
             self.assertIsNot(self.a_set, True)
@@ -3541,7 +3541,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_set, None)
 
             # a_dictionary = {}
-            # assert a_dictionary is not None
+            # assert a_dictionary is not the same object as None
             # self.assertIsNot(a_dictionary, None)
             assert self.a_dictionary is not None
             self.assertIsNot(self.a_dictionary, None)
@@ -3559,7 +3559,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_set, False)
 
             # a_dictionary = {}
-            # assert a_dictionary is not False
+            # assert a_dictionary is not the same object as False
             # self.assertIsNot(a_dictionary, False)
             assert self.a_dictionary is not False
             self.assertIsNot(self.a_dictionary, False)
@@ -3577,7 +3577,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
             self.assertIsNot(self.a_set, True)
 
             # a_dictionary = {}
-            # assert a_dictionary is not True
+            # assert a_dictionary is not the same object as True
             # self.assertIsNot(a_dictionary, True)
             assert self.a_dictionary is not True
             self.assertIsNot(self.a_dictionary, True)

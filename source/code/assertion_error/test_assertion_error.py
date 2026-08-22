@@ -93,46 +93,54 @@ def test_assertion_error_w_is_vs_equal():
 
 
 def will_not_run():
+    # will not run because
+    # the name does not start with test
     assert False == True
 
 
 def test_failure():
     # assert False == True
-    assert False == False
+    assert False != True
 
 
 # NOTES
-# a dictionary is not True
-# a dictionary is not False
-# a dictionary is not None
-# a set is not True
-# a set is not False
-# a set is not None
-# a list is not True
-# a list is not False
-# a list is not None
-# a tuple is not True
-# a tuple is not False
-# a tuple is not None
-# a string is not True
-# a string is not False
-# a string is not None
-# a float is not True
-# a float is not False
-# a float is not None
-# an integer is not True
-# an integer is not False
-# an integer is not None
+# a dictionary is not the same object as True
+# a dictionary is not the same object as False
+# a dictionary is not the same object as None
+# a set is not the same object as True
+# a set is not the same object as False
+# a set is not the same object as None
+# a list is not the same object as True
+# a list is not the same object as False
+# a list is not the same object as None
+# a tuple is not the same object as True
+# a tuple is not the same object as False
+# a tuple is not the same object as None
+# a string is not the same object as True
+# a string is not the same object as False
+# a string is not the same object as None
+# a float is not the same object as True
+# a float is not the same object as False
+# a float is not the same object as None
+# an integer is not the same object as True
+# an integer is not the same object as False
+# an integer is not the same object as None
 # True is True and equal to True
-# True is not False and NOT equal to False
-# True is not None and NOT equal to None
-# False is not True and NOT equal to True
+# True is not equal to False
+# True is not the same object as False
+# True is not equal to None
+# True is not the same object as None
+# False is not equal to True
+# False is not the same object as True
 # False is False and equal to False
-# False is not None and NOT equal to None
-# None is not True and NOT equal to True
-# None is not False and NOT equal to False
+# False is not equal to None
+# False is not the same object as None
+# None is not equal to True
+# None is not the same object as True
+# None is not equal to False
+# None is not the same object as False
 # None is None and equal to None
-
 
 # Exceptions seen
 # AssertionError
+# IndentationError

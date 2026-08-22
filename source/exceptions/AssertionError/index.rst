@@ -79,7 +79,19 @@ I have these tests by the end of the chapter
   :language: python
   :lineno-start: 104
   :caption: assertion_error/tests/test_assertion_error.py
-  :lines: 104-
+  :lines: 104-116
+
+.. literalinclude:: ../../code/assertion_error/test_assertion_error.py
+  :language: python
+  :lineno-start: 117
+  :caption: assertion_error/tests/test_assertion_error.py
+  :lines: 117-125
+
+.. literalinclude:: ../../code/assertion_error/test_assertion_error.py
+  :language: python
+  :lineno-start: 126
+  :caption: assertion_error/tests/test_assertion_error.py
+  :lines: 126-
 
 
 *********************************************************************************
@@ -524,7 +536,7 @@ With this statement, I tell Python_ - "DO NOT CONTINUE, if :ref:`False<test_what
   - ``assert 1 + 1 == 2`` checks if the result of :ref:`adding<test_addition>` two numbers (``1 + 1``) is equal to the number on the right side (``2``) of the equality symbol (``==``).
   - ``assert '1' + '1' == '11'`` checks if the result of "adding" 2 strings_ (``'1' + '1'``) is equal to the string_ on the right side (``'11'``)of the equality symbol (``==``). A string_ is anything inside :ref:`quotes`.
 
-  I add another statement to show how ``'1' + '1' == '11'``
+  I add another statement to show the "addition" of two strings_
 
   .. code-block:: python
     :lineno-start: 6
@@ -616,7 +628,7 @@ With this statement, I tell Python_ - "DO NOT CONTINUE, if :ref:`False<test_what
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'test the assert keyword'
+    'test assert keyword'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -662,7 +674,7 @@ For example, if I have people fill a form and I want a test for when they leave 
 
     assert 'I am' + ' alive' == 'I am alive'
 
-    # None is not None
+    # None is not the same object as None
     assert None is not None
 
     # Exceptions seen
@@ -689,8 +701,8 @@ I change the statement to make it :ref:`True<test_what_is_true>`
   :lineno-start: 7
   :emphasize-lines: 2-3
 
-    # None is not None
-    # assert None is not None
+    # None is not the same object as None
+    # assert None is not the same object as None
     assert None is None
 
     # Exceptions seen
@@ -711,8 +723,8 @@ the test passes.
     :lineno-start: 7
     :emphasize-lines: 6-7
 
-    # None is not None
-    # assert None is not None
+    # None is not the same object as None
+    # assert None is not the same object as None
     assert None is None
 
 
@@ -730,8 +742,8 @@ the test passes.
     :lineno-start: 7
     :emphasize-lines: 5
 
-    # None is not None
-    # assert None is not None
+    # None is not the same object as None
+    # assert None is not the same object as None
     assert None is None
 
     assert False is None
@@ -751,8 +763,8 @@ the test passes.
     :lineno-start: 7
     :emphasize-lines: 5-6
 
-    # None is not None
-    # assert None is not None
+    # None is not the same object as None
+    # assert None is not the same object as None
     assert None is None
 
     # assert False is None
@@ -774,7 +786,7 @@ the test passes.
 
 
     # NOTES
-    # False is not None
+    # False is not the same object as None
     # None is None
 
     # Exceptions seen
@@ -825,8 +837,8 @@ the test passes.
     :emphasize-lines: 2
 
     # NOTES
-    # True is not None
-    # False is not None
+    # True is not the same object as None
+    # False is not the same object as None
     # None is None
 
     # Exceptions seen
@@ -878,14 +890,10 @@ the test passes.
     :emphasize-lines: 2
 
     # NOTES
-    # an integer is not None
-    # True is not None
-    # False is not None
+    # an integer is not the same object as None
+    # True is not the same object as None
+    # False is not the same object as None
     # None is None
-
-
-    # Exceptions seen
-    # AssertionError
 
 ----
 
@@ -933,15 +941,11 @@ the test passes.
     :emphasize-lines: 2
 
     # NOTES
-    # a float is not None
-    # an integer is not None
-    # True is not None
-    # False is not None
+    # a float is not the same object as None
+    # an integer is not the same object as None
+    # True is not the same object as None
+    # False is not the same object as None
     # None is None
-
-
-    # Exceptions seen
-    # AssertionError
 
 ----
 
@@ -991,23 +995,19 @@ the test passes.
     :emphasize-lines: 2
 
     # NOTES
-    # a string is not None
-    # a float is not None
-    # an integer is not None
-    # True is not None
-    # False is not None
+    # a string is not the same object as None
+    # a float is not the same object as None
+    # an integer is not the same object as None
+    # True is not the same object as None
+    # False is not the same object as None
     # None is None
-
-
-    # Exceptions seen
-    # AssertionError
 
 ----
 
 * I add an `assert statement`_ for a tuple_ (anything in parentheses ``( )`` separated by a comma)
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 23
     :emphasize-lines: 4
 
     # assert '' is None
@@ -1029,7 +1029,7 @@ the test passes.
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 23
     :emphasize-lines: 4-5
 
     # assert '' is None
@@ -1050,17 +1050,13 @@ the test passes.
     :emphasize-lines: 2
 
     # NOTES
-    # a tuple is not None
-    # a string is not None
-    # a float is not None
-    # an integer is not None
-    # True is not None
-    # False is not None
+    # a tuple is not the same object as None
+    # a string is not the same object as None
+    # a float is not the same object as None
+    # an integer is not the same object as None
+    # True is not the same object as None
+    # False is not the same object as None
     # None is None
-
-
-    # Exceptions seen
-    # AssertionError
 
 ----
 
@@ -1110,18 +1106,14 @@ the test passes.
     :emphasize-lines: 2
 
     # NOTES
-    # a list is not None
-    # a tuple is not None
-    # a string is not None
-    # a float is not None
-    # an integer is not None
-    # True is not None
-    # False is not None
+    # a list is not the same object as None
+    # a tuple is not the same object as None
+    # a string is not the same object as None
+    # a float is not the same object as None
+    # an integer is not the same object as None
+    # True is not the same object as None
+    # False is not the same object as None
     # None is None
-
-
-    # Exceptions seen
-    # AssertionError
 
 ----
 
@@ -1169,19 +1161,15 @@ the test passes.
     :emphasize-lines: 2
 
     # NOTES
-    # a set is not None
-    # a list is not None
-    # a tuple is not None
-    # a string is not None
-    # a float is not None
-    # an integer is not None
-    # True is not None
-    # False is not None
+    # a set is not the same object as None
+    # a list is not the same object as None
+    # a tuple is not the same object as None
+    # a string is not the same object as None
+    # a float is not the same object as None
+    # an integer is not the same object as None
+    # True is not the same object as None
+    # False is not the same object as None
     # None is None
-
-
-    # Exceptions seen
-    # AssertionError
 
 ----
 
@@ -1225,19 +1213,19 @@ the test passes.
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 51
+    :lineno-start: 39
     :emphasize-lines: 2
 
     # NOTES
-    # a dictionary is not None
-    # a set is not None
-    # a list is not None
-    # a tuple is not None
-    # a string is not None
-    # a float is not None
-    # an integer is not None
-    # True is not None
-    # False is not None
+    # a dictionary is not the same object as None
+    # a set is not the same object as None
+    # a list is not the same object as None
+    # a tuple is not the same object as None
+    # a string is not the same object as None
+    # a float is not the same object as None
+    # an integer is not the same object as None
+    # True is not the same object as None
+    # False is not the same object as None
     # None is None
 
 
@@ -1297,7 +1285,7 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'add test AssertionError with None'
+    'test AssertionError with None'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -1309,9 +1297,12 @@ the test passes.
 test AssertionError with False
 *********************************************************************************
 
-:ref:`False<test_what_is_false>` is one of the two :ref:`booleans<what are booleans?>` and ``assert False is not None`` shows that :ref:`False<test_what_is_false>` is NOT :ref:`None<what is None?>`. :ref:`is None False?<test_is_none_falsy_or_truthy>`
-
 I can use :ref:`assertions<what is an assertion?>` to test if something is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>` or not.
+
+:ref:`False<test_what_is_false>` is one of the two :ref:`booleans<what are booleans?>` and ``assert False is not None`` shows that :ref:`False<test_what_is_false>` is NOT :ref:`None<what is None?>`.
+
+:ref:`Is None False?<test_is_none_falsy_or_truthy>`
+
 
 ----
 
@@ -1323,7 +1314,7 @@ I can use :ref:`assertions<what is an assertion?>` to test if something is the s
 
 * I go back to the terminal_ where the tests are running
 
-* I add a new statement to ``test_assertion_error.py`` with a comment to group these new statements
+* :ref:`False<test_what_is_false>` is NOT the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`. Is :ref:`None<what is None?>` the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`? I add a new statement to ``test_assertion_error.py`` with a comment to group the new statements that will come after
 
   .. code-block:: python
     :lineno-start: 28
@@ -1400,16 +1391,16 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 11
 
     # NOTES
-    # a dictionary is not None
-    # a set is not None
-    # a list is not None
-    # a tuple is not None
-    # a string is not None
-    # a float is not None
-    # an integer is not None
-    # True is not None
-    # False is not None
-    # None is not False
+    # a dictionary is not the same object as None
+    # a set is not the same object as None
+    # a list is not the same object as None
+    # a tuple is not the same object as None
+    # a string is not the same object as None
+    # a float is not the same object as None
+    # an integer is not the same object as None
+    # True is not the same object as None
+    # False is not the same object as None
+    # None is not the same object as False
     # None is None
 
 ----
@@ -1449,7 +1440,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     # assert None is False
     assert None is not False
 
-    # assert False is not False
+    # assert False is not the same object as False
     assert False is False
 
 
@@ -1464,18 +1455,16 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 10
 
     # NOTES
-    # a dictionary is not None
-    # a set is not None
-    # a list is not None
-    # a tuple is not None
-    # a string is not None
-    # a float is not None
-    # an integer is not None
-    # True is not None
+    # a dictionary is not the same object as None
+    # a set is not the same object as None
+    # a list is not the same object as None
+    # a tuple is not the same object as None
+    # a string is not the same object as None
+    # a float is not the same object as None
+    # an integer is not the same object as None
+    # True is not the same object as None
     # False is False
-    # False is not None
-    # None is not False
-    # None is None
+    # False is not the same object as None
 
 ----
 
@@ -1485,7 +1474,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :lineno-start: 36
     :emphasize-lines: 4
 
-    # assert False is not False
+    # assert False is not the same object as False
     assert False is False
 
     assert True is False
@@ -1507,7 +1496,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :lineno-start: 36
     :emphasize-lines: 4-5
 
-    # assert False is not False
+    # assert False is not the same object as False
     assert False is False
 
     # assert True is False
@@ -1525,19 +1514,15 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 9
 
     # NOTES
-    # a dictionary is not None
-    # a set is not None
-    # a list is not None
-    # a tuple is not None
-    # a string is not None
-    # a float is not None
-    # an integer is not None
-    # True is not False
-    # True is not None
-    # False is False
-    # False is not None
-    # None is not False
-    # None is None
+    # a dictionary is not the same object as None
+    # a set is not the same object as None
+    # a list is not the same object as None
+    # a tuple is not the same object as None
+    # a string is not the same object as None
+    # a float is not the same object as None
+    # an integer is not the same object as None
+    # True is not the same object as False
+    # True is not the same object as None
 
 ----
 
@@ -1587,20 +1572,14 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 8
 
     # NOTES
-    # a dictionary is not None
-    # a set is not None
-    # a list is not None
-    # a tuple is not None
-    # a string is not None
-    # a float is not None
-    # an integer is not False
-    # an integer is not None
-    # True is not False
-    # True is not None
-    # False is False
-    # False is not None
-    # None is not False
-    # None is None
+    # a dictionary is not the same object as None
+    # a set is not the same object as None
+    # a list is not the same object as None
+    # a tuple is not the same object as None
+    # a string is not the same object as None
+    # a float is not the same object as None
+    # an integer is not the same object as False
+    # an integer is not the same object as None
 
 ----
 
@@ -1650,21 +1629,13 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 7
 
     # NOTES
-    # a dictionary is not None
-    # a set is not None
-    # a list is not None
-    # a tuple is not None
-    # a string is not None
-    # a float is not False
-    # a float is not None
-    # an integer is not False
-    # an integer is not None
-    # True is not False
-    # True is not None
-    # False is False
-    # False is not None
-    # None is not False
-    # None is None
+    # a dictionary is not the same object as None
+    # a set is not the same object as None
+    # a list is not the same object as None
+    # a tuple is not the same object as None
+    # a string is not the same object as None
+    # a float is not the same object as False
+    # a float is not the same object as None
 
 ----
 
@@ -1715,22 +1686,12 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 6
 
     # NOTES
-    # a dictionary is not None
-    # a set is not None
-    # a list is not None
-    # a tuple is not None
-    # a string is not False
-    # a string is not None
-    # a float is not False
-    # a float is not None
-    # an integer is not False
-    # an integer is not None
-    # True is not False
-    # True is not None
-    # False is False
-    # False is not None
-    # None is not False
-    # None is None
+    # a dictionary is not the same object as None
+    # a set is not the same object as None
+    # a list is not the same object as None
+    # a tuple is not the same object as None
+    # a string is not the same object as False
+    # a string is not the same object as None
 
 ----
 
@@ -1780,23 +1741,11 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 5
 
     # NOTES
-    # a dictionary is not None
-    # a set is not None
-    # a list is not None
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not False
-    # a string is not None
-    # a float is not False
-    # a float is not None
-    # an integer is not False
-    # an integer is not None
-    # True is not False
-    # True is not None
-    # False is False
-    # False is not None
-    # None is not False
-    # None is None
+    # a dictionary is not the same object as None
+    # a set is not the same object as None
+    # a list is not the same object as None
+    # a tuple is not the same object as False
+    # a tuple is not the same object as None
 
 ----
 
@@ -1846,24 +1795,10 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 4
 
     # NOTES
-    # a dictionary is not None
-    # a set is not None
-    # a list is not False
-    # a list is not None
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not False
-    # a string is not None
-    # a float is not False
-    # a float is not None
-    # an integer is not False
-    # an integer is not None
-    # True is not False
-    # True is not None
-    # False is False
-    # False is not None
-    # None is not False
-    # None is None
+    # a dictionary is not the same object as None
+    # a set is not the same object as None
+    # a list is not the same object as False
+    # a list is not the same object as None
 
 ----
 
@@ -1912,25 +1847,9 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 3
 
     # NOTES
-    # a dictionary is not None
-    # a set is not False
-    # a set is not None
-    # a list is not False
-    # a list is not None
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not False
-    # a string is not None
-    # a float is not False
-    # a float is not None
-    # an integer is not False
-    # an integer is not None
-    # True is not False
-    # True is not None
-    # False is False
-    # False is not None
-    # None is not False
-    # None is None
+    # a dictionary is not the same object as None
+    # a set is not the same object as False
+    # a set is not the same object as None
 
 -----
 
@@ -1959,7 +1878,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 51
+    :lineno-start: 57
     :emphasize-lines: 4-5
 
     # assert set() is False
@@ -1980,30 +1899,8 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 2
 
     # NOTES
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not False
-    # a set is not None
-    # a list is not False
-    # a list is not None
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not False
-    # a string is not None
-    # a float is not False
-    # a float is not None
-    # an integer is not False
-    # an integer is not None
-    # True is not False
-    # True is not None
-    # False is False
-    # False is not None
-    # None is not False
-    # None is None
-
-
-    # Exceptions seen
-    # AssertionError
+    # a dictionary is not the same object as False
+    # a dictionary is not the same object as None
 
 * I remove the commented :ref:`assertions<what is an assertion?>`
 
@@ -2040,7 +1937,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'add test AssertionError with False'
+    'test AssertionError with False'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -2139,31 +2036,31 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 20
 
     # NOTES
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not False
-    # a set is not None
-    # a list is not False
-    # a list is not None
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not False
-    # a string is not None
-    # a float is not False
-    # a float is not None
-    # an integer is not False
-    # an integer is not None
-    # True is not False
-    # True is not None
+    # a dictionary is not the same object as False
+    # a dictionary is not the same object as None
+    # a set is not the same object as False
+    # a set is not the same object as None
+    # a list is not the same object as False
+    # a list is not the same object as None
+    # a tuple is not the same object as False
+    # a tuple is not the same object as None
+    # a string is not the same object as False
+    # a string is not the same object as None
+    # a float is not the same object as False
+    # a float is not the same object as None
+    # an integer is not the same object as False
+    # an integer is not the same object as None
+    # True is not the same object as False
+    # True is not the same object as None
     # False is False
-    # False is not None
-    # None is not True
-    # None is not False
+    # False is not the same object as None
+    # None is not the same object as True
+    # None is not the same object as False
     # None is None
 
 ----
 
-* I add an `assert statement`_ to see if :ref:`False<test_what_is_false>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* :ref:`True<test_what_is_true>` is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`. Is :ref:`False<test_what_is_false>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`? I add an `assert statement`_
 
   .. code-block:: python
     :lineno-start: 53
@@ -2213,32 +2110,29 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 18
 
     # NOTES
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not False
-    # a set is not None
-    # a list is not False
-    # a list is not None
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not False
-    # a string is not None
-    # a float is not False
-    # a float is not None
-    # an integer is not False
-    # an integer is not None
-    # True is not False
-    # True is not None
-    # False is not True
+    # a dictionary is not the same object as False
+    # a dictionary is not the same object as None
+    # a set is not the same object as False
+    # a set is not the same object as None
+    # a list is not the same object as False
+    # a list is not the same object as None
+    # a tuple is not the same object as False
+    # a tuple is not the same object as None
+    # a string is not the same object as False
+    # a string is not the same object as None
+    # a float is not the same object as False
+    # a float is not the same object as None
+    # an integer is not the same object as False
+    # an integer is not the same object as None
+    # True is not the same object as False
+    # True is not the same object as None
+    # False is not the same object as True
     # False is False
-    # False is not None
-    # None is not True
-    # None is not False
-    # None is None
+    # False is not the same object as None
 
 ----
 
-* I add an `assert statement`_ about :ref:`True<test_what_is_true>`, that will fail
+* I add an `assert statement`_ about :ref:`True<test_what_is_true>` that will fail
 
   .. code-block:: python
     :lineno-start: 58
@@ -2267,7 +2161,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     # assert False is True
     assert False is not True
 
-    # assert True is not True
+    # assert True is not the same object as True
     assert True is True
 
 
@@ -2282,29 +2176,23 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 16
 
     # NOTES
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not False
-    # a set is not None
-    # a list is not False
-    # a list is not None
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not False
-    # a string is not None
-    # a float is not False
-    # a float is not None
-    # an integer is not False
-    # an integer is not None
+    # a dictionary is not the same object as False
+    # a dictionary is not the same object as None
+    # a set is not the same object as False
+    # a set is not the same object as None
+    # a list is not the same object as False
+    # a list is not the same object as None
+    # a tuple is not the same object as False
+    # a tuple is not the same object as None
+    # a string is not the same object as False
+    # a string is not the same object as None
+    # a float is not the same object as False
+    # a float is not the same object as None
+    # an integer is not the same object as False
+    # an integer is not the same object as None
     # True is True
-    # True is not False
-    # True is not None
-    # False is not True
-    # False is False
-    # False is not None
-    # None is not True
-    # None is not False
-    # None is None
+    # True is not the same object as False
+    # True is not the same object as None
 
 ----
 
@@ -2314,7 +2202,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :lineno-start: 61
     :emphasize-lines: 4
 
-    # assert True is not True
+    # assert True is not the same object as True
     assert True is True
 
     assert 0 is True
@@ -2336,7 +2224,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :lineno-start: 61
     :emphasize-lines: 4-5
 
-    # assert True is not True
+    # assert True is not the same object as True
     assert True is True
 
     # assert 0 is True
@@ -2354,30 +2242,21 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 14
 
     # NOTES
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not False
-    # a set is not None
-    # a list is not False
-    # a list is not None
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not False
-    # a string is not None
-    # a float is not False
-    # a float is not None
-    # an integer is not True
-    # an integer is not False
-    # an integer is not None
-    # True is True
-    # True is not False
-    # True is not None
-    # False is not True
-    # False is False
-    # False is not None
-    # None is not True
-    # None is not False
-    # None is None
+    # a dictionary is not the same object as False
+    # a dictionary is not the same object as None
+    # a set is not the same object as False
+    # a set is not the same object as None
+    # a list is not the same object as False
+    # a list is not the same object as None
+    # a tuple is not the same object as False
+    # a tuple is not the same object as None
+    # a string is not the same object as False
+    # a string is not the same object as None
+    # a float is not the same object as False
+    # a float is not the same object as None
+    # an integer is not the same object as True
+    # an integer is not the same object as False
+    # an integer is not
 
 ----
 
@@ -2427,31 +2306,19 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 12
 
     # NOTES
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not False
-    # a set is not None
-    # a list is not False
-    # a list is not None
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not False
-    # a string is not None
-    # a float is not True
-    # a float is not False
-    # a float is not None
-    # an integer is not True
-    # an integer is not False
-    # an integer is not None
-    # True is True
-    # True is not False
-    # True is not None
-    # False is not True
-    # False is False
-    # False is not None
-    # None is not True
-    # None is not False
-    # None is None
+    # a dictionary is not the same object as False
+    # a dictionary is not the same object as None
+    # a set is not the same object as False
+    # a set is not the same object as None
+    # a list is not the same object as False
+    # a list is not the same object as None
+    # a tuple is not the same object as False
+    # a tuple is not the same object as None
+    # a string is not the same object as False
+    # a string is not the same object as None
+    # a float is not the same object as True
+    # a float is not the same object as False
+    # a float is not the same object as None
 
 ----
 
@@ -2501,39 +2368,24 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 10
 
     # NOTES
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not False
-    # a set is not None
-    # a list is not False
-    # a list is not None
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not True
-    # a string is not False
-    # a string is not None
-    # a float is not True
-    # a float is not False
-    # a float is not None
-    # an integer is not True
-    # an integer is not False
-    # an integer is not None
-    # True is True
-    # True is not False
-    # True is not None
-    # False is not True
-    # False is False
-    # False is not None
-    # None is not True
-    # None is not False
-    # None is None
+    # a dictionary is not the same object as False
+    # a dictionary is not the same object as None
+    # a set is not the same object as False
+    # a set is not the same object as None
+    # a list is not the same object as False
+    # a list is not the same object as None
+    # a tuple is not the same object as False
+    # a tuple is not the same object as None
+    # a string is not the same object as True
+    # a string is not the same object as False
+    # a string is not the same object as None
 
 ----
 
 * I add an `assert statement`_ to see if a tuple_ (anything in parentheses ``( )`` separated by a comma) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 70
     :emphasize-lines: 4
 
     # assert '' is True
@@ -2574,33 +2426,15 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 8
 
     # NOTES
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not False
-    # a set is not None
-    # a list is not False
-    # a list is not None
-    # a tuple is not True
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not True
-    # a string is not False
-    # a string is not None
-    # a float is not True
-    # a float is not False
-    # a float is not None
-    # an integer is not True
-    # an integer is not False
-    # an integer is not None
-    # True is True
-    # True is not False
-    # True is not None
-    # False is not True
-    # False is False
-    # False is not None
-    # None is not True
-    # None is not False
-    # None is None
+    # a dictionary is not the same object as False
+    # a dictionary is not the same object as None
+    # a set is not the same object as False
+    # a set is not the same object as None
+    # a list is not the same object as False
+    # a list is not the same object as None
+    # a tuple is not the same object as True
+    # a tuple is not the same object as False
+    # a tuple is not the same object as None
 
 ----
 
@@ -2650,34 +2484,13 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 6
 
     # NOTES
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not False
-    # a set is not None
-    # a list is not True
-    # a list is not False
-    # a list is not None
-    # a tuple is not True
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not True
-    # a string is not False
-    # a string is not None
-    # a float is not True
-    # a float is not False
-    # a float is not None
-    # an integer is not True
-    # an integer is not False
-    # an integer is not None
-    # True is True
-    # True is not False
-    # True is not None
-    # False is not True
-    # False is False
-    # False is not None
-    # None is not True
-    # None is not False
-    # None is None
+    # a dictionary is not the same object as False
+    # a dictionary is not the same object as None
+    # a set is not the same object as False
+    # a set is not the same object as None
+    # a list is not the same object as True
+    # a list is not the same object as False
+    # a list is not the same object as None
 
 ----
 
@@ -2727,35 +2540,11 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 4
 
     # NOTES
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not True
-    # a set is not False
-    # a set is not None
-    # a list is not True
-    # a list is not False
-    # a list is not None
-    # a tuple is not True
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not True
-    # a string is not False
-    # a string is not None
-    # a float is not True
-    # a float is not False
-    # a float is not None
-    # an integer is not True
-    # an integer is not False
-    # an integer is not None
-    # True is True
-    # True is not False
-    # True is not None
-    # False is not True
-    # False is False
-    # False is not None
-    # None is not True
-    # None is not False
-    # None is None
+    # a dictionary is not the same object as False
+    # a dictionary is not the same object as None
+    # a set is not the same object as True
+    # a set is not the same object as False
+    # a set is not the same object as None
 
 -----
 
@@ -2805,40 +2594,9 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     :emphasize-lines: 2
 
     # NOTES
-    # a dictionary is not True
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not True
-    # a set is not False
-    # a set is not None
-    # a list is not True
-    # a list is not False
-    # a list is not None
-    # a tuple is not True
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not True
-    # a string is not False
-    # a string is not None
-    # a float is not True
-    # a float is not False
-    # a float is not None
-    # an integer is not True
-    # an integer is not False
-    # an integer is not None
-    # True is True
-    # True is not False
-    # True is not None
-    # False is not True
-    # False is False
-    # False is not None
-    # None is not True
-    # None is not False
-    # None is None
-
-
-    # Exceptions seen
-    # AssertionError
+    # a dictionary is not the same object as True
+    # a dictionary is not the same object as False
+    # a dictionary is not the same object as None
 
 * I remove the commented :ref:`assertions<what is an assertion?>`
 
@@ -2887,9 +2645,9 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 test AssertionError with equality
 *********************************************************************************
 
-All the :ref:`assertions<what is an assertion?>` I have typed so far show that :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None<what is None?>` are different. They give me a basic expectation of Python_ because I can compare things with them.
+All the :ref:`assertions<what is an assertion?>` I have typed so far show that :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None<what is None?>` are different :ref:`objects<everything is an object>`, which gives me a basic expectation of Python_ because I can compare things with those three.
 
-I can also use :ref:`assertions<what is an assertion?>` to test if two things are equal, like I did when I :ref:`test the assert keyword<the assert keyword>`.
+I can also use :ref:`assertions<what is an assertion?>` to test if two things are equal, like I did when I :ref:`test assert keyword<the assert keyword>`.
 
 ----
 
@@ -2916,7 +2674,8 @@ I can also use :ref:`assertions<what is an assertion?>` to test if two things ar
 
     # NOTES
 
-  the test is still passing.
+  - the test is still passing.
+  - ``!=`` is :kbd:`!+=` on the keyboard and means ``is NOT equal`` which makes this statement read as ``None is NOT equal to None``.
 
 * I add :ref:`the assert keyword`
 
@@ -2937,8 +2696,7 @@ I can also use :ref:`assertions<what is an assertion?>` to test if two things ar
 
     E   assert None != None
 
-  - because :ref:`None is equal to None<what is None?>`.
-  - ``==`` is two equal signs on the keyboard (:kbd:`=+=`) and means ``is equal`` which makes this statement read as ``None is equal to None``
+  because :ref:`None is equal to None<what is None?>`.
 
 ----
 
@@ -2980,35 +2738,35 @@ I change the statement to make it :ref:`True<test_what_is_true>`
     :emphasize-lines: 31
 
     # NOTES
-    # a dictionary is not True
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not True
-    # a set is not False
-    # a set is not None
-    # a list is not True
-    # a list is not False
-    # a list is not None
-    # a tuple is not True
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not True
-    # a string is not False
-    # a string is not None
-    # a float is not True
-    # a float is not False
-    # a float is not None
-    # an integer is not True
-    # an integer is not False
-    # an integer is not None
+    # a dictionary is not the same object as True
+    # a dictionary is not the same object as False
+    # a dictionary is not the same object as None
+    # a set is not the same object as True
+    # a set is not the same object as False
+    # a set is not the same object as None
+    # a list is not the same object as True
+    # a list is not the same object as False
+    # a list is not the same object as None
+    # a tuple is not the same object as True
+    # a tuple is not the same object as False
+    # a tuple is not the same object as None
+    # a string is not the same object as True
+    # a string is not the same object as False
+    # a string is not the same object as None
+    # a float is not the same object as True
+    # a float is not the same object as False
+    # a float is not the same object as None
+    # an integer is not the same object as True
+    # an integer is not the same object as False
+    # an integer is not the same object as None
     # True is True
-    # True is not False
-    # True is not None
-    # False is not True
+    # True is not the same object as False
+    # True is not the same object as None
+    # False is not the same object as True
     # False is False
-    # False is not None
-    # None is not True
-    # None is not False
+    # False is not the same object as None
+    # None is not the same object as True
+    # None is not the same object as False
     # None is None and equal to None
 
 * I add an :ref:`assertion<what is an assertion?>` to compare :ref:`False<test_what_is_false>` with :ref:`None<what is None?>`
@@ -3054,42 +2812,44 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 
   the test passes because :ref:`False<test_what_is_false>` is NOT equal to :ref:`None<what is None?>` and :ref:`None<what is None?>` is NOT equal to :ref:`False<test_what_is_false>`.
 
-* I add to the ``False is not None`` and ``None is not False`` notes because equality goes both ways
+* I add notes about :ref:`False<test_what_is_false>` and :ref:`None<what is None?>` because equality goes both ways
 
   .. code-block:: python
     :lineno-start: 84
-    :emphasize-lines: 28, 30
+    :emphasize-lines: 28, 31
 
     # NOTES
-    # a dictionary is not True
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not True
-    # a set is not False
-    # a set is not None
-    # a list is not True
-    # a list is not False
-    # a list is not None
-    # a tuple is not True
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not True
-    # a string is not False
-    # a string is not None
-    # a float is not True
-    # a float is not False
-    # a float is not None
-    # an integer is not True
-    # an integer is not False
-    # an integer is not None
+    # a dictionary is not the same object as True
+    # a dictionary is not the same object as False
+    # a dictionary is not the same object as None
+    # a set is not the same object as True
+    # a set is not the same object as False
+    # a set is not the same object as None
+    # a list is not the same object as True
+    # a list is not the same object as False
+    # a list is not the same object as None
+    # a tuple is not the same object as True
+    # a tuple is not the same object as False
+    # a tuple is not the same object as None
+    # a string is not the same object as True
+    # a string is not the same object as False
+    # a string is not the same object as None
+    # a float is not the same object as True
+    # a float is not the same object as False
+    # a float is not the same object as None
+    # an integer is not the same object as True
+    # an integer is not the same object as False
+    # an integer is not the same object as None
     # True is True
-    # True is not False
-    # True is not None
-    # False is not True
+    # True is not the same object as False
+    # True is not the same object as None
+    # False is not the same object as True
     # False is False
-    # False is not None and NOT equal to None
-    # None is not True
-    # None is not False and NOT equal to False
+    # False is not equal to None
+    # False is not the same object as None
+    # None is not the same object as True
+    # None is not equal to False
+    # None is not the same object as False
     # None is None and equal to None
 
 * I add an :ref:`assertion<what is an assertion?>` to compare :ref:`False<test_what_is_false>` with :ref:`True<test_what_is_true>`
@@ -3131,43 +2891,43 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 
   the test passes because :ref:`False<test_what_is_false>` is NOT equal to :ref:`True<test_what_is_true>` and :ref:`True<test_what_is_true>` is NOT equal to :ref:`False<test_what_is_false>`.
 
-* I add to the ``False is not True`` and ``True is not False`` notes because equality goes both ways
+* I add notes about :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>` because equality goes both ways
 
   .. code-block:: python
     :lineno-start: 87
-    :emphasize-lines: 24, 26
+    :emphasize-lines: 24, 27
 
     # NOTES
-    # a dictionary is not True
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not True
-    # a set is not False
-    # a set is not None
-    # a list is not True
-    # a list is not False
-    # a list is not None
-    # a tuple is not True
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not True
-    # a string is not False
-    # a string is not None
-    # a float is not True
-    # a float is not False
-    # a float is not None
-    # an integer is not True
-    # an integer is not False
-    # an integer is not None
+    # a dictionary is not the same object as True
+    # a dictionary is not the same object as False
+    # a dictionary is not the same object as None
+    # a set is not the same object as True
+    # a set is not the same object as False
+    # a set is not the same object as None
+    # a list is not the same object as True
+    # a list is not the same object as False
+    # a list is not the same object as None
+    # a tuple is not the same object as True
+    # a tuple is not the same object as False
+    # a tuple is not the same object as None
+    # a string is not the same object as True
+    # a string is not the same object as False
+    # a string is not the same object as None
+    # a float is not the same object as True
+    # a float is not the same object as False
+    # a float is not the same object as None
+    # an integer is not the same object as True
+    # an integer is not the same object as False
+    # an integer is not the same object as None
     # True is True
-    # True is not False and NOT equal to False
-    # True is not None
-    # False is not True and NOT equal to True
+    # True is not equal to False
+    # True is not the same object as False
+    # True is not the same object as None
+    # False is not equal to True
+    # False is not the same object as True
     # False is False
-    # False is not None and NOT equal to None
-    # None is not True
-    # None is not False and NOT equal to False
-    # None is None and equal to None
+    # False is not equal to None
+    # False is not the same object as None
 
 * I add an :ref:`assertion<what is an assertion?>` to compare :ref:`False<test_what_is_false>` with itself
 
@@ -3212,39 +2972,39 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 90
-    :emphasize-lines: 27
+    :emphasize-lines: 29
 
     # NOTES
-    # a dictionary is not True
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not True
-    # a set is not False
-    # a set is not None
-    # a list is not True
-    # a list is not False
-    # a list is not None
-    # a tuple is not True
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not True
-    # a string is not False
-    # a string is not None
-    # a float is not True
-    # a float is not False
-    # a float is not None
-    # an integer is not True
-    # an integer is not False
-    # an integer is not None
+    # a dictionary is not the same object as True
+    # a dictionary is not the same object as False
+    # a dictionary is not the same object as None
+    # a set is not the same object as True
+    # a set is not the same object as False
+    # a set is not the same object as None
+    # a list is not the same object as True
+    # a list is not the same object as False
+    # a list is not the same object as None
+    # a tuple is not the same object as True
+    # a tuple is not the same object as False
+    # a tuple is not the same object as None
+    # a string is not the same object as True
+    # a string is not the same object as False
+    # a string is not the same object as None
+    # a float is not the same object as True
+    # a float is not the same object as False
+    # a float is not the same object as None
+    # an integer is not the same object as True
+    # an integer is not the same object as False
+    # an integer is not the same object as None
     # True is True
-    # True is not False and NOT equal to False
-    # True is not None
-    # False is not True and NOT equal to True
+    # True is not equal to False
+    # True is not the same object as False
+    # True is not the same object as None
+    # False is not equal to True
+    # False is not the same object as True
     # False is False and equal to False
-    # False is not None and NOT equal to None
-    # None is not True
-    # None is not False and NOT equal to False
-    # None is None and equal to None
+    # False is not equal to None
+    # False is not the same object as None
 
 ----
 
@@ -3268,7 +3028,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 
     E    assert True == None
 
-  because :ref:`True<test_what_is_true>` is NOT equal :ref:`None<what is None?>` and :ref:`None<what is None?>` is NOT equal to :ref:`True<test_what_is_true>`.
+  because :ref:`True<test_what_is_true>` is NOT equal to :ref:`None<what is None?>` and :ref:`None<what is None?>` is NOT equal to :ref:`True<test_what_is_true>`.
 
 * I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
@@ -3287,42 +3047,48 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 
   the test passes because :ref:`True<test_what_is_true>` is NOT equal :ref:`None<what is None?>` and :ref:`None<what is None?>` is NOT equal to :ref:`True<test_what_is_true>`.
 
-* I add to the ``True is not None`` and ``None is not True`` notes because equality goes both ways
+* I add notes about :ref:`True<test_what_is_true>` and :ref:`None<what is None?>` because equality goes both ways
 
   .. code-block:: python
     :lineno-start: 93
-    :emphasize-lines: 25, 29
+    :emphasize-lines: 26, 33
 
     # NOTES
-    # a dictionary is not True
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not True
-    # a set is not False
-    # a set is not None
-    # a list is not True
-    # a list is not False
-    # a list is not None
-    # a tuple is not True
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not True
-    # a string is not False
-    # a string is not None
-    # a float is not True
-    # a float is not False
-    # a float is not None
-    # an integer is not True
-    # an integer is not False
-    # an integer is not None
+    # a dictionary is not the same object as True
+    # a dictionary is not the same object as False
+    # a dictionary is not the same object as None
+    # a set is not the same object as True
+    # a set is not the same object as False
+    # a set is not the same object as None
+    # a list is not the same object as True
+    # a list is not the same object as False
+    # a list is not the same object as None
+    # a tuple is not the same object as True
+    # a tuple is not the same object as False
+    # a tuple is not the same object as None
+    # a string is not the same object as True
+    # a string is not the same object as False
+    # a string is not the same object as None
+    # a float is not the same object as True
+    # a float is not the same object as False
+    # a float is not the same object as None
+    # an integer is not the same object as True
+    # an integer is not the same object as False
+    # an integer is not the same object as None
     # True is True
-    # True is not False and NOT equal to False
-    # True is not None and NOT equal to None
-    # False is not True and NOT equal to True
+    # True is not equal to False
+    # True is not the same object as False
+    # True is not equal to None
+    # True is not the same object as None
+    # False is not equal to True
+    # False is not the same object as True
     # False is False and equal to False
-    # False is not None and NOT equal to None
-    # None is not True and NOT equal to True
-    # None is not False and NOT equal to False
+    # False is not equal to None
+    # False is not the same object as None
+    # None is not equal to True
+    # None is not the same object as True
+    # None is not equal to False
+    # None is not the same object as False
     # None is None and equal to None
 
 * I add an :ref:`assertion<what is an assertion?>` to compare :ref:`True<test_what_is_true>` with itself
@@ -3371,37 +3137,42 @@ I change the statement to make it :ref:`True<test_what_is_true>`
     :emphasize-lines: 23
 
     # NOTES
-    # a dictionary is not True
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not True
-    # a set is not False
-    # a set is not None
-    # a list is not True
-    # a list is not False
-    # a list is not None
-    # a tuple is not True
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not True
-    # a string is not False
-    # a string is not None
-    # a float is not True
-    # a float is not False
-    # a float is not None
-    # an integer is not True
-    # an integer is not False
-    # an integer is not None
+    # a dictionary is not the same object as True
+    # a dictionary is not the same object as False
+    # a dictionary is not the same object as None
+    # a set is not the same object as True
+    # a set is not the same object as False
+    # a set is not the same object as None
+    # a list is not the same object as True
+    # a list is not the same object as False
+    # a list is not the same object as None
+    # a tuple is not the same object as True
+    # a tuple is not the same object as False
+    # a tuple is not the same object as None
+    # a string is not the same object as True
+    # a string is not the same object as False
+    # a string is not the same object as None
+    # a float is not the same object as True
+    # a float is not the same object as False
+    # a float is not the same object as None
+    # an integer is not the same object as True
+    # an integer is not the same object as False
+    # an integer is not the same object as None
     # True is True and equal to True
-    # True is not False and NOT equal to False
-    # True is not None and NOT equal to None
-    # False is not True and NOT equal to True
+    # True is not equal to False
+    # True is not the same object as False
+    # True is not equal to None
+    # True is not the same object as None
+    # False is not equal to True
+    # False is not the same object as True
     # False is False and equal to False
-    # False is not None and NOT equal to None
-    # None is not True and NOT equal to True
-    # None is not False and NOT equal to False
+    # False is not equal to None
+    # False is not the same object as None
+    # None is not equal to True
+    # None is not the same object as True
+    # None is not equal to False
+    # None is not the same object as False
     # None is None and equal to None
-
 
     # Exceptions seen
     # AssertionError
@@ -3433,7 +3204,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'add test AssertionError with equality'
+    'test AssertionError with equality'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -3450,11 +3221,11 @@ Some of the tests I have written use ``is`` and some use ``==``, if they mean th
 In Python_ they do not mean the same thing
 
 * ``x is y`` states that ``x`` is the same exact :ref:`object<everything is an object>` as ``y``
-* ``x == y`` states that ``x`` is equal to ``y`` according to a rule or instruction programmed in Python_
+* ``x == y`` states that ``x`` is equal to ``y``
 * ``x is not y`` states that ``x`` is NOT the same exact :ref:`object<everything is an object>` as ``y``
-* ``x != y`` states that ``x`` is NOT equal to ``y`` according to a rule or instruction programmed in Python_
+* ``x != y`` states that ``x`` is NOT equal to ``y``
 
-This means that things can be equal without being the same exact :ref:`object<everything is an object>`. For example, an integer_ (a whole number without decimals) can be equal to a float_ (binary floating point decimal numbers) and they are NOT the same :ref:`object<everything is an object>`.
+Things can be equal without being the same exact :ref:`object<everything is an object>`. For example, an integer_ (a whole number without decimals) can be equal to a float_ (binary floating point decimal numbers) and they are NOT the same :ref:`object<everything is an object>`.
 
 ----
 
@@ -3464,7 +3235,7 @@ This means that things can be equal without being the same exact :ref:`object<ev
 
 ----
 
-* I add statements to show this
+* I add statements to test this
 
   .. code-block:: python
     :lineno-start: 86
@@ -3608,11 +3379,11 @@ The tests show that an integer_ can be ``EQUAL`` to a float_ but an integer_ ``I
 a better way to organize tests
 *********************************************************************************
 
-I used comments to group the :ref:`assertions<what is an assertion?>` by what I was testing, and each time I made an :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>`, the terminal_ showed a confusing message (``no tests ran``).
+I used comments to group the :ref:`assertions<what is an assertion?>` by what I was testing, and each time I made an :ref:`assertion True<what is an assertion?>`, the terminal_ showed a confusing message (``no tests ran``).
 
-Since I am using `pytest-watcher`_ which uses pytest_ to run the test, I can group the :ref:`assertions<what is an assertion?>` with :ref:`functions<what is a function?>` instead.
+Since I am using `pytest-watcher`_ which uses pytest_ to run the test, I can use :ref:`functions<what is a function?>` to group the :ref:`assertions<what is an assertion?>`.
 
-A :ref:`function<what is a function?>` is code that is :ref:`callable<how to make a function>`, this means I can write code to do something one time, and call the name for it to do that thing at a different time from when I write it.
+A :ref:`function<what is a function?>` is code that is :ref:`callable<how to call a function>`, this means I can write code to do something one time, and :ref:`call<how to call a function>` the name for the :ref:`function<what is a function?>` to do that thing at a different time from when I write the code.
 
 :ref:`functions<what is a function?>` are made with
 
@@ -3658,6 +3429,17 @@ test_assertion_error_w_is_vs_equal
                       after function definition on line 89
 
   because in Python_ the body of a :ref:`function<what is a function?>` is indented under the name.
+
+* I add IndentationError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+
+  .. code-block:: python
+    :lineno-start: 134
+    :emphasize-lines: 3
+    :emphasize-text: IndentationError
+
+    # Exceptions seen
+    # AssertionError
+    # IndentationError
 
 * I indent the :ref:`assertions<what is an assertion?>` with four spaces to make them the body of the :ref:`function<what is a function?>`
 
@@ -3716,7 +3498,7 @@ test_assertion_error_w_is_vs_equal
     Current runner args: []
     Press w to show menu
 
-  fantastic! pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``.
+  fantastic!
 
 * I remove the commented lines
 
@@ -3743,6 +3525,8 @@ test_assertion_error_w_is_vs_equal
     'add test_assertion_error_w_is_vs_equal'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
+
+pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``.
 
 ----
 
@@ -3806,7 +3590,7 @@ test_assertion_error_w_equality
 
     =================== 1 passed in L.MNs ====================
 
-  I have two :ref:`functions<what is a function?>` with :ref:`assertions<what is an assertion?>` and it only recognizes one.
+  I have two :ref:`functions<what is a function?>` with :ref:`assertions<what is an assertion?>` and it only shows one.
 
 * I add ``test_`` to the name of the :ref:`function<what is a function?>`
 
@@ -3830,7 +3614,7 @@ test_assertion_error_w_equality
 
     =================== 2 passed in O.PQs ====================
 
-  because pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``
+  because pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``.
 
 * I remove the commented lines
 
@@ -3925,7 +3709,7 @@ test_assertion_error_w_true
 
     =================== 2 passed in R.STs ====================
 
-  I have three :ref:`functions<what is a function?>` with :ref:`assertions<what is an assertion?>` and it only recognizes two.
+  I have three :ref:`functions<what is a function?>` with :ref:`assertions<what is an assertion?>` and it only shows two.
 
 * I add ``test_`` to the name of the :ref:`function<what is a function?>`
 
@@ -3949,7 +3733,7 @@ test_assertion_error_w_true
 
     =================== 3 passed in U.VWs ====================
 
-  because pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``
+  because pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``.
 
 * I remove the commented lines
 
@@ -4045,7 +3829,7 @@ test_assertion_error_w_false
 
     =================== 3 passed in X.YZs ====================
 
-  I have four :ref:`functions<what is a function?>` with :ref:`assertions<what is an assertion?>` and it only recognizes three.
+  I have four :ref:`functions<what is a function?>` with :ref:`assertions<what is an assertion?>` and it only shows three.
 
 * I add ``test_`` to the name of the :ref:`function<what is a function?>`
 
@@ -4069,7 +3853,7 @@ test_assertion_error_w_false
 
     =================== 4 passed in A.BCs ====================
 
-  because pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``
+  because pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``.
 
 * I remove the commented lines
 
@@ -4164,7 +3948,7 @@ test_assertion_error_w_none
 
     =================== 4 passed in D.EFs ====================
 
-  I have five :ref:`functions<what is a function?>` with :ref:`assertions<what is an assertion?>` and it only recognizes four.
+  I have five :ref:`functions<what is a function?>` with :ref:`assertions<what is an assertion?>` and it only shows four.
 
 * I add ``test_`` to the name of the :ref:`function<what is a function?>`
 
@@ -4188,7 +3972,7 @@ test_assertion_error_w_none
 
     =================== 5 passed in G.HIs ====================
 
-  because pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``
+  because pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``.
 
 * I remove the commented lines
 
@@ -4221,14 +4005,14 @@ test_assert_keyword
 
 ----
 
-* I add a :ref:`function<what is a function?>` for the ``# test the assert keyword``  group of :ref:`assertions<what is an assertion?>`
+* I add a :ref:`function<what is a function?>` for the ``# test assert keyword``  group of :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1
 
     def assert_keyword():
-    # test the assert keyword
+    # test assert keyword
     assert 1 + 1 == 2
 
   the terminal_ is my friend, and shows IndentationError_
@@ -4247,7 +4031,7 @@ test_assert_keyword
     :emphasize-lines: 2-3, 5, 7
 
     def assert_keyword():
-        # test the assert keyword
+        # test assert keyword
         assert 1 + 1 == 2
 
         assert '1' + '1' == '11'
@@ -4263,7 +4047,7 @@ test_assert_keyword
 
     =================== 5 passed in J.KLs ====================
 
-  I have six :ref:`functions<what is a function?>` with :ref:`assertions<what is an assertion?>` and it only recognizes five.
+  I have six :ref:`functions<what is a function?>` with :ref:`assertions<what is an assertion?>` and it only shows five.
 
 * I add ``test_`` to the name of the :ref:`function<what is a function?>`
 
@@ -4273,7 +4057,7 @@ test_assert_keyword
 
     # def assert_keyword():
     def test_assert_keyword():
-        # test the assert keyword
+        # test assert keyword
         assert 1 + 1 == 2
 
         assert '1' + '1' == '11'
@@ -4328,7 +4112,7 @@ pytest only calls the function if the name starts with test
 
   .. code-block:: python
     :lineno-start: 89
-    :emphasize-lines: 7-8
+    :emphasize-lines: 7-10
 
     def test_assertion_error_w_is_vs_equal():
         assert 0 is not 0.0
@@ -4337,6 +4121,8 @@ pytest only calls the function if the name starts with test
 
 
     def will_not_run():
+        # will not run because
+        # the name does not start with test
         assert False == True
 
 
@@ -4352,9 +4138,11 @@ pytest only calls the function if the name starts with test
 
   .. code-block:: python
     :lineno-start: 95
-    :emphasize-lines: 5-6
+    :emphasize-lines: 7-8
 
     def will_not_run():
+        # will not run because
+        # the name does not start with test
         assert False == True
 
 
@@ -4367,7 +4155,7 @@ pytest only calls the function if the name starts with test
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :emphasize-lines: 7, 10, 12, 14, 16, -18-19
+    :emphasize-lines: 7, 10, 12, 14, 16, 18-19
 
     ================== test session starts ===================
     platform linux -- Python 3.X.Y, pytest-Z.A.B, pluggy-C.D.E
@@ -4393,8 +4181,7 @@ pytest only calls the function if the name starts with test
     Current runner args: []
     Press w to show menu
 
-  - because pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``
-  - this has more details than when I write the :ref:`assertions<what is an assertion?>` without a :ref:`function<what is a function?>`.
+  more details than when I write the :ref:`assertions<what is an assertion?>` without a :ref:`function<what is a function?>`.
 
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
@@ -4420,6 +4207,8 @@ pytest only calls the function if the name starts with test
     'add test_failure'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
+
+pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``.
 
 ----
 
@@ -4452,13 +4241,10 @@ close the project
 review
 *********************************************************************************
 
-* I can use :ref:`assert statements<what is an assertion?>` to test
-
-  * if something is :ref:`None or NOT None<test_assertion_error_w_none>`
-  * if something is :ref:`False or NOT False<test_assertion_error_w_false>`
-  * if something is :ref:`True or NOT True<test_assertion_error_w_true>`
-  * if two things are :ref:`NOT equal or equal<test_assertion_error_w_equality>`
-
+* I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`None or NOT None<test_assertion_error_w_none>`
+* I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`False or NOT False<test_assertion_error_w_false>`
+* I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`True or NOT True<test_assertion_error_w_true>`
+* I can use :ref:`assertions<what is an assertion?>` to test if two things are :ref:`NOT equal or equal<test_assertion_error_w_equality>`
 * I can use :ref:`functions<what is a function?>` to group :ref:`assertions<what is an assertion?>` and get better error messages from pytest_
 
 The tests show that
