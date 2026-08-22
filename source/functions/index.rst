@@ -361,7 +361,7 @@ what is a variable?
 
 I can define a name in Python with a variable. A variable is a name that is used to point to an :ref:`object<everything is an object>`. For example, in Mathematics_ we use ``x`` to represent any number.
 
-Every time I use the name, Python_ "knows" that I am referring to the :ref:`object<everything is an object>` pointed the name to.
+Every time I use the name, Python_ uses the :ref:`object<everything is an object>` I pointed the name to.
 
 ----
 
@@ -449,7 +449,7 @@ the test passes.
 how to call a function
 *********************************************************************************
 
-I can call a :ref:`function<what is a function?>` with by placing parentheses (``()``) after the name when I use it after it is defined.
+I can call a :ref:`function<what is a function?>` by placing parentheses (``()``) to the right of the name when I use it after it is :ref:`defined<how to make a function>`.
 
 .. code-block:: python
 
@@ -469,7 +469,7 @@ A call to a :ref:`function<what is a function>` gets the output of the :ref:`fun
 
 ----
 
-* I add parentheses to the :ref:`assertion<what is an assertion?>` to call ``w_pass`` inside :ref:`test_making_a_function_w_pass`
+* I add parentheses to the :ref:`assertion<what is an assertion?>` to :ref:`call<how to call a function>` ``w_pass`` inside :ref:`test_making_a_function_w_pass`
 
   .. code-block:: python
     :linenos:
@@ -540,16 +540,18 @@ A call to a :ref:`function<what is a function>` gets the output of the :ref:`fun
 
     # Exceptions seen
 
-  - The test passes because I get :ref:`None<what is None?>` when I :ref:`call<how to call a function>` ``w_pass``
-
-    .. code-block:: python
-
-      w_pass() -> None
-
-  - The :ref:`assertion<what is an assertion?>` - ``assert w_pass() is None`` checks if the result of a call to ``w_pass``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
+  - The :ref:`assertion<what is an assertion?>` - ``assert w_pass() is None`` checks if the result of a :ref:`call<how to call a function>` to the ``w_pass`` :ref:`function<what is a function?>`, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
   - The :ref:`function definition<how to make a function>` simply says pass_ and the test passes.
   - pass_ is a keyword that allows the :ref:`function definition<how to make a function>` to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body).
-  - The test passes because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`, which leads me to the next test, but first cleanup time.
+  - The test passes because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`, so I get :ref:`None<what is None?>` when I :ref:`call<how to call a function>` ``w_pass``
+
+    .. code-block:: shell
+
+      w_pass() -> None
+      └── def w_pass():
+          └── pass
+
+    which leads me to the next test, but first cleanup time.
 
 ----
 
@@ -576,7 +578,7 @@ A call to a :ref:`function<what is a function>` gets the output of the :ref:`fun
     # NameError
     # TypeError
 
-* I open another terminal_ then `change directory` to ``functions``
+* I open another terminal_ then `change directory`_ to ``functions``
 
   .. code-block:: python
 
@@ -592,7 +594,7 @@ A call to a :ref:`function<what is a function>` gets the output of the :ref:`fun
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can make a function with pass.<test_making_a_function_w_pass>`.
+:ref:`I can make a function with pass<test_making_a_function_w_pass>`.
 
 ----
 
@@ -612,7 +614,7 @@ I can also make a function with a `return statement`_.
 
 * I go back to the terminal_ where the tests are running
 
-* I add a new test with a name
+* I add a new test with ``w_return``
 
   .. code-block:: python
     :linenos:
@@ -777,7 +779,21 @@ the test passes.
 the return statement
 *********************************************************************************
 
-The return_ keyword is used to define what a :ref:`function<what is a function?>` gives as output when it is called.
+The return_ keyword is used to define what a :ref:`function<what is a function?>` gives as output when it is :ref:`called<how to call a function>`.
+
+functions_ are made with
+
+* the def_ keyword
+* a name
+* parentheses and a colon at the end
+* the code that makes up the :ref:`function<what is a function?>` (its body)
+* the `return statement`_ to define the output when the is :ref:`function is called<how to call a function>`.
+
+.. code-block:: python
+
+  def name_of_function():
+      the body of the function
+      return
 
 * I change pass_ to a `return statement`_ with the return_ keyword
 
@@ -799,15 +815,16 @@ The return_ keyword is used to define what a :ref:`function<what is a function?>
 
     # Exceptions seen
 
-  - The test is still green because I get :ref:`None<what is None?>` when I :ref:`call<how to call a function>```w_return``
-
-    .. code-block:: python
-
-      w_return() -> None
-
-  - The :ref:`assertion<what is an assertion?>` - ``assert w_return() is None`` checks if the result of a call to ``w_return``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
+  - The :ref:`assertion<what is an assertion?>` - ``assert w_return() is None`` checks if the result of a :ref:`call<how to call a function>` to ``w_return``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
   - The :ref:`function definition<how to make a function>` simply says return_ and the test passes.
   - return_ is a keyword that defines what the :ref:`function<what is a function?>` gives as output.
+  - The test is still green because I get :ref:`None<what is None?>` when I :ref:`call<how to call a function>` the ``w_return`` :ref:`function<what is a function?>`
+
+    .. code-block:: shell
+
+      w_return() -> None
+      └── def w_return():
+          └── return
 
 * I remove the commented lines
 
@@ -865,6 +882,12 @@ test_making_a_function_w_return_none
 
 I can make a :ref:`function<what is a function?>` with a `return statement`_ that says exactly what the :ref:`function<what is a function?>` returns.
 
+.. code-block:: python
+
+  def name_of_function():
+      the body of the function
+      return output
+
 ----
 
 =================================================================================
@@ -875,7 +898,7 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test with a name
+* I add a test with ``w_return_none``
 
   .. code-block:: python
     :lineno-start: 8
@@ -980,7 +1003,7 @@ the test passes.
 
   the test passes.
 
-* I add parentheses to call ``w_return_none`` inside :ref:`test_making_a_function_w_return_none`
+* I add parentheses to :ref:`call<how to call a function>` ``w_return_none`` inside :ref:`test_making_a_function_w_return_none`
 
   .. code-block:: python
     :lineno-start: 15
@@ -1085,9 +1108,11 @@ the test passes.
 
   because I get ``'something'`` when I :ref:`call<how to call a function>` ``w_return_none``
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    w_return_none() -> None
+    w_return_none() -> 'something'
+    └── def w_return_none():
+        └── return 'something'
 
   Using substitution
 
@@ -1120,7 +1145,14 @@ the test passes.
     # Exceptions seen
 
   - The test is green again because I get :ref:`None<what is None?>` when I :ref:`call<how to call a function>` ``w_return_none``.
-  - The :ref:`assertion<what is an assertion?>` - ``assert w_return_none() is None`` checks if the result of a call to ``w_return_none``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
+
+    .. code-block:: shell
+
+      w_return_none() -> None
+      └── def w_return_none():
+          └── return None
+
+  - The :ref:`assertion<what is an assertion?>` - ``assert w_return_none() is None`` checks if the result of a :ref:`call<how to call a function>` to ``w_return_none``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
 
 * I remove the commented lines
 
@@ -1182,7 +1214,7 @@ I like to write my :ref:`functions<what is a function?>` with explicit :ref:`ret
 test_what_happens_after_functions_return
 *********************************************************************************
 
-The `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`.
+The `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`. No statements after it in a :ref:`function<what is a function?>` will run when the :ref:`function is called<how to call a function>`.
 
 ----
 
@@ -1300,7 +1332,7 @@ the test passes.
 
   the test passes.
 
-* I add parentheses to call ``return_leaves_the_function`` inside :ref:`test_making_a_function_w_return_none`
+* I add parentheses to :ref:`call<how to call a function>` ``return_leaves_the_function`` inside :ref:`test_making_a_function_w_return_none`
 
   .. code-block:: python
     :lineno-start: 22
@@ -1328,7 +1360,7 @@ the test passes.
 
     return_leaves_the_function = None # point the name to the object
     return_leaves_the_function()      # call the name
-    None()                            # substitute the value for the name
+    None()                            # substitute the value
 
   ``None()`` raises :ref:`TypeError<what causes TypeError?>`.
 
@@ -1379,11 +1411,14 @@ the test passes.
 
     E       AssertionError: assert 'something' is None
 
-  because I get ``'something'`` when I :ref:`call<how to call a function>` ``return_leaves_the_function``
+  because I get ``'something'`` when I :ref:`call<how to call a function>` ``return_leaves_the_function``. The `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`, it exits after the `return statement`_.
 
-  .. code-block:: python
+  .. code-block:: shell
 
     w_return_leaves_the_function() -> 'something'
+    def return_leaves_the_function():
+    └── return 'something'
+        return None
 
   Using substitution
 
@@ -1393,21 +1428,9 @@ the test passes.
     assert 'something'                  is None
 
   - which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`a string is not None<test_assertion_error_w_none>`.
-  - The `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`, it exits after the `return statement`_.
-
-    .. code-block:: shell
-
-      def return_leaves_the_function():
-      └── return 'something'
-          return None
-
   - It never gets to ``return None`` because it leaves after ``return 'something'``.
   - The second `return statement`_ will never run. It is not reachable (this is called dead code).
   - This is why :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`.
-
-  .. tip::
-
-    The `Integrated Development Environment (IDE)`_ shows that the second return statement will not run by graying it out.
 
 * I move ``return None``, to make it the first `return statement`_
 
@@ -1663,6 +1686,12 @@ the test passes.
 
   the test passes.
 
+  .. code-block:: shell
+
+    constant() -> None
+    def constant():
+    └── return None
+
 * I change the `return statement`_
 
   .. code-block:: python
@@ -1710,11 +1739,13 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes because I get ``'the same thing'`` when I call ``constant``
+  the test passes because I get ``'the same thing'`` when I call the ``constant`` :ref:`function<what is a function?>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     constant() -> 'the same thing'
+    def constant():
+    └── return 'the same thing'
 
 * I remove the commented lines
 
@@ -1750,7 +1781,7 @@ the test passes.
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`A constant function always returns the same thing.<test_constant_function>` when called, I can use them in place of :ref:`variables<what is a variable?>`. The number of cases where they are faster than :ref:`variables<what is a variable?>` is pretty small. It is something like if the :ref:`function<what is a function?>` is called less than 10 times (who's counting?)
+:ref:`A constant function always returns the same thing<test_constant_function>` when :ref:`called<how to call a function>`, I can use them in place of :ref:`variables<what is a variable?>`. The number of cases where they are faster than :ref:`variables<what is a variable?>` is pretty small. It is something like if the :ref:`function<what is a function?>` is :ref:`called<how to call a function>` less than 10 times (who's counting?)
 
 All the :ref:`functions<what is a function?>` I have written so far return the same value every time they are called.
 
@@ -1760,7 +1791,7 @@ All the :ref:`functions<what is a function?>` I have written so far return the s
 close the project
 *********************************************************************************
 
-* I close ``test_functions.py`` and ``functions.py``
+* I close ``test_functions.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
