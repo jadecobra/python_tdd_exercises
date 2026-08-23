@@ -1,6 +1,6 @@
 .. meta::
-  :description: Learn Python functions with TDD: use def + pass, return, and explicit "return None". Discover that every function returns None by default (as if it has an invisible "return None"), that a return statement exits immediately (dead code after it never runs), and build constant functions that always return the exact same object. Practice bare "assert ... is None" and "is 'value'" inside tests; encounter real errors including "name 'w_pass' is not defined" (NameError), "TypeError: 'NoneType' object is not callable" when calling before defining, and AssertionError like "assert None is 0" or "assert 'the same thing' is None". Step-by-step RED/GREEN/REFACTOR with unittest and pytest-watcher. Part of Jacob Itegboje's Pumping Python series.
-  :keywords: Jacob Itegboje, Pumping Python, python functions for beginners, learn functions with TDD, def pass return python, functions return None by default, return statement exits immediately, constant function python, return None invisible, bare assert is None, NameError name 'w_pass' is not defined, TypeError NoneType object is not callable, AssertionError assert None is 0, what does a python function return, test function syntax unittest, red green refactor functions, python TDD def keyword, how to make a function python, constant functions always return the same, uv pytest-watcher functions project
+  :description: Learn Python functions with TDD in the functions project: write nested def + pass, bare return, and explicit return None inside pytest tests; see that every function returns None by default (as if it had an invisible return None); prove a return statement exits immediately so later lines are dead code; then write a constant function that always returns 'the same thing' and switch the assert from is None to ==. Encounter NameError name 'w_pass' is not defined, TypeError 'NoneType' object is not callable when calling before defining, and AssertionError cores like assert None is 0 and assert 'something' is None. RED/GREEN/REFACTOR with uv, pytest-watcher, and git. Part of Jacob Itegboje's Pumping Python series.
+  :keywords: Jacob Itegboje, Pumping Python, python functions for beginners, learn functions with TDD, def pass return python, functions return None by default, return statement exits immediately, dead code after return, constant function python, return None invisible, bare assert is None, NameError name 'w_pass' is not defined, TypeError NoneType object is not callable, AssertionError assert None is 0, assert 'the same thing' is None, uv pytest-watcher functions project, test_functions.py nested functions
 
 .. include:: ../links.rst
 
@@ -455,7 +455,7 @@ I can call a :ref:`function<what is a function?>` by placing parentheses (``()``
 
   name_of_function()
 
-A call to a :ref:`function<what is a function>` gets the output of the :ref:`function<what is a function?>`
+A call to a :ref:`function<what is a function?>` gets the output of the :ref:`function<what is a function?>`
 
 .. code-block:: python
 
@@ -787,7 +787,7 @@ functions_ are made with
 * a name
 * parentheses and a colon at the end
 * the code that makes up the :ref:`function<what is a function?>` (its body)
-* the `return statement`_ to define the output when the is :ref:`function is called<how to call a function>`.
+* the `return statement`_ to define the output when the :ref:`function is called<how to call a function>`.
 
 .. code-block:: python
 
@@ -1126,7 +1126,7 @@ the test passes.
 * I undo the change
 
   .. code-block:: python
-    :lineno-start: 18
+    :lineno-start: 15
     :emphasize-lines: 8-9
 
     def test_making_a_function_w_return_none():
@@ -1332,7 +1332,7 @@ the test passes.
 
   the test passes.
 
-* I add parentheses to :ref:`call<how to call a function>` ``return_leaves_the_function`` inside :ref:`test_making_a_function_w_return_none`
+* I add parentheses to :ref:`call<how to call a function>` ``return_leaves_the_function`` inside :ref:`test_what_happens_after_functions_return`
 
   .. code-block:: python
     :lineno-start: 22
@@ -1415,7 +1415,7 @@ the test passes.
 
   .. code-block:: shell
 
-    w_return_leaves_the_function() -> 'something'
+    return_leaves_the_function() -> 'something'
     def return_leaves_the_function():
     └── return 'something'
         return None
@@ -1515,7 +1515,7 @@ the test passes.
 test_constant_function
 *********************************************************************************
 
-There are :ref:`functions<what is a function?>` that always return the same thing when they are called. They are singletons or constant :ref:`functions<what is a function?>`.
+There are :ref:`functions<what is a function?>` that always return the same thing when they are called. They are singleton or constant :ref:`functions<what is a function?>`.
 
 ----
 
@@ -1614,7 +1614,7 @@ the test passes.
     assert constant is 'the same thing'
     assert None     is 'the same thing'
 
-  which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`None is not the same object as a string(anything in quotes)<test_assertion_error_w_none>`.
+  which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`None is not the same object as a string (anything in quotes)<test_assertion_error_w_none>`.
 
 * I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
