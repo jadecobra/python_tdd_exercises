@@ -52,7 +52,7 @@ open the project
 
     .../pumping_python/person
 
-* I open ``test_person.py``
+* I open ``test_person.py`` from the ``tests`` folder_
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -211,6 +211,12 @@ test_joe
 
   the test passes.
 
+  .. code-block:: shell
+
+    joe() -> 'joe, blow, M, 1996'
+    └── def joe():
+        └── return 'joe, blow, M, 1996'
+
 ----
 
 =================================================================================
@@ -267,7 +273,6 @@ I add a test :ref:`function<what is a function?>`
 
   def test_jane():
       assert jane() == 'jane, doe, F, 1991'
-
 
 
   # Exceptions seen
@@ -371,6 +376,12 @@ because there is no definition for ``jane`` in this file_.
 
   the test passes.
 
+  .. code-block:: shell
+
+    jane() -> 'jane, doe, F, 1991'
+    └── def jane():
+        └── return 'jane, doe, F, 1991'
+
 ----
 
 =================================================================================
@@ -435,7 +446,6 @@ I add another test :ref:`function<what is a function?>`
 
   def test_john():
       assert john() == 'john, smith, M, 1580'
-
 
 
   # Exceptions seen
@@ -539,6 +549,12 @@ because there is no definition for ``john`` in this file_, yet.
 
   the test passes.
 
+  .. code-block:: shell
+
+    john() -> 'john, smith, M, 1580'
+    └── def john():
+        └── return 'john, smith, M, 1580'
+
 ----
 
 =================================================================================
@@ -550,11 +566,7 @@ because there is no definition for ``john`` in this file_, yet.
 * I remove the commented lines
 
   .. code-block:: python
-    :linenos:
-
-    def joe():
-        return 'joe, blow, M, 1996'
-
+    :lineno-start: 5
 
     def jane():
         return 'jane, doe, F, 1991'
@@ -565,18 +577,6 @@ because there is no definition for ``john`` in this file_, yet.
 
 
     def test_joe():
-        assert joe() == 'joe, blow, M, 1996'
-
-
-    def test_jane():
-        assert jane() == 'jane, doe, F, 1991'
-
-
-    def test_john():
-        assert john() == 'john, smith, M, 1580'
-
-
-    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -602,7 +602,7 @@ test_mary
 I add another test :ref:`function<what is a function?>`
 
 .. code-block:: python
-  :lineno-start: 16
+  :lineno-start: 21
   :emphasize-lines: 5-6
 
   def test_john():
@@ -714,6 +714,12 @@ because there is no definition for ``mary``, it is just a name.
 
   the test passes.
 
+  .. code-block:: shell
+
+    mary() -> 'mary, public, F, 2000'
+    └── def mary():
+        └── return 'mary, public, F, 2000'
+
 ----
 
 =================================================================================
@@ -725,15 +731,7 @@ because there is no definition for ``mary``, it is just a name.
 * I remove the commented lines
 
   .. code-block:: python
-    :linenos:
-
-    def joe():
-        return 'joe, blow, M, 1996'
-
-
-    def jane():
-        return 'jane, doe, F, 1991'
-
+    :lineno-start:
 
     def john():
         return 'john, smith, M, 1580'
