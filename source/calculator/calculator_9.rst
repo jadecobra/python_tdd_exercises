@@ -49,14 +49,14 @@ open the project
 
 * I `change directory`_ to the ``calculator`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd calculator
 
   the terminal_ shows I am in the ``calculator`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/calculator
 

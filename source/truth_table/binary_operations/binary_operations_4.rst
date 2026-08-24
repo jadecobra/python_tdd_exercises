@@ -89,7 +89,7 @@ open the project
 
   if the terminal_ does not show
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 
@@ -97,14 +97,14 @@ open the project
 
 * Once in ``pumping_python``, `change directory`_ to the project
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd truth_table
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/truth_table
 
@@ -112,7 +112,6 @@ open the project
 
   .. code-block:: python
     :emphasize-lines: 1
-    :emphasize-text: .
 
     uv run pytest-watcher . --now
 
@@ -3189,14 +3188,14 @@ close the project
 
 * I `change directory`_ to the parent of ``truth_table``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 

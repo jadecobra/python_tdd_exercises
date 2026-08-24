@@ -62,14 +62,14 @@ start the project
 
 * I change directory_ to the project
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd person
 
   the terminal_ shows I am in the ``person`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/person
 
@@ -266,7 +266,6 @@ start the project
 
   .. code-block:: python
     :emphasize-lines: 1
-    :emphasize-text: .
 
     uv run pytest-watcher . --now
 

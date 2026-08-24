@@ -73,14 +73,14 @@ close the project
 
 * I `change directory`_ to the parent of ``booleans``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 

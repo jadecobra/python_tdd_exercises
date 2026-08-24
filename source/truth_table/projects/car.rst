@@ -3954,7 +3954,7 @@ close the project
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 

@@ -3121,7 +3121,7 @@ close the project
 
 * I `change directory`_ to the parent of ``lists``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..

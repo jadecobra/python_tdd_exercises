@@ -481,7 +481,6 @@ how to run tests automatically with uv and pytest-watcher
 
   .. code-block:: python
     :emphasize-lines: 1
-    :emphasize-text: .
 
     uv run pytest-watcher . --now
 

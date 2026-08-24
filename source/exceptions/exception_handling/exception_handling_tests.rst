@@ -2343,7 +2343,7 @@ close the exceptions project
 
 * I `change directory`_ to the parent of ``exceptions``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..

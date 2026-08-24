@@ -20,14 +20,14 @@ open the project
 
 * I `change directory`_ to the ``booleans`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd booleans
 
   the terminal_ shows I am in the ``booleans`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/booleans
 
@@ -35,7 +35,6 @@ open the project
 
   .. code-block:: python
     :emphasize-lines: 1
-    :emphasize-text: .
 
     uv run pytest-watcher . --now
 
@@ -931,14 +930,14 @@ close the project
 
 * I `change directory`_ to the parent of ``booleans``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 

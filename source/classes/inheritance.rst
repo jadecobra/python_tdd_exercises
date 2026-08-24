@@ -250,7 +250,6 @@ start the project
 
   .. code-block:: python
     :emphasize-lines: 1
-    :emphasize-text: .
 
     uv run pytest-watcher . --now
 
@@ -2505,14 +2504,14 @@ close the project
 
 * I `change directory`_ to the parent of ``classes``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 

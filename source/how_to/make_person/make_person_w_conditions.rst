@@ -49,7 +49,7 @@ open the project
 * I open a terminal_
 * I change directory_ to the project
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd person
@@ -60,7 +60,6 @@ open the project
 
   .. code-block:: python
     :emphasize-lines: 1
-    :emphasize-text: .
 
     uv run pytest-watcher . --now
 

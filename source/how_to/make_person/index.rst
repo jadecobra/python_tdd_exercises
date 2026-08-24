@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with strings. Use strings to represent a person (first name, last name, sex, year of birth) for a contact list by writing module-level functions that return formatted strings. Starts with pytest-watcher showing "no tests ran". RED: add test calling undefined name → NameError: name 'joe' is not defined. GREEN: point name at None (TypeError: 'NoneType' object is not callable), make function return None (AssertionError: assert None == 'joe, blow, M, 1996'), fix return value. Repeat the cycle. REFACTOR: remove the commented lines, git commit -am. Review shows the problem: I made a function for each person. What happens if I have to make 10 or 100 or 1000 people? Each test is repetition of the information for each person. Leads to wanting one function that can take input instead. Uses bare assert, uv run pytest-watcher, red green refactor.
-  :keywords: Jacob Itegboje, Pumping Python, how to make a person with strings, strings to represent a person, contact list python, first functions returning strings, NameError: name 'joe' is not defined, TypeError: 'NoneType' object is not callable, AssertionError: assert None == 'joe, blow, M, 1996', bare assert, pytest-watcher "no tests ran", red green refactor, remove the commented lines, git commit -am, one function per person, repetition of the information for each person, functions do not scale, 10 or 100 or 1000 people, functions that take input, module level functions, writing test functions, tdd repetition problem, uv run pytest-watcher . --now
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with strings. Use strings to represent a person (first name, last name, sex, year of birth) for a list of people by writing module-level functions that return formatted strings. Starts with pytest-watcher showing "no tests ran". RED: add test calling undefined name → NameError: name 'joe' is not defined. GREEN: point name at None (TypeError: 'NoneType' object is not callable), make function return None (AssertionError: assert None == 'joe, blow, M, 1996'), fix return value. Repeat the cycle for jane, john, mary. REFACTOR: remove the commented lines, git commit -am. Review shows the problem: I made a function for each person. What happens if I have to make 10 or 100 or 1000 people? Each test is repetition of the information for each person. Leads to wanting one function that can take input instead. Uses bare assert, uv run pytest-watcher, red green refactor.
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with strings, strings to represent a person, list of people python, first functions returning strings, NameError: name 'joe' is not defined, TypeError: 'NoneType' object is not callable, AssertionError: assert None == 'joe, blow, M, 1996', bare assert, pytest-watcher "no tests ran", red green refactor, remove the commented lines, git commit -am, one function per person, repetition of the information for each person, functions do not scale, 10 or 100 or 1000 people, functions that take input, module level functions, writing test functions, tdd repetition problem, uv run pytest-watcher . --now, test_joe test_jane test_john test_mary
 
 .. include:: ../../links.rst
 
@@ -41,14 +41,14 @@ open the project
 * I open a terminal_
 * I change directory_ to the project
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd person
 
   the terminal_ shows I am in the ``person`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/person
 
@@ -58,7 +58,6 @@ open the project
 
   .. code-block:: python
     :emphasize-lines: 1
-    :emphasize-text: .
 
     uv run pytest-watcher . --now
 
@@ -503,8 +502,8 @@ because there is no definition for ``john`` in this file_, yet.
     :lineno-start: 5
     :emphasize-lines: 5-7
 
-    def joe():
-        return 'joe, blow, M, 1996'
+    def jane():
+        return 'jane, doe, F, 1991'
 
 
     # john = None
@@ -731,7 +730,7 @@ because there is no definition for ``mary``, it is just a name.
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 9
 
     def john():
         return 'john, smith, M, 1580'
@@ -792,7 +791,7 @@ close the project
 
   .. code-block:: python
 
-    ...\pumping_python
+    .../pumping_python
 
   I am back in the ``pumping_python`` directory_.
 

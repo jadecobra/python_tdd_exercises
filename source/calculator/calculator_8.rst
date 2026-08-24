@@ -32,14 +32,14 @@ open the project
 
 * I `change directory`_ to the ``calculator`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd calculator
 
   the terminal_ shows I am in the ``calculator`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/calculator
 
@@ -47,7 +47,6 @@ open the project
 
   .. code-block:: python
     :emphasize-lines: 1
-    :emphasize-text: .
 
     uv run pytest-watcher . --now
 

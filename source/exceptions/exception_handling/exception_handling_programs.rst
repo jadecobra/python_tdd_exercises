@@ -50,7 +50,7 @@ open the project
 
 * I `change directory`_ to the ``exceptions`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd exceptions
@@ -59,7 +59,6 @@ open the project
 
   .. code-block:: python
     :emphasize-lines: 1
-    :emphasize-text: .
 
     uv run pytest-watcher . --now
 
@@ -787,7 +786,7 @@ close the project
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 * I `change directory`_ to the parent of ``exceptions``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..

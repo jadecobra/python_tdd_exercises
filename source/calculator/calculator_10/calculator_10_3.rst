@@ -26,7 +26,7 @@ open the project
 
 * I `change directory`_ to the ``calculator`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd calculator

@@ -22,7 +22,7 @@ I have these tests by the end of the chapter
   :language: python
   :linenos:
   :caption: functions/tests/test_functions.py
-  
+
 ----
 
 *********************************************************************************
@@ -49,7 +49,6 @@ open the project
 
   .. code-block:: python
     :emphasize-lines: 1
-    :emphasize-text: .
 
     uv run pytest-watcher . --now
 

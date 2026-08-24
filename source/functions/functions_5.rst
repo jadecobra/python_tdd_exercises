@@ -20,14 +20,14 @@ open the project
 
 * I `change directory`_ to the ``functions`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd functions
 
   the terminal_ shows I am in the ``functions`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/functions
 
@@ -35,7 +35,6 @@ open the project
 
   .. code-block:: python
     :emphasize-lines: 1
-    :emphasize-text: .
 
     uv run pytest-watcher . --now
 
@@ -366,14 +365,14 @@ close the project
 
 * I `change directory`_ to the parent of ``functions``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 
