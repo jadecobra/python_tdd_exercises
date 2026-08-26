@@ -311,7 +311,7 @@ use assertIsNotNone and assertIsNone
 
   the test passes because a tuple_ is not :ref:`None<what is None?>`.
 
-* I add :ref:`assertIsNone<another way to test if something is None>` for a :ref:`list (anything in square brackets '[ ]')<what is a list?>`
+* I add :ref:`assertIsNone<another way to test if something is None>` for a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``)
 
   .. code-block:: python
     :lineno-start: 66

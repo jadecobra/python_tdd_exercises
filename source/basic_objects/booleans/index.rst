@@ -3439,7 +3439,7 @@ Is a :ref:`list<what is a list?>` grouped as :ref:`False<test_what_is_false>` or
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for if a :ref:`list (anything in square brackets '[ ]')<what is a list?>` is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
+* I add a test for if a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 87
@@ -3549,7 +3549,7 @@ the test passes.
     # NOTES
 
   - The test passes because the result of ``bool(list())`` is :ref:`False<test_what_is_false>`.
-  - The empty :ref:`list (anything in square brackets '[ ]')<what is a list?>` is grouped as :ref:`False<test_what_is_false>`.
+  - The empty :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) is grouped as :ref:`False<test_what_is_false>`.
 
 * I add an :ref:`assertion<what is an assertion?>` to test if the empty :ref:`list<what is a list?>` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
@@ -3586,7 +3586,7 @@ the test passes.
 
   the test passes because :ref:`a list is not the same object as False<test_assertion_error_w_false>`.
 
-* I add an :ref:`assertion<what is an assertion?>` to test if a :ref:`list (anything in square brackets '[ ]')<what is a list?>` with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` to test if a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 94
