@@ -3070,9 +3070,11 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 
   .. code-block:: python
     :lineno-start: 136
-    :emphasize-lines: 10-16
+    :emphasize-lines: 12-18
     :emphasize-text: first
 
+        a_set = {0, 1, 2, 'n'}
+        a_dictionary = {'key': 'value'}
         assert (
             positional_arguments(
                 last_input=a_dictionary,
@@ -3112,7 +3114,7 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 * I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 153
+    :lineno-start: 156
     :emphasize-lines: 5
     :emphasize-text: SyntaxError
 
@@ -3125,7 +3127,7 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 * I change the order of the arguments to follow Python_ rules
 
   .. code-block:: python
-    :lineno-start: 145
+    :lineno-start: 147
     :emphasize-lines: 4-5
     :emphasize-text: first
 
@@ -3149,10 +3151,10 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 
   because I have not given a definition for the name yet.
 
-* I add a :ref:`function definition<how to make a function that takes input>`
+* I add a :ref:`function definition<how to make a function that takes input>` for ``args_and_kwargs``
 
   .. code-block:: python
-    :lineno-start: 145
+    :lineno-start: 147
     :emphasize-lines: 2-3
 
     def test_args_and_kwargs():
@@ -3184,10 +3186,10 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``args_and_kwargs`` does not allow any inputs when it is called since the parentheses are empty.
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* I add the name in parentheses
+* I add ``last_input`` to the parentheses of ``args_and_kwargs``
 
   .. code-block:: python
-    :lineno-start: 145
+    :lineno-start: 147
     :emphasize-lines: 2-3
 
     def test_args_and_kwargs():
@@ -3222,17 +3224,16 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
     .. code-block:: shell
 
       args_and_kwargs_arguments('first', last_input='last',)
-
-      def args_and_kwargs_arguments(last_input)
-      ├── last_input = 'first' ?
-      └── last_input = 'last'  ?
+      └── def args_and_kwargs_arguments(last_input)
+          ├── last_input = 'first' ?
+          └── last_input = 'last'  ?
 
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* I add another name in parentheses to make it clearer
+* I add ``first_input`` to the parentheses of ``args_and_kwargs`` to make it clearer
 
   .. code-block:: python
-    :lineno-start: 145
+    :lineno-start: 147
     :emphasize-lines: 3-4
     :emphasize-text: first_input
 
@@ -3253,16 +3254,15 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 
     # Exceptions seen
 
-  the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because I have not fixed the problem, I gave confusing values in the call. Python_ still cannot tell the difference between the two values because I gave a :ref:`positional argument<test_positional_arguments>` which from the :ref:`function definition<how to make a function that takes input>` is ``last_input`` and I gave a value with the name ``last_input``.
+  the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because I have not fixed the problem, I gave confusing values in the call. Python_ cannot tell the difference between the two values because I gave a :ref:`positional argument<test_positional_arguments>` which from the :ref:`function definition<how to make a function that takes input>` is ``last_input`` and I gave a value with the name ``last_input``.
 
   .. code-block:: shell
 
     args_and_kwargs_arguments('first', last_input='last',)
-
-    def args_and_kwargs_arguments(last_input, first_input)
-    ├── last_input = 'first' ?
-    ├── last_input = 'last'  ?
-    └── first_input = ?
+    └── def args_and_kwargs_arguments(last_input, first_input)
+        ├── last_input = 'first' ?
+        ├── last_input = 'last'  ?
+        └── first_input = ?
 
 * The :ref:`call<how to call a function with input>` gives the values for ``last_input`` as both ``'first'`` and ``'last'``, it would be like defining the :ref:`function<what is a function?>` with the same name twice
 
@@ -3287,7 +3287,7 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 * I use the right names and put them in the right order
 
   .. code-block:: python
-    :lineno-start: 145
+    :lineno-start: 147
     :emphasize-lines: 5-6
     :emphasize-text: first_input
 
@@ -3318,7 +3318,7 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 * I change :ref:`the return statement` to give the test what it wants
 
   .. code-block:: python
-    :lineno-start: 145
+    :lineno-start: 147
     :emphasize-lines: 7-8
 
     def test_args_and_kwargs():
@@ -3343,14 +3343,19 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 
   the test passes.
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    args_and_kwargs(first_input, last_input) -> first_input, last_input
+    args_and_kwargs(
+        'first', last_input='last',
+    ) -> ('first', 'last')
+    └── def args_and_kwargs(first_input, last_input):
+        └── return first_input, last_input
+            return 'first'    , 'last'
 
 * I add :ref:`variables<what is a variable?>` for ``'first'`` and ``'last'``
 
   .. code-block:: python
-    :lineno-start: 145
+    :lineno-start: 147
     :emphasize-lines: 10
 
     def test_args_and_kwargs():
@@ -3364,10 +3369,10 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 
         first, last = 'first', 'last'
 
-* I use the new :ref:`variables<what is a variable?>` to remove repetition of ``'first'`` and ``'last'``
+* I use the new :ref:`variables<what is a variable?>` to remove repetition of ``'first'`` and ``'last'`` from :ref:`test_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 154
+    :lineno-start: 156
     :emphasize-lines: 6-7, 9-10
 
         first, last = 'first', 'last'
@@ -3387,10 +3392,10 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 
   the test is still green.
 
-* I remove the commented lines
+* I remove the commented lines from :ref
 
   .. code-block:: python
-    :lineno-start: 145
+    :lineno-start: 147
 
     def test_args_and_kwargs():
         def args_and_kwargs(first_input, last_input):
