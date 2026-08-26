@@ -31,6 +31,13 @@ I have these tests by the end of the chapter
   :language: python
   :linenos:
   :caption: person/tests/test_person.py
+  :lines: 1-14
+
+.. literalinclude:: ../../code/person/tests/test_person_w_strings.py
+  :language: python
+  :lineno-start: 17
+  :caption: person/tests/test_person.py
+  :lines: 17-
 
 -----
 
