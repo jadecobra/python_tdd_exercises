@@ -2008,6 +2008,1003 @@ the test passes.
 
 :ref:`I can call functions with positional arguments<test_positional_arguments>`.
 
+
+----
+
+*********************************************************************************
+extract assert_equal function
+*********************************************************************************
+
+The :ref:`assertions<what is an assertion?>` in :ref:`test_positional_arguments`, :ref:`test_why_use_a_function`, :ref:`test_identity_function` and :ref:`test_constant_function` are the same, they check if the result of a :ref:`function call<how to call a function with input>` is equal to something.
+
+.. code-block:: python
+
+  assert function() == something
+
+I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` if two things are equal.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add a :ref:`function<what is a function?>` named ``assert_equal`` that takes two inputs and :ref:`asserts<what is an assertion?>` that they are equal
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2
+
+    def assert_equal(input_1, input_2):
+        assert input_1 == input_2
+
+
+    def test_making_a_function_w_pass():
+
+* I use the new :ref:`function<what is a function?>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_positional_arguments`
+
+  .. code-block::
+    :lineno-start: 65
+    :emphasize-lines: 7-14
+
+    def test_positional_arguments():
+        def positional_arguments(first_input, last_input):
+            return first_input, last_input
+
+        first, last = 'first', 'last'
+
+        # assert (
+        #     positional_arguments(first, last)
+        #  == (first, last)
+        # )
+        assert_equal(
+            positional_arguments(first, last),
+            (last, first)
+        )
+        assert (
+            positional_arguments(last, first)
+         == (last, first)
+        )
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert ('first', 'last') == ('last', 'first')
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the expectation to match reality
+
+.. code-block:: python
+  :lineno-start: 75
+  :emphasize-lines: 3-4
+
+      assert_equal(
+          positional_arguments(first, last),
+          # (last, first)
+          (first, last)
+      )
+      assert (
+          positional_arguments(last, first)
+       == (last, first)
+      )
+
+the test passes.
+
+.. code-block:: shell
+
+  ├── first = 'first'
+  ├── last  = 'last'
+  └── assert_equal(
+          positional_arguments(first, last),
+          (first, last)
+      ) -> None
+      └── def assert_equal(input_1, input_2):
+          ├── input_1 = positional_arguments(first, last)
+          │             └── def positional_arguments(
+          │                     first_input, last_input
+          │                 ):
+          │                 ├── first_input = first
+          │                 ├── last_input  = last
+          │                 └── return first_input, last_input
+          │                     return first      , last
+          ├── input_2 = (first, last)
+          └── assert input_1       == input_2
+              assert (first, last) == (first, last)
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I use the :ref:`assert_equal function<extract assert_equal function>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_positional_arguments`
+
+  .. code-block::
+    :lineno-start: 80
+    :emphasize-lines: 1-8
+
+        # assert (
+        #     positional_arguments(last, first)
+        #  == (last, first)
+        # )
+        assert_equal(
+            positional_arguments(last, first),
+            (first, last)
+        )
+
+        assert (
+            positional_arguments(0, 1)
+         == (0, 1)
+        )
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert ('last', 'first') == ('first', 'last')
+
+* I change the expectation to match reality
+
+  .. code-block:: python
+    :lineno-start: 84
+    :emphasize-lines: 3-4
+
+        assert_equal(
+            positional_arguments(last, first),
+            # (first, last)
+            (last, first)
+        )
+
+        assert (
+            positional_arguments(0, 1)
+         == (0, 1)
+        )
+
+  the test passes.
+
+  .. code-block:: shell
+
+    ├── first = 'first'
+    ├── last  = 'last'
+    └── assert_equal(
+            positional_arguments(last, first),
+            (last, first)
+        ) -> None
+        └── def assert_equal(input_1, input_2):
+            ├── input_1 = positional_arguments(last, first)
+            │             └── def positional_arguments(
+            │                     first_input, last_input
+            │                 ):
+            │                 ├── first_input = last
+            │                 ├── last_input  = first
+            │                 └── return first_input, last_input
+            │                     return last       , first
+            ├── input_2 = (last, first)
+            └── assert input_1       == input_2
+                assert (last, first) == (last, first)
+
+* I :ref:`call the assert_equal function<extract assert_equal function>` for the third :ref:`assertion<what is an assertion?>` in :ref:`test_positional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 90
+    :emphasize-lines: 1-7
+
+        # assert (
+        #     positional_arguments(0, 1)
+        #  == (0, 1)
+        # )
+        assert_equal(
+            positional_arguments(0, 1), (1, 0)
+        )
+
+        a_tuple = (0, 1, 2, 'n')
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert (0, 1) == (1, 0)
+
+* I change the expectation to match reality for the third :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 94
+    :emphasize-lines: 2-3
+
+        assert_equal(
+            # positional_arguments(0, 1), (1, 0)
+            positional_arguments(0, 1), (0, 1)
+        )
+
+        a_tuple = (0, 1, 2, 'n')
+
+  the test passes.
+
+  .. code-block:: shell
+
+    assert_equal(
+        positional_arguments(0, 1),
+        (0, 1)
+    ) -> None
+    └── def assert_equal(input_1, input_2):
+        ├── input_1 = positional_arguments(0, 1)
+        │             └── def positional_arguments(
+        │                     first_input, last_input
+        │                 ):
+        │                 ├── first_input = 0
+        │                 ├── last_input  = 1
+        │                 └── return first_input, last_input
+        │                     return 0          , 1
+        ├── input_2 = (0, 1)
+        └── assert input_1 == input_2
+            assert (0, 1)  == (0, 1)
+
+* I use the :ref:`assert_equal function<extract assert_equal function>` for the fourth :ref:`assertion<what is an assertion?>` in :ref:`test_positional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 99
+    :emphasize-lines: 3-10
+
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
+        # assert (
+        #     positional_arguments(a_tuple, a_list)
+        #  == (a_tuple, a_list)
+        # )
+        assert_equal(
+            positional_arguments(a_list, a_tuple),
+            (a_tuple, a_list)
+        )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert ([0, 1, 2, 'n...0, 1, 2, 'n'))
+                        == ((0, 1, 2, 'n...0, 1, 2, 'n']
+
+* I change the :ref:`call<how to call a function with input>` to ``positional_arguments`` to match the expectation of the fourth :ref:`assertion<what is an assertion?>` in :ref:`test_positional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 99
+    :emphasize-lines: 8-9
+
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
+        # assert (
+        #     positional_arguments(a_tuple, a_list)
+        #  == (a_tuple, a_list)
+        # )
+        assert_equal(
+            # positional_arguments(a_list, a_tuple),
+            positional_arguments(a_tuple, a_list),
+            (a_tuple, a_list)
+        )
+
+
+    # Exceptions seen
+
+  the test passes.
+
+  .. code-block:: shell
+
+    ├── a_tuple = (0, 1, 2, 'n')
+    ├── a_list = [0, 1, 2, 'n']
+    └── assert_equal(
+            positional_arguments(a_tuple, a_list),
+            (a_tuple, a_list)
+        ) -> None
+        └── def assert_equal(input_1, input_2):
+            ├── input_1 = positional_arguments(a_tuple, a_list)
+            │             └── def positional_arguments(
+            │                     first_input, last_input
+            │                 ):
+            │                 ├── first_input = a_tuple
+            │                 ├── last_input  = a_list
+            │                 └── return first_input, last_input
+            │                     return a_tuple    , a_list
+            ├── input_2 = (a_tuple, a_list)
+            └── assert input_1            == input_2
+                assert (a_tuple, a_list)  == (a_tuple, a_list)
+
+* I remove the commented lines from :ref:`test_positional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 65
+
+    def test_positional_arguments():
+        def positional_arguments(first_input, last_input):
+            return first_input, last_input
+
+        first, last = 'first', 'last'
+
+        assert_equal(
+            positional_arguments(first, last),
+            (first, last)
+        )
+        assert_equal(
+            positional_arguments(last, first),
+            (last, first)
+        )
+
+  .. code-block:: python
+    :lineno-start: 80
+
+        assert_equal(
+            positional_arguments(0, 1), (0, 1)
+        )
+
+        a_tuple = (0, 1, 2, 'n')
+        a_list = [0, 1, 2, 'n']
+        assert_equal(
+            positional_arguments(a_tuple, a_list),
+            (a_tuple, a_list)
+        )
+
+
+    # Exceptions
+
+* I use the :ref:`assert_equal function<extract assert_equal function>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_why_use_a_function`
+
+  .. code-block::
+    :lineno-start: 49
+    :emphasize-lines: 5-25
+
+    def test_why_use_a_function():
+        def add_x(number):
+            return 3 + number
+
+        # assert add_x(0) == 3
+        assert_equal(add_x(0), 2)
+        # assert add_x(1) == 4
+        assert_equal(add_x(1), 3)
+        # assert add_x(2) == 5
+        assert_equal(add_x(2), 4)
+        # assert add_x(3) == 6
+        assert_equal(add_x(3), 5)
+        # assert add_x(4) == 7
+        assert_equal(add_x(4), 6)
+        # assert add_x(5) == 8
+        assert_equal(add_x(5), 7)
+        # assert add_x(6) == 9
+        assert_equal(add_x(6), 8)
+        # assert add_x(7) == 10
+        assert_equal(add_x(7), 9)
+        # assert add_x(8) == 11
+        assert_equal(add_x(8), 10)
+        # assert add_x(9) == 12
+        assert_equal(add_x(9), 11)
+
+
+    def test_positional_arguments():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert 3 == 2
+
+* I change the expectations of the :ref:`assertions<what is an assertion?>` of :ref:`test_why_use_a_function`
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 6-7, 9-10, 12-13, 15-16, 18-19, 21-22, 24-25, 27-28, 30-31, 33-34
+
+    def test_why_use_a_function():
+        def add_x(number):
+            return 3 + number
+
+        # assert add_x(0) == 3
+        # assert_equal(add_x(0), 2)
+        assert_equal(add_x(0), 3)
+        # assert add_x(1) == 4
+        # assert_equal(add_x(1), 3)
+        assert_equal(add_x(1), 4)
+        # assert add_x(2) == 5
+        # assert_equal(add_x(2), 4)
+        assert_equal(add_x(2), 5)
+        # assert add_x(3) == 6
+        # assert_equal(add_x(3), 5)
+        assert_equal(add_x(3), 6)
+        # assert add_x(4) == 7
+        # assert_equal(add_x(4), 6)
+        assert_equal(add_x(4), 7)
+        # assert add_x(5) == 8
+        # assert_equal(add_x(5), 7)
+        assert_equal(add_x(5), 8)
+        # assert add_x(6) == 9
+        # assert_equal(add_x(6), 8)
+        assert_equal(add_x(6), 9)
+        # assert add_x(7) == 10
+        # assert_equal(add_x(7), 9)
+        assert_equal(add_x(7), 10)
+        # assert add_x(8) == 11
+        # assert_equal(add_x(8), 10)
+        assert_equal(add_x(8), 11)
+        # assert add_x(9) == 12
+        # assert_equal(add_x(9), 11)
+        assert_equal(add_x(9), 12)
+
+
+    def test_positional_arguments():
+
+  the test passes.
+
+  .. code-block:: shell
+
+    assert_equal(add_x(0), 3) -> None
+    └── def assert_equal(input_1, input_2):
+        ├── input_1 = add_x(0)
+        │             └── def add_x(number):
+        │                 ├── number = 0
+        │                 └── return 3 + number
+        │                     return 3 + 0
+        │                     return 3
+        ├── input_2 = 3
+        └── assert input_1 == input_2
+            assert 3       == 3
+
+* I remove the commented lines from :ref:`test_why_use_a_function`
+
+  .. code-block:: python
+    :lineno-start: 49
+
+    def test_why_use_a_function():
+        def add_x(number):
+            return 3 + number
+
+        assert_equal(add_x(0), 3)
+        assert_equal(add_x(1), 4)
+        assert_equal(add_x(2), 5)
+        assert_equal(add_x(3), 6)
+        assert_equal(add_x(4), 7)
+        assert_equal(add_x(5), 8)
+        assert_equal(add_x(6), 9)
+        assert_equal(add_x(7), 10)
+        assert_equal(add_x(8), 11)
+        assert_equal(add_x(9), 12)
+
+
+    def test_positional_arguments():
+
+* I use the :ref:`assert_equal function<extract assert_equal function>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_identity_function`
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 5-8
+
+    def test_identity_function():
+        def identity(the_input):
+            return the_input
+
+        # assert identity(None) == None
+        assert_equal(identity(None), object)
+        # assert identity(object) == object
+        assert_equal(identity(object), None)
+
+
+    def test_why_use_a_function():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: assert None == <class 'object'>
+
+* I change the expectation of the first :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 6-7
+
+    def test_identity_function():
+        def identity(the_input):
+            return the_input
+
+        # assert identity(None) == None
+        # assert_equal(identity(None), object)
+        assert_equal(identity(None), None)
+        # assert identity(object) == object
+        assert_equal(identity(object), None)
+
+
+    def test_why_use_a_function():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: assert <class 'object'> == None
+
+* I change the expectation of the second :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 9-10
+
+    def test_identity_function():
+        def identity(the_input):
+            return the_input
+
+        # assert identity(None) == None
+        # assert_equal(identity(None), object)
+        assert_equal(identity(None), None)
+        # assert identity(object) == object
+        # assert_equal(identity(object), None)
+        assert_equal(identity(object), object)
+
+
+    def test_why_use_a_function():
+
+  the test passes.
+
+  .. code-block:: shell
+
+    assert_equal(identity(object), object) -> None
+    └── def assert_equal(input_1, input_2):
+        ├── input_1 = identity(object)
+        │             └── def identity(the_input):
+        │                 ├── the_input = object
+        │                 └── return the_input
+        │                     return object
+        ├── input_2 = object
+        └── assert input_1 == input_2
+            assert object  == object
+
+* I remove the commented lines from :ref:`test_identity_function`
+
+  .. code-block:: python
+    :lineno-start: 41
+
+    def test_identity_function():
+        def identity(the_input):
+            return the_input
+
+        assert_equal(identity(None), None)
+        assert_equal(identity(object), object)
+
+
+    def test_why_use_a_function():
+
+* I use the :ref:`assert_equal function<extract assert_equal function>` in :ref:`test_constant_function`
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 5-6
+
+    def test_constant_function():
+        def constant():
+            return 'the same thing'
+
+        # assert constant() == 'the same thing'
+        assert_equal(constant(), 'not the same thing')
+
+
+    def test_identity_function():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'the same thing'
+                        == 'not the same thing'
+
+* I change the expectation to match reality in :ref:`test_constant_function`
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 6-7
+
+    def test_constant_function():
+        def constant():
+            return 'the same thing'
+
+        # assert constant() == 'the same thing'
+        # assert_equal(constant(), 'not the same thing')
+        assert_equal(constant(), 'the same thing')
+
+
+    def test_identity_function():
+
+  the test passes.
+
+  .. code-block:: shell
+
+    assert_equal(constant(), 'the same thing') -> None
+    └── def assert_equal(input_1, input_2):
+        ├── input_1 = constant()
+        │             └── def constant():
+        │                 └── return 'the same thing'
+        ├── input_2 = 'the same thing'
+        └── assert input_1          == input_2
+            assert 'the same thing' == 'the same thing'
+
+* I remove the commented lines from :ref:`test_identity_function`
+
+  .. code-block:: python
+    :lineno-start: 34
+
+    def test_constant_function():
+        def constant():
+            return 'the same thing'
+
+        assert_equal(constant(), 'the same thing')
+
+
+    def test_identity_function():
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'extract assert_equal function'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+:ref:`I can use a function to assert if two things are equal<extract assert_equal function>`.
+
+----
+
+*********************************************************************************
+extract assert_is_none function
+*********************************************************************************
+
+The :ref:`assertions<what is an assertion?>` in :ref:`test_what_happens_after_functions_return`, :ref:`test_making_a_function_w_return_none`, :ref:`test_making_a_function_w_return` and :ref:`test_making_a_function_w_pass` are the same, they check if the result of a :ref:`function call<how to call a function with input>` is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
+
+.. code-block:: python
+
+  assert function() is None
+
+I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` if something is :ref:`None<what is None?>`.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add a :ref:`function<what is a function?>` named ``assert_is_none`` that takes one input and :ref:`asserts<what is an assertion?>` if the input is :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6
+
+    def assert_equal(input_1, input_2):
+        assert input_1 == input_2
+
+
+    def assert_is_none(something):
+        assert something is None
+
+
+    def test_making_a_function_w_pass():
+
+* I use the new :ref:`function<what is a function?>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_making_a_function_w_pass`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 5-6
+
+    def test_making_a_function_w_pass():
+        def w_pass():
+            pass
+
+        # assert w_pass() is None
+        assert_is_none(w_pass)
+
+
+    def test_making_a_function_w_return():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    assert <function test_making_a_function_w_pass
+                .<locals>.w_pass
+            at 0xffffa76b5432>
+        is None
+
+  because I just passed the :ref:`function<what is a function?>`, I did not :ref:`call it<how to call a function with input>`.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I :ref:`call<how to call a function with input>` the :ref:`w_pass function<test_making_a_function_w_pass>` in the :ref:`assertion<what is an assertion?>`
+
+.. code-block:: python
+  :lineno-start: 9
+  :emphasize-lines: 6-7
+
+    def test_making_a_function_w_pass():
+        def w_pass():
+            pass
+
+        # assert w_pass() is None
+        # assert_is_none(w_pass)
+        assert_is_none(w_pass())
+
+
+    def test_making_a_function_w_return():
+
+the test passes.
+
+.. code-block:: shell
+
+  assert_is_none(w_pass()) -> None
+  └── def assert_is_none(something):
+          ├── something = w_pass()
+          │               └── def w_pass():
+          │                   └── pass
+          │                       return None
+          └── assert something is None
+              assert None      is None
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented lines from :ref:`test_making_a_function_w_pass`
+
+  .. code-block:: python
+    :lineno-start: 9
+
+    def test_making_a_function_w_pass():
+        def w_pass():
+            pass
+
+        assert_is_none(w_pass())
+
+
+    def test_making_a_function_w_return():
+
+* I use the :ref:`assert_is_none function<extract assert_is_none function>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_making_a_function_w_return`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 5-6
+
+    def test_making_a_function_w_return():
+        def w_return():
+            return
+
+        # assert w_return() is None
+        assert_is_none(w_return)
+
+
+    def test_making_a_function_w_return_none():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    assert <function test_making_a_function_w_return
+                .<locals>.w_return
+            at 0xffff7e654321>
+        is None
+
+* I :ref:`call<how to call a function with input>` the :ref:`w_return function<test_making_a_function_w_return>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 6-7
+
+    def test_making_a_function_w_return():
+        def w_return():
+            return
+
+        # assert w_return() is None
+        # assert_is_none(w_return)
+        assert_is_none(w_return())
+
+
+    def test_making_a_function_w_return_none():
+
+  the test passes.
+
+  .. code-block:: shell
+
+    assert_is_none(w_return()) -> None
+    └── def assert_is_none(something):
+            ├── something = w_return()
+            │               └── def w_return():
+            │                   └── return
+            │                       return None
+            └── assert something is None
+                assert None      is None
+
+* I remove the commented lines from :ref:`test_making_a_function_w_return`
+
+  .. code-block:: python
+    :lineno-start: 16
+
+    def test_making_a_function_w_return():
+        def w_return():
+            return
+
+        assert_is_none(w_return())
+
+
+    def test_making_a_function_w_return_none():
+
+* I use the :ref:`assert_is_none function<extract assert_is_none function>` in :ref:`test_making_a_function_w_return_none`
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 5-6
+
+    def test_making_a_function_w_return_none():
+        def w_return_none():
+            return None
+
+        # assert w_return_none() is None
+        assert_is_none(w_return_none)
+
+
+    def test_what_happens_after_functions_return():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    assert <function test_making_a_function_w_return_none
+                .<locals>.w_return_none
+            at 0xffffa1234567>
+          is None
+
+* I :ref:`call<how to call a function with input>` the :ref:`w_return_none function<test_making_a_function_w_return_none>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 6-7
+
+    def test_making_a_function_w_return_none():
+        def w_return_none():
+            return None
+
+        # assert w_return_none() is None
+        # assert_is_none(w_return_none)
+        assert_is_none(w_return_none())
+
+
+    def test_what_happens_after_functions_return():
+
+  the test passes.
+
+  .. code-block:: shell
+
+    assert_is_none(w_return_none()) -> None
+    └── def assert_is_none(something):
+            ├── something = w_return_none()
+            │               └── def w_return_none():
+            │                   └── return None
+            └── assert something is None
+                assert None      is None
+
+* I remove the commented lines from :ref:`test_making_a_function_w_return_none`
+
+  .. code-block:: python
+    :lineno-start: 23
+
+    def test_making_a_function_w_return_none():
+        def w_return_none():
+            return None
+
+        assert_is_none(w_return_none())
+
+
+    def test_what_happens_after_functions_return():
+
+* I use the :ref:`assert_is_none function<extract assert_is_none function>` in :ref:`test_what_happens_after_functions_return`
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 6-7
+
+    def test_what_happens_after_functions_return():
+        def return_leaves_the_function():
+            return None
+            return 'only one way for this line to run'
+
+        # assert return_leaves_the_function() is None
+        assert_is_none(return_leaves_the_function)
+
+
+    def test_constant_function():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    assert <function test_what_happens_after_functions_return
+                .<locals>.return_leaves_the_function
+            at 0xffffa01b2345>
+        is None
+
+* I :ref:`call<how to call a function with input>` the :ref:`return_leaves_the_function function<test_what_happens_after_functions_return>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 7-8
+
+    def test_what_happens_after_functions_return():
+        def return_leaves_the_function():
+            return None
+            return 'only one way for this line to run'
+
+        # assert return_leaves_the_function() is None
+        # assert_is_none(return_leaves_the_function)
+        assert_is_none(return_leaves_the_function())
+
+
+    def test_constant_function():
+
+  the test passes.
+
+  .. code-block:: shell
+
+    assert_is_none(return_leaves_the_function()) -> None
+    └── def assert_is_none(something):
+            ├── something = return_leaves_the_function()
+            │               └── def return_leaves_the_function():
+            │                   └── return None
+            └── assert something is None
+                assert None      is None
+
+* I remove the commented lines from :ref:`test_what_happens_after_functions_return`
+
+  .. code-block:: python
+    :lineno-start: 30
+
+    def test_what_happens_after_functions_return():
+        def return_leaves_the_function():
+            return None
+            return 'only one way for this line to run'
+
+        assert_is_none(return_leaves_the_function())
+
+
+    def test_constant_function():
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'extract assert_is_none function'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+:ref:`I can use a function to assert if something is None<extract assert_is_none function>`.
+
 ----
 
 *********************************************************************************
@@ -2028,7 +3025,7 @@ Another way to :ref:`call a function<how to call a function with input>` is to u
 
 * I go back to the terminal_ where the tests are running
 
-* I add a new test to ``test_functions.py``
+* I add a test for `keyword arguments`_ to ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 81
@@ -3224,7 +4221,7 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
     .. code-block:: shell
 
       args_and_kwargs_arguments('first', last_input='last',)
-      └── def args_and_kwargs_arguments(last_input)
+      └── def args_and_kwargs_arguments(last_input):
           ├── last_input = 'first' ?
           └── last_input = 'last'  ?
 
@@ -3259,7 +4256,7 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
   .. code-block:: shell
 
     args_and_kwargs_arguments('first', last_input='last',)
-    └── def args_and_kwargs_arguments(last_input, first_input)
+    └── def args_and_kwargs_arguments(last_input, first_input):
         ├── last_input = 'first' ?
         ├── last_input = 'last'  ?
         └── first_input = ?
@@ -3392,7 +4389,7 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 
   the test is still green.
 
-* I remove the commented lines from :ref
+* I remove the commented lines from :ref:`test_args_and_kwargs`
 
   .. code-block:: python
     :lineno-start: 147
@@ -3446,7 +4443,7 @@ I can make an argument_ of a :ref:`function<what is a function?>` optional, whic
 * I add a test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 151
+    :lineno-start: 153
     :emphasize-lines: 9-16
 
         assert (
@@ -3488,7 +4485,7 @@ I can make an argument_ of a :ref:`function<what is a function?>` optional, whic
 I add the :ref:`function definition<how to make a function that takes input>` for ``optional_arguments``
 
 .. code-block:: python
-  :lineno-start: 159
+  :lineno-start: 161
   :emphasize-lines: 2-3
 
   def test_optional_arguments():
@@ -3519,7 +4516,7 @@ the test passes.
 * I remove ``last_input=last_name`` from the :ref:`call<how to call a function with input>` to ``optional_arguments`` to show that it is a required argument
 
   .. code-block:: python
-    :lineno-start: 159
+    :lineno-start: 161
     :emphasize-lines: 8-9
 
     def test_optional_arguments():
@@ -3546,12 +4543,12 @@ the test passes.
         test_optional_arguments.<locals>.optional_arguments()
         missing 1 required positional argument: 'last_input'
 
-  because the ``last_input`` argument MUST be given when this :ref:`function<what is a function?>` is called (it is required).
+  because the ``last_input`` argument MUST be given when this :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` (it is required).
 
-* I give the argument a default value to make it optional
+* I give the argument a :ref:`default value<test_optional_arguments>` to make it optional
 
   .. code-block:: python
-    :lineno-start: 159
+    :lineno-start: 161
     :emphasize-lines: 2-5
 
     def test_optional_arguments():
@@ -3580,7 +4577,7 @@ the test passes.
     optional_arguments(first_input, last_input='doe')
                    -> (first_input, last_input      )
 
-  it means these two calls are the same
+  it means these two :ref:`calls<how to call a function with input>` are the same
 
   .. code-block:: python
 
@@ -3591,34 +4588,35 @@ the test passes.
 
     .. code-block:: shell
 
-      optional_arguments('jane')
-
-      def optional_arguments(first_input, last_input='doe')
-      ├── first_input = 'jane'
-      ├── last_input  = 'doe'
-      └── return first_input, last_input
-          return 'jane'     , 'doe'
+      optional_arguments('jane') -> ('jane', 'doe')
+      └── def optional_arguments(first_input, last_input='doe'):
+          ├── first_input = 'jane'
+          ├── last_input  = 'doe'
+          └── return first_input, last_input
+              return 'jane'     , 'doe'
 
   - When ``optional_arguments(first_input, last_input='doe')`` runs
 
     .. code-block:: shell
 
-      optional_arguments('jane', last_input='doe')
-
-      def optional_arguments(first_input, last_input='doe')
-      ├── first_input = 'jane'
-      ├── last_input  = 'doe'
-      └── return first_input, last_input
-          return 'jane'     , 'doe'
+      optional_arguments(
+          'jane', last_input='doe'
+      ) -> ('jane', 'doe')
+      └── def optional_arguments(first_input, last_input='doe'):
+          ├── first_input = 'jane'
+          ├── last_input  = 'doe'
+          └── return first_input, last_input
+              return 'jane'     , 'doe'
 
   :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
-* I add another :ref:`assertion<what is an assertion?>` to show that I can still call the :ref:`call the function<how to call a function with input>` with different values
+* I add another :ref:`assertion<what is an assertion?>` to show that I can still :ref:`call the function<how to call a function with input>` with different values
 
   .. code-block:: python
     :lineno-start: 168
-    :emphasize-lines: 9-15
+    :emphasize-lines: 10-16
 
+        first_name, last_name = 'jane', 'doe'
         assert (
             optional_arguments(
                 # first_name, last_input=last_name,
@@ -3662,35 +4660,26 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes
-
-  .. code-block:: python
-
-    optional_arguments(first_input, last_input='doe')
-                   -> (first_input, last_input      )
-
-  .. code-block:: python
-
-    first_name, blow = 'joe', 'blow'
-
-  When ``optional_arguments(first_name, blow)`` runs
+  the test passes.
 
   .. code-block:: shell
-    :emphasize-lines: 5
-    :emphasize-text: blow
 
-    optional_arguments(first_name, last_name)
+    ├── first_name = 'joe'
+    ├── blow       = 'blow'
+    └── optional_arguments(
+            first_name, last_name
+        ) -> ('joe', 'blow')
+        └── def optional_arguments(first_input, last_input='doe'):
+            ├── first_input = first_name
+            ├── last_input  = blow
+            │   # because a value is given in the call
+            └── return first_input, last_input
+                return 'joe'     , 'blow'
 
-    def optional_arguments(first_input, last_input='doe')
-    ├── first_input = first_name
-    ├── last_input  = blow # because a value is given in the call
-    └── return first_input, last_input
-        return 'joe'     , 'blow'
-
-* I add another :ref:`assertion<what is an assertion?>`
+* I add another :ref:`assertion<what is an assertion?>` to :ref:`test_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 176
+    :lineno-start: 177
     :emphasize-lines: 10-16
 
         first_name, blow = 'joe', 'blow'
@@ -3751,12 +4740,24 @@ the test passes.
     optional_arguments('john'     , last_input='doe')
     optional_arguments(first_input, last_input='doe')
 
+  .. code-block:: shell
+
+    ├── first_name = 'john'
+    └── optional_arguments(
+            first_input=first_name
+        ) -> ('john', 'doe')
+        └── def optional_arguments(first_input, last_input='doe'):
+            ├── first_input = first_name
+            ├── last_input  = 'doe' # use default value
+            └── return first_input, last_input
+                return 'john'     , 'doe'
+
   :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
-* I add one more :ref:`assertion<what is an assertion?>`
+* I add one more :ref:`assertion<what is an assertion?>` to :ref:`test_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 185
+    :lineno-start: 186
     :emphasize-lines: 10-17
 
         first_name = 'john'
@@ -3790,7 +4791,7 @@ the test passes.
 * I change my expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 194
+    :lineno-start: 195
     :emphasize-lines: 7-8
 
         last_name = 'smith'
@@ -3808,10 +4809,24 @@ the test passes.
 
   the test passes.
 
+  .. code-block:: shell
+
+    ├── first_name = 'john'
+    ├── last_name  = 'smith'
+    └── optional_arguments(
+            last_input=last_name,
+            first_input=first_name,
+        ) -> ('john', 'smith')
+        └── def optional_arguments(first_input, last_input='doe'):
+            ├── first_input = first_name
+            ├── last_input  = smith # use given value
+            └── return first_input, last_input
+                return 'john'     , 'smith'
+
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 159
+    :lineno-start: 161
 
     def test_optional_arguments():
         def optional_arguments(
@@ -3829,7 +4844,7 @@ the test passes.
         )
 
   .. code-block:: python
-    :lineno-start: 174
+    :lineno-start: 175
 
         first_name, blow = 'joe', 'blow'
         assert (
@@ -3840,7 +4855,7 @@ the test passes.
         )
 
   .. code-block:: python
-    :lineno-start: 182
+    :lineno-start: 183
 
         first_name = 'john'
         assert (
@@ -3851,7 +4866,7 @@ the test passes.
         )
 
   .. code-block:: python
-    :lineno-start: 190
+    :lineno-start: 191
 
         last_name = 'smith'
         assert (
@@ -3978,7 +4993,7 @@ are the same, they always ``return first_input, last_input``, their names are di
 test_unknown_number_of_arguments
 *********************************************************************************
 
-I can make :ref:`functions<what is a function?>` that take any number of :ref:`positional<test_positional_arguments>` and :ref:`keyword<test_keyword_arguments>` arguments. This means I do not need to know how many inputs the :ref:`function<what is a function?>` should take when it is called, it can handle whatever I give it.
+I can make :ref:`functions<what is a function?>` that take any number of :ref:`positional<test_positional_arguments>` and :ref:`keyword<test_keyword_arguments>` arguments. This means I do not need to know how many inputs the :ref:`function<what is a function?>` should take when it is :ref:`called<how to call a function with input>`, it can handle whatever I give it.
 
 ----
 
@@ -3990,10 +5005,10 @@ I can make :ref:`functions<what is a function?>` that take any number of :ref:`p
 
 * I go back to the terminal_ where the tests are running
 
-* I add a new test to ``test_functions.py``
+* I add :ref:`test_unknown_number_of_arguments` to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 190
+    :lineno-start: 191
     :emphasize-lines: 11-17
 
         last_name = 'smith'
@@ -4036,7 +5051,7 @@ I can make :ref:`functions<what is a function?>` that take any number of :ref:`p
 * I add the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 200
+    :lineno-start: 201
     :emphasize-lines: 2-3
 
     def test_unknown_number_of_arguments():
@@ -4057,16 +5072,17 @@ I can make :ref:`functions<what is a function?>` that take any number of :ref:`p
 
   .. code-block:: python
 
-    TypeError: test_unknown_number_of_arguments
-                   .<locals>.unknown_number_of_arguments()
-               got an unexpected keyword argument 'a'
+    TypeError:
+        test_unknown_number_of_arguments
+              .<locals>.unknown_number_of_arguments()
+        got an unexpected keyword argument 'a'
 
   because the :ref:`assertion<what is an assertion?>` called ``unknown_number_of_arguments`` with a :ref:`keyword argument<test_keyword_arguments>` named ``a`` and the :ref:`function definition<how to make a function that takes input>` does not allow any inputs, the parentheses are empty.
 
-* I add the name to the :ref:`function definition<how to make a function that takes input>`
+* I add ``a`` to the :ref:`function definition<how to make a function that takes input>`
 
   .. code-block:: python
-    :lineno-start: 200
+    :lineno-start: 201
     :emphasize-lines: 2-3
 
     def test_unknown_number_of_arguments():
@@ -4078,11 +5094,19 @@ I can make :ref:`functions<what is a function?>` that take any number of :ref:`p
 
   .. code-block:: python
 
-    TypeError: test_unknown_number_of_arguments
-                   .<locals>.unknown_number_of_arguments()
-               got multiple values for argument 'a'
+    TypeError:
+        test_unknown_number_of_arguments
+            .<locals>.unknown_number_of_arguments()
+        got multiple values for argument 'a'
 
   I had this same problem in :ref:`test_args_and_kwargs`. Python_ cannot tell if ``a`` is a :ref:`positional<test_positional_arguments>` or :ref:`keyword argument<test_keyword_arguments>` based on my :ref:`function definition<how to make a function that takes input>`. It cannot tell if ``0`` or ``2`` is the value for ``a``.
+
+  .. code-block:: shell
+
+    unknown_number_of_arguments(0, 1, a=2, b=3,)
+    └── def unknown_number_of_arguments(a):
+        ├── a = 0 ?
+        └── a = 2 ?
 
 ----
 
@@ -4095,7 +5119,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 * I use a double starred expression to replace ``a`` in the parentheses
 
   .. code-block:: python
-    :lineno-start: 200
+    :lineno-start: 201
     :emphasize-lines: 3-4
 
     def test_unknown_number_of_arguments():
@@ -4108,14 +5132,15 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 
   .. code-block:: python
 
-    TypeError: test_unknown_number_of_arguments
-                   .<locals>.unknown_number_of_arguments()
-               takes 0 positional arguments but 2 were given
+    TypeError:
+        test_unknown_number_of_arguments
+            .<locals>.unknown_number_of_arguments()
+        takes 0 positional arguments but 2 were given
 
-* I add a name for the first :ref:`positional argument<test_positional_arguments>`
+* I add ``x`` as the name of the first :ref:`positional argument<test_positional_arguments>`
 
   .. code-block:: python
-    :lineno-start: 200
+    :lineno-start: 201
     :emphasize-lines: 4-5
     :emphasize-text: x
 
@@ -4137,7 +5162,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 * I change the order of the inputs in ``unknown_number_of_arguments``
 
   .. code-block:: python
-    :lineno-start: 200
+    :lineno-start: 201
     :emphasize-lines: 5-6
     :emphasize-text: x
 
@@ -4153,14 +5178,15 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 
   .. code-block:: python
 
-    TypeError: test_unknown_number_of_arguments
-                   .<locals>.unknown_number_of_arguments()
-               takes 1 positional argument but 2 were given
+    TypeError:
+        test_unknown_number_of_arguments
+            .<locals>.unknown_number_of_arguments()
+        takes 1 positional argument but 2 were given
 
-* I add a name for the other :ref:`positional argument<test_positional_arguments>`
+* I add ``y`` as the name of the other :ref:`positional argument<test_positional_arguments>`
 
   .. code-block:: python
-    :lineno-start: 200
+    :lineno-start: 201
     :emphasize-lines: 6-7
 
     def test_unknown_number_of_arguments():
@@ -4184,6 +5210,12 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 
   the test passes.
 
+  .. code-block:: shell
+
+    unknown_number_of_arguments(0, 1, a=2, b=3,) -> None
+    └── def unknown_number_of_arguments(x, y, **kwargs):
+        └── return None
+
 ----
 
 =================================================================================
@@ -4195,7 +5227,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 * I add an :ref:`assertion<what is an assertion?>` to see what happens if I :ref:`call<how to call a function with input>` the :ref:`function<what is a function?>` with 3 :ref:`keyword arguments<test_keyword_arguments>`
 
   .. code-block:: python
-    :lineno-start: 209
+    :lineno-start: 210
     :emphasize-lines: 8-13
 
         assert (
@@ -4224,7 +5256,7 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 * I change my expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 216
+    :lineno-start: 217
     :emphasize-lines: 5-6
 
         assert (
@@ -4238,12 +5270,18 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 
     # Exceptions seen
 
-  the test passes because the :ref:`function<what is a function?>` can take any number of :ref:`keyword arguments<test_keyword_arguments>` without knowing how many are in the call.
+  the test passes because the :ref:`function<what is a function?>` can take any number of :ref:`keyword arguments<test_keyword_arguments>` without knowing how many are in the :ref:`call<how to call a function with input>`.
+
+  .. code-block:: shell
+
+    unknown_number_of_arguments(0, 1, a=2, b=3, c=4,) -> None
+    └── def unknown_number_of_arguments(x, y, **kwargs):
+        └── return None
 
 * I add an :ref:`assertion<what is an assertion?>` to see what happens when I :ref:`call<how to call a function with input>` the :ref:`function<what is a function?>` with 3 :ref:`positional arguments<test_positional_arguments>`
 
   .. code-block:: python
-    :lineno-start: 216
+    :lineno-start: 217
     :emphasize-lines: 9-14
 
         assert (
@@ -4268,16 +5306,17 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 
   .. code-block:: python
 
-    TypeError: test_unknown_number_of_arguments
-                   .<locals>.unknown_number_of_arguments()
-               takes 2 positional arguments but 3 were given
+    TypeError:
+        test_unknown_number_of_arguments
+            .<locals>.unknown_number_of_arguments()
+        takes 2 positional arguments but 3 were given
 
   the :ref:`function definition<how to make a function that takes input>` only allows two :ref:`positional arguments<test_positional_arguments>` not three.
 
 * I change the definition of the ``unknown_number_of_arguments`` :ref:`function<what is a function?>` to make it take three :ref:`positional arguments<test_positional_arguments>`
 
   .. code-block:: python
-    :lineno-start: 200
+    :lineno-start: 201
     :emphasize-lines: 7-8
     :emphasize-text: z
 
@@ -4295,9 +5334,10 @@ Python_ has a way for a :ref:`function<what is a function?>` to take any number 
 
   .. code-block:: python
 
-    TypeError: test_unknown_number_of_arguments
-                   .<locals>.unknown_number_of_arguments()
-               missing 1 required positional argument: 'z'
+    TypeError:
+        test_unknown_number_of_arguments
+            .<locals>.unknown_number_of_arguments()
+        missing 1 required positional argument: 'z'
 
   because the previous :ref:`assertion<what is an assertion?>` calls the :ref:`function<what is a function?>` with two :ref:`positional arguments<test_positional_arguments>` and it now requires three.
 
@@ -4312,7 +5352,7 @@ Python_ also has a way for a :ref:`function<what is a function?>` to take any nu
 * I use a single starred expression (``*``) to replace the :ref:`positional arguments<test_positional_arguments>`
 
   .. code-block:: python
-    :lineno-start: 200
+    :lineno-start: 201
     :emphasize-lines: 8-9
 
     def test_unknown_number_of_arguments():
@@ -4328,10 +5368,16 @@ Python_ also has a way for a :ref:`function<what is a function?>` to take any nu
 
   the test passes.
 
+  .. code-block:: shell
+
+    unknown_number_of_arguments(0, 1, 2, a=3, b=4, c=5,) -> None
+    └── def unknown_number_of_arguments(*args, **kwargs):
+        └── return None
+
 * ``*args, **kwargs`` is :ref:`Python convention<conventions>`. I change the names to make it clearer
 
   .. code-block:: python
-    :lineno-start: 200
+    :lineno-start: 201
     :emphasize-lines: 9-12
 
     def test_unknown_number_of_arguments():
@@ -4348,6 +5394,8 @@ Python_ also has a way for a :ref:`function<what is a function?>` to take any nu
         ):
             return None
 
+  the test is still green.
+
 ----
 
 *********************************************************************************
@@ -4357,7 +5405,7 @@ how Python treats starred and double starred expressions
 * I change :ref:`the return statement` because I want the :ref:`function<what is a function?>` to return its input (remember the :ref:`identity function<test_identity_function>`?)
 
   .. code-block:: python
-    :lineno-start: 200
+    :lineno-start: 201
     :emphasize-lines: 13-14
 
     def test_unknown_number_of_arguments():
@@ -4392,43 +5440,30 @@ how Python treats starred and double starred expressions
   I get a tuple_ that has
 
   - a tuple_ (anything in parentheses ``( )`` separated by a comma) for the :ref:`positional arguments<test_positional_arguments>`
-  - a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>` for the :ref:`keyword arguments<test_keyword_arguments>`
-
-  .. code-block:: python
-
-    unknown_number_of_arguments(
-        *positional_arguments, **keyword_arguments
-    ) -> first_input, last_input
+  - a :ref:`dictionary<what is a dictionary?>` (any key-value pairs in curly braces ``{ }`` separated by commas) for the :ref:`keyword arguments<test_keyword_arguments>`
 
   When ``unknown_number_of_arguments(0, 1, a=2, b=3)`` runs
 
   .. code-block:: shell
 
-    unknown_number_of_arguments(0, 1, a=2, b=3)
-
-    def unknown_number_of_arguments(
-        *positional_arguments, **keyword_arguments
-    )
-    ├── positional_arguments = (0, 1)
-    ├── keyword_arguments    = {'a': 2, 'b': 3}
-    └── return  positional_arguments, keyword_arguments
-        return ((0, 1              ), {'a': 2, 'b': 3  })
-
-  Using substitution
-
-  .. code-block:: shell
-
-    assert unknown_number_of_arguments(0, 1, a=2, b=3)
-                                   == None
-    assert None                    == None
+    unknown_number_of_arguments(
+        0, 1, a=2, b=3
+    ) -> ((0, 1), {'a': 2, 'b': 3})
+    └── def unknown_number_of_arguments(
+            *positional_arguments, **keyword_arguments
+        ):
+        ├── positional_arguments = (0, 1)
+        ├── keyword_arguments    = {'a': 2, 'b': 3}
+        └── return  positional_arguments, keyword_arguments
+            return ((0, 1              ), {'a': 2, 'b': 3  })
 
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`.
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<what is a dictionary?>` (any key-value pairs in curly braces ``{ }`` separated by commas).
 
-* I change my expectation to match reality in the first :ref:`assertion<what is an assertion?>`
+* I change my expectation to match reality in the first :ref:`assertion<what is an assertion?>` of :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
-    :lineno-start: 215
+    :lineno-start: 216
     :emphasize-lines: 5-6
 
         assert (
@@ -4457,29 +5492,30 @@ how Python treats starred and double starred expressions
   I get a tuple_ that has
 
   - a tuple_ (anything in parentheses ``( )`` separated by a comma) for the :ref:`positional arguments<test_positional_arguments>`
-  - a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>` for the :ref:`keyword arguments<test_keyword_arguments>`
+  - a :ref:`dictionary<what is a dictionary?>` (any key-value pairs in curly braces ``{ }`` separated by commas) for the :ref:`keyword arguments<test_keyword_arguments>`
 
   When ``unknown_number_of_arguments(0, 1, a=2, b=3, c=4)`` runs
 
   .. code-block:: shell
 
-    unknown_number_of_arguments(0, 1, a=2, b=3, c=4)
-
-    def unknown_number_of_arguments(
-        *positional_arguments, **keyword_arguments
-    )
-    ├── positional_arguments = (0, 1)
-    ├── keyword_arguments    = {'a': 2, 'b': 3, 'c': 4}
-    └── return  positional_arguments, keyword_arguments
-        return ((0, 1              ), {'a': 2, 'b': 3, 'c':4})
+    unknown_number_of_arguments(
+        0, 1, a=2, b=3, c=4
+    ) -> ((0, 1), {'a': 2, 'b': 3, 'c': 4})
+    └── def unknown_number_of_arguments(
+            *positional_arguments, **keyword_arguments
+        ):
+        ├── positional_arguments = (0, 1)
+        ├── keyword_arguments    = {'a': 2, 'b': 3, 'c': 4}
+        └── return  positional_arguments, keyword_arguments
+            return ((0, 1              ), {'a': 2, 'b': 3, 'c':4})
 
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`.
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<what is a dictionary?>` (any key-value pairs in curly braces ``{ }`` separated by commas).
 
-* I change my expectation to match reality in the second :ref:`assertion<what is an assertion?>`
+* I change my expectation to match reality in the second :ref:`assertion<what is an assertion?>` of :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
-    :lineno-start: 223
+    :lineno-start: 224
     :emphasize-lines: 6-7
 
         assert (
@@ -4511,30 +5547,29 @@ how Python treats starred and double starred expressions
 
   I get a tuple_ that has
 
-  - a tuple_ (anything in parentheses ``( )`` separated by a comma) for the :ref:`positional arguments<test_positional_arguments>`
-  - a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>` for the :ref:`keyword arguments<test_keyword_arguments>`
-
-  When ``unknown_number_of_arguments(0, 1, 2, a=3, b=4, c=5)`` runs
+  - a tuple_ for the :ref:`positional arguments<test_positional_arguments>`
+  - a :ref:`dictionary<what is a dictionary?>` for the :ref:`keyword arguments<test_keyword_arguments>`
 
   .. code-block:: shell
 
-    unknown_number_of_arguments(0, 1, 2, a=3, b=4, c=5)
-
-    def unknown_number_of_arguments(
-        *positional_arguments, **keyword_arguments
-    )
-    ├── positional_arguments = (0, 1, 2)
-    ├── keyword_arguments    = {'a': 3, 'b': 4, 'c':5}
-    └── return  positional_arguments, keyword_arguments
-        return ((0, 1, 2           ), {'a': 3, 'b': 4, 'c':5})
+    unknown_number_of_arguments(
+        0, 1, 2, a=3, b=4, c=5
+    ) -> ((0, 1, 2), {'a': 3, 'b': 4, 'c': 5})
+    └── def unknown_number_of_arguments(
+            *positional_arguments, **keyword_arguments
+        ):
+        ├── positional_arguments = (0, 1, 2)
+        ├── keyword_arguments    = {'a': 3, 'b': 4, 'c':5}
+        └── return  positional_arguments, keyword_arguments
+            return ((0, 1, 2           ), {'a': 3, 'b': 4, 'c':5})
 
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`.
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<what is a dictionary?>` (any key-value pairs in curly braces ``{ }`` separated by commas).
 
 * I change my expectation to match reality in the last :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 232
+    :lineno-start: 233
     :emphasize-lines: 5-6
 
         assert (
@@ -4559,7 +5594,7 @@ how Python treats starred expressions
 * I add :ref:`variables<what is a variable?>` for the tuple_ and :ref:`dictionary<what is a dictionary?>` of the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 200
+    :lineno-start: 201
     :emphasize-lines: 16-17
 
     def test_unknown_number_of_arguments():
@@ -4590,7 +5625,7 @@ how Python treats starred expressions
 * I use the :ref:`variables<what is a variable?>` to remove repetition of the values
 
   .. code-block:: python
-    :lineno-start: 215
+    :lineno-start: 216
     :emphasize-lines: 5-6, 9-10
 
         a_tuple = (0, 1)
@@ -4617,32 +5652,26 @@ how Python treats starred expressions
   - a tuple_ of the arguments_ since they are both :ref:`positional<test_positional_arguments>`
   - an empty :ref:`dictionary<what is a dictionary?>` since there are no :ref:`keyword arguments<test_keyword_arguments>`
 
-  .. code-block:: python
-
-    a_tuple = (0, 1)
-    a_dictionary = {'a': 2, 'b': 3}
-
-  When ``unknown_number_of_arguments(a_tuple, a_dictionary)`` runs
-
   .. code-block:: shell
 
-    unknown_number_of_arguments(
-        a_tuple, a_dictionary
-    )
-
-    def unknown_number_of_arguments(
-        *positional_arguments, **keyword_arguments
-    )
-    ├── positional_arguments = (a_tuple, a_dictionary)
-    ├── keyword_arguments    = {}
-    └── return   positional_arguments    , keyword_arguments
-        return ((a_tuple, a_dictionary)  , {})
-        return ((0, 1), {'a': 2, 'b': 3}), {})
+    ├── a_tuple = (0, 1)
+    ├── a_dictionary = {'a': 2, 'b': 3}
+    └── unknown_number_of_arguments(
+            a_tuple, a_dictionary
+        ) -> ((0, 1), {'a': 2, 'b': 3}), {})
+        └── def unknown_number_of_arguments(
+                *positional_arguments, **keyword_arguments
+            ):
+            ├── positional_arguments = (a_tuple, a_dictionary)
+            ├── keyword_arguments    = {}
+            └── return   positional_arguments    , keyword_arguments
+                return ((a_tuple, a_dictionary)  , {})
+                return ((0, 1), {'a': 2, 'b': 3}), {})
 
 * I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as separate arguments
 
   .. code-block:: python
-    :lineno-start: 215
+    :lineno-start: 216
     :emphasize-lines: 6-7
 
         a_tuple = (0, 1)
@@ -4667,12 +5696,23 @@ how Python treats starred expressions
          == ((0, 1), {'a': 2, 'b': 3, 'c': 4})
         )
 
-  the test passes because given
+  the test passes
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    a_tuple = (0, 1)
-    a_dictionary = {'a': 2, 'b': 3}
+    ├── a_tuple = (0, 1)
+    ├── a_dictionary = {'a': 2, 'b': 3}
+    └── unknown_number_of_arguments(
+            *a_tuple, **a_dictionary
+        ) -> ((0, 1), {'a': 2, 'b': 3})
+        └── def unknown_number_of_arguments(
+                *positional_arguments, **keyword_arguments
+            ):
+            ├── positional_arguments = a_tuple
+            ├── keyword_arguments    = a_dictionary
+            └── return  positional_arguments, keyword_arguments
+                return (a_tuple             , a_dictionary     )
+                return ((0, 1)              , {'a': 2, 'b': 3} )
 
   these three statements are the same
 
@@ -4685,11 +5725,11 @@ how Python treats starred expressions
   - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the things in ``something`` as :ref:`positional arguments<test_positional_arguments>`.
   - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
 
-* I add :ref:`variables<what is a variable?>` for the tuple_ and :ref:`dictionary<what is a dictionary?>` of the second :ref:`assertion<what is an assertion?>`
+* I add a :ref:`variable<what is a variable?>` for the :ref:`dictionary<what is a dictionary?>` of the second :ref:`assertion<what is an assertion?>` in :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
-    :lineno-start: 215
-    :emphasize-lines: 14-15
+    :lineno-start: 216
+    :emphasize-lines: 14
 
         a_tuple = (0, 1)
         a_dictionary = {'a': 2, 'b': 3}
@@ -4704,7 +5744,6 @@ how Python treats starred expressions
          == (a_tuple, a_dictionary)
         )
 
-        a_tuple = (0, 1)
         a_dictionary = {'a': 2, 'b': 3, 'c': 4}
         assert (
             unknown_number_of_arguments(
@@ -4715,13 +5754,12 @@ how Python treats starred expressions
          == ((0, 1), {'a': 2, 'b': 3, 'c': 4})
         )
 
-* I use the :ref:`variables<what is a variable?>` to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>`
+* I use the ``a_tuple`` and new ``a_dictionary`` :ref:`variables<what is a variable?>` to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>` from the second :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 228
-    :emphasize-lines: 4-5, 10-11
+    :lineno-start: 229
+    :emphasize-lines: 4-5, 9-10
 
-        a_tuple = (0, 1)
         a_dictionary = {'a': 2, 'b': 3, 'c': 4}
         assert (
             unknown_number_of_arguments(
@@ -4747,27 +5785,21 @@ how Python treats starred expressions
   - a tuple_ of the arguments_ since they are both :ref:`positional<test_positional_arguments>`
   - an empty :ref:`dictionary<what is a dictionary?>` since there are no :ref:`keyword arguments<test_keyword_arguments>`
 
-  .. code-block:: python
-
-    a_tuple = (0, 1)
-    a_dictionary = {'a': 2, 'b': 3, 'c': 4}
-
-  When ``unknown_number_of_arguments(a_tuple, a_dictionary)`` runs
-
   .. code-block:: shell
 
-    unknown_number_of_arguments(
-        a_tuple, a_dictionary
-    )
-
-    def unknown_number_of_arguments(
-        *positional_arguments, **keyword_arguments
-    )
-    ├── positional_arguments = (a_tuple, a_dictionary)
-    ├── keyword_arguments    = {}
-    └── return   positional_arguments            , keyword_arguments
-        return ((a_tuple, a_dictionary)          , {})
-        return ((0, 1), {'a': 2, 'b': 3, 'c': 4}), {})
+    ├── a_tuple = (0, 1)
+    ├── a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+    └── unknown_number_of_arguments(
+            a_tuple, a_dictionary
+        ) -> ((0, 1), {'a': 2, 'b': 3, 'c': 4}), {})
+        └── def unknown_number_of_arguments(
+                *positional_arguments, **keyword_arguments
+            )
+            ├── positional_arguments = (a_tuple, a_dictionary)
+            ├── keyword_arguments    = {}
+            └── return positional_arguments, keyword_arguments
+                return ((a_tuple, a_dictionary), {})
+                return ((0, 1), {'a': 2, 'b': 3, 'c': 4}), {})
 
 * I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as separate arguments
 
@@ -4789,12 +5821,23 @@ how Python treats starred expressions
          == (a_tuple, a_dictionary)
         )
 
-  the test passes because given
+  the test passes.
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    a_tuple = (0, 1)
-    a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+    ├── a_tuple = (0, 1)
+    ├── a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+    └── unknown_number_of_arguments(
+            *a_tuple, **a_dictionary
+        ) -> (0, 1), {'a': 2, 'b': 3, 'c': 4})
+        └── def unknown_number_of_arguments(
+                *positional_arguments, **keyword_arguments
+            )
+            ├── positional_arguments = a_tuple
+            ├── keyword_arguments    = a_dictionary
+            └── return positional_arguments, keyword_arguments
+                return (a_tuple            , a_dictionary)
+                return (0, 1), {'a': 2, 'b': 3, 'c': 4})
 
   these three statements are the same
 
@@ -4807,13 +5850,12 @@ how Python treats starred expressions
   - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the things in ``something`` as :ref:`positional arguments<test_positional_arguments>`.
   - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
 
-* I add :ref:`variables<what is a variable?>` for the tuple_ and :ref:`dictionary<what is a dictionary?>` of the last :ref:`assertion<what is an assertion?>`
+* I add :ref:`variables<what is a variable?>` for the tuple_ and :ref:`dictionary<what is a dictionary?>` of the last :ref:`assertion<what is an assertion?>` in :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
-    :lineno-start: 228
-    :emphasize-lines: 15-16
+    :lineno-start: 229
+    :emphasize-lines: 14-15
 
-        a_tuple = (0, 1)
         a_dictionary = {'a': 2, 'b': 3, 'c': 4}
         assert (
             unknown_number_of_arguments(
@@ -4873,27 +5915,21 @@ how Python treats starred expressions
   - a tuple_ of the arguments_ since they are both :ref:`positional<test_positional_arguments>`
   - an empty :ref:`dictionary<what is a dictionary?>` since there are no :ref:`keyword arguments<test_keyword_arguments>`
 
-  .. code-block:: python
-
-    a_tuple = (0, 1, 2)
-    a_dictionary = {'a': 3, 'b': 4, 'c': 5}
-
-  When ``unknown_number_of_arguments(a_tuple, a_dictionary)`` runs
-
   .. code-block:: shell
 
-    unknown_number_of_arguments(
-        a_tuple, a_dictionary
-    )
-
-    def unknown_number_of_arguments(
-        *positional_arguments, **keyword_arguments
-    )
-    ├── positional_arguments = (a_tuple, a_dictionary)
-    ├── keyword_arguments    = {}
-    └── return   positional_arguments, keyword_arguments
-        return ((a_tuple, a_dictionary)             , {})
-        return ((0, 1, 2), {'a': 3, 'b': 4, 'c': 5}), {})
+    ├── a_tuple = (0, 1, 2)
+    ├── a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+    └── unknown_number_of_arguments(
+            a_tuple, a_dictionary
+        ) -> ((0, 1, 2), {'a': 3, 'b': 4, 'c': 5}), {})
+        └── def unknown_number_of_arguments(
+                *positional_arguments, **keyword_arguments
+            ):
+            ├── positional_arguments = (a_tuple, a_dictionary)
+            ├── keyword_arguments    = {}
+            └── return   positional_arguments, keyword_arguments
+                return ((a_tuple, a_dictionary)             , {})
+                return ((0, 1, 2), {'a': 3, 'b': 4, 'c': 5}), {})
 
 * I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as separate arguments
 
@@ -4917,12 +5953,23 @@ how Python treats starred expressions
 
     # Exceptions seen
 
-  the test passes because given
+  the test passes.
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    a_tuple = (0, 1, 2)
-    a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+    ├── a_tuple = (0, 1, 2)
+    ├── a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+    └── unknown_number_of_arguments(
+            *a_tuple, **a_dictionary
+        ) -> ((0, 1, 2), {'a': 3, 'b': 4, 'c': 5})
+        └── def unknown_number_of_arguments(
+                *positional_arguments, **keyword_arguments
+            ):
+            ├── positional_arguments = a_tuple
+            ├── keyword_arguments    = a_dictionary
+            └── return   positional_arguments, keyword_arguments
+                return ( a_tuple , a_dictionary            )
+                return ((0, 1, 2), {'a': 3, 'b': 4, 'c': 5})
 
   these three statements are the same
 
@@ -4980,11 +6027,20 @@ how Python treats starred expressions
   - a tuple_ of the :ref:`positional arguments<test_positional_arguments>`
   - an empty :ref:`dictionary<what is a dictionary?>` since there are no :ref:`keyword arguments<test_keyword_arguments>`
 
-  given
+  .. code-block:: shell
 
-  .. code-block:: python
-
-    a_tuple = (0, 1, 2, 'n')
+    ├── a_tuple = (0, 1, 2, 'n')
+    └── unknown_number_of_arguments(
+            *a_tuple
+        ) -> ((0, 1, 2, 'n'), {})
+        └── def unknown_number_of_arguments(
+                *positional_arguments, **keyword_arguments
+            ):
+            ├── positional_arguments = a_tuple
+            ├── keyword_arguments    = {}
+            └── return   positional_arguments, keyword_arguments
+                return ( a_tuple             , {}               )
+                return ((0, 1, 2, 'n')       , {}               )
 
   these three statements are the same
 
@@ -4993,21 +6049,6 @@ how Python treats starred expressions
     unknown_number_of_arguments(*a_tuple       )
     unknown_number_of_arguments(*(0, 1, 2, 'n'))
     unknown_number_of_arguments(0, 1, 2, 'n'   )
-
-  When ``unknown_number_of_arguments(a_tuple)`` runs
-
-  .. code-block:: shell
-
-    unknown_number_of_arguments(a_tuple)
-
-    def unknown_number_of_arguments(
-        *positional_arguments, **keyword_arguments
-    )
-    ├── positional_arguments = a_tuple
-    ├── keyword_arguments    = {}
-    └── return positional_arguments, keyword_arguments
-        return (a_tuple            , {})
-        return ((0, 1, 2, 'n')     , {})
 
   - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the things in ``something`` as :ref:`positional arguments<test_positional_arguments>`.
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
@@ -5077,11 +6118,21 @@ because passing in the values this way means I am sending in only :ref:`keyword 
 - an empty tuple_ since there are no :ref:`positional arguments<test_positional_arguments>`
 - a :ref:`dictionary<what is a dictionary?>` of the :ref:`keyword arguments<test_keyword_arguments>`
 
-given
+.. code-block:: shell
 
-.. code-block:: python
-
-  a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
+  ├── a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
+  └── unknown_number_of_arguments(
+          **a_dictionary
+      ) -> ((), {'a': 1, 'b': 2, 'c': 3, 'd': 'n'})
+      └── def unknown_number_of_arguments(
+              *positional_arguments, **keyword_arguments
+          ):
+          ├── positional_arguments = ()
+          ├── keyword_arguments    = {
+          │       'a': 1, 'b': 2, 'c': 3, 'd': 'n'
+          │   }
+          └── return  positional_arguments, keyword_arguments
+              return ((), {'a': 1, 'b': 2, 'c': 3, 'd': 'n'})
 
 these three statements are the same
 
@@ -5091,22 +6142,8 @@ these three statements are the same
   unknown_number_of_arguments({'a': 1, 'b': 2, 'c': 3, 'd': 'n'})
   unknown_number_of_arguments(  a = 1,  b = 2,  c = 3,  d = 'n' )
 
-When ``unknown_number_of_arguments(a_dictionary)`` runs
-
-.. code-block:: shell
-
-  unknown_number_of_arguments(a_dictionary)
-
-  def unknown_number_of_arguments(
-      *positional_arguments, **keyword_arguments
-  )
-  ├── positional_arguments = ()
-  ├── keyword_arguments    = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
-  └── return  positional_arguments, keyword_arguments
-      return ((), {'a': 1, 'b': 2, 'c': 3, 'd': 'n'})
-
 - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
-- If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`.
+- If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<what is a dictionary?>` (any key-value pairs in curly braces ``{ }`` separated by commas).
 
 ----
 
@@ -5174,23 +6211,6 @@ the test passes.
   - an empty tuple_ since there are no :ref:`positional arguments<test_positional_arguments>`
   - an empty :ref:`dictionary<what is a dictionary?>` since there are no :ref:`keyword arguments<test_keyword_arguments>`
 
-  When ``unknown_number_of_arguments()`` runs
-
-  .. code-block:: shell
-
-    unknown_number_of_arguments(a_dictionary)
-
-    def unknown_number_of_arguments(
-        *positional_arguments, **keyword_arguments
-    )
-    ├── positional_arguments = ()
-    ├── keyword_arguments    = {}
-    └── return  positional_arguments, keyword_arguments
-        return (()                  , {}               )
-
-  - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`.
-
 * I change my expectation to match reality
 
   .. code-block:: python
@@ -5208,10 +6228,24 @@ the test passes.
 
   the test passes.
 
-* I remove the commented lines
+  .. code-block:: shell
+
+    unknown_number_of_arguments() -> ((), {})
+    └── def unknown_number_of_arguments(
+            *positional_arguments, **keyword_arguments
+        ):
+        ├── positional_arguments = ()
+        ├── keyword_arguments    = {}
+        └── return  positional_arguments, keyword_arguments
+            return (()                  , {}               )
+
+  - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<what is a dictionary?>` (any key-value pairs in curly braces ``{ }`` separated by commas).
+
+* I remove the commented lines from :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
-    :lineno-start: 200
+    :lineno-start: 201
 
     def test_unknown_number_of_arguments():
         def unknown_number_of_arguments(
@@ -5229,9 +6263,8 @@ the test passes.
         )
 
   .. code-block:: python
-    :lineno-start: 215
+    :lineno-start: 216
 
-        a_tuple = (0, 1)
         a_dictionary = {'a': 2, 'b': 3, 'c': 4}
         assert (
             unknown_number_of_arguments(
@@ -5283,7 +6316,7 @@ the test passes.
     # AssertionError
     # NameError
     # TypeError
-    # SyntaxError
+    # SyntaxEError
 
 * I add a git_ commit message in the other terminal_
 
@@ -5342,7 +6375,7 @@ I ran tests to show that I can make :ref:`functions<what is a function?>` that t
   - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the things in ``something`` as :ref:`positional arguments<test_positional_arguments>`.
   - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`.
+  - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<what is a dictionary?>` (any key-value pairs in curly braces ``{ }`` separated by commas).
 
 :ref:`How many questions can you answer about functions?<questions about functions>`
 

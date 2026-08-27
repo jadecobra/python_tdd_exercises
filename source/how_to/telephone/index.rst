@@ -1590,7 +1590,7 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 test_passing_a_dictionary
 *********************************************************************************
 
-Can I pass a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>` as input to a :ref:`function<what is a function?>`?
+Can I pass a :ref:`dictionary<what is a dictionary?>` (any key-value pairs in curly braces ``{ }`` separated by commas) as input to a :ref:`function<what is a function?>`?
 
 ----
 
