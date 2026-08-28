@@ -2997,6 +2997,75 @@ the test passes.
 
     def test_constant_function():
 
+* I use the :ref:`assert_is_none function<extract assert_is_none function>` in :ref:`test_identity_function` for the :ref:`assertion<what is an assertion?>` that has :ref:`None<what is None?>` as its expectation
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 5-6
+
+    def test_identity_function():
+        def identity(the_input):
+            return the_input
+
+        # assert_equal(identity(None), None)
+        assert_is_none(identity(object))
+        assert_equal(identity(object), object)
+
+
+    def test_why_use_a_function():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: assert <class 'object'> is None
+
+* I change the input in :ref:`call<how to call a function with input>` to the :ref:`identity function<test_identity_function>` from :ref:`object<everything is an object>` to :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 6-7
+
+    def test_identity_function():
+        def identity(the_input):
+            return the_input
+
+        # assert_equal(identity(None), None)
+        # assert_is_none(identity(object))
+        assert_is_none(identity(None))
+        assert_equal(identity(object), object)
+
+
+    def test_why_use_a_function():
+
+  the test passes.
+
+  .. code-block:: shell
+
+    assert_is_none(identity(None)) -> None
+    └── def assert_is_none(something):
+            ├── something = identity(None)
+            │               └── def identity(the_input):
+            │                   ├── the_input = None
+            │                   └── return the_input
+            └── assert something is None
+                assert None      is None
+
+* I remove the commented lines from :ref:`test_identity_function`
+
+  .. code-block:: python
+    :lineno-start: 45
+
+    def test_identity_function():
+        def identity(the_input):
+            return the_input
+
+        assert_is_none(identity(None))
+        assert_equal(identity(object), object)
+
+
+    def test_why_use_a_function():
+
 * I add a git_ commit message
 
   .. code-block:: python
