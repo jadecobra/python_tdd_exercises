@@ -1507,8 +1507,8 @@ the test passes.
   because
 
   - the :ref:`call<how to call a function>` to ``positional_arguments`` which belongs to :ref:`test_positional_arguments` uses one input (``'first'``).
-  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``positional_arguments`` does not allow any inputs when it is called since the parentheses are empty.
-  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
+  - the :ref:`function definition (signature)<how to make a function that takes input>` of ``positional_arguments`` does not allow any inputs when it is called since the parentheses are empty.
+  - :ref:`the call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I add a name in parentheses to make the :ref:`function<what is a function?>` take input
 
@@ -1564,8 +1564,8 @@ the test passes.
   because
 
   - the :ref:`call<how to call a function>` to ``positional_arguments`` which belongs to :ref:`test_positional_arguments` uses two inputs(``'first'` and ``'last'``).
-  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``positional_arguments`` only allows one input.
-  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
+  - the :ref:`function definition (signature)<how to make a function that takes input>` of ``positional_arguments`` only allows one input.
+  - :ref:`the call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I make the :ref:`function<what is a function?>` take two inputs by changing the name of the first input to be clearer, then I add a another name to the parentheses
 
@@ -3133,8 +3133,8 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
   because
 
   - the :ref:`call<how to call a function>` to ``keyword_arguments`` which belongs to :ref:`test_keyword_arguments` uses a name (``first_input``) and a value for the name (``'first'``).
-  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``keyword_arguments`` does not allow any inputs when it is called since the parentheses are empty.
-  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
+  - the :ref:`function definition (signature)<how to make a function that takes input>` of ``keyword_arguments`` does not allow any inputs when it is called since the parentheses are empty.
+  - :ref:`the call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I add a name in parentheses to make the :ref:`function<what is a function?>` take input
 
@@ -3221,8 +3221,8 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
   because
 
   - the :ref:`call<how to call a function>` to ``keyword_arguments`` which belongs to :ref:`test_keyword_arguments` uses two names (``first_input`` and ``last_input``) and values for the names (``'first'`` and ``'last'``).
-  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``keyword_arguments`` only allows one input when it is :ref:`called<how to call a function with input>`.
-  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
+  - the :ref:`function definition (signature)<how to make a function that takes input>` of ``keyword_arguments`` only allows one input when it is :ref:`called<how to call a function with input>`.
+  - :ref:`the call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I make the :ref:`function<what is a function?>` take two inputs by adding another name in parentheses
 
@@ -4107,7 +4107,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 test_args_and_kwargs
 *********************************************************************************
 
-Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a function?>` with both :ref:`positional<test_positional_arguments>` and :ref:`keyword arguments<test_keyword_arguments>`?
+Can I :ref:`call a function<how to call a function with input>` with both :ref:`positional<test_positional_arguments>` and :ref:`keyword arguments<test_keyword_arguments>`?
 
 ----
 
@@ -4122,27 +4122,27 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 * I add a test
 
   .. code-block:: python
-    :lineno-start: 136
+    :lineno-start: 143
     :emphasize-lines: 12-18
     :emphasize-text: first
 
         a_set = {0, 1, 2, 'n'}
         a_dictionary = {'key': 'value'}
-        assert (
+        assert_equal(
             positional_arguments(
                 last_input=a_dictionary,
                 first_input=a_set,
-            )
-         == (a_set, a_dictionary)
+            ),
+            (a_set, a_dictionary)
         )
 
 
     def test_args_and_kwargs():
-        assert (
+        assert_equal(
             args_and_kwargs(
                 last_input='last', 'first',
-            )
-         == ('first', 'last')
+            ),
+            ('first', 'last')
         )
 
 
@@ -4167,7 +4167,7 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 * I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 156
+    :lineno-start: 163
     :emphasize-lines: 5
     :emphasize-text: SyntaxError
 
@@ -4180,17 +4180,17 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 * I change the order of the arguments to follow Python_ rules
 
   .. code-block:: python
-    :lineno-start: 147
+    :lineno-start: 154
     :emphasize-lines: 4-5
     :emphasize-text: first
 
     def test_args_and_kwargs():
-        assert (
+        assert_equal(
             args_and_kwargs(
                 # last_input='last', 'first',
-                'first', last_input='last',
-            )
-         == ('first', 'last')
+                'first', last_input='last'
+            ),
+            ('first', 'last')
         )
 
 
@@ -4207,19 +4207,19 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 * I add a :ref:`function definition<how to make a function that takes input>` for ``args_and_kwargs``
 
   .. code-block:: python
-    :lineno-start: 147
+    :lineno-start: 154
     :emphasize-lines: 2-3
 
     def test_args_and_kwargs():
         def args_and_kwargs():
             return None
 
-        assert (
+        assert_equal(
             args_and_kwargs(
                 # last_input='last', 'first',
-                'first', last_input='last',
-            )
-         == ('first', 'last')
+                'first', last_input='last'
+            ),
+            ('first', 'last')
         )
 
 
@@ -4236,13 +4236,13 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
   because
 
   - the :ref:`call<how to call a function>` to ``args_and_kwargs`` which belongs to :ref:`test_args_and_kwargs` uses a :ref:`keyword argument<test_keyword_arguments>` (``last_input='last'``).
-  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``args_and_kwargs`` does not allow any inputs when it is called since the parentheses are empty.
-  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
+  - the :ref:`function definition (signature)<how to make a function that takes input>` of ``args_and_kwargs`` does not allow any inputs when it is :ref:`called<how to call a function>` since the parentheses are empty.
+  - :ref:`the call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I add ``last_input`` to the parentheses of ``args_and_kwargs``
 
   .. code-block:: python
-    :lineno-start: 147
+    :lineno-start: 154
     :emphasize-lines: 2-3
 
     def test_args_and_kwargs():
@@ -4250,12 +4250,12 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
         def args_and_kwargs(last_input):
             return None
 
-        assert (
+        assert_equal(
             args_and_kwargs(
                 # last_input='last', 'first',
-                'first', last_input='last',
-            )
-         == ('first', 'last')
+                'first', last_input='last'
+            ),
+            ('first', 'last')
         )
 
 
@@ -4271,8 +4271,8 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 
   because
 
-  - the :ref:`call<how to call a function>` to ``args_and_kwargs`` which belongs to :ref:`test_args_and_kwargs` with :ref:`positional<test_positional_arguments>` and :ref:`keyword arguments<test_keyword_arguments>` (``'first'`` and ``last_input='last'``).
-  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``args_and_kwargs`` takes one argument (``last_input``). How does Python_ know which value to use for ``last_input`` if I use the :ref:`position<test_positional_arguments>` and the :ref:`name<test_keyword_arguments>`?
+  - the :ref:`call<how to call a function>` to ``args_and_kwargs`` which belongs to :ref:`test_args_and_kwargs` uses both :ref:`positional<test_positional_arguments>` and :ref:`keyword arguments<test_keyword_arguments>` for the same parameter (``'first'`` and ``last_input='last'``).
+  - the :ref:`function definition (signature)<how to make a function that takes input>` of ``args_and_kwargs`` takes one argument (``last_input``). How does Python_ know which value to use for ``last_input`` if I use the :ref:`position<test_positional_arguments>` and the :ref:`name<test_keyword_arguments>`?
 
     .. code-block:: shell
 
@@ -4281,12 +4281,12 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
           ├── last_input = 'first' ?
           └── last_input = 'last'  ?
 
-  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
+  - :ref:`the call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I add ``first_input`` to the parentheses of ``args_and_kwargs`` to make it clearer
 
   .. code-block:: python
-    :lineno-start: 147
+    :lineno-start: 154
     :emphasize-lines: 3-4
     :emphasize-text: first_input
 
@@ -4296,18 +4296,18 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
         def args_and_kwargs(last_input, first_input):
             return None
 
-        assert (
+        assert_equal(
             args_and_kwargs(
                 # last_input='last', 'first',
-                'first', last_input='last',
-            )
-         == ('first', 'last')
+                'first', last_input='last'
+            ),
+            ('first', 'last')
         )
 
 
     # Exceptions seen
 
-  the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because I have not fixed the problem, I gave confusing values in the call. Python_ cannot tell the difference between the two values because I gave a :ref:`positional argument<test_positional_arguments>` which from the :ref:`function definition<how to make a function that takes input>` is ``last_input`` and I gave a value with the name ``last_input``.
+  the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because I have not fixed the problem, the :ref:`call<how to call a function with input>` has confusing values. Python_ cannot tell the difference between the two values because I gave a :ref:`positional argument<test_positional_arguments>` (``first``), the :ref:`function definition<how to make a function that takes input>` has the ``last_input`` parameter in the first position, and I gave a value with the name ``last_input``.
 
   .. code-block:: shell
 
@@ -4320,7 +4320,7 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 * The :ref:`call<how to call a function with input>` gives the values for ``last_input`` as both ``'first'`` and ``'last'``, it would be like defining the :ref:`function<what is a function?>` with the same name twice
 
   .. code-block:: python
-    :lineno-start: 145
+    :lineno-start: 154
     :emphasize-lines: 4-5
 
     def test_args_and_kwargs():
@@ -4340,7 +4340,7 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 * I use the right names and put them in the right order
 
   .. code-block:: python
-    :lineno-start: 147
+    :lineno-start: 154
     :emphasize-lines: 5-6
     :emphasize-text: first_input
 
@@ -4358,20 +4358,34 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 
     AssertionError: assert None == ('first', 'last')
 
-  because when I :ref:`call<how to call a function with input>` ``args_and_kwargs`` with ``'first'`` and ``last_input='last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution
+  because when I :ref:`call<how to call a function with input>` ``args_and_kwargs`` with ``'first'`` and ``last_input='last'`` as inputs, it returns :ref:`None<what is None?>` which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`None<what is None?>` is NOT equal to a tuple_.
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    assert args_and_kwargs('first', last_input='last')
-                == ('first', 'last')
-    assert None == ('first', 'last')
-
-  which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`None<what is None?>` is NOT equal to a tuple_.
+    ├── a_tuple = (0, 1, 2, 'n')
+    ├── a_list = [0, 1, 2, 'n']
+    └── assert_equal(
+            args_and_kwargs(
+                'first', last_input='last'
+            ),
+            ('first', 'last')
+        ) -> None
+        └── def assert_equal(input_1, input_2):
+            ├── input_1 = args_and_kwargs(
+            │                 'first', last_input='last'
+            │             )
+            │             └── def args_and_kwargs(
+            │                     first_input, last_input
+            │                 ):
+            │                 └── return None
+            ├── input_2 = ('first', 'last')
+            └── assert input_1 == input_2
+                assert None    == ('first', 'last')
 
 * I change :ref:`the return statement` to give the test what it wants
 
   .. code-block:: python
-    :lineno-start: 147
+    :lineno-start: 154
     :emphasize-lines: 7-8
 
     def test_args_and_kwargs():
@@ -4381,18 +4395,7 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
         # def args_and_kwargs(last_input, last_input):
         def args_and_kwargs(first_input, last_input):
             # return None
-            return first_input, last_input
-
-        assert (
-            args_and_kwargs(
-                # last_input='last', 'first',
-                'first', last_input='last',
-            )
-         == ('first', 'last')
-        )
-
-
-    # Exceptions seen
+            return first, last
 
   the test passes.
 
@@ -4408,7 +4411,7 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 * I add :ref:`variables<what is a variable?>` for ``'first'`` and ``'last'`` in :ref:`test_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 147
+    :lineno-start: 154
     :emphasize-lines: 10
 
     def test_args_and_kwargs():
@@ -4418,26 +4421,37 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
         # def args_and_kwargs(last_input, last_input):
         def args_and_kwargs(first_input, last_input):
             # return None
-            return first_input, last_input
+            return first, last
 
         first, last = 'first', 'last'
+
+        assert_equal(
+            args_and_kwargs(
+                # last_input='last', 'first',
+                'first', last_input='last'
+            ),
+            ('first', 'last')
+        )
+
+
+    # Exceptions seen
 
 * I use the new :ref:`variables<what is a variable?>` to remove repetition of ``'first'`` and ``'last'`` from :ref:`test_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 156
+    :lineno-start: 163
     :emphasize-lines: 6-7, 9-10
 
         first, last = 'first', 'last'
 
-        assert (
+        assert_equal(
             args_and_kwargs(
                 # last_input='last', 'first',
-                # 'first',last_input='last',
-                first, last_input=last,
-            )
-        #  == ('first', 'last')
-         == (first, last)
+                # 'first', last_input='last'
+                first, last_input=last
+            ),
+            # ('first', 'last')
+            (first, last)
         )
 
 
@@ -4448,19 +4462,19 @@ Can I :ref:`call<how to call a function with input>` a :ref:`function<what is a 
 * I remove the commented lines from :ref:`test_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 147
+    :lineno-start: 154
 
     def test_args_and_kwargs():
         def args_and_kwargs(first_input, last_input):
-            return first_input, last_input
+            return first, last
 
         first, last = 'first', 'last'
 
-        assert (
+        assert_equal(
             args_and_kwargs(
-                first, last_input=last,
-            )
-         == (first, last)
+                first, last_input=last
+            ),
+            (first, last)
         )
 
 
