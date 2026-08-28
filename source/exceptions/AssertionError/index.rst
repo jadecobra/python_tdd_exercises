@@ -3524,7 +3524,7 @@ test_assertion_error_w_is_vs_equal
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``.
+pytest_ only :ref:`calls the function<how to call a function with input>` if the name starts with ``test``.
 
 ----
 
@@ -3612,7 +3612,7 @@ test_assertion_error_w_equality
 
     =================== 2 passed in O.PQs ====================
 
-  because pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``.
+  because pytest_ only :ref:`calls the function<how to call a function with input>` if the name starts with ``test``.
 
 * I remove the commented lines
 
@@ -3731,7 +3731,7 @@ test_assertion_error_w_true
 
     =================== 3 passed in U.VWs ====================
 
-  because pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``.
+  because pytest_ only :ref:`calls the function<how to call a function with input>` if the name starts with ``test``.
 
 * I remove the commented lines
 
@@ -3851,7 +3851,7 @@ test_assertion_error_w_false
 
     =================== 4 passed in A.BCs ====================
 
-  because pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``.
+  because pytest_ only :ref:`calls the function<how to call a function with input>` if the name starts with ``test``.
 
 * I remove the commented lines
 
@@ -3970,7 +3970,7 @@ test_assertion_error_w_none
 
     =================== 5 passed in G.HIs ====================
 
-  because pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``.
+  because pytest_ only :ref:`calls the function<how to call a function with input>` if the name starts with ``test``.
 
 * I remove the commented lines
 
@@ -4071,7 +4071,7 @@ test_assert_keyword
 
     =================== 6 passed in M.NOs ====================
 
-  because pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``
+  because pytest_ only :ref:`calls the function<how to call a function with input>` if the name starts with ``test``
 
 * I remove the commented lines
 
@@ -4106,7 +4106,7 @@ pytest only calls the function if the name starts with test
 
 ----
 
-* I add a :ref:`function<what is a function?>` to show that pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``
+* I add a :ref:`function<what is a function?>` to show that pytest_ only :ref:`calls the function<how to call a function with input>` if the name starts with ``test``
 
   .. code-block:: python
     :lineno-start: 89
@@ -4206,7 +4206,7 @@ pytest only calls the function if the name starts with test
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-pytest_ only calls the :ref:`function<what is a function?>` if the name starts with ``test``.
+pytest_ only :ref:`calls the function<how to call a function with input>` if the name starts with ``test``.
 
 ----
 

@@ -864,7 +864,7 @@ test_doors_open_number_not_pushed
     git commit -am \
     'add test_doors_open_number_not_pushed'
 
-When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`, it checks if the button for a floor is :red:`NOT pushed`
+When the ``controller`` :ref:`function is called<how to call a function with input>`, it checks if the button for a floor is :red:`NOT pushed`
 
 * If the button for a floor is :red:`NOT pushed` it returns :red:`False`
 
@@ -1796,7 +1796,7 @@ test_below_weight_doors_closed_number_pushed
     git commit -am \
     'add test_below_weight_doors_closed_number_pushed'
 
-When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`, it checks if the button for a floor is :red:`NOT pushed`
+When the ``controller`` :ref:`function is called<how to call a function with input>`, it checks if the button for a floor is :red:`NOT pushed`
 
 * If the button for a floor is :red:`NOT pushed` it returns :red:`False`
 
@@ -3637,7 +3637,7 @@ the test passes.
 
 -----
 
-When the ``controller`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`, it checks if the button for a floor is :red:`NOT pushed`
+When the ``controller`` :ref:`function is called<how to call a function with input>`, it checks if the button for a floor is :red:`NOT pushed`
 
 * If the button for a floor is :red:`NOT pushed` it returns :red:`False`
 

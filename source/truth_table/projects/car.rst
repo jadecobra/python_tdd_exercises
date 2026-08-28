@@ -689,7 +689,7 @@ the test passes.
     git commit -am \
     'add test_key_not_close_start_pressed'
 
-When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the start button is :green:`pressed`. If the start button is :green:`pressed` it returns the value of ``key_is_close`` (:green:`True` if it is :green:`close`, :red:`False` if it is :red:`NOT close`.
+When the ``ignition`` :ref:`function is called<how to call a function with input>` it checks if the start button is :green:`pressed`. If the start button is :green:`pressed` it returns the value of ``key_is_close`` (:green:`True` if it is :green:`close`, :red:`False` if it is :red:`NOT close`.
 
 .. code-block:: python
 
@@ -753,7 +753,7 @@ test_key_close_start_not_pressed
     git commit -am \
     'add test_key_close_start_not_pressed'
 
-When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the start button is :green:`pressed`. If the start button is :green:`pressed` it returns the value of ``key_is_close`` (:green:`True` if it is :green:`close`, :red:`False` if it is :red:`NOT close`.
+When the ``ignition`` :ref:`function is called<how to call a function with input>` it checks if the start button is :green:`pressed`. If the start button is :green:`pressed` it returns the value of ``key_is_close`` (:green:`True` if it is :green:`close`, :red:`False` if it is :red:`NOT close`.
 
 .. code-block:: python
 
@@ -894,7 +894,7 @@ test_key_not_close_start_not_pressed
     git commit -am \
     'add test_key_not_close_start_not_pressed'
 
-When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`. It checks if the start button is :green:`pressed`.
+When the ``ignition`` :ref:`function is called<how to call a function with input>`. It checks if the start button is :green:`pressed`.
 
 * If the start button is :red:`NOT pressed` it returns :red:`False`
 
@@ -1396,7 +1396,7 @@ test_brake_not_pressed_key_close_start_pressed
     git commit -am \
     'add test_brake_not_pressed_key_close_start_pressed'
 
-When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`. It checks if the start button is :green:`pressed`.
+When the ``ignition`` :ref:`function is called<how to call a function with input>`. It checks if the start button is :green:`pressed`.
 
 * If the start button is :red:`NOT pressed` it returns :red:`False`
 * If the start button is :green:`pressed` it checks if the key is :green:`close` to the ignition
@@ -1583,7 +1583,7 @@ test_brake_not_pressed_key_not_close_start_pressed
     git commit -am \
     'add test_brake_not_pressed_key_not_close_start_pressed'
 
-When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`. It checks if the start button is :green:`pressed`.
+When the ``ignition`` :ref:`function is called<how to call a function with input>`. It checks if the start button is :green:`pressed`.
 
 * If the start button is :red:`NOT pressed` it returns :red:`False`
 * If the start button is :green:`pressed` it checks if the key is :green:`close` to the ignition
@@ -1990,7 +1990,7 @@ test_brake_not_pressed_key_not_close_start_not_pressed
     git commit -am \
     'add test_brake_not_pressed_key_not_close_start_not_pressed'
 
-When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`. It checks if the start button is :green:`pressed`.
+When the ``ignition`` :ref:`function is called<how to call a function with input>`. It checks if the start button is :green:`pressed`.
 
 * If the start button is :red:`NOT pressed` it returns :red:`False`
 
@@ -3638,7 +3638,7 @@ the test passes.
     git commit -am \
     'add test_park_w_brake_pressed_key_close_start_pressed'
 
-When the ``ignition`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`. It checks if the start button is :green:`pressed` then if the key is :green:`close` to the ignition then if the brake is :green:`pressed`
+When the ``ignition`` :ref:`function is called<how to call a function with input>`. It checks if the start button is :green:`pressed` then if the key is :green:`close` to the ignition then if the brake is :green:`pressed`
 
 * If the start button is :red:`NOT pressed` it returns :red:`False`
 

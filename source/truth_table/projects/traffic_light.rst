@@ -1137,7 +1137,7 @@ test_red_light_timer_done
 refactor if statements
 *********************************************************************************
 
-When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the timer is :green:`done`
+When the ``control`` :ref:`function is called<how to call a function with input>` it checks if the timer is :green:`done`
 
 * If the timer is :green:`done`, it checks the color of the current light
 
@@ -1329,7 +1329,7 @@ When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to
 
 ----
 
-When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the timer is :red:`NOT done`
+When the ``control`` :ref:`function is called<how to call a function with input>` it checks if the timer is :red:`NOT done`
 
 * If the timer is :red:`NOT done` it returns the value of ``current_light``
 
@@ -3542,7 +3542,7 @@ the test passes.
 
 ----
 
-When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it checks if the timer is :red:`NOT done`
+When the ``control`` :ref:`function is called<how to call a function with input>` it checks if the timer is :red:`NOT done`
 
 * If the timer is :red:`NOT done`, it returns the values of ``current_parallel`` and ``current_cross``, which means it does not change the parallel or cross lights, it keeps them the same
 
@@ -5016,7 +5016,7 @@ extract next_light function
 
 ----
 
-When the ``control`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>` it :ref:`calls<how to call a function with input>` the :ref:`triggers_failsafe function<extract triggers_failsafe function>` to check if the values of ``current_parallel`` or ``current_cross`` trigger the failsafe. The :ref:`triggers_failsafe function<extract triggers_failsafe function>` :ref:`calls<how to call a function with input>` the :ref:`is_not_light function<extract is_not_light function>` or :ref:`is_not_safe function<extract is_not_safe function>` to check the values of ``current_parallel`` and ``current_cross``
+When the ``control`` :ref:`function is called<how to call a function with input>` it :ref:`calls<how to call a function with input>` the :ref:`triggers_failsafe function<extract triggers_failsafe function>` to check if the values of ``current_parallel`` or ``current_cross`` trigger the failsafe. The :ref:`triggers_failsafe function<extract triggers_failsafe function>` :ref:`calls<how to call a function with input>` the :ref:`is_not_light function<extract is_not_light function>` or :ref:`is_not_safe function<extract is_not_safe function>` to check the values of ``current_parallel`` and ``current_cross``
 
 * If the failsafe is :green:`triggered`, it turns the parallel and cross lights :red:`RED`
 

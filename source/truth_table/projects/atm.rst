@@ -536,7 +536,7 @@ the test passes.
     git commit -am \
     'add test_right_pin_not_enough_cash'
 
-When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
+When the ``withdraw`` :ref:`function is called<how to call a function with input>`
 
 * it returns :red:`'DENIED'` if there is :red:`NOT enough cash` in the account
 * it gives me :green:`'CASH'` if the above :ref:`condition<if statements>` is NOT met
@@ -715,7 +715,7 @@ the test passes.
     git commit -am \
     'add test_wrong_pin_enough_cash'
 
-When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
+When the ``withdraw`` :ref:`function is called<how to call a function with input>`
 
 * it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered.
 * it returns :red:`'DENIED'` if there is :red:`NOT enough cash` in the account.
@@ -815,7 +815,7 @@ test_wrong_pin_not_enough_cash
     git commit -am \
     'add test_wrong_pin_not_enough_cash'
 
-When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
+When the ``withdraw`` :ref:`function is called<how to call a function with input>`
 
 * it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered
 
@@ -1254,7 +1254,7 @@ PIN                 cash                    daily limit             withdrawal
     git commit -am \
     'add test_above_limit_right_pin_enough_cash'
 
-When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
+When the ``withdraw`` :ref:`function is called<how to call a function with input>`
 
 * it returns :red:`'DENIED'` if the account is :green:`above limit` for daily withdrawals.
 * it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered.
@@ -1340,7 +1340,7 @@ PIN                 cash                    daily limit             withdrawal
     git commit -am \
     'add test_below_limit_right_pin_enough_cash'
 
-When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
+When the ``withdraw`` :ref:`function is called<how to call a function with input>`
 
 * it returns :red:`'DENIED'` if the account is :green:`above limit` for daily withdrawals.
 * it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered.
@@ -1424,7 +1424,7 @@ PIN                 cash                    daily limit             withdrawal
     git commit -am \
     'add test_above_limit_right_pin_not_enough_cash'
 
-When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
+When the ``withdraw`` :ref:`function is called<how to call a function with input>`
 
 * it returns :red:`'DENIED'` if the account is :green:`above limit` for daily withdrawals.
 * it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered.
@@ -1552,7 +1552,7 @@ PIN                 cash                    daily limit             withdrawal
     git commit -am \
     'add test_below_limit_right_pin_not_enough_cash'
 
-When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
+When the ``withdraw`` :ref:`function is called<how to call a function with input>`
 
 * it returns :red:`'DENIED'` if the account is :green:`above limit` for daily withdrawals.
 * it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered.
@@ -1641,7 +1641,7 @@ PIN                 cash                    daily limit             withdrawal
     git commit -am \
     'add test_above_limit_wrong_pin_enough_cash'
 
-When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
+When the ``withdraw`` :ref:`function is called<how to call a function with input>`
 
 * it returns :red:`'DENIED'` if the account is :green:`above limit` for daily withdrawals.
 * it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered.
@@ -1760,7 +1760,7 @@ PIN                 cash                    daily limit             withdrawal
     git commit -am \
     'add test_below_limit_wrong_pin_enough_cash'
 
-When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
+When the ``withdraw`` :ref:`function is called<how to call a function with input>`
 
 * it returns :red:`'DENIED'` if the account is :green:`above limit` for daily withdrawals.
 * it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered.
@@ -1842,7 +1842,7 @@ PIN                 cash                    daily limit             withdrawal
     git commit -am \
     'add test_above_limit_wrong_pin_not_enough_cash'
 
-When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
+When the ``withdraw`` :ref:`function is called<how to call a function with input>`
 
 * it returns :red:`'DENIED'` if the account is :green:`above limit` for daily withdrawals.
 * it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered.
@@ -1993,7 +1993,7 @@ PIN                 cash                    daily limit             withdrawal
     git commit -am \
     'add test_below_limit_wrong_pin_not_enough_cash'
 
-When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
+When the ``withdraw`` :ref:`function is called<how to call a function with input>`
 
 * it returns :red:`'DENIED'` if the account is :green:`above limit` for daily withdrawals.
 
@@ -2803,7 +2803,7 @@ PIN                 cash                  daily limit             card expired  
     git commit -am \
     'add test_card_w_below_limit_right_pin_enough_cash'
 
-When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
+When the ``withdraw`` :ref:`function is called<how to call a function with input>`
 
 * it returns :red:`'DENIED'` if the card has :green:`expired`.
 * it returns :red:`'DENIED'` if the account is :green:`above limit` for daily withdrawals.
@@ -4079,7 +4079,7 @@ the test passes.
     git commit -am \
     'add test_card_w_below_limit_wrong_pin_not_enough_cash'
 
-When the ``withdraw`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
+When the ``withdraw`` :ref:`function is called<how to call a function with input>`
 
 * it returns :red:`'DENIED'` if the card has :green:`expired`.
 

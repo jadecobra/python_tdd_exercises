@@ -778,7 +778,7 @@ test_closed_door_pressed_start
 
 ----
 
-When the ``microwave`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`, it checks if the door is :green:`closed`
+When the ``microwave`` :ref:`function is called<how to call a function with input>`, it checks if the door is :green:`closed`
 
 * if the door is :red:`open` it returns :red:`False`
 
@@ -1595,7 +1595,7 @@ test_not_set_timer_open_door_not_pressed_start
 
 ----
 
-When the ``microwave`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`, it checks if the **Microwave** door is :green:`closed`
+When the ``microwave`` :ref:`function is called<how to call a function with input>`, it checks if the **Microwave** door is :green:`closed`
 
 * If the **Microwave** door is :red:`open`, it returns :red:`False`
 
@@ -3238,7 +3238,7 @@ the test passes.
 
 ----
 
-When the ``microwave`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`, it checks if the **Microwave** door is :green:`closed`
+When the ``microwave`` :ref:`function is called<how to call a function with input>`, it checks if the **Microwave** door is :green:`closed`
 
 * If the **Microwave** door is :red:`open`, it returns :red:`False`
 

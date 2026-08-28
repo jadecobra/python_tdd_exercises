@@ -1354,7 +1354,7 @@ I want to use a :ref:`dictionary<what is a dictionary?>` to write one test that 
 
   the test passes.
 
-This test goes through every operation in the ``arithmetic`` :ref:`dictionary<what is a dictionary?>` then calls the :ref:`function<what is a function?>` that is its :ref:`value<test_values_of_a_dictionary>` with ``self.random_first_number`` and ``self.random_second_number`` as input, and checks if the result is the :ref:`value<test_values_of_a_dictionary>` for the :ref:`operation key<test_keys_of_a_dictionary>` in the ``expectations`` :ref:`dictionary<what is a dictionary?>`. I think of it as
+This test goes through every operation in the ``arithmetic`` :ref:`dictionary<what is a dictionary?>` then :ref:`calls the function<how to call a function with input>` that is its :ref:`value<test_values_of_a_dictionary>` with ``self.random_first_number`` and ``self.random_second_number`` as input, and checks if the result is the :ref:`value<test_values_of_a_dictionary>` for the :ref:`operation key<test_keys_of_a_dictionary>` in the ``expectations`` :ref:`dictionary<what is a dictionary?>`. I think of it as
 
 .. code-block:: python
 
