@@ -442,7 +442,7 @@ test_type_error_w_positional_arguments
 
     def test_type_error_w_positional_arguments():
         # def function_00():
-        def function_00('a'):
+        def function_00(the_input):
             return None
 
         function_00('a')
@@ -1856,7 +1856,7 @@ test_type_error_w_args_and_kwargs
   .. code-block:: python
 
     TypeError: function_00() got
-               multiple values for argument 'the_input
+               multiple values for argument 'the_input'
 
   because
 

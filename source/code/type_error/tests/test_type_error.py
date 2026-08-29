@@ -31,7 +31,7 @@ def function_06(
 
 def function_07(
     argument_0, argument_1,
-    argument_2, argument_n
+    argument_2, argument_n,
 ):
     return None
 
@@ -104,15 +104,12 @@ def test_type_error_w_args_and_kwargs():
         third={0, 1, 2, 'n'},
         fourth={'key': 'value'},
     )
-    function_04('value')
-    function_05(
-        (0, 1, 2, 'n'),
-        [0, 1, 2, 'n'],
-    )
+    function_04(argument='value_2')
+    function_05((0, 1, 2, 'n'), [0, 1, 2, 'n'])
     function_06(
-        (0, 1, 2, 'n'),
-        [0, 1, 2, 'n'],
-        argument_2={0, 1, 2, 'n'},
+        argument_2=(0, 1, 2, 'n'),
+        argument_0=[0, 1, 2, 'n'],
+        argument_1={0, 1, 2, 'n'},
     )
     function_07(
         argument_n={'key': 'value'},
