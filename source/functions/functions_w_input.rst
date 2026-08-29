@@ -71,55 +71,53 @@ I have these tests by the end of the chapter
   :language: python
   :linenos:
   :caption: functions/tests/test_functions.py
-  :lines: 1-19
+  :lines: 1-20
 
 .. literalinclude:: ../code/functions/tests/test_functions_w_input.py
   :language: python
-  :lineno-start: 22
+  :lineno-start: 23
   :caption: functions/tests/test_functions.py
-  :lines: 22-42
+  :lines: 23-42
 
 .. literalinclude:: ../code/functions/tests/test_functions_w_input.py
   :language: python
   :lineno-start: 45
   :caption: functions/tests/test_functions.py
-  :lines: 45-58
+  :lines: 45-66
 
 .. literalinclude:: ../code/functions/tests/test_functions_w_input.py
   :language: python
-  :lineno-start: 61
+  :lineno-start: 69
   :caption: functions/tests/test_functions.py
-  :lines: 61-95
+  :lines: 69-103
 
 .. literalinclude:: ../code/functions/tests/test_functions_w_input.py
   :language: python
-  :lineno-start: 98
+  :lineno-start: 106
   :caption: functions/tests/test_functions.py
-  :lines: 98-141
+  :lines: 106-151
 
 .. literalinclude:: ../code/functions/tests/test_functions_w_input.py
   :language: python
-  :lineno-start: 144
+  :lineno-start: 154
   :caption: functions/tests/test_functions.py
-  :lines: 144-155
+  :lines: 154-165
 
 .. literalinclude:: ../code/functions/tests/test_functions_w_input.py
   :language: python
-  :lineno-start: 158
+  :lineno-start: 168
   :caption: functions/tests/test_functions.py
-  :lines: 158-196
+  :lines: 168-205
 
 .. literalinclude:: ../code/functions/tests/test_functions_w_input.py
   :language: python
-  :lineno-start: 199
+  :lineno-start: 208
   :caption: functions/tests/test_functions.py
-  :lines: 199-
+  :lines: 208-
 
 *********************************************************************************
 questions about functions that take input
 *********************************************************************************
-
-Questions to think about as I go through the chapter
 
 * :ref:`how can I make a function take input?<how to make a function that takes input>`
 * :ref:`how can I use a function to remove repetition?<test_why_use_a_function>`
@@ -4464,7 +4462,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
         # def args_and_kwargs(last_input, last_input):
         def args_and_kwargs(first_input, last_input):
             # return None
-            return first, last
+            return first_input, last_input
 
   the test passes.
 
@@ -4490,7 +4488,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
         # def args_and_kwargs(last_input, last_input):
         def args_and_kwargs(first_input, last_input):
             # return None
-            return first, last
+            return first_input, last_input
 
         first, last = 'first', 'last'
 
@@ -4535,7 +4533,7 @@ Can I :ref:`call a function<how to call a function with input>` with both :ref:`
 
     def test_args_and_kwargs():
         def args_and_kwargs(first_input, last_input):
-            return first, last
+            return first_input, last_input
 
         first, last = 'first', 'last'
 
@@ -6334,7 +6332,7 @@ how Python treats double starred expressions
 
   .. code-block:: python
     :lineno-start: 271
-    :emphasize-lines: 8-01
+    :emphasize-lines: 8-10
 
         a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
         assert_equal(
@@ -6510,7 +6508,7 @@ review
 I ran tests to show that I can make :ref:`functions<what is a function?>` that take input
 
 * :ref:`I can use a function to remove repetition<test_why_use_a_function>`.
-* :ref:`I can call a function with input by placing an input in parentheses when I :ref:`call<how to call a function with input>` it<how to call a function with input>`.
+* :ref:`I can call a function with input by placing an input in parentheses when I call it<how to call a function with input>`.
 * :ref:`The identity or passthrough function returns its input as output<test_identity_function>`.
 * :ref:`I can call a function with positional arguments<test_positional_arguments>`.
 * :ref:`I can call a function with keyword arguments<test_keyword_arguments>`.
@@ -6523,7 +6521,7 @@ I ran tests to show that I can make :ref:`functions<what is a function?>` that t
   - If I use ``*something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
   - If I use ``**something`` in a :ref:`function definition<how to make a function that takes input>`, it takes any number of :ref:`keyword arguments<test_keyword_arguments>` as a :ref:`dictionary<what is a dictionary?>` (any key-value pairs in curly braces ``{ }`` separated by commas).
 
-:ref:`How many questions can you answer about functions?<questions about functions>`
+:ref:`How many questions can you answer about functions?<questions about functions that take input>`
 
 ----
 
@@ -6554,6 +6552,7 @@ I am going for a walk.
   :maxdepth: 1
 
   ../exceptions/TypeError/index
+  ../exceptions/AssertionError/AssertionError_w_functions
   ../how_to/telephone/index
   ../exceptions/ModuleNotFoundError/separate_and_equal
 

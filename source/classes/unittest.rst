@@ -62,8 +62,6 @@ I have these tests by the end of the chapter
 Questions about unittest
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`What are two ways to test if something is not something else?<test_assert_is_not>`
 * :ref:`What are two ways to test if something is something?<test_assert_is>`
 * :ref:`What are two ways to test if two things are not equal?<test_assert_not_equal>`

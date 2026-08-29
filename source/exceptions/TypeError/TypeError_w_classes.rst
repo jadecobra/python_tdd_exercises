@@ -31,8 +31,6 @@ I have these tests by the end of the chapter
 questions about TypeError with classes
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`How do methods behave when I call them with a class or an instance<test_type_error_w_class_methods>`?
 * :ref:`Is every object callable<test_type_error_w_the_uncallables>`?
 

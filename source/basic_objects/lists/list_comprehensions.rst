@@ -45,8 +45,6 @@ I have these tests by the end of the chapter
 questions about list comprehensions
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`what is a list comprehension?`
 * :ref:`what is a for loop?`
 * :ref:`how can I make a list with the extend method?<test_making_a_list_w_extend>`

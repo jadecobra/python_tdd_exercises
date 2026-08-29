@@ -14,6 +14,32 @@ The code in ``type_error/tests/test_type_error.py`` from :ref:`what causes TypeE
 .. literalinclude:: type_error/tests/test_type_error.py
   :language: python
   :linenos:
+  :caption: type_error/tests/test_type_error.py
+  :lines: 1-14
+
+.. literalinclude:: type_error/tests/test_type_error.py
+  :language: python
+  :lineno-start: 17
+  :caption: type_error/tests/test_type_error.py
+  :lines: 17-36
+
+.. literalinclude:: type_error/tests/test_type_error.py
+  :language: python
+  :lineno-start: 39
+  :caption: type_error/tests/test_type_error.py
+  :lines: 39-52
+
+.. literalinclude:: type_error/tests/test_type_error.py
+  :language: python
+  :lineno-start: 55
+  :caption: type_error/tests/test_type_error.py
+  :lines: 55-91
+
+.. literalinclude:: type_error/tests/test_type_error.py
+  :language: python
+  :lineno-start: 94
+  :caption: type_error/tests/test_type_error.py
+  :lines: 94-
 
 ----
 

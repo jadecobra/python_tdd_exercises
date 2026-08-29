@@ -39,8 +39,6 @@ I have these tests by the end of the chapter
 questions about AttributeError
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 * :ref:`what is an attribute?`
 
@@ -186,6 +184,8 @@ start the project
 
     def test_failure():
         assert False is True
+
+* I go back to the terminal_
 
 .. tab-set::
   :sync-group: os

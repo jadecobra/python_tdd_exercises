@@ -25,8 +25,6 @@ I think this is the most important :ref:`data structure<basic objects>` because 
 questions about dictionaries
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`what is a dictionary?`
 * :ref:`how can I empty a dictionary?<test_clear_empties_a_dictionary>`
 * :ref:`how can I copy a dictionary<test_copy_a_dictionary>`

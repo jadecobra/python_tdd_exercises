@@ -23,6 +23,50 @@ The code in ``functions/tests/test_functions.py`` from :ref:`functions that take
 .. literalinclude:: functions/tests/test_functions_w_input.py
   :language: python
   :linenos:
+  :caption: functions/tests/test_functions.py
+  :lines: 1-20
+
+.. literalinclude:: functions/tests/test_functions_w_input.py
+  :language: python
+  :lineno-start: 23
+  :caption: functions/tests/test_functions.py
+  :lines: 23-42
+
+.. literalinclude:: functions/tests/test_functions_w_input.py
+  :language: python
+  :lineno-start: 45
+  :caption: functions/tests/test_functions.py
+  :lines: 45-66
+
+.. literalinclude:: functions/tests/test_functions_w_input.py
+  :language: python
+  :lineno-start: 69
+  :caption: functions/tests/test_functions.py
+  :lines: 69-103
+
+.. literalinclude:: functions/tests/test_functions_w_input.py
+  :language: python
+  :lineno-start: 106
+  :caption: functions/tests/test_functions.py
+  :lines: 106-151
+
+.. literalinclude:: functions/tests/test_functions_w_input.py
+  :language: python
+  :lineno-start: 154
+  :caption: functions/tests/test_functions.py
+  :lines: 154-165
+
+.. literalinclude:: functions/tests/test_functions_w_input.py
+  :language: python
+  :lineno-start: 168
+  :caption: functions/tests/test_functions.py
+  :lines: 168-205
+
+.. literalinclude:: functions/tests/test_functions_w_input.py
+  :language: python
+  :lineno-start: 208
+  :caption: functions/tests/test_functions.py
+  :lines: 208-
 
 ----
 

@@ -44,8 +44,6 @@ I have these tests by the end of the chapter
 questions about None
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`what is None?<test_what_is_none>`
 * :ref:`Is None a boolean?<test_is_none_a_boolean>`
 * :ref:`Is None an integer?<test_is_none_an_integer>`

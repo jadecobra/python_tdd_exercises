@@ -154,6 +154,8 @@ start the project
     def test_failure():
         assert False is True
 
+* I go back to the terminal_
+
 .. tab-set::
   :sync-group: os
 

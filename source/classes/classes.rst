@@ -33,8 +33,6 @@ I have these tests by the end of the chapter
 questions about classes
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`what is a class?`
 * :ref:`what is a class attribute?`
 * :ref:`what is a method?`

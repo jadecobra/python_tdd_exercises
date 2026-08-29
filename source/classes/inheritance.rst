@@ -70,8 +70,6 @@ classes_ are made with
 questions about classes
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`how can I make a class with pass?<test_making_a_class_w_pass>`
 * :ref:`how can I make a class with parentheses?<test_making_a_class_w_parentheses>`
 * :ref:`how can I make a class with object?<test_making_a_class_w_object>`

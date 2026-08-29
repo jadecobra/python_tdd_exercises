@@ -31,8 +31,6 @@ These are the tests I have at the end of the chapter
 questions about Nullary and Unary Operations
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`what are the Nullary Operations?<Nullary Operations>`
 * :ref:`How many inputs do Nullary Operations take?<Nullary Operations>`
 * :ref:`what are the Unary Operations?<Unary Operations>`

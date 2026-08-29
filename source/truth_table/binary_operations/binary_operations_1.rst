@@ -42,8 +42,6 @@ These are the tests I have at the end of the chapter
 questions about Binary Operations 1
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`how many inputs do binary operations take?<truth table: Binary Operations>`
 * :ref:`what is contradiction?<test_contradiction>`
 * :ref:`what is and?<test_logical_conjunction>`

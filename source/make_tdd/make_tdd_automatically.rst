@@ -82,8 +82,6 @@ Here is the program_ I have by the end of the chapter to :ref:`automatically mak
 questions about making a Python Test Driven Development Environment automatically
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 
 * :ref:`how can I make a shell script?<how to make a shell script>`
 * :ref:`how can I view the permissions of a file?<how to view the permissions of a file>`

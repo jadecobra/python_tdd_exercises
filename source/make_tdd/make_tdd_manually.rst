@@ -57,8 +57,6 @@ requirements
 questions about making a Python Test Driven Development Environment
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`what is a Test Driven Development Environment?`
 * :ref:`how can I make a Python Test Driven Development Environment manually?<how to make a Python Test Driven Development environment manually>`
 * :ref:`how can I change directories?<how to change directory>`

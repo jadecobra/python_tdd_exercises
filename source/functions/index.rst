@@ -62,8 +62,6 @@ I have these tests by the end of the chapter
 questions about functions
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`what is a function?<what is a function?>`
 * :ref:`what do functions return by default?<test_making_a_function_w_return_none>`
 * :ref:`what happens after a function returns?<test_what_happens_after_functions_return>`
@@ -173,6 +171,8 @@ start the project
 
     def test_failure():
         assert False is True
+
+* I go back to the terminal_
 
 .. tab-set::
   :sync-group: os

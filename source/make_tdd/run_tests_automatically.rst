@@ -71,8 +71,6 @@ This is one way to automatically run tests in a :ref:`Python Test Driven Develop
 questions about how to run tests automatically
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`how can I run tests automatically?<how to run tests automatically>`
 * :ref:`how can I stop automated Python tests from running?<how to stop the automated tests>`
 * :ref:`what is a Virtual Environment?<what is a virtual environment?>`

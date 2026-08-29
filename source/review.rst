@@ -140,8 +140,6 @@ classes review
 everything is an object review
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`how can I make a class with pass?<test_making_a_class_w_pass>`
 * :ref:`how can I make a class with parentheses?<test_making_a_class_w_parentheses>`
 * :ref:`how can I make a class with object?<test_making_a_class_w_object>`
@@ -256,8 +254,6 @@ Exception handling in Programs review
 TypeError review
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`I know what causes TypeError<what causes TypeError?>`.
 * :ref:`are data structures callable?<test_type_error_w_the_uncallables>`
 * :ref:`what happens when I call a function and do not send the right number of inputs?<test_type_error_w_function_signatures>`
@@ -293,8 +289,6 @@ lists review
 *********************************************************************************
 list comprehensions review
 *********************************************************************************
-
-Questions to think about as I go through the chapter
 
 * :ref:`what is a list comprehension?`
 * :ref:`what is a for loop?`

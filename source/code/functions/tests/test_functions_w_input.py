@@ -46,7 +46,7 @@ def test_identity_function():
     def identity(the_input):
         return the_input
 
-    assert_equal(identity(None), None)
+    assert_is_none(identity(None))
     assert_equal(identity(object), object)
 
 
@@ -153,7 +153,7 @@ def test_keyword_arguments():
 
 def test_args_and_kwargs():
     def args_and_kwargs(first_input, last_input):
-        return first, last
+        return first_input, last_input
 
     first, last = 'first', 'last'
 

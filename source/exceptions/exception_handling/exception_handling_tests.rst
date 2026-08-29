@@ -67,8 +67,6 @@ I have these tests by the end of the chapter
 questions about testing Exceptions
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`how can I handle an Exception when it happens?<how to handle Exceptions>`
 * :ref:`how can I make sure an Exception is raised?<how to test that an Exception is raised>`
 * :ref:`what causes ModuleNotFoundError?<test_catching_module_not_found_error>`

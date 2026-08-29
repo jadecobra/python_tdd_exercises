@@ -98,8 +98,6 @@ I have these tests by the end of the chapter
 questions about AssertionError
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`what is an assertion?<what is an assertion?>`
 * :ref:`what causes AssertionError?<what causes AssertionError?>`
 * :ref:`how can I test if something is NOT the same object as None?<test_assertion_error_w_none>`
@@ -230,6 +228,8 @@ start the project
     :emphasize-lines: 1
 
     assert False is True
+
+* I go back to the terminal_
 
 .. tab-set::
   :sync-group: os

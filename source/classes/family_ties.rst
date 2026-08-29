@@ -53,8 +53,6 @@ To use :ref:`inheritance<test_dir_object>` I put the "parent" in parentheses whe
 questions about family ties
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`what is Python's Method Resolution Order?`
 * :ref:`how can I make a class with inheritance?<test_making_a_class_w_inheritance>`
 * :ref:`what is the difference between an instance and a subclass?<more about instances vs subclasses>`

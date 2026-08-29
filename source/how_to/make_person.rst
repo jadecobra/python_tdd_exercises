@@ -180,6 +180,8 @@ start the project
         def test_failure(self):
             self.assertFalse(True)
 
+* I go back to the terminal_
+
 .. tab-set::
   :sync-group: os
 
