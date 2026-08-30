@@ -246,7 +246,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I remove the commented lines from :ref:`test_assert_keyword`
+* I remove the commented lines from :ref:`test_assert_keyword` and
 
   .. code-block:: python
     :lineno-start: 5
@@ -271,6 +271,188 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     git commit -am \
     'test_assert_keyword with assert_equal'
+
+----
+
+*********************************************************************************
+test_assertion_error_w_equality with assert_equal
+*********************************************************************************
+
+=================================================================================
+:RED:`RED`: make it fail
+=================================================================================
+
+----
+
+I use the :ref:`assert_equal function<extract assert_equal function>` for three :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_equality`
+
+.. code-block:: python
+  :lineno-start: 82
+  :emphasize-lines: 3, 10, 15
+
+    def test_assertion_error_w_equality():
+        assert None == None
+        assert_equal(False, None)
+
+        assert False != None
+
+        assert False != True
+
+        assert False == False
+        assert_equal(True, False)
+
+        assert True != None
+
+        assert True == True
+        assert_equal(False, True)
+
+
+    def test_assertion_error_w_is_vs_equal():
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  E       assert False == None
+
+.. code-block:: shell
+
+  assert_equal(False, None) -> None
+  └── def assert_equal(x, y):
+      ├── x = False
+      ├── y = None
+      └── assert x     == y
+          assert False == None
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change :ref:`False<test_what_is_false>` to :ref:`None<what is None?>` in the first :ref:`assertion<what is an assertion?>` of :ref:`test_assertion_error_w_equality`
+
+  .. code-block:: python
+    :lineno-start: 82
+    :emphasize-lines: 3-4
+
+    def test_assertion_error_w_equality():
+        assert None == None
+        # assert_equal(False, None)
+        assert_equal(None, None)
+
+        assert False != None
+
+        assert False != True
+
+        assert False == False
+        assert_equal(True, False)
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert True == False
+
+  .. code-block:: shell
+
+    assert_equal(True, False) -> None
+    └── def assert_equal(x, y):
+        ├── x = True
+        ├── y = False
+        └── assert x   == y
+            assert True == False
+
+* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the fourth :ref:`assertion<what is an assertion?>` of :ref:`test_assertion_error_w_equality`
+
+  .. code-block:: python
+    :lineno-start: 91
+    :emphasize-lines: 2-3
+
+        assert False == False
+        # assert_equal(True, False)
+        assert_equal(False, False)
+
+        assert True != None
+
+        assert True == True
+        assert_equal(False, True)
+
+
+    def test_assertion_error_w_is_vs_equal():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+
+  .. code-block:: python
+
+    E       assert False == True
+
+  .. code-block:: shell
+
+    assert_equal(False, True) -> None
+    └── def assert_equal(x, y):
+        ├── x = False
+        ├── y = True
+        └── assert x     == y
+            assert False == True
+
+* I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the last :ref:`assertion<what is an assertion?>` of :ref:`test_assertion_error_w_equality`
+
+  .. code-block:: python
+    :lineno-start: 97
+    :emphasize-lines: 2-3
+
+        assert True == True
+        # assert_equal(False, True)
+        assert_equal(True, True)
+
+
+    def test_assertion_error_w_is_vs_equal():
+
+  the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented lines from :ref:`test_assertion_error_w_equality` and
+
+  .. code-block:: python
+    :lineno-start: 82
+
+    def test_assertion_error_w_equality():
+        assert None == None
+        assert_equal(None, None)
+
+        assert False != None
+
+        assert False != True
+
+        assert False == False
+        assert_equal(False, False)
+
+        assert True != None
+
+        assert True == True
+        assert_equal(True, True)
+
+
+    def test_assertion_error_w_is_vs_equal():
+
+* I add a git_ commit message in the new terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'test_assertion_error_w_equality with assert_equal'
+
 
 ----
 
