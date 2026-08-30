@@ -225,6 +225,19 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         └── assert x            == y
             assert 'I am alive' == 'I am a ghost'
 
+* I change the expectation from ``'I am a ghost'`` to ``'I am alive'`` for the third :ref:`assertion<what is an assertion?>` in :ref:`test_assert_keyword`
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 2-3
+
+        assert 'I am' + ' alive' == 'I am alive'
+        # assert_equal('I am'+' alive', 'I am a ghost')
+        assert_equal('I am'+' alive', 'I am alive')
+
+
+    def test_assertion_error_w_none():
+
 ----
 
 =================================================================================
@@ -233,9 +246,23 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
+* I remove the commented lines from :ref:`test_assert_keyword`
+
+  .. code-block:: python
+    :lineno-start: 5
+
+    def test_assert_keyword():
+        assert 1 + 1 == 2
+        assert_equal(1+1, 2)
+
+        assert '1' + '1' == '11'
+        assert_equal('1'+'1', '11')
+
+        assert 'I am' + ' alive' == 'I am alive'
+        assert_equal('I am'+' alive', 'I am alive')
 
 
-
+    def test_assertion_error_w_none():
 
 * I add a git_ commit message in the new terminal_
 
@@ -243,9 +270,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     :emphasize-lines: 1-2
 
     git commit -am \
-    'use assertIsNotNone and assertIsNone'
-
-:ref:`I can use assertIsNotNone and assertIsNone for assertIsNot(x, None) and assertIs(x, None)<use assertIsNotNone and assertIsNone>`.
+    'test_assert_keyword with assert_equal'
 
 ----
 
