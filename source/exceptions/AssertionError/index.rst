@@ -4258,7 +4258,7 @@ The tests show that
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<AssertionError: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<what is an assertion?: tests>`
 
 ----
 
