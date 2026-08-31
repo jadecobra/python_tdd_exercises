@@ -60,13 +60,13 @@ I have these tests by the end of the chapter
   :language: python
   :lineno-start: 73
   :caption: assertion_error/tests/test_assertion_error.py
-  :lines: 73-79
+  :lines: 73-80
 
 .. literalinclude:: ../../code/assertion_error/test_assertion_error_w_functions.py
   :language: python
-  :lineno-start: 82
+  :lineno-start: 83
   :caption: assertion_error/tests/test_assertion_error.py
-  :lines: 82-98
+  :lines: 83-99
 
 ----
 
@@ -1774,17 +1774,8 @@ what is next?
 * :ref:`I know how to make a person with strings<how to make a person with strings>`.
 * :ref:`I know how to make functions that take input<functions that take input>`.
 * :ref:`I know what causes TypeError<what causes TypeError?>`.
-* :ref:`I know how to place values in strings<telephone>`.
-* :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
-* :ref:`I know how to separate tests from solutions<separate and equal>`.
-* :ref:`I know what causes AttributeError<what causes AttributeError?>`.
-* :ref:`I know how to make a person with a class<how to make a person with a class>`.
-* :ref:`I know that everything in Python is an object<everything is an object>`.
-* :ref:`I know how to use the unittest library<another way to write tests>`.
-* :ref:`I know how to use the datetime library<test person with datetime>`.
-* :ref:`I know what None is<what is None?>`.
 
-:ref:`Would you like to use the assertIsNotNone and assertIsNone methods with the functions project?<test functions with assertIsNotNone and assertIsNone>`
+:ref:`Would you like to test using a function to make a string from input?<telephone>`
 
 ----
 

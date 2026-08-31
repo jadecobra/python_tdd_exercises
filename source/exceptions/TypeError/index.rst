@@ -2939,7 +2939,7 @@ what is next?
 * :ref:`I know how to make functions that take input<functions that take input>`.
 * :ref:`I know what causes TypeError<what causes TypeError?>`.
 
-:ref:`Would you like to test using a function to make a string from input?<telephone>`
+:ref:`Would you like to test AssertionError with functions that take input?<test AssertionError with functions>`
 
 -----
 
