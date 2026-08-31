@@ -139,7 +139,7 @@ test_assert_keyword with assert_equal
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I use the :ref:`assert_equal function<extract assert_equal function>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_assert_keyword`
+* I use the :ref:`assert_equal function<extract assert_equal function>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_assert_keyword`, in ``test_assertion_error.py``
 
   .. code-block:: python
     :lineno-start: 5
@@ -296,7 +296,7 @@ test_assertion_error_w_equality with assert_equal
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I use the :ref:`assert_equal function<extract assert_equal function>` for three :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_equality`
+* I use the :ref:`assert_equal function<extract assert_equal function>` for three :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_equality`, in ``test_assertion_error.py``
 
   .. code-block:: python
     :lineno-start: 77
@@ -473,7 +473,7 @@ test_assertion_error_w_is_vs_equal with assert_equal
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I use the :ref:`assert_equal function<extract assert_equal function>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_assertion_error_w_is_vs_equal`
+* I use the :ref:`assert_equal function<extract assert_equal function>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_assertion_error_w_is_vs_equal`, in ``test_assertion_error.py``
 
   .. code-block:: python
     :lineno-start: 87
@@ -580,7 +580,7 @@ I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an asse
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a :ref:`function<what is a function?>` named ``assert_not_equal`` that takes two inputs and :ref:`asserts<what is an assertion?>` that they are NOT equal
+* I add a :ref:`function<what is a function?>` named ``assert_not_equal`` that takes two inputs and :ref:`asserts<what is an assertion?>` that they are NOT equal, in ``test_assertion_error.py``
 
   .. code-block:: python
     :linenos:
@@ -810,7 +810,7 @@ I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an asse
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a :ref:`function<what is a function?>` named ``assert_is_not`` that takes two inputs and :ref:`asserts<what is an assertion?>`  that they are not the same :ref:`object<everything is an object>`
+* I add a :ref:`function<what is a function?>` named ``assert_is_not`` that takes two inputs and :ref:`asserts<what is an assertion?>`  that they are not the same :ref:`object<everything is an object>`, in ``test_assertion_error.py``
 
   .. code-block:: python
     :linenos:
@@ -1160,7 +1160,7 @@ I can use a :ref:`function<what is a function?>` to remove repetition of :ref:`N
 ----
 
 * I go back to the terminal_ where the tests are running.
-* I add a :ref:`function<what is a function?>` named ``assert_is_not_none`` that takes one input and :ref:`calls the assert_is_not function<extract assert_is_not function>` to :ref:`assert<what is an assertion?>` that the input is NOT the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
+* I add a :ref:`function<what is a function?>` named ``assert_is_not_none`` that takes one input and :ref:`calls the assert_is_not function<extract assert_is_not function>` to :ref:`assert<what is an assertion?>` that the input is NOT the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`, in ``test_assertion_error.py``
 
   .. code-block:: python
     :linenos:
@@ -1198,6 +1198,17 @@ I can use a :ref:`function<what is a function?>` to remove repetition of :ref:`N
 
     E       assert None is not None
 
+  .. code-block:: shell
+
+    assert_is_not_none(None) -> None
+    └── def assert_is_not_none(x):
+        ├── x = None
+        └── assert_is_not(x, None)
+            └── def assert_is_not(x, y):
+                ├── x = None
+                ├── y = None
+                └── assert x    is not y
+                    assert None is not None
 
 ----
 
@@ -1326,7 +1337,6 @@ the test passes.
 
     def test_assertion_error_w_false():
 
-
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -1335,6 +1345,379 @@ the test passes.
     git commit -am \
     'extract assert_is_not_none function'
 
+----
+
+*********************************************************************************
+extract assert_is_not_false function
+*********************************************************************************
+
+The :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_false` except ``assert False is False`` are the same, they check if something is NOT the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+
+.. code-block:: python
+
+  assert something is not False
+
+I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` that something is NOT the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
+
+----
+
+=================================================================================
+:RED:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+* I add a :ref:`function<what is a function?>` named ``assert_is_not_false`` that takes one input and :ref:`calls the assert_is_not function<extract assert_is_not function>` to :ref:`assert<what is an assertion?>` that the input is NOT the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`, in ``test_assertion_error.py``
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 5-6
+
+    def assert_is_not_none(x):
+        assert_is_not(x, None)
+
+
+    def assert_is_not_false(x):
+        assert_is_not(x, False)
+
+
+    def assert_not_equal(x, y):
+
+* I use the :ref:`assert_is_not_false function<extract assert_is_not_false function>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_assertion_error_w_false`
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 2-3
+
+    def test_assertion_error_w_false():
+        # assert None is not False
+        assert_is_not_false(False)
+
+        assert False is False
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert False is not False
+
+  .. code-block:: shell
+
+    assert_is_not_false(False) -> None
+    └── def assert_is_not_false(x):
+        ├── x = False
+        └── assert_is_not(x, False)
+            └── def assert_is_not(x, y):
+                ├── x = False
+                ├── y = False
+                └── assert x     is not y
+                    assert False is not False
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change :ref:`False<test_what_is_false>` to :ref:`None<what is None?>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_assertion_error_w_false`
+
+.. code-block:: python
+  :lineno-start: 41
+  :emphasize-lines: 3-4
+
+  def test_assertion_error_w_false():
+      # assert None is not False
+      # assert_is_not_false(False)
+      assert_is_not_false(None)
+
+      assert False is False
+
+the test passes.
+
+.. code-block:: shell
+
+  assert_is_not_false(None) -> None
+  └── def assert_is_not_false(x):
+      ├── x = None
+      └── assert_is_not(x, False)
+          └── def assert_is_not(x, y):
+              ├── x = None
+              ├── y = False
+              └── assert x    is not y
+                  assert None is not False
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I use the :ref:`assert_is_not_false function<extract assert_is_not_false function>` for the remaining :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_false`
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 3-4, 6-7, 9-10
+
+        assert False is False
+
+        # assert True is not False
+        assert_is_not_false(True)
+
+        # assert 0 is not False
+        assert_is_not_false(0)
+
+        # assert 0.0 is not False
+        assert_is_not_false(0.0)
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 1-2, 4-5, 7-8
+
+        # assert '' is not False
+        assert_is_not_false('')
+
+        # assert () is not False
+        assert_is_not_false(())
+
+        # assert [] is not False
+        assert_is_not_false([])
+
+  .. code-block:: python
+    :lineno-start: 66
+    :emphasize-lines: 1-2, 4-5
+
+        # assert set() is not False
+        assert_is_not_false(set())
+
+        # assert {} is not False
+        assert_is_not_false({})
+
+
+    def test_assertion_error_w_true():
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_assertion_error_w_false`
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 2, 4
+
+    def test_assertion_error_w_false():
+        assert False is False
+
+        assert_is_not_false(None)
+        assert_is_not_false(True)
+        assert_is_not_false(0)
+        assert_is_not_false(0.0)
+        assert_is_not_false('')
+        assert_is_not_false(())
+        assert_is_not_false([])
+        assert_is_not_false(set())
+        assert_is_not_false({})
+
+
+    def test_assertion_error_w_true():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract assert_is_not_false function'
+
+----
+
+*********************************************************************************
+extract assert_is_not_true function
+*********************************************************************************
+
+The :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_true` except ``assert True is True`` are the same, they check if something is NOT the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+
+.. code-block:: python
+
+  assert something is not True
+
+I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` that something is NOT the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
+
+----
+
+=================================================================================
+:RED:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running.
+* I add a :ref:`function<what is a function?>` named ``assert_is_not_true`` that takes one input and :ref:`calls the assert_is_not function<extract assert_is_not function>` to :ref:`assert<what is an assertion?>` that the input is NOT the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`, in ``test_assertion_error.py``
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 5-6
+
+    def assert_is_not_false(x):
+        assert_is_not(x, False)
+
+
+    def assert_is_not_true(x):
+        assert_is_not(x, True)
+
+
+    def assert_not_equal(x, y):
+
+* I use the :ref:`assert_is_not_true function<extract assert_is_not_true function>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_assertion_error_w_true`
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 2-3
+
+    def test_assertion_error_w_true():
+        # assert None is not True
+        assert_is_not_true(True)
+
+        assert False is not True
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert True is not True
+
+  .. code-block:: shell
+
+    assert_is_not_true(True) -> None
+    └── def assert_is_not_true(x):
+        ├── x = True
+        └── assert_is_not(x, True)
+            └── def assert_is_not(x, y):
+                ├── x = True
+                ├── y = True
+                └── assert x    is not y
+                    assert True is not True
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change :ref:`True<test_what_is_true>` to :ref:`None<what is None?>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_assertion_error_w_true`
+
+.. code-block:: python
+  :lineno-start: 59
+  :emphasize-lines: 3-4
+
+  def test_assertion_error_w_true():
+      # assert None is not True
+      # assert_is_not_true(True)
+      assert_is_not_true(None)
+
+      assert False is not True
+
+the test passes.
+
+.. code-block:: shell
+
+  assert_is_not_true(None) -> None
+  └── def assert_is_not_true(x):
+      ├── x = None
+      └── assert_is_not(x, True)
+          └── def assert_is_not(x, y):
+              ├── x = None
+              ├── y = True
+              └── assert x    is not y
+                  assert None is not True
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I use the :ref:`assert_is_not_true function<extract assert_is_not_true function>` for the remaining :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_true`
+
+  .. code-block:: python
+    :lineno-start: 64
+    :emphasize-lines: 1-2, 6-7
+
+        # assert False is not True
+        assert_is_not_true(False)
+
+        assert True is True
+
+        # assert 0 is not True
+        assert_is_not_true(0)
+
+  .. code-block:: python
+    :lineno-start: 72
+    :emphasize-lines: 1-2, 4-5, 7-8
+
+        # assert 0.0 is not True
+        assert_is_not_true(0.0)
+
+        # assert '' is not True
+        assert_is_not_true('')
+
+        # assert () is not True
+        assert_is_not_true(())
+
+  .. code-block:: python
+    :lineno-start: 81
+    :emphasize-lines: 1-2, 4-5, 7-8
+
+        # assert [] is not True
+        assert_is_not_true([])
+
+        # assert set() is not True
+        assert_is_not_true(set())
+
+        # assert {} is not True
+        assert_is_not_true({})
+
+
+    def test_assertion_error_w_equality():
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_assertion_error_w_true`
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 2
+
+    def test_assertion_error_w_true():
+        assert True is True
+
+        assert_is_not_true(None)
+        assert_is_not_true(False)
+        assert_is_not_true(0)
+        assert_is_not_true(0.0)
+        assert_is_not_true('')
+        assert_is_not_true(())
+        assert_is_not_true([])
+        assert_is_not_true(set())
+        assert_is_not_true({})
+
+
+    def test_assertion_error_w_equality():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract assert_is_not_true function'
 
 ----
 

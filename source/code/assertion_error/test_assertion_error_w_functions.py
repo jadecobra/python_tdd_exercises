@@ -1,11 +1,3 @@
-def assert_equal(x, y):
-    assert x == y
-
-
-def assert_not_equal(x, y):
-    assert x != y
-
-
 def assert_is_not(x, y):
     assert x is not y
 
@@ -20,6 +12,14 @@ def assert_is_not_false(x):
 
 def assert_is_not_true(x):
     assert_is_not(x, True)
+
+
+def assert_not_equal(x, y):
+    assert x != y
+
+
+def assert_equal(x, y):
+    assert x == y
 
 
 def test_assert_keyword():
@@ -72,11 +72,12 @@ def test_assertion_error_w_true():
 
 def test_assertion_error_w_equality():
     assert_equal(None, None)
+    assert_equal(False, False)
+    assert_equal(True, True)
+
     assert_not_equal(False, None)
     assert_not_equal(False, True)
-    assert_equal(False, False)
     assert_not_equal(True, None)
-    assert_equal(True, True)
 
 
 def test_assertion_error_w_is_vs_equal():
@@ -87,11 +88,11 @@ def test_assertion_error_w_is_vs_equal():
 def will_not_run():
     # will not run because
     # the name does not start with test
-    assert_equal(False, True)
+    assert False == True
 
 
 def test_failure():
-    # assert_equal(False, True)
+    # assert False == True
     assert_not_equal(False, True)
 
 
