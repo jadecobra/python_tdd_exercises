@@ -3733,7 +3733,7 @@ It also means I will not need the ``TOOLBOX`` :ref:`class attribute<what is a cl
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I change the :ref:`call<how to call a function with input>` to the `assertEqual method`_ in :ref:`test_dir_unittest`
 

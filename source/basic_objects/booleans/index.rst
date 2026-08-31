@@ -135,7 +135,7 @@ start the project
 
 * I open ``test_booleans.py``
 
-* I delete all the text then add :ref:`the first failing test<test_failure>` to ``test_booleans.py``
+* I add :ref:`the first failing test<test_failure>` to ``test_booleans.py``
 
   .. code-block:: python
     :linenos:
@@ -4473,7 +4473,7 @@ Since :ref:`False<test_what_is_false>` is an int_, what is its value?
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I add a test for the value of :ref:`False<test_what_is_false>`
 
   .. code-block:: python

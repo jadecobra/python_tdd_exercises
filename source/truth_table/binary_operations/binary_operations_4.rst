@@ -2839,7 +2839,7 @@ examples of Material Implication
 extract global variables
 *********************************************************************************
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I add :ref:`variables<what is a variable?>` for the four test cases that are repeated in every test, in ``test_binary.py``
 
   .. code-block:: python

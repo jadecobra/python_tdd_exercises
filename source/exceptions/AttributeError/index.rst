@@ -176,7 +176,7 @@ start the project
 
 * I open ``test_attribute_error.py``
 
-* I delete all the text then add :ref:`the first failing test<test_failure>` to ``test_attribute_error.py``
+* I add :ref:`the first failing test<test_failure>` to ``test_attribute_error.py``
 
   .. code-block:: python
     :linenos:

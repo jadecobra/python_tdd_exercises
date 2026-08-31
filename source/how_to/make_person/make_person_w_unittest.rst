@@ -208,7 +208,7 @@ test_joe with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_joe` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>` and replace ``test_failure``
 
@@ -509,7 +509,7 @@ test_jane with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_jane` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
 
@@ -808,7 +808,7 @@ test_john with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_john` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
 
@@ -1107,7 +1107,7 @@ test_mary with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_mary` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
 
@@ -1406,7 +1406,7 @@ test_dir_person_class with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_dir_person_class` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
 
@@ -1545,7 +1545,7 @@ test_dir_person_instance with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_dir_person_instance` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
 

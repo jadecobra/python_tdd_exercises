@@ -234,7 +234,7 @@ test_assert_keyword with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_assert_keyword` to make it a :ref:`method<what is a method?>` of the :ref:`TestAssertionError class<add TestAssertionError class>` and replace ``test_failure``
 

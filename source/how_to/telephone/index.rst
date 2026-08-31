@@ -23,7 +23,7 @@ I send things (:ref:`input data<basic objects>`) to a program_ to test it, and c
 * what is the same?
 * what is different?
 
-The difference helps me know what to change to get what I want. I use :ref:`assertions<what is an assertion?>` to test if the result of a :ref:`call to a function with input<functions that take input>` is the same as my expectation.
+The difference helps me know what to change to get what I want. I use :ref:`assertions<what is an assertion?>` to test if reality is the same as my expectation.
 
 .. code-block:: python
 
@@ -48,6 +48,31 @@ I have these tests by the end of the chapter
   :language: python
   :linenos:
   :caption: telephone/tests/test_telephone.py
+  :lines: 1-11
+
+.. literalinclude:: ../../code/telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 14
+  :caption: telephone/tests/test_telephone.py
+  :lines: 14-26
+
+.. literalinclude:: ../../code/telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 29
+  :caption: telephone/tests/test_telephone.py
+  :lines: 29-41
+
+.. literalinclude:: ../../code/telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 44
+  :caption: telephone/tests/test_telephone.py
+  :lines: 44-51
+
+.. literalinclude:: ../../code/telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 54
+  :caption: telephone/tests/test_telephone.py
+  :lines: 54-
 
 ----
 
@@ -145,7 +170,7 @@ start the project
 
 * I open ``test_telephone.py``
 
-* I delete all the text then add :ref:`the first failing test<test_failure>` to ``test_telephone.py``
+* I add :ref:`the first failing test<test_failure>` to ``test_telephone.py``
 
   .. code-block:: python
     :linenos:
@@ -255,7 +280,7 @@ start the project
 
     and try ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_telephone.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, to ``test_telephone.py``
 
   .. code-block:: python
     :linenos:
@@ -301,7 +326,7 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
 
 ----
 
-* I change ``test_failure`` to :ref:`test_passing_none` with an :ref:`assertion<what is an assertion?>` for a :ref:`function call<how to call a function>` with :ref:`None<what is None?>` (the simplest :ref:`Python data structure<basic objects>`) as input, in ``test_telephone.py``
+* I change ``test_failure`` to :ref:`test_passing_none` with an :ref:`assertion<what is an assertion?>` for a :ref:`function call<how to call a function>` with :ref:`None<what is None?>` (the simplest :ref:`Python data structure<basic objects>`) as input, to ``test_telephone.py``
 
   .. code-block:: python
     :linenos:
@@ -421,6 +446,12 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
 
   the test passes.
 
+  .. code-block:: shell
+
+    text(None) -> 'I got: None'
+    └── def text(the_input):
+        └── return 'I got: None'
+
 ----
 
 =================================================================================
@@ -429,7 +460,7 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
 
 ----
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_passing_none`
 
   .. code-block:: python
     :linenos:
@@ -467,7 +498,7 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
 
 :ref:`I can pass None as input to a function<test_passing_none>`.
 
-The problem with this solution is that the ``text`` :ref:`function<what is a function?>` does not care about what it gets, it always returns ``'I got: None'`` when it is called. I want it to return the :ref:`object<everything is an object>` it gets as part of the string_.
+The problem with this solution is that the ``text`` :ref:`function<what is a function?>` does not care about what it gets, it always returns ``'I got: None'`` when it is :ref:`called<how to call a function with input>`. I want it to return the :ref:`object<everything is an object>` it gets as part of the string_.
 
 ----
 
@@ -487,7 +518,7 @@ Can I pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for :ref:`booleans (there are only two)<what are booleans?>`, first with an :ref:`assertion<what is an assertion?>` for :ref:`False<test_what_is_false>`
+* I add a test for :ref:`booleans (there are only two)<what are booleans?>`, first with an :ref:`assertion<what is an assertion?>` for :ref:`False<test_what_is_false>`, to ``test_telephone.py``
 
   .. code-block:: python
     :linenos:
@@ -601,7 +632,7 @@ how to write an f-string
 
   f'characters {object} more characters'
 
-* I add ``the_input`` to the string_ in :ref:`the return statement`
+* I add ``the_input`` to the string_ in :ref:`the return statement` of the ``text`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -660,7 +691,7 @@ how to write an f-string
 
 ----
 
-* I remove the commented lines
+* I remove the commented lines from the ``text`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -716,14 +747,90 @@ how to write an f-string
         └── return f'I got: {the_input}'
             return  'I got:  True      '
 
-* I remove the commented line
+* I add the :ref:`assert_equal function<extract assert_equal function>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2
+
+    def assert_equal(a, b):
+        assert a == b
+
+
+    def text(the_input):
+
+* I use the :ref:`assert_equal function<extract assert_equal function>` in :ref:`test_passing_none`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2-3
+
+    def test_passing_none():
+        # assert text(None) == 'I got: None'
+        assert_equal(text(None), 'I got: BOOM!!!')
+
+
+    def test_passing_booleans():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'I got: None' == 'I got: BOOM!!!'
+
+* I change the expectation of the :ref:`assertion<what is an assertion?>` to match reality
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 3-4
+
+    def test_passing_none():
+        # assert text(None) == 'I got: None'
+        # assert_equal(text(None), 'I got: BOOM!!!')
+        assert_equal(text(None), 'I got: None')
+
+
+    def test_passing_booleans():
+
+  the test passes.
+
+* I remove the commented lines from :ref:`test_passing_none`
 
   .. code-block:: python
     :lineno-start: 9
 
+    def test_passing_none():
+        assert_equal(text(None), 'I got: None')
+
+
     def test_passing_booleans():
-        assert text(False) == 'I got: False'
-        assert text(True) == 'I got: True'
+
+* I use the :ref:`assert_equal function<extract assert_equal function>` in :ref:`test_passing_booleans`
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2, 4-6
+
+    def test_passing_booleans():
+        # assert text(False) == 'I got: False'
+        # assert text(True) == 'I got: "True"'
+        # assert text(True) == 'I got: True'
+        assert_equal(text(False), 'I got: False')
+        assert_equal(text(True), 'I got: True')
+
+
+    # Exceptions seen
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_passing_booleans`
+
+  .. code-block:: python
+    :lineno-start: 13
+
+    def test_passing_booleans():
+        assert_equal(text(False), 'I got: False')
+        assert_equal(text(True), 'I got: True')
 
 
     # Exceptions seen
@@ -758,20 +865,20 @@ Can I pass an integer_ (a whole number without decimals) as input to a :ref:`fun
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for an integer_
+* I add a test for an integer_ to ``test_telephone.py``
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 13
     :emphasize-lines: 6-7
     :emphasize-text: "
 
     def test_passing_booleans():
-        assert text(False) == 'I got: False'
-        assert text(True) == 'I got: True'
+        assert_equal(text(False), 'I got: False')
+        assert_equal(text(True), 'I got: True')
 
 
     def test_passing_an_integer():
-        assert text(1234) == 'I got: "1234"'
+        assert_equal(text(1234), 'I got: "1234"')
 
 
     # Exceptions seen
@@ -794,12 +901,12 @@ Can I pass an integer_ (a whole number without decimals) as input to a :ref:`fun
 I remove the :ref:`quotes` around the integer_ in my expectation
 
 .. code-block:: python
-  :lineno-start: 14
+  :lineno-start: 18
   :emphasize-lines: 2-3
 
   def test_passing_an_integer():
-      # assert text(1234) == 'I got: "1234"'
-      assert text(1234) == 'I got: 1234'
+      # assert_equal(text(1234), 'I got: "1234"')
+      assert_equal(text(1234), 'I got: 1234')
 
 
   # Exceptions seen
@@ -825,13 +932,13 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a :ref:`variable<what is a variable?>` for ``1234``
 
   .. code-block:: python
-    :lineno-start: 14
+    :lineno-start: 18
     :emphasize-lines: 2
 
     def test_passing_an_integer():
         an_integer = 1234
-        # assert text(1234) == 'I got: "1234"'
-        assert text(1234) == 'I got: 1234'
+        # assert_equal(text(1234), 'I got: "1234"')
+        assert_equal(text(1234), 'I got: 1234')
 
 
     # Exceptions seen
@@ -839,21 +946,21 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<what is string interpolation?>` to remove repetition of ``1234``
 
   .. code-block:: python
-    :lineno-start: 14
+    :lineno-start: 18
     :emphasize-lines: 4-5
 
     def test_passing_an_integer():
         an_integer = 1234
-        # assert text(1234) == 'I got: "1234"'
-        # assert text(1234) == 'I got: 1234'
-        assert text(an_integer) == f'I got: {an_integer}'
+        # assert_equal(text(1234), 'I got: "1234"')
+        # assert_equal(text(1234), 'I got: 1234')
+        assert_equal(text(an_integer), f'I got: {an_integer}')
 
 
     # Exceptions seen
 
   the test is still green.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_passing_an_integer`
 
   .. code-block:: python
     :lineno-start: 14
@@ -893,7 +1000,7 @@ Can I pass a float_ (binary floating point decimal number) as input to a :ref:`f
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for a float_ (binary floating point decimal numbers)
+* I add a test for a float_ (binary floating point decimal numbers) to ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 14
@@ -1030,7 +1137,7 @@ Can I pass a string_ as input to a :ref:`function<what is a function?>`?
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for a string_ (anything in :ref:`quotes`)
+* I add a test for a string_ (anything in :ref:`quotes`) to ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 19
@@ -1165,7 +1272,7 @@ Can I pass a tuple_ (anything in parentheses ``( )`` separated by a comma) as in
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for a tuple_
+* I add a test for a tuple_ to ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 24
@@ -1303,7 +1410,7 @@ Can I pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) 
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for a :ref:`list<what is a list?>`
+* I add a test for a :ref:`list<what is a list?>` to ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 29
@@ -1442,7 +1549,7 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for a set_
+* I add a test for a set_ to ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 34
@@ -1604,7 +1711,7 @@ Can I pass a :ref:`dictionary<what is a dictionary?>` (any key-value pairs in cu
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for a :ref:`dictionary<what is a dictionary?>`
+* I add a test for a :ref:`dictionary<what is a dictionary?>` to ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 39
@@ -1790,7 +1897,7 @@ Can I pass any :ref:`object<everything is an object>` as input to a :ref:`functi
 
 * I go back to the terminal_ where the tests are running
 
-* I add a failing test to see what happens when I pass a :ref:`class <everything is an object>` from a test to the ``text`` :ref:`function<what is a function?>`, in ``test_telephone.py``
+* I add a failing test to see what happens when I pass a :ref:`class <everything is an object>` from a test to the ``text`` :ref:`function<what is a function?>`, to ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 44

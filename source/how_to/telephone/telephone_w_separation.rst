@@ -151,7 +151,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
   the terminal_ goes back to the command line.
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) in ``test_telephone.py`` to run the test again, and the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 

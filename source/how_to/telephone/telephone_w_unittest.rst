@@ -229,7 +229,7 @@ test_passing_none with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_passing_none` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>` and replace ``test_failure``
 
@@ -367,7 +367,7 @@ test_passing_booleans with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_passing_booleans` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
@@ -537,7 +537,7 @@ test_passing_an_integer with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_passing_an_integer` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
@@ -683,7 +683,7 @@ test_passing_a_float with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_passing_a_float` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
@@ -829,7 +829,7 @@ test_passing_a_string with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_passing_a_string` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
@@ -975,7 +975,7 @@ test_passing_a_tuple with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_passing_a_tuple` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
@@ -1120,7 +1120,7 @@ test_passing_a_list with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_passing_a_list` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
@@ -1265,7 +1265,7 @@ test_passing_a_set with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_passing_a_set` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
@@ -1410,7 +1410,7 @@ test_passing_a_dictionary with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_passing_a_dictionary` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
@@ -1568,7 +1568,7 @@ test_passing_a_class with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_passing_a_class` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 

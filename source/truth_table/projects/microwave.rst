@@ -1789,7 +1789,7 @@ door            timer           start button        too hot             output
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_not_set_timer_open_door_not_pressed_start` for if the **Microwave** door is :red:`open` AND the timer is :red:`NOT set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :red:`NOT too hot`
 
   =============== ==============  ==================  ==================  =============
@@ -1989,7 +1989,7 @@ door            timer           start button        too hot             output
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_not_set_timer_open_door_pressed_start` for if the **Microwave** door is :red:`open` AND the timer is :red:`NOT set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :red:`NOT too hot`
 
   =============== ==============  ==================  ==================  =============
@@ -2178,7 +2178,7 @@ door            timer           start button        too hot             output
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_set_timer_open_door_not_pressed_start` for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :red:`NOT too hot`
 
   =============== ==============  ==================  ==================  =============
@@ -2351,7 +2351,7 @@ door            timer           start button        too hot             output
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_set_timer_open_door_pressed_start` for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :red:`NOT too hot`
 
   =============== ==============  ==================  ==================  =============
@@ -2540,7 +2540,7 @@ door            timer           start button        too hot             output
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_not_set_timer_closed_door_not_pressed_start` for if the **Microwave** door is :green:`closed` AND the timer is :red:`NOT set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :red:`NOT too hot`
 
   =============== ==============  ==================  ==================  =============
@@ -2713,7 +2713,7 @@ door            timer           start button        too hot             output
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_not_set_timer_closed_door_pressed_start` for if the **Microwave** door is :green:`closed` AND the timer is :red:`NOT set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :red:`NOT too hot`
 
   =============== ==============  ==================  ==================  =============
@@ -2902,7 +2902,7 @@ door            timer           start button        too hot             output
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_set_timer_closed_door_not_pressed_start` for if the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :red:`NOT too hot`
 
   =============== ==============  ==================  ==================  =============
@@ -3075,7 +3075,7 @@ door            timer           start button        too hot             output
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_set_timer_closed_door_pressed_start` for if the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :red:`NOT too hot`
 
   =============== ==============  ==================  ==================  =============

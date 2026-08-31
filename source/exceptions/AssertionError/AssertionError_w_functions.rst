@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Pumping Python TDD continuation: "test AssertionError with functions" in the assertion_error project. Reuse `assert_equal(x, y)` from extract assert_equal, then extract `assert_not_equal`, `assert_is_not`, `assert_is_not_none`, `assert_is_not_false`, and `assert_is_not_true` so repeated bare asserts become helper calls. Walk red-green-refactor on test_assert_keyword, test_assertion_error_w_equality, test_assertion_error_w_is_vs_equal (0 is not 0.0 but 0 == 0.0), test_assertion_error_w_none/false/true, and test_failure. See pytest cores like `assert 2 == 3`, `assert '11' == '2'`, `assert None != None`, `assert None is not None`, `assert False is not False`. uv run pytest-watcher . --now, git commit after each extract. Helpers sit above the tests; pytest still only runs test_* names (will_not_run skipped).
+  :keywords: Jacob Itegboje, Pumping Python, test AssertionError with functions, assert_equal, assert_not_equal, assert_is_not, assert_is_not_none, assert_is_not_false, assert_is_not_true, extract assert_equal function, assertion_error project, pytest helper functions, assert x == y, assert x != y, assert x is not y, 0 is not 0.0, 0 == 0.0, test_assert_keyword, test_assertion_error_w_equality, test_assertion_error_w_is_vs_equal, test_failure, will_not_run, uv run pytest-watcher . --now, red green refactor, remove the commented lines, AssertionError assert 2 == 3, assert None is not None, python TDD assertion helpers, functions for assertions python beginner
 
 .. include:: ../../links.rst
 
@@ -10,7 +10,7 @@ test AssertionError with functions
 
 ----
 
-I want to use the :ref:`assert_is_equal<extract assert_equal function>` and make other :ref:`functions<what is a function?>` like it in the :ref:`AssertionError project<what is an assertion?>`.
+I want to use the :ref:`assert_equal function<extract assert_equal function>` and make other :ref:`functions<what is a function?>` like it in the :ref:`AssertionError project<what is an assertion?>`.
 
 ----
 
@@ -138,7 +138,7 @@ test_assert_keyword with assert_equal
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I use the :ref:`assert_equal function<extract assert_equal function>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_assert_keyword`, in ``test_assertion_error.py``
 
   .. code-block:: python
@@ -172,7 +172,7 @@ test_assert_keyword with assert_equal
         │     = 2
         ├── y = 3
         └── assert x == y
-            assert 1 == 3
+            assert 2 == 3
 
 ----
 
@@ -295,7 +295,7 @@ test_assertion_error_w_equality with assert_equal
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I use the :ref:`assert_equal function<extract assert_equal function>` for three :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_equality`, in ``test_assertion_error.py``
 
   .. code-block:: python
@@ -380,7 +380,7 @@ test_assertion_error_w_equality with assert_equal
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the fourth :ref:`assertion<what is an assertion?>` of :ref:`test_assertion_error_w_equality`
 
   .. code-block:: python
-    :lineno-start:86
+    :lineno-start: 86
     :emphasize-lines: 2-3
 
         # assert False == False
@@ -395,7 +395,7 @@ test_assertion_error_w_equality with assert_equal
 
     def test_assertion_error_w_is_vs_equal():
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -436,8 +436,7 @@ test_assertion_error_w_equality with assert_equal
 * I remove the commented lines from :ref:`test_assertion_error_w_equality` since they are now repetitions
 
   .. code-block:: python
-    :lineno-start: 778
-    :emphasize-lines: 3-4, 7-7
+    :lineno-start: 77
 
     def test_assertion_error_w_equality():
         assert_equal(None, None)
@@ -472,7 +471,7 @@ test_assertion_error_w_is_vs_equal with assert_equal
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I use the :ref:`assert_equal function<extract assert_equal function>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_assertion_error_w_is_vs_equal`, in ``test_assertion_error.py``
 
   .. code-block:: python
@@ -511,7 +510,7 @@ test_assertion_error_w_is_vs_equal with assert_equal
 
 ----
 
-I change :ref:`False<test_what_is_false>` to :ref:`None<what is None?>` in the second :ref:`assertion<what is an assertion?>` of :ref:`test_assertion_error_w_is_vs_equal`
+I change ``1`` to ``0`` in the second :ref:`assertion<what is an assertion?>` of :ref:`test_assertion_error_w_is_vs_equal`
 
 .. code-block:: python
   :lineno-start: 87
@@ -579,7 +578,7 @@ I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an asse
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I add a :ref:`function<what is a function?>` named ``assert_not_equal`` that takes two inputs and :ref:`asserts<what is an assertion?>` that they are NOT equal, in ``test_assertion_error.py``
 
   .. code-block:: python
@@ -648,7 +647,7 @@ I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an asse
         # assert False != True
         assert_not_equal(True, True)
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`\
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -809,7 +808,7 @@ I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an asse
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I add a :ref:`function<what is a function?>` named ``assert_is_not`` that takes two inputs and :ref:`asserts<what is an assertion?>`  that they are not the same :ref:`object<everything is an object>`, in ``test_assertion_error.py``
 
   .. code-block:: python
@@ -1028,7 +1027,7 @@ I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an asse
 
     E       assert None is not None
 
-* I change the first :ref:`None<what is None?>` in the parentheses to ``[]`` for the ninth :ref:`assertion<what is an assertion?>` in :ref:`test_assertion_error_w_none`
+* I change the first :ref:`None<what is None?>` in the parentheses to ``set()`` for the ninth :ref:`assertion<what is an assertion?>` in :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
     :lineno-start: 50
@@ -1062,12 +1061,6 @@ I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an asse
 
 
     def test_assertion_error_w_false():
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       assert None is not None
 
   the test passes.
 
@@ -1159,7 +1152,7 @@ I can use a :ref:`function<what is a function?>` to remove repetition of :ref:`N
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I add a :ref:`function<what is a function?>` named ``assert_is_not_none`` that takes one input and :ref:`calls the assert_is_not function<extract assert_is_not function>` to :ref:`assert<what is an assertion?>` that the input is NOT the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`, in ``test_assertion_error.py``
 
   .. code-block:: python
@@ -1367,7 +1360,7 @@ I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an asse
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I add a :ref:`function<what is a function?>` named ``assert_is_not_false`` that takes one input and :ref:`calls the assert_is_not function<extract assert_is_not function>` to :ref:`assert<what is an assertion?>` that the input is NOT the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`, in ``test_assertion_error.py``
 
   .. code-block:: python
@@ -1554,7 +1547,7 @@ I can use a :ref:`function<what is a function?>` to :ref:`assert<what is an asse
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I add a :ref:`function<what is a function?>` named ``assert_is_not_true`` that takes one input and :ref:`calls the assert_is_not function<extract assert_is_not function>` to :ref:`assert<what is an assertion?>` that the input is NOT the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`, in ``test_assertion_error.py``
 
   .. code-block:: python
@@ -1750,7 +1743,8 @@ close the project
 review
 *********************************************************************************
 
-I can use :ref:`functions<what is a function?>` to make :ref:`assertions<what is an assertion?>`.
+* I can use :ref:`functions<what is a function?>` to make :ref:`assertions<what is an assertion?>`.
+* I have a problem with the :ref:`functions<what is a function?>` I used to make :ref:`assertions<what is an assertion?>` - I had to write the :ref:`assert_equal function<extract assert_equal function>` in this project, even though I wrote it in the previous project. There has to be a better way where I can write the :ref:`function<what is a function?>` once, then use it any time or anywhere I want.
 
 ----
 
@@ -1758,7 +1752,7 @@ I can use :ref:`functions<what is a function?>` to make :ref:`assertions<what is
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<test AssertionError with assertIsNotNone and assertIsNone: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test AssertionError with functions: tests>`
 
 ----
 

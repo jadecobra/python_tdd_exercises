@@ -159,7 +159,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
     mkdir src
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) on the keyboard in ``test_type_error.py`` to run the tests again and the terminal_ shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 

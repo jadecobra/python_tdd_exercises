@@ -584,7 +584,7 @@ test_yellow_light_timer_not_done
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I add a test with an :ref:`assertion<what is an assertion?>` for if the **Traffic Light** is :yellow:`YELLOW` AND the timer is :red:`NOT done`, to ``tests/test_traffic_light.py``
 
   ================  ===============  ================

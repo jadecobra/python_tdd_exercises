@@ -146,7 +146,7 @@ because ``src`` is not defined in ``test_functions.py``.
 
     mkdir src
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) on the keyboard in ``test_functions.py`` to run the tests again and the terminal_ shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
@@ -261,7 +261,7 @@ move w_return
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`w_return function<test_making_a_function_w_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`w_return function<test_making_a_function_w_return>` in ``test_functions.py``
 
@@ -360,7 +360,7 @@ move w_return_none
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return_none` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`w_return_none function<test_making_a_function_w_return_none>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`w_return_none function<test_making_a_function_w_return_none>` in ``test_functions.py``
 
   .. code-block:: python
@@ -458,7 +458,7 @@ move return_leaves_the_function
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_what_happens_after_functions_return` to use the result of a :ref:`call<how to call a function with input>` to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` in ``test_functions.py``
 
   .. code-block:: python
@@ -564,7 +564,7 @@ move constant function
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_constant_function` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`constant function<test_constant_function>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`constant function<test_constant_function>` in ``test_functions.py``
 
   .. code-block:: python
@@ -663,7 +663,7 @@ move identity function
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I change the calls in the :ref:`assertions<what is an assertion?>` of :ref:`test_identity_function` to use the results of calls to the :ref:`identity function<test_identity_function>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of calls to the :ref:`identity function<test_identity_function>` in ``test_functions.py``
 
   .. code-block:: python
@@ -764,7 +764,7 @@ move positional_arguments function
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I comment out the :ref:`positional_arguments function<test_positional_arguments>` in ``test_functions.py``
 
   .. code-block:: python
@@ -946,7 +946,7 @@ move keyword_arguments function
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I comment out the :ref:`keyword_arguments function<test_keyword_arguments>` in ``test_functions.py``
 
   .. code-block:: python
@@ -1190,7 +1190,7 @@ move args_and_kwargs function
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_args_and_kwargs` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`args_and_kwargs function<test_args_and_kwargs>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of the result of a :ref:`call<how to call a function with input>` to the :ref:`args_and_kwargs function<test_args_and_kwargs>` in ``test_functions.py``
 
   .. code-block:: python
@@ -1301,7 +1301,7 @@ move optional_arguments function
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I comment out the :ref:`optional_arguments function<test_optional_arguments>` in :ref:`test_optional_arguments` in ``test_functions.py``
 
   .. code-block:: python
@@ -1463,7 +1463,7 @@ move unknown_number_of_arguments function
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 * I comment out the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` in :ref:`test_unknown_number_of_arguments` in ``test_functions.py``
 
   .. code-block:: python

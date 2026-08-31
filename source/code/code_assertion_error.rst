@@ -122,7 +122,6 @@ The code in ``assertion_error/tests/test_assertion_error.py`` from :ref:`test As
   :caption: assertion_error/tests/test_assertion_error.py
   :lines: 83-99
 
-
 ----
 
 *********************************************************************************

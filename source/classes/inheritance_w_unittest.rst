@@ -246,7 +246,7 @@ test_making_a_class_w_pass with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_making_a_class_w_pass` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>` and replace ``test_failure``
 
@@ -427,7 +427,7 @@ test_making_a_class_w_parentheses with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_making_a_class_w_parentheses` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
@@ -621,7 +621,7 @@ test_making_a_class_w_object with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_making_a_class_w_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
@@ -802,7 +802,7 @@ test_is_none_an_object with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_is_none_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
@@ -985,7 +985,7 @@ test_is_a_boolean_an_object with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_is_a_boolean_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
@@ -1148,7 +1148,7 @@ test_is_an_integer_an_object with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_is_an_integer_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
@@ -1309,7 +1309,7 @@ test_is_a_float_an_object with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_is_a_float_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
@@ -1470,7 +1470,7 @@ test_is_a_string_an_object with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_is_a_string_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
@@ -1631,7 +1631,7 @@ test_is_a_tuple_an_object with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_is_a_tuple_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
@@ -1794,7 +1794,7 @@ test_is_a_list_an_object with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_is_a_list_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
@@ -1957,7 +1957,7 @@ test_is_a_set_an_object with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_is_a_set_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
@@ -2120,7 +2120,7 @@ test_is_a_dictionary_an_object with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_is_a_dictionary_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
@@ -2283,7 +2283,7 @@ test_dir_object with unittest
 
 ----
 
-* I go back to the terminal_ where the tests are running.
+* I go back to the terminal_ where the tests are running
 
 * I move :ref:`test_dir_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
 
