@@ -66,7 +66,7 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../../code/assertion_error/test_assertion_error.py
   :language: python
   :lineno-start: 75
-  :caption: assertion_error/tests/test_assertion_error.g
+  :caption: assertion_error/tests/test_assertion_error.py
   :lines: 75-86
 
 .. literalinclude:: ../../code/assertion_error/test_assertion_error.py
