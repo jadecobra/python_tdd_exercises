@@ -943,7 +943,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
     # Exceptions seen
 
-* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<what is string interpolation?>` to remove repetition of ``1234``
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``1234``
 
   .. code-block:: python
     :lineno-start: 18
@@ -953,17 +953,40 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
         an_integer = 1234
         # assert_equal(text(1234), 'I got: "1234"')
         # assert_equal(text(1234), 'I got: 1234')
+        assert_equal(text(an_integer), 'I got: an_integer')
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'I got: 1234'
+                        == 'I got: an_integer'
+
+* I change my expectation to an :ref:`f-string<what is string interpolation?>`
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 5-6
+
+    def test_passing_an_integer():
+        an_integer = 1234
+        # assert_equal(text(1234), 'I got: "1234"')
+        # assert_equal(text(1234), 'I got: 1234')
+        # assert_equal(text(an_integer), 'I got: an_integer')
         assert_equal(text(an_integer), f'I got: {an_integer}')
 
 
     # Exceptions seen
 
-  the test is still green.
+  the test passes
 
 * I remove the commented lines from :ref:`test_passing_an_integer`
 
   .. code-block:: python
-    :lineno-start: 14
+    :lineno-start: 18
 
     def test_passing_an_integer():
         an_integer = 1234
@@ -1003,17 +1026,17 @@ Can I pass a float_ (binary floating point decimal number) as input to a :ref:`f
 * I add a test for a float_ (binary floating point decimal numbers) to ``test_telephone.py``
 
   .. code-block:: python
-    :lineno-start: 14
+    :lineno-start: 18
     :emphasize-lines: 6-7
     :emphasize-text: "
 
     def test_passing_an_integer():
         an_integer = 1234
-        assert text(an_integer) == f'I got: {an_integer}'
+        assert_equal(text(an_integer), f'I got: {an_integer}')
 
 
     def test_passing_a_float():
-        assert text(5.678) == 'I got: "5.678"'
+        assert_equal(text(5.678), 'I got: "5.678"')
 
 
     # Exceptions seen
@@ -1036,12 +1059,12 @@ Can I pass a float_ (binary floating point decimal number) as input to a :ref:`f
 I remove the :ref:`quotes` around the float_ in my expectation
 
 .. code-block:: python
-  :lineno-start: 19
+  :lineno-start: 23
   :emphasize-lines: 2-3
 
   def test_passing_a_float():
-      # assert text(5.678) == 'I got: "5.678"'
-      assert text(5.678) == 'I got: 5.678'
+      # assert_equal(text(5.678), 'I got: "5.678"')
+      assert_equal(text(5.678), 'I got: 5.678')
 
 
   # Exceptions seen
@@ -1067,42 +1090,65 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a :ref:`variable<what is a variable?>` for ``5.678``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 23
     :emphasize-lines: 2
 
     def test_passing_a_float():
         a_float = 5.678
-        # assert text(5.678) == 'I got: "5.678"'
-        assert text(5.678) == 'I got: 5.678'
+        # assert_equal(text(5.678), 'I got: "5.678"')
+        assert_equal(text(5.678), 'I got: 5.678')
 
 
     # Exceptions seen
 
-* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<what is string interpolation?>` to remove repetition of ``5.678``
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``5.678``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 23
     :emphasize-lines: 4-5
 
     def test_passing_a_float():
         a_float = 5.678
-        # assert text(5.678) == 'I got: "5.678"'
-        # assert text(5.678) == 'I got: 5.678'
-        assert text(a_float) == f'I got: {a_float}'
+        # assert_equal(text(5.678), 'I got: "5.678"')
+        # assert_equal(text(5.678), 'I got: 5.678')
+        assert_equal(text(a_float), 'I got: a_float')
 
 
     # Exceptions seen
 
-  the test is still green.
-
-* I remove the commented lines
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :lineno-start: 19
+
+    AssertionError: assert 'I got: 5.678'
+                        == 'I got: a_float'
+
+* I change my expectation to an :ref:`f-string<what is string interpolation?>`
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 5-6
 
     def test_passing_a_float():
         a_float = 5.678
-        assert text(a_float) == f'I got: {a_float}'
+        # assert_equal(text(5.678), 'I got: "5.678"')
+        # assert_equal(text(5.678), 'I got: 5.678')
+        # assert_equal(text(a_float), 'I got: a_float')
+        assert_equal(text(a_float), f'I got: {a_float}')
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I remove the commented lines from :ref:`test_passing_a_float`
+
+  .. code-block:: python
+    :lineno-start: 23
+
+    def test_passing_a_float():
+        a_float = 5.678
+        assert_equal(text(a_float), f'I got: {a_float}')
 
 
     # Exceptions seen
@@ -1140,16 +1186,16 @@ Can I pass a string_ as input to a :ref:`function<what is a function?>`?
 * I add a test for a string_ (anything in :ref:`quotes`) to ``test_telephone.py``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 23
     :emphasize-lines: 6-7
 
     def test_passing_a_float():
         a_float = 5.678
-        assert text(a_float) == f'I got: {a_float}'
+        assert_equal(text(a_float), f'I got: {a_float}')
 
 
     def test_passing_a_string():
-        assert text('hello') == 'I got: hi'
+        assert_equal(text('hello'), 'I got: hi')
 
 
     # Exceptions seen
@@ -1172,12 +1218,12 @@ Can I pass a string_ as input to a :ref:`function<what is a function?>`?
 I change my expectation to match reality
 
 .. code-block:: python
-  :lineno-start: 24
+  :lineno-start: 28
   :emphasize-lines: 2-3
 
   def test_passing_a_string():
-      # assert text('hello') == 'I got: hi'
-      assert text('hello') == 'I got: hello'
+      # assert_equal(text('hello'), 'I got: hi')
+      assert_equal(text('hello'), 'I got: hello')
 
 
   # Exceptions seen
@@ -1203,7 +1249,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a :ref:`variable<what is a variable?>` for ``'hello'``
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 28
     :emphasize-lines: 2
 
     def test_passing_a_string():
@@ -1214,31 +1260,54 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
     # Exceptions seen
 
-* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<what is string interpolation?>` to remove repetition of ``'hello'``
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'hello'``
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 28
     :emphasize-lines: 4-5
 
     def test_passing_a_string():
         a_string = 'hello'
         # assert text('hello') == 'I got: hi'
         # assert text('hello') == 'I got: hello'
-        assert text('hello') == f'I got: {a_string}'
+        assert text('hello') == 'I got: a_string'
 
 
     # Exceptions seen
 
-  the test is still green.
-
-* I remove the commented lines
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :lineno-start: 24
+
+    AssertionError: assert 'I got: hello'
+                        == 'I got: a_string'
+
+* I change my expectation to an :ref:`f-string<what is string interpolation?>`
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 4-5
 
     def test_passing_a_string():
         a_string = 'hello'
-        assert text(a_string) == f'I got: {a_string}'
+        # assert_equal(text('hello'), 'I got: hi')
+        # assert_equal(text('hello'), 'I got: hello')
+        # assert_equal(text('hello'), 'I got: a_string')
+        assert_equal(text('hello'), f'I got: {a_string}')
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I remove the commented lines from :ref:`test_passing_a_string`
+
+  .. code-block:: python
+    :lineno-start: 28
+
+    def test_passing_a_string():
+        a_string = 'hello'
+        assert_equal(text('hello'), f'I got: {a_string}')
 
 
     # Exceptions seen
@@ -1275,16 +1344,19 @@ Can I pass a tuple_ (anything in parentheses ``( )`` separated by a comma) as in
 * I add a test for a tuple_ to ``test_telephone.py``
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 6-7
+    :lineno-start: 28
+    :emphasize-lines: 6-9
 
     def test_passing_a_string():
         a_string = 'hello'
-        assert text('hello') == f'I got: {a_string}'
+        assert_equal(text('hello'), f'I got: {a_string}')
 
 
     def test_passing_a_tuple():
-        assert text((0, 1, 2, 'n')) == 'I got: (0, 1, 2, n)'
+        assert_equal(
+            text((0, 1, 2, 'n')),
+            "I got: (0, 1, 2, n)"
+        )
 
 
     # Exceptions seen
@@ -1308,13 +1380,16 @@ Can I pass a tuple_ (anything in parentheses ``( )`` separated by a comma) as in
 I change the tuple_ in my expectation to match reality
 
 .. code-block:: python
-  :lineno-start: 29
-  :emphasize-lines: 2-3
+  :lineno-start: 33
+  :emphasize-lines: 4-5
   :emphasize-text: "
 
   def test_passing_a_tuple():
-      # assert text((0, 1, 2, 'n')) == 'I got: (0, 1, 2, n)'
-      assert text((0, 1, 2, 'n')) == "I got: (0, 1, 2, 'n')"
+      assert_equal(
+          text((0, 1, 2, 'n')),
+          # "I got: (0, 1, 2, n)"
+          "I got: (0, 1, 2, 'n')"
+      )
 
 
   # Exceptions seen
@@ -1340,42 +1415,75 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I add a :ref:`variable<what is a variable?>` for ``(0, 1, 2, 'n')``
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 33
     :emphasize-lines: 2
 
     def test_passing_a_tuple():
         a_tuple = (0, 1, 2, 'n')
-        # assert text((0, 1, 2, 'n')) == 'I got: (0, 1, 2, n)'
-        assert text((0, 1, 2, 'n')) == "I got: (0, 1, 2, 'n')"
+        assert_equal(
+            text((0, 1, 2, 'n')),
+            # "I got: (0, 1, 2, n)"
+            "I got: (0, 1, 2, 'n')"
+        )
 
 
     # Exceptions seen
 
-* I use the :ref:`variable<what is a variable?>` and an :ref:`f-string<what is string interpolation?>` to remove repetition of ``(0, 1, 2, 'n')``
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``(0, 1, 2, 'n')``
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 4-5
+    :lineno-start: 33
+    :emphasize-lines: 4, 6-7
 
     def test_passing_a_tuple():
         a_tuple = (0, 1, 2, 'n')
-        # assert text((0, 1, 2, 'n')) == 'I got: (0, 1, 2, n)'
-        # assert text((0, 1, 2, 'n')) == "I got: (0, 1, 2, 'n')"
-        assert text(a_tuple) == f'I got: {a_tuple}'
+        assert_equal(
+            # text((0, 1, 2, 'n')),
+            # "I got: (0, 1, 2, n)"
+            # "I got: (0, 1, 2, 'n')"
+            text(a_tuple), "I got: a_tuple"
+        )
 
 
     # Exceptions seen
 
-  the test is still green.
-
-* I remove the commented lines
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :lineno-start: 29
+
+    assert "I got: (0, 1, 2, 'n')"
+        == 'I got: a_tuple'
+
+* I change my expectation to an :ref:`f-string<what is string interpolation?>`
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 7-8
 
     def test_passing_a_tuple():
         a_tuple = (0, 1, 2, 'n')
-        assert text(a_tuple) == f'I got: {a_tuple}'
+        assert_equal(
+            # text((0, 1, 2, 'n')),
+            # "I got: (0, 1, 2, n)"
+            # "I got: (0, 1, 2, 'n')"
+            # text(a_tuple), "I got: a_tuple"
+            text(a_tuple), f"I got: {a_tuple}"
+        )
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I remove the commented lines from :ref:`test_passing_a_tuple`
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 3
+
+    def test_passing_a_tuple():
+        a_tuple = (0, 1, 2, 'n')
+        assert_equal(text(a_tuple), f"I got: {a_tuple}")
 
 
     # Exceptions seen
