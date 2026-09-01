@@ -8,11 +8,11 @@
 separate and equal
 #################################################################################
 
-So far all :ref:`functions<what is a function?>` I have written have been in the same file_ as the tests, some are even in the same :ref:`function<what is a function?>` as the :ref:`assertions<what is an assertion?>` of the tests.
+All the :ref:`functions<what is a function?>` I have written so far have been in the same file_ as the tests, some are in the same :ref:`function<what is a function?>` as the :ref:`assertions<what is an assertion?>`.
 
-In earlier tests I found it better to keep :ref:`functions<what is a function?>` outside of :ref:`functions<what is a function?>` so that anything could call them from outside.
+In earlier tests I found it better to keep :ref:`functions<what is a function?>` outside of :ref:`functions<what is a function?>` so that they could be :ref:`called<how to call a function with input>` from anywhere in the file_.
 
-I can also place them in another :ref:`module<what is a module?>` then use the `import statement`_ to bring in the :ref:`module<what is a module?>` and test the :ref:`function<what is a function?>`. This helps me keep tests and solutions separate.
+I can also place them in another :ref:`module<what is a module?>` then use the `import statement`_ to bring in the :ref:`module<what is a module?>` and use the :ref:`function<what is a function?>`. This helps me keep tests and solutions separate.
 
 ----
 
@@ -29,8 +29,6 @@ what is next?
 * :ref:`I know how to make functions that take input<functions that take input>`.
 * :ref:`I know what causes TypeError<what causes TypeError?>`.
 * :ref:`I know how to place values in strings<telephone>`.
-
-----
 
 Would you like to test separating tests from solutions in the other projects?
 

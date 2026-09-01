@@ -2732,7 +2732,7 @@ what is next?
 * :ref:`I know what causes TypeError<what causes TypeError?>`.
 * :ref:`I know how to place values in strings<telephone>`.
 
-:ref:`would you like to test making a person with f-strings?<how to make a person with f-strings>`
+:ref:`would you like to test separating the tests from the solutions?<separate and equal>`
 
 ----
 
