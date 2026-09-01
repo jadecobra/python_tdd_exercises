@@ -48,31 +48,31 @@ I have these tests by the end of the chapter
   :language: python
   :linenos:
   :caption: telephone/tests/test_telephone.py
-  :lines: 1-11
+  :lines: 1-10
 
 .. literalinclude:: ../../code/telephone/tests/test_telephone.py
   :language: python
-  :lineno-start: 14
+  :lineno-start: 13
   :caption: telephone/tests/test_telephone.py
-  :lines: 14-26
+  :lines: 13-25
 
 .. literalinclude:: ../../code/telephone/tests/test_telephone.py
   :language: python
-  :lineno-start: 29
+  :lineno-start: 28
   :caption: telephone/tests/test_telephone.py
-  :lines: 29-41
+  :lines: 28-40
 
 .. literalinclude:: ../../code/telephone/tests/test_telephone.py
   :language: python
-  :lineno-start: 44
+  :lineno-start: 43
   :caption: telephone/tests/test_telephone.py
-  :lines: 44-51
+  :lines: 43-55
 
 .. literalinclude:: ../../code/telephone/tests/test_telephone.py
   :language: python
-  :lineno-start: 54
+  :lineno-start: 58
   :caption: telephone/tests/test_telephone.py
-  :lines: 54-
+  :lines: 58-
 
 ----
 
@@ -990,7 +990,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
     def test_passing_an_integer():
         an_integer = 1234
-        assert text(an_integer) == f'I got: {an_integer}'
+        assert_equal(text(an_integer), f'I got: {an_integer}')
 
 
     # Exceptions seen
@@ -1254,8 +1254,8 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
     def test_passing_a_string():
         a_string = 'hello'
-        # assert text('hello') == 'I got: hi'
-        assert text('hello') == 'I got: hello'
+        # assert_equal(text('hello'), 'I got: hi')
+        assert_equal(text('hello'), 'I got: hello')
 
 
     # Exceptions seen
@@ -1268,9 +1268,9 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
     def test_passing_a_string():
         a_string = 'hello'
-        # assert text('hello') == 'I got: hi'
-        # assert text('hello') == 'I got: hello'
-        assert text('hello') == 'I got: a_string'
+        # assert_equal(text('hello'), 'I got: hi')
+        # assert_equal(text('hello'), 'I got: hello')
+        assert_equal(text('hello'), 'I got: a_string')
 
 
     # Exceptions seen
@@ -1345,7 +1345,7 @@ Can I pass a tuple_ (anything in parentheses ``( )`` separated by a comma) as in
 
   .. code-block:: python
     :lineno-start: 28
-    :emphasize-lines: 6-9
+    :emphasize-lines: 6-10
 
     def test_passing_a_string():
         a_string = 'hello'
@@ -2233,7 +2233,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
     def test_passing_a_class():
         # assert_equal(text(object), 'I got: object')
         assert_equal(
-            text(object), f"I got: <class 'object'>"
+            text(object), "I got: <class 'object'>"
         )
         # assert_equal(text(bool), 'I got: bool')
         assert_equal(text(bool), "I got: <class 'bool'>")
@@ -2352,7 +2352,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 * I change my expectation to match reality for str_
 
   .. code-block:: python
-    :lineno-start: 54
+    :lineno-start: 58
     :emphasize-lines: 12-13
 
     def test_passing_a_class():
@@ -2494,7 +2494,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<everything is an object>` anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
+* I add an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<everything is an object>` for anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
 
   .. code-block:: python
     :lineno-start: 58
@@ -2560,7 +2560,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for :ref:`dict<what is a dictionary?>` (the :ref:`class<everything is an object>` for key-value pairs in curly braces '{ }' separated by commas
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`dict<what is a dictionary?>` (the :ref:`class<everything is an object>` for key-value pairs in curly braces '{ }' separated by commas)
 
   .. code-block:: python
     :lineno-start: 58

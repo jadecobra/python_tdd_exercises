@@ -12,6 +12,32 @@ The code in ``telephone/tests/test_telephone.py`` from :ref:`telephone`
 .. literalinclude:: telephone/tests/test_telephone.py
   :language: python
   :linenos:
+  :caption: telephone/tests/test_telephone.py
+  :lines: 1-10
+
+.. literalinclude:: telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 13
+  :caption: telephone/tests/test_telephone.py
+  :lines: 13-25
+
+.. literalinclude:: telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 28
+  :caption: telephone/tests/test_telephone.py
+  :lines: 28-40
+
+.. literalinclude:: telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 43
+  :caption: telephone/tests/test_telephone.py
+  :lines: 43-55
+
+.. literalinclude:: telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 58
+  :caption: telephone/tests/test_telephone.py
+  :lines: 58-
 
 *********************************************************************************
 separate and equal telephone: tests and solution
