@@ -8,7 +8,7 @@
 separate and equal functions
 #################################################################################
 
-All the :ref:`functions<what is a function?>` in :ref:`the functions project<what is a function?>` were written in ``test_functions.py``. I want to move them to ``functions.py`` in the ``src`` folder_ so that I can keep the tests and solutions separate.
+All the :ref:`functions<what is a function?>` in :ref:`the functions project<what is a function?>` were written in ``tests/test_functions.py``. I want to move them to the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ so that I can keep the tests and solutions separate.
 
 ----
 
@@ -22,6 +22,55 @@ I have these tests by the end of the chapter
   :language: python
   :linenos:
   :caption: functions/tests/test_functions.py
+  :lines: 1-13
+
+.. literalinclude:: ../code/functions/tests/test_functions_w_separation.py
+  :language: python
+  :lineno-start: 16
+  :caption: functions/tests/test_functions.py
+  :lines: 16-27
+
+.. literalinclude:: ../code/functions/tests/test_functions_w_separation.py
+  :language: python
+  :lineno-start: 30
+  :caption: functions/tests/test_functions.py
+  :lines: 30-38
+
+.. literalinclude:: ../code/functions/tests/test_functions_w_separation.py
+  :language: python
+  :lineno-start: 41
+  :caption: functions/tests/test_functions.py
+  :lines: 41-54
+
+.. literalinclude:: ../code/functions/tests/test_functions_w_separation.py
+  :language: python
+  :lineno-start: 57
+  :caption: functions/tests/test_functions.py
+  :lines: 57-89
+
+.. literalinclude:: ../code/functions/tests/test_functions_w_separation.py
+  :language: python
+  :lineno-start: 92
+  :caption: functions/tests/test_functions.py
+  :lines: 92-134
+
+.. literalinclude:: ../code/functions/tests/test_functions_w_separation.py
+  :language: python
+  :lineno-start: 137
+  :caption: functions/tests/test_functions.py
+  :lines: 137-145
+
+.. literalinclude:: ../code/functions/tests/test_functions_w_separation.py
+  :language: python
+  :lineno-start: 148
+  :caption: functions/tests/test_functions.py
+  :lines: 148-181
+
+.. literalinclude:: ../code/functions/tests/test_functions_w_separation.py
+  :language: python
+  :lineno-start: 184
+  :caption: functions/tests/test_functions.py
+  :lines: 184-231
 
 ----
 
@@ -43,7 +92,7 @@ open the project
 
     .../pumping_python/functions
 
-* I open ``test_functions.py``
+* I open ``test_functions.py`` from the ``tests`` folder_
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -72,18 +121,18 @@ move w_pass
 
 ----
 
-I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_pass` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`w_pass function<test_making_a_function_w_pass>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`w_pass function<test_making_a_function_w_pass>` in ``test_functions.py``
+I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_pass` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`w_pass function<test_making_a_function_w_pass>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`w_pass function<test_making_a_function_w_pass>` in ``tests/test_functions.py``
 
 .. code-block:: python
-  :linenos:
+  :lineno-start: 9
   :emphasize-lines: 5-6
 
   def test_making_a_function_w_pass():
       def w_pass():
           pass
 
-      # assert w_pass() is None
-      assert src.functions.w_pass() is None
+      # assert_is_none(w_pass())
+      assert_is_none(src.functions.w_pass())
 
 
   def test_making_a_function_w_return():
@@ -94,7 +143,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   NameError: name 'src' is not defined
 
-because ``src`` is not defined in ``test_functions.py``.
+because ``src`` is not defined in ``tests/test_functions.py``.
 
 ----
 
@@ -104,7 +153,7 @@ because ``src`` is not defined in ``test_functions.py``.
 
 ----
 
-* I add an `import statement`_ at the top of ``test_functions.py``
+* I add an `import statement`_ at the top of ``tests/test_functions.py``
 
   .. code-block:: python
     :linenos:
@@ -115,75 +164,19 @@ because ``src`` is not defined in ``test_functions.py``.
 
     def test_making_a_function_w_pass():
 
-  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
-
-  .. code-block:: python
-
-    ModuleNotFoundError: No module named 'src'
-
-  because there is nothing named ``src`` in this project.
-
-* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
-
-  .. code-block:: python
-    :lineno-start: 230
-    :emphasize-lines: 6
-    :emphasize-text: ModuleNotFoundError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # TypeError
-    # SyntaxError
-    # ModuleNotFoundError
-
-* I open another terminal_ then make sure I am in the ``functions`` folder_
-
-* I use mkdir_ to make a folder_ named ``src``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    mkdir src
-
-* I go back to the terminal_ where the tests are running
-
-* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) on the keyboard in ``test_functions.py`` to run the tests again and the terminal_ shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
-
-  .. code-block:: python
-
-    ModuleNotFoundError: No module named 'src.functions'
-
-  because there is nothing in the ``src`` folder_ named ``functions``.
-
-* I go to the second terminal_ I opened, then use touch_ to make ``functions.py`` in the ``src`` folder_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch src/functions.py
-
-* I add the new file_ to git_ for tracking
-
-  .. code-block:: python
-
-    git add src/functions.py
-
-  the terminal_ goes back to the command line.
-
-* I go back to the terminal_ where the tests are running and it shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
     AttributeError: module 'src.functions' has no attribute 'w_pass'
 
-  because there is nothing in ``functions.py`` in the ``src`` folder_ with the name ``w_pass``.
+  because there is nothing in the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ with the name ``w_pass``.
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_functions.py``
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 230
-    :emphasize-lines: 7
+    :lineno-start: 261
+    :emphasize-lines: 6
     :emphasize-text: AttributeError
 
     # Exceptions seen
@@ -191,12 +184,11 @@ because ``src`` is not defined in ``test_functions.py``.
     # NameError
     # TypeError
     # SyntaxError
-    # ModuleNotFoundError
     # AttributeError
 
-* I open ``functions.py`` from the ``src`` folder.
+* I open ``__init__.py`` from the ``functions`` folder_ in the ``src`` folder_.
 
-* I add a copy of :ref:`the w_pass function<test_making_a_function_w_pass>` to ``functions.py``
+* I add a copy of :ref:`the w_pass function<test_making_a_function_w_pass>` to ``src/functions/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -215,37 +207,36 @@ because ``src`` is not defined in ``test_functions.py``.
 
 ----
 
-* I remove the commented line and :ref:`the w_pass function<test_making_a_function_w_pass>` from :ref:`test_making_a_function_w_pass` in ``test_functions.py``
+* I remove the commented line and :ref:`the w_pass function<test_making_a_function_w_pass>` from :ref:`test_making_a_function_w_pass` in ``tests/test_functions.py``
 
   .. code-block:: python
-    :linenos:
-
-    import src.functions
-
+    :lineno-start: 12
 
     def test_making_a_function_w_pass():
-        assert src.functions.w_pass() is None
+        assert_is_none(src.functions.w_pass())
 
 
     def test_making_a_function_w_return():
 
-  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`the w_pass function<test_making_a_function_w_pass>` that was in ``test_functions.py`` is now to :ref:`the w_pass function<test_making_a_function_w_pass>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.w_pass`` is called, Python_ follows this path
+  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`the w_pass function<test_making_a_function_w_pass>` that was in ``tests/test_functions.py`` is now to :ref:`the w_pass function<test_making_a_function_w_pass>` in ``src/functions/__init__.py`` in the ``src`` folder_.
+
+  When ``src.functions.w_pass`` is called, Python_ follows this path
 
   .. code-block:: shell
 
     src.functions.w_pass
-    src
-    └── functions.py
-        └── def w_pass():
-            └── pass
+    src/
+    └── functions/
+        └── __init__.py
+            └── def w_pass():
+                └── pass
 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    git commit -am \
-    'move w_pass to functions.py'
+    git commit -am 'move w_pass to src'
 
 :ref:`I can write solutions in a different module from the tests<separate and equal>`.
 
@@ -263,18 +254,18 @@ move w_return
 
 * I go back to the terminal_ where the tests are running
 
-* I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`w_return function<test_making_a_function_w_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`w_return function<test_making_a_function_w_return>` in ``test_functions.py``
+* I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`w_return function<test_making_a_function_w_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`w_return function<test_making_a_function_w_return>` in ``tests/test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 8
+    :lineno-start: 16
     :emphasize-lines: 5-6
 
     def test_making_a_function_w_return():
         def w_return():
             return
 
-        # assert w_return() is None
-        assert src.functions.w_return() is None
+        # assert_is_none(w_return())
+        assert_is_none(src.functions.w_return())
 
 
     def test_making_a_function_w_return_none():
@@ -286,7 +277,7 @@ move w_return
     AttributeError: module 'src.functions'
                     has no attribute 'w_return'
 
-  because ``functions/__init__.py`` in the ``src`` folder_ does not have anything named ``w_return`` in it.
+  because ``__init__.py`` in the ``functions`` folder_ in the ``src`` folder_ does not have anything named ``w_return`` in it.
 
 ----
 
@@ -296,7 +287,7 @@ move w_return
 
 ----
 
-I add a copy of :ref:`the w_return function<test_making_a_function_w_return>` to ``functions.py``
+I add a copy of :ref:`the w_return function<test_making_a_function_w_return>` to ``src/functions/__init__.py``
 
 .. code-block:: python
   :linenos:
@@ -319,26 +310,27 @@ the test passes.
 
 ----
 
-* I remove the commented line and :ref:`the w_return function<test_making_a_function_w_return>` from :ref:`test_making_a_function_w_return` in ``test_functions.py``
+* I remove the commented line and :ref:`the w_return function<test_making_a_function_w_return>` from :ref:`test_making_a_function_w_return` in ``tests/test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 8
+    :lineno-start: 16
 
     def test_making_a_function_w_return():
-        assert src.functions.w_return() is None
+        assert_is_none(src.functions.w_return())
 
 
     def test_making_a_function_w_return_none():
 
-  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`the w_return function<test_making_a_function_w_return>` that was in ``test_functions.py`` is now to :ref:`the w_return function<test_making_a_function_w_return>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.w_return`` is called, Python_ follows this path
+  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`the w_return function<test_making_a_function_w_return>` that was in ``tests/test_functions.py`` is now to :ref:`the w_return function<test_making_a_function_w_return>` in ``src/functions/__init__.py`` in the ``src`` folder_. When ``src.functions.w_return`` is called, Python_ follows this path
 
   .. code-block:: shell
 
     src.functions.w_return
-    src
-    └── functions.py
-        └── def w_return():
-            └── return
+    src/
+    └── functions/
+        └── __init__.py
+            └── def w_return():
+                └── return
 
 * I add a git_ commit message in the other terminal_
 
@@ -361,7 +353,7 @@ move w_return_none
 ----
 
 * I go back to the terminal_ where the tests are running
-* I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return_none` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`w_return_none function<test_making_a_function_w_return_none>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`w_return_none function<test_making_a_function_w_return_none>` in ``test_functions.py``
+* I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_making_a_function_w_return_none` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`w_return_none function<test_making_a_function_w_return_none>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`w_return_none function<test_making_a_function_w_return_none>` in ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 12
@@ -384,7 +376,7 @@ move w_return_none
     AttributeError: module 'src.functions'
                     has no attribute 'w_return_none'
 
-  because ``functions/__init__.py`` in the ``src`` folder_ does not have anything named ``w_return_none`` in it.
+  because ``__init__.py`` in the ``functions`` folder_ in the ``src`` folder_ does not have anything named ``w_return_none`` in it.
 
 ----
 
@@ -394,7 +386,7 @@ move w_return_none
 
 ----
 
-I add a copy of :ref:`the w_return_none function<test_making_a_function_w_return_none>` to ``functions.py``
+I add a copy of :ref:`the w_return_none function<test_making_a_function_w_return_none>` to ``src/functions/__init__.py``
 
 .. code-block:: python
   :lineno-start: 5
@@ -417,7 +409,7 @@ the test passes.
 
 ----
 
-* I remove the commented line and :ref:`the w_return_none function<test_making_a_function_w_return_none>` from :ref:`test_making_a_function_w_return_none` in ``test_functions.py``
+* I remove the commented line and :ref:`the w_return_none function<test_making_a_function_w_return_none>` from :ref:`test_making_a_function_w_return_none` in ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 12
@@ -428,15 +420,18 @@ the test passes.
 
     def test_what_happens_after_functions_return():
 
-  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`the w_return_none function<test_making_a_function_w_return_none>` that was in ``test_functions.py`` is now to :ref:`the w_return_none function<test_making_a_function_w_return_none>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.w_return_none`` is called, Python_ follows this path
+  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`the w_return_none function<test_making_a_function_w_return_none>` that was in ``tests/test_functions.py`` is now to :ref:`the w_return_none function<test_making_a_function_w_return_none>` in ``src/functions/__init__.py`` in the ``src`` folder_.
+
+  When ``src.functions.w_return_none`` is called, Python_ follows this path
 
   .. code-block:: shell
 
     src.functions.w_return_none
-    src
-    └── functions.py
-        └── def w_return_none():
-            └── return None
+    src/
+    └── functions/
+        └── __init__.py
+            └── def w_return_none():
+                └── return None
 
 * I add a git_ commit message in the other terminal_
 
@@ -459,7 +454,7 @@ move return_leaves_the_function
 ----
 
 * I go back to the terminal_ where the tests are running
-* I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_what_happens_after_functions_return` to use the result of a :ref:`call<how to call a function with input>` to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` in ``test_functions.py``
+* I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_what_happens_after_functions_return` to use the result of a :ref:`call<how to call a function with input>` to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` in ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -486,7 +481,7 @@ move return_leaves_the_function
     AttributeError: module 'src.functions'
                     has no attribute 'return_leaves_the_function'
 
-  because I have not added ``return_leaves_the_function`` to ``functions.py`` in the ``src`` folder_.
+  because I have not added ``return_leaves_the_function`` to ``src/functions/__init__.py`` in the ``src`` folder_.
 
 ----
 
@@ -496,7 +491,7 @@ move return_leaves_the_function
 
 ----
 
-I add a copy of :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` to ``functions.py``
+I add a copy of :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` to ``src/functions/__init__.py``
 
 .. code-block:: python
   :lineno-start: 9
@@ -520,7 +515,7 @@ the test passes.
 
 ----
 
-* I remove the commented line and :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` from :ref:`test_what_happens_after_functions_return` in ``test_functions.py``
+* I remove the commented line and :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` from :ref:`test_what_happens_after_functions_return` in ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -534,15 +529,16 @@ the test passes.
 
     def test_constant_function():
 
-  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` that was in ``test_functions.py`` is now to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.return_leaves_the_function`` is called, Python_ follows this path
+  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` that was in ``tests/test_functions.py`` is now to :ref:`return_leaves_the_function<test_what_happens_after_functions_return>` in ``src/functions/__init__.py`` in the ``src`` folder_. When ``src.functions.return_leaves_the_function`` is called, Python_ follows this path
 
   .. code-block:: shell
 
     src.functions.return_leaves_the_function
-    src
-    └── functions.py
-        └── def return_leaves_the_function():
-            └── return None
+    src/
+    └── functions/
+        └── __init__.py
+            └── def return_leaves_the_function():
+                └── return None
 
 * I add a git_ commit message in the other terminal_
 
@@ -565,7 +561,7 @@ move constant function
 ----
 
 * I go back to the terminal_ where the tests are running
-* I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_constant_function` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`constant function<test_constant_function>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`constant function<test_constant_function>` in ``test_functions.py``
+* I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_constant_function` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`constant function<test_constant_function>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the :ref:`constant function<test_constant_function>` in ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -588,7 +584,7 @@ move constant function
     AttributeError: module 'src.functions'
                     has no attribute 'constant'
 
-  because there is nothing named ``constant`` in ``functions.py`` in the ``src`` folder_.
+  because there is nothing named ``constant`` in ``src/functions/__init__.py`` in the ``src`` folder_.
 
 ----
 
@@ -598,7 +594,7 @@ move constant function
 
 ----
 
-I add a copy of :ref:`the constant function<test_constant_function>` to ``functions.py``
+I add a copy of :ref:`the constant function<test_constant_function>` to ``src/functions/__init__.py``
 
 .. code-block:: python
   :lineno-start: 13
@@ -622,7 +618,7 @@ the test passes.
 
 ----
 
-* I remove the commented line and :ref:`the constant function<test_constant_function>` from :ref:`test_constant_function` in ``test_functions.py``
+* I remove the commented line and :ref:`the constant function<test_constant_function>` from :ref:`test_constant_function` in ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -633,15 +629,16 @@ the test passes.
 
     def test_identity_function():
 
-  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`the constant function<test_constant_function>` that was in ``test_functions.py`` is now to :ref:`the constant function<test_constant_function>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.constant`` is called, Python_ follows this path
+  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`the constant function<test_constant_function>` that was in ``tests/test_functions.py`` is now to :ref:`the constant function<test_constant_function>` in ``src/functions/__init__.py`` in the ``src`` folder_. When ``src.functions.constant`` is called, Python_ follows this path
 
   .. code-block:: shell
 
     src.functions.constant
-    src
-    └── functions.py
-        └── def constant():
-            └── return 'the same thing'
+    src/
+    └── functions/
+        └── __init__.py
+            └── def constant():
+                └── return 'the same thing'
 
 * I add a git_ commit message in the other terminal_
 
@@ -664,7 +661,7 @@ move identity function
 ----
 
 * I go back to the terminal_ where the tests are running
-* I change the calls in the :ref:`assertions<what is an assertion?>` of :ref:`test_identity_function` to use the results of calls to the :ref:`identity function<test_identity_function>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of calls to the :ref:`identity function<test_identity_function>` in ``test_functions.py``
+* I change the calls in the :ref:`assertions<what is an assertion?>` of :ref:`test_identity_function` to use the results of calls to the :ref:`identity function<test_identity_function>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of calls to the :ref:`identity function<test_identity_function>` in ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 27
@@ -689,7 +686,7 @@ move identity function
     AttributeError: module 'src.functions'
                     has no attribute 'identity'
 
-  because ``identity`` is not a name in ``functions.py`` in the ``src`` folder_.
+  because ``identity`` is not a name in ``src/functions/__init__.py`` in the ``src`` folder_.
 
 ----
 
@@ -699,7 +696,7 @@ move identity function
 
 ----
 
-I add a copy of :ref:`the identity function<test_identity_function>` to ``functions.py``
+I add a copy of :ref:`the identity function<test_identity_function>` to ``src/functions/__init__.py``
 
 .. code-block:: python
   :lineno-start: 18
@@ -722,7 +719,7 @@ the test passes.
 
 ----
 
-* I remove the commented line and :ref:`the identity function<test_identity_function>` from :ref:`test_identity_function` in ``test_functions.py``
+* I remove the commented line and :ref:`the identity function<test_identity_function>` from :ref:`test_identity_function` in ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -734,15 +731,16 @@ the test passes.
 
     def test_why_use_a_function():
 
-  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`the identity function<test_identity_function>` that was in ``test_functions.py`` is now to :ref:`the identity function<test_identity_function>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.identity`` is called, Python_ follows this path
+  the test is still green because the :ref:`call<how to call a function with input>` that was made to :ref:`the identity function<test_identity_function>` that was in ``tests/test_functions.py`` is now to :ref:`the identity function<test_identity_function>` in ``src/functions/__init__.py`` in the ``src`` folder_. When ``src.functions.identity`` is called, Python_ follows this path
 
   .. code-block:: shell
 
     src.functions.identity
-    src
-    └── functions.py
-        └── def identity(the_input):
-            └── return the_input
+    src/
+    └── functions/
+        └── __init__.py
+            └── def identity(the_input):
+                └── return the_input
 
 * I add a git_ commit message in the other terminal_
 
@@ -765,7 +763,7 @@ move positional_arguments function
 ----
 
 * I go back to the terminal_ where the tests are running
-* I comment out the :ref:`positional_arguments function<test_positional_arguments>` in ``test_functions.py``
+* I comment out the :ref:`positional_arguments function<test_positional_arguments>` in ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 32
@@ -826,7 +824,7 @@ move positional_arguments function
 
     NameError: name 'positional_arguments' is not defined
 
-  because :ref:`test_keyword_arguments` also calls :ref:`the positional_arguments function<test_positional_arguments>` of ``test_functions.py``. This is a risky change.
+  because :ref:`test_keyword_arguments` also calls :ref:`the positional_arguments function<test_positional_arguments>` of ``tests/test_functions.py``. This is a risky change.
 
 * I use a :ref:`variable<what is a variable?>` to reroute the :ref:`call<how to call a function with input>` to the :ref:`positional_arguments function<test_positional_arguments>` from :ref:`test_keyword_arguments` to the :ref:`positional_arguments function<test_positional_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
 
@@ -867,9 +865,9 @@ move positional_arguments function
     AttributeError: module 'src.functions'
                     has no attribute 'positional_arguments'
 
-  because ``positional_arguments`` does not exist in ``functions.py``.
+  because ``positional_arguments`` does not exist in ``src/functions/__init__.py``.
 
-* I add a copy of the :ref:`positional_arguments function<test_positional_arguments>` to ``functions.py``
+* I add a copy of the :ref:`positional_arguments function<test_positional_arguments>` to ``src/functions/__init__.py``
 
   .. code-block:: python
     :lineno-start: 22
@@ -882,7 +880,7 @@ move positional_arguments function
     def positional_arguments(first_input, last_input):
         return first_input, last_input
 
-  the tests pass because the calls that were made to the :ref:`positional_arguments function<test_positional_arguments>` that was in ``test_functions.py`` are now made to the :ref:`positional_arguments function<test_positional_arguments>` in ``functions.py`` in the ``src`` folder_.
+  the tests pass because the calls that were made to the :ref:`positional_arguments function<test_positional_arguments>` that was in ``tests/test_functions.py`` are now made to the :ref:`positional_arguments function<test_positional_arguments>` in ``src/functions/__init__.py`` in the ``src`` folder_.
 
   When ``positional_arguments`` is called in :ref:`test_positional_arguments` and :ref:`test_keyword_arguments`, Python_ follows this path
 
@@ -890,10 +888,11 @@ move positional_arguments function
 
     positional_arguments = src.functions.positional_arguments
 
-    src
-    └── functions.py
-        └── def positional_arguments(first_input, last_input):
-            └── return first_input, last_input
+    src/
+    └── functions/
+        └── __init__.py
+            └── def positional_arguments(first_input, last_input):
+                └── return first_input, last_input
 
 ----
 
@@ -903,7 +902,7 @@ move positional_arguments function
 
 ----
 
-* I remove the commented :ref:`positional_arguments function<test_positional_arguments>` from ``test_functions.py``
+* I remove the commented :ref:`positional_arguments function<test_positional_arguments>` from ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 32
@@ -947,7 +946,7 @@ move keyword_arguments function
 ----
 
 * I go back to the terminal_ where the tests are running
-* I comment out the :ref:`keyword_arguments function<test_keyword_arguments>` in ``test_functions.py``
+* I comment out the :ref:`keyword_arguments function<test_keyword_arguments>` in ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 74
@@ -1047,9 +1046,9 @@ move keyword_arguments function
     AttributeError: module 'src.functions'
                     has no attribute 'keyword_arguments'
 
-  because I have not added ``keyword_arguments`` to ``functions.py``, yet.
+  because I have not added ``keyword_arguments`` to ``src/functions/__init__.py``, yet.
 
-* I add a copy of the :ref:`keyword_arguments function<test_keyword_arguments>` to ``functions.py``
+* I add a copy of the :ref:`keyword_arguments function<test_keyword_arguments>` to ``src/functions/__init__.py``
 
   .. code-block:: python
     :lineno-start: 26
@@ -1069,7 +1068,7 @@ move keyword_arguments function
 
     NameError: name 'keyword_arguments' is not defined
 
-  because :ref:`test_positional_arguments` also calls :ref:`the keyword_arguments function<test_keyword_arguments>` of ``test_functions.py``. Risky business.
+  because :ref:`test_positional_arguments` also calls :ref:`the keyword_arguments function<test_keyword_arguments>` of ``tests/test_functions.py``. Risky business.
 
 * I use a :ref:`variable<what is a variable?>` to reroute the calls to the :ref:`keyword_arguments function<test_keyword_arguments>` from :ref:`test_positional_arguments` to the :ref:`keyword_arguments function<test_keyword_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
 
@@ -1103,7 +1102,7 @@ move keyword_arguments function
 
     def test_keyword_arguments():
 
-  the tests pass because the calls that were made to :ref:`the keyword_arguments function<test_keyword_arguments>` that was in ``test_functions.py`` are now made to :ref:`the keyword_arguments function<test_keyword_arguments>` in ``functions.py`` in the ``src`` folder_.
+  the tests pass because the calls that were made to :ref:`the keyword_arguments function<test_keyword_arguments>` that was in ``tests/test_functions.py`` are now made to :ref:`the keyword_arguments function<test_keyword_arguments>` in ``src/functions/__init__.py`` in the ``src`` folder_.
 
   When ``keyword_arguments`` is called in :ref:`test_keyword_arguments` and :ref:`test_positional_arguments`, Python_ follows this path
 
@@ -1111,10 +1110,11 @@ move keyword_arguments function
 
     keyword_arguments = src.functions.keyword_arguments
 
-    src
-    └── functions.py
-        └── def keyword_arguments(first_input, last_input):
-            └── return first_input, last_input
+    src/
+    └── functions/
+        └── __init__.py
+            └── def keyword_arguments(first_input, last_input):
+                └── return first_input, last_input
 
 ----
 
@@ -1124,7 +1124,7 @@ move keyword_arguments function
 
 ----
 
-* I remove the commented :ref:`keyword_arguments function<test_keyword_arguments>` from ``test_functions.py``
+* I remove the commented :ref:`keyword_arguments function<test_keyword_arguments>` from ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 48
@@ -1191,7 +1191,7 @@ move args_and_kwargs function
 ----
 
 * I go back to the terminal_ where the tests are running
-* I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_args_and_kwargs` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`args_and_kwargs function<test_args_and_kwargs>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of the result of a :ref:`call<how to call a function with input>` to the :ref:`args_and_kwargs function<test_args_and_kwargs>` in ``test_functions.py``
+* I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_args_and_kwargs` to use the result of a :ref:`call<how to call a function with input>` to the :ref:`args_and_kwargs function<test_args_and_kwargs>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of the result of a :ref:`call<how to call a function with input>` to the :ref:`args_and_kwargs function<test_args_and_kwargs>` in ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 136
@@ -1221,7 +1221,7 @@ move args_and_kwargs function
     AttributeError: module 'src.functions'
                     has no attribute 'args_and_kwargs'
 
-  because ``args_and_kwargs`` is not a name in ``functions.py`` in the ``src`` folder_.
+  because ``args_and_kwargs`` is not a name in ``src/functions/__init__.py`` in the ``src`` folder_.
 
 ----
 
@@ -1231,7 +1231,7 @@ move args_and_kwargs function
 
 ----
 
-I add a copy of :ref:`the args_and_kwargs function<test_args_and_kwargs>` to ``functions.py``
+I add a copy of :ref:`the args_and_kwargs function<test_args_and_kwargs>` to ``src/functions/__init__.py``
 
 .. code-block:: python
   :lineno-start: 30
@@ -1253,7 +1253,7 @@ the test passes.
 
 ----
 
-* I remove the commented line and the :ref:`args_and_kwargs function<test_args_and_kwargs>` from :ref:`test_args_and_kwargs` in ``test_functions.py``
+* I remove the commented line and the :ref:`args_and_kwargs function<test_args_and_kwargs>` from :ref:`test_args_and_kwargs` in ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 136
@@ -1271,15 +1271,16 @@ the test passes.
 
     def test_optional_arguments():
 
-  the test is still green because the :ref:`call<how to call a function with input>` that was made to the :ref:`args_and_kwargs function<test_args_and_kwargs>` that was in ``test_functions.py`` is now to the :ref:`args_and_kwargs function<test_args_and_kwargs>` in ``functions.py`` in the ``src`` folder_. When ``src.functions.args_and_kwargs`` is called, Python_ follows this path
+  the test is still green because the :ref:`call<how to call a function with input>` that was made to the :ref:`args_and_kwargs function<test_args_and_kwargs>` that was in ``tests/test_functions.py`` is now to the :ref:`args_and_kwargs function<test_args_and_kwargs>` in ``src/functions/__init__.py`` in the ``src`` folder_. When ``src.functions.args_and_kwargs`` is called, Python_ follows this path
 
   .. code-block:: shell
 
     src.functions.args_and_kwargs
-    src
-    └── functions.py
-        └── def args_and_kwargs(first_input, last_input):
-            └── return first_input, last_input
+    src/
+    └── functions/
+        └── __init__.py
+            └── def args_and_kwargs(first_input, last_input):
+                └── return first_input, last_input
 
 * I add a git_ commit message in the other terminal_
 
@@ -1302,7 +1303,7 @@ move optional_arguments function
 ----
 
 * I go back to the terminal_ where the tests are running
-* I comment out the :ref:`optional_arguments function<test_optional_arguments>` in :ref:`test_optional_arguments` in ``test_functions.py``
+* I comment out the :ref:`optional_arguments function<test_optional_arguments>` in :ref:`test_optional_arguments` in ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 147
@@ -1356,9 +1357,9 @@ move optional_arguments function
                     has no attribute 'optional_arguments'.
                     Did you mean: 'positional_arguments'?
 
-  because ``optional_arguments`` does not exist in ``functions.py``.
+  because ``optional_arguments`` does not exist in ``src/functions/__init__.py``.
 
-* I add a copy of the :ref:`optional_arguments function<test_optional_arguments>` to ``functions.py``
+* I add a copy of the :ref:`optional_arguments function<test_optional_arguments>` to ``src/functions/__init__.py``
 
   .. code-block:: python
     :lineno-start: 34
@@ -1373,7 +1374,7 @@ move optional_arguments function
     ):
         return first_input, last_input
 
-  the test passes because the calls that were made to the :ref:`optional_arguments function<test_optional_arguments>` that was in ``test_functions.py`` are now made to the :ref:`optional_arguments function<test_optional_arguments>` in ``functions.py`` in the ``src`` folder_.
+  the test passes because the calls that were made to the :ref:`optional_arguments function<test_optional_arguments>` that was in ``tests/test_functions.py`` are now made to the :ref:`optional_arguments function<test_optional_arguments>` in ``src/functions/__init__.py`` in the ``src`` folder_.
 
   When ``optional_arguments`` is called in :ref:`test_optional_arguments`, Python_ follows this path
 
@@ -1381,12 +1382,13 @@ move optional_arguments function
 
     optional_arguments = src.functions.optional_arguments
 
-    src
-    └── functions.py
-        └── def optional_arguments(
+    src/
+    └── functions/
+        └── __init__.py
+            └── def optional_arguments(
                 first_input, last_input='doe',
             ):
-            └── return first_input, last_input
+                └── return first_input, last_input
 
 ----
 
@@ -1396,7 +1398,7 @@ move optional_arguments function
 
 ----
 
-* I remove the commented :ref:`optional_arguments function<test_optional_arguments>` from :ref:`test_optional_arguments` in ``test_functions.py``
+* I remove the commented :ref:`optional_arguments function<test_optional_arguments>` from :ref:`test_optional_arguments` in ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 147
@@ -1464,7 +1466,7 @@ move unknown_number_of_arguments function
 ----
 
 * I go back to the terminal_ where the tests are running
-* I comment out the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` in :ref:`test_unknown_number_of_arguments` in ``test_functions.py``
+* I comment out the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` in :ref:`test_unknown_number_of_arguments` in ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 187
@@ -1517,9 +1519,9 @@ move unknown_number_of_arguments function
     AttributeError: module 'src.functions'
                     has no attribute 'unknown_number_of_arguments'
 
-  because I have not yet added ``unknown_number_of_arguments`` to ``functions.py``.
+  because I have not yet added ``unknown_number_of_arguments`` to ``src/functions/__init__.py``.
 
-* I add a copy of the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` to ``functions.py``
+* I add a copy of the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` to ``src/functions/__init__.py``
 
   .. code-block:: python
     :lineno-start: 38
@@ -1536,7 +1538,7 @@ move unknown_number_of_arguments function
     ):
         return positional_arguments, keyword_arguments
 
-  the test passes because the calls that were made to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` that was in ``test_functions.py`` are now made to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` in ``functions.py`` in the ``src`` folder_.
+  the test passes because the calls that were made to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` that was in ``tests/test_functions.py`` are now made to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` in ``src/functions/__init__.py`` in the ``src`` folder_.
 
   When ``unknown_number_of_arguments`` is called in :ref:`test_unknown_number_of_arguments`, Python_ follows this path
 
@@ -1546,12 +1548,13 @@ move unknown_number_of_arguments function
         src.functions.unknown_number_of_arguments
     )
 
-    src
-    └── functions.py
-        └── def unknown_number_of_arguments(
+    src/
+    └── functions/
+        └── __init__.py
+            └── def unknown_number_of_arguments(
                 *positional_arguments, **keyword_arguments
             ):
-            └── return positional_arguments, keyword_arguments
+                └── return positional_arguments, keyword_arguments
 
 ----
 
@@ -1561,7 +1564,7 @@ move unknown_number_of_arguments function
 
 ----
 
-* I remove the commented :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` from :ref:`test_unknown_number_of_arguments` in ``test_functions.py``
+* I remove the commented :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` from :ref:`test_unknown_number_of_arguments` in ``tests/test_functions.py``
 
   .. code-block:: python
     :lineno-start: 187
@@ -1638,7 +1641,7 @@ move unknown_number_of_arguments function
 test_functions
 *********************************************************************************
 
-I can write the :ref:`functions<what is a function?>` that make the tests pass (except for :ref:`test_why_use_a_function` which I left alone) without looking at ``test_functions.py`` since the solutions are now separate from the tests.
+I can write the :ref:`functions<what is a function?>` that make the tests pass (except for :ref:`test_why_use_a_function` which I left alone) without looking at ``tests/test_functions.py`` since the solutions are now separate from the tests.
 
 ----
 
@@ -1650,9 +1653,9 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 
 * I go back to the terminal_ where the tests are running
 
-* I close ``test_functions.py``
+* I close ``tests/test_functions.py``
 
-* I delete all the text in ``functions.py`` and the terminal_ shows 11 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
+* I delete all the text in ``src/functions/__init__.py`` and the terminal_ shows 11 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -1701,7 +1704,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 
 ----
 
-* Starting with the last :ref:`Exception<how to test that an Exception is raised>`, I add a :ref:`function definition<how to make a function>` for :ref:`unknown_number_of_arguments<test_unknown_number_of_arguments>` to ``functions.py`` in the ``src`` folder_
+* Starting with the last :ref:`Exception<how to test that an Exception is raised>`, I add a :ref:`function definition<how to make a function>` for :ref:`unknown_number_of_arguments<test_unknown_number_of_arguments>` to ``src/functions/__init__.py`` in the ``src`` folder_
 
   .. code-block:: python
     :linenos:
@@ -3015,7 +3018,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 close the project
 *********************************************************************************
 
-* I close ``functions.py``
+* I close ``src/functions/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
