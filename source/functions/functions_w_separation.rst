@@ -1998,7 +1998,8 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 
   .. code-block:: python
 
-    AssertionError: assert ('jane', None) == ('jane', 'doe')
+    AssertionError: assert ('jane', None)
+                        == ('jane', 'doe')
 
   the :ref:`function<what is a function?>` returned a tuple_ with the first argument and the :ref:`default value<test_optional_arguments>` of ``argument_b``.
 
@@ -2038,8 +2039,8 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     # def optional_arguments(argument, argument_b=None):
     # def optional_arguments(argument, argument_b='doe'):
     def optional_arguments(
-        argument, argument_b='doe', first_input
-    ):
+            argument, argument_b='doe', first_input
+        ):
         # return None
         # return ('jane', 'doe')
         return argument, argument_b
@@ -2065,10 +2066,10 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     # def optional_arguments(argument, argument_b=None):
     # def optional_arguments(argument, argument_b='doe'):
     def optional_arguments(
-        # argument, argument_b='doe', first_input
-        argument, first_input,
-        argument_b='doe',
-    ):
+            # argument, argument_b='doe', first_input
+            argument, first_input,
+            argument_b='doe',
+        ):
         # return None
         # return ('jane', 'doe')
         return argument, argument_b
@@ -2092,11 +2093,11 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     # def optional_arguments(argument, argument_b=None):
     # def optional_arguments(argument, argument_b='doe'):
     def optional_arguments(
-        # argument, argument_b='doe', first_input
-        # argument, first_input,
-        first_input, argument,
-        argument_b='doe',
-    ):
+            # argument, argument_b='doe', first_input
+            # argument, first_input,
+            first_input, argument,
+            argument_b='doe',
+        ):
         # return None
         # return ('jane', 'doe')
         return argument, argument_b
@@ -2121,12 +2122,12 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     # def optional_arguments(argument, argument_b=None):
     # def optional_arguments(argument, argument_b='doe'):
     def optional_arguments(
-        # argument, argument_b='doe', first_input
-        # argument, first_input,
-        # first_input, argument,
-        first_input, argument=None,
-        argument_b='doe',
-    ):
+            # argument, argument_b='doe', first_input
+            # argument, first_input,
+            # first_input, argument,
+            first_input, argument=None,
+            argument_b='doe',
+        ):
         # return None
         # return ('jane', 'doe')
         return argument, argument_b
@@ -2152,12 +2153,12 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     # def optional_arguments(argument, argument_b=None):
     # def optional_arguments(argument, argument_b='doe'):
     def optional_arguments(
-        # argument, argument_b='doe', first_input
-        # argument, first_input,
-        # first_input, argument,
-        first_input, argument=None,
-        argument_b='doe',
-    ):
+            # argument, argument_b='doe', first_input
+            # argument, first_input,
+            # first_input, argument,
+            first_input, argument=None,
+            argument_b='doe',
+        ):
         # return None
         # return ('jane', 'doe')
         # return argument, argument_b
@@ -2184,13 +2185,13 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     # def optional_arguments(argument, argument_b=None):
     # def optional_arguments(argument, argument_b='doe'):
     def optional_arguments(
-        # argument, argument_b='doe', first_input
-        # argument, first_input,
-        # first_input, argument,
-        # first_input, argument=None,
-        first_input,
-        argument_b='doe',
-    ):
+            # argument, argument_b='doe', first_input
+            # argument, first_input,
+            # first_input, argument,
+            # first_input, argument=None,
+            first_input,
+            argument_b='doe',
+        ):
         # return None
         # return ('jane', 'doe')
         # return argument, argument_b
@@ -2219,14 +2220,14 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     # def optional_arguments(argument, argument_b=None):
     # def optional_arguments(argument, argument_b='doe'):
     def optional_arguments(
-        # argument, argument_b='doe', first_input
-        # argument, first_input,
-        # first_input, argument,
-        # first_input, argument=None,
-        first_input,
-        # argument_b='doe',
-        argument_b='doe', last_input,
-    ):
+            # argument, argument_b='doe', first_input
+            # argument, first_input,
+            # first_input, argument,
+            # first_input, argument=None,
+            first_input,
+            # argument_b='doe',
+            argument_b='doe', last_input,
+        ):
         # return None
         # return ('jane', 'doe')
         # return argument, argument_b
@@ -2254,15 +2255,15 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     # def optional_arguments(argument, argument_b=None):
     # def optional_arguments(argument, argument_b='doe'):
     def optional_arguments(
-        # argument, argument_b='doe', first_input
-        # argument, first_input,
-        # first_input, argument,
-        # first_input, argument=None,
-        first_input,
-        # argument_b='doe',
-        # argument_b='doe', last_input,
-        argument_b='doe', last_input=None,
-    ):
+            # argument, argument_b='doe', first_input
+            # argument, first_input,
+            # first_input, argument,
+            # first_input, argument=None,
+            first_input,
+            # argument_b='doe',
+            # argument_b='doe', last_input,
+            argument_b='doe', last_input=None,
+        ):
         # return None
         # return ('jane', 'doe')
         # return argument, argument_b
@@ -2290,15 +2291,15 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     # def optional_arguments(argument, argument_b=None):
     # def optional_arguments(argument, argument_b='doe'):
     def optional_arguments(
-        # argument, argument_b='doe', first_input
-        # argument, first_input,
-        # first_input, argument,
-        # first_input, argument=None,
-        first_input,
-        # argument_b='doe',
-        # argument_b='doe', last_input,
-        argument_b='doe', last_input=None,
-    ):
+            # argument, argument_b='doe', first_input
+            # argument, first_input,
+            # first_input, argument,
+            # first_input, argument=None,
+            first_input,
+            # argument_b='doe',
+            # argument_b='doe', last_input,
+            argument_b='doe', last_input=None,
+        ):
         # return None
         # return ('jane', 'doe')
         # return argument, argument_b
@@ -2327,16 +2328,16 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     # def optional_arguments(argument, argument_b=None):
     # def optional_arguments(argument, argument_b='doe'):
     def optional_arguments(
-        # argument, argument_b='doe', first_input
-        # argument, first_input,
-        # first_input, argument,
-        # first_input, argument=None,
-        first_input,
-        # argument_b='doe',
-        # argument_b='doe', last_input,
-        # argument_b='doe', last_input=None,
-        last_input='doe',
-    ):
+            # argument, argument_b='doe', first_input
+            # argument, first_input,
+            # first_input, argument,
+            # first_input, argument=None,
+            first_input,
+            # argument_b='doe',
+            # argument_b='doe', last_input,
+            # argument_b='doe', last_input=None,
+            last_input='doe',
+        ):
         # return None
         # return ('jane', 'doe')
         # return argument, argument_b
@@ -2480,7 +2481,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 
   .. code-block:: python
 
-    AssertionError: assert None == ('first', 'last')0
+    AssertionError: assert None == ('first', 'last')
 
 * I copy and paste the tuple_ from the terminal_ as :ref:`the return statement`
 
@@ -2860,19 +2861,22 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
 * I remove the commented lines
 
   .. code-block:: python
-      :linenos:
+    :linenos:
 
     def unknown_number_of_arguments(
-        *positional, **keyword
-    ):
+            *positional, **keyword,
+        ):
         return positional, keyword
 
 
     def optional_arguments(
-        first_input, last_input='doe',
-    ):
+            first_input, last_input='doe',
+        ):
         return first_input, last_input
 
+
+  .. code-block:: python
+    :lineno-start: 13
 
     def args_and_kwargs(argument, last_input):
         return argument, last_input
@@ -2885,6 +2889,8 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     def positional_arguments(first_input, last_input):
         return first_input, last_input
 
+  .. code-block:: python
+    :lineno-start: 25
 
     def identity(argument):
         return argument
@@ -2897,6 +2903,8 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     def return_leaves_the_function():
         return None
 
+  .. code-block:: python
+    :lineno-start: 37
 
     def w_return_none():
         return None
