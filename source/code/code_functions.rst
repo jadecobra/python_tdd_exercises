@@ -87,6 +87,56 @@ The code in ``functions/tests/test_functions.py`` from :ref:`separate and equal 
 .. literalinclude:: functions/tests/test_functions_w_separation.py
   :language: python
   :linenos:
+  :caption: functions/tests/test_functions.py
+  :lines: 1-13
+
+.. literalinclude:: functions/tests/test_functions_w_separation.py
+  :language: python
+  :lineno-start: 16
+  :caption: functions/tests/test_functions.py
+  :lines: 16-27
+
+.. literalinclude:: functions/tests/test_functions_w_separation.py
+  :language: python
+  :lineno-start: 30
+  :caption: functions/tests/test_functions.py
+  :lines: 30-40
+
+.. literalinclude:: functions/tests/test_functions_w_separation.py
+  :language: python
+  :lineno-start: 43
+  :caption: functions/tests/test_functions.py
+  :lines: 43-56
+
+.. literalinclude:: functions/tests/test_functions_w_separation.py
+  :language: python
+  :lineno-start: 59
+  :caption: functions/tests/test_functions.py
+  :lines: 59-92
+
+.. literalinclude:: functions/tests/test_functions_w_separation.py
+  :language: python
+  :lineno-start: 95
+  :caption: functions/tests/test_functions.py
+  :lines: 95-139
+
+.. literalinclude:: functions/tests/test_functions_w_separation.py
+  :language: python
+  :lineno-start: 142
+  :caption: functions/tests/test_functions.py
+  :lines: 142-150
+
+.. literalinclude:: functions/tests/test_functions_w_separation.py
+  :language: python
+  :lineno-start: 153
+  :caption: functions/tests/test_functions.py
+  :lines: 153-189
+
+.. literalinclude:: functions/tests/test_functions_w_separation.py
+  :language: python
+  :lineno-start: 192
+  :caption: functions/tests/test_functions.py
+  :lines: 192-
 
 ----
 
@@ -101,6 +151,26 @@ The code in ``functions/src/functions.py`` from :ref:`separate and equal functio
 .. literalinclude:: functions/solutions/functions_w_separation.py
   :language: python
   :linenos:
+  :caption: functions/src/functions/__init__.py
+  :lines: 1-10
+
+.. literalinclude:: functions/solutions/functions_w_separation.py
+  :language: python
+  :lineno-start: 13
+  :caption: functions/src/functions/__init__.py
+  :lines: 13-22
+
+.. literalinclude:: functions/solutions/functions_w_separation.py
+  :language: python
+  :lineno-start: 25
+  :caption: functions/src/functions/__init__.py
+  :lines: 25-34
+
+.. literalinclude:: functions/solutions/functions_w_separation.py
+  :language: python
+  :lineno-start: 37
+  :caption: functions/src/functions/__init__.py
+  :lines: 37-
 
 ----
 

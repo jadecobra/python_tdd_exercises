@@ -35,7 +35,9 @@ def test_constant_function():
 
 def test_identity_function():
     assert_is_none(src.functions.identity(None))
-    assert_equal(src.functions.identity(object), object)
+    assert_equal(
+        src.functions.identity(object), object
+    )
 
 
 def test_why_use_a_function():
@@ -55,8 +57,9 @@ def test_why_use_a_function():
 
 
 def test_positional_arguments():
-    positional_arguments = src.positional_arguments
-
+    positional_arguments = (
+        src.functions.positional_arguments
+    )
     first, last = 'first', 'last'
 
     assert_equal(
@@ -90,7 +93,9 @@ def test_positional_arguments():
 
 
 def test_keyword_arguments():
-    keyword_arguments = src.functions.keyword_arguments
+    keyword_arguments = (
+        src.functions.keyword_arguments
+    )
     first, last = 'first', 'last'
 
     assert_equal(
@@ -146,7 +151,10 @@ def test_args_and_kwargs():
 
 
 def test_optional_arguments():
-    optional_arguments = src.functions.optional_arguments
+    optional_arguments = (
+        src.functions.optional_arguments
+    )
+
     first_name, last_name = 'jane', 'doe'
     assert_equal(
         optional_arguments(
@@ -185,6 +193,7 @@ def test_unknown_number_of_arguments():
     unknown_number_of_arguments = (
         src.functions.unknown_number_of_arguments
     )
+
     a_tuple = (0, 1)
     a_dictionary = {'a': 2, 'b': 3}
     assert_equal(
@@ -233,3 +242,4 @@ def test_unknown_number_of_arguments():
 # NameError
 # TypeError
 # SyntaxError
+# AttributeError

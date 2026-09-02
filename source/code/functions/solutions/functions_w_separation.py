@@ -1,12 +1,12 @@
 def unknown_number_of_arguments(
-    *positional, **keyword
-):
+        *positional, **keyword,
+    ):
     return positional, keyword
 
 
 def optional_arguments(
-    first_input, last_input='doe',
-):
+        first_input, last_input='doe',
+    ):
     return first_input, last_input
 
 

@@ -34,43 +34,43 @@ I have these tests by the end of the chapter
   :language: python
   :lineno-start: 30
   :caption: functions/tests/test_functions.py
-  :lines: 30-38
+  :lines: 30-40
 
 .. literalinclude:: ../code/functions/tests/test_functions_w_separation.py
   :language: python
-  :lineno-start: 41
+  :lineno-start: 43
   :caption: functions/tests/test_functions.py
-  :lines: 41-54
+  :lines: 43-56
 
 .. literalinclude:: ../code/functions/tests/test_functions_w_separation.py
   :language: python
-  :lineno-start: 57
+  :lineno-start: 59
   :caption: functions/tests/test_functions.py
-  :lines: 57-89
+  :lines: 59-92
 
 .. literalinclude:: ../code/functions/tests/test_functions_w_separation.py
   :language: python
-  :lineno-start: 92
+  :lineno-start: 95
   :caption: functions/tests/test_functions.py
-  :lines: 92-134
+  :lines: 95-139
 
 .. literalinclude:: ../code/functions/tests/test_functions_w_separation.py
   :language: python
-  :lineno-start: 137
+  :lineno-start: 142
   :caption: functions/tests/test_functions.py
-  :lines: 137-145
+  :lines: 142-150
 
 .. literalinclude:: ../code/functions/tests/test_functions_w_separation.py
   :language: python
-  :lineno-start: 148
+  :lineno-start: 153
   :caption: functions/tests/test_functions.py
-  :lines: 148-181
+  :lines: 153-189
 
 .. literalinclude:: ../code/functions/tests/test_functions_w_separation.py
   :language: python
-  :lineno-start: 184
+  :lineno-start: 192
   :caption: functions/tests/test_functions.py
-  :lines: 184-231
+  :lines: 192-
 
 ----
 
