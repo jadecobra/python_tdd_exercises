@@ -146,7 +146,7 @@ separate and equal functions solutions
 
 ----
 
-The code in ``functions/src/functions.py`` from :ref:`separate and equal functions`
+The code in ``functions/src/functions/__init__.py`` from :ref:`separate and equal functions`
 
 .. literalinclude:: functions/solutions/functions_w_separation.py
   :language: python

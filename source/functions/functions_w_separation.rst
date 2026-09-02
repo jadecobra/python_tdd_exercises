@@ -1,6 +1,6 @@
 .. meta::
-  :description: Separate tests from solutions (keep them in different modules) in the functions project using TDD. Move every function (w_pass, w_return, return_leaves_the_function, constant, identity, positional_arguments, keyword_arguments, args_and_kwargs, optional_arguments, unknown_number_of_arguments) out of test_functions.py into src/functions.py. Use mkdir src, touch src/functions.py, import src.functions, reroute calls via local aliases like positional_arguments = src.functions.positional_arguments, then remove the commented lines (the local def left behind in the test). See real errors while separating: "NameError: name 'src' is not defined", "ModuleNotFoundError: No module named 'src'", "ModuleNotFoundError: No module named 'src.functions'", "AttributeError: module 'src.functions' has no attribute 'w_pass'". Practice bare assert is None / == , git commit -am after each move, uv run pytest-watcher. Reviews the functions that take input (positional/keyword order independence, optional defaults, *args **kwargs unpacking) as they get moved. Review lesson: I can write solutions in a different module from the tests. Part of Jacob Itegboje's Pumping Python TDD series for beginners.
-  :keywords: Jacob Itegboje, Pumping Python, separate tests from solutions python, src folder functions, import src.functions, move function to src, ModuleNotFoundError No module named 'src', AttributeError module 'src.functions' has no attribute, remove the commented lines, test_functions.py to functions.py, functions separation TDD, bare assert in tests, uv run pytest-watcher, git commit -am move, w_pass w_return constant identity positional_arguments keyword_arguments, optional_arguments *args **kwargs, "NameError: name 'src' is not defined", "ModuleNotFoundError: No module named 'src.functions'", "I can write solutions in a different module from the tests", red green refactor separation, Python TDD separate module
+  :description: Separate tests from solutions in the functions project using TDD. Move nested and module-level functions (w_pass, w_return, w_return_none, return_leaves_the_function, constant, identity, positional_arguments, keyword_arguments, args_and_kwargs, optional_arguments, unknown_number_of_arguments) from tests/test_functions.py into src/functions/__init__.py. import src.functions, reroute calls (src.functions.w_pass() or local aliases like positional_arguments = src.functions.positional_arguments), then remove the commented lines (the local def left behind). See NameError: name 'src' is not defined, then AttributeError: module 'src.functions' has no attribute 'w_pass' (and the same AttributeError for each later name). Cross-calls between test_positional_arguments and test_keyword_arguments make a half-move risky. After every function lives in src, wipe __init__.py (11 failed, 1 passed) and rebuild from the failures without looking at the tests: TypeError unexpected keyword 'a', multiple values for 'a', missing keyword-only 'c', optional_arguments takes 0 positional arguments but 1 was given, SyntaxError parameter without a default follows parameter with a default. Final solutions use *positional, **keyword, identity(argument), args_and_kwargs(argument, last_input), w_pass that returns None. uv run pytest-watcher, git commit -am after each move. Review lesson: I can write solutions in a different module from the tests. Part of Jacob Itegboje's Pumping Python TDD series for beginners.
+  :keywords: Jacob Itegboje, Pumping Python, separate and equal functions, separate tests from solutions, src/functions/__init__.py, import src.functions, src.functions.w_pass, NameError name 'src' is not defined, AttributeError module 'src.functions' has no attribute, remove the commented lines, positional_arguments = src.functions.positional_arguments, test_functions_w_separation, 11 failed 1 passed wipe solutions, TypeError unexpected keyword argument 'a', TypeError multiple values for argument 'a', SyntaxError parameter without a default follows parameter with a default, unknown_number_of_arguments *positional **keyword, optional_arguments last_input='doe', uv run pytest-watcher, git commit -am move, I can write solutions in a different module from the tests, functions package __init__.py, red green refactor separation
 
 .. include:: ../links.rst
 
@@ -175,7 +175,7 @@ because ``src`` is not defined in ``tests/test_functions.py``.
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 261
+    :lineno-start: 260
     :emphasize-lines: 6
     :emphasize-text: AttributeError
 
@@ -287,15 +287,15 @@ move w_return
 I add a copy of the :ref:`w_return function<test_making_a_function_w_return>` to ``src/functions/__init__.py``
 
 .. code-block:: python
-  :lineno-start: 5
+  :linenos:
   :emphasize-lines: 5-6
+
+  def w_pass():
+      pass
+
 
   def w_return():
       return
-
-
-  def w_return_none():
-      return None
 
 the test passes.
 
@@ -1021,7 +1021,7 @@ move keyword_arguments
 
   because :ref:`test_positional_arguments` also calls :ref:`the keyword_arguments function<test_keyword_arguments>` of ``tests/test_functions.py``. More risky business.
 
-* I change the :ref:`call<how to call functions with input>` to the :ref:`keyword_arguments function<test_keyword_arguments>` from :ref:`test_positional_arguments` to the :ref:`keyword_arguments function<test_keyword_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change the :ref:`call<how to call a function with input>` to the :ref:`keyword_arguments function<test_keyword_arguments>` from :ref:`test_positional_arguments` to the :ref:`keyword_arguments function<test_keyword_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 85
@@ -1231,6 +1231,7 @@ I add a copy of the :ref:`args_and_kwargs function<test_args_and_kwargs>` to ``s
 
   def args_and_kwargs(first_input, last_input):
       return first_input, last_input
+
 the test passes.
 
 ----
