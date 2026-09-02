@@ -22,6 +22,37 @@ I have these tests by the end of the chapter
   :language: python
   :linenos:
   :caption: telephone/tests/test_telephone.py
+  :lines: 1-11
+
+.. literalinclude:: ../../code/telephone/tests/test_telephone_w_separation.py
+  :language: python
+  :lineno-start: 14
+  :caption: telephone/tests/test_telephone.py
+  :lines: 14-29
+
+.. literalinclude:: ../../code/telephone/tests/test_telephone_w_separation.py
+  :language: python
+  :lineno-start: 32
+  :caption: telephone/tests/test_telephone.py
+  :lines: 32-45
+
+.. literalinclude:: ../../code/telephone/tests/test_telephone_w_separation.py
+  :language: python
+  :lineno-start: 48
+  :caption: telephone/tests/test_telephone.py
+  :lines: 48-61
+
+.. literalinclude:: ../../code/telephone/tests/test_telephone_w_separation.py
+  :language: python
+  :lineno-start: 64
+  :caption: telephone/tests/test_telephone.py
+  :lines: 64-80
+
+.. literalinclude:: ../../code/telephone/tests/test_telephone_w_separation.py
+  :language: python
+  :lineno-start: 83
+  :caption: telephone/tests/test_telephone.py
+  :lines: 83-
 
 ----
 
