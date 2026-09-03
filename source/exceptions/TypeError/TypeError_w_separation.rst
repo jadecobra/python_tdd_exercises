@@ -12,7 +12,7 @@ separate and equal TypeError
 
 ----
 
-I want to move the :ref:`functions<what is a function?>` from ``test_type_error.py`` in the ``tests`` folder_ to ``type_error.py`` in the ``src`` folder_ so that I can keep the tests and solutions separate.
+I want to move the :ref:`functions<what is a function?>` from ``tests/test_type_error.py`` to ``src/type_error/__init__.py`` so that I can keep the tests and solutions separate.
 
 ----
 
@@ -26,6 +26,19 @@ I have these tests by the end of the chapter
   :language: python
   :linenos:
   :caption: type_error/tests/test_type_error.py
+  :lines: 1-13
+
+.. literalinclude:: ../../code/type_error/tests/test_type_error_w_separation.py
+  :language: python
+  :lineno-start: 16
+  :caption: type_error/tests/test_type_error.py
+  :lines: 16-52
+
+.. literalinclude:: ../../code/type_error/tests/test_type_error_w_separation.py
+  :language: python
+  :lineno-start: 55
+  :caption: type_error/tests/test_type_error.py
+  :lines: 55-
 
 ----
 
@@ -47,7 +60,7 @@ open the project
 
     .../pumping_python/type_error
 
-* I open ``test_type_error.py``
+* I open ``test_type_error.py`` from the ``tests`` folder_
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -76,7 +89,7 @@ mass migration
 
 ----
 
-I change the :ref:`call<how to call a function with input>` to ``function_00`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_00`` of ``type_error.py`` in the ``src`` folder_
+I change the :ref:`call<how to call a function with input>` to ``function_00`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_00`` of the ``type_error`` :ref:`module<what is a module?>` in the ``src`` folder_
 
 .. code-block:: python
   :lineno-start: 43
@@ -103,7 +116,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   NameError: name 'src' is not defined
 
-because ``src`` is not defined in ``test_type_error.py``.
+because ``src`` is not defined in ``tests/test_type_error.py``.
 
 ----
 
@@ -113,7 +126,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
 ----
 
-* I add an `import statement`_ at the top of ``test_type_error.py``
+* I add an `import statement`_ at the top of ``tests/test_type_error.py``
 
   .. code-block:: python
     :linenos:
@@ -125,91 +138,31 @@ because ``src`` is not defined in ``test_type_error.py``.
     def function_00(the_input):
         return None
 
-  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
-
-  .. code-block:: python
-
-    ModuleNotFoundError: No module named 'src'
-
-  because there is nothing named ``src`` in this project.
-
-* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
-
-  .. code-block:: python
-    :lineno-start: 133
-    :emphasize-lines: 5
-    :emphasize-text: ModuleNotFoundError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # TypeError
-    # ModuleNotFoundError
-
-* I open another terminal_ then make sure I am in the :ref:`type_error folder<what causes TypeError?>`
-
-  .. code-block:: python
-
-    cd type_error
-
-* I use mkdir_ to make a folder_ named ``src``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    mkdir src
-
-* I go back to the terminal_ where the tests are running
-
-* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) on the keyboard in ``test_type_error.py`` to run the tests again and the terminal_ shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
-
-  .. code-block:: python
-
-    ModuleNotFoundError: No module named 'src.type_error'
-
-  because there is nothing in the ``src`` folder_ named ``type_error``.
-
-* I go to the second terminal_ I opened, then use touch_ to make ``type_error.py`` in the ``src`` folder_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch src/type_error.py
-
-* I add the new file_ to git_ for tracking
-
-  .. code-block:: python
-
-    git add src/type_error.py
-
-  the terminal_ goes back to the command line.
-
-* I go back to the terminal_ where the tests are running and it shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
     AttributeError: module 'src.type_error'
                     has no attribute 'function_00'
 
-  because there is nothing in ``type_error.py`` in the ``src`` folder_ with the name ``function_00``.
+  because there is nothing in the ``type_error`` :ref:`module<what is a module?>` in the ``src`` folder_ with the name ``function_00``.
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
-    :lineno-start: 133
-    :emphasize-lines: 6
+    :lineno-start: 130
+    :emphasize-lines: 5
     :emphasize-text: AttributeError
 
     # Exceptions seen
     # AssertionError
     # NameError
     # TypeError
-    # ModuleNotFoundError
     # AttributeError
 
-* I open ``type_error/__init__.py`` from the ``src`` folder_
+* I open ``__init__.py`` from the ``type_error`` folder_ from the ``src`` folder_
 
-* I add a :ref:`definition<how to make a function>` for ``function_00`` to ``type_error.py``
+* I delete the text in the file_ then add a :ref:`definition<how to make a function>` for ``function_00`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -237,23 +190,24 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes because
 
-  - Python_ brings in an :ref:`object<everything is an object>` for the ``type_error.py`` file_ from the ``src`` folder_ so I can use it in ``test_type_error.py`` as ``src.type_error`` when ``import src.type_error`` runs.
-  - Python_ :ref:`calls<how to call a function with input>` the ``function_00`` :ref:`function<what is a function?>` from the :ref:`object<everything is an object>` it imported for the ``type_error.py`` file_ from the ``src`` folder_ (``src.type_error``) when ``src.type_error.function_00`` is :ref:`called<how to call a function with input>`.
+  - Python_ brings in an :ref:`object<everything is an object>` for the ``src/type_error/__init__.py`` file_ from the ``src`` folder_ so I can use it in ``tests/test_type_error.py`` as ``src.type_error`` when ``import src.type_error`` runs.
+  - Python_ :ref:`calls<how to call a function with input>` the ``function_00`` :ref:`function<what is a function?>` from the :ref:`object<everything is an object>` it imported for the ``src/type_error/__init__.py`` file_ from the ``src`` folder_ (``src.type_error``) when ``src.type_error.function_00`` is :ref:`called<how to call a function with input>`.
 
   I think of ``src.type_error.function_00`` like an address
 
   .. code-block:: shell
 
     src.type_error.function_00
-    src
-    └── type_error.py
-        └── def function_00(one):
-            └── return None
+    src/
+    └── type_error/
+        └── __init__.py
+            └── def function_00(one):
+                └── return None
 
-  - ``function_00`` is something in ``type_error``, in this case it is a :ref:`function<what is a function?>` in ``type_error``.
-  - ``type_error`` is something in ``src``, in this case it is ``type_error.py`` (a :ref:`module<what is a module?>`) in the ``src`` folder_.
+  - ``function_00`` is something in ``type_error``, in this case it is a :ref:`function<what is a function?>` in ``__init__.py`` in the ``type_error`` folder_.
+  - ``type_error`` is something in ``src``, in this case it is a folder_ in the ``src`` folder_.
   - ``src`` is something Python_ can import (a :ref:`module<what is a module?>`, `Python package`_ or folder_).
-  - ``function_00`` is now an :ref:`attribute/property<what is a class attribute?>` of ``type_error.py`` in the ``src`` folder_. I can use it from outside the file_ with ``src.type_error.function_00``.
+  - ``function_00`` is now an :ref:`attribute/property<what is a class attribute?>` of ``src/type_error/__init__.py``. I can use it from outside the file_ with ``src.type_error.function_00``.
 
 ----
 
@@ -263,7 +217,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to ``function_01`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_01`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_01`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_01`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 46
@@ -284,7 +238,7 @@ because ``src`` is not defined in ``test_type_error.py``.
                     has no attribute 'function_01'.
                     Did you mean: 'function_00'?
 
-* I add a :ref:`function definition<how to make a function>` for ``function_01`` to ``type_error.py``
+* I add a :ref:`function definition<how to make a function>` for ``function_01`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -325,12 +279,13 @@ because ``src`` is not defined in ``test_type_error.py``.
   .. code-block:: shell
 
     src.type_error.function_01
-    src
-    └── type_error.py
-        └── def function_01(one, two):
-            └── return None
+    src/
+    └── type_error/
+        └── __init__.py
+            └── def function_01(one, two):
+                └── return None
 
-* I change the :ref:`call<how to call a function with input>` to ``function_02`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_02`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_02`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_02`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 50
@@ -349,7 +304,7 @@ because ``src`` is not defined in ``test_type_error.py``.
                     has no attribute 'function_02'.
                     Did you mean: 'function_00'?
 
-* I add a :ref:`function definition<how to make a function>` for ``function_02`` to ``type_error.py``
+* I add a :ref:`function definition<how to make a function>` for ``function_02`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 6
@@ -390,12 +345,13 @@ because ``src`` is not defined in ``test_type_error.py``.
   .. code-block:: shell
 
     src.type_error.function_02
-    src
-    └── type_error.py
-        └── def function_02(one, two, three):
-            └── return None
+    src/
+    └── type_error/
+        └── __init__.py
+            └── def function_02(one, two, three):
+                └── return None
 
-* I change the :ref:`call<how to call a function with input>` to ``function_03`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_03`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_03`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_03`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 52
@@ -414,7 +370,7 @@ because ``src`` is not defined in ``test_type_error.py``.
                     has no attribute 'function_03'.
                     Did you mean: 'function_00'?
 
-* I add a :ref:`function definition<how to make a function>` for ``function_03`` to ``type_error.py``
+* I add a :ref:`function definition<how to make a function>` for ``function_03`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -455,12 +411,13 @@ because ``src`` is not defined in ``test_type_error.py``.
   .. code-block:: shell
 
     src.type_error.function_03
-    src
-    └── type_error.py
-        └── def function_03(one, two, three, four):
-            └── return None
+    src/
+    └── type_error/
+        └── __init__.py
+            └── def function_03(one, two, three, four):
+                └── return None
 
-* I change the :ref:`call<how to call a function with input>` to ``function_04`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_04`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_04`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_04`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 54
@@ -479,7 +436,7 @@ because ``src`` is not defined in ``test_type_error.py``.
                     has no attribute 'function_04'.
                     Did you mean: 'function_00'?
 
-* I add a :ref:`function definition<how to make a function>` for ``function_04`` to ``type_error.py``
+* I add a :ref:`function definition<how to make a function>` for ``function_04`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -520,12 +477,13 @@ because ``src`` is not defined in ``test_type_error.py``.
   .. code-block:: shell
 
     src.type_error.function_04
-    src
-    └── type_error.py
-        └── def function_04(one):
-            └── return None
+    src/
+    └── type_error/
+        └── __init__.py
+            └── def function_04(one):
+                └── return None
 
-* I change the :ref:`call<how to call a function with input>` to ``function_05`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_05`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_05`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_05`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 56
@@ -544,7 +502,7 @@ because ``src`` is not defined in ``test_type_error.py``.
                     has no attribute 'function_05'.
                     Did you mean: 'function_00'?
 
-* I add a :ref:`function definition<how to make a function>` for ``function_05`` to ``type_error.py``
+* I add a :ref:`function definition<how to make a function>` for ``function_05`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -585,12 +543,13 @@ because ``src`` is not defined in ``test_type_error.py``.
   .. code-block:: shell
 
     src.type_error.function_05
-    src
-    └── type_error.py
-        └── def function_05(one, two):
-            └── return None
+    src/
+    └── type_error/
+        └── __init__.py
+            └── def function_05(one, two):
+                └── return None
 
-* I change the :ref:`call<how to call a function with input>` to ``function_06`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_06`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_06`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_06`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 58
@@ -610,7 +569,7 @@ because ``src`` is not defined in ``test_type_error.py``.
                     has no attribute 'function_06'.
                     Did you mean: 'function_00'?
 
-* I add a :ref:`function definition<how to make a function>` for ``function_06`` to ``type_error.py``
+* I add a :ref:`function definition<how to make a function>` for ``function_06`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 26
@@ -651,12 +610,13 @@ because ``src`` is not defined in ``test_type_error.py``.
   .. code-block:: shell
 
     src.type_error.function_06
-    src
-    └── type_error.py
-        └── def function_06(one, two, three):
-            └── return None
+    src/
+    └── type_error/
+        └── __init__.py
+            └── def function_06(one, two, three):
+                └── return None
 
-* I change the :ref:`call<how to call a function with input>` to ``function_07`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_07`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_07`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_07`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 60
@@ -678,7 +638,7 @@ because ``src`` is not defined in ``test_type_error.py``.
                     has no attribute 'function_07'.
                     Did you mean: 'function_00'?
 
-* I add a :ref:`function definition<how to make a function>` for ``function_07`` to ``type_error.py``
+* I add a :ref:`function definition<how to make a function>` for ``function_07`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 31
@@ -719,12 +679,13 @@ because ``src`` is not defined in ``test_type_error.py``.
   .. code-block:: shell
 
     src.type_error.function_07
-    src
-    └── type_error.py
-        └── def function_07(one, two, three, four):
-            └── return None
+    src/
+    └── type_error/
+        └── __init__.py
+            └── def function_07(one, two, three, four):
+                └── return None
 
-* I change the :ref:`call<how to call a function with input>` to ``function_08`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_08`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_08`` in :ref:`test_type_error_w_positional_arguments` to be a :ref:`call<how to call a function with input>` to ``function_08`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 62
@@ -745,7 +706,7 @@ because ``src`` is not defined in ``test_type_error.py``.
                     has no attribute 'function_08'.
                     Did you mean: 'function_00'?
 
-* I add a :ref:`function definition<how to make a function>` for ``function_08`` to ``type_error.py``
+* I add a :ref:`function definition<how to make a function>` for ``function_08`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 36
@@ -786,12 +747,13 @@ because ``src`` is not defined in ``test_type_error.py``.
   .. code-block:: shell
 
     src.type_error.function_08
-    src
-    └── type_error.py
-        └── def function_08(one, two):
-            └── return None
+    src/
+    └── type_error/
+        └── __init__.py
+            └── def function_08(one, two):
+                └── return None
 
-* I remove the commented lines from :ref:`test_type_error_w_positional_arguments` in ``test_type_error.py``
+* I remove the commented lines from :ref:`test_type_error_w_positional_arguments` in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 46
@@ -812,7 +774,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to ``function_00`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_00`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_00`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_00`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 58
@@ -835,7 +797,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``the_input``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
-* I add ``the_input`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_00`` in ``type_error.py``
+* I add ``the_input`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_00`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -873,7 +835,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to ``function_01`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_01`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_01`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_01`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 58
@@ -897,7 +859,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``first``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
-* I add ``first`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_01`` in ``type_error.py``
+* I add ``first`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_01`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 8
@@ -961,7 +923,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to ``function_02`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_02`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_02`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_02`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 62
@@ -987,7 +949,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``third``) that ...
 
-* I add ``third`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_02`` in ``type_error.py``
+* I add ``third`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_02`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -1082,7 +1044,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to ``function_03`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_03`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_03`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_03`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 67
@@ -1110,7 +1072,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   because ...
 
-* I add ``first`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_03`` in ``type_error.py``
+* I add ``first`` to the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_03`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 27
@@ -1247,7 +1209,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to ``function_04`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_04`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_04`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_04`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 73
@@ -1273,7 +1235,7 @@ because ``src`` is not defined in ``test_type_error.py``.
     TypeError: function_04() got
                an unexpected keyword argument 'argument'
 
-* I change ``one`` to ``argument`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_04`` in ``type_error.py``
+* I change ``one`` to ``argument`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_04`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 39
@@ -1286,7 +1248,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to ``function_05`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_05`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_05`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_05`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 80
@@ -1306,7 +1268,7 @@ because ``src`` is not defined in ``test_type_error.py``.
     TypeError: function_05() got
                an unexpected keyword argument 'argument_0'
 
-* I change ``one`` to ``argument_0`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_05`` in ``type_error.py``
+* I change ``one`` to ``argument_0`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_05`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 45
@@ -1339,7 +1301,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to ``function_06`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_06`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_06`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_06`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 82
@@ -1363,7 +1325,7 @@ because ``src`` is not defined in ``test_type_error.py``.
     TypeError: function_06() got
                an unexpected keyword argument 'argument_0'
 
-* I change ``one`` to ``argument_0`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_06`` in ``type_error.py``
+* I change ``one`` to ``argument_0`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_06`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 52
@@ -1417,7 +1379,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to ``function_07`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_07`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_07`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_07`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 87
@@ -1445,7 +1407,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   because there is a :ref:`call<how to call a function with input>` that uses a :ref:`name<test_keyword_arguments>` (``argument_0``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
-* I change ``one`` to ``argument_0`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_07`` in ``type_error.py``
+* I change ``one`` to ``argument_0`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_07`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 60
@@ -1533,7 +1495,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I change the :ref:`call<how to call a function with input>` to ``function_08`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_08`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_08`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_08`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 97
@@ -1563,7 +1525,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   because there is a :ref:`call<how to call a function with input>` that uses a :ref:`name<test_keyword_arguments>` (``argument``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
-* I change ``one`` to ``argument`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_08`` in ``type_error.py``
+* I change ``one`` to ``argument`` in the parentheses of the :ref:`definition<how to make a function that takes input>` of ``function_08`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 72
@@ -1595,7 +1557,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I remove the commented lines from :ref:`test_type_error_w_keyword_arguments` in ``test_type_error.py``
+* I remove the commented lines from :ref:`test_type_error_w_keyword_arguments` in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 58
@@ -1667,7 +1629,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to ``function_00`` in :ref:`test_type_error_w_args_and_kwargs` to be a :ref:`call<how to call a function with input>` to ``function_00`` of ``type_error.py`` in the ``src`` folder_, in ``test_type_error.py``
+* I change the :ref:`call<how to call a function with input>` to ``function_00`` in :ref:`test_type_error_w_args_and_kwargs` to be a :ref:`call<how to call a function with input>` to ``function_00`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 97
@@ -1828,7 +1790,7 @@ because ``src`` is not defined in ``test_type_error.py``.
     TypeError: function_08() got
                multiple values for argument 'argument'
 
-* I change the order of the arguments in the :ref:`definition<how to make a function that takes input>` of ``function_08`` in ``type_error.py``
+* I change the order of the arguments in the :ref:`definition<how to make a function that takes input>` of ``function_08`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 72
@@ -1842,7 +1804,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
   the test passes.
 
-* I remove the commented lines from ``type_error.py``
+* I remove the commented lines from ``src/type_error/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1895,7 +1857,7 @@ because ``src`` is not defined in ``test_type_error.py``.
     def function_08(name, argument):
         return None
 
-* I remove the commented lines from :ref:`test_type_error_w_args_and_kwargs` in ``test_type_error.py``
+* I remove the commented lines from :ref:`test_type_error_w_args_and_kwargs` in ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 97
@@ -1962,7 +1924,7 @@ because ``src`` is not defined in ``test_type_error.py``.
     # ModuleNotFoundError
     # AttributeError
 
-* I remove ``function_00`` to ``function_08`` from ``test_type_error.py`` because they are no longer :ref:`called<how to call a function with input>`
+* I remove ``function_00`` to ``function_08`` from ``tests/test_type_error.py`` because they are no longer :ref:`called<how to call a function with input>`
 
   .. code-block:: python
     :linenos:
@@ -1972,14 +1934,15 @@ because ``src`` is not defined in ``test_type_error.py``.
 
     def test_type_error_w_positional_arguments():
 
-  all the tests are passing because ``function_00`` to ``function_08`` are now :ref:`attributes<what is a class attribute?>` of ``type_error.py`` in the ``src`` folder_ and I can :ref:`call<how to call a function with input>` them from outside the file_ with ``src.type_error.function_name()``
+  all the tests are passing because ``function_00`` to ``function_08`` are now :ref:`attributes<what is a class attribute?>` of ``src/type_error/__init__.py`` and I can :ref:`call<how to call a function with input>` them from outside the file_ with ``src.type_error.function_name()``
 
   .. code-block:: shell
 
     src.type_error.function_name()
-    src
-    └── type_error.py
-        └── def function_name(): return None
+    src/
+    └── type_error/
+        └── __init__.py
+            └── def function_name(): return None
 
   where ``function_name`` is the name of the :ref:`function<what is a function?>`.
 
@@ -1990,7 +1953,7 @@ because ``src`` is not defined in ``test_type_error.py``.
 
     cd type_error
 
-* I add ``type_error.py`` to git_ for tracking
+* I add ``src/type_error/__init__.py`` to git_ for tracking
 
   .. code-block:: python
     :emphasize-lines: 1
