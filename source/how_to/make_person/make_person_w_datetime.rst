@@ -182,7 +182,7 @@ I want to see what comes with the `datetime module`_.
 
     # Exceptions seen
 
-  the test passes because when ``import datetime`` runs, Python_ brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the `datetime module`_ from `The Python Standard Library`_ so I can use it in ``test_person.py`` as ``datetime``.
+  the test passes because when ``import datetime`` runs, Python_ brings in an :ref:`object<everything is an object>`  (everything in Python_ is an object) for the `datetime module`_ from `The Python Standard Library`_ so I can use it in ``test_person.py`` as ``datetime``.
 
   This means that there is a file_ or folder_ on the computer named ``datetime`` that got added when I installed Python_.
 

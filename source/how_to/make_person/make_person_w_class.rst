@@ -2726,7 +2726,9 @@ separate and equal Person class
 
     def test_joe():
 
-  all the tests are still green because the calls that were made to the :ref:`Person class<extract Person class>` that was in ``test_person.py`` are now made to the :ref:`Person class<extract Person class>` in ``src/person/__init__.py`` in the ``src`` folder_. When ``src.person.Person`` is :ref:`called<how to call a function with input>` with input, Python_ follows this path
+  all the tests are still green because the calls that were made to the :ref:`Person class<extract Person class>` that was in ``test_person.py`` are now made to the :ref:`Person class<extract Person class>` in ``src/person/__init__.py`` in the ``src`` folder_.
+
+  Python_ follows this path when ``src.person.Person`` is :ref:`called<how to call a function with input>` with input
 
   .. code-block:: shell
 

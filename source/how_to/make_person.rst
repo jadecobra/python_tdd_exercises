@@ -390,7 +390,7 @@ test_factory_w_keyword_arguments
     import src.person
     import unittest
 
-  - ``import src.person`` brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the ``src/person/__init__.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_person.py``
+  - ``import src.person`` brings in an :ref:`object<everything is an object>`  (everything in Python_ is an object) for the ``src/person/__init__.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_person.py``
   - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
     .. code-block:: python
@@ -1936,7 +1936,7 @@ I can do that with the `datetime module`_ from `The Python Standard Library`_ wh
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-* ``import datetime`` brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the `datetime module`_ so I can use it in ``test_person.py``. This means I can assume there is a ``datetime.py`` file_ on the computer that came with Python_
+* ``import datetime`` brings in an :ref:`object<everything is an object>`  (everything in Python_ is an object) for the `datetime module`_ so I can use it in ``test_person.py``. This means I can assume there is a ``datetime.py`` file_ on the computer that came with Python_
 
   .. code-block:: python
 
@@ -2077,7 +2077,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
 
   where ``X`` is a random age
 
-  - ``import random`` brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the `random module`_ so I can use it in ``test_person.py``. This means I can assume there is a ``random.py`` file_ on the computer that came with Python_
+  - ``import random`` brings in an :ref:`object<everything is an object>`  (everything in Python_ is an object) for the `random module`_ so I can use it in ``test_person.py``. This means I can assume there is a ``random.py`` file_ on the computer that came with Python_
 
     .. code-block:: python
 
@@ -2143,7 +2143,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
             sex, year_of_birth,
         ):
 
-  the test passes because ``import datetime`` brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the `datetime module`_ so I can use it in ``src/person/__init__.py``.
+  the test passes because ``import datetime`` brings in an :ref:`object<everything is an object>`  (everything in Python_ is an object) for the `datetime module`_ so I can use it in ``src/person/__init__.py``.
 
 ----
 

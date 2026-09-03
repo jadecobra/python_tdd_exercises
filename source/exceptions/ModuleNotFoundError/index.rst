@@ -398,7 +398,7 @@ test_module_not_found_error
 
     FAILED (errors=1)
 
-  because when ``import src.module_00`` runs, Python_ tries to bring in an :ref:`object (everything in Python is an object)<everything is an object>` for the ``module_00.py`` file_ from the ``src`` folder_.
+  because when ``import src.module_00`` runs, Python_ tries to bring in an :ref:`object<everything is an object>`  (everything in Python_ is an object) for the ``module_00.py`` file_ from the ``src`` folder_.
 
 * I add ModuleNotFoundError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_module_not_found_error.py``
 

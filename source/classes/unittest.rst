@@ -437,7 +437,7 @@ I want to see what comes with the `unittest module`_.
 
     # Exceptions seen
 
-  the test passes because when ``import unittest`` runs, Python_ brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the `unittest module`_ from `The Python Standard Library`_ so I can use it in ``test_unittest.py`` as ``unittest``.
+  the test passes because when ``import unittest`` runs, Python_ brings in an :ref:`object<everything is an object>`  (everything in Python_ is an object) for the `unittest module`_ from `The Python Standard Library`_ so I can use it in ``test_unittest.py`` as ``unittest``.
 
   This means that there is a file_ or folder_ on the computer named ``unittest`` that got added when I installed Python_.
 

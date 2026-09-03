@@ -879,7 +879,7 @@ move positional_arguments
 
   the tests pass because the calls that were made to the :ref:`positional_arguments function<test_positional_arguments>` that was in ``tests/test_functions.py`` are now made to the :ref:`positional_arguments function<test_positional_arguments>` in ``__init__.py`` in the ``functions`` folder_ in the ``src`` folder_.
 
-  When ``positional_arguments`` is called in :ref:`test_positional_arguments` and :ref:`test_keyword_arguments`, Python_ follows this path
+  Python_ follows this path when ``positional_arguments`` is called in :ref:`test_positional_arguments` and :ref:`test_keyword_arguments`
 
   .. code-block:: shell
 
@@ -1046,7 +1046,7 @@ move keyword_arguments
 
   the tests pass because the calls that were made to :ref:`the keyword_arguments function<test_keyword_arguments>` that was in ``tests/test_functions.py`` are now made to :ref:`the keyword_arguments function<test_keyword_arguments>` in ``__init__.py`` in the ``functions`` folder_ in the ``src`` folder_.
 
-  When ``keyword_arguments`` is called in :ref:`test_keyword_arguments` and :ref:`test_positional_arguments`, Python_ follows this path
+  Python_ follows this path when ``keyword_arguments`` is called in :ref:`test_keyword_arguments` and :ref:`test_positional_arguments`
 
   .. code-block:: shell
 
