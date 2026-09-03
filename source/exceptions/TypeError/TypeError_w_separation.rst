@@ -1683,7 +1683,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 
   .. code-block:: python
     :lineno-start: 101
-    :emphasize-lines: 2-6
+    :emphasize-lines: 2-3
 
         src.type_error.function_01(1, 0)
         # function_02(
@@ -1727,7 +1727,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
             fourth={'key': 'value'},
         )
         # function_04('value')
-        src.type_error.function_04('value')
+        src.type_error.function_04(argument='value_2')
 
   the test is still green.
 
@@ -1735,13 +1735,12 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 
   .. code-block:: python
     :lineno-start: 115
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2-5
 
-        src.type_error.function_04('value')
-        # function_05(
+        src.type_error.function_04(argument='value_2')
+        # function_05((0, 1, 2, 'n'), [0, 1, 2, 'n'])
         src.type_error.function_05(
-            (0, 1, 2, 'n'),
-            [0, 1, 2, 'n'],
+            (0, 1, 2, 'n'), [0, 1, 2, 'n'],
         )
 
   still green.
@@ -1750,17 +1749,16 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 
   .. code-block:: python
     :lineno-start: 117
-    :emphasize-lines: 5-6
+    :emphasize-lines: 4-5
 
         src.type_error.function_05(
-            (0, 1, 2, 'n'),
-            [0, 1, 2, 'n'],
+            (0, 1, 2, 'n'), [0, 1, 2, 'n'],
         )
         # function_06(
         src.type_error.function_06(
-            (0, 1, 2, 'n'),
-            [0, 1, 2, 'n'],
-            argument_2={0, 1, 2, 'n'},
+            argument_2=(0, 1, 2, 'n'),
+            argument_0=[0, 1, 2, 'n'],
+            argument_1={0, 1, 2, 'n'},
         )
 
   green.
@@ -1768,13 +1766,13 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_07`` to ``src.type_error.function_07``
 
   .. code-block:: python
-    :lineno-start: 122
+    :lineno-start: 121
     :emphasize-lines: 6-7
 
         src.type_error.function_06(
-            (0, 1, 2, 'n'),
-            [0, 1, 2, 'n'],
-            argument_2={0, 1, 2, 'n'},
+            argument_2=(0, 1, 2, 'n'),
+            argument_0=[0, 1, 2, 'n'],
+            argument_1={0, 1, 2, 'n'},
         )
         # function_07(
         src.type_error.function_07(
@@ -1789,7 +1787,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 * I change the :ref:`call<how to call a function with input>` to ``function_08`` to ``src.type_error.function_08``
 
   .. code-block:: python
-    :lineno-start: 128
+    :lineno-start: 127
     :emphasize-lines: 7-8
 
         src.type_error.function_07(
@@ -1840,22 +1838,20 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
     def function_01(first, second):
         return None
 
-  .. code-block:: python
-    :lineno-start: 9
 
     def function_02(
-        third, second, first
-    ):
-        return None
-
-
-    def function_03(
-        first, second, third, fourth,
-    ):
+            third, second, first,
+        ):
         return None
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 15
+
+    def function_03(
+            first, second, third, fourth
+        ):
+        return None
+
 
     def function_04(argument):
         return None
@@ -1865,16 +1861,16 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
         return None
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 26
 
     def function_06(argument_0, argument_1, argument_2):
         return None
 
 
     def function_07(
-        argument_0, argument_1,
-        argument_2, argument_n
-    ):
+            argument_0, argument_1,
+            argument_2, argument_n,
+        ):
         return None
 
 
@@ -1907,23 +1903,22 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   .. code-block:: python
     :lineno-start: 110
 
-        src.type_error.function_04('value')
+        src.type_error.function_04(argument='value_2')
         src.type_error.function_05(
-            (0, 1, 2, 'n'),
-            [0, 1, 2, 'n'],
+            (0, 1, 2, 'n'), [0, 1, 2, 'n']
         )
 
   .. code-block:: python
-    :lineno-start: 115
+    :lineno-start: 114
 
         src.type_error.function_06(
-            (0, 1, 2, 'n'),
-            [0, 1, 2, 'n'],
-            argument_2={0, 1, 2, 'n'},
+            argument_2=(0, 1, 2, 'n'),
+            argument_0=[0, 1, 2, 'n'],
+            argument_1={0, 1, 2, 'n'},
         )
 
   .. code-block:: python
-    :lineno-start: 120
+    :lineno-start: 119
 
         src.type_error.function_07(
             argument_n={'key': 'value'},
@@ -1933,7 +1928,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
         )
 
   .. code-block:: python
-    :lineno-start: 126
+    :lineno-start: 125
 
         src.type_error.function_08(
             'positional',
@@ -1945,7 +1940,6 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
     # AssertionError
     # NameError
     # TypeError
-    # ModuleNotFoundError
     # AttributeError
 
 * I remove ``function_00`` to ``function_08`` from ``tests/test_type_error.py`` because they are no longer :ref:`called<how to call a function with input>`
