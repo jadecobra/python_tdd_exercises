@@ -1537,13 +1537,6 @@ I ran tests for :ref:`AttributeError<what causes AttributeError?>` that showed
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`.
 * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`.
 
-I also saw these :ref:`Exceptions<how to test that an Exception is raised>`
-
-* :ref:`AssertionError<what causes AssertionError?>`
-* :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
-* :ref:`NameError<test_catching_name_error>`
-* :ref:`TypeError<what causes TypeError?>`
-
 My problem with the tests is that they all show the correct way to use :ref:`attributes<what is a class attribute?>` I made in ``src/attribute_error/__init__.py``. If someone reads the file_ or runs it, there is no way for them to know how the code relates to :ref:`AttributeError<what causes AttributeError?>` unless they go through the process with me, there has to be a better way.
 
 ----
