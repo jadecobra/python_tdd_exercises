@@ -833,6 +833,9 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
     def function_00(the_input):
         return None
 
+
+    # def function_01():
+
   the test passes.
 
 * I change the :ref:`call<how to call a function with input>` to ``function_01`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_01`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
@@ -921,6 +924,9 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
     def function_01(first, second):
         return None
 
+
+    # def function_02():
+
   the test passes.
 
 * I change the :ref:`call<how to call a function with input>` to ``function_02`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_02`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
@@ -1008,9 +1014,9 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
     # def function_02(one, two, three, third):
     # def function_02(one, two, three, third, second):
     def function_02(
-        one, two, three,
-        third, second, first
-    ):
+            one, two, three,
+            third, second, first,
+        ):
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -1037,10 +1043,13 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
     # def function_02(one, two, three, third):
     # def function_02(one, two, three, third, second):
     def function_02(
-        # one, two, three,
-        third, second, first
-    ):
+            # one, two, three,
+            third, second, first,
+        ):
         return None
+
+
+    # def function_03():
 
   the test passes.
 
@@ -1104,9 +1113,9 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
     # def function_03(one, two, three, four):
     # def function_03(one, two, three, four, first):
     def function_03(
-        one, two, three, four,
-        first, second,
-    ):
+            one, two, three, four,
+            first, second,
+        ):
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -1136,10 +1145,10 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
     # def function_03(one, two, three, four):
     # def function_03(one, two, three, four, first):
     def function_03(
-        one, two, three, four,
-        # first, second,
-        first, second, third,
-    ):
+            one, two, three, four,
+            # first, second,
+            first, second, third,
+        ):
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -1170,11 +1179,11 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
     # def function_03(one, two, three, four):
     # def function_03(one, two, three, four, first):
     def function_03(
-        one, two, three, four,
-        # first, second,
-        # first, second, third,
-        first, second, third, fourth,
-    ):
+            one, two, three, four,
+            # first, second,
+            # first, second, third,
+            first, second, third, fourth,
+        ):
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -1200,12 +1209,15 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
     # def function_03(one, two, three, four):
     # def function_03(one, two, three, four, first):
     def function_03(
-        # one, two, three, four,
-        # first, second
-        # first, second, third,
-        first, second, third, fourth,
-    ):
+            # one, two, three, four,
+            # first, second,
+            # first, second, third,
+            first, second, third, fourth
+        ):
         return None
+
+
+    # def function_04():
 
   the test passes.
 
@@ -1245,6 +1257,9 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
     # def function_04(one):
     def function_04(argument):
         return None
+
+
+    # def function_05():
 
   the test passes.
 
@@ -1298,6 +1313,9 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
     # def function_05(argument_0, two):
     def function_05(argument_0, argument_1):
         return None
+
+
+    # def function_06():
 
   the test passes.
 
@@ -1377,6 +1395,9 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
     def function_06(argument_0, argument_1, argument_2):
         return None
 
+
+    # def function_07():
+
   the test passes.
 
 * I change the :ref:`call<how to call a function with input>` to ``function_07`` in :ref:`test_type_error_w_keyword_arguments` to be a :ref:`call<how to call a function with input>` to ``function_07`` of ``src/type_error/__init__.py``, in ``tests/test_type_error.py``
@@ -1438,8 +1459,8 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
     # def function_07(one, two, three, four):
     # def function_07(argument_0, two, three, four):
     def function_07(
-        argument_0, argument_1, three, four
-    ):
+            argument_0, argument_1, three, four,
+        ):
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -1462,10 +1483,10 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
     # def function_07(one, two, three, four):
     # def function_07(argument_0, two, three, four):
     def function_07(
-        # argument_0, argument_1, three, four
-        argument_0, argument_1,
-        argument_2, four
-    ):
+            # argument_0, argument_1, three, four
+            argument_0, argument_1,
+            argument_2, four,
+        ):
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -1486,12 +1507,15 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
     # def function_07(one, two, three, four):
     # def function_07(argument_0, two, three, four):
     def function_07(
-        # argument_0, argument_1, three, four
-        argument_0, argument_1,
-        # argument_2, four
-        argument_2, argument_n
-    ):
+            # argument_0, argument_1, three, four
+            argument_0, argument_1,
+            # argument_2, four
+            argument_2, argument_n
+        ):
         return None
+
+
+    # def function_08():
 
   the test passes.
 
@@ -1575,7 +1599,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
         src.type_error.function_02(
             third=(0, 1, 2, 'n'),
             second=[0, 1, 2, 'n'],
-            first={0, 1, 2, 'n'},
+            first={0, 1, 2, 'n'}
         )
 
   .. code-block:: python
@@ -1587,14 +1611,14 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
             third=True,
             fourth=4,
         )
-        src.type_error.function_04(argument='value')
 
   .. code-block:: python
     :lineno-start: 76
 
+        src.type_error.function_04(argument='value')
         src.type_error.function_05(
             argument_0='value_1',
-            argument_1=(0, 1, 2, 'n'),
+            argument_1=(0, 1, 2, 'n')
         )
 
   .. code-block:: python
