@@ -66,6 +66,26 @@ The code in ``attribute_error/tests/test_attribute_error_w_classes.py`` from :re
 .. literalinclude:: attribute_error/tests/test_attribute_error_w_classes.py
   :language: python
   :linenos:
+  :caption: attribute_error/tests/test_attribute_error.py
+  :lines: 1-14
+
+.. literalinclude:: attribute_error/tests/test_attribute_error_w_classes.py
+  :language: python
+  :lineno-start: 17
+  :caption: attribute_error/tests/test_attribute_error.py
+  :lines: 17-27
+
+.. literalinclude:: attribute_error/tests/test_attribute_error_w_classes.py
+  :language: python
+  :lineno-start: 30
+  :caption: attribute_error/tests/test_attribute_error.py
+  :lines: 30-40
+
+.. literalinclude:: attribute_error/tests/test_attribute_error_w_classes.py
+  :language: python
+  :lineno-start: 43
+  :caption: attribute_error/tests/test_attribute_error.py
+  :lines: 43-
 
 =================================================================================
 AttributeError with classes solutions

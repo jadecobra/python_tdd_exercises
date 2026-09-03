@@ -55,7 +55,6 @@ def test_attribute_error_w_class_methods():
 
 # Exceptions seen
 # AssertionError
-# ModuleNotFoundError
 # AttributeError
 # NameError
 # TypeError
