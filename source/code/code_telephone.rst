@@ -94,6 +94,7 @@ The code in ``telephone/src/telephone.py`` from :ref:`separate and equal telepho
 .. literalinclude:: telephone/solutions/telephone_w_separation.py
   :language: python
   :linenos:
+  :caption: telephone/src/telephone/__init__.py
 
 ----
 
@@ -106,3 +107,4 @@ The code in ``telephone/tests/test_telephone.py`` from :ref:`test telephone with
 .. literalinclude:: telephone/tests/test_telephone_w_unittest.py
   :language: python
   :linenos:
+  :caption: telephone/tests/test_telephone.py
