@@ -30,6 +30,38 @@ The code in ``person/tests/test_person.py`` from :ref:`how to make a person with
 .. literalinclude:: person/tests/test_person_w_fstrings.py
   :language: python
   :linenos:
+  :caption: person/tests/test_person.py
+  :lines: 1-18
+
+.. literalinclude:: person/tests/test_person_w_fstrings.py
+  :language: python
+  :lineno-start: 21
+  :caption: person/tests/test_person.py
+  :lines: 21-34
+
+.. literalinclude:: person/tests/test_person_w_fstrings.py
+  :language: python
+  :lineno-start: 37
+  :caption: person/tests/test_person.py
+  :lines: 37-54
+
+.. literalinclude:: person/tests/test_person_w_fstrings.py
+  :language: python
+  :lineno-start: 57
+  :caption: person/tests/test_person.py
+  :lines: 57-74
+
+.. literalinclude:: person/tests/test_person_w_fstrings.py
+  :language: python
+  :lineno-start: 77
+  :caption: person/tests/test_person.py
+  :lines: 77-94
+
+.. literalinclude:: person/tests/test_person_w_fstrings.py
+  :language: python
+  :lineno-start: 96
+  :caption: person/tests/test_person.py
+  :lines: 96-
 
 ----
 
@@ -44,6 +76,14 @@ The code in ``person/src/person.py`` from :ref:`how to make a person with f-stri
 .. literalinclude:: person/solutions/person_w_fstrings.py
   :language: python
   :linenos:
+  :caption: person/src/person/__init__.py
+  :lines: 1-8
+
+.. literalinclude:: person/solutions/person_w_fstrings.py
+  :language: python
+  :lineno-start: 11
+  :caption: person/src/person/__init__.py
+  :lines: 11-
 
 ----
 

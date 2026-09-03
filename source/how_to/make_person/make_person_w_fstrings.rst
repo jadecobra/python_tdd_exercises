@@ -24,6 +24,38 @@ I have these tests by the end of the chapter
   :language: python
   :linenos:
   :caption: person/tests/test_person.py
+  :lines: 1-18
+
+.. literalinclude:: ../../code/person/tests/test_person_w_fstrings.py
+  :language: python
+  :lineno-start: 21
+  :caption: person/tests/test_person.py
+  :lines: 21-34
+
+.. literalinclude:: ../../code/person/tests/test_person_w_fstrings.py
+  :language: python
+  :lineno-start: 37
+  :caption: person/tests/test_person.py
+  :lines: 37-54
+
+.. literalinclude:: ../../code/person/tests/test_person_w_fstrings.py
+  :language: python
+  :lineno-start: 57
+  :caption: person/tests/test_person.py
+  :lines: 57-74
+
+.. literalinclude:: ../../code/person/tests/test_person_w_fstrings.py
+  :language: python
+  :lineno-start: 77
+  :caption: person/tests/test_person.py
+  :lines: 77-94
+
+.. literalinclude:: ../../code/person/tests/test_person_w_fstrings.py
+  :language: python
+  :lineno-start: 96
+  :caption: person/tests/test_person.py
+  :lines: 96-
+
 
 -----
 

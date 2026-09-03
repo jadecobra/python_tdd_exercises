@@ -1,45 +1,101 @@
 import src.person
 
 
+def say_hello(
+        first_name, last_name, year_of_birth,
+    ):
+    return (
+        f'Hello, my name is {first_name}'
+        f' {last_name} and I am'
+        f' {2026-year_of_birth}.'
+    )
+
+
+def assert_equal(left, right):
+    assert left == right
+
+
+
+def assert_factory_works(
+        first_name, last_name,
+        sex, year_of_birth,
+    ):
+    assert_equal(
+        src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        ),
+        (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+    )
+
+
+def assert_say_hello_works(
+        first_name, last_name, year_of_birth,
+    ):
+    assert_equal(
+        src.person.say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        ),
+        say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+    )
+
+
+def assert_person_can_say_hello(
+        first_name, last_name,
+        sex, year_of_birth,
+    ):
+    assert_equal(
+        src.person.Person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        ).say_hello(),
+        say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+    )
+
+
+
 def test_joe():
     first_name = 'joe'
     last_name = 'blow'
     sex = 'M'
     year_of_birth = 1996
 
-    reality = src.person.factory(
-        first_name=first_name,
-        last_name=last_name,
-        sex=sex,
-        year_of_birth=year_of_birth,
-    )
-    my_expectation = (
-        f'{first_name}, {last_name},'
-        f' {sex}, {year_of_birth}'
-    )
-    assert reality == my_expectation
-
-    reality = src.person.say_hello(
-        first_name=first_name,
-        last_name=last_name,
-        year_of_birth=year_of_birth,
-    )
-    my_expectation = (
-        f'Hello, my name is {first_name}'
-        f' {last_name} and I am'
-        f' {2026-year_of_birth}.'
-    )
-    assert reality == my_expectation
-
-    joe = src.person.Person(
+    assert_factory_works(
         first_name=first_name,
         last_name=last_name,
         sex=sex,
         year_of_birth=year_of_birth,
     )
 
-    reality = joe.say_hello()
-    assert reality == my_expectation
+    assert_say_hello_works(
+        first_name=first_name,
+        last_name=last_name,
+        year_of_birth=year_of_birth,
+    )
+
+    assert_person_can_say_hello(
+        first_name=first_name,
+        last_name=last_name,
+        sex=sex,
+        year_of_birth=year_of_birth,
+    )
 
 
 def test_jane():
@@ -48,39 +104,25 @@ def test_jane():
     sex = 'F'
     year_of_birth = 1991
 
-    reality = src.person.factory(
-        first_name=first_name,
-        last_name=last_name,
-        sex=sex,
-        year_of_birth=year_of_birth,
-    )
-    my_expectation = (
-        f'{first_name}, {last_name},'
-        f' {sex}, {year_of_birth}'
-    )
-    assert reality == my_expectation
-
-    reality = src.person.say_hello(
-        first_name=first_name,
-        last_name=last_name,
-        year_of_birth=year_of_birth,
-    )
-    my_expectation = (
-        f'Hello, my name is {first_name}'
-        f' {last_name} and I am'
-        f' {2026-year_of_birth}.'
-    )
-    assert reality == my_expectation
-
-    jane = src.person.Person(
+    assert_factory_works(
         first_name=first_name,
         last_name=last_name,
         sex=sex,
         year_of_birth=year_of_birth,
     )
 
-    reality = jane.say_hello()
-    assert reality == my_expectation
+    assert_say_hello_works(
+        first_name=first_name,
+        last_name=last_name,
+        year_of_birth=year_of_birth,
+    )
+
+    assert_person_can_say_hello(
+        first_name=first_name,
+        last_name=last_name,
+        sex=sex,
+        year_of_birth=year_of_birth,
+    )
 
 
 def test_john():
@@ -89,39 +131,25 @@ def test_john():
     sex = 'M'
     year_of_birth = 1580
 
-    reality = src.person.factory(
-        first_name=first_name,
-        last_name=last_name,
-        sex=sex,
-        year_of_birth=year_of_birth,
-    )
-    my_expectation = (
-        f'{first_name}, {last_name},'
-        f' {sex}, {year_of_birth}'
-    )
-    assert reality == my_expectation
-
-    reality = src.person.say_hello(
-        first_name=first_name,
-        last_name=last_name,
-        year_of_birth=year_of_birth,
-    )
-    my_expectation = (
-        f'Hello, my name is {first_name}'
-        f' {last_name} and I am'
-        f' {2026-year_of_birth}.'
-    )
-    assert reality == my_expectation
-
-    john = src.person.Person(
+    assert_factory_works(
         first_name=first_name,
         last_name=last_name,
         sex=sex,
         year_of_birth=year_of_birth,
     )
 
-    reality = john.say_hello()
-    assert reality == my_expectation
+    assert_say_hello_works(
+        first_name=first_name,
+        last_name=last_name,
+        year_of_birth=year_of_birth,
+    )
+
+    assert_person_can_say_hello(
+        first_name=first_name,
+        last_name=last_name,
+        sex=sex,
+        year_of_birth=year_of_birth,
+    )
 
 
 def test_mary():
@@ -130,39 +158,25 @@ def test_mary():
     sex = 'F'
     year_of_birth = 2000
 
-    reality = src.person.factory(
-        first_name=first_name,
-        last_name=last_name,
-        sex=sex,
-        year_of_birth=year_of_birth,
-    )
-    my_expectation = (
-        f'{first_name}, {last_name},'
-        f' {sex}, {year_of_birth}'
-    )
-    assert reality == my_expectation
-
-    reality = src.person.say_hello(
-        first_name=first_name,
-        last_name=last_name,
-        year_of_birth=year_of_birth,
-    )
-    my_expectation = (
-        f'Hello, my name is {first_name}'
-        f' {last_name} and I am'
-        f' {2026-year_of_birth}.'
-    )
-    assert reality == my_expectation
-
-    mary = src.person.Person(
+    assert_factory_works(
         first_name=first_name,
         last_name=last_name,
         sex=sex,
         year_of_birth=year_of_birth,
     )
 
-    reality = mary.say_hello()
-    assert reality == my_expectation
+    assert_say_hello_works(
+        first_name=first_name,
+        last_name=last_name,
+        year_of_birth=year_of_birth,
+    )
+
+    assert_person_can_say_hello(
+        first_name=first_name,
+        last_name=last_name,
+        sex=sex,
+        year_of_birth=year_of_birth,
+    )
 
 
 def test_dir_person_class():
