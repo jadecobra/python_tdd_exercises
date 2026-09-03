@@ -1,6 +1,6 @@
 .. meta::
-  :description: Separate tests from solutions ("separate and equal") in the type_error project with TDD. Move function_00–function_08 from tests/test_type_error.py into src/type_error/__init__.py: import src.type_error, mkdir src, touch src/type_error/__init__.py, reroute calls to src.type_error.function_N, remove commented local calls, then delete the local defs. Real errors on the way: "NameError: name 'src' is not defined", "ModuleNotFoundError: No module named 'src'", "ModuleNotFoundError: No module named 'src.type_error'", "AttributeError: module 'src.type_error' has no attribute 'function_00'", plus TypeError while renaming signatures so keyword tests match (unexpected keyword, missing required positional, function_08 multiple values for 'argument' until def function_08(name, argument)). Three tests keep working: test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs (mixed call function_08('positional', argument='keyword')). uv run pytest-watcher . --now, git commits. Review: I can write solutions in a different module from the tests. Jacob Itegboje Pumping Python TDD.
-  :keywords: Jacob Itegboje, Pumping Python, separate and equal TypeError, separate tests from solutions, src/type_error/__init__.py, import src.type_error, src.type_error.function_00, NameError name 'src' is not defined, ModuleNotFoundError No module named 'src', ModuleNotFoundError No module named 'src.type_error', AttributeError module 'src.type_error' has no attribute, TypeError unexpected keyword argument, TypeError multiple values for argument, function_08(name, argument), test_type_error_w_separation, remove the commented lines, uv pytest-watcher, git commit, I can write solutions in a different module from the tests, TypeError continuation, python src package
+  :description: Separate tests from solutions ("separate and equal") in the type_error project with TDD. Move function_00–function_08 from tests/test_type_error.py into src/type_error/__init__.py: import src.type_error, reroute calls to src.type_error.function_N, remove commented local calls, then delete the local defs. Real errors on the way: "NameError: name 'src' is not defined", "AttributeError: module 'src.type_error' has no attribute 'function_00'", plus TypeError while renaming signatures so keyword tests match (unexpected keyword, missing required positional, function_08 multiple values for 'argument' until def function_08(name, argument)). Three tests keep working: test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs (mixed call function_08('positional', argument='keyword')). uv run pytest-watcher . --now, git commit --all --message 'move functions to src'. Review: I can write solutions in a different module from the tests. Jacob Itegboje Pumping Python TDD.
+  :keywords: Jacob Itegboje, Pumping Python, separate and equal TypeError, separate tests from solutions, src/type_error/__init__.py, import src.type_error, src.type_error.function_00, NameError name 'src' is not defined, AttributeError module 'src.type_error' has no attribute, TypeError unexpected keyword argument, TypeError missing required positional argument, TypeError multiple values for argument, function_08(name, argument), test_type_error_w_separation, remove the commented lines, uv pytest-watcher, git commit, I can write solutions in a different module from the tests, TypeError continuation, python src package
 
 .. include:: ../../links.rst
 
@@ -1386,7 +1386,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 
   .. code-block:: python
     :lineno-start: 52
-    :emphasize-lines: 3-4
+    :emphasize-lines: 4-5
 
     # def function_06():
     # def function_06(one, two, three):
@@ -1726,7 +1726,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
             third={0, 1, 2, 'n'},
             fourth={'key': 'value'},
         )
-        # function_04('value')
+        # function_04(argument='value_2')
         src.type_error.function_04(argument='value_2')
 
   the test is still green.

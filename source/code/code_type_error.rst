@@ -81,24 +81,24 @@ separate and equal TypeError: solutions
 
 ----
 
-The code in ``type_error/src/type_error.py`` from :ref:`separate and equal TypeError`
+The code in ``type_error/src/type_error/__init__.py`` from :ref:`separate and equal TypeError`
 
 .. literalinclude:: type_error/solutions/type_error_w_separation.py
   :language: python
   :linenos:
-  :captions: type_error/src/type_error/__init__.py
+  :caption: type_error/src/type_error/__init__.py
   :lines: 1-12
 
 .. literalinclude:: type_error/solutions/type_error_w_separation.py
   :language: python
   :lineno-start: 15
-  :captions: type_error/src/type_error/__init__.py
+  :caption: type_error/src/type_error/__init__.py
   :lines: 15-26
 
 .. literalinclude:: type_error/solutions/type_error_w_separation.py
   :language: python
   :lineno-start: 29
-  :captions: type_error/src/type_error/__init__.py
+  :caption: type_error/src/type_error/__init__.py
   :lines: 29-
 
 ----
