@@ -350,10 +350,11 @@ test_attribute_error_w_variables
 
   .. code-block:: shell
 
-      src/
-      └── attribute_error/
-          └── __init__.py
-              └── variable_00 # does not exist
+    src.attribute.variable_00
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── variable_00 # does not exist
 
   which raises :ref:`AttributeError<what causes AttributeError?>` since there is nothing named ``variable_00`` in the ``attribute_error`` :ref:`module<what is a module?>` in the ``src`` folder_.
 
@@ -376,9 +377,9 @@ test_attribute_error_w_variables
 
 ----
 
-* I open ``attribute_error/__init__.py`` from the ``src`` folder_
+* I open ``__init__.py`` from the ``attribute_error`` folder_ in the ``src`` folder_
 
-* I add ``variable_00`` to ``src/attribute_error/__init__.py``
+* I delete the text in the file_ then add ``variable_00`` to ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -392,18 +393,17 @@ test_attribute_error_w_variables
 
     NameError: name 'variable_00' is not defined
 
-  because I used a name that is not defined in this file_
+  because I used a name that is not defined in this file_.
 
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 8
-    :emphasize-lines: 5
+    :emphasize-lines: 4
     :emphasize-text: NameError
 
     # Exceptions seen
     # AssertionError
-    # ModuleNotFoundError
     # AttributeError
     # NameError
 
@@ -426,9 +426,10 @@ test_attribute_error_w_variables
   .. code-block:: shell
 
     src.attribute_error.variable_00
-    src
-    └── attribute_error.py
-        └── variable_00 = None
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── variable_00 = None
 
   - ``variable_00`` is something in ``attribute_error``, in this case it is a :ref:`variable<what is a variable?>` in ``attribute_error``
   - ``attribute_error`` is something in ``src``, in this case it is ``src/attribute_error/__init__.py`` (a :ref:`module<what is a module?>`) in the ``src`` folder_
@@ -496,9 +497,10 @@ test_attribute_error_w_variables
   .. code-block:: shell
 
     src.attribute_error.variable_01
-    src
-    └── attribute_error.py
-        └── variable_01 = variable_00
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── variable_01 = variable_00
 
 * I add a statement for ``variable_02`` to ``tests/test_attribute_error.py``
 
@@ -540,9 +542,10 @@ test_attribute_error_w_variables
   .. code-block:: shell
 
     src.attribute_error.variable_02
-    src
-    └── attribute_error.py
-        └── variable_02 = variable_01
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── variable_02 = variable_01
 
 * I add a line for ``variable_03`` to ``tests/test_attribute_error.py``
 
@@ -586,9 +589,10 @@ test_attribute_error_w_variables
   .. code-block:: shell
 
     src.attribute_error.variable_03
-    src
-    └── attribute_error.py
-        └── variable_03 = variable_02
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── variable_03 = variable_02
 
 * I add a line for ``variable_04`` to ``tests/test_attribute_error.py``
 
@@ -634,9 +638,10 @@ test_attribute_error_w_variables
   .. code-block:: shell
 
     src.attribute_error.variable_04
-    src
-    └── attribute_error.py
-        └── variable_04 = variable_03
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── variable_04 = variable_03
 
 * I add a line for ``variable_05`` to ``tests/test_attribute_error.py``
 
@@ -684,9 +689,10 @@ test_attribute_error_w_variables
   .. code-block:: shell
 
     src.attribute_error.variable_05
-    src
-    └── attribute_error.py
-        └── variable_05 = variable_04
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── variable_05 = variable_04
 
 * I add a line for ``variable_06`` to ``tests/test_attribute_error.py``
 
@@ -735,9 +741,10 @@ test_attribute_error_w_variables
   .. code-block:: shell
 
     src.attribute_error.variable_06
-    src
-    └── attribute_error.py
-        └── variable_06 = variable_05
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── variable_06 = variable_05
 
 * I add a line for ``variable_07`` to ``tests/test_attribute_error.py``
 
@@ -788,9 +795,10 @@ test_attribute_error_w_variables
   .. code-block:: shell
 
     src.attribute_error.variable_07
-    src
-    └── attribute_error.py
-        └── variable_07 = variable_06
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── variable_07 = variable_06
 
 * I add a line for ``variable_08`` to ``tests/test_attribute_error.py``
 
@@ -843,9 +851,10 @@ test_attribute_error_w_variables
   .. code-block:: shell
 
     src.attribute_error.variable_08
-    src
-    └── attribute_error.py
-        └── variable_08 = variable_07
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── variable_08 = variable_07
 
 * I add a line for ``variable_09`` to ``tests/test_attribute_error.py``
 
@@ -900,9 +909,10 @@ test_attribute_error_w_variables
   .. code-block:: shell
 
     src.attribute_error.variable_09
-    src
-    └── attribute_error.py
-        └── variable_09 = variable_08
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── variable_09 = variable_08
 
 * I remove the commented lines
 
@@ -998,12 +1008,11 @@ test_attribute_error_w_functions
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 6
+    :emphasize-lines: 5
     :emphasize-text: TypeError
 
     # Exceptions seen
     # AssertionError
-    # ModuleNotFoundError
     # AttributeError
     # NameError
     # TypeError
@@ -1024,10 +1033,11 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
-    src.attribute_error.function_00()
-    src
-    └── attribute_error.py
-        └── def function_00(): return variable_09
+    src.attribute_error.function_00() -> None
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── def function_00(): return variable_09
 
 ----
 
@@ -1083,10 +1093,11 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
-    src.attribute_error.function_01()
-    src
-    └── attribute_error.py
-        └── def function_01(): return function_00()
+    src.attribute_error.function_01() -> None
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── def function_01(): return function_00()
 
 * I add a :ref:`call<how to call a function>` to ``function_02`` from :ref:`test_attribute_error_w_functions` in ``tests/test_attribute_error.py``
 
@@ -1124,10 +1135,11 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
-    src.attribute_error.function_02()
-    src
-    └── attribute_error.py
-        └── def function_02(): return function_01()
+    src.attribute_error.function_02() -> None
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── def function_02(): return function_01()
 
 * I add a :ref:`call<how to call a function>` to ``function_03`` from :ref:`test_attribute_error_w_functions` in ``tests/test_attribute_error.py``
 
@@ -1167,10 +1179,11 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
-    src.attribute_error.function_03()
-    src
-    └── attribute_error.py
-        └── def function_03(): return function_02()
+    src.attribute_error.function_03() -> None
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── def function_03(): return function_02()
 
 * I add a :ref:`call<how to call a function>` to ``function_04`` from :ref:`test_attribute_error_w_functions` in ``tests/test_attribute_error.py``
 
@@ -1212,10 +1225,11 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
-    src.attribute_error.function_04()
-    src
-    └── attribute_error.py
-        └── def function_04(): return function_03()
+    src.attribute_error.function_04() -> None
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── def function_04(): return function_03()
 
 * I add a :ref:`call<how to call a function>` to ``function_05`` from :ref:`test_attribute_error_w_functions` in ``tests/test_attribute_error.py``
 
@@ -1259,10 +1273,11 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
-    src.attribute_error.function_05()
-    src
-    └── attribute_error.py
-        └── def function_05(): return function_04()
+    src.attribute_error.function_05() -> None
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── def function_05(): return function_04()
 
 * I add a :ref:`call<how to call a function>` to ``function_06`` from :ref:`test_attribute_error_w_functions` in ``tests/test_attribute_error.py``
 
@@ -1308,10 +1323,11 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
-    src.attribute_error.function_06()
-    src
-    └── attribute_error.py
-        └── def function_06(): return function_05()
+    src.attribute_error.function_06() -> None
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── def function_06(): return function_05()
 
 * I add a :ref:`call<how to call a function>` to ``function_07`` from :ref:`test_attribute_error_w_functions` in ``tests/test_attribute_error.py``
 
@@ -1359,10 +1375,11 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
-    src.attribute_error.function_07()
-    src
-    └── attribute_error.py
-        └── def function_07(): return function_06()
+    src.attribute_error.function_07() -> None
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── def function_07(): return function_06()
 
 * I add a :ref:`call<how to call a function>` to ``function_08`` from :ref:`test_attribute_error_w_functions` in ``tests/test_attribute_error.py``
 
@@ -1412,10 +1429,11 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
-    src.attribute_error.function_08()
-    src
-    └── attribute_error.py
-        └── def function_08(): return function_07()
+    src.attribute_error.function_08() -> None
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── def function_08(): return function_07()
 
 * I add a :ref:`call<how to call a function>` to ``function_09`` from :ref:`test_attribute_error_w_functions` in ``tests/test_attribute_error.py``
 
@@ -1467,10 +1485,11 @@ test_attribute_error_w_functions
 
   .. code-block:: shell
 
-    src.attribute_error.function_09()
-    src
-    └── attribute_error.py
-        └── def function_09(): return function_08()
+    src.attribute_error.function_09() -> None
+    └── src/
+        └── attribute_error/
+            └── __init__.py
+                └── def function_09(): return function_08()
 
 * I add a git_ commit message in the other terminal_
 

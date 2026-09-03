@@ -29,7 +29,6 @@ def test_attribute_error_w_functions():
 
 # Exceptions seen
 # AssertionError
-# ModuleNotFoundError
 # AttributeError
 # NameError
 # TypeError
