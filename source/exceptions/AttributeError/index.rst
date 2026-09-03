@@ -1,6 +1,6 @@
 .. meta::
-  :description: What causes AttributeError in Python? Step-by-step TDD tutorial that deliberately triggers AttributeError: module 'src.attribute_error' has no attribute 'variable_00' (and with "Did you mean" suggestions in later steps), plus side-effect ModuleNotFoundError: No module named 'src.attribute_error', NameError during bare name assignment in GREEN steps, and TypeError: 'NoneType' object is not callable (when a name assigned None is called as a function). Fix by adding 10 module variables (chained = None) then 10 functions (each returning the previous) in src/attribute_error.py; tests use bare attribute access and calls (no assert statement needed for the main tests; the access itself must not raise). Demonstrates that variables and functions are attributes of the module and "in Python everything is an object". Re-uses the initial test_failure from AssertionError. Covers uv init attribute_error, mkdir tests + src, tests/__init__.py, mv main.py, requirements.txt with pytest + pytest-watcher, uv add --requirement requirements.txt, uv run pytest-watcher . --now, git commit after every RED/GREEN/REFACTOR (including "remove the commented lines" on the impl), src package layout for "import src.attribute_error". Part of the Pumping Python TDD book by Jacob Itegboje.
-  :keywords: Jacob Itegboje, Pumping Python, python AttributeError, what causes AttributeError, AttributeError: module 'src.attribute_error' has no attribute, AttributeError Did you mean, python AttributeError fix, TDD AttributeError, red green refactor attributes, uv init attribute_error, src.attribute_error, bare attribute access unittest, no assert needed for AttributeError test, python module has no attribute, variables are attributes of modules, functions are attributes of modules, python everything is an object, python TDD src layout, pytest-watcher AttributeError, AssertionError True is not false, 'NoneType' object is not callable, ModuleNotFoundError No module named src, NameError name is not defined, 10 variables 10 functions, uv add --requirement, uv run pytest-watcher . --now, git commit after each step, remove the commented lines, Pumping Python exceptions, python TDD for beginners AttributeError, src package layout
+  :description: What causes AttributeError in Python? Step-by-step TDD tutorial in the attribute_error project that deliberately triggers AttributeError: module 'src.attribute_error' has no attribute 'variable_00' (and with "Did you mean" suggestions in later steps). Side-effect NameError: name 'variable_00' is not defined when a bare name is not assigned yet, and TypeError: 'NoneType' object is not callable when a name assigned None is called as a function. Fix by adding 10 module variables (chained from None) then 10 functions (each returning the previous) in src/attribute_error/__init__.py (uv init already creates that package file; GREEN deletes the stub then defines names). Tests use bare attribute access and calls (no assert statement needed for the main tests; the access itself must not raise). Demonstrates that variables and functions are attributes of the module and "in Python everything is an object". Re-uses the initial test_failure from AssertionError. Covers uv init attribute_error, mkdir tests, tests/__init__.py, requirements.txt with pytest + pytest-watcher, uv add --requirement requirements.txt, uv run pytest-watcher . --now, git commit after setup and after each test, remove the commented lines on the impl. Part of the Pumping Python TDD book by Jacob Itegboje.
+  :keywords: Jacob Itegboje, Pumping Python, python AttributeError, what causes AttributeError, AttributeError: module 'src.attribute_error' has no attribute, AttributeError Did you mean, python AttributeError fix, TDD AttributeError, red green refactor attributes, uv init attribute_error, src.attribute_error, src/attribute_error/__init__.py, bare attribute access, no assert needed for AttributeError test, python module has no attribute, variables are attributes of modules, functions are attributes of modules, python everything is an object, uv src package layout, pytest-watcher AttributeError, AssertionError assert False is True, 'NoneType' object is not callable, NameError name is not defined, 10 variables 10 functions, uv add --requirement, uv run pytest-watcher . --now, git commit, remove the commented lines, Pumping Python exceptions, python TDD for beginners AttributeError
 
 .. include:: ../../links.rst
 
@@ -346,11 +346,11 @@ test_attribute_error_w_variables
     AttributeError: module 'src.attribute_error'
                     has no attribute 'variable_00'
 
-  because Python_ follows this path when ``src.attribute.variable_00`` runs
+  because Python_ follows this path when ``src.attribute_error.variable_00`` runs
 
   .. code-block:: shell
 
-    src.attribute.variable_00
+    src.attribute_error.variable_00
     └── src/
         └── attribute_error/
             └── __init__.py
@@ -553,7 +553,6 @@ test_attribute_error_w_variables
     :lineno-start: 4
     :emphasize-lines: 5
 
-
     def test_attribute_error_w_variables():
         src.attribute_error.variable_00
         src.attribute_error.variable_01
@@ -599,7 +598,6 @@ test_attribute_error_w_variables
   .. code-block:: python
     :lineno-start: 4
     :emphasize-lines: 6
-
 
     def test_attribute_error_w_variables():
         src.attribute_error.variable_00
@@ -648,7 +646,6 @@ test_attribute_error_w_variables
   .. code-block:: python
     :lineno-start: 4
     :emphasize-lines: 7
-
 
     def test_attribute_error_w_variables():
         src.attribute_error.variable_00

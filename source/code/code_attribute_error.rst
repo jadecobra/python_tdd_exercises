@@ -71,8 +71,28 @@ The code in ``attribute_error/tests/test_attribute_error_w_classes.py`` from :re
 AttributeError with classes solutions
 =================================================================================
 
-the solutions in ``attribute_error/solutions/attribute_error.py`` from :ref:`AttributeError with classes`
+the solutions in ``attribute_error/src/attribute_error/__init__.py`` from :ref:`AttributeError with classes`
 
-.. literalinclude:: attribute_error/solutions/attribute_error.py
+.. literalinclude:: attribute_error/solutions/attribute_error_w_classes.py
   :language: python
   :linenos:
+  :caption: attribute_error/src/attribute_error/__init__.py
+  :lines: 1-10
+
+.. literalinclude:: attribute_error/solutions/attribute_error_w_classes.py
+  :language: python
+  :lineno-start: 13
+  :caption: attribute_error/src/attribute_error/__init__.py
+  :lines: 13-22
+
+.. literalinclude:: attribute_error/solutions/attribute_error_w_classes.py
+  :language: python
+  :lineno-start: 25
+  :caption: attribute_error/src/attribute_error/__init__.py
+  :lines: 25-36
+
+.. literalinclude:: attribute_error/solutions/attribute_error_w_classes.py
+  :language: python
+  :lineno-start: 38
+  :caption: attribute_error/src/attribute_error/__init__.py
+  :lines: 38-
