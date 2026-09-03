@@ -22,7 +22,7 @@ def test_type_error_w_keyword_arguments():
     src.type_error.function_02(
         third=(0, 1, 2, 'n'),
         second=[0, 1, 2, 'n'],
-        first={0, 1, 2, 'n'},
+        first={0, 1, 2, 'n'}
     )
     src.type_error.function_03(
         first=None,
@@ -33,7 +33,7 @@ def test_type_error_w_keyword_arguments():
     src.type_error.function_04(argument='value')
     src.type_error.function_05(
         argument_0='value_1',
-        argument_1=(0, 1, 2, 'n'),
+        argument_1=(0, 1, 2, 'n')
     )
     src.type_error.function_06(
         argument_0='value_1',
@@ -67,8 +67,7 @@ def test_type_error_w_args_and_kwargs():
     )
     src.type_error.function_04(argument='value_2')
     src.type_error.function_05(
-        (0, 1, 2, 'n'),
-        [0, 1, 2, 'n'],
+        (0, 1, 2, 'n'), [0, 1, 2, 'n']
     )
     src.type_error.function_06(
         argument_2=(0, 1, 2, 'n'),
@@ -91,5 +90,4 @@ def test_type_error_w_args_and_kwargs():
 # AssertionError
 # NameError
 # TypeError
-# ModuleNotFoundError
 # AttributeError

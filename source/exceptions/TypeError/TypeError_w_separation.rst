@@ -1,6 +1,6 @@
 .. meta::
-  :description: Separate tests from solutions ("separate and equal") in the type_error project with TDD. Move function_00–function_08 from tests/test_type_error.py into src/type_error.py: import src.type_error, mkdir src, touch src/type_error.py, reroute calls to src.type_error.function_N, remove commented local calls, then delete the local defs. Real errors on the way: "NameError: name 'src' is not defined", "ModuleNotFoundError: No module named 'src'", "ModuleNotFoundError: No module named 'src.type_error'", "AttributeError: module 'src.type_error' has no attribute 'function_00'", plus TypeError while renaming signatures so keyword tests match (unexpected keyword, missing required positional, function_08 multiple values for 'argument' until def function_08(name, argument)). Three tests keep working: test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs (mixed call function_08('positional', argument='keyword')). uv run pytest-watcher . --now, git commits. Review: I can write solutions in a different module from the tests. Jacob Itegboje Pumping Python TDD.
-  :keywords: Jacob Itegboje, Pumping Python, separate and equal TypeError, separate tests from solutions, src/type_error.py, import src.type_error, src.type_error.function_00, NameError name 'src' is not defined, ModuleNotFoundError No module named 'src', ModuleNotFoundError No module named 'src.type_error', AttributeError module 'src.type_error' has no attribute, TypeError unexpected keyword argument, TypeError multiple values for argument, function_08(name, argument), test_type_error_w_separation, remove the commented lines, uv pytest-watcher, git commit, I can write solutions in a different module from the tests, TypeError continuation, python src package
+  :description: Separate tests from solutions ("separate and equal") in the type_error project with TDD. Move function_00–function_08 from tests/test_type_error.py into src/type_error/__init__.py: import src.type_error, mkdir src, touch src/type_error/__init__.py, reroute calls to src.type_error.function_N, remove commented local calls, then delete the local defs. Real errors on the way: "NameError: name 'src' is not defined", "ModuleNotFoundError: No module named 'src'", "ModuleNotFoundError: No module named 'src.type_error'", "AttributeError: module 'src.type_error' has no attribute 'function_00'", plus TypeError while renaming signatures so keyword tests match (unexpected keyword, missing required positional, function_08 multiple values for 'argument' until def function_08(name, argument)). Three tests keep working: test_type_error_w_positional_arguments, test_type_error_w_keyword_arguments, test_type_error_w_args_and_kwargs (mixed call function_08('positional', argument='keyword')). uv run pytest-watcher . --now, git commits. Review: I can write solutions in a different module from the tests. Jacob Itegboje Pumping Python TDD.
+  :keywords: Jacob Itegboje, Pumping Python, separate and equal TypeError, separate tests from solutions, src/type_error/__init__.py, import src.type_error, src.type_error.function_00, NameError name 'src' is not defined, ModuleNotFoundError No module named 'src', ModuleNotFoundError No module named 'src.type_error', AttributeError module 'src.type_error' has no attribute, TypeError unexpected keyword argument, TypeError multiple values for argument, function_08(name, argument), test_type_error_w_separation, remove the commented lines, uv pytest-watcher, git commit, I can write solutions in a different module from the tests, TypeError continuation, python src package
 
 .. include:: ../../links.rst
 
@@ -1971,20 +1971,13 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 
     cd type_error
 
-* I add ``src/type_error/__init__.py`` to git_ for tracking
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    git add src/type_error.py
-
 * I add a git_ commit message in the new terminal_
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'move functions to type_error.py'
+    'move functions to src'
 
 ----
 
@@ -1992,7 +1985,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 close the project
 *********************************************************************************
 
-* I close ``tests/test_type_error.py`` and ``src/type_error.py``
+* I close ``tests/test_type_error.py`` and ``src/type_error/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
