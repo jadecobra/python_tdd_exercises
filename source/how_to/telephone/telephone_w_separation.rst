@@ -8,7 +8,7 @@
 separate and equal telephone
 #################################################################################
 
-The ``text`` :ref:`function<what is a function?>` in :ref:`the telephone project<telephone>` was written in ``test_telephone.py``. I want to move it to ``telephone.py`` in the ``src`` folder_ so that I can keep the tests and solution separate.
+The ``text`` :ref:`function<what is a function?>` in :ref:`the telephone project<telephone>` was written in ``tests/test_telephone.py``. I want to move it to ``__init__.py`` in the ``telephone`` folder_ in the ``src`` folder_ so that I can keep the tests and solution separate.
 
 ----
 
@@ -74,7 +74,7 @@ open the project
 
     .../pumping_python/telephone
 
-* I open ``test_telephone.py``
+* I open ``test_telephone.py`` from the ``tests`` folder
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -103,7 +103,7 @@ move test_passing_none
 
 ----
 
-I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_none` to use the result of a :ref:`call<how to call a function with input>` to the ``text`` :ref:`function<what is a function?>` of the ``telephone`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the ``text`` :ref:`function<what is a function?>` in ``test_telephone.py``
+I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_none` to use the result of a :ref:`call<how to call a function with input>` to the ``text`` :ref:`function<what is a function?>` of the ``telephone`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the ``text`` :ref:`function<what is a function?>` in ``tests/test_telephone.py``
 
 .. code-block:: python
   :linenos:
@@ -117,7 +117,7 @@ I change the :ref:`call<how to call a function with input>` in the :ref:`asserti
       reality = src.telephone.text(None)
       my_expectation = 'I got: None'
       # assert text(None) == 'I got: None'
-      assert reality == my_expectation
+      assert_equal(reality, my_expectation)
 
 
   def test_passing_booleans():
@@ -128,7 +128,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   NameError: name 'src' is not defined
 
-because there is nothing with that name in ``test_telephone.py``.
+because there is nothing with that name in ``tests/test_telephone.py``.
 
 ----
 
@@ -138,7 +138,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
 ----
 
-* I add an `import statement`_ at the top of ``test_telephone.py``
+* I add an `import statement`_ at the top of ``tests/test_telephone.py``
 
   .. code-block:: python
     :linenos:
@@ -184,7 +184,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
 * I go back to the terminal_ where the tests are running
 
-* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) in ``test_telephone.py`` to run the test again, and the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) in ``tests/test_telephone.py`` to run the test again, and the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -207,7 +207,7 @@ because there is nothing with that name in ``test_telephone.py``.
     # ModuleNotFoundError
     # AttributeError
 
-* I change the `import statement`_ to make it import ``telephone.py`` from the ``src`` folder_
+* I change the `import statement`_ to make it import ``src/telephone/__init__.py`` from the ``src`` folder_
 
   .. code-block:: python
     :linenos:
@@ -225,11 +225,11 @@ because there is nothing with that name in ``test_telephone.py``.
 
     E   ModuleNotFoundError: No module named 'src.telephone'
 
-  because Python_ cannot find ``telephone.py`` in the ``src`` folder_ since I have not made it yet.
+  because Python_ cannot find ``__init__.py`` in the ``telephone`` folder_ in the ``src`` folder_ since I have not made it yet.
 
 * I go to the other terminal_
 
-* I use touch_ to make ``telephone.py`` in the ``src`` folder_
+* I use touch_ to make ``__init__.py`` in the ``telephone`` folder_ in the ``src`` folder_
 
   .. tab-set::
     :sync-group: os
@@ -266,10 +266,10 @@ because there is nothing with that name in ``test_telephone.py``.
 
     AttributeError: module 'src.telephone' has no attribute 'text'
 
-  because ``telephone.py`` in the ``src`` folder_ does not have anything named ``text`` inside it.
+  because ``__init__.py`` in the ``telephone`` folder_ in the ``src`` folder_ does not have anything named ``text`` inside it.
 
 * I open ``telephone/__init__.py`` from the ``src`` folder_
-* I add a copy of the ``text`` :ref:`function<what is a function?>` to ``telephone.py``
+* I add a copy of the ``text`` :ref:`function<what is a function?>` to ``src/telephone/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -280,21 +280,22 @@ because there is nothing with that name in ``test_telephone.py``.
 
   the test passes because
 
-  - Python_ brings in an :ref:`object<everything is an object>` for the ``telephone.py`` file_ from the ``src`` folder_ so I can use it in ``test_telephone.py`` as ``src.telephone`` when ``import src.telephone`` runs.
-  - Python_ calls the ``text`` :ref:`function<what is a function?>` from the :ref:`object<everything is an object>` it imported for the ``telephone.py`` file_ from the ``src`` folder_ (``src.telephone``) when ``src.telephone.text(None)`` runs.
+  - Python_ brings in an :ref:`object<everything is an object>` for the ``src/telephone/__init__.py`` file_ from the ``src`` folder_ so I can use it in ``tests/test_telephone.py`` as ``src.telephone`` when ``import src.telephone`` runs.
+  - Python_ calls the ``text`` :ref:`function<what is a function?>` from the :ref:`object<everything is an object>` it imported for the ``src/telephone/__init__.py`` file_ from the ``src`` folder_ (``src.telephone``) when ``src.telephone.text(None)`` runs.
 
   I think of ``src.telephone.text`` like an address
 
   .. code-block:: shell
 
     src.telephone.text
-    src
-    └── telephone.py
-        └── def text(the_input):
-            └── return f'I got: {the_input}'
+    src/
+    └── telephone/
+        └── __init__.py
+            └── def text(the_input): text(the_input):
+                └── return f'I got: {the_input}'
 
   - ``text`` is something in ``telephone``, in this case it is a :ref:`function<what is a function?>` in ``telephone``
-  - ``telephone`` is something in ``src``, in this case it is ``telephone.py`` (a :ref:`module<what is a module?>`) in the ``src`` folder_
+  - ``telephone`` is something in ``src``, in this case it is ``src/telephone/__init__.py`` (a :ref:`module<what is a module?>`) in the ``src`` folder_
   - ``src`` is something Python_ can import (a :ref:`module<what is a module?>`, `Python package`_ or folder_)
 
 
@@ -306,7 +307,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
 ----
 
-* I remove the commented lines from ``test_telephone.py``
+* I remove the commented lines from ``tests/test_telephone.py``
 
   .. code-block:: python
     :linenos:
@@ -321,7 +322,7 @@ because there is nothing with that name in ``test_telephone.py``.
     def test_passing_none():
         reality = src.telephone.text(None)
         my_expectation = 'I got: None'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_booleans():
@@ -336,7 +337,7 @@ because there is nothing with that name in ``test_telephone.py``.
         reality = src.telephone.text(False)
         my_expectation = 'I got: False'
         # assert text(False) == 'I got: False'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
         assert text(True) == 'I got: True'
 
 
@@ -347,10 +348,11 @@ because there is nothing with that name in ``test_telephone.py``.
   .. code-block:: shell
 
     src.telephone.text
-    src
-    └── telephone.py
-        └── def text(the_input):
-            └── return f'I got: {the_input}'
+    src/
+    └── telephone/
+        └── __init__.py
+            └── def text(the_input): text(the_input):
+                └── return f'I got: {the_input}'
 
   using the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
@@ -372,12 +374,12 @@ because there is nothing with that name in ``test_telephone.py``.
         # assert text(False) == 'I got: False'
         reality = src.telephone.text(False)
         my_expectation = 'I got: False'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(True)
         my_expectation = 'I got: True'
         # assert text(True) == 'I got: True'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_an_integer():
@@ -392,11 +394,11 @@ because there is nothing with that name in ``test_telephone.py``.
     def test_passing_booleans():
         reality = src.telephone.text(False)
         my_expectation = 'I got: False'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(True)
         my_expectation = 'I got: True'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_an_integer():
@@ -413,7 +415,7 @@ because there is nothing with that name in ``test_telephone.py``.
         reality = src.telephone.text(an_integer)
         my_expectation = f'I got: {an_integer}'
         # assert text(an_integer) == f'I got: {an_integer}'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_a_float():
@@ -430,7 +432,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
         reality = src.telephone.text(an_integer)
         my_expectation = f'I got: {an_integer}'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_a_float():
@@ -447,7 +449,7 @@ because there is nothing with that name in ``test_telephone.py``.
         reality = src.telephone.text(a_float)
         my_expectation = f'I got: {a_float}'
         # assert text(a_float) == f'I got: {a_float}'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_a_string():
@@ -457,10 +459,11 @@ because there is nothing with that name in ``test_telephone.py``.
   .. code-block:: shell
 
     src.telephone.text
-    src
-    └── telephone.py
-        └── def text(the_input):
-            └── return f'I got: {the_input}'
+    src/
+    └── telephone/
+        └── __init__.py
+            └── def text(the_input):
+                └── return f'I got: {the_input}'
 
   using the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
@@ -484,7 +487,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
         reality = src.telephone.text(a_float)
         my_expectation = f'I got: {a_float}'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_a_string():
@@ -503,7 +506,7 @@ because there is nothing with that name in ``test_telephone.py``.
         reality = src.telephone.text(a_string)
         my_expectation = f'I got: {a_string}'
         # assert text(a_string) == f'I got: {a_string}'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_a_tuple():
@@ -520,7 +523,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
         reality = src.telephone.text(a_string)
         my_expectation = f'I got: {a_string}'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_a_tuple():
@@ -537,7 +540,7 @@ because there is nothing with that name in ``test_telephone.py``.
         reality = src.telephone.text(a_tuple)
         my_expectation = f'I got: {a_tuple}'
         # assert text(a_tuple) == f'I got: {a_tuple}'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_a_list():
@@ -554,7 +557,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
         reality = src.telephone.text(a_tuple)
         my_expectation = f'I got: {a_tuple}'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_a_list():
@@ -571,7 +574,7 @@ because there is nothing with that name in ``test_telephone.py``.
         reality = src.telephone.text(a_list)
         my_expectation = f'I got: {a_list}'
         # assert text(a_list) == f'I got: {a_list}'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_a_set():
@@ -588,7 +591,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
         reality = src.telephone.text(a_list)
         my_expectation = f'I got: {a_list}'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_a_set():
@@ -605,7 +608,7 @@ because there is nothing with that name in ``test_telephone.py``.
         reality = src.telephone.text(a_set)
         my_expectation = f'I got: {a_set}'
         # assert text(a_set) == f'I got: {a_set}'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_a_dictionary():
@@ -622,7 +625,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
         reality = src.telephone.text(a_set)
         my_expectation = f'I got: {a_set}'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_a_dictionary():
@@ -641,7 +644,7 @@ because there is nothing with that name in ``test_telephone.py``.
         # reality = text(a_dictionary)
         reality = src.telephone.text(a_dictionary)
         my_expectation = f'I got: {a_dictionary}'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_a_class():
@@ -651,10 +654,11 @@ because there is nothing with that name in ``test_telephone.py``.
   .. code-block:: shell
 
     src.telephone.text
-    src
-    └── telephone.py
-        └── def text(the_input):
-            └── return f'I got: {the_input}'
+    src/
+    └── telephone/
+        └── __init__.py
+            └── def text(the_input): text(the_input):
+                └── return f'I got: {the_input}'
 
   using the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
 
@@ -688,7 +692,7 @@ because there is nothing with that name in ``test_telephone.py``.
 
         reality = src.telephone.text(a_dictionary)
         my_expectation = f'I got: {a_dictionary}'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_a_class():
@@ -703,47 +707,47 @@ because there is nothing with that name in ``test_telephone.py``.
         reality = src.telephone.text(object)
         my_expectation = "I got: <class 'object'>"
         # assert text(object) == "I got: <class 'object'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(bool)
         my_expectation = "I got: <class 'bool'>"
         # assert text(bool) == "I got: <class 'bool'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(int)
         my_expectation = "I got: <class 'int'>"
         # assert text(int) == "I got: <class 'int'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(float)
         my_expectation = "I got: <class 'float'>"
         # assert text(float) == "I got: <class 'float'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(str)
         my_expectation = "I got: <class 'str'>"
         # assert text(str) == "I got: <class 'str'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(tuple)
         my_expectation = "I got: <class 'tuple'>"
         # assert text(tuple) == "I got: <class 'tuple'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(list)
         my_expectation = "I got: <class 'list'>"
         # assert text(list) == "I got: <class 'list'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(set)
         my_expectation = "I got: <class 'set'>"
         # assert text(set) == "I got: <class 'set'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(dict)
         my_expectation = "I got: <class 'dict'>"
         # assert text(dict) == "I got: <class 'dict'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     # Exceptions seen
@@ -758,39 +762,39 @@ because there is nothing with that name in ``test_telephone.py``.
     def test_passing_a_class():
         reality = src.telephone.text(object)
         my_expectation = "I got: <class 'object'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(bool)
         my_expectation = "I got: <class 'bool'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(int)
         my_expectation = "I got: <class 'int'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(float)
         my_expectation = "I got: <class 'float'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(str)
         my_expectation = "I got: <class 'str'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(tuple)
         my_expectation = "I got: <class 'tuple'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(list)
         my_expectation = "I got: <class 'list'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(set)
         my_expectation = "I got: <class 'set'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
         reality = src.telephone.text(dict)
         my_expectation = "I got: <class 'dict'>"
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     # Exceptions seen
@@ -800,7 +804,7 @@ because there is nothing with that name in ``test_telephone.py``.
     # ModuleNotFoundError
     # AttributeError
 
-* I remove the ``text`` :ref:`function<what is a function?>` from ``test_telephone.py``
+* I remove the ``text`` :ref:`function<what is a function?>` from ``tests/test_telephone.py``
 
   .. code-block:: python
     :linenos:
@@ -811,20 +815,21 @@ because there is nothing with that name in ``test_telephone.py``.
     def test_passing_none():
         reality = src.telephone.text(None)
         my_expectation = 'I got: None'
-        assert reality == my_expectation
+        assert_equal(reality, my_expectation)
 
 
     def test_passing_booleans():
 
-  all the tests are still green because all the :ref:`calls<how to call a function with input>` that were to the ``text`` :ref:`function<what is a function?>` of ``test_telephone.py`` in the ``tests`` folder_, now go to the ``text`` :ref:`function<what is a function?>` of ``telephone.py`` in the ``src`` folder_. When ``src.telephone.text`` is called Python_ follows this path
+  all the tests are still green because all the :ref:`calls<how to call a function with input>` that were to the ``text`` :ref:`function<what is a function?>` of ``tests/test_telephone.py`` in the ``tests`` folder_, now go to the ``text`` :ref:`function<what is a function?>` of ``__init__.py`` in the ``telephone`` folder_ in the ``src`` folder_. When ``src.telephone.text`` is called Python_ follows this path
 
   .. code-block:: shell
 
     src.telephone.text
-    src
-    └── telephone.py
-        └── def text(the_input):
-            └── return f'I got: {the_input}'
+    src/
+    └── telephone/
+        └── __init__.py
+            └── def text(the_input): text(the_input):
+                └── return f'I got: {the_input}'
 
 * I add a git_ commit message in the other terminal_
 
@@ -842,7 +847,7 @@ because there is nothing with that name in ``test_telephone.py``.
 test_telephone
 *********************************************************************************
 
-Since the solution is separate from the tests, I can write the program_ that makes the tests pass without looking at ``test_telephone.py``.
+Since the solution is separate from the tests, I can write the program_ that makes the tests pass without looking at ``tests/test_telephone.py``.
 
 ----
 
@@ -852,9 +857,9 @@ Since the solution is separate from the tests, I can write the program_ that mak
 
 ----
 
-* I close ``test_telephone.py``
+* I close ``tests/test_telephone.py``
 
-* I delete the text in ``telephone.py`` and the terminal_ shows 10 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
+* I delete the text in ``src/telephone/__init__.py`` and the terminal_ shows 10 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -901,7 +906,7 @@ Since the solution is separate from the tests, I can write the program_ that mak
 
 ----
 
-* I add the name to ``telephone.py``
+* I add the name to ``src/telephone/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1074,7 +1079,7 @@ Since the solution is separate from the tests, I can write the program_ that mak
 close the project
 *********************************************************************************
 
-* I close ``telephone.py``
+* I close ``src/telephone/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
