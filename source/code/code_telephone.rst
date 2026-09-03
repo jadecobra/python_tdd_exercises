@@ -54,6 +54,32 @@ The code in ``telephone/tests/test_telephone.py`` from :ref:`separate and equal 
 .. literalinclude:: telephone/tests/test_telephone_w_separation.py
   :language: python
   :linenos:
+  :caption: telephone/tests/test_telephone.py
+  :lines: 1-12
+
+.. literalinclude:: telephone/tests/test_telephone_w_separation.py
+  :language: python
+  :lineno-start: 15
+  :caption: telephone/tests/test_telephone.py
+  :lines: 15-27
+
+.. literalinclude:: telephone/tests/test_telephone_w_separation.py
+  :language: python
+  :lineno-start: 30
+  :caption: telephone/tests/test_telephone.py
+  :lines: 30-42
+
+.. literalinclude:: telephone/tests/test_telephone_w_separation.py
+  :language: python
+  :lineno-start: 45
+  :caption: telephone/tests/test_telephone.py
+  :lines: 45-57
+
+.. literalinclude:: telephone/tests/test_telephone_w_separation.py
+  :language: python
+  :lineno-start: 60
+  :caption: telephone/tests/test_telephone.py
+  :lines: 60-
 
 ----
 
