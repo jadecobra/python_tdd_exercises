@@ -65,15 +65,15 @@ def test_type_error_w_args_and_kwargs():
         third={0, 1, 2, 'n'},
         fourth={'key': 'value'},
     )
-    src.type_error.function_04('value')
+    src.type_error.function_04(argument='value_2')
     src.type_error.function_05(
         (0, 1, 2, 'n'),
         [0, 1, 2, 'n'],
     )
     src.type_error.function_06(
-        (0, 1, 2, 'n'),
-        [0, 1, 2, 'n'],
-        argument_2={0, 1, 2, 'n'},
+        argument_2=(0, 1, 2, 'n'),
+        argument_0=[0, 1, 2, 'n'],
+        argument_1={0, 1, 2, 'n'},
     )
     src.type_error.function_07(
         argument_n={'key': 'value'},
