@@ -815,7 +815,7 @@ move positional_arguments
 
 ----
 
-* I use a :ref:`variable<what is a variable?>` to reroute the calls to the :ref:`positional_arguments function<test_positional_arguments>` from :ref:`test_positional_arguments` to the :ref:`positional_arguments function<test_positional_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I use a :ref:`variable<what is a variable?>` to reroute the :ref:`calls<how to call a function with input>` to the :ref:`positional_arguments function<test_positional_arguments>` from :ref:`test_positional_arguments` to the :ref:`positional_arguments function<test_positional_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 52
@@ -978,7 +978,7 @@ move keyword_arguments
 
 ----
 
-* I use a :ref:`variable<what is a variable?>` to reroute the calls to the :ref:`keyword_arguments function<test_keyword_arguments>` from :ref:`test_keyword_arguments` to the :ref:`keyword_arguments function<test_keyword_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I use a :ref:`variable<what is a variable?>` to reroute the :ref:`calls<how to call a function with input>` to the :ref:`keyword_arguments function<test_keyword_arguments>` from :ref:`test_keyword_arguments` to the :ref:`keyword_arguments function<test_keyword_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 99
@@ -1323,7 +1323,7 @@ move optional_arguments
 
 ----
 
-* I use a :ref:`variable<what is a variable?>` to reroute the calls to the :ref:`optional_arguments function<test_optional_arguments>` from :ref:`test_optional_arguments` to the :ref:`optional_arguments function<test_optional_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I use a :ref:`variable<what is a variable?>` to reroute the :ref:`calls<how to call a function with input>` to the :ref:`optional_arguments function<test_optional_arguments>` from :ref:`test_optional_arguments` to the :ref:`optional_arguments function<test_optional_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 153
@@ -1451,7 +1451,7 @@ move unknown_number_of_arguments function
 
 ----
 
-* I use a :ref:`variable<what is a variable?>` to reroute the calls to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` from :ref:`test_unknown_number_of_arguments` to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I use a :ref:`variable<what is a variable?>` to reroute the :ref:`calls<how to call a function with input>` to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` from :ref:`test_unknown_number_of_arguments` to the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` of the ``functions`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 192

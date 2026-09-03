@@ -22,37 +22,31 @@ I have these tests by the end of the chapter
   :language: python
   :linenos:
   :caption: telephone/tests/test_telephone.py
-  :lines: 1-11
+  :lines: 1-12
 
 .. literalinclude:: ../../code/telephone/tests/test_telephone_w_separation.py
   :language: python
-  :lineno-start: 14
+  :lineno-start: 15
   :caption: telephone/tests/test_telephone.py
-  :lines: 14-29
+  :lines: 15-27
 
 .. literalinclude:: ../../code/telephone/tests/test_telephone_w_separation.py
   :language: python
-  :lineno-start: 32
+  :lineno-start: 30
   :caption: telephone/tests/test_telephone.py
-  :lines: 32-45
+  :lines: 30-42
 
 .. literalinclude:: ../../code/telephone/tests/test_telephone_w_separation.py
   :language: python
-  :lineno-start: 48
+  :lineno-start: 45
   :caption: telephone/tests/test_telephone.py
-  :lines: 48-61
+  :lines: 45-57
 
 .. literalinclude:: ../../code/telephone/tests/test_telephone_w_separation.py
   :language: python
-  :lineno-start: 64
+  :lineno-start: 60
   :caption: telephone/tests/test_telephone.py
-  :lines: 64-80
-
-.. literalinclude:: ../../code/telephone/tests/test_telephone_w_separation.py
-  :language: python
-  :lineno-start: 83
-  :caption: telephone/tests/test_telephone.py
-  :lines: 83-
+  :lines: 60-
 
 ----
 
@@ -94,7 +88,7 @@ open the project
 ----
 
 *********************************************************************************
-move test_passing_none
+move text
 *********************************************************************************
 
 =================================================================================
@@ -103,32 +97,27 @@ move test_passing_none
 
 ----
 
-I change the :ref:`call<how to call a function with input>` in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_none` to use the result of a :ref:`call<how to call a function with input>` to the ``text`` :ref:`function<what is a function?>` of the ``telephone`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a :ref:`call<how to call a function with input>` to the ``text`` :ref:`function<what is a function?>` in ``tests/test_telephone.py``
+I comment out the ``text`` :ref:`function<what is a function?>` in ``tests/test_telephone.py``
 
 .. code-block:: python
   :linenos:
-  :emphasize-lines: 6-9
+  :emphasize-lines: 5-6
 
-  def text(the_input):
-      return f'I got: {the_input}'
+  def assert_equal(a, b):
+      assert a == b
+
+
+  # def text(the_input):
+  #     return f'I got: {the_input}'
 
 
   def test_passing_none():
-      reality = src.telephone.text(None)
-      my_expectation = 'I got: None'
-      # assert text(None) == 'I got: None'
-      assert_equal(reality, my_expectation)
 
-
-  def test_passing_booleans():
-
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 .. code-block:: python
 
-  NameError: name 'src' is not defined
-
-because there is nothing with that name in ``tests/test_telephone.py``.
+  NameError: name 'text' is not defined
 
 ----
 
@@ -138,138 +127,60 @@ because there is nothing with that name in ``tests/test_telephone.py``.
 
 ----
 
+* I use a :ref:`variable<what is a variable?>` to reroute the :ref:`calls<how to call a function with input>` to the ``text`` :ref:`function<what is a function?>` to the ``text`` :ref:`function<what is a function?>` of the ``telephone`` :ref:`module<what is a module?>` in the ``src`` folder_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    text = src.telephone.text
+
+
+    def assert_equal(a, b):
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'src' is not defined
+
+  because there is nothing with that name in ``tests/test_telephone.py``.
+
 * I add an `import statement`_ at the top of ``tests/test_telephone.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1
 
-    import src
+    import src.telephone
 
 
-    def text(the_input):
-        return f'I got: {the_input}'
+    text = src.telephone.text
 
-  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
-
-  .. code-block:: python
-
-    E   ModuleNotFoundError: No module named 'src'
-
-  because there is nothing named ``src`` in the project.
-
-* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
-    :lineno-start: 72
+
+    AttributeError: module 'src.telephone'
+                    has no attribute 'text'
+
+  because the ``telephone`` :ref:`module<what is a module?>` in the ``src`` folder_ does not have anything named ``text`` inside it.
+
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 78
     :emphasize-lines: 5
-    :emphasize-text: ModuleNotFoundError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # TypeError
-    # ModuleNotFoundError
-
-* I open another terminal_ and make sure I am in the ``telephone`` folder_
-
-* I use mkdir_ to make a folder_ named ``src``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    mkdir src
-
-  the terminal_ goes back to the command line.
-
-* I go back to the terminal_ where the tests are running
-
-* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) in ``tests/test_telephone.py`` to run the test again, and the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: python
-
-    AttributeError: module 'src'
-                    has no attribute 'telephone'
-
-  because there is nothing named ``telephone`` in the ``src`` folder_.
-
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
-
-  .. code-block:: python
-    :lineno-start: 72
-    :emphasize-lines: 6
     :emphasize-text: AttributeError
 
     # Exceptions seen
     # AssertionError
     # NameError
     # TypeError
-    # ModuleNotFoundError
     # AttributeError
 
-* I change the `import statement`_ to make it import ``src/telephone/__init__.py`` from the ``src`` folder_
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-2
-
-    # import src
-    import src.telephone
-
-
-    def text(the_input):
-
-  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
-
-  .. code-block:: python
-
-    E   ModuleNotFoundError: No module named 'src.telephone'
-
-  because Python_ cannot find ``__init__.py`` in the ``telephone`` folder_ in the ``src`` folder_ since I have not made it yet.
-
-* I go to the other terminal_
-
-* I use touch_ to make ``__init__.py`` in the ``telephone`` folder_ in the ``src`` folder_
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        touch src/telephone.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        New-Item src/telephone.py
-
-  the terminal_ goes back to the command line.
-
-* I add the new file_ to git_ for tracking
-
-  .. code-block:: python
-
-    git add src/telephone.py
-
-  the terminal_ goes back to the command line.
-
-* I go back to the terminal_ where the tests are running and it shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: python
-
-    AttributeError: module 'src.telephone' has no attribute 'text'
-
-  because ``__init__.py`` in the ``telephone`` folder_ in the ``src`` folder_ does not have anything named ``text`` inside it.
-
-* I open ``telephone/__init__.py`` from the ``src`` folder_
-* I add a copy of the ``text`` :ref:`function<what is a function?>` to ``src/telephone/__init__.py``
+* I open ``__init__.py`` from the ``telephone`` folder_ in the ``src`` folder_
+* I delete all the text in the file_ then add a copy of the ``text`` :ref:`function<what is a function?>` to ``src/telephone/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -278,10 +189,10 @@ because there is nothing with that name in ``tests/test_telephone.py``.
     def text(the_input):
         return f'I got: {the_input}'
 
-  the test passes because
+  all the tests are green again because
 
-  - Python_ brings in an :ref:`object<everything is an object>` for the ``src/telephone/__init__.py`` file_ from the ``src`` folder_ so I can use it in ``tests/test_telephone.py`` as ``src.telephone`` when ``import src.telephone`` runs.
-  - Python_ calls the ``text`` :ref:`function<what is a function?>` from the :ref:`object<everything is an object>` it imported for the ``src/telephone/__init__.py`` file_ from the ``src`` folder_ (``src.telephone``) when ``src.telephone.text(None)`` runs.
+  - Python_ brings in an :ref:`object<everything is an object>` for the ``__init__.py`` file_ from the ``telephone`` folder_ in the ``src`` folder_ so I can use it in ``tests/test_telephone.py`` as ``src.telephone`` when ``import src.telephone`` runs.
+  - Python_ calls the ``text`` :ref:`function<what is a function?>` from the :ref:`object<everything is an object>` it imported for the ``src/telephone/__init__.py`` file_ (``src.telephone``) when ``src.telephone.text`` is :ref:`called<how to call a function with input>`.
 
   I think of ``src.telephone.text`` like an address
 
@@ -291,12 +202,12 @@ because there is nothing with that name in ``tests/test_telephone.py``.
     src/
     └── telephone/
         └── __init__.py
-            └── def text(the_input): text(the_input):
+            └── def text(the_input):
                 └── return f'I got: {the_input}'
 
-  - ``text`` is something in ``telephone``, in this case it is a :ref:`function<what is a function?>` in ``telephone``
-  - ``telephone`` is something in ``src``, in this case it is ``src/telephone/__init__.py`` (a :ref:`module<what is a module?>`) in the ``src`` folder_
-  - ``src`` is something Python_ can import (a :ref:`module<what is a module?>`, `Python package`_ or folder_)
+  - ``text`` is something in the ``telephone`` :ref:`module<what is a module>`, in this case it is a :ref:`function<what is a function?>` in the ``__init__.py`` file_.
+  - ``telephone`` is something in ``src``, in this case it is a folder_ in the ``src`` folder_.
+  - ``src`` is something Python_ can import (a :ref:`module<what is a module?>`, `Python package`_ or folder_).
 
 
 ----
@@ -315,521 +226,14 @@ because there is nothing with that name in ``tests/test_telephone.py``.
     import src.telephone
 
 
-    def text(the_input):
-        return f'I got: {the_input}'
+    text = src.telephone.text
+
+
+    def assert_equal(a, b):
+        assert a == b
 
 
     def test_passing_none():
-        reality = src.telephone.text(None)
-        my_expectation = 'I got: None'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_booleans():
-
-* I change the call in the first :ref:`assertion<what is an assertion?>` of :ref:`test_passing_booleans` to ``src.telephone.text``
-
-  .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 2-5
-
-    def test_passing_booleans():
-        reality = src.telephone.text(False)
-        my_expectation = 'I got: False'
-        # assert text(False) == 'I got: False'
-        assert_equal(reality, my_expectation)
-        assert text(True) == 'I got: True'
-
-
-    def test_passing_an_integer():
-
-  the test is still green because when ``src.telephone.text`` is called, Python_ follows this path
-
-  .. code-block:: shell
-
-    src.telephone.text
-    src/
-    └── telephone/
-        └── __init__.py
-            └── def text(the_input): text(the_input):
-                └── return f'I got: {the_input}'
-
-  using the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
-
-  .. code-block:: python
-
-    text(None)
-        text(the_input)
-            the_input = None
-            return f'I got: {the_input}'
-            return  'I got:  None      '
-
-* I make the same change for the next :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 7-10
-
-    def test_passing_booleans():
-        # assert text(False) == 'I got: False'
-        reality = src.telephone.text(False)
-        my_expectation = 'I got: False'
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(True)
-        my_expectation = 'I got: True'
-        # assert text(True) == 'I got: True'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_an_integer():
-
-  still green.
-
-* I remove the commented lines from :ref:`test_passing_booleans`
-
-  .. code-block:: python
-    :lineno-start: 14
-
-    def test_passing_booleans():
-        reality = src.telephone.text(False)
-        my_expectation = 'I got: False'
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(True)
-        my_expectation = 'I got: True'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_an_integer():
-
-* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_an_integer` to ``src.telephone.text``
-
-  .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 4-7
-
-    def test_passing_an_integer():
-        an_integer = 1234
-
-        reality = src.telephone.text(an_integer)
-        my_expectation = f'I got: {an_integer}'
-        # assert text(an_integer) == f'I got: {an_integer}'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_a_float():
-
-  green.
-
-* I remove the commented line from :ref:`test_passing_an_integer`
-
-  .. code-block:: python
-    :lineno-start: 24
-
-    def test_passing_an_integer():
-        an_integer = 1234
-
-        reality = src.telephone.text(an_integer)
-        my_expectation = f'I got: {an_integer}'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_a_float():
-
-* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_a_float`
-
-  .. code-block:: python
-    :lineno-start: 32
-    :emphasize-lines: 4-7
-
-    def test_passing_a_float():
-        a_float = 5.678
-
-        reality = src.telephone.text(a_float)
-        my_expectation = f'I got: {a_float}'
-        # assert text(a_float) == f'I got: {a_float}'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_a_string():
-
-  still green because when ``src.telephone.text`` is called, Python_ follows this path
-
-  .. code-block:: shell
-
-    src.telephone.text
-    src/
-    └── telephone/
-        └── __init__.py
-            └── def text(the_input):
-                └── return f'I got: {the_input}'
-
-  using the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
-
-  .. code-block:: python
-
-    a_float = 5.678
-
-    text(a_float)
-        text(the_input)
-            the_input = 5.678
-            return f'I got: {the_input}'
-            return  'I got:  5.678     '
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 32
-
-    def test_passing_a_float():
-        a_float = 5.678
-
-        reality = src.telephone.text(a_float)
-        my_expectation = f'I got: {a_float}'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_a_string():
-
-  the test is still green.
-
-* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_a_string`
-
-  .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 4-7
-
-    def test_passing_a_string():
-        a_string = 'hello'
-
-        reality = src.telephone.text(a_string)
-        my_expectation = f'I got: {a_string}'
-        # assert text(a_string) == f'I got: {a_string}'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_a_tuple():
-
-  still green.
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 40
-
-    def test_passing_a_string():
-        a_string = 'hello'
-
-        reality = src.telephone.text(a_string)
-        my_expectation = f'I got: {a_string}'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_a_tuple():
-
-* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_a_tuple`
-
-  .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 4-7
-
-    def test_passing_a_tuple():
-        a_tuple = (0, 1, 2, 'n')
-
-        reality = src.telephone.text(a_tuple)
-        my_expectation = f'I got: {a_tuple}'
-        # assert text(a_tuple) == f'I got: {a_tuple}'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_a_list():
-
-  green.
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 48
-
-    def test_passing_a_tuple():
-        a_tuple = (0, 1, 2, 'n')
-
-        reality = src.telephone.text(a_tuple)
-        my_expectation = f'I got: {a_tuple}'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_a_list():
-
-* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_a_list`
-
-  .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 4-7
-
-    def test_passing_a_list():
-        a_list = [0, 1, 2, 'n']
-
-        reality = src.telephone.text(a_list)
-        my_expectation = f'I got: {a_list}'
-        # assert text(a_list) == f'I got: {a_list}'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_a_set():
-
-  still green.
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 56
-
-    def test_passing_a_list():
-        a_list = [0, 1, 2, 'n']
-
-        reality = src.telephone.text(a_list)
-        my_expectation = f'I got: {a_list}'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_a_set():
-
-* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_a_set`
-
-  .. code-block:: python
-    :lineno-start: 64
-    :emphasize-lines: 4-7
-
-    def test_passing_a_set():
-        a_set = {0, 1, 2, 'n'}
-
-        reality = src.telephone.text(a_set)
-        my_expectation = f'I got: {a_set}'
-        # assert text(a_set) == f'I got: {a_set}'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_a_dictionary():
-
-  the test is still green.
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 64
-
-    def test_passing_a_set():
-        a_set = {0, 1, 2, 'n'}
-
-        reality = src.telephone.text(a_set)
-        my_expectation = f'I got: {a_set}'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_a_dictionary():
-
-* I change the value the ``reality`` :ref:`variable<what is a variable?>` of :ref:`test_passing_a_dictionary` points to from the result of a :ref:`call<how to call a function with input>` to the ``text`` :ref:`function<what is a function?>` of the ``test_telephone`` :ref:`module<what is a module?>`, to the result of a :ref:`call<how to call a function with input>` to the ``text`` :ref:`function<what is a function?>` of the ``telephone`` :ref:`module<what is a module?>` in the ``src`` folder_
-
-  .. code-block:: python
-    :lineno-start: 72
-    :emphasize-lines: 6-7
-
-    def test_passing_a_dictionary():
-        a_dictionary = {
-            'key0': 'value0',
-            'keyN': [0, 1, 2, 'n'],
-        }
-        # reality = text(a_dictionary)
-        reality = src.telephone.text(a_dictionary)
-        my_expectation = f'I got: {a_dictionary}'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_a_class():
-
-  still green because when ``src.telephone.text`` is called, Python_ follows this path
-
-  .. code-block:: shell
-
-    src.telephone.text
-    src/
-    └── telephone/
-        └── __init__.py
-            └── def text(the_input): text(the_input):
-                └── return f'I got: {the_input}'
-
-  using the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
-
-  .. code-block:: python
-
-    a_dictionary = {
-        'key0': 'value0',
-        'keyN': [0, 1, 2, 'n'],
-    }
-
-    text(a_dictionary)
-        text(the_input)
-            the_input = {
-                'key0': 'value0',
-                'keyN': [0, 1, 2, 'n'],
-            }
-            return f'I got: {the_input}'
-            return ("I got: {'key0': 'value0',"
-                             'keyN': [0, 1, 2, 'n']}")
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 72
-
-    def test_passing_a_dictionary():
-        a_dictionary = {
-            'key0': 'value0',
-            'keyN': [0, 1, 2, 'n'],
-        }
-
-        reality = src.telephone.text(a_dictionary)
-        my_expectation = f'I got: {a_dictionary}'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_a_class():
-
-* I change the calls in the :ref:`assertions<what is an assertion?>` of :ref:`test_passing_a_class`
-
-  .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 2-5, 7-10, 12-15, 17-20, 22-25, 27-30, 32-35, 37-40, 42-45
-
-    def test_passing_a_class():
-        reality = src.telephone.text(object)
-        my_expectation = "I got: <class 'object'>"
-        # assert text(object) == "I got: <class 'object'>"
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(bool)
-        my_expectation = "I got: <class 'bool'>"
-        # assert text(bool) == "I got: <class 'bool'>"
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(int)
-        my_expectation = "I got: <class 'int'>"
-        # assert text(int) == "I got: <class 'int'>"
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(float)
-        my_expectation = "I got: <class 'float'>"
-        # assert text(float) == "I got: <class 'float'>"
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(str)
-        my_expectation = "I got: <class 'str'>"
-        # assert text(str) == "I got: <class 'str'>"
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(tuple)
-        my_expectation = "I got: <class 'tuple'>"
-        # assert text(tuple) == "I got: <class 'tuple'>"
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(list)
-        my_expectation = "I got: <class 'list'>"
-        # assert text(list) == "I got: <class 'list'>"
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(set)
-        my_expectation = "I got: <class 'set'>"
-        # assert text(set) == "I got: <class 'set'>"
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(dict)
-        my_expectation = "I got: <class 'dict'>"
-        # assert text(dict) == "I got: <class 'dict'>"
-        assert_equal(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the test is still green.
-
-* I remove the commented lines from :ref:`test_passing_a_class`
-
-  .. code-block:: python
-    :lineno-start: 83
-
-    def test_passing_a_class():
-        reality = src.telephone.text(object)
-        my_expectation = "I got: <class 'object'>"
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(bool)
-        my_expectation = "I got: <class 'bool'>"
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(int)
-        my_expectation = "I got: <class 'int'>"
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(float)
-        my_expectation = "I got: <class 'float'>"
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(str)
-        my_expectation = "I got: <class 'str'>"
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(tuple)
-        my_expectation = "I got: <class 'tuple'>"
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(list)
-        my_expectation = "I got: <class 'list'>"
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(set)
-        my_expectation = "I got: <class 'set'>"
-        assert_equal(reality, my_expectation)
-
-        reality = src.telephone.text(dict)
-        my_expectation = "I got: <class 'dict'>"
-        assert_equal(reality, my_expectation)
-
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # TypeError
-    # ModuleNotFoundError
-    # AttributeError
-
-* I remove the ``text`` :ref:`function<what is a function?>` from ``tests/test_telephone.py``
-
-  .. code-block:: python
-    :linenos:
-
-    import src.telephone
-
-
-    def test_passing_none():
-        reality = src.telephone.text(None)
-        my_expectation = 'I got: None'
-        assert_equal(reality, my_expectation)
-
-
-    def test_passing_booleans():
-
-  all the tests are still green because all the :ref:`calls<how to call a function with input>` that were to the ``text`` :ref:`function<what is a function?>` of ``tests/test_telephone.py`` in the ``tests`` folder_, now go to the ``text`` :ref:`function<what is a function?>` of ``__init__.py`` in the ``telephone`` folder_ in the ``src`` folder_. When ``src.telephone.text`` is called Python_ follows this path
-
-  .. code-block:: shell
-
-    src.telephone.text
-    src/
-    └── telephone/
-        └── __init__.py
-            └── def text(the_input): text(the_input):
-                └── return f'I got: {the_input}'
 
 * I add a git_ commit message in the other terminal_
 
@@ -837,9 +241,164 @@ because there is nothing with that name in ``tests/test_telephone.py``.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'separate solution from tests'
+    'move text function to src'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
+
+All the tests are passing because Python_ follows this path when the ``text`` :ref:`function<what is a function?>` is :ref:`called<how to call a function with input>`
+
+* In :ref:`test_passing_none`
+
+  .. code-block:: shell
+
+    text = src.telephone.text
+    text(None) -> 'I got: None'
+    └── src/
+        └── telephone/
+            └── __init__.py
+                └── def text(the_input):
+                    ├── the_input = None
+                    └── return f'I got: {the_input}'
+                        return  'I got:  None      '
+
+* In :ref:`test_passing_booleans`
+
+  .. code-block:: shell
+
+    text = src.telephone.text
+    text(False) -> 'I got: False'
+    └── src/
+        └── telephone/
+            └── __init__.py
+                └── def text(the_input):
+                    ├── the_input = False
+                    └── return f'I got: {the_input}'
+                        return  'I got:  False     '
+
+* In :ref:`test_passing_an_integer`
+
+  .. code-block:: shell
+
+    text = src.telephone.text
+    an_integer = 1234
+    text(an_integer) -> 'I got: 1234'
+    └── src/
+        └── telephone/
+            └── __init__.py
+                └── def text(the_input):
+                    ├── the_input = 1234
+                    └── return f'I got: {the_input}'
+                        return  'I got: 1234       '
+
+* In :ref:`test_passing_a_float`
+
+  .. code-block:: shell
+
+    text = src.telephone.text
+    a_float = 5.678
+    text(a_float) -> 'I got: 5.678'
+    └── src/
+        └── telephone/
+            └── __init__.py
+                └── def text(the_input):
+                    ├── the_input = 5.678
+                    └── return f'I got: {the_input}'
+                        return  'I got: 5.678      '
+
+* In :ref:`test_passing_a_string`
+
+  .. code-block:: shell
+
+    text = src.telephone.text
+    a_string = 'hello'
+    text(a_string) -> 'I got: hello'
+    src/
+    └── telephone/
+        └── __init__.py
+            └── def text(the_input):
+                ├── the_input = 'hello'
+                └── return f'I got: {the_input}'
+                    return  'I got:  hello     '
+
+* In :ref:`test_passing_a_tuple`
+
+  .. code-block:: shell
+
+    text = src.telephone.text
+    a_tuple = (0, 1, 2, 'n')
+    text(a_tuple) -> "I got: (0, 1, 2, 'n')"
+    └── src/
+        └── telephone/
+            └── __init__.py
+                └── def text(the_input):
+                    ├── the_input = (0, 1, 2, 'n')
+                    └── return f'I got: {  the_input  }'
+                        return  "I got:  (0, 1, 2, 'n')"
+
+* In :ref:`test_passing_a_list`
+
+  .. code-block:: shell
+
+    text = src.telephone.text
+    a_list = [0, 1, 2, 'n']
+    text(a_list) -> "I got: [0, 1, 2, 'n']"
+    └── src/
+        └── telephone/
+            └── __init__.py
+                └── def text(the_input):
+                    ├── the_input = [0, 1, 2, 'n']
+                    └── return f'I got: {  the_input  }'
+                        return  "I got:  [0, 1, 2, 'n']"
+
+* In :ref:`test_passing_a_set`
+
+  .. code-block:: shell
+
+    text = src.telephone.text
+    a_set = {0, 1, 2, 'n'}
+    text(a_set) -> 'I got: {0, 1, 2, 'n'}'
+    └── src/
+        └── telephone/
+            └── __init__.py
+                └── def text(the_input):
+                    ├── the_input = {0, 1, 2, 'n'}
+                    └── return f'I got: {  the_input  }'
+                        return  'I got:  {0, 1, 2, 'n'}'
+
+* In :ref:`test_passing_a_dictionary`
+
+  .. code-block:: shell
+
+    text = src.telephone.text
+    a_dictionary = {
+        'key0': 'value0', 'keyN': [0, 1, 2, 'n']
+    }
+    text(a_dictionary) -> ("I got: {'key0': 'value0',"
+    │                               'keyN': [0, 1, 2, 'n']}")
+    └── src/
+        └── telephone/
+            └── __init__.py
+                └── def text(the_input):
+                    ├── the_input = {
+                    │       'key0': 'value0', 'keyN': [0, 1, 2, 'n']
+                    │   }
+                    └── return f'I got: {       the_input        }'
+                        return ("I got: {'key0': 'value0',"
+                                         'keyN': [0, 1, 2, 'n']}")
+
+* In :ref:`test_passing_a_class`
+
+  .. code-block:: shell
+
+    text = src.telephone.text
+    text(object) -> "I got: <class 'object'>"
+    └── src/
+        └── telephone/
+            └── __init__.py
+                └── def text(the_input):
+                    ├── the_input = object
+                    └── return f'I got: {   the_input   }'
+                        return  "I got:  <class 'object'>"
 
 ----
 
@@ -859,42 +418,12 @@ Since the solution is separate from the tests, I can write the program_ that mak
 
 * I close ``tests/test_telephone.py``
 
-* I delete the text in ``src/telephone/__init__.py`` and the terminal_ shows 10 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
+* I delete the text in ``src/telephone/__init__.py`` and the terminal_ :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
-    FAILED ...::test_passing_none -
-        AttributeError: module 'src.telephone'
-                        has no attribute 'text'
-    FAILED ...::test_passing_booleans -
-        AttributeError: module 'src.telephone'
-                        has no attribute 'text'
-    FAILED ...::test_passing_an_integer -
-        AttributeError: module 'src.telephone'
-                        has no attribute 'text'
-    FAILED ...::test_passing_a_float -
-        AttributeError: module 'src.telephone'
-                        has no attribute 'text'
-    FAILED ...::test_passing_a_string -
-        AttributeError: module 'src.telephone'
-                        has no attribute 'text'
-    FAILED ...::test_passing_a_tuple -
-        AttributeError: module 'src.telephone'
-                        has no attribute 'text'
-    FAILED ...::test_passing_a_list -
-        AttributeError: module 'src.telephone'
-                        has no attribute 'text'
-    FAILED ...::test_passing_a_set -
-        AttributeError: module 'src.telephone'
-                        has no attribute 'text'
-    FAILED ...::test_passing_a_dictionary -
-        AttributeError: module 'src.telephone'
-                        has no attribute 'text'
-    FAILED ...::test_passing_a_class -
-        AttributeError: module 'src.telephone'
-                        has no attribute 'text'
-    =================== 10 failed in A.BCs ===================
-
+    AttributeError: module 'src.telephone'
+                    has no attribute 'text'
 
   Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done or if you get stuck.
 
@@ -1032,13 +561,13 @@ Since the solution is separate from the tests, I can write the program_ that mak
         assert {0, 1, 2, 'n'} == "I got: {0, 1, 2, 'n'}"
     FAILED ...::test_passing_a_dictionary -
         assert {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}
-    == "I got: {'key0': 'value0',...
+    == "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
     FAILED ...::test_passing_a_class -
         assert <class 'object'> == "I got: <class 'object'>"
 
   they all expect the input (``value``) as part of the message
 
-* I add a :ref:`return statement<the return statement>` with an :ref:`f-string<what is string interpolation?>`
+* I add a :ref:`return statement<the return statement>` with the name of the input
 
   .. code-block:: python
     :linenos:
@@ -1051,6 +580,47 @@ Since the solution is separate from the tests, I can write the program_ that mak
         # return None
         # return "I got: <class 'object'>"
         # return value
+        return 'I got: value'
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    FAILED ...test_passing_none -
+        AssertionError: assert 'I got: value' == 'I got: None'
+    FAILED ...test_passing_booleans -
+        AssertionError: assert 'I got: value' == 'I got: False'
+    FAILED ...test_passing_an_integer -
+        AssertionError: assert 'I got: value' == 'I got: 1234'
+    FAILED ...test_passing_a_float -
+        AssertionError: assert 'I got: value' == 'I got: 5.678'
+    FAILED ...test_passing_a_string -
+        AssertionError: assert 'I got: value' == 'I got: hello'
+    FAILED ...test_passing_a_tuple -
+        assert 'I got: value' == "I got: (0, 1, 2, 'n')"
+    FAILED ...test_passing_a_list -
+        assert 'I got: value' == "I got: [0, 1, 2, 'n']"
+    FAILED ...test_passing_a_set -
+        assert 'I got: value' == "I got: {0, 1, 2, 'n'}"
+    FAILED ...test_passing_a_dictionary -
+        assert 'I got: value' == "I got: {'key..., 1, 2, 'n']}"
+    FAILED ...test_passing_a_class -
+        assert 'I got: value' == "I got: <class 'object'>"
+
+* I change the :ref:`return statement<the return statement>` to an :ref:`f-string<what is string interpolation?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 8-9
+
+    # text
+    # text = None
+    # def text():
+    def text(value):
+        # return None
+        # return "I got: <class 'object'>"
+        # return value
+        # return 'I got: value'
         return f'I got: {value}'
 
   and all the tests are passing! I am a programmer!!

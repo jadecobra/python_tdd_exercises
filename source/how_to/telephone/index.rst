@@ -1964,8 +1964,10 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
 .. code-block:: shell
 
-  text({'key0': 'value0', 'keyN': [0, 1, 2, 'n'],})
-  ├── "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
+  text({
+      'key0': 'value0', 'keyN': [0, 1, 2, 'n'],}
+  ) -> ("I got: {'key0': 'value0',"
+  │              'keyN': [0, 1, 2, 'n']}")
   └── def text(the_input):
       ├── the_input = {
       │       'key0': 'value0', 'keyN': [0, 1, 2, 'n']
