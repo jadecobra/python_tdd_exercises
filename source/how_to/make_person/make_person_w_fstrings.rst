@@ -2074,7 +2074,7 @@ I want to move the :ref:`person function<extract person function>` to separate i
 
 ----
 
-* I remove the commented line from :ref:`assert_factory_works` in ``tests/test_person.py``
+* I remove the commented line from :ref:`assert_factory_works<extract assert_factory_works function>` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 14
@@ -3189,46 +3189,45 @@ the test passes.
 separate and equal say_hello
 *********************************************************************************
 
-* I change ``reality`` to be the result of a call to the :ref:`say_hello function<test say_hello function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`say_hello function<test say_hello function>` in ``tests/test_person.py``
+I want to move the :ref:`say_hello function<test say_hello function>` to separate it from the tests.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I change ``reality`` in the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to be the result of a call to the :ref:`say_hello function<test say_hello function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`say_hello function<test say_hello function>` in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 117
-    :emphasize-lines: 19-20
+    :lineno-start: 16
+    :emphasize-lines: 5-6
 
-    def test_mary():
-        first_name = 'mary'
-        last_name = 'public'
-        sex = 'F'
-        year_of_birth = 2000
-
-        reality = src.person.person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
+    def assert_say_hello_works(
+            first_name, last_name,
+            year_of_birth,
+        ):
         # reality = say_hello(
         reality = src.person.say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth,
+            year_of_birth=year_of_birth
         )
         my_expectation = (
             f'Hello, my name is {first_name}'
-            # ' smith and I am'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
         assert reality == my_expectation
 
 
-    # Exceptions seen
+    def assert_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -3237,64 +3236,74 @@ separate and equal say_hello
     AttributeError: module 'src.person'
                     has no attribute 'say_hello'
 
-  because there is nothing named ``say_hello`` in the ``src/person/__init__.py`` file_ in the ``src`` folder_.
+  because there is nothing named ``say_hello`` in ``src/person/__init__.py``.
 
-* I add a copy of the :ref:`say_hello function<test say_hello function>` without the commented lines to ``src/person/__init__.py``
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add a copy of the :ref:`say_hello function<test say_hello function>` to ``src/person/__init__.py``
+
+.. code-block:: python
+  :linenos:
+  :emphasize-lines: 11-20
+
+  def person(
+      first_name, last_name,
+      sex, year_of_birth,
+  ):
+      return (
+          f'{first_name}, {last_name},'
+          f' {sex}, {year_of_birth}'
+      )
+
+
+  def say_hello(
+      first_name, last_name,
+      year_of_birth
+  ):
+      age = 2026 - year_of_birth
+
+      return (
+          f'Hello, my name is {first_name}'
+          f' {last_name} and I am {age}.'
+      )
+
+the test passes.
+
+.. code-block:: shell
+
+  src.person.say_hello
+  └── src/
+      └── person/
+          └── __init__.py
+              └── def say_hello(
+                      first_name, last_name,
+                      year_of_birth,
+                  ):
+                  ├── age = 2026 - year_of_birth
+                  └── return (
+                          f'Hello, my name is {first_name}'
+                          f' {last_name} and I am {age}.'
+                      )
+
+* I remove the commented line from :ref:`assert_say_hello_works<extract assert_say_hello_works function>` in ``tests/test_person.py``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 11-20
+    :lineno-start: 16
 
-    def person(
-        first_name, last_name,
-        sex, year_of_birth,
-    ):
-        return (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-
-
-    def say_hello(
-        first_name, last_name,
-        year_of_birth
-    ):
-        age = 2026 - year_of_birth
-
-        return (
-            f'Hello, my name is {first_name}'
-            f' {last_name} and I am {age}.'
-        )
-
-  the test passes.
-
-* I remove the commented lines from :ref:`test_mary` in ``tests/test_person.py``
-
-  .. code-block:: python
-    :lineno-start: 117
-
-    def test_mary():
-        first_name = 'mary'
-        last_name = 'public'
-        sex = 'F'
-        year_of_birth = 2000
-
-        reality = src.person.person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
+    def assert_say_hello_works(
+            first_name, last_name,
+            year_of_birth,
+        ):
         reality = src.person.say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth,
+            year_of_birth=year_of_birth
         )
         my_expectation = (
             f'Hello, my name is {first_name}'
@@ -3304,252 +3313,10 @@ separate and equal say_hello
         assert reality == my_expectation
 
 
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # TypeError
-    # AttributeError
-
-* I change ``reality`` for :ref:`test_john` to be the result of a call to the :ref:`say_hello function<test say_hello function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
-
-  .. code-block:: python
-    :lineno-start: 85
-    :emphasize-lines: 19-20
-
-    def test_john():
-        first_name = 'john'
-        last_name = 'smith'
-        sex = 'M'
-        year_of_birth = 1580
-
-        reality = src.person.person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
-        # reality = say_hello(
-        reality = src.person.say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            # 'Hello, my name is jane'
-            f'Hello, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
-        assert reality == my_expectation
-
-
-    def test_mary():
-
-  the test is still green.
-
-* I remove the commented lines from :ref:`test_john`
-
-  .. code-block:: python
-    :lineno-start: 85
-
-    def test_john():
-        first_name = 'john'
-        last_name = 'smith'
-        sex = 'M'
-        year_of_birth = 1580
-
-        reality = src.person.person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
-        reality = src.person.say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'Hello, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
-        assert reality == my_expectation
-
-
-    def test_mary():
-
-* I change ``reality`` for :ref:`test_joe` to be the result of a call to the :ref:`say_hello function<test say_hello function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
-
-  .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 19-20
-
-    def test_joe():
-        first_name = 'joe'
-        last_name = 'blow'
-        sex = 'M'
-        year_of_birth = 1996
-
-        reality = src.person.person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
-        # reality = say_hello(
-        reality = src.person.say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'Hello, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
-        assert reality == my_expectation
-
-
-    def test_jane():
-
-  the test is still green.
-
-* I remove the commented line from :ref:`test_joe`
-
-  .. code-block:: python
-    :lineno-start: 23
-
-    def test_joe():
-        first_name = 'joe'
-        last_name = 'blow'
-        sex = 'M'
-        year_of_birth = 1996
-
-        reality = src.person.person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
-        reality = src.person.say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'Hello, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
-        assert reality == my_expectation
-
-
-    def test_jane():
-
-* I change ``reality`` for :ref:`test_jane` to be the result of a call to the :ref:`say_hello function<test say_hello function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
-
-  .. code-block:: python
-    :lineno-start: 54
-    :emphasize-lines: 19-20
-
-    def test_jane():
-        first_name = 'jane'
-        last_name = 'doe'
-        sex = 'F'
-        year_of_birth = 1991
-
-        reality = src.person.person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
-        # reality = say_hello(
-        reality = src.person.say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'Hello, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
-        assert reality == my_expectation
-
-
-    def test_john():
-
-  the test is still green.
-
-* I remove the commented line from :ref:`test_jane`
-
-  .. code-block:: python
-    :lineno-start: 54
-
-    def test_jane():
-        first_name = 'jane'
-        last_name = 'doe'
-        sex = 'F'
-        year_of_birth = 1991
-
-        reality = src.person.person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
-        reality = src.person.say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'Hello, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
-        assert reality == my_expectation
-
-
-    def test_john():
+    def assert_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
 
 * I remove the :ref:`say_hello function<test say_hello function>` from ``tests/test_person.py``
 
@@ -3559,34 +3326,21 @@ separate and equal say_hello
     import src.person
 
 
-    def test_joe():
+    def assert_say_hello_works(
+            first_name, last_name,
+            year_of_birth,
+        ):
 
-  all the tests are still green because the calls that were made to the :ref:`say_hello function<test say_hello function>` that was in ``tests/test_person.py`` are now made to the :ref:`say_hello function<test say_hello function>` in ``src/person/__init__.py`` in the ``src`` folder_.
 
-  Python_ follows this path when ``src.person.say_hello`` is :ref:`called<how to call a function with input>`
-
-  .. code-block:: shell
-
-    src.person.say_hello
-    src
-    └── person.py
-        └── def say_hello(
-                first_name, last_name,
-                year_of_birth
-            ):
-            ├── age = 2026 - year_of_birth
-            │
-            └── return (
-                    f'Hello, my name is {first_name}'
-                    f' {last_name} and I am {age}.'
-                )
+  all the tests are still green.
 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'add say_hello function'
+    git commit -am \
+    'move say_hello function to src'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
