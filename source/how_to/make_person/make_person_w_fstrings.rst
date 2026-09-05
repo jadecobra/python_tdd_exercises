@@ -2152,7 +2152,7 @@ I want to move the :ref:`person function<extract person function>` to separate i
 test say_hello function
 *********************************************************************************
 
-I want the person I make to say hi. I can make a :ref:`function<what is a function?>` that takes input about a person and returns a message.
+I want the person I make to say hello. I can make a :ref:`function<what is a function?>` that takes input for a person and returns a message.
 
 ----
 
@@ -2165,11 +2165,8 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_joe` in ``tests/test_person.py``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 22-32
-
-    import src.person
-
+    :lineno-start: 21
+    :emphasize-lines: 14-24
 
     def test_joe():
         first_name = 'joe'
@@ -2177,22 +2174,17 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
         sex = 'M'
         year_of_birth = 1996
 
-        reality = src.person.person(
+        assert_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
-            year_of_birth=year_of_birth,
+            year_of_birth=year_of_birth
         )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
 
         reality = say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth,
+            year_of_birth=year_of_birth
         )
         my_expectation = (
             f'Hello, my name is {first_name}'
@@ -2218,7 +2210,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
 ----
 
-* I add a :ref:`function definition<how to make a function that takes input>` for it
+* I add a :ref:`function definition<how to make a function that takes input>` for :ref:`say_hello<test say_hello function>`
 
   .. code-block:: python
     :linenos:
@@ -2231,7 +2223,10 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
         return None
 
 
-    def test_joe():
+    def assert_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -2257,9 +2252,6 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     def say_hello(first_name):
         return None
 
-
-    def test_joe():
-
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
@@ -2279,9 +2271,6 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     def say_hello(first_name, last_name):
         return None
 
-
-    def test_joe():
-
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
@@ -2290,11 +2279,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
                got an unexpected keyword argument
                'year_of_birth'
 
-  because
-
-  - I called the :ref:`say_hello function<test say_hello function>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``year_of_birth``).
-  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``person`` allows two arguments (``first_name``, ``last_name``).
-  - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
+  because the :ref:`function definition (signature)<how to make a function that takes input>` of ``person`` only allows two arguments (``first_name``, ``last_name``).
 
 * I add ``year_of_birth`` in parentheses
 
@@ -2306,13 +2291,10 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     # def say_hello(first_name):
     # def say_hello(first_name, last_name):
     def say_hello(
-        first_name, last_name,
-        year_of_birth
-    ):
+            first_name, last_name,
+            year_of_birth,
+        ):
         return None
-
-
-    def test_joe():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2331,16 +2313,35 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     # def say_hello(first_name):
     # def say_hello(first_name, last_name):
     def say_hello(
-        first_name, last_name,
-        year_of_birth
-    ):
+            first_name, last_name,
+            year_of_birth,
+        ):
         # return None
         return 'Hello, my name is joe blow and I am 30.'
 
 
-    def test_joe():
+    def assert_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
 
   the test passes.
+
+  .. code-block:: shell
+
+    ├── first_name = 'joe'
+    ├── last_name = 'blow'
+    ├── year_of_birth = 1996
+    └── say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth
+        ) -> 'Hello, my name is joe blow and I am 30.'
+        └── def say_hello(
+                first_name, last_name,
+                year_of_birth,
+            ):
+            └── return 'Hello, my name is joe blow and I am 30.'
 
 ----
 
@@ -2350,11 +2351,11 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello function<test say_hello function>` to :ref:`test_jane` in ``tests/test_person.py``
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello function<test say_hello function>` to :ref:`test_jane`
 
   .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 19-29
+    :lineno-start: 58
+    :emphasize-lines: 14-24
 
     def test_jane():
         first_name = 'jane'
@@ -2362,22 +2363,17 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
         sex = 'F'
         year_of_birth = 1991
 
-        reality = src.person.person(
+        assert_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
             year_of_birth=year_of_birth,
         )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
 
         reality = say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth,
+            year_of_birth=year_of_birth
         )
         my_expectation = (
             f'Hello, my name is {first_name}'
@@ -2396,7 +2392,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     AssertionError: assert 'Hello, my name ... and I am 30.'
                         == 'Hello, my name ... and I am 35.'
 
-  - because the :ref:`say_hello function<test say_hello function>` always returns ``'Hello, my name is joe blow and I am 30.'`` when it is called. It has to return a string_ based on the input it gets for me to be able to use it to make messages based on the person.
+  - because the :ref:`say_hello function<test say_hello function>` always returns ``'Hello, my name is joe blow and I am 30.'`` when it is :ref:`called<how to call a function with input>`. It has to return a string_ based on the input it gets for me to be able to use it to make messages based on the person.
   - :ref:`I need better error messages<another way to write tests>`.
 
 * I change :ref:`the return statement` of the :ref:`say_hello function<test say_hello function>` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
@@ -2409,18 +2405,15 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     # def say_hello(first_name):
     # def say_hello(first_name, last_name):
     def say_hello(
-        first_name, last_name,
-        year_of_birth
-    ):
+            first_name, last_name,
+            year_of_birth,
+        ):
         # return None
         # return 'Hello, my name is joe blow and I am 30.'
         return (
             f'Hello, my name is {first_name}'
             ' blow and I am 30.'
         )
-
-
-    def test_joe():
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2441,9 +2434,9 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     # def say_hello(first_name):
     # def say_hello(first_name, last_name):
     def say_hello(
-        first_name, last_name,
-        year_of_birth
-    ):
+            first_name, last_name,
+            year_of_birth,
+        ):
         # return None
         # return 'Hello, my name is joe blow and I am 30.'
         return (
@@ -2451,9 +2444,6 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
             # ' blow and I am 30.'
             f' {last_name} and I am 30.'
         )
-
-
-    def test_joe():
 
   the terminal shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2470,14 +2460,13 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
     :lineno-start: 4
     :emphasize-lines: 10, 15-16
 
-
     # def say_hello():
     # def say_hello(first_name):
     # def say_hello(first_name, last_name):
     def say_hello(
-        first_name, last_name,
-        year_of_birth
-    ):
+            first_name, last_name,
+            year_of_birth,
+        ):
         # return None
         # return 'Hello, my name is joe blow and I am 30.'
         age = 2026 - year_of_birth
@@ -2489,16 +2478,63 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
             f' {last_name} and I am {age}.'
         )
 
-
-    def test_joe():
-
   the test passes.
+
+  .. code-block:: shell
+
+    ├── first_name = 'jane'
+    ├── last_name = 'doe'
+    ├── year_of_birth = 1991
+    └── say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth
+        ) -> 'Hello, my name is jane doe and I am 35.'
+        └── def say_hello(
+                first_name, last_name,
+                year_of_birth,
+            ):
+            ├── first_name    = 'jane'
+            ├── last_name     = 'doe'
+            ├── year_of_birth = 1991
+            ├── age           = 2026 - year_of_birth
+            │                 = 35
+            └── return (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am {age}.'
+                )
+                return 'Hello, my name is jane doe and I am 35.'
+
+* I remove the commented lines from the :ref:`say_hello function<test say_hello function>`
+
+  .. code-block:: python
+    :linenos:
+
+    import src.person
+
+
+    def say_hello(
+            first_name, last_name,
+            year_of_birth,
+        ):
+        age = 2026 - year_of_birth
+
+        return (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am {age}.'
+        )
+
+
+    def assert_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello function<test say_hello function>` to :ref:`test_john` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 85
-    :emphasize-lines: 19-29
+    :emphasize-lines: 14-24
 
     def test_john():
         first_name = 'john'
@@ -2506,22 +2542,17 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
         sex = 'M'
         year_of_birth = 1580
 
-        reality = src.person.person(
+        assert_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
             year_of_birth=year_of_birth,
         )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
 
         reality = say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth,
+            year_of_birth=year_of_birth
         )
         my_expectation = (
             'Hello, my name is jane'
@@ -2547,13 +2578,8 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   .. code-block:: python
     :lineno-start: 103
-    :emphasize-lines: 7-8
+    :emphasize-lines: 2-3
 
-        reality = say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
         my_expectation = (
             # 'Hello, my name is jane'
             f'Hello, my name is {first_name}'
@@ -2567,11 +2593,36 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   the test passes.
 
+  .. code-block:: shell
+
+    ├── first_name = 'john'
+    ├── last_name = 'smith'
+    ├── year_of_birth = 1580
+    └── say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth
+        ) -> 'Hello, my name is john smith and I am 446.'
+        └── def say_hello(
+                first_name, last_name,
+                year_of_birth,
+            ):
+            ├── first_name    = 'john'
+            ├── last_name     = 'smith'
+            ├── year_of_birth = 1580
+            ├── age           = 2026 - year_of_birth
+            │                 = 446
+            └── return (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am {age}.'
+                )
+                return 'Hello, my name is john smith and I am 446.'
+
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello function<test say_hello function>` to :ref:`test_mary`
 
   .. code-block:: python
-    :lineno-start: 117
-    :emphasize-lines: 19-29
+    :lineno-start: 112
+    :emphasize-lines: 14-24
 
     def test_mary():
         first_name = 'mary'
@@ -2579,22 +2630,17 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
         sex = 'F'
         year_of_birth = 2000
 
-        reality = src.person.person(
+        assert_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
             year_of_birth=year_of_birth,
         )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
 
         reality = say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth,
+            year_of_birth=year_of_birth
         )
         my_expectation = (
             f'Hello, my name is {first_name}'
@@ -2614,19 +2660,14 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
                         == 'Hello, my name ... and I am 26.'
 
   - The last names are different.
-  - I want better messages that show as much of the difference in the summary.
+  - I want better messages that show all of the differences in the summary.
 
 * I change ``my_expectation`` to match ``reality`` in :ref:`test_mary`
 
   .. code-block:: python
-    :lineno-start: 135
-    :emphasize-lines: 8-9
+    :lineno-start: 130
+    :emphasize-lines: 3-4
 
-        reality = say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
         my_expectation = (
             f'Hello, my name is {first_name}'
             # ' smith and I am'
@@ -2640,70 +2681,43 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   the test passes.
 
-* I remove the commented line
+  .. code-block:: shell
 
-  .. code-block:: python
-    :lineno-start: 116
-
-    def test_mary():
-        first_name = 'mary'
-        last_name = 'public'
-        sex = 'F'
-        year_of_birth = 2000
-
-        reality = src.person.person(
+    ├── first_name = 'mary'
+    ├── last_name = 'public'
+    ├── year_of_birth = 2000
+    └── say_hello(
             first_name=first_name,
             last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
+            year_of_birth=year_of_birth
+        ) -> 'Hello, my name is mary public and I am 26.'
+        └── def say_hello(
+                first_name, last_name,
+                year_of_birth,
+            ):
+            ├── first_name    = 'mary'
+            ├── last_name     = 'public'
+            ├── year_of_birth = 2000
+            ├── age           = 2026 - year_of_birth
+            │                 = 26
+            └── return (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am {age}.'
+                )
+                return 'Hello, my name is mary public and I am 26.'
 
-        reality = say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'Hello, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
-        assert reality == my_expectation
-
-
-    # Exceptions seen
-
-  the test passes because Python_ uses the string_ representation of the :ref:`object<everything is an object>` in the curly braces ``{ }``
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :emphasize-lines: 1
 
-    say_hello(
-        first_name=first_name,
-        last_name=last_name,
-        year_of_birth=year_of_birth,
-    )
-        say_hello(
-            first_name, last_name,
-            year_of_birth,
-        )
-            first_name = 'mary'
-            last_name = 'public'
-            year_of_birth = 1991
+    git commit -am 'test say_hello function'
 
-            age = 2026 - year_of_birth
-            age = 2026 - 1991
-            age = 35
+----
 
-            return (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am {age}.'
-            )
-            return f'Hello, my name is mary public and I am 35'
+*********************************************************************************
+extract assert_say_hello_works function
+*********************************************************************************
 
 ----
 
