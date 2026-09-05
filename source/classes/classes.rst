@@ -119,7 +119,7 @@ I add a new test to ``test_person.py``
           year_of_birth = get_random_year_of_birth()
           age = calculate_age(year_of_birth)
 
-          a_random_person = src.person.factory(
+          a_random_person = src.person.person(
               first_name=first_name,
               last_name=last_name,
               sex=sex,
@@ -169,7 +169,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
     :lineno-start: 12
     :emphasize-lines: 16, 18
 
-    def factory(
+    def person(
             first_name, year_of_birth,
             last_name='doe', sex='M',
         ):
@@ -1090,7 +1090,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
     :lineno-start: 19
     :emphasize-lines: 9-13
 
-    def factory(
+    def person(
             first_name, year_of_birth,
             last_name='doe', sex='M',
         ):
@@ -1734,7 +1734,7 @@ I make the values for ``first_name`` in the tests the same way each time, since 
             first_name = self.random_first_name
             year_of_birth = get_random_year_of_birth()
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 # first_name=first_name,
                 first_name=self.random_first_name,
                 year_of_birth=year_of_birth,
@@ -1767,7 +1767,7 @@ I make the values for ``first_name`` in the tests the same way each time, since 
             year_of_birth = get_random_year_of_birth()
             age = calculate_age(year_of_birth)
 
-            a_random_person = src.person.factory(
+            a_random_person = src.person.person(
                 # first_name=first_name,
                 first_name=self.random_first_name,
                 last_name=last_name,
@@ -1871,7 +1871,7 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
                 sex=pick_one('F', 'M'),
             )
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 **a_person,
                 # year_of_birth=year_of_birth,
                 year_of_birth=self.random_year_of_birth,
@@ -1901,7 +1901,7 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
             # year_of_birth = get_random_year_of_birth()
             year_of_birth = self.random_year_of_birth
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 # first_name=first_name,
                 first_name=self.random_first_name,
                 # year_of_birth=year_of_birth,
@@ -1940,7 +1940,7 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
             year_of_birth = self.random_year_of_birth
             age = calculate_age(self.random_year_of_birth)
 
-            a_random_person = src.person.factory(
+            a_random_person = src.person.person(
                 # first_name=first_name,
                 first_name=self.random_first_name,
                 last_name=last_name,
@@ -2058,7 +2058,7 @@ The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in t
             # age = calculate_age(year_of_birth)
             age = calculate_age(self.random_year_of_birth)
 
-            a_random_person = src.person.factory(
+            a_random_person = src.person.person(
                 # first_name=first_name,
                 first_name=self.random_first_name,
                 # last_name=last_name,
@@ -2162,7 +2162,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
     :lineno-start: 51
     :emphasize-lines: 9-12
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 **a_person,
                 # year_of_birth=year_of_birth,
                 year_of_birth=self.random_year_of_birth,
@@ -2193,7 +2193,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
                 sex=pick_one('F', 'M'),
             )
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 **a_person,
                 year_of_birth=self.random_year_of_birth,
             )
@@ -2211,7 +2211,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
     :lineno-start: 62
     :emphasize-lines: 13-16
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 # first_name=first_name,
                 first_name=self.random_first_name,
                 # year_of_birth=year_of_birth,
@@ -2240,7 +2240,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
     :lineno-start: 56
 
         def test_factory_w_optional_arguments(self):
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=self.random_first_name,
                 year_of_birth=self.random_year_of_birth,
             )
@@ -2274,7 +2274,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
             # age = calculate_age(self.random_year_of_birth)
             age = self.age
 
-            a_random_person = src.person.factory(
+            a_random_person = src.person.person(
                 # first_name=first_name,
                 first_name=self.random_first_name,
                 # last_name=last_name,
@@ -2305,7 +2305,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
     :lineno-start: 69
 
         def test_factory_person_says_hello(self):
-            a_random_person = src.person.factory(
+            a_random_person = src.person.person(
                 first_name=self.random_first_name,
                 last_name=self.random_last_name,
                 year_of_birth=self.random_year_of_birth,
@@ -3217,7 +3217,7 @@ the test passes.
         )
 
 
-    def factory(
+    def person(
             first_name, year_of_birth,
             last_name='doe', sex='M',
         ):
@@ -3321,7 +3321,7 @@ There are few problems with what I have now
 
   .. code-block:: python
 
-    src.person.factory(
+    src.person.person(
         **a_person,
         year_of_birth=self.random_year_of_birth,
     )
@@ -3333,7 +3333,7 @@ There are few problems with what I have now
         age=self.age,
     )
 
-  to know why using the :ref:`dictionary<what is a dictionary?>` works in the call to ``src.person.factory`` and inside another :ref:`dictionary<what is a dictionary?>`
+  to know why using the :ref:`dictionary<what is a dictionary?>` works in the call to ``src.person.person`` and inside another :ref:`dictionary<what is a dictionary?>`
 
 * :ref:`test_factory_person_says_hello` and :ref:`test_classy_person_says_hello` need the person reading the test to know about :ref:`f-strings<what is string interpolation?>`
 

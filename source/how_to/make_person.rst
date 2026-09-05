@@ -346,7 +346,7 @@ test_factory_w_keyword_arguments
     class TestPerson(unittest.TestCase):
 
         def test_factory_w_keyword_arguments(self):
-            reality = src.person.factory()
+            reality = src.person.person()
             my_expectation = None
             self.assertEqual(reality, my_expectation)
 
@@ -420,10 +420,10 @@ test_factory_w_keyword_arguments
     :linenos:
     :emphasize-lines: 1-2
 
-    def factory():
+    def person():
         return None
 
-  the test passes because when ``src.person.factory()`` is called, Python_ checks ``src/person/__init__.py`` in the ``src`` folder_ for a :ref:`function definition<how to make a function>` with the name ``factory`` and finds it.
+  the test passes because when ``src.person.person()`` is called, Python_ checks ``src/person/__init__.py`` in the ``src`` folder_ for a :ref:`function definition<how to make a function>` with the name ``factory`` and finds it.
 
 ----
 
@@ -440,8 +440,8 @@ test_factory_w_keyword_arguments
     :emphasize-lines: 2-5
 
         def test_factory_w_keyword_arguments(self):
-            # reality = src.person.factory()
-            reality = src.person.factory(
+            # reality = src.person.person()
+            reality = src.person.person(
                 first_name='first_name',
             )
             my_expectation = None
@@ -454,7 +454,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    TypeError: factory() got
+    TypeError: person() got
                an unexpected keyword argument 'first_name'
 
   because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``first_name``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
@@ -478,8 +478,8 @@ test_factory_w_keyword_arguments
     :linenos:
     :emphasize-lines: 1-2
 
-    # def factory():
-    def factory(first_name):
+    # def person():
+    def person(first_name):
         return None
 
   the test passes.
@@ -493,8 +493,8 @@ test_factory_w_keyword_arguments
     :emphasize-lines: 5
 
         def test_factory_w_keyword_arguments(self):
-            # reality = src.person.factory()
-            reality = src.person.factory(
+            # reality = src.person.person()
+            reality = src.person.person(
                 first_name='first_name',
                 last_name='last_name',
             )
@@ -508,7 +508,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: shell
 
-    TypeError: factory() got
+    TypeError: person() got
                an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
@@ -520,9 +520,9 @@ test_factory_w_keyword_arguments
     :linenos:
     :emphasize-lines: 2-3
 
-    # def factory():
-    # def factory(first_name):
-    def factory(first_name, last_name):
+    # def person():
+    # def person(first_name):
+    def person(first_name, last_name):
         return None
 
   the test passes.
@@ -536,8 +536,8 @@ test_factory_w_keyword_arguments
     :emphasize-lines: 6
 
         def test_factory_w_keyword_arguments(self):
-            # reality = src.person.factory()
-            reality = src.person.factory(
+            # reality = src.person.person()
+            reality = src.person.person(
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
@@ -552,7 +552,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    TypeError: factory() got
+    TypeError: person() got
                an unexpected keyword argument 'sex'
 
   because the test :ref:`called<how to call a function with input>` the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`name<test_keyword_arguments>` (``sex``) that is not in the :ref:`function definition<how to make a function>`.
@@ -563,10 +563,10 @@ test_factory_w_keyword_arguments
     :linenos:
     :emphasize-lines: 3-7
 
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    def person(
             first_name, last_name,
             sex,
         ):
@@ -583,8 +583,8 @@ test_factory_w_keyword_arguments
     :emphasize-lines: 7
 
         def test_factory_w_keyword_arguments(self):
-            # reality = src.person.factory()
-            reality = src.person.factory(
+            # reality = src.person.person()
+            reality = src.person.person(
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
@@ -600,7 +600,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    TypeError: factory() got
+    TypeError: person() got
                an unexpected keyword argument 'year_of_birth'
 
   because the test :ref:`called<how to call a function with input>` the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`name<test_keyword_arguments>` (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`.
@@ -611,10 +611,10 @@ test_factory_w_keyword_arguments
     :linenos:
     :emphasize-lines: 6
 
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -631,8 +631,8 @@ test_factory_w_keyword_arguments
     :emphasize-lines: 9-10
 
         def test_factory_w_keyword_arguments(self):
-            # reality = src.person.factory()
-            reality = src.person.factory(
+            # reality = src.person.person()
+            reality = src.person.person(
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
@@ -655,7 +655,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    reality        = src.person.factory(
+    reality        = src.person.person(
                          first_name='first_name',
                          last_name='last_name',
                          sex='M',
@@ -683,10 +683,10 @@ test_factory_w_keyword_arguments
     :linenos:
     :emphasize-lines: 8-9
 
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -704,8 +704,8 @@ test_factory_w_keyword_arguments
     :emphasize-lines: 10-13
 
         def test_factory_w_keyword_arguments(self):
-            # reality = src.person.factory()
-            reality = src.person.factory(
+            # reality = src.person.person()
+            reality = src.person.person(
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
@@ -731,7 +731,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    reality        = src.person.factory(
+    reality        = src.person.person(
                          first_name='first_name',
                          last_name='last_name',
                          sex='M',
@@ -758,10 +758,10 @@ test_factory_w_keyword_arguments
     :linenos:
     :emphasize-lines: 9-10
 
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -778,8 +778,8 @@ test_factory_w_keyword_arguments
     :emphasize-lines: 3-4, 10-11
 
         def test_factory_w_keyword_arguments(self):
-            # reality = src.person.factory()
-            reality = src.person.factory(
+            # reality = src.person.person()
+            reality = src.person.person(
                 # first_name='first_name',
                 first_name='jane',
                 last_name='last_name',
@@ -808,7 +808,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    reality        = src.person.factory(
+    reality        = src.person.person(
                          first_name='jane',
                          last_name='last_name',
                          sex='M',
@@ -840,10 +840,10 @@ test_factory_w_keyword_arguments
     :linenos:
     :emphasize-lines: 10-11
 
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -863,7 +863,7 @@ test_factory_w_keyword_arguments
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
 
-            # reality = src.person.factory()
+            # reality = src.person.person()
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'jane'`` from the test
 
@@ -874,8 +874,8 @@ test_factory_w_keyword_arguments
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
 
-            # reality = src.person.factory()
-            reality = src.person.factory(
+            # reality = src.person.person()
+            reality = src.person.person(
                 # first_name='first_name',
                 # first_name='jane',
                 first_name=first_name,
@@ -908,8 +908,8 @@ test_factory_w_keyword_arguments
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
 
-            # reality = src.person.factory()
-            reality = src.person.factory(
+            # reality = src.person.person()
+            reality = src.person.person(
                 # first_name='first_name',
                 # first_name='jane',
                 first_name=first_name,
@@ -946,7 +946,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    reality        = src.person.factory(
+    reality        = src.person.person(
                          first_name=first_name,
                          last_name='last_name',
                          sex='M',
@@ -982,10 +982,10 @@ test_factory_w_keyword_arguments
     :linenos:
     :emphasize-lines: 11-15
 
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -1009,8 +1009,8 @@ test_factory_w_keyword_arguments
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
 
-            # reality = src.person.factory()
-            reality = src.person.factory(
+            # reality = src.person.person()
+            reality = src.person.person(
                 # first_name='first_name',
                 # first_name='jane',
                 first_name=first_name,
@@ -1049,7 +1049,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    reality        = src.person.factory(
+    reality        = src.person.person(
                          first_name=first_name,
                          last_name='doe',
                          sex='M',
@@ -1090,10 +1090,10 @@ test_factory_w_keyword_arguments
     :linenos:
     :emphasize-lines: 14-15
 
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -1119,7 +1119,7 @@ test_factory_w_keyword_arguments
             first_name = 'jane'
             last_name = 'doe'
 
-            # reality = src.person.factory()
+            # reality = src.person.person()
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'doe'`` from the test
 
@@ -1131,8 +1131,8 @@ test_factory_w_keyword_arguments
             first_name = 'jane'
             last_name = 'doe'
 
-            # reality = src.person.factory()
-            reality = src.person.factory(
+            # reality = src.person.person()
+            reality = src.person.person(
                 # first_name='first_name',
                 # first_name='jane',
                 first_name=first_name,
@@ -1171,8 +1171,8 @@ test_factory_w_keyword_arguments
             first_name = 'jane'
             last_name = 'doe'
 
-            # reality = src.person.factory()
-            reality = src.person.factory(
+            # reality = src.person.person()
+            reality = src.person.person(
                 # first_name='first_name',
                 # first_name='jane',
                 first_name=first_name,
@@ -1215,7 +1215,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    reality        = src.person.factory(
+    reality        = src.person.person(
                          first_name=first_name,
                          last_name=last_name,
                          sex='M',
@@ -1256,10 +1256,10 @@ test_factory_w_keyword_arguments
     :linenos:
     :emphasize-lines: 16
 
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -1286,8 +1286,8 @@ test_factory_w_keyword_arguments
             first_name = 'jane'
             last_name = 'doe'
 
-            # reality = src.person.factory()
-            reality = src.person.factory(
+            # reality = src.person.person()
+            reality = src.person.person(
                 # first_name='first_name',
                 # first_name='jane',
                 first_name=first_name,
@@ -1332,7 +1332,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    reality        = src.person.factory(
+    reality        = src.person.person(
                          first_name=first_name,
                          last_name=last_name,
                          sex='F',
@@ -1376,10 +1376,10 @@ test_factory_w_keyword_arguments
     :linenos:
     :emphasize-lines: 16-17
 
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -1408,7 +1408,7 @@ test_factory_w_keyword_arguments
             last_name = 'doe'
             sex = 'F'
 
-            # reality = src.person.factory()
+            # reality = src.person.person()
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'F'``
 
@@ -1421,8 +1421,8 @@ test_factory_w_keyword_arguments
             last_name = 'doe'
             sex = 'F'
 
-            # reality = src.person.factory()
-            reality = src.person.factory(
+            # reality = src.person.person()
+            reality = src.person.person(
                 # first_name='first_name',
                 # first_name='jane',
                 first_name=first_name,
@@ -1467,8 +1467,8 @@ test_factory_w_keyword_arguments
             last_name = 'doe'
             sex = 'F'
 
-            # reality = src.person.factory()
-            reality = src.person.factory(
+            # reality = src.person.person()
+            reality = src.person.person(
                 # first_name='first_name',
                 # first_name='jane',
                 first_name=first_name,
@@ -1518,7 +1518,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    reality        = src.person.factory(
+    reality        = src.person.person(
                          first_name=first_name,
                          last_name=last_name,
                          sex=sex,
@@ -1562,10 +1562,10 @@ test_factory_w_keyword_arguments
     :linenos:
     :emphasize-lines: 18
 
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -1595,8 +1595,8 @@ test_factory_w_keyword_arguments
             last_name = 'doe'
             sex = 'F'
 
-            # reality = src.person.factory()
-            reality = src.person.factory(
+            # reality = src.person.person()
+            reality = src.person.person(
                 # first_name='first_name',
                 # first_name='jane',
                 first_name=first_name,
@@ -1649,7 +1649,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    reality        = src.person.factory(
+    reality        = src.person.person(
                          first_name=first_name,
                          last_name=last_name,
                          sex=sex,
@@ -1697,10 +1697,10 @@ test_factory_w_keyword_arguments
     :linenos:
     :emphasize-lines: 18-19
 
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -1725,7 +1725,7 @@ test_factory_w_keyword_arguments
   .. code-block:: python
     :linenos:
 
-    def factory(
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -1748,7 +1748,7 @@ test_factory_w_keyword_arguments
             sex = 'F'
             year_of_birth = 1996
 
-            # reality = src.person.factory()
+            # reality = src.person.person()
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``1996`` from the test
 
@@ -1762,8 +1762,8 @@ test_factory_w_keyword_arguments
             sex = 'F'
             year_of_birth = 1996
 
-            # reality = src.person.factory()
-            reality = src.person.factory(
+            # reality = src.person.person()
+            reality = src.person.person(
                 # first_name='first_name',
                 # first_name='jane',
                 first_name=first_name,
@@ -1811,7 +1811,7 @@ test_factory_w_keyword_arguments
             sex = 'F'
             year_of_birth = 1996
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
@@ -1878,7 +1878,7 @@ I can do that with the `datetime module`_ from `The Python Standard Library`_ wh
             sex = 'F'
             year_of_birth = 1996
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
@@ -2031,7 +2031,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
                 datetime.datetime.now().year
             )
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
@@ -2105,7 +2105,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
     :linenos:
     :emphasize-lines: 9-13
 
-    def factory(
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -2138,7 +2138,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
     import datetime
 
 
-    def factory(
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -2198,7 +2198,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
                 this_year-120, this_year
             )
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
@@ -2236,7 +2236,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
                 this_year-120, this_year
             )
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
@@ -2338,7 +2338,7 @@ I use the ``sex`` input parameter as the :ref:`value<test_values_of_a_dictionary
   :lineno-start: 4
   :emphasize-lines: 8-9
 
-  def factory(
+  def person(
           first_name, last_name,
           sex, year_of_birth,
       ):
@@ -2446,7 +2446,7 @@ I use the ``last_name`` input parameter as the :ref:`value<test_values_of_a_dict
   :lineno-start: 4
   :emphasize-lines: 7-8
 
-  def factory(
+  def person(
           first_name, last_name,
           sex, year_of_birth,
       ):
@@ -2558,7 +2558,7 @@ I use the ``first_name`` input parameter as the :ref:`value<test_values_of_a_dic
   :lineno-start: 4
   :emphasize-lines: 6-7
 
-    def factory(
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -2594,7 +2594,7 @@ I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few tim
     import datetime
 
 
-    def factory(
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -2863,7 +2863,7 @@ I can use a :ref:`dictionary<what is a dictionary?>` to remove the parts that ar
                 this_year-120, this_year
             )
 
-* I use the new :ref:`variable<what is a variable?>` to remove ``first_name``, ``last_name``, and ``sex`` from the call to ``src.person.factory``
+* I use the new :ref:`variable<what is a variable?>` to remove ``first_name``, ``last_name``, and ``sex`` from the call to ``src.person.person``
 
   .. code-block:: python
     :lineno-start: 13
@@ -2889,7 +2889,7 @@ I can use a :ref:`dictionary<what is a dictionary?>` to remove the parts that ar
                 this_year-120, this_year
             )
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 # first_name=first_name,
                 # last_name=last_name,
                 # sex=sex,
@@ -2911,7 +2911,7 @@ I can use a :ref:`dictionary<what is a dictionary?>` to remove the parts that ar
 
   .. code-block:: python
 
-    TypeError: factory() missing
+    TypeError: person() missing
                2 required positional arguments:
                'last_name' and 'sex'
 
@@ -2933,11 +2933,11 @@ I can use a :ref:`dictionary<what is a dictionary?>` to remove the parts that ar
 
   .. code-block:: python
 
-    reality = src.person.factory(
+    reality = src.person.person(
                   a_person,
                   year_of_birth
               )
-                  src.person.factory(
+                  src.person.person(
                       first_name=a_person,
                       year_of_birth=year_of_birth
                   )
@@ -2961,7 +2961,7 @@ I use a :ref:`double starred expressions<double starred expressions>` for the :r
   :lineno-start: 33
   :emphasize-lines: 5-6
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 # first_name=first_name,
                 # last_name=last_name,
                 # sex=sex,
@@ -2998,15 +2998,15 @@ the test is green again, because this happens
 
 .. code-block:: python
 
-  reality = src.person.factory(
+  reality = src.person.person(
                 a_person,
                 year_of_birth
             )
-                src.person.factory(
+                src.person.person(
                     **a_person,
                     year_of_birth
                 )
-                src.person.factory(
+                src.person.person(
                     first_name=first_name,
                     last_name=last_name,
                     sex=sex,
@@ -3029,7 +3029,7 @@ the test is green again, because this happens
     :lineno-start: 33
     :emphasize-lines: 10-13
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 # first_name=first_name,
                 # last_name=last_name,
                 # sex=sex,
@@ -3169,7 +3169,7 @@ the test is green again, because this happens
     :lineno-start: 49
     :emphasize-lines: 16-17
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 # first_name=first_name,
                 # last_name=last_name,
                 # sex=sex,
@@ -3208,7 +3208,7 @@ the test is green again, because this happens
     :lineno-start: 49
     :emphasize-lines: 16-17
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 # first_name=first_name,
                 # last_name=last_name,
                 # sex=sex,
@@ -3247,7 +3247,7 @@ the test is green again, because this happens
                 this_year-120, this_year
             )
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 **a_person,
                 year_of_birth=year_of_birth,
             )
@@ -3292,7 +3292,7 @@ I want to see what happens when I try to make a person without a value for the `
     :lineno-start: 32
     :emphasize-lines: 11-16, 18-21, 23-31
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 **a_person,
                 year_of_birth=year_of_birth,
             )
@@ -3314,7 +3314,7 @@ I want to see what happens when I try to make a person without a value for the `
                 this_year-120, this_year
             )
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 **a_person,
                 year_of_birth=year_of_birth,
             )
@@ -3334,7 +3334,7 @@ I want to see what happens when I try to make a person without a value for the `
     :emphasize-lines: 11
     :emphasize-text: test_factory_w_optional_arguments
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 **a_person,
                 year_of_birth=year_of_birth,
             )
@@ -3368,7 +3368,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
 
-    TypeError: factory() missing 1 required
+    TypeError: person() missing 1 required
                positional argument: 'last_name'
 
   because this test no longer gives a value for ``last_name`` when it calls the :ref:`factory function<test_factory_w_keyword_arguments>`, I have to make ``last_name`` a choice, not a requirement.
@@ -3387,7 +3387,7 @@ I want to see what happens when I try to make a person without a value for the `
     :lineno-start: 4
     :emphasize-lines: 2-3
 
-    def factory(
+    def person(
             # first_name, last_name,
             first_name, last_name=None,
             sex, year_of_birth,
@@ -3422,7 +3422,7 @@ I want to see what happens when I try to make a person without a value for the `
     :lineno-start: 4
     :emphasize-lines: 4-5
 
-    def factory(
+    def person(
             # first_name, last_name,
             first_name, last_name=None,
             # sex, year_of_birth,
@@ -3444,7 +3444,7 @@ I want to see what happens when I try to make a person without a value for the `
     :lineno-start: 4
     :emphasize-lines: 5-6
 
-    def factory(
+    def person(
             # first_name, last_name,
             first_name, last_name=None,
             # sex, year_of_birth,
@@ -3473,16 +3473,16 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
 
-    reality = src.person.factory(
+    reality = src.person.person(
                   **a_person,
                   year_of_birth=year_of_birth,
               )
-                  src.person.factory(
+                  src.person.person(
                       first_name=get_random_name(),
                       sex=pick_one('F', 'M'),
                       year_of_birth=year_of_birth,
                   )
-                  src.person.factory(
+                  src.person.person(
                       first_name=get_random_name(),
                       sex=pick_one('F', 'M'),
                       last_name=None, # use the default value
@@ -3515,7 +3515,7 @@ I want to see what happens when I try to make a person without a value for the `
     :lineno-start: 54
     :emphasize-lines: 7
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 **a_person,
                 year_of_birth=year_of_birth,
             )
@@ -3548,7 +3548,7 @@ I want to see what happens when I try to make a person without a value for the `
     :lineno-start: 4
     :emphasize-lines: 3, 6
 
-    def factory(
+    def person(
             # first_name, last_name,
             # first_name, last_name=None,
             # sex, year_of_birth,
@@ -3561,7 +3561,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
 
-    src.person.factory(
+    src.person.person(
         first_name=first_name,
         sex=sex,
         year_of_birth=year_of_birth,
@@ -3571,7 +3571,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
 
-    src.person.factory(
+    src.person.person(
         first_name=first_name,
         sex=sex,
         year_of_birth=year_of_birth,
@@ -3624,15 +3624,15 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
 
-    reality = src.person.factory(
+    reality = src.person.person(
                   **a_person,
                   year_of_birth=year_of_birth,
               )
-                  src.person.factory(
+                  src.person.person(
                       first_name=get_random_name(),
                       year_of_birth=year_of_birth,
                   )
-                  src.person.factory(
+                  src.person.person(
                       first_name=get_random_name(),
                       sex=None,        # use the default value
                       last_name='doe', # use the default value
@@ -3666,7 +3666,7 @@ I want to see what happens when I try to make a person without a value for the `
     :lineno-start: 54
     :emphasize-lines: 8
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 **a_person,
                 year_of_birth=year_of_birth,
             )
@@ -3700,7 +3700,7 @@ I want to see what happens when I try to make a person without a value for the `
     :lineno-start: 4
     :emphasize-lines: 7-8
 
-    def factory(
+    def person(
             # first_name, last_name,
             # first_name, last_name=None,
             # sex, year_of_birth,
@@ -3714,7 +3714,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
 
-    src.person.factory(
+    src.person.person(
         first_name=first_name,
         year_of_birth=year_of_birth,
     )
@@ -3723,7 +3723,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
 
-    src.person.factory(
+    src.person.person(
         first_name=first_name,
         year_of_birth=year_of_birth,
         last_name='doe',
@@ -3748,13 +3748,13 @@ I want to see what happens when I try to make a person without a value for the `
                 # sex=pick_one('F', 'M'),
             )
 
-* I use the :ref:`variable<what is a variable?>` for ``first_name`` in the call to ``src.person.factory``
+* I use the :ref:`variable<what is a variable?>` for ``first_name`` in the call to ``src.person.person``
 
   .. code-block:: python
     :lineno-start: 55
     :emphasize-lines: 3
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 **a_person,
                 first_name=first_name,
                 year_of_birth=year_of_birth,
@@ -3774,7 +3774,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
 
-    TypeError: src.person.factory() got multiple values
+    TypeError: src.person.person() got multiple values
                for keyword argument 'first_name'
 
   because this happens
@@ -3786,18 +3786,18 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
 
-    reality = src.person.factory(
+    reality = src.person.person(
                   **a_person,
                   first_name=first_name,
                   year_of_birth=year_of_birth,
               )
-                  src.person.factory(
+                  src.person.person(
                       first_name=get_random_nam(),
                       first_name=first_name, # repeated keyword
                       year_of_birth=year_of_birth
                   )
 
-  the ``a_person`` :ref:`dictionary<what is a dictionary?>` has a :ref:`key<test_keys_of_a_dictionary>` called ``first_name``, ``src.person.factory`` gets called with the same :ref:`keyword argument<test_keyword_arguments>` twice.
+  the ``a_person`` :ref:`dictionary<what is a dictionary?>` has a :ref:`key<test_keys_of_a_dictionary>` called ``first_name``, ``src.person.person`` gets called with the same :ref:`keyword argument<test_keyword_arguments>` twice.
 
 * I comment out ``**a_person,``
 
@@ -3805,7 +3805,7 @@ I want to see what happens when I try to make a person without a value for the `
     :lineno-start: 55
     :emphasize-lines: 2
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 # **a_person,
                 first_name=first_name,
                 year_of_birth=year_of_birth,
@@ -3842,7 +3842,7 @@ I want to see what happens when I try to make a person without a value for the `
     :lineno-start: 55
     :emphasize-lines: 8
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 # **a_person,
                 first_name=first_name,
                 year_of_birth=year_of_birth,
@@ -3874,7 +3874,7 @@ I want to see what happens when I try to make a person without a value for the `
                 this_year-120, this_year
             )
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 year_of_birth=year_of_birth,
             )
@@ -3896,7 +3896,7 @@ I want to see what happens when I try to make a person without a value for the `
   .. code-block:: python
     :lineno-start: 4
 
-    def factory(
+    def person(
             first_name, last_name='doe',
             sex='M', year_of_birth=None,
         ):
@@ -3944,7 +3944,7 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
     :lineno-start: 50
     :emphasize-lines: 13-18, 20-22
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 year_of_birth=year_of_birth,
             )
@@ -3957,7 +3957,7 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
             self.assertEqual(reality, my_expectation)
 
         def test_factory_person_says_hello(self):
-            joe = src.person.factory(
+            joe = src.person.person(
                 first_name='joe',
                 last_name='blow',
                 year_of_birth=1996,
@@ -3993,7 +3993,7 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
     :lineno-start: 4
     :emphasize-lines: 16-17
 
-    def factory(
+    def person(
             first_name, last_name='doe',
             sex='M', year_of_birth=None,
         ):
@@ -4049,7 +4049,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     :emphasize-lines: 9-13
 
         def test_factory_person_says_hello(self):
-            joe = src.person.factory(
+            joe = src.person.person(
                 first_name='joe',
                 last_name='blow',
                 year_of_birth=1996,
@@ -4100,7 +4100,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             )
             self.assertEqual(reality, my_expectation)
 
-            jane = src.person.factory(
+            jane = src.person.person(
                 first_name='jane',
                 sex='F',
                 year_of_birth=1991,
@@ -4154,16 +4154,16 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   the values for ``first_name`` are the same because
 
-  * this happens when ``jane = src.person.factory(first_name='jane', sex='F', year_of_birth=1991)`` runs
+  * this happens when ``jane = src.person.person(first_name='jane', sex='F', year_of_birth=1991)`` runs
 
     .. code-block:: python
 
-      jane = src.person.factory(
+      jane = src.person.person(
                  first_name='jane',
                  sex='F',
                  year_of_birth=1991,
              )
-                 src.person.factory(
+                 src.person.person(
                      first_name='jane',
                      last_name='doe', # use the default value
                      year_of_birth=1991,
@@ -4232,16 +4232,16 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   the values for ``last_name`` are the same because
 
-  * this happens when ``jane = src.person.factory(first_name='jane', sex='F', year_of_birth=1991)`` runs
+  * this happens when ``jane = src.person.person(first_name='jane', sex='F', year_of_birth=1991)`` runs
 
     .. code-block:: python
 
-      jane = src.person.factory(
+      jane = src.person.person(
                  first_name='jane',
                  sex='F',
                  year_of_birth=1991,
              )
-                 src.person.factory(
+                 src.person.person(
                      first_name='jane',
                      last_name='doe', # use the default value
                      year_of_birth=1991,
@@ -4309,16 +4309,16 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   the test passes because
 
-  * this happens when ``jane = src.person.factory(first_name='jane', sex='F', year_of_birth=1991)`` runs
+  * this happens when ``jane = src.person.person(first_name='jane', sex='F', year_of_birth=1991)`` runs
 
     .. code-block:: python
 
-      jane = src.person.factory(
+      jane = src.person.person(
                  first_name='jane',
                  sex='F',
                  year_of_birth=1991,
              )
-                 src.person.factory(
+                 src.person.person(
                      first_name='jane',
                      last_name='doe', # use the default value
                      year_of_birth=1991,
@@ -4386,7 +4386,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     :lineno-start: 77
     :emphasize-lines: 14-18, 20-25
 
-            jane = src.person.factory(
+            jane = src.person.person(
                 first_name='jane',
                 sex='F',
                 year_of_birth=1991,
@@ -4399,7 +4399,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             )
             self.assertEqual(reality, my_expectation)
 
-            john = src.person.factory(
+            john = src.person.person(
                 first_name='john',
                 last_name='smith',
                 year_of_birth=1580,
@@ -4429,7 +4429,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     :lineno-start: 90
     :emphasize-lines: 9-12
 
-            john = src.person.factory(
+            john = src.person.person(
                 first_name='john',
                 last_name='smith',
                 year_of_birth=1580,
@@ -4464,7 +4464,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             )
             self.assertEqual(reality, my_expectation)
 
-            mary = src.person.factory(
+            mary = src.person.person(
                 first_name='mary',
                 last_name='public',
                 year_of_birth=2000,
@@ -4495,7 +4495,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     :lineno-start: 105
     :emphasize-lines: 10-13
 
-            mary = src.person.factory(
+            mary = src.person.person(
                 first_name='mary',
                 last_name='public',
                 year_of_birth=2000,
@@ -4525,7 +4525,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
         def test_factory_person_says_hello(self):
             this_year = datetime.datetime.now().year
 
-            joe = src.person.factory(
+            joe = src.person.person(
                 first_name='joe',
                 last_name='blow',
                 year_of_birth=1996,
@@ -4540,7 +4540,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
         def test_factory_person_says_hello(self):
             this_year = datetime.datetime.now().year
 
-            joe = src.person.factory(
+            joe = src.person.person(
                 first_name='joe',
                 last_name='blow',
                 year_of_birth=1996,
@@ -4555,7 +4555,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             )
             self.assertEqual(reality, my_expectation)
 
-            jane = src.person.factory(
+            jane = src.person.person(
                 first_name='jane',
                 sex='F',
                 year_of_birth=1991,
@@ -4569,7 +4569,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             )
             self.assertEqual(reality, my_expectation)
 
-            john = src.person.factory(
+            john = src.person.person(
                 first_name='john',
                 last_name='smith',
                 year_of_birth=1580,
@@ -4585,7 +4585,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             )
             self.assertEqual(reality, my_expectation)
 
-            mary = src.person.factory(
+            mary = src.person.person(
                 first_name='mary',
                 last_name='public',
                 year_of_birth=2000,
@@ -4628,7 +4628,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             year_of_birth = 2000
             age = this_year - year_of_birth
 
-            mary = src.person.factory(
+            mary = src.person.person(
                 first_name='mary',
                 last_name='public',
                 year_of_birth=2000,
@@ -4646,7 +4646,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             year_of_birth = 2000
             age = this_year - year_of_birth
 
-            mary = src.person.factory(
+            mary = src.person.person(
                 # first_name='mary',
                 # last_name='public',
                 # year_of_birth=2000,
@@ -4692,7 +4692,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             year_of_birth = 1580
             age = this_year - year_of_birth
 
-            john = src.person.factory(
+            john = src.person.person(
                 first_name='john',
                 last_name='smith',
                 year_of_birth=1580,
@@ -4709,7 +4709,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             year_of_birth = 1580
             age = this_year - year_of_birth
 
-            john = src.person.factory(
+            john = src.person.person(
                 # first_name='john',
                 # last_name='smith',
                 # year_of_birth=1580,
@@ -4751,7 +4751,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             year_of_birth = 1991
             age = this_year - year_of_birth
 
-            jane = src.person.factory(
+            jane = src.person.person(
                 first_name='jane',
                 sex='F',
                 year_of_birth=1991,
@@ -4767,7 +4767,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             year_of_birth = 1991
             age = this_year - year_of_birth
 
-            jane = src.person.factory(
+            jane = src.person.person(
                 # first_name='jane',
                 first_name=first_name,
                 sex='F',
@@ -4801,7 +4801,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             year_of_birth = 1996
             age = this_year - year_of_birth
 
-            joe = src.person.factory(
+            joe = src.person.person(
                 first_name='joe',
                 last_name='blow',
                 year_of_birth=1996,
@@ -4821,7 +4821,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             year_of_birth = 1996
             age = this_year - year_of_birth
 
-            joe = src.person.factory(
+            joe = src.person.person(
                 # first_name='joe',
                 # last_name='blow',
                 # year_of_birth=1996,
@@ -4856,7 +4856,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             year_of_birth = 1996
             age = this_year - year_of_birth
 
-            joe = src.person.factory(
+            joe = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
@@ -4873,7 +4873,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             year_of_birth = 1991
             age = this_year - year_of_birth
 
-            jane = src.person.factory(
+            jane = src.person.person(
                 first_name=first_name,
                 sex='F',
                 year_of_birth=year_of_birth
@@ -4891,7 +4891,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             year_of_birth = 1580
             age = this_year - year_of_birth
 
-            john = src.person.factory(
+            john = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
@@ -4909,7 +4909,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             year_of_birth = 2000
             age = this_year - year_of_birth
 
-            mary = src.person.factory(
+            mary = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
@@ -5069,7 +5069,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
     :lineno-start: 44
     :emphasize-lines: 7-8
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 **a_person,
                 year_of_birth=year_of_birth,
             )
@@ -5102,7 +5102,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
                 this_year-120, this_year
             )
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 **a_person,
                 year_of_birth=year_of_birth,
             )
@@ -5120,7 +5120,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
     :lineno-start: 62
     :emphasize-lines: 9-10
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 year_of_birth=year_of_birth,
             )
@@ -5151,7 +5151,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
                 this_year-120, this_year
             )
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 year_of_birth=year_of_birth,
             )
@@ -5181,7 +5181,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
             # age = this_year - year_of_birth
             age = calculate_age(year_of_birth)
 
-            joe = src.person.factory(
+            joe = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
@@ -5211,7 +5211,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
             # age = this_year - year_of_birth
             age = calculate_age(year_of_birth)
 
-            jane = src.person.factory(
+            jane = src.person.person(
                 first_name=first_name,
                 sex='F',
                 year_of_birth=year_of_birth
@@ -5243,7 +5243,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
             # age = this_year - year_of_birth
             age = calculate_age(year_of_birth)
 
-            john = src.person.factory(
+            john = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
@@ -5315,7 +5315,7 @@ I want to use random values for ``year_of_birth`` in the tests
             # age = this_year - year_of_birth
             age = calculate_age(year_of_birth)
 
-            joe = src.person.factory(
+            joe = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
@@ -5349,7 +5349,7 @@ I want to use random values for ``year_of_birth`` in the tests
             # age = this_year - year_of_birth
             age = calculate_age(year_of_birth)
 
-            jane = src.person.factory(
+            jane = src.person.person(
                 first_name=first_name,
                 sex='F',
                 year_of_birth=year_of_birth
@@ -5385,7 +5385,7 @@ I want to use random values for ``year_of_birth`` in the tests
             # age = this_year - year_of_birth
             age = calculate_age(year_of_birth)
 
-            john = src.person.factory(
+            john = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
@@ -5421,7 +5421,7 @@ I want to use random values for ``year_of_birth`` in the tests
             # age = this_year - year_of_birth
             age = calculate_age(year_of_birth)
 
-            mary = src.person.factory(
+            mary = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
@@ -5518,7 +5518,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
             )
             year_of_birth = get_random_year_of_birth()
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 **a_person,
                 year_of_birth=year_of_birth,
             )
@@ -5556,7 +5556,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
             first_name = get_random_name()
             year_of_birth = get_random_year_of_birth()
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 year_of_birth=year_of_birth,
             )
@@ -5590,7 +5590,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
             year_of_birth = get_random_year_of_birth()
             age = calculate_age(year_of_birth)
 
-            joe = src.person.factory(
+            joe = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
@@ -5628,7 +5628,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
             year_of_birth = get_random_year_of_birth()
             age = calculate_age(year_of_birth)
 
-            jane = src.person.factory(
+            jane = src.person.person(
                 first_name=first_name,
                 sex='F',
                 year_of_birth=year_of_birth
@@ -5668,7 +5668,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
             year_of_birth = get_random_year_of_birth()
             age = calculate_age(year_of_birth)
 
-            john = src.person.factory(
+            john = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
@@ -5721,7 +5721,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
             year_of_birth = get_random_year_of_birth()
             age = calculate_age(year_of_birth)
 
-            joe = src.person.factory(
+            joe = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
@@ -5738,7 +5738,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
             year_of_birth = get_random_year_of_birth()
             age = calculate_age(year_of_birth)
 
-            jane = src.person.factory(
+            jane = src.person.person(
                 first_name=first_name,
                 sex='F',
                 year_of_birth=year_of_birth
@@ -5756,7 +5756,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
             year_of_birth = get_random_year_of_birth()
             age = calculate_age(year_of_birth)
 
-            john = src.person.factory(
+            john = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
@@ -5774,7 +5774,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
             year_of_birth = get_random_year_of_birth()
             age = calculate_age(year_of_birth)
 
-            mary = src.person.factory(
+            mary = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
@@ -5891,14 +5891,14 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     # factory
     # factory = None
-    def factory():
+    def person():
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: factory() got
+    TypeError: person() got
                an unexpected keyword argument 'first_name'
 
   because the test :ref:`called<how to call a function with input>` the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`name<test_keyword_arguments>` (``first_name``) that is not in the :ref:`function definition<how to make a function>`
@@ -5911,15 +5911,15 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     # factory
     # factory = None
-    # def factory():
-    def factory(first_name):
+    # def person():
+    def person(first_name):
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: factory() got
+    TypeError: person() got
                an unexpected keyword argument 'year_of_birth'
 
   because the test :ref:`called<how to call a function with input>` the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`name<test_keyword_arguments>` (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`
@@ -5932,9 +5932,9 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     # factory
     # factory = None
-    # def factory():
-    # def factory(first_name):
-    def factory(first_name, year_of_birth):
+    # def person():
+    # def person(first_name):
+    def person(first_name, year_of_birth):
         return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -5955,9 +5955,9 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     # factory
     # factory = None
-    # def factory():
-    # def factory(first_name):
-    def factory(first_name, year_of_birth):
+    # def person():
+    # def person(first_name):
+    def person(first_name, year_of_birth):
         # return None
         return {
             'first_name': 'john',
@@ -5986,9 +5986,9 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     # factory
     # factory = None
-    # def factory():
-    # def factory(first_name):
-    def factory(first_name, year_of_birth):
+    # def person():
+    # def person(first_name):
+    def person(first_name, year_of_birth):
         # return None
         return {
             # 'first_name': 'john',
@@ -6012,7 +6012,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: shell
 
-    TypeError: factory() got
+    TypeError: person() got
                an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
@@ -6026,9 +6026,9 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     # factory
     # factory = None
-    # def factory():
-    # def factory(first_name):
-    def factory(first_name, year_of_birth):
+    # def person():
+    # def person(first_name):
+    def person(first_name, year_of_birth):
         # return None
         return {
             # 'first_name': 'john',
@@ -6063,9 +6063,9 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     # factory
     # factory = None
-    # def factory():
-    # def factory(first_name):
-    def factory(first_name, year_of_birth):
+    # def person():
+    # def person(first_name):
+    def person(first_name, year_of_birth):
 
   the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -6075,7 +6075,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     :lineno-start: 9
     :emphasize-lines: 10-13
 
-    def factory(first_name, year_of_birth):
+    def person(first_name, year_of_birth):
         # return None
         return {
             # 'first_name': 'john',
@@ -6094,7 +6094,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: shell
 
-    TypeError: factory() got
+    TypeError: person() got
                an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
@@ -6107,8 +6107,8 @@ Can you make the tests pass without looking at how I solve it below? You can com
     :emphasize-lines: 1-5
     :emphasize-text: last_name
 
-    # def factory(first_name, year_of_birth):
-    def factory(
+    # def person(first_name, year_of_birth):
+    def person(
             first_name, year_of_birth,
             last_name,
         ):
@@ -6117,7 +6117,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
 
-    TypeError: factory() missing 1 required
+    TypeError: person() missing 1 required
                positional argument: 'last_name'
 
   because the test :ref:`called<how to call a function with input>` the :ref:`function<what is a function?>` with another argument and Python_ took that argument as a :ref:`positional argument<test_positional_arguments>` for ``last_name``
@@ -6128,7 +6128,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     :lineno-start: 10
     :emphasize-lines: 3-4
 
-    def factory(
+    def person(
             first_name, year_of_birth,
             # last_name,
             last_name=None,
@@ -6138,7 +6138,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
 
-    TypeError: factory() got
+    TypeError: person() got
                an unexpected keyword argument 'sex'
 
   because the test :ref:`called<how to call a function with input>` the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_keyword_arguments>` (``sex``) that is not in the :ref:`function definition<how to make a function>`
@@ -6150,7 +6150,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     :emphasize-lines: 4-5
     :emphasize-text: sex
 
-    def factory(
+    def person(
             first_name, year_of_birth,
             # last_name,
             # last_name=None,
@@ -6172,7 +6172,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     :lineno-start: 10
     :emphasize-lines: 5-6
 
-    def factory(
+    def person(
             first_name, year_of_birth,
             # last_name,
             # last_name=None,
@@ -6203,7 +6203,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     :lineno-start: 10
     :emphasize-lines: 13-14
 
-    def factory(
+    def person(
             first_name, year_of_birth,
             # last_name,
             # last_name=None,
@@ -6244,7 +6244,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     :lineno-start: 10
     :emphasize-lines: 6-7
 
-    def factory(
+    def person(
         first_name, year_of_birth,
         # last_name,
         # last_name=None,
@@ -6275,7 +6275,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     :lineno-start: 4
     :emphasize-lines: 13-14
 
-    def factory(
+    def person(
             first_name, year_of_birth,
             # last_name,
             # last_name=None,
@@ -6318,7 +6318,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     :lineno-start: 10
     :emphasize-lines: 7-8
 
-    def factory(
+    def person(
             first_name, year_of_birth,
             # last_name,
             # last_name=None,
@@ -6351,10 +6351,10 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     # factory
     # factory = None
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, year_of_birth):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, year_of_birth):
+    def person(
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
@@ -6548,7 +6548,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
         )
 
 
-    def factory(
+    def person(
             first_name, year_of_birth,
             last_name='doe', sex='M',
         ):
@@ -6567,7 +6567,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   .. code-block:: python
     :emphasize-text: None
 
-    def factory(
+    def person(
             first_name, year_of_birth,
             last_name='doe', sex='M',
         ):
@@ -6577,7 +6577,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   .. code-block:: python
     :emphasize-text: None
 
-    def factory(
+    def person(
             first_name, last_name='doe',
             sex='M', year_of_birth=None,
         ):

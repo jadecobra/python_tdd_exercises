@@ -29,7 +29,7 @@ test_telephone
 #. :ref:`test_passing_a_dictionary`
 
 *********************************************************************************
-test_person_factory
+extract person function
 *********************************************************************************
 
 #. :ref:`test_factory_w_keyword_arguments`

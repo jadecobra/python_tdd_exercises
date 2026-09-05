@@ -224,7 +224,7 @@ test_joe with unittest
             sex = 'M'
             year_of_birth = 1996
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
@@ -297,7 +297,7 @@ the test is green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`factory function<test person factory>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`factory function<extract person function>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -310,7 +310,7 @@ the test is green again.
             sex = 'M'
             year_of_birth = 1996
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
@@ -450,7 +450,7 @@ the test is green again.
             sex = 'M'
             year_of_birth = 1996
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
@@ -527,7 +527,7 @@ test_jane with unittest
             sex = 'F'
             year_of_birth = 1991
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
@@ -617,7 +617,7 @@ the test passes.
             sex = 'F'
             year_of_birth = 1991
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
@@ -664,7 +664,7 @@ the test passes.
     AssertionError: 'jane, doe, F, 1991'
                  == 'jane, doe, F, 1991'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`factory function<test person factory>`, in :ref:`test_jane`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`factory function<extract person function>`, in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 67
@@ -749,7 +749,7 @@ the test passes.
             sex = 'F'
             year_of_birth = 1991
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
@@ -826,7 +826,7 @@ test_john with unittest
             sex = 'M'
             year_of_birth = 1580
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
@@ -916,7 +916,7 @@ green again.
             sex = 'M'
             year_of_birth = 1580
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
@@ -963,7 +963,7 @@ green again.
     AssertionError: 'john, smith, M, 1580'
                  == 'john, smith, M, 1580'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`factory function<test person factory>`, in :ref:`test_john`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`factory function<extract person function>`, in :ref:`test_john`
 
   .. code-block:: python
     :lineno-start: 110
@@ -1048,7 +1048,7 @@ green again.
             sex = 'M'
             year_of_birth = 1580
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
@@ -1125,7 +1125,7 @@ test_mary with unittest
             sex = 'F'
             year_of_birth = 2000
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
@@ -1215,7 +1215,7 @@ green.
             sex = 'F'
             year_of_birth = 2000
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
@@ -1262,7 +1262,7 @@ green.
      AssertionError: 'mary, public, F, 2000'
                   == 'mary, public, F, 2000'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`factory function<test person factory>`, in :ref:`test_mary`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`factory function<extract person function>`, in :ref:`test_mary`
 
   .. code-block:: python
     :lineno-start: 153
@@ -1347,7 +1347,7 @@ green.
             sex = 'F'
             year_of_birth = 2000
 
-            reality = src.person.factory(
+            reality = src.person.person(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,

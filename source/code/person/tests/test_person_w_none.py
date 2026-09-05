@@ -10,7 +10,7 @@ class TestPerson(unittest.TestCase):
         sex = 'M'
         year_of_birth = 1996
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -53,7 +53,7 @@ class TestPerson(unittest.TestCase):
         sex = 'F'
         year_of_birth = 1991
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -96,7 +96,7 @@ class TestPerson(unittest.TestCase):
         sex = 'M'
         year_of_birth = 1580
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -139,7 +139,7 @@ class TestPerson(unittest.TestCase):
         sex = 'F'
         year_of_birth = 2000
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,

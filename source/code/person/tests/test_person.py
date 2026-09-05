@@ -43,7 +43,7 @@ class TestPerson(unittest.TestCase):
         )
         year_of_birth = get_random_year_of_birth()
 
-        reality = src.person.factory(
+        reality = src.person.person(
             **a_person,
             year_of_birth=year_of_birth,
         )
@@ -57,7 +57,7 @@ class TestPerson(unittest.TestCase):
         first_name = get_random_name()
         year_of_birth = get_random_year_of_birth()
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             year_of_birth=year_of_birth,
         )
@@ -75,7 +75,7 @@ class TestPerson(unittest.TestCase):
         year_of_birth = get_random_year_of_birth()
         age = calculate_age(year_of_birth)
 
-        joe = src.person.factory(
+        joe = src.person.person(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
@@ -92,7 +92,7 @@ class TestPerson(unittest.TestCase):
         year_of_birth = get_random_year_of_birth()
         age = calculate_age(year_of_birth)
 
-        jane = src.person.factory(
+        jane = src.person.person(
             first_name=first_name,
             sex='F',
             year_of_birth=year_of_birth
@@ -110,7 +110,7 @@ class TestPerson(unittest.TestCase):
         year_of_birth = get_random_year_of_birth()
         age = calculate_age(year_of_birth)
 
-        john = src.person.factory(
+        john = src.person.person(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
@@ -128,7 +128,7 @@ class TestPerson(unittest.TestCase):
         year_of_birth = get_random_year_of_birth()
         age = calculate_age(year_of_birth)
 
-        mary = src.person.factory(
+        mary = src.person.person(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,

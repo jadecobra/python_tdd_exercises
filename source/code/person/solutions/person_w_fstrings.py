@@ -8,7 +8,7 @@ def say_hello(
     )
 
 
-def factory(
+def person(
         first_name, last_name,
         sex, year_of_birth,
     ):

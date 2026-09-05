@@ -1,5 +1,5 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with f-strings. Use f-strings + one factory function (instead of one function per person) that takes first_name, last_name, sex, year_of_birth and returns 'name, surname, X, YYYY'. Add say_hello using f-strings for 'Hello, my name is ... and I am N.'. Start in the person project; uv run pytest-watcher . --now. Progressively introduce f-strings in the return, required args then keyword arguments, move factory and say_hello to src/person.py (AttributeError: module 'src.person' has no attribute 'factory'), use local variables in tests to remove repetition of the data, remove commented lines. Ends with 4 tests calling src.person.factory + src.person.say_hello + # Exceptions seen (AssertionError, NameError, TypeError, AttributeError). Shows why even with f-strings the 4 tests are repetitive. What is next: separate and equal functions. Code: person/tests/test_person_w_fstrings.py and person/solutions/person_w_fstrings.py.
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with f-strings. Use f-strings + one factory function (instead of one function per person) that takes first_name, last_name, sex, year_of_birth and returns 'name, surname, X, YYYY'. Add say_hello using f-strings for 'Hello, my name is ... and I am N.'. Start in the person project; uv run pytest-watcher . --now. Progressively introduce f-strings in the return, required args then keyword arguments, move factory and say_hello to src/person.py (AttributeError: module 'src.person' has no attribute 'factory'), use local variables in tests to remove repetition of the data, remove commented lines. Ends with 4 tests calling src.person.person + src.person.say_hello + # Exceptions seen (AssertionError, NameError, TypeError, AttributeError). Shows why even with f-strings the 4 tests are repetitive. What is next: separate and equal functions. Code: person/tests/test_person_w_fstrings.py and person/solutions/person_w_fstrings.py.
   :keywords: Jacob Itegboje, Pumping Python, how to make a person with f-strings, python f-strings, f-string factory function, one function instead of one per person, src.person, import src.person, AttributeError module 'src.person' has no attribute 'factory', TypeError missing required positional argument, uv run pytest-watcher, red green refactor f-strings, variables remove repetition in tests, first_name last_name sex year_of_birth, say_hello f-string age 2026-year_of_birth, remove the commented lines, test_joe test_jane test_john test_mary, person factory with f-strings, separate tests and solution, what is next separate and equal functions
 
 .. include:: ../../links.rst
@@ -91,7 +91,7 @@ open the project
 ----
 
 *********************************************************************************
-test person factory
+extract person function
 *********************************************************************************
 
 =================================================================================
@@ -109,7 +109,7 @@ I add an :ref:`assertion<what is an assertion?>` to :ref:`test_joe` in ``test_pe
     def test_joe():
         assert joe() == 'joe, blow, M, 1996'
 
-        reality = factory()
+        reality = person()
         my_expectation = 'joe, blow, M, 1996'
         assert reality == my_expectation
 
@@ -138,7 +138,7 @@ I add a :ref:`function definition<how to make a function that takes input>` for 
   :linenos:
   :emphasize-lines: 1-2
 
-  def factory():
+  def person():
       return 'joe, blow, M, 1996'
 
 
@@ -148,8 +148,8 @@ the test passes.
 
 .. code-block:: shell
 
-  factory() -> 'joe, blow, M, 1996'
-  └── def factory():
+  person() -> 'joe, blow, M, 1996'
+  └── def person():
       └── return 'joe, blow, M, 1996'
 
 ----
@@ -160,7 +160,7 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` with a :ref:`call<how to call a function with input>` to the :ref:`factory function<test person factory>` from :ref:`test_jane`
+* I add an :ref:`assertion<what is an assertion?>` with a :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` from :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 21
@@ -169,7 +169,7 @@ the test passes.
     def test_joe():
         assert joe() == 'joe, blow, M, 1996'
 
-        reality = factory()
+        reality = person()
         my_expectation = 'joe, blow, M, 1996'
         assert reality == my_expectation
 
@@ -177,7 +177,7 @@ the test passes.
     def test_jane():
         assert jane() == 'jane, doe, F, 1991'
 
-        reality = factory()
+        reality = person()
         my_expectation = 'jane, doe, F, 1991'
         assert reality == my_expectation
 
@@ -191,7 +191,7 @@ the test passes.
     AssertionError: assert 'joe, blow, M, 1996'
                         == 'jane, doe, F, 1991'
 
-  because the :ref:`factory function<test person factory>` always returns ``joe, blow, M, 1996`` when it is called. I want it to return a string_ based on the input it gets for me to be able to use it to make more than one person.
+  because the :ref:`factory function<extract person function>` always returns ``joe, blow, M, 1996`` when it is called. I want it to return a string_ based on the input it gets for me to be able to use it to make more than one person.
 
 * I :ref:`make the function take input<how to make a function that takes input>` for the first name
 
@@ -199,25 +199,25 @@ the test passes.
     :linenos:
     :emphasize-lines: 1-2
 
-    # def factory():
-    def factory(first_name):
+    # def person():
+    def person(first_name):
         return 'joe, blow, M, 1996'
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: factory() missing
+    TypeError: person() missing
                1 required positional argument:
                'first_name'
 
   because
 
-  - I called the :ref:`factory function<test person factory>` with zero inputs.
+  - I called the :ref:`factory function<extract person function>` with zero inputs.
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has one required argument (``first_name``).
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* I add ``'jane'`` to the :ref:`call<how to call a function with input>` to the :ref:`factory function<test person factory>` from :ref:`test_jane`
+* I add ``'jane'`` to the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` from :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 30
@@ -226,8 +226,8 @@ the test passes.
     def test_jane():
         assert jane() == 'jane, doe, F, 1991'
 
-        # reality = factory()
-        reality = factory('jane')
+        # reality = person()
+        reality = person('jane')
         my_expectation = 'jane, doe, F, 1991'
         assert reality == my_expectation
 
@@ -241,14 +241,14 @@ the test passes.
     AssertionError: assert 'joe, blow, M, 1996'
                         == 'jane, doe, F, 1991'
 
-* I change :ref:`the return statement` of the :ref:`factory function<test person factory>` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
+* I change :ref:`the return statement` of the :ref:`factory function<extract person function>` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 3-4
 
-    # def factory():
-    def factory(first_name):
+    # def person():
+    def person(first_name):
         # return 'joe, blow, M, 1996'
         return f'{first_name}, blow, M, 1996'
 
@@ -270,8 +270,8 @@ the test passes.
     :linenos:
     :emphasize-lines: 4-8
 
-    # def factory():
-    def factory(first_name):
+    # def person():
+    def person(first_name):
         # return 'joe, blow, M, 1996'
         # return f'{first_name}, blow, M, 1996'
         return (
@@ -288,15 +288,15 @@ the test passes.
 
     NameError: name 'last_name' is not defined
 
-* I add the name to the parentheses to define it in the :ref:`factory function<test person factory>`
+* I add the name to the parentheses to define it in the :ref:`factory function<extract person function>`
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 2-3
 
-    # def factory():
-    # def factory(first_name):
-    def factory(first_name, last_name):
+    # def person():
+    # def person(first_name):
+    def person(first_name, last_name):
         # return 'joe, blow, M, 1996'
         # return f'{first_name}, blow, M, 1996'
         return (
@@ -311,17 +311,17 @@ the test passes.
 
   .. code-block:: python
 
-    TypeError: factory() missing
+    TypeError: person() missing
                1 required positional argument:
                'last_name'
 
   because
 
-  - I called the :ref:`factory function<test person factory>` with one input (``jane``).
+  - I called the :ref:`factory function<extract person function>` with one input (``jane``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has two required arguments (``first_name`` and ``last_name``).
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* I add ``'doe'`` to the :ref:`call<how to call a function with input>` to the :ref:`factory function<test person factory>` in :ref:`test_jane`
+* I add ``'doe'`` to the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 36
@@ -330,9 +330,9 @@ the test passes.
     def test_jane():
         assert jane() == 'jane, doe, F, 1991'
 
-        # reality = factory()
-        # reality = factory('jane')
-        reality = factory('jane', 'doe')
+        # reality = person()
+        # reality = person('jane')
+        reality = person('jane', 'doe')
         my_expectation = 'jane, doe, F, 1991'
         assert reality == my_expectation
 
@@ -348,7 +348,7 @@ the test passes.
 
   the first and last names match. More progress.
 
-* I change the :ref:`call<how to call a function with input>` to the :ref:`factory function<test person factory>` to use :ref:`keyword arguments<test_keyword_arguments>`, then add a value for ``sex`` (since I have more than two arguments) to  in :ref:`test_jane`
+* I change the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` to use :ref:`keyword arguments<test_keyword_arguments>`, then add a value for ``sex`` (since I have more than two arguments) to  in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 36
@@ -357,10 +357,10 @@ the test passes.
     def test_jane():
         assert jane() == 'jane, doe, F, 1991'
 
-        # reality = factory()
-        # reality = factory('jane')
-        # reality = factory('jane', 'doe')
-        reality = factory(
+        # reality = person()
+        # reality = person('jane')
+        # reality = person('jane', 'doe')
+        reality = person(
             first_name='jane',
             last_name='doe',
             sex='F',
@@ -375,12 +375,12 @@ the test passes.
 
   .. code-block:: python
 
-    TypeError: factory() got an unexpected
+    TypeError: person() got an unexpected
                keyword argument 'sex'
 
   because
 
-  - I called the :ref:`factory function<test person factory>` with three :ref:`keyword arguments<test_keyword_arguments>` input (``first_name``, ``last_name`` and ``sex``).
+  - I called the :ref:`factory function<extract person function>` with three :ref:`keyword arguments<test_keyword_arguments>` input (``first_name``, ``last_name`` and ``sex``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has two required arguments (``first_name`` and ``last_name``).
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
@@ -390,10 +390,10 @@ the test passes.
     :linenos:
     :emphasize-lines: 3-4
 
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    def factory(first_name, last_name, sex):
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    def person(first_name, last_name, sex):
         # return 'joe, blow, M, 1996'
         # return f'{first_name}, blow, M, 1996'
         return (
@@ -406,16 +406,16 @@ the test passes.
 
   the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`.
 
-* I add ``sex`` to the :ref:`f-string<what is string interpolation?>` in the :ref:`factory function<test person factory>`
+* I add ``sex`` to the :ref:`f-string<what is string interpolation?>` in the :ref:`factory function<extract person function>`
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 9-10
 
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    def factory(first_name, last_name, sex):
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    def person(first_name, last_name, sex):
         # return 'joe, blow, M, 1996'
         # return f'{first_name}, blow, M, 1996'
         return (
@@ -442,10 +442,10 @@ the test passes.
     :linenos:
     :emphasize-lines: 10-11
 
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    def factory(first_name, last_name, sex):
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    def person(first_name, last_name, sex):
         # return 'joe, blow, M, 1996'
         # return f'{first_name}, blow, M, 1996'
         return (
@@ -464,17 +464,17 @@ the test passes.
 
     NameError: name 'year_of_birth' is not defined
 
-* I add ``year_of_birth`` to the parentheses to define it in the :ref:`factory function<test person factory>`
+* I add ``year_of_birth`` to the parentheses to define it in the :ref:`factory function<extract person function>`
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 4-8
 
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    # def factory(first_name, last_name, sex):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    # def person(first_name, last_name, sex):
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -494,17 +494,17 @@ the test passes.
 
   .. code-block:: python
 
-    TypeError: factory() missing
+    TypeError: person() missing
                1 required positional argument:
                'year_of_birth'
 
   because
 
-  - I called the :ref:`factory function<test person factory>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``sex``).
+  - I called the :ref:`factory function<extract person function>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``sex``).
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has four required arguments (``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* I add ``year_of_birth=1996`` to the :ref:`call<how to call a function with input>` to the :ref:`factory function<test person factory>` from :ref:`test_jane`
+* I add ``year_of_birth=1996`` to the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` from :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 43
@@ -513,10 +513,10 @@ the test passes.
     def test_jane():
         assert jane() == 'jane, doe, F, 1991'
 
-        # reality = factory()
-        # reality = factory('jane')
-        # reality = factory('jane', 'doe')
-        reality = factory(
+        # reality = person()
+        # reality = person('jane')
+        # reality = person('jane', 'doe')
+        reality = person(
             first_name='jane',
             last_name='doe',
             sex='F',
@@ -532,18 +532,18 @@ the test passes.
 
   .. code-block:: python
 
-    TypeError: factory() missing
+    TypeError: person() missing
                4 required positional arguments:
                'first_name', 'last_name', 'sex',
                and 'year_of_birth'
 
   because
 
-  - I the :ref:`factory function<test person factory>` from :ref:`test_joe` with zero arguments.
+  - I the :ref:`factory function<extract person function>` from :ref:`test_joe` with zero arguments.
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has four required arguments (``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* Since there are more than two arguments, I add :ref:`keyword arguments<test_keyword_arguments>` to the :ref:`call<how to call a function with input>` to the :ref:`factory function<test person factory>` from :ref:`test_joe`
+* Since there are more than two arguments, I add :ref:`keyword arguments<test_keyword_arguments>` to the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` from :ref:`test_joe`
 
   .. code-block:: python
     :lineno-start: 35
@@ -552,8 +552,8 @@ the test passes.
     def test_joe():
         assert joe() == 'joe, blow, M, 1996'
 
-        # reality = factory()
-        reality = factory(
+        # reality = person()
+        reality = person(
             first_name='joe',
             last_name='blow',
             sex='M',
@@ -569,11 +569,11 @@ the test passes.
 
   .. code-block:: shell
 
-    factory(
+    person(
         first_name='joe', last_name='blow',
         sex='M', year_of_birth=1996,
     ) -> 'joe, blow, M, 1996'
-    └── def factory(
+    └── def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -589,11 +589,11 @@ the test passes.
 
   .. code-block:: shell
 
-    factory(
+    person(
         first_name='jane', last_name='doe',
         sex='F', year_of_birth=1991,
     ) -> 'jane, doe, F, 1991'
-    └── def factory(
+    └── def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -609,12 +609,12 @@ the test passes.
 
 ----
 
-* I remove the commented lines from the :ref:`factory function<test person factory>`
+* I remove the commented lines from the :ref:`factory function<extract person function>`
 
   .. code-block:: python
     :linenos:
 
-    def factory(
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -626,7 +626,7 @@ the test passes.
 
     def joe():
 
-* I comment out the :ref:`call<how to call a function with input>` to ``joe`` in :ref:`test_joe` because I no longer need it since the :ref:`factory function<test person factory>` does the same thing
+* I comment out the :ref:`call<how to call a function with input>` to ``joe`` in :ref:`test_joe` because I no longer need it since the :ref:`factory function<extract person function>` does the same thing
 
   .. code-block:: python
     :lineno-start: 27
@@ -635,7 +635,7 @@ the test passes.
     def test_joe():
         # assert joe() == 'joe, blow, M, 1996'
 
-        # reality = factory()
+        # reality = person()
 
 * I add a :ref:`variable<what is a variable?>` for ``'joe'`` in :ref:`test_joe`
 
@@ -647,7 +647,7 @@ the test passes.
         # assert joe() == 'joe, blow, M, 1996'
         first_name = 'joe'
 
-        # reality = factory()
+        # reality = person()
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'joe'``
 
@@ -659,8 +659,8 @@ the test passes.
         # assert joe() == 'joe, blow, M, 1996'
         first_name = 'joe'
 
-        # reality = factory()
-        reality = factory(
+        # reality = person()
+        reality = person(
             # first_name='joe',
             first_name=first_name,
             last_name='blow',
@@ -689,7 +689,7 @@ the test passes.
         first_name = 'joe'
         last_name = 'blow'
 
-        # reality = factory()
+        # reality = person()
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'blow'``
 
@@ -702,8 +702,8 @@ the test passes.
         first_name = 'joe'
         last_name = 'blow'
 
-        # reality = factory()
-        reality = factory(
+        # reality = person()
+        reality = person(
             # first_name='joe',
             first_name=first_name,
             # last_name='blow',
@@ -736,7 +736,7 @@ the test passes.
         last_name = 'blow'
         sex = 'M'
 
-        # reality = factory()
+        # reality = person()
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'M'`` from :ref:`test_joe`
 
@@ -750,8 +750,8 @@ the test passes.
         last_name = 'blow'
         sex = 'M'
 
-        # reality = factory()
-        reality = factory(
+        # reality = person()
+        reality = person(
             # first_name='joe',
             first_name=first_name,
             # last_name='blow',
@@ -787,7 +787,7 @@ the test passes.
         sex = 'M'
         year_of_birth = 1996
 
-        # reality = factory()
+        # reality = person()
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``1996`` from :ref:`test_joe`
 
@@ -802,8 +802,8 @@ the test passes.
         sex = 'M'
         year_of_birth = 1996
 
-        # reality = factory()
-        reality = factory(
+        # reality = person()
+        reality = person(
             # first_name='joe',
             first_name=first_name,
             # last_name='blow',
@@ -839,7 +839,7 @@ the test passes.
         sex = 'M'
         year_of_birth = 1996
 
-        reality = factory(
+        reality = person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -856,7 +856,7 @@ the test passes.
 
 ----
 
-* I comment out the :ref:`call<how to call a function with input>` to ``jane`` in :ref:`test_jane` because I no longer need it since the :ref:`factory function<test person factory>` does the same thing
+* I comment out the :ref:`call<how to call a function with input>` to ``jane`` in :ref:`test_jane` because I no longer need it since the :ref:`factory function<extract person function>` does the same thing
 
   .. code-block:: python
     :lineno-start: 46
@@ -865,7 +865,7 @@ the test passes.
     def test_jane():
         # assert jane() == 'jane, doe, F, 1991'
 
-        # reality = factory()
+        # reality = person()
 
 * I add a :ref:`variable<what is a variable?>` for ``'jane'`` in :ref:`test_jane`
 
@@ -877,7 +877,7 @@ the test passes.
         # assert jane() == 'jane, doe, F, 1991'
         first_name = 'jane'
 
-        # reality = factory()
+        # reality = person()
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'jane'``
 
@@ -889,10 +889,10 @@ the test passes.
         # assert jane() == 'jane, doe, F, 1991'
         first_name = 'jane'
 
-        # reality = factory()
-        # reality = factory('jane')
-        # reality = factory('jane', 'doe')
-        reality = factory(
+        # reality = person()
+        # reality = person('jane')
+        # reality = person('jane', 'doe')
+        reality = person(
             # first_name='jane',
             first_name=first_name,
             last_name='doe',
@@ -922,7 +922,7 @@ the test passes.
         first_name = 'jane'
         last_name = 'doe'
 
-        # reality = factory()
+        # reality = person()
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'doe'``
 
@@ -935,10 +935,10 @@ the test passes.
         first_name = 'jane'
         last_name = 'doe'
 
-        # reality = factory()
-        # reality = factory('jane')
-        # reality = factory('jane', 'doe')
-        reality = factory(
+        # reality = person()
+        # reality = person('jane')
+        # reality = person('jane', 'doe')
+        reality = person(
             # first_name='jane',
             first_name=first_name,
             # last_name='doe',
@@ -971,7 +971,7 @@ the test passes.
         last_name = 'doe'
         sex = 'F'
 
-        # reality = factory()
+        # reality = person()
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'F'`` from :ref:`test_jane`
 
@@ -985,10 +985,10 @@ the test passes.
         last_name = 'doe'
         sex = 'F'
 
-        # reality = factory()
-        # reality = factory('jane')
-        # reality = factory('jane', 'doe')
-        reality = factory(
+        # reality = person()
+        # reality = person('jane')
+        # reality = person('jane', 'doe')
+        reality = person(
             # first_name='jane',
             first_name=first_name,
             # last_name='doe',
@@ -1024,7 +1024,7 @@ the test passes.
         sex = 'F'
         year_of_birth = 1991
 
-        # reality = factory()
+        # reality = person()
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``1991``
 
@@ -1039,10 +1039,10 @@ the test passes.
         sex = 'F'
         year_of_birth = 1991
 
-        # reality = factory()
-        # reality = factory('jane')
-        # reality = factory('jane', 'doe')
-        reality = factory(
+        # reality = person()
+        # reality = person('jane')
+        # reality = person('jane', 'doe')
+        reality = person(
             # first_name='jane',
             first_name=first_name,
             # last_name='doe',
@@ -1078,7 +1078,7 @@ the test passes.
         sex = 'F'
         year_of_birth = 1991
 
-        reality = factory(
+        reality = person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1095,7 +1095,7 @@ the test passes.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` in :ref:`test_john` to a :ref:`call<how to call a function with input>` to the :ref:`factory function<test person factory>`
+* I change the :ref:`call<how to call a function with input>` in :ref:`test_john` to a :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>`
 
   .. code-block:: python
     :lineno-start: 65
@@ -1103,7 +1103,7 @@ the test passes.
 
     def test_john():
         # assert john() == 'john, smith, M, 1580'
-        reality = factory(
+        reality = person(
             first_name='john',
             last_name='smith',
             sex='M',
@@ -1130,7 +1130,7 @@ the test passes.
 
     def test_john():
         # assert john() == 'john, smith, M, 1580'
-        reality = factory(
+        reality = person(
             first_name='john',
             last_name='smith',
             sex='M',
@@ -1147,11 +1147,11 @@ the test passes.
 
   .. code-block:: shell
 
-    factory(
+    person(
         first_name='john', last_name='smith',
         sex='M', year_of_birth=1580,
     ) -> 'john, smith, M, 1580'
-    └── def factory(
+    └── def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -1175,7 +1175,7 @@ the test passes.
         # assert john() == 'john, smith, M, 1580'
         first_name = 'john'
 
-        reality = factory(
+        reality = person(
             first_name='john',
             last_name='smith',
             sex='M',
@@ -1198,7 +1198,7 @@ the test passes.
         # assert john() == 'john, smith, M, 1580'
         first_name = 'john'
 
-        reality = factory(
+        reality = person(
             # first_name='john',
             first_name=first_name,
             last_name='smith',
@@ -1240,7 +1240,7 @@ the test passes.
         first_name = 'john'
         last_name = 'smith'
 
-        reality = factory(
+        reality = person(
             # first_name='john',
             first_name=first_name,
             # last_name='smith',
@@ -1286,7 +1286,7 @@ the test passes.
         last_name = 'smith'
         sex = 'M'
 
-        reality = factory(
+        reality = person(
             # first_name='john',
             first_name=first_name,
             # last_name='smith',
@@ -1336,7 +1336,7 @@ the test passes.
         sex = 'M'
         year_of_birth = 1580
 
-        reality = factory(
+        reality = person(
             # first_name='john',
             first_name=first_name,
             # last_name='smith',
@@ -1373,7 +1373,7 @@ the test passes.
         sex = 'M'
         year_of_birth = 1580
 
-        reality = factory(
+        reality = person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1401,7 +1401,7 @@ the test passes.
         sex = 'F'
         year_of_birth = 2000
 
-        reality = factory(
+        reality = person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1442,11 +1442,11 @@ the test passes.
 
   .. code-block:: shell
 
-    factory(
+    person(
         first_name='mary', last_name='public',
         sex='F', year_of_birth=2000,
     ) -> 'mary, public, F, 2000'
-    └── def factory(
+    └── def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -1471,7 +1471,7 @@ the test passes.
         sex = 'F'
         year_of_birth = 2000
 
-        reality = factory(
+        reality = person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1491,7 +1491,7 @@ the test passes.
   .. code-block:: python
     :linenos:
 
-    def factory(
+    def person(
         first_name, last_name,
         sex, year_of_birth,
     ):
@@ -1503,7 +1503,7 @@ the test passes.
 
     def test_joe():
 
-  the :ref:`factory function<test person factory>` can make a string_ for any person I want when I give it the first name, last name, sex and year of birth.
+  the :ref:`factory function<extract person function>` can make a string_ for any person I want when I give it the first name, last name, sex and year of birth.
 
 * I open a new terminal_ then change directories to ``person``
 
@@ -1517,7 +1517,394 @@ the test passes.
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'extract factory function'
+    git commit -am 'extract person function'
+
+----
+
+*********************************************************************************
+extract assert_factory_works function
+*********************************************************************************
+
+:ref:`test_joe`, :ref:`tesT_jane`, :ref:`test_john` and :ref:`test_mary` are the same process, they
+
+- make :ref:`variables<what is a variable?>` for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``
+- :ref:`call<how to call a function with input>` the :ref:`factory function<extract person function>` with the :ref:`variables<what is a variable?>`
+- make a string_ with the values of the :ref:`variables<what is a variable?>`
+- :ref:`assert<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` with the :ref:`variables<what is a variable?>` is equal to the string_
+
+.. code-block:: python
+
+  reality = person(
+      first_name=first_name,
+      last_name=last_name,
+      sex=sex,
+      year_of_birth=year_of_birth,
+  )
+  my_expectation = (
+      f'{first_name}, {last_name},'
+      f' {sex}, {year_of_birth}'
+  )
+  assert reality == my_expectation
+
+I can make a :ref:`function<what is a function?>` that takes in ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` then :ref:`asserts<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` with the :ref:`variables<what is a variable?>` is equal to the string_ with the values of the given parameters.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a new :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` with the :ref:`variables<what is a variable?>` is equal to the string_ with the values of the given parameters
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 11-25
+
+    def person(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
+        return (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+
+
+    def assert_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
+        reality = person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality != my_expectation
+
+
+    def test_joe():
+
+* I use the :ref:`assert_factory_works function<extract assert_factory_works function>` in :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 7-23
+
+    def test_joe():
+        first_name = 'joe'
+        last_name = 'blow'
+        sex = 'M'
+        year_of_birth = 1996
+
+        # reality = person(
+        #     first_name=first_name,
+        #     last_name=last_name,
+        #     sex=sex,
+        #     year_of_birth=year_of_birth,
+        # )
+        # my_expectation = (
+        #     f'{first_name}, {last_name},'
+        #     f' {sex}, {year_of_birth}'
+        # )
+        # assert reality == my_expectation
+        assert_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth
+        )
+
+
+    def test_jane():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'joe, blow, M, 1996'
+                        != 'joe, blow, M, 1996'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the :ref:`assertion<what is an assertion?>` in the :ref:`assert_factory_works function<extract assert_factory_works function>`
+
+.. code-block:: python
+  :lineno-start: 11
+  :emphasize-lines: 15-16
+
+  def assert_factory_works(
+          first_name, last_name,
+          sex, year_of_birth
+      ):
+      reality = person(
+          first_name=first_name,
+          last_name=last_name,
+          sex=sex,
+          year_of_birth=year_of_birth,
+      )
+      my_expectation = (
+          f'{first_name}, {last_name},'
+          f' {sex}, {year_of_birth}'
+      )
+      # assert reality != my_expectation
+      assert reality == my_expectation
+
+
+  def test_joe():
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+
+* I remove the commented line from :ref:`assert_factory_works<extract assert_factory_works function>`
+
+  .. code-block:: python
+    :lineno-start: 11
+
+    def assert_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
+        reality = person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+
+    def test_joe():
+
+* I remove the commented lines from :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 28
+
+    def test_joe():
+        first_name = 'joe'
+        last_name = 'blow'
+        sex = 'M'
+        year_of_birth = 1996
+
+        assert_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth
+        )
+
+
+    def test_jane():
+
+* I use the :ref:`assert_factory_works function<extract assert_factory_works function>` in :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 42
+    :emphasize-lines: 7-23
+
+    def test_jane():
+        first_name = 'jane'
+        last_name = 'doe'
+        sex = 'F'
+        year_of_birth = 1991
+
+        # reality = person(
+        #     first_name=first_name,
+        #     last_name=last_name,
+        #     sex=sex,
+        #     year_of_birth=year_of_birth,
+        # )
+        # my_expectation = (
+        #     f'{first_name}, {last_name},'
+        #     f' {sex}, {year_of_birth}'
+        # )
+        # assert reality == my_expectation
+        assert_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth,
+        )
+
+
+    def test_john():
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 42
+
+    def test_jane():
+        first_name = 'jane'
+        last_name = 'doe'
+        sex = 'F'
+        year_of_birth = 1991
+
+        assert_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth,
+        )
+
+
+    def test_john():
+
+* I use the :ref:`assert_factory_works function<extract assert_factory_works function>` in :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 56
+    :emphasize-lines: 7-23
+
+    def test_john():
+        first_name = 'john'
+        last_name = 'smith'
+        sex = 'M'
+        year_of_birth = 1580
+
+        # reality = person(
+        #     first_name=first_name,
+        #     last_name=last_name,
+        #     sex=sex,
+        #     year_of_birth=year_of_birth,
+        # )
+        # my_expectation = (
+        #     f'{first_name}, {last_name},'
+        #     f' {sex}, {year_of_birth}'
+        # )
+        # assert reality == my_expectation
+        assert_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+
+    def test_mary():
+
+  still green.
+
+* I remove the commented lines from :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 56
+
+    def test_john():
+        first_name = 'john'
+        last_name = 'smith'
+        sex = 'M'
+        year_of_birth = 1580
+
+        assert_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+
+    def test_mary():
+
+* I use the :ref:`assert_factory_works function<extract assert_factory_works function>` in :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 7-23
+
+    def test_mary():
+        first_name = 'mary'
+        last_name = 'public'
+        sex = 'F'
+        year_of_birth = 2000
+
+        # reality = person(
+        #     first_name=first_name,
+        #     last_name=last_name,
+        #     sex=sex,
+        #     year_of_birth=year_of_birth
+        # )
+        # my_expectation = (
+        #     f'{first_name}, {last_name},'
+        #     f' {sex}, {year_of_birth}'
+        # )
+        # assert reality == my_expectation
+        assert_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+
+    # Exceptions seen
+
+  green.
+
+* I remove the commented lines from :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 70
+
+    def test_mary():
+        first_name = 'mary'
+        last_name = 'public'
+        sex = 'F'
+        year_of_birth = 2000
+
+        assert_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+
+    # Exceptions seen
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract assert_factory_works function'
+
+----
+
+*********************************************************************************
+separate and equal factory
+*********************************************************************************
+
+I want the :ref:`factory function<test>`
 
 ----
 
@@ -1529,7 +1916,7 @@ the test passes.
 
 * I go back to the terminal_ where the tests are running
 
-* I change ``reality`` for :ref:`test_joe` to be the result of a call to the :ref:`factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`factory function<test person factory>` in ``test_person.py``
+* I change ``reality`` for :ref:`test_joe` to be the result of a call to the :ref:`factory function<extract person function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`factory function<extract person function>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -1541,8 +1928,8 @@ the test passes.
         sex = 'M'
         year_of_birth = 1996
 
-        # reality = factory(
-        reality = src.person.factory(
+        # reality = person(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1582,7 +1969,7 @@ the test passes.
     import src.person
 
 
-    def factory(
+    def person(
         first_name, last_name,
         sex, year_of_birth,
     ):
@@ -1609,13 +1996,13 @@ the test passes.
     # AttributeError
 
 * I open ``person/__init__.py`` from the ``src`` folder_
-* I delete all the text in the file_ then add a copy of the :ref:`factory function<test person factory>` to ``src/person/__init__.py``
+* I delete all the text in the file_ then add a copy of the :ref:`factory function<extract person function>` to ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1-8
 
-    def factory(
+    def person(
         first_name, last_name,
         sex, year_of_birth,
     ):
@@ -1627,9 +2014,9 @@ the test passes.
   the test passes because
 
   - Python_ brings in an :ref:`object<everything is an object>` for the ``src/person/__init__.py`` file_ from the ``src`` folder_ so I can use it in ``test_person.py`` as ``src.person`` when ``import src.person`` runs.
-  - Python_ calls the :ref:`factory function<test person factory>` from the :ref:`object<everything is an object>` it imported for the ``src/person/__init__.py`` file_ from the ``src`` folder_ (``src.person``) when ``src.person.factory`` is called.
+  - Python_ calls the :ref:`factory function<extract person function>` from the :ref:`object<everything is an object>` it imported for the ``src/person/__init__.py`` file_ from the ``src`` folder_ (``src.person``) when ``src.person.person`` is called.
 
-  I think of ``src.person.factory`` like an address
+  I think of ``src.person.person`` like an address
 
   - ``factory`` is something in ``person``, in this case it is a :ref:`function<what is a function?>` in ``person``
   - ``person`` is something in ``src``, in this case it is ``src/person/__init__.py`` (a :ref:`module<what is a module?>`) in the ``src`` folder_
@@ -1637,10 +2024,10 @@ the test passes.
 
     .. code-block:: shell
 
-      src.person.factory
+      src.person.person
       src
       └── person.py
-          └── def factory(
+          └── def person(
                   first_name, last_name,
                   sex, year_of_birth,
               ):
@@ -1668,7 +2055,7 @@ the test passes.
         sex = 'M'
         year_of_birth = 1996
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1683,7 +2070,7 @@ the test passes.
 
     def test_jane():
 
-* I change ``reality`` for :ref:`test_jane` to be the result of a call to the :ref:`factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``reality`` for :ref:`test_jane` to be the result of a call to the :ref:`factory function<extract person function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 33
@@ -1695,8 +2082,8 @@ the test passes.
         sex = 'F'
         year_of_birth = 1991
 
-        # reality = factory(
-        reality = src.person.factory(
+        # reality = person(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1724,7 +2111,7 @@ the test passes.
         sex = 'F'
         year_of_birth = 1991
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1739,7 +2126,7 @@ the test passes.
 
     def test_john():
 
-* I change ``reality`` for :ref:`test_john` to be the result of a call to the :ref:`factory function<test person factory>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``reality`` for :ref:`test_john` to be the result of a call to the :ref:`factory function<extract person function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 52
@@ -1751,8 +2138,8 @@ the test passes.
         sex = 'M'
         year_of_birth = 1580
 
-        # reality = factory(
-        reality = src.person.factory(
+        # reality = person(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1780,7 +2167,7 @@ the test passes.
         sex = 'M'
         year_of_birth = 1580
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1795,7 +2182,7 @@ the test passes.
 
     def test_mary():
 
-* I do the same thing to the :ref:`call<how to call a function with input>` to the :ref:`factory function<test person factory>` in :ref:`test_mary`
+* I do the same thing to the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` in :ref:`test_mary`
 
   .. code-block:: python
     :lineno-start: 71
@@ -1807,8 +2194,8 @@ the test passes.
         sex = 'F'
         year_of_birth = 2000
 
-        # reality = factory(
-        reality = src.person.factory(
+        # reality = person(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1836,7 +2223,7 @@ the test passes.
         sex = 'F'
         year_of_birth = 2000
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1855,7 +2242,7 @@ the test passes.
     # TypeError
     # AttributeError
 
-* I remove the :ref:`factory function<test person factory>` from ``test_person.py``
+* I remove the :ref:`factory function<extract person function>` from ``test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -1869,7 +2256,7 @@ the test passes.
         sex = 'M'
         year_of_birth = 1996
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1884,16 +2271,16 @@ the test passes.
 
     def test_jane():
 
-  all the tests are still green because the calls that were made to the :ref:`factory function<test person factory>` that was in ``test_person.py`` are now made to the :ref:`factory function<test person factory>` in ``src/person/__init__.py`` in the ``src`` folder_.
+  all the tests are still green because the calls that were made to the :ref:`factory function<extract person function>` that was in ``test_person.py`` are now made to the :ref:`factory function<extract person function>` in ``src/person/__init__.py`` in the ``src`` folder_.
 
-  Python_ follows this path when ``src.person.factory`` is :ref:`called<how to call a function with input>`
+  Python_ follows this path when ``src.person.person`` is :ref:`called<how to call a function with input>`
 
   .. code-block:: shell
 
-    src.person.factory
+    src.person.person
     src
     └── person.py
-        └── def factory(
+        └── def person(
                 first_name, last_name,
                 sex, year_of_birth,
             ):
@@ -1946,7 +2333,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
         sex = 'M'
         year_of_birth = 1996
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2131,7 +2518,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
         sex = 'F'
         year_of_birth = 1991
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2275,7 +2662,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
         sex = 'M'
         year_of_birth = 1580
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2348,7 +2735,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
         sex = 'F'
         year_of_birth = 2000
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2420,7 +2807,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
         sex = 'F'
         year_of_birth = 2000
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2492,7 +2879,7 @@ separate and equal say_hello
         sex = 'F'
         year_of_birth = 2000
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2536,7 +2923,7 @@ separate and equal say_hello
     :linenos:
     :emphasize-lines: 11-20
 
-    def factory(
+    def person(
         first_name, last_name,
         sex, year_of_birth,
     ):
@@ -2570,7 +2957,7 @@ separate and equal say_hello
         sex = 'F'
         year_of_birth = 2000
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2613,7 +3000,7 @@ separate and equal say_hello
         sex = 'M'
         year_of_birth = 1580
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2655,7 +3042,7 @@ separate and equal say_hello
         sex = 'M'
         year_of_birth = 1580
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2694,7 +3081,7 @@ separate and equal say_hello
         sex = 'M'
         year_of_birth = 1996
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2735,7 +3122,7 @@ separate and equal say_hello
         sex = 'M'
         year_of_birth = 1996
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2774,7 +3161,7 @@ separate and equal say_hello
         sex = 'F'
         year_of_birth = 1991
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2815,7 +3202,7 @@ separate and equal say_hello
         sex = 'F'
         year_of_birth = 1991
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2962,14 +3349,14 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
     # factory
     # factory = None
-    def factory():
+    def person():
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: factory() got
+    TypeError: person() got
                an unexpected keyword argument
                'first_name'
 
@@ -2983,15 +3370,15 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
     # factory
     # factory = None
-    # def factory():
-    def factory(first_name):
+    # def person():
+    def person(first_name):
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
-    TypeError: factory() got
+    TypeError: person() got
                an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
@@ -3005,9 +3392,9 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
     # factory
     # factory = None
-    # def factory():
-    # def factory(first_name):
-    def factory(first_name, last_name):
+    # def person():
+    # def person(first_name):
+    def person(first_name, last_name):
         return None
 
 
@@ -3015,7 +3402,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
   .. code-block:: python
 
-    TypeError: factory() got
+    TypeError: person() got
                an unexpected keyword argument 'sex'
 
   because the :ref:`function definition<how to make a function that takes input>` only allows two inputs (``first_name`` and ``last_name``) and it was called with a :ref:`keyword argument<test_keyword_arguments>` (``sex``).
@@ -3028,17 +3415,17 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
     # factory
     # factory = None
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    def factory(first_name, last_name, sex):
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    def person(first_name, last_name, sex):
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: factory() got
+    TypeError: person() got
                an unexpected keyword argument
                'year_of_birth'
 
@@ -3052,11 +3439,11 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
     # factory
     # factory = None
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    # def factory(first_name, last_name, sex):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    # def person(first_name, last_name, sex):
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -3076,11 +3463,11 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
     # factory
     # factory = None
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    # def factory(first_name, last_name, sex):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    # def person(first_name, last_name, sex):
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -3104,11 +3491,11 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
     # factory
     # factory = None
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    # def factory(first_name, last_name, sex):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    # def person(first_name, last_name, sex):
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -3268,9 +3655,9 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     AssertionError: assert 'mary, public, F, 2000'
                         == 'john, smith, M, 1580'
 
-  because the :ref:`factory function<test person factory>` always returns ``'mary, public, F, 2000'`` and this test expects ``'john, smith, M, 1580'``.
+  because the :ref:`factory function<extract person function>` always returns ``'mary, public, F, 2000'`` and this test expects ``'john, smith, M, 1580'``.
 
-* I change the :ref:`return statement<the return statement>` of the :ref:`factory function<test person factory>` to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
+* I change the :ref:`return statement<the return statement>` of the :ref:`factory function<extract person function>` to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
 
   .. code-block:: python
     :lineno-start: 13
@@ -3278,11 +3665,11 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
     # factory
     # factory = None
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    # def factory(first_name, last_name, sex):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    # def person(first_name, last_name, sex):
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -3306,11 +3693,11 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
     # factory
     # factory = None
-    # def factory():
-    # def factory(first_name):
-    # def factory(first_name, last_name):
-    # def factory(first_name, last_name, sex):
-    def factory(
+    # def person():
+    # def person(first_name):
+    # def person(first_name, last_name):
+    # def person(first_name, last_name, sex):
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -3438,7 +3825,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
         )
 
 
-    def factory(
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -3497,13 +3884,13 @@ review
 * My tests and solutions have a few problems,
 
   - Each test is basically the same two tests, there has to be a way that I can use one test for all the people.
-  - The :ref:`factory<test person factory>` and :ref:`say_hello functions<test say_hello function>` use three of the same inputs
+  - The :ref:`factory<extract person function>` and :ref:`say_hello functions<test say_hello function>` use three of the same inputs
 
     * ``first_name``
     * ``last_name``
     * ``year_of_birth``
 
-    There has to be `a better way<how to make a person with a class>`, where I can give those values once, and get a representation for a person when I call the :ref:`factory function<test person factory>` and a message when I call the :ref:`say_hello function<test say_hello function>`.
+    There has to be `a better way<how to make a person with a class>`, where I can give those values once, and get a representation for a person when I call the :ref:`factory function<extract person function>` and a message when I call the :ref:`say_hello function<test say_hello function>`.
 
 For now, I am going to :ref:`clean up the functions project<separate and equal functions>` so the tests and solutions are in separate files_.
 

@@ -33,7 +33,7 @@ class TestPerson(unittest.TestCase):
             sex=pick_one('F', 'M'),
         )
 
-        reality = src.person.factory(
+        reality = src.person.person(
             **a_person,
             year_of_birth=self.random_year_of_birth,
         )
@@ -44,7 +44,7 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(reality, my_expectation)
 
     def test_factory_w_optional_arguments(self):
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=self.random_first_name,
             year_of_birth=self.random_year_of_birth,
         )
@@ -57,7 +57,7 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(reality, my_expectation)
 
     def test_factory_person_says_hello(self):
-        a_random_person = src.person.factory(
+        a_random_person = src.person.person(
             first_name=self.random_first_name,
             last_name=self.random_last_name,
             year_of_birth=self.random_year_of_birth,

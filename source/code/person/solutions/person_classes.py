@@ -9,7 +9,7 @@ def say_hello(a_dictionary):
     )
 
 
-def factory(
+def person(
         first_name, year_of_birth,
         last_name='doe', sex='M',
     ):

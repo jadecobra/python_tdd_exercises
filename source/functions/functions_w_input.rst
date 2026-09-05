@@ -33,7 +33,7 @@ A :ref:`function<what is a function?>` does something (the process) with ``input
                     f(x) -> y
   function(input_object) -> output_object
    solar_panel(sunlight) -> electricity
-      factory(materials) -> product
+      person(materials) -> product
        chef(ingredients) -> food
            stomach(food) -> poop
 

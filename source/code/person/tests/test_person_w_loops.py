@@ -39,7 +39,7 @@ class TestPerson(unittest.TestCase):
                 sex = a_person[2]
                 year_of_birth = a_person[3]
 
-                reality = src.person.factory(
+                reality = src.person.person(
                     first_name=first_name,
                     last_name=last_name,
                     sex=sex,

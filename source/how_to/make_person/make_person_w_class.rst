@@ -1,6 +1,6 @@
 .. meta::
   :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with a class. Use class + __init__ (the constructor method) + self to store first_name, last_name, sex, year_of_birth once; add say_hello method so you call joe.say_hello() without repeating the values. Start in person project from prior chapter; uv run pytest-watcher . --now. RED: Person(...) -> TypeError (no __init__), empty __init__ -> TypeError got unexpected keyword 'last_name', add self. attrs; GREEN: implement using f-string with self; move to src/person.py (AttributeError); use locals in tests + kw calls for factory/say_hello/Person; add dir() tests on class vs instance. REFACTOR remove commented lines. Ends with 6 tests (joe/jane/john/mary + 2 dir tests); # Exceptions seen includes SyntaxError. Review: each test repeats the same three calls; class avoids repeating the data values. Code from person/tests/test_person_w_class.py and person/solutions/person_w_class.py. What is next: test classes (everything is an object).
-  :keywords: Jacob Itegboje, Pumping Python, how to make a person with a class, python class __init__ constructor self, Person class say_hello method, src.person.Person, src.person.factory, TypeError: Person.__init__() got an unexpected keyword argument 'last_name', Did you mean, AttributeError class has no attribute 'first_name' on class vs instance, dir(src.person.Person), dir(instance), uv run pytest-watcher . --now, red green refactor class, remove the commented lines, test_joe, test_dir_person_class, test_dir_person_instance, first_name last_name sex year_of_birth, 2026 - year_of_birth, repetition of three calls per test, class groups attributes and methods, what is next everything is an object
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with a class, python class __init__ constructor self, Person class say_hello method, src.person.Person, src.person.person, TypeError: Person.__init__() got an unexpected keyword argument 'last_name', Did you mean, AttributeError class has no attribute 'first_name' on class vs instance, dir(src.person.Person), dir(instance), uv run pytest-watcher . --now, red green refactor class, remove the commented lines, test_joe, test_dir_person_class, test_dir_person_instance, first_name last_name sex year_of_birth, 2026 - year_of_birth, repetition of three calls per test, class groups attributes and methods, what is next everything is an object
 
 .. include:: ../../links.rst
 
@@ -14,7 +14,7 @@ how to make a person with a class
 
 ----
 
-The :ref:`factory<test person factory>` and :ref:`say_hello functions<test say_hello function>` use three of the same inputs
+The :ref:`factory<extract person function>` and :ref:`say_hello functions<test say_hello function>` use three of the same inputs
 
 * ``first_name``
 * ``last_name``
@@ -103,7 +103,7 @@ I make a copy of a :ref:`class<everything is an object>` to represent ``joe`` in
       sex = 'M'
       year_of_birth = 1996
 
-      reality = src.person.factory(
+      reality = src.person.person(
           first_name=first_name,
           last_name=last_name,
           sex=sex,
@@ -323,7 +323,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
     which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``first_name``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
-  - I have seen this before, so far it is the same as making the :ref:`factory function<test person factory>`.
+  - I have seen this before, so far it is the same as making the :ref:`factory function<extract person function>`.
 
 * I add ``last_name`` to the :ref:`definition<how to make a function>` of ``__init__``
 
@@ -372,7 +372,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
     which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``sex``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
-  - Still the same as making the :ref:`factory function<test person factory>`.
+  - Still the same as making the :ref:`factory function<extract person function>`.
 
 * I add ``sex`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ method<the constructor method>`
 
@@ -424,7 +424,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
     which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``year_of_birth``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
-  - Same as with the :ref:`factory function<test person factory>`.
+  - Same as with the :ref:`factory function<extract person function>`.
 
 * I add ``year_of_birth`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ constructor method<the constructor method>`
 
@@ -893,7 +893,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
         sex = 'F'
         year_of_birth = 1991
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2024,7 +2024,7 @@ separate and equal Person class
 
     NameError: name 'first_name' is not defined
 
-  because the only definitions for ``first_name`` are in the :ref:`say_hello<test say_hello function>` and :ref:`factory functions<test person factory>` in ``src/person/__init__.py``.
+  because the only definitions for ``first_name`` are in the :ref:`say_hello<test say_hello function>` and :ref:`factory functions<extract person function>` in ``src/person/__init__.py``.
 
 * I add :ref:`the constructor method` to handle the inputs
 
@@ -2235,7 +2235,7 @@ separate and equal Person class
         sex = 'F'
         year_of_birth = 2000
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2503,7 +2503,7 @@ separate and equal Person class
         sex = 'M'
         year_of_birth = 1580
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2591,7 +2591,7 @@ separate and equal Person class
         sex = 'F'
         year_of_birth = 1991
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2680,7 +2680,7 @@ separate and equal Person class
         sex = 'M'
         year_of_birth = 1996
 
-        reality = src.person.factory(
+        reality = src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -3277,7 +3277,7 @@ the test passes.
         )
 
 
-    def factory(
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):

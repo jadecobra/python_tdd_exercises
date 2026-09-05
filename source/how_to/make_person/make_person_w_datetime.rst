@@ -1353,7 +1353,7 @@ The tests use the right calculation for the age, and the solution still uses a f
         )
 
 
-    def factory(
+    def person(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -1375,7 +1375,7 @@ The tests use the right calculation for the age, and the solution still uses a f
         )
 
 
-    def factory(
+    def person(
 
 * I change the calculation in the :ref:`calculate_age method<extract calculate_age method>` to make sure the tests work, in ``test_person.py``
 

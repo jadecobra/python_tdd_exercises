@@ -21,7 +21,7 @@ def assert_factory_works(
         sex, year_of_birth,
     ):
     assert_equal(
-        src.person.factory(
+        src.person.person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,

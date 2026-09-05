@@ -5,7 +5,7 @@ def assert_factory_works(
         first_name, last_name,
         sex, year_of_birth,
     ):
-    reality = src.person.factory(
+    reality = src.person.person(
         first_name=first_name,
         last_name=last_name,
         sex=sex,
