@@ -2719,6 +2719,412 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
 extract assert_say_hello_works function
 *********************************************************************************
 
+:ref:`test_joe`, :ref:`tesT_jane`, :ref:`test_john` and :ref:`test_mary` use the same process to test the :ref:`say_hello function<test say_hello function>`, they
+
+- :ref:`call<how to call a function with input>` the :ref:`person function<extract person function>` with values for ``first_name``, ``last_name`` and ``year_of_birth``
+- make a string_ with the values of ``first_name``, ``last_name`` and ``year_of_birth``
+- :ref:`assert<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`say_hello function<test say_hello function>` with ``first_name``, ``last_name`` and ``year_of_birth`` is equal to the string_
+
+.. code-block:: python
+
+  reality = say_hello(
+      first_name=first_name,
+      last_name=last_name,
+      year_of_birth=year_of_birth
+  )
+  my_expectation = (
+      f'Hello, my name is {first_name}'
+      f' {last_name} and I am'
+      f' {2026-year_of_birth}.'
+  )
+  assert reality == my_expectation
+
+I can make a :ref:`function<what is a function?>` that takes in ``first_name``, ``last_name`` and ``year_of_birth`` then :ref:`asserts<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`say_hello function<test say_hello function>` with the values is equal to the string_ with the values of the given parameters.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a new :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` with the :ref:`variables<what is a variable?>` is equal to the string_ with the values of the given parameters
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 11-25
+
+    def person(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
+        return (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+
+
+    def assert_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
+        reality = person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality != my_expectation
+
+
+    def test_joe():
+
+* I use the :ref:`assert_factory_works function<extract assert_factory_works function>` in :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 7-23
+
+    def test_joe():
+        first_name = 'joe'
+        last_name = 'blow'
+        sex = 'M'
+        year_of_birth = 1996
+
+        # reality = person(
+        #     first_name=first_name,
+        #     last_name=last_name,
+        #     sex=sex,
+        #     year_of_birth=year_of_birth,
+        # )
+        # my_expectation = (
+        #     f'{first_name}, {last_name},'
+        #     f' {sex}, {year_of_birth}'
+        # )
+        # assert reality == my_expectation
+        assert_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth
+        )
+
+
+    def test_jane():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'joe, blow, M, 1996'
+                        != 'joe, blow, M, 1996'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the :ref:`assertion<what is an assertion?>` in the :ref:`assert_factory_works function<extract assert_factory_works function>`
+
+.. code-block:: python
+  :lineno-start: 11
+  :emphasize-lines: 15-16
+
+  def assert_factory_works(
+          first_name, last_name,
+          sex, year_of_birth
+      ):
+      reality = person(
+          first_name=first_name,
+          last_name=last_name,
+          sex=sex,
+          year_of_birth=year_of_birth,
+      )
+      my_expectation = (
+          f'{first_name}, {last_name},'
+          f' {sex}, {year_of_birth}'
+      )
+      # assert reality != my_expectation
+      assert reality == my_expectation
+
+
+  def test_joe():
+
+the test passes.
+
+.. code-block:: shell
+
+  assert_factory_works(
+      first_name=first_name, last_name=last_name,
+      sex=sex, year_of_birth=year_of_birth
+  ) -> None
+  └── def assert_factory_works(
+          first_name, last_name,
+          sex, year_of_birth
+      ):
+      ├── reality = person(
+      │       first_name=first_name,
+      │       last_name=last_name,
+      │       sex=sex,
+      │       year_of_birth=year_of_birth,
+      │   )
+      │   └── def person(
+      │           first_name, last_name,
+      │           sex, year_of_birth,
+      │       ):
+      │       └── return (
+      │               f'{first_name}, {last_name},'
+      │               f' {sex}, {year_of_birth}'
+      │           )
+      ├── my_expectation = (
+      │       f'{first_name}, {last_name},'
+      │       f' {sex}, {year_of_birth}'
+      │   )
+      └── assert reality == my_expectation
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+
+* I remove the commented line from :ref:`assert_factory_works<extract assert_factory_works function>`
+
+  .. code-block:: python
+    :lineno-start: 11
+
+    def assert_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
+        reality = person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+
+    def test_joe():
+
+* I remove the commented lines from :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 28
+
+    def test_joe():
+        first_name = 'joe'
+        last_name = 'blow'
+        sex = 'M'
+        year_of_birth = 1996
+
+        assert_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth
+        )
+
+
+    def test_jane():
+
+* I use the :ref:`assert_factory_works function<extract assert_factory_works function>` in :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 42
+    :emphasize-lines: 7-23
+
+    def test_jane():
+        first_name = 'jane'
+        last_name = 'doe'
+        sex = 'F'
+        year_of_birth = 1991
+
+        # reality = person(
+        #     first_name=first_name,
+        #     last_name=last_name,
+        #     sex=sex,
+        #     year_of_birth=year_of_birth,
+        # )
+        # my_expectation = (
+        #     f'{first_name}, {last_name},'
+        #     f' {sex}, {year_of_birth}'
+        # )
+        # assert reality == my_expectation
+        assert_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth,
+        )
+
+
+    def test_john():
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 42
+
+    def test_jane():
+        first_name = 'jane'
+        last_name = 'doe'
+        sex = 'F'
+        year_of_birth = 1991
+
+        assert_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth,
+        )
+
+
+    def test_john():
+
+* I use the :ref:`assert_factory_works function<extract assert_factory_works function>` in :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 56
+    :emphasize-lines: 7-23
+
+    def test_john():
+        first_name = 'john'
+        last_name = 'smith'
+        sex = 'M'
+        year_of_birth = 1580
+
+        # reality = person(
+        #     first_name=first_name,
+        #     last_name=last_name,
+        #     sex=sex,
+        #     year_of_birth=year_of_birth,
+        # )
+        # my_expectation = (
+        #     f'{first_name}, {last_name},'
+        #     f' {sex}, {year_of_birth}'
+        # )
+        # assert reality == my_expectation
+        assert_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+
+    def test_mary():
+
+  still green.
+
+* I remove the commented lines from :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 56
+
+    def test_john():
+        first_name = 'john'
+        last_name = 'smith'
+        sex = 'M'
+        year_of_birth = 1580
+
+        assert_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+
+    def test_mary():
+
+* I use the :ref:`assert_factory_works function<extract assert_factory_works function>` in :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 7-23
+
+    def test_mary():
+        first_name = 'mary'
+        last_name = 'public'
+        sex = 'F'
+        year_of_birth = 2000
+
+        # reality = person(
+        #     first_name=first_name,
+        #     last_name=last_name,
+        #     sex=sex,
+        #     year_of_birth=year_of_birth
+        # )
+        # my_expectation = (
+        #     f'{first_name}, {last_name},'
+        #     f' {sex}, {year_of_birth}'
+        # )
+        # assert reality == my_expectation
+        assert_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+
+    # Exceptions seen
+
+  green.
+
+* I remove the commented lines from :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 70
+
+    def test_mary():
+        first_name = 'mary'
+        last_name = 'public'
+        sex = 'F'
+        year_of_birth = 2000
+
+        assert_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # AttributeError
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract assert_say_hello_works function'
+
 ----
 
 *********************************************************************************
