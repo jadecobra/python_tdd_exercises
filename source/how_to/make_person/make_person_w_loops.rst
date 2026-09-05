@@ -113,7 +113,7 @@ open the project
 extract test_factory_function
 *********************************************************************************
 
-The tests for the :ref:`factory function<extract person function>` in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make a :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` then compare the result with a string_.
+The tests for the :ref:`person function<extract person function>` in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make a :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` then compare the result with a string_.
 
 =================================================================================
 :red:`RED`: make it fail
@@ -121,7 +121,7 @@ The tests for the :ref:`factory function<extract person function>` in :ref:`test
 
 ----
 
-I add a test for the :ref:`factory function<extract person function>` to ``tests/test_person.py``
+I add a test for the :ref:`person function<extract person function>` to ``tests/test_person.py``
 
 .. code-block:: python
   :lineno-start: 6
@@ -206,7 +206,7 @@ the test passes.
         ('joe', 'blow', 'M', 1996),
     ):
 
-* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of each item in ``joe`` for the parameters when the test :ref:`calls<how to call a function with input>` the :ref:`factory function<extract person function>`
+* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of each item in ``joe`` for the parameters when the test :ref:`calls<how to call a function with input>` the :ref:`person function<extract person function>`
 
   .. code-block:: shell
 
@@ -260,7 +260,7 @@ the test passes.
 
     AssertionError: 'jane, doe, F, 1991' != 'joe, blow, M, 1996'
 
-  because the result when the :ref:`factory function<extract person function>` is :ref:`called<how to call a function with input>` with ``'jane'``, ``'doe'``, ``'F'`` and ``'1991'`` as input is ``'jane, doe, F, 1991'`` not ``'joe, blow, M, 1996'``.
+  because the result when the :ref:`person function<extract person function>` is :ref:`called<how to call a function with input>` with ``'jane'``, ``'doe'``, ``'F'`` and ``'1991'`` as input is ``'jane, doe, F, 1991'`` not ``'joe, blow, M, 1996'``.
 
   .. code-block:: shell
 
@@ -320,7 +320,7 @@ the test passes.
 
     AssertionError: 'joe, blow, M, 1996' != 'jane, doe, F, 1991'
 
-  because the result when the :ref:`factory function<extract person function>` is :ref:`called<how to call a function with input>` with ``'joe'``, ``'blow'``, ``'M'`` and ``'1996'`` as input is ``'joe, blow, M, 1996'`` not ``'jane, doe, F, 1991'``. The :ref:`for loop<what is a for loop?>` goes through each item in the ``people`` tuple_ one at a time.
+  because the result when the :ref:`person function<extract person function>` is :ref:`called<how to call a function with input>` with ``'joe'``, ``'blow'``, ``'M'`` and ``'1996'`` as input is ``'joe, blow, M, 1996'`` not ``'jane, doe, F, 1991'``. The :ref:`for loop<what is a for loop?>` goes through each item in the ``people`` tuple_ one at a time.
 
 * I change ``my_expectation`` in :ref:`test_factory_function<extract test_factory_function>` to an :ref:`f-string<what is string interpolation?>`
 
@@ -442,7 +442,7 @@ the test passes.
             )
             for person in people:
 
-  the test is still green, because the :ref:`factory function<extract person function>` returns a string with the inputs it gets.
+  the test is still green, because the :ref:`person function<extract person function>` returns a string with the inputs it gets.
 
 * I remove the commented lines from :ref:`test_factory_function<extract test_factory_function>`
 
@@ -477,7 +477,7 @@ the test passes.
 
         def test_joe(self):
 
-* I remove the test for the :ref:`factory function<extract person function>` from :ref:`test_joe` since it is now a repetition
+* I remove the test for the :ref:`person function<extract person function>` from :ref:`test_joe` since it is now a repetition
 
   .. code-block:: python
     :lineno-start: 41
@@ -516,7 +516,7 @@ the test passes.
 
         def test_jane(self):
 
-* I remove the test for the :ref:`factory function<extract person function>` from :ref:`test_jane` since it is now a repetition
+* I remove the test for the :ref:`person function<extract person function>` from :ref:`test_jane` since it is now a repetition
 
   .. code-block:: python
     :lineno-start: 73
@@ -556,7 +556,7 @@ the test passes.
 
         def test_john(self):
 
-* I remove the test for the :ref:`factory function<extract person function>` from :ref:`test_john` since it is now a repetition
+* I remove the test for the :ref:`person function<extract person function>` from :ref:`test_john` since it is now a repetition
 
   .. code-block:: python
     :lineno-start: 106
@@ -596,7 +596,7 @@ the test passes.
 
         def test_mary(self):
 
-* I remove the test for the :ref:`factory function<extract person function>` from :ref:`test_mary` since it is now a repetition
+* I remove the test for the :ref:`person function<extract person function>` from :ref:`test_mary` since it is now a repetition
 
   .. code-block:: python
     :lineno-start: 139

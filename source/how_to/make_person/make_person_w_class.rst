@@ -323,7 +323,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
     which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``first_name``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
-  - I have seen this before, so far it is the same as making the :ref:`factory function<extract person function>`.
+  - I have seen this before, so far it is the same as making the :ref:`person function<extract person function>`.
 
 * I add ``last_name`` to the :ref:`definition<how to make a function>` of ``__init__``
 
@@ -372,7 +372,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
     which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``sex``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
-  - Still the same as making the :ref:`factory function<extract person function>`.
+  - Still the same as making the :ref:`person function<extract person function>`.
 
 * I add ``sex`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ method<the constructor method>`
 
@@ -424,7 +424,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
     which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``year_of_birth``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
   - ``self`` is the :ref:`instance of the class<how to test if something is an instance>`.
   - I am violating the :ref:`method signature<how to make a function that takes input>` when I call it in a way that it was not designed to be called.
-  - Same as with the :ref:`factory function<extract person function>`.
+  - Same as with the :ref:`person function<extract person function>`.
 
 * I add ``year_of_birth`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ constructor method<the constructor method>`
 
@@ -2024,7 +2024,7 @@ separate and equal Person class
 
     NameError: name 'first_name' is not defined
 
-  because the only definitions for ``first_name`` are in the :ref:`say_hello<test say_hello function>` and :ref:`factory functions<extract person function>` in ``src/person/__init__.py``.
+  because the only definitions for ``first_name`` are in the :ref:`say_hello<test say_hello function>` and :ref:`person functions<extract person function>` in ``src/person/__init__.py``.
 
 * I add :ref:`the constructor method` to handle the inputs
 

@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with f-strings. Use f-strings + one factory function (instead of one function per person) that takes first_name, last_name, sex, year_of_birth and returns 'name, surname, X, YYYY'. Add say_hello using f-strings for 'Hello, my name is ... and I am N.'. Start in the person project; uv run pytest-watcher . --now. Progressively introduce f-strings in the return, required args then keyword arguments, move factory and say_hello to src/person.py (AttributeError: module 'src.person' has no attribute 'factory'), use local variables in tests to remove repetition of the data, remove commented lines. Ends with 4 tests calling src.person.person + src.person.say_hello + # Exceptions seen (AssertionError, NameError, TypeError, AttributeError). Shows why even with f-strings the 4 tests are repetitive. What is next: separate and equal functions. Code: person/tests/test_person_w_fstrings.py and person/solutions/person_w_fstrings.py.
-  :keywords: Jacob Itegboje, Pumping Python, how to make a person with f-strings, python f-strings, f-string factory function, one function instead of one per person, src.person, import src.person, AttributeError module 'src.person' has no attribute 'factory', TypeError missing required positional argument, uv run pytest-watcher, red green refactor f-strings, variables remove repetition in tests, first_name last_name sex year_of_birth, say_hello f-string age 2026-year_of_birth, remove the commented lines, test_joe test_jane test_john test_mary, person factory with f-strings, separate tests and solution, what is next separate and equal functions
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with f-strings. Use f-strings + one person function (instead of one function per person) that takes first_name, last_name, sex, year_of_birth and returns 'name, surname, X, YYYY'. Add say_hello using f-strings for 'Hello, my name is ... and I am N.'. Start in the person project; uv run pytest-watcher . --now. Progressively introduce f-strings in the return, required args then keyword arguments, move factory and say_hello to src/person.py (AttributeError: module 'src.person' has no attribute 'person'), use local variables in tests to remove repetition of the data, remove commented lines. Ends with 4 tests calling src.person.person + src.person.say_hello + # Exceptions seen (AssertionError, NameError, TypeError, AttributeError). Shows why even with f-strings the 4 tests are repetitive. What is next: separate and equal functions. Code: person/tests/test_person_w_fstrings.py and person/solutions/person_w_fstrings.py.
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with f-strings, python f-strings, f-string person function, one function instead of one per person, src.person, import src.person, AttributeError module 'src.person' has no attribute 'person', TypeError missing required positional argument, uv run pytest-watcher, red green refactor f-strings, variables remove repetition in tests, first_name last_name sex year_of_birth, say_hello f-string age 2026-year_of_birth, remove the commented lines, test_joe test_jane test_john test_mary, person factory with f-strings, separate tests and solution, what is next separate and equal functions
 
 .. include:: ../../links.rst
 
@@ -100,7 +100,7 @@ extract person function
 
 ----
 
-I add an :ref:`assertion<what is an assertion?>` to :ref:`test_joe` in ``test_person.py``
+I add an :ref:`assertion<what is an assertion?>` to :ref:`test_joe` in ``tests/test_person.py``
 
 .. code-block:: python
   :lineno-start: 17
@@ -120,9 +120,9 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
 .. code-block:: python
 
-  NameError: name 'factory' is not defined
+  NameError: name 'person' is not defined
 
-because I have not defined ``factory`` in ``test_person.py``, yet.
+because I have not defined ``person`` in ``tests/test_person.py``, yet.
 
 ----
 
@@ -160,7 +160,7 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` with a :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` from :ref:`test_jane`
+* I add an :ref:`assertion<what is an assertion?>` with a :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` from :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 21
@@ -191,7 +191,7 @@ the test passes.
     AssertionError: assert 'joe, blow, M, 1996'
                         == 'jane, doe, F, 1991'
 
-  because the :ref:`factory function<extract person function>` always returns ``joe, blow, M, 1996`` when it is called. I want it to return a string_ based on the input it gets for me to be able to use it to make more than one person.
+  because the :ref:`person function<extract person function>` always returns ``joe, blow, M, 1996`` when it is called. I want it to return a string_ based on the input it gets for me to be able to use it to make more than one person.
 
 * I :ref:`make the function take input<how to make a function that takes input>` for the first name
 
@@ -213,11 +213,11 @@ the test passes.
 
   because
 
-  - I called the :ref:`factory function<extract person function>` with zero inputs.
-  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has one required argument (``first_name``).
+  - I called the :ref:`person function<extract person function>` with zero inputs.
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``person`` has one required argument (``first_name``).
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* I add ``'jane'`` to the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` from :ref:`test_jane`
+* I add ``'jane'`` to the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` from :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 30
@@ -241,7 +241,7 @@ the test passes.
     AssertionError: assert 'joe, blow, M, 1996'
                         == 'jane, doe, F, 1991'
 
-* I change :ref:`the return statement` of the :ref:`factory function<extract person function>` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
+* I change :ref:`the return statement` of the :ref:`person function<extract person function>` to an :ref:`f-string<what is string interpolation?>` to use ``first_name`` in the output
 
   .. code-block:: python
     :linenos:
@@ -288,7 +288,7 @@ the test passes.
 
     NameError: name 'last_name' is not defined
 
-* I add the name to the parentheses to define it in the :ref:`factory function<extract person function>`
+* I add the name to the parentheses to define it in the :ref:`person function<extract person function>`
 
   .. code-block:: python
     :linenos:
@@ -317,11 +317,11 @@ the test passes.
 
   because
 
-  - I called the :ref:`factory function<extract person function>` with one input (``jane``).
-  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has two required arguments (``first_name`` and ``last_name``).
+  - I called the :ref:`person function<extract person function>` with one input (``jane``).
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``person`` has two required arguments (``first_name`` and ``last_name``).
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* I add ``'doe'`` to the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` in :ref:`test_jane`
+* I add ``'doe'`` to the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 36
@@ -348,7 +348,7 @@ the test passes.
 
   the first and last names match. More progress.
 
-* I change the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` to use :ref:`keyword arguments<test_keyword_arguments>`, then add a value for ``sex`` (since I have more than two arguments) to  in :ref:`test_jane`
+* I change the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` to use :ref:`keyword arguments<test_keyword_arguments>`, then add a value for ``sex`` (since I have more than two arguments) to  in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 36
@@ -380,11 +380,11 @@ the test passes.
 
   because
 
-  - I called the :ref:`factory function<extract person function>` with three :ref:`keyword arguments<test_keyword_arguments>` input (``first_name``, ``last_name`` and ``sex``).
-  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has two required arguments (``first_name`` and ``last_name``).
+  - I called the :ref:`person function<extract person function>` with three :ref:`keyword arguments<test_keyword_arguments>` input (``first_name``, ``last_name`` and ``sex``).
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``person`` has two required arguments (``first_name`` and ``last_name``).
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* I add ``sex`` in the parentheses of the ``factory`` :ref:`function definition<how to make a function that takes input>`
+* I add ``sex`` in the parentheses of the ``person`` :ref:`function definition<how to make a function that takes input>`
 
   .. code-block:: python
     :linenos:
@@ -406,7 +406,7 @@ the test passes.
 
   the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`.
 
-* I add ``sex`` to the :ref:`f-string<what is string interpolation?>` in the :ref:`factory function<extract person function>`
+* I add ``sex`` to the :ref:`f-string<what is string interpolation?>` in the :ref:`person function<extract person function>`
 
   .. code-block:: python
     :linenos:
@@ -464,7 +464,7 @@ the test passes.
 
     NameError: name 'year_of_birth' is not defined
 
-* I add ``year_of_birth`` to the parentheses to define it in the :ref:`factory function<extract person function>`
+* I add ``year_of_birth`` to the parentheses to define it in the :ref:`person function<extract person function>`
 
   .. code-block:: python
     :linenos:
@@ -500,11 +500,11 @@ the test passes.
 
   because
 
-  - I called the :ref:`factory function<extract person function>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``sex``).
-  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has four required arguments (``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
+  - I called the :ref:`person function<extract person function>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``sex``).
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``person`` has four required arguments (``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* I add ``year_of_birth=1996`` to the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` from :ref:`test_jane`
+* I add ``year_of_birth=1996`` to the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` from :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 43
@@ -539,11 +539,11 @@ the test passes.
 
   because
 
-  - I the :ref:`factory function<extract person function>` from :ref:`test_joe` with zero arguments.
-  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` has four required arguments (``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
+  - I the :ref:`person function<extract person function>` from :ref:`test_joe` with zero arguments.
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``person`` has four required arguments (``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* Since there are more than two arguments, I add :ref:`keyword arguments<test_keyword_arguments>` to the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` from :ref:`test_joe`
+* Since there are more than two arguments, I add :ref:`keyword arguments<test_keyword_arguments>` to the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` from :ref:`test_joe`
 
   .. code-block:: python
     :lineno-start: 35
@@ -609,7 +609,7 @@ the test passes.
 
 ----
 
-* I remove the commented lines from the :ref:`factory function<extract person function>`
+* I remove the commented lines from the :ref:`person function<extract person function>`
 
   .. code-block:: python
     :linenos:
@@ -626,7 +626,7 @@ the test passes.
 
     def joe():
 
-* I comment out the :ref:`call<how to call a function with input>` to ``joe`` in :ref:`test_joe` because I no longer need it since the :ref:`factory function<extract person function>` does the same thing
+* I comment out the :ref:`call<how to call a function with input>` to ``joe`` in :ref:`test_joe` because I no longer need it since the :ref:`person function<extract person function>` does the same thing
 
   .. code-block:: python
     :lineno-start: 27
@@ -856,7 +856,7 @@ the test passes.
 
 ----
 
-* I comment out the :ref:`call<how to call a function with input>` to ``jane`` in :ref:`test_jane` because I no longer need it since the :ref:`factory function<extract person function>` does the same thing
+* I comment out the :ref:`call<how to call a function with input>` to ``jane`` in :ref:`test_jane` because I no longer need it since the :ref:`person function<extract person function>` does the same thing
 
   .. code-block:: python
     :lineno-start: 46
@@ -1095,7 +1095,7 @@ the test passes.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` in :ref:`test_john` to a :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>`
+* I change the :ref:`call<how to call a function with input>` in :ref:`test_john` to a :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>`
 
   .. code-block:: python
     :lineno-start: 65
@@ -1503,7 +1503,7 @@ the test passes.
 
     def test_joe():
 
-  the :ref:`factory function<extract person function>` can make a string_ for any person I want when I give it the first name, last name, sex and year of birth.
+  the :ref:`person function<extract person function>` can make a string_ for any person I want when I give it the first name, last name, sex and year of birth.
 
 * I open a new terminal_ then change directories to ``person``
 
@@ -1528,9 +1528,9 @@ extract assert_factory_works function
 :ref:`test_joe`, :ref:`tesT_jane`, :ref:`test_john` and :ref:`test_mary` are the same process, they
 
 - make :ref:`variables<what is a variable?>` for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``
-- :ref:`call<how to call a function with input>` the :ref:`factory function<extract person function>` with the :ref:`variables<what is a variable?>`
+- :ref:`call<how to call a function with input>` the :ref:`person function<extract person function>` with the :ref:`variables<what is a variable?>`
 - make a string_ with the values of the :ref:`variables<what is a variable?>`
-- :ref:`assert<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` with the :ref:`variables<what is a variable?>` is equal to the string_
+- :ref:`assert<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` with the :ref:`variables<what is a variable?>` is equal to the string_
 
 .. code-block:: python
 
@@ -1546,7 +1546,7 @@ extract assert_factory_works function
   )
   assert reality == my_expectation
 
-I can make a :ref:`function<what is a function?>` that takes in ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` then :ref:`asserts<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` with the :ref:`variables<what is a variable?>` is equal to the string_ with the values of the given parameters.
+I can make a :ref:`function<what is a function?>` that takes in ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` then :ref:`asserts<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` with the :ref:`variables<what is a variable?>` is equal to the string_ with the values of the given parameters.
 
 ----
 
@@ -1557,7 +1557,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a new :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` with the :ref:`variables<what is a variable?>` is equal to the string_ with the values of the given parameters
+* I add a new :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` with the :ref:`variables<what is a variable?>` is equal to the string_ with the values of the given parameters
 
   .. code-block:: python
     :linenos:
@@ -1667,6 +1667,36 @@ I change the :ref:`assertion<what is an assertion?>` in the :ref:`assert_factory
   def test_joe():
 
 the test passes.
+
+.. code-block:: shell
+
+  assert_factory_works(
+      first_name=first_name, last_name=last_name,
+      sex=sex, year_of_birth=year_of_birth
+  ) -> None
+  └── def assert_factory_works(
+          first_name, last_name,
+          sex, year_of_birth
+      ):
+      ├── reality = person(
+      │       first_name=first_name,
+      │       last_name=last_name,
+      │       sex=sex,
+      │       year_of_birth=year_of_birth,
+      │   )
+      │   └── def person(
+      │           first_name, last_name,
+      │           sex, year_of_birth,
+      │       ):
+      │       └── return (
+      │               f'{first_name}, {last_name},'
+      │               f' {sex}, {year_of_birth}'
+      │           )
+      ├── my_expectation = (
+      │       f'{first_name}, {last_name},'
+      │       f' {sex}, {year_of_birth}'
+      │   )
+      └── assert reality == my_expectation
 
 ----
 
@@ -1889,6 +1919,10 @@ the test passes.
 
 
     # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+    # AttributeError
 
 * I add a git_ commit message in the other terminal_
 
@@ -1901,10 +1935,10 @@ the test passes.
 ----
 
 *********************************************************************************
-separate and equal factory
+separate and equal person
 *********************************************************************************
 
-I want the :ref:`factory function<test>`
+I want to move the :ref:`person function<extract person function>` to separate it from the tests.
 
 ----
 
@@ -1916,18 +1950,16 @@ I want the :ref:`factory function<test>`
 
 * I go back to the terminal_ where the tests are running
 
-* I change ``reality`` for :ref:`test_joe` to be the result of a call to the :ref:`factory function<extract person function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`factory function<extract person function>` in ``test_person.py``
+* I change ``reality`` in the :ref:`assert_factory_works function<extract assert_factory_works function>` to be the result of a :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`person function<extract person function>` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
     :emphasize-lines: 7-8
 
-    def test_joe():
-        first_name = 'joe'
-        last_name = 'blow'
-        sex = 'M'
-        year_of_birth = 1996
-
+    def assert_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
         # reality = person(
         reality = src.person.person(
             first_name=first_name,
@@ -1942,7 +1974,7 @@ I want the :ref:`factory function<test>`
         assert reality == my_expectation
 
 
-    def test_jane():
+    def test_joe():
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
@@ -1950,7 +1982,7 @@ I want the :ref:`factory function<test>`
 
     NameError: name 'src' is not defined
 
-  because ``src`` is not defined in ``test_person.py``
+  because ``src`` is not defined in ``tests/test_person.py``.
 
 ----
 
@@ -1960,7 +1992,7 @@ I want the :ref:`factory function<test>`
 
 ----
 
-* I add an `import statement`_ at the top of ``test_person.py``
+* I add an `import statement`_ at the top of ``tests/test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -1970,22 +2002,23 @@ I want the :ref:`factory function<test>`
 
 
     def person(
-        first_name, last_name,
-        sex, year_of_birth,
-    ):
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
-    AttributeError: module 'src.person' has no attribute 'factory'
+    AttributeError: module 'src.person'
+                    has no attribute 'person'
 
-  because there is nothing named ``factory`` in ``src/person/__init__.py`` in the ``src`` folder_.
+  because there is nothing named ``person`` in the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_.
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
-    :lineno-start: 90
+    :lineno-start: 88
     :emphasize-lines: 5
     :emphasize-text: AttributeError
 
@@ -1995,46 +2028,47 @@ I want the :ref:`factory function<test>`
     # TypeError
     # AttributeError
 
-* I open ``person/__init__.py`` from the ``src`` folder_
-* I delete all the text in the file_ then add a copy of the :ref:`factory function<extract person function>` to ``src/person/__init__.py``
+* I open ``__init__.py`` from the ``person`` folder_ in the ``src`` folder_
+* I delete all the text in the file_ then add a copy of the :ref:`person function<extract person function>` to ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1-8
 
     def person(
-        first_name, last_name,
-        sex, year_of_birth,
-    ):
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
         return (
             f'{first_name}, {last_name},'
             f' {sex}, {year_of_birth}'
         )
 
-  the test passes because
+  all the tests are green again because
 
-  - Python_ brings in an :ref:`object<everything is an object>` for the ``src/person/__init__.py`` file_ from the ``src`` folder_ so I can use it in ``test_person.py`` as ``src.person`` when ``import src.person`` runs.
-  - Python_ calls the :ref:`factory function<extract person function>` from the :ref:`object<everything is an object>` it imported for the ``src/person/__init__.py`` file_ from the ``src`` folder_ (``src.person``) when ``src.person.person`` is called.
+  - when ``import src.person`` runs Python_ brings in an :ref:`object<everything is an object>` for the ``__init__.py`` file_ from the ``person`` folder_ in the ``src`` folder_ so I can use it in ``tests/test_person.py`` as ``src.person``.
+  - Python_ calls the :ref:`person function<extract person function>` from the :ref:`object<everything is an object>` it imported for the ``src/person/__init__.py`` file_ (``src.person``) when ``src.person.person`` is called.
 
   I think of ``src.person.person`` like an address
 
-  - ``factory`` is something in ``person``, in this case it is a :ref:`function<what is a function?>` in ``person``
-  - ``person`` is something in ``src``, in this case it is ``src/person/__init__.py`` (a :ref:`module<what is a module?>`) in the ``src`` folder_
+  - ``person`` is something in ``__init__.py`` in the ``person`` folder_, in this case it is a :ref:`function<what is a function?>` in ``person``
+  - ``person`` is something in the ``src`` folder_, in this case it is a folder_  in the ``src`` folder_
   - ``src`` is something Python_ can import (a :ref:`module<what is a module?>`, `Python package`_ or folder_)
 
     .. code-block:: shell
 
       src.person.person
-      src
-      └── person.py
-          └── def person(
-                  first_name, last_name,
-                  sex, year_of_birth,
-              ):
-              └── return (
-                      f'{first_name}, {last_name},'
-                      f' {sex}, {year_of_birth}'
-                  )
+      └── src/
+          └── person/
+              └── __init__.py
+                  └── def person(
+                          first_name, last_name,
+                          sex, year_of_birth,
+                      ):
+                      └── return (
+                              f'{first_name}, {last_name},'
+                              f' {sex}, {year_of_birth}'
+                          )
 
 ----
 
@@ -2044,205 +2078,31 @@ I want the :ref:`factory function<test>`
 
 ----
 
-* I remove the commented line from :ref:`test_joe` in ``test_person.py``
+* I remove the commented line from :ref:`assert_factory_works` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 14
 
+    def assert_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
+        reality = src.person.person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+
     def test_joe():
-        first_name = 'joe'
-        last_name = 'blow'
-        sex = 'M'
-        year_of_birth = 1996
 
-        reality = src.person.person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
-
-    def test_jane():
-
-* I change ``reality`` for :ref:`test_jane` to be the result of a call to the :ref:`factory function<extract person function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 7-8
-
-    def test_jane():
-        first_name = 'jane'
-        last_name = 'doe'
-        sex = 'F'
-        year_of_birth = 1991
-
-        # reality = person(
-        reality = src.person.person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
-
-    def test_john():
-
-  the test is still green.
-
-* I remove the commented line from :ref:`test_jane`
-
-  .. code-block:: python
-    :lineno-start: 33
-
-    def test_jane():
-        first_name = 'jane'
-        last_name = 'doe'
-        sex = 'F'
-        year_of_birth = 1991
-
-        reality = src.person.person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
-
-    def test_john():
-
-* I change ``reality`` for :ref:`test_john` to be the result of a call to the :ref:`factory function<extract person function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
-
-  .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 7-8
-
-    def test_john():
-        first_name = 'john'
-        last_name = 'smith'
-        sex = 'M'
-        year_of_birth = 1580
-
-        # reality = person(
-        reality = src.person.person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
-
-    def test_mary():
-
-  still green.
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 52
-
-    def test_john():
-        first_name = 'john'
-        last_name = 'smith'
-        sex = 'M'
-        year_of_birth = 1580
-
-        reality = src.person.person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
-
-    def test_mary():
-
-* I do the same thing to the :ref:`call<how to call a function with input>` to the :ref:`factory function<extract person function>` in :ref:`test_mary`
-
-  .. code-block:: python
-    :lineno-start: 71
-    :emphasize-lines: 7-8
-
-    def test_mary():
-        first_name = 'mary'
-        last_name = 'public'
-        sex = 'F'
-        year_of_birth = 2000
-
-        # reality = person(
-        reality = src.person.person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
-
-    # Exceptions seen
-
-  green.
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 71
-
-    def test_mary():
-        first_name = 'mary'
-        last_name = 'public'
-        sex = 'F'
-        year_of_birth = 2000
-
-        reality = src.person.person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
-
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # TypeError
-    # AttributeError
-
-* I remove the :ref:`factory function<extract person function>` from ``test_person.py``
+* I remove the :ref:`person function<extract person function>` from ``tests/test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -2271,23 +2131,7 @@ I want the :ref:`factory function<test>`
 
     def test_jane():
 
-  all the tests are still green because the calls that were made to the :ref:`factory function<extract person function>` that was in ``test_person.py`` are now made to the :ref:`factory function<extract person function>` in ``src/person/__init__.py`` in the ``src`` folder_.
-
-  Python_ follows this path when ``src.person.person`` is :ref:`called<how to call a function with input>`
-
-  .. code-block:: shell
-
-    src.person.person
-    src
-    └── person.py
-        └── def person(
-                first_name, last_name,
-                sex, year_of_birth,
-            ):
-            └── return (
-                    f'{first_name}, {last_name},'
-                    f' {sex}, {year_of_birth}'
-                )
+  all the tests are still green
 
 * I add a git_ commit message in the other terminal_
 
@@ -2295,7 +2139,7 @@ I want the :ref:`factory function<test>`
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move factory function to person.py'
+    'move person function to src'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -2318,7 +2162,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_joe` in ``test_person.py``
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_joe` in ``tests/test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -2449,7 +2293,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
   because
 
   - I called the :ref:`say_hello function<test say_hello function>` with three :ref:`keyword arguments<test_keyword_arguments>` (``first_name``, ``last_name`` and ``year_of_birth``).
-  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``factory`` allows two arguments (``first_name``, ``last_name``).
+  - The :ref:`function definition (signature)<how to make a function that takes input>` of ``person`` allows two arguments (``first_name``, ``last_name``).
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 * I add ``year_of_birth`` in parentheses
@@ -2506,7 +2350,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello function<test say_hello function>` to :ref:`test_jane` in ``test_person.py``
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello function<test say_hello function>` to :ref:`test_jane` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 46
@@ -2650,7 +2494,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello function<test say_hello function>` to :ref:`test_john` in ``test_person.py``
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`say_hello function<test say_hello function>` to :ref:`test_john` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 85
@@ -2867,7 +2711,7 @@ I want the person I make to say hi. I can make a :ref:`function<what is a functi
 separate and equal say_hello
 *********************************************************************************
 
-* I change ``reality`` to be the result of a call to the :ref:`say_hello function<test say_hello function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`say_hello function<test say_hello function>` in ``test_person.py``
+* I change ``reality`` to be the result of a call to the :ref:`say_hello function<test say_hello function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`say_hello function<test say_hello function>` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 117
@@ -2946,7 +2790,7 @@ separate and equal say_hello
 
   the test passes.
 
-* I remove the commented lines from :ref:`test_mary` in ``test_person.py``
+* I remove the commented lines from :ref:`test_mary` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 117
@@ -3229,7 +3073,7 @@ separate and equal say_hello
 
     def test_john():
 
-* I remove the :ref:`say_hello function<test say_hello function>` from ``test_person.py``
+* I remove the :ref:`say_hello function<test say_hello function>` from ``tests/test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -3239,7 +3083,7 @@ separate and equal say_hello
 
     def test_joe():
 
-  all the tests are still green because the calls that were made to the :ref:`say_hello function<test say_hello function>` that was in ``test_person.py`` are now made to the :ref:`say_hello function<test say_hello function>` in ``src/person/__init__.py`` in the ``src`` folder_.
+  all the tests are still green because the calls that were made to the :ref:`say_hello function<test say_hello function>` that was in ``tests/test_person.py`` are now made to the :ref:`say_hello function<test say_hello function>` in ``src/person/__init__.py`` in the ``src`` folder_.
 
   Python_ follows this path when ``src.person.say_hello`` is :ref:`called<how to call a function with input>`
 
@@ -3274,7 +3118,7 @@ separate and equal say_hello
 test_person
 *********************************************************************************
 
-Since the solutions are separate from the tests, I can write the programs_ that make the tests pass without looking at ``test_person.py``.
+Since the solutions are separate from the tests, I can write the programs_ that make the tests pass without looking at ``tests/test_person.py``.
 
 ----
 
@@ -3284,20 +3128,20 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
 ----
 
-* I close ``test_person.py``
+* I close ``tests/test_person.py``
 
 * I delete all the text in ``src/person/__init__.py`` and the terminal_ shows 4 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
     FAILED ...::test_joe - AttributeError:
-        module 'src.person' has no attribute 'factory'
+        module 'src.person' has no attribute 'person'
     FAILED ...::test_jane - AttributeError:
-        module 'src.person' has no attribute 'factory'
+        module 'src.person' has no attribute 'person'
     FAILED ...::test_john - AttributeError:
-        module 'src.person' has no attribute 'factory'
+        module 'src.person' has no attribute 'person'
     FAILED ...::test_mary - AttributeError:
-        module 'src.person' has no attribute 'factory'
+        module 'src.person' has no attribute 'person'
     =================== 4 failed in A.BCs ===================
 
   Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done or if you get stuck.
@@ -3322,9 +3166,9 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
   .. code-block:: python
 
-    NameError: name 'factory' is not defined
+    NameError: name 'person' is not defined
 
-* I point ``factory`` to :ref:`None (the simplest object)<what is None?>` to define it
+* I point ``person`` to :ref:`None (the simplest object)<what is None?>` to define it
 
   .. code-block:: python
     :linenos:
@@ -3339,9 +3183,9 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
     TypeError: 'NoneType' object is not callable
 
-  because ``factory`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
+  because ``person`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
-* I change ``factory`` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
+* I change ``person`` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
     :linenos:
@@ -3655,9 +3499,9 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     AssertionError: assert 'mary, public, F, 2000'
                         == 'john, smith, M, 1580'
 
-  because the :ref:`factory function<extract person function>` always returns ``'mary, public, F, 2000'`` and this test expects ``'john, smith, M, 1580'``.
+  because the :ref:`person function<extract person function>` always returns ``'mary, public, F, 2000'`` and this test expects ``'john, smith, M, 1580'``.
 
-* I change the :ref:`return statement<the return statement>` of the :ref:`factory function<extract person function>` to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
+* I change the :ref:`return statement<the return statement>` of the :ref:`person function<extract person function>` to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
 
   .. code-block:: python
     :lineno-start: 13
@@ -3890,7 +3734,7 @@ review
     * ``last_name``
     * ``year_of_birth``
 
-    There has to be `a better way<how to make a person with a class>`, where I can give those values once, and get a representation for a person when I call the :ref:`factory function<extract person function>` and a message when I call the :ref:`say_hello function<test say_hello function>`.
+    There has to be `a better way<how to make a person with a class>`, where I can give those values once, and get a representation for a person when I call the :ref:`person function<extract person function>` and a message when I call the :ref:`say_hello function<test say_hello function>`.
 
 For now, I am going to :ref:`clean up the functions project<separate and equal functions>` so the tests and solutions are in separate files_.
 

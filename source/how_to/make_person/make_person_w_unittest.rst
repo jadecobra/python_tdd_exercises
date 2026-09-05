@@ -297,7 +297,7 @@ the test is green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`factory function<extract person function>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`person function<extract person function>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -664,7 +664,7 @@ the test passes.
     AssertionError: 'jane, doe, F, 1991'
                  == 'jane, doe, F, 1991'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`factory function<extract person function>`, in :ref:`test_jane`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`person function<extract person function>`, in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 67
@@ -963,7 +963,7 @@ green again.
     AssertionError: 'john, smith, M, 1580'
                  == 'john, smith, M, 1580'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`factory function<extract person function>`, in :ref:`test_john`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`person function<extract person function>`, in :ref:`test_john`
 
   .. code-block:: python
     :lineno-start: 110
@@ -1262,7 +1262,7 @@ green.
      AssertionError: 'mary, public, F, 2000'
                   == 'mary, public, F, 2000'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`factory function<extract person function>`, in :ref:`test_mary`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`person function<extract person function>`, in :ref:`test_mary`
 
   .. code-block:: python
     :lineno-start: 153

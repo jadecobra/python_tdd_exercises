@@ -267,7 +267,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
           an unexpected keyword argument 'last_name'.
           Did you mean 'first_name'?
 
-    I have seen this before, so far it is the same as making the :ref:`factory function<test_factory_w_keyword_arguments>`
+    I have seen this before, so far it is the same as making the :ref:`person function<test_factory_w_keyword_arguments>`
 
 * I add ``last_name`` to the :ref:`definition<how to make a function>` of ``__init__``
 
@@ -292,7 +292,7 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
         Person.__init__() got
         an unexpected keyword argument 'year_of_birth'
 
-  still the same as making the :ref:`factory function<test_factory_w_keyword_arguments>`
+  still the same as making the :ref:`person function<test_factory_w_keyword_arguments>`
 
 * I add ``year_of_birth`` to the :ref:`definition<how to make a function>` of the :ref:`__init__ method<the constructor method>`
 
@@ -1066,7 +1066,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   the test is still green.
 
-* ``datetime.datetime.today().year`` gets used to calculate the age in the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`class<everything is an object>` and the :ref:`return statement<the return statement>` of the :ref:`factory function<test_factory_w_keyword_arguments>`. I make a helper :ref:`function<what is a function?>` to calculate the age, the same way I do in the tests
+* ``datetime.datetime.today().year`` gets used to calculate the age in the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`class<everything is an object>` and the :ref:`return statement<the return statement>` of the :ref:`person function<test_factory_w_keyword_arguments>`. I make a helper :ref:`function<what is a function?>` to calculate the age, the same way I do in the tests
 
   .. code-block:: python
     :linenos:
@@ -1084,7 +1084,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
     def say_hello(a_dictionary):
 
-* I use the new :ref:`function<what is a function?>` for the age calculation in the :ref:`factory function<test_factory_w_keyword_arguments>`
+* I use the new :ref:`function<what is a function?>` for the age calculation in the :ref:`person function<test_factory_w_keyword_arguments>`
 
   .. code-block:: python
     :lineno-start: 19
