@@ -30,31 +30,31 @@ I have these tests by the end of the chapter
   :language: python
   :lineno-start: 21
   :caption: person/tests/test_person.py
-  :lines: 21-34
+  :lines: 21-35
 
 .. literalinclude:: ../../code/person/tests/test_person_w_fstrings.py
   :language: python
-  :lineno-start: 37
+  :lineno-start: 38
   :caption: person/tests/test_person.py
-  :lines: 37-54
+  :lines: 38-55
 
 .. literalinclude:: ../../code/person/tests/test_person_w_fstrings.py
   :language: python
-  :lineno-start: 57
+  :lineno-start: 58
   :caption: person/tests/test_person.py
-  :lines: 57-74
+  :lines: 58-75
 
 .. literalinclude:: ../../code/person/tests/test_person_w_fstrings.py
   :language: python
-  :lineno-start: 77
+  :lineno-start: 78
   :caption: person/tests/test_person.py
-  :lines: 77-94
+  :lines: 78-95
 
 .. literalinclude:: ../../code/person/tests/test_person_w_fstrings.py
   :language: python
-  :lineno-start: 96
+  :lineno-start: 98
   :caption: person/tests/test_person.py
-  :lines: 96-
+  :lines: 98-
 
 
 -----
@@ -1405,7 +1405,7 @@ the test passes.
             first_name=first_name,
             last_name=last_name,
             sex=sex,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
         my_expectation = (
             f'{first_name}, {last_name},'
@@ -1522,7 +1522,7 @@ the test passes.
 ----
 
 *********************************************************************************
-extract assert_factory_works function
+extract assert_person_factory_works function
 *********************************************************************************
 
 :ref:`test_joe`, :ref:`tesT_jane`, :ref:`test_john` and :ref:`test_mary` are the same process, they
@@ -1573,7 +1573,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
         )
 
 
-    def assert_factory_works(
+    def assert_person_factory_works(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -1592,7 +1592,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
 
     def test_joe():
 
-* I use the :ref:`assert_factory_works function<extract assert_factory_works function>` in :ref:`test_joe`
+* I use the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` in :ref:`test_joe`
 
   .. code-block:: python
     :lineno-start: 28
@@ -1615,11 +1615,11 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
         #     f' {sex}, {year_of_birth}'
         # )
         # assert reality == my_expectation
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
 
 
@@ -1640,13 +1640,13 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
 
 ----
 
-I change the :ref:`assertion<what is an assertion?>` in the :ref:`assert_factory_works function<extract assert_factory_works function>`
+I change the :ref:`assertion<what is an assertion?>` in the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>`
 
 .. code-block:: python
   :lineno-start: 11
   :emphasize-lines: 15-16
 
-  def assert_factory_works(
+  def assert_person_factory_works(
           first_name, last_name,
           sex, year_of_birth,
       ):
@@ -1670,11 +1670,11 @@ the test passes.
 
 .. code-block:: shell
 
-  assert_factory_works(
+  assert_person_factory_works(
       first_name=first_name, last_name=last_name,
-      sex=sex, year_of_birth=year_of_birth
+      sex=sex, year_of_birth=year_of_birth,
   ) -> None
-  └── def assert_factory_works(
+  └── def assert_person_factory_works(
           first_name, last_name,
           sex, year_of_birth,
       ):
@@ -1707,12 +1707,12 @@ the test passes.
 ----
 
 
-* I remove the commented line from :ref:`assert_factory_works<extract assert_factory_works function>`
+* I remove the commented line from :ref:`assert_person_factory_works<extract assert_person_factory_works function>`
 
   .. code-block:: python
     :lineno-start: 11
 
-    def assert_factory_works(
+    def assert_person_factory_works(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -1742,17 +1742,17 @@ the test passes.
         sex = 'M'
         year_of_birth = 1996
 
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
 
 
     def test_jane():
 
-* I use the :ref:`assert_factory_works function<extract assert_factory_works function>` in :ref:`test_jane`
+* I use the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 42
@@ -1775,7 +1775,7 @@ the test passes.
         #     f' {sex}, {year_of_birth}'
         # )
         # assert reality == my_expectation
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1798,7 +1798,7 @@ the test passes.
         sex = 'F'
         year_of_birth = 1991
 
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1808,7 +1808,7 @@ the test passes.
 
     def test_john():
 
-* I use the :ref:`assert_factory_works function<extract assert_factory_works function>` in :ref:`test_john`
+* I use the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` in :ref:`test_john`
 
   .. code-block:: python
     :lineno-start: 56
@@ -1831,7 +1831,7 @@ the test passes.
         #     f' {sex}, {year_of_birth}'
         # )
         # assert reality == my_expectation
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1854,7 +1854,7 @@ the test passes.
         sex = 'M'
         year_of_birth = 1580
 
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1864,7 +1864,7 @@ the test passes.
 
     def test_mary():
 
-* I use the :ref:`assert_factory_works function<extract assert_factory_works function>` in :ref:`test_mary`
+* I use the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` in :ref:`test_mary`
 
   .. code-block:: python
     :lineno-start: 70
@@ -1880,14 +1880,14 @@ the test passes.
         #     first_name=first_name,
         #     last_name=last_name,
         #     sex=sex,
-        #     year_of_birth=year_of_birth
+        #     year_of_birth=year_of_birth,
         # )
         # my_expectation = (
         #     f'{first_name}, {last_name},'
         #     f' {sex}, {year_of_birth}'
         # )
         # assert reality == my_expectation
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1910,7 +1910,7 @@ the test passes.
         sex = 'F'
         year_of_birth = 2000
 
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -1926,7 +1926,7 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'extract assert_factory_works function'
+    'extract assert_person_factory_works function'
 
 ----
 
@@ -1946,13 +1946,13 @@ I want to move the :ref:`person function<extract person function>` to separate i
 
 * I go back to the terminal_ where the tests are running
 
-* I change ``reality`` in the :ref:`assert_factory_works function<extract assert_factory_works function>` to be the result of a :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`person function<extract person function>` in ``tests/test_person.py``
+* I change ``reality`` in the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to be the result of a :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`person function<extract person function>` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
     :emphasize-lines: 7-8
 
-    def assert_factory_works(
+    def assert_person_factory_works(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -2074,12 +2074,12 @@ I want to move the :ref:`person function<extract person function>` to separate i
 
 ----
 
-* I remove the commented line from :ref:`assert_factory_works<extract assert_factory_works function>` in ``tests/test_person.py``
+* I remove the commented line from :ref:`assert_person_factory_works<extract assert_person_factory_works function>` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 14
 
-    def assert_factory_works(
+    def assert_person_factory_works(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -2169,17 +2169,17 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
         sex = 'M'
         year_of_birth = 1996
 
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
 
         reality = say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
         my_expectation = (
             f'Hello, my name is {first_name}'
@@ -2218,7 +2218,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
         return None
 
 
-    def assert_factory_works(
+    def assert_person_factory_works(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -2315,7 +2315,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
         return 'Hello, my name is joe blow and I am 30.'
 
 
-    def assert_factory_works(
+    def assert_person_factory_works(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -2330,7 +2330,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
     └── say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         ) -> 'Hello, my name is joe blow and I am 30.'
         └── def say_hello(
                 first_name, last_name,
@@ -2358,7 +2358,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
         sex = 'F'
         year_of_birth = 1991
 
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2368,7 +2368,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
         reality = say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
         my_expectation = (
             f'Hello, my name is {first_name}'
@@ -2483,7 +2483,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
     └── say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         ) -> 'Hello, my name is jane doe and I am 35.'
         └── def say_hello(
                 first_name, last_name,
@@ -2520,7 +2520,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
         )
 
 
-    def assert_factory_works(
+    def assert_person_factory_works(
             first_name, last_name,
             sex, year_of_birth,
         ):
@@ -2537,7 +2537,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
         sex = 'M'
         year_of_birth = 1580
 
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2547,7 +2547,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
         reality = say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
         my_expectation = (
             'Hello, my name is jane'
@@ -2596,7 +2596,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
     └── say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         ) -> 'Hello, my name is john smith and I am 446.'
         └── def say_hello(
                 first_name, last_name,
@@ -2625,7 +2625,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
         sex = 'F'
         year_of_birth = 2000
 
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2635,7 +2635,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
         reality = say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
         my_expectation = (
             f'Hello, my name is {first_name}'
@@ -2684,7 +2684,7 @@ I want the person I make to say hello. I can make a :ref:`function<what is a fun
     └── say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         ) -> 'Hello, my name is mary public and I am 26.'
         └── def say_hello(
                 first_name, last_name,
@@ -2725,7 +2725,7 @@ extract assert_say_hello_works function
   reality = say_hello(
       first_name=first_name,
       last_name=last_name,
-      year_of_birth=year_of_birth
+      year_of_birth=year_of_birth,
   )
   my_expectation = (
       f'Hello, my name is {first_name}'
@@ -2770,7 +2770,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
         reality = say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
         my_expectation = (
             f'Hello, my name is {first_name}'
@@ -2782,7 +2782,7 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
 
     def assert_say_hello_works(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
 
 * I use the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` in :ref:`test_joe`
@@ -2797,17 +2797,17 @@ I can make a :ref:`function<what is a function?>` that takes in ``first_name``, 
         sex = 'M'
         year_of_birth = 1996
 
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
 
         # reality = say_hello(
         #     first_name=first_name,
         #     last_name=last_name,
-        #     year_of_birth=year_of_birth
+        #     year_of_birth=year_of_birth,
         # )
         # my_expectation = (
         #     f'Hello, my name is {first_name}'
@@ -2852,7 +2852,7 @@ I change the :ref:`assertion<what is an assertion?>` in the :ref:`assert_say_hel
       reality = say_hello(
           first_name=first_name,
           last_name=last_name,
-          year_of_birth=year_of_birth
+          year_of_birth=year_of_birth,
       )
       my_expectation = (
           f'Hello, my name is {first_name}'
@@ -2863,9 +2863,9 @@ I change the :ref:`assertion<what is an assertion?>` in the :ref:`assert_say_hel
       assert reality == my_expectation
 
 
-  def assert_factory_works(
+  def assert_person_factory_works(
           first_name, last_name,
-          sex, year_of_birth
+          sex, year_of_birth,
       ):
 
 the test passes.
@@ -2884,7 +2884,7 @@ the test passes.
       ├── reality = say_hello(
       │       first_name=first_name,
       │       last_name=last_name,
-      │       year_of_birth=year_of_birth
+      │       year_of_birth=year_of_birth,
       │   )
       │   └── def say_hello(
       │           first_name, last_name,
@@ -2923,7 +2923,7 @@ the test passes.
         reality = say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
         my_expectation = (
             f'Hello, my name is {first_name}'
@@ -2933,9 +2933,9 @@ the test passes.
         assert reality == my_expectation
 
 
-    def assert_factory_works(
+    def assert_person_factory_works(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
 
 * I remove the commented lines from :ref:`test_joe`
@@ -2949,11 +2949,11 @@ the test passes.
         sex = 'M'
         year_of_birth = 1996
 
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
 
         assert_say_hello_works(
@@ -2977,7 +2977,7 @@ the test passes.
         sex = 'F'
         year_of_birth = 1991
 
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -2987,7 +2987,7 @@ the test passes.
         # reality = say_hello(
         #     first_name=first_name,
         #     last_name=last_name,
-        #     year_of_birth=year_of_birth
+        #     year_of_birth=year_of_birth,
         # )
         # my_expectation = (
         #     f'Hello, my name is {first_name}'
@@ -3017,7 +3017,7 @@ the test passes.
         sex = 'F'
         year_of_birth = 1991
 
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -3045,7 +3045,7 @@ the test passes.
         sex = 'M'
         year_of_birth = 1580
 
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -3055,7 +3055,7 @@ the test passes.
         # reality = say_hello(
         #     first_name=first_name,
         #     last_name=last_name,
-        #     year_of_birth=year_of_birth
+        #     year_of_birth=year_of_birth,
         # )
         # my_expectation = (
         #     # f'Hello, my name is jane'
@@ -3086,7 +3086,7 @@ the test passes.
         sex = 'M'
         year_of_birth = 1580
 
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -3114,7 +3114,7 @@ the test passes.
         sex = 'F'
         year_of_birth = 2000
 
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -3124,7 +3124,7 @@ the test passes.
         # reality = say_hello(
         #     first_name=first_name,
         #     last_name=last_name,
-        #     year_of_birth=year_of_birth
+        #     year_of_birth=year_of_birth,
         # )
         # my_expectation = (
         #     f'Hello, my name is {first_name}'
@@ -3155,7 +3155,7 @@ the test passes.
         sex = 'F'
         year_of_birth = 2000
 
-        assert_factory_works(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
@@ -3214,7 +3214,7 @@ I want to move the :ref:`say_hello function<test say_hello function>` to separat
         reality = src.person.say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
         my_expectation = (
             f'Hello, my name is {first_name}'
@@ -3224,9 +3224,9 @@ I want to move the :ref:`say_hello function<test say_hello function>` to separat
         assert reality == my_expectation
 
 
-    def assert_factory_works(
+    def assert_person_factory_works(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
@@ -3264,7 +3264,7 @@ I add a copy of the :ref:`say_hello function<test say_hello function>` to ``src/
 
   def say_hello(
       first_name, last_name,
-      year_of_birth
+      year_of_birth,
   ):
       age = 2026 - year_of_birth
 
@@ -3303,7 +3303,7 @@ the test passes.
         reality = src.person.say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth
+            year_of_birth=year_of_birth,
         )
         my_expectation = (
             f'Hello, my name is {first_name}'
@@ -3313,9 +3313,9 @@ the test passes.
         assert reality == my_expectation
 
 
-    def assert_factory_works(
+    def assert_person_factory_works(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
 
 * I remove the :ref:`say_hello function<test say_hello function>` from ``tests/test_person.py``
@@ -3362,19 +3362,12 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
 * I close ``tests/test_person.py``
 
-* I delete all the text in ``src/person/__init__.py`` and the terminal_ shows 4 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
+* I delete all the text in ``src/person/__init__.py`` and the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
-    FAILED ...::test_joe - AttributeError:
-        module 'src.person' has no attribute 'person'
-    FAILED ...::test_jane - AttributeError:
-        module 'src.person' has no attribute 'person'
-    FAILED ...::test_john - AttributeError:
-        module 'src.person' has no attribute 'person'
-    FAILED ...::test_mary - AttributeError:
-        module 'src.person' has no attribute 'person'
-    =================== 4 failed in A.BCs ===================
+    AttributeError: module 'src.person'
+                    has no attribute 'person'
 
   Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done or if you get stuck.
 
@@ -3392,7 +3385,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :linenos:
     :emphasize-lines: 1
 
-    factory
+    person
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
@@ -3406,8 +3399,8 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :linenos:
     :emphasize-lines: 1-2
 
-    # factory
-    factory = None
+    # person
+    person = None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -3423,8 +3416,8 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :linenos:
     :emphasize-lines: 2-4
 
-    # factory
-    # factory = None
+    # person
+    # person = None
     def person():
         return None
 
@@ -3444,8 +3437,8 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :linenos:
     :emphasize-lines: 3-4
 
-    # factory
-    # factory = None
+    # person
+    # person = None
     # def person():
     def person(first_name):
         return None
@@ -3466,8 +3459,8 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :linenos:
     :emphasize-lines: 4-5
 
-    # factory
-    # factory = None
+    # person
+    # person = None
     # def person():
     # def person(first_name):
     def person(first_name, last_name):
@@ -3489,8 +3482,8 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :linenos:
     :emphasize-lines: 5-6
 
-    # factory
-    # factory = None
+    # person
+    # person = None
     # def person():
     # def person(first_name):
     # def person(first_name, last_name):
@@ -3513,8 +3506,8 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :linenos:
     :emphasize-lines: 6-10
 
-    # factory
-    # factory = None
+    # person
+    # person = None
     # def person():
     # def person(first_name):
     # def person(first_name, last_name):
@@ -3537,8 +3530,8 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     :linenos:
     :emphasize-lines: 11-12
 
-    # factory
-    # factory = None
+    # person
+    # person = None
     # def person():
     # def person(first_name):
     # def person(first_name, last_name):
@@ -3547,6 +3540,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return None
         return 'mary, public, F, 2000'
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
@@ -3565,8 +3559,8 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     say_hello
 
 
-    # factory
-    # factory = None
+    # person
+    # person = None
     # def person():
     # def person(first_name):
     # def person(first_name, last_name):
@@ -3575,6 +3569,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return None
         return 'mary, public, F, 2000'
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
@@ -3593,7 +3588,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     say_hello = None
 
 
-    # factory
+    # person
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -3615,7 +3610,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
         return None
 
 
-    # factory
+    # person
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -3640,7 +3635,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
         return None
 
 
-    # factory
+    # person
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -3666,7 +3661,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
         return None
 
 
-    # factory
+    # person
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -3690,12 +3685,12 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     # def say_hello(first_name):
     # def say_hello(first_name, last_name):
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth,
+        ):
         return None
 
 
-    # factory
+    # person
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3716,13 +3711,13 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     # def say_hello(first_name):
     # def say_hello(first_name, last_name):
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth,
+        ):
         # return None
         return 'Hello, my name is mary public and I am 26.'
 
 
-    # factory
+    # person
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3737,10 +3732,10 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 11-12
+    :emphasize-lines: 12-13
 
-    # factory
-    # factory = None
+    # person
+    # person = None
     # def person():
     # def person(first_name):
     # def person(first_name, last_name):
@@ -3749,6 +3744,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return None
         # return 'mary, public, F, 2000'
         return first_name, last_name, sex, year_of_birth,
 
@@ -3765,10 +3761,10 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 12-16
+    :emphasize-lines: 13-17
 
-    # factory
-    # factory = None
+    # person
+    # person = None
     # def person():
     # def person(first_name):
     # def person(first_name, last_name):
@@ -3777,6 +3773,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return None
         # return 'mary, public, F, 2000'
         # return first_name, last_name, sex, year_of_birth,
         return (
@@ -3805,14 +3802,14 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     # def say_hello(first_name):
     # def say_hello(first_name, last_name):
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth,
+        ):
         # return None
         # return 'Hello, my name is mary public and I am 26.'
         return first_name, last_name, year_of_birth,
 
 
-    # factory
+    # person
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3835,8 +3832,8 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     # def say_hello(first_name):
     # def say_hello(first_name, last_name):
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth,
+        ):
         # return None
         # return 'Hello, my name is mary public and I am 26.'
         # return first_name, last_name, year_of_birth,
@@ -3846,7 +3843,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
         )
 
 
-    # factory
+    # person
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3869,8 +3866,8 @@ Since the solutions are separate from the tests, I can write the programs_ that 
     # def say_hello(first_name):
     # def say_hello(first_name, last_name):
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth,
+        ):
         # return None
         # return 'Hello, my name is mary public and I am 26.'
         # return first_name, last_name, year_of_birth,
@@ -3882,18 +3879,18 @@ Since the solutions are separate from the tests, I can write the programs_ that 
         )
 
 
-    # factory
+    # person
 
-  all tests are green!
+  all the tests are green!
 
-* I remove the commented lines
+* I remove the commented lines from ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
 
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth,
+        ):
         return (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
@@ -3948,25 +3945,19 @@ close the project
 review
 *************************************************************************************
 
-* I ran tests to write one :ref:`function<what is a function?>` that makes a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` so I do not have to make one :ref:`function<what is a function?>` for each person.
-* I also ran tests to make another :ref:`function<what is a function?>` that uses :ref:`f-strings<what is string interpolation?>` to make a string_ that represents the person I make saying hi when I give it ``first_name``, ``last_name``, and ``year_of_birth``.
-* I saw the following :ref:`Exceptions<how to test that an Exception is raised>`
-
-  - :ref:`AssertionError<what causes AssertionError?>`
-  - :ref:`NameError<test_catching_name_error>`
-  - :ref:`TypeError<what causes TypeError?>`
-  - :ref:`AttributeError<what causes AttributeError?>`
+* I ran tests to write one :ref:`function<what is a function?>` that makes a string_ for a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` so I do not have to make one :ref:`function<what is a function?>` for each person.
+* I also ran tests to make another :ref:`function<what is a function?>` that makes an :ref:`f-strings<what is string interpolation?>` to represent the person saying hello when I give it ``first_name``, ``last_name``, and ``year_of_birth``.
 
 * My tests and solutions have a few problems,
 
-  - Each test is basically the same two tests, there has to be a way that I can use one test for all the people.
-  - The :ref:`factory<extract person function>` and :ref:`say_hello functions<test say_hello function>` use three of the same inputs
+  - Each test is the same two tests, there has to be a way that I can use one test for all the people.
+  - The :ref:`person factory<extract person function>` and :ref:`say_hello functions<test say_hello function>` use three of the same inputs
 
     * ``first_name``
     * ``last_name``
     * ``year_of_birth``
 
-    There has to be `a better way<how to make a person with a class>`, where I can give those values once, and get a representation for a person when I call the :ref:`person function<extract person function>` and a message when I call the :ref:`say_hello function<test say_hello function>`.
+    There has to be :ref:`a better way<how to make a person with a class>`, where I can give those values once, and get a representation for a person when I :ref:`call<how to call a function with input>` the :ref:`person function<extract person function>` and a message when I call the :ref:`say_hello function<test say_hello function>`.
 
 For now, I am going to :ref:`clean up the functions project<separate and equal functions>` so the tests and solutions are in separate files_.
 

@@ -1,9 +1,26 @@
 import src.person
 
 
-def assert_factory_works(
+def assert_say_hello_works(
         first_name, last_name,
-        sex, year_of_birth,
+        year_of_birth,
+    ):
+    reality = src.person.say_hello(
+        first_name=first_name,
+        last_name=last_name,
+        year_of_birth=year_of_birth
+    )
+    my_expectation = (
+        f'Hello, my name is {first_name}'
+        f' {last_name} and I am'
+        f' {2026-year_of_birth}.'
+    )
+    assert reality == my_expectation
+
+
+def assert_person_factory_works(
+        first_name, last_name,
+        sex, year_of_birth
     ):
     reality = src.person.person(
         first_name=first_name,
@@ -18,29 +35,13 @@ def assert_factory_works(
     assert reality == my_expectation
 
 
-def assert_say_hello_works(
-        first_name, last_name, year_of_birth,
-    ):
-    reality = src.person.say_hello(
-        first_name=first_name,
-        last_name=last_name,
-        year_of_birth=year_of_birth,
-    )
-    my_expectation = (
-        f'Hello, my name is {first_name}'
-        f' {last_name} and I am'
-        f' {2026-year_of_birth}.'
-    )
-    assert reality == my_expectation
-
-
 def test_joe():
     first_name = 'joe'
     last_name = 'blow'
     sex = 'M'
     year_of_birth = 1996
 
-    assert_factory_works(
+    assert_person_factory_works(
         first_name=first_name,
         last_name=last_name,
         sex=sex,
@@ -60,7 +61,7 @@ def test_jane():
     sex = 'F'
     year_of_birth = 1991
 
-    assert_factory_works(
+    assert_person_factory_works(
         first_name=first_name,
         last_name=last_name,
         sex=sex,
@@ -80,7 +81,7 @@ def test_john():
     sex = 'M'
     year_of_birth = 1580
 
-    assert_factory_works(
+    assert_person_factory_works(
         first_name=first_name,
         last_name=last_name,
         sex=sex,
@@ -93,13 +94,14 @@ def test_john():
         year_of_birth=year_of_birth,
     )
 
+
 def test_mary():
     first_name = 'mary'
     last_name = 'public'
     sex = 'F'
     year_of_birth = 2000
 
-    assert_factory_works(
+    assert_person_factory_works(
         first_name=first_name,
         last_name=last_name,
         sex=sex,

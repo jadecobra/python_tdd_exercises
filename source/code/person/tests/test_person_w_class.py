@@ -16,7 +16,7 @@ def assert_equal(left, right):
 
 
 
-def assert_factory_works(
+def assert_person_factory_works(
         first_name, last_name,
         sex, year_of_birth,
     ):
@@ -77,7 +77,7 @@ def test_joe():
     sex = 'M'
     year_of_birth = 1996
 
-    assert_factory_works(
+    assert_person_factory_works(
         first_name=first_name,
         last_name=last_name,
         sex=sex,
@@ -104,7 +104,7 @@ def test_jane():
     sex = 'F'
     year_of_birth = 1991
 
-    assert_factory_works(
+    assert_person_factory_works(
         first_name=first_name,
         last_name=last_name,
         sex=sex,
@@ -131,7 +131,7 @@ def test_john():
     sex = 'M'
     year_of_birth = 1580
 
-    assert_factory_works(
+    assert_person_factory_works(
         first_name=first_name,
         last_name=last_name,
         sex=sex,
@@ -158,7 +158,7 @@ def test_mary():
     sex = 'F'
     year_of_birth = 2000
 
-    assert_factory_works(
+    assert_person_factory_works(
         first_name=first_name,
         last_name=last_name,
         sex=sex,
