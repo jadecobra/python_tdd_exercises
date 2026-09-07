@@ -2037,7 +2037,7 @@ what is next?
 * :ref:`I know how to place values in strings<telephone>`.
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 
-:ref:`Would you like to test AttributeError?<what causes AttributeError?>`
+:ref:`AttributeError<what causes AttributeError?>` happened when separating the solutions from the tests, :ref:`Would you like to test AttributeError?<what causes AttributeError?>`
 
 -----
 

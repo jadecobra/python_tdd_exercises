@@ -1735,7 +1735,7 @@ separate and equal Person class
 
 ----
 
-* I open ``person/__init__.py`` from the ``src`` folder_
+* I open ``__init__.py`` from the ``person`` folder_ in the ``src`` folder_
 
 * I add the name to ``src/person/__init__.py``
 

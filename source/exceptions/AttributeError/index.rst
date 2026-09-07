@@ -1563,7 +1563,7 @@ what is next?
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
 
-:ref:`Would you like to see me separate the tests and functions in the type_error project?<separate and equal TypeError>`
+:ref:`Would you like to test making a person with f-strings?<how to make a person with f-strings>`
 
 ----
 

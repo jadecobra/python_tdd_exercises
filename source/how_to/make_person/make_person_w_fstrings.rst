@@ -3986,7 +3986,7 @@ what is next?
 * :ref:`I know how to place values in strings<telephone>`.
 * :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
 
-:ref:`Would you like to see me separate the tests and solutions in the functions project?<separate and equal functions>`
+:ref:`Would you like to test making a person with a class?<how to make a person with a class>`
 
 ----
 

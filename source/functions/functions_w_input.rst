@@ -6545,7 +6545,6 @@ what is next?
 * :ref:`I know how to make a person with strings<how to make a person with strings>`.
 * :ref:`I know how to make functions that take input<functions that take input>`.
 
-I am going for a walk.
 
 .. toctree::
   :titlesonly:
@@ -6556,7 +6555,7 @@ I am going for a walk.
   ../how_to/telephone/index
   ../exceptions/ModuleNotFoundError/separate_and_equal
 
-:ref:`Would you like to test TypeError?<what causes TypeError?>`
+I am going for a walk. :ref:`Would you like to test TypeError?<what causes TypeError?>`
 
 ----
 
