@@ -1,5 +1,5 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with f-strings. Use f-strings + one person function (instead of one function per person) that takes first_name, last_name, sex, year_of_birth and returns 'name, surname, X, YYYY'. Add say_hello using f-strings for 'Hello, my name is ... and I am N.'. Start in the person project; uv run pytest-watcher . --now. Progressively introduce f-strings in the return, required args then keyword arguments, move factory and say_hello to src/person.py (AttributeError: module 'src.person' has no attribute 'person'), use local variables in tests to remove repetition of the data, remove commented lines. Ends with 4 tests calling src.person.person + src.person.say_hello + # Exceptions seen (AssertionError, NameError, TypeError, AttributeError). Shows why even with f-strings the 4 tests are repetitive. What is next: separate and equal functions. Code: person/tests/test_person_w_fstrings.py and person/solutions/person_w_fstrings.py.
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with f-strings. Use f-strings + one person function (instead of one function per person) that takes first_name, last_name, sex, year_of_birth and returns 'name, surname, X, YYYY'. Add say_hello using f-strings for 'Hello, my name is ... and I am N.'. Start in the person project; uv run pytest-watcher . --now. Progressively introduce f-strings in the return, required args then keyword arguments, move factory and say_hello to src/person/__init__.py (AttributeError: module 'src.person' has no attribute 'person'), use local variables in tests to remove repetition of the data, remove commented lines. Ends with 4 tests calling src.person.person + src.person.say_hello + # Exceptions seen (AssertionError, NameError, TypeError, AttributeError). Shows why even with f-strings the 4 tests are repetitive. What is next: separate and equal functions. Code: person/tests/test_person_w_fstrings.py and person/solutions/person_w_fstrings.py.
   :keywords: Jacob Itegboje, Pumping Python, how to make a person with f-strings, python f-strings, f-string person function, one function instead of one per person, src.person, import src.person, AttributeError module 'src.person' has no attribute 'person', TypeError missing required positional argument, uv run pytest-watcher, red green refactor f-strings, variables remove repetition in tests, first_name last_name sex year_of_birth, say_hello f-string age 2026-year_of_birth, remove the commented lines, test_joe test_jane test_john test_mary, person factory with f-strings, separate tests and solution, what is next separate and equal functions
 
 .. include:: ../../links.rst
@@ -10,7 +10,7 @@ how to make a person with f-strings
 
 ----
 
-Since I can pass :ref:`objects<everything is an object>` to a string_ with :ref:`f-strings<what is string interpolation?>`. I can write one :ref:`function<what is a function?>` that makes a person instead of one :ref:`function<what is a function?>` for each person.
+Since I can pass :ref:`objects<everything is an object>` to a string_ with :ref:`f-strings<what is string interpolation?>`, I can write one :ref:`function<what is a function?>` that makes a person instead of one :ref:`function<what is a function?>` for each person.
 
 ----
 
@@ -348,7 +348,7 @@ the test passes.
 
   the first and last names match. More progress.
 
-* I change the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` to use :ref:`keyword arguments<test_keyword_arguments>`, then add a value for ``sex`` (since I have more than two arguments) to  in :ref:`test_jane`
+* I change the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` to use :ref:`keyword arguments<test_keyword_arguments>`, then add a value for ``sex`` (since I have more than two arguments) in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 36
@@ -504,7 +504,7 @@ the test passes.
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``person`` has four required arguments (``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
-* I add ``year_of_birth=1996`` to the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` from :ref:`test_jane`
+* I add ``year_of_birth=1991`` to the :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` from :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 43
@@ -539,7 +539,7 @@ the test passes.
 
   because
 
-  - I the :ref:`person function<extract person function>` from :ref:`test_joe` with zero arguments.
+  - I called the :ref:`person function<extract person function>` from :ref:`test_joe` with zero arguments.
   - The :ref:`function definition (signature)<how to make a function that takes input>` of ``person`` has four required arguments (``first_name``, ``last_name``, ``sex`` and ``year_of_birth``).
   - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
@@ -1525,7 +1525,7 @@ the test passes.
 extract assert_person_factory_works function
 *********************************************************************************
 
-:ref:`test_joe`, :ref:`tesT_jane`, :ref:`test_john` and :ref:`test_mary` are the same process, they
+:ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` are the same process, they
 
 - make :ref:`variables<what is a variable?>` for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``
 - :ref:`call<how to call a function with input>` the :ref:`person function<extract person function>` with the :ref:`variables<what is a variable?>`
@@ -3946,7 +3946,7 @@ review
 *************************************************************************************
 
 * I ran tests to write one :ref:`function<what is a function?>` that makes a string_ for a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` so I do not have to make one :ref:`function<what is a function?>` for each person.
-* I also ran tests to make another :ref:`function<what is a function?>` that makes an :ref:`f-strings<what is string interpolation?>` to represent the person saying hello when I give it ``first_name``, ``last_name``, and ``year_of_birth``.
+* I also ran tests to make another :ref:`function<what is a function?>` that makes an :ref:`f-string<what is string interpolation?>` to represent the person saying hello when I give it ``first_name``, ``last_name``, and ``year_of_birth``.
 
 * My tests and solutions have a few problems,
 
@@ -3986,7 +3986,7 @@ what is next?
 * :ref:`I know how to place values in strings<telephone>`.
 * :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
 
-:ref:`Would you like to see me separate the tests and functions in the functions project?<separate and equal functions>`
+:ref:`Would you like to see me separate the tests and solutions in the functions project?<separate and equal functions>`
 
 ----
 

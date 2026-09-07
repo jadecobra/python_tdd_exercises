@@ -71,7 +71,7 @@ how to make a person with f-strings: solutions
 
 ----
 
-The code in ``person/src/person.py`` from :ref:`how to make a person with f-strings`
+The code in ``person/src/person/__init__.py`` from :ref:`how to make a person with f-strings`
 
 .. literalinclude:: person/solutions/person_w_fstrings.py
   :language: python
