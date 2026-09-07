@@ -8,7 +8,7 @@ def assert_say_hello_works(
     reality = src.person.say_hello(
         first_name=first_name,
         last_name=last_name,
-        year_of_birth=year_of_birth
+        year_of_birth=year_of_birth,
     )
     my_expectation = (
         f'Hello, my name is {first_name}'
