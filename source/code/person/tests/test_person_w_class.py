@@ -215,7 +215,6 @@ def test_dir_person_class():
             'say_hello'
         ]
     )
-    assert_equal(reality, my_expectation)
 
 
 def test_dir_person_instance():

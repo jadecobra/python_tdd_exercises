@@ -401,7 +401,7 @@ the test is green again.
 
   the test passes.
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`say_hello method<test say_hello method>` of the :ref:`Person class<extract Person class>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person class>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -720,7 +720,7 @@ the test passes.
     AssertionError: 'Hello, my name is jane doe and I am 35.'
                  == 'Hello, my name is jane doe and I am 35.'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say_hello method<test say_hello method>` of the :ref:`Person class<extract Person class>`, in :ref:`test_jane`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person class>`, in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 92
@@ -1019,7 +1019,7 @@ green again.
     AssertionError: 'Hello, my name is john smith and I am 446.'
                  == 'Hello, my name is john smith and I am 446.'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say_hello method<test say_hello method>` of the :ref:`Person class<extract Person class>`, in :ref:`test_john`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person class>`, in :ref:`test_john`
 
   .. code-block:: python
     :lineno-start: 135
@@ -1318,7 +1318,7 @@ green.
     AssertionError: 'Hello, my name is mary public and I am 26.'
                  == 'Hello, my name is mary public and I am 26.'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say_hello method<test say_hello method>` of the :ref:`Person class<extract Person class>`, in :ref:`test_mary`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person class>`, in :ref:`test_mary`
 
   .. code-block:: python
     :lineno-start: 178

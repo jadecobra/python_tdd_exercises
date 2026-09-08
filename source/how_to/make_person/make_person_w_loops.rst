@@ -1123,7 +1123,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         def test_joe(self):
 
-* I remove the test for the :ref:`say_hello function<test say_hello function>` from :ref:`test_joe` since it is now a repetition, and move ``my_expectation`` below ``reality`` in the test for the :ref:`say_hello method<test say_hello method>`
+* I remove the test for the :ref:`say_hello function<test say_hello function>` from :ref:`test_joe` since it is now a repetition, and move ``my_expectation`` below ``reality`` in the test for the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
     :lineno-start: 73
@@ -1155,7 +1155,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         def test_jane(self):
 
-* I remove the test for the :ref:`say_hello function<test say_hello function>` from :ref:`test_jane` since it is now a repetition, and move ``my_expectation`` below ``reality`` in the test for the :ref:`say_hello method<test say_hello method>`
+* I remove the test for the :ref:`say_hello function<test say_hello function>` from :ref:`test_jane` since it is now a repetition, and move ``my_expectation`` below ``reality`` in the test for the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
     :lineno-start: 97
@@ -1188,7 +1188,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         def test_john(self):
 
-* I remove the test for the :ref:`say_hello function<test say_hello function>` from :ref:`test_john` since it is now a repetition, and move ``my_expectation`` below ``reality`` in the test for the :ref:`say_hello method<test say_hello method>`
+* I remove the test for the :ref:`say_hello function<test say_hello function>` from :ref:`test_john` since it is now a repetition, and move ``my_expectation`` below ``reality`` in the test for the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
     :lineno-start: 122
@@ -1221,7 +1221,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         def test_mary(self):
 
-* I remove the test for the :ref:`say_hello function<test say_hello function>` from :ref:`test_mary` since it is now a repetition, and move ``my_expectation`` below ``reality`` in the test for the :ref:`say_hello method<test say_hello method>`
+* I remove the test for the :ref:`say_hello function<test say_hello function>` from :ref:`test_mary` since it is now a repetition, and move ``my_expectation`` below ``reality`` in the test for the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
     :lineno-start: 147
@@ -1425,7 +1425,7 @@ For each person in the ``people`` tuple_, this test :ref:`calls the say_hello fu
 extract test_say_hello_method
 *********************************************************************************
 
-The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<extract Person class>`, then :ref:`call<how to call a function with input>` its :ref:`say_hello<test say_hello method>` comparing the results in :ref:`assertions<what is an assertion?>`.
+The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>`, then :ref:`call<how to call a function with input>` its :ref:`say_hello<add say_hello method>` comparing the results in :ref:`assertions<what is an assertion?>`.
 
 ----
 
@@ -1435,7 +1435,7 @@ The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_
 
 ----
 
-I add a test for the :ref:`Person class<extract Person class>`
+I add a test for the :ref:`Person class<add Person class>`
 
 .. code-block:: python
   :lineno-start: 71
@@ -1765,7 +1765,7 @@ the subTest method
 
   the tests are green again.
 
-* I remove the :ref:`assertions<what is an assertion?>` for the :ref:`say_hello method<test say_hello method>` from :ref:`test_joe`
+* I remove the :ref:`assertions<what is an assertion?>` for the :ref:`say_hello method<add say_hello method>` from :ref:`test_joe`
 
   .. code-block:: python
     :lineno-start: 104
@@ -1787,7 +1787,7 @@ the subTest method
 
         def test_jane(self):
 
-* I remove the :ref:`assertions<what is an assertion?>` for the :ref:`say_hello method<test say_hello method>` from :ref:`test_jane`
+* I remove the :ref:`assertions<what is an assertion?>` for the :ref:`say_hello method<add say_hello method>` from :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 132
@@ -1810,7 +1810,7 @@ the subTest method
 
         def test_john(self):
 
-* I remove the :ref:`assertions<what is an assertion?>` for the :ref:`say_hello method<test say_hello method>` from :ref:`test_john`
+* I remove the :ref:`assertions<what is an assertion?>` for the :ref:`say_hello method<add say_hello method>` from :ref:`test_john`
 
   .. code-block:: python
     :lineno-start: 148
@@ -1833,7 +1833,7 @@ the subTest method
 
         def test_mary(self):
 
-* I remove the :ref:`assertions<what is an assertion?>` for the :ref:`say_hello method<test say_hello method>` from :ref:`test_mary`
+* I remove the :ref:`assertions<what is an assertion?>` for the :ref:`say_hello method<add say_hello method>` from :ref:`test_mary`
 
   .. code-block:: python
     :lineno-start: 164
@@ -1864,7 +1864,7 @@ the subTest method
 
     git commit -am 'extract test_say_hello_method'
 
-For each person in the ``people`` tuple_, this test :ref:`makes an instance<how to test if something is an instance>` of the :ref:`Person class<extract Person class>` which makes an ``age`` :ref:`attribute<what is a class attribute?>` by :ref:`calling<how to call a function with input>` the :ref:`calculate_age<extract calculate_age function>` with the given ``year_of_birth`` parameter.
+For each person in the ``people`` tuple_, this test :ref:`makes an instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>` which makes an ``age`` :ref:`attribute<what is a class attribute?>` by :ref:`calling<how to call a function with input>` the :ref:`calculate_age<extract calculate_age function>` with the given ``year_of_birth`` parameter.
 
 * If the :ref:`call raises TypeError<how to raise an Exception>`, it :ref:`asserts<what is an assertion?>` that the error message is correct
 
@@ -1994,7 +1994,7 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
               else:
                   ...
 
-* If the :ref:`call to the calculate_age function<extract calculate_age function>` does not :ref:`raise TypeError<how to raise an Exception>`, it :ref:`asserts<what is an assertion?>` that the result of the :ref:`call to the say_hello method<test say_hello method>` matches the expectation
+* If the :ref:`call to the calculate_age function<extract calculate_age function>` does not :ref:`raise TypeError<how to raise an Exception>`, it :ref:`asserts<what is an assertion?>` that the result of the :ref:`call to the say_hello method<add say_hello method>` matches the expectation
 
   .. code-block:: shell
 
@@ -2274,7 +2274,7 @@ extract people class attribute
 extract test_can_person_vote
 *********************************************************************************
 
-The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_joe`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<extract Person class>`, then :ref:`call<how to call a function with input>` its :ref:`can_vote method<add can_vote method>` comparing the results in :ref:`assertions<what is an assertion?>`.
+The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_joe`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>`, then :ref:`call<how to call a function with input>` its :ref:`can_vote method<add can_vote method>` comparing the results in :ref:`assertions<what is an assertion?>`.
 
 The :ref:`can_vote method of the Person class<add can_vote method>` sends two parameters (``age`` and ``response``) when it :ref:`calls the check_age method<extract check_age method>` to return :red:`False` or :green:`True` for if a person :red:`cannot vote` or :green:`can vote`.
 
@@ -2653,7 +2653,7 @@ the test passes.
 extract test_can_person_get_license
 *********************************************************************************
 
-The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_joe`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<extract Person class>`, then :ref:`call<how to call a function with input>` its :ref:`can_get_license method<add can_get_license method>` comparing the results in :ref:`assertions<what is an assertion?>`.
+The tests in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_joe`, :ref:`test_mary` and :ref:`test_underage_citizen<add condition to can_vote>`  make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>`, then :ref:`call<how to call a function with input>` its :ref:`can_get_license method<add can_get_license method>` comparing the results in :ref:`assertions<what is an assertion?>`.
 
 The :ref:`can_get_license method of the Person class<add can_get_license method>` also sends two parameters when it :ref:`calls the check_age method<extract check_age method>` to return :red:`False` or :green:`True` for if a person :red:`cannot get a license` or :green:`can get a license`.
 

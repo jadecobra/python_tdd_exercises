@@ -112,7 +112,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 ----
 
 * I open ``__init__.py`` from the ``person`` folder_ in the ``src`` folder_
-* I add a :ref:`function definition<how to make a function>` to the :ref:`Person class<extract Person class>` in ``src/person/__init__.py``
+* I add a :ref:`function definition<how to make a function>` to the :ref:`Person class<add Person class>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -169,7 +169,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
         AssertionError: assert
             ['__class__',...'__eq__', ...] ==...
 
-  the tests for the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Person class and an instance of it<extract Person class>` are failing because I added a :ref:`method<what is a method?>` to it.
+  the tests for the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Person class and an instance of it<add Person class>` are failing because I added a :ref:`method<what is a method?>` to it.
 
 * I add ``can_vote`` to :ref:`test_dir_person_class`
 
@@ -288,7 +288,7 @@ I want ``can_vote`` to return
 
 ----
 
-* I add ``is_citizen`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<extract Person class>` for ``john``
+* I add ``is_citizen`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<add Person class>` for ``john``
 
   .. code-block:: python
     :lineno-start: 138
@@ -494,7 +494,7 @@ I want ``can_vote`` to return
 
   because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
-* I add ``is_citizen`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<extract Person class>` for ``mary``
+* I add ``is_citizen`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<add Person class>` for ``mary``
 
   .. code-block:: python
     :lineno-start: 183
@@ -706,7 +706,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-* I add a :ref:`method definition<how to make a function that takes input>` to the :ref:`Person class<extract Person class>` in ``src/person/__init__.py``
+* I add a :ref:`method definition<how to make a function that takes input>` to the :ref:`Person class<add Person class>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -845,7 +845,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I add ``passed_test`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<extract Person class>` for ``mary``
+* I add ``passed_test`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<add Person class>` for ``mary``
 
   .. code-block:: python
     :lineno-start: 184
@@ -1076,7 +1076,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
-* I add ``passed_test`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<extract Person class>` for ``jane``
+* I add ``passed_test`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<add Person class>` for ``jane``
 
   .. code-block:: python
     :lineno-start: 92
@@ -1252,7 +1252,7 @@ the test passes because this happens when ``if age < 18:`` runs, Python_ checks 
 extract age instance attribute
 *********************************************************************************
 
-Three of the :ref:`methods<what is a method?>` of the :ref:`Person class<extract Person class>` :ref:`call<how to call a function with input>` the :ref:`calculate_age function<add calculate_age function>`.
+Three of the :ref:`methods<what is a method?>` of the :ref:`Person class<add Person class>` :ref:`call<how to call a function with input>` the :ref:`calculate_age function<add calculate_age function>`.
 
 ----
 
@@ -1298,7 +1298,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
           AssertionError
 
 - :ref:`test_dir_person_instance` fails because I just added a new :ref:`class attribute<what is a class attribute?>`.
-- :ref:`test_when_year_of_birth_is_not_an_integer` now fails when an :ref:`instance of the Person class<extract Person class>` is made with a ``year_of_birth`` that is not an integer_.
+- :ref:`test_when_year_of_birth_is_not_an_integer` now fails when an :ref:`instance of the Person class<add Person class>` is made with a ``year_of_birth`` that is not an integer_.
 
 ----
 
@@ -1413,7 +1413,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with this solut
 
   still green.
 
-* I use ``self.age`` in the :ref:`say_hello method<test say_hello method>`
+* I use ``self.age`` in the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
     :lineno-start: 34
@@ -1432,7 +1432,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with this solut
 
   green.
 
-* I remove the commented line from the :ref:`say_hello method<test say_hello method>`
+* I remove the commented line from the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
     :lineno-start: 34
@@ -1474,7 +1474,7 @@ extract check_age method
 
 ----
 
-I add a :ref:`method<what is a method?>` to the :ref:`Person class<extract Person class>` that checks if the age is less than ``18`` and returns something else if it is not
+I add a :ref:`method<what is a method?>` to the :ref:`Person class<add Person class>` that checks if the age is less than ``18`` and returns something else if it is not
 
 .. code-block:: python
   :lineno-start: 27
@@ -1586,7 +1586,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to the :ref:`check_age method<extract check_age method>` since it does not use things from the :ref:`Person class<extract Person class>`, only what it receives as input
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to the :ref:`check_age method<extract check_age method>` since it does not use things from the :ref:`Person class<add Person class>`, only what it receives as input
 
   .. code-block:: python
     :lineno-start: 37

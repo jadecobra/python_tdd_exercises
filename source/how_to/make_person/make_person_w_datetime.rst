@@ -23,7 +23,7 @@ test person with datetime
 
 ----
 
-The :ref:`person<test person with unittest>` project has a problem with the calculation of the ages. It only shows the right age if the program is run in ``2026``, because the year is hardcoded. If I run it in a different year or change the year on my computer, the ages will be wrong and the tests for :ref:`say_hello<test say_hello method>` will fail.
+The :ref:`person<test person with unittest>` project has a problem with the calculation of the ages. It only shows the right age if the program is run in ``2026``, because the year is hardcoded. If I run it in a different year or change the year on my computer, the ages will be wrong and the tests for :ref:`say_hello<add say_hello method>` will fail.
 
 I want the calculation to always be right, which means the program should always know the correct year.
 
@@ -617,7 +617,7 @@ where ``YYYY`` is the current year.
 test age with current year
 *********************************************************************************
 
-* I change the age calculation in ``my_expectation`` of :ref:`say_hello<test say_hello method>` in :ref:`test_joe` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
+* I change the age calculation in ``my_expectation`` of :ref:`say_hello<add say_hello method>` in :ref:`test_joe` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -641,7 +641,7 @@ test age with current year
 
   the test is still green.
 
-* I change the age calculation in ``my_expectation`` of :ref:`say_hello<test say_hello method>` in :ref:`test_jane` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
+* I change the age calculation in ``my_expectation`` of :ref:`say_hello<add say_hello method>` in :ref:`test_jane` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
 
   .. code-block:: python
     :lineno-start: 71
@@ -665,7 +665,7 @@ test age with current year
 
   still green.
 
-* I change the age calculation in ``my_expectation`` of :ref:`say_hello<test say_hello method>` in :ref:`test_john` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
+* I change the age calculation in ``my_expectation`` of :ref:`say_hello<add say_hello method>` in :ref:`test_john` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
 
   .. code-block:: python
     :lineno-start: 115
@@ -689,7 +689,7 @@ test age with current year
 
   green.
 
-* I change the age calculation in ``my_expectation`` of :ref:`say_hello<test say_hello method>` in :ref:`test_mary` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
+* I change the age calculation in ``my_expectation`` of :ref:`say_hello<add say_hello method>` in :ref:`test_mary` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
 
   .. code-block:: python
     :lineno-start: 159
@@ -1274,7 +1274,7 @@ The tests use the right calculation for the age, and the solution still uses a f
         first_name, last_name, year_of_birth,
     ):
 
-* I use the :ref:`function<what is a function?>` in the :ref:`say_hello method<test say_hello method>` of the :ref:`Person class<extract Person class>`
+* I use the :ref:`function<what is a function?>` in the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person class>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -1547,7 +1547,7 @@ the test passes.
 test_when_year_of_birth_is_not_an_integer
 *********************************************************************************
 
-I want the :ref:`Person class<extract Person class>` to make sure that the value for ``year_of_birth`` is an integer_ (whole number without decimals).
+I want the :ref:`Person class<add Person class>` to make sure that the value for ``year_of_birth`` is an integer_ (whole number without decimals).
 
 ----
 
@@ -1593,7 +1593,7 @@ I want the :ref:`Person class<extract Person class>` to make sure that the value
 
 ----
 
-* I make ``year_of_birth`` an :ref:`optional argument<test_optional_arguments>` in the :ref:`Person class<extract Person class>` in ``src/person/__init__.py``
+* I make ``year_of_birth`` an :ref:`optional argument<test_optional_arguments>` in the :ref:`Person class<add Person class>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1746,7 +1746,7 @@ I want the :ref:`Person class<extract Person class>` to make sure that the value
 
   the test is green because there is no :ref:`assertion<what is an assertion?>` or :ref:`calls<how to call a function>` that cause :ref:`AssertionError<what causes AssertionError?>`.
 
-* I remove the commented line from the :ref:`Person class<extract Person class>` in ``src/person/__init__.py``
+* I remove the commented line from the :ref:`Person class<add Person class>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
