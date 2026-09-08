@@ -903,8 +903,9 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
   .. code-block:: python
 
-    AssertionError: assert None
-        == 'Hello, my name is joe blow and I am 30.'
+    AssertionError:
+        assert None
+            == 'Hello, my name is joe blow and I am 30.'
 
 * I change :ref:`the return statement` to match
 
@@ -1565,17 +1566,17 @@ what is the staticmethod decorator?
                     f' {2026-instance.year_of_birth}.'
                 )
 
-  a simple way to think of ``joe.say_hello()`` is
+  a simple way to think of ``instance.say_hello()`` is
 
   .. code-block:: python
 
-    joe             == Person()
-    joe.say_hello() == Person().say_hello()
-    joe.say_hello() == Person().say_hello(Person())
-    joe.say_hello() == joe.say_hello(Person())
-    joe.say_hello() == joe.say_hello(joe)
+    instance = Person()
+    instance.say_hello() == Person().say_hello()
+    instance.say_hello() == Person().say_hello(Person())
+    instance.say_hello() == instance.say_hello(Person())
+    instance.say_hello() == instance.say_hello(instance)
 
-    I do not need to pass ``joe`` as input to the :ref:`say_hello method<add say_hello method>` since it is ``self``.
+  I do not need to pass ``joe`` as input to the :ref:`say_hello method<add say_hello method>` since it is ``self``.
 
 * I remove ``person=jane`` from the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_jane` because the :ref:`say_hello method<add say_hello method>` is in the :ref:`Person class<add Person class>`
 
@@ -1765,23 +1766,11 @@ separate and equal Person class
 
 * I go back to the terminal_ where the tests are running
 
-* I change ``mary`` in :ref:`test_mary` to be the result of a call to the :ref:`Person class<add person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of a call to the :ref:`Person class<add person class>` in ``tests/test_person.py``
+* I change ``mary`` in :ref:`test_mary` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of the :ref:`Person class<add person class>` in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 196
-    :emphasize-lines: 13-14
-
-        reality = src.person.say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
-        my_expectation = (
-            f'Hello, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
-        assert reality == my_expectation
+    :lineno-start: 213
+    :emphasize-lines: 1-2
 
         # mary = Person(
         mary = src.person.Person(
@@ -1792,6 +1781,11 @@ separate and equal Person class
         )
 
         reality = mary.say_hello()
+        my_expectation = (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
         # assert reality == None
         assert reality == my_expectation
 
@@ -1802,9 +1796,10 @@ separate and equal Person class
 
   .. code-block:: python
 
-    AttributeError: module 'src.person' has no attribute 'Person'
+    AttributeError: module 'src.person'
+                    has no attribute 'Person'
 
-  because there is nothing with that name in the ``src/person/__init__.py`` file_ in the ``src`` folder_.
+  because there is nothing with that name in ``src/person/__init__.py``.
 
 ----
 
@@ -1826,8 +1821,8 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth
+        ):
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
@@ -1835,7 +1830,7 @@ separate and equal Person class
 
     NameError: name 'Person' is not defined
 
-* I point it to :ref:`None<what is None?>` to define it
+* I point ``Person`` to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
     :linenos:
@@ -1846,8 +1841,8 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth
+        ):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1870,8 +1865,8 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth
+        ):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1893,11 +1888,6 @@ separate and equal Person class
     # def Person():
     def Person(first_name):
         return None
-
-
-    def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1922,11 +1912,6 @@ separate and equal Person class
     def Person(first_name, last_name):
         return None
 
-
-    def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
-
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
@@ -1950,11 +1935,6 @@ separate and equal Person class
     def Person(first_name, last_name, sex):
         return None
 
-
-    def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
-
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
@@ -1977,15 +1957,10 @@ separate and equal Person class
     # def Person(first_name, last_name):
     # def Person(first_name, last_name, sex):
     def Person(
-        first_name, last_name,
-        sex, year_of_birth,
-    ):
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
         return None
-
-
-    def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -1996,35 +1971,31 @@ separate and equal Person class
 
   because the :ref:`function<what is a function?>` I just made returns :ref:`None<what is None?>`
 
-  - given
+  .. code-block:: shell
 
-    .. code-block:: python
+    ├── first_name = 'mary'
+    ├── last_name = 'public'
+    ├── sex = 'F'
+    ├── year_of_birth = 2000
+    └── mary = src.person.Person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        └── src/
+            └── person/
+                └── __init__.py
+                    └── def Person(
+                            first_name, last_name,
+                            sex, year_of_birth,
+                        ):
+                        └── return None
 
-      first_name = 'mary'
-      last_name = 'public'
-      sex = 'F'
-      year_of_birth = 2000
+  .. code-block:: python
 
-    .. code-block:: shell
-
-      mary = Person(
-          first_name=first_name,
-          last_name=last_name,
-          sex=sex,
-          year_of_birth=year_of_birth,
-      )
-      └── Person(
-              first_name='mary',
-              last_name='public',
-              sex='F',
-              year_of_birth=2000,
-          )
-          └── return None
-
-    .. code-block:: python
-
-      reality = mary.say_hello()
-      reality = None.say_hello()
+    reality = mary.say_hello()
+    reality = None.say_hello()
 
   which raises :ref:`AttributeError<what causes AttributeError?>` since :ref:`None<what is None?>` does not have anything named ``say_hello`` in it.
 
@@ -2042,15 +2013,10 @@ separate and equal Person class
     # def Person(first_name, last_name, sex):
     # def Person(
     class Person(
-        first_name, last_name,
-        sex, year_of_birth,
-    ):
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
         return None
-
-
-    def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
 
   the terminal_ is my friend, and shows SyntaxError_
 
@@ -2061,7 +2027,7 @@ separate and equal Person class
 * I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 221
+    :lineno-start: 231
     :emphasize-lines: 6
     :emphasize-text: SyntaxError
 
@@ -2072,7 +2038,7 @@ separate and equal Person class
     # AttributeError
     # SyntaxError
 
-* I change :ref:`the return statement` to the pass_ keyword, in ``src/person/__init__.py``
+* I change :ref:`the return statement` in the ``Person`` :ref:`class<everything is an object>` to the pass_ keyword, in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -2086,16 +2052,16 @@ separate and equal Person class
     # def Person(first_name, last_name, sex):
     # def Person(
     class Person(
-        first_name, last_name,
-        sex, year_of_birth,
-    ):
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
         # return None
         pass
 
 
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth
+        ):
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
@@ -2119,22 +2085,22 @@ separate and equal Person class
     # def Person(first_name, last_name, sex):
     # def Person(
     # class Person(
-    #     first_name, last_name,
-    #     sex, year_of_birth,
-    # ):
+    #         first_name, last_name,
+    #         sex, year_of_birth,
+    #     ):
     class Person:
 
         def __init__(
-            first_name, last_name,
-            sex, year_of_birth,
-        ):
+                first_name, last_name,
+                sex, year_of_birth,
+            ):
             # return None
             pass
 
 
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth
+        ):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -2154,17 +2120,12 @@ separate and equal Person class
     class Person:
 
         def __init__(
-            # first_name, last_name,
-            self, first_name, last_name,
-            sex, year_of_birth,
-        ):
+                # first_name, last_name,
+                self, first_name, last_name,
+                sex, year_of_birth,
+            ):
             # return None
             pass
-
-
-    def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -2185,10 +2146,12 @@ separate and equal Person class
         say_hello
 
         def __init__(
-            # first_name, last_name,
-            self, first_name, last_name,
-            sex, year_of_birth,
-        ):
+                # first_name, last_name,
+                self, first_name, last_name,
+                sex, year_of_birth,
+            ):
+            # return None
+            pass
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
@@ -2208,10 +2171,12 @@ separate and equal Person class
         say_hello = None
 
         def __init__(
-            # first_name, last_name,
-            self, first_name, last_name,
-            sex, year_of_birth,
-        ):
+                # first_name, last_name,
+                self, first_name, last_name,
+                sex, year_of_birth,
+            ):
+            # return None
+            pass
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -2221,7 +2186,7 @@ separate and equal Person class
 
   because :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
-* I change it to a :ref:`method<what is a method?>`
+* I change ``say_hello`` to a :ref:`method<what is a method?>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -2233,10 +2198,10 @@ separate and equal Person class
         # say_hello = None
 
         def __init__(
-            # first_name, last_name,
-            self, first_name, last_name,
-            sex, year_of_birth,
-        ):
+                # first_name, last_name,
+                self, first_name, last_name,
+                sex, year_of_birth,
+            ):
             # return None
             pass
 
@@ -2245,8 +2210,8 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth
+        ):
 
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
@@ -2265,17 +2230,13 @@ separate and equal Person class
         def say_hello(argument):
             return None
 
-
-    def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
-
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: assert None
-        == 'Hello, my name is mary public and I am 26.'
+    AssertionError:
+        assert None
+            == 'Hello, my name is mary public and I am 26.'
 
 * I copy and paste the string_ from the terminal_ to use as :ref:`the return statement`
 
@@ -2290,8 +2251,8 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth
+        ):
 
   the test passes.
 
@@ -2306,7 +2267,7 @@ separate and equal Person class
 * I remove the commented lines from :ref:`test_mary` in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 178
+    :lineno-start: 194
 
     def test_mary():
         first_name = 'mary'
@@ -2314,29 +2275,18 @@ separate and equal Person class
         sex = 'F'
         year_of_birth = 2000
 
-        reality = src.person.person(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
             year_of_birth=year_of_birth,
         )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
 
-        reality = src.person.say_hello(
+        assert_say_hello_works(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
-        my_expectation = (
-            f'Hello, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
-        assert reality == my_expectation
 
         mary = src.person.Person(
             first_name=first_name,
@@ -2346,33 +2296,27 @@ separate and equal Person class
         )
 
         reality = mary.say_hello()
-        assert reality == my_expectation
-
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # TypeError
-    # AttributeError
-    # SyntaxError
-
-* I change ``john`` in :ref:`test_john` to be the result of a call to the :ref:`Person class<add person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
-
-  .. code-block:: python
-    :lineno-start: 154
-    :emphasize-lines: 13-14
-
-        reality = src.person.say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
         assert reality == my_expectation
+
+
+    # Exceptions seen
+
+* I change ``john`` in :ref:`test_john` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+
+  .. code-block:: python
+    :lineno-start: 171
+    :emphasize-lines: 7-8
+
+        assert_say_hello_works(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
 
         # john = Person(
         john = src.person.Person(
@@ -2383,6 +2327,11 @@ separate and equal Person class
         )
 
         reality = john.say_hello()
+        my_expectation = (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
         # assert reality == None
         assert reality == my_expectation
 
@@ -2410,8 +2359,8 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth
+        ):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2442,8 +2391,8 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth
+        ):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -2466,10 +2415,10 @@ separate and equal Person class
         # say_hello = None
 
         def __init__(
-            # first_name, last_name,
-            self, first_name, last_name,
-            sex, year_of_birth,
-        ):
+                # first_name, last_name,
+                self, first_name, last_name,
+                sex, year_of_birth,
+            ):
             # return None
             # pass
             self.first_name = first_name
@@ -2486,17 +2435,17 @@ separate and equal Person class
 
   because I have not defined a :ref:`class attribute<what is a class attribute?>` named ``last_name``.
 
-* I add ``self.last_name`` to the :ref:`__init__ constructor method<the constructor method>`
+* I add ``self.last_name`` to the :ref:`__init__ method<the constructor method>`
 
   .. code-block:: python
     :lineno-start: 17
     :emphasize-lines: 9
 
         def __init__(
-            # first_name, last_name,
-            self, first_name, last_name,
-            sex, year_of_birth,
-        ):
+                # first_name, last_name,
+                self, first_name, last_name,
+                sex, year_of_birth,
+            ):
             # return None
             # pass
             self.first_name = first_name
@@ -2520,10 +2469,10 @@ separate and equal Person class
     :emphasize-lines: 10
 
         def __init__(
-            # first_name, last_name,
-            self, first_name, last_name,
-            sex, year_of_birth,
-        ):
+                # first_name, last_name,
+                self, first_name, last_name,
+                sex, year_of_birth,
+            ):
             # return None
             # pass
             self.first_name = first_name
@@ -2557,8 +2506,8 @@ separate and equal Person class
 
 
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth
+        ):
 
   the test is still green because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument which means
 
@@ -2566,6 +2515,7 @@ separate and equal Person class
 
     instance = Person()
     instance.say_hello() == Person().say_hello()
+    instance.say_hello() == Person().say_hello(Person())
     instance.say_hello() == instance.say_hello(Person())
     instance.say_hello() == instance.say_hello(instance)
 
@@ -2574,7 +2524,7 @@ separate and equal Person class
 * I remove the commented lines from :ref:`test_john` in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 136
+    :lineno-start: 158
 
     def test_john():
         first_name = 'john'
@@ -2582,29 +2532,18 @@ separate and equal Person class
         sex = 'M'
         year_of_birth = 1580
 
-        reality = src.person.person(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
             year_of_birth=year_of_birth,
         )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
 
-        reality = src.person.say_hello(
+        assert_say_hello_works(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
-        my_expectation = (
-            f'Hello, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
-        assert reality == my_expectation
 
         john = src.person.Person(
             first_name=first_name,
@@ -2614,28 +2553,27 @@ separate and equal Person class
         )
 
         reality = john.say_hello()
-        assert reality == my_expectation
-
-
-    def test_mary():
-
-* I change ``jane`` in :ref:`test_jane` to be the result of a call to the :ref:`Person class<add person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
-
-  .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 13-14
-
-        reality = src.person.say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
         assert reality == my_expectation
+
+
+    def test_mary():
+
+* I change ``jane`` in :ref:`test_jane` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+
+  .. code-block:: python
+    :lineno-start: 130
+    :emphasize-lines: 7-8
+
+        assert_say_hello_works(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
 
         # jane = Person(
         jane = src.person.Person(
@@ -2652,6 +2590,11 @@ separate and equal Person class
             # last_name=jane.last_name,
             # year_of_birth=jane.year_of_birth,
         )
+        my_expectation = (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
         assert reality == my_expectation
 
 
@@ -2662,7 +2605,7 @@ separate and equal Person class
 * I remove the commented lines from :ref:`test_jane`
 
   .. code-block:: python
-    :lineno-start: 89
+    :lineno-start: 117
 
     def test_jane():
         first_name = 'jane'
@@ -2670,29 +2613,18 @@ separate and equal Person class
         sex = 'F'
         year_of_birth = 1991
 
-        reality = src.person.person(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
             year_of_birth=year_of_birth,
         )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
 
-        reality = src.person.say_hello(
+        assert_say_hello_works(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
-        my_expectation = (
-            f'Hello, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
-        assert reality == my_expectation
 
         jane = src.person.Person(
             first_name=first_name,
@@ -2702,28 +2634,27 @@ separate and equal Person class
         )
 
         reality = jane.say_hello()
-        assert reality == my_expectation
-
-
-    def test_john():
-
-* I change ``joe`` in :ref:`test_joe` to be the result of a call to the :ref:`Person class<add person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
-
-  .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 13-14
-
-        reality = src.person.say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
         my_expectation = (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
             f' {2026-year_of_birth}.'
         )
         assert reality == my_expectation
+
+
+    def test_john():
+
+* I change ``joe`` in :ref:`test_joe` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 7-8
+
+        assert_say_hello_works(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
 
         # joe = Person(
         joe = src.person.Person(
@@ -2741,6 +2672,11 @@ separate and equal Person class
             # last_name=joe.last_name,
             # year_of_birth=joe.year_of_birth,
         )
+        my_expectation = (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
         assert reality == my_expectation
 
 
@@ -2751,7 +2687,7 @@ separate and equal Person class
 * I remove the commented lines from :ref:`test_joe`
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 75
 
     def test_joe():
         first_name = 'joe'
@@ -2759,29 +2695,18 @@ separate and equal Person class
         sex = 'M'
         year_of_birth = 1996
 
-        reality = src.person.person(
+        assert_person_factory_works(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
-            year_of_birth=year_of_birth,
+            year_of_birth=year_of_birth
         )
-        my_expectation = (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
-        assert reality == my_expectation
 
-        reality = src.person.say_hello(
+        assert_say_hello_works(
             first_name=first_name,
             last_name=last_name,
             year_of_birth=year_of_birth,
         )
-        my_expectation = (
-            f'Hello, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
-        assert reality == my_expectation
 
         joe = src.person.Person(
             first_name=first_name,
@@ -2791,6 +2716,11 @@ separate and equal Person class
         )
 
         reality = joe.say_hello()
+        my_expectation = (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
         assert reality == my_expectation
 
 
@@ -2803,25 +2733,29 @@ separate and equal Person class
     import src.person
 
 
-    def test_joe():
+    def assert_say_hello_works(
+            first_name, last_name,
+            year_of_birth,
+        ):
 
-  all the tests are still green because the calls that were made to the :ref:`Person class<add Person class>` that was in ``tests/test_person.py`` are now made to the :ref:`Person class<add Person class>` in ``src/person/__init__.py`` in the ``src`` folder_.
+  all the tests are still green because the :ref:`instances<how to test if something is an instance>` of the :ref:`Person class<add Person class>` that was in ``tests/test_person.py`` are now of the :ref:`Person class<add Person class>` in ``src/person/__init__.py`` in the ``src`` folder_.
 
   Python_ follows this path when ``src.person.Person`` is :ref:`called<how to call a function with input>` with input
 
   .. code-block:: shell
 
     src.person.Person
-    src
-    └── person.py
-        └── class Person:
-            └── def __init__(
-                    self, first_name, last_name,
-                    sex, year_of_birth,
-                ):
-                ├── self.first_name = first_name
-                ├── self.last_name = last_name
-                └── self.year_of_birth = year_of_birth
+    src/
+    └── person/
+        └── __init__.py
+            └── class Person:
+                └── def __init__(
+                        self, first_name, last_name,
+                        sex, year_of_birth,
+                    ):
+                    ├── self.first_name = first_name
+                    ├── self.last_name = last_name
+                    └── self.year_of_birth = year_of_birth
 
 * I add a git_ commit message in the other terminal_
 
@@ -2829,7 +2763,7 @@ separate and equal Person class
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move Person class to person.py'
+    'move Person class to src'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
