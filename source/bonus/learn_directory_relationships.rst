@@ -3960,7 +3960,7 @@ mv_ means move, it takes two arguments
       .. code-block:: python
         :emphasize-lines: 1
 
-        tree ../../../doe
+        tree -a ../../../doe
 
       the terminal_ shows
 
