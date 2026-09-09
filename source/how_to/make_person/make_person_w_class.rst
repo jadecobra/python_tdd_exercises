@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with a class. Use class + __init__ (the constructor method) + self to store first_name, last_name, sex, year_of_birth once; add say_hello method so you call joe.say_hello() without repeating the values. Start in person project from prior chapter; uv run pytest-watcher . --now. RED: Person(...) -> TypeError (no __init__), empty __init__ -> TypeError got unexpected keyword 'last_name', add self. attrs; GREEN: implement using f-string with self; move to src/person.py (AttributeError); use locals in tests + kw calls for factory/say_hello/Person; add dir() tests on class vs instance. REFACTOR remove commented lines. Ends with 6 tests (joe/jane/john/mary + 2 dir tests); # Exceptions seen includes SyntaxError. Review: each test repeats the same three calls; class avoids repeating the data values. Code from person/tests/test_person_w_class.py and person/solutions/person_w_class.py. What is next: test classes (everything is an object).
-  :keywords: Jacob Itegboje, Pumping Python, how to make a person with a class, python class __init__ constructor self, Person class say_hello method, src.person.Person, src.person.person, TypeError: Person.__init__() got an unexpected keyword argument 'last_name', Did you mean, AttributeError class has no attribute 'first_name' on class vs instance, dir(src.person.Person), dir(instance), uv run pytest-watcher . --now, red green refactor class, remove the commented lines, test_joe, test_dir_person_class, test_dir_person_instance, first_name last_name sex year_of_birth, 2026 - year_of_birth, repetition of three calls per test, class groups attributes and methods, what is next everything is an object
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with a class. Use class + __init__ (the constructor method) + self to store first_name, last_name, sex, year_of_birth once; add say_hello method so you call joe.say_hello() without repeating the values. Start in person project from prior chapter; uv run pytest-watcher . --now. RED: Person(...) -> TypeError (Person() takes no arguments), empty __init__ -> TypeError unexpected keyword then multiple values for first_name until self is first; GREEN: store attrs on self, f-string say_hello with self; move Person to src/person/__init__.py (AttributeError: module has no attribute 'Person'); extract assert_person_can_say_hello + assert_equal; add dir() tests on class vs instance (self.sex last). REFACTOR remove commented lines. Ends with 6 tests (joe/jane/john/mary + 2 dir tests); # Exceptions seen includes SyntaxError ('return' outside function). Review: each test is the same three calls; class avoids repeating the data values. Code from person/tests/test_person_w_class.py and person/solutions/person_w_class.py. What is next: everything is an object (inheritance).
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with a class, python class __init__ constructor self, Person class say_hello method, src.person.Person, src/person/__init__.py, TypeError: Person() takes no arguments, TypeError: Person.__init__() got an unexpected keyword argument 'last_name', Did you mean, AttributeError module 'src.person' has no attribute 'Person', SyntaxError return outside function, dir(src.person.Person), dir(instance), uv run pytest-watcher . --now, red green refactor class, remove the commented lines, test_joe, test_dir_person_class, test_dir_person_instance, first_name last_name sex year_of_birth, 2026 - year_of_birth, repetition of three calls per test, class groups attributes and methods, what is next everything is an object
 
 .. include:: ../../links.rst
 
@@ -271,7 +271,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
         year_of_birth=1996,
     )
     └── Person.__init__(
-            first_name='joe',
+            first_name='joe',    # not in definition
             last_name='blow',
             sex='M',
             year_of_birth=1996,
@@ -304,9 +304,9 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
-  The test :ref:`calls the function<how to call a function with input>` with four :ref:`keyword arguments<test_keyword_arguments>` ``(first_name, last_name, sex and year_of_birth')``.
+  The test :ref:`calls the function<how to call a function with input>` with four :ref:`keyword arguments<test_keyword_arguments>` ``(first_name, last_name, sex and year_of_birth)``.
 
-  Python_ does not know which value to use for the first argument if I use a :ref:`keyword<test_keyword_arguments>` and its :ref:`position<test_positional_arguments>`.
+  Python_ does not know which value to use for the first argument if I use its :ref:`name<test_keyword_arguments>` and :ref:`position<test_positional_arguments>`.
 
 * I add ``self`` as the first argument
 
@@ -351,7 +351,7 @@ A `constructor method`_ is used to define what happens when :ref:`an instance (a
               sex='M',
               year_of_birth=1996,
           )
-          └── def __init__():
+          └── def __init__(first_name):
                   return None
 
     which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` got :ref:`called<how to call a function with input>` with a :ref:`name<test_keyword_arguments>` (``last_name``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
@@ -942,7 +942,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
             ├── year_of_birth = 1996
             └── return 'Hello, my name is joe blow and I am 30.'
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add person class>` in :ref:`test_jane`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person class>` in :ref:`test_jane`
 
   .. code-block:: python
     :lineno-start: 97
@@ -1068,7 +1068,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
             )
             return 'Hello, my name is jane doe and I am 35.'
 
-* I add an :ref:`instance (copy)<how to test if something is an instance>` of the :ref:`Person class<add person class>` to the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_joe` because the :ref:`instance<how to test if something is an instance>` has the :ref:`attributes<what is a class attribute?>` I use in the :ref:`method<what is a method?>`
+* I add an :ref:`instance (copy)<how to test if something is an instance>` of the :ref:`Person class<add Person class>` to the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_joe` because the :ref:`instance<how to test if something is an instance>` has the :ref:`attributes<what is a class attribute?>` I use in the :ref:`method<what is a method?>`
 
   .. code-block:: python
     :lineno-start: 88
@@ -1329,7 +1329,7 @@ I made a person :ref:`say hi with a function<test say_hello function>`, I can al
 
     def test_john():
 
-  the test passes. This is still a repetition, I give an :ref:`instance (copy)<how to test if something is an instance>` of the :ref:`Person class<add person class>` as input to the :ref:`say_hello method<add Person class>` of the same :ref:`class<everything is an object>`.
+  the test passes. This is still a repetition, I give an :ref:`instance (copy)<how to test if something is an instance>` of the :ref:`Person class<add Person class>` as input to the :ref:`say_hello method<add Person class>` of the same :ref:`class<everything is an object>`.
 
 * I change the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` from :ref:`test_jane` because the :ref:`say_hello method<add say_hello method>` is in the :ref:`Person class<add Person class>` so its :ref:`copies<how to test if something is an instance>` also have the :ref:`say_hello method<add say_hello method>`
 
@@ -1752,7 +1752,7 @@ what is the staticmethod decorator?
 
     git commit -am 'add say_hello method'
 
-Since the :ref:`say_hello method<add say_hello method>` is the same as the :ref:`say_hello function<test say_hello function>` I could have use the :ref:`say_hello method<add say_hello method>` to :ref:`call<how to call a function with input>` the :ref:`say_hello function<test say_hello function>` to get the same result
+Since the :ref:`say_hello method<add say_hello method>` is the same as the :ref:`say_hello function<test say_hello function>` I could have used the :ref:`say_hello method<add say_hello method>` to :ref:`call<how to call a function with input>` the :ref:`say_hello function<test say_hello function>` to get the same result
 
 .. code-block:: python
 
@@ -1777,7 +1777,7 @@ separate and equal Person class
 
 * I go back to the terminal_ where the tests are running
 
-* I change ``mary`` in :ref:`test_mary` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of the :ref:`Person class<add person class>` in ``tests/test_person.py``
+* I change ``mary`` in :ref:`test_mary` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_ instead of the :ref:`Person class<add Person class>` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 213
@@ -2317,7 +2317,7 @@ separate and equal Person class
 
     # Exceptions seen
 
-* I change ``john`` in :ref:`test_john` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``john`` in :ref:`test_john` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 171
@@ -2574,7 +2574,7 @@ separate and equal Person class
 
     def test_mary():
 
-* I change ``jane`` in :ref:`test_jane` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``jane`` in :ref:`test_jane` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 130
@@ -2655,7 +2655,7 @@ separate and equal Person class
 
     def test_john():
 
-* I change ``joe`` in :ref:`test_joe` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
+* I change ``joe`` in :ref:`test_joe` to be an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>` of the ``person`` :ref:`module<what is a module?>` in the ``src`` folder_
 
   .. code-block:: python
     :lineno-start: 88
@@ -3372,7 +3372,7 @@ I can use the :ref:`assert_equal function<extract assert_equal function>` that t
 
   .. code-block:: python
     :lineno-start: 8
-    :emphasize-lines: 18*19
+    :emphasize-lines: 18-19
 
     def assert_person_can_say_hello(
             first_name, last_name,
@@ -4186,7 +4186,10 @@ review
 
 * I ran tests to write a :ref:`class<everything is an object>` that makes a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` and has a :ref:`method<what is a method?>` so I do not have to pass the same values every time I want to do something with a person.
 
-* My tests have a problem, each test is now the same three tests. There has to be a way that I can use one test for all the people.
+* My tests have problems
+
+  - each test is now the same three tests. :ref:`There has to be a way that I can use one test for all the people<how to make a person with loops>`.
+  - the tests with the `dir built-in function`_ both require the expectation to be in alphabetical order and can break when the Python_ version changes.
 
 ----
 

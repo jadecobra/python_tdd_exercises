@@ -168,7 +168,7 @@ how to make a person with a class: solutions
 
 ----
 
-The code in ``person/src/person.py`` from :ref:`how to make a person with a class`
+The code in ``person/src/person/__init__.py`` from :ref:`how to make a person with a class`
 
 .. literalinclude:: person/solutions/person_w_class.py
   :language: python
