@@ -39,7 +39,7 @@ q
 git status --help
 clear
 
-PROJECTNAME=Name of Project
+PROJECTNAME=project_name
 
 ###############################################################
 #                  Create A New Repository                    #
@@ -191,12 +191,12 @@ git commit --all --message "I modified File1InThisDirectory.extension in $PROJEC
 git push
 git status
 
-nano Directory1/FileInThisDirectory.extension
+nano Directory1/File1InThisDirectory.extension
 I am modifying File1InThisDirectory.extension in Directory1
 # hit ctrl+x on the keyboard
 y
 git add Directory1/File1InThisDirectory.extension
-git addDirectory1/FileNInThisDirectory.extension
+git add Directory1/FileNInThisDirectory.extension
 git commit --all --message "I modified File1InThisDirectory.extension in Directory1"
 git status
 git push
@@ -250,7 +250,7 @@ q
 git log --oneline
 git log --graph
 q
-git commit -amend --message "I add new Files and Directories in $PROJECTNAME for git to track"
+git commit --amend --message "I add new Files and Directories in $PROJECTNAME for git to track"
 git log
 q
 git log --oneline
@@ -280,7 +280,7 @@ git branch --delete a_new_branch
 git branch
 git branch an_old_branch_name
 git branch --all
-git branch --merge an_old_branch_name a_new_branch_name
+git branch --move an_old_branch_name a_new_branch_name
 git branch --all
 git branch --verbose
 git branch -vv
@@ -360,7 +360,7 @@ git checkout -b new_feature
 git branch --all
 git diff main
 git merge main
-nano FileInThisDirectory.extension
+nano File1InThisDirectory.extension
 I test Genius Idea in new_feature
 # hit ctrl+x on the keyboard
 y
@@ -382,7 +382,7 @@ git push origin main
 git log
 git log --oneline
 git log --merges
-git log graph
+git log --graph
 git branch --delete --force new_feature
 clear
 
@@ -391,7 +391,7 @@ clear
 ###############################################################
 
 git tag
-git tag --annotate v0.1 "Beta Test version 1"
+git tag --annotate v0.1 -m "Beta Test version 1"
 git tag
 git tag --annotate v0.1 -m "Beta Test version 1"
 git tag

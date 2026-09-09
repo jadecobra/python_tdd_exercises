@@ -168,7 +168,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I open ``test_telephone.py``
+* I open ``test_telephone.py`` from the ``tests`` folder_
 
 * I add :ref:`the first failing test<test_failure>` to ``test_telephone.py``
 

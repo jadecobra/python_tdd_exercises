@@ -1,5 +1,9 @@
 :orphan:
 
+.. meta::
+  :description: Bonus beginner git tutorial for Pumping Python — install git on Linux/WSL, Windows without WSL, and Mac (Xcode Command Line Tools if git is missing); git help; git init a GitHub repo named PROJECTNAME; git add, commit, status, diff, log, push to origin main; .gitignore so DirectoryNotToBeShared and FileNotToBeShared stay private; branches (git branch, checkout, checkout -b, --move, --delete); merge and merge --no-ff; annotated tags and git push --tags. First git commit --all fails until README.md is added. Companion script learnGit.sh. Part of Jacob Itegboje's Pumping Python series.
+  :keywords: Jacob Itegboje, Pumping Python, learn git, git init, git add, git commit, git status, git diff, git log, git push, git branch, git checkout, git merge, git tag, git remote, .gitignore, GitHub origin, git help, how to install git, WSL git, Windows git, Mac git, git commit --amend, annotated tag, learnGit.sh
+
 .. include:: ../links.rst
 
 .. _Excel Spreadsheet: https://grokipedia.com/page/Microsoft_Excel
@@ -7,6 +11,7 @@
 .. _make directories: mkdir_
 .. _change directories: cd_
 .. _Get-ChildItem: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.6
+.. _Xcode Command Line Tools: https://developer.apple.com/xcode/resources/
 
 
 #################################################################################
@@ -14,14 +19,6 @@ BONUS: learn git
 #################################################################################
 
 This exercise shows how to use git_ which is a program_ that keeps track of changes I make in a codebase.
-
-----
-
-*************************************************************************************
-preview
-*************************************************************************************
-
-
 
 ----
 
@@ -82,7 +79,7 @@ how to install git on Linux/Windows Subsystem for Linux
 
 .. attention:: Do this only if you are using Linux_ or `Windows Subsystem for Linux`_ and git_ is not installed.
 
-  :ref:`Click here if you have MacOS<how to install tree on Mac OS>`
+  :ref:`Click here if you have MacOS<how to install git on Mac OS>`
 
 .. code-block:: python
   :emphasize-lines: 1
@@ -115,7 +112,7 @@ how to install git on Windows without Windows Subsystem for Linux
 
 .. attention:: Do this only if you are using Windows_ and could not install `Windows Subsystem for Linux`_
 
-  :ref:`Click here if you have MacOS<how to install tree on Mac OS>`
+  :ref:`Click here if you have MacOS<how to install git on Mac OS>`
 
 `download and install git`_
 
@@ -131,7 +128,7 @@ how to install git on Mac OS
 
 ----
 
-.. attention:: No need to do anything. git_ comes with MacOS_.
+.. attention:: git_ is often already on MacOS_ after `Xcode Command Line Tools`_. If ``git`` is not found, install those tools, then type ``git`` again.
 
   If you have Windows_
 
@@ -143,451 +140,455 @@ how to install git on Mac OS
 ----
 
 ********************************************************************************************
-how to see what directory I am in
+how to use Git
 ********************************************************************************************
 
+.. code-block:: python
 
+  git help
+  git help --all
+  q
+  git help --guides
+  git help attributes
+  q
+  git help everyday
+  q
+  git help glossary
+  q
+  git help ignore
+  q
+  git help modules
+  q
+  git help revisions
+  q
+  git help tutorial
+  q
+  git help workflows
+  q
+  git help init
+  q
+  git init --help
+  q
+  git help add
+  q
+  git add --help
+  q
+  git help commit
+  q
+  git commit --help
+  q
+  git help status
+  q
+  git status --help
+  clear
 
+----
 
+********************************************************************************************
+how to create a new repository
+********************************************************************************************
 
+``PROJECTNAME`` is the name of the project you can use any name you want
 
-##########################################################################
-#                             How to use Git                             #
-##########################################################################
+* go to https://github.com > Start A Project > $PROJECTNAME
+* Click Create repository
 
-git help
-git help --all
-q
-git help --guides
-git help attributes
-q
-git help everyday
-q
-git help glossary
-q
-git help ignore
-q
-git help modules
-q
-git help revisions
-q
-git help tutorial
-q
-git help workflows
-q
-git help init
-q
-git init --help
-q
-git help add
-q
-git add --help
-q
-git help commit
-q
-git commit --help
-q
-git help status
-q
-git status --help
-clear
+go back to the terminal_
 
-PROJECTNAME=Name of Project
+.. code-block:: shell
 
-###############################################################
-#                  Create A New Repository                    #
-# go to https://github.com > Start A Project > $PROJECTNAME   #
-# Click Create repository                                     #
-###############################################################
+  PROJECTNAME=project_name
+  mkdir $PROJECTNAME && cd $PROJECTNAME
+  echo "# $PROJECTNAME" >> README.md
 
-mkdir $PROJECTNAME && cd $PROJECTNAME
-echo "# $PROJECTNAME" >> README.md
+  git init                # mkdir .git and add important files
+  git status
+  git diff
+  git diff --cached
+  git diff HEAD
+  git commit --all --message "I cannot commit since I have not told git to track anything yet"
+  git log
+  git log --oneline
+  git log --merges
+  git log --graph
 
-git init                # mkdir .git and add important files
-git status
-git diff
-git diff --cached
-git diff HEAD
-git commit --all --message "I cannot commit since I have not told git to track anything yet"
-git log
-git log --oneline
-git log --merges
-git log --graph
+  git add README.md
+  git commit --all --message "made my first commit"
+  ls
+  cd .git
+  tree
+  cat description
+  nano description
+  $PROJECTNAME; a Git Repository
+  # hit ctrl+x on the keyboard
+  Y
+  cat description
+  cd ..
+  clear
 
-git add README.md
-git commit --all --message "made my first commit"
-ls
-cd .git
-tree
-cat description
-nano description
-$PROJECTNAME; a Git Repository
-# hit ctrl+x on the keyboard
-Y
-cat description
-cd ..
-clear
+  git remote add origin git@github.com:$GITHUB_USERNAME/$PROJECTNAME.git
 
-git remote add origin git@github.com:$GITHUB_USERNAME/$PROJECTNAME.git
+  git remote --verbose
+  git push --set-upstream origin main
+  clear
 
-git remote --verbose
-git push --set-upstream origin main
-clear
+----
 
-###############################################################
-#          Keeping Files And Directories Private              #
-###############################################################
+********************************************************************************************
+how to keep files And folders private
+********************************************************************************************
 
-cat .gitignore
-ls -a
-ls
-mkdir DirectoryNotToBeShared
-ls
-echo "DirectoryNotToBeShared/" >> .gitignore
-cat .gitignore
-ls -a
-touch FileNotToBeShared.extension
-echo "FileNotToBeShared.extension" >> .gitignore
-cat .gitignore
-ls
-ls -a
-git status
-git add .gitignore
-git diff
-git diff --cached
-git diff HEAD
-git commit --all --message "created files and directories for git to not track"
-git log
-git log --oneline
-git log --merges
-git log --graph
-git status
-git add DirectoryNotToBeShared/
-git add FileNotToBeShared.extension
-git status
-git push
-git status
-git log
-git log --oneline
-git log --merges
-git log --graph
-clear
+.. code-block:: python
 
-# Managing Files and Directories
-touch File{1,2,3,N}InThisDirectory.extension
-ls
-tree
-mkdir Directory{1,2,3,N}
-ls
+  cat .gitignore
+  ls -a
+  ls
+  mkdir DirectoryNotToBeShared
+  ls
+  echo "DirectoryNotToBeShared/" >> .gitignore
+  cat .gitignore
+  ls -a
+  touch FileNotToBeShared.extension
+  echo "FileNotToBeShared.extension" >> .gitignore
+  cat .gitignore
+  ls
+  ls -a
+  git status
+  git add .gitignore
+  git diff
+  git diff --cached
+  git diff HEAD
+  git commit --all --message "created files and directories for git to not track"
+  git log
+  git log --oneline
+  git log --merges
+  git log --graph
+  git status
+  git add DirectoryNotToBeShared/
+  git add FileNotToBeShared.extension
+  git status
+  git push
+  git status
+  git log
+  git log --oneline
+  git log --merges
+  git log --graph
+  clear
 
-##########################################################################################################
-#                                                                                                        #
-#   Are you on using MacOS - install brew with this command                                              #
-#      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"   #
-#   install tree with this command                                                                       #
-#      brew install tree                                                                                 #
-#                                                                                                        #
-#   Are you on a Linux Machine or using WSL?                                                             #
-#      sudo apt install tree                                                                             #
-#                                                                                                        #
-##########################################################################################################
+  # Managing Files and Directories
+  touch File{1,2,3,N}InThisDirectory.extension
+  ls
+  tree
+  mkdir Directory{1,2,3,N}
+  ls
 
-tree
-touch Directory{1,2,3,N}/File{1,2,3,N}InThisDirectory.extension
-ls
-tree
-touch Directory2/python_file.py
-touch Directory2/java_file.java
-touch Directory2/java_file.war
-touch Directory3/html_file.html
-touch Directory3/javscriptFile.js
-touch DirectoryN/compressed_file.zip
-touch DirectoryN/compressed_file.bz2
-touch DirectoryN/compressed_file.xz
-touch DirectoryN/tape_archive_file.tar
-tree
-cd Directory3
-pwd
-mkdir ChildOfDirectory3
-cd ChildOfDirectory3
-mkdir ChildOfChildOfDirectory3
-cd ChildOfChildOfDirectory3
-pwd
-touch textfile{1,2,3,N}.txt
-ls
-tree
-cd ../..
-pwd
-ls
-tree
-cd ..
-ls
-tree
-clear
+  tree
+  touch Directory{1,2,3,N}/File{1,2,3,N}InThisDirectory.extension
+  ls
+  tree
+  touch Directory2/python_file.py
+  touch Directory2/java_file.java
+  touch Directory2/java_file.war
+  touch Directory3/html_file.html
+  touch Directory3/javscriptFile.js
+  touch DirectoryN/compressed_file.zip
+  touch DirectoryN/compressed_file.bz2
+  touch DirectoryN/compressed_file.xz
+  touch DirectoryN/tape_archive_file.tar
+  tree
+  cd Directory3
+  pwd
+  mkdir ChildOfDirectory3
+  cd ChildOfDirectory3
+  mkdir ChildOfChildOfDirectory3
+  cd ChildOfChildOfDirectory3
+  pwd
+  touch textfile{1,2,3,N}.txt
+  ls
+  tree
+  cd ../..
+  pwd
+  ls
+  tree
+  cd ..
+  ls
+  tree
+  clear
 
-###############################################################
-#    How to add Files and Directories for Git to Track        #
-###############################################################
+----
 
-tree
-git status
-nano File1InThisDirectory.extension
-I am modifying File1InThisDirectory.extension in $PROJECTNAME
-# hit ctrl+x on the keyboard
-y
-git add File1InThisDirectory.extension
-git status
-git commit --all --message "I modified File1InThisDirectory.extension in $PROJECTNAME"
-git push
-git status
+********************************************************************************************
+how to add files and folders for git to track
+********************************************************************************************
 
-nano Directory1/FileInThisDirectory.extension
-I am modifying File1InThisDirectory.extension in Directory1
-# hit ctrl+x on the keyboard
-y
-git add Directory1/File1InThisDirectory.extension
-git addDirectory1/FileNInThisDirectory.extension
-git commit --all --message "I modified File1InThisDirectory.extension in Directory1"
-git status
-git push
-git status
+.. code-block:: shell
 
-git add Directory2/File2InThisDirectory.extension
-nano Directory2/File2InThisDirectory.extension
-What happens if I modify a file after adding it to tracking?
-# hit ctrl+x on the keyboard
-y
-git commit --all --message "I modified File2InThisDirectory.extension in Directory2"
-git status
-git add Directory2/File2InThisDirectory.extension
-git status
-git commit -am "I Modified File2InThisDirectory.extension in Directory2"
-git status
-git push
-git status
+  tree
+  git status
+  nano File1InThisDirectory.extension
+  I am modifying File1InThisDirectory.extension in $PROJECTNAME
+  # hit ctrl+x on the keyboard
+  y
+  git add File1InThisDirectory.extension
+  git status
+  git commit --all --message "I modified File1InThisDirectory.extension in $PROJECTNAME"
+  git push
+  git status
 
-nano Directory3/File3InThisDirectory.extension
-I Always add after modifying a file and commit
-# hit ctrl+x on the keyboard
-y
-git add Directory3/File3InThisDirectory.extension
-git commit --all --message "I modified File3InThisDirectory.extension in Directory3"
-git push
-git status
-git add Directory3/
+  nano Directory1/File1InThisDirectory.extension
+  I am modifying File1InThisDirectory.extension in Directory1
+  # hit ctrl+x on the keyboard
+  y
+  git add Directory1/File1InThisDirectory.extension
+  git add Directory1/FileNInThisDirectory.extension
+  git commit --all --message "I modified File1InThisDirectory.extension in Directory1"
+  git status
+  git push
+  git status
 
-git status
-nano DirectoryN/FileNInThisDirectory.extension
-I will ALWAYS BE COMMITTING
-# hit ctrl+x on the keyboard
-y
-git add DirectoryN/FileNInThisDirectory.extension
-git commit --all --message "I modified FileNInThisDirectory.extension in DirectoryN"
-git push
+  git add Directory2/File2InThisDirectory.extension
+  nano Directory2/File2InThisDirectory.extension
+  What happens if I modify a file after adding it to tracking?
+  # hit ctrl+x on the keyboard
+  y
+  git commit --all --message "I modified File2InThisDirectory.extension in Directory2"
+  git status
+  git add Directory2/File2InThisDirectory.extension
+  git status
+  git commit -am "I Modified File2InThisDirectory.extension in Directory2"
+  git status
+  git push
+  git status
 
-git status
-git add .
-git status
-tree
-git diff
-git diff --cached
-q
-git diff HEAD
-q
-git commit -am "I added new Ffives to be tracked by git"
-git log
-q
-git log --oneline
-git log --graph
-q
-git commit -amend --message "I Added new Files and Directories in $PROJECTNAME for git to track"
-git log
-q
-git log --oneline
-git log --merges
-git log --graph
-q
-git push
-git log --oneline
-git log --merges
-git log --graph
-git diff
-git status
-clear
+  nano Directory3/File3InThisDirectory.extension
+  I Always add after modifying a file and commit
+  # hit ctrl+x on the keyboard
+  y
+  git add Directory3/File3InThisDirectory.extension
+  git commit --all --message "I modified File3InThisDirectory.extension in Directory3"
+  git push
+  git status
+  git add Directory3/
 
-###############################################################
-#                           Branching                         #
-###############################################################
+  git status
+  nano DirectoryN/FileNInThisDirectory.extension
+  I will ALWAYS BE COMMITTING
+  # hit ctrl+x on the keyboard
+  y
+  git add DirectoryN/FileNInThisDirectory.extension
+  git commit --all --message "I modified FileNInThisDirectory.extension in DirectoryN"
+  git push
 
-git status
-git branch
-git branch --all
-git branch --verbose
-git branch -vv
-git branch a_new_branch
-git branch
-git branch --delete a_new_branch
-git branch
-git branch an_old_branch_name
-git branch --all
-git branch --merge an_old_branch_name a_new_branch_name
-git branch --all
-git branch --verbose
-git branch -vv
+  git status
+  git add .
+  git status
+  tree
+  git diff
+  git diff --cached
+  q
+  git diff HEAD
+  q
+  git commit -am "I added new Ffives to be tracked by git"
+  git log
+  q
+  git log --oneline
+  git log --graph
+  q
+  git commit --amend --message "I Added new Files and Directories in $PROJECTNAME for git to track"
+  git log
+  q
+  git log --oneline
+  git log --merges
+  git log --graph
+  q
+  git push
+  git log --oneline
+  git log --merges
+  git log --graph
+  git diff
+  git status
+  clear
 
-git branch a_branch
-git branch --all
-git checkout a_branch
-git branch --all
-git status
-git checkout main
-git status
-git branch --all
-git checkout a_new_branch_name
-git branch --all
-git status
-git checkout -b a_new_branch
-git branch --all
-git status
-git checkout main
-git checkout -b a_dead_branch
-git branch --all
-git status
-git checkout main
-git branch --delete --force a_dead_branch
-git branch --all
-git status
-ls
-tree
+----
 
-git branch --all
-git branch branch1
-git branch branch2
-git branch branch3
-git branch branchN
-git branch --all
+********************************************************************************************
+how to manage branches
+********************************************************************************************
 
-git push origin a_branch
-git branch --all
-git push origin a_new_branch
-git branch --all
-git push origin branch1
-git branch --all
-git push origin branch2
-git branch --all
-git push origin branch3
-git branch --all
-git push origin branchN
-git branch --all
+.. code-block:: python
 
-###############################################################
-#                       Merging Changes                       #
-###############################################################
+  git status
+  git branch
+  git branch --all
+  git branch --verbose
+  git branch -vv
+  git branch a_new_branch
+  git branch
+  git branch --delete a_new_branch
+  git branch
+  git branch an_old_branch_name
+  git branch --all
+  git branch --move an_old_branch_name a_new_branch_name
+  git branch --all
+  git branch --verbose
+  git branch -vv
 
-git checkout a_branch
-touch file_from_a_branch.extension
-mkdir new_directory_from_a_branch
-touch new_directory_from_a_branch/File{1,2,3,N}InThisDirectory.extension
-git status
-git add .
-git commit --all --message "I added a new File and Directory in a_branch"
-git diff origin/a_branch
-git push origin a_branch
-git diff
-git diff main
-git checkout main
-git diff origin/main
-git diff a_branch
-git merge a_branch
-git diff
-git diff a_branch
-git diff origin/main
-git status
-git push origin main
-git status
+  git branch a_branch
+  git branch --all
+  git checkout a_branch
+  git branch --all
+  git status
+  git checkout main
+  git status
+  git branch --all
+  git checkout a_new_branch_name
+  git branch --all
+  git status
+  git checkout -b a_new_branch
+  git branch --all
+  git status
+  git checkout main
+  git checkout -b a_dead_branch
+  git branch --all
+  git status
+  git checkout main
+  git branch --delete --force a_dead_branch
+  git branch --all
+  git status
+  ls
+  tree
 
-git checkout -b new_feature
-git branch --all
-git diff main
-git merge main
-nano FileInThisDirectory.extension
-I had a Genius Idea and tested it in new_feature
-# hit ctrl+x on the keyboard
-y
-git status
-git add .
-git commit -am "I had a Genius Idea and tested it in new_feature"
-git diff main
-git diff remotes/origin/new_feature
-git push origin new_feature
-git checkout main
-git merge --no-ff new_feature
-I Had a Genius idea, tested it in new_feature and merged it into main
-# save and exit
-git diff
-git diff new_feature
-git diff remotes/origin/main
-git status
-git push origin main
-git log
-git log --oneline
-git log --merges
-git log graph
-git branch --delete --force new_feature
-clear
+  git branch --all
+  git branch branch1
+  git branch branch2
+  git branch branch3
+  git branch branchN
+  git branch --all
 
-###############################################################
-#                               Tagging                       #
-###############################################################
+  git push origin a_branch
+  git branch --all
+  git push origin a_new_branch
+  git branch --all
+  git push origin branch1
+  git branch --all
+  git push origin branch2
+  git branch --all
+  git push origin branch3
+  git branch --all
+  git push origin branchN
+  git branch --all
 
-git tag
-git tag --annotate v0.1 "Beta Test version 1"
-git tag
-git tag --annotate v0.1 -m "Beta Test version 1"
-git tag
-git tag --annotate v1.1 -m "Version 1.0 revision 1"
-git tag
-git tag v2.0 --message "Version 2.0"
-git tag
-git tag vN.M --message "Version N revision M"
-git tag
-git tag any_tag --message "Description/Comment for the Tag"
-git status
-clear
+----
 
-git show
-git show v0.1
-git show v1.1
-git show v2.0
-git show vN.M
-git show any_tag
-git show non_existent_tag
-clear
+********************************************************************************************
+how to merge changes
+********************************************************************************************
 
-git push origin v0.1
-git push origin vN.M
-git push origin --tags
+.. code-block:: python
 
-git log
-git log --oneline
-git log --merges
-git log --graph
+  git checkout a_branch
+  touch file_from_a_branch.extension
+  mkdir new_directory_from_a_branch
+  touch new_directory_from_a_branch/File{1,2,3,N}InThisDirectory.extension
+  git status
+  git add .
+  git commit --all --message "I added a new File and Directory in a_branch"
+  git diff origin/a_branch
+  git push origin a_branch
+  git diff
+  git diff main
+  git checkout main
+  git diff origin/main
+  git diff a_branch
+  git merge a_branch
+  git diff
+  git diff a_branch
+  git diff origin/main
+  git status
+  git push origin main
+  git status
+
+  git checkout -b new_feature
+  git branch --all
+  git diff main
+  git merge main
+  nano File1InThisDirectory.extension
+  I had a Genius Idea and tested it in new_feature
+  # hit ctrl+x on the keyboard
+  y
+  git status
+  git add .
+  git commit -am "I had a Genius Idea and tested it in new_feature"
+  git diff main
+  git diff remotes/origin/new_feature
+  git push origin new_feature
+  git checkout main
+  git merge --no-ff new_feature
+  I Had a Genius idea, tested it in new_feature and merged it into main
+  # save and exit
+  git diff
+  git diff new_feature
+  git diff remotes/origin/main
+  git status
+  git push origin main
+  git log
+  git log --oneline
+  git log --merges
+  git log --graph
+  git branch --delete --force new_feature
+  clear
+
+----
+
+********************************************************************************************
+how to use tags
+********************************************************************************************
+
+.. code-block:: python
+
+  git tag
+  git tag --annotate v0.1 -m "Beta Test version 1"
+  git tag
+  git tag --annotate v0.1 -m "Beta Test version 1"
+  git tag
+  git tag --annotate v1.1 -m "Version 1.0 revision 1"
+  git tag
+  git tag v2.0 --message "Version 2.0"
+  git tag
+  git tag vN.M --message "Version N revision M"
+  git tag
+  git tag any_tag --message "Description/Comment for the Tag"
+  git status
+  clear
+
+  git show
+  git show v0.1
+  git show v1.1
+  git show v2.0
+  git show vN.M
+  git show any_tag
+  git show non_existent_tag
+  clear
+
+  git push origin v0.1
+  git push origin vN.M
+  git push origin --tags
+
+  git log
+  git log --oneline
+  git log --merges
+  git log --graph
 
 *************************************************************************************
 review
 *************************************************************************************
 
-I ran these commands to play with `folders (directories)`_
+I ran these commands to keep track of changes in a project
 
+* git_ to start a repository, add files_, commit, push, branch, merge, and tag
 * mkdir_ to `make directories`_
-* cd_ to `change directories`_
-* ls_ to show what is in directories_
-* tree_ to show the relationships between directories_
 * touch_ to make empty files_
-* mv_ to rename or move files_
-* rm_ to remove directories_
-
-:ref:`How many questions do you think you can answer after going through this chapter?<questions about directory relationships>`
+* tree_ to show the relationships between directories_
 
 ----
 
@@ -606,19 +607,14 @@ what is next?
 
 I know
 
-* :ref:`how to make a directory`
-* :ref:`how to see what is in a directory`
-* :ref:`how to look at directory relationships`
-* :ref:`how to make an empty file`
-* :ref:`how to use directory relationships`
-* :ref:`how to use touch with directory relationships`
-* :ref:`how to use ls with directory relationships`
-* :ref:`how to use tree with directory relationships`
-* :ref:`how to rename a file or directory`
-
-.. admonition:: Homework
-
-  use these commands - mkdir_, cd_, ls_, tree_ and touch_ - to make your family tree. Send it to me when you are done.
+* :ref:`how to install git`
+* :ref:`how to use Git`
+* :ref:`how to create a new repository`
+* :ref:`how to keep files And folders private`
+* :ref:`how to add files and folders for git to track`
+* :ref:`how to manage branches`
+* :ref:`how to merge changes`
+* :ref:`how to use tags`
 
 :ref:`Click Here to see me make a Python Test Driven Development Environment<how to make a Python Test Driven Development environment>`
 

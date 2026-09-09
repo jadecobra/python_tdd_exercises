@@ -96,6 +96,38 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../code/classes/test_classes.py
   :language: python
   :linenos:
+  :caption: classes/tests/test_classes.py
+  :lines: 1-7
+
+.. literalinclude:: ../code/classes/test_classes.py
+  :language: python
+  :lineno-start: 10
+  :caption: classes/tests/test_classes.py
+  :lines: 10-22
+
+.. literalinclude:: ../code/classes/test_classes.py
+  :language: python
+  :lineno-start: 25
+  :caption: classes/tests/test_classes.py
+  :lines: 25-38
+
+.. literalinclude:: ../code/classes/test_classes.py
+  :language: python
+  :lineno-start: 41
+  :caption: classes/tests/test_classes.py
+  :lines: 41-53
+
+.. literalinclude:: ../code/classes/test_classes.py
+  :language: python
+  :lineno-start: 56
+  :caption: classes/tests/test_classes.py
+  :lines: 56-68
+
+.. literalinclude:: ../code/classes/test_classes.py
+  :language: python
+  :lineno-start: 71
+  :caption: classes/tests/test_classes.py
+  :lines: 71-
 
 ----
 
@@ -175,7 +207,7 @@ start the project
 
         New-Item tests/__init__.py
 
-* I use the `mv program`_ to change the name of ``main.py`` to ``test_classes.py`` and move it to the ``tests`` folder_
+* I make an empty file_ for the tests in the ``tests`` folder_
 
   .. tab-set::
     :sync-group: os
@@ -186,8 +218,7 @@ start the project
       .. code-block:: python
         :emphasize-lines: 1
 
-        mv src/test_classes/__init__.py  tests/test_classes.py
-        rmdir src/test_classes
+        touch tests/test_classes.py
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -195,12 +226,13 @@ start the project
       .. code-block:: python
         :emphasize-lines: 1
 
-        Move-Item src/test_classes/__init__.py  tests/test_classes.py
-        Remove-Item src/test_classes
+        New-Item tests/test_classes.py
 
-* I open ``test_classes.py``
+  the terminal_ goes back to the command line.
 
-* I delete the text in the file_ then add :ref:`the first failing test<test_failure>` to ``test_classes.py``
+* I open ``test_classes.py`` from the ``tests`` folder_
+
+* I add :ref:`the first failing test<test_failure>` to ``test_classes.py``
 
   .. code-block:: python
     :linenos:
@@ -209,19 +241,46 @@ start the project
     def test_failure():
         assert False is True
 
-* I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
+* I go back to the terminal_
 
-  .. code-block:: python
-    :emphasize-lines: 1
+.. tab-set::
+  :sync-group: os
 
-    echo "pytest" > requirements.txt
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
 
-* I add `pytest-watcher`_ to the requirements file_
+    * I use echo_ to add pytest_ to ``requirements.txt``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+      .. code-block:: python
+        :emphasize-lines: 1
 
-    echo "pytest-watcher" >> requirements.txt
+        echo "pytest" > requirements.txt
+
+    * I add `pytest-watcher`_ to the requirements file_
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        echo "pytest-watcher" >> requirements.txt
+
+      the terminal_ goes back to the command line.
+
+  .. tab-item:: no WSL
+    :sync: no_wsl
+
+    * I use `Out-File`_ to add pytest_ to ``requirements.txt``
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        "pytest" | Out-File requirements.txt -Encoding UTF8
+
+    * I add `pytest-watcher`_ to the requirements file_
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        "pytest-watcher" >> requirements.txt
 
 * I use uv_ to install `pytest-watcher`_ with the requirements file_
 
@@ -412,23 +471,23 @@ I can test if an :ref:`object<everything is an object>` is :ref:`an instance (a 
 
 isinstance_ checks if the thing in the parentheses on the left is an :ref:`instance (a copy)<how to test if something is an instance>` of the :ref:`class<what is a class?>` on the right in the parentheses.
 
-* I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
+I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 2-3
+.. code-block:: python
+  :lineno-start: 4
+  :emphasize-lines: 2-3
 
-    def test_making_a_class_w_pass():
-        # assert not isinstance(WPass(), object)
-        assert isinstance(WPass(), object)
+  def test_making_a_class_w_pass():
+      # assert not isinstance(WPass(), object)
+      assert isinstance(WPass(), object)
 
 
-    # Exceptions seen
+  # Exceptions seen
 
-  * The test passes because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
-  * The :ref:`assertion<what is an assertion?>` - ``assert isinstance(WPass(), object)`` checks if the result of a :ref:`call<how to call a function>` to ``WPass`` is an :ref:`instance<how to test if something is an instance>` of the :ref:`object class (the mother of all classes)<what is a class?>`.
-  * The :ref:`class definition<how to make a class>` simply says pass_ and the test passes.
-  * pass_ is a special keyword that allows the :ref:`class definition<how to make a class>` to follow Python_ language rules (the :ref:`class<what is a class?>` must have a body).
+* The test passes because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
+* The :ref:`assertion<what is an assertion?>` - ``assert isinstance(WPass(), object)`` checks if the result of ``WPass()`` is an :ref:`instance<how to test if something is an instance>` of the :ref:`object class (the mother of all classes)<what is a class?>`.
+* The :ref:`class definition<how to make a class>` simply says pass_ and the test passes.
+* pass_ is a special keyword that allows the :ref:`class definition<how to make a class>` to follow Python_ language rules (the :ref:`class<what is a class?>` must have a body).
 
 ----
 
@@ -438,7 +497,7 @@ isinstance_ checks if the thing in the parentheses on the left is an :ref:`insta
 
 ----
 
-* I remove the commented line
+* I remove the commented line from :ref:`test_making_a_class_w_pass`
 
   .. code-block:: python
     :lineno-start: 4
@@ -573,7 +632,7 @@ I can also make a :ref:`class<what is a class?>` with parentheses/brackets ``( )
     def test_making_a_class_w_pass():
 
   * The test is still green because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
-  * The :ref:`assertion<what is an assertion?>` - ``assert isinstance(WParentheses(), object)`` checks if the result of a :ref:`call<how to call a function>` to ``WParentheses`` is an :ref:`instance<how to test if something is an instance>` of the :ref:`object class (the mother of all classes)<what is a class?>`.
+  * The :ref:`assertion<what is an assertion?>` - ``assert isinstance(WParentheses(), object)`` checks if the result of ``WParentheses()`` is an :ref:`instance<how to test if something is an instance>` of the :ref:`object class (the mother of all classes)<what is a class?>`.
   * This :ref:`class definition<how to make a class>` has parentheses after the name.
   * The :ref:`class definition<how to make a class>` simply says pass_ and the test passes.
   * pass_ is a special keyword that allows the :ref:`class definition<how to make a class>` to follow Python_ language rules (the :ref:`class<what is a class?>` must have a body).
@@ -638,7 +697,7 @@ I can make a :ref:`class<what is a class?>` with :ref:`object (the mother of all
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test with an :ref:`assertion<what is an assertion?>` for a new :ref:`class<what is a class?>` in ``test_classes.py``
+* I add a test with an :ref:`assertion<what is an assertion?>` for a new :ref:`class<what is a class?>` to ``test_classes.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -741,6 +800,8 @@ I can make a :ref:`class<what is a class?>` with :ref:`object (the mother of all
 
     class WObject(object): pass
 
+  .. code-block:: python
+    :lineno-start: 10
 
     def test_making_a_class_w_pass():
         assert isinstance(WPass(), object)
@@ -790,7 +851,7 @@ I like to write my :ref:`classes<what is a class?>` with ``(object)``, so that a
 test_is_none_an_object
 *********************************************************************************
 
-I want to test if :ref:`None<what is None?>` is an :ref:`object<everything is an object>`.
+I want to test if :ref:`None<what is None?>` is an :ref:`instance of object<how to test if something is an instance>`.
 
 ----
 
@@ -857,7 +918,7 @@ the test passes.
 
 ----
 
-* I remove the commented line
+* I remove the commented line from :ref:`test_is_none_an_object`
 
   .. code-block:: python
     :lineno-start: 22
@@ -891,7 +952,7 @@ issubclass_ checks if the thing in the parentheses on the left is a :ref:`subcla
 test_is_a_boolean_an_object
 *********************************************************************************
 
-I want to test if a :ref:`boolean<what are booleans?>` is an :ref:`object<everything is an object>`.
+I want to test if a :ref:`boolean<what are booleans?>` is a :ref:`subclass of object<how to test if something is a subclass>`.
 
 ----
 
@@ -968,7 +1029,7 @@ the test passes.
 
 ----
 
-* I remove the commented line
+* I remove the commented line from :ref:`test_is_a_boolean_an_object`
 
   .. code-block:: python
     :lineno-start: 26
@@ -995,7 +1056,7 @@ the test passes.
 test_is_an_integer_an_object
 *********************************************************************************
 
-I want to test if an integer_ (a whole number without decimals) is an :ref:`object<everything is an object>`.
+I want to test if an integer_ (a whole number without decimals) is a :ref:`subclass of object<how to test if something is a subclass>`.
 
 ----
 
@@ -1062,7 +1123,7 @@ the test passes.
 
 ----
 
-* I remove the commented line
+* I remove the commented line from :ref:`test_is_an_integer_an_object`
 
   .. code-block:: python
     :lineno-start: 30
@@ -1089,7 +1150,7 @@ the test passes.
 test_is_a_float_an_object
 *********************************************************************************
 
-I want to test if a float_ (a binary floating point decimal number) is an :ref:`object<everything is an object>`.
+I want to test if a float_ (a binary floating point decimal number) is a :ref:`subclass of object<how to test if something is a subclass>`.
 
 ----
 
@@ -1156,7 +1217,7 @@ the test passes.
 
 ----
 
-* I remove the commented line
+* I remove the commented line from :ref:`test_is_a_float_an_object`
 
   .. code-block:: python
     :lineno-start: 34
@@ -1183,7 +1244,7 @@ the test passes.
 test_is_a_string_an_object
 *********************************************************************************
 
-I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<everything is an object>`.
+I want to test if a string_ (anything in :ref:`quotes`) is a :ref:`subclass of object<how to test if something is an object>`.
 
 ----
 
@@ -1250,7 +1311,7 @@ the test passes.
 
 ----
 
-* I remove the commented line
+* I remove the commented line from :ref:`test_is_a_string_an_object`
 
   .. code-block:: python
     :lineno-start: 38
@@ -1277,7 +1338,7 @@ the test passes.
 test_is_a_tuple_an_object
 *********************************************************************************
 
-I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma) is an :ref:`object<everything is an object>`.
+I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma) is a :ref:`subclass of object<how to test if something is a subclass>`.
 
 ----
 
@@ -1344,7 +1405,7 @@ the test passes.
 
 ----
 
-* I remove the commented line
+* I remove the commented line from :ref:`test_is_a_tuple_an_object`
 
   .. code-block:: python
     :lineno-start: 42
@@ -1371,7 +1432,7 @@ the test passes.
 test_is_a_list_an_object
 *********************************************************************************
 
-I want to test if a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) is an :ref:`object<everything is an object>`.
+I want to test if a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) is a :ref:`subclass of object<how to test if something is a subclass>`.
 
 ----
 
@@ -1438,7 +1499,7 @@ the test passes.
 
 ----
 
-* I remove the commented line
+* I remove the commented line from :ref:`test_is_a_list_an_object`
 
   .. code-block:: python
     :lineno-start: 46
@@ -1531,7 +1592,7 @@ the test passes.
 
 ----
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_is_a_set_an_object`
 
   .. code-block:: python
     :lineno-start: 50
@@ -1624,7 +1685,7 @@ the test passes.
 
 ----
 
-* I remove the commented line
+* I remove the commented line from :ref:`test_is_a_dictionary_an_object`
 
   .. code-block:: python
     :lineno-start: 54
