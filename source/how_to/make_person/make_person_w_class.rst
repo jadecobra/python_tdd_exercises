@@ -36,61 +36,61 @@ I have these tests by the end of the chapter
   :language: python
   :linenos:
   :caption: person/tests/test_person.py
-  :lines: 1-15vg
+  :lines: 1-5
 
 .. literalinclude:: ../../code/person/tests/test_person_w_class.py
   :language: python
-  :lineno-start: 18
+  :lineno-start: 8
   :caption: person/tests/test_person.py
-  :lines: 18-33
+  :lines: 8-24
 
 .. literalinclude:: ../../code/person/tests/test_person_w_class.py
   :language: python
-  :lineno-start: 36
+  :lineno-start: 27
   :caption: person/tests/test_person.py
-  :lines: 36-51
+  :lines: 27-42
 
 .. literalinclude:: ../../code/person/tests/test_person_w_class.py
   :language: python
-  :lineno-start: 54
+  :lineno-start: 45
   :caption: person/tests/test_person.py
-  :lines: 54-70
+  :lines: 45-60
 
 .. literalinclude:: ../../code/person/tests/test_person_w_class.py
   :language: python
-  :lineno-start: 74
+  :lineno-start: 63
   :caption: person/tests/test_person.py
-  :lines: 74-98
+  :lines: 63-87
 
 .. literalinclude:: ../../code/person/tests/test_person_w_class.py
   :language: python
-  :lineno-start: 101
+  :lineno-start: 90
   :caption: person/tests/test_person.py
-  :lines: 101-125
+  :lines: 90-114
 
 .. literalinclude:: ../../code/person/tests/test_person_w_class.py
   :language: python
-  :lineno-start: 128
+  :lineno-start: 117
   :caption: person/tests/test_person.py
-  :lines: 128-152
+  :lines: 117-141
 
 .. literalinclude:: ../../code/person/tests/test_person_w_class.py
   :language: python
-  :lineno-start: 155
+  :lineno-start: 144
   :caption: person/tests/test_person.py
-  :lines: 155-179
+  :lines: 144-168
 
 .. literalinclude:: ../../code/person/tests/test_person_w_class.py
   :language: python
-  :lineno-start: 182
+  :lineno-start: 171
   :caption: person/tests/test_person.py
-  :lines: 182-217
+  :lines: 171-186
 
 .. literalinclude:: ../../code/person/tests/test_person_w_class.py
   :language: python
-  :lineno-start: 220
+  :lineno-start: 188
   :caption: person/tests/test_person.py
-  :lines: 220-
+  :lines: 188-
 
 -----
 
@@ -1751,6 +1751,17 @@ what is the staticmethod decorator?
     :emphasize-lines: 1
 
     git commit -am 'add say_hello method'
+
+Since the :ref:`say_hello method<add say_hello method>` is the same as the :ref:`say_hello function<test say_hello function>` I could have use the :ref:`say_hello method<add say_hello method>` to :ref:`call<how to call a function with input>` the :ref:`say_hello function<test say_hello function>` to get the same result
+
+.. code-block:: python
+
+      def say_hello(self):
+          return say_hello(
+              first_name=self.first_name,
+              last_name=self.last_name,
+              year_of_birth=self.year_of_birth,
+          )
 
 ----
 
@@ -4174,14 +4185,6 @@ review
 *************************************************************************************
 
 * I ran tests to write a :ref:`class<everything is an object>` that makes a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` and has a :ref:`method<what is a method?>` so I do not have to pass the same values every time I want to do something with a person.
-
-* I saw the following :ref:`Exceptions<how to test that an Exception is raised>`
-
-  - :ref:`AssertionError<what causes AssertionError?>`
-  - :ref:`NameError<test_catching_name_error>`
-  - :ref:`TypeError<what causes TypeError?>`
-  - :ref:`AttributeError<what causes AttributeError?>`
-  - SyntaxError_
 
 * My tests have a problem, each test is now the same three tests. There has to be a way that I can use one test for all the people.
 

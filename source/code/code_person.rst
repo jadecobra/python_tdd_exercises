@@ -102,6 +102,63 @@ The code in ``person/tests/test_person.py`` from :ref:`how to make a person with
 .. literalinclude:: person/tests/test_person_w_class.py
   :language: python
   :linenos:
+  :caption: person/tests/test_person.py
+  :lines: 1-5
+
+.. literalinclude:: person/tests/test_person_w_class.py
+  :language: python
+  :lineno-start: 8
+  :caption: person/tests/test_person.py
+  :lines: 8-24
+
+.. literalinclude:: person/tests/test_person_w_class.py
+  :language: python
+  :lineno-start: 27
+  :caption: person/tests/test_person.py
+  :lines: 27-42
+
+.. literalinclude:: person/tests/test_person_w_class.py
+  :language: python
+  :lineno-start: 45
+  :caption: person/tests/test_person.py
+  :lines: 45-60
+
+.. literalinclude:: person/tests/test_person_w_class.py
+  :language: python
+  :lineno-start: 63
+  :caption: person/tests/test_person.py
+  :lines: 63-87
+
+.. literalinclude:: person/tests/test_person_w_class.py
+  :language: python
+  :lineno-start: 90
+  :caption: person/tests/test_person.py
+  :lines: 90-114
+
+.. literalinclude:: person/tests/test_person_w_class.py
+  :language: python
+  :lineno-start: 117
+  :caption: person/tests/test_person.py
+  :lines: 117-141
+
+.. literalinclude:: person/tests/test_person_w_class.py
+  :language: python
+  :lineno-start: 144
+  :caption: person/tests/test_person.py
+  :lines: 144-168
+
+.. literalinclude:: person/tests/test_person_w_class.py
+  :language: python
+  :lineno-start: 171
+  :caption: person/tests/test_person.py
+  :lines: 171-186
+
+.. literalinclude:: person/tests/test_person_w_class.py
+  :language: python
+  :lineno-start: 188
+  :caption: person/tests/test_person.py
+  :lines: 188-
+
 
 ----
 
@@ -116,6 +173,14 @@ The code in ``person/src/person.py`` from :ref:`how to make a person with a clas
 .. literalinclude:: person/solutions/person_w_class.py
   :language: python
   :linenos:
+  :caption: person/src/person/__init__.py
+  :lines: 1-17
+
+.. literalinclude:: person/solutions/person_w_class.py
+  :language: python
+  :lineno-start: 20
+  :caption: person/src/person/__init__.py
+  :lines: 20-
 
 ----
 

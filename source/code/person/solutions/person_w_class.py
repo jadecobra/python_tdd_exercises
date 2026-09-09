@@ -1,9 +1,9 @@
 class Person:
 
     def __init__(
-        self, first_name, last_name,
-        sex, year_of_birth,
-    ):
+            self, first_name, last_name,
+            sex, year_of_birth,
+        ):
         self.first_name = first_name
         self.last_name = last_name
         self.year_of_birth = year_of_birth
@@ -18,8 +18,8 @@ class Person:
 
 
 def say_hello(
-    first_name, last_name, year_of_birth,
-):
+        first_name, last_name, year_of_birth
+    ):
     return (
         f'Hello, my name is {first_name}'
         f' {last_name} and I am'
