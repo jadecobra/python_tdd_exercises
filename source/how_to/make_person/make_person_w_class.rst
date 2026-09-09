@@ -2738,9 +2738,7 @@ separate and equal Person class
             year_of_birth,
         ):
 
-  all the tests are still green because the :ref:`instances<how to test if something is an instance>` of the :ref:`Person class<add Person class>` that was in ``tests/test_person.py`` are now of the :ref:`Person class<add Person class>` in ``src/person/__init__.py`` in the ``src`` folder_.
-
-  Python_ follows this path when ``src.person.Person`` is :ref:`called<how to call a function with input>` with input
+  all the tests are still green because the :ref:`instances<how to test if something is an instance>` of the :ref:`Person class<add Person class>` that were in ``tests/test_person.py`` are now of the :ref:`Person class<add Person class>` in ``src/person/__init__.py``.
 
   .. code-block:: shell
 
@@ -2772,10 +2770,34 @@ separate and equal Person class
 ----
 
 *********************************************************************************
-test_dir_person_class
+extract assert_person_can_say_hello function
 *********************************************************************************
 
-Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<everything is an object>` it is given in parentheses. It allows me to see what makes up an :ref:`object<everything is an object>` without looking at the code or reading the documentation. I can then run tests to see what each thing does.
+:ref:`test_joe`, :ref:`tesT_jane`, :ref:`test_john` and :ref:`test_mary` use the same process to test the :ref:`say_hello method<add say_hello method>`, they
+
+- make an :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>` with values for ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``
+- :ref:`call<how to call a function with input>` the :ref:`say_hello method of the Person class<add say_hello method>` with the values of ``first_name``, ``last_name`` and ``year_of_birth``
+- make a string_ with the values of ``first_name``, ``last_name`` and ``year_of_birth``
+- :ref:`assert<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` is equal to the string_
+
+.. code-block:: python
+
+  instance = src.person.Person(
+      first_name=first_name,
+      last_name=last_name,
+      sex=sex,
+      year_of_birth=year_of_birth,
+  )
+
+  reality = instance.say_hello()
+  my_expectation = (
+      f'Hello, my name is {first_name}'
+      f' {last_name} and I am'
+      f' {2026-year_of_birth}.'
+  )
+  assert reality == my_expectation
+
+I can make a :ref:`function<what is a function?>` that takes in ``first_name``, ``last_name`` and ``year_of_birth`` then :ref:`asserts<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` with the values is equal to the string_ with the values of the given parameters.
 
 ----
 
@@ -2786,28 +2808,936 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
 ----
 
 * I go back to the terminal_ where the tests are running
-
-* I add a new test with the `dir built-in function`_ in ``tests/test_person.py``
+* I add a new :ref:`function<what is a function?>` to :ref:`assert<what is an assertion?>` that the result of the :ref:`call<how to call a function with input>` to the :ref:`say_hello method<add say_hello method>` with the :ref:`variables<what is a variable?>` is equal to the string_ with the values of the given parameters, in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 157
-    :emphasize-lines: 12-15
+    :lineno-start: 4
+    :emphasize-lines: 4-13, 15-21
 
-        mary = src.person.Person(
+    import src.person
+
+
+    def assert_person_can_say_hello(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
+        instance = src.person.Person(
             first_name=first_name,
             last_name=last_name,
             sex=sex,
             year_of_birth=year_of_birth,
         )
 
-        reality = mary.say_hello()
+        reality = instance.say_hello()
+        my_expectation = (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        assert reality != my_expectation
+
+
+    def assert_say_hello_works(
+            first_name, last_name,
+            year_of_birth,
+        ):
+
+* I use the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` in :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 20-39
+
+    def test_joe():
+        first_name = 'joe'
+        last_name = 'blow'
+        sex = 'M'
+        year_of_birth = 1996
+
+        assert_person_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth
+        )
+
+        assert_say_hello_works(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+
+        # joe = src.person.Person(
+        #     first_name=first_name,
+        #     last_name=last_name,
+        #     sex=sex,
+        #     year_of_birth=year_of_birth,
+        # )
+
+        # reality = joe.say_hello()
+        # my_expectation = (
+        #     f'Hello, my name is {first_name}'
+        #     f' {last_name} and I am'
+        #     f' {2026-year_of_birth}.'
+        # )
+        # assert reality == my_expectation
+        assert_person_can_say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+
+    def test_jane():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'Hello, my name is joe blow and I am 30.'
+                        != 'Hello, my name is joe blow and I am 30.'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the :ref:`assertion<what is an assertion?>` in the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>`
+
+.. code-block:: python
+  :lineno-start: 4
+  :emphasize-lines: 18-19
+
+  def assert_person_can_say_hello(
+          first_name, last_name,
+          sex, year_of_birth,
+      ):
+      instance = src.person.Person(
+          first_name=first_name,
+          last_name=last_name,
+          sex=sex,
+          year_of_birth=year_of_birth,
+      )
+
+      reality = instance.say_hello()
+      my_expectation = (
+          f'Hello, my name is {first_name}'
+          f' {last_name} and I am'
+          f' {2026-year_of_birth}.'
+      )
+      # assert reality != my_expectation
+      assert reality == my_expectation
+
+
+  def assert_say_hello_works(
+          first_name, last_name,
+          year_of_birth,
+      ):
+
+the test passes.
+
+.. code-block:: shell
+
+  assert_person_can_say_hello(
+        first_name=first_name, last_name=last_name,
+        sex=sex, year_of_birth=year_of_birth,
+  ) -> None
+  └── def assert_person_can_say_hello(
+          first_name, last_name,
+          sex, year_of_birth,
+      ):
+      ├── instance = src.person.Person(
+      │       first_name=first_name,
+      │       last_name=last_name,
+      │       sex=sex,
+      │       year_of_birth=year_of_birth,
+      │   )
+      │   └── src/person/__init__.py
+      │       └── class Person:
+      │           └── def __init__(
+      │                   self, first_name, last_name,
+      │                   sex, year_of_birth,
+      │               ):
+      │               ├── self.first_name = first_name
+      │               ├── self.last_name = last_name
+      │               └── self.year_of_birth = year_of_birth
+      ├── reality = instance.say_hello()
+      │             └── class Person:
+      │                 └── def say_hello(self):
+      │                     └── return (
+      │                             f'Hello, my name is {self.first_name}'
+      │                             f' {self.last_name} and I am'
+      │                             f' {2026-self.year_of_birth}.'
+      │                         )
+      ├── my_expectation = (
+      │       f'Hello, my name is {first_name}'
+      │       f' {last_name} and I am'
+      │       f' {2026-year_of_birth}.'
+      │   )
+      └── assert reality == my_expectation
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+
+* I remove the commented line from :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>`
+
+  .. code-block:: python
+    :lineno-start: 4
+
+    def assert_person_can_say_hello(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
+        instance = src.person.Person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+        reality = instance.say_hello()
+        my_expectation = (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
         assert reality == my_expectation
+
+
+    def assert_say_hello_works(
+            first_name, last_name,
+            year_of_birth,
+        ):
+
+* I remove the commented lines from :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 58
+
+    def test_joe():
+        first_name = 'joe'
+        last_name = 'blow'
+        sex = 'M'
+        year_of_birth = 1996
+
+        assert_person_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth
+        )
+
+        assert_say_hello_works(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+
+        assert_person_can_say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+
+    def test_jane():
+
+* I use the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` in :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 85
+    :emphasize-lines: 20-39
+
+    def test_jane():
+        first_name = 'jane'
+        last_name = 'doe'
+        sex = 'F'
+        year_of_birth = 1991
+
+        assert_person_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+        assert_say_hello_works(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+
+        # jane = src.person.Person(
+        #     first_name=first_name,
+        #     last_name=last_name,
+        #     sex=sex,
+        #     year_of_birth=year_of_birth,
+        # )
+
+        # reality = jane.say_hello()
+        # my_expectation = (
+        #     f'Hello, my name is {first_name}'
+        #     f' {last_name} and I am'
+        #     f' {2026-year_of_birth}.'
+        # )
+        # assert reality == my_expectation
+        assert_person_can_say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+
+    def test_john():
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 85
+
+    def test_jane():
+        first_name = 'jane'
+        last_name = 'doe'
+        sex = 'F'
+        year_of_birth = 1991
+
+        assert_person_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+        assert_say_hello_works(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+
+        assert_person_can_say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+
+    def test_john():
+
+* I use the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` in :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 112
+    :emphasize-lines: 20-39
+
+    def test_john():
+        first_name = 'john'
+        last_name = 'smith'
+        sex = 'M'
+        year_of_birth = 1580
+
+        assert_person_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+        assert_say_hello_works(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+
+        # john = src.person.Person(
+        #     first_name=first_name,
+        #     last_name=last_name,
+        #     sex=sex,
+        #     year_of_birth=year_of_birth,
+        # )
+
+        # reality = john.say_hello()
+        # my_expectation = (
+        #     f'Hello, my name is {first_name}'
+        #     f' {last_name} and I am'
+        #     f' {2026-year_of_birth}.'
+        # )
+        # assert reality == my_expectation
+        assert_person_can_say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+
+    def test_mary():
+
+  still green.
+
+* I remove the commented lines from :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 112
+
+    def test_john():
+        first_name = 'john'
+        last_name = 'smith'
+        sex = 'M'
+        year_of_birth = 1580
+
+        assert_person_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+        assert_say_hello_works(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+
+        assert_person_can_say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+
+    def test_mary():
+
+* I use the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` in :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 139
+    :emphasize-lines: 20-39
+
+    def test_mary():
+        first_name = 'mary'
+        last_name = 'public'
+        sex = 'F'
+        year_of_birth = 2000
+
+        assert_person_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+        assert_say_hello_works(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+
+        # mary = src.person.Person(
+        #     first_name=first_name,
+        #     last_name=last_name,
+        #     sex=sex,
+        #     year_of_birth=year_of_birth,
+        # )
+
+        # reality = mary.say_hello()
+        # my_expectation = (
+        #     f'Hello, my name is {first_name}'
+        #     f' {last_name} and I am'
+        #     f' {2026-year_of_birth}.'
+        # )
+        # assert reality == my_expectation
+        assert_person_can_say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+
+    # Exceptions seen
+
+  green.
+
+* I remove the commented lines from :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 139
+
+    def test_mary():
+        first_name = 'mary'
+        last_name = 'public'
+        sex = 'F'
+        year_of_birth = 2000
+
+        assert_person_factory_works(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+        assert_say_hello_works(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+
+        assert_person_can_say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+
+    # Exceptions seen
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract assert_person_can_say_hello function'
+
+----
+
+*********************************************************************************
+use assert_equal function
+*********************************************************************************
+
+:ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>`, :ref:`assert_say_hello_works<extract assert_say_hello_works function>` and :ref:`assert_person_factory_works<assert_person_factory_works function>` all :ref:`assert<what is an assertion?>` that something is equal to something else
+
+.. code-block:: python
+
+  assert reality == my_expectation
+
+I can use the :ref:`assert_equal function<extract assert_equal function>` that takes in two inputs then :ref:`asserts<what is an assertion?>` that they are equal.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add the :ref:`assert_equal function<extract assert_equal function>` to ``tests/test_person.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5
+
+    import src.person
+
+
+    def assert_equal(left, right):
+        assert left != right
+
+
+    def assert_person_can_say_hello(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
+
+* I use the :ref:`assert_equal function<extract assert_equal function>` in :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>`
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 18*19
+
+    def assert_person_can_say_hello(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
+        instance = src.person.Person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+        reality = instance.say_hello()
+        my_expectation = (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+        # assert reality == my_expectation
+        assert_equal(reality, my_expectation)
+
+
+    def assert_say_hello_works(
+            first_name, last_name,
+            year_of_birth,
+        ):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    FAILED ...::test_joe - AssertionError:
+        assert 'Hello, my name is joe blow and I am 30.' != ...
+    FAILED ...::test_jane - AssertionError:
+        assert 'Hello, my name is jane doe and I am 35.' != ...
+    FAILED ...::test_john - AssertionError:
+        assert 'Hello, my name is john smith and I am 446.' ...
+    FAILED ...::test_mary - AssertionError:
+        assert 'Hello, my name is mary public and I am 26.' ...
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the :ref:`assertion<what is an assertion?>` in the :ref:`assert_equal function<extract assert_equal function>`
+
+.. code-block:: python
+  :lineno-start: 4
+  :emphasize-lines: 18-19
+
+  def assert_equal(left, right):
+      # assert left != right
+      assert left == right
+
+
+  def assert_person_can_say_hello(
+          first_name, last_name,
+          sex, year_of_birth,
+      ):
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented line from :ref:`assert_equal<extract assert_equal function>`
+
+  .. code-block:: python
+    :lineno-start: 4
+
+    def assert_equal(left, right):
+        assert left == right
+
+
+    def assert_say_hello_works(
+            first_name, last_name,
+            year_of_birth,
+        ):
+
+* I use the value of ``my_expectation`` in :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>` without a :ref:`variable<what is a variable?>` since it is only used once
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 2-16
+
+        reality = instance.say_hello()
+        # my_expectation = (
+        #     f'Hello, my name is {first_name}'
+        #     f' {last_name} and I am'
+        #     f' {2026-year_of_birth}.'
+        # )
+        # assert reality == my_expectation
+        # assert_equal(reality, my_expectation)
+        assert_equal(
+            reality,
+            (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                f' {2026-year_of_birth}.'
+            )
+        )
+
+
+    def assert_say_hello_works(
+            first_name, last_name,
+            year_of_birth,
+        ):
+
+  the test is still green.
+
+* I do the same thing with ``reality`` in :ref:`assert_person_can_say_hello<extract assert_person_can_say_hello function>`
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 1, 10-11
+
+        # reality = instance.say_hello()
+        # my_expectation = (
+        #     f'Hello, my name is {first_name}'
+        #     f' {last_name} and I am'
+        #     f' {2026-year_of_birth}.'
+        # )
+        # assert reality == my_expectation
+        # assert_equal(reality, my_expectation)
+        assert_equal(
+            # reality,
+            instance.say_hello(),
+            (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                f' {2026-year_of_birth}.'
+            )
+        )
+
+
+    def assert_say_hello_works(
+            first_name, last_name,
+            year_of_birth,
+        ):
+
+  still green.
+
+* I use the :ref:`instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>` directly without a :ref:`variable<what is a variable?>` since it is only used once
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 5-10, 22-28
+
+    def assert_person_can_say_hello(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
+        # instance = src.person.Person(
+        #     first_name=first_name,
+        #     last_name=last_name,
+        #     sex=sex,
+        #     year_of_birth=year_of_birth,
+        # )
+
+        # reality = instance.say_hello()
+        # my_expectation = (
+        #     f'Hello, my name is {first_name}'
+        #     f' {last_name} and I am'
+        #     f' {2026-year_of_birth}.'
+        # )
+        # assert reality == my_expectation
+        # assert_equal(reality, my_expectation)
+        assert_equal(
+            # reality,
+            # instance.say_hello(),
+            src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            ).say_hello(),
+            (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                f' {2026-year_of_birth}.'
+            )
+        )
+
+  green and not as easy to read.
+
+* I use the :ref:`assert_equal function<extract assert_equal function>` in :ref:`assert_say_hello_works<extract assert_say_hello_works function>`
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 5-27
+
+    def assert_say_hello_works(
+            first_name, last_name,
+            year_of_birth,
+        ):
+        # reality = src.person.say_hello(
+        #     first_name=first_name,
+        #     last_name=last_name,
+        #     year_of_birth=year_of_birth
+        # )
+        # my_expectation = (
+        #     f'Hello, my name is {first_name}'
+        #     f' {last_name} and I am'
+        #     f' {2026-year_of_birth}.'
+        # )
+        # assert reality == my_expectation
+        assert_equal(
+            src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth
+            ),
+            (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                f' {2026-year_of_birth}.'
+            )
+        )
+
+
+    def assert_person_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
+
+  the tests are still green.
+
+* I remove the commented lines from :ref:`assert_say_hello_works<extract assert_say_hello_works function>`
+
+  .. code-block:: python
+    :lineno-start: 27
+
+    def assert_say_hello_works(
+            first_name, last_name,
+            year_of_birth,
+        ):
+        assert_equal(
+            src.person.say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth
+            ),
+            (
+                f'Hello, my name is {first_name}'
+                f' {last_name} and I am'
+                f' {2026-year_of_birth}.'
+            )
+        )
+
+
+    def assert_person_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
+
+* I use the :ref:`assert_equal function<extract assert_equal function>` in :ref:`assert_person_factory_works<extract assert_person_factory_works function>`
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 5-27
+
+    def assert_person_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
+        # reality = src.person.person(
+        #     first_name=first_name,
+        #     last_name=last_name,
+        #     sex=sex,
+        #     year_of_birth=year_of_birth,
+        # )
+        # my_expectation = (
+        #     f'{first_name}, {last_name},'
+        #     f' {sex}, {year_of_birth}'
+        # )
+        # assert reality == my_expectation
+        assert_equal(
+            src.person.person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            ),
+            (
+                f'{first_name}, {last_name},'
+                f' {sex}, {year_of_birth}'
+            )
+        )
+
+
+    def test_joe():
+
+  still green.
+
+* I remove the commented lines from :ref:`assert_person_factory_works<extract assert_person_factory_works function>`
+
+  .. code-block:: python
+    :lineno-start: 45
+
+    def assert_person_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
+        assert_equal(
+            src.person.person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            ),
+            (
+                f'{first_name}, {last_name},'
+                f' {sex}, {year_of_birth}'
+            )
+        )
+
+
+    def test_joe():
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract assert_equal function'
+
+I used the :ref:`assert_equal function<extract assert_equal function>` to remove repetition which ended up adding more lines to the code than before I used it.
+
+----
+
+*********************************************************************************
+test_dir_person_class
+*********************************************************************************
+
+Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<everything is an object>` it is given in parentheses. It allows me to see what makes up an :ref:`object<everything is an object>` without looking at the code or reading the documentation. I can then run tests to see what each thing does.
+
+I want to use it to see the :ref:`attributes and methods of the Person class<test_dir_person_class>`.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a new test with the `dir built-in function`_ in ``tests/test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 163
+    :emphasize-lines: 9-13
+
+        assert_person_can_say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
 
 
     def test_dir_person_class():
-        reality = dir(src.person.Person)
-        my_expectation = None
-        assert reality == my_expectation
+        assert_equal(
+            dir(src.person.Person),
+            None
+        )
 
 
     # Exceptions seen
@@ -2821,7 +3751,7 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
                 '__dir__', '__doc__', '__eq__', ...]
             == None
 
-  because dir_ returned a :ref:`list <what is a list?>` (anything in square brackets ``[ ]``) and ``my_expectation`` is :ref:`None<what is None?>`.
+  because dir_ returned a :ref:`list <what is a list?>` (anything in square brackets ``[ ]``) and the expectation of the :ref:`assertion<what is an assertion?>` is :ref:`None<what is None?>`.
 
 ----
 
@@ -2831,20 +3761,21 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
 
 ----
 
-* I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
+* I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as the expectation
 
   .. code-block:: python
-    :lineno-start: 168
-    :emphasize-lines: 3-7
+    :lineno-start: 171
+    :emphasize-lines: 4-8
 
     def test_dir_person_class():
-        reality = dir(src.person.Person)
-        # my_expectation = None
-        my_expectation = [
-            '__class__', '__delattr__', '__dict__',
-            '__dir__', '__doc__', '__eq__', ...
-        ]
-        assert reality == my_expectation
+        assert_equal(
+            dir(src.person.Person),
+            # None
+            [
+                '__class__', '__delattr__', '__dict__',
+                '__dir__', '__doc__', '__eq__', ...
+            ]
+        )
 
 
     # Exceptions seen
@@ -2907,50 +3838,33 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
 
     Enter new runner args: -vv
 
-* I type ``-vv`` then press :kbd:`enter` to show the full difference, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with the full :ref:`list<what is a list?>`.
+* I type :kbd:`-+v+v` then press :kbd:`enter` to show the full difference, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with the full :ref:`list<what is a list?>`.
 
-* I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
+* I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as the expectation
+
+  .. caution:: Your list of attributes and methods may be different because of your Python version.
 
   .. code-block:: python
-    :lineno-start: 168
-    :emphasize-lines: 3-34
+    :lineno-start: 171
+    :emphasize-lines: 4-15
     :emphasize-text: __init__ say_hello
 
     def test_dir_person_class():
-        reality = dir(src.person.Person)
-        my_expectation = [
-            '__class__',
-            '__delattr__',
-            '__dict__',
-            '__dir__',
-            '__doc__',
-            '__eq__',
-            '__firstlineno__',
-            '__format__',
-            '__ge__',
-            '__getattribute__',
-            '__getstate__',
-            '__gt__',
-            '__hash__',
-            '__init__',
-            '__init_subclass__',
-            '__le__',
-            '__lt__',
-            '__module__',
-            '__ne__',
-            '__new__',
-            '__reduce__',
-            '__reduce_ex__',
-            '__repr__',
-            '__setattr__',
-            '__sizeof__',
-            '__static_attributes__',
-            '__str__',
-            '__subclasshook__',
-            '__weakref__',
-            'say_hello'
-        ]
-        assert reality == my_expectation
+        assert_equal(
+            dir(src.person.Person),
+            [
+                '__class__', '__delattr__', '__dict__',
+                '__dir__', '__doc__', '__eq__',
+                '__firstlineno__', '__format__', '__ge__',
+                '__getattribute__', '__getstate__', '__gt__',
+                '__hash__', '__init__', '__init_subclass__',
+                '__le__', '__lt__', '__module__', '__ne__',
+                '__new__', '__reduce__', '__reduce_ex__',
+                '__repr__', '__setattr__', '__sizeof__',
+                '__static_attributes__', '__str__',
+                '__subclasshook__', '__weakref__', 'say_hello'
+            ]
+        )
 
 
     # Exceptions seen
@@ -2968,7 +3882,6 @@ Python_ has the `dir built-in function`_ which shows the :ref:`attributes<what i
     git commit -am \
     'add test_dir_person_class'
 
-.. caution:: Your list of attributes and methods can be different because of your Python version.
 
 ----
 
@@ -2985,59 +3898,38 @@ test_dir_person_instance
 I add a test to see the difference between the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of :ref:`an instance<how to test if something is an instance>` and the actual :ref:`class<everything is an object>`
 
 .. code-block:: python
-  :lineno-start: 197
-  :emphasize-lines: 9-15, 17-50
+  :lineno-start: 182
+  :emphasize-lines: 7-29
 
-            '__str__',
-            '__subclasshook__',
-            '__weakref__',
-            'say_hello'
-        ]
-        assert reality == my_expectation
-
-
-    def test_dir_person_instance():
-        an_instance_of_person = src.person.Person(
-            first_name='first_name',
-            last_name='last_name',
-            sex='M',
-            year_of_birth=2026,
+                '__repr__', '__setattr__', '__sizeof__',
+                '__static_attributes__', '__str__',
+                '__subclasshook__', '__weakref__', 'say_hello'
+            ]
         )
 
-        reality = dir(an_instance_of_person)
-        my_expectation = [
-            '__class__',
-            '__delattr__',
-            '__dict__',
-            '__dir__',
-            '__doc__',
-            '__eq__',
-            '__firstlineno__',
-            '__format__',
-            '__ge__',
-            '__getattribute__',
-            '__getstate__',
-            '__gt__',
-            '__hash__',
-            '__init__',
-            '__init_subclass__',
-            '__le__',
-            '__lt__',
-            '__module__',
-            '__ne__',
-            '__new__',
-            '__reduce__',
-            '__reduce_ex__',
-            '__repr__',
-            '__setattr__',
-            '__sizeof__',
-            '__static_attributes__',
-            '__str__',
-            '__subclasshook__',
-            '__weakref__',
-            'say_hello'
-        ]
-        assert reality == my_expectation
+    def test_dir_person_instance():
+        assert_equal(
+            dir(
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth=2026,
+                )
+            ),
+            [
+                '__class__', '__delattr__', '__dict__',
+                '__dir__', '__doc__', '__eq__',
+                '__firstlineno__', '__format__', '__ge__',
+                '__getattribute__', '__getstate__', '__gt__',
+                '__hash__', '__init__', '__init_subclass__',
+                '__le__', '__lt__', '__module__', '__ne__',
+                '__new__', '__reduce__', '__reduce_ex__',
+                '__repr__', '__setattr__', '__sizeof__',
+                '__static_attributes__', '__str__',
+                '__subclasshook__', '__weakref__', 'say_hello'
+            ]
+        )
 
 
     # Exceptions seen
@@ -3081,60 +3973,30 @@ because ``first_name``, ``last_name`` and ``year_of_birth`` are missing. Why is 
 
 ----
 
-I add the missing :ref:`attributes<what is a class attribute?>` to ``my_expectation``
+I add the missing :ref:`attributes<what is a class attribute?>` to the expectation of the :ref:`assertion<what is an assertion?>` of :ref:`test_dir_person_instance`
 
 .. code-block:: python
-  :lineno-start: 205
-  :emphasize-lines: 40-41, 43
+  :lineno-start: 198
+  :emphasize-lines: 11-12
+  :emphasize-text: first_name last_name year_of_birth
 
-  def test_dir_person_instance():
-      an_instance_of_person = src.person.Person(
-          first_name='first_name',
-          last_name='last_name',
-          sex='M',
-          year_of_birth=2026,
-      )
-
-      reality = dir(an_instance_of_person)
-      my_expectation = [
-          '__class__',
-          '__delattr__',
-          '__dict__',
-          '__dir__',
-          '__doc__',
-          '__eq__',
-          '__firstlineno__',
-          '__format__',
-          '__ge__',
-          '__getattribute__',
-          '__getstate__',
-          '__gt__',
-          '__hash__',
-          '__init__',
-          '__init_subclass__',
-          '__le__',
-          '__lt__',
-          '__module__',
-          '__ne__',
-          '__new__',
-          '__reduce__',
-          '__reduce_ex__',
-          '__repr__',
-          '__setattr__',
-          '__sizeof__',
-          '__static_attributes__',
-          '__str__',
-          '__subclasshook__',
-          '__weakref__',
-          'first_name',
-          'last_name',
-          'say_hello',
-          'year_of_birth',
-      ]
-      assert reality == my_expectation
+            [
+                '__class__', '__delattr__', '__dict__',
+                '__dir__', '__doc__', '__eq__',
+                '__firstlineno__', '__format__', '__ge__',
+                '__getattribute__', '__getstate__', '__gt__',
+                '__hash__', '__init__', '__init_subclass__',
+                '__le__', '__lt__', '__module__', '__ne__',
+                '__new__', '__reduce__', '__reduce_ex__',
+                '__repr__', '__setattr__', '__sizeof__',
+                '__static_attributes__', '__str__',
+                '__subclasshook__', '__weakref__', 'first_name',
+                'last_name', 'say_hello', 'year_of_birth',
+            ]
+        )
 
 
-  # Exceptions seen
+    # Exceptions seen
 
 the test passes.
 
@@ -3146,19 +4008,36 @@ the test passes.
 
 ----
 
-* I add ``sex`` to the :ref:`list<what is a list?>`
+* I add ``sex`` to the :ref:`list<what is a list?>` of :ref:`attributes and methods of the instance of the Person class<test_dir_person_instance>`
 
   .. code-block:: python
-    :lineno-start: 244
-    :emphasize-lines: 4
+    :lineno-start: 188
+    :emphasize-lines: 22
 
-            'first_name',
-            'last_name',
-            'say_hello',
-            'sex',
-            'year_of_birth',
-        ]
-        assert reality == my_expectation
+    def test_dir_person_instance():
+        assert_equal(
+            dir(
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth=2026,
+                )
+            ),
+            [
+                '__class__', '__delattr__', '__dict__',
+                '__dir__', '__doc__', '__eq__',
+                '__firstlineno__', '__format__', '__ge__',
+                '__getattribute__', '__getstate__', '__gt__',
+                '__hash__', '__init__', '__init_subclass__',
+                '__le__', '__lt__', '__module__', '__ne__',
+                '__new__', '__reduce__', '__reduce_ex__',
+                '__repr__', '__setattr__', '__sizeof__',
+                '__static_attributes__', '__str__',
+                '__subclasshook__', '__weakref__', 'first_name',
+                'last_name', 'say_hello', 'sex', 'year_of_birth',
+            ]
+        )
 
 
     # Exceptions seen
@@ -3203,30 +4082,19 @@ the test passes.
 * I add ``self.sex`` to the :ref:`__init__ method<the constructor method>` of the :ref:`Person class<add Person class>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 27
+    :lineno-start: 12
+    :emphasize-lines: 16
 
-    # Person
-    # Person = None
-    # def Person():
-    # def Person(first_name):
-    # def Person(first_name, last_name):
-    # def Person(first_name, last_name, sex):
-    # def Person(
-    # class Person(
-    #     first_name, last_name,
-    #     sex, year_of_birth,
-    # ):
     class Person:
 
         # say_hello
         # say_hello = None
 
         def __init__(
-            # first_name, last_name,
-            self, first_name, last_name,
-            sex, year_of_birth,
-        ):
+                # first_name, last_name,
+                self, first_name, last_name,
+                sex, year_of_birth,
+            ):
             # return None
             # pass
             self.first_name = first_name
@@ -3235,28 +4103,10 @@ the test passes.
             self.sex = sex
 
         # def say_hello():
-        # def say_hello(argument):
-        def say_hello(self):
-            # return None
-            # return 'Hello, my name is mary public and I am 26.'
-            # return argument
-            return (
-                # f'Hello, my name is {argument.first_name}'
-                # f' {argument.last_name} and I am'
-                # f' {2026-argument.year_of_birth}.'
-                f'Hello, my name is {self.first_name}'
-                f' {self.last_name} and I am'
-                f' {2026-self.year_of_birth}.'
-            )
-
-
-    def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from the :ref:`Person class<separate and equal Person class>`
 
   .. code-block:: python
     :linenos:
@@ -3264,9 +4114,9 @@ the test passes.
     class Person:
 
         def __init__(
-            self, first_name, last_name,
-            sex, year_of_birth,
-        ):
+                self, first_name, last_name,
+                sex, year_of_birth,
+            ):
             self.first_name = first_name
             self.last_name = last_name
             self.year_of_birth = year_of_birth
@@ -3281,23 +4131,8 @@ the test passes.
 
 
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
-        return (
-            f'Hello, my name is {first_name}'
-            f' {last_name} and I am'
-            f' {2026-year_of_birth}.'
-        )
-
-
-    def person(
-            first_name, last_name,
-            sex, year_of_birth,
+            first_name, last_name, year_of_birth
         ):
-        return (
-            f'{first_name}, {last_name},'
-            f' {sex}, {year_of_birth}'
-        )
 
 * I add a git_ commit message in the other terminal_
 

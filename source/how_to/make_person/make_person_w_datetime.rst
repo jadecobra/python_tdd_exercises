@@ -1562,7 +1562,7 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
 
   .. code-block:: python
     :lineno-start: 186
-    :emphasize-lines: 5-10
+    :emphasize-lines: 5-11
 
             reality = mary.say_hello()
             assert reality == my_expectation
@@ -1574,6 +1574,7 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
                 last_name='last_name',
                 sex='M',
             )
+            person.say_hello()
 
         def test_dir_person_class(self):
 
@@ -1662,6 +1663,7 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
                 # year_of_birth=None,    # fails
                 year_of_birth=False,
             )
+            person.say_hello()
 
         def test_dir_person_class(self):
 
@@ -1681,6 +1683,7 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
                 # year_of_birth=None,    # fails
                 year_of_birth=2026.0,
             )
+            person.say_hello()
 
         def test_dir_person_class(self):
 
@@ -1701,6 +1704,7 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
                 # year_of_birth=2026.0,  # fails
                 year_of_birth='2026',
             )
+            person.say_hello()
 
         def test_dir_person_class(self):
 
@@ -1722,6 +1726,7 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
                 # year_of_birth='2026',  # fails
                 year_of_birth=(2026,),
             )
+            person.say_hello()
 
         def test_dir_person_class(self):
 
@@ -1741,6 +1746,7 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
                 # year_of_birth='2026',  # fails
                 # year_of_birth=(2026,), # fails
             )
+            person.say_hello()
 
         def test_dir_person_class(self):
 

@@ -1,18 +1,27 @@
 import src.person
 
 
-def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
-    return (
-        f'Hello, my name is {first_name}'
-        f' {last_name} and I am'
-        f' {2026-year_of_birth}.'
-    )
-
-
 def assert_equal(left, right):
     assert left == right
+
+
+def assert_person_can_say_hello(
+        first_name, last_name,
+        sex, year_of_birth,
+    ):
+    assert_equal(
+        src.person.Person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        ).say_hello(),
+        (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
+        )
+    )
 
 
 def assert_say_hello_works(
@@ -23,12 +32,12 @@ def assert_say_hello_works(
         src.person.say_hello(
             first_name=first_name,
             last_name=last_name,
-            year_of_birth=year_of_birth,
+            year_of_birth=year_of_birth
         ),
-        say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
+        (
+            f'Hello, my name is {first_name}'
+            f' {last_name} and I am'
+            f' {2026-year_of_birth}.'
         )
     )
 
@@ -51,26 +60,6 @@ def assert_person_factory_works(
     )
 
 
-def assert_person_can_say_hello(
-        first_name, last_name,
-        sex, year_of_birth,
-    ):
-    assert_equal(
-        src.person.Person(
-            first_name=first_name,
-            last_name=last_name,
-            sex=sex,
-            year_of_birth=year_of_birth,
-        ).say_hello(),
-        say_hello(
-            first_name=first_name,
-            last_name=last_name,
-            year_of_birth=year_of_birth,
-        )
-    )
-
-
-
 def test_joe():
     first_name = 'joe'
     last_name = 'blow'
@@ -81,7 +70,7 @@ def test_joe():
         first_name=first_name,
         last_name=last_name,
         sex=sex,
-        year_of_birth=year_of_birth,
+        year_of_birth=year_of_birth
     )
 
     assert_say_hello_works(
@@ -94,7 +83,7 @@ def test_joe():
         first_name=first_name,
         last_name=last_name,
         sex=sex,
-        year_of_birth=year_of_birth,
+        year_of_birth=year_of_birth
     )
 
 
@@ -183,39 +172,18 @@ def test_dir_person_class():
     assert_equal(
         dir(src.person.Person),
         [
-            '__class__',
-            '__delattr__',
-            '__dict__',
-            '__dir__',
-            '__doc__',
-            '__eq__',
-            '__firstlineno__',
-            '__format__',
-            '__ge__',
-            '__getattribute__',
-            '__getstate__',
-            '__gt__',
-            '__hash__',
-            '__init__',
-            '__init_subclass__',
-            '__le__',
-            '__lt__',
-            '__module__',
-            '__ne__',
-            '__new__',
-            '__reduce__',
-            '__reduce_ex__',
-            '__repr__',
-            '__setattr__',
-            '__sizeof__',
-            '__static_attributes__',
-            '__str__',
-            '__subclasshook__',
-            '__weakref__',
-            'say_hello'
+            '__class__', '__delattr__', '__dict__',
+            '__dir__', '__doc__', '__eq__',
+            '__firstlineno__', '__format__', '__ge__',
+            '__getattribute__', '__getstate__', '__gt__',
+            '__hash__', '__init__', '__init_subclass__',
+            '__le__', '__lt__', '__module__', '__ne__',
+            '__new__', '__reduce__', '__reduce_ex__',
+            '__repr__', '__setattr__', '__sizeof__',
+            '__static_attributes__', '__str__',
+            '__subclasshook__', '__weakref__', 'say_hello'
         ]
     )
-
 
 def test_dir_person_instance():
     assert_equal(
@@ -228,40 +196,17 @@ def test_dir_person_instance():
             )
         ),
         [
-            '__class__',
-            '__delattr__',
-            '__dict__',
-            '__dir__',
-            '__doc__',
-            '__eq__',
-            '__firstlineno__',
-            '__format__',
-            '__ge__',
-            '__getattribute__',
-            '__getstate__',
-            '__gt__',
-            '__hash__',
-            '__init__',
-            '__init_subclass__',
-            '__le__',
-            '__lt__',
-            '__module__',
-            '__ne__',
-            '__new__',
-            '__reduce__',
-            '__reduce_ex__',
-            '__repr__',
-            '__setattr__',
-            '__sizeof__',
-            '__static_attributes__',
-            '__str__',
-            '__subclasshook__',
-            '__weakref__',
-            'first_name',
-            'last_name',
-            'say_hello',
-            'sex',
-            'year_of_birth',
+            '__class__', '__delattr__', '__dict__',
+            '__dir__', '__doc__', '__eq__',
+            '__firstlineno__', '__format__', '__ge__',
+            '__getattribute__', '__getstate__', '__gt__',
+            '__hash__', '__init__', '__init_subclass__',
+            '__le__', '__lt__', '__module__', '__ne__',
+            '__new__', '__reduce__', '__reduce_ex__',
+            '__repr__', '__setattr__', '__sizeof__',
+            '__static_attributes__', '__str__',
+            '__subclasshook__', '__weakref__', 'first_name',
+            'last_name', 'say_hello', 'sex', 'year_of_birth',
         ]
     )
 
