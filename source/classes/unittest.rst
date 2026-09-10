@@ -7,6 +7,7 @@
 .. _unittest.TestCase: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase
 .. _TestCase: https://docs.python.org/3/library/unittest.html#unittest.TestCase
 .. _unittest: https://docs.python.org/3/library/unittest.html
+.. _unittest library: unittest_
 .. _unittest module: unittest_
 .. _assertNotIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance
 .. _unittest.TestCase.assertNotIsInstance: assertNotIsInstance_
@@ -44,7 +45,7 @@ another way to write tests
 
 I used unittest_ in :ref:`how to make a Python Test Driven Development environment manually` to run tests manually before I learned to :ref:`run them automatically<how to run tests automatically>` with `pytest-watcher`_.
 
-The unittest_ :ref:`library<what is a module?>` is part of `The Python Standard Library`_ and can also be used to write tests. You can think of it as a toolbox with different tools I can use to test code.
+The `unittest library`_ is part of `The Python Standard Library`_ and can also be used to write tests like a toolbox with different tools I can use to test code.
 
 ----
 
@@ -55,11 +56,37 @@ preview
 I have these tests by the end of the chapter
 
 .. literalinclude:: ../code/tests/test_unittest.py
+  :caption: unittest/tests/test_unittest.py
   :language: python
   :linenos:
+  :lines: 1-26
+
+.. literalinclude:: ../code/tests/test_unittest.py
+  :caption: unittest/tests/test_unittest.py
+  :language: python
+  :lineno-start: 28
+  :lines: 28-78
+
+.. literalinclude:: ../code/tests/test_unittest.py
+  :caption: unittest/tests/test_unittest.py
+  :language: python
+  :lineno-start: 80
+  :lines: 80-94
+
+.. literalinclude:: ../code/tests/test_unittest.py
+  :caption: unittest/tests/test_unittest.py
+  :language: python
+  :lineno-start: 96
+  :lines: 96-114
+
+.. literalinclude:: ../code/tests/test_unittest.py
+  :caption: unittest/tests/test_unittest.py
+  :language: python
+  :lineno-start: 116
+  :lines: 116-
 
 *********************************************************************************
-Questions about unittest
+questions about unittest
 *********************************************************************************
 
 * :ref:`What are two ways to test if something is not something else?<test_assert_is_not>`
@@ -170,9 +197,9 @@ start the project
 
         New-Item tests/test_unittest.py
 
-* I open ``test_unittest.py``
+* I open ``test_unittest.py`` from the ``tests`` folder_
 
-* I delete the text in the file_ then add :ref:`the first failing test<test_failure>` to ``test_unittest.py``
+* I add :ref:`the first failing test<test_failure>` to ``test_unittest.py``
 
   .. code-block:: python
     :linenos:
@@ -342,7 +369,7 @@ I want to see what comes with the `unittest module`_.
   .. code-block:: shell
 
     NameError: name 'unittest' is not defined.
-                Did you forget to import 'unittest'?
+               Did you forget to import 'unittest'?
 
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 

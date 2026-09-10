@@ -14,7 +14,7 @@
 what is a module?
 #################################################################################
 
-A `Python module`_ is any file_ that ends in ``.py``. Any folder_ that contains an ``__init__.py`` is also a Python_ module_.
+A `Python module`_ is any file_ that ends in ``.py`` or any folder_ that contains an ``__init__.py`` file_.
 
 ----
 

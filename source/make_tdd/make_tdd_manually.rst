@@ -333,7 +333,7 @@ how to run a Python program
 
     uv run person
 
-  terminal_ shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -510,7 +510,7 @@ because I have not set up the test correctly.
 :red:`RED`: make it fail
 ********************************************************************************************
 
-* I open ``tests/person.py`` from the ``tests`` folder_
+* I open ``person.py`` from the ``tests`` folder_
 
   .. tip::
 
