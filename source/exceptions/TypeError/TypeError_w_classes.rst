@@ -24,8 +24,15 @@ I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/type_error/tests/test_type_error_w_classes.py
   :language: python
-  :linenos:
+  :lineno-start: 89
   :caption: type_error/tests/test_type_error.py
+  :lines: 89-99
+
+.. literalinclude:: ../../code/type_error/tests/test_type_error_w_classes.py
+  :language: python
+  :lineno-start: 102
+  :caption: type_error/tests/test_type_error.py
+  :lines: 102-
 
 *********************************************************************************
 questions about TypeError with classes
@@ -48,7 +55,7 @@ open the project
 
     cd type_error
 
-* I open ``test_type_error.py``
+* I open ``test_type_error.py`` from the ``tests`` folder_
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -77,23 +84,23 @@ test_type_error_w_class_methods
 
 ----
 
-I add a test with a :ref:`call<how to call a function with input>` to ``AClass.method`` from ``test_type_error.py``
+I add a test with a :ref:`call<how to call a function with input>` to ``AClass.method`` from ``tests/test_type_error.py``
 
 .. code-block:: python
-  :lineno-start: 84
+  :lineno-start: 83
   :emphasize-lines: 7-8
 
-        src.type_error.function_08(
-            'positional',
-            argument='keyword',
-        )
+      src.type_error.function_08(
+          'positional',
+          argument='keyword',
+      )
 
 
-    def test_type_error_w_class_methods():
-        src.type_error.AClass.method_00()
+  def test_type_error_w_class_methods():
+      src.type_error.AClass.method_00()
 
 
-    # Exceptions seen
+  # Exceptions seen
 
 the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -112,7 +119,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
 ----
 
-* I open ``type_error/__init__.py`` from the ``src`` folder_
+* I open ``__init__.py`` from the ``type_error`` folder_ in the ``src`` folder_
 
 * I add a :ref:`class definition<how to make a class>` for ``AClass`` to ``src/type_error/__init__.py``
 
@@ -196,7 +203,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
 ----
 
-* I remove the commented lines
+* I remove the commented lines from ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 44
@@ -205,10 +212,10 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
         def method_00(): return None
 
-* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_01`` from ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_01`` from ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 90
+    :lineno-start: 89
     :emphasize-lines: 3
 
     def test_type_error_w_class_methods():
@@ -265,10 +272,10 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
   - ``AClass.method_00()`` :ref:`calls<how to call a function>` ``method_00`` of the ``AClass`` :ref:`class<everything is an object>`.
   - ``AClass().method_01()`` :ref:`calls<how to call a function>` ``method_01`` of an :ref:`instance<how to test if something is an instance>` of the ``AClass`` :ref:`class<everything is an object>`.
 
-* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_02`` from ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_02`` from ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 90
+    :lineno-start: 89
     :emphasize-lines: 4
 
     def test_type_error_w_class_methods():
@@ -360,10 +367,10 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   the test passes because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument which allows it to use things that belong to the :ref:`class<everything is an object>`.
 
-* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_03`` from ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_03`` from ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 90
+    :lineno-start: 89
     :emphasize-lines: 5
 
     def test_type_error_w_class_methods():
@@ -403,6 +410,8 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
     NameError: name 'method_02' is not defined
 
+  because there is nothing named ``method_02`` inside ``method_03`` or at the :ref:`module<what is a module?>` level of ``src/type_error/__init__.py``.
+
 * I add ``AClass.`` before ``method_02``
 
   .. code-block:: python
@@ -438,10 +447,10 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   the test passes. This is a silly example because I used ``AClass()`` inside a :ref:`method<what is a method?>` of ``AClass``. I could just use ``self``. I would only need this if I was calling a :ref:`method<what is a method?>` of a different :ref:`class<everything is an object>`.
 
-* Here is another silly example. I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_04`` from ``test_type_error.py``
+* Here is another silly example. I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_04`` from ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 92
     :emphasize-lines: 3
 
         src.type_error.AClass().method_02()
@@ -497,10 +506,10 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   the test passes. I called a :ref:`method<what is a method?>` of ``AClass`` and passed ``AClass`` as input. I can use ``self``.
 
-* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_05`` from ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_05`` from ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 94
+    :lineno-start: 93
     :emphasize-lines: 3
 
         src.type_error.AClass.method_03()
@@ -571,10 +580,10 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   the test passes.
 
-* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_06`` from ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_06`` from ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 95
+    :lineno-start: 94
     :emphasize-lines: 3
 
         src.type_error.AClass.method_04()
@@ -592,7 +601,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
                     has no attribute 'method_06'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_06`` to ``AClass``
+* I add a :ref:`method definition<how to make a function>` for ``method_06`` to ``AClass`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 65
@@ -627,10 +636,10 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   the test passes.
 
-* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_07`` from ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_07`` from ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 96
+    :lineno-start: 95
     :emphasize-lines: 3
 
         src.type_error.AClass().method_05()
@@ -673,10 +682,10 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
   - ``method_07`` takes an :ref:`instance<how to test if something is an instance>` of the :ref:`class<everything is an object>` it belongs to as input.
   - I :ref:`called the method<how to call a function>` with the :ref:`class<everything is an object>` not an :ref:`instance of the class<how to test if something is an instance>`.
 
-* I use an :ref:`instance of the class<how to test if something is an instance>` to :ref:`call the method<how to call a function>` from ``test_type_error.py``
+* I use an :ref:`instance of the class<how to test if something is an instance>` to :ref:`call the method<how to call a function>` from ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 96
+    :lineno-start: 95
     :emphasize-lines: 3-4
 
         src.type_error.AClass().method_05()
@@ -712,10 +721,10 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   the test passes. I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything that belongs to the :ref:`class<everything is an object>`.
 
-* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_08()`` from ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_08()`` from ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 98
+    :lineno-start: 97
     :emphasize-lines: 3
 
         # src.type_error.AClass.method_07()
@@ -754,10 +763,10 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   because I called ``method_08`` like a :ref:`staticmethod<what is the staticmethod decorator?>` and it is :ref:`defined<how to make a function>` as an :ref:`instance method<how to make a function>` (It expects ``self`` as input).
 
-* I use an :ref:`instance of the class<how to test if something is an instance>` to :ref:`call the method<how to call a function>` from ``test_type_error.py``
+* I use an :ref:`instance of the class<how to test if something is an instance>` to :ref:`call the method<how to call a function>` from ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 98
+    :lineno-start: 97
     :emphasize-lines: 3-4
 
         # src.type_error.AClass.method_07()
@@ -803,10 +812,10 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   the test passes.
 
-* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_09()`` from ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_09()`` from ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 100
+    :lineno-start: 99
     :emphasize-lines: 3
 
         # src.type_error.AClass.method_08()
@@ -885,18 +894,15 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
         @staticmethod
         def method_01(): return None
 
-  .. code-block:: python
-    :lineno-start: 52
-
         def method_02(self):
             return self.method_01()
+
+  .. code-block:: python
+    :lineno-start: 55
 
         @staticmethod
         def method_03():
             return AClass().method_02()
-
-  .. code-block:: python
-    :lineno-start: 59
 
         @staticmethod
         def method_04():
@@ -914,19 +920,16 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
         def method_07(self):
             return self.method_00()
 
-  .. code-block:: python
-    :lineno-start: 72
-
         def method_08(self):
             return self.method_04()
 
         def method_09(self):
             return self.method_03()
 
-* I remove the commented lines from ``test_type_error.py``
+* I remove the commented lines from ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 90
+    :lineno-start: 89
 
     def test_type_error_w_class_methods():
         src.type_error.AClass.method_00()
@@ -975,10 +978,10 @@ Is every :ref:`object callable<how to make a function>`?
 ----
 
 * I go back to the terminal_ that is running the tests.
-* I add a test to ``test_type_error.py``
+* I add a test to ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 100
+    :lineno-start: 99
     :emphasize-lines: 4-5
 
         src.type_error.AClass().method_09()
@@ -996,7 +999,7 @@ Is every :ref:`object callable<how to make a function>`?
 
     AttributeError: module 'src.type_error' has no attribute 'none'
 
-  there is nothing named ``none`` in ``src/type_error/__init__.py`` in the ``src`` folder_ yet
+  there is nothing named ``none`` in ``src/type_error/__init__.py`` in the ``src`` folder_, yet.
 
 ----
 
@@ -1046,7 +1049,7 @@ Is every :ref:`object callable<how to make a function>`?
 
   the test passes.
 
-I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test_type_error_w_the_uncallables>`
+I can :ref:`call a function<how to call a function with input>`, :ref:`I cannot call None<test_type_error_w_the_uncallables>`.
 
 ----
 
@@ -1056,10 +1059,10 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
 ----
 
-* I add a :ref:`call<how to call a function>` to ``false`` in ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``false`` in ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 103
+    :lineno-start: 101
     :emphasize-lines: 3
 
     def test_type_error_w_the_uncallables():
@@ -1076,7 +1079,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     AttributeError: module 'src.type_error'
                     has no attribute 'false'
 
-  ``false`` is not in ``src/type_error/__init__.py``
+  ``false`` is not in ``src/type_error/__init__.py``.
 
 * I add ``false`` to ``src/type_error/__init__.py`` and point it to :ref:`False<test_what_is_false>`
 
@@ -1106,7 +1109,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     false()
     False()
 
-  ``False()`` raises :ref:`TypeError<what causes TypeError?>` because :ref:`I cannot call a boolean like a function<test_type_error_w_the_uncallables>`
+  ``False()`` raises :ref:`TypeError<what causes TypeError?>` because :ref:`I cannot call a boolean like a function<test_type_error_w_the_uncallables>`.
 
 * I change ``false`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
@@ -1125,10 +1128,10 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
   the test is green again.
 
-* I add a :ref:`call<how to call a function>` to the other :ref:`boolean<what are booleans?>` in ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to the other :ref:`boolean<what are booleans?>` in ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 103
+    :lineno-start: 101
     :emphasize-lines: 4
 
     def test_type_error_w_the_uncallables():
@@ -1146,7 +1149,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     AttributeError: module 'src.type_error'
                     has no attribute 'true'
 
-  there is nothing named ``true`` in ``src/type_error/__init__.py``
+  there is nothing named ``true`` in ``src/type_error/__init__.py``.
 
 * I add ``true`` and point it to :ref:`True<test_what_is_true>` in ``src/type_error/__init__.py``
 
@@ -1183,14 +1186,14 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     def function_00(the_input):
         return None
 
-  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a boolean or None<test_type_error_w_the_uncallables>`
+  the test passes. I can :ref:`call a function<how to call a function with input>`, :ref:`I cannot call a boolean or None<test_type_error_w_the_uncallables>`.
 
 ----
 
-* I add a :ref:`call<how to call a function>` to an integer_, in ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to an integer_, in ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 105
+    :lineno-start: 103
     :emphasize-lines: 3
 
         src.type_error.false()
@@ -1252,12 +1255,12 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     def function_00(the_input):
         return None
 
-  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call an integer, a boolean or None<test_type_error_w_the_uncallables>`.
+  the test passes. I can :ref:`call a function<how to call a function with input>`, :ref:`I cannot call an integer, a boolean or None<test_type_error_w_the_uncallables>`.
 
-* I add a :ref:`call<how to call a function>` to a float_ in ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to a float_ in ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 106
+    :lineno-start: 104
     :emphasize-lines: 3
 
         src.type_error.true()
@@ -1319,12 +1322,12 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     def function_00(the_input):
         return None
 
-  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a float, integer, boolean or None<test_type_error_w_the_uncallables>`.
+  the test passes. I can :ref:`call a function<how to call a function with input>`, :ref:`I cannot call a float, integer, boolean or None<test_type_error_w_the_uncallables>`.
 
-* I add a :ref:`call<how to call a function>` to a string_ (anything in :ref:`quotes`) in ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to a string_ (anything in :ref:`quotes`) in ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 107
+    :lineno-start: 105
     :emphasize-lines: 3
 
         src.type_error.an_integer()
@@ -1386,12 +1389,12 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     def function_00(the_input):
         return None
 
-  the test passes. I can call a :ref:`function<what is a function?>`. :ref:`I cannot call a string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
+  the test passes. I can :ref:`call a function<how to call a function with input>`, :ref:`I cannot call a string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
 
-* I add a :ref:`call<how to call a function>` to a tuple_ (anything in parentheses ``()``, separated by a comma) in ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to a tuple_ (anything in parentheses ``()``, separated by a comma) in ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 108
+    :lineno-start: 106
     :emphasize-lines: 3
 
         src.type_error.a_float()
@@ -1453,12 +1456,12 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     def function_00(the_input):
         return None
 
-  the test passes. I can call a :ref:`function<what is a function?>`. :ref:`I cannot call a tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
+  the test passes. I can :ref:`call a function<how to call a function with input>`, :ref:`I cannot call a tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
 
-* I add a :ref:`call<how to call a function>` to a :ref:`list<what is a list?>` in ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to a :ref:`list<what is a list?>` in ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 109
+    :lineno-start: 107
     :emphasize-lines: 3
 
         src.type_error.a_string()
@@ -1521,12 +1524,12 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
         return None
 
 
-  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
+  the test passes. I can :ref:`call a function<how to call a function with input>`, :ref:`I cannot call a list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
 
-* I add a :ref:`call<how to call a function>` to a set_ in ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to a set_ in ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 110
+    :lineno-start: 108
     :emphasize-lines: 3
 
         src.type_error.a_tuple()
@@ -1588,12 +1591,12 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     def function_00(the_input):
         return None
 
-  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a set, list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
+  the test passes. I can :ref:`call a function<how to call a function with input>`, :ref:`I cannot call a set, list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
 
-* I add a :ref:`call<how to call a function>` to a :ref:`dictionary<what is a dictionary?>` in ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to a :ref:`dictionary<what is a dictionary?>` in ``tests/test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 111
+    :lineno-start: 109
     :emphasize-lines: 3
 
         src.type_error.a_list()
@@ -1605,7 +1608,6 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     # AssertionError
     # NameError
     # TypeError
-    # ModuleNotFoundError
     # AttributeError
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
@@ -1660,9 +1662,9 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     def function_00(the_input):
         return None
 
-  the test is green again. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a dictionary, set, list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
+  the test is green again. I can :ref:`call a function<how to call a function with input>`, :ref:`I cannot call a dictionary, set, list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`.
 
-* I remove the commented lines
+* I remove the commented lines from ``src/type_error/__init__.py``
 
   .. code-block:: python
     :linenos:

@@ -108,28 +108,37 @@ TypeError with classes: tests and solutions
 *********************************************************************************
 
 =================================================================================
-TypeError with classes tests
+TypeError with classes: tests
 =================================================================================
 
 ----
 
-The code in ``type_error/tests/test_type_error.py`` from :ref:`TypeError with classes`
+The code added to ``type_error/tests/test_type_error.py`` from :ref:`TypeError with classes`
 
 .. literalinclude:: type_error/tests/test_type_error_w_classes.py
   :language: python
-  :linenos:
+  :lineno-start: 89
+  :caption: type_error/tests/test_type_error.py
+  :lines: 89-99
+
+.. literalinclude:: type_error/tests/test_type_error_w_classes.py
+  :language: python
+  :lineno-start: 102
+  :caption: type_error/tests/test_type_error.py
+  :lines: 102-
 
 ----
 
 =================================================================================
-TypeError with classes solutions
+TypeError with classes: solutions
 =================================================================================
 
 ----
 
-The code in ``type_error/src/type_error/__init__.py`` from :ref:`TypeError with classes`
+The code added to ``type_error/src/type_error/__init__.py`` from :ref:`TypeError with classes`
 
 .. literalinclude:: type_error/solutions/type_error_w_classes.py
   :language: python
-  :linenos:
+  :lineno-start: 56
   :caption: type_error/src/type_error/__init__.py
+  :lines: 56-
