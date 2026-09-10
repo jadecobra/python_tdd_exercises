@@ -1,6 +1,6 @@
 .. meta::
-  :description: TypeError with classes: call methods on the class vs an instance in the type_error project (uv run pytest-watcher). test_type_error_w_class_methods builds AClass method_00–method_09; match AClass.method_N() vs AClass().method_N() to the definition; instance methods take self; @staticmethod when the method needs no class state. Representative errors: AttributeError "module 'src.type_error' has no attribute 'AClass'", "type object 'AClass' has no attribute 'method_00'", NameError name 'method_00'/'self' not defined, TypeError "'NoneType' object is not callable", "AClass.method_01() takes 0 positional arguments but 1 was given", "AClass.method_02() missing 1 required positional argument: 'self'". test_type_error_w_the_uncallables shows None, bool, int, float, str, tuple, list, set, dict are not callable ("'X' object is not callable") then turns each name into a function. Red-green-refactor; remove the commented lines from tests and src. Review: self on instance call, staticmethod, objects that are not callable. Jacob Itegboje Pumping Python TDD.
-  :keywords: Jacob Itegboje, Pumping Python, TypeError with classes, python TypeError methods, AClass.method_00, AClass().method_01, staticmethod decorator, takes 0 positional arguments but 1 was given, missing 1 required positional argument: 'self', type object 'AClass' has no attribute, module 'src.type_error' has no attribute 'AClass', test_type_error_w_class_methods, test_type_error_w_the_uncallables, NoneType object is not callable, bool object is not callable, int object is not callable, dict object is not callable, uv run pytest-watcher, TDD class methods, self first argument, class vs instance method call, red green refactor, remove the commented lines, src.type_error, what causes TypeError
+  :description: TypeError with classes: call methods on the class vs an instance in the type_error project (uv run pytest-watcher, src/type_error/__init__.py). test_type_error_w_class_methods builds AClass method_00–method_09; match AClass.method_N() vs AClass().method_N() to the definition; instance methods take self; @staticmethod when the method needs no class state. Representative errors: AttributeError "module 'src.type_error' has no attribute 'AClass'", "type object 'AClass' has no attribute 'method_00'", NameError name 'method_00'/'self' not defined, TypeError "'NoneType' object is not callable", "AClass.method_01() takes 0 positional arguments but 1 was given", "AClass.method_02() missing 1 required positional argument: 'self'". test_type_error_w_the_uncallables shows None, bool, int, float, str, tuple, list, set, dict are not callable ("'X' object is not callable") then turns each name into a function. Red-green-refactor; remove the commented lines from tests and src. Review: self on instance call, staticmethod, objects that are not callable. Jacob Itegboje Pumping Python TDD.
+  :keywords: Jacob Itegboje, Pumping Python, TypeError with classes, python TypeError methods, AClass.method_00, AClass().method_01, staticmethod decorator, takes 0 positional arguments but 1 was given, missing 1 required positional argument: 'self', type object 'AClass' has no attribute, module 'src.type_error' has no attribute 'AClass', test_type_error_w_class_methods, test_type_error_w_the_uncallables, NoneType object is not callable, bool object is not callable, int object is not callable, dict object is not callable, uv run pytest-watcher, TDD class methods, self first argument, class vs instance method call, red green refactor, remove the commented lines, src/type_error/__init__.py, src.type_error, what causes TypeError
 
 .. include:: ../../links.rst
 
@@ -102,7 +102,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   AttributeError: module 'src.type_error'
                   has no attribute 'AClass'
 
-because ``AClass`` is not defined in ``type_error.py``.
+because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
 ----
 
@@ -114,7 +114,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 
 * I open ``type_error/__init__.py`` from the ``src`` folder_
 
-* I add a :ref:`class definition<how to make a class>` for ``AClass`` to ``type_error.py``
+* I add a :ref:`class definition<how to make a class>` for ``AClass`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 40
@@ -226,7 +226,7 @@ because ``AClass`` is not defined in ``type_error.py``.
                     has no attribute 'method_01'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_01`` to ``AClass`` in ``type_error.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_01`` to ``AClass`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 44
@@ -258,7 +258,7 @@ because ``AClass`` is not defined in ``type_error.py``.
         @staticmethod
         def method_01(): return None
 
-  the test passes because I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` whenit does not use anything that belongs to the :ref:`class<everything is an object>`.
+  the test passes because I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything that belongs to the :ref:`class<everything is an object>`.
 
   Both :ref:`methods<what is a method?>` look the same. The difference is in how I :ref:`call<how to call a function>` them ``AClass.method_00()`` vs ``AClass().method_01()``.
 
@@ -287,7 +287,7 @@ because ``AClass`` is not defined in ``type_error.py``.
                     has no attribute 'method_02'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`definition<how to make a function>` for ``method_02`` to ``AClass`` in ``type_error.py``
+* I add a :ref:`definition<how to make a function>` for ``method_02`` to ``AClass`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 44
@@ -383,7 +383,7 @@ because ``AClass`` is not defined in ``type_error.py``.
                     has no attribute 'method_03'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`definition<how to make a function>` for ``method_03`` to ``AClass`` in ``type_error.py``
+* I add a :ref:`definition<how to make a function>` for ``method_03`` to ``AClass`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 51
@@ -459,7 +459,7 @@ because ``AClass`` is not defined in ``type_error.py``.
                     has no attribute 'method_04'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_04`` to ``AClass`` in ``type_error.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_04`` to ``AClass`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 56
@@ -518,7 +518,7 @@ because ``AClass`` is not defined in ``type_error.py``.
                     has no attribute 'method_05'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_05`` to ``AClass`` in ``type_error.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_05`` to ``AClass`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 61
@@ -556,7 +556,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 
     NameError: name 'method_02' is not defined
 
-  because there is no ``method_02`` at the :ref:`module<what is a module?>` level of ``type_error.py``. It is inside ``AClass`` in ``type_error.py``, I have to be specific.
+  because there is no ``method_02`` at the :ref:`module<what is a module?>` level of ``src/type_error/__init__.py``. It is inside ``AClass`` in ``src/type_error/__init__.py``, I have to be specific.
 
 * I add ``self.`` before ``method_02``
 
@@ -648,7 +648,7 @@ because ``AClass`` is not defined in ``type_error.py``.
                     has no attribute 'method_07'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_07`` to ``AClass`` in ``type_error.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_07`` to ``AClass`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 70
@@ -699,7 +699,7 @@ because ``AClass`` is not defined in ``type_error.py``.
   - ``method_00`` takes no input (the parentheses are empty).
   - I called it with an :ref:`instance of the class<how to test if something is an instance>` (``AClass()``) which passes the :ref:`instance<how to test if something is an instance>` as input.
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``method_00`` of ``AClass`` in ``type_error.py``
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``method_00`` of ``AClass`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 44
@@ -710,7 +710,7 @@ because ``AClass`` is not defined in ``type_error.py``.
         @staticmethod
         def method_00(): return None
 
-  the test passes. I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` whenit does not use anything that belongs to the :ref:`class<everything is an object>`.
+  the test passes. I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything that belongs to the :ref:`class<everything is an object>`.
 
 * I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_08()`` from ``test_type_error.py``
 
@@ -733,7 +733,7 @@ because ``AClass`` is not defined in ``type_error.py``.
                     has no attribute 'method_08'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_08`` to ``AClass`` in ``type_error.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_08`` to ``AClass`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 75
@@ -780,7 +780,7 @@ because ``AClass`` is not defined in ``type_error.py``.
   - ``method_04`` takes no input (the parentheses are empty).
   - I called it with an :ref:`instance of the class<how to test if something is an instance>` (``AClass()``) which passes the :ref:`instance<how to test if something is an instance>` as input.
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``method_04`` of ``AClass`` in ``type_error.py``
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``method_04`` of ``AClass`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 57
@@ -803,7 +803,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 
   the test passes.
 
-* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_09()`` from ``test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_09()`` from ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 100
@@ -824,7 +824,7 @@ because ``AClass`` is not defined in ``type_error.py``.
                     has no attribute 'method_09'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_09`` to ``AClass`` in ``type_error.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_09`` to ``AClass`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 79
@@ -848,7 +848,7 @@ because ``AClass`` is not defined in ``type_error.py``.
   - ``method_03`` takes no input (the parentheses are empty).
   - I called it with an :ref:`instance of the class<how to test if something is an instance>` (``AClass()``) which passes the :ref:`instance<how to test if something is an instance>` as input.
 
-* I add the :ref:`@staticmethod<what is the staticmethod decorator?>` to ``method_03`` of ``AClass`` in ``type_error.py``
+* I add the :ref:`@staticmethod<what is the staticmethod decorator?>` to ``method_03`` of ``AClass`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 52
@@ -872,7 +872,7 @@ because ``AClass`` is not defined in ``type_error.py``.
 
   the test passes.
 
-* I remove the commented lines from ``type_error.py``
+* I remove the commented lines from ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 44
@@ -996,7 +996,7 @@ Is every :ref:`object callable<how to make a function>`?
 
     AttributeError: module 'src.type_error' has no attribute 'none'
 
-  there is nothing named ``none`` in ``type_error.py`` in the ``src`` folder_ yet
+  there is nothing named ``none`` in ``src/type_error/__init__.py`` in the ``src`` folder_ yet
 
 ----
 
@@ -1031,7 +1031,7 @@ Is every :ref:`object callable<how to make a function>`?
 
     ``None()`` raises :ref:`TypeError<what causes TypeError?>` because :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
-* I make ``none`` a :ref:`function<what is a function?>` in ``type_error.py`` to make it :ref:`callable<how to make a function>`
+* I make ``none`` a :ref:`function<what is a function?>` in ``src/type_error/__init__.py`` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
     :linenos:
@@ -1076,9 +1076,9 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     AttributeError: module 'src.type_error'
                     has no attribute 'false'
 
-  ``false`` is not in ``type_error.py``
+  ``false`` is not in ``src/type_error/__init__.py``
 
-* I add ``false`` to ``type_error.py`` and point it to :ref:`False<test_what_is_false>`
+* I add ``false`` to ``src/type_error/__init__.py`` and point it to :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :linenos:
@@ -1146,9 +1146,9 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     AttributeError: module 'src.type_error'
                     has no attribute 'true'
 
-  there is nothing named ``true`` in ``type_error.py``
+  there is nothing named ``true`` in ``src/type_error/__init__.py``
 
-* I add ``true`` and point it to :ref:`True<test_what_is_true>` in ``type_error.py``
+* I add ``true`` and point it to :ref:`True<test_what_is_true>` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 3
@@ -1207,7 +1207,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     AttributeError: module 'src.type_error'
                     has no attribute 'an_integer'
 
-* I add ``an_integer`` and point it to ``1234`` in ``type_error.py``
+* I add ``an_integer`` and point it to ``1234`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 5
@@ -1274,7 +1274,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     AttributeError: module 'src.type_error'
                     has no attribute 'a_float'
 
-* I add ``a_float`` and point it to ``5.678`` in ``type_error.py``
+* I add ``a_float`` and point it to ``5.678`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -1341,7 +1341,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     AttributeError: module 'src.type_error'
                     has no attribute 'a_string'
 
-* I add ``a_string`` and point it to ``'a string'`` in ``type_error.py``
+* I add ``a_string`` and point it to ``'a string'`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 9
@@ -1374,7 +1374,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 * I change ``a_string`` from a :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` to make it :ref:`callable<how to make a function>`
 
   .. code-block:: python
-    :lineno-start: 10
+    :lineno-start: 9
     :emphasize-lines: 3-4
 
     # a_float = 5.678
@@ -1408,7 +1408,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     AttributeError: module 'src.type_error'
                     has no attribute 'a_tuple'
 
-* I add ``a_tuple`` and point it to ``(0, 1, 2, 'n')`` in ``type_error.py``
+* I add ``a_tuple`` and point it to ``(0, 1, 2, 'n')`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -1475,7 +1475,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     AttributeError: module 'src.type_error'
                     has no attribute 'a_list'
 
-* I add ``a_list`` and point it to ``[0, 1, 2, 'n']`` in ``type_error.py``
+* I add ``a_list`` and point it to ``[0, 1, 2, 'n']`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -1543,7 +1543,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     AttributeError: module 'src.type_error'
                     has no attribute 'a_set'
 
-* I add ``a_set`` and point it to ``{0, 1, 2, 'n'}`` in ``type_error.py``
+* I add ``a_set`` and point it to ``{0, 1, 2, 'n'}`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 15
@@ -1615,7 +1615,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     AttributeError: module 'src.type_error'
                     has no attribute 'a_dictionary'
 
-* I add ``a_dictionary`` and point it to ``{'key': 'value'}`` in ``type_error.py``
+* I add ``a_dictionary`` and point it to ``{'key': 'value'}`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 17
@@ -1696,7 +1696,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 close the project
 *********************************************************************************
 
-* I close ``tests/test_type_error.py`` and ``src/type_error.py``
+* I close ``tests/test_type_error.py`` and ``src/type_error/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 

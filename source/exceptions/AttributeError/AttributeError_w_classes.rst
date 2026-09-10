@@ -1,8 +1,8 @@
 .. meta::
   :description:
-    Step-by-step TDD continuation in the attribute_error project showing AttributeError with classes: deliberately trigger "type object 'AClass' has no attribute 'attribute_01'. Did you mean: 'attribute_00'?", SyntaxError: 'return' outside function, NameError: name 'self' is not defined, TypeError missing 1 required positional argument: 'self' when calling method on the class instead of instance. Add 10 class attributes (chained from function_09(), using both AClass.attr and AClass().attr) and 10 methods (with self, some bare attr access and some calls in tests). Demonstrates a class in a module and a function in a class (method) are attributes too. Re-uses the test_attribute_error.py from prior AttributeError chapter (vars + functions). Covers turning a function stub into class, remove the commented lines in REFACTOR, git commit after each step, uv run pytest-watcher. Review lesson: variables/functions/classes/methods are all attributes. Prepares for exception handling and "everything is an object". Part of the Pumping Python TDD book by Jacob Itegboje.
+    AttributeError with classes in the attribute_error project (uv run pytest-watcher, src/attribute_error/__init__.py). Continues test_attribute_error.py after variables and functions. test_attribute_error_w_class_attributes turns a function stub into class AClass(object) with attribute_00–attribute_09 chained from function_09(); mix AClass.attr (type object has no attribute) and AClass().attr ('AClass' object has no attribute). Representative errors: module 'src.attribute_error' has no attribute 'AClass', 'function' object has no attribute 'attribute_00', SyntaxError 'return' outside function, then class vs instance AttributeError (Did you mean: 'attribute_00' on some Pythons). test_attribute_error_w_class_methods: method_00 = attribute_09 then def; NameError name 'attribute_09'/'self' is not defined; TypeError AClass.method_00() missing 1 required positional argument: 'self' until AClass().method_00(); methods 01–09 on the instance. Review: a variable in a class, a function in a class (method), and a class in a module are attributes. Prepares for catching AttributeError. Jacob Itegboje Pumping Python TDD.
   :keywords:
-    Jacob Itegboje, Pumping Python, AttributeError with classes, python AttributeError class attribute, type object 'AClass' has no attribute, Did you mean attribute_00, AttributeError AClass, SyntaxError return outside function, NameError name 'self' is not defined, TypeError missing 1 required positional argument self, AClass.attribute_00, src.attribute_error.AClass, class in module is attribute, method is attribute of class, test_attribute_error_w_class_attributes, test_attribute_error_w_class_methods, bare attribute access on class and instance, TDD class attributes methods, uv run pytest-watcher, remove the commented lines, red green refactor class, python everything is an object, Pumping Python exceptions AttributeError classes
+    Jacob Itegboje, Pumping Python, AttributeError with classes, python AttributeError class attribute, type object 'AClass' has no attribute, 'AClass' object has no attribute, Did you mean attribute_00, SyntaxError return outside function, NameError name 'self' is not defined, TypeError missing 1 required positional argument self, AClass.attribute_00, AClass().method_00, src.attribute_error.AClass, class in module is attribute, method is attribute of class, test_attribute_error_w_class_attributes, test_attribute_error_w_class_methods, uv run pytest-watcher, remove the commented lines, red green refactor class, src/attribute_error/__init__.py, Pumping Python exceptions AttributeError classes
 
 .. include:: ../../links.rst
 
@@ -180,12 +180,11 @@ test_attribute_error_w_class_attributes
 
   .. code-block:: python
     :lineno-start: 34
-    :emphasize-lines: 7
+    :emphasize-lines: 6
     :emphasize-text: SyntaxError
 
     # Exceptions seen
     # AssertionError
-    # ModuleNotFoundError
     # AttributeError
     # NameError
     # TypeError
@@ -255,7 +254,7 @@ test_attribute_error_w_class_attributes
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: 'AClass' object
                     has no attribute 'attribute_01'.
                     Did you mean: 'attribute_00'?
 
@@ -348,7 +347,7 @@ test_attribute_error_w_class_attributes
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: 'AClass' object
                     has no attribute 'attribute_03'.
                     Did you mean: 'attribute_00'?
 
@@ -449,7 +448,7 @@ test_attribute_error_w_class_attributes
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: 'AClass' object
                     has no attribute 'attribute_05'.
                     Did you mean: 'attribute_00'?
 
@@ -502,7 +501,7 @@ test_attribute_error_w_class_attributes
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: 'AClass' object
                     has no attribute 'attribute_06'.
                     Did you mean: 'attribute_00'?
 
@@ -673,7 +672,7 @@ test_attribute_error_w_class_attributes
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: 'AClass' object
                     has no attribute 'attribute_09'.
                     Did you mean: 'attribute_00'?
 
@@ -789,7 +788,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         attribute_08 = attribute_07
         attribute_09 = attribute_08
 
-        method_00 = None
+        method_00 = attribute_09
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -797,7 +796,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     TypeError: 'NoneType' object is not callable
 
-  because ``method_00`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
+  because ``method_00`` is ``attribute_09``, ``attribute_09`` is :ref:`None<what is None?>`, and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
 * I use the def_ keyword to change it from a :ref:`variable (attribute)<what is a variable?>` to a :ref:`method<what is a method?>`
 
@@ -937,7 +936,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: 'AClass' object
                     has no attribute 'method_01'.
                     Did you mean: 'method_00'?
 
@@ -980,7 +979,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: 'AClass' object
                     has no attribute 'method_02'.
                     Did you mean: 'method_00'?
 
@@ -1025,7 +1024,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: 'AClass' object
                     has no attribute 'method_03'.
                     Did you mean: 'method_00'?
 
@@ -1072,7 +1071,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: 'AClass' object
                     has no attribute 'method_04'.
                     Did you mean: 'method_00'?
 
@@ -1120,7 +1119,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: 'AClass' object
                     has no attribute 'method_05'.
                     Did you mean: 'method_00'?
 
@@ -1161,7 +1160,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: 'AClass' object
                     has no attribute 'method_06'.
                     Did you mean: 'method_00'?
 
@@ -1204,7 +1203,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: 'AClass' object
                     has no attribute 'method_07'.
                     Did you mean: 'method_00'?
 
@@ -1249,7 +1248,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: 'AClass' object
                     has no attribute 'method_08'.
                     Did you mean: 'method_00'?
 
@@ -1292,7 +1291,6 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     # Exceptions seen
     # AssertionError
-    # ModuleNotFoundError
     # AttributeError
     # NameError
     # TypeError
@@ -1302,7 +1300,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: 'AClass' object
                     has no attribute 'method_09'.
                     Did you mean: 'method_00'?
 
@@ -1325,7 +1323,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         attribute_09 = attribute_08
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 38
     :emphasize-lines: 10
 
         def method_00(self): return self.attribute_09
@@ -1400,7 +1398,7 @@ All the tests I have run for :ref:`AttributeError<what causes AttributeError?>` 
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
 * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
 
-I still have the problem that the tests all show the correct way to use :ref:`attributes<what is a class attribute?>` I made in ``src/attribute_error/__init__.py``. If someone reads the file_ or runs it, there is no way for them to know how the code relates to :ref:`AttributeError<what causes AttributeError?>` unless they go through the process with me, there has to be a better way.
+I still have the problem that the tests all show the correct way to use :ref:`attributes<what is a class attribute?>` I made in ``src/attribute_error/__init__.py``. If someone reads the file_ or runs it, there is no way for them to know how the code relates to :ref:`AttributeError<what causes AttributeError?>` unless they go through the process with me, :ref:`there has to be a better way<test_catching_attribute_error_in_tests>`.
 
 ----
 

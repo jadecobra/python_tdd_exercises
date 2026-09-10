@@ -127,8 +127,9 @@ TypeError with classes solutions
 
 ----
 
-The code in ``type_error/src/type_error.py`` from :ref:`TypeError with classes`
+The code in ``type_error/src/type_error/__init__.py`` from :ref:`TypeError with classes`
 
 .. literalinclude:: type_error/solutions/type_error_w_classes.py
   :language: python
   :linenos:
+  :caption: type_error/src/type_error/__init__.py
