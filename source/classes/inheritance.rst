@@ -1,6 +1,6 @@
 .. meta::
-  :description: Step-by-step Python TDD tutorial for beginners on "everything is an object": use bare `assert isinstance()` and `assert issubclass()` (plain pytest test functions, no unittest.TestCase) to prove None (special-cased), bool, int, float, str, tuple, list, set and dict all inherit from the base `object` class. Create classes with `pass`, `()` and `(object)`. Distinguish instance (with `()`) vs subclass using TypeError from issubclass(instance). Inspect dunder methods with `dir(object)`. Real errors shown: "AssertionError: assert not True", "TypeError: issubclass() arg 1 must be a class", NameError before defs. Project uses `uv init classes`, tests layout, requirements + `uv add`, pytest-watcher and git. Part of Jacob Itegboje Pumping Python series.
-  :keywords: Jacob Itegboje, Pumping Python, everything is an object, python inherits from object, is None an object python, isinstance issubclass tutorial, bare assert isinstance, class pass parentheses object, instance vs subclass python, TypeError issubclass arg 1 must be a class, AssertionError assert not True, dir(object) dunder, test_is_none_an_object, uv init classes pytest-watcher, WPass WParentheses, python TDD everything is an object, class vs instance parentheses, python object base class dunder methods, None is not a class for issubclass, python test driven development classes object, learning python inheritance for beginners
+  :description: Step-by-step Python TDD tutorial for beginners on "everything is an object": plain pytest functions (no unittest.TestCase) with bare assert isinstance() and assert issubclass() to prove WPass/WParentheses/WObject (class with pass, (), and (object)), None (instance of object but not a class), bool, int, float, str, tuple, list, set and dict all inherit from object. Instance vs subclass is the () after the name; issubclass(WPass(), object) and issubclass(None, object) raise TypeError: issubclass() arg 1 must be a class. dir(object) lists 24 dunders including __init__ (version caution). Real errors: NameError name 'WPass' is not defined, AssertionError assert not True, TypeError issubclass arg 1 must be a class. Project uv init classes, tests/test_classes.py, pytest-watcher, git. Jacob Itegboje Pumping Python.
+  :keywords: Jacob Itegboje, Pumping Python, everything is an object, python inherits from object, is None an object python, isinstance issubclass tutorial, bare assert isinstance, class pass parentheses object, instance vs subclass python, TypeError issubclass arg 1 must be a class, AssertionError assert not True, NameError WPass is not defined, dir(object) dunder __init__, test_is_none_an_object, uv init classes pytest-watcher, WPass WParentheses WObject, python TDD everything is an object, class vs instance parentheses, python object base class dunder methods, None is not a class for issubclass, python test driven development classes object, learning python inheritance for beginners
 
 .. include:: ../links.rst
 
@@ -623,7 +623,7 @@ I can also make a :ref:`class<what is a class?>` with parentheses/brackets ``( )
   .. code-block:: python
     :lineno-start: 4
     :emphasize-lines: 1-2
-    :emphasize-text: ( )
+    :emphasize-text: ()
 
     # class WParentheses: pass
     class WParentheses(): pass
@@ -1244,7 +1244,7 @@ the test passes.
 test_is_a_string_an_object
 *********************************************************************************
 
-I want to test if a string_ (anything in :ref:`quotes`) is a :ref:`subclass of object<how to test if something is an object>`.
+I want to test if a string_ (anything in :ref:`quotes`) is a :ref:`subclass of object<how to test if something is a subclass>`.
 
 ----
 
@@ -1592,7 +1592,7 @@ the test passes.
 
 ----
 
-* I remove the commented lines from :ref:`test_is_a_set_an_object`
+* I remove the commented line from :ref:`test_is_a_set_an_object`
 
   .. code-block:: python
     :lineno-start: 50
@@ -1739,7 +1739,7 @@ An :ref:`instance<how to test if something is an instance>` is a copy of an :ref
 
     TypeError: issubclass() arg 1 must be a class
 
-  because the first argument given in this :ref:`call<how to call a function with input>` to the :ref:`issubclass function<how to test if something is a subclass>`  is an :ref:`instance<how to test if something is an instance>` not a :ref:`class<what is a class?>`.
+  because the first argument given in this :ref:`call<how to call a function with input>` to the :ref:`issubclass function<how to test if something is a subclass>` is an :ref:`instance<how to test if something is an instance>` not a :ref:`class<what is a class?>`.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
@@ -1886,7 +1886,7 @@ the test passes.
 * I remove the commented line from :ref:`test_making_a_class_w_object`
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 20
 
     def test_making_a_class_w_object():
         assert isinstance(WObject(), object)
@@ -1951,7 +1951,7 @@ the test passes.
 
   because ``assert not isinstance(bool, object)`` is not :ref:`True<test_what_is_true>`.
 
-* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_True>`
+* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 31
@@ -2365,7 +2365,7 @@ the test passes.
 
     git commit -am 'test instance vs subclass'
 
-The difference between a :ref:`subclass (child)<how to test if something is a subclass>` I make, and an :ref:`an instance (a copy)<how to test if something is an instance>` is the ``()`` after the name
+The difference between a :ref:`subclass (child)<how to test if something is a subclass>` I make, and an :ref:`instance (a copy)<how to test if something is an instance>` is the ``()`` after the name
 
 .. code-block:: python
 
@@ -2610,8 +2610,6 @@ what is next?
 * :ref:`I know how to make a person with a class<how to make a person with a class>`.
 * :ref:`I know that everything in Python is an object<everything is an object>`.
 
-Would you like to test the other projects with classes?
-
 .. toctree::
   :titlesonly:
   :maxdepth: 1
@@ -2619,6 +2617,8 @@ Would you like to test the other projects with classes?
   ../exceptions/AttributeError/AttributeError_w_classes
   ../exceptions/TypeError/TypeError_w_classes
   unittest
+
+:ref:`Would you like to test AttributeError with classes?<AttributeError with classes>`
 
 ----
 
