@@ -1525,7 +1525,7 @@ the test passes.
 test_is_a_set_an_object
 *********************************************************************************
 
-I want to test if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is an :ref:`object<everything is an object>`.
+I want to test if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is a :ref:`subclass of object<how to test if something is a subclass>`.
 
 ----
 
@@ -1618,7 +1618,7 @@ the test passes.
 test_is_a_dictionary_an_object
 *********************************************************************************
 
-I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by commas) is an :ref:`object<everything is an object>`.
+I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by commas) is a :ref:`subclass of object<how to test if something is a subclass>`.
 
 ----
 
@@ -2377,7 +2377,7 @@ points the ``a_name`` :ref:`variable<what is a variable?>` to ``ClassName``
 
   a_name = ClassName()
 
-points the ``a_name`` :ref:`variable<what is a variable?>` to the result of calling ``ClassName()``. :ref:`An instance (a copy)<how to test if something is an instance>` is the result of calling the :ref:`class<what is a class?>`.
+points the ``a_name`` :ref:`variable<what is a variable?>` to the result of ``ClassName()``.
 
 ----
 
@@ -2483,9 +2483,11 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 
     Enter new runner args: -vv
 
-* I type ``-vv`` then press :kbd:`enter` to show the full difference, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with the full :ref:`list<what is a list?>`.
+* I type :kbd:`-+v+v` then press :kbd:`enter` to show the full difference, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with the full :ref:`list<what is a list?>`.
 
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
+
+  .. caution:: Your list of attributes and methods may be different because of your Python version.
 
   .. code-block:: python
     :lineno-start: 71
@@ -2508,6 +2510,9 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 
 
     # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
 
   - The test passes.
   - The :ref:`__init__ method<the constructor method>` is in the :ref:`list of attributes and methods<test_dir_person_class>`
