@@ -471,7 +471,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   .. code-block:: shell
 
     src.module_00
-    └── src
+    └── src/
         └── module_00.py
 
 - the terminal_ shows ``NO TESTS RAN`` which is confusing since the only way I know the test passed, is because I saw it fail.
@@ -574,7 +574,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   .. code-block:: shell
 
     src.module_01
-    └── src
+    └── src/
         └── module_01.py
 
 * I add an `import statement`_ for ``src.module_02`` to ``tests/test_module_not_found_error.py``
@@ -668,7 +668,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   .. code-block:: shell
 
     src.module_02
-    └── src
+    └── src/
         └── module_02.py
 
 * I add an `import statement`_ for ``src.module_03`` to ``tests/test_module_not_found_error.py``
@@ -761,7 +761,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   .. code-block:: shell
 
     src.module_03
-    └── src
+    └── src/
         └── module_03.py
 
 * I add an `import statement`_ for ``src.module_04`` to ``tests/test_module_not_found_error.py``
@@ -855,7 +855,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   .. code-block:: shell
 
     src.module_04
-    └── src
+    └── src/
         └── module_04.py
 
 * I add an `import statement`_ for ``src.module_05`` to ``tests/test_module_not_found_error.py``
@@ -950,7 +950,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   .. code-block:: shell
 
     src.module_05
-    └── src
+    └── src/
         └── module_05.py
 
 * I add an `import statement`_ for ``src.module_not_found_error`` to ``tests/test_module_not_found_error.py``
@@ -1002,8 +1002,8 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   .. code-block:: shell
 
     src.module_not_found_error
-    └── src
-        └── module_not_found_error
+    └── src/
+        └── module_not_found_error/
             └── __init__.py
 
 * I add an `import statement`_ for ``src.doe`` to ``tests/test_module_not_found_error.py``
@@ -1186,8 +1186,8 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   .. code-block:: shell
 
     src.doe.john
-    └── src
-        └── doe
+    └── src/
+        └── doe/
             └── john.py
 
 * I add an `import statement`_ for ``src.doe.jane`` to ``tests/test_module_not_found_error.py``
@@ -1286,8 +1286,8 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
   .. code-block:: shell
 
     src.doe.jane
-    └── src
-        └── doe
+    └── src/
+        └── doe/
             └── jane.py
 
 * I add an `import statement`_ for ``magic`` to ``tests/test_module_not_found_error.py``
@@ -1384,7 +1384,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file_ that 
 
         python -m unittest
 
-  the test passes because ``import magic`` brings in an :ref:`object (everything is an object)<everything is an object>` for the ``magic.py`` that is in the ``module_not_found_error`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
+  the test passes because ``import magic`` brings in an :ref:`object (everything is an object)<everything is an object>` for the ``magic.py`` file_ that is in the ``module_not_found_error`` folder_ so I can use it in ``tests/test_module_not_found_error.py``.
 
   .. code-block:: shell
 

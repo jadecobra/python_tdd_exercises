@@ -390,7 +390,7 @@ I want to see what comes with the `unittest module`_.
 
 ----
 
-* I add an `import statement`_ for `unittest`_
+* I add an `import statement`_ for `unittest`_ at the top of the file_
 
   .. code-block:: python
     :linenos:
@@ -458,7 +458,7 @@ I want to see what comes with the `unittest module`_.
 
     Enter new runner args: -vv
 
-* I type ``-vv`` then press :kbd:`enter` to show the full difference, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with the full :ref:`list<what is a list?>`.
+* I type :kbd:`-+v+v` then press :kbd:`enter` to show the full difference, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with the full :ref:`list<what is a list?>`.
 
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
