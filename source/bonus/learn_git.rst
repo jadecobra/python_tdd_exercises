@@ -616,7 +616,7 @@ I know
 * :ref:`how to merge changes`
 * :ref:`how to use tags`
 
-:ref:`Click Here to see me make a Python Test Driven Development Environment<how to make a Python Test Driven Development environment>`
+:ref:`Click Here to see me make a Python Test Driven Development Environment<how to make a Python Test Driven Development environment manually>`
 
 ----
 
