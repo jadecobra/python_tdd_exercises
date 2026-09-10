@@ -30,9 +30,9 @@ I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/type_error/tests/test_type_error_w_classes.py
   :language: python
-  :lineno-start: 102
+  :lineno-start: 101
   :caption: type_error/tests/test_type_error.py
-  :lines: 102-
+  :lines: 101-
 
 *********************************************************************************
 questions about TypeError with classes
@@ -1725,7 +1725,7 @@ review
 
 The tests show that
 
-* If I :ref:`call a method<how to call a function>` with an :ref:`instance<how to test if something is an instance>`, it takes the :ref:`instance<how to test if something is an instance>` as the first argument (``self``)
+* If I :ref:`call a method<how to call a function>` with an :ref:`instance<how to test if something is an instance>`, it takes the :ref:`instance<how to test if something is an instance>` as the first argument (``self``).
 * I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if the :ref:`method<what is a method?>` does not use anything that belongs to the :ref:`class<everything is an object>` it is part of.
 * :ref:`There are objects that are not callable<test_type_error_w_the_uncallables>`.
 

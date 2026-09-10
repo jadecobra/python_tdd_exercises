@@ -98,7 +98,6 @@ def test_type_error_w_class_methods():
     src.type_error.AClass().method_08()
     src.type_error.AClass().method_09()
 
-
 def test_type_error_w_the_uncallables():
     src.type_error.none()
     src.type_error.false()
@@ -116,5 +115,4 @@ def test_type_error_w_the_uncallables():
 # AssertionError
 # NameError
 # TypeError
-# ModuleNotFoundError
 # AttributeError

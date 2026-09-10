@@ -123,9 +123,9 @@ The code added to ``type_error/tests/test_type_error.py`` from :ref:`TypeError w
 
 .. literalinclude:: type_error/tests/test_type_error_w_classes.py
   :language: python
-  :lineno-start: 102
+  :lineno-start: 101
   :caption: type_error/tests/test_type_error.py
-  :lines: 102-
+  :lines: 101-
 
 ----
 
@@ -139,6 +139,18 @@ The code added to ``type_error/src/type_error/__init__.py`` from :ref:`TypeError
 
 .. literalinclude:: type_error/solutions/type_error_w_classes.py
   :language: python
-  :lineno-start: 56
+  :linenos:
   :caption: type_error/src/type_error/__init__.py
-  :lines: 56-
+  :lines: 1-13
+
+.. literalinclude:: type_error/solutions/type_error_w_classes.py
+  :language: python
+  :lineno-start: 52
+  :caption: type_error/src/type_error/__init__.py
+  :lines: 52-69
+
+.. literalinclude:: type_error/solutions/type_error_w_classes.py
+  :language: python
+  :lineno-start: 71
+  :caption: type_error/src/type_error/__init__.py
+  :lines: 71-
