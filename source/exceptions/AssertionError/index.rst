@@ -102,11 +102,11 @@ questions about AssertionError
 * :ref:`what causes AssertionError?<what causes AssertionError?>`
 * :ref:`how can I test if something is NOT the same object as None?<test_assertion_error_w_none>`
 * :ref:`how can I test if something is the same object as None?<test_assertion_error_w_none>`
-* :ref:`how can I test if something is the same object as False?<test_assertion_error_w_false>`
 * :ref:`how can I test if something is NOT the same object as False?<test_assertion_error_w_false>`
-* :ref:`how can I test if something is the same object as True?<test_assertion_error_w_true>`
+* :ref:`how can I test if something is the same object as False?<test_assertion_error_w_false>`
 * :ref:`how can I test if something is NOT the same object as True?<test_assertion_error_w_true>`
-* :ref:`how can I test if two things are not equal?<test_assertion_error_w_equality>`
+* :ref:`how can I test if something is the same object as True?<test_assertion_error_w_true>`
+* :ref:`how can I test if two things are NOT equal?<test_assertion_error_w_equality>`
 * :ref:`how can I test if two things are equal?<test_assertion_error_w_equality>`
 * :ref:`what is the difference between is and equal<test_assertion_error_w_is_vs_equal>`
 

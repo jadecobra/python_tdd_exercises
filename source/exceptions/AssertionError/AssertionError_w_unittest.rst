@@ -835,14 +835,14 @@ the test is green again.
 * I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(0.0, None)``
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 64
     :emphasize-lines: 2-3
 
-            assert 0.0 is not None
+            assert_is_not_none(0.0)
             # self.assertIs(0.0, None)
             self.assertIsNot(0.0, None)
 
-            assert '' is not None
+            assert_is_not_none('')
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -853,14 +853,14 @@ the test is green again.
 * I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``('', None)``
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 68
     :emphasize-lines: 2-3
 
-            assert '' is not None
+            assert_is_not_none('')
             # self.assertIs('', None)
             self.assertIsNot('', None)
 
-            assert () is not None
+            assert_is_not_none(())
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -871,15 +871,14 @@ the test is green again.
 * I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``((), None)``
 
   .. code-block:: python
-    :lineno-start: 48
+    :lineno-start: 72
     :emphasize-lines: 2-3
 
-            assert () is not None
+            assert_is_not_none(())
             # self.assertIs((), None)
             self.assertIsNot((), None)
 
-            assert [] is not None
-
+            assert_is_not_none([])
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
