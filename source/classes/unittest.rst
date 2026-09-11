@@ -462,6 +462,8 @@ I want to see what comes with the `unittest module`_.
 
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
+  .. caution:: Your list of attributes and methods may be different depending on your Python version
+
   .. code-block:: python
     :lineno-start: 4
     :emphasize-lines: 3-19
@@ -491,11 +493,10 @@ I want to see what comes with the `unittest module`_.
 
     # Exceptions seen
 
-  the test passes because when ``import unittest`` runs, Python_ brings in an :ref:`object<everything is an object>`  (everything in Python_ is an object) for the `unittest module`_ from `The Python Standard Library`_ so I can use it in ``test_unittest.py`` as ``unittest``.
+  the test passes because when ``import unittest`` runs, Python_ brings in an :ref:`object<everything is an object>` for the `unittest module`_ from `The Python Standard Library`_ so I can use it in ``test_unittest.py`` as ``unittest``.
 
   This means that there is a file_ or folder_ on the computer named ``unittest`` that got added when I installed Python_.
 
-  .. caution:: Your list of attributes and methods may be different depending on your Python version
 
 * I open a new terminal_ then make sure I am in the ``unittest`` folder_
 
@@ -616,7 +617,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   .. code-block:: python
     :lineno-start: 4
     :emphasize-lines: 3-48
-    :emphasize-text: assertIsNot assertIs assertIsInstance assertNotIsInstance assertIsSubclass assertNotIsSubclass assertEqual assertNotEqual
+    :emphasize-text: __init__ assertRaisesRegex assertRaises assertEqual assertNotEqual assertFalse assertTrue assertIsNot assertIs assertNotIs Instance Subclass None maxDiff subTest
 
     def test_dir_unittest_testcase():
         reality = dir(unittest.TestCase)
@@ -767,10 +768,10 @@ test_assert_is_not
     .. code-block:: shell
 
       unittest.TestCase.assertIsNot
-      unittest
-      └── class TestCase:
-          └── def assertIsNot(self, expr1, expr2):
-              └── return something
+      └── unittest
+          └── class TestCase:
+              └── def assertIsNot(self, expr1, expr2):
+                  └── return something
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
@@ -795,7 +796,7 @@ test_assert_is_not
 
 ----
 
-* I change the call to use :ref:`an instance<how to test if something is an instance>` instead of a :ref:`class<everything is an object>`
+* I change the :ref:`call<how to call a function with input>` to use :ref:`an instance<how to test if something is an instance>` instead of a :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 78
@@ -816,7 +817,7 @@ test_assert_is_not
                2 required positional arguments:
                'expr1' and 'expr2'
 
-  I no longer need to provide ``self`` because it is the :ref:`instance of the class<how to test if something is an instance>` (``unittest.TestCase()``)
+  I no longer need to provide ``self`` because it is the :ref:`instance of the class<how to test if something is an instance>` (``unittest.TestCase()``).
 
 * I add two things to the :ref:`call<how to call a function with input>` to `unittest.TestCase.assertIsNot`_
 
@@ -897,7 +898,7 @@ test_assert_is_not
         # unittest.TestCase.assertIsNot()
         # unittest.TestCase().assertIsNot()
         # unittest.TestCase().assertIsNot(None, None)
-        # assert None is not the same object as None
+        # assert None is not None
         assert None is not False
         unittest.TestCase().assertIsNot(None, False)
 
@@ -931,10 +932,10 @@ I imagine Python_ follows this path when `unittest.TestCase.assertIsNot`_ is cal
 .. code-block:: shell
 
   unittest.TestCase.assertIsNot
-  unittest
-  └── class TestCase:
-      └── def assertIsNot(self, expr1, expr2):
-          └── assert expr1 is not expr2
+  └── unittest
+      └── class TestCase:
+          └── def assertIsNot(self, expr1, expr2):
+              └── assert expr1 is not expr2
 
 Compare the error message for ``assertIsNot(None, None)`` with the one for ``assert None is not None``
 
@@ -1138,10 +1139,10 @@ I imagine Python_ follows this path when `unittest.TestCase.assertIs`_ is called
 .. code-block:: shell
 
   unittest.TestCase.assertIs
-  unittest
-  └── class TestCase:
-      └── def assertIs(self, expr1, expr2):
-          └── assert expr1 is expr2
+  └── unittest
+      └── class TestCase:
+          └── def assertIs(self, expr1, expr2):
+              └── assert expr1 is expr2
 
 Compare the error message for ``assertIs(False, True)`` with the one for ``assert False is True``
 
@@ -1316,10 +1317,10 @@ I imagine Python_ follows this path when `unittest.TestCase.assertNotEqual`_ is 
 .. code-block:: shell
 
   unittest.TestCase.assertNotEqual
-  unittest
-  └── class TestCase:
-      └── def assertNotEqual(self, first, second):
-          └── assert first != second
+  └── unittest
+      └── class TestCase:
+          └── def assertNotEqual(self, first, second):
+              └── assert first != second
 
 Compare the error message for ``assertNotEqual(True, True)`` with the one for ``assert True != True``
 
@@ -1443,7 +1444,7 @@ the test passes.
 
   the test passes.
 
-* I remove the commented lines and assertEqual_ from the TODO list
+* I remove assertEqual_ from the TODO list
 
   .. code-block:: python
     :lineno-start: 108
@@ -1467,10 +1468,10 @@ I imagine Python_ follows this path when `unittest.TestCase.assertEqual`_ is cal
 .. code-block:: shell
 
   unittest.TestCase.assertEqual
-  unittest
-  └── class TestCase:
-      └── def assertEqual(self, first, second):
-          └── assert first is second
+  └── unittest
+      └── class TestCase:
+          └── def assertEqual(self, first, second):
+              └── assert first is second
 
 Compare the error message for ``assertEqual(0.0, '0.0')`` with the one for ``assert 0.0 == '0.0'``
 
@@ -1687,10 +1688,10 @@ I imagine Python_ follows this path when `unittest.TestCase.assertNotIsInstance`
 .. code-block:: shell
 
   unittest.TestCase.assertNotIsInstance
-  unittest
-  └── class TestCase:
-      └── def assertNotIsInstance(self, obj, cls):
-          └── assert isinstance(obj, cls)
+  └── unittest
+      └── class TestCase:
+          └── def assertNotIsInstance(self, obj, cls):
+              └── assert isinstance(obj, cls)
 
 Compare the error message for ``unittest.TestCase().assertNotIsInstance(unittest.TestCase(), unittest.TestCase)`` with the one for ``assert not isinstance(unittest.TestCase(), unittest.TestCase)``
 
