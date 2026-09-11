@@ -672,7 +672,7 @@ For example, if I have people fill a form and I want a test for when they leave 
 
     assert 'I am' + ' alive' == 'I am alive'
 
-    # None is not the same object as None
+    # None is not None
     assert None is not None
 
     # Exceptions seen
@@ -699,8 +699,8 @@ I change the statement to make it :ref:`True<test_what_is_true>`
   :lineno-start: 7
   :emphasize-lines: 2-3
 
-    # None is not the same object as None
-    # assert None is not the same object as None
+    # None is not None
+    # assert None is not None
     assert None is None
 
     # Exceptions seen
@@ -721,8 +721,8 @@ the test passes.
     :lineno-start: 7
     :emphasize-lines: 6-7
 
-    # None is not the same object as None
-    # assert None is not the same object as None
+    # None is not None
+    # assert None is not None
     assert None is None
 
 
@@ -740,8 +740,8 @@ the test passes.
     :lineno-start: 7
     :emphasize-lines: 5
 
-    # None is not the same object as None
-    # assert None is not the same object as None
+    # None is not None
+    # assert None is not None
     assert None is None
 
     assert False is None
@@ -761,8 +761,8 @@ the test passes.
     :lineno-start: 7
     :emphasize-lines: 5-6
 
-    # None is not the same object as None
-    # assert None is not the same object as None
+    # None is not None
+    # assert None is not None
     assert None is None
 
     # assert False is None
