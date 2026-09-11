@@ -3234,7 +3234,8 @@ Things can be equal without being the same exact :ref:`object<everything is an o
 
 ----
 
-* I add statements to test this
+* I go back to the terminal_ where the tests are running
+* I add statements to test is versus equal
 
   .. code-block:: python
     :lineno-start: 86
@@ -3405,6 +3406,8 @@ test_assertion_error_w_is_vs_equal
 
 ----
 
+* I go back to the terminal_ where the tests are running
+
 * I add a :ref:`function<what is a function?>` for the ``# test AssertionError with is vs equal`` group of :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
@@ -3535,6 +3538,8 @@ test_assertion_error_w_equality
 
 ----
 
+* I go back to the terminal_ where the tests are running
+
 * I add a :ref:`function<what is a function?>` for the ``# test AssertionError with equality`` group of :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
@@ -3645,6 +3650,8 @@ test_assertion_error_w_true
 =================================================================================
 
 ----
+
+* I go back to the terminal_ where the tests are running
 
 * I add a :ref:`function<what is a function?>` for the ``# test AssertionError with True`` group of :ref:`assertions<what is an assertion?>`
 
@@ -3764,6 +3771,8 @@ test_assertion_error_w_false
 =================================================================================
 
 ----
+
+* I go back to the terminal_ where the tests are running
 
 * I add a :ref:`function<what is a function?>` for the ``# test AssertionError with False`` group of :ref:`assertions<what is an assertion?>`
 
@@ -3885,6 +3894,8 @@ test_assertion_error_w_none
 
 ----
 
+* I go back to the terminal_ where the tests are running
+
 * I add a :ref:`function<what is a function?>` for the ``# test AssertionError with None`` group of :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
@@ -4004,6 +4015,8 @@ test_assert_keyword
 
 ----
 
+* I go back to the terminal_ where the tests are running
+
 * I add a :ref:`function<what is a function?>` for the ``# test assert keyword``  group of :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
@@ -4106,6 +4119,8 @@ pytest only calls the function if the name starts with test
 =================================================================================
 
 ----
+
+* I go back to the terminal_ where the tests are running
 
 * I add a :ref:`function<what is a function?>` to show that pytest_ only :ref:`calls the function<how to call a function with input>` if the name starts with ``test``
 
