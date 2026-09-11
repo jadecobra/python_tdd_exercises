@@ -21,9 +21,46 @@ preview
 I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
+  :caption: assertion_error/tests/test_assertion_error.py
   :language: python
   :linenos:
+  :lines: 1-12
+
+.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
   :caption: assertion_error/tests/test_assertion_error.py
+  :language: python
+  :lineno-start: 14
+  :lines: 14-28
+
+.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
+  :caption: assertion_error/tests/test_assertion_error.py
+  :language: python
+  :lineno-start: 30
+  :lines: 30-59
+
+.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
+  :caption: assertion_error/tests/test_assertion_error.py
+  :language: python
+  :lineno-start: 61
+  :lines: 61-90
+
+.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
+  :caption: assertion_error/tests/test_assertion_error.py
+  :language: python
+  :lineno-start: 92
+  :lines: 92-121
+
+.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
+  :caption: assertion_error/tests/test_assertion_error.py
+  :language: python
+  :lineno-start: 123
+  :lines: 123-140
+
+.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
+  :caption: assertion_error/tests/test_assertion_error.py
+  :language: python
+  :lineno-start: 142
+  :lines: 142-158
 
 ----
 
@@ -39,7 +76,7 @@ open the project
 
     cd assertion_error
 
-* I open ``test_assertion_error.py``
+* I open ``test_assertion_error.py`` from the ``tests`` folder_
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -71,8 +108,12 @@ add TestAssertionError class
 * I add a :ref:`class<everything is an object>` named ``AssertionError`` with a :ref:`method<what is a method?>` for the :ref:`first failing test<test_failure>` to ``test_assertion_error.py``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1, 3-4
+    :lineno-start: 21
+    :emphasize-lines: 5, 7-8
+
+    def assert_equal(x, y):
+        assert x == y
+
 
     class AssertionError(object):
 
@@ -87,11 +128,17 @@ add TestAssertionError class
 * I change the name of the :ref:`class<everything is an object>` to ``TestAssertionError``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-2
+    :lineno-start: 21
+    :emphasize-lines: 5-6
+
+    def assert_equal(x, y):
+        assert x == y
+
 
     # class AssertionError(object):
     class TestAssertionError(object):
+
+        def test_failure(self):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -103,8 +150,8 @@ add TestAssertionError class
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
-    :lineno-start: 141
-    :emphasize-lines: 6
+    :lineno-start: 142
+    :emphasize-lines: 7
     :emphasize-text: AttributeError
 
     # None is None and equal to None
@@ -112,6 +159,7 @@ add TestAssertionError class
 
     # Exceptions seen
     # AssertionError
+    # IndentationError
     # AttributeError
 
 ----
@@ -125,12 +173,18 @@ add TestAssertionError class
 * I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<everything is an object>` of ``TestAssertionError``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2-3
+    :lineno-start: 21
+    :emphasize-lines: 6-7
+
+    def assert_equal(x, y):
+        assert x == y
+
 
     # class AssertionError(object):
     # class TestAssertionError(object):
     class TestAssertionError(unittest.TestCase):
+
+        def test_failure(self):
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
@@ -142,12 +196,13 @@ add TestAssertionError class
 * I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
-    :lineno-start: 145
-    :emphasize-lines: 4
+    :lineno-start: 146
+    :emphasize-lines: 5
     :emphasize-text: NameError
 
     # Exceptions seen
     # AssertionError
+    # IndentationError
     # AttributeError
     # NameError
 
@@ -160,7 +215,7 @@ add TestAssertionError class
     import unittest
 
 
-    # class AssertionError(object):
+    def assert_is_not(x, y):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -168,15 +223,19 @@ add TestAssertionError class
 
     AssertionError: True != False
 
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
+* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>` in :ref:`test_failure` in the :ref:`TestAssertionError class<add TestAssertionError class>`
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 2-3
+    :lineno-start: 28
+    :emphasize-lines: 6-7
+
+    # class AssertionError(object):
+    # class TestAssertionError(object):
+    class TestAssertionError(unittest.TestCase):
 
         def test_failure(self):
             # self.assertEqual(True, False)
-            self.assertEqual(False, False)
+            self.assertEqual(True, True)
 
 
     def test_assert_keyword():
@@ -191,18 +250,19 @@ add TestAssertionError class
 
 ----
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`TestAssertionError<add TestAssertionError class>`
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 24
 
-    import unittest
+    def assert_equal(x, y):
+        assert x == y
 
 
     class TestAssertionError(unittest.TestCase):
 
         def test_failure(self):
-            self.assertEqual(False, False)
+            self.assertEqual(True, True)
 
 
     def test_assert_keyword():
@@ -235,21 +295,20 @@ test_assert_keyword with unittest
 ----
 
 * I go back to the terminal_ where the tests are running
+* I remove :ref:`test_failure`
 
 * I move :ref:`test_assert_keyword` to make it a :ref:`method<what is a method?>` of the :ref:`TestAssertionError class<add TestAssertionError class>` and replace ``test_failure``
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 3-4, 6, 8
+    :lineno-start: 28
+    :emphasize-lines: 3-6
 
     class TestAssertionError(unittest.TestCase):
 
         def test_assert_keyword():
-            assert 1 + 1 == 2
-
-            assert '1' + '1' == '11'
-
-            assert 'I am' + ' alive' == 'I am alive'
+            assert_equal(1+1, 2)
+            assert_equal('1'+'1', '11')
+            assert_equal('I am'+' alive', 'I am alive')
 
 
     def test_assertion_error_w_none():
@@ -267,12 +326,13 @@ test_assert_keyword with unittest
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
   .. code-block:: python
-    :lineno-start: 142
-    :emphasize-lines: 5
+    :lineno-start: 143
+    :emphasize-lines: 6
     :emphasize-text: TypeError
 
     # Exceptions seen
     # AssertionError
+    # IndentationError
     # AttributeError
     # NameError
     # TypeError
@@ -288,13 +348,14 @@ test_assert_keyword with unittest
 I add ``self`` to the parentheses of :ref:`test_assert_keyword`
 
 .. code-block:: python
-  :lineno-start: 4
+  :lineno-start: 28
   :emphasize-lines: 3-4
 
   class TestAssertionError(unittest.TestCase):
 
       # def test_assert_keyword():
       def test_assert_keyword(self):
+          assert_equal(1+1, 2)
 
 the test is green again.
 
@@ -309,18 +370,18 @@ the test is green again.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the three :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 6
+    :lineno-start: 28
     :emphasize-lines: 4, 7, 10
 
         # def test_assert_keyword():
         def test_assert_keyword(self):
-            assert 1 + 1 == 2
+            assert_equal(1+1, 2)
             self.assertNotEqual(1+1, 2)
 
-            assert '1' + '1' == '11'
+            assert_equal('1'+'1', '11')
             self.assertNotEqual('1'+'1', '11')
 
-            assert 'I am' + ' alive' == 'I am alive'
+            assert_equal('I am'+' alive', 'I am alive')
             self.assertNotEqual('I am'+' alive', 'I am alive')
 
 
@@ -341,12 +402,12 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``(1+1, 2)``
 
   .. code-block:: python
-    :lineno-start: 6
+    :lineno-start: 30
     :emphasize-lines: 4-5
 
         # def test_assert_keyword():
         def test_assert_keyword(self):
-            assert 1 + 1 == 2
+            assert_equal(1+1, 2)
             # self.assertNotEqual(1+1, 2)
             self.assertEqual(1+1, 2)
 
@@ -359,18 +420,20 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``('1'+'1', '11')``
 
   .. code-block:: python
-    :lineno-start: 6
+    :lineno-start: 30
     :emphasize-lines: 8-9
 
         # def test_assert_keyword():
         def test_assert_keyword(self):
-            assert 1 + 1 == 2
+            assert_equal(1+1, 2)
             # self.assertNotEqual(1+1, 2)
             self.assertEqual(1+1, 2)
 
-            assert '1' + '1' == '11'
+            assert_equal('1'+'1', '11')
             # self.assertNotEqual('1'+'1', '11')
             self.assertEqual('1'+'1', '11')
+
+            assert_equal('I am'+' alive', 'I am alive')
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -381,20 +444,10 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``('I am'+' alive', 'I am alive')``
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 12-13
+    :lineno-start: 40
+    :emphasize-lines: 2-3
 
-        # def test_assert_keyword():
-        def test_assert_keyword(self):
-            assert 1 + 1 == 2
-            # self.assertNotEqual(1+1, 2)
-            self.assertEqual(1+1, 2)
-
-            assert '1' + '1' == '11'
-            # self.assertNotEqual('1'+'1', '11')
-            self.assertEqual('1'+'1', '11')
-
-            assert 'I am' + ' alive' == 'I am alive'
+            assert_equal('I am'+' alive', 'I am alive')
             # self.assertNotEqual('I am'+' alive', 'I am alive')
             self.assertEqual('I am'+' alive', 'I am alive')
 
@@ -408,16 +461,14 @@ the test is green again.
 * I add :ref:`variables<what is a variable?>` for ``'I am' + ' alive'`` and ``'I am alive'``
 
   .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 5-6
+    :lineno-start: 38
+    :emphasize-lines: 3-4
 
-            assert '1' + '1' == '11'
-            # self.assertNotEqual('1'+'1', '11')
             self.assertEqual('1'+'1', '11')
 
             reality = 'I am' + ' alive'
             my_expectation = 'I am alive'
-            assert 'I am' + ' alive' == 'I am alive'
+            assert_equal('I am'+' alive', 'I am alive')
             # self.assertNotEqual('I am'+' alive', 'I am alive')
             self.assertEqual('I am'+' alive', 'I am alive')
 
@@ -427,13 +478,13 @@ the test is green again.
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'I am' + ' alive'`` and ``'I am alive'``
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 40
     :emphasize-lines: 3-4, 6-7
 
             reality = 'I am' + ' alive'
             my_expectation = 'I am alive'
-            # assert 'I am' + ' alive' == 'I am alive'
-            assert reality == my_expectation
+            # assert_equal('I am'+' alive', 'I am alive')
+            assert_equal(reality, my_expectation)
             # self.assertNotEqual('I am'+' alive', 'I am alive')
             # self.assertEqual('I am'+' alive', 'I am alive')
             self.assertEqual(reality, my_expectation)
@@ -446,48 +497,50 @@ the test is green again.
 * I add :ref:`variables<what is a variable?>` for ``'1' + '1'`` and ``'11'``
 
   .. code-block:: python
-    :lineno-start: 6
+    :lineno-start: 30
     :emphasize-lines: 7-8
 
         # def test_assert_keyword():
         def test_assert_keyword(self):
-            assert 1 + 1 == 2
+            assert_equal(1+1, 2)
             # self.assertNotEqual(1+1, 2)
             self.assertEqual(1+1, 2)
 
             reality = '1' + '1'
             my_expectation = '11'
-            assert '1' + '1' == '11'
+            assert_equal('1'+'1', '11')
             # self.assertNotEqual('1'+'1', '11')
             self.assertEqual('1'+'1', '11')
 
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'1' + '1'`` and ``'11'``
 
   .. code-block:: python
-    :lineno-start: 12
+    :lineno-start: 36
     :emphasize-lines: 3-4, 6-7
 
             reality = '1' + '1'
             my_expectation = '11'
-            # assert '1' + '1' == '11'
-            assert reality == my_expectation
+            # assert_equal('1'+'1', '11')
+            assert_equal(reality, my_expectation)
             # self.assertNotEqual('1'+'1', '11')
             # self.assertEqual('1'+'1', '11')
             self.assertEqual(reality, my_expectation)
+
+            reality = 'I am' + ' alive'
 
   still green.
 
 * I add :ref:`variables<what is a variable?>` for ``1 + 1`` and ``2``
 
   .. code-block:: python
-    :lineno-start: 6
+    :lineno-start: 30
     :emphasize-lines: 3-4
 
         # def test_assert_keyword():
         def test_assert_keyword(self):
             reality = 1 + 1
             my_expectation = 2
-            assert 1 + 1 == 2
+            assert_equal(1+1, 2)
             # self.assertNotEqual(1+1, 2)
             self.assertEqual(1+1, 2)
 
@@ -501,35 +554,37 @@ the test is green again.
         def test_assert_keyword(self):
             reality = 1 + 1
             my_expectation = 2
-            # assert 1 + 1 == 2
-            assert reality == my_expectation
+            # assert_equal(1+1, 2)
+            assert_equal(reality, my_expectation)
             # self.assertNotEqual(1+1, 2)
             # self.assertEqual(1+1, 2)
             self.assertEqual(reality, my_expectation)
 
+            reality = '1' + '1'
+
   green.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_assert_keyword`
 
   .. code-block:: python
-    :lineno-start: 4
+    :lineno-start: 28
 
     class TestAssertionError(unittest.TestCase):
 
         def test_assert_keyword(self):
             reality = 1 + 1
             my_expectation = 2
-            assert reality == my_expectation
+            assert_equal(reality, my_expectation)
             self.assertEqual(reality, my_expectation)
 
             reality = '1' + '1'
             my_expectation = '11'
-            assert reality == my_expectation
+            assert_equal(reality, my_expectation)
             self.assertEqual(reality, my_expectation)
 
             reality = 'I am' + ' alive'
             my_expectation = 'I am alive'
-            assert reality == my_expectation
+            assert_equal(reality, my_expectation)
             self.assertEqual(reality, my_expectation)
 
 

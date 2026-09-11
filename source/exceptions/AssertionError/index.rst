@@ -3172,6 +3172,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
     # None is not the same object as False
     # None is None and equal to None
 
+
     # Exceptions seen
     # AssertionError
 
