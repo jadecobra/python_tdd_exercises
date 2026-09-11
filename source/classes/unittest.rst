@@ -4400,15 +4400,16 @@ review
 
 I can write tests with the `unittest.TestCase class`_ which comes with `assert methods`_ I can use in place of basic :ref:`assert statements<what is an assertion?>`:
 
-* :ref:`assertIsNot<test_assert_is_not>`
-* :ref:`assertIs<test_assert_is>`
-* :ref:`assertNotEqual<test_assert_not_equal>`
-* :ref:`assertEqual<test_assert_equal>`
-* :ref:`assertNotIsInstance<test_assert_not_is_instance>`
-* :ref:`assertIsInstance<test_assert_is_instance>`
-* :ref:`assertNotIsSubclass<test_assert_not_is_subclass>`
-* :ref:`assertIsSubclass<test_assert_is_subclass>`
-
+======================================================= ===============================
+:ref:`assertIsNot<test_assert_is_not>`                  ``assert X is not Y``
+:ref:`assertIs<test_assert_is>`                         ``assert X is Y``
+:ref:`assertNotEqual<test_assert_not_equal>`            ``assert X != Y``
+:ref:`assertEqual<test_assert_equal>`                   ``assert X == Y``
+:ref:`assertNotIsInstance<test_assert_not_is_instance>` ``assert not isinstance(X, Y)``
+:ref:`assertIsInstance<test_assert_is_instance>`        ``assert isinstance(X, Y)``
+:ref:`assertNotIsSubclass<test_assert_not_is_subclass>` ``assert not issubclass(X, Y)``
+:ref:`assertIsSubclass<test_assert_is_subclass>`        ``assert issubclass(X, Y)``
+======================================================= ===============================
 
 :ref:`How many questions can you answer about unittest?<questions about unittest>`
 
@@ -4455,7 +4456,7 @@ Would you like to test the other projects with unittest?
   ../how_to/make_person/make_person_w_unittest
   ../how_to/telephone/telephone_w_unittest
 
-:ref:`Would you like to test the assertion_error project with unittest<test AssertionError with unittest>`
+:ref:`Would you like to test the assertion_error project with unittest?<test AssertionError with unittest>`
 
 ----
 
