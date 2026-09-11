@@ -5,8 +5,34 @@ another way to write tests: tests
 The code in ``unittest/tests/test_unittest.py`` from :ref:`another way to write tests`
 
 .. literalinclude:: tests/test_unittest.py
+  :caption: unittest/tests/test_unittest.py
   :language: python
   :linenos:
+  :lines: 1-26
+
+.. literalinclude:: tests/test_unittest.py
+  :caption: unittest/tests/test_unittest.py
+  :language: python
+  :lineno-start: 28
+  :lines: 28-78
+
+.. literalinclude:: tests/test_unittest.py
+  :caption: unittest/tests/test_unittest.py
+  :language: python
+  :lineno-start: 80
+  :lines: 80-94
+
+.. literalinclude:: tests/test_unittest.py
+  :caption: unittest/tests/test_unittest.py
+  :language: python
+  :lineno-start: 96
+  :lines: 96-114
+
+.. literalinclude:: tests/test_unittest.py
+  :caption: unittest/tests/test_unittest.py
+  :language: python
+  :lineno-start: 116
+  :lines: 116-
 
 ----
 

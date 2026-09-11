@@ -894,7 +894,7 @@ the test passes.
 
 ----
 
-* I add a new failing line with :ref:`assertIsNotNone<another way to test if something is NOT None>`
+* I add a new failing line with :ref:`assertIsNone<another way to test if something is None>`
 
   .. code-block:: python
     :lineno-start: 17

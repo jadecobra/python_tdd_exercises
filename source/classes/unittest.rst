@@ -1,6 +1,6 @@
 .. meta::
-  :description: Another way to write tests in Python TDD: use the unittest.TestCase class (from the standard library) and its built-in assert methods as alternatives to bare `assert` statements. Step-by-step RED/GREEN/REFACTOR on the "unittest" project (uv init, mkdir tests, pytest-watcher): inspect dir(unittest) and dir(unittest.TestCase), demonstrate two ways for each of assertIsNot ("X is not Y"), assertIs, assertNotEqual, assertEqual, assertNotIsInstance / isinstance, assertIsInstance, assertNotIsSubclass / issubclass, assertIsSubclass. Covers calling on the class, on an instance, refactoring through TOOLBOX class attr and @staticmethod to self. methods inside TestCase subclass. Exact errors reproduced: "unexpectedly identical: None", "assert False is True", TypeError missing arguments for assertIsNot(), AssertionError from dir lists. Part of Jacob Itegboje Pumping Python TDD series for beginners.
-  :keywords: Jacob Itegboje, Pumping Python, another way to write tests, unittest.TestCase, unittest assert methods, assertIsNot, assertIs, assertNotEqual, assertEqual, assertNotIsInstance, assertIsInstance, assertNotIsSubclass, assertIsSubclass, two ways to test, bare assert vs self.assert, dir(unittest), TestCase dir, unexpectedly identical: None, uv init unittest pytest-watcher, TestCase subclass, TOOLBOX refactor, self. methods, python TDD unittest, standard library testing, is vs == vs assertIs, isinstance issubclass unittest, python beginner unittest tutorial
+  :description: Another way to write tests in Python TDD: the unittest.TestCase class from the standard library and its assert methods as alternatives to bare assert. RED/GREEN/REFACTOR on the unittest project (uv init, tests package, pytest-watcher): dir(unittest) and dir(unittest.TestCase); two ways each for assertIsNot (X is not Y), assertIs, assertNotEqual, assertEqual, assertNotIsInstance / isinstance, assertIsInstance, assertNotIsSubclass / issubclass, assertIsSubclass (Python 3.14+). Path from class call (TypeError missing self) to instance call, then TOOLBOX, TestUnittest with @staticmethod, then subclass unittest.TestCase and self.assert*. Errors shown: unexpectedly identical: None, False is not True, True == True, 0.0 != '0.0', is an instance of TestCase, is not a class, TypeError missing arguments, AttributeError after dropping TOOLBOX. Jacob Itegboje Pumping Python TDD.
+  :keywords: Jacob Itegboje, Pumping Python, another way to write tests, unittest.TestCase, unittest assert methods, assertIsNot, assertIs, assertNotEqual, assertEqual, assertNotIsInstance, assertIsInstance, assertNotIsSubclass, assertIsSubclass, two ways to test, bare assert vs self.assert, dir(unittest), TestCase dir, unexpectedly identical None, uv init unittest pytest-watcher, TestUnittest subclass, TOOLBOX refactor, staticmethod, self.assertEqual, python TDD unittest, is vs == vs assertIs, isinstance issubclass unittest, Python 3.14 assertIsSubclass, AttributeError TOOLBOX, python beginner unittest tutorial
 
 .. include:: ../links.rst
 
@@ -93,10 +93,10 @@ questions about unittest
 * :ref:`What are two ways to test if something is something?<test_assert_is>`
 * :ref:`What are two ways to test if two things are not equal?<test_assert_not_equal>`
 * :ref:`What are two ways to test if two things are equal?<test_assert_equal>`
-* :ref:`What are two ways to test if something is not an instance<test_assert_not_is_instance>`
-* :ref:`What are two ways to test if something is an instance<test_assert_is_instance>`
-* :ref:`What are two ways to test if something is not a subclass<test_assert_not_is_subclass>`
-* :ref:`What are two ways to test if something is a subclass<test_assert_is_subclass>`
+* :ref:`What are two ways to test if something is not an instance?<test_assert_not_is_instance>`
+* :ref:`What are two ways to test if something is an instance?<test_assert_is_instance>`
+* :ref:`What are two ways to test if something is not a subclass?<test_assert_not_is_subclass>`
+* :ref:`What are two ways to test if something is a subclass?<test_assert_is_subclass>`
 
 ----
 
@@ -974,7 +974,7 @@ test_assert_is
         # unittest.TestCase.assertIsNot()
         # unittest.TestCase().assertIsNot()
         # unittest.TestCase().assertIsNot(None, None)
-        # assert None is not the same object as None
+        # assert None is not None
         assert None is not False
         unittest.TestCase().assertIsNot(None, False)
 
@@ -1196,7 +1196,7 @@ test_assert_not_equal
 
     TypeError: TestCase.assertNotEqual() missing
                2 required positional arguments:
-               'first', and 'second'
+               'first' and 'second'
 
   the :ref:`definition<how to make a function that takes input>` of the `assertNotEqual method`_  of the `TestCase class`_  of the unittest_ library (``unittest.TestCase.assertNotEqual``) has two required :ref:`positional arguments<test_positional_arguments>` (``first`` and ``second``).
 
@@ -1471,7 +1471,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertEqual`_ is :re
   └── unittest
       └── class TestCase:
           └── def assertEqual(self, first, second):
-              └── assert first is second
+              └── assert first == second
 
 Compare the error message for ``assertEqual(0.0, '0.0')`` with the one for ``assert 0.0 == '0.0'``
 
@@ -1525,7 +1525,7 @@ test_assert_not_is_instance
                3 required positional arguments:
                'self', 'obj', and 'cls'
 
-  - The :ref:`definition<how to make a function that takes input>` of the `assertNotIsInstance method`_  of the `TestCase class`_  of the unittest_ library (``unittest.TestCase.assertIsNot``) has three required :ref:`positional arguments<test_positional_arguments>` (``self``, ``obj`` and ``cls``)
+  - The :ref:`definition<how to make a function that takes input>` of the `assertNotIsInstance method`_  of the `TestCase class`_  of the unittest_ library (``unittest.TestCase.assertNotIsInstance``) has three required :ref:`positional arguments<test_positional_arguments>` (``self``, ``obj`` and ``cls``)
   - A :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
   - ``obj`` is for the :ref:`instance<how to test if something is an instance>` being tested.
   - ``cls`` is for the :ref:`class<everything is an object>`.
@@ -1691,7 +1691,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertNotIsInstance`
   └── unittest
       └── class TestCase:
           └── def assertNotIsInstance(self, obj, cls):
-              └── assert isinstance(obj, cls)
+              └── assert not isinstance(obj, cls)
 
 Compare the error message for ``unittest.TestCase().assertNotIsInstance(unittest.TestCase(), unittest.TestCase)`` with the one for ``assert not isinstance(unittest.TestCase(), unittest.TestCase)``
 
@@ -1965,7 +1965,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertIsInstance`_ i
   └── unittest
       └── class TestCase:
           └── def assertIsInstance(self, obj, cls):
-              └── assert not isinstance(obj, cls)
+              └── assert isinstance(obj, cls)
 
 Compare the error message for ``unittest.TestCase().assertIsInstance(unittest.TestCase, unittest.TestCase)`` with the one for ``assert isinstance(unittest.TestCase, unittest.TestCase)``
 
@@ -2022,7 +2022,7 @@ test_assert_not_is_subclass
 
     TypeError: TestCase.assertNotIsSubclass() missing
                2 required positional arguments:
-               'cls', and 'superclass'
+               'cls' and 'superclass'
 
   - ``cls`` is for the :ref:`subclass<how to test if something is a subclass>` being tested.
   - ``superclass`` is for the :ref:`parent class<everything is an object>` of the :ref:`subclass<how to test if something is a subclass>` being tested.
@@ -2445,7 +2445,7 @@ I imagine Python_ follows this path when `unittest.TestCase.assertIsSubclass`_ i
   └── unittest
       └── class TestCase:
           └── def assertIsSubclass(self, cls, superclass):
-              └── assert not issubclass(cls, superclass)
+              └── assert issubclass(cls, superclass)
 
 Compare the error message for ``unittest.TestCase().assertIsSubclass(unittest.TestCase, tuple)`` with the one for ``assert issubclass(unittest.TestCase, set)``
 
@@ -2495,7 +2495,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
         # unittest.TestCase.assertIsNot()
         # unittest.TestCase().assertIsNot()
         # unittest.TestCase().assertIsNot(None, None)
-        # assert None is not the same object as None
+        # assert None is not None
         assert None is not False
         # unittest.TestCase().assertIsNot(None, False)
         TOOLBOX.assertIsNot(None, False)
@@ -2853,7 +2853,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
 ----
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``test_failure`` since I can use it if I do not want to add ``self`` to the :ref:`method definition<how to make a function>`. This way I do not send more information than what the :ref:`method<what is a method?>` needs whenit does not use anything that belongs to the :ref:`class<everything is an object>`
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``test_failure`` since I can use it if I do not want to add ``self`` to the :ref:`method definition<how to make a function>`. This way I do not send more information than what the :ref:`method<what is a method?>` needs when it does not use anything that belongs to the :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 7
