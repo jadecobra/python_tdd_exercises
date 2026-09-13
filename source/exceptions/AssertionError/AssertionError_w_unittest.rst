@@ -1,6 +1,6 @@
 .. meta::
-  :description: Pumping Python TDD: "test AssertionError with unittest" continuation in the assertion_error project. Learn to use the unittest library by moving bare `assert` tests into a `TestAssertionError(unittest.TestCase)` class, adding `self`, and using `assertEqual` / `assertIs` / `assertIsNot` / `assertNotEqual` as another way to write assertions. See the exact unittest error messages: "AssertionError: True is not false", "unexpectedly identical: None", "2 == 2", "False is not None", "0 is not 0.0". Then extract repeated literals (an_integer=0, a_float=0.0, a_string, tuple, list, set, dict) into class attributes to remove duplication across test methods without setUp. Includes will_not_run (skipped because name does not start with test_) vs real test_ methods, reality == my_expectation still green without assert, is vs == identity gotchas, full red-green-refactor with "remove the commented lines", git commits, uv run pytest-watcher. Builds directly on the bare-assert AssertionError chapter.
-  :keywords: Jacob Itegboje, Pumping Python, AssertionError use unittest, unittest.TestCase, another way to write tests, assertEqual, assertIs, assertIsNot, assertNotEqual, self. in test methods, class attributes, remove repetition with class attributes, AssertionError: True is not false, unexpectedly identical: None, AssertionError: 2 == 2, 0 is not 0.0, reality == my_expectation, will_not_run, test_ prefix rule, test_assert_keyword, test_assertion_error_w_none, python TDD unittest, red green refactor unittest, uv pytest-watcher, python is vs == unittest, bare assert vs unittest assert, python class attributes for tests, no setUp needed class attrs, python unittest beginner tutorial
+  :description: Pumping Python TDD continuation: "test AssertionError with unittest" in the assertion_error project. Move the existing test_* functions into TestAssertionError(unittest.TestCase), add self as the first method argument, and pair each helper/bare assert with unittest methods (assertEqual, assertNotEqual, assertIs, assertIsNot). See the unittest cores this chapter actually quotes: "AssertionError: True != False", "2 == 2", "'11' == '11'", "unexpectedly identical: None", "False is not None", "0 is not 0.0", "0 == 0.0", plus TypeError when a method is defined without self. Then extract repeated locals (an_integer=0, a_float=0.0, a_string, tuple, list, set, dict) into class attributes used as self.an_integer across test_assertion_error_w_none/false/true — no setUp. will_not_run stays skipped until renamed test_will_not_run. uv run pytest-watcher . --now, git commit after each move, remove the commented lines. Builds on the functions chapter (7 passed at open).
+  :keywords: Jacob Itegboje, Pumping Python, test AssertionError with unittest, TestAssertionError, unittest.TestCase, another way to write tests, assertEqual, assertNotEqual, assertIs, assertIsNot, self first argument, TypeError takes 0 positional arguments but 1 was given, AssertionError True != False, unexpectedly identical None, AssertionError 2 == 2, False is not None, 0 is not 0.0, 0 == 0.0, class attributes an_integer a_float, will_not_run, test_ prefix, test_assert_keyword, test_assertion_error_w_none, test_assertion_error_w_is_vs_equal, uv run pytest-watcher . --now, red green refactor, remove the commented lines, python TDD unittest beginner, identity vs equality 0 vs 0.0
 
 .. include:: ../../links.rst
 
@@ -235,7 +235,7 @@ add TestAssertionError class
 
     AssertionError: True != False
 
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>` in :ref:`test_failure` in the :ref:`TestAssertionError class<add TestAssertionError class>`
+* I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the :ref:`assertion<what is an assertion?>` in :ref:`test_failure` in the :ref:`TestAssertionError class<add TestAssertionError class>`
 
   .. code-block:: python
     :lineno-start: 28
@@ -559,7 +559,7 @@ the test is green again.
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``1 + 1`` and ``2``
 
   .. code-block:: python
-    :lineno-start: 6
+    :lineno-start: 30
     :emphasize-lines: 5-6, 8-9
 
         # def test_assert_keyword():
@@ -2638,7 +2638,7 @@ the test is green again.
 
     AssertionError: False != None
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_equal>` for ``(False, None)``
+* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``(False, None)``
 
   .. code-block:: python
     :lineno-start: 174
@@ -2662,7 +2662,7 @@ the test is green again.
 
     E    assert False == True
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_equal>` for ``(False, True)``
+* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``(False, True)``
 
   .. code-block:: python
     :lineno-start: 178
@@ -2680,7 +2680,7 @@ the test is green again.
 
     AssertionError: True != None
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_equal>` for ``(True, None)``
+* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``(True, None)``
 
   .. code-block:: python
     :lineno-start: 182
