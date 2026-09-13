@@ -108,7 +108,7 @@ questions about AssertionError
 * :ref:`how can I test if something is the same object as True?<test_assertion_error_w_true>`
 * :ref:`how can I test if two things are NOT equal?<test_assertion_error_w_equality>`
 * :ref:`how can I test if two things are equal?<test_assertion_error_w_equality>`
-* :ref:`what is the difference between is and equal<test_assertion_error_w_is_vs_equal>`
+* :ref:`what is the difference between is and equal?<test_assertion_error_w_is_vs_equal>`
 
 ----
 
