@@ -23,44 +23,56 @@ I have these tests by the end of the chapter
 .. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
-  :linenos:
-  :lines: 1-12
+  :lineno-start: 28
+  :lines: 28-36
 
 .. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
-  :lineno-start: 14
-  :lines: 14-28
+  :lineno-start: 38
+  :lines: 38-52
 
 .. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
-  :lineno-start: 30
-  :lines: 30-59
+  :lineno-start: 54
+  :lines: 54-83
 
 .. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
-  :lineno-start: 61
-  :lines: 61-90
+  :lineno-start: 85
+  :lines: 85-114
 
 .. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
-  :lineno-start: 92
-  :lines: 92-121
+  :lineno-start: 116
+  :lines: 116-145
 
 .. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
-  :lineno-start: 123
-  :lines: 123-140
+  :lineno-start: 147
+  :lines: 147-164
 
 .. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
-  :lineno-start: 142
-  :lines: 142-158
+  :lineno-start: 166
+  :lines: 166-171
+
+.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
+  :caption: assertion_error/tests/test_assertion_error.py
+  :language: python
+  :lineno-start: 173
+  :lines: 173-184
+
+.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_unittest.py
+  :caption: assertion_error/tests/test_assertion_error.py
+  :language: python
+  :lineno-start: 220
+  :lines: 220-
 
 ----
 
@@ -2468,23 +2480,21 @@ test_assertion_error_w_equality with unittest
 * I move :ref:`test_assertion_error_w_equality` to make it a :ref:`method<what is a method?>` of the :ref:`TestAssertionError<add TestAssertionError class>`
 
   .. code-block:: python
-    :lineno-start: 134
-    :emphasize-lines: 3-4, 6, 8, 10, 12, 14
+    :lineno-start: 156
+    :emphasize-lines: 5-8, 10-12
 
+            a_dictionary = {}
+            assert_is_not_true(a_dictionary)
             self.assertIsNot(a_dictionary, True)
 
         def test_assertion_error_w_equality():
-            assert None == None
+            assert_equal(None, None)
+            assert_equal(False, False)
+            assert_equal(True, True)
 
-            assert False != None
-
-            assert False != True
-
-            assert False == False
-
-            assert True != None
-
-            assert True == True
+            assert_not_equal(False, None)
+            assert_not_equal(False, True)
+            assert_not_equal(True, None)
 
 
     def test_assertion_error_w_is_vs_equal():
@@ -2508,14 +2518,18 @@ test_assertion_error_w_equality with unittest
 I add ``self`` to the parentheses of :ref:`test_assertion_error_w_equality`
 
 .. code-block:: python
-  :lineno-start: 134
-  :emphasize-lines: 3-4
+  :lineno-start: 156
+  :emphasize-lines: 5-6
 
+          a_dictionary = {}
+          assert_is_not_true(a_dictionary)
           self.assertIsNot(a_dictionary, True)
 
       # def test_assertion_error_w_equality():
       def test_assertion_error_w_equality(self):
-          assert None == None
+          assert_equal(None, None)
+          assert_equal(False, False)
+          assert_equal(True, True)
 
 the test is green again.
 
@@ -2530,28 +2544,28 @@ the test is green again.
 * I add :ref:`calls<how to call a function with input>` to :ref:`assertNotEqual<test_assert_not_equal>` and :ref:`assertEqual<test_assert_equal>` to :ref:`test_assertion_error_w_equality`
 
   .. code-block:: python
-    :lineno-start: 136
+    :lineno-start: 160
     :emphasize-lines: 4, 7, 10, 13, 16, 19
 
         # def test_assertion_error_w_equality():
         def test_assertion_error_w_equality(self):
-            assert None == None
+            assert_equal(None, None)
             self.assertNotEqual(None, None)
 
-            assert False != None
-            self.assertEqual(False, None)
-
-            assert False != True
-            self.assertEqual(False, True)
-
-            assert False == False
+            assert_equal(False, False)
             self.assertNotEqual(False, False)
 
-            assert True != None
-            self.assertEqual(True, None)
-
-            assert True == True
+            assert_equal(True, True)
             self.assertNotEqual(True, True)
+
+            assert_not_equal(False, None)
+            self.assertEqual(False, None)
+
+            assert_not_equal(False, True)
+            self.assertEqual(False, True)
+
+            assert_not_equal(True, None)
+            self.assertEqual(True, None)
 
 
     def test_assertion_error_w_is_vs_equal():
@@ -2571,16 +2585,52 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``(None, None)``
 
   .. code-block:: python
-    :lineno-start: 136
+    :lineno-start: 160
     :emphasize-lines: 4-5
 
         # def test_assertion_error_w_equality():
         def test_assertion_error_w_equality(self):
-            assert None == None
+            assert_equal(None, None)
             # self.assertNotEqual(None, None)
             self.assertEqual(None, None)
 
-            assert False != None
+            assert_equal(False, False)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False == False
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``(False, False)``
+
+  .. code-block:: python
+    :lineno-start: 166
+    :emphasize-lines: 2-3
+
+            assert_equal(False, False)
+            # self.assertNotEqual(False, False)
+            self.assertEqual(False, False)
+
+            assert_equal(True, True)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True == True
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``(True, True)``
+
+  .. code-block:: python
+    :lineno-start: 170
+    :emphasize-lines: 2-3
+
+            assert_equal(True, True)
+            # self.assertNotEqual(True, True)
+            self.assertEqual(True, True)
+
+            assert_not_equal(False, None)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2591,14 +2641,14 @@ the test is green again.
 * I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_equal>` for ``(False, None)``
 
   .. code-block:: python
-    :lineno-start: 142
+    :lineno-start: 174
     :emphasize-lines: 2-3
 
-            assert False != None
+            assert_not_equal(False, None)
             # self.assertEqual(False, None)
             self.assertNotEqual(False, None)
 
-            assert False != True
+            assert_not_equal(False, True)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2615,32 +2665,14 @@ the test is green again.
 * I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_equal>` for ``(False, True)``
 
   .. code-block:: python
-    :lineno-start: 146
+    :lineno-start: 178
     :emphasize-lines: 2-3
 
-            assert False != True
+            assert_not_equal(False, True)
             # self.assertEqual(False, True)
             self.assertNotEqual(False, True)
 
-            assert False == False
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: False == False
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``(False, False)``
-
-  .. code-block:: python
-    :lineno-start: 150
-    :emphasize-lines: 2-3
-
-            assert False == False
-            # self.assertNotEqual(False, False)
-            self.assertEqual(False, False)
-
-            assert True != None
+            assert_not_equal(True, None)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2651,30 +2683,12 @@ the test is green again.
 * I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_equal>` for ``(True, None)``
 
   .. code-block:: python
-    :lineno-start: 154
+    :lineno-start: 182
     :emphasize-lines: 2-3
 
-            assert True != None
+            assert_not_equal(True, None)
             # self.assertEqual(True, None)
             self.assertNotEqual(True, None)
-
-            assert True == True
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: True == True
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``(True, True)``
-
-  .. code-block:: python
-    :lineno-start: 158
-    :emphasize-lines: 2-3
-
-            assert True == True
-            # self.assertNotEqual(True, True)
-            self.assertEqual(True, True)
 
 
     def test_assertion_error_w_is_vs_equal():
@@ -2684,28 +2698,33 @@ the test is green again.
 * I remove the commented lines from :ref:`test_assertion_error_w_equality`
 
   .. code-block:: python
-    :lineno-start: 134
+    :lineno-start: 156
 
+            a_dictionary = {}
+            assert_is_not_true(a_dictionary)
             self.assertIsNot(a_dictionary, True)
 
         def test_assertion_error_w_equality(self):
-            assert None == None
+            assert_equal(None, None)
             self.assertEqual(None, None)
 
-            assert False != None
-            self.assertNotEqual(False, None)
-
-            assert False != True
-            self.assertNotEqual(False, True)
-
-            assert False == False
+            assert_equal(False, False)
             self.assertEqual(False, False)
 
-            assert True != None
-            self.assertNotEqual(True, None)
-
-            assert True == True
+            assert_equal(True, True)
             self.assertEqual(True, True)
+
+  .. code-block:: python
+    :lineno-start: 170
+
+            assert_not_equal(False, None)
+            self.assertNotEqual(False, None)
+
+            assert_not_equal(False, True)
+            self.assertNotEqual(False, True)
+
+            assert_not_equal(True, None)
+            self.assertNotEqual(True, None)
 
 
     def test_assertion_error_w_is_vs_equal():
@@ -2735,15 +2754,15 @@ test_assertion_error_w_is_vs_equal with unittest
 * I move :ref:`test_assertion_error_w_is_vs_equal` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError class>`
 
   .. code-block:: python
-    :lineno-start: 153
-    :emphasize-lines: 3-4, 6
+    :lineno-start: 176
+    :emphasize-lines: 4-6
 
-            self.assertEqual(True, True)
+            assert_not_equal(True, None)
+            self.assertNotEqual(True, None)
 
         def test_assertion_error_w_is_vs_equal():
-            assert 0 is not 0.0
-
-            assert 0 == 0.0
+            assert_is_not(0, 0.0)
+            assert_equal(0, 0.0)
 
 
     def will_not_run():
@@ -2769,13 +2788,16 @@ test_assertion_error_w_is_vs_equal with unittest
 I add ``self`` to the :ref:`definition<how to make a function that takes input>` of :ref:`test_assertion_error_w_is_vs_equal`
 
 .. code-block:: python
-  :lineno-start: 153
+  :lineno-start: 176
+  :emphasize-lines: 4-5
 
-          self.assertEqual(True, True)
+          assert_not_equal(True, None)
+          self.assertNotEqual(True, None)
 
       # def test_assertion_error_w_is_vs_equal():
       def test_assertion_error_w_is_vs_equal(self):
-          assert 0 is not 0.0
+          assert_is_not(0, 0.0)
+          assert_equal(0, 0.0)
 
 the test is green again.
 
@@ -2790,13 +2812,15 @@ the test is green again.
 * I add a :ref:`call<how to call a function with input>` to :ref:`assertIs<test_assert_is>` for ``assert 0 is not 0.0``
 
   .. code-block:: python
-    :lineno-start: 155
+    :lineno-start: 179
     :emphasize-lines: 4
 
         # def test_assertion_error_w_is_vs_equal():
         def test_assertion_error_w_is_vs_equal(self):
-            assert 0 is not 0.0
+            assert_is_not(0, 0.0)
             self.assertIs(0, 0.0)
+
+            assert_equal(0, 0.0)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
 
@@ -2809,32 +2833,26 @@ the test is green again.
 * I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>`
 
   .. code-block:: python
-    :lineno-start: 155
+    :lineno-start: 179
     :emphasize-lines: 4-5
 
         # def test_assertion_error_w_is_vs_equal():
         def test_assertion_error_w_is_vs_equal(self):
-            assert 0 is not 0.0
+            assert_is_not(0, 0.0)
             # self.assertIs(0, 0.0)
             self.assertIsNot(0, 0.0)
 
-            assert 0 == 0.0
+            assert_equal(0, 0.0)
 
   the test passes. Compare the :ref:`assertions<what is an assertion?>`: ``assertIsNot(0, 0.0)`` vs ``assert 0 is not 0.0``.
 
 * I add a :ref:`call<how to call a function with input>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``assert 0 == 0.0``
 
   .. code-block:: python
-    :lineno-start: 155
-    :emphasize-lines: 8
+    :lineno-start: 185
+    :emphasize-lines: 2
 
-        # def test_assertion_error_w_is_vs_equal():
-        def test_assertion_error_w_is_vs_equal(self):
-            assert 0 is not 0.0
-            # self.assertIs(0, 0.0)
-            self.assertIsNot(0, 0.0)
-
-            assert 0 == 0.0
+            assert_equal(0, 0.0)
             self.assertNotEqual(0, 0.0)
 
 
@@ -2851,16 +2869,10 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>`
 
   .. code-block:: python
-    :lineno-start: 155
-    :emphasize-lines: 8-9
+    :lineno-start: 185
+    :emphasize-lines: 2-3
 
-        # def test_assertion_error_w_is_vs_equal():
-        def test_assertion_error_w_is_vs_equal(self):
-            assert 0 is not 0.0
-            # self.assertIs(0, 0.0)
-            self.assertIsNot(0, 0.0)
-
-            assert 0 == 0.0
+            assert_equal(0, 0.0)
             # self.assertNotEqual(0, 0.0)
             self.assertEqual(0, 0.0)
 
@@ -2872,15 +2884,16 @@ the test is green again.
 * I remove the commented lines from :ref:`test_assertion_error_w_is_vs_equal`
 
   .. code-block:: python
-    :lineno-start: 153
+    :lineno-start: 176
 
-            self.assertEqual(True, True)
+            assert_not_equal(True, None)
+            self.assertNotEqual(True, None)
 
         def test_assertion_error_w_is_vs_equal(self):
-            assert 0 is not 0.0
+            assert_is_not(0, 0.0)
             self.assertIsNot(0, 0.0)
 
-            assert 0 == 0.0
+            assert_equal(0, 0.0)
             self.assertEqual(0, 0.0)
 
 
@@ -2911,70 +2924,70 @@ will_not_run with unittest
 * I move :ref:`will not run<pytest only calls the function if the name starts with test>` to the :ref:`TestAssertionError class<add TestAssertionError class>`
 
   .. code-block:: python
-    :lineno-start: 160
-    :emphasize-lines: 3-4
+    :lineno-start: 183
+    :emphasize-lines: 4-7
 
+            assert_equal(0, 0.0)
             self.assertEqual(0, 0.0)
 
         def will_not_run():
+            # will not run because
+            # the name does not start with test
             assert False == True
 
 
     def test_failure():
 
-  the test is still green.
+  the tests are still green.
 
 * I add a :ref:`call<how to call a function with input>` to :ref:`test_assert_equal`
 
   .. code-block:: python
-    :lineno-start: 160
+    :lineno-start: 186
     :emphasize-lines: 5
 
-            self.assertEqual(0, 0.0)
-
         def will_not_run():
+            # will not run because
+            # the name does not start with test
             assert False == True
             self.assertEqual(False, True)
 
 
     def test_failure():
 
-  still green.
+  still green, it does not raise :ref:`NameError<test_catching_name_error_in_tests>` because this :ref:`method<what is a method?>` never gets :ref:`called<how to call a function with input>` by pytest_.
 
 * I add ``self`` to the parentheses of :ref:`will not run<pytest only calls the function if the name starts with test>`
 
   .. code-block:: python
-    :lineno-start: 162
-    :emphasize-lines: 3-4
+    :lineno-start: 183
+    :emphasize-lines: 4-5
 
+            assert_equal(0, 0.0)
             self.assertEqual(0, 0.0)
 
         # def will_not_run():
         def will_not_run(self):
+            # will not run because
+            # the name does not start with test
             assert False == True
             self.assertEqual(False, True)
 
-
-    def test_failure():
-
-  green.
+  green, it does not raise :ref:`AssertionError<what causes AssertionError?>`.
 
 * I change the name from :ref:`will not run<pytest only calls the function if the name starts with test>` to ``test_will_not_run``
 
   .. code-block:: python
-    :lineno-start: 162
-    :emphasize-lines: 4-5
-
-            self.assertEqual(0, 0.0)
+    :lineno-start: 186
+    :emphasize-lines: 2-3
 
         # def will_not_run():
         # def will_not_run(self):
         def test_will_not_run(self):
+            # will not run because
+            # the name does not start with test
             assert False == True
             self.assertEqual(False, True)
-
-
-    def test_failure():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2995,14 +3008,17 @@ will_not_run with unittest
 I undo the change
 
 .. code-block:: python
-  :lineno-start: 160
-  :emphasize-lines: 3, 5
+  :lineno-start: 183
+  :emphasize-lines: 4, 6
 
+          assert_equal(0, 0.0)
           self.assertEqual(0, 0.0)
 
       def will_not_run():
       # def will_not_run(self):
       # def test_will_not_run(self):
+          # will not run because
+          # the name does not start with test
           assert False == True
           self.assertEqual(False, True)
 
@@ -3019,14 +3035,14 @@ the test is green again.
 
 ----
 
-* I remove the commented lines from :ref:`will not run<pytest only calls the function if the name starts with test>`
+* I remove the new commented lines from :ref:`will not run<pytest only calls the function if the name starts with test>`
 
   .. code-block:: python
-    :lineno-start: 160
-
-            self.assertEqual(0, 0.0)
+    :lineno-start: 186
 
         def will_not_run():
+            # will not run because
+            # the name does not start with test
             assert False == True
             self.assertEqual(False, True)
 
@@ -3058,16 +3074,18 @@ test_failure with unittest
 * I move :ref:`test_failure<pytest only calls the function if the name starts with test>` to :ref:`TestAssertionError<add TestAssertionError class>`
 
   .. code-block:: python
-    :lineno-start: 162
-    :emphasize-lines: 5-7
+    :lineno-start: 186
+    :emphasize-lines: 7-9
 
         def will_not_run():
+            # will not run because
+            # the name does not start with test
             assert False == True
             self.assertEqual(False, True)
 
         def test_failure():
             # assert False == True
-            assert False == False
+            assert_not_equal(False, True)
 
 
     # NOTES
@@ -3093,16 +3111,19 @@ test_failure with unittest
 I add ``self`` to the parentheses of :ref:`test_failure<pytest only calls the function if the name starts with test>` in :ref:`TestAssertionError<add TestAssertionError class>`
 
 .. code-block:: python
-  :lineno-start: 166
-  :emphasize-lines: 1-2
+  :lineno-start: 186
+  :emphasize-lines: 7-8
+
+      def will_not_run():
+          # will not run because
+          # the name does not start with test
+          assert False == True
+          self.assertEqual(False, True)
 
       # def test_failure():
       def test_failure(self):
           # assert False == True
-          assert False == False
-
-
-  # NOTES
+          assert_not_equal(False, True)
 
 the test is green again.
 
@@ -3117,13 +3138,13 @@ the test is green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>`
 
   .. code-block:: python
-    :lineno-start: 166
+    :lineno-start: 192
     :emphasize-lines: 5
 
         # def test_failure():
         def test_failure(self):
             # assert False == True
-            assert False == False
+            assert_not_equal(False, True)
             self.assertNotEqual(False, False)
 
 
@@ -3138,13 +3159,13 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>`
 
   .. code-block:: python
-    :lineno-start: 166
+    :lineno-start: 192
     :emphasize-lines: 5-6
 
         # def test_failure():
         def test_failure(self):
             # assert False == True
-            assert False == False
+            assert_not_equal(False, True)
             # self.assertNotEqual(False, False)
             self.assertEqual(False, False)
 
@@ -3156,14 +3177,16 @@ the test is green again.
 * I remove the commented lines from :ref:`test_failure<pytest only calls the function if the name starts with test>`
 
   .. code-block:: python
-    :lineno-start: 162
+    :lineno-start: 186
 
         def will_not_run():
+            # will not run because
+            # the name does not start with test
             assert False == True
             self.assertEqual(False, True)
 
         def test_failure(self):
-            assert False == False
+            assert_not_equal(False, True)
             self.assertEqual(False, False)
 
 
@@ -3188,7 +3211,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I add a :ref:`class attribute<what is a class attribute?>` for ``an_integer = 0`` to :ref:`TestAssertionError<add TestAssertionError class>`
 
   .. code-block:: python
-    :lineno-start: 4
+    :lineno-start: 28
     :emphasize-lines: 3
 
     class TestAssertionError(unittest.TestCase):
@@ -3200,23 +3223,23 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 48
     :emphasize-lines: 11-15
 
         def test_assertion_error_w_none(self):
             assert None is None
             self.assertIs(None, None)
 
-            assert False is not None
+            assert_is_not_none(False)
             self.assertIsNot(False, None)
 
-            assert True is not None
+            assert_is_not_none(True)
             self.assertIsNot(True, None)
 
             # an_integer = 0
-            # assert an_integer is not the same object as None
+            # assert_is_not_none(an_integer)
             # self.assertIsNot(an_integer, None)
-            assert self.an_integer is not None
+            assert_is_not_none(self.an_integer)
             self.assertIsNot(self.an_integer, None)
 
             a_float = 0.0
@@ -3226,25 +3249,27 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 62
-    :emphasize-lines: 13-17
+    :lineno-start: 84
+    :emphasize-lines: 15-19
 
+            a_dictionary = {}
+            assert_is_not_none(a_dictionary)
             self.assertIsNot(a_dictionary, None)
 
         def test_assertion_error_w_false(self):
-            assert None is not False
-            self.assertIsNot(None, False)
-
             assert False is False
             self.assertIs(False, False)
 
-            assert True is not False
+            assert_is_not_false(None)
+            self.assertIsNot(None, False)
+
+            assert_is_not_false(True)
             self.assertIsNot(True, False)
 
             # an_integer = 0
-            # assert an_integer is not the same object as False
+            # assert_is_not_false(an_integer)
             # self.assertIsNot(an_integer, False)
-            assert self.an_integer is not False
+            assert_is_not_false(self.an_integer)
             self.assertIsNot(self.an_integer, False)
 
             a_float = 0.0
@@ -3254,25 +3279,27 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 102
-    :emphasize-lines: 13-17
+    :lineno-start: 124
+    :emphasize-lines: 15-19
 
+            a_dictionary = {}
+            assert_is_not_false(a_dictionary)
             self.assertIsNot(a_dictionary, False)
 
         def test_assertion_error_w_true(self):
-            assert None is not True
-            self.assertIsNot(None, True)
-
-            assert False is not True
-            self.assertIsNot(False, True)
-
             assert True is True
             self.assertIs(True, True)
 
+            assert_is_not_true(None)
+            self.assertIsNot(None, True)
+
+            assert_is_not_true(False)
+            self.assertIsNot(False, True)
+
             # an_integer = 0
-            # assert an_integer is not the same object as True
+            # assert_is_not_true(an_integer)
             # self.assertIsNot(an_integer, True)
-            assert self.an_integer is not True
+            assert_is_not_true(self.an_integer)
             self.assertIsNot(self.an_integer, True)
 
             a_float = 0.0
@@ -3284,7 +3311,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I add a :ref:`class attribute<what is a class attribute?>` for ``a_float = 0.0``
 
   .. code-block:: python
-    :lineno-start: 4
+    :lineno-start: 28
     :emphasize-lines: 4
 
     class TestAssertionError(unittest.TestCase):
@@ -3297,15 +3324,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 39
+    :lineno-start: 59
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.an_integer, None)
 
             # a_float = 0.0
-            # assert a_float is not the same object as None
+            # assert_is_not_none(a_float)
             # self.assertIsNot(a_float, None)
-            assert self.a_float is not None
+            assert_is_not_none(self.a_float)
             self.assertIsNot(self.a_float, None)
 
             a_string = ''
@@ -3315,15 +3342,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 81
+    :lineno-start: 105
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.an_integer, False)
 
             # a_float = 0.0
-            # assert a_float is not the same object as False
+            # assert_is_not_false(a_float)
             # self.assertIsNot(a_float, False)
-            assert self.a_float is not False
+            assert_is_not_false(self.a_float)
             self.assertIsNot(self.a_float, False)
 
             a_string = ''
@@ -3333,15 +3360,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 123
+    :lineno-start: 147
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.an_integer, True)
 
             # a_float = 0.0
-            # assert a_float is not the same object as True
+            # assert_is_not_true(a_float)
             # self.assertIsNot(a_float, True)
-            assert self.a_float is not True
+            assert_is_not_true(self.a_float)
             self.assertIsNot(self.a_float, True)
 
             a_string = ''
@@ -3353,7 +3380,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I add a :ref:`class attribute<what is a class attribute?>` for ``a_string = ''``
 
   .. code-block:: python
-    :lineno-start: 4
+    :lineno-start: 28
     :emphasize-lines: 5
 
     class TestAssertionError(unittest.TestCase):
@@ -3367,15 +3394,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 70
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.a_float, None)
 
             # a_string = ''
-            # assert a_string is not the same object as None
+            # assert_is_not_none(a_string)
             # self.assertIsNot(a_string, None)
-            assert self.a_string is not None
+            assert_is_not_none(self.a_string)
             self.assertIsNot(self.a_string, None)
 
             a_tuple = ()
@@ -3385,15 +3412,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 90
+    :lineno-start: 114
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.a_float, False)
 
             # a_string = ''
-            # assert a_string is not the same object as False
+            # assert_is_not_false(a_string)
             # self.assertIsNot(a_string, False)
-            assert self.a_string is not False
+            assert_is_not_false(self.a_string)
             self.assertIsNot(self.a_string, False)
 
             a_tuple = ()
@@ -3403,15 +3430,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 134
+    :lineno-start: 158
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.a_float, True)
 
             # a_string = ''
-            # assert a_string is not the same object as True
+            # assert_is_not_true(a_string)
             # self.assertIsNot(a_string, True)
-            assert self.a_string is not True
+            assert_is_not_true(self.a_string)
             self.assertIsNot(self.a_string, True)
 
             a_tuple = ()
@@ -3423,7 +3450,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I add a :ref:`class attribute<what is a class attribute?>` for ``a_tuple = ()``
 
   .. code-block:: python
-    :lineno-start: 4
+    :lineno-start: 28
     :emphasize-lines: 6
 
     class TestAssertionError(unittest.TestCase):
@@ -3438,15 +3465,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 77
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.a_string, None)
 
             # a_tuple = ()
-            # assert a_tuple is not the same object as None
+            # assert_is_not_none(a_tuple)
             # self.assertIsNot(a_tuple, None)
-            assert self.a_tuple is not None
+            assert_is_not_none(self.a_tuple)
             self.assertIsNot(self.a_tuple, None)
 
             a_list = []
@@ -3456,15 +3483,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 99
+    :lineno-start: 123
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.a_string, False)
 
             # a_tuple = ()
-            # assert a_tuple is not the same object as False
+            # assert_is_not_false(a_tuple)
             # self.assertIsNot(a_tuple, False)
-            assert self.a_tuple is not False
+            assert_is_not_false(self.a_tuple)
             self.assertIsNot(self.a_tuple, False)
 
             a_list = []
@@ -3474,15 +3501,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 145
+    :lineno-start: 169
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.a_string, True)
 
             # a_tuple = ()
-            # assert a_tuple is not the same object as True
+            # assert_is_not_true(a_tuple)
             # self.assertIsNot(a_tuple, True)
-            assert self.a_tuple is not True
+            assert_is_not_true(self.a_tuple)
             self.assertIsNot(self.a_tuple, True)
 
             a_list = []
@@ -3494,7 +3521,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I add a :ref:`class attribute<what is a class attribute?>` for ``a_list = []``
 
   .. code-block:: python
-    :lineno-start: 4
+    :lineno-start: 28
     :emphasize-lines: 7
 
     class TestAssertionError(unittest.TestCase):
@@ -3510,15 +3537,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 84
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.a_tuple, None)
 
             # a_list = []
-            # assert a_list is not the same object as None
+            # assert_is_not_none(a_list)
             # self.assertIsNot(a_list, None)
-            assert self.a_list is not None
+            assert_is_not_none(self.a_list)
             self.assertIsNot(self.a_list, None)
 
             a_set = set()
@@ -3528,15 +3555,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 108
+    :lineno-start: 132
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.a_tuple, False)
 
             # a_list = []
-            # assert a_list is not the same object as False
+            # assert_is_not_false(a_list)
             # self.assertIsNot(a_list, False)
-            assert self.a_list is not False
+            assert_is_not_false(self.a_list)
             self.assertIsNot(self.a_list, False)
 
             a_set = set()
@@ -3546,15 +3573,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 156
+    :lineno-start: 180
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.a_tuple, True)
 
             # a_list = []
-            # assert a_list is not the same object as True
+            # assert_is_not_true(a_list)
             # self.assertIsNot(a_list, True)
-            assert self.a_list is not True
+            assert_is_not_true(self.a_list)
             self.assertIsNot(self.a_list, True)
 
             a_set = set()
@@ -3566,7 +3593,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I add a :ref:`class attribute<what is a class attribute?>` for ``a_set = set()``
 
   .. code-block:: python
-    :lineno-start: 4
+    :lineno-start: 28
     :emphasize-lines: 8
 
     class TestAssertionError(unittest.TestCase):
@@ -3583,15 +3610,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 67
+    :lineno-start: 91
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.a_list, None)
 
             # a_set = set()
-            # assert a_set is not the same object as None
+            # assert_is_not_none(a_set)
             # self.assertIsNot(a_set, None)
-            assert self.a_set is not None
+            assert_is_not_none(self.a_set)
             self.assertIsNot(self.a_set, None)
 
             a_dictionary = {}
@@ -3601,15 +3628,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 141
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.a_list, False)
 
             # a_set = set()
-            # assert a_set is not the same object as False
+            # assert_is_not_false(a_set)
             # self.assertIsNot(a_set, False)
-            assert self.a_set is not False
+            assert_is_not_false(self.a_set)
             self.assertIsNot(self.a_set, False)
 
             a_dictionary = {}
@@ -3619,15 +3646,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 167
+    :lineno-start: 191
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.a_list, True)
 
             # a_set = set()
-            # assert a_set is not the same object as True
+            # assert_is_not_true(a_set)
             # self.assertIsNot(a_set, True)
-            assert self.a_set is not True
+            assert_is_not_true(self.a_set)
             self.assertIsNot(self.a_set, True)
 
             a_dictionary = {}
@@ -3639,7 +3666,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I add a :ref:`class attribute<what is a class attribute?>` for ``a_dictionary = {}``
 
   .. code-block:: python
-    :lineno-start: 4
+    :lineno-start: 28
     :emphasize-lines: 9
 
     class TestAssertionError(unittest.TestCase):
@@ -3657,15 +3684,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 74
+    :lineno-start: 98
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.a_set, None)
 
             # a_dictionary = {}
-            # assert a_dictionary is not the same object as None
+            # assert_is_not_none(a_dictionary)
             # self.assertIsNot(a_dictionary, None)
-            assert self.a_dictionary is not None
+            assert_is_not_none(self.a_dictionary)
             self.assertIsNot(self.a_dictionary, None)
 
         def test_assertion_error_w_false(self):
@@ -3675,15 +3702,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 126
+    :lineno-start: 150
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.a_set, False)
 
             # a_dictionary = {}
-            # assert a_dictionary is not the same object as False
+            # assert_is_not_false(a_dictionary)
             # self.assertIsNot(a_dictionary, False)
-            assert self.a_dictionary is not False
+            assert_is_not_false(self.a_dictionary)
             self.assertIsNot(self.a_dictionary, False)
 
         def test_assertion_error_w_true(self):
@@ -3693,15 +3720,15 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 178
+    :lineno-start: 202
     :emphasize-lines: 3-7
 
             self.assertIsNot(self.a_set, True)
 
             # a_dictionary = {}
-            # assert a_dictionary is not the same object as True
+            # assert_is_not_true(a_dictionary)
             # self.assertIsNot(a_dictionary, True)
-            assert self.a_dictionary is not True
+            assert_is_not_true(self.a_dictionary)
             self.assertIsNot(self.a_dictionary, True)
 
         def test_assertion_error_w_equality(self):
@@ -3713,37 +3740,43 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I remove the commented lines from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 134
+    :lineno-start: 158
 
         def test_assertion_error_w_true(self):
-            assert None is not True
-            self.assertIsNot(None, True)
-
-            assert False is not True
-            self.assertIsNot(False, True)
-
             assert True is True
             self.assertIs(True, True)
 
-            assert self.an_integer is not True
+            assert_is_not_true(None)
+            self.assertIsNot(None, True)
+
+            assert_is_not_true(False)
+            self.assertIsNot(False, True)
+
+  .. code-block:: python
+    :lineno-start: 168
+
+            assert_is_not_true(self.an_integer)
             self.assertIsNot(self.an_integer, True)
 
-            assert self.a_float is not True
+            assert_is_not_true(self.a_float)
             self.assertIsNot(self.a_float, True)
 
-            assert self.a_string is not True
+            assert_is_not_true(self.a_string)
             self.assertIsNot(self.a_string, True)
 
-            assert self.a_tuple is not True
+  .. code-block:: python
+    :lineno-start: 177
+
+            assert_is_not_true(self.a_tuple)
             self.assertIsNot(self.a_tuple, True)
 
-            assert self.a_list is not True
+            assert_is_not_true(self.a_list)
             self.assertIsNot(self.a_list, True)
 
-            assert self.a_set is not True
+            assert_is_not_true(self.a_set)
             self.assertIsNot(self.a_set, True)
 
-            assert self.a_dictionary is not True
+            assert_is_not_true(self.a_dictionary)
             self.assertIsNot(self.a_dictionary, True)
 
         def test_assertion_error_w_equality(self):
@@ -3751,37 +3784,43 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I remove the commented lines from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 106
 
         def test_assertion_error_w_false(self):
-            assert None is not False
-            self.assertIsNot(None, False)
-
             assert False is False
             self.assertIs(False, False)
 
-            assert True is not False
+            assert_is_not_false(None)
+            self.assertIsNot(None, False)
+
+            assert_is_not_false(True)
             self.assertIsNot(True, False)
 
-            assert self.an_integer is not False
+  .. code-block:: python
+    :lineno-start: 116
+
+            assert_is_not_false(self.an_integer)
             self.assertIsNot(self.an_integer, False)
 
-            assert self.a_float is not False
+            assert_is_not_false(self.a_float)
             self.assertIsNot(self.a_float, False)
 
-            assert self.a_string is not False
+            assert_is_not_false(self.a_string)
             self.assertIsNot(self.a_string, False)
 
-            assert self.a_tuple is not False
+  .. code-block:: python
+    :lineno-start: 125
+
+            assert_is_not_false(self.a_tuple)
             self.assertIsNot(self.a_tuple, False)
 
-            assert self.a_list is not False
+            assert_is_not_false(self.a_list)
             self.assertIsNot(self.a_list, False)
 
-            assert self.a_set is not False
+            assert_is_not_false(self.a_set)
             self.assertIsNot(self.a_set, False)
 
-            assert self.a_dictionary is not False
+            assert_is_not_false(self.a_dictionary)
             self.assertIsNot(self.a_dictionary, False)
 
         def test_assertion_error_w_true(self):
@@ -3789,37 +3828,43 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 * I remove the commented lines from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 30
+    :lineno-start: 54
 
         def test_assertion_error_w_none(self):
             assert None is None
             self.assertIs(None, None)
 
-            assert False is not None
+            assert_is_not_none(False)
             self.assertIsNot(False, None)
 
-            assert True is not None
+            assert_is_not_none(True)
             self.assertIsNot(True, None)
 
-            assert self.an_integer is not None
+  .. code-block:: python
+    :lineno-start: 64
+
+            assert_is_not_none(self.an_integer)
             self.assertIsNot(self.an_integer, None)
 
-            assert self.a_float is not None
+            assert_is_not_none(self.a_float)
             self.assertIsNot(self.a_float, None)
 
-            assert self.a_string is not None
+            assert_is_not_none(self.a_string)
             self.assertIsNot(self.a_string, None)
 
-            assert self.a_tuple is not None
+  .. code-block:: python
+    :lineno-start: 73
+
+            assert_is_not_none(self.a_tuple)
             self.assertIsNot(self.a_tuple, None)
 
-            assert self.a_list is not None
+            assert_is_not_none(self.a_list)
             self.assertIsNot(self.a_list, None)
 
-            assert self.a_set is not None
+            assert_is_not_none(self.a_set)
             self.assertIsNot(self.a_set, None)
 
-            assert self.a_dictionary is not None
+            assert_is_not_none(self.a_dictionary)
             self.assertIsNot(self.a_dictionary, None)
 
         def test_assertion_error_w_false(self):
