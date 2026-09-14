@@ -149,7 +149,7 @@ add TestClasses class
     class WObject(object): pass
 
 
-    # class Class(object):
+    # class Classes(object):
     class TestClasses(object):
 
         def test_failure(self):
@@ -192,7 +192,7 @@ add TestClasses class
     class WObject(object): pass
 
 
-    # class Class(object):
+    # class Classes(object):
     # class TestClasses(object):
     class TestClasses(unittest.TestCase):
 
@@ -229,7 +229,7 @@ add TestClasses class
     :lineno-start: 13
     :emphasize-lines: 6-7
 
-    # class Class(object):
+    # class Classes(object):
     # class TestClasses(object):
     class TestClasses(unittest.TestCase):
 
@@ -939,7 +939,7 @@ green again.
 
   .. code-block:: python
     :lineno-start: 42
-    :emphasize-lines: 9
+    :emphasize-lines: 3
 
             # fails because None is not a class
             # assert issubclass(None, object)
@@ -1349,7 +1349,7 @@ I add ``self`` to the parentheses of :ref:`test_is_a_float_an_object`
 
 .. code-block:: python
   :lineno-start: 55
-  :emphasize-lines: 1-2
+  :emphasize-lines: 4-5
 
           assert issubclass(int, object)
           self.assertIsSubclass(int, object)
@@ -1638,7 +1638,7 @@ test_is_a_tuple_an_object with unittest
 
   .. code-block:: python
     :lineno-start: 69
-    :emphasize-lines: 3-5
+    :emphasize-lines: 4-6
 
             assert issubclass(str, object)
             self.assertIsSubclass(str, object)
@@ -1965,8 +1965,7 @@ test_is_a_set_an_object with unittest
             assert issubclass(list, object)
             self.assertIsSubclass(list, object)
 
-        # def test_is_a_set_an_object():
-        def test_is_a_set_an_object(self):
+        def test_is_a_set_an_object():
             assert isinstance(set, object)
             assert issubclass(set, object)
 
@@ -1994,11 +1993,16 @@ test_is_a_set_an_object with unittest
 I add ``self`` to the parentheses of :ref:`test_is_a_set_an_object`
 
 .. code-block:: python
-  :lineno-start: 86
-  :emphasize-lines: 1-2
+  :lineno-start: 83
+  :emphasize-lines: 4-5
+
+          assert issubclass(list, object)
+          self.assertIsSubclass(list, object)
 
       # def test_is_a_set_an_object():
       def test_is_a_set_an_object(self):
+          assert isinstance(set, object)
+          assert issubclass(set, object)
 
 green.
 
@@ -2150,7 +2154,7 @@ test_is_a_dictionary_an_object with unittest
 I add ``self`` to the parentheses of :ref:`test_is_a_dictionary_an_object`
 
 .. code-block:: python
-  :lineno-start: 89
+  :lineno-start: 90
   :emphasize-lines: 4-5
 
           assert issubclass(set, object)

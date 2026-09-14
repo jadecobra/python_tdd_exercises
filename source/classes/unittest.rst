@@ -3859,6 +3859,23 @@ the test passes because
 * ``self`` is :ref:`TestUnittest()<extract TestUnittest class>` inside :ref:`TestUnittest<extract TestUnittest class>`.
 * ``self`` has all the :ref:`attributes and methods of unittest.TestCase<test_dir_unittest_testcase>` because `unittest.TestCase`_ is the :ref:`parent class<everything is an object>`.
 
+.. code-block:: shell
+
+  class TestUnittest(unittest.TestCase):
+  └── def test_dir_unittest(self):
+      │   ...
+      └── self.assertEqual(reality, my_expectation)
+          └── TestUnittest().assertEqual(reality, my_expectation)
+              └── unittest.TestCase().assertEqual(
+                        reality, my_expectation
+                  )
+                  └── unittest
+                      └── class TestCase():
+                          └── def assertEqual(self, first, second):
+                              ├── first  = reality
+                              ├── second = my_expectation
+                              ...
+
 ----
 
 =================================================================================
@@ -3948,6 +3965,27 @@ the test passes because
 
   the test passes.
 
+  .. code-block:: shell
+
+    class TestUnittest(unittest.TestCase):
+    └── def test_assert_is_subclass(self):
+        │   ...
+        └── self.assertIsSubclass(TestUnittest, unittest.TestCase)
+            └── TestUnittest().assertIsSubclass(
+                    TestUnittest, unittest.TestCase
+                )
+                └── unittest.TestCase().assertIsSubclass(
+                        TestUnittest, unittest.TestCase
+                    )
+                    └── unittest
+                        └── class TestCase():
+                            └── def assertIsSubclass(
+                                    self, cls, superclass
+                                ):
+                                ├── cls        = TestUnittest
+                                ├── superclass = unittest.TestCase
+                                ...
+
 * I change ``self.TOOLBOX.assertIsSubclass`` to  ``self.assertIsSubclass``
 
   .. code-block:: python
@@ -4019,6 +4057,27 @@ the test passes because
         def test_assert_is_subclass(self):
 
   still green.
+
+  .. code-block:: shell
+
+      class TestUnittest(unittest.TestCase):
+      └── def test_assert_not_is_subclass(self):
+          │   ...
+          └── self.assertNotIsSubclass(unittest.TestCase, dict)
+              └── TestUnittest().assertNotIsSubclass(
+                      unittest.TestCase, dict
+                  )
+                  └── unittest.TestCase().assertNotIsSubclass(
+                          unittest.TestCase, dict
+                      )
+                      └── unittest
+                          └── class TestCase():
+                              └── def assertNotIsSubclass(
+                                      self, cls, superclass
+                                  ):
+                                  ├── cls        = unittest.TestCase
+                                  ├── superclass = dict
+                                  ...
 
 * I remove the commented lines from :ref:`test_assert_not_is_subclass`
 
@@ -4100,6 +4159,27 @@ the test passes because
 
   the test passes.
 
+  .. code-block:: shell
+
+      class TestUnittest(unittest.TestCase):
+      └── def test_assert_is_instance(self):
+          │   ...
+          └── self.assertIsInstance(self, unittest.TestCase)
+              └── TestUnittest().assertIsInstance(
+                      self, unittest.TestCase
+                  )
+                  └── unittest.TestCase().assertIsInstance(
+                          self, unittest.TestCase
+                      )
+                      └── unittest
+                          └── class TestCase():
+                              └── def assertIsInstance(
+                                      self, obj, cls
+                                  ):
+                                  ├── obj = self
+                                  ├── cls = unittest.TestCase
+                                  ...
+
 * I change ``self.TOOLBOX.assertIsInstance`` to  ``self.assertIsInstance``
 
   .. code-block:: python
@@ -4171,6 +4251,29 @@ the test passes because
 
   the test is still green.
 
+  .. code-block:: shell
+
+      class TestUnittest(unittest.TestCase):
+      └── def test_assert_not_is_instance(self):
+          │   ...
+          └── self.assertNotIsInstance(
+                  unittest.TestCase, unittest.TestCase
+              )
+              └── TestUnittest().assertIsInstance(
+                      unittest.TestCase, unittest.TestCase
+                  )
+                  └── unittest.TestCase().assertIsInstance(
+                          unittest.TestCase, unittest.TestCase
+                      )
+                      └── unittest
+                          └── class TestCase():
+                              └── def assertNotIsInstance(
+                                      self, obj, cls
+                                  ):
+                                  ├── obj = unittest.TestCase
+                                  ├── cls = unittest.TestCase
+                                  ...
+
 * I remove the commented lines from :ref:`test_assert_not_is_instance`
 
   .. code-block:: python
@@ -4206,6 +4309,23 @@ the test passes because
 
   still green.
 
+  .. code-block:: shell
+
+      class TestUnittest(unittest.TestCase):
+      └── def test_assert_equal(self):
+          │   ...
+          └── self.assertEqual(0.0, 0.0)
+              └── TestUnittest().assertEqual(0.0, 0.0)
+                  └── unittest.TestCase().assertEqual(0.0, 0.0)
+                      └── unittest
+                          └── class TestCase():
+                              └── def assertEqual(
+                                      self, first, second
+                                  ):
+                                  ├── first  = 0.0
+                                  ├── second = 0.0
+                                  ...
+
 * I remove the commented lines from :ref:`test_assert_equal`
 
   .. code-block:: python
@@ -4236,6 +4356,23 @@ the test passes because
         def test_assert_equal(self):
 
   still green.
+
+  .. code-block:: shell
+
+      class TestUnittest(unittest.TestCase):
+      └── def test_assert_not_equal(self):
+          │   ...
+          └── self.assertNotEqual(True, 0)
+              └── TestUnittest().assertNotEqual(True, 0)
+                  └── unittest.TestCase().assertNotEqual(True, 0)
+                      └── unittest
+                          └── class TestCase():
+                              └── def assertNotEqual(
+                                      self, first, second
+                                  ):
+                                  ├── first  = True
+                                  ├── second = 0
+                                  ...
 
 * I remove the commented lines from :ref:`test_assert_not_equal`
 
@@ -4268,6 +4405,23 @@ the test passes because
 
   green.
 
+  .. code-block:: shell
+
+      class TestUnittest(unittest.TestCase):
+      └── def test_assert_is(self):
+          │   ...
+          └── self.assertIs(False, False)
+              └── TestUnittest().assertIs(False, False)
+                  └── unittest.TestCase().assertIs(False, False)
+                      └── unittest
+                          └── class TestCase():
+                              └── def assertIs(
+                                      self, expr1, expr2
+                                  ):
+                                  ├── expr1 = False
+                                  ├── expr2 = False
+                                  ...
+
 * I remove the commented lines from :ref:`test_assert_is`
 
   .. code-block:: python
@@ -4298,6 +4452,23 @@ the test passes because
         def test_assert_is(self):
 
   the test is still green.
+
+  .. code-block:: shell
+
+      class TestUnittest(unittest.TestCase):
+      └── def test_assert_is_not(self):
+          │   ...
+          └── self.assertIsNot(None, False)
+              └── TestUnittest().assertIsNot(None, False)
+                  └── unittest.TestCase().assertIsNot(None, False)
+                      └── unittest
+                          └── class TestCase():
+                              └── def assertIsNot(
+                                      self, expr1, expr2
+                                  ):
+                                  ├── expr1 = None
+                                  ├── expr2 = False
+                                  ...
 
 * I remove the commented lines from :ref:`test_assert_is_not`
 
@@ -4366,6 +4537,9 @@ the test passes because
     :emphasize-lines: 1
 
     git commit -am 'use unittest.TestCase'
+
+
+
 
 ----
 
