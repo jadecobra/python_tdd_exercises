@@ -43,7 +43,7 @@ open the project
 
     .../pumping_python/functions
 
-* I open ``test_functions.py``
+* I open ``test_functions.py`` from the ``tests`` folder_
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -75,10 +75,11 @@ add TestFunctions class
 * I add a :ref:`class<everything is an object>` named ``Functions`` to ``test_functions.py``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4, 6-7
+    :lineno-start: 8
+    :emphasize-lines: 5, 7-8
 
-    import src.functions
+    def assert_is_none(something):
+        assert something is None
 
 
     class Functions(object):
@@ -88,20 +89,24 @@ add TestFunctions class
 
 
     def test_making_a_function_w_pass():
+        assert_is_none(src.functions.w_pass())
 
   the test is still green.
 
 * I change the name of the :ref:`class<everything is an object>` to ``TestFunctions``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4-5
+    :lineno-start: 8
+    :emphasize-lines: 5-6
 
-    import src.functions
+    def assert_is_none(something):
+        assert something is None
 
 
     # class Functions(object):
     class TestFunctions(object):
+
+        def test_failure(self):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -121,15 +126,14 @@ add TestFunctions class
 * I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<everything is an object>` of ``TestFunctions``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5-6
-
-    import src.functions
-
+    :lineno-start: 12
+    :emphasize-lines: 2-3
 
     # class Functions(object):
     # class TestFunctions(object):
     class TestFunctions(unittest.TestCase):
+
+        def test_failure(self):
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
@@ -148,9 +152,7 @@ add TestFunctions class
     import unittest
 
 
-    # class Functions(object):
-    # class TestFunctions(object):
-    class TestFunctions(unittest.TestCase):
+    def assert_equal(input_1, input_2):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -161,7 +163,7 @@ add TestFunctions class
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 13
     :emphasize-lines: 6-7
 
     # class Functions(object):
@@ -188,10 +190,10 @@ add TestFunctions class
 * I remove the commented lines
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 9
 
-    import src.functions
-    import unittest
+    def assert_is_none(something):
+        assert something is None
 
 
     class TestFunctions(unittest.TestCase):
@@ -231,16 +233,18 @@ test_making_a_function_w_pass with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_making_a_function_w_pass` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>` and replace ``test_failure``
+* I remove ``test_failure``
+
+* I move :ref:`test_making_a_function_w_pass` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 13
     :emphasize-lines: 3-4
 
     class TestFunctions(unittest.TestCase):
 
         def test_making_a_function_w_pass():
-            assert src.functions.w_pass() is None
+            assert_is_none(src.functions.w_pass())
 
 
     def test_making_a_function_w_return():
@@ -265,12 +269,14 @@ test_making_a_function_w_pass with unittest
 I add ``self`` to the parentheses of :ref:`test_making_a_function_w_pass`
 
 .. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 1-2
+  :lineno-start: 13
+  :emphasize-lines: 3-4
+
+  class TestFunctions(unittest.TestCase):
 
       # def test_making_a_function_w_pass():
       def test_making_a_function_w_pass(self):
-          assert src.functions.w_pass() is None
+          assert_is_none(src.functions.w_pass())
 
 the test is green again.
 
@@ -285,12 +291,12 @@ the test is green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 15
     :emphasize-lines: 4-6
 
         # def test_making_a_function_w_pass():
         def test_making_a_function_w_pass(self):
-            assert src.functions.w_pass() is None
+            assert_is_none(src.functions.w_pass())
             self.assertIsNot(
                 src.functions.w_pass(), None
             )
@@ -312,7 +318,7 @@ the test is green again.
 
         # def test_making_a_function_w_pass():
         def test_making_a_function_w_pass(self):
-            assert src.functions.w_pass() is None
+            assert_is_none(src.functions.w_pass())
             # self.assertIsNot(
             self.assertIs(
                 src.functions.w_pass(), None
@@ -326,7 +332,7 @@ the test is green again.
 * I add a :ref:`variable<what is a variable?>` for ``src.functions.w_pass()``
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 15
     :emphasize-lines: 3
 
         # def test_making_a_function_w_pass():
@@ -336,14 +342,14 @@ the test is green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.w_pass()``
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 15
     :emphasize-lines: 4-5, 8-9
 
         # def test_making_a_function_w_pass():
         def test_making_a_function_w_pass(self):
             result = src.functions.w_pass()
-            # assert src.functions.w_pass() is None
-            assert result is None
+            # assert_is_none(src.functions.w_pass())
+            assert_is_none(result)
             # self.assertIsNot(
             self.assertIs(
                 # src.functions.w_pass(), None
@@ -353,10 +359,12 @@ the test is green again.
 
     def test_making_a_function_w_return():
 
+  the test is still green.
+
 * I remove the commented lines from :ref:`test_making_a_function_w_pass`
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 13
     :emphasize-lines: 7
 
     class TestFunctions(unittest.TestCase):
@@ -364,7 +372,7 @@ the test is green again.
         def test_making_a_function_w_pass(self):
             result = src.functions.w_pass()
 
-            assert result is None
+            assert_is_none(result)
             self.assertIs(result, None)
 
 
@@ -395,13 +403,14 @@ test_making_a_function_w_return with unittest
 * I move :ref:`test_making_a_function_w_return` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 3-4
+    :lineno-start: 18
+    :emphasize-lines: 4-5
 
+            assert_is_none(result)
             self.assertIs(result, None)
 
         def test_making_a_function_w_return():
-            assert src.functions.w_return() is None
+            assert_is_none(src.functions.w_return())
 
 
     def test_making_a_function_w_return_none():
@@ -427,11 +436,15 @@ test_making_a_function_w_return with unittest
 I add ``self`` to the parentheses of :ref:`test_making_a_function_w_return`
 
 .. code-block:: python
-  :lineno-start: 13
-  :emphasize-lines: 1-2
+  :lineno-start: 18
+  :emphasize-lines: 4-5
+
+          assert_is_none(result)
+          self.assertIs(result, None)
 
       # def test_making_a_function_w_return():
       def test_making_a_function_w_return(self):
+          assert_is_none(src.functions.w_return())
 
 green again.
 
@@ -446,18 +459,18 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 21
     :emphasize-lines: 4-6
 
-        # def test_making_a_function_w_return():
-        def test_making_a_function_w_return(self):
-            assert src.functions.w_return() is None
-            self.assertIsNot(
-                src.functions.w_return(), None
-            )
+      # def test_making_a_function_w_return():
+      def test_making_a_function_w_return(self):
+          assert_is_none(src.functions.w_return())
+          self.assertIsNot(
+              src.functions.w_return(), None
+          )
 
 
-    def test_making_a_function_w_return_none():
+  def test_making_a_function_w_return_none():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -468,26 +481,23 @@ green again.
 * I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 21
     :emphasize-lines: 4-5
 
         # def test_making_a_function_w_return():
         def test_making_a_function_w_return(self):
-            assert src.functions.w_return() is None
+            assert_is_none(src.functions.w_return())
             # self.assertIsNot(
             self.assertIs(
                 src.functions.w_return(), None
             )
-
-
-    def test_making_a_function_w_return_none():
 
   the test passes.
 
 * I add a :ref:`variable<what is a variable?>` for ``src.functions.w_return()``
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 21
     :emphasize-lines: 3
 
         # def test_making_a_function_w_return():
@@ -497,35 +507,33 @@ green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.w_return()``
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 21
     :emphasize-lines: 4-5, 8-9
 
         # def test_making_a_function_w_return():
         def test_making_a_function_w_return(self):
             result = src.functions.w_return()
-            # assert src.functions.w_return() is None
-            assert result is None
+            # assert_is_none(src.functions.w_return())
+            assert_is_none(result)
             # self.assertIsNot(
             self.assertIs(
                 # src.functions.w_return(), None
                 result, None
             )
 
-
-    def test_making_a_function_w_return_none():
-
 * I remove the commented lines from :ref:`test_making_a_function_w_return`
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 7
+    :lineno-start: 18
+    :emphasize-lines: 8
 
+            assert_is_none(result)
             self.assertIs(result, None)
 
         def test_making_a_function_w_return(self):
             result = src.functions.w_return()
 
-            assert result is None
+            assert_is_none(result)
             self.assertIs(result, None)
 
 
@@ -556,13 +564,14 @@ test_making_a_function_w_return_none with unittest
 * I move :ref:`test_making_a_function_w_return_none` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 3-4
+    :lineno-start: 24
+    :emphasize-lines: 4-5
 
+            assert_is_none(result)
             self.assertIs(result, None)
 
         def test_making_a_function_w_return_none():
-            assert src.functions.w_return_none() is None
+            assert_is_none(src.functions.w_return_none())
 
 
     def test_what_happens_after_functions_return():
@@ -588,12 +597,15 @@ test_making_a_function_w_return_none with unittest
 I add ``self`` to the parentheses of :ref:`test_making_a_function_w_return_none`
 
 .. code-block:: python
-  :lineno-start: 19
-  :emphasize-lines: 1-2
+  :lineno-start: 24
+  :emphasize-lines: 4-5
+
+          assert_is_none(result)
+          self.assertIs(result, None)
 
       # def test_making_a_function_w_return_none():
       def test_making_a_function_w_return_none(self):
-          assert src.functions.w_return_none() is None
+          assert_is_none(src.functions.w_return_none())
 
 green.
 
@@ -608,12 +620,12 @@ green.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 27
     :emphasize-lines: 4-6
 
         # def test_making_a_function_w_return_none():
         def test_making_a_function_w_return_none(self):
-            assert src.functions.w_return_none() is None
+            assert_is_none(src.functions.w_return_none())
             self.assertIsNot(
                 src.functions.w_return_none(), None
             )
@@ -630,26 +642,23 @@ green.
 * I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 27
     :emphasize-lines: 4-5
 
         # def test_making_a_function_w_return_none():
         def test_making_a_function_w_return_none(self):
-            assert src.functions.w_return_none() is None
+            assert_is_none(src.functions.w_return_none())
             # self.assertIsNot(
             self.assertIs(
                 src.functions.w_return_none(), None
             )
-
-
-    def test_what_happens_after_functions_return():
 
   the test passes.
 
 * I add a :ref:`variable<what is a variable?>` for ``src.functions.w_return_none()``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 27
     :emphasize-lines: 3
 
         # def test_making_a_function_w_return_none():
@@ -659,35 +668,33 @@ green.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.w_return_none()``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 27
     :emphasize-lines: 4-5, 8-9
 
         # def test_making_a_function_w_return_none():
         def test_making_a_function_w_return_none(self):
             result = src.functions.w_return_none()
-            # assert src.functions.w_return_none() is None
-            assert result is None
+            # assert_is_none(src.functions.w_return_none())
+            assert_is_none(result)
             # self.assertIsNot(
             self.assertIs(
                 # src.functions.w_return_none(), None
                 result, None
             )
 
-
-    def test_what_happens_after_functions_return():
-
 * I remove the commented lines from :ref:`test_making_a_function_w_return_none`
 
   .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 7
+    :lineno-start: 24
+    :emphasize-lines: 8
 
+            assert_is_none(result)
             self.assertIs(result, None)
 
         def test_making_a_function_w_return_none(self):
             result = src.functions.w_return_none()
 
-            assert result is None
+            assert_is_none(result)
             self.assertIs(result, None)
 
 
@@ -718,16 +725,16 @@ test_what_happens_after_functions_return with unittest
 * I move :ref:`test_what_happens_after_functions_return` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 3-7
+    :lineno-start: 30
+    :emphasize-lines: 4-7
 
+            assert_is_none(result)
             self.assertIs(result, None)
 
         def test_what_happens_after_functions_return():
-            assert (
-                src.functions
-                   .return_leaves_the_function()
-            ) is None
+            assert_is_none(
+                src.functions.return_leaves_the_function()
+            )
 
 
     def test_constant_function():
@@ -751,11 +758,17 @@ test_what_happens_after_functions_return with unittest
 I add ``self`` to the parentheses of :ref:`test_what_happens_after_functions_return`
 
 .. code-block:: python
-  :lineno-start: 25
-  :emphasize-lines: 1-2
+  :lineno-start: 30
+  :emphasize-lines: 4-5
+
+          assert_is_none(result)
+          self.assertIs(result, None)
 
       # def test_what_happens_after_functions_return():
       def test_what_happens_after_functions_return(self):
+          assert_is_none(
+              src.functions.return_leaves_the_function()
+          )
 
 green again.
 
@@ -770,20 +783,16 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 7-13
+    :lineno-start: 33
+    :emphasize-lines: 6-9
 
         # def test_what_happens_after_functions_return():
         def test_what_happens_after_functions_return(self):
-            assert (
-                src.functions
-                   .return_leaves_the_function()
-            ) is None
+            assert_is_none(
+                src.functions.return_leaves_the_function()
+            )
             self.assertIsNot(
-                (
-                    src.functions
-                       .return_leaves_the_function()
-                ),
+                src.functions.return_leaves_the_function(),
                 None
             )
 
@@ -799,33 +808,26 @@ green again.
 * I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 7-8
+    :lineno-start: 33
+    :emphasize-lines: 6-7
 
         # def test_what_happens_after_functions_return():
         def test_what_happens_after_functions_return(self):
-            assert (
-                src.functions
-                   .return_leaves_the_function()
-            ) is None
+            assert_is_none(
+                src.functions.return_leaves_the_function()
+            )
             # self.assertIsNot(
             self.assertIs(
-                (
-                    src.functions
-                       .return_leaves_the_function()
-                ),
+                src.functions.return_leaves_the_function(),
                 None
             )
-
-
-    def test_constant_function():
 
   the test passes.
 
 * I add a :ref:`variable<what is a variable?>` for ``src.functions.return_leaves_the_function()``
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 33
     :emphasize-lines: 3
 
         # def test_what_happens_after_functions_return():
@@ -835,41 +837,36 @@ green again.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.return_leaves_the_function()``
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 33
     :emphasize-lines: 4-7, 9-17
 
         # def test_what_happens_after_functions_return():
         def test_what_happens_after_functions_return(self):
             result = src.functions.return_leaves_the_function()
-            # assert (
-            #     src.functions
-            #        .return_leaves_the_function()
-            # ) is None
+            assert_is_none(
+                # src.functions.return_leaves_the_function()
+                result
+            )
             # self.assertIsNot(
-            # self.assertIs(
-            #     (
-            #         src.functions
-            #            .return_leaves_the_function()
-            #     ),
-            #     None
-            # )
-            assert result is None
-            self.assertIs(result, None)
-
-
-    def test_constant_function():
+            self.assertIs(
+                # src.functions.return_leaves_the_function(),
+                result,
+                None
+            )
 
 * I remove the commented lines from :ref:`test_what_happens_after_functions_return`
 
   .. code-block:: python
-    :lineno-start: 23
+    :lineno-start: 30
+    :emphasize-lines: 7-8
 
+            assert_is_none(result)
             self.assertIs(result, None)
 
         def test_what_happens_after_functions_return(self):
             result = src.functions.return_leaves_the_function()
 
-            assert result is None
+            assert_is_none(result)
             self.assertIs(result, None)
 
 
@@ -900,13 +897,16 @@ test_constant_function with unittest
 * I move :ref:`test_constant_function` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 3-4
+    :lineno-start: 36
+    :emphasize-lines: 4-7
 
+            assert_is_none(result)
             self.assertIs(result, None)
 
         def test_constant_function():
-            assert src.functions.constant() == 'the same thing'
+            assert_equal(
+                src.functions.constant(), 'the same thing'
+            )
 
 
     def test_identity_function():
@@ -932,12 +932,17 @@ test_constant_function with unittest
 I add ``self`` to the parentheses of :ref:`test_constant_function`
 
 .. code-block:: python
-  :lineno-start: 31
-  :emphasize-lines: 1-2
+  :lineno-start: 36
+  :emphasize-lines: 4-5
+
+          assert_is_none(result)
+          self.assertIs(result, None)
 
       # def test_constant_function():
       def test_constant_function(self):
-          assert src.functions.constant() == 'the same thing'
+          assert_equal(
+              src.functions.constant(), 'the same thing'
+          )
 
 green again.
 
@@ -953,14 +958,15 @@ green again.
 
   .. code-block:: python
     :lineno-start: 31
-    :emphasize-lines: 4-7
+    :emphasize-lines: 6-8
 
         # def test_constant_function():
         def test_constant_function(self):
-            assert src.functions.constant() == 'the same thing'
+            assert_equal(
+                src.functions.constant(), 'the same thing'
+            )
             self.assertNotEqual(
-                src.functions.constant(),
-                'the same thing'
+                src.functions.constant(), 'the same thing'
             )
 
 
@@ -972,56 +978,39 @@ green again.
 
     AssertionError: 'the same thing' == 'the same thing'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the first :ref:`assertion<what is an assertion?>`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>`
 
   .. code-block:: python
-    :lineno-start: 31
-    :emphasize-lines: 4-5
+    :lineno-start: 39
+    :emphasize-lines: 6-7
 
         # def test_constant_function():
         def test_constant_function(self):
-            assert src.functions.constant() == 'the same thing'
+            assert_equal(
+                src.functions.constant(), 'the same thing'
+            )
             # self.assertNotEqual(
             self.assertEqual(
-                src.functions.constant(),
-                'the same thing'
+                src.functions.constant(), 'the same thing'
             )
-
-
-    def test_identity_function():
 
   the test passes.
 
-* I add :ref:`variables<what is a variable?>` for ``src.functions.constant()`` and ``'the same thing'``
+* I remove the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` since it is a repetition of the :ref:`assertEqual method<test_assert_equal>`
 
   .. code-block:: python
-    :lineno-start: 31
-    :emphasize-lines: 3-4
+    :lineno-start: 39
+    :emphasize-lines: 3-5
 
         # def test_constant_function():
         def test_constant_function(self):
-            result = src.functions.constant()
-            expectation = 'the same thing'
-            assert src.functions.constant() == 'the same thing'
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.constant()`` and ``'the same thing'``
-
-  .. code-block:: python
-    :lineno-start: 31
-    :emphasize-lines: 5, 7-12
-
-        # def test_constant_function():
-        def test_constant_function(self):
-            result = src.functions.constant()
-            expectation = 'the same thing'
-            # assert src.functions.constant() == 'the same thing'
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     src.functions.constant(),
-            #     'the same thing'
+            # assert_equal(
+            #     src.functions.constant(), 'the same thing'
             # )
-            assert result == expectation
-            self.assertEqual(result, expectation)
+            # self.assertNotEqual(
+            self.assertEqual(
+                src.functions.constant(), 'the same thing'
+            )
 
 
     def test_identity_function():
@@ -1029,16 +1018,15 @@ green again.
 * I remove the commented lines from :ref:`test_constant_function`
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 36
 
+            assert_is_none(result)
             self.assertIs(result, None)
 
         def test_constant_function(self):
-            result = src.functions.constant()
-            expectation = 'the same thing'
-
-            assert result == expectation
-            self.assertEqual(result, expectation)
+            self.assertEqual(
+                src.functions.constant(), 'the same thing'
+            )
 
 
     def test_identity_function():
@@ -1068,14 +1056,19 @@ test_identity_function with unittest
 * I move :ref:`test_identity_function` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 36
-    :emphasize-lines: 3-5
+    :lineno-start: 369
+    :emphasize-lines: 6-10
 
-            self.assertEqual(result, expectation)
+        def test_constant_function(self):
+            self.assertEqual(
+                src.functions.constant(), 'the same thing'
+            )
 
         def test_identity_function():
-            assert src.functions.identity(None) == None
-            assert src.functions.identity(object) == object
+            assert_is_none(src.functions.identity(None))
+            assert_equal(
+                src.functions.identity(object), object
+            )
 
 
     def test_why_use_a_function():
@@ -1101,11 +1094,17 @@ test_identity_function with unittest
 I add ``self`` to the parentheses of :ref:`test_identity_function`
 
 .. code-block:: python
-  :lineno-start: 38
-  :emphasize-lines: 1-2
+  :lineno-start: 39
+  :emphasize-lines: 6-7
 
-      # def test_identity_function():
-      def test_identity_function(self):
+        def test_constant_function(self):
+            self.assertEqual(
+                src.functions.constant(), 'the same thing'
+            )
+
+        # def test_identity_function():
+        def test_identity_function(self):
+            assert_is_none(src.functions.identity(None))
 
 the test is green again.
 
@@ -1117,19 +1116,22 @@ the test is green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertIsNot<test_assert_is_not>` and :ref:`assertNotEqual methods<test_assert_not_equal>`
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 4-6, 8-10
+    :lineno-start: 44
+    :emphasize-lines: 4-6, 11-13
 
         # def test_identity_function():
         def test_identity_function(self):
-            assert src.functions.identity(None) == None
-            self.assertNotEqual(
+            assert_is_none(src.functions.identity(None))
+            self.assertIsNot(
                 src.functions.identity(None), None
             )
-            assert src.functions.identity(object) == object
+
+            assert_equal(
+                src.functions.identity(object), object
+            )
             self.assertNotEqual(
                 src.functions.identity(object), object
             )
@@ -1137,32 +1139,29 @@ the test is green again.
 
     def test_why_use_a_function():
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    AssertionError: None == None
+    AssertionError: unexpectedly identical: None
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
+* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 44
     :emphasize-lines: 4-5
 
         # def test_identity_function():
         def test_identity_function(self):
-            assert src.functions.identity(None) == None
-            # self.assertNotEqual(
-            self.assertEqual(
+            assert_is_none(src.functions.identity(None))
+            # self.assertIsNot(
+            self.assertIs(
                 src.functions.identity(None), None
             )
-            assert src.functions.identity(object) == object
-            self.assertNotEqual(
+
+            assert_equal(
                 src.functions.identity(object), object
             )
-
-
-    def test_why_use_a_function():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1173,7 +1172,7 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 52
     :emphasize-lines: 9-10
 
         # def test_identity_function():
