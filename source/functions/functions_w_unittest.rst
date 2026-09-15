@@ -329,51 +329,16 @@ the test is green again.
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` for ``src.functions.w_pass()``
-
-  .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 3
-
-        # def test_making_a_function_w_pass():
-        def test_making_a_function_w_pass(self):
-            result = src.functions.w_pass()
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.w_pass()``
-
-  .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 4-5, 8-9
-
-        # def test_making_a_function_w_pass():
-        def test_making_a_function_w_pass(self):
-            result = src.functions.w_pass()
-            # assert_is_none(src.functions.w_pass())
-            assert_is_none(result)
-            # self.assertIsNot(
-            self.assertIs(
-                # src.functions.w_pass(), None
-                result, None
-            )
-
-
-    def test_making_a_function_w_return():
-
-  the test is still green.
-
 * I remove the commented lines from :ref:`test_making_a_function_w_pass`
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 7
 
     class TestFunctions(unittest.TestCase):
 
         def test_making_a_function_w_pass(self):
-            result = src.functions.w_pass()
-
-            assert_is_none(result)
-            self.assertIs(result, None)
+            assert_is_none(src.functions.w_pass())
+            self.assertIs(src.functions.w_pass(), None)
 
 
     def test_making_a_function_w_return():
@@ -403,11 +368,10 @@ test_making_a_function_w_return with unittest
 * I move :ref:`test_making_a_function_w_return` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 4-5
+    :lineno-start: 17
+    :emphasize-lines: 3-4
 
-            assert_is_none(result)
-            self.assertIs(result, None)
+            self.assertIs(src.functions.w_pass(), None)
 
         def test_making_a_function_w_return():
             assert_is_none(src.functions.w_return())
@@ -436,11 +400,10 @@ test_making_a_function_w_return with unittest
 I add ``self`` to the parentheses of :ref:`test_making_a_function_w_return`
 
 .. code-block:: python
-  :lineno-start: 18
-  :emphasize-lines: 4-5
+  :lineno-start: 17
+  :emphasize-lines: 3-4
 
-          assert_is_none(result)
-          self.assertIs(result, None)
+          self.assertIs(src.functions.w_pass(), None)
 
       # def test_making_a_function_w_return():
       def test_making_a_function_w_return(self):
@@ -459,18 +422,18 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 19
     :emphasize-lines: 4-6
 
-      # def test_making_a_function_w_return():
-      def test_making_a_function_w_return(self):
-          assert_is_none(src.functions.w_return())
-          self.assertIsNot(
-              src.functions.w_return(), None
-          )
+        # def test_making_a_function_w_return():
+        def test_making_a_function_w_return(self):
+            assert_is_none(src.functions.w_return())
+            self.assertIsNot(
+                src.functions.w_return(), None
+            )
 
 
-  def test_making_a_function_w_return_none():
+    def test_making_a_function_w_return_none():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -481,7 +444,7 @@ green again.
 * I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 19
     :emphasize-lines: 4-5
 
         # def test_making_a_function_w_return():
@@ -494,47 +457,18 @@ green again.
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` for ``src.functions.w_return()``
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 3
-
-        # def test_making_a_function_w_return():
-        def test_making_a_function_w_return(self):
-            result = src.functions.w_return()
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.w_return()``
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 4-5, 8-9
-
-        # def test_making_a_function_w_return():
-        def test_making_a_function_w_return(self):
-            result = src.functions.w_return()
-            # assert_is_none(src.functions.w_return())
-            assert_is_none(result)
-            # self.assertIsNot(
-            self.assertIs(
-                # src.functions.w_return(), None
-                result, None
-            )
-
 * I remove the commented lines from :ref:`test_making_a_function_w_return`
 
   .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 8
+    :lineno-start: 17
 
-            assert_is_none(result)
-            self.assertIs(result, None)
+            self.assertIs(src.functions.w_pass(), None)
 
         def test_making_a_function_w_return(self):
-            result = src.functions.w_return()
-
-            assert_is_none(result)
-            self.assertIs(result, None)
+            assert_is_none(src.functions.w_return())
+            self.assertIs(
+                src.functions.w_return(), None
+            )
 
 
     def test_making_a_function_w_return_none():
@@ -564,11 +498,12 @@ test_making_a_function_w_return_none with unittest
 * I move :ref:`test_making_a_function_w_return_none` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 4-5
+    :lineno-start: 21
+    :emphasize-lines: 5-6
 
-            assert_is_none(result)
-            self.assertIs(result, None)
+            self.assertIs(
+                src.functions.w_return(), None
+            )
 
         def test_making_a_function_w_return_none():
             assert_is_none(src.functions.w_return_none())
@@ -597,11 +532,12 @@ test_making_a_function_w_return_none with unittest
 I add ``self`` to the parentheses of :ref:`test_making_a_function_w_return_none`
 
 .. code-block:: python
-  :lineno-start: 24
-  :emphasize-lines: 4-5
+  :lineno-start: 21
+  :emphasize-lines: 5-6
 
-          assert_is_none(result)
-          self.assertIs(result, None)
+          self.assertIs(
+              src.functions.w_return(), None
+          )
 
       # def test_making_a_function_w_return_none():
       def test_making_a_function_w_return_none(self):
@@ -620,7 +556,7 @@ green.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
 
   .. code-block:: python
-    :lineno-start: 27
+    :lineno-start: 25
     :emphasize-lines: 4-6
 
         # def test_making_a_function_w_return_none():
@@ -642,7 +578,7 @@ green.
 * I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
 
   .. code-block:: python
-    :lineno-start: 27
+    :lineno-start: 25
     :emphasize-lines: 4-5
 
         # def test_making_a_function_w_return_none():
@@ -653,49 +589,25 @@ green.
                 src.functions.w_return_none(), None
             )
 
+
+    def test_what_happens_after_functions_return():
+
   the test passes.
-
-* I add a :ref:`variable<what is a variable?>` for ``src.functions.w_return_none()``
-
-  .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 3
-
-        # def test_making_a_function_w_return_none():
-        def test_making_a_function_w_return_none(self):
-            result = src.functions.w_return_none()
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.w_return_none()``
-
-  .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 4-5, 8-9
-
-        # def test_making_a_function_w_return_none():
-        def test_making_a_function_w_return_none(self):
-            result = src.functions.w_return_none()
-            # assert_is_none(src.functions.w_return_none())
-            assert_is_none(result)
-            # self.assertIsNot(
-            self.assertIs(
-                # src.functions.w_return_none(), None
-                result, None
-            )
 
 * I remove the commented lines from :ref:`test_making_a_function_w_return_none`
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 8
+    :lineno-start: 21
 
-            assert_is_none(result)
-            self.assertIs(result, None)
+            self.assertIs(
+                src.functions.w_return(), None
+            )
 
         def test_making_a_function_w_return_none(self):
-            result = src.functions.w_return_none()
-
-            assert_is_none(result)
-            self.assertIs(result, None)
+            assert_is_none(src.functions.w_return_none())
+            self.assertIs(
+                src.functions.w_return_none(), None
+            )
 
 
     def test_what_happens_after_functions_return():
@@ -725,11 +637,12 @@ test_what_happens_after_functions_return with unittest
 * I move :ref:`test_what_happens_after_functions_return` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 4-7
+    :lineno-start: 27
+    :emphasize-lines: 5-8
 
-            assert_is_none(result)
-            self.assertIs(result, None)
+            self.assertIs(
+                src.functions.w_return_none(), None
+            )
 
         def test_what_happens_after_functions_return():
             assert_is_none(
@@ -758,17 +671,21 @@ test_what_happens_after_functions_return with unittest
 I add ``self`` to the parentheses of :ref:`test_what_happens_after_functions_return`
 
 .. code-block:: python
-  :lineno-start: 30
-  :emphasize-lines: 4-5
+  :lineno-start: 27
+  :emphasize-lines: 5-6
 
-          assert_is_none(result)
-          self.assertIs(result, None)
+          self.assertIs(
+              src.functions.w_return_none(), None
+          )
 
       # def test_what_happens_after_functions_return():
       def test_what_happens_after_functions_return(self):
           assert_is_none(
               src.functions.return_leaves_the_function()
           )
+
+
+  def test_constant_function():
 
 green again.
 
@@ -783,7 +700,7 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
 
   .. code-block:: python
-    :lineno-start: 33
+    :lineno-start: 31
     :emphasize-lines: 6-9
 
         # def test_what_happens_after_functions_return():
@@ -808,7 +725,7 @@ green again.
 * I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
 
   .. code-block:: python
-    :lineno-start: 33
+    :lineno-start: 31
     :emphasize-lines: 6-7
 
         # def test_what_happens_after_functions_return():
@@ -824,50 +741,23 @@ green again.
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` for ``src.functions.return_leaves_the_function()``
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 3
-
-        # def test_what_happens_after_functions_return():
-        def test_what_happens_after_functions_return(self):
-            result = src.functions.return_leaves_the_function()
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.functions.return_leaves_the_function()``
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 4-7, 9-17
-
-        # def test_what_happens_after_functions_return():
-        def test_what_happens_after_functions_return(self):
-            result = src.functions.return_leaves_the_function()
-            assert_is_none(
-                # src.functions.return_leaves_the_function()
-                result
-            )
-            # self.assertIsNot(
-            self.assertIs(
-                # src.functions.return_leaves_the_function(),
-                result,
-                None
-            )
-
 * I remove the commented lines from :ref:`test_what_happens_after_functions_return`
 
   .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 7-8
+    :lineno-start: 27
 
-            assert_is_none(result)
-            self.assertIs(result, None)
+            self.assertIs(
+                src.functions.w_return_none(), None
+            )
 
         def test_what_happens_after_functions_return(self):
-            result = src.functions.return_leaves_the_function()
-
-            assert_is_none(result)
-            self.assertIs(result, None)
+            assert_is_none(
+                src.functions.return_leaves_the_function()
+            )
+            self.assertIs(
+                src.functions.return_leaves_the_function(),
+                None
+            )
 
 
     def test_constant_function():
@@ -897,11 +787,13 @@ test_constant_function with unittest
 * I move :ref:`test_constant_function` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 36
-    :emphasize-lines: 4-7
+    :lineno-start: 35
+    :emphasize-lines: 6-9
 
-            assert_is_none(result)
-            self.assertIs(result, None)
+            self.assertIs(
+                src.functions.return_leaves_the_function(),
+                None
+            )
 
         def test_constant_function():
             assert_equal(
@@ -933,10 +825,12 @@ I add ``self`` to the parentheses of :ref:`test_constant_function`
 
 .. code-block:: python
   :lineno-start: 36
-  :emphasize-lines: 4-5
+  :emphasize-lines: 6-7
 
-          assert_is_none(result)
-          self.assertIs(result, None)
+          self.assertIs(
+              src.functions.return_leaves_the_function(),
+              None
+          )
 
       # def test_constant_function():
       def test_constant_function(self):
@@ -957,7 +851,7 @@ green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>`
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 40
     :emphasize-lines: 6-8
 
         # def test_constant_function():
@@ -981,7 +875,7 @@ green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>`
 
   .. code-block:: python
-    :lineno-start: 39
+    :lineno-start: 40
     :emphasize-lines: 6-7
 
         # def test_constant_function():
@@ -996,32 +890,15 @@ green again.
 
   the test passes.
 
-* I remove the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` since it is a repetition of the :ref:`assertEqual method<test_assert_equal>`
+* I remove the commented lines and the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` (since it is now a repetition) from :ref:`test_constant_function`
 
   .. code-block:: python
-    :lineno-start: 39
-    :emphasize-lines: 3-5
+    :lineno-start: 35
 
-        # def test_constant_function():
-        def test_constant_function(self):
-            # assert_equal(
-            #     src.functions.constant(), 'the same thing'
-            # )
-            # self.assertNotEqual(
-            self.assertEqual(
-                src.functions.constant(), 'the same thing'
+            self.assertIs(
+                src.functions.return_leaves_the_function(),
+                None
             )
-
-
-    def test_identity_function():
-
-* I remove the commented lines from :ref:`test_constant_function`
-
-  .. code-block:: python
-    :lineno-start: 36
-
-            assert_is_none(result)
-            self.assertIs(result, None)
 
         def test_constant_function(self):
             self.assertEqual(
@@ -1056,7 +933,7 @@ test_identity_function with unittest
 * I move :ref:`test_identity_function` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 369
+    :lineno-start: 40
     :emphasize-lines: 6-10
 
         def test_constant_function(self):
@@ -1094,17 +971,17 @@ test_identity_function with unittest
 I add ``self`` to the parentheses of :ref:`test_identity_function`
 
 .. code-block:: python
-  :lineno-start: 39
+  :lineno-start: 40
   :emphasize-lines: 6-7
 
-        def test_constant_function(self):
-            self.assertEqual(
-                src.functions.constant(), 'the same thing'
-            )
+      def test_constant_function(self):
+          self.assertEqual(
+              src.functions.constant(), 'the same thing'
+          )
 
-        # def test_identity_function():
-        def test_identity_function(self):
-            assert_is_none(src.functions.identity(None))
+      # def test_identity_function():
+      def test_identity_function(self):
+          assert_is_none(src.functions.identity(None))
 
 the test is green again.
 
@@ -1119,7 +996,7 @@ the test is green again.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertIsNot<test_assert_is_not>` and :ref:`assertNotEqual methods<test_assert_not_equal>`
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 45
     :emphasize-lines: 4-6, 11-13
 
         # def test_identity_function():
@@ -1148,7 +1025,7 @@ the test is green again.
 * I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 45
     :emphasize-lines: 4-5
 
         # def test_identity_function():
@@ -1172,17 +1049,12 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
 
   .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 9-10
+    :lineno-start: 53
+    :emphasize-lines: 4-5
 
-        # def test_identity_function():
-        def test_identity_function(self):
-            assert src.functions.identity(None) == None
-            # self.assertNotEqual(
-            self.assertEqual(
-                src.functions.identity(None), None
+            assert_equal(
+                src.functions.identity(object), object
             )
-            assert src.functions.identity(object) == object
             # self.assertNotEqual(
             self.assertEqual(
                 src.functions.identity(object), object
@@ -1193,77 +1065,25 @@ the test is green again.
 
   the test passes.
 
-* I add :ref:`variables<what is a variable?>` for ``src.functions.identity``
+* I remove the commented lines and the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` from :ref:`test_identity_function`
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 3, 10
+    :lineno-start: 40
 
-        # def test_identity_function():
-        def test_identity_function(self):
-            result = src.functions.identity(None)
-            assert src.functions.identity(None) == None
-            # self.assertNotEqual(
+        def test_constant_function(self):
             self.assertEqual(
+                src.functions.constant(), 'the same thing'
+            )
+
+        def test_identity_function(self):
+            assert_is_none(src.functions.identity(None))
+            self.assertIs(
                 src.functions.identity(None), None
             )
 
-            result = src.functions.identity(object)
-            assert src.functions.identity(object) == object
-            # self.assertNotEqual(
             self.assertEqual(
                 src.functions.identity(object), object
             )
-
-
-    def test_why_use_a_function():
-
-* I use the :ref:`variables<what is a variable?>` to remove repetition of ``src.functions.identity``
-
-  .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 4-5, 8-9, 13-14, 17-18
-
-        # def test_identity_function():
-        def test_identity_function(self):
-            result = src.functions.identity(None)
-            # assert src.functions.identity(None) == None
-            assert result == None
-            # self.assertNotEqual(
-            self.assertEqual(
-                # src.functions.identity(None), None
-                result, None
-            )
-
-            result = src.functions.identity(object)
-            # assert src.functions.identity(object) == object
-            assert result == object
-            # self.assertNotEqual(
-            self.assertEqual(
-                # src.functions.identity(object), object
-                result, object
-            )
-
-
-    def test_why_use_a_function():
-
-* I remove the commented lines from :ref:`test_identity_function`
-
-  .. code-block:: python
-    :lineno-start: 36
-
-            self.assertEqual(result, expectation)
-
-        def test_identity_function(self):
-            result = src.functions.identity(None)
-
-            assert result == None
-            self.assertEqual(result, None)
-
-            result = src.functions.identity(object)
-
-            assert result == object
-            self.assertEqual(result, object)
 
 
     def test_why_use_a_function():
@@ -1293,25 +1113,27 @@ test_why_use_a_function with unittest
 * I move :ref:`test_why_use_a_function` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 47
-    :emphasize-lines: 3-5, 7-16
+    :lineno-start: 51
+    :emphasize-lines: 5-7, 9-18
 
-            self.assertEqual(result, object)
+            self.assertEqual(
+                src.functions.identity(object), object
+            )
 
         def test_why_use_a_function():
             def add_x(number):
                 return 3 + number
 
-            assert add_x(0) == 3
-            assert add_x(1) == 4
-            assert add_x(2) == 5
-            assert add_x(3) == 6
-            assert add_x(4) == 7
-            assert add_x(5) == 8
-            assert add_x(6) == 9
-            assert add_x(7) == 10
-            assert add_x(8) == 11
-            assert add_x(9) == 12
+            assert_equal(add_x(0), 3)
+            assert_equal(add_x(1), 4)
+            assert_equal(add_x(2), 5)
+            assert_equal(add_x(3), 6)
+            assert_equal(add_x(4), 7)
+            assert_equal(add_x(5), 8)
+            assert_equal(add_x(6), 9)
+            assert_equal(add_x(7), 10)
+            assert_equal(add_x(8), 11)
+            assert_equal(add_x(9), 12)
 
 
     def test_positional_arguments():
@@ -1337,12 +1159,17 @@ test_why_use_a_function with unittest
 I add ``self`` to the parentheses of :ref:`test_why_use_a_function`
 
 .. code-block:: python
-  :lineno-start: 49
-  :emphasize-lines: 1-2
+  :lineno-start: 51
+  :emphasize-lines: 5-6
+
+          self.assertEqual(
+              src.functions.identity(object), object
+          )
 
       # def test_why_use_a_function():
       def test_why_use_a_function(self):
           def add_x(number):
+              return 3 + number
 
 green again.
 
@@ -1357,7 +1184,7 @@ green again.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_why_use_a_function`
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 55
     :emphasize-lines: 7, 9
 
         # def test_why_use_a_function():
@@ -1365,35 +1192,35 @@ green again.
             def add_x(number):
                 return 3 + number
 
-            assert add_x(0) == 3
+            assert_equal(add_x(0), 3)
             self.assertNotEqual(add_x(0), 3)
-            assert add_x(1) == 4
+            assert_equal(add_x(1), 4)
             self.assertNotEqual(add_x(1), 4)
 
   .. code-block:: python
     :lineno-start: 58
     :emphasize-lines: 2, 4, 6, 8
 
-            assert add_x(2) == 5
+            assert_equal(add_x(2), 5)
             self.assertNotEqual(add_x(2), 5)
-            assert add_x(3) == 6
+            assert_equal(add_x(3), 6)
             self.assertNotEqual(add_x(3), 6)
-            assert add_x(4) == 7
+            assert_equal(add_x(4), 7)
             self.assertNotEqual(add_x(4), 7)
-            assert add_x(5) == 8
+            assert_equal(add_x(5), 8)
             self.assertNotEqual(add_x(5), 8)
 
   .. code-block:: python
     :lineno-start: 66
     :emphasize-lines: 2, 4, 6, 8
 
-            assert add_x(6) == 9
+            assert_equal(add_x(6), 9)
             self.assertNotEqual(add_x(6), 9)
-            assert add_x(7) == 10
+            assert_equal(add_x(7), 10)
             self.assertNotEqual(add_x(7), 10)
-            assert add_x(8) == 11
+            assert_equal(add_x(8), 11)
             self.assertNotEqual(add_x(8), 11)
-            assert add_x(9) == 12
+            assert_equal(add_x(9), 12)
             self.assertNotEqual(add_x(9), 12)
 
 
@@ -1404,62 +1231,57 @@ green again.
 * I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_why_use_a_function`
 
   .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 7-8, 10-11
-
-        # def test_why_use_a_function():
-        def test_why_use_a_function(self):
-            def add_x(number):
-                return 3 + number
-
-            assert add_x(0) == 3
-            # self.assertNotEqual(add_x(0), 3)
-            self.assertEqual(add_x(0), 3)
-            assert add_x(1) == 4
-            # self.assertNotEqual(add_x(1), 4)
-            self.assertEqual(add_x(1), 4)
-
-  .. code-block:: python
     :lineno-start: 60
     :emphasize-lines: 2-3, 5-6
 
-            assert add_x(2) == 5
-            # self.assertNotEqual(add_x(2), 5)
-            self.assertEqual(add_x(2), 5)
-            assert add_x(3) == 6
-            # self.assertNotEqual(add_x(3), 6)
-            self.assertEqual(add_x(3), 6)
+            assert_equal(add_x(0), 3)
+            # self.assertNotEqual(add_x(0), 3)
+            self.assertEqual(add_x(0), 3)
+            assert_equal(add_x(1), 4)
+            # self.assertNotEqual(add_x(1), 4)
+            self.assertEqual(add_x(1), 4)
 
   .. code-block:: python
     :lineno-start: 66
     :emphasize-lines: 2-3, 5-6
 
-            assert add_x(4) == 7
-            # self.assertNotEqual(add_x(4), 7)
-            self.assertEqual(add_x(4), 7)
-            assert add_x(5) == 8
-            # self.assertNotEqual(add_x(5), 8)
-            self.assertEqual(add_x(5), 8)
+            assert_equal(add_x(2), 5)
+            # self.assertNotEqual(add_x(2), 5)
+            self.assertEqual(add_x(2), 5)
+            assert_equal(add_x(3), 6)
+            # self.assertNotEqual(add_x(3), 6)
+            self.assertEqual(add_x(3), 6)
 
   .. code-block:: python
     :lineno-start: 72
     :emphasize-lines: 2-3, 5-6
 
-            assert add_x(6) == 9
-            # self.assertNotEqual(add_x(6), 9)
-            self.assertEqual(add_x(6), 9)
-            assert add_x(7) == 10
-            # self.assertNotEqual(add_x(7), 10)
-            self.assertEqual(add_x(7), 10)
+            assert_equal(add_x(4), 7)
+            # self.assertNotEqual(add_x(4), 7)
+            self.assertEqual(add_x(4), 7)
+            assert_equal(add_x(5), 8)
+            # self.assertNotEqual(add_x(5), 8)
+            self.assertEqual(add_x(5), 8)
 
   .. code-block:: python
     :lineno-start: 78
     :emphasize-lines: 2-3, 5-6
 
-            assert add_x(8) == 11
+            assert_equal(add_x(6), 9)
+            # self.assertNotEqual(add_x(6), 9)
+            self.assertEqual(add_x(6), 9)
+            assert_equal(add_x(7), 10)
+            # self.assertNotEqual(add_x(7), 10)
+            self.assertEqual(add_x(7), 10)
+
+  .. code-block:: python
+    :lineno-start: 84
+    :emphasize-lines: 2-3, 5-6
+
+            assert_equal(add_x(8), 11)
             # self.assertNotEqual(add_x(8), 11)
             self.assertEqual(add_x(8), 11)
-            assert add_x(9) == 12
+            assert_equal(add_x(9), 12)
             # self.assertNotEqual(add_x(9), 12)
             self.assertEqual(add_x(9), 12)
 
@@ -1468,335 +1290,29 @@ green again.
 
   the test passes.
 
-* I add :ref:`variables<what is a variable?>` for ``add_x`` and the expectations
+* I remove the commented lines and the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` from :ref:`test_why_use_a_function`
 
   .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 6-7
+    :lineno-start: 51
 
-        # def test_why_use_a_function():
+            self.assertEqual(
+                src.functions.identity(object), object
+            )
+
         def test_why_use_a_function(self):
             def add_x(number):
                 return 3 + number
 
-            result = add_x(0)
-            expectation = 3
-            assert add_x(0) == 3
-            # self.assertNotEqual(add_x(0), 3)
             self.assertEqual(add_x(0), 3)
-
-  .. code-block:: python
-    :lineno-start: 60
-    :emphasize-lines: 1-2
-
-            result = add_x(1)
-            expectation = 4
-            assert add_x(1) == 4
-            # self.assertNotEqual(add_x(1), 4)
             self.assertEqual(add_x(1), 4)
-
-  .. code-block:: python
-    :lineno-start: 66
-    :emphasize-lines: 1-2
-
-            result = add_x(2)
-            expectation = 5
-            assert add_x(2) == 5
-            # self.assertNotEqual(add_x(2), 5)
             self.assertEqual(add_x(2), 5)
-
-  .. code-block:: python
-    :lineno-start: 72
-    :emphasize-lines: 1-2
-
-            result = add_x(3)
-            expectation = 6
-            assert add_x(3) == 6
-            # self.assertNotEqual(add_x(3), 6)
             self.assertEqual(add_x(3), 6)
-
-  .. code-block:: python
-    :lineno-start: 78
-    :emphasize-lines: 1-2
-
-            result = add_x(4)
-            expectation = 7
-            assert add_x(4) == 7
-            # self.assertNotEqual(add_x(4), 7)
             self.assertEqual(add_x(4), 7)
-
-  .. code-block:: python
-    :lineno-start: 84
-    :emphasize-lines: 1-2
-
-            result = add_x(5)
-            expectation = 8
-            assert add_x(5) == 8
-            # self.assertNotEqual(add_x(5), 8)
             self.assertEqual(add_x(5), 8)
-
-  .. code-block:: python
-    :lineno-start: 90
-    :emphasize-lines: 1-2
-
-            result = add_x(6)
-            expectation = 9
-            assert add_x(6) == 9
-            # self.assertNotEqual(add_x(6), 9)
             self.assertEqual(add_x(6), 9)
-
-  .. code-block:: python
-    :lineno-start: 96
-    :emphasize-lines: 1-2
-
-            result = add_x(7)
-            expectation = 10
-            assert add_x(7) == 10
-            # self.assertNotEqual(add_x(7), 10)
             self.assertEqual(add_x(7), 10)
-
-  .. code-block:: python
-    :lineno-start: 102
-    :emphasize-lines: 1-2
-
-            result = add_x(8)
-            expectation = 11
-            assert add_x(8) == 11
-            # self.assertNotEqual(add_x(8), 11)
             self.assertEqual(add_x(8), 11)
-
-  .. code-block:: python
-    :lineno-start: 108
-    :emphasize-lines: 1-2
-
-            result = add_x(9)
-            expectation = 12
-            assert add_x(9) == 12
-            # self.assertNotEqual(add_x(9), 12)
             self.assertEqual(add_x(9), 12)
-
-
-    def test_positional_arguments():
-
-* I use the :ref:`variables<what is a variable?>` to remove repetition of ``add_x`` and the expectations
-
-  .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 8-12
-
-        # def test_why_use_a_function():
-        def test_why_use_a_function(self):
-            def add_x(number):
-                return 3 + number
-
-            result = add_x(0)
-            expectation = 3
-            # assert add_x(0) == 3
-            # self.assertNotEqual(add_x(0), 3)
-            # self.assertEqual(add_x(0), 3)
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 62
-    :emphasize-lines: 3-7
-
-            result = add_x(1)
-            expectation = 4
-            # assert add_x(1) == 4
-            # self.assertNotEqual(add_x(1), 4)
-            # self.assertEqual(add_x(1), 4)
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 70
-    :emphasize-lines: 3-7
-
-            result = add_x(2)
-            expectation = 5
-            # assert add_x(2) == 5
-            # self.assertNotEqual(add_x(2), 5)
-            # self.assertEqual(add_x(2), 5)
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 78
-    :emphasize-lines: 3-7
-
-            result = add_x(3)
-            expectation = 6
-            # assert add_x(3) == 6
-            # self.assertNotEqual(add_x(3), 6)
-            # self.assertEqual(add_x(3), 6)
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 86
-    :emphasize-lines: 3-7
-
-            result = add_x(4)
-            expectation = 7
-            # assert add_x(4) == 7
-            # self.assertNotEqual(add_x(4), 7)
-            # self.assertEqual(add_x(4), 7)
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 94
-    :emphasize-lines: 3-7
-
-            result = add_x(5)
-            expectation = 8
-            # assert add_x(5) == 8
-            # self.assertNotEqual(add_x(5), 8)
-            # self.assertEqual(add_x(5), 8)
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 102
-    :emphasize-lines: 3-7
-
-            result = add_x(6)
-            expectation = 9
-            # assert add_x(6) == 9
-            # self.assertNotEqual(add_x(6), 9)
-            # self.assertEqual(add_x(6), 9)
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 110
-    :emphasize-lines: 3-7
-
-            result = add_x(7)
-            expectation = 10
-            # assert add_x(7) == 10
-            # self.assertNotEqual(add_x(7), 10)
-            # self.assertEqual(add_x(7), 10)
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 118
-    :emphasize-lines: 3-7
-
-            result = add_x(8)
-            expectation = 11
-            # assert add_x(8) == 11
-            # self.assertNotEqual(add_x(8), 11)
-            # self.assertEqual(add_x(8), 11)
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 126
-    :emphasize-lines: 3-7
-
-            result = add_x(9)
-            expectation = 12
-            # assert add_x(9) == 12
-            # self.assertNotEqual(add_x(9), 12)
-            # self.assertEqual(add_x(9), 12)
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-
-    def test_positional_arguments():
-
-  the test is still green.
-
-* I remove the commented lines from :ref:`test_why_use_a_function`
-
-  .. code-block:: python
-    :lineno-start: 47
-
-            self.assertEqual(result, object)
-
-        def test_why_use_a_function(self):
-            def add_x(number):
-                return 3 + number
-
-            result = add_x(0)
-            expectation = 3
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 58
-
-            result = add_x(1)
-            expectation = 4
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 63
-
-            result = add_x(2)
-            expectation = 5
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 68
-
-            result = add_x(3)
-            expectation = 6
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 73
-
-            result = add_x(4)
-            expectation = 7
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 78
-
-            result = add_x(5)
-            expectation = 8
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 83
-
-            result = add_x(6)
-            expectation = 9
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 88
-
-            result = add_x(7)
-            expectation = 10
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 93
-
-            result = add_x(8)
-            expectation = 11
-            assert result == expectation
-            self.assertEqual(result, expectation)
-
-  .. code-block:: python
-    :lineno-start: 98
-
-            result = add_x(9)
-            expectation = 12
-            assert result == expectation
-            self.assertEqual(result, expectation)
 
 
     def test_positional_arguments():
@@ -1826,10 +1342,10 @@ test_positional_arguments with unittest
 * I move :ref:`test_positional_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 101
+    :lineno-start: 68
     :emphasize-lines: 3-7
 
-            self.assertEqual(result, expectation)
+            self.assertEqual(add_x(9), 12)
 
         def test_positional_arguments():
             positional_arguments = (
@@ -1838,47 +1354,41 @@ test_positional_arguments with unittest
             first, last = 'first', 'last'
 
   .. code-block:: python
-    :lineno-start: 109
-    :emphasize-lines: 1-12
+    :lineno-start: 76
+    :emphasize-lines: 1-8, 10-12
 
-            assert (
-                positional_arguments(first, last)
-            == (first, last)
+            assert_equal(
+                positional_arguments(first, last),
+                (first, last)
             )
-            assert (
-                positional_arguments(last, first)
-            == (last, first)
+            assert_equal(
+                positional_arguments(last, first),
+                (last, first)
             )
-            assert (
-                positional_arguments(0, 1)
-            == (0, 1)
+
+            assert_equal(
+                positional_arguments(0, 1), (0, 1)
             )
+
 
   .. code-block:: python
-    :lineno-start: 122
-    :emphasize-lines: 1-6
+    :lineno-start: 89
+    :emphasize-lines: 1-6, 8-15
 
             a_tuple = (0, 1, 2, 'n')
             a_list = [0, 1, 2, 'n']
-            assert (
-                positional_arguments(a_tuple, a_list)
-            == (a_tuple, a_list)
+            assert_equal(
+                positional_arguments(a_tuple, a_list),
+                (a_tuple, a_list)
             )
 
-  .. code-block:: python
-    :lineno-start: 129
-    :emphasize-lines: 1-11
-
-            keyword_arguments = (
-                src.functions.keyword_arguments
-            )
             a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
-            assert (
-                keyword_arguments(
+            assert_equal(
+                src.functions.keyword_arguments(
                     a_set, a_dictionary,
-                )
-            == (a_set, a_dictionary)
+                ),
+                (a_set, a_dictionary)
             )
 
 
@@ -1905,11 +1415,16 @@ test_positional_arguments with unittest
 I add ``self`` to the parentheses of :ref:`test_positional_arguments`
 
 .. code-block:: python
-  :lineno-start: 103
-  :emphasize-lines: 1-2
+  :lineno-start: 68
+  :emphasize-lines: 3-4
+
+          self.assertEqual(add_x(9), 12)
 
       # def test_positional_arguments():
       def test_positional_arguments(self):
+          positional_arguments = (
+              src.functions.positional_arguments
+          )
 
 green.
 
@@ -1924,32 +1439,20 @@ green.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 103
-    :emphasize-lines: 12-15
+    :lineno-start: 77
+    :emphasize-lines: 5-8, 13-16
 
-        # def test_positional_arguments():
-        def test_positional_arguments(self):
-            positional_arguments = (
-                src.functions.positional_arguments
-            )
-            first, last = 'first', 'last'
-
-            assert (
-                positional_arguments(first, last)
-            == (first, last)
+            assert_equal(
+                positional_arguments(first, last),
+                (first, last)
             )
             self.assertNotEqual(
                 positional_arguments(first, last),
                 (first, last)
             )
-
-  .. code-block:: python
-    :lineno-start: 118
-    :emphasize-lines: 5-8
-
-            assert (
-                positional_arguments(last, first)
-            == (last, first)
+            assert_equal(
+                positional_arguments(last, first),
+                (last, first)
             )
             self.assertNotEqual(
                 positional_arguments(last, first),
@@ -1957,26 +1460,25 @@ green.
             )
 
   .. code-block:: python
-    :lineno-start: 126
-    :emphasize-lines: 5-7
+    :lineno-start: 94
+    :emphasize-lines: 4-6
 
-            assert (
-                positional_arguments(0, 1)
-            == (0, 1)
+            assert_equal(
+                positional_arguments(0, 1), (0, 1)
             )
             self.assertNotEqual(
                 positional_arguments(0, 1), (0, 1)
             )
 
   .. code-block:: python
-    :lineno-start: 134
+    :lineno-start: 101
     :emphasize-lines: 7-10
 
             a_tuple = (0, 1, 2, 'n')
             a_list = [0, 1, 2, 'n']
-            assert (
-                positional_arguments(a_tuple, a_list)
-            == (a_tuple, a_list)
+            assert_equal(
+                positional_arguments(a_tuple, a_list),
+                (a_tuple, a_list)
             )
             self.assertNotEqual(
                 positional_arguments(a_tuple, a_list),
@@ -1984,23 +1486,20 @@ green.
             )
 
   .. code-block:: python
-    :lineno-start: 145
-    :emphasize-lines: 12-17
+    :lineno-start: 112
+    :emphasize-lines: 9-14
 
-            keyword_arguments = (
-                src.functions.keyword_arguments
-            )
             a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
-            assert (
-                keyword_arguments(
+            assert_equal(
+                src.functions.keyword_arguments(
                     a_set, a_dictionary,
-                )
-            == (a_set, a_dictionary)
+                ),
+                (a_set, a_dictionary)
             )
             self.assertNotEqual(
-                keyword_arguments(
-                    a_set, a_dictionary,
+                src.functions.keyword_arguments(
+                    a_set, a_dictionary
                 ),
                 (a_set, a_dictionary)
             )
@@ -2013,33 +1512,21 @@ green.
 * I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 103
-    :emphasize-lines: 12-13
+    :lineno-start: 77
+    :emphasize-lines: 5-6, 14-15
 
-        # def test_positional_arguments():
-        def test_positional_arguments(self):
-            positional_arguments = (
-                src.functions.positional_arguments
-            )
-            first, last = 'first', 'last'
-
-            assert (
-                positional_arguments(first, last)
-            == (first, last)
+            assert_equal(
+                positional_arguments(first, last),
+                (first, last)
             )
             # self.assertNotEqual(
             self.assertEqual(
                 positional_arguments(first, last),
                 (first, last)
             )
-
-  .. code-block:: python
-    :lineno-start: 119
-    :emphasize-lines: 5-6
-
-            assert (
-                positional_arguments(last, first)
-            == (last, first)
+            assert_equal(
+                positional_arguments(last, first),
+                (last, first)
             )
             # self.assertNotEqual(
             self.assertEqual(
@@ -2048,12 +1535,11 @@ green.
             )
 
   .. code-block:: python
-    :lineno-start: 128
-    :emphasize-lines: 5-6
+    :lineno-start: 96
+    :emphasize-lines: 4-5
 
-            assert (
-                positional_arguments(0, 1)
-            == (0, 1)
+            assert_equal(
+                positional_arguments(0, 1), (0, 1)
             )
             # self.assertNotEqual(
             self.assertEqual(
@@ -2061,14 +1547,14 @@ green.
             )
 
   .. code-block:: python
-    :lineno-start: 137
+    :lineno-start: 104
     :emphasize-lines: 7-8
 
             a_tuple = (0, 1, 2, 'n')
             a_list = [0, 1, 2, 'n']
-            assert (
-                positional_arguments(a_tuple, a_list)
-            == (a_tuple, a_list)
+            assert_equal(
+                positional_arguments(a_tuple, a_list),
+                (a_tuple, a_list)
             )
             # self.assertNotEqual(
             self.assertEqual(
@@ -2077,24 +1563,21 @@ green.
             )
 
   .. code-block:: python
-    :lineno-start: 149
-    :emphasize-lines: 12-13
+    :lineno-start: 116
+    :emphasize-lines: 9-10
 
-            keyword_arguments = (
-                src.functions.keyword_arguments
-            )
             a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
-            assert (
-                keyword_arguments(
+            assert_equal(
+                src.functions.keyword_arguments(
                     a_set, a_dictionary,
-                )
-            == (a_set, a_dictionary)
+                ),
+                (a_set, a_dictionary)
             )
             # self.assertNotEqual(
             self.assertEqual(
-                keyword_arguments(
-                    a_set, a_dictionary,
+                src.functions.keyword_arguments(
+                    a_set, a_dictionary
                 ),
                 (a_set, a_dictionary)
             )
@@ -2104,301 +1587,59 @@ green.
 
   the test passes.
 
-* I add :ref:`variables<what is a variable?>` for the :ref:`calls<how to call a function with input>` to ``positional_arguments``, ``keyword_arguments`` and my expectations
+* I remove the commented lines and the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` from :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 103
-    :emphasize-lines: 8-9
+    :lineno-start: 68
 
-        # def test_positional_arguments():
+            self.assertEqual(add_x(9), 12)
+
         def test_positional_arguments(self):
             positional_arguments = (
                 src.functions.positional_arguments
             )
             first, last = 'first', 'last'
 
-            reality = positional_arguments(first, last)
-            my_expectation = (first, last)
-            assert (
-                positional_arguments(first, last)
-            == (first, last)
-            )
-            # self.assertNotEqual(
-
   .. code-block:: python
-    :lineno-start: 117
-    :emphasize-lines: 6-7
+    :lineno-start: 76
 
             self.assertEqual(
                 positional_arguments(first, last),
                 (first, last)
             )
-
-            reality = positional_arguments(last, first)
-            my_expectation = (last, first)
-            assert (
-                positional_arguments(last, first)
-            == (last, first)
-            )
-            # self.assertNotEqual(
-
-  .. code-block:: python
-    :lineno-start: 129
-    :emphasize-lines: 6-7
-
             self.assertEqual(
                 positional_arguments(last, first),
                 (last, first)
             )
 
-            reality = positional_arguments(0, 1)
-            my_expectation = (0, 1)
-            assert (
-                positional_arguments(0, 1)
-            == (0, 1)
-            )
-            # self.assertNotEqual(
+  .. code-block:: python
+    :lineno-start: 85
+
             self.assertEqual(
                 positional_arguments(0, 1), (0, 1)
             )
 
   .. code-block:: python
-    :lineno-start: 145
-    :emphasize-lines: 4-6
+    :lineno-start: 89
 
             a_tuple = (0, 1, 2, 'n')
             a_list = [0, 1, 2, 'n']
-
-            reality = positional_arguments(
-                a_tuple, a_list
-            )
-            my_expectation = (a_tuple, a_list)
-            assert (
-                positional_arguments(a_tuple, a_list)
-            == (a_tuple, a_list)
-            )
-            # self.assertNotEqual(
             self.assertEqual(
                 positional_arguments(a_tuple, a_list),
                 (a_tuple, a_list)
             )
 
   .. code-block:: python
-    :lineno-start: 162
-    :emphasize-lines: 7-10
+    :lineno-start: 96
 
-            keyword_arguments = (
-                src.functions.keyword_arguments
-            )
             a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
-
-            reality = keyword_arguments(
-                a_set, a_dictionary,
-            )
-            my_expectation = (a_set, a_dictionary)
-            assert (
-                keyword_arguments(
-                    a_set, a_dictionary,
-                )
-            == (a_set, a_dictionary)
-            )
-            # self.assertNotEqual(
             self.assertEqual(
-                keyword_arguments(
-                    a_set, a_dictionary,
+                src.functions.keyword_arguments(
+                    a_set, a_dictionary
                 ),
                 (a_set, a_dictionary)
             )
-
-
-    def test_keyword_arguments():
-
-* I use the :ref:`variables<what is a variable?>` to remove repetition of the :ref:`calls<how to call a function with input>` to ``positional_arguments``, ``keyword_arguments`` and my expectations, from :ref:`test_positional_arguments`
-
-  .. code-block:: python
-    :lineno-start: 103
-    :emphasize-lines: 10-13, 15-20
-
-        # def test_positional_arguments():
-        def test_positional_arguments(self):
-            positional_arguments = (
-                src.functions.positional_arguments
-            )
-            first, last = 'first', 'last'
-
-            reality = positional_arguments(first, last)
-            my_expectation = (first, last)
-            # assert (
-            #     positional_arguments(first, last)
-            # == (first, last)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     positional_arguments(first, last),
-            #     (first, last)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 124
-    :emphasize-lines: 3-6, 8-13
-
-            reality = positional_arguments(last, first)
-            my_expectation = (last, first)
-            # assert (
-            #     positional_arguments(last, first)
-            # == (last, first)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     positional_arguments(last, first),
-            #     (last, first)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 138
-    :emphasize-lines: 3-6, 8-12
-
-            reality = positional_arguments(0, 1)
-            my_expectation = (0, 1)
-            # assert (
-            #     positional_arguments(0, 1)
-            # == (0, 1)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     positional_arguments(0, 1), (0, 1)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 151
-    :emphasize-lines: 8-11, 13-18
-
-            a_tuple = (0, 1, 2, 'n')
-            a_list = [0, 1, 2, 'n']
-
-            reality = positional_arguments(
-                a_tuple, a_list
-            )
-            my_expectation = (a_tuple, a_list)
-            # assert (
-            #     positional_arguments(a_tuple, a_list)
-            # == (a_tuple, a_list)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     positional_arguments(a_tuple, a_list),
-            #     (a_tuple, a_list)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 170
-    :emphasize-lines: 11-16, 18-25
-
-            keyword_arguments = (
-                src.functions.keyword_arguments
-            )
-            a_set = {0, 1, 2, 'n'}
-            a_dictionary = {'key': 'value'}
-
-            reality = keyword_arguments(
-                a_set, a_dictionary,
-            )
-            my_expectation = (a_set, a_dictionary)
-            # assert (
-            #     keyword_arguments(
-            #         a_set, a_dictionary,
-            #     )
-            # == (a_set, a_dictionary)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     keyword_arguments(
-            #         a_set, a_dictionary,
-            #     ),
-            #     (a_set, a_dictionary)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_keyword_arguments():
-
-  the test is still green.
-
-* I remove the commented lines from :ref:`test_positional_arguments`
-
-  .. code-block:: python
-    :lineno-start: 101
-
-            self.assertEqual(result, expectation)
-
-        def test_positional_arguments(self):
-            positional_arguments = (
-                src.functions.positional_arguments
-            )
-            first, last = 'first', 'last'
-
-  .. code-block:: python
-    :lineno-start: 109
-
-            reality = positional_arguments(first, last)
-            my_expectation = (first, last)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 114
-
-            reality = positional_arguments(last, first)
-            my_expectation = (last, first)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 119
-
-            reality = positional_arguments(0, 1)
-            my_expectation = (0, 1)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 124
-
-            a_tuple = (0, 1, 2, 'n')
-            a_list = [0, 1, 2, 'n']
-
-            reality = positional_arguments(
-                a_tuple, a_list
-            )
-            my_expectation = (a_tuple, a_list)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 134
-
-            keyword_arguments = (
-                src.functions.keyword_arguments
-            )
-            a_set = {0, 1, 2, 'n'}
-            a_dictionary = {'key': 'value'}
-
-            reality = keyword_arguments(
-                a_set, a_dictionary,
-            )
-            my_expectation = (a_set, a_dictionary)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
 
     def test_keyword_arguments():
@@ -2428,10 +1669,17 @@ test_keyword_arguments with unittest
 * I move :ref:`test_keyword_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 145
-    :emphasize-lines: 3-7
+    :lineno-start: 96
+    :emphasize-lines: 10-14
 
-            self.assertEqual(reality, my_expectation)
+            a_set = {0, 1, 2, 'n'}
+            a_dictionary = {'key': 'value'}
+            self.assertEqual(
+                src.functions.keyword_arguments(
+                    a_set, a_dictionary
+                ),
+                (a_set, a_dictionary)
+            )
 
         def test_keyword_arguments():
             keyword_arguments = (
@@ -2440,57 +1688,59 @@ test_keyword_arguments with unittest
             first, last = 'first', 'last'
 
   .. code-block:: python
-    :lineno-start: 153
-    :emphasize-lines: 1-18
+    :lineno-start: 111
+    :emphasize-lines: 1-12
 
-            assert (
+            assert_equal(
                 keyword_arguments(
                     first_input=first, last_input=last,
-                )
-            == (first, last)
+                ),
+                (first, last)
             )
-            assert (
+            assert_equal(
                 keyword_arguments(
                     last_input=last, first_input=first,
-                )
-            == (first, last)
-            )
-            assert (
-                keyword_arguments(
-                    last_input=0, first_input=1,
-                )
-            == (1, 0)
+                ),
+                (first, last)
             )
 
   .. code-block:: python
-    :lineno-start: 172
+    :lineno-start: 124
+    :emphasize-lines: 1-6
+
+            assert_equal(
+                keyword_arguments(
+                    last_input=0, first_input=1,
+                ),
+                (1, 0)
+            )
+
+  .. code-block:: python
+    :lineno-start: 131
     :emphasize-lines: 1-9
 
             a_tuple = (0, 1, 2, 'n')
             a_list = [0, 1, 2, 'n']
-            assert (
+            assert_equal(
                 keyword_arguments(
                     first_input=a_tuple,
                     last_input=a_list,
-                )
-            == (a_tuple, a_list)
+                ),
+                (a_tuple, a_list)
             )
 
   .. code-block:: python
-    :lineno-start: 182
-    :emphasize-lines: 1-12
+    :lineno-start: 141
+    :emphasize-lines: 1-9
 
-            positional_arguments = (
-                src.functions.positional_arguments
-            )
             a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
-            assert (
-                positional_arguments(
+            assert_equal(
+                src.functions.positional_arguments(
                     last_input=a_dictionary,
                     first_input=a_set,
-                )
-            == (a_set, a_dictionary)
+                ),
+                (a_set, a_dictionary)
             )
 
 
@@ -2517,11 +1767,24 @@ test_keyword_arguments with unittest
 I add ``self`` to the parentheses of :ref:`test_keyword_arguments`
 
 .. code-block:: python
-  :lineno-start: 147
-  :emphasize-lines: 1-2
+  :lineno-start: 96
+  :emphasize-lines: 10-11
+
+          a_set = {0, 1, 2, 'n'}
+          a_dictionary = {'key': 'value'}
+          self.assertEqual(
+              src.functions.keyword_arguments(
+                  a_set, a_dictionary
+              ),
+              (a_set, a_dictionary)
+          )
 
       # def test_keyword_arguments():
       def test_keyword_arguments(self):
+          keyword_arguments = (
+              src.functions.keyword_arguments
+          )
+          first, last = 'first', 'last'v
 
 green again.
 
@@ -2536,21 +1799,14 @@ green again.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 147
-    :emphasize-lines: 14-19
+    :lineno-start: 112
+    :emphasize-lines: 7-12, 19-24
 
-        # def test_keyword_arguments():
-        def test_keyword_arguments(self):
-            keyword_arguments = (
-                src.functions.keyword_arguments
-            )
-            first, last = 'first', 'last'
-
-            assert (
+            assert_equal(
                 keyword_arguments(
                     first_input=first, last_input=last,
-                )
-            == (first, last)
+                ),
+                (first, last)
             )
             self.assertNotEqual(
                 keyword_arguments(
@@ -2558,16 +1814,11 @@ green again.
                 ),
                 (first, last)
             )
-
-  .. code-block:: python
-    :lineno-start: 166
-    :emphasize-lines: 7-12
-
-            assert (
+            assert_equal(
                 keyword_arguments(
                     last_input=last, first_input=first,
-                )
-            == (first, last)
+                ),
+                (first, last)
             )
             self.assertNotEqual(
                 keyword_arguments(
@@ -2577,14 +1828,14 @@ green again.
             )
 
   .. code-block:: python
-    :lineno-start: 178
+    :lineno-start: 137
     :emphasize-lines: 7-12
 
-            assert (
+            assert_equal(
                 keyword_arguments(
                     last_input=0, first_input=1,
-                )
-            == (1, 0)
+                ),
+                (1, 0)
             )
             self.assertNotEqual(
                 keyword_arguments(
@@ -2594,19 +1845,19 @@ green again.
             )
 
   .. code-block:: python
-    :lineno-start: 191
+    :lineno-start: 150
     :emphasize-lines: 10-16
 
             a_tuple = (0, 1, 2, 'n')
             a_list = [0, 1, 2, 'n']
-            assert (
+            assert_equal(
                 keyword_arguments(
                     first_input=a_tuple,
                     last_input=a_list,
-                )
-            == (a_tuple, a_list)
+                ),
+                (a_tuple, a_list)
             )
-            self.assertEqual(
+            self.assertNotEqual(
                 keyword_arguments(
                     first_input=a_tuple,
                     last_input=a_list,
@@ -2615,23 +1866,20 @@ green again.
             )
 
   .. code-block:: python
-    :lineno-start: 208
-    :emphasize-lines: 13-19
+    :lineno-start: 167
+    :emphasize-lines: 10-16
 
-            positional_arguments = (
-                src.functions.positional_arguments
-            )
             a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
-            assert (
-                positional_arguments(
+            assert_equal(
+                src.functions.positional_arguments(
                     last_input=a_dictionary,
                     first_input=a_set,
-                )
-            == (a_set, a_dictionary)
+                ),
+                (a_set, a_dictionary)
             )
             self.assertNotEqual(
-                positional_arguments(
+                src.functions.positional_arguments(
                     last_input=a_dictionary,
                     first_input=a_set,
                 ),
@@ -2646,21 +1894,14 @@ green again.
 * I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 147
-    :emphasize-lines: 14-15
+    :lineno-start: 112
+    :emphasize-lines: 7-8, 20-21
 
-        # def test_keyword_arguments():
-        def test_keyword_arguments(self):
-            keyword_arguments = (
-                src.functions.keyword_arguments
-            )
-            first, last = 'first', 'last'
-
-            assert (
+            assert_equal(
                 keyword_arguments(
                     first_input=first, last_input=last,
-                )
-            == (first, last)
+                ),
+                (first, last)
             )
             # self.assertNotEqual(
             self.assertEqual(
@@ -2669,16 +1910,11 @@ green again.
                 ),
                 (first, last)
             )
-
-  .. code-block:: python
-    :lineno-start: 167
-    :emphasize-lines: 7-8
-
-            assert (
+            assert_equal(
                 keyword_arguments(
                     last_input=last, first_input=first,
-                )
-            == (first, last)
+                ),
+                (first, last)
             )
             # self.assertNotEqual(
             self.assertEqual(
@@ -2689,14 +1925,14 @@ green again.
             )
 
   .. code-block:: python
-    :lineno-start: 180
+    :lineno-start: 139
     :emphasize-lines: 7-8
 
-            assert (
+            assert_equal(
                 keyword_arguments(
                     last_input=0, first_input=1,
-                )
-            == (1, 0)
+                ),
+                (1, 0)
             )
             # self.assertNotEqual(
             self.assertEqual(
@@ -2707,17 +1943,17 @@ green again.
             )
 
   .. code-block:: python
-    :lineno-start: 194
+    :lineno-start: 153
     :emphasize-lines: 10-11
 
             a_tuple = (0, 1, 2, 'n')
             a_list = [0, 1, 2, 'n']
-            assert (
+            assert_equal(
                 keyword_arguments(
                     first_input=a_tuple,
                     last_input=a_list,
-                )
-            == (a_tuple, a_list)
+                ),
+                (a_tuple, a_list)
             )
             # self.assertNotEqual(
             self.assertEqual(
@@ -2729,24 +1965,21 @@ green again.
             )
 
   .. code-block:: python
-    :lineno-start: 212
-    :emphasize-lines: 13-14
+    :lineno-start: 171
+    :emphasize-lines: 10-11
 
-            positional_arguments = (
-                src.functions.positional_arguments
-            )
             a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
-            assert (
-                positional_arguments(
+            assert_equal(
+                src.functions.positional_arguments(
                     last_input=a_dictionary,
                     first_input=a_set,
-                )
-            == (a_set, a_dictionary)
+                ),
+                (a_set, a_dictionary)
             )
             # self.assertNotEqual(
             self.assertEqual(
-                positional_arguments(
+                src.functions.positional_arguments(
                     last_input=a_dictionary,
                     first_input=a_set,
                 ),
@@ -2758,34 +1991,28 @@ green again.
 
   the test passes.
 
-* I add :ref:`variables<what is a variable?>` for the :ref:`calls<how to call a function with input>` to ``keyword_arguments``, ``positional_arguments`` and my expectations
+* I remove the commented lines and the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` from :ref:`test_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 147
-    :emphasize-lines: 8-11
+    :lineno-start: 96
 
-        # def test_keyword_arguments():
+            a_set = {0, 1, 2, 'n'}
+            a_dictionary = {'key': 'value'}
+            self.assertEqual(
+                src.functions.keyword_arguments(
+                    a_set, a_dictionary
+                ),
+                (a_set, a_dictionary)
+            )
+
         def test_keyword_arguments(self):
             keyword_arguments = (
                 src.functions.keyword_arguments
             )
             first, last = 'first', 'last'
 
-            reality = keyword_arguments(
-                first_input=first, last_input=last,
-            )
-            my_expectation = (first, last)
-            assert (
-                keyword_arguments(
-                    first_input=first, last_input=last,
-                )
-            == (first, last)
-            )
-            # self.assertNotEqual(
-
   .. code-block:: python
-    :lineno-start: 165
-    :emphasize-lines: 8-11
+    :lineno-start: 111
 
             self.assertEqual(
                 keyword_arguments(
@@ -2793,23 +2020,6 @@ green again.
                 ),
                 (first, last)
             )
-
-            reality = keyword_arguments(
-                last_input=last, first_input=first,
-            )
-            my_expectation = (first, last)
-            assert (
-                keyword_arguments(
-                    last_input=last, first_input=first,
-                )
-            == (first, last)
-            )
-            # self.assertNotEqual(
-
-  .. code-block:: python
-    :lineno-start: 183
-    :emphasize-lines: 8-11
-
             self.assertEqual(
                 keyword_arguments(
                     last_input=last, first_input=first,
@@ -2817,17 +2027,9 @@ green again.
                 (first, last)
             )
 
-            reality = keyword_arguments(
-                last_input=0, first_input=1,
-            )
-            my_expectation = (1, 0)
-            assert (
-                keyword_arguments(
-                    last_input=0, first_input=1,
-                )
-            == (1, 0)
-            )
-            # self.assertNotEqual(
+  .. code-block:: python
+    :lineno-start: 124
+
             self.assertEqual(
                 keyword_arguments(
                     last_input=0, first_input=1,
@@ -2836,25 +2038,10 @@ green again.
             )
 
   .. code-block:: python
-    :lineno-start: 208
-    :emphasize-lines: 4-8
+    :lineno-start: 131
 
             a_tuple = (0, 1, 2, 'n')
             a_list = [0, 1, 2, 'n']
-
-            reality = keyword_arguments(
-                first_input=a_tuple,
-                last_input=a_list,
-            )
-            my_expectation = (a_tuple, a_list)
-            assert (
-                keyword_arguments(
-                    first_input=a_tuple,
-                    last_input=a_list,
-                )
-            == (a_tuple, a_list)
-            )
-            # self.assertNotEqual(
             self.assertEqual(
                 keyword_arguments(
                     first_input=a_tuple,
@@ -2864,264 +2051,17 @@ green again.
             )
 
   .. code-block:: python
-    :lineno-start: 232
-    :emphasize-lines: 7-11
+    :lineno-start: 141
 
-            positional_arguments = (
-                src.functions.positional_arguments
-            )
             a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
-
-            reality = positional_arguments(
-                last_input=a_dictionary,
-                first_input=a_set,
-            )
-            my_expectation = (a_set, a_dictionary)
-            assert (
-                positional_arguments(
-                    last_input=a_dictionary,
-                    first_input=a_set,
-                )
-            == (a_set, a_dictionary)
-            )
-            # self.assertNotEqual(
             self.assertEqual(
-                positional_arguments(
+                src.functions.positional_arguments(
                     last_input=a_dictionary,
                     first_input=a_set,
                 ),
                 (a_set, a_dictionary)
             )
-
-
-    def test_args_and_kwargs():
-
-* I use the :ref:`variables<what is a variable?>` to remove repetition of the :ref:`calls<how to call a function with input>` to ``keyword_arguments``, ``positional_arguments`` and my expectations, from :ref:`test_keyword_arguments`
-
-  .. code-block:: python
-    :lineno-start: 147
-    :emphasize-lines: 12-17, 19-26
-
-        # def test_keyword_arguments():
-        def test_keyword_arguments(self):
-            keyword_arguments = (
-                src.functions.keyword_arguments
-            )
-            first, last = 'first', 'last'
-
-            reality = keyword_arguments(
-                first_input=first, last_input=last,
-            )
-            my_expectation = (first, last)
-            # assert (
-            #     keyword_arguments(
-            #         first_input=first, last_input=last,
-            #     )
-            # == (first, last)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     keyword_arguments(
-            #         first_input=first, last_input=last,
-            #     ),
-            #     (first, last)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 174
-    :emphasize-lines: 5-10, 12-19
-
-            reality = keyword_arguments(
-                last_input=last, first_input=first,
-            )
-            my_expectation = (first, last)
-            # assert (
-            #     keyword_arguments(
-            #         last_input=last, first_input=first,
-            #     )
-            # == (first, last)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     keyword_arguments(
-            #         last_input=last, first_input=first,
-            #     ),
-            #     (first, last)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 194
-    :emphasize-lines: 5-10, 12-19
-
-            reality = keyword_arguments(
-                last_input=0, first_input=1,
-            )
-            my_expectation = (1, 0)
-            # assert (
-            #     keyword_arguments(
-            #         last_input=0, first_input=1,
-            #     )
-            # == (1, 0)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     keyword_arguments(
-            #         last_input=0, first_input=1,
-            #     ),
-            #     (1, 0)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 214
-    :emphasize-lines: 9-15, 17-25
-
-            a_tuple = (0, 1, 2, 'n')
-            a_list = [0, 1, 2, 'n']
-
-            reality = keyword_arguments(
-                first_input=a_tuple,
-                last_input=a_list,
-            )
-            my_expectation = (a_tuple, a_list)
-            # assert (
-            #     keyword_arguments(
-            #         first_input=a_tuple,
-            #         last_input=a_list,
-            #     )
-            # == (a_tuple, a_list)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     keyword_arguments(
-            #         first_input=a_tuple,
-            #         last_input=a_list,
-            #     ),
-            #     (a_tuple, a_list)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 240
-    :emphasize-lines: 12-18, 20-28
-
-            positional_arguments = (
-                src.functions.positional_arguments
-            )
-            a_set = {0, 1, 2, 'n'}
-            a_dictionary = {'key': 'value'}
-
-            reality = positional_arguments(
-                last_input=a_dictionary,
-                first_input=a_set,
-            )
-            my_expectation = (a_set, a_dictionary)
-            # assert (
-            #     positional_arguments(
-            #         last_input=a_dictionary,
-            #         first_input=a_set,
-            #     )
-            # == (a_set, a_dictionary)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     positional_arguments(
-            #         last_input=a_dictionary,
-            #         first_input=a_set,
-            #     ),
-            #     (a_set, a_dictionary)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_args_and_kwargs():
-
-  the test is still green.
-
-* I remove the commented lines from :ref:`test_keyword_arguments`
-
-  .. code-block:: python
-    :lineno-start: 145
-
-            self.assertEqual(reality, my_expectation)
-
-        def test_keyword_arguments(self):
-            keyword_arguments = (
-                src.functions.keyword_arguments
-            )
-            first, last = 'first', 'last'
-
-  .. code-block:: python
-    :lineno-start: 153
-
-            reality = keyword_arguments(
-                first_input=first, last_input=last,
-            )
-            my_expectation = (first, last)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 160
-
-            reality = keyword_arguments(
-                last_input=last, first_input=first,
-            )
-            my_expectation = (first, last)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 167
-
-            reality = keyword_arguments(
-                last_input=0, first_input=1,
-            )
-            my_expectation = (1, 0)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 174
-
-            a_tuple = (0, 1, 2, 'n')
-            a_list = [0, 1, 2, 'n']
-
-            reality = keyword_arguments(
-                first_input=a_tuple,
-                last_input=a_list,
-            )
-            my_expectation = (a_tuple, a_list)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 185
-
-            positional_arguments = (
-                src.functions.positional_arguments
-            )
-            a_set = {0, 1, 2, 'n'}
-            a_dictionary = {'key': 'value'}
-
-  .. code-block:: python
-    :lineno-start: 191
-
-            reality = positional_arguments(
-                last_input=a_dictionary,
-                first_input=a_set,
-            )
-            my_expectation = (a_set, a_dictionary)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
 
     def test_args_and_kwargs():
@@ -3151,19 +2091,27 @@ test_args_and_kwargs with unittest
 * I move :ref:`test_args_and_kwargs` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 197
-    :emphasize-lines: 3-4, 6-11
+    :lineno-start: 141
+    :emphasize-lines: 11-12, 14-19
 
-            self.assertEqual(reality, my_expectation)
+            a_set = {0, 1, 2, 'n'}
+            a_dictionary = {'key': 'value'}
+            self.assertEqual(
+                src.functions.positional_arguments(
+                    last_input=a_dictionary,
+                    first_input=a_set,
+                ),
+                (a_set, a_dictionary)
+            )
 
-        def test_args_and_kwargs(self):
+        def test_args_and_kwargs():
             first, last = 'first', 'last'
 
-            assert (
+            assert_equal(
                 src.functions.args_and_kwargs(
-                    first, last_input=last,
-                )
-            == (first, last)
+                    first, last_input=last
+                ),
+                (first, last)
             )
 
 
@@ -3190,12 +2138,23 @@ test_args_and_kwargs with unittest
 I add ``self`` to the parentheses of :ref:`test_args_and_kwargs`
 
 .. code-block:: python
-  :lineno-start: 199
-  :emphasize-lines: 1-2
+  :lineno-start: 141
+  :emphasize-lines: 11-12
+
+          a_set = {0, 1, 2, 'n'}
+          a_dictionary = {'key': 'value'}
+          self.assertEqual(
+              src.functions.positional_arguments(
+                  last_input=a_dictionary,
+                  first_input=a_set,
+              ),
+              (a_set, a_dictionary)
+          )
 
       # def test_args_and_kwargs():
       def test_args_and_kwargs(self):
           first, last = 'first', 'last'
+
 
 the test is green again.
 
@@ -3210,22 +2169,22 @@ the test is green again.
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 199
+    :lineno-start: 151
     :emphasize-lines: 11-16
 
         # def test_args_and_kwargs():
         def test_args_and_kwargs(self):
             first, last = 'first', 'last'
 
-            assert (
+            assert_equal(
                 src.functions.args_and_kwargs(
-                    first, last_input=last,
-                )
-            == (first, last)
+                    first, last_input=last
+                ),
+                (first, last)
             )
             self.assertNotEqual(
                 src.functions.args_and_kwargs(
-                    first, last_input=last,
+                    first, last_input=last
                 ),
                 (first, last)
             )
@@ -3242,114 +2201,69 @@ the test is green again.
 * I change the :ref:`call<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 199
-    :emphasize-lines: 11-12
+    :lineno-start: 155
+    :emphasize-lines: 7-8
 
-        # def test_args_and_kwargs():
-        def test_args_and_kwargs(self):
-            first, last = 'first', 'last'
-
-            assert (
+            assert_equal(
                 src.functions.args_and_kwargs(
-                    first, last_input=last,
-                )
-            == (first, last)
-            )
-            # self.assertNotEqual(
-            self.assertNotEqual(
-                src.functions.args_and_kwargs(
-                    first, last_input=last,
+                    first, last_input=last
                 ),
                 (first, last)
             )
-
-
-    def test_optional_arguments():
+            # self.assertNotEqual(
+            self.assertEqual(
+                src.functions.args_and_kwargs(
+                    first, last_input=last
+                ),
+                (first, last)
+            )
 
   the test passes.
 
 * I add :ref:`variables<what is a variable?>` for the :ref:`call<how to call a function with input>` to ``src.functions.args_and_kwargs`` and my expectation
 
   .. code-block:: python
-    :lineno-start: 199
+    :lineno-start: 155
     :emphasize-lines: 5-8
 
-        # def test_args_and_kwargs():
-        def test_args_and_kwargs(self):
-            first, last = 'first', 'last'
-
-            reality = src.functions.args_and_kwargs(
-                first, last_input=last,
-            )
-            my_expectation = (first, last)
-            assert (
+            assert_equal(
                 src.functions.args_and_kwargs(
-                    first, last_input=last,
-                )
-            == (first, last)
+                    first, last_input=last
+                ),
+                (first, last)
             )
             # self.assertNotEqual(
-            self.assertNotEqual(
+            self.assertEqual(
                 src.functions.args_and_kwargs(
-                    first, last_input=last,
+                    first, last_input=last
                 ),
                 (first, last)
             )
 
-
-    def test_optional_arguments():
-
-* I use the :ref:`variables<what is a variable?>` to remove repetition of the :ref:`call<how to call a function with input>` to ``src.functions.args_and_kwargs`` and my expectation, from :ref:`test_args_and_kwargs`
+* I remove the commented lines and the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` from :ref:`test_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 199
-    :emphasize-lines: 9-15, 17-23
+    :lineno-start: 141
 
-        # def test_args_and_kwargs():
-        def test_args_and_kwargs(self):
-            first, last = 'first', 'last'
-
-            reality = src.functions.args_and_kwargs(
-                first, last_input=last,
+            a_set = {0, 1, 2, 'n'}
+            a_dictionary = {'key': 'value'}
+            self.assertEqual(
+                src.functions.positional_arguments(
+                    last_input=a_dictionary,
+                    first_input=a_set,
+                ),
+                (a_set, a_dictionary)
             )
-            my_expectation = (first, last)
-            # assert (
-            #     src.functions.args_and_kwargs(
-            #         first, last_input=last,
-            #     )
-            # == (first, last)
-            # )
-            # self.assertNotEqual(
-            # self.assertNotEqual(
-            #     src.functions.args_and_kwargs(
-            #         first, last_input=last,
-            #     ),
-            #     (first, last)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_optional_arguments():
-
-  the test is still green.
-
-* I remove the commented lines from :ref:`test_args_and_kwargs`
-
-  .. code-block:: python
-    :lineno-start: 197
-
-            self.assertEqual(reality, my_expectation)
 
         def test_args_and_kwargs(self):
             first, last = 'first', 'last'
 
-            reality = src.functions.args_and_kwargs(
-                first, last_input=last,
+            self.assertEqual(
+                src.functions.args_and_kwargs(
+                    first, last_input=last
+                ),
+                (first, last)
             )
-            my_expectation = (first, last)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
 
     def test_optional_arguments():
@@ -3379,10 +2293,15 @@ test_optional_arguments with unittest
 * I move :ref:`test_optional_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 207
-    :emphasize-lines: 3-6, 8, 10-15
+    :lineno-start: 154
+    :emphasize-lines: 8-11, 13-19
 
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                src.functions.args_and_kwargs(
+                    first, last_input=last
+                ),
+                (first, last)
+            )
 
         def test_optional_arguments():
             optional_arguments = (
@@ -3390,49 +2309,48 @@ test_optional_arguments with unittest
             )
 
             first_name, last_name = 'jane', 'doe'
-
-            assert (
+            assert_equal(
                 optional_arguments(
                     first_name,
-                )
-            == (first_name, last_name)
+                ),
+                (first_name, last_name)
             )
 
   .. code-block:: python
-    :lineno-start: 223
+    :lineno-start: 174
     :emphasize-lines: 1-7
 
             first_name, blow = 'joe', 'blow'
-            assert (
+            assert_equal(
                 optional_arguments(
                     first_name, blow
-                )
-            == (first_name, blow)
+                ),
+                (first_name, blow)
             )
 
   .. code-block:: python
-    :lineno-start: 231
+    :lineno-start: 182
     :emphasize-lines: 1-7
 
             first_name = 'john'
-            assert (
+            assert_equal(
                 optional_arguments(
-                    first_input=first_name
-                )
-            == (first_name, last_name)
+                    first_input=first_name,
+                ),
+                (first_name, last_name)
             )
 
   .. code-block:: python
-    :lineno-start: 239
+    :lineno-start: 190
     :emphasize-lines: 1-8
 
             last_name = 'smith'
-            assert (
+            assert_equal(
                 optional_arguments(
                     last_input=last_name,
                     first_input=first_name,
-                )
-            == (first_name, last_name)
+                ),
+                (first_name, last_name)
             )
 
 
@@ -3457,11 +2375,21 @@ test_optional_arguments with unittest
 I add ``self`` to the parentheses of :ref:`test_optional_arguments`
 
 .. code-block:: python
-  :lineno-start: 209
-  :emphasize-lines: 1-2
+  :lineno-start: 154
+  :emphasize-lines: 8-9
+
+          self.assertEqual(
+              src.functions.args_and_kwargs(
+                  first, last_input=last
+              ),
+              (first, last)
+          )
 
       # def test_optional_arguments():
       def test_optional_arguments(self):
+          optional_arguments = (
+              src.functions.optional_arguments
+          )
 
 green again.
 
@@ -3476,22 +2404,15 @@ green again.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 209
-    :emphasize-lines: 15-20
-
-        # def test_optional_arguments():
-        def test_optional_arguments(self):
-            optional_arguments = (
-                src.functions.optional_arguments
-            )
+    :lineno-start: 167
+    :emphasize-lines: 8-13
 
             first_name, last_name = 'jane', 'doe'
-
-            assert (
+            assert_equal(
                 optional_arguments(
                     first_name,
-                )
-            == (first_name, last_name)
+                ),
+                (first_name, last_name)
             )
             self.assertNotEqual(
                 optional_arguments(
@@ -3501,15 +2422,15 @@ green again.
             )
 
   .. code-block:: python
-    :lineno-start: 230
+    :lineno-start: 181
     :emphasize-lines: 8-13
 
             first_name, blow = 'joe', 'blow'
-            assert (
+            assert_equal(
                 optional_arguments(
                     first_name, blow
-                )
-            == (first_name, blow)
+                ),
+                (first_name, blow)
             )
             self.assertNotEqual(
                 optional_arguments(
@@ -3519,7 +2440,7 @@ green again.
             )
 
   .. code-block:: python
-    :lineno-start: 244
+    :lineno-start: 195
     :emphasize-lines: 8-13
 
             first_name = 'john'
@@ -3537,7 +2458,7 @@ green again.
             )
 
   .. code-block:: python
-    :lineno-start: 258
+    :lineno-start: 209
     :emphasize-lines: 9-15
 
             last_name = 'smith'
@@ -3564,22 +2485,15 @@ green again.
 * I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 209
-    :emphasize-lines: 15-16
-
-        # def test_optional_arguments():
-        def test_optional_arguments(self):
-            optional_arguments = (
-                src.functions.optional_arguments
-            )
+    :lineno-start: 167
+    :emphasize-lines: 8-9
 
             first_name, last_name = 'jane', 'doe'
-
-            assert (
+            assert_equal(
                 optional_arguments(
                     first_name,
-                )
-            == (first_name, last_name)
+                ),
+                (first_name, last_name)
             )
             # self.assertNotEqual(
             self.assertEqual(
@@ -3590,15 +2504,15 @@ green again.
             )
 
   .. code-block:: python
-    :lineno-start: 231
+    :lineno-start: 182
     :emphasize-lines: 8-9
 
             first_name, blow = 'joe', 'blow'
-            assert (
+            assert_equal(
                 optional_arguments(
                     first_name, blow
-                )
-            == (first_name, blow)
+                ),
+                (first_name, blow)
             )
             # self.assertNotEqual(
             self.assertEqual(
@@ -3609,73 +2523,68 @@ green again.
             )
 
   .. code-block:: python
-    :lineno-start: 246
+    :lineno-start: 197
     :emphasize-lines: 8-9
 
             first_name = 'john'
-            assert (
+            assert_equal(
                 optional_arguments(
-                    first_input=first_name
-                )
-            == (first_name, last_name)
+                    first_input=first_name,
+                ),
+                (first_name, last_name)
             )
             # self.assertNotEqual(
             self.assertEqual(
                 optional_arguments(
-                    first_input=first_name
+                    first_input=first_name,
                 ),
                 (first_name, last_name)
             )
 
   .. code-block:: python
-    :lineno-start: 261
+    :lineno-start: 212
     :emphasize-lines: 9-10
 
-            last_name = 'smith'
-            assert (
-                optional_arguments(
-                    last_input=last_name,
-                    first_input=first_name,
+                last_name = 'smith'
+                assert_equal(
+                    optional_arguments(
+                        last_input=last_name,
+                        first_input=first_name,
+                    ),
+                    (first_name, last_name)
                 )
-            == (first_name, last_name)
-            )
-            # self.assertNotEqual(
-            self.assertEqual(
-                optional_arguments(
-                    last_input=last_name,
-                    first_input=first_name,
-                ),
-                (first_name, last_name)
-            )
+                # self.assertNotEqual(
+                self.assertEqual(
+                    optional_arguments(
+                        last_input=last_name,
+                        first_input=first_name,
+                    ),
+                    (first_name, last_name)
+                )
 
 
-    def test_unknown_number_of_arguments():
+        def test_unknown_number_of_arguments():
 
   the test passes.
 
-* I add :ref:`variables<what is a variable?>` for the :ref:`calls<how to call a function with input>` to ``src.functions.optional_arguments`` and my expectations
+* I remove the commented lines and the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` from :ref:`test_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 209
-    :emphasize-lines: 9-10
+    :lineno-start: 154
 
-        # def test_optional_arguments():
+            self.assertEqual(
+                src.functions.args_and_kwargs(
+                    first, last_input=last
+                ),
+                (first, last)
+            )
+
         def test_optional_arguments(self):
             optional_arguments = (
                 src.functions.optional_arguments
             )
 
             first_name, last_name = 'jane', 'doe'
-
-            reality = optional_arguments(first_name)
-            my_expectation = (first_name, last_name)
-            assert (
-                optional_arguments(
-                    first_name,
-                )
-            == (first_name, last_name)
-            )
-            # self.assertNotEqual(
             self.assertEqual(
                 optional_arguments(
                     first_name,
@@ -3684,22 +2593,9 @@ green again.
             )
 
   .. code-block:: python
-    :lineno-start: 233
-    :emphasize-lines: 3-6
+    :lineno-start: 174
 
             first_name, blow = 'joe', 'blow'
-
-            reality = optional_arguments(
-                first_name, blow
-            )
-            my_expectation = (first_name, blow)
-            assert (
-                optional_arguments(
-                    first_name, blow
-                )
-            == (first_name, blow)
-            )
-            # self.assertNotEqual(
             self.assertEqual(
                 optional_arguments(
                     first_name, blow
@@ -3708,48 +2604,20 @@ green again.
             )
 
   .. code-block:: python
-    :lineno-start: 253
-    :emphasize-lines: 3-6
+    :lineno-start: 182
 
             first_name = 'john'
-
-            reality = optional_arguments(
-                first_input=first_name
-            )
-            my_expectation = (first_name, last_name)
-            assert (
-                optional_arguments(
-                    first_input=first_name
-                )
-            == (first_name, last_name)
-            )
-            # self.assertNotEqual(
             self.assertEqual(
                 optional_arguments(
-                    first_input=first_name
+                    first_input=first_name,
                 ),
                 (first_name, last_name)
             )
 
   .. code-block:: python
-    :lineno-start: 273
-    :emphasize-lines: 3-7
+    :lineno-start: 190
 
             last_name = 'smith'
-
-            reality = optional_arguments(
-                last_input=last_name,
-                first_input=first_name,
-            )
-            my_expectation = (first_name, last_name)
-            assert (
-                optional_arguments(
-                    last_input=last_name,
-                    first_input=first_name,
-                )
-            == (first_name, last_name)
-            )
-            # self.assertNotEqual(
             self.assertEqual(
                 optional_arguments(
                     last_input=last_name,
@@ -3757,183 +2625,6 @@ green again.
                 ),
                 (first_name, last_name)
             )
-
-
-    def test_unknown_number_of_arguments():
-
-* I use the :ref:`variables<what is a variable?>` to remove repetition of the :ref:`calls<how to call a function with input>` to ``src.functions.optional_arguments`` and my expectations, from :ref:`test_optional_arguments`
-
-  .. code-block:: python
-    :lineno-start: 209
-    :emphasize-lines: 11-16, 18-25
-
-        # def test_optional_arguments():
-        def test_optional_arguments(self):
-            optional_arguments = (
-                src.functions.optional_arguments
-            )
-
-            first_name, last_name = 'jane', 'doe'
-
-            reality = optional_arguments(first_name)
-            my_expectation = (first_name, last_name)
-            # assert (
-            #     optional_arguments(
-            #         first_name,
-            #     )
-            # == (first_name, last_name)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     optional_arguments(
-            #         first_name,
-            #     ),
-            #     (first_name, last_name)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 235
-    :emphasize-lines: 7-12, 14-21
-
-            first_name, blow = 'joe', 'blow'
-
-            reality = optional_arguments(
-                first_name, blow
-            )
-            my_expectation = (first_name, blow)
-            # assert (
-            #     optional_arguments(
-            #         first_name, blow
-            #     )
-            # == (first_name, blow)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     optional_arguments(
-            #         first_name, blow
-            #     ),
-            #     (first_name, blow)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 257
-    :emphasize-lines: 7-12, 14-21
-
-            first_name = 'john'
-
-            reality = optional_arguments(
-                first_input=first_name
-            )
-            my_expectation = (first_name, last_name)
-            # assert (
-            #     optional_arguments(
-            #         first_input=first_name
-            #     )
-            # == (first_name, last_name)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     optional_arguments(
-            #         first_input=first_name
-            #     ),
-            #     (first_name, last_name)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 279
-    :emphasize-lines: 8-13, 15-24
-
-            last_name = 'smith'
-
-            reality = optional_arguments(
-                last_input=last_name,
-                first_input=first_name,
-            )
-            my_expectation = (first_name, last_name)
-            # assert (
-            #     optional_arguments(
-            #         last_input=last_name,
-            #         first_input=first_name,
-            #     )
-            # == (first_name, last_name)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     optional_arguments(
-            #         last_input=last_name,
-            #         first_input=first_name,
-            #     ),
-            #     (first_name, last_name)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_unknown_number_of_arguments():
-
-  the test is still green.
-
-* I remove the commented lines from :ref:`test_optional_arguments`
-
-  .. code-block:: python
-    :lineno-start: 207
-
-            self.assertEqual(reality, my_expectation)
-
-        def test_optional_arguments(self):
-            optional_arguments = (
-                src.functions.optional_arguments
-            )
-
-            first_name, last_name = 'jane', 'doe'
-
-            reality = optional_arguments(first_name)
-            my_expectation = (first_name, last_name)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 221
-
-            first_name, blow = 'joe', 'blow'
-
-            reality = optional_arguments(
-                first_name, blow
-            )
-            my_expectation = (first_name, blow)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 230
-
-            first_name = 'john'
-
-            reality = optional_arguments(
-                first_input=first_name
-            )
-            my_expectation = (first_name, last_name)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 239
-
-            last_name = 'smith'
-
-            reality = optional_arguments(
-                last_input=last_name,
-                first_input=first_name,
-            )
-            my_expectation = (first_name, last_name)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
 
     def test_unknown_number_of_arguments():
@@ -3963,10 +2654,17 @@ test_unknown_number_of_arguments with unittest
 * I move :ref:`test_unknown_number_of_arguments` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
-    :lineno-start: 247
-    :emphasize-lines: 3-6, 8-15
+    :lineno-start: 190
+    :emphasize-lines: 10-13, 15-22
 
-                self.assertEqual(reality, my_expectation)
+            last_name = 'smith'
+            self.assertEqual(
+                optional_arguments(
+                    last_input=last_name,
+                    first_input=first_name,
+                ),
+                (first_name, last_name)
+            )
 
         def test_unknown_number_of_arguments():
             unknown_number_of_arguments = (
@@ -3975,66 +2673,60 @@ test_unknown_number_of_arguments with unittest
 
             a_tuple = (0, 1)
             a_dictionary = {'a': 2, 'b': 3}
-            assert (
+            assert_equal(
                 unknown_number_of_arguments(
                     *a_tuple, **a_dictionary
-                )
-            == (a_tuple, a_dictionary)
+                ),
+                (a_tuple, a_dictionary)
             )
 
   .. code-block:: python
-    :lineno-start: 263
-    :emphasize-lines: 1-8
+    :lineno-start: 213
+    :emphasize-lines: 1-7
 
-            a_tuple = (0, 1)
             a_dictionary = {'a': 2, 'b': 3, 'c': 4}
-            assert (
+            assert_equal(
                 unknown_number_of_arguments(
-                    *a_tuple, **a_dictionary
-                )
-            == (a_tuple, a_dictionary)
+                    *a_tuple, **a_dictionary,
+                ),
+                (a_tuple, a_dictionary)
             )
 
   .. code-block:: python
-    :lineno-start: 272
+    :lineno-start: 221
     :emphasize-lines: 1-8
 
             a_tuple = (0, 1, 2)
             a_dictionary = {'a': 3, 'b': 4, 'c': 5}
-            assert (
+            assert_equal(
                 unknown_number_of_arguments(
                     *a_tuple, **a_dictionary
-                )
-            == (a_tuple, a_dictionary)
+                ),
+                (a_tuple, a_dictionary)
             )
 
   .. code-block:: python
-    :lineno-start: 281
+    :lineno-start: 230
     :emphasize-lines: 1-5
 
             a_tuple = (0, 1, 2, 'n')
-            assert (
-                unknown_number_of_arguments(*a_tuple)
-            == (a_tuple, {})
+            assert_equal(
+                unknown_number_of_arguments(*a_tuple),
+                (a_tuple, {})
             )
 
   .. code-block:: python
-    :lineno-start: 287
-    :emphasize-lines: 1-5
+    :lineno-start: 236
+    :emphasize-lines: 1-5, 7-9
 
             a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
-            assert (
-                unknown_number_of_arguments(**a_dictionary)
-            == ((), a_dictionary)
+            assert_equal(
+                unknown_number_of_arguments(**a_dictionary),
+                ((), a_dictionary)
             )
 
-  .. code-block:: python
-    :lineno-start: 293
-    :emphasize-lines: 1-4
-
-            assert (
-                unknown_number_of_arguments()
-            == ((), {})
+            assert_equal(
+                unknown_number_of_arguments(), ((), {})
             )
 
 
@@ -4061,11 +2753,23 @@ test_unknown_number_of_arguments with unittest
 I add ``self`` to the parentheses of :ref:`test_unknown_number_of_arguments`
 
 .. code-block:: python
-  :lineno-start: 249
-  :emphasize-lines: 1-2
+  :lineno-start: 190
+  :emphasize-lines: 10-11
+
+          last_name = 'smith'
+          self.assertEqual(
+              optional_arguments(
+                  last_input=last_name,
+                  first_input=first_name,
+              ),
+              (first_name, last_name)
+          )
 
       # def test_unknown_number_of_arguments():
       def test_unknown_number_of_arguments(self):
+          unknown_number_of_arguments = (
+              src.functions.unknown_number_of_arguments
+          )
 
 green.
 
