@@ -181,8 +181,64 @@ test functions with unittest: tests
 The code in ``functions/tests/test_functions.py`` from :ref:`test functions with unittest`
 
 .. literalinclude:: functions/tests/test_functions_w_unittest.py
+  :caption: functions/tests/test_functions.py
   :language: python
   :linenos:
+  :lines: 1-16
+
+.. literalinclude:: functions/tests/test_functions_w_unittest.py
+  :caption: functions/tests/test_functions.py
+  :language: python
+  :lineno-start: 18
+  :lines: 18-26
+
+.. literalinclude:: functions/tests/test_functions_w_unittest.py
+  :caption: functions/tests/test_functions.py
+  :language: python
+  :lineno-start: 28
+  :lines: 28-41
+
+.. literalinclude:: functions/tests/test_functions_w_unittest.py
+  :caption: functions/tests/test_functions.py
+  :language: python
+  :lineno-start: 43
+  :lines: 43-56
+
+.. literalinclude:: functions/tests/test_functions_w_unittest.py
+  :caption: functions/tests/test_functions.py
+  :language: python
+  :lineno-start: 58
+  :lines: 58-71
+
+.. literalinclude:: functions/tests/test_functions_w_unittest.py
+  :caption: functions/tests/test_functions.py
+  :language: python
+  :lineno-start: 73
+  :lines: 73-103
+
+.. literalinclude:: functions/tests/test_functions_w_unittest.py
+  :caption: functions/tests/test_functions.py
+  :language: python
+  :lineno-start: 105
+  :lines: 105-146
+
+.. literalinclude:: functions/tests/test_functions_w_unittest.py
+  :caption: functions/tests/test_functions.py
+  :language: python
+  :lineno-start: 148
+  :lines: 148-154
+
+.. literalinclude:: functions/tests/test_functions_w_unittest.py
+  :caption: functions/tests/test_functions.py
+  :language: python
+  :lineno-start: 156
+  :lines: 156-192
+
+.. literalinclude:: functions/tests/test_functions_w_unittest.py
+  :caption: functions/tests/test_functions.py
+  :language: python
+  :lineno-start: 194
+  :lines: 194-
 
 
 ----
