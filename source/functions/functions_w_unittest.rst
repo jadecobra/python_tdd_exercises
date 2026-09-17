@@ -2784,41 +2784,16 @@ green.
 * I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
-    :lineno-start: 249
-    :emphasize-lines: 15-20
-
-        # def test_unknown_number_of_arguments():
-        def test_unknown_number_of_arguments(self):
-            unknown_number_of_arguments = (
-                src.functions.unknown_number_of_arguments
-            )
-
-            a_tuple = (0, 1)
-            a_dictionary = {'a': 2, 'b': 3}
-            assert (
-                unknown_number_of_arguments(
-                    *a_tuple, **a_dictionary
-                )
-            == (a_tuple, a_dictionary)
-            )
-            self.assertNotEqual(
-                unknown_number_of_arguments(
-                    *a_tuple, **a_dictionary
-                ),
-                (a_tuple, a_dictionary)
-            )
-
-  .. code-block:: python
-    :lineno-start: 270
+    :lineno-start: 205
     :emphasize-lines: 9-14
 
             a_tuple = (0, 1)
-            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
-            assert (
+            a_dictionary = {'a': 2, 'b': 3}
+            assert_equal(
                 unknown_number_of_arguments(
                     *a_tuple, **a_dictionary
-                )
-            == (a_tuple, a_dictionary)
+                ),
+                (a_tuple, a_dictionary)
             )
             self.assertNotEqual(
                 unknown_number_of_arguments(
@@ -2828,16 +2803,34 @@ green.
             )
 
   .. code-block:: python
-    :lineno-start: 285
+    :lineno-start: 220
+    :emphasize-lines: 8-13
+
+            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+            assert_equal(
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary,
+                ),
+                (a_tuple, a_dictionary)
+            )
+            self.assertNotEqual(
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                ),
+                (a_tuple, a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 234
     :emphasize-lines: 9-14
 
             a_tuple = (0, 1, 2)
             a_dictionary = {'a': 3, 'b': 4, 'c': 5}
-            assert (
+            assert_equal(
                 unknown_number_of_arguments(
                     *a_tuple, **a_dictionary
-                )
-            == (a_tuple, a_dictionary)
+                ),
+                (a_tuple, a_dictionary)
             )
             self.assertNotEqual(
                 unknown_number_of_arguments(
@@ -2847,13 +2840,13 @@ green.
             )
 
   .. code-block:: python
-    :lineno-start: 300
+    :lineno-start: 249
     :emphasize-lines: 6-9
 
             a_tuple = (0, 1, 2, 'n')
-            assert (
-                unknown_number_of_arguments(*a_tuple)
-            == (a_tuple, {})
+            assert_equal(
+                unknown_number_of_arguments(*a_tuple),
+                (a_tuple, {})
             )
             self.assertNotEqual(
                 unknown_number_of_arguments(*a_tuple),
@@ -2861,30 +2854,24 @@ green.
             )
 
   .. code-block:: python
-    :lineno-start: 310
-    :emphasize-lines: 6-9
+    :lineno-start: 259
+    :emphasize-lines: 6-9, 14-16
 
             a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
-            assert (
-                unknown_number_of_arguments(**a_dictionary)
-            == ((), a_dictionary)
+            assert_equal(
+                unknown_number_of_arguments(**a_dictionary),
+                ((), a_dictionary)
             )
             self.assertNotEqual(
                 unknown_number_of_arguments(**a_dictionary),
                 ((), a_dictionary)
             )
 
-  .. code-block:: python
-    :lineno-start: 320
-    :emphasize-lines: 5-8
-
-            assert (
-                unknown_number_of_arguments()
-            == ((), {})
+            assert_equal(
+                unknown_number_of_arguments(), ((), {})
             )
             self.assertNotEqual(
-                unknown_number_of_arguments(),
-                ((), {})
+                unknown_number_of_arguments(), ((), {})
             )
 
 
@@ -2895,42 +2882,16 @@ green.
 * I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
-    :lineno-start: 249
-    :emphasize-lines: 15-16
-
-        # def test_unknown_number_of_arguments():
-        def test_unknown_number_of_arguments(self):
-            unknown_number_of_arguments = (
-                src.functions.unknown_number_of_arguments
-            )
-
-            a_tuple = (0, 1)
-            a_dictionary = {'a': 2, 'b': 3}
-            assert (
-                unknown_number_of_arguments(
-                    *a_tuple, **a_dictionary
-                )
-            == (a_tuple, a_dictionary)
-            )
-            # self.assertNotEqual(
-            self.assertEqual(
-                unknown_number_of_arguments(
-                    *a_tuple, **a_dictionary
-                ),
-                (a_tuple, a_dictionary)
-            )
-
-  .. code-block:: python
-    :lineno-start: 271
+    :lineno-start: 205
     :emphasize-lines: 9-10
 
             a_tuple = (0, 1)
-            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
-            assert (
+            a_dictionary = {'a': 2, 'b': 3}
+            assert_equal(
                 unknown_number_of_arguments(
                     *a_tuple, **a_dictionary
-                )
-            == (a_tuple, a_dictionary)
+                ),
+                (a_tuple, a_dictionary)
             )
             # self.assertNotEqual(
             self.assertEqual(
@@ -2941,16 +2902,35 @@ green.
             )
 
   .. code-block:: python
-    :lineno-start: 287
+    :lineno-start: 221
+    :emphasize-lines: 8-9
+
+            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+            assert_equal(
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary,
+                ),
+                (a_tuple, a_dictionary)
+            )
+            # self.assertNotEqual(
+            self.assertEqual(
+                unknown_number_of_arguments(
+                    *a_tuple, **a_dictionary
+                ),
+                (a_tuple, a_dictionary)
+            )
+
+  .. code-block:: python
+    :lineno-start: 236
     :emphasize-lines: 9-10
 
             a_tuple = (0, 1, 2)
             a_dictionary = {'a': 3, 'b': 4, 'c': 5}
-            assert (
+            assert_equal(
                 unknown_number_of_arguments(
                     *a_tuple, **a_dictionary
-                )
-            == (a_tuple, a_dictionary)
+                ),
+                (a_tuple, a_dictionary)
             )
             # self.assertNotEqual(
             self.assertEqual(
@@ -2961,13 +2941,13 @@ green.
             )
 
   .. code-block:: python
-    :lineno-start: 303
+    :lineno-start: 252
     :emphasize-lines: 6-7
 
             a_tuple = (0, 1, 2, 'n')
-            assert (
-                unknown_number_of_arguments(*a_tuple)
-            == (a_tuple, {})
+            assert_equal(
+                unknown_number_of_arguments(*a_tuple),
+                (a_tuple, {})
             )
             # self.assertNotEqual(
             self.assertEqual(
@@ -2976,13 +2956,13 @@ green.
             )
 
   .. code-block:: python
-    :lineno-start: 314
-    :emphasize-lines: 6-7
+    :lineno-start: 263
+    :emphasize-lines: 6-7, 15-16
 
             a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
-            assert (
-                unknown_number_of_arguments(**a_dictionary)
-            == ((), a_dictionary)
+            assert_equal(
+                unknown_number_of_arguments(**a_dictionary),
+                ((), a_dictionary)
             )
             # self.assertNotEqual(
             self.assertEqual(
@@ -2990,18 +2970,12 @@ green.
                 ((), a_dictionary)
             )
 
-  .. code-block:: python
-    :lineno-start: 271
-    :emphasize-lines: 5-6
-
-            assert (
-                unknown_number_of_arguments()
-            == ((), {})
+            assert_equal(
+                unknown_number_of_arguments(), ((), {})
             )
             # self.assertNotEqual(
             self.assertEqual(
-                unknown_number_of_arguments(),
-                ((), {})
+                unknown_number_of_arguments(), ((), {})
             )
 
 
@@ -3009,13 +2983,20 @@ green.
 
   the test passes.
 
-* I add :ref:`variables<what is a variable?>` for the :ref:`calls<how to call a function with input>` to ``src.functions.unknown_number_of_arguments`` and my expectations
+* I remove the commented lines and the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` from :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
-    :lineno-start: 249
-    :emphasize-lines: 10-13
+    :lineno-start: 190
 
-        # def test_unknown_number_of_arguments():
+            last_name = 'smith'
+            self.assertEqual(
+                optional_arguments(
+                    last_input=last_name,
+                    first_input=first_name,
+                ),
+                (first_name, last_name)
+            )
+
         def test_unknown_number_of_arguments(self):
             unknown_number_of_arguments = (
                 src.functions.unknown_number_of_arguments
@@ -3023,18 +3004,6 @@ green.
 
             a_tuple = (0, 1)
             a_dictionary = {'a': 2, 'b': 3}
-
-            reality = unknown_number_of_arguments(
-                *a_tuple, **a_dictionary
-            )
-            my_expectation = (a_tuple, a_dictionary)
-            assert (
-                unknown_number_of_arguments(
-                    *a_tuple, **a_dictionary
-                )
-            == (a_tuple, a_dictionary)
-            )
-            # self.assertNotEqual(
             self.assertEqual(
                 unknown_number_of_arguments(
                     *a_tuple, **a_dictionary
@@ -3043,23 +3012,9 @@ green.
             )
 
   .. code-block:: python
-    :lineno-start: 276
-    :emphasize-lines: 4-7
+    :lineno-start: 213
 
-            a_tuple = (0, 1)
             a_dictionary = {'a': 2, 'b': 3, 'c': 4}
-
-            reality = unknown_number_of_arguments(
-                *a_tuple, **a_dictionary
-            )
-            my_expectation = (a_tuple, a_dictionary)
-            assert (
-                unknown_number_of_arguments(
-                    *a_tuple, **a_dictionary
-                )
-            == (a_tuple, a_dictionary)
-            )
-            # self.assertNotEqual(
             self.assertEqual(
                 unknown_number_of_arguments(
                     *a_tuple, **a_dictionary
@@ -3068,23 +3023,10 @@ green.
             )
 
   .. code-block:: python
-    :lineno-start: 297
-    :emphasize-lines: 4-7
+    :lineno-start: 221
 
             a_tuple = (0, 1, 2)
             a_dictionary = {'a': 3, 'b': 4, 'c': 5}
-
-            reality = unknown_number_of_arguments(
-                *a_tuple, **a_dictionary
-            )
-            my_expectation = (a_tuple, a_dictionary)
-            assert (
-                unknown_number_of_arguments(
-                    *a_tuple, **a_dictionary
-                )
-            == (a_tuple, a_dictionary)
-            )
-            # self.assertNotEqual(
             self.assertEqual(
                 unknown_number_of_arguments(
                     *a_tuple, **a_dictionary
@@ -3093,293 +3035,26 @@ green.
             )
 
   .. code-block:: python
-    :lineno-start: 318
-    :emphasize-lines: 3-4
+    :lineno-start: 230
 
             a_tuple = (0, 1, 2, 'n')
-
-            reality = unknown_number_of_arguments(*a_tuple)
-            my_expectation = (a_tuple, {})
-            assert (
-                unknown_number_of_arguments(*a_tuple)
-            == (a_tuple, {})
-            )
-            # self.assertNotEqual(
             self.assertEqual(
                 unknown_number_of_arguments(*a_tuple),
                 (a_tuple, {})
             )
 
   .. code-block:: python
-    :lineno-start: 332
-    :emphasize-lines: 3-6
+    :lineno-start: 236
 
             a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
-
-            reality = unknown_number_of_arguments(
-                **a_dictionary
-            )
-            my_expectation = ((), a_dictionary)
-            assert (
-                unknown_number_of_arguments(**a_dictionary)
-            == ((), a_dictionary)
-            )
-            # self.assertNotEqual(
             self.assertEqual(
                 unknown_number_of_arguments(**a_dictionary),
                 ((), a_dictionary)
             )
 
-  .. code-block:: python
-    :lineno-start: 348
-    :emphasize-lines: 1-2
-
-            reality = unknown_number_of_arguments()
-            my_expectation = ((), {})
-            assert (
-                unknown_number_of_arguments()
-            == ((), {})
-            )
-            # self.assertNotEqual(
             self.assertEqual(
-                unknown_number_of_arguments(),
-                ((), {})
+                unknown_number_of_arguments(), ((), {})
             )
-
-
-    # Exceptions seen
-
-* I use the :ref:`variables<what is a variable?>` to remove repetition of the :ref:`calls<how to call a function with input>` to ``src.functions.unknown_number_of_arguments`` and my expectations, from :ref:`test_unknown_number_of_arguments`
-
-  .. code-block:: python
-    :lineno-start: 249
-    :emphasize-lines: 14-19, 21-28
-
-        # def test_unknown_number_of_arguments():
-        def test_unknown_number_of_arguments(self):
-            unknown_number_of_arguments = (
-                src.functions.unknown_number_of_arguments
-            )
-
-            a_tuple = (0, 1)
-            a_dictionary = {'a': 2, 'b': 3}
-
-            reality = unknown_number_of_arguments(
-                *a_tuple, **a_dictionary
-            )
-            my_expectation = (a_tuple, a_dictionary)
-            # assert (
-            #     unknown_number_of_arguments(
-            #         *a_tuple, **a_dictionary
-            #     )
-            # == (a_tuple, a_dictionary)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     unknown_number_of_arguments(
-            #         *a_tuple, **a_dictionary
-            #     ),
-            #     (a_tuple, a_dictionary)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 278
-    :emphasize-lines: 8-13, 15-22
-
-            a_tuple = (0, 1)
-            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
-
-            reality = unknown_number_of_arguments(
-                *a_tuple, **a_dictionary
-            )
-            my_expectation = (a_tuple, a_dictionary)
-            # assert (
-            #     unknown_number_of_arguments(
-            #         *a_tuple, **a_dictionary
-            #     )
-            # == (a_tuple, a_dictionary)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     unknown_number_of_arguments(
-            #         *a_tuple, **a_dictionary
-            #     ),
-            #     (a_tuple, a_dictionary)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 301
-    :emphasize-lines: 8-13, 15-22
-
-            a_tuple = (0, 1, 2)
-            a_dictionary = {'a': 3, 'b': 4, 'c': 5}
-
-            reality = unknown_number_of_arguments(
-                *a_tuple, **a_dictionary
-            )
-            my_expectation = (a_tuple, a_dictionary)
-            # assert (
-            #     unknown_number_of_arguments(
-            #         *a_tuple, **a_dictionary
-            #     )
-            # == (a_tuple, a_dictionary)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     unknown_number_of_arguments(
-            #         *a_tuple, **a_dictionary
-            #     ),
-            #     (a_tuple, a_dictionary)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 324
-    :emphasize-lines: 5-8, 10-15
-
-            a_tuple = (0, 1, 2, 'n')
-
-            reality = unknown_number_of_arguments(*a_tuple)
-            my_expectation = (a_tuple, {})
-            # assert (
-            #     unknown_number_of_arguments(*a_tuple)
-            # == (a_tuple, {})
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     unknown_number_of_arguments(*a_tuple),
-            #     (a_tuple, {})
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 340
-    :emphasize-lines: 7-10, 12-19
-
-            a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
-
-            reality = unknown_number_of_arguments(
-                **a_dictionary
-            )
-            my_expectation = ((), a_dictionary)
-            # assert (
-            #     unknown_number_of_arguments(**a_dictionary)
-            # == ((), a_dictionary)
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     unknown_number_of_arguments(**a_dictionary),
-            #     ((), a_dictionary)
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 358
-    :emphasize-lines: 3-6, 8-13
-
-            reality = unknown_number_of_arguments()
-            my_expectation = ((), {})
-            # assert (
-            #     unknown_number_of_arguments()
-            # == ((), {})
-            # )
-            # self.assertNotEqual(
-            # self.assertEqual(
-            #     unknown_number_of_arguments(),
-            #     ((), {})
-            # )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the test is still green.
-
-* I remove the commented lines from :ref:`test_unknown_number_of_arguments`
-
-  .. code-block:: python
-    :lineno-start: 247
-
-            self.assertEqual(reality, my_expectation)
-
-        def test_unknown_number_of_arguments(self):
-            unknown_number_of_arguments = (
-                src.functions.unknown_number_of_arguments
-            )
-
-            a_tuple = (0, 1)
-            a_dictionary = {'a': 2, 'b': 3}
-
-            reality = unknown_number_of_arguments(
-                *a_tuple, **a_dictionary
-            )
-            my_expectation = (a_tuple, a_dictionary)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 264
-
-            a_tuple = (0, 1)
-            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
-
-            reality = unknown_number_of_arguments(
-                *a_tuple, **a_dictionary
-            )
-            my_expectation = (a_tuple, a_dictionary)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 274
-
-            a_tuple = (0, 1, 2)
-            a_dictionary = {'a': 3, 'b': 4, 'c': 5}
-
-            reality = unknown_number_of_arguments(
-                *a_tuple, **a_dictionary
-            )
-            my_expectation = (a_tuple, a_dictionary)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 284
-
-            a_tuple = (0, 1, 2, 'n')
-
-            reality = unknown_number_of_arguments(*a_tuple)
-            my_expectation = (a_tuple, {})
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 291
-
-            a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
-
-            reality = unknown_number_of_arguments(
-                **a_dictionary
-            )
-            my_expectation = ((), a_dictionary)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 300
-
-            reality = unknown_number_of_arguments()
-            my_expectation = ((), {})
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -3387,8 +3062,22 @@ green.
     # NameError
     # TypeError
     # SyntaxError
-    # ModuleNotFoundError
     # AttributeError
+
+* I remove my :ref:`assert_equal function<extract assert_equal function>` since it is no longer used
+
+  .. code-block:: python
+    :linenos:
+
+    import src.functions
+    import unittest
+
+
+    def assert_is_none(something):
+        assert something is None
+
+
+    class TestFunctions(unittest.TestCase):
 
 * I add a git_ commit message in the other terminal_
 
@@ -3411,7 +3100,7 @@ I want to use :ref:`class attributes<what is a class attribute?>` to remove repe
 * I add :ref:`class attributes<what is a class attribute?>` for ``'first'`` and ``'last'``
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 9
     :emphasize-lines: 3-4
 
     class TestFunctions(unittest.TestCase):
@@ -3424,8 +3113,8 @@ I want to use :ref:`class attributes<what is a class attribute?>` to remove repe
 * I use the :ref:`class attributes<what is a class attribute?>` for ``first`` and ``last`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 106
-    :emphasize-lines: 5, 7-12
+    :lineno-start: 69
+    :emphasize-lines: 5, 8-11, 14-17
 
         def test_positional_arguments(self):
             positional_arguments = (
@@ -3433,37 +3122,26 @@ I want to use :ref:`class attributes<what is a class attribute?>` to remove repe
             )
             # first, last = 'first', 'last'
 
-            # reality = positional_arguments(first, last)
-            # my_expectation = (first, last)
-            reality = positional_arguments(
-                self.first, self.last
+            self.assertEqual(
+                # positional_arguments(first, last),
+                positional_arguments(self.first, self.last),
+                # (first, last)
+                (self.first, self.last)
             )
-            my_expectation = (self.first, self.last)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 121
-    :emphasize-lines: 1-6
-
-            # reality = positional_arguments(last, first)
-            # my_expectation = (last, first)
-            reality = positional_arguments(
-                self.last, self.first
+            self.assertEqual(
+                # positional_arguments(last, first),
+                positional_arguments(self.last, self.first),
+                # (last, first)
+                (self.last, self.first)
             )
-            my_expectation = (self.last, self.first)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            reality = positional_arguments(0, 1)
 
   the test is still green.
 
 * I use the :ref:`class attributes<what is a class attribute?>` for ``first`` and ``last`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 158
-    :emphasize-lines: 5, 8-10, 12-13
+    :lineno-start: 108
+    :emphasize-lines: 5, 9-11, 13-14, 18-20, 22-23
 
         def test_keyword_arguments(self):
             keyword_arguments = (
@@ -3471,32 +3149,23 @@ I want to use :ref:`class attributes<what is a class attribute?>` to remove repe
             )
             # first, last = 'first', 'last'
 
-            reality = keyword_arguments(
-                # first_input=first, last_input=last,
-                first_input=self.first,
-                last_input=self.last,
+            self.assertEqual(
+                keyword_arguments(
+                    # first_input=first, last_input=last,
+                    first_input=self.first,
+                    last_input=self.last,
+                ),
+                # (first, last)
+                (self.first, self.last)
             )
-            # my_expectation = (first, last)
-            my_expectation = (self.first, self.last)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 174
-    :emphasize-lines: 2-4, 6-7
-
-            reality = keyword_arguments(
-                # last_input=last, first_input=first,
-                last_input=self.last,
-                first_input=self.first,
-            )
-            # my_expectation = (first, last)
-            my_expectation = (self.first, self.last)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            reality = keyword_arguments(
-                last_input=0, first_input=1,
+            self.assertEqual(
+                keyword_arguments(
+                    # last_input=last, first_input=first,
+                    last_input=self.last,
+                    first_input=self.first,
+                ),
+                # (first, last)
+                (self.first, self.last)
             )
 
   still green.
@@ -3504,20 +3173,20 @@ I want to use :ref:`class attributes<what is a class attribute?>` to remove repe
 * I use the :ref:`class attributes<what is a class attribute?>` for ``first`` and ``last`` in :ref:`test_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 216
-    :emphasize-lines: 2, 5-6, 8-9
+    :lineno-start: 160
+    :emphasize-lines: 2, 6-7, 9-10
 
         def test_args_and_kwargs(self):
             # first, last = 'first', 'last'
 
-            reality = src.functions.args_and_kwargs(
-                # first, last_input=last,
-                self.first, last_input=self.last,
+            self.assertEqual(
+                src.functions.args_and_kwargs(
+                    # first, last_input=last
+                    self.first, last_input=self.last
+                ),
+                # (first, last)
+                (self.first, self.last)
             )
-            # my_expectation = (first, last)
-            my_expectation = (self.first, self.last)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
         def test_optional_arguments(self):
 
@@ -3526,15 +3195,15 @@ I want to use :ref:`class attributes<what is a class attribute?>` to remove repe
 * I remove the commented lines from :ref:`test_args_and_kwargs`
 
   .. code-block:: python
-    :lineno-start: 224
+    :lineno-start: 160
 
         def test_args_and_kwargs(self):
-            reality = src.functions.args_and_kwargs(
-                self.first, last_input=self.last,
+            self.assertEqual(
+                src.functions.args_and_kwargs(
+                    self.first, last_input=self.last
+                ),
+                (self.first, self.last)
             )
-            my_expectation = (self.first, self.last)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
         def test_optional_arguments(self):
 
@@ -3555,7 +3224,7 @@ extract a_tuple class attribute
 * I add a :ref:`class attribute<what is a class attribute?>` for ``(0, 1, 2, 'n')``
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 9
     :emphasize-lines: 5
 
     class TestFunctions(unittest.TestCase):
@@ -3564,58 +3233,60 @@ extract a_tuple class attribute
         last = 'last'
         a_tuple = (0, 1, 2, 'n')
 
-        def test_why_use_a_function(self):
+        def test_making_a_function_w_pass(self):
 
 * I use the new :ref:`class attribute<what is a class attribute?>` for ``a_tuple`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 131
-    :emphasize-lines: 6, 10-11, 13-14
+    :lineno-start: 89
+    :emphasize-lines: 5, 8-13
 
-            reality = positional_arguments(0, 1)
-            my_expectation = (0, 1)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                positional_arguments(0, 1), (0, 1)
+            )
 
             # a_tuple = (0, 1, 2, 'n')
             a_list = [0, 1, 2, 'n']
-
-            reality = positional_arguments(
-                # a_tuple, a_list
-                self.a_tuple, a_list
+            self.assertEqual(
+                # positional_arguments(a_tuple, a_list),
+                positional_arguments(
+                    self.a_tuple, a_list
+                ),
+                # (a_tuple, a_list)
+                (self.a_tuple, a_list)
             )
-            # my_expectation = (a_tuple, a_list)
-            my_expectation = (self.a_tuple, a_list)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+
+            a_set = {0, 1, 2, 'n'}
 
   still green.
 
 * I use the new :ref:`class attribute<what is a class attribute?>` for ``a_tuple`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 187
+    :lineno-start: 138
     :emphasize-lines: 8, 12-13, 16-17
 
-            reality = keyword_arguments(
-                last_input=0, first_input=1,
+            self.assertEqual(
+                keyword_arguments(
+                    last_input=0, first_input=1,
+                ),
+                (1, 0)
             )
-            my_expectation = (1, 0)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
             # a_tuple = (0, 1, 2, 'n')
             a_list = [0, 1, 2, 'n']
-
-            reality = keyword_arguments(
-                # first_input=a_tuple,
-                first_input=self.a_tuple,
-                last_input=a_list,
+            self.assertEqual(
+                keyword_arguments(
+                    # first_input=a_tuple,
+                    first_input=self.a_tuple,
+                    last_input=a_list,
+                ),
+                # (a_tuple, a_list)
+                (self.a_tuple, a_list)
             )
-            # my_expectation = (a_tuple, a_list)
-            my_expectation = (self.a_tuple, a_list)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+
+            a_set = {0, 1, 2, 'n'}
+
 
   the test is still green.
 
@@ -3636,7 +3307,7 @@ extract a_list class attribute
 * I add a :ref:`class attribute<what is a class attribute?>` for ``[0, 1, 2, 'n']``
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 9
     :emphasize-lines: 6
 
     class TestFunctions(unittest.TestCase):
@@ -3646,62 +3317,52 @@ extract a_list class attribute
         a_tuple = (0, 1, 2, 'n')
         a_list = [0, 1, 2, 'n']
 
-        def test_why_use_a_function(self):
+        def test_making_a_function_w_pass(self):
 
 * I use the new :ref:`class attribute<what is a class attribute?>` for ``a_list`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 132
-    :emphasize-lines: 7, 11-12, 15-16
-
-            reality = positional_arguments(0, 1)
-            my_expectation = (0, 1)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 94
+    :emphasize-lines: 2, 6-7, 10-11
 
             # a_tuple = (0, 1, 2, 'n')
             # a_list = [0, 1, 2, 'n']
-
-            reality = positional_arguments(
-                # a_tuple, a_list
-                # self.a_tuple, a_list
-                self.a_tuple, self.a_list
+            self.assertEqual(
+                # positional_arguments(a_tuple, a_list),
+                positional_arguments(
+                    # self.a_tuple, a_list
+                    self.a_tuple, self.a_list
+                ),
+                # (a_tuple, a_list)
+                # (self.a_tuple, a_list)
+                (self.a_tuple, self.a_list)
             )
-            # my_expectation = (a_tuple, a_list)
-            # my_expectation = (self.a_tuple, a_list)
-            my_expectation = (self.a_tuple, self.a_list)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+
+            a_set = {0, 1, 2, 'n'}
 
   still green.
 
 * I use the new :ref:`class attribute<what is a class attribute?>` for ``a_list`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 190
-    :emphasize-lines: 9, 14-15, 18-19
-
-            reality = keyword_arguments(
-                last_input=0, first_input=1,
-            )
-            my_expectation = (1, 0)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 148
+    :emphasize-lines: 2, 7-8, 11-12
 
             # a_tuple = (0, 1, 2, 'n')
             # a_list = [0, 1, 2, 'n']
-
-            reality = keyword_arguments(
-                # first_input=a_tuple,
-                first_input=self.a_tuple,
-                # last_input=a_list,
-                last_input=self.a_list,
+            self.assertEqual(
+                keyword_arguments(
+                    # first_input=a_tuple,
+                    first_input=self.a_tuple,
+                    # last_input=a_list,
+                    last_input=self.a_list,
+                ),
+                # (a_tuple, a_list)
+                # (self.a_tuple, a_list)
+                (self.a_tuple, self.a_list)
             )
-            # my_expectation = (a_tuple, a_list)
-            # my_expectation = (self.a_tuple, a_list)
-            my_expectation = (self.a_tuple, self.a_list)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+
+            a_set = {0, 1, 2, 'n'}
 
   green.
 
@@ -3722,7 +3383,7 @@ extract a_set class attribute
 * I add a :ref:`class attribute<what is a class attribute?>` for ``{0, 1, 2, 'n'}``
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 9
     :emphasize-lines: 7
 
     class TestFunctions(unittest.TestCase):
@@ -3738,23 +3399,19 @@ extract a_set class attribute
 * I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 152
-    :emphasize-lines: 4, 8-9, 11-12
+    :lineno-start: 108
+    :emphasize-lines: 1, 5-6, 8-9
 
-            keyword_arguments = (
-                src.functions.keyword_arguments
-            )
             # a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
-
-            reality = keyword_arguments(
-                # a_set, a_dictionary,
-                self.a_set, a_dictionary,
+            self.assertEqual(
+                src.functions.keyword_arguments(
+                    # a_set, a_dictionary
+                    self.a_set, a_dictionary
+                ),
+                # (a_set, a_dictionary)
+                (self.a_set, a_dictionary)
             )
-            # my_expectation = (a_set, a_dictionary)
-            my_expectation = (self.a_set, a_dictionary)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
         def test_keyword_arguments(self):
 
@@ -3763,24 +3420,20 @@ extract a_set class attribute
 * I use the new :ref:`class attributes<what is a class attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 215
-    :emphasize-lines: 4, 9-10, 12-13
+    :lineno-start: 165
+    :emphasize-lines: 1, 5-6, 9-10
 
-            positional_arguments = (
-                src.functions.positional_arguments
-            )
             # a_set = {0, 1, 2, 'n'}
             a_dictionary = {'key': 'value'}
-
-            reality = positional_arguments(
-                last_input=a_dictionary,
-                # first_input=a_set,
-                first_input=self.a_set,
+            self.assertEqual(
+                src.functions.positional_arguments(
+                    last_input=a_dictionary,
+                    # first_input=a_set,
+                    first_input=self.a_set,
+                ),
+                # (a_set, a_dictionary)
+                (self.a_set, a_dictionary)
             )
-            # my_expectation = (a_set, a_dictionary)
-            my_expectation = (self.a_set, a_dictionary)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
         def test_args_and_kwargs(self):
 
@@ -3803,7 +3456,7 @@ extract a_dictionary class attribute
 * I add a :ref:`class attribute<what is a class attribute?>` for ``a_dictionary``
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 9
     :emphasize-lines: 8
 
     class TestFunctions(unittest.TestCase):
@@ -3820,27 +3473,21 @@ extract a_dictionary class attribute
 * I use the new :ref:`class attribute<what is a class attribute?>` for ``a_dictionary`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 153
-    :emphasize-lines: 5, 9-10, 13-16
+    :lineno-start: 109
+    :emphasize-lines: 2, 6-7, 10-11
 
-            keyword_arguments = (
-                src.functions.keyword_arguments
-            )
             # a_set = {0, 1, 2, 'n'}
             # a_dictionary = {'key': 'value'}
-
-            reality = keyword_arguments(
-                # a_set, a_dictionary,
-                # self.a_set, a_dictionary,
-                self.a_set, self.a_dictionary,
+            self.assertEqual(
+                src.functions.keyword_arguments(
+                    # a_set, a_dictionary
+                    # self.a_set, a_dictionary
+                    self.a_set, self.a_dictionary
+                ),
+                # (a_set, a_dictionary)
+                # (self.a_set, a_dictionary)
+                (self.a_set, self.a_dictionary)
             )
-            # my_expectation = (a_set, a_dictionary)
-            # my_expectation = (self.a_set, a_dictionary)
-            my_expectation = (
-                self.a_set, self.a_dictionary
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
         def test_keyword_arguments(self):
 
@@ -3849,97 +3496,64 @@ extract a_dictionary class attribute
 * I remove the commented lines from :ref:`test_positional_arguments`
 
   .. code-block:: python
-    :lineno-start: 105
-
-            result = add_x(9)
-            expectation = 12
-            assert result == expectation
-            self.assertEqual(result, expectation)
+    :lineno-start: 73
 
         def test_positional_arguments(self):
             positional_arguments = (
                 src.functions.positional_arguments
             )
 
-            reality = positional_arguments(
-                self.first, self.last
+            self.assertEqual(
+                positional_arguments(self.first, self.last),
+                (self.first, self.last)
             )
-            my_expectation = (self.first, self.last)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 122
-
-            reality = positional_arguments(
-                self.last, self.first
-            )
-            my_expectation = (self.last, self.first)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 129
-
-            reality = positional_arguments(0, 1)
-            my_expectation = (0, 1)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 134
-
-            reality = positional_arguments(
-                self.a_tuple, self.a_list
+            self.assertEqual(
+                positional_arguments(self.last, self.first),
+                (self.last, self.first)
             )
 
-            my_expectation = (self.a_tuple, self.a_list)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            keyword_arguments = (
-                src.functions.keyword_arguments
+            self.assertEqual(
+                positional_arguments(0, 1), (0, 1)
             )
 
   .. code-block:: python
-    :lineno-start: 142
+    :lineno-start: 91
 
-            reality = keyword_arguments(
-                self.a_set, self.a_dictionary,
+            self.assertEqual(
+                positional_arguments(
+                    self.a_tuple, self.a_list
+                ),
+                (self.a_tuple, self.a_list)
             )
-            my_expectation = (
-                self.a_set, self.a_dictionary
+
+            self.assertEqual(
+                src.functions.keyword_arguments(
+                    self.a_set, self.a_dictionary
+                ),
+                (self.a_set, self.a_dictionary)
             )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
         def test_keyword_arguments(self):
 
 * I use the new :ref:`class attributes<what is a class attribute?>` for ``a_dictionary`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 203
-    :emphasize-lines: 5, 8-9, 14-17
+    :lineno-start: 151
+    :emphasize-lines: 2, 5-6, 11-12
 
-            positional_arguments = (
-                src.functions.positional_arguments
-            )
             # a_set = {0, 1, 2, 'n'}
             # a_dictionary = {'key': 'value'}
-
-            reality = positional_arguments(
-                # last_input=a_dictionary,
-                last_input=self.a_dictionary,
-                # first_input=a_set,
-                first_input=self.a_set,
+            self.assertEqual(
+                src.functions.positional_arguments(
+                    # last_input=a_dictionary,
+                    last_input=self.a_dictionary,
+                    # first_input=a_set,
+                    first_input=self.a_set,
+                ),
+                # (a_set, a_dictionary)
+                # (self.a_set, a_dictionary)
+                (self.a_set, self.a_dictionary)
             )
-            # my_expectation = (a_set, a_dictionary)
-            # my_expectation = (self.a_set, a_dictionary)
-            my_expectation = (
-                self.a_set, self.a_dictionary
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
         def test_args_and_kwargs(self):
 
@@ -3948,69 +3562,53 @@ extract a_dictionary class attribute
 * I remove the commented lines from :ref:`test_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 155
+    :lineno-start: 105
 
         def test_keyword_arguments(self):
             keyword_arguments = (
                 src.functions.keyword_arguments
             )
 
-            reality = keyword_arguments(
-                first_input=self.first,
-                last_input=self.last,
+            self.assertEqual(
+                keyword_arguments(
+                    first_input=self.first,
+                    last_input=self.last,
+                ),
+                (self.first, self.last)
             )
-            my_expectation = (self.first, self.last)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                keyword_arguments(
+                    last_input=self.last,
+                    first_input=self.first,
+                ),
+                (self.first, self.last)
+            )
 
   .. code-block:: python
-    :lineno-start: 168
+    :lineno-start: 125
 
-            reality = keyword_arguments(
-                last_input=self.last,
-                first_input=self.first,
-            )
-            my_expectation = (self.first, self.last)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 176
-
-            reality = keyword_arguments(
-                last_input=0, first_input=1,
-            )
-            my_expectation = (1, 0)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 183
-
-            reality = keyword_arguments(
-                first_input=self.a_tuple,
-                last_input=self.a_list,
-            )
-            my_expectation = (self.a_tuple, self.a_list)
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-  .. code-block:: python
-    :lineno-start: 191
-
-            positional_arguments = (
-                src.functions.positional_arguments
+            self.assertEqual(
+                keyword_arguments(
+                    last_input=0, first_input=1,
+                ),
+                (1, 0)
             )
 
-            reality = positional_arguments(
-                last_input=self.a_dictionary,
-                first_input=self.a_set,
+            self.assertEqual(
+                keyword_arguments(
+                    first_input=self.a_tuple,
+                    last_input=self.a_list,
+                ),
+                (self.a_tuple, self.a_list)
             )
-            my_expectation = (
-                self.a_set, self.a_dictionary
+
+            self.assertEqual(
+                src.functions.positional_arguments(
+                    last_input=self.a_dictionary,
+                    first_input=self.a_set,
+                ),
+                (self.a_set, self.a_dictionary)
             )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
         def test_args_and_kwargs(self):
 

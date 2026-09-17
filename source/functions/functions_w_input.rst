@@ -126,8 +126,8 @@ questions about functions that take input
 * :ref:`what is a positional argument?<test_positional_arguments>`
 * :ref:`what is a keyword argument?<test_keyword_arguments>`
 * :ref:`how can I make arguments a choice in a function?<test_optional_arguments>`
-* :ref:`how can I make a function take any number of positional arguments?<test_unknown_number_of_arguments>`
-* :ref:`how can I make a function take any number of keyword arguments?<test_unknown_number_of_arguments>`
+* :ref:`how can I make a function take any number of positional arguments?<single starred expressions>`
+* :ref:`how can I make a function take any number of keyword arguments?<double starred expressions>`
 * :ref:`what can I do with single starred expressions?<single starred expressions>`
 * :ref:`what can I do with double starred expressions?<double starred expressions>`
 * :ref:`how does Python read starred expressions?<how Python treats starred expressions>`
