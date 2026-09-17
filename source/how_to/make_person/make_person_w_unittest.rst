@@ -21,9 +21,10 @@ preview
 I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/person/tests/test_person_w_unittest.py
+  :caption: person/tests/test_person.py
   :language: python
   :linenos:
-  :caption: person/tests/test_person.py
+  :lines: 1-
 
 -----
 
@@ -71,10 +72,25 @@ add TestPerson class
 I add a :ref:`class<everything is an object>` named ``TestPerson`` to ``test_person.py``
 
 .. code-block:: python
-  :linenos:
-  :emphasize-lines: 4, 6-7
+  :lineno-start: 45
+  :emphasize-lines: 19, 21-22
 
-  import src.person
+  def assert_person_factory_works(
+          first_name, last_name,
+          sex, year_of_birth
+      ):
+      assert_equal(
+          src.person.person(
+              first_name=first_name,
+              last_name=last_name,
+              sex=sex,
+              year_of_birth=year_of_birth,
+          ),
+          (
+              f'{first_name}, {last_name},'
+              f' {sex}, {year_of_birth}'
+          )
+      )
 
 
   class TestPerson(object):
@@ -103,14 +119,14 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<everything is an object>` of ``TestPerson``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4-5
-
-    import src.person
-
+    :lineno-start: 63
+    :emphasize-lines: 1-2
 
     # class TestPerson(object):
     class TestPerson(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertEqual(False, True)
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
@@ -129,8 +145,8 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     import unittest
 
 
-    # class TestPerson(object):
-    class TestPerson(unittest.TestCase):
+    def assert_equal(left, right):
+        assert left == right
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -141,7 +157,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 64
     :emphasize-lines: 5-6
 
     # class TestPerson(object):
@@ -167,10 +183,24 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I remove the commented lines
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 46
 
-    import src.person
-    import unittest
+    def assert_person_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
+        assert_equal(
+            src.person.person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            ),
+            (
+                f'{first_name}, {last_name},'
+                f' {sex}, {year_of_birth}'
+            )
+        )
 
 
     class TestPerson(unittest.TestCase):
@@ -199,7 +229,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 ----
 
 *********************************************************************************
-test_joe with unittest
+move test_joe to TestPerson
 *********************************************************************************
 
 =================================================================================
@@ -209,12 +239,13 @@ test_joe with unittest
 ----
 
 * I go back to the terminal_ where the tests are running
+* I remove :ref:`test_failure` from the :ref:`TestPerson class<add TestPerson class>`
 
-* I move :ref:`test_joe` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>` and replace ``test_failure``
+* I move :ref:`test_joe` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 3-7, 9-19, 21-31, 33-38, 40-41
+    :lineno-start: 64
+    :emphasize-lines: 3-7, 9-14, 16-20, 22-27
 
     class TestPerson(unittest.TestCase):
 
@@ -224,39 +255,25 @@ test_joe with unittest
             sex = 'M'
             year_of_birth = 1996
 
-            reality = src.person.person(
+            assert_person_factory_works(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                year_of_birth=year_of_birth,
+                year_of_birth=year_of_birth
             )
-            my_expectation = (
-                f'{first_name}, {last_name},'
-                f' {sex}, {year_of_birth}'
-            )
-            assert reality == my_expectation
 
-            reality = src.person.say_hello(
+            assert_say_hello_works(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
             )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
-            )
-            assert reality == my_expectation
 
-            joe = src.person.Person(
+            assert_person_can_say_hello(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                year_of_birth=year_of_birth,
+                year_of_birth=year_of_birth
             )
-
-            reality = joe.say_hello()
-            assert reality == my_expectation
 
 
     def test_jane():
@@ -278,217 +295,19 @@ test_joe with unittest
 
 ----
 
-I add ``self`` to the parentheses of :ref:`test_joe`
-
-.. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 1-2
-
-      # def test_joe():
-      def test_joe(self):
-
-the test is green again.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`person function<extract person function>`
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_joe` because ...
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 19
-
-        # def test_joe():
-        def test_joe(self):
-            first_name = 'joe'
-            last_name = 'blow'
-            sex = 'M'
-            year_of_birth = 1996
-
-            reality = src.person.person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'{first_name}, {last_name},'
-                f' {sex}, {year_of_birth}'
-            )
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'joe, blow, M, 1996'
-                 == 'joe, blow, M, 1996'
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>`
-
-  .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 2-3
-
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
-            )
-            assert reality == my_expectation
-
-  the test passes.
-
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`say_hello function<test say_hello function>`
-
-  .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 12
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'Hello, my name is joe blow and I am 30.'
-                 == 'Hello, my name is joe blow and I am 30.'
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>`
-
-  .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 2-3
-
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-            joe = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-
-            reality = joe.say_hello()
-
-  the test passes.
-
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person class>`
-
-  .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 3
-
-            reality = joe.say_hello()
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-
-    def test_jane():
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'Hello, my name is joe blow and I am 30.'
-                 == 'Hello, my name is joe blow and I am 30.'
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>`
-
-  .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 64
     :emphasize-lines: 3-4
-
-            reality = joe.say_hello()
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_jane():
-
-  the test passes.
-
-* I remove the commented lines from :ref:`test_joe`
-
-  .. code-block:: python
-    :lineno-start: 5
 
     class TestPerson(unittest.TestCase):
 
-        def test_joe(self):
+        @staticmethod
+        def test_joe():
             first_name = 'joe'
-            last_name = 'blow'
-            sex = 'M'
-            year_of_birth = 1996
 
-            reality = src.person.person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'{first_name}, {last_name},'
-                f' {sex}, {year_of_birth}'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            joe = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-
-            reality = joe.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_jane():
+  the test is green again.
 
 * I add a git_ commit message in the other terminal_
 
@@ -500,7 +319,7 @@ the test is green again.
 ----
 
 *********************************************************************************
-test_jane with unittest
+move test_jane to TestPerson
 *********************************************************************************
 
 =================================================================================
@@ -514,12 +333,15 @@ test_jane with unittest
 * I move :ref:`test_jane` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
 
   .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 5-9, 11-21, 23-33, 35-40, 42-43
+    :lineno-start: 86
+    :emphasize-lines: 8-12, 14-19, 21-25, 27-32
 
-            reality = joe.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth
+            )
 
         def test_jane():
             first_name = 'jane'
@@ -527,39 +349,25 @@ test_jane with unittest
             sex = 'F'
             year_of_birth = 1991
 
-            reality = src.person.person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'{first_name}, {last_name},'
-                f' {sex}, {year_of_birth}'
-            )
-            assert reality == my_expectation
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
-            )
-            assert reality == my_expectation
-
-            jane = src.person.Person(
+            assert_person_factory_works(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
                 year_of_birth=year_of_birth,
             )
 
-            reality = jane.say_hello()
-            assert reality == my_expectation
+            assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+            assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
 
 
     def test_john():
@@ -581,213 +389,23 @@ test_jane with unittest
 
 ----
 
-I add ``self`` to the parentheses of :ref:`test_jane`
-
-.. code-block:: python
-  :lineno-start: 46
-  :emphasize-lines: 5-6
-
-          reality = joe.say_hello()
-          assert reality == my_expectation
-          self.assertEqual(reality, my_expectation)
-
-      # def test_jane():
-      def test_jane(self):
-
-the test passes.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_jane`
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_jane` since it also does not use anything in the :ref:`TestPerson class<add TestPerson class>`, yet
 
   .. code-block:: python
-    :lineno-start: 50
-    :emphasize-lines: 19, 32, 43
+    :lineno-start: 86
+    :emphasize-lines: 8-9
 
-        # def test_jane():
-        def test_jane(self):
-            first_name = 'jane'
-            last_name = 'doe'
-            sex = 'F'
-            year_of_birth = 1991
-
-            reality = src.person.person(
+            assert_person_can_say_hello(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'{first_name}, {last_name},'
-                f' {sex}, {year_of_birth}'
-            )
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-            jane = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
+                year_of_birth=year_of_birth
             )
 
-            reality = jane.say_hello()
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-
-    def test_john():
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'jane, doe, F, 1991'
-                 == 'jane, doe, F, 1991'
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`person function<extract person function>`, in :ref:`test_jane`
-
-  .. code-block:: python
-    :lineno-start: 67
-    :emphasize-lines: 2-3
-
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'Hello, my name is jane doe and I am 35.'
-                 == 'Hello, my name is jane doe and I am 35.'
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say_hello function<test say_hello function>`, in :ref:`test_jane`
-
-  .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 2-3
-
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-            jane = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-
-            reality = jane.say_hello()
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'Hello, my name is jane doe and I am 35.'
-                 == 'Hello, my name is jane doe and I am 35.'
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person class>`, in :ref:`test_jane`
-
-  .. code-block:: python
-    :lineno-start: 92
-    :emphasize-lines: 3-4
-
-            reality = jane.say_hello()
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_john():
+        @staticmethod
+        def test_jane():
 
   the test passes.
-
-* I remove the commented lines from :ref:`test_jane`
-
-  .. code-block:: python
-    :lineno-start: 48
-
-            self.assertEqual(reality, my_expectation)
-
-        def test_jane(self):
-            first_name = 'jane'
-            last_name = 'doe'
-            sex = 'F'
-            year_of_birth = 1991
-
-            reality = src.person.person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'{first_name}, {last_name},'
-                f' {sex}, {year_of_birth}'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            jane = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-
-            reality = jane.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_john():
 
 * I add a git_ commit message in the other terminal_
 
@@ -799,7 +417,7 @@ the test passes.
 ----
 
 *********************************************************************************
-test_john with unittest
+move test_john to TestPerson
 *********************************************************************************
 
 =================================================================================
@@ -813,12 +431,15 @@ test_john with unittest
 * I move :ref:`test_john` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
 
   .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 5-9, 11-21, 23-33, 35-40, 42-43
+    :lineno-start: 113
+    :emphasize-lines: 8-12, 14-19, 21-25, 27-32
 
-            reality = jane.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
 
         def test_john():
             first_name = 'john'
@@ -826,39 +447,25 @@ test_john with unittest
             sex = 'M'
             year_of_birth = 1580
 
-            reality = src.person.person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'{first_name}, {last_name},'
-                f' {sex}, {year_of_birth}'
-            )
-            assert reality == my_expectation
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
-            )
-            assert reality == my_expectation
-
-            john = src.person.Person(
+            assert_person_factory_works(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
                 year_of_birth=year_of_birth,
             )
 
-            reality = john.say_hello()
-            assert reality == my_expectation
+            assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+            assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
 
 
     def test_mary():
@@ -880,213 +487,23 @@ test_john with unittest
 
 ----
 
-I add ``self`` to the parentheses of :ref:`test_john`
-
-.. code-block:: python
-  :lineno-start: 89
-  :emphasize-lines: 5-6
-
-          reality = jane.say_hello()
-          assert reality == my_expectation
-          self.assertEqual(reality, my_expectation)
-
-      # def test_john():
-      def test_john(self):
-
-green again.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_john`
+* I also add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_john`
 
   .. code-block:: python
-    :lineno-start: 93
-    :emphasize-lines: 19, 32, 43
+    :lineno-start: 113
+    :emphasize-lines: 8-9
 
-        # def test_john():
-        def test_john(self):
-            first_name = 'john'
-            last_name = 'smith'
-            sex = 'M'
-            year_of_birth = 1580
-
-            reality = src.person.person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'{first_name}, {last_name},'
-                f' {sex}, {year_of_birth}'
-            )
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-            john = src.person.Person(
+            assert_person_can_say_hello(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
                 year_of_birth=year_of_birth,
             )
 
-            reality = john.say_hello()
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
+        @staticmethod
+        def test_john():
 
-
-    def test_mary():
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'john, smith, M, 1580'
-                 == 'john, smith, M, 1580'
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`person function<extract person function>`, in :ref:`test_john`
-
-  .. code-block:: python
-    :lineno-start: 110
-    :emphasize-lines: 2-3
-
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'Hello, my name is john smith and I am 446.'
-                 == 'Hello, my name is john smith and I am 446.'
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say_hello function<test say_hello function>`, in :ref:`test_john`
-
-  .. code-block:: python
-    :lineno-start: 124
-    :emphasize-lines: 2-3
-
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-            john = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-
-            reality = john.say_hello()
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'Hello, my name is john smith and I am 446.'
-                 == 'Hello, my name is john smith and I am 446.'
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person class>`, in :ref:`test_john`
-
-  .. code-block:: python
-    :lineno-start: 135
-    :emphasize-lines: 3-4
-
-            reality = john.say_hello()
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_mary():
-
-  the test passes.
-
-* I remove the commented lines from :ref:`test_john`
-
-  .. code-block:: python
-    :lineno-start: 91
-
-            self.assertEqual(reality, my_expectation)
-
-        def test_john(self):
-            first_name = 'john'
-            last_name = 'smith'
-            sex = 'M'
-            year_of_birth = 1580
-
-            reality = src.person.person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'{first_name}, {last_name},'
-                f' {sex}, {year_of_birth}'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            john = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-
-            reality = john.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_mary():
+  green again.
 
 * I add a git_ commit message in the other terminal_
 
@@ -1098,7 +515,7 @@ green again.
 ----
 
 *********************************************************************************
-test_mary with unittest
+move test_mary to TestPerson
 *********************************************************************************
 
 =================================================================================
@@ -1112,12 +529,15 @@ test_mary with unittest
 * I move :ref:`test_mary` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
 
   .. code-block:: python
-    :lineno-start: 132
-    :emphasize-lines: 5-9, 11-21, 23-33, 35-40, 42-43
+    :lineno-start: 140
+    :emphasize-lines: 8-12, 14-19, 21-25, 27-32
 
-            reality = john.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
 
         def test_mary():
             first_name = 'mary'
@@ -1125,39 +545,25 @@ test_mary with unittest
             sex = 'F'
             year_of_birth = 2000
 
-            reality = src.person.person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'{first_name}, {last_name},'
-                f' {sex}, {year_of_birth}'
-            )
-            assert reality == my_expectation
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
-            )
-            assert reality == my_expectation
-
-            mary = src.person.Person(
+            assert_person_factory_works(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
                 year_of_birth=year_of_birth,
             )
 
-            reality = mary.say_hello()
-            assert reality == my_expectation
+            assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+            assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
 
 
     def test_dir_person_class():
@@ -1179,213 +585,23 @@ test_mary with unittest
 
 ----
 
-I add ``self`` to the parentheses of :ref:`test_mary`
-
-.. code-block:: python
-  :lineno-start: 132
-  :emphasize-lines: 5-6
-
-          reality = john.say_hello()
-          assert reality == my_expectation
-          self.assertEqual(reality, my_expectation)
-
-      # def test_mary():
-      def test_mary(self):
-
-green.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_mary`
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_mary` because I can use it when a :ref:`method<what is a method?>` does not use anything in the :ref:`class<everything is an object>` it belongs to
 
   .. code-block:: python
-    :lineno-start: 136
-    :emphasize-lines: 19, 32, 43
+    :lineno-start: 140
+    :emphasize-lines: 8-9
 
-        # def test_mary():
-        def test_mary(self):
-            first_name = 'mary'
-            last_name = 'public'
-            sex = 'F'
-            year_of_birth = 2000
-
-            reality = src.person.person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'{first_name}, {last_name},'
-                f' {sex}, {year_of_birth}'
-            )
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-            mary = src.person.Person(
+            assert_person_can_say_hello(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
                 year_of_birth=year_of_birth,
             )
 
-            reality = mary.say_hello()
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
+        @staticmethod
+        def test_mary():
 
-
-    def test_dir_person_class():
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-     AssertionError: 'mary, public, F, 2000'
-                  == 'mary, public, F, 2000'
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` for the :ref:`person function<extract person function>`, in :ref:`test_mary`
-
-  .. code-block:: python
-    :lineno-start: 153
-    :emphasize-lines: 2-3
-
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'Hello, my name is mary public and I am 26.'
-                 == 'Hello, my name is mary public and I am 26.'
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say_hello function<test say_hello function>`, in :ref:`test_mary`
-
-  .. code-block:: python
-    :lineno-start: 167
-    :emphasize-lines: 2-3
-
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-            mary = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-
-            reality = mary.say_hello()
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'Hello, my name is mary public and I am 26.'
-                 == 'Hello, my name is mary public and I am 26.'
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person class>`, in :ref:`test_mary`
-
-  .. code-block:: python
-    :lineno-start: 178
-    :emphasize-lines: 3-4
-
-            reality = mary.say_hello()
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_dir_person_class():
-
-  the test passes.
-
-* I remove the commented lines from :ref:`test_mary`
-
-  .. code-block:: python
-    :lineno-start: 134
-
-            self.assertEqual(reality, my_expectation)
-
-        def test_mary(self):
-            first_name = 'mary'
-            last_name = 'public'
-            sex = 'F'
-            year_of_birth = 2000
-
-            reality = src.person.person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'{first_name}, {last_name},'
-                f' {sex}, {year_of_birth}'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {2026-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            mary = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-
-            reality = mary.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_dir_person_class():
+  green.
 
 * I add a git_ commit message in the other terminal_
 
@@ -1411,23 +627,30 @@ test_dir_person_class with unittest
 * I move :ref:`test_dir_person_class` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
 
   .. code-block:: python
-    :lineno-start: 175
-    :emphasize-lines: 5-7
+    :lineno-start: 167
+    :emphasize-lines: 8-12
 
-            reality = mary.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
 
         def test_dir_person_class():
-            reality = dir(src.person.Person)
-            my_expectation = [
+            assert_equal(
+                dir(src.person.Person),
+                [
+                    '__class__', '__delattr__', '__dict__',
+
 
   .. code-block:: python
-    :lineno-start: 212
-    :emphasize-lines: 1-2
+    :lineno-start: 187
+    :emphasize-lines: 1-3
 
-            ]
-            assert reality == my_expectation
+                    '__subclasshook__', '__weakref__', 'say_hello'
+                ]
+            )
 
 
     def test_dir_person_instance():
@@ -1453,15 +676,22 @@ test_dir_person_class with unittest
 I add ``self`` to the parentheses of :ref:`test_dir_person_class`
 
 .. code-block:: python
-  :lineno-start: 175
-  :emphasize-lines: 5-6
+  :lineno-start: 167
+  :emphasize-lines: 8-9
 
-          reality = mary.say_hello()
-          assert reality == my_expectation
-          self.assertEqual(reality, my_expectation)
+          assert_person_can_say_hello(
+              first_name=first_name,
+              last_name=last_name,
+              sex=sex,
+              year_of_birth=year_of_birth,
+          )
 
       # def test_dir_person_class():
       def test_dir_person_class(self):
+          assert_equal(
+              dir(src.person.Person),
+              [
+                  '__class__', '__delattr__', '__dict__',
 
 green again.
 
@@ -1473,54 +703,63 @@ green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_dir_person_class`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` in :ref:`test_dir_person_class`
 
   .. code-block:: python
-    :lineno-start: 214
-    :emphasize-lines: 2
+    :lineno-start: 174
+    :emphasize-lines: 3-4
 
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-
-    def test_dir_person_instance():
+        # def test_dir_person_class():
+        def test_dir_person_class(self):
+            # assert_equal(
+            self.assertNotEqual(
+                dir(src.person.Person),
+                [
+                    '__class__', '__delattr__', '__dict__',
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` in :ref:`test_dir_person_class`
 
   .. code-block:: python
-    :lineno-start: 214
-    :emphasize-lines: 2-3
+    :lineno-start: 174
+    :emphasize-lines: 4-5
 
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_dir_person_instance():
+        # def test_dir_person_class():
+        def test_dir_person_class(self):
+            # assert_equal(
+            # self.assertNotEqual(
+            self.assertEqual(
+                dir(src.person.Person),
+                [
+                    '__class__', '__delattr__', '__dict__',
 
   the test passes.
 
 * I remove the commented lines from :ref:`test_dir_person_class`
 
   .. code-block:: python
-    :lineno-start: 175
+    :lineno-start: 167
 
-            reality = mary.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
 
         def test_dir_person_class(self):
-            reality = dir(src.person.Person)
-            my_expectation = [
+            self.assertEqual(
+                dir(src.person.Person),
+                [
+                    '__class__', '__delattr__', '__dict__',
 
   .. code-block:: python
-    :lineno-start: 213
+    :lineno-start: 187
 
-            ]
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+                    '__subclasshook__', '__weakref__', 'say_hello'
+                ]
+            )
 
 
     def test_dir_person_instance():
@@ -1550,32 +789,37 @@ test_dir_person_instance with unittest
 * I move :ref:`test_dir_person_instance` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
 
   .. code-block:: python
-    :lineno-start: 213
-    :emphasize-lines: 4-10
+    :lineno-start: 187
+    :emphasize-lines: 5-16
 
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-        def test_dir_person_instance():
-            an_instance_of_person = src.person.Person(
-                first_name='first_name',
-                last_name='last_name',
-                sex='M',
-                year_of_birth=2026,
+                    '__subclasshook__', '__weakref__', 'say_hello'
+                ]
             )
 
-            reality = dir(an_instance_of_person)
-            my_expectation = [
+        def test_dir_person_instance():
+            assert_equal(
+                dir(
+                    src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=2026,
+                    )
+                ),
+                [
+                    '__class__', '__delattr__', '__dict__',
 
   .. code-block:: python
-    :lineno-start: 260
-    :emphasize-lines: 1-2
+    :lineno-start: 212
+    :emphasize-lines: 1-3
 
-            ]
-            assert reality == my_expectation
+                    'last_name', 'say_hello', 'sex', 'year_of_birth',
+                ]
+            )
 
 
     # Exceptions seen
+
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1598,14 +842,27 @@ test_dir_person_instance with unittest
 I add ``self`` to the parentheses of :ref:`test_dir_person_instance`
 
 .. code-block:: python
-  :lineno-start: 213
-  :emphasize-lines: 4-5
+  :lineno-start: 187
+  :emphasize-lines: 5-6
 
-          assert reality == my_expectation
-          self.assertEqual(reality, my_expectation)
+                  '__subclasshook__', '__weakref__', 'say_hello'
+              ]
+          )
 
       # def test_dir_person_instance():
       def test_dir_person_instance(self):
+          assert_equal(
+              dir(
+                  src.person.Person(
+                      first_name='first_name',
+                      last_name='last_name',
+                      sex='M',
+                      year_of_birth=2026,
+                  )
+              ),
+              [
+                  '__class__', '__delattr__', '__dict__',
+
 
 the test is green again.
 
@@ -1617,59 +874,81 @@ the test is green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_dir_person_instance`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` in :ref:`test_dir_person_instance`
 
   .. code-block:: python
-    :lineno-start: 262
-    :emphasize-lines: 2
+    :lineno-start: 191
+    :emphasize-lines: 3-4
 
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-
-    # Exceptions seen
+        # def test_dir_person_instance():
+        def test_dir_person_instance(self):
+            # assert_equal(
+            self.assertNotEqual(
+                dir(
+                    src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=2026,
+                    )
+                ),
+                [
+                    '__class__', '__delattr__', '__dict__',
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` in :ref:`test_dir_person_instance`
 
   .. code-block:: python
-    :lineno-start: 262
-    :emphasize-lines: 2-3
+    :lineno-start: 191
+    :emphasize-lines: 4-5
 
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
+        # def test_dir_person_instance():
+        def test_dir_person_instance(self):
+            # assert_equal(
+            # self.assertNotEqual(
+            self.assertEqual(
+                dir(
+                    src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=2026,
+                    )
+                ),
+                [
+                    '__class__', '__delattr__', '__dict__',
 
   the test passes.
 
 * I remove the commented lines from :ref:`test_dir_person_instance`
 
   .. code-block:: python
-    :lineno-start: 214
+    :lineno-start: 187
 
-            self.assertEqual(reality, my_expectation)
-
-        def test_dir_person_instance(self):
-            an_instance_of_person = src.person.Person(
-                first_name='first_name',
-                last_name='last_name',
-                sex='M',
-                year_of_birth=2026,
+                    '__subclasshook__', '__weakref__', 'say_hello'
+                ]
             )
 
-            reality = dir(an_instance_of_person)
-            my_expectation = [
+        def test_dir_person_instance(self):
+            self.assertEqual(
+                dir(
+                    src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=2026,
+                    )
+                ),
+                [
+                    '__class__', '__delattr__', '__dict__',
 
   .. code-block:: python
-    :lineno-start: 260
+    :lineno-start: 212
 
-            ]
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+                    'last_name', 'say_hello', 'sex', 'year_of_birth',
+                ]
+            )
 
 
     # Exceptions seen
@@ -1686,6 +965,1002 @@ the test is green again.
 
     git commit -am
     'move test_dir_person_instance to TestPerson'
+
+----
+
+*********************************************************************************
+move assert_person_can_say_hello to TestPerson
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
+* I add a copy of the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
+
+  .. code-block:: python
+    :lineno-start: 64
+    :emphasize-lines: 3-19
+
+    class TestPerson(unittest.TestCase):
+
+        def assert_person_can_say_hello(
+                first_name, last_name,
+                sex, year_of_birth,
+            ):
+            assert_equal(
+                src.person.Person(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                ).say_hello(),
+                (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am'
+                    f' {2026-year_of_birth}.'
+                )
+            )
+
+        @staticmethod
+        def test_joe():
+
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 84
+
+        @staticmethod
+        def test_joe():
+            first_name = 'joe'
+            last_name = 'blow'
+            sex = 'M'
+            year_of_birth = 1996
+
+            assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth
+            )
+
+  .. code-block:: python
+    :lineno-start: 98
+    :emphasize-lines: 7-8
+
+            assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+            # assert_person_can_say_hello(
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth
+            )
+
+        @staticmethod
+        def test_jane():
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
+
+  .. code-block:: python
+
+    NameError: name 'self' is not defined
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add ``self`` to the parentheses of :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 84
+    :emphasize-lines: 2-3
+
+        @staticmethod
+        # def test_joe():
+        def test_joe(self):
+            first_name = 'joe'
+            last_name = 'blow'
+            sex = 'M'
+            year_of_birth = 1996
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestPerson.test_joe() missing
+               1 required positional argument: 'self'
+
+* I comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` from :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 84
+    :emphasize-lines: 1
+
+        # @staticmethod
+        # def test_joe():
+        def test_joe(self):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestPerson.assert_person_can_say_hello()
+               got multiple values for argument 'first_name'
+
+  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
+
+* I add ``self`` to the parentheses of the :ref:`assert_person_can_say_hello method of the TestPerson class<move assert_person_can_say_hello to TestPerson>`
+
+  .. code-block:: python
+    :lineno-start: 64
+    :emphasize-lines: 4-5
+
+    class TestPerson(unittest.TestCase):
+
+        def assert_person_can_say_hello(
+                # first_name, last_name,
+                self, first_name, last_name,
+                sex, year_of_birth,
+            ):
+
+  the test is green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` in the :ref:`assert_person_can_say_hello method of the TestPerson class<move assert_person_can_say_hello to TestPerson>`
+
+  .. code-block:: python
+    :lineno-start: 66
+    :emphasize-lines: 6-7
+
+        def assert_person_can_say_hello(
+                # first_name, last_name,
+                self,first_name, last_name,
+                sex, year_of_birth,
+            ):
+            # assert_equal(
+            self.assertNotEqual(
+                src.person.Person(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                ).say_hello(),
+                (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am'
+                    f' {2026-year_of_birth}.'
+                )
+            )
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'Hello, my name is joe blow and I am 30.'
+                 == 'Hello, my name is joe blow and I am 30.'
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` in the :ref:`assert_person_can_say_hello method of the TestPerson class<move assert_person_can_say_hello to TestPerson>`
+
+  .. code-block:: python
+    :lineno-start: 66
+    :emphasize-lines: 7-8
+
+        def assert_person_can_say_hello(
+                # first_name, last_name,
+                self,first_name, last_name,
+                sex, year_of_birth,
+            ):
+            # assert_equal(
+            # self.assertNotEqual(
+            self.assertEqual(
+                src.person.Person(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                ).say_hello(),
+                (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am'
+                    f' {2026-year_of_birth}.'
+                )
+            )
+
+  the test is green again.
+
+* I remove the commented lines from the :ref:`assert_person_can_say_hello method of the TestPerson class<move assert_person_can_say_hello to TestPerson>`
+
+  .. code-block:: python
+    :lineno-start: 64
+
+    class TestPerson(unittest.TestCase):
+
+        def assert_person_can_say_hello(
+                self,first_name, last_name,
+                sex, year_of_birth,
+            ):
+            self.assertEqual(
+                src.person.Person(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                ).say_hello(),
+                (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am'
+                    f' {2026-year_of_birth}.'
+                )
+            )
+
+        # @staticmethod
+        # def test_joe():
+        def test_joe(self):
+
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 113
+
+        @staticmethod
+        def test_jane():
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+            year_of_birth = 1991
+
+            assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+  .. code-block:: python
+    :lineno-start: 127
+    :emphasize-lines: 7-8
+
+            assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+            # assert_person_can_say_hello(
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+        @staticmethod
+        def test_john():
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
+
+  .. code-block:: python
+
+    NameError: name 'self' is not defined
+
+* I add ``self`` to the parentheses of :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 113
+    :emphasize-lines: 2-3
+
+        @staticmethod
+        # def test_jane():
+        def test_jane(self):
+            first_name = 'jane'
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestPerson.test_jane() missing
+               1 required positional argument: 'self'
+
+* I comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` from :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 113
+    :emphasize-lines: 1
+
+        # @staticmethod
+        # def test_jane():
+        def test_jane(self):
+            first_name = 'jane'
+
+  the test is green again.
+
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 142
+
+        @staticmethod
+        def test_john():
+            first_name = 'john'
+            last_name = 'smith'
+            sex = 'M'
+            year_of_birth = 1580
+
+            assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+  .. code-block:: python
+    :lineno-start: 156
+    :emphasize-lines: 7-8
+
+            assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+            # assert_person_can_say_hello(
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+        @staticmethod
+        def test_mary():
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
+
+  .. code-block:: python
+
+    NameError: name 'self' is not defined
+
+* I add ``self`` to the parentheses of :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 142
+    :emphasize-lines: 2-3
+
+        @staticmethod
+        # def test_john():
+        def test_john(self):
+            first_name = 'john'
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestPerson.test_john() missing
+               1 required positional argument: 'self'
+
+* I comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` from :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 142
+    :emphasize-lines: 1
+
+        # @staticmethod
+        # def test_john():
+        def test_john(self):
+            first_name = 'john'
+
+  the test is green again.
+
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` to the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 171
+
+        @staticmethod
+        def test_mary():
+            first_name = 'mary'
+            last_name = 'public'
+            sex = 'F'
+            year_of_birth = 2000
+
+            assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+  .. code-block:: python
+    :lineno-start: 185
+    :emphasize-lines: 7-8
+
+            assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+            # assert_person_can_say_hello(
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+        def test_dir_person_class(self):
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
+
+  .. code-block:: python
+
+    NameError: name 'self' is not defined
+
+* I add ``self`` to the parentheses of :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 171
+    :emphasize-lines: 2-3
+
+        @staticmethod
+        # def test_mary():
+        def test_mary(self):
+            first_name = 'mary'
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestPerson.test_mary() missing
+               1 required positional argument: 'self'
+
+* I comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` from :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 171
+    :emphasize-lines: 1
+
+        # @staticmethod
+        # def test_mary():
+        def test_mary(self):
+            first_name = 'mary'
+
+  green again.
+
+* I remove the :ref:`assert_person_can_say_hello function<extract assert_person_can_say_hello function>` since it is now a repetition
+
+  .. code-block:: python
+    :linenos:
+
+    import src.person
+    import unittest
+
+
+    def assert_equal(left, right):
+        assert left == right
+
+
+    def assert_say_hello_works(
+            first_name, last_name,
+            year_of_birth,
+        ):
+
+  all the tests are still green.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am
+    'move assert_person_can_say_hello to TestPerson'
+
+----
+
+*********************************************************************************
+move assert_say_hello_works to TestPerson
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
+* I add a copy of the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 3-18
+
+    class TestPerson(unittest.TestCase):
+
+        def assert_say_hello_works(
+                first_name, last_name,
+                year_of_birth,
+            ):
+            assert_equal(
+                src.person.say_hello(
+                    first_name=first_name,
+                    last_name=last_name,
+                    year_of_birth=year_of_birth
+                ),
+                (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am'
+                    f' {2026-year_of_birth}.'
+                )
+            )
+
+        def assert_person_can_say_hello(
+                self, first_name, last_name,
+                sex, year_of_birth,
+            ):
+
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 82
+    :emphasize-lines: 16-17
+
+        # @staticmethod
+        # def test_joe():
+        def test_joe(self):
+            first_name = 'joe'
+            last_name = 'blow'
+            sex = 'M'
+            year_of_birth = 1996
+
+            assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth
+            )
+
+            # assert_say_hello_works(
+            self.assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestPerson.assert_say_hello_works()
+               got multiple values for argument 'first_name'
+
+  because ...
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add ``self`` to the parentheses of the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 4-5
+
+    class TestPerson(unittest.TestCase):
+
+        def assert_say_hello_works(
+                # first_name, last_name,
+                self,first_name, last_name,
+                year_of_birth,
+            ):
+
+  the test is green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented line from the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
+
+  .. code-block:: python
+    :lineno-start: 45
+
+    class TestPerson(unittest.TestCase):
+
+        def assert_say_hello_works(
+                self,first_name, last_name,
+                year_of_birth,
+            ):
+
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 112
+    :emphasize-lines: 16-17
+
+        # @staticmethod
+        # def test_jane():
+        def test_jane(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+            year_of_birth = 1991
+
+            assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+            # assert_say_hello_works(
+            self.assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+  the test is still green.
+
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 142
+    :emphasize-lines: 16-17
+
+        # @staticmethod
+        # def test_john():
+        def test_john(self):
+            first_name = 'john'
+            last_name = 'smith'
+            sex = 'M'
+            year_of_birth = 1580
+
+            assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+            # assert_say_hello_works(
+            self.assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+  still green.
+
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 172
+    :emphasize-lines: 16-17
+
+        # @staticmethod
+        # def test_mary():
+        def test_mary(self):
+            first_name = 'mary'
+            last_name = 'public'
+            sex = 'F'
+            year_of_birth = 2000
+
+            assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+            # assert_say_hello_works(
+            self.assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+  green.
+
+* I remove the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` since it is now a repetition
+
+  .. code-block:: python
+    :linenos:
+
+    import src.person
+    import unittest
+
+
+    def assert_equal(left, right):
+        assert left == right
+
+
+    def assert_person_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
+
+  the tests are still green.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am
+    'move assert_say_hello_works to TestPerson'
+
+----
+
+*********************************************************************************
+move assert_say_hello_works to TestPerson
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
+* I add a copy of the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 3-18
+
+    class TestPerson(unittest.TestCase):
+
+        def assert_say_hello_works(
+                first_name, last_name,
+                year_of_birth,
+            ):
+            assert_equal(
+                src.person.say_hello(
+                    first_name=first_name,
+                    last_name=last_name,
+                    year_of_birth=year_of_birth
+                ),
+                (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am'
+                    f' {2026-year_of_birth}.'
+                )
+            )
+
+        def assert_person_can_say_hello(
+                self, first_name, last_name,
+                sex, year_of_birth,
+            ):
+
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 82
+    :emphasize-lines: 16-17
+
+        # @staticmethod
+        # def test_joe():
+        def test_joe(self):
+            first_name = 'joe'
+            last_name = 'blow'
+            sex = 'M'
+            year_of_birth = 1996
+
+            assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth
+            )
+
+            # assert_say_hello_works(
+            self.assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestPerson.assert_say_hello_works()
+               got multiple values for argument 'first_name'
+
+  because ...
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add ``self`` to the parentheses of the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 4-5
+
+    class TestPerson(unittest.TestCase):
+
+        def assert_say_hello_works(
+                # first_name, last_name,
+                self,first_name, last_name,
+                year_of_birth,
+            ):
+
+  the test is green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented line from the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
+
+  .. code-block:: python
+    :lineno-start: 45
+
+    class TestPerson(unittest.TestCase):
+
+        def assert_say_hello_works(
+                self,first_name, last_name,
+                year_of_birth,
+            ):
+
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 112
+    :emphasize-lines: 16-17
+
+        # @staticmethod
+        # def test_jane():
+        def test_jane(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+            year_of_birth = 1991
+
+            assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+            # assert_say_hello_works(
+            self.assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+  the test is still green.
+
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 142
+    :emphasize-lines: 16-17
+
+        # @staticmethod
+        # def test_john():
+        def test_john(self):
+            first_name = 'john'
+            last_name = 'smith'
+            sex = 'M'
+            year_of_birth = 1580
+
+            assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+            # assert_say_hello_works(
+            self.assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+  still green.
+
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 172
+    :emphasize-lines: 16-17
+
+        # @staticmethod
+        # def test_mary():
+        def test_mary(self):
+            first_name = 'mary'
+            last_name = 'public'
+            sex = 'F'
+            year_of_birth = 2000
+
+            assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+            # assert_say_hello_works(
+            self.assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+  green.
+
+* I remove the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` since it is now a repetition
+
+  .. code-block:: python
+    :linenos:
+
+    import src.person
+    import unittest
+
+
+    def assert_equal(left, right):
+        assert left == right
+
+
+    def assert_person_factory_works(
+            first_name, last_name,
+            sex, year_of_birth
+        ):
+
+  the tests are still green.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am
+    'move assert_say_hello_works to TestPerson'
 
 ----
 

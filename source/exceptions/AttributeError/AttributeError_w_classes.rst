@@ -1398,7 +1398,7 @@ All the tests I have run for :ref:`AttributeError<what causes AttributeError?>` 
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
 * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
 
-I still have the problem that the tests all show the correct way to use :ref:`attributes<what is a class attribute?>` I made in ``src/attribute_error/__init__.py``. If someone reads the file_ or runs it, there is no way for them to know how the code relates to :ref:`AttributeError<what causes AttributeError?>` unless they go through the process with me, :ref:`there has to be a better way<test_catching_attribute_error_in_tests>`.
+I still have the problem that the tests all show the correct way to use :ref:`attributes<what is a class attribute?>` I made in ``src/attribute_error/__init__.py``. If someone reads the file_ or runs it, there is no way for them to know how the code relates to :ref:`AttributeError<what causes AttributeError?>` unless they go through the process with me, :ref:`there has to be a better way<test_catching_attribute_error>`.
 
 ----
 

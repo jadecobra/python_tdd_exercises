@@ -2955,7 +2955,7 @@ will_not_run with unittest
 
     def test_failure():
 
-  still green, it does not raise :ref:`NameError<test_catching_name_error_in_tests>` because this :ref:`method<what is a method?>` never gets :ref:`called<how to call a function with input>` by pytest_.
+  still green, it does not raise :ref:`NameError<test_catching_name_error>` because this :ref:`method<what is a method?>` never gets :ref:`called<how to call a function with input>` by pytest_.
 
 * I add ``self`` to the parentheses of :ref:`will not run<pytest only calls the function if the name starts with test>`
 

@@ -113,7 +113,7 @@ I comment out the ``text`` :ref:`function<what is a function?>` in ``tests/test_
 
   def test_passing_none():
 
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
 .. code-block:: python
 
@@ -138,7 +138,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     def assert_equal(a, b):
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
   .. code-block:: python
 

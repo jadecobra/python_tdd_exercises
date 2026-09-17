@@ -1270,7 +1270,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
         a_string = 'hello'
         # assert_equal(text('hello'), 'I got: hi')
         # assert_equal(text('hello'), 'I got: hello')
-        assert_equal(text('hello'), 'I got: a_string')
+        assert_equal(text(a_string), 'I got: a_string')
 
 
     # Exceptions seen
@@ -1292,8 +1292,8 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
         a_string = 'hello'
         # assert_equal(text('hello'), 'I got: hi')
         # assert_equal(text('hello'), 'I got: hello')
-        # assert_equal(text('hello'), 'I got: a_string')
-        assert_equal(text('hello'), f'I got: {a_string}')
+        # assert_equal(text(a_string), 'I got: a_string')
+        assert_equal(text(a_string), f'I got: {a_string}')
 
 
     # Exceptions seen
@@ -1307,7 +1307,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
     def test_passing_a_string():
         a_string = 'hello'
-        assert_equal(text('hello'), f'I got: {a_string}')
+        assert_equal(text(a_string), f'I got: {a_string}')
 
 
     # Exceptions seen
