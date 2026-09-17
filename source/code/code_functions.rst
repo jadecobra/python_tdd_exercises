@@ -240,7 +240,6 @@ The code in ``functions/tests/test_functions.py`` from :ref:`test functions with
   :lineno-start: 194
   :lines: 194-
 
-
 ----
 
 *********************************************************************************
