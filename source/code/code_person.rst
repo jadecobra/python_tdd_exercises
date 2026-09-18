@@ -191,8 +191,58 @@ test person with unittest: tests
 The code in ``person/tests/test_person.py`` from :ref:`test person with unittest`
 
 .. literalinclude:: person/tests/test_person_w_unittest.py
+  :caption: person/tests/test_person.py
   :language: python
   :linenos:
+  :lines: 1-22
+
+.. literalinclude:: person/tests/test_person_w_unittest.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 24
+  :lines: 24-39
+
+.. literalinclude:: person/tests/test_person_w_unittest.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 41
+  :lines: 41-57
+
+.. literalinclude:: person/tests/test_person_w_unittest.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 59
+  :lines: 59-83
+
+.. literalinclude:: person/tests/test_person_w_unittest.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 85
+  :lines: 85-109
+
+.. literalinclude:: person/tests/test_person_w_unittest.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 111
+  :lines: 111-135
+
+.. literalinclude:: person/tests/test_person_w_unittest.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 137
+  :lines: 137-161
+
+.. literalinclude:: person/tests/test_person_w_unittest.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 163
+  :lines: 163-178
+
+.. literalinclude:: person/tests/test_person_w_unittest.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 180
+  :lines: 180-
 
 ----
 
