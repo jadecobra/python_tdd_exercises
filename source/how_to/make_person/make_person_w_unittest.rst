@@ -1691,61 +1691,84 @@ move assert_say_hello_works to TestPerson
 
   green.
 
-* I remove the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` since it is now a repetition
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` in the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
 
   .. code-block:: python
-    :linenos:
-
-    import src.person
-    import unittest
-
-
-    def assert_equal(left, right):
-        assert left == right
-
-
-    def assert_person_factory_works(
-            first_name, last_name,
-            sex, year_of_birth
-        ):
-
-  the tests are still green.
-
-* I add a git_ commit message in the other terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit -am
-    'move assert_say_hello_works to TestPerson'
-
-----
-
-*********************************************************************************
-move assert_say_hello_works to TestPerson
-*********************************************************************************
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-* I go back to the terminal_ where the tests are running
-
-* I add a copy of the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
-
-  .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 3-18
-
-    class TestPerson(unittest.TestCase):
+    :lineno-start: 47
+    :emphasize-lines: 5-6
 
         def assert_say_hello_works(
-                first_name, last_name,
+                self, first_name, last_name,
                 year_of_birth,
             ):
-            assert_equal(
+            # assert_equal(
+            self.assertNotEqual(
+                src.person.say_hello(
+                    first_name=first_name,
+                    last_name=last_name,
+                    year_of_birth=year_of_birth
+                ),
+                (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am'
+                    f' {2026-year_of_birth}.'
+                )
+            )
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    FAILED ...test_jane - AssertionError:
+        'Hello, my name is jane doe and I am 35.'
+     == 'Hello, my name is jane doe and I am 35.'
+    FAILED ...test_joe - AssertionError:
+        'Hello, my name is joe blow and I am 30.'
+     == 'Hello, my name is joe blow and I am 30.'
+    FAILED ...test_john - AssertionError:
+        'Hello, my name is john smith and I am 446.'
+     == 'Hello, my name is john smith and I am 446.'
+    FAILED ...test_mary - AssertionError:
+        'Hello, my name is mary public and I am 26.'
+     == 'Hello, my name is mary public and I am 26.'
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` in the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
+
+  .. code-block:: python
+    :lineno-start: 47
+    :emphasize-lines: 6-7
+
+        def assert_say_hello_works(
+                self, first_name, last_name,
+                year_of_birth,
+            ):
+            # assert_equal(
+            # self.assertNotEqual(
+            self.assertEqual(
+                src.person.say_hello(
+                    first_name=first_name,
+                    last_name=last_name,
+                    year_of_birth=year_of_birth
+                ),
+                (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am'
+                    f' {2026-year_of_birth}.'
+                )
+            )
+
+  the test is green again.
+
+* I remove the commented lines from the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
+
+  .. code-block:: python
+    :lineno-start: 47
+
+        def assert_say_hello_works(
+                self, first_name, last_name,
+                year_of_birth,
+            ):
+            self.assertEqual(
                 src.person.say_hello(
                     first_name=first_name,
                     last_name=last_name,
@@ -1759,180 +1782,6 @@ move assert_say_hello_works to TestPerson
             )
 
         def assert_person_can_say_hello(
-                self, first_name, last_name,
-                sex, year_of_birth,
-            ):
-
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_joe`
-
-  .. code-block:: python
-    :lineno-start: 82
-    :emphasize-lines: 16-17
-
-        # @staticmethod
-        # def test_joe():
-        def test_joe(self):
-            first_name = 'joe'
-            last_name = 'blow'
-            sex = 'M'
-            year_of_birth = 1996
-
-            assert_person_factory_works(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth
-            )
-
-            # assert_say_hello_works(
-            self.assert_say_hello_works(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: TestPerson.assert_say_hello_works()
-               got multiple values for argument 'first_name'
-
-  because ...
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I add ``self`` to the parentheses of the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
-
-  .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 4-5
-
-    class TestPerson(unittest.TestCase):
-
-        def assert_say_hello_works(
-                # first_name, last_name,
-                self,first_name, last_name,
-                year_of_birth,
-            ):
-
-  the test is green again.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I remove the commented line from the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
-
-  .. code-block:: python
-    :lineno-start: 45
-
-    class TestPerson(unittest.TestCase):
-
-        def assert_say_hello_works(
-                self,first_name, last_name,
-                year_of_birth,
-            ):
-
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_jane`
-
-  .. code-block:: python
-    :lineno-start: 112
-    :emphasize-lines: 16-17
-
-        # @staticmethod
-        # def test_jane():
-        def test_jane(self):
-            first_name = 'jane'
-            last_name = 'doe'
-            sex = 'F'
-            year_of_birth = 1991
-
-            assert_person_factory_works(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-
-            # assert_say_hello_works(
-            self.assert_say_hello_works(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-
-  the test is still green.
-
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_john`
-
-  .. code-block:: python
-    :lineno-start: 142
-    :emphasize-lines: 16-17
-
-        # @staticmethod
-        # def test_john():
-        def test_john(self):
-            first_name = 'john'
-            last_name = 'smith'
-            sex = 'M'
-            year_of_birth = 1580
-
-            assert_person_factory_works(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-
-            # assert_say_hello_works(
-            self.assert_say_hello_works(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-
-  still green.
-
-* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` to the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_mary`
-
-  .. code-block:: python
-    :lineno-start: 172
-    :emphasize-lines: 16-17
-
-        # @staticmethod
-        # def test_mary():
-        def test_mary(self):
-            first_name = 'mary'
-            last_name = 'public'
-            sex = 'F'
-            year_of_birth = 2000
-
-            assert_person_factory_works(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-
-            # assert_say_hello_works(
-            self.assert_say_hello_works(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-
-  green.
 
 * I remove the :ref:`assert_say_hello_works function<extract assert_say_hello_works function>` since it is now a repetition
 
@@ -1961,6 +1810,496 @@ move assert_say_hello_works to TestPerson
 
     git commit -am
     'move assert_say_hello_works to TestPerson'
+
+----
+
+*********************************************************************************
+move assert_person_factory_works to TestPerson
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
+* I add a copy of the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to make it a :ref:`method<what is a method?>` of the :ref:`TestPerson class<add TestPerson class>`
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 3-18
+
+    class TestPerson(unittest.TestCase):
+
+        def assert_person_factory_works(
+                first_name, last_name,
+                sex, year_of_birth
+            ):
+            assert_equal(
+                src.person.person(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                ),
+                (
+                    f'{first_name}, {last_name},'
+                    f' {sex}, {year_of_birth}'
+                )
+            )
+
+        def assert_say_hello_works(
+                self, first_name, last_name,
+                year_of_birth,
+            ):
+
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 81
+    :emphasize-lines: 9-10
+
+        # @staticmethod
+        # def test_joe():
+        def test_joe(self):
+            first_name = 'joe'
+            last_name = 'blow'
+            sex = 'M'
+            year_of_birth = 1996
+
+            # assert_person_factory_works(
+            self.assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth
+            )
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestPerson.assert_person_factory_works()
+               got multiple values for argument 'first_name'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add ``self`` to the parentheses of the :ref:`assert_person_factory_works method of the TestPerson class<move assert_person_factory_works to TestPerson>`
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 4-5
+
+    class TestPerson(unittest.TestCase):
+
+        def assert_person_factory_works(
+                # first_name, last_name,
+                self, first_name, last_name,
+                sex, year_of_birth
+            ):
+
+  green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented line from the :ref:`assert_person_factory_works method of the TestPerson class<move assert_person_factory_works to TestPerson>`
+
+  .. code-block:: python
+    :lineno-start: 27
+
+    class TestPerson(unittest.TestCase):
+
+        def assert_person_factory_works(
+                self, first_name, last_name,
+                sex, year_of_birth
+            ):
+
+* I remove the commented lines from :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 63
+
+        def assert_person_can_say_hello(
+                self,first_name, last_name,
+                sex, year_of_birth,
+            ):
+            self.assertEqual(
+                src.person.Person(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                ).say_hello(),
+                (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am'
+                    f' {2026-year_of_birth}.'
+                )
+            )
+
+  .. code-block:: python
+    :lineno-start: 81
+
+        def test_joe(self):
+            first_name = 'joe'
+            last_name = 'blow'
+            sex = 'M'
+            year_of_birth = 1996
+
+            self.assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth
+            )
+
+  .. code-block:: python
+    :lineno-start: 94
+
+            self.assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth
+            )
+
+        # @staticmethod
+        # def test_jane():
+        def test_jane(self):
+
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 9-10
+
+        # @staticmethod
+        # def test_jane():
+        def test_jane(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+            year_of_birth = 1991
+
+            # assert_person_factory_works(
+            self.assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+  still green.
+
+* I remove the commented lines from :ref:`test_jane`
+
+  .. code-block:: python
+    :lineno-start: 100
+
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth
+            )
+
+        def test_jane(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+            year_of_birth = 1991
+
+            self.assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+  .. code-block:: python
+    :lineno-start: 120
+
+            self.assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+        # @staticmethod
+        # def test_john():
+        def test_john(self):
+
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 133
+    :emphasize-lines: 9-10
+
+        # @staticmethod
+        # def test_john():
+        def test_john(self):
+            first_name = 'john'
+            last_name = 'smith'
+            sex = 'M'
+            year_of_birth = 1580
+
+            # assert_person_factory_works(
+            self.assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+  the test is still green.
+
+* I remove the commented lines from :ref:`test_john`
+
+  .. code-block:: python
+    :lineno-start: 126
+
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+        def test_john(self):
+            first_name = 'john'
+            last_name = 'smith'
+            sex = 'M'
+            year_of_birth = 1580
+
+            self.assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+  .. code-block:: python
+    :lineno-start: 146
+
+            self.assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+        # @staticmethod
+        # def test_mary():
+        def test_mary(self):
+
+* I change the :ref:`call<how to call a function with input>` from the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` to the :ref:`assert_person_factory_works method<move assert_person_factory_works to TestPerson>` of the :ref:`TestPerson class<add TestPerson class>` in :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 159
+    :emphasize-lines: 9-10
+
+        # @staticmethod
+        # def test_mary():
+        def test_mary(self):
+            first_name = 'mary'
+            last_name = 'public'
+            sex = 'F'
+            year_of_birth = 2000
+
+            # assert_person_factory_works(
+            self.assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+  green.
+
+* I remove the commented lines from :ref:`test_mary`
+
+  .. code-block:: python
+    :lineno-start: 152
+
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+        def test_mary(self):
+            first_name = 'mary'
+            last_name = 'public'
+            sex = 'F'
+            year_of_birth = 2000
+
+            self.assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+  .. code-block:: python
+    :lineno-start: 172
+
+            self.assert_say_hello_works(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+        def test_dir_person_class(self):
+
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` in the :ref:`assert_person_factory_works method of the TestPerson class<move assert_person_factory_works to TestPerson>`
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 5-6
+
+        def assert_person_factory_works(
+                self, first_name, last_name,
+                sex, year_of_birth
+            ):
+            # assert_equal(
+            self.assertNotEqual(
+                src.person.person(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                ),
+                (
+                    f'{first_name}, {last_name},'
+                    f' {sex}, {year_of_birth}'
+                )
+            )
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    FAILED ...test_jane - AssertionError:
+        'jane, doe, F, 1991' == 'jane, doe, F, 1991'
+    FAILED ...test_joe - AssertionError:
+        'joe, blow, M, 1996' == 'joe, blow, M, 1996'
+    FAILED ...test_john - AssertionError:
+        'john, smith, M, 1580' == 'john, smith, M, 1580'
+    FAILED ...test_mary - AssertionError:
+        'mary, public, F, 2000' == 'mary, public, F, 2000'
+
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` in the :ref:`assert_person_factory_works method of the TestPerson class<move assert_person_factory_works to TestPerson>`
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 6-7
+
+        def assert_person_factory_works(
+                self, first_name, last_name,
+                sex, year_of_birth
+            ):
+            # assert_equal(
+            # self.assertNotEqual(
+            self.assertEqual(
+                src.person.person(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                ),
+                (
+                    f'{first_name}, {last_name},'
+                    f' {sex}, {year_of_birth}'
+                )
+            )
+
+  the test is green again.
+
+* I remove the commented lines from the :ref:`assert_person_factory_works method of the TestPerson class<move assert_person_factory_works to TestPerson>`
+
+  .. code-block:: python
+    :lineno-start: 27
+
+    class TestPerson(unittest.TestCase):
+
+        def assert_person_factory_works(
+                self, first_name, last_name,
+                sex, year_of_birth
+            ):
+            self.assertEqual(
+                src.person.person(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                ),
+                (
+                    f'{first_name}, {last_name},'
+                    f' {sex}, {year_of_birth}'
+                )
+            )
+
+* I remove the :ref:`assert_person_factory_works function<extract assert_person_factory_works function>` since it is now a repetition and my :ref:`assert_equal function<extract assert_equal function>` since it is no longer used
+
+  .. code-block:: python
+    :linenos:
+
+    import src.person
+    import unittest
+
+
+    class TestPerson(unittest.TestCase):
+
+  green.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am
+    'move assert_person_factory_works to TestPerson'
 
 ----
 
