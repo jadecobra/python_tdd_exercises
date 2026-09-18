@@ -295,8 +295,9 @@ test_making_a_class_w_pass with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_making_a_class_w_pass` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>` and replace ``test_failure``
+* I remove :ref:`test_failure`
 
+* I move :ref:`test_making_a_class_w_pass` to make it a :ref:`method<what is a method?>` of the :ref:`TestClasses class<add TestClasses class>`
   .. code-block:: python
     :lineno-start: 13
     :emphasize-lines: 3-5
@@ -2399,7 +2400,7 @@ the test is green again.
 
   .. code-block:: python
     :lineno-start: 111
-    
+
             ]
             assert reality == my_expectation
             self.assertEqual(reality, my_expectation)

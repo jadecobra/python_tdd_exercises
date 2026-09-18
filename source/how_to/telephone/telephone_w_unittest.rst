@@ -76,9 +76,16 @@ add TestTelephone class
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4, 6-7
+    :emphasize-lines: 11, 13-14
 
     import src.telephone
+
+
+    text = src.telephone.text
+
+
+    def assert_equal(a, b):
+        assert a == b
 
 
     class Telephone(object):
@@ -94,14 +101,17 @@ add TestTelephone class
 * I change the name of the :ref:`class<everything is an object>` to ``TestTelephone``
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 7
     :emphasize-lines: 4-5
 
-    import src.telephone
+    def assert_equal(a, b):
+        assert a == b
 
 
     # class Telephone(object):
     class TestTelephone(object):
+
+        def test_failure(self):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -121,15 +131,14 @@ add TestTelephone class
 * I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<everything is an object>` of ``TestTelephone``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5-6
-
-    import src.telephone
-
+    :lineno-start: 11
+    :emphasize-lines: 2-3
 
     # class Telephone(object):
     # class TestTelephone(object):
     class TestTelephone(unittest.TestCase):
+
+        def test_failure(self):
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error>`
 
@@ -148,9 +157,7 @@ add TestTelephone class
     import unittest
 
 
-    # class Telephone(object):
-    # class TestTelephone(object):
-    class TestTelephone(unittest.TestCase):
+    text = src.telephone.text
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -158,10 +165,10 @@ add TestTelephone class
 
     AssertionError: True != False
 
-* I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in the :ref:`assertion<what is an assertion?>`
+* I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in :ref:`test_failure`
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 12
     :emphasize-lines: 6-7
 
     # class Telephone(object):
@@ -190,8 +197,8 @@ add TestTelephone class
   .. code-block:: python
     :linenos:
 
-    import src.telephone
-    import unittest
+    def assert_equal(a, b):
+        assert a == b
 
 
     class TestTelephone(unittest.TestCase):
@@ -231,18 +238,17 @@ test_passing_none with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_passing_none` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>` and replace ``test_failure``
+* I remove :ref:`test_failure`
+* I move :ref:`test_passing_none` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 3-6
+    :lineno-start: 12
+    :emphasize-lines: 3-4
 
     class TestTelephone(unittest.TestCase):
 
         def test_passing_none():
-            reality = src.telephone.text(None)
-            my_expectation = 'I got: None'
-            assert reality == my_expectation
+            assert_equal(text(None), 'I got: None')
 
 
     def test_passing_booleans():
@@ -268,13 +274,14 @@ test_passing_none with unittest
 I add ``self`` to the parentheses of :ref:`test_passing_none`
 
 .. code-block:: python
-  :lineno-start: 5
+  :lineno-start: 12
   :emphasize-lines: 3-4
 
   class TestTelephone(unittest.TestCase):
 
       # def test_passing_none():
       def test_passing_none(self):
+          assert_equal(text(None), 'I got: None')
 
 the test is green again.
 
@@ -286,20 +293,16 @@ the test is green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_none`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_none`
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 8
-
-    class TestTelephone(unittest.TestCase):
+    :lineno-start: 14
+    :emphasize-lines: 3-4
 
         # def test_passing_none():
         def test_passing_none(self):
-            reality = src.telephone.text(None)
-            my_expectation = 'I got: None'
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
+            # assert_equal(text(None), 'I got: None')
+            self.assertNotEqual(text(None), 'I got: None')
 
 
     def test_passing_booleans():
@@ -313,36 +316,29 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_none`
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 8-9
-
-    class TestTelephone(unittest.TestCase):
+    :lineno-start: 14
+    :emphasize-lines: 4-5
 
         # def test_passing_none():
         def test_passing_none(self):
-            reality = src.telephone.text(None)
-            my_expectation = 'I got: None'
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
+            # assert_equal(text(None), 'I got: None')
+            # self.assertNotEqual(text(None), 'I got: None')
+            self.assertEqual(text(None), 'I got: None')
 
 
     def test_passing_booleans():
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_passing_none`
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 12
 
     class TestTelephone(unittest.TestCase):
 
         def test_passing_none(self):
-            reality = src.telephone.text(None)
-            my_expectation = 'I got: None'
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(text(None), 'I got: None')
 
 
     def test_passing_booleans():
@@ -372,19 +368,15 @@ test_passing_booleans with unittest
 * I move :ref:`test_passing_booleans` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 3-6, 8-10
+    :lineno-start: 14
+    :emphasize-lines: 4-6
 
-            self.assertEqual(reality, my_expectation)
+        def test_passing_none(self):
+            self.assertEqual(text(None), 'I got: None')
 
         def test_passing_booleans():
-            reality = src.telephone.text(False)
-            my_expectation = 'I got: False'
-            assert reality == my_expectation
-
-            reality = src.telephone.text(True)
-            my_expectation = 'I got: True'
-            assert reality == my_expectation
+            assert_equal(text(False), 'I got: False')
+            assert_equal(text(True), 'I got: True')
 
 
     def test_passing_an_integer():
@@ -410,13 +402,16 @@ test_passing_booleans with unittest
 I add ``self`` to the parentheses of :ref:`test_passing_booleans`
 
 .. code-block:: python
-  :lineno-start: 11
-  :emphasize-lines: 3-4
+  :lineno-start: 14
+  :emphasize-lines: 4-5
 
-          self.assertEqual(reality, my_expectation)
+      def test_passing_none(self):
+          self.assertEqual(text(None), 'I got: None')
 
       # def test_passing_booleans():
       def test_passing_booleans(self):
+          assert_equal(text(False), 'I got: False')
+          assert_equal(text(True), 'I got: True')
 
 green again.
 
@@ -428,25 +423,18 @@ green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_passing_booleans`
+* * I change the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_passing_booleans`
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 8, 13
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 17
+    :emphasize-lines: 3-6
 
         # def test_passing_booleans():
         def test_passing_booleans(self):
-            reality = src.telephone.text(False)
-            my_expectation = 'I got: False'
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-            reality = src.telephone.text(True)
-            my_expectation = 'I got: True'
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
+            # assert_equal(text(False), 'I got: False')
+            self.assertNotEqual(text(False), 'I got: False')
+            # assert_equal(text(True), 'I got: True')
+            self.assertNotEqual(text(True), 'I got: True')
 
 
     def test_passing_an_integer():
@@ -460,18 +448,16 @@ green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_passing_booleans`
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 6-7
+    :lineno-start: 17
+    :emphasize-lines: 4-5
 
         # def test_passing_booleans():
         def test_passing_booleans(self):
-            reality = src.telephone.text(False)
-            my_expectation = 'I got: False'
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(True)
+            # assert_equal(text(False), 'I got: False')
+            # self.assertNotEqual(text(False), 'I got: False')
+            self.assertEqual(text(False), 'I got: False')
+            # assert_equal(text(True), 'I got: True')
+            self.assertNotEqual(text(True), 'I got: True')
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -482,37 +468,34 @@ green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_passing_booleans`
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 4-5
+    :lineno-start: 17
+    :emphasize-lines: 7-8
 
-            reality = src.telephone.text(True)
-            my_expectation = 'I got: True'
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
+        # def test_passing_booleans():
+        def test_passing_booleans(self):
+            # assert_equal(text(False), 'I got: False')
+            # self.assertNotEqual(text(False), 'I got: False')
+            self.assertEqual(text(False), 'I got: False')
+            # assert_equal(text(True), 'I got: True')
+            # self.assertNotEqual(text(True), 'I got: True')
+            self.assertEqual(text(True), 'I got: True')
 
 
     def test_passing_an_integer():
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_passing_booleans`
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 14
 
-            self.assertEqual(reality, my_expectation)
+        def test_passing_none(self):
+            self.assertEqual(text(None), 'I got: None')
 
         def test_passing_booleans(self):
-            reality = src.telephone.text(False)
-            my_expectation = 'I got: False'
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(True)
-            my_expectation = 'I got: True'
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(text(False), 'I got: False')
+            self.assertEqual(text(True), 'I got: True')
 
 
     def test_passing_an_integer():
@@ -542,17 +525,16 @@ test_passing_an_integer with unittest
 * I move :ref:`test_passing_an_integer` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 3-4, 6-8
+    :lineno-start: 17
+    :emphasize-lines: 5-7
 
-            self.assertEqual(reality, my_expectation)
+        def test_passing_booleans(self):
+            self.assertEqual(text(False), 'I got: False')
+            self.assertEqual(text(True), 'I got: True')
 
         def test_passing_an_integer():
             an_integer = 1234
-
-            reality = src.telephone.text(an_integer)
-            my_expectation = f'I got: {an_integer}'
-            assert reality == my_expectation
+            assert_equal(text(an_integer), f'I got: {an_integer}')
 
 
     def test_passing_a_float():
@@ -578,13 +560,17 @@ test_passing_an_integer with unittest
 I add ``self`` to the parentheses of :ref:`test_passing_an_integer`
 
 .. code-block:: python
-  :lineno-start: 22
-  :emphasize-lines: 3-4
+  :lineno-start: 17
+  :emphasize-lines: 5-6
 
-          self.assertEqual(reality, my_expectation)
+        def test_passing_booleans(self):
+            self.assertEqual(text(False), 'I got: False')
+            self.assertEqual(text(True), 'I got: True')
 
-      # def test_passing_an_integer():
-      def test_passing_an_integer(self):
+        # def test_passing_an_integer():
+        def test_passing_an_integer(self):
+            an_integer = 1234
+            assert_equal(text(an_integer), f'I got: {an_integer}')
 
 green.
 
@@ -596,22 +582,19 @@ green.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_an_integer`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_an_integer`
 
   .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 10
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 21
+    :emphasize-lines: 4-7
 
         # def test_passing_an_integer():
         def test_passing_an_integer(self):
             an_integer = 1234
-
-            reality = src.telephone.text(an_integer)
-            my_expectation = f'I got: {an_integer}'
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
+            # assert_equal(text(an_integer), f'I got: {an_integer}')
+            self.assertNotEqual(
+                text(an_integer), f'I got: {an_integer}'
+            )
 
 
     def test_passing_a_float():
@@ -625,40 +608,34 @@ green.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_an_integer`
 
   .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 10-11
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 21
+    :emphasize-lines: 5-6
 
         # def test_passing_an_integer():
         def test_passing_an_integer(self):
             an_integer = 1234
-
-            reality = src.telephone.text(an_integer)
-            my_expectation = f'I got: {an_integer}'
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_passing_a_float():
+            # assert_equal(text(an_integer), f'I got: {an_integer}')
+            # self.assertNotEqual(
+            self.assertEqual(
+                text(an_integer), f'I got: {an_integer}'
+            )
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_passing_an_integer`
 
   .. code-block:: python
-    :lineno-start: 22
+    :lineno-start: 17
 
-            self.assertEqual(reality, my_expectation)
+        def test_passing_booleans(self):
+            self.assertEqual(text(False), 'I got: False')
+            self.assertEqual(text(True), 'I got: True')
 
         def test_passing_an_integer(self):
             an_integer = 1234
-
-            reality = src.telephone.text(an_integer)
-            my_expectation = f'I got: {an_integer}'
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                text(an_integer), f'I got: {an_integer}'
+            )
 
 
     def test_passing_a_float():
@@ -688,17 +665,18 @@ test_passing_a_float with unittest
 * I move :ref:`test_passing_a_float` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 3-4, 6-8
+    :lineno-start: 21
+    :emphasize-lines: 7-9
 
-            self.assertEqual(reality, my_expectation)
+        def test_passing_an_integer(self):
+            an_integer = 1234
+            self.assertEqual(
+                text(an_integer), f'I got: {an_integer}'
+            )
 
         def test_passing_a_float():
             a_float = 5.678
-
-            reality = src.telephone.text(a_float)
-            my_expectation = f'I got: {a_float}'
-            assert reality == my_expectation
+            assert_equal(text(a_float), f'I got: {a_float}')
 
 
     def test_passing_a_string():
@@ -724,13 +702,19 @@ test_passing_a_float with unittest
 I add ``self`` to the parentheses of :ref:`test_passing_a_float`
 
 .. code-block:: python
-  :lineno-start: 30
-  :emphasize-lines: 3-4
+  :lineno-start: 21
+  :emphasize-lines: 7-8
 
-          self.assertEqual(reality, my_expectation)
+      def test_passing_an_integer(self):
+          an_integer = 1234
+          self.assertEqual(
+              text(an_integer), f'I got: {an_integer}'
+          )
 
       # def test_passing_a_float():
       def test_passing_a_float(self):
+          a_float = 5.678
+          assert_equal(text(a_float), f'I got: {a_float}')
 
 green again.
 
@@ -742,22 +726,19 @@ green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_float`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_float`
 
   .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 10
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 27
+    :emphasize-lines: 4-7
 
         # def test_passing_a_float():
         def test_passing_a_float(self):
             a_float = 5.678
-
-            reality = src.telephone.text(a_float)
-            my_expectation = f'I got: {a_float}'
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
+            # assert_equal(text(a_float), f'I got: {a_float}')
+            self.assertNotEqual(
+                text(a_float), f'I got: {a_float}'
+            )
 
 
     def test_passing_a_string():
@@ -771,40 +752,36 @@ green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_float`
 
   .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 10-11
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 27
+    :emphasize-lines: 5-6
 
         # def test_passing_a_float():
         def test_passing_a_float(self):
             a_float = 5.678
-
-            reality = src.telephone.text(a_float)
-            my_expectation = f'I got: {a_float}'
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_passing_a_string():
+            # assert_equal(text(a_float), f'I got: {a_float}')
+            # self.assertNotEqual(
+            self.assertEqual(
+                text(a_float), f'I got: {a_float}'
+            )
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_passing_a_float`
 
   .. code-block:: python
-    :lineno-start: 30
+    :lineno-start: 21
 
-            self.assertEqual(reality, my_expectation)
+        def test_passing_an_integer(self):
+            an_integer = 1234
+            self.assertEqual(
+                text(an_integer), f'I got: {an_integer}'
+            )
 
         def test_passing_a_float(self):
             a_float = 5.678
-
-            reality = src.telephone.text(a_float)
-            my_expectation = f'I got: {a_float}'
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                text(a_float), f'I got: {a_float}'
+            )
 
 
     def test_passing_a_string():
@@ -834,17 +811,18 @@ test_passing_a_string with unittest
 * I move :ref:`test_passing_a_string` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 3-4, 6-8
+    :lineno-start: 27
+    :emphasize-lines: 7-9
 
-            self.assertEqual(reality, my_expectation)
+        def test_passing_a_float(self):
+            a_float = 5.678
+            self.assertEqual(
+                text(a_float), f'I got: {a_float}'
+            )
 
         def test_passing_a_string():
             a_string = 'hello'
-
-            reality = src.telephone.text(a_string)
-            my_expectation = f'I got: {a_string}'
-            assert reality == my_expectation
+            assert_equal(text('hello'), f'I got: {a_string}')
 
 
     def test_passing_a_tuple():
@@ -870,13 +848,19 @@ test_passing_a_string with unittest
 I add ``self`` to the parentheses of :ref:`test_passing_a_string`
 
 .. code-block:: python
-  :lineno-start: 38
-  :emphasize-lines: 3-4
+  :lineno-start: 27
+  :emphasize-lines: 7-8
 
-          self.assertEqual(reality, my_expectation)
+      def test_passing_a_float(self):
+          a_float = 5.678
+          self.assertEqual(
+              text(a_float), f'I got: {a_float}'
+          )
 
       # def test_passing_a_string():
       def test_passing_a_string(self):
+          a_string = 'hello'
+          assert_equal(text('hello'), f'I got: {a_string}')
 
 the test is green again.
 
@@ -888,22 +872,19 @@ the test is green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_string`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_string`
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 10
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 33
+    :emphasize-lines: 4-7
 
         # def test_passing_a_string():
         def test_passing_a_string(self):
             a_string = 'hello'
-
-            reality = src.telephone.text(a_string)
-            my_expectation = f'I got: {a_string}'
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
+            # assert_equal(text('hello'), f'I got: {a_string}')
+            self.assertNotEqual(
+                text('hello'), f'I got: {a_string}'
+            )
 
 
     def test_passing_a_tuple():
@@ -917,40 +898,36 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_string`
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 10-11
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 33
+    :emphasize-lines: 5-6
 
         # def test_passing_a_string():
         def test_passing_a_string(self):
             a_string = 'hello'
-
-            reality = src.telephone.text(a_string)
-            my_expectation = f'I got: {a_string}'
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_passing_a_tuple():
+            # assert_equal(text('hello'), f'I got: {a_string}')
+            # self.assertNotEqual(
+            self.assertEqual(
+                text('hello'), f'I got: {a_string}'
+            )
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_passing_a_string`
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 27
 
-            self.assertEqual(reality, my_expectation)
+        def test_passing_a_float(self):
+            a_float = 5.678
+            self.assertEqual(
+                text(a_float), f'I got: {a_float}'
+            )
 
         def test_passing_a_string(self):
             a_string = 'hello'
-
-            reality = src.telephone.text(a_string)
-            my_expectation = f'I got: {a_string}'
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                text('hello'), f'I got: {a_string}'
+            )
 
 
     def test_passing_a_tuple():
@@ -980,17 +957,18 @@ test_passing_a_tuple with unittest
 * I move :ref:`test_passing_a_tuple` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 3-4, 6-8
+    :lineno-start: 33
+    :emphasize-lines: 7-9
 
-            self.assertEqual(reality, my_expectation)
+        def test_passing_a_string(self):
+            a_string = 'hello'
+            self.assertEqual(
+                text('hello'), f'I got: {a_string}'
+            )
 
         def test_passing_a_tuple():
             a_tuple = (0, 1, 2, 'n')
-
-            reality = src.telephone.text(a_tuple)
-            my_expectation = f'I got: {a_tuple}'
-            assert reality == my_expectation
+            assert_equal(text(a_tuple), f"I got: {a_tuple}")
 
 
     def test_passing_a_list():
@@ -1014,13 +992,19 @@ test_passing_a_tuple with unittest
 I add ``self`` to the parentheses of :ref:`test_passing_a_tuple`
 
 .. code-block:: python
-  :lineno-start: 46
-  :emphasize-lines: 3-4
+  :lineno-start: 33
+  :emphasize-lines: 7-8
 
-          self.assertEqual(reality, my_expectation)
+      def test_passing_a_string(self):
+          a_string = 'hello'
+          self.assertEqual(
+              text('hello'), f'I got: {a_string}'
+          )
 
       # def test_passing_a_tuple():
       def test_passing_a_tuple(self):
+          a_tuple = (0, 1, 2, 'n')
+          assert_equal(text(a_tuple), f"I got: {a_tuple}")
 
 green again.
 
@@ -1032,22 +1016,19 @@ green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_tuple`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_tuple`
 
   .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 10
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 39
+    :emphasize-lines: 4-7
 
         # def test_passing_a_tuple():
         def test_passing_a_tuple(self):
             a_tuple = (0, 1, 2, 'n')
-
-            reality = src.telephone.text(a_tuple)
-            my_expectation = f'I got: {a_tuple}'
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
+            # assert_equal(text(a_tuple), f"I got: {a_tuple}")
+            self.assertNotEqual(
+                text(a_tuple), f"I got: {a_tuple}"
+            )
 
 
     def test_passing_a_list():
@@ -1062,40 +1043,36 @@ green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_tuple`
 
   .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 10-11
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 39
+    :emphasize-lines: 5-6
 
         # def test_passing_a_tuple():
         def test_passing_a_tuple(self):
             a_tuple = (0, 1, 2, 'n')
-
-            reality = src.telephone.text(a_tuple)
-            my_expectation = f'I got: {a_tuple}'
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_passing_a_list():
+            # assert_equal(text(a_tuple), f"I got: {a_tuple}")
+            # self.assertNotEqual(
+            self.assertEqual(
+                text(a_tuple), f"I got: {a_tuple}"
+            )
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_passing_a_tuple`
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 33
 
-            self.assertEqual(reality, my_expectation)
+        def test_passing_a_string(self):
+            a_string = 'hello'
+            self.assertEqual(
+                text('hello'), f'I got: {a_string}'
+            )
 
         def test_passing_a_tuple(self):
             a_tuple = (0, 1, 2, 'n')
-
-            reality = src.telephone.text(a_tuple)
-            my_expectation = f'I got: {a_tuple}'
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                text(a_tuple), f"I got: {a_tuple}"
+            )
 
 
     def test_passing_a_list():
@@ -1125,17 +1102,18 @@ test_passing_a_list with unittest
 * I move :ref:`test_passing_a_list` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
-    :lineno-start: 54
-    :emphasize-lines: 3-4, 6-8
+    :lineno-start: 39
+    :emphasize-lines: 7-9
 
-            self.assertEqual(reality, my_expectation)
+        def test_passing_a_tuple(self):
+            a_tuple = (0, 1, 2, 'n')
+            self.assertEqual(
+                text(a_tuple), f"I got: {a_tuple}"
+            )
 
         def test_passing_a_list():
             a_list = [0, 1, 2, 'n']
-
-            reality = src.telephone.text(a_list)
-            my_expectation = f'I got: {a_list}'
-            assert reality == my_expectation
+            assert_equal(text(a_list), f'I got: {a_list}')
 
 
     def test_passing_a_set():
@@ -1159,13 +1137,22 @@ test_passing_a_list with unittest
 I add ``self`` to the parentheses of :ref:`test_passing_a_list`
 
 .. code-block:: python
-  :lineno-start: 54
-  :emphasize-lines: 3-4
+  :lineno-start: 39
+  :emphasize-lines: 7-8
 
-          self.assertEqual(reality, my_expectation)
+      def test_passing_a_tuple(self):
+          a_tuple = (0, 1, 2, 'n')
+          self.assertEqual(
+              text(a_tuple), f"I got: {a_tuple}"
+          )
 
       # def test_passing_a_list():
       def test_passing_a_list(self):
+          a_list = [0, 1, 2, 'n']
+          assert_equal(text(a_list), f'I got: {a_list}')
+
+
+  def test_passing_a_set():
 
 green.
 
@@ -1177,22 +1164,19 @@ green.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_list`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_list`
 
   .. code-block:: python
-    :lineno-start: 54
-    :emphasize-lines: 10
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 45
+    :emphasize-lines: 4-7
 
         # def test_passing_a_list():
         def test_passing_a_list(self):
             a_list = [0, 1, 2, 'n']
-
-            reality = src.telephone.text(a_list)
-            my_expectation = f'I got: {a_list}'
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
+            # assert_equal(text(a_list), f'I got: {a_list}')
+            self.assertNotEqual(
+                text(a_list), f'I got: {a_list}'
+            )
 
 
     def test_passing_a_set():
@@ -1207,40 +1191,36 @@ green.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_list`
 
   .. code-block:: python
-    :lineno-start: 54
-    :emphasize-lines: 10-11
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 45
+    :emphasize-lines: 5-6
 
         # def test_passing_a_list():
         def test_passing_a_list(self):
             a_list = [0, 1, 2, 'n']
-
-            reality = src.telephone.text(a_list)
-            my_expectation = f'I got: {a_list}'
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-
-    def test_passing_a_set():
+            # assert_equal(text(a_list), f'I got: {a_list}')
+            # self.assertNotEqual(
+            self.assertEqual(
+                text(a_list), f'I got: {a_list}'
+            )
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_passing_a_list`
 
   .. code-block:: python
-    :lineno-start: 54
+    :lineno-start: 39
 
-            self.assertEqual(reality, my_expectation)
+        def test_passing_a_tuple(self):
+            a_tuple = (0, 1, 2, 'n')
+            self.assertEqual(
+                text(a_tuple), f"I got: {a_tuple}"
+            )
 
         def test_passing_a_list(self):
             a_list = [0, 1, 2, 'n']
-
-            reality = src.telephone.text(a_list)
-            my_expectation = f'I got: {a_list}'
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                text(a_list), f'I got: {a_list}'
+            )
 
 
     def test_passing_a_set():
@@ -1270,20 +1250,22 @@ test_passing_a_set with unittest
 * I move :ref:`test_passing_a_set` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
-    :lineno-start: 62
-    :emphasize-lines: 3-4, 6-8
+    :lineno-start: 45
+    :emphasize-lines: 7-9
 
-            self.assertEqual(reality, my_expectation)
+        def test_passing_a_list(self):
+            a_list = [0, 1, 2, 'n']
+            self.assertEqual(
+                text(a_list), f'I got: {a_list}'
+            )
 
         def test_passing_a_set():
             a_set = {0, 1, 2, 'n'}
-
-            reality = src.telephone.text(a_set)
-            my_expectation = f'I got: {a_set}'
-            assert reality == my_expectation
+            assert_equal(text(a_set), f'I got: {a_set}')
 
 
     def test_passing_a_dictionary():
+
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1304,13 +1286,19 @@ test_passing_a_set with unittest
 I add ``self`` to the parentheses of :ref:`test_passing_a_set`
 
 .. code-block:: python
-  :lineno-start: 62
-  :emphasize-lines: 3-4
+  :lineno-start: 45
+  :emphasize-lines: 7-8
 
-          self.assertEqual(reality, my_expectation)
+      def test_passing_a_list(self):
+          a_list = [0, 1, 2, 'n']
+          self.assertEqual(
+              text(a_list), f'I got: {a_list}'
+          )
 
       # def test_passing_a_set():
       def test_passing_a_set(self):
+          a_set = {0, 1, 2, 'n'}
+          assert_equal(text(a_set), f'I got: {a_set}')
 
 green again.
 
@@ -1322,22 +1310,17 @@ green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_set`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_set`
 
   .. code-block:: python
-    :lineno-start: 62
-    :emphasize-lines: 10
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 51
+    :emphasize-lines: 4-5
 
         # def test_passing_a_set():
         def test_passing_a_set(self):
             a_set = {0, 1, 2, 'n'}
-
-            reality = src.telephone.text(a_set)
-            my_expectation = f'I got: {a_set}'
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
+            # assert_equal(text(a_set), f'I got: {a_set}')
+            self.assertNotEqual(text(a_set), f'I got: {a_set}')
 
 
     def test_passing_a_dictionary():
@@ -1352,40 +1335,35 @@ green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_set`
 
   .. code-block:: python
-    :lineno-start: 62
-    :emphasize-lines: 10-11
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 51
+    :emphasize-lines: 5-6
 
         # def test_passing_a_set():
         def test_passing_a_set(self):
             a_set = {0, 1, 2, 'n'}
-
-            reality = src.telephone.text(a_set)
-            my_expectation = f'I got: {a_set}'
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
+            # assert_equal(text(a_set), f'I got: {a_set}')
+            # self.assertNotEqual(text(a_set), f'I got: {a_set}')
+            self.assertEqual(text(a_set), f'I got: {a_set}')
 
 
     def test_passing_a_dictionary():
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_passing_a_set`
 
   .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 45
 
-            self.assertEqual(reality, my_expectation)
+        def test_passing_a_list(self):
+            a_list = [0, 1, 2, 'n']
+            self.assertEqual(
+                text(a_list), f'I got: {a_list}'
+            )
 
         def test_passing_a_set(self):
             a_set = {0, 1, 2, 'n'}
-
-            reality = src.telephone.text(a_set)
-            my_expectation = f'I got: {a_set}'
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(text(a_set), f'I got: {a_set}')
 
 
     def test_passing_a_dictionary():
@@ -1415,20 +1393,21 @@ test_passing_a_dictionary with unittest
 * I move :ref:`test_passing_a_dictionary` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
-    :lineno-start: 70
-    :emphasize-lines: 3-7, 9-11
+    :lineno-start: 51
+    :emphasize-lines: 5-12
 
-            self.assertEqual(reality, my_expectation)
+        def test_passing_a_set(self):
+            a_set = {0, 1, 2, 'n'}
+            self.assertEqual(text(a_set), f'I got: {a_set}')
 
         def test_passing_a_dictionary():
             a_dictionary = {
                 'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
-
-            reality = src.telephone.text(a_dictionary)
+            reality = text(a_dictionary)
             my_expectation = f'I got: {a_dictionary}'
-            assert reality == my_expectation
+            assert_equal(reality, my_expectation)
 
 
     def test_passing_a_class():
@@ -1452,13 +1431,19 @@ test_passing_a_dictionary with unittest
 I add ``self`` to the parentheses of :ref:`test_passing_a_dictionary`
 
 .. code-block:: python
-  :lineno-start: 70
-  :emphasize-lines: 3-4
+  :lineno-start: 51
+  :emphasize-lines: 5-6
 
-          self.assertEqual(reality, my_expectation)
+      def test_passing_a_set(self):
+          a_set = {0, 1, 2, 'n'}
+          self.assertEqual(text(a_set), f'I got: {a_set}')
 
       # def test_passing_a_dictionary():
       def test_passing_a_dictionary(self):
+          a_dictionary = {
+              'key0': 'value0',
+              'keyN': [0, 1, 2, 'n'],
+          }
 
 the test is green again.
 
@@ -1470,13 +1455,11 @@ the test is green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_dictionary`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_dictionary`
 
   .. code-block:: python
-    :lineno-start: 70
-    :emphasize-lines: 13
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 55
+    :emphasize-lines: 9-10
 
         # def test_passing_a_dictionary():
         def test_passing_a_dictionary(self):
@@ -1484,10 +1467,9 @@ the test is green again.
                 'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
-
-            reality = src.telephone.text(a_dictionary)
+            reality = text(a_dictionary)
             my_expectation = f'I got: {a_dictionary}'
-            assert reality == my_expectation
+            # assert_equal(reality, my_expectation)
             self.assertNotEqual(reality, my_expectation)
 
 
@@ -1504,10 +1486,8 @@ the test is green again.
 * I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_dictionary`
 
   .. code-block:: python
-    :lineno-start: 70
-    :emphasize-lines: 13-14
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 55
+    :emphasize-lines: 10-11
 
         # def test_passing_a_dictionary():
         def test_passing_a_dictionary(self):
@@ -1515,10 +1495,9 @@ the test is green again.
                 'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
-
-            reality = src.telephone.text(a_dictionary)
+            reality = text(a_dictionary)
             my_expectation = f'I got: {a_dictionary}'
-            assert reality == my_expectation
+            # assert_equal(reality, my_expectation)
             # self.assertNotEqual(reality, my_expectation)
             self.assertEqual(reality, my_expectation)
 
@@ -1527,22 +1506,22 @@ the test is green again.
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_passing_a_dictionary`
 
   .. code-block:: python
-    :lineno-start: 70
+    :lineno-start: 51
 
-            self.assertEqual(reality, my_expectation)
+        def test_passing_a_set(self):
+            a_set = {0, 1, 2, 'n'}
+            self.assertEqual(text(a_set), f'I got: {a_set}')
 
         def test_passing_a_dictionary(self):
             a_dictionary = {
                 'key0': 'value0',
                 'keyN': [0, 1, 2, 'n'],
             }
-
-            reality = src.telephone.text(a_dictionary)
+            reality = text(a_dictionary)
             my_expectation = f'I got: {a_dictionary}'
-            assert reality == my_expectation
             self.assertEqual(reality, my_expectation)
 
 
@@ -1573,47 +1552,23 @@ test_passing_a_class with unittest
 * I move :ref:`test_passing_a_class` to make it a :ref:`method<what is a method?>` of the :ref:`TestTelephone class<add TestTelephone class>`
 
   .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 3-6, 8-10, 12-14, 16-18, 20-22, 24-26, 28-30, 32-34, 36-38
+    :lineno-start: 62
+    :emphasize-lines: 3-14
 
             self.assertEqual(reality, my_expectation)
 
         def test_passing_a_class():
-            reality = src.telephone.text(object)
-            my_expectation = "I got: <class 'object'>"
-            assert reality == my_expectation
-
-            reality = src.telephone.text(bool)
-            my_expectation = "I got: <class 'bool'>"
-            assert reality == my_expectation
-
-            reality = src.telephone.text(int)
-            my_expectation = "I got: <class 'int'>"
-            assert reality == my_expectation
-
-            reality = src.telephone.text(float)
-            my_expectation = "I got: <class 'float'>"
-            assert reality == my_expectation
-
-            reality = src.telephone.text(str)
-            my_expectation = "I got: <class 'str'>"
-            assert reality == my_expectation
-
-            reality = src.telephone.text(tuple)
-            my_expectation = "I got: <class 'tuple'>"
-            assert reality == my_expectation
-
-            reality = src.telephone.text(list)
-            my_expectation = "I got: <class 'list'>"
-            assert reality == my_expectation
-
-            reality = src.telephone.text(set)
-            my_expectation = "I got: <class 'set'>"
-            assert reality == my_expectation
-
-            reality = src.telephone.text(dict)
-            my_expectation = "I got: <class 'dict'>"
-            assert reality == my_expectation
+            assert_equal(
+                text(object), "I got: <class 'object'>"
+            )
+            assert_equal(text(bool), "I got: <class 'bool'>")
+            assert_equal(text(int), "I got: <class 'int'>")
+            assert_equal(text(float), "I got: <class 'float'>")
+            assert_equal(text(str), "I got: <class 'str'>")
+            assert_equal(text(tuple), "I got: <class 'tuple'>")
+            assert_equal(text(list), "I got: <class 'list'>")
+            assert_equal(text(set), "I got: <class 'set'>")
+            assert_equal(text(dict), "I got: <class 'dict'>")
 
 
     # Exceptions seen
@@ -1639,13 +1594,16 @@ test_passing_a_class with unittest
 I add ``self`` to the parentheses of :ref:`test_passing_a_class`
 
 .. code-block:: python
-  :lineno-start: 81
+  :lineno-start: 62
   :emphasize-lines: 3-4
 
           self.assertEqual(reality, my_expectation)
 
       # def test_passing_a_class():
       def test_passing_a_class(self):
+          assert_equal(
+              text(object), "I got: <class 'object'>"
+          )
 
 green again.
 
@@ -1657,60 +1615,54 @@ green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_passing_a_class`
+* * I change the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_passing_a_class`
 
   .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 8, 13, 18, 23, 28, 33, 38, 43, 48
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 64
+    :emphasize-lines: 3-10
 
         # def test_passing_a_class():
         def test_passing_a_class(self):
-            reality = src.telephone.text(object)
-            my_expectation = "I got: <class 'object'>"
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
+            # assert_equal(
+            self.assertNotEqual(
+                text(object), "I got: <class 'object'>"
+            )
+            # assert_equal(text(bool), "I got: <class 'bool'>")
+            self.assertNotEqual(
+                text(bool), "I got: <class 'bool'>"
+            )
 
-            reality = src.telephone.text(bool)
-            my_expectation = "I got: <class 'bool'>"
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
+  .. code-block:: python
+    :lineno-start: 74
+    :emphasize-lines: 1-12
 
-            reality = src.telephone.text(int)
-            my_expectation = "I got: <class 'int'>"
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
+            # assert_equal(text(int), "I got: <class 'int'>")
+            self.assertNotEqual(text(int), "I got: <class 'int'>")
+            # assert_equal(text(float), "I got: <class 'float'>")
+            self.assertNotEqual(
+                text(float), "I got: <class 'float'>"
+            )
+            # assert_equal(text(str), "I got: <class 'str'>")
+            self.assertNotEqual(text(str), "I got: <class 'str'>")
+            # assert_equal(text(tuple), "I got: <class 'tuple'>")
+            self.assertNotEqual(
+                text(tuple), "I got: <class 'tuple'>"
+            )
 
-            reality = src.telephone.text(float)
-            my_expectation = "I got: <class 'float'>"
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
+  .. code-block:: python
+    :lineno-start: 86
+    :emphasize-lines: 1-10
 
-            reality = src.telephone.text(str)
-            my_expectation = "I got: <class 'str'>"
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-            reality = src.telephone.text(tuple)
-            my_expectation = "I got: <class 'tuple'>"
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-            reality = src.telephone.text(list)
-            my_expectation = "I got: <class 'list'>"
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-            reality = src.telephone.text(set)
-            my_expectation = "I got: <class 'set'>"
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
-
-            reality = src.telephone.text(dict)
-            my_expectation = "I got: <class 'dict'>"
-            assert reality == my_expectation
-            self.assertNotEqual(reality, my_expectation)
+            # assert_equal(text(list), "I got: <class 'list'>")
+            self.assertNotEqual(
+                text(list), "I got: <class 'list'>"
+            )
+            # assert_equal(text(set), "I got: <class 'set'>")
+            self.assertNotEqual(text(set), "I got: <class 'set'>")
+            # assert_equal(text(dict), "I got: <class 'dict'>")
+            self.assertNotEqual(
+                text(dict), "I got: <class 'dict'>"
+            )
 
 
     # Exceptions seen
@@ -1722,254 +1674,113 @@ green again.
      AssertionError: "I got: <class 'object'>"
                   == "I got: <class 'object'>"
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for :ref:`object<everything is an object>`
+* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_class`
 
   .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 8-9
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 64
+    :emphasize-lines: 4-5, 9-10
 
         # def test_passing_a_class():
         def test_passing_a_class(self):
-            reality = src.telephone.text(object)
-            my_expectation = "I got: <class 'object'>"
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(bool)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: "I got: <class 'bool'>"
-                 == "I got: <class 'bool'>"
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for :ref:`bool<what are booleans?>`
+            # assert_equal(
+            # self.assertNotEqual(
+            self.assertEqual(
+                text(object), "I got: <class 'object'>"
+            )
+            # assert_equal(text(bool), "I got: <class 'bool'>")
+            # self.assertNotEqual(
+            self.assertEqual(
+                text(bool), "I got: <class 'bool'>"
+            )
 
   .. code-block:: python
-    :lineno-start: 91
-    :emphasize-lines: 4-5
+    :lineno-start: 76
+    :emphasize-lines: 2-3, 5-6
 
-            reality = src.telephone.text(bool)
-            my_expectation = "I got: <class 'bool'>"
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(int)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: "I got: <class 'int'>"
-                 == "I got: <class 'int'>"
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for int_
+            # assert_equal(text(int), "I got: <class 'int'>")
+            # self.assertNotEqual(text(int), "I got: <class 'int'>")
+            self.assertEqual(text(int), "I got: <class 'int'>")
+            # assert_equal(text(float), "I got: <class 'float'>")
+            # self.assertNotEqual(
+            self.assertEqual(
+                text(float), "I got: <class 'float'>"
+            )
 
   .. code-block:: python
-    :lineno-start: 97
-    :emphasize-lines: 4-5
+    :lineno-start: 84
+    :emphasize-lines: 2-3, 5-6
 
-            reality = src.telephone.text(int)
-            my_expectation = "I got: <class 'int'>"
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(float)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: "I got: <class 'float'>"
-                 == "I got: <class 'float'>"
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for float_
+            # assert_equal(text(str), "I got: <class 'str'>")
+            # self.assertNotEqual(text(str), "I got: <class 'str'>")
+            self.assertEqual(text(str), "I got: <class 'str'>")
+            # assert_equal(text(tuple), "I got: <class 'tuple'>")
+            # self.assertNotEqual(
+            self.assertEqual(
+                text(tuple), "I got: <class 'tuple'>"
+            )
 
   .. code-block:: python
-    :lineno-start: 103
-    :emphasize-lines: 4-5
+    :lineno-start: 92
+    :emphasize-lines: 2-3, 7-8, 10-11
 
-            reality = src.telephone.text(float)
-            my_expectation = "I got: <class 'float'>"
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(str)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: "I got: <class 'str'>"
-                 == "I got: <class 'str'>"
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for str_
-
-  .. code-block:: python
-    :lineno-start: 109
-    :emphasize-lines: 4-5
-
-            reality = src.telephone.text(str)
-            my_expectation = "I got: <class 'str'>"
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(tuple)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: "I got: <class 'tuple'>"
-                 == "I got: <class 'tuple'>"
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for tuple_
-
-  .. code-block:: python
-    :lineno-start: 115
-    :emphasize-lines: 4-5
-
-            reality = src.telephone.text(tuple)
-            my_expectation = "I got: <class 'tuple'>"
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(list)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: "I got: <class 'list'>"
-                 == "I got: <class 'list'>"
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for :ref:`list<what is a list?>`
-
-  .. code-block:: python
-    :lineno-start: 121
-    :emphasize-lines: 4-5
-
-            reality = src.telephone.text(list)
-            my_expectation = "I got: <class 'list'>"
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(set)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: "I got: <class 'set'>"
-                 == "I got: <class 'set'>"
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for set_
-
-  .. code-block:: python
-    :lineno-start: 127
-    :emphasize-lines: 4-5
-
-            reality = src.telephone.text(set)
-            my_expectation = "I got: <class 'set'>"
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(dict)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: "I got: <class 'dict'>"
-                 == "I got: <class 'dict'>"
-
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the :ref:`assertion<what is an assertion?>` for :ref:`dict<what is a dictionary?>`
-
-  .. code-block:: python
-    :lineno-start: 133
-    :emphasize-lines: 4-5
-
-            reality = src.telephone.text(dict)
-            my_expectation = "I got: <class 'dict'>"
-            assert reality == my_expectation
-            # self.assertNotEqual(reality, my_expectation)
-            self.assertEqual(reality, my_expectation)
+            # assert_equal(text(list), "I got: <class 'list'>")
+            # self.assertNotEqual(
+            self.assertEqual(
+                text(list), "I got: <class 'list'>"
+            )
+            # assert_equal(text(set), "I got: <class 'set'>")
+            # self.assertNotEqual(text(set), "I got: <class 'set'>")
+            self.assertEqual(text(set), "I got: <class 'set'>")
+            # assert_equal(text(dict), "I got: <class 'dict'>")
+            # self.assertNotEqual(
+            self.assertEqual(
+                text(dict), "I got: <class 'dict'>"
+            )
 
 
     # Exceptions seen
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_passing_a_class`
 
   .. code-block:: python
-    :lineno-start: 81
+    :lineno-start: 62
 
             self.assertEqual(reality, my_expectation)
 
         def test_passing_a_class(self):
-            reality = src.telephone.text(object)
-            my_expectation = "I got: <class 'object'>"
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                text(object), "I got: <class 'object'>"
+            )
+            self.assertEqual(
+                text(bool), "I got: <class 'bool'>"
+            )
+            self.assertEqual(text(int), "I got: <class 'int'>")
+            self.assertEqual(
+                text(float), "I got: <class 'float'>"
+            )
+            self.assertEqual(text(str), "I got: <class 'str'>")
 
-            reality = src.telephone.text(bool)
-            my_expectation = "I got: <class 'bool'>"
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+  .. code-block:: python
+    :lineno-start: 76
 
-            reality = src.telephone.text(int)
-            my_expectation = "I got: <class 'int'>"
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(float)
-            my_expectation = "I got: <class 'float'>"
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(str)
-            my_expectation = "I got: <class 'str'>"
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(tuple)
-            my_expectation = "I got: <class 'tuple'>"
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(list)
-            my_expectation = "I got: <class 'list'>"
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(set)
-            my_expectation = "I got: <class 'set'>"
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(dict)
-            my_expectation = "I got: <class 'dict'>"
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                text(tuple), "I got: <class 'tuple'>"
+            )
+            self.assertEqual(
+                text(list), "I got: <class 'list'>"
+            )
+            self.assertEqual(text(set), "I got: <class 'set'>")
+            self.assertEqual(
+                text(dict), "I got: <class 'dict'>"
+            )
 
 
     # Exceptions seen
     # AssertionError
     # NameError
     # TypeError
-    # ModuleNotFoundError
     # AttributeError
 
 * I add a git_ commit message in the other terminal_

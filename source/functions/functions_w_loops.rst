@@ -230,8 +230,8 @@ test_making_a_function_w_pass with unittest
 ----
 
 * I go back to the terminal_ where the tests are running
-
-* I move :ref:`test_making_a_function_w_pass` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>` and replace ``test_failure``
+* I remove :ref:`test_failure`
+* I move :ref:`test_making_a_function_w_pass` to make it a :ref:`method<what is a method?>` of the :ref:`TestFunctions class<add TestFunctions class>`
 
   .. code-block:: python
     :lineno-start: 5
