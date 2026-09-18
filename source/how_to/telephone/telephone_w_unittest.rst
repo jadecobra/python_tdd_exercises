@@ -19,9 +19,40 @@ preview
 I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/telephone/tests/test_telephone_w_unittest.py
+  :caption: telephone/tests/test_telephone.py
   :language: python
   :linenos:
+  :lines: 1-15
+
+.. literalinclude:: ../../code/telephone/tests/test_telephone_w_unittest.py
   :caption: telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 17
+  :lines: 17-27
+
+.. literalinclude:: ../../code/telephone/tests/test_telephone_w_unittest.py
+  :caption: telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 29
+  :lines: 29-39
+
+.. literalinclude:: ../../code/telephone/tests/test_telephone_w_unittest.py
+  :caption: telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 41
+  :lines: 41-49
+
+.. literalinclude:: ../../code/telephone/tests/test_telephone_w_unittest.py
+  :caption: telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 51
+  :lines: 51-58
+
+.. literalinclude:: ../../code/telephone/tests/test_telephone_w_unittest.py
+  :caption: telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 60
+  :lines: 60-
 
 ----
 
@@ -1782,6 +1813,22 @@ green again.
     # NameError
     # TypeError
     # AttributeError
+
+* I remove my :ref:`assert_equal function<extract assert_equal function>` since it is no longer used
+
+  .. code-block:: python
+    :linenos:
+
+    import src.telephone
+    import unittest
+
+
+    text = src.telephone.text
+
+
+    class TestTelephone(unittest.TestCase):
+
+  all tests are still green.
 
 * I add a git_ commit message in the other terminal_
 

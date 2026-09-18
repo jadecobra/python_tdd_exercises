@@ -105,6 +105,37 @@ test telephone with unittest: tests
 The code in ``telephone/tests/test_telephone.py`` from :ref:`test telephone with unittest`
 
 .. literalinclude:: telephone/tests/test_telephone_w_unittest.py
+  :caption: telephone/tests/test_telephone.py
   :language: python
   :linenos:
+  :lines: 1-15
+
+.. literalinclude:: telephone/tests/test_telephone_w_unittest.py
   :caption: telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 17
+  :lines: 17-27
+
+.. literalinclude:: telephone/tests/test_telephone_w_unittest.py
+  :caption: telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 29
+  :lines: 29-39
+
+.. literalinclude:: telephone/tests/test_telephone_w_unittest.py
+  :caption: telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 41
+  :lines: 41-49
+
+.. literalinclude:: telephone/tests/test_telephone_w_unittest.py
+  :caption: telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 51
+  :lines: 51-58
+
+.. literalinclude:: telephone/tests/test_telephone_w_unittest.py
+  :caption: telephone/tests/test_telephone.py
+  :language: python
+  :lineno-start: 60
+  :lines: 60-
