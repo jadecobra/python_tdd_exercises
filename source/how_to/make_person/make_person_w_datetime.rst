@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test person with datetime — fix the person project's hardcoded 2026 age so say_hello stays correct every year. Open person; uv run pytest-watcher . --now (6 passed from unittest chapter). Explore the datetime module with test_dir_datetime → NameError: name 'datetime' is not defined. Did you forget to import 'datetime'?; import datetime; paste dir(datetime) as my_expectation (MAXYEAR, date, datetime, timedelta, …; list may differ by Python version). Drill datetime.date, self.maxDiff = None, TypeError: function missing required argument 'year', then datetime.date.today().year. Replace f' {2026-year_of_birth}.' with datetime.date.today().year-year_of_birth in test_joe/jane/john/mary. Extract this_year class attribute, then calculate_age method: TypeError takes 1 positional argument but 2 were given (need self); @staticmethod then remove self. Port calculate_age to person.py (import datetime; NameError if forgotten). Assert age <= 120 (john 1580 → AssertionError; change to 1980). Assert isinstance(year_of_birth, int); optional year_of_birth=None; bool is an int so False skips the isinstance guard and fails the age bound; float/str/tuple fail. Review: datetime for current year; bare asserts stop the test so cases are commented out — need a better way to test exceptions. Catalog: test_person_w_datetime.py + person_w_datetime.py.
-  :keywords: Jacob Itegboje, Pumping Python, test person with datetime, person project hardcoded 2026 age, datetime module, import datetime, NameError name 'datetime' is not defined, Did you forget to import 'datetime', dir(datetime), datetime.date, datetime.date.today().year, self.maxDiff = None, TypeError function missing required argument 'year', TypeError calculate_age takes 1 positional argument but 2 were given, @staticmethod, extract this_year, extract calculate_age, assert age <= 120, john smith year_of_birth 1580, year_of_birth 1980, isinstance year_of_birth int, boolean is also an integer, year_of_birth=None, TypeError unsupported operand type(s) for - 'int' and 'NoneType', test_when_year_of_birth_is_not_integer, uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, person say_hello age calculation, test_person_w_datetime, person_w_datetime
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test person with datetime — fix the person project's hardcoded 2026 age so say_hello stays correct every year. Open person; uv run pytest-watcher . --now (6 passed from unittest chapter). Explore the datetime module with test_dir_datetime → NameError: name 'datetime' is not defined. Did you forget to import 'datetime'?; import datetime; paste dir(datetime) as my_expectation (MAXYEAR, date, datetime, timedelta, …; list may differ by Python version). Drill datetime.date, self.maxDiff = None, TypeError: function missing required argument 'year', then datetime.date.today().year. Replace f' {2026-year_of_birth}.' with datetime.date.today().year-year_of_birth in assert_say_hello_works and assert_person_can_say_hello. Extract this_year class attribute, then calculate_age method: TypeError takes 1 positional argument but 2 were given (need self); @staticmethod then remove self. Port calculate_age to person.py (import datetime; NameError if forgotten). Assert age <= 120 (john 1580 → AssertionError; change to 1980). Assert isinstance(year_of_birth, int); optional year_of_birth=None; bool is an int so False skips the isinstance guard and fails the age bound; float/str/tuple fail. Review: datetime for current year; bare asserts stop the test so cases are commented out — need a better way to test exceptions. Catalog: test_person_w_datetime.py + person_w_datetime.py.
+  :keywords: Jacob Itegboje, Pumping Python, test person with datetime, person project hardcoded 2026 age, datetime module, import datetime, NameError name 'datetime' is not defined, Did you forget to import 'datetime', dir(datetime), datetime.date, datetime.date.today().year, self.maxDiff = None, TypeError function missing required argument 'year', TypeError calculate_age takes 1 positional argument but 2 were given, @staticmethod, extract this_year, extract calculate_age, assert age <= 120, john smith year_of_birth 1580, year_of_birth 1980, isinstance year_of_birth int, boolean is also an integer, year_of_birth=None, TypeError unsupported operand type(s) for - 'int' and 'NoneType', test_when_year_of_birth_is_not_an_integer, uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, person say_hello age calculation, test_person_w_datetime, person_w_datetime
 
 .. include:: ../../links.rst
 
@@ -314,7 +314,7 @@ with a message about how to see the entire difference
 * I set `self.maxDiff`_ to :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 288
+    :lineno-start: 232
     :emphasize-lines: 2
 
         def test_dir_datetime_date(self):
@@ -436,10 +436,10 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         <attribute 'year' of 'datetime.date' objects>
      != []
 
-* I try :ref:`calling<how to call a function with input>` of the :ref:`datetime.date object<test_dir_datetime_date>`
+* I try :ref:`making an instance<how to test if something is an instance>` of the :ref:`datetime.date object<test_dir_datetime_date>`
 
   .. code-block:: python
-    :lineno-start: 314
+    :lineno-start: 257
     :emphasize-lines: 4-5
 
         def test_dir_datetime_date_year(self):
@@ -1806,7 +1806,7 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    git commit -am
+    git commit -am \
     'add test_when_year_of_birth_is_not_an_integer'
 
 ----
