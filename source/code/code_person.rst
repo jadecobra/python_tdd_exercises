@@ -10,6 +10,7 @@ how to make a person with strings: tests
 * The code in ``person/tests/test_person.py`` from :ref:`how to make a person with strings`
 
   .. literalinclude:: person/tests/test_person_w_strings.py
+    :caption: person/tests/test_person.py``
     :language: python
     :linenos:
 
@@ -28,39 +29,39 @@ how to make a person with f-strings: tests
 The code in ``person/tests/test_person.py`` from :ref:`how to make a person with f-strings`
 
 .. literalinclude:: person/tests/test_person_w_fstrings.py
+  :caption: person/tests/test_person.py
   :language: python
   :linenos:
-  :caption: person/tests/test_person.py
   :lines: 1-18
 
 .. literalinclude:: person/tests/test_person_w_fstrings.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 21
-  :caption: person/tests/test_person.py
   :lines: 21-35
 
 .. literalinclude:: person/tests/test_person_w_fstrings.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 38
-  :caption: person/tests/test_person.py
   :lines: 38-55
 
 .. literalinclude:: person/tests/test_person_w_fstrings.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 58
-  :caption: person/tests/test_person.py
   :lines: 58-75
 
 .. literalinclude:: person/tests/test_person_w_fstrings.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 78
-  :caption: person/tests/test_person.py
   :lines: 78-95
 
 .. literalinclude:: person/tests/test_person_w_fstrings.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 98
-  :caption: person/tests/test_person.py
   :lines: 98-
 
 ----
@@ -74,15 +75,15 @@ how to make a person with f-strings: solutions
 The code in ``person/src/person/__init__.py`` from :ref:`how to make a person with f-strings`
 
 .. literalinclude:: person/solutions/person_w_fstrings.py
+  :caption: person/src/person/__init__.py
   :language: python
   :linenos:
-  :caption: person/src/person/__init__.py
   :lines: 1-8
 
 .. literalinclude:: person/solutions/person_w_fstrings.py
+  :caption: person/src/person/__init__.py
   :language: python
   :lineno-start: 11
-  :caption: person/src/person/__init__.py
   :lines: 11-
 
 ----
@@ -100,63 +101,63 @@ how to make a person with a class: tests
 The code in ``person/tests/test_person.py`` from :ref:`how to make a person with a class`
 
 .. literalinclude:: person/tests/test_person_w_class.py
+  :caption: person/tests/test_person.py
   :language: python
   :linenos:
-  :caption: person/tests/test_person.py
   :lines: 1-5
 
 .. literalinclude:: person/tests/test_person_w_class.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 8
-  :caption: person/tests/test_person.py
   :lines: 8-24
 
 .. literalinclude:: person/tests/test_person_w_class.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 27
-  :caption: person/tests/test_person.py
   :lines: 27-42
 
 .. literalinclude:: person/tests/test_person_w_class.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 45
-  :caption: person/tests/test_person.py
   :lines: 45-60
 
 .. literalinclude:: person/tests/test_person_w_class.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 63
-  :caption: person/tests/test_person.py
   :lines: 63-87
 
 .. literalinclude:: person/tests/test_person_w_class.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 90
-  :caption: person/tests/test_person.py
   :lines: 90-114
 
 .. literalinclude:: person/tests/test_person_w_class.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 117
-  :caption: person/tests/test_person.py
   :lines: 117-141
 
 .. literalinclude:: person/tests/test_person_w_class.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 144
-  :caption: person/tests/test_person.py
   :lines: 144-168
 
 .. literalinclude:: person/tests/test_person_w_class.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 171
-  :caption: person/tests/test_person.py
   :lines: 171-186
 
 .. literalinclude:: person/tests/test_person_w_class.py
+  :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 188
-  :caption: person/tests/test_person.py
   :lines: 188-
 
 
@@ -171,15 +172,15 @@ how to make a person with a class: solutions
 The code in ``person/src/person/__init__.py`` from :ref:`how to make a person with a class`
 
 .. literalinclude:: person/solutions/person_w_class.py
+  :caption: person/src/person/__init__.py
   :language: python
   :linenos:
-  :caption: person/src/person/__init__.py
   :lines: 1-17
 
 .. literalinclude:: person/solutions/person_w_class.py
+  :caption: person/src/person/__init__.py
   :language: python
   :lineno-start: 20
-  :caption: person/src/person/__init__.py
   :lines: 20-
 
 ----
@@ -256,11 +257,42 @@ test person with datetime: tests
 
 ----
 
-The code in ``person/tests/test_person.py`` from :ref:`test person with datetime`
+The code added to ``person/tests/test_person.py`` from :ref:`test person with datetime`
 
 .. literalinclude:: person/tests/test_person_w_datetime.py
+  :caption: person/tests/test_person.py
   :language: python
   :linenos:
+  :lines: 1-23
+.. literalinclude:: person/tests/test_person_w_datetime.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 25
+  :lines: 25-30
+
+.. literalinclude:: person/tests/test_person_w_datetime.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 32
+  :lines: 32-47
+
+.. literalinclude:: person/tests/test_person_w_datetime.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 49
+  :lines: 49-65
+
+.. literalinclude:: person/tests/test_person_w_datetime.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 119
+  :lines: 119-146
+
+.. literalinclude:: person/tests/test_person_w_datetime.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 174
+  :lines: 174-185
 
 ----
 
@@ -273,8 +305,34 @@ test person with datetime: solutions
 The code in ``person/src/person.py`` from :ref:`test person with datetime`
 
 .. literalinclude:: person/solutions/person_w_datetime.py
+  :caption: ``src/person/__init__.py``
   :language: python
   :linenos:
+  :lines: 1-13
+
+.. literalinclude:: person/solutions/person_w_datetime.py
+  :caption: ``src/person/__init__.py``
+  :language: python
+  :lineno-start: 15
+  :lines: 15-20
+
+.. literalinclude:: person/solutions/person_w_datetime.py
+  :caption: ``src/person/__init__.py``
+  :language: python
+  :lineno-start: 23
+  :lines: 23-30
+
+.. literalinclude:: person/solutions/person_w_datetime.py
+  :caption: ``src/person/__init__.py``
+  :language: python
+  :lineno-start: 33
+  :lines: 33-40
+
+.. literalinclude:: person/solutions/person_w_datetime.py
+  :caption: ``src/person/__init__.py``
+  :language: python
+  :lineno-start: 43
+  :lines: 43-50
 
 ----
 

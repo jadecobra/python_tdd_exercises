@@ -12,7 +12,7 @@ what causes AttributeError?
 
 ----
 
-AttributeError_ happens when a name that is NOT in an :ref:`object<everything is an object>`  (everything in Python_ is an object) is used.
+AttributeError_ happens when a name that is NOT in an :ref:`object (everything in Python is an object)<everything is an object>` is used.
 
 ----
 

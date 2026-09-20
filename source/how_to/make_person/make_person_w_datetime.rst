@@ -35,12 +35,42 @@ I can use the `datetime module`_ from `The Python Standard Library`_. You can th
 preview
 *********************************************************************************
 
-I have these tests by the end of the chapter
+I add the following code by the end of the chapter
 
 .. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
+  :caption: person/tests/test_person.py
   :language: python
   :linenos:
+  :lines: 1-23
+.. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
   :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 25
+  :lines: 25-30
+
+.. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 32
+  :lines: 32-47
+
+.. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 49
+  :lines: 49-65
+
+.. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 119
+  :lines: 119-146
+
+.. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 174
+  :lines: 174-185
 
 -----
 
@@ -92,15 +122,34 @@ I want to see what comes with the `datetime module`_.
 * I add :ref:`test_dir_datetime` to ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 262
-    :emphasize-lines: 3-6
+    :lineno-start: 180
 
-            self.assertEqual(reality, my_expectation)
+        def test_dir_person_instance(self):
+            self.assertEqual(
+                dir(
+                    src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=2026,
+                    )
+                ),
+                [
+                    '__class__', '__delattr__', '__dict__',
+
+  .. code-block:: python
+    :lineno-start: 201
+    :emphasize-lines: 5-9
+
+                    'last_name', 'say_hello', 'sex', 'year_of_birth',
+                ]
+            )
 
         def test_dir_datetime(self):
-            reality = dir(datetime)
-            my_expectation = []
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                dir(datetime),
+                []
+            )
 
 
     # Exceptions seen
@@ -145,48 +194,47 @@ I want to see what comes with the `datetime module`_.
 
   it also shows the entire difference between the :ref:`lists<what is a list?>`
 
-* I copy (:kbd:`ctrl/command+c`) the values from the terminal_, paste (:kbd:`ctrl/command+v`) them as ``my_expectation`` and remove the extra characters
+* I copy (:kbd:`ctrl/command+c`) the values from the terminal_, paste (:kbd:`ctrl/command+v`) them as the expectation of the :ref:`assertion<what is an assertion?>` and remove the extra characters, in :ref:`test_dir_datetime`
+
+  .. caution:: Your list of attributes and methods may be different depending on your Python version
 
   .. code-block:: python
-    :lineno-start: 263
-    :emphasize-lines: 5-25
-    :emphasize-text: datetime
-
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 206
+    :emphasize-lines: 4-24
 
         def test_dir_datetime(self):
-            reality = dir(datetime)
-            my_expectation = [
-                'MAXYEAR',
-                'MINYEAR',
-                'UTC',
-                '__all__',
-                '__builtins__',
-                '__cached__',
-                '__doc__',
-                '__file__',
-                '__loader__',
-                '__name__',
-                '__package__',
-                '__spec__',
-                'date',
-                'datetime',
-                'datetime_CAPI',
-                'time',
-                'timedelta',
-                'timezone',
-                'tzinfo'
-            ]
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                dir(datetime),
+                [
+                    'MAXYEAR',
+                    'MINYEAR',
+                    'UTC',
+                    '__all__',
+                    '__builtins__',
+                    '__cached__',
+                    '__doc__',
+                    '__file__',
+                    '__loader__',
+                    '__name__',
+                    '__package__',
+                    '__spec__',
+                    'date',
+                    'datetime',
+                    'datetime_CAPI',
+                    'time',
+                    'timedelta',
+                    'timezone',
+                    'tzinfo'
+                ]
+            )
 
 
     # Exceptions seen
 
-  the test passes because when ``import datetime`` runs, Python_ brings in an :ref:`object<everything is an object>`  (everything in Python_ is an object) for the `datetime module`_ from `The Python Standard Library`_ so I can use it in ``test_person.py`` as ``datetime``.
+  the test passes because when ``import datetime`` runs, Python_ brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the `datetime module`_ from `The Python Standard Library`_ so I can use it in ``test_person.py`` as ``datetime``.
 
   This means that there is a file_ or folder_ on the computer named ``datetime`` that got added when I installed Python_.
 
-  .. caution:: Your list of attributes and methods may be different depending on your Python version
 
 ----
 
@@ -213,18 +261,30 @@ What I want is something that will give me the current year.
 I add :ref:`test_dir_datetime_date` to ``test_person.py``
 
 .. code-block:: python
-  :lineno-start: 288
-  :emphasize-lines: 3-6
+  :lineno-start: 206
 
-          self.assertEqual(reality, my_expectation)
+        def test_dir_datetime(self):
+            self.assertEqual(
+                dir(datetime),
+                [
+                    'MAXYEAR',
 
-      def test_dir_datetime_date(self):
-          reality = dir(datetime.date)
-          my_expectation = []
-          self.assertEqual(reality, my_expectation)
+.. code-block:: python
+  :lineno-start: 228
+  :emphasize-lines: 5-9
+
+                    'tzinfo'
+                ]
+            )
+
+        def test_dir_datetime_date(self):
+            self.assertEqual(
+                dir(datetime.date),
+                []
+            )
 
 
-  # Exceptions seen
+    # Exceptions seen
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -255,53 +315,52 @@ with a message about how to see the entire difference
 
   .. code-block:: python
     :lineno-start: 288
-    :emphasize-lines: 6
-
-            self.assertEqual(reality, my_expectation)
+    :emphasize-lines: 2
 
         def test_dir_datetime_date(self):
-            reality = dir(datetime.date)
-            my_expectation = []
             self.maxDiff = None
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                dir(datetime.date),
+                []
+            )
 
 
     # Exceptions seen
 
   - The terminal_ shows the entire difference between ``reality`` and ``my_expectation``.
-  - `maxDiff`_ is an :ref:`attribute<what causes AttributeError?>` of the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` that sets the maximum number of characters to show when comparing 2 :ref:`objects<everything is an object>` in the terminal_, when it is set to :ref:`None<what is None?>` it shows the full difference.
+  - `maxDiff`_ is an :ref:`attribute<what causes AttributeError?>` of the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` that sets the maximum number of characters to show when comparing two :ref:`objects<everything is an object>` in the terminal_, when it is set to :ref:`None<what is None?>` it shows the full difference.
 
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_, paste (:kbd:`ctrl/command+v`) them as ``my_expectation`` and remove the extra characters
 
   .. code-block:: python
-    :lineno-start: 290
-    :emphasize-lines: 3-21
+    :lineno-start: 232
+    :emphasize-lines: 5-23
     :emphasize-text: year today
 
-
         def test_dir_datetime_date(self):
-            reality = dir(datetime.date)
-            my_expectation = [
-                '__add__', '__class__', '__delattr__',
-                '__dir__', '__doc__', '__eq__',
-                '__format__', '__ge__', '__getattribute__',
-                '__getstate__', '__gt__', '__hash__',
-                '__init__', '__init_subclass__', '__le__',
-                '__lt__', '__ne__', '__new__', '__radd__',
-                '__reduce__', '__reduce_ex__',
-                '__replace__', '__repr__', '__rsub__',
-                '__setattr__', '__sizeof__', '__str__',
-                '__sub__', '__subclasshook__', 'ctime',
-                'day', 'fromisocalendar', 'fromisoformat',
-                'fromordinal', 'fromtimestamp',
-                'isocalendar', 'isoformat', 'isoweekday',
-                'max', 'min', 'month', 'replace',
-                'resolution', 'strftime', 'strptime',
-                'timetuple', 'today', 'toordinal',
-                'weekday', 'year'
-            ]
             self.maxDiff = None
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                dir(datetime.date),
+                [
+                    '__add__', '__class__', '__delattr__',
+                    '__dir__', '__doc__', '__eq__',
+                    '__format__', '__ge__', '__getattribute__',
+                    '__getstate__', '__gt__', '__hash__',
+                    '__init__', '__init_subclass__', '__le__',
+                    '__lt__', '__ne__', '__new__', '__radd__',
+                    '__reduce__', '__reduce_ex__',
+                    '__replace__', '__repr__', '__rsub__',
+                    '__setattr__', '__sizeof__', '__str__',
+                    '__sub__', '__subclasshook__', 'ctime',
+                    'day', 'fromisocalendar', 'fromisoformat',
+                    'fromordinal', 'fromtimestamp',
+                    'isocalendar', 'isoformat', 'isoweekday',
+                    'max', 'min', 'month', 'replace',
+                    'resolution', 'strftime', 'strptime',
+                    'timetuple', 'today', 'toordinal',
+                    'weekday', 'year'
+                ]
+            )
 
 
     # Exceptions seen
@@ -327,15 +386,18 @@ I see ``year`` in the :ref:`list of attributes and methods of datetime.date<test
 I add a test for the ``year`` :ref:`attribute<what is a class attribute?>` of the ``date`` :ref:`attribute<what is a class attribute?>` of the `datetime module`_ in ``test_person.py``
 
 .. code-block:: python
-  :lineno-start: 312
-  :emphasize-lines: 3-6
+  :lineno-start: 253
+  :emphasize-lines: 5-8
 
-          self.assertEqual(reality, my_expectation)
+                  'weekday', 'year'
+              ]
+          )
 
       def test_dir_datetime_date_year(self):
-          reality = dir(datetime.date.year)
-          my_expectation = []
-          self.assertEqual(reality, my_expectation)
+          self.assertEqual(
+              dir(datetime.date.year),
+              []
+          )
 
 
   # Exceptions seen
@@ -350,17 +412,18 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I change the value of ``reality`` to ``datetime.date.year``
+* I change the :ref:`assertion<what is an assertion?>` to see what the ``datetime.date.year`` :ref:`object<everything is an object>` is
 
   .. code-block:: python
-    :lineno-start: 314
-    :emphasize-lines: 2-3
+    :lineno-start: 257
+    :emphasize-lines: 3-4
 
         def test_dir_datetime_date_year(self):
-            # reality = dir(datetime.date.year)
-            reality = datetime.date.year
-            my_expectation = []
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                # dir(datetime.date.year),
+                datetime.date.year,
+                []
+            )
 
 
     # Exceptions seen
@@ -373,18 +436,19 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         <attribute 'year' of 'datetime.date' objects>
      != []
 
-* I try :ref:`calling<how to call a function>` ``date``
+* I try :ref:`calling<how to call a function with input>` of the :ref:`datetime.date object<test_dir_datetime_date>`
 
   .. code-block:: python
     :lineno-start: 314
-    :emphasize-lines: 3-4
+    :emphasize-lines: 4-5
 
         def test_dir_datetime_date_year(self):
-            # reality = dir(datetime.date.year)
-            # reality = datetime.date.year
-            reality = datetime.date().year
-            my_expectation = []
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                # dir(datetime.date.year),
+                # datetime.date.year,
+                datetime.date().year,
+                []
+            )
 
 
     # Exceptions seen
@@ -396,7 +460,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     TypeError: function missing
                required argument 'year' (pos 1)
 
-  I want something that automatically knows the date and gives me the year.
+  It is a :ref:`function<what is a function?>` that has required input. I want something that automatically knows the date and gives me the year.
 
 ----
 
@@ -417,21 +481,25 @@ I also saw ``today`` in the :ref:`list of attributes and methods of datetime.dat
 I change :ref:`test_dir_datetime_date_year` to a test for the ``today`` :ref:`attribute<what is a class attribute?>` of the ``date`` :ref:`attribute<what is a class attribute?>` of the `datetime module`_ in ``test_person.py``
 
 .. code-block:: python
-  :lineno-start: 312
-  :emphasize-lines: 3, 6-7
+  :lineno-start: 253
+  :emphasize-lines: 5-6, 10-11
 
-            self.assertEqual(reality, my_expectation)
+                  'weekday', 'year'
+              ]
+          )
 
-        def test_dir_datetime_date_today(self):
-            # reality = dir(datetime.date.year)
-            # reality = datetime.date.year
-            # reality = datetime.date().year
-            reality = datetime.date.today
-            my_expectation = []
-            self.assertEqual(reality, my_expectation)
+      # def test_dir_datetime_date_year(self):
+      def test_dir_datetime_date_today(self):
+          self.assertEqual(
+              # dir(datetime.date.year),
+              # datetime.date.year,
+              # datetime.date().year,
+              datetime.date.today,
+              []
+          )
 
 
-    # Exceptions seen
+  # Exceptions seen
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -450,20 +518,22 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I change the value of ``reality`` to a :ref:`call<how to call a function>` to ``datetime.date.today``
+* I :ref:`call<how to call a function>` the ``datetime.date.today`` :ref:`method<what is a method?>` to see what it returns
 
   .. code-block:: python
-    :lineno-start: 314
-    :emphasize-lines: 5-6
+    :lineno-start: 257
+    :emphasize-lines: 7-8
 
+        # def test_dir_datetime_date_year(self):
         def test_dir_datetime_date_today(self):
-            # reality = dir(datetime.date.year)
-            # reality = datetime.date.year
-            # reality = datetime.date().year
-            # reality = datetime.date.today
-            reality = datetime.date.today()
-            my_expectation = []
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                # dir(datetime.date.year),
+                # datetime.date.year,
+                # datetime.date().year,
+                # datetime.date.today,
+                datetime.date.today(),
+                []
+            )
 
 
     # Exceptions seen
@@ -476,21 +546,23 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   where ``YYYY`` is the current year, ``MM`` is the current month and ``DD`` is the current date. Progress!
 
-* When I :ref:`called<how to call a function>` ``datetime.date()`` it asked for the ``year`` argument, and the result of the :ref:`call<how to call a function>` is ``datetime.date(YYYY, MM, DD)`` which looks like a :ref:`call<how to call a function>` to ``datetime.date()``. I wonder if it also has a ``year`` :ref:`attribute<what is a class attribute?>`
+* When I :ref:`called<how to call a function>` ``datetime.date()`` it asked for the ``year`` argument, and the result of the :ref:`call<how to call a function>` to ``datetime.date.today()`` is ``datetime.date(YYYY, MM, DD)`` which looks like an :ref:`instance<how to test if something is an instance>` of the :ref:`datetime.date object<test_dir_datetime_date>` with input. I use the `dir built-in function`_ to show its :ref:`attributes<what is a class attribute?>`
 
   .. code-block:: python
-    :lineno-start: 314
-    :emphasize-lines: 6-7
+    :lineno-start: 257
+    :emphasize-lines: 8-9
 
+        # def test_dir_datetime_date_year(self):
         def test_dir_datetime_date_today(self):
-            # reality = dir(datetime.date.year)
-            # reality = datetime.date.year
-            # reality = datetime.date().year
-            # reality = datetime.date.today
-            # reality = datetime.date.today()
-            reality = dir(datetime.date.today())
-            my_expectation = []
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                # dir(datetime.date.year),
+                # datetime.date.year,
+                # datetime.date().year,
+                # datetime.date.today,
+                # datetime.date.today(),
+                dir(datetime.date.today()),
+                []
+            )
 
 
     # Exceptions seen
@@ -500,42 +572,46 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I set `self.maxDiff`_ to :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 314
-    :emphasize-lines: 9
+    :lineno-start: 257
+    :emphasize-lines: 3
 
+        # def test_dir_datetime_date_year(self):
         def test_dir_datetime_date_today(self):
-            # reality = dir(datetime.date.year)
-            # reality = datetime.date.year
-            # reality = datetime.date().year
-            # reality = datetime.date.today
-            # reality = datetime.date.today()
-            reality = dir(datetime.date.today())
-            my_expectation = []
             self.maxDiff = None
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                # dir(datetime.date.year),
+                # datetime.date.year,
+                # datetime.date().year,
+                # datetime.date.today,
+                # datetime.date.today(),
+                dir(datetime.date.today()),
+                []
+            )
 
 
     # Exceptions seen
 
   the terminal_ shows the entire difference between ``reality`` and ``my_expectation`` and there is a ``year`` :ref:`attribute<what is a class attribute?>` because they are the same as :ref:`the attributes and methods of datetime.date<test_dir_datetime_date>`
 
-* I change ``my_expectation``
+* I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 314
-    :emphasize-lines: 8-9
+    :lineno-start: 257
+    :emphasize-lines: 11-12
 
+        # def test_dir_datetime_date_year(self):
         def test_dir_datetime_date_today(self):
-            # reality = dir(datetime.date.year)
-            # reality = datetime.date.year
-            # reality = datetime.date().year
-            # reality = datetime.date.today
-            # reality = datetime.date.today()
-            reality = dir(datetime.date.today())
-            # my_expectation = []
-            my_expectation = dir(datetime.date)
             self.maxDiff = None
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(
+                # dir(datetime.date.year),
+                # datetime.date.year,
+                # datetime.date().year,
+                # datetime.date.today,
+                # datetime.date.today(),
+                dir(datetime.date.today()),
+                # []
+                dir(datetime.date)
+            )
 
 
     # Exceptions seen
@@ -561,18 +637,20 @@ It looks like I have a way to get the current year.
 I add :ref:`test_datetime_date_today_year` to test the ``year`` :ref:`attribute<what is a class attribute?>` of the result of a :ref:`call<how to call a function>` to the ``today`` :ref:`method<what is a method?>` of the ``date`` :ref:`class<everything is an object>` of the `datetime module`_ (``datetime.date.today().year``) in ``test_person.py``
 
 .. code-block:: python
-  :lineno-start: 324
-  :emphasize-lines: 3-6
+  :lineno-start: 268
+  :emphasize-lines: 4-8
 
-            self.assertEqual(reality, my_expectation)
+              dir(datetime.date)
+          )
 
-        def test_datetime_date_today_year(self):
-            reality = datetime.date.today().year
-            my_expectation = 1900
-            self.assertEqual(reality, my_expectation)
+      def test_datetime_date_today_year(self):
+          self.assertEqual(
+              datetime.date.today().year,
+              1900
+          )
 
 
-    # Exceptions seen
+  # Exceptions seen
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -590,26 +668,53 @@ where ``YYYY`` is the current year.
 
 ----
 
-* I change ``my_expectation`` to match ``reality`` and the test passes.
+* I change my expectation to match reality and the test passes.
 
 * I remove all the datetime_ tests now that I know :ref:`datetime.date.today().year<test_datetime_date_today_year>` works
 
   .. code-block:: python
-    :lineno-start: 256
+    :lineno-start: 181
 
-                'first_name',
-                'last_name',
-                'say_hello',
-                'sex',
-                'year_of_birth',
-            ]
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+        def test_dir_person_instance(self):
+            self.assertEqual(
+                dir(
+                    src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=2026,
+                    )
+                ),
+                [
+                    '__class__', '__delattr__', '__dict__',
+
+  .. code-block:: python
+    :lineno-start: 202
+
+                    'last_name', 'say_hello', 'sex', 'year_of_birth',
+                ]
+            )
 
 
     # Exceptions seen
 
 :ref:`I have a way to automatically get the current year that will always be correct<test_datetime_date_today_year>`.
+
+I imagine Python_ follows this path to get the value of :ref:`datetime.date.today().year<test_datetime_date_today_year>`
+
+.. code-block:: shell
+
+  datetime.date.today().year
+  └── datetime
+      └── class date:
+          │   @staticmethod
+          └── def today():
+              ├── current_year  = YYYY
+              ├── current_month = MM
+              ├── current_day   = DD
+              └── return datetime.date(
+                      current_year, current_month, current_day
+                  )
 
 ----
 
@@ -617,99 +722,63 @@ where ``YYYY`` is the current year.
 test age with current year
 *********************************************************************************
 
-* I change the age calculation in ``my_expectation`` of :ref:`say_hello<add say_hello method>` in :ref:`test_joe` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
+* I change the age calculation in the expectation of the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>` to :ref:`datetime.date.today().year<test_datetime_date_today_year>`
 
   .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 9-10
+    :lineno-start: 25
+    :emphasize-lines: 14-15
 
-          reality = src.person.say_hello(
-              first_name=first_name,
-              last_name=last_name,
-              year_of_birth=year_of_birth,
-          )
-          my_expectation = (
-              f'Hello, my name is {first_name}'
-              f' {last_name} and I am'
-              # f' {2026-year_of_birth}.'
-              f' {datetime.date.today().year-year_of_birth}.'
-          )
-          assert reality == my_expectation
-          self.assertEqual(reality, my_expectation)
+        def assert_say_hello_works(
+                self, first_name, last_name,
+                year_of_birth,
+            ):
+            self.assertEqual(
+                src.person.say_hello(
+                    first_name=first_name,
+                    last_name=last_name,
+                    year_of_birth=year_of_birth
+                ),
+                (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am'
+                    # f' {2026-year_of_birth}.'
+                    f' {datetime.date.today().year-year_of_birth}.'
+                )
+            )
 
-          joe = src.person.Person(
+        def assert_person_can_say_hello(
+                self,first_name, last_name,
+                sex, year_of_birth,
+            ):
 
-  the test is still green.
+  all the tests are still green.
 
-* I change the age calculation in ``my_expectation`` of :ref:`say_hello<add say_hello method>` in :ref:`test_jane` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
+* I change the age calculation in the expectation of the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>` to :ref:`datetime.date.today().year<test_datetime_date_today_year>`
 
   .. code-block:: python
-    :lineno-start: 71
-    :emphasize-lines: 9-10
+    :lineno-start: 43
+    :emphasize-lines: 15-16
 
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
+        def assert_person_can_say_hello(
+                self,first_name, last_name,
+                sex, year_of_birth,
+            ):
+            self.assertEqual(
+                src.person.Person(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                ).say_hello(),
+                (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am'
+                    # f' {2026-year_of_birth}.'
+                    f' {datetime.date.today().year-year_of_birth}.'
+                )
             )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                # f' {2026-year_of_birth}.'
-                f' {datetime.date.today().year-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
-            jane = src.person.Person(
-
-  still green.
-
-* I change the age calculation in ``my_expectation`` of :ref:`say_hello<add say_hello method>` in :ref:`test_john` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
-
-  .. code-block:: python
-    :lineno-start: 115
-    :emphasize-lines: 9-10
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                # f' {2026-year_of_birth}.'
-                f' {datetime.date.today().year-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            john = src.person.Person(
-
-  green.
-
-* I change the age calculation in ``my_expectation`` of :ref:`say_hello<add say_hello method>` in :ref:`test_mary` with :ref:`datetime.date.today().year<test_datetime_date_today_year>`
-
-  .. code-block:: python
-    :lineno-start: 159
-    :emphasize-lines: 9-10
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                # f' {2026-year_of_birth}.'
-                f' {datetime.date.today().year-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            mary = src.person.Person(
+        def test_joe(self):
 
   still green.
 
@@ -734,7 +803,7 @@ test age with current year
 extract this_year attribute
 *********************************************************************************
 
-Each test :ref:`calls datetime.date.today()<test_dir_datetime_date_today>` to get the :ref:`year attribute<test_datetime_date_today_year>`.
+The :ref:`assert_say_hello_works<move assert_say_hello_works to TestPerson>` and :ref:`assert_person_can_say_hello methods<move assert_person_can_say_hello to TestPerson>` both :ref:`call datetime.date.today()<test_dir_datetime_date_today>` to get the :ref:`year attribute<test_datetime_date_today_year>`. I can use a :ref:`class attribute<what is a class attribute?>` to remove the repetition
 
 * I go back to the terminal_ where the tests are running
 
@@ -748,107 +817,72 @@ Each test :ref:`calls datetime.date.today()<test_dir_datetime_date_today>` to ge
 
         this_year = datetime.date.today().year
 
+        def assert_person_factory_works(
+                self, first_name, last_name,
+                sex, year_of_birth
+            ):
+
+* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in  the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>`
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 15-16
+
+        def assert_say_hello_works(
+                self, first_name, last_name,
+                year_of_birth,
+            ):
+            self.assertEqual(
+                src.person.say_hello(
+                    first_name=first_name,
+                    last_name=last_name,
+                    year_of_birth=year_of_birth
+                ),
+                (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am'
+                    # f' {2026-year_of_birth}.'
+                    # f' {datetime.date.today().year-year_of_birth}.'
+                    f' {self.this_year-year_of_birth}.'
+                )
+            )
+
+        def assert_person_can_say_hello(
+                self,first_name, last_name,
+                sex, year_of_birth,
+            ):
+
+  still green.
+
+* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in  the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>`
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 16-17
+
+        def assert_person_can_say_hello(
+                self,first_name, last_name,
+                sex, year_of_birth,
+            ):
+            self.assertEqual(
+                src.person.Person(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                ).say_hello(),
+                (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am'
+                    # f' {2026-year_of_birth}.'
+                    # f' {datetime.date.today().year-year_of_birth}.'
+                    f' {self.this_year-year_of_birth}.'
+                )
+            )
+
         def test_joe(self):
 
-* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in :ref:`test_joe`
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 10-11
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                # f' {2026-year_of_birth}.'
-                # f' {datetime.date.today().year-year_of_birth}.'
-                f' {self.this_year-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            joe = src.person.Person(
-
-  still green.
-
-* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in :ref:`test_jane`
-
-  .. code-block:: python
-    :lineno-start: 74
-    :emphasize-lines: 10-11
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                # f' {2026-year_of_birth}.'
-                # f' {datetime.date.today().year-year_of_birth}.'
-                f' {self.this_year-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            jane = src.person.Person(
-
-  green.
-
-* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in :ref:`test_john`
-
-  .. code-block:: python
-    :lineno-start: 119
-    :emphasize-lines: 10-11
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                # f' {2026-year_of_birth}.'
-                # f' {datetime.date.today().year-year_of_birth}.'
-                f' {self.this_year-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            john = src.person.Person(
-
-  still green.
-
-* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in :ref:`test_mary`
-
-  .. code-block:: python
-    :lineno-start: 164
-    :emphasize-lines: 10-11
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                # f' {2026-year_of_birth}.'
-                # f' {datetime.date.today().year-year_of_birth}.'
-                f' {self.this_year-year_of_birth}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            mary = src.person.Person(
-
-  the test is still green.
+  the tests are still green.
 
 * I add a git_ commit message in the other terminal_
 
@@ -864,7 +898,7 @@ Each test :ref:`calls datetime.date.today()<test_dir_datetime_date_today>` to ge
 extract calculate_age method
 *********************************************************************************
 
-Each test does a calculation for the age. I can make a :ref:`method<what is a method?>` to remove the repetition.
+The :ref:`assert_say_hello_works<move assert_say_hello_works to TestPerson>` and :ref:`assert_person_can_say_hello methods<move assert_person_can_say_hello to TestPerson>` both do a calculation for the age. I can use a :ref:`method<what is a method?>` to remove the repetition.
 
 ----
 
@@ -879,41 +913,64 @@ Each test does a calculation for the age. I can make a :ref:`method<what is a me
 * I add a :ref:`method<what is a method?>` to :ref:`TestPerson<add TestPerson class>` to calculate the age
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 5-6
+    :lineno-start: 10
+    :emphasize-lines: 18-19
 
-    class TestPerson(unittest.TestCase):
-
-        this_year = datetime.date.today().year
+        def assert_person_factory_works(
+                self, first_name, last_name,
+                sex, year_of_birth
+            ):
+            self.assertEqual(
+                src.person.person(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                ),
+                (
+                    f'{first_name}, {last_name},'
+                    f' {sex}, {year_of_birth}'
+                )
+            )
 
         def calculate_age(year_of_birth):
             return self.this_year - year_of_birth
 
-        def test_joe(self):
+        def assert_say_hello_works(
+                self, first_name, last_name,
+                year_of_birth,
+            ):
 
-* I use the :ref:`method<what is a method?>` for ``self.this_year-year_of_birth`` in :ref:`test_joe`
+* I use the :ref:`method<what is a method?>` for ``self.this_year-year_of_birth`` in the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>`
 
   .. code-block:: python
-    :lineno-start: 32
-    :emphasize-lines: 11-12
+    :lineno-start: 30
+    :emphasize-lines: 16-17
 
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
+        def assert_say_hello_works(
+                self, first_name, last_name,
+                year_of_birth,
+            ):
+            self.assertEqual(
+                src.person.say_hello(
+                    first_name=first_name,
+                    last_name=last_name,
+                    year_of_birth=year_of_birth
+                ),
+                (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am'
+                    # f' {2026-year_of_birth}.'
+                    # f' {datetime.date.today().year-year_of_birth}.'
+                    # f' {self.this_year-year_of_birth}.'
+                    f' {self.calculate_age(year_of_birth)}.'
+                )
             )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                # f' {2026-year_of_birth}.'
-                # f' {datetime.date.today().year-year_of_birth}.'
-                # f' {self.this_year-year_of_birth}.'
-                f' {self.calculate_age(year_of_birth)}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
-            joe = src.person.Person(
+        def assert_person_can_say_hello(
+                self,first_name, last_name,
+                sex, year_of_birth,
+            ):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -934,18 +991,34 @@ Each test does a calculation for the age. I can make a :ref:`method<what is a me
 I add ``self`` to the parentheses of :ref:`calculate_age<extract calculate_age method>`
 
 .. code-block:: python
-  :lineno-start: 6
-  :emphasize-lines: 5-6
+  :lineno-start: 10
+  :emphasize-lines: 18-19
 
-    class TestPerson(unittest.TestCase):
+      def assert_person_factory_works(
+              self, first_name, last_name,
+              sex, year_of_birth
+          ):
+          self.assertEqual(
+              src.person.person(
+                  first_name=first_name,
+                  last_name=last_name,
+                  sex=sex,
+                  year_of_birth=year_of_birth,
+              ),
+              (
+                  f'{first_name}, {last_name},'
+                  f' {sex}, {year_of_birth}'
+              )
+          )
 
-        this_year = datetime.date.today().year
+      # def calculate_age(year_of_birth):
+      def calculate_age(self, year_of_birth):
+          return self.this_year - year_of_birth
 
-        # def calculate_age(year_of_birth):
-        def calculate_age(self, year_of_birth):
-            return self.this_year - year_of_birth
-
-        def test_joe(self):
+      def assert_say_hello_works(
+              self, first_name, last_name,
+              year_of_birth,
+          ):
 
 the test passes.
 
@@ -957,173 +1030,94 @@ the test passes.
 
 ----
 
-* I remove the commented lines from :ref:`test_joe`
+* I remove the commented lines from the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>`
 
   .. code-block:: python
-    :lineno-start: 33
+    :lineno-start: 31
 
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
+        def assert_say_hello_works(
+                self, first_name, last_name,
+                year_of_birth,
+            ):
+            self.assertEqual(
+                src.person.say_hello(
+                    first_name=first_name,
+                    last_name=last_name,
+                    year_of_birth=year_of_birth
+                ),
+                (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am'
+                    f' {self.calculate_age(year_of_birth)}.'
+                )
             )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {self.calculate_age(year_of_birth)}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
-            joe = src.person.Person(
+        def assert_person_can_say_hello(
+                self,first_name, last_name,
+                sex, year_of_birth,
+            ):
 
-* I use the :ref:`method<what is a method?>` for ``self.this_year-year_of_birth`` in :ref:`test_jane`
+* I use the :ref:`method<what is a method?>` for ``self.this_year-year_of_birth`` in the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>`
 
   .. code-block:: python
-    :lineno-start: 76
-    :emphasize-lines: 11-12
+    :lineno-start: 48
+    :emphasize-lines: 17-18
 
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
+        def assert_person_can_say_hello(
+                self,first_name, last_name,
+                sex, year_of_birth,
+            ):
+            self.assertEqual(
+                src.person.Person(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                ).say_hello(),
+                (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am'
+                    # f' {2026-year_of_birth}.'
+                    # f' {datetime.date.today().year-year_of_birth}.'
+                    # f' {self.this_year-year_of_birth}.'
+                    f' {self.calculate_age(year_of_birth)}.'
+                )
             )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                # f' {2026-year_of_birth}.'
-                # f' {datetime.date.today().year-year_of_birth}.'
-                # f' {self.this_year-year_of_birth}.'
-                f' {self.calculate_age(year_of_birth)}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
-            jane = src.person.Person(
+        def test_joe(self):
 
   the test is still green.
 
-* I remove the commented lines from :ref:`test_jane`
+* I remove the commented lines from the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>`
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 48
 
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
+        def assert_person_can_say_hello(
+                self,first_name, last_name,
+                sex, year_of_birth,
+            ):
+            self.assertEqual(
+                src.person.Person(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                ).say_hello(),
+                (
+                    f'Hello, my name is {first_name}'
+                    f' {last_name} and I am'
+                    f' {self.calculate_age(year_of_birth)}.'
+                )
             )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {self.calculate_age(year_of_birth)}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
 
-            jane = src.person.Person(
+        def test_joe(self):
 
-* I use the :ref:`method<what is a method?>` for ``self.this_year-year_of_birth`` in :ref:`test_john`
+* The :ref:`this_year class attribute<extract this_year attribute>` is now used in only one place - the :ref:`calculate_age method<extract calculate_age method>`. I can :ref:`call<how to call a function with input>` what it points to directly, with no need for the :ref:`class attribute<what is a class attribute?>` as a middle man
 
   .. code-block:: python
-    :lineno-start: 119
-    :emphasize-lines: 11-12
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                # f' {2026-year_of_birth}.'
-                # f' {datetime.date.today().year-year_of_birth}.'
-                # f' {self.this_year-year_of_birth}.'
-                f' {self.calculate_age(year_of_birth)}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            john = src.person.Person(
-
-  still green.
-
-* I remove the commented lines from :ref:`test_john`
-
-  .. code-block:: python
-    :lineno-start: 119
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {self.calculate_age(year_of_birth)}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            john = src.person.Person(
-
-* I use the :ref:`method<what is a method?>` for ``self.this_year-year_of_birth`` in :ref:`test_mary`
-
-  .. code-block:: python
-    :lineno-start: 162
-    :emphasize-lines: 11-12
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                # f' {2026-year_of_birth}.'
-                # f' {datetime.date.today().year-year_of_birth}.'
-                # f' {self.this_year-year_of_birth}.'
-                f' {self.calculate_age(year_of_birth)}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            mary = src.person.Person(
-
-  green.
-
-* I remove the commented lines from :ref:`test_mary`
-
-  .. code-block:: python
-    :lineno-start: 162
-
-            reality = src.person.say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = (
-                f'Hello, my name is {first_name}'
-                f' {last_name} and I am'
-                f' {self.calculate_age(year_of_birth)}.'
-            )
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
-
-            mary = src.person.Person(
-
-* The :ref:`this_year class attribute<extract this_year attribute>` is now used in only one place :ref:`the calculate_age method<extract calculate_age method>`. I can call what it points to directly
-
-  .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 7-11
-
-    class TestPerson(unittest.TestCase):
-
-        this_year = datetime.date.today().year
+    :lineno-start: 27
+    :emphasize-lines: 3-7
 
         # def calculate_age(year_of_birth):
         def calculate_age(self, year_of_birth):
@@ -1133,12 +1127,15 @@ the test passes.
               - year_of_birth
             )
 
-        def test_joe(self):
+        def assert_say_hello_works(
+                self, first_name, last_name,
+                year_of_birth,
+            ):
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` since :ref:`calculate_age<extract calculate_age method>` no longer uses anything from the :ref:`TestPerson class<add TestPerson class>`
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` since :ref:`calculate_age<extract calculate_age method>` no longer uses anything that belongs to the :ref:`TestPerson class<add TestPerson class>`
 
   .. code-block:: python
-    :lineno-start: 10
+    :lineno-start: 27
     :emphasize-lines: 2
 
         # def calculate_age(year_of_birth):
@@ -1153,27 +1150,27 @@ the test passes.
         TestPerson.calculate_age() missing
         1 required positional argument: 'year_of_birth'
 
-  because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
-
 * I remove ``self`` from the parentheses
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 3-4
+    :lineno-start: 27
+    :emphasize-lines: 1-3
 
-        # def calculate_age(year_of_birth):
         @staticmethod
-        # def calculate_age(self, year_of_birth):
         def calculate_age(year_of_birth):
+        # def calculate_age(self, year_of_birth):
+            # return self.this_year - year_of_birth
+            return (
+                datetime.date.today().year
+              - year_of_birth
+            )
 
   the test is green again.
 
-* I remove the commented lines and :ref:`this_year attribute<extract this_year attribute>` since it is no longer used
+* I remove the commented lines from the :ref:`calculate_age method<extract calculate_age method>`
 
   .. code-block:: python
-    :lineno-start: 6
-
-    class TestPerson(unittest.TestCase):
+    :lineno-start: 27
 
         @staticmethod
         def calculate_age(year_of_birth):
@@ -1182,9 +1179,24 @@ the test passes.
               - year_of_birth
             )
 
-        def test_joe(self):
+        def assert_say_hello_works(
+                self, first_name, last_name,
+                year_of_birth,
+            ):
 
-  this works because Python_ follows the following path when ``self.calculate_age(year_of_birth)`` is :ref:`called<how to call a function with input>`
+* I remove the :ref:`this_year attribute<extract this_year attribute>` from the :ref:`TestPerson class<add TestPerson class>` since it is no longer used
+
+  .. code-block:: python
+    :lineno-start: 6
+
+    class TestPerson(unittest.TestCase):
+
+        def assert_person_factory_works(
+                self, first_name, last_name,
+                sex, year_of_birth
+            ):
+
+  when ``self.calculate_age(year_of_birth)`` runs
 
   .. code-block:: shell
 
@@ -1193,19 +1205,20 @@ the test passes.
         │   @staticmethod
         └── def calculate_age(year_of_birth):
             └── return (
-                    datetime.date.today().year
-                  - year_of_birth
-                )
-
-  when ``datetime.date.today()`` runs, I imagine Python_ follows this path
-
-  .. code-block:: shell
-
-    datetime.date.today()
-    datetime
-        └── class date
-            └── today()
-                └── return self.date(YYYY, MM, DD)
+            ┌────── datetime.date.today().year
+            │     - year_of_birth
+            │   )
+            │
+            └── datetime
+                └── class date:
+                    │   @staticmethod
+                    └── def today():
+                        ├── current_year  = YYYY
+                        ├── current_month = MM
+                        ├── current_day   = DD
+                        └── return datetime.date(
+                                current_year, current_month, current_day
+                            )
 
   using substitution for :ref:`the return statement`
 
@@ -1271,8 +1284,8 @@ The tests use the right calculation for the age, and the solution still uses a f
 
 
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth,
+        ):
 
 * I use the :ref:`function<what is a function?>` in the :ref:`say_hello method<add say_hello method>` of the :ref:`Person class<add Person class>`
 
@@ -1321,7 +1334,7 @@ The tests use the right calculation for the age, and the solution still uses a f
 
   all tests are green again.
 
-* I remove the commented line
+* I remove the commented line from the :ref:`say_hello method<test_classy_person_says_hello>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -1343,8 +1356,8 @@ The tests use the right calculation for the age, and the solution still uses a f
     :emphasize-lines: 7-8
 
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth,
+        ):
         return (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
@@ -1360,14 +1373,14 @@ The tests use the right calculation for the age, and the solution still uses a f
 
   still green.
 
-* I remove the commented line
+* I remove the commented line from the :ref:`say_hello function<test say_hello function>`
 
   .. code-block:: python
     :lineno-start: 30
 
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth,
+        ):
         return (
             f'Hello, my name is {first_name}'
             f' {last_name} and I am'
@@ -1376,12 +1389,15 @@ The tests use the right calculation for the age, and the solution still uses a f
 
 
     def person(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
 
 * I change the calculation in the :ref:`calculate_age method<extract calculate_age method>` to make sure the tests work, in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 2
+    :lineno-start: 25
+    :emphasize-lines: 3
 
         @staticmethod
         def calculate_age(year_of_birth):
@@ -1391,10 +1407,13 @@ The tests use the right calculation for the age, and the solution still uses a f
               - year_of_birth
             )
 
-        def test_joe(self):
+        def assert_say_hello_works(
+                self, first_name, last_name,
+                year_of_birth,
+            ):
 
   - The terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for all four people.
-  - The ages of the expectations are all negative numbers, this is a problem.
+  - The ages of the expectations are all negative numbers, since I used a year that is earlier than the dates of birth except for ``john``.
   - The results of the :ref:`call<how to call a function with input>` all have the right age. Lovely!
 
 * I change the calculation in the :ref:`calculate_age method<extract calculate_age method>` back
@@ -1438,7 +1457,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a :ref:`variable<what is a variable?>` with an :ref:`assert statement<what is an assertion?>` to :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
+* I add a :ref:`variable<what is a variable?>` with an :ref:`assert statement<what is an assertion?>` to the :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -1481,7 +1500,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 I change the value of ``year_of_birth`` in :ref:`test_john` in ``test_person.py``
 
 .. code-block:: python
-  :lineno-start: 23
+  :lineno-start: 119
   :emphasize-lines: 5-6
 
       def test_john(self):
@@ -1490,6 +1509,13 @@ I change the value of ``year_of_birth`` in :ref:`test_john` in ``test_person.py`
           sex = 'M'
           # year_of_birth = 1580
           year_of_birth = 1980
+
+          self.assert_person_factory_works(
+              first_name=first_name,
+              last_name=last_name,
+              sex=sex,
+              year_of_birth=year_of_birth,
+          )
 
 the test passes.
 
@@ -1504,7 +1530,7 @@ the test passes.
 * I add a comment about the bad ``year_of_birth``
 
   .. code-block:: python
-    :lineno-start: 23
+    :lineno-start: 119
     :emphasize-lines: 5-8
 
         def test_john(self):
@@ -1514,7 +1540,14 @@ the test passes.
             year_of_birth = 1980
             # year_of_birth = 1580
             # raises AssertionError
-            # because older than 120
+            # because it is older than 120
+
+            self.assert_person_factory_works(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
 
 * I remove the commented line from the :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
 
@@ -1531,8 +1564,8 @@ the test passes.
 
 
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth,
+        ):
 
 * I add a git_ commit message in the other terminal_
 
@@ -1561,20 +1594,29 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
 * I add a new test for when ``year_of_birth`` is not an integer_
 
   .. code-block:: python
-    :lineno-start: 186
-    :emphasize-lines: 5-11
+    :lineno-start: 148
 
-            reality = mary.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+        def test_mary(self):
+            first_name = 'mary'
+            ...
+
+  .. code-block:: python
+    :lineno-start: 167
+    :emphasize-lines: 8-13
+
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
 
         def test_when_year_of_birth_is_not_an_integer(self):
-            person = src.person.Person(
+            src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-            )
-            person.say_hello()
+            ).say_hello()
 
         def test_dir_person_class(self):
 
@@ -1594,7 +1636,7 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
 
 ----
 
-* I make ``year_of_birth`` an :ref:`optional argument<test_optional_arguments>` in the :ref:`Person class<add Person class>` in ``src/person/__init__.py``
+* I make ``year_of_birth`` an :ref:`optional argument<test_optional_arguments>` in the :ref:`constructor method<the constructor method>` of the :ref:`Person class<add Person class>` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1603,10 +1645,10 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
     class Person:
 
         def __init__(
-            self, first_name, last_name,
-            # sex, year_of_birth,
-            sex, year_of_birth=None,
-        ):
+                self, first_name, last_name,
+                # sex, year_of_birth,
+                sex, year_of_birth=None,
+            ):
 
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1615,9 +1657,9 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
     TypeError: unsupported operand type(s) for -:
                'int' and 'NoneType'
 
-  because :ref:`I cannot do Arithmetic with None<test_type_error_w_objects_that_do_not_mix>`.
+  because :ref:`I cannot do Arithmetic with None<test_type_error_w_the_unmixables>`.
 
-* I add an :ref:`assertion<what is an assertion?>` with the :ref:`isinstance built-in function<how to test if something is an instance>` to make sure the :ref:`function<what is a function?>` only gets integers
+* I add an :ref:`assertion<what is an assertion?>` with the :ref:`isinstance built-in function<how to test if something is an instance>` to make sure the :ref:`calculate age function<add calculate_age function>` only works with integers_
 
   .. code-block:: python
     :lineno-start: 24
@@ -1634,8 +1676,8 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
 
 
     def say_hello(
-        first_name, last_name, year_of_birth,
-    ):
+            first_name, last_name, year_of_birth
+        ):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1649,41 +1691,39 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
 
     FAILED ...test_when_year_of_birth_is_not_an_integer - AssertionError
 
-* I add a comment, then change ``year_of_birth`` from the :ref:`default value<test_optional_arguments>` to a :ref:`boolean<what are booleans?>` in :ref:`test_when_year_of_birth_is_not_an_integer`, in ``test_person.py``
+* I add a comment, then add :ref:`False<test_what_is_false>` as the value for if a :ref:`boolean<what are booleans?>` is given as the value for the ``year_of_birth`` parameter in :ref:`test_when_year_of_birth_is_not_an_integer`, in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 190
+    :lineno-start: 174
     :emphasize-lines: 6-7
 
         def test_when_year_of_birth_is_not_an_integer(self):
-            person = src.person.Person(
+            src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                # year_of_birth=None,    # fails
+                # year_of_birth=None,       # fails
                 year_of_birth=False,
-            )
-            person.say_hello()
+            ).say_hello()
 
         def test_dir_person_class(self):
 
   the terminal shows :ref:`AssertionError<what causes AssertionError?>` for the age being greater than ``120``. Wait a minute! I was expecting that to fail at ``assert isinstance(year_of_birth, int)``. This means :ref:`a boolean is also an integer<is False an integer or a float?>`.
 
-* I change ``year_of_birth`` to a float_
+* I change ``year_of_birth`` from :ref:`False<test_what_is_false>` to a float_
 
   .. code-block:: python
-    :lineno-start: 190
+    :lineno-start: 174
     :emphasize-lines: 6-7
 
         def test_when_year_of_birth_is_not_an_integer(self):
-            person = src.person.Person(
+            src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                # year_of_birth=None,    # fails
+                # year_of_birth=None,       # fails
                 year_of_birth=2026.0,
-            )
-            person.say_hello()
+            ).say_hello()
 
         def test_dir_person_class(self):
 
@@ -1692,19 +1732,18 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
 * I add a comment then change ``year_of_birth`` to a string_
 
   .. code-block:: python
-    :lineno-start: 190
+    :lineno-start: 174
     :emphasize-lines: 7-8
 
         def test_when_year_of_birth_is_not_an_integer(self):
-            person = src.person.Person(
+            src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                # year_of_birth=None,    # fails
-                # year_of_birth=2026.0,  # fails
+                # year_of_birth=None,       # fails
+                # year_of_birth=2026.0,     # fails
                 year_of_birth='2026',
-            )
-            person.say_hello()
+            ).say_hello()
 
         def test_dir_person_class(self):
 
@@ -1713,40 +1752,38 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
 * I add a comment then change ``year_of_birth`` to a tuple_
 
   .. code-block:: python
-    :lineno-start: 190
+    :lineno-start: 174
     :emphasize-lines: 8-9
 
         def test_when_year_of_birth_is_not_an_integer(self):
-            person = src.person.Person(
+            src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                # year_of_birth=None,    # fails
-                # year_of_birth=2026.0,  # fails
-                # year_of_birth='2026',  # fails
+                # year_of_birth=None,       # fails
+                # year_of_birth=2026.0,     # fails
+                # year_of_birth='2026',     # fails
                 year_of_birth=(2026,),
-            )
-            person.say_hello()
+            ).say_hello()
 
         def test_dir_person_class(self):
 
-* I add a comment
+* I add a comment then remove the :ref:`call to the say_hello method<test_classy_person_says_hello>`
 
   .. code-block:: python
-    :lineno-start: 190
-    :emphasize-lines: 9
+    :lineno-start: 174
+    :emphasize-lines: 9-10
 
         def test_when_year_of_birth_is_not_an_integer(self):
-            person = src.person.Person(
+            src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                # year_of_birth=None,    # fails
-                # year_of_birth=2026.0,  # fails
-                # year_of_birth='2026',  # fails
-                # year_of_birth=(2026,), # fails
+                # year_of_birth=None,       # fails
+                # year_of_birth=2026.0,     # fails
+                # year_of_birth='2026',     # fails
+                # year_of_birth=(2026,),    # fails
             )
-            person.say_hello()
 
         def test_dir_person_class(self):
 
@@ -1806,7 +1843,7 @@ review
 * I can use the :ref:`datetime library<test person with datetime>` to automatically get the current year for the calculation of a person's age.
 * I can use :ref:`assertions<what is an assertion?>` to make sure certain :ref:`conditions<if statements>` are met before a program does something.
 * My tests have a new problem - when they cause an :ref:`Exception<how to test that an Exception is raised>` the test stops in a :red:`RED` state. My solution was to add notes and comment out the problems, which means the only way to know that the code causes the :ref:`Exception<how to test that an Exception is raised>` is to remove the comments. :ref:`There has to be a better way<how to test that an Exception is raised>`
-* :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` also still have the problem where they are the same three tests. There has to be a better way.
+* :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` also still have the problem where they are the same three tests. :ref:`There has to be a better way<how to make a person with loops>`.
 
 ----
 
