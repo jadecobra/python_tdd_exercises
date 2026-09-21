@@ -3147,6 +3147,13 @@ what is next?
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.
 
+.. toctree::
+  :titlesonly:
+  :maxdepth: 1
+
+  ../../exceptions/AssertionError/AssertionError_w_none
+  ../../functions/functions_w_none
+
 ----
 
 Would you like to use :ref:`assertIsNotNone<another way to test if something is NOT None>` and  :ref:`assertIsNone<another way to test if something is None>` to test these projects?

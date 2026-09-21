@@ -2020,14 +2020,6 @@ what is next?
 * :ref:`I know how to use the unittest library<another way to write tests>`.
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 
-.. toctree::
-  :titlesonly:
-  :maxdepth: 1
-
-  ../../basic_objects/none
-  ../../exceptions/AssertionError/AssertionError_w_none
-  ../../functions/functions_w_none
-
 :ref:`Would you like to test None (the simplest object)?<what is None?>`
 
 ----
