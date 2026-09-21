@@ -26,6 +26,7 @@ def calculate_age(year_of_birth):
         datetime.date.today().year
       - year_of_birth
     )
+    assert age >= 0
     assert age <= 120
     return age
 

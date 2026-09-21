@@ -294,7 +294,7 @@ The code added to ``person/tests/test_person.py`` from :ref:`test person with da
   :lineno-start: 174
   :lines: 174-182
 
-.. literalinclude:: code/person/tests/test_person_w_datetime.py
+.. literalinclude:: person/tests/test_person_w_datetime.py
   :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 184
@@ -326,19 +326,19 @@ The code in ``person/src/person.py`` from :ref:`test person with datetime`
   :caption: ``src/person/__init__.py``
   :language: python
   :lineno-start: 23
-  :lines: 23-30
+  :lines: 23-31
 
 .. literalinclude:: person/solutions/person_w_datetime.py
   :caption: ``src/person/__init__.py``
   :language: python
-  :lineno-start: 33
-  :lines: 33-40
+  :lineno-start: 34
+  :lines: 34-41
 
 .. literalinclude:: person/solutions/person_w_datetime.py
   :caption: ``src/person/__init__.py``
   :language: python
-  :lineno-start: 43
-  :lines: 43-50
+  :lineno-start: 44
+  :lines: 44-51
 
 ----
 

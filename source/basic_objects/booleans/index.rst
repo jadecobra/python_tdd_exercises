@@ -2605,7 +2605,7 @@ the test passes.
 
   because the result of ``bool(0.1)`` is :ref:`True<test_what_is_true>`.
 
-* I change assertTrue_ to assertFalse_ for ``0.1``
+* I change assertFalse_ to assertTrue_ for ``0.1``
 
   .. code-block:: python
     :lineno-start: 73
