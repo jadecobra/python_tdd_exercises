@@ -171,15 +171,25 @@ class TestPerson(unittest.TestCase):
             year_of_birth=year_of_birth,
         )
 
+    def test_when_year_of_birth_is_the_future(self):
+        src.person.Person(
+            first_name='first_name',
+            last_name='last_name',
+            sex='M',
+            year_of_birth=datetime.date.today().year+1,
+        )
+        # ).say_hello() fails
+        # because year_of_birth is in the future
+
     def test_when_year_of_birth_is_not_an_integer(self):
         src.person.Person(
             first_name='first_name',
             last_name='last_name',
             sex='M',
-            # year_of_birth=None,       # fails
-            # year_of_birth=2026.0,     # fails
-            # year_of_birth='2026',     # fails
-            # year_of_birth=(2026,),    # fails
+            # year_of_birth=None,     # fails
+            # year_of_birth=2026.0,   # fails
+            # year_of_birth='2026',   # fails
+            # year_of_birth=(2026,),  # fails
         )
 
     def test_dir_person_class(self):

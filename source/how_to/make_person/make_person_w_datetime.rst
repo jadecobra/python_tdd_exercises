@@ -70,7 +70,13 @@ I add the following code by the end of the chapter
   :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 174
-  :lines: 174-185
+  :lines: 174-182
+
+.. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 184
+  :lines: 184-195
 
 -----
 
@@ -119,7 +125,7 @@ I want to see what comes with the `datetime module`_.
 
 ----
 
-* I add :ref:`test_dir_datetime` to ``test_person.py``
+* I add :ref:`test_dir_datetime` to ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 180
@@ -231,7 +237,7 @@ I want to see what comes with the `datetime module`_.
 
     # Exceptions seen
 
-  the test passes because when ``import datetime`` runs, Python_ brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the `datetime module`_ from `The Python Standard Library`_ so I can use it in ``test_person.py`` as ``datetime``.
+  the test passes because when ``import datetime`` runs, Python_ brings in an :ref:`object (everything in Python is an object)<everything is an object>` for the `datetime module`_ from `The Python Standard Library`_ so I can use it in ``tests/test_person.py`` as ``datetime``.
 
   This means that there is a file_ or folder_ on the computer named ``datetime`` that got added when I installed Python_.
 
@@ -258,7 +264,7 @@ What I want is something that will give me the current year.
 
 ----
 
-I add :ref:`test_dir_datetime_date` to ``test_person.py``
+I add :ref:`test_dir_datetime_date` to ``tests/test_person.py``
 
 .. code-block:: python
   :lineno-start: 206
@@ -383,7 +389,7 @@ I see ``year`` in the :ref:`list of attributes and methods of datetime.date<test
 
 ----
 
-I add a test for the ``year`` :ref:`attribute<what is a class attribute?>` of the ``date`` :ref:`attribute<what is a class attribute?>` of the `datetime module`_ in ``test_person.py``
+I add a test for the ``year`` :ref:`attribute<what is a class attribute?>` of the ``date`` :ref:`attribute<what is a class attribute?>` of the `datetime module`_ in ``tests/test_person.py``
 
 .. code-block:: python
   :lineno-start: 253
@@ -478,7 +484,7 @@ I also saw ``today`` in the :ref:`list of attributes and methods of datetime.dat
 
 ----
 
-I change :ref:`test_dir_datetime_date_year` to a test for the ``today`` :ref:`attribute<what is a class attribute?>` of the ``date`` :ref:`attribute<what is a class attribute?>` of the `datetime module`_ in ``test_person.py``
+I change :ref:`test_dir_datetime_date_year` to a test for the ``today`` :ref:`attribute<what is a class attribute?>` of the ``date`` :ref:`attribute<what is a class attribute?>` of the `datetime module`_ in ``tests/test_person.py``
 
 .. code-block:: python
   :lineno-start: 253
@@ -634,7 +640,7 @@ It looks like I have a way to get the current year.
 
 ----
 
-I add :ref:`test_datetime_date_today_year` to test the ``year`` :ref:`attribute<what is a class attribute?>` of the result of a :ref:`call<how to call a function>` to the ``today`` :ref:`method<what is a method?>` of the ``date`` :ref:`class<everything is an object>` of the `datetime module`_ (``datetime.date.today().year``) in ``test_person.py``
+I add :ref:`test_datetime_date_today_year` to test the ``year`` :ref:`attribute<what is a class attribute?>` of the result of a :ref:`call<how to call a function>` to the ``today`` :ref:`method<what is a method?>` of the ``date`` :ref:`class<everything is an object>` of the `datetime module`_ (``datetime.date.today().year``) in ``tests/test_person.py``
 
 .. code-block:: python
   :lineno-start: 268
@@ -1393,7 +1399,7 @@ The tests use the right calculation for the age, and the solution still uses a f
             sex, year_of_birth,
         ):
 
-* I change the calculation in the :ref:`calculate_age method<extract calculate_age method>` to make sure the tests work, in ``test_person.py``
+* I change the calculation in the :ref:`calculate_age method<extract calculate_age method>` to make sure the tests work, in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -1413,7 +1419,7 @@ The tests use the right calculation for the age, and the solution still uses a f
             ):
 
   - The terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for all four people.
-  - The ages of the expectations are all negative numbers, since I used a year that is earlier than the dates of birth except for ``john``.
+  - The ages of the expectations are all negative numbers, since I used a year that is earlier than the dates of birth except for ``john``. This is a problem.
   - The results of the :ref:`call<how to call a function with input>` all have the right age. Lovely!
 
 * I change the calculation in the :ref:`calculate_age method<extract calculate_age method>` back
@@ -1497,7 +1503,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 
 ----
 
-I change the value of ``year_of_birth`` in :ref:`test_john` in ``test_person.py``
+I change the value of ``year_of_birth`` in :ref:`test_john` in ``tests/test_person.py``
 
 .. code-block:: python
   :lineno-start: 119
@@ -1577,10 +1583,158 @@ the test passes.
 ----
 
 *********************************************************************************
+test_when_year_of_birth_is_the_future
+*********************************************************************************
+
+I want the :ref:`calculate_age function<add calculate_age function>` to also make sure that the year of birth of a person is before the current year.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I add a new test for when ``year_of_birth`` is in the future, in ``tests/test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 148
+
+        def test_mary(self):
+            first_name = 'mary'
+            ...
+
+  .. code-block:: python
+    :lineno-start: 167
+    :emphasize-lines: 8-17
+
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+        def test_when_year_of_birth_is_the_future(self):
+            self.assertEqual(
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth=datetime.date.today().year+1,
+                ).say_hello(),
+                AssertionError
+            )
+
+        def test_dir_person_class(self):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        'Hello, my name is first_name last_name and I am -1.'
+     != <class 'AssertionError'>
+
+  I use ``datetime.date.today().year + 1`` for all the years of birth in the future.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>` to the :ref:`calculate age function<add calculate_age function>` to make sure that the it never returns a number that is less than ``0``, in ``src/person/__init__.py``
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 2
+
+    def calculate_age(year_of_birth):
+        age = (
+            datetime.date.today().year
+          - year_of_birth
+        )
+        assert age <= 120
+        assert age >= 0
+        return age
+
+
+    def say_hello(
+            first_name, last_name, year_of_birth
+        ):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       AssertionError
+
+  the error message is still a problem. The ``short test summary info`` shows me what test the error happened in
+
+  .. code-block:: python
+
+    FAILED ...test_when_year_of_birth_is_the_future - AssertionError
+
+* I change the :ref:`assertion<what is an assertion?>` in :ref:`test_when_year_of_birth_is_the_future`, in ``tests/test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 174
+    :emphasize-lines: 2-11
+
+        def test_when_year_of_birth_is_the_future(self):
+            # self.assertEqual(
+            src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                year_of_birth=datetime.date.today().year+1,
+            )
+                # ).say_hello(),
+                # AssertionError
+            # )
+
+        def test_dir_person_class(self):
+
+  the test is green because there is no :ref:`assertion<what is an assertion?>` or :ref:`calls<how to call a function>` that cause :ref:`AssertionError<what causes AssertionError?>`.
+
+* I remove the commented lines from :ref:`test_when_year_of_birth_is_the_future` then add a comment about the test
+
+  .. code-block:: python
+    :lineno-start: 174
+    :emphasize-lines: 8-9
+
+        def test_when_year_of_birth_is_the_future(self):
+            src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                year_of_birth=datetime.date.today().year+1,
+            )
+            # ).say_hello() fails
+            # because year_of_birth is in the future
+
+        def test_dir_person_class(self):
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_when_year_of_birth_is_the_future'
+
+----
+
+*********************************************************************************
 test_when_year_of_birth_is_not_an_integer
 *********************************************************************************
 
-I want the :ref:`Person class<add Person class>` to make sure that the value for ``year_of_birth`` is an integer_ (whole number without decimals).
+I want the :ref:`calculate_age function<add calculate_age function>` to make sure that the value for ``year_of_birth`` is an integer_ (whole number without decimals).
 
 ----
 
@@ -1594,28 +1748,17 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
 * I add a new test for when ``year_of_birth`` is not an integer_
 
   .. code-block:: python
-    :lineno-start: 148
+    :lineno-start: 181
+    :emphasize-lines: 4-9
 
-        def test_mary(self):
-            first_name = 'mary'
-            ...
-
-  .. code-block:: python
-    :lineno-start: 167
-    :emphasize-lines: 8-13
-
-            self.assert_person_can_say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
+            # ).say_hello() fails
+            # because year_of_birth is in the future
 
         def test_when_year_of_birth_is_not_an_integer(self):
             src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
-                sex='M',
+                sex='F',
             ).say_hello()
 
         def test_dir_person_class(self):
@@ -1672,6 +1815,7 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
           - year_of_birth
         )
         assert age <= 120
+        assert age >= 0
         return age
 
 
@@ -1685,16 +1829,16 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
 
     E       AssertionError
 
-  the error message is still a problem. The ``short test summary info`` shows me what test the error happened in
+  another bad error message. The ``short test summary info`` shows me what test the error happened in
 
   .. code-block:: python
 
     FAILED ...test_when_year_of_birth_is_not_an_integer - AssertionError
 
-* I add a comment, then add :ref:`False<test_what_is_false>` as the value for if a :ref:`boolean<what are booleans?>` is given as the value for the ``year_of_birth`` parameter in :ref:`test_when_year_of_birth_is_not_an_integer`, in ``test_person.py``
+* I add a comment, then add :ref:`False<test_what_is_false>` as the value for if a :ref:`boolean<what are booleans?>` is given as the value for the ``year_of_birth`` parameter in :ref:`test_when_year_of_birth_is_not_an_integer`, in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 174
+    :lineno-start: 184
     :emphasize-lines: 6-7
 
         def test_when_year_of_birth_is_not_an_integer(self):
@@ -1713,7 +1857,7 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
 * I change ``year_of_birth`` from :ref:`False<test_what_is_false>` to a float_
 
   .. code-block:: python
-    :lineno-start: 174
+    :lineno-start: 184
     :emphasize-lines: 6-7
 
         def test_when_year_of_birth_is_not_an_integer(self):
@@ -1721,7 +1865,7 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                # year_of_birth=None,       # fails
+                # year_of_birth=None,     # fails
                 year_of_birth=2026.0,
             ).say_hello()
 
@@ -1732,7 +1876,7 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
 * I add a comment then change ``year_of_birth`` to a string_
 
   .. code-block:: python
-    :lineno-start: 174
+    :lineno-start: 184
     :emphasize-lines: 7-8
 
         def test_when_year_of_birth_is_not_an_integer(self):
@@ -1740,8 +1884,8 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                # year_of_birth=None,       # fails
-                # year_of_birth=2026.0,     # fails
+                # year_of_birth=None,     # fails
+                # year_of_birth=2026.0,   # fails
                 year_of_birth='2026',
             ).say_hello()
 
@@ -1752,7 +1896,7 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
 * I add a comment then change ``year_of_birth`` to a tuple_
 
   .. code-block:: python
-    :lineno-start: 174
+    :lineno-start: 184
     :emphasize-lines: 8-9
 
         def test_when_year_of_birth_is_not_an_integer(self):
@@ -1760,18 +1904,18 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                # year_of_birth=None,       # fails
-                # year_of_birth=2026.0,     # fails
-                # year_of_birth='2026',     # fails
+                # year_of_birth=None,     # fails
+                # year_of_birth=2026.0,   # fails
+                # year_of_birth='2026',   # fails
                 year_of_birth=(2026,),
-            ).say_hello()
+          ).say_hello()
 
         def test_dir_person_class(self):
 
 * I add a comment then remove the :ref:`call to the say_hello method<test_classy_person_says_hello>`
 
   .. code-block:: python
-    :lineno-start: 174
+    :lineno-start: 184
     :emphasize-lines: 9-10
 
         def test_when_year_of_birth_is_not_an_integer(self):
@@ -1779,10 +1923,10 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                # year_of_birth=None,       # fails
-                # year_of_birth=2026.0,     # fails
-                # year_of_birth='2026',     # fails
-                # year_of_birth=(2026,),    # fails
+                # year_of_birth=None,     # fails
+                # year_of_birth=2026.0,   # fails
+                # year_of_birth='2026',   # fails
+                # year_of_birth=(2026,),  # fails
             )
 
         def test_dir_person_class(self):
@@ -1815,7 +1959,7 @@ I want the :ref:`Person class<add Person class>` to make sure that the value for
 close the project
 *********************************************************************************
 
-* I close ``test_person.py`` and ``src/person/__init__.py``
+* I close ``tests/test_person.py`` and ``src/person/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 

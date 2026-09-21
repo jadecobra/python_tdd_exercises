@@ -292,7 +292,13 @@ The code added to ``person/tests/test_person.py`` from :ref:`test person with da
   :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 174
-  :lines: 174-185
+  :lines: 174-182
+
+.. literalinclude:: code/person/tests/test_person_w_datetime.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 184
+  :lines: 184-195
 
 ----
 
