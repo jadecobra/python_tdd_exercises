@@ -3097,7 +3097,6 @@ sets_ do NOT have key-value pairs.
       'another value',
       'one more value',
       'magic value',
-      [0, 1, 2, 'n'],
   }
 
 ----
@@ -3174,7 +3173,7 @@ what is next?
 
 ----
 
-Would you like to use :ref:`assertIsNotNone<another way to test if something is NOT None>` and  :ref:`assertIsNone<another way to test if something is None>` to test these projects?
+Would you like to use :ref:`assertIsNotNone<another way to test if something is NOT None>` and :ref:`assertIsNone<another way to test if something is None>` to test these projects?
 
 .. toctree::
   :titlesonly:
