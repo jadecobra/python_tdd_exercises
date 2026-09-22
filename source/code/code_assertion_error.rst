@@ -192,7 +192,7 @@ test AssertionError with None: tests
 
 :ref:`test_assertion_error_w_none` looks like this by the end of :ref:`test AssertionError with None`
 
-.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_none.py
+.. literalinclude:: assertion_error/test_assertion_error_w_none.py
   :caption: assertion_error/tests/test_assertion_error.py
   :language: python
   :lineno-start: 54

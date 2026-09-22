@@ -372,7 +372,7 @@ use assertIsNotNone and assertIsNone
 
             assert_is_not_none(self.a_dictionary)
             self.assertIsNot(self.a_dictionary, None)
-            self.assertIsNone(self.a_set)
+            self.assertIsNone(self.a_dictionary)
 
         def test_assertion_error_w_false(self):
 
@@ -390,8 +390,8 @@ use assertIsNotNone and assertIsNone
 
             assert_is_not_none(self.a_dictionary)
             self.assertIsNot(self.a_dictionary, None)
-            # self.assertIsNone(self.a_set)
-            self.assertIsNotNone(self.a_set)
+            # self.assertIsNone(self.a_dictionary)
+            self.assertIsNotNone(self.a_dictionary)
 
         def test_assertion_error_w_false(self):
 
@@ -447,7 +447,7 @@ use assertIsNotNone and assertIsNone
 
             assert_is_not_none(self.a_dictionary)
             self.assertIsNot(self.a_dictionary, None)
-            self.assertIsNotNone(self.a_set)
+            self.assertIsNotNone(self.a_dictionary)
 
         def test_assertion_error_w_false(self):
 

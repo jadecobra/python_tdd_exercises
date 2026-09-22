@@ -90,7 +90,7 @@ class TestAssertionError(unittest.TestCase):
 
         assert_is_not_none(self.a_dictionary)
         self.assertIsNot(self.a_dictionary, None)
-        self.assertIsNotNone(self.a_set)
+        self.assertIsNotNone(self.a_dictionary)
 
     def test_assertion_error_w_false(self):
         assert False is False
