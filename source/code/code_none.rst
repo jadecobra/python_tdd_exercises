@@ -61,6 +61,6 @@ test functions with None
 
 The code in ``functions/tests/test_functions.py`` from :ref:`test functions with None`
 
-.. literalinclude:: functions/test_functions_w_none.py
+.. literalinclude:: functions/tests/test_functions_w_none.py
   :language: python
   :linenos:

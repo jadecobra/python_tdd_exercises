@@ -1,6 +1,6 @@
 .. meta::
-  :description:
-  :keywords:
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test functions with None. Open the functions project (test_functions.py after test functions with unittest) and uv run pytest-watcher . --now — 12 passed. In test_making_a_function_w_pass, test_making_a_function_w_return, test_making_a_function_w_return_none, test_what_happens_after_functions_return, and test_identity_function: add assertIsNotNone → AssertionError: unexpectedly None; change it to assertIsNone; remove the commented line, the assert_is_none helper call, and self.assertIs(..., None). Then delete unused assert_is_none. git commit -am 'use assertIsNone'. Review: assertIsNone / assertIsNotNone stand in for assertIs(x, None) / assertIsNot(x, None). What is next: test the person project with conditions.
+  :keywords: Jacob Itegboje, Pumping Python, test functions with None, functions_w_none, assertIsNone, assertIsNotNone, assertIs, assertIsNot, unexpectedly None, AssertionError unexpectedly None, assert_is_none, test_making_a_function_w_pass, test_making_a_function_w_return, test_making_a_function_w_return_none, return_leaves_the_function, test_identity_function, identity None, w_pass w_return, unittest TestCase, uv run pytest-watcher . --now, 12 passed, red green refactor, remove the commented lines, git commit -am use assertIsNone, test_functions.py, another way to test if something is None
 
 .. include:: ../links.rst
 
@@ -164,14 +164,14 @@ I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<
   :lineno-start: 21
   :emphasize-lines: 6
 
-        def test_making_a_function_w_return(self):
-            assert_is_none(src.functions.w_return())
-            self.assertIs(
-                src.functions.w_return(), None
-            )
-            self.assertIsNotNone(src.functions.w_return())
+      def test_making_a_function_w_return(self):
+          assert_is_none(src.functions.w_return())
+          self.assertIs(
+              src.functions.w_return(), None
+          )
+          self.assertIsNotNone(src.functions.w_return())
 
-        def test_making_a_function_w_return_none(self):
+      def test_making_a_function_w_return_none(self):
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -213,7 +213,7 @@ the test passes.
 
 ----
 
-I remove the commented line, the :ref:`call<how to call a function with input>` to my :ref:`assert_is_none function<extract assert_is_none function>` and ``self.assertIsNotNone(src.functions.w_return())`` from :ref:`test_making_a_function_w_return`
+I remove the commented line, the :ref:`call<how to call a function with input>` to my :ref:`assert_is_none function<extract assert_is_none function>` and ``self.assertIs(src.functions.w_return(), None)`` from :ref:`test_making_a_function_w_return`
 
 .. code-block:: python
   :lineno-start: 21
@@ -290,7 +290,7 @@ the test passes.
 
 ----
 
-I remove the commented line, the :ref:`call<how to call a function with input>` to my :ref:`assert_is_none function<extract assert_is_none function>` and ``self.assertIsNotNone(src.functions.w_return_none())`` from :ref:`test_making_a_function_w_return_none`
+I remove the commented line, the :ref:`call<how to call a function with input>` to my :ref:`assert_is_none function<extract assert_is_none function>` and ``self.assertIs(src.functions.w_return_none(), None)`` from :ref:`test_making_a_function_w_return_none`
 
 .. code-block:: python
   :lineno-start: 24
@@ -377,7 +377,7 @@ the test passes.
 
 ----
 
-I remove the commented line, the :ref:`call<how to call a function with input>` to my :ref:`assert_is_none function<extract assert_is_none function>` and ``self.assertIsNone(src.functions.return_leaves_the_function())`` from :ref:`test_what_happens_after_functions_return`
+I remove the commented line, the :ref:`call<how to call a function with input>` to my :ref:`assert_is_none function<extract assert_is_none function>` and ``self.assertIs(src.functions.return_leaves_the_function(), None)`` from :ref:`test_what_happens_after_functions_return`
 
 .. code-block:: python
   :lineno-start: 27
@@ -407,22 +407,22 @@ I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<
   :lineno-start: 32
   :emphasize-lines: 11
 
-        def test_constant_function(self):
-            self.assertEqual(
-                src.functions.constant(), 'the same thing'
-            )
+      def test_constant_function(self):
+          self.assertEqual(
+              src.functions.constant(), 'the same thing'
+          )
 
-        def test_identity_function(self):
-            assert_is_none(src.functions.identity(None))
-            self.assertIs(
-                src.functions.identity(None), None
-            )
-            self.assertIsNotNone(src.functions.identity(None))
-            self.assertEqual(
-                src.functions.identity(object), object
-            )
+      def test_identity_function(self):
+          assert_is_none(src.functions.identity(None))
+          self.assertIs(
+              src.functions.identity(None), None
+          )
+          self.assertIsNotNone(src.functions.identity(None))
+          self.assertEqual(
+              src.functions.identity(object), object
+          )
 
-        def test_why_use_a_function(self):
+      def test_why_use_a_function(self):
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
