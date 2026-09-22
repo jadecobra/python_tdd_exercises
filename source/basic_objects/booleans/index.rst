@@ -3252,7 +3252,13 @@ the test passes.
 
     # NOTES
 
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` for ``(tuple(), False)``
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: () is not False
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(tuple(), False)``
 
   .. code-block:: python
     :lineno-start: 82

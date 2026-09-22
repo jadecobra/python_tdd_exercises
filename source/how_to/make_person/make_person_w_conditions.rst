@@ -24,7 +24,7 @@ I want to be able to check if a person can vote, and if they can get a license. 
 * If a person is ``18`` or older
 
   - and passes a test, the person can get a license.
-  - and is a citizen, the person can vote.
+  - and the person is a citizen, the person can vote.
 
 
 ----
@@ -67,9 +67,9 @@ open the project
 
   .. code-block:: python
 
-    tests/test_person.py .......                        [100%]
+    tests/test_person.py ........                       [100%]
 
-    =================== 7 passed in P.QRs ====================
+    =================== 8 passed in P.QRs ====================
 
 ----
 
@@ -83,18 +83,36 @@ add can_vote method
 
 ----
 
-I add a :ref:`call<how to call a function with input>` to ``can_vote`` from :ref:`test_joe`
+I add a :ref:`call<how to call a function with input>` to :ref:`can_vote<add can_vote method>` from :ref:`test_joe`
 
 .. code-block:: python
-  :lineno-start: 54
-  :emphasize-lines: 4
+  :lineno-start: 67
 
-          reality = joe.say_hello()
-          assert reality == my_expectation
-          self.assertEqual(reality, my_expectation)
-          self.assertEqual(joe.can_vote(), True)
+    def test_joe(self):
+        first_name = 'joe'
+        last_name = 'blow'
+        ...
 
-      def test_jane(self):
+.. code-block:: python
+  :lineno-start: 86
+  :emphasize-lines: 8-14
+
+        self.assert_person_can_say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth
+        )
+
+        joe = src.person.Person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        self.assertEqual(joe.can_vote(), True)
+
+    def test_jane(self):
 
 the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -118,26 +136,21 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     :lineno-start: 4
     :emphasize-lines: 12-13
 
-      class Person:
+    class Person:
 
-          def __init__(
-              self, first_name, last_name,
-              sex, year_of_birth=None,
-          ):
-              self.first_name = first_name
-              self.last_name = last_name
-              self.year_of_birth = year_of_birth
-              self.sex = sex
+        def __init__(
+                self, first_name, last_name,
+                sex, year_of_birth=None,
+            ):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.year_of_birth = year_of_birth
+            self.sex = sex
 
-          def can_vote():
-              return True
+        def can_vote():
+            return True
 
-          def say_hello(self):
-              return (
-                  f'Hello, my name is {self.first_name}'
-                  f' {self.last_name} and I am'
-                  f' {calculate_age(self.year_of_birth)}.'
-              )
+        def say_hello(self):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -149,8 +162,17 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>`
 
   .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 1
+    :lineno-start: 6
+    :emphasize-lines: 10
+
+        def __init__(
+                self, first_name, last_name,
+                sex, year_of_birth=None,
+            ):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.year_of_birth = year_of_birth
+            self.sex = sex
 
         @staticmethod
         def can_vote():
@@ -171,44 +193,69 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the tests for the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Person class and an instance of it<add Person class>` are failing because I added a :ref:`method<what is a method?>` to it.
 
-* I add ``can_vote`` to :ref:`test_dir_person_class`
+* I add ``can_vote`` to :ref:`test_dir_person_class` in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 237
-    :emphasize-lines: 1-2
+    :lineno-start: 203
 
-                'can_vote',
-                'say_hello',
-            ]
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+        def test_dir_person_class(self):
+            self.assertEqual(
+                dir(src.person.Person),
+                [
+                    '__class__', '__delattr__', '__dict__',
+                    ...
+
+  .. code-block:: python
+    :lineno-start: 215
+    :emphasize-lines: 2-3
+    :emphasize-text: can_vote
+
+                    '__static_attributes__', '__str__',
+                    '__subclasshook__', '__weakref__',
+                    'can_vote', 'say_hello',
+                ]
+            )
 
         def test_dir_person_instance(self):
 
 * I add ``can_vote`` to :ref:`test_dir_person_instance`
 
   .. code-block:: python
-    :lineno-start: 282
-    :emphasize-lines: 1
+    :lineno-start: 221
 
-                'can_vote',
-                'first_name',
-                'last_name',
-                'say_hello',
-                'sex',
-                'year_of_birth',
-            ]
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+        def test_dir_person_instance(self):
+            self.assertEqual(
+                dir(
+                    src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=2026,
+                    )
+                ),
+                [
+                    '__class__', '__delattr__', '__dict__',
+                    ...
+
+  .. code-block:: python
+    :lineno-start: 241
+    :emphasize-text: can_vote
+    :emphasize-lines: 2-3
+
+                    '__subclasshook__', '__weakref__',
+                    'can_vote', 'first_name', 'last_name',
+                    'say_hello', 'sex', 'year_of_birth',
+                ]
+            )
 
 
     # Exceptions seen
 
   the test passes.
 
-  These tests are good because they help document what is in the :ref:`class<everything is an object>` and catch its changes immediately.
+  :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` are good because they help document what is in the :ref:`class<everything is an object>` and catch its changes immediately.
 
-  They are a problem because :ref:`class attributes<what is a class attribute?>` can change between Python_ versions, I have to remember the correct order of names and I am keeping two lists. There has to be a better way.
+  :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` are a problem because :ref:`class attributes<what is a class attribute?>` can change from one Python_ version to another, I have to remember the correct order of names and I am keeping two :ref:`lists<what is a list?>`. There has to be a better way.
 
 * I open a new terminal_ then make sure I am in the ``person`` folder_
 
@@ -230,7 +277,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 add is_citizen attribute
 *********************************************************************************
 
-I want ``can_vote`` to return
+I want :ref:`can_vote<add can_vote method>` to return
 
 * :red:`False` for ``no`` the person cannot vote if the person is not a citizen.
 * :green:`True` for ``yes`` the person can vote if the person is a citizen.
@@ -244,30 +291,67 @@ I want ``can_vote`` to return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a :ref:`call<how to call a function with input>` to ``can_vote`` from :ref:`test_jane`
+* I add a :ref:`call<how to call a function with input>` to :ref:`can_vote<add can_vote method>` from :ref:`test_jane`
 
   .. code-block:: python
-    :lineno-start: 98
-    :emphasize-lines: 4
+    :lineno-start: 101
 
-            reality = jane.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+        def test_jane(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            ...
+
+  .. code-block:: python
+    :lineno-start: 120
+    :emphasize-lines: 8-14
+
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+            jane = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
             self.assertEqual(jane.can_vote(), True)
 
         def test_john(self):
 
   the test is still green.
 
-* I add a :ref:`call<how to call a function with input>` to ``can_vote`` from :ref:`test_john`
+* I add a :ref:`call<how to call a function with input>` to :ref:`can_vote<add can_vote method>` from :ref:`test_john`
 
   .. code-block:: python
-    :lineno-start: 145
+    :lineno-start: 135
     :emphasize-lines: 4
 
-            reality = john.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+        def test_john(self):
+            first_name = 'john'
+            last_name = 'smith'
+            ...
+
+  .. code-block:: python
+    :lineno-start: 157
+    :emphasize-lines: 8-14
+
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+            john = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
             self.assertEqual(john.can_vote(), False)
 
         def test_mary(self):
@@ -291,7 +375,7 @@ I want ``can_vote`` to return
 * I add ``is_citizen`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<add Person class>` for ``john``
 
   .. code-block:: python
-    :lineno-start: 138
+    :lineno-start: 164
     :emphasize-lines: 6
 
             john = src.person.Person(
@@ -301,10 +385,6 @@ I want ``can_vote`` to return
                 year_of_birth=year_of_birth,
                 is_citizen=False,
             )
-
-            reality = john.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
             self.assertEqual(john.can_vote(), False)
 
         def test_mary(self):
@@ -328,10 +408,10 @@ I want ``can_vote`` to return
     class Person:
 
         def __init__(
-            self, first_name, last_name,
-            sex, year_of_birth=None,
-            is_citizen,
-        ):
+                self, first_name, last_name,
+                sex, year_of_birth=None,
+                is_citizen,
+            ):
 
   the terminal_ is my friend, and shows SyntaxError_
 
@@ -346,16 +426,15 @@ I want ``can_vote`` to return
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 6-7
+    :emphasize-lines: 6
 
     class Person:
 
         def __init__(
-            self, first_name, last_name,
-            sex, year_of_birth=None,
-            # is_citizen,
-            is_citizen=True,
-        ):
+                self, first_name, last_name,
+                sex, year_of_birth=None,
+                is_citizen=True,
+            ):
 
   the terminal_ goes back to the :ref:`AssertionError<what causes AssertionError?>`.
 
@@ -363,16 +442,15 @@ I want ``can_vote`` to return
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 13
+    :emphasize-lines: 12
 
     class Person:
 
         def __init__(
-            self, first_name, last_name,
-            sex, year_of_birth=None,
-            # is_citizen,
-            is_citizen=True,
-        ):
+                self, first_name, last_name,
+                sex, year_of_birth=None,
+                is_citizen=True,
+            ):
             self.first_name = first_name
             self.last_name = last_name
             self.year_of_birth = year_of_birth
@@ -386,7 +464,7 @@ I want ``can_vote`` to return
 * I use the :ref:`class attribute<what is a class attribute?>` in the :ref:`can_vote method<add can_vote method>`
 
   .. code-block:: python
-    :lineno-start: 18
+    :lineno-start: 17
     :emphasize-lines: 3-4
 
         @staticmethod
@@ -405,7 +483,7 @@ I want ``can_vote`` to return
 * I remove the :ref:`staticmethod decorator<what is the staticmethod decorator?>` from the :ref:`can_vote method<add can_vote method>` then add ``self`` to the parentheses
 
   .. code-block:: python
-    :lineno-start: 18
+    :lineno-start: 17
     :emphasize-lines: 1-3
 
         # @staticmethod
@@ -418,22 +496,36 @@ I want ``can_vote`` to return
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_instance` because I added a new :ref:`attribute<what is a class attribute?>` (``is_citizen``).
 
-* I add ``is_citizen`` to ``my_expectation`` in :ref:`test_dir_person_instance` in ``test_person.py``
+* I add ``is_citizen`` to the expectation of :ref:`test_dir_person_instance` in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 285
-    :emphasize-lines: 3
+    :lineno-start: 238
 
-                'can_vote',
-                'first_name',
-                'is_citizen',
-                'last_name',
-                'say_hello',
-                'sex',
-                'year_of_birth',
-            ]
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+        def test_dir_person_instance(self):
+            self.assertEqual(
+                dir(
+                    src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=2026,
+                    )
+                ),
+                [
+                    '__class__', '__delattr__', '__dict__',
+                    ...
+
+  .. code-block:: python
+    :lineno-start: 238
+    :emphasize-lines: 2-4
+    :emphasize-text: is_citizen
+
+                    '__subclasshook__', '__weakref__',
+                    'can_vote', 'first_name', 'is_citizen',
+                    'last_name', 'say_hello', 'sex',
+                    'year_of_birth',
+                ]
+            )
 
 
     # Exceptions seen
@@ -450,18 +542,16 @@ I want ``can_vote`` to return
 
 ----
 
-* I remove the commented lines from ``src/person/__init__.py``
+* I remove the commented lines from the :ref:`can_vote method<add can_vote method>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :lineno-start: 4
-
-    class Person:
+    :lineno-start: 6
 
         def __init__(
-            self, first_name, last_name,
-            sex, year_of_birth=None,
-            is_citizen=True,
-        ):
+                self, first_name, last_name,
+                sex, year_of_birth=None,
+                is_citizen=True,
+            ):
             self.first_name = first_name
             self.last_name = last_name
             self.year_of_birth = year_of_birth
@@ -473,18 +563,37 @@ I want ``can_vote`` to return
 
         def say_hello(self):
 
-* I add a :ref:`call<how to call a function with input>` to ``can_vote`` from :ref:`test_mary` in ``test_person.py``
+* I add a :ref:`call<how to call a function with input>` to :ref:`can_vote<add can_vote method>` from :ref:`test_mary` in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 190
+    :lineno-start: 173
     :emphasize-lines: 4
 
-            reality = mary.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+        def test_mary(self):
+            first_name = 'mary'
+            last_name = 'public'
+            ...
+
+  .. code-block:: python
+    :lineno-start: 192
+    :emphasize-lines: 8-14
+
+            self.assert_person_can_say_hello(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+            mary = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
             self.assertEqual(mary.can_vote(), False)
 
-        def test_when_year_of_birth_is_not_an_integer(self):
+        def test_when_year_of_birth_is_the_future(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -497,23 +606,19 @@ I want ``can_vote`` to return
 * I add ``is_citizen`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<add Person class>` for ``mary``
 
   .. code-block:: python
-    :lineno-start: 183
+    :lineno-start: 199
     :emphasize-lines: 6
 
-              mary = src.person.Person(
-                  first_name=first_name,
-                  last_name=last_name,
-                  sex=sex,
-                  year_of_birth=year_of_birth,
-                  is_citizen=False,
-              )
+            mary = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+                is_citizen=False,
+            )
+            self.assertEqual(mary.can_vote(), False)
 
-              reality = mary.say_hello()
-              assert reality == my_expectation
-              self.assertEqual(reality, my_expectation)
-              self.assertEqual(mary.can_vote(), False)
-
-          def test_when_year_of_birth_is_not_an_integer(self):
+        def test_when_year_of_birth_is_the_future(self):
 
   the test passes.
 
@@ -576,7 +681,7 @@ I can do that with an :ref:`if statement<if statements>`
 
     AssertionError: True != False
 
-  - because ``can_vote`` returns the value of ``is_citizen``, it does not care about the age of the person.
+  - because :ref:`can_vote<add can_vote method>` returns the value of ``is_citizen``, it does not care about the age of the person.
   - I use a calculation (``datetime.date.today().year-17``) as the year of birth so that the person will always be younger than ``18`` in any year the test is run.
 
 ----
@@ -751,7 +856,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_class` and :ref:`test_dir_person_instance`.
 
-* I add ``can_get_license`` to :ref:`test_dir_person_class` in ``test_person.py``
+* I add ``can_get_license`` to :ref:`test_dir_person_class` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 254
@@ -981,7 +1086,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_instance` because I added a new :ref:`attribute<what is a class attribute?>` (``passed_test``).
 
-* I add ``passed_test`` to ``my_expectation`` in :ref:`test_dir_person_instance` in ``test_person.py``
+* I add ``passed_test`` to ``my_expectation`` in :ref:`test_dir_person_instance` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 301
@@ -1038,7 +1143,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         def can_vote(self):
 
-* I add a :ref:`call<how to call a function with input>` to ``can_get_license`` from :ref:`test_john`, in ``test_person.py``
+* I add a :ref:`call<how to call a function with input>` to ``can_get_license`` from :ref:`test_john`, in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 147
@@ -1054,7 +1159,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the test passes because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
-* I add a :ref:`call<how to call a function with input>` to ``can_get_license`` from :ref:`test_jane`, in ``test_person.py``
+* I add a :ref:`call<how to call a function with input>` to ``can_get_license`` from :ref:`test_jane`, in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 99
@@ -1316,7 +1421,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with this solut
 
 ----
 
-* I add the `unittest.skip decorator`_ to :ref:`test_when_year_of_birth_is_not_an_integer` with a note that it will always fail since it uses a year of birth that is not an integer, in ``test_person.py``
+* I add the `unittest.skip decorator`_ to :ref:`test_when_year_of_birth_is_not_an_integer` with a note that it will always fail since it uses a year of birth that is not an integer, in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 216
@@ -1504,7 +1609,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I add ``check_age`` to ``my_expectation`` in :ref:`test_dir_person_class` in ``test_person.py``
+* I add ``check_age`` to ``my_expectation`` in :ref:`test_dir_person_class` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 263
@@ -1661,7 +1766,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 close the project
 *********************************************************************************
 
-* I close ``test_person.py`` and ``src/person/__init__.py``
+* I close ``tests/test_person.py`` and ``src/person/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
