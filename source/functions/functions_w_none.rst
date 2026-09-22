@@ -19,9 +19,22 @@ preview
 I have these tests by the end of the chapter
 
 .. literalinclude:: ../code/functions/tests/test_functions_w_none.py
+  :caption: functions/tests/test_functions.py
   :language: python
   :linenos:
+  :lines: 1-15
+
+.. literalinclude:: ../code/functions/tests/test_functions_w_none.py
   :caption: functions/tests/test_functions.py
+  :language: python
+  :lineno-start: 17
+  :lines: 17-26
+
+.. literalinclude:: ../code/functions/tests/test_functions_w_none.py
+  :caption: functions/tests/test_functions.py
+  :language: python
+  :lineno-start: 28
+  :lines: 28-39
 
 ----
 
