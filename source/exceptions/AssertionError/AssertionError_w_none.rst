@@ -18,12 +18,13 @@ I want to use the :ref:`assertIsNotNone<another way to test if something is NOT 
 preview
 *********************************************************************************
 
-I have these tests by the end of the chapter
+:ref:`test_assertion_error_w_none` looks like this by the end of the chapter
 
 .. literalinclude:: ../../code/assertion_error/test_assertion_error_w_none.py
-  :language: python
-  :linenos:
   :caption: assertion_error/tests/test_assertion_error.py
+  :language: python
+  :lineno-start: 54
+  :lines: 54-93
 
 ----
 
@@ -65,7 +66,7 @@ use assertIsNotNone and assertIsNone
 * I add a :ref:`call<how to call a function with input>` to :ref:`assertIsNotNone<another way to test if something is NOT None>` in :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 30
+    :lineno-start: 54
     :emphasize-lines: 4
 
         def test_assertion_error_w_none(self):
@@ -73,8 +74,7 @@ use assertIsNotNone and assertIsNone
             self.assertIs(None, None)
             self.assertIsNotNone(None)
 
-            assert False is not None
-            self.assertIsNot(False, None)
+            assert_is_not_none(False)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -87,7 +87,7 @@ use assertIsNotNone and assertIsNone
 * I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to a call to :ref:`the assertIsNone method<another way to test if something is None>`
 
   .. code-block:: python
-    :lineno-start: 30
+    :lineno-start: 54
     :emphasize-lines: 4-5
 
         def test_assertion_error_w_none(self):
@@ -96,23 +96,21 @@ use assertIsNotNone and assertIsNone
             # self.assertIsNotNone(None)
             self.assertIsNone(None)
 
-            assert False is not None
-            self.assertIsNot(False, None)
+            assert_is_not_none(False)
 
   the test passes
 
 * I add :ref:`assertIsNone<another way to test if something is None>` for :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 36
+    :lineno-start: 60
     :emphasize-lines: 3
 
-            assert False is not None
+            assert_is_not_none(False)
             self.assertIsNot(False, None)
             self.assertIsNone(False)
 
-            assert True is not None
-            self.assertIsNot(True, None)
+            assert_is_not_none(True)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -123,31 +121,29 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
-    :lineno-start: 36
+    :lineno-start: 60
     :emphasize-lines: 3-4
 
-            assert False is not None
+            assert_is_not_none(False)
             self.assertIsNot(False, None)
             # self.assertIsNone(False)
             self.assertIsNotNone(False)
 
-            assert True is not None
-            self.assertIsNot(True, None)
+            assert_is_not_none(True)
 
   the test passes because :ref:`False<test_what_is_false>` is not :ref:`None<what is None?>`.
 
 * I add :ref:`assertIsNone<another way to test if something is None>` for :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 65
     :emphasize-lines: 3
 
-            assert True is not None
+            assert_is_not_none(True)
             self.assertIsNot(True, None)
             self.assertIsNone(True)
 
-            assert self.an_integer is not None
-            self.assertIsNot(self.an_integer, None)
+            assert_is_not_none(self.an_integer)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -158,31 +154,29 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 65
     :emphasize-lines: 3-4
 
-            assert True is not None
+            assert_is_not_none(True)
             self.assertIsNot(True, None)
             # self.assertIsNone(True)
             self.assertIsNotNone(True)
 
-            assert self.an_integer is not None
-            self.assertIsNot(self.an_integer, None)
+            assert_is_not_none(self.an_integer)
 
   the test passes because :ref:`True<test_what_is_true>` is not :ref:`None<what is None?>`.
 
 * I add :ref:`assertIsNone<another way to test if something is None>` for an integer_ (a whole number without decimals)
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 70
     :emphasize-lines: 3
 
-            assert self.an_integer is not None
+            assert_is_not_none(self.an_integer)
             self.assertIsNot(self.an_integer, None)
             self.assertIsNone(self.an_integer)
 
-            assert self.a_float is not None
-            self.assertIsNot(self.a_float, None)
+            assert_is_not_none(self.a_float)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -193,31 +187,29 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 70
     :emphasize-lines: 3-4
 
-            assert self.an_integer is not None
+            assert_is_not_none(self.an_integer)
             self.assertIsNot(self.an_integer, None)
             # self.assertIsNone(self.an_integer)
             self.assertIsNotNone(self.an_integer)
 
-            assert self.a_float is not None
-            self.assertIsNot(self.a_float, None)
+            assert_is_not_none(self.a_float)
 
   the test passes because an integer_ is not :ref:`None<what is None?>`.
 
 * I add :ref:`assertIsNone<another way to test if something is None>` for a float_ (binary floating point decimal number)
 
   .. code-block:: python
-    :lineno-start: 51
+    :lineno-start: 75
     :emphasize-lines: 3
 
-            assert self.a_float is not None
+            assert_is_not_none(self.a_float)
             self.assertIsNot(self.a_float, None)
             self.assertIsNone(self.a_float)
 
-            assert self.a_string is not None
-            self.assertIsNot(self.a_string, None)
+            assert_is_not_none(self.a_string)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -228,31 +220,29 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
-    :lineno-start: 51
+    :lineno-start: 75
     :emphasize-lines: 3-4
 
-            assert self.a_float is not None
+            assert_is_not_none(self.a_float)
             self.assertIsNot(self.a_float, None)
             # self.assertIsNone(self.a_float)
             self.assertIsNotNone(self.a_float)
 
-            assert self.a_string is not None
-            self.assertIsNot(self.a_string, None)
+            assert_is_not_none(self.a_string)
 
   the test passes because a float_ is not :ref:`None<what is None?>`.
 
 * I add :ref:`assertIsNone<another way to test if something is None>` for a string_ (anything in :ref:`quotes`)
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 80
     :emphasize-lines: 3
 
-            assert self.a_string is not None
+            assert_is_not_none(self.a_string)
             self.assertIsNot(self.a_string, None)
             self.assertIsNone(self.a_string)
 
-            assert self.a_tuple is not None
-            self.assertIsNot(self.a_tuple, None)
+            assert_is_not_none(self.a_tuple)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -263,31 +253,29 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 80
     :emphasize-lines: 3-4
 
-            assert self.a_string is not None
+            assert_is_not_none(self.a_string)
             self.assertIsNot(self.a_string, None)
             # self.assertIsNone(self.a_string)
             self.assertIsNotNone(self.a_string)
 
-            assert self.a_tuple is not None
-            self.assertIsNot(self.a_tuple, None)
+            assert_is_not_none(self.a_tuple)
 
   the test passes because a string_ (anything in :ref:`quotes`) is not :ref:`None<what is None?>`.
 
 * I add :ref:`assertIsNone<another way to test if something is None>` for a tuple_ (anything in parentheses ``( )`` separated by a comma)
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 85
     :emphasize-lines: 3
 
-            assert self.a_tuple is not None
+            assert_is_not_none(self.a_tuple)
             self.assertIsNot(self.a_tuple, None)
             self.assertIsNone(self.a_tuple)
 
-            assert self.a_list is not None
-            self.assertIsNot(self.a_list, None)
+            assert_is_not_none(self.a_list)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -298,31 +286,29 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 85
     :emphasize-lines: 3-4
 
-            assert self.a_tuple is not None
+            assert_is_not_none(self.a_tuple)
             self.assertIsNot(self.a_tuple, None)
             # self.assertIsNone(self.a_tuple)
             self.assertIsNotNone(self.a_tuple)
 
-            assert self.a_list is not None
-            self.assertIsNot(self.a_list, None)
+            assert_is_not_none(self.a_list)
 
   the test passes because a tuple_ is not :ref:`None<what is None?>`.
 
 * I add :ref:`assertIsNone<another way to test if something is None>` for a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``)
 
   .. code-block:: python
-    :lineno-start: 66
+    :lineno-start: 90
     :emphasize-lines: 3
 
-            assert self.a_list is not None
+            assert_is_not_none(self.a_list)
             self.assertIsNot(self.a_list, None)
             self.assertIsNone(self.a_list)
 
-            assert self.a_set is not None
-            self.assertIsNot(self.a_set, None)
+            assert_is_not_none(self.a_set)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -333,31 +319,29 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
-    :lineno-start: 66
+    :lineno-start: 90
     :emphasize-lines: 3-4
 
-            assert self.a_list is not None
+            assert_is_not_none(self.a_list)
             self.assertIsNot(self.a_list, None)
             # self.assertIsNone(self.a_list)
             self.assertIsNotNone(self.a_list)
 
-            assert self.a_set is not None
-            self.assertIsNot(self.a_set, None)
+            assert_is_not_none(self.a_set)
 
   the test passes because a :ref:`list<what is a list?>` is not :ref:`None<what is None?>`.
 
 * I add :ref:`assertIsNone<another way to test if something is None>` for a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 95
     :emphasize-lines: 3
 
-            assert self.a_set is not None
+            assert_is_not_none(self.a_set)
             self.assertIsNot(self.a_set, None)
             self.assertIsNone(self.a_set)
 
-            assert self.a_dictionary is not None
-            self.assertIsNot(self.a_dictionary, None)
+            assert_is_not_none(self.a_dictionary)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -368,28 +352,27 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 95
     :emphasize-lines: 3-4
 
-            assert self.a_set is not None
+            assert_is_not_none(self.a_set)
             self.assertIsNot(self.a_set, None)
             # self.assertIsNone(self.a_set)
             self.assertIsNotNone(self.a_set)
 
-            assert self.a_dictionary is not None
-            self.assertIsNot(self.a_dictionary, None)
+            assert_is_not_none(self.a_dictionary)
 
   the test passes because a set_ is not :ref:`None<what is None?>`.
 
 * I add :ref:`assertIsNone<another way to test if something is None>` for a :ref:`dictionary (key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 100
     :emphasize-lines: 3
 
-            assert self.a_dictionary is not None
+            assert_is_not_none(self.a_dictionary)
             self.assertIsNot(self.a_dictionary, None)
-            self.assertIsNone(self.a_dictionary)
+            self.assertIsNone(self.a_set)
 
         def test_assertion_error_w_false(self):
 
@@ -402,13 +385,13 @@ use assertIsNotNone and assertIsNone
 * I change the call from :ref:`assertIsNone<another way to test if something is None>` to :ref:`assertIsNotNone<another way to test if something is NOT None>`
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 100
     :emphasize-lines: 3-4
 
-            assert self.a_dictionary is not None
+            assert_is_not_none(self.a_dictionary)
             self.assertIsNot(self.a_dictionary, None)
-            # self.assertIsNone(self.a_dictionary)
-            self.assertIsNotNone(self.a_dictionary)
+            # self.assertIsNone(self.a_set)
+            self.assertIsNotNone(self.a_set)
 
         def test_assertion_error_w_false(self):
 
@@ -417,77 +400,57 @@ use assertIsNotNone and assertIsNone
 * I remove the commented lines from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 30
+    :lineno-start: 54
 
         def test_assertion_error_w_none(self):
             assert None is None
             self.assertIs(None, None)
             self.assertIsNone(None)
 
-  .. code-block:: python
-    :lineno-start: 35
-
-            assert False is not None
+            assert_is_not_none(False)
             self.assertIsNot(False, None)
             self.assertIsNotNone(False)
 
-  .. code-block:: python
-    :lineno-start: 39
-
-            assert True is not None
+            assert_is_not_none(True)
             self.assertIsNot(True, None)
             self.assertIsNotNone(True)
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 67
 
-            assert self.an_integer is not None
+            assert_is_not_none(self.an_integer)
             self.assertIsNot(self.an_integer, None)
             self.assertIsNotNone(self.an_integer)
 
-  .. code-block:: python
-    :lineno-start: 47
-
-            assert self.a_float is not None
+            assert_is_not_none(self.a_float)
             self.assertIsNot(self.a_float, None)
             self.assertIsNotNone(self.a_float)
 
-  .. code-block:: python
-    :lineno-start: 51
-
-            assert self.a_string is not None
+            assert_is_not_none(self.a_string)
             self.assertIsNot(self.a_string, None)
             self.assertIsNotNone(self.a_string)
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 79
 
-            assert self.a_tuple is not None
+            assert_is_not_none(self.a_tuple)
             self.assertIsNot(self.a_tuple, None)
             self.assertIsNotNone(self.a_tuple)
 
-  .. code-block:: python
-    :lineno-start: 59
-
-            assert self.a_list is not None
+            assert_is_not_none(self.a_list)
             self.assertIsNot(self.a_list, None)
             self.assertIsNotNone(self.a_list)
 
-  .. code-block:: python
-    :lineno-start: 63
-
-            assert self.a_set is not None
+            assert_is_not_none(self.a_set)
             self.assertIsNot(self.a_set, None)
             self.assertIsNotNone(self.a_set)
 
-  .. code-block:: python
-    :lineno-start: 67
-
-            assert self.a_dictionary is not None
+            assert_is_not_none(self.a_dictionary)
             self.assertIsNot(self.a_dictionary, None)
-            self.assertIsNotNone(self.a_dictionary)
+            self.assertIsNotNone(self.a_set)
 
         def test_assertion_error_w_false(self):
+
 
 * I open a new terminal_ then change directories to ``assertion_error``
 

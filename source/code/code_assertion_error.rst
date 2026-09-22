@@ -190,10 +190,12 @@ The code in ``assertion_error/tests/test_assertion_error.py`` from :ref:`test As
 test AssertionError with None: tests
 *********************************************************************************
 
-The code in ``assertion_error/tests/test_assertion_error.py`` from :ref:`test AssertionError with None`
+:ref:`test_assertion_error_w_none` looks like this by the end of :ref:`test AssertionError with None`
 
-  .. literalinclude:: assertion_error/test_assertion_error_w_none.py
-    :language: python
-    :linenos:
+.. literalinclude:: ../../code/assertion_error/test_assertion_error_w_none.py
+  :caption: assertion_error/tests/test_assertion_error.py
+  :language: python
+  :lineno-start: 54
+  :lines: 54-93
 
 ----
