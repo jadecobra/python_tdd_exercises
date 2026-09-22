@@ -243,10 +243,10 @@ The code in ``functions/tests/test_functions.py`` from :ref:`test functions with
 ----
 
 *********************************************************************************
-test functions with assertIsNotNone and assertIsNone: tests
+test functions with None: tests
 *********************************************************************************
 
-The code in ``functions/tests/test_functions.py`` from :ref:`test functions with assertIsNotNone and assertIsNone`
+The code in ``functions/tests/test_functions.py`` from :ref:`test functions with None`
 
 .. literalinclude:: functions/test_functions_w_none.py
   :language: python

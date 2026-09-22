@@ -37,8 +37,34 @@ preview
 I have these tests by the end of the chapter
 
 .. literalinclude:: ../code/tests/test_none.py
+  :caption: none/tests/test_none.py
   :language: python
   :linenos:
+  :lines: 1-15
+
+.. literalinclude:: ../code/tests/test_none.py
+  :caption: none/tests/test_none.py
+  :language: python
+  :lineno-start: 17
+  :lines: 17-33
+
+.. literalinclude:: ../code/tests/test_none.py
+  :caption: none/tests/test_none.py
+  :language: python
+  :lineno-start: 35
+  :lines: 35-47
+
+.. literalinclude:: ../code/tests/test_none.py
+  :caption: none/tests/test_none.py
+  :language: python
+  :lineno-start: 49
+  :lines: 49-60
+
+.. literalinclude:: ../code/tests/test_none.py
+  :caption: none/tests/test_none.py
+  :language: python
+  :lineno-start: 62
+  :lines: 62-
 
 *********************************************************************************
 questions about None
@@ -149,9 +175,9 @@ start the project
 
         New-Item tests/test_none.py
 
-* I open ``test_none.py``
+* I open ``test_none.py`` from the ``tests`` folder_
 
-* I delete the text in the file_ then add :ref:`the first failing test<test_failure>` to ``test_none.py``
+* I add :ref:`the first failing test<test_failure>` to ``test_none.py``
 
   .. code-block:: python
     :linenos:
@@ -310,7 +336,9 @@ test_what_is_none
 
 ----
 
-* I change :ref:`test_failure` to :ref:`test_what_is_none` with a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
+* I remove :ref:`test_failure`
+
+* I add :ref:`test_what_is_none` with a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -352,7 +380,7 @@ I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is
 
   # Exceptions seen
 
-the test passes. So far this is the same as :ref:`test_assertion_error_w_none`.
+the test passes.
 
 ----
 
@@ -360,7 +388,7 @@ the test passes. So far this is the same as :ref:`test_assertion_error_w_none`.
 another way to test if something is NOT None
 *********************************************************************************
 
-I can also use another :ref:`assert method<test_dir_unittest_testcase>` from the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` to test if something is NOT the same :ref:`object<everything is an object>` as :ref:`None<what is None?>` - the `assertIsNotNone method`
+I can also use another :ref:`assert method<test_dir_unittest_testcase>` from the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` to test if something is NOT the same :ref:`object<everything is an object>` as :ref:`None<what is None?>` - the `assertIsNotNone method`_.
 
 ----
 
@@ -399,7 +427,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 another way to test if something is None
 *********************************************************************************
 
-I can use the `assertIsNone method`_ from the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` to test if something is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
+I can use the `assertIsNone method`_ from the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` to test if something is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
 
 ----
 
@@ -468,8 +496,6 @@ I change :ref:`assertIsNotNone<another way to test if something is NOT None>` to
 
     # Exceptions seen
     # AssertionError
-
-  this is the same comment from the :ref:`assertion_error project<what is an assertion?>`.
 
 * I open a new terminal_ then change directories to ``none``
 
@@ -629,8 +655,6 @@ the test passes.
     # False is NOT None
     # None is None
 
-  also from the :ref:`assertion_error project<what is an assertion?>`
-
 * I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assert_not_is_instance>` to test if :ref:`False<test_what_is_false>` is :ref:`an instance<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
 
   .. code-block:: python
@@ -726,7 +750,7 @@ the test passes.
 * I add :ref:`assertIsInstance<test_assert_is_instance>` to test if :ref:`None<what is None?>` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 10
     :emphasize-lines: 10
 
         def test_is_none_a_boolean(self):
@@ -774,7 +798,7 @@ the test passes.
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_is_none_a_boolean`
 
   .. code-block:: python
     :lineno-start: 10
@@ -802,8 +826,6 @@ the test passes.
 
     # Exceptions seen
     # AssertionError
-
-  Okay, this is new, not something from the :ref:`assertion_error project<what is an assertion?>`.
 
 * I add a git_ commit message in the other terminal_
 
@@ -931,7 +953,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for
+* I add an :ref:`assertion<what is an assertion?>` for ``1``
 
   .. code-block:: python
     :lineno-start: 17
@@ -1187,7 +1209,7 @@ the test passes.
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_is_none_an_integer`
 
   .. code-block:: python
     :lineno-start: 17
@@ -1448,7 +1470,7 @@ the test passes.
 
     AssertionError: 0.0 is an instance of <class 'float'>
 
-  because ``0.0`` is a binary floating point number.
+  because ``0.0`` is a float_.
 
 * I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assert_is_instance>`
 
@@ -1588,7 +1610,7 @@ the test passes.
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_is_none_a_float`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1877,7 +1899,7 @@ the test passes.
 
   the test passes because :ref:`None<what is None?>` is not a string_.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_is_none_a_string`
 
   .. code-block:: python
     :lineno-start: 35
@@ -2168,7 +2190,7 @@ the test passes.
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_is_none_a_tuple`
 
   .. code-block:: python
     :lineno-start: 42
@@ -2459,7 +2481,7 @@ the test passes.
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_is_none_a_list`
 
   .. code-block:: python
     :lineno-start: 49
@@ -2698,7 +2720,7 @@ the test passes.
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_is_none_a_set`
 
   .. code-block:: python
     :lineno-start: 56
@@ -2758,13 +2780,9 @@ Is :ref:`None<what is None?>` a :ref:`dictionary<what is a dictionary?>`?
 * One last test, this one for if :ref:`None<what is None?>` is a :ref:`dictionary (key-value pairs in curly braces '{ }' separated by commas)<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 7-8
+    :lineno-start: 60
+    :emphasize-lines: 3-4
 
-        def test_is_none_a_set(self):
-            self.assertIsNotNone(set())
-            self.assertIsNotNone({0, 1, 2, 'n'})
-            self.assertIsInstance({0, 1, 2, 'n'}, set)
             self.assertNotIsInstance(None, set)
 
         def test_is_none_a_dictionary(self):
@@ -3001,7 +3019,7 @@ the test passes.
 
   the test passes.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_is_none_a_dictionary`
 
   .. code-block:: python
     :lineno-start: 62
@@ -3073,7 +3091,14 @@ sets_ do NOT have key-value pairs.
 
 .. code-block:: python
 
-  {0, 1, 2, 'n'}
+  {
+      0, 1, 2, 'n',
+      'value',
+      'another value',
+      'one more value',
+      'magic value',
+      [0, 1, 2, 'n'],
+  }
 
 ----
 
@@ -3147,13 +3172,6 @@ what is next?
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.
 
-.. toctree::
-  :titlesonly:
-  :maxdepth: 1
-
-  ../../exceptions/AssertionError/AssertionError_w_none
-  ../../functions/functions_w_none
-
 ----
 
 Would you like to use :ref:`assertIsNotNone<another way to test if something is NOT None>` and  :ref:`assertIsNone<another way to test if something is None>` to test these projects?
@@ -3165,7 +3183,7 @@ Would you like to use :ref:`assertIsNotNone<another way to test if something is 
   ../exceptions/AssertionError/AssertionError_w_none
   ../functions/functions_w_none
 
-:ref:`Would you like to use the assertIsNotNone and assertIsNone methods with the assertion_error project?<test AssertionError with assertIsNotNone and assertIsNone>`
+:ref:`Would you like to use the assertIsNotNone and assertIsNone methods with the assertion_error project?<test AssertionError with None>`
 
 ----
 

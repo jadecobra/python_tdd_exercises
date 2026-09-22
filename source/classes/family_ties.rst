@@ -4085,7 +4085,7 @@ what is next?
 * :ref:`what happens when classes have one or more parents<family ties>`
 
 
-:ref:`Would you like to use class attributes with the 'functions' project?<test functions with assertIsNotNone and assertIsNone>`
+:ref:`Would you like to use class attributes with the 'functions' project?<test functions with None>`
 
 ----
 

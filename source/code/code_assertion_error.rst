@@ -187,10 +187,10 @@ The code in ``assertion_error/tests/test_assertion_error.py`` from :ref:`test As
 ----
 
 *********************************************************************************
-test AssertionError with assertIsNotNone and assertIsNone: tests
+test AssertionError with None: tests
 *********************************************************************************
 
-The code in ``assertion_error/tests/test_assertion_error.py`` from :ref:`test AssertionError with assertIsNotNone and assertIsNone`
+The code in ``assertion_error/tests/test_assertion_error.py`` from :ref:`test AssertionError with None`
 
   .. literalinclude:: assertion_error/test_assertion_error_w_none.py
     :language: python

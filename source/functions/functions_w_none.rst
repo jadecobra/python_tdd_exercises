@@ -5,7 +5,7 @@
 .. include:: ../links.rst
 
 #################################################################################
-test functions with assertIsNotNone and assertIsNone
+test functions with None
 #################################################################################
 
 I want to use the :ref:`assertIsNotNone<another way to test if something is NOT None>` and :ref:`assertIsNone methods<another way to test if something is None>` for the :ref:`assertions<what is a function?>` that check if the result of a :ref:`function call<how to call a function>` is :ref:`None<what is None?>`.
@@ -672,7 +672,7 @@ I can use :ref:`assertIsNone methods<another way to test if something is None>` 
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<test functions with assertIsNotNone and assertIsNone: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test functions with None: tests>`
 
 ----
 

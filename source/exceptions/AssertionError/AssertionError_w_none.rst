@@ -1,11 +1,11 @@
 .. meta::
   :description: Continuation of the assertion_error Python TDD project after unittest and the None chapter. Open the existing project (uv run pytest-watcher . --now, 7 passed), edit tests/test_assertion_error.py, and add assertIsNone / assertIsNotNone next to bare assert and assertIs / assertIsNot in test_assertion_error_w_none. Deliberately trigger AssertionError with the wrong method first: assertIsNotNone(None) → "unexpectedly None"; assertIsNone(False) → "False is not None"; same pattern for True, 0, 0.0, '', (), [], set(), {}. Then green with assertIsNone(None) and assertIsNotNone for every non-None value (False, True, empty containers, class attributes an_integer/a_float/…). Remove the commented wrong calls; keep the triple form (assert + assertIs* + assertIsNone/assertIsNotNone). Git commit 'use assertIsNotNone and assertIsNone'. Shows how None-specific unittest methods remove repeating None in assertIs(x, None) / assertIsNot(x, None) while still teaching raise-by-negation error strings. Pumping Python by Jacob Itegboje.
-  :keywords: Jacob Itegboje, Pumping Python, AssertionError assertIsNone, assertIsNotNone, unexpectedly None, False is not None, True is not None, 0 is not None, 0.0 is not None, '' is not None, () is not None, [] is not None, set() is not None, {} is not None, test_assertion_error_w_none, replace assertIs(x, None), assertIsNot(x, None), another way to test if something is None, another way to test if something is NOT None, None chapter continuation, assertion_error project, uv run pytest-watcher, remove the commented lines, red green refactor assertIsNone, python unittest assertIsNone beginner, TDD None identity tests, class attributes empty string list dict set tuple, test AssertionError with assertIsNotNone and assertIsNone
+  :keywords: Jacob Itegboje, Pumping Python, AssertionError assertIsNone, assertIsNotNone, unexpectedly None, False is not None, True is not None, 0 is not None, 0.0 is not None, '' is not None, () is not None, [] is not None, set() is not None, {} is not None, test_assertion_error_w_none, replace assertIs(x, None), assertIsNot(x, None), another way to test if something is None, another way to test if something is NOT None, None chapter continuation, assertion_error project, uv run pytest-watcher, remove the commented lines, red green refactor assertIsNone, python unittest assertIsNone beginner, TDD None identity tests, class attributes empty string list dict set tuple, test AssertionError with None
 
 .. include:: ../../links.rst
 
 #################################################################################
-test AssertionError with assertIsNotNone and assertIsNone
+test AssertionError with None
 #################################################################################
 
 ----
@@ -545,7 +545,7 @@ I can use :ref:`assertIsNone methods<another way to test if something is None>` 
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<test AssertionError with assertIsNotNone and assertIsNone: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<test AssertionError with None: tests>`
 
 ----
 
@@ -571,7 +571,7 @@ what is next?
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.
 
-:ref:`Would you like to use the assertIsNotNone and assertIsNone methods with the functions project?<test functions with assertIsNotNone and assertIsNone>`
+:ref:`Would you like to use the assertIsNotNone and assertIsNone methods with the functions project?<test functions with None>`
 
 ----
 
