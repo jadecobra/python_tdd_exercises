@@ -1656,8 +1656,8 @@ I add a :ref:`method<what is a method?>` to the :ref:`Person class<add Person cl
             self.passed_test = passed_test
             self.age = calculate_age(year_of_birth)
 
-        def check_age(age, response):
-            if age < 18:
+        def check_age(response):
+            if self.age < 18:
                 return False
             return response
 
@@ -1710,23 +1710,34 @@ because I added a new :ref:`method<what is a method?>`.
 * I add ``check_age`` to the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_dir_person_instance`
 
   .. code-block:: python
-    :lineno-start: 310
-    :emphasize-lines: 4
+    :lineno-start: 272
 
-                'age',
-                'can_get_license',
-                'can_vote',
-                'check_age',
-                'first_name',
-                'is_citizen',
-                'last_name',
-                'passed_test',
-                'say_hello',
-                'sex',
-                'year_of_birth',
-            ]
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+        def test_dir_person_instance(self):
+            self.assertEqual(
+                dir(
+                    src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=2026,
+                    )
+                ),
+                [
+                    '__class__', '__delattr__', '__dict__',
+                    ...
+
+  .. code-block:: python
+    :lineno-start: 272
+    :emphasize-lines: 3-5
+    :emphasize-text: check_age
+
+                    '__subclasshook__', '__weakref__',
+                    'age', 'can_get_license', 'can_vote',
+                    'check_age', 'first_name', 'is_citizen',
+                    'last_name', 'passed_test', 'say_hello',
+                    'sex', 'year_of_birth',
+                ]
+            )
 
 
     # Exceptions seen
@@ -1746,93 +1757,86 @@ because I added a new :ref:`method<what is a method?>`.
 
 ----
 
-* I :ref:`call<how to call a function with input>` the :ref:`check_age method<extract check_age method>` from the :ref:`can_vote method<add can_vote method>` in ``src/person/__init__.py``
+* I :ref:`call<how to call a function with input>` the :ref:`check_age method<extract check_age method>` from the :ref:`can_get_license method<add can_get_license method>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 4-9
+    :lineno-start: 24
+    :emphasize-lines: 2
 
-        def can_vote(self):
+        def can_get_license(self):
+            return self.check_age(self.passed_test)
             # age = calculate_age(self.year_of_birth)
             # if age < 18:
-            # if self.age < 18:
-            #     return False
-            # return self.is_citizen
-            return self.check_age(
-                self.age, self.is_citizen
-            )
+            if self.age < 18:
+                return False
+            return self.passed_test
 
-        def check_age(age, response):
+        def can_vote(self):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
     TypeError: Person.check_age() takes
-               2 positional arguments but 3 were given
+               1 positional arguments but 2 were given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to the :ref:`check_age method<extract check_age method>` since it does not use things from the :ref:`Person class<add Person class>`, only what it receives as input
+* I add ``self`` to the parentheses of the :ref:`check_age method<extract check_age method>`
 
   .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 1
+    :lineno-start: 16
+    :emphasize-lines: 4
 
-        @staticmethod
-        def check_age(age, response):
-            if age < 18:
+            self.passed_test = passed_test
+            self.age = calculate_age(year_of_birth)
+
+        def check_age(self, response):
+            if self.age < 18:
                 return False
             return response
 
-        def say_hello(self):
+        def can_get_license(self):
 
   the test passes.
 
-* I remove the commented lines from the :ref:`can_vote method<add can_vote method>`
+* I remove the other statements from the :ref:`can_get_license method<add can_get_license method>`
+
+  .. code-block:: python
+    :lineno-start: 24
+
+        def can_get_license(self):
+            return self.check_age(self.passed_test)
+
+        def can_vote(self):
+
+* I :ref:`call<how to call a function with input>` the :ref:`check_age method<extract check_age method>` from the :ref:`can_vote method<add can_vote method>`
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 2
+
+        def can_vote(self):
+            return self.check_age(self.is_citizen)
+            # age = calculate_age(self.year_of_birth)
+            # if age < 18:
+            if self.age < 18:
+                return False
+            return self.is_citizen
+
+        def say_hello(self):
+
+  the tests are still green.
+
+* I remove the other statements from the :ref:`can_vote method<add can_vote method>`
 
   .. code-block:: python
     :lineno-start: 27
 
         def can_vote(self):
-            return self.check_age(
-                self.age, self.is_citizen
-            )
+            return self.check_age(self.is_citizen)
 
-        @staticmethod
-        def check_age(age, response):
-
-* I :ref:`call<how to call a function with input>` the :ref:`check_age method<extract check_age method>` from the :ref:`can_get_license method<add can_get_license method>`
-
-  .. code-block:: python
-    :lineno-start: 20
-    :emphasize-lines: 4-9
-
-        def can_get_license(self):
-            # age = calculate_age(self.year_of_birth)
-            # if age < 18:
-            # if self.age < 18:
-            #     return False
-            # return self.passed_test
-            return self.check_age(
-                self.age, self.passed_test
-            )
-
-        def can_vote(self):
-
-  the tests are still green.
-
-* I remove the commented lines from the :ref:`can_get_license method<add can_get_license method>`
-
-  .. code-block:: python
-    :lineno-start: 20
-
-        def can_get_license(self):
-            return self.check_age(
-                self.age, self.passed_test
-            )
-
-        def can_vote(self):
+        def say_hello(self):
 
 * I add a git_ commit message in the other terminal_
 
@@ -1877,9 +1881,9 @@ I can use :ref:`if statements<if statements>` to write a program_ that makes dec
 
 My tests have problems:
 
-* The attribute tests - :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person class<test_dir_person_instance>` and they are a problem to maintain. There has to be a better way.
-* I skipped :ref:`test_when_year_of_birth_is_not_an_integer` because it is always in a :red:`RED` state since it causes an :ref:`Exception<how to test that an Exception is raised>`. The only way to know that the code causes the :ref:`Exception<how to test that an Exception is raised>` is to remove the `unittest.skip decorator`_. :ref:`There has to be a better way<how to make a person with exceptions>`
-* :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` also still have the problem where they are the same three tests. There has to be a better way.
+* The attribute tests - :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` catch changes to the :ref:`attributes and methods of the Person class<test_dir_person_instance>` and they are a problem to maintain. :ref:`There has to be a better way<how to make a person with lists>`.
+* I skipped :ref:`test_when_year_of_birth_is_the_future` and :ref:`test_when_year_of_birth_is_not_an_integer` because they are always in a :red:`RED` state since they cause an :ref:`Exception<how to test that an Exception is raised>`. The only way to know that the code causes the :ref:`Exception<how to test that an Exception is raised>` is to remove the `unittest.skip decorator`_. :ref:`There has to be a better way<how to make a person with exceptions>`
+* :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` also still have the problem where they are the same three tests. :ref:`There has to be a better way<how to make a person with loops>`.
 
 ----
 
