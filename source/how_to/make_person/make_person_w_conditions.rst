@@ -496,7 +496,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_instance` because I added a new :ref:`attribute<what is a class attribute?>` (``is_citizen``).
 
-* I add ``is_citizen`` to the expectation of :ref:`test_dir_person_instance` in ``tests/test_person.py``
+* I add ``is_citizen`` to the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_dir_person_instance` in ``tests/test_person.py``
 
   .. code-block:: python
     :lineno-start: 238
@@ -655,25 +655,22 @@ I can do that with an :ref:`if statement<if statements>`
 * I add a test for a person who is a citizen and younger than 18
 
   .. code-block:: python
-    :lineno-start: 191
-    :emphasize-lines: 6-14
+    :lineno-start: 206
+    :emphasize-lines: 3-11
 
-            reality = mary.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
             self.assertEqual(mary.can_vote(), False)
 
         def test_underage_citizen(self):
-            person = src.person.Person(
+            underage = src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
                 year_of_birth=datetime.date.today().year-17,
                 is_citizen=True,
             )
-            self.assertEqual(person.can_vote(), False)
+            self.assertEqual(underage.can_vote(), False)
 
-        def test_when_year_of_birth_is_not_an_integer(self):
+        def test_when_year_of_birth_is_the_future(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -706,61 +703,65 @@ I can do that with an :ref:`if statement<if statements>`
 
         def say_hello(self):
 
-  the test passes because this happens when ``if age < 18:`` runs, Python_ checks if ``age`` which is the result of ``calculate_age(self.year_of_birth)`` is less than ``18``
+  the test passes because Python_ checks if ``age`` which is the result of ``calculate_age(self.year_of_birth)`` is less than ``18``, when ``if age < 18:`` runs
 
-* If ``age`` is greater than or equal to ``18``, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`method<what is a method?>` - ``return self.is_citizen``, which returns
+  * If ``age`` is greater than or equal to ``18``, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`method<what is a method?>` - ``return self.is_citizen``, which returns
 
-  - :red:`False` as the output if the person is not a citizen
+    - :green:`True` as the output, if the person is a citizen
+
+      .. code-block:: shell
+
+        self.is_citizen = True
+        age >= 18
+
+        person.can_vote() -> True
+        └── class Person:
+            └── def can_vote(self):
+                ├── if age < 18:
+                │      return False
+                └── return self.is_citizen
+
+    - :red:`False` as the output if the person is not a citizen
+
+      .. code-block:: shell
+
+        self.is_citizen = False
+        age >= 18
+
+        person.can_vote() -> False
+        └── class Person:
+            └── def can_vote(self):
+                ├── if age < 18:
+                │      return False
+                └── return self.is_citizen
+
+    then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+
+  * If ``age`` is less than ``18``, it goes to the next line - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
     .. code-block:: shell
 
       self.is_citizen = False
-      age >= 18
+      age < 18
 
-      person.can_vote
-      └──def can_vote(self):
-         ├── if age < 18:
-         │      return False
-         └── return self.is_citizen
-
-  - :green:`True` as the output, if the person is a citizen
+      person.can_vote() -> False
+        └── class Person:
+            └── def can_vote(self):
+                └── if age < 18:
+                    └── return False
+                    return self.is_citizen
 
     .. code-block:: shell
 
       self.is_citizen = True
-      age >= 18
+      age < 18
 
-      person.can_vote
-      └──def can_vote(self):
-          ├── if age < 18:
-          │      return False
-          └── return self.is_citizen
-
-  then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
-
-* If ``age`` is less than ``18``, it goes to the next line - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
-
-  .. code-block:: shell
-
-    self.is_citizen = False
-    age < 18
-
-    person.can_vote
-    └──def can_vote(self):
-       └── if age < 18:
-           └── return False
-           return self.is_citizen
-
-  .. code-block:: shell
-
-    self.is_citizen = True
-    age < 18
-
-    person.can_vote
-    └──def can_vote(self):
-       └── if age < 18:
-           └── return False
-           return self.is_citizen
+      person.can_vote() -> False
+        └── class Person:
+            └── def can_vote(self):
+                └── if age < 18:
+                    └── return False
+                    return self.is_citizen
 
 * I add a git_ commit message in the other terminal_
 
@@ -782,26 +783,30 @@ add can_get_license method
 
 ----
 
-I add a :ref:`call<how to call a function with input>` to ``can_get_license`` from :ref:`test_joe`
+* I go back to the terminal_ where the tests are running
+* I add a :ref:`call<how to call a function with input>` to :ref:`can_get_license<add can_get_license method>` from :ref:`test_joe` in ``tests/test_person.py``
 
-.. code-block:: python
-  :lineno-start: 54
-  :emphasize-lines: 5
+  .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 8
 
-          reality = joe.say_hello()
-          assert reality == my_expectation
-          self.assertEqual(reality, my_expectation)
-          self.assertEqual(joe.can_vote(), True)
-          self.assertEqual(joe.can_get_license(), False)
+            joe = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+            self.assertEqual(joe.can_vote(), True)
+            self.assertEqual(joe.can_get_license(), False)
 
-      def test_jane(self):
+        def test_jane(self):
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AttributeError: 'Person' object
-                  has no attribute 'can_get_license'
+    AttributeError: 'Person' object
+                    has no attribute 'can_get_license'
 
 ----
 
@@ -811,19 +816,17 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-* I add a :ref:`method definition<how to make a function that takes input>` to the :ref:`Person class<add Person class>` in ``src/person/__init__.py``
+* I add a :ref:`method definition<how to make a function that takes input>` for :ref:`can_get_license<add can_get_license method>` to the :ref:`Person class<add Person class>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 14-15
-
-    class Person:
+    :lineno-start: 6
+    :emphasize-lines: 12-13
 
         def __init__(
-            self, first_name, last_name,
-            sex, year_of_birth=None,
-            is_citizen=True,
-        ):
+                self, first_name, last_name,
+                sex, year_of_birth=None,
+                is_citizen=True,
+            ):
             self.first_name = first_name
             self.last_name = last_name
             self.year_of_birth = year_of_birth
@@ -845,49 +848,70 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>`
 
   .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 1
+    :lineno-start: 15
+    :emphasize-lines: 3
+
+            self.is_citizen = is_citizen
 
         @staticmethod
         def can_get_license():
             return False
-
-        def can_vote(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_class` and :ref:`test_dir_person_instance`.
 
 * I add ``can_get_license`` to :ref:`test_dir_person_class` in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 254
-    :emphasize-lines: 1
+    :lineno-start: 240
 
-                'can_get_license',
-                'can_vote',
-                'say_hello'
-            ]
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+        def test_dir_person_class(self):
+            self.assertEqual(
+                dir(src.person.Person),
+                [
+                    '__class__', '__delattr__', '__dict__',
+                    ...
+
+  .. code-block:: python
+    :lineno-start: 240
+    :emphasize-lines: 2
+    :emphasize-text: can_get_license
+
+                    '__subclasshook__', '__weakref__',
+                    'can_get_license', 'can_vote', 'say_hello'
+                ]
+            )
 
         def test_dir_person_instance(self):
 
 * I add ``can_get_license`` to :ref:`test_dir_person_instance`
 
   .. code-block:: python
-    :lineno-start: 299
-    :emphasize-lines: 1
+    :lineno-start: 258
 
-                'can_get_license',
-                'can_vote',
-                'first_name',
-                'is_citizen',
-                'last_name',
-                'say_hello',
-                'sex',
-                'year_of_birth',
-            ]
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+        def test_dir_person_instance(self):
+            self.assertEqual(
+                dir(
+                    src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=2026,
+                    )
+                ),
+                [
+                    '__class__', '__delattr__', '__dict__',
+                    ...
+
+  .. code-block:: python
+    :lineno-start: 299
+    :emphasize-lines: 2-4
+
+                    '__subclasshook__', '__weakref__',
+                    'can_get_license', 'can_vote', 'first_name',
+                    'is_citizen', 'last_name', 'say_hello',
+                    'sex', 'year_of_birth',
+                ]
+            )
 
 
     # Exceptions seen
@@ -909,7 +933,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 add passed_test attribute
 *********************************************************************************
 
-I want ``can_get_license`` to return
+I want :ref:`can_get_license<add can_get_license method>` to return
 
 * :red:`False` for ``no`` the person cannot get a license if the person did not pass the test.
 * :green:`True` for ``yes`` the person can get a license if the person passed the test.
@@ -922,25 +946,30 @@ I want ``can_get_license`` to return
 
 ----
 
-I add a :ref:`call<how to call a function with input>` to ``can_get_license`` from :ref:`test_mary`
+* I go back to the terminal_ where the tests are running
+* I add a :ref:`call<how to call a function with input>` to :ref:`can_get_license<add can_get_license method>` from :ref:`test_mary`
 
-.. code-block:: python
-  :lineno-start: 192
-  :emphasize-lines: 5
+  .. code-block:: python
+    :lineno-start: 200
+    :emphasize-lines: 9
 
-          reality = mary.say_hello()
-          assert reality == my_expectation
-          self.assertEqual(reality, my_expectation)
-          self.assertEqual(mary.can_vote(), False)
-          self.assertEqual(mary.can_get_license(), True)
+            mary = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+                is_citizen=False,
+            )
+            self.assertEqual(mary.can_vote(), False)
+            self.assertEqual(mary.can_get_license(), True)
 
-      def test_underage_citizen(self):
+        def test_underage_citizen(self):
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AssertionError: False != True
+    AssertionError: False != True
 
 ----
 
@@ -953,7 +982,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add ``passed_test`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<add Person class>` for ``mary``
 
   .. code-block:: python
-    :lineno-start: 184
+    :lineno-start: 200
     :emphasize-lines: 7
 
             mary = src.person.Person(
@@ -964,10 +993,6 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                 is_citizen=False,
                 passed_test=True,
             )
-
-            reality = mary.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
             self.assertEqual(mary.can_vote(), False)
             self.assertEqual(mary.can_get_license(), True)
 
@@ -987,16 +1012,15 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 7
+    :emphasize-lines: 6
 
     class Person:
 
         def __init__(
-            self, first_name, last_name,
-            sex, year_of_birth=None,
-            is_citizen=True,
-            passed_test,
-        ):
+                self, first_name, last_name,
+                sex, year_of_birth=None,
+                is_citizen=True, passed_test,
+            ):
 
   the terminal_ is my friend, and shows SyntaxError_
 
@@ -1011,35 +1035,29 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 7-8
+    :emphasize-lines: 6
 
     class Person:
 
         def __init__(
-            self, first_name, last_name,
-            sex, year_of_birth=None,
-            is_citizen=True,
-            # passed_test,
-            passed_test=False,
-        ):
+                self, first_name, last_name,
+                sex, year_of_birth=None,
+                is_citizen=True, passed_test=False,
+            ):
 
   the terminal_ goes back to the :ref:`AssertionError<what causes AssertionError?>`.
 
 * I add an :ref:`instance attribute<what is a class attribute?>` for ``passed_test`` so I can use it in the :ref:`can_get_license method<add can_get_license method>`
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 15
-
-    class Person:
+    :lineno-start: 6
+    :emphasize-lines: 11
 
         def __init__(
-            self, first_name, last_name,
-            sex, year_of_birth=None,
-            is_citizen=True,
-            # passed_test,
-            passed_test=False,
-        ):
+                self, first_name, last_name,
+                sex, year_of_birth=None,
+                is_citizen=True, passed_test=False,
+            ):
             self.first_name = first_name
             self.last_name = last_name
             self.year_of_birth = year_of_birth
@@ -1048,13 +1066,14 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             self.passed_test = passed_test
 
         @staticmethod
+        def can_get_license():
 
   the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`.
 
 * I use ``self.passed_test`` in the :ref:`can_get_license method<add can_get_license method>`
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 18
     :emphasize-lines: 3-4
 
         @staticmethod
@@ -1073,7 +1092,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I remove the :ref:`staticmethod decorator<what is the staticmethod decorator?>` from the :ref:`can_get_license method<add can_get_license method>` then add ``self`` to the parentheses
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 18
     :emphasize-lines: 1-3
 
         # @staticmethod
@@ -1082,28 +1101,36 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             # return False
             return self.passed_test
 
-        def can_vote(self):
-
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_instance` because I added a new :ref:`attribute<what is a class attribute?>` (``passed_test``).
 
-* I add ``passed_test`` to ``my_expectation`` in :ref:`test_dir_person_instance` in ``tests/test_person.py``
+* I add ``passed_test`` to the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_dir_person_instance` in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 301
-    :emphasize-lines: 6
+    :lineno-start: 260
 
-                'can_get_license',
-                'can_vote',
-                'first_name',
-                'is_citizen',
-                'last_name',
-                'passed_test',
-                'say_hello',
-                'sex',
-                'year_of_birth',
-            ]
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+        def test_dir_person_instance(self):
+            self.assertEqual(
+                dir(
+                    src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=2026,
+                    )
+                ),
+                [
+                    '__class__', '__delattr__', '__dict__',
+                    ...
+
+  .. code-block:: python
+    :lineno-start: 281
+    :emphasize-lines: 2-3
+
+                    'can_get_license', 'can_vote', 'first_name',
+                    'is_citizen', 'last_name', 'passed_test',
+                    'say_hello', 'sex', 'year_of_birth',
+                ]
+            )
 
 
     # Exceptions seen
@@ -1118,23 +1145,11 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I remove the commented lines from ``src/person/__init__.py``
+* I remove the commented lines from the :ref:`can_get_license method<add can_get_license method>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :lineno-start: 4
+    :lineno-start: 15
 
-    class Person:
-
-        def __init__(
-            self, first_name, last_name,
-            sex, year_of_birth=None,
-            is_citizen=True,
-            passed_test=False,
-        ):
-            self.first_name = first_name
-            self.last_name = last_name
-            self.year_of_birth = year_of_birth
-            self.sex = sex
             self.is_citizen = is_citizen
             self.passed_test = passed_test
 
@@ -1143,15 +1158,19 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         def can_vote(self):
 
-* I add a :ref:`call<how to call a function with input>` to ``can_get_license`` from :ref:`test_john`, in ``tests/test_person.py``
+* I add a :ref:`call<how to call a function with input>` to :ref:`can_get_license<add can_get_license method>` from :ref:`test_john`, in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 147
-    :emphasize-lines: 5
+    :lineno-start: 165
+    :emphasize-lines: 9
 
-            reality = john.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            john = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+                is_citizen=False,
+            )
             self.assertEqual(john.can_vote(), False)
             self.assertEqual(john.can_get_license(), False)
 
@@ -1159,15 +1178,18 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the test passes because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
-* I add a :ref:`call<how to call a function with input>` to ``can_get_license`` from :ref:`test_jane`, in ``tests/test_person.py``
+* I add a :ref:`call<how to call a function with input>` to :ref:`can_get_license<add can_get_license method>` from :ref:`test_jane`, in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 99
-    :emphasize-lines: 5
+    :lineno-start: 128
+    :emphasize-lines: 8
 
-            reality = jane.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+            jane = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
             self.assertEqual(jane.can_vote(), True)
             self.assertEqual(jane.can_get_license(), True)
 
@@ -1184,7 +1206,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add ``passed_test`` to the :ref:`call<how to call a function with input>` to the :ref:`Person class<add Person class>` for ``jane``
 
   .. code-block:: python
-    :lineno-start: 92
+    :lineno-start: 128
     :emphasize-lines: 6
 
             jane = src.person.Person(
@@ -1194,10 +1216,6 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                 year_of_birth=year_of_birth,
                 passed_test=True,
             )
-
-            reality = jane.say_hello()
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
             self.assertEqual(jane.can_vote(), True)
             self.assertEqual(jane.can_get_license(), True)
 
@@ -1238,11 +1256,11 @@ I want the :ref:`can_get_license method<add can_get_license method>` to use two 
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_underage_citizen<add condition to can_vote>` for a person who is younger than 18 and passed the test
 
   .. code-block:: python
-    :lineno-start: 202
-    :emphasize-lines: 8, 11-13
+    :lineno-start: 214
+    :emphasize-lines: 7, 11
 
         def test_underage_citizen(self):
-            person = src.person.Person(
+            underage = src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
@@ -1250,12 +1268,10 @@ I want the :ref:`can_get_license method<add can_get_license method>` to use two 
                 is_citizen=True,
                 passed_test=True,
             )
-            self.assertEqual(person.can_vote(), False)
-            self.assertEqual(
-                person.can_get_license(), False
-            )
+            self.assertEqual(underage.can_vote(), False)
+            self.assertEqual(underage.can_get_license(), False)
 
-        def test_when_year_of_birth_is_not_an_integer(self):
+        def test_when_year_of_birth_is_the_future(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1263,7 +1279,7 @@ I want the :ref:`can_get_license method<add can_get_license method>` to use two 
 
     AssertionError: True != False
 
-  because ``can_get_license`` currently returns the value of ``passed_test``. It does not care about the age of the person.
+  because :ref:`can_get_license<add can_get_license method>` currently returns the value of ``passed_test``. It does not care about the age of the person.
 
 ----
 
@@ -1276,7 +1292,7 @@ I want the :ref:`can_get_license method<add can_get_license method>` to use two 
 I add an :ref:`if statement<if statements>` with a :ref:`call<how to call a function with input>` to the :ref:`calculate_age function<add calculate_age function>` from the :ref:`can_get_license method<add can_get_license method>` in ``src/person/__init__.py``
 
 .. code-block:: python
-  :lineno-start: 19
+  :lineno-start: 18
   :emphasize-lines: 3-4
 
       def can_get_license(self):
@@ -1287,22 +1303,9 @@ I add an :ref:`if statement<if statements>` with a :ref:`call<how to call a func
 
       def can_vote(self):
 
-the test passes because this happens when ``if age < 18:`` runs, Python_ checks if ``age`` which is the result of ``calculate_age(self.year_of_birth)`` is less than ``18``
+the test passes because Python_ checks if ``age`` which is the result of ``calculate_age(self.year_of_birth)`` is less than ``18``, when ``if age < 18:`` runs
 
 * If ``age`` is greater than or equal to ``18``, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`method<what is a method?>` - ``return self.passed_test``, which returns
-
-  - :red:`False` as the output, if the person failed the test
-
-    .. code-block:: shell
-
-      self.passed_test = False
-      age >= 18
-
-      person.can_get_license
-      └──def can_get_license(self):
-         ├── if age < 18:
-         │      return False
-         └── return self.passed_test
 
   - :green:`True` as the output, if the person passed the test
 
@@ -1311,11 +1314,26 @@ the test passes because this happens when ``if age < 18:`` runs, Python_ checks 
       self.passed_test = True
       age >= 18
 
-      person.can_get_license
-      └──def can_get_license(self):
-         ├── if age < 18:
-         │      return False
-         └── return self.passed_test
+      person.can_get_license() -> True
+      └── class Person:
+          └── def can_get_license(self):
+              ├── if age < 18:
+              │      return False
+              └── return self.passed_test
+
+  - :red:`False` as the output, if the person failed the test
+
+    .. code-block:: shell
+
+      self.passed_test = False
+      age >= 18
+
+      person.can_get_license() -> False
+      └── class Person:
+          └── def can_get_license(self):
+              ├── if age < 18:
+              │      return False
+              └── return self.passed_test
 
   then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
@@ -1326,22 +1344,24 @@ the test passes because this happens when ``if age < 18:`` runs, Python_ checks 
     self.passed_test = False
     age < 18
 
-    person.can_get_license
-    └──def can_get_license(self):
-       └── if age < 18:
-           └── return False
-           return self.passed_test
+    person.can_get_license() -> False
+    └── class Person:
+        └── def can_get_license(self):
+            └── if age < 18:
+                └── return False
+                return self.passed_test
 
   .. code-block:: shell
 
     self.passed_test = True
     age < 18
 
-    person.can_get_license
-    └──def can_get_license(self):
-       └── if age < 18:
-           └── return False
-           return self.passed_test
+    person.can_get_license() -> False
+    └── class Person:
+        └── def can_get_license(self):
+            └── if age < 18:
+                └── return False
+                return self.passed_test
 
 * I add a git_ commit message in the other terminal_
 
@@ -1357,7 +1377,9 @@ the test passes because this happens when ``if age < 18:`` runs, Python_ checks 
 extract age instance attribute
 *********************************************************************************
 
-Three of the :ref:`methods<what is a method?>` of the :ref:`Person class<add Person class>` :ref:`call<how to call a function with input>` the :ref:`calculate_age function<add calculate_age function>`.
+The :ref:`can_get_license<add can_get_license>`, :ref:`can_vote<add can_vote method>` and :ref:`say_hello methods<test_classy_person_says_hello>` of the :ref:`Person class<add Person class>` all :ref:`call the calculate_age function<add calculate_age function>`.
+
+I can make an :ref:`attribute<what is a class attribute?>` to remove the repetition of the :ref:`calls to the calculate_age function<add calculate_age function>`.
 
 ----
 
@@ -1371,39 +1393,37 @@ I add an :ref:`instance attribute<what is a class attribute?>` to the :ref:`__in
 
 .. code-block:: python
   :lineno-start: 4
-  :emphasize-lines: 15
+  :emphasize-lines: 14
 
-  class Person:
+    class Person:
 
-      def __init__(
-          self, first_name, last_name,
-          sex, year_of_birth=None,
-          is_citizen=True,
-          passed_test=False,
-      ):
-          self.first_name = first_name
-          self.last_name = last_name
-          self.year_of_birth = year_of_birth
-          self.sex = sex
-          self.is_citizen = is_citizen
-          self.passed_test = passed_test
-          self.age = calculate_age(year_of_birth)
+        def __init__(
+                self, first_name, last_name,
+                sex, year_of_birth=None,
+                is_citizen=True, passed_test=False,
+            ):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.year_of_birth = year_of_birth
+            self.sex = sex
+            self.is_citizen = is_citizen
+            self.passed_test = passed_test
+            self.age = calculate_age(year_of_birth)
 
-      def can_get_license(self):
+        def can_get_license(self):
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
-  FAILED ...::TestPerson::test_dir_person_instance -
-      AssertionError: assert ['__class__',...'__eq__', ...]
-                          == ['__class__',...'__eq__', ...]
-  FAILED ...::TestPerson::
-      test_when_year_of_birth_is_not_an_integer -
-          AssertionError
+    FAILED ...test_dir_person_instance - AssertionError:
+        Lists differ: ['__c[396 chars]_', 'age', 'can_ge...
+    FAILED ...test_when_year_of_birth_is_not_an_integer - AssertionError
+    FAILED ...test_when_year_of_birth_is_the_future - AssertionError
 
+- :ref:`test_when_year_of_birth_is_the_future` fails because the age is less than ``0``.
+- :ref:`test_when_year_of_birth_is_not_an_integer` fails because an :ref:`instance of the Person class<add Person class>` is made with a ``year_of_birth`` that is not an integer_ (:ref:`None<what is None?>`).
 - :ref:`test_dir_person_instance` fails because I just added a new :ref:`class attribute<what is a class attribute?>`.
-- :ref:`test_when_year_of_birth_is_not_an_integer` now fails when an :ref:`instance of the Person class<add Person class>` is made with a ``year_of_birth`` that is not an integer_.
 
 ----
 
@@ -1411,7 +1431,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 how to skip a test
 *********************************************************************************
 
-I can use `unittest.skip decorator`_ to skip a test. The problem with this solution is that I no longer know if the program does the thing the skipped test was written for.
+I can use `unittest.skip decorator`_ to skip a test. The problem with skipping tests is that I will no longer know if the program does the thing the skipped tests were written for.
 
 ----
 
@@ -1421,22 +1441,50 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with this solut
 
 ----
 
-* I add the `unittest.skip decorator`_ to :ref:`test_when_year_of_birth_is_not_an_integer` with a note that it will always fail since it uses a year of birth that is not an integer, in ``tests/test_person.py``
+* I add the `unittest.skip decorator`_ to :ref:`test_when_year_of_birth_is_the_future` with a note that it will always fail since it uses a year of birth that is in the future, in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 216
-    :emphasize-lines: 1
+    :lineno-start: 223
+    :emphasize-lines: 4-6
 
-        @unittest.skip('will always fail')
-        def test_when_year_of_birth_is_not_an_integer(self):
-            person = src.person.Person(
+            self.assertEqual(underage.can_vote(), False)
+            self.assertEqual(underage.can_get_license(), False)
+
+        @unittest.skip(
+            'fails because year_of_birth is in the future'
+        )
+        def test_when_year_of_birth_is_the_future(self):
+            src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                # year_of_birth=None,    # fails
-                # year_of_birth=2026.0,  # fails
-                # year_of_birth='2026',  # fails
-                # year_of_birth=(2026,), # fails
+                year_of_birth=datetime.date.today().year+1,
+            )
+            # ).say_hello() fails
+            # because year_of_birth is in the future
+
+        def test_when_year_of_birth_is_not_an_integer(self):
+
+* I add the `unittest.skip decorator`_ to :ref:`test_when_year_of_birth_is_not_an_integer` with a note that it will always fail since it uses a year of birth that is not an integer_
+
+  .. code-block:: python
+    :lineno-start: 237
+    :emphasize-lines: 3-5
+
+            # because year_of_birth is in the future
+
+        @unittest.skip(
+            'fails because year_of_birth is not an integer'
+        )
+        def test_when_year_of_birth_is_not_an_integer(self):
+            src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                # year_of_birth=None,     # fails
+                # year_of_birth=2026.0,   # fails
+                # year_of_birth='2026',   # fails
+                # year_of_birth=(2026,),  # fails
             )
 
         def test_dir_person_class(self):
@@ -1451,25 +1499,37 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with this solut
                             == ['__class__',...'__eq__', ...]
     ======== 1 failed, 6 passed, 1 skipped in S.TUs ==========
 
-* I add ``age`` to ``my_expectation`` in :ref:`test_dir_person_instance`
+* I add ``age`` to the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_dir_person_instance`
 
   .. code-block:: python
-    :lineno-start: 309
-    :emphasize-lines: 1
+    :lineno-start: 271
 
-                'age',
-                'can_get_license',
-                'can_vote',
-                'first_name',
-                'is_citizen',
-                'last_name',
-                'passed_test',
-                'say_hello',
-                'sex',
-                'year_of_birth',
-            ]
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+        def test_dir_person_instance(self):
+            self.assertEqual(
+                dir(
+                    src.person.Person(
+                        first_name='first_name',
+                        last_name='last_name',
+                        sex='M',
+                        year_of_birth=2026,
+                    )
+                ),
+                [
+                    '__class__', '__delattr__', '__dict__',
+                    ...
+
+  .. code-block:: python
+    :lineno-start: 291
+    :emphasize-lines: 2-5
+    :emphasize-text: age
+
+                    '__subclasshook__', '__weakref__',
+                    'age', 'can_get_license', 'can_vote',
+                    'first_name', 'is_citizen', 'last_name',
+                    'passed_test', 'say_hello', 'sex',
+                    'year_of_birth',
+                ]
+            )
 
 
     # Exceptions seen
@@ -1487,7 +1547,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with this solut
 * I use ``self.age`` in the :ref:`can_get_license method<add can_get_license method>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 19
     :emphasize-lines: 2-4
 
         def can_get_license(self):
@@ -1504,7 +1564,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with this solut
 * I use ``self.age`` in the :ref:`can_vote method<add can_vote method>`
 
   .. code-block:: python
-    :lineno-start: 27
+    :lineno-start: 26
     :emphasize-lines: 2-4
 
         def can_vote(self):
@@ -1521,7 +1581,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with this solut
 * I use ``self.age`` in the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 33
     :emphasize-lines: 5-6
 
         def say_hello(self):
@@ -1540,7 +1600,7 @@ I can use `unittest.skip decorator`_ to skip a test. The problem with this solut
 * I remove the commented line from the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 33
 
         def say_hello(self):
             return (
@@ -1571,6 +1631,14 @@ extract check_age method
 - return :red:`False` if ``self.age`` is less than ``18``
 - return something else if ``self.age`` is NOT less than ``18``
 
+.. code-block:: python
+
+  if self.age < 18:
+      return False
+  return something_else
+
+I can make a :ref:`method<what is a method?>` that removes the repetition.
+
 ----
 
 =================================================================================
@@ -1582,24 +1650,29 @@ extract check_age method
 I add a :ref:`method<what is a method?>` to the :ref:`Person class<add Person class>` that checks if the age is less than ``18`` and returns something else if it is not
 
 .. code-block:: python
-  :lineno-start: 27
-  :emphasize-lines: 8-11
+  :lineno-start: 16
+  :emphasize-lines: 4-7
 
-      def can_vote(self):
-          # age = calculate_age(self.year_of_birth)
-          # if age < 18:
-          if self.age < 18:
-              return False
-          return self.is_citizen
+            self.passed_test = passed_test
+            self.age = calculate_age(year_of_birth)
 
-      def check_age(age, response):
-          if age < 18:
-              return False
-          return response
+        def check_age(age, response):
+            if age < 18:
+                return False
+            return response
 
-      def say_hello(self):
+        def can_get_license(self):
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` because I added a new :ref:`method<what is a method?>`.
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  FAILED ...test_dir_person_class - AssertionError:
+      Lists differ: ['__c[393 chars]ef__', 'can_get_li...
+  FAILED ...test_dir_person_instance - AssertionError:
+      Lists differ: ['__c[434 chars]e', 'check_age', '...
+
+because I added a new :ref:`method<what is a method?>`.
 
 ----
 
@@ -1609,23 +1682,32 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I add ``check_age`` to ``my_expectation`` in :ref:`test_dir_person_class` in ``tests/test_person.py``
+* I add ``check_age`` to the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_dir_person_class` in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 263
-    :emphasize-lines: 3
+    :lineno-start: 253
 
-                'can_get_license',
-                'can_vote',
-                'check_age',
-                'say_hello',
-            ]
-            assert reality == my_expectation
-            self.assertEqual(reality, my_expectation)
+        def test_dir_person_class(self):
+            self.assertEqual(
+                dir(src.person.Person),
+                [
+                    '__class__', '__delattr__', '__dict__',
+                    ...
+
+  .. code-block:: python
+    :lineno-start: 253
+    :emphasize-lines: 2-3
+    :emphasize-text: check_age
+
+                    '__subclasshook__', '__weakref__',
+                    'can_get_license', 'can_vote', 'check_age',
+                    'say_hello'
+                ]
+            )
 
         def test_dir_person_instance(self):
 
-* I add ``check_age`` to ``my_expectation`` in :ref:`test_dir_person_instance`
+* I add ``check_age`` to the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_dir_person_instance`
 
   .. code-block:: python
     :lineno-start: 310

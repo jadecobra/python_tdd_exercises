@@ -3910,7 +3910,7 @@ the test passes.
 
   because the result of ``bool(set())`` is :ref:`False<test_what_is_false>`.
 
-* I change assertTrue_ to assertFalse_ for ``bool(set())``
+* I change assertTrue_ to assertFalse_ for ``set()``
 
   .. code-block:: python
     :lineno-start: 99
