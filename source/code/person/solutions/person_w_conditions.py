@@ -4,11 +4,10 @@ import datetime
 class Person:
 
     def __init__(
-        self, first_name, last_name,
-        sex, year_of_birth=None,
-        is_citizen=True,
-        passed_test=False,
-    ):
+            self, first_name, last_name,
+            sex, year_of_birth=None,
+            is_citizen=True, passed_test=False,
+        ):
         self.first_name = first_name
         self.last_name = last_name
         self.year_of_birth = year_of_birth
@@ -17,21 +16,16 @@ class Person:
         self.passed_test = passed_test
         self.age = calculate_age(year_of_birth)
 
-    def can_get_license(self):
-        return self.check_age(
-            self.age, self.passed_test
-        )
-
-    def can_vote(self):
-        return self.check_age(
-            self.age, self.is_citizen
-        )
-
-    @staticmethod
-    def check_age(age, response):
-        if age < 18:
+    def check_age(self, response):
+        if self.age < 18:
             return False
         return response
+
+    def can_get_license(self):
+        return self.check_age(self.passed_test)
+
+    def can_vote(self):
+        return self.check_age(self.is_citizen)
 
     def say_hello(self):
         return (
@@ -47,13 +41,14 @@ def calculate_age(year_of_birth):
         datetime.date.today().year
       - year_of_birth
     )
+    assert age >= 0
     assert age <= 120
     return age
 
 
 def say_hello(
-    first_name, last_name, year_of_birth,
-):
+        first_name, last_name, year_of_birth
+    ):
     return (
         f'Hello, my name is {first_name}'
         f' {last_name} and I am'

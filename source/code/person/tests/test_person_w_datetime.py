@@ -121,9 +121,6 @@ class TestPerson(unittest.TestCase):
         last_name = 'smith'
         sex = 'M'
         year_of_birth = 1980
-        # year_of_birth = 1580
-        # raises AssertionError
-        # because it is older than 120
 
         self.assert_person_factory_works(
             first_name=first_name,
@@ -171,11 +168,21 @@ class TestPerson(unittest.TestCase):
             year_of_birth=year_of_birth,
         )
 
-    def test_when_year_of_birth_is_the_future(self):
+    def test_when_person_is_older_than_120(self):
         src.person.Person(
             first_name='first_name',
             last_name='last_name',
             sex='M',
+            year_of_birth=datetime.date.today().year-121
+        )
+        # ).say_hello() fails
+        # because person is older than 120
+
+    def test_when_year_of_birth_is_the_future(self):
+        src.person.Person(
+            first_name='first_name',
+            last_name='last_name',
+            sex='F',
             year_of_birth=datetime.date.today().year+1,
         )
         # ).say_hello() fails
@@ -191,6 +198,8 @@ class TestPerson(unittest.TestCase):
             # year_of_birth='2026',   # fails
             # year_of_birth=(2026,),  # fails
         )
+        # ).say_hello() fails
+        # because year_of_birth is not an integer
 
     def test_dir_person_class(self):
         self.assertEqual(

@@ -263,7 +263,8 @@ The code added to ``person/tests/test_person.py`` from :ref:`test person with da
   :caption: person/tests/test_person.py
   :language: python
   :linenos:
-  :lines: 1-23
+  :lines: 1-11
+
 .. literalinclude:: person/tests/test_person_w_datetime.py
   :caption: person/tests/test_person.py
   :language: python
@@ -286,19 +287,25 @@ The code added to ``person/tests/test_person.py`` from :ref:`test person with da
   :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 119
-  :lines: 119-146
+  :lines: 119-143
 
 .. literalinclude:: person/tests/test_person_w_datetime.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 174
-  :lines: 174-182
+  :lineno-start: 171
+  :lines: 171-179
 
 .. literalinclude:: person/tests/test_person_w_datetime.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 184
-  :lines: 184-195
+  :lineno-start: 181
+  :lines: 181-189
+
+.. literalinclude:: person/tests/test_person_w_datetime.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 191
+  :lines: 191-204
 
 ----
 

@@ -41,7 +41,8 @@ I add the following code by the end of the chapter
   :caption: person/tests/test_person.py
   :language: python
   :linenos:
-  :lines: 1-23
+  :lines: 1-11
+
 .. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
   :caption: person/tests/test_person.py
   :language: python
@@ -64,19 +65,25 @@ I add the following code by the end of the chapter
   :caption: person/tests/test_person.py
   :language: python
   :lineno-start: 119
-  :lines: 119-146
+  :lines: 119-143
 
 .. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 174
-  :lines: 174-182
+  :lineno-start: 171
+  :lines: 171-179
 
 .. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 184
-  :lines: 184-195
+  :lineno-start: 181
+  :lines: 181-189
+
+.. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 191
+  :lines: 191-204
 
 -----
 
@@ -1449,7 +1456,7 @@ The tests use the right calculation for the age, and the solution still uses a f
 ----
 
 *********************************************************************************
-assert person is alive
+test_when_person_is_older_than_120
 *********************************************************************************
 
 I want the :ref:`calculate_age function<add calculate_age function>` to make sure that the age of the person is not more than 120 because I do not know that there are any people alive older than that, yet. For example ``john smith`` has a ``year_of_birth`` of ``1580`` which makes him too old to be alive.
@@ -1533,20 +1540,16 @@ the test passes.
 
 ----
 
-* I add a comment about the bad ``year_of_birth``
+* I remove the commented line from :ref:`test_john`
 
   .. code-block:: python
     :lineno-start: 119
-    :emphasize-lines: 5-8
 
         def test_john(self):
             first_name = 'john'
             last_name = 'smith'
             sex = 'M'
             year_of_birth = 1980
-            # year_of_birth = 1580
-            # raises AssertionError
-            # because it is older than 120
 
             self.assert_person_factory_works(
                 first_name=first_name,
@@ -1554,6 +1557,68 @@ the test passes.
                 sex=sex,
                 year_of_birth=year_of_birth,
             )
+
+* I add a test for when the person is older than ``120``
+
+  .. code-block:: python
+    :lineno-start: 145
+
+    def test_mary(self):
+        ...
+
+  .. code-block:: python
+    :lineno-start: 164
+    :emphasize-lines: 8-14
+
+        self.assert_person_can_say_hello(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+
+    def test_when_person_is_older_than_120(self):
+        src.person.Person(
+            first_name='first_name',
+            last_name='last_name',
+            sex='M',
+            year_of_birth=datetime.date.today().year-121
+        ).say_hello()
+
+    def test_dir_person_class(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       AssertionError
+
+  - I use ``datetime.date.today().year - 121`` to make sure the person is always older than ``120``
+  - The ``short test summary info`` shows me what test the error happened in
+
+    .. code-block:: python
+
+      FAILED ...test_when_person_is_older_than_120 - AssertionError
+
+* I remove the :ref:`call to the say_hello method<test_classy_person_says_hello>` then add a comment about the failure
+
+  .. code-block:: python
+    :lineno-start: 171
+    :emphasize-lines: 7-9
+
+        def test_when_person_is_older_than_120(self):
+            src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                year_of_birth=datetime.date.today().year-121
+            )
+            # ).say_hello() fails
+            # because person is older than 120
+
+        def test_dir_person_class(self):
+
+  the test is green because there are no :ref:`calls<how to call a function>` that cause an :ref:`Exception<how to handle Exceptions in tests>`.
 
 * I remove the commented line from the :ref:`calculate_age function<add calculate_age function>` in ``src/person/__init__.py``
 
@@ -1576,9 +1641,10 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'assert person is alive'
+    git commit -am \
+    'add test_when_person_is_older_than_120:
 
 ----
 
@@ -1600,29 +1666,18 @@ I want the :ref:`calculate_age function<add calculate_age function>` to also mak
 * I add a new test for when ``year_of_birth`` is in the future, in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 148
+    :lineno-start: 178
+    :emphasize-lines: 4-13
 
-        def test_mary(self):
-            first_name = 'mary'
-            ...
-
-  .. code-block:: python
-    :lineno-start: 167
-    :emphasize-lines: 8-17
-
-            self.assert_person_can_say_hello(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
+            # ).say_hello() fails
+            # because person is older than 120
 
         def test_when_year_of_birth_is_the_future(self):
             self.assertEqual(
                 src.person.Person(
                     first_name='first_name',
                     last_name='last_name',
-                    sex='M',
+                    sex='F',
                     year_of_birth=datetime.date.today().year+1,
                 ).say_hello(),
                 AssertionError
@@ -1651,7 +1706,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to also mak
 * I add an :ref:`assertion<what is an assertion?>` to the :ref:`calculate age function<add calculate_age function>` to make sure that the it never returns a number that is less than ``0``, in ``src/person/__init__.py``
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 23
     :emphasize-lines: 6
 
     def calculate_age(year_of_birth):
@@ -1680,10 +1735,10 @@ I want the :ref:`calculate_age function<add calculate_age function>` to also mak
 
     FAILED ...test_when_year_of_birth_is_the_future - AssertionError
 
-* I change the :ref:`assertion<what is an assertion?>` in :ref:`test_when_year_of_birth_is_the_future`, in ``tests/test_person.py``
+* I remove the :ref:`assertion<what is an assertion?>` and :ref:`call to the say_hello method<test_classy_person_can_say_hello>` in :ref:`test_when_year_of_birth_is_the_future`, in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 174
+    :lineno-start: 181
     :emphasize-lines: 2-11
 
         def test_when_year_of_birth_is_the_future(self):
@@ -1691,7 +1746,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to also mak
             src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
-                sex='M',
+                sex='F',
                 year_of_birth=datetime.date.today().year+1,
             )
                 # ).say_hello(),
@@ -1700,19 +1755,19 @@ I want the :ref:`calculate_age function<add calculate_age function>` to also mak
 
         def test_dir_person_class(self):
 
-  the test is green because there is no :ref:`assertion<what is an assertion?>` or :ref:`calls<how to call a function>` that cause :ref:`AssertionError<what causes AssertionError?>`.
+  the test is green because there are no :ref:`calls<how to call a function>` that cause an :ref:`Exception<how to handle Exceptions in tests>`.
 
 * I remove the commented lines from :ref:`test_when_year_of_birth_is_the_future` then add a comment about the test
 
   .. code-block:: python
-    :lineno-start: 174
+    :lineno-start: 181
     :emphasize-lines: 8-9
 
         def test_when_year_of_birth_is_the_future(self):
             src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
-                sex='M',
+                sex='F',
                 year_of_birth=datetime.date.today().year+1,
             )
             # ).say_hello() fails
@@ -1748,7 +1803,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 * I add a new test for when ``year_of_birth`` is not an integer_
 
   .. code-block:: python
-    :lineno-start: 181
+    :lineno-start: 188
     :emphasize-lines: 4-9
 
             # ).say_hello() fails
@@ -1758,7 +1813,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
             src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
-                sex='F',
+                sex='M',
             ).say_hello()
 
         def test_dir_person_class(self):
@@ -1838,7 +1893,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 * I add a comment, then add :ref:`False<test_what_is_false>` as the value for if a :ref:`boolean<what are booleans?>` is given as the value for the ``year_of_birth`` parameter in :ref:`test_when_year_of_birth_is_not_an_integer`, in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 184
+    :lineno-start: 191
     :emphasize-lines: 6-7
 
         def test_when_year_of_birth_is_not_an_integer(self):
@@ -1857,7 +1912,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 * I change ``year_of_birth`` from :ref:`False<test_what_is_false>` to a float_
 
   .. code-block:: python
-    :lineno-start: 184
+    :lineno-start: 191
     :emphasize-lines: 6-7
 
         def test_when_year_of_birth_is_not_an_integer(self):
@@ -1876,7 +1931,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 * I add a comment then change ``year_of_birth`` to a string_
 
   .. code-block:: python
-    :lineno-start: 184
+    :lineno-start: 191
     :emphasize-lines: 7-8
 
         def test_when_year_of_birth_is_not_an_integer(self):
@@ -1896,7 +1951,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 * I add a comment then change ``year_of_birth`` to a tuple_
 
   .. code-block:: python
-    :lineno-start: 184
+    :lineno-start: 191
     :emphasize-lines: 8-9
 
         def test_when_year_of_birth_is_not_an_integer(self):
@@ -1912,11 +1967,11 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 
         def test_dir_person_class(self):
 
-* I add a comment then remove the :ref:`call to the say_hello method<test_classy_person_says_hello>`
+* I add comment out the :ref:`call to the say_hello method<test_classy_person_says_hello>` then add a comment about the test
 
   .. code-block:: python
-    :lineno-start: 184
-    :emphasize-lines: 9-10
+    :lineno-start: 191
+    :emphasize-lines: 9-12
 
         def test_when_year_of_birth_is_not_an_integer(self):
             src.person.Person(
@@ -1928,10 +1983,12 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
                 # year_of_birth='2026',   # fails
                 # year_of_birth=(2026,),  # fails
             )
+            # ).say_hello() fails
+            # because year_of_birth is not an integer
 
         def test_dir_person_class(self):
 
-  the test is green because there is no :ref:`assertion<what is an assertion?>` or :ref:`calls<how to call a function>` that cause :ref:`AssertionError<what causes AssertionError?>`.
+  the test is green because there are no :ref:`calls<how to call a function>` that cause an :ref:`Exception<how to handle Exceptions in tests>`.
 
 * I remove the commented line from the :ref:`Person class<add Person class>` in ``src/person/__init__.py``
 

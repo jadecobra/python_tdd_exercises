@@ -36,9 +36,58 @@ preview
 I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
   :language: python
   :linenos:
+  :lines:
+
+.. literalinclude:: ../../code/person/tests/test_person_w_conditions.py
   :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 138
+  :lines: 138-175
+
+.. literalinclude:: ../../code/person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 177
+  :lines: 177-212
+
+.. literalinclude:: ../../code/person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 177
+  :lines: 177-212
+
+.. literalinclude:: ../../code/person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 214
+  :lines: 214-224
+
+.. literalinclude:: ../../code/person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 226
+  :lines: 226-237
+
+.. literalinclude:: ../../code/person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 239
+  :lines: 239-251
+
+.. literalinclude:: ../../code/person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 253
+  :lines: 253-270
+
+.. literalinclude:: ../../code/person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 272
+  :lines: 272-
 
 -----
 
