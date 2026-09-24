@@ -5,6 +5,8 @@ import unittest
 
 class TestPerson(unittest.TestCase):
 
+    this_year = datetime.date.today().year
+
     def assert_person_factory_works(
             self, first_name, last_name,
             sex, year_of_birth
@@ -22,12 +24,8 @@ class TestPerson(unittest.TestCase):
             )
         )
 
-    @staticmethod
-    def calculate_age(year_of_birth):
-        return (
-            datetime.date.today().year
-          - year_of_birth
-        )
+    def calculate_age(self, year_of_birth):
+        return self.this_year - year_of_birth
 
     def assert_say_hello_works(
             self, first_name, last_name,
@@ -173,7 +171,7 @@ class TestPerson(unittest.TestCase):
             first_name='first_name',
             last_name='last_name',
             sex='M',
-            year_of_birth=datetime.date.today().year-121
+            year_of_birth=self.this_year-121
         )
         # ).say_hello() fails
         # because person is older than 120
@@ -183,7 +181,7 @@ class TestPerson(unittest.TestCase):
             first_name='first_name',
             last_name='last_name',
             sex='F',
-            year_of_birth=datetime.date.today().year+1,
+            year_of_birth=self.this_year+1,
         )
         # ).say_hello() fails
         # because year_of_birth is in the future

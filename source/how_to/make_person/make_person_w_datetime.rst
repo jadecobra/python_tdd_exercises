@@ -41,49 +41,49 @@ I add the following code by the end of the chapter
   :caption: person/tests/test_person.py
   :language: python
   :linenos:
-  :lines: 1-11
+  :lines: 1-13
 
 .. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 25
-  :lines: 25-30
+  :lineno-start: 27
+  :lines: 27-28
 
 .. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 32
-  :lines: 32-47
+  :lineno-start: 30
+  :lines: 30-45
 
 .. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 49
-  :lines: 49-65
+  :lineno-start: 47
+  :lines: 47-63
 
 .. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 119
-  :lines: 119-143
+  :lineno-start: 117
+  :lines: 117-141
 
 .. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 171
-  :lines: 171-179
+  :lineno-start: 169
+  :lines: 169-177
 
 .. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 181
-  :lines: 181-189
+  :lineno-start: 179
+  :lines: 179-187
 
 .. literalinclude:: ../../code/person/tests/test_person_w_datetime.py
   :caption: person/tests/test_person.py
   :language: python
-  :lineno-start: 191
-  :lines: 191-204
+  :lineno-start: 189
+  :lines: 189-202
 
 -----
 
@@ -835,7 +835,7 @@ The :ref:`assert_say_hello_works<move assert_say_hello_works to TestPerson>` and
                 sex, year_of_birth
             ):
 
-* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in  the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>`
+* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -867,7 +867,7 @@ The :ref:`assert_say_hello_works<move assert_say_hello_works to TestPerson>` and
 
   still green.
 
-* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in  the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>`
+* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 46
@@ -1432,7 +1432,7 @@ The tests use the right calculation for the age, and the solution still uses a f
 * I change the calculation in the :ref:`calculate_age method<extract calculate_age method>` back
 
   .. code-block:: python
-    :lineno-start: 8
+    :lineno-start: 25
 
         @staticmethod
         def calculate_age(year_of_birth):
@@ -1644,7 +1644,7 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_when_person_is_older_than_120:
+    'add test_when_person_is_older_than_120'
 
 ----
 
@@ -1703,7 +1703,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to also mak
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to the :ref:`calculate age function<add calculate_age function>` to make sure that the it never returns a number that is less than ``0``, in ``src/person/__init__.py``
+* I add an :ref:`assertion<what is an assertion?>` to the :ref:`calculate age function<add calculate_age function>` to make sure that it never returns a number that is less than ``0``, in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -1786,10 +1786,194 @@ I want the :ref:`calculate_age function<add calculate_age function>` to also mak
 ----
 
 *********************************************************************************
+extract this_year attribute again
+*********************************************************************************
+
+The :ref:`calculate_age<extract calculate_age method>`, :ref:`test_when_person_is_older_than_120` and :ref:`test_when_year_of_birth_is_not_an_integer` all call :ref:`call datetime.date.today()<test_dir_datetime_date_today>` to get the :ref:`year attribute<test_datetime_date_today_year>`.
+
+I made a :ref:`class attribute for this_year earlier<extract this_year attribute>` to remove the repetition which ended up in the :ref:`calculate_age method<extract calculate_age method>`, I can make it again to remove repetition from these three :ref:`methods<what is a method?>`
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
+* I add back the :ref:`class attribute<what is a class attribute?>` for the current year to the :ref:`TestPerson class<add TestPerson class>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 3
+
+    class TestPerson(unittest.TestCase):
+
+        this_year = datetime.date.today().year
+
+        def assert_person_factory_works(
+                self, first_name, last_name,
+                sex, year_of_birth
+            ):
+
+* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in the :ref:`calculate_age method<extract calculate_age method>`
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 3-4
+
+        @staticmethod
+        def calculate_age(year_of_birth):
+            return (
+                # datetime.date.today().year
+                self.this_year
+              - year_of_birth
+            )
+
+        def assert_say_hello_works(
+                self, first_name, last_name,
+                year_of_birth,
+            ):
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>` then add ``self`` to the parentheses of the :ref:`calculate_age method<extract calculate_age method>`
+
+.. code-block:: python
+  :lineno-start: 27
+  :emphasize-lines: 1-3
+
+      # @staticmethod
+      # def calculate_age(year_of_birth):
+      def calculate_age(self, year_of_birth):
+          return (
+              # datetime.date.today().year
+              self.this_year
+            - year_of_birth
+          )
+
+the tests are green again.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented lines from the :ref:`calculate_age method<extract calculate_age method>`
+
+  .. code-block:: python
+    :lineno-start: 27
+
+    def calculate_age(self, year_of_birth):
+        return self.this_year - year_of_birth
+
+    def assert_say_hello_works(
+            self, first_name, last_name,
+            year_of_birth,
+        ):
+
+* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in :ref:`test_when_person_is_older_than_120`
+
+  .. code-block:: python
+    :lineno-start: 169
+    :emphasize-lines: 6-7
+
+        def test_when_person_is_older_than_120(self):
+            src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                # year_of_birth=datetime.date.today().year-121
+                year_of_birth=self.this_year-121
+            )
+            # ).say_hello() fails
+            # because person is older than 120
+
+  the tests are still green.
+
+* I remove the new commented line from :ref:`test_when_person_is_older_than_120`
+
+  .. code-block:: python
+    :lineno-start: 169
+
+        def test_when_person_is_older_than_120(self):
+            src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                year_of_birth=self.this_year-121
+            )
+            # ).say_hello() fails
+            # because person is older than 120
+
+        def test_when_year_of_birth_is_the_future(self):
+
+* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in :ref:`test_when_year_of_birth_is_the_future`
+
+  .. code-block:: python
+    :lineno-start: 179
+    :emphasize-lines: 6-7
+
+        def test_when_year_of_birth_is_the_future(self):
+            src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='F',
+                # year_of_birth=datetime.date.today().year+1,
+                year_of_birth=self.this_year+1,
+            )
+            # ).say_hello() fails
+            # because year_of_birth is in the future
+
+        def test_dir_person_class(self):
+
+  still green.
+
+* I remove the new commented line from :ref:`test_when_year_of_birth_is_the_future`
+
+  .. code-block:: python
+    :lineno-start: 179
+
+        def test_when_year_of_birth_is_the_future(self):
+            src.person.Person(
+                first_name='first_name',
+                last_name='last_name',
+                sex='F',
+                year_of_birth=self.this_year+1,
+            )
+            # ).say_hello() fails
+            # because year_of_birth is in the future
+
+        def test_dir_person_class(self):
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract this_year attribute'
+
+----
+
+*********************************************************************************
 test_when_year_of_birth_is_not_an_integer
 *********************************************************************************
 
-I want the :ref:`calculate_age function<add calculate_age function>` to make sure that the value for ``year_of_birth`` is an integer_ (whole number without decimals).
+I want the :ref:`calculate_age function<add calculate_age function>` to make sure that the value for ``year_of_birth`` is an integer_ (a whole number without decimals).
 
 ----
 
@@ -1803,7 +1987,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 * I add a new test for when ``year_of_birth`` is not an integer_
 
   .. code-block:: python
-    :lineno-start: 188
+    :lineno-start: 186
     :emphasize-lines: 4-9
 
             # ).say_hello() fails
@@ -1893,7 +2077,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 * I add a comment, then add :ref:`False<test_what_is_false>` as the value for if a :ref:`boolean<what are booleans?>` is given as the value for the ``year_of_birth`` parameter in :ref:`test_when_year_of_birth_is_not_an_integer`, in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 191
+    :lineno-start: 189
     :emphasize-lines: 6-7
 
         def test_when_year_of_birth_is_not_an_integer(self):
@@ -1912,7 +2096,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 * I change ``year_of_birth`` from :ref:`False<test_what_is_false>` to a float_
 
   .. code-block:: python
-    :lineno-start: 191
+    :lineno-start: 189
     :emphasize-lines: 6-7
 
         def test_when_year_of_birth_is_not_an_integer(self):
@@ -1931,7 +2115,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 * I add a comment then change ``year_of_birth`` to a string_
 
   .. code-block:: python
-    :lineno-start: 191
+    :lineno-start: 189
     :emphasize-lines: 7-8
 
         def test_when_year_of_birth_is_not_an_integer(self):
@@ -1951,7 +2135,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 * I add a comment then change ``year_of_birth`` to a tuple_
 
   .. code-block:: python
-    :lineno-start: 191
+    :lineno-start: 189
     :emphasize-lines: 8-9
 
         def test_when_year_of_birth_is_not_an_integer(self):
@@ -1967,10 +2151,10 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 
         def test_dir_person_class(self):
 
-* I add comment out the :ref:`call to the say_hello method<test_classy_person_says_hello>` then add a comment about the test
+* I comment out the :ref:`call to the say_hello method<test_classy_person_says_hello>` then add a comment about the test
 
   .. code-block:: python
-    :lineno-start: 191
+    :lineno-start: 189
     :emphasize-lines: 9-12
 
         def test_when_year_of_birth_is_not_an_integer(self):
