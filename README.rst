@@ -46,7 +46,7 @@ who is this for?
 how can I use this?
 *********************************************************************************
 
-:ref:`Start Here` then :ref:`how to make a Python Test Driven Development environment manually` because it is needed by every other chapter, each chapter suggests the next chapter to do, or you can choose how you go through the chapters based on what you like. You can also go through the :ref:`how tos` section step by step, the other chapters cover :ref:`errors`, :ref:`data structures`, :ref:`functions<what is a function?>`, and :ref:`classes<everything is an object>`
+:ref:`Start Here` then :ref:`how to make a Python Test Driven Development environment manually` because it is needed by every other chapter, each chapter suggests the next chapter to do, or you can choose how you go through the chapters based on what you like. You can also go through the :ref:`how tos` section step by step, the other chapters cover :ref:`errors`, :ref:`data structures`, :ref:`functions<what is a function?>`, and :ref:`objects<everything is an object>`
 
 Here are a few things I would do if I were in your shoes to make the process more fun
 
@@ -110,7 +110,7 @@ table of contents
   basic_objects/dictionaries/index
   make TDD project 3<make_tdd/make_tdd_automatically_w_variables/index>
   make a person<how_to/make_person>
-  classes/index
+  objects/index
   what is a module?<exceptions/ModuleNotFoundError>
   questions the book answers<review>
   make TDD project 1<make_tdd/make_tdd_manually/index>

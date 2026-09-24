@@ -689,7 +689,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   because :ref:`Exception<how to test that an Exception is raised>` is not :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` and I cannot use a :ref:`child<how to test if something is a subclass>` :ref:`Exceptions<how to test that an Exception is raised>` to catch its parent :ref:`Exception<how to test that an Exception is raised>`.
 
-  The :ref:`try statement<how to handle Exceptions>` only catches the :ref:`Exception<how to test that an Exception is raised>` given in the :ref:`except<how to handle Exceptions>` clause and its :ref:`children (subclasses)<how to test if something is a subclass>`, all other :ref:`Exceptions are raised<how to raise an Exception>`.
+  The :ref:`try statement<how to handle Exceptions>` only catches the :ref:`Exception<how to test that an Exception is raised>` given in the :ref:`except<how to handle Exceptions>` clause and its :ref:`children (subobjects)<how to test if something is a subclass>`, all other :ref:`Exceptions are raised<how to raise an Exception>`.
 
 * I change it back to what works
 

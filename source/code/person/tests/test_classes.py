@@ -1,33 +1,33 @@
-import src.classes
+import src.objects
 import unittest
 
 
-class TestClasses(unittest.TestCase):
+class Testobjects(unittest.TestCase):
 
-    def test_making_a_class_w_pass(self):
-        an_instance = src.classes.WPass()
+    def test_making_an_object_w_pass(self):
+        an_instance = src.objects.WPass()
         assert isinstance(an_instance, object)
         self.assertIsInstance(an_instance, object)
 
-        a_class = src.classes.WPass
+        a_class = src.objects.WPass
         assert issubclass(a_class, object)
         self.assertIsSubclass(a_class, object)
 
-    def test_making_a_class_w_parentheses(self):
-        an_instance = src.classes.WParentheses()
+    def test_making_an_object_w_parentheses(self):
+        an_instance = src.objects.WParentheses()
         assert isinstance(an_instance, object)
         self.assertIsInstance(an_instance, object)
 
-        a_class = src.classes.WParentheses
+        a_class = src.objects.WParentheses
         assert issubclass(a_class, object)
         self.assertIsSubclass(a_class, object)
 
-    def test_making_a_class_w_object(self):
-        an_instance = src.classes.WObject()
+    def test_making_an_object_w_object(self):
+        an_instance = src.objects.WObject()
         assert isinstance(an_instance, object)
         self.assertIsInstance(an_instance, object)
 
-        a_class = src.classes.WObject
+        a_class = src.objects.WObject
         assert issubclass(a_class, object)
         self.assertIsSubclass(a_class, object)
 

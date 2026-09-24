@@ -2244,7 +2244,7 @@ what is next?
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
-* :ref:`what you can do with classes<everything is an object>`
+* :ref:`what you can do with objects<everything is an object>`
 
 :ref:`Would you like to know what causes ModuleNotFoundError?<what is a module?>`
 

@@ -1801,7 +1801,7 @@ the test passes.
 
 ----
 
-* I can use :ref:`Exception<how to test that an Exception is raised>` to catch any of the :ref:`Exceptions<how to test that an Exception is raised>` that :ref:`inherit<everything is an object>` from it (its :ref:`children/subclasses<how to test if something is a subclass>`)
+* I can use :ref:`Exception<how to test that an Exception is raised>` to catch any of the :ref:`Exceptions<how to test that an Exception is raised>` that :ref:`inherit<everything is an object>` from it (its :ref:`children/subobjects<how to test if something is a subclass>`)
 
   .. code-block:: python
     :lineno-start: 46

@@ -2546,7 +2546,7 @@ what is next?
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
-* :ref:`what you can do with classes<everything is an object>`
+* :ref:`what you can do with objects<everything is an object>`
 * :ref:`how to make a website with flask<how to make a calculator 9>`
 
 :ref:`Would you like to see another way to make a website for the Calculator?<how to make a calculator 10>`

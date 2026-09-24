@@ -10,9 +10,9 @@ You have made it to the end of this book. Do you understand these?
 * :ref:`module.variable`
 * :ref:`module.function()`
 * :ref:`module.function(*args, **kwargs)`
-* :ref:`module.AClass.attribute`
-* :ref:`module.AClass.method()`
-* :ref:`module.AClass.method(*args, **kwargs)`
+* :ref:`module.AnObject.attribute`
+* :ref:`module.AnObject.method()`
+* :ref:`module.AnObject.method(*args, **kwargs)`
 
 ----
 
@@ -92,14 +92,14 @@ module.function(*args, **kwargs)
 ----
 
 *********************************************************************************
-module.AClass.attribute
+module.AnObject.attribute
 *********************************************************************************
 
 - defined in ``module.py``
 
   .. code-block:: python
 
-    class AClass(object):
+    class AnObject(object):
 
         attribute = None
 
@@ -109,14 +109,14 @@ module.AClass.attribute
 
     import module
 
-    child = module.AClass()
+    child = module.AnObject()
     child.attribute
 
 - defined in ``module.py`` with ``__init__()`` :ref:`method<what is a method?>`
 
   .. code-block:: python
 
-    class AClass(object):
+    class AnObject(object):
 
         def __init__(self, attribute=None):
             self.attribute = attribute
@@ -127,20 +127,20 @@ module.AClass.attribute
 
     import module
 
-    child = module.AClass(attribute='Attribute')
+    child = module.AnObject(attribute='Attribute')
     child.attribute
 
 ----
 
 *********************************************************************************
-module.AClass.method()
+module.AnObject.method()
 *********************************************************************************
 
 - defined in ``module.py``
 
   .. code-block:: python
 
-    class AClass(object):
+    class AnObject(object):
 
         def method(self):
             return None
@@ -151,20 +151,20 @@ module.AClass.method()
 
     import module
 
-    child = module.AClass()
+    child = module.AnObject()
     child.method()
 
 ----
 
 *********************************************************************************
-module.AClass.method(*args, **kwargs)
+module.AnObject.method(*args, **kwargs)
 *********************************************************************************
 
 - defined in ``module.py``
 
   .. code-block:: python
 
-    class AClass(object):
+    class AnObject(object):
 
         def method(self, *args, **kwargs):
             return None
@@ -175,7 +175,7 @@ module.AClass.method(*args, **kwargs)
 
     import module
 
-    child = module.AClass()
+    child = module.AnObject()
     child.method(*args, **kwargs)
 
 ----

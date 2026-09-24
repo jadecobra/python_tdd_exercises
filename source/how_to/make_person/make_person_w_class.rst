@@ -22,7 +22,7 @@ The :ref:`factory<extract person function>` and :ref:`say_hello functions<test s
 
 I want to give those values once, and get a representation for a person. I can do that with a :ref:`class<everything is an object>`.
 
-I think of :ref:`classes<everything is an object>` as :ref:`attributes (variables)<what is a class attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together (a classification).
+I think of :ref:`objects<everything is an object>` as :ref:`attributes (variables)<what is a class attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together (a classification).
 
 ----
 
@@ -197,7 +197,7 @@ because there is no definition for ``Person`` in ``tests/test_person.py``.
 
 ----
 
-* I add a :ref:`class definition<how to make a class>` for ``Person``
+* I add a :ref:`class definition<how to make an object>` for ``Person``
 
   .. code-block:: python
     :linenos:
@@ -222,10 +222,10 @@ because there is no definition for ``Person`` in ``tests/test_person.py``.
 
       TypeError: Person() takes no arguments
 
-    because :ref:`classes<everything is an object>` do not take arguments like a :ref:`function<what is a function?>` and I "called" this one with four arguments.
+    because :ref:`objects<everything is an object>` do not take arguments like a :ref:`function<what is a function?>` and I "called" this one with four arguments.
 
-  - :ref:`classes<everything is an object>` need a :ref:`method (function)<what is a method?>` that handles arguments.
-  - I can :ref:`make a class with the pass keyword<test_making_a_class_w_pass>`.
+  - :ref:`objects<everything is an object>` need a :ref:`method (function)<what is a method?>` that handles arguments.
+  - I can :ref:`make a class with the pass keyword<test_making_an_object_w_pass>`.
 ----
 
 *********************************************************************************
@@ -4223,8 +4223,8 @@ what is next?
   :titlesonly:
   :maxdepth: 1
 
-  ../../classes/inheritance
-  ../../classes/unittest
+  ../../objects/inheritance
+  ../../objects/unittest
 
 :ref:`Would you like to know where the extra attributes and methods of the Person class came from?<everything is an object>`
 

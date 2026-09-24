@@ -218,7 +218,7 @@ test_functions
 #. :ref:`test_unknown_number_of_arguments`
 
 *********************************************************************************
-test_classes
+test_objects
 *********************************************************************************
 
 #. :ref:`test_factory_person_says_hello`

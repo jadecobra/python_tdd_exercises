@@ -7,17 +7,17 @@ class WParentheses(): pass
 class WObject(object): pass
 
 
-def test_making_a_class_w_pass():
+def test_making_an_object_w_pass():
     assert isinstance(WPass(), object)
     assert issubclass(WPass, object)
 
 
-def test_making_a_class_w_parentheses():
+def test_making_an_object_w_parentheses():
     assert isinstance(WParentheses(), object)
     assert issubclass(WParentheses, object)
 
 
-def test_making_a_class_w_object():
+def test_making_an_object_w_object():
     assert isinstance(WObject(), object)
     assert issubclass(WObject, object)
 

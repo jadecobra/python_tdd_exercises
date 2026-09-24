@@ -674,7 +674,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     # Exceptions seen
 
   - The test passes.
-  - The :ref:`__init__ method<the constructor method>` is in the :ref:`list of attributes and methods<test_dir_unittest_testcase>` because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
+  - The :ref:`__init__ method<the constructor method>` is in the :ref:`list of attributes and methods<test_dir_unittest_testcase>` because :ref:`all objects inherit from 'object'<test_making_an_object_w_object>`.
 
 ----
 
@@ -2084,7 +2084,7 @@ test_assert_not_is_subclass
         <class 'unittest.case.TestCase'>
         is a subclass of <class 'object'>
 
-  because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
+  because :ref:`all objects inherit from 'object'<test_making_an_object_w_object>`.
 
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
@@ -2400,7 +2400,7 @@ test_assert_is_subclass
 
     # Exceptions seen
 
-  the test passes because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
+  the test passes because :ref:`all objects inherit from 'object'<test_making_an_object_w_object>`.
 
 ----
 

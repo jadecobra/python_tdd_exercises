@@ -1,13 +1,13 @@
 .. meta::
-  :description: TypeError with classes: call methods on the class vs an instance in the type_error project (uv run pytest-watcher, src/type_error/__init__.py). test_type_error_w_class_methods builds AClass method_00–method_09; match AClass.method_N() vs AClass().method_N() to the definition; instance methods take self; @staticmethod when the method needs no class state. Representative errors: AttributeError "module 'src.type_error' has no attribute 'AClass'", "type object 'AClass' has no attribute 'method_00'", NameError name 'method_00'/'self' not defined, TypeError "'NoneType' object is not callable", "AClass.method_01() takes 0 positional arguments but 1 was given", "AClass.method_02() missing 1 required positional argument: 'self'". test_type_error_w_the_uncallables shows None, bool, int, float, str, tuple, list, set, dict are not callable ("'X' object is not callable") then turns each name into a function. Red-green-refactor; remove the commented lines from tests and src. Review: self on instance call, staticmethod, objects that are not callable. Jacob Itegboje Pumping Python TDD.
-  :keywords: Jacob Itegboje, Pumping Python, TypeError with classes, python TypeError methods, AClass.method_00, AClass().method_01, staticmethod decorator, takes 0 positional arguments but 1 was given, missing 1 required positional argument: 'self', type object 'AClass' has no attribute, module 'src.type_error' has no attribute 'AClass', test_type_error_w_class_methods, test_type_error_w_the_uncallables, NoneType object is not callable, bool object is not callable, int object is not callable, dict object is not callable, uv run pytest-watcher, TDD class methods, self first argument, class vs instance method call, red green refactor, remove the commented lines, src/type_error/__init__.py, src.type_error, what causes TypeError
+  :description: TypeError with objects: call methods on the class vs an instance in the type_error project (uv run pytest-watcher, src/type_error/__init__.py). test_type_error_w_class_methods builds AnObject method_00–method_09; match AnObject.method_N() vs AnObject().method_N() to the definition; instance methods take self; @staticmethod when the method needs no class state. Representative errors: AttributeError "module 'src.type_error' has no attribute 'AnObject'", "type object 'AnObject' has no attribute 'method_00'", NameError name 'method_00'/'self' not defined, TypeError "'NoneType' object is not callable", "AnObject.method_01() takes 0 positional arguments but 1 was given", "AnObject.method_02() missing 1 required positional argument: 'self'". test_type_error_w_the_uncallables shows None, bool, int, float, str, tuple, list, set, dict are not callable ("'X' object is not callable") then turns each name into a function. Red-green-refactor; remove the commented lines from tests and src. Review: self on instance call, staticmethod, objects that are not callable. Jacob Itegboje Pumping Python TDD.
+  :keywords: Jacob Itegboje, Pumping Python, TypeError with objects, python TypeError methods, AnObject.method_00, AnObject().method_01, staticmethod decorator, takes 0 positional arguments but 1 was given, missing 1 required positional argument: 'self', type object 'AnObject' has no attribute, module 'src.type_error' has no attribute 'AnObject', test_type_error_w_class_methods, test_type_error_w_the_uncallables, NoneType object is not callable, bool object is not callable, int object is not callable, dict object is not callable, uv run pytest-watcher, TDD class methods, self first argument, class vs instance method call, red green refactor, remove the commented lines, src/type_error/__init__.py, src.type_error, what causes TypeError
 
 .. include:: ../../links.rst
 
 .. _TypeError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError
 
 #################################################################################
-TypeError with classes
+TypeError with objects
 #################################################################################
 
 ----
@@ -22,20 +22,20 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../../code/type_error/tests/test_type_error_w_classes.py
+.. literalinclude:: ../../code/type_error/tests/test_type_error_w_objects.py
   :language: python
   :lineno-start: 89
   :caption: type_error/tests/test_type_error.py
   :lines: 89-99
 
-.. literalinclude:: ../../code/type_error/tests/test_type_error_w_classes.py
+.. literalinclude:: ../../code/type_error/tests/test_type_error_w_objects.py
   :language: python
   :lineno-start: 101
   :caption: type_error/tests/test_type_error.py
   :lines: 101-
 
 *********************************************************************************
-questions about TypeError with classes
+questions about TypeError with objects
 *********************************************************************************
 
 * :ref:`How do methods behave when I call them with a class or an instance<test_type_error_w_class_methods>`?
@@ -84,7 +84,7 @@ test_type_error_w_class_methods
 
 ----
 
-I add a test with a :ref:`call<how to call a function with input>` to ``AClass.method`` from ``tests/test_type_error.py``
+I add a test with a :ref:`call<how to call a function with input>` to ``AnObject.method`` from ``tests/test_type_error.py``
 
 .. code-block:: python
   :lineno-start: 83
@@ -97,7 +97,7 @@ I add a test with a :ref:`call<how to call a function with input>` to ``AClass.m
 
 
   def test_type_error_w_class_methods():
-      src.type_error.AClass.method_00()
+      src.type_error.AnObject.method_00()
 
 
   # Exceptions seen
@@ -107,9 +107,9 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 .. code-block:: python
 
   AttributeError: module 'src.type_error'
-                  has no attribute 'AClass'
+                  has no attribute 'AnObject'
 
-because ``AClass`` is not defined in ``src/type_error/__init__.py``.
+because ``AnObject`` is not defined in ``src/type_error/__init__.py``.
 
 ----
 
@@ -121,7 +121,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
 * I open ``__init__.py`` from the ``type_error`` folder_ in the ``src`` folder_
 
-* I add a :ref:`class definition<how to make a class>` for ``AClass`` to ``src/type_error/__init__.py``
+* I add a :ref:`class definition<how to make an object>` for ``AnObject`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 40
@@ -131,7 +131,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
         return None
 
 
-    class AClass(object):
+    class AnObject(object):
 
         pass
 
@@ -139,17 +139,17 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: python
 
-    AttributeError: type object 'AClass' has no attribute 'method_00'
+    AttributeError: type object 'AnObject' has no attribute 'method_00'
 
-  because there is nothing named ``method_00`` in ``AClass``.
+  because there is nothing named ``method_00`` in ``AnObject``.
 
-* I add the name to the :ref:`class definition<how to make a class>`
+* I add the name to the :ref:`class definition<how to make an object>`
 
   .. code-block:: python
     :lineno-start: 44
     :emphasize-lines: 3-4
 
-    class AClass(object):
+    class AnObject(object):
 
         # pass
         method_00
@@ -166,7 +166,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
     :lineno-start: 44
     :emphasize-lines: 4-5
 
-    class AClass(object):
+    class AnObject(object):
 
         # pass
         # method_00
@@ -186,7 +186,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
     :lineno-start: 44
     :emphasize-lines: 5-6
 
-    class AClass(object):
+    class AnObject(object):
 
         # pass
         # method_00
@@ -208,19 +208,19 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
   .. code-block:: python
     :lineno-start: 44
 
-    class AClass(object):
+    class AnObject(object):
 
         def method_00(): return None
 
-* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_01`` from ``tests/test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject().method_01`` from ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 89
     :emphasize-lines: 3
 
     def test_type_error_w_class_methods():
-        src.type_error.AClass.method_00()
-        src.type_error.AClass().method_01()
+        src.type_error.AnObject.method_00()
+        src.type_error.AnObject().method_01()
 
 
     # Exceptions seen
@@ -229,17 +229,17 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'method_01'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_01`` to ``AClass`` in ``src/type_error/__init__.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_01`` to ``AnObject`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 44
     :emphasize-lines: 4
 
-    class AClass(object):
+    class AnObject(object):
 
         def method_00(): return None
         def method_01(): return None
@@ -248,7 +248,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: python
 
-    TypeError: AClass.method_01() takes
+    TypeError: AnObject.method_01() takes
                0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -258,7 +258,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
   .. code-block:: python
     :emphasize-lines: 5-6
 
-    class AClass(object):
+    class AnObject(object):
 
         def method_00(): return None
 
@@ -267,21 +267,21 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   the test passes because I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything that belongs to the :ref:`class<everything is an object>`.
 
-  Both :ref:`methods<what is a method?>` look the same. The difference is in how I :ref:`call<how to call a function>` them ``AClass.method_00()`` vs ``AClass().method_01()``.
+  Both :ref:`methods<what is a method?>` look the same. The difference is in how I :ref:`call<how to call a function>` them ``AnObject.method_00()`` vs ``AnObject().method_01()``.
 
-  - ``AClass.method_00()`` :ref:`calls<how to call a function>` ``method_00`` of the ``AClass`` :ref:`class<everything is an object>`.
-  - ``AClass().method_01()`` :ref:`calls<how to call a function>` ``method_01`` of an :ref:`instance<how to test if something is an instance>` of the ``AClass`` :ref:`class<everything is an object>`.
+  - ``AnObject.method_00()`` :ref:`calls<how to call a function>` ``method_00`` of the ``AnObject`` :ref:`class<everything is an object>`.
+  - ``AnObject().method_01()`` :ref:`calls<how to call a function>` ``method_01`` of an :ref:`instance<how to test if something is an instance>` of the ``AnObject`` :ref:`class<everything is an object>`.
 
-* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_02`` from ``tests/test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject().method_02`` from ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 89
     :emphasize-lines: 4
 
     def test_type_error_w_class_methods():
-        src.type_error.AClass.method_00()
-        src.type_error.AClass().method_01()
-        src.type_error.AClass().method_02()
+        src.type_error.AnObject.method_00()
+        src.type_error.AnObject().method_01()
+        src.type_error.AnObject().method_02()
 
 
     # Exceptions seen
@@ -290,17 +290,17 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'method_02'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`definition<how to make a function>` for ``method_02`` to ``AClass`` in ``src/type_error/__init__.py``
+* I add a :ref:`definition<how to make a function>` for ``method_02`` to ``AnObject`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 44
     :emphasize-lines: 8
 
-    class AClass(object):
+    class AnObject(object):
 
         def method_00(): return None
 
@@ -313,7 +313,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: python
 
-    TypeError: AClass.method_02() takes
+    TypeError: AnObject.method_02() takes
                0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -351,7 +351,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: python
 
-    TypeError: AClass.method_02() missing
+    TypeError: AnObject.method_02() missing
                1 required positional argument: 'self'
 
 * I comment out the :ref:`staticmethod decorator<what is the staticmethod decorator?>`
@@ -367,17 +367,17 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   the test passes because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument which allows it to use things that belong to the :ref:`class<everything is an object>`.
 
-* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_03`` from ``tests/test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject.method_03`` from ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 89
     :emphasize-lines: 5
 
     def test_type_error_w_class_methods():
-        src.type_error.AClass.method_00()
-        src.type_error.AClass().method_01()
-        src.type_error.AClass().method_02()
-        src.type_error.AClass.method_03()
+        src.type_error.AnObject.method_00()
+        src.type_error.AnObject().method_01()
+        src.type_error.AnObject().method_02()
+        src.type_error.AnObject.method_03()
 
 
     # Exceptions seen
@@ -386,11 +386,11 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: type object 'AnObject'
                     has no attribute 'method_03'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`definition<how to make a function>` for ``method_03`` to ``AClass`` in ``src/type_error/__init__.py``
+* I add a :ref:`definition<how to make a function>` for ``method_03`` to ``AnObject`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 51
@@ -412,7 +412,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   because there is nothing named ``method_02`` inside ``method_03`` or at the :ref:`module<what is a module?>` level of ``src/type_error/__init__.py``.
 
-* I add ``AClass.`` before ``method_02``
+* I add ``AnObject.`` before ``method_02``
 
   .. code-block:: python
     :lineno-start: 56
@@ -420,13 +420,13 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
         def method_03():
             # return method_02()
-            return AClass.method_02()
+            return AnObject.method_02()
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: AClass.method_02() missing
+    TypeError: AnObject.method_02() missing
                1 required positional argument: 'self'
 
   because
@@ -442,20 +442,20 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
         def method_03():
             # return method_02()
-            # return AClass.method_02()
-            return AClass().method_02()
+            # return AnObject.method_02()
+            return AnObject().method_02()
 
-  the test passes. This is a silly example because I used ``AClass()`` inside a :ref:`method<what is a method?>` of ``AClass``. I could just use ``self``. I would only need this if I was calling a :ref:`method<what is a method?>` of a different :ref:`class<everything is an object>`.
+  the test passes. This is a silly example because I used ``AnObject()`` inside a :ref:`method<what is a method?>` of ``AnObject``. I could just use ``self``. I would only need this if I was calling a :ref:`method<what is a method?>` of a different :ref:`class<everything is an object>`.
 
-* Here is another silly example. I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_04`` from ``tests/test_type_error.py``
+* Here is another silly example. I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject.method_04`` from ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 92
     :emphasize-lines: 3
 
-        src.type_error.AClass().method_02()
-        src.type_error.AClass.method_03()
-        src.type_error.AClass.method_04()
+        src.type_error.AnObject().method_02()
+        src.type_error.AnObject.method_03()
+        src.type_error.AnObject.method_04()
 
 
     # Exceptions seen
@@ -464,11 +464,11 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: type object 'AnObject'
                     has no attribute 'method_04'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_04`` to ``AClass`` in ``src/type_error/__init__.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_04`` to ``AnObject`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 56
@@ -476,17 +476,17 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
         def method_03():
             # return method_02()
-            # return AClass.method_02()
-            return AClass().method_02()
+            # return AnObject.method_02()
+            return AnObject().method_02()
 
         def method_04():
-            return AClass.method_02()
+            return AnObject.method_02()
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: AClass.method_02() missing
+    TypeError: AnObject.method_02() missing
                1 required positional argument: 'self'
 
   because
@@ -494,27 +494,27 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
   - ``method_02`` takes an :ref:`instance<how to test if something is an instance>` of the :ref:`class<everything is an object>` it belongs to as input.
   - I :ref:`called the method<how to call a function>` with the :ref:`class<everything is an object>` not an :ref:`instance of the class<how to test if something is an instance>`.
 
-* I pass ``AClass`` as input in the :ref:`call<how to call a function with input>` to ``method_02``
+* I pass ``AnObject`` as input in the :ref:`call<how to call a function with input>` to ``method_02``
 
   .. code-block:: python
     :lineno-start: 61
     :emphasize-lines: 2-3
 
         def method_04():
-            # return AClass.method_02()
-            return AClass.method_02(AClass)
+            # return AnObject.method_02()
+            return AnObject.method_02(AnObject)
 
-  the test passes. I called a :ref:`method<what is a method?>` of ``AClass`` and passed ``AClass`` as input. I can use ``self``.
+  the test passes. I called a :ref:`method<what is a method?>` of ``AnObject`` and passed ``AnObject`` as input. I can use ``self``.
 
-* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_05`` from ``tests/test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject().method_05`` from ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 93
     :emphasize-lines: 3
 
-        src.type_error.AClass.method_03()
-        src.type_error.AClass.method_04()
-        src.type_error.AClass().method_05()
+        src.type_error.AnObject.method_03()
+        src.type_error.AnObject.method_04()
+        src.type_error.AnObject().method_05()
 
 
     # Exceptions seen
@@ -523,19 +523,19 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'method_05'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_05`` to ``AClass`` in ``src/type_error/__init__.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_05`` to ``AnObject`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 61
     :emphasize-lines: 5-6
 
         def method_04():
-            # return AClass.method_02()
-            return AClass.method_02(AClass)
+            # return AnObject.method_02()
+            return AnObject.method_02(AnObject)
 
         def method_05():
             return method_02()
@@ -544,7 +544,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: python
 
-    TypeError: AClass.method_05() takes
+    TypeError: AnObject.method_05() takes
                0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -565,7 +565,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
     NameError: name 'method_02' is not defined
 
-  because there is no ``method_02`` at the :ref:`module<what is a module?>` level of ``src/type_error/__init__.py``. It is inside ``AClass`` in ``src/type_error/__init__.py``, I have to be specific.
+  because there is no ``method_02`` at the :ref:`module<what is a module?>` level of ``src/type_error/__init__.py``. It is inside ``AnObject`` in ``src/type_error/__init__.py``, I have to be specific.
 
 * I add ``self.`` before ``method_02``
 
@@ -580,15 +580,15 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   the test passes.
 
-* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_06`` from ``tests/test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject().method_06`` from ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 94
     :emphasize-lines: 3
 
-        src.type_error.AClass.method_04()
-        src.type_error.AClass().method_05()
-        src.type_error.AClass().method_06()
+        src.type_error.AnObject.method_04()
+        src.type_error.AnObject().method_05()
+        src.type_error.AnObject().method_06()
 
 
     # Exceptions seen
@@ -597,11 +597,11 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'method_06'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_06`` to ``AClass`` in ``src/type_error/__init__.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_06`` to ``AnObject`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 65
@@ -619,7 +619,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: python
 
-    TypeError: AClass.method_06() takes
+    TypeError: AnObject.method_06() takes
                0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -636,15 +636,15 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   the test passes.
 
-* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_07`` from ``tests/test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject().method_07`` from ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 95
     :emphasize-lines: 3
 
-        src.type_error.AClass().method_05()
-        src.type_error.AClass().method_06()
-        src.type_error.AClass.method_07()
+        src.type_error.AnObject().method_05()
+        src.type_error.AnObject().method_06()
+        src.type_error.AnObject.method_07()
 
 
     # Exceptions seen
@@ -653,11 +653,11 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: type object 'AnObject'
                     has no attribute 'method_07'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_07`` to ``AClass`` in ``src/type_error/__init__.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_07`` to ``AnObject`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 70
@@ -674,7 +674,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: python
 
-    TypeError: AClass.method_07() missing
+    TypeError: AnObject.method_07() missing
                1 required positional argument: 'self'
 
   because
@@ -688,10 +688,10 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
     :lineno-start: 95
     :emphasize-lines: 3-4
 
-        src.type_error.AClass().method_05()
-        src.type_error.AClass().method_06()
-        # src.type_error.AClass.method_07()
-        src.type_error.AClass().method_07()
+        src.type_error.AnObject().method_05()
+        src.type_error.AnObject().method_06()
+        # src.type_error.AnObject.method_07()
+        src.type_error.AnObject().method_07()
 
 
     # Exceptions seen
@@ -700,36 +700,36 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: python
 
-    TypeError: AClass.method_00() takes
+    TypeError: AnObject.method_00() takes
                0 positional arguments but 1 was given
 
   because
 
   - ``method_00`` takes no input (the parentheses are empty).
-  - I called it with an :ref:`instance of the class<how to test if something is an instance>` (``AClass()``) which passes the :ref:`instance<how to test if something is an instance>` as input.
+  - I called it with an :ref:`instance of the class<how to test if something is an instance>` (``AnObject()``) which passes the :ref:`instance<how to test if something is an instance>` as input.
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``method_00`` of ``AClass`` in ``src/type_error/__init__.py``
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``method_00`` of ``AnObject`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 44
     :emphasize-lines: 3
 
-    class AClass(object):
+    class AnObject(object):
 
         @staticmethod
         def method_00(): return None
 
   the test passes. I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything that belongs to the :ref:`class<everything is an object>`.
 
-* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass.method_08()`` from ``tests/test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject.method_08()`` from ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 97
     :emphasize-lines: 3
 
-        # src.type_error.AClass.method_07()
-        src.type_error.AClass().method_07()
-        src.type_error.AClass.method_08()
+        # src.type_error.AnObject.method_07()
+        src.type_error.AnObject().method_07()
+        src.type_error.AnObject.method_08()
 
 
     # Exceptions seen
@@ -738,11 +738,11 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: type object 'AnObject'
                     has no attribute 'method_08'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_08`` to ``AClass`` in ``src/type_error/__init__.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_08`` to ``AnObject`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 75
@@ -758,7 +758,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: python
 
-    TypeError: AClass.method_08() missing
+    TypeError: AnObject.method_08() missing
                1 required positional argument: 'self'
 
   because I called ``method_08`` like a :ref:`staticmethod<what is the staticmethod decorator?>` and it is :ref:`defined<how to make a function>` as an :ref:`instance method<how to make a function>` (It expects ``self`` as input).
@@ -769,10 +769,10 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
     :lineno-start: 97
     :emphasize-lines: 3-4
 
-        # src.type_error.AClass.method_07()
-        src.type_error.AClass().method_07()
-        # src.type_error.AClass.method_08()
-        src.type_error.AClass().method_08()
+        # src.type_error.AnObject.method_07()
+        src.type_error.AnObject().method_07()
+        # src.type_error.AnObject.method_08()
+        src.type_error.AnObject().method_08()
 
 
     # Exceptions seen
@@ -781,15 +781,15 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: python
 
-    TypeError: AClass.method_04() takes
+    TypeError: AnObject.method_04() takes
                0 positional arguments but 1 was given
 
   because
 
   - ``method_04`` takes no input (the parentheses are empty).
-  - I called it with an :ref:`instance of the class<how to test if something is an instance>` (``AClass()``) which passes the :ref:`instance<how to test if something is an instance>` as input.
+  - I called it with an :ref:`instance of the class<how to test if something is an instance>` (``AnObject()``) which passes the :ref:`instance<how to test if something is an instance>` as input.
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``method_04`` of ``AClass`` in ``src/type_error/__init__.py``
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``method_04`` of ``AnObject`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 57
@@ -797,13 +797,13 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
         def method_03():
             # return method_02()
-            # return AClass.method_02()
-            return AClass().method_02()
+            # return AnObject.method_02()
+            return AnObject().method_02()
 
         @staticmethod
         def method_04():
-            # return AClass.method_02()
-            return AClass.method_02(AClass)
+            # return AnObject.method_02()
+            return AnObject.method_02(AnObject)
 
         # def method_05():
         def method_05(self):
@@ -812,15 +812,15 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   the test passes.
 
-* I add a :ref:`call<how to call a function>` to ``src.type_error.AClass().method_09()`` from ``tests/test_type_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.type_error.AnObject().method_09()`` from ``tests/test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 99
     :emphasize-lines: 3
 
-        # src.type_error.AClass.method_08()
-        src.type_error.AClass().method_08()
-        src.type_error.AClass().method_09()
+        # src.type_error.AnObject.method_08()
+        src.type_error.AnObject().method_08()
+        src.type_error.AnObject().method_09()
 
 
     # Exceptions seen
@@ -829,11 +829,11 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'method_09'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_09`` to ``AClass`` in ``src/type_error/__init__.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_09`` to ``AnObject`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 79
@@ -849,15 +849,15 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
   .. code-block:: python
 
-     TypeError: AClass.method_03() takes
+     TypeError: AnObject.method_03() takes
                 0 positional arguments but 1 was given
 
   because
 
   - ``method_03`` takes no input (the parentheses are empty).
-  - I called it with an :ref:`instance of the class<how to test if something is an instance>` (``AClass()``) which passes the :ref:`instance<how to test if something is an instance>` as input.
+  - I called it with an :ref:`instance of the class<how to test if something is an instance>` (``AnObject()``) which passes the :ref:`instance<how to test if something is an instance>` as input.
 
-* I add the :ref:`@staticmethod<what is the staticmethod decorator?>` to ``method_03`` of ``AClass`` in ``src/type_error/__init__.py``
+* I add the :ref:`@staticmethod<what is the staticmethod decorator?>` to ``method_03`` of ``AnObject`` in ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 52
@@ -871,13 +871,13 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
         @staticmethod
         def method_03():
             # return method_02()
-            # return AClass.method_02()
-            return AClass().method_02()
+            # return AnObject.method_02()
+            return AnObject().method_02()
 
         @staticmethod
         def method_04():
-            # return AClass.method_02()
-            return AClass.method_02(AClass)
+            # return AnObject.method_02()
+            return AnObject.method_02(AnObject)
 
   the test passes.
 
@@ -886,7 +886,7 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
   .. code-block:: python
     :lineno-start: 44
 
-    class AClass(object):
+    class AnObject(object):
 
         @staticmethod
         def method_00(): return None
@@ -902,11 +902,11 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
 
         @staticmethod
         def method_03():
-            return AClass().method_02()
+            return AnObject().method_02()
 
         @staticmethod
         def method_04():
-            return AClass.method_02(AClass)
+            return AnObject.method_02(AnObject)
 
         def method_05(self):
             return self.method_02()
@@ -932,16 +932,16 @@ because ``AClass`` is not defined in ``src/type_error/__init__.py``.
     :lineno-start: 89
 
     def test_type_error_w_class_methods():
-        src.type_error.AClass.method_00()
-        src.type_error.AClass().method_01()
-        src.type_error.AClass().method_02()
-        src.type_error.AClass.method_03()
-        src.type_error.AClass.method_04()
-        src.type_error.AClass().method_05()
-        src.type_error.AClass().method_06()
-        src.type_error.AClass().method_07()
-        src.type_error.AClass().method_08()
-        src.type_error.AClass().method_09()
+        src.type_error.AnObject.method_00()
+        src.type_error.AnObject().method_01()
+        src.type_error.AnObject().method_02()
+        src.type_error.AnObject.method_03()
+        src.type_error.AnObject.method_04()
+        src.type_error.AnObject().method_05()
+        src.type_error.AnObject().method_06()
+        src.type_error.AnObject().method_07()
+        src.type_error.AnObject().method_08()
+        src.type_error.AnObject().method_09()
 
 
     # Exceptions seen
@@ -984,7 +984,7 @@ Is every :ref:`object callable<how to make a function>`?
     :lineno-start: 99
     :emphasize-lines: 4-5
 
-        src.type_error.AClass().method_09()
+        src.type_error.AnObject().method_09()
 
 
     def test_type_error_w_the_uncallables():
@@ -1732,7 +1732,7 @@ The tests show that
 
 All the tests so far show that I get :ref:`TypeError<what causes TypeError?>` when I :ref:`call an object<everything is an object>` in a way that is different from its :ref:`definition<how to make a function>`.
 
-:ref:`How many questions can you answer about TypeError with classes?<questions about TypeError with classes>`
+:ref:`How many questions can you answer about TypeError with objects?<questions about TypeError with objects>`
 
 ----
 
@@ -1740,7 +1740,7 @@ All the tests so far show that I get :ref:`TypeError<what causes TypeError?>` wh
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<TypeError with classes: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<TypeError with objects: tests and solutions>`
 
 ----
 

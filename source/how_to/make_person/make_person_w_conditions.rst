@@ -1328,7 +1328,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 
   because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
-* I change the expectation of the :ref:`assertion<what is an assertion?>` for the :ref:`can_get_license method<add can_get_license>` in :ref:`test_joe`
+* I change the expectation of the :ref:`assertion<what is an assertion?>` for the :ref:`can_get_license method<add can_get_license method>` in :ref:`test_joe`
 
   .. code-block:: python
     :lineno-start: 97

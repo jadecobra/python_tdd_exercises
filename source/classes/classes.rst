@@ -1,6 +1,6 @@
 .. meta::
-  :description: Step-by-step TDD tutorial for transitioning from dictionary factories to Python classes. Learn the class keyword, __init__ constructor, self parameter, instance attributes, and unittest.TestCase.setUp. Learn how to systematically diagnose and fix common beginner bugs: TypeError: Person() takes no arguments, TypeError: got multiple values for argument 'first_name', NameError: name 'self' is not defined, SyntaxError: parameter without a default follows parameter with a default, and AttributeError: object has no attribute. Master object inspection using the dir() function.
-  :keywords: Jacob Itegboje, Pumping Python, python class tutorial for beginners, test-driven development classes python, dictionary factory vs class python, when to write a class in python, __init__ constructor method self parameter, why use self in python class, how does unittest setUp method work, reset class attributes before every test python, using dir() function to inspect python objects, how to call instance methods directly, TypeError Person takes no arguments, TypeError Person.__init__ got multiple values for argument, TypeError say_hello takes 0 positional arguments but 2 were given, NameError name self is not defined, AttributeError object has no attribute get, SyntaxError parameter without default follows parameter with default, staticmethod decorator vs instance method, when to remove staticmethod python, python red green refactor class tutorial
+  :description: Step-by-step TDD tutorial for transitioning from dictionary factories to Python objects. Learn the class keyword, __init__ constructor, self parameter, instance attributes, and unittest.TestCase.setUp. Learn how to systematically diagnose and fix common beginner bugs: TypeError: Person() takes no arguments, TypeError: got multiple values for argument 'first_name', NameError: name 'self' is not defined, SyntaxError: parameter without a default follows parameter with a default, and AttributeError: object has no attribute. Master object inspection using the dir() function.
+  :keywords: Jacob Itegboje, Pumping Python, python class tutorial for beginners, test-driven development objects python, dictionary factory vs class python, when to write a class in python, __init__ constructor method self parameter, why use self in python class, how does unittest setUp method work, reset class attributes before every test python, using dir() function to inspect python objects, how to call instance methods directly, TypeError Person takes no arguments, TypeError Person.__init__ got multiple values for argument, TypeError say_hello takes 0 positional arguments but 2 were given, NameError name self is not defined, AttributeError object has no attribute get, SyntaxError parameter without default follows parameter with default, staticmethod decorator vs instance method, when to remove staticmethod python, python red green refactor class tutorial
 
 .. include:: ../links.rst
 
@@ -10,7 +10,7 @@
 .. _staticmethod decorator: staticmethod_
 
 #################################################################################
-classes
+objects
 #################################################################################
 
 I made :ref:`functions<what is a function?>` that make :ref:`dictionaries (test_factory_w_keyword_arguments)<test_factory_w_keyword_arguments>` and :ref:`strings (test_factory_person_says_hello)<test_factory_person_says_hello>` in :ref:`how to make a person`.
@@ -25,15 +25,15 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/person/tests/test_person_classes.py
+.. literalinclude:: ../code/person/tests/test_person_objects.py
   :language: python
   :linenos:
 
 *********************************************************************************
-questions about classes
+questions about objects
 *********************************************************************************
 
-* :ref:`what is a class?`
+* :ref:`what is an object?`
 * :ref:`what is a class attribute?`
 * :ref:`what is a method?`
 * :ref:`how can I make sure things my tests need are run before every test?<how to use the setUp method to reset class attributes for every test>`
@@ -188,14 +188,14 @@ because there is no definition for ``Person`` in ``src/person/__init__.py`` in t
 
         pass
 
-  - I can :ref:`make a class with the pass keyword<test_making_a_class_w_pass>`
+  - I can :ref:`make a class with the pass keyword<test_making_an_object_w_pass>`
   - the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     .. code-block:: python
 
       TypeError: Person() takes no arguments
 
-    because :ref:`classes<everything is an object>` do not take arguments like a :ref:`function<what is a function?>` without a :ref:`method<what is a method?>` that handles those arguments
+    because :ref:`objects<everything is an object>` do not take arguments like a :ref:`function<what is a function?>` without a :ref:`method<what is a method?>` that handles those arguments
 
 * I add a `constructor method`_ to the ``Person`` :ref:`class<everything is an object>` so it can take arguments, it is used to define how copies of the :ref:`class<everything is an object>` are made
 
@@ -685,7 +685,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
     AttributeError:
         'Person' object has no attribute 'first_name'
 
-  because there is no definition for ``first_name`` in the ``Person`` :ref:`class definition<how to make a class>`
+  because there is no definition for ``first_name`` in the ``Person`` :ref:`class definition<how to make an object>`
 
 * I add an :ref:`attribute<what is a class attribute?>` to the ``Person`` :ref:`class<everything is an object>` for ``first_name``
 
@@ -800,7 +800,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         'Person' object has no attribute 'last_name'.
         Did you mean: 'first_name'?
 
-  because there is no definition for ``last_name`` in the ``Person`` :ref:`class definition<how to make a class>`
+  because there is no definition for ``last_name`` in the ``Person`` :ref:`class definition<how to make an object>`
 
 * I add an :ref:`attribute<what is a class attribute?>` to the ``Person`` :ref:`class<everything is an object>` for ``last_name``
 
@@ -969,7 +969,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
     AttributeError:
         'Person' object has no attribute 'year_of_birth'
 
-  because there is no definition for ``year_of_birth`` in the ``Person`` :ref:`class definition<how to make a class>`
+  because there is no definition for ``year_of_birth`` in the ``Person`` :ref:`class definition<how to make an object>`
 
 * I add an :ref:`attribute<what is a class attribute?>` to the ``Person`` :ref:`class<everything is an object>` for ``year_of_birth``
 
@@ -3288,7 +3288,7 @@ close the project
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<classes: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<objects: tests and solutions>`
 
 ----
 
@@ -3349,15 +3349,15 @@ To review
 * A :ref:`class<everything is an object>` can be used to represent something
 * A :ref:`class attributes<what is a class attribute?>` is a :ref:`variable<what is a variable?>` that belongs to a :ref:`class<everything is an object>`
 * A :ref:`method<what is a method?>` is a :ref:`function<what is a function?>` that belongs to a :ref:`class<everything is an object>`
-* :ref:`classes<everything is an object>` can be an easier way to manage data than :ref:`functions<what is a function?>`
-* :ref:`classes<everything is an object>` make it easier to write tests for something
+* :ref:`objects<everything is an object>` can be an easier way to manage data than :ref:`functions<what is a function?>`
+* :ref:`objects<everything is an object>` make it easier to write tests for something
 
 .. tip::
 
   * If I find myself writing or doing the same thing two times, I write a :ref:`function<what is a function?>`
   * If I find I have two :ref:`functions<what is a function?>` that use the same information, I write a :ref:`class<everything is an object>`
 
-:ref:`How many questions can you answer about classes?<questions about classes>`
+:ref:`How many questions can you answer about objects?<questions about objects>`
 
 ----
 
@@ -3373,11 +3373,11 @@ You have gone through a lot of things and know:
 * :ref:`I know how to make functions<what is a function?>`.
 * :ref:`how to pass values from tests to functions<telephone>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
-* :ref:`how to use classes<classes>`
+* :ref:`how to use objects<objects>`
 
 :ref:`Would you like to test what causes AttributeError<what causes AttributeError?>` or :ref:`Would you like to know where the extra attributes and methods of the Person class came from?<family ties>`
 
-You know enough to go into the world and use Python_. If you stopped going through the book at this point, you would be fine because you know how to make :ref:`classes<everything is an object>`, :ref:`functions<what is a function?>` and can make :ref:`dictionaries<what is a dictionary?>` which is what is behind a lot of the things you will encounter.
+You know enough to go into the world and use Python_. If you stopped going through the book at this point, you would be fine because you know how to make :ref:`objects<everything is an object>`, :ref:`functions<what is a function?>` and can make :ref:`dictionaries<what is a dictionary?>` which is what is behind a lot of the things you will encounter.
 
 ----
 

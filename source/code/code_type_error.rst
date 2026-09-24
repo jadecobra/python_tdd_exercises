@@ -104,24 +104,24 @@ The code in ``type_error/src/type_error/__init__.py`` from :ref:`separate and eq
 ----
 
 *********************************************************************************
-TypeError with classes: tests and solutions
+TypeError with objects: tests and solutions
 *********************************************************************************
 
 =================================================================================
-TypeError with classes: tests
+TypeError with objects: tests
 =================================================================================
 
 ----
 
-The code added to ``type_error/tests/test_type_error.py`` from :ref:`TypeError with classes`
+The code added to ``type_error/tests/test_type_error.py`` from :ref:`TypeError with objects`
 
-.. literalinclude:: type_error/tests/test_type_error_w_classes.py
+.. literalinclude:: type_error/tests/test_type_error_w_objects.py
   :language: python
   :lineno-start: 89
   :caption: type_error/tests/test_type_error.py
   :lines: 89-99
 
-.. literalinclude:: type_error/tests/test_type_error_w_classes.py
+.. literalinclude:: type_error/tests/test_type_error_w_objects.py
   :language: python
   :lineno-start: 101
   :caption: type_error/tests/test_type_error.py
@@ -130,26 +130,26 @@ The code added to ``type_error/tests/test_type_error.py`` from :ref:`TypeError w
 ----
 
 =================================================================================
-TypeError with classes: solutions
+TypeError with objects: solutions
 =================================================================================
 
 ----
 
-The code added to ``type_error/src/type_error/__init__.py`` from :ref:`TypeError with classes`
+The code added to ``type_error/src/type_error/__init__.py`` from :ref:`TypeError with objects`
 
-.. literalinclude:: type_error/solutions/type_error_w_classes.py
+.. literalinclude:: type_error/solutions/type_error_w_objects.py
   :language: python
   :linenos:
   :caption: type_error/src/type_error/__init__.py
   :lines: 1-13
 
-.. literalinclude:: type_error/solutions/type_error_w_classes.py
+.. literalinclude:: type_error/solutions/type_error_w_objects.py
   :language: python
   :lineno-start: 52
   :caption: type_error/src/type_error/__init__.py
   :lines: 52-69
 
-.. literalinclude:: type_error/solutions/type_error_w_classes.py
+.. literalinclude:: type_error/solutions/type_error_w_objects.py
   :language: python
   :lineno-start: 71
   :caption: type_error/src/type_error/__init__.py

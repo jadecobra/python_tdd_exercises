@@ -10,23 +10,23 @@ class WParentheses(): pass
 class WObject(object): pass
 
 
-class TestClasses(unittest.TestCase):
+class Testobjects(unittest.TestCase):
 
-    def test_making_a_class_w_pass(self):
+    def test_making_an_object_w_pass(self):
         assert isinstance(WPass(), object)
         self.assertIsInstance(WPass(), object)
 
         assert issubclass(WPass, object)
         self.assertIsSubclass(WPass, object)
 
-    def test_making_a_class_w_parentheses(self):
+    def test_making_an_object_w_parentheses(self):
         assert isinstance(WParentheses(), object)
         self.assertIsInstance(WParentheses(), object)
 
         assert issubclass(WParentheses, object)
         self.assertIsSubclass(WParentheses, object)
 
-    def test_making_a_class_w_object(self):
+    def test_making_an_object_w_object(self):
         assert isinstance(WObject(), object)
         self.assertIsInstance(WObject(), object)
 

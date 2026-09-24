@@ -1,5 +1,5 @@
 .. meta::
-  :description: Step-by-step TDD tutorial on Python cooperative multiple inheritance (family ties chapter), Method Resolution Order (MRO), super() for parent __init__ calls, and inheriting from a Person base class built in prior chapters. Follow red-green-refactor to create Doe, Blow, Smith (class attr eye_color), Jane, Joe, Mary (Joe + Jane), John, Lil (Mary + John) with custom last_name and eye_color. Diagnose and fix real beginner errors shown: TypeError: Blow.__init__() takes 1 positional argument but 2 were given, TypeError: got an unexpected keyword argument 'last_name', TypeError: missing 1 required positional argument, AttributeError: module 'src.family_ties' has no attribute 'Blow', AssertionError: 'brown' != '', "is not an instance of", initial AssertionError: True is not false. Uses only local variables in TestFamilyTies methods (no setUp), assertIsInstance/assertNotIsInstance/assertIsSubclass on classes vs instances, dir() comparisons. Builds directly on how_to/make_person (Person + factory), classes, and inheritance ("everything is an object").
+  :description: Step-by-step TDD tutorial on Python cooperative multiple inheritance (family ties chapter), Method Resolution Order (MRO), super() for parent __init__ calls, and inheriting from a Person base class built in prior chapters. Follow red-green-refactor to create Doe, Blow, Smith (class attr eye_color), Jane, Joe, Mary (Joe + Jane), John, Lil (Mary + John) with custom last_name and eye_color. Diagnose and fix real beginner errors shown: TypeError: Blow.__init__() takes 1 positional argument but 2 were given, TypeError: got an unexpected keyword argument 'last_name', TypeError: missing 1 required positional argument, AttributeError: module 'src.family_ties' has no attribute 'Blow', AssertionError: 'brown' != '', "is not an instance of", initial AssertionError: True is not false. Uses only local variables in TestFamilyTies methods (no setUp), assertIsInstance/assertNotIsInstance/assertIsSubclass on objects vs instances, dir() comparisons. Builds directly on how_to/make_person (Person + factory), objects, and inheritance ("everything is an object").
   :keywords: Jacob Itegboje, Pumping Python, python cooperative multiple inheritance tutorial, python MRO method resolution order for beginners, super __init__ cooperative inheritance python, family ties python tdd Doe Blow Smith Jane Joe Mary John Lil, python multiple inheritance order of parents matters, TypeError takes 1 positional argument but 2 were given, TypeError got an unexpected keyword argument last_name, AttributeError module src.family_ties has no attribute, AssertionError is not an instance of, python inherit from Person class TDD, no setUp needed local variables each test, assertIsSubclass assertIsInstance unittest inheritance, C3 linearization python, diamond problem python super, red green refactor multiple inheritance, python class with parent tutorial for beginners
 
 .. include:: ../links.rst
@@ -19,7 +19,7 @@ The tests from :ref:`everything is an object` show that in Python everything :re
 
 Making new :ref:`objects<everything is an object>` can be easier with :ref:`Inheritance<test_dir_object>` because I do not have to write things that have already been written again, I can :ref:`inherit<test_dir_object>` them instead and change the new :ref:`objects<everything is an object>` to do what I want.
 
-It can also be more complicated because I can make new :ref:`instances<how to test if something is an instance>` to :ref:`inherit<test_dir_object>` from one :ref:`class<everything is an object>` and customize it for what I need instead of making new :ref:`classes<everything is an object>` that require me to keep track of `Python's Method Resolution Order`_.
+It can also be more complicated because I can make new :ref:`instances<how to test if something is an instance>` to :ref:`inherit<test_dir_object>` from one :ref:`class<everything is an object>` and customize it for what I need instead of making new :ref:`objects<everything is an object>` that require me to keep track of `Python's Method Resolution Order`_.
 
 ----
 
@@ -32,10 +32,10 @@ When :ref:`an instance<how to test if something is an instance>` is made, Python
 ----
 
 *********************************************************************************
-how to make a class with a parent
+how to make an object with a parent
 *********************************************************************************
 
-To use :ref:`inheritance<test_dir_object>` I put the "parent" in parentheses when I :ref:`make<how to make a class>` the new :ref:`object<everything is an object>` (the child) to make the relationship.
+To use :ref:`inheritance<test_dir_object>` I put the "parent" in parentheses when I :ref:`make<how to make an object>` the new :ref:`object<everything is an object>` (the child) to make the relationship.
 
 .. code-block:: python
 
@@ -54,11 +54,11 @@ questions about family ties
 *********************************************************************************
 
 * :ref:`what is Python's Method Resolution Order?`
-* :ref:`how can I make a class with inheritance?<test_making_a_class_w_inheritance>`
-* :ref:`what is the difference between an instance and a subclass?<more about instances vs subclasses>`
-* :ref:`how can I make a class with one parent?<test_classes_w_one_parent>`
+* :ref:`how can I make an object with inheritance?<test_making_an_object_w_inheritance>`
+* :ref:`what is the difference between an instance and a subclass?<more about instances vs subobjects>`
+* :ref:`how can I make an object with one parent?<test_objects_w_one_parent>`
 * :ref:`what happens when a child calls the parent?`
-* :ref:`how can I make a class with more than one parent?<test_classes_w_multiple_parents>`
+* :ref:`how can I make an object with more than one parent?<test_objects_w_multiple_parents>`
 * :ref:`how can I call a parent class from a child class?<how to call the parent from the child>`
 * :ref:`what happens when a class has more than one parent?<what happens when a child has more than one parent?>`
 
@@ -81,7 +81,7 @@ requirements
 *********************************************************************************
 
 * :ref:`how to make a person`
-* :ref:`what is a class?`
+* :ref:`what is an object?`
 * :ref:`everything is an object`
 
 ----
@@ -197,10 +197,10 @@ open the project
 ----
 
 *********************************************************************************
-test_making_a_class_w_inheritance
+test_making_an_object_w_inheritance
 *********************************************************************************
 
-I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<everything is an object>` with :ref:`inheritance<test_dir_object>` by stating the parent :ref:`class<everything is an object>` and that :ref:`an instance (a copy)<how to test if something is an instance>` and a :ref:`subclass (child)<how to test if something is a subclass>` are different.
+I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<everything is an object>` with :ref:`inheritance<test_dir_object>` by stating the parent :ref:`class<everything is an object>` and that :ref:`an instance (a copy)<how to test if something is an instance>` and a :ref:`subclass (child)<how to test if something is a subclass>` are different.
 
 ----
 
@@ -211,7 +211,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
 ----
 
 * I go back to the terminal_ where the tests are running
-* I change :ref:`test_failure` to :ref:`test_making_a_class_w_inheritance` with an :ref:`assertion<what is an assertion?>`
+* I change :ref:`test_failure` to :ref:`test_making_an_object_w_inheritance` with an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -219,7 +219,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
 
     class TestFamilyTies(unittest.TestCase):
 
-        def test_making_a_class_w_inheritance(self):
+        def test_making_an_object_w_inheritance(self):
             self.assertIsInstance(
                 src.family_ties.Doe,
                 src.person.Person
@@ -290,7 +290,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
 
 * I open ``family_ties/__init__.py`` from the ``src`` folder_
 
-* I add a :ref:`class definition<how to make a class>` definition to ``family_ties.py``
+* I add a :ref:`class definition<how to make an object>` definition to ``family_ties.py``
 
   .. code-block:: python
     :linenos:
@@ -308,13 +308,13 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
 
   because ``Doe`` is not an :ref:`instance (a copy)<how to test if something is an instance>` of ``Person``.
 
-* I change the :ref:`assertion<what is an assertion?>` in :ref:`test_making_a_class_w_inheritance` in ``test_family_ties.py``
+* I change the :ref:`assertion<what is an assertion?>` in :ref:`test_making_an_object_w_inheritance` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 7
     :emphasize-lines: 2-3
 
-        def test_making_a_class_w_inheritance(self):
+        def test_making_an_object_w_inheritance(self):
             # self.assertIsInstance(
             self.assertNotIsInstance(
                 src.family_ties.Doe,
@@ -340,7 +340,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
     :lineno-start: 7
     :emphasize-lines: 8-11
 
-        def test_making_a_class_w_inheritance(self):
+        def test_making_an_object_w_inheritance(self):
             self.assertIsInstance(
             # self.assertNotIsInstance(
                 src.family_ties.Doe,
@@ -455,7 +455,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<ev
 ----
 
 =================================================================================
-more about instances vs subclasses
+more about instances vs subobjects
 =================================================================================
 
 ----
@@ -466,7 +466,7 @@ more about instances vs subclasses
     :lineno-start: 7
     :emphasize-lines: 8-11
 
-        def test_making_a_class_w_inheritance(self):
+        def test_making_an_object_w_inheritance(self):
             # self.assertIsInstance(
             self.assertNotIsInstance(
                 src.family_ties.Doe,
@@ -502,7 +502,7 @@ more about instances vs subclasses
     :lineno-start: 7
     :emphasize-lines: 8-9
 
-        def test_making_a_class_w_inheritance(self):
+        def test_making_an_object_w_inheritance(self):
             # self.assertIsInstance(
             self.assertNotIsInstance(
                 src.family_ties.Doe,
@@ -529,7 +529,7 @@ more about instances vs subclasses
     :lineno-start: 7
     :emphasize-lines: 2
 
-        def test_making_a_class_w_inheritance(self):
+        def test_making_an_object_w_inheritance(self):
             doe_class = src.family_ties.Doe
 
             # self.assertIsInstance(
@@ -544,7 +544,7 @@ more about instances vs subclasses
     :lineno-start: 7
     :emphasize-lines: 6-7, 13-15, 19-20
 
-        def test_making_a_class_w_inheritance(self):
+        def test_making_an_object_w_inheritance(self):
             doe_class = src.family_ties.Doe
 
             # self.assertIsInstance(
@@ -679,7 +679,7 @@ how to call the parent from the child
 
     which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of the ``Person`` :ref:`class<everything is an object>` takes one required argument for ``first_name``.
 
-* I add a value for ``first_name`` to the call to ``src.family_ties.Doe()`` in :ref:`test_making_a_class_w_inheritance` in ``test_family_ties.py``
+* I add a value for ``first_name`` to the call to ``src.family_ties.Doe()`` in :ref:`test_making_an_object_w_inheritance` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 30
@@ -826,7 +826,7 @@ how to call the parent from the child
     :lineno-start: 7
     :emphasize-lines: 2
 
-        def test_making_a_class_w_inheritance(self):
+        def test_making_an_object_w_inheritance(self):
             person_class = src.person.Person
             doe_class = src.family_ties.Doe
 
@@ -836,7 +836,7 @@ how to call the parent from the child
     :lineno-start: 7
     :emphasize-lines: 9-10, 23-24, 30-31, 37-38
 
-        def test_making_a_class_w_inheritance(self):
+        def test_making_an_object_w_inheritance(self):
             person_class = src.person.Person
             doe_class = src.family_ties.Doe
 
@@ -887,7 +887,7 @@ how to call the parent from the child
     :lineno-start: 7
     :emphasize-lines: 4
 
-        def test_making_a_class_w_inheritance(self):
+        def test_making_an_object_w_inheritance(self):
             person_class = src.person.Person
             doe_class = src.family_ties.Doe
             doe_instance = doe_class('the_first')
@@ -914,7 +914,7 @@ how to call the parent from the child
                 person_class
             )
 
-  green, because ``doe_class()`` and ``src.classes.Doe()`` are the same since ``doe_class = src.classes.Doe``.
+  green, because ``doe_class()`` and ``src.objects.Doe()`` are the same since ``doe_class = src.objects.Doe``.
 
 * I remove the commented lines
 
@@ -922,7 +922,7 @@ how to call the parent from the child
     :lineno-start: 7
     :emphasize-lines: 7, 11, 15, 19, 23
 
-        def test_making_a_class_w_inheritance(self):
+        def test_making_an_object_w_inheritance(self):
             person_class = src.person.Person
             doe_class = src.family_ties.Doe
             doe_instance = doe_class('the_first')
@@ -969,17 +969,17 @@ how to call the parent from the child
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_making_a_class_w_inheritance'
+    'add test_making_an_object_w_inheritance'
 
-:ref:`I can make a class with inheritance.<test_making_a_class_w_inheritance>`
+:ref:`I can make a class with inheritance.<test_making_an_object_w_inheritance>`
 
 ----
 
 *********************************************************************************
-test_classes_w_one_parent
+test_objects_w_one_parent
 *********************************************************************************
 
-I want to test how the :ref:`attributes<what is a class attribute?>` of :ref:`classes<everything is an object>` are set if they have only one parent (super :ref:`class<everything is an object>`).
+I want to test how the :ref:`attributes<what is a class attribute?>` of :ref:`objects<everything is an object>` are set if they have only one parent (super :ref:`class<everything is an object>`).
 
 ----
 
@@ -1000,7 +1000,7 @@ I want to test how the :ref:`attributes<what is a class attribute?>` of :ref:`cl
                 dir(doe_class), dir(person_class)
             )
 
-        def test_classes_w_one_parent(self):
+        def test_objects_w_one_parent(self):
             doe = src.family_ties.Doe('the_first')
             self.assertEqual(doe.last_name, '')
 
@@ -1027,7 +1027,7 @@ I change the expectation
   :lineno-start: 32
   :emphasize-lines: 3-4
 
-      def test_classes_w_one_parent(self):
+      def test_objects_w_one_parent(self):
           doe = src.family_ties.Doe('the_first')
           # self.assertEqual(doe.last_name, '')
           self.assertEqual(doe.last_name, 'doe')
@@ -1063,7 +1063,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
     :emphasize-lines: 6-7
     :emphasize-text: joe
 
-        def test_classes_w_one_parent(self):
+        def test_objects_w_one_parent(self):
             doe = src.family_ties.Doe('the_first')
             # self.assertEqual(doe.last_name, '')
             self.assertEqual(doe.last_name, 'doe')
@@ -1080,9 +1080,9 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     AttributeError: module 'src.family_ties' has no attribute 'Blow'
 
-  because there is no :ref:`definition<how to make a class>` for ``Blow`` in ``family_ties.py``
+  because there is no :ref:`definition<how to make an object>` for ``Blow`` in ``family_ties.py``
 
-* I add a new :ref:`class definition<how to make a class>` to ``family_ties.py``
+* I add a new :ref:`class definition<how to make an object>` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1194,11 +1194,11 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
           Blow.__init__('joe')
               self.last_name = 'joe'
 
-  I can :ref:`make classes<how to make a class>` that are related and have their own defaults. In this test
+  I can :ref:`make objects<how to make an object>` that are related and have their own defaults. In this test
 
   - the ``Doe`` :ref:`class<everything is an object>` has a default value for the ``last_name`` :ref:`attribute<what is a class attribute?>` that is the :ref:`default value<test_optional_arguments>` for the ``last_name`` :ref:`attribute<what is a class attribute?>` of ``Person``
   - the ``Blow`` :ref:`class<everything is an object>` has a different :ref:`default value<test_optional_arguments>` for the value of the  ``last_name`` :ref:`attribute<what is a class attribute?>`
-  - ``Doe`` and ``Blow`` are :ref:`children (subclasses)<how to test if something is a subclass>` of ``Person``
+  - ``Doe`` and ``Blow`` are :ref:`children (subobjects)<how to test if something is a subclass>` of ``Person``
 
 * I remove the commented lines
 
@@ -1216,14 +1216,14 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
         def __init__(self, first_name):
             self.last_name = 'blow'
 
-* In this case there is a simpler way to make ``joe`` and ``doe``. I could pass the values to the ``Person`` :ref:`class<everything is an object>` directly, since all the ``Blow`` :ref:`class<everything is an object>` does is customize the ``last_name`` :ref:`attribute<what is a class attribute?>`, there is nothing special about it or the ``Doe`` :ref:`class<everything is an object>`. I add an :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_one_parent` in ``test_family_ties.py``
+* In this case there is a simpler way to make ``joe`` and ``doe``. I could pass the values to the ``Person`` :ref:`class<everything is an object>` directly, since all the ``Blow`` :ref:`class<everything is an object>` does is customize the ``last_name`` :ref:`attribute<what is a class attribute?>`, there is nothing special about it or the ``Doe`` :ref:`class<everything is an object>`. I add an :ref:`assertion<what is an assertion?>` to :ref:`test_objects_w_one_parent` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 32
     :emphasize-lines: 9-10
     :emphasize-text: person
 
-        def test_classes_w_one_parent(self):
+        def test_objects_w_one_parent(self):
             doe = src.family_ties.Doe('the_first')
             # self.assertEqual(doe.last_name, '')
             self.assertEqual(doe.last_name, 'doe')
@@ -1318,7 +1318,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
     AttributeError: module 'src.family_ties'
                     has no attribute 'Smith'
 
-* I add a :ref:`class definition<how to make a class>` for ``Smith`` to ``family_ties.py``
+* I add a :ref:`class definition<how to make an object>` for ``Smith`` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 10
@@ -1417,7 +1417,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
   the test passes.
 
-* I add another :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_one_parent` in ``test_family_ties.py``
+* I add another :ref:`assertion<what is an assertion?>` to :ref:`test_objects_w_one_parent` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 48
@@ -1459,7 +1459,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
   .. code-block:: python
     :lineno-start: 32
 
-        def test_classes_w_one_parent(self):
+        def test_objects_w_one_parent(self):
             doe = src.family_ties.Doe('the_first')
             self.assertEqual(doe.last_name, 'doe')
 
@@ -1481,7 +1481,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     # Exceptions seen
 
-  * From the :ref:`class definition<how to make a class>` of ``Doe``, this happens when :ref:`an instance (a copy)<how to test if something is an instance>` of ``Doe`` is made
+  * From the :ref:`class definition<how to make an object>` of ``Doe``, this happens when :ref:`an instance (a copy)<how to test if something is an instance>` of ``Doe`` is made
 
     .. code-block:: python
 
@@ -1494,7 +1494,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     because :ref:`a method uses the default value for the parameter because it is called without the parameter<test_optional_arguments>`.
 
-  * From the :ref:`class definitions<how to make a class>` of ``Smith`` and ``Blow`` this happens when :ref:`an instance (a copy)<how to test if something is an instance>` of ``Smith`` or ``Blow`` is made
+  * From the :ref:`class definitions<how to make an object>` of ``Smith`` and ``Blow`` this happens when :ref:`an instance (a copy)<how to test if something is an instance>` of ``Smith`` or ``Blow`` is made
 
     .. code-block:: python
 
@@ -1520,14 +1520,14 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_classes_w_one_parent'
+    git commit -am 'add test_objects_w_one_parent'
 
-:ref:`I can customize child classes with the __init__ method<test_classes_w_one_parent>`.
+:ref:`I can customize child objects with the __init__ method<test_objects_w_one_parent>`.
 
 ----
 
 *********************************************************************************
-test_classes_w_multiple_parents
+test_objects_w_multiple_parents
 *********************************************************************************
 
 Can a :ref:`class<everything is an object>` have more than one parent? How are the :ref:`attributes<what is a class attribute?>` set if they have more than one parent (super :ref:`class<everything is an object>`)?
@@ -1552,7 +1552,7 @@ Can a :ref:`class<everything is an object>` have more than one parent? How are t
             smith = src.person.Person('john', 'smith')
             self.assertEqual(smith.last_name, john.last_name)
 
-        def test_classes_w_multiple_parents(self):
+        def test_objects_w_multiple_parents(self):
             jane = src.family_ties.Jane()
             self.assertEqual(jane.first_name, 'jane')
 
@@ -1574,7 +1574,7 @@ Can a :ref:`class<everything is an object>` have more than one parent? How are t
 
 ----
 
-* I add a :ref:`class definition<how to make a class>` for ``Jane`` to ``family_ties.py``
+* I add a :ref:`class definition<how to make an object>` for ``Jane`` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -1606,7 +1606,7 @@ Can a :ref:`class<everything is an object>` have more than one parent? How are t
 
   which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of ``Person`` requires one positional argument (``first_name``) and it got called with zero
 
-* I add the :ref:`__init__ method<the constructor method>` to the :ref:`definition<how to make a class>` of ``Jane``
+* I add the :ref:`__init__ method<the constructor method>` to the :ref:`definition<how to make an object>` of ``Jane``
 
   .. code-block:: python
     :lineno-start: 22
@@ -1624,7 +1624,7 @@ Can a :ref:`class<everything is an object>` have more than one parent? How are t
 
     AttributeError: 'Jane' object has no attribute 'first_name'
 
-* I add a value for ``first_name`` to the :ref:`definition<how to make a class>`
+* I add a value for ``first_name`` to the :ref:`definition<how to make an object>`
 
   .. code-block:: python
     :lineno-start: 22
@@ -1647,13 +1647,13 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the value of the  ``last_name`` :ref:`attribute<what is a class attribute?>` of ``jane`` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add an :ref:`assertion<what is an assertion?>` for the value of the  ``last_name`` :ref:`attribute<what is a class attribute?>` of ``jane`` to :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 51
     :emphasize-lines: 4
 
-        def test_classes_w_multiple_parents(self):
+        def test_objects_w_multiple_parents(self):
             jane = src.family_ties.Jane()
             self.assertEqual(jane.first_name, 'jane')
             self.assertEqual(jane.last_name, 'doe')
@@ -1688,13 +1688,13 @@ the test passes.
   - the :ref:`default value<test_optional_arguments>` for ``Person`` is ``doe``
   - ``Jane`` is a :ref:`child (subclass)<how to test if something is a subclass>` of ``Person``
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_multiple_parents` to make sure ``Jane`` is a ``Doe``, in ``test_family_ties.py``
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_objects_w_multiple_parents` to make sure ``Jane`` is a ``Doe``, in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 51
     :emphasize-lines: 5-7
 
-        def test_classes_w_multiple_parents(self):
+        def test_objects_w_multiple_parents(self):
             jane = src.family_ties.Jane()
             self.assertEqual(jane.first_name, 'jane')
             self.assertEqual(jane.last_name, 'doe')
@@ -1799,13 +1799,13 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for ``mary``, another instance of ``Jane`` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add an :ref:`assertion<what is an assertion?>` for ``mary``, another instance of ``Jane`` to :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 51
     :emphasize-lines: 9-10
 
-        def test_classes_w_multiple_parents(self):
+        def test_objects_w_multiple_parents(self):
             jane = src.family_ties.Jane()
             self.assertEqual(jane.first_name, 'jane')
             self.assertEqual(jane.last_name, 'doe')
@@ -1949,7 +1949,7 @@ the test passes.
         def __init__(self, first_name='jane'):
             super().__init__(first_name)
 
-* I add an :ref:`assertion<what is an assertion?>` that will fail, for the last name of ``mary`` in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add an :ref:`assertion<what is an assertion?>` that will fail, for the last name of ``mary`` in :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 59
@@ -1993,7 +1993,7 @@ the test passes.
     :emphasize-lines: 2-3
     :emphasize-text: Joe
 
-        def test_classes_w_multiple_parents(self):
+        def test_objects_w_multiple_parents(self):
             joe = src.family_ties.Joe()
             self.assertEqual(joe.first_name, 'joe')
 
@@ -2020,7 +2020,7 @@ the test passes.
         module 'src.family_ties' has no attribute 'Joe'.
         Did you mean: 'Doe'?
 
-* I add a :ref:`class definition<how to make a class>` for the ``Joe`` :ref:`class<everything is an object>` to ``family_ties.py``
+* I add a :ref:`class definition<how to make an object>` for the ``Joe`` :ref:`class<everything is an object>` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 22
@@ -2084,13 +2084,13 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_multiple_parents` to make sure that ``joe`` is a ``Blow``, in ``test_family_ties.py``
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_objects_w_multiple_parents` to make sure that ``joe`` is a ``Blow``, in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 51
     :emphasize-lines: 4
 
-        def test_classes_w_multiple_parents(self):
+        def test_objects_w_multiple_parents(self):
             joe = src.family_ties.Joe()
             self.assertEqual(joe.first_name, 'joe')
             self.assertEqual(joe.last_name, 'blow')
@@ -2119,13 +2119,13 @@ the test passes.
 
   the test passes. I cheated, which means I need a better test.
 
-* I add :ref:`assertIsSubclass<test_assert_is_subclass>` to :ref:`test_classes_w_multiple_parents` to make sure ``Joe`` is a :ref:`child (subclass)<how to test if something is a subclass>` of ``Blow``, in ``test_family_ties.py``
+* I add :ref:`assertIsSubclass<test_assert_is_subclass>` to :ref:`test_objects_w_multiple_parents` to make sure ``Joe`` is a :ref:`child (subclass)<how to test if something is a subclass>` of ``Blow``, in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 51
     :emphasize-lines: 5-7
 
-        def test_classes_w_multiple_parents(self):
+        def test_objects_w_multiple_parents(self):
             joe = src.family_ties.Joe()
             self.assertEqual(joe.first_name, 'joe')
             self.assertEqual(joe.last_name, 'blow')
@@ -2257,7 +2257,7 @@ the test passes.
     AttributeError: module 'src.family_ties'
                     has no attribute 'Mary'
 
-* I add a :ref:`class definition<how to make a class>` for ``Mary`` to ``family_ties.py``
+* I add a :ref:`class definition<how to make an object>` for ``Mary`` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 29
@@ -2373,7 +2373,7 @@ the test passes.
                 self.first_name = 'mary'
                 self.last_name = 'doe' # use the default value
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubclass method<test_assert_not_is_subclass>` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubclass method<test_assert_not_is_subclass>` to :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 66
@@ -2576,7 +2576,7 @@ what happens when a child has more than one parent?
 
     AssertionError: 'blow' != 'doe'
 
-* I change the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_classes_w_multiple_parents` for the last name of ``mary`` in ``test_family_ties.py``
+* I change the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_objects_w_multiple_parents` for the last name of ``mary`` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 66
@@ -2634,7 +2634,7 @@ what happens when a child has more than one parent?
 
   the :ref:`__init__ method<the constructor method>` of ``Jane`` did not get called even though it is a parent of ``Mary``
 
-* I add an :ref:`assertion<what is an assertion?>` to show this in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add an :ref:`assertion<what is an assertion?>` to show this in :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 59
@@ -2671,7 +2671,7 @@ what happens when a child has more than one parent?
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Mary`` in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add an :ref:`assertion<what is an assertion?>` for the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Mary`` in :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 67
@@ -2785,7 +2785,7 @@ what happens when a child has more than one parent?
 
     AssertionError: 'blue' != 'green'
 
-* I change the expectation of the :ref:`assertion<what is an assertion?>` for ``mary.eye_color`` in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I change the expectation of the :ref:`assertion<what is an assertion?>` for ``mary.eye_color`` in :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 67
@@ -2859,7 +2859,7 @@ what happens when a child has more than one parent?
 
 ----
 
-* I add ``john`` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add ``john`` to :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 67
@@ -2894,7 +2894,7 @@ what happens when a child has more than one parent?
     AttributeError: module 'src.family_ties'
                     has no attribute 'John'
 
-* I add a :ref:`class definition<how to make a class>` for ``John`` to ``family_ties.py``
+* I add a :ref:`class definition<how to make an object>` for ``John`` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 37
@@ -3085,7 +3085,7 @@ what happens when a child has more than one parent?
 
 ----
 
-* I add ``lil``, an :ref:`instance<how to test if something is an instance>` of a :ref:`child (subclass)<how to test if something is a subclass>` of ``John`` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add ``lil``, an :ref:`instance<how to test if something is an instance>` of a :ref:`child (subclass)<how to test if something is a subclass>` of ``John`` to :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 83
@@ -3112,7 +3112,7 @@ what happens when a child has more than one parent?
 
     AttributeError: module 'src.family_ties' has no attribute 'Lil'
 
-* I add a :ref:`class definition<how to make a class>` for ``Lil`` to ``family_ties.py``
+* I add a :ref:`class definition<how to make an object>` for ``Lil`` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 44
@@ -3215,7 +3215,7 @@ what happens when a child has more than one parent?
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for the ``last_name`` :ref:`attribute<what is an attribute?>` of ``lil``, in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add an :ref:`assertion<what is an assertion?>` for the ``last_name`` :ref:`attribute<what is an attribute?>` of ``lil``, in :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 90
@@ -3626,7 +3626,7 @@ what happens when a child has more than one parent?
                self.first_name = 'mary'
                self.last_name = 'doe' # use the default value
 
-* I change the expectation of the :ref:`assertion<what is an assertion?>` for ``mary.last_name`` in :ref:`test_classes_w_multiple_parents`
+* I change the expectation of the :ref:`assertion<what is an assertion?>` for ``mary.last_name`` in :ref:`test_objects_w_multiple_parents`
 
   .. code-block:: python
     :lineno-start: 67
@@ -3757,7 +3757,7 @@ what happens when a child has more than one parent?
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for ``lil.eye_color`` to test if :ref:`instances<how to test if something is an instance>` of ``Lil`` inherit ``eye_color`` from ``Jane`` or ``Joe``, in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add an :ref:`assertion<what is an assertion?>` for ``lil.eye_color`` to test if :ref:`instances<how to test if something is an instance>` of ``Lil`` inherit ``eye_color`` from ``Jane`` or ``Joe``, in :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 90
@@ -3817,7 +3817,7 @@ what happens when a child has more than one parent?
     :lineno-start: 51
     :emphasize-lines: 5
 
-        def test_classes_w_multiple_parents(self):
+        def test_objects_w_multiple_parents(self):
             joe = src.family_ties.Joe()
             self.assertEqual(joe.first_name, 'joe')
             self.assertEqual(joe.last_name, 'blow')
@@ -3838,7 +3838,7 @@ what happens when a child has more than one parent?
     :lineno-start: 51
     :emphasize-lines: 5-6
 
-        def test_classes_w_multiple_parents(self):
+        def test_objects_w_multiple_parents(self):
             joe = src.family_ties.Joe()
             self.assertEqual(joe.first_name, 'joe')
             self.assertEqual(joe.last_name, 'blow')
@@ -3892,7 +3892,7 @@ what happens when a child has more than one parent?
 
     AssertionError: 'brown' != ''
 
-* I change the expectation of the :ref:`assertion<what is an assertion?>` for ``john.eye_color`` in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I change the expectation of the :ref:`assertion<what is an assertion?>` for ``john.eye_color`` in :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 85
@@ -3914,7 +3914,7 @@ what happens when a child has more than one parent?
   .. code-block:: python
     :lineno-start: 51
 
-        def test_classes_w_multiple_parents(self):
+        def test_objects_w_multiple_parents(self):
             joe = src.family_ties.Joe()
             self.assertEqual(joe.first_name, 'joe')
             self.assertEqual(joe.last_name, 'blow')
@@ -3975,9 +3975,9 @@ what happens when a child has more than one parent?
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_classes_w_multiple_parents'
+    'add test_objects_w_multiple_parents'
 
-.. NOTE:: All the instances could have been made with only the ``Person`` :ref:`class<everything is an object>` because there was nothing unique about the :ref:`classes<everything is an object>` I made in ``family_ties.py`` and it would not have given me the chance to practice making classes with multiple parents and seeing how Python_ resolves them.
+.. NOTE:: All the instances could have been made with only the ``Person`` :ref:`class<everything is an object>` because there was nothing unique about the :ref:`objects<everything is an object>` I made in ``family_ties.py`` and it would not have given me the chance to practice making objects with multiple parents and seeing how Python_ resolves them.
 
   .. code-block:: python
 
@@ -4019,7 +4019,7 @@ what happens when a child has more than one parent?
              self.last_name = last_name
     a_name.eye_color = color
 
-:ref:`I can make classes with multiple parents<test_classes_w_multiple_parents>`
+:ref:`I can make objects with multiple parents<test_objects_w_multiple_parents>`
 
 ----
 
@@ -4029,12 +4029,12 @@ review
 
 I can make a :ref:`class<everything is an object>` with
 
-* :ref:`pass<test_making_a_class_w_pass>`
-* :ref:`parentheses<test_making_a_class_w_parentheses>`
-* :ref:`object<test_making_a_class_w_object>`
-* :ref:`its parent<test_making_a_class_w_inheritance>`
-* :ref:`multiple parents<test_classes_w_multiple_parents>`
-* :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`
+* :ref:`pass<test_making_an_object_w_pass>`
+* :ref:`parentheses<test_making_an_object_w_parentheses>`
+* :ref:`object<test_making_an_object_w_object>`
+* :ref:`its parent<test_making_an_object_w_inheritance>`
+* :ref:`multiple parents<test_objects_w_multiple_parents>`
+* :ref:`all objects inherit from 'object'<test_making_an_object_w_object>`
 
 ----
 
@@ -4067,7 +4067,7 @@ close the project
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<classes: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<objects: tests and solutions>`
 
 ----
 
@@ -4080,9 +4080,9 @@ what is next?
 * :ref:`I know how to make functions<what is a function?>`.
 * :ref:`how to pass values from tests to functions<telephone>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
-* :ref:`how to make classes<classes>`
+* :ref:`how to make objects<objects>`
 * :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
-* :ref:`what happens when classes have one or more parents<family ties>`
+* :ref:`what happens when objects have one or more parents<family ties>`
 
 
 :ref:`Would you like to use class attributes with the 'functions' project?<test functions with None>`

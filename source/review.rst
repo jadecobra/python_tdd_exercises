@@ -125,10 +125,10 @@ functions that take input review
 ----
 
 *********************************************************************************
-classes review
+objects review
 *********************************************************************************
 
-* :ref:`what is a class?`
+* :ref:`what is an object?`
 * :ref:`what is a class attribute?`
 * :ref:`what is a method?`
 * :ref:`how can I make sure things my tests need are run before every test?<how to use the setUp method to reset class attributes for every test>`
@@ -140,9 +140,9 @@ classes review
 everything is an object review
 *********************************************************************************
 
-* :ref:`how can I make a class with pass?<test_making_a_class_w_pass>`
-* :ref:`how can I make a class with parentheses?<test_making_a_class_w_parentheses>`
-* :ref:`how can I make a class with object?<test_making_a_class_w_object>`
+* :ref:`how can I make an object with pass?<test_making_an_object_w_pass>`
+* :ref:`how can I make an object with parentheses?<test_making_an_object_w_parentheses>`
+* :ref:`how can I make an object with object?<test_making_an_object_w_object>`
 * :ref:`is None an object?<test_is_none_an_object>`
 * :ref:`is a boolean an object?<test_is_a_boolean_an_object>`
 * :ref:`is an integer an object?<test_is_an_integer_an_object>`
@@ -162,11 +162,11 @@ family ties review
 *********************************************************************************
 
 * :ref:`what is Python's Method Resolution Order?`
-* :ref:`how can I make a class with inheritance?<test_making_a_class_w_inheritance>`
-* :ref:`what is the difference between an instance and a subclass?<more about instances vs subclasses>`
-* :ref:`how can I make a class with one parent?<test_classes_w_one_parent>`
+* :ref:`how can I make an object with inheritance?<test_making_an_object_w_inheritance>`
+* :ref:`what is the difference between an instance and a subclass?<more about instances vs subobjects>`
+* :ref:`how can I make an object with one parent?<test_objects_w_one_parent>`
 * :ref:`what happens when a child calls the parent?`
-* :ref:`how can I make a class with more than one parent?<test_classes_w_multiple_parents>`
+* :ref:`how can I make an object with more than one parent?<test_objects_w_multiple_parents>`
 * :ref:`how can I call a parent class from a child class?<how to call the parent from the child>`
 * :ref:`what happens when a class has more than one parent?<what happens when a child has more than one parent?>`
 
@@ -329,7 +329,7 @@ what is next?
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
-* :ref:`what you can do with classes<everything is an object>`
+* :ref:`what you can do with objects<everything is an object>`
 * :ref:`how to raise ModuleNotFoundError<what is a module?>`
 
 :ref:`Do you remember how to make a Python Test Driven Development environment?<how to make a Python Test Driven Development environment>`

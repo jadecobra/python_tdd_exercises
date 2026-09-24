@@ -1988,7 +1988,7 @@ I can do that with the `datetime module`_ from `The Python Standard Library`_ wh
 
     this_year = datetime.datetime.today().year
 
-  that was a lot of words, they become clearer in the chapters on :ref:`classes<everything is an object>`.
+  that was a lot of words, they become clearer in the chapters on :ref:`objects<everything is an object>`.
 
 ----
 

@@ -87,16 +87,16 @@ def test_type_error_w_args_and_kwargs():
 
 
 def test_type_error_w_class_methods():
-    src.type_error.AClass.method_00()
-    src.type_error.AClass().method_01()
-    src.type_error.AClass().method_02()
-    src.type_error.AClass.method_03()
-    src.type_error.AClass.method_04()
-    src.type_error.AClass().method_05()
-    src.type_error.AClass().method_06()
-    src.type_error.AClass().method_07()
-    src.type_error.AClass().method_08()
-    src.type_error.AClass().method_09()
+    src.type_error.AnObject.method_00()
+    src.type_error.AnObject().method_01()
+    src.type_error.AnObject().method_02()
+    src.type_error.AnObject.method_03()
+    src.type_error.AnObject.method_04()
+    src.type_error.AnObject().method_05()
+    src.type_error.AnObject().method_06()
+    src.type_error.AnObject().method_07()
+    src.type_error.AnObject().method_08()
+    src.type_error.AnObject().method_09()
 
 def test_type_error_w_the_uncallables():
     src.type_error.none()

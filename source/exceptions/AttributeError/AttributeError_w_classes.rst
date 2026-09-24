@@ -1,13 +1,13 @@
 .. meta::
   :description:
-    AttributeError with classes in the attribute_error project (uv run pytest-watcher, src/attribute_error/__init__.py). Continues test_attribute_error.py after variables and functions. test_attribute_error_w_class_attributes turns a function stub into class AClass(object) with attribute_00–attribute_09 chained from function_09(); mix AClass.attr (type object has no attribute) and AClass().attr ('AClass' object has no attribute). Representative errors: module 'src.attribute_error' has no attribute 'AClass', 'function' object has no attribute 'attribute_00', SyntaxError 'return' outside function, then class vs instance AttributeError (Did you mean: 'attribute_00' on some Pythons). test_attribute_error_w_class_methods: method_00 = attribute_09 then def; NameError name 'attribute_09'/'self' is not defined; TypeError AClass.method_00() missing 1 required positional argument: 'self' until AClass().method_00(); methods 01–09 on the instance. Review: a variable in a class, a function in a class (method), and a class in a module are attributes. Prepares for catching AttributeError. Jacob Itegboje Pumping Python TDD.
+    AttributeError with objects in the attribute_error project (uv run pytest-watcher, src/attribute_error/__init__.py). Continues test_attribute_error.py after variables and functions. test_attribute_error_w_class_attributes turns a function stub into class AnObject(object) with attribute_00–attribute_09 chained from function_09(); mix AnObject.attr (type object has no attribute) and AnObject().attr ('AnObject' object has no attribute). Representative errors: module 'src.attribute_error' has no attribute 'AnObject', 'function' object has no attribute 'attribute_00', SyntaxError 'return' outside function, then class vs instance AttributeError (Did you mean: 'attribute_00' on some Pythons). test_attribute_error_w_class_methods: method_00 = attribute_09 then def; NameError name 'attribute_09'/'self' is not defined; TypeError AnObject.method_00() missing 1 required positional argument: 'self' until AnObject().method_00(); methods 01–09 on the instance. Review: a variable in a class, a function in a class (method), and a class in a module are attributes. Prepares for catching AttributeError. Jacob Itegboje Pumping Python TDD.
   :keywords:
-    Jacob Itegboje, Pumping Python, AttributeError with classes, python AttributeError class attribute, type object 'AClass' has no attribute, 'AClass' object has no attribute, Did you mean attribute_00, SyntaxError return outside function, NameError name 'self' is not defined, TypeError missing 1 required positional argument self, AClass.attribute_00, AClass().method_00, src.attribute_error.AClass, class in module is attribute, method is attribute of class, test_attribute_error_w_class_attributes, test_attribute_error_w_class_methods, uv run pytest-watcher, remove the commented lines, red green refactor class, src/attribute_error/__init__.py, Pumping Python exceptions AttributeError classes
+    Jacob Itegboje, Pumping Python, AttributeError with objects, python AttributeError class attribute, type object 'AnObject' has no attribute, 'AnObject' object has no attribute, Did you mean attribute_00, SyntaxError return outside function, NameError name 'self' is not defined, TypeError missing 1 required positional argument self, AnObject.attribute_00, AnObject().method_00, src.attribute_error.AnObject, class in module is attribute, method is attribute of class, test_attribute_error_w_class_attributes, test_attribute_error_w_class_methods, uv run pytest-watcher, remove the commented lines, red green refactor class, src/attribute_error/__init__.py, Pumping Python exceptions AttributeError objects
 
 .. include:: ../../links.rst
 
 #################################################################################
-AttributeError with classes
+AttributeError with objects
 #################################################################################
 
 ----
@@ -22,13 +22,13 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../../code/attribute_error/tests/test_attribute_error_w_classes.py
+.. literalinclude:: ../../code/attribute_error/tests/test_attribute_error_w_objects.py
   :language: python
   :lineno-start: 30
   :caption: attribute_error/tests/test_attribute_error.py
   :lines: 30-40
 
-.. literalinclude:: ../../code/attribute_error/tests/test_attribute_error_w_classes.py
+.. literalinclude:: ../../code/attribute_error/tests/test_attribute_error_w_objects.py
   :language: python
   :lineno-start: 43
   :caption: attribute_error/tests/test_attribute_error.py
@@ -99,7 +99,7 @@ test_attribute_error_w_class_attributes
 
 
     def test_attribute_error_w_class_attributes():
-        src.attribute_error.AClass.attribute_00
+        src.attribute_error.AnObject.attribute_00
 
 
     # Exceptions seen
@@ -109,7 +109,7 @@ test_attribute_error_w_class_attributes
   .. code-block:: python
 
     AttributeError: module 'src.attribute_error'
-                    has no attribute 'AClass'
+                    has no attribute 'AnObject'
 
 ----
 
@@ -130,7 +130,7 @@ test_attribute_error_w_class_attributes
     def function_09(): return function_08()
 
 
-    def AClass(): return function_09()
+    def AnObject(): return function_09()
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -145,23 +145,23 @@ test_attribute_error_w_class_attributes
     :lineno-start: 25
     :emphasize-lines: 1-2, 4-5
 
-    # def AClass(): return function_09()
-    def AClass():
+    # def AnObject(): return function_09()
+    def AnObject():
 
         attribute_00 = function_09()
         return function_09()
 
   the terminal_ still shows the same :ref:`Exception<how to test that an Exception is raised>` because I cannot get to a :ref:`variable<what is a variable?>` inside a :ref:`function<what is a function?>` from outside the :ref:`function<what is a function?>`. The :ref:`variable<what is a variable?>` is only used inside the :ref:`function<what is a function?>` when it runs.
 
-* I change ``AClass`` from a :ref:`function<what is a function?>` to a :ref:`class<everything is an object>`
+* I change ``AnObject`` from a :ref:`function<what is a function?>` to a :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 2-3
 
-    # def AClass(): return function_09()
-    # def AClass():
-    class AClass(object):
+    # def AnObject(): return function_09()
+    # def AnObject():
+    class AnObject(object):
 
         attribute_00 = function_09()
         return function_09()
@@ -190,31 +190,31 @@ test_attribute_error_w_class_attributes
     # TypeError
     # SyntaxError
 
-* I comment out the :ref:`return statement<the return statement>` from ``AClass`` in ``src/attribute_error/__init__.py``
+* I comment out the :ref:`return statement<the return statement>` from ``AnObject`` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 6
 
-    # def AClass(): return function_09()
-    # def AClass():
-    class AClass(object):
+    # def AnObject(): return function_09()
+    # def AnObject():
+    class AnObject(object):
 
         attribute_00 = function_09()
         # return function_09()
 
-  - the test passes because ``attribute_00`` is now an :ref:`attribute/property<what is a class attribute?>` of the ``AClass`` :ref:`class<everything is an object>`
-  - ``AClass`` is an :ref:`attribute<what is a class attribute?>` of the ``attribute_error`` :ref:`module<what is a module?>` in the ``src`` folder_
-  - I can use ``attribute_00`` from outside the file_ with ``src.attribute_error.AClass.attribute_00`` or ``src.attribute_error.AClass().attribute_00``
+  - the test passes because ``attribute_00`` is now an :ref:`attribute/property<what is a class attribute?>` of the ``AnObject`` :ref:`class<everything is an object>`
+  - ``AnObject`` is an :ref:`attribute<what is a class attribute?>` of the ``attribute_error`` :ref:`module<what is a module?>` in the ``src`` folder_
+  - I can use ``attribute_00`` from outside the file_ with ``src.attribute_error.AnObject.attribute_00`` or ``src.attribute_error.AnObject().attribute_00``
 
     .. code-block:: shell
 
-      src.attribute_error.AClass.attribute_00
-      src.attribute_error.AClass().attribute_00
+      src.attribute_error.AnObject.attribute_00
+      src.attribute_error.AnObject().attribute_00
       └── src/
           └── attribute_error/
               └── __init__.py
-                  └── class AClass(object):
+                  └── class AnObject(object):
                       └── attribute_00 = function_09()
 
 ----
@@ -233,19 +233,19 @@ test_attribute_error_w_class_attributes
     def function_09(): return function_08()
 
 
-    class AClass(object):
+    class AnObject(object):
 
         attribute_00 = function_09()
 
-* I add a line for ``src.attribute_error.AClass().attribute_01`` to ``tests/test_attribute_error.py``
+* I add a line for ``src.attribute_error.AnObject().attribute_01`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 30
     :emphasize-lines: 3
 
     def test_attribute_error_w_class_attributes():
-        src.attribute_error.AClass.attribute_00
-        src.attribute_error.AClass().attribute_01
+        src.attribute_error.AnObject.attribute_00
+        src.attribute_error.AnObject().attribute_01
 
 
     # Exceptions seen
@@ -254,44 +254,44 @@ test_attribute_error_w_class_attributes
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'attribute_01'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_01`` to the :ref:`class definition<how to make a class>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_01`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 4
 
-    class AClass(object):
+    class AnObject(object):
 
         attribute_00 = function_09()
         attribute_01 = attribute_00
 
-  - the test passes because in this case it does not matter if I use the :ref:`class<everything is an object>` (``AClass``) or an :ref:`instance of the class<how to test if something is an instance>`  (``AClass()``).
-  - ``attribute_01`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_01`` or ``src.attribute_error.AClass().attribute_01``
+  - the test passes because in this case it does not matter if I use the :ref:`class<everything is an object>` (``AnObject``) or an :ref:`instance of the class<how to test if something is an instance>`  (``AnObject()``).
+  - ``attribute_01`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_01`` or ``src.attribute_error.AnObject().attribute_01``
 
     .. code-block:: shell
 
-      src.attribute_error.AClass.attribute_01
-      src.attribute_error.AClass().attribute_01
+      src.attribute_error.AnObject.attribute_01
+      src.attribute_error.AnObject().attribute_01
       └── src/
           └── attribute_error/
               └── __init__.py
-                  └── class AClass(object):
+                  └── class AnObject(object):
                       └── attribute_01 = attribute_00
 
-* I add a line for ``src.attribute_error.AClass.attribute_02`` to ``tests/test_attribute_error.py``
+* I add a line for ``src.attribute_error.AnObject.attribute_02`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 30
     :emphasize-lines: 4
 
     def test_attribute_error_w_class_attributes():
-        src.attribute_error.AClass.attribute_00
-        src.attribute_error.AClass().attribute_01
-        src.attribute_error.AClass.attribute_02
+        src.attribute_error.AnObject.attribute_00
+        src.attribute_error.AnObject().attribute_01
+        src.attribute_error.AnObject.attribute_02
 
 
     # Exceptions seen
@@ -300,45 +300,45 @@ test_attribute_error_w_class_attributes
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: type object 'AnObject'
                     has no attribute 'attribute_02'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_02`` to the :ref:`class definition<how to make a class>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_02`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 5
 
-    class AClass(object):
+    class AnObject(object):
 
         attribute_00 = function_09()
         attribute_01 = attribute_00
         attribute_02 = attribute_01
 
-  the test passes because ``attribute_02`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_02`` or ``src.attribute_error.AClass().attribute_02``
+  the test passes because ``attribute_02`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_02`` or ``src.attribute_error.AnObject().attribute_02``
 
   .. code-block:: shell
 
-    src.attribute_error.AClass.attribute_02
-    src.attribute_error.AClass().attribute_02
+    src.attribute_error.AnObject.attribute_02
+    src.attribute_error.AnObject().attribute_02
     └── src/
         └── attribute_error/
             └── __init__.py
-                └── class AClass(object):
+                └── class AnObject(object):
                     └── attribute_02 = attribute_01
 
-* I add a line for ``src.attribute_error.AClass().attribute_03`` to ``tests/test_attribute_error.py``
+* I add a line for ``src.attribute_error.AnObject().attribute_03`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 30
     :emphasize-lines: 5
 
     def test_attribute_error_w_class_attributes():
-        src.attribute_error.AClass.attribute_00
-        src.attribute_error.AClass().attribute_01
-        src.attribute_error.AClass.attribute_02
-        src.attribute_error.AClass().attribute_03
+        src.attribute_error.AnObject.attribute_00
+        src.attribute_error.AnObject().attribute_01
+        src.attribute_error.AnObject.attribute_02
+        src.attribute_error.AnObject().attribute_03
 
 
     # Exceptions seen
@@ -347,47 +347,47 @@ test_attribute_error_w_class_attributes
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'attribute_03'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_03`` to the :ref:`class definition<how to make a class>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_03`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 6
 
-    class AClass(object):
+    class AnObject(object):
 
         attribute_00 = function_09()
         attribute_01 = attribute_00
         attribute_02 = attribute_01
         attribute_03 = attribute_02
 
-  the test passes because ``attribute_03`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_03`` or ``src.attribute_error.AClass().attribute_03``
+  the test passes because ``attribute_03`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_03`` or ``src.attribute_error.AnObject().attribute_03``
 
   .. code-block:: shell
 
-    src.attribute_error.AClass.attribute_03
-    src.attribute_error.AClass().attribute_03
+    src.attribute_error.AnObject.attribute_03
+    src.attribute_error.AnObject().attribute_03
     └── src/
         └── attribute_error/
             └── __init__.py
-                └── class AClass(object):
+                └── class AnObject(object):
                     └── attribute_03 = attribute_02
 
-* I add a line for ``src.attribute_error.AClass.attribute_04`` to ``tests/test_attribute_error.py``
+* I add a line for ``src.attribute_error.AnObject.attribute_04`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 30
     :emphasize-lines: 6
 
     def test_attribute_error_w_class_attributes():
-        src.attribute_error.AClass.attribute_00
-        src.attribute_error.AClass().attribute_01
-        src.attribute_error.AClass.attribute_02
-        src.attribute_error.AClass().attribute_03
-        src.attribute_error.AClass.attribute_04
+        src.attribute_error.AnObject.attribute_00
+        src.attribute_error.AnObject().attribute_01
+        src.attribute_error.AnObject.attribute_02
+        src.attribute_error.AnObject().attribute_03
+        src.attribute_error.AnObject.attribute_04
 
 
     # Exceptions seen
@@ -396,17 +396,17 @@ test_attribute_error_w_class_attributes
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: type object 'AnObject'
                     has no attribute 'attribute_04'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_04`` to the :ref:`class definition<how to make a class>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_04`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 7
 
-    class AClass(object):
+    class AnObject(object):
 
         attribute_00 = function_09()
         attribute_01 = attribute_00
@@ -414,32 +414,32 @@ test_attribute_error_w_class_attributes
         attribute_03 = attribute_02
         attribute_04 = attribute_03
 
-  the test passes because ``attribute_04`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_04`` or ``src.attribute_error.AClass().attribute_04``
+  the test passes because ``attribute_04`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_04`` or ``src.attribute_error.AnObject().attribute_04``
 
   .. code-block:: shell
 
-    src.attribute_error.AClass.attribute_04
-    src.attribute_error.AClass().attribute_04
+    src.attribute_error.AnObject.attribute_04
+    src.attribute_error.AnObject().attribute_04
     └── src/
         └── attribute_error/
             └── __init__.py
-                └── class AClass(object):
+                └── class AnObject(object):
                     └── attribute_04 = attribute_03
 
 
-* I add a line for ``src.attribute_error.AClass().attribute_05`` to ``tests/test_attribute_error.py``
+* I add a line for ``src.attribute_error.AnObject().attribute_05`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 30
     :emphasize-lines: 7
 
     def test_attribute_error_w_class_attributes():
-        src.attribute_error.AClass.attribute_00
-        src.attribute_error.AClass().attribute_01
-        src.attribute_error.AClass.attribute_02
-        src.attribute_error.AClass().attribute_03
-        src.attribute_error.AClass.attribute_04
-        src.attribute_error.AClass().attribute_05
+        src.attribute_error.AnObject.attribute_00
+        src.attribute_error.AnObject().attribute_01
+        src.attribute_error.AnObject.attribute_02
+        src.attribute_error.AnObject().attribute_03
+        src.attribute_error.AnObject.attribute_04
+        src.attribute_error.AnObject().attribute_05
 
 
     # Exceptions seen
@@ -448,17 +448,17 @@ test_attribute_error_w_class_attributes
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'attribute_05'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_05`` to the :ref:`class definition<how to make a class>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_05`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 8
 
-    class AClass(object):
+    class AnObject(object):
 
         attribute_00 = function_09()
         attribute_01 = attribute_00
@@ -467,32 +467,32 @@ test_attribute_error_w_class_attributes
         attribute_04 = attribute_03
         attribute_05 = attribute_04
 
-  the test passes because ``attribute_05`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_05`` or ``src.attribute_error.AClass().attribute_05``
+  the test passes because ``attribute_05`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_05`` or ``src.attribute_error.AnObject().attribute_05``
 
   .. code-block:: shell
 
-    src.attribute_error.AClass.attribute_05
-    src.attribute_error.AClass().attribute_05
+    src.attribute_error.AnObject.attribute_05
+    src.attribute_error.AnObject().attribute_05
     └── src/
         └── attribute_error/
             └── __init__.py
-                └── class AClass(object):
+                └── class AnObject(object):
                     └── attribute_05 = attribute_04
 
-* I add a line for ``src.attribute_error.AClass().attribute_06`` to ``tests/test_attribute_error.py``
+* I add a line for ``src.attribute_error.AnObject().attribute_06`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 30
     :emphasize-lines: 8
 
     def test_attribute_error_w_class_attributes():
-        src.attribute_error.AClass.attribute_00
-        src.attribute_error.AClass().attribute_01
-        src.attribute_error.AClass.attribute_02
-        src.attribute_error.AClass().attribute_03
-        src.attribute_error.AClass.attribute_04
-        src.attribute_error.AClass().attribute_05
-        src.attribute_error.AClass().attribute_06
+        src.attribute_error.AnObject.attribute_00
+        src.attribute_error.AnObject().attribute_01
+        src.attribute_error.AnObject.attribute_02
+        src.attribute_error.AnObject().attribute_03
+        src.attribute_error.AnObject.attribute_04
+        src.attribute_error.AnObject().attribute_05
+        src.attribute_error.AnObject().attribute_06
 
 
     # Exceptions seen
@@ -501,17 +501,17 @@ test_attribute_error_w_class_attributes
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'attribute_06'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_06`` to the :ref:`class definition<how to make a class>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_06`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 9
 
-    class AClass(object):
+    class AnObject(object):
 
         attribute_00 = function_09()
         attribute_01 = attribute_00
@@ -521,33 +521,33 @@ test_attribute_error_w_class_attributes
         attribute_05 = attribute_04
         attribute_06 = attribute_05
 
-  the test passes because ``attribute_06`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_06`` or ``src.attribute_error.AClass().attribute_06``
+  the test passes because ``attribute_06`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_06`` or ``src.attribute_error.AnObject().attribute_06``
 
   .. code-block:: shell
 
-    src.attribute_error.AClass.attribute_06
-    src.attribute_error.AClass().attribute_06
+    src.attribute_error.AnObject.attribute_06
+    src.attribute_error.AnObject().attribute_06
     └── src/
         └── attribute_error/
             └── __init__.py
-                └── class AClass(object):
+                └── class AnObject(object):
                     └── attribute_06 = attribute_05
 
-* I add a line for ``src.attribute_error.AClass.attribute_07`` to ``tests/test_attribute_error.py``
+* I add a line for ``src.attribute_error.AnObject.attribute_07`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 30
     :emphasize-lines: 9
 
     def test_attribute_error_w_class_attributes():
-        src.attribute_error.AClass.attribute_00
-        src.attribute_error.AClass().attribute_01
-        src.attribute_error.AClass.attribute_02
-        src.attribute_error.AClass().attribute_03
-        src.attribute_error.AClass.attribute_04
-        src.attribute_error.AClass().attribute_05
-        src.attribute_error.AClass().attribute_06
-        src.attribute_error.AClass.attribute_07
+        src.attribute_error.AnObject.attribute_00
+        src.attribute_error.AnObject().attribute_01
+        src.attribute_error.AnObject.attribute_02
+        src.attribute_error.AnObject().attribute_03
+        src.attribute_error.AnObject.attribute_04
+        src.attribute_error.AnObject().attribute_05
+        src.attribute_error.AnObject().attribute_06
+        src.attribute_error.AnObject.attribute_07
 
 
     # Exceptions seen
@@ -556,17 +556,17 @@ test_attribute_error_w_class_attributes
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: type object 'AnObject'
                     has no attribute 'attribute_07'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_07`` to the :ref:`class definition<how to make a class>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_07`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 10
 
-    class AClass(object):
+    class AnObject(object):
 
         attribute_00 = function_09()
         attribute_01 = attribute_00
@@ -577,34 +577,34 @@ test_attribute_error_w_class_attributes
         attribute_06 = attribute_05
         attribute_07 = attribute_06
 
-  the test passes because ``attribute_07`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_07`` or ``src.attribute_error.AClass().attribute_07``
+  the test passes because ``attribute_07`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_07`` or ``src.attribute_error.AnObject().attribute_07``
 
   .. code-block:: shell
 
-    src.attribute_error.AClass.attribute_07
-    src.attribute_error.AClass().attribute_07
+    src.attribute_error.AnObject.attribute_07
+    src.attribute_error.AnObject().attribute_07
     └── src/
         └── attribute_error/
             └── __init__.py
-                └── class AClass(object):
+                └── class AnObject(object):
                     └── attribute_07 = attribute_06
 
-* I add a line for ``src.attribute_error.AClass.attribute_08`` to ``tests/test_attribute_error.py``
+* I add a line for ``src.attribute_error.AnObject.attribute_08`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 30
     :emphasize-lines: 10
 
     def test_attribute_error_w_class_attributes():
-        src.attribute_error.AClass.attribute_00
-        src.attribute_error.AClass().attribute_01
-        src.attribute_error.AClass.attribute_02
-        src.attribute_error.AClass().attribute_03
-        src.attribute_error.AClass.attribute_04
-        src.attribute_error.AClass().attribute_05
-        src.attribute_error.AClass().attribute_06
-        src.attribute_error.AClass.attribute_07
-        src.attribute_error.AClass.attribute_08
+        src.attribute_error.AnObject.attribute_00
+        src.attribute_error.AnObject().attribute_01
+        src.attribute_error.AnObject.attribute_02
+        src.attribute_error.AnObject().attribute_03
+        src.attribute_error.AnObject.attribute_04
+        src.attribute_error.AnObject().attribute_05
+        src.attribute_error.AnObject().attribute_06
+        src.attribute_error.AnObject.attribute_07
+        src.attribute_error.AnObject.attribute_08
 
 
     # Exceptions seen
@@ -613,17 +613,17 @@ test_attribute_error_w_class_attributes
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: type object 'AnObject'
                     has no attribute 'attribute_08'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_08`` to the :ref:`class definition<how to make a class>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_08`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 11
 
-    class AClass(object):
+    class AnObject(object):
 
         attribute_00 = function_09()
         attribute_01 = attribute_00
@@ -635,35 +635,35 @@ test_attribute_error_w_class_attributes
         attribute_07 = attribute_06
         attribute_08 = attribute_07
 
-  the test passes because ``attribute_08`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_08`` or ``src.attribute_error.AClass().attribute_08``
+  the test passes because ``attribute_08`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_08`` or ``src.attribute_error.AnObject().attribute_08``
 
   .. code-block:: shell
 
-    src.attribute_error.AClass.attribute_08
-    src.attribute_error.AClass().attribute_08
+    src.attribute_error.AnObject.attribute_08
+    src.attribute_error.AnObject().attribute_08
     └── src/
         └── attribute_error/
             └── __init__.py
-                └── class AClass(object):
+                └── class AnObject(object):
                     └── attribute_08 = attribute_07
 
-* I add a line for ``src.attribute_error.AClass().attribute_09`` to ``tests/test_attribute_error.py``
+* I add a line for ``src.attribute_error.AnObject().attribute_09`` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 30
     :emphasize-lines: 11
 
     def test_attribute_error_w_class_attributes():
-        src.attribute_error.AClass.attribute_00
-        src.attribute_error.AClass().attribute_01
-        src.attribute_error.AClass.attribute_02
-        src.attribute_error.AClass().attribute_03
-        src.attribute_error.AClass.attribute_04
-        src.attribute_error.AClass().attribute_05
-        src.attribute_error.AClass().attribute_06
-        src.attribute_error.AClass.attribute_07
-        src.attribute_error.AClass.attribute_08
-        src.attribute_error.AClass().attribute_09
+        src.attribute_error.AnObject.attribute_00
+        src.attribute_error.AnObject().attribute_01
+        src.attribute_error.AnObject.attribute_02
+        src.attribute_error.AnObject().attribute_03
+        src.attribute_error.AnObject.attribute_04
+        src.attribute_error.AnObject().attribute_05
+        src.attribute_error.AnObject().attribute_06
+        src.attribute_error.AnObject.attribute_07
+        src.attribute_error.AnObject.attribute_08
+        src.attribute_error.AnObject().attribute_09
 
 
     # Exceptions seen
@@ -672,17 +672,17 @@ test_attribute_error_w_class_attributes
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'attribute_09'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_09`` to the :ref:`class definition<how to make a class>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_09`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 12
 
-    class AClass(object):
+    class AnObject(object):
 
         attribute_00 = function_09()
         attribute_01 = attribute_00
@@ -695,16 +695,16 @@ test_attribute_error_w_class_attributes
         attribute_08 = attribute_07
         attribute_09 = attribute_08
 
-  the test passes because ``attribute_09`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AClass.attribute_09`` or ``src.attribute_error.AClass().attribute_09``
+  the test passes because ``attribute_09`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_09`` or ``src.attribute_error.AnObject().attribute_09``
 
   .. code-block:: shell
 
-    src.attribute_error.AClass.attribute_09
-    src.attribute_error.AClass().attribute_09
+    src.attribute_error.AnObject.attribute_09
+    src.attribute_error.AnObject().attribute_09
     └── src/
         └── attribute_error/
             └── __init__.py
-                └── class AClass(object):
+                └── class AnObject(object):
                     └── attribute_09 = attribute_08
 
 * I add a git_ commit message in the other terminal_
@@ -726,7 +726,7 @@ test_attribute_error_w_class_attributes
 test_attribute_error_w_class_methods
 *********************************************************************************
 
-The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what is a function?>` and :ref:`classes<everything is an object>` in a :ref:`module<what is a module?>` are :ref:`attributes of the module<what is a class attribute?>`, and :ref:`variables<what is a variable?>` in a :ref:`class<everything is an object>` are :ref:`attributes of the class<what is a class attribute?>`.
+The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what is a function?>` and :ref:`objects<everything is an object>` in a :ref:`module<what is a module?>` are :ref:`attributes of the module<what is a class attribute?>`, and :ref:`variables<what is a variable?>` in a :ref:`class<everything is an object>` are :ref:`attributes of the class<what is a class attribute?>`.
 
 :ref:`Methods of a class<what is a method?>` are also :ref:`attributes of the class<what is a class attribute?>`.
 
@@ -745,11 +745,11 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 40
     :emphasize-lines: 4-5
 
-        src.attribute_error.AClass().attribute_09
+        src.attribute_error.AnObject().attribute_09
 
 
     def test_attribute_error_w_class_methods():
-        src.attribute_error.AClass.method_00()
+        src.attribute_error.AnObject.method_00()
 
 
     # Exceptions seen
@@ -758,7 +758,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass'
+    AttributeError: type object 'AnObject'
                     has no attribute 'method_00'
 
 ----
@@ -769,13 +769,13 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
 ----
 
-* I add the name to ``AClass`` and point it to ``attribute_09``, in ``src/attribute_error/__init__.py``
+* I add the name to ``AnObject`` and point it to ``attribute_09``, in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 14
 
-    class AClass(object):
+    class AnObject(object):
 
         attribute_00 = function_09()
         attribute_01 = attribute_00
@@ -815,7 +815,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
     NameError: name 'attribute_09' is not defined
 
-  because there is nothing inside ``method_00`` named ``attribute_09`` and it cannot get to ``attribute_09`` of ``AClass``, yet.
+  because there is nothing inside ``method_00`` named ``attribute_09`` and it cannot get to ``attribute_09`` of ``AnObject``, yet.
 
 * I add ``self.`` before the name to reference the :ref:`class attribute<what is a class attribute?>`
 
@@ -848,7 +848,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: python
 
-    TypeError: AClass.method_00() missing
+    TypeError: AnObject.method_00() missing
                1 required positional argument: 'self'
 
   because I :ref:`called the method<how to call a function>` with the :ref:`class<everything is an object>` not an :ref:`instance of the class<how to test if something is an instance>`.
@@ -860,23 +860,23 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :emphasize-lines: 2-3
 
     def test_attribute_error_w_class_methods():
-        # src.attribute_error.AClass.method_00()
-        src.attribute_error.AClass().method_00()
+        # src.attribute_error.AnObject.method_00()
+        src.attribute_error.AnObject().method_00()
 
 
     # Exceptions seen
 
-  - the test passes because ``method_00`` is now an :ref:`attribute/property<what is a class attribute?>` of the ``AClass`` :ref:`class<everything is an object>`
-  - ``AClass`` is an :ref:`attribute<what is a class attribute?>` of the ``attribute_error`` :ref:`module<what is a module?>` in the ``src`` folder_
-  - I can :ref:`call<how to call a function>` ``method_00`` from outside the file_ with ``src.attribute_error.AClass().method_00()``
+  - the test passes because ``method_00`` is now an :ref:`attribute/property<what is a class attribute?>` of the ``AnObject`` :ref:`class<everything is an object>`
+  - ``AnObject`` is an :ref:`attribute<what is a class attribute?>` of the ``attribute_error`` :ref:`module<what is a module?>` in the ``src`` folder_
+  - I can :ref:`call<how to call a function>` ``method_00`` from outside the file_ with ``src.attribute_error.AnObject().method_00()``
 
   .. code-block:: shell
 
-    src.attribute_error.AClass().method_00
+    src.attribute_error.AnObject().method_00
     └── src/
         └── attribute_error/
             └── __init__.py
-                └── class AClass(object):
+                └── class AnObject(object):
                     └── def method_00(self):
                         └── return self.attribute_09
 
@@ -893,7 +893,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   .. code-block:: python
     :lineno-start: 25
 
-    class AClass(object):
+    class AnObject(object):
 
         attribute_00 = function_09()
         attribute_01 = attribute_00
@@ -914,20 +914,20 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
 
     def test_attribute_error_w_class_methods():
-        src.attribute_error.AClass().method_00()
+        src.attribute_error.AnObject().method_00()
 
 
     # Exceptions seen
 
-* You know the "drill", I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_01``
+* You know the "drill", I add a :ref:`call<how to call a function>` to ``src.attribute_error.AnObject().method_01``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 3
 
     def test_attribute_error_w_class_methods():
-        src.attribute_error.AClass().method_00()
-        src.attribute_error.AClass().method_01()
+        src.attribute_error.AnObject().method_00()
+        src.attribute_error.AnObject().method_01()
 
 
     # Exceptions seen
@@ -936,11 +936,11 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'method_01'.
                     Did you mean: 'method_00'?
 
-* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``src/attribute_error/__init__.py``
+* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 38
@@ -949,28 +949,28 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_00(self): return self.attribute_09
         def method_01(self): return self.method_00()
 
-  the test passes because ``method_01`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AClass().method_01()``
+  the test passes because ``method_01`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AnObject().method_01()``
 
   .. code-block:: shell
 
-    src.attribute_error.AClass().method_01
+    src.attribute_error.AnObject().method_01
     └── src/
         └── attribute_error/
             └── __init__.py
-                └── class AClass(object):
+                └── class AnObject(object):
                     └── def method_01(self):
                         └── return self.method_00()
 
-* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_02`` from ``tests/test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AnObject().method_02`` from ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 4
 
     def test_attribute_error_w_class_methods():
-        src.attribute_error.AClass().method_00()
-        src.attribute_error.AClass().method_01()
-        src.attribute_error.AClass().method_02()
+        src.attribute_error.AnObject().method_00()
+        src.attribute_error.AnObject().method_01()
+        src.attribute_error.AnObject().method_02()
 
 
     # Exceptions seen
@@ -979,11 +979,11 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'method_02'.
                     Did you mean: 'method_00'?
 
-* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``src/attribute_error/__init__.py``
+* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 38
@@ -993,29 +993,29 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_01(self): return self.method_00()
         def method_02(self): return self.method_01()
 
-  the test passes because ``method_02`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AClass().method_02()``
+  the test passes because ``method_02`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AnObject().method_02()``
 
   .. code-block:: shell
 
-    src.attribute_error.AClass().method_02
+    src.attribute_error.AnObject().method_02
     └── src/
         └── attribute_error/
             └── __init__.py
-                └── class AClass(object):
+                └── class AnObject(object):
                     └── def method_02(self):
                         └── return self.method_01()
 
-* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_03`` from ``tests/test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AnObject().method_03`` from ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 5
 
     def test_attribute_error_w_class_methods():
-        src.attribute_error.AClass().method_00()
-        src.attribute_error.AClass().method_01()
-        src.attribute_error.AClass().method_02()
-        src.attribute_error.AClass().method_03()
+        src.attribute_error.AnObject().method_00()
+        src.attribute_error.AnObject().method_01()
+        src.attribute_error.AnObject().method_02()
+        src.attribute_error.AnObject().method_03()
 
 
     # Exceptions seen
@@ -1024,11 +1024,11 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'method_03'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_03`` to the :ref:`definition<how to make a class>` of ``AClass`` in ``src/attribute_error/__init__.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_03`` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 38
@@ -1039,30 +1039,30 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_02(self): return self.method_01()
         def method_03(self): return self.method_02()
 
-  the test passes because ``method_03`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AClass().method_03()``
+  the test passes because ``method_03`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AnObject().method_03()``
 
   .. code-block:: shell
 
-    src.attribute_error.AClass().method_03
+    src.attribute_error.AnObject().method_03
     └── src/
         └── attribute_error/
             └── __init__.py
-                └── class AClass(object):
+                └── class AnObject(object):
                     └── def method_03(self):
                         └── return self.method_02()
 
-* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_04`` from ``tests/test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AnObject().method_04`` from ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 6
 
     def test_attribute_error_w_class_methods():
-        src.attribute_error.AClass().method_00()
-        src.attribute_error.AClass().method_01()
-        src.attribute_error.AClass().method_02()
-        src.attribute_error.AClass().method_03()
-        src.attribute_error.AClass().method_04()
+        src.attribute_error.AnObject().method_00()
+        src.attribute_error.AnObject().method_01()
+        src.attribute_error.AnObject().method_02()
+        src.attribute_error.AnObject().method_03()
+        src.attribute_error.AnObject().method_04()
 
 
     # Exceptions seen
@@ -1071,11 +1071,11 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'method_04'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_04`` to the :ref:`definition<how to make a class>` of ``AClass`` in ``src/attribute_error/__init__.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_04`` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 38
@@ -1087,30 +1087,30 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_03(self): return self.method_02()
         def method_04(self): return self.method_03()
 
-  the test passes because ``method_04`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AClass().method_04()``
+  the test passes because ``method_04`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AnObject().method_04()``
 
   .. code-block:: shell
 
-    src.attribute_error.AClass().method_04
+    src.attribute_error.AnObject().method_04
     └── src/
         └── attribute_error/
             └── __init__.py
-                └── class AClass(object):
+                └── class AnObject(object):
                     └── def method_04(self): return self.method_03()
 
-* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_05`` from ``tests/test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AnObject().method_05`` from ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 7
 
     def test_attribute_error_w_class_methods():
-        src.attribute_error.AClass().method_00()
-        src.attribute_error.AClass().method_01()
-        src.attribute_error.AClass().method_02()
-        src.attribute_error.AClass().method_03()
-        src.attribute_error.AClass().method_04()
-        src.attribute_error.AClass().method_05()
+        src.attribute_error.AnObject().method_00()
+        src.attribute_error.AnObject().method_01()
+        src.attribute_error.AnObject().method_02()
+        src.attribute_error.AnObject().method_03()
+        src.attribute_error.AnObject().method_04()
+        src.attribute_error.AnObject().method_05()
 
 
     # Exceptions seen
@@ -1119,11 +1119,11 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'method_05'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_05`` to the :ref:`definition<how to make a class>` of ``AClass`` in ``src/attribute_error/__init__.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_05`` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 38
@@ -1138,20 +1138,20 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   the test passes.
 
-* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_06`` from ``tests/test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AnObject().method_06`` from ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 8
 
     def test_attribute_error_w_class_methods():
-        src.attribute_error.AClass().method_00()
-        src.attribute_error.AClass().method_01()
-        src.attribute_error.AClass().method_02()
-        src.attribute_error.AClass().method_03()
-        src.attribute_error.AClass().method_04()
-        src.attribute_error.AClass().method_05()
-        src.attribute_error.AClass().method_06()
+        src.attribute_error.AnObject().method_00()
+        src.attribute_error.AnObject().method_01()
+        src.attribute_error.AnObject().method_02()
+        src.attribute_error.AnObject().method_03()
+        src.attribute_error.AnObject().method_04()
+        src.attribute_error.AnObject().method_05()
+        src.attribute_error.AnObject().method_06()
 
 
     # Exceptions seen
@@ -1160,11 +1160,11 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'method_06'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_06`` to the :ref:`definition<how to make a class>` of ``AClass`` in ``src/attribute_error/__init__.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_06`` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 38
@@ -1180,21 +1180,21 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   the test passes.
 
-* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_07`` from ``tests/test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AnObject().method_07`` from ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 9
 
     def test_attribute_error_w_class_methods():
-        src.attribute_error.AClass().method_00()
-        src.attribute_error.AClass().method_01()
-        src.attribute_error.AClass().method_02()
-        src.attribute_error.AClass().method_03()
-        src.attribute_error.AClass().method_04()
-        src.attribute_error.AClass().method_05()
-        src.attribute_error.AClass().method_06()
-        src.attribute_error.AClass().method_07()
+        src.attribute_error.AnObject().method_00()
+        src.attribute_error.AnObject().method_01()
+        src.attribute_error.AnObject().method_02()
+        src.attribute_error.AnObject().method_03()
+        src.attribute_error.AnObject().method_04()
+        src.attribute_error.AnObject().method_05()
+        src.attribute_error.AnObject().method_06()
+        src.attribute_error.AnObject().method_07()
 
 
     # Exceptions seen
@@ -1203,11 +1203,11 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'method_07'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_07`` to the :ref:`definition<how to make a class>` of ``AClass`` in ``src/attribute_error/__init__.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_07`` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 38
@@ -1224,22 +1224,22 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   the test passes.
 
-* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_08`` from ``tests/test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AnObject().method_08`` from ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 10
 
     def test_attribute_error_w_class_methods():
-        src.attribute_error.AClass().method_00()
-        src.attribute_error.AClass().method_01()
-        src.attribute_error.AClass().method_02()
-        src.attribute_error.AClass().method_03()
-        src.attribute_error.AClass().method_04()
-        src.attribute_error.AClass().method_05()
-        src.attribute_error.AClass().method_06()
-        src.attribute_error.AClass().method_07()
-        src.attribute_error.AClass().method_08()
+        src.attribute_error.AnObject().method_00()
+        src.attribute_error.AnObject().method_01()
+        src.attribute_error.AnObject().method_02()
+        src.attribute_error.AnObject().method_03()
+        src.attribute_error.AnObject().method_04()
+        src.attribute_error.AnObject().method_05()
+        src.attribute_error.AnObject().method_06()
+        src.attribute_error.AnObject().method_07()
+        src.attribute_error.AnObject().method_08()
 
 
     # Exceptions seen
@@ -1248,11 +1248,11 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'method_08'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_08`` to the :ref:`definition<how to make a class>` of ``AClass`` in ``src/attribute_error/__init__.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_08`` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 38
@@ -1270,23 +1270,23 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   the test passes.
 
-* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AClass().method_09`` from ``tests/test_attribute_error.py``
+* I add a :ref:`call<how to call a function>` to ``src.attribute_error.AnObject().method_09`` from ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 11
 
     def test_attribute_error_w_class_methods():
-        src.attribute_error.AClass().method_00()
-        src.attribute_error.AClass().method_01()
-        src.attribute_error.AClass().method_02()
-        src.attribute_error.AClass().method_03()
-        src.attribute_error.AClass().method_04()
-        src.attribute_error.AClass().method_05()
-        src.attribute_error.AClass().method_06()
-        src.attribute_error.AClass().method_07()
-        src.attribute_error.AClass().method_08()
-        src.attribute_error.AClass().method_09()
+        src.attribute_error.AnObject().method_00()
+        src.attribute_error.AnObject().method_01()
+        src.attribute_error.AnObject().method_02()
+        src.attribute_error.AnObject().method_03()
+        src.attribute_error.AnObject().method_04()
+        src.attribute_error.AnObject().method_05()
+        src.attribute_error.AnObject().method_06()
+        src.attribute_error.AnObject().method_07()
+        src.attribute_error.AnObject().method_08()
+        src.attribute_error.AnObject().method_09()
 
 
     # Exceptions seen
@@ -1300,16 +1300,16 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: 'AClass' object
+    AttributeError: 'AnObject' object
                     has no attribute 'method_09'.
                     Did you mean: 'method_00'?
 
-* I add a :ref:`method definition<how to make a function>` for ``method_09`` to the :ref:`definition<how to make a class>` of ``AClass`` in ``src/attribute_error/__init__.py``
+* I add a :ref:`method definition<how to make a function>` for ``method_09`` to the :ref:`definition<how to make an object>` of ``AnObject`` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
 
-    class AClass(object):
+    class AnObject(object):
 
         attribute_00 = function_09()
         attribute_01 = attribute_00
@@ -1337,15 +1337,15 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_08(self): return self.method_07()
         def method_09(self): return self.method_08()
 
-  the test passes because ``method_09`` is now an :ref:`attribute<what is a class attribute?>` of ``AClass`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AClass().method_09()``
+  the test passes because ``method_09`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AnObject().method_09()``
 
   .. code-block:: shell
 
-    src.attribute_error.AClass().method_09
+    src.attribute_error.AnObject().method_09
     └── src/
         └── attribute_error/
             └── __init__.py
-                └── class AClass(object):
+                └── class AnObject(object):
                     └── def method_09(self):
                         └── return self.method_08()
 
@@ -1406,7 +1406,7 @@ I still have the problem that the tests all show the correct way to use :ref:`at
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<AttributeError with classes: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<AttributeError with objects: tests and solutions>`
 
 ----
 
@@ -1429,7 +1429,7 @@ what is next?
 * :ref:`I know how to make a person with a class<how to make a person with a class>`.
 * :ref:`I know that everything in Python is an object<everything is an object>`.
 
-:ref:`Would you like to test TypeError with classes?<TypeError with classes>`
+:ref:`Would you like to test TypeError with objects?<TypeError with objects>`
 
 ----
 

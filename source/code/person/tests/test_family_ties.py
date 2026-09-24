@@ -4,7 +4,7 @@ import unittest
 
 class TestFamilyTies(unittest.TestCase):
 
-    def test_making_a_class_w_inheritance(self):
+    def test_making_an_object_w_inheritance(self):
         person_class = src.person.Person
         doe_class = src.family_ties.Doe
         doe_instance = doe_class('the_first')
@@ -29,7 +29,7 @@ class TestFamilyTies(unittest.TestCase):
             dir(doe_class), dir(person_class)
         )
 
-    def test_classes_w_one_parent(self):
+    def test_objects_w_one_parent(self):
         doe = src.family_ties.Doe('the_first')
         self.assertEqual(doe.last_name, 'doe')
 
@@ -48,7 +48,7 @@ class TestFamilyTies(unittest.TestCase):
         smith = src.person.Person('john', 'smith')
         self.assertEqual(smith.last_name, john.last_name)
 
-    def test_classes_w_multiple_parents(self):
+    def test_objects_w_multiple_parents(self):
         joe = src.family_ties.Joe()
         self.assertEqual(joe.first_name, 'joe')
         self.assertEqual(joe.last_name, 'blow')

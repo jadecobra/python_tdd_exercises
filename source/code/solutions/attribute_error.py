@@ -50,7 +50,7 @@ def function_09():
     return None
 
 
-class AClass(object):
+class AnObject(object):
 
     attribute_00 = None
     attribute_01 = None

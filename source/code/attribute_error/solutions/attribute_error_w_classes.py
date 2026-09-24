@@ -22,7 +22,7 @@ def function_08(): return function_07()
 def function_09(): return function_08()
 
 
-class AClass(object):
+class AnObject(object):
 
     attribute_00 = function_09()
     attribute_01 = attribute_00

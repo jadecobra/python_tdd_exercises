@@ -2888,7 +2888,7 @@ the test passes.
 extract truth_table class attribute
 *********************************************************************************
 
-The ``truth_table`` tuple_ is used in both :ref:`test_can_person_vote<extract test_can_person_vote>` and :ref:`test_can_person_get_license`
+The ``truth_table`` tuple_ is used in both :ref:`test_can_person_vote<extract test_can_person_vote>` and :ref:`test_can_person_get_license<extract test_can_person_get_license>`
 .
 
 * I add a :ref:`class attribute<what is a class attribute?>` for the ``truth_table`` tuple_ to the :ref:`TestPerson class<add TestPerson class>`

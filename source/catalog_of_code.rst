@@ -15,7 +15,7 @@ Here are the tests and solutions in the book
   AttributeError<code/code_attribute_error>
   booleans<code/code_booleans>
   calculator<code/code_calculator>
-  classes<code/code_classes>
+  objects<code/code_objects>
   dictionaries<code/code_dictionaries>
   Elevator<code/code_elevator>
   Exceptions<code/code_exception_handling>

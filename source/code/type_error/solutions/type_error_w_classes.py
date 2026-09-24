@@ -53,7 +53,7 @@ def function_08(name, argument):
     return None
 
 
-class AClass(object):
+class AnObject(object):
 
     @staticmethod
     def method_00(): return None
@@ -66,11 +66,11 @@ class AClass(object):
 
     @staticmethod
     def method_03():
-        return AClass().method_02()
+        return AnObject().method_02()
 
     @staticmethod
     def method_04():
-        return AClass.method_02(AClass)
+        return AnObject.method_02(AnObject)
 
     def method_05(self):
         return self.method_02()
