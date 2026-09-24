@@ -1760,7 +1760,7 @@ what is next?
 * :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
-* :ref:`I know how to make a person with a class<how to make a person with a class>`.
+* :ref:`I know how to make a person with an object<how to make a person with an object>`.
 * :ref:`I know that everything in Python is an object<everything is an object>`.
 
 :ref:`Would you like to see another way to write tests?<another way to write tests>`

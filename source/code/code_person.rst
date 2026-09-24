@@ -89,16 +89,16 @@ The code in ``person/src/person/__init__.py`` from :ref:`how to make a person wi
 ----
 
 *********************************************************************************
-how to make a person with a class: tests and solution
+how to make a person with an object: tests and solution
 *********************************************************************************
 
 =================================================================================
-how to make a person with a class: tests
+how to make a person with an object: tests
 =================================================================================
 
 ----
 
-The code in ``person/tests/test_person.py`` from :ref:`how to make a person with a class`
+The code in ``person/tests/test_person.py`` from :ref:`how to make a person with an object`
 
 .. literalinclude:: person/tests/test_person_w_class.py
   :caption: person/tests/test_person.py
@@ -164,12 +164,12 @@ The code in ``person/tests/test_person.py`` from :ref:`how to make a person with
 ----
 
 =================================================================================
-how to make a person with a class: solutions
+how to make a person with an object: solutions
 =================================================================================
 
 ----
 
-The code in ``person/src/person/__init__.py`` from :ref:`how to make a person with a class`
+The code in ``person/src/person/__init__.py`` from :ref:`how to make a person with an object`
 
 .. literalinclude:: person/solutions/person_w_class.py
   :caption: person/src/person/__init__.py

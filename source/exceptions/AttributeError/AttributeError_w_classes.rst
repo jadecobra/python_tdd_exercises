@@ -1,6 +1,6 @@
 .. meta::
   :description:
-    AttributeError with objects in the attribute_error project (uv run pytest-watcher, src/attribute_error/__init__.py). Continues test_attribute_error.py after variables and functions. test_attribute_error_w_class_attributes turns a function stub into class AnObject(object) with attribute_00–attribute_09 chained from function_09(); mix AnObject.attr (type object has no attribute) and AnObject().attr ('AnObject' object has no attribute). Representative errors: module 'src.attribute_error' has no attribute 'AnObject', 'function' object has no attribute 'attribute_00', SyntaxError 'return' outside function, then class vs instance AttributeError (Did you mean: 'attribute_00' on some Pythons). test_attribute_error_w_class_methods: method_00 = attribute_09 then def; NameError name 'attribute_09'/'self' is not defined; TypeError AnObject.method_00() missing 1 required positional argument: 'self' until AnObject().method_00(); methods 01–09 on the instance. Review: a variable in a class, a function in a class (method), and a class in a module are attributes. Prepares for catching AttributeError. Jacob Itegboje Pumping Python TDD.
+    AttributeError with objects in the attribute_error project (uv run pytest-watcher, src/attribute_error/__init__.py). Continues test_attribute_error.py after variables and functions. test_attribute_error_w_class_attributes turns a function stub into class AnObject(object) with attribute_00–attribute_09 chained from function_09(); mix AnObject.attr (type object has no attribute) and AnObject().attr ('AnObject' object has no attribute). Representative errors: module 'src.attribute_error' has no attribute 'AnObject', 'function' object has no attribute 'attribute_00', SyntaxError 'return' outside function, then class vs instance AttributeError (Did you mean: 'attribute_00' on some Pythons). test_attribute_error_w_class_methods: method_00 = attribute_09 then def; NameError name 'attribute_09'/'self' is not defined; TypeError AnObject.method_00() missing 1 required positional argument: 'self' until AnObject().method_00(); methods 01–09 on the instance. Review: a variable in an object, a function in an object (method), and a class in a module are attributes. Prepares for catching AttributeError. Jacob Itegboje Pumping Python TDD.
   :keywords:
     Jacob Itegboje, Pumping Python, AttributeError with objects, python AttributeError class attribute, type object 'AnObject' has no attribute, 'AnObject' object has no attribute, Did you mean attribute_00, SyntaxError return outside function, NameError name 'self' is not defined, TypeError missing 1 required positional argument self, AnObject.attribute_00, AnObject().method_00, src.attribute_error.AnObject, class in module is attribute, method is attribute of class, test_attribute_error_w_class_attributes, test_attribute_error_w_class_methods, uv run pytest-watcher, remove the commented lines, red green refactor class, src/attribute_error/__init__.py, Pumping Python exceptions AttributeError objects
 
@@ -715,7 +715,7 @@ test_attribute_error_w_class_attributes
     git commit -am \
     'add test_attribute_error_w_class_attributes'
 
-* :ref:`A variable in a class is an attribute of the class<test_attribute_error_w_class_attributes>`
+* :ref:`A variable in an object is an attribute of the class<test_attribute_error_w_class_attributes>`
 * :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
 * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
@@ -1357,7 +1357,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     git commit -am \
     'add test_attribute_error_w_class_methods'
 
-:ref:`A function in a class is an attribute of the class and is called a method<test_attribute_error_w_class_methods>`
+:ref:`A function in an object is an attribute of the class and is called a method<test_attribute_error_w_class_methods>`
 
 ----
 
@@ -1392,8 +1392,8 @@ review
 
 All the tests I have run for :ref:`AttributeError<what causes AttributeError?>` show that
 
-* :ref:`A variable in a class is an attribute of the class<test_attribute_error_w_class_attributes>`
-* :ref:`A function in a class is an attribute of the class<test_attribute_error_w_class_methods>`
+* :ref:`A variable in an object is an attribute of the class<test_attribute_error_w_class_attributes>`
+* :ref:`A function in an object is an attribute of the class<test_attribute_error_w_class_methods>`
 * :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
 * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
@@ -1426,7 +1426,7 @@ what is next?
 * :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
-* :ref:`I know how to make a person with a class<how to make a person with a class>`.
+* :ref:`I know how to make a person with an object<how to make a person with an object>`.
 * :ref:`I know that everything in Python is an object<everything is an object>`.
 
 :ref:`Would you like to test TypeError with objects?<TypeError with objects>`

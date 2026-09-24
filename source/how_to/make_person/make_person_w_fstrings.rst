@@ -3957,7 +3957,7 @@ review
     * ``last_name``
     * ``year_of_birth``
 
-    There has to be :ref:`a better way<how to make a person with a class>`, where I can give those values once, and get a representation for a person when I :ref:`call<how to call a function with input>` the :ref:`person function<extract person function>` and a message when I call the :ref:`say_hello function<test say_hello function>`.
+    There has to be :ref:`a better way<how to make a person with an object>`, where I can give those values once, and get a representation for a person when I :ref:`call<how to call a function with input>` the :ref:`person function<extract person function>` and a message when I call the :ref:`say_hello function<test say_hello function>`.
 
 For now, I am going to :ref:`clean up the functions project<separate and equal functions>` so the tests and solutions are in separate files_.
 
@@ -3986,7 +3986,7 @@ what is next?
 * :ref:`I know how to place values in strings<telephone>`.
 * :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
 
-:ref:`Would you like to test making a person with a class?<how to make a person with a class>`
+:ref:`Would you like to test making a person with a class?<how to make a person with an object>`
 
 ----
 

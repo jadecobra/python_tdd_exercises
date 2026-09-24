@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with a class. Use class + __init__ (the constructor method) + self to store first_name, last_name, sex, year_of_birth once; add say_hello method so you call joe.say_hello() without repeating the values. Start in person project from prior chapter; uv run pytest-watcher . --now. RED: Person(...) -> TypeError (Person() takes no arguments), empty __init__ -> TypeError unexpected keyword then multiple values for first_name until self is first; GREEN: store attrs on self, f-string say_hello with self; move Person to src/person/__init__.py (AttributeError: module has no attribute 'Person'); extract assert_person_can_say_hello + assert_equal; add dir() tests on class vs instance (self.sex last). REFACTOR remove commented lines. Ends with 6 tests (joe/jane/john/mary + 2 dir tests); # Exceptions seen includes SyntaxError ('return' outside function). Review: each test is the same three calls; class avoids repeating the data values. Code from person/tests/test_person_w_class.py and person/solutions/person_w_class.py. What is next: everything is an object (inheritance).
-  :keywords: Jacob Itegboje, Pumping Python, how to make a person with a class, python class __init__ constructor self, Person class say_hello method, src.person.Person, src/person/__init__.py, TypeError: Person() takes no arguments, TypeError: Person.__init__() got an unexpected keyword argument 'last_name', Did you mean, AttributeError module 'src.person' has no attribute 'Person', SyntaxError return outside function, dir(src.person.Person), dir(instance), uv run pytest-watcher . --now, red green refactor class, remove the commented lines, test_joe, test_dir_person_class, test_dir_person_instance, first_name last_name sex year_of_birth, 2026 - year_of_birth, repetition of three calls per test, class groups attributes and methods, what is next everything is an object
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with an object. Use class + __init__ (the constructor method) + self to store first_name, last_name, sex, year_of_birth once; add say_hello method so you call joe.say_hello() without repeating the values. Start in person project from prior chapter; uv run pytest-watcher . --now. RED: Person(...) -> TypeError (Person() takes no arguments), empty __init__ -> TypeError unexpected keyword then multiple values for first_name until self is first; GREEN: store attrs on self, f-string say_hello with self; move Person to src/person/__init__.py (AttributeError: module has no attribute 'Person'); extract assert_person_can_say_hello + assert_equal; add dir() tests on class vs instance (self.sex last). REFACTOR remove commented lines. Ends with 6 tests (joe/jane/john/mary + 2 dir tests); # Exceptions seen includes SyntaxError ('return' outside function). Review: each test is the same three calls; class avoids repeating the data values. Code from person/tests/test_person_w_class.py and person/solutions/person_w_class.py. What is next: everything is an object (inheritance).
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with an object, python class __init__ constructor self, Person class say_hello method, src.person.Person, src/person/__init__.py, TypeError: Person() takes no arguments, TypeError: Person.__init__() got an unexpected keyword argument 'last_name', Did you mean, AttributeError module 'src.person' has no attribute 'Person', SyntaxError return outside function, dir(src.person.Person), dir(instance), uv run pytest-watcher . --now, red green refactor class, remove the commented lines, test_joe, test_dir_person_class, test_dir_person_instance, first_name last_name sex year_of_birth, 2026 - year_of_birth, repetition of three calls per test, class groups attributes and methods, what is next everything is an object
 
 .. include:: ../../links.rst
 
@@ -9,7 +9,7 @@
 .. _staticmethod decorator: https://docs.python.org/3/library/functions.html#staticmethod
 
 #################################################################################
-how to make a person with a class
+how to make a person with an object
 #################################################################################
 
 ----
@@ -4197,7 +4197,7 @@ review
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a person with a class: tests and solution>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a person with an object: tests and solution>`
 
 ----
 
@@ -4217,7 +4217,7 @@ what is next?
 * :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
-* :ref:`I know how to make a person with a class<how to make a person with a class>`.
+* :ref:`I know how to make a person with an object<how to make a person with an object>`.
 
 .. toctree::
   :titlesonly:

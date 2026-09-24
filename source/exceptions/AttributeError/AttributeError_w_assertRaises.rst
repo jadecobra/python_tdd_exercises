@@ -701,7 +701,7 @@ test_attribute_error_w_class_attributes
     git commit -am \
     'add test_attribute_error_w_class_attributes'
 
-* :ref:`A variable in a class is an attribute of the class<test_attribute_error_w_class_attributes>`
+* :ref:`A variable in an object is an attribute of the class<test_attribute_error_w_class_attributes>`
 * :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
 * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
@@ -1408,7 +1408,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     'add test_attribute_error_w_class_methods'
 
 
-* :ref:`A function in a class is an attribute of the class and is called a method<test_attribute_error_w_class_methods>`
+* :ref:`A function in an object is an attribute of the class and is called a method<test_attribute_error_w_class_methods>`
 
 ----
 
@@ -1443,8 +1443,8 @@ review
 
 All the tests I have run for :ref:`AttributeError<what causes AttributeError?>` show that :ref:`because in Python everything is an object<everything is an object>`
 
-* :ref:`A variable in a class is an attribute of the class<test_attribute_error_w_class_attributes>`
-* :ref:`A function in a class is an attribute of the class<test_attribute_error_w_class_methods>`
+* :ref:`A variable in an object is an attribute of the class<test_attribute_error_w_class_attributes>`
+* :ref:`A function in an object is an attribute of the class<test_attribute_error_w_class_methods>`
 * :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
 * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
@@ -1477,7 +1477,7 @@ what is next?
 * :ref:`I know how to make a person say hello with f-strings<how to make a person with f-strings>`.
 * :ref:`I know how to separate tests from solutions<separate and equal>`.
 * :ref:`I know what causes AttributeError<what causes AttributeError?>`.
-* :ref:`I know how to make a person with a class<how to make a person with a class>`.
+* :ref:`I know how to make a person with an object<how to make a person with an object>`.
 
 :ref:`Would you like to know where the extra attributes and methods of the Person class came from?<everything is an object>`
 
