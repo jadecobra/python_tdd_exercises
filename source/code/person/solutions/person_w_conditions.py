@@ -16,10 +16,10 @@ class Person:
         self.passed_test = passed_test
         self.age = calculate_age(year_of_birth)
 
-    def check_age(self, response):
+    def check_age(self, status):
         if self.age < 18:
             return False
-        return response
+        return status
 
     def can_get_license(self):
         return self.check_age(self.passed_test)
@@ -30,8 +30,7 @@ class Person:
     def say_hello(self):
         return (
             f'Hello, my name is {self.first_name}'
-            f' {self.last_name} and I am'
-            f' {self.age}.'
+            f' {self.last_name} and I am {self.age}.'
         )
 
 

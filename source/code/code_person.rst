@@ -362,8 +362,64 @@ how to make a person with conditions: tests
 The code in ``person/tests/test_person.py`` from :ref:`how to make a person with conditions`
 
 .. literalinclude:: person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
   :language: python
-  :linenos:
+  :lineno-start: 65
+  :lines: 65-98
+
+.. literalinclude:: person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 100
+  :lines: 100-134
+
+.. literalinclude:: person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 136
+  :lines: 136-171
+
+.. literalinclude:: person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 173
+  :lines: 173-208
+
+.. literalinclude:: person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 210
+  :lines: 210-220
+
+.. literalinclude:: person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 222
+  :lines: 222-229
+
+.. literalinclude:: person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 231
+  :lines: 231-238
+
+.. literalinclude:: person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 240
+  :lines: 240-252
+
+.. literalinclude:: person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 254
+  :lines: 254-271
+
+.. literalinclude:: person/tests/test_person_w_conditions.py
+  :caption: person/tests/test_person.py
+  :language: python
+  :lineno-start: 273
+  :lines: 273-
 
 ----
 
@@ -373,11 +429,43 @@ how to make a person with conditions: solutions
 
 ----
 
-The code in ``person/src/person.py`` from :ref:`how to make a person with conditions`
+The code in ``person/src/person.py`` after :ref:`how to make a person with conditions`
 
 .. literalinclude:: person/solutions/person_w_conditions.py
+  :caption: person/src/person/__init__.py
   :language: python
   :linenos:
+  :lines: 1-17
+
+.. literalinclude:: person/solutions/person_w_conditions.py
+  :caption: person/src/person/__init__.py
+  :language: python
+  :lineno-start: 19
+  :lines: 19-25
+
+.. literalinclude:: person/solutions/person_w_conditions.py
+  :caption: person/src/person/__init__.py
+  :language: python
+  :lineno-start: 27
+  :lines: 27-34
+
+.. literalinclude:: person/solutions/person_w_conditions.py
+  :caption: person/src/person/__init__.py
+  :language: python
+  :lineno-start: 37
+  :lines: 37-45
+
+.. literalinclude:: person/solutions/person_w_conditions.py
+  :caption: person/src/person/__init__.py
+  :language: python
+  :lineno-start: 48
+  :lines: 48-55
+
+.. literalinclude:: person/solutions/person_w_conditions.py
+  :caption: person/src/person/__init__.py
+  :language: python
+  :lineno-start: 58
+  :lines: 58-65
 
 ----
 

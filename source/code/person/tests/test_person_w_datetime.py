@@ -174,7 +174,7 @@ class TestPerson(unittest.TestCase):
             year_of_birth=self.this_year-121
         )
         # ).say_hello() fails
-        # because person is older than 120
+        # because age > 120
 
     def test_when_year_of_birth_is_the_future(self):
         src.person.Person(
@@ -184,7 +184,7 @@ class TestPerson(unittest.TestCase):
             year_of_birth=self.this_year+1,
         )
         # ).say_hello() fails
-        # because year_of_birth is in the future
+        # because age < 0
 
     def test_when_year_of_birth_is_not_an_integer(self):
         src.person.Person(

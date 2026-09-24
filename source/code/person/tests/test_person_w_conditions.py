@@ -5,6 +5,8 @@ import unittest
 
 class TestPerson(unittest.TestCase):
 
+    this_year = datetime.date.today().year
+
     def assert_person_factory_works(
             self, first_name, last_name,
             sex, year_of_birth
@@ -22,12 +24,8 @@ class TestPerson(unittest.TestCase):
             )
         )
 
-    @staticmethod
-    def calculate_age(year_of_birth):
-        return (
-            datetime.date.today().year
-          - year_of_birth
-        )
+    def calculate_age(self, year_of_birth):
+        return self.this_year - year_of_birth
 
     def assert_say_hello_works(
             self, first_name, last_name,
@@ -140,9 +138,6 @@ class TestPerson(unittest.TestCase):
         last_name = 'smith'
         sex = 'M'
         year_of_birth = 1980
-        # year_of_birth = 1580
-        # raises AssertionError
-        # because it is older than 120
 
         self.assert_person_factory_works(
             first_name=first_name,
@@ -170,6 +165,7 @@ class TestPerson(unittest.TestCase):
             sex=sex,
             year_of_birth=year_of_birth,
             is_citizen=False,
+            passed_test=False,
         )
         self.assertEqual(john.can_vote(), False)
         self.assertEqual(john.can_get_license(), False)
@@ -216,25 +212,30 @@ class TestPerson(unittest.TestCase):
             first_name='first_name',
             last_name='last_name',
             sex='M',
-            year_of_birth=datetime.date.today().year-17,
+            year_of_birth=self.this_year-17,
             is_citizen=True,
             passed_test=True,
         )
         self.assertEqual(underage.can_vote(), False)
         self.assertEqual(underage.can_get_license(), False)
 
-    @unittest.skip(
-        'fails because year_of_birth is in the future'
-    )
-    def test_when_year_of_birth_is_the_future(self):
+    @unittest.skip('fails because age > 120')
+    def test_when_person_is_older_than_120(self):
         src.person.Person(
             first_name='first_name',
             last_name='last_name',
             sex='M',
-            year_of_birth=datetime.date.today().year+1,
+            year_of_birth=self.this_year-121
         )
-        # ).say_hello() fails
-        # because year_of_birth is in the future
+
+    @unittest.skip('fails because age < 0')
+    def test_when_year_of_birth_is_the_future(self):
+        src.person.Person(
+            first_name='first_name',
+            last_name='last_name',
+            sex='F',
+            year_of_birth=self.this_year+1,
+        )
 
     @unittest.skip(
         'fails because year_of_birth is not an integer'
@@ -265,7 +266,7 @@ class TestPerson(unittest.TestCase):
                 '__static_attributes__', '__str__',
                 '__subclasshook__', '__weakref__',
                 'can_get_license', 'can_vote', 'check_age',
-                'say_hello'
+                'say_hello',
             ]
         )
 
