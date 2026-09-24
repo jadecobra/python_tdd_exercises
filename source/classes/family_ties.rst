@@ -290,7 +290,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
 
 * I open ``family_ties/__init__.py`` from the ``src`` folder_
 
-* I add a :ref:`class definition<how to make an object>` definition to ``family_ties.py``
+* I add a :ref:`object definition<how to make an object>` definition to ``family_ties.py``
 
   .. code-block:: python
     :linenos:
@@ -1082,7 +1082,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
   because there is no :ref:`definition<how to make an object>` for ``Blow`` in ``family_ties.py``
 
-* I add a new :ref:`class definition<how to make an object>` to ``family_ties.py``
+* I add a new :ref:`object definition<how to make an object>` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1318,7 +1318,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
     AttributeError: module 'src.family_ties'
                     has no attribute 'Smith'
 
-* I add a :ref:`class definition<how to make an object>` for ``Smith`` to ``family_ties.py``
+* I add a :ref:`object definition<how to make an object>` for ``Smith`` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 10
@@ -1481,7 +1481,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     # Exceptions seen
 
-  * From the :ref:`class definition<how to make an object>` of ``Doe``, this happens when :ref:`an instance (a copy)<how to test if something is an instance>` of ``Doe`` is made
+  * From the :ref:`object definition<how to make an object>` of ``Doe``, this happens when :ref:`an instance (a copy)<how to test if something is an instance>` of ``Doe`` is made
 
     .. code-block:: python
 
@@ -1494,7 +1494,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     because :ref:`a method uses the default value for the parameter because it is called without the parameter<test_optional_arguments>`.
 
-  * From the :ref:`class definitions<how to make an object>` of ``Smith`` and ``Blow`` this happens when :ref:`an instance (a copy)<how to test if something is an instance>` of ``Smith`` or ``Blow`` is made
+  * From the :ref:`object definitions<how to make an object>` of ``Smith`` and ``Blow`` this happens when :ref:`an instance (a copy)<how to test if something is an instance>` of ``Smith`` or ``Blow`` is made
 
     .. code-block:: python
 
@@ -1504,7 +1504,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     where ``ClassName`` is ``Smith`` or ``Blow``
 
-  * From the :ref:`class definition of Person<test_factory_person_says_hello>`, this happens when :ref:`an instance (a copy)<how to test if something is an instance>` of the ``Person`` :ref:`class<everything is an object>` is made
+  * From the :ref:`object definition of Person<test_factory_person_says_hello>`, this happens when :ref:`an instance (a copy)<how to test if something is an instance>` of the ``Person`` :ref:`class<everything is an object>` is made
 
     .. code-block:: python
 
@@ -1574,7 +1574,7 @@ Can a :ref:`class<everything is an object>` have more than one parent? How are t
 
 ----
 
-* I add a :ref:`class definition<how to make an object>` for ``Jane`` to ``family_ties.py``
+* I add a :ref:`object definition<how to make an object>` for ``Jane`` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -2020,7 +2020,7 @@ the test passes.
         module 'src.family_ties' has no attribute 'Joe'.
         Did you mean: 'Doe'?
 
-* I add a :ref:`class definition<how to make an object>` for the ``Joe`` :ref:`class<everything is an object>` to ``family_ties.py``
+* I add a :ref:`object definition<how to make an object>` for the ``Joe`` :ref:`class<everything is an object>` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 22
@@ -2257,7 +2257,7 @@ the test passes.
     AttributeError: module 'src.family_ties'
                     has no attribute 'Mary'
 
-* I add a :ref:`class definition<how to make an object>` for ``Mary`` to ``family_ties.py``
+* I add a :ref:`object definition<how to make an object>` for ``Mary`` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 29
@@ -2894,7 +2894,7 @@ what happens when a child has more than one parent?
     AttributeError: module 'src.family_ties'
                     has no attribute 'John'
 
-* I add a :ref:`class definition<how to make an object>` for ``John`` to ``family_ties.py``
+* I add a :ref:`object definition<how to make an object>` for ``John`` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 37
@@ -3112,7 +3112,7 @@ what happens when a child has more than one parent?
 
     AttributeError: module 'src.family_ties' has no attribute 'Lil'
 
-* I add a :ref:`class definition<how to make an object>` for ``Lil`` to ``family_ties.py``
+* I add a :ref:`object definition<how to make an object>` for ``Lil`` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 44

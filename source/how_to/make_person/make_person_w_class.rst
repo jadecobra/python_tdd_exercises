@@ -197,7 +197,7 @@ because there is no definition for ``Person`` in ``tests/test_person.py``.
 
 ----
 
-* I add a :ref:`class definition<how to make an object>` for ``Person``
+* I add a :ref:`object definition<how to make an object>` for ``Person``
 
   .. code-block:: python
     :linenos:

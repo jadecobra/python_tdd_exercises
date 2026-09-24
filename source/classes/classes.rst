@@ -685,7 +685,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
     AttributeError:
         'Person' object has no attribute 'first_name'
 
-  because there is no definition for ``first_name`` in the ``Person`` :ref:`class definition<how to make an object>`
+  because there is no definition for ``first_name`` in the ``Person`` :ref:`object definition<how to make an object>`
 
 * I add an :ref:`attribute<what is a class attribute?>` to the ``Person`` :ref:`class<everything is an object>` for ``first_name``
 
@@ -800,7 +800,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         'Person' object has no attribute 'last_name'.
         Did you mean: 'first_name'?
 
-  because there is no definition for ``last_name`` in the ``Person`` :ref:`class definition<how to make an object>`
+  because there is no definition for ``last_name`` in the ``Person`` :ref:`object definition<how to make an object>`
 
 * I add an :ref:`attribute<what is a class attribute?>` to the ``Person`` :ref:`class<everything is an object>` for ``last_name``
 
@@ -969,7 +969,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
     AttributeError:
         'Person' object has no attribute 'year_of_birth'
 
-  because there is no definition for ``year_of_birth`` in the ``Person`` :ref:`class definition<how to make an object>`
+  because there is no definition for ``year_of_birth`` in the ``Person`` :ref:`object definition<how to make an object>`
 
 * I add an :ref:`attribute<what is a class attribute?>` to the ``Person`` :ref:`class<everything is an object>` for ``year_of_birth``
 

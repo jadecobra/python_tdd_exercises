@@ -258,7 +258,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_01'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_01`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_01`` to the :ref:`object definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -304,7 +304,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_02'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_02`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_02`` to the :ref:`object definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -351,7 +351,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_03'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_03`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_03`` to the :ref:`object definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -400,7 +400,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_04'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_04`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_04`` to the :ref:`object definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -452,7 +452,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_05'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_05`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_05`` to the :ref:`object definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -505,7 +505,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_06'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_06`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_06`` to the :ref:`object definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -560,7 +560,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_07'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_07`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_07`` to the :ref:`object definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -617,7 +617,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_08'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_08`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_08`` to the :ref:`object definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -676,7 +676,7 @@ test_attribute_error_w_class_attributes
                     has no attribute 'attribute_09'.
                     Did you mean: 'attribute_00'?
 
-* I add ``attribute_09`` to the :ref:`class definition<how to make an object>` in ``src/attribute_error/__init__.py``
+* I add ``attribute_09`` to the :ref:`object definition<how to make an object>` in ``src/attribute_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25

@@ -441,7 +441,7 @@ test_making_an_object_w_pass
 
 ----
 
-I add a :ref:`class definition<how to make an object>` for ``WPass``
+I add a :ref:`object definition<how to make an object>` for ``WPass``
 
 .. code-block:: python
   :linenos:
@@ -486,8 +486,8 @@ I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:
 
 * The test passes because :ref:`all objects inherit from 'object'<test_making_an_object_w_object>`.
 * The :ref:`assertion<what is an assertion?>` - ``assert isinstance(WPass(), object)`` checks if the result of ``WPass()`` is an :ref:`instance<how to test if something is an instance>` of the :ref:`object class (the mother of all objects)<what is an object?>`.
-* The :ref:`class definition<how to make an object>` simply says pass_ and the test passes.
-* pass_ is a special keyword that allows the :ref:`class definition<how to make an object>` to follow Python_ language rules (the :ref:`class<what is an object?>` must have a body).
+* The :ref:`object definition<how to make an object>` simply says pass_ and the test passes.
+* pass_ is a special keyword that allows the :ref:`object definition<how to make an object>` to follow Python_ language rules (the :ref:`class<what is an object?>` must have a body).
 
 ----
 
@@ -573,7 +573,7 @@ I can also make a :ref:`class<what is an object?>` with parentheses/brackets ``(
 
 ----
 
-* I add a :ref:`class definition<how to make an object>` for ``WParentheses`` like I did for ``WPass``
+* I add a :ref:`object definition<how to make an object>` for ``WParentheses`` like I did for ``WPass``
 
   .. code-block:: python
     :linenos:
@@ -633,9 +633,9 @@ I can also make a :ref:`class<what is an object?>` with parentheses/brackets ``(
 
   * The test is still green because :ref:`all objects inherit from 'object'<test_making_an_object_w_object>`.
   * The :ref:`assertion<what is an assertion?>` - ``assert isinstance(WParentheses(), object)`` checks if the result of ``WParentheses()`` is an :ref:`instance<how to test if something is an instance>` of the :ref:`object class (the mother of all objects)<what is an object?>`.
-  * This :ref:`class definition<how to make an object>` has parentheses after the name.
-  * The :ref:`class definition<how to make an object>` simply says pass_ and the test passes.
-  * pass_ is a special keyword that allows the :ref:`class definition<how to make an object>` to follow Python_ language rules (the :ref:`class<what is an object?>` must have a body).
+  * This :ref:`object definition<how to make an object>` has parentheses after the name.
+  * The :ref:`object definition<how to make an object>` simply says pass_ and the test passes.
+  * pass_ is a special keyword that allows the :ref:`object definition<how to make an object>` to follow Python_ language rules (the :ref:`class<what is an object?>` must have a body).
 
 * I remove the commented lines
 
@@ -727,7 +727,7 @@ I can make a :ref:`class<what is an object?>` with :ref:`object (the mother of a
 
 ----
 
-* I add a :ref:`class definition<how to make an object>` for ``WObject``
+* I add a :ref:`object definition<how to make an object>` for ``WObject``
 
   .. code-block:: python
     :lineno-start: 4
@@ -772,7 +772,7 @@ I can make a :ref:`class<what is an object?>` with :ref:`object (the mother of a
 
 ----
 
-* I add :ref:`object<everything is an object>` to the parentheses of the :ref:`class definition<how to make an object>` for ``WObject``
+* I add :ref:`object<everything is an object>` to the parentheses of the :ref:`object definition<how to make an object>` for ``WObject``
 
   .. code-block:: python
     :lineno-start: 7

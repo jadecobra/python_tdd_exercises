@@ -114,7 +114,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 
 * I open ``type_error/__init__.py`` from the ``src`` folder_
 
-* I add a :ref:`class definition<how to make an object>` for ``AnObject`` to ``type_error.py``
+* I add a :ref:`object definition<how to make an object>` for ``AnObject`` to ``type_error.py``
 
   .. code-block:: python
     :lineno-start: 40
@@ -136,7 +136,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
 
   because there is nothing named ``method_00`` in ``AnObject``.
 
-* I add the name to the :ref:`class definition<how to make an object>`
+* I add the name to the :ref:`object definition<how to make an object>`
 
   .. code-block:: python
     :lineno-start: 44
