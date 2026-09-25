@@ -28,7 +28,7 @@ class TestAttributeError(unittest.TestCase):
         src.attribute_error.function_08()
         src.attribute_error.function_09()
 
-    def test_attribute_error_w_class_attributes(self):
+    def test_attribute_error_w_object_attributes(self):
         src.attribute_error.AnObject.attribute_00
         src.attribute_error.AnObject.attribute_01
         src.attribute_error.AnObject.attribute_02
@@ -40,7 +40,7 @@ class TestAttributeError(unittest.TestCase):
         src.attribute_error.AnObject().attribute_08
         src.attribute_error.AnObject().attribute_09
 
-    def test_attribute_error_w_class_methods(self):
+    def test_attribute_error_w_object_methods(self):
         src.attribute_error.AnObject.method_00()
         src.attribute_error.AnObject.method_01
         src.attribute_error.AnObject().method_02()

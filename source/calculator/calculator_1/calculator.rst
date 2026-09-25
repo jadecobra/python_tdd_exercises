@@ -1691,7 +1691,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     random_first_number = a_random_number()
     random_second_number = a_random_number()
 
-* I add :ref:`class attributes (variables)<test_attribute_error_w_class_attributes>` to remove the repetition and use the same numbers for all the tests
+* I add :ref:`object attributes (variables)<test_attribute_error_w_object_attributes>` to remove the repetition and use the same numbers for all the tests
 
   .. code-block:: python
     :lineno-start: 10
@@ -1704,7 +1704,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
         def test_addition(self):
 
-* I use the new :ref:`class attributes<test_attribute_error_w_class_attributes>` in :ref:`test_addition`
+* I use the new :ref:`object attributes<test_attribute_error_w_object_attributes>` in :ref:`test_addition`
 
   .. code-block:: python
     :lineno-start: 15
@@ -1720,7 +1720,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test is still green.
 
-* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.add`` in the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`object attributes<test_attribute_error_w_object_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.add`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -1738,7 +1738,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   still green.
 
-* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`object attributes<test_attribute_error_w_object_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -1777,7 +1777,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-* I use the new :ref:`class attributes<test_attribute_error_w_class_attributes>` in :ref:`test_subtraction`
+* I use the new :ref:`object attributes<test_attribute_error_w_object_attributes>` in :ref:`test_subtraction`
 
   .. code-block:: python
     :lineno-start: 24
@@ -1793,7 +1793,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test is still green.
 
-* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.subtract`` in the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`object attributes<test_attribute_error_w_object_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.subtract`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 30
@@ -1811,7 +1811,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   still green.
 
-* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`object attributes<test_attribute_error_w_object_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 30
@@ -1850,7 +1850,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-* I use the new :ref:`class attributes<test_attribute_error_w_class_attributes>` in :ref:`test_multiplication`
+* I use the new :ref:`object attributes<test_attribute_error_w_object_attributes>` in :ref:`test_multiplication`
 
   .. code-block:: python
     :lineno-start: 33
@@ -1866,7 +1866,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test is still green.
 
-* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.multiply`` in the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`object attributes<test_attribute_error_w_object_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.multiply`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 39
@@ -1884,7 +1884,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   still green.
 
-* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`object attributes<test_attribute_error_w_object_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 39
@@ -1923,7 +1923,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-* I use the new :ref:`class attributes<test_attribute_error_w_class_attributes>` in :ref:`test_division`
+* I use the new :ref:`object attributes<test_attribute_error_w_object_attributes>` in :ref:`test_division`
 
   .. code-block:: python
     :lineno-start: 42
@@ -1939,7 +1939,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test is still green.
 
-* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.divide`` in the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`object attributes<test_attribute_error_w_object_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.divide`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 48
@@ -1957,7 +1957,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   still green.
 
-* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`object attributes<test_attribute_error_w_object_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 48
@@ -2003,7 +2003,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 All the tests are passing, though they all look the same, :ref:`there has to be a better way<how to make a calculator 2>`.
 
-The ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` are made once as :ref:`class attributes<test_attribute_error_w_class_attributes>` and used later in each test with ``self.random_first_number`` and ``self.random_second_number``, the same way I use `unittest.TestCase assert methods`_ like :ref:`assertEqual method<test_assert_equal>` with ``self.assertEqual``
+The ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` are made once as :ref:`object attributes<test_attribute_error_w_object_attributes>` and used later in each test with ``self.random_first_number`` and ``self.random_second_number``, the same way I use `unittest.TestCase assert methods`_ like :ref:`assertEqual method<test_assert_equal>` with ``self.assertEqual``
 
 ----
 

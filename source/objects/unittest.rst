@@ -16,10 +16,10 @@
 .. _unittest.TestCase.assertIsInstance: assertIsInstance_
 .. _assertIsInstance method: assertIsInstance_
 .. _assertNotIsSubclass: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotIsSubclass
-.. _assertNotIsSubclass method: assertNotIsSubclass_
+.. _assertNotIsSubobject method: assertNotIsSubclass_
 .. _unittest.TestCase.assertNotIsSubclass: assertNotIsSubclass_
 .. _assertIsSubclass: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertIsSubclass
-.. _assertIsSubclass method: assertIsSubclass_
+.. _assertIsSubobject method: assertIsSubclass_
 .. _unittest.TestCase.assertIsSubclass: assertIsSubclass_
 .. _assert method: https://docs.python.org/3/library/unittest.html#assert-methods
 .. _assert methods: `assert method`_
@@ -2113,7 +2113,7 @@ test_assert_not_is_subclass
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to compare it with the `assertNotIsSubclass method`_
+* I add an :ref:`assertion<what is an assertion?>` to compare it with the `assertNotIsSubobject method`_
 
   .. code-block:: python
     :lineno-start: 141
@@ -2227,7 +2227,7 @@ test_assert_is_subclass
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for the `assertIsSubclass method`_
+* I add a test for the `assertIsSubobject method`_
 
   .. code-block:: python
     :lineno-start: 147
@@ -3366,7 +3366,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
 ----
 
-* I add the ``TOOLBOX`` :ref:`variable<what is a variable?>` to :ref:`TestUnittest<extract TestUnittest class>` to make it a :ref:`class attribute<what is a class attribute?>`
+* I add the ``TOOLBOX`` :ref:`variable<what is a variable?>` to :ref:`TestUnittest<extract TestUnittest class>` to make it a :ref:`object attribute<what is a object attribute?>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -3380,7 +3380,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
         @staticmethod
         def test_dir_unittest():
 
-* I use the new :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_dir_unittest`
+* I use the new :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_dir_unittest`
 
   .. code-block:: python
     :lineno-start: 32
@@ -3439,7 +3439,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
   the test is green again.
 
-* I use the new :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_dir_unittest_testcase`
+* I use the new :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_dir_unittest_testcase`
 
   .. code-block:: python
     :lineno-start: 88
@@ -3474,7 +3474,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
   green again.
 
-* I use the :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_assert_is_not`
+* I use the :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_assert_is_not`
 
   .. code-block:: python
     :lineno-start: 94
@@ -3507,7 +3507,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
   the test is green again.
 
-* I use the :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_assert_is`
+* I use the :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_assert_is`
 
   .. code-block:: python
     :lineno-start: 101
@@ -3540,7 +3540,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
   green again.
 
-* I use the :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_assert_not_equal`
+* I use the :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_assert_not_equal`
 
   .. code-block:: python
     :lineno-start: 108
@@ -3573,7 +3573,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
   the test is green again.
 
-* I use the :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_assert_equal`
+* I use the :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_assert_equal`
 
   .. code-block:: python
     :lineno-start: 115
@@ -3606,7 +3606,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
   green again.
 
-* I use the :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_assert_not_is_instance`
+* I use the :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_assert_not_is_instance`
 
   .. code-block:: python
     :lineno-start: 122
@@ -3643,7 +3643,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
   the test is green again.
 
-* I use the :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_assert_is_instance`
+* I use the :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_assert_is_instance`
 
   .. code-block:: python
     :lineno-start: 133
@@ -3681,7 +3681,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
   the test is green again.
 
-* I use the :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_assert_not_is_subclass`
+* I use the :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_assert_not_is_subclass`
 
   .. code-block:: python
     :lineno-start: 145
@@ -3718,7 +3718,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
   the test is green again.
 
-* I use the :ref:`class attribute<what is a class attribute?>` for ``TOOLBOX`` in :ref:`test_assert_is_subclass`
+* I use the :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_assert_is_subclass`
 
   .. code-block:: python
     :lineno-start: 156
@@ -3779,7 +3779,7 @@ use unittest.TestCase
 
 I can use the `unittest.TestCase class`_ as a parent of the :ref:`TestUnittest class<extract TestUnittest class>` which will allow me to use ``self`` to access its :ref:`attributes and methods<test_dir_unittest_testcase>`.
 
-It also means I will not need the ``TOOLBOX`` :ref:`class attribute<what is a class attribute?>` which points to an :ref:`instance<how to test if something is an instance>` of the `unittest.TestCase class`_.
+It also means I will not need the ``TOOLBOX`` :ref:`object attribute<what is a object attribute?>` which points to an :ref:`instance<how to test if something is an instance>` of the `unittest.TestCase class`_.
 
 ----
 
@@ -4036,7 +4036,7 @@ the test passes because
     # TypeError
     # AttributeError
 
-* I change the :ref:`call<how to call a function with input>` to the `assertNotIsSubclass method`_ in :ref:`test_assert_not_is_subclass`
+* I change the :ref:`call<how to call a function with input>` to the `assertNotIsSubobject method`_ in :ref:`test_assert_not_is_subclass`
 
   .. code-block:: python
     :lineno-start: 137
@@ -4520,7 +4520,7 @@ the test passes because
 
         def test_assert_is_not(self):
 
-* I remove the ``TOOLBOX`` :ref:`class attribute<what is a class attribute?>` since it is no longer used
+* I remove the ``TOOLBOX`` :ref:`object attribute<what is a object attribute?>` since it is no longer used
 
   .. code-block:: python
     :lineno-start: 4

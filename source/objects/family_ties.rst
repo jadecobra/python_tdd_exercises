@@ -774,7 +774,7 @@ how to call the parent from the child
           super().__init__('the_first')
       Person.__init__('the_first')
 
-* I add a test for the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the ``Doe`` :ref:`class<everything is an object>`
+* I add a test for the :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` of the ``Doe`` :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 30
@@ -803,7 +803,7 @@ how to call the parent from the child
          '[370 chars]llo']
      != []
 
-* I change the expectation to the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the ``Person`` :ref:`class<everything is an object>`
+* I change the expectation to the :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` of the ``Person`` :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 36
@@ -818,7 +818,7 @@ how to call the parent from the child
 
     # Exceptions seen
 
-  the test passes because ``Doe`` has the same :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` as ``Person`` because ``Doe`` is a :ref:`child<how to test if something is a subclass>` of ``Parent``.
+  the test passes because ``Doe`` has the same :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` as ``Person`` because ``Doe`` is a :ref:`child<how to test if something is a subclass>` of ``Parent``.
 
 * I add a :ref:`variable<what is a variable?>`
 
@@ -979,7 +979,7 @@ how to call the parent from the child
 test_objects_w_one_parent
 *********************************************************************************
 
-I want to test how the :ref:`attributes<what is a class attribute?>` of :ref:`objects<everything is an object>` are set if they have only one parent (super :ref:`class<everything is an object>`).
+I want to test how the :ref:`attributes<what is a object attribute?>` of :ref:`objects<everything is an object>` are set if they have only one parent (super :ref:`class<everything is an object>`).
 
 ----
 
@@ -1113,7 +1113,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
               Person.__init__('joe', last_name='doe')
               self.last_name = 'doe' # use the default value
 
-* I add a :ref:`class attribute<what is a class attribute?>` for ``last_name`` in the ``Blow`` :ref:`class<everything is an object>` in ``family_ties.py``
+* I add a :ref:`object attribute<what is a object attribute?>` for ``last_name`` in the ``Blow`` :ref:`class<everything is an object>` in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 10
@@ -1196,8 +1196,8 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
   I can :ref:`make objects<how to make an object>` that are related and have their own defaults. In this test
 
-  - the ``Doe`` :ref:`class<everything is an object>` has a default value for the ``last_name`` :ref:`attribute<what is a class attribute?>` that is the :ref:`default value<test_optional_arguments>` for the ``last_name`` :ref:`attribute<what is a class attribute?>` of ``Person``
-  - the ``Blow`` :ref:`class<everything is an object>` has a different :ref:`default value<test_optional_arguments>` for the value of the  ``last_name`` :ref:`attribute<what is a class attribute?>`
+  - the ``Doe`` :ref:`class<everything is an object>` has a default value for the ``last_name`` :ref:`attribute<what is a object attribute?>` that is the :ref:`default value<test_optional_arguments>` for the ``last_name`` :ref:`attribute<what is a object attribute?>` of ``Person``
+  - the ``Blow`` :ref:`class<everything is an object>` has a different :ref:`default value<test_optional_arguments>` for the value of the  ``last_name`` :ref:`attribute<what is a object attribute?>`
   - ``Doe`` and ``Blow`` are :ref:`children (subobjects)<how to test if something is a subclass>` of ``Person``
 
 * I remove the commented lines
@@ -1216,7 +1216,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
         def __init__(self, first_name):
             self.last_name = 'blow'
 
-* In this case there is a simpler way to make ``joe`` and ``doe``. I could pass the values to the ``Person`` :ref:`class<everything is an object>` directly, since all the ``Blow`` :ref:`class<everything is an object>` does is customize the ``last_name`` :ref:`attribute<what is a class attribute?>`, there is nothing special about it or the ``Doe`` :ref:`class<everything is an object>`. I add an :ref:`assertion<what is an assertion?>` to :ref:`test_objects_w_one_parent` in ``test_family_ties.py``
+* In this case there is a simpler way to make ``joe`` and ``doe``. I could pass the values to the ``Person`` :ref:`class<everything is an object>` directly, since all the ``Blow`` :ref:`class<everything is an object>` does is customize the ``last_name`` :ref:`attribute<what is a object attribute?>`, there is nothing special about it or the ``Doe`` :ref:`class<everything is an object>`. I add an :ref:`assertion<what is an assertion?>` to :ref:`test_objects_w_one_parent` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 32
@@ -1256,7 +1256,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     # Exceptions seen
 
-  the test passes. I can make :ref:`an instance<how to test if something is an instance>` and change the values of its :ref:`attributes<what is a class attribute?>` without making a new :ref:`class<everything is an object>`.
+  the test passes. I can make :ref:`an instance<how to test if something is an instance>` and change the values of its :ref:`attributes<what is a object attribute?>` without making a new :ref:`class<everything is an object>`.
 
 * I add an :ref:`assertion<what is an assertion?>` for ``jane``
 
@@ -1530,7 +1530,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 test_objects_w_multiple_parents
 *********************************************************************************
 
-Can a :ref:`class<everything is an object>` have more than one parent? How are the :ref:`attributes<what is a class attribute?>` set if they have more than one parent (super :ref:`class<everything is an object>`)?
+Can a :ref:`class<everything is an object>` have more than one parent? How are the :ref:`attributes<what is a object attribute?>` set if they have more than one parent (super :ref:`class<everything is an object>`)?
 
 ----
 
@@ -1647,7 +1647,7 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the value of the  ``last_name`` :ref:`attribute<what is a class attribute?>` of ``jane`` to :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
+* I add an :ref:`assertion<what is an assertion?>` for the value of the  ``last_name`` :ref:`attribute<what is a object attribute?>` of ``jane`` to :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 51
@@ -2192,7 +2192,7 @@ the test passes.
           Blow.__init__('joe')
               self.last_name = 'blow'
 
-  there is no assignment of a value to the ``first_name`` :ref:`attribute<what is a class attribute?>` in ``Blow``.
+  there is no assignment of a value to the ``first_name`` :ref:`attribute<what is a object attribute?>` in ``Blow``.
 
 * I add ``self.first_name`` to ``Blow``
 
@@ -2373,7 +2373,7 @@ the test passes.
                 self.first_name = 'mary'
                 self.last_name = 'doe' # use the default value
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubclass method<test_assert_not_is_subclass>` to :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubobject method<test_assert_not_is_subclass>` to :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 66
@@ -2399,7 +2399,7 @@ the test passes.
         <class 'src.family_ties.Mary'> is
         a subclass of <class 'src.family_ties.Jane'>
 
-* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to the :ref:`assertIsSubclass method<test_assert_is_subclass>`
+* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to the :ref:`assertIsSubobject method<test_assert_is_subclass>`
 
   .. code-block:: python
     :lineno-start: 66
@@ -2656,7 +2656,7 @@ what happens when a child has more than one parent?
 
     AttributeError: 'Jane' object has no attribute 'eye_color'
 
-* I add a :ref:`class attribute<what is a class attribute?>` to ``Jane`` in ``family_ties.py``
+* I add a :ref:`object attribute<what is a object attribute?>` to ``Jane`` in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -2671,7 +2671,7 @@ what happens when a child has more than one parent?
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Mary`` in :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
+* I add an :ref:`assertion<what is an assertion?>` for the ``eye_color`` :ref:`attribute<what is a object attribute?>` of ``Mary`` in :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 67
@@ -2739,8 +2739,8 @@ what happens when a child has more than one parent?
 
   The order of the parents matters.
 
-  - If the order is ``(Jane, Joe)`` then :ref:`instances<how to test if something is an instance>` of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Jane``.
-  - If the order is ``(Joe, Jane)`` then :ref:`instances<how to test if something is an instance>` of ``Mary`` do NOT get the ``eye_color`` :ref:`attribute<what is a class attribute?>` since the :ref:`__init__ method<the constructor method>` of ``Jane`` does not get called.
+  - If the order is ``(Jane, Joe)`` then :ref:`instances<how to test if something is an instance>` of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a object attribute?>` of ``Jane``.
+  - If the order is ``(Joe, Jane)`` then :ref:`instances<how to test if something is an instance>` of ``Mary`` do NOT get the ``eye_color`` :ref:`attribute<what is a object attribute?>` since the :ref:`__init__ method<the constructor method>` of ``Jane`` does not get called.
 
 * I change the order of the parents to ``(Joe, Jane)`` again
 
@@ -2764,7 +2764,7 @@ what happens when a child has more than one parent?
 
     AttributeError: 'Mary' object has no attribute 'eye_color'
 
-* I add the ``eye_color`` :ref:`class attribute<what is a class attribute?>` to ``Joe``
+* I add the ``eye_color`` :ref:`object attribute<what is a object attribute?>` to ``Joe``
 
   .. code-block:: python
     :lineno-start: 30
@@ -2826,10 +2826,10 @@ what happens when a child has more than one parent?
 
   The order of the parents matters.
 
-  - If the order is ``(Jane, Joe)`` then :ref:`instances<how to test if something is an instance>`  of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Jane``.
+  - If the order is ``(Jane, Joe)`` then :ref:`instances<how to test if something is an instance>`  of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a object attribute?>` of ``Jane``.
   - If the order is ``(Joe, Jane)`` then
 
-    * :ref:`instances<how to test if something is an instance>`  of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Joe``
+    * :ref:`instances<how to test if something is an instance>`  of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a object attribute?>` of ``Joe``
     * the  :ref:`__init__ method<the constructor method>` of ``Jane`` does not get called
 
 
@@ -2978,7 +2978,7 @@ what happens when a child has more than one parent?
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for the ``last_name`` :ref:`attribute<what is a class attribute?>`
+* I add an :ref:`assertion<what is an assertion?>` for the ``last_name`` :ref:`attribute<what is a object attribute?>`
 
   .. code-block:: python
     :lineno-start: 83
@@ -3002,7 +3002,7 @@ what happens when a child has more than one parent?
         'John' object has no attribute 'last_name'.
         Did you mean: 'first_name'?
 
-* I add a :ref:`class attribute<what is a class attribute?>` for ``last_name`` to ``John`` in ``family_ties.py``
+* I add a :ref:`object attribute<what is a object attribute?>` for ``last_name`` to ``John`` in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 43
@@ -3019,9 +3019,9 @@ what happens when a child has more than one parent?
   the test passes. This is a repetition because
 
   - ``John`` is a ``Smith``
-  - the ``last_name`` :ref:`attribute<what is a class attribute?>` of :ref:`instances<how to test if something is an instance>` of ``Smith`` is ``'smith'``
+  - the ``last_name`` :ref:`attribute<what is a object attribute?>` of :ref:`instances<how to test if something is an instance>` of ``Smith`` is ``'smith'``
 
-* I add a :ref:`call<how to call a function with input>` to the `super built-in function`_ so :ref:`instances<how to test if something is an instance>` of ``John`` can inherit the ``last_name`` :ref:`class attribute<what is a class attribute?>`
+* I add a :ref:`call<how to call a function with input>` to the `super built-in function`_ so :ref:`instances<how to test if something is an instance>` of ``John`` can inherit the ``last_name`` :ref:`object attribute<what is a object attribute?>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -3044,7 +3044,7 @@ what happens when a child has more than one parent?
         'John' object has no attribute 'first_name'.
         Did you mean: 'last_name'?
 
-* I add the ``first_name`` :ref:`attribute<what is a class attribute?>` to ``Smith``
+* I add the ``first_name`` :ref:`attribute<what is a object attribute?>` to ``Smith``
 
   .. code-block:: python
     :lineno-start: 17
@@ -3163,7 +3163,7 @@ what happens when a child has more than one parent?
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for the ``first_name`` :ref:`attribute<what is a class attribute?>` of ``lil`` in ``test_family_ties.py``
+* I add an :ref:`assertion<what is an assertion?>` for the ``first_name`` :ref:`attribute<what is a object attribute?>` of ``lil`` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 90
@@ -3200,7 +3200,7 @@ what happens when a child has more than one parent?
               self.first_name = 'john'
               self.last_name = 'smith'
 
-* I add the :ref:`__init__ method<the constructor method>` with a value for the ``first_name`` :ref:`attribute<what is a class attribute?>` into ``Lil`` in ``family_ties.py``
+* I add the :ref:`__init__ method<the constructor method>` with a value for the ``first_name`` :ref:`attribute<what is a object attribute?>` into ``Lil`` in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 50
@@ -3256,7 +3256,7 @@ what happens when a child has more than one parent?
             self.first_name = 'lil'
             self.last_name = 'smith'
 
-  the test passes. This is a repetition, and a problem if the value of the ``last_name`` :ref:`attribute<what is a class attribute?>` of the parent changes.
+  the test passes. This is a repetition, and a problem if the value of the ``last_name`` :ref:`attribute<what is a object attribute?>` of the parent changes.
 
 * I add a :ref:`call<how to call a function with input>` to the `super built-in function`_ to remove the repetition
 
@@ -3870,7 +3870,7 @@ what happens when a child has more than one parent?
 
     AttributeError: 'John' object has no attribute 'eye_color'
 
-* I add the ``eye_color`` :ref:`attribute<what is a class attribute?>` to ``Smith`` in ``family_ties.py``
+* I add the ``eye_color`` :ref:`attribute<what is a object attribute?>` to ``Smith`` in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 19
@@ -4081,11 +4081,11 @@ what is next?
 * :ref:`how to pass values from tests to functions<telephone>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`how to make objects<objects>`
-* :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
+* :ref:`how to use object attributes to remove repetition<AssertionError 2: use object attributes>`
 * :ref:`what happens when objects have one or more parents<family ties>`
 
 
-:ref:`Would you like to use class attributes with the 'functions' project?<test functions with None>`
+:ref:`Would you like to use object attributes with the 'functions' project?<test functions with None>`
 
 ----
 

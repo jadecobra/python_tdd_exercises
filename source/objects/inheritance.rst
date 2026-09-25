@@ -22,15 +22,15 @@ everything is an object
 what is an object?
 *********************************************************************************
 
-I think of objects_ as :ref:`attributes (variables)<what is a class attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together (a classification).
+I think of objects_ as :ref:`attributes (variables)<what is a object attribute?>` and :ref:`methods (functions) <what is a method?>` that belong together (a classification).
 
 ----
 
 *********************************************************************************
-what is a class attribute?
+what is a object attribute?
 *********************************************************************************
 
-A :ref:`class attribute<what is a class attribute?>` is a :ref:`variable<what is a variable?>` that belongs to an object_.
+A :ref:`object attribute<what is a object attribute?>` is a :ref:`variable<what is a variable?>` that belongs to an object_.
 
 ----
 
@@ -49,8 +49,8 @@ how to make an object
 objects_ are made with
 
 * the class_ keyword
-* a name in :ref:`CapWords format<CapWords>` that tells what the group of :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` does - naming things is its own challenge
-* :ref:`attributes<what is a class attribute?>`
+* a name in :ref:`CapWords format<CapWords>` that tells what the group of :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` does - naming things is its own challenge
+* :ref:`attributes<what is a object attribute?>`
 * :ref:`methods<what is a method?>`
 
 .. code-block:: python
@@ -371,7 +371,7 @@ start the project
 how to test if something is NOT an instance
 *********************************************************************************
 
-I can make a :ref:`class<what is an object?>` with the :ref:`class<what is an object?>` keyword, use :ref:`CapWords format<CapWords>` for the name and use a name that tells what the group of :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` do.
+I can make a :ref:`class<what is an object?>` with the :ref:`class<what is an object?>` keyword, use :ref:`CapWords format<CapWords>` for the name and use a name that tells what the group of :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` do.
 
 .. code-block:: python
 
@@ -2386,7 +2386,7 @@ test_dir_object
 
 In :ref:`test_dir_person_class` I saw the :ref:`methods<what is a method?>` I added to the ``Person`` :ref:`class<what is an object?>` and also names that I did not add, which led to the question of where they came from.
 
-I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object class<what is an object?>` because it is the mother of all :ref:`objects<what is an object?>`.
+I want to test the :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object class<what is an object?>` because it is the mother of all :ref:`objects<what is an object?>`.
 
 ----
 
@@ -2398,7 +2398,7 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test to ``test_objects.py`` with a call to the `dir built-in function`_ to get the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of :ref:`object<everything is an object>`
+* I add a test to ``test_objects.py`` with a call to the `dir built-in function`_ to get the :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` of :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 66
@@ -2515,7 +2515,7 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 
   - The test passes.
   - The :ref:`__init__ method<the constructor method>` is in the :ref:`list of attributes and methods<test_dir_person_class>`
-  - All :ref:`objects<what is an object?>` automatically get these :ref:`attributes<what is a class attribute?>`, they inherit them because :ref:`all objects inherit from 'object'<test_making_an_object_w_object>`.
+  - All :ref:`objects<what is an object?>` automatically get these :ref:`attributes<what is a object attribute?>`, they inherit them because :ref:`all objects inherit from 'object'<test_making_an_object_w_object>`.
   - The :ref:`__init__ method<the constructor method>` is also inherited which means when I defined the :ref:`__init__ method for the Person class<the constructor method>` I overwrote the one inherited from :ref:`object<everything is an object>`.
 
 * I add a git_ commit message in the other terminal_

@@ -86,7 +86,7 @@ def test_type_error_w_args_and_kwargs():
     )
 
 
-def test_type_error_w_class_methods():
+def test_type_error_w_object_methods():
     src.type_error.AnObject.method_00()
     src.type_error.AnObject().method_01()
     src.type_error.AnObject().method_02()

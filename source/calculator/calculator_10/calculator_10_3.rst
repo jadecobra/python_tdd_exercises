@@ -87,7 +87,7 @@ open the project
 test_streamlit_session_state
 *********************************************************************************
 
-streamlit_ has a `session state object`_ that I can use to keep values in between button presses. They work the same as :ref:`class attributes<test_attribute_error_w_class_attributes>` and they are :ref:`dictionaries<what is a dictionary?>` - I can add :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to them
+streamlit_ has a `session state object`_ that I can use to keep values in between button presses. They work the same as :ref:`object attributes<test_attribute_error_w_object_attributes>` and they are :ref:`dictionaries<what is a dictionary?>` - I can add :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to them
 
 ----
 

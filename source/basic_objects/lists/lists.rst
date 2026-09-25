@@ -324,7 +324,7 @@ how to see the attributes and methods of an object
 
 ----
 
-I want to test the things I can do with lists_. I can use the dir_ :ref:`function<what is a function?>` to see the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of :ref:`objects<everything is an object>`, it is part of `Python's Built-in Functions`_
+I want to test the things I can do with lists_. I can use the dir_ :ref:`function<what is a function?>` to see the :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` of :ref:`objects<everything is an object>`, it is part of `Python's Built-in Functions`_
 
 ----
 

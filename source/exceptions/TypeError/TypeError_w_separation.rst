@@ -207,7 +207,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
   - ``function_00`` is something in ``type_error``, in this case it is a :ref:`function<what is a function?>` in ``__init__.py`` in the ``type_error`` folder_.
   - ``type_error`` is something in ``src``, in this case it is a folder_ in the ``src`` folder_.
   - ``src`` is something Python_ can import (a :ref:`module<what is a module?>`, `Python package`_ or folder_).
-  - ``function_00`` is now an :ref:`attribute/property<what is a class attribute?>` of ``src/type_error/__init__.py``. I can use it from outside the file_ with ``src.type_error.function_00``.
+  - ``function_00`` is now an :ref:`attribute/property<what is a object attribute?>` of ``src/type_error/__init__.py``. I can use it from outside the file_ with ``src.type_error.function_00``.
 
 ----
 
@@ -1952,7 +1952,7 @@ because ``src`` is not defined in ``tests/test_type_error.py``.
 
     def test_type_error_w_positional_arguments():
 
-  all the tests are passing because ``function_00`` to ``function_08`` are now :ref:`attributes<what is a class attribute?>` of ``src/type_error/__init__.py`` and I can :ref:`call<how to call a function with input>` them from outside the file_ with ``src.type_error.function_name()``
+  all the tests are passing because ``function_00`` to ``function_08`` are now :ref:`attributes<what is a object attribute?>` of ``src/type_error/__init__.py`` and I can :ref:`call<how to call a function with input>` them from outside the file_ with ``src.type_error.function_name()``
 
   .. code-block:: shell
 

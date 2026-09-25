@@ -33,12 +33,12 @@ I can use any case I want. :ref:`CapWords` keeps things consistent
 ----
 
 =================================================================================
-how to use class methods and attributes
+how to use object methods and attributes
 =================================================================================
 
 ----
 
-:ref:`class attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a method?>` can be used inside a :ref:`class<everything is an object>` with ``self``
+:ref:`object attributes<test_attribute_error_w_object_attributes>` and :ref:`methods<what is a method?>` can be used inside a :ref:`class<everything is an object>` with ``self``
 
 for example
 
@@ -55,7 +55,7 @@ for example
       def another_method(self):
           return self.a_method()
 
-* ``a_method`` can use the ``an_attribute`` :ref:`class attribute<what is a class attribute?>` with ``self.an_attribute`` instead of ``AnObject.an_attribute``
+* ``a_method`` can use the ``an_attribute`` :ref:`object attribute<what is a object attribute?>` with ``self.an_attribute`` instead of ``AnObject.an_attribute``
 * ``another_method`` can use the ``a_method`` :ref:`method<what is a method?>` with ``self.method`` instead of ``AnObject.a_method()``
 
 .. note:: ``self`` is Python_ convention, I can use any name I want

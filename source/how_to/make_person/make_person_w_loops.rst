@@ -947,7 +947,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the test is still green
 
-* I add :ref:`assertEqual<test_assert_equal>` to the :ref:`except block<how to handle Exceptions>` with the `dir built-in function`_ to see the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Exception<how to test that an Exception is raised>` in the :ref:`except block<how to handle Exceptions>`
+* I add :ref:`assertEqual<test_assert_equal>` to the :ref:`except block<how to handle Exceptions>` with the `dir built-in function`_ to see the :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Exception<how to test that an Exception is raised>` in the :ref:`except block<how to handle Exceptions>`
 
   .. code-block:: python
     :lineno-start: 60
@@ -957,7 +957,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                     self.assertEqual(dir(error), [])
                 else:
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with the list of :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>`. Three of the names stand out because they do not have double underscores (``__``) before and after - ``add_note``, ``args`` and ``with_traceback``.
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with the list of :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>`. Three of the names stand out because they do not have double underscores (``__``) before and after - ``add_note``, ``args`` and ``with_traceback``.
 
 * I change the :ref:`assertion<what is an assertion?>` to see what is in ``add_note``
 
@@ -1864,7 +1864,7 @@ the subTest method
 
     git commit -am 'extract test_say_hello_method'
 
-For each person in the ``people`` tuple_, this test :ref:`makes an instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>` which makes an ``age`` :ref:`attribute<what is a class attribute?>` by :ref:`calling<how to call a function with input>` the :ref:`calculate_age<extract calculate_age function>` with the given ``year_of_birth`` parameter.
+For each person in the ``people`` tuple_, this test :ref:`makes an instance<how to test if something is an instance>` of the :ref:`Person class<add Person class>` which makes an ``age`` :ref:`attribute<what is a object attribute?>` by :ref:`calling<how to call a function with input>` the :ref:`calculate_age<extract calculate_age function>` with the given ``year_of_birth`` parameter.
 
 * If the :ref:`call raises TypeError<how to raise an Exception>`, it :ref:`asserts<what is an assertion?>` that the error message is correct
 
@@ -2075,12 +2075,12 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
 ----
 
 *********************************************************************************
-extract people class attribute
+extract people object attribute
 *********************************************************************************
 
 :ref:`test_factory_function<extract test_factory_function>`, :ref:`test_say_hello_function<extract test_say_hello_function>` and :ref:`test_say_hello_method<extract test_say_hello_method>` all use the same tuple_ of persons.
 
-* I add a :ref:`class attribute<what is a class attribute?>` for the ``people`` tuple_ to the :ref:`TestPerson class<add TestPerson class>`
+* I add a :ref:`object attribute<what is a object attribute?>` for the ``people`` tuple_ to the :ref:`TestPerson class<add TestPerson class>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -2099,7 +2099,7 @@ extract people class attribute
         @staticmethod
         def calculate_age(year_of_birth):
 
-* I use the :ref:`class attribute<what is a class attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_factory_function<extract test_factory_function>`
+* I use the :ref:`object attribute<what is a object attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_factory_function<extract test_factory_function>`
 
   .. code-block:: python
     :lineno-start: 23
@@ -2145,7 +2145,7 @@ extract people class attribute
 
         def test_say_hello_function(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_function<extract test_say_hello_function>`
+* I use the :ref:`object attribute<what is a object attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_function<extract test_say_hello_function>`
 
   .. code-block:: python
     :lineno-start: 42
@@ -2201,7 +2201,7 @@ extract people class attribute
 
         def test_say_hello_method(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_method<extract test_say_hello_method>`
+* I use the :ref:`object attribute<what is a object attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_say_hello_method<extract test_say_hello_method>`
 
   .. code-block:: python
     :lineno-start: 71
@@ -2266,7 +2266,7 @@ extract people class attribute
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'extract people class attribute'
+    git commit -am 'extract people object attribute'
 
 ----
 
@@ -2885,13 +2885,13 @@ the test passes.
 ----
 
 *********************************************************************************
-extract truth_table class attribute
+extract truth_table object attribute
 *********************************************************************************
 
 The ``truth_table`` tuple_ is used in both :ref:`test_can_person_vote<extract test_can_person_vote>` and :ref:`test_can_person_get_license<extract test_can_person_get_license>`
 .
 
-* I add a :ref:`class attribute<what is a class attribute?>` for the ``truth_table`` tuple_ to the :ref:`TestPerson class<add TestPerson class>`
+* I add a :ref:`object attribute<what is a object attribute?>` for the ``truth_table`` tuple_ to the :ref:`TestPerson class<add TestPerson class>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -2916,7 +2916,7 @@ The ``truth_table`` tuple_ is used in both :ref:`test_can_person_vote<extract te
         @staticmethod
         def calculate_age(year_of_birth):
 
-* I use the :ref:`class attribute<what is a class attribute?>` for ``truth_table`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_can_person_vote<extract test_can_person_vote>`
+* I use the :ref:`object attribute<what is a object attribute?>` for ``truth_table`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_can_person_vote<extract test_can_person_vote>`
 
   .. code-block:: python
     :lineno-start: 110
@@ -2940,7 +2940,7 @@ The ``truth_table`` tuple_ is used in both :ref:`test_can_person_vote<extract te
   .. code-block:: python
     :lineno-start: 110
 
-* I use the :ref:`class attribute<what is a class attribute?>` for ``truth_table`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_can_person_vote<extract test_can_person_vote>`
+* I use the :ref:`object attribute<what is a object attribute?>` for ``truth_table`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_can_person_vote<extract test_can_person_vote>`
 
   .. code-block:: python
     :lineno-start: 110

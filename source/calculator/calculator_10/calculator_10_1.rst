@@ -348,7 +348,7 @@ test_streamlit_calculator_title
 
     AssertionError: Title(tag='h1') != 'Calculator'
 
-* I use the ``value`` :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``Title`` :ref:`class<everything is an object>`
+* I use the ``value`` :ref:`attribute<test_attribute_error_w_object_attributes>` of the ``Title`` :ref:`class<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -438,7 +438,7 @@ I want the :ref:`calculator<how to make a calculator>` to have a place to show r
 
 -----
 
-I add a test to see all the :ref:`attributes<what is a class attribute?>` of the application
+I add a test to see all the :ref:`attributes<what is a object attribute?>` of the application
 
 .. code-block:: python
   :lineno-start: 7
@@ -479,7 +479,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 
 -----
 
-* I add an expectation with the ``children`` :ref:`attribute<test_attribute_error_w_class_attributes>`
+* I add an expectation with the ``children`` :ref:`attribute<test_attribute_error_w_object_attributes>`
 
   .. code-block:: python
     :lineno-start: 19
@@ -616,7 +616,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
        type='flex_container'
     )
 
-* I use the ``__dict__`` :ref:`attribute<test_attribute_error_w_class_attributes>` to get the `streamlit Block object`_ as a :ref:`dictionary<what is a dictionary?>`
+* I use the ``__dict__`` :ref:`attribute<test_attribute_error_w_object_attributes>` to get the `streamlit Block object`_ as a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 19
@@ -724,7 +724,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
     # AssertionError
     # SyntaxError
 
-* I change the :ref:`assertion<what is an assertion?>` to use the ``proto`` :ref:`attribute<test_attribute_error_w_class_attributes>` since it looks like a :ref:`dictionary<what is a dictionary?>`
+* I change the :ref:`assertion<what is an assertion?>` to use the ``proto`` :ref:`attribute<test_attribute_error_w_object_attributes>` since it looks like a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 20
@@ -745,7 +745,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
     E       }
     E        != {}
 
-* I use the ``flex_container`` :ref:`attribute<test_attribute_error_w_class_attributes>` instead
+* I use the ``flex_container`` :ref:`attribute<test_attribute_error_w_object_attributes>` instead
 
   .. code-block:: python
     :lineno-start: 20
@@ -766,7 +766,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
     E       directio[49 chars]TART
     E        != {}
 
-* I use the ``gap_size`` :ref:`attribute<test_attribute_error_w_class_attributes>` directly
+* I use the ``gap_size`` :ref:`attribute<test_attribute_error_w_object_attributes>` directly
 
   .. code-block:: python
     :lineno-start: 20
@@ -870,7 +870,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 
             self.assertEqual(display.gap_config.gap_size, 1)
 
-* I add an :ref:`assertion<what is an assertion?>` for the next :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``flex_container`` :ref:`object<everything is an object>`
+* I add an :ref:`assertion<what is an assertion?>` for the next :ref:`attribute<test_attribute_error_w_object_attributes>` of the ``flex_container`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -895,7 +895,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for the next :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``flex_container`` :ref:`object<everything is an object>`
+* I add an :ref:`assertion<what is an assertion?>` for the next :ref:`attribute<test_attribute_error_w_object_attributes>` of the ``flex_container`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -921,7 +921,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 
   the test passes.
 
-* I add the last :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``flex_container`` :ref:`object<everything is an object>`
+* I add the last :ref:`attribute<test_attribute_error_w_object_attributes>` of the ``flex_container`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -949,7 +949,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 
     # Exceptions seen
 
-  the test passes. All the :ref:`attributes<what is a class attribute?>` have 1 as their value which stands for different things in each case, they are called enums_
+  the test passes. All the :ref:`attributes<what is a object attribute?>` have 1 as their value which stands for different things in each case, they are called enums_
 
   - ``gap_config.gap_size`` - 1 - SMALL
   - ``direction`` - 1 - VERTICAL

@@ -129,9 +129,9 @@ objects review
 *********************************************************************************
 
 * :ref:`what is an object?`
-* :ref:`what is a class attribute?`
+* :ref:`what is a object attribute?`
 * :ref:`what is a method?`
-* :ref:`how can I make sure things my tests need are run before every test?<how to use the setUp method to reset class attributes for every test>`
+* :ref:`how can I make sure things my tests need are run before every test?<how to use the setUp method to reset object attributes for every test>`
 * :ref:`what is the staticmethod decorator?`
 
 ----
@@ -298,7 +298,7 @@ list comprehensions review
 * :ref:`how can I use the filter function?<test_making_a_list_w_conditions>`
 * :ref:`how can I transform a list?<test_making_a_list_w_processes>`
 * :ref:`how can I transform and filter a list<test_making_a_list_w_processes_and_conditions>`
-* :ref:`how can I make sure class attributes are reset for every test?<how to use the setUp method to reset class attributes for every test>`
+* :ref:`how can I make sure object attributes are reset for every test?<how to use the setUp method to reset object attributes for every test>`
 
 ----
 

@@ -1,6 +1,6 @@
 .. meta::
-  :description: Pumping Python TDD continuation: "test AssertionError with unittest" in the assertion_error project. Move the existing test_* functions into TestAssertionError(unittest.TestCase), add self as the first method argument, and pair each helper/bare assert with unittest methods (assertEqual, assertNotEqual, assertIs, assertIsNot). See the unittest cores this chapter actually quotes: "AssertionError: True != False", "2 == 2", "'11' == '11'", "unexpectedly identical: None", "False is not None", "0 is not 0.0", "0 == 0.0", plus TypeError when a method is defined without self. Then extract repeated locals (an_integer=0, a_float=0.0, a_string, tuple, list, set, dict) into class attributes used as self.an_integer across test_assertion_error_w_none/false/true — no setUp. will_not_run stays skipped until renamed test_will_not_run. uv run pytest-watcher . --now, git commit after each move, remove the commented lines. Builds on the functions chapter (7 passed at open).
-  :keywords: Jacob Itegboje, Pumping Python, test AssertionError with unittest, TestAssertionError, unittest.TestCase, another way to write tests, assertEqual, assertNotEqual, assertIs, assertIsNot, self first argument, TypeError takes 0 positional arguments but 1 was given, AssertionError True != False, unexpectedly identical None, AssertionError 2 == 2, False is not None, 0 is not 0.0, 0 == 0.0, class attributes an_integer a_float, will_not_run, test_ prefix, test_assert_keyword, test_assertion_error_w_none, test_assertion_error_w_is_vs_equal, uv run pytest-watcher . --now, red green refactor, remove the commented lines, python TDD unittest beginner, identity vs equality 0 vs 0.0
+  :description: Pumping Python TDD continuation: "test AssertionError with unittest" in the assertion_error project. Move the existing test_* functions into TestAssertionError(unittest.TestCase), add self as the first method argument, and pair each helper/bare assert with unittest methods (assertEqual, assertNotEqual, assertIs, assertIsNot). See the unittest cores this chapter actually quotes: "AssertionError: True != False", "2 == 2", "'11' == '11'", "unexpectedly identical: None", "False is not None", "0 is not 0.0", "0 == 0.0", plus TypeError when a method is defined without self. Then extract repeated locals (an_integer=0, a_float=0.0, a_string, tuple, list, set, dict) into object attributes used as self.an_integer across test_assertion_error_w_none/false/true — no setUp. will_not_run stays skipped until renamed test_will_not_run. uv run pytest-watcher . --now, git commit after each move, remove the commented lines. Builds on the functions chapter (7 passed at open).
+  :keywords: Jacob Itegboje, Pumping Python, test AssertionError with unittest, TestAssertionError, unittest.TestCase, another way to write tests, assertEqual, assertNotEqual, assertIs, assertIsNot, self first argument, TypeError takes 0 positional arguments but 1 was given, AssertionError True != False, unexpectedly identical None, AssertionError 2 == 2, False is not None, 0 is not 0.0, 0 == 0.0, object attributes an_integer a_float, will_not_run, test_ prefix, test_assert_keyword, test_assertion_error_w_none, test_assertion_error_w_is_vs_equal, uv run pytest-watcher . --now, red green refactor, remove the commented lines, python TDD unittest beginner, identity vs equality 0 vs 0.0
 
 .. include:: ../../links.rst
 
@@ -3203,12 +3203,12 @@ the test is green again.
 ----
 
 *********************************************************************************
-remove repetition with class attributes
+remove repetition with object attributes
 *********************************************************************************
 
-Three of the tests have the exact same :ref:`variables<what is a variable?>`. I can make them :ref:`class attributes<what is a class attribute?>` to remove repetition of making the same :ref:`variables<what is a variable?>` in the tests.
+Three of the tests have the exact same :ref:`variables<what is a variable?>`. I can make them :ref:`object attributes<what is a object attribute?>` to remove repetition of making the same :ref:`variables<what is a variable?>` in the tests.
 
-* I add a :ref:`class attribute<what is a class attribute?>` for ``an_integer = 0`` to :ref:`TestAssertionError<add TestAssertionError class>`
+* I add a :ref:`object attribute<what is a object attribute?>` for ``an_integer = 0`` to :ref:`TestAssertionError<add TestAssertionError class>`
 
   .. code-block:: python
     :lineno-start: 28
@@ -3220,7 +3220,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
     :lineno-start: 48
@@ -3246,7 +3246,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   the test is still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
     :lineno-start: 84
@@ -3276,7 +3276,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
     :lineno-start: 124
@@ -3308,7 +3308,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` for ``a_float = 0.0``
+* I add a :ref:`object attribute<what is a object attribute?>` for ``a_float = 0.0``
 
   .. code-block:: python
     :lineno-start: 28
@@ -3321,7 +3321,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
     :lineno-start: 59
@@ -3339,7 +3339,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
     :lineno-start: 105
@@ -3357,7 +3357,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   the test is still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
     :lineno-start: 147
@@ -3377,7 +3377,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` for ``a_string = ''``
+* I add a :ref:`object attribute<what is a object attribute?>` for ``a_string = ''``
 
   .. code-block:: python
     :lineno-start: 28
@@ -3391,7 +3391,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
     :lineno-start: 70
@@ -3409,7 +3409,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
     :lineno-start: 114
@@ -3427,7 +3427,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_string = ''`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
     :lineno-start: 158
@@ -3447,7 +3447,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` for ``a_tuple = ()``
+* I add a :ref:`object attribute<what is a object attribute?>` for ``a_tuple = ()``
 
   .. code-block:: python
     :lineno-start: 28
@@ -3462,7 +3462,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
     :lineno-start: 77
@@ -3480,7 +3480,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
     :lineno-start: 123
@@ -3498,7 +3498,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_tuple = ()`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
     :lineno-start: 169
@@ -3518,7 +3518,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` for ``a_list = []``
+* I add a :ref:`object attribute<what is a object attribute?>` for ``a_list = []``
 
   .. code-block:: python
     :lineno-start: 28
@@ -3534,7 +3534,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
     :lineno-start: 84
@@ -3552,7 +3552,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   the test is still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
     :lineno-start: 132
@@ -3570,7 +3570,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_list = []`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
     :lineno-start: 180
@@ -3590,7 +3590,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` for ``a_set = set()``
+* I add a :ref:`object attribute<what is a object attribute?>` for ``a_set = set()``
 
   .. code-block:: python
     :lineno-start: 28
@@ -3607,7 +3607,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
     :lineno-start: 91
@@ -3625,7 +3625,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
     :lineno-start: 141
@@ -3643,7 +3643,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   the test is still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_set = set()`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
     :lineno-start: 191
@@ -3663,7 +3663,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` for ``a_dictionary = {}``
+* I add a :ref:`object attribute<what is a object attribute?>` for ``a_dictionary = {}``
 
   .. code-block:: python
     :lineno-start: 28
@@ -3681,7 +3681,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
         def test_assert_keyword(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
     :lineno-start: 98
@@ -3699,7 +3699,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   the test is still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
     :lineno-start: 150
@@ -3717,7 +3717,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`object attribute<what is a object attribute?>` to remove repetition of ``a_dictionary = {}`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
     :lineno-start: 202
@@ -3874,9 +3874,9 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'extract class attributes'
+    git commit -am 'extract object attributes'
 
-:ref:`I can use class attributes to remove repetition<remove repetition with class attributes>`. I make them once and other things in the :ref:`class<everything is an object>` can reference them.
+:ref:`I can use object attributes to remove repetition<remove repetition with object attributes>`. I make them once and other things in the :ref:`class<everything is an object>` can reference them.
 
 ----
 
@@ -3910,7 +3910,7 @@ review
 *********************************************************************************
 
 * I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`.
-* I can use :ref:`class attributes<what is a class attribute?>` for things that repeat, which allows :ref:`methods<what is a method?>` of the same :ref:`class<everything is an object>` to use them.
+* I can use :ref:`object attributes<what is a object attribute?>` for things that repeat, which allows :ref:`methods<what is a method?>` of the same :ref:`class<everything is an object>` to use them.
 
 ----
 

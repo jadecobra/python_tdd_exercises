@@ -1,8 +1,8 @@
 .. meta::
   :description:
-    AttributeError with objects in the attribute_error project (uv run pytest-watcher, src/attribute_error/__init__.py). Continues test_attribute_error.py after variables and functions. test_attribute_error_w_class_attributes turns a function stub into class AnObject(object) with attribute_00–attribute_09 chained from function_09(); mix AnObject.attr (type object has no attribute) and AnObject().attr ('AnObject' object has no attribute). Representative errors: module 'src.attribute_error' has no attribute 'AnObject', 'function' object has no attribute 'attribute_00', SyntaxError 'return' outside function, then class vs instance AttributeError (Did you mean: 'attribute_00' on some Pythons). test_attribute_error_w_class_methods: method_00 = attribute_09 then def; NameError name 'attribute_09'/'self' is not defined; TypeError AnObject.method_00() missing 1 required positional argument: 'self' until AnObject().method_00(); methods 01–09 on the instance. Review: a variable in an object, a function in an object (method), and a class in a module are attributes. Prepares for catching AttributeError. Jacob Itegboje Pumping Python TDD.
+    AttributeError with objects in the attribute_error project (uv run pytest-watcher, src/attribute_error/__init__.py). Continues test_attribute_error.py after variables and functions. test_attribute_error_w_object_attributes turns a function stub into class AnObject(object) with attribute_00–attribute_09 chained from function_09(); mix AnObject.attr (type object has no attribute) and AnObject().attr ('AnObject' object has no attribute). Representative errors: module 'src.attribute_error' has no attribute 'AnObject', 'function' object has no attribute 'attribute_00', SyntaxError 'return' outside function, then class vs instance AttributeError (Did you mean: 'attribute_00' on some Pythons). test_attribute_error_w_object_methods: method_00 = attribute_09 then def; NameError name 'attribute_09'/'self' is not defined; TypeError AnObject.method_00() missing 1 required positional argument: 'self' until AnObject().method_00(); methods 01–09 on the instance. Review: a variable in an object, a function in an object (method), and a class in a module are attributes. Prepares for catching AttributeError. Jacob Itegboje Pumping Python TDD.
   :keywords:
-    Jacob Itegboje, Pumping Python, AttributeError with objects, python AttributeError class attribute, type object 'AnObject' has no attribute, 'AnObject' object has no attribute, Did you mean attribute_00, SyntaxError return outside function, NameError name 'self' is not defined, TypeError missing 1 required positional argument self, AnObject.attribute_00, AnObject().method_00, src.attribute_error.AnObject, class in module is attribute, method is attribute of class, test_attribute_error_w_class_attributes, test_attribute_error_w_class_methods, uv run pytest-watcher, remove the commented lines, red green refactor class, src/attribute_error/__init__.py, Pumping Python exceptions AttributeError objects
+    Jacob Itegboje, Pumping Python, AttributeError with objects, python AttributeError object attribute, type object 'AnObject' has no attribute, 'AnObject' object has no attribute, Did you mean attribute_00, SyntaxError return outside function, NameError name 'self' is not defined, TypeError missing 1 required positional argument self, AnObject.attribute_00, AnObject().method_00, src.attribute_error.AnObject, class in module is attribute, method is attribute of class, test_attribute_error_w_object_attributes, test_attribute_error_w_object_methods, uv run pytest-watcher, remove the commented lines, red green refactor class, src/attribute_error/__init__.py, Pumping Python exceptions AttributeError objects
 
 .. include:: ../../links.rst
 
@@ -12,9 +12,9 @@ AttributeError with objects
 
 ----
 
-:ref:`test_attribute_error_w_variables` and :ref:`test_attribute_error_w_functions` show that :ref:`variables<what is a variable?>` and :ref:`functions<what is a function?>` in a :ref:`module<what is a module?>` are :ref:`attributes<what is a class attribute?>` of the :ref:`module<what is a module?>`.
+:ref:`test_attribute_error_w_variables` and :ref:`test_attribute_error_w_functions` show that :ref:`variables<what is a variable?>` and :ref:`functions<what is a function?>` in a :ref:`module<what is a module?>` are :ref:`attributes<what is a object attribute?>` of the :ref:`module<what is a module?>`.
 
-Is a :ref:`class<everything is an object>` in a :ref:`module<what is a module?>` also an :ref:`attribute<what is a class attribute?>` of the :ref:`module<what is a module?>`?
+Is a :ref:`class<everything is an object>` in a :ref:`module<what is a module?>` also an :ref:`attribute<what is a object attribute?>` of the :ref:`module<what is a module?>`?
 
 *********************************************************************************
 preview
@@ -68,7 +68,7 @@ open the project
 ----
 
 *********************************************************************************
-test_attribute_error_w_class_attributes
+test_attribute_error_w_object_attributes
 *********************************************************************************
 
 =================================================================================
@@ -79,7 +79,7 @@ test_attribute_error_w_class_attributes
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for :ref:`class attributes<what is a class attribute?>` to ``tests/test_attribute_error.py``
+* I add a test for :ref:`object attributes<what is a object attribute?>` to ``tests/test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 17
@@ -98,7 +98,7 @@ test_attribute_error_w_class_attributes
         src.attribute_error.function_09()
 
 
-    def test_attribute_error_w_class_attributes():
+    def test_attribute_error_w_object_attributes():
         src.attribute_error.AnObject.attribute_00
 
 
@@ -203,8 +203,8 @@ test_attribute_error_w_class_attributes
         attribute_00 = function_09()
         # return function_09()
 
-  - the test passes because ``attribute_00`` is now an :ref:`attribute/property<what is a class attribute?>` of the ``AnObject`` :ref:`class<everything is an object>`
-  - ``AnObject`` is an :ref:`attribute<what is a class attribute?>` of the ``attribute_error`` :ref:`module<what is a module?>` in the ``src`` folder_
+  - the test passes because ``attribute_00`` is now an :ref:`attribute/property<what is a object attribute?>` of the ``AnObject`` :ref:`class<everything is an object>`
+  - ``AnObject`` is an :ref:`attribute<what is a object attribute?>` of the ``attribute_error`` :ref:`module<what is a module?>` in the ``src`` folder_
   - I can use ``attribute_00`` from outside the file_ with ``src.attribute_error.AnObject.attribute_00`` or ``src.attribute_error.AnObject().attribute_00``
 
     .. code-block:: shell
@@ -243,7 +243,7 @@ test_attribute_error_w_class_attributes
     :lineno-start: 30
     :emphasize-lines: 3
 
-    def test_attribute_error_w_class_attributes():
+    def test_attribute_error_w_object_attributes():
         src.attribute_error.AnObject.attribute_00
         src.attribute_error.AnObject().attribute_01
 
@@ -270,7 +270,7 @@ test_attribute_error_w_class_attributes
         attribute_01 = attribute_00
 
   - the test passes because in this case it does not matter if I use the :ref:`class<everything is an object>` (``AnObject``) or an :ref:`instance of the class<how to test if something is an instance>`  (``AnObject()``).
-  - ``attribute_01`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_01`` or ``src.attribute_error.AnObject().attribute_01``
+  - ``attribute_01`` is now an :ref:`attribute<what is a object attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_01`` or ``src.attribute_error.AnObject().attribute_01``
 
     .. code-block:: shell
 
@@ -288,7 +288,7 @@ test_attribute_error_w_class_attributes
     :lineno-start: 30
     :emphasize-lines: 4
 
-    def test_attribute_error_w_class_attributes():
+    def test_attribute_error_w_object_attributes():
         src.attribute_error.AnObject.attribute_00
         src.attribute_error.AnObject().attribute_01
         src.attribute_error.AnObject.attribute_02
@@ -316,7 +316,7 @@ test_attribute_error_w_class_attributes
         attribute_01 = attribute_00
         attribute_02 = attribute_01
 
-  the test passes because ``attribute_02`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_02`` or ``src.attribute_error.AnObject().attribute_02``
+  the test passes because ``attribute_02`` is now an :ref:`attribute<what is a object attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_02`` or ``src.attribute_error.AnObject().attribute_02``
 
   .. code-block:: shell
 
@@ -334,7 +334,7 @@ test_attribute_error_w_class_attributes
     :lineno-start: 30
     :emphasize-lines: 5
 
-    def test_attribute_error_w_class_attributes():
+    def test_attribute_error_w_object_attributes():
         src.attribute_error.AnObject.attribute_00
         src.attribute_error.AnObject().attribute_01
         src.attribute_error.AnObject.attribute_02
@@ -364,7 +364,7 @@ test_attribute_error_w_class_attributes
         attribute_02 = attribute_01
         attribute_03 = attribute_02
 
-  the test passes because ``attribute_03`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_03`` or ``src.attribute_error.AnObject().attribute_03``
+  the test passes because ``attribute_03`` is now an :ref:`attribute<what is a object attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_03`` or ``src.attribute_error.AnObject().attribute_03``
 
   .. code-block:: shell
 
@@ -382,7 +382,7 @@ test_attribute_error_w_class_attributes
     :lineno-start: 30
     :emphasize-lines: 6
 
-    def test_attribute_error_w_class_attributes():
+    def test_attribute_error_w_object_attributes():
         src.attribute_error.AnObject.attribute_00
         src.attribute_error.AnObject().attribute_01
         src.attribute_error.AnObject.attribute_02
@@ -414,7 +414,7 @@ test_attribute_error_w_class_attributes
         attribute_03 = attribute_02
         attribute_04 = attribute_03
 
-  the test passes because ``attribute_04`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_04`` or ``src.attribute_error.AnObject().attribute_04``
+  the test passes because ``attribute_04`` is now an :ref:`attribute<what is a object attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_04`` or ``src.attribute_error.AnObject().attribute_04``
 
   .. code-block:: shell
 
@@ -433,7 +433,7 @@ test_attribute_error_w_class_attributes
     :lineno-start: 30
     :emphasize-lines: 7
 
-    def test_attribute_error_w_class_attributes():
+    def test_attribute_error_w_object_attributes():
         src.attribute_error.AnObject.attribute_00
         src.attribute_error.AnObject().attribute_01
         src.attribute_error.AnObject.attribute_02
@@ -467,7 +467,7 @@ test_attribute_error_w_class_attributes
         attribute_04 = attribute_03
         attribute_05 = attribute_04
 
-  the test passes because ``attribute_05`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_05`` or ``src.attribute_error.AnObject().attribute_05``
+  the test passes because ``attribute_05`` is now an :ref:`attribute<what is a object attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_05`` or ``src.attribute_error.AnObject().attribute_05``
 
   .. code-block:: shell
 
@@ -485,7 +485,7 @@ test_attribute_error_w_class_attributes
     :lineno-start: 30
     :emphasize-lines: 8
 
-    def test_attribute_error_w_class_attributes():
+    def test_attribute_error_w_object_attributes():
         src.attribute_error.AnObject.attribute_00
         src.attribute_error.AnObject().attribute_01
         src.attribute_error.AnObject.attribute_02
@@ -521,7 +521,7 @@ test_attribute_error_w_class_attributes
         attribute_05 = attribute_04
         attribute_06 = attribute_05
 
-  the test passes because ``attribute_06`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_06`` or ``src.attribute_error.AnObject().attribute_06``
+  the test passes because ``attribute_06`` is now an :ref:`attribute<what is a object attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_06`` or ``src.attribute_error.AnObject().attribute_06``
 
   .. code-block:: shell
 
@@ -539,7 +539,7 @@ test_attribute_error_w_class_attributes
     :lineno-start: 30
     :emphasize-lines: 9
 
-    def test_attribute_error_w_class_attributes():
+    def test_attribute_error_w_object_attributes():
         src.attribute_error.AnObject.attribute_00
         src.attribute_error.AnObject().attribute_01
         src.attribute_error.AnObject.attribute_02
@@ -577,7 +577,7 @@ test_attribute_error_w_class_attributes
         attribute_06 = attribute_05
         attribute_07 = attribute_06
 
-  the test passes because ``attribute_07`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_07`` or ``src.attribute_error.AnObject().attribute_07``
+  the test passes because ``attribute_07`` is now an :ref:`attribute<what is a object attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_07`` or ``src.attribute_error.AnObject().attribute_07``
 
   .. code-block:: shell
 
@@ -595,7 +595,7 @@ test_attribute_error_w_class_attributes
     :lineno-start: 30
     :emphasize-lines: 10
 
-    def test_attribute_error_w_class_attributes():
+    def test_attribute_error_w_object_attributes():
         src.attribute_error.AnObject.attribute_00
         src.attribute_error.AnObject().attribute_01
         src.attribute_error.AnObject.attribute_02
@@ -635,7 +635,7 @@ test_attribute_error_w_class_attributes
         attribute_07 = attribute_06
         attribute_08 = attribute_07
 
-  the test passes because ``attribute_08`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_08`` or ``src.attribute_error.AnObject().attribute_08``
+  the test passes because ``attribute_08`` is now an :ref:`attribute<what is a object attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_08`` or ``src.attribute_error.AnObject().attribute_08``
 
   .. code-block:: shell
 
@@ -653,7 +653,7 @@ test_attribute_error_w_class_attributes
     :lineno-start: 30
     :emphasize-lines: 11
 
-    def test_attribute_error_w_class_attributes():
+    def test_attribute_error_w_object_attributes():
         src.attribute_error.AnObject.attribute_00
         src.attribute_error.AnObject().attribute_01
         src.attribute_error.AnObject.attribute_02
@@ -695,7 +695,7 @@ test_attribute_error_w_class_attributes
         attribute_08 = attribute_07
         attribute_09 = attribute_08
 
-  the test passes because ``attribute_09`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_09`` or ``src.attribute_error.AnObject().attribute_09``
+  the test passes because ``attribute_09`` is now an :ref:`attribute<what is a object attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can use it from outside the file_ with ``src.attribute_error.AnObject.attribute_09`` or ``src.attribute_error.AnObject().attribute_09``
 
   .. code-block:: shell
 
@@ -713,22 +713,22 @@ test_attribute_error_w_class_attributes
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_attribute_error_w_class_attributes'
+    'add test_attribute_error_w_object_attributes'
 
-* :ref:`A variable in an object is an attribute of the class<test_attribute_error_w_class_attributes>`
-* :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
+* :ref:`A variable in an object is an attribute of the class<test_attribute_error_w_object_attributes>`
+* :ref:`A class in a module is an attribute of the module<test_attribute_error_w_object_attributes>`
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
 * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
 
 ----
 
 *********************************************************************************
-test_attribute_error_w_class_methods
+test_attribute_error_w_object_methods
 *********************************************************************************
 
-The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what is a function?>` and :ref:`objects<everything is an object>` in a :ref:`module<what is a module?>` are :ref:`attributes of the module<what is a class attribute?>`, and :ref:`variables<what is a variable?>` in a :ref:`class<everything is an object>` are :ref:`attributes of the class<what is a class attribute?>`.
+The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what is a function?>` and :ref:`objects<everything is an object>` in a :ref:`module<what is a module?>` are :ref:`attributes of the module<what is a object attribute?>`, and :ref:`variables<what is a variable?>` in a :ref:`class<everything is an object>` are :ref:`attributes of the class<what is a object attribute?>`.
 
-:ref:`Methods of a class<what is a method?>` are also :ref:`attributes of the class<what is a class attribute?>`.
+:ref:`Methods of a class<what is a method?>` are also :ref:`attributes of the class<what is a object attribute?>`.
 
 ----
 
@@ -748,7 +748,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         src.attribute_error.AnObject().attribute_09
 
 
-    def test_attribute_error_w_class_methods():
+    def test_attribute_error_w_object_methods():
         src.attribute_error.AnObject.method_00()
 
 
@@ -817,7 +817,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   because there is nothing inside ``method_00`` named ``attribute_09`` and it cannot get to ``attribute_09`` of ``AnObject``, yet.
 
-* I add ``self.`` before the name to reference the :ref:`class attribute<what is a class attribute?>`
+* I add ``self.`` before the name to reference the :ref:`object attribute<what is a object attribute?>`
 
   .. code-block:: python
     :lineno-start: 38
@@ -859,15 +859,15 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 2-3
 
-    def test_attribute_error_w_class_methods():
+    def test_attribute_error_w_object_methods():
         # src.attribute_error.AnObject.method_00()
         src.attribute_error.AnObject().method_00()
 
 
     # Exceptions seen
 
-  - the test passes because ``method_00`` is now an :ref:`attribute/property<what is a class attribute?>` of the ``AnObject`` :ref:`class<everything is an object>`
-  - ``AnObject`` is an :ref:`attribute<what is a class attribute?>` of the ``attribute_error`` :ref:`module<what is a module?>` in the ``src`` folder_
+  - the test passes because ``method_00`` is now an :ref:`attribute/property<what is a object attribute?>` of the ``AnObject`` :ref:`class<everything is an object>`
+  - ``AnObject`` is an :ref:`attribute<what is a object attribute?>` of the ``attribute_error`` :ref:`module<what is a module?>` in the ``src`` folder_
   - I can :ref:`call<how to call a function>` ``method_00`` from outside the file_ with ``src.attribute_error.AnObject().method_00()``
 
   .. code-block:: shell
@@ -913,7 +913,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   .. code-block:: python
     :lineno-start: 43
 
-    def test_attribute_error_w_class_methods():
+    def test_attribute_error_w_object_methods():
         src.attribute_error.AnObject().method_00()
 
 
@@ -925,7 +925,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 3
 
-    def test_attribute_error_w_class_methods():
+    def test_attribute_error_w_object_methods():
         src.attribute_error.AnObject().method_00()
         src.attribute_error.AnObject().method_01()
 
@@ -949,7 +949,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_00(self): return self.attribute_09
         def method_01(self): return self.method_00()
 
-  the test passes because ``method_01`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AnObject().method_01()``
+  the test passes because ``method_01`` is now an :ref:`attribute<what is a object attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AnObject().method_01()``
 
   .. code-block:: shell
 
@@ -967,7 +967,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 4
 
-    def test_attribute_error_w_class_methods():
+    def test_attribute_error_w_object_methods():
         src.attribute_error.AnObject().method_00()
         src.attribute_error.AnObject().method_01()
         src.attribute_error.AnObject().method_02()
@@ -993,7 +993,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_01(self): return self.method_00()
         def method_02(self): return self.method_01()
 
-  the test passes because ``method_02`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AnObject().method_02()``
+  the test passes because ``method_02`` is now an :ref:`attribute<what is a object attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AnObject().method_02()``
 
   .. code-block:: shell
 
@@ -1011,7 +1011,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 5
 
-    def test_attribute_error_w_class_methods():
+    def test_attribute_error_w_object_methods():
         src.attribute_error.AnObject().method_00()
         src.attribute_error.AnObject().method_01()
         src.attribute_error.AnObject().method_02()
@@ -1039,7 +1039,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_02(self): return self.method_01()
         def method_03(self): return self.method_02()
 
-  the test passes because ``method_03`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AnObject().method_03()``
+  the test passes because ``method_03`` is now an :ref:`attribute<what is a object attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AnObject().method_03()``
 
   .. code-block:: shell
 
@@ -1057,7 +1057,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 6
 
-    def test_attribute_error_w_class_methods():
+    def test_attribute_error_w_object_methods():
         src.attribute_error.AnObject().method_00()
         src.attribute_error.AnObject().method_01()
         src.attribute_error.AnObject().method_02()
@@ -1087,7 +1087,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_03(self): return self.method_02()
         def method_04(self): return self.method_03()
 
-  the test passes because ``method_04`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AnObject().method_04()``
+  the test passes because ``method_04`` is now an :ref:`attribute<what is a object attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AnObject().method_04()``
 
   .. code-block:: shell
 
@@ -1104,7 +1104,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 7
 
-    def test_attribute_error_w_class_methods():
+    def test_attribute_error_w_object_methods():
         src.attribute_error.AnObject().method_00()
         src.attribute_error.AnObject().method_01()
         src.attribute_error.AnObject().method_02()
@@ -1144,7 +1144,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 8
 
-    def test_attribute_error_w_class_methods():
+    def test_attribute_error_w_object_methods():
         src.attribute_error.AnObject().method_00()
         src.attribute_error.AnObject().method_01()
         src.attribute_error.AnObject().method_02()
@@ -1186,7 +1186,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 9
 
-    def test_attribute_error_w_class_methods():
+    def test_attribute_error_w_object_methods():
         src.attribute_error.AnObject().method_00()
         src.attribute_error.AnObject().method_01()
         src.attribute_error.AnObject().method_02()
@@ -1230,7 +1230,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 10
 
-    def test_attribute_error_w_class_methods():
+    def test_attribute_error_w_object_methods():
         src.attribute_error.AnObject().method_00()
         src.attribute_error.AnObject().method_01()
         src.attribute_error.AnObject().method_02()
@@ -1276,7 +1276,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 43
     :emphasize-lines: 11
 
-    def test_attribute_error_w_class_methods():
+    def test_attribute_error_w_object_methods():
         src.attribute_error.AnObject().method_00()
         src.attribute_error.AnObject().method_01()
         src.attribute_error.AnObject().method_02()
@@ -1337,7 +1337,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_08(self): return self.method_07()
         def method_09(self): return self.method_08()
 
-  the test passes because ``method_09`` is now an :ref:`attribute<what is a class attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AnObject().method_09()``
+  the test passes because ``method_09`` is now an :ref:`attribute<what is a object attribute?>` of ``AnObject`` in ``src/attribute_error/__init__.py``, and I can :ref:`call it<how to call a function with input>` from outside the file_ with ``src.attribute_error.AnObject().method_09()``
 
   .. code-block:: shell
 
@@ -1355,9 +1355,9 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_attribute_error_w_class_methods'
+    'add test_attribute_error_w_object_methods'
 
-:ref:`A function in an object is an attribute of the class and is called a method<test_attribute_error_w_class_methods>`
+:ref:`A function in an object is an attribute of the class and is called a method<test_attribute_error_w_object_methods>`
 
 ----
 
@@ -1392,13 +1392,13 @@ review
 
 All the tests I have run for :ref:`AttributeError<what causes AttributeError?>` show that
 
-* :ref:`A variable in an object is an attribute of the class<test_attribute_error_w_class_attributes>`
-* :ref:`A function in an object is an attribute of the class<test_attribute_error_w_class_methods>`
-* :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
+* :ref:`A variable in an object is an attribute of the class<test_attribute_error_w_object_attributes>`
+* :ref:`A function in an object is an attribute of the class<test_attribute_error_w_object_methods>`
+* :ref:`A class in a module is an attribute of the module<test_attribute_error_w_object_attributes>`
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
 * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
 
-I still have the problem that the tests all show the correct way to use :ref:`attributes<what is a class attribute?>` I made in ``src/attribute_error/__init__.py``. If someone reads the file_ or runs it, there is no way for them to know how the code relates to :ref:`AttributeError<what causes AttributeError?>` unless they go through the process with me, :ref:`there has to be a better way<test_catching_attribute_error>`.
+I still have the problem that the tests all show the correct way to use :ref:`attributes<what is a object attribute?>` I made in ``src/attribute_error/__init__.py``. If someone reads the file_ or runs it, there is no way for them to know how the code relates to :ref:`AttributeError<what causes AttributeError?>` unless they go through the process with me, :ref:`there has to be a better way<test_catching_attribute_error>`.
 
 ----
 

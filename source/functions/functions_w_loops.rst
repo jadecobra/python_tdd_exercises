@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test functions with unittest — move the functions project's bare assert tests onto unittest.TestCase, then extract class attributes to remove repetition. Open functions; uv run pytest-watcher . --now (12 passed). Add class Functions then rename to TestFunctions → AttributeError: 'TestFunctions' object has no attribute 'assertEqual'. Parent unittest.TestCase → NameError name 'unittest' is not defined (pytest: Did you forget to import 'unittest'?); import unittest → AssertionError: True != False then green with assertEqual(False, False). For each of the 12 tests (test_making_a_function_w_pass through test_unknown_number_of_arguments): move into TestFunctions (first method replaces test_failure) → TypeError takes 0 positional arguments but 1 was given (need self); add assertIsNot / assertNotEqual → AssertionError e.g. unexpectedly identical: None, 'the same thing' == 'the same thing', None == None, <class 'object'> == <class 'object>', ('first', 'last') == ('first', 'last'); switch to assertIs / assertEqual; keep bare assert + self.assert*; use result / reality / my_expectation; remove the commented lines; git commit. Then extract class attributes first, last, a_tuple, a_list, a_set, a_dictionary and replace locals with self.first / self.last / self.a_tuple … in test_positional_arguments, test_keyword_arguments, and test_args_and_kwargs (keyword order still binds by name; my_expectation stays (self.first, self.last)). Ends with TestFunctions + 6 class attrs + 12 methods + # Exceptions seen AssertionError NameError TypeError SyntaxError ModuleNotFoundError AttributeError. Review: unittest.TestCase methods or bare assert; class attributes for values that repeat. What is next: test person with unittest.
-  :keywords: Jacob Itegboje, Pumping Python, test functions with unittest, functions unittest, TestFunctions, unittest.TestCase, import unittest, class attributes, self.first self.last, a_tuple a_list a_set a_dictionary, extract class attributes, AttributeError has no attribute assertEqual, NameError name 'unittest' is not defined, Did you forget to import unittest, AssertionError True != False, TypeError takes 0 positional arguments but 1 was given, self first argument method, assertIsNot, assertIs, assertNotEqual, assertEqual, unexpectedly identical None, the same thing, identity function None object, positional arguments, keyword arguments, args and kwargs, optional arguments, unknown_number_of_arguments, reality == my_expectation, bare assert and assertEqual, uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, another way to write tests, test_functions_w_unittest
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test functions with unittest — move the functions project's bare assert tests onto unittest.TestCase, then extract object attributes to remove repetition. Open functions; uv run pytest-watcher . --now (12 passed). Add class Functions then rename to TestFunctions → AttributeError: 'TestFunctions' object has no attribute 'assertEqual'. Parent unittest.TestCase → NameError name 'unittest' is not defined (pytest: Did you forget to import 'unittest'?); import unittest → AssertionError: True != False then green with assertEqual(False, False). For each of the 12 tests (test_making_a_function_w_pass through test_unknown_number_of_arguments): move into TestFunctions (first method replaces test_failure) → TypeError takes 0 positional arguments but 1 was given (need self); add assertIsNot / assertNotEqual → AssertionError e.g. unexpectedly identical: None, 'the same thing' == 'the same thing', None == None, <class 'object'> == <class 'object>', ('first', 'last') == ('first', 'last'); switch to assertIs / assertEqual; keep bare assert + self.assert*; use result / reality / my_expectation; remove the commented lines; git commit. Then extract object attributes first, last, a_tuple, a_list, a_set, a_dictionary and replace locals with self.first / self.last / self.a_tuple … in test_positional_arguments, test_keyword_arguments, and test_args_and_kwargs (keyword order still binds by name; my_expectation stays (self.first, self.last)). Ends with TestFunctions + 6 class attrs + 12 methods + # Exceptions seen AssertionError NameError TypeError SyntaxError ModuleNotFoundError AttributeError. Review: unittest.TestCase methods or bare assert; object attributes for values that repeat. What is next: test person with unittest.
+  :keywords: Jacob Itegboje, Pumping Python, test functions with unittest, functions unittest, TestFunctions, unittest.TestCase, import unittest, object attributes, self.first self.last, a_tuple a_list a_set a_dictionary, extract object attributes, AttributeError has no attribute assertEqual, NameError name 'unittest' is not defined, Did you forget to import unittest, AssertionError True != False, TypeError takes 0 positional arguments but 1 was given, self first argument method, assertIsNot, assertIs, assertNotEqual, assertEqual, unexpectedly identical None, the same thing, identity function None object, positional arguments, keyword arguments, args and kwargs, optional arguments, unknown_number_of_arguments, reality == my_expectation, bare assert and assertEqual, uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, another way to write tests, test_functions_w_unittest
 
 .. include:: ../links.rst
 
@@ -8,7 +8,7 @@
 test functions with unittest
 #################################################################################
 
-I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`functions<what is a function?>` project. I also want to use :ref:`class attributes<what is a class attribute?>` to remove repetition of some values from the tests.
+I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`functions<what is a function?>` project. I also want to use :ref:`object attributes<what is a object attribute?>` to remove repetition of some values from the tests.
 
 ----
 
@@ -4698,14 +4698,14 @@ green.
 ----
 
 *********************************************************************************
-extract first, last class attributes
+extract first, last object attributes
 *********************************************************************************
 
-I want to use :ref:`class attributes<what is a class attribute?>` to remove repetition from the tests.
+I want to use :ref:`object attributes<what is a object attribute?>` to remove repetition from the tests.
 
 * I go back to the terminal_ where the tests are running
 
-* I add :ref:`class attributes<what is a class attribute?>` for ``'first'`` and ``'last'``
+* I add :ref:`object attributes<what is a object attribute?>` for ``'first'`` and ``'last'``
 
   .. code-block:: python
     :lineno-start: 5
@@ -4718,7 +4718,7 @@ I want to use :ref:`class attributes<what is a class attribute?>` to remove repe
 
         def test_making_a_function_w_pass(self):
 
-* I use the :ref:`class attributes<what is a class attribute?>` for ``first`` and ``last`` in :ref:`test_positional_arguments`
+* I use the :ref:`object attributes<what is a object attribute?>` for ``first`` and ``last`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 106
@@ -4756,7 +4756,7 @@ I want to use :ref:`class attributes<what is a class attribute?>` to remove repe
 
   the test is still green.
 
-* I use the :ref:`class attributes<what is a class attribute?>` for ``first`` and ``last`` in :ref:`test_keyword_arguments`
+* I use the :ref:`object attributes<what is a object attribute?>` for ``first`` and ``last`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 158
@@ -4798,7 +4798,7 @@ I want to use :ref:`class attributes<what is a class attribute?>` to remove repe
 
   still green.
 
-* I use the :ref:`class attributes<what is a class attribute?>` for ``first`` and ``last`` in :ref:`test_args_and_kwargs`
+* I use the :ref:`object attributes<what is a object attribute?>` for ``first`` and ``last`` in :ref:`test_args_and_kwargs`
 
   .. code-block:: python
     :lineno-start: 216
@@ -4841,15 +4841,15 @@ I want to use :ref:`class attributes<what is a class attribute?>` to remove repe
     :emphasize-lines: 1-2
 
     git commit -am \
-    'extract first, last class attributes'
+    'extract first, last object attributes'
 
 ----
 
 *********************************************************************************
-extract a_tuple class attribute
+extract a_tuple object attribute
 *********************************************************************************
 
-* I add a :ref:`class attribute<what is a class attribute?>` for ``(0, 1, 2, 'n')``
+* I add a :ref:`object attribute<what is a object attribute?>` for ``(0, 1, 2, 'n')``
 
   .. code-block:: python
     :lineno-start: 5
@@ -4863,7 +4863,7 @@ extract a_tuple class attribute
 
         def test_why_use_a_function(self):
 
-* I use the new :ref:`class attribute<what is a class attribute?>` for ``a_tuple`` in :ref:`test_positional_arguments`
+* I use the new :ref:`object attribute<what is a object attribute?>` for ``a_tuple`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 131
@@ -4888,7 +4888,7 @@ extract a_tuple class attribute
 
   still green.
 
-* I use the new :ref:`class attribute<what is a class attribute?>` for ``a_tuple`` in :ref:`test_keyword_arguments`
+* I use the new :ref:`object attribute<what is a object attribute?>` for ``a_tuple`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 187
@@ -4922,15 +4922,15 @@ extract a_tuple class attribute
     :emphasize-lines: 1-2
 
     git commit -am \
-    'extract a_tuple class attribute'
+    'extract a_tuple object attribute'
 
 ----
 
 *********************************************************************************
-extract a_list class attribute
+extract a_list object attribute
 *********************************************************************************
 
-* I add a :ref:`class attribute<what is a class attribute?>` for ``[0, 1, 2, 'n']``
+* I add a :ref:`object attribute<what is a object attribute?>` for ``[0, 1, 2, 'n']``
 
   .. code-block:: python
     :lineno-start: 5
@@ -4945,7 +4945,7 @@ extract a_list class attribute
 
         def test_why_use_a_function(self):
 
-* I use the new :ref:`class attribute<what is a class attribute?>` for ``a_list`` in :ref:`test_positional_arguments`
+* I use the new :ref:`object attribute<what is a object attribute?>` for ``a_list`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 132
@@ -4972,7 +4972,7 @@ extract a_list class attribute
 
   still green.
 
-* I use the new :ref:`class attribute<what is a class attribute?>` for ``a_list`` in :ref:`test_keyword_arguments`
+* I use the new :ref:`object attribute<what is a object attribute?>` for ``a_list`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 190
@@ -5008,15 +5008,15 @@ extract a_list class attribute
     :emphasize-lines: 1-2
 
     git commit -am \
-    'extract a_list class attribute'
+    'extract a_list object attribute'
 
 ----
 
 *********************************************************************************
-extract a_set class attribute
+extract a_set object attribute
 *********************************************************************************
 
-* I add a :ref:`class attribute<what is a class attribute?>` for ``{0, 1, 2, 'n'}``
+* I add a :ref:`object attribute<what is a object attribute?>` for ``{0, 1, 2, 'n'}``
 
   .. code-block:: python
     :lineno-start: 5
@@ -5032,7 +5032,7 @@ extract a_set class attribute
 
         def test_making_a_function_w_pass(self):
 
-* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_positional_arguments`
+* I use the new :ref:`object attribute<what is a object attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 152
@@ -5057,7 +5057,7 @@ extract a_set class attribute
 
   still green.
 
-* I use the new :ref:`class attributes<what is a class attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_keyword_arguments`
+* I use the new :ref:`object attributes<what is a object attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 215
@@ -5089,15 +5089,15 @@ extract a_set class attribute
     :emphasize-lines: 1-2
 
     git commit -am \
-    'extract a_set class attribute'
+    'extract a_set object attribute'
 
 ----
 
 *********************************************************************************
-extract a_dictionary class attribute
+extract a_dictionary object attribute
 *********************************************************************************
 
-* I add a :ref:`class attribute<what is a class attribute?>` for ``a_dictionary``
+* I add a :ref:`object attribute<what is a object attribute?>` for ``a_dictionary``
 
   .. code-block:: python
     :lineno-start: 5
@@ -5114,7 +5114,7 @@ extract a_dictionary class attribute
 
         def test_making_a_function_w_pass(self):
 
-* I use the new :ref:`class attribute<what is a class attribute?>` for ``a_dictionary`` in :ref:`test_positional_arguments`
+* I use the new :ref:`object attribute<what is a object attribute?>` for ``a_dictionary`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 153
@@ -5212,7 +5212,7 @@ extract a_dictionary class attribute
 
         def test_keyword_arguments(self):
 
-* I use the new :ref:`class attributes<what is a class attribute?>` for ``a_dictionary`` in :ref:`test_keyword_arguments`
+* I use the new :ref:`object attributes<what is a object attribute?>` for ``a_dictionary`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 203
@@ -5317,9 +5317,9 @@ extract a_dictionary class attribute
     :emphasize-lines: 1-2
 
     git commit -am \
-    'extract a_dictionary class attribute'
+    'extract a_dictionary object attribute'
 
-:ref:`I can use class attributes to remove repetition<what is a class attribute?>`
+:ref:`I can use object attributes to remove repetition<what is a object attribute?>`
 
 ----
 
@@ -5353,7 +5353,7 @@ review
 *********************************************************************************
 
 * I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`.
-* I can use :ref:`class attributes<what is a class attribute?>` for things that repeat so that :ref:`methods<what is a method?>` of the same :ref:`class<everything is an object>` can use them.
+* I can use :ref:`object attributes<what is a object attribute?>` for things that repeat so that :ref:`methods<what is a method?>` of the same :ref:`class<everything is an object>` can use them.
 
 ----
 

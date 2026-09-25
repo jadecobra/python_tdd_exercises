@@ -611,7 +611,7 @@ test_home_page
   - the ``get`` :ref:`method<what is a method?>` calls the `GET request method`_ which is an `HTTP request method`_ to get information from a server
   - ``client.get('/')`` returns a :ref:`response object<everything is an object>`
   - ``'/'`` is short for root or home in this case, the homepage of the website I am making also known as ``index.html``
-  - ``response.status_code`` gets the ``status_code`` :ref:`attribute<test_attribute_error_w_class_attributes>` or the :ref:`response object<everything is an object>`
+  - ``response.status_code`` gets the ``status_code`` :ref:`attribute<test_attribute_error_w_object_attributes>` or the :ref:`response object<everything is an object>`
   - the above can also be written as ``src.website.app.test_client().get('/').status_code``
   - ``404`` is `HTTP status code`_, it is short for `404 Not Found`_ which means the page cannot be found
   - I want a ``200`` `HTTP status code`_, it is short for `200 OK`_ and means the request was successful
@@ -1195,7 +1195,7 @@ how to change a bytes object to a string
 
     AssertionError: '<h2>RS.TUVWXYZABCDEFG + 1.0 = RH.TUVWXYZABCDEFG</h2>' != '<h2>0.0 + 1.0 = 1.0</h2>'
 
-  - ``response.data.decode()`` returns the result of calling the `decode method`_ of the ``data`` :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``response`` :ref:`object<everything is an object>`
+  - ``response.data.decode()`` returns the result of calling the `decode method`_ of the ``data`` :ref:`attribute<test_attribute_error_w_object_attributes>` of the ``response`` :ref:`object<everything is an object>`
   - the `decode method`_ is part of the bytes_ data type, it converts bytes_ to strings_
 
 * I add the :ref:`variable<what is a variable?>` to the expectation
@@ -1924,7 +1924,7 @@ good
 
 ----
 
-* I made the same client in each test. I add a :ref:`class attribute<what is a class attribute?>` for it in the `setUp method`_
+* I made the same client in each test. I add a :ref:`object attribute<what is a object attribute?>` for it in the `setUp method`_
 
   .. code-block:: python
     :lineno-start: 6
@@ -1937,7 +1937,7 @@ good
 
         def test_home_page(self):
 
-* I use the new :ref:`class attribute<what is a class attribute?>` in :ref:`test_home_page`
+* I use the new :ref:`object attribute<what is a object attribute?>` in :ref:`test_home_page`
 
   .. code-block:: python
     :lineno-start: 11
@@ -1978,7 +1978,7 @@ good
 
 ----
 
-* I use the :ref:`class attribute<what is a class attribute?>` in :ref:`test_calculations`
+* I use the :ref:`object attribute<what is a object attribute?>` in :ref:`test_calculations`
 
   .. code-block:: python
     :lineno-start: 32
@@ -2044,7 +2044,7 @@ good
 
 ----
 
-* I use the :ref:`class attribute<what is a class attribute?>` in :ref:`test_website_handling_zero_division_error<fix handling ZeroDivisionError in division>`
+* I use the :ref:`object attribute<what is a object attribute?>` in :ref:`test_website_handling_zero_division_error<fix handling ZeroDivisionError in division>`
 
   .. code-block:: python
     :lineno-start: 54
@@ -2096,7 +2096,7 @@ good
 
 ----
 
-* I add :ref:`class attributes<test_attribute_error_w_class_attributes>` for the random numbers to the `setUp method`_
+* I add :ref:`object attributes<test_attribute_error_w_object_attributes>` for the random numbers to the `setUp method`_
 
   .. code-block:: python
     :lineno-start: 8

@@ -1,5 +1,5 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test person with datetime — fix the person project's hardcoded 2026 age so say_hello stays correct every year. Open person; uv run pytest-watcher . --now (6 passed from unittest chapter). Explore the datetime module with test_dir_datetime → NameError: name 'datetime' is not defined. Did you forget to import 'datetime'?; import datetime; paste dir(datetime) as my_expectation (MAXYEAR, date, datetime, timedelta, …; list may differ by Python version). Drill datetime.date, self.maxDiff = None, TypeError: function missing required argument 'year', then datetime.date.today().year. Replace f' {2026-year_of_birth}.' with datetime.date.today().year-year_of_birth in assert_say_hello_works and assert_person_can_say_hello. Extract this_year class attribute, then calculate_age method: TypeError takes 1 positional argument but 2 were given (need self); @staticmethod then remove self; later restore this_year on TestPerson and add self back so calculate_age returns self.this_year - year_of_birth. Port calculate_age to person.py (import datetime; NameError if forgotten). Assert age <= 120 (john 1580 → AssertionError; change to 1980). Assert age >= 0 for a future year. Assert isinstance(year_of_birth, int); optional year_of_birth=None; bool is an int so False skips the isinstance guard and fails the age bound; float/str/tuple fail. Review: datetime for current year; bare asserts stop the test so cases are commented out — need a better way to test exceptions. Catalog: test_person_w_datetime.py + person_w_datetime.py.
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test person with datetime — fix the person project's hardcoded 2026 age so say_hello stays correct every year. Open person; uv run pytest-watcher . --now (6 passed from unittest chapter). Explore the datetime module with test_dir_datetime → NameError: name 'datetime' is not defined. Did you forget to import 'datetime'?; import datetime; paste dir(datetime) as my_expectation (MAXYEAR, date, datetime, timedelta, …; list may differ by Python version). Drill datetime.date, self.maxDiff = None, TypeError: function missing required argument 'year', then datetime.date.today().year. Replace f' {2026-year_of_birth}.' with datetime.date.today().year-year_of_birth in assert_say_hello_works and assert_person_can_say_hello. Extract this_year object attribute, then calculate_age method: TypeError takes 1 positional argument but 2 were given (need self); @staticmethod then remove self; later restore this_year on TestPerson and add self back so calculate_age returns self.this_year - year_of_birth. Port calculate_age to person.py (import datetime; NameError if forgotten). Assert age <= 120 (john 1580 → AssertionError; change to 1980). Assert age >= 0 for a future year. Assert isinstance(year_of_birth, int); optional year_of_birth=None; bool is an int so False skips the isinstance guard and fails the age bound; float/str/tuple fail. Review: datetime for current year; bare asserts stop the test so cases are commented out — need a better way to test exceptions. Catalog: test_person_w_datetime.py + person_w_datetime.py.
   :keywords: Jacob Itegboje, Pumping Python, test person with datetime, person project hardcoded 2026 age, datetime module, import datetime, NameError name 'datetime' is not defined, Did you forget to import 'datetime', dir(datetime), datetime.date, datetime.date.today().year, self.maxDiff = None, TypeError function missing required argument 'year', TypeError calculate_age takes 1 positional argument but 2 were given, @staticmethod, extract this_year, extract calculate_age, assert age <= 120, assert age >= 0, john smith year_of_birth 1580, year_of_birth 1980, isinstance year_of_birth int, boolean is also an integer, year_of_birth=None, TypeError unsupported operand type(s) for - 'int' and 'NoneType', test_when_year_of_birth_is_not_an_integer, uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, person say_hello age calculation, test_person_w_datetime, person_w_datetime
 
 .. include:: ../../links.rst
@@ -396,7 +396,7 @@ I see ``year`` in the :ref:`list of attributes and methods of datetime.date<test
 
 ----
 
-I add a test for the ``year`` :ref:`attribute<what is a class attribute?>` of the ``date`` :ref:`attribute<what is a class attribute?>` of the `datetime module`_ in ``tests/test_person.py``
+I add a test for the ``year`` :ref:`attribute<what is a object attribute?>` of the ``date`` :ref:`attribute<what is a object attribute?>` of the `datetime module`_ in ``tests/test_person.py``
 
 .. code-block:: python
   :lineno-start: 253
@@ -415,7 +415,7 @@ I add a test for the ``year`` :ref:`attribute<what is a class attribute?>` of th
 
   # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with only :ref:`attributes<what is a class attribute?>` that start and end with double underscore (``__``)
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with only :ref:`attributes<what is a object attribute?>` that start and end with double underscore (``__``)
 
 ----
 
@@ -491,7 +491,7 @@ I also saw ``today`` in the :ref:`list of attributes and methods of datetime.dat
 
 ----
 
-I change :ref:`test_dir_datetime_date_year` to a test for the ``today`` :ref:`attribute<what is a class attribute?>` of the ``date`` :ref:`attribute<what is a class attribute?>` of the `datetime module`_ in ``tests/test_person.py``
+I change :ref:`test_dir_datetime_date_year` to a test for the ``today`` :ref:`attribute<what is a object attribute?>` of the ``date`` :ref:`attribute<what is a object attribute?>` of the `datetime module`_ in ``tests/test_person.py``
 
 .. code-block:: python
   :lineno-start: 253
@@ -559,7 +559,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   where ``YYYY`` is the current year, ``MM`` is the current month and ``DD`` is the current date. Progress!
 
-* When I :ref:`called<how to call a function>` ``datetime.date()`` it asked for the ``year`` argument, and the result of the :ref:`call<how to call a function>` to ``datetime.date.today()`` is ``datetime.date(YYYY, MM, DD)`` which looks like an :ref:`instance<how to test if something is an instance>` of the :ref:`datetime.date object<test_dir_datetime_date>` with input. I use the `dir built-in function`_ to show its :ref:`attributes<what is a class attribute?>`
+* When I :ref:`called<how to call a function>` ``datetime.date()`` it asked for the ``year`` argument, and the result of the :ref:`call<how to call a function>` to ``datetime.date.today()`` is ``datetime.date(YYYY, MM, DD)`` which looks like an :ref:`instance<how to test if something is an instance>` of the :ref:`datetime.date object<test_dir_datetime_date>` with input. I use the `dir built-in function`_ to show its :ref:`attributes<what is a object attribute?>`
 
   .. code-block:: python
     :lineno-start: 257
@@ -604,7 +604,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     # Exceptions seen
 
-  the terminal_ shows the entire difference between ``reality`` and ``my_expectation`` and there is a ``year`` :ref:`attribute<what is a class attribute?>` because they are the same as :ref:`the attributes and methods of datetime.date<test_dir_datetime_date>`
+  the terminal_ shows the entire difference between ``reality`` and ``my_expectation`` and there is a ``year`` :ref:`attribute<what is a object attribute?>` because they are the same as :ref:`the attributes and methods of datetime.date<test_dir_datetime_date>`
 
 * I change the expectation of the :ref:`assertion<what is an assertion?>`
 
@@ -647,7 +647,7 @@ It looks like I have a way to get the current year.
 
 ----
 
-I add :ref:`test_datetime_date_today_year` to test the ``year`` :ref:`attribute<what is a class attribute?>` of the result of a :ref:`call<how to call a function>` to the ``today`` :ref:`method<what is a method?>` of the ``date`` :ref:`class<everything is an object>` of the `datetime module`_ (``datetime.date.today().year``) in ``tests/test_person.py``
+I add :ref:`test_datetime_date_today_year` to test the ``year`` :ref:`attribute<what is a object attribute?>` of the result of a :ref:`call<how to call a function>` to the ``today`` :ref:`method<what is a method?>` of the ``date`` :ref:`class<everything is an object>` of the `datetime module`_ (``datetime.date.today().year``) in ``tests/test_person.py``
 
 .. code-block:: python
   :lineno-start: 268
@@ -816,11 +816,11 @@ test age with current year
 extract this_year attribute
 *********************************************************************************
 
-The :ref:`assert_say_hello_works<move assert_say_hello_works to TestPerson>` and :ref:`assert_person_can_say_hello methods<move assert_person_can_say_hello to TestPerson>` both :ref:`call datetime.date.today()<test_dir_datetime_date_today>` to get the :ref:`year attribute<test_datetime_date_today_year>`. I can use a :ref:`class attribute<what is a class attribute?>` to remove the repetition
+The :ref:`assert_say_hello_works<move assert_say_hello_works to TestPerson>` and :ref:`assert_person_can_say_hello methods<move assert_person_can_say_hello to TestPerson>` both :ref:`call datetime.date.today()<test_dir_datetime_date_today>` to get the :ref:`year attribute<test_datetime_date_today_year>`. I can use a :ref:`object attribute<what is a object attribute?>` to remove the repetition
 
 * I go back to the terminal_ where the tests are running
 
-* I add a :ref:`class attribute<what is a class attribute?>` to :ref:`TestPerson<add TestPerson class>` for the current year
+* I add a :ref:`object attribute<what is a object attribute?>` to :ref:`TestPerson<add TestPerson class>` for the current year
 
   .. code-block:: python
     :lineno-start: 6
@@ -835,7 +835,7 @@ The :ref:`assert_say_hello_works<move assert_say_hello_works to TestPerson>` and
                 sex, year_of_birth
             ):
 
-* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>`
+* I use the :ref:`attribute<what is a object attribute?>` for ``datetime.date.today().year`` in the :ref:`assert_say_hello_works method<move assert_say_hello_works to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -867,7 +867,7 @@ The :ref:`assert_say_hello_works<move assert_say_hello_works to TestPerson>` and
 
   still green.
 
-* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>`
+* I use the :ref:`attribute<what is a object attribute?>` for ``datetime.date.today().year`` in the :ref:`assert_person_can_say_hello method<move assert_person_can_say_hello to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 46
@@ -1126,7 +1126,7 @@ the test passes.
 
         def test_joe(self):
 
-* The :ref:`this_year class attribute<extract this_year attribute>` is now used in only one place - the :ref:`calculate_age method<extract calculate_age method>`. I can :ref:`call<how to call a function with input>` what it points to directly, with no need for the :ref:`class attribute<what is a class attribute?>` as a middle man
+* The :ref:`this_year object attribute<extract this_year attribute>` is now used in only one place - the :ref:`calculate_age method<extract calculate_age method>`. I can :ref:`call<how to call a function with input>` what it points to directly, with no need for the :ref:`object attribute<what is a object attribute?>` as a middle man
 
   .. code-block:: python
     :lineno-start: 27
@@ -1791,7 +1791,7 @@ extract this_year attribute again
 
 The :ref:`calculate_age<extract calculate_age method>`, :ref:`test_when_person_is_older_than_120` and :ref:`test_when_year_of_birth_is_the_future` all call :ref:`datetime.date.today()<test_dir_datetime_date_today>` to get the :ref:`year attribute<test_datetime_date_today_year>`.
 
-I made a :ref:`class attribute for this_year earlier<extract this_year attribute>` to remove the repetition which ended up in the :ref:`calculate_age method<extract calculate_age method>`, I can make it again to remove repetition from these three :ref:`methods<what is a method?>`
+I made a :ref:`object attribute for this_year earlier<extract this_year attribute>` to remove the repetition which ended up in the :ref:`calculate_age method<extract calculate_age method>`, I can make it again to remove repetition from these three :ref:`methods<what is a method?>`
 
 ----
 
@@ -1803,7 +1803,7 @@ I made a :ref:`class attribute for this_year earlier<extract this_year attribute
 
 * I go back to the terminal_ where the tests are running
 
-* I add back the :ref:`class attribute<what is a class attribute?>` for the current year to the :ref:`TestPerson class<add TestPerson class>`
+* I add back the :ref:`object attribute<what is a object attribute?>` for the current year to the :ref:`TestPerson class<add TestPerson class>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1818,7 +1818,7 @@ I made a :ref:`class attribute for this_year earlier<extract this_year attribute
                 sex, year_of_birth
             ):
 
-* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in the :ref:`calculate_age method<extract calculate_age method>`
+* I use the :ref:`attribute<what is a object attribute?>` for ``datetime.date.today().year`` in the :ref:`calculate_age method<extract calculate_age method>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -1885,7 +1885,7 @@ the tests are green again.
             year_of_birth,
         ):
 
-* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in :ref:`test_when_person_is_older_than_120`
+* I use the :ref:`attribute<what is a object attribute?>` for ``datetime.date.today().year`` in :ref:`test_when_person_is_older_than_120`
 
   .. code-block:: python
     :lineno-start: 169
@@ -1921,7 +1921,7 @@ the tests are green again.
 
         def test_when_year_of_birth_is_the_future(self):
 
-* I use the :ref:`attribute<what is a class attribute?>` for ``datetime.date.today().year`` in :ref:`test_when_year_of_birth_is_the_future`
+* I use the :ref:`attribute<what is a object attribute?>` for ``datetime.date.today().year`` in :ref:`test_when_year_of_birth_is_the_future`
 
   .. code-block:: python
     :lineno-start: 179

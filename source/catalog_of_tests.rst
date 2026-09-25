@@ -86,8 +86,8 @@ test_attribute_error
 
 #. :ref:`test_attribute_error_w_variables`
 #. :ref:`test_attribute_error_w_functions`
-#. :ref:`test_attribute_error_w_class_attributes`
-#. :ref:`test_attribute_error_w_class_methods`
+#. :ref:`test_attribute_error_w_object_attributes`
+#. :ref:`test_attribute_error_w_object_methods`
 
 *********************************************************************************
 test_type_error

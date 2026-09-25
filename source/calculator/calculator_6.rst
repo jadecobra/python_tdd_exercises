@@ -99,7 +99,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   AttributeError: 'TestCalculator' object has no attribute 'random_first_number'
 
-``random_first_number`` and ``random_second_number`` can no longer be reached because they belong to the `setUp method`_, I have to make sure they are :ref:`class attributes<test_attribute_error_w_class_attributes>`
+``random_first_number`` and ``random_second_number`` can no longer be reached because they belong to the `setUp method`_, I have to make sure they are :ref:`object attributes<test_attribute_error_w_object_attributes>`
 
 ----
 

@@ -434,7 +434,7 @@ test_attribute_error_w_variables
   - ``variable_00`` is something in ``attribute_error``, in this case it is a :ref:`variable<what is a variable?>` in ``attribute_error``
   - ``attribute_error`` is something in ``src``, in this case it is ``src/attribute_error/__init__.py`` (a :ref:`module<what is a module?>`) in the ``src`` folder_
   - ``src`` is something Python_ can import (a :ref:`module<what is a module?>`, `Python package`_ or folder_)
-  - ``variable_00`` is now an :ref:`attribute/property<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_. I can use it from outside the file_ with ``src.attribute_error.variable_00``
+  - ``variable_00`` is now an :ref:`attribute/property<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_. I can use it from outside the file_ with ``src.attribute_error.variable_00``
 
 ----
 
@@ -492,7 +492,7 @@ test_attribute_error_w_variables
     # variable_01
     variable_01 = variable_00
 
-  the test passes because ``variable_01`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_01``
+  the test passes because ``variable_01`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_01``
 
   .. code-block:: shell
 
@@ -537,7 +537,7 @@ test_attribute_error_w_variables
     variable_01 = variable_00
     variable_02 = variable_01
 
-  the test passes because ``variable_02`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_02``
+  the test passes because ``variable_02`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_02``
 
   .. code-block:: shell
 
@@ -583,7 +583,7 @@ test_attribute_error_w_variables
     variable_02 = variable_01
     variable_03 = variable_02
 
-  the test passes because ``variable_03`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_03``
+  the test passes because ``variable_03`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_03``
 
   .. code-block:: shell
 
@@ -631,7 +631,7 @@ test_attribute_error_w_variables
     variable_03 = variable_02
     variable_04 = variable_03
 
-  the test passes because ``variable_04`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_04``
+  the test passes because ``variable_04`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_04``
 
   .. code-block:: shell
 
@@ -681,7 +681,7 @@ test_attribute_error_w_variables
     variable_04 = variable_03
     variable_05 = variable_04
 
-  the test passes because ``variable_05`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_05``
+  the test passes because ``variable_05`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_05``
 
   .. code-block:: shell
 
@@ -733,7 +733,7 @@ test_attribute_error_w_variables
     variable_05 = variable_04
     variable_06 = variable_05
 
-  the test passes because ``variable_06`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_06``
+  the test passes because ``variable_06`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_06``
 
   .. code-block:: shell
 
@@ -787,7 +787,7 @@ test_attribute_error_w_variables
     variable_06 = variable_05
     variable_07 = variable_06
 
-  the test passes because ``variable_07`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_07``
+  the test passes because ``variable_07`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_07``
 
   .. code-block:: shell
 
@@ -843,7 +843,7 @@ test_attribute_error_w_variables
     variable_07 = variable_06
     variable_08 = variable_07
 
-  the test passes because ``variable_08`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_08``
+  the test passes because ``variable_08`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_08``
 
   .. code-block:: shell
 
@@ -901,7 +901,7 @@ test_attribute_error_w_variables
     variable_08 = variable_07
     variable_09 = variable_08
 
-  the test passes because ``variable_09`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_09``
+  the test passes because ``variable_09`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can use it from outside the file_ with ``src.attribute_error.variable_09``
 
   .. code-block:: shell
 
@@ -1026,7 +1026,7 @@ test_attribute_error_w_functions
     # function_00 = variable_09
     def function_00(): return variable_09
 
-  the test passes because ``function_00`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_00()``
+  the test passes because ``function_00`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_00()``
 
   .. code-block:: shell
 
@@ -1086,7 +1086,7 @@ test_attribute_error_w_functions
     def function_00(): return variable_09
     def function_01(): return function_00()
 
-  the test passes because ``function_01`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_01()``
+  the test passes because ``function_01`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_01()``
 
   .. code-block:: shell
 
@@ -1128,7 +1128,7 @@ test_attribute_error_w_functions
     def function_01(): return function_00()
     def function_02(): return function_01()
 
-  the test passes because ``function_02`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_02()``
+  the test passes because ``function_02`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_02()``
 
   .. code-block:: shell
 
@@ -1172,7 +1172,7 @@ test_attribute_error_w_functions
     def function_02(): return function_01()
     def function_03(): return function_02()
 
-  the test passes because ``function_03`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_03()``
+  the test passes because ``function_03`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_03()``
 
   .. code-block:: shell
 
@@ -1218,7 +1218,7 @@ test_attribute_error_w_functions
     def function_03(): return function_02()
     def function_04(): return function_03()
 
-  the test passes because ``function_04`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_04()``
+  the test passes because ``function_04`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_04()``
 
   .. code-block:: shell
 
@@ -1266,7 +1266,7 @@ test_attribute_error_w_functions
     def function_04(): return function_03()
     def function_05(): return function_04()
 
-  the test passes because ``function_05`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_05()``
+  the test passes because ``function_05`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_05()``
 
   .. code-block:: shell
 
@@ -1316,7 +1316,7 @@ test_attribute_error_w_functions
     def function_05(): return function_04()
     def function_06(): return function_05()
 
-  the test passes because ``function_06`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_06()``
+  the test passes because ``function_06`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_06()``
 
   .. code-block:: shell
 
@@ -1368,7 +1368,7 @@ test_attribute_error_w_functions
     def function_06(): return function_05()
     def function_07(): return function_06()
 
-  the test passes because ``function_07`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_07()``
+  the test passes because ``function_07`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_07()``
 
   .. code-block:: shell
 
@@ -1422,7 +1422,7 @@ test_attribute_error_w_functions
     def function_07(): return function_06()
     def function_08(): return function_07()
 
-  the test passes because ``function_08`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_08()``
+  the test passes because ``function_08`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_08()``
 
   .. code-block:: shell
 
@@ -1478,7 +1478,7 @@ test_attribute_error_w_functions
     def function_08(): return function_07()
     def function_09(): return function_08()
 
-  the test passes because ``function_09`` is now an :ref:`attribute<what is a class attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_09()``
+  the test passes because ``function_09`` is now an :ref:`attribute<what is a object attribute?>` of ``src/attribute_error/__init__.py`` in the ``src`` folder_, and I can :ref:`call it<how to call a function>` from outside the file_ with ``src.attribute_error.function_09()``
 
   .. code-block:: shell
 
@@ -1534,7 +1534,7 @@ I ran tests for :ref:`AttributeError<what causes AttributeError?>` that showed
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`.
 * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`.
 
-My problem with the tests is that they all show the correct way to use :ref:`attributes<what is a class attribute?>` I made in ``src/attribute_error/__init__.py``. If someone reads the file_ or runs it, there is no way for them to know how the code relates to :ref:`AttributeError<what causes AttributeError?>` unless they go through the process with me, there has to be a better way.
+My problem with the tests is that they all show the correct way to use :ref:`attributes<what is a object attribute?>` I made in ``src/attribute_error/__init__.py``. If someone reads the file_ or runs it, there is no way for them to know how the code relates to :ref:`AttributeError<what causes AttributeError?>` unless they go through the process with me, there has to be a better way.
 
 ----
 

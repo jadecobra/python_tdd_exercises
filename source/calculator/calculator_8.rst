@@ -529,7 +529,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
 ----
 
-* I add ``calculator_tests`` to the `setUp method`_ to make it a :ref:`class attribute<what is a class attribute?>`
+* I add ``calculator_tests`` to the `setUp method`_ to make it a :ref:`object attribute<what is a object attribute?>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -556,7 +556,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
             self.arithmetic_tests = {
 
-* I use the new :ref:`class attribute<what is a class attribute?>` in :ref:`test_calculator_w_getattribute`
+* I use the new :ref:`object attribute<what is a object attribute?>` in :ref:`test_calculator_w_getattribute`
 
   .. code-block:: python
     :lineno-start: 186

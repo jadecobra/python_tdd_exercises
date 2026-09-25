@@ -1751,7 +1751,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                 }
             }
 
-* I use the new :ref:`class attribute<what is a class attribute?>` in the :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_functions`
+* I use the new :ref:`object attribute<what is a object attribute?>` in the :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_functions`
 
   .. code-block:: python
     :lineno-start: 219
@@ -1932,7 +1932,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 
 ----
 
-* I use the new :ref:`class attribute <test_attribute_error_w_class_attributes>` in the :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_sends_message_when_input_is_not_a_number`
+* I use the new :ref:`object attribute <test_attribute_error_w_object_attributes>` in the :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_sends_message_when_input_is_not_a_number`
 
   .. code-block:: python
     :lineno-start: 162

@@ -1,6 +1,6 @@
 .. meta::
-  :description: TypeError with objects: call methods on the class vs an instance in the type_error project (uv run pytest-watcher). test_type_error_w_class_methods builds AnObject method_00–method_09; match AnObject.method_N() vs AnObject().method_N() to the definition; instance methods take self; @staticmethod when the method needs no class state. Representative errors: AttributeError "module 'src.type_error' has no attribute 'AnObject'", "type object 'AnObject' has no attribute 'method_00'", NameError name 'method_00'/'self' not defined, TypeError "'NoneType' object is not callable", "AnObject.method_01() takes 0 positional arguments but 1 was given", "AnObject.method_02() missing 1 required positional argument: 'self'". test_type_error_w_the_uncallables shows None, bool, int, float, str, tuple, list, set, dict are not callable ("'X' object is not callable") then turns each name into a function. Red-green-refactor; remove the commented lines from tests and src. Review: self on instance call, staticmethod, objects that are not callable. Jacob Itegboje Pumping Python TDD.
-  :keywords: Jacob Itegboje, Pumping Python, TypeError with objects, python TypeError methods, AnObject.method_00, AnObject().method_01, staticmethod decorator, takes 0 positional arguments but 1 was given, missing 1 required positional argument: 'self', type object 'AnObject' has no attribute, module 'src.type_error' has no attribute 'AnObject', test_type_error_w_class_methods, test_type_error_w_the_uncallables, NoneType object is not callable, bool object is not callable, int object is not callable, dict object is not callable, uv run pytest-watcher, TDD class methods, self first argument, class vs instance method call, red green refactor, remove the commented lines, src.type_error, what causes TypeError
+  :description: TypeError with objects: call methods on the class vs an instance in the type_error project (uv run pytest-watcher). test_type_error_w_object_methods builds AnObject method_00–method_09; match AnObject.method_N() vs AnObject().method_N() to the definition; instance methods take self; @staticmethod when the method needs no class state. Representative errors: AttributeError "module 'src.type_error' has no attribute 'AnObject'", "type object 'AnObject' has no attribute 'method_00'", NameError name 'method_00'/'self' not defined, TypeError "'NoneType' object is not callable", "AnObject.method_01() takes 0 positional arguments but 1 was given", "AnObject.method_02() missing 1 required positional argument: 'self'". test_type_error_w_the_uncallables shows None, bool, int, float, str, tuple, list, set, dict are not callable ("'X' object is not callable") then turns each name into a function. Red-green-refactor; remove the commented lines from tests and src. Review: self on instance call, staticmethod, objects that are not callable. Jacob Itegboje Pumping Python TDD.
+  :keywords: Jacob Itegboje, Pumping Python, TypeError with objects, python TypeError methods, AnObject.method_00, AnObject().method_01, staticmethod decorator, takes 0 positional arguments but 1 was given, missing 1 required positional argument: 'self', type object 'AnObject' has no attribute, module 'src.type_error' has no attribute 'AnObject', test_type_error_w_object_methods, test_type_error_w_the_uncallables, NoneType object is not callable, bool object is not callable, int object is not callable, dict object is not callable, uv run pytest-watcher, TDD object methods, self first argument, class vs instance method call, red green refactor, remove the commented lines, src.type_error, what causes TypeError
 
 .. include:: ../../links.rst
 
@@ -31,7 +31,7 @@ I have these tests by the end of the chapter
 questions about TypeError with objects
 *********************************************************************************
 
-* :ref:`How do methods behave when I call them with a class or an instance<test_type_error_w_class_methods>`?
+* :ref:`How do methods behave when I call them with a class or an instance<test_type_error_w_object_methods>`?
 * :ref:`Is every object callable<test_type_error_w_the_uncallables>`?
 
 ----
@@ -68,7 +68,7 @@ open the project
 ----
 
 *********************************************************************************
-test_type_error_w_class_methods
+test_type_error_w_object_methods
 *********************************************************************************
 
 =================================================================================
@@ -89,7 +89,7 @@ I add a test with a :ref:`call<how to call a function with input>` to ``AnObject
         )
 
 
-    def test_type_error_w_class_methods():
+    def test_type_error_w_object_methods():
         src.type_error.AnObject.method_00()
 
 
@@ -211,7 +211,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
     :lineno-start: 90
     :emphasize-lines: 3
 
-    def test_type_error_w_class_methods():
+    def test_type_error_w_object_methods():
         src.type_error.AnObject.method_00()
         src.type_error.AnObject().method_01()
 
@@ -271,7 +271,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
     :lineno-start: 90
     :emphasize-lines: 4
 
-    def test_type_error_w_class_methods():
+    def test_type_error_w_object_methods():
         src.type_error.AnObject.method_00()
         src.type_error.AnObject().method_01()
         src.type_error.AnObject().method_02()
@@ -366,7 +366,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
     :lineno-start: 90
     :emphasize-lines: 5
 
-    def test_type_error_w_class_methods():
+    def test_type_error_w_object_methods():
         src.type_error.AnObject.method_00()
         src.type_error.AnObject().method_01()
         src.type_error.AnObject().method_02()
@@ -928,7 +928,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
   .. code-block:: python
     :lineno-start: 90
 
-    def test_type_error_w_class_methods():
+    def test_type_error_w_object_methods():
         src.type_error.AnObject.method_00()
         src.type_error.AnObject().method_01()
         src.type_error.AnObject().method_02()
@@ -956,7 +956,7 @@ because ``AnObject`` is not defined in ``type_error.py``.
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'add test_type_error_w_class_methods'
+    'add test_type_error_w_object_methods'
 
 ----
 

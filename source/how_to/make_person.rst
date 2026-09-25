@@ -1962,7 +1962,7 @@ I can do that with the `datetime module`_ from `The Python Standard Library`_ wh
 
     datetime.datetime.today() # returns datetime.datetime object
 
-* ``datetime.datetime`` :ref:`objects<everything is an object>` have a ``year`` :ref:`attribute<what is a class attribute?>` that gives me the value of the current year which means I can do this to get the value of the current year
+* ``datetime.datetime`` :ref:`objects<everything is an object>` have a ``year`` :ref:`attribute<what is a object attribute?>` that gives me the value of the current year which means I can do this to get the value of the current year
 
   .. code-block:: python
 

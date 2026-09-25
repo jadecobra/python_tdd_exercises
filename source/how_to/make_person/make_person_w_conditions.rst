@@ -241,7 +241,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
         AssertionError: assert
             ['__class__',...'__eq__', ...] ==...
 
-  the tests for the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Person class and an instance of it<add Person class>` are failing because I added a :ref:`method<what is a method?>` to it.
+  the tests for the :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Person class and an instance of it<add Person class>` are failing because I added a :ref:`method<what is a method?>` to it.
 
 * I add ``can_vote`` to :ref:`test_dir_person_class` in ``tests/test_person.py``
 
@@ -305,7 +305,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` are good because they help document what is in the :ref:`class<everything is an object>` and catch its changes immediately.
 
-  :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` are a problem because :ref:`class attributes<what is a class attribute?>` can change from one Python_ version to another, I have to remember the correct order of names and I am keeping two :ref:`lists<what is a list?>`. :ref:`There has to be a better way<how to make a person with a list>`.
+  :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` are a problem because :ref:`object attributes<what is a object attribute?>` can change from one Python_ version to another, I have to remember the correct order of names and I am keeping two :ref:`lists<what is a list?>`. :ref:`There has to be a better way<how to make a person with a list>`.
 
 * I open a new terminal_ then make sure I am in the ``person`` folder_
 
@@ -452,7 +452,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 
   the terminal_ goes back to the :ref:`AssertionError<what causes AssertionError?>`.
 
-* I add an :ref:`instance attribute<what is a class attribute?>` for ``is_citizen`` so I can use it in the :ref:`can_vote method<add can_vote method>`
+* I add an :ref:`instance attribute<what is a object attribute?>` for ``is_citizen`` so I can use it in the :ref:`can_vote method<add can_vote method>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -476,7 +476,7 @@ I want :ref:`can_vote<add can_vote method>` to return
 
   still :ref:`AssertionError<what causes AssertionError?>`.
 
-* I use the :ref:`class attribute<what is a class attribute?>` in the :ref:`can_vote method<add can_vote method>`
+* I use the :ref:`object attribute<what is a object attribute?>` in the :ref:`can_vote method<add can_vote method>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -505,7 +505,7 @@ I want :ref:`can_vote<add can_vote method>` to return
             return self.is_citizen
             return True
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_instance` because I added a new :ref:`attribute<what is a class attribute?>` (``is_citizen``).
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_instance` because I added a new :ref:`attribute<what is a object attribute?>` (``is_citizen``).
 
 * I add ``is_citizen`` to the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_dir_person_instance` in ``tests/test_person.py``
 
@@ -1158,7 +1158,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
 
     AttributeError: 'Person' object has no attribute 'passed_test'
 
-* I add an :ref:`instance attribute<what is a class attribute?>` for ``passed_test`` so I can use it in the :ref:`can_get_license method<add can_get_license method>`
+* I add an :ref:`instance attribute<what is a object attribute?>` for ``passed_test`` so I can use it in the :ref:`can_get_license method<add can_get_license method>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1202,7 +1202,7 @@ I want :ref:`can_get_license<add can_get_license method>` to return
             self.assertEqual(mary.can_vote(), False)
             self.assertEqual(mary.can_get_license(), True)
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_instance` because I added a new :ref:`attribute<what is a class attribute?>` (``passed_test``).
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for :ref:`test_dir_person_instance` because I added a new :ref:`attribute<what is a object attribute?>` (``passed_test``).
 
 * I add ``passed_test`` to the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_dir_person_instance` in ``tests/test_person.py``
 
@@ -1512,7 +1512,7 @@ extract age instance attribute
 
 The :ref:`can_get_license<add can_get_license method>`, :ref:`can_vote<add can_vote method>` and :ref:`say_hello methods<test_classy_person_says_hello>` of the :ref:`Person class<add Person class>` all :ref:`call the calculate_age function<add calculate_age function>`.
 
-I can make an :ref:`attribute<what is a class attribute?>` to remove the repetition of the :ref:`calls to the calculate_age function<add calculate_age function>`.
+I can make an :ref:`attribute<what is a object attribute?>` to remove the repetition of the :ref:`calls to the calculate_age function<add calculate_age function>`.
 
 ----
 
@@ -1523,7 +1523,7 @@ I can make an :ref:`attribute<what is a class attribute?>` to remove the repetit
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add an :ref:`instance attribute<what is a class attribute?>` to the :ref:`__init__ method<the constructor method>` so that the age is calculated once when an :ref:`instance<how to test if something is an instance>` is made, not every time one of the :ref:`methods is called<how to call a function with input>`.
+* I add an :ref:`instance attribute<what is a object attribute?>` to the :ref:`__init__ method<the constructor method>` so that the age is calculated once when an :ref:`instance<how to test if something is an instance>` is made, not every time one of the :ref:`methods is called<how to call a function with input>`.
 
   .. code-block:: python
     :lineno-start: 4
@@ -1559,7 +1559,7 @@ I can make an :ref:`attribute<what is a class attribute?>` to remove the repetit
   - :ref:`test_when_year_of_birth_is_the_future` fails because the age is smaller than ``0``.
   - :ref:`test_when_year_of_birth_is_not_an_integer` fails because an :ref:`instance of the Person class<add Person class>` is made with a ``year_of_birth`` (:ref:`None<what is None?>`) that is not an integer_.
   - :ref:`test_when_person_is_older_than_120` fails because the age is bigger than ``120``.
-  - :ref:`test_dir_person_instance` fails because I just added a new :ref:`class attribute<what is a class attribute?>`.
+  - :ref:`test_dir_person_instance` fails because I just added a new :ref:`object attribute<what is a object attribute?>`.
 
 ----
 

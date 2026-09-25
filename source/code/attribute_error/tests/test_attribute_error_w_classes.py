@@ -27,7 +27,7 @@ def test_attribute_error_w_functions():
     src.attribute_error.function_09()
 
 
-def test_attribute_error_w_class_attributes():
+def test_attribute_error_w_object_attributes():
     src.attribute_error.AnObject.attribute_00
     src.attribute_error.AnObject().attribute_01
     src.attribute_error.AnObject.attribute_02
@@ -40,7 +40,7 @@ def test_attribute_error_w_class_attributes():
     src.attribute_error.AnObject().attribute_09
 
 
-def test_attribute_error_w_class_methods():
+def test_attribute_error_w_object_methods():
     src.attribute_error.AnObject().method_00()
     src.attribute_error.AnObject().method_01()
     src.attribute_error.AnObject().method_02()

@@ -53,7 +53,7 @@ questions about list comprehensions
 * :ref:`how can I use the filter function?<test_making_a_list_w_conditions>`
 * :ref:`how can I transform a list?<test_making_a_list_w_processes>`
 * :ref:`how can I transform and filter a list<test_making_a_list_w_processes_and_conditions>`
-* :ref:`how can I make sure class attributes are reset for every test?<how to use the setUp method to reset class attributes for every test>`
+* :ref:`how can I make sure object attributes are reset for every test?<how to use the setUp method to reset object attributes for every test>`
 
 ----
 
@@ -676,7 +676,7 @@ the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_
 
   the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ and is not better than ``list()``
 
-* I made the same :ref:`variables<what is a variable?>` twice, one for the empty :ref:`list<what is a list?>` and one for the :ref:`iterable<what is an iterable?>`, I add :ref:`class attributes (variables)<test_attribute_error_w_class_attributes>` to remove the repetition
+* I made the same :ref:`variables<what is a variable?>` twice, one for the empty :ref:`list<what is a list?>` and one for the :ref:`iterable<what is an iterable?>`, I add :ref:`object attributes (variables)<test_attribute_error_w_object_attributes>` to remove the repetition
 
   .. code-block:: python
     :lineno-start: 6
@@ -703,7 +703,7 @@ the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_
 
   the test is still green.
 
-* I remove the commented lines and use the :ref:`class attributes<test_attribute_error_w_class_attributes>` directly
+* I remove the commented lines and use the :ref:`object attributes<test_attribute_error_w_object_attributes>` directly
 
   .. code-block:: python
     :lineno-start: 11
@@ -757,7 +757,7 @@ the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_
 
     AssertionError: Lists differ: [0, 1, 2, 3, ... XYZ, 0, 1, 2, 3, ...XYZ] != [0, 1, 2, 3, ...XYZ]
 
-  the values in ``a_list`` are double what the :ref:`assertion<what is an assertion?>` expects. I broke something by using the :ref:`class attributes<test_attribute_error_w_class_attributes>`
+  the values in ``a_list`` are double what the :ref:`assertion<what is an assertion?>` expects. I broke something by using the :ref:`object attributes<test_attribute_error_w_object_attributes>`
 
 * I change ``a_list`` back
 
@@ -779,7 +779,7 @@ the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_
 use the setUp method
 ****************************************************************************************
 
-The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<what is a list?>` for each test before, I need a better way. The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to make sure the :ref:`class attributes<test_attribute_error_w_class_attributes>` are always reset at the beginning of the test, so that the values are new for each test.
+The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<what is a list?>` for each test before, I need a better way. The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to make sure the :ref:`object attributes<test_attribute_error_w_object_attributes>` are always reset at the beginning of the test, so that the values are new for each test.
 
 * I add the `setUp method`_ to the ``TestListComprehensions`` :ref:`class<everything is an object>`
 
@@ -797,7 +797,7 @@ The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_li
 
   the test is still green.
 
-  The `unittest.TestCase.setUp method`_ runs before every test, in this case it sets these :ref:`class attributes (variables)<test_attribute_error_w_class_attributes>`
+  The `unittest.TestCase.setUp method`_ runs before every test, in this case it sets these :ref:`object attributes (variables)<test_attribute_error_w_object_attributes>`
 
   - ``self.a_list`` to an :ref:`empty list<test_making_a_list>`
   - ``self.iterable`` to a `range object`_ that goes from ``0`` to anywhere between ``1`` and ``999``
@@ -816,7 +816,7 @@ The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_li
 
   still green.
 
-* I remove the commented lines and use the :ref:`class attributes<test_attribute_error_w_class_attributes>` directly
+* I remove the commented lines and use the :ref:`object attributes<test_attribute_error_w_object_attributes>` directly
 
   .. code-block:: python
     :lineno-start: 22

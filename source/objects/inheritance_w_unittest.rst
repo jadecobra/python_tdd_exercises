@@ -390,7 +390,7 @@ the test is green again.
 
   the test passes.
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubclass method<test_assert_not_is_subclass>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubobject method<test_assert_not_is_subclass>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -563,7 +563,7 @@ green again.
 
   the test passes.
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubclass method<test_assert_not_is_subclass>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubobject method<test_assert_not_is_subclass>`
 
   .. code-block:: python
     :lineno-start: 30
@@ -738,7 +738,7 @@ green.
 
   the test passes.
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubclass method<test_assert_not_is_subclass>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubobject method<test_assert_not_is_subclass>`
 
   .. code-block:: python
     :lineno-start: 35
@@ -911,7 +911,7 @@ green again.
 
   the test passes.
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsSubclass method<test_assert_is_subclass>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsSubobject method<test_assert_is_subclass>`
 
   .. code-block:: python
     :lineno-start: 42
@@ -1052,7 +1052,7 @@ the test is green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubclass methods<test_assert_not_is_subclass>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubobject methods<test_assert_not_is_subclass>`
 
   .. code-block:: python
     :lineno-start: 44
@@ -1211,7 +1211,7 @@ green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubclass methods<test_assert_not_is_subclass>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubobject methods<test_assert_not_is_subclass>`
 
   .. code-block:: python
     :lineno-start: 51
@@ -1373,7 +1373,7 @@ green.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubclass methods<test_assert_not_is_subclass>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubobject methods<test_assert_not_is_subclass>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -1532,7 +1532,7 @@ green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubclass methods<test_assert_not_is_subclass>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubobject methods<test_assert_not_is_subclass>`
 
   .. code-block:: python
     :lineno-start: 65
@@ -1693,7 +1693,7 @@ the test is green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubclass methods<test_assert_not_is_subclass>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubobject methods<test_assert_not_is_subclass>`
 
   .. code-block:: python
     :lineno-start: 72
@@ -1854,7 +1854,7 @@ green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubclass methods<test_assert_not_is_subclass>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubobject methods<test_assert_not_is_subclass>`
 
   .. code-block:: python
     :lineno-start: 79
@@ -2015,7 +2015,7 @@ green.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubclass methods<test_assert_not_is_subclass>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubobject methods<test_assert_not_is_subclass>`
 
   .. code-block:: python
     :lineno-start: 86
@@ -2176,7 +2176,7 @@ green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubclass methods<test_assert_not_is_subclass>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubobject methods<test_assert_not_is_subclass>`
 
   .. code-block:: python
     :lineno-start: 93
