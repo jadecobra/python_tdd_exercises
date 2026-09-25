@@ -8,7 +8,7 @@
 test objects with unittest
 #################################################################################
 
-I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`class<everything is an object>` project.
+I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`object<everything is an object>` project.
 
 ----
 
@@ -115,7 +115,7 @@ add Testobjects class
 
 ----
 
-* I add a :ref:`class<everything is an object>` named ``objects`` to ``test_objects.py``
+* I add an :ref:`object<everything is an object>` named ``objects`` to ``test_objects.py``
 
   .. code-block:: python
     :linenos:
@@ -140,7 +140,7 @@ add Testobjects class
 
   the test is still green.
 
-* I change the name of the :ref:`class<everything is an object>` to ``Testobjects``
+* I change the name of the :ref:`object<everything is an object>` to ``Testobjects``
 
   .. code-block:: python
     :lineno-start: 7
@@ -183,7 +183,7 @@ add Testobjects class
 
 ----
 
-* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<everything is an object>` of ``Testobjects``
+* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`object<everything is an object>` of ``Testobjects``
 
   .. code-block:: python
     :lineno-start: 7

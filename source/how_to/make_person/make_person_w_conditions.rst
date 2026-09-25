@@ -303,7 +303,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test passes.
 
-  :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` are good because they help document what is in the :ref:`class<everything is an object>` and catch its changes immediately.
+  :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` are good because they help document what is in the :ref:`object<everything is an object>` and catch its changes immediately.
 
   :ref:`test_dir_person_class` and :ref:`test_dir_person_instance` are a problem because :ref:`object attributes<what is a object attribute?>` can change from one Python_ version to another, I have to remember the correct order of names and I am keeping two :ref:`lists<what is a list?>`. :ref:`There has to be a better way<how to make a person with a list>`.
 

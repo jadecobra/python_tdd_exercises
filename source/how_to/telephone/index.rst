@@ -2226,7 +2226,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<everything is an object>` for whole numbers without decimals)
+* I add an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`object<everything is an object>` for whole numbers without decimals)
 
   .. code-block:: python
     :lineno-start: 58
@@ -2272,7 +2272,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<everything is an object>` for binary floating point decimal numbers)
+* I add an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`object<everything is an object>` for binary floating point decimal numbers)
 
   .. code-block:: python
     :lineno-start: 58
@@ -2322,7 +2322,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<everything is an object>` for anything in :ref:`quotes`)
+* I add an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`object<everything is an object>` for anything in :ref:`quotes`)
 
   .. code-block:: python
     :lineno-start: 58
@@ -2376,7 +2376,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<everything is an object>` for anything in parentheses ``( )`` separated by a comma)
+* I add an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`object<everything is an object>` for anything in parentheses ``( )`` separated by a comma)
 
   .. code-block:: python
     :lineno-start: 58
@@ -2434,7 +2434,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for :ref:`list<what is a list?>`  (the :ref:`class<everything is an object>` for anything in square brackets '[ ]')
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`list<what is a list?>`  (the :ref:`object<everything is an object>` for anything in square brackets '[ ]')
 
   .. code-block:: python
     :lineno-start: 58
@@ -2496,7 +2496,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<everything is an object>` for anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
+* I add an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`object<everything is an object>` for anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
 
   .. code-block:: python
     :lineno-start: 58
@@ -2562,7 +2562,7 @@ the test passes because Python_ uses the string_ representation of the :ref:`obj
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for :ref:`dict<what is a dictionary?>` (the :ref:`class<everything is an object>` for key-value pairs in curly braces '{ }' separated by commas)
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`dict<what is a dictionary?>` (the :ref:`object<everything is an object>` for key-value pairs in curly braces '{ }' separated by commas)
 
   .. code-block:: python
     :lineno-start: 58

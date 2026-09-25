@@ -127,7 +127,7 @@ add TestFunctions class
 
 ----
 
-* I add a :ref:`class<everything is an object>` named ``Functions`` to ``test_functions.py``
+* I add an :ref:`object<everything is an object>` named ``Functions`` to ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 8
@@ -148,7 +148,7 @@ add TestFunctions class
 
   the test is still green.
 
-* I change the name of the :ref:`class<everything is an object>` to ``TestFunctions``
+* I change the name of the :ref:`object<everything is an object>` to ``TestFunctions``
 
   .. code-block:: python
     :lineno-start: 8
@@ -178,7 +178,7 @@ add TestFunctions class
 
 ----
 
-* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<everything is an object>` of ``TestFunctions``
+* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`object<everything is an object>` of ``TestFunctions``
 
   .. code-block:: python
     :lineno-start: 12
@@ -3709,7 +3709,7 @@ review
 *********************************************************************************
 
 * I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`.
-* I can use :ref:`object attributes<what is a object attribute?>` for things that repeat so that :ref:`methods<what is a method?>` of the same :ref:`class<everything is an object>` can use them.
+* I can use :ref:`object attributes<what is a object attribute?>` for things that repeat so that :ref:`methods<what is a method?>` of the same :ref:`object<everything is an object>` can use them.
 
 ----
 

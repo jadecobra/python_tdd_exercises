@@ -19,7 +19,7 @@ The tests from :ref:`everything is an object` show that in Python everything :re
 
 Making new :ref:`objects<everything is an object>` can be easier with :ref:`Inheritance<test_dir_object>` because I do not have to write things that have already been written again, I can :ref:`inherit<test_dir_object>` them instead and change the new :ref:`objects<everything is an object>` to do what I want.
 
-It can also be more complicated because I can make new :ref:`instances<how to test if something is an instance>` to :ref:`inherit<test_dir_object>` from one :ref:`class<everything is an object>` and customize it for what I need instead of making new :ref:`objects<everything is an object>` that require me to keep track of `Python's Method Resolution Order`_.
+It can also be more complicated because I can make new :ref:`instances<how to test if something is an instance>` to :ref:`inherit<test_dir_object>` from one :ref:`object<everything is an object>` and customize it for what I need instead of making new :ref:`objects<everything is an object>` that require me to keep track of `Python's Method Resolution Order`_.
 
 ----
 
@@ -200,7 +200,7 @@ open the project
 test_making_an_object_w_inheritance
 *********************************************************************************
 
-I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<everything is an object>` with :ref:`inheritance<test_dir_object>` by stating the parent :ref:`class<everything is an object>` and that :ref:`an instance (a copy)<how to test if something is an instance>` and a :ref:`subclass (child)<how to test if something is a subclass>` are different.
+I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<everything is an object>` with :ref:`inheritance<test_dir_object>` by stating the parent :ref:`object<everything is an object>` and that :ref:`an instance (a copy)<how to test if something is an instance>` and a :ref:`subclass (child)<how to test if something is a subclass>` are different.
 
 ----
 
@@ -324,7 +324,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
 
     # Exceptions seen
 
-  the test passes. ``Doe`` is NOT an :ref:`instance<how to test if something is an instance>` of the ``Person`` :ref:`class<everything is an object>`, they are siblings - both children of :ref:`object<everything is an object>`.
+  the test passes. ``Doe`` is NOT an :ref:`instance<how to test if something is an instance>` of the ``Person`` :ref:`object<everything is an object>`, they are siblings - both children of :ref:`object<everything is an object>`.
 
 ----
 
@@ -494,7 +494,7 @@ more about instances vs subobjects
         <class 'src.family_ties.Doe'> is not
         an instance of <class 'src.family_ties.Doe'>
 
-  because a :ref:`class<everything is an object>` is not an :ref:`instance<how to test if something is an instance>`.
+  because an :ref:`object<everything is an object>` is not an :ref:`instance<how to test if something is an instance>`.
 
 * I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>`
 
@@ -618,7 +618,7 @@ what happens when a child calls the parent?
     # call the parent of Doe (Person)
     Person.__init__()
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of the ``Person`` :ref:`class<everything is an object>` takes one required argument for ``first_name``.
+  which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of the ``Person`` :ref:`object<everything is an object>` takes one required argument for ``first_name``.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
@@ -656,7 +656,7 @@ how to call the parent from the child
         def __init__(self):
             super().__init__()
 
-  - the `super built-in function`_ calls the :ref:`__init__ method<the constructor method>` of the parent :ref:`class<everything is an object>`
+  - the `super built-in function`_ calls the :ref:`__init__ method<the constructor method>` of the parent :ref:`object<everything is an object>`
   - ``super()`` is the parent - ":ref:`super class<how to call the parent from the child>`" for parent, ":ref:`subclass<how to test if something is a subclass>`" for child
   - ``super`` is ``Person`` in this case
   - ``super().__init__()`` is ``Person.__init__()`` in this case
@@ -677,7 +677,7 @@ how to call the parent from the child
       # super is the parent (Person)
       Person.__init__()
 
-    which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of the ``Person`` :ref:`class<everything is an object>` takes one required argument for ``first_name``.
+    which raises :ref:`TypeError<what causes TypeError?>` since the :ref:`__init__ method<the constructor method>` of the ``Person`` :ref:`object<everything is an object>` takes one required argument for ``first_name``.
 
 * I add a value for ``first_name`` to the call to ``src.family_ties.Doe()`` in :ref:`test_making_an_object_w_inheritance` in ``test_family_ties.py``
 
@@ -774,7 +774,7 @@ how to call the parent from the child
           super().__init__('the_first')
       Person.__init__('the_first')
 
-* I add a test for the :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` of the ``Doe`` :ref:`class<everything is an object>`
+* I add a test for the :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` of the ``Doe`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 30
@@ -803,7 +803,7 @@ how to call the parent from the child
          '[370 chars]llo']
      != []
 
-* I change the expectation to the :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` of the ``Person`` :ref:`class<everything is an object>`
+* I change the expectation to the :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` of the ``Person`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 36
@@ -979,7 +979,7 @@ how to call the parent from the child
 test_objects_w_one_parent
 *********************************************************************************
 
-I want to test how the :ref:`attributes<what is a object attribute?>` of :ref:`objects<everything is an object>` are set if they have only one parent (super :ref:`class<everything is an object>`).
+I want to test how the :ref:`attributes<what is a object attribute?>` of :ref:`objects<everything is an object>` are set if they have only one parent (super :ref:`object<everything is an object>`).
 
 ----
 
@@ -1113,7 +1113,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
               Person.__init__('joe', last_name='doe')
               self.last_name = 'doe' # use the default value
 
-* I add a :ref:`object attribute<what is a object attribute?>` for ``last_name`` in the ``Blow`` :ref:`class<everything is an object>` in ``family_ties.py``
+* I add a :ref:`object attribute<what is a object attribute?>` for ``last_name`` in the ``Blow`` :ref:`object<everything is an object>` in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 10
@@ -1196,8 +1196,8 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
   I can :ref:`make objects<how to make an object>` that are related and have their own defaults. In this test
 
-  - the ``Doe`` :ref:`class<everything is an object>` has a default value for the ``last_name`` :ref:`attribute<what is a object attribute?>` that is the :ref:`default value<test_optional_arguments>` for the ``last_name`` :ref:`attribute<what is a object attribute?>` of ``Person``
-  - the ``Blow`` :ref:`class<everything is an object>` has a different :ref:`default value<test_optional_arguments>` for the value of the  ``last_name`` :ref:`attribute<what is a object attribute?>`
+  - the ``Doe`` :ref:`object<everything is an object>` has a default value for the ``last_name`` :ref:`attribute<what is a object attribute?>` that is the :ref:`default value<test_optional_arguments>` for the ``last_name`` :ref:`attribute<what is a object attribute?>` of ``Person``
+  - the ``Blow`` :ref:`object<everything is an object>` has a different :ref:`default value<test_optional_arguments>` for the value of the  ``last_name`` :ref:`attribute<what is a object attribute?>`
   - ``Doe`` and ``Blow`` are :ref:`children (subobjects)<how to test if something is a subclass>` of ``Person``
 
 * I remove the commented lines
@@ -1216,7 +1216,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
         def __init__(self, first_name):
             self.last_name = 'blow'
 
-* In this case there is a simpler way to make ``joe`` and ``doe``. I could pass the values to the ``Person`` :ref:`class<everything is an object>` directly, since all the ``Blow`` :ref:`class<everything is an object>` does is customize the ``last_name`` :ref:`attribute<what is a object attribute?>`, there is nothing special about it or the ``Doe`` :ref:`class<everything is an object>`. I add an :ref:`assertion<what is an assertion?>` to :ref:`test_objects_w_one_parent` in ``test_family_ties.py``
+* In this case there is a simpler way to make ``joe`` and ``doe``. I could pass the values to the ``Person`` :ref:`object<everything is an object>` directly, since all the ``Blow`` :ref:`object<everything is an object>` does is customize the ``last_name`` :ref:`attribute<what is a object attribute?>`, there is nothing special about it or the ``Doe`` :ref:`object<everything is an object>`. I add an :ref:`assertion<what is an assertion?>` to :ref:`test_objects_w_one_parent` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 32
@@ -1256,7 +1256,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     # Exceptions seen
 
-  the test passes. I can make :ref:`an instance<how to test if something is an instance>` and change the values of its :ref:`attributes<what is a object attribute?>` without making a new :ref:`class<everything is an object>`.
+  the test passes. I can make :ref:`an instance<how to test if something is an instance>` and change the values of its :ref:`attributes<what is a object attribute?>` without making a new :ref:`object<everything is an object>`.
 
 * I add an :ref:`assertion<what is an assertion?>` for ``jane``
 
@@ -1504,7 +1504,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     where ``ClassName`` is ``Smith`` or ``Blow``
 
-  * From the :ref:`object definition of Person<test_factory_person_says_hello>`, this happens when :ref:`an instance (a copy)<how to test if something is an instance>` of the ``Person`` :ref:`class<everything is an object>` is made
+  * From the :ref:`object definition of Person<test_factory_person_says_hello>`, this happens when :ref:`an instance (a copy)<how to test if something is an instance>` of the ``Person`` :ref:`object<everything is an object>` is made
 
     .. code-block:: python
 
@@ -1530,7 +1530,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 test_objects_w_multiple_parents
 *********************************************************************************
 
-Can a :ref:`class<everything is an object>` have more than one parent? How are the :ref:`attributes<what is a object attribute?>` set if they have more than one parent (super :ref:`class<everything is an object>`)?
+Can an :ref:`object<everything is an object>` have more than one parent? How are the :ref:`attributes<what is a object attribute?>` set if they have more than one parent (super :ref:`object<everything is an object>`)?
 
 ----
 
@@ -2020,7 +2020,7 @@ the test passes.
         module 'src.family_ties' has no attribute 'Joe'.
         Did you mean: 'Doe'?
 
-* I add a :ref:`object definition<how to make an object>` for the ``Joe`` :ref:`class<everything is an object>` to ``family_ties.py``
+* I add a :ref:`object definition<how to make an object>` for the ``Joe`` :ref:`object<everything is an object>` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 22
@@ -3977,7 +3977,7 @@ what happens when a child has more than one parent?
     git commit -am \
     'add test_objects_w_multiple_parents'
 
-.. NOTE:: All the instances could have been made with only the ``Person`` :ref:`class<everything is an object>` because there was nothing unique about the :ref:`objects<everything is an object>` I made in ``family_ties.py`` and it would not have given me the chance to practice making objects with multiple parents and seeing how Python_ resolves them.
+.. NOTE:: All the instances could have been made with only the ``Person`` :ref:`object<everything is an object>` because there was nothing unique about the :ref:`objects<everything is an object>` I made in ``family_ties.py`` and it would not have given me the chance to practice making objects with multiple parents and seeing how Python_ resolves them.
 
   .. code-block:: python
 
@@ -4009,7 +4009,7 @@ what happens when a child has more than one parent?
     lil = src.person.Person('lil', john.last_name)
     lil.eye_color = mary.eye_color
 
-  which would have just been Python_ making these calls to make :ref:`instances (copies)<how to test if something is an instance>` of the ``Person`` :ref:`class<everything is an object>`
+  which would have just been Python_ making these calls to make :ref:`instances (copies)<how to test if something is an instance>` of the ``Person`` :ref:`object<everything is an object>`
 
   .. code-block:: python
 
@@ -4027,7 +4027,7 @@ what happens when a child has more than one parent?
 review
 *********************************************************************************
 
-I can make a :ref:`class<everything is an object>` with
+I can make an :ref:`object<everything is an object>` with
 
 * :ref:`pass<test_making_an_object_w_pass>`
 * :ref:`parentheses<test_making_an_object_w_parentheses>`

@@ -79,7 +79,7 @@ I used the `setUp method`_ in :ref:`list comprehensions` to make sure that I hav
 
 ----
 
-I add the `setUp method`_ to the ``TestCalculator`` :ref:`class<everything is an object>`
+I add the `setUp method`_ to the ``TestCalculator`` :ref:`object<everything is an object>`
 
 .. code-block:: python
   :lineno-start: 10

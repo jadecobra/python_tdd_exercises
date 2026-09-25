@@ -117,7 +117,7 @@ add TestAssertionError class
 
 ----
 
-* I add a :ref:`class<everything is an object>` named ``AssertionError`` with a :ref:`method<what is a method?>` for the :ref:`first failing test<test_failure>` to ``test_assertion_error.py``
+* I add an :ref:`object<everything is an object>` named ``AssertionError`` with a :ref:`method<what is a method?>` for the :ref:`first failing test<test_failure>` to ``test_assertion_error.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -137,7 +137,7 @@ add TestAssertionError class
 
   the test is still green.
 
-* I change the name of the :ref:`class<everything is an object>` to ``TestAssertionError``
+* I change the name of the :ref:`object<everything is an object>` to ``TestAssertionError``
 
   .. code-block:: python
     :lineno-start: 21
@@ -182,7 +182,7 @@ add TestAssertionError class
 
 ----
 
-* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<everything is an object>` of ``TestAssertionError``
+* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`object<everything is an object>` of ``TestAssertionError``
 
   .. code-block:: python
     :lineno-start: 21
@@ -626,7 +626,7 @@ test_assertion_error_w_none with unittest
 
 * I move :ref:`test_assertion_error_w_none` to make it a :ref:`method<what is a method?>` of :ref:`TestAssertionError<add TestAssertionError class>`
 
-  .. caution:: Indentation matters in Python_. It is how it knows what blocks belong to what :ref:`function/method<what is a function?>`, :ref:`class<everything is an object>` or :ref:`module<what is a module?>` (Use 4 spaces)
+  .. caution:: Indentation matters in Python_. It is how it knows what blocks belong to what :ref:`function/method<what is a function?>`, :ref:`object<everything is an object>` or :ref:`module<what is a module?>` (Use 4 spaces)
 
   .. code-block:: python
     :lineno-start: 41
@@ -3876,7 +3876,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
     git commit -am 'extract object attributes'
 
-:ref:`I can use object attributes to remove repetition<remove repetition with object attributes>`. I make them once and other things in the :ref:`class<everything is an object>` can reference them.
+:ref:`I can use object attributes to remove repetition<remove repetition with object attributes>`. I make them once and other things in the :ref:`object<everything is an object>` can reference them.
 
 ----
 
@@ -3910,7 +3910,7 @@ review
 *********************************************************************************
 
 * I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`.
-* I can use :ref:`object attributes<what is a object attribute?>` for things that repeat, which allows :ref:`methods<what is a method?>` of the same :ref:`class<everything is an object>` to use them.
+* I can use :ref:`object attributes<what is a object attribute?>` for things that repeat, which allows :ref:`methods<what is a method?>` of the same :ref:`object<everything is an object>` to use them.
 
 ----
 

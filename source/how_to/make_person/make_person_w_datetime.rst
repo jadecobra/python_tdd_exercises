@@ -647,7 +647,7 @@ It looks like I have a way to get the current year.
 
 ----
 
-I add :ref:`test_datetime_date_today_year` to test the ``year`` :ref:`attribute<what is a object attribute?>` of the result of a :ref:`call<how to call a function>` to the ``today`` :ref:`method<what is a method?>` of the ``date`` :ref:`class<everything is an object>` of the `datetime module`_ (``datetime.date.today().year``) in ``tests/test_person.py``
+I add :ref:`test_datetime_date_today_year` to test the ``year`` :ref:`attribute<what is a object attribute?>` of the result of a :ref:`call<how to call a function>` to the ``today`` :ref:`method<what is a method?>` of the ``date`` :ref:`object<everything is an object>` of the `datetime module`_ (``datetime.date.today().year``) in ``tests/test_person.py``
 
 .. code-block:: python
   :lineno-start: 268

@@ -1174,7 +1174,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
     TypeError: TestCalculator.get_division_result() takes 2 positional arguments but 3 were given
 
-  I forgot to make ``get_division_result`` a staticmethod_ since it does not do anything with the rest of the :ref:`class<everything is an object>`
+  I forgot to make ``get_division_result`` a staticmethod_ since it does not do anything with the rest of the :ref:`object<everything is an object>`
 
 * I :ref:`wrap<what is a decorator function?>` ``get_division_result`` with the `staticmethod decorator`_
 

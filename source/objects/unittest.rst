@@ -1528,7 +1528,7 @@ test_assert_not_is_instance
   - The :ref:`definition<how to make a function that takes input>` of the `assertNotIsInstance method`_  of the `TestCase class`_  of the unittest_ library (``unittest.TestCase.assertNotIsInstance``) has three required :ref:`positional arguments<test_positional_arguments>` (``self``, ``obj`` and ``cls``)
   - A :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
   - ``obj`` is for the :ref:`instance<how to test if something is an instance>` being tested.
-  - ``cls`` is for the :ref:`class<everything is an object>`.
+  - ``cls`` is for the :ref:`object<everything is an object>`.
 
 ----
 
@@ -1601,7 +1601,7 @@ test_assert_not_is_instance
 
     'assertNotIsInstance'
 
-  the test passes because a :ref:`class<everything is an object>` is not an :ref:`instance<how to test if something is an instance>` of itself.
+  the test passes because an :ref:`object<everything is an object>` is not an :ref:`instance<how to test if something is an instance>` of itself.
 
 ----
 
@@ -1749,7 +1749,7 @@ test_assert_is_instance
 
   - A :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
   - ``obj`` is for the :ref:`instance<how to test if something is an instance>` being tested.
-  - ``cls`` is for the :ref:`class<everything is an object>`.
+  - ``cls`` is for the :ref:`object<everything is an object>`.
 
 ----
 
@@ -1805,7 +1805,7 @@ test_assert_is_instance
         is not an instance of
         <class 'unittest.case.TestCase'>
 
-  because a :ref:`class<everything is an object>` is not an :ref:`instance<how to test if something is an instance>` of itself.
+  because an :ref:`object<everything is an object>` is not an :ref:`instance<how to test if something is an instance>` of itself.
 
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
@@ -2060,7 +2060,7 @@ test_assert_not_is_subclass
 
   because :ref:`an instance is not a class<instance vs subclass>`.
 
-* I change the :ref:`assertion<what is an assertion?>` to use a :ref:`class<everything is an object>`
+* I change the :ref:`assertion<what is an assertion?>` to use an :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 141
@@ -2260,7 +2260,7 @@ test_assert_is_subclass
 
 ----
 
-* I change the :ref:`instance<how to test if something is an instance>` to the :ref:`class<everything is an object>`
+* I change the :ref:`instance<how to test if something is an instance>` to the :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 154
@@ -2350,7 +2350,7 @@ test_assert_is_subclass
 
   because :ref:`an instance is not a class<instance vs subclass>`.
 
-* I change the :ref:`instance<how to test if something is an instance>` to the :ref:`class<everything is an object>`
+* I change the :ref:`instance<how to test if something is an instance>` to the :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 154
@@ -2791,7 +2791,7 @@ The problem with this solution is that anyone reading it has to know what the ``
 extract TestUnittest class
 *********************************************************************************
 
-I can put the test :ref:`functions<what is a function?>` together in a :ref:`class<everything is an object>` since they are related.
+I can put the test :ref:`functions<what is a function?>` together in an :ref:`object<everything is an object>` since they are related.
 
 ----
 
@@ -2803,7 +2803,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
 * I go back to the terminal_ where the tests are running
 
-* I add a :ref:`class<everything is an object>` named ``Unittest``
+* I add an :ref:`object<everything is an object>` named ``Unittest``
 
   .. code-block:: python
     :lineno-start: 4
@@ -2822,7 +2822,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
   this is a problem. I expect ``TOOLBOX.assertEqual(True, False)`` to fail since :ref:`True<test_what_is_true>` is not equal to :ref:`False<test_what_is_false>`
 
-* I add ``Test`` to the name of the :ref:`class<everything is an object>`
+* I add ``Test`` to the name of the :ref:`object<everything is an object>`
 
   .. code-block::
     :lineno-start: 4
@@ -2853,7 +2853,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
 
 ----
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``test_failure`` since I can use it if I do not want to add ``self`` to the :ref:`method definition<how to make a function>`. This way I do not send more information than what the :ref:`method<what is a method?>` needs when it does not use anything that belongs to the :ref:`class<everything is an object>`
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to ``test_failure`` since I can use it if I do not want to add ``self`` to the :ref:`method definition<how to make a function>`. This way I do not send more information than what the :ref:`method<what is a method?>` needs when it does not use anything that belongs to the :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -2920,7 +2920,7 @@ I can put the test :ref:`functions<what is a function?>` together in a :ref:`cla
                 'IsolatedAsyncioTestCase', 'SkipTest',
                 ...
 
-  .. caution:: Indentation matters in Python_. It is how it knows what blocks belong to what :ref:`function/method<what is a function?>`, :ref:`class<everything is an object>` or :ref:`module<what is a module?>` (Use 4 spaces)
+  .. caution:: Indentation matters in Python_. It is how it knows what blocks belong to what :ref:`function/method<what is a function?>`, :ref:`object<everything is an object>` or :ref:`module<what is a module?>` (Use 4 spaces)
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 

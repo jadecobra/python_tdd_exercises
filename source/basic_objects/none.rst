@@ -1012,7 +1012,7 @@ the test passes.
 
     # NOTES
 
-  - int_ is the :ref:`class<everything is an object>` for integers_
+  - int_ is the :ref:`object<everything is an object>` for integers_
   - the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
     .. code-block:: shell
@@ -1414,7 +1414,7 @@ the test passes.
 
     # NOTES
 
-  float_ is the :ref:`class<everything is an object>` for binary floating point numbers. the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  float_ is the :ref:`object<everything is an object>` for binary floating point numbers. the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1773,7 +1773,7 @@ the test passes.
 
     # NOTES
 
-  - str_ is the :ref:`class<everything is an object>` for strings_
+  - str_ is the :ref:`object<everything is an object>` for strings_
   - the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
     .. code-block:: shell
@@ -2885,7 +2885,7 @@ the test passes.
 
     # NOTES
 
-  - :ref:`dict<dictionaries>` is the :ref:`class<everything is an object>` for :ref:`dictionaries<what is a dictionary?>`
+  - :ref:`dict<dictionaries>` is the :ref:`object<everything is an object>` for :ref:`dictionaries<what is a dictionary?>`
   - the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
     .. code-block:: shell

@@ -117,7 +117,7 @@ add TestPerson class
 
 ----
 
-I add a :ref:`class<everything is an object>` named ``TestPerson`` to ``test_person.py``
+I add an :ref:`object<everything is an object>` named ``TestPerson`` to ``test_person.py``
 
 .. code-block:: python
   :lineno-start: 45
@@ -164,7 +164,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`class<everything is an object>` of ``TestPerson``
+* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`object<everything is an object>` of ``TestPerson``
 
   .. code-block:: python
     :lineno-start: 63
@@ -633,7 +633,7 @@ move test_mary to TestPerson
 
 ----
 
-* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_mary` because I can use it when a :ref:`method<what is a method?>` does not use anything in the :ref:`class<everything is an object>` it belongs to
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to :ref:`test_mary` because I can use it when a :ref:`method<what is a method?>` does not use anything in the :ref:`object<everything is an object>` it belongs to
 
   .. code-block:: python
     :lineno-start: 140

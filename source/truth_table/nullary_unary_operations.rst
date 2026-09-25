@@ -90,7 +90,7 @@ test_logical_true
     import src.truth_table
     import unittest
 
-* I change the name of the :ref:`class<everything is an object>` from ``TestTruthTable`` to ``TestNullaryOperations``
+* I change the name of the :ref:`object<everything is an object>` from ``TestTruthTable`` to ``TestNullaryOperations``
 
   .. code-block:: python
     :linenos:

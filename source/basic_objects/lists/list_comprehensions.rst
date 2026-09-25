@@ -781,7 +781,7 @@ use the setUp method
 
 The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<what is a list?>` for each test before, I need a better way. The :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a :ref:`method<what is a method?>` I can use to make sure the :ref:`object attributes<test_attribute_error_w_object_attributes>` are always reset at the beginning of the test, so that the values are new for each test.
 
-* I add the `setUp method`_ to the ``TestListComprehensions`` :ref:`class<everything is an object>`
+* I add the `setUp method`_ to the ``TestListComprehensions`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 6
