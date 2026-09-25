@@ -12,7 +12,7 @@ TypeError with objects
 
 ----
 
-Since :ref:`methods<what is a method?>` are :ref:`functions<what is a function?>` in an :ref:`object<everything is an object>` I can assume that they have the same behavior as what I tested in :ref:`test_type_error_w_positional_arguments`, :ref:`test_type_error_w_keyword_arguments` and :ref:`test_type_error_w_args_and_kwargs`.
+Since :ref:`methods<what is a method?>` are :ref:`functions<what is a function?>` in an :ref:`object<everything is an object>` I can assume that they have the same behavior as what I tested in the :ref:`functions project<what is a function?>`.
 
 ----
 
