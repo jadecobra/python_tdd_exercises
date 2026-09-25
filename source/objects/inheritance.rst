@@ -11,7 +11,6 @@
 .. _object: https://docs.python.org/3/glossary.html#term-object
 .. _objects: object_
 .. _class: https://docs.python.org/3/tutorial/objects.html#a-first-look-at-objects
-.. _objects: class_
 
 #################################################################################
 everything is an object
