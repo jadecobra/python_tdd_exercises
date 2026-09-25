@@ -716,7 +716,7 @@ test_attribute_error_w_object_attributes
     'add test_attribute_error_w_object_attributes'
 
 * :ref:`A variable in an object is an attribute of the class<test_attribute_error_w_object_attributes>`
-* :ref:`A class in a module is an attribute of the module<test_attribute_error_w_object_attributes>`
+* :ref:`An object in a module is an attribute of the module<test_attribute_error_w_object_attributes>`
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
 * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
 
@@ -1394,7 +1394,7 @@ All the tests I have run for :ref:`AttributeError<what causes AttributeError?>` 
 
 * :ref:`A variable in an object is an attribute of the class<test_attribute_error_w_object_attributes>`
 * :ref:`A function in an object is an attribute of the class<test_attribute_error_w_object_methods>`
-* :ref:`A class in a module is an attribute of the module<test_attribute_error_w_object_attributes>`
+* :ref:`An object in a module is an attribute of the module<test_attribute_error_w_object_attributes>`
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
 * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
 

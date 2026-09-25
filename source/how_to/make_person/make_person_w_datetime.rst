@@ -2091,7 +2091,7 @@ I want the :ref:`calculate_age function<add calculate_age function>` to make sur
 
         def test_dir_person_class(self):
 
-  the terminal shows :ref:`AssertionError<what causes AssertionError?>` for the age being greater than ``120``. Wait a minute! I was expecting that to fail at ``assert isinstance(year_of_birth, int)``. This means :ref:`a boolean is also an integer<is False an integer or a float?>`.
+  the terminal shows :ref:`AssertionError<what causes AssertionError?>` for the age being greater than ``120``. Wait a minute! I was expecting that to fail at ``assert isinstance(year_of_birth, int)``. This means :ref:`a boolean is also an integer<test_what_is_false>`.
 
 * I change ``year_of_birth`` from :ref:`False<test_what_is_false>` to a float_
 
