@@ -3946,7 +3946,7 @@ review
 *************************************************************************************
 
 * I ran tests to write one :ref:`function<what is a function?>` that makes a string_ for a person when given ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` so I do not have to make one :ref:`function<what is a function?>` for each person.
-* I also ran tests to make another :ref:`function<what is a function?>` that makes an :ref:`f-string<what is string interpolation?>` to represent the person saying hello when I give it ``first_name``, ``last_name``, and ``year_of_birth``.
+* I also ran tests to make another :ref:`function<what is a function?>` that makes an :ref:`f-string<what is string interpolation?>` for the person saying hello when I give it ``first_name``, ``last_name``, and ``year_of_birth``.
 
 * My tests and solutions have a few problems,
 

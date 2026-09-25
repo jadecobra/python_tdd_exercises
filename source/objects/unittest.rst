@@ -45,7 +45,7 @@ another way to write tests
 
 I used unittest_ in :ref:`how to make a Python Test Driven Development environment manually` to run tests manually before I learned to :ref:`run them automatically<how to run tests automatically>` with `pytest-watcher`_.
 
-The `unittest library`_ is part of `The Python Standard Library`_ and can also be used to write tests like a toolbox with different tools I can use to test code.
+The `unittest library`_ is part of `The Python Standard Library`_ and can also be used to write tests, it is like a toolbox with different tools I can use to test code.
 
 ----
 

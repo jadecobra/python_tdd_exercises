@@ -135,7 +135,7 @@ open the project
 add Person class
 *********************************************************************************
 
-I made a :ref:`function<what is a function?>` that makes a string_ to represent a person when I give it ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``. I can also represent a person with an :ref:`object<everything is an object>` because it is :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` that belong together.
+I made a :ref:`function<what is a function?>` that makes a string_ for a person when I give it ``first_name``, ``last_name``, ``sex`` and ``year_of_birth``. I can also represent a person with an :ref:`object<everything is an object>` because it is :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` that belong together.
 
 ----
 
@@ -145,7 +145,7 @@ I made a :ref:`function<what is a function?>` that makes a string_ to represent 
 
 ----
 
-I make an :ref:`instance<how to test if something is an instance>` of an :ref:`object<everything is an object>` to represent ``joe`` in :ref:`test_joe` in ``tests/test_person.py``
+I make an :ref:`instance<how to test if something is an instance>` of an :ref:`object<everything is an object>` for ``joe`` in :ref:`test_joe` in ``tests/test_person.py``
 
 .. code-block:: python
   :lineno-start: 38

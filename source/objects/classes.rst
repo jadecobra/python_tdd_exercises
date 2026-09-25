@@ -15,7 +15,7 @@ objects
 
 I made :ref:`functions<what is a function?>` that make :ref:`dictionaries (test_factory_w_keyword_arguments)<test_factory_w_keyword_arguments>` and :ref:`strings (test_factory_person_says_hello)<test_factory_person_says_hello>` in :ref:`how to make a person`.
 
-I can also use an :ref:`object<everything is an object>` to represent a person, because it is a group of :ref:`attributes (variables)<what is a object attribute?>` and :ref:`methods (functions) <what is a function?>` that belong together.
+I can also use an :ref:`object<everything is an object>` for a person, because it is a group of :ref:`attributes (variables)<what is a object attribute?>` and :ref:`methods (functions) <what is a function?>` that belong together.
 
 ----
 
@@ -3346,7 +3346,7 @@ There are few problems with what I have now
 To review
 
 * an :ref:`object<everything is an object>` is :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` that belong together
-* an :ref:`object<everything is an object>` can be used to represent something
+* an :ref:`object<everything is an object>` can be used for something
 * A :ref:`object attributes<what is a object attribute?>` is a :ref:`variable<what is a variable?>` that belongs to an :ref:`object<everything is an object>`
 * A :ref:`method<what is a method?>` is a :ref:`function<what is a function?>` that belongs to an :ref:`object<everything is an object>`
 * :ref:`objects<everything is an object>` can be an easier way to manage data than :ref:`functions<what is a function?>`

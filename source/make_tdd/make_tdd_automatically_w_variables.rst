@@ -102,7 +102,7 @@ I can use a :ref:`variable<what is a variable?>` for the name of the project
 
     * I open ``makePythonTdd.sh``
 
-    * I add ``NAME_OF_THE_PROJECT`` to represent any project name I use to make a project
+    * I add ``NAME_OF_THE_PROJECT`` for any project name I use to make a project
 
       .. code-block:: shell
         :linenos:
@@ -117,7 +117,7 @@ I can use a :ref:`variable<what is a variable?>` for the name of the project
 
     * I open ``makePythonTdd.ps1``
 
-    * I add ``$NAME_OF_THE_PROJECT`` to represent any project name I use to make a project
+    * I add ``$NAME_OF_THE_PROJECT`` for any project name I use to make a project
 
       .. code-block:: shell
         :linenos:
@@ -128,12 +128,12 @@ I can use a :ref:`variable<what is a variable?>` for the name of the project
 
 * A :ref:`variable<what is a variable?>` is a name used for a value that can change. For example, we use the word
 
-  * ``woman`` to represent any woman
-  * ``man`` to represent any man
-  * ``child`` to represent any child
-  * ``parent`` to represent anyone with a child.
+  * ``woman`` for any woman
+  * ``man`` for any man
+  * ``child`` for any child
+  * ``parent`` for anyone with a child.
 
-* I use ``NAME_OF_THE_PROJECT`` to represent any project name
+* I use ``NAME_OF_THE_PROJECT`` for any project name
 * I name this project ``pro_magic`` because I am a professional
 
 * I change the name of the project to the :ref:`variable<what is a variable?>` (``NAME_OF_THE_PROJECT``) I just added so that I only have to make a change in one place
