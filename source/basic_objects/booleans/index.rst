@@ -1621,7 +1621,7 @@ the test passes.
 
   the test passes because :ref:`None is not the same object as False<test_assertion_error_w_false>`.
 
-* I add an :ref:`assertion<what is an assertion?>` for ``bool(None)``
+* I add an :ref:`assertion<what is an assertion?>` for if :ref:`None<test_what_is_none>` is equal to :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -1629,6 +1629,76 @@ the test passes.
 
             # self.assertIs(None, False)
             self.assertIsNot(None, False)
+            self.assertEqual(None, True)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None != True
+
+* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``None, True``
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 3-4
+
+            # self.assertIs(None, False)
+            self.assertIsNot(None, False)
+            # self.assertEqual(None, True)
+            self.assertNotEqual(None, True)
+
+
+    # NOTES
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` for if :ref:`None<what is None?>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 3
+
+            # self.assertEqual(None, True)
+            self.assertNotEqual(None, True)
+            self.assertIs(None, True)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None is not True
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``None, True``
+
+  .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 3-4
+
+            # self.assertEqual(None, True)
+            self.assertNotEqual(None, True)
+            # self.assertIs(None, True)
+            self.assertIsNot(None, True)
+
+
+    # NOTES
+
+  the test passes because :ref:`None is not the same object as True<test_assertion_error_w_true>`.
+
+* I add an :ref:`assertion<what is an assertion?>` for ``bool(None)``
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 3
+
+            # self.assertIs(None, True)
+            self.assertIsNot(None, True)
             self.assertTrue(bool(None))
 
 
@@ -1645,11 +1715,11 @@ the test passes.
 * I change assertTrue_ to assertFalse_ for ``bool(None)``
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 41
     :emphasize-lines: 3-4
 
-            # self.assertIs(None, False)
-            self.assertIsNot(None, False)
+            # self.assertIs(None, True)
+            self.assertIsNot(None, True)
             # self.assertTrue(bool(None))
             self.assertFalse(bool(None))
 
@@ -1661,7 +1731,7 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 47
     :emphasize-lines: 6
 
     # NOTES
@@ -1671,14 +1741,11 @@ the test passes.
     # True is NOT False
     # bool(None) is False
     # False is False
-    # False is an integer
-    # False is a boolean
-    # False is NOT True
 
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`None<what is None?>` without bool_
 
   .. code-block:: python
-    :lineno-start: 39
+    :lineno-start: 43
     :emphasize-lines: 3
 
             # self.assertTrue(bool(None))
@@ -1699,7 +1766,7 @@ the test passes.
 * I change assertTrue_ to assertFalse_ for :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 39
+    :lineno-start: 43
     :emphasize-lines: 3-4
 
             # self.assertTrue(bool(None))
@@ -1720,6 +1787,8 @@ the test passes.
         def test_is_none_falsy_or_truthy(self):
             self.assertNotEqual(None, False)
             self.assertIsNot(None, False)
+            self.assertNotEqual(None, True)
+            self.assertIsNot(None, True)
             self.assertFalse(bool(None))
             self.assertFalse(None)
 
@@ -4289,6 +4358,22 @@ the test passes.
 
   - The test passes because the result of ``bool(tuple())`` is :ref:`False<test_what_is_false>`.
   - The empty tuple_ is grouped as :ref:`False<test_what_is_false>`.
+
+* I remove the commented lines from :ref:`test_is_a_tuple_falsy_or_truthy`
+
+  .. code-block:: python
+    :lineno-start: 104
+
+        def test_is_a_tuple_falsy_or_truthy(self):
+            self.assertNotEqual(tuple(), False)
+            self.assertIsNot(tuple(), False)
+            self.assertNotEqual(tuple(), True)
+            self.assertIsNot(tuple(), True)
+            self.assertFalse(bool(tuple()))
+            self.assertFalse(tuple())
+
+
+    # NOTES
 
 ----
 BOOM BOOM BOOM
