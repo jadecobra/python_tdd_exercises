@@ -1890,7 +1890,7 @@ test_assert_is_instance
     :emphasize-lines: 2-3
 
     def test_assert_is_instance():
-        a_class = unittest.TestCase
+        an_object = unittest.TestCase
         an_instance = a_class()
         # unittest.TestCase.assertIsInstance()
         # unittest.TestCase().assertIsInstance()
@@ -1914,7 +1914,7 @@ test_assert_is_instance
     :emphasize-lines: 8-9, 13-14
 
     def test_assert_is_instance():
-        a_class = unittest.TestCase
+        an_object = unittest.TestCase
         an_instance = a_class()
         # unittest.TestCase.assertIsInstance()
         # unittest.TestCase().assertIsInstance()
@@ -2657,7 +2657,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
     :emphasize-lines: 11-12
 
     def test_assert_is_instance():
-        a_class = unittest.TestCase
+        an_object = unittest.TestCase
         an_instance = a_class()
         # unittest.TestCase.assertIsInstance()
         # unittest.TestCase().assertIsInstance()
@@ -2684,7 +2684,7 @@ I make an :ref:`instance<how to test if something is an instance>` of the `unitt
     :lineno-start: 110
 
     def test_assert_is_instance():
-        a_class = unittest.TestCase
+        an_object = unittest.TestCase
         an_instance = a_class()
 
         assert isinstance(an_instance, a_class)
@@ -3240,7 +3240,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
             )
 
         def test_assert_is_instance():
-            a_class = unittest.TestCase
+            an_object = unittest.TestCase
             an_instance = a_class()
 
             assert isinstance(an_instance, a_class)
@@ -3651,7 +3651,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
         @staticmethod
         def test_assert_is_instance():
-            a_class = unittest.TestCase
+            an_object = unittest.TestCase
             an_instance = a_class()
 
             assert isinstance(an_instance, a_class)
@@ -4107,7 +4107,7 @@ the test passes because
         # @staticmethod
         # def test_assert_is_instance():
         def test_assert_is_instance(self):
-            a_class = unittest.TestCase
+            an_object = unittest.TestCase
             an_instance = a_class()
 
             assert isinstance(an_instance, a_class)
@@ -4141,7 +4141,7 @@ the test passes because
         # @staticmethod
         # def test_assert_is_instance():
         def test_assert_is_instance(self):
-            a_class = unittest.TestCase
+            an_object = unittest.TestCase
             an_instance = a_class()
 
             assert isinstance(an_instance, a_class)
@@ -4189,7 +4189,7 @@ the test passes because
     # @staticmethod
         # def test_assert_is_instance():
         def test_assert_is_instance(self):
-            a_class = unittest.TestCase
+            an_object = unittest.TestCase
             an_instance = a_class()
 
             assert isinstance(an_instance, a_class)
@@ -4216,7 +4216,7 @@ the test passes because
             )
 
         def test_assert_is_instance(self):
-            a_class = unittest.TestCase
+            an_object = unittest.TestCase
             an_instance = a_class()
 
             assert isinstance(an_instance, a_class)

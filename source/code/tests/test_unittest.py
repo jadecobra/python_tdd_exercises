@@ -102,7 +102,7 @@ class TestUnittest(unittest.TestCase):
         )
 
     def test_assert_is_instance(self):
-        a_class = unittest.TestCase
+        an_object = unittest.TestCase
         an_instance = a_class()
 
         assert isinstance(an_instance, a_class)

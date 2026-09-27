@@ -9,7 +9,7 @@ class Testobjects(unittest.TestCase):
         assert isinstance(an_instance, object)
         self.assertIsInstance(an_instance, object)
 
-        a_class = src.objects.WPass
+        an_object = src.objects.WPass
         assert issubclass(a_class, object)
         self.assertIsSubclass(a_class, object)
 
@@ -18,7 +18,7 @@ class Testobjects(unittest.TestCase):
         assert isinstance(an_instance, object)
         self.assertIsInstance(an_instance, object)
 
-        a_class = src.objects.WParentheses
+        an_object = src.objects.WParentheses
         assert issubclass(a_class, object)
         self.assertIsSubclass(a_class, object)
 
@@ -27,7 +27,7 @@ class Testobjects(unittest.TestCase):
         assert isinstance(an_instance, object)
         self.assertIsInstance(an_instance, object)
 
-        a_class = src.objects.WObject
+        an_object = src.objects.WObject
         assert issubclass(a_class, object)
         self.assertIsSubclass(a_class, object)
 
