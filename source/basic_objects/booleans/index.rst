@@ -4025,12 +4025,6 @@ the test passes.
 -----
 
 *********************************************************************************
-extract assert_is_falsy
-*********************************************************************************
-
------
-
-*********************************************************************************
 test_is_a_tuple_falsy_or_truthy
 *********************************************************************************
 
@@ -4118,33 +4112,105 @@ the test passes.
 
     AssertionError: () is not False
 
-  the empty tuple_ is not the same :ref:`object<everything is an object>`
+  the empty tuple_ is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
-
-
-----
-BOOM
-----
-
-----
-BOOM
-----
-
-----
-BOOM
-----
-
-----
-BOOM
-----
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``tuple(), False``
 
   .. code-block:: python
-    :lineno-start: 77
-    :emphasize-lines: 3-4
-
-            self.assertIsNot(a_string, True)
+    :lineno-start: 104
+    :emphasize-lines: 4-5
 
         def test_is_a_tuple_falsy_or_truthy(self):
+            # self.assertEqual(tuple(), False)
+            self.assertNotEqual(tuple(), False)
+            # self.assertIs(tuple(), False)
+            self.assertIsNot(tuple(), False)
+
+
+    # NOTES
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` for if the empty tuple_ is equal to :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 3
+
+            # self.assertIs(tuple(), False)
+            self.assertIsNot(tuple(), False)
+            self.assertEqual(tuple(), True)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: () != True
+
+* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``tuple(), True``
+
+  .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 3-4
+
+            # self.assertIs(tuple(), False)
+            self.assertIsNot(tuple(), False)
+            # self.assertEqual(tuple(), True)
+            self.assertNotEqual(tuple(), True)
+
+
+    # NOTES
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` for if the empty tuple_ is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 109
+    :emphasize-lines: 3
+
+            # self.assertEqual(tuple(), True)
+            self.assertNotEqual(tuple(), True)
+            self.assertIs(tuple(), True)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: () is not True
+
+  the empty tuple_ is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
+
+* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``tuple(), True``
+
+  .. code-block:: python
+    :lineno-start: 109
+    :emphasize-lines: 3-4
+
+            # self.assertEqual(tuple(), True)
+            self.assertNotEqual(tuple(), True)
+            # self.assertIs(tuple(), True)
+            self.assertIsNot(tuple(), True)
+
+
+    # NOTES
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` for ``bool(tuple())``
+
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 3
+
+            # self.assertIs(tuple(), True)
+            self.assertIsNot(tuple(), True)
             self.assertTrue(bool(tuple()))
 
 
@@ -4158,46 +4224,39 @@ BOOM
 
   because the result of ``bool(tuple())`` is :ref:`False<test_what_is_false>`.
 
-I change assertTrue_ to assertFalse_ for ``bool(tuple())``
+* I change assertTrue_ to assertFalse_ for ``bool(tuple())``
 
-.. code-block:: python
-  :lineno-start: 79
-  :emphasize-lines: 2-3
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 3-4
 
-      def test_is_a_tuple_falsy_or_truthy(self):
-          # self.assertTrue(bool(tuple()))
-          self.assertFalse(bool(tuple()))
+            # self.assertIs(tuple(), True)
+            self.assertIsNot(tuple(), True)
+            # self.assertTrue(bool(tuple()))
+            self.assertFalse(bool(tuple()))
 
 
-  # NOTES
+    # NOTES
 
-the test passes.
-
+  the test passes.
 
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 84
-    :emphasize-lines: 9
+    :lineno-start: 124
+    :emphasize-lines: 2
 
-    # NOTES
-    # bool(a string with things) is True
-    # bool(a positive number) is True
-    # bool(a negative number) is True
-    # True is True
-    # True is an integer
-    # True is a boolean
     # True is NOT False
     # bool(the empty tuple) is False
     # bool(the empty string) is False
+    # bool(zero) is False
 
 * I add an :ref:`assertion<what is an assertion?>` for ``tuple()`` without bool_
 
   .. code-block:: python
-    :lineno-start: 79
-    :emphasize-lines: 4
+    :lineno-start: 113
+    :emphasize-lines: 3
 
-        def test_is_a_tuple_falsy_or_truthy(self):
             # self.assertTrue(bool(tuple()))
             self.assertFalse(bool(tuple()))
             self.assertTrue(tuple())
@@ -4217,10 +4276,9 @@ the test passes.
 * I change assertTrue_ to assertFalse_
 
   .. code-block:: python
-    :lineno-start: 79
-    :emphasize-lines: 4-5
+    :lineno-start: 113
+    :emphasize-lines: 3-4
 
-        def test_is_a_tuple_falsy_or_truthy(self):
             # self.assertTrue(bool(tuple()))
             self.assertFalse(bool(tuple()))
             # self.assertTrue(tuple())
@@ -4232,40 +4290,9 @@ the test passes.
   - The test passes because the result of ``bool(tuple())`` is :ref:`False<test_what_is_false>`.
   - The empty tuple_ is grouped as :ref:`False<test_what_is_false>`.
 
-* I add an :ref:`assertion<what is an assertion?>` for if the empty tuple_ is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
-
-  .. code-block:: python
-    :lineno-start: 82
-    :emphasize-lines: 3
-
-            # self.assertTrue(tuple())
-            self.assertFalse(tuple())
-            self.assertIs(tuple(), False)
-
-
-    # NOTES
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: () is not False
-
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(tuple(), False)``
-
-  .. code-block:: python
-    :lineno-start: 82
-    :emphasize-lines: 3-4
-
-            # self.assertTrue(tuple())
-            self.assertFalse(tuple())
-            # self.assertIs(tuple(), False)
-            self.assertIsNot(tuple(), False)
-
-
-    # NOTES
-
-  the test passes because :ref:`a tuple is not the same object as False<test_assertion_error_w_false>`.
+----
+BOOM BOOM BOOM
+----
 
 * I add an :ref:`assertion<what is an assertion?>` to test if a tuple_ with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
