@@ -1,5 +1,5 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test objects with unittest — move the objects project's bare assert isinstance/issubclass tests onto unittest.TestCase. Open objects; uv run pytest-watcher . --now (13 passed). Add class objects then rename to Testobjects → AttributeError: 'Testobjects' object has no attribute 'assertEqual'. Parent unittest.TestCase → NameError name 'unittest' is not defined (pytest: Did you forget to import 'unittest'?); import unittest → AssertionError: True != False then green with assertEqual(True, True). For each of the 13 tests (test_making_an_object_w_pass through test_dir_object): move into Testobjects (first method replaces test_failure) → TypeError takes 0 positional arguments but 1 was given (need self); add assertNotIsInstance / assertNotIsSubclass (or assertNotEqual for dir) → AssertionError e.g. WPass is an instance of object, WPass is a subclass of object, None is an instance of object, None is not a class; switch to assertIsInstance / assertIsSubclass / assertEqual; keep bare assert + self.assert*; remove the commented lines; git commit. Ends with Testobjects + 13 methods + # Exceptions seen AssertionError NameError TypeError AttributeError. Review: unittest.TestCase methods or bare assert. What is next: test functions with unittest.
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test objects with unittest — move the objects project's bare assert isinstance/issubclass tests onto unittest.TestCase. Open objects; uv run pytest-watcher . --now (13 passed). Add class Objects then rename to Testobjects → AttributeError: 'Testobjects' object has no attribute 'assertEqual'. Parent unittest.TestCase → NameError name 'unittest' is not defined (pytest: Did you forget to import 'unittest'?); import unittest → AssertionError: True != False then green with assertEqual(True, True). For each of the 13 tests (test_making_an_object_w_pass through test_dir_object): move into Testobjects (first method replaces test_failure) → TypeError takes 0 positional arguments but 1 was given (need self); add assertNotIsInstance / assertNotIsSubclass (or assertNotEqual for dir) → AssertionError e.g. WPass is an instance of object, WPass is a subclass of object, None is an instance of object, None is not a class; switch to assertIsInstance / assertIsSubclass / assertEqual; keep bare assert + self.assert*; remove the commented lines; git commit. Ends with Testobjects + 13 methods + # Exceptions seen AssertionError NameError TypeError AttributeError. Review: unittest.TestCase methods or bare assert. What is next: test functions with unittest.
   :keywords: Jacob Itegboje, Pumping Python, test objects with unittest, objects unittest, Testobjects, unittest.TestCase, import unittest, AttributeError has no attribute assertEqual, NameError name 'unittest' is not defined, Did you forget to import unittest, AssertionError True != False, TypeError takes 0 positional arguments but 1 was given, self first argument method, assertNotIsInstance, assertIsInstance, assertNotIsSubclass, assertIsSubclass, assertNotEqual, assertEqual, WPass WParentheses WObject, None is not a class, issubclass None, bool int float str tuple list set dict object, dir(object), reality == my_expectation, bare assert and assertIsInstance, uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, another way to write tests, test_objects_w_unittest, everything is an object
 
 .. include:: ../links.rst
@@ -130,7 +130,7 @@ add Testobjects class
     class WObject(object): pass
 
 
-    class objects(object):
+    class Objects(object):
 
         def test_failure(self):
             self.assertEqual(True, False)
@@ -149,7 +149,7 @@ add Testobjects class
     class WObject(object): pass
 
 
-    # class objects(object):
+    # class Objects(object):
     class Testobjects(object):
 
         def test_failure(self):
@@ -192,7 +192,7 @@ add Testobjects class
     class WObject(object): pass
 
 
-    # class objects(object):
+    # class Objects(object):
     # class Testobjects(object):
     class Testobjects(unittest.TestCase):
 
@@ -229,7 +229,7 @@ add Testobjects class
     :lineno-start: 13
     :emphasize-lines: 6-7
 
-    # class objects(object):
+    # class Objects(object):
     # class Testobjects(object):
     class Testobjects(unittest.TestCase):
 
