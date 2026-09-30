@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test objects with unittest — move the objects project's bare assert isinstance/issubclass tests onto unittest.TestCase. Open objects; uv run pytest-watcher . --now (13 passed). Add class Objects then rename to Testobjects → AttributeError: 'Testobjects' object has no attribute 'assertEqual'. Parent unittest.TestCase → NameError name 'unittest' is not defined (pytest: Did you forget to import 'unittest'?); import unittest → AssertionError: True != False then green with assertEqual(True, True). For each of the 13 tests (test_making_an_object_w_pass through test_dir_object): move into Testobjects (first method replaces test_failure) → TypeError takes 0 positional arguments but 1 was given (need self); add assertNotIsInstance / assertNotIsSubclass (or assertNotEqual for dir) → AssertionError e.g. WPass is an instance of object, WPass is a subclass of object, None is an instance of object, None is not a class; switch to assertIsInstance / assertIsSubclass / assertEqual; keep bare assert + self.assert*; remove the commented lines; git commit. Ends with Testobjects + 13 methods + # Exceptions seen AssertionError NameError TypeError AttributeError. Review: unittest.TestCase methods or bare assert. What is next: test functions with unittest.
-  :keywords: Jacob Itegboje, Pumping Python, test objects with unittest, objects unittest, Testobjects, unittest.TestCase, import unittest, AttributeError has no attribute assertEqual, NameError name 'unittest' is not defined, Did you forget to import unittest, AssertionError True != False, TypeError takes 0 positional arguments but 1 was given, self first argument method, assertNotIsInstance, assertIsInstance, assertNotIsSubclass, assertIsSubclass, assertNotEqual, assertEqual, WPass WParentheses WObject, None is not a class, issubclass None, bool int float str tuple list set dict object, dir(object), reality == my_expectation, bare assert and assertIsInstance, uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, another way to write tests, test_objects_w_unittest, everything is an object
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): test objects with unittest — move the objects project's bare assert isinstance/issubclass tests onto unittest.TestCase. Open objects; uv run pytest-watcher . --now (13 passed). Add class Objects then rename to TestObjects → AttributeError: 'TestObjects' object has no attribute 'assertEqual'. Parent unittest.TestCase → NameError name 'unittest' is not defined (pytest: Did you forget to import 'unittest'?); import unittest → AssertionError: True != False then green with assertEqual(True, True). For each of the 13 tests (test_making_an_object_w_pass through test_dir_object): move into TestObjects (first method replaces test_failure) → TypeError takes 0 positional arguments but 1 was given (need self); add assertNotIsInstance / assertNotIsSubclass (or assertNotEqual for dir) → AssertionError e.g. WPass is an instance of object, WPass is a subclass of object, None is an instance of object, None is not a class; switch to assertIsInstance / assertIsSubclass / assertEqual; keep bare assert + self.assert*; remove the commented lines; git commit. Ends with TestObjects + 13 methods + # Exceptions seen AssertionError NameError TypeError AttributeError. Review: unittest.TestCase methods or bare assert. What is next: test functions with unittest.
+  :keywords: Jacob Itegboje, Pumping Python, test objects with unittest, objects unittest, TestObjects, unittest.TestCase, import unittest, AttributeError has no attribute assertEqual, NameError name 'unittest' is not defined, Did you forget to import unittest, AssertionError True != False, TypeError takes 0 positional arguments but 1 was given, self first argument method, assertNotIsInstance, assertIsInstance, assertNotIsSubclass, assertIsSubclass, assertNotEqual, assertEqual, WPass WParentheses WObject, None is not a class, issubclass None, bool int float str tuple list set dict object, dir(object), reality == my_expectation, bare assert and assertIsInstance, uv run pytest-watcher . --now, red green refactor, remove the commented lines, git commit -am, another way to write tests, test_objects_w_unittest, everything is an object
 
 .. include:: ../links.rst
 
@@ -106,7 +106,7 @@ open the project
 ----
 
 *********************************************************************************
-add Testobjects class
+add TestObjects class
 *********************************************************************************
 
 =================================================================================
@@ -140,7 +140,7 @@ add Testobjects class
 
   the test is still green.
 
-* I change the name of the :ref:`object<everything is an object>` to ``Testobjects``
+* I change the name of the :ref:`object<everything is an object>` to ``TestObjects``
 
   .. code-block:: python
     :lineno-start: 7
@@ -150,7 +150,7 @@ add Testobjects class
 
 
     # class Objects(object):
-    class Testobjects(object):
+    class TestObjects(object):
 
         def test_failure(self):
             self.assertEqual(True, False)
@@ -159,7 +159,7 @@ add Testobjects class
 
   .. code-block:: python
 
-    AttributeError: 'Testobjects' object
+    AttributeError: 'TestObjects' object
                     has no attribute 'assertEqual'
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
@@ -183,7 +183,7 @@ add Testobjects class
 
 ----
 
-* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`object<everything is an object>` of ``Testobjects``
+* I add :ref:`unittest.TestCase<test_dir_unittest_testcase>` as the parent :ref:`object<everything is an object>` of ``TestObjects``
 
   .. code-block:: python
     :lineno-start: 7
@@ -193,8 +193,8 @@ add Testobjects class
 
 
     # class Objects(object):
-    # class Testobjects(object):
-    class Testobjects(unittest.TestCase):
+    # class TestObjects(object):
+    class TestObjects(unittest.TestCase):
 
         def test_failure(self):
             self.assertEqual(True, False)
@@ -230,8 +230,8 @@ add Testobjects class
     :emphasize-lines: 6-7
 
     # class Objects(object):
-    # class Testobjects(object):
-    class Testobjects(unittest.TestCase):
+    # class TestObjects(object):
+    class TestObjects(unittest.TestCase):
 
         def test_failure(self):
             # self.assertEqual(True, False)
@@ -258,7 +258,7 @@ add Testobjects class
     class WObject(object): pass
 
 
-    class Testobjects(unittest.TestCase):
+    class TestObjects(unittest.TestCase):
 
         def test_failure(self):
             self.assertEqual(True, True)
@@ -279,7 +279,7 @@ add Testobjects class
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add Testobjects class'
+    'add TestObjects class'
 
 ----
 
@@ -297,12 +297,12 @@ test_making_an_object_w_pass with unittest
 
 * I remove :ref:`test_failure`
 
-* I move :ref:`test_making_an_object_w_pass` to make it a :ref:`method<what is a method?>` of the :ref:`Testobjects class<add Testobjects class>`
+* I move :ref:`test_making_an_object_w_pass` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
   .. code-block:: python
     :lineno-start: 13
     :emphasize-lines: 3-5
 
-    class Testobjects(unittest.TestCase):
+    class TestObjects(unittest.TestCase):
 
         def test_making_an_object_w_pass():
             assert isinstance(WPass(), object)
@@ -316,7 +316,7 @@ test_making_an_object_w_pass with unittest
   .. code-block:: python
 
     TypeError:
-        Testobjects.test_making_an_object_w_pass()
+        TestObjects.test_making_an_object_w_pass()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -335,7 +335,7 @@ I add ``self`` to the parentheses of :ref:`test_making_an_object_w_pass`
   :lineno-start: 13
   :emphasize-lines: 3-4
 
-  class Testobjects(unittest.TestCase):
+  class TestObjects(unittest.TestCase):
 
       # def test_making_an_object_w_pass():
       def test_making_an_object_w_pass(self):
@@ -430,7 +430,7 @@ the test is green again.
   .. code-block:: python
     :lineno-start: 13
 
-    class Testobjects(unittest.TestCase):
+    class TestObjects(unittest.TestCase):
 
         def test_making_an_object_w_pass(self):
             assert isinstance(WPass(), object)
@@ -448,7 +448,7 @@ the test is green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_making_an_object_w_pass to Testobjects'
+    'move test_making_an_object_w_pass to TestObjects'
 
 ----
 
@@ -464,7 +464,7 @@ test_making_an_object_w_parentheses with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_making_an_object_w_parentheses` to make it a :ref:`method<what is a method?>` of the :ref:`Testobjects class<add Testobjects class>`
+* I move :ref:`test_making_an_object_w_parentheses` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
     :lineno-start: 19
@@ -485,7 +485,7 @@ test_making_an_object_w_parentheses with unittest
   .. code-block:: python
 
     TypeError:
-        Testobjects.test_making_an_object_w_parentheses()
+        TestObjects.test_making_an_object_w_parentheses()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -627,7 +627,7 @@ green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_making_an_object_w_parentheses to Testobjects'
+    'move test_making_an_object_w_parentheses to TestObjects'
 
 ----
 
@@ -643,7 +643,7 @@ test_making_an_object_w_object with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_making_an_object_w_object` to make it a :ref:`method<what is a method?>` of the :ref:`Testobjects class<add Testobjects class>`
+* I move :ref:`test_making_an_object_w_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -664,7 +664,7 @@ test_making_an_object_w_object with unittest
   .. code-block:: python
 
     TypeError:
-        Testobjects.test_making_an_object_w_object()
+        TestObjects.test_making_an_object_w_object()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -797,7 +797,7 @@ green.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_making_an_object_w_object to Testobjects'
+    'move test_making_an_object_w_object to TestObjects'
 
 ----
 
@@ -813,7 +813,7 @@ test_is_none_an_object with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_is_none_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`Testobjects class<add Testobjects class>`
+* I move :ref:`test_is_none_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
     :lineno-start: 33
@@ -835,7 +835,7 @@ test_is_none_an_object with unittest
   .. code-block:: python
 
     TypeError:
-        Testobjects.test_is_none_an_object()
+        TestObjects.test_is_none_an_object()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes ...
@@ -976,7 +976,7 @@ green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_is_none_an_object to Testobjects'
+    'move test_is_none_an_object to TestObjects'
 
 ----
 
@@ -992,7 +992,7 @@ test_is_a_boolean_an_object with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_is_a_boolean_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`Testobjects class<add Testobjects class>`
+* I move :ref:`test_is_a_boolean_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
     :lineno-start: 40
@@ -1014,7 +1014,7 @@ test_is_a_boolean_an_object with unittest
   .. code-block:: python
 
     TypeError:
-        Testobjects.test_is_a_boolean_an_object()
+        TestObjects.test_is_a_boolean_an_object()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -1139,7 +1139,7 @@ the test is green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_is_a_boolean_an_object to Testobjects'
+    'move test_is_a_boolean_an_object to TestObjects'
 
 ----
 
@@ -1155,7 +1155,7 @@ test_is_an_integer_an_object with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_is_an_integer_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`Testobjects class<add Testobjects class>`
+* I move :ref:`test_is_an_integer_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
     :lineno-start: 48
@@ -1176,7 +1176,7 @@ test_is_an_integer_an_object with unittest
   .. code-block:: python
 
     TypeError:
-        Testobjects.test_is_an_integer_an_object()
+        TestObjects.test_is_an_integer_an_object()
         takes 0 positional arguments but 1 was given
 
 ----
@@ -1298,7 +1298,7 @@ green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_is_an_integer_an_object to Testobjects'
+    'move test_is_an_integer_an_object to TestObjects'
 
 ----
 
@@ -1314,7 +1314,7 @@ test_is_a_float_an_object with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_is_a_float_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`Testobjects class<add Testobjects class>`
+* I move :ref:`test_is_a_float_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
     :lineno-start: 55
@@ -1335,7 +1335,7 @@ test_is_a_float_an_object with unittest
   .. code-block:: python
 
     TypeError:
-        Testobjects.test_is_a_float_an_object()
+        TestObjects.test_is_a_float_an_object()
         takes 0 positional arguments but 1 was given
 
 ----
@@ -1460,7 +1460,7 @@ green.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_is_a_float_an_object to Testobjects'
+    'move test_is_a_float_an_object to TestObjects'
 
 ----
 
@@ -1476,7 +1476,7 @@ test_is_a_string_an_object with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_is_a_string_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`Testobjects class<add Testobjects class>`
+* I move :ref:`test_is_a_string_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
     :lineno-start: 62
@@ -1497,7 +1497,7 @@ test_is_a_string_an_object with unittest
   .. code-block:: python
 
     TypeError:
-        Testobjects.test_is_a_string_an_object()
+        TestObjects.test_is_a_string_an_object()
         takes 0 positional arguments but 1 was given
 
 ----
@@ -1619,7 +1619,7 @@ green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_is_a_string_an_object to Testobjects'
+    'move test_is_a_string_an_object to TestObjects'
 
 ----
 
@@ -1635,7 +1635,7 @@ test_is_a_tuple_an_object with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_is_a_tuple_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`Testobjects class<add Testobjects class>`
+* I move :ref:`test_is_a_tuple_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
     :lineno-start: 69
@@ -1656,7 +1656,7 @@ test_is_a_tuple_an_object with unittest
   .. code-block:: python
 
     TypeError:
-        Testobjects.test_is_a_tuple_an_object()
+        TestObjects.test_is_a_tuple_an_object()
         takes 0 positional arguments but 1 was given
 
   because ...
@@ -1780,7 +1780,7 @@ the test is green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_is_a_tuple_an_object to Testobjects'
+    'move test_is_a_tuple_an_object to TestObjects'
 
 ----
 
@@ -1796,7 +1796,7 @@ test_is_a_list_an_object with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_is_a_list_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`Testobjects class<add Testobjects class>`
+* I move :ref:`test_is_a_list_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
     :lineno-start: 76
@@ -1817,7 +1817,7 @@ test_is_a_list_an_object with unittest
   .. code-block:: python
 
     TypeError:
-        Testobjects.test_is_a_list_an_object()
+        TestObjects.test_is_a_list_an_object()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -1941,7 +1941,7 @@ green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_is_a_list_an_object to Testobjects'
+    'move test_is_a_list_an_object to TestObjects'
 
 ----
 
@@ -1957,7 +1957,7 @@ test_is_a_set_an_object with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_is_a_set_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`Testobjects class<add Testobjects class>`
+* I move :ref:`test_is_a_set_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
     :lineno-start: 83
@@ -1978,7 +1978,7 @@ test_is_a_set_an_object with unittest
   .. code-block:: python
 
     TypeError:
-        Testobjects.test_is_a_set_an_object()
+        TestObjects.test_is_a_set_an_object()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) ...
@@ -2102,7 +2102,7 @@ green.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_is_a_set_an_object to Testobjects'
+    'move test_is_a_set_an_object to TestObjects'
 
 ----
 
@@ -2118,7 +2118,7 @@ test_is_a_dictionary_an_object with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_is_a_dictionary_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`Testobjects class<add Testobjects class>`
+* I move :ref:`test_is_a_dictionary_an_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
     :lineno-start: 90
@@ -2139,7 +2139,7 @@ test_is_a_dictionary_an_object with unittest
   .. code-block:: python
 
     TypeError:
-        Testobjects.test_is_a_dictionary_an_object()
+        TestObjects.test_is_a_dictionary_an_object()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -2263,7 +2263,7 @@ green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_is_a_dictionary_an_object to Testobjects'
+    'move test_is_a_dictionary_an_object to TestObjects'
 
 ----
 
@@ -2279,7 +2279,7 @@ test_dir_object with unittest
 
 * I go back to the terminal_ where the tests are running
 
-* I move :ref:`test_dir_object` to make it a :ref:`method<what is a method?>` of the :ref:`Testobjects class<add Testobjects class>`
+* I move :ref:`test_dir_object` to make it a :ref:`method<what is a method?>` of the :ref:`TestObjects class<add TestObjects class>`
 
   .. code-block:: python
     :lineno-start: 97
@@ -2310,7 +2310,7 @@ test_dir_object with unittest
   .. code-block:: python
 
     TypeError:
-        Testobjects.test_dir_object()
+        TestObjects.test_dir_object()
         takes 0 positional arguments but 1 was given
 
   because a :ref:`method<what is a method?>` of an :ref:`instance<how to test if something is an instance>` takes the :ref:`instance of the class<how to test if something is an instance>` (``self``) it belongs to as the first argument.
@@ -2418,7 +2418,7 @@ the test is green again.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'move test_dir_object to Testobjects'
+    'move test_dir_object to TestObjects'
 
 ----
 

@@ -2,7 +2,7 @@ import src.objects
 import unittest
 
 
-class Testobjects(unittest.TestCase):
+class TestObjects(unittest.TestCase):
 
     def test_making_an_object_w_pass(self):
         an_instance = src.objects.WPass()

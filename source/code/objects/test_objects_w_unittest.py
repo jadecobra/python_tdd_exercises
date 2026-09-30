@@ -10,7 +10,7 @@ class WParentheses(): pass
 class WObject(object): pass
 
 
-class Testobjects(unittest.TestCase):
+class TestObjects(unittest.TestCase):
 
     def test_making_an_object_w_pass(self):
         assert isinstance(WPass(), object)
