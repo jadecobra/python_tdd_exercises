@@ -20,7 +20,7 @@ what is None?
 
 None_ is used when there is no value. In Mathematics_ we use ``0`` for no quantity. In some languages or domains we use ``NULL``, in forms we use ``N/A`` when the options do not apply. In Python_ we can use None_, it is the simplest :ref:`object<everything is an object>`.
 
-I used :ref:`assertIs<test_assert_is>` and :ref:`assertIsNot<test_assert_is_not>` in :ref:`test_assertion_error_w_none` in the :ref:`assertion_error project<what is an assertion?>`, where I saw that
+I used :ref:`assertIs<test_assertIs>` and :ref:`assertIsNot<test_assertIsNot>` in :ref:`test_assertion_error_w_none` in the :ref:`assertion_error project<what is an assertion?>`, where I saw that
 
 * :ref:`False is NOT None<test_assertion_error_w_false>` and :ref:`False is NOT equal to None<test_assertion_error_w_equality>`
 * :ref:`True is NOT None<test_assertion_error_w_true>` and :ref:`True is NOT equal to None<test_assertion_error_w_equality>`
@@ -338,7 +338,7 @@ test_what_is_none
 
 * I remove :ref:`test_failure`
 
-* I add :ref:`test_what_is_none` with a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
+* I add :ref:`test_what_is_none` with a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assertIsNot>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -367,7 +367,7 @@ test_what_is_none
 
 ----
 
-I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
+I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>`
 
 .. code-block:: python
   :lineno-start: 6
@@ -655,7 +655,7 @@ the test passes.
     # False is NOT None
     # None is None
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assert_not_is_instance>` to test if :ref:`False<test_what_is_false>` is :ref:`an instance<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assertNotIsInstance>` to test if :ref:`False<test_what_is_false>` is :ref:`an instance<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -680,7 +680,7 @@ the test passes.
 
   because :ref:`False is an instance of the bool class<test_what_is_false>`.
 
-* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to the :ref:`assertIsInstance method<test_assert_is_instance>`
+* I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to the :ref:`assertIsInstance method<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -699,7 +699,7 @@ the test passes.
 
   the test passes.
 
-* I add a failing line for the other :ref:`boolean<what are booleans?>` with :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+* I add a failing line for the other :ref:`boolean<what are booleans?>` with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -726,7 +726,7 @@ the test passes.
 
   because :ref:`True is an instance of the bool class<test_what_is_true>`.
 
-* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assert_is_instance>`
+* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -747,7 +747,7 @@ the test passes.
 
   the test passes.
 
-* I add :ref:`assertIsInstance<test_assert_is_instance>` to test if :ref:`None<what is None?>` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
+* I add :ref:`assertIsInstance<test_assertIs_instance>` to test if :ref:`None<what is None?>` is :ref:`an instance (a copy)<how to test if something is an instance>` of the :ref:`bool class<what are booleans?>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -775,7 +775,7 @@ the test passes.
 
   because :ref:`None is NOT a boolean<test_is_none_a_boolean>`.
 
-* I make the line :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+* I make the line :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -994,7 +994,7 @@ the test passes.
 
   the test passes.
 
-* I add a new failing line with :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+* I add a new failing line with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -1022,7 +1022,7 @@ the test passes.
   - because ``-1`` is an integer_.
   - I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``.
 
-* I make the line :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assert_is_instance>`
+* I make the line :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -1043,7 +1043,7 @@ the test passes.
 
   the test passes.
 
-* I add a failing :ref:`assertion<what is an assertion?>` with :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+* I add a failing :ref:`assertion<what is an assertion?>` with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -1094,7 +1094,7 @@ the test passes.
 
   the test passes.
 
-* I add a failing :ref:`assertion<what is an assertion?>` with :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+* I add a failing :ref:`assertion<what is an assertion?>` with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -1125,7 +1125,7 @@ the test passes.
   - because ``1`` is an integer_.
   - I use ``1`` for all the integers_ (whole numbers) that are bigger than ``0``.
 
-* I make the failing line :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assert_is_instance>`
+* I make the failing line :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -1150,7 +1150,7 @@ the test passes.
 
   the test passes.
 
-* I add one more failing line to test if :ref:`None<what is None?>` is an integer_ with :ref:`assertIsInstance<test_assert_is_instance>`
+* I add one more failing line to test if :ref:`None<what is None?>` is an integer_ with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -1182,7 +1182,7 @@ the test passes.
 
   because :ref:`None is NOT an integer<test_is_none_an_integer>`.
 
-* I make the line :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+* I make the line :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -1396,7 +1396,7 @@ the test passes.
 
   the test passes. Time for :ref:`instance tests<how to test if something is an instance>`.
 
-* I add a failing line with :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``-0.1``
+* I add a failing line with :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``-0.1``
 
   .. code-block:: python
     :lineno-start: 26
@@ -1423,7 +1423,7 @@ the test passes.
   - because ``-0.1`` is a float_.
   - I use ``-0.1`` for all the binary floating point numbers that are smaller than ``0.0``.
 
-* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assert_is_instance>`
+* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1444,7 +1444,7 @@ the test passes.
 
   the test passes.
 
-* I add the next :ref:`instance test<how to test if something is an instance>` with :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``0.0``
+* I add the next :ref:`instance test<how to test if something is an instance>` with :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``0.0``
 
   .. code-block:: python
     :lineno-start: 26
@@ -1472,7 +1472,7 @@ the test passes.
 
   because ``0.0`` is a float_.
 
-* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assert_is_instance>`
+* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1495,7 +1495,7 @@ the test passes.
 
   the test passes.
 
-* I add a failing line with :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``0.1``
+* I add a failing line with :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``0.1``
 
   .. code-block:: python
     :lineno-start: 26
@@ -1526,7 +1526,7 @@ the test passes.
   - because ``0.1`` is a float_.
   - I use ``0.1`` for all the binary floating point numbers that are bigger than ``0.0``.
 
-* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assert_is_instance>`
+* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1551,7 +1551,7 @@ the test passes.
 
   the test passes.
 
-* I add one more failing line with the :ref:`assertIsInstance method<test_assert_is_instance>`
+* I add one more failing line with the :ref:`assertIsInstance method<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1583,7 +1583,7 @@ the test passes.
 
   because :ref:`None is NOT a float<test_is_none_a_float>`.
 
-* I make the statement :ref:`True<test_what_is_true>` with the :ref:`assertNotIsInstance method<test_assert_not_is_instance>`
+* I make the statement :ref:`True<test_what_is_true>` with the :ref:`assertNotIsInstance method<test_assertNotIsInstance>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1757,7 +1757,7 @@ the test passes.
 
   the test passes.
 
-* I add a failing line with :ref:`assertNotIsInstance<test_assert_not_is_instance>` for the empty string (``""``)
+* I add a failing line with :ref:`assertNotIsInstance<test_assertNotIsInstance>` for the empty string (``""``)
 
   .. code-block:: python
     :lineno-start: 35
@@ -1848,7 +1848,7 @@ the test passes.
 
   the test passes.
 
-* I add a failing :ref:`assertion<what is an assertion?>` with :ref:`assertIsInstance<test_assert_is_instance>`
+* I add a failing :ref:`assertion<what is an assertion?>` with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 35
@@ -2048,7 +2048,7 @@ the test passes.
 
   the test passes.
 
-* I add a failing line with :ref:`assertNotIsInstance<test_assert_not_is_instance>` for the empty tuple_
+* I add a failing line with :ref:`assertNotIsInstance<test_assertNotIsInstance>` for the empty tuple_
 
   .. code-block:: python
     :lineno-start: 42
@@ -2382,7 +2382,7 @@ the test passes.
 
   the test passes.
 
-* I add a failing :ref:`assertion<what is an assertion?>` with :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+* I add a failing :ref:`assertion<what is an assertion?>` with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -2430,7 +2430,7 @@ the test passes.
 
   the test passes.
 
-* I add one more failing line with the :ref:`assertIsInstance method<test_assert_is_instance>`
+* I add one more failing line with the :ref:`assertIsInstance method<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -2964,7 +2964,7 @@ the test passes.
 
   the test passes.
 
-* I add the last failing :ref:`instance test<how to test if something is an instance>` with :ref:`assertIsInstance<test_assert_is_instance>`
+* I add the last failing :ref:`instance test<how to test if something is an instance>` with :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 62
@@ -2994,7 +2994,7 @@ the test passes.
 
   because :ref:`None is NOT a dictionary<test_is_none_a_dictionary>`.
 
-* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
     :lineno-start: 62
@@ -3130,7 +3130,7 @@ close the project
 review
 *********************************************************************************
 
-* I used :ref:`assertIsInstance<test_assert_is_instance>` and :ref:`assertNotIsInstance<test_assert_not_is_instance>` to show that :ref:`None<what is None?>` is not an :ref:`instance<how to test if something is an instance>` of the other :ref:`basic types<basic objects>`.
+* I used :ref:`assertIsInstance<test_assertIs_instance>` and :ref:`assertNotIsInstance<test_assertNotIsInstance>` to show that :ref:`None<what is None?>` is not an :ref:`instance<how to test if something is an instance>` of the other :ref:`basic types<basic objects>`.
 
 * I used two new :ref:`assert methods<test_dir_unittest_testcase>` for :ref:`None<what is None?>`:
 

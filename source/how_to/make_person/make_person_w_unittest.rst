@@ -751,7 +751,7 @@ green again.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` in :ref:`test_dir_person_class`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` in :ref:`test_dir_person_class`
 
   .. code-block:: python
     :lineno-start: 174
@@ -767,7 +767,7 @@ green again.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` in :ref:`test_dir_person_class`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assert_Equal>` in :ref:`test_dir_person_class`
 
   .. code-block:: python
     :lineno-start: 174
@@ -922,7 +922,7 @@ the test is green again.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` in :ref:`test_dir_person_instance`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` in :ref:`test_dir_person_instance`
 
   .. code-block:: python
     :lineno-start: 191
@@ -945,7 +945,7 @@ the test is green again.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` in :ref:`test_dir_person_instance`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assert_Equal>` in :ref:`test_dir_person_instance`
 
   .. code-block:: python
     :lineno-start: 191
@@ -1175,7 +1175,7 @@ move assert_person_can_say_hello to TestPerson
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` in the :ref:`assert_person_can_say_hello method of the TestPerson class<move assert_person_can_say_hello to TestPerson>`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` in the :ref:`assert_person_can_say_hello method of the TestPerson class<move assert_person_can_say_hello to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 66
@@ -1208,7 +1208,7 @@ move assert_person_can_say_hello to TestPerson
     AssertionError: 'Hello, my name is joe blow and I am 30.'
                  == 'Hello, my name is joe blow and I am 30.'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` in the :ref:`assert_person_can_say_hello method of the TestPerson class<move assert_person_can_say_hello to TestPerson>`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assert_Equal>` in the :ref:`assert_person_can_say_hello method of the TestPerson class<move assert_person_can_say_hello to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 66
@@ -1739,7 +1739,7 @@ move assert_say_hello_works to TestPerson
 
   green.
 
-* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` in the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` in the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 47
@@ -1780,7 +1780,7 @@ move assert_say_hello_works to TestPerson
         'Hello, my name is mary public and I am 26.'
      == 'Hello, my name is mary public and I am 26.'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` in the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assert_Equal>` in the :ref:`assert_say_hello_works method of the TestPerson class<move assert_say_hello_works to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 47
@@ -2240,7 +2240,7 @@ move assert_person_factory_works to TestPerson
 
         def test_dir_person_class(self):
 
-* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` in the :ref:`assert_person_factory_works method of the TestPerson class<move assert_person_factory_works to TestPerson>`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` in the :ref:`assert_person_factory_works method of the TestPerson class<move assert_person_factory_works to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 29
@@ -2277,7 +2277,7 @@ move assert_person_factory_works to TestPerson
     FAILED ...test_mary - AssertionError:
         'mary, public, F, 2000' == 'mary, public, F, 2000'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_Equal>` in the :ref:`assert_person_factory_works method of the TestPerson class<move assert_person_factory_works to TestPerson>`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assert_Equal>` in the :ref:`assert_person_factory_works method of the TestPerson class<move assert_person_factory_works to TestPerson>`
 
   .. code-block:: python
     :lineno-start: 29

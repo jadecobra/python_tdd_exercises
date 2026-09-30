@@ -77,23 +77,23 @@ class TestUnittest(unittest.TestCase):
         assert reality == my_expectation
         self.assertEqual(reality, my_expectation)
 
-    def test_assert_is_not(self):
+    def test_assertIsNot(self):
         assert None is not False
         self.assertIsNot(None, False)
 
-    def test_assert_is(self):
+    def test_assertIs(self):
         assert False is False
         self.assertIs(False, False)
 
-    def test_assert_not_equal(self):
+    def test_assertNotEqual(self):
         assert True != 0
         self.assertNotEqual(True, 0)
 
-    def test_assert_equal(self):
+    def test_assertEqual(self):
         assert 0.0 == 0.0
         self.assertEqual(0.0, 0.0)
 
-    def test_assert_not_is_instance(self):
+    def test_assertNotIsInstance(self):
         assert not isinstance(
             unittest.TestCase, unittest.TestCase
         )
@@ -101,7 +101,7 @@ class TestUnittest(unittest.TestCase):
             unittest.TestCase, unittest.TestCase
         )
 
-    def test_assert_is_instance(self):
+    def test_assertIs_instance(self):
         an_object = unittest.TestCase
         an_instance = a_class()
 
@@ -113,7 +113,7 @@ class TestUnittest(unittest.TestCase):
             self, unittest.TestCase
         )
 
-    def test_assert_not_is_subclass(self):
+    def test_assertNotIsSubclass(self):
         assert not issubclass(
             unittest.TestCase, list
         )
@@ -121,7 +121,7 @@ class TestUnittest(unittest.TestCase):
             unittest.TestCase, dict
         )
 
-    def test_assert_is_subclass(self):
+    def test_assertIs_subclass(self):
         assert issubclass(unittest.TestCase, object)
         self.assertIsSubclass(
             unittest.TestCase, object

@@ -343,7 +343,7 @@ the test is green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assertIsNot>`
 
   .. code-block:: python
     :lineno-start: 15
@@ -365,7 +365,7 @@ the test is green again.
 
     AssertionError: unexpectedly identical: None
 
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
+* I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -474,7 +474,7 @@ green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assertIsNot>`
 
   .. code-block:: python
     :lineno-start: 19
@@ -496,7 +496,7 @@ green again.
 
     AssertionError: unexpectedly identical: None
 
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
+* I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>`
 
   .. code-block:: python
     :lineno-start: 19
@@ -608,7 +608,7 @@ green.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assertIsNot>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -630,7 +630,7 @@ green.
 
     AssertionError: unexpectedly identical: None
 
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
+* I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -752,7 +752,7 @@ green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assert_is_not>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsNot method<test_assertIsNot>`
 
   .. code-block:: python
     :lineno-start: 31
@@ -777,7 +777,7 @@ green again.
 
     AssertionError: unexpectedly identical: None
 
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
+* I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>`
 
   .. code-block:: python
     :lineno-start: 31
@@ -903,7 +903,7 @@ green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>`
 
   .. code-block:: python
     :lineno-start: 40
@@ -927,7 +927,7 @@ green again.
 
     AssertionError: 'the same thing' == 'the same thing'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>`
 
   .. code-block:: python
     :lineno-start: 40
@@ -1048,7 +1048,7 @@ the test is green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertIsNot<test_assert_is_not>` and :ref:`assertNotEqual methods<test_assert_not_equal>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertIsNot<test_assertIsNot>` and :ref:`assertNotEqual methods<test_assertNotEqual>`
 
   .. code-block:: python
     :lineno-start: 45
@@ -1077,7 +1077,7 @@ the test is green again.
 
     AssertionError: unexpectedly identical: None
 
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
+* I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
 
   .. code-block:: python
     :lineno-start: 45
@@ -1101,7 +1101,7 @@ the test is green again.
 
     AssertionError: <class 'object'> == <class 'object'>
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_identity_function`
 
   .. code-block:: python
     :lineno-start: 53
@@ -1236,7 +1236,7 @@ green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_why_use_a_function`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>` in :ref:`test_why_use_a_function`
 
   .. code-block:: python
     :lineno-start: 55
@@ -1283,7 +1283,7 @@ green again.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
-* I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_why_use_a_function`
+* I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_why_use_a_function`
 
   .. code-block:: python
     :lineno-start: 60
@@ -1491,7 +1491,7 @@ green.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_positional_arguments`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>` in :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 77
@@ -1564,7 +1564,7 @@ green.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
-* I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_positional_arguments`
+* I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 77
@@ -1851,7 +1851,7 @@ green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_keyword_arguments`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 112
@@ -1946,7 +1946,7 @@ green again.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
-* I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_keyword_arguments`
+* I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 112
@@ -2221,7 +2221,7 @@ the test is green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_args_and_kwargs`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>` in :ref:`test_args_and_kwargs`
 
   .. code-block:: python
     :lineno-start: 151
@@ -2253,7 +2253,7 @@ the test is green again.
 
     AssertionError: ('first', 'last') == ('first', 'last')
 
-* I change the :ref:`call<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_args_and_kwargs`
+* I change the :ref:`call<how to call a function with input>` from :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_args_and_kwargs`
 
   .. code-block:: python
     :lineno-start: 155
@@ -2456,7 +2456,7 @@ green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_optional_arguments`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>` in :ref:`test_optional_arguments`
 
   .. code-block:: python
     :lineno-start: 167
@@ -2537,7 +2537,7 @@ green again.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
-* I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_optional_arguments`
+* I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_optional_arguments`
 
   .. code-block:: python
     :lineno-start: 167
@@ -2836,7 +2836,7 @@ green.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` in :ref:`test_unknown_number_of_arguments`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>` in :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
     :lineno-start: 205
@@ -2934,7 +2934,7 @@ green.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
-* I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_unknown_number_of_arguments`
+* I change the :ref:`calls<how to call a function with input>` from :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_unknown_number_of_arguments`
 
   .. code-block:: python
     :lineno-start: 205

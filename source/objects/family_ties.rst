@@ -334,7 +334,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
+* I add a :ref:`call<how to call a function with input>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -460,7 +460,7 @@ more about instances vs subobjects
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to :ref:`assertIsInstance<test_assert_is_instance>` to show that ``src.family_ties.Doe`` is not an :ref:`instance<how to test if something is an instance>`
+* I add a :ref:`call<how to call a function with input>` to :ref:`assertIsInstance<test_assertIs_instance>` to show that ``src.family_ties.Doe`` is not an :ref:`instance<how to test if something is an instance>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -496,7 +496,7 @@ more about instances vs subobjects
 
   because an :ref:`object<everything is an object>` is not an :ref:`instance<how to test if something is an instance>`.
 
-* I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+* I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -580,7 +580,7 @@ what happens when a child calls the parent?
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsInstance method<test_assert_is_instance>`, this time with an :ref:`instance<how to test if something is an instance>` of ``Doe``
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsInstance method<test_assertIs_instance>`, this time with an :ref:`instance<how to test if something is an instance>` of ``Doe``
 
   .. code-block:: python
     :lineno-start: 24
@@ -2119,7 +2119,7 @@ the test passes.
 
   the test passes. I cheated, which means I need a better test.
 
-* I add :ref:`assertIsSubclass<test_assert_is_subclass>` to :ref:`test_objects_w_multiple_parents` to make sure ``Joe`` is a :ref:`child (subclass)<how to test if something is a subclass>` of ``Blow``, in ``test_family_ties.py``
+* I add :ref:`assertIsSubclass<test_assertIs_subclass>` to :ref:`test_objects_w_multiple_parents` to make sure ``Joe`` is a :ref:`child (subclass)<how to test if something is a subclass>` of ``Blow``, in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 51
@@ -2373,7 +2373,7 @@ the test passes.
                 self.first_name = 'mary'
                 self.last_name = 'doe' # use the default value
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubobject method<test_assert_not_is_subclass>` to :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubobject method<test_assertNotIsSubclass>` to :ref:`test_objects_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 66
@@ -2399,7 +2399,7 @@ the test passes.
         <class 'src.family_ties.Mary'> is
         a subclass of <class 'src.family_ties.Jane'>
 
-* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to the :ref:`assertIsSubobject method<test_assert_is_subclass>`
+* I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to the :ref:`assertIsSubobject method<test_assertIs_subclass>`
 
   .. code-block:: python
     :lineno-start: 66

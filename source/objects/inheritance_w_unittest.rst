@@ -353,7 +353,7 @@ the test is green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assert_not_is_instance>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assertNotIsInstance>`
 
   .. code-block:: python
     :lineno-start: 15
@@ -374,7 +374,7 @@ the test is green again.
         <tests.test_objects.WPass object at 0xffff01234a567>
         is an instance of <class 'object'>
 
-* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+* I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 15
@@ -390,7 +390,7 @@ the test is green again.
 
   the test passes.
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubobject method<test_assert_not_is_subclass>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubobject method<test_assertNotIsSubclass>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -410,7 +410,7 @@ the test is green again.
         <class 'tests.test_objects.WPass'>
         is a subclass of <class 'object'>
 
-* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
+* I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -522,7 +522,7 @@ green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assert_not_is_instance>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assertNotIsInstance>`
 
   .. code-block:: python
     :lineno-start: 22
@@ -545,7 +545,7 @@ green again.
         <tests.test_objects.WParentheses object at 0xffff45ab67cd8>
         is an instance of <class 'object'>
 
-* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+* I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 22
@@ -563,7 +563,7 @@ green again.
 
   the test passes.
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubobject method<test_assert_not_is_subclass>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubobject method<test_assertNotIsSubclass>`
 
   .. code-block:: python
     :lineno-start: 30
@@ -585,7 +585,7 @@ green again.
         <class 'tests.test_objects.WParentheses'>
         is a subclass of <class 'object'>
 
-* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
+* I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
     :lineno-start: 30
@@ -701,7 +701,7 @@ green.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assert_not_is_instance>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assertNotIsInstance>`
 
   .. code-block:: python
     :lineno-start: 29
@@ -722,7 +722,7 @@ green.
         <tests.test_objects.WObject object at 0xffff345a6b789>
         is an instance of <class 'object'>
 
-* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+* I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 29
@@ -738,7 +738,7 @@ green.
 
   the test passes.
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubobject method<test_assert_not_is_subclass>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsSubobject method<test_assertNotIsSubclass>`
 
   .. code-block:: python
     :lineno-start: 35
@@ -758,7 +758,7 @@ green.
         <class 'tests.test_objects.WObject'>
         is a subclass of <class 'object'>
 
-* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
+* I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
     :lineno-start: 35
@@ -873,7 +873,7 @@ green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assert_not_is_instance>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance method<test_assertNotIsInstance>`
 
   .. code-block:: python
     :lineno-start: 36
@@ -894,7 +894,7 @@ green again.
     AssertionError:
         None is an instance of <class 'object'>
 
-* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+* I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 36
@@ -911,7 +911,7 @@ green again.
 
   the test passes.
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsSubobject method<test_assert_is_subclass>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertIsSubobject method<test_assertIs_subclass>`
 
   .. code-block:: python
     :lineno-start: 42
@@ -1052,7 +1052,7 @@ the test is green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubobject methods<test_assert_not_is_subclass>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assertNotIsInstance>` and :ref:`assertNotIsSubobject methods<test_assertNotIsSubclass>`
 
   .. code-block:: python
     :lineno-start: 44
@@ -1077,7 +1077,7 @@ the test is green again.
         <class 'bool'>
         is an instance of <class 'object'>
 
-* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+* I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 44
@@ -1099,7 +1099,7 @@ the test is green again.
         <class 'bool'>
         is a subclass of <class 'object'>
 
-* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
+* I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
     :lineno-start: 50
@@ -1211,7 +1211,7 @@ green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubobject methods<test_assert_not_is_subclass>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assertNotIsInstance>` and :ref:`assertNotIsSubobject methods<test_assertNotIsSubclass>`
 
   .. code-block:: python
     :lineno-start: 51
@@ -1236,7 +1236,7 @@ green again.
         <class 'int'>
         is an instance of <class 'object'>
 
-* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+* I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 51
@@ -1259,7 +1259,7 @@ green again.
         <class 'int'>
         is a subclass of <class 'object'>
 
-* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
+* I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
     :lineno-start: 57
@@ -1373,7 +1373,7 @@ green.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubobject methods<test_assert_not_is_subclass>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assertNotIsInstance>` and :ref:`assertNotIsSubobject methods<test_assertNotIsSubclass>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -1398,7 +1398,7 @@ green.
         <class 'float'>
         is an instance of <class 'object'>
 
-* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+* I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -1421,7 +1421,7 @@ green.
         <class 'float'>
         is a subclass of <class 'object'>
 
-* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
+* I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
     :lineno-start: 64
@@ -1532,7 +1532,7 @@ green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubobject methods<test_assert_not_is_subclass>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assertNotIsInstance>` and :ref:`assertNotIsSubobject methods<test_assertNotIsSubclass>`
 
   .. code-block:: python
     :lineno-start: 65
@@ -1557,7 +1557,7 @@ green again.
         <class 'str'>
         is an instance of <class 'object'>
 
-* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+* I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 65
@@ -1580,7 +1580,7 @@ green again.
         <class 'str'>
         is a subclass of <class 'object'>
 
-* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
+* I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
     :lineno-start: 71
@@ -1693,7 +1693,7 @@ the test is green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubobject methods<test_assert_not_is_subclass>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assertNotIsInstance>` and :ref:`assertNotIsSubobject methods<test_assertNotIsSubclass>`
 
   .. code-block:: python
     :lineno-start: 72
@@ -1718,7 +1718,7 @@ the test is green again.
         <class 'tuple'>
         is an instance of <class 'object'>
 
-* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+* I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 72
@@ -1741,7 +1741,7 @@ the test is green again.
         <class 'tuple'>
         is a subclass of <class 'object'>
 
-* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
+* I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
     :lineno-start: 78
@@ -1854,7 +1854,7 @@ green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubobject methods<test_assert_not_is_subclass>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assertNotIsInstance>` and :ref:`assertNotIsSubobject methods<test_assertNotIsSubclass>`
 
   .. code-block:: python
     :lineno-start: 79
@@ -1879,7 +1879,7 @@ green again.
         <class 'list'>
         is an instance of <class 'object'>
 
-* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+* I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 79
@@ -1902,7 +1902,7 @@ green again.
         <class 'list'>
         is a subclass of <class 'object'>
 
-* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
+* I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
     :lineno-start: 85
@@ -2015,7 +2015,7 @@ green.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubobject methods<test_assert_not_is_subclass>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assertNotIsInstance>` and :ref:`assertNotIsSubobject methods<test_assertNotIsSubclass>`
 
   .. code-block:: python
     :lineno-start: 86
@@ -2040,7 +2040,7 @@ green.
         <class 'set'>
         is an instance of <class 'object'>
 
-* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+* I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 86
@@ -2063,7 +2063,7 @@ green.
         <class 'set'>
         is a subclass of <class 'object'>
 
-* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
+* I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
     :lineno-start: 92
@@ -2176,7 +2176,7 @@ green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assert_not_is_instance>` and :ref:`assertNotIsSubobject methods<test_assert_not_is_subclass>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotIsInstance<test_assertNotIsInstance>` and :ref:`assertNotIsSubobject methods<test_assertNotIsSubclass>`
 
   .. code-block:: python
     :lineno-start: 93
@@ -2201,7 +2201,7 @@ green again.
         <class 'dict'>
         is an instance of <class 'object'>
 
-* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+* I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 93
@@ -2224,7 +2224,7 @@ green again.
         <class 'dict'>
         is a subclass of <class 'object'>
 
-* I change :ref:`assertNotIsSubclass<test_assert_not_is_subclass>` to :ref:`assertIsSubclass<test_assert_is_subclass>`
+* I change :ref:`assertNotIsSubclass<test_assertNotIsSubclass>` to :ref:`assertIsSubclass<test_assertIs_subclass>`
 
   .. code-block:: python
     :lineno-start: 99
@@ -2347,7 +2347,7 @@ the test is green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>`
 
   .. code-block:: python
     :lineno-start: 100
@@ -2374,7 +2374,7 @@ the test is green again.
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`.
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>`
 
   .. code-block:: python
     :lineno-start: 113

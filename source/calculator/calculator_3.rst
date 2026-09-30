@@ -75,7 +75,7 @@ test_division_handles_zero_division_error
 
 ----
 
-I change the :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertEqual method<test_assert_equal>` in :ref:`test_division`
+I change the :ref:`assertRaises<another way to test if an Exception is raised>` to :ref:`assertEqual method<test_assertEqual>` in :ref:`test_division`
 
 .. code-block:: python
   :lineno-start: 42

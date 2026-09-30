@@ -947,7 +947,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the test is still green
 
-* I add :ref:`assertEqual<test_assert_equal>` to the :ref:`except block<how to handle Exceptions>` with the `dir built-in function`_ to see the :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Exception<how to test that an Exception is raised>` in the :ref:`except block<how to handle Exceptions>`
+* I add :ref:`assertEqual<test_assertEqual>` to the :ref:`except block<how to handle Exceptions>` with the `dir built-in function`_ to see the :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` of the :ref:`Exception<how to test that an Exception is raised>` in the :ref:`except block<how to handle Exceptions>`
 
   .. code-block:: python
     :lineno-start: 60

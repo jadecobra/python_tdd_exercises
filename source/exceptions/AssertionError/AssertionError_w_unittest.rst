@@ -379,7 +379,7 @@ the test is green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>` for the three :ref:`assertions<what is an assertion?>`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>` for the three :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 28
@@ -411,7 +411,7 @@ the test is green again.
 
     E   assert (1 + 1) == 11
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``(1+1, 2)``
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``(1+1, 2)``
 
   .. code-block:: python
     :lineno-start: 30
@@ -429,7 +429,7 @@ the test is green again.
 
     AssertionError: '11' == '11'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``('1'+'1', '11')``
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``('1'+'1', '11')``
 
   .. code-block:: python
     :lineno-start: 30
@@ -453,7 +453,7 @@ the test is green again.
 
     AssertionError: 'I am alive' == 'I am alive'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``('I am'+' alive', 'I am alive')``
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``('I am'+' alive', 'I am alive')``
 
   .. code-block:: python
     :lineno-start: 40
@@ -697,7 +697,7 @@ the test is green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to the :ref:`assertIsNot<test_assert_is_not>` and :ref:`assertIs methods<test_assert_is>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_none`
+* I add :ref:`calls<how to call a function with input>` to the :ref:`assertIsNot<test_assertIsNot>` and :ref:`assertIs methods<test_assertIs>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
     :lineno-start: 46
@@ -758,7 +758,7 @@ the test is green again.
 
     E       assert None is not None
 
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` for ``(None, None)``
+* I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>` for ``(None, None)``
 
   .. code-block:: python
     :lineno-start: 46
@@ -784,7 +784,7 @@ the test is green again.
 
     E    assert False is None
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(False, None)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(False, None)``
 
   .. code-block:: python
     :lineno-start: 52
@@ -808,7 +808,7 @@ the test is green again.
 
     E    assert True is None
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(True, None)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(True, None)``
 
   .. code-block:: python
     :lineno-start: 56
@@ -826,7 +826,7 @@ the test is green again.
 
     AssertionError: 0 is not None
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(0, None)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(0, None)``
 
   .. code-block:: python
     :lineno-start: 60
@@ -844,7 +844,7 @@ the test is green again.
 
     AssertionError: 0.0 is not None
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(0.0, None)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(0.0, None)``
 
   .. code-block:: python
     :lineno-start: 64
@@ -862,7 +862,7 @@ the test is green again.
 
     AssertionError: '' is not None
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``('', None)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``('', None)``
 
   .. code-block:: python
     :lineno-start: 68
@@ -880,7 +880,7 @@ the test is green again.
 
     AssertionError: () is not None
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``((), None)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``((), None)``
 
   .. code-block:: python
     :lineno-start: 72
@@ -898,7 +898,7 @@ the test is green again.
 
     AssertionError: [] is not None
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``([], None)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``([], None)``
 
   .. code-block:: python
     :lineno-start: 76
@@ -916,7 +916,7 @@ the test is green again.
 
     AssertionError: set() is not None
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(set(), None)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(set(), None)``
 
   .. code-block:: python
     :lineno-start: 80
@@ -934,7 +934,7 @@ the test is green again.
 
     AssertionError: {} is not None
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``({}, None)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``({}, None)``
 
   .. code-block:: python
     :lineno-start: 84
@@ -1326,7 +1326,7 @@ the test is green again.
 
 ----
 
-* I add calls to :ref:`assertIsNot<test_assert_is_not>` and :ref:`assertIs<test_assert_is>` to :ref:`test_assertion_error_w_false`
+* I add calls to :ref:`assertIsNot<test_assertIsNot>` and :ref:`assertIs<test_assertIs>` to :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
     :lineno-start: 84
@@ -1387,7 +1387,7 @@ the test is green again.
 
     E       assert False is not False
 
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` for ``(False, False)``
+* I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>` for ``(False, False)``
 
   .. code-block:: python
     :lineno-start: 84
@@ -1407,7 +1407,7 @@ the test is green again.
 
     AssertionError: None is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(None, False)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(None, False)``
 
   .. code-block:: python
     :lineno-start: 90
@@ -1425,7 +1425,7 @@ the test is green again.
 
     AssertionError: True is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(True, False)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(True, False)``
 
   .. code-block:: python
     :lineno-start: 94
@@ -1443,7 +1443,7 @@ the test is green again.
 
     AssertionError: 0 is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(0, False)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(0, False)``
 
   .. code-block:: python
     :lineno-start: 98
@@ -1461,7 +1461,7 @@ the test is green again.
 
     AssertionError: 0.0 is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(0.0, False)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(0.0, False)``
 
   .. code-block:: python
     :lineno-start: 102
@@ -1479,7 +1479,7 @@ the test is green again.
 
     AssertionError: '' is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``('', False)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``('', False)``
 
   .. code-block:: python
     :lineno-start: 106
@@ -1497,7 +1497,7 @@ the test is green again.
 
     AssertionError: () is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``((), False)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``((), False)``
 
   .. code-block:: python
     :lineno-start: 110
@@ -1515,7 +1515,7 @@ the test is green again.
 
     AssertionError: [] is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``([], False)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``([], False)``
 
   .. code-block:: python
     :lineno-start: 114
@@ -1533,7 +1533,7 @@ the test is green again.
 
     AssertionError: set() is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(set(), False)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(set(), False)``
 
   .. code-block:: python
     :lineno-start: 118
@@ -1551,7 +1551,7 @@ the test is green again.
 
     AssertionError: {} is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``({}, False)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``({}, False)``
 
   .. code-block:: python
     :lineno-start: 122
@@ -1940,7 +1940,7 @@ the test is green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to :ref:`assertIsNot<test_assert_is_not>` and :ref:`assertIs<test_assert_is>` to :ref:`test_assertion_error_w_true`
+* I add :ref:`calls<how to call a function with input>` to :ref:`assertIsNot<test_assertIsNot>` and :ref:`assertIs<test_assertIs>` to :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
     :lineno-start: 122
@@ -1993,7 +1993,7 @@ the test is green again.
 
     E       assert True is not True
 
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` for ``(True, True)``
+* I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>` for ``(True, True)``
 
   .. code-block:: python
     :lineno-start: 122
@@ -2013,7 +2013,7 @@ the test is green again.
 
     AssertionError: None is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(None, True)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(None, True)``
 
   .. code-block:: python
     :lineno-start: 128
@@ -2031,7 +2031,7 @@ the test is green again.
 
     AssertionError: False is not True
 
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` for ``(False, True)``
+* I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>` for ``(False, True)``
 
   .. code-block:: python
     :lineno-start: 132
@@ -2049,7 +2049,7 @@ the test is green again.
 
     AssertionError: 0 is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(0, True)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(0, True)``
 
   .. code-block:: python
     :lineno-start: 136
@@ -2067,7 +2067,7 @@ the test is green again.
 
     AssertionError: 0.0 is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(0.0, True)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(0.0, True)``
 
   .. code-block:: python
     :lineno-start: 140
@@ -2085,7 +2085,7 @@ the test is green again.
 
     AssertionError: '' is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``('', True)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``('', True)``
 
   .. code-block:: python
     :lineno-start: 144
@@ -2103,7 +2103,7 @@ the test is green again.
 
     AssertionError: () is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``((), True)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``((), True)``
 
   .. code-block:: python
     :lineno-start: 148
@@ -2121,7 +2121,7 @@ the test is green again.
 
     AssertionError: [] is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``([], True)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``([], True)``
 
   .. code-block:: python
     :lineno-start: 152
@@ -2139,7 +2139,7 @@ the test is green again.
 
     AssertionError: set() is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``(set(), True)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``(set(), True)``
 
   .. code-block:: python
     :lineno-start: 156
@@ -2157,7 +2157,7 @@ the test is green again.
 
     AssertionError: {} is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``({}, True)``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``({}, True)``
 
   .. code-block:: python
     :lineno-start: 160
@@ -2541,7 +2541,7 @@ the test is green again.
 
 ----
 
-* I add :ref:`calls<how to call a function with input>` to :ref:`assertNotEqual<test_assert_not_equal>` and :ref:`assertEqual<test_assert_equal>` to :ref:`test_assertion_error_w_equality`
+* I add :ref:`calls<how to call a function with input>` to :ref:`assertNotEqual<test_assertNotEqual>` and :ref:`assertEqual<test_assertEqual>` to :ref:`test_assertion_error_w_equality`
 
   .. code-block:: python
     :lineno-start: 160
@@ -2582,7 +2582,7 @@ the test is green again.
 
     E   assert None != None
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``(None, None)``
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``(None, None)``
 
   .. code-block:: python
     :lineno-start: 160
@@ -2602,7 +2602,7 @@ the test is green again.
 
     AssertionError: False == False
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``(False, False)``
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``(False, False)``
 
   .. code-block:: python
     :lineno-start: 166
@@ -2620,7 +2620,7 @@ the test is green again.
 
     AssertionError: True == True
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``(True, True)``
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``(True, True)``
 
   .. code-block:: python
     :lineno-start: 170
@@ -2638,7 +2638,7 @@ the test is green again.
 
     AssertionError: False != None
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``(False, None)``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``(False, None)``
 
   .. code-block:: python
     :lineno-start: 174
@@ -2662,7 +2662,7 @@ the test is green again.
 
     E    assert False == True
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``(False, True)``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``(False, True)``
 
   .. code-block:: python
     :lineno-start: 178
@@ -2680,7 +2680,7 @@ the test is green again.
 
     AssertionError: True != None
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``(True, None)``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``(True, None)``
 
   .. code-block:: python
     :lineno-start: 182
@@ -2809,7 +2809,7 @@ the test is green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to :ref:`assertIs<test_assert_is>` for ``assert 0 is not 0.0``
+* I add a :ref:`call<how to call a function with input>` to :ref:`assertIs<test_assertIs>` for ``assert 0 is not 0.0``
 
   .. code-block:: python
     :lineno-start: 179
@@ -2830,7 +2830,7 @@ the test is green again.
 
   compare the :ref:`assertions<what is an assertion?>`: ``assertIs(0, 0.0)`` vs ``assert 0 is 0.0``.
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>`
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>`
 
   .. code-block:: python
     :lineno-start: 179
@@ -2846,7 +2846,7 @@ the test is green again.
 
   the test passes. Compare the :ref:`assertions<what is an assertion?>`: ``assertIsNot(0, 0.0)`` vs ``assert 0 is not 0.0``.
 
-* I add a :ref:`call<how to call a function with input>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``assert 0 == 0.0``
+* I add a :ref:`call<how to call a function with input>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``assert 0 == 0.0``
 
   .. code-block:: python
     :lineno-start: 185
@@ -2866,7 +2866,7 @@ the test is green again.
 
   compare the :ref:`assertions<what is an assertion?>`: ``assertNotEqual(0, 0.0)`` vs ``assert 0 != 0.0``.
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>`
 
   .. code-block:: python
     :lineno-start: 185
@@ -2940,7 +2940,7 @@ will_not_run with unittest
 
   the tests are still green.
 
-* I add a :ref:`call<how to call a function with input>` to :ref:`test_assert_equal`
+* I add a :ref:`call<how to call a function with input>` to :ref:`test_assertEqual`
 
   .. code-block:: python
     :lineno-start: 186
@@ -3135,7 +3135,7 @@ the test is green again.
 
 ----
 
-* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assert_not_equal>`
+* I add a :ref:`call<how to call a function with input>` to the :ref:`assertNotEqual method<test_assertNotEqual>`
 
   .. code-block:: python
     :lineno-start: 192
@@ -3156,7 +3156,7 @@ the test is green again.
 
     AssertionError: False == False
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>`
 
   .. code-block:: python
     :lineno-start: 192

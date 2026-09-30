@@ -25,7 +25,7 @@ what are booleans?
 
 Imagine we divide the universe in two and the options are things that are the True_ group and the False_ group. These are the booleans_: True_ and False_.
 
-I used :ref:`assertIs<test_assert_is>` and :ref:`assertIsNot<test_assert_is_not>` in :ref:`test_assertion_error_w_false` and :ref:`test_assertion_error_w_true` in the :ref:`assertion_error project<what is an assertion?>`, where I saw that
+I used :ref:`assertIs<test_assertIs>` and :ref:`assertIsNot<test_assertIsNot>` in :ref:`test_assertion_error_w_false` and :ref:`test_assertion_error_w_true` in the :ref:`assertion_error project<what is an assertion?>`, where I saw that
 
 * :ref:`False is NOT None<test_assertion_error_w_false>` and :ref:`False is NOT equal to None<test_assertion_error_w_equality>`
 * :ref:`True is NOT None<test_assertion_error_w_true>` and :ref:`True is NOT equal to None<test_assertion_error_w_equality>`
@@ -290,7 +290,7 @@ test_what_is_false
 ----
 
 * I remove :ref:`test_failure`
-* I add :ref:`test_what_is_false` with :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+* I add :ref:`test_what_is_false` with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
 .. code-block:: python
   :lineno-start: 4
@@ -322,7 +322,7 @@ this was also in :ref:`test_is_none_a_boolean`.
 
 ----
 
-I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to the :ref:`assertIsInstance method<test_assert_is_instance>`
+I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to the :ref:`assertIsInstance method<test_assertIs_instance>`
 
 .. code-block:: python
   :lineno-start: 6
@@ -402,7 +402,7 @@ the test passes.
     # Exceptions seen
     # AssertionError
 
-* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>`
+* I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -450,7 +450,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
     AssertionError: False is an instance
                     of <class 'bool'>
 
-* I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to :ref:`assertIsInstance<test_assert_is_instance>` for ``(False, (bool, int))``
+* I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to :ref:`assertIsInstance<test_assertIs_instance>` for ``(False, (bool, int))``
 
   .. code-block:: python
     :lineno-start: 6
@@ -506,7 +506,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
     AssertionError: False is not an
                     instance of <class 'float'>
 
-* I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``(False, float)``
+* I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, float)``
 
   .. code-block:: python
     :lineno-start: 11
@@ -542,7 +542,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
     AssertionError: False is not an instance
                     of <class 'str'>
 
-* I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``(False, str)``
+* I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, str)``
 
   .. code-block:: python
     :lineno-start: 13
@@ -578,7 +578,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
     AssertionError: False is not an instance
                     of <class 'tuple'>
 
-* I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``(False, tuple)``
+* I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, tuple)``
 
   .. code-block:: python
     :lineno-start: 15
@@ -614,7 +614,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
     AssertionError: False is not an instance
                     of <class 'list'>
 
-* I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``(False, list)``
+* I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, list)``
 
   .. code-block:: python
     :lineno-start: 17
@@ -650,7 +650,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
     AssertionError: False is not an instance
                     of <class 'set'>
 
-* I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``(False, set)``
+* I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, set)``
 
   .. code-block:: python
     :lineno-start: 19
@@ -686,7 +686,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
     AssertionError: False is not an instance
                     of <class 'dict'>
 
-* I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>` for ``(False, dict)``
+* I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>` for ``(False, dict)``
 
   .. code-block:: python
     :lineno-start: 21
@@ -702,7 +702,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 
   the test passes.
 
-* I use a tuple_ with float_, str_, tuple_, :ref:`list<what is a list?>`, set_ and :ref:`dict<what is a dictionary?>` with a :ref:`call<how to call a function with input>` to :ref:`assertIsInstance<test_assert_is_instance>`
+* I use a tuple_ with float_, str_, tuple_, :ref:`list<what is a list?>`, set_ and :ref:`dict<what is a dictionary?>` with a :ref:`call<how to call a function with input>` to :ref:`assertIsInstance<test_assertIs_instance>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -731,7 +731,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
                         <class 'set'>, <class 'dict'>
                     )
 
-* I change :ref:`assertIsInstance<test_assert_is_instance>` to :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+* I change :ref:`assertIsInstance<test_assertIs_instance>` to :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -752,7 +752,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 
   the test passes.
 
-* I use the :ref:`assertIsNot method<test_assert_is_not>` like I did in :ref:`test_assertion_error_w_false`
+* I use the :ref:`assertIsNot method<test_assertIsNot>` like I did in :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
     :lineno-start: 26
@@ -778,7 +778,7 @@ The :ref:`instance methods<how to test if something is an instance>` can take a 
 
   because :ref:`False is False<test_what_is_false>`.
 
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` for ``(False, False)``
+* I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>` for ``(False, False)``
 
   .. code-block:: python
     :lineno-start: 26
@@ -867,7 +867,7 @@ I can test if Python_ groups an :ref:`object<everything is an object>` as :ref:`
 
 ----
 
-I change the :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` to make the statement :ref:`True<test_what_is_true>`
+I change the :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>` to make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 33
@@ -1079,7 +1079,7 @@ test_what_is_true
 
 ----
 
-I add :ref:`test_what_is_true` with :ref:`assertNotIsInstance<test_assert_not_is_instance>`
+I add :ref:`test_what_is_true` with :ref:`assertNotIsInstance<test_assertNotIsInstance>`
 
 .. code-block:: python
   :lineno-start: 17
@@ -1111,7 +1111,7 @@ this was also in :ref:`test_is_none_a_boolean`, without the tuple_ of :ref:`obje
 
 ----
 
-I change :ref:`assertNotIsInstance<test_assert_not_is_instance>` to the :ref:`assertIsInstance method<test_assert_is_instance>`
+I change :ref:`assertNotIsInstance<test_assertNotIsInstance>` to the :ref:`assertIsInstance method<test_assertIs_instance>`
 
 .. code-block:: python
   :lineno-start: 18
@@ -1156,7 +1156,7 @@ the test passes.
 
   in Python_, True_ is a :ref:`boolean<what are booleans?>` and an integer_.
 
-* I add a :ref:`call<how to call a function with input>` to :ref:`assertIsInstance<test_assert_is_instance>` with a tuple_ that has float_, str_, tuple_, :ref:`list<what is a list?>`, set_ and :ref:`dict<what is a dictionary?>`
+* I add a :ref:`call<how to call a function with input>` to :ref:`assertIsInstance<test_assertIs_instance>` with a tuple_ that has float_, str_, tuple_, :ref:`list<what is a list?>`, set_ and :ref:`dict<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 22
@@ -1185,7 +1185,7 @@ the test passes.
                         <class 'set'>, <class 'dict'>
                     )
 
-* I change :ref:`assertIsInstance<test_assert_is_instance>` to the :ref:`assertNotIsInstance method<test_assert_not_is_instance>`
+* I change :ref:`assertIsInstance<test_assertIs_instance>` to the :ref:`assertNotIsInstance method<test_assertNotIsInstance>`
 
   .. code-block:: python
     :lineno-start: 22
@@ -1206,7 +1206,7 @@ the test passes.
 
   the test passes.
 
-* I use the :ref:`assertIsNot method<test_assert_is_not>` like I did in :ref:`test_assertion_error_w_true`
+* I use the :ref:`assertIsNot method<test_assertIsNot>` like I did in :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
     :lineno-start: 24
@@ -1232,7 +1232,7 @@ the test passes.
 
   because :ref:`True is True<test_what_is_true>`.
 
-* I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>` for ``(True, True)``
+* I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>` for ``(True, True)``
 
   .. code-block:: python
     :lineno-start: 24
@@ -1321,7 +1321,7 @@ I can test if Python_ groups an :ref:`object<everything is an object>` as :ref:`
 
 ----
 
-I change :ref:`assertIsNot<test_assert_is_not>` to :ref:`assertIs<test_assert_is>`
+I change :ref:`assertIsNot<test_assertIsNot>` to :ref:`assertIs<test_assertIs>`
 
 .. code-block:: python
   :lineno-start: 31
@@ -1561,7 +1561,7 @@ Is :ref:`None<what is None?>` grouped as :ref:`False<test_what_is_false>` or :re
 
 ----
 
-I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``None, False``
+I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``None, False``
 
 .. code-block:: python
   :lineno-start: 34
@@ -1604,7 +1604,7 @@ the test passes.
 
     AssertionError: None is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``None, False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``None, False``
 
   .. code-block:: python
     :lineno-start: 34
@@ -1640,7 +1640,7 @@ the test passes.
 
     AssertionError: None != True
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``None, True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``None, True``
 
   .. code-block:: python
     :lineno-start: 37
@@ -1675,7 +1675,7 @@ the test passes.
 
     AssertionError: None is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``None, True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``None, True``
 
   .. code-block:: python
     :lineno-start: 39
@@ -1850,7 +1850,7 @@ Is an integer_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_wh
 
 ----
 
-I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``-1, False``
+I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``-1, False``
 
 .. code-block:: python
   :lineno-start: 42
@@ -1893,7 +1893,7 @@ the test passes.
 
     AssertionError: -1 is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``-1, False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``-1, False``
 
   .. code-block:: python
     :lineno-start: 42
@@ -1929,7 +1929,7 @@ the test passes.
 
     AssertionError: -1 != True
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``-1, True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``-1, True``
 
   .. code-block:: python
     :lineno-start: 45
@@ -1964,7 +1964,7 @@ the test passes.
 
     AssertionError: -1 is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``-1, True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``-1, True``
 
   .. code-block:: python
     :lineno-start: 47
@@ -2157,7 +2157,7 @@ the test passes.
 
   a reminder that :ref:`False is an integer<test_what_is_false>`, the test also shows that the value of :ref:`False<test_what_is_false>` is ``0``.
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``0, False``
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``0, False``
 
   .. code-block:: python
     :lineno-start: 49
@@ -2192,7 +2192,7 @@ the test passes.
 
     AssertionError: 0 is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``0, False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``0, False``
 
   .. code-block:: python
     :lineno-start: 51
@@ -2227,7 +2227,7 @@ the test passes.
 
     AssertionError: 0 != True
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``0, True``
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``0, True``
 
   .. code-block:: python
     :lineno-start: 53
@@ -2262,7 +2262,7 @@ the test passes.
 
     AssertionError: 0 != True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``0, True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``0, True``
 
   .. code-block:: python
     :lineno-start: 55
@@ -2407,7 +2407,7 @@ the test passes.
 
     AssertionError: 1 != False
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``1, False``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``1, False``
 
   .. code-block:: python
     :lineno-start: 56
@@ -2442,7 +2442,7 @@ the test passes.
 
     AssertionError: 1 is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``1, False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``1, False``
 
   .. code-block:: python
     :lineno-start: 58
@@ -2479,7 +2479,7 @@ the test passes.
 
   a reminder that :ref:`True is an integer<test_what_is_true>` and its value is ``1``.
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``1, True``
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``1, True``
 
   .. code-block:: python
     :lineno-start: 60
@@ -2514,7 +2514,7 @@ the test passes.
 
     AssertionError: 1 is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``1, True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``1, True``
 
   .. code-block:: python
     :lineno-start: 62
@@ -2742,7 +2742,7 @@ Is a float_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_
 
 ----
 
-I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``a_negative_float, False``
+I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_negative_float, False``
 
 .. code-block:: python
   :lineno-start: 66
@@ -2785,7 +2785,7 @@ the test passes.
 
     AssertionError: -0.1 is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``a_negative_float, False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_negative_float, False``
 
   .. code-block:: python
     :lineno-start: 68
@@ -2820,7 +2820,7 @@ the test passes.
 
     AssertionError: -0.1 != True
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``a_negative_float, True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_negative_float, True``
 
   .. code-block:: python
     :lineno-start: 70
@@ -2855,7 +2855,7 @@ the test passes.
 
     AssertionError: -0.1 is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``a_negative_float, True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_negative_float, True``
 
   .. code-block:: python
     :lineno-start: 72
@@ -2996,7 +2996,7 @@ the test passes.
 
   the test also shows that the value of :ref:`False<test_what_is_false>` is ``0.0`` which is equal to ``0.0``.
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``0.0, False``
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``0.0, False``
 
   .. code-block:: python
     :lineno-start: 73
@@ -3031,7 +3031,7 @@ the test passes.
 
     AssertionError: 0.0.0 is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``0.0, False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``0.0, False``
 
   .. code-block:: python
     :lineno-start: 75
@@ -3066,7 +3066,7 @@ the test passes.
 
     AssertionError: 0.0 != True
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for ``0.0, True``
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``0.0, True``
 
   .. code-block:: python
     :lineno-start: 77
@@ -3101,7 +3101,7 @@ the test passes.
 
     AssertionError: 0 != True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``0.0, True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``0.0, True``
 
   .. code-block:: python
     :lineno-start: 79
@@ -3244,7 +3244,7 @@ the test passes.
 
     AssertionError: 0.1 != False
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``a_positive_float, False``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_positive_float, False``
 
   .. code-block:: python
     :lineno-start: 80
@@ -3281,7 +3281,7 @@ the test passes.
 
     AssertionError: 0.1 is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``a_positive_float, False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_positive_float, False``
 
   .. code-block:: python
     :lineno-start: 82
@@ -3317,7 +3317,7 @@ the test passes.
 
     AssertionError: 0.1 != True
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_equal>` for ``a_positive_float, True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertEqual>` for ``a_positive_float, True``
 
   .. code-block:: python
     :lineno-start: 85
@@ -3352,7 +3352,7 @@ the test passes.
 
     AssertionError: 0.1 is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``a_positive_float, True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_positive_float, True``
 
   .. code-block:: python
     :lineno-start: 87
@@ -3564,7 +3564,7 @@ Is a string_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what
 
 ----
 
-I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``str(), False``
+I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``str(), False``
 
 .. code-block:: python
   :lineno-start: 88
@@ -3610,7 +3610,7 @@ the test passes.
 
     AssertionError: '' is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``str(), False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``str(), False``
 
   .. code-block:: python
     :lineno-start: 90
@@ -3646,7 +3646,7 @@ the test passes.
 
     AssertionError: '' != True
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``str(), True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``str(), True``
 
   .. code-block:: python
     :lineno-start: 93
@@ -3681,7 +3681,7 @@ the test passes.
 
     AssertionError: '' is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``str(), True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``str(), True``
 
   .. code-block:: python
     :lineno-start: 95
@@ -3824,7 +3824,7 @@ the test passes.
 
     AssertionError: 'string with things' != False
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``a_string, False``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_string, False``
 
   .. code-block:: python
     :lineno-start: 96
@@ -3861,7 +3861,7 @@ the test passes.
 
     AssertionError: 'string with things' is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``a_string, False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_string, False``
 
   .. code-block:: python
     :lineno-start: 98
@@ -3897,7 +3897,7 @@ the test passes.
 
     AssertionError: 'string with things' != True
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``a_string, True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_string, True``
 
   .. code-block:: python
     :lineno-start: 101
@@ -3932,7 +3932,7 @@ the test passes.
 
     AssertionError: 'string with things' is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``a_string, True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_string, True``
 
   .. code-block:: python
     :lineno-start: 103
@@ -4133,7 +4133,7 @@ Is a tuple_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_
 
 ----
 
-I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``tuple(), False``
+I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``tuple(), False``
 
 .. code-block:: python
   :lineno-start: 104
@@ -4180,7 +4180,7 @@ the test passes.
 
   the empty tuple_ is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``tuple(), False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``tuple(), False``
 
   .. code-block:: python
     :lineno-start: 106
@@ -4216,7 +4216,7 @@ the test passes.
 
     AssertionError: () != True
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``tuple(), True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``tuple(), True``
 
   .. code-block:: python
     :lineno-start: 109
@@ -4253,7 +4253,7 @@ the test passes.
 
   the empty tuple_ is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``tuple(), True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``tuple(), True``
 
   .. code-block:: python
     :lineno-start: 111
@@ -4392,7 +4392,7 @@ the test passes.
 
     AssertionError: (0, 1, 2, 'n') != False
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``a_tuple, False``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_tuple, False``
 
   .. code-block:: python
     :lineno-start: 112
@@ -4429,7 +4429,7 @@ the test passes.
 
     AssertionError: (0, 1, 2, 'n') is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``a_tuple, False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_tuple, False``
 
   .. code-block:: python
     :lineno-start: 114
@@ -4465,7 +4465,7 @@ the test passes.
 
     AssertionError: (0, 1, 2, 'n') != True
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``a_tuple, True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_tuple, True``
 
   .. code-block:: python
     :lineno-start: 117
@@ -4500,7 +4500,7 @@ the test passes.
 
     AssertionError: (0, 1, 2, 'n') is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``a_tuple, True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_tuple, True``
 
   .. code-block:: python
     :lineno-start: 119
@@ -4673,7 +4673,7 @@ Is a :ref:`list<what is a list?>` grouped as :ref:`False<test_what_is_false>` or
 
 ----
 
-I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``list(), False``
+I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``list(), False``
 
 .. code-block:: python
   :lineno-start: 120
@@ -4720,7 +4720,7 @@ the test passes.
 
   the empty :ref:`list<what is a list?>` is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``list(), False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``list(), False``
 
   .. code-block:: python
     :lineno-start: 122
@@ -4758,7 +4758,7 @@ the test passes.
 
   the empty :ref:`list<what is a list?>` is not equal to :ref:`True<test_what_is_true>`.
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``list(), True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``list(), True``
 
   .. code-block:: python
     :lineno-start: 125
@@ -4795,7 +4795,7 @@ the test passes.
 
   the empty :ref:`list<what is a list?>` is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``list(), True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``list(), True``
 
   .. code-block:: python
     :lineno-start: 127
@@ -4934,7 +4934,7 @@ the test passes.
 
     AssertionError: [0, 1, 2, 'n'] != False
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``a_list, False``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_list, False``
 
   .. code-block:: python
     :lineno-start: 128
@@ -4971,7 +4971,7 @@ the test passes.
 
     AssertionError: [0, 1, 2, 'n'] is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``a_list, False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_list, False``
 
   .. code-block:: python
     :lineno-start: 130
@@ -5007,7 +5007,7 @@ the test passes.
 
     AssertionError: [0, 1, 2, 'n'] != True
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``a_list, True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_list, True``
 
   .. code-block:: python
     :lineno-start: 133
@@ -5042,7 +5042,7 @@ the test passes.
 
     AssertionError: [0, 1, 2, 'n'] is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``a_list, True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_list, True``
 
   .. code-block:: python
     :lineno-start: 135
@@ -5215,7 +5215,7 @@ Is a set_ grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is
 
 ----
 
-I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``set(), False``
+I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``set(), False``
 
 .. code-block:: python
   :lineno-start: 136
@@ -5262,7 +5262,7 @@ the test passes.
 
   the empty set_ is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``set(), False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``set(), False``
 
   .. code-block:: python
     :lineno-start: 138
@@ -5300,7 +5300,7 @@ the test passes.
 
   the empty set_ is not equal to :ref:`True<test_what_is_true>`.
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``set(), True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``set(), True``
 
   .. code-block:: python
     :lineno-start: 141
@@ -5337,7 +5337,7 @@ the test passes.
 
   the empty set_ is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``set(), True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``set(), True``
 
   .. code-block:: python
     :lineno-start: 143
@@ -5475,7 +5475,7 @@ the test passes.
 
     AssertionError: {0, 1, 2, 'n'} != False
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``a_set, False``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_set, False``
 
   .. code-block:: python
     :lineno-start: 144
@@ -5512,7 +5512,7 @@ the test passes.
 
     AssertionError: {0, 1, 2, 'n'} is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``a_set, False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_set, False``
 
   .. code-block:: python
     :lineno-start: 146
@@ -5548,7 +5548,7 @@ the test passes.
 
     AssertionError: {0, 1, 2, 'n'} != True
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``a_set, True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_set, True``
 
   .. code-block:: python
     :lineno-start: 149
@@ -5583,7 +5583,7 @@ the test passes.
 
     AssertionError: {0, 1, 2, 'n'} is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``a_set, True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_set, True``
 
   .. code-block:: python
     :lineno-start: 151
@@ -5756,7 +5756,7 @@ Is a :ref:`dictionary<what is a dictionary?>` grouped as :ref:`False<test_what_i
 
 ----
 
-I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``dict(), False``
+I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``dict(), False``
 
 .. code-block:: python
   :lineno-start: 152
@@ -5803,7 +5803,7 @@ the test passes.
 
   the empty :ref:`dictionary<what is a dictionary?>` is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``dict(), False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``dict(), False``
 
   .. code-block:: python
     :lineno-start: 154
@@ -5841,7 +5841,7 @@ the test passes.
 
   the empty :ref:`dictionary<what is a dictionary?>` is not equal to :ref:`True<test_what_is_true>`.
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``dict(), True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``dict(), True``
 
   .. code-block:: python
     :lineno-start: 157
@@ -5878,7 +5878,7 @@ the test passes.
 
   the empty :ref:`dictionary<what is a dictionary?>` is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``dict(), True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``dict(), True``
 
   .. code-block:: python
     :lineno-start: 159
@@ -6025,7 +6025,7 @@ the test passes.
 
     AssertionError: {'key': 'value'} != False
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``a_dictionary, False``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_dictionary, False``
 
   .. code-block:: python
     :lineno-start: 160
@@ -6062,7 +6062,7 @@ the test passes.
 
     AssertionError: {'key': 'value'} is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``a_dictionary, False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_dictionary, False``
 
   .. code-block:: python
     :lineno-start: 162
@@ -6098,7 +6098,7 @@ the test passes.
 
     AssertionError: {'key': 'value'} != True
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``a_dictionary, True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_dictionary, True``
 
   .. code-block:: python
     :lineno-start: 165
@@ -6133,7 +6133,7 @@ the test passes.
 
     AssertionError: {'key': 'value'} is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``a_dictionary, True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``a_dictionary, True``
 
   .. code-block:: python
     :lineno-start: 167
@@ -6322,7 +6322,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 
         def test_is_none_falsy_or_truthy(self):
 
-* I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` in :ref:`_-is_none_falsy_or_truthy`
+* I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` in :ref:`test_is_none_falsy_or_truthy`
 
   .. code-block:: python
     :lineno-start: 42
@@ -6353,7 +6353,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 
 ----
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``something, False`` in the :ref:`assert_is_falsy method<extract assert_is_falsy method>`
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``something, False`` in the :ref:`assert_is_falsy method<extract assert_is_falsy method>`
 
   .. code-block:: python
     :lineno-start: 34
@@ -6370,7 +6370,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 
     AssertionError: None is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``something, False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``something, False``
 
   .. code-block:: python
     :lineno-start: 36
@@ -6387,7 +6387,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 
     AssertionError: None != True
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``something, True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``something, True``
 
   .. code-block:: python
     :lineno-start: 38
@@ -6404,7 +6404,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 
     AssertionError: None is not True
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``something, True``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``something, True``
 
   .. code-block:: python
     :lineno-start: 40
@@ -6755,7 +6755,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 extract assert_is_truthy method
 *********************************************************************************
 
-All the :ref:`objects<everything is an object>` had the same :ref:`assertions<what is an assertion?>` when testing if something is grouped as :ref:`False<test_what_is_false>`
+All the :ref:`objects<everything is an object>` had the same :ref:`assertions<what is an assertion?>` when testing if something is grouped as :ref:`True<test_what_is_true>`
 
 .. code-block:: python
 
@@ -6763,8 +6763,8 @@ All the :ref:`objects<everything is an object>` had the same :ref:`assertions<wh
   self.assertIsNot(something, False)
   self.assertNotEqual(something, True)
   self.assertIsNot(something, True)
-  self.assertFalse(bool(something))
-  self.assertFalse(something)
+  self.assertTrue(bool(something))
+  self.assertTrue(something)
 
 I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract assert_is_falsy method>`to remove the repetition.
 
@@ -6777,53 +6777,52 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a :ref:`method<what is a method?>` to test if something is grouped as :ref:`False<test_what_is_false>`
+* I add a :ref:`method<what is a method?>` to test if something is grouped as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 34
 
-        def test_what_is_true(self):
-            self.assertIsInstance(True, (bool, int))
+        def assert_is_falsy(self, something):
+            self.assertNotEqual(something, False)
             ...
 
   .. code-block:: python
-    :lineno-start: 32
+    :lineno-start: 40
     :emphasize-lines: 3-9
 
-            self.assertTrue(True)
+            self.assertFalse(something)
 
-        def assert_is_falsy(self, something):
+        def assert_is_truthy(self, something):
             self.assertEqual(something, False)
             self.assertIs(something, False)
             self.assertEqual(something, True)
             self.assertIs(something, True)
-            self.assertTrue(bool(something))
-            self.assertTrue(something)
+            self.assertFalse(bool(something))
+            self.assertFalse(something)
 
         def test_is_none_falsy_or_truthy(self):
 
-* I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` in :ref:`_-is_none_falsy_or_truthy`
+* I use the :ref:`assert_is_truthy method<extract assert_is_truthy method>` for ``a_negative_integer`` in :ref:`test_is_an_integer_falsy_or_truthy`
 
   .. code-block:: python
-    :lineno-start: 42
-    :emphasize-lines: 2-8
-
-        def test_is_none_falsy_or_truthy(self):
-            # self.assertNotEqual(None, False)
-            # self.assertIsNot(None, False)
-            # self.assertNotEqual(None, True)
-            # self.assertIsNot(None, True)
-            # self.assertFalse(bool(None))
-            # self.assertFalse(None)
-            self.assert_is_falsy(None)
+    :lineno-start: 53
+    :emphasize-lines: 2-9
 
         def test_is_an_integer_falsy_or_truthy(self):
+            # a_negative_integer = -1
+            # self.assertNotEqual(a_negative_integer, False)
+            # self.assertIsNot(a_negative_integer, False)
+            # self.assertNotEqual(a_negative_integer, True)
+            # self.assertIsNot(a_negative_integer, True)
+            # self.assertTrue(bool(a_negative_integer))
+            # self.assertTrue(a_negative_integer)
+            self.assert_is_truthy(-1)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: None != False
+    AssertionError: -1 != False
 
 ----
 
@@ -6833,13 +6832,13 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
 
 ----
 
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``something, False`` in the :ref:`assert_is_falsy method<extract assert_is_falsy method>`
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``something, False`` in the :ref:`assert_is_truthy method<extract assert_is_truthy method>`
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 42
     :emphasize-lines: 2-3
 
-        def assert_is_falsy(self, something):
+        def assert_is_truthy(self, something):
             # self.assertEqual(something, False)
             self.assertNotEqual(something, False)
             self.assertIs(something, False)
@@ -6848,83 +6847,10 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
 
   .. code-block:: python
 
-    AssertionError: None is not False
+    AssertionError: -1 is not False
 
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``something, False``
+* I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for
 
-  .. code-block:: python
-    :lineno-start: 36
-    :emphasize-lines: 2-3
-
-        self.assertNotEqual(something, False)
-        # self.assertIs(something, False)
-        self.assertIsNot(something, False)
-        self.assertEqual(something, True)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: None != True
-
-* I change :ref:`assertEqual<test_assert_equal>` to :ref:`assertNotEqual<test_assert_not_equal>` for ``something, True``
-
-  .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 2-3
-
-            self.assertIsNot(something, False)
-            # self.assertEqual(something, True)
-            self.assertNotEqual(something, True)
-            self.assertIs(something, True)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: None is not True
-
-* I change :ref:`assertIs<test_assert_is>` to :ref:`assertIsNot<test_assert_is_not>` for ``something, True``
-
-  .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 2-3
-
-            self.assertNotEqual(something, True)
-            # self.assertIs(something, True)
-            self.assertIsNot(something, True)
-            self.assertTrue(bool(something))
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-* I change assertTrue_ to assertFalse_ for ``bool(something)``
-
-  .. code-block:: python
-    :lineno-start: 42
-    :emphasize-lines: 2-3
-
-            self.assertIsNot(something, True)
-            # self.assertTrue(bool(something))
-            self.assertFalse(bool(something))
-            self.assertTrue(something)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 2-3
-
-            self.assertFalse(bool(something))
-            # self.assertTrue(something)
-            self.assertFalse(something)
-
-        def test_is_none_falsy_or_truthy(self):
-
-  the test passes. The :ref:`assert_is_falsy method<extract assert_is_falsy method>` works.
 
 ----
 
@@ -6934,12 +6860,12 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
 
 ----
 
-* I remove the commented lines from :ref:`assert_is_falsy`
+* I remove the commented lines from :ref:`assert_is_truthy`
 
   .. code-block:: python
     :lineno-start: 34
 
-        def assert_is_falsy(self, something):
+        def assert_is_truthy(self, something):
             self.assertNotEqual(something, False)
             self.assertIsNot(something, False)
             self.assertNotEqual(something, True)
@@ -6949,17 +6875,7 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
 
         def test_is_none_falsy_or_truthy(self):
 
-* I remove the commented lines from :ref:`test_is_none_falsy_or_truthy`
-
-  .. code-block:: python
-    :lineno-start: 42
-
-        def test_is_none_falsy_or_truthy(self):
-            self.assert_is_falsy(None)
-
-        def test_is_an_integer_falsy_or_truthy(self):
-
-* I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` for ``0`` in :ref:`test_is_an_integer_falsy_or_truthy`
+* I use the :ref:`assert_is_truthy method<extract assert_is_truthy method>` for ``0`` in :ref:`test_is_an_integer_falsy_or_truthy`
 
   .. code-block:: python
     :lineno-start: 45
@@ -6980,7 +6896,7 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
             self.assertIsNot(0, True)
             self.assertFalse(bool(0))
             self.assertFalse(0)
-            self.assert_is_falsy(0)
+            self.assert_is_truthy(0)
 
             a_positive_integer = 1
 
@@ -6992,7 +6908,7 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
 
   because the value of :ref:`False<test_what_is_false>` is ``0``.
 
-* I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_is_falsy method<extract assert_is_falsy method>` because I cannot it use it for ``0``
+* I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_is_truthy method<extract assert_is_truthy method>` because I cannot it use it for ``0``
 
   .. code-block:: python
     :lineno-start: 52
@@ -7010,7 +6926,7 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
 
   the test is green again.
 
-* I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` for ``0.0`` in :ref:`test_is_a_float_falsy_or_truthy`
+* I use the :ref:`assert_is_truthy method<extract assert_is_truthy method>` for ``0.0`` in :ref:`test_is_a_float_falsy_or_truthy`
 
   .. code-block:: python
     :lineno-start: 69
@@ -7031,7 +6947,7 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
             self.assertIsNot(0.0, True)
             self.assertFalse(bool(0.0))
             self.assertFalse(0.0)
-            self.assert_is_falsy(0.0)
+            self.assert_is_truthy(0.0)
 
             a_positive_float = 0.1
 
@@ -7043,7 +6959,7 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
 
   because the value of :ref:`False<test_what_is_false>` is ``0`` which is equal to ``0.0``.
 
-* I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_is_falsy method<extract assert_is_falsy method>` because I cannot it use it for ``0.0``
+* I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_is_truthy method<extract assert_is_truthy method>` because I cannot it use it for ``0.0``
 
   .. code-block:: python
     :lineno-start: 76
@@ -7076,7 +6992,7 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
     # Exceptions seen
     # AssertionError
 
-* I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` for the empty :ref:`dictionary<what is a dictionary?>` in :ref:`test_is_a_dictionary_falsy_or_truthy`
+* I use the :ref:`assert_is_truthy method<extract assert_is_truthy method>` for the empty :ref:`dictionary<what is a dictionary?>` in :ref:`test_is_a_dictionary_falsy_or_truthy`
 
   .. code-block:: python
     :lineno-start: 157
@@ -7089,7 +7005,7 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
             # self.assertIsNot(dict(), True)
             # self.assertFalse(bool(dict()))
             # self.assertFalse(dict())
-            self.assert_is_falsy(dict())
+            self.assert_is_truthy(dict())
 
             a_dictionary = {'key': 'value'}
 
@@ -7101,11 +7017,11 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
     :lineno-start: 157
 
         def test_is_a_dictionary_falsy_or_truthy(self):
-            self.assert_is_falsy(dict())
+            self.assert_is_truthy(dict())
 
             a_dictionary = {'key': 'value'}
 
-* I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` for the empty set_ in :ref:`test_is_a_set_falsy_or_truthy`
+* I use the :ref:`assert_is_truthy method<extract assert_is_truthy method>` for the empty set_ in :ref:`test_is_a_set_falsy_or_truthy`
 
   .. code-block:: python
     :lineno-start: 141
@@ -7118,7 +7034,7 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
             # self.assertIsNot(set(), True)
             # self.assertFalse(bool(set()))
             # self.assertFalse(set())
-            self.assert_is_falsy(set())
+            self.assert_is_truthy(set())
 
             a_set = {0, 1, 2, 'n'}
 
@@ -7130,11 +7046,11 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
     :lineno-start: 141
 
         def test_is_a_set_falsy_or_truthy(self):
-            self.assert_is_falsy(set())
+            self.assert_is_truthy(set())
 
             a_set = {0, 1, 2, 'n'}
 
-* I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` for the empty :ref:`list<what is a list?>` in :ref:`test_is_a_list_falsy_or_truthy`
+* I use the :ref:`assert_is_truthy method<extract assert_is_truthy method>` for the empty :ref:`list<what is a list?>` in :ref:`test_is_a_list_falsy_or_truthy`
 
   .. code-block:: python
     :lineno-start: 125
@@ -7147,7 +7063,7 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
             # self.assertIsNot(list(), True)
             # self.assertFalse(bool(list()))
             # self.assertFalse(list())
-            self.assert_is_falsy(list())
+            self.assert_is_truthy(list())
 
             a_list = [0, 1, 2, 'n']
 
@@ -7159,11 +7075,11 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
     :lineno-start: 125
 
         def test_is_a_list_falsy_or_truthy(self):
-            self.assert_is_falsy(list())
+            self.assert_is_truthy(list())
 
             a_list = [0, 1, 2, 'n']
 
-* I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` for the empty tuple_ in :ref:`test_is_a_tuple_falsy_or_truthy`
+* I use the :ref:`assert_is_truthy method<extract assert_is_truthy method>` for the empty tuple_ in :ref:`test_is_a_tuple_falsy_or_truthy`
 
   .. code-block:: python
     :lineno-start: 109
@@ -7176,7 +7092,7 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
             # self.assertIsNot(tuple(), True)
             # self.assertFalse(bool(tuple()))
             # self.assertFalse(tuple())
-            self.assert_is_falsy(tuple())
+            self.assert_is_truthy(tuple())
 
             a_tuple = (0, 1, 2, 'n')
 
@@ -7188,11 +7104,11 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
     :lineno-start: 109
 
         def test_is_a_tuple_falsy_or_truthy(self):
-            self.assert_is_falsy(tuple())
+            self.assert_is_truthy(tuple())
 
             a_tuple = (0, 1, 2, 'n')
 
-* I use the :ref:`assert_is_falsy method<extract assert_is_falsy method>` for the empty string_ in :ref:`test_is_a_string_falsy_or_truthy`
+* I use the :ref:`assert_is_truthy method<extract assert_is_truthy method>` for the empty string_ in :ref:`test_is_a_string_falsy_or_truthy`
 
   .. code-block:: python
     :lineno-start: 93
@@ -7205,7 +7121,7 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
             # self.assertIsNot(str(), True)
             # self.assertFalse(bool(str()))
             # self.assertFalse(str())
-            self.assert_is_falsy(str())
+            self.assert_is_truthy(str())
 
             a_string = "string with things"
 
@@ -7217,7 +7133,7 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
     :lineno-start: 93
 
         def test_is_a_string_falsy_or_truthy(self):
-            self.assert_is_falsy(str())
+            self.assert_is_truthy(str())
 
             a_string = "string with things"
 
@@ -7227,7 +7143,7 @@ I can make a :ref:`method<what is a method?>` like :ref:`assert_is_falsy<extract
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'extract assert_is_falsy method'
+    'extract assert_is_truthy method'
 
 ----
 

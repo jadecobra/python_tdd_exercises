@@ -324,7 +324,7 @@ the test is green again.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_none`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_none`
 
   .. code-block:: python
     :lineno-start: 14
@@ -344,7 +344,7 @@ the test is green again.
 
     AssertionError: 'I got: None' == 'I got: None'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_none`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_none`
 
   .. code-block:: python
     :lineno-start: 14
@@ -454,7 +454,7 @@ green again.
 
 ----
 
-* I change the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_passing_booleans`
+* I change the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_passing_booleans`
 
   .. code-block:: python
     :lineno-start: 17
@@ -476,7 +476,7 @@ green again.
 
     AssertionError: 'I got: False' == 'I got: False'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_passing_booleans`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for the first :ref:`assertion<what is an assertion?>` in :ref:`test_passing_booleans`
 
   .. code-block:: python
     :lineno-start: 17
@@ -496,7 +496,7 @@ green again.
 
     AssertionError: 'I got: True' == 'I got: True'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_passing_booleans`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for the second :ref:`assertion<what is an assertion?>` in :ref:`test_passing_booleans`
 
   .. code-block:: python
     :lineno-start: 17
@@ -613,7 +613,7 @@ green.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_an_integer`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_an_integer`
 
   .. code-block:: python
     :lineno-start: 21
@@ -636,7 +636,7 @@ green.
 
     AssertionError: 'I got: 1234' == 'I got: 1234'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_an_integer`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_an_integer`
 
   .. code-block:: python
     :lineno-start: 21
@@ -757,7 +757,7 @@ green again.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_float`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_float`
 
   .. code-block:: python
     :lineno-start: 27
@@ -780,7 +780,7 @@ green again.
 
     AssertionError: 'I got: 5.678' == 'I got: 5.678'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_float`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_a_float`
 
   .. code-block:: python
     :lineno-start: 27
@@ -903,7 +903,7 @@ the test is green again.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_string`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_string`
 
   .. code-block:: python
     :lineno-start: 33
@@ -926,7 +926,7 @@ the test is green again.
 
     AssertionError: 'I got: hello' == 'I got: hello'
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_string`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_a_string`
 
   .. code-block:: python
     :lineno-start: 33
@@ -1047,7 +1047,7 @@ green again.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_tuple`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_tuple`
 
   .. code-block:: python
     :lineno-start: 39
@@ -1071,7 +1071,7 @@ green again.
     AssertionError: "I got: (0, 1, 2, 'n')"
                  == "I got: (0, 1, 2, 'n')"
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_tuple`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_a_tuple`
 
   .. code-block:: python
     :lineno-start: 39
@@ -1195,7 +1195,7 @@ green.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_list`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_list`
 
   .. code-block:: python
     :lineno-start: 45
@@ -1219,7 +1219,7 @@ green.
     AssertionError: "I got: [0, 1, 2, 'n']"
                  == "I got: [0, 1, 2, 'n']"
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_list`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_a_list`
 
   .. code-block:: python
     :lineno-start: 45
@@ -1341,7 +1341,7 @@ green again.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_set`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_set`
 
   .. code-block:: python
     :lineno-start: 51
@@ -1363,7 +1363,7 @@ green again.
     AssertionError: "I got: {0, 1, 2, 'n'}"
                  == "I got: {0, 1, 2, 'n'}"
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_set`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_a_set`
 
   .. code-block:: python
     :lineno-start: 51
@@ -1486,7 +1486,7 @@ the test is green again.
 
 ----
 
-* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_dictionary`
+* I change the :ref:`call<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertion<what is an assertion?>` in :ref:`test_passing_a_dictionary`
 
   .. code-block:: python
     :lineno-start: 55
@@ -1514,7 +1514,7 @@ the test is green again.
         "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
      == "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_dictionary`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_a_dictionary`
 
   .. code-block:: python
     :lineno-start: 55
@@ -1646,7 +1646,7 @@ green again.
 
 ----
 
-* I change the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assert_not_equal>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_passing_a_class`
+* I change the :ref:`calls<how to call a function with input>` to my :ref:`assert_equal function<extract assert_equal function>` to the :ref:`assertNotEqual method of the unittest.TestCase class<test_assertNotEqual>` for the :ref:`assertions<what is an assertion?>` in :ref:`test_passing_a_class`
 
   .. code-block:: python
     :lineno-start: 64
@@ -1705,7 +1705,7 @@ green again.
      AssertionError: "I got: <class 'object'>"
                   == "I got: <class 'object'>"
 
-* I change :ref:`assertNotEqual<test_assert_not_equal>` to :ref:`assertEqual<test_assert_equal>` in :ref:`test_passing_a_class`
+* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` in :ref:`test_passing_a_class`
 
   .. code-block:: python
     :lineno-start: 64

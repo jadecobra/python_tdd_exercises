@@ -782,7 +782,7 @@ the :ref:`method<what is a method?>` returns a copy of the list_
 
   the values are the same, the problem is assertIsNone_ only takes 1 input and I gave it 2
 
-* I change assertIsNone_ to :ref:`assertEqual method<test_assert_equal>`
+* I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
 
   .. code-block:: python
     :lineno-start: 77
@@ -901,7 +901,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 1 is not None : 1
 
-I change assertIsNone_ to :ref:`assertEqual method<test_assert_equal>`
+I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
 
 .. code-block:: python
   :lineno-start: 82
@@ -1228,7 +1228,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 0 is not None : 0
 
-I change assertIsNone_ to :ref:`assertEqual method<test_assert_equal>`
+I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
 
 .. code-block:: python
   :lineno-start: 91
@@ -1764,7 +1764,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'n' is not None : n
 
-I change assertIsNone_ to :ref:`assertEqual method<test_assert_equal>`
+I change assertIsNone_ to :ref:`assertEqual method<test_assertEqual>`
 
 .. code-block:: python
   :lineno-start: 109
