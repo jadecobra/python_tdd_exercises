@@ -82,7 +82,7 @@ class TestBooleans(unittest.TestCase):
 
     def test_is_a_string_falsy_or_truthy(self):
         self.assert_is_falsy(str())
-        self.assert_is_truthy('a string with things')
+        self.assert_is_truthy('string with things')
 
     def test_is_a_tuple_falsy_or_truthy(self):
         self.assert_is_falsy(tuple())

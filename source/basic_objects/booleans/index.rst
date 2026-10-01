@@ -103,7 +103,7 @@ I have these tests by the end of the chapter
 questions about Booleans
 *********************************************************************************
 
-Questions to think about as we divide :ref:`Python's basic objects<basic objects>` into  :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>`
+Questions to think about as we divide :ref:`Python's basic objects<basic objects>` into :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>`
 
 * :ref:`what is False?<test_what_is_false>`
 * :ref:`what is True?<test_what_is_true>`
@@ -1768,7 +1768,7 @@ the test passes.
 
   because the result of ``bool(None)`` is :ref:`False<test_what_is_false>`.
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(None)``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(None)``
 
   .. code-block:: python
     :lineno-start: 41
@@ -1819,7 +1819,7 @@ the test passes.
 
   A reminder of :ref:`test_assertion_error_w_true`.
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to ref:`assertFalse<another way to test if something is grouped as False>` for :ref:`None<what is None?>`
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for :ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -2283,7 +2283,7 @@ the test passes.
 
     AssertionError: 0 != True
 
-* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``0, True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``0, True``
 
   .. code-block:: python
     :lineno-start: 53
@@ -2316,7 +2316,7 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: 0 != True
+    AssertionError: 0 is not True
 
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``0, True``
 
@@ -2355,7 +2355,7 @@ the test passes.
 
   because the result of ``bool(0)`` is :ref:`False<test_what_is_false>`.
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(0)``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(0)``
 
   .. code-block:: python
     :lineno-start: 57
@@ -2411,7 +2411,7 @@ the test passes.
 
   because the result of ``bool(0)`` is :ref:`False<test_what_is_false>`.
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to ref:`assertFalse<another way to test if something is grouped as False>` for ``0``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``0``
 
   .. code-block:: python
     :lineno-start: 59
@@ -3050,7 +3050,7 @@ the test passes.
 
     AssertionError: 0.0 == False
 
-  the test also shows that the value of :ref:`False<test_what_is_false>` is ``0.0`` which is equal to ``0.0``.
+  the test also shows that ``0.0`` is equal to :ref:`False<test_what_is_false>`, whose value is ``0``.
 
 * I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``0.0, False``
 
@@ -3085,7 +3085,7 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: 0.0.0 is not False
+    AssertionError: 0.0 is not False
 
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``0.0, False``
 
@@ -3122,7 +3122,7 @@ the test passes.
 
     AssertionError: 0.0 != True
 
-* I change :ref:`assertNotEqual<test_assertNotEqual>` to :ref:`assertEqual<test_assertEqual>` for ``0.0, True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``0.0, True``
 
   .. code-block:: python
     :lineno-start: 77
@@ -3155,7 +3155,7 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: 0 != True
+    AssertionError: 0.0 is not True
 
 * I change :ref:`assertIs<test_assertIs>` to :ref:`assertIsNot<test_assertIsNot>` for ``0.0, True``
 
@@ -3194,7 +3194,7 @@ the test passes.
 
   because the result of ``bool(0.0)`` is :ref:`False<test_what_is_false>`.
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(0.0)``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(0.0)``
 
   .. code-block:: python
     :lineno-start: 81
@@ -3247,7 +3247,7 @@ the test passes.
 
   because the result of ``bool(0.0)`` is :ref:`False<test_what_is_false>`.
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to ref:`assertFalse<another way to test if something is grouped as False>` for ``0.0``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``0.0``
 
   .. code-block:: python
     :lineno-start: 83
@@ -3373,7 +3373,7 @@ the test passes.
 
     AssertionError: 0.1 != True
 
-* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertEqual>` for ``a_positive_float, True``
+* I change :ref:`assertEqual<test_assertEqual>` to :ref:`assertNotEqual<test_assertNotEqual>` for ``a_positive_float, True``
 
   .. code-block:: python
     :lineno-start: 85
@@ -3772,7 +3772,7 @@ the test passes.
 
   because the result of ``bool(str())`` is :ref:`False<test_what_is_false>`.
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(str())``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(str())``
 
   .. code-block:: python
     :lineno-start: 97
@@ -3827,7 +3827,7 @@ the test passes.
     * ``''''''`` - triple single :ref:`quotes`
     * ``""""""`` - triple double :ref:`quotes`
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to ref:`assertFalse<another way to test if something is grouped as False>` for ``str()``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``str()``
 
   .. code-block:: python
     :lineno-start: 99
@@ -3874,7 +3874,7 @@ the test passes.
 
     # NOTES
 
-  the terminal- is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -4346,7 +4346,7 @@ the test passes.
 
   because the result of ``bool(tuple())`` is :ref:`False<test_what_is_false>`.
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(tuple())``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(tuple())``
 
   .. code-block:: python
     :lineno-start: 113
@@ -4395,7 +4395,7 @@ the test passes.
   - because the result of ``bool(tuple())`` which is ``bool(())`` is :ref:`False<test_what_is_false>`.
   - ``tuple()`` is another way to write ``()`` (the empty tuple_).
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to ref:`assertFalse<another way to test if something is grouped as False>`
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>`
 
   .. code-block:: python
     :lineno-start: 115
@@ -4888,7 +4888,7 @@ the test passes.
 
   because the result of ``bool(list())`` is :ref:`False<test_what_is_false>`.
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(list())``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(list())``
 
   .. code-block:: python
     :lineno-start: 129
@@ -4937,7 +4937,7 @@ the test passes.
   - because the result of ``bool(list())`` which is ``bool([])`` is :ref:`False<test_what_is_false>`.
   - ``list()`` is another way to write ``[]`` (the empty :ref:`list<what is a list?>`).
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to ref:`assertFalse<another way to test if something is grouped as False>` for ``list()``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``list()``
 
   .. code-block:: python
     :lineno-start: 131
@@ -5430,7 +5430,7 @@ the test passes.
 
   because the result of ``bool(set())`` is :ref:`False<test_what_is_false>`.
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(set())``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(set())``
 
   .. code-block:: python
     :lineno-start: 145
@@ -5478,7 +5478,7 @@ the test passes.
 
   because the result of ``bool(set())`` is :ref:`False<test_what_is_false>`.
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to ref:`assertFalse<another way to test if something is grouped as False>` for ``set()``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``set()``
 
   .. code-block:: python
     :lineno-start: 147
@@ -5971,7 +5971,7 @@ the test passes.
 
   because the result of ``bool(dict())`` is :ref:`False<test_what_is_false>`.
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(dict())``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(dict())``
 
   .. code-block:: python
     :lineno-start: 161
@@ -6028,7 +6028,7 @@ the test passes.
   - because the result of ``bool(dict())`` which is ``bool({})`` is :ref:`False<test_what_is_false>`.
   - ``dict()`` is another way to write ``{}`` (the empty :ref:`dictionary<what is a dictionary?>`).
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to ref:`assertFalse<another way to test if something is grouped as False>` for ``dict()``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``dict()``
 
   .. code-block:: python
     :lineno-start: 163
@@ -6477,7 +6477,7 @@ I can make a :ref:`function<what is a function?>` to remove the repetition.
 
     AssertionError: False is not true
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(an_object)``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` for ``bool(an_object)``
 
   .. code-block:: python
     :lineno-start: 42
@@ -7239,7 +7239,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
             # self.assertIsNot(a_string, True)
             # self.assertTrue(bool(a_string))
             # self.assertTrue(a_string)
-            self.assert_is_truthy('a string with things')
+            self.assert_is_truthy('string with things')
 
         def test_is_a_tuple_falsy_or_truthy(self):
 
@@ -7252,7 +7252,7 @@ I can make a :ref:`method<what is a method?>` like I did with :ref:`assert_is_fa
 
         def test_is_a_string_falsy_or_truthy(self):
             self.assert_is_falsy(str())
-            self.assert_is_truthy('a string with things')
+            self.assert_is_truthy('string with things')
 
         def test_is_a_tuple_falsy_or_truthy(self):
 
@@ -7478,22 +7478,21 @@ I know that :ref:`bool is an object<test_is_a_boolean_an_object>`. It only has t
 
 In Python_ the following :ref:`objects<everything is an object>` are grouped as
 
-* :ref:`False<test_what_is_false>`
+* The following things are grouped as :ref:`False<test_what_is_false>`
 
   * an empty container (strings_, tuples_, :ref:`lists<what is a list?>`, sets_, :ref:`dictionaries<what is a dictionary?>`)
-  * ``0`` and the value of :ref:`False<test_what_is_false>` is ``0``
+  * ``0``
   * ``0.0``
   * :ref:`None<what is None?>`
 
-  we can think of their value or length as ``0`` which is equal to :ref:`False<test_what_is_false>`
+  they are not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>` whose value is ``0``.
 
-* :ref:`True<test_what_is_true>`
+* The following things are grouped as :ref:`True<test_what_is_true>`
 
-  * the value of :ref:`True<test_what_is_true>` is ``1``
-  * a container with things is :ref:`True<test_what_is_true>`
-  * positive and negative numbers are :ref:`True<test_what_is_true>`
+  * containers with things
+  * positive and negative numbers
 
-  we can think of their value or length as not ``0`` which is equal to not :ref:`False<test_what_is_false>` which is :ref:`True<test_what_is_true>`.
+  they are not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>` whose value is ``1``.
 
 This comes in handy when I want :ref:`programs to make decisions<if statements>`, because they can choose what to do based on if an :ref:`object<everything is an object>` is grouped as :ref:`False<test_what_is_false>` (``0``, empty or :ref:`None<what is None?>` ) or is grouped as :ref:`True<test_what_is_true>` (positive and negative numbers or has something in it).
 
