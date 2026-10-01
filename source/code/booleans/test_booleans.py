@@ -9,7 +9,7 @@ class TestBooleans(unittest.TestCase):
             False,
             (
                 float, tuple, str,
-                list, set, dict
+                list, set, dict,
             )
         )
         self.assertIs(False, False)
@@ -23,7 +23,7 @@ class TestBooleans(unittest.TestCase):
             True,
             (
                 float, tuple, str,
-                list, set, dict
+                list, set, dict,
             )
         )
         self.assertIs(True, True)
@@ -31,107 +31,78 @@ class TestBooleans(unittest.TestCase):
         self.assertTrue(bool(True))
         self.assertTrue(True)
 
+    def assert_is_not_the_same_as_false_or_true(self, an_object):
+        self.assertNotEqual(an_object, False)
+        self.assertIsNot(an_object, False)
+        self.assertNotEqual(an_object, True)
+        self.assertIsNot(an_object, True)
+
+    def assert_is_falsy(self, an_object):
+        self.assert_is_not_the_same_as_false_or_true(an_object)
+        self.assertFalse(bool(an_object))
+        self.assertFalse(an_object)
+
+    def assert_is_truthy(self, an_object):
+        self.assert_is_not_the_same_as_false_or_true(an_object)
+        self.assertTrue(bool(an_object))
+        self.assertTrue(an_object)
+
     def test_is_none_falsy_or_truthy(self):
-        self.assertFalse(bool(None))
-        self.assertFalse(None)
-        self.assertIsNot(None, False)
+        self.assert_is_falsy(None)
 
     def test_is_an_integer_falsy_or_truthy(self):
-        a_negative_integer = -1
-        self.assertTrue(bool(a_negative_integer))
-        self.assertTrue(a_negative_integer)
-        self.assertIsNot(a_negative_integer, True)
+        self.assert_is_truthy(-1)
 
+        self.assertEqual(0, False)
+        self.assertIsNot(0, False)
+        self.assertNotEqual(0, True)
+        self.assertIsNot(0, True)
         self.assertFalse(bool(0))
         self.assertFalse(0)
-        self.assertIsNot(0, False)
 
         a_positive_integer = 1
+        self.assertNotEqual(a_positive_integer, False)
+        self.assertIsNot(a_positive_integer, False)
+        self.assertEqual(1, True)
+        self.assertIsNot(a_positive_integer, True)
         self.assertTrue(bool(a_positive_integer))
         self.assertTrue(a_positive_integer)
-        self.assertIsNot(a_positive_integer, True)
 
     def test_is_a_float_falsy_or_truthy(self):
-        a_negative_float = -0.1
-        self.assertTrue(bool(a_negative_float))
-        self.assertTrue(a_negative_float)
-        self.assertIsNot(a_negative_float, True)
+        self.assert_is_truthy(-0.1)
 
+        self.assertEqual(0.0, False)
+        self.assertIsNot(0.0, False)
+        self.assertNotEqual(0.0, True)
+        self.assertIsNot(0.0, True)
         self.assertFalse(bool(0.0))
         self.assertFalse(0.0)
-        self.assertIsNot(0.0, False)
 
-        a_positive_float = 0.1
-        self.assertTrue(bool(a_positive_float))
-        self.assertTrue(a_positive_float)
-        self.assertIsNot(a_positive_float, True)
+        self.assert_is_truthy(0.1)
 
     def test_is_a_string_falsy_or_truthy(self):
-        self.assertFalse(bool(str()))
-        self.assertFalse(str())
-        self.assertIsNot(str(), False)
-
-        a_string = "string with things"
-        self.assertTrue(bool(a_string))
-        self.assertTrue(a_string)
-        self.assertIsNot(a_string, True)
+        self.assert_is_falsy(str())
+        self.assert_is_truthy('a string with things')
 
     def test_is_a_tuple_falsy_or_truthy(self):
-        self.assertFalse(bool(tuple()))
-        self.assertFalse(tuple())
-        self.assertIsNot(tuple(), False)
-
-        a_tuple = (0, 1, 2, 'n')
-        self.assertTrue(bool(a_tuple))
-        self.assertTrue(a_tuple)
-        self.assertIsNot(a_tuple, True)
+        self.assert_is_falsy(tuple())
+        self.assert_is_truthy((0, 1, 2, 'n'))
 
     def test_is_a_list_falsy_or_truthy(self):
-        self.assertFalse(bool(list()))
-        self.assertFalse(list())
-        self.assertIsNot(list(), False)
-
-        a_list = [0, 1, 2, 'n']
-        self.assertTrue(bool(a_list))
-        self.assertTrue(a_list)
-        self.assertIsNot(a_list, True)
+        self.assert_is_falsy(list())
+        self.assert_is_truthy([0, 1, 2, 'n'])
 
     def test_is_a_set_falsy_or_truthy(self):
-        self.assertFalse(bool(set()))
-        self.assertFalse(set())
-        self.assertIsNot(set(), False)
-
-        a_set = {0, 1, 2, 'n'}
-        self.assertTrue(bool(a_set))
-        self.assertTrue(a_set)
-        self.assertIsNot(a_set, True)
+        self.assert_is_falsy(set())
+        self.assert_is_truthy({0, 1, 2, 'n'})
 
     def test_is_a_dictionary_falsy_or_truthy(self):
-        self.assertFalse(bool(dict()))
-        self.assertFalse(dict())
-        self.assertIsNot(dict(), False)
-
-        a_dictionary = {'key': 'value'}
-        self.assertTrue(bool(a_dictionary))
-        self.assertTrue(a_dictionary)
-        self.assertIsNot(a_dictionary, True)
-
-    def test_the_value_of_false(self):
-        self.assertEqual(False+1, 1)
-        self.assertEqual(False-1, -1)
-        self.assertEqual(False*1, 0)
-
-        # raises ZeroDivisionError
-        # 1 / False
-
-    def test_the_value_of_true(self):
-        self.assertEqual(True+1, 2)
-        self.assertEqual(True-1, 0)
-        self.assertEqual(True*1, 1)
-        self.assertEqual(True/1, 1)
+        self.assert_is_falsy(dict())
+        self.assert_is_truthy({'key': 'value'})
 
 
 # NOTES
+# the value of True is 1
 # bool(a dictionary with things) is True
 # bool(a set with things) is True
 # bool(a list with things) is True
@@ -141,9 +112,9 @@ class TestBooleans(unittest.TestCase):
 # bool(a negative number) is True
 # True is True
 # True is an integer
-# the value of True is 1
 # True is a boolean
 # True is NOT False
+# the value of False is 0
 # bool(the empty dictionary) is False
 # bool(the empty set) is False
 # bool(the empty list) is False
@@ -153,11 +124,9 @@ class TestBooleans(unittest.TestCase):
 # bool(None) is False
 # False is False
 # False is an integer
-# the value of False is 0
 # False is a boolean
 # False is NOT True
 
 
 # Exceptions seen
 # AssertionError
-# ZeroDivisionError
