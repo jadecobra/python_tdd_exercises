@@ -1,5 +1,5 @@
 .. meta::
-  :description: Automate a Python TDD project setup with one shell script. Jacob Itegboje builds makePythonTdd.sh and makePythonTdd.ps1 from the manual uv init steps (src, tests package, first unittest AssertionError with assertFalse(True), requirements.txt with pytest and pytest-watcher). Covers shebang, touch/New-Item, echo/Out-File for the first failing test, ./ vs .\ run paths, permission denied and chmod +x on WSL/Linux/Mac, then rename magic to more_magic and re-run. Pumping Python automatic TDD environment chapter.
+  :description: Automate a Python TDD project setup with one shell script. Jacob Itegboje builds makePythonTdd.sh and makePythonTdd.ps1 for a tests package, a first unittest AssertionError with assertFalse(True), and requirements.txt with pytest and pytest-watcher. The script does not make src, git add, or turn the test green. Covers shebang, touch/New-Item, echo/Out-File for the first failing test, ./ vs .\ run paths, permission denied and chmod +x on WSL/Linux/Mac, then rename magic to more_magic and re-run. Pumping Python automatic TDD environment chapter.
   :keywords: Jacob Itegboje, Pumping Python, makePythonTdd.sh, makePythonTdd.ps1, automate python tdd setup, shell script shebang, chmod +x executable, permission denied shell script, PowerShell Out-File UTF8, uv init project, pytest-watcher --now, assertFalse True AssertionError, TestMagic test_failure, more_magic project rename, make Python Test Driven Development environment automatically
 
 .. include:: ../links.rst
@@ -13,8 +13,8 @@ So far I do the same steps to make a :ref:`Python Test Driven Development enviro
 - give the project a name
 - :ref:`make a directory for the project<how to setup a project with uv>`
 - :ref:`change directory to the project<how to change directory to the project>`
-- :ref:`make a directory for the source code<how to make a directory for the source code>`
-- :ref:`make a Python file to hold the source code in the 'src' folder<how to make a35n empty file>`
+- make a directory for the source code
+- make a :ref:`Python file<what is a module?>` to hold the source code in the 'src' folder
 - :ref:`make a directory for the tests<how to make a directory for the tests>`
 - :ref:`make the 'tests' directory a Python package<how to make the tests a Python package>`
 - :ref:`make a Python file for the tests in the 'tests' directory<how to make a Python file for the tests in the 'tests' directory>`
@@ -23,21 +23,18 @@ So far I do the same steps to make a :ref:`Python Test Driven Development enviro
 - :ref:`install the Python packages I gave in the requirements file<how to install Python packages with uv>`
 - add the files_ and folders_ to git_ for tracking
 - :ref:`run the tests automatically<how to run tests automatically with uv and pytest-watcher>`
-- :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
+- :ref:`open the test file<how to open the test file in the editor from the terminal>`
 - make the test pass
 
-with these commands
+I have used the following commands to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` then :ref:`run the tests automatically<how to run tests automatically>`
 
 .. code-block:: python
   :emphasize-text: NAME_OF_THE_PROJECT
 
   uv init NAME_OF_THE_PROJECT
   cd NAME_OF_THE_PROJECT
-  mkdir src
   mkdir tests
   touch tests/__init__.py
-  mv src/test_NAME_OF_THE_PROJECT/__init__.py  tests/test_NAME_OF_THE_PROJECT.py
-  rmdir src/test_NAME_OF_THE_PROJECT
   echo "pytest" > requirements.txt
   echo "pytest-watcher" >> requirements.txt
   uv add --requirement requirements.txt
@@ -63,18 +60,16 @@ Here is the program_ I have by the end of the chapter to :ref:`automatically mak
   .. tab-item:: WSL/Linux/Mac
     :sync: unix
 
-    It is only 25 lines of code (with spaces)
-
     .. literalinclude:: ../code/make_tdd/makePythonTddNoVariables.sh
+      :caption: makePythonTdd.sh
       :language: shell
       :linenos:
 
   .. tab-item:: no WSL
     :sync: no_wsl
 
-    It is only 24 lines of code (with spaces)
-
     .. literalinclude:: ../code/make_tdd/makePythonTddNoVariables.ps1
+      :caption: makePythonTdd.ps1
       :language: Powershell
       :linenos:
 
@@ -85,8 +80,8 @@ questions about making a Python Test Driven Development Environment automaticall
 
 * :ref:`how can I make a shell script?<how to make a shell script>`
 * :ref:`how can I view the permissions of a file?<how to view the permissions of a file>`
-* :ref:`how can I make a shell script run as a command<how to make a shell script run as a command>`
-* :ref:`how can I run a shell script<how to run a shell script>`
+* :ref:`how can I make a shell script run as a command?<how to make a shell script run as a command>`
+* :ref:`how can I run a shell script?<how to run a shell script>`
 
 ----
 
@@ -140,9 +135,6 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         #!/bin/bash
         uv init magic
         cd magic
-        mkdir src
-        touch src/magic.py
-        rmdir src/magic
         mkdir tests
         touch tests/__init__.py
         touch tests/test_magic.py
@@ -151,7 +143,7 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
         uv add --requirement requirements.txt
         uv run pytest-watcher . --now
 
-      ``#!/bin/bash`` is called a shebang_ line, it tells the computer to use bash_ to run this program_
+      ``#!/bin/bash`` is called a shebang_ line, it tells the computer to use bash_ to run this program_.
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -162,9 +154,6 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
 
         uv init magic
         cd magic
-        mkdir src
-        New-Item src/magic.py
-        Remove-Item src/magic
         mkdir tests
         New-Item tests/__init__.py
         New-Item tests/test_magic.py
@@ -185,15 +174,12 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
 
       .. code-block:: python
         :linenos:
-        :emphasize-lines: 8
+        :emphasize-lines: 6
         :emphasize-text: magic
 
         #!/bin/bash
         uv init magic
         cd magic
-        mkdir src
-        touch src/magic.py
-        rmdir src/magic
         mkdir tests
         touch tests/__init__.py
         echo "" > tests/test_magic.py
@@ -209,14 +195,11 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
 
       .. code-block:: python
         :linenos:
-        :emphasize-lines: 7
+        :emphasize-lines: 5
         :emphasize-text: magic
 
         uv init magic
         cd magic
-        mkdir src
-        New-Item src/magic.py
-        Remove-Item src/magic
         mkdir tests
         New-Item tests/__init__.py
         "" | Out-File tests/test_magic.py -Encoding UTF8
@@ -237,14 +220,11 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
 
       .. code-block:: python
         :linenos:
-        :emphasize-lines: 9-20
+        :emphasize-lines: 7-18
 
         #!/bin/bash
         uv init magic
         cd magic
-        mkdir src
-        touch src/magic.py
-        rmdir src/magic
         mkdir tests
         touch tests/__init__.py
 
@@ -271,13 +251,10 @@ I make a new file_ with a name that describes automatically making a :ref:`Test 
 
       .. code-block:: python
         :linenos:
-        :emphasize-lines: 8-19
+        :emphasize-lines: 6-17
 
         uv init magic
         cd magic
-        mkdir src
-        New-Item src/magic.py
-        Remove-Item src/magic
         mkdir tests
         New-Item tests/__init__.py
 
@@ -660,7 +637,7 @@ what is next?
 * :ref:`I know how to use the datetime library<test person with datetime>`.
 * :ref:`I know what None is<what is None?>`.
 * :ref:`I know how to make a person with conditions<how to make a person with conditions>`.
-* :ref:`I know how Python groups objects into False or True<what are booleans?>`
+* :ref:`I know how Python groups objects into False or True<what are booleans?>`.
 * :ref:`I know how to make a Python Test Driven Development environment automatically<how to make a Python Test Driven Development environment automatically>`
 
 :ref:`Would you like to test the truth table?<truth table>` It helps understand writing programs_ that make decisions based on :ref:`conditions<if statements>`.
