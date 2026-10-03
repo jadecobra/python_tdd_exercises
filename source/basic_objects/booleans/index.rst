@@ -2479,7 +2479,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` to see if ``1`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_i_false>`
+* I add an :ref:`assertion<what is an assertion?>` to see if ``1`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -3317,7 +3317,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` to see if ``a_positive_float`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_i_false>`
+* I add an :ref:`assertion<what is an assertion?>` to see if ``a_positive_float`` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 82

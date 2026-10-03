@@ -36,7 +36,7 @@ questions about Nullary and Unary Operations
 * :ref:`what are the Unary Operations?<Unary Operations>`
 * :ref:`How many inputs do Unary Operations take?<Unary Operations>`
 * :ref:`what is a function that returns its input as output?<test_logical_identity>`
-* :ref:`what is not?<test_logical_negation>`
+* :ref:`what is 'not' used for?<test_logical_negation>`
 * :ref:`what is a function that returns the negation of its input as output?<test_logical_negation>`
 * :ref:`how can I return the opposite of a boolean?<how to return the opposite of a boolean>`
 
@@ -46,7 +46,7 @@ questions about Nullary and Unary Operations
 requirements
 *********************************************************************************
 
-:ref:`truth table`
+:ref:`setup truth_table project<truth table>`
 
 ----
 
