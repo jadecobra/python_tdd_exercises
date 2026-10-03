@@ -1,0 +1,6 @@
+url: http://127.0.0.1:8765/search.html
+bytes: 25544
+sha256: b672b056b239ef9305a331fa434524b759ac38b0837c2177fa5c7d1eeef3230d
+title: Search | pumping python: how I solve problems with Test Driven Development
+h1: 
+h1_all: []

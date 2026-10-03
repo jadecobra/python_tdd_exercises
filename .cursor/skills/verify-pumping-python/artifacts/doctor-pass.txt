@@ -1,0 +1,11 @@
+DOCTOR PASS
+  STATE       /tmp/pumping-python-verify-20260903021654-29760/state.env
+  ORIGIN      http://127.0.0.1:8765
+  PORT        8765
+  LISTEN_PID  29864
+  LAUNCH_PID  29862
+  BUILD_DIR   /tmp/pumping-python-verify-20260903021654-29760/html
+  HTTP        200
+  TITLE       pumping python: how I solve problems with test driven development | pumping python: how I solve problems with Test Driven Development
+  TITLE_OK    contains 'pumping python'
+  ISOLATED    port!=8000 and build dir under /tmp/pumping-python-verify-*

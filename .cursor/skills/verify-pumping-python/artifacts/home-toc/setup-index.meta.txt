@@ -1,0 +1,6 @@
+url: http://127.0.0.1:8765/setup/index.html
+bytes: 37964
+sha256: 75f0654a323faf4793a1205da807a2b2c9fe44612f34fa08d09d5987044b6adf
+title: start here | pumping python: how I solve problems with Test Driven Development
+h1: start here
+h1_all: ['start here']

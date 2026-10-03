@@ -1,0 +1,7 @@
+feature: home-toc
+origin: http://127.0.0.1:8765
+listen_pid: 29864
+build_dir: /tmp/pumping-python-verify-20260903021654-29760/html
+action: GET / then follow toctree hrefs hatches/index.html, setup/index.html, make_tdd/make_tdd_manually.html, search.html
+result: each route HTTP 200 with expected title/h1 from live autobuild HTML (not conf.py)
+side_effects: /tmp/pumping-python-verify-20260903021654-29760/html/{index.html,hatches/index.html,setup/index.html,make_tdd/make_tdd_manually.html,search.html} exist

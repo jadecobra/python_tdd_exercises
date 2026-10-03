@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+
+<html :class="{'dark': darkMode === 'dark' || (darkMode === 'system' &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth" data-content_root="../" lang="en" x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }" x-init="$watch('darkMode', val =&gt; localStorage.setItem('darkMode', val))">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="black" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Build your first Python TDD project by hand with uv, the terminal, and unittest. Jacob Itegboje walks through pumping_python folder setup, uv init person (src/person/__init__.py), mkdir tests, touch tests/person.py then tests/__init__.py, mv tests/person.py to tests/test_person.py, and the first RED test with assert False is True raising AssertionError (FAILED errors=1). Unittest prints NO TESTS RAN until the tests package and test_ prefix exist. Module-level assert False is False still shows NO TESTS RAN (Ran 0 tests) even after GREEN. Covers cd, mkdir, tree, cat, mv, touch, python3 -m unittest, Auto Save close-before-mv, git add and commit. Pumping Python manual TDD environment chapter 1, before pytest-watcher." name="description"/>
+<meta content="Jacob Itegboje, Pumping Python, manual python tdd setup, uv init person, src/person/__init__.py, python unittest first test, assert False is True AssertionError, FAILED errors=1, NO TESTS RAN unittest, test_ prefix discovery, tests __init__.py package, mkdir tests, mv tests/person.py tests/test_person.py, tree cat touch terminal, python3 -m unittest, red green refactor first failure, Auto Save close file before mv, pumping_python person project" name="keywords"/>
+<title>how to make a Python Test Driven Development environment manually | pumping python: how I solve problems with Test Driven Development</title>
+<meta content="how to make a Python Test Driven Development environment manually | pumping python: how I solve problems with Test Driven Development" property="og:title"/>
+<meta content="how to make a Python Test Driven Development environment manually | pumping python: how I solve problems with Test Driven Development" name="twitter:title"/>
+<link href="../_static/pygments.css?v=508cba51" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments_dark.css" id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css"/>
+<link href="../_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<link href="../_static/custom.css?v=fae82750" rel="stylesheet" type="text/css"/>
+<link href="../_static/awesome-sphinx-design.css?v=15e0fffa" rel="stylesheet" type="text/css"/>
+<link href="https://www.pumpingpython.com/make_tdd/make_tdd_manually.html" rel="canonical"/>
+<link href="../_static/dry_favicon_16x16.png" rel="icon"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../exceptions/ModuleNotFoundError/index.html" rel="next" title="what is a module?"/>
+<link href="../conventions.html" rel="prev" title="conventions"/>
+<script>
+    <!-- Prevent Flash of wrong theme -->
+      const userPreference = localStorage.getItem('darkMode');
+      let mode;
+      if (userPreference === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        mode = 'dark';
+        document.documentElement.classList.add('dark');
+      } else {
+        mode = 'light';
+      }
+      if (!userPreference) {localStorage.setItem('darkMode', mode)}
+    </script>
+<script async="" data-cbid="4496cd87-b06e-4d8a-bd19-dc3bc87191e3" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" type="text/javascript"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-0VPJ6HXTE8"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-0VPJ6HXTE8');
+    </script>
+<script>
+    (function () {
+      try {
+        const OriginalWebSocket = window.WebSocket;
+        window.WebSocket = function (url, protocols) {
+          if (typeof url === 'string' && url.indexOf('0.0.0.0') !== -1) {
+            const fixedUrl = url.replace(/0\.0\.0\.0/g, location.hostname);
+            console.debug('[live-reload-fix] Rewrote WS URL', url, '→', fixedUrl);
+            return new OriginalWebSocket(fixedUrl, protocols);
+          }
+          return new OriginalWebSocket(url, protocols);
+        };
+        // Also patch the prototype in case it's used as constructor differently
+        window.WebSocket.prototype = OriginalWebSocket.prototype;
+      } catch (e) {
+        console.warn('[live-reload-fix] Could not patch WebSocket', e);
+      }
+    })();
+    </script>
+</head>
+<body :class="{ 'overflow-hidden': showSidebar }" class="min-h-screen font-sans antialiased bg-background text-foreground" x-data="{ showSidebar: false, showScrollTop: false }">
+<div @click.self="showSidebar = false" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" x-cloak="" x-show="showSidebar"></div><div class="relative flex flex-col min-h-screen" id="page"><a class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100" href="#content">
+      Skip to content
+    </a><header class="sticky top-0 z-40 w-full border-b shadow-sm border-border supports-backdrop-blur:bg-background/60 bg-background/95 backdrop-blur"><div class="container flex items-center h-14">
+<div class="hidden mr-4 md:flex">
+<a class="flex items-center mr-6" href="../index.html">
+<img alt="Logo" class="mr-2 hidden dark:block" height="24" src="../_static/dry_favicon_16x16.png" width="24"/>
+<img alt="Logo" class="mr-2 dark:hidden" height="24" src="../_static/dry_favicon_16x16.png" width="24"/><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">pumping python: how I solve problems with Test Driven Development</span>
+</a></div><button @click="showSidebar = true" class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden" type="button">
+<svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z"></path>
+</svg>
+<span class="sr-only">Toggle navigation menu</span>
+</button>
+<div class="flex items-center justify-between flex-1 space-x-2 sm:space-x-4 md:justify-end">
+<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+</div>
+<nav class="flex items-center space-x-1">
+<button @click="darkMode = darkMode === 'light' ? 'dark' : 'light'" aria-label="Color theme switcher" class="relative inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9" type="button">
+<svg class="absolute transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 685q45.456 0 77.228-31.772Q589 621.456 589 576q0-45.456-31.772-77.228Q525.456 467 480 467q-45.456 0-77.228 31.772Q371 530.544 371 576q0 45.456 31.772 77.228Q434.544 685 480 685Zm0 91q-83 0-141.5-58.5T280 576q0-83 58.5-141.5T480 376q83 0 141.5 58.5T680 576q0 83-58.5 141.5T480 776ZM80 621.5q-19.152 0-32.326-13.174T34.5 576q0-19.152 13.174-32.326T80 530.5h80q19.152 0 32.326 13.174T205.5 576q0 19.152-13.174 32.326T160 621.5H80Zm720 0q-19.152 0-32.326-13.174T754.5 576q0-19.152 13.174-32.326T800 530.5h80q19.152 0 32.326 13.174T925.5 576q0 19.152-13.174 32.326T880 621.5h-80Zm-320-320q-19.152 0-32.326-13.174T434.5 256v-80q0-19.152 13.174-32.326T480 130.5q19.152 0 32.326 13.174T525.5 176v80q0 19.152-13.174 32.326T480 301.5Zm0 720q-19.152 0-32.326-13.17Q434.5 995.152 434.5 976v-80q0-19.152 13.174-32.326T480 850.5q19.152 0 32.326 13.174T525.5 896v80q0 19.152-13.174 32.33-13.174 13.17-32.326 13.17ZM222.174 382.065l-43-42Q165.5 327.391 166 308.239t13.174-33.065q13.435-13.674 32.587-13.674t32.065 13.674l42.239 43q12.674 13.435 12.555 31.706-.12 18.272-12.555 31.946-12.674 13.674-31.445 13.413-18.772-.261-32.446-13.174Zm494 494.761-42.239-43q-12.674-13.435-12.674-32.087t12.674-31.565Q686.609 756.5 705.38 757q18.772.5 32.446 13.174l43 41.761Q794.5 824.609 794 843.761t-13.174 33.065Q767.391 890.5 748.239 890.5t-32.065-13.674Zm-42-494.761Q660.5 369.391 661 350.62q.5-18.772 13.174-32.446l41.761-43Q728.609 261.5 747.761 262t33.065 13.174q13.674 13.435 13.674 32.587t-13.674 32.065l-43 42.239q-13.435 12.674-31.706 12.555-18.272-.12-31.946-12.555Zm-495 494.761Q165.5 863.391 165.5 844.239t13.674-32.065l43-42.239q13.435-12.674 32.087-12.674t31.565 12.674Q299.5 782.609 299 801.38q-.5 18.772-13.174 32.446l-41.761 43Q231.391 890.5 212.239 890t-33.065-13.174ZM480 576Z"></path>
+</svg>
+<svg class="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 936q-151 0-255.5-104.5T120 576q0-138 90-239.5T440 218q25-3 39 18t-1 44q-17 26-25.5 55t-8.5 61q0 90 63 153t153 63q31 0 61.5-9t54.5-25q21-14 43-1.5t19 39.5q-14 138-117.5 229T480 936Zm0-80q88 0 158-48.5T740 681q-20 5-40 8t-40 3q-123 0-209.5-86.5T364 396q0-20 3-40t8-40q-78 32-126.5 102T200 576q0 116 82 198t198 82Zm-10-270Z"></path>
+</svg>
+</button>
+</nav>
+</div>
+</div>
+</header>
+<div class="flex-1"><div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full shrink-0 overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
+<a class="!justify-start text-sm md:!hidden bg-background" href="../index.html">
+<img alt="Logo" class="mr-2 hidden dark:block" height="16" src="../_static/dry_favicon_16x16.png" width="16"/>
+<img alt="Logo" class="mr-2 dark:hidden" height="16" src="../_static/dry_favicon_16x16.png" width="16"/><span class="font-bold text-clip whitespace-nowrap">pumping python: how I solve problems with Test Driven Development</span>
+</a>
+<div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
+<div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">pumping python: how I solve problems with test driven development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hatches/index.html">join a HATCH</a></li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../setup/index.html">start here<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../setup/install_wsl.html">install WSL on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup/linux_requirements.html">linux/WSL requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup/mac_os_requirements.html">Mac OS requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup/windows_no_wsl_requirements.html">Windows without WSL requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup/setup_my_ide.html">setup my computer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../conventions.html">conventions</a></li>
+<li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="current reference internal expandable" href="#">make TDD manually<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/ModuleNotFoundError/index.html">what is a module?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run_tests_automatically.html">how to run tests automatically</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/AssertionError/index.html">what is an assertion?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/index.html">what is a function?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how_to/make_person/index.html">make a person with strings</a></li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../functions/functions_w_input.html">functions that take input<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/TypeError/index.html">what causes TypeError?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/AssertionError/AssertionError_w_functions.html">test AssertionError with functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how_to/telephone/index.html">telephone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/ModuleNotFoundError/separate_and_equal.html">separate and equal</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../how_to/make_person/make_person_w_fstrings.html">make a person with f-strings</a></li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../how_to/make_person/make_person_w_class.html">make a person with a class<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../objects/inheritance.html">everything is an object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../objects/unittest.html">another way to write tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../how_to/make_person/make_person_w_datetime.html">make a person with datetime<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../basic_objects/none.html">what is None?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/AssertionError/AssertionError_w_none.html">test AssertionError with None</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/functions_w_none.html">test functions with None</a></li>
+</ul>
+</li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../how_to/make_person/make_person_w_conditions.html">make a person with conditions<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../basic_objects/booleans/index.html">what are booleans?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make_tdd_automatically.html">how to make a Python Test Driven Development environment automatically</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../truth_table/index.html">truth table</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="make_tdd_automatically_w_variables.html">make TDD with variables</a></li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../how_to/make_person/make_person_w_exceptions.html">make a person with exceptions<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/exception_handling/exception_handling_tests.html">how to test that an Exception is raised</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/exception_handling/exception_handling_programs.html">how to handle Exceptions in programs</a></li>
+</ul>
+</li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../how_to/make_person/make_person_w_loops.html">make a person with loops<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul class="simple" x-show="expanded">
+</ul>
+</li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../basic_objects/dictionaries/index.html">what is a dictionary?<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../basic_objects/dictionaries/dictionaries.html">dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculator/calculator_7.html">make a calculator 7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../review.html">questions the book answers</a></li>
+<li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="current reference internal expandable" href="#">make TDD manually<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/ModuleNotFoundError/index.html">what is a module?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run_tests_automatically.html">how to run tests automatically</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/AssertionError/index.html">what is an assertion?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dot_notation.html">connect the dots</a></li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../basic_objects/index.html">basic objects<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../basic_objects/booleans/index.html">what are booleans?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic_objects/lists/index.html">Lists: anything in [ ]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic_objects/dictionaries/index.html">Dictionaries: key-value pairs</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../how_to/index.html">how to<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul class="current" x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../setup/index.html">setup my computer</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">make TDD manually</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how_to/telephone/index.html">telephone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculator/index.html">make a calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how_to/make_person.html">make a person</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../catalog_of_tests.html">catalog of tests</a></li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../catalog_of_code.html">all the code in this book<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../code/code_assertion_error.html">AssertionError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_atm.html">Automated Teller Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_attribute_error.html">AttributeError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_booleans.html">booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_calculator.html">calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_objects.html">objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_dictionaries.html">dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_elevator.html">Elevator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_exception_handling.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_functions.html">functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_learn_directory_structure.html">directory structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_learn_git.html">git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_list_comprehensions.html">list comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_lists.html">lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_make_python_tdd.html">make a Python TDD environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_microwave.html">Microwave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_module_not_found_error.html">ModuleNotFoundError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_none.html">None</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_person.html">person</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_sleep_duration.html">sleep duration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_telephone.html">telephone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_traffic_light.html">Traffic Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_truth_table.html">Truth Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_type_error.html">what causes TypeError?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_unittest.html">unittest</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../learning_models.html">can we measure learning?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reviews.html">what do people think of this?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../videos.html">videos</a></li>
+</ul>
+</nav>
+<div>
+<h3><a href="../index.html">Table of Contents</a></h3>
+<ul>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#">how to make a Python Test Driven Development environment manually<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#requirements">requirements</a></li>
+<li><a class="reference internal" href="#questions-about-making-a-python-test-driven-development-environment">questions about making a Python Test Driven Development Environment</a></li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#how-to-setup-the-project">how to setup the project<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#how-to-setup-a-project-with-uv">how to setup a project with uv</a></li>
+<li><a class="reference internal" href="#how-to-change-directory-to-the-project">how to change directory to the project</a></li>
+<li><a class="reference internal" href="#how-to-see-what-is-inside-a-file">how to see what is inside a file</a></li>
+<li><a class="reference internal" href="#how-to-run-a-python-program">how to run a Python program</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#test-failure">test_failure<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#how-to-manually-run-tests">how to manually run tests</a></li>
+<li><a class="reference internal" href="#how-to-make-a-directory-for-the-tests">how to make a directory for the tests</a></li>
+<li><a class="reference internal" href="#how-to-make-a-python-file-for-the-tests-in-the-tests-directory">how to make a Python file for the tests in the ‘tests’ directory</a></li>
+</ul>
+</li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#red-make-it-fail"><span class="custom-red">RED</span>: make it fail<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#how-to-make-the-tests-a-python-package">how to make the tests a Python package</a></li>
+<li><a class="reference internal" href="#how-to-change-the-name-of-a-file">how to change the name of a file</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#green-make-it-pass"><span class="custom-green">GREEN</span>: make it pass</a></li>
+<li><a class="reference internal" href="#refactor-make-it-better"><span class="custom-yellow">REFACTOR</span>: make it better</a></li>
+<li><a class="reference internal" href="#close-the-project">close the project</a></li>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#review">review<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#how-to-view-all-the-commands-typed-in-a-terminal">how to view all the commands typed in a terminal</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#what-is-next">what is next?</a></li>
+<li><a class="reference internal" href="#rate-pumping-python">rate pumping python</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<button @click="showSidebar = false" class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100" type="button">
+<svg class="h-4 w-4" fill="currentColor" height="24" stroke="none" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z"></path>
+</svg>
+</button>
+</aside>
+<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+<div class="w-full min-w-0 mx-auto">
+<nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../index.html">
+<span class="hidden md:inline">pumping python: how I solve problems with Test Driven Development</span>
+<svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
+</svg>
+</a>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">how to make a Python Test Driven Development environment manually</span>
+</nav>
+<div id="content" role="main">
+<hr class="docutils"/>
+<hr class="docutils"/>
+<hr class="docutils"/>
+<section id="how-to-make-a-python-test-driven-development-environment-manually">
+<h1>how to make a Python Test Driven Development environment manually<a class="headerlink" href="#how-to-make-a-python-test-driven-development-environment-manually" title="Link to this heading"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h1>
+<p>This is one way to make a <a class="reference internal" href="index.html#what-is-a-test-driven-development-environment"><span class="std std-ref">Python Test Driven Development project</span></a>. I walk through making the <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folders (directories)</a> and <a class="reference external" href="https://grokipedia.com/page/File">files</a> for the environment, including setting up <a class="reference internal" href="#test-failure"><span class="std std-ref">the first test</span></a>.</p>
+<p>By the end of the chapter you will know these commands better</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="unix" for="sd-tab-item-0">
+WSL/Linux/Mac</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">cd</span>
+</span><span id="line-2"><span class="n">tree</span>
+</span><span id="line-3"><span class="n">mkdir</span>
+</span><span id="line-4"><span class="n">touch</span>
+</span><span id="line-5"><span class="n">cat</span>
+</span><span id="line-6"><span class="n">mv</span>
+</span><span id="line-7"><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</span><span id="line-8"><span class="n">history</span>
+</span></code></pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="no_wsl" for="sd-tab-item-1">
+no WSL</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">cd</span>
+</span><span id="line-2"><span class="n">tree</span>
+</span><span id="line-3"><span class="n">mkdir</span>
+</span><span id="line-4"><span class="n">New</span><span class="o">-</span><span class="n">Item</span>
+</span><span id="line-5"><span class="n">cat</span>
+</span><span id="line-6"><span class="n">Move</span><span class="o">-</span><span class="n">Item</span>
+</span><span id="line-7"><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</span><span id="line-8"><span class="n">history</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils"/>
+<section id="requirements">
+<h2>requirements<a class="headerlink" href="#requirements" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#requirements'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../setup/index.html#start-here"><span class="std std-ref">start here</span></a></p></li>
+</ul>
+</section>
+<hr class="docutils"/>
+<section id="questions-about-making-a-python-test-driven-development-environment">
+<h2>questions about making a Python Test Driven Development Environment<a class="headerlink" href="#questions-about-making-a-python-test-driven-development-environment" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#questions-about-making-a-python-test-driven-development-environment'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="index.html#what-is-a-test-driven-development-environment"><span class="std std-ref">what is a Test Driven Development Environment?</span></a></p></li>
+<li><p><a class="reference internal" href="#how-to-make-a-python-test-driven-development-environment-manually"><span class="std std-ref">how can I make a Python Test Driven Development Environment manually?</span></a></p></li>
+<li><p><a class="reference internal" href="../bonus/learn_directory_relationships.html#how-to-change-directory"><span class="std std-ref">how can I change directories?</span></a></p></li>
+<li><p><a class="reference internal" href="../bonus/learn_directory_relationships.html#how-to-make-a-directory"><span class="std std-ref">how can I make a directory?</span></a></p></li>
+<li><p><a class="reference internal" href="../bonus/learn_directory_relationships.html#how-to-make-an-empty-file"><span class="std std-ref">how can I make an empty file?</span></a></p></li>
+<li><p><a class="reference internal" href="run_tests_automatically.html#how-to-write-text-to-a-file"><span class="std std-ref">how can I write text to a file?</span></a></p></li>
+<li><p><a class="reference internal" href="#how-to-see-what-is-inside-a-file"><span class="std std-ref">how can I see what is inside a file?</span></a></p></li>
+<li><p><a class="reference internal" href="#how-to-change-the-name-of-a-file"><span class="std std-ref">how can I change the name of a file?</span></a></p></li>
+<li><p><a class="reference internal" href="#how-to-run-a-python-program"><span class="std std-ref">how can I run a Python Program?</span></a></p></li>
+<li><p><a class="reference internal" href="#test-failure"><span class="std std-ref">how can I test for failure?</span></a></p></li>
+<li><p><a class="reference internal" href="#how-to-make-the-tests-a-python-package"><span class="std std-ref">how can I make a Python package?</span></a></p></li>
+<li><p><a class="reference internal" href="#how-to-manually-run-tests"><span class="std std-ref">how can I run tests manually?</span></a></p></li>
+<li><p><a class="reference internal" href="#how-to-setup-a-project-with-uv"><span class="std std-ref">how can I set up a project with uv?</span></a></p></li>
+</ul>
+</section>
+<hr class="docutils"/>
+<section id="how-to-setup-the-project">
+<h2>how to setup the project<a class="headerlink" href="#how-to-setup-the-project" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#how-to-setup-the-project'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<ul>
+<li><p>I choose <code class="docutils literal notranslate"><span class="pre">person</span></code> as the name of this project</p></li>
+<li><p>I open a <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a></p></li>
+<li><p>I <a class="reference external" href="https://man7.org/Linux/man-pages/man1/cd.1p.html">change directory</a> to where I will put all the projects from this book. I type <a class="reference external" href="https://man7.org/Linux/man-pages/man1/cd.1p.html">cd</a> in the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>skip this step if you are already in the <code class="docutils literal notranslate"><span class="pre">pumping_python</span></code> <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">directory</a> or made it earlier</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">cd</span> <span class="n">pumping_python</span>
+</mark></span></code></pre></div>
+</div>
+<ul>
+<li><p>if the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> shows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">cd</span><span class="p">:</span> <span class="n">no</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span><span class="p">:</span> <span class="n">pumping_python</span>
+</span></code></pre></div>
+</div>
+<p>the <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder (directory)</a> does NOT exist. I need to make it. I use the <a class="reference external" href="https://man7.org/Linux/man-pages/man1/mkdir.1.html">mkdir program</a> to make the <code class="docutils literal notranslate"><span class="pre">pumping_python</span></code> <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder (directory)</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">mkdir</span> <span class="n">pumping_python</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I try <a class="reference external" href="https://man7.org/Linux/man-pages/man1/cd.1p.html">changing directory</a> again</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">cd</span> <span class="n">pumping_python</span>
+</mark></span></code></pre></div>
+</div>
+<p>the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> shows I am in the <code class="docutils literal notranslate"><span class="pre">pumping_python</span></code> <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder (directory)</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="o">.../</span><span class="n">pumping_python</span>
+</span></code></pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>I type <a class="reference external" href="https://grokipedia.com/page/Tree_(command)">tree</a> in the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> to see what <a class="reference external" href="https://grokipedia.com/page/File">files</a> and <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folders</a> are in the <code class="docutils literal notranslate"><span class="pre">pumping_python</span></code> <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">directory</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">tree</span>
+</mark></span></code></pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="unix" for="sd-tab-item-2">
+WSL/Linux/Mac</label><div class="sd-tab-content docutils">
+<ul>
+<li><p>If <a class="reference external" href="https://grokipedia.com/page/Tree_(command)">tree</a> is not installed on the computer, the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> shows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">tree</span><span class="p">:</span> <span class="n">command</span> <span class="ow">not</span> <span class="n">found</span>
+</span></code></pre></div>
+</div>
+<p><a class="reference internal" href="index.html#what-is-covered"><span class="std std-ref">you can install it from here</span></a></p>
+</li>
+<li><p>If <a class="reference external" href="https://grokipedia.com/page/Tree_(command)">tree</a> is installed on the computer, the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> shows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="o">.</span>
+</span><span id="line-2">
+</span><span id="line-3"><span class="mi">0</span> <span class="n">directories</span><span class="p">,</span> <span class="mi">0</span> <span class="n">files</span>
+</span></code></pre></div>
+</div>
+</li>
+</ul>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="no_wsl" for="sd-tab-item-3">
+no WSL</label><div class="sd-tab-content docutils">
+<p>the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> shows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="o">.</span>
+</span><span id="line-2">
+</span><span id="line-3"><span class="mi">0</span> <span class="n">directories</span><span class="p">,</span> <span class="mi">0</span> <span class="n">files</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have done other work in the <code class="docutils literal notranslate"><span class="pre">pumping_python</span></code> <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder</a> there will be <a class="reference external" href="https://grokipedia.com/page/File">files</a> and <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folders</a> not 0 <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">directories</a> and 0 <a class="reference external" href="https://grokipedia.com/page/File">files</a></p>
+</div>
+</li>
+<li><p>I <a class="reference external" href="https://man7.org/Linux/man-pages/man1/cd.1p.html">change directory</a> to the <code class="docutils literal notranslate"><span class="pre">person</span></code> project in the <code class="docutils literal notranslate"><span class="pre">pumping_python</span></code> <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">cd</span> <span class="n">person</span>
+</mark></span></code></pre></div>
+</div>
+<p>the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> is my friend, and shows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">cd</span><span class="p">:</span> <span class="n">no</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span><span class="p">:</span> <span class="n">person</span>
+</span></code></pre></div>
+</div>
+<p>there is no <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder</a> with the name <code class="docutils literal notranslate"><span class="pre">person</span></code> in this <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder</a>, time to make <code class="docutils literal notranslate"><span class="pre">person</span></code>.</p>
+</li>
+</ul>
+<hr class="docutils"/>
+<section id="how-to-setup-a-project-with-uv">
+<h3>how to setup a project with uv<a class="headerlink" href="#how-to-setup-a-project-with-uv" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#how-to-setup-a-project-with-uv'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h3>
+<hr class="docutils"/>
+<ul>
+<li><p>I use the <a class="reference external" href="https://docs.astral.sh/uv/">uv Python Package Manager</a> to setup the project</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">uv</span> <span class="n">init</span> <span class="n">person</span>
+</mark></span></code></pre></div>
+</div>
+<p>the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> shows</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">Initialized<span class="w"> </span>project<span class="w"> </span><span class="sb">`</span>person<span class="sb">`</span><span class="w"> </span>at<span class="w"> </span><span class="sb">`</span>.../pumping_python/person<span class="sb">`</span>
+</span></code></pre></div>
+</div>
+<p><a class="reference external" href="https://docs.astral.sh/uv/">uv</a> is a <a class="reference external" href="https://grokipedia.com/page/Computer_program">program</a> that makes <a class="reference external" href="https://grokipedia.com/page/File">files</a> and <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folders</a> needed for a project. It also handles <a class="reference external" href="https://docs.python.org">Python</a> and <a class="reference external" href="https://docs.python.org/3/glossary.html#term-regular-package">Python Packages</a>.</p>
+</li>
+</ul>
+</section>
+<hr class="docutils"/>
+<section id="how-to-change-directory-to-the-project">
+<h3>how to change directory to the project<a class="headerlink" href="#how-to-change-directory-to-the-project" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#how-to-change-directory-to-the-project'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h3>
+<hr class="docutils"/>
+<ul>
+<li><p>I try to <a class="reference external" href="https://man7.org/Linux/man-pages/man1/cd.1p.html">change directory</a> to the <code class="docutils literal notranslate"><span class="pre">person</span></code> <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder</a> again</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">cd</span> <span class="n">person</span>
+</mark></span></code></pre></div>
+</div>
+<p>the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> shows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="o">.../</span><span class="n">pumping_python</span><span class="o">/</span><span class="n">person</span>
+</span></code></pre></div>
+</div>
+<p><a class="reference external" href="https://docs.astral.sh/uv/">uv</a> made the <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">directory</a> for me.</p>
+</li>
+<li><p>I use <a class="reference external" href="https://grokipedia.com/page/Tree_(command)">tree</a> to see what <a class="reference external" href="https://docs.astral.sh/uv/">uv</a> added to the <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder</a></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="unix" for="sd-tab-item-4">
+WSL/Linux/Mac</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">tree</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">L</span> <span class="mi">2</span>
+</mark></span></code></pre></div>
+</div>
+<p>the <code class="docutils literal notranslate"><span class="pre">-L</span></code> option tells <a class="reference external" href="https://grokipedia.com/page/Tree_(command)">tree</a> how deep to go when showing the <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folders</a> and <a class="reference external" href="https://grokipedia.com/page/File">files</a>, I use <code class="docutils literal notranslate"><span class="pre">2</span></code> to make it show only the first level of contents of the child <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folders</a>.</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="no_wsl" for="sd-tab-item-5">
+no WSL</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">tree</span>
+</mark></span></code></pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference external" href="https://docs.astral.sh/uv/">uv</a> added a few <a class="reference external" href="https://grokipedia.com/page/File">files</a> and <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folders</a>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.git</span></code> this <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder</a> makes the project a <a class="reference external" href="https://grokipedia.com/page/Git">git</a> repository, which makes it easy to keep track of changes I make. If I publish the repository I can work on the project from any computer anywhere (as long as it is has access to the repository).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> is a <a class="reference external" href="https://grokipedia.com/page/File">file</a> that tells <a class="reference external" href="https://grokipedia.com/page/Git">git</a> what <a class="reference external" href="https://grokipedia.com/page/File">files</a> in the project to not keep track of, which helps if there are things I do not want or need to share.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.python-version</span></code> is a <a class="reference external" href="https://grokipedia.com/page/File">file</a> that has the version of <a class="reference external" href="https://docs.python.org">Python</a> I am using, it helps if I do projects with different <a class="reference external" href="https://docs.python.org">Python</a> versions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">README.md</span></code> is a <a class="reference external" href="https://grokipedia.com/page/File">file</a> that is used to describe the project.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">src</span></code> is a <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder</a> that contains the code for the project (the source code).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> is a <a class="reference external" href="https://grokipedia.com/page/File">file</a> that is used to configure <a class="reference external" href="https://docs.python.org">Python</a> projects for packaging see <a class="reference external" href="https://python-poetry.org/docs/pyproject/">pyproject.toml</a> for more</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils"/>
+<section id="how-to-see-what-is-inside-a-file">
+<h3>how to see what is inside a file<a class="headerlink" href="#how-to-see-what-is-inside-a-file" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#how-to-see-what-is-inside-a-file'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h3>
+<hr class="docutils"/>
+<ul>
+<li><p>I can use the <a class="reference external" href="https://grokipedia.com/page/Cat_(Unix)">cat program</a> to see what is inside <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">cat</span> <span class="o">.</span><span class="n">gitignore</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I use <a class="reference external" href="https://grokipedia.com/page/Cat_(Unix)">cat</a> to see what is inside <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">cat</span> <span class="n">pyproject</span><span class="o">.</span><span class="n">toml</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I use <a class="reference external" href="https://grokipedia.com/page/Cat_(Unix)">cat</a> to see what is in <code class="docutils literal notranslate"><span class="pre">.python-version</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">cat</span> <span class="o">.</span><span class="n">python</span><span class="o">-</span><span class="n">version</span>
+</mark></span></code></pre></div>
+</div>
+<p>the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> is my friend, and shows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="mf">3.</span><span class="n">XY</span>
+</span></code></pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">XY</span></code> are numbers like <code class="docutils literal notranslate"><span class="pre">14</span></code> depending on what version of <a class="reference external" href="https://docs.python.org">Python</a> is installed.</p>
+</li>
+<li><p>I use <a class="reference external" href="https://grokipedia.com/page/Cat_(Unix)">cat</a> to show what is inside <code class="docutils literal notranslate"><span class="pre">README.md</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">cat</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+</ul>
+</section>
+<hr class="docutils"/>
+<section id="how-to-run-a-python-program">
+<h3>how to run a Python program<a class="headerlink" href="#how-to-run-a-python-program" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#how-to-run-a-python-program'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h3>
+<hr class="docutils"/>
+<ul>
+<li><p>I use <a class="reference external" href="https://docs.python.org">Python</a> to run the <code class="docutils literal notranslate"><span class="pre">person</span></code> <a class="reference external" href="https://grokipedia.com/page/Computer_program">program</a></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="unix" for="sd-tab-item-6">
+WSL/Linux/Mac</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">python3</span> <span class="n">src</span><span class="o">/</span><span class="n">person</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+</mark></span></code></pre></div>
+</div>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="no_wsl" for="sd-tab-item-7">
+no WSL</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">python</span> <span class="n">src</span><span class="o">/</span><span class="n">person</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+</mark></span></code></pre></div>
+</div>
+</div>
+</div>
+<p>No errors! The <a class="reference external" href="https://docs.astral.sh/uv/">uv Python package manager</a> made the <a class="reference external" href="https://grokipedia.com/page/File">file</a> with some <a class="reference external" href="https://docs.python.org">Python</a> code in it that I can run.</p>
+</li>
+<li><p>I can also use <a class="reference external" href="https://docs.astral.sh/uv/">uv</a> to run the <a class="reference external" href="https://grokipedia.com/page/Computer_program">program</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">uv</span> <span class="n">run</span> <span class="n">person</span>
+</mark></span></code></pre></div>
+</div>
+<p><a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> shows</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">Hello<span class="w"> </span>from<span class="w"> </span>person!
+</span></code></pre></div>
+</div>
+<p>Success!</p>
+</li>
+<li><p>I use <a class="reference external" href="https://grokipedia.com/page/Cat_(Unix)">cat</a> to see what is in <code class="docutils literal notranslate"><span class="pre">src/person/__init__.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">cat</span> <span class="n">src</span><span class="o">/</span><span class="n">person</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="test-failure">
+<h2>test_failure<a class="headerlink" href="#test-failure" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#test-failure'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<section id="how-to-manually-run-tests">
+<h3>how to manually run tests<a class="headerlink" href="#how-to-manually-run-tests" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#how-to-manually-run-tests'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h3>
+<hr class="docutils"/>
+<ul>
+<li><p>I use the <a class="reference internal" href="../objects/unittest.html#another-way-to-write-tests"><span class="std std-ref">unittest module</span></a> from <a class="reference external" href="https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library">The Python Standard Library</a> that comes with <a class="reference external" href="https://docs.python.org">Python</a> to run tests. I type this in the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="unix" for="sd-tab-item-8">
+WSL/Linux/Mac</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</mark></span></code></pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">python3</span></code> is the <a class="reference external" href="https://docs.python.org/3/glossary.html#term-regular-package">Python program</a></p>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-4" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="no_wsl" for="sd-tab-item-9">
+no WSL</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</mark></span></code></pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">python</span></code> is the <a class="reference external" href="https://docs.python.org/3/glossary.html#term-regular-package">Python program</a></p>
+</div>
+</div>
+<p>the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> shows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="o">------------------------------------------------------</span>
+</span><span id="line-2"><span class="n">Ran</span> <span class="mi">0</span> <span class="n">tests</span> <span class="ow">in</span> <span class="mf">0.000</span><span class="n">s</span>
+</span><span id="line-3">
+</span><span id="line-4"><span class="n">NO</span> <span class="n">TESTS</span> <span class="n">RAN</span>
+</span></code></pre></div>
+</div>
+<p>because I do not have any tests, yet.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-m</span></code> is an option/switch passed when calling <a class="reference external" href="https://docs.python.org">Python</a> to run the <a class="reference internal" href="../exceptions/ModuleNotFoundError/index.html#what-is-a-module"><span class="std std-ref">module</span></a> ( <a class="reference internal" href="../objects/unittest.html#another-way-to-write-tests"><span class="std std-ref">unittest</span></a> in this case)</p></li>
+<li><p>which leads to the question of <a class="reference internal" href="../exceptions/ModuleNotFoundError/index.html#what-is-a-module"><span class="std std-ref">what is a module?</span></a> Any <a class="reference external" href="https://grokipedia.com/page/File">file</a> that ends in <code class="docutils literal notranslate"><span class="pre">.py</span></code> is a <a class="reference internal" href="../exceptions/ModuleNotFoundError/index.html#what-is-a-module"><span class="std std-ref">Python module</span></a>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils"/>
+<section id="how-to-make-a-directory-for-the-tests">
+<h3>how to make a directory for the tests<a class="headerlink" href="#how-to-make-a-directory-for-the-tests" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#how-to-make-a-directory-for-the-tests'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h3>
+<hr class="docutils"/>
+<ul>
+<li><p>I make a child <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder</a> to keep the tests separate from the other <a class="reference external" href="https://grokipedia.com/page/File">files</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">mkdir</span> <span class="n">tests</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I use <a class="reference external" href="https://grokipedia.com/page/Tree_(command)">tree</a> to see what my project now looks like</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-5" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="unix" for="sd-tab-item-10">
+WSL/Linux/Mac</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">tree</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">L</span> <span class="mi">1</span>
+</mark></span></code></pre></div>
+</div>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-5" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="no_wsl" for="sd-tab-item-11">
+no WSL</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">tree</span>
+</mark></span></code></pre></div>
+</div>
+</div>
+</div>
+<p>there is a new <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder</a> named <code class="docutils literal notranslate"><span class="pre">tests</span></code>.</p>
+</li>
+</ul>
+</section>
+<hr class="docutils"/>
+<section id="how-to-make-a-python-file-for-the-tests-in-the-tests-directory">
+<h3>how to make a Python file for the tests in the ‘tests’ directory<a class="headerlink" href="#how-to-make-a-python-file-for-the-tests-in-the-tests-directory" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#how-to-make-a-python-file-for-the-tests-in-the-tests-directory'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h3>
+<hr class="docutils"/>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-6" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="unix" for="sd-tab-item-12">
+WSL/Linux/Mac</label><div class="sd-tab-content docutils">
+<ul>
+<li><p>I use <a class="reference external" href="https://en.wikipedia.org/wiki/Touch_(command)">touch</a> to add an empty <a class="reference external" href="https://grokipedia.com/page/File">file</a> to the <code class="docutils literal notranslate"><span class="pre">tests</span></code> <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">directory</a> for the actual test</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">touch</span> <span class="n">tests</span><span class="o">/</span><span class="n">person</span><span class="o">.</span><span class="n">py</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I use <a class="reference external" href="https://grokipedia.com/page/Tree_(command)">tree</a> to see what the project looks like now</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">tree</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">L</span> <span class="mi">2</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I run the test again</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+</ul>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-6" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="no_wsl" for="sd-tab-item-13">
+no WSL</label><div class="sd-tab-content docutils">
+<ul>
+<li><p>I use <a class="reference external" href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-item">New-Item</a> to add an empty <a class="reference external" href="https://grokipedia.com/page/File">file</a> to the <code class="docutils literal notranslate"><span class="pre">tests</span></code> <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">directory</a> for the actual test</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">New</span><span class="o">-</span><span class="n">Item</span> <span class="n">tests</span><span class="o">/</span><span class="n">person</span><span class="o">.</span><span class="n">py</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I use <a class="reference external" href="https://grokipedia.com/page/Tree_(command)">tree</a> to see what the project looks like now</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">tree</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I run the test again</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<p>the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> is my friend, and shows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">NO</span> <span class="n">TESTS</span> <span class="n">RAN</span>
+</span></code></pre></div>
+</div>
+<p>because I have not set up the test correctly.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="red-make-it-fail">
+<h2><span class="custom-red">RED</span>: make it fail<a class="headerlink" href="#red-make-it-fail" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#red-make-it-fail'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<ul>
+<li><p>I open <code class="docutils literal notranslate"><span class="pre">tests/person.py</span></code> from the <code class="docutils literal notranslate"><span class="pre">tests</span></code> <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder</a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>I can open a <a class="reference external" href="https://grokipedia.com/page/File">file</a> from the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> with <kbd class="kbd docutils literal notranslate">ctrl</kbd> (<a class="reference external" href="https://www.microsoft.com/en-us/Windows">Windows</a>/<a class="reference external" href="https://www.kernel.org/category/about.html">Linux</a>) or <kbd class="kbd docutils literal notranslate">command</kbd> (<a class="reference external" href="https://www.apple.com/macos">MacOS</a>) on the keyboard and a click with the mouse on the name of the <a class="reference external" href="https://grokipedia.com/page/File">file</a></p>
+</div>
+</li>
+<li><p>I add <a class="reference external" href="https://docs.python.org">Python</a> code to <code class="docutils literal notranslate"><span class="pre">tests/person.py</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the line numbers are a guide, no need to copy them</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="linenos">1</span><span class="kc">False</span> <span class="ow">is</span> <span class="kc">True</span>
+</mark></span></code></pre></div>
+</div>
+<p>I expect this line to fail because <a class="reference internal" href="../basic_objects/booleans/index.html#test-what-is-false"><span class="std std-ref">False</span></a> is NOT <a class="reference internal" href="../basic_objects/booleans/index.html#test-what-is-true"><span class="std std-ref">True</span></a>.</p>
+</li>
+<li><p>I turn on the <code class="docutils literal notranslate"><span class="pre">Auto</span> <span class="pre">Save</span></code> feature in the <a class="reference external" href="https://grokipedia.com/page/Integrated_development_environment">Integrated Development Environment (IDE)</a> to automatically save files when I make a change so that <a class="reference external" href="https://grokipedia.com/page/Don%27t_repeat_yourself">I do not repeat myself</a>. I do not want to use <kbd class="kbd docutils literal notranslate">ctrl/command</kbd>+<kbd class="kbd docutils literal notranslate">s</kbd> (<a class="reference external" href="https://www.microsoft.com/en-us/Windows">Windows</a> &amp; <a class="reference external" href="https://www.kernel.org/category/about.html">Linux</a>/<a class="reference external" href="https://www.apple.com/macos">MacOS</a>) on the keyboard every time I make a change, I want the computer to do that for me</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Turn on the <code class="docutils literal notranslate"><span class="pre">Auto</span> <span class="pre">Save</span></code> feature in the <a class="reference external" href="https://grokipedia.com/page/Integrated_development_environment">Integrated Development Environment (IDE)</a></p>
+</div>
+</li>
+<li><p>I try the command again to run the tests, in the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-7" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="unix" for="sd-tab-item-14">
+WSL/Linux/Mac</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</mark></span></code></pre></div>
+</div>
+</div>
+<input id="sd-tab-item-15" name="sd-tab-set-7" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="no_wsl" for="sd-tab-item-15">
+no WSL</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</mark></span></code></pre></div>
+</div>
+</div>
+</div>
+<p>the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> is my friend, and shows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">NO</span> <span class="n">TESTS</span> <span class="n">RAN</span>
+</span></code></pre></div>
+</div>
+<p>because the <code class="docutils literal notranslate"><span class="pre">tests</span></code> <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder</a> is NOT a <a class="reference external" href="https://docs.python.org/3/glossary.html#term-regular-package">Python package</a> and <a class="reference internal" href="../objects/unittest.html#another-way-to-write-tests"><span class="std std-ref">unittest</span></a> cannot find my test.</p>
+<p>I need to add a <a class="reference external" href="https://grokipedia.com/page/File">file</a> named <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> to the <code class="docutils literal notranslate"><span class="pre">tests</span></code> folder, to make it a <a class="reference external" href="https://docs.python.org/3/glossary.html#term-regular-package">Python package</a> for <a class="reference internal" href="../objects/unittest.html#another-way-to-write-tests"><span class="std std-ref">unittest</span></a> to find the test.</p>
+</li>
+</ul>
+<hr class="docutils"/>
+<section id="how-to-make-the-tests-a-python-package">
+<h3>how to make the tests a Python package<a class="headerlink" href="#how-to-make-the-tests-a-python-package" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#how-to-make-the-tests-a-python-package'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h3>
+<hr class="docutils"/>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>use 2 underscores (__) before and after <code class="docutils literal notranslate"><span class="pre">init</span></code> for <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> not <code class="docutils literal notranslate"><span class="pre">_init_.py</span></code></p>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-8" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="unix" for="sd-tab-item-16">
+WSL/Linux/Mac</label><div class="sd-tab-content docutils">
+<ul>
+<li><p>I use <a class="reference external" href="https://en.wikipedia.org/wiki/Touch_(command)">touch</a> to add an empty <a class="reference external" href="https://grokipedia.com/page/File">file</a> with the name <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> to the <code class="docutils literal notranslate"><span class="pre">tests</span></code> folder</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">touch</span> <span class="n">tests</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I run the <a class="reference external" href="https://grokipedia.com/page/Tree_(command)">tree</a> command to see what changed</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">tree</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">L</span> <span class="mi">2</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I try to run the test again</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+</ul>
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-8" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="no_wsl" for="sd-tab-item-17">
+no WSL</label><div class="sd-tab-content docutils">
+<ul>
+<li><p>I use <a class="reference external" href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-item">New-Item</a> to add an empty <a class="reference external" href="https://grokipedia.com/page/File">file</a> with the name <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> to the <code class="docutils literal notranslate"><span class="pre">tests</span></code> folder</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">New</span><span class="o">-</span><span class="n">Item</span> <span class="n">tests</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I run the <a class="reference external" href="https://grokipedia.com/page/Tree_(command)">tree</a> command to see what changed</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">tree</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I try to run the test again</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<p>the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> does not feel like my friend, and shows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">NO</span> <span class="n">TESTS</span> <span class="n">RAN</span>
+</span></code></pre></div>
+</div>
+<p>because <a class="reference internal" href="../objects/unittest.html#another-way-to-write-tests"><span class="std std-ref">unittest</span></a> does not know that <code class="docutils literal notranslate"><span class="pre">tests/person.py</span></code> is a test <a class="reference external" href="https://grokipedia.com/page/File">file</a>.</p>
+<p>I have to change the name to make sure it starts with <code class="docutils literal notranslate"><span class="pre">test_</span></code>.</p>
+</section>
+<hr class="docutils"/>
+<section id="how-to-change-the-name-of-a-file">
+<h3>how to change the name of a file<a class="headerlink" href="#how-to-change-the-name-of-a-file" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#how-to-change-the-name-of-a-file'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h3>
+<hr class="docutils"/>
+<ul>
+<li><p>I close <code class="docutils literal notranslate"><span class="pre">tests/person.py</span></code></p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>if you do not close <code class="docutils literal notranslate"><span class="pre">tests/person.py</span></code>, there will be 3 files in the <code class="docutils literal notranslate"><span class="pre">tests</span></code> folder after the next step (instead of 2), because the <code class="docutils literal notranslate"><span class="pre">Auto</span> <span class="pre">Save</span></code> feature (enabled earlier) will save the original <a class="reference external" href="https://grokipedia.com/page/File">file</a> if it is still open after you change its name.</p>
+</div>
+</li>
+</ul>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-9" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="unix" for="sd-tab-item-18">
+WSL/Linux/Mac</label><div class="sd-tab-content docutils">
+<ul>
+<li><p>I use the <a class="reference external" href="https://grokipedia.com/page/Mv_(Unix)">mv program</a> to change the name of <code class="docutils literal notranslate"><span class="pre">tests/person.py</span></code> to <code class="docutils literal notranslate"><span class="pre">tests/test_person.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">mv</span> <span class="n">tests</span><span class="o">/</span><span class="n">person</span><span class="o">.</span><span class="n">py</span> <span class="n">tests</span><span class="o">/</span><span class="n">test_person</span><span class="o">.</span><span class="n">py</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I use <a class="reference external" href="https://grokipedia.com/page/Tree_(command)">tree</a> with the <code class="docutils literal notranslate"><span class="pre">-L</span></code> option to see what I have so far</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">tree</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">L</span> <span class="mi">2</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I run the test again</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+</ul>
+</div>
+<input id="sd-tab-item-19" name="sd-tab-set-9" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="no_wsl" for="sd-tab-item-19">
+no WSL</label><div class="sd-tab-content docutils">
+<ul>
+<li><p>I use <a class="reference external" href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/move-item">Move-Item</a> to change the name of <code class="docutils literal notranslate"><span class="pre">tests/person.py</span></code> to <code class="docutils literal notranslate"><span class="pre">tests/test_person.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">Move</span><span class="o">-</span><span class="n">Item</span> <span class="n">tests</span><span class="o">/</span><span class="n">person</span><span class="o">.</span><span class="n">py</span> <span class="n">tests</span><span class="o">/</span><span class="n">test_person</span><span class="o">.</span><span class="n">py</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I use <a class="reference external" href="https://grokipedia.com/page/Tree_(command)">tree</a> to see what I have so far</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">tree</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I run the test again</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<p>the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> still shows <code class="docutils literal notranslate"><span class="pre">NO</span> <span class="pre">TESTS</span> <span class="pre">RAN</span></code></p>
+<ul>
+<li><p>I add <a class="reference internal" href="../exceptions/AssertionError/index.html#what-is-an-assertion"><span class="std std-ref">assert</span></a> before <code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">is</span> <span class="pre">True</span></code> in <code class="docutils literal notranslate"><span class="pre">tests/test_person.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="linenos">1</span><span class="c1"># False is True</span>
+</mark></span><span id="line-2"><mark><span class="linenos">2</span><span class="k">assert</span> <span class="kc">False</span> <span class="ow">is</span> <span class="kc">True</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I try to run the test again</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-10" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="unix" for="sd-tab-item-20">
+WSL/Linux/Mac</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</mark></span></code></pre></div>
+</div>
+</div>
+<input id="sd-tab-item-21" name="sd-tab-set-10" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="no_wsl" for="sd-tab-item-21">
+no WSL</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</mark></span></code></pre></div>
+</div>
+</div>
+</div>
+<p>the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> is my friend, and shows <a class="reference internal" href="../exceptions/AssertionError/index.html#what-causes-assertionerror"><span class="std std-ref">AssertionError</span></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">E</span>
+</span><span id="line-2"><span class="o">======================================================</span>
+</span><span id="line-3"><span class="n">ERROR</span><span class="p">:</span> <span class="n">tests</span><span class="o">.</span><span class="n">test_person</span> <span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">loader</span><span class="o">.</span><span class="n">_FailedTest</span><span class="o">.</span><span class="n">tests</span><span class="o">.</span><span class="n">test_person</span><span class="p">)</span>
+</span><span id="line-4"><span class="o">------------------------------------------------------</span>
+</span><span id="line-5"><span class="ne">ImportError</span><span class="p">:</span> <span class="n">Failed</span> <span class="n">to</span> <span class="kn">import</span><span class="w"> </span><span class="nn">test</span> <span class="n">module</span><span class="p">:</span> <span class="n">tests</span><span class="o">.</span><span class="n">test_person</span>
+</span><span id="line-6"><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+</span><span id="line-7">  <span class="n">File</span> <span class="s2">"/usr/local/lib/python3.XY/unittest/loader.py"</span><span class="p">,</span>
+</span><span id="line-8">    <span class="n">line</span> <span class="n">ABC</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_find_test_path</span>
+</span><span id="line-9">    <span class="n">module</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_module_from_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</span><span id="line-10">  <span class="n">File</span> <span class="s2">"/usr/local/lib/python3.XY/unittest/loader.py"</span><span class="p">,</span>
+</span><span id="line-11">    <span class="n">line</span> <span class="n">DEF</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_get_module_from_name</span>
+</span><span id="line-12">    <span class="nb">__import__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</span><span id="line-13">    <span class="o">~~~~~~~~~~^^^^^^</span>
+</span><span id="line-14">  <span class="n">File</span> <span class="s2">".../pumping_python/person/tests/test_person.py"</span><span class="p">,</span>
+</span><span id="line-15">    <span class="n">line</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+</span><span id="line-16"><mark>    <span class="k">assert</span> <span class="kc">False</span> <span class="ow">is</span> <span class="kc">True</span>
+</mark></span><span id="line-17">           <span class="o">^^^^^^^^^^^^^</span>
+</span><span id="line-18"><mark><span class="ne">AssertionError</span>
+</mark></span><span id="line-19">
+</span><span id="line-20">
+</span><span id="line-21"><span class="o">------------------------------------------------------</span>
+</span><span id="line-22"><span class="n">Ran</span> <span class="mi">1</span> <span class="n">test</span> <span class="ow">in</span> <span class="mf">0.001</span><span class="n">s</span>
+</span><span id="line-23">
+</span><span id="line-24"><span class="n">FAILED</span> <span class="p">(</span><span class="n">errors</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<p>Success! I have my first failure.</p>
+<p>I can use any name for the test <a class="reference external" href="https://grokipedia.com/page/File">file</a> as long as it starts with <code class="docutils literal notranslate"><span class="pre">test</span></code> or <a class="reference internal" href="../objects/unittest.html#another-way-to-write-tests"><span class="std std-ref">unittest</span></a> will NOT run the tests in the <a class="reference external" href="https://grokipedia.com/page/File">file</a>.</p>
+<p>This is the <span class="custom-red">RED</span> part of the <a class="reference internal" href="index.html#what-is-the-test-driven-development-cycle"><span class="std std-ref">Test Driven Development Cycle</span></a>. The message in the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> is about the failure, I like to read these from the bottom up. Here is an explanation of each line, starting from the last line on the screen</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">FAILED</span> <span class="pre">(errors=1)</span></code>: the number of failures or <a class="reference internal" href="../exceptions/exception_handling/exception_handling_tests.html#how-to-test-that-an-exception-is-raised"><span class="std std-ref">errors</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ran</span> <span class="pre">1</span> <span class="pre">test</span> <span class="pre">in</span> <span class="pre">A.XYZs</span></code>: the number of tests it ran and how long they took</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AssertionError</span></code>: the <a class="reference internal" href="../exceptions/exception_handling/exception_handling_tests.html#how-to-test-that-an-exception-is-raised"><span class="std std-ref">Error (Exception)</span></a> that happened. Since I used an <a class="reference internal" href="../exceptions/AssertionError/index.html#what-is-an-assertion"><span class="std std-ref">assert statement</span></a> I get <a class="reference internal" href="../exceptions/AssertionError/index.html#what-causes-assertionerror"><span class="std std-ref">AssertionError</span></a> because the statement after <code class="docutils literal notranslate"><span class="pre">assert</span></code> is <a class="reference internal" href="../basic_objects/booleans/index.html#test-what-is-false"><span class="std std-ref">False</span></a> - <a class="reference internal" href="../basic_objects/booleans/index.html#test-what-is-false"><span class="std std-ref">False</span></a> is NOT <a class="reference internal" href="../basic_objects/booleans/index.html#test-what-is-true"><span class="std std-ref">True</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">False</span> <span class="pre">is</span> <span class="pre">True</span></code>: the line of code that caused <a class="reference internal" href="../exceptions/AssertionError/index.html#what-causes-assertionerror"><span class="std std-ref">AssertionError</span></a></p></li>
+<li><p>the arrows (<code class="docutils literal notranslate"><span class="pre">^^^^^^^^^^^^^</span></code>): point to the part of the line above, that <a class="reference external" href="https://docs.python.org">Python</a> thinks caused the <a class="reference internal" href="../exceptions/exception_handling/exception_handling_tests.html#how-to-test-that-an-exception-is-raised"><span class="std std-ref">error</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">".../pumping_python/person/tests/test_person.py",</span> <span class="pre">line</span> <span class="pre">2,</span> <span class="pre">in</span> <span class="pre">&lt;module&gt;</span></code>: the line number of the code that caused the <a class="reference internal" href="../exceptions/exception_handling/exception_handling_tests.html#how-to-test-that-an-exception-is-raised"><span class="std std-ref">error</span></a> and the location of the <a class="reference external" href="https://grokipedia.com/page/File">file</a> where the <a class="reference internal" href="../exceptions/exception_handling/exception_handling_tests.html#how-to-test-that-an-exception-is-raised"><span class="std std-ref">error</span></a> happened and again the question - <a class="reference internal" href="../exceptions/ModuleNotFoundError/index.html#what-is-a-module"><span class="std std-ref">what is a module?</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__import__(name)</span></code> shows another <a class="reference internal" href="../exceptions/exception_handling/exception_handling_tests.html#how-to-test-that-an-exception-is-raised"><span class="std std-ref">error</span></a> that is triggered by the one from <code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">False</span> <span class="pre">is</span> <span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">"/usr/local/lib/python3.XY/unittest/loader.py",</span> <span class="pre">line</span> <span class="pre">367,</span> <span class="pre">in</span> <span class="pre">_get_module_from_name</span></code> shows the line, <a class="reference internal" href="../objects/inheritance.html#what-is-a-method"><span class="std std-ref">method</span></a> and <a class="reference external" href="https://grokipedia.com/page/File">file</a> where the <a class="reference internal" href="../exceptions/exception_handling/exception_handling_tests.html#how-to-test-that-an-exception-is-raised"><span class="std std-ref">error</span></a> triggered by my <code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">False</span> <span class="pre">is</span> <span class="pre">True</span></code> happened</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">=</span> <span class="pre">self._get_module_from_name(name)</span></code> a failure triggered by the failure triggered by my <code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">False</span> <span class="pre">is</span> <span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">"/usr/local/lib/python3.XY/unittest/loader.py",</span> <span class="pre">line</span> <span class="pre">426,</span> <span class="pre">in</span> <span class="pre">_find_test_path</span></code> shows the line, <a class="reference internal" href="../objects/inheritance.html#what-is-a-method"><span class="std std-ref">method</span></a> and <a class="reference external" href="https://grokipedia.com/page/File">file</a> where the <a class="reference internal" href="../exceptions/exception_handling/exception_handling_tests.html#how-to-test-that-an-exception-is-raised"><span class="std std-ref">error</span></a> triggered by the one triggered by my <code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">False</span> <span class="pre">is</span> <span class="pre">True</span></code> happened</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Traceback</span> <span class="pre">(most</span> <span class="pre">recent</span> <span class="pre">call</span> <span class="pre">last):</span></code>: all the information shown after this line that is indented to the right shows the calls that led to the failure. The last line is usually the most important one that points to what caused the failure, this is why I like to read it from the bottom up. In this case it is the only one I care about because it is the one I added to cause the failure.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">tests.test_person</span> <span class="pre">(unittest.loader._FailedTest.tests.test_person)</span></code> is a header with information in <a class="reference internal" href="../dot_notation.html#dot-notation"><span class="std std-ref">dot notation</span></a> about the failing test</p>
+<p>I think of <code class="docutils literal notranslate"><span class="pre">tests.test_person</span></code> as an address</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tests</span></code> is the <code class="docutils literal notranslate"><span class="pre">tests</span></code> <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">test_person</span></code> is the <code class="docutils literal notranslate"><span class="pre">test_person.py</span></code> <a class="reference external" href="https://grokipedia.com/page/File">file</a> in the <code class="docutils literal notranslate"><span class="pre">tests</span></code> <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder</a>.</p></li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">tests
+</span><span id="line-2">│<span class="w">   </span>__init__.py
+</span><span id="line-3">└──<span class="w"> </span>test_person.py
+</span></code></pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="green-make-it-pass">
+<h2><span class="custom-green">GREEN</span>: make it pass<a class="headerlink" href="#green-make-it-pass" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#green-make-it-pass'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<ul>
+<li><p>I hold <kbd class="kbd docutils literal notranslate">ctrl</kbd> (<a class="reference external" href="https://www.microsoft.com/en-us/Windows">Windows</a>/<a class="reference external" href="https://www.kernel.org/category/about.html">Linux</a>) or <kbd class="kbd docutils literal notranslate">option/command</kbd> (<a class="reference external" href="https://www.apple.com/macos">MacOS</a>) on the keyboard and use the mouse to click on <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">".../pumping_python/person/tests/test_person.py",</span> <span class="pre">line</span> <span class="pre">2</span></code> in the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a>, and the <a class="reference external" href="https://grokipedia.com/page/Integrated_development_environment">Integrated Development Environment (IDE)</a> opens the <a class="reference external" href="https://grokipedia.com/page/File">file</a> with the cursor at the line where the failure happened.</p></li>
+<li><p>I change <a class="reference internal" href="../basic_objects/booleans/index.html#test-what-is-true"><span class="std std-ref">True</span></a> to <a class="reference internal" href="../basic_objects/booleans/index.html#test-what-is-false"><span class="std std-ref">False</span></a> in <code class="docutils literal notranslate"><span class="pre">test_person.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="linenos">1</span><span class="c1"># False is True</span>
+</span><span id="line-2"><mark><span class="linenos">2</span><span class="c1"># assert False is True</span>
+</mark></span><span id="line-3"><mark><span class="linenos">3</span><span class="k">assert</span> <span class="kc">False</span> <span class="ow">is</span> <span class="kc">False</span>
+</mark></span></code></pre></div>
+</div>
+</li>
+<li><p>I go back to the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> to run the test</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-22" name="sd-tab-set-11" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="unix" for="sd-tab-item-22">
+WSL/Linux/Mac</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</mark></span></code></pre></div>
+</div>
+</div>
+<input id="sd-tab-item-23" name="sd-tab-set-11" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="no_wsl" for="sd-tab-item-23">
+no WSL</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</mark></span></code></pre></div>
+</div>
+</div>
+</div>
+<p>the test passes! The <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> shows</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">------------------------------------------------------
+</span><span id="line-2">Ran 0 tests in 0.000s
+</span><span id="line-3">
+</span><span id="line-4">NO TESTS RAN
+</span></code></pre></div>
+</div>
+<p>This is confusing, since the only way I know the test passed, is because I saw it fail. There has to be a better way. It is why the <span class="custom-red">RED</span> part of the cycle is important, it shows that the test works. For now <em>cue CELEBRATION MUSIC AND DANCE!</em> I am <span class="custom-green">GREEN!!</span></p>
+</li>
+</ul>
+</section>
+<hr class="docutils"/>
+<section id="refactor-make-it-better">
+<h2><span class="custom-yellow">REFACTOR</span>: make it better<a class="headerlink" href="#refactor-make-it-better" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#refactor-make-it-better'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<ul>
+<li><p>I keep a list of <a class="reference internal" href="../exceptions/exception_handling/exception_handling_tests.html#how-to-test-that-an-exception-is-raised"><span class="std std-ref">Errors/Exceptions</span></a> that show up in the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> as I go through this book to help me know them better. I add <a class="reference internal" href="../exceptions/AssertionError/index.html#what-causes-assertionerror"><span class="std std-ref">AssertionError</span></a> to <code class="docutils literal notranslate"><span class="pre">tests/test_person.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="linenos">1</span><span class="c1"># False is True</span>
+</span><span id="line-2"><span class="linenos">2</span><span class="c1"># assert False is True</span>
+</span><span id="line-3"><span class="linenos">3</span><span class="k">assert</span> <span class="kc">False</span> <span class="ow">is</span> <span class="kc">False</span>
+</span><span id="line-4"><span class="linenos">4</span>
+</span><span id="line-5"><span class="linenos">5</span>
+</span><span id="line-6"><mark><span class="linenos">6</span><span class="c1"># Exceptions seen</span>
+</mark></span><span id="line-7"><mark><span class="linenos">7</span><span class="c1"># AssertionError</span>
+</mark></span></code></pre></div>
+</div>
+<p>comments in <a class="reference external" href="https://docs.python.org">Python</a> are written with <code class="docutils literal notranslate"><span class="pre">#</span></code> at the beginning, they do not do anything, they are notes for me.</p>
+</li>
+<li><p>I add the new <a class="reference external" href="https://grokipedia.com/page/File">files</a> and <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folders</a> to <a class="reference external" href="https://grokipedia.com/page/Git">git</a> for tracking</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+</mark></span></code></pre></div>
+</div>
+<p>the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> goes back to the command line.</p>
+</li>
+<li><p>I add a <a class="reference external" href="https://grokipedia.com/page/Git">git</a> commit message</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">git</span> <span class="n">commit</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">message</span> \
+</mark></span><span id="line-2"><mark><span class="s1">'setup project'</span>
+</mark></span></code></pre></div>
+</div>
+<p>the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> shows a summary of the changes then goes back to the command line.</p>
+</li>
+</ul>
+</section>
+<hr class="docutils"/>
+<section id="close-the-project">
+<h2>close the project<a class="headerlink" href="#close-the-project" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#close-the-project'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<ul>
+<li><p>I close <code class="docutils literal notranslate"><span class="pre">tests/test_person.py</span></code></p></li>
+<li><p>I click in the terminal and <a class="reference external" href="https://man7.org/Linux/man-pages/man1/cd.1p.html">change directory</a> to the parent of <code class="docutils literal notranslate"><span class="pre">person</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">cd</span> <span class="o">..</span>
+</mark></span></code></pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">..</span></code> is for the parent of any <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">directory</a> I am in. the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> shows</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="o">.../</span><span class="n">pumping_python</span>
+</span></code></pre></div>
+</div>
+<p>I am back in the <code class="docutils literal notranslate"><span class="pre">pumping_python</span></code> <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folder</a>.</p>
+</li>
+</ul>
+</section>
+<hr class="docutils"/>
+<section id="review">
+<h2>review<a class="headerlink" href="#review" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#review'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<ul class="simple">
+<li><p>I gave the computer some commands to make a <a class="reference internal" href="index.html#what-is-a-test-driven-development-environment"><span class="std std-ref">Python Test Driven Development environment</span></a></p></li>
+<li><p>I made some <a class="reference external" href="https://grokipedia.com/page/Directory_(computing)">folders</a></p></li>
+<li><p>I made some <a class="reference external" href="https://grokipedia.com/page/File">files</a></p></li>
+<li><p>I made a <a class="reference internal" href="#test-failure"><span class="std std-ref">failing test</span></a></p></li>
+<li><p>I made the failing test pass</p></li>
+</ul>
+<hr class="docutils"/>
+<section id="how-to-view-all-the-commands-typed-in-a-terminal">
+<h3>how to view all the commands typed in a terminal<a class="headerlink" href="#how-to-view-all-the-commands-typed-in-a-terminal" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#how-to-view-all-the-commands-typed-in-a-terminal'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h3>
+<hr class="docutils"/>
+<ul>
+<li><p>I type <a class="reference external" href="https://man7.org/Linux/man-pages/man3/history.3.html">history</a> in the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> to see all the commands I have typed so far</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><mark><span class="n">history</span>
+</mark></span></code></pre></div>
+</div>
+<p>the <a class="reference external" href="https://grokipedia.com/page/Terminal_emulator#terminal-emulator">terminal</a> shows</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-24" name="sd-tab-set-12" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="unix" for="sd-tab-item-24">
+WSL/Linux/Mac</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">cd</span> <span class="n">person</span>
+</span><span id="line-2"><mark><span class="n">uv</span> <span class="n">init</span> <span class="n">person</span>
+</mark></span><span id="line-3"><mark><span class="n">cd</span> <span class="n">person</span>
+</mark></span><span id="line-4"><span class="n">tree</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">L</span> <span class="mi">2</span>
+</span><span id="line-5"><span class="n">cat</span> <span class="o">.</span><span class="n">gitignore</span>
+</span><span id="line-6"><span class="n">cat</span> <span class="n">pyproject</span><span class="o">.</span><span class="n">toml</span>
+</span><span id="line-7"><span class="n">cat</span> <span class="o">.</span><span class="n">python</span><span class="o">-</span><span class="n">version</span>
+</span><span id="line-8"><span class="n">cat</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</span><span id="line-9"><span class="n">python3</span> <span class="n">src</span><span class="o">/</span><span class="n">person</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+</span><span id="line-10"><span class="n">cat</span> <span class="n">src</span><span class="o">/</span><span class="n">person</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+</span><span id="line-11"><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</span><span id="line-12"><mark><span class="n">mkdir</span> <span class="n">tests</span>
+</mark></span><span id="line-13"><span class="n">tree</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">L</span> <span class="mi">1</span>
+</span><span id="line-14"><mark><span class="n">touch</span> <span class="n">tests</span><span class="o">/</span><span class="n">person</span><span class="o">.</span><span class="n">py</span>
+</mark></span><span id="line-15"><span class="n">tree</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">L</span> <span class="mi">2</span>
+</span><span id="line-16"><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</span><span id="line-17"><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</span><span id="line-18"><span class="n">touch</span> <span class="n">tests</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+</span><span id="line-19"><span class="n">tree</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">L</span> <span class="mi">2</span>
+</span><span id="line-20"><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</span><span id="line-21"><mark><span class="n">mv</span> <span class="n">tests</span><span class="o">/</span><span class="n">person</span><span class="o">.</span><span class="n">py</span> <span class="n">tests</span><span class="o">/</span><span class="n">test_person</span><span class="o">.</span><span class="n">py</span>
+</mark></span><span id="line-22"><span class="n">tree</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">L</span> <span class="mi">2</span>
+</span><span id="line-23"><mark><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</mark></span><span id="line-24"><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</span><span id="line-25"><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</span><span id="line-26"><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+</span><span id="line-27"><span class="n">git</span> <span class="n">commit</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">message</span> <span class="s1">'setup project'</span>
+</span><span id="line-28"><span class="n">cd</span> <span class="o">..</span>
+</span></code></pre></div>
+</div>
+</div>
+<input id="sd-tab-item-25" name="sd-tab-set-12" type="radio"/>
+<label class="sd-tab-label" data-sync-group="os" data-sync-id="no_wsl" for="sd-tab-item-25">
+no WSL</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">cd</span> <span class="n">person</span>
+</span><span id="line-2"><mark><span class="n">uv</span> <span class="n">init</span> <span class="n">person</span>
+</mark></span><span id="line-3"><mark><span class="n">cd</span> <span class="n">person</span>
+</mark></span><span id="line-4"><span class="n">tree</span>
+</span><span id="line-5"><span class="n">cat</span> <span class="o">.</span><span class="n">gitignore</span>
+</span><span id="line-6"><span class="n">cat</span> <span class="n">pyproject</span><span class="o">.</span><span class="n">toml</span>
+</span><span id="line-7"><span class="n">cat</span> <span class="o">.</span><span class="n">python</span><span class="o">-</span><span class="n">version</span>
+</span><span id="line-8"><span class="n">cat</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</span><span id="line-9"><span class="n">python</span> <span class="n">src</span><span class="o">/</span><span class="n">person</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+</span><span id="line-10"><span class="n">cat</span> <span class="n">src</span><span class="o">/</span><span class="n">person</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+</span><span id="line-11"><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</span><span id="line-12"><mark><span class="n">mkdir</span> <span class="n">tests</span>
+</mark></span><span id="line-13"><span class="n">tree</span>
+</span><span id="line-14"><mark><span class="n">New</span><span class="o">-</span><span class="n">Item</span> <span class="n">tests</span><span class="o">/</span><span class="n">person</span><span class="o">.</span><span class="n">py</span>
+</mark></span><span id="line-15"><span class="n">tree</span>
+</span><span id="line-16"><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</span><span id="line-17"><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</span><span id="line-18"><span class="n">New</span><span class="o">-</span><span class="n">Item</span> <span class="n">tests</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+</span><span id="line-19"><span class="n">tree</span>
+</span><span id="line-20"><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</span><span id="line-21"><mark><span class="n">Move</span><span class="o">-</span><span class="n">Item</span> <span class="n">tests</span><span class="o">/</span><span class="n">person</span><span class="o">.</span><span class="n">py</span> <span class="n">tests</span><span class="o">/</span><span class="n">test_person</span><span class="o">.</span><span class="n">py</span>
+</mark></span><span id="line-22"><span class="n">tree</span>
+</span><span id="line-23"><mark><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</mark></span><span id="line-24"><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</span><span id="line-25"><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
+</span><span id="line-26"><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+</span><span id="line-27"><span class="n">git</span> <span class="n">commit</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">message</span> <span class="s1">'setup project'</span>
+</span><span id="line-28"><span class="n">cd</span> <span class="o">..</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</li>
+<li><p>these are the commands I used to make a <a class="reference internal" href="index.html#what-is-a-test-driven-development-environment"><span class="std std-ref">Python Test Driven Development environment</span></a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="n">uv</span> <span class="n">init</span> <span class="n">NAME_OF_THE_PROJECT</span>
+</span><span id="line-2"><span class="n">cd</span> <span class="n">NAME_OF_THE_PROJECT</span>
+</span><span id="line-3"><span class="n">mkdir</span> <span class="n">tests</span>
+</span><span id="line-4"><span class="n">touch</span> <span class="n">tests</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+</span><span id="line-5"><span class="n">touch</span> <span class="n">tests</span><span class="o">/</span><span class="n">test_NAME_OF_THE_PROJECT</span><span class="o">.</span><span class="n">py</span>
+</span></code></pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">NAME_OF_THE_PROJECT</span></code> is the name I give the project.</p>
+</li>
+<li><p>These are the steps I take to make a <a class="reference internal" href="index.html#what-is-a-test-driven-development-environment"><span class="std std-ref">Python Test Driven Development environment</span></a></p>
+<ul class="simple">
+<li><p>I give the project a name</p></li>
+<li><p><a class="reference internal" href="#how-to-setup-a-project-with-uv"><span class="std std-ref">I make a directory for the project</span></a></p></li>
+<li><p><a class="reference internal" href="#how-to-change-directory-to-the-project"><span class="std std-ref">I change directory to the project</span></a></p></li>
+<li><p><a class="reference internal" href="#how-to-make-a-directory-for-the-tests"><span class="std std-ref">I make a directory for the tests</span></a></p></li>
+<li><p><a class="reference internal" href="#how-to-make-the-tests-a-python-package"><span class="std std-ref">I make the ‘tests’ directory a Python package</span></a></p></li>
+<li><p><a class="reference internal" href="#how-to-make-a-python-file-for-the-tests-in-the-tests-directory"><span class="std std-ref">I make a Python file for the tests in the ‘tests’ directory</span></a></p></li>
+<li><p><a class="reference internal" href="#test-failure"><span class="std std-ref">I add the first failing test to the test file</span></a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="what-is-next">
+<h2>what is next?<a class="headerlink" href="#what-is-next" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#what-is-next'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<p>I know <a class="reference internal" href="#how-to-make-a-python-test-driven-development-environment-manually"><span class="std std-ref">how to make a Python Test Driven Development environment manually</span></a></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/ModuleNotFoundError/index.html">what is a module?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run_tests_automatically.html">how to run tests automatically</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exceptions/AssertionError/index.html">what is an assertion?</a></li>
+</ul>
+</div>
+<p><a class="reference internal" href="../exceptions/ModuleNotFoundError/index.html#what-is-a-module"><span class="std std-ref">Would you like to find out what a module is?</span></a></p>
+</section>
+<hr class="docutils"/>
+<section id="rate-pumping-python">
+<h2>rate pumping python<a class="headerlink" href="#rate-pumping-python" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#rate-pumping-python'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<p>If this has been a 7 star experience for you, please <a class="reference external" href="https://www.trustpilot.com/review/pumpingpython.com">CLICK HERE to leave a 5 star review of pumping python</a>. It helps other people get into the book too.</p>
+<hr class="docutils"/>
+
+<div class="trustpilot-widget" data-businessunit-id="69141d0f0902d6a2a1b2436b" data-locale="en-US" data-style-height="52px" data-style-width="100%" data-template-id="56278e9abfbbba0bdcd568bc" data-token="5db17dde-bcdc-460f-81f3-d8ab689b6e4d">
+<a href="https://www.trustpilot.com/review/pumpingpython.com" rel="noopener" target="_blank">CLICK HERE to leave a 5 star review of pumping python, if this has been a 7 star experience for you</a>
+</div>
+</section>
+</section>
+</div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
+<div class="mr-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="../conventions.html">
+<svg class="mr-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+        conventions
+      </a>
+</div>
+<div class="ml-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="../exceptions/ModuleNotFoundError/index.html">
+        what is a module?
+        <svg class="ml-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</a>
+</div>
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><a :data-current="activeSection === '#'" class="reference internal" href="#">how to make a Python Test Driven Development environment manually</a><ul>
+<li><a :data-current="activeSection === '#requirements'" class="reference internal" href="#requirements">requirements</a></li>
+<li><a :data-current="activeSection === '#questions-about-making-a-python-test-driven-development-environment'" class="reference internal" href="#questions-about-making-a-python-test-driven-development-environment">questions about making a Python Test Driven Development Environment</a></li>
+<li><a :data-current="activeSection === '#how-to-setup-the-project'" class="reference internal" href="#how-to-setup-the-project">how to setup the project</a><ul>
+<li><a :data-current="activeSection === '#how-to-setup-a-project-with-uv'" class="reference internal" href="#how-to-setup-a-project-with-uv">how to setup a project with uv</a></li>
+<li><a :data-current="activeSection === '#how-to-change-directory-to-the-project'" class="reference internal" href="#how-to-change-directory-to-the-project">how to change directory to the project</a></li>
+<li><a :data-current="activeSection === '#how-to-see-what-is-inside-a-file'" class="reference internal" href="#how-to-see-what-is-inside-a-file">how to see what is inside a file</a></li>
+<li><a :data-current="activeSection === '#how-to-run-a-python-program'" class="reference internal" href="#how-to-run-a-python-program">how to run a Python program</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#test-failure'" class="reference internal" href="#test-failure">test_failure</a><ul>
+<li><a :data-current="activeSection === '#how-to-manually-run-tests'" class="reference internal" href="#how-to-manually-run-tests">how to manually run tests</a></li>
+<li><a :data-current="activeSection === '#how-to-make-a-directory-for-the-tests'" class="reference internal" href="#how-to-make-a-directory-for-the-tests">how to make a directory for the tests</a></li>
+<li><a :data-current="activeSection === '#how-to-make-a-python-file-for-the-tests-in-the-tests-directory'" class="reference internal" href="#how-to-make-a-python-file-for-the-tests-in-the-tests-directory">how to make a Python file for the tests in the ‘tests’ directory</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#red-make-it-fail'" class="reference internal" href="#red-make-it-fail"><span class="custom-red">RED</span>: make it fail</a><ul>
+<li><a :data-current="activeSection === '#how-to-make-the-tests-a-python-package'" class="reference internal" href="#how-to-make-the-tests-a-python-package">how to make the tests a Python package</a></li>
+<li><a :data-current="activeSection === '#how-to-change-the-name-of-a-file'" class="reference internal" href="#how-to-change-the-name-of-a-file">how to change the name of a file</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#green-make-it-pass'" class="reference internal" href="#green-make-it-pass"><span class="custom-green">GREEN</span>: make it pass</a></li>
+<li><a :data-current="activeSection === '#refactor-make-it-better'" class="reference internal" href="#refactor-make-it-better"><span class="custom-yellow">REFACTOR</span>: make it better</a></li>
+<li><a :data-current="activeSection === '#close-the-project'" class="reference internal" href="#close-the-project">close the project</a></li>
+<li><a :data-current="activeSection === '#review'" class="reference internal" href="#review">review</a><ul>
+<li><a :data-current="activeSection === '#how-to-view-all-the-commands-typed-in-a-terminal'" class="reference internal" href="#how-to-view-all-the-commands-typed-in-a-terminal">how to view all the commands typed in a terminal</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#what-is-next'" class="reference internal" href="#what-is-next">what is next?</a></li>
+<li><a :data-current="activeSection === '#rate-pumping-python'" class="reference internal" href="#rate-pumping-python">rate pumping python</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside>
+</main>
+</div>
+</div><footer class="py-6 border-t border-border md:py-0">
+<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+<div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2026, JadeCobra LLC Built with <a class="font-medium underline underline-offset-4" href="https://www.sphinx-doc.org" rel="noreferrer">Sphinx 9.1.0</a></p>
+</div>
+</div>
+</footer>
+</div>
+<script src="../_static/documentation_options.js?v=01f34227"></script>
+<script src="../_static/doctools.js?v=fd6eb6e6"></script>
+<script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+<script defer="defer" src="../_static/theme.js?v=073f68d9"></script>
+<script src="../_static/design-tabs.js?v=f930bc37"></script>
+<script src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"></script>
+</body>
+</html>
+<script>
+const ws = new WebSocket("ws://127.0.0.1:8765/websocket-reload");
+ws.onmessage = () => window.location.reload();
+</script>

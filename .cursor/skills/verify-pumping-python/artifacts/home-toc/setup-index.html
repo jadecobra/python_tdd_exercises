@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html :class="{'dark': darkMode === 'dark' || (darkMode === 'system' &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth" data-content_root="../" lang="en" x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }" x-init="$watch('darkMode', val =&gt; localStorage.setItem('darkMode', val))">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="black" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>start here | pumping python: how I solve problems with Test Driven Development</title>
+<meta content="start here | pumping python: how I solve problems with Test Driven Development" property="og:title"/>
+<meta content="start here | pumping python: how I solve problems with Test Driven Development" name="twitter:title"/>
+<link href="../_static/pygments.css?v=508cba51" rel="stylesheet" type="text/css"/>
+<link href="../_static/pygments_dark.css" id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css"/>
+<link href="../_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<link href="../_static/custom.css?v=fae82750" rel="stylesheet" type="text/css"/>
+<link href="../_static/awesome-sphinx-design.css?v=15e0fffa" rel="stylesheet" type="text/css"/>
+<link href="https://www.pumpingpython.com/setup/index.html" rel="canonical"/>
+<link href="../_static/dry_favicon_16x16.png" rel="icon"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="install_wsl.html" rel="next" title="how to install Windows Subsystem for Linux on Windows"/>
+<link href="../hatches/index.html" rel="prev" title="join a HATCH"/>
+<script>
+    <!-- Prevent Flash of wrong theme -->
+      const userPreference = localStorage.getItem('darkMode');
+      let mode;
+      if (userPreference === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        mode = 'dark';
+        document.documentElement.classList.add('dark');
+      } else {
+        mode = 'light';
+      }
+      if (!userPreference) {localStorage.setItem('darkMode', mode)}
+    </script>
+<script async="" data-cbid="4496cd87-b06e-4d8a-bd19-dc3bc87191e3" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" type="text/javascript"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-0VPJ6HXTE8"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-0VPJ6HXTE8');
+    </script>
+<script>
+    (function () {
+      try {
+        const OriginalWebSocket = window.WebSocket;
+        window.WebSocket = function (url, protocols) {
+          if (typeof url === 'string' && url.indexOf('0.0.0.0') !== -1) {
+            const fixedUrl = url.replace(/0\.0\.0\.0/g, location.hostname);
+            console.debug('[live-reload-fix] Rewrote WS URL', url, '→', fixedUrl);
+            return new OriginalWebSocket(fixedUrl, protocols);
+          }
+          return new OriginalWebSocket(url, protocols);
+        };
+        // Also patch the prototype in case it's used as constructor differently
+        window.WebSocket.prototype = OriginalWebSocket.prototype;
+      } catch (e) {
+        console.warn('[live-reload-fix] Could not patch WebSocket', e);
+      }
+    })();
+    </script>
+</head>
+<body :class="{ 'overflow-hidden': showSidebar }" class="min-h-screen font-sans antialiased bg-background text-foreground" x-data="{ showSidebar: false, showScrollTop: false }">
+<div @click.self="showSidebar = false" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" x-cloak="" x-show="showSidebar"></div><div class="relative flex flex-col min-h-screen" id="page"><a class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100" href="#content">
+      Skip to content
+    </a><header class="sticky top-0 z-40 w-full border-b shadow-sm border-border supports-backdrop-blur:bg-background/60 bg-background/95 backdrop-blur"><div class="container flex items-center h-14">
+<div class="hidden mr-4 md:flex">
+<a class="flex items-center mr-6" href="../index.html">
+<img alt="Logo" class="mr-2 hidden dark:block" height="24" src="../_static/dry_favicon_16x16.png" width="24"/>
+<img alt="Logo" class="mr-2 dark:hidden" height="24" src="../_static/dry_favicon_16x16.png" width="24"/><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">pumping python: how I solve problems with Test Driven Development</span>
+</a></div><button @click="showSidebar = true" class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden" type="button">
+<svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z"></path>
+</svg>
+<span class="sr-only">Toggle navigation menu</span>
+</button>
+<div class="flex items-center justify-between flex-1 space-x-2 sm:space-x-4 md:justify-end">
+<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+</div>
+<nav class="flex items-center space-x-1">
+<button @click="darkMode = darkMode === 'light' ? 'dark' : 'light'" aria-label="Color theme switcher" class="relative inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9" type="button">
+<svg class="absolute transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 685q45.456 0 77.228-31.772Q589 621.456 589 576q0-45.456-31.772-77.228Q525.456 467 480 467q-45.456 0-77.228 31.772Q371 530.544 371 576q0 45.456 31.772 77.228Q434.544 685 480 685Zm0 91q-83 0-141.5-58.5T280 576q0-83 58.5-141.5T480 376q83 0 141.5 58.5T680 576q0 83-58.5 141.5T480 776ZM80 621.5q-19.152 0-32.326-13.174T34.5 576q0-19.152 13.174-32.326T80 530.5h80q19.152 0 32.326 13.174T205.5 576q0 19.152-13.174 32.326T160 621.5H80Zm720 0q-19.152 0-32.326-13.174T754.5 576q0-19.152 13.174-32.326T800 530.5h80q19.152 0 32.326 13.174T925.5 576q0 19.152-13.174 32.326T880 621.5h-80Zm-320-320q-19.152 0-32.326-13.174T434.5 256v-80q0-19.152 13.174-32.326T480 130.5q19.152 0 32.326 13.174T525.5 176v80q0 19.152-13.174 32.326T480 301.5Zm0 720q-19.152 0-32.326-13.17Q434.5 995.152 434.5 976v-80q0-19.152 13.174-32.326T480 850.5q19.152 0 32.326 13.174T525.5 896v80q0 19.152-13.174 32.33-13.174 13.17-32.326 13.17ZM222.174 382.065l-43-42Q165.5 327.391 166 308.239t13.174-33.065q13.435-13.674 32.587-13.674t32.065 13.674l42.239 43q12.674 13.435 12.555 31.706-.12 18.272-12.555 31.946-12.674 13.674-31.445 13.413-18.772-.261-32.446-13.174Zm494 494.761-42.239-43q-12.674-13.435-12.674-32.087t12.674-31.565Q686.609 756.5 705.38 757q18.772.5 32.446 13.174l43 41.761Q794.5 824.609 794 843.761t-13.174 33.065Q767.391 890.5 748.239 890.5t-32.065-13.674Zm-42-494.761Q660.5 369.391 661 350.62q.5-18.772 13.174-32.446l41.761-43Q728.609 261.5 747.761 262t33.065 13.174q13.674 13.435 13.674 32.587t-13.674 32.065l-43 42.239q-13.435 12.674-31.706 12.555-18.272-.12-31.946-12.555Zm-495 494.761Q165.5 863.391 165.5 844.239t13.674-32.065l43-42.239q13.435-12.674 32.087-12.674t31.565 12.674Q299.5 782.609 299 801.38q-.5 18.772-13.174 32.446l-41.761 43Q231.391 890.5 212.239 890t-33.065-13.174ZM480 576Z"></path>
+</svg>
+<svg class="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 936q-151 0-255.5-104.5T120 576q0-138 90-239.5T440 218q25-3 39 18t-1 44q-17 26-25.5 55t-8.5 61q0 90 63 153t153 63q31 0 61.5-9t54.5-25q21-14 43-1.5t19 39.5q-14 138-117.5 229T480 936Zm0-80q88 0 158-48.5T740 681q-20 5-40 8t-40 3q-123 0-209.5-86.5T364 396q0-20 3-40t8-40q-78 32-126.5 102T200 576q0 116 82 198t198 82Zm-10-270Z"></path>
+</svg>
+</button>
+</nav>
+</div>
+</div>
+</header>
+<div class="flex-1"><div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full shrink-0 overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
+<a class="!justify-start text-sm md:!hidden bg-background" href="../index.html">
+<img alt="Logo" class="mr-2 hidden dark:block" height="16" src="../_static/dry_favicon_16x16.png" width="16"/>
+<img alt="Logo" class="mr-2 dark:hidden" height="16" src="../_static/dry_favicon_16x16.png" width="16"/><span class="font-bold text-clip whitespace-nowrap">pumping python: how I solve problems with Test Driven Development</span>
+</a>
+<div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
+<div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">pumping python: how I solve problems with test driven development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hatches/index.html">join a HATCH</a></li>
+<li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="current reference internal expandable" href="#">start here<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="install_wsl.html">install WSL on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux_requirements.html">linux/WSL requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mac_os_requirements.html">Mac OS requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="windows_no_wsl_requirements.html">Windows without WSL requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_my_ide.html">setup my computer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../conventions.html">conventions</a></li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../make_tdd/make_tdd_manually.html">make TDD manually<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/ModuleNotFoundError/index.html">what is a module?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_tdd/run_tests_automatically.html">how to run tests automatically</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/AssertionError/index.html">what is an assertion?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../functions/index.html">what is a function?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how_to/make_person/index.html">make a person with strings</a></li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../functions/functions_w_input.html">functions that take input<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/TypeError/index.html">what causes TypeError?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/AssertionError/AssertionError_w_functions.html">test AssertionError with functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how_to/telephone/index.html">telephone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/ModuleNotFoundError/separate_and_equal.html">separate and equal</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../how_to/make_person/make_person_w_fstrings.html">make a person with f-strings</a></li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../how_to/make_person/make_person_w_class.html">make a person with a class<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../objects/inheritance.html">everything is an object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../objects/unittest.html">another way to write tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../how_to/make_person/make_person_w_datetime.html">make a person with datetime<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../basic_objects/none.html">what is None?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/AssertionError/AssertionError_w_none.html">test AssertionError with None</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/functions_w_none.html">test functions with None</a></li>
+</ul>
+</li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../how_to/make_person/make_person_w_conditions.html">make a person with conditions<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../basic_objects/booleans/index.html">what are booleans?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_tdd/make_tdd_automatically.html">how to make a Python Test Driven Development environment automatically</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../truth_table/index.html">truth table</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../make_tdd/make_tdd_automatically_w_variables.html">make TDD with variables</a></li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../how_to/make_person/make_person_w_exceptions.html">make a person with exceptions<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/exception_handling/exception_handling_tests.html">how to test that an Exception is raised</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/exception_handling/exception_handling_programs.html">how to handle Exceptions in programs</a></li>
+</ul>
+</li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../how_to/make_person/make_person_w_loops.html">make a person with loops<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul class="simple" x-show="expanded">
+</ul>
+</li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../basic_objects/dictionaries/index.html">what is a dictionary?<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../basic_objects/dictionaries/dictionaries.html">dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculator/calculator_7.html">make a calculator 7</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../review.html">questions the book answers</a></li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../make_tdd/make_tdd_manually.html">make TDD manually<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/ModuleNotFoundError/index.html">what is a module?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_tdd/run_tests_automatically.html">how to run tests automatically</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/AssertionError/index.html">what is an assertion?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dot_notation.html">connect the dots</a></li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../basic_objects/index.html">basic objects<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../basic_objects/booleans/index.html">what are booleans?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic_objects/lists/index.html">Lists: anything in [ ]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic_objects/dictionaries/index.html">Dictionaries: key-value pairs</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../how_to/index.html">how to<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul class="current" x-show="expanded">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">setup my computer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../make_tdd/index.html">make TDD manually</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how_to/telephone/index.html">telephone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculator/index.html">make a calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how_to/make_person.html">make a person</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../catalog_of_tests.html">catalog of tests</a></li>
+<li class="toctree-l1" x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="../catalog_of_code.html">all the code in this book<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li class="toctree-l2"><a class="reference internal" href="../code/code_assertion_error.html">AssertionError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_atm.html">Automated Teller Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_attribute_error.html">AttributeError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_booleans.html">booleans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_calculator.html">calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_objects.html">objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_dictionaries.html">dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_elevator.html">Elevator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_exception_handling.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_functions.html">functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_learn_directory_structure.html">directory structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_learn_git.html">git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_list_comprehensions.html">list comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_lists.html">lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_make_python_tdd.html">make a Python TDD environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_microwave.html">Microwave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_module_not_found_error.html">ModuleNotFoundError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_none.html">None</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_person.html">person</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_sleep_duration.html">sleep duration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_telephone.html">telephone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_traffic_light.html">Traffic Light</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_truth_table.html">Truth Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_type_error.html">what causes TypeError?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/code_unittest.html">unittest</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../learning_models.html">can we measure learning?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reviews.html">what do people think of this?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../videos.html">videos</a></li>
+</ul>
+</nav>
+<div>
+<h3><a href="../index.html">Table of Contents</a></h3>
+<ul>
+<li x-data="{ expanded: $el.classList.contains('current') ? true : false }"><a :class="{ 'expanded' : expanded }" @click="expanded = !expanded" class="reference internal expandable" href="#">start here<button @click.prevent.stop="expanded = !expanded" type="button"><span class="sr-only"></span><svg fill="currentColor" height="18px" stroke="none" viewbox="0 0 24 24" width="18px" xmlns="http://www.w3.org/2000/svg"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></button></a><ul x-show="expanded">
+<li><a class="reference internal" href="#what-is-covered">what is covered?</a></li>
+<li><a class="reference internal" href="#what-is-next">what is next?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<button @click="showSidebar = false" class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100" type="button">
+<svg class="h-4 w-4" fill="currentColor" height="24" stroke="none" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z"></path>
+</svg>
+</button>
+</aside>
+<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+<div class="w-full min-w-0 mx-auto">
+<nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../index.html">
+<span class="hidden md:inline">pumping python: how I solve problems with Test Driven Development</span>
+<svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
+</svg>
+</a>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">start here</span>
+</nav>
+<div id="content" role="main">
+<hr class="docutils"/>
+<hr class="docutils"/>
+<hr class="docutils"/>
+<section id="start-here">
+<h1>start here<a class="headerlink" href="#start-here" title="Link to this heading"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h1>
+<p>I spend some time to set up my computer to make it easier to write <a class="reference external" href="https://grokipedia.com/page/Computer_program">programs</a>. I only have to do this once on a computer.</p>
+<p>As of this writing I use <a class="reference external" href="https://code.visualstudio.com/download">Visual Studio Code</a>, you can download and install it or any <a class="reference external" href="https://grokipedia.com/page/Integrated_development_environment">Integrated Development Environment (IDE)</a> you want.</p>
+<hr class="docutils"/>
+<section id="what-is-covered">
+<h2>what is covered?<a class="headerlink" href="#what-is-covered" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#what-is-covered'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<p>These chapters show how I set up any computer for development</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install_wsl.html">install WSL on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux_requirements.html">linux/WSL requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mac_os_requirements.html">Mac OS requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="windows_no_wsl_requirements.html">Windows without WSL requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_my_ide.html">setup my computer</a></li>
+</ul>
+</div>
+</section>
+<hr class="docutils"/>
+<section id="what-is-next">
+<h2>what is next?<a class="headerlink" href="#what-is-next" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#what-is-next'"><svg height="1em" viewbox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path></svg></a></h2>
+<ul class="simple">
+<li><p>Are you using a <a class="reference external" href="https://www.microsoft.com/en-us/Windows">Windows</a> computer?</p>
+<ul>
+<li><p>first, try to <a class="reference internal" href="install_wsl.html#how-to-install-windows-subsystem-for-linux-on-windows"><span class="std std-ref">install Windows Subsystem for Linux</span></a></p></li>
+<li><p>If you cannot <a class="reference internal" href="install_wsl.html#how-to-install-windows-subsystem-for-linux-on-windows"><span class="std std-ref">install Windows Subsystem for Linux</span></a>, do not worry, every chapter of the book has something for you. Go to <a class="reference internal" href="windows_no_wsl_requirements.html#windows-without-windows-subsystem-linux-requirements"><span class="std std-ref">Windows without Windows Subsystem Linux requirements</span></a></p></li>
+</ul>
+</li>
+<li><p>Are you using a <a class="reference external" href="https://www.kernel.org/category/about.html">Linux</a> computer or did you successfully <a class="reference internal" href="install_wsl.html#how-to-install-windows-subsystem-for-linux-on-windows"><span class="std std-ref">install Windows Subsystem for Linux</span></a>? see the <a class="reference internal" href="linux_requirements.html#linux-windows-subsystem-for-linux-requirements"><span class="std std-ref">Linux/Windows Subsystem for Linux requirements</span></a></p></li>
+<li><p>Are you using a <a class="reference external" href="https://www.apple.com/macos">MacOS</a> computer? see the <a class="reference internal" href="mac_os_requirements.html#macos-requirements"><span class="std std-ref">MacOS requirements</span></a></p></li>
+</ul>
+</section>
+</section>
+</div><div class="flex justify-between items-center pt-6 mt-12 border-t border-border gap-4">
+<div class="mr-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="../hatches/index.html">
+<svg class="mr-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+        join a HATCH
+      </a>
+</div>
+<div class="ml-auto">
+<a class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-input hover:bg-accent hover:text-accent-foreground py-2 px-4" href="install_wsl.html">
+        how to install Windows Subsystem for Linux on Windows
+        <svg class="ml-2 h-4 w-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</a>
+</div>
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><a :data-current="activeSection === '#'" class="reference internal" href="#">start here</a><ul>
+<li><a :data-current="activeSection === '#what-is-covered'" class="reference internal" href="#what-is-covered">what is covered?</a></li>
+<li><a :data-current="activeSection === '#what-is-next'" class="reference internal" href="#what-is-next">what is next?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside>
+</main>
+</div>
+</div><footer class="py-6 border-t border-border md:py-0">
+<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+<div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2026, JadeCobra LLC Built with <a class="font-medium underline underline-offset-4" href="https://www.sphinx-doc.org" rel="noreferrer">Sphinx 9.1.0</a></p>
+</div>
+</div>
+</footer>
+</div>
+<script src="../_static/documentation_options.js?v=01f34227"></script>
+<script src="../_static/doctools.js?v=fd6eb6e6"></script>
+<script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+<script defer="defer" src="../_static/theme.js?v=073f68d9"></script>
+<script src="../_static/design-tabs.js?v=f930bc37"></script>
+<script src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"></script>
+</body>
+</html>
+<script>
+const ws = new WebSocket("ws://127.0.0.1:8765/websocket-reload");
+ws.onmessage = () => window.location.reload();
+</script>

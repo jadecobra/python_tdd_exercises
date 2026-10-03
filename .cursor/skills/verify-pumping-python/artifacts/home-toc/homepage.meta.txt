@@ -1,0 +1,6 @@
+url: http://127.0.0.1:8765/
+bytes: 54829
+sha256: ca9c9714af1bf1aaa8c5e6515c580b57975857df17f5bcef5040a3a422668368
+title: pumping python: how I solve problems with test driven development | pumping python: how I solve problems with Test Driven Development
+h1: pumping python: how I solve problems with test driven development
+h1_all: ['pumping python: how I solve problems with test driven development']

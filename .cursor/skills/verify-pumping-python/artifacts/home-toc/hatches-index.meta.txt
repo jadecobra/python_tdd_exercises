@@ -1,0 +1,6 @@
+url: http://127.0.0.1:8765/hatches/index.html
+bytes: 45379
+sha256: 3d1aca33c45593511ab4ef049809edfda97921dcbe543d11303750263a83fb0f
+title: join a HATCH | pumping python: how I solve problems with Test Driven Development
+h1: join a HATCH
+h1_all: ['join a HATCH', 'morning marauders', 'sunlight soldiers', 'happy hour heroes', 'nighttime ninjas']

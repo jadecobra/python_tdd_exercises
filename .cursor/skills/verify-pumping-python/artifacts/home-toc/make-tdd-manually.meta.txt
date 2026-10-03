@@ -1,0 +1,6 @@
+url: http://127.0.0.1:8765/make_tdd/make_tdd_manually.html
+bytes: 146568
+sha256: 62bca595925841cff1222472772ba4d539405446cc50a600b6073e0c8184cc0b
+title: how to make a Python Test Driven Development environment manually | pumping python: how I solve problems with Test Driven Development
+h1: how to make a Python Test Driven Development environment manually
+h1_all: ['how to make a Python Test Driven Development environment manually']
