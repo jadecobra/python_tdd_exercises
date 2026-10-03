@@ -20,7 +20,7 @@ how to make a calculator 1: solutions
 
 the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calculator`
 
-.. literalinclude:: calculator/solutions/calculator_1.py
+.. literalinclude:: calculator/src/calculator_1.py
   :language: python
   :linenos:
 
@@ -54,7 +54,7 @@ how to make a calculator 3: solutions
 
 the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calculator 3`
 
-.. literalinclude:: calculator/solutions/calculator_3.py
+.. literalinclude:: calculator/src/calculator_3.py
   :language: python
   :linenos:
 
@@ -77,7 +77,7 @@ how to make a calculator 4: solutions
 
 the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calculator 4`
 
-.. literalinclude:: calculator/solutions/calculator_4.py
+.. literalinclude:: calculator/src/calculator_4.py
   :language: python
   :linenos:
 
@@ -99,7 +99,7 @@ how to make a calculator 5: solutions
 
 the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calculator 5`
 
-.. literalinclude:: calculator/solutions/calculator_5.py
+.. literalinclude:: calculator/src/calculator_5.py
   :language: python
   :linenos:
 
@@ -121,7 +121,7 @@ how to make a calculator 6: solutions
 
 the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calculator 5`
 
-.. literalinclude:: calculator/solutions/calculator_6.py
+.. literalinclude:: calculator/src/calculator_6.py
   :language: python
   :linenos:
 
@@ -173,14 +173,14 @@ how to make a calculator 9: solutions
 
 The code in ``calculator/src/calculator.py`` from :ref:`how to make a calculator 9`
 
-.. literalinclude:: calculator/solutions/calculator_9.py
+.. literalinclude:: calculator/src/calculator_9.py
   :language: python
   :linenos:
 
 
 The code in ``calculator/src/website.py`` from :ref:`how to make a calculator 9`
 
-.. literalinclude:: calculator/solutions/website.py
+.. literalinclude:: calculator/src/website.py
   :language: python
   :linenos:
 
@@ -202,7 +202,7 @@ how to make a calculator 10: part 1: solutions
 
 The code in ``calculator/src/streamlit_calculator.py`` from :ref:`how to make a calculator 10: part 1`
 
-.. literalinclude:: calculator/solutions/streamlit_calculator_1.py
+.. literalinclude:: calculator/src/streamlit_calculator_1.py
   :language: python
   :linenos:
 
@@ -224,7 +224,7 @@ how to make a calculator 10: part 2: solutions
 
 The code in ``calculator/src/streamlit_calculator.py`` from :ref:`how to make a calculator 10: part 2`
 
-.. literalinclude:: calculator/solutions/streamlit_calculator_2.py
+.. literalinclude:: calculator/src/streamlit_calculator_2.py
   :language: python
   :linenos:
 
@@ -246,7 +246,7 @@ how to make a calculator 10: part 3: solutions
 
 The code in ``calculator/src/streamlit_calculator.py`` from :ref:`how to make a calculator 10: part 3`
 
-.. literalinclude:: calculator/solutions/streamlit_calculator_3.py
+.. literalinclude:: calculator/src/streamlit_calculator_3.py
   :language: python
   :linenos:
 
@@ -268,6 +268,6 @@ how to make a calculator 10: part 4: solutions
 
 The code in ``calculator/src/streamlit_calculator.py`` from :ref:`how to make a calculator 10: part 4`
 
-.. literalinclude:: calculator/solutions/streamlit_calculator_4.py
+.. literalinclude:: calculator/src/streamlit_calculator_4.py
   :language: python
   :linenos:

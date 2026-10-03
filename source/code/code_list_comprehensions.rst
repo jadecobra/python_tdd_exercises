@@ -32,7 +32,7 @@ how to make a calculator 6: solutions
 
 the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calculator 6`
 
-.. literalinclude:: calculator/solutions/calculator_6.py
+.. literalinclude:: calculator/src/calculator_6.py
   :language: python
   :linenos:
 

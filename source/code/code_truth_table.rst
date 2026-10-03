@@ -30,7 +30,7 @@ Nullary and Unary Operations: solutions
 
 The code in ``truth_table/tests/test_nullary_unary.py`` from :ref:`truth table: Nullary and Unary Operations`
 
-.. literalinclude:: truth_table/solutions/truth_table_nullary_unary.py
+.. literalinclude:: truth_table/src/truth_table_nullary_unary.py
   :language: python
   :linenos:
   :caption: truth_table/src/truth_table.py
@@ -64,7 +64,7 @@ Binary Operations 1: solutions
 
 The code in ``truth_table/src/test_binary.py`` from :ref:`truth table: Binary Operations 1`
 
-.. literalinclude:: truth_table/solutions/truth_table_binary_1.py
+.. literalinclude:: truth_table/src/truth_table_binary_1.py
   :language: python
   :linenos:
   :caption: truth_table/src/truth_table.py
@@ -98,7 +98,7 @@ Binary Operations 2: solutions
 
 The code in ``truth_table/src/test_binary.py`` from :ref:`truth table: Binary Operations 2`
 
-.. literalinclude:: truth_table/solutions/truth_table_binary_2.py
+.. literalinclude:: truth_table/src/truth_table_binary_2.py
   :language: python
   :linenos:
   :caption: truth_table/src/truth_table.py
@@ -132,7 +132,7 @@ Binary Operations 3: solutions
 
 The code in ``truth_table/src/truth_table.py`` from :ref:`truth table: Binary Operations 3`
 
-.. literalinclude:: truth_table/solutions/truth_table_binary_3.py
+.. literalinclude:: truth_table/src/truth_table_binary_3.py
   :language: python
   :linenos:
   :caption: truth_table/src/truth_table.py
@@ -166,7 +166,7 @@ Binary Operations: solutions
 
 The code in ``truth_table/src/truth_table.py`` from :ref:`truth table: Binary Operations 4`
 
-.. literalinclude:: truth_table/solutions/truth_table_binary_4.py
+.. literalinclude:: truth_table/src/truth_table_binary_4.py
   :language: python
   :linenos:
   :caption: truth_table/src/truth_table.py
@@ -179,7 +179,7 @@ Truth Table tests: solutions
 
 The code in ``truth_table/src/truth_table.py`` from :ref:`truth table: test_truth_table_tests`
 
-.. literalinclude:: truth_table/solutions/truth_table.py
+.. literalinclude:: truth_table/src/truth_table.py
   :language: python
   :linenos:
   :caption: truth_table/src/truth_table.py

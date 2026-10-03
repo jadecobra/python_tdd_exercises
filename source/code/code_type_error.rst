@@ -83,19 +83,19 @@ separate and equal TypeError: solutions
 
 The code in ``type_error/src/type_error/__init__.py`` from :ref:`separate and equal TypeError`
 
-.. literalinclude:: type_error/solutions/type_error_w_separation.py
+.. literalinclude:: type_error/src/type_error_w_separation.py
   :language: python
   :linenos:
   :caption: type_error/src/type_error/__init__.py
   :lines: 1-12
 
-.. literalinclude:: type_error/solutions/type_error_w_separation.py
+.. literalinclude:: type_error/src/type_error_w_separation.py
   :language: python
   :lineno-start: 15
   :caption: type_error/src/type_error/__init__.py
   :lines: 15-26
 
-.. literalinclude:: type_error/solutions/type_error_w_separation.py
+.. literalinclude:: type_error/src/type_error_w_separation.py
   :language: python
   :lineno-start: 29
   :caption: type_error/src/type_error/__init__.py
@@ -137,19 +137,19 @@ TypeError with objects: solutions
 
 The code added to ``type_error/src/type_error/__init__.py`` from :ref:`TypeError with objects`
 
-.. literalinclude:: type_error/solutions/type_error_w_objects.py
+.. literalinclude:: type_error/src/type_error_w_objects.py
   :language: python
   :linenos:
   :caption: type_error/src/type_error/__init__.py
   :lines: 1-13
 
-.. literalinclude:: type_error/solutions/type_error_w_objects.py
+.. literalinclude:: type_error/src/type_error_w_objects.py
   :language: python
   :lineno-start: 52
   :caption: type_error/src/type_error/__init__.py
   :lines: 52-69
 
-.. literalinclude:: type_error/solutions/type_error_w_objects.py
+.. literalinclude:: type_error/src/type_error_w_objects.py
   :language: python
   :lineno-start: 71
   :caption: type_error/src/type_error/__init__.py

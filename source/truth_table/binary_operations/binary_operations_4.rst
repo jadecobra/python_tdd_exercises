@@ -436,12 +436,12 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``tru
 
   - if the value of ``something`` is :red:`False`
 
-    .. literalinclude:: ../../code/truth_table/solutions/if_not_something_false.py
+    .. literalinclude:: ../../code/truth_table/src/if_not_something_false.py
       :language: python
 
   - if the value of ``something`` is :green:`True`
 
-    .. literalinclude:: ../../code/truth_table/solutions/if_not_something_true.py
+    .. literalinclude:: ../../code/truth_table/src/if_not_something_true.py
       :language: python
 
   ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``.
@@ -885,12 +885,12 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
   - if the value of ``something`` is :red:`False`
 
-    .. literalinclude:: ../../code/truth_table/solutions/if_not_something_false.py
+    .. literalinclude:: ../../code/truth_table/src/if_not_something_false.py
       :language: python
 
   - if the value of ``something`` is :green:`True`
 
-    .. literalinclude:: ../../code/truth_table/solutions/if_not_something_true.py
+    .. literalinclude:: ../../code/truth_table/src/if_not_something_true.py
       :language: python
 
   ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``.
@@ -1640,12 +1640,12 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
   - if the value of ``something`` is :red:`False`
 
-    .. literalinclude:: ../../code/truth_table/solutions/if_not_something_false.py
+    .. literalinclude:: ../../code/truth_table/src/if_not_something_false.py
       :language: python
 
   - if the value of ``something`` is :green:`True`
 
-    .. literalinclude:: ../../code/truth_table/solutions/if_not_something_true.py
+    .. literalinclude:: ../../code/truth_table/src/if_not_something_true.py
       :language: python
 
   ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``.
@@ -2476,24 +2476,24 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 
     - if the value of ``something`` is :red:`False`
 
-      .. literalinclude:: ../../code/truth_table/solutions/if_not_something_false.py
+      .. literalinclude:: ../../code/truth_table/src/if_not_something_false.py
         :language: python
 
     - if the value of ``something`` is :green:`True`
 
-      .. literalinclude:: ../../code/truth_table/solutions/if_not_something_true.py
+      .. literalinclude:: ../../code/truth_table/src/if_not_something_true.py
         :language: python
 
   * when ``if something == True:`` runs, Python_ checks if ``(something)`` is equal to :green:`True`. I can assume the following substitutions
 
     - if the value of ``something`` is :red:`False`
 
-      .. literalinclude:: ../../code/truth_table/solutions/if_something_false.py
+      .. literalinclude:: ../../code/truth_table/src/if_something_false.py
         :language: python
 
     - if the value of ``something`` is :green:`True`
 
-      .. literalinclude:: ../../code/truth_table/solutions/if_something_true.py
+      .. literalinclude:: ../../code/truth_table/src/if_something_true.py
         :language: python
 
   - ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``.

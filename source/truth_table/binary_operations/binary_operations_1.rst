@@ -1094,12 +1094,12 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   - if the value of ``something`` is :red:`False`
 
-    .. literalinclude:: ../../code/truth_table/solutions/if_something_false.py
+    .. literalinclude:: ../../code/truth_table/src/if_something_false.py
       :language: python
 
   - if the value of ``something`` is :green:`True`
 
-    .. literalinclude:: ../../code/truth_table/solutions/if_something_true.py
+    .. literalinclude:: ../../code/truth_table/src/if_something_true.py
       :language: python
 
   this means that ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``.
@@ -2321,24 +2321,24 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
     - if the value of ``something`` is :red:`False`
 
-      .. literalinclude:: ../../code/truth_table/solutions/if_not_something_false.py
+      .. literalinclude:: ../../code/truth_table/src/if_not_something_false.py
         :language: python
 
     - if the value of ``something`` is :green:`True`
 
-      .. literalinclude:: ../../code/truth_table/solutions/if_not_something_true.py
+      .. literalinclude:: ../../code/truth_table/src/if_not_something_true.py
         :language: python
 
   * Python_ checks if ``(second_input)`` is equal to :green:`True` when ``if second_input == True:`` runs. I can assume the following substitutions
 
     - if the value of ``something`` is :red:`False`
 
-      .. literalinclude:: ../../code/truth_table/solutions/if_something_false.py
+      .. literalinclude:: ../../code/truth_table/src/if_something_false.py
         :language: python
 
     - if the value of ``something`` is :green:`True`
 
-      .. literalinclude:: ../../code/truth_table/solutions/if_something_true.py
+      .. literalinclude:: ../../code/truth_table/src/if_something_true.py
         :language: python
 
   this means that

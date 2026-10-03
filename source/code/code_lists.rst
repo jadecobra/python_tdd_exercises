@@ -30,6 +30,6 @@ lists with the Calculator solutions
 
 the solutions in ``calculator/src/calculator.py`` from :ref:`lists`
 
-.. literalinclude:: calculator/solutions/calculator_5.py
+.. literalinclude:: calculator/src/calculator_5.py
   :language: python
   :linenos:

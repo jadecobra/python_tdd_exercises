@@ -420,12 +420,12 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
   - if the value of ``something`` is :red:`False`
 
-    .. literalinclude:: ../../code/truth_table/solutions/if_not_something_false.py
+    .. literalinclude:: ../../code/truth_table/src/if_not_something_false.py
       :language: python
 
   - if the value of ``something`` is :green:`True`
 
-    .. literalinclude:: ../../code/truth_table/solutions/if_not_something_true.py
+    .. literalinclude:: ../../code/truth_table/src/if_not_something_true.py
       :language: python
 
   ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``.
@@ -1022,12 +1022,12 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
   - if the value of ``something`` is :red:`False`
 
-    .. literalinclude:: ../../code/truth_table/solutions/if_something_false.py
+    .. literalinclude:: ../../code/truth_table/src/if_something_false.py
       :language: python
 
   - if the value of ``something`` is :green:`True`
 
-    .. literalinclude:: ../../code/truth_table/solutions/if_something_true.py
+    .. literalinclude:: ../../code/truth_table/src/if_something_true.py
       :language: python
 
   ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``.
@@ -2119,12 +2119,12 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
   - if the value of ``something`` is :red:`False`
 
-    .. literalinclude:: ../../code/truth_table/solutions/if_not_something_false.py
+    .. literalinclude:: ../../code/truth_table/src/if_not_something_false.py
       :language: python
 
   - if the value of ``something`` is :green:`True`
 
-    .. literalinclude:: ../../code/truth_table/solutions/if_not_something_true.py
+    .. literalinclude:: ../../code/truth_table/src/if_not_something_true.py
       :language: python
 
   ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``.

@@ -602,24 +602,24 @@ because ``truth_table.py`` does not have anything in it with that name.
 
     - if the value of ``something`` is :red:`False`
 
-      .. literalinclude:: ../../code/truth_table/solutions/if_not_something_false.py
+      .. literalinclude:: ../../code/truth_table/src/if_not_something_false.py
         :language: python
 
     - if the value of ``something`` is :green:`True`
 
-      .. literalinclude:: ../../code/truth_table/solutions/if_not_something_true.py
+      .. literalinclude:: ../../code/truth_table/src/if_not_something_true.py
         :language: python
 
   * Python_ checks if ``(something)`` is equal to :green:`True` when ``if something == True:`` runs. I can assume the following substitutions
 
     - if the value of ``something`` is :red:`False`
 
-      .. literalinclude:: ../../code/truth_table/solutions/if_something_false.py
+      .. literalinclude:: ../../code/truth_table/src/if_something_false.py
         :language: python
 
     - if the value of ``something`` is :green:`True`
 
-      .. literalinclude:: ../../code/truth_table/solutions/if_something_true.py
+      .. literalinclude:: ../../code/truth_table/src/if_something_true.py
         :language: python
 
   - ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``.

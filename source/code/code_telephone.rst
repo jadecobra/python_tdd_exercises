@@ -91,7 +91,7 @@ separate and equal telephone: solution
 
 The code in ``telephone/src/telephone/__init__.py`` from :ref:`separate and equal telephone`
 
-.. literalinclude:: telephone/solutions/telephone_w_separation.py
+.. literalinclude:: telephone/src/telephone_w_separation.py
   :language: python
   :linenos:
   :caption: telephone/src/telephone/__init__.py

@@ -39,13 +39,13 @@ what causes AttributeError? solutions
 
 the solutions in ``attribute_error/src/attribute_error/__init__.py`` from :ref:`what causes AttributeError?`
 
-.. literalinclude:: attribute_error/solutions/attribute_error.py
+.. literalinclude:: attribute_error/src/attribute_error.py
   :language: python
   :linenos:
   :caption: attribute_error/src/attribute_error/__init__.py
   :lines: 1-10
 
-.. literalinclude:: attribute_error/solutions/attribute_error.py
+.. literalinclude:: attribute_error/src/attribute_error.py
   :language: python
   :lineno-start: 13
   :caption: attribute_error/src/attribute_error/__init__.py
@@ -93,25 +93,25 @@ AttributeError with objects solutions
 
 the solutions in ``attribute_error/src/attribute_error/__init__.py`` from :ref:`AttributeError with objects`
 
-.. literalinclude:: attribute_error/solutions/attribute_error_w_objects.py
+.. literalinclude:: attribute_error/src/attribute_error_w_objects.py
   :language: python
   :linenos:
   :caption: attribute_error/src/attribute_error/__init__.py
   :lines: 1-10
 
-.. literalinclude:: attribute_error/solutions/attribute_error_w_objects.py
+.. literalinclude:: attribute_error/src/attribute_error_w_objects.py
   :language: python
   :lineno-start: 13
   :caption: attribute_error/src/attribute_error/__init__.py
   :lines: 13-22
 
-.. literalinclude:: attribute_error/solutions/attribute_error_w_objects.py
+.. literalinclude:: attribute_error/src/attribute_error_w_objects.py
   :language: python
   :lineno-start: 25
   :caption: attribute_error/src/attribute_error/__init__.py
   :lines: 25-36
 
-.. literalinclude:: attribute_error/solutions/attribute_error_w_objects.py
+.. literalinclude:: attribute_error/src/attribute_error_w_objects.py
   :language: python
   :lineno-start: 38
   :caption: attribute_error/src/attribute_error/__init__.py

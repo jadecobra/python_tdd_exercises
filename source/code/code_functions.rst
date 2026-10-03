@@ -148,25 +148,25 @@ separate and equal functions solutions
 
 The code in ``functions/src/functions/__init__.py`` from :ref:`separate and equal functions`
 
-.. literalinclude:: functions/solutions/functions_w_separation.py
+.. literalinclude:: functions/src/functions_w_separation.py
   :language: python
   :linenos:
   :caption: functions/src/functions/__init__.py
   :lines: 1-10
 
-.. literalinclude:: functions/solutions/functions_w_separation.py
+.. literalinclude:: functions/src/functions_w_separation.py
   :language: python
   :lineno-start: 13
   :caption: functions/src/functions/__init__.py
   :lines: 13-22
 
-.. literalinclude:: functions/solutions/functions_w_separation.py
+.. literalinclude:: functions/src/functions_w_separation.py
   :language: python
   :lineno-start: 25
   :caption: functions/src/functions/__init__.py
   :lines: 25-34
 
-.. literalinclude:: functions/solutions/functions_w_separation.py
+.. literalinclude:: functions/src/functions_w_separation.py
   :language: python
   :lineno-start: 37
   :caption: functions/src/functions/__init__.py

@@ -74,13 +74,13 @@ how to make a person with f-strings: solutions
 
 The code in ``person/src/person/__init__.py`` from :ref:`how to make a person with f-strings`
 
-.. literalinclude:: person/solutions/person_w_fstrings.py
+.. literalinclude:: person/src/person_w_fstrings.py
   :caption: person/src/person/__init__.py
   :language: python
   :linenos:
   :lines: 1-8
 
-.. literalinclude:: person/solutions/person_w_fstrings.py
+.. literalinclude:: person/src/person_w_fstrings.py
   :caption: person/src/person/__init__.py
   :language: python
   :lineno-start: 11
@@ -171,13 +171,13 @@ how to make a person with an object: solutions
 
 The code in ``person/src/person/__init__.py`` from :ref:`how to make a person with an object`
 
-.. literalinclude:: person/solutions/person_w_class.py
+.. literalinclude:: person/src/person_w_class.py
   :caption: person/src/person/__init__.py
   :language: python
   :linenos:
   :lines: 1-17
 
-.. literalinclude:: person/solutions/person_w_class.py
+.. literalinclude:: person/src/person_w_class.py
   :caption: person/src/person/__init__.py
   :language: python
   :lineno-start: 20
@@ -317,31 +317,31 @@ test person with datetime: solutions
 
 The code in ``person/src/person.py`` from :ref:`test person with datetime`
 
-.. literalinclude:: person/solutions/person_w_datetime.py
+.. literalinclude:: person/src/person_w_datetime.py
   :caption: ``src/person/__init__.py``
   :language: python
   :linenos:
   :lines: 1-13
 
-.. literalinclude:: person/solutions/person_w_datetime.py
+.. literalinclude:: person/src/person_w_datetime.py
   :caption: ``src/person/__init__.py``
   :language: python
   :lineno-start: 15
   :lines: 15-20
 
-.. literalinclude:: person/solutions/person_w_datetime.py
+.. literalinclude:: person/src/person_w_datetime.py
   :caption: ``src/person/__init__.py``
   :language: python
   :lineno-start: 23
   :lines: 23-31
 
-.. literalinclude:: person/solutions/person_w_datetime.py
+.. literalinclude:: person/src/person_w_datetime.py
   :caption: ``src/person/__init__.py``
   :language: python
   :lineno-start: 34
   :lines: 34-41
 
-.. literalinclude:: person/solutions/person_w_datetime.py
+.. literalinclude:: person/src/person_w_datetime.py
   :caption: ``src/person/__init__.py``
   :language: python
   :lineno-start: 44
@@ -431,37 +431,37 @@ how to make a person with conditions: solutions
 
 The code in ``person/src/person.py`` after :ref:`how to make a person with conditions`
 
-.. literalinclude:: person/solutions/person_w_conditions.py
+.. literalinclude:: person/src/person_w_conditions.py
   :caption: person/src/person/__init__.py
   :language: python
   :linenos:
   :lines: 1-17
 
-.. literalinclude:: person/solutions/person_w_conditions.py
+.. literalinclude:: person/src/person_w_conditions.py
   :caption: person/src/person/__init__.py
   :language: python
   :lineno-start: 19
   :lines: 19-25
 
-.. literalinclude:: person/solutions/person_w_conditions.py
+.. literalinclude:: person/src/person_w_conditions.py
   :caption: person/src/person/__init__.py
   :language: python
   :lineno-start: 27
   :lines: 27-34
 
-.. literalinclude:: person/solutions/person_w_conditions.py
+.. literalinclude:: person/src/person_w_conditions.py
   :caption: person/src/person/__init__.py
   :language: python
   :lineno-start: 37
   :lines: 37-45
 
-.. literalinclude:: person/solutions/person_w_conditions.py
+.. literalinclude:: person/src/person_w_conditions.py
   :caption: person/src/person/__init__.py
   :language: python
   :lineno-start: 48
   :lines: 48-55
 
-.. literalinclude:: person/solutions/person_w_conditions.py
+.. literalinclude:: person/src/person_w_conditions.py
   :caption: person/src/person/__init__.py
   :language: python
   :lineno-start: 58
@@ -495,6 +495,6 @@ how to make a person with Exceptions: solutions
 
 The code in ``person/src/person.py`` from :ref:`how to make a person with Exceptions`
 
-.. literalinclude:: person/solutions/person_w_exceptions.py
+.. literalinclude:: person/src/person_w_exceptions.py
   :language: python
   :linenos:
