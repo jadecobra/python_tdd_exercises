@@ -1751,7 +1751,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                 }
             }
 
-* I use the new :ref:`object attribute<what is a object attribute?>` in the :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_functions`
+* I use the new :ref:`object attribute<what is an object attribute?>` in the :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_functions`
 
   .. code-block:: python
     :lineno-start: 219

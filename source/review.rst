@@ -129,7 +129,7 @@ objects review
 *********************************************************************************
 
 * :ref:`what is an object?`
-* :ref:`what is a object attribute?`
+* :ref:`what is an object attribute?`
 * :ref:`what is a method?`
 * :ref:`how can I make sure things my tests need are run before every test?<how to use the setUp method to reset object attributes for every test>`
 * :ref:`what is the staticmethod decorator?`

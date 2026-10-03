@@ -438,7 +438,7 @@ I want the :ref:`calculator<how to make a calculator>` to have a place to show r
 
 -----
 
-I add a test to see all the :ref:`attributes<what is a object attribute?>` of the application
+I add a test to see all the :ref:`attributes<what is an object attribute?>` of the application
 
 .. code-block:: python
   :lineno-start: 7
@@ -949,7 +949,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 
     # Exceptions seen
 
-  the test passes. All the :ref:`attributes<what is a object attribute?>` have 1 as their value which stands for different things in each case, they are called enums_
+  the test passes. All the :ref:`attributes<what is an object attribute?>` have 1 as their value which stands for different things in each case, they are called enums_
 
   - ``gap_config.gap_size`` - 1 - SMALL
   - ``direction`` - 1 - VERTICAL

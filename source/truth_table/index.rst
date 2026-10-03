@@ -26,7 +26,7 @@ Sometimes I want programs_ to choose what to do based on inputs or :ref:`conditi
 
 These exercises cover writing :ref:`conditional expressions` in Python_ with the `Truth Table`_ from Mathematics_ and the :ref:`assertFalse<another way to test if something is grouped as False>` and :ref:`assertTrue methods<another way to test if something is grouped as True>`.
 
-The operations in these chapters are fundamental to how the computer works. All operations from the `Truth Table`_ always return :ref:`False (which can be thought of as 0)<test_the_value_of_false>` or :ref:`True (which can be thought of as 1)<test_the_value_of_true>`.
+The operations in these chapters are fundamental to how the computer works. All operations from the `Truth Table`_ always return :ref:`False (which can be thought of as 0)<test_what_is_false>` or :ref:`True (which can be thought of as 1)<test_what_is_true>`.
 
 ----
 

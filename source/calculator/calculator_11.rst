@@ -1924,7 +1924,7 @@ good
 
 ----
 
-* I made the same client in each test. I add a :ref:`object attribute<what is a object attribute?>` for it in the `setUp method`_
+* I made the same client in each test. I add a :ref:`object attribute<what is an object attribute?>` for it in the `setUp method`_
 
   .. code-block:: python
     :lineno-start: 6
@@ -1937,7 +1937,7 @@ good
 
         def test_home_page(self):
 
-* I use the new :ref:`object attribute<what is a object attribute?>` in :ref:`test_home_page`
+* I use the new :ref:`object attribute<what is an object attribute?>` in :ref:`test_home_page`
 
   .. code-block:: python
     :lineno-start: 11
@@ -1978,7 +1978,7 @@ good
 
 ----
 
-* I use the :ref:`object attribute<what is a object attribute?>` in :ref:`test_calculations`
+* I use the :ref:`object attribute<what is an object attribute?>` in :ref:`test_calculations`
 
   .. code-block:: python
     :lineno-start: 32
@@ -2044,7 +2044,7 @@ good
 
 ----
 
-* I use the :ref:`object attribute<what is a object attribute?>` in :ref:`test_website_handling_zero_division_error<fix handling ZeroDivisionError in division>`
+* I use the :ref:`object attribute<what is an object attribute?>` in :ref:`test_website_handling_zero_division_error<fix handling ZeroDivisionError in division>`
 
   .. code-block:: python
     :lineno-start: 54

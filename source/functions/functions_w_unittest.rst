@@ -8,7 +8,7 @@
 test functions with unittest
 #################################################################################
 
-I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`functions<what is a function?>` project. I also want to use :ref:`object attributes<what is a object attribute?>` to remove repetition of some values from the tests.
+I want to use the :ref:`unittest library<another way to write tests>` in the :ref:`functions<what is a function?>` project. I also want to use :ref:`object attributes<what is an object attribute?>` to remove repetition of some values from the tests.
 
 ----
 
@@ -3148,11 +3148,11 @@ green.
 extract first, last object attributes
 *********************************************************************************
 
-I want to use :ref:`object attributes<what is a object attribute?>` to remove repetition from the tests.
+I want to use :ref:`object attributes<what is an object attribute?>` to remove repetition from the tests.
 
 * I go back to the terminal_ where the tests are running
 
-* I add :ref:`object attributes<what is a object attribute?>` for ``'first'`` and ``'last'``
+* I add :ref:`object attributes<what is an object attribute?>` for ``'first'`` and ``'last'``
 
   .. code-block:: python
     :lineno-start: 9
@@ -3165,7 +3165,7 @@ I want to use :ref:`object attributes<what is a object attribute?>` to remove re
 
         def test_making_a_function_w_pass(self):
 
-* I use the :ref:`object attributes<what is a object attribute?>` for ``first`` and ``last`` in :ref:`test_positional_arguments`
+* I use the :ref:`object attributes<what is an object attribute?>` for ``first`` and ``last`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 69
@@ -3192,7 +3192,7 @@ I want to use :ref:`object attributes<what is a object attribute?>` to remove re
 
   the test is still green.
 
-* I use the :ref:`object attributes<what is a object attribute?>` for ``first`` and ``last`` in :ref:`test_keyword_arguments`
+* I use the :ref:`object attributes<what is an object attribute?>` for ``first`` and ``last`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 108
@@ -3225,7 +3225,7 @@ I want to use :ref:`object attributes<what is a object attribute?>` to remove re
 
   still green.
 
-* I use the :ref:`object attributes<what is a object attribute?>` for ``first`` and ``last`` in :ref:`test_args_and_kwargs`
+* I use the :ref:`object attributes<what is an object attribute?>` for ``first`` and ``last`` in :ref:`test_args_and_kwargs`
 
   .. code-block:: python
     :lineno-start: 160
@@ -3276,7 +3276,7 @@ I want to use :ref:`object attributes<what is a object attribute?>` to remove re
 extract a_tuple object attribute
 *********************************************************************************
 
-* I add a :ref:`object attribute<what is a object attribute?>` for ``(0, 1, 2, 'n')``
+* I add a :ref:`object attribute<what is an object attribute?>` for ``(0, 1, 2, 'n')``
 
   .. code-block:: python
     :lineno-start: 9
@@ -3290,7 +3290,7 @@ extract a_tuple object attribute
 
         def test_making_a_function_w_pass(self):
 
-* I use the new :ref:`object attribute<what is a object attribute?>` for ``a_tuple`` in :ref:`test_positional_arguments`
+* I use the new :ref:`object attribute<what is an object attribute?>` for ``a_tuple`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 89
@@ -3315,7 +3315,7 @@ extract a_tuple object attribute
 
   still green.
 
-* I use the new :ref:`object attribute<what is a object attribute?>` for ``a_tuple`` in :ref:`test_keyword_arguments`
+* I use the new :ref:`object attribute<what is an object attribute?>` for ``a_tuple`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 138
@@ -3359,7 +3359,7 @@ extract a_tuple object attribute
 extract a_list object attribute
 *********************************************************************************
 
-* I add a :ref:`object attribute<what is a object attribute?>` for ``[0, 1, 2, 'n']``
+* I add a :ref:`object attribute<what is an object attribute?>` for ``[0, 1, 2, 'n']``
 
   .. code-block:: python
     :lineno-start: 9
@@ -3374,7 +3374,7 @@ extract a_list object attribute
 
         def test_making_a_function_w_pass(self):
 
-* I use the new :ref:`object attribute<what is a object attribute?>` for ``a_list`` in :ref:`test_positional_arguments`
+* I use the new :ref:`object attribute<what is an object attribute?>` for ``a_list`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 94
@@ -3397,7 +3397,7 @@ extract a_list object attribute
 
   still green.
 
-* I use the new :ref:`object attribute<what is a object attribute?>` for ``a_list`` in :ref:`test_keyword_arguments`
+* I use the new :ref:`object attribute<what is an object attribute?>` for ``a_list`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 148
@@ -3435,7 +3435,7 @@ extract a_list object attribute
 extract a_set object attribute
 *********************************************************************************
 
-* I add a :ref:`object attribute<what is a object attribute?>` for ``{0, 1, 2, 'n'}``
+* I add a :ref:`object attribute<what is an object attribute?>` for ``{0, 1, 2, 'n'}``
 
   .. code-block:: python
     :lineno-start: 9
@@ -3451,7 +3451,7 @@ extract a_set object attribute
 
         def test_making_a_function_w_pass(self):
 
-* I use the new :ref:`object attribute<what is a object attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_positional_arguments`
+* I use the new :ref:`object attribute<what is an object attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 108
@@ -3472,7 +3472,7 @@ extract a_set object attribute
 
   still green.
 
-* I use the new :ref:`object attributes<what is a object attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_keyword_arguments`
+* I use the new :ref:`object attributes<what is an object attribute?>` to remove repetition of ``{0, 1, 2, 'n'}`` from :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 165
@@ -3508,7 +3508,7 @@ extract a_set object attribute
 extract a_dictionary object attribute
 *********************************************************************************
 
-* I add a :ref:`object attribute<what is a object attribute?>` for ``a_dictionary``
+* I add a :ref:`object attribute<what is an object attribute?>` for ``a_dictionary``
 
   .. code-block:: python
     :lineno-start: 9
@@ -3525,7 +3525,7 @@ extract a_dictionary object attribute
 
         def test_making_a_function_w_pass(self):
 
-* I use the new :ref:`object attribute<what is a object attribute?>` for ``a_dictionary`` in :ref:`test_positional_arguments`
+* I use the new :ref:`object attribute<what is an object attribute?>` for ``a_dictionary`` in :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 109
@@ -3590,7 +3590,7 @@ extract a_dictionary object attribute
 
         def test_keyword_arguments(self):
 
-* I use the new :ref:`object attributes<what is a object attribute?>` for ``a_dictionary`` in :ref:`test_keyword_arguments`
+* I use the new :ref:`object attributes<what is an object attribute?>` for ``a_dictionary`` in :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 151
@@ -3675,7 +3675,7 @@ extract a_dictionary object attribute
     git commit -am \
     'extract a_dictionary object attribute'
 
-:ref:`I can use object attributes to remove repetition<what is a object attribute?>`
+:ref:`I can use object attributes to remove repetition<what is an object attribute?>`
 
 ----
 
@@ -3709,7 +3709,7 @@ review
 *********************************************************************************
 
 * I can use the :ref:`unittest library<another way to write tests>` to write tests with the :ref:`methods of the unittest.TestCase class<test_dir_unittest_testcase>` or I can write them with bare :ref:`assert statements<what is an assertion?>`.
-* I can use :ref:`object attributes<what is a object attribute?>` for things that repeat so that :ref:`methods<what is a method?>` of the same :ref:`object<everything is an object>` can use them.
+* I can use :ref:`object attributes<what is an object attribute?>` for things that repeat so that :ref:`methods<what is a method?>` of the same :ref:`object<everything is an object>` can use them.
 
 ----
 

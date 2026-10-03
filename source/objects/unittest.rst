@@ -3366,7 +3366,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
 ----
 
-* I add the ``TOOLBOX`` :ref:`variable<what is a variable?>` to :ref:`TestUnittest<extract TestUnittest class>` to make it a :ref:`object attribute<what is a object attribute?>`
+* I add the ``TOOLBOX`` :ref:`variable<what is a variable?>` to :ref:`TestUnittest<extract TestUnittest class>` to make it a :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -3380,7 +3380,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
         @staticmethod
         def test_dir_unittest():
 
-* I use the new :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_dir_unittest`
+* I use the new :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_dir_unittest`
 
   .. code-block:: python
     :lineno-start: 32
@@ -3439,7 +3439,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   the test is green again.
 
-* I use the new :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_dir_unittest_testcase`
+* I use the new :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_dir_unittest_testcase`
 
   .. code-block:: python
     :lineno-start: 88
@@ -3474,7 +3474,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   green again.
 
-* I use the :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_assertIsNot`
+* I use the :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_assertIsNot`
 
   .. code-block:: python
     :lineno-start: 94
@@ -3507,7 +3507,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   the test is green again.
 
-* I use the :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_assertIs`
+* I use the :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_assertIs`
 
   .. code-block:: python
     :lineno-start: 101
@@ -3540,7 +3540,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   green again.
 
-* I use the :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_assertNotEqual`
+* I use the :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_assertNotEqual`
 
   .. code-block:: python
     :lineno-start: 108
@@ -3573,7 +3573,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   the test is green again.
 
-* I use the :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_assertEqual`
+* I use the :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_assertEqual`
 
   .. code-block:: python
     :lineno-start: 115
@@ -3606,7 +3606,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   green again.
 
-* I use the :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_assertNotIsInstance`
+* I use the :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_assertNotIsInstance`
 
   .. code-block:: python
     :lineno-start: 122
@@ -3643,7 +3643,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   the test is green again.
 
-* I use the :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_assertIs_instance`
+* I use the :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_assertIs_instance`
 
   .. code-block:: python
     :lineno-start: 133
@@ -3681,7 +3681,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   the test is green again.
 
-* I use the :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_assertNotIsSubclass`
+* I use the :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_assertNotIsSubclass`
 
   .. code-block:: python
     :lineno-start: 145
@@ -3718,7 +3718,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
   the test is green again.
 
-* I use the :ref:`object attribute<what is a object attribute?>` for ``TOOLBOX`` in :ref:`test_assertIs_subclass`
+* I use the :ref:`object attribute<what is an object attribute?>` for ``TOOLBOX`` in :ref:`test_assertIs_subclass`
 
   .. code-block:: python
     :lineno-start: 156
@@ -3779,7 +3779,7 @@ use unittest.TestCase
 
 I can use the `unittest.TestCase class`_ as a parent of the :ref:`TestUnittest class<extract TestUnittest class>` which will allow me to use ``self`` to access its :ref:`attributes and methods<test_dir_unittest_testcase>`.
 
-It also means I will not need the ``TOOLBOX`` :ref:`object attribute<what is a object attribute?>` which points to an :ref:`instance<how to test if something is an instance>` of the `unittest.TestCase class`_.
+It also means I will not need the ``TOOLBOX`` :ref:`object attribute<what is an object attribute?>` which points to an :ref:`instance<how to test if something is an instance>` of the `unittest.TestCase class`_.
 
 ----
 
@@ -4520,7 +4520,7 @@ the test passes because
 
         def test_assertIsNot(self):
 
-* I remove the ``TOOLBOX`` :ref:`object attribute<what is a object attribute?>` since it is no longer used
+* I remove the ``TOOLBOX`` :ref:`object attribute<what is an object attribute?>` since it is no longer used
 
   .. code-block:: python
     :lineno-start: 4

@@ -15,7 +15,7 @@ objects
 
 I made :ref:`functions<what is a function?>` that make :ref:`dictionaries (test_factory_w_keyword_arguments)<test_factory_w_keyword_arguments>` and :ref:`strings (test_factory_person_says_hello)<test_factory_person_says_hello>` in :ref:`how to make a person`.
 
-I can also use an :ref:`object<everything is an object>` for a person, because it is a group of :ref:`attributes (variables)<what is a object attribute?>` and :ref:`methods (functions) <what is a function?>` that belong together.
+I can also use an :ref:`object<everything is an object>` for a person, because it is a group of :ref:`attributes (variables)<what is an object attribute?>` and :ref:`methods (functions) <what is a function?>` that belong together.
 
 ----
 
@@ -34,7 +34,7 @@ questions about objects
 *********************************************************************************
 
 * :ref:`what is an object?`
-* :ref:`what is a object attribute?`
+* :ref:`what is an object attribute?`
 * :ref:`what is a method?`
 * :ref:`how can I make sure things my tests need are run before every test?<how to use the setUp method to reset object attributes for every test>`
 * :ref:`what is the staticmethod decorator?`
@@ -94,7 +94,7 @@ open the project
 test_classy_person_says_hello
 *********************************************************************************
 
-I made a person :ref:`say hello with a function<test_factory_person_says_hello>`, I can also do the same thing with an :ref:`object<everything is an object>` because it is :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` that belong together.
+I made a person :ref:`say hello with a function<test_factory_person_says_hello>`, I can also do the same thing with an :ref:`object<everything is an object>` because it is :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` that belong together.
 
 ----
 
@@ -660,9 +660,9 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
           'Hello, my name is joe blow and I am 30'
        != 'Hello, my name is jane doe and I am 35'
 
-  Progress. I can make the ``say_hello`` :ref:`function<what is a function?>` use :ref:`attributes<what is a object attribute?>` of the person it receives as input to make the message.
+  Progress. I can make the ``say_hello`` :ref:`function<what is a function?>` use :ref:`attributes<what is an object attribute?>` of the person it receives as input to make the message.
 
-* I change the string_ in the :ref:`return statement<the return statement>` of the ``say_hello`` :ref:`method<what is a function?>` of the ``Person`` :ref:`object<everything is an object>` to an :ref:`f-string<what is string interpolation?>` with the ``first_name`` :ref:`attribute<what is a object attribute?>` of the person it receives, in ``src/person/__init__.py``
+* I change the string_ in the :ref:`return statement<the return statement>` of the ``say_hello`` :ref:`method<what is a function?>` of the ``Person`` :ref:`object<everything is an object>` to an :ref:`f-string<what is string interpolation?>` with the ``first_name`` :ref:`attribute<what is an object attribute?>` of the person it receives, in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 44
@@ -687,7 +687,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   because there is no definition for ``first_name`` in the ``Person`` :ref:`object definition<how to make an object>`
 
-* I add an :ref:`attribute<what is a object attribute?>` to the ``Person`` :ref:`object<everything is an object>` for ``first_name``
+* I add an :ref:`attribute<what is an object attribute?>` to the ``Person`` :ref:`object<everything is an object>` for ``first_name``
 
   .. code-block:: python
     :lineno-start: 27
@@ -709,7 +709,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   because I used a fixed value (``jane``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``joe``. I have to get the value from the :ref:`object<everything is an object>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
 
-* I add a :ref:`variable<what is a variable?>` to the :ref:`__init__ method<the constructor method>` to use it to allow changing the ``first_name`` :ref:`attribute<what is a object attribute?>` anytime a copy of the ``Person`` :ref:`object<everything is an object>` is made
+* I add a :ref:`variable<what is a variable?>` to the :ref:`__init__ method<the constructor method>` to use it to allow changing the ``first_name`` :ref:`attribute<what is an object attribute?>` anytime a copy of the ``Person`` :ref:`object<everything is an object>` is made
 
   .. code-block:: python
     :lineno-start: 27
@@ -743,7 +743,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         'Hello, my name is jane blow and I am 30'
      != 'Hello, my name is joe blow and I am 30'
 
-* I change the :ref:`variable<what is a variable?>` to a :ref:`object attribute<what is a object attribute?>` by adding ``self.`` before it
+* I change the :ref:`variable<what is a variable?>` to a :ref:`object attribute<what is an object attribute?>` by adding ``self.`` before it
 
   .. code-block:: python
     :lineno-start: 36
@@ -774,7 +774,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
 ----
 
-* I add the ``last_name`` :ref:`attribute<what is a object attribute?>` to the string_ in the :ref:`return statement<the return statement>` of the ``say_hello`` :ref:`method<what is a function?>`
+* I add the ``last_name`` :ref:`attribute<what is an object attribute?>` to the string_ in the :ref:`return statement<the return statement>` of the ``say_hello`` :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 48
@@ -802,7 +802,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   because there is no definition for ``last_name`` in the ``Person`` :ref:`object definition<how to make an object>`
 
-* I add an :ref:`attribute<what is a object attribute?>` to the ``Person`` :ref:`object<everything is an object>` for ``last_name``
+* I add an :ref:`attribute<what is an object attribute?>` to the ``Person`` :ref:`object<everything is an object>` for ``last_name``
 
   .. code-block:: python
     :lineno-start: 27
@@ -825,7 +825,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   because I used a fixed value (``doe``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``blow``. I have to get the value from the :ref:`object<everything is an object>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
 
-* I add a :ref:`variable<what is a variable?>` to the :ref:`__init__ method<the constructor method>` to use it to allow changing the ``last_name`` :ref:`attribute<what is a object attribute?>` anytime a copy of the ``Person`` :ref:`object<everything is an object>` is made
+* I add a :ref:`variable<what is a variable?>` to the :ref:`__init__ method<the constructor method>` to use it to allow changing the ``last_name`` :ref:`attribute<what is an object attribute?>` anytime a copy of the ``Person`` :ref:`object<everything is an object>` is made
 
   .. code-block:: python
     :lineno-start: 32
@@ -857,7 +857,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         'Hello, my name is joe doe and I am 30'
      != 'Hello, my name is joe blow and I am 30'
 
-* I change ``last_name`` to a :ref:`object attribute<what is a object attribute?>` in the :ref:`__init__ method<the constructor method>` by adding ``self.`` before it
+* I change ``last_name`` to a :ref:`object attribute<what is an object attribute?>` in the :ref:`__init__ method<the constructor method>` by adding ``self.`` before it
 
   .. code-block:: python
     :lineno-start: 37
@@ -939,7 +939,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
 ----
 
-* I add a calculation for the age with the ``year_of_birth`` :ref:`attribute<what is a object attribute?>` to the :ref:`return statement<the return statement>` of the ``say_hello`` :ref:`method<what is a function?>`
+* I add a calculation for the age with the ``year_of_birth`` :ref:`attribute<what is an object attribute?>` to the :ref:`return statement<the return statement>` of the ``say_hello`` :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 52
@@ -971,7 +971,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   because there is no definition for ``year_of_birth`` in the ``Person`` :ref:`object definition<how to make an object>`
 
-* I add an :ref:`attribute<what is a object attribute?>` to the ``Person`` :ref:`object<everything is an object>` for ``year_of_birth``
+* I add an :ref:`attribute<what is an object attribute?>` to the ``Person`` :ref:`object<everything is an object>` for ``year_of_birth``
 
   .. code-block:: python
     :lineno-start: 27
@@ -995,7 +995,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   because I used a fixed value (``1991``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``datetime.datetime.now().year-1996``. I have to get the value from the :ref:`object<everything is an object>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
 
-* I add a :ref:`variable<what is a variable?>` to the :ref:`__init__ method<the constructor method>` to use it to allow changing the ``year_of_birth`` :ref:`attribute<what is a object attribute?>` anytime a copy of the ``Person`` :ref:`object<everything is an object>` is made
+* I add a :ref:`variable<what is a variable?>` to the :ref:`__init__ method<the constructor method>` to use it to allow changing the ``year_of_birth`` :ref:`attribute<what is an object attribute?>` anytime a copy of the ``Person`` :ref:`object<everything is an object>` is made
 
   .. code-block:: python
     :lineno-start: 38
@@ -1025,7 +1025,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         'Hello, my name is joe blow and I am 35'
      != 'Hello, my name is joe blow and I am 30'
 
-* I change ``year_of_birth`` to a :ref:`object attribute<what is a object attribute?>` in the :ref:`__init__ method<the constructor method>` by adding ``self.`` before it
+* I change ``year_of_birth`` to a :ref:`object attribute<what is an object attribute?>` in the :ref:`__init__ method<the constructor method>` by adding ``self.`` before it
 
   .. code-block:: python
     :lineno-start: 38
@@ -1050,7 +1050,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   the test passes. What a beautiful life.
 
-* ``self.first_name``, ``self.last_name`` and ``self.year_of_birth`` are now defined twice in the :ref:`object<everything is an object>`. I remove the first definition since the :ref:`attributes<what is a object attribute?>` are also made in the :ref:`__init__ method<the constructor method>` and that gets called when copies of the ``Person`` :ref:`object<everything is an object>` are made, no need to have a default person be ``jane doe`` born in ``1991``
+* ``self.first_name``, ``self.last_name`` and ``self.year_of_birth`` are now defined twice in the :ref:`object<everything is an object>`. I remove the first definition since the :ref:`attributes<what is an object attribute?>` are also made in the :ref:`__init__ method<the constructor method>` and that gets called when copies of the ``Person`` :ref:`object<everything is an object>` are made, no need to have a default person be ``jane doe`` born in ``1991``
 
   .. code-block:: python
     :lineno-start: 27
@@ -1136,7 +1136,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   green.
 
-* The :ref:`say_hello method<test_classy_person_says_hello>` is in the ``Person`` :ref:`object<everything is an object>`, there is no need for it to take a copy of the ``Person`` :ref:`object<everything is an object>` as input since it should be able to access the :ref:`attributes<what is a object attribute?>` of the :ref:`object<everything is an object>` it belongs to. I change ``person.`` to ``self.`` to use :ref:`object attributes<what is a object attribute?>` instead
+* The :ref:`say_hello method<test_classy_person_says_hello>` is in the ``Person`` :ref:`object<everything is an object>`, there is no need for it to take a copy of the ``Person`` :ref:`object<everything is an object>` as input since it should be able to access the :ref:`attributes<what is an object attribute?>` of the :ref:`object<everything is an object>` it belongs to. I change ``person.`` to ``self.`` to use :ref:`object attributes<what is an object attribute?>` instead
 
   .. code-block:: python
     :lineno-start: 63
@@ -1182,7 +1182,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   the test is green again.
 
-* I remove the `staticmethod decorator`_ because I no longer need it since the :ref:`say_hello method<test_classy_person_says_hello>` is using :ref:`object attributes<what is a object attribute?>`
+* I remove the `staticmethod decorator`_ because I no longer need it since the :ref:`say_hello method<test_classy_person_says_hello>` is using :ref:`object attributes<what is an object attribute?>`
 
   .. code-block:: python
     :lineno-start: 63
@@ -1689,11 +1689,11 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 extract random_first_name object attribute
 *********************************************************************************
 
-I make the values for ``first_name`` in the tests the same way each time, since ``TestPerson`` is an :ref:`object<everything is an object>`, I can use a :ref:`object attribute<what is a object attribute?>` to remove repetition of how I make it, then have all the :ref:`methods<what is a method?>` reference it
+I make the values for ``first_name`` in the tests the same way each time, since ``TestPerson`` is an :ref:`object<everything is an object>`, I can use a :ref:`object attribute<what is an object attribute?>` to remove repetition of how I make it, then have all the :ref:`methods<what is a method?>` reference it
 
 * I go back to the terminal_ where the tests are running
 
-* I add a :ref:`object attribute<what is a object attribute?>` called ``random_first_name`` to the ``TestPerson`` :ref:`object<everything is an object>`
+* I add a :ref:`object attribute<what is an object attribute?>` called ``random_first_name`` to the ``TestPerson`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 32
@@ -1705,7 +1705,7 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 
         def test_factory_w_keyword_arguments(self):
 
-* I use the new :ref:`object attribute<what is a object attribute?>` in :ref:`test_factory_w_keyword_arguments`
+* I use the new :ref:`object attribute<what is an object attribute?>` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 36
@@ -1723,7 +1723,7 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 
   the test is still green.
 
-* I use the new :ref:`object attribute<what is a object attribute?>` in :ref:`test_factory_w_optional_arguments`
+* I use the new :ref:`object attribute<what is an object attribute?>` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
     :lineno-start: 56
@@ -1752,7 +1752,7 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 
   the test is still green.
 
-* I use the new :ref:`object attribute<what is a object attribute?>` in :ref:`test_factory_person_says_hello`
+* I use the new :ref:`object attribute<what is an object attribute?>` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
     :lineno-start: 75
@@ -1788,7 +1788,7 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 
   the test is still green.
 
-* I use the new :ref:`object attribute<what is a object attribute?>` in :ref:`test_classy_person_says_hello`
+* I use the new :ref:`object attribute<what is an object attribute?>` in :ref:`test_classy_person_says_hello`
 
   .. code-block:: python
     :lineno-start: 101
@@ -1837,11 +1837,11 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 extract random_year_of_birth object attribute
 *********************************************************************************
 
-I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for ``year_of_birth`` in each test, since ``TestPerson`` is an :ref:`object<everything is an object>`, I can use a :ref:`object attribute<what is a object attribute?>` to remove repetition of those calls, then have all the :ref:`methods<what is a method?>` reference the value it returns
+I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for ``year_of_birth`` in each test, since ``TestPerson`` is an :ref:`object<everything is an object>`, I can use a :ref:`object attribute<what is an object attribute?>` to remove repetition of those calls, then have all the :ref:`methods<what is a method?>` reference the value it returns
 
 * I go back to the terminal_ where the tests are running
 
-* I add a :ref:`object attribute<what is a object attribute?>` called ``random_year_of_birth`` to the ``TestPerson`` :ref:`object<everything is an object>`
+* I add a :ref:`object attribute<what is an object attribute?>` called ``random_year_of_birth`` to the ``TestPerson`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 32
@@ -2002,11 +2002,11 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
 extract random_last_name object attribute
 *********************************************************************************
 
-The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in three of the four tests, I can use a :ref:`object attribute<what is a object attribute?>` to remove its repetition then have all the :ref:`methods<what is a method?>` reference the value
+The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in three of the four tests, I can use a :ref:`object attribute<what is an object attribute?>` to remove its repetition then have all the :ref:`methods<what is a method?>` reference the value
 
 * I go back to the terminal_ where the tests are running
 
-* I add a :ref:`object attribute<what is a object attribute?>` called ``random_last_name`` to the ``TestPerson`` :ref:`object<everything is an object>`
+* I add a :ref:`object attribute<what is an object attribute?>` called ``random_last_name`` to the ``TestPerson`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 32
@@ -2137,11 +2137,11 @@ The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in t
 extract age object attribute
 *********************************************************************************
 
-I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``self.random_year_of_birth`` :ref:`attribute<what is a object attribute?>` in each test, since ``TestPerson`` is an :ref:`object<everything is an object>`, I can use a :ref:`object attribute<what is a object attribute?>` to remove repetition of those calls, then have all the :ref:`methods<what is a method?>` reference the value  it returns
+I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``self.random_year_of_birth`` :ref:`attribute<what is an object attribute?>` in each test, since ``TestPerson`` is an :ref:`object<everything is an object>`, I can use a :ref:`object attribute<what is an object attribute?>` to remove repetition of those calls, then have all the :ref:`methods<what is a method?>` reference the value  it returns
 
 * I go back to the terminal_ where the tests are running
 
-* I add a :ref:`object attribute<what is a object attribute?>` called ``age`` to the ``TestPerson`` :ref:`object<everything is an object>`
+* I add a :ref:`object attribute<what is an object attribute?>` called ``age`` to the ``TestPerson`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 32
@@ -2394,7 +2394,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
     'extract age object attribute'
 
 
-:ref:`I can remove repetition with object attributes<what is a object attribute?>`
+:ref:`I can remove repetition with object attributes<what is an object attribute?>`
 
 ----
 
@@ -2402,7 +2402,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
 how to use the setUp method to reset object attributes for every test
 ****************************************************************************************
 
-A problem with the current setup with the :ref:`object attributes<what is a object attribute?>` is that they are made once when the :ref:`object<everything is an object>` is initialized. This means that even though they all use random values, those values are created once and every test that references the values after that is using the exact same values for each test.
+A problem with the current setup with the :ref:`object attributes<what is an object attribute?>` is that they are made once when the :ref:`object<everything is an object>` is initialized. This means that even though they all use random values, those values are created once and every test that references the values after that is using the exact same values for each test.
 
 I want each test to get new random values every time they run and the :ref:`unittest.TestCase class<test_dir_unittest_testcase>` has a way to do that - the `setUp method`_, it runs before every test is run.
 
@@ -2416,7 +2416,7 @@ I want each test to get new random values every time they run and the :ref:`unit
 
 * I go back to the terminal_ where the tests are running
 
-* I add the `unittest.TestCase.setUp method`_ to ``TestPerson`` then move the :ref:`object attributes<what is a object attribute?>` into it
+* I add the `unittest.TestCase.setUp method`_ to ``TestPerson`` then move the :ref:`object attributes<what is an object attribute?>` into it
 
   .. code-block:: python
     :lineno-start: 32
@@ -2454,7 +2454,7 @@ I want each test to get new random values every time they run and the :ref:`unit
         AttributeError: 'TestPerson' object has
         no attribute 'random_first_name'
 
-  because the ``first_name`` :ref:`variable<what is a variable?>` now belongs to the `setUp method`_, the other :ref:`methods<what is a method?>` have no way to reach it. I have to make it a :ref:`object attribute<what is a object attribute?>`.
+  because the ``first_name`` :ref:`variable<what is a variable?>` now belongs to the `setUp method`_, the other :ref:`methods<what is a method?>` have no way to reach it. I have to make it a :ref:`object attribute<what is an object attribute?>`.
 
 ----
 
@@ -2464,7 +2464,7 @@ I want each test to get new random values every time they run and the :ref:`unit
 
 ----
 
-* I change the ``first_name`` :ref:`variable<what is a variable?>` to a :ref:`object attribute<what is a object attribute?>` in the `setUp method`_ for the test :ref:`methods<what is a method?>` to be able to use it
+* I change the ``first_name`` :ref:`variable<what is a variable?>` to a :ref:`object attribute<what is an object attribute?>` in the `setUp method`_ for the test :ref:`methods<what is a method?>` to be able to use it
 
   .. code-block:: python
     :lineno-start: 39
@@ -2497,9 +2497,9 @@ I want each test to get new random values every time they run and the :ref:`unit
         AttributeError: 'TestPerson' object has
         no attribute 'random_year_of_birth'.
 
-  because the ``year_of_birth`` and ``last_name`` :ref:`variables<what is a variable?>` now belong to the `setUp method`_, the other :ref:`methods<what is a method?>` have no way to reach them. I have to make them :ref:`object attributes<what is a object attribute?>`
+  because the ``year_of_birth`` and ``last_name`` :ref:`variables<what is a variable?>` now belong to the `setUp method`_, the other :ref:`methods<what is a method?>` have no way to reach them. I have to make them :ref:`object attributes<what is an object attribute?>`
 
-* I change the ``year_of_birth`` and ``last_name`` :ref:`variables<what is a variable?>` to :ref:`object attributes<what is a object attribute?>` in the `setUp method`_ for the test :ref:`methods<what is a method?>` to be able to use them as well
+* I change the ``year_of_birth`` and ``last_name`` :ref:`variables<what is a variable?>` to :ref:`object attributes<what is an object attribute?>` in the `setUp method`_ for the test :ref:`methods<what is a method?>` to be able to use them as well
 
   .. code-block:: python
     :lineno-start: 39
@@ -2539,9 +2539,9 @@ I want each test to get new random values every time they run and the :ref:`unit
         AttributeError: 'TestPerson' object has
         no attribute 'age'
 
-  because the ``age`` belongs to the `setUp method`_, and the other :ref:`methods<what is a method?>` have no way to reach it. I have to make it a :ref:`object attribute<what is a object attribute?>`
+  because the ``age`` belongs to the `setUp method`_, and the other :ref:`methods<what is a method?>` have no way to reach it. I have to make it a :ref:`object attribute<what is an object attribute?>`
 
-* I change the ``age`` :ref:`variable<what is a variable?>` to :ref:`object attributes<what is a object attribute?>` in the `setUp method`_ for the other :ref:`methods<what is a method?>` to be able to use it
+* I change the ``age`` :ref:`variable<what is a variable?>` to :ref:`object attributes<what is an object attribute?>` in the `setUp method`_ for the other :ref:`methods<what is a method?>` to be able to use it
 
   .. code-block:: python
     :lineno-start: 39
@@ -2733,7 +2733,7 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
 test_dir_person_instance
 *********************************************************************************
 
-Python has the `dir built-in function`_ which shows the :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<everything is an object>` it is given in parentheses. It allows me to see what makes up an :ref:`object<everything is an object>` without looking at the code or reading the documentation. I can then run tests to see what each thing does.
+Python has the `dir built-in function`_ which shows the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<everything is an object>` it is given in parentheses. It allows me to see what makes up an :ref:`object<everything is an object>` without looking at the code or reading the documentation. I can then run tests to see what each thing does.
 
 ----
 
@@ -2971,7 +2971,7 @@ test_dir_person_class
 
 ----
 
-I add a test for the :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` of an instance/copy of the ``Person`` :ref:`object<everything is an object>` to see the difference between it and the original
+I add a test for the :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` of an instance/copy of the ``Person`` :ref:`object<everything is an object>` to see the difference between it and the original
 
 .. code-block:: python
   :lineno-start: 118
@@ -3161,7 +3161,7 @@ the test passes.
      != ['__c[400 chars]'first_name', 'last_name',
          'say_hello', 'sex', 'year_of_birth']
 
-  the ``sex`` :ref:`attribute<what is a object attribute?>` is not defined anywhere in the ``Person`` :ref:`object<everything is an object>`
+  the ``sex`` :ref:`attribute<what is an object attribute?>` is not defined anywhere in the ``Person`` :ref:`object<everything is an object>`
 
 * I add ``self.sex`` to the :ref:`__init__ method<the constructor method>` of the ``Person`` :ref:`object<everything is an object>` in ``src/person/__init__.py``
 
@@ -3298,7 +3298,7 @@ review
 
 There are few problems with what I have now
 
-* anyone seeing the tests for the first time has to read the :ref:`object attributes<what is a object attribute?>`
+* anyone seeing the tests for the first time has to read the :ref:`object attributes<what is an object attribute?>`
 
   .. code-block:: python
 
@@ -3345,9 +3345,9 @@ There are few problems with what I have now
 
 To review
 
-* an :ref:`object<everything is an object>` is :ref:`attributes<what is a object attribute?>` and :ref:`methods<what is a method?>` that belong together
+* an :ref:`object<everything is an object>` is :ref:`attributes<what is an object attribute?>` and :ref:`methods<what is a method?>` that belong together
 * an :ref:`object<everything is an object>` can be used for something
-* A :ref:`object attributes<what is a object attribute?>` is a :ref:`variable<what is a variable?>` that belongs to an :ref:`object<everything is an object>`
+* A :ref:`object attributes<what is an object attribute?>` is a :ref:`variable<what is a variable?>` that belongs to an :ref:`object<everything is an object>`
 * A :ref:`method<what is a method?>` is a :ref:`function<what is a function?>` that belongs to an :ref:`object<everything is an object>`
 * :ref:`objects<everything is an object>` can be an easier way to manage data than :ref:`functions<what is a function?>`
 * :ref:`objects<everything is an object>` make it easier to write tests for something
