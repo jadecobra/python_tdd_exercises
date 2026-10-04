@@ -212,7 +212,7 @@ first input     second input   return
 
 * I open ``__init__.py`` from the ``truth_table`` folder in the ``src`` folder_
 
-* I add ``contradiction`` to ``src/truth_table/__init__.py``
+* I add :ref:`contradiction<test_contradiction>` to ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -313,7 +313,7 @@ first input     second input   return
 
   the test is still green. :ref:`contradiction<test_contradiction>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`.
 
-* I remove the commented lines from ``contradiction``
+* I remove the commented lines from :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
     :lineno-start: 13
