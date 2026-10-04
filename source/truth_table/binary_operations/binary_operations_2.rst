@@ -316,8 +316,8 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
       negate_first(True , True ) -> False
       └── def negate_first(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == True
+          ├── first_input  = True
+          ├── second_input = True
           ├── if first_input == False:
           │       return True
           └── return False
@@ -326,8 +326,8 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
       negate_first(True , False) -> False
       └── def negate_first(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == False
+          ├── first_input  = True
+          ├── second_input = False
           ├── if first_input == False:
           │       return True
           └── return False
@@ -338,8 +338,8 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
       negate_first(False, True ) -> True
       └── def negate_first(first_input, second_input):
-          ├── first_input  == False
-          ├── second_input == True
+          ├── first_input  = False
+          ├── second_input = True
           └── if first_input == False:
               └── return True
               else:
@@ -349,8 +349,8 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
       negate_first(False, False) -> True
       └── def negate_first(first_input, second_input):
-          ├── first_input  == False
-          ├── second_input == False
+          ├── first_input  = False
+          ├── second_input = False
           └── if first_input == False:
               └── return True
               else:
@@ -816,8 +816,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
       logical_nand(False, False) -> True
       └── def logical_nand(first_input, second_input):
-          ├── first_input  == False
-          ├── second_input == False
+          ├── first_input  = False
+          ├── second_input = False
           └── if first_input  == False:
               └── return True
               if second_input == False:
@@ -828,8 +828,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
       logical_nand(False, True ) -> True
       └── def logical_nand(first_input, second_input):
-          ├── first_input  == False
-          ├── second_input == True
+          ├── first_input  = False
+          ├── second_input = True
           └── if first_input  == False:
               └── return True
               if second_input == False:
@@ -844,8 +844,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
         logical_nand(True , False) -> True
         └── def logical_nand(first_input, second_input):
-            ├── first_input  == True
-            ├── second_input == False
+            ├── first_input  = True
+            ├── second_input = False
             ├── if first_input  == False:
             │       return True
             └── if second_input == False:
@@ -858,8 +858,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
         logical_nand(True , True ) -> False
         └── def logical_nand(first_input, second_input):
-            ├── first_input  == True
-            ├── second_input == True
+            ├── first_input  = True
+            ├── second_input = True
             ├── if first_input  == False:
             │       return True
             ├── if second_input == False:
@@ -903,8 +903,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
       logical_nand(False, False) -> True
       └── def logical_nand(first_input, second_input):
-          ├── first_input  == False
-          ├── second_input == False
+          ├── first_input  = False
+          ├── second_input = False
           ├── if first_input == True:
           │       if second_input == True:
           │           return False
@@ -914,8 +914,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
       logical_nand(False, True ) -> True
       └── def logical_nand(first_input, second_input):
-          ├── first_input  == False
-          ├── second_input == True
+          ├── first_input  = False
+          ├── second_input = True
           ├── if first_input == True:
           │       if second_input == True:
           │           return False
@@ -929,8 +929,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
         logical_nand(True , False) -> True
         └── def logical_nand(first_input, second_input):
-            ├── first_input  == True
-            ├── second_input == False
+            ├── first_input  = True
+            ├── second_input = False
             └── if first_input == True:
             ┌───┴── if second_input == True:
             │           return False
@@ -942,8 +942,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
         logical_nand(True , True ) -> False
         └── def logical_nand(first_input, second_input):
-            ├── first_input  == True
-            ├── second_input == True
+            ├── first_input  = True
+            ├── second_input = True
             └── if first_input == True:
                 └── if second_input == True:
                     └── return False
@@ -1993,8 +1993,8 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
       logical_disjunction(True , True ) -> True
       └── def logical_disjunction(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == True
+          ├── first_input  = True
+          ├── second_input = True
           ├── if first_input == False:
           │       if second_input == False:
           │           return False
@@ -2004,8 +2004,8 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
       logical_disjunction(True , False) -> True
       └── def logical_disjunction(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == False
+          ├── first_input  = True
+          ├── second_input = False
           ├── if first_input == False:
           │       if second_input == False:
           │           return False
@@ -2019,8 +2019,8 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
         logical_disjunction(False, True ) -> True
         └── def logical_disjunction(first_input, second_input):
-            ├── first_input  == False
-            ├── second_input == True
+            ├── first_input  = False
+            ├── second_input = True
             └── if first_input == False:
             ┌───┴── if second_input == False:
             │           return False
@@ -2032,8 +2032,8 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
         logical_disjunction(False, False) -> False
         └── def logical_disjunction(first_input, second_input):
-            ├── first_input  == False
-            ├── second_input == False
+            ├── first_input  = False
+            ├── second_input = False
             └── if first_input == False:
                 └── if second_input == False:
                     └── return False

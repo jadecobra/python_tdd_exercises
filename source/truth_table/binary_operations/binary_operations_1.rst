@@ -872,8 +872,8 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
       logical_conjunction(True , True ) -> True
       └── def logical_conjunction(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == True
+          ├── first_input  = True
+          ├── second_input = True
           ├── if first_input == False:
           │      return False
           └── return second_input
@@ -882,8 +882,8 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
       logical_conjunction(True , False) -> False
       └── def logical_conjunction(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == False
+          ├── first_input  = True
+          ├── second_input = False
           ├── if first_input == False:
           │      return False
           └── return second_input
@@ -894,8 +894,8 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
       logical_conjunction(False, True ) -> False
       └── def logical_conjunction(first_input, second_input):
-          ├── first_input  == False
-          ├── second_input == False
+          ├── first_input  = False
+          ├── second_input = False
           └── if first_input == False:
               └── return False
               return second_input
@@ -1178,8 +1178,8 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
       logical_conjunction(False, False) -> False
       └── def logical_conjunction(first_input, second_input):
-          ├── first_input  == False
-          ├── second_input == False
+          ├── first_input  = False
+          ├── second_input = False
           ├── if first_input and second_input:
           │       return True
           └── else:
@@ -1189,8 +1189,8 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
       logical_conjunction(False, True ) -> False
       └── def logical_conjunction(first_input, second_input):
-          ├── first_input  == False
-          ├── second_input == True
+          ├── first_input  = False
+          ├── second_input = True
           ├── if first_input and second_input:
           │       return True
           └── else:
@@ -1204,8 +1204,8 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
         logical_conjunction(True , False) -> False
         └── def logical_conjunction(first_input, second_input):
-            ├── first_input  == True
-            ├── second_input == False
+            ├── first_input  = True
+            ├── second_input = False
             ├── if first_input and second_input:
             │       return True
             └── else:
@@ -1217,8 +1217,8 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
         logical_conjunction(True , True ) -> True
         └── def logical_conjunction(first_input, second_input):
-            ├── first_input  == True
-            ├── second_input == True
+            ├── first_input  = True
+            ├── second_input = True
             └── if first_input and second_input:
                 └── return True
                 else:
@@ -2157,8 +2157,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       converse_non_implication(True , True ) -> False
       └── def converse_non_implication(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == True
+          ├── first_input  = True
+          ├── second_input = True
           ├── if first_input == False:
           │       return True
           └── return False
@@ -2167,8 +2167,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       converse_non_implication(True , False) -> False
       └── def converse_non_implication(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == False
+          ├── first_input  = True
+          ├── second_input = False
           ├── if first_input == False:
           │       return True
           └── return False
@@ -2179,8 +2179,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       converse_non_implication(False, True ) -> True
       └── def converse_non_implication(first_input, second_input):
-          ├── first_input  == False
-          ├── second_input == True
+          ├── first_input  = False
+          ├── second_input = True
           └── if first_input == False:
               └── return True
               return False
@@ -2408,8 +2408,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       converse_non_implication(True , True ) -> False
       └── def converse_non_implication(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == True
+          ├── first_input  = True
+          ├── second_input = True
           ├── if not first_input and second_input:
           │       return True
           └── else:
@@ -2419,8 +2419,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       converse_non_implication(True , False) -> False
       └── def converse_non_implication(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == False
+          ├── first_input  = True
+          ├── second_input = False
           ├── if not first_input and second_input:
           │       return True
           └── else:
@@ -2434,8 +2434,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
         converse_non_implication(False, False) -> False
         └── def converse_non_implication(first_input, second_input):
-            ├── first_input  == False
-            ├── second_input == False
+            ├── first_input  = False
+            ├── second_input = False
             ├── if not first_input and second_input:
             │       return True
             └── else:
@@ -2447,8 +2447,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
         converse_non_implication(False, True ) -> True
         └── def converse_non_implication(first_input, second_input):
-            ├── first_input  == False
-            ├── second_input == True
+            ├── first_input  = False
+            ├── second_input = True
             └── if not first_input and second_input:
                 └── return True
                 else:

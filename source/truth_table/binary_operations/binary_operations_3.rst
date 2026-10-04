@@ -397,8 +397,8 @@ because ``truth_table.py`` does not have anything in it with that name.
 
         exclusive_disjunction(True , True ) -> False
         └── def exclusive_disjunction(first_input, second_input):
-            ├── first_input  == True
-            ├── second_input == True
+            ├── first_input  = True
+            ├── second_input = True
             ├── if first_input == False:
             │       if second_input == False:
             │           return False
@@ -413,8 +413,8 @@ because ``truth_table.py`` does not have anything in it with that name.
 
         exclusive_disjunction(True , False) -> True
         └── def exclusive_disjunction(first_input, second_input):
-            ├── first_input  == True
-            ├── second_input == False
+            ├── first_input  = True
+            ├── second_input = False
             ├── if first_input == False:
             │       if second_input == False:
             │           return False
@@ -431,8 +431,8 @@ because ``truth_table.py`` does not have anything in it with that name.
 
         exclusive_disjunction(False, True ) -> True
         └── def exclusive_disjunction(first_input, second_input):
-            ├── first_input  == False
-            ├── second_input == True
+            ├── first_input  = False
+            ├── second_input = True
             └── if first_input == False:
                 ├── if second_input == False:
                 │       return False
@@ -447,8 +447,8 @@ because ``truth_table.py`` does not have anything in it with that name.
 
         exclusive_disjunction(False, False) -> False
         └── def exclusive_disjunction(first_input, second_input):
-            ├── first_input  == False
-            ├── second_input == False
+            ├── first_input  = False
+            ├── second_input = False
             └── if first_input == False:
                 └── if second_input == False:
                     └── return False
@@ -1615,8 +1615,8 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
       material_non_implication(False, False) -> False
       └── def material_non_implication(first_input, second_input):
-          ├── first_input  == False
-          ├── second_input == False
+          ├── first_input  = False
+          ├── second_input = False
           ├── if first_input == True:
           │       if second_input == False:
           │           return True
@@ -1626,8 +1626,8 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
       material_non_implication(False, True ) -> False
       └── def material_non_implication(first_input, second_input):
-          ├── first_input  == False
-          ├── second_input == True
+          ├── first_input  = False
+          ├── second_input = True
           ├── if first_input == True:
           │       if second_input == False:
           │           return True
@@ -1641,8 +1641,8 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
         material_non_implication(True , True ) -> False
         └── def material_non_implication(first_input, second_input):
-            ├── first_input  == False
-            ├── second_input == True
+            ├── first_input  = False
+            ├── second_input = True
             └── if first_input == True:
             ┌───┴── if second_input == False:
             │           return True
@@ -1654,8 +1654,8 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
         material_non_implication(True , True ) -> False
         └── def material_non_implication(first_input, second_input):
-            ├── first_input  == False
-            ├── second_input == True
+            ├── first_input  = False
+            ├── second_input = True
             └── if first_input == True:
                 └── if second_input == False:
                     └── return True
@@ -2295,8 +2295,8 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 
       project_first(True , True ) -> True
       └── def project_first(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == True
+          ├── first_input  = True
+          ├── second_input = True
           ├── if first_input == False:
           │      return False
           └── return True
@@ -2305,8 +2305,8 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 
       project_first(True , False) -> True
       └── def project_first(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == False
+          ├── first_input  = True
+          ├── second_input = False
           ├── if first_input == False:
           │      return False
           └── return True
@@ -2317,8 +2317,8 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 
       project_first(False, False) -> False
       └── def project_first(first_input, second_input):
-          ├── first_input  == False
-          ├── second_input == False
+          ├── first_input  = False
+          ├── second_input = False
           └── if first_input == False:
               └── return False
               return True
@@ -2327,8 +2327,8 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 
       project_first(False, True ) -> False
       └── def project_first(first_input, second_input):
-          ├── first_input  == False
-          ├── second_input == True
+          ├── first_input  = False
+          ├── second_input = True
           └── if first_input == False:
               └── return False
               return True
@@ -2855,8 +2855,8 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
       converse_implication(True , True ) -> True
       └── def converse_implication(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == True
+          ├── first_input  = True
+          ├── second_input = True
           ├── if first_input == False:
           │       if second_input == True:
           │           return False
@@ -2866,8 +2866,8 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
       converse_implication(True , False) -> True
       └── def converse_implication(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == False
+          ├── first_input  = True
+          ├── second_input = False
           ├── if first_input == False:
           │       if second_input == True:
           │           return False
@@ -2881,8 +2881,8 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
         converse_implication(False, False) -> True
         └── def converse_implication(first_input, second_input):
-            ├── first_input  == False
-            ├── second_input == False
+            ├── first_input  = False
+            ├── second_input = False
             └── if first_input == False:
             ┌───┴── if second_input == True:
             │           return False
@@ -2894,8 +2894,8 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
         converse_implication(False, True ) -> False
         └── def converse_implication(first_input, second_input):
-            ├── first_input  == False
-            ├── second_input == True
+            ├── first_input  = False
+            ├── second_input = True
             └── if first_input == False:
                 └── if second_input == True:
                     └── return False

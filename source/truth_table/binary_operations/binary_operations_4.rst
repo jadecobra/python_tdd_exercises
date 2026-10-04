@@ -289,8 +289,8 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``tru
 
       negate_second(True , True ) -> False
       └── def negate_second(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == True
+          ├── first_input  = True
+          ├── second_input = True
           ├── if second_input == False:
           │       return True
           └── return False
@@ -301,8 +301,8 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``tru
 
       negate_second(True , False) -> True
       └── def negate_second(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == False
+          ├── first_input  = True
+          ├── second_input = False
           └── if second_input == False:
               └── return True
               return False
@@ -759,8 +759,8 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
       logical_nor(True , True ) -> False
       └── def logical_nor(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == True
+          ├── first_input  = True
+          ├── second_input = True
           ├── if first_input == False:
           │       if second_input == False:
           │           return True
@@ -770,8 +770,8 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
       logical_nor(True , False) -> False
       └── def logical_nor(first_input, second_input):
-          ├── first_input  == True
-          ├── second_input == False
+          ├── first_input  = True
+          ├── second_input = False
           ├── if first_input == False:
           │       if second_input == False:
           │           return True
@@ -785,8 +785,8 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
         logical_nor(False, True ) -> False
         └── def logical_nor(first_input, second_input):
-            ├── first_input  == False
-            ├── second_input == True
+            ├── first_input  = False
+            ├── second_input = True
             ├── if first_input == False:
             │       if second_input == False:
             │           return True
@@ -798,8 +798,8 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
         logical_nor(False, False) -> True
         └── def logical_nor(first_input, second_input):
-            ├── first_input  == False
-            ├── second_input == False
+            ├── first_input  = False
+            ├── second_input = False
             └── if first_input == False:
                 └── if second_input == False:
                     └── return True
@@ -1480,8 +1480,8 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
         logical_equality(True , True ) -> True
         └── def logical_equality(first_input, second_input):
-            ├── first_input  == True
-            ├── second_input == True
+            ├── first_input  = True
+            ├── second_input = True
             ├── if first_input == False:
             │       if second_input == False:
             │           return True
@@ -1496,8 +1496,8 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
         logical_equality(True , False) -> False
         └── def logical_equality(first_input, second_input):
-            ├── first_input  == True
-            ├── second_input == False
+            ├── first_input  = True
+            ├── second_input = False
             ├── if first_input == False:
             │       if second_input == False:
             │           return True
@@ -1514,8 +1514,8 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
         logical_equality(False, True ) -> False
         └── def logical_equality(first_input, second_input):
-            ├── first_input  == False
-            ├── second_input == True
+            ├── first_input  = False
+            ├── second_input = True
             └── if first_input == False:
                 ├── if second_input == False:
                 │       return True
@@ -1530,8 +1530,8 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
         logical_equality(False, False) -> True
         └── def logical_equality(first_input, second_input):
-            ├── first_input  == False
-            ├── second_input == False
+            ├── first_input  = False
+            ├── second_input = False
             └── if first_input == False:
                 └── if second_input == False:
                     └── return True
@@ -2351,8 +2351,8 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 
       material_implication(False, False) -> True
       └── def material_implication(first_input, second_input):
-          ├── first_input  == False
-          ├── second_input == False
+          ├── first_input  = False
+          ├── second_input = False
           ├── if first_input == True:
           │       if second_input == False:
           │           return False
@@ -2362,8 +2362,8 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 
       material_implication(False, True ) -> True
       └── def material_implication(first_input, second_input):
-          ├── first_input  == False
-          ├── second_input == True
+          ├── first_input  = False
+          ├── second_input = True
           ├── if first_input == True:
           │       if second_input == False:
           │           return False
@@ -2377,8 +2377,8 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 
         material_implication(True , True ) -> True
         └── def material_implication(first_input, second_input):
-            ├── first_input  == True
-            ├── second_input == True
+            ├── first_input  = True
+            ├── second_input = True
             └── if first_input == True:
             ┌───┴── if second_input == False:
             │           return False
@@ -2390,8 +2390,8 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 
         material_implication(True , False) -> False
         └── def material_implication(first_input, second_input):
-            ├── first_input  == True
-            ├── second_input == False
+            ├── first_input  = True
+            ├── second_input = False
             └── if first_input == True:
                 └── if second_input == False:
                     └── return False

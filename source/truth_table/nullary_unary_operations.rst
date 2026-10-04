@@ -54,7 +54,7 @@ requirements
 Nullary Operations
 *********************************************************************************
 
-There are 2 Nullary operations - :ref:`Logical True<test_logical_true>` and :ref:`Logical False<test_logical_false>`. They do not take input and always return :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`.
+There are 2 Nullary operations - :ref:`Logical True<test_logical_true>` and :ref:`Logical False<test_logical_false>`. They do not take input and always return :red:`False` or :green:`True`.
 
 ----
 
@@ -187,7 +187,7 @@ test_logical_true
 
   the test passes.
 
-* I remove the commented line
+* I remove the commented line from :ref:`logical_true<test_logical_true>`
 
   .. code-block:: python
     :linenos:
@@ -284,7 +284,7 @@ test_logical_false
 
   because the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
-* I change :ref:`True <test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`return statement<the return statement>`
+* I change :ref:`True <test_what_is_true>` to :red:`False` in the :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :lineno-start: 5
@@ -296,7 +296,7 @@ test_logical_false
 
   the test passes.
 
-* I remove the commented line
+* I remove the commented line from :ref:`logical_false<test_logical_false>`
 
   .. code-block:: python
     :linenos:
@@ -333,7 +333,7 @@ return          operation
 Unary Operations
 *********************************************************************************
 
-There are 2 unary operations: :ref:`Logical Identity<test_logical_identity>` and :ref:`Logical Negation<test_logical_negation>`, they each take one input and return :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`.
+There are 2 unary operations: :ref:`Logical Identity<test_logical_identity>` and :ref:`Logical Negation<test_logical_negation>`, they each take one input and return :red:`False` or :green:`True`.
 
 ----
 
@@ -350,7 +350,7 @@ test_logical_identity
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a new :ref:`TestCase<test_dir_unittest_testcase>` for Unary Operations with a test for :ref:`logical_identity<test_logical_identity>` when it gets :ref:`True<test_what_is_true>` as input, in ``tests/test_nullary_unary.py``
+* I add a new :ref:`TestCase<test_dir_unittest_testcase>` for Unary Operations with a test for :ref:`logical_identity<test_logical_identity>` when it gets :green:`True` as input, in ``tests/test_nullary_unary.py``
 
   ==============  =============
   input           output
@@ -385,7 +385,7 @@ test_logical_identity
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_identity'
 
-  because I need to add a :ref:`definition<how to make a function>` for :ref:`logical_identity<test_logical_identity>` to ``src/truth_table/__init__.py``
+  because I need to add a :ref:`definition<how to make a function>` for :ref:`logical_identity<test_logical_identity>` to ``src/truth_table/__init__.py``.
 
 ----
 
@@ -468,7 +468,7 @@ test_logical_identity
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>` to :ref:`test_logical_identity` in ``tests/test_nullary_unary.py`` for the case when it gets :ref:`False<test_what_is_false>` as input
+* I add another :ref:`assertion<what is an assertion?>` to :ref:`test_logical_identity` in ``tests/test_nullary_unary.py`` for the case when it gets :red:`False` as input
 
   ==============  =============
   input           output
@@ -536,7 +536,7 @@ test_logical_identity
 
     logical_identity(the_input) -> the_input
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`logical_identity<test_logical_identity>`
 
   .. code-block:: python
     :lineno-start: 5
@@ -557,8 +557,8 @@ test_logical_identity
 
 When the :ref:`logical_identity function<test_logical_identity>` is called
 
-- it returns :green:`True`, if the input is :ref:`True<test_what_is_true>`
-- it returns :red:`False`, if the input is :ref:`False<test_what_is_false>`
+- it returns :green:`True`, if the input is :green:`True`
+- it returns :red:`False`, if the input is :red:`False`
 - it returns the input as output
 
 .. tip::
@@ -586,7 +586,7 @@ test_logical_negation
 
 ----
 
-I add a test for :ref:`logical_negation<test_logical_negation>` with an :ref:`assertion<what is an assertion?>` for when it gets :ref:`True<test_what_is_true>` as input, to ``tests/test_nullary_unary.py``
+I add a test for :ref:`logical_negation<test_logical_negation>` with an :ref:`assertion<what is an assertion?>` for when it gets :green:`True` as input, to ``tests/test_nullary_unary.py``
 
 ==============  =============
 input           output
@@ -621,7 +621,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   AttributeError: module 'src.truth_table'
                   has no attribute 'logical_negation'
 
-there is no definition for :ref:`logical_negation<test_logical_negation>` in ``src/truth_table/__init__.py``
+there is no definition for :ref:`logical_negation<test_logical_negation>` in ``src/truth_table/__init__.py``.
 
 ----
 
@@ -650,7 +650,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``s
 
     AssertionError: True is not false
 
-  because the :ref:`function<what is a function?>` returned :ref:`True<test_what_is_true>` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
+  because the :ref:`function<what is a function?>` returned :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
 * I change the :ref:`return statement<the return statement>` to give the test what it wants
 
@@ -672,7 +672,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``s
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>` to :ref:`test_logical_negation` for when :ref:`logical_negation<test_logical_negation>` gets :ref:`False<test_what_is_false>` as input, in ``tests/test_nullary_unary.py``
+* I add another :ref:`assertion<what is an assertion?>` to :ref:`test_logical_negation` for when :ref:`logical_negation<test_logical_negation>` gets :red:`False` as input, in ``tests/test_nullary_unary.py``
 
   ==============  =============
   input           output
@@ -767,9 +767,31 @@ I can use the not_ keyword to return the opposite of the :ref:`boolean<what are 
         # return True
         return not the_input
 
-  the test passes.
+  the test passes :ref:`logical_negation<test_logical_negation>` returns the not_ of the input
 
-* I remove the commented lines
+  - if ``the_input`` is :green:`True` it returns :red:`False`
+
+    .. code-block:: shell
+
+      src.truth_table.logical_negation(True ) -> False
+      └── src/truth_table/__init__.py
+          └── def logical_negation(the_input):
+              ├── the_input = True
+              └── return not the_input
+                  return not True
+
+  - if ``the_input`` is :red:`False` it returns :green:`True`
+
+    .. code-block:: shell
+
+      logical_negation(False) -> True
+      └── src/truth_table/__init__.py
+          └── def logical_negation(the_input):
+              ├── the_input = False
+              └── return not the_input
+                  return not False
+
+* I remove the commented lines from :ref:`logical_negation<test_logical_negation>`
 
   .. code-block:: python
     :lineno-start: 13
