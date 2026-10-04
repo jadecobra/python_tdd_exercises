@@ -161,7 +161,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   AttributeError: module 'src.truth_table'
                   has no attribute 'negate_first'
 
-there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_table.py``
+there is no definition for :ref:`negate_first<test_negate_first>` in ``src/truth_table/__init__.py``
 
 ----
 
@@ -173,7 +173,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
 * I open ``truth_table/__init__.py`` from the ``src`` folder_
 
-* I add ``negate_first`` to ``truth_table.py``
+* I add ``negate_first`` to ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 29
@@ -264,7 +264,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
   because :ref:`the negate_first function<test_negate_first>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
-* I add an :ref:`if statement<if statements>` for this case to :ref:`negate_first<test_negate_first>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` for this case to :ref:`negate_first<test_negate_first>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 37
@@ -356,7 +356,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
               else:
                   return False
 
-* I add :ref:`the bool built-in function<how to test if something is grouped as True>` to the :ref:`if statement<if statements>` in :ref:`the negate_first function<test_negate_first>` in ``truth_table.py``
+* I add :ref:`the bool built-in function<how to test if something is grouped as True>` to the :ref:`if statement<if statements>` in :ref:`the negate_first function<test_negate_first>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 37
@@ -635,7 +635,7 @@ first input     second input   return
                     has no attribute 'logical_nand'.
                     Did you mean: 'logical_false'?
 
-  because there is no definition for :ref:`logical_nand<test_logical_nand>` in ``truth_table.py``
+  because there is no definition for :ref:`logical_nand<test_logical_nand>` in ``src/truth_table/__init__.py``
 
 ----
 
@@ -645,7 +645,7 @@ first input     second input   return
 
 ----
 
-I add ``logical_nand`` to ``truth_table.py``
+I add ``logical_nand`` to ``src/truth_table/__init__.py``
 
 .. code-block:: python
   :lineno-start: 37
@@ -701,7 +701,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
   because the :ref:`function<what is a function?>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
-* I add an :ref:`if statement<if statements>` to the :ref:`logical_nand function<test_logical_nand>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to the :ref:`logical_nand function<test_logical_nand>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 41
@@ -760,7 +760,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
   - ``second_input`` is :green:`True` in this case, which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`function<what is a function?>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
 
-* I add an :ref:`if statement<if statements>` to the :ref:`logical_nand function<test_logical_nand>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to the :ref:`logical_nand function<test_logical_nand>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 41
@@ -866,7 +866,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
             │       return True
             └── return False
 
-* There is only one case where :ref:`logical_nand<test_logical_nand>` returns :red:`False` (the first case, when the first input is :green:`True` and the second input is :green:`True`). I add :ref:`if statements` for it, in ``truth_table.py``
+* There is only one case where :ref:`logical_nand<test_logical_nand>` returns :red:`False` (the first case, when the first input is :green:`True` and the second input is :green:`True`). I add :ref:`if statements` for it, in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 41
@@ -1535,7 +1535,7 @@ first input     second input   return
     AttributeError: module 'src.truth_table'
                     has no attribute 'tautology'
 
-  ``truth_table.py`` does not have :ref:`tautology<test_tautology>` in it.
+  ``src/truth_table/__init__.py`` does not have :ref:`tautology<test_tautology>` in it.
 
 ----
 
@@ -1545,7 +1545,7 @@ first input     second input   return
 
 ----
 
-I add ``tautology`` to ``truth_table.py``
+I add ``tautology`` to ``src/truth_table/__init__.py``
 
 .. code-block:: python
   :lineno-start: 41
@@ -1827,7 +1827,7 @@ first input     second input   return
                     has no attribute 'logical_disjunction'.
                     Did you mean: 'logical_conjunction'?
 
-  there is no :ref:`logical_disjunction<test_logical_disjunction>` in ``truth_table.py`` in the ``src`` folder_, yet.
+  there is no :ref:`logical_disjunction<test_logical_disjunction>` in ``src/truth_table/__init__.py`` in the ``src`` folder_, yet.
 
 ----
 
@@ -1837,7 +1837,7 @@ first input     second input   return
 
 ----
 
-I add ``logical_disjunction`` to ``truth_table.py``
+I add ``logical_disjunction`` to ``src/truth_table/__init__.py``
 
 .. code-block:: python
   :lineno-start: 48
@@ -1973,7 +1973,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
   because the :ref:`logical_disjunction function<test_logical_disjunction>` returns :green:`True` and this :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
-* I add :ref:`if statements` for the new case to :ref:`logical_disjunction<test_logical_disjunction>` in ``truth_table.py``
+* I add :ref:`if statements` for the new case to :ref:`logical_disjunction<test_logical_disjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 52
@@ -2354,7 +2354,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
     # AssertionError
     # SyntaxError
 
-* I change ``not and`` to ``or`` in the :ref:`logical_disjunction function<test_logical_disjunction>` in ``truth_table.py``
+* I change ``not and`` to ``or`` in the :ref:`logical_disjunction function<test_logical_disjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 60
@@ -2640,7 +2640,7 @@ examples of Logical Disjunction
 close the project
 *********************************************************************************
 
-* I close ``test_binary.py`` and ``truth_table.py``
+* I close ``test_binary.py`` and ``src/truth_table/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 

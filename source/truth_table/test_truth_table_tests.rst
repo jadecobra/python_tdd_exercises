@@ -80,7 +80,7 @@ open the project
 *********************************************************************************
 
 * I open ``truth_table/__init__.py`` from the ``src`` folder_
-* I delete everything in ``truth_table.py``, the terminal_ is my friend, and shows 20 failures, I start with the last one
+* I delete everything in ``src/truth_table/__init__.py``, the terminal_ is my friend, and shows 20 failures, I start with the last one
 
   .. code-block:: shell
 
@@ -97,7 +97,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 :green:`GREEN`: make it pass
 *********************************************************************************
 
-* I add the name to ``truth_table.py``
+* I add the name to ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -3044,7 +3044,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 close the project
 *********************************************************************************
 
-* I close ``truth_table.py``
+* I close ``src/truth_table/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 * I `change directory`_ to the parent of ``truth_table``

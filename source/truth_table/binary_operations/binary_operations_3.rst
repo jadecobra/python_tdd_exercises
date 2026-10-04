@@ -183,7 +183,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   AttributeError: module 'src.truth_table'
                   has no attribute 'exclusive_disjunction'
 
-because ``truth_table.py`` does not have anything in it with that name.
+because ``src/truth_table/__init__.py`` does not have anything in it with that name.
 
 ----
 
@@ -194,7 +194,7 @@ because ``truth_table.py`` does not have anything in it with that name.
 ----
 
 * I open ``truth_table/__init__.py`` from the ``src`` folder_
-* I add :ref:`exclusive_disjunction<test_exclusive_disjunction>` to ``truth_table.py``
+* I add :ref:`exclusive_disjunction<test_exclusive_disjunction>` to ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 52
@@ -255,7 +255,7 @@ because ``truth_table.py`` does not have anything in it with that name.
 
   because the :ref:`function<what is a function?>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
-* I add an :ref:`if statement<if statements>` to the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 62
@@ -310,7 +310,7 @@ because ``truth_table.py`` does not have anything in it with that name.
 
   - ``second_input`` is :green:`True` in this case, which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`function<what is a function?>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
 
-* I add an :ref:`if statement<if statements>` to :ref:`exclusive_disjunction<test_exclusive_disjunction>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to :ref:`exclusive_disjunction<test_exclusive_disjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 62
@@ -372,7 +372,7 @@ because ``truth_table.py`` does not have anything in it with that name.
     - if ``second_input`` is equal to :red:`False`, it goes to the next line - ``return True``
     - ``second_input`` is :red:`False` in this case, which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :green:`False`
 
-* I add an :ref:`if statement<if statements>` for this case, to the one for when the first input is :red:`False` in the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` for this case, to the one for when the first input is :red:`False` in the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 62
@@ -1428,7 +1428,7 @@ first input     second input   return
                     has no attribute 'material_non_implication'.
                     Did you mean: 'converse_non_implication'?
 
-  :ref:`material_non_implication<test_material_non_implication>` is not in ``truth_table.py``.
+  :ref:`material_non_implication<test_material_non_implication>` is not in ``src/truth_table/__init__.py``.
 
 ----
 
@@ -1438,7 +1438,7 @@ first input     second input   return
 
 ----
 
-I add :ref:`material_non_implication<test_material_non_implication>` to ``truth_table.py``
+I add :ref:`material_non_implication<test_material_non_implication>` to ``src/truth_table/__init__.py``
 
 .. code-block:: python
   :lineno-start: 74
@@ -1498,7 +1498,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
   because the :ref:`function<what is a function?>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
-* I add an :ref:`if statement<if statements>` to :ref:`material_non_implication<test_material_non_implication>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to :ref:`material_non_implication<test_material_non_implication>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 81
@@ -1586,7 +1586,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   - if ``second_input`` is equal to :red:`False`, it runs ``return True``
   - ``second_input`` is :red:`False` in this case, which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`assertion<what is an assertion?>` expects :red:`False` and the :ref:`function<what is a function?>` returns :green:`True`
 
-* I add an :ref:`if statement<if statements>` for the one case that returns :green:`True`, to the :ref:`material_non_implication function<test_material_non_implication>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` for the one case that returns :green:`True`, to the :ref:`material_non_implication function<test_material_non_implication>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 81
@@ -2050,7 +2050,7 @@ because :ref:`logical_disjunction<test_logical_disjunction>` returns ``first_inp
               second_input == (first_input and not second_input)
   material_non_implication == (first_input and not second_input)
 
-* I change the :ref:`return statement<the return statement>` in the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``truth_table.py``
+* I change the :ref:`return statement<the return statement>` in the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 62
@@ -2175,7 +2175,7 @@ first input     second input   return
     AttributeError: module 'src.truth_table'
                     has no attribute 'project_first'
 
-  there is nothing named :ref:`project_first<test_project_first>` in ``truth_table.py``
+  there is nothing named :ref:`project_first<test_project_first>` in ``src/truth_table/__init__.py``
 
 ----
 
@@ -2185,7 +2185,7 @@ first input     second input   return
 
 ----
 
-I add a :ref:`function<what is a function?>` for :ref:`project_first<test_project_first>` to ``truth_table.py``
+I add a :ref:`function<what is a function?>` for :ref:`project_first<test_project_first>` to ``src/truth_table/__init__.py``
 
 .. code-block:: python
   :lineno-start: 80
@@ -2276,7 +2276,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 
   because the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
-* I add an :ref:`if statement<if statements>` for this case to the :ref:`project_first function<test_project_first>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` for this case to the :ref:`project_first function<test_project_first>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 88
@@ -2364,7 +2364,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
     project_first(True , False) -> True
     project_first(True , True ) -> True
 
-* I add :ref:`the bool built-in function<how to test if something is grouped as True>` to the :ref:`if statement<if statements>` in the :ref:`project_first function<test_project_first>` in ``truth_table.py``
+* I add :ref:`the bool built-in function<how to test if something is grouped as True>` to the :ref:`if statement<if statements>` in the :ref:`project_first function<test_project_first>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 88
@@ -2673,7 +2673,7 @@ first input     second input   return
                     has no attribute 'converse_implication'.
                     Did you mean: 'converse_non_implication'?
 
-  because ``truth_table.py`` does not have anything named :ref:`converse_implication<test_converse_implication>` in it.
+  because ``src/truth_table/__init__.py`` does not have anything named :ref:`converse_implication<test_converse_implication>` in it.
 
 ----
 
@@ -2683,7 +2683,7 @@ first input     second input   return
 
 ----
 
-I add a :ref:`function definition<how to make a function that takes input>` for :ref:`converse_implication<test_converse_implication>` to ``truth_table.py``
+I add a :ref:`function definition<how to make a function that takes input>` for :ref:`converse_implication<test_converse_implication>` to ``src/truth_table/__init__.py``
 
 .. code-block:: python
   :lineno-start: 88
@@ -2768,7 +2768,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   because the :ref:`converse_implication function<test_converse_implication>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
-* I add an :ref:`if statement<if statements>` to :ref:`converse_implication<test_converse_implication>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to :ref:`converse_implication<test_converse_implication>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 92
@@ -3358,7 +3358,7 @@ examples of Converse Implication
 close the project
 *********************************************************************************
 
-* I close ``test_binary.py`` and ``truth_table.py``
+* I close ``test_binary.py`` and ``src/truth_table/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 

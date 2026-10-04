@@ -199,7 +199,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   AttributeError: module 'src.truth_table'
                   has no attribute 'negate_second'
 
-I do not have a definition for :ref:`negate_second<test_negate_second>` in ``truth_table.py``
+I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src/truth_table/__init__.py``
 
 ----
 
@@ -211,7 +211,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``tru
 
 * I open ``truth_table/__init__.py`` from the ``src`` folder_
 
-* I add a :ref:`function definition<how to make a function that takes input>` for :ref:`negate_second<test_negate_second>` to ``truth_table.py``
+* I add a :ref:`function definition<how to make a function that takes input>` for :ref:`negate_second<test_negate_second>` to ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 92
@@ -270,7 +270,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``tru
 
   because the :ref:`negate_second function<test_negate_second>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
-* I add an :ref:`if statement<if statements>` to :ref:`negate_second<test_negate_second>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to :ref:`negate_second<test_negate_second>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 100
@@ -372,7 +372,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``tru
     negate_second(True , False) -> True
     negate_second(True , True ) -> False
 
-* I add :ref:`the bool built-in function<how to test if something is grouped as True>` to the :ref:`negate_second function<test_negate_second>` in ``truth_table.py``
+* I add :ref:`the bool built-in function<how to test if something is grouped as True>` to the :ref:`negate_second function<test_negate_second>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 100
@@ -600,7 +600,7 @@ first input     second input   return
                     has no attribute 'logical_nor'.
                     Did you mean: 'logical_nand'?
 
-  ``truth_table.py`` does not have any definition for :ref:`logical_nor<test_logical_nor>`.
+  ``src/truth_table/__init__.py`` does not have any definition for :ref:`logical_nor<test_logical_nor>`.
 
 ----
 
@@ -610,7 +610,7 @@ first input     second input   return
 
 ----
 
-I add :ref:`logical_nor<test_logical_nor>` to ``truth_table.py``
+I add :ref:`logical_nor<test_logical_nor>` to ``src/truth_table/__init__.py``
 
 .. code-block:: python
   :lineno-start: 100
@@ -730,7 +730,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
   because the :ref:`logical_nor function<test_logical_nor>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
-* I add :ref:`if statements` for this case to :ref:`logical_nor<test_logical_nor>` in ``truth_table.py``
+* I add :ref:`if statements` for this case to :ref:`logical_nor<test_logical_nor>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 104
@@ -1251,7 +1251,7 @@ first input     second input   return
                     has no attribute 'logical_equality'.
                     Did you mean: 'logical_identity'?
 
-  because there is no definition for :ref:`logical_equality<test_logical_equality>` in ``truth_table.py``.
+  because there is no definition for :ref:`logical_equality<test_logical_equality>` in ``src/truth_table/__init__.py``.
 
 ----
 
@@ -1261,7 +1261,7 @@ first input     second input   return
 
 ----
 
-I add a :ref:`function definition<how to make a function that takes input>` for :ref:`logical_equality<test_logical_equality>` in ``truth_table.py``
+I add a :ref:`function definition<how to make a function that takes input>` for :ref:`logical_equality<test_logical_equality>` in ``src/truth_table/__init__.py``
 
 .. code-block:: python
   :lineno-start: 104
@@ -1323,7 +1323,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
   because the :ref:`logical_equality function<test_logical_equality>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
-* I add an :ref:`if statement<if statements>` to :ref:`logical_equality<test_logical_equality>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to :ref:`logical_equality<test_logical_equality>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 113
@@ -1379,7 +1379,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
   - if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` then runs ``return True``.
   - ``second_input`` is :green:`True` in this case, which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`assertion<what is an assertion?>` expects :red:`False` and the :ref:`function<what is a function?>` returns :green:`True`.
 
-* I add another :ref:`if statement<if statements>` to the :ref:`logical_equality function<test_logical_equality>` in ``truth_table.py``
+* I add another :ref:`if statement<if statements>` to the :ref:`logical_equality function<test_logical_equality>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 113
@@ -1446,7 +1446,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
     * if ``second_input`` is equal to :red:`False`, it runs ``return False``.
     * ``second_input`` is :red:`False` in this case, which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`assertion<what is an assertion?>` expects :green:`True` and the :ref:`function<what is a function?>` returns :red:`False`.
 
-* I add an :ref:`if statement<if statements>` to the :ref:`logical_equality function<test_logical_equality>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to the :ref:`logical_equality function<test_logical_equality>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 113
@@ -2159,7 +2159,7 @@ first input     second input   return
                     has no attribute 'material_implication'.
                     Did you mean: 'material_non_implication'?
 
-  because there is no definition for :ref:`material_implication<test_material_implication>` in ``truth_table.py``.
+  because there is no definition for :ref:`material_implication<test_material_implication>` in ``src/truth_table/__init__.py``.
 
 ----
 
@@ -2169,7 +2169,7 @@ first input     second input   return
 
 ----
 
-I add a :ref:`function<what is a function?>` for :ref:`material_implication<test_material_implication>` to ``truth_table.py``
+I add a :ref:`function<what is a function?>` for :ref:`material_implication<test_material_implication>` to ``src/truth_table/__init__.py``
 
 .. code-block:: python
   :lineno-start: 122
@@ -2229,7 +2229,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 
   because the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
-* I add an :ref:`if statement<if statements>` to :ref:`material_implication<test_material_implication>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to :ref:`material_implication<test_material_implication>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 126
@@ -2322,7 +2322,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   - if ``second_input`` is equal to :red:`False`, it runs ``return False``.
   - ``second_input`` is :red:`False` in this case, which causes :ref:`AssertionError<what causes AssertionError?>` since the :ref:`assertion<what is an assertion?>` expects :green:`True` and the :ref:`function<what is a function?>` returns :red:`False`.
 
-* I add an :ref:`if statement<if statements>` to the :ref:`material_implication function<test_material_implication>` for the one case where it returns :red:`False`, in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to the :ref:`material_implication function<test_material_implication>` for the one case where it returns :red:`False`, in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 126
@@ -3182,7 +3182,7 @@ extract global variables
 close the project
 *********************************************************************************
 
-* I close ``test_binary.py`` and ``truth_table.py``
+* I close ``test_binary.py`` and ``src/truth_table/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 

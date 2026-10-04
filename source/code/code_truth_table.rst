@@ -59,7 +59,14 @@ The code in ``truth_table/tests/test_binary.py`` from :ref:`truth table: Binary 
 .. literalinclude:: truth_table/tests/test_binary_1.py
   :language: python
   :linenos:
-  :caption: truth_table/src/truth_table.py
+  :caption: truth_table/tests/test_binary.py
+  :lines: 1-21
+
+.. literalinclude:: truth_table/tests/test_binary_1.py
+  :language: python
+  :lineno-start: 23
+  :caption: truth_table/tests/test_binary.py
+  :lines: 23-
 
 ----
 

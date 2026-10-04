@@ -104,7 +104,7 @@ open the project
 
         New-Item tests/test_binary.py
 
-* I add ``test_binary.py`` to git_ for tracking
+* I add ``tests/test_binary.py`` to git_ for tracking
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -157,7 +157,7 @@ first input     second input   return
 
 ----
 
-* I add a test for :ref:`contradiction<test_contradiction>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, in ``test_binary.py``
+* I add a test for :ref:`contradiction<test_contradiction>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, in ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -190,7 +190,7 @@ first input     second input   return
     AttributeError: module 'src.truth_table'
                     has no attribute 'contradiction'
 
-  because I have not :ref:`defined<how to make a function>` :ref:`contradiction<test_contradiction>` in ``truth_table.py``
+  because I have not :ref:`defined contradiction<test_contradiction>` in ``src/truth_table/__init__.py``
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
@@ -210,9 +210,9 @@ first input     second input   return
 
 ----
 
-* I open ``truth_table/__init__.py`` from the ``src`` folder_
+* I open ``__init__.py`` from the ``truth_table`` folder in the ``src`` folder_
 
-* I add ``contradiction`` to ``truth_table.py``
+* I add ``contradiction`` to ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -234,7 +234,7 @@ first input     second input   return
 
   because the test :ref:`called<how to call a function with input>` the :ref:`contradiction function<test_contradiction>` with two arguments (:green:`True` and :green:`True`) and the :ref:`definition<how to make a function>` does not allow any arguments (the parentheses are empty).
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` , in ``test_binary.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` , in ``tests/test_binary.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -245,7 +245,7 @@ first input     second input   return
     # AttributeError
     # TypeError
 
-* I add ``first_input`` as the name of the first argument in the :ref:`function signature<how to make a function>` for :ref:`contradiction<test_contradiction>`, in ``truth_table.py``
+* I add ``first_input`` as the name of the first argument in the :ref:`function signature<how to make a function>` for :ref:`contradiction<test_contradiction>`, in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 17
@@ -325,7 +325,7 @@ first input     second input   return
     def contradiction(first_input, second_input):
         return False
 
-* I add an :ref:`assertion<what is an assertion?>` for the second case, which is if the first input is :green:`True` and the second input is :red:`False`, to ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the second case, which is if the first input is :green:`True` and the second input is :red:`False`, to ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -625,7 +625,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`logical_conjunction<test_logical_conjunction>` with an :ref:`assertion<what is an assertion?>` for the first case, which is if the first input is :green:`True` and the second input is :green:`True`, in ``test_binary.py``
+* I add a test for :ref:`logical_conjunction<test_logical_conjunction>` with an :ref:`assertion<what is an assertion?>` for the first case, which is if the first input is :green:`True` and the second input is :green:`True`, in ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -655,7 +655,7 @@ first input     second input   return
                     has no attribute 'logical_conjunction'.
                     Did you mean: 'logical_negation'?
 
-  because there is nothing named :ref:`logical_conjunction<test_logical_conjunction>` in ``truth_table.py``, yet.
+  because there is nothing named :ref:`logical_conjunction<test_logical_conjunction>` in ``src/truth_table/__init__.py``, yet.
 
 ----
 
@@ -665,7 +665,7 @@ first input     second input   return
 
 ----
 
-I add ``logical_conjunction`` to ``truth_table.py``
+I add ``logical_conjunction`` to ``src/truth_table/__init__.py``
 
 .. code-block:: python
   :lineno-start: 17
@@ -692,7 +692,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_conjunction` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_conjunction` in ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -733,7 +733,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
     assertFalse(src.truth_table.logical_conjunction(True, False))
     assertFalse(True                                            )
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_binary.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_binary.py``
 
   .. code-block:: python
     :lineno-start: 27
@@ -745,7 +745,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
     # TypeError
     # AssertionError
 
-* I make the :ref:`logical_conjunction function<test_logical_conjunction>` in ``truth_table.py`` return :ref:`False <test_what_is_false>`
+* I make the :ref:`logical_conjunction function<test_logical_conjunction>` in ``src/truth_table/__init__.py`` return :ref:`False <test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -769,7 +769,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
   - the second input in these 2 cases
 
-* I change the :ref:`return statement<the return statement>` of the :ref:`logical_conjunction function<test_logical_conjunction>` in ``truth_table.py``
+* I change the :ref:`return statement<the return statement>` of the :ref:`logical_conjunction function<test_logical_conjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -787,7 +787,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
     logical_conjunction(True, False) -> False
     logical_conjunction(True, True ) -> True
 
-* I add an :ref:`assertion<what is an assertion?>` for the third case, which is if the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_logical_conjunction` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the third case, which is if the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_logical_conjunction` in ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -846,7 +846,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
   if something:
       then do this
 
-* I add an `if statement`_ for when the first input is :red:`False` to the :ref:`logical_conjunction function<test_logical_conjunction>` in ``truth_table.py``
+* I add an `if statement`_ for when the first input is :red:`False` to the :ref:`logical_conjunction function<test_logical_conjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -900,7 +900,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
               └── return False
               return second_input
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_conjunction` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_conjunction` in ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -939,7 +939,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   the test is still green.
 
-* There is only one case where :ref:`logical_conjunction<test_logical_conjunction>` returns :green:`True`, I add an `if statement`_ for it in ``truth_table.py``
+* There is only one case where :ref:`logical_conjunction<test_logical_conjunction>` returns :green:`True`, I add an `if statement`_ for it in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -1354,7 +1354,7 @@ conditional expressions
     def logical_conjunction(first_input, second_input):
         return first_input and second_input
 
-* I add a :ref:`variable<what is a variable?>` for ``src.truth_table.logical_conjunction`` in :ref:`test_logical_conjunction` of ``test_binary.py``
+* I add a :ref:`variable<what is a variable?>` for ``src.truth_table.logical_conjunction`` in :ref:`test_logical_conjunction` of ``tests/test_binary.py``
 
   .. code-block:: python
     :lineno-start: 14
@@ -1626,7 +1626,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`project_second<test_project_second>` with an :ref:`assertion<what is an assertion?>` for the case when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+* I add a test for :ref:`project_second<test_project_second>` with an :ref:`assertion<what is an assertion?>` for the case when the first input is :green:`True` and the second input is :green:`True`, to ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1655,7 +1655,7 @@ first input     second input   return
     AttributeError: module 'src.truth_table'
                     has no attribute 'project_second'
 
-  because I do not have a :ref:`definition<how to make a function>` for the :ref:`project_second function<test_project_second>` in ``truth_table.py``.
+  because I do not have a :ref:`definition<how to make a function>` for the :ref:`project_second function<test_project_second>` in ``src/truth_table/__init__.py``.
 
 ----
 
@@ -1665,7 +1665,7 @@ first input     second input   return
 
 ----
 
-I add ``project_second`` to ``truth_table.py``
+I add ``project_second`` to ``src/truth_table/__init__.py``
 
 .. code-block:: python
   :lineno-start: 31
@@ -1693,7 +1693,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the second case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_project_second` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the second case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_project_second` in ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1728,7 +1728,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
   - the second input in both cases
 
-* I make :ref:`project_second<test_project_second>` return ``second_input`` in ``truth_table.py``
+* I make :ref:`project_second<test_project_second>` return ``second_input`` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -1753,7 +1753,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
     def project_second(first_input, second_input):
         return second_input
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_project_second` for the next case, which is if the first input is :red:`False` and the second input is :green:`True`, in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_project_second` for the next case, which is if the first input is :red:`False` and the second input is :green:`True`, in ``tests/test_binary.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -1988,7 +1988,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`converse_non_implication<test_converse_non_implication>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+* I add a test for :ref:`converse_non_implication<test_converse_non_implication>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2019,7 +2019,7 @@ first input     second input   return
     AttributeError: module 'src.truth_table'
                     has no attribute 'converse_non_implication'
 
-  because there is no definition for :ref:`converse_non_implication<test_converse_non_implication>` in ``truth_table.py`` in the ``src`` folder_.
+  because there is no definition for :ref:`converse_non_implication<test_converse_non_implication>` in ``src/truth_table/__init__.py`` in the ``src`` folder_.
 
 ----
 
@@ -2029,7 +2029,7 @@ first input     second input   return
 
 ----
 
-I add ``converse_non_implication`` to ``truth_table.py``
+I add ``converse_non_implication`` to ``src/truth_table/__init__.py``
 
 .. code-block:: python
   :lineno-start: 25
@@ -2056,7 +2056,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_converse_non_implication` of ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_converse_non_implication` of ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2133,7 +2133,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   because the :ref:`converse_non_implication function<test_converse_non_implication>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
-* I add an `if statement`_ for this case to the :ref:`converse_non_implication function<test_converse_non_implication>` in ``truth_table.py``
+* I add an `if statement`_ for this case to the :ref:`converse_non_implication function<test_converse_non_implication>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 29
@@ -2185,7 +2185,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
               └── return True
               return False
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_converse_non_implication` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_converse_non_implication` in ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2230,7 +2230,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   because the :ref:`function<what is a function?>` returned :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
-* I add an `if statement`_ for the one case that returns :green:`True`, to the one in :ref:`the converse_non_implication function<test_converse_non_implication>` in ``truth_table.py``
+* I add an `if statement`_ for the one case that returns :green:`True`, to the one in :ref:`the converse_non_implication function<test_converse_non_implication>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 29
@@ -2656,7 +2656,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   I can use either of these two :ref:`return statements<the return statement>`. Only the first one will run in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
-* I add a :ref:`variable<what is a variable?>` for ``src.truth_table.converse_non_implication`` in ``test_binary.py``
+* I add a :ref:`variable<what is a variable?>` for ``src.truth_table.converse_non_implication`` in ``tests/test_binary.py``
 
   .. code-block:: python
     :lineno-start: 30
@@ -2848,7 +2848,7 @@ examples of Converse Non-Implication
 close the project
 *********************************************************************************
 
-* I close ``test_binary.py`` and ``truth_table.py``
+* I close ``tests/test_binary.py`` and ``src/truth_table/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
