@@ -69,28 +69,28 @@ preview
 These are the tests I have at the end of the chapters
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary.py
+  :caption: truth_table/tests/test_binary.py
   :language: python
   :linenos:
-  :lines: 1-53
-  :caption: truth_table/tests/test_binary.py
+  :lines: 1-43
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary.py
-  :language: python
-  :lineno-start: 55
-  :lines: 55-83
   :caption: truth_table/tests/test_binary.py
+  :language: python
+  :lineno-start: 45
+  :lines: 45-73
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary.py
-  :language: python
-  :lineno-start: 85
-  :lines: 85-132
   :caption: truth_table/tests/test_binary.py
+  :language: python
+  :lineno-start: 75
+  :lines: 75-105
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary.py
-  :language: python
-  :lineno-start: 135
-  :lines: 135-
   :caption: truth_table/tests/test_binary.py
+  :language: python
+  :lineno-start: 107
+  :lines: 107-
 
 ----
 
