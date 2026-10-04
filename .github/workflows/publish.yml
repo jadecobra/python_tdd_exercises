@@ -46,7 +46,7 @@ jobs:
         uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: build/html
-          key: site-html-${{ hashFiles('source/**', 'pyproject.toml', 'uv.lock', 'source/conf.py') }}
+          key: site-html-${{ hashFiles('source/**', 'pyproject.toml', 'uv.lock', 'source/conf.py', 'tools/rescope_pygments_dark.py') }}
           restore-keys: |
             site-html-
 
@@ -55,6 +55,7 @@ jobs:
         run: |
           rm -rf build
           uv run sphinx-build -d build/doctrees -j auto ./source ./build/html
+          uv run python tools/rescope_pygments_dark.py build/html
           # Make sure the custom domain file is in the published root.
           cp -f CNAME build/html/CNAME 2>/dev/null || true
 
