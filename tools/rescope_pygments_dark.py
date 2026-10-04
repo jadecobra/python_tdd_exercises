@@ -69,10 +69,27 @@ def _prefix_rules(body: str) -> str:
             out.append(body[cursor:])
             break
         rule_body, end = _block(body, brace)
-        out.append(_prefix_selector(body[cursor:brace]))
-        out.append(" {" + rule_body + "}\n")
+        kept = _without_backgrounds(rule_body)
+        if kept:
+            out.append(_prefix_selector(body[cursor:brace]))
+            out.append(" {" + kept + "}\n")
         cursor = end
     return "".join(out)
+
+
+def _without_backgrounds(body: str) -> str:
+    """Drop paint that would cover the theme's transparent code background."""
+    kept = []
+    for part in body.split(";"):
+        if ":" not in part:
+            continue
+        prop, value = part.split(":", 1)
+        if prop.strip().lower() in {"background", "background-color"}:
+            continue
+        kept.append(f"{prop.strip()}: {value.strip()}")
+    if not kept:
+        return ""
+    return " " + "; ".join(kept) + " "
 
 
 def _prefix_selector(selector: str) -> str:

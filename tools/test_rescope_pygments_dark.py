@@ -8,6 +8,7 @@ _SHEET = """\
 .highlight .n { color: inherit }
 @media (prefers-color-scheme: dark) {
 .highlight { background: #272822; color: #F8F8F2 }
+.highlight .hll { background-color: #49483e }
 .highlight .n { color: #F8F8F2 }
 .highlight .k { color: #66D9EF }
 }
@@ -19,7 +20,10 @@ class RescopePygmentsDarkTest(unittest.TestCase):
         rewritten = rescope(_SHEET)
         self.assertNotIn("prefers-color-scheme", rewritten)
         self.assertIn(".highlight .k { color: #008000 }", rewritten)
-        self.assertIn("html.dark .highlight { background: #272822; color: #F8F8F2 }", rewritten.replace("\n", " "))
+        flat = rewritten.replace("\n", " ")
+        self.assertIn("html.dark .highlight { color: #F8F8F2 }", flat)
+        self.assertNotIn("#272822", rewritten)
+        self.assertNotIn("#49483e", rewritten)
         self.assertIn("html.dark .highlight .n { color: #F8F8F2 }", rewritten)
         self.assertIn("html.dark .highlight .k { color: #66D9EF }", rewritten)
 
