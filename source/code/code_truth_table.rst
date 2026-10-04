@@ -16,9 +16,16 @@ Nullary and Unary Operations: tests
 The code in ``truth_table/tests/test_nullary_unary.py`` from :ref:`truth table: Nullary and Unary Operations`
 
 .. literalinclude:: truth_table/tests/test_nullary_unary.py
+  :caption: truth_table/tests/test_nullary_unary.py
   :language: python
   :linenos:
+  :lines: 1-15
+
+.. literalinclude:: truth_table/tests/test_nullary_unary.py
   :caption: truth_table/tests/test_nullary_unary.py
+  :language: python
+  :lineno-start: 18
+  :lines: 18-
 
 ----
 
@@ -28,7 +35,7 @@ Nullary and Unary Operations: solutions
 
 ----
 
-The code in ``truth_table/tests/test_nullary_unary.py`` from :ref:`truth table: Nullary and Unary Operations`
+The code in ``truth_table/src/truth_table/__init__.py`` from :ref:`truth table: Nullary and Unary Operations`
 
 .. literalinclude:: truth_table/src/truth_table_nullary_unary.py
   :language: python
@@ -62,7 +69,7 @@ Binary Operations 1: solutions
 
 ----
 
-The code in ``truth_table/src/test_binary.py`` from :ref:`truth table: Binary Operations 1`
+The code in ``truth_table/src/truth_table/__init__.py`` from :ref:`truth table: Binary Operations 1`
 
 .. literalinclude:: truth_table/src/truth_table_binary_1.py
   :language: python
@@ -96,7 +103,7 @@ Binary Operations 2: solutions
 
 ----
 
-The code in ``truth_table/src/test_binary.py`` from :ref:`truth table: Binary Operations 2`
+The code in ``truth_table/src/truth_table/__init__.py`` from :ref:`truth table: Binary Operations 2`
 
 .. literalinclude:: truth_table/src/truth_table_binary_2.py
   :language: python
@@ -130,7 +137,7 @@ Binary Operations 3: solutions
 
 ----
 
-The code in ``truth_table/src/truth_table.py`` from :ref:`truth table: Binary Operations 3`
+The code in ``truth_table/src/truth_table/__init__.py`` from :ref:`truth table: Binary Operations 3`
 
 .. literalinclude:: truth_table/src/truth_table_binary_3.py
   :language: python
@@ -164,7 +171,7 @@ Binary Operations: solutions
 
 ----
 
-The code in ``truth_table/src/truth_table.py`` from :ref:`truth table: Binary Operations 4`
+The code in ``truth_table/src/truth_table/__init__.py`` from :ref:`truth table: Binary Operations 4`
 
 .. literalinclude:: truth_table/src/truth_table_binary_4.py
   :language: python
@@ -177,7 +184,7 @@ The code in ``truth_table/src/truth_table.py`` from :ref:`truth table: Binary Op
 Truth Table tests: solutions
 *********************************************************************************
 
-The code in ``truth_table/src/truth_table.py`` from :ref:`truth table: test_truth_table_tests`
+The code in ``truth_table/src/truth_table/__init__.py`` from :ref:`truth table: test_truth_table_tests`
 
 .. literalinclude:: truth_table/src/truth_table.py
   :language: python

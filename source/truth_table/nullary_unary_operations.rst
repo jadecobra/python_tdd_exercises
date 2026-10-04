@@ -1,5 +1,5 @@
 .. meta::
-  :description: Nullary and Unary Operations in Python with Test Driven Development (Pumping Python, Jacob Itegboje). Rename tests/test_truth_table.py to test_nullary_unary.py, import src.truth_table, and build Nullary Operations (logical_true always returns True; logical_false always returns False — zero inputs) then Unary Operations (logical_identity returns the_input; logical_negation aka not returns not the_input — one input). Red-Green-Refactor with AttributeError module has no attribute logical_true/logical_false/logical_identity/logical_negation, TypeError logical_identity() takes 0 positional arguments but 1 was given, AssertionError None is not true, True is not false, False is not true. Reuses assertTrue and assertFalse; ends with unary truth-table review and test_logical_negation_aka_not. Part of the truth_table project after project setup.
+  :description: Nullary and Unary Operations in Python with Test Driven Development (Pumping Python, Jacob Itegboje). Rename tests/test_truth_table.py to test_nullary_unary.py, import src.truth_table, and build Nullary Operations (logical_true always returns True; logical_false always returns False — zero inputs) then Unary Operations (logical_identity returns the_input; logical_negation aka not returns not the_input — one input). Red-Green-Refactor with AttributeError module has no attribute logical_true/logical_false/logical_identity/logical_negation (logical_false adds Did you mean logical_true), TypeError logical_identity() takes 0 positional arguments but 1 was given, AssertionError None is not true, True is not false, False is not true. Reuses assertTrue and assertFalse; ends with unary truth-table review and test_logical_negation_aka_not. Part of the truth_table project after project setup.
   :keywords: Jacob Itegboje, Pumping Python, nullary operations python, unary operations python, logical_true logical_false, logical_identity the_input, logical_negation not keyword, test_nullary_unary.py, test_logical_negation_aka_not, AttributeError has no attribute logical_true, TypeError takes 0 positional arguments but 1 was given, AssertionError None is not true, assertTrue assertFalse truth table, return opposite of boolean python, TDD red green refactor nullary unary, truth table one variable, python boolean logic beginners
 
 .. include:: ../links.rst
@@ -10,8 +10,6 @@
 truth table: Nullary and Unary Operations
 #################################################################################
 
-
-
 ----
 
 *********************************************************************************
@@ -21,9 +19,16 @@ preview
 These are the tests I have at the end of the chapter
 
 .. literalinclude:: ../code/truth_table/tests/test_nullary_unary.py
+  :caption: truth_table/tests/test_nullary_unary.py
   :language: python
   :linenos:
+  :lines: 1-15
+
+.. literalinclude:: ../code/truth_table/tests/test_nullary_unary.py
   :caption: truth_table/tests/test_nullary_unary.py
+  :language: python
+  :lineno-start: 18
+  :lines: 18-
 
 ----
 
@@ -802,16 +807,10 @@ I can use the not_ keyword to return the opposite of the :ref:`boolean<what are 
 * I add to the name of the test as a note, in ``tests/test_nullary_unary.py``
 
   .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 11
+    :lineno-start: 24
+    :emphasize-lines: 5
     :emphasize-text: _aka_not
 
-    class TestUnaryOperations(unittest.TestCase):
-
-        def test_logical_identity(self):
-            self.assertTrue(
-                src.truth_table.logical_identity(True)
-            )
             self.assertFalse(
                 src.truth_table.logical_identity(False)
             )
@@ -820,12 +819,6 @@ I can use the not_ keyword to return the opposite of the :ref:`boolean<what are 
             self.assertFalse(
                 src.truth_table.logical_negation(True)
             )
-            self.assertTrue(
-                src.truth_table.logical_negation(False)
-            )
-
-
-    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -882,7 +875,7 @@ I ran these tests for :ref:`Nullary Operations<Nullary Operations>` which take n
 and for :ref:`Unary operations<Unary Operations>` which take one input
 
 * :ref:`test_logical_identity`
-* :ref:`test_logical_negation`
+* :ref:`test_logical_negation_aka_not<test_logical_negation>`
 
 the :ref:`truth table` for :ref:`Unary Operations<Unary Operations>` is
 
