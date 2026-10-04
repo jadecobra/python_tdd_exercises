@@ -22,3 +22,6 @@ jobs:
 
       - name: build sphinx documentation
         run: uv run sphinx-build -d build/doctrees -j auto ./source ./build/html
+
+      - name: rescope dark pygments to the theme toggle
+        run: uv run python tools/rescope_pygments_dark.py build/html
