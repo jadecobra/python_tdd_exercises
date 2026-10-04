@@ -72,7 +72,7 @@ test_logical_true
 
 * I go to the other terminal_
 
-* I use mv_ to change the name of ``test_truth_table.py`` to ``test_nullary_unary.py``
+* I use mv_ to change the name of ``test_truth_table.py`` to ``tests/test_nullary_unary.py``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -81,7 +81,7 @@ test_logical_true
 
 * I open ``test_nullary_unary.py`` from the ``tests`` folder_
 
-* I add an `import statement`_ at the top of ``test_nullary_unary.py``
+* I add an `import statement`_ at the top of ``tests/test_nullary_unary.py``
 
   .. code-block:: python
     :linenos:
@@ -127,7 +127,7 @@ test_logical_true
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_true'
 
-  because I have not added a definition for :ref:`logical_true<test_logical_true>` to ``truth_table.py`` in the ``src`` folder_.
+  because I have not added a definition for :ref:`logical_true<test_logical_true>` to ``__init__.py`` in the ``truth_table`` folder in the ``src`` folder_.
 
 ----
 
@@ -137,7 +137,7 @@ test_logical_true
 
 ----
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_nullary_unary.py``
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_nullary_unary.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -148,9 +148,10 @@ test_logical_true
     # AssertionError
     # AttributeError
 
-* I open ``truth_table/__init__.py`` from the ``src`` folder_
+* I open ``__init__.py`` from the ``truth_table`` folder_ in the ``src`` folder_
 
-* I remove all the text in the file_ then add a :ref:`function<what is a function?>` to ``truth_table.py``
+* I remove all the text in ``src/truth_table/__init__.py``
+* I add a :ref:`function<what is a function?>` to ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -225,7 +226,7 @@ test_logical_false
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`logical_false<test_logical_false>` to ``test_nullary_unary.py``
+* I add a test for :ref:`logical_false<test_logical_false>` to ``tests/test_nullary_unary.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -252,7 +253,7 @@ test_logical_false
                     has no attribute 'logical_false'.
                     Did you mean: 'logical_true'?
 
-  because I have not added a definition for :ref:`logical_false<test_logical_false>` to ``truth_table.py``, I only added one for :ref:`logical_true<test_logical_true>`.
+  because I have not added a definition for :ref:`logical_false<test_logical_false>` to ``src/truth_table/__init__.py``, I only added one for :ref:`logical_true<test_logical_true>`.
 
 ----
 
@@ -262,7 +263,7 @@ test_logical_false
 
 ----
 
-* I add a :ref:`function<what is a function?>` to ``truth_table.py``
+* I add a :ref:`function<what is a function?>` to ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -349,7 +350,7 @@ test_logical_identity
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a new :ref:`TestCase<test_dir_unittest_testcase>` for Unary Operations with a test for :ref:`logical_identity<test_logical_identity>` when it gets :ref:`True<test_what_is_true>` as input, in ``test_nullary_unary.py``
+* I add a new :ref:`TestCase<test_dir_unittest_testcase>` for Unary Operations with a test for :ref:`logical_identity<test_logical_identity>` when it gets :ref:`True<test_what_is_true>` as input, in ``tests/test_nullary_unary.py``
 
   ==============  =============
   input           output
@@ -384,7 +385,7 @@ test_logical_identity
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_identity'
 
-  because I need to add a :ref:`definition<how to make a function>` for :ref:`logical_identity<test_logical_identity>` to ``truth_table.py``
+  because I need to add a :ref:`definition<how to make a function>` for :ref:`logical_identity<test_logical_identity>` to ``src/truth_table/__init__.py``
 
 ----
 
@@ -394,7 +395,7 @@ test_logical_identity
 
 ----
 
-* I add a :ref:`function<what is a function?>` named ``logical_identity`` to ``truth_table.py``
+* I add a :ref:`function<what is a function?>` named ``logical_identity`` to ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 5
@@ -416,7 +417,7 @@ test_logical_identity
 
   because the test :ref:`called<how to call a function with input>` the :ref:`logical_identity function<test_logical_identity>` with one argument and the definition does not allow any arguments (the parentheses are empty).
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_nullary_unary.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_nullary_unary.py``
 
   .. code-block:: python
     :lineno-start: 26
@@ -428,7 +429,7 @@ test_logical_identity
     # AttributeError
     # TypeError
 
-* I add a name in parentheses so that :ref:`logical_identity<test_logical_identity>` can take calls with one input, in ``truth_table.py``
+* I add a name in parentheses so that :ref:`logical_identity<test_logical_identity>` can take calls with one input, in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 9
@@ -467,7 +468,7 @@ test_logical_identity
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>` to :ref:`test_logical_identity` in ``test_nullary_unary.py`` for the case when it gets :ref:`False<test_what_is_false>` as input
+* I add another :ref:`assertion<what is an assertion?>` to :ref:`test_logical_identity` in ``tests/test_nullary_unary.py`` for the case when it gets :ref:`False<test_what_is_false>` as input
 
   ==============  =============
   input           output
@@ -498,7 +499,7 @@ test_logical_identity
 
   because the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
-* I change the :ref:`return statement<the return statement>` of :ref:`logical_identity<test_logical_identity>` in ``truth_table.py``
+* I change the :ref:`return statement<the return statement>` of :ref:`logical_identity<test_logical_identity>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 9
@@ -585,7 +586,7 @@ test_logical_negation
 
 ----
 
-I add a test for :ref:`logical_negation<test_logical_negation>` with an :ref:`assertion<what is an assertion?>` for when it gets :ref:`True<test_what_is_true>` as input, to ``test_nullary_unary.py``
+I add a test for :ref:`logical_negation<test_logical_negation>` with an :ref:`assertion<what is an assertion?>` for when it gets :ref:`True<test_what_is_true>` as input, to ``tests/test_nullary_unary.py``
 
 ==============  =============
 input           output
@@ -620,7 +621,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   AttributeError: module 'src.truth_table'
                   has no attribute 'logical_negation'
 
-there is no definition for :ref:`logical_negation<test_logical_negation>` in ``truth_table.py``
+there is no definition for :ref:`logical_negation<test_logical_negation>` in ``src/truth_table/__init__.py``
 
 ----
 
@@ -630,7 +631,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``t
 
 ----
 
-* I add ``logical_negation`` to ``truth_table.py``
+* I add ``logical_negation`` to ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 9
@@ -671,7 +672,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``t
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>` to :ref:`test_logical_negation` for when :ref:`logical_negation<test_logical_negation>` gets :ref:`False<test_what_is_false>` as input, in ``test_nullary_unary.py``
+* I add another :ref:`assertion<what is an assertion?>` to :ref:`test_logical_negation` for when :ref:`logical_negation<test_logical_negation>` gets :ref:`False<test_what_is_false>` as input, in ``tests/test_nullary_unary.py``
 
   ==============  =============
   input           output
@@ -702,7 +703,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``t
 
   because the :ref:`function<what is a function?>` returns :red:`False` and the new :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
-* I change the :ref:`return statement<the return statement>` of the :ref:`logical_negation function<test_logical_negation>` in ``truth_table.py``
+* I change the :ref:`return statement<the return statement>` of the :ref:`logical_negation function<test_logical_negation>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -776,7 +777,7 @@ I can use the not_ keyword to return the opposite of the :ref:`boolean<what are 
     def logical_negation(the_input):
         return not the_input
 
-* I add to the name of the test as a note, in ``test_nullary_unary.py``
+* I add to the name of the test as a note, in ``tests/test_nullary_unary.py``
 
   .. code-block:: python
     :lineno-start: 18
@@ -826,7 +827,7 @@ input           output
 close the project
 *********************************************************************************
 
-* I close ``test_nullary_unary.py`` and ``truth_table.py``
+* I close ``tests/test_nullary_unary.py`` and ``src/truth_table/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 

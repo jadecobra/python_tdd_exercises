@@ -19,6 +19,6 @@ solution
 
 the solution in ``sleep_duration/src/sleep_duration.py`` from :ref:`how to measure sleep duration`
 
-.. literalinclude:: solutions/sleep_duration.py
+.. literalinclude:: src/sleep_duration.py
   :language: python
   :linenos:

@@ -19,6 +19,6 @@ solutions
 
 the solutions in ``tree.py``
 
-.. literalinclude:: solutions/tree.py
+.. literalinclude:: src/tree.py
   :language: python
   :linenos:
