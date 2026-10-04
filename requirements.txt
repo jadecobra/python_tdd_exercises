@@ -1,5 +1,4 @@
 sphinx
-# sphinxawesome-theme==5.3.2 # 6.0 breaks light mode
 sphinxawesome-theme
 sphinx-autobuild
 sphinx-design

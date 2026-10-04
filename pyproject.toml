@@ -10,7 +10,6 @@ dependencies = [
     "sphinx-design>=0.7.0",
     "sphinx-notfound-page>=1.1.0",
     "sphinx-sitemap>=2.9.0",
-    # "sphinxawesome-theme==5.3.2",
     "sphinxawesome-theme>=6.0.0",
 ]
 
@@ -20,7 +19,6 @@ docs = [
     "sphinx-design>=0.7.0",
     "sphinx-notfound-page>=1.1.0",
     "sphinx-sitemap>=2.9.0",
-    # "sphinxawesome-theme==5.3.2",
     "sphinxawesome-theme>=6.0.0",
 ]
 dev = [
