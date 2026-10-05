@@ -2823,7 +2823,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-:ref:`Would you like test even more binary operations? <binary_operations_3>`
+:ref:`Would you like test even more binary operations?<binary_operations_3>`
 
 ----
 

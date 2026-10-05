@@ -77,7 +77,7 @@ test_logical_true
 
 * I go to the other terminal_
 
-* I use mv_ to change the name of ``test_truth_table.py`` to ``tests/test_nullary_unary.py``
+* I use mv_ to change the name of ``test_truth_table.py`` to ``test_nullary_unary.py`` in the ``tests`` folder_
 
   .. code-block:: python
     :emphasize-lines: 1

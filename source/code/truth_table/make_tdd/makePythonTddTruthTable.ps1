@@ -1,6 +1,5 @@
 uv init truth_table
 cd truth_table
-New-Item "src/truth_table.py"
 mkdir tests
 New-Item tests/__init__.py
 

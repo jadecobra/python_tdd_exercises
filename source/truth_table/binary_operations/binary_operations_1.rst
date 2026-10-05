@@ -275,7 +275,7 @@ first input     second input   return
     def contradiction(first_input, second_input):
         return None
 
-  the test passes because :ref:`None is grouped as False  (the result of bool(None) is False)<test_is_none_falsy_or_truthy>` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
+  the test passes because :ref:`None is grouped as False (the result of bool(None) is False)<test_is_none_falsy_or_truthy>` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
   .. code-block:: python
 
@@ -514,7 +514,7 @@ first input     second input   return
 
     git commit -am 'add contradiction'
 
-:ref:`contradiction always returns False, it does not care about the inputs<test_contradiction>`
+:ref:`contradiction always returns False, it does not care about the inputs<test_contradiction>`.
 
 ----
 
@@ -634,13 +634,15 @@ first input     second input   return
 
   .. code-block:: python
     :lineno-start: 12
-    :emphasize-lines: 3-6
+    :emphasize-lines: 3-8
 
             self.assertFalse(contradiction(False, False))
 
         def test_logical_conjunction(self):
             self.assertTrue(
-                src.truth_table.logical_conjunction(True, True)
+                src.truth_table.logical_conjunction(
+                    True, True
+                )
             )
 
 
@@ -664,7 +666,7 @@ first input     second input   return
 
 ----
 
-I add ``logical_conjunction`` to ``src/truth_table/__init__.py``
+I add :ref:`logical_conjunction<test_logical_conjunction>` to ``src/truth_table/__init__.py``
 
 .. code-block:: python
   :lineno-start: 17
@@ -748,11 +750,11 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2
 
     def logical_conjunction(first_input, second_input):
-        # return True
         return False
+        return True
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -772,12 +774,12 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 3-4
+    :emphasize-lines: 2
 
     def logical_conjunction(first_input, second_input):
-        # return False
-        # return True
         return second_input
+        return False
+        return True
 
   the test passes.
 
@@ -849,14 +851,14 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 4-5
+    :emphasize-lines: 2-3
 
     def logical_conjunction(first_input, second_input):
-        # return False
-        # return True
         if first_input == False:
             return False
         return second_input
+        return False
+        return True
 
   the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns
 
@@ -942,17 +944,17 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 4-9
+    :emphasize-lines: 2-9
 
     def logical_conjunction(first_input, second_input):
-        # return False
-        # return True
-        # if first_input == False:
-        #     return False
-        # return second_input
         if first_input == True:
             if second_input == True:
                 return True
+        # if first_input == False:
+        #     return False
+        # return second_input
+        # return False
+        # return True
 
   the test is still green, because the :ref:`function<what is a function?>` returns
 
@@ -963,18 +965,14 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 10
+    :emphasize-lines: 5
 
     def logical_conjunction(first_input, second_input):
-        # return False
-        # return True
-        # if first_input == False:
-        #     return False
-        # return second_input
         if first_input == True:
             if second_input == True:
                 return True
         return None
+        # if first_input == False:
 
   still green, because :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`.
 
@@ -982,19 +980,15 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 10-11
+    :emphasize-lines: 5
 
     def logical_conjunction(first_input, second_input):
-        # return False
-        # return True
-        # if first_input == False:
-        #     return False
-        # return second_input
         if first_input == True:
             if second_input == True:
                 return True
-        # return None
         return False
+        return None
+        # if first_input == False:
 
   green. It now only checks ``second_input`` if ``first_input`` is :green:`True`.
 
@@ -1002,46 +996,36 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 7-10
+    :emphasize-lines: 2-5
 
     def logical_conjunction(first_input, second_input):
-        # return False
-        # return True
-        # if first_input == False:
-        #     return False
-        # return second_input
         # if first_input == True:
         if bool(first_input) == True:
             # if second_input == True:
             if bool(second_input) == True:
                 return True
-        # return None
         return False
+        return None
 
   still green because ``bool(something)`` returns :green:`True` if the :ref:`object<everything is an object>` in parentheses is :ref:`grouped as True<test_what_is_true>`.
 
-* Since ``bool(True)`` is the same as :green:`True`, ``bool(first_input) == True`` is the same thing as ``True == True`` when ``first_input`` is :green:`True`, which is a repetition.
+* Since ``bool(True)`` is the same as :green:`True`, ``bool(first_input) == True`` is the same thing as ``True == True`` if ``first_input`` is :green:`True`, which is a repetition.
 
   .. code-block:: python
 
     first_input = True
 
-    if bool(first_input) == True:
-    if bool(True       ) == True:
-    if True              == True:
+    bool(first_input) == True
+    bool(True       ) == True
+    True              == True
 
   I remove ``== True`` from the `if statements`_
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 8-9, 11-12
+    :emphasize-lines: 3-4, 6-7
 
     def logical_conjunction(first_input, second_input):
-        # return False
-        # return True
-        # if first_input == False:
-        #     return False
-        # return second_input
         # if first_input == True:
         # if bool(first_input) == True:
         if bool(first_input):
@@ -1049,7 +1033,6 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
             # if bool(second_input) == True:
             if bool(second_input):
                 return True
-        # return None
         return False
 
   the test is still green because
@@ -1065,18 +1048,13 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
     if True            == True
     if True
 
-* Which means I can remove :ref:`bool<how to test if something is grouped as True>`
+* I remove :ref:`bool<how to test if something is grouped as True>` from the `if statements`_
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 9-10, 13-14
+    :emphasize-lines: 4-5, 8-9
 
     def logical_conjunction(first_input, second_input):
-        # return False
-        # return True
-        # if first_input == False:
-        #     return False
-        # return second_input
         # if first_input == True:
         # if bool(first_input) == True:
         # if bool(first_input):
@@ -1086,7 +1064,6 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
             # if bool(second_input):
             if second_input:
                 return True
-        # return None
         return False
 
   still green because I can assume the following substitutions for ``if something == True:``
@@ -1120,14 +1097,9 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 10, 14-15
+    :emphasize-lines: 5, 9-10
 
     def logical_conjunction(first_input, second_input):
-        # return False
-        # return True
-        # if first_input == False:
-        #     return False
-        # return second_input
         # if first_input == True:
         # if bool(first_input) == True:
         # if bool(first_input):
@@ -1138,7 +1110,6 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
             # if second_input:
         if first_input and second_input:
                 return True
-        # return None
         return False
 
   green.
@@ -1146,28 +1117,14 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 * I add an else_ clause to make it clearer
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 15, 18-19
+    :lineno-start: 30
+    :emphasize-lines: 2-4
 
-    def logical_conjunction(first_input, second_input):
-        # return False
-        # return True
-        # if first_input == False:
-        #     return False
-        # return second_input
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-        # if first_input:
-            # if second_input == True:
-            # if bool(second_input) == True:
-            # if bool(second_input):
-            # if second_input:
         if first_input and second_input:
             return True
-        # return None
         else:
             return False
+        return None
 
   still green because Python_ checks if ``first_input`` is grouped as :green:`True` when the :ref:`logical_conjunction function<test_logical_conjunction>` is :ref:`called<how to call a function with input>`. When ``if first_input and second_input:`` runs,
 
@@ -1235,32 +1192,15 @@ conditional expressions
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 15-16, 18-24
+    :emphasize-lines: 2-6
 
     def logical_conjunction(first_input, second_input):
-        # return False
-        # return True
-        # if first_input == False:
-        #     return False
-        # return second_input
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-        # if first_input:
-            # if second_input == True:
-            # if bool(second_input) == True:
-            # if bool(second_input):
-            # if second_input:
-        # if first_input and second_input:
-        #     return True
-        # return None
-        # else:
-        #     return False
         return (
             True if
             first_input and second_input
             else False
         )
+        # if first_input == True:
 
   the test is still green, because this is the same statement in a different order
 
@@ -1293,27 +1233,9 @@ conditional expressions
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 21, 23
+    :emphasize-lines: 3, 5
 
     def logical_conjunction(first_input, second_input):
-        # return False
-        # return True
-        # if first_input == False:
-        #     return False
-        # return second_input
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-        # if first_input:
-            # if second_input == True:
-            # if bool(second_input) == True:
-            # if bool(second_input):
-            # if second_input:
-        # if first_input and second_input:
-        #     return True
-        # return None
-        # else:
-        #     return False
         return (
             # True if
             first_input and second_input
@@ -1341,7 +1263,7 @@ conditional expressions
     else:
         return False
 
-* I remove the commented lines from ``logical_conjunction``
+* I remove the other statements from :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -1427,7 +1349,7 @@ conditional expressions
 
   the test is still green.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_logical_conjunction`
 
   .. code-block:: python
     :lineno-start: 14
@@ -1731,11 +1653,11 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 
   .. code-block:: python
     :lineno-start: 25
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2
 
     def project_second(first_input, second_input):
-        # return True
         return second_input
+        return True
 
   the test passes. The :ref:`project_second function<test_project_second>` returns the second input.
 
@@ -1744,7 +1666,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
     project_second(True , False) -> False
     project_second(True , True ) -> True
 
-* I remove the commented line
+* I remove the other statement from :ref:`project_second<test_project_second>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -1872,7 +1794,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 
   the test is still green.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`project_second<test_project_second>`
 
   .. code-block:: python
     :lineno-start: 23
@@ -1996,7 +1918,7 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 36
+    :lineno-start: 28
     :emphasize-lines: 3-8
 
             self.assertFalse(project_second(False, False))
@@ -2459,27 +2381,15 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: 11-19
+    :emphasize-lines: 2-6
 
     def converse_non_implication(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-        # if not first_input:
-            # if second_input == True:
-            # if bool(second_input) == True:
-            # if bool(second_input):
-            # if second_input:
-        # if not first_input and second_input:
-        #     return True
-        # else:
-        #     return False
         return (
             True if
             not first_input and second_input
             else False
         )
+        # if first_input == False:
 
   green.
 
@@ -2497,22 +2407,9 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: 16, 18
+    :emphasize-lines: 3, 5
 
     def converse_non_implication(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-        # if not first_input:
-            # if second_input == True:
-            # if bool(second_input) == True:
-            # if bool(second_input):
-            # if second_input:
-        # if not first_input and second_input:
-        #     return True
-        # else:
-        #     return False
         return (
             # True if
             not first_input and second_input
@@ -2598,22 +2495,9 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: 15-18
+    :emphasize-lines: 2-5
 
     def converse_non_implication(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-        # if not first_input:
-            # if second_input == True:
-            # if bool(second_input) == True:
-            # if bool(second_input):
-            # if second_input:
-        # if not first_input and second_input:
-        #     return True
-        # else:
-        #     return False
         return logical_conjunction(
             logical_negation(first_input),
             second_input
@@ -2640,7 +2524,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     converse_non_implication(True , True ) -> False
      └── logical_conjunction(False, True ) -> False
 
-* I remove the commented lines
+* I remove the commented lines and other statements from :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
     :lineno-start: 29
@@ -2729,7 +2613,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   the test is still green.
 
-* I remove the commented lines
+* I remove the commented lines from :ref:`test_converse_non_implication`
 
   .. code-block:: python
     :lineno-start: 30
@@ -2965,7 +2849,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to write more tests with bool?<how to test if something is grouped as True>`
+:ref:`Would you like to test more binary operations?<truth table: Binary Operations 2>`
 
 ----
 

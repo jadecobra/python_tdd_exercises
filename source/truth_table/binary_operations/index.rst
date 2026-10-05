@@ -121,4 +121,4 @@ Binary Operations
 what is next?
 *************************************************************************************
 
-:ref:`are you ready to test Binary Operations?<binary_operations_1>`
+:ref:`are you ready to test Binary Operations?<truth table: Binary Operations 1>`

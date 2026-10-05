@@ -32,7 +32,6 @@ Here are the tests and solutions in the book
   sleep duration<code/code_sleep_duration>
   telephone<code/code_telephone>
   Traffic Light<code/code_traffic_light>
-  tree<code/code_tree>
   Truth Table<code/code_truth_table>
   what causes TypeError?<code/code_type_error>
   unittest<code/code_unittest>
