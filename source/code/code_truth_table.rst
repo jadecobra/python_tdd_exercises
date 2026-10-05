@@ -100,7 +100,7 @@ The code in ``truth_table/tests/test_binary.py`` from :ref:`truth table: Binary 
 .. literalinclude:: truth_table/tests/test_binary_2.py
   :language: python
   :linenos:
-  :caption: truth_table/src/truth_table.py
+  :caption: truth_table/tests/test_binary.py
 
 ----
 

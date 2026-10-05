@@ -61,7 +61,7 @@ requirements
 open the project
 *********************************************************************************
 
-* Make sure you are in the ``pumping_python`` folder_ with pwd_ in the terminal_
+* I make sure I am in the ``pumping_python`` folder_ with pwd_ in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -76,7 +76,7 @@ open the project
 
   `change directory`_ to the ``pumping_python`` folder
 
-* Once in ``pumping_python``, `change directory`_ to the project
+* I `change directory`_ to the :ref:`truth_table<truth table>` project
 
   .. code-block:: python
     :emphasize-lines: 1

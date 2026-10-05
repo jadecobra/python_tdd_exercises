@@ -80,7 +80,7 @@ These are the tests I have at the end of the chapter
 open the project
 *********************************************************************************
 
-* Make sure you are in the ``pumping_python`` folder_ with pwd_ in the terminal_
+* I make sure I am in the ``pumping_python`` folder_ with pwd_ in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -95,7 +95,7 @@ open the project
 
   `change directory`_ to the ``pumping_python`` folder
 
-* Once in ``pumping_python``, `change directory`_ to the project
+* I `change directory`_ to the :ref:`truth_table<truth table>` project
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -129,7 +129,7 @@ open the project
 
     ================== 16 passed in G.HIs ===================
 
-* I hold :kbd:`ctrl` (Windows_) or :kbd:`option` (MacOS_) on the keyboard, then click on ``tests/test_binary.py`` with the mouse to open it
+* I open ``test_binary.py`` from the ``tests`` folder_
 
 * Over the past 3 chapters I tested
 
@@ -209,7 +209,7 @@ I do not have a definition for :ref:`negate_second<test_negate_second>` in ``src
 
 ----
 
-* I open ``truth_table/__init__.py`` from the ``src`` folder_
+* I open ``__init__.py`` from the ``truth_table`` folder_ in the ``src`` folder_
 
 * I add a :ref:`function definition<how to make a function that takes input>` for :ref:`negate_second<test_negate_second>` to ``src/truth_table/__init__.py``
 

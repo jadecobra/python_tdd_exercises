@@ -68,7 +68,7 @@ These are the tests I have at the end of the chapter
 open the project
 *********************************************************************************
 
-* Make sure you are in the ``pumping_python`` folder_ with pwd_ in the terminal_
+* I make sure I am in the ``pumping_python`` folder_ with pwd_ in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -83,7 +83,7 @@ open the project
 
   `change directory`_ to the ``pumping_python`` folder
 
-* Once in ``pumping_python``, `change directory`_ to the project
+* I `change directory`_ to the :ref:`truth_table<truth table>` project
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -117,7 +117,7 @@ open the project
 
     ================== 12 passed in G.HIs ===================
 
-* I hold :kbd:`ctrl` (Windows_) or :kbd:`option` (MacOS_) on the keyboard, then click on ``tests/test_binary.py`` with the mouse to open it
+* I open ``test_binary.py`` from the ``tests`` folder_
 
 * Up to this point I have tested
 
@@ -193,7 +193,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 
 ----
 
-* I open ``truth_table/__init__.py`` from the ``src`` folder_
+* I open ``__init__.py`` from the ``truth_table`` folder_ in the ``src`` folder_
 * I add :ref:`exclusive_disjunction<test_exclusive_disjunction>` to ``src/truth_table/__init__.py``
 
   .. code-block:: python
