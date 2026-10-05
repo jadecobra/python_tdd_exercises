@@ -127,7 +127,7 @@ Per drive, write a subdirectory named after the feature id (`artifacts/home-toc/
 Proof standards:
 
 1. **Real user path.** Fetch the live autobuild URL a reader would open. Do not treat `source/conf.py` values, `source/*.rst`, or `$REPO/build/html` as the proof. The disposable `$BUILD_DIR` file for that route is the side-effect check, not the user-visible action.
-2. **Action and resulting state.** Record the request (method + path) and the resulting status + title/h1 (and toctree hrefs when that is the claim). A final screenshot of an unrelated page is not enough.
+2. **Action and resulting state.** Record the request (method + path) and the resulting status + title/h1 (and toctree hrefs when that is the claim). A final screenshot of an unrelated page is not enough. When the page has both a toggle class and an OS media query, set them separately. Forcing the media query does not flip the class. When the claim is the published book, fetch `https://www.pumpingpython.com/` and the `_static` stylesheets linked from that HTML.
 3. **Side effects.** For these docs, the side effect of a successful serve is that `$BUILD_DIR/<route>` exists as HTML (or `robots.txt` / `llms.txt`). Search JS results are **not** a file-system side effect; see search gotchas.
 4. **Mocks only at production boundaries.** Cookiebot, gtag, Trustpilot, and Cal.com embeds are production third parties. Do not load or complete them to prove the book. Observing `data-cal-link` / script `src` in the HTML is enough to map the boundary.
 
