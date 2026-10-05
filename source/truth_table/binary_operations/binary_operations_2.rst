@@ -27,15 +27,15 @@ preview
 These are the tests I have at the end of the chapter
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary_2.py
+  :caption: truth_table/tests/test_binary.py
   :language: python
   :lineno-start: 39
-  :caption: truth_table/tests/test_binary.py
   :lines: 39-51
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary_2.py
+  :caption: truth_table/tests/test_binary.py
   :language: python
   :lineno-start: 53
-  :caption: truth_table/tests/test_binary.py
   :lines: 53-
 
 ----
@@ -57,7 +57,7 @@ open the project
 
     .../pumping_python
 
-  `change directory`_ to the ``pumping_python`` folder
+  I `change directory`_ to the ``pumping_python`` folder_
 
 * I `change directory`_ to the :ref:`truth_table<truth table>` project
 

@@ -25,15 +25,15 @@ preview
 These are the tests I have at the end of the chapter
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary_1.py
+  :caption: truth_table/tests/test_binary.py
   :language: python
   :linenos:
-  :caption: truth_table/tests/test_binary.py
   :lines: 1-21
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary_1.py
+  :caption: truth_table/tests/test_binary.py
   :language: python
   :lineno-start: 23
-  :caption: truth_table/tests/test_binary.py
   :lines: 23-
 
 ----
@@ -74,7 +74,7 @@ open the project
 
     .../pumping_python
 
-  `change directory`_ to the ``pumping_python`` folder
+  I `change directory`_ to the ``pumping_python`` folder
 
 * I `change directory`_ to the :ref:`truth_table<truth table>` project
 
@@ -2321,7 +2321,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
         else:
             return False
 
-  still green because Python_ checks if ``first_input`` is grouped as :green:`False` when the :ref:`converse_non_implication function<test_converse_non_implication>` is :ref:`called<how to call a function with input>`. When ``if not first_input and second_input:`` runs,
+  still green because Python_ checks if ``first_input`` is grouped as :red:`False` when the :ref:`converse_non_implication function<test_converse_non_implication>` is :ref:`called<how to call a function with input>`. When ``if not first_input and second_input:`` runs,
 
   - if ``first_input`` is grouped as :green:`True`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
@@ -2347,7 +2347,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
           └── else:
               └── return False
 
-  - if ``first_input`` is grouped as :green:`False`, it checks if ``second_input`` is grouped as :green:`True`
+  - if ``first_input`` is grouped as :red:`False`, it checks if ``second_input`` is grouped as :green:`True`
 
     * if ``second_input`` is grouped as :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 

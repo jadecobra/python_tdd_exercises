@@ -93,7 +93,7 @@ open the project
 
     .../pumping_python
 
-  `change directory`_ to the ``pumping_python`` folder
+  I `change directory`_ to the ``pumping_python`` folder_
 
 * I `change directory`_ to the :ref:`truth_table<truth table>` project
 

@@ -475,7 +475,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I add a git_ commit message
 
   .. code-block:: python
-    :emphasize-lines:
+    :emphasize-lines: 1
 
     git commit -am 'add test_catching_failure'
 

@@ -27,39 +27,15 @@ preview
 These are the tests I have at the end of the chapter
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary_3.py
-  :language: python
-  :linenos:
   :caption: truth_table/tests/test_binary.py
-  :lines: 1-21
-
-.. literalinclude:: ../../code/truth_table/tests/test_binary_3.py
-  :language: python
-  :lineno-start: 23
-  :caption: truth_table/tests/test_binary.py
-  :lines: 23-37
-
-.. literalinclude:: ../../code/truth_table/tests/test_binary_3.py
-  :language: python
-  :lineno-start: 39
-  :caption: truth_table/tests/test_binary.py
-  :lines: 39-51
-
-.. literalinclude:: ../../code/truth_table/tests/test_binary_3.py
-  :language: python
-  :lineno-start: 53
-  :caption: truth_table/tests/test_binary.py
-  :lines: 53-67
-
-.. literalinclude:: ../../code/truth_table/tests/test_binary_3.py
   :language: python
   :lineno-start: 69
-  :caption: truth_table/tests/test_binary.py
   :lines: 69-83
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary_3.py
+  :caption: truth_table/tests/test_binary.py
   :language: python
   :lineno-start: 85
-  :caption: truth_table/tests/test_binary.py
   :lines: 85-
 
 ----
@@ -81,7 +57,7 @@ open the project
 
     .../pumping_python
 
-  `change directory`_ to the ``pumping_python`` folder
+  I `change directory`_ to the ``pumping_python`` folder_
 
 * I `change directory`_ to the :ref:`truth_table<truth table>` project
 
@@ -325,7 +301,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 
   the test passes because Python_ checks if ``first_input`` is equal to :red:`False` when ``if first_input == False:`` runs
 
-  * if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to the next :ref:`if statement<if statements>` in the :ref:`function<what is a function?>` - ``if second_input == False:``.which checks if ``second_input`` is equal to :red:`False`
+  * if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to the next :ref:`if statement<if statements>` in the :ref:`function<what is a function?>` - ``if second_input == False:``which checks if ``second_input`` is equal to :red:`False`
 
     - if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return False`` then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
@@ -370,7 +346,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 
     - if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return False``
     - if ``second_input`` is equal to :red:`False`, it goes to the next line - ``return True``
-    - ``second_input`` is :red:`False` in this case, which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :green:`False`
+    - ``second_input`` is :red:`False` in this case, which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
 
 * I add an :ref:`if statement<if statements>` for this case, to the one for when the first input is :red:`False` in the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``src/truth_table/__init__.py``
 
@@ -629,24 +605,9 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 
   .. code-block:: python
     :lineno-start: 62
-    :emphasize-lines: 17-21
+    :emphasize-lines: 2-9
 
     def exclusive_disjunction(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
         if not first_input:
             if not second_input:
                 return False
@@ -655,6 +616,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
             if not second_input:
                 return True
         return False
+        # if first_input == False:
 
   still green.
 
@@ -662,24 +624,9 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 
   .. code-block:: python
     :lineno-start: 62
-    :emphasize-lines: 20-21, 25-26
+    :emphasize-lines: 5-6, 10-11
 
     def exclusive_disjunction(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
         if not first_input:
             if not second_input:
                 return False
@@ -690,6 +637,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
                 return True
             if second_input:
                 return False
+        # if first_input == False:
 
   green.
 
@@ -697,24 +645,17 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 
   .. code-block:: python
     :lineno-start: 62
-    :emphasize-lines: 17-34
+    :emphasize-lines: 2-19
 
     def exclusive_disjunction(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+        if not first_input and not second_input:
+            return False
+        if not first_input and second_input:
+            return True
+        if first_input and not second_input:
+            return True
+        if first_input and second_input:
+            return False
         # if not first_input:
         #     if not second_input:
         #         return False
@@ -725,14 +666,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
         #         return True
         #     if second_input:
         #         return False
-        if not first_input and not second_input:
-            return False
-        if not first_input and second_input:
-            return True
-        if first_input and not second_input:
-            return True
-        if first_input and second_input:
-            return False
+        # if first_input == False:
 
   still green, because I can put two :ref:`if statements` together when one is indented under the other
 
@@ -751,34 +685,9 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 
   .. code-block:: python
     :lineno-start: 62
-    :emphasize-lines: 33-34
+    :emphasize-lines: 8-9
 
     def exclusive_disjunction(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-        # if not first_input:
-        #     if not second_input:
-        #         return False
-        #     if second_input:
-        #         return True
-        # if first_input:
-        #     if not second_input:
-        #         return True
-        #     if second_input:
-        #         return False
         if not first_input and second_input:
             return True
         if first_input and not second_input:
@@ -787,6 +696,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
             return False
         if not first_input and not second_input:
             return False
+        # if not first_input:
 
   the test is still green.
 
@@ -794,34 +704,9 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 
   .. code-block:: python
     :lineno-start: 62
-    :emphasize-lines: 27-34, 36-43
+    :emphasize-lines: 1-9, 11-18
 
     def exclusive_disjunction(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-        # if not first_input:
-        #     if not second_input:
-        #         return False
-        #     if second_input:
-        #         return True
-        # if first_input:
-        #     if not second_input:
-        #         return True
-        #     if second_input:
-        #         return False
         # if not first_input and second_input:
         #     return True
         # if first_input and not second_input:
@@ -840,6 +725,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
             (not first_input and not second_input)
         ):
             return False
+        # if not first_input:
 
   still green, because I can put two :ref:`if statements` together if they both return the same thing and are at the same indentation level
 
@@ -860,7 +746,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I change the second :ref:`if statement<if statements>` to an :ref:`else clause<if statements>`
 
   .. code-block:: python
-    :lineno-start: 91
+    :lineno-start: 66
     :emphasize-lines: 10-15
 
         if (
@@ -885,47 +771,34 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 91
-    :emphasize-lines: 1-6, 15-21
+    :lineno-start: 62
+    :emphasize-lines: 2-8
 
-        # if (
-        #     (not first_input and second_input)
-        #     or
-        #     (first_input and not second_input)
-        # ):
-        #     return True
-        # if first_input and second_input:
-        #     return False
-        # if not first_input and not second_input:
-        # if (
-        #     (first_input and second_input)
-        #     or
-        #     (not first_input and not second_input)
-        # ):
-        # else:
-        #     return False
-        return True if (
+    def exclusive_disjunction(first_input, second_input):
+        return (
+            True if
             (not first_input and second_input)
             or
             (first_input and not second_input)
-        ) else False
+            else False
+        )
+        # if not first_input and second_input:
 
   still green.
 
 * I remove ``True if`` and ``else False`` to make it simpler
 
   .. code-block:: python
-    :lineno-start: 105
-    :emphasize-lines: 3-4, 8-9
+    :lineno-start: 62
+    :emphasize-lines: 3, 7
 
-        # else:
-        #     return False
-        # return True if (
+    def exclusive_disjunction(first_input, second_input):
         return (
+            # True if
             (not first_input and second_input)
             or
             (first_input and not second_input)
-        # ) else False
+            # else False
         )
 
   the test is still green.
@@ -1061,10 +934,10 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
   I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
-    :lineno-start: 107
+    :lineno-start: 62
     :emphasize-lines: 2-10
 
-        # return True if (
+    def exclusive_disjunction(first_input, second_input):
         return logical_disjunction(
             converse_non_implication(
                 first_input, second_input
@@ -1075,10 +948,11 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
             )
         )
         return (
+            # True if
             (not first_input and second_input)
             or
             (first_input and not second_input)
-        # ) else False
+            # else False
         )
 
   the test is still green.
@@ -1089,125 +963,62 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
     :lineno-start: 107
     :emphasize-lines: 2-5
 
-        # return True if (
+    def exclusive_disjunction(first_input, second_input):
         if first_input == second_input:
             return False
         else:
             return True
         return logical_disjunction(
-            converse_non_implication(
-                first_input, second_input
-            ),
-            logical_conjunction(
-                first_input,
-                logical_negation(second_input)
-            )
-        )
-        return (
-            (not first_input and second_input)
-            or
-            (first_input and not second_input)
-        # ) else False
-        )
 
   green.
 
 * I change the :ref:`else clause<if statements>` to the :ref:`Logical Negation (NOT)<test_logical_negation>` of the new :ref:`if statement<if statements>` so I can write a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 107
+    :lineno-start: 62
     :emphasize-lines: 4-5
 
-        # return True if (
+    def exclusive_disjunction(first_input, second_input):
         if first_input == second_input:
             return False
         # else:
         if not (first_input == second_input):
             return True
         return logical_disjunction(
-            converse_non_implication(
-                first_input, second_input
-            ),
-            logical_conjunction(
-                first_input,
-                logical_negation(second_input)
-            )
-        )
-        return (
-            (not first_input and second_input)
-            or
-            (first_input and not second_input)
-        # ) else False
-        )
 
   still green.
 
 * I add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 2-3, 5-11
+    :lineno-start: 62
+    :emphasize-lines: 2-6
 
-        # return True if (
-        # if first_input == second_input:
-        #     return False
-        # else:
-        # if not (first_input == second_input):
-        #     return True
+    def exclusive_disjunction(first_input, second_input):
         return (
             True if
             not (first_input == second_input)
             else False
         )
-        return logical_disjunction(
-            converse_non_implication(
-                first_input, second_input
-            ),
-            logical_conjunction(
-                first_input,
-                logical_negation(second_input)
-            )
-        )
-        return (
-            (not first_input and second_input)
-            or
-            (first_input and not second_input)
-        # ) else False
-        )
+        if first_input == second_input:
+            return False
+        # else:
+        if not (first_input == second_input):
+            return True
 
   the test is still green.
 
 * I remove ``True if`` and ``else False`` to make the statement simpler
 
   .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 8, 10
+    :lineno-start: 62
+    :emphasize-lines: 3, 5
 
-        # return True if (
-        # if first_input == second_input:
-        #     return False
-        # else:
-        # if not (first_input == second_input):
-        #     return True
+    def exclusive_disjunction(first_input, second_input):
         return (
             # True if
             not (first_input == second_input)
             # else False
-        )
-        return logical_disjunction(
-            converse_non_implication(
-                first_input, second_input
-            ),
-            logical_conjunction(
-                first_input,
-                logical_negation(second_input)
-            )
-        )
-        return (
-            (not first_input and second_input)
-            or
-            (first_input and not second_input)
-        # ) else False
         )
 
   still green.
@@ -1215,40 +1026,20 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 * I can also write the :ref:`conditional expression<conditional expressions>` with the NOT equal symbol (``!=``) (exclamation mark and equal symbol :kbd:`!+=` on the keyboard)
 
   .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 7
+    :lineno-start: 62
+    :emphasize-lines: 2
 
-        # return True if (
-        # if first_input == second_input:
-        #     return False
-        # else:
-        # if not (first_input == second_input):
-        #     return True
+    def exclusive_disjunction(first_input, second_input):
         return first_input != second_input
         return (
             # True if
             not (first_input == second_input)
             # else False
         )
-        return logical_disjunction(
-            converse_non_implication(
-                first_input, second_input
-            ),
-            logical_conjunction(
-                first_input,
-                logical_negation(second_input)
-            )
-        )
-        return (
-            (not first_input and second_input)
-            or
-            (first_input and not second_input)
-        # ) else False
-        )
 
   green.
 
-* I remove the commented lines
+* I remove the commented lines and other statements from :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
     :lineno-start: 62
@@ -1509,7 +1300,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
             return True
         return False
 
-  the test passes because :ref:`material_non_implication<test_material_non_implication>` is :ref:`called<how to call a function with input>`, it runs ``if second_input == False:``
+  the test passes because when :ref:`material_non_implication<test_material_non_implication>` is :ref:`called<how to call a function with input>`, it runs ``if second_input == False:``
 
   - if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` then runs ``return False``
   - if ``second_input`` is equal to :red:`False`, it runs ``return True``
@@ -1607,7 +1398,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
     material_non_implication(True , False) -> True
     material_non_implication(True , True ) -> False
 
-  When :ref:`material_non_implication<test_material_non_implication>` is :ref:`called<how to call a function with input>` Python_ checks ``if first_input == True:``
+  Python_ checks ``if first_input == True:`` when :ref:`material_non_implication<test_material_non_implication>` is :ref:`called<how to call a function with input>`
 
   - if ``first_input`` is NOT equal to :green:`True`, it leaves the :ref:`if statement<if statements>` then runs ``return False``
 
@@ -1776,26 +1567,15 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
   .. code-block:: python
     :lineno-start: 81
-    :emphasize-lines: 11-18
+    :emphasize-lines: 2-6
 
     def material_non_implication(first_input, second_input):
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-        # if first_input:
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-            # if not second_input:
-        # if first_input and not second_input:
-        #         return True
-        # return False
         return (
             True if
             first_input and not second_input
             else False
         )
+        # if first_input == True:
 
   still green.
 
