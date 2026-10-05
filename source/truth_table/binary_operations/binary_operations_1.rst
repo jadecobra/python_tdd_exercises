@@ -285,7 +285,6 @@ first input     second input   return
 
   .. code-block:: python
 
-
     assertFalse(src.truth_table.contradiction(True, True))
     assertFalse(None                                     )
     assertFalse(bool(None)                               )
