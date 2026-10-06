@@ -773,7 +773,7 @@ The :ref:`try statement<how to handle Exceptions>` is how I think of `Test Drive
 -  if it fails, try something else
 -  do this as many times as you can until you get what you want
 
-or in the words of a famous singer ...
+or in the words of a famous ...
 
 ----
 

@@ -291,7 +291,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 because
 
 - the :ref:`call<how to call a function>` to ``identity`` which belongs to :ref:`test_identity_function` uses one input (:ref:`None<what is None?>`).
-- The :ref:`function definition (signature)<how to make a function that takes input>` of ``identity`` does not allow any inputs when it is called, since the parentheses are empty.
+- The :ref:`function definition (signature)<how to make a function that takes input>` of ``identity`` does not allow any inputs when it is :ref:`called<how to call a function with input>`, since the parentheses are empty.
 - :ref:`The call to a function must match its signature (definition)<what causes TypeError?>`.
 
 ----

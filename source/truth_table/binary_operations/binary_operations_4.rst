@@ -1295,7 +1295,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
             return False
         return True
 
-  the test passes because when :ref:`logical_equality<test_logical_equality>` is called, it runs ``if second_input == False:``
+  the test passes because when :ref:`logical_equality<test_logical_equality>` is :ref:`called<how to call a function with input>`, it runs ``if second_input == False:``
 
   - if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` then runs ``return True``.
   - if ``second_input`` is equal to :red:`False`, it runs ``return False``.
@@ -1800,7 +1800,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
   .. code-block:: python
     :lineno-start: 113
-    :emphasize-lines: 6-11
+    :emphasize-lines: 7-12
 
     def logical_equality(first_input, second_input):
         return (
@@ -1916,15 +1916,16 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
   I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
-    :lineno-start: 145
+    :lineno-start: 113
     :emphasize-lines: 2-5
 
-        # return True if (
+    def logical_equality(first_input, second_input):
         return logical_disjunction(
             logical_conjunction(first_input, second_input),
             logical_nor(first_input, second_input)
         )
         return (
+            # True if
             (first_input and second_input)
             or
             # (not first_input and not second_input)
@@ -1934,39 +1935,27 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
             #     (not second_input)
             # )
             not (first_input or second_input)
-        # ) else False
+            # else False
         )
 
   still green.
 
-* :ref:`logical_equality<test_logical_equality>` returns :green:`True`, if the first input and second input are equal, which means I can write a much simpler :ref:`return statement<the return statement>` thanks to the equality (``==``) symbol (2 equal signs together :kbd:`=+=` on the keyboard)
+* :ref:`logical_equality<test_logical_equality>` returns :green:`True`, if the first input and second input are equal, which means I can write a much simpler :ref:`return statement<the return statement>` thanks to the equality (``==``) symbol (two equal signs together :kbd:`=+=` on the keyboard)
 
   .. code-block:: python
-    :lineno-start: 145
+    :lineno-start: 113
     :emphasize-lines: 2
 
-        # return True if (
+    def logical_equality(first_input, second_input):
         return first_input == second_input
         return logical_disjunction(
             logical_conjunction(first_input, second_input),
             logical_nor(first_input, second_input)
         )
-        return (
-            (first_input and second_input)
-            or
-            # (not first_input and not second_input)
-            # (
-            #     (not first_input)
-            #     (not or)
-            #     (not second_input)
-            # )
-            not (first_input or second_input)
-        # ) else False
-        )
 
   the test is still green.
 
-* I remove the commented lines
+* I remove the commented lines and other statements from :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
     :lineno-start: 113
@@ -2188,7 +2177,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
             return False
         return True
 
-  the test passes because when :ref:`material_implication<test_material_implication>` is called, it runs ``if second_input == False:``
+  the test passes because when :ref:`material_implication<test_material_implication>` is :ref:`called<how to call a function with input>`, it runs ``if second_input == False:``
 
   - if ``second_input`` is NOT equal to :red:`False`, it runs ``return True``
   - if ``second_input`` is equal to :red:`False`, it runs ``return False``
@@ -2510,33 +2499,26 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I add a :ref:`conditional expression<conditional expressions>` to :ref:`material_implication<test_material_implication>`
 
   .. code-block:: python
-    :lineno-start: 136
-    :emphasize-lines: 1-2, 4-10
+    :lineno-start: 126
+    :emphasize-lines: 2-6
 
-        # if first_input and not second_input:
-        #     return False
-        # else:
-        # if not (first_input and not second_input):
-        #     return
+    def material_implication(first_input, second_input):
         return (
             True if
             not (first_input and not second_input)
             else False
         )
+        # if first_input == True:
 
   still green.
 
 * I remove ``True if`` and ``else False`` to make it simpler
 
   .. code-block:: python
-    :lineno-start: 136
-    :emphasize-lines: 7, 9
+    :lineno-start: 126
+    :emphasize-lines: 3, 5
 
-        # if first_input and not second_input:
-        #     return False
-        # else:
-        # if not (first_input and not second_input):
-        #     return
+    def material_implication(first_input, second_input):
         return (
             # True if
             not (first_input and not second_input)
@@ -2548,14 +2530,10 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I "multiply" :ref:`not<test_logical_negation>` by the symbols in parentheses
 
   .. code-block:: python
-    :lineno-start: 136
-    :emphasize-lines: 8-11
+    :lineno-start: 126
+    :emphasize-lines: 4-7
 
-        # if first_input and not second_input:
-        #     return False
-        # else:
-        # if not (first_input and not second_input):
-        #     return
+    def material_implication(first_input, second_input):
         return (
             # True if
             # not (first_input and not second_input)
@@ -2576,14 +2554,10 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I change ``not and`` to :ref:`or<test_logical_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 136
-    :emphasize-lines: 10-11
+    :lineno-start: 126
+    :emphasize-lines: 6-7
 
-        # if first_input and not second_input:
-        #     return False
-        # else:
-        # if not (first_input and not second_input):
-        #     return
+    def material_implication(first_input, second_input):
         return (
             # True if
             # not (first_input and not second_input)
@@ -2599,14 +2573,10 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 * I remove ``not not`` because they cancel out
 
   .. code-block:: python
-    :lineno-start: 136
-    :emphasize-lines: 12-13
+    :lineno-start: 126
+    :emphasize-lines: 8-9
 
-        # if first_input and not second_input:
-        #     return False
-        # else:
-        # if not (first_input and not second_input):
-        #     return
+    def material_implication(first_input, second_input):
         return (
             # True if
             # not (first_input and not second_input)
@@ -2618,7 +2588,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
             # else False
         )
 
-  the test is still green, because two :ref:`nots<test_logical_negation>` make a "right"?
+  is the test still green because two :ref:`nots<test_logical_negation>` make a "right"?
 
 * :ref:`material_implication<test_material_implication>` returns ``not first_input or second_input``
 
@@ -2690,14 +2660,10 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
-    :lineno-start: 136
-    :emphasize-lines: 6-9
+    :lineno-start: 126
+    :emphasize-lines: 2-5
 
-        # if first_input and not second_input:
-        #     return False
-        # else:
-        # if not (first_input and not second_input):
-        #     return
+    def material_implication(first_input, second_input):
         return logical_disjunction(
             logical_negation(first_input),
             second_input
@@ -2729,7 +2695,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
     material_implication(True , True ) -> True
     └── logical_disjunction(False, True ) -> True
 
-* I remove the comments
+* I remove the commented lines and other statements from :ref:`material_implication<test_material_implication>`
 
   .. code-block:: python
     :lineno-start: 126

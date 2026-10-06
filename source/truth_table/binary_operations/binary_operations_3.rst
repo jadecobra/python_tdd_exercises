@@ -768,7 +768,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 
   green.
 
-* I add a :ref:`conditional expression<conditional expressions>`
+* I add a :ref:`conditional expression<conditional expressions>` to :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
     :lineno-start: 62
@@ -988,7 +988,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 
   still green.
 
-* I add a :ref:`conditional expression<conditional expressions>`
+* I add a new :ref:`conditional expression<conditional expressions>` to :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
     :lineno-start: 62
@@ -1563,7 +1563,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
     if something and something_else:
 
-* I add a :ref:`conditional expression<conditional expressions>`
+* I add a :ref:`conditional expression<conditional expressions>` to :ref:`material_non_implication<test_material_non_implication>`
 
   .. code-block:: python
     :lineno-start: 81
@@ -2253,7 +2253,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 
   still green.
 
-* I add a :ref:`conditional expression<conditional expressions>`
+* I add a :ref:`conditional expression<conditional expressions>` to :ref:`project_first<test_project_first>`
 
   .. code-block:: python
     :lineno-start: 88
@@ -2866,7 +2866,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   the test is still green because two :ref:`nots<test_logical_negation>` cancel out.
 
-* I add a :ref:`conditional expression<conditional expressions>`
+* I add a :ref:`conditional expression<conditional expressions>` to :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
     :lineno-start: 102

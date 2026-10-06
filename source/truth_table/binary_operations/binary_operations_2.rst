@@ -436,7 +436,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``src/truth
 
   still green.
 
-* I use a :ref:`conditional expression (ternary operator)<conditional expressions>` for the :ref:`if statements`
+* I use a :ref:`conditional expression (ternary operator)<conditional expressions>` for the :ref:`if statements` in :ref:`negate_first<test_negate_first>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -1077,7 +1077,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
   still green.
 
-* I add a :ref:`conditional expression<conditional expressions>`
+* I add a :ref:`conditional expression<conditional expressions>` to :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
     :lineno-start: 41
@@ -2123,7 +2123,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
   still green.
 
-* I add a :ref:`conditional expression (ternary operator)<conditional expressions>`
+* I add a :ref:`conditional expression (ternary operator)<conditional expressions>` to :ref:`logical_disjunction<test_logical_disjunction>`
 
   .. code-block:: python
     :lineno-start: 52

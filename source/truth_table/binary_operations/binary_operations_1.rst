@@ -2377,7 +2377,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   - it only checks ``second_input`` if ``first_input`` is :red:`False`.
 
-* I use a `conditional expression`_
+* I use a `conditional expression`_ in :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
     :lineno-start: 29

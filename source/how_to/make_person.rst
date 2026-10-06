@@ -423,7 +423,7 @@ test_factory_w_keyword_arguments
     def person():
         return None
 
-  the test passes because when ``src.person.person()`` is called, Python_ checks ``src/person/__init__.py`` in the ``src`` folder_ for a :ref:`function definition<how to make a function>` with the name ``person`` and finds it.
+  the test passes because when ``src.person.person()`` is :ref:`called<how to call a function with input>`, Python_ checks ``src/person/__init__.py`` in the ``src`` folder_ for a :ref:`function definition<how to make a function>` with the name ``person`` and finds it.
 
 ----
 
