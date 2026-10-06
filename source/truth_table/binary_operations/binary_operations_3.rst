@@ -301,7 +301,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 
   the test passes because Python_ checks if ``first_input`` is equal to :red:`False` when ``if first_input == False:`` runs
 
-  * if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to the next :ref:`if statement<if statements>` in the :ref:`function<what is a function?>` - ``if second_input == False:``which checks if ``second_input`` is equal to :red:`False`
+  * if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to the next :ref:`if statement<if statements>` in the :ref:`function<what is a function?>` - ``if second_input == False:`` which checks if ``second_input`` is equal to :red:`False`
 
     - if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return False`` then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
@@ -3259,7 +3259,7 @@ review
   :red:`False`    :red:`False`   :red:`False`
   ==============  ============== ==============
 
-* :ref:`Logical Conjunction<test_logical_conjunction>` returns
+* :ref:`Logical Conjunction<test_logical_conjunction>`
 
   - returns ``first_input and second_input``
   - returns :green:`True` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`

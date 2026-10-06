@@ -14,7 +14,7 @@ def logical_negation(the_input):
     return not the_input
 
 
-def contradiction(first_input, input):
+def contradiction(first_input, second_input):
     return False
 
 
