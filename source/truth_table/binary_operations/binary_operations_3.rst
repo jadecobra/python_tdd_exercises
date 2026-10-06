@@ -131,7 +131,7 @@ first input     second input   return
 
 ----
 
-I add a test for :ref:`exclusive_disjunction<test_exclusive_disjunction>` with an :ref:`assertion<what is an assertion?>` for the case when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+I add a test for :ref:`exclusive_disjunction<test_exclusive_disjunction>` with an :ref:`assertion<what is an assertion?>` for the case when the first input is :green:`True` and the second input is :green:`True`, to ``tests/test_binary.py``
 
 ==============  ============== ==============
 first input     second input   return
@@ -203,7 +203,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_exclusive_disjunction` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_exclusive_disjunction` in ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -253,7 +253,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
     exclusive_disjunction(True , True ) -> False
 
 
-* I add an :ref:`assertion<what is an assertion?>` for the third case, which is if the first input is :red:`False` and the second input is :green:`True`, to ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the third case, which is if the first input is :red:`False` and the second input is :green:`True`, to ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -311,7 +311,7 @@ because ``src/truth_table/__init__.py`` does not have anything in it with that n
 
   * so far this is the same as the first three cases of :ref:`logical_nand<test_logical_nand>`
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False` to :ref:`test_exclusive_disjunction`, in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False` to :ref:`test_exclusive_disjunction`, in ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1188,7 +1188,7 @@ first input     second input   return
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for :ref:`material_non_implication<test_material_non_implication>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+* I add a test for :ref:`material_non_implication<test_material_non_implication>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1259,7 +1259,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the second case, which is if the first input is :green:`True` and the second input is :red:`False` to :ref:`test_material_non_implication` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the second case, which is if the first input is :green:`True` and the second input is :red:`False` to :ref:`test_material_non_implication` in ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1310,7 +1310,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
     material_non_implication(True , False) -> True
     material_non_implication(True , True ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for the third case to :ref:`test_material_non_implication`, for when the first input is :red:`False` and the second input is :green:`True`, in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the third case to :ref:`test_material_non_implication`, for when the first input is :red:`False` and the second input is :green:`True`, in ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1592,14 +1592,16 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I remove ``True if`` and ``else False`` to make the statement simpler
 
   .. code-block:: python
-    :lineno-start: 94
-    :emphasize-lines: 2, 4
+    :lineno-start: 81
+    :emphasize-lines: 3, 5
 
+    def material_non_implication(first_input, second_input):
         return (
             # True if
             first_input and not second_input
             # else False
         )
+        # if first_input == True:
 
   green.
 
@@ -1673,21 +1675,9 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
   .. code-block:: python
     :lineno-start: 81
-    :emphasize-lines: 14-17
+    :emphasize-lines: 2-5
 
     def material_non_implication(first_input, second_input):
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-        # if first_input:
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-            # if not second_input:
-        # if first_input and not second_input:
-        #         return True
-        # return False
         return logical_conjunction(
             first_input,
             logical_negation(second_input)
@@ -1714,7 +1704,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
     material_non_implication(True , True ) -> False
      └── logical_conjunction(True , False) -> False
 
-* I remove the comments
+* I remove the commented lines and other statements from :ref:`material_non_implication<test_material_non_implication>`
 
   .. code-block:: python
     :lineno-start: 81
@@ -1859,7 +1849,7 @@ because :ref:`logical_disjunction<test_logical_disjunction>` returns ``first_inp
 
   the test is still green.
 
-* I put the first two :ref:`return statements<the return statement>` back, then remove the commented lines
+* I put the first two :ref:`return statements<the return statement>` back, then remove the commented lines from :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
     :lineno-start: 62
@@ -1927,7 +1917,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`project_first<test_project_first>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, in ``test_binary.py``
+* I add a test for :ref:`project_first<test_project_first>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, in ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1996,7 +1986,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the second case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_project_first` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the second case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_project_first` in ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2113,7 +2103,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
               └── return False
               return True
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_project_first` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_project_first` in ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2267,20 +2257,11 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 
   .. code-block:: python
     :lineno-start: 88
-    :emphasize-lines: 6-7, 10-12
+    :emphasize-lines: 2
 
     def project_first(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-        # if not first_input:
-        #     return False
-        # else:
-        # if not (not first_input):
-        # if first_input:
-        #     return True
         return True if first_input else False
+        # if first_input == False:
 
   the test is still green.
 
@@ -2295,25 +2276,15 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 
   .. code-block:: python
     :lineno-start: 88
-    :emphasize-lines: 13
+    :emphasize-lines: 2
 
     def project_first(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-        # if not first_input:
-        #     return False
-        # else:
-        # if not (not first_input):
-        # if first_input:
-        #     return True
-        # return True if first_input else False
         return first_input
+        return True if first_input else False
 
   still green.
 
-* I remove the other statements
+* I remove the other statements from :ref:`project_first<test_project_first>`
 
   .. code-block:: python
     :lineno-start: 88
@@ -2422,7 +2393,7 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test for :ref:`converse_implication<test_converse_implication>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+* I add a test for :ref:`converse_implication<test_converse_implication>` with an :ref:`assertion<what is an assertion?>` for if the first input is :green:`True` and the second input is :green:`True`, to ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2490,7 +2461,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the second case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_converse_implication` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the second case, which is if the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_converse_implication` in ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2570,7 +2541,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
     converse_implication(True , False) -> True
     converse_implication(True , True ) -> True
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_converse_implication` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is if the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_converse_implication` in ``tests/test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2600,7 +2571,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
     AssertionError: False is not true
 
-  because when :ref:`converse_implication<test_converse_implication>` is :ref:`called<how to call a function with input>`, Python_ checks ``if first_input == False:``
+  because Python_ checks ``if first_input == False:`` when :ref:`converse_implication<test_converse_implication>` is :ref:`called<how to call a function with input>`
 
   - if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` then runs ``return True``
   - if ``first_input`` is equal to :red:`False`, it runs ``return False``
@@ -2627,7 +2598,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
     converse_implication(True , False) -> True
     converse_implication(True , True ) -> True
 
-  Python_ ``if first_input == False:``  when :ref:`converse_implication<test_converse_implication>` is :ref:`called<how to call a function with input>`
+  Python_ checks ``if first_input == False:``  when :ref:`converse_implication<test_converse_implication>` is :ref:`called<how to call a function with input>`
 
   - if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` then runs ``return True``
 
@@ -2899,25 +2870,15 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   .. code-block:: python
     :lineno-start: 102
-    :emphasize-lines: 1-2, 5, 7, 9-17
+    :emphasize-lines: 2-6
 
-        # if not first_input and second_input:
-        #     return False
-        # else:
-        # if not (not first_input and second_input):
-        # if (
-            # (not not first_input)
-            # first_input
-            # (not and)
-            # or
-            # (not second_input)
-        # ):
-            # return True
+    def converse_implication(first_input, second_input):
         return (
             True if
             first_input or not second_input
             else False
         )
+        # if first_input == False:
 
   still green.
 
@@ -2925,25 +2886,15 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   .. code-block:: python
     :lineno-start: 102
-    :emphasize-lines: 14, 16
+    :emphasize-lines: 3, 5
 
-        # if not first_input and second_input:
-        #     return False
-        # else:
-        # if not (not first_input and second_input):
-        # if (
-            # (not not first_input)
-            # first_input
-            # (not and)
-            # or
-            # (not second_input)
-        # ):
-            # return True
+    def converse_implication(first_input, second_input):
         return (
             # True if
             first_input or not second_input
             # else False
         )
+        # if first_input == False:
 
   green.
 
@@ -3016,17 +2967,10 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
   I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
-    :lineno-start: 106
-    :emphasize-lines: 9-12
+    :lineno-start: 92
+    :emphasize-lines: 2-5
 
-        # if (
-            # (not not first_input)
-            # (not and)
-        #     first_input
-        #     or
-        #     (not second_input)
-        # ):
-        #     return True
+    def converse_implication(first_input, second_input):
         return logical_disjunction(
             first_input,
             logical_negation(second_input)
@@ -3053,7 +2997,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
     converse_implication(True , True ) -> True
     └── logical_disjunction(True , False) -> True
 
-* I remove the comments
+* I remove the commented lines from :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
     :lineno-start: 92
@@ -3138,7 +3082,7 @@ examples of Converse Implication
 close the project
 *********************************************************************************
 
-* I close ``test_binary.py`` and ``src/truth_table/__init__.py``
+* I close ``tests/test_binary.py`` and ``src/truth_table/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
