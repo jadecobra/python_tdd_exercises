@@ -710,7 +710,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I add a git_ commit message
 
   .. code-block:: python
-    :emphasize-lines:
+    :emphasize-lines: 1
 
     git commit -am 'add test_catching_success'
 
