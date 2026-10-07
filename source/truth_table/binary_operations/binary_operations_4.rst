@@ -1,6 +1,6 @@
 .. meta::
   :description: Truth table Binary Operations 4 in Python using TDD—complete all sixteen binary operations in test_binary.py by adding negate_second (not second), logical_nor (not (first or second), True only when both False), logical_equality (first == second), and material_implication (not first or second). Full cumulative unittest suite: 16 test methods, 64 assertions across TT/TF/FT/FF. Refactor nested if-statements to return not (first or second), first == second, and not first or second; debug SyntaxError invalid syntax; factor not from if/else and return not (something). Real-world examples: defective product return rule, fire alarm works when power and sensor, logical equality matching pairs, material implication promise logic. Review includes complete sixteen-row truth table (logical_nor returns True only when both inputs False). Requires Binary Operations 3. Jacob Itegboje Pumping Python.
-  :keywords: Jacob Itegboje, Pumping Python, truth table Binary Operations 4, test_binary.py all sixteen operations, negate_second not second, logical_nor not (first or second), logical_equality first == second, material_implication not first or second, complete binary truth table 16 gates, TDD red green refactor final binary chapter, SyntaxError invalid syntax boolean refactor, return not something if else pattern, defective product return logic, fire alarm power and sensor rule, logical equality vs exclusive disjunction XOR, material implication promise logic, assertTrue assertFalse 64 assertions, not A or B NOR gate python, programming truth tables beginners, boolean algebra software engineering, unittest truth_table project
+  :keywords: Jacob Itegboje, Pumping Python, truth table Binary Operations 4, test_binary.py all sixteen operations, negate_second not second, logical_nor not (first or second), logical_equality first == second, material_implication not first or second, complete binary truth table 16 gates, TDD red green refactor final binary chapter, SyntaxError invalid syntax boolean refactor, return not something if else pattern, defective product return logic, fire alarm power and sensor rule, logical equality vs exclusive disjunction XOR, material implication promise logic, assertTrue assertFalse 64 assertions, not (A or B) NOR gate python, programming truth tables beginners, boolean algebra software engineering, unittest truth_table project
 
 .. include:: ../../links.rst
 
@@ -974,7 +974,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 * I "factor" out the :ref:`nots<test_logical_negation>`
 
   .. code-block:: python
-    :lineno-start: 118
+    :lineno-start: 105
     :emphasize-lines: 4-7
 
         return (
@@ -1054,7 +1054,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
   .. code-block:: python
     :lineno-start: 104
-    :emphasize-lines: 42-6
+    :emphasize-lines: 2-6
 
     def logical_nor(first_input, second_input):
         return logical_negation(
@@ -1777,7 +1777,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
     def logical_equality(first_input, second_input):
         return (
             # True if
-            (first input and second_input)
+            (first_input and second_input)
             or
             # (not first_input and not second_input)
             (
@@ -1819,7 +1819,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
   the test is green again.
 
-* :ref:`Logical Equality<test_logical_equality>` returns ``((first_input and second_input) or not (first_input or second_input))``, which can be thought of as the :ref:`Logical Disjunction (OR)<test_logical_disjunction>`, of the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and second input, and the :ref:`Logical Negation(NOT)<test_logical_negation>` of the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the first input and second input also known as the :ref:`Logical NOR<test_logical_nor>` of the first input and second input
+* :ref:`Logical Equality<test_logical_equality>` returns ``((first_input and second_input) or not (first_input or second_input))``, which can be thought of as the :ref:`Logical Disjunction (OR)<test_logical_disjunction>`, of the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and second input, and the :ref:`Logical Negation (NOT)<test_logical_negation>` of the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the first input and second input also known as the :ref:`Logical NOR<test_logical_nor>` of the first input and second input
 
   .. code-block:: python
 
@@ -1985,7 +1985,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
 * returns ``first_input == second_input``.
 * returns :ref:`True<test_what_is_true>` when the first input is equal to the second input.
-* returns the :ref:`Logical Disjunction (OR)<test_logical_disjunction>`, of the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and second input, and the :ref:`Logical Negation(NOT)<test_logical_negation>` of the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the first input and second input. Oh brother!
+* returns the :ref:`Logical Disjunction (OR)<test_logical_disjunction>`, of the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and second input, and the :ref:`Logical Negation (NOT)<test_logical_negation>` of the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the first input and second input. Oh brother!
 * is the :ref:`opposite<test_logical_negation>` of :ref:`Exclusive Disjunction<test_exclusive_disjunction>` which returns :green:`True`, only if the first input and second input are NOT equal.
 
 ----
@@ -3333,7 +3333,7 @@ review
   :red:`False`    :red:`False`   :red:`False`
   ==============  ============== ==============
 
-* :ref:`Logical Conjunction<test_logical_conjunction>` returns
+* :ref:`Logical Conjunction<test_logical_conjunction>`
 
   - returns ``first_input and second_input``
   - returns :green:`True` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
