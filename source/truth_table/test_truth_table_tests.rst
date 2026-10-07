@@ -1,13 +1,13 @@
 .. meta::
   :description: Ultimate Python TDD challenge—wipe truth_table.py and rebuild all 20 operations (4 nullary/unary + 16 binary) so tests/test_binary.py and tests/test_nullary_unary.py pass without reading the tests. Follow AttributeError (module has no attribute …), NameError, TypeError (NoneType not callable / wrong arity), and AssertionError (None is not true, True is not false) through Red-Green-Refactor. Implement logical_true/false, identity, negation (not), then tautology, project_first/second, negate_first/second, AND/OR/NAND/NOR, XOR, equality, material and converse implication/non-implication, contradiction. Refactor case-by-case ifs into idiomatic and/or/not. uv run pytest-watcher . --now. Jacob Itegboje Pumping Python TDD.
-  :keywords: Jacob Itegboje, Pumping Python, test_truth_table_tests, truth table blank file challenge, 20 failing tests pytest, AttributeError module has no attribute logical_negation, NameError name is not defined, TypeError NoneType not callable, TypeError takes 0 positional arguments but 1 was given, AssertionError None is not true, logical_true logical_false nullary, logical_identity logical_negation not, logical_conjunction AND, logical_disjunction OR, logical_nand logical_nor, exclusive_disjunction XOR, material_implication converse_implication, project_first project_second, TDD red green refactor truth table, pytest-watcher truth_table, uv run pytest-watcher, rebuild boolean logic library Python
+  :keywords: Jacob Itegboje, Pumping Python, test truth table tests, truth table blank file challenge, 20 failing tests pytest, AttributeError module has no attribute logical_negation, NameError name is not defined, TypeError NoneType not callable, TypeError takes 0 positional arguments but 1 was given, AssertionError None is not true, logical_true logical_false nullary, logical_identity logical_negation not, logical_conjunction AND, logical_disjunction OR, logical_nand logical_nor, exclusive_disjunction XOR, material_implication converse_implication, project_first project_second, TDD red green refactor truth table, pytest-watcher truth_table, uv run pytest-watcher, rebuild boolean logic library Python
 
 .. include:: ../links.rst
 
-.. _test_truth_table_tests:
+.. _test truth table tests:
 
 #################################################################################
-truth table: test_truth_table_tests
+truth table: test truth table tests
 #################################################################################
 
 ----
@@ -38,7 +38,7 @@ open the project
 
     .../pumping_python
 
-  `change directory`_ to the ``pumping_python`` folder
+  I `change directory`_ to the ``pumping_python`` folder
 
 * I `change directory`_ to the :ref:`truth_table<truth table>` project
 
@@ -133,7 +133,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     :linenos:
     :emphasize-lines: 1-3
 
-    # logical_negation
+    # logical_negation = None
     def logical_negation():
         return None
 
@@ -150,7 +150,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     :linenos:
     :emphasize-lines: 2-3
 
-    # logical_negation
+    # logical_negation = None
     # def logical_negation():
     def logical_negation(something):
         return None
@@ -167,13 +167,13 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4-5
+    :emphasize-lines: 4
 
-    # logical_negation
+    # logical_negation = None
     # def logical_negation():
     def logical_negation(something):
-        # return None
         return True
+        return None
 
   the terminal shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -187,14 +187,14 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5-6
+    :emphasize-lines: 4
 
-    # logical_negation
+    # logical_negation = None
     # def logical_negation():
     def logical_negation(something):
-        # return None
-        # return True
         return False
+        return True
+        return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -206,15 +206,15 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 6-7
+    :emphasize-lines: 4
 
-    # logical_negation
+    # logical_negation = None
     # def logical_negation():
     def logical_negation(something):
-        # return None
-        # return True
-        # return False
         return something
+        return False
+        return True
+        return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -233,16 +233,16 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 7-8
+    :emphasize-lines: 4
 
-    # logical_negation
+    # logical_negation = None
     # def logical_negation():
     def logical_negation(something):
-        # return None
-        # return True
-        # return False
-        # return something
         return not something
+        return something
+        return False
+        return True
+        return None
 
   the terminal_ shows ``19 failed, 1 passed``, progress! It also shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -257,7 +257,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     :lineno-start: 8
     :emphasize-lines: 4-5
 
-        return not something
+        return None
 
 
     def logical_identity():
@@ -286,16 +286,16 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     AssertionError: None is not true
 
-* I change the :ref:`return statement<the return statement>` for :ref:`logical_identity<test_logical_identity>` to give the test what it wants
+* I return what the test what wants
 
   .. code-block:: python
     :lineno-start: 11
-    :emphasize-lines: 3-4
+    :emphasize-lines: 3
 
     # def logical_identity():
     def logical_identity(something):
-        # return None
         return True
+        return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -309,13 +309,13 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
     :lineno-start: 11
-    :emphasize-lines: 4-5
+    :emphasize-lines: 3
 
     # def logical_identity():
     def logical_identity(something):
-        # return None
-        # return True
         return False
+        return True
+        return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -333,14 +333,14 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
     :lineno-start: 11
-    :emphasize-lines: 5-6
+    :emphasize-lines: 3
 
     # def logical_identity():
     def logical_identity(something):
-        # return None
-        # return True
-        # return False
         return something
+        return False
+        return True
+        return None
 
   the terminal_ shows ``18 failed, 2 passed``, more progress! It also shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -355,7 +355,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     :lineno-start: 16
     :emphasize-lines: 4-5
 
-        return something
+        return None
 
 
     def logical_true():
@@ -371,13 +371,13 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2
 
     def logical_true():
-        # return None
         return True
+        return None
 
-  17 failed, 3 passed. That was simple. the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  ``17 failed, 3 passed``. That was simple. the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -391,7 +391,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     :lineno-start: 21
     :emphasize-lines: 4-5
 
-        return True
+        return None
 
 
     def logical_false():
@@ -443,12 +443,12 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
     :lineno-start: 28
-    :emphasize-lines: 3-4
+    :emphasize-lines: 3
 
     # def tautology():
     def tautology(first, second):
-        # return None
         return True
+        return None
 
   the terminal shows ``15 failed, 5 passed``, Yes! It also shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -463,7 +463,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     :lineno-start: 31
     :emphasize-lines: 4-5
 
-        return True
+        return None
 
 
     def project_second():
@@ -496,12 +496,12 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
     :lineno-start: 34
-    :emphasize-lines: 3-4
+    :emphasize-lines: 3
 
     # def project_second():
     def project_second(first, second):
-        # return None
         return True
+        return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -515,13 +515,13 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
     :lineno-start: 34
-    :emphasize-lines: 4-5
+    :emphasize-lines: 3
 
     # def project_second():
     def project_second(first, second):
-        # return None
-        # return True
         return False
+        return True
+        return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -539,14 +539,14 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
     :lineno-start: 34
-    :emphasize-lines: 5-6
+    :emphasize-lines: 3
 
     # def project_second():
     def project_second(first, second):
-        # return None
-        # return True
-        # return False
         return first, second
+        return False
+        return True
+        return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -560,15 +560,15 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
     :lineno-start: 34
-    :emphasize-lines: 6-7
+    :emphasize-lines: 3
 
     # def project_second():
     def project_second(first, second):
-        # return None
-        # return True
-        # return False
-        # return first, second
         return second
+        return first, second
+        return False
+        return True
+        return None
 
   the terminal_ shows ``14 failed, 6 passed``, and :ref:`AttributeError<what causes AttributeError?>`
 
@@ -583,7 +583,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     :lineno-start: 40
     :emphasize-lines: 4-5
 
-        return second
+        return None
 
 
     def project_first():
@@ -618,12 +618,12 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
     :lineno-start: 43
-    :emphasize-lines: 3-4
+    :emphasize-lines: 3
 
     # def project_first():
     def project_first(first, second):
-        # return None
         return True
+        return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -637,13 +637,13 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
     :lineno-start: 43
-    :emphasize-lines: 4-5
+    :emphasize-lines: 3
 
     # def project_first():
     def project_first(first, second):
-        # return None
-        # return True
         return False
+        return True
+        return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -661,14 +661,14 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   .. code-block:: python
     :lineno-start: 43
-    :emphasize-lines: 5-6
+    :emphasize-lines: 3
 
     # def project_first():
     def project_first(first, second):
-        # return None
-        # return True
-        # return False
         return first, second
+        return False
+        return True
+        return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -686,11 +686,11 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     # def project_first():
     def project_first(first, second):
-        # return None
-        # return True
-        # return False
-        # return first, second
         return first
+        return first, second
+        return False
+        return True
+        return None
 
   the terminal_ shows ``13 failed, 7 passed``, and :ref:`AttributeError<what causes AttributeError?>`
 
@@ -705,7 +705,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     :lineno-start: 49
     :emphasize-lines: 4-5
 
-        return first
+        return None
 
 
     def negate_second(first, second):
@@ -1434,15 +1434,15 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 124
-    :emphasize-lines: 2-7
+    :emphasize-lines: 2
 
     def contradiction(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, True): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
         return False
+        if (first, second) == (True, True): return False
+        if (first, second) == (True, False): return False
+        if (first, second) == (False, True): return False
+        if (first, second) == (False, False): return False
+        return first, second
 
   the test is still green.
 
@@ -1508,12 +1508,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
     :emphasize-lines: 5-8
 
     def converse_implication(first, second):
-        # if (first, second) == (False, True): return False
-        # if first == False and second == True:
-        # if not first == True and second == True:
-        # if not first and second:
-        #     return False
-        # return first, second
+        return (not not first) (not and) (not second)
         return not (not first and second)
 
   the test is still green.

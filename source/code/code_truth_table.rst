@@ -191,7 +191,7 @@ The code in ``truth_table/src/truth_table/__init__.py`` from :ref:`truth table: 
 Truth Table tests: solutions
 *********************************************************************************
 
-The code in ``truth_table/src/truth_table/__init__.py`` from :ref:`truth table: test_truth_table_tests`
+The code in ``truth_table/src/truth_table/__init__.py`` from :ref:`truth table: test truth table tests`
 
 .. literalinclude:: truth_table/src/truth_table.py
   :language: python
