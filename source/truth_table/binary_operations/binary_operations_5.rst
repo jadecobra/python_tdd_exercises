@@ -846,7 +846,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
   ======================  =====================  =====================
 
-  :green:`WATER` only if :green:`it rained`, I do not care if the :green:`soil is dry` or  if the :red:`soil is wet`. Am I trying to make a swamp?
+  :green:`WATER` only if :green:`it rained`, I do not care if the :green:`soil is dry` or if the :red:`soil is wet`. Am I trying to make a swamp?
 
 * :ref:`converse_non_implication<test_converse_non_implication>`: ``return (not first) and second``
 
@@ -977,7 +977,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
   ======================  =====================  =====================
 
-  :green:`WATER` only if it did :red:`NOT rain`, I do not care if the  :green:`soil is dry` or if the :red:`soil is wet`.
+  :green:`WATER` only if it did :red:`NOT rain`, I do not care if the :green:`soil is dry` or if the :red:`soil is wet`.
 
 * :ref:`logical_nor<test_logical_nor>`: ``return not (first or second)``
 
@@ -1078,7 +1078,7 @@ The examples above show
   :ref:`exclusive_disjunction<test_exclusive_disjunction>`        outputs :red:`OFF` if there is :green:`motion` AND the :green:`right code` is entered, OR if there is :red:`no motion` AND the :red:`wrong code` is entered
   :ref:`material_non_implication<test_material_non_implication>`  outputs :green:`ON` only if there is :green:`motion` AND :red:`NOT the right code` is entered
   :ref:`project_first<test_project_first>`                        outputs :green:`ON` only if there is :green:`motion`, it does not care if the :green:`right code` or :red:`wrong code` was entered
-  :ref:`converse_implication<test_converse_implication>`          outputs :red:`OFF` if there is :red:`no motion` AND the :green:`right code` is entered
+  :ref:`converse_implication<test_converse_implication>`          outputs :red:`OFF` only if there is :red:`no motion` AND the :green:`right code` is entered
   :ref:`negate_second<test_negate_second>`                        outputs :green:`ON` only if the :red:`wrong code` is entered
   :ref:`logical_nor<test_logical_nor>`                            outputs :green:`ON` only if there is :red:`no motion` AND the :red:`wrong code` is entered
   :ref:`logical_equality<test_logical_equality>`                  outputs :green:`ON` if there is :green:`motion` AND the :green:`right code` is entered, OR if there is :red:`no motion` AND the :red:`wrong code` is entered
@@ -1210,7 +1210,7 @@ The examples above show
   ==============================================================  =====================================================================================================================================================
   :ref:`contradiction<test_contradiction>`                        :red:`DO NOT WATER` always
   :ref:`logical_conjunction<test_logical_conjunction>`            :green:`WATER` only if the :green:`soil is dry` AND :green:`it rained`
-  :ref:`project_second<test_project_second>`                      :green:`WATER` only if :green:`it rained`, I do not care if the :green:`soil is dry` or  if the :red:`soil is wet`
+  :ref:`project_second<test_project_second>`                      :green:`WATER` only if :green:`it rained`, I do not care if the :green:`soil is dry` or if the :red:`soil is wet`
   :ref:`converse_non_implication<test_converse_non_implication>`  :green:`WATER` only if the :red:`soil is wet` AND :green:`it rained`
   :ref:`negate_first<test_negate_first>`                          :green:`WATER` only if the :red:`soil is wet`, I do not care if it :green:`rained` or did :red:`NOT rain`
   :ref:`logical_nand<test_logical_nand>`                          :red:`DO NOT WATER` only if the :green:`soil is dry` AND :green:`it rained`
@@ -1220,7 +1220,7 @@ The examples above show
   :ref:`material_non_implication<test_material_non_implication>`  :green:`WATER` only if the :green:`soil is dry` AND it did :red:`NOT rain`
   :ref:`project_first<test_project_first>`                        :green:`WATER` only if the :green:`soil is dry`, I do not care if it :green:`rained` or did :red:`NOT rain`
   :ref:`converse_implication<test_converse_implication>`          :red:`DO NOT WATER` only if the :red:`soil is wet` AND :green:`it rained`
-  :ref:`negate_second<test_negate_second>`                        :green:`WATER` only if it did :red:`NOT rain`, I do not care if the  :green:`soil is dry` or if the :red:`soil is wet`
+  :ref:`negate_second<test_negate_second>`                        :green:`WATER` only if it did :red:`NOT rain`, I do not care if the :green:`soil is dry` or if the :red:`soil is wet`
   :ref:`logical_nor<test_logical_nor>`                            :green:`WATER` only if the :red:`soil is wet` AND it did :red:`NOT rain`
   :ref:`logical_equality<test_logical_equality>`                  :green:`WATER` if the :green:`soil is dry` AND :green:`it rained`, OR if the :red:`soil is wet` AND it did :red:`NOT rain`
   :ref:`material_implication<test_material_implication>`          :red:`DO NOT WATER` if the :green:`soil is dry` AND it did :red:`NOT rain`
