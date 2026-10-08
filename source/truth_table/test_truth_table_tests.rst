@@ -2003,20 +2003,11 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 94
-    :emphasize-lines: 8-12
+    :emphasize-lines: 2
 
     def logical_disjunction(first, second):
-        # if (first, second) == (False, False): return False
-        # return first, second
-        # if first == False and second == False:
-        # if not first == True and not second == True:
-        # if not first and not second:
-        # if (not first) (not or) (not second):
-        # if not (first or second):
-        #     return False
-        # else:
-        #     return True
         return not (not (first or second))
+        # if first == False and second == False:
 
   still green.
 
@@ -2024,25 +2015,15 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 94
-    :emphasize-lines: 12-13
+    :emphasize-lines: 2
 
     def logical_disjunction(first, second):
-        # if (first, second) == (False, False): return False
-        # return first, second
-        # if first == False and second == False:
-        # if not first == True and not second == True:
-        # if not first and not second:
-        # if (not first) (not or) (not second):
-        # if not (first or second):
-        #     return False
-        # else:
-        #     return True
-        # return not (not (first or second))
         return first or second
+        return not (not (first or second))
 
   the test is still green.
 
-* I remove the commented lines from :ref:`logical_disjunction<test_logical_disjunction>`
+* I remove the commented lines and other statements from :ref:`logical_disjunction<test_logical_disjunction>`
 
   .. code-block:: python
     :lineno-start: 94
@@ -2059,17 +2040,15 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 88
-    :emphasize-lines: 2-9
+    :emphasize-lines: 2-6
 
     def logical_equality(first, second):
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, True): return False
-        # return first, second
         if first == True and second == False:
             return False
         if first == False and second == True:
             return False
         return True
+        if (first, second) == (True, False):
 
   the test is still green.
 
@@ -2077,12 +2056,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 88
-    :emphasize-lines: 5-6, 8-9
+    :emphasize-lines: 2-3, 5-6
 
     def logical_equality(first, second):
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, True): return False
-        # return first, second
         # if first == True and second == False:
         if first == True and not second == True:
             return False
@@ -2097,12 +2073,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 88
-    :emphasize-lines: 6-7, 10-11
+    :emphasize-lines: 3-4, 7-8
 
     def logical_equality(first, second):
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, True): return False
-        # return first, second
         # if first == True and second == False:
         # if first == True and not second == True:
         if first and not second:
@@ -2119,19 +2092,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 88
-    :emphasize-lines: 7-8, 11-16
+    :emphasize-lines: 2-8
 
     def logical_equality(first, second):
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, True): return False
-        # return first, second
-        # if first == True and second == False:
-        # if first == True and not second == True:
-        # if first and not second:
-        #     return False
-        # if first == False and second == True:
-        # if not first == True and second == True:
-        # if not first and second:
         if (
             (first and not second)
             or
@@ -2139,6 +2102,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
         ):
             return False
         return True
+        # if first == True and second == False:
 
 
   still green.
@@ -2146,39 +2110,39 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I add a :ref:`return statement<the return statement>` because ...
 
   .. code-block:: python
-    :lineno-start: 99
-    :emphasize-lines: 1-12
+    :lineno-start: 88
+    :emphasize-lines: 2-6
 
-        # if (
-        #     (first and not second)
-        #     or
-        #     (not first and second)
-        # ):
-        #     return False
-        # return True
+    def logical_equality(first, second):
         return not (
             (first and not second)
             or
             (not first and second)
         )
+        if (
+            (first and not second)
+            or
+            (not first and second)
+        ):
 
   the test is still green.
 
 * I multiply :ref:`not<test_logical_negation>` by all the symbols in parentheses
 
   .. code-block:: python
-    :lineno-start: 106
-    :emphasize-lines: 1-10
+    :lineno-start: 88
+    :emphasize-lines: 2-5
 
-        # return not (
-        #     (first and not second)
-        #     or
-        #     (not first and second)
-        # )
+    def logical_equality(first, second):
         return (
             (not (first and not second))
             (not or)
             (not (not first and second))
+        )
+        return not (
+            (first and not second)
+            or
+            (not first and second)
         )
 
   the terminal_ is my friend, and shows SyntaxError_
@@ -2190,9 +2154,10 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change ``not or`` to :ref:`and<test_logical_conjunction>`
 
   .. code-block:: python
-    :lineno-start: 111
-    :emphasize-lines: 3-4
+    :lineno-start: 88
+    :emphasize-lines: 4-5
 
+    def logical_equality(first, second):
         return (
             (not (first and not second))
             # (not or)
@@ -2205,9 +2170,10 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I multiply :ref:`not<test_logical_negation>` by the symbols in the first part of the statement
 
   .. code-block:: python
-    :lineno-start: 111
-    :emphasize-lines: 2-3
+    :lineno-start: 88
+    :emphasize-lines: 3-4
 
+    def logical_equality(first, second):
         return (
             # (not (first and not second))
             ((not first) (not and) (not not second))
@@ -2225,9 +2191,10 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change ``not and`` to :ref:`or<test_logical_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 111
-    :emphasize-lines: 3-4
+    :lineno-start: 88
+    :emphasize-lines: 4-5
 
+    def logical_equality(first, second):
         return (
             # (not (first and not second))
             # ((not first) (not and) (not not second))
@@ -2237,15 +2204,15 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
             (not (not first and second))
         )
 
-
   the test is green again.
 
 * I remove ``not not``
 
   .. code-block:: python
-    :lineno-start: 111
-    :emphasize-lines: 4-5
+    :lineno-start: 88
+    :emphasize-lines: 5-6
 
+    def logical_equality(first, second):
         return (
             # (not (first and not second))
             # ((not first) (not and) (not not second))
@@ -2261,9 +2228,10 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I multiply :ref:`not<test_logical_negation>` by the symbols in the second part of the statement
 
   .. code-block:: python
-    :lineno-start: 111
-    :emphasize-lines: 8-9
+    :lineno-start: 88
+    :emphasize-lines: 9-10
 
+    def logical_equality(first, second):
         return (
             # (not (first and not second))
             # ((not first) (not and) (not not second))
@@ -2284,9 +2252,10 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change ``not and`` to :ref:`or<test_logical_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 111
-    :emphasize-lines: 9-10
+    :lineno-start: 88
+    :emphasize-lines: 10-11
 
+    def logical_equality(first, second):
         return (
             # (not (first and not second))
             # ((not first) (not and) (not not second))
@@ -2304,9 +2273,10 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``not not``
 
   .. code-block:: python
-    :lineno-start: 111
-    :emphasize-lines: 10-11
+    :lineno-start: 88
+    :emphasize-lines: 11-12
 
+    def logical_equality(first, second):
         return (
             # (not (first and not second))
             # ((not first) (not and) (not not second))
@@ -2322,13 +2292,17 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   the test is still green.
 
-* I remove the commented lines from :ref:`logical_equality<test_logical_equality>`
+* I remove the commented lines and other statements from :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
     :lineno-start: 88
 
     def logical_equality(first, second):
-        return (not first or second) and (first or not second)
+        return (
+            (not first or second)
+            and
+            (first or not second)
+        )
 
 
     def logical_disjunction(first, second):
@@ -2339,15 +2313,15 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 83
-    :emphasize-lines: 2-7
+    :emphasize-lines: 2-5
 
     def logical_nand(first, second):
-        # if (first, second) == (True, True): return False
-        # return first, second
         if first == True and second == True:
             return False
         else:
             return True
+        if (first, second) == (True, True): return False
+        return first, second
 
   the test is still green.
 
@@ -2355,16 +2329,15 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 83
-    :emphasize-lines: 4-5
+    :emphasize-lines: 2-3
 
     def logical_nand(first, second):
-        # if (first, second) == (True, True): return False
-        # return first, second
         # if first == True and second == True:
         if first and second:
             return False
         else:
             return True
+        if (first, second) == (True, True):
 
   still green.
 
@@ -2372,21 +2345,15 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 83
-    :emphasize-lines: 5-9
+    :emphasize-lines: 2-3
 
     def logical_nand(first, second):
-        # if (first, second) == (True, True): return False
-        # return first, second
-        # if first == True and second == True:
-        # if first and second:
-        #     return False
-        # else:
-        #     return True
         return not (first and second)
+        # if first == True and second == True:
 
   green.
 
-* I remove the commented lines from :ref:`logical_nand<test_logical_nand>`
+* I remove the commented line and other statements from :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
     :lineno-start: 83
@@ -2403,17 +2370,14 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 76
-    :emphasize-lines: 2-9
+    :emphasize-lines: 2-5
 
     def logical_nor(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, True): return False
-        # return first, second
         if first == False and second == False:
             return True
         else:
             return False
+        if (first, second) == (True, True):
 
   the test is still green.
 
@@ -2421,13 +2385,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 76
-    :emphasize-lines: 6-7
+    :emphasize-lines: 2-3
 
     def logical_nor(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, True): return False
-        # return first, second
         # if first == False and second == False:
         if not first == True and not second == True:
             return True
@@ -2440,13 +2400,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 76
-    :emphasize-lines: 7-8
+    :emphasize-lines: 3-4
 
     def logical_nor(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, True): return False
-        # return first, second
         # if first == False and second == False:
         # if not first == True and not second == True:
         if not first and not second:
@@ -2460,35 +2416,23 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 76
-    :emphasize-lines: 7-12
+    :emphasize-lines: 2
 
     def logical_nor(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, True): return False
-        # return first, second
-        # if first == False and second == False:
-        # if not first == True and not second == True:
-        # if not first and not second:
-        #     return True
-        # else:
-        #     return False
         return not first and not second
+        # if first == False and second == False:
 
   still green.
 
 * I write the statement with :ref:`not<test_logical_negation>` because it happens two times
 
   .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 5-6
+    :lineno-start: 76
+    :emphasize-lines: 2
 
-        # if not first and not second:
-        #     return True
-        # else:
-        #     return False
-        # return not first and not second
+    def logical_nor(first, second):
         return (not first) (not or) (not second)
+        return not first and not second
 
   the terminal_ is my friend, and shows `SyntaxError`_
 
@@ -2499,20 +2443,16 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I factor out :ref:`not<test_logical_negation>`
 
   .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 6-7
+    :lineno-start: 76
+    :emphasize-lines: 2
 
-        # if not first and not second:
-        #     return True
-        # else:
-        #     return False
-        # return not first and not second
-        # return (not first) (not or) (not second)
+    def logical_nor(first, second):
         return not (first or second)
+        return (not first) (not or) (not second)
 
   the test is green again.
 
-* I remove the commented lines from :ref:`logical_nor<test_logical_nor>`
+* I remove the commented lines and other statements from :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
     :lineno-start: 76
@@ -2529,12 +2469,12 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 71
-    :emphasize-lines: 2-4
+    :emphasize-lines: 2
 
     def material_implication(first, second):
-        # if (first, second) == (True, False): return False
-        # return first, second
         return not ((first, second) == (True, False))
+        if (first, second) == (True, False): return False
+        return first, second
 
   the test is still green.
 
@@ -2542,13 +2482,11 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 71
-    :emphasize-lines: 4-5
+    :emphasize-lines: 2
 
     def material_implication(first, second):
-        # if (first, second) == (True, False): return False
-        # return first, second
-        # return not ((first, second) == (True, False))
         return not (first == True and second == False)
+        return not ((first, second) == (True, False))
 
   still green.
 
@@ -2556,14 +2494,11 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 71
-    :emphasize-lines: 5-6
+    :emphasize-lines: 2
 
     def material_implication(first, second):
-        # if (first, second) == (True, False): return False
-        # return first, second
-        # return not ((first, second) == (True, False))
-        # return not (first == True and second == False)
         return not (first == True and not second == True)
+        return not (first == True and second == False)
 
   green.
 
@@ -2571,15 +2506,11 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 71
-    :emphasize-lines: 6-7
+    :emphasize-lines: 2
 
     def material_implication(first, second):
-        # if (first, second) == (True, False): return False
-        # return first, second
-        # return not ((first, second) == (True, False))
-        # return not (first == True and second == False)
-        # return not (first == True and not second == True)
         return not (first and not second)
+        return not (first == True and not second == True)
 
   still green.
 
@@ -2587,16 +2518,11 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 71
-    :emphasize-lines: 7-8
+    :emphasize-lines: 2
 
     def material_implication(first, second):
-        # if (first, second) == (True, False): return False
-        # return first, second
-        # return not ((first, second) == (True, False))
-        # return not (first == True and second == False)
-        # return not (first == True and not second == True)
-        # return not (first and not second)
         return (not first) (not and) (not not second)
+        return not (first and not second)
 
   the terminal_ is my friend, and shows `SyntaxError`_
 
@@ -2608,17 +2534,12 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 71
-    :emphasize-lines: 8-9
+    :emphasize-lines: 2-3
 
     def material_implication(first, second):
-        # if (first, second) == (True, False): return False
-        # return first, second
-        # return not ((first, second) == (True, False))
-        # return not (first == True and second == False)
-        # return not (first == True and not second == True)
-        # return not (first and not second)
-        # return (not first) (not and) (not not second)
         return (not first) or (not not second)
+        # return (not first) (not and) (not not second)
+        return not (first and not second)
 
   the test is green again.
 
@@ -2626,18 +2547,11 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 71
-    :emphasize-lines: 9-10
+    :emphasize-lines: 2
 
     def material_implication(first, second):
-        # if (first, second) == (True, False): return False
-        # return first, second
-        # return not ((first, second) == (True, False))
-        # return not (first == True and second == False)
-        # return not (first == True and not second == True)
-        # return not (first and not second)
-        # return (not first) (not and) (not not second)
-        # return (not first) or (not not second)
         return not first or second
+        return (not first) or (not not second)
 
   the test is still green.
 
@@ -2658,14 +2572,11 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 64
-    :emphasize-lines: 2-6
+    :emphasize-lines: 2
 
     def material_non_implication(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (False, True): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
         return (first, second) == (True, False)
+        if (first, second) == (True, True): return False
 
   the test is still green.
 
@@ -2673,15 +2584,11 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 64
-    :emphasize-lines: 6-7
+    :emphasize-lines: 2
 
     def material_non_implication(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (False, True): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
-        # return (first, second) == (True, False)
         return first == True and second == False
+        return (first, second) == (True, False)
 
   still green.
 
@@ -2689,16 +2596,11 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 64
-    :emphasize-lines: 7-8
+    :emphasize-lines: 2
 
     def material_non_implication(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (False, True): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
-        # return (first, second) == (True, False)
-        # return first == True and second == False
         return first == True and not second == True
+        return first == True and second == False
 
   green.
 
@@ -2706,21 +2608,15 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 64
-    :emphasize-lines: 8-9
+    :emphasize-lines: 2
 
     def material_non_implication(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (False, True): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
-        # return (first, second) == (True, False)
-        # return first == True and second == False
-        # return first == True and not second == True
         return first and not second
+        return first == True and not second == True
 
   still green.
 
-* I remove the commented lines from :ref:`material_non_implication<test_material_non_implication>`
+* I remove the other statements from :ref:`material_non_implication<test_material_non_implication>`
 
   .. code-block:: python
     :lineno-start: 64
@@ -2740,13 +2636,13 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
     :emphasize-lines: 2-8
 
     def negate_first(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (True, False): return False
-        # return first, second
         if first == True:
             return False
         else:
             return True
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (True, False): return False
+        # return first, second
 
   the test is still green.
 
@@ -2754,17 +2650,11 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 58
-    :emphasize-lines: 5-9
+    :emphasize-lines: 2
 
     def negate_first(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (True, False): return False
-        # return first, second
-        # if first == True:
-        #     return False
-        # else:
-        #     return True
         return not first == True
+        if first == True:
 
   still green.
 
@@ -2772,22 +2662,15 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 58
-    :emphasize-lines: 9-10
+    :emphasize-lines: 2
 
     def negate_first(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (True, False): return False
-        # return first, second
-        # if first == True:
-        #     return False
-        # else:
-        #     return True
-        # return not first == True
         return not first
+        return not first == True
 
   green.
 
-* I remove the commented lines from :ref:`negate_first<test_negate_first>`
+* I remove the commented lines and other statements from :ref:`negate_first<test_negate_first>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -2808,13 +2691,13 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
     :emphasize-lines: 2-8
 
     def negate_second(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (False, True): return False
-        # return first, second
         if second == True:
             return False
         else:
             return True
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (False, True): return False
+        # return first, second
 
   the test is still green.
 
@@ -2822,40 +2705,27 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 52
-    :emphasize-lines: 5-9
+    :emphasize-lines: 2
 
     def negate_second(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (False, True): return False
-        # return first, second
-        # if second == True:
-        #     return False
-        # else:
-        #     return True
         return not second == True
+        if second == True:
 
   still green.
 
 * I remove ``== True``
-2879
+
   .. code-block:: python
     :lineno-start: 52
-    :emphasize-lines: 9-10
+    :emphasize-lines: 2
 
     def negate_second(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (False, True): return False
-        # return first, second
-        # if second == True:
-        #     return False
-        # else:
-        #     return True
-        # return not second == True
         return not second
+        return not second == True
 
   green.
 
-* I remove the commented lines from :ref:`negate_second<test_negate_second>`
+* I remove the commented lines and other statements from :ref:`negate_second<test_negate_second>`
 
   .. code-block:: python
     :lineno-start: 52
@@ -2866,12 +2736,18 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
     def negate_first(first, second):
 
-* I remove the commented lines from :ref:`project_first<test_project_first>`
+* I remove the commented line and other statements from :ref:`project_first<test_project_first>`
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 34
 
+    # def project_second():
+    def project_second(first, second):
         return second
+        return first, second
+        return False
+        return True
+        return None
 
 
     def project_first(first, second):
@@ -2880,12 +2756,15 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
     def negate_second(first, second):
 
-* I remove the commented lines from :ref:`project_second<test_project_second>`
+* I remove the commented line and other statements from :ref:`project_second<test_project_second>`
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 28
 
+    # def tautology():
+    def tautology(first, second):
         return True
+        return None
 
 
     def project_second(first, second):
@@ -2894,7 +2773,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
     def project_first(first, second):
 
-* I remove the commented lines from :ref:`tautology<test_tautology>`
+* I remove the commented line and second :ref:`return statement<the return statement>` from :ref:`tautology<test_tautology>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -2913,20 +2792,25 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 24
-    :emphasize-lines: 1-2
+    :emphasize-lines: 2
 
     def logical_false():
-        # return None
         return False
+        return None
 
   the test is still green.
 
-* I remove the commented line from :ref:`logical_false<test_logical_false>` and :ref:`logical_true<test_logical_true>`
+* I remove the second :ref:`return statement<the return statement>` from :ref:`logical_false<test_logical_false>` and :ref:`logical_true<test_logical_true>`
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 11
 
+    # def logical_identity():
+    def logical_identity(something):
         return something
+        return False
+        return True
+        return None
 
 
     def logical_true():
@@ -2939,7 +2823,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
     def tautology(first, second):
 
-* I remove the commented lines from :ref:`logical_identity<test_logical_identity>` and :ref:`logical_negation<test_logical_negation>`
+* I remove the commented lines and other statements from :ref:`logical_identity<test_logical_identity>` and :ref:`logical_negation<test_logical_negation>`
 
   .. code-block:: python
     :linenos:

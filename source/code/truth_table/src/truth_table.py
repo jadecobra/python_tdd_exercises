@@ -51,7 +51,11 @@ def logical_nand(first, second):
 
 
 def logical_equality(first, second):
-    return (not first or second) and (first or not second)
+    return (
+        (not first or second)
+        and
+        (first or not second)
+    )
 
 
 def logical_disjunction(first, second):
@@ -63,7 +67,11 @@ def logical_conjunction(first, second):
 
 
 def exclusive_disjunction(first, second):
-    return (not (first and second)) and (first or second)
+    return (
+        (not (first and second))
+        and
+        (first or second)
+    )
 
 
 def converse_non_implication(first, second):
