@@ -1,5 +1,5 @@
 .. meta::
-  :description: Ultimate Python TDD challenge—wipe truth_table.py and rebuild all 20 operations (4 nullary/unary + 16 binary) so tests/test_binary.py and tests/test_nullary_unary.py pass without reading the tests. Follow AttributeError (module has no attribute …), NameError, TypeError (NoneType not callable / wrong arity), and AssertionError (None is not true, True is not false) through Red-Green-Refactor. Implement logical_true/false, identity, negation (not), then tautology, project_first/second, negate_first/second, AND/OR/NAND/NOR, XOR, equality, material and converse implication/non-implication, contradiction. Refactor case-by-case ifs into idiomatic and/or/not. uv run pytest-watcher . --now. Jacob Itegboje Pumping Python TDD.
+  :description: Ultimate Python TDD challenge—wipe src/truth_table/__init__.py and rebuild all 20 operations (4 nullary/unary + 16 binary) so tests/test_binary.py and tests/test_nullary_unary.py pass without reading the tests. Follow AttributeError (module has no attribute …), NameError, TypeError (NoneType not callable / wrong arity), and AssertionError (None is not true, True is not false) through Red-Green-Refactor. Implement logical_true/false, identity, negation (not), then tautology, project_first/second, negate_first/second, AND/OR/NAND/NOR, XOR, equality, material and converse implication/non-implication, contradiction. Refactor case-by-case ifs into idiomatic and/or/not. uv run pytest-watcher . --now. Jacob Itegboje Pumping Python TDD.
   :keywords: Jacob Itegboje, Pumping Python, test truth table tests, truth table blank file challenge, 20 failing tests pytest, AttributeError module has no attribute logical_negation, NameError name is not defined, TypeError NoneType not callable, TypeError takes 0 positional arguments but 1 was given, AssertionError None is not true, logical_true logical_false nullary, logical_identity logical_negation not, logical_conjunction AND, logical_disjunction OR, logical_nand logical_nor, exclusive_disjunction XOR, material_implication converse_implication, project_first project_second, TDD red green refactor truth table, pytest-watcher truth_table, uv run pytest-watcher, rebuild boolean logic library Python
 
 .. include:: ../links.rst
@@ -12,7 +12,7 @@ truth table: test truth table tests
 
 ----
 
-I want to write a program_ that makes the tests in ``test_truth_table.py`` pass without looking at them
+I want to write a program_ that makes the tests in ``tests/test_binary.py`` and ``tests/test_nullary_unary.py`` pass without looking at them
 
 *********************************************************************************
 requirements
@@ -286,7 +286,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     AssertionError: None is not true
 
-* I return what the test what wants
+* I return what the test wants
 
   .. code-block:: python
     :lineno-start: 11
@@ -2568,7 +2568,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
 ----
 
-* :ref:`material_non_implication<test_material_non_implication>` has 3 cases that return :ref:`False<test_what_is_false>`. I add a :ref:`return statement<the return statement>` for the  case that returns :green:`True`
+* :ref:`material_non_implication<test_material_non_implication>` has 3 cases that return :ref:`False<test_what_is_false>`. I add a :ref:`return statement<the return statement>` for the case that returns :green:`True`
 
   .. code-block:: python
     :lineno-start: 64
@@ -2909,11 +2909,11 @@ I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`False<t
 
   * :ref:`Exclusive Disjunction<test_exclusive_disjunction>`
 
-    - returns ``first != second``
+    - returns ``(not (first and second)) and (first or second)``
     - returns :green:`True` only if ``first`` and ``second`` are NOT equal
     - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Equality<test_logical_equality>` which returns :green:`True` only if ``first`` and ``second`` are equal
 
-  * :ref:`Logical Conjunction<test_logical_conjunction>` returns
+  * :ref:`Logical Conjunction<test_logical_conjunction>`
 
     - returns ``first and second``
     - returns :green:`True` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
@@ -2927,7 +2927,7 @@ I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`False<t
 
   * :ref:`Logical Equality<test_logical_equality>`
 
-    - returns ``first == second``
+    - returns ``(not first or second) and (first or not second)``
     - returns :green:`True` only if ``first`` and ``second`` are equal
     - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Exclusive Disjunction (Exclusive OR)<test_exclusive_disjunction>` which returns :green:`True` only if ``first`` and ``second`` are NOT equal
 
