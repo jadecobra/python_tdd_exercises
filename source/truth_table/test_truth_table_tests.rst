@@ -1505,11 +1505,15 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 119
-    :emphasize-lines: 5-8
+    :emphasize-lines: 2
 
     def converse_implication(first, second):
-        return (not not first) (not and) (not second)
         return not (not first and second)
+        # if (first, second) == (False, True): return False
+        # if first == False and second == True:
+        if not first and second:
+            return False
+        return first, second
 
   the test is still green.
 
@@ -1517,17 +1521,11 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 119
-    :emphasize-lines: 8-9
+    :emphasize-lines: 2
 
     def converse_implication(first, second):
-        # if (first, second) == (False, True): return False
-        # if first == False and second == True:
-        # if not first == True and second == True:
-        # if not first and second:
-        #     return False
-        # return first, second
-        # return not (not first and second)
         return (not not first) (not and) (not second)
+        return not (not first and second)
 
   the terminal_ is my friend, and shows SyntaxError_
 
@@ -1539,18 +1537,12 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 119
-    :emphasize-lines: 9-10
+    :emphasize-lines: 2-3
 
     def converse_implication(first, second):
-        # if (first, second) == (False, True): return False
-        # if first == False and second == True:
-        # if not first == True and second == True:
-        # if not first and second:
-        #     return False
-        # return first, second
-        # return not (not first and second)
         # return (not not first) (not and) (not second)
         return (not not first) or (not second)
+        return not (not first and second)
 
   the test is green again.
 
@@ -1558,23 +1550,16 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 119
-    :emphasize-lines: 10-11
+    :emphasize-lines: 2
 
     def converse_implication(first, second):
-        # if (first, second) == (False, True): return False
-        # if first == False and second == True:
-        # if not first == True and second == True:
-        # if not first and second:
-        #     return False
-        # return first, second
-        # return not (not first and second)
-        # return (not not first) (not and) (not second)
-        # return (not not first) or (not second)
         return first or not second
+        # return (not not first) (not and) (not second)
+        return (not not first) or (not second)
 
   the test is still green.
 
-* I remove the commented lines
+* I remove the commented lines and other statements from :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
     :lineno-start: 119
@@ -1595,14 +1580,17 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
     :emphasize-lines: 2-9
 
     def converse_non_implication(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
         if first == False and second == True:
             return True
         else:
             return False
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (True, False): return False
+        # if (first, second) == (False, False): return False
+        # return first, second
+
+
+    def converse_implication(first, second):
 
   the test is still green.
 
@@ -1610,13 +1598,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 112
-    :emphasize-lines: 6-7
+    :emphasize-lines: 2-3
 
     def converse_non_implication(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
         # if first == False and second == True:
         if not first == True and second == True:
             return True
@@ -1629,13 +1613,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 112
-    :emphasize-lines: 7-8
+    :emphasize-lines: 3-4
 
     def converse_non_implication(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
         # if first == False and second == True:
         # if not first == True and second == True:
         if not first and second:
@@ -1649,24 +1629,15 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 112
-    :emphasize-lines: 8-12
+    :emphasize-lines: 2
 
     def converse_non_implication(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
-        # if first == False and second == True:
-        # if not first == True and second == True:
-        # if not first and second:
-        #     return True
-        # else:
-        #     return False
         return not first and second
+        # if first == False and second == True:
 
   the test is still green.
 
-* I remove the commented lines
+* I remove the commented lines and other statements from :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
     :lineno-start: 112
@@ -1678,27 +1649,23 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
     def converse_implication(first, second):
         return first or not second
 
-
-    def contradiction(first, second):
-        return False
-
 ----
 
 * I make the :ref:`if statements` in :ref:`exclusive_disjunction<test_exclusive_disjunction>` simpler
 
   .. code-block:: python
     :lineno-start: 106
-    :emphasize-lines: 2-9
+    :emphasize-lines: 2-5
 
     def exclusive_disjunction(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
         if first == True and second == True:
             return False
         if first == False and second == False:
             return False
         return True
+        if (first, second) == (True, True): return False
+        if (first, second) == (False, False): return False
+        return first, second
 
   the test is still green.
 
@@ -1706,12 +1673,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 106
-    :emphasize-lines: 7-8
+    :emphasize-lines: 4-5
 
     def exclusive_disjunction(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
         if first == True and second == True:
             return False
         # if first == False and second == False:
@@ -1725,12 +1689,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 106
-    :emphasize-lines: 5-6, 9-10
+    :emphasize-lines: 2-3, 6-7
 
     def exclusive_disjunction(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
         # if first == True and second == True:
         if first and second:
             return False
@@ -1746,12 +1707,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 106
-    :emphasize-lines: 10-11
+    :emphasize-lines: 7-8
 
     def exclusive_disjunction(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
         # if first == True and second == True:
         if first and second:
             return False
@@ -1772,12 +1730,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 106
-    :emphasize-lines: 11-12
+    :emphasize-lines: 8-9
 
     def exclusive_disjunction(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
         # if first == True and second == True:
         if first and second:
             return False
@@ -1795,20 +1750,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 106
-    :emphasize-lines: 6-7, 12-17
+    :emphasize-lines: 2-8
 
     def exclusive_disjunction(first, second):
-        # if (first, second) == (True, True): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
-        # if first == True and second == True:
-        # if first and second:
-        #     return False
-        # if first == False and second == False:
-        # if not first == True and not second == True:
-        # if not first and not second:
-        # if (not first) (not or) (not second):
-        # if not (first or second):
         if (
             (first and second)
             or
@@ -1816,45 +1760,46 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
         ):
             return False
         return True
+        # if first == True and second == True:
 
   the test is still green.
 
 * I add a :ref:`return statement<the return statement>` because ``if something: return False`` can be written as ``return not (something)``
 
   .. code-block:: python
-    :lineno-start: 118
-    :emphasize-lines: 1-12
+    :lineno-start: 106
+    :emphasize-lines: 2-6
 
-        # if (
-        #     (first and second)
-        #     or
-        #     (not (first or second))
-        # ):
-        #     return False
-        # return True
+    def exclusive_disjunction(first, second):
         return not (
             (first and second)
             or
             (not (first or second))
         )
+        if (
+            (first and second)
+            or
+            (not (first or second))
+        ):
 
   still green.
 
 * I "multiply" :ref:`not<test_logical_negation>` by everything in the parentheses since it happens two times in the line
 
   .. code-block:: python
-    :lineno-start: 125
-    :emphasize-lines: 1-10
+    :lineno-start: 106
+    :emphasize-lines: 2-6
 
-        # return not (
-        #     (first and second)
-        #     or
-        #     (not (first or second))
-        # )
+    def exclusive_disjunction(first, second):
         return (
             (not (first and second))
             (not or)
             (not (not (first or second)))
+        )
+        return not (
+            (first and second)
+            or
+            (not (first or second))
         )
 
   the terminal shows SyntaxError_
@@ -1866,9 +1811,10 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change ``not or`` to :ref:`and<test_logical_conjunction>`
 
   .. code-block:: python
-    :lineno-start: 130
-    :emphasize-lines: 3-4
+    :lineno-start: 106
+    :emphasize-lines: 4-5
 
+    def exclusive_disjunction(first, second):
         return (
             (not (first and second))
             # (not or)
@@ -1881,9 +1827,10 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``not not`` because "the negation of a negation is ..."
 
   .. code-block:: python
-    :lineno-start: 130
-    :emphasize-lines: 5-6
+    :lineno-start: 106
+    :emphasize-lines: 6-7
 
+    def exclusive_disjunction(first, second):
         return (
             (not (first and second))
             # (not or)
@@ -1894,16 +1841,21 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   green.
 
-* I remove the commented lines from :ref:`exclusive_disjunction<test_exclusive_disjunction>`
+* I remove the commented lines and other statements from :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
     :lineno-start: 106
 
     def exclusive_disjunction(first, second):
-        return (not (first and second)) and (first or second)
+        return (
+            (not (first and second))
+            and
+            (first or second)
+        )
 
 
     def converse_non_implication(first, second):
+        return not first and second
 
 ----
 
@@ -1911,17 +1863,14 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 99
-    :emphasize-lines: 2-9
+    :emphasize-lines: 2-5
 
     def logical_conjunction(first, second):
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, True): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
         if first == True and second == True:
             return True
         else:
             return False
+        if (first, second) == (True, False):
 
   the test is still green.
 
@@ -1929,13 +1878,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 99
-    :emphasize-lines: 6-7
+    :emphasize-lines: 2-3
 
     def logical_conjunction(first, second):
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, True): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
         # if first == True and second == True:
         if first and second:
             return True
@@ -1948,23 +1893,15 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 99
-    :emphasize-lines: 7-11
+    :emphasize-lines: 2
 
     def logical_conjunction(first, second):
-        # if (first, second) == (True, False): return False
-        # if (first, second) == (False, True): return False
-        # if (first, second) == (False, False): return False
-        # return first, second
-        # if first == True and second == True:
-        # if first and second:
-        #     return True
-        # else:
-        #     return False
         return first and second
+        # if first == True and second == True:
 
   green.
 
-* I remove the commented lines from :ref:`logical_conjunction<test_logical_conjunction>`
+* I remove the commented line and other statements from :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
     :lineno-start: 99
@@ -1981,15 +1918,14 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 94
-    :emphasize-lines: 2-7
+    :emphasize-lines: 2-5
 
     def logical_disjunction(first, second):
-        # if (first, second) == (False, False): return False
-        # return first, second
         if first == False and second == False:
             return False
         else:
             return True
+        if (first, second) == (False, False):
 
   the test is still green.
 
@@ -1997,11 +1933,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 94
-    :emphasize-lines: 4-5
+    :emphasize-lines: 2-3
 
     def logical_disjunction(first, second):
-        # if (first, second) == (False, False): return False
-        # return first, second
         # if first == False and second == False:
         if not first == True and not second == True:
             return False
@@ -2014,11 +1948,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 94
-    :emphasize-lines: 5-6
+    :emphasize-lines: 3-4
 
     def logical_disjunction(first, second):
-        # if (first, second) == (False, False): return False
-        # return first, second
         # if first == False and second == False:
         # if not first == True and not second == True:
         if not first and not second:
@@ -2032,11 +1964,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 94
-    :emphasize-lines: 6-7
+    :emphasize-lines: 4-5
 
     def logical_disjunction(first, second):
-        # if (first, second) == (False, False): return False
-        # return first, second
         # if first == False and second == False:
         # if not first == True and not second == True:
         # if not first and not second:
@@ -2055,11 +1985,9 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 94
-    :emphasize-lines: 7-8
+    :emphasize-lines: 5-6
 
     def logical_disjunction(first, second):
-        # if (first, second) == (False, False): return False
-        # return first, second
         # if first == False and second == False:
         # if not first == True and not second == True:
         # if not first and not second:
