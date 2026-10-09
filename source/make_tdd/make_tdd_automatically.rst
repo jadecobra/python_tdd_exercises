@@ -483,7 +483,7 @@ how to make a shell script run as a command
 how to use makePythonTdd to make a different project
 *********************************************************************************
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_magic.py:7`` to open it and place the cursor on line 7
+* I open ``tests/test_magic.py`` from the ``tests`` folder_ and place the cursor on line 7
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
   .. code-block:: python
@@ -565,7 +565,7 @@ how to use makePythonTdd to make a different project
     FAILED tests/test_more_magic.py::TestMoreMagic::test_failure - AssertionError: True is not false
     ==================== 1 failed in X.YZs ====================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_more_magic.py:7`` to open it
+* I open ``tests/test_more_magic.py`` from the ``tests`` folder_
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in ``test_more_magic.py``
 
   .. code-block:: python

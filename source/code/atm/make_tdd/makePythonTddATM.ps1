@@ -1,6 +1,5 @@
 uv init atm
 cd atm
-New-Item "src/atm.py"
 mkdir tests
 New-Item tests/__init__.py
 

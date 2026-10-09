@@ -145,7 +145,7 @@ start the project
     FAILED tests/test_elevator.py::TestElevator::test_failure - AssertionError: True is not false
     ==================== 1 failed in X.YZs ====================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_elevator.py:7`` to open it
+* I open ``tests/test_elevator.py`` from the ``tests`` folder_
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in ``test_elevator.py``
 
   .. code-block:: python

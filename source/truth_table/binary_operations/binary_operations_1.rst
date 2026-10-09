@@ -2835,6 +2835,8 @@ second                                          :green:`True`  :red:`False`   :g
 (not first) and second                          :red:`False`   :red:`False`   :green:`True` :red:`False`  :ref:`converse_non_implication<test_converse_non_implication>`
 =============================================== ============== ============== ============= ============= ==============================================================
 
+:ref:`How many questions can you answer about Binary Operations after this chapter?<questions about Binary Operations 1>`
+
 ----
 
 *************************************************************************************

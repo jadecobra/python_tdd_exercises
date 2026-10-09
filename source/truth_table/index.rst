@@ -107,7 +107,7 @@ start the project
     FAILED tests/test_truth_table.py::TestTruthTable::test_failure - AssertionError: True is not false
     ==================== 1 failed in X.YZs ====================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_truth_table.py:7`` to open it
+* I open ``tests/test_truth_table.py`` from the ``tests`` folder_
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``test_truth_table.py``
 
   .. code-block:: python

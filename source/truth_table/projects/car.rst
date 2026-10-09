@@ -134,7 +134,7 @@ start the project
     FAILED tests/test_car.py::TestCar::test_failure - AssertionError: True is not false
     ==================== 1 failed in X.YZs ====================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_car.py:7`` to open it
+* I open ``tests/test_car.py`` from the ``tests`` folder_
 * I change :green:`True` to :red:`False` in ``test_car.py``
 
   .. code-block:: python

@@ -135,8 +135,8 @@ start the project
     FAILED tests/test_atm.py::TestATM::test_failure - AssertionError: True is not false
     ==================== 1 failed in X.YZs ====================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_atm.py:7`` to open it
-* I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in ``test_atm.py``
+* I open ``test_atm.py`` from the ``tests`` folder_
+* I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in ``tests/test_atm.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -257,7 +257,7 @@ because I do not have a definition for ``src`` in this file_.
     # AssertionError
     # NameError
 
-* I add an `import statement`_ at the top of the file_ so that I can test ``atm.py`` from the ``src`` folder_
+* I add an `import statement`_ at the top of the file_ so that I can test ``src/atm/__init__.py`` from the ``src`` folder_
 
   .. code-block:: python
     :linenos:
@@ -290,9 +290,9 @@ because I do not have a definition for ``src`` in this file_.
     # NameError
     # AttributeError
 
-* I open ``atm/__init__.py`` from the ``src`` folder_
+* I open ``__init__.py`` from the ``atm`` folder_ in the ``src`` folder_
 
-* I delete all the text in the file_ then add a :ref:`function<what is a function?>` named ``withdraw`` to ``atm.py``
+* I delete all the text in the file_ then add a :ref:`function<what is a function?>` named ``withdraw`` to ``src/atm/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -310,7 +310,7 @@ because I do not have a definition for ``src`` in this file_.
 
   because the test :ref:`called<how to call a function with input>` the ``withdraw`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``right_pin``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_atm.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_atm.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -323,7 +323,7 @@ because I do not have a definition for ``src`` in this file_.
     # AttributeError
     # TypeError
 
-* I add ``right_pin`` to the :ref:`function definition<how to make a function that takes input>` in ``atm.py``
+* I add ``right_pin`` to the :ref:`function definition<how to make a function that takes input>` in ``src/atm/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -366,6 +366,8 @@ because I do not have a definition for ``src`` in this file_.
 
     def withdraw(right_pin, enough_cash):
         return 'CASH'
+
+  the test passes.
 
 * I add a git_ commit message in the other terminal_
 
@@ -436,7 +438,7 @@ test_right_pin_not_enough_cash
 
 ----
 
-I add an :ref:`if statement<if statements>` to ``atm.py``
+I add an :ref:`if statement<if statements>` to ``src/atm/__init__.py``
 
 .. code-block:: python
   :linenos:
@@ -561,7 +563,7 @@ test_wrong_pin_enough_cash
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test with an :ref:`assertion<what is an assertion?>` for when the :red:`wrong PIN` is entered AND there is :green:`enough cash` in the account, to  ``test_atm.py``
+* I add a test with an :ref:`assertion<what is an assertion?>` for when the :red:`wrong PIN` is entered AND there is :green:`enough cash` in the account, to  ``tests/test_atm.py``
 
   ==================  ======================= =================
   PIN                 cash                    withdrawal
@@ -602,7 +604,7 @@ test_wrong_pin_enough_cash
 
 ----
 
-I add an :ref:`if statement<if statements>` for this case to ``atm.py``
+I add an :ref:`if statement<if statements>` for this case to ``src/atm/__init__.py``
 
 .. code-block:: python
   :linenos:
@@ -742,7 +744,7 @@ test_wrong_pin_not_enough_cash
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test with an :ref:`assertion<what is an assertion?>` for the last case, which is when the :red:`wrong PIN` is entered AND there is :red:`NOT enough cash` in the account, to ``test_atm.py``
+* I add a test with an :ref:`assertion<what is an assertion?>` for the last case, which is when the :red:`wrong PIN` is entered AND there is :red:`NOT enough cash` in the account, to ``tests/test_atm.py``
 
   ==================  ======================= =================
   PIN                 cash                    withdrawal
@@ -821,35 +823,44 @@ When the ``withdraw`` :ref:`function is called<how to call a function with input
 
   .. code-block:: shell
 
-    withdraw(right_pin=False, enough_cash=False) -> 'DENIED'
-    └── def withdraw(right_pin, enough_cash):
-        └── if not right_pin:
-            └── return 'DENIED'
-            if not enough_cash:
-                return 'DENIED'
-            return 'CASH'
+    src.atm.withdraw(
+        right_pin=False, enough_cash=False
+    ) -> 'DENIED'
+    └── src/atm/__init__.py
+        └── def withdraw(right_pin, enough_cash):
+            └── if not right_pin:
+                └── return 'DENIED'
+                if not enough_cash:
+                    return 'DENIED'
+                return 'CASH'
 
   .. code-block:: shell
 
-    withdraw(right_pin=False, enough_cash=True ) -> 'DENIED'
-    └── def withdraw(right_pin, enough_cash):
-        └── if not right_pin:
-            └── return 'DENIED'
-            if not enough_cash:
-                return 'DENIED'
-            return 'CASH'
+    src.atm.withdraw(
+        right_pin=False, enough_cash=True
+    ) -> 'DENIED'
+    └── src/atm/__init__.py
+        └── def withdraw(right_pin, enough_cash):
+            └── if not right_pin:
+                └── return 'DENIED'
+                if not enough_cash:
+                    return 'DENIED'
+                return 'CASH'
 
 * it returns :red:`'DENIED'` if there is :red:`NOT enough cash` in the account
 
   .. code-block:: shell
 
-    withdraw(right_pin=True , enough_cash=False) -> 'DENIED'
-    └── def withdraw(right_pin, enough_cash):
-        ├── if not right_pin:
-        │       return 'DENIED'
-        └── if not enough_cash:
-            └── return 'DENIED'
-            return 'CASH'
+    src.atm.withdraw(
+        right_pin=True, enough_cash=False
+    ) -> 'DENIED'
+    └── src/atm/__init__.py
+        └── def withdraw(right_pin, enough_cash):
+            ├── if not right_pin:
+            │       return 'DENIED'
+            └── if not enough_cash:
+                └── return 'DENIED'
+                return 'CASH'
 
   it only checks if there is :green:`enough cash` if the :green:`right PIN` is entered.
 
@@ -857,13 +868,16 @@ When the ``withdraw`` :ref:`function is called<how to call a function with input
 
   .. code-block:: shell
 
-    withdraw(right_pin=True , enough_cash=True ) -> 'CASH'
-    └── def withdraw(right_pin, enough_cash):
-        ├── if not right_pin:
-        │       return 'DENIED'
-        ├── if not enough_cash:
-        │       return 'DENIED'
-        └── return 'CASH'
+    src.atm.withdraw(
+        right_pin=True, enough_cash=True
+    ) -> 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(right_pin, enough_cash):
+            ├── if not right_pin:
+            │       return 'DENIED'
+            ├── if not enough_cash:
+            │       return 'DENIED'
+            └── return 'CASH'
 
 ----
 
@@ -871,7 +885,7 @@ When the ``withdraw`` :ref:`function is called<how to call a function with input
 extract denied variable
 *********************************************************************************
 
-* I add a :ref:`global variable<what is a variable?>` to remove repetition of :red:`'DENIED'` from the tests because three of them use it, in ``test_atm.py``
+* I add a :ref:`global variable<what is a variable?>` to remove repetition of :red:`'DENIED'` from the tests because three of them use it, in ``tests/test_atm.py``
 
   .. code-block:: python
     :linenos:
@@ -1036,7 +1050,7 @@ PIN                 cash                    daily limit             withdrawal
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test with an :ref:`assertion<what is an assertion?>` for the case where the :green:`right PIN` is entered, there is :green:`enough cash` in the account, and it is :green:`above limit` for daily withdrawals, to :ref:`test_right_pin_enough_cash`
+* I add a test with an :ref:`assertion<what is an assertion?>` for the case where the :green:`right PIN` is entered, there is :green:`enough cash` in the account, and it is :green:`above limit` for daily withdrawals
 
   ==================  ======================= ======================  ==================
   PIN                 cash                    daily limit             withdrawal
@@ -1083,7 +1097,7 @@ PIN                 cash                    daily limit             withdrawal
 
 ----
 
-* I add ``above_daily_limit`` to the :ref:`function<what is a function?>` in ``atm.py``
+* I add ``above_daily_limit`` to the :ref:`function<what is a function?>` in ``src/atm/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1285,7 +1299,7 @@ PIN                 cash                    daily limit             withdrawal
 
 * I go back to the terminal_ where the tests are running
 
-* I do not need to add anything to :ref:`test_right_pin_enough_cash` which is for when the :green:`right PIN` is entered, AND there is :green:`enough cash` in the account, and it is :red:`NOT above limit` for daily withdrawals, because the :ref:`default value<test_optional_arguments>` for the ``above_daily_limit`` parameter of the ``withdraw`` :ref:`function<what is a function?>` is :ref:`False<test_what_is_false>`
+* I do not need to add anything to :ref:`test_right_pin_enough_cash`, which is for when the :green:`right PIN` is entered, AND there is :green:`enough cash` in the account, and it is :red:`NOT above limit` for daily withdrawals, because the :ref:`default value<test_optional_arguments>` for the ``above_daily_limit`` parameter of the ``withdraw`` :ref:`function<what is a function?>` is :ref:`False<test_what_is_false>`
 
   ==================  ======================= ======================  ==================
   PIN                 cash                    daily limit             withdrawal
@@ -1999,100 +2013,105 @@ When the ``withdraw`` :ref:`function is called<how to call a function with input
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=False, enough_cash=False,
         above_daily_limit=True
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False,
-        ):
-        ├── denied = 'DENIED'
-        └── if above_daily_limit:
-            └── return denied
-            if not right_pin:
-                return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False,
+            ):
+            ├── denied = 'DENIED'
+            └── if above_daily_limit:
+                └── return denied
+                if not right_pin:
+                    return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=False, enough_cash=True,
         above_daily_limit=True
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False,
-        ):
-        ├── denied = 'DENIED'
-        └── if above_daily_limit:
-            └── return denied
-            if not right_pin:
-                return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False,
+            ):
+            ├── denied = 'DENIED'
+            └── if above_daily_limit:
+                └── return denied
+                if not right_pin:
+                    return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=True, enough_cash=True,
         above_daily_limit=True
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False,
-        ):
-        ├── denied = 'DENIED'
-        └── if above_daily_limit:
-            └── return denied
-            if not right_pin:
-                return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False,
+            ):
+            ├── denied = 'DENIED'
+            └── if above_daily_limit:
+                └── return denied
+                if not right_pin:
+                    return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
 * it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered.
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=False, enough_cash=False,
         above_daily_limit=False
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False,
-        ):
-        ├── denied = 'DENIED'
-        ├── if above_daily_limit:
-        │       return denied
-        └── if not right_pin:
-            └── return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False,
+            ):
+            ├── denied = 'DENIED'
+            ├── if above_daily_limit:
+            │       return denied
+            └── if not right_pin:
+                └── return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=False, enough_cash=True,
         above_daily_limit=False
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False,
-        ):
-        ├── denied = 'DENIED'
-        ├── if above_daily_limit:
-        │       return denied
-        └── if not right_pin:
-            └── return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False,
+            ):
+            ├── denied = 'DENIED'
+            ├── if above_daily_limit:
+            │       return denied
+            └── if not right_pin:
+                └── return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
   it only checks if the :green:`right PIN` is entered if the account is :red:`NOT above limit` for daily withdrawals.
 
@@ -2100,41 +2119,43 @@ When the ``withdraw`` :ref:`function is called<how to call a function with input
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=True, enough_cash=False,
         above_daily_limit=False
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False,
-        ):
-        ├── denied = 'DENIED'
-        ├── if above_daily_limit:
-        │       return denied
-        ├── if not right_pin:
-        │       return denied
-        └── if not enough_cash:
-            └── return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False,
+            ):
+            ├── denied = 'DENIED'
+            ├── if above_daily_limit:
+            │       return denied
+            ├── if not right_pin:
+            │       return denied
+            └── if not enough_cash:
+                └── return denied
+                return 'CASH'
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=True, enough_cash=False,
         above_daily_limit=True
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False,
-        ):
-        ├── denied = 'DENIED'
-        ├── if above_daily_limit:
-        │       return denied
-        ├── if not right_pin:
-        │       return denied
-        └── if not enough_cash:
-            └── return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False,
+            ):
+            ├── denied = 'DENIED'
+            ├── if above_daily_limit:
+            │       return denied
+            ├── if not right_pin:
+            │       return denied
+            └── if not enough_cash:
+                └── return denied
+                return 'CASH'
 
   it only checks if there is :green:`enough cash` in the account if the :green:`right PIN` is entered.
 
@@ -2142,22 +2163,24 @@ When the ``withdraw`` :ref:`function is called<how to call a function with input
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=True, enough_cash=True,
         above_daily_limit=False
     ) -> 'CASH'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False,
-        ):
-        ├── denied = 'DENIED'
-        ├── if above_daily_limit:
-        │       return denied
-        ├── if not right_pin:
-        │       return denied
-        ├── if not enough_cash:
-        │       return denied
-        └── return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False,
+            ):
+            ├── denied = 'DENIED'
+            ├── if above_daily_limit:
+            │       return denied
+            ├── if not right_pin:
+            │       return denied
+            ├── if not enough_cash:
+            │       return denied
+            └── return 'CASH'
+
 ----
 
 *********************************************************************************
@@ -2600,7 +2623,7 @@ PIN                 cash                  daily limit             card expired  
 
 ----
 
-* I add ``card_expired`` to the :ref:`function signature<what is a function?>` in ``atm.py``
+* I add ``card_expired`` to the :ref:`function signature<what is a function?>` in ``src/atm/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -2620,7 +2643,7 @@ PIN                 cash                  daily limit             card expired  
 
   because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_atm.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_atm.py``
 
   .. code-block:: python
     :lineno-start: 88
@@ -2634,7 +2657,7 @@ PIN                 cash                  daily limit             card expired  
     # TypeError
     # SyntaxError
 
-* I add a :ref:`default value<test_optional_arguments>` for ``card_expired`` in ``atm.py``
+* I add a :ref:`default value<test_optional_arguments>` for ``card_expired`` in ``src/atm/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -2662,7 +2685,7 @@ PIN                 cash                  daily limit             card expired  
 
 ----
 
-* I add the value for the ``above_daily_limit`` parameter to :ref:`test_below_limit_right_pin_enough_cash` to make the :ref:`assertion<what is an assertion?>` clearer, in ``test_atm.py``
+* I add the value for the ``above_daily_limit`` parameter to :ref:`test_below_limit_right_pin_enough_cash` to make the :ref:`assertion<what is an assertion?>` clearer, in ``tests/test_atm.py``
 
   .. code-block:: python
     :lineno-start: 10
@@ -2725,7 +2748,7 @@ PIN                 cash                  daily limit             card expired  
 
   The **ATM** should not give me :green:`CASH` if the bank card has :green:`expired`.
 
-* I add an :ref:`if statement<if statements>` to the ``withdraw`` :ref:`function<what is a function?>` in ``atm.py``
+* I add an :ref:`if statement<if statements>` to the ``withdraw`` :ref:`function<what is a function?>` in ``src/atm/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -2777,7 +2800,7 @@ PIN                 cash                  daily limit             card expired  
 
   the test is still green.
 
-* I change the name of the test from :ref:`test_below_limit_right_pin_enough_cash` to :ref:`test_card_w_below_limit_right_pin_enough_cash` in ``test_atm.py``
+* I change the name of the test from :ref:`test_below_limit_right_pin_enough_cash` to :ref:`test_card_w_below_limit_right_pin_enough_cash` in ``tests/test_atm.py``
 
   .. code-block:: python
     :lineno-start: 8
@@ -3015,7 +3038,7 @@ PIN                 cash                    daily limit             card expired
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a value for the ``card_expired`` parameter to the :ref:`call<how to call a function with input>` to the ``withdraw`` :ref:`function<what is a function?>` for the case where the :green:`right PIN` is entered, there is :red:`NOT enough cash` in the account, it is :green:`above limit` for daily withdrawals, and the card has :green:`expired`
+* I add a value for the ``card_expired`` parameter to the :ref:`call<how to call a function with input>` to the ``withdraw`` :ref:`function<what is a function?>` for the case where the :green:`right PIN` is entered, there is :red:`NOT enough cash` in the account, it is :green:`above limit` for daily withdrawals, and the card has :green:`expired`, in :ref:`test_above_limit_right_pin_not_enough_cash`
 
   ==================  ======================= ======================  ==================  =============
   PIN                 cash                    daily limit             card expired        withdrawal
@@ -3692,7 +3715,7 @@ the test passes.
                 DENIED
             )
 
-        def test_wrong_pin_enough_cash_w_card(self):
+        def test_card_w_below_limit_wrong_pin_enough_cash(self):
             self.assertEqual(
                 src.atm.withdraw(
                     right_pin=False,
@@ -4436,7 +4459,7 @@ The ``withdraw`` :ref:`function<what is a function?>` can also be written with :
 close the project
 *********************************************************************************
 
-* I close ``test_atm.py`` and ``atm.py``
+* I close ``tests/test_atm.py`` and ``src/atm/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ shows
 
