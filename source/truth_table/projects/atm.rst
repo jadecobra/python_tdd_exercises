@@ -3707,10 +3707,10 @@ the test passes.
 
             self.assertEqual(
                 src.atm.withdraw(
-                    right_pin=True,
-                    enough_cash=False,
-                    above_daily_limit=False,
-                    card_expired=True,
+                    right_pin=False,
+                    enough_cash=True,
+                    above_daily_limit=True,
+                    card_expired=False,
                 ),
                 DENIED
             )
@@ -3720,7 +3720,7 @@ the test passes.
                 src.atm.withdraw(
                     right_pin=False,
                     enough_cash=True,
-                    above_daily_limit=True,
+                    above_daily_limit=False,
                     card_expired=True,
                 ),
                 DENIED
@@ -3949,7 +3949,7 @@ PIN                 cash                    daily limit             card expired
 
   .. code-block:: python
     :lineno-start: 150
-    :emphasize-lines: 7
+    :emphasize-lines: 6-7
 
         def test_below_limit_wrong_pin_not_enough_cash(self):
             self.assertEqual(
@@ -4108,350 +4108,366 @@ When the ``withdraw`` :ref:`function is called<how to call a function with input
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=True, enough_cash=True,
         above_daily_limit=False, card_expired=True
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-        ):
-        ├── denied = 'DENIED'
-        └── if card_expired:
-            └── return denied
-            if above_daily_limit:
-                return denied
-            if not right_pin:
-                return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False, card_expired=False,
+            ):
+            ├── denied = 'DENIED'
+            └── if card_expired:
+                └── return denied
+                if above_daily_limit:
+                    return denied
+                if not right_pin:
+                    return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=True, enough_cash=True,
         above_daily_limit=True, card_expired=True
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-        ):
-        ├── denied = 'DENIED'
-        └── if card_expired:
-            └── return denied
-            if above_daily_limit:
-                return denied
-            if not right_pin:
-                return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False, card_expired=False,
+            ):
+            ├── denied = 'DENIED'
+            └── if card_expired:
+                └── return denied
+                if above_daily_limit:
+                    return denied
+                if not right_pin:
+                    return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=True, enough_cash=False,
         above_daily_limit=True, card_expired=True
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-        ):
-        ├── denied = 'DENIED'
-        └── if card_expired:
-            └── return denied
-            if above_daily_limit:
-                return denied
-            if not right_pin:
-                return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False, card_expired=False,
+            ):
+            ├── denied = 'DENIED'
+            └── if card_expired:
+                └── return denied
+                if above_daily_limit:
+                    return denied
+                if not right_pin:
+                    return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=True, enough_cash=False,
         above_daily_limit=False, card_expired=True
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-        ):
-        ├── denied = 'DENIED'
-        └── if card_expired:
-            └── return denied
-            if above_daily_limit:
-                return denied
-            if not right_pin:
-                return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False, card_expired=False,
+            ):
+            ├── denied = 'DENIED'
+            └── if card_expired:
+                └── return denied
+                if above_daily_limit:
+                    return denied
+                if not right_pin:
+                    return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=False, enough_cash=True,
         above_daily_limit=True, card_expired=True
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-        ):
-        ├── denied = 'DENIED'
-        └── if card_expired:
-            └── return denied
-            if above_daily_limit:
-                return denied
-            if not right_pin:
-                return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False, card_expired=False,
+            ):
+            ├── denied = 'DENIED'
+            └── if card_expired:
+                └── return denied
+                if above_daily_limit:
+                    return denied
+                if not right_pin:
+                    return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=False, enough_cash=True,
         above_daily_limit=False, card_expired=True
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-        ):
-        ├── denied = 'DENIED'
-        └── if card_expired:
-            └── return denied
-            if above_daily_limit:
-                return denied
-            if not right_pin:
-                return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False, card_expired=False,
+            ):
+            ├── denied = 'DENIED'
+            └── if card_expired:
+                └── return denied
+                if above_daily_limit:
+                    return denied
+                if not right_pin:
+                    return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=False, enough_cash=False,
         above_daily_limit=True, card_expired=True
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-        ):
-        ├── denied = 'DENIED'
-        └── if card_expired:
-            └── return denied
-            if above_daily_limit:
-                return denied
-            if not right_pin:
-                return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False, card_expired=False,
+            ):
+            ├── denied = 'DENIED'
+            └── if card_expired:
+                └── return denied
+                if above_daily_limit:
+                    return denied
+                if not right_pin:
+                    return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=False, enough_cash=False,
         above_daily_limit=False, card_expired=True
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-        ):
-        ├── denied = 'DENIED'
-        └── if card_expired:
-            └── return denied
-            if above_daily_limit:
-                return denied
-            if not right_pin:
-                return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False, card_expired=False,
+            ):
+            ├── denied = 'DENIED'
+            └── if card_expired:
+                └── return denied
+                if above_daily_limit:
+                    return denied
+                if not right_pin:
+                    return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
 * it returns :red:`'DENIED'` if the account is :green:`above limit` for daily withdrawals.
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=True, enough_cash=True,
         above_daily_limit=True, card_expired=False
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-        ):
-        ├── denied = 'DENIED'
-        ├── if card_expired:
-        │       return denied
-        └── if above_daily_limit:
-            └── return denied
-            if not right_pin:
-                return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False, card_expired=False,
+            ):
+            ├── denied = 'DENIED'
+            ├── if card_expired:
+            │       return denied
+            └── if above_daily_limit:
+                └── return denied
+                if not right_pin:
+                    return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=True, enough_cash=False,
         above_daily_limit=True, card_expired=False
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-        ):
-        ├── denied = 'DENIED'
-        ├── if card_expired:
-        │       return denied
-        └── if above_daily_limit:
-            └── return denied
-            if not right_pin:
-                return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False, card_expired=False,
+            ):
+            ├── denied = 'DENIED'
+            ├── if card_expired:
+            │       return denied
+            └── if above_daily_limit:
+                └── return denied
+                if not right_pin:
+                    return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=False, enough_cash=True,
         above_daily_limit=True, card_expired=False
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-        ):
-        ├── denied = 'DENIED'
-        ├── if card_expired:
-        │       return denied
-        └── if above_daily_limit:
-            └── return denied
-            if not right_pin:
-                return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False, card_expired=False,
+            ):
+            ├── denied = 'DENIED'
+            ├── if card_expired:
+            │       return denied
+            └── if above_daily_limit:
+                └── return denied
+                if not right_pin:
+                    return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=False, enough_cash=False,
         above_daily_limit=True, card_expired=False
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-        ):
-        ├── denied = 'DENIED'
-        ├── if card_expired:
-        │       return denied
-        └── if above_daily_limit:
-            └── return denied
-            if not right_pin:
-                return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False, card_expired=False,
+            ):
+            ├── denied = 'DENIED'
+            ├── if card_expired:
+            │       return denied
+            └── if above_daily_limit:
+                └── return denied
+                if not right_pin:
+                    return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
   it only checks if the account is :green:`above limit` for daily withdrawals if the card has :red:`NOT expired`
 * it returns :red:`'DENIED'` if the :red:`wrong PIN` is entered.
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=False, enough_cash=True,
         above_daily_limit=False, card_expired=False
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-        ):
-        ├── denied = 'DENIED'
-        ├── if card_expired:
-        │       return denied
-        ├── if above_daily_limit:
-        │       return denied
-        └── if not right_pin:
-            └── return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False, card_expired=False,
+            ):
+            ├── denied = 'DENIED'
+            ├── if card_expired:
+            │       return denied
+            ├── if above_daily_limit:
+            │       return denied
+            └── if not right_pin:
+                └── return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=False, enough_cash=False,
         above_daily_limit=False, card_expired=False
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-        ):
-        ├── denied = 'DENIED'
-        ├── if card_expired:
-        │       return denied
-        ├── if above_daily_limit:
-        │       return denied
-        └── if not right_pin:
-            └── return denied
-            if not enough_cash:
-                return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False, card_expired=False,
+            ):
+            ├── denied = 'DENIED'
+            ├── if card_expired:
+            │       return denied
+            ├── if above_daily_limit:
+            │       return denied
+            └── if not right_pin:
+                └── return denied
+                if not enough_cash:
+                    return denied
+                return 'CASH'
 
   it only checks if the :green:`right PIN` is entered if the account is :red:`NOT above limit` for daily withdrawals.
 * it returns :red:`'DENIED'` if there is :red:`NOT enough cash` in the account.
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=True, enough_cash=False,
         above_daily_limit=False, card_expired=False
     ) -> 'DENIED'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-        ):
-        ├── denied = 'DENIED'
-        ├── if card_expired:
-        │       return denied
-        ├── if above_daily_limit:
-        │       return denied
-        ├── if not right_pin:
-        │       return denied
-        └── if not enough_cash:
-            └── return denied
-            return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False, card_expired=False,
+            ):
+            ├── denied = 'DENIED'
+            ├── if card_expired:
+            │       return denied
+            ├── if above_daily_limit:
+            │       return denied
+            ├── if not right_pin:
+            │       return denied
+            └── if not enough_cash:
+                └── return denied
+                return 'CASH'
 
   it only checks if there is :green:`enough cash` in the account if the :green:`right PIN` is entered.
 * it gives me :green:`'CASH'` if the above :ref:`conditions<if statements>` are NOT met.
 
   .. code-block:: shell
 
-    withdraw(
+    src.atm.withdraw(
         right_pin=True, enough_cash=True,
         above_daily_limit=False, card_expired=False
     ) -> 'CASH'
-    └── def withdraw(
-            right_pin, enough_cash,
-            above_daily_limit=False, card_expired=False,
-        ):
-        ├── denied = 'DENIED'
-        ├── if card_expired:
-        │       return denied
-        ├── if above_daily_limit:
-        │       return denied
-        ├── if not right_pin:
-        │       return denied
-        ├── if not enough_cash:
-        │       return denied
-        └── return 'CASH'
+    └── src/atm/__init__.py
+        └── def withdraw(
+                right_pin, enough_cash,
+                above_daily_limit=False, card_expired=False,
+            ):
+            ├── denied = 'DENIED'
+            ├── if card_expired:
+            │       return denied
+            ├── if above_daily_limit:
+            │       return denied
+            ├── if not right_pin:
+            │       return denied
+            ├── if not enough_cash:
+            │       return denied
+            └── return 'CASH'
 
 The ``withdraw`` :ref:`function<what is a function?>` can also be written with :ref:`Logical Disjunction (OR)<test_logical_disjunction>` or :ref:`Logical Conjunction (AND)<test_logical_conjunction>`. Try it and see which one you like.
 
@@ -4520,7 +4536,7 @@ PIN                 cash                    daily limit             card expired
 :red:`wrong PIN`    :red:`NOT enough cash`  :red:`NOT above limit`  :red:`NOT expired`  :red:`DENIED`
 ==================  ======================= ======================  ==================  =============
 
-The ATM only gives me ``'CASH'`` when the :green:`right PIN` is entered, there is :green:`enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the bank card has :red:`NOT expired`.
+The ATM only gives me :green:`'CASH'` when the :green:`right PIN` is entered, there is :green:`enough cash` in the account, it is :red:`NOT above limit` for daily withdrawals, and the bank card has :red:`NOT expired`.
 
 What if I want the ATM to give a different message with each denial, so that the user knows why the withdrawal failed? The :ref:`truth table` could then be
 
