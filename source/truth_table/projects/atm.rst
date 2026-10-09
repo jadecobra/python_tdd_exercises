@@ -21,52 +21,52 @@ preview
 
 These are the tests I have at the end of the chapter
 
-.. literalinclude:: ../../code/atm/test_atm.py
+.. literalinclude:: ../../code/atm/tests/test_atm.py
+  :caption: atm/tests/test_atm.py
   :language: python
   :linenos:
-  :caption: atm/tests/test_atm.py
   :lines: 1-28
 
-.. literalinclude:: ../../code/atm/test_atm.py
+.. literalinclude:: ../../code/atm/tests/test_atm.py
+  :caption: atm/tests/test_atm.py
   :language: python
   :lineno-start: 30
-  :caption: atm/tests/test_atm.py
   :lines: 30-48
 
-.. literalinclude:: ../../code/atm/test_atm.py
+.. literalinclude:: ../../code/atm/tests/test_atm.py
+  :caption: atm/tests/test_atm.py
   :language: python
   :lineno-start: 50
-  :caption: atm/tests/test_atm.py
   :lines: 50-68
 
-.. literalinclude:: ../../code/atm/test_atm.py
+.. literalinclude:: ../../code/atm/tests/test_atm.py
+  :caption: atm/tests/test_atm.py
   :language: python
   :lineno-start: 70
-  :caption: atm/tests/test_atm.py
   :lines: 70-88
 
-.. literalinclude:: ../../code/atm/test_atm.py
+.. literalinclude:: ../../code/atm/tests/test_atm.py
+  :caption: atm/tests/test_atm.py
   :language: python
   :lineno-start: 90
-  :caption: atm/tests/test_atm.py
   :lines: 90-108
 
-.. literalinclude:: ../../code/atm/test_atm.py
+.. literalinclude:: ../../code/atm/tests/test_atm.py
+  :caption: atm/tests/test_atm.py
   :language: python
   :lineno-start: 110
-  :caption: atm/tests/test_atm.py
   :lines: 110-128
 
-.. literalinclude:: ../../code/atm/test_atm.py
+.. literalinclude:: ../../code/atm/tests/test_atm.py
+  :caption: atm/tests/test_atm.py
   :language: python
   :lineno-start: 130
-  :caption: atm/tests/test_atm.py
   :lines: 130-148
 
-.. literalinclude:: ../../code/atm/test_atm.py
+.. literalinclude:: ../../code/atm/tests/test_atm.py
+  :caption: atm/tests/test_atm.py
   :language: python
   :lineno-start: 150
-  :caption: atm/tests/test_atm.py
   :lines: 150-
 
 ----
