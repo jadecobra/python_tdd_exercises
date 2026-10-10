@@ -20,7 +20,7 @@ preview
 
 These are the tests I have at the end of the chapter
 
-.. literalinclude:: ../../code/car/test_car.py
+.. literalinclude:: ../../code/car/tests/test_car.py
   :language: python
   :linenos:
   :caption: car/tests/test_car.py
@@ -134,8 +134,8 @@ start the project
     FAILED tests/test_car.py::TestCar::test_failure - AssertionError: True is not false
     ==================== 1 failed in X.YZs ====================
 
-* I open ``tests/test_car.py`` from the ``tests`` folder_
-* I change :green:`True` to :red:`False` in ``test_car.py``
+* I open ``test_car.py`` from the ``tests`` folder_
+* I change :green:`True` to :red:`False` in ``tests/test_car.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -175,7 +175,7 @@ start the project
 
 ----
 
-I want the car to start only when the start button is :green:`pressed`. I get this :ref:`truth table`
+I want the car to come :green:`ON` only when the start button is :green:`pressed`. I get this :ref:`truth table`
 
 ==================  =============
 start button        output
@@ -230,7 +230,7 @@ test_start_pressed
 
     NameError: name 'src' is not defined
 
-  because I do not have a definition for ``src`` in this ``test_car.py``.
+  because I do not have a definition for ``src`` in ``tests/test_car.py``.
 
 ----
 
@@ -269,7 +269,7 @@ test_start_pressed
 
     AttributeError: module 'src.car' has no attribute 'ignition'
 
-  because ``car/__init__.py`` in the ``src`` folder_ does not have anything named ``ignition`` in it.
+  because ``__init__.py`` from the ``car`` folder_ in the ``src`` folder_ does not have anything named ``ignition`` in it.
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
@@ -283,9 +283,9 @@ test_start_pressed
     # NameError
     # AttributeError
 
-* I open ``car/__init__.py`` from the ``src`` folder_
+* I open ``__init__.py`` from the ``car`` folder_ in the ``src`` folder_
 
-* I delete all the text in the file_ then add a :ref:`function<what is a function?>` named ``ignition`` to ``car.py``
+* I delete all the text in the file_ then add a :ref:`function<what is a function?>` named ``ignition`` to ``src/car/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -303,7 +303,7 @@ test_start_pressed
 
   because the test :ref:`called<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``start_is_pressed``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_car.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_car.py``
 
   .. code-block:: python
     :lineno-start: 14
@@ -435,7 +435,7 @@ test_start_not_pressed
 
 The ``ignition`` :ref:`function<what is a function?>` always returns the value of ``start_is_pressed``. Is this the :ref:`Identity Function<test_logical_identity>`?
 
-I want the car to start only when the start button is :green:`pressed` AND the key is :green:`close` to the ignition. The inputs to the ignition will then be
+I want the car to come :green:`ON` only when the start button is :green:`pressed` AND the key is :green:`close` to the ignition. The inputs to the ignition will then be
 
 * was the start button pressed?
 * is the key close to the ignition?
@@ -502,7 +502,7 @@ test_key_close_start_pressed
 
 ----
 
-* I add ``key_is_close`` to the :ref:`function definition<how to make a function that takes input>` in ``car.py``
+* I add ``key_is_close`` to the :ref:`function definition<how to make a function that takes input>` in ``src/car/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -579,7 +579,7 @@ test_key_not_close_start_pressed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test with an :ref:`assertion<what is an assertion?>` for if the start button is :green:`pressed` AND the key is :red:`NOT close` to the ignition, in ``test_car.py``
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the start button is :green:`pressed` AND the key is :red:`NOT close` to the ignition, in ``tests/test_car.py``
 
   ================  ==================  =============
   key               start button        output
@@ -637,7 +637,7 @@ test_key_not_close_start_pressed
 
 ----
 
-I add an :ref:`if statement<if statements>` to ``car.py``
+I add an :ref:`if statement<if statements>` to ``src/car/__init__.py``
 
 .. code-block:: python
   :linenos:
@@ -662,6 +662,7 @@ the test passes.
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 2-6
 
     def ignition(start_is_pressed, key_is_close=False):
         # if key_is_close == False:
@@ -704,7 +705,7 @@ test_key_close_start_not_pressed
 
 * I go back to the terminal_ where the tests are running
 
-* I add a value for the ``key_is_close`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_start_not_pressed` for if the start button is :red:`NOT pressed` AND the key is :green:`close` to the ignition, in ``test_car.py``
+* I add a value for the ``key_is_close`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_start_not_pressed` for if the start button is :red:`NOT pressed` AND the key is :green:`close` to the ignition, in ``tests/test_car.py``
 
   ================  ==================  =============
   key               start button        output
@@ -774,7 +775,7 @@ test_key_not_close_start_not_pressed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test with an :ref:`assertion<what is an assertion?>` for if the start button is :red:`NOT pressed` AND the key is :red:`NOT close` to the ignition, in ``test_car.py``
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the start button is :red:`NOT pressed` AND the key is :red:`NOT close` to the ignition, in ``tests/test_car.py``
 
   ================  ==================  =============
   key               start button        output
@@ -832,7 +833,7 @@ test_key_not_close_start_not_pressed
 
 ----
 
-* I add a :ref:`return statement<the return statement>` to the ``ignition`` :ref:`function<what is a function?>` to make it clearer, in ``car.py``
+* I add a :ref:`return statement<the return statement>` to the ``ignition`` :ref:`function<what is a function?>` to make it clearer, in ``src/car/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -862,7 +863,7 @@ test_key_not_close_start_not_pressed
 
     AssertionError: False is not true
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` to match ``reality`` in :ref:`test_key_not_close_start_not_pressed` in ``test_car.py``
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` to match ``reality`` in :ref:`test_key_not_close_start_not_pressed` in ``tests/test_car.py``
 
   .. code-block:: python
     :lineno-start: 27
@@ -1113,7 +1114,7 @@ key               start button        output
 :red:`NOT close`  :red:`NOT pressed`  :red:`False`
 ================  ==================  =============
 
-I want the car to start only when the start button is :green:`pressed` AND the key is :green:`close` to the ignition AND the brake pedal is :green:`pressed`. The inputs to the ignition will then be
+I want the car to come :green:`ON` only when the start button is :green:`pressed` AND the key is :green:`close` to the ignition AND the brake pedal is :green:`pressed`. The inputs to the ignition will then be
 
 * was the start button pressed?
 * is the key close to the ignition?
@@ -1173,7 +1174,7 @@ test_brake_pressed_key_close_start_pressed
 
 ----
 
-* I add ``brake_is_pressed`` to the :ref:`function signature<what is a function?>` in ``car.py``
+* I add ``brake_is_pressed`` to the :ref:`function signature<what is a function?>` in ``src/car/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1196,7 +1197,7 @@ test_brake_pressed_key_close_start_pressed
 
   because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_car.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_car.py``
 
   .. code-block:: python
     :lineno-start: 39
@@ -1210,7 +1211,7 @@ test_brake_pressed_key_close_start_pressed
     # TypeError
     # SyntaxError
 
-* I add a :ref:`default value<test_optional_arguments>` for the ``brake_is_pressed`` parameter, in ``car.py``
+* I add a :ref:`default value<test_optional_arguments>` for the ``brake_is_pressed`` parameter, in ``src/car/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1327,7 +1328,7 @@ test_brake_not_pressed_key_close_start_pressed
 
 ----
 
-* I add an :ref:`if statement<if statements>` to the ``ignition`` :ref:`function<what is a function?>` in ``car.py``
+* I add an :ref:`if statement<if statements>` to the ``ignition`` :ref:`function<what is a function?>` in ``src/car/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -2208,7 +2209,7 @@ test_park_w_brake_not_pressed_key_not_close_start_not_pressed
 
 ----
 
-* I add ``in_park`` to the :ref:`function signature<what is a function?>` in ``car.py``
+* I add ``in_park`` to the :ref:`function signature<what is a function?>` in ``src/car/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -3503,7 +3504,7 @@ test_park_w_brake_pressed_key_close_start_pressed
 
 ----
 
-I add an :ref:`if statement<if statements>` to the ``ignition`` :ref:`function<what is a function?>` in ``car.py``
+I add an :ref:`if statement<if statements>` to the ``ignition`` :ref:`function<what is a function?>` in ``src/car/__init__.py``
 
 .. code-block:: python
   :linenos:
@@ -3950,7 +3951,7 @@ When the ``ignition`` :ref:`function is called<how to call a function with input
 close the project
 *********************************************************************************
 
-* I close ``test_car.py`` and ``car.py``
+* I close ``tests/test_car.py`` and ``src/car/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ shows
 

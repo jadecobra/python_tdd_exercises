@@ -1,6 +1,5 @@
 uv init car
 cd car
-New-Item "src/car.py"
 mkdir tests
 New-Item tests/__init__.py
 

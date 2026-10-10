@@ -40,52 +40,52 @@ Car: tests
 
 The code in ``car/tests/test_car.py`` from :ref:`Car`
 
-.. literalinclude:: car/test_car.py
+.. literalinclude:: car/test/test_car.py
+  :caption: car/tests/test_car.py
   :language: python
   :linenos:
-  :caption: car/tests/test_car.py
   :lines: 1-23
 
-.. literalinclude:: car/test_car.py
+.. literalinclude:: car/test/test_car.py
+  :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 25
-  :caption: car/tests/test_car.py
   :lines: 25-41
 
-.. literalinclude:: car/test_car.py
+.. literalinclude:: car/test/test_car.py
+  :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 43
-  :caption: car/tests/test_car.py
   :lines: 43-59
 
-.. literalinclude:: car/test_car.py
+.. literalinclude:: car/test/test_car.py
+  :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 61
-  :caption: car/tests/test_car.py
   :lines: 61-77
 
-.. literalinclude:: car/test_car.py
+.. literalinclude:: car/test/test_car.py
+  :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 79
-  :caption: car/tests/test_car.py
   :lines: 79-95
 
-.. literalinclude:: car/test_car.py
+.. literalinclude:: car/test/test_car.py
+  :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 97
-  :caption: car/tests/test_car.py
   :lines: 97-113
 
-.. literalinclude:: car/test_car.py
+.. literalinclude:: car/test/test_car.py
+  :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 115
-  :caption: car/tests/test_car.py
   :lines: 115-131
 
-.. literalinclude:: car/test_car.py
+.. literalinclude:: car/test/test_car.py
+  :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 133
-  :caption: car/tests/test_car.py
   :lines: 133-
 
 ----
@@ -94,9 +94,9 @@ The code in ``car/tests/test_car.py`` from :ref:`Car`
 Car: solution
 *********************************************************************************
 
-The code in ``car/src/car.py`` from :ref:`Car`
+The code in ``car/src/__init__.py`` from :ref:`Car`
 
-.. literalinclude:: car/car.py
+.. literalinclude:: car/src/car.py
   :language: python
   :linenos:
   :caption: car/src/car.py
