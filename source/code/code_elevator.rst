@@ -41,51 +41,51 @@ Elevator: tests
 The code in ``elevator/tests/test_elevator.py`` from :ref:`Elevator`
 
 .. literalinclude:: elevator/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :language: python
   :linenos:
-  :caption: elevator/tests/test_elevator.py
   :lines: 1-23
 
 .. literalinclude:: elevator/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :language: python
   :lineno-start: 25
-  :caption: elevator/tests/test_elevator.py
   :lines: 25-41
 
 .. literalinclude:: elevator/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :language: python
   :lineno-start: 43
-  :caption: elevator/tests/test_elevator.py
   :lines: 43-59
 
 .. literalinclude:: elevator/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :language: python
   :lineno-start: 61
-  :caption: elevator/tests/test_elevator.py
   :lines: 61-77
 
 .. literalinclude:: elevator/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :language: python
   :lineno-start: 79
-  :caption: elevator/tests/test_elevator.py
   :lines: 79-95
 
 .. literalinclude:: elevator/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :language: python
   :lineno-start: 97
-  :caption: elevator/tests/test_elevator.py
   :lines: 97-113
 
 .. literalinclude:: elevator/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :language: python
   :lineno-start: 115
-  :caption: elevator/tests/test_elevator.py
   :lines: 115-131
 
 .. literalinclude:: elevator/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :language: python
   :lineno-start: 133
-  :caption: elevator/tests/test_elevator.py
   :lines: 133-
 
 ----
@@ -94,9 +94,9 @@ The code in ``elevator/tests/test_elevator.py`` from :ref:`Elevator`
 Elevator: solution
 *********************************************************************************
 
-The code in ``elevator/src/elevator.py`` from :ref:`Elevator`
+The code in ``elevator/src/elevator/__init__.py`` from :ref:`Elevator`
 
-.. literalinclude:: elevator/elevator.py
+.. literalinclude:: elevator/src/elevator.py
+  :caption: elevator/src/elevator/__init__.py
   :language: python
   :linenos:
-  :caption: elevator/src/elevator.py

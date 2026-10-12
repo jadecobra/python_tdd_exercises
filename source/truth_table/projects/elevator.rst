@@ -12,7 +12,7 @@
 Elevator
 #################################################################################
 
-I want to make an **Elevator Controller** that will :green:`MOVE` to a floor when I push a button for the floor.
+I want to make an **Elevator Controller** that will :green:`MOVE` the **Elevator Car** to a floor when I push a button for the floor.
 
 *********************************************************************************
 preview
@@ -21,51 +21,51 @@ preview
 These are the tests I have at the end of the chapter
 
 .. literalinclude:: ../../code/elevator/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :language: python
   :linenos:
-  :caption: elevator/tests/test_elevator.py
   :lines: 1-23
 
 .. literalinclude:: ../../code/elevator/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :language: python
   :lineno-start: 25
-  :caption: elevator/tests/test_elevator.py
   :lines: 25-41
 
 .. literalinclude:: ../../code/elevator/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :language: python
   :lineno-start: 43
-  :caption: elevator/tests/test_elevator.py
   :lines: 43-59
 
 .. literalinclude:: ../../code/elevator/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :language: python
   :lineno-start: 61
-  :caption: elevator/tests/test_elevator.py
   :lines: 61-77
 
 .. literalinclude:: ../../code/elevator/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :language: python
   :lineno-start: 79
-  :caption: elevator/tests/test_elevator.py
   :lines: 79-95
 
 .. literalinclude:: ../../code/elevator/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :language: python
   :lineno-start: 97
-  :caption: elevator/tests/test_elevator.py
   :lines: 97-113
 
 .. literalinclude:: ../../code/elevator/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :language: python
   :lineno-start: 115
-  :caption: elevator/tests/test_elevator.py
   :lines: 115-131
 
 .. literalinclude:: ../../code/elevator/test_elevator.py
+  :caption: elevator/tests/test_elevator.py
   :language: python
   :lineno-start: 133
-  :caption: elevator/tests/test_elevator.py
   :lines: 133-
 
 ----
@@ -145,8 +145,8 @@ start the project
     FAILED tests/test_elevator.py::TestElevator::test_failure - AssertionError: True is not false
     ==================== 1 failed in X.YZs ====================
 
-* I open ``tests/test_elevator.py`` from the ``tests`` folder_
-* I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in ``test_elevator.py``
+* I open ``test_elevator.py`` from the ``tests`` folder_
+* I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in ``tests/test_elevator.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -279,7 +279,7 @@ test_number_pushed
   .. code-block:: python
 
     AttributeError: module 'src.elevator'
-                    has no attribute 'elevator'
+                    has no attribute 'controller'
 
   because ``elevator/__init__.py`` in the ``src`` folder_ does not have anything named ``controller`` in it.
 
@@ -295,9 +295,9 @@ test_number_pushed
     # NameError
     # AttributeError
 
-* I open ``elevator/__init__.py`` from the ``src`` folder_
+* I open ``__init__.py`` from the ``elevator`` folder_ in the ``src`` folder_
 
-* I delete all the text in the file_ then add a :ref:`function<what is a function?>` named ``controller`` to ``elevator.py``
+* I delete all the text in the file_ then add a :ref:`function<what is a function?>` named ``controller`` to ``src/elevator/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -315,7 +315,7 @@ test_number_pushed
 
   because the test :ref:`called<how to call a function with input>` the ``controller`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``number_pushed``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_elevator.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_elevator.py``
 
   .. code-block:: python
     :lineno-start: 15
@@ -516,7 +516,7 @@ test_doors_closed_number_pushed
 
 ----
 
-* I add ``doors_closed`` to the :ref:`function<what is a function?>` in ``elevator.py``
+* I add ``doors_closed`` to the :ref:`function<what is a function?>` in ``src/elevator/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -640,7 +640,7 @@ test_doors_open_number_pushed
 
 ----
 
-I add an :ref:`if statement<if statements>` to the ``controller`` :ref:`function<what is a function?>` in ``elevator.py``
+I add an :ref:`if statement<if statements>` to the ``controller`` :ref:`function<what is a function?>` in ``src/elevator/__init__.py``
 
 .. code-block:: python
   :linenos:
@@ -681,7 +681,7 @@ the test passes.
 
   the test is still green.
 
-* I remove the commented lines
+* I remove the commented lines from the ``controller`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -785,7 +785,7 @@ test_doors_open_number_not_pushed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add :ref:`test_doors_open_number_not_pushed` with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :red:`open`, in ``test_elevator.py``
+* I add :ref:`test_doors_open_number_not_pushed` with an :ref:`assertion<what is an assertion?>` for if the button for a floor is :red:`NOT pushed` AND the **Elevator** doors are :red:`open`, in ``tests/test_elevator.py``
 
   =================  ==================  =============
   floor button       doors               output
@@ -870,19 +870,25 @@ When the ``controller`` :ref:`function is called<how to call a function with inp
 
   .. code-block:: shell
 
-    elevator(number_pushed=False, doors_closed=False) -> False
-    └── def controller(number_pushed, doors_closed=False):
-        └── if not number_pushed:
-            └── return False
-            return doors_closed
+    src.elevator.controller(
+        number_pushed=False, doors_closed=False
+    ) -> False
+    └── src/elevator/__init__.py
+        └── def controller(number_pushed, doors_closed=False):
+            └── if not number_pushed:
+                └── return False
+                return doors_closed
 
   .. code-block:: shell
 
-    elevator(number_pushed=False, doors_closed=True ) -> False
-    └── def controller(number_pushed, doors_closed=False):
-        └── if not number_pushed:
-            └── return False
-            return doors_closed
+    src.elevator.controller(
+        number_pushed=False, doors_closed=True
+    ) -> False
+    └── src/elevator/__init__.py
+        └── def controller(number_pushed, doors_closed=False):
+            └── if not number_pushed:
+                └── return False
+                return doors_closed
 
 * If the button for a floor is :green:`pushed` it returns the value of ``doors_closed``
 
@@ -890,23 +896,29 @@ When the ``controller`` :ref:`function is called<how to call a function with inp
 
     .. code-block:: shell
 
-      elevator(number_pushed=False, doors_closed=True ) -> False
-      └── def controller(number_pushed, doors_closed=False):
-          ├── if not number_pushed:
-          │      return False
-          └── return doors_closed
-              return False
+      src.elevator.controller(
+          number_pushed=False, doors_closed=True
+      ) -> False
+      └── src/elevator/__init__.py
+          └── def controller(number_pushed, doors_closed=False):
+              ├── if not number_pushed:
+              │      return False
+              └── return doors_closed
+                  return False
 
   - if the button for a floor is :green:`pushed` AND the **Elevator** doors are :green:`closed`, it returns :green:`True`
 
     .. code-block:: shell
 
-      elevator(number_pushed=True , doors_closed=True ) -> True
-      └── def controller(number_pushed, doors_closed=False):
-          ├── if not number_pushed:
-          │      return False
-          └── return doors_closed
-              return True
+      src.elevator.controller(
+          number_pushed=True , doors_closed=True
+      ) -> True
+      └── src/elevator/__init__.py
+          └── def controller(number_pushed, doors_closed=False):
+              ├── if not number_pushed:
+              │      return False
+              └── return doors_closed
+                  return True
 
 So far, the :ref:`truth table` for the **Elevator** is
 
@@ -968,7 +980,7 @@ test_above_weight_doors_open_number_not_pushed
 
   .. code-block:: python
     :lineno-start: 31
-    :emphasize-lines: 5
+    :emphasize-lines: 6
 
         def test_doors_open_number_not_pushed(self):
             self.assertFalse(
@@ -999,7 +1011,7 @@ test_above_weight_doors_open_number_not_pushed
 
 ----
 
-* I add ``above_weight`` to the :ref:`function signature<what is a function?>` in ``elevator.py``
+* I add ``above_weight`` to the :ref:`function signature<what is a function?>` in ``src/elevator/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1022,7 +1034,7 @@ test_above_weight_doors_open_number_not_pushed
 
   because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_elevator.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_elevator.py``
 
   .. code-block:: python
     :lineno-start: 41
@@ -1036,16 +1048,16 @@ test_above_weight_doors_open_number_not_pushed
     # TypeError
     # SyntaxError
 
-* I add a :ref:`default value<test_optional_arguments>` to make ``above_weight`` a choice, in ``elevator.py``
+* I add a :ref:`default value<test_optional_arguments>` to make ``above_weight`` a choice, in ``src/elevator/__init__.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 3
 
     def controller(
-        number_pushed, doors_closed=False,
-        above_weight=False,
-    ):
+            number_pushed, doors_closed=False,
+            above_weight=False,
+        ):
 
   the test passes.
 
@@ -1064,7 +1076,7 @@ test_above_weight_doors_open_number_not_pushed
 
 ----
 
-* I change the name of the test from :ref:`test_doors_open_number_not_pushed` to :ref:`test_above_weight_doors_open_number_not_pushed`, in ``test_elevator.py``
+* I change the name of the test from :ref:`test_doors_open_number_not_pushed` to :ref:`test_above_weight_doors_open_number_not_pushed`, in ``tests/test_elevator.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -1219,7 +1231,7 @@ test_above_weight_doors_closed_number_not_pushed
 
   .. code-block:: python
     :lineno-start: 23
-    :emphasize-lines: 5
+    :emphasize-lines: 6
 
         def test_doors_closed_number_not_pushed(self):
             self.assertFalse(
@@ -1249,7 +1261,7 @@ test_above_weight_doors_closed_number_not_pushed
         above_weight=False
     ) -> False
 
-* I change the name of the test from :ref:`test_doors_closed_number_not_pushed` to :ref:`test_above_weight_doors_closed_number_not_pushed`, in ``test_elevator.py``
+* I change the name of the test from :ref:`test_doors_closed_number_not_pushed` to :ref:`test_above_weight_doors_closed_number_not_pushed`, in ``tests/test_elevator.py``
 
   .. code-block:: python
     :lineno-start: 15
@@ -1430,7 +1442,7 @@ test_above_weight_doors_open_number_pushed
         above_weight=True
     ) -> False
 
-* I change the name of the test from :ref:`test_doors_open_number_pushed` to :ref:`test_above_weight_doors_open_number_pushed`, in ``test_elevator.py``
+* I change the name of the test from :ref:`test_doors_open_number_pushed` to :ref:`test_above_weight_doors_open_number_pushed`, in ``tests/test_elevator.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -1623,11 +1635,11 @@ test_above_weight_doors_closed_number_pushed
 
     AssertionError: True is not false
 
-* I add an :ref:`if statement<if statements>` for ``above_weight`` in ``elevator.py``
+* I add an :ref:`if statement<if statements>` for ``above_weight`` in ``src/elevator/__init__.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5-6
+    :emphasize-lines: 7-8
 
     def controller(
             number_pushed, doors_closed=False,
@@ -1664,7 +1676,7 @@ test_above_weight_doors_closed_number_pushed
 
 ----
 
-* I change the name of the test from :ref:`test_doors_closed_number_pushed` to :ref:`test_above_weight_doors_closed_number_pushed`, in ``test_elevator.py``
+* I change the name of the test from :ref:`test_doors_closed_number_pushed` to :ref:`test_above_weight_doors_closed_number_pushed`, in ``tests/test_elevator.py``
 
   .. code-block:: python
     :lineno-start: 5
@@ -1802,67 +1814,71 @@ When the ``controller`` :ref:`function is called<how to call a function with inp
 
   .. code-block:: shell
 
-    elevator(
+    src.elevator.controller(
         number_pushed=False, doors_closed=True,
         above_weight=True
     ) -> False
-    └── def controller(
-                number_pushed, doors_closed=False,
-                above_weight=False,
-            ):
-            └── if not number_pushed:
-                └── return False
-                if above_weight:
-                    return False
-                return doors_closed
+    └── src/elevator/__init__.py
+        └── def controller(
+                    number_pushed, doors_closed=False,
+                    above_weight=False,
+                ):
+                └── if not number_pushed:
+                    └── return False
+                    if above_weight:
+                        return False
+                    return doors_closed
 
   .. code-block:: shell
 
-    elevator(
+    src.elevator.controller(
         number_pushed=False, doors_closed=True,
         above_weight=False
     ) -> False
-    └── def controller(
-                number_pushed, doors_closed=False,
-                above_weight=False,
-            ):
-            └── if not number_pushed:
-                └── return False
-                if above_weight:
-                    return False
-                return doors_closed
+    └── src/elevator/__init__.py
+        └── def controller(
+                    number_pushed, doors_closed=False,
+                    above_weight=False,
+                ):
+                └── if not number_pushed:
+                    └── return False
+                    if above_weight:
+                        return False
+                    return doors_closed
 
   .. code-block:: shell
 
-    elevator(
+    src.elevator.controller(
         number_pushed=False, doors_closed=False,
         above_weight=True
     ) -> False
-    └── def controller(
-                number_pushed, doors_closed=False,
-                above_weight=False,
-            ):
-            └── if not number_pushed:
-                └── return False
-                if above_weight:
-                    return False
-                return doors_closed
+    └── src/elevator/__init__.py
+        └── def controller(
+                    number_pushed, doors_closed=False,
+                    above_weight=False,
+                ):
+                └── if not number_pushed:
+                    └── return False
+                    if above_weight:
+                        return False
+                    return doors_closed
 
   .. code-block:: shell
 
-    elevator(
+    src.elevator.controller(
         number_pushed=False, doors_closed=False,
         above_weight=False
     ) -> False
-    └── def controller(
-                number_pushed, doors_closed=False,
-                above_weight=False,
-            ):
-            └── if not number_pushed:
-                └── return False
-                if above_weight:
-                    return False
-                return doors_closed
+    └── src/elevator/__init__.py
+        └── def controller(
+                    number_pushed, doors_closed=False,
+                    above_weight=False,
+                ):
+                └── if not number_pushed:
+                    └── return False
+                    if above_weight:
+                        return False
+                    return doors_closed
 
 * If the button for a floor is :green:`pushed` it checks if the total weight of the **Elevator** is :green:`above` the weight limit
 
@@ -1870,35 +1886,37 @@ When the ``controller`` :ref:`function is called<how to call a function with inp
 
     .. code-block:: shell
 
-      elevator(
+      src.elevator.controller(
           number_pushed=True, doors_closed=True,
           above_weight=True
       ) -> False
-      └── def controller(
-                  number_pushed, doors_closed=False,
-                  above_weight=False,
-              ):
-              ├── if not number_pushed:
-              │       return False
-              └── if above_weight:
-                  └── return False
-                  return doors_closed
+      └── src/elevator/__init__.py
+          └── def controller(
+                      number_pushed, doors_closed=False,
+                      above_weight=False,
+                  ):
+                  ├── if not number_pushed:
+                  │       return False
+                  └── if above_weight:
+                      └── return False
+                      return doors_closed
 
     .. code-block:: shell
 
-      elevator(
+      src.elevator.controller(
           number_pushed=True, doors_closed=False,
           above_weight=True
       ) -> False
-      └── def controller(
-                  number_pushed, doors_closed=False,
-                  above_weight=False,
-              ):
-              ├── if not number_pushed:
-              │       return False
-              └── if above_weight:
-                  └── return False
-                  return doors_closed
+      └── src/elevator/__init__.py
+          └── def controller(
+                      number_pushed, doors_closed=False,
+                      above_weight=False,
+                  ):
+                  ├── if not number_pushed:
+                  │       return False
+                  └── if above_weight:
+                      └── return False
+                      return doors_closed
 
   - if the total weight of the **Elevator** is :red:`below` the weight limit, it returns the value of ``doors_closed``
 
@@ -1906,39 +1924,41 @@ When the ``controller`` :ref:`function is called<how to call a function with inp
 
       .. code-block:: shell
 
-        elevator(
+        src.elevator.controller(
             number_pushed=True, doors_closed=False,
             above_weight=False
         ) -> False
-        └── def controller(
-                    number_pushed, doors_closed=False,
-                    above_weight=False,
-                ):
-                ├── if not number_pushed:
-                │       return False
-                ├── if above_weight:
-                │       return False
-                └── return doors_closed
-                    return False
+        └── src/elevator/__init__.py
+            └── def controller(
+                        number_pushed, doors_closed=False,
+                        above_weight=False,
+                    ):
+                    ├── if not number_pushed:
+                    │       return False
+                    ├── if above_weight:
+                    │       return False
+                    └── return doors_closed
+                        return False
 
     - if the button for a floor is :green:`pushed` AND the total weight of the **Elevator** is :red:`below` the weight limit AND the **Elevator** doors are :green:`closed`, it returns :green:`True`
 
       .. code-block:: shell
 
-        elevator(
+        src.elevator.controller(
             number_pushed=True, doors_closed=True,
             above_weight=False
         ) -> True
-        └── def controller(
-                    number_pushed, doors_closed=False,
-                    above_weight=False,
-                ):
-                ├── if not number_pushed:
-                │       return False
-                ├── if above_weight:
-                │       return False
-                └── return doors_closed
-                    return True
+        └── src/elevator/__init__.py
+            └── def controller(
+                        number_pushed, doors_closed=False,
+                        above_weight=False,
+                    ):
+                    ├── if not number_pushed:
+                    │       return False
+                    ├── if above_weight:
+                    │       return False
+                    └── return doors_closed
+                        return True
 
 The :ref:`truth table` for the **Elevator** is
 
@@ -2000,7 +2020,7 @@ floor button       doors            weight limit   emergency button   output
   =================  ===============  ============== =================  =============
 
   .. code-block:: python
-    :lineno-start: 10
+    :lineno-start: 7
     :emphasize-lines: 7
 
         def test_above_weight_doors_closed_number_pushed(self):
@@ -2032,7 +2052,7 @@ floor button       doors            weight limit   emergency button   output
 
 ----
 
-* I add ``emergency`` to the ``controller`` :ref:`function signature<what is a function?>` in ``elevator.py``
+* I add ``emergency`` to the ``controller`` :ref:`function signature<what is a function?>` in ``src/elevator/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -2267,7 +2287,7 @@ floor button       doors            weight limit   emergency button   output
 
 ----
 
-* I add an :ref:`if statement<if statements>` for the ``emergency`` parameter to the :ref:`function definition<how to make a function that takes input>` in ``elevator.py``
+* I add an :ref:`if statement<if statements>` for the ``emergency`` parameter to the :ref:`function definition<how to make a function that takes input>` in ``src/elevator/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -2314,7 +2334,7 @@ floor button       doors            weight limit   emergency button   output
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 9-10, 12-15
+    :emphasize-lines: 9-10, 13-14
 
     def controller(
             number_pushed, doors_closed=False,
@@ -2324,15 +2344,14 @@ floor button       doors            weight limit   emergency button   output
             return False
         if above_weight:
             return False
-        # if emergency:
         if not doors_closed:
             return False
-        # return doors_closed
         if emergency:
             return False
+        # return doors_closed
         return True
 
-* I remove the commented lines from :ref:`test_below_weight_doors_closed_number_pushed`
+* I remove the commented line from the ``controller`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -3643,163 +3662,171 @@ When the ``controller`` :ref:`function is called<how to call a function with inp
 
   .. code-block:: shell
 
-    elevator(
+    src.elevator.controller(
         number_pushed=False, doors_closed=True,
         above_weight=True, emergency=True,
     ) -> False
-    └── def controller(
-                number_pushed, doors_closed=False,
-                above_weight=False, emergency=False,
-            ):
-            └── if not number_pushed:
-                └── return False
-                if above_weight:
-                    return False
-                if not doors_closed:
-                    return False
-                if emergency:
-                    return False
-                return True
+    └── src/elevator/__init__.py
+        └── def controller(
+                    number_pushed, doors_closed=False,
+                    above_weight=False, emergency=False,
+                ):
+                └── if not number_pushed:
+                    └── return False
+                    if above_weight:
+                        return False
+                    if not doors_closed:
+                        return False
+                    if emergency:
+                        return False
+                    return True
 
   .. code-block:: shell
 
-    elevator(
+    src.elevator.controller(
         number_pushed=False, doors_closed=True,
         above_weight=True, emergency=False,
     ) -> False
-    └── def controller(
-                number_pushed, doors_closed=False,
-                above_weight=False, emergency=False,
-            ):
-            └── if not number_pushed:
-                └── return False
-                if above_weight:
-                    return False
-                if not doors_closed:
-                    return False
-                if emergency:
-                    return False
-                return True
+    └── src/elevator/__init__.py
+        └── def controller(
+                    number_pushed, doors_closed=False,
+                    above_weight=False, emergency=False,
+                ):
+                └── if not number_pushed:
+                    └── return False
+                    if above_weight:
+                        return False
+                    if not doors_closed:
+                        return False
+                    if emergency:
+                        return False
+                    return True
 
   .. code-block:: shell
 
-    elevator(
+    src.elevator.controller(
         number_pushed=False, doors_closed=True,
         above_weight=False, emergency=True,
     ) -> False
-    └── def controller(
-                number_pushed, doors_closed=False,
-                above_weight=False, emergency=False,
-            ):
-            └── if not number_pushed:
-                └── return False
-                if above_weight:
-                    return False
-                if not doors_closed:
-                    return False
-                if emergency:
-                    return False
-                return True
+    └── src/elevator/__init__.py
+        └── def controller(
+                    number_pushed, doors_closed=False,
+                    above_weight=False, emergency=False,
+                ):
+                └── if not number_pushed:
+                    └── return False
+                    if above_weight:
+                        return False
+                    if not doors_closed:
+                        return False
+                    if emergency:
+                        return False
+                    return True
 
   .. code-block:: shell
 
-    elevator(
+    src.elevator.controller(
         number_pushed=False, doors_closed=True,
         above_weight=False, emergency=False,
     ) -> False
-    └── def controller(
-                number_pushed, doors_closed=False,
-                above_weight=False, emergency=False,
-            ):
-            └── if not number_pushed:
-                └── return False
-                if above_weight:
-                    return False
-                if not doors_closed:
-                    return False
-                if emergency:
-                    return False
-                return True
+    └── src/elevator/__init__.py
+        └── def controller(
+                    number_pushed, doors_closed=False,
+                    above_weight=False, emergency=False,
+                ):
+                └── if not number_pushed:
+                    └── return False
+                    if above_weight:
+                        return False
+                    if not doors_closed:
+                        return False
+                    if emergency:
+                        return False
+                    return True
 
   .. code-block:: shell
 
-    elevator(
+    src.elevator.controller(
         number_pushed=False, doors_closed=False,
         above_weight=True, emergency=True,
     ) -> False
-    └── def controller(
-                number_pushed, doors_closed=False,
-                above_weight=False, emergency=False,
-            ):
-            └── if not number_pushed:
-                └── return False
-                if above_weight:
-                    return False
-                if not doors_closed:
-                    return False
-                if emergency:
-                    return False
-                return True
+    └── src/elevator/__init__.py
+        └── def controller(
+                    number_pushed, doors_closed=False,
+                    above_weight=False, emergency=False,
+                ):
+                └── if not number_pushed:
+                    └── return False
+                    if above_weight:
+                        return False
+                    if not doors_closed:
+                        return False
+                    if emergency:
+                        return False
+                    return True
 
   .. code-block:: shell
 
-    elevator(
+    src.elevator.controller(
         number_pushed=False, doors_closed=False,
         above_weight=True, emergency=False,
     ) -> False
-    └── def controller(
-                number_pushed, doors_closed=False,
-                above_weight=False, emergency=False,
-            ):
-            └── if not number_pushed:
-                └── return False
-                if above_weight:
-                    return False
-                if not doors_closed:
-                    return False
-                if emergency:
-                    return False
-                return True
+    └── src/elevator/__init__.py
+        └── def controller(
+                    number_pushed, doors_closed=False,
+                    above_weight=False, emergency=False,
+                ):
+                └── if not number_pushed:
+                    └── return False
+                    if above_weight:
+                        return False
+                    if not doors_closed:
+                        return False
+                    if emergency:
+                        return False
+                    return True
 
   .. code-block:: shell
 
-    elevator(
+    src.elevator.controller(
         number_pushed=False, doors_closed=False,
         above_weight=False, emergency=True,
     ) -> False
-    └── def controller(
-                number_pushed, doors_closed=False,
-                above_weight=False, emergency=False,
-            ):
-            └── if not number_pushed:
-                └── return False
-                if above_weight:
-                    return False
-                if not doors_closed:
-                    return False
-                if emergency:
-                    return False
-                return True
+    └── src/elevator/__init__.py
+        └── def controller(
+                    number_pushed, doors_closed=False,
+                    above_weight=False, emergency=False,
+                ):
+                └── if not number_pushed:
+                    └── return False
+                    if above_weight:
+                        return False
+                    if not doors_closed:
+                        return False
+                    if emergency:
+                        return False
+                    return True
 
   .. code-block:: shell
 
-    elevator(
+    src.elevator.controller(
         number_pushed=False, doors_closed=False,
         above_weight=False, emergency=False,
     ) -> False
-    └── def controller(
-                number_pushed, doors_closed=False,
-                above_weight=False, emergency=False,
-            ):
-            └── if not number_pushed:
-                └── return False
-                if above_weight:
-                    return False
-                if not doors_closed:
-                    return False
-                if emergency:
-                    return False
-                return True
+    └── src/elevator/__init__.py
+        └── def controller(
+                    number_pushed, doors_closed=False,
+                    above_weight=False, emergency=False,
+                ):
+                └── if not number_pushed:
+                    └── return False
+                    if above_weight:
+                        return False
+                    if not doors_closed:
+                        return False
+                    if emergency:
+                        return False
+                    return True
 
 * If the button for a floor is :green:`pushed` it checks if the total weight of the **Elevator** is :green:`above` the weight limit
 
@@ -3807,83 +3834,87 @@ When the ``controller`` :ref:`function is called<how to call a function with inp
 
     .. code-block:: shell
 
-      elevator(
+      src.elevator.controller(
           number_pushed=True, doors_closed=False,
           above_weight=True, emergency=True,
       ) -> False
-      └── def controller(
-                  number_pushed, doors_closed=False,
-                  above_weight=False, emergency=False,
-              ):
-              ├── if not number_pushed:
-              │       return False
-              └── if above_weight:
-                  └── return False
-                  if not doors_closed:
-                      return False
-                  if emergency:
-                      return False
-                  return True
+      └── src/elevator/__init__.py
+          └── def controller(
+                      number_pushed, doors_closed=False,
+                      above_weight=False, emergency=False,
+                  ):
+                  ├── if not number_pushed:
+                  │       return False
+                  └── if above_weight:
+                      └── return False
+                      if not doors_closed:
+                          return False
+                      if emergency:
+                          return False
+                      return True
 
     .. code-block:: shell
 
-      elevator(
+      src.elevator.controller(
           number_pushed=True, doors_closed=False,
           above_weight=True, emergency=False,
       ) -> False
-      └── def controller(
-                  number_pushed, doors_closed=False,
-                  above_weight=False, emergency=False,
-              ):
-              ├── if not number_pushed:
-              │       return False
-              └── if above_weight:
-                  └── return False
-                  if not doors_closed:
-                      return False
-                  if emergency:
-                      return False
-                  return True
+      └── src/elevator/__init__.py
+          └── def controller(
+                      number_pushed, doors_closed=False,
+                      above_weight=False, emergency=False,
+                  ):
+                  ├── if not number_pushed:
+                  │       return False
+                  └── if above_weight:
+                      └── return False
+                      if not doors_closed:
+                          return False
+                      if emergency:
+                          return False
+                      return True
 
     .. code-block:: shell
 
-      elevator(
+      src.elevator.controller(
           number_pushed=True, doors_closed=True,
           above_weight=True, emergency=True,
       ) -> False
-      └── def controller(
-                  number_pushed, doors_closed=False,
-                  above_weight=False, emergency=False,
-              ):
-              ├── if not number_pushed:
-              │       return False
-              └── if above_weight:
-                  └── return False
-                  if not doors_closed:
-                      return False
-                  if emergency:
-                      return False
-                  return True
+      └── src/elevator/__init__.py
+          └── def controller(
+                      number_pushed, doors_closed=False,
+                      above_weight=False, emergency=False,
+                  ):
+                  ├── if not number_pushed:
+                  │       return False
+                  └── if above_weight:
+                      └── return False
+                      if not doors_closed:
+                          return False
+                      if emergency:
+                          return False
+                      return True
 
     .. code-block:: shell
 
-      elevator(
+      src.elevator.controller(
           number_pushed=True, doors_closed=True,
           above_weight=True, emergency=False,
       ) -> False
-      └── def controller(
-                  number_pushed, doors_closed=False,
-                  above_weight=False, emergency=False,
-              ):
-              ├── if not number_pushed:
-              │       return False
-              └── if above_weight:
-                  └── return False
-                  if not doors_closed:
-                      return False
-                  if emergency:
-                      return False
-              return True
+      └── src/elevator/__init__.py
+          └── def controller(
+                      number_pushed, doors_closed=False,
+                      above_weight=False, emergency=False,
+                  ):
+                  ├── if not number_pushed:
+                  │       return False
+                  └── if above_weight:
+                      └── return False
+                      if not doors_closed:
+                          return False
+                      if emergency:
+                          return False
+                  return True
 
   - if the total weight of the **Elevator** is :red:`below` the weight limit, it checks if the **Elevator** doors are :green:`closed`
 
@@ -3891,43 +3922,45 @@ When the ``controller`` :ref:`function is called<how to call a function with inp
 
       .. code-block:: shell
 
-        elevator(
+        src.elevator.controller(
             number_pushed=True, doors_closed=False,
             above_weight=False, emergency=True,
         ) -> False
-        └── def controller(
-                    number_pushed, doors_closed=False,
-                    above_weight=False, emergency=False,
-                ):
-                ├── if not number_pushed:
-                │       return False
-                ├── if above_weight:
-                │       return False
-                └── if not doors_closed:
-                    └── return False
-                    if emergency:
-                        return False
-                    return True
+        └── src/elevator/__init__.py
+            └── def controller(
+                        number_pushed, doors_closed=False,
+                        above_weight=False, emergency=False,
+                    ):
+                    ├── if not number_pushed:
+                    │       return False
+                    ├── if above_weight:
+                    │       return False
+                    └── if not doors_closed:
+                        └── return False
+                        if emergency:
+                            return False
+                        return True
 
       .. code-block:: shell
 
-        elevator(
+        src.elevator.controller(
             number_pushed=True, doors_closed=False,
             above_weight=False, emergency=False,
         ) -> False
-        └── def controller(
-                    number_pushed, doors_closed=False,
-                    above_weight=False, emergency=False,
-                ):
-                ├── if not number_pushed:
-                │       return False
-                ├── if above_weight:
-                │       return False
-                └── if not doors_closed:
-                    └── return False
-                    if emergency:
-                        return False
-                    return True
+        └── src/elevator/__init__.py
+            └── def controller(
+                        number_pushed, doors_closed=False,
+                        above_weight=False, emergency=False,
+                    ):
+                    ├── if not number_pushed:
+                    │       return False
+                    ├── if above_weight:
+                    │       return False
+                    └── if not doors_closed:
+                        └── return False
+                        if emergency:
+                            return False
+                        return True
 
     - if the **Elevator** doors are :green:`closed`, it checks if the emergency button is :green:`pushed`
 
@@ -3935,45 +3968,47 @@ When the ``controller`` :ref:`function is called<how to call a function with inp
 
         .. code-block:: shell
 
-          elevator(
+          src.elevator.controller(
               number_pushed=True, doors_closed=True,
               above_weight=False, emergency=True,
           ) -> False
-          └── def controller(
-                      number_pushed, doors_closed=False,
-                      above_weight=False, emergency=False,
-                  ):
-                  ├── if not number_pushed:
-                  │       return False
-                  ├── if above_weight:
-                  │       return False
-                  ├── if not doors_closed:
-                  │       return False
-                  └── if emergency:
-                      └── return False
-                      return True
+          └── src/elevator/__init__.py
+              └── def controller(
+                          number_pushed, doors_closed=False,
+                          above_weight=False, emergency=False,
+                      ):
+                      ├── if not number_pushed:
+                      │       return False
+                      ├── if above_weight:
+                      │       return False
+                      ├── if not doors_closed:
+                      │       return False
+                      └── if emergency:
+                          └── return False
+                          return True
 
       * the button for a floor is :green:`pushed` AND the doors are :green:`closed` AND the **Elevator** is :red:`NOT above` the weight limit, and the emergency button is :red:`NOT pushed`, it returns :green:`True`
 
         .. code-block:: shell
 
-          elevator(
+          src.elevator.controller(
               number_pushed=True, doors_closed=True,
               above_weight=False, emergency=False,
           ) -> True
-          └── def controller(
-                      number_pushed, doors_closed=False,
-                      above_weight=False, emergency=False,
-                  ):
-                  ├── if not number_pushed:
-                  │       return False
-                  ├── if above_weight:
-                  │       return False
-                  ├── if not doors_closed:
-                  │       return False
-                  ├── if emergency:
-                  │       return False
-                  └── return True
+          └── src/elevator/__init__.py
+              └── def controller(
+                          number_pushed, doors_closed=False,
+                          above_weight=False, emergency=False,
+                      ):
+                      ├── if not number_pushed:
+                      │       return False
+                      ├── if above_weight:
+                      │       return False
+                      ├── if not doors_closed:
+                      │       return False
+                      ├── if emergency:
+                      │       return False
+                      └── return True
 
 ----
 
@@ -4054,7 +4089,7 @@ refactor controller
             return False
         return True
 
-  Which do you like better? One :ref:`if statement<if statements>` to bind them all or many simple statements?
+  Which do you like better? One :ref:`if statement<if statements>` to bind them all, or many simple statements?
 
 * I add a git_ commit message in the other terminal_
 
@@ -4067,7 +4102,7 @@ refactor controller
 close the project
 *********************************************************************************
 
-* I close ``test_elevator.py`` and ``elevator.py``
+* I close ``tests/test_elevator.py`` and ``src/elevator/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ shows
 
