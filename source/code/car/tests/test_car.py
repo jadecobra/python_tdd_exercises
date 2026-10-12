@@ -130,7 +130,7 @@ class TestCar(unittest.TestCase):
             )
         )
 
-    def test_brake_not_pressed_key_not_close_start_not_pressed(self):
+    def test_park_w_brake_not_pressed_key_not_close_start_not_pressed(self):
         self.assertFalse(
             src.car.ignition(
                 start_is_pressed=False,

@@ -21,51 +21,51 @@ preview
 These are the tests I have at the end of the chapter
 
 .. literalinclude:: ../../code/car/tests/test_car.py
+  :caption: car/tests/test_car.py
   :language: python
   :linenos:
-  :caption: car/tests/test_car.py
   :lines: 1-23
 
-.. literalinclude:: ../../code/car/test_car.py
+.. literalinclude:: ../../code/car/tests/test_car.py
+  :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 25
-  :caption: car/tests/test_car.py
   :lines: 25-41
 
-.. literalinclude:: ../../code/car/test_car.py
+.. literalinclude:: ../../code/car/tests/test_car.py
+  :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 43
-  :caption: car/tests/test_car.py
   :lines: 43-59
 
-.. literalinclude:: ../../code/car/test_car.py
+.. literalinclude:: ../../code/car/tests/test_car.py
+  :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 61
-  :caption: car/tests/test_car.py
   :lines: 61-77
 
-.. literalinclude:: ../../code/car/test_car.py
+.. literalinclude:: ../../code/car/tests/test_car.py
+  :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 79
-  :caption: car/tests/test_car.py
   :lines: 79-95
 
-.. literalinclude:: ../../code/car/test_car.py
+.. literalinclude:: ../../code/car/tests/test_car.py
+  :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 97
-  :caption: car/tests/test_car.py
   :lines: 97-113
 
-.. literalinclude:: ../../code/car/test_car.py
+.. literalinclude:: ../../code/car/tests/test_car.py
+  :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 115
-  :caption: car/tests/test_car.py
   :lines: 115-131
 
-.. literalinclude:: ../../code/car/test_car.py
+.. literalinclude:: ../../code/car/tests/test_car.py
+  :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 133
-  :caption: car/tests/test_car.py
   :lines: 133-
 
 ----
@@ -464,7 +464,7 @@ test_key_close_start_pressed
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add ``key_is_close`` with a value to the :ref:`call<how to call a function with input>` to the ``ignition`` :ref:`function<what is a function?>` from :ref:`test_start_pressed` for if the the start button is :green:`pressed` AND the key is :green:`close` to the ignition
+* I add ``key_is_close`` with a value to the :ref:`call<how to call a function with input>` to the ``ignition`` :ref:`function<what is a function?>` from :ref:`test_start_pressed` for if the start button is :green:`pressed` AND the key is :green:`close` to the ignition
 
   ================  ==================  =============
   key               start button        output
@@ -490,7 +490,7 @@ test_key_close_start_pressed
   .. code-block:: python
 
     TypeError: ignition() got
-               an unexpected keyword argument 'key_is_close
+               an unexpected keyword argument 'key_is_close'
 
   because the test :ref:`called<how to call a function with input>` the ``ignition`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``key_is_close``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 

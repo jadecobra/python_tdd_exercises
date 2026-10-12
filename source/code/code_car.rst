@@ -40,49 +40,49 @@ Car: tests
 
 The code in ``car/tests/test_car.py`` from :ref:`Car`
 
-.. literalinclude:: car/test/test_car.py
+.. literalinclude:: car/tests/test_car.py
   :caption: car/tests/test_car.py
   :language: python
   :linenos:
   :lines: 1-23
 
-.. literalinclude:: car/test/test_car.py
+.. literalinclude:: car/tests/test_car.py
   :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 25
   :lines: 25-41
 
-.. literalinclude:: car/test/test_car.py
+.. literalinclude:: car/tests/test_car.py
   :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 43
   :lines: 43-59
 
-.. literalinclude:: car/test/test_car.py
+.. literalinclude:: car/tests/test_car.py
   :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 61
   :lines: 61-77
 
-.. literalinclude:: car/test/test_car.py
+.. literalinclude:: car/tests/test_car.py
   :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 79
   :lines: 79-95
 
-.. literalinclude:: car/test/test_car.py
+.. literalinclude:: car/tests/test_car.py
   :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 97
   :lines: 97-113
 
-.. literalinclude:: car/test/test_car.py
+.. literalinclude:: car/tests/test_car.py
   :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 115
   :lines: 115-131
 
-.. literalinclude:: car/test/test_car.py
+.. literalinclude:: car/tests/test_car.py
   :caption: car/tests/test_car.py
   :language: python
   :lineno-start: 133
@@ -99,4 +99,4 @@ The code in ``car/src/__init__.py`` from :ref:`Car`
 .. literalinclude:: car/src/car.py
   :language: python
   :linenos:
-  :caption: car/src/car.py
+  :caption: car/src/__init__.py
