@@ -1,6 +1,5 @@
 uv init microwave
 cd microwave
-New-Item "src/microwave.py"
 mkdir tests
 New-Item tests/__init__.py
 
