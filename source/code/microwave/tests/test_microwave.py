@@ -4,11 +4,11 @@ import unittest
 
 class TestMicrowave(unittest.TestCase):
 
-    def test_too_hot_w_set_timer_closed_door_pressed_start(self):
+    def test_too_hot_w_timer_is_set_closed_door_pressed_start(self):
         self.assertFalse(
             src.microwave.microwave(
                 closed_door=True,
-                set_timer=True,
+                timer_is_set=True,
                 pressed_start=True,
                 too_hot=True,
             )
@@ -16,53 +16,17 @@ class TestMicrowave(unittest.TestCase):
         self.assertTrue(
             src.microwave.microwave(
                 closed_door=True,
-                set_timer=True,
+                timer_is_set=True,
                 pressed_start=True,
                 too_hot=False,
             )
         )
 
-    def test_too_hot_w_set_timer_closed_door_not_pressed_start(self):
+    def test_too_hot_w_timer_is_set_closed_door_not_pressed_start(self):
         self.assertFalse(
             src.microwave.microwave(
                 closed_door=True,
-                set_timer=True,
-                pressed_start=False,
-                too_hot=True,
-            )
-        )
-        self.assertFalse(
-            src.microwave.microwave(
-                closed_door=True,
-                set_timer=True,
-                pressed_start=False,
-                too_hot=False,
-            )
-        )
-
-    def test_too_hot_w_not_set_timer_closed_door_pressed_start(self):
-        self.assertFalse(
-            src.microwave.microwave(
-                closed_door=True,
-                set_timer=False,
-                pressed_start=True,
-                too_hot=True,
-            )
-        )
-        self.assertFalse(
-            src.microwave.microwave(
-                closed_door=True,
-                set_timer=False,
-                pressed_start=True,
-                too_hot=False,
-            )
-        )
-
-    def test_too_hot_w_not_set_timer_closed_door_not_pressed_start(self):
-        self.assertFalse(
-            src.microwave.microwave(
-                closed_door=True,
-                set_timer=False,
+                timer_is_set=True,
                 pressed_start=False,
                 too_hot=True,
             )
@@ -70,17 +34,53 @@ class TestMicrowave(unittest.TestCase):
         self.assertFalse(
             src.microwave.microwave(
                 closed_door=True,
-                set_timer=False,
+                timer_is_set=True,
                 pressed_start=False,
                 too_hot=False,
             )
         )
 
-    def test_too_hot_w_set_timer_open_door_pressed_start(self):
+    def test_too_hot_w_not_timer_is_set_closed_door_pressed_start(self):
+        self.assertFalse(
+            src.microwave.microwave(
+                closed_door=True,
+                timer_is_set=False,
+                pressed_start=True,
+                too_hot=True,
+            )
+        )
+        self.assertFalse(
+            src.microwave.microwave(
+                closed_door=True,
+                timer_is_set=False,
+                pressed_start=True,
+                too_hot=False,
+            )
+        )
+
+    def test_too_hot_w_not_timer_is_set_closed_door_not_pressed_start(self):
+        self.assertFalse(
+            src.microwave.microwave(
+                closed_door=True,
+                timer_is_set=False,
+                pressed_start=False,
+                too_hot=True,
+            )
+        )
+        self.assertFalse(
+            src.microwave.microwave(
+                closed_door=True,
+                timer_is_set=False,
+                pressed_start=False,
+                too_hot=False,
+            )
+        )
+
+    def test_too_hot_w_timer_is_set_open_door_pressed_start(self):
         self.assertFalse(
             src.microwave.microwave(
                 closed_door=False,
-                set_timer=True,
+                timer_is_set=True,
                 pressed_start=True,
                 too_hot=True,
             )
@@ -88,17 +88,17 @@ class TestMicrowave(unittest.TestCase):
         self.assertFalse(
             src.microwave.microwave(
                 closed_door=False,
-                set_timer=True,
+                timer_is_set=True,
                 pressed_start=True,
                 too_hot=False,
             )
         )
 
-    def test_too_hot_w_set_timer_open_door_not_pressed_start(self):
+    def test_too_hot_w_timer_is_set_open_door_not_pressed_start(self):
         self.assertFalse(
             src.microwave.microwave(
                 closed_door=False,
-                set_timer=True,
+                timer_is_set=True,
                 pressed_start=False,
                 too_hot=True,
             )
@@ -106,17 +106,17 @@ class TestMicrowave(unittest.TestCase):
         self.assertFalse(
             src.microwave.microwave(
                 closed_door=False,
-                set_timer=True,
+                timer_is_set=True,
                 pressed_start=False,
                 too_hot=False,
             )
         )
 
-    def test_too_hot_w_not_set_timer_open_door_pressed_start(self):
+    def test_too_hot_w_not_timer_is_set_open_door_pressed_start(self):
         self.assertFalse(
             src.microwave.microwave(
                 closed_door=False,
-                set_timer=False,
+                timer_is_set=False,
                 pressed_start=True,
                 too_hot=True,
             )
@@ -124,17 +124,17 @@ class TestMicrowave(unittest.TestCase):
         self.assertFalse(
             src.microwave.microwave(
                 closed_door=False,
-                set_timer=False,
+                timer_is_set=False,
                 pressed_start=True,
                 too_hot=False,
             )
         )
 
-    def test_too_hot_w_not_set_timer_open_door_not_pressed_start(self):
+    def test_too_hot_w_not_timer_is_set_open_door_not_pressed_start(self):
         self.assertFalse(
             src.microwave.microwave(
                 closed_door=False,
-                set_timer=False,
+                timer_is_set=False,
                 pressed_start=False,
                 too_hot=True,
             )
@@ -142,7 +142,7 @@ class TestMicrowave(unittest.TestCase):
         self.assertFalse(
             src.microwave.microwave(
                 closed_door=False,
-                set_timer=False,
+                timer_is_set=False,
                 pressed_start=False,
                 too_hot=False,
             )

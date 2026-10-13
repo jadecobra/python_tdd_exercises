@@ -843,12 +843,13 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
   .. code-block:: python
     :lineno-start: 41
-    :emphasize-lines: 2-9
+    :emphasize-lines: 2-10
 
     def logical_nand(first_input, second_input):
         if first_input == True:
             if second_input == True:
                 return False
+        return True
         # if first_input == False:
         #     return True
         # if second_input == False:
@@ -935,6 +936,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
             # if second_input == True:
             if bool(second_input) == True:
                 return False
+        return True
         # if first_input == False:
 
   green.
@@ -953,6 +955,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
             # if bool(second_input) == True:
             if bool(second_input):
                 return False
+        return True
 
   still green.
 
@@ -972,6 +975,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
             # if bool(second_input):
             if second_input:
                 return False
+        return True
 
   the test is still green, because I can assume the following substitutions for ``if something == True:``
 
@@ -1004,6 +1008,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
             # if second_input:
         if first_input and second_input:
                 return False
+        return True
 
   still green, because I can put two :ref:`if statements` together when one is indented under the other
 

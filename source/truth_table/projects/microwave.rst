@@ -134,8 +134,8 @@ start the project
     FAILED tests/test_microwave.py::TestMicrowave::test_failure - AssertionError: True is not false
     ==================== 1 failed in X.YZs ====================
 
-* I open ``tests/test_microwave.py`` from the ``tests`` folder_
-* I change :green:`True` to :red:`False` in ``test_microwave.py``
+* I open ``test_microwave.py`` from the ``tests`` folder_
+* I change :green:`True` to :red:`False` in ``tests/test_microwave.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -284,9 +284,10 @@ test_pressed_start
     # NameError
     # AttributeError
 
-* I open ``microwave/__init__.py`` from the ``src`` folder_
+* I open ``__init__.py`` from the. ``microwave`` folder in the ``src`` folder_
 
-* I delete all the text in the file_ then add a :ref:`function<what is a function?>` named ``microwave`` to ``microwave.py``
+* I delete all the text in ``src/microwave/__init__.py``
+* I add a :ref:`function<what is a function?>` named ``microwave`` to ``src/microwave/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -304,7 +305,7 @@ test_pressed_start
 
   because the test :ref:`called<how to call a function with input>` the ``microwave`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``pressed_start``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_microwave.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_microwave.py``
 
   .. code-block:: python
     :lineno-start: 15
@@ -470,7 +471,7 @@ test_open_door_not_pressed_start
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test with an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`open` AND the start button is :red:`NOT pressed`, in ``test_microwave.py``
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`open` AND the start button is :red:`NOT pressed`, in ``tests/test_microwave.py``
 
   =============== ==================  =============
   door            start button        output
@@ -517,7 +518,7 @@ test_open_door_not_pressed_start
 
 ----
 
-* I add ``closed_door`` to the :ref:`function signature<how to make a function that takes input>` in ``microwave.py``
+* I add ``closed_door`` to the :ref:`function signature<how to make a function that takes input>` in ``src/microwave/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -553,7 +554,7 @@ test_open_door_not_pressed_start
     SyntaxError: parameter without a default follows
                  parameter with a default
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``test_microwave.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen, in ``tests/test_microwave.py``
 
   .. code-block:: python
     :lineno-start: 30
@@ -567,7 +568,7 @@ test_open_door_not_pressed_start
     # TypeError
     # SyntaxError
 
-* I add a :ref:`default value<test_optional_arguments>` for ``pressed_start``, in ``microwave.py``
+* I add a :ref:`default value<test_optional_arguments>` for ``pressed_start``, in ``src/microwave/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -585,6 +586,7 @@ test_open_door_not_pressed_start
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     git commit -am 'add test_open_door_not_pressed_start'
 
@@ -601,7 +603,7 @@ test_open_door_pressed_start
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test with an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`open` AND the start button is :green:`pressed`, in ``test_microwave.py``
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`open` AND the start button is :green:`pressed`, in ``tests/test_microwave.py``
 
   =============== ==================  =============
   door            start button        output
@@ -644,7 +646,7 @@ test_open_door_pressed_start
 
 ----
 
-* I add an :ref:`if statement<if statements>` for ``closed_door`` to the ``microwave`` :ref:`function<what is a function?>` in ``microwave.py``
+* I add an :ref:`if statement<if statements>` for ``closed_door`` to the ``microwave`` :ref:`function<what is a function?>` in ``src/microwave/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -665,6 +667,7 @@ test_open_door_pressed_start
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     git commit -am 'add test_open_door_pressed_start'
 
@@ -729,6 +732,7 @@ test_closed_door_not_pressed_start
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     git commit -am 'add test_closed_door_not_pressed_start'
 
@@ -770,9 +774,26 @@ test_closed_door_pressed_start
     microwave(closed_door=False, pressed_start=True ) -> False
     microwave(closed_door=False, pressed_start=False) -> False
 
+* I change the name of the test from :ref:`test_pressed_start` to :ref:`test_closed_door_pressed_start`
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 3
+
+    class TestMicrowave(unittest.TestCase):
+
+        def test_closed_door_pressed_start(self):
+            self.assertTrue(
+                src.microwave.microwave(
+                    closed_door=True,
+                    pressed_start=True,
+                )
+            )
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     git commit -am 'add test_closed_door_pressed_start'
 
@@ -784,19 +805,25 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
 
   .. code-block:: shell
 
-    microwave(closed_door=False, pressed_start=True ) -> False
-    └── def microwave(closed_door=False, pressed_start=False):
-        └── if not closed_door:
-            └── return False
-            return pressed_start
+    src.microwave.microwave(
+        closed_door=False, pressed_start=True
+    ) -> False
+    └── src/microwave/__init__.py
+        └── def microwave(closed_door=False, pressed_start=False):
+            └── if not closed_door:
+                └── return False
+                return pressed_start
 
   .. code-block:: shell
 
-    microwave(closed_door=False, pressed_start=False) -> False
-    └── def microwave(closed_door=False, pressed_start=False):
-        └── if not closed_door:
-            └── return False
-            return pressed_start
+    src.microwave.microwave(
+        closed_door=False, pressed_start=False
+    ) -> False
+    └── src/microwave/__init__.py
+        └── def microwave(closed_door=False, pressed_start=False):
+            └── if not closed_door:
+                └── return False
+                return pressed_start
 
 * if the door is :green:`closed` it returns the value of ``pressed_start``
 
@@ -804,23 +831,29 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
 
     .. code-block:: shell
 
-      microwave(closed_door=True , pressed_start=False) -> False
-      └── def microwave(closed_door=False, pressed_start=False):
-          ├── if not closed_door:
-          │       return False
-          └── return pressed_start
-              return False
+      src.microwave.microwave(
+          closed_door=True , pressed_start=False
+      ) -> False
+      └── src/microwave/__init__.py
+          └── def microwave(closed_door=False, pressed_start=False):
+              ├── if not closed_door:
+              │       return False
+              └── return pressed_start
+                  return False
 
   - if the door is :green:`closed` AND the start button is :green:`pressed` it returns :green:`True`
 
     .. code-block:: shell
 
-      microwave(closed_door=True , pressed_start=True ) -> True
-      └── def microwave(closed_door=False, pressed_start=False):
-          ├── if not closed_door:
-          │       return False
-          └── return pressed_start
-              return True
+      src.microwave.microwave(
+          closed_door=True , pressed_start=True
+      ) -> True
+      └── src/microwave/__init__.py
+          └── def microwave(closed_door=False, pressed_start=False):
+              ├── if not closed_door:
+              │       return False
+              └── return pressed_start
+                  return True
 
 So far, the :ref:`truth table` for the **Microwave** is
 
@@ -833,7 +866,7 @@ door            start button        output
 :red:`open`     :red:`NOT pressed`  :red:`False`
 =============== ==================  =============
 
-I want the **Microwave** to only heat up food when the door is :green:`closed` AND the timer is :green:`set` AND the start button is :green:`pressed`. The inputs for the **Microwave** will then be
+I want the **Microwave** to only :green:`HEAT UP` food when the door is :green:`closed` AND the timer is :green:`set` (to stop it from burning the food) AND the start button is :green:`pressed`. The inputs for the **Microwave** will then be
 
 * is the **Microwave** door closed?
 * is the **Microwave** timer set?
@@ -842,7 +875,7 @@ I want the **Microwave** to only heat up food when the door is :green:`closed` A
 ----
 
 *********************************************************************************
-test_set_timer_closed_door_pressed_start
+test_timer_is_set_closed_door_pressed_start
 *********************************************************************************
 
 =================================================================================
@@ -852,7 +885,7 @@ test_set_timer_closed_door_pressed_start
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add ``set_timer`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_closed_door_pressed_start`, for if the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :green:`pressed`
+* I add ``timer_is_set`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_closed_door_pressed_start`, for if the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :green:`pressed`
 
   =============== ==============  ==================  =============
   door            timer           start button        output
@@ -868,7 +901,7 @@ test_set_timer_closed_door_pressed_start
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=True,
                 )
             )
@@ -880,9 +913,9 @@ test_set_timer_closed_door_pressed_start
   .. code-block:: python
 
     TypeError: microwave() got
-               an unexpected keyword argument 'set_timer'
+               an unexpected keyword argument 'timer_is_set'
 
-  because the test :ref:`called<how to call a function with input>` the ``microwave`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``set_timer``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
+  because the test :ref:`called<how to call a function with input>` the ``microwave`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``timer_is_set``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
 ----
 
@@ -892,7 +925,7 @@ test_set_timer_closed_door_pressed_start
 
 ----
 
-I add ``set_timer`` to the :ref:`function signature<how to make a function that takes input>` in ``microwave.py``
+I add ``timer_is_set`` to the :ref:`function signature<how to make a function that takes input>` in ``src/microwave/__init__.py``
 
 .. code-block:: python
   :linenos:
@@ -900,7 +933,7 @@ I add ``set_timer`` to the :ref:`function signature<how to make a function that 
 
   def microwave(
           closed_door=False, pressed_start=False,
-          set_timer=False,
+          timer_is_set=False,
       ):
       if not closed_door:
           return False
@@ -911,7 +944,7 @@ the test passes.
 .. code-block:: python
 
   microwave(
-      closed_door=True, set_timer=True,
+      closed_door=True, timer_is_set=True,
       pressed_start=True
   ) -> True
 
@@ -923,7 +956,7 @@ the test passes.
 
 ----
 
-* I change the name of the test from :ref:`test_closed_door_pressed_start` to :ref:`test_set_timer_closed_door_pressed_start`
+* I change the name of the test from :ref:`test_closed_door_pressed_start` to :ref:`test_timer_is_set_closed_door_pressed_start`
 
   .. code-block:: python
     :lineno-start: 5
@@ -931,11 +964,11 @@ the test passes.
 
     class TestMicrowave(unittest.TestCase):
 
-        def test_set_timer_closed_door_pressed_start(self):
+        def test_timer_is_set_closed_door_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=True,
                 )
             )
@@ -946,16 +979,16 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_set_timer_closed_door_pressed_start'
+    'add test_timer_is_set_closed_door_pressed_start'
 
 ----
 
 *************************************************************************************
-test_set_timer_closed_door_not_pressed_start
+test_timer_is_set_closed_door_not_pressed_start
 *************************************************************************************
 
 * I go back to the terminal_ where the tests are running
-* I add a value for ``set_timer`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_closed_door_not_pressed_start` for if the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :red:`NOT pressed`
+* I add a value for ``timer_is_set`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_closed_door_not_pressed_start` for if the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :red:`NOT pressed`
 
   =============== ==============  ==================  =============
   door            timer           start button        output
@@ -971,7 +1004,7 @@ test_set_timer_closed_door_not_pressed_start
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=False,
                 )
             )
@@ -983,34 +1016,34 @@ test_set_timer_closed_door_not_pressed_start
   .. code-block:: python
 
     microwave(
-        closed_door=True, set_timer=True,
+        closed_door=True, timer_is_set=True,
         pressed_start=True
     ) -> True
     microwave(
-        closed_door=True, set_timer=True,
+        closed_door=True, timer_is_set=True,
         pressed_start=False
     ) -> False
 
-* I change the name of the test from :ref:`test_closed_door_not_pressed_start` to :ref:`test_set_timer_closed_door_not_pressed_start`
+* I change the name of the test from :ref:`test_closed_door_not_pressed_start` to :ref:`test_timer_is_set_closed_door_not_pressed_start`
 
   .. code-block:: python
     :lineno-start: 7
     :emphasize-lines: 10
 
-        def test_set_timer_closed_door_pressed_start(self):
+        def test_timer_is_set_closed_door_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=True,
                 )
             )
 
-        def test_set_timer_closed_door_not_pressed_start(self):
+        def test_timer_is_set_closed_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=False,
                 )
             )
@@ -1021,12 +1054,12 @@ test_set_timer_closed_door_not_pressed_start
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_set_timer_closed_door_not_pressed_start'
+    'add test_timer_is_set_closed_door_not_pressed_start'
 
 ----
 
 *********************************************************************************
-test_not_set_timer_closed_door_pressed_start
+test_not_timer_is_set_closed_door_pressed_start
 *********************************************************************************
 
 =================================================================================
@@ -1048,20 +1081,20 @@ test_not_set_timer_closed_door_pressed_start
     :lineno-start: 16
     :emphasize-lines: 10-17
 
-        def test_set_timer_closed_door_not_pressed_start(self):
+        def test_timer_is_set_closed_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=False,
                 )
             )
 
-        def test_not_set_timer_closed_door_pressed_start(self):
+        def test_not_timer_is_set_closed_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=True,
                 )
             )
@@ -1082,7 +1115,7 @@ test_not_set_timer_closed_door_pressed_start
 
 ----
 
-* I add an :ref:`if statement<if statements>` for ``set_timer`` to the :ref:`function<what is a function?>` in ``microwave.py``
+* I add an :ref:`if statement<if statements>` for ``timer_is_set`` to the :ref:`function<what is a function?>` in ``src/microwave/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1090,11 +1123,11 @@ test_not_set_timer_closed_door_pressed_start
 
       def microwave(
               closed_door=False, pressed_start=False,
-              set_timer=False,
+              timer_is_set=False,
           ):
           if not closed_door:
               return False
-          if not set_timer:
+          if not timer_is_set:
               return False
           return pressed_start
 
@@ -1103,15 +1136,15 @@ test_not_set_timer_closed_door_pressed_start
   .. code-block:: python
 
     microwave(
-        closed_door=True, set_timer=True,
+        closed_door=True, timer_is_set=True,
         pressed_start=True
     ) -> True
     microwave(
-        closed_door=True, set_timer=True,
+        closed_door=True, timer_is_set=True,
         pressed_start=False
     ) -> False
     microwave(
-        closed_door=True, set_timer=False,
+        closed_door=True, timer_is_set=False,
         pressed_start=True
     ) -> False
 
@@ -1121,12 +1154,12 @@ test_not_set_timer_closed_door_pressed_start
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_not_set_timer_closed_door_pressed_start'
+    'add test_not_timer_is_set_closed_door_pressed_start'
 
 ----
 
 *********************************************************************************
-test_not_set_timer_closed_door_not_pressed_start
+test_not_timer_is_set_closed_door_not_pressed_start
 *********************************************************************************
 
 =================================================================================
@@ -1148,20 +1181,20 @@ test_not_set_timer_closed_door_not_pressed_start
     :lineno-start: 25
     :emphasize-lines: 10-17
 
-        def test_not_set_timer_closed_door_pressed_start(self):
+        def test_not_timer_is_set_closed_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=True,
                 )
             )
 
-        def test_not_set_timer_closed_door_not_pressed_start(self):
+        def test_not_timer_is_set_closed_door_not_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=False,
                 )
             )
@@ -1182,17 +1215,17 @@ test_not_set_timer_closed_door_not_pressed_start
 
 ----
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_set_timer_closed_door_not_pressed_start`
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_timer_is_set_closed_door_not_pressed_start`
 
   .. code-block:: python
     :lineno-start: 34
     :emphasize-lines: 2
 
-        def test_not_set_timer_closed_door_not_pressed_start(self):
+        def test_not_timer_is_set_closed_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=False,
                 )
             )
@@ -1204,19 +1237,19 @@ test_not_set_timer_closed_door_not_pressed_start
   .. code-block:: python
 
     microwave(
-        closed_door=True, set_timer=True,
+        closed_door=True, timer_is_set=True,
         pressed_start=True
     ) -> True
     microwave(
-        closed_door=True, set_timer=True,
+        closed_door=True, timer_is_set=True,
         pressed_start=False
     ) -> False
     microwave(
-        closed_door=True, set_timer=False,
+        closed_door=True, timer_is_set=False,
         pressed_start=True
     ) -> False
     microwave(
-        closed_door=True, set_timer=False,
+        closed_door=True, timer_is_set=False,
         pressed_start=False
     ) -> False
 
@@ -1226,12 +1259,12 @@ test_not_set_timer_closed_door_not_pressed_start
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_not_set_timer_closed_door_not_pressed_start'
+    'add test_not_timer_is_set_closed_door_not_pressed_start'
 
 ----
 
 *********************************************************************************
-test_set_timer_open_door_pressed_start
+test_timer_is_set_open_door_pressed_start
 *********************************************************************************
 
 =================================================================================
@@ -1241,7 +1274,7 @@ test_set_timer_open_door_pressed_start
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add ``set_timer`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_open_door_pressed_start`, for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :green:`pressed`
+* I add ``timer_is_set`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_open_door_pressed_start`, for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :green:`pressed`
 
   =============== ==============  ==================  =============
   door            timer           start button        output
@@ -1257,7 +1290,7 @@ test_set_timer_open_door_pressed_start
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=True,
                 )
             )
@@ -1269,30 +1302,30 @@ test_set_timer_open_door_pressed_start
   .. code-block:: python
 
     microwave(
-        closed_door=False, set_timer=True,
+        closed_door=False, timer_is_set=True,
         pressed_start=True
     ) -> False
 
-* I change the name of the test from :ref:`test_open_door_pressed_start` to :ref:`test_set_timer_open_door_pressed_start`
+* I change the name of the test from :ref:`test_open_door_pressed_start` to :ref:`test_timer_is_set_open_door_pressed_start`
 
   .. code-block:: python
     :lineno-start: 34
     :emphasize-lines: 10
 
-        def test_not_set_timer_closed_door_not_pressed_start(self):
+        def test_not_timer_is_set_closed_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=False,
                 )
             )
 
-        def test_set_timer_open_door_pressed_start(self):
+        def test_timer_is_set_open_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=True,
                 )
             )
@@ -1305,16 +1338,16 @@ test_set_timer_open_door_pressed_start
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_set_timer_open_door_pressed_start'
+    'add test_timer_is_set_open_door_pressed_start'
 
 ----
 
 *************************************************************************************
-test_set_timer_open_door_not_pressed_start
+test_timer_is_set_open_door_not_pressed_start
 *************************************************************************************
 
 * I go back to the terminal_ where the tests are running
-* I add a value for ``set_timer`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_open_door_not_pressed_start` for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :red:`NOT pressed`
+* I add a value for ``timer_is_set`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_open_door_not_pressed_start` for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :red:`NOT pressed`
 
   =============== ==============  ==================  =============
   door            timer           start button        output
@@ -1330,7 +1363,7 @@ test_set_timer_open_door_not_pressed_start
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=False,
                 )
             )
@@ -1343,34 +1376,34 @@ test_set_timer_open_door_not_pressed_start
   .. code-block:: python
 
     microwave(
-        closed_door=False, set_timer=True,
+        closed_door=False, timer_is_set=True,
         pressed_start=True
     ) -> False
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=True
     ) -> False
 
-* I change the name of the test from :ref:`test_open_door_not_pressed_start` to :ref:`test_set_timer_open_door_not_pressed_start`
+* I change the name of the test from :ref:`test_open_door_not_pressed_start` to :ref:`test_timer_is_set_open_door_not_pressed_start`
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 10
 
-        def test_set_timer_open_door_pressed_start(self):
+        def test_timer_is_set_open_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=True,
                 )
             )
 
-        def test_set_timer_open_door_not_pressed_start(self):
+        def test_timer_is_set_open_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=False,
                 )
             )
@@ -1381,12 +1414,12 @@ test_set_timer_open_door_not_pressed_start
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_set_timer_open_door_not_pressed_start'
+    'add test_timer_is_set_open_door_not_pressed_start'
 
 ----
 
 *********************************************************************************
-test_not_set_timer_open_door_pressed_start
+test_not_timer_is_set_open_door_pressed_start
 *********************************************************************************
 
 =================================================================================
@@ -1408,20 +1441,20 @@ test_not_set_timer_open_door_pressed_start
     :lineno-start: 52
     :emphasize-lines: 10-17
 
-        def test_set_timer_open_door_not_pressed_start(self):
+        def test_timer_is_set_open_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=False,
                 )
             )
 
-        def test_not_set_timer_open_door_pressed_start(self):
+        def test_not_timer_is_set_open_door_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=True,
                 )
             )
@@ -1443,17 +1476,17 @@ test_not_set_timer_open_door_pressed_start
 
 ----
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_set_timer_open_door_pressed_start`
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_timer_is_set_open_door_pressed_start`
 
   .. code-block:: python
     :lineno-start: 61
     :emphasize-lines: 2
 
-        def test_not_set_timer_open_door_pressed_start(self):
+        def test_not_timer_is_set_open_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=True,
                 )
             )
@@ -1466,15 +1499,15 @@ test_not_set_timer_open_door_pressed_start
   .. code-block:: python
 
     microwave(
-        closed_door=False, set_timer=True,
+        closed_door=False, timer_is_set=True,
         pressed_start=True
     ) -> False
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=True
     ) -> False
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=True
     ) -> False
 
@@ -1484,12 +1517,12 @@ test_not_set_timer_open_door_pressed_start
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_not_set_timer_open_door_pressed_start'
+    'add test_not_timer_is_set_open_door_pressed_start'
 
 ----
 
 *********************************************************************************
-test_not_set_timer_open_door_not_pressed_start
+test_not_timer_is_set_open_door_not_pressed_start
 *********************************************************************************
 
 =================================================================================
@@ -1511,20 +1544,20 @@ test_not_set_timer_open_door_not_pressed_start
     :lineno-start: 61
     :emphasize-lines: 10-17
 
-        def test_not_set_timer_open_door_pressed_start(self):
+        def test_not_timer_is_set_open_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=True,
                 )
             )
 
-        def test_not_set_timer_open_door_not_pressed_start(self):
+        def test_not_timer_is_set_open_door_not_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=False,
                 )
             )
@@ -1546,17 +1579,17 @@ test_not_set_timer_open_door_not_pressed_start
 
 ----
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_set_timer_open_door_not_pressed_start`
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_timer_is_set_open_door_not_pressed_start`
 
   .. code-block:: python
     :lineno-start: 70
     :emphasize-lines: 2
 
-        def test_not_set_timer_open_door_not_pressed_start(self):
+        def test_not_timer_is_set_open_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=False,
                 )
             )
@@ -1569,19 +1602,19 @@ test_not_set_timer_open_door_not_pressed_start
   .. code-block:: python
 
     microwave(
-        closed_door=False, set_timer=True,
+        closed_door=False, timer_is_set=True,
         pressed_start=True
     ) -> False
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=True
     ) -> False
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=True
     ) -> False
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=False
     ) -> False
 
@@ -1591,7 +1624,7 @@ test_not_set_timer_open_door_not_pressed_start
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_not_set_timer_open_door_not_pressed_start'
+    'add test_not_timer_is_set_open_door_not_pressed_start'
 
 ----
 
@@ -1602,64 +1635,64 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
   .. code-block:: shell
 
     microwave(
-        closed_door=False, set_timer=True,
+        closed_door=False, timer_is_set=True,
         pressed_start=True
     ) -> False
     └── def microwave(
                 closed_door=False, pressed_start=False,
-                set_timer=False,
+                timer_is_set=False,
             ):
             └── if not closed_door:
                 └── return False
-                if not set_timer:
+                if not timer_is_set:
                     return False
                 return pressed_start
 
   .. code-block:: shell
 
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=True
     ) -> False
     └── def microwave(
                 closed_door=False, pressed_start=False,
-                set_timer=False,
+                timer_is_set=False,
             ):
             └── if not closed_door:
                 └── return False
-                if not set_timer:
+                if not timer_is_set:
                     return False
                 return pressed_start
 
   .. code-block:: shell
 
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=True
     ) -> False
     └── def microwave(
                 closed_door=False, pressed_start=False,
-                set_timer=False,
+                timer_is_set=False,
             ):
             └── if not closed_door:
                 └── return False
-                if not set_timer:
+                if not timer_is_set:
                     return False
                 return pressed_start
 
   .. code-block:: shell
 
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=False
     ) -> False
     └── def microwave(
                 closed_door=False, pressed_start=False,
-                set_timer=False,
+                timer_is_set=False,
             ):
             └── if not closed_door:
                 └── return False
-                if not set_timer:
+                if not timer_is_set:
                     return False
                 return pressed_start
 
@@ -1670,32 +1703,32 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
     .. code-block:: shell
 
       microwave(
-          closed_door=True, set_timer=False,
+          closed_door=True, timer_is_set=False,
           pressed_start=True
       ) -> False
       └── def microwave(
                   closed_door=False, pressed_start=False,
-                  set_timer=False,
+                  timer_is_set=False,
               ):
               ├── if not closed_door:
               │       return False
-              └── if not set_timer:
+              └── if not timer_is_set:
                   └── return False
                   return pressed_start
 
     .. code-block:: shell
 
       microwave(
-          closed_door=True, set_timer=False,
+          closed_door=True, timer_is_set=False,
           pressed_start=False
       ) -> False
       └── def microwave(
                   closed_door=False, pressed_start=False,
-                  set_timer=False,
+                  timer_is_set=False,
               ):
               ├── if not closed_door:
               │       return False
-              └── if not set_timer:
+              └── if not timer_is_set:
                   └── return False
                   return pressed_start
 
@@ -1706,16 +1739,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
       .. code-block:: shell
 
         microwave(
-            closed_door=True, set_timer=True,
+            closed_door=True, timer_is_set=True,
             pressed_start=False
         ) -> False
         └── def microwave(
                     closed_door=False, pressed_start=False,
-                    set_timer=False,
+                    timer_is_set=False,
                 ):
                 ├── if not closed_door:
                 │       return False
-                ├── if not set_timer:
+                ├── if not timer_is_set:
                 │       return False
                 └── return pressed_start
                     return False
@@ -1725,16 +1758,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
       .. code-block:: shell
 
         microwave(
-            closed_door=True, set_timer=True,
+            closed_door=True, timer_is_set=True,
             pressed_start=True
         ) -> True
         └── def microwave(
                     closed_door=False, pressed_start=False,
-                    set_timer=False,
+                    timer_is_set=False,
                 ):
                 ├── if not closed_door:
                 │       return False
-                ├── if not set_timer:
+                ├── if not timer_is_set:
                 │       return False
                 └── return pressed_start
                     return True
@@ -1769,7 +1802,7 @@ I want to add a failsafe to stop the **Microwave** if it gets :green:`too hot`. 
 ----
 
 *********************************************************************************
-test_too_hot_w_not_set_timer_open_door_not_pressed_start
+test_too_hot_w_not_timer_is_set_open_door_not_pressed_start
 *********************************************************************************
 
 The :ref:`truth table` when the **Microwave** door is :red:`open` AND the timer is :red:`NOT set` AND the start button is :red:`NOT pressed` is
@@ -1790,7 +1823,7 @@ door            timer           start button        too hot             output
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_not_set_timer_open_door_not_pressed_start` for if the **Microwave** door is :red:`open` AND the timer is :red:`NOT set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :red:`NOT too hot`
+* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_not_timer_is_set_open_door_not_pressed_start` for if the **Microwave** door is :red:`open` AND the timer is :red:`NOT set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :red:`NOT too hot`
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
@@ -1802,11 +1835,11 @@ door            timer           start button        too hot             output
     :lineno-start: 70
     :emphasize-lines: 7
 
-        def test_not_set_timer_open_door_not_pressed_start(self):
+        def test_not_timer_is_set_open_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=False,
                     too_hot=False,
                 )
@@ -1832,7 +1865,7 @@ door            timer           start button        too hot             output
 
 ----
 
-I add ``too_hot`` to the ``microwave`` :ref:`function definition<how to make a function that takes input>` in ``microwave.py``
+I add ``too_hot`` to the ``microwave`` :ref:`function definition<how to make a function that takes input>` in ``src/microwave/__init__.py``
 
 .. code-block:: python
   :linenos:
@@ -1840,7 +1873,7 @@ I add ``too_hot`` to the ``microwave`` :ref:`function definition<how to make a f
 
   def microwave(
           closed_door=False, pressed_start=False,
-          set_timer=False, too_hot=False,
+          timer_is_set=False, too_hot=False,
       ):
 
 the test passes.
@@ -1848,7 +1881,7 @@ the test passes.
 .. code-block:: python
 
   microwave(
-      closed_door=False, set_timer=False,
+      closed_door=False, timer_is_set=False,
       pressed_start=False, too_hot=False
   ) -> False
 
@@ -1860,7 +1893,7 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`open` AND the timer is :red:`NOT set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :green:`too hot`, in ``test_microwave.py``
+* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`open` AND the timer is :red:`NOT set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :green:`too hot`, in ``tests/test_microwave.py``
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
@@ -1872,11 +1905,11 @@ the test passes.
     :lineno-start: 70
     :emphasize-lines: 2-9
 
-        def test_not_set_timer_open_door_not_pressed_start(self):
+        def test_not_timer_is_set_open_door_not_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=False,
                     too_hot=True,
                 )
@@ -1884,7 +1917,7 @@ the test passes.
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=False,
                     too_hot=False,
                 )
@@ -1904,17 +1937,17 @@ the test passes.
 
     AssertionError: False is not true
 
-* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_set_timer_open_door_not_pressed_start`
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_timer_is_set_open_door_not_pressed_start`
 
   .. code-block:: python
     :lineno-start: 70
     :emphasize-lines: 2
 
-        def test_not_set_timer_open_door_not_pressed_start(self):
+        def test_not_timer_is_set_open_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=False,
                     too_hot=True,
                 )
@@ -1925,34 +1958,34 @@ the test passes.
   .. code-block:: python
 
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=False, too_hot=True
     ) -> False
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=False, too_hot=False
     ) -> False
 
-* I change the name of the test from :ref:`test_not_set_timer_open_door_not_pressed_start` to :ref:`test_too_hot_w_not_set_timer_open_door_not_pressed_start`
+* I change the name of the test from :ref:`test_not_timer_is_set_open_door_not_pressed_start` to :ref:`test_too_hot_w_not_timer_is_set_open_door_not_pressed_start`
 
   .. code-block:: python
     :lineno-start: 61
     :emphasize-lines: 10
 
-        def test_not_set_timer_open_door_pressed_start(self):
+        def test_not_timer_is_set_open_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=True,
                 )
             )
 
-        def test_too_hot_w_not_set_timer_open_door_not_pressed_start(self):
+        def test_too_hot_w_not_timer_is_set_open_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=False,
                     too_hot=True,
                 )
@@ -1964,12 +1997,12 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_too_hot_w_not_set_timer_open_door_not_pressed_start'
+    'add test_too_hot_w_not_timer_is_set_open_door_not_pressed_start'
 
 ----
 
 *********************************************************************************
-test_too_hot_w_not_set_timer_open_door_pressed_start
+test_too_hot_w_not_timer_is_set_open_door_pressed_start
 *********************************************************************************
 
 The :ref:`truth table` when the **Microwave** door is :red:`open` AND the timer is :red:`NOT set` AND the start button is :green:`pressed` is
@@ -1990,7 +2023,7 @@ door            timer           start button        too hot             output
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_not_set_timer_open_door_pressed_start` for if the **Microwave** door is :red:`open` AND the timer is :red:`NOT set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :red:`NOT too hot`
+* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_not_timer_is_set_open_door_pressed_start` for if the **Microwave** door is :red:`open` AND the timer is :red:`NOT set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :red:`NOT too hot`
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
@@ -2002,36 +2035,36 @@ door            timer           start button        too hot             output
     :lineno-start: 61
     :emphasize-lines: 7
 
-        def test_not_set_timer_open_door_pressed_start(self):
+        def test_not_timer_is_set_open_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=True,
                     too_hot=False,
                 )
             )
 
-        def test_too_hot_w_not_set_timer_open_door_not_pressed_start(self):
+        def test_too_hot_w_not_timer_is_set_open_door_not_pressed_start(self):
 
   the test is still green.
 
   .. code-block:: python
 
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=True, too_hot=False
     ) -> False
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=False, too_hot=True
     ) -> False
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=False, too_hot=False
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`open` AND the timer is :red:`NOT set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :green:`too hot`, in ``test_microwave.py``
+* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`open` AND the timer is :red:`NOT set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :green:`too hot`, in ``tests/test_microwave.py``
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
@@ -2043,11 +2076,11 @@ door            timer           start button        too hot             output
     :lineno-start: 61
     :emphasize-lines: 2-9
 
-        def test_not_set_timer_open_door_pressed_start(self):
+        def test_not_timer_is_set_open_door_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=True,
                     too_hot=True,
                 )
@@ -2055,13 +2088,13 @@ door            timer           start button        too hot             output
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=True,
                     too_hot=False,
                 )
             )
 
-        def test_too_hot_w_not_set_timer_open_door_not_pressed_start(self):
+        def test_too_hot_w_not_timer_is_set_open_door_not_pressed_start(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2077,17 +2110,17 @@ door            timer           start button        too hot             output
 
 ----
 
-I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_set_timer_open_door_pressed_start`
+I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_timer_is_set_open_door_pressed_start`
 
 .. code-block:: python
   :lineno-start: 70
   :emphasize-lines: 2
 
-      def test_not_set_timer_open_door_pressed_start(self):
+      def test_not_timer_is_set_open_door_pressed_start(self):
           self.assertFalse(
               src.microwave.microwave(
                   closed_door=False,
-                  set_timer=False,
+                  timer_is_set=False,
                   pressed_start=True,
                   too_hot=True,
               )
@@ -2098,19 +2131,19 @@ the test passes.
 .. code-block:: python
 
   microwave(
-      closed_door=False, set_timer=False,
+      closed_door=False, timer_is_set=False,
       pressed_start=True, too_hot=True
   ) -> False
   microwave(
-      closed_door=False, set_timer=False,
+      closed_door=False, timer_is_set=False,
       pressed_start=True, too_hot=False
   ) -> False
   microwave(
-      closed_door=False, set_timer=False,
+      closed_door=False, timer_is_set=False,
       pressed_start=False, too_hot=True
   ) -> False
   microwave(
-      closed_door=False, set_timer=False,
+      closed_door=False, timer_is_set=False,
       pressed_start=False, too_hot=False
   ) -> False
 
@@ -2122,26 +2155,26 @@ the test passes.
 
 ----
 
-* I change the name of the test from :ref:`test_not_set_timer_open_door_pressed_start` to :ref:`test_too_hot_w_not_set_timer_open_door_pressed_start`
+* I change the name of the test from :ref:`test_not_timer_is_set_open_door_pressed_start` to :ref:`test_too_hot_w_not_timer_is_set_open_door_pressed_start`
 
   .. code-block:: python
     :lineno-start: 52
     :emphasize-lines: 10
 
-        def test_set_timer_open_door_not_pressed_start(self):
+        def test_timer_is_set_open_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=False,
                 )
             )
 
-        def test_too_hot_w_not_set_timer_open_door_pressed_start(self):
+        def test_too_hot_w_not_timer_is_set_open_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=True,
                     too_hot=True,
                 )
@@ -2153,12 +2186,12 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_too_hot_w_not_set_timer_open_door_pressed_start'
+    'add test_too_hot_w_not_timer_is_set_open_door_pressed_start'
 
 ----
 
 *********************************************************************************
-test_too_hot_w_set_timer_open_door_not_pressed_start
+test_too_hot_w_timer_is_set_open_door_not_pressed_start
 *********************************************************************************
 
 The :ref:`truth table` when the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :red:`NOT pressed` is
@@ -2179,7 +2212,7 @@ door            timer           start button        too hot             output
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_set_timer_open_door_not_pressed_start` for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :red:`NOT too hot`
+* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_timer_is_set_open_door_not_pressed_start` for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :red:`NOT too hot`
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
@@ -2191,28 +2224,28 @@ door            timer           start button        too hot             output
     :lineno-start: 52
     :emphasize-lines: 7
 
-        def test_set_timer_open_door_not_pressed_start(self):
+        def test_timer_is_set_open_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=False,
                     too_hot=False,
                 )
             )
 
-        def test_too_hot_w_not_set_timer_open_door_pressed_start(self):
+        def test_too_hot_w_not_timer_is_set_open_door_pressed_start(self):
 
   the test is still green.
 
   .. code-block:: python
 
     microwave(
-        closed_door=False, set_timer=True,
+        closed_door=False, timer_is_set=True,
         pressed_start=False, too_hot=False
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :green:`too hot`, in ``test_microwave.py``
+* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :green:`too hot`, in ``tests/test_microwave.py``
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
@@ -2224,11 +2257,11 @@ door            timer           start button        too hot             output
     :lineno-start: 52
     :emphasize-lines: 2-9
 
-        def test_set_timer_open_door_not_pressed_start(self):
+        def test_timer_is_set_open_door_not_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=False,
                     too_hot=True,
                 )
@@ -2236,13 +2269,13 @@ door            timer           start button        too hot             output
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=False,
                     too_hot=False,
                 )
             )
 
-        def test_too_hot_w_not_set_timer_open_door_pressed_start(self):
+        def test_too_hot_w_not_timer_is_set_open_door_pressed_start(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2258,17 +2291,17 @@ door            timer           start button        too hot             output
 
 ----
 
-I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_set_timer_open_door_not_pressed_start`
+I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_timer_is_set_open_door_not_pressed_start`
 
 .. code-block:: python
   :lineno-start: 52
   :emphasize-lines: 2
 
-      def test_set_timer_open_door_not_pressed_start(self):
+      def test_timer_is_set_open_door_not_pressed_start(self):
           self.assertFalse(
               src.microwave.microwave(
                   closed_door=False,
-                  set_timer=True,
+                  timer_is_set=True,
                   pressed_start=False,
                   too_hot=True,
               )
@@ -2279,11 +2312,11 @@ the test passes.
 .. code-block:: python
 
   microwave(
-      closed_door=False, set_timer=True,
+      closed_door=False, timer_is_set=True,
       pressed_start=False, too_hot=True
   ) -> False
   microwave(
-      closed_door=False, set_timer=True,
+      closed_door=False, timer_is_set=True,
       pressed_start=False, too_hot=False
   ) -> False
 
@@ -2295,26 +2328,26 @@ the test passes.
 
 ----
 
-* I change the name of the test from :ref:`test_set_timer_open_door_not_pressed_start` to :ref:`test_too_hot_w_set_timer_open_door_not_pressed_start`
+* I change the name of the test from :ref:`test_timer_is_set_open_door_not_pressed_start` to :ref:`test_too_hot_w_timer_is_set_open_door_not_pressed_start`
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 10
 
-        def test_set_timer_open_door_pressed_start(self):
+        def test_timer_is_set_open_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=True,
                 )
             )
 
-        def test_too_hot_w_set_timer_open_door_not_pressed_start(self):
+        def test_too_hot_w_timer_is_set_open_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=False,
                     too_hot=True,
                 )
@@ -2326,12 +2359,12 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_too_hot_w_set_timer_open_door_not_pressed_start'
+    'add test_too_hot_w_timer_is_set_open_door_not_pressed_start'
 
 ----
 
 *********************************************************************************
-test_too_hot_w_set_timer_open_door_pressed_start
+test_too_hot_w_timer_is_set_open_door_pressed_start
 *********************************************************************************
 
 The :ref:`truth table` when the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :green:`pressed` is
@@ -2352,7 +2385,7 @@ door            timer           start button        too hot             output
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_set_timer_open_door_pressed_start` for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :red:`NOT too hot`
+* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_timer_is_set_open_door_pressed_start` for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :red:`NOT too hot`
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
@@ -2364,36 +2397,36 @@ door            timer           start button        too hot             output
     :lineno-start: 43
     :emphasize-lines: 7
 
-        def test_set_timer_open_door_pressed_start(self):
+        def test_timer_is_set_open_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=True,
                     too_hot=False,
                 )
             )
 
-        def test_too_hot_w_set_timer_open_door_not_pressed_start
+        def test_too_hot_w_timer_is_set_open_door_not_pressed_start
 
   the test is still green.
 
   .. code-block:: python
 
     microwave(
-        closed_door=False, set_timer=True,
+        closed_door=False, timer_is_set=True,
         pressed_start=True, too_hot=False
     ) -> False
     microwave(
-        closed_door=False, set_timer=True,
+        closed_door=False, timer_is_set=True,
         pressed_start=False, too_hot=True
     ) -> False
     microwave(
-        closed_door=False, set_timer=True,
+        closed_door=False, timer_is_set=True,
         pressed_start=False, too_hot=False
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :green:`too hot`, in ``test_microwave.py``
+* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :red:`open` AND the timer is :green:`set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :green:`too hot`, in ``tests/test_microwave.py``
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
@@ -2405,11 +2438,11 @@ door            timer           start button        too hot             output
     :lineno-start: 43
     :emphasize-lines: 2-9
 
-        def test_set_timer_open_door_pressed_start(self):
+        def test_timer_is_set_open_door_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=True,
                     too_hot=True,
                 )
@@ -2417,13 +2450,13 @@ door            timer           start button        too hot             output
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=True,
                     too_hot=False,
                 )
             )
 
-        def test_too_hot_w_set_timer_open_door_not_pressed_start(self):
+        def test_too_hot_w_timer_is_set_open_door_not_pressed_start(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2439,17 +2472,17 @@ door            timer           start button        too hot             output
 
 ----
 
-I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_set_timer_open_door_pressed_start`
+I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_timer_is_set_open_door_pressed_start`
 
 .. code-block:: python
   :lineno-start: 43
   :emphasize-lines: 2
 
-      def test_set_timer_open_door_pressed_start(self):
+      def test_timer_is_set_open_door_pressed_start(self):
           self.assertFalse(
               src.microwave.microwave(
                   closed_door=False,
-                  set_timer=True,
+                  timer_is_set=True,
                   pressed_start=True,
                   too_hot=True,
               )
@@ -2460,19 +2493,19 @@ the test passes.
 .. code-block:: python
 
   microwave(
-      closed_door=False, set_timer=True,
+      closed_door=False, timer_is_set=True,
       pressed_start=True, too_hot=True
   ) -> False
   microwave(
-      closed_door=False, set_timer=True,
+      closed_door=False, timer_is_set=True,
       pressed_start=True, too_hot=False
   ) -> False
   microwave(
-      closed_door=False, set_timer=True,
+      closed_door=False, timer_is_set=True,
       pressed_start=False, too_hot=True
   ) -> False
   microwave(
-      closed_door=False, set_timer=True,
+      closed_door=False, timer_is_set=True,
       pressed_start=False, too_hot=False
   ) -> False
 
@@ -2484,26 +2517,26 @@ the test passes.
 
 ----
 
-* I change the name of the test from :ref:`test_set_timer_open_door_pressed_start` to :ref:`test_too_hot_w_set_timer_open_door_pressed_start`
+* I change the name of the test from :ref:`test_timer_is_set_open_door_pressed_start` to :ref:`test_too_hot_w_timer_is_set_open_door_pressed_start`
 
   .. code-block:: python
     :lineno-start: 34
     :emphasize-lines: 10
 
-        def test_set_timer_closed_door_not_pressed_start(self):
+        def test_timer_is_set_closed_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=False,
                 )
             )
 
-        def test_too_hot_w_set_timer_open_door_pressed_start(self):
+        def test_too_hot_w_timer_is_set_open_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=False,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=True,
                     too_hot=True,
                 )
@@ -2515,12 +2548,12 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_too_hot_w_set_timer_open_door_pressed_start'
+    'add test_too_hot_w_timer_is_set_open_door_pressed_start'
 
 ----
 
 *********************************************************************************
-test_too_hot_w_not_set_timer_closed_door_not_pressed_start
+test_too_hot_w_not_timer_is_set_closed_door_not_pressed_start
 *********************************************************************************
 
 The :ref:`truth table` when the **Microwave** door is :green:`closed` AND the timer is :red:`NOT set` AND the start button is :red:`NOT pressed` is
@@ -2541,7 +2574,7 @@ door            timer           start button        too hot             output
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_not_set_timer_closed_door_not_pressed_start` for if the **Microwave** door is :green:`closed` AND the timer is :red:`NOT set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :red:`NOT too hot`
+* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_not_timer_is_set_closed_door_not_pressed_start` for if the **Microwave** door is :green:`closed` AND the timer is :red:`NOT set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :red:`NOT too hot`
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
@@ -2553,28 +2586,28 @@ door            timer           start button        too hot             output
     :lineno-start: 34
     :emphasize-lines: 7
 
-        def test_not_set_timer_closed_door_not_pressed_start(self):
+        def test_not_timer_is_set_closed_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=False,
                     too_hot=False,
                 )
             )
 
-        def test_set_timer_open_door_pressed_start(self):
+        def test_timer_is_set_open_door_pressed_start(self):
 
   the test is still green.
 
   .. code-block:: python
 
     microwave(
-        closed_door=True, set_timer=False,
+        closed_door=True, timer_is_set=False,
         pressed_start=False, too_hot=False
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :green:`closed` AND the timer is :red:`NOT set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :green:`too hot`, in ``test_microwave.py``
+* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :green:`closed` AND the timer is :red:`NOT set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :green:`too hot`, in ``tests/test_microwave.py``
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
@@ -2586,11 +2619,11 @@ door            timer           start button        too hot             output
     :lineno-start: 34
     :emphasize-lines: 2-9
 
-        def test_not_set_timer_closed_door_not_pressed_start(self):
+        def test_not_timer_is_set_closed_door_not_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=False,
                     too_hot=True,
                 )
@@ -2598,13 +2631,13 @@ door            timer           start button        too hot             output
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=False,
                     too_hot=False,
                 )
             )
 
-        def test_set_timer_open_door_pressed_start(self):
+        def test_timer_is_set_open_door_pressed_start(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2620,17 +2653,17 @@ door            timer           start button        too hot             output
 
 ----
 
-I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_set_timer_closed_door_not_pressed_start`
+I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_timer_is_set_closed_door_not_pressed_start`
 
 .. code-block:: python
   :lineno-start: 34
   :emphasize-lines: 2
 
-      def test_not_set_timer_closed_door_not_pressed_start(self):
+      def test_not_timer_is_set_closed_door_not_pressed_start(self):
           self.assertFalse(
               src.microwave.microwave(
                   closed_door=True,
-                  set_timer=False,
+                  timer_is_set=False,
                   pressed_start=False,
                   too_hot=True,
               )
@@ -2641,11 +2674,11 @@ the test passes.
 .. code-block:: python
 
   microwave(
-      closed_door=True, set_timer=False,
+      closed_door=True, timer_is_set=False,
       pressed_start=False, too_hot=True
   ) -> False
   microwave(
-      closed_door=True, set_timer=False,
+      closed_door=True, timer_is_set=False,
       pressed_start=False, too_hot=False
   ) -> False
 
@@ -2657,26 +2690,26 @@ the test passes.
 
 ----
 
-* I change the name of the test from :ref:`test_not_set_timer_closed_door_not_pressed_start` to :ref:`test_too_hot_w_not_set_timer_closed_door_not_pressed_start`
+* I change the name of the test from :ref:`test_not_timer_is_set_closed_door_not_pressed_start` to :ref:`test_too_hot_w_not_timer_is_set_closed_door_not_pressed_start`
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 10
 
-        def test_not_set_timer_closed_door_pressed_start(self):
+        def test_not_timer_is_set_closed_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=True,
                 )
             )
 
-        def test_too_hot_w_not_set_timer_closed_door_not_pressed_start(self):
+        def test_too_hot_w_not_timer_is_set_closed_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=False,
                     too_hot=True,
                 )
@@ -2688,12 +2721,12 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_too_hot_w_not_set_timer_closed_door_not_pressed_start'
+    'add test_too_hot_w_not_timer_is_set_closed_door_not_pressed_start'
 
 ----
 
 *********************************************************************************
-test_too_hot_w_not_set_timer_closed_door_pressed_start
+test_too_hot_w_not_timer_is_set_closed_door_pressed_start
 *********************************************************************************
 
 The :ref:`truth table` when the **Microwave** door is :green:`closed` AND the timer is :red:`NOT set` AND the start button is :green:`pressed` is
@@ -2714,7 +2747,7 @@ door            timer           start button        too hot             output
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_not_set_timer_closed_door_pressed_start` for if the **Microwave** door is :green:`closed` AND the timer is :red:`NOT set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :red:`NOT too hot`
+* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_not_timer_is_set_closed_door_pressed_start` for if the **Microwave** door is :green:`closed` AND the timer is :red:`NOT set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :red:`NOT too hot`
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
@@ -2726,36 +2759,36 @@ door            timer           start button        too hot             output
     :lineno-start: 25
     :emphasize-lines: 7
 
-        def test_not_set_timer_closed_door_pressed_start(self):
+        def test_not_timer_is_set_closed_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=True,
                     too_hot=False,
                 )
             )
 
-        def test_too_hot_w_not_set_timer_closed_door_not_pressed_start(self):
+        def test_too_hot_w_not_timer_is_set_closed_door_not_pressed_start(self):
 
   the test is still green.
 
   .. code-block:: python
 
     microwave(
-        closed_door=True, set_timer=False,
+        closed_door=True, timer_is_set=False,
         pressed_start=True, too_hot=False
     ) -> False
     microwave(
-        closed_door=True, set_timer=False,
+        closed_door=True, timer_is_set=False,
         pressed_start=False, too_hot=True
     ) -> False
     microwave(
-        closed_door=True, set_timer=False,
+        closed_door=True, timer_is_set=False,
         pressed_start=False, too_hot=False
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :green:`closed` AND the timer is :red:`NOT set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :green:`too hot`, in ``test_microwave.py``
+* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :green:`closed` AND the timer is :red:`NOT set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :green:`too hot`, in ``tests/test_microwave.py``
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
@@ -2767,11 +2800,11 @@ door            timer           start button        too hot             output
     :lineno-start: 25
     :emphasize-lines: 2-9
 
-        def test_not_set_timer_closed_door_pressed_start(self):
+        def test_not_timer_is_set_closed_door_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=True,
                     too_hot=True,
                 )
@@ -2779,13 +2812,13 @@ door            timer           start button        too hot             output
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=True,
                     too_hot=False,
                 )
             )
 
-        def test_too_hot_w_not_set_timer_closed_door_not_pressed_start(self):
+        def test_too_hot_w_not_timer_is_set_closed_door_not_pressed_start(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2801,17 +2834,17 @@ door            timer           start button        too hot             output
 
 ----
 
-I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_set_timer_closed_door_pressed_start`
+I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_not_timer_is_set_closed_door_pressed_start`
 
 .. code-block:: python
   :lineno-start: 25
   :emphasize-lines: 2
 
-      def test_not_set_timer_closed_door_pressed_start(self):
+      def test_not_timer_is_set_closed_door_pressed_start(self):
           self.assertFalse(
               src.microwave.microwave(
                   closed_door=True,
-                  set_timer=False,
+                  timer_is_set=False,
                   pressed_start=True,
                   too_hot=True,
               )
@@ -2822,19 +2855,19 @@ the test passes.
 .. code-block:: python
 
     microwave(
-        closed_door=True, set_timer=False,
+        closed_door=True, timer_is_set=False,
         pressed_start=True, too_hot=True
     ) -> False
     microwave(
-        closed_door=True, set_timer=False,
+        closed_door=True, timer_is_set=False,
         pressed_start=True, too_hot=False
     ) -> False
     microwave(
-        closed_door=True, set_timer=False,
+        closed_door=True, timer_is_set=False,
         pressed_start=False, too_hot=True
     ) -> False
     microwave(
-        closed_door=True, set_timer=False,
+        closed_door=True, timer_is_set=False,
         pressed_start=False, too_hot=False
     ) -> False
 
@@ -2846,26 +2879,26 @@ the test passes.
 
 ----
 
-* I change the name of the test from :ref:`test_not_set_timer_closed_door_pressed_start` to :ref:`test_too_hot_w_not_set_timer_closed_door_pressed_start`
+* I change the name of the test from :ref:`test_not_timer_is_set_closed_door_pressed_start` to :ref:`test_too_hot_w_not_timer_is_set_closed_door_pressed_start`
 
   .. code-block:: python
     :lineno-start: 16
     :emphasize-lines: 10
 
-        def test_set_timer_closed_door_not_pressed_start(self):
+        def test_timer_is_set_closed_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=False,
                 )
             )
 
-        def test_too_hot_w_not_set_timer_closed_door_pressed_start(self):
+        def test_too_hot_w_not_timer_is_set_closed_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=False,
+                    timer_is_set=False,
                     pressed_start=True,
                     too_hot=True,
                 )
@@ -2877,12 +2910,12 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_too_hot_w_not_set_timer_closed_door_pressed_start'
+    'add test_too_hot_w_not_timer_is_set_closed_door_pressed_start'
 
 ----
 
 *********************************************************************************
-test_too_hot_w_set_timer_closed_door_not_pressed_start
+test_too_hot_w_timer_is_set_closed_door_not_pressed_start
 *********************************************************************************
 
 The :ref:`truth table` when the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :red:`NOT pressed` is
@@ -2903,7 +2936,7 @@ door            timer           start button        too hot             output
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_set_timer_closed_door_not_pressed_start` for if the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :red:`NOT too hot`
+* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_timer_is_set_closed_door_not_pressed_start` for if the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :red:`NOT too hot`
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
@@ -2915,28 +2948,28 @@ door            timer           start button        too hot             output
     :lineno-start: 16
     :emphasize-lines: 7
 
-        def test_set_timer_closed_door_not_pressed_start(self):
+        def test_timer_is_set_closed_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=False,
                     too_hot=False,
                 )
             )
 
-        def test_too_hot_w_not_set_timer_closed_door_pressed_start(self):
+        def test_too_hot_w_not_timer_is_set_closed_door_pressed_start(self):
 
   the test is still green.
 
   .. code-block:: python
 
     microwave(
-        closed_door=True, set_timer=True,
+        closed_door=True, timer_is_set=True,
         pressed_start=False, too_hot=False
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :green:`too hot`, in ``test_microwave.py``
+* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :red:`NOT pressed` AND the **Microwave** temperature is :green:`too hot`, in ``tests/test_microwave.py``
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
@@ -2948,11 +2981,11 @@ door            timer           start button        too hot             output
     :lineno-start: 16
     :emphasize-lines: 2-9
 
-        def test_set_timer_closed_door_not_pressed_start(self):
+        def test_timer_is_set_closed_door_not_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=False,
                     too_hot=True,
                 )
@@ -2960,13 +2993,13 @@ door            timer           start button        too hot             output
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=False,
                     too_hot=False,
                 )
             )
 
-        def test_too_hot_w_not_set_timer_closed_door_pressed_start(self):
+        def test_too_hot_w_not_timer_is_set_closed_door_pressed_start(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2982,17 +3015,17 @@ door            timer           start button        too hot             output
 
 ----
 
-I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_set_timer_closed_door_not_pressed_start`
+I change :ref:`assertTrue<another way to test if something is grouped as True>` to :ref:`assertFalse<another way to test if something is grouped as False>` in :ref:`test_timer_is_set_closed_door_not_pressed_start`
 
 .. code-block:: python
   :lineno-start: 16
   :emphasize-lines: 2
 
-      def test_set_timer_closed_door_not_pressed_start(self):
+      def test_timer_is_set_closed_door_not_pressed_start(self):
           self.assertFalse(
               src.microwave.microwave(
                   closed_door=True,
-                  set_timer=True,
+                  timer_is_set=True,
                   pressed_start=False,
                   too_hot=True,
               )
@@ -3003,11 +3036,11 @@ the test passes.
 .. code-block:: python
 
   microwave(
-      closed_door=True, set_timer=True,
+      closed_door=True, timer_is_set=True,
       pressed_start=False, too_hot=True
   ) -> False
   microwave(
-      closed_door=True, set_timer=True,
+      closed_door=True, timer_is_set=True,
       pressed_start=False, too_hot=False
   ) -> False
 
@@ -3019,26 +3052,26 @@ the test passes.
 
 ----
 
-* I change the name of the test from :ref:`test_set_timer_closed_door_not_pressed_start` to :ref:`test_too_hot_w_set_timer_closed_door_not_pressed_start`
+* I change the name of the test from :ref:`test_timer_is_set_closed_door_not_pressed_start` to :ref:`test_too_hot_w_timer_is_set_closed_door_not_pressed_start`
 
   .. code-block:: python
     :lineno-start: 7
     :emphasize-lines: 10
 
-        def test_set_timer_closed_door_pressed_start(self):
+        def test_timer_is_set_closed_door_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=True,
                 )
             )
 
-        def test_too_hot_w_set_timer_closed_door_not_pressed_start(self):
+        def test_too_hot_w_timer_is_set_closed_door_not_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=False,
                     too_hot=True,
                 )
@@ -3050,12 +3083,12 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_too_hot_w_set_timer_closed_door_not_pressed_start'
+    'add test_too_hot_w_timer_is_set_closed_door_not_pressed_start'
 
 ----
 
 *********************************************************************************
-test_too_hot_w_set_timer_closed_door_pressed_start
+test_too_hot_w_timer_is_set_closed_door_pressed_start
 *********************************************************************************
 
 The :ref:`truth table` when the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :green:`pressed` is
@@ -3076,7 +3109,7 @@ door            timer           start button        too hot             output
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_set_timer_closed_door_pressed_start` for if the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :red:`NOT too hot`
+* I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_timer_is_set_closed_door_pressed_start` for if the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :red:`NOT too hot`
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
@@ -3088,36 +3121,36 @@ door            timer           start button        too hot             output
     :lineno-start: 7
     :emphasize-lines: 7
 
-        def test_set_timer_closed_door_pressed_start(self):
+        def test_timer_is_set_closed_door_pressed_start(self):
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=True,
                     too_hot=False,
                 )
             )
 
-        def test_too_hot_w_set_timer_closed_door_not_pressed_start(self):
+        def test_too_hot_w_timer_is_set_closed_door_not_pressed_start(self):
 
   the test is still green.
 
   .. code-block:: python
 
     microwave(
-        closed_door=True, set_timer=True,
+        closed_door=True, timer_is_set=True,
         pressed_start=True, too_hot=False
     ) -> True
     microwave(
-        closed_door=True, set_timer=True,
+        closed_door=True, timer_is_set=True,
         pressed_start=False, too_hot=True
     ) -> False
     microwave(
-        closed_door=True, set_timer=True,
+        closed_door=True, timer_is_set=True,
         pressed_start=False, too_hot=False
     ) -> False
 
-* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :green:`too hot`, in ``test_microwave.py``
+* I add an :ref:`assertion<what is an assertion?>` for if the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the start button is :green:`pressed` AND the **Microwave** temperature is :green:`too hot`, in ``tests/test_microwave.py``
 
   =============== ==============  ==================  ==================  =============
   door            timer           start button        too hot             output
@@ -3129,11 +3162,11 @@ door            timer           start button        too hot             output
     :lineno-start: 7
     :emphasize-lines: 2-9
 
-        def test_set_timer_closed_door_pressed_start(self):
+        def test_timer_is_set_closed_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=True,
                     too_hot=True,
                 )
@@ -3141,13 +3174,13 @@ door            timer           start button        too hot             output
             self.assertTrue(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=True,
                     too_hot=False,
                 )
             )
 
-        def test_too_hot_w_set_timer_closed_door_not_pressed_start(self):
+        def test_too_hot_w_timer_is_set_closed_door_not_pressed_start(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3163,7 +3196,7 @@ door            timer           start button        too hot             output
 
 ----
 
-I add an :ref:`if statement<if statements>` for the ``too_hot`` parameter in ``microwave.py``
+I add an :ref:`if statement<if statements>` for the ``too_hot`` parameter in ``src/microwave/__init__.py``
 
 .. code-block:: python
   :linenos:
@@ -3171,11 +3204,11 @@ I add an :ref:`if statement<if statements>` for the ``too_hot`` parameter in ``m
 
   def microwave(
           closed_door=False, pressed_start=False,
-          set_timer=False, too_hot=False,
+          timer_is_set=False, too_hot=False,
       ):
       if not closed_door:
           return False
-      if not set_timer:
+      if not timer_is_set:
           return False
       if too_hot:
           return False
@@ -3186,19 +3219,19 @@ the test passes.
 .. code-block:: python
 
     microwave(
-        closed_door=True, set_timer=True,
+        closed_door=True, timer_is_set=True,
         pressed_start=True, too_hot=True
     ) -> False
     microwave(
-        closed_door=True, set_timer=True,
+        closed_door=True, timer_is_set=True,
         pressed_start=True, too_hot=False
     ) -> True
     microwave(
-        closed_door=True, set_timer=True,
+        closed_door=True, timer_is_set=True,
         pressed_start=False, too_hot=True
     ) -> False
     microwave(
-        closed_door=True, set_timer=True,
+        closed_door=True, timer_is_set=True,
         pressed_start=False, too_hot=False
     ) -> False
 
@@ -3210,7 +3243,7 @@ the test passes.
 
 ----
 
-* I change the name of the test from :ref:`test_set_timer_closed_door_pressed_start` to :ref:`test_too_hot_w_set_timer_closed_door_pressed_start`, in ``test_microwave.py``
+* I change the name of the test from :ref:`test_timer_is_set_closed_door_pressed_start` to :ref:`test_too_hot_w_timer_is_set_closed_door_pressed_start`, in ``tests/test_microwave.py``
 
   .. code-block:: python
     :lineno-start: 5
@@ -3218,11 +3251,11 @@ the test passes.
 
     class TestMicrowave(unittest.TestCase):
 
-        def test_too_hot_w_set_timer_closed_door_pressed_start(self):
+        def test_too_hot_w_timer_is_set_closed_door_pressed_start(self):
             self.assertFalse(
                 src.microwave.microwave(
                     closed_door=True,
-                    set_timer=True,
+                    timer_is_set=True,
                     pressed_start=True,
                     too_hot=True,
                 )
@@ -3234,7 +3267,7 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_too_hot_w_set_timer_closed_door_pressed_start'
+    'add test_too_hot_w_timer_is_set_closed_door_pressed_start'
 
 ----
 
@@ -3245,16 +3278,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
   .. code-block:: shell
 
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=True, too_hot=True
     ) -> False
     └── def microwave(
                 closed_door=False, pressed_start=False,
-                set_timer=False, too_hot=False,
+                timer_is_set=False, too_hot=False,
             ):
             └── if not closed_door:
                 └── return False
-                if not set_timer:
+                if not timer_is_set:
                     return False
                 if too_hot:
                     return False
@@ -3263,16 +3296,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
   .. code-block:: shell
 
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=True, too_hot=False
     ) -> False
     └── def microwave(
                 closed_door=False, pressed_start=False,
-                set_timer=False, too_hot=False,
+                timer_is_set=False, too_hot=False,
             ):
             └── if not closed_door:
                 └── return False
-                if not set_timer:
+                if not timer_is_set:
                     return False
                 if too_hot:
                     return False
@@ -3281,16 +3314,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
   .. code-block:: shell
 
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=False, too_hot=True
     ) -> False
     └── def microwave(
                 closed_door=False, pressed_start=False,
-                set_timer=False, too_hot=False,
+                timer_is_set=False, too_hot=False,
             ):
             └── if not closed_door:
                 └── return False
-                if not set_timer:
+                if not timer_is_set:
                     return False
                 if too_hot:
                     return False
@@ -3299,16 +3332,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
   .. code-block:: shell
 
     microwave(
-        closed_door=False, set_timer=False,
+        closed_door=False, timer_is_set=False,
         pressed_start=False, too_hot=False
     ) -> False
     └── def microwave(
                 closed_door=False, pressed_start=False,
-                set_timer=False, too_hot=False,
+                timer_is_set=False, too_hot=False,
             ):
             └── if not closed_door:
                 └── return False
-                if not set_timer:
+                if not timer_is_set:
                     return False
                 if too_hot:
                     return False
@@ -3317,16 +3350,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
   .. code-block:: shell
 
     microwave(
-        closed_door=False, set_timer=True,
+        closed_door=False, timer_is_set=True,
         pressed_start=True, too_hot=True
     ) -> False
     └── def microwave(
                 closed_door=False, pressed_start=False,
-                set_timer=False, too_hot=False,
+                timer_is_set=False, too_hot=False,
             ):
             └── if not closed_door:
                 └── return False
-                if not set_timer:
+                if not timer_is_set:
                     return False
                 if too_hot:
                     return False
@@ -3335,16 +3368,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
   .. code-block:: shell
 
     microwave(
-        closed_door=False, set_timer=True,
+        closed_door=False, timer_is_set=True,
         pressed_start=True, too_hot=False
     ) -> False
     └── def microwave(
                 closed_door=False, pressed_start=False,
-                set_timer=False, too_hot=False,
+                timer_is_set=False, too_hot=False,
             ):
             └── if not closed_door:
                 └── return False
-                if not set_timer:
+                if not timer_is_set:
                     return False
                 if too_hot:
                     return False
@@ -3353,16 +3386,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
   .. code-block:: shell
 
     microwave(
-        closed_door=False, set_timer=True,
+        closed_door=False, timer_is_set=True,
         pressed_start=False, too_hot=True
     ) -> False
     └── def microwave(
                 closed_door=False, pressed_start=False,
-                set_timer=False, too_hot=False,
+                timer_is_set=False, too_hot=False,
             ):
             └── if not closed_door:
                 └── return False
-                if not set_timer:
+                if not timer_is_set:
                     return False
                 if too_hot:
                     return False
@@ -3371,16 +3404,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
   .. code-block:: shell
 
     microwave(
-        closed_door=False, set_timer=True,
+        closed_door=False, timer_is_set=True,
         pressed_start=False, too_hot=False
     ) -> False
     └── def microwave(
                 closed_door=False, pressed_start=False,
-                set_timer=False, too_hot=False,
+                timer_is_set=False, too_hot=False,
             ):
             └── if not closed_door:
                 └── return False
-                if not set_timer:
+                if not timer_is_set:
                     return False
                 if too_hot:
                     return False
@@ -3393,16 +3426,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
     .. code-block:: shell
 
       microwave(
-          closed_door=True, set_timer=False,
+          closed_door=True, timer_is_set=False,
           pressed_start=True, too_hot=True
       ) -> False
       └── def microwave(
                   closed_door=False, pressed_start=False,
-                  set_timer=False, too_hot=False,
+                  timer_is_set=False, too_hot=False,
               ):
               ├── if not closed_door:
               │       return False
-              └── if not set_timer:
+              └── if not timer_is_set:
                   └── return False
                   if too_hot:
                       return False
@@ -3411,16 +3444,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
     .. code-block:: shell
 
       microwave(
-          closed_door=True, set_timer=False,
+          closed_door=True, timer_is_set=False,
           pressed_start=True, too_hot=False
       ) -> False
       └── def microwave(
                   closed_door=False, pressed_start=False,
-                  set_timer=False, too_hot=False,
+                  timer_is_set=False, too_hot=False,
               ):
               ├── if not closed_door:
               │       return False
-              └── if not set_timer:
+              └── if not timer_is_set:
                   └── return False
                   if too_hot:
                       return False
@@ -3429,16 +3462,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
     .. code-block:: shell
 
       microwave(
-          closed_door=True, set_timer=False,
+          closed_door=True, timer_is_set=False,
           pressed_start=False, too_hot=True
       ) -> False
       └── def microwave(
                   closed_door=False, pressed_start=False,
-                  set_timer=False, too_hot=False,
+                  timer_is_set=False, too_hot=False,
               ):
               ├── if not closed_door:
               │       return False
-              └── if not set_timer:
+              └── if not timer_is_set:
                   └── return False
                   if too_hot:
                       return False
@@ -3447,16 +3480,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
     .. code-block:: shell
 
       microwave(
-          closed_door=True, set_timer=False,
+          closed_door=True, timer_is_set=False,
           pressed_start=False, too_hot=False
       ) -> False
       └── def microwave(
                   closed_door=False, pressed_start=False,
-                  set_timer=False, too_hot=False,
+                  timer_is_set=False, too_hot=False,
               ):
               ├── if not closed_door:
               │       return False
-              └── if not set_timer:
+              └── if not timer_is_set:
                   └── return False
                   if too_hot:
                       return False
@@ -3469,16 +3502,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
       .. code-block:: shell
 
         microwave(
-            closed_door=True, set_timer=True,
+            closed_door=True, timer_is_set=True,
             pressed_start=True, too_hot=True
         ) -> False
         └── def microwave(
                     closed_door=False, pressed_start=False,
-                    set_timer=False, too_hot=False,
+                    timer_is_set=False, too_hot=False,
                 ):
                 ├── if not closed_door:
                 │       return False
-                ├── if not set_timer:
+                ├── if not timer_is_set:
                 │       return False
                 └── if too_hot:
                     └── return False
@@ -3487,16 +3520,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
       .. code-block:: shell
 
         microwave(
-            closed_door=True, set_timer=True,
+            closed_door=True, timer_is_set=True,
             pressed_start=False, too_hot=True
         ) -> False
         └── def microwave(
                     closed_door=False, pressed_start=False,
-                    set_timer=False, too_hot=False,
+                    timer_is_set=False, too_hot=False,
                 ):
                 ├── if not closed_door:
                 │       return False
-                ├── if not set_timer:
+                ├── if not timer_is_set:
                 │       return False
                 └── if too_hot:
                     └── return False
@@ -3509,16 +3542,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
         .. code-block:: shell
 
           microwave(
-              closed_door=True, set_timer=True,
+              closed_door=True, timer_is_set=True,
               pressed_start=False, too_hot=False
           ) -> False
           └── def microwave(
                       closed_door=False, pressed_start=False,
-                      set_timer=False, too_hot=False,
+                      timer_is_set=False, too_hot=False,
                   ):
                   ├── if not closed_door:
                   │       return False
-                  ├── if not set_timer:
+                  ├── if not timer_is_set:
                   │       return False
                   ├── if too_hot:
                   │       return False
@@ -3530,16 +3563,16 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
         .. code-block:: shell
 
           microwave(
-              closed_door=True, set_timer=True,
+              closed_door=True, timer_is_set=True,
               pressed_start=True, too_hot=False
           ) -> True
           └── def microwave(
                       closed_door=False, pressed_start=False,
-                      set_timer=False, too_hot=False,
+                      timer_is_set=False, too_hot=False,
                   ):
                   ├── if not closed_door:
                   │       return False
-                  ├── if not set_timer:
+                  ├── if not timer_is_set:
                   │       return False
                   ├── if too_hot:
                   │       return False
@@ -3553,7 +3586,7 @@ refactor microwave function
 *********************************************************************************
 
 * I go back to the terminal_ where the tests are running
-* I add an :ref:`if statement<if statements>` for the ``pressed_start`` parameter to make it clearer, in ``microwave.py``
+* I add an :ref:`if statement<if statements>` for the ``pressed_start`` parameter to make it clearer, in ``src/microwave/__init__.py``
 
   .. code-block:: python
     :lineno-start: 5
@@ -3561,7 +3594,7 @@ refactor microwave function
 
         if not closed_door:
             return False
-        if not set_timer:
+        if not timer_is_set:
             return False
         if too_hot:
             return False
@@ -3579,7 +3612,7 @@ refactor microwave function
 
         # if not closed_door:
         #     return False
-        # if not set_timer:
+        # if not timer_is_set:
         #     return False
         # if too_hot:
         #     return False
@@ -3587,7 +3620,7 @@ refactor microwave function
         #     return False
         if (
             not closed_door
-            or not set_timer
+            or not timer_is_set
             or too_hot
             or not pressed_start
         ):
@@ -3604,13 +3637,13 @@ refactor microwave function
 
         # if (
         #     not closed_door
-        #     or not set_timer
+        #     or not timer_is_set
         #     or too_hot
         #     or not pressed_start
         # ):
         if (
             (not closed_door)
-            (not and) (not set_timer)
+            (not and) (not timer_is_set)
             (not and) (not not too_hot)
             (not and) (not pressed_start)
         ):
@@ -3631,13 +3664,13 @@ refactor microwave function
 
         # if (
         #     (not closed_door)
-        #     (not and) (not set_timer)
+        #     (not and) (not timer_is_set)
         #     (not and) (not not too_hot)
         #     (not and) (not pressed_start)
         # ):
         if not (
             closed_door
-            and set_timer
+            and timer_is_set
             and not too_hot
             and pressed_start
         ):
@@ -3654,7 +3687,7 @@ refactor microwave function
 
         if not (
             closed_door
-            and set_timer
+            and timer_is_set
             and not too_hot
             and pressed_start
         ):
@@ -3673,7 +3706,7 @@ refactor microwave function
         # else:
         if not not (
             closed_door
-            and set_timer
+            and timer_is_set
             and not too_hot
             and pressed_start
         ):
@@ -3691,7 +3724,7 @@ refactor microwave function
         # if not not (
         if (
             closed_door
-            and set_timer
+            and timer_is_set
             and not too_hot
             and pressed_start
         ):
@@ -3707,7 +3740,7 @@ refactor microwave function
 
         # if not (
         #     closed_door
-        #     and set_timer
+        #     and timer_is_set
         #     and not too_hot
         #     and pressed_start
         # ):
@@ -3716,14 +3749,14 @@ refactor microwave function
         # if not not (
         # if (
         #     closed_door
-        #     and set_timer
+        #     and timer_is_set
         #     and not too_hot
         #     and pressed_start
         # ):
         #     return True
         return (
             closed_door
-            and set_timer
+            and timer_is_set
             and not too_hot
             and pressed_start
         )
@@ -3737,11 +3770,11 @@ refactor microwave function
 
     def microwave(
             closed_door=False, pressed_start=False,
-            set_timer=False, too_hot=False,
+            timer_is_set=False, too_hot=False,
         ):
         return (
             closed_door
-            and set_timer
+            and timer_is_set
             and not too_hot
             and pressed_start
         )
@@ -3749,6 +3782,7 @@ refactor microwave function
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     git commit -am 'refactor microwave function'
 
@@ -3758,7 +3792,7 @@ refactor microwave function
 close the project
 *********************************************************************************
 
-* I close ``test_microwave.py`` and ``microwave.py``
+* I close ``tests/test_microwave.py`` and ``src/microwave/__init__.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ shows
 
