@@ -3285,147 +3285,155 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
 
   .. code-block:: shell
 
-    microwave(
+    src.microwave.microwave(
         closed_door=False, timer_set=False,
         pressed_start=True, too_hot=True
     ) -> False
-    └── def microwave(
-                closed_door=False, pressed_start=False,
-                timer_set=False, too_hot=False,
-            ):
-            └── if not closed_door:
-                └── return False
-                if not timer_set:
-                    return False
-                if too_hot:
-                    return False
-                return pressed_start
+    └── src/microwave/__init__.py
+        └── def microwave(
+                    closed_door=False, pressed_start=False,
+                    timer_set=False, too_hot=False,
+                ):
+                └── if not closed_door:
+                    └── return False
+                    if not timer_set:
+                        return False
+                    if too_hot:
+                        return False
+                    return pressed_start
 
   .. code-block:: shell
 
-    microwave(
+    src.microwave.microwave(
         closed_door=False, timer_set=False,
         pressed_start=True, too_hot=False
     ) -> False
-    └── def microwave(
-                closed_door=False, pressed_start=False,
-                timer_set=False, too_hot=False,
-            ):
-            └── if not closed_door:
-                └── return False
-                if not timer_set:
-                    return False
-                if too_hot:
-                    return False
-                return pressed_start
+    └── src/microwave/__init__.py
+        └── def microwave(
+                    closed_door=False, pressed_start=False,
+                    timer_set=False, too_hot=False,
+                ):
+                └── if not closed_door:
+                    └── return False
+                    if not timer_set:
+                        return False
+                    if too_hot:
+                        return False
+                    return pressed_start
 
   .. code-block:: shell
 
-    microwave(
+    src.microwave.microwave(
         closed_door=False, timer_set=False,
         pressed_start=False, too_hot=True
     ) -> False
-    └── def microwave(
-                closed_door=False, pressed_start=False,
-                timer_set=False, too_hot=False,
-            ):
-            └── if not closed_door:
-                └── return False
-                if not timer_set:
-                    return False
-                if too_hot:
-                    return False
-                return pressed_start
+    └── src/microwave/__init__.py
+        └── def microwave(
+                    closed_door=False, pressed_start=False,
+                    timer_set=False, too_hot=False,
+                ):
+                └── if not closed_door:
+                    └── return False
+                    if not timer_set:
+                        return False
+                    if too_hot:
+                        return False
+                    return pressed_start
 
   .. code-block:: shell
 
-    microwave(
+    src.microwave.microwave(
         closed_door=False, timer_set=False,
         pressed_start=False, too_hot=False
     ) -> False
-    └── def microwave(
-                closed_door=False, pressed_start=False,
-                timer_set=False, too_hot=False,
-            ):
-            └── if not closed_door:
-                └── return False
-                if not timer_set:
-                    return False
-                if too_hot:
-                    return False
-                return pressed_start
+    └── src/microwave/__init__.py
+        └── def microwave(
+                    closed_door=False, pressed_start=False,
+                    timer_set=False, too_hot=False,
+                ):
+                └── if not closed_door:
+                    └── return False
+                    if not timer_set:
+                        return False
+                    if too_hot:
+                        return False
+                    return pressed_start
 
   .. code-block:: shell
 
-    microwave(
+    src.microwave.microwave(
         closed_door=False, timer_set=True,
         pressed_start=True, too_hot=True
     ) -> False
-    └── def microwave(
-                closed_door=False, pressed_start=False,
-                timer_set=False, too_hot=False,
-            ):
-            └── if not closed_door:
-                └── return False
-                if not timer_set:
-                    return False
-                if too_hot:
-                    return False
-                return pressed_start
+    └── src/microwave/__init__.py
+        └── def microwave(
+                    closed_door=False, pressed_start=False,
+                    timer_set=False, too_hot=False,
+                ):
+                └── if not closed_door:
+                    └── return False
+                    if not timer_set:
+                        return False
+                    if too_hot:
+                        return False
+                    return pressed_start
 
   .. code-block:: shell
 
-    microwave(
+    src.microwave.microwave(
         closed_door=False, timer_set=True,
         pressed_start=True, too_hot=False
     ) -> False
-    └── def microwave(
-                closed_door=False, pressed_start=False,
-                timer_set=False, too_hot=False,
-            ):
-            └── if not closed_door:
-                └── return False
-                if not timer_set:
-                    return False
-                if too_hot:
-                    return False
-                return pressed_start
+    └── src/microwave/__init__.py
+        └── def microwave(
+                    closed_door=False, pressed_start=False,
+                    timer_set=False, too_hot=False,
+                ):
+                └── if not closed_door:
+                    └── return False
+                    if not timer_set:
+                        return False
+                    if too_hot:
+                        return False
+                    return pressed_start
 
   .. code-block:: shell
 
-    microwave(
+    src.microwave.microwave(
         closed_door=False, timer_set=True,
         pressed_start=False, too_hot=True
     ) -> False
-    └── def microwave(
-                closed_door=False, pressed_start=False,
-                timer_set=False, too_hot=False,
-            ):
-            └── if not closed_door:
-                └── return False
-                if not timer_set:
-                    return False
-                if too_hot:
-                    return False
-                return pressed_start
+    └── src/microwave/__init__.py
+        └── def microwave(
+                    closed_door=False, pressed_start=False,
+                    timer_set=False, too_hot=False,
+                ):
+                └── if not closed_door:
+                    └── return False
+                    if not timer_set:
+                        return False
+                    if too_hot:
+                        return False
+                    return pressed_start
 
   .. code-block:: shell
 
-    microwave(
+    src.microwave.microwave(
         closed_door=False, timer_set=True,
         pressed_start=False, too_hot=False
     ) -> False
-    └── def microwave(
-                closed_door=False, pressed_start=False,
-                timer_set=False, too_hot=False,
-            ):
-            └── if not closed_door:
-                └── return False
-                if not timer_set:
-                    return False
-                if too_hot:
-                    return False
-                return pressed_start
+    └── src/microwave/__init__.py
+        └── def microwave(
+                    closed_door=False, pressed_start=False,
+                    timer_set=False, too_hot=False,
+                ):
+                └── if not closed_door:
+                    └── return False
+                    if not timer_set:
+                        return False
+                    if too_hot:
+                        return False
+                    return pressed_start
 
 * If the **Microwave** door is :green:`closed`, it checks if the timer is :green:`set`
 
@@ -3433,75 +3441,79 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
 
     .. code-block:: shell
 
-      microwave(
+      src.microwave.microwave(
           closed_door=True, timer_set=False,
           pressed_start=True, too_hot=True
       ) -> False
-      └── def microwave(
-                  closed_door=False, pressed_start=False,
-                  timer_set=False, too_hot=False,
-              ):
-              ├── if not closed_door:
-              │       return False
-              └── if not timer_set:
-                  └── return False
-                  if too_hot:
-                      return False
-                  return pressed_start
+      └── src/microwave/__init__.py
+          └── def microwave(
+                      closed_door=False, pressed_start=False,
+                      timer_set=False, too_hot=False,
+                  ):
+                  ├── if not closed_door:
+                  │       return False
+                  └── if not timer_set:
+                      └── return False
+                      if too_hot:
+                          return False
+                      return pressed_start
 
     .. code-block:: shell
 
-      microwave(
+      src.microwave.microwave(
           closed_door=True, timer_set=False,
           pressed_start=True, too_hot=False
       ) -> False
-      └── def microwave(
-                  closed_door=False, pressed_start=False,
-                  timer_set=False, too_hot=False,
-              ):
-              ├── if not closed_door:
-              │       return False
-              └── if not timer_set:
-                  └── return False
-                  if too_hot:
-                      return False
-                  return pressed_start
+      └── src/microwave/__init__.py
+          └── def microwave(
+                      closed_door=False, pressed_start=False,
+                      timer_set=False, too_hot=False,
+                  ):
+                  ├── if not closed_door:
+                  │       return False
+                  └── if not timer_set:
+                      └── return False
+                      if too_hot:
+                          return False
+                      return pressed_start
 
     .. code-block:: shell
 
-      microwave(
+      src.microwave.microwave(
           closed_door=True, timer_set=False,
           pressed_start=False, too_hot=True
       ) -> False
-      └── def microwave(
-                  closed_door=False, pressed_start=False,
-                  timer_set=False, too_hot=False,
-              ):
-              ├── if not closed_door:
-              │       return False
-              └── if not timer_set:
-                  └── return False
-                  if too_hot:
-                      return False
-                  return pressed_start
+      └── src/microwave/__init__.py
+          └── def microwave(
+                      closed_door=False, pressed_start=False,
+                      timer_set=False, too_hot=False,
+                  ):
+                  ├── if not closed_door:
+                  │       return False
+                  └── if not timer_set:
+                      └── return False
+                      if too_hot:
+                          return False
+                      return pressed_start
 
     .. code-block:: shell
 
-      microwave(
+      src.microwave.microwave(
           closed_door=True, timer_set=False,
           pressed_start=False, too_hot=False
       ) -> False
-      └── def microwave(
-                  closed_door=False, pressed_start=False,
-                  timer_set=False, too_hot=False,
-              ):
-              ├── if not closed_door:
-              │       return False
-              └── if not timer_set:
-                  └── return False
-                  if too_hot:
-                      return False
-                  return pressed_start
+      └── src/microwave/__init__.py
+          └── def microwave(
+                      closed_door=False, pressed_start=False,
+                      timer_set=False, too_hot=False,
+                  ):
+                  ├── if not closed_door:
+                  │       return False
+                  └── if not timer_set:
+                      └── return False
+                      if too_hot:
+                          return False
+                      return pressed_start
 
   - If the timer is :green:`set`, it checks if the **Microwave** temperature is :green:`too hot`
 
@@ -3509,39 +3521,41 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
 
       .. code-block:: shell
 
-        microwave(
+        src.microwave.microwave(
             closed_door=True, timer_set=True,
             pressed_start=True, too_hot=True
         ) -> False
-        └── def microwave(
-                    closed_door=False, pressed_start=False,
-                    timer_set=False, too_hot=False,
-                ):
-                ├── if not closed_door:
-                │       return False
-                ├── if not timer_set:
-                │       return False
-                └── if too_hot:
-                    └── return False
-                    return pressed_start
+        └── src/microwave/__init__.py
+            └── def microwave(
+                        closed_door=False, pressed_start=False,
+                        timer_set=False, too_hot=False,
+                    ):
+                    ├── if not closed_door:
+                    │       return False
+                    ├── if not timer_set:
+                    │       return False
+                    └── if too_hot:
+                        └── return False
+                        return pressed_start
 
       .. code-block:: shell
 
-        microwave(
+        src.microwave.microwave(
             closed_door=True, timer_set=True,
             pressed_start=False, too_hot=True
         ) -> False
-        └── def microwave(
-                    closed_door=False, pressed_start=False,
-                    timer_set=False, too_hot=False,
-                ):
-                ├── if not closed_door:
-                │       return False
-                ├── if not timer_set:
-                │       return False
-                └── if too_hot:
-                    └── return False
-                    return pressed_start
+        └── src/microwave/__init__.py
+            └── def microwave(
+                        closed_door=False, pressed_start=False,
+                        timer_set=False, too_hot=False,
+                    ):
+                    ├── if not closed_door:
+                    │       return False
+                    ├── if not timer_set:
+                    │       return False
+                    └── if too_hot:
+                        └── return False
+                        return pressed_start
 
     * If the **Microwave** temperature is :red:`NOT too hot`, it returns the value of ``pressed_start``
 
@@ -3549,43 +3563,45 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
 
         .. code-block:: shell
 
-          microwave(
+          src.microwave.microwave(
               closed_door=True, timer_set=True,
               pressed_start=False, too_hot=False
           ) -> False
-          └── def microwave(
-                      closed_door=False, pressed_start=False,
-                      timer_set=False, too_hot=False,
-                  ):
-                  ├── if not closed_door:
-                  │       return False
-                  ├── if not timer_set:
-                  │       return False
-                  ├── if too_hot:
-                  │       return False
-                  └── return pressed_start
-                      return False
+          └── src/microwave/__init__.py
+              └── def microwave(
+                          closed_door=False, pressed_start=False,
+                          timer_set=False, too_hot=False,
+                      ):
+                      ├── if not closed_door:
+                      │       return False
+                      ├── if not timer_set:
+                      │       return False
+                      ├── if too_hot:
+                      │       return False
+                      └── return pressed_start
+                          return False
 
       * If the **Microwave** door is :green:`closed` AND the timer is :green:`set` AND the **Microwave** temperature is :red:`NOT too hot` AND the start button is :green:`pressed`, it returns :green:`True`
 
         .. code-block:: shell
 
-          microwave(
+          src.microwave.microwave(
               closed_door=True, timer_set=True,
               pressed_start=True, too_hot=False
           ) -> True
-          └── def microwave(
-                      closed_door=False, pressed_start=False,
-                      timer_set=False, too_hot=False,
-                  ):
-                  ├── if not closed_door:
-                  │       return False
-                  ├── if not timer_set:
-                  │       return False
-                  ├── if too_hot:
-                  │       return False
-                  └── return pressed_start
-                      return True
+          └── src/microwave/__init__.py
+              └── def microwave(
+                          closed_door=False, pressed_start=False,
+                          timer_set=False, too_hot=False,
+                      ):
+                      ├── if not closed_door:
+                      │       return False
+                      ├── if not timer_set:
+                      │       return False
+                      ├── if too_hot:
+                      │       return False
+                      └── return pressed_start
+                          return True
 
 ----
 
@@ -3597,9 +3613,13 @@ refactor microwave function
 * I add an :ref:`if statement<if statements>` for the ``pressed_start`` parameter to make it clearer, in ``src/microwave/__init__.py``
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 7-9
+    :linenos:
+    :emphasize-lines: 11-13
 
+    def microwave(
+            closed_door=False, pressed_start=False,
+            timer_set=False, too_hot=False,
+        ):
         if not closed_door:
             return False
         if not timer_set:
@@ -3743,35 +3763,24 @@ refactor microwave function
 * I add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 1-6, 10-22
+    :linenos:
+    :emphasize-lines: 5-10
 
-        # if not (
-        #     closed_door
-        #     and timer_set
-        #     and not too_hot
-        #     and pressed_start
-        # ):
-        #     return False
-        # else:
-        # if not not (
-        # if (
-        #     closed_door
-        #     and timer_set
-        #     and not too_hot
-        #     and pressed_start
-        # ):
-        #     return True
+    def microwave(
+            closed_door=False, pressed_start=False,
+            timer_set=False, too_hot=False,
+        ):
         return (
             closed_door
             and timer_set
             and not too_hot
             and pressed_start
         )
+        # if not closed_door:
 
   the tests are still green.
 
-* I remove the commented lines
+* I remove the commented lines from the ``microwave`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
