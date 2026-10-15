@@ -270,7 +270,7 @@ test_pressed_start
     AttributeError: module 'src.microwave'
                     has no attribute 'microwave'
 
-  because ``microwave/__init__.py`` in the ``src`` folder_ does not have anything named ``microwave`` in it.
+  because the ``microwave`` :ref:`module<what is a module?>` does not have anything named ``microwave`` in it.
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 

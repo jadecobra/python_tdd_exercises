@@ -288,7 +288,7 @@ test_green_light_timer_not_done
     AttributeError: module 'src.traffic_light'
                     has no attribute 'control'
 
-  because ``traffic_light/__init__.py`` in the ``src`` folder_ does not have anything named ``control`` in it
+  because the ``traffic_light`` :ref:`module<what is a module?>` does not have anything named ``control`` in it
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
@@ -302,9 +302,9 @@ test_green_light_timer_not_done
     # NameError
     # AttributeError
 
-* I open ``traffic_light/__init__.py`` from the ``src`` folder_
+* I open ``__init__.py`` from the ``src`` folder_
 
-* I delete all the text in the file_ then add a :ref:`function<what is a function?>` to ``src/traffic_light/__init__.py``
+* I delete all the text in `` the file_ then add a :ref:`function<what is a function?>` to ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:

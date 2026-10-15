@@ -281,7 +281,7 @@ test_number_pushed
     AttributeError: module 'src.elevator'
                     has no attribute 'controller'
 
-  because ``elevator/__init__.py`` in the ``src`` folder_ does not have anything named ``controller`` in it.
+  because the ``elevator`` :ref:`module<what is a module?>` does not have anything named ``controller`` in it.
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<how to test that an Exception is raised>` seen
 
