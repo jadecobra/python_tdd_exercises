@@ -302,9 +302,9 @@ test_green_light_timer_not_done
     # NameError
     # AttributeError
 
-* I open ``__init__.py`` from the ``src`` folder_
+* I open ``__init__.py`` from ``traffic_light`` folder_ in the ``src`` folder_
 
-* I delete all the text in `` the file_ then add a :ref:`function<what is a function?>` to ``src/traffic_light/__init__.py``
+* I delete all the text in the file_ then add a :ref:`function<what is a function?>` to ``src/traffic_light/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -756,6 +756,7 @@ test_yellow_light_timer_not_done
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     git commit -am 'add test_yellow_light_timer_not_done'
 
@@ -1232,7 +1233,7 @@ When the ``control`` :ref:`function is called<how to call a function with input>
 
   green.
 
-* I remove the commented lines and the other :ref:`if statements<if statements>` from the :ref:`else block<if statements>` because they are no longer used
+* I remove the commented lines and the other :ref:`if statements<if statements>` from the ``if not timer_done:`` block because they are no longer used
 
   .. code-block:: python
     :linenos:
@@ -1335,51 +1336,60 @@ When the ``control`` :ref:`function is called<how to call a function with input>
 
   .. code-block:: shell
 
-    control(current_light='GREEN', timer_done=False) -> 'GREEN'
-    └── def control(timer_done, current_light):
-        ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        └── if not timer_done:
-            └── return current_light
-                return 'GREEN'
-            if timer_done:
-                if current_light == green:
-                    return yellow
-                if current_light == yellow:
-                    return red
-                if current_light == red:
-                    return green
+    src.traffic_light.control(
+        current_light='GREEN', timer_done=False
+    ) -> 'GREEN'
+    └── src/traffic_light/__init__.py
+        └── def control(timer_done, current_light):
+            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+            └── if not timer_done:
+                └── return current_light
+                    return 'GREEN'
+                if timer_done:
+                    if current_light == green:
+                        return yellow
+                    if current_light == yellow:
+                        return red
+                    if current_light == red:
+                        return green
 
   .. code-block:: shell
 
-    control(current_light='YELLOW', timer_done=False) -> 'YELLOW'
-    └── def control(timer_done, current_light):
-        ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        └── if not timer_done:
-            └── return current_light
-                return 'YELLOW'
-            if timer_done:
-                if current_light == green:
-                    return yellow
-                if current_light == yellow:
-                    return red
-                if current_light == red:
-                    return green
+    src.traffic_light.control(
+        current_light='YELLOW', timer_done=False
+    ) -> 'YELLOW'
+    └── src/traffic_light/__init__.py
+        └── def control(timer_done, current_light):
+            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+            └── if not timer_done:
+                └── return current_light
+                    return 'YELLOW'
+                if timer_done:
+                    if current_light == green:
+                        return yellow
+                    if current_light == yellow:
+                        return red
+                    if current_light == red:
+                        return green
 
   .. code-block:: shell
 
-    control(current_light='RED', timer_done=False) -> 'RED'
-    └── def control(timer_done, current_light):
-        ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        └── if not timer_done:
-            └── return current_light
-                return 'RED'
-            if timer_done:
-                if current_light == green:
-                    return yellow
-                if current_light == yellow:
-                    return red
-                if current_light == red:
-                    return green
+    src.traffic_light.control(
+        current_light='RED', timer_done=False
+    ) -> 'RED'
+    └── src/traffic_light/__init__.py
+        └── def control(timer_done, current_light):
+            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+            └── if not timer_done:
+                └── return current_light
+                    return 'RED'
+                if timer_done:
+                    if current_light == green:
+                        return yellow
+                    if current_light == yellow:
+                        return red
+                    if current_light == red:
+                        return green
 
 * If the timer is :green:`done` it checks the value of ``current_light``
 
@@ -1387,68 +1397,78 @@ When the ``control`` :ref:`function is called<how to call a function with input>
 
     .. code-block:: shell
 
-      control(current_light='GREEN', timer_done=True ) -> 'YELLOW'
-      └── def control(timer_done, current_light):
-          ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-          ├── if not timer_done:
-          │      return current_light
-          └── if timer_done:
-              └── if current_light == green:
-                  └── return yellow
-                  if current_light == yellow:
-                      return red
-                  if current_light == red:
-                      return green
+      src.traffic_light.control(
+          current_light='GREEN', timer_done=True
+      ) -> 'YELLOW'
+      └── src/traffic_light/__init__.py
+          └── def control(timer_done, current_light):
+              ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+              ├── if not timer_done:
+              │      return current_light
+              └── if timer_done:
+                  └── if current_light == green:
+                      └── return yellow
+                      if current_light == yellow:
+                          return red
+                      if current_light == red:
+                          return green
 
   - If the current light is :yellow:`YELLOW` it returns :red:`RED`
 
     .. code-block:: shell
 
-      control(current_light='YELLOW', timer_done=True ) -> 'RED'
-      └── def control(timer_done, current_light):
-          ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-          ├── if not timer_done:
-          │      return current_light
-          └── if timer_done:
-              ├── if current_light == green:
-              │       return yellow
-              └── if current_light == yellow:
-                  └── return red
-                  if current_light == red:
-                      return green
+      src.traffic_light.control(
+          current_light='YELLOW', timer_done=True
+      ) -> 'RED'
+      └── src/traffic_light/__init__.py
+          └── def control(timer_done, current_light):
+              ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+              ├── if not timer_done:
+              │      return current_light
+              └── if timer_done:
+                  ├── if current_light == green:
+                  │       return yellow
+                  └── if current_light == yellow:
+                      └── return red
+                      if current_light == red:
+                          return green
 
   - If the current light is :red:`RED` it returns :green:`GREEN`
 
     .. code-block:: shell
 
-      control(current_light='RED', timer_done=True ) -> 'GREEN'
-      └── def control(timer_done, current_light):
-          ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-          ├── if not timer_done:
-          │      return current_light
-          └── if timer_done:
-              ├── if current_light == green:
-              │       return yellow
-              ├── if current_light == yellow:
-              │       return red
-              └── if current_light == red:
-                  └── return green
+      src.traffic_light.control(
+          current_light='RED', timer_done=True
+      ) -> 'GREEN'
+      └── src/traffic_light/__init__.py
+          └── def control(timer_done, current_light):
+              ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+              ├── if not timer_done:
+              │      return current_light
+              └── if timer_done:
+                  ├── if current_light == green:
+                  │       return yellow
+                  ├── if current_light == yellow:
+                  │       return red
+                  └── if current_light == red:
+                      └── return green
 
 * If none of the above :ref:`conditions<if statements>` are met it :ref:`returns None because ...<test_making_a_function_w_return_none>`.
 
   .. code-block:: shell
 
-    def control(timer_done, current_light):
-    ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-    ├── if not timer_done:
-    │      return current_light
-    └── if timer_done:
-        ├── if current_light == green:
-        │       return yellow
-        ├── if current_light == yellow:
-        │       return red
-        ├── if current_light == red:
-        │       return green
+    src/traffic_light/__init__.py
+    └── def control(timer_done, current_light):
+        ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        ├── if not timer_done:
+        │      return current_light
+        └── if timer_done:
+            ├── if current_light == green:
+            │       return yellow
+            ├── if current_light == yellow:
+            │       return red
+            ├── if current_light == red:
+            │       return green
 
 ----
 
@@ -1476,7 +1496,7 @@ I want the ``control`` :ref:`function<what is a function?>` to show what happens
 
 * is the timer done?
 
-The **Traffic Light** has to make sure that there is never a case where cars move through the intersection at the same time to avoid accidents. The following cases must never happen
+The **Traffic Light** has to make sure that there is never a case where cars move through the intersection at the same time (to try and prevent accidents). The following cases must never happen
 
 ================  ================
 parallel          cross
@@ -1513,7 +1533,7 @@ parallel          cross             timer           parallel            cross
 :red:`RED`        :red:`RED`        :green:`done`   :green:`GREEN`      :red:`RED`
 ================  ================  =============== =================== =================
 
-Where ``parallel`` is the light in front of me, and ``cross`` is the light for traffic crossing the street. The all :red:`RED` row (Safety State) makes sure that there are no cars moving through the intersection at the same time to avoid accidents
+Where ``parallel`` is the light in front of me, and ``'cross'`` is the light for traffic crossing the street. The all :red:`RED` row (Safety State) makes sure that there are no cars moving through the intersection at the same time.
 
 ----
 
@@ -1687,7 +1707,7 @@ test_cross_red_parallel_red_timer_done
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 3
+    :emphasize-lines: 2
 
     def control(
             timer_done, current_light=None,
@@ -1797,7 +1817,7 @@ test_cross_red_parallel_red_timer_not_done
 
   because those :ref:`assertions<what is an assertion?>` use the :ref:`default values<test_optional_arguments>` for ``current_parallel`` and ``cross_parallel``
 
-* I add an :ref:`if statements` for if the timer is :red:`NOT done` and the ``current_light`` is :ref:`grouped as True<how to test if something is grouped as True>`
+* I add an :ref:`if statement<if statements>` for if the timer is :red:`NOT done` and the ``current_light`` is :ref:`grouped as True<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -2110,9 +2130,10 @@ the test passes.
 * Two of the :ref:`if statements` in ``if not timer_done:`` are also for if the current parallel light is :red:`RED`. I change them to remove repetition of ``if current_parallel == red``
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 3-12
+    :lineno-start: 5
+    :emphasize-lines: 5-13
 
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         if not timer_done:
             if current_light:
                 return current_light
@@ -2133,8 +2154,9 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 6
+    :lineno-start: 5
 
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         if not timer_done:
             if current_light:
                 return current_light
@@ -2335,9 +2357,10 @@ test_cross_green_parallel_red_timer_not_done
 I add an :ref:`if statement<if statements>` for if the current parallel light is :red:`RED` AND the current cross light is :green:`GREEN` to ``if not timer_done:`` in ``src/traffic_light/__init__.py``
 
 .. code-block:: python
-  :lineno-start: 6
-  :emphasize-lines: 6-7
+  :lineno-start: 5
+  :emphasize-lines: 7-8
 
+      red, yellow, green = 'RED', 'YELLOW', 'GREEN'
       if not timer_done:
           if current_light:
               return current_light
@@ -2389,12 +2412,13 @@ the test passes.
 
 ----
 
-* The three :ref:`if statements` in ``if not timer_done:`` for if the current parallel light is :red:`RED` all return the current parallel light and the current cross light. I write one :ref:`return statement<the return statement>` for all of them
+* The three :ref:`if statements` in the ``if not timer_done:`` block for if the current parallel light is :red:`RED` all return the current parallel light and the current cross light. I write one :ref:`return statement<the return statement>` for all of them
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 6
+    :lineno-start: 5
+    :emphasize-lines: 7
 
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         if not timer_done:
             if current_light:
                 return current_light
@@ -2415,8 +2439,9 @@ the test passes.
 * I remove the :ref:`if statements` for the other cases since they are no longer used
 
   .. code-block:: python
-    :lineno-start: 6
+    :lineno-start: 5
 
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         if not timer_done:
             if current_light:
                 return current_light
@@ -2541,7 +2566,7 @@ test_parallel_red_cross_red_timer_done
 
 ----
 
-* I add ``red_phase`` to the :ref:`call<how to call a function with input>` ``control`` :ref:`function<what is a function?>` in the :ref:`assertion<what is an assertion?>` in :ref:`test_red_light_timer_done`
+* I add ``red_phase`` to the :ref:`call<how to call a function with input>` to the ``control`` :ref:`function<what is a function?>` in the :ref:`assertion<what is an assertion?>` in :ref:`test_red_light_timer_done`
 
   .. code-block:: python
     :lineno-start: 55
@@ -2583,7 +2608,7 @@ test_parallel_red_cross_red_timer_done
 
   the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
-* I add an :ref:`if statement<if statements>` to ``if timer_done:`` for if the **Traffic Light** is currently in the :red:`RED` phase for cross traffic AND the current parallel light is :red:`RED` AND the current cross light is :red:`RED`
+* I add an :ref:`if statement<if statements>` to the ``if timer_done:`` block for if the **Traffic Light** is currently in the :red:`RED` phase for cross traffic AND the current parallel light is :red:`RED` AND the current cross light is :red:`RED`
 
   .. code-block:: python
     :lineno-start: 14
@@ -2893,7 +2918,7 @@ the test passes.
 
 ----
 
-* Two of the :ref:`if statements` in ``if timer_done:`` are for if the current cross light is :red:`RED` which is when ``cross`` traffic is in the :red:`RED` phase. I change them to remove repetition of ``if current_cross == red``
+* Two of the :ref:`if statements` in the ``if timer_done:`` block are for if the current cross light is :red:`RED` which is when ``'cross'`` traffic is in the :red:`RED` phase. I change them to remove repetition of ``if current_cross == red``
 
   .. code-block:: python
     :lineno-start: 14
@@ -3642,9 +3667,9 @@ When the ``control`` :ref:`function is called<how to call a function with input>
                     return 'RED'           , 'RED'
                 if timer_done:
 
-* If the timer is :green:`done`, it checks if ``cross`` traffic is in the :red:`RED` phase
+* If the timer is :green:`done`, it checks if ``'cross'`` traffic is in the :red:`RED` phase
 
-  - If ``cross`` traffic is in the :red:`RED` phase, it checks the value of ``current_parallel``
+  - If ``'cross'`` traffic is in the :red:`RED` phase, it checks the value of ``current_parallel``
 
     * If the current parallel light is :green:`GREEN`, it returns ``YELLOW, RED``, which means the next parallel light will be :yellow:`YELLOW` and the cross light will remain :red:`RED` because it is still in the :red:`RED` phase
 
@@ -3721,7 +3746,7 @@ When the ``control`` :ref:`function is called<how to call a function with input>
                             └── return red, green
                         if red_phase == 'parallel':
 
-    * If ``cross`` traffic is not in the :red:`RED` phase, it checks if ``parallel`` traffic is in the :red:`RED` phase
+    * If ``'cross'`` traffic is not in the :red:`RED` phase, it checks if ``parallel`` traffic is in the :red:`RED` phase
 
   - If ``parallel`` traffic is in the :red:`RED` phase, it checks the value of ``current_cross``
 
@@ -3838,7 +3863,7 @@ parallel          cross
 :yellow:`YELLOW`  :green:`GREEN`
 ================  ================
 
-It should be :red:`RED` for both ``cross`` and ``parallel`` traffic for any of the above cases and for any cases that are outside the safe cases, for example a power failure.
+It should be :red:`RED` for both ``'cross'`` and ``parallel`` traffic for any of the above cases and for any cases that are outside the safe cases, for example a power failure.
 
 ----
 
@@ -4672,6 +4697,7 @@ extract is_not_light function
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     git commit -am 'extract is_not_light function'
 
@@ -5011,6 +5037,7 @@ extract next_light function
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     git commit -am 'extract next_light function'
 
@@ -5282,9 +5309,9 @@ When the ``control`` :ref:`function is called<how to call a function with input>
                     return 'RED'           , 'RED'
                 if timer_done:
 
-* If the timer is :green:`done`, it :ref:`calls<how to call a function with input>` the :ref:`next_light function<extract next_light function>` which checks if ``cross`` traffic is in the :red:`RED` phase
+* If the timer is :green:`done`, it :ref:`calls<how to call a function with input>` the :ref:`next_light function<extract next_light function>` which checks if ``'cross'`` traffic is in the :red:`RED` phase
 
-  - If ``cross`` traffic is in the :red:`RED` phase, it checks the value of ``current_parallel``
+  - If ``'cross'`` traffic is in the :red:`RED` phase, it checks the value of ``current_parallel``
 
     * If the current parallel light is :green:`GREEN`, it returns ``YELLOW, RED``, which means the next parallel light will be :yellow:`YELLOW` and the cross light will remain :red:`RED` because it is still in the :red:`RED` phase
 
@@ -5340,7 +5367,7 @@ When the ``control`` :ref:`function is called<how to call a function with input>
                                     └── return RED, GREEN
                                 if red_phase == 'parallel':
 
-    * If ``cross`` traffic is not in the :red:`RED` phase, it checks if ``parallel`` traffic is in the :red:`RED` phase
+    * If ``'cross'`` traffic is not in the :red:`RED` phase, it checks if ``parallel`` traffic is in the :red:`RED` phase
 
   - If ``parallel`` traffic is in the :red:`RED` phase, it checks the value of ``current_cross``
 
