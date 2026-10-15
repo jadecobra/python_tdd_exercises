@@ -18,52 +18,52 @@ preview
 
 These are the tests I have at the end of the chapter
 
-.. literalinclude:: ../../code/microwave/test_microwave.py
+.. literalinclude:: ../../code/microwave/tests/test_microwave.py
+  :caption: microwave/tests/test_microwave.py
   :language: python
   :linenos:
-  :caption: microwave/tests/test_microwave.py
   :lines: 1-23
 
-.. literalinclude:: ../../code/microwave/test_microwave.py
+.. literalinclude:: ../../code/microwave/tests/test_microwave.py
+  :caption: microwave/tests/test_microwave.py
   :language: python
   :lineno-start: 25
-  :caption: microwave/tests/test_microwave.py
   :lines: 25-41
 
-.. literalinclude:: ../../code/microwave/test_microwave.py
+.. literalinclude:: ../../code/microwave/tests/test_microwave.py
+  :caption: microwave/tests/test_microwave.py
   :language: python
   :lineno-start: 43
-  :caption: microwave/tests/test_microwave.py
   :lines: 43-59
 
-.. literalinclude:: ../../code/microwave/test_microwave.py
+.. literalinclude:: ../../code/microwave/tests/test_microwave.py
+  :caption: microwave/tests/test_microwave.py
   :language: python
   :lineno-start: 61
-  :caption: microwave/tests/test_microwave.py
   :lines: 61-77
 
-.. literalinclude:: ../../code/microwave/test_microwave.py
+.. literalinclude:: ../../code/microwave/tests/test_microwave.py
+  :caption: microwave/tests/test_microwave.py
   :language: python
   :lineno-start: 79
-  :caption: microwave/tests/test_microwave.py
   :lines: 79-95
 
-.. literalinclude:: ../../code/microwave/test_microwave.py
+.. literalinclude:: ../../code/microwave/tests/test_microwave.py
+  :caption: microwave/tests/test_microwave.py
   :language: python
   :lineno-start: 97
-  :caption: microwave/tests/test_microwave.py
   :lines: 97-113
 
-.. literalinclude:: ../../code/microwave/test_microwave.py
+.. literalinclude:: ../../code/microwave/tests/test_microwave.py
+  :caption: microwave/tests/test_microwave.py
   :language: python
   :lineno-start: 115
-  :caption: microwave/tests/test_microwave.py
   :lines: 115-131
 
-.. literalinclude:: ../../code/microwave/test_microwave.py
+.. literalinclude:: ../../code/microwave/tests/test_microwave.py
+  :caption: microwave/tests/test_microwave.py
   :language: python
   :lineno-start: 133
-  :caption: microwave/tests/test_microwave.py
   :lines: 133-
 
 ----
@@ -284,7 +284,7 @@ test_pressed_start
     # NameError
     # AttributeError
 
-* I open ``__init__.py`` from the. ``microwave`` folder in the ``src`` folder_
+* I open ``__init__.py`` from the ``microwave`` folder in the ``src`` folder_
 
 * I delete all the text in ``src/microwave/__init__.py``
 * I add a :ref:`function<what is a function?>` named ``microwave`` to ``src/microwave/__init__.py``
@@ -506,7 +506,7 @@ test_open_door_not_pressed_start
   .. code-block:: python
 
     TypeError: microwave() got
-               an unexpected keyword argument 'closed_door
+               an unexpected keyword argument 'closed_door'
 
   because the test :ref:`called<how to call a function with input>` the ``microwave`` :ref:`function<what is a function?>` with a :ref:`name<test_keyword_arguments>` (``closed_door``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
@@ -1856,7 +1856,7 @@ door            timer           start button        too hot             output
 
     # Exceptions seen
 
-  the terminal shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1873,25 +1873,25 @@ door            timer           start button        too hot             output
 
 ----
 
-I add ``too_hot`` to the ``microwave`` :ref:`function definition<how to make a function that takes input>` in ``src/microwave/__init__.py``
+* I add ``too_hot`` to the ``microwave`` :ref:`function definition<how to make a function that takes input>` in ``src/microwave/__init__.py``
 
-.. code-block:: python
-  :linenos:
-  :emphasize-lines: 3
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3
 
-  def microwave(
-          closed_door=False, pressed_start=False,
-          timer_set=False, too_hot=False,
-      ):
+    def microwave(
+            closed_door=False, pressed_start=False,
+            timer_set=False, too_hot=False,
+        ):
 
-the test passes.
+  the test passes.
 
-.. code-block:: python
+  .. code-block:: python
 
-  microwave(
-      closed_door=False, timer_set=False,
-      pressed_start=False, too_hot=False
-  ) -> False
+    microwave(
+        closed_door=False, timer_set=False,
+        pressed_start=False, too_hot=False
+    ) -> False
 
 ----
 
@@ -3204,27 +3204,27 @@ door            timer           start button        too hot             output
 
 ----
 
-I add an :ref:`if statement<if statements>` for the ``too_hot`` parameter in ``src/microwave/__init__.py``
+* I add an :ref:`if statement<if statements>` for the ``too_hot`` parameter in ``src/microwave/__init__.py``
 
-.. code-block:: python
-  :linenos:
-  :emphasize-lines: 9-10
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 9-10
 
-  def microwave(
-          closed_door=False, pressed_start=False,
-          timer_set=False, too_hot=False,
-      ):
-      if not closed_door:
-          return False
-      if not timer_set:
-          return False
-      if too_hot:
-          return False
-      return pressed_start
+    def microwave(
+            closed_door=False, pressed_start=False,
+            timer_set=False, too_hot=False,
+        ):
+        if not closed_door:
+            return False
+        if not timer_set:
+            return False
+        if too_hot:
+            return False
+        return pressed_start
 
-the test passes.
+  the test passes.
 
-.. code-block:: python
+  .. code-block:: python
 
     microwave(
         closed_door=True, timer_set=True,
