@@ -12,7 +12,7 @@ Traffic Light
 
 ----
 
-I want to make a **Traffic Light** that changes color.
+I want to make a **Traffic Light** that changes color to control traffic.
 
 *********************************************************************************
 preview
@@ -142,7 +142,7 @@ start the project
     FAILED tests/test_traffic_light.py::TestTrafficLight::test_failure - AssertionError: True is not false
     ==================== 1 failed in X.YZs ====================
 
-* I open ``tests/test_traffic_light.py`` from the ``tests`` folder_
+* I open ``test_traffic_light.py`` from the ``tests`` folder_
 * I change :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>` in ``tests/test_traffic_light.py``
 
   .. code-block:: python
