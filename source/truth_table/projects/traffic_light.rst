@@ -20,55 +20,55 @@ preview
 
 These are the tests I have at the end of the chapter
 
-.. literalinclude:: ../../code/traffic_light/test_traffic_light.py
+.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :linenos:
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 1-30
 
-.. literalinclude:: ../../code/traffic_light/test_traffic_light.py
+.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 32
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 32-52
 
-.. literalinclude:: ../../code/traffic_light/test_traffic_light.py
+.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 54
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 54-74
 
-.. literalinclude:: ../../code/traffic_light/test_traffic_light.py
+.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 76
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 76-96
 
-.. literalinclude:: ../../code/traffic_light/test_traffic_light.py
+.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 98
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 98-118
 
-.. literalinclude:: ../../code/traffic_light/test_traffic_light.py
+.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 120
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 120-140
 
-.. literalinclude:: ../../code/traffic_light/test_traffic_light.py
+.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 142
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 142-160
 
-.. literalinclude:: ../../code/traffic_light/test_traffic_light.py
+.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 161
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 161-178
 
-.. literalinclude:: ../../code/traffic_light/test_traffic_light.py
+.. literalinclude:: ../../code/traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 179
   :caption: traffic_light/tests/test_traffic_light.py
@@ -1054,7 +1054,7 @@ test_red_light_timer_done
 ----
 
 * I go back to the terminal_ where the tests are running
-* I add a test with an :ref:`assertion<what is an assertion?>` for if the light is :green:`GREEN` AND the timer is :green:`done`, to ``tests/test_traffic_light.py``
+* I add a test with an :ref:`assertion<what is an assertion?>` for if the light is :red:`RED` AND the timer is :green:`done`, to ``tests/test_traffic_light.py``
 
   ================  ===============  ================
   current light     timer            output
@@ -1130,7 +1130,7 @@ test_red_light_timer_done
   .. code-block::
     :emphasize-lines: 1
 
-    git commit -am 'add test_green_light_timer_not_done'
+    git commit -am 'add test_red_light_timer_done'
 
 ----
 
@@ -1620,16 +1620,16 @@ test_cross_red_parallel_red_timer_done
         TypeError: control() missing
             1 required positional argument: 'current_parallel'
     FAILED ...test_red_light_timer_done -
-         ypeError: control() missing
+        TypeError: control() missing
             1 required positional argument: 'current_parallel'
     FAILED ...test_red_light_timer_not_done -
-         TypeError: control() missing
+        TypeError: control() missing
             1 required positional argument: 'current_parallel'
     FAILED ...test_yellow_light_timer_done -
         TypeError: control() missing
             1 required positional argument: 'current_parallel'
     FAILED ...test_yellow_light_timer_not_done -
-         TypeError: control() missing
+        TypeError: control() missing
             1 required positional argument: 'current_parallel'
 
 * I add a :ref:`default value<test_optional_arguments>` for the ``current_parallel`` parameter
@@ -1675,7 +1675,7 @@ test_cross_red_parallel_red_timer_done
     :emphasize-lines: 2
 
     def control(
-            timer_done, current_light='RED,
+            timer_done, current_light='RED',
             current_parallel='RED', current_cross='RED',
         ):
 
@@ -1804,7 +1804,7 @@ test_cross_red_parallel_red_timer_not_done
             return current_light
         if timer_done:
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1815,7 +1815,7 @@ test_cross_red_parallel_red_timer_not_done
     FAILED ...test_yellow_light_timer_not_done -
         AssertionError: ('RED', 'RED') != 'YELLOW'
 
-  because those :ref:`assertions<what is an assertion?>` use the :ref:`default values<test_optional_arguments>` for ``current_parallel`` and ``cross_parallel``
+  because those :ref:`assertions<what is an assertion?>` use the :ref:`default values<test_optional_arguments>` for ``current_parallel`` and ``current_cross``
 
 * I add an :ref:`if statement<if statements>` for if the timer is :red:`NOT done` and the ``current_light`` is :ref:`grouped as True<how to test if something is grouped as True>`
 
@@ -4067,7 +4067,7 @@ It should be :red:`RED` for both ``'cross'`` and ``'parallel'`` traffic for any 
 
 ----
 
-* I add a test for the safety state with an :ref:`assertion<what is an assertion?>` for  if ``current_parallel`` is NOT :green:`GREEN` or :yellow:`YELLOW` or :red:`RED`, ``tests/test_traffic_light.py``
+* I add a test for the safety state with an :ref:`assertion<what is an assertion?>` for if ``current_parallel`` is NOT :green:`GREEN` or :yellow:`YELLOW` or :red:`RED`, ``tests/test_traffic_light.py``
 
   .. code-block:: python
     :lineno-start: 131

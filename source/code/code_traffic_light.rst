@@ -40,55 +40,55 @@ Traffic Light: tests
 
 The code in ``traffic_light/tests/test_traffic_light.py`` from :ref:`Traffic Light`
 
-.. literalinclude:: traffic_light/test_traffic_light.py
+.. literalinclude:: traffic_light/tests/test_traffic_light.py
   :language: python
   :linenos:
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 1-30
 
-.. literalinclude:: traffic_light/test_traffic_light.py
+.. literalinclude:: traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 32
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 32-52
 
-.. literalinclude:: traffic_light/test_traffic_light.py
+.. literalinclude:: traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 54
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 54-74
 
-.. literalinclude:: traffic_light/test_traffic_light.py
+.. literalinclude:: traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 76
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 76-96
 
-.. literalinclude:: traffic_light/test_traffic_light.py
+.. literalinclude:: traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 98
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 98-118
 
-.. literalinclude:: traffic_light/test_traffic_light.py
+.. literalinclude:: traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 120
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 120-140
 
-.. literalinclude:: traffic_light/test_traffic_light.py
+.. literalinclude:: traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 142
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 142-160
 
-.. literalinclude:: traffic_light/test_traffic_light.py
+.. literalinclude:: traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 161
   :caption: traffic_light/tests/test_traffic_light.py
   :lines: 161-178
 
-.. literalinclude:: traffic_light/test_traffic_light.py
+.. literalinclude:: traffic_light/tests/test_traffic_light.py
   :language: python
   :lineno-start: 179
   :caption: traffic_light/tests/test_traffic_light.py
@@ -102,7 +102,26 @@ Traffic Light: solution
 
 The code in ``traffic_light/src/traffic_light/__init__.py`` from :ref:`Traffic Light`
 
-.. literalinclude:: traffic_light/traffic_light.py
+.. literalinclude:: traffic_light/src/traffic_light.py
+  :caption: traffic_light/src/traffic_light/__init__.py
   :language: python
   :linenos:
+  :lines: 1-9
+
+.. literalinclude:: traffic_light/src/traffic_light.py
   :caption: traffic_light/src/traffic_light/__init__.py
+  :language: python
+  :lineno-start: 12
+  :lines: 12-22
+
+.. literalinclude:: traffic_light/src/traffic_light.py
+  :caption: traffic_light/src/traffic_light/__init__.py
+  :language: python
+  :lineno-start: 25
+  :lines: 25-36
+
+.. literalinclude:: traffic_light/src/traffic_light.py
+  :caption: traffic_light/src/traffic_light/__init__.py
+  :language: python
+  :lineno-start: 39
+  :lines: 39-54
