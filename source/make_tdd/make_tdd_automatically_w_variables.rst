@@ -20,11 +20,15 @@ Here are steps I take with ``makePythonTdd`` to make the environment for every p
 #. I make the test pass
 #. I start working on the project
 
+I want to use :ref:`variables<what is a variable?>` to remove the step where I open ``makePythonTdd`` and change the name of the project.
+
 ----
 
 *********************************************************************************
 preview
 *********************************************************************************
+
+Here is the code I have in ``makePythonTdd`` at the end of the chapter
 
 .. tab-set::
   :sync-group: os
@@ -51,12 +55,11 @@ preview
 how to use a variable in a shell script
 ********************************************************************************************
 
-The ``makePythonTdd`` works and always makes a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` the way I want it. The problem is I have to change the name of the project in a few places every time I use the program to make a project.
+The ``makePythonTdd`` program_ works and always makes a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` the way I want it. The problem is I have to change the name of the project in a few places every time I use the program to make a project.
 
 I want the program_ to take the name of the project once and use the name to make the
 
 - project folder_
-- file_ for the program_ in the ``src`` folder_
 - file_ for the test in the ``tests`` folder_
 - :ref:`test class<everything is an object>` in the test file_
 - :ref:`virtual environment<what is a virtual environment?>` in the ``.venv`` folder_
@@ -193,7 +196,7 @@ I can use a :ref:`variable<what is a variable?>` for the name of the project
 
   this program_ does not make the class name in the :ref:`CapWords format<CapWords>` (``TestProMagic``) so it is in :ref:`snake_case` (``Testpro_magic``), :ref:`there has to be a better way<BONUS: makePythonTdd.sh Pro>`.
 
-* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_pro_magic.py`` in the terminal_ to open it
+* I ``test_pro_magic.py`` from the ``tests`` folder_ of the ``pro_magic`` folder_
 
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
@@ -444,6 +447,7 @@ Here are a few other examples
   it does all the steps then shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :emphasize-lines: 10
 
     ======================== FAILURES ==========================
     ______________ Testexceptions.test_failure _________________
