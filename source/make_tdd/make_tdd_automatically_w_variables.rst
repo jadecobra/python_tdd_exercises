@@ -196,7 +196,7 @@ I can use a :ref:`variable<what is a variable?>` for the name of the project
 
   this program_ does not make the class name in the :ref:`CapWords format<CapWords>` (``TestProMagic``) so it is in :ref:`snake_case` (``Testpro_magic``), :ref:`there has to be a better way<BONUS: makePythonTdd.sh Pro>`.
 
-* I ``test_pro_magic.py`` from the ``tests`` folder_ of the ``pro_magic`` folder_
+* I open ``tests/test_pro_magic.py`` from the ``tests`` folder_ of the ``pro_magic`` folder_ and place the cursor on line 7
 
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
@@ -288,7 +288,7 @@ I want to be able to call the program_ and give it a name for the project from t
   .. tab-item:: no WSL
     :sync: no_wsl
 
-    in the code above, ``command`` is the name of the program_ ``$args[0]`` is ``argument``
+    in the code above, ``command`` is the name of the program_ and ``$args[0]`` is ``argument``
 
 Here are a few other examples
 
@@ -364,7 +364,7 @@ Here are a few other examples
 * the terminal_ is my friend, and shows
 
   .. code-block:: shell
-    :emphasize-lines: 10
+    :emphasize-lines: 2, 4, 10, 12
     :emphasize-text: pro_magic_plus
 
     ========================= FAILURES =========================
@@ -447,7 +447,7 @@ Here are a few other examples
   it does all the steps then shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
-    :emphasize-lines: 10
+    :emphasize-lines: 2, 4, 10, 12
 
     ======================== FAILURES ==========================
     ______________ Testexceptions.test_failure _________________
