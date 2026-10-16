@@ -1533,7 +1533,7 @@ parallel          cross             timer           parallel            cross
 :red:`RED`        :red:`RED`        :green:`done`   :green:`GREEN`      :red:`RED`
 ================  ================  =============== =================== =================
 
-Where ``parallel`` is the light in front of me, and ``'cross'`` is the light for traffic crossing the street. The all :red:`RED` row (Safety State) makes sure that there are no cars moving through the intersection at the same time.
+Where ``'parallel'`` is the light in front of me, and ``'cross'`` is the light for traffic crossing the street. The all :red:`RED` row (Safety State) makes sure that there are no cars moving through the intersection at the same time.
 
 ----
 
@@ -3080,9 +3080,10 @@ test_parallel_yellow_cross_red_timer_not_done
 I add an :ref:`if statement<if statements>` for if the current parallel light is :yellow:`YELLOW` AND the current cross light is :red:`RED` to ``if not timer_done:`` in ``src/traffic_light/__init__.py``
 
 .. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 5-6
+  :lineno-start: 6
+  :emphasize-lines: 6-7
 
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
         if not timer_done:
             if current_light:
                 return current_light
@@ -3183,6 +3184,12 @@ the test passes.
 test_parallel_green_cross_red_timer_done
 *********************************************************************************
 
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
 * I go back to the terminal_ where the tests are running
 * I add values for ``current_parallel``, ``current_cross`` and ``red_phase`` to the :ref:`assertion<what is an assertion?>` in :ref:`test_green_light_timer_done` for if ``'cross'`` traffic is in the :red:`RED` phase AND the current parallel light is :green:`GREEN` AND the current cross light is :red:`RED` AND the timer is :green:`done`
 
@@ -3212,30 +3219,76 @@ test_parallel_green_cross_red_timer_done
 
         def test_parallel_yellow_cross_red_timer_not_done(self):
 
-  the test is still green.
+  the terminal_ is my friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    control(
-        current_parallel='GREEN' , current_cross='RED',
-        timer_done=True, red_phase='cross'
-    ) -> 'YELLOW', 'RED'
-    control(
-        current_parallel='YELLOW' , current_cross='RED',
-        timer_done=False, red_phase='cross'
-    ) -> 'YELLOW', 'RED'
-    control(
-        current_parallel='YELLOW' , current_cross='RED',
-        timer_done=True, red_phase='cross'
-    ) -> 'RED', 'RED'
-    control(
-        current_parallel='RED' , current_cross='RED',
-        timer_done=False, red_phase='cross'
-    ) -> 'RED', 'RED'
-    control(
-        current_parallel='RED' , current_cross='RED',
-        timer_done=True, red_phase='cross'
-    ) -> 'RED', 'GREEN'
+    AssertionError: None != ('YELLOW', 'RED')
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add an :ref:`if statement<if statements>` to ``if red_phase == 'cross':`` in the ``if timer_done:`` block for if ``'cross'`` traffic is in the :red:`RED` phase AND the current parallel light is :green:`GREEN` AND the current cross light is :red:`RED` AND the timer is :green:`done`
+
+.. code-block:: python
+  :lineno-start: 16
+  :emphasize-lines: 10-11
+
+        if timer_done:
+            if current_light == green:
+                return yellow
+            if current_light == yellow:
+                return red
+            if current_light == red:
+                return green
+
+            if red_phase == 'cross':
+                if current_parallel == green:
+                    return yellow, red
+                if current_parallel == yellow:
+                    return red, red
+                if current_parallel == red:
+                    return red, green
+
+            if current_parallel == red:
+
+the test passes.
+
+.. code-block:: python
+
+  control(
+      current_parallel='GREEN' , current_cross='RED',
+      timer_done=True, red_phase='cross'
+  ) -> 'YELLOW', 'RED'
+  control(
+      current_parallel='YELLOW' , current_cross='RED',
+      timer_done=False, red_phase='cross'
+  ) -> 'YELLOW', 'RED'
+  control(
+      current_parallel='YELLOW' , current_cross='RED',
+      timer_done=True, red_phase='cross'
+  ) -> 'RED', 'RED'
+  control(
+      current_parallel='RED' , current_cross='RED',
+      timer_done=False, red_phase='cross'
+  ) -> 'RED', 'RED'
+  control(
+      current_parallel='RED' , current_cross='RED',
+      timer_done=True, red_phase='cross'
+  ) -> 'RED', 'GREEN'
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
 
 * I remove the commented lines from :ref:`test_green_light_timer_done`
 
@@ -3349,9 +3402,10 @@ test_parallel_green_cross_red_timer_not_done
 I add an :ref:`if statement<if statements>` for if the current parallel light is :green:`GREEN` AND the current cross light is :red:`RED` to ``if not timer_done:`` in ``src/traffic_light/__init__.py``
 
 .. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 5-6
+  :lineno-start: 6
+  :emphasize-lines: 6-7
 
+      red, yellow, green = 'RED', 'YELLOW', 'GREEN'
       if not timer_done:
           if current_light:
               return current_light
@@ -3502,7 +3556,7 @@ the test passes.
 
   the tests are still green.
 
-* I change ``if current_parallel == red`` to ``if red_phase == 'parallel':`` for if the timer is :green:`done` AND the current parallel light is :red:`RED` since it is for when ``parallel`` traffic is in the :red:`RED` phase
+* I change ``if current_parallel == red`` to ``if red_phase == 'parallel':`` for if the timer is :green:`done` AND the current parallel light is :red:`RED` since it is for when ``'parallel'`` traffic is in the :red:`RED` phase
 
   .. code-block:: python
     :lineno-start: 15
@@ -3557,6 +3611,133 @@ the test passes.
                 if current_cross == red:
                     return green, red
 
+* I add a ``red_phase=parallel,`` to :ref:`test_cross_green_parallel_red_timer_not_done` to make it clearer
+
+  .. code-block:: python
+    :lineno-start: 76
+    :emphasize-lines: 4
+
+        def test_cross_green_parallel_red_timer_not_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    red_phase='parallel',
+                    current_parallel=RED,
+                    current_cross=GREEN,
+                    timer_done=False
+                ),
+                (RED, GREEN)
+            )
+
+        def test_cross_green_parallel_red_timer_done(self):
+
+  the test is still green.
+
+* I do the same thing to :ref:`test_cross_green_parallel_red_timer_done`
+
+  .. code-block:: python
+    :lineno-start: 87
+    :emphasize-lines: 4
+
+        def test_cross_green_parallel_red_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    red_phase='parallel',
+                    current_parallel=RED,
+                    current_cross=GREEN,
+                    timer_done=True,
+                ),
+                (RED, YELLOW)
+            )
+
+        def test_cross_yellow_parallel_red_timer_not_done(self):
+
+  still green.
+
+* then :ref:`test_cross_yellow_parallel_red_timer_not_done`
+
+  .. code-block:: python
+    :lineno-start: 98
+    :emphasize-lines: 4
+
+        def test_cross_yellow_parallel_red_timer_not_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    red_phase='parallel',
+                    current_parallel=RED,
+                    current_cross=YELLOW,
+                    timer_done=False,
+                ),
+                (RED, YELLOW)
+            )
+
+        def test_cross_yellow_parallel_red_timer_done(self):
+
+  green.
+
+* I add ``red_phase='parallel'`` to :ref:`test_cross_yellow_parallel_red_timer_done`
+
+  .. code-block:: python
+    :lineno-start: 109
+    :emphasize-lines: 4
+
+        def test_cross_yellow_parallel_red_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    red_phase='parallel',
+                    current_parallel=RED,
+                    current_cross=YELLOW,
+                    timer_done=True,
+                ),
+                (RED, RED)
+            )
+
+        def test_cross_red_parallel_red_timer_not_done(self):
+
+  still green.
+
+* I add it to :ref:`test_cross_red_parallel_red_timer_not_done`
+
+  .. code-block:: python
+    :lineno-start: 120
+    :emphasize-lines: 4
+
+        def test_cross_red_parallel_red_timer_not_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    red_phase='parallel',
+                    current_parallel=RED,
+                    current_cross=RED,
+                    timer_done=False,
+                ),
+                (RED, RED)
+            )
+
+        def test_cross_red_parallel_red_timer_done(self):
+
+  the test is still green.
+
+* I add it to :ref:`test_cross_red_parallel_red_timer_done`
+
+  .. code-block:: python
+    :lineno-start: 131
+    :emphasize-lines: 4
+
+        def test_cross_red_parallel_red_timer_done(self):
+            self.assertEqual(
+                src.traffic_light.control(
+                    red_phase='parallel',
+                    current_parallel=RED,
+                    current_cross=RED,
+                    timer_done=True,
+                ),
+                (GREEN, RED)
+            )
+
+
+    # Exceptions seen
+
+  still green.
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -3573,99 +3754,105 @@ When the ``control`` :ref:`function is called<how to call a function with input>
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='RED', current_cross='GREEN',
         timer_done=False, red_phase='parallel'
     ) -> 'RED', 'GREEN'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel='RED', current_cross='RED',
-            ):
-            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-            └── if not timer_done:
-                └── return current_parallel, current_cross
-                    return 'RED'          , 'GREEN'
-                if timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel='RED', current_cross='RED',
+                ):
+                ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+                └── if not timer_done:
+                    └── return current_parallel, current_cross
+                        return 'RED'          , 'GREEN'
+                    if timer_done:
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='RED', current_cross='YELLOW',
         timer_done=False, red_phase='parallel'
     ) -> 'RED', 'YELLOW'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel='RED', current_cross='RED',
-            ):
-            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-            └── if not timer_done:
-                └── return current_parallel, current_cross
-                    return 'RED'           , 'YELLOW'
-                if timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel='RED', current_cross='RED',
+                ):
+                ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+                └── if not timer_done:
+                    └── return current_parallel, current_cross
+                        return 'RED'           , 'YELLOW'
+                    if timer_done:
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='RED', current_cross='RED',
         timer_done=False, red_phase='parallel'
     ) -> 'RED', 'RED'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel='RED', current_cross='RED',
-            ):
-            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-            └── if not timer_done:
-                └── return current_parallel, current_cross
-                    return 'RED'           , 'RED'
-                if timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel='RED', current_cross='RED',
+                ):
+                ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+                └── if not timer_done:
+                    └── return current_parallel, current_cross
+                        return 'RED'           , 'RED'
+                    if timer_done:
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='GREEN', current_cross='RED',
         timer_done=False, red_phase='cross'
     ) -> 'GREEN', 'RED'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel='RED', current_cross='RED',
-            ):
-            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-            └── if not timer_done:
-                └── return current_parallel, current_cross
-                    return 'GREEN'         , 'RED'
-                if timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel='RED', current_cross='RED',
+                ):
+                ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+                └── if not timer_done:
+                    └── return current_parallel, current_cross
+                        return 'GREEN'         , 'RED'
+                    if timer_done:
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='YELLOW', current_cross='RED',
         timer_done=False, red_phase='cross'
     ) -> 'YELLOW', 'RED'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel='RED', current_cross='RED',
-            ):
-            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-            └── if not timer_done:
-                └── return current_parallel, current_cross
-                    return 'YELLOW'        , 'RED'
-                if timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel='RED', current_cross='RED',
+                ):
+                ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+                └── if not timer_done:
+                    └── return current_parallel, current_cross
+                        return 'YELLOW'        , 'RED'
+                    if timer_done:
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='RED', current_cross='RED',
         timer_done=False, red_phase='cross'
     ) -> 'RED', 'RED'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel='RED', current_cross='RED',
-            ):
-            ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-            └── if not timer_done:
-                └── return current_parallel, current_cross
-                    return 'RED'           , 'RED'
-                if timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel='RED', current_cross='RED',
+                ):
+                ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+                └── if not timer_done:
+                    └── return current_parallel, current_cross
+                        return 'RED'           , 'RED'
+                    if timer_done:
 
 * If the timer is :green:`done`, it checks if ``'cross'`` traffic is in the :red:`RED` phase
 
@@ -3675,164 +3862,171 @@ When the ``control`` :ref:`function is called<how to call a function with input>
 
       .. code-block:: shell
 
-        control(
+        src.traffic_light.control(
             current_parallel='GREEN', current_cross='RED',
             timer_done=True, red_phase='cross'
         ) -> 'YELLOW', 'RED'
-        └── def control(
-                    timer_done, red_phase='parallel',
-                    current_parallel='RED', current_cross='RED',
-                ):
-                ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-                ├── if not timer_done:
-                │       return current_parallel, current_cross
-                └── if timer_done:
-                    └── if red_phase == 'cross':
-                        └── if current_parallel == green:
-                            └── return yellow, red
-                            if current_parallel == yellow:
-                                return red, red
-                            if current_parallel == red:
-                                return red, green
-                        if red_phase == 'parallel':
+        └── src/traffic_light/__init__.py
+            └── def control(
+                        timer_done, red_phase='parallel',
+                        current_parallel='RED', current_cross='RED',
+                    ):
+                    ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+                    ├── if not timer_done:
+                    │       return current_parallel, current_cross
+                    └── if timer_done:
+                        └── if red_phase == 'cross':
+                            └── if current_parallel == green:
+                                └── return yellow, red
+                                if current_parallel == yellow:
+                                    return red, red
+                                if current_parallel == red:
+                                    return red, green
+                            if red_phase == 'parallel':
 
     * If the current parallel light is :yellow:`YELLOW`, it returns ``RED, RED``, which means there will be no traffic in the intersection, the parallel and cross lights will both be :red:`RED`
 
       .. code-block:: shell
 
-        control(
+        src.traffic_light.control(
             current_parallel='YELLOW', current_cross='RED',
             timer_done=True, red_phase='cross'
         ) -> 'RED', 'RED'
-        └── def control(
-                    timer_done, red_phase='parallel',
-                    current_parallel='RED', current_cross='RED',
-                ):
-                ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-                ├── if not timer_done:
-                │       return current_parallel, current_cross
-                └── if timer_done:
-                    └── if red_phase == 'cross':
-                        ├── if current_parallel == green:
-                        │       return yellow, red
-                        └── if current_parallel == yellow:
-                            └── return red, red
-                            if current_parallel == red:
-                                return red, green
-                        if red_phase == 'parallel':
+        └── src/traffic_light/__init__.py
+            └── def control(
+                        timer_done, red_phase='parallel',
+                        current_parallel='RED', current_cross='RED',
+                    ):
+                    ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+                    ├── if not timer_done:
+                    │       return current_parallel, current_cross
+                    └── if timer_done:
+                        └── if red_phase == 'cross':
+                            ├── if current_parallel == green:
+                            │       return yellow, red
+                            └── if current_parallel == yellow:
+                                └── return red, red
+                                if current_parallel == red:
+                                    return red, green
+                            if red_phase == 'parallel':
 
     * If the current parallel light is :red:`RED`, it returns ``RED, GREEN``, which means the parallel light will stay :red:`RED` since it is now in the :red:`RED` phase and the next cross light will be :green:`GREEN`
 
       .. code-block:: shell
 
-        control(
+        src.traffic_light.control(
             current_parallel='RED', current_cross='RED',
             timer_done=True, red_phase='cross'
         ) -> 'RED', 'GREEN'
-        └── def control(
-                    timer_done, red_phase='parallel',
-                    current_parallel='RED', current_cross='RED',
-                ):
-                ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-                ├── if not timer_done:
-                │       return current_parallel, current_cross
-                └── if timer_done:
-                    └── if red_phase == 'cross':
-                        ├── if current_parallel == green:
-                        │       return yellow, red
-                        ├── if current_parallel == yellow:
-                        │       return red, red
-                        └── if current_parallel == red:
-                            └── return red, green
-                        if red_phase == 'parallel':
+        └── src/traffic_light/__init__.py
+            └── def control(
+                        timer_done, red_phase='parallel',
+                        current_parallel='RED', current_cross='RED',
+                    ):
+                    ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+                    ├── if not timer_done:
+                    │       return current_parallel, current_cross
+                    └── if timer_done:
+                        └── if red_phase == 'cross':
+                            ├── if current_parallel == green:
+                            │       return yellow, red
+                            ├── if current_parallel == yellow:
+                            │       return red, red
+                            └── if current_parallel == red:
+                                └── return red, green
+                            if red_phase == 'parallel':
 
-    * If ``'cross'`` traffic is not in the :red:`RED` phase, it checks if ``parallel`` traffic is in the :red:`RED` phase
+    * If ``'cross'`` traffic is not in the :red:`RED` phase, it checks if ``'parallel'`` traffic is in the :red:`RED` phase
 
-  - If ``parallel`` traffic is in the :red:`RED` phase, it checks the value of ``current_cross``
+  - If ``'parallel'`` traffic is in the :red:`RED` phase, it checks the value of ``current_cross``
 
     * If the current cross light is :green:`GREEN`, it returns ``RED, YELLOW``, which means the parallel light will remain :red:`RED` because it is still in the :red:`RED` phase and the next cross light will be :yellow:`YELLOW`
 
       .. code-block:: shell
 
-        control(
+        src.traffic_light.control(
             current_parallel='RED', current_cross='GREEN',
             timer_done=True, red_phase='parallel'
         ) -> 'RED', 'YELLOW'
-        └── def control(
-                    timer_done, red_phase='parallel',
-                    current_parallel='RED', current_cross='RED',
-                ):
-                ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-                ├── if not timer_done:
-                │       return current_parallel, current_cross
-                └── if timer_done:
-                    ├── if red_phase == 'cross':
-                    │       ...
-                    └── if red_phase == 'parallel':
-                        └── if current_cross == green:
-                            └── return red, yellow
-                            if current_cross == yellow:
-                                return red, red
-                            if current_cross == red:
-                                return green, red
+        └── src/traffic_light/__init__.py
+            └── def control(
+                        timer_done, red_phase='parallel',
+                        current_parallel='RED', current_cross='RED',
+                    ):
+                    ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+                    ├── if not timer_done:
+                    │       return current_parallel, current_cross
+                    └── if timer_done:
+                        ├── if red_phase == 'cross':
+                        │       ...
+                        └── if red_phase == 'parallel':
+                            └── if current_cross == green:
+                                └── return red, yellow
+                                if current_cross == yellow:
+                                    return red, red
+                                if current_cross == red:
+                                    return green, red
 
 
     * If the current parallel light is :yellow:`YELLOW`, it returns ``RED, RED``, which means there will be no traffic in the intersection, the parallel and cross lights will both be :red:`RED`
 
       .. code-block:: shell
 
-        control(
+        src.traffic_light.control(
             current_parallel='RED', current_cross='YELLOW',
             timer_done=True, red_phase='parallel'
         ) -> 'RED', 'RED'
-        └── def control(
-                    timer_done, red_phase='parallel',
-                    current_parallel='RED', current_cross='RED',
-                ):
-                ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-                ├── if not timer_done:
-                │       return current_parallel, current_cross
-                └── if timer_done:
-                    ├── if red_phase == 'cross':
-                    │       ...
-                    └── if red_phase == 'parallel':
-                        ├── if current_cross == green:
-                        │       return red, yellow
-                        └── if current_cross == yellow:
-                            └── return red, red
-                            if current_cross == red:
-                                return green, red
+        └── src/traffic_light/__init__.py
+            └── def control(
+                        timer_done, red_phase='parallel',
+                        current_parallel='RED', current_cross='RED',
+                    ):
+                    ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+                    ├── if not timer_done:
+                    │       return current_parallel, current_cross
+                    └── if timer_done:
+                        ├── if red_phase == 'cross':
+                        │       ...
+                        └── if red_phase == 'parallel':
+                            ├── if current_cross == green:
+                            │       return red, yellow
+                            └── if current_cross == yellow:
+                                └── return red, red
+                                if current_cross == red:
+                                    return green, red
 
     * If the current cross light is :red:`RED`, it returns ``GREEN, RED``, which means the next parallel light will be :green:`GREEN` and the cross light will stay :red:`RED` since it is now in the :red:`RED` phase
 
       .. code-block:: shell
 
-        control(
+        src.traffic_light.control(
             current_parallel='RED', current_cross='RED',
             timer_done=True, red_phase='parallel'
         ) -> 'GREEN', 'RED'
-        └── def control(
-                    timer_done, red_phase='parallel',
-                    current_parallel='RED', current_cross='RED',
-                ):
-                ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-                ├── if not timer_done:
-                │       return current_parallel, current_cross
-                └── if timer_done:
-                    ├── if red_phase == 'cross':
-                    │       ...
-                    └── if red_phase == 'parallel':
-                        ├── if current_cross == green:
-                        │       return red, yellow
-                        ├── if current_cross == yellow:
-                        │       return red, red
-                        └── if current_cross == red:
-                            └── return green, red
+        └── src/traffic_light/__init__.py
+            └── def control(
+                        timer_done, red_phase='parallel',
+                        current_parallel='RED', current_cross='RED',
+                    ):
+                    ├── red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+                    ├── if not timer_done:
+                    │       return current_parallel, current_cross
+                    └── if timer_done:
+                        ├── if red_phase == 'cross':
+                        │       ...
+                        └── if red_phase == 'parallel':
+                            ├── if current_cross == green:
+                            │       return red, yellow
+                            ├── if current_cross == yellow:
+                            │       return red, red
+                            └── if current_cross == red:
+                                └── return green, red
 
 * If none of the above :ref:`conditions<if statements>` are met it returns :ref:`None<what is None?>`
 
   .. code-block:: shell
 
+    src/traffic_light/__init__.py
     └── def control(
                 timer_done, red_phase='parallel',
                 current_parallel='RED', current_cross='RED',
@@ -3852,7 +4046,7 @@ When the ``control`` :ref:`function is called<how to call a function with input>
 test_failsafe
 *********************************************************************************
 
-The **Traffic Light** has to make sure that there is never a case where cars move through the intersection at the same time to avoid accidents. The following cases must never happen
+The **Traffic Light** has to make sure that there is never a case where cars move through the intersection at the same time. The following cases must never happen
 
 ================  ================
 parallel          cross
@@ -3863,7 +4057,7 @@ parallel          cross
 :yellow:`YELLOW`  :green:`GREEN`
 ================  ================
 
-It should be :red:`RED` for both ``'cross'`` and ``parallel`` traffic for any of the above cases and for any cases that are outside the safe cases, for example a power failure.
+It should be :red:`RED` for both ``'cross'`` and ``'parallel'`` traffic for any of the above cases and for any cases that are outside the safe cases, for example a power failure.
 
 ----
 
@@ -3873,7 +4067,7 @@ It should be :red:`RED` for both ``'cross'`` and ``parallel`` traffic for any of
 
 ----
 
-* I add a test for the safety state in ``tests/test_traffic_light.py``
+* I add a test for the safety state with an :ref:`assertion<what is an assertion?>` for  if ``current_parallel`` is NOT :green:`GREEN` or :yellow:`YELLOW` or :red:`RED`, ``tests/test_traffic_light.py``
 
   .. code-block:: python
     :lineno-start: 131
@@ -3893,7 +4087,7 @@ It should be :red:`RED` for both ``'cross'`` and ``parallel`` traffic for any of
         def test_failsafe(self):
             self.assertEqual(
                 src.traffic_light.control(
-                    red_phase='BOOM',
+                    red_phase='cross',
                     current_parallel='BAP',
                     current_cross=RED,
                     timer_done=False,
@@ -3941,7 +4135,7 @@ the test passes.
 
   control(
       current_parallel='BAP', current_cross='RED',
-      timer_done=False, red_phase='BOOM'
+      timer_done=False, red_phase='cross'
   ) -> 'RED', 'RED'
 
 ----
@@ -3961,7 +4155,7 @@ the test passes.
         def test_failsafe(self):
             self.assertEqual(
                 src.traffic_light.control(
-                    red_phase='BOOM',
+                    red_phase='cross',
                     current_parallel='BAP',
                     current_cross=RED,
                     timer_done=False,
@@ -3970,8 +4164,8 @@ the test passes.
             )
             self.assertEqual(
                 src.traffic_light.control(
-                    red_phase='BOOM',
-                    current_parallel='BAP',
+                    red_phase='parallel',
+                    current_parallel=RED,
                     current_cross='POW',
                     timer_done=False,
                 ),
@@ -3985,7 +4179,7 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('RED', 'POW') != ('RED', 'RED')
+    AssertionError: Tuples differ: ('RED', 'RED') != ('RED', 'POW')
 
 * I add an :ref:`if statement<if statements>` for if ``current_cross`` is NOT :green:`GREEN` or :yellow:`YELLOW` or :red:`RED` to :ref:`test_failsafe` in ``src/traffic_light/__init__.py``
 
@@ -4014,12 +4208,12 @@ the test passes.
   .. code-block:: python
 
     control(
-        current_parallel='RED', current_cross='POW',
-        timer_done=False, red_phase='BOOM'
+        current_parallel=RED, current_cross='POW',
+        timer_done=False, red_phase='parallel'
     ) -> 'RED', 'RED'
     control(
         current_parallel='BAP', current_cross='RED',
-        timer_done=False, red_phase='BOOM'
+        timer_done=False, red_phase='cross'
     ) -> 'RED', 'RED'
 
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_failsafe` for if both lights are :green:`GREEN`, in ``tests/test_traffic_light.py``
@@ -4030,7 +4224,7 @@ the test passes.
 
             self.assertEqual(
                 src.traffic_light.control(
-                    red_phase='BOOM',
+                    red_phase='parallel',
                     current_parallel=RED,
                     current_cross='POW',
                     timer_done=False,
@@ -4079,17 +4273,18 @@ the test passes.
   .. code-block:: python
 
     control(
-        current_parallel='RED', current_cross='POW',
-        timer_done=False, red_phase='BOOM'
-    ) -> 'RED', 'RED'
-    control(
-        current_parallel='BAP', current_cross='RED',
-        timer_done=False, red_phase='BOOM'
-    ) -> 'RED', 'RED'
-    control(
         current_parallel='GREEN', current_cross='GREEN',
         timer_done=False, red_phase='BOOM'
     ) -> 'RED', 'RED'
+    control(
+        current_parallel=RED, current_cross='POW',
+        timer_done=False, red_phase='parallel'
+    ) -> 'RED', 'RED'
+    control(
+        current_parallel='BAP', current_cross='RED',
+        timer_done=False, red_phase='cross'
+    ) -> 'RED', 'RED'
+
 
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_failsafe` for if the parallel lights are :green:`GREEN` AND the cross lights are :yellow:`YELLOW`, in ``tests/test_traffic_light.py``
 
@@ -4143,11 +4338,7 @@ the test passes.
   .. code-block:: python
 
     control(
-        current_parallel='RED', current_cross='POW',
-        timer_done=False, red_phase='BOOM'
-    ) -> 'RED', 'RED'
-    control(
-        current_parallel='BAP', current_cross='RED',
+        current_parallel='GREEN', current_cross='YELLOW',
         timer_done=False, red_phase='BOOM'
     ) -> 'RED', 'RED'
     control(
@@ -4155,8 +4346,12 @@ the test passes.
         timer_done=False, red_phase='BOOM'
     ) -> 'RED', 'RED'
     control(
-        current_parallel='GREEN', current_cross='YELLOW',
-        timer_done=False, red_phase='BOOM'
+        current_parallel=RED, current_cross='POW',
+        timer_done=False, red_phase='parallel'
+    ) -> 'RED', 'RED'
+    control(
+        current_parallel='BAP', current_cross='RED',
+        timer_done=False, red_phase='cross'
     ) -> 'RED', 'RED'
 
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_failsafe` for if the parallel lights are :yellow:`YELLOW` AND the cross lights are :green:`GREEN`, in ``tests/test_traffic_light.py``
@@ -4213,15 +4408,7 @@ the test passes.
   .. code-block:: python
 
     control(
-        current_parallel='RED', current_cross='POW',
-        timer_done=False, red_phase='BOOM'
-    ) -> 'RED', 'RED'
-    control(
-        current_parallel='BAP', current_cross='RED',
-        timer_done=False, red_phase='BOOM'
-    ) -> 'RED', 'RED'
-    control(
-        current_parallel='GREEN', current_cross='GREEN',
+        current_parallel='YELLOW', current_cross='GREEN',
         timer_done=False, red_phase='BOOM'
     ) -> 'RED', 'RED'
     control(
@@ -4229,8 +4416,16 @@ the test passes.
         timer_done=False, red_phase='BOOM'
     ) -> 'RED', 'RED'
     control(
-        current_parallel='YELLOW', current_cross='GREEN',
+        current_parallel='GREEN', current_cross='GREEN',
         timer_done=False, red_phase='BOOM'
+    ) -> 'RED', 'RED'
+    control(
+        current_parallel=RED, current_cross='POW',
+        timer_done=False, red_phase='parallel'
+    ) -> 'RED', 'RED'
+    control(
+        current_parallel='BAP', current_cross='RED',
+        timer_done=False, red_phase='cross'
     ) -> 'RED', 'RED'
 
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_failsafe` for if both lights are :yellow:`YELLOW`, in ``tests/test_traffic_light.py``
@@ -4289,19 +4484,7 @@ the test passes.
   .. code-block:: python
 
     control(
-        current_parallel='RED', current_cross='POW',
-        timer_done=False, red_phase='BOOM'
-    ) -> 'RED', 'RED'
-    control(
-        current_parallel='BAP', current_cross='RED',
-        timer_done=False, red_phase='BOOM'
-    ) -> 'RED', 'RED'
-    control(
-        current_parallel='GREEN', current_cross='GREEN',
-        timer_done=False, red_phase='BOOM'
-    ) -> 'RED', 'RED'
-    control(
-        current_parallel='GREEN', current_cross='YELLOW',
+        current_parallel='YELLOW', current_cross='YELLOW',
         timer_done=False, red_phase='BOOM'
     ) -> 'RED', 'RED'
     control(
@@ -4309,8 +4492,20 @@ the test passes.
         timer_done=False, red_phase='BOOM'
     ) -> 'RED', 'RED'
     control(
-        current_parallel='YELLOW', current_cross='YELLOW',
+        current_parallel='GREEN', current_cross='YELLOW',
         timer_done=False, red_phase='BOOM'
+    ) -> 'RED', 'RED'
+    control(
+        current_parallel='GREEN', current_cross='GREEN',
+        timer_done=False, red_phase='BOOM'
+    ) -> 'RED', 'RED'
+    control(
+        current_parallel=RED, current_cross='POW',
+        timer_done=False, red_phase='parallel'
+    ) -> 'RED', 'RED'
+    control(
+        current_parallel='BAP', current_cross='RED',
+        timer_done=False, red_phase='cross'
     ) -> 'RED', 'RED'
 
 ----
@@ -4356,7 +4551,7 @@ the test passes.
 
         if not timer_done:
 
-* I add a :ref:`return statement<the return statement>` with the safety state as what the ``control`` :ref:`function<what is a function?>` returns by default
+* I add a :ref:`return statement<the return statement>` with the safety state as what the ``control`` :ref:`function<what is a function?>` returns by default. This way if none of its :ref:`conditions<if statements>` are met, it puts the lights in the safety state
 
   .. code-block:: python
     :lineno-start: 39
@@ -4444,7 +4639,7 @@ extract is_not_safe function
 
   .. code-block:: python
     :lineno-start: 15
-    :emphasize-lines: 17-25
+    :emphasize-lines: 17-24
 
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
 
@@ -4464,7 +4659,6 @@ extract is_not_safe function
 
         if is_not_safe(current_parallel, current_cross):
             return red, red
-        if current_parallel == current_cross != red:
         # if current_parallel == current_cross != red:
         #     return red, red
         # if current_parallel == green and current_cross == yellow:
@@ -4476,7 +4670,7 @@ extract is_not_safe function
 
   the tests are still green.
 
-* I remove the other :ref:`if statements` for the :ref:`if statements` that check if the lights allow traffic both ways, because they are no longer needed.
+* I remove the other :ref:`if statements` that check if the lights allow traffic both ways, because they are no longer needed
 
   .. code-block:: python
     :lineno-start: 31
@@ -4516,7 +4710,7 @@ extract is_not_safe function
 
   still green.
 
-* I remove the other :ref:`if statements` because they are no longer used
+* I remove the other :ref:`if statements` from the :ref:`is_not_safe function<extract is_not_safe function>` because they are no longer used
 
   .. code-block:: python
     :linenos:
@@ -4707,7 +4901,7 @@ extract is_not_light function
 extract triggers_failsafe function
 *********************************************************************************
 
-* I add a :ref:`function<what is a function?>` for the three :ref:`functions` which trigger the fail safe
+* I add a :ref:`function<what is a function?>` for the three :ref:`functions<what is a function?>` which trigger the fail safe
 
   .. code-block:: python
     :lineno-start: 10
@@ -5049,159 +5243,165 @@ When the ``control`` :ref:`function is called<how to call a function with input>
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='RED', current_cross='POW',
         timer_done=False, red_phase='BOOM'
     ) -> 'RED', 'RED'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel=RED, current_cross=RED,
-            ):
-            └── if triggers_failsafe(current_parallel, current_cross):
-                ├── def triggers_failsafe(parallel, cross):
-                │   └── return (
-                │       │   is_not_light(parallel)
-                │       └── or is_not_light(cross)
-                │           or is_not_safe(parallel, cross)
-                │       )
-                │       └── def is_not_light(light):
-                │           └── return not (
-                │                   light == GREEN or light == YELLOW
-                │                   or light == RED
-                │               )
-                │               return True
-                └── return RED, RED
-                if not timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel=RED, current_cross=RED,
+                ):
+                └── if triggers_failsafe(current_parallel, current_cross):
+                    ├── def triggers_failsafe(parallel, cross):
+                    │   └── return (
+                    │       │   is_not_light(parallel)
+                    │       └── or is_not_light(cross)
+                    │           or is_not_safe(parallel, cross)
+                    │       )
+                    │       └── def is_not_light(light):
+                    │           └── return not (
+                    │                   light == GREEN or light == YELLOW
+                    │                   or light == RED
+                    │               )
+                    │               return True
+                    └── return RED, RED
+                    if not timer_done:
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='BAP', current_cross='RED',
         timer_done=False, red_phase='BOOM'
     ) -> 'RED', 'RED'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel=RED, current_cross=RED,
-            ):
-            └── if triggers_failsafe(current_parallel, current_cross):
-                ├── def triggers_failsafe(parallel, cross):
-                │   └── return (
-                │       └── is_not_light(parallel)
-                │           or is_not_light(cross)
-                │           or is_not_safe(parallel, cross)
-                │       )
-                │       └── def is_not_light(light):
-                │           └── return not (
-                │                   light == GREEN or light == YELLOW
-                │                   or light == RED
-                │               )
-                │               return True
-                └── return RED, RED
-                if not timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel=RED, current_cross=RED,
+                ):
+                └── if triggers_failsafe(current_parallel, current_cross):
+                    ├── def triggers_failsafe(parallel, cross):
+                    │   └── return (
+                    │       └── is_not_light(parallel)
+                    │           or is_not_light(cross)
+                    │           or is_not_safe(parallel, cross)
+                    │       )
+                    │       └── def is_not_light(light):
+                    │           └── return not (
+                    │                   light == GREEN or light == YELLOW
+                    │                   or light == RED
+                    │               )
+                    │               return True
+                    └── return RED, RED
+                    if not timer_done:
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='GREEN', current_cross='GREEN',
         timer_done=False, red_phase='BOOM'
     ) -> 'RED', 'RED'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel=RED, current_cross=RED,
-            ):
-            └── if triggers_failsafe(current_parallel, current_cross):
-                ├── def triggers_failsafe(parallel, cross):
-                │   └── return (
-                │       │   is_not_light(parallel) or is_not_light(cross)
-                │       └── or is_not_safe(parallel, cross)
-                │       )
-                │       └── def is_not_safe(parallel, cross):
-                │           └── return (
-                │               └── (parallel == cross != RED)
-                │                   or (parallel == GREEN and cross == YELLOW)
-                │                   or (parallel == YELLOW and cross == GREEN)
-                │               )
-                │               return True
-                └── return RED, RED
-                if not timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel=RED, current_cross=RED,
+                ):
+                └── if triggers_failsafe(current_parallel, current_cross):
+                    ├── def triggers_failsafe(parallel, cross):
+                    │   └── return (
+                    │       │   is_not_light(parallel) or is_not_light(cross)
+                    │       └── or is_not_safe(parallel, cross)
+                    │       )
+                    │       └── def is_not_safe(parallel, cross):
+                    │           └── return (
+                    │               └── (parallel == cross != RED)
+                    │                   or (parallel == GREEN and cross == YELLOW)
+                    │                   or (parallel == YELLOW and cross == GREEN)
+                    │               )
+                    │               return True
+                    └── return RED, RED
+                    if not timer_done:
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='GREEN', current_cross='YELLOW',
         timer_done=False, red_phase='BOOM'
     ) -> 'RED', 'RED'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel=RED, current_cross=RED,
-            ):
-            └── if triggers_failsafe(current_parallel, current_cross):
-                ├── def triggers_failsafe(parallel, cross):
-                │   └── return (
-                │       │   is_not_light(parallel) or is_not_light(cross)
-                │       └── or is_not_safe(parallel, cross)
-                │       )
-                │       └── def is_not_safe(parallel, cross):
-                │           └── return (
-                │               │   (parallel == cross != RED)
-                │               └── or (parallel == GREEN and cross == YELLOW)
-                │                   or (parallel == YELLOW and cross == GREEN)
-                │               )
-                │               return True
-                └── return RED, RED
-                if not timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel=RED, current_cross=RED,
+                ):
+                └── if triggers_failsafe(current_parallel, current_cross):
+                    ├── def triggers_failsafe(parallel, cross):
+                    │   └── return (
+                    │       │   is_not_light(parallel) or is_not_light(cross)
+                    │       └── or is_not_safe(parallel, cross)
+                    │       )
+                    │       └── def is_not_safe(parallel, cross):
+                    │           └── return (
+                    │               │   (parallel == cross != RED)
+                    │               └── or (parallel == GREEN and cross == YELLOW)
+                    │                   or (parallel == YELLOW and cross == GREEN)
+                    │               )
+                    │               return True
+                    └── return RED, RED
+                    if not timer_done:
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='YELLOW', current_cross='GREEN',
         timer_done=False, red_phase='BOOM'
     ) -> 'RED', 'RED'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel=RED, current_cross=RED,
-            ):
-            └── if triggers_failsafe(current_parallel, current_cross):
-                ├── def triggers_failsafe(parallel, cross):
-                │   └── return (
-                │       │   is_not_light(parallel) or is_not_light(cross)
-                │       └── or is_not_safe(parallel, cross)
-                │       )
-                │       └── def is_not_safe(parallel, cross):
-                │           └── return (
-                │               │   (parallel == cross != RED)
-                │               │   or (parallel == GREEN and cross == YELLOW)
-                │               └── or (parallel == YELLOW and cross == GREEN)
-                │               )
-                │               return True
-                └── return RED, RED
-                if not timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel=RED, current_cross=RED,
+                ):
+                └── if triggers_failsafe(current_parallel, current_cross):
+                    ├── def triggers_failsafe(parallel, cross):
+                    │   └── return (
+                    │       │   is_not_light(parallel) or is_not_light(cross)
+                    │       └── or is_not_safe(parallel, cross)
+                    │       )
+                    │       └── def is_not_safe(parallel, cross):
+                    │           └── return (
+                    │               │   (parallel == cross != RED)
+                    │               │   or (parallel == GREEN and cross == YELLOW)
+                    │               └── or (parallel == YELLOW and cross == GREEN)
+                    │               )
+                    │               return True
+                    └── return RED, RED
+                    if not timer_done:
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='YELLOW', current_cross='YELLOW',
         timer_done=False, red_phase='BOOM'
     ) -> 'RED', 'RED'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel=RED, current_cross=RED,
-            ):
-            └── if triggers_failsafe(current_parallel, current_cross):
-                ├── def triggers_failsafe(parallel, cross):
-                │   └── return (
-                │       │   is_not_light(parallel) or is_not_light(cross)
-                │       └── or is_not_safe(parallel, cross)
-                │       )
-                │       └── def is_not_safe(parallel, cross):
-                │           └── return (
-                │               └── (parallel == cross != RED)
-                │                   or (parallel == GREEN and cross == YELLOW)
-                │                   or (parallel == YELLOW and cross == GREEN)
-                │               )
-                │               return True
-                └── return RED, RED
-                if not timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel=RED, current_cross=RED,
+                ):
+                └── if triggers_failsafe(current_parallel, current_cross):
+                    ├── def triggers_failsafe(parallel, cross):
+                    │   └── return (
+                    │       │   is_not_light(parallel) or is_not_light(cross)
+                    │       └── or is_not_safe(parallel, cross)
+                    │       )
+                    │       └── def is_not_safe(parallel, cross):
+                    │           └── return (
+                    │               └── (parallel == cross != RED)
+                    │                   or (parallel == GREEN and cross == YELLOW)
+                    │                   or (parallel == YELLOW and cross == GREEN)
+                    │               )
+                    │               return True
+                    └── return RED, RED
+                    if not timer_done:
 
   If the failsafe is :red:`NOT triggered`, it checks if the timer is :red:`NOT done`
 
@@ -5209,105 +5409,111 @@ When the ``control`` :ref:`function is called<how to call a function with input>
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='RED', current_cross='GREEN',
         timer_done=False, red_phase='parallel'
     ) -> 'RED', 'GREEN'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel=RED, current_cross=RED,
-            ):
-            ├── if triggers_failsafe(current_parallel, current_cross):
-            │       return RED, RED
-            └── if not timer_done:
-                └── return current_parallel, current_cross
-                    return 'RED'           , 'GREEN'
-                if timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel=RED, current_cross=RED,
+                ):
+                ├── if triggers_failsafe(current_parallel, current_cross):
+                │       return RED, RED
+                └── if not timer_done:
+                    └── return current_parallel, current_cross
+                        return 'RED'           , 'GREEN'
+                    if timer_done:
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='RED', current_cross='YELLOW',
         timer_done=False, red_phase='parallel'
     ) -> 'RED', 'YELLOW'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel='RED', current_cross='RED',
-            ):
-            ├── if triggers_failsafe(current_parallel, current_cross):
-            │       return RED, RED
-            └── if not timer_done:
-                └── return current_parallel, current_cross
-                    return 'RED'           , 'YELLOW'
-                if timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel='RED', current_cross='RED',
+                ):
+                ├── if triggers_failsafe(current_parallel, current_cross):
+                │       return RED, RED
+                └── if not timer_done:
+                    └── return current_parallel, current_cross
+                        return 'RED'           , 'YELLOW'
+                    if timer_done:
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='RED', current_cross='RED',
         timer_done=False, red_phase='parallel'
     ) -> 'RED', 'RED'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel='RED', current_cross='RED',
-            ):
-            ├── if triggers_failsafe(current_parallel, current_cross):
-            │       return RED, RED
-            └── if not timer_done:
-                └── return current_parallel, current_cross
-                    return 'RED'           , 'RED'
-                if timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel='RED', current_cross='RED',
+                ):
+                ├── if triggers_failsafe(current_parallel, current_cross):
+                │       return RED, RED
+                └── if not timer_done:
+                    └── return current_parallel, current_cross
+                        return 'RED'           , 'RED'
+                    if timer_done:
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='GREEN', current_cross='RED',
         timer_done=False, red_phase='cross'
     ) -> 'GREEN', 'RED'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel='RED', current_cross='RED',
-            ):
-            ├── if triggers_failsafe(current_parallel, current_cross):
-            │       return RED, RED
-            └── if not timer_done:
-                └── return current_parallel, current_cross
-                    return 'GREEN'         , 'RED'
-                if timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel='RED', current_cross='RED',
+                ):
+                ├── if triggers_failsafe(current_parallel, current_cross):
+                │       return RED, RED
+                └── if not timer_done:
+                    └── return current_parallel, current_cross
+                        return 'GREEN'         , 'RED'
+                    if timer_done:
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='YELLOW', current_cross='RED',
         timer_done=False, red_phase='cross'
     ) -> 'YELLOW', 'RED'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel='RED', current_cross='RED',
-            ):
-            ├── if triggers_failsafe(current_parallel, current_cross):
-            │       return RED, RED
-            └── if not timer_done:
-                └── return current_parallel, current_cross
-                    return 'YELLOW'        , 'RED'
-                if timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel='RED', current_cross='RED',
+                ):
+                ├── if triggers_failsafe(current_parallel, current_cross):
+                │       return RED, RED
+                └── if not timer_done:
+                    └── return current_parallel, current_cross
+                        return 'YELLOW'        , 'RED'
+                    if timer_done:
 
   .. code-block:: shell
 
-    control(
+    src.traffic_light.control(
         current_parallel='RED', current_cross='RED',
         timer_done=False, red_phase='cross'
     ) -> 'RED', 'RED'
-    └── def control(
-                timer_done, red_phase='parallel',
-                current_parallel='RED', current_cross='RED',
-            ):
-            ├── if triggers_failsafe(current_parallel, current_cross):
-            │       return RED, RED
-            └── if not timer_done:
-                └── return current_parallel, current_cross
-                    return 'RED'           , 'RED'
-                if timer_done:
+    └── src/traffic_light/__init__.py
+        └── def control(
+                    timer_done, red_phase='parallel',
+                    current_parallel='RED', current_cross='RED',
+                ):
+                ├── if triggers_failsafe(current_parallel, current_cross):
+                │       return RED, RED
+                └── if not timer_done:
+                    └── return current_parallel, current_cross
+                        return 'RED'           , 'RED'
+                    if timer_done:
 
 * If the timer is :green:`done`, it :ref:`calls<how to call a function with input>` the :ref:`next_light function<extract next_light function>` which checks if ``'cross'`` traffic is in the :red:`RED` phase
 
@@ -5317,186 +5523,187 @@ When the ``control`` :ref:`function is called<how to call a function with input>
 
       .. code-block:: shell
 
-        control(
+        src.traffic_light.control(
             current_parallel='GREEN', current_cross='RED',
             timer_done=True, red_phase='cross'
         ) -> 'YELLOW', 'RED'
-        └── def control(
-                    timer_done, red_phase='parallel',
-                    current_parallel='RED', current_cross='RED',
-                ):
-                ├── if triggers_failsafe(current_parallel, current_cross):
-                │       return RED, RED
-                ├── if not timer_done:
-                │       return current_parallel, current_cross
-                └── if timer_done:
-                    └── return next_light(
-                            red_phase, current_parallel, current_cross
-                        )
-                        └── def next_light(red_phase, parallel, cross):
-                            └── if red_phase == 'cross':
-                                └── if parallel == GREEN:
-                                    └── return YELLOW, RED
-                                    if parallel == RED:
+        └── src/traffic_light/__init__.py
+            └── def control(
+                        timer_done, red_phase='parallel',
+                        current_parallel='RED', current_cross='RED',
+                    ):
+                    ├── if triggers_failsafe(current_parallel, current_cross):
+                    │       return RED, RED
+                    ├── if not timer_done:
+                    │       return current_parallel, current_cross
+                    └── if timer_done:
+                        └── return next_light(
+                                red_phase, current_parallel, current_cross
+                            )
+                            └── def next_light(red_phase, parallel, cross):
+                                └── if red_phase == 'cross':
+                                    └── if parallel == GREEN:
+                                        └── return YELLOW, RED
+                                        if parallel == RED:
 
     * If the current parallel light is :red:`RED`, it returns ``RED, GREEN``, which means the parallel light will stay :red:`RED` since it is now in the :red:`RED` phase and the next cross light will be :green:`GREEN`
 
       .. code-block:: shell
 
-        control(
+        src.traffic_light.control(
             current_parallel='RED', current_cross='RED',
             timer_done=True, red_phase='cross'
         ) -> 'RED', 'GREEN'
-        └── def control(
-                    timer_done, red_phase='parallel',
-                    current_parallel='RED', current_cross='RED',
-                ):
-                ├── if triggers_failsafe(current_parallel, current_cross):
-                │       return RED, RED
-                ├── if not timer_done:
-                │       return current_parallel, current_cross
-                └── if timer_done:
-                    └── return next_light(
-                            red_phase, current_parallel, current_cross
-                        )
-                        └── def next_light(red_phase, parallel, cross):
-                            └── if red_phase == 'cross':
-                                ├── if parallel == GREEN:
-                                │       return YELLOW, RED
-                                └── if parallel == RED:
-                                    └── return RED, GREEN
-                                if red_phase == 'parallel':
+        └── src/traffic_light/__init__.py
+            └── def control(
+                        timer_done, red_phase='parallel',
+                        current_parallel='RED', current_cross='RED',
+                    ):
+                    ├── if triggers_failsafe(current_parallel, current_cross):
+                    │       return RED, RED
+                    ├── if not timer_done:
+                    │       return current_parallel, current_cross
+                    └── if timer_done:
+                        └── return next_light(
+                                red_phase, current_parallel, current_cross
+                            )
+                            └── def next_light(red_phase, parallel, cross):
+                                └── if red_phase == 'cross':
+                                    ├── if parallel == GREEN:
+                                    │       return YELLOW, RED
+                                    └── if parallel == RED:
+                                        └── return RED, GREEN
+                                    if red_phase == 'parallel':
 
-    * If ``'cross'`` traffic is not in the :red:`RED` phase, it checks if ``parallel`` traffic is in the :red:`RED` phase
+    * If ``'cross'`` traffic is not in the :red:`RED` phase, it checks if ``'parallel'`` traffic is in the :red:`RED` phase
 
-  - If ``parallel`` traffic is in the :red:`RED` phase, it checks the value of ``current_cross``
+  - If ``'parallel'`` traffic is in the :red:`RED` phase, it checks the value of ``current_cross``
 
     * If the current cross light is :green:`GREEN`, it returns ``RED, YELLOW``, which means the parallel light will remain :red:`RED` because it is still in the :red:`RED` phase and the next cross light will be :yellow:`YELLOW`
 
       .. code-block:: shell
 
-        control(
+        src.traffic_light.control(
             current_parallel='RED', current_cross='GREEN',
             timer_done=True, red_phase='parallel'
         ) -> 'RED', 'YELLOW'
-        └── def control(
-                    timer_done, red_phase='parallel',
-                    current_parallel='RED', current_cross='RED',
-                ):
-                ├── if triggers_failsafe(current_parallel, current_cross):
-                │       return RED, RED
-                ├── if not timer_done:
-                │       return current_parallel, current_cross
-                └── if timer_done:
-                    └── return next_light(
-                            red_phase, current_parallel, current_cross
-                        )
-                        └── def next_light(red_phase, parallel, cross):
-                            ├── if red_phase == 'cross':
-                            │       ...
-                            └── if red_phase == 'parallel':
-                                └── if cross == GREEN:
-                                    └── return RED, YELLOW
-                                    if cross == RED:
+        └── src/traffic_light/__init__.py
+            └── def control(
+                        timer_done, red_phase='parallel',
+                        current_parallel='RED', current_cross='RED',
+                    ):
+                    ├── if triggers_failsafe(current_parallel, current_cross):
+                    │       return RED, RED
+                    ├── if not timer_done:
+                    │       return current_parallel, current_cross
+                    └── if timer_done:
+                        └── return next_light(
+                                red_phase, current_parallel, current_cross
+                            )
+                            └── def next_light(red_phase, parallel, cross):
+                                ├── if red_phase == 'cross':
+                                │       ...
+                                └── if red_phase == 'parallel':
+                                    └── if cross == GREEN:
+                                        └── return RED, YELLOW
+                                        if cross == RED:
 
     * If the current cross light is :red:`RED`, it returns ``GREEN, RED``, which means the next parallel light will be :green:`GREEN` and the cross light will stay :red:`RED` since it is now in the :red:`RED` phase
 
       .. code-block:: shell
 
-        control(
+        src.traffic_light.control(
             current_parallel='RED', current_cross='RED',
             timer_done=True, red_phase='parallel'
         ) -> 'GREEN', 'RED'
-        └── def control(
-                    timer_done, red_phase='parallel',
-                    current_parallel='RED', current_cross='RED',
-                ):
-                ├── if triggers_failsafe(current_parallel, current_cross):
-                │       return RED, RED
-                ├── if not timer_done:
-                │       return current_parallel, current_cross
-                └── if timer_done:
-                    └── return next_light(
-                            red_phase, current_parallel, current_cross
-                        )
-                        └── def next_light(red_phase, parallel, cross):
-                            ├── if red_phase == 'cross':
-                            │       ...
-                            └── if red_phase == 'parallel':
-                                ├── if cross == GREEN:
-                                │       return RED, YELLOW
-                                └── if cross == RED:
-                                    └── return GREEN, RED
-                                return RED, RED
+        └── src/traffic_light/__init__.py
+            └── def control(
+                        timer_done, red_phase='parallel',
+                        current_parallel='RED', current_cross='RED',
+                    ):
+                    ├── if triggers_failsafe(current_parallel, current_cross):
+                    │       return RED, RED
+                    ├── if not timer_done:
+                    │       return current_parallel, current_cross
+                    └── if timer_done:
+                        └── return next_light(
+                                red_phase, current_parallel, current_cross
+                            )
+                            └── def next_light(red_phase, parallel, cross):
+                                ├── if red_phase == 'cross':
+                                │       ...
+                                └── if red_phase == 'parallel':
+                                    ├── if cross == GREEN:
+                                    │       return RED, YELLOW
+                                    └── if cross == RED:
+                                        └── return GREEN, RED
+                                    return RED, RED
 
     * If none of the above :ref:`conditions<if statements>` are met, it returns ``RED, RED``, which means there will be no traffic in the intersection, the parallel and cross lights will both be :red:`RED`
 
       .. code-block:: shell
 
-        control(
+        src.traffic_light.control(
             current_parallel='YELLOW', current_cross='RED',
             timer_done=True, red_phase='cross'
         ) -> 'RED', 'RED'
-        └── def control(
-                    timer_done, red_phase='parallel',
-                    current_parallel='RED', current_cross='RED',
-                ):
-                ├── if triggers_failsafe(current_parallel, current_cross):
-                │       return RED, RED
-                ├── if not timer_done:
-                │       return current_parallel, current_cross
-                └── if timer_done:
-                    └── return next_light(
-                            red_phase, current_parallel, current_cross
-                        )
-                        └── def next_light(red_phase, parallel, cross):
-                            └── if red_phase == 'cross':
-                                ├── if parallel == GREEN:
-                                │       return YELLOW, RED
-                            ┌───┴── if parallel == RED:
-                            │           return RED, GREEN
-                            │   if red_phase == 'parallel':
-                            │       if cross == GREEN:
-                            │           return RED, YELLOW
-                            │       if cross == RED:
-                            │           return GREEN, RED
-                            └── return RED, RED
+        └── src/traffic_light/__init__.py
+            └── def control(
+                        timer_done, red_phase='parallel',
+                        current_parallel='RED', current_cross='RED',
+                    ):
+                    ├── if triggers_failsafe(current_parallel, current_cross):
+                    │       return RED, RED
+                    ├── if not timer_done:
+                    │       return current_parallel, current_cross
+                    └── if timer_done:
+                        └── return next_light(
+                                red_phase, current_parallel, current_cross
+                            )
+                            └── def next_light(red_phase, parallel, cross):
+                                └── if red_phase == 'cross':
+                                    ├── if parallel == GREEN:
+                                    │       return YELLOW, RED
+                                ┌───┴── if parallel == RED:
+                                │           return RED, GREEN
+                                │   if red_phase == 'parallel':
+                                │       ...
+                                └── return RED, RED
 
       .. code-block:: shell
 
-        control(
+        src.traffic_light.control(
             current_parallel='RED', current_cross='YELLOW',
             timer_done=True, red_phase='parallel'
         ) -> 'RED', 'RED'
-        └── def control(
-                    timer_done, red_phase='parallel',
-                    current_parallel='RED', current_cross='RED',
-                ):
-                ├── if triggers_failsafe(current_parallel, current_cross):
-                │       return RED, RED
-                ├── if not timer_done:
-                │       return current_parallel, current_cross
-                └── if timer_done:
-                    └── return next_light(
-                            red_phase, current_parallel, current_cross
-                        )
-                        └── def next_light(red_phase, parallel, cross):
-                            ├── if red_phase == 'cross':
-                            │       if parallel == GREEN:
-                            │           return YELLOW, RED
-                            │       if parallel == RED:
-                            │           return RED, GREEN
-                            └── if red_phase == 'parallel':
-                                ├── if cross == GREEN:
-                                │       return RED, YELLOW
-                            ┌───┴── if cross == RED:
-                            │           return GREEN, RED
-                            └── return RED, RED
+        └── src/traffic_light/__init__.py
+            └── def control(
+                        timer_done, red_phase='parallel',
+                        current_parallel='RED', current_cross='RED',
+                    ):
+                    ├── if triggers_failsafe(current_parallel, current_cross):
+                    │       return RED, RED
+                    ├── if not timer_done:
+                    │       return current_parallel, current_cross
+                    └── if timer_done:
+                        └── return next_light(
+                                red_phase, current_parallel, current_cross
+                            )
+                            └── def next_light(red_phase, parallel, cross):
+                                ├── if red_phase == 'cross':
+                                │       ...
+                                └── if red_phase == 'parallel':
+                                    ├── if cross == GREEN:
+                                    │       return RED, YELLOW
+                                ┌───┴── if cross == RED:
+                                │           return GREEN, RED
+                                └── return RED, RED
 
 * If none of the above :ref:`conditions<if statements>` are met, it returns ``RED, RED``, which means there will be no traffic in the intersection, the parallel and cross lights will both be :red:`RED`
 
   .. code-block:: shell
 
+    src/traffic_light/__init__.py
     └── def control(
                 timer_done, red_phase='parallel',
                 current_parallel='RED', current_cross='RED',
@@ -5560,7 +5767,7 @@ phase       parallel          cross             timer           parallel        
 'parallel'  :red:`RED`        :red:`RED`        :green:`done`   :green:`GREEN`      :red:`RED`
 ==========  ================  ================  =============== =================== =================
 
-It also makes sure that there is never a case where cars move through the intersection at the same time to avoid accidents.
+It also makes sure that there is never a case where the lights allow cars to move through the intersection at the same time (to try to avoid accidents).
 
 What if the **Traffic Light** has a walk button and I push it?
 What if the **Traffic Light** changes based on if there is an emergency vehicle?

@@ -142,7 +142,7 @@ class TestTrafficLight(unittest.TestCase):
     def test_failsafe(self):
         self.assertEqual(
             src.traffic_light.control(
-                red_phase='BOOM',
+                red_phase='cross',
                 current_parallel='BAP',
                 current_cross=RED,
                 timer_done=False,
@@ -151,7 +151,7 @@ class TestTrafficLight(unittest.TestCase):
         )
         self.assertEqual(
             src.traffic_light.control(
-                red_phase='BOOM',
+                red_phase='parallel',
                 current_parallel=RED,
                 current_cross='POW',
                 timer_done=False,

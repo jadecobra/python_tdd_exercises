@@ -1,4 +1,4 @@
-RED, YELLOW, GREEN = 'RED', 'YELLOW', 'GREEN'
+GREEN, YELLOW, RED = 'GREEN', 'YELLOW', 'RED'
 
 
 def is_not_safe(parallel, cross):
