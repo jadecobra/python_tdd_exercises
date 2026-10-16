@@ -1155,7 +1155,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         def test_jane(self):
 
-* I remove the test for the :ref:`say_hello function<test say_hello function>` from :ref:`test_jane` since it is now a repetition, and move ``my_expectation`` below ``reality`` in the test for the :ref:`say_hello method<add say_hello method>`
+* I remove the test for the :ref:`say_hello function<test say_hello function>` from :ref:`test_jane` since it is now a repetition, I move ``my_expectation`` below ``reality`` in the test for the :ref:`say_hello method<add say_hello method>`
 
   .. code-block:: python
     :lineno-start: 97
@@ -1188,7 +1188,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         def test_john(self):
 
-* I remove the test for the :ref:`say_hello function<test say_hello function>` from :ref:`test_john` since it is now a repetition, and move ``my_expectation`` below ``reality`` in the test for the :ref:`say_hello method<add say_hello method>`
+* I move ``my_expectation`` below ``reality`` in the test for the :ref:`say_hello method<add say_hello method>` then remove the test for the :ref:`say_hello function<test say_hello function>` from :ref:`test_john` since it is now a repetition
 
   .. code-block:: python
     :lineno-start: 122
