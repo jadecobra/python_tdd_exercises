@@ -227,7 +227,7 @@ class TestPerson(unittest.TestCase):
                 sex='M',
                 year_of_birth=self.this_year-121
             )
-        except:
+        except ValueError:
             pass
 
     def test_when_year_of_birth_is_the_future(self):
