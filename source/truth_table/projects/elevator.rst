@@ -2060,7 +2060,7 @@ floor button       doors            weight limit   emergency button   output
 
     def controller(
             number_pushed, doors_closed=False,
-            above_weight=False, elevator,
+            above_weight=False, emergency,
         ):
 
   the terminal_ is my friend, and shows SyntaxError_
@@ -2080,7 +2080,7 @@ floor button       doors            weight limit   emergency button   output
 
     def controller(
             number_pushed, doors_closed=False,
-            above_weight=False, elevator=False,
+            above_weight=False, emergency=False,
         ):
 
   the test passes.

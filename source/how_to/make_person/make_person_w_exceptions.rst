@@ -12,10 +12,7 @@ how to make a person with Exceptions
 
 ----
 
-I had a problem when I :ref:`made a person with conditions<how to make a person with conditions>`
-
-* I skipped :ref:`test_when_year_of_birth_is_not_an_integer` because it is always in a :red:`RED` state since it causes an :ref:`Exception<how to test that an Exception is raised>`.
-* I commented out the bad ``year_of_birth`` values in :ref:`test_john` for when a person is older than ``120`` because it causes an :ref:`Exception<how to test that an Exception is raised>`.
+I had a problem when I :ref:`made a person with conditions<how to make a person with conditions>`, I :ref:`skipped<how to skip a test` :ref:`test_when_person_is_older_than_120`, :ref:`test_when_year_of_birth_is_the_future` and :ref:`test_when_year_of_birth_is_not_an_integer` because they are always in a :red:`RED` state since they cause :ref:`Exceptions<how to test that an Exception is raised>`.
 
 Python_ has a way that allows programs to make a choice when they encounter an :ref:`Exception<how to test that an Exception is raised>` and continue running without stopping. It is the :ref:`try statement<how to handle Exceptions>`.
 
@@ -87,14 +84,14 @@ open the project
 
   .. code-block:: python
 
-    tests/test_person.py .......                    [100%]
+    tests/test_person.py .......sss                 [100%]
 
-    ============ 7 passed, 1 skipped in T.UVs ============
+    ============ 7 passed, 3 skipped in T.UVs ============
 
 ----
 
 *********************************************************************************
-test_when_person_is_too_old_to_be_alive
+add exception handler to test_when_person_is_older_than_120
 *********************************************************************************
 
 =================================================================================
@@ -104,44 +101,181 @@ test_when_person_is_too_old_to_be_alive
 ----
 
 * I open ``test_person.py`` from the ``tests`` folder_
-* I add :ref:`test_when_person_is_too_old_to_be_alive` for if the age of the person is greater than ``120``, in ``tests/test_person.py``
+
+* I comment out the :ref:`unittest.skip decorator<how to skip a test>` from :ref:`test_when_person_is_older_than_120` in ``tests/test_person.py``
 
   .. code-block:: python
-    :lineno-start: 202
-    :emphasize-lines: 15-21
+    :lineno-start: 222
+    :emphasize-lines: 1
 
-        def test_underage_citizen(self):
-            person = src.person.Person(
+        # @unittest.skip('fails because age > 120')
+        def test_when_person_is_older_than_120(self):
+            src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                year_of_birth=datetime.date.today().year-17,
-                is_citizen=True,
-                passed_test=True,
-            )
-            self.assertEqual(person.can_vote(), False)
-            self.assertEqual(
-                person.can_get_license(), False
+                year_of_birth=self.this_year-121
             )
 
-        def test_when_person_is_too_old_to_be_alive(self):
+        @unittest.skip('fails because age < 0')
+        def test_when_year_of_birth_is_the_future(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       AssertionError
+
+* I open ``__init__.py`` from the ``person`` folder_ in the ``src`` folder_
+* I change ``assert age <= 120`` to an :ref:`if statement<if statements>` that :ref:`raises an Exception<how to raise an Exception>` if the age is greater than ``120`` in ``src/person/__init__.py``
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 8-10
+
+    def calculate_age(year_of_birth):
+        assert isinstance(year_of_birth, int)
+        age = (
+            datetime.date.today().year
+          - year_of_birth
+        )
+        assert age >= 0
+        # assert age <= 120
+        if age > 120:
+            raise Exception
+        return age
+
+  the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
+
+  .. code-block:: shell
+
+    E           Exception
+
+* I put the failing statement in an :ref:`if statement<if statements>` in :ref:`test_when_person_is_older_than_120` in ``tests/test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 222
+    :emphasize-lines: 3-11
+
+        # @unittest.skip('fails because age > 120')
+        def test_when_person_is_older_than_120(self):
+            if(
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth=self.this_year-121
+                )
+            ) == Exception:
+                pass
+
+        @unittest.skip('fails because age < 0')
+        def test_when_year_of_birth_is_the_future(self):
+
+  the terminal_ still shows :ref:`Exception<how to test that an Exception is raised>`, because an :ref:`Exception<how to test that an Exception is raised>` breaks execution of a program_, nothing past the line that caused it will run. In this case, the :ref:`Exception<how to test that an Exception is raised>` happens when the :ref:`instance of the Person class<add Person class>` is made so the :ref:`condition<if statements>` never gets checked.
+
+* I change the :ref:`if statement<if statements>` to a :ref:`try statement<how to handle Exceptions>`
+
+  .. code-block:: python
+    :lineno-start: 222
+    :emphasize-lines: 3, 10
+
+        # @unittest.skip('fails because age > 120')
+        def test_when_person_is_older_than_120(self):
+            try:
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth=self.this_year-121
+                )
+            except:
+                pass
+
+  the test passes because the :ref:`try statement<how to handle Exceptions>` is like an :ref:`if statement<if statements>` for :ref:`Exceptions<how to test that an Exception is raised>`.
+
+  It tells the program_ what to do if an :ref:`Exception<how to test that an Exception is raised>` is  is :ref:`raised<how to raise an Exception>`. A simple way to think of it is
+
+    - ``try`` **something**
+    - ``except`` - if **something** raises an :ref:`Exception<how to test that an Exception is raised>` do something else
+
+  pass_ is a special keyword that allows the :ref:`try statement<how to handle Exceptions>` to follow Python_ language rules (the :ref:`except block<how to handle Exceptions>` must have a body), it does not do anything.
+
+* I remove the commented line from :ref:`test_when_person_is_older_than_120`
+
+  .. code-block:: python
+    :lineno-start: 219
+
+            self.assertEqual(underage.can_vote(), False)
+            self.assertEqual(underage.can_get_license(), False)
+
+        def test_when_person_is_older_than_120(self):
+            try:
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth=self.this_year-121
+                )
+            except:
+                pass
+
+        @unittest.skip('fails because age < 0')
+        def test_when_year_of_birth_is_the_future(self):
+
+* I open another terminal_ and `change directories`_ to ``person``
+
+  .. code-block:: python
+    :emphasize-lines:
+
+    cd person
+
+* add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add exception handler to test_when_person_is_older_than_120'
+
+----
+
+*********************************************************************************
+add exception handler to test_when_year_of_birth_is_the_future
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+* I comment out the :ref:`unittest.skip decorator<how to skip a test>` from :ref:`test_when_year_of_birth_is_the_future` in ``tests/test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 233
+    :emphasize-lines: 5, 9, 11-13
+
+        # @unittest.skip('fails because age < 0')
+        def test_when_year_of_birth_is_the_future(self):
             src.person.Person(
                 first_name='first_name',
                 last_name='last_name',
                 sex='F',
-                year_of_birth=datetime.date.today().year-121,
+                year_of_birth=self.this_year+1,
             )
 
-        @unittest.skip('will always fail')
+        @unittest.skip(
+            'fails because year_of_birth is not an integer'
+        )
         def test_when_year_of_birth_is_not_an_integer(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     E       AssertionError
-
-  I use a calculation (``datetime.date.today().year-121``) as the year of birth so that it will always be ``121`` years ago.
 
 ----
 
@@ -151,12 +285,10 @@ test_when_person_is_too_old_to_be_alive
 
 ----
 
-* I open ``src/person/__init__.py``
-
-* I change the :ref:`assert statement<what is an assertion?>` in the :ref:`calculate_age function<extract calculate_age function>` for if the age is less than or equal to ``120`` to :ref:`raise an Exception<how to raise an Exception>` if the age is greater than ``120``
+* I change ``assert age >= 0`` to an :ref:`if statement<if statements>` that :ref:`raises an Exception<how to raise an Exception>` when ``year_of_birth`` is in the future, in the :ref:`calculate_age function<extract calculate_age function>` in ``src/person/__init__.py``
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 37
     :emphasize-lines: 7-9
 
     def calculate_age(year_of_birth):
@@ -165,7 +297,140 @@ test_when_person_is_too_old_to_be_alive
             datetime.date.today().year
           - year_of_birth
         )
+        # assert age >= 0
+        if age < 0:
+            raise Exception
         # assert age <= 120
+        if age > 120:
+            raise Exception
+        return age
+
+  the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
+
+  .. code-block:: python
+
+    E           Exception
+
+* I put the failing statement in an :ref:`if statement<if statements>` in :ref:`test_when_year_of_birth_is_the_future` in ``tests/test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 233
+    :emphasize-lines: 3-11
+
+        # @unittest.skip('fails because age < 0')
+        def test_when_year_of_birth_is_the_future(self):
+            if (
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='F',
+                    year_of_birth=self.this_year+1,
+                )
+            ) == Exception:
+                pass
+
+        @unittest.skip(
+            'fails because year_of_birth is not an integer'
+        )
+        def test_when_year_of_birth_is_not_an_integer(self):
+
+  the terminal_ still shows :ref:`Exception<how to test that an Exception is raised>`, because an :ref:`Exception<how to test that an Exception is raised>` breaks execution of a program_, nothing past the line that caused it will run.
+
+* I change the :ref:`if statement<if statements>` to a :ref:`try statement<how to handle Exceptions>`
+
+  .. code-block:: python
+    :lineno-start: 233
+    :emphasize-lines: 3, 10
+
+        # @unittest.skip('fails because age < 0')
+        def test_when_year_of_birth_is_the_future(self):
+            try:
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='F',
+                    year_of_birth=self.this_year+1,
+                )
+            except:
+                pass
+
+  the test passes because :ref:`try statement<how to handle Exceptions>` is like an :ref:`if statement<if statements>` for :ref:`Exceptions<how to test that an Exception is raised>`. It tells the program_ what to do if an :ref:`Exception<how to test that an Exception is raised>` is  is :ref:`raised<how to raise an Exception>`
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented line from :ref:`test_when_year_of_birth_is_the_future`
+
+  .. code-block:: python
+    :lineno-start: 222
+
+        def test_when_person_is_older_than_120(self):
+            try:
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth=self.this_year-121
+                )
+            except:
+                pass
+
+        def test_when_year_of_birth_is_the_future(self):
+            try:
+                src.person.Person(
+                    first_name='first_name',
+                    last_name='last_name',
+                    sex='F',
+                    year_of_birth=self.this_year+1,
+                )
+            except:
+                pass
+
+        @unittest.skip(
+            'fails because year_of_birth is not an integer'
+        )
+        def test_when_year_of_birth_is_not_an_integer(self):
+
+* I put the two new :ref:`if statements` in the :ref:`calculate_age function<extract calculate_age function>` together as one because they return the same thing, in ``src/person/__init__.py``
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 8-9
+
+    def calculate_age(year_of_birth):
+        assert isinstance(year_of_birth, int)
+        age = (
+            datetime.date.today().year
+          - year_of_birth
+        )
+        # assert age >= 0
+        # if age < 0:
+            # raise Exception
+        # assert age <= 120
+        # if age > 120:
+        if 0 > age > 120:
+            raise Exception
+        return age
+
+* I remove the commented lines from the :ref:`calculate_age function<extract calculate_age function>`  in ``src/person/__init__.py``
+
+  .. code-block:: python
+    :lineno-start: 44
+
+    def calculate_age(year_of_birth):
+        if not isinstance(year_of_birth, int):
+            raise Exception
+
+        age = (
+            datetime.date.today().year
+          - year_of_birth
+        )
+
         if age > 120:
             raise Exception
         return age
@@ -175,47 +440,13 @@ test_when_person_is_too_old_to_be_alive
         first_name, last_name, year_of_birth,
     ):
 
-  the terminal_ is my friend, and shows :ref:`Exception<how to test that an Exception is raised>`
-
-  .. code-block:: shell
-
-    E           Exception
-
-* I add a :ref:`try statement<how to handle Exceptions>` to :ref:`test_when_person_is_too_old_to_be_alive` in ``tests/test_person.py``
-
-  .. code-block:: python
-    :lineno-start: 216
-    :emphasize-lines: 2-10
-
-        def test_when_person_is_too_old_to_be_alive(self):
-            try:
-                src.person.Person(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='F',
-                    year_of_birth=datetime.date.today().year-121,
-                )
-            except:
-                pass
-
-        @unittest.skip('will always fail')
-        def test_when_year_of_birth_is_not_an_integer(self):
-
-  the test passes, confirming that when the value for ``year_of_birth`` makes the person older than ``120`` an :ref:`Exception<how to test that an Exception is raised>` is  is :ref:`raised<how to raise an Exception>`.
-
-  - The :ref:`try statement<how to handle Exceptions>` is like an :ref:`if statement<if statements>` for :ref:`Exceptions<how to test that an Exception is raised>`. It tells the program_ what to do if an :ref:`Exception<how to test that an Exception is raised>` is  is :ref:`raised<how to raise an Exception>`. A simple way to think of it is
-
-    - ``try`` **something**
-    - ``except`` - if **something** raises an :ref:`Exception<how to test that an Exception is raised>` do something else
-
-  - pass_ is a special keyword that allows the :ref:`try statement<how to handle Exceptions>` to follow Python_ language rules (the :ref:`except block<how to handle Exceptions>` must have a body).
-
 * I add a git_ commit message
 
   .. code-block:: python
+    :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_when_person_is_too_old_to_be_alive'
+    'add exception handler to test_when_year_of_birth_is_the_future'
 
 ----
 
@@ -858,7 +1089,7 @@ because :ref:`Exception<how to test that an Exception is raised>` is not ValueEr
 close the project
 *********************************************************************************
 
-* I close ``test_person.py`` and ``src/person/__init__.py``
+* I close ``tests/test_person.py`` and ``src/person/__init__.py``
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 * I `change directory`_ to the parent of ``person``
 

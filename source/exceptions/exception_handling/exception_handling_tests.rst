@@ -240,7 +240,7 @@ test_catching_module_not_found_error
     # AssertionError
     # ModuleNotFoundError
 
-I can make a file_ named ``does_not_exist.py`` to solve the problem. What I want to do is :ref:`catch/handle the Exception<how to use try...except...else>` in the test to show that ``import does_not_exist`` raises :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` when the file_ does NOT exist and the test can continue running after confirming the :ref:`Exception<how to test that an Exception is raised>`.
+I can make a file_ named ``does_not_exist.py`` to solve the problem. What I want to do is :ref:`catch/handle the Exception<how to use try...except...else>` in the test to show that ``import does_not_exist`` raises :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` when the file_ does NOT exist and the test can continue running after showing the :ref:`Exception<how to test that an Exception is raised>`.
 
 ----
 

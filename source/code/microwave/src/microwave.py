@@ -1,5 +1,5 @@
 def microwave(
-        closed_door=False, pressed_start=False,
+        closed_door=True, pressed_start=False,
         timer_set=False, too_hot=False,
     ):
     return (

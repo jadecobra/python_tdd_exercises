@@ -1,3 +1,6 @@
+.. REDO::
+
+
 .. meta::
   :description: Build a microwave heater with Python TDD (Red-Green-Refactor): translate a four-input truth table (closed door, set timer, pressed start, too hot failsafe) into ``src.microwave.microwave`` that returns True only when every condition is met. Beginners use uv, unittest, and pytest-watcher; hit NameError, AttributeError, TypeError (unexpected keywords), SyntaxError (parameter without a default; invalid syntax while factoring not/and/or), and AssertionError; learn default parameters, keyword calls, nested if / Logical Negation (NOT) / Logical Disjunction (OR) / Logical Conjunction (AND), and assertTrue/assertFalse until only closed AND set AND NOT too hot AND pressed heats food.
   :keywords: Jacob Itegboje, Python microwave project, TDD Red Green Refactor, truth table to code, unittest assertTrue assertFalse, uv package manager, pytest-watcher, closed door, set timer, pressed start, too hot failsafe, default parameters, keyword arguments, SyntaxError parameter without a default, SyntaxError invalid syntax, TypeError unexpected keyword argument, NameError src not defined, AttributeError, Logical Negation NOT, Logical Disjunction OR, Logical Conjunction AND, if statements, De Morgan factoring, pumping python
@@ -932,7 +935,7 @@ I add ``timer_set`` to the :ref:`function signature<how to make a function that 
   :emphasize-lines: 1-4
 
   def microwave(
-          closed_door=False, pressed_start=False,
+          closed_door=True, pressed_start=False,
           timer_set=False,
       ):
       if not closed_door:
@@ -1122,7 +1125,7 @@ test_not_timer_set_closed_door_pressed_start
     :emphasize-lines: 7-8
 
       def microwave(
-              closed_door=False, pressed_start=False,
+              closed_door=True, pressed_start=False,
               timer_set=False,
           ):
           if not closed_door:
@@ -1640,7 +1643,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
     ) -> False
     └── src/microwave/__init__.py
         └── def microwave(
-                    closed_door=False, pressed_start=False,
+                    closed_door=True, pressed_start=False,
                     timer_set=False,
                 ):
                 └── if not closed_door:
@@ -1657,7 +1660,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
     ) -> False
     └── src/microwave/__init__.py
         └── def microwave(
-                    closed_door=False, pressed_start=False,
+                    closed_door=True, pressed_start=False,
                     timer_set=False,
                 ):
                 └── if not closed_door:
@@ -1674,7 +1677,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
     ) -> False
     └── src/microwave/__init__.py
         └── def microwave(
-                    closed_door=False, pressed_start=False,
+                    closed_door=True, pressed_start=False,
                     timer_set=False,
                 ):
                 └── if not closed_door:
@@ -1691,7 +1694,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
     ) -> False
     └── src/microwave/__init__.py
         └── def microwave(
-                    closed_door=False, pressed_start=False,
+                    closed_door=True, pressed_start=False,
                     timer_set=False,
                 ):
                 └── if not closed_door:
@@ -1712,7 +1715,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
       ) -> False
       └── src/microwave/__init__.py
           └── def microwave(
-                      closed_door=False, pressed_start=False,
+                      closed_door=True, pressed_start=False,
                       timer_set=False,
                   ):
                   ├── if not closed_door:
@@ -1729,7 +1732,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
       ) -> False
       └── src/microwave/__init__.py
           └── def microwave(
-                      closed_door=False, pressed_start=False,
+                      closed_door=True, pressed_start=False,
                       timer_set=False,
                   ):
                   ├── if not closed_door:
@@ -1750,7 +1753,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
         ) -> False
         └── src/microwave/__init__.py
             └── def microwave(
-                        closed_door=False, pressed_start=False,
+                        closed_door=True, pressed_start=False,
                         timer_set=False,
                     ):
                     ├── if not closed_door:
@@ -1770,7 +1773,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
         ) -> True
         └── src/microwave/__init__.py
             └── def microwave(
-                        closed_door=False, pressed_start=False,
+                        closed_door=True, pressed_start=False,
                         timer_set=False,
                     ):
                     ├── if not closed_door:
@@ -1880,7 +1883,7 @@ door            timer           start button        too hot             output
     :emphasize-lines: 3
 
     def microwave(
-            closed_door=False, pressed_start=False,
+            closed_door=True, pressed_start=False,
             timer_set=False, too_hot=False,
         ):
 
@@ -3211,7 +3214,7 @@ door            timer           start button        too hot             output
     :emphasize-lines: 9-10
 
     def microwave(
-            closed_door=False, pressed_start=False,
+            closed_door=True, pressed_start=False,
             timer_set=False, too_hot=False,
         ):
         if not closed_door:
@@ -3291,7 +3294,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
     ) -> False
     └── src/microwave/__init__.py
         └── def microwave(
-                    closed_door=False, pressed_start=False,
+                    closed_door=True, pressed_start=False,
                     timer_set=False, too_hot=False,
                 ):
                 └── if not closed_door:
@@ -3310,7 +3313,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
     ) -> False
     └── src/microwave/__init__.py
         └── def microwave(
-                    closed_door=False, pressed_start=False,
+                    closed_door=True, pressed_start=False,
                     timer_set=False, too_hot=False,
                 ):
                 └── if not closed_door:
@@ -3329,7 +3332,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
     ) -> False
     └── src/microwave/__init__.py
         └── def microwave(
-                    closed_door=False, pressed_start=False,
+                    closed_door=True, pressed_start=False,
                     timer_set=False, too_hot=False,
                 ):
                 └── if not closed_door:
@@ -3348,7 +3351,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
     ) -> False
     └── src/microwave/__init__.py
         └── def microwave(
-                    closed_door=False, pressed_start=False,
+                    closed_door=True, pressed_start=False,
                     timer_set=False, too_hot=False,
                 ):
                 └── if not closed_door:
@@ -3367,7 +3370,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
     ) -> False
     └── src/microwave/__init__.py
         └── def microwave(
-                    closed_door=False, pressed_start=False,
+                    closed_door=True, pressed_start=False,
                     timer_set=False, too_hot=False,
                 ):
                 └── if not closed_door:
@@ -3386,7 +3389,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
     ) -> False
     └── src/microwave/__init__.py
         └── def microwave(
-                    closed_door=False, pressed_start=False,
+                    closed_door=True, pressed_start=False,
                     timer_set=False, too_hot=False,
                 ):
                 └── if not closed_door:
@@ -3405,7 +3408,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
     ) -> False
     └── src/microwave/__init__.py
         └── def microwave(
-                    closed_door=False, pressed_start=False,
+                    closed_door=True, pressed_start=False,
                     timer_set=False, too_hot=False,
                 ):
                 └── if not closed_door:
@@ -3424,7 +3427,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
     ) -> False
     └── src/microwave/__init__.py
         └── def microwave(
-                    closed_door=False, pressed_start=False,
+                    closed_door=True, pressed_start=False,
                     timer_set=False, too_hot=False,
                 ):
                 └── if not closed_door:
@@ -3447,7 +3450,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
       ) -> False
       └── src/microwave/__init__.py
           └── def microwave(
-                      closed_door=False, pressed_start=False,
+                      closed_door=True, pressed_start=False,
                       timer_set=False, too_hot=False,
                   ):
                   ├── if not closed_door:
@@ -3466,7 +3469,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
       ) -> False
       └── src/microwave/__init__.py
           └── def microwave(
-                      closed_door=False, pressed_start=False,
+                      closed_door=True, pressed_start=False,
                       timer_set=False, too_hot=False,
                   ):
                   ├── if not closed_door:
@@ -3485,7 +3488,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
       ) -> False
       └── src/microwave/__init__.py
           └── def microwave(
-                      closed_door=False, pressed_start=False,
+                      closed_door=True, pressed_start=False,
                       timer_set=False, too_hot=False,
                   ):
                   ├── if not closed_door:
@@ -3504,7 +3507,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
       ) -> False
       └── src/microwave/__init__.py
           └── def microwave(
-                      closed_door=False, pressed_start=False,
+                      closed_door=True, pressed_start=False,
                       timer_set=False, too_hot=False,
                   ):
                   ├── if not closed_door:
@@ -3527,7 +3530,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
         ) -> False
         └── src/microwave/__init__.py
             └── def microwave(
-                        closed_door=False, pressed_start=False,
+                        closed_door=True, pressed_start=False,
                         timer_set=False, too_hot=False,
                     ):
                     ├── if not closed_door:
@@ -3546,7 +3549,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
         ) -> False
         └── src/microwave/__init__.py
             └── def microwave(
-                        closed_door=False, pressed_start=False,
+                        closed_door=True, pressed_start=False,
                         timer_set=False, too_hot=False,
                     ):
                     ├── if not closed_door:
@@ -3569,7 +3572,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
           ) -> False
           └── src/microwave/__init__.py
               └── def microwave(
-                          closed_door=False, pressed_start=False,
+                          closed_door=True, pressed_start=False,
                           timer_set=False, too_hot=False,
                       ):
                       ├── if not closed_door:
@@ -3591,7 +3594,7 @@ When the ``microwave`` :ref:`function is called<how to call a function with inpu
           ) -> True
           └── src/microwave/__init__.py
               └── def microwave(
-                          closed_door=False, pressed_start=False,
+                          closed_door=True, pressed_start=False,
                           timer_set=False, too_hot=False,
                       ):
                       ├── if not closed_door:
@@ -3617,7 +3620,7 @@ refactor microwave function
     :emphasize-lines: 11-13
 
     def microwave(
-            closed_door=False, pressed_start=False,
+            closed_door=True, pressed_start=False,
             timer_set=False, too_hot=False,
         ):
         if not closed_door:
@@ -3767,7 +3770,7 @@ refactor microwave function
     :emphasize-lines: 5-10
 
     def microwave(
-            closed_door=False, pressed_start=False,
+            closed_door=True, pressed_start=False,
             timer_set=False, too_hot=False,
         ):
         return (
@@ -3786,7 +3789,7 @@ refactor microwave function
     :linenos:
 
     def microwave(
-            closed_door=False, pressed_start=False,
+            closed_door=True, pressed_start=False,
             timer_set=False, too_hot=False,
         ):
         return (
