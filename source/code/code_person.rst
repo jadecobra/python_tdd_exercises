@@ -315,7 +315,7 @@ test person with datetime: solutions
 
 ----
 
-The code in ``person/src/person.py`` from :ref:`test person with datetime`
+The code in ``person/src/person/__init__.py`` from :ref:`test person with datetime`
 
 .. literalinclude:: person/src/person_w_datetime.py
   :caption: ``src/person/__init__.py``
@@ -429,7 +429,7 @@ how to make a person with conditions: solutions
 
 ----
 
-The code in ``person/src/person.py`` after :ref:`how to make a person with conditions`
+The code in ``person/src/person/__init__.py`` after :ref:`how to make a person with conditions`
 
 .. literalinclude:: person/src/person_w_conditions.py
   :caption: person/src/person/__init__.py
@@ -479,11 +479,43 @@ how to make a person with Exceptions: tests
 
 ----
 
-The code in ``person/tests/test_person.py`` from :ref:`how to make a person with Exceptions`
+The tests I changed in ``person/tests/test_person.py`` after :ref:`how to make a person with Exceptions`
 
 .. literalinclude:: person/tests/test_person_w_exceptions.py
   :language: python
-  :linenos:
+  :lineno-start: 222
+  :caption: person/tests/test_person.py
+  :lines: 222-231
+
+.. literalinclude:: person/tests/test_person_w_exceptions.py
+  :language: python
+  :lineno-start: 233
+  :caption: person/tests/test_person.py
+  :lines: 233-242
+
+.. literalinclude:: person/tests/test_person_w_exceptions.py
+  :language: python
+  :lineno-start: 244
+  :caption: person/tests/test_person.py
+  :lines: 244-253
+
+.. literalinclude:: person/tests/test_person_w_exceptions.py
+  :language: python
+  :lineno-start: 255
+  :caption: person/tests/test_person.py
+  :lines: 255-263
+
+.. literalinclude:: person/tests/test_person_w_exceptions.py
+  :language: python
+  :lineno-start: 265
+  :caption: person/tests/test_person.py
+  :lines: 265-273
+
+.. literalinclude:: person/tests/test_person_w_exceptions.py
+  :language: python
+  :lineno-start: 275
+  :caption: person/tests/test_person.py
+  :lines: 275-283
 
 ----
 
@@ -493,8 +525,40 @@ how to make a person with Exceptions: solutions
 
 ----
 
-The code in ``person/src/person.py`` from :ref:`how to make a person with Exceptions`
+The code in ``person/src/person/__init__.py`` after :ref:`how to make a person with Exceptions`
 
 .. literalinclude:: person/src/person_w_exceptions.py
+  :caption: person/src/person/__init__.py
   :language: python
   :linenos:
+  :lines: 1-17
+
+.. literalinclude:: person/src/person_w_exceptions.py
+  :caption: person/src/person/__init__.py
+  :language: python
+  :lineno-start: 19
+  :lines: 19-25
+
+.. literalinclude:: person/src/person_w_exceptions.py
+  :caption: person/src/person/__init__.py
+  :language: python
+  :lineno-start: 27
+  :lines: 27-34
+
+.. literalinclude:: person/src/person_w_exceptions.py
+  :caption: person/src/person/__init__.py
+  :language: python
+  :lineno-start: 37
+  :lines: 37-48
+
+.. literalinclude:: person/src/person_w_exceptions.py
+  :caption: person/src/person/__init__.py
+  :language: python
+  :lineno-start: 51
+  :lines: 51-58
+
+.. literalinclude:: person/src/person_w_exceptions.py
+  :caption: person/src/person/__init__.py
+  :language: python
+  :lineno-start: 61
+  :lines: 61-

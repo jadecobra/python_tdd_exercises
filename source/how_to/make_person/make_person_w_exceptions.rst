@@ -31,33 +31,39 @@ I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/person/tests/test_person_w_exceptions.py
   :language: python
-  :lineno-start: 216
+  :lineno-start: 222
   :caption: person/tests/test_person.py
-  :lines: 216-225
+  :lines: 222-231
 
 .. literalinclude:: ../../code/person/tests/test_person_w_exceptions.py
   :language: python
-  :lineno-start: 227
+  :lineno-start: 233
   :caption: person/tests/test_person.py
-  :lines: 227-236
+  :lines: 233-242
 
 .. literalinclude:: ../../code/person/tests/test_person_w_exceptions.py
   :language: python
-  :lineno-start: 238
+  :lineno-start: 244
   :caption: person/tests/test_person.py
-  :lines: 238-246
+  :lines: 244-253
 
 .. literalinclude:: ../../code/person/tests/test_person_w_exceptions.py
   :language: python
-  :lineno-start: 248
+  :lineno-start: 255
   :caption: person/tests/test_person.py
-  :lines: 248-256
+  :lines: 255-263
 
 .. literalinclude:: ../../code/person/tests/test_person_w_exceptions.py
   :language: python
-  :lineno-start: 258
+  :lineno-start: 265
   :caption: person/tests/test_person.py
-  :lines: 258-268
+  :lines: 265-273
+
+.. literalinclude:: ../../code/person/tests/test_person_w_exceptions.py
+  :language: python
+  :lineno-start: 275
+  :caption: person/tests/test_person.py
+  :lines: 275-283
 
 -----
 
