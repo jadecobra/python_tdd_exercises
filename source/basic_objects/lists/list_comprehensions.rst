@@ -483,7 +483,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
     AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-* I change the :ref:`return statement<the return statement>` to match
+* I change :ref:`the return statement` to match
 
   .. code-block:: python
     :linenos:

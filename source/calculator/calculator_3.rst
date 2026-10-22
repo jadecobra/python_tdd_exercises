@@ -201,7 +201,7 @@ There is a problem, the test uses random numbers, which means at some point ``ra
 
   the test passes.
 
-* I remove the :ref:`return statement<the return statement>` from ``a_random_number`` to go back to testing with a range of random numbers
+* I remove :ref:`the return statement` from ``a_random_number`` to go back to testing with a range of random numbers
 
   .. code-block:: python
     :linenos:

@@ -163,7 +163,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   the :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
-* I change :ref:`None<what is None?>` in the :ref:`return statement<the return statement>` to give the test what it wants
+* I change :ref:`None<what is None?>` in :ref:`the return statement` to give the test what it wants
 
   .. code-block:: python
     :linenos:
@@ -183,7 +183,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   the :ref:`assertion<what is an assertion?>` expects :red:`False` and the :ref:`function<what is a function?>` returns :green:`True`.
 
-* I change the :ref:`return statement<the return statement>`
+* I change :ref:`the return statement`
 
   .. code-block:: python
     :linenos:
@@ -202,7 +202,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     AssertionError: False is not true
 
-* I change the :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects, remember :ref:`the identity_function?<test_identity_function>`
+* I change :ref:`the return statement` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects, remember :ref:`the identity_function?<test_identity_function>`
 
   .. code-block:: python
     :linenos:
@@ -229,7 +229,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     * :green:`True` when the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` (which is grouped as :red:`False`).
     * the :ref:`opposite<test_logical_negation>` of the input.
 
-* I use :ref:`not<test_logical_negation>` in the :ref:`return statement<the return statement>`
+* I use :ref:`not<test_logical_negation>` in :ref:`the return statement`
 
   .. code-block:: python
     :linenos:
@@ -305,7 +305,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   the :ref:`assertion<what is an assertion?>` expects :red:`False` and the :ref:`function<what is a function?>` returns :green:`True`.
 
-* I change the :ref:`return statement<the return statement>`
+* I change :ref:`the return statement`
 
   .. code-block:: python
     :lineno-start: 11
@@ -329,7 +329,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   - :red:`False` when the :ref:`function<what is a function?>` returns :green:`True`.
   - :green:`True` when the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` (which is grouped as :red:`False`).
 
-* I change the :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
+* I change :ref:`the return statement` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :lineno-start: 11
@@ -367,7 +367,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     AssertionError: None is not true
 
-* I change the :ref:`return statement<the return statement>` for :ref:`logical_true<test_logical_true>` to give the test what it wants
+* I change :ref:`the return statement` for :ref:`logical_true<test_logical_true>` to give the test what it wants
 
   .. code-block:: python
     :lineno-start: 19
@@ -439,7 +439,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     AssertionError: None is not true
 
-* I change :ref:`None<what is None?>` to :ref:`True<test_what_is_true>` in the :ref:`return statement<the return statement>`
+* I change :ref:`None<what is None?>` to :ref:`True<test_what_is_true>` in :ref:`the return statement`
 
   .. code-block:: python
     :lineno-start: 28
@@ -492,7 +492,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     AssertionError: None is not true
 
-* I change the :ref:`return statement<the return statement>` to give the test what it wants
+* I change :ref:`the return statement` to give the test what it wants
 
   .. code-block:: python
     :lineno-start: 34
@@ -511,7 +511,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   the :ref:`assertion<what is an assertion?>` expects :red:`False` and the :ref:`function<what is a function?>` returns :green:`True`.
 
-* I change the :ref:`return statement<the return statement>`
+* I change :ref:`the return statement`
 
   .. code-block:: python
     :lineno-start: 34
@@ -535,7 +535,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   - :red:`False` when the :ref:`function<what is a function?>` returns :green:`True`.
   - :green:`True` when the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` (which is grouped as :red:`False`).
 
-* I change the :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
+* I change :ref:`the return statement` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :lineno-start: 34
@@ -556,7 +556,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   ``second`` is :red:`False` and is equal to the expectation of the :ref:`assertion<what is an assertion?>`.
 
-* I remove ``first`` from the :ref:`return statement<the return statement>`  since ``second`` is :ref:`False<test_what_is_false>`
+* I remove ``first`` from :ref:`the return statement`  since ``second`` is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 34
@@ -614,7 +614,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     AssertionError: None is not true
 
-* I change the :ref:`return statement<the return statement>` to give the test what it wants
+* I change :ref:`the return statement` to give the test what it wants
 
   .. code-block:: python
     :lineno-start: 43
@@ -633,7 +633,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   the :ref:`assertion<what is an assertion?>` expects :red:`False` and the :ref:`function<what is a function?>` returns :green:`True`.
 
-* I change the :ref:`return statement<the return statement>`
+* I change :ref:`the return statement`
 
   .. code-block:: python
     :lineno-start: 43
@@ -657,7 +657,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
   - :red:`False` when the :ref:`function<what is a function?>` returns :green:`True`.
   - :green:`True` when the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` (which is grouped as :red:`False`).
 
-* I change the :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
+* I change :ref:`the return statement` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :lineno-start: 43
@@ -678,7 +678,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   ``first`` is :red:`False` and is equal to the expectation of the :ref:`assertion<what is an assertion?>`.
 
-* I remove ``second`` from the :ref:`return statement<the return statement>` since ``first`` is :ref:`False<test_what_is_false>`
+* I remove ``second`` from :ref:`the return statement` since ``first`` is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -2478,7 +2478,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   the test is still green.
 
-* I break up the :ref:`return statement<the return statement>` to make it simpler
+* I break up :ref:`the return statement` to make it simpler
 
   .. code-block:: python
     :lineno-start: 71
@@ -2580,7 +2580,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   the test is still green.
 
-* I make the :ref:`return statement<the return statement>` simpler
+* I make :ref:`the return statement` simpler
 
   .. code-block:: python
     :lineno-start: 64
@@ -2788,7 +2788,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
     def project_second(first, second):
 
-* I change the :ref:`return statement<the return statement>` of :ref:`logical_false<test_logical_false>` since :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
+* I change :ref:`the return statement` of :ref:`logical_false<test_logical_false>` since :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
 
   .. code-block:: python
     :lineno-start: 24

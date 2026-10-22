@@ -1777,7 +1777,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     AssertionError: assert ((0, 1), {'a': 2, 'b': 3})
                         == ((0, 1), {'a'...': 3, 'c': 4})
 
-* I change the :ref:`return statement<the return statement>` to see the difference between the input and the expected output
+* I change :ref:`the return statement` to see the difference between the input and the expected output
 
   .. code-block:: python
     :linenos:
@@ -1981,7 +1981,7 @@ I can write the :ref:`functions<what is a function?>` that make the tests pass (
     AssertionError: assert ('jane', 'doe')
                         == ('joe', 'blow')
 
-* I change the :ref:`return statement<the return statement>` of :ref:`optional_arguments<test_optional_arguments>` to see the difference between the input and the expected output
+* I change :ref:`the return statement` of :ref:`optional_arguments<test_optional_arguments>` to see the difference between the input and the expected output
 
   .. code-block:: python
     :lineno-start: 17

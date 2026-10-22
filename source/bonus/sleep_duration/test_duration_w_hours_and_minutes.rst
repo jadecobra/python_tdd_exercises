@@ -138,7 +138,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
 :green:`GREEN`: make it pass
 *********************************************************************************
 
-* I make a copy of ``difference_hours`` in ``duration``, change the name, then add it to the :ref:`return statement<the return statement>`
+* I make a copy of ``difference_hours`` in ``duration``, change the name, then add it to :ref:`the return statement`
 
   .. code-block:: python
 
@@ -412,7 +412,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     duration_hours = difference // 60
     duration_minutes = difference % 60
 
-  then change ``difference_hours`` and ``difference_minutes`` in the :ref:`return statement<the return statement>`
+  then change ``difference_hours`` and ``difference_minutes`` in :ref:`the return statement`
 
   .. code-block:: python
 

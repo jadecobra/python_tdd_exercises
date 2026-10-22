@@ -358,7 +358,7 @@ because I do not have a definition for ``src`` in this file_.
 
   the ``withdraw`` :ref:`function<what is a function?>` always returns :ref:`None<what is None?>` and I want ``'CASH'``.
 
-* I change the :ref:`return statement<the return statement>` to give me ``'CASH'``
+* I change :ref:`the return statement` to give me ``'CASH'``
 
   .. code-block:: python
     :linenos:

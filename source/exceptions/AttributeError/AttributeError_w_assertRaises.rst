@@ -186,7 +186,7 @@ test_attribute_error_w_object_attributes
     # TypeError
     # SyntaxError
 
-* I comment out the :ref:`return statement<the return statement>` from ``AnObject`` in ``attribute_error.py``
+* I comment out :ref:`the return statement` from ``AnObject`` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 25

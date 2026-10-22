@@ -677,7 +677,7 @@ test_factory_w_keyword_arguments
 
   which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``{}``.
 
-* I change :ref:`None<what is None?>` in the :ref:`return statement<the return statement>`, to give the test what it wants, in ``src/person/__init__.py``
+* I change :ref:`None<what is None?>` in :ref:`the return statement`, to give the test what it wants, in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -752,7 +752,7 @@ test_factory_w_keyword_arguments
 
   which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`function<what is a function?>` returns :ref:`the empty dictionary<test_making_a_dictionary>` and the :ref:`assertion<what is an assertion?>` expects one with ``first_name`` as the :ref:`key<test_keys_of_a_dictionary>`.
 
-* I change the :ref:`return statement<the return statement>` to give the test what it wants, in ``src/person/__init__.py``
+* I change :ref:`the return statement` to give the test what it wants, in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -976,7 +976,7 @@ test_factory_w_keyword_arguments
         {'first_name': 'jane', 'last_name': 'last_name'}
     )
 
-* I change the :ref:`return statement<the return statement>` in ``src/person/__init__.py``
+* I change :ref:`the return statement` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1250,7 +1250,7 @@ test_factory_w_keyword_arguments
         {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
     )
 
-* I add a new :ref:`key<test_keys_of_a_dictionary>` to the :ref:`return statement<the return statement>` in ``src/person/__init__.py``
+* I add a new :ref:`key<test_keys_of_a_dictionary>` to :ref:`the return statement` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -1556,7 +1556,7 @@ test_factory_w_keyword_arguments
          'age': 26}
     )
 
-* I add a new :ref:`key<test_keys_of_a_dictionary>` to the :ref:`return statement<the return statement>` in ``src/person/__init__.py``
+* I add a new :ref:`key<test_keys_of_a_dictionary>` to :ref:`the return statement` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -2099,7 +2099,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
 
   - anytime I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to save the file_, the test runs again and I get a new random :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>`
 
-* I add a calculation for the age with the `today method`_ to the :ref:`return statement<the return statement>` in ``src/person/__init__.py``
+* I add a calculation for the age with the `today method`_ to :ref:`the return statement` in ``src/person/__init__.py``
 
   .. code-block:: python
     :linenos:
@@ -2332,7 +2332,7 @@ I want to use random values in the test to make sure the :ref:`person function<t
 
 ----
 
-I use the ``sex`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'sex'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change, in the :ref:`return statement<the return statement>` in ``src/person/__init__.py``
+I use the ``sex`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'sex'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change, in :ref:`the return statement` in ``src/person/__init__.py``
 
 .. code-block:: python
   :lineno-start: 4
@@ -2440,7 +2440,7 @@ I want to use random values in the test to make sure the :ref:`person function<t
 
 ----
 
-I use the ``last_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change in the :ref:`return statement<the return statement>` in ``src/person/__init__.py``
+I use the ``last_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change in :ref:`the return statement` in ``src/person/__init__.py``
 
 .. code-block:: python
   :lineno-start: 4
@@ -2552,7 +2552,7 @@ I want to use random values in the test to make sure the :ref:`person function<t
 
 ----
 
-I use the ``first_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'first_name'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change, in the :ref:`return statement<the return statement>` in ``src/person/__init__.py``
+I use the ``first_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'first_name'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change, in :ref:`the return statement` in ``src/person/__init__.py``
 
 .. code-block:: python
   :lineno-start: 4
@@ -4073,7 +4073,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     AssertionError:
         None != 'Hello, my name is joe blow and I am 30'
 
-* I copy (:kbd:`ctrl/command+c`) the value from the terminal_ and paste it (:kbd:`ctrl/command+v`) in the :ref:`return statement<the return statement>` in ``src/person/__init__.py``
+* I copy (:kbd:`ctrl/command+c`) the value from the terminal_ and paste it (:kbd:`ctrl/command+v`) in :ref:`the return statement` in ``src/person/__init__.py``
 
   .. code-block:: python
     :lineno-start: 19
@@ -4202,7 +4202,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   which raises :ref:`AssertionError<what causes AssertionError?>` since the values for ``last_name`` and ``age`` are different.
 
-* I use the :ref:`get method of the dictionary<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>`, then add it to the :ref:`return statement<the return statement>`
+* I use the :ref:`get method of the dictionary<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>`, then add it to :ref:`the return statement`
 
   .. code-block:: python
     :lineno-start: 19
@@ -4286,7 +4286,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   which raises :ref:`AssertionError<what causes AssertionError?>` since the values for ``age`` are different.
 
-* I use the :ref:`get method of the dictionary<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>` , then add it to the :ref:`return statement<the return statement>`
+* I use the :ref:`get method of the dictionary<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>` , then add it to :ref:`the return statement`
 
   .. code-block:: python
     :lineno-start: 19
@@ -5978,7 +5978,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   the :ref:`values<test_values_of_a_dictionary>` of the ``age`` and ``first_name`` :ref:`keys<test_keys_of_a_dictionary>` change randomly
 
-* I use the ``first_name`` input parameter in the :ref:`return statement<the return statement>`
+* I use the ``first_name`` input parameter in :ref:`the return statement`
 
   .. code-block:: python
     :linenos:
@@ -6018,7 +6018,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   because the :ref:`call<how to call a function with input>` uses a :ref:`name<test_keyword_arguments>` (``last_name``) that is not in the parentheses of its :ref:`definition<how to make a function that takes input>`.
 
-* I use the ``year_of_birth`` input parameter in the :ref:`return statement<the return statement>` for the :ref:`value<test_values_of_a_dictionary>` of ``age``
+* I use the ``year_of_birth`` input parameter in :ref:`the return statement` for the :ref:`value<test_values_of_a_dictionary>` of ``age``
 
   .. code-block:: python
     :linenos:
@@ -6197,7 +6197,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     AttributeError: module 'src.person'
                     has no attribute 'say_hello'
 
-* I use the ``sex`` input parameter in the :ref:`return statement<the return statement>`
+* I use the ``sex`` input parameter in :ref:`the return statement`
 
   .. code-block:: python
     :lineno-start: 10
@@ -6269,7 +6269,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     AttributeError: module 'src.person'
                     has no attribute 'say_hello'
 
-* I use the ``last_name`` input parameter in the :ref:`return statement<the return statement>`
+* I use the ``last_name`` input parameter in :ref:`the return statement`
 
   .. code-block:: python
     :lineno-start: 4
@@ -6431,7 +6431,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
   because the test expects a string_ and the ``say_hello`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
 
-* I copy (:kbd:`ctrl/command+c`) the string_ from the terminal_ and paste it (:kbd:`ctrl/command+v`) to replace the :ref:`return statement<the return statement>`
+* I copy (:kbd:`ctrl/command+c`) the string_ from the terminal_ and paste it (:kbd:`ctrl/command+v`) to replace :ref:`the return statement`
 
   .. code-block:: python
     :lineno-start: 4

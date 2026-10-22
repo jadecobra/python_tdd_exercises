@@ -427,7 +427,7 @@ Can I pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
 
   because the :ref:`assertion<what is an assertion?>` expects ``'I got: None'`` and the ``text`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`.
 
-* I copy the string_ from the terminal_ and paste it in the :ref:`return statement<the return statement>` to replace :ref:`None<what is None?>`
+* I copy the string_ from the terminal_ and paste it in :ref:`the return statement` to replace :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:

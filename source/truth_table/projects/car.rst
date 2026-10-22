@@ -333,7 +333,7 @@ test_start_pressed
 
   because the ``ignition`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
-* I change the :ref:`return statement<the return statement>` to give the test what it wants
+* I change :ref:`the return statement` to give the test what it wants
 
   .. code-block:: python
     :linenos:
@@ -846,7 +846,7 @@ test_key_not_close_start_not_pressed
 
   the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
-* I change :ref:`None<what is None?>` to :red:`False` in the :ref:`return statement<the return statement>`
+* I change :ref:`None<what is None?>` to :red:`False` in :ref:`the return statement`
 
   .. code-block:: python
     :linenos:
@@ -3578,7 +3578,7 @@ the test passes.
 
   the test is still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``.
 
-* I want the :ref:`function<what is a function?>` to check if the start button is :green:`pressed` before it checks the other :ref:`conditions<if statements>`. I add an :ref:`if statement<if statements>`, then change the :ref:`return statement<the return statement>`
+* I want the :ref:`function<what is a function?>` to check if the start button is :green:`pressed` before it checks the other :ref:`conditions<if statements>`. I add an :ref:`if statement<if statements>`, then change :ref:`the return statement`
 
   .. code-block:: python
     :lineno-start: 5

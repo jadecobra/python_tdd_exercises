@@ -1820,7 +1820,7 @@ because :ref:`logical_disjunction<test_logical_disjunction>` returns ``first_inp
               second_input == (first_input and not second_input)
   material_non_implication == (first_input and not second_input)
 
-* I change the :ref:`return statement<the return statement>` in the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``src/truth_table/__init__.py``
+* I change :ref:`the return statement` in the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 62

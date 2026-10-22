@@ -3728,7 +3728,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
   because the :ref:`person function<extract person function>` always returns ``'mary, public, F, 2000'`` and this test expects ``'john, smith, M, 1580'``.
 
-* I change the :ref:`return statement<the return statement>` of the :ref:`person function<extract person function>` to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
+* I change :ref:`the return statement` of the :ref:`person function<extract person function>` to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
 
   .. code-block:: python
     :lineno-start: 13
@@ -3790,7 +3790,7 @@ Since the solutions are separate from the tests, I can write the programs_ that 
 
   because the :ref:`say_hello function<test say_hello function>` always returns ``'Hello, my name is mary public and I am 26.'`` and this test expects ``'Hello, my name is john smith and I am 446.'``
 
-* I change the :ref:`return statement<the return statement>` of the :ref:`say_hello function<test say_hello function>` to see the difference between the input and the expected output
+* I change :ref:`the return statement` of the :ref:`say_hello function<test say_hello function>` to see the difference between the input and the expected output
 
   .. code-block:: python
     :linenos:

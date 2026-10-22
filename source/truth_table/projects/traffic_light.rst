@@ -364,7 +364,7 @@ test_green_light_timer_not_done
 
     AssertionError: None != 'GREEN'
 
-* I change the :ref:`return statement<the return statement>` to give the test what it expects
+* I change :ref:`the return statement` to give the test what it expects
 
   .. code-block:: python
     :linenos:

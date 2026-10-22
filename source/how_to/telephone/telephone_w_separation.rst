@@ -504,7 +504,7 @@ Since the solution is separate from the tests, I can write the program_ that mak
 
     E       assert None == "I got: <class 'object'>"
 
-* I copy the string_ from the terminal_ and paste it in the :ref:`return statement<the return statement>` to match the expectation of the test
+* I copy the string_ from the terminal_ and paste it in :ref:`the return statement` to match the expectation of the test
 
   .. code-block:: python
     :linenos:
@@ -524,7 +524,7 @@ Since the solution is separate from the tests, I can write the program_ that mak
     E       assert "I got: <class 'object'>"
                 == "I got: <class 'bool'>"
 
-* I change the :ref:`return statement<the return statement>` to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
+* I change :ref:`the return statement` to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
 
   .. code-block:: python
     :linenos:
@@ -607,7 +607,7 @@ Since the solution is separate from the tests, I can write the program_ that mak
     FAILED ...test_passing_a_class -
         assert 'I got: value' == "I got: <class 'object'>"
 
-* I change the :ref:`return statement<the return statement>` to an :ref:`f-string<what is string interpolation?>`
+* I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
     :linenos:

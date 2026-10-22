@@ -1448,7 +1448,7 @@ how to change a bytes object to a string
             f'= {result}</h2>'
         )
 
-* I change the :ref:`return statement<the return statement>`
+* I change :ref:`the return statement`
 
   .. code-block:: python
     :lineno-start: 38

@@ -298,7 +298,7 @@ first input     second input   return
 
 ----
 
-* I change the :ref:`return statement<the return statement>` to make it clearer
+* I change :ref:`the return statement` to make it clearer
 
   .. code-block:: python
     :lineno-start: 17
@@ -770,7 +770,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
   - the second input in these 2 cases
 
-* I change the :ref:`return statement<the return statement>` of the :ref:`logical_conjunction function<test_logical_conjunction>` in ``src/truth_table/__init__.py``
+* I change :ref:`the return statement` of the :ref:`logical_conjunction function<test_logical_conjunction>` in ``src/truth_table/__init__.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -976,7 +976,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   still green, because :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`.
 
-* I change :ref:`None<what is None?>` to :red:`False` in the :ref:`return statement<the return statement>`, to make it clearer
+* I change :ref:`None<what is None?>` to :red:`False` in :ref:`the return statement`, to make it clearer
 
   .. code-block:: python
     :lineno-start: 21
