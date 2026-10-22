@@ -13,8 +13,8 @@ how to make a person with loops
 
 I have a problem in ``person/tests/test_person.py``
 
-* :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` have the same three tests.
-* :ref:`test_when_year_of_birth_is_not_an_integer` has four tests that are basically the same, the only thing that changes are the values for the ``year_of_birth`` parameter.
+* :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` have the same :ref:`assertions<what is an assertion?>`.
+* :ref:`test_when_year_of_birth_is_not_an_integer` also has :ref:`assertions<what is an assertion?>` that are basically the same, the only thing that changes are the values for the ``year_of_birth`` parameter.
 
 This means that if I add more people or more cases where ``year_of_birth`` is not an integer_ I would have to add more tests.
 
@@ -99,98 +99,74 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ shows
-
-  .. code-block:: python
-
-    tests/test_person.py .........                  [100%]
-
-    ================= 9 passed in W.XYs ==================
-
 ----
 
 *********************************************************************************
-extract test_factory_function
+extract test_person_factory
 *********************************************************************************
 
 The tests for the :ref:`person function<extract person function>` in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make a :ref:`call<how to call a function with input>` to the :ref:`person function<extract person function>` then compare the result with a string_.
 
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
+.. code-block:: python
+
+    self.assertEqual(
+        src.person.person(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        ),
+        (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+    )
+
+I can make one :ref:`function<what is a function?>` for all the people.
 
 ----
 
-I add a test for the :ref:`person function<extract person function>` to ``tests/test_person.py``
+* I add a test for the :ref:`person function<extract person function>` to ``tests/test_person.py``
 
-.. code-block:: python
-  :lineno-start: 6
-  :emphasize-lines: 10-22
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 19-29
 
-  class TestPerson(unittest.TestCase):
-
-      @staticmethod
-      def calculate_age(year_of_birth):
-          return (
-              datetime.date.today().year
-            - year_of_birth
-          )
-
-      def test_factory_function(self):
-          people = (
-              ('joe', 'blow', 'M', 1996),
-          )
-          for person in people:
-              reality = src.person.person(
-                  first_name=person[0],
-                  last_name=person[1],
-                  sex=person[2],
-                  year_of_birth=person[3],
+          def assert_person_can_say_hello(
+                  self,first_name, last_name,
+                  sex, year_of_birth,
+              ):
+              self.assertEqual(
+                  src.person.Person(
+                      first_name=first_name,
+                      last_name=last_name,
+                      sex=sex,
+                      year_of_birth=year_of_birth,
+                  ).say_hello(),
+                  (
+                      f'Hello, my name is {first_name}'
+                      f' {last_name} and I am'
+                      f' {self.calculate_age(year_of_birth)}.'
+                  )
               )
-              my_expectation = None
-              self.assertEqual(reality, my_expectation)
 
-      def test_joe(self):
-
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: python
-
-  AssertionError: 'joe, blow, M, 1996' != None
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I change ``my_expectation`` to match ``reality``
-
-.. code-block:: python
-  :lineno-start: 15
-  :emphasize-lines: 12
-
-      def test_factory_function(self):
-          people = (
-              ('joe', 'blow', 'M', 1996),
-          )
-          for person in people:
-              reality = src.person.person(
-                  first_name=person[0],
-                  last_name=person[1],
-                  sex=person[2],
-                  year_of_birth=person[3],
+          def test_person_factory(self):
+              people = (
+                  ('joe', 'blow', 'M', 1996),
               )
-              my_expectation = 'joe, blow, M, 1996'
-              self.assertEqual(reality, my_expectation)
+              for a_person in people:
+                  self.assert_person_factory_works(
+                      first_name=a_person[0],
+                      last_name=a_person[1],
+                      sex=a_person[2],
+                      year_of_birth=a_person[3],
+                  )
 
-      def test_joe(self):
+          def test_joe(self):
 
-the test passes.
+  the test is still green.
 
-* I made a tuple_ named ``people`` that contains a tuple for ``joe``
+* I made a tuple_ named ``people`` that contains a tuple_ for ``joe``
 
   .. code-block:: python
 
@@ -202,7 +178,7 @@ the test passes.
 
   .. code-block:: python
 
-    for person in (
+    for a_person in (
         ('joe', 'blow', 'M', 1996),
     ):
 
@@ -210,41 +186,40 @@ the test passes.
 
   .. code-block:: shell
 
-    for person in people:
+    for a_person in people:
     ├── a_person = ('joe', 'blow', 'M', 1996)
-    └── reality = src.person.person(
-            first_name=person[0],
-            last_name=person[1],
-            sex=person[2],
-            year_of_birth=person[3],
+    └── self.assert_person_factory_works(
+            first_name=a_person[0],   # 'joe'
+            last_name=a_person[1],    # 'blow'
+            sex=a_person[2],          # 'M'
+            year_of_birth=a_person[3],  # 
+        )
+
+    reality = src.person.person(
+            first_name=person[0],     # 'joe'
+            last_name=person[1],      # 'blow'
+            sex=person[2],            # 'M'
+            year_of_birth=person[3],  # 1996
         )
         └── src/person/__init__.py
             └── def person(
                     first_name, last_name,
                     sex, year_of_birth,
                 ):
-                ├── first_name    = 'joe'
-                ├── last_name     = 'blow'
-                ├── sex           = 'M'
-                ├── year_of_birth = 1996
+                ├── first_name    = 'joe'   # person[0]
+                ├── last_name     = 'blow'  # person[1]
+                ├── sex           = 'M'     # person[2]
+                ├── year_of_birth = 1996    # person[3]
                 └── return (
                         f'{first_name}, {last_name},'
                         f' {sex}, {year_of_birth}'
                     )
                     return 'joe, blow, M, 1996'
 
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
 * I add ``jane`` to the tuple_ of ``people``
 
   .. code-block:: python
-    :lineno-start: 15
+    :lineno-start: 65
     :emphasize-lines: 3
 
         def test_factory_function(self):
@@ -254,13 +229,7 @@ the test passes.
             )
             for person in people:
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'jane, doe, F, 1991' != 'joe, blow, M, 1996'
-
-  because the result when the :ref:`person function<extract person function>` is :ref:`called<how to call a function with input>` with ``'jane'``, ``'doe'``, ``'F'`` and ``'1991'`` as input is ``'jane, doe, F, 1991'`` not ``'joe, blow, M, 1996'``.
+  still green, because the result when the :ref:`person function<extract person function>` is :ref:`called<how to call a function with input>` with ``'jane'``, ``'doe'``, ``'F'`` and ``'1991'`` is ``'jane, doe, F, 1991'``.
 
   .. code-block:: shell
 
@@ -280,10 +249,10 @@ the test passes.
                     first_name, last_name,
                     sex, year_of_birth,
                 ):
-                ├── first_name    = 'jane'
-                ├── last_name     = 'doe'
-                ├── sex           = 'F'
-                ├── year_of_birth = 1991
+                ├── first_name    = 'jane'  # person[0]
+                ├── last_name     = 'doe'   # person[1]
+                ├── sex           = 'F'     # person[2]
+                ├── year_of_birth = 1991    # person[3]
                 └── return (
                         f'{first_name}, {last_name},'
                         f' {sex}, {year_of_birth}'
@@ -322,7 +291,7 @@ the test passes.
 
   because the result when the :ref:`person function<extract person function>` is :ref:`called<how to call a function with input>` with ``'joe'``, ``'blow'``, ``'M'`` and ``'1996'`` as input is ``'joe, blow, M, 1996'`` not ``'jane, doe, F, 1991'``. The :ref:`for loop<what is a for loop?>` goes through each item in the ``people`` tuple_ one at a time.
 
-* I change ``my_expectation`` in :ref:`test_factory_function<extract test_factory_function>` to an :ref:`f-string<what is string interpolation?>`
+* I change ``my_expectation`` in :ref:`test_factory_function<extract test_person_factory>` to an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -444,7 +413,7 @@ the test passes.
 
   the test is still green, because the :ref:`person function<extract person function>` returns a string with the inputs it gets.
 
-* I remove the commented lines from :ref:`test_factory_function<extract test_factory_function>`
+* I remove the commented lines from :ref:`test_factory_function<extract test_person_factory>`
 
   .. code-block:: python
     :lineno-start: 15
@@ -642,7 +611,7 @@ the test passes.
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'extract test_factory_function'
+    git commit -am 'extract test_person_factory'
 
 The :ref:`for loop<what is a for loop?>` allows me to test any number of people with the same test. I no longer have to write one test for each person.
 
@@ -2078,7 +2047,7 @@ For each person in the ``people`` tuple_, this test :ref:`makes an instance<how 
 extract people object attribute
 *********************************************************************************
 
-:ref:`test_factory_function<extract test_factory_function>`, :ref:`test_say_hello_function<extract test_say_hello_function>` and :ref:`test_say_hello_method<extract test_say_hello_method>` all use the same tuple_ of persons.
+:ref:`test_factory_function<extract test_person_factory>`, :ref:`test_say_hello_function<extract test_say_hello_function>` and :ref:`test_say_hello_method<extract test_say_hello_method>` all use the same tuple_ of persons.
 
 * I add a :ref:`object attribute<what is an object attribute?>` for the ``people`` tuple_ to the :ref:`TestPerson class<add TestPerson class>`
 
@@ -2099,7 +2068,7 @@ extract people object attribute
         @staticmethod
         def calculate_age(year_of_birth):
 
-* I use the :ref:`object attribute<what is an object attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_factory_function<extract test_factory_function>`
+* I use the :ref:`object attribute<what is an object attribute?>` for ``people`` in the :ref:`for loop<what is a for loop?>` in :ref:`test_factory_function<extract test_person_factory>`
 
   .. code-block:: python
     :lineno-start: 23
@@ -2119,7 +2088,7 @@ extract people object attribute
 
   the test is still green.
 
-* I remove the commented lines from :ref:`test_factory_function<extract test_factory_function>`
+* I remove the commented lines from :ref:`test_factory_function<extract test_person_factory>`
 
   .. code-block:: python
     :lineno-start: 23

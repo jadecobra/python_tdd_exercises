@@ -3560,7 +3560,7 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 15
-    :emphasize-lines: 9
+    :emphasize-lines: 9-10
 
         if timer_done:
             if red_phase == 'cross':
