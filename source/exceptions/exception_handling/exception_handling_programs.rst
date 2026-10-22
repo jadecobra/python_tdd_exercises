@@ -10,7 +10,7 @@ how to handle Exceptions in programs
 
 When an :ref:`error<how to test that an Exception is raised>` happens in Python_, an :ref:`Exception<how to test that an Exception is raised>` is raised to stop the program_, this means nothing past the line that caused the :ref:`error<how to test that an Exception is raised>` will run.
 
-I can use the :ref:`try statement<how to use try...except...else>` to to make sure a program_ can make a decision when an :ref:`Exception is raised<how to test that an Exception is raised>`.
+I can use the :ref:`try statement<how to use try...except...else>` to make sure a program_ can make a decision when an :ref:`Exception is raised<how to test that an Exception is raised>`.
 
 ----
 
@@ -330,7 +330,7 @@ This means I can make my :ref:`assert_raises method<extract assert_raises method
 * I add a git_ commit message
 
   .. code-block:: python
-    :emphasize-lines: 1-2
+    :emphasize-lines: 1
 
     git commit -am 'add test_catching_exceptions_w_messages'
 
@@ -338,13 +338,13 @@ This means I can make my :ref:`assert_raises method<extract assert_raises method
 
 In some cases I want to send a message to the user instead of the :ref:`Exception<how to test that an Exception is raised>` which they may not understand.
 
-I want the program_ to process its input and return ``failed`` if an :ref:`Exception is raised<how to raise an Exception>` or return ``success`` if an :ref:`Exception<how to test that an Exception is raised>` is NOT raised while processing the input.
+I want the program_ to process its input and return ``failed`` if an :ref:`Exception is raised<how to raise an Exception>` or return ``succeeded`` if an :ref:`Exception<how to test that an Exception is raised>` is NOT raised while processing the input.
 
 ================= =====================
 Exception         output
 ================= =====================
 :green:`raised`   :red:`failed`
-:red:`NOT raised` :green:`success`
+:red:`NOT raised` :green:`succeeded`
 ================= =====================
 
 *********************************************************************************
@@ -498,7 +498,7 @@ I add a test for if ``an_exception_handler`` is :ref:`called<how to call a funct
 ================= =====================
 Exception         output
 ================= =====================
-:red:`NOT raised` :green:`success`
+:red:`NOT raised` :green:`succeeded`
 ================= =====================
 
 .. code-block:: python
