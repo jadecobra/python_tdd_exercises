@@ -664,7 +664,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   .. code-block:: python
     :lineno-start: 9
-    :emphasize-lines: 6-7
+    :emphasize-lines: 3, 6-7
 
     def an_exception_handler(a_function):
         try:
