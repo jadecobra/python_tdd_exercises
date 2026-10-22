@@ -15,25 +15,25 @@ Exception Handling in tests: tests
 
 The code in ``exceptions/tests/test_exceptions.py`` from :ref:`how to test that an Exception is raised`
 
-.. literalinclude:: exception_handling/test_exceptions_in_tests.py
+.. literalinclude:: exception_handling/tests/test_exceptions_in_tests.py
   :language: python
   :linenos:
   :caption: exceptions/tests/test_exceptions.py
   :lines: 1-21
 
-.. literalinclude:: exception_handling/test_exceptions_in_tests.py
+.. literalinclude:: exception_handling/tests/test_exceptions_in_tests.py
   :language: python
   :lineno-start: 23
   :caption: exceptions/tests/test_exceptions.py
   :lines: 23-41
 
-.. literalinclude:: exception_handling/test_exceptions_in_tests.py
+.. literalinclude:: exception_handling/tests/test_exceptions_in_tests.py
   :language: python
   :lineno-start: 43
   :caption: exceptions/tests/test_exceptions.py
   :lines: 43-62
 
-.. literalinclude:: exception_handling/test_exceptions_in_tests.py
+.. literalinclude:: exception_handling/tests/test_exceptions_in_tests.py
   :language: python
   :lineno-start: 64
   :caption: exceptions/tests/test_exceptions.py
@@ -50,9 +50,9 @@ Exception Handling in tests: solution
 The code in ``src/exceptions/__init__.py`` from :ref:`how to test that an Exception is raised`
 
 .. literalinclude:: exception_handling/exceptions_in_tests.py
+  :caption: exceptions/src/exceptions/__init__.py
   :language: python
   :linenos:
-  :caption: exceptions/src/exceptions/__init__.py
 
 ----
 

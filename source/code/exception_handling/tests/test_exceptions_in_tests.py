@@ -41,7 +41,7 @@ class TestExceptions(unittest.TestCase):
             src.exceptions.function_name('the input')
 
     def test_catching_index_error(self):
-        self.assert_raises("'a string'[8]", IndexError)
+        self.assert_raises("'a_string'[8]", IndexError)
         self.assert_raises("'a string'[-9]", IndexError)
 
         with self.assertRaises(IndexError):
@@ -75,7 +75,7 @@ class TestExceptions(unittest.TestCase):
             1 / 0
 
     def test_catching_exceptions(self):
-        self.assert_raises('raise Exception', Exception)
+        self.assert_raises("raise Exception", Exception)
         with self.assertRaises(Exception):
             raise Exception
 
@@ -90,3 +90,4 @@ class TestExceptions(unittest.TestCase):
 # IndexError
 # KeyError
 # ZeroDivisionError
+# ValueError

@@ -37,25 +37,25 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../../code/exception_handling/test_exceptions_in_tests.py
+.. literalinclude:: ../../code/exception_handling/tests/test_exceptions_in_tests.py
   :language: python
   :linenos:
   :caption: exceptions/tests/test_exceptions.py
   :lines: 1-21
 
-.. literalinclude:: ../../code/exception_handling/test_exceptions_in_tests.py
+.. literalinclude:: ../../code/exception_handling/tests/test_exceptions_in_tests.py
   :language: python
   :lineno-start: 23
   :caption: exceptions/tests/test_exceptions.py
   :lines: 23-41
 
-.. literalinclude:: ../../code/exception_handling/test_exceptions_in_tests.py
+.. literalinclude:: ../../code/exception_handling/tests/test_exceptions_in_tests.py
   :language: python
   :lineno-start: 43
   :caption: exceptions/tests/test_exceptions.py
   :lines: 43-62
 
-.. literalinclude:: ../../code/exception_handling/test_exceptions_in_tests.py
+.. literalinclude:: ../../code/exception_handling/tests/test_exceptions_in_tests.py
   :language: python
   :lineno-start: 64
   :caption: exceptions/tests/test_exceptions.py
