@@ -620,7 +620,7 @@ test_catching_type_error
 
 ----
 
-I put the failing line in ref:`test_catching_type_error` in  a :ref:`try statement<how to handle Exceptions>` to :ref:`handle TypeError<what causes TypeError?>`
+I put the failing line in :ref:`test_catching_type_error` in a :ref:`try statement<how to handle Exceptions>` to :ref:`handle TypeError<what causes TypeError?>`
 
 .. code-block:: python
   :lineno-start: 25
@@ -746,7 +746,7 @@ The :ref:`try statement<how to handle Exceptions>` has an `else clause`_ that I 
     :emphasize-lines: 1
 
     def function_name():
-        return
+        return None
 
   the test is green again.
 
@@ -2355,7 +2355,7 @@ The assertRaises_ in :ref:`test_catching_index_error` all catch the same :ref:`E
 
   .. code-block:: python
     :lineno-start: 47
-    :emphasize-lines: 3-6
+    :emphasize-lines: 3-4
 
             with self.assertRaises(IndexError):
                 'a string'[8]
