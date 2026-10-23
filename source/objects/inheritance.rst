@@ -440,7 +440,7 @@ test_making_an_object_w_pass
 
 ----
 
-I add a :ref:`object definition<how to make an object>` for ``WPass``
+I add an :ref:`object definition<how to make an object>` for ``WPass``
 
 .. code-block:: python
   :linenos:
@@ -572,7 +572,7 @@ I can also make an :ref:`object<what is an object?>` with parentheses/brackets `
 
 ----
 
-* I add a :ref:`object definition<how to make an object>` for ``WParentheses`` like I did for ``WPass``
+* I add an :ref:`object definition<how to make an object>` for ``WParentheses`` like I did for ``WPass``
 
   .. code-block:: python
     :linenos:
@@ -726,7 +726,7 @@ I can make an :ref:`object<what is an object?>` with :ref:`object (the mother of
 
 ----
 
-* I add a :ref:`object definition<how to make an object>` for ``WObject``
+* I add an :ref:`object definition<how to make an object>` for ``WObject``
 
   .. code-block:: python
     :lineno-start: 4

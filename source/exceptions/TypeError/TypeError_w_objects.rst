@@ -121,7 +121,7 @@ because ``AnObject`` is not defined in ``src/type_error/__init__.py``.
 
 * I open ``__init__.py`` from the ``type_error`` folder_ in the ``src`` folder_
 
-* I add a :ref:`object definition<how to make an object>` for ``AnObject`` to ``src/type_error/__init__.py``
+* I add an :ref:`object definition<how to make an object>` for ``AnObject`` to ``src/type_error/__init__.py``
 
   .. code-block:: python
     :lineno-start: 40

@@ -816,11 +816,11 @@ test age with current year
 extract this_year attribute
 *********************************************************************************
 
-The :ref:`assert_say_hello_works<move assert_say_hello_works to TestPerson>` and :ref:`assert_person_can_say_hello methods<move assert_person_can_say_hello to TestPerson>` both :ref:`call datetime.date.today()<test_dir_datetime_date_today>` to get the :ref:`year attribute<test_datetime_date_today_year>`. I can use a :ref:`object attribute<what is an object attribute?>` to remove the repetition
+The :ref:`assert_say_hello_works<move assert_say_hello_works to TestPerson>` and :ref:`assert_person_can_say_hello methods<move assert_person_can_say_hello to TestPerson>` both :ref:`call datetime.date.today()<test_dir_datetime_date_today>` to get the :ref:`year attribute<test_datetime_date_today_year>`. I can use an :ref:`object attribute<what is an object attribute?>` to remove the repetition
 
 * I go back to the terminal_ where the tests are running
 
-* I add a :ref:`object attribute<what is an object attribute?>` to :ref:`TestPerson<add TestPerson class>` for the current year
+* I add an :ref:`object attribute<what is an object attribute?>` to :ref:`TestPerson<add TestPerson class>` for the current year
 
   .. code-block:: python
     :lineno-start: 6
@@ -1791,7 +1791,7 @@ extract this_year attribute again
 
 The :ref:`calculate_age<extract calculate_age method>`, :ref:`test_when_person_is_older_than_120` and :ref:`test_when_year_of_birth_is_the_future` all call :ref:`datetime.date.today()<test_dir_datetime_date_today>` to get the :ref:`year attribute<test_datetime_date_today_year>`.
 
-I made a :ref:`object attribute for this_year earlier<extract this_year attribute>` to remove the repetition which ended up in the :ref:`calculate_age method<extract calculate_age method>`, I can make it again to remove repetition from these three :ref:`methods<what is a method?>`
+I made an :ref:`object attribute for this_year earlier<extract this_year attribute>` to remove the repetition which ended up in the :ref:`calculate_age method<extract calculate_age method>`, I can make it again to remove repetition from these three :ref:`methods<what is a method?>`
 
 ----
 

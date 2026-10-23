@@ -3366,7 +3366,7 @@ I can put the test :ref:`functions<what is a function?>` together in an :ref:`ob
 
 ----
 
-* I add the ``TOOLBOX`` :ref:`variable<what is a variable?>` to :ref:`TestUnittest<extract TestUnittest class>` to make it a :ref:`object attribute<what is an object attribute?>`
+* I add the ``TOOLBOX`` :ref:`variable<what is a variable?>` to :ref:`TestUnittest<extract TestUnittest class>` to make it an :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
     :lineno-start: 7

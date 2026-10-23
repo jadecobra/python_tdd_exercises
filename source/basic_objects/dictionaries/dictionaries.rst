@@ -813,7 +813,7 @@ It also gives me a message about how to show the full difference between the two
 
   Diff is 720 characters long. Set self.maxDiff to None to see it.
 
-`unittest.TestCase.maxDiff`_ is a :ref:`object attribute<what is an object attribute?>` that is used to set the maximum length of differences between 2 items that the terminal_ is my friend, and shows
+`unittest.TestCase.maxDiff`_ is an :ref:`object attribute<what is an object attribute?>` that is used to set the maximum length of differences between 2 items that the terminal_ is my friend, and shows
 
 ----
 

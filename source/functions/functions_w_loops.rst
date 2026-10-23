@@ -4849,7 +4849,7 @@ I want to use :ref:`object attributes<what is an object attribute?>` to remove r
 extract a_tuple object attribute
 *********************************************************************************
 
-* I add a :ref:`object attribute<what is an object attribute?>` for ``(0, 1, 2, 'n')``
+* I add an :ref:`object attribute<what is an object attribute?>` for ``(0, 1, 2, 'n')``
 
   .. code-block:: python
     :lineno-start: 5
@@ -4930,7 +4930,7 @@ extract a_tuple object attribute
 extract a_list object attribute
 *********************************************************************************
 
-* I add a :ref:`object attribute<what is an object attribute?>` for ``[0, 1, 2, 'n']``
+* I add an :ref:`object attribute<what is an object attribute?>` for ``[0, 1, 2, 'n']``
 
   .. code-block:: python
     :lineno-start: 5
@@ -5016,7 +5016,7 @@ extract a_list object attribute
 extract a_set object attribute
 *********************************************************************************
 
-* I add a :ref:`object attribute<what is an object attribute?>` for ``{0, 1, 2, 'n'}``
+* I add an :ref:`object attribute<what is an object attribute?>` for ``{0, 1, 2, 'n'}``
 
   .. code-block:: python
     :lineno-start: 5
@@ -5097,7 +5097,7 @@ extract a_set object attribute
 extract a_dictionary object attribute
 *********************************************************************************
 
-* I add a :ref:`object attribute<what is an object attribute?>` for ``a_dictionary``
+* I add an :ref:`object attribute<what is an object attribute?>` for ``a_dictionary``
 
   .. code-block:: python
     :lineno-start: 5

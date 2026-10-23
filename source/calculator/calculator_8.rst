@@ -529,7 +529,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
 ----
 
-* I add ``calculator_tests`` to the `setUp method`_ to make it a :ref:`object attribute<what is an object attribute?>`
+* I add ``calculator_tests`` to the `setUp method`_ to make it an :ref:`object attribute<what is an object attribute?>`
 
   .. code-block:: python
     :lineno-start: 12

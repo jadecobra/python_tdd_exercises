@@ -197,7 +197,7 @@ because there is no definition for ``Person`` in ``tests/test_person.py``.
 
 ----
 
-* I add a :ref:`object definition<how to make an object>` for ``Person``
+* I add an :ref:`object definition<how to make an object>` for ``Person``
 
   .. code-block:: python
     :linenos:
@@ -2412,7 +2412,7 @@ separate and equal Person class
     AttributeError: 'Person' object
                     has no attribute 'first_name'
 
-  because I have not defined a :ref:`object attribute<what is an object attribute?>` named ``first_name``.
+  because I have not defined an :ref:`object attribute<what is an object attribute?>` named ``first_name``.
 
 * I add ``self.first_name`` to the :ref:`__init__ constructor method<the constructor method>`
 
@@ -2444,7 +2444,7 @@ separate and equal Person class
                     has no attribute 'last_name'.
                     Did you mean: 'first_name'?
 
-  because I have not defined a :ref:`object attribute<what is an object attribute?>` named ``last_name``.
+  because I have not defined an :ref:`object attribute<what is an object attribute?>` named ``last_name``.
 
 * I add ``self.last_name`` to the :ref:`__init__ method<the constructor method>`
 
@@ -2471,7 +2471,7 @@ separate and equal Person class
     AttributeError: 'Person' object
                     has no attribute 'year_of_birth'
 
-  because I have not defined a :ref:`object attribute<what is an object attribute?>` named ``year_of_birth``.
+  because I have not defined an :ref:`object attribute<what is an object attribute?>` named ``year_of_birth``.
 
 * I add ``self.year_of_birth`` to the :ref:`__init__ constructor method<the constructor method>`
 

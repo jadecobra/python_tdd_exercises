@@ -290,7 +290,7 @@ I know from :ref:`test_making_an_object_w_object` that I can make :ref:`objects<
 
 * I open ``family_ties/__init__.py`` from the ``src`` folder_
 
-* I add a :ref:`object definition<how to make an object>` definition to ``family_ties.py``
+* I add an :ref:`object definition<how to make an object>` definition to ``family_ties.py``
 
   .. code-block:: python
     :linenos:
@@ -1113,7 +1113,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
               Person.__init__('joe', last_name='doe')
               self.last_name = 'doe' # use the default value
 
-* I add a :ref:`object attribute<what is an object attribute?>` for ``last_name`` in the ``Blow`` :ref:`object<everything is an object>` in ``family_ties.py``
+* I add an :ref:`object attribute<what is an object attribute?>` for ``last_name`` in the ``Blow`` :ref:`object<everything is an object>` in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 10
@@ -1318,7 +1318,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
     AttributeError: module 'src.family_ties'
                     has no attribute 'Smith'
 
-* I add a :ref:`object definition<how to make an object>` for ``Smith`` to ``family_ties.py``
+* I add an :ref:`object definition<how to make an object>` for ``Smith`` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 10
@@ -1574,7 +1574,7 @@ Can an :ref:`object<everything is an object>` have more than one parent? How are
 
 ----
 
-* I add a :ref:`object definition<how to make an object>` for ``Jane`` to ``family_ties.py``
+* I add an :ref:`object definition<how to make an object>` for ``Jane`` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -2020,7 +2020,7 @@ the test passes.
         module 'src.family_ties' has no attribute 'Joe'.
         Did you mean: 'Doe'?
 
-* I add a :ref:`object definition<how to make an object>` for the ``Joe`` :ref:`object<everything is an object>` to ``family_ties.py``
+* I add an :ref:`object definition<how to make an object>` for the ``Joe`` :ref:`object<everything is an object>` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 22
@@ -2257,7 +2257,7 @@ the test passes.
     AttributeError: module 'src.family_ties'
                     has no attribute 'Mary'
 
-* I add a :ref:`object definition<how to make an object>` for ``Mary`` to ``family_ties.py``
+* I add an :ref:`object definition<how to make an object>` for ``Mary`` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 29
@@ -2656,7 +2656,7 @@ what happens when a child has more than one parent?
 
     AttributeError: 'Jane' object has no attribute 'eye_color'
 
-* I add a :ref:`object attribute<what is an object attribute?>` to ``Jane`` in ``family_ties.py``
+* I add an :ref:`object attribute<what is an object attribute?>` to ``Jane`` in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -2894,7 +2894,7 @@ what happens when a child has more than one parent?
     AttributeError: module 'src.family_ties'
                     has no attribute 'John'
 
-* I add a :ref:`object definition<how to make an object>` for ``John`` to ``family_ties.py``
+* I add an :ref:`object definition<how to make an object>` for ``John`` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 37
@@ -3002,7 +3002,7 @@ what happens when a child has more than one parent?
         'John' object has no attribute 'last_name'.
         Did you mean: 'first_name'?
 
-* I add a :ref:`object attribute<what is an object attribute?>` for ``last_name`` to ``John`` in ``family_ties.py``
+* I add an :ref:`object attribute<what is an object attribute?>` for ``last_name`` to ``John`` in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 43
@@ -3112,7 +3112,7 @@ what happens when a child has more than one parent?
 
     AttributeError: module 'src.family_ties' has no attribute 'Lil'
 
-* I add a :ref:`object definition<how to make an object>` for ``Lil`` to ``family_ties.py``
+* I add an :ref:`object definition<how to make an object>` for ``Lil`` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 44

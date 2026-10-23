@@ -1924,7 +1924,7 @@ good
 
 ----
 
-* I made the same client in each test. I add a :ref:`object attribute<what is an object attribute?>` for it in the `setUp method`_
+* I made the same client in each test. I add an :ref:`object attribute<what is an object attribute?>` for it in the `setUp method`_
 
   .. code-block:: python
     :lineno-start: 6

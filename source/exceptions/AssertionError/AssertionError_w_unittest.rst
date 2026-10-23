@@ -3208,7 +3208,7 @@ remove repetition with object attributes
 
 Three of the tests have the exact same :ref:`variables<what is a variable?>`. I can make them :ref:`object attributes<what is an object attribute?>` to remove repetition of making the same :ref:`variables<what is a variable?>` in the tests.
 
-* I add a :ref:`object attribute<what is an object attribute?>` for ``an_integer = 0`` to :ref:`TestAssertionError<add TestAssertionError class>`
+* I add an :ref:`object attribute<what is an object attribute?>` for ``an_integer = 0`` to :ref:`TestAssertionError<add TestAssertionError class>`
 
   .. code-block:: python
     :lineno-start: 28
@@ -3308,7 +3308,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
 ----
 
-* I add a :ref:`object attribute<what is an object attribute?>` for ``a_float = 0.0``
+* I add an :ref:`object attribute<what is an object attribute?>` for ``a_float = 0.0``
 
   .. code-block:: python
     :lineno-start: 28
@@ -3377,7 +3377,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
 ----
 
-* I add a :ref:`object attribute<what is an object attribute?>` for ``a_string = ''``
+* I add an :ref:`object attribute<what is an object attribute?>` for ``a_string = ''``
 
   .. code-block:: python
     :lineno-start: 28
@@ -3447,7 +3447,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
 ----
 
-* I add a :ref:`object attribute<what is an object attribute?>` for ``a_tuple = ()``
+* I add an :ref:`object attribute<what is an object attribute?>` for ``a_tuple = ()``
 
   .. code-block:: python
     :lineno-start: 28
@@ -3518,7 +3518,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
 ----
 
-* I add a :ref:`object attribute<what is an object attribute?>` for ``a_list = []``
+* I add an :ref:`object attribute<what is an object attribute?>` for ``a_list = []``
 
   .. code-block:: python
     :lineno-start: 28
@@ -3590,7 +3590,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
 ----
 
-* I add a :ref:`object attribute<what is an object attribute?>` for ``a_set = set()``
+* I add an :ref:`object attribute<what is an object attribute?>` for ``a_set = set()``
 
   .. code-block:: python
     :lineno-start: 28
@@ -3663,7 +3663,7 @@ Three of the tests have the exact same :ref:`variables<what is a variable?>`. I 
 
 ----
 
-* I add a :ref:`object attribute<what is an object attribute?>` for ``a_dictionary = {}``
+* I add an :ref:`object attribute<what is an object attribute?>` for ``a_dictionary = {}``
 
   .. code-block:: python
     :lineno-start: 28
