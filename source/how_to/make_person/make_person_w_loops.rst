@@ -122,7 +122,7 @@ The tests for the :ref:`person function<extract person function>` in :ref:`test_
         )
     )
 
-I can make one :ref:`function<what is a function?>` for all the people.
+I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what is a for loop?>` to remove the repetition.
 
 ----
 
@@ -304,6 +304,51 @@ I can make one :ref:`function<what is a function?>` for all the people.
 
   still green.
 
+  .. code-block:: shell
+
+        for a_person in (
+        │   ('joe', 'blow', 'M', 1996),
+        │   ('jane', 'doe', 'F', 1991),
+    ┌───┴── ('mary', 'public', 'F', 2000),
+    │   ):
+    ├────── a_person = ('mary', 'public', 'F', 2000)
+    └────── self.assert_person_factory_works(
+                first_name=a_person[0],     # 'mary'
+                last_name=a_person[1],      # 'public'
+                sex=a_person[2],            # 'F'
+                year_of_birth=a_person[3],  # 2000
+            )
+            └── def assert_person_factory_works(
+                    self, first_name, last_name,
+                    sex, year_of_birth
+                ):
+                └── self.assertEqual(
+                ┌────── src.person.person(
+                │           first_name=first_name,        # 'mary'
+                │           last_name=last_name,          # 'public'
+                │           sex=sex,                      # 'F'
+                │           year_of_birth=year_of_birth,  # 2000
+                │       ),
+                │       (
+                │           f'{first_name}, {last_name},'
+                │           f' {sex}, {year_of_birth}'
+                │       )
+                │   )
+                └────── src/person/__init__.py
+                        └── def person(
+                                first_name, last_name,
+                                sex, year_of_birth,
+                            ):
+                            ├── first_name    = 'mary'    # a_person[0]
+                            ├── last_name     = 'public'  # a_person[1]
+                            ├── sex           = 'F'       # a_person[2]
+                            ├── year_of_birth = 2000      # a_person[3]
+                            └── return (
+                                    f'{first_name}, {last_name},'
+                                    f' {sex}, {year_of_birth}'
+                                )
+                                return 'mary, public, M, 2000'
+
 * I add a tuple_ for ``john``
 
   .. code-block:: python
@@ -320,6 +365,52 @@ I can make one :ref:`function<what is a function?>` for all the people.
             for person in people:
 
   green, showing that for each tuple_ in the ``people`` tuple_, the :ref:`assertion<what is an assertion?>` is :ref:`True<test_what_is_true>`.
+
+  .. code-block:: shell
+
+        for a_person in (
+        │   ('joe', 'blow', 'M', 1996),
+        │   ('jane', 'doe', 'F', 1991),
+        │   ('mary', 'public', 'F', 2000),
+    ┌───┴── ('john', 'smith', 'M', 1980),
+    │   ):
+    ├────── a_person = ('john', 'smith', 'M', 1980)
+    └────── self.assert_person_factory_works(
+                first_name=a_person[0],     # 'john'
+                last_name=a_person[1],      # 'smith'
+                sex=a_person[2],            # 'M'
+                year_of_birth=a_person[3],  # 1980
+            )
+            └── def assert_person_factory_works(
+                    self, first_name, last_name,
+                    sex, year_of_birth
+                ):
+                └── self.assertEqual(
+                ┌────── src.person.person(
+                │           first_name=first_name,        # 'john'
+                │           last_name=last_name,          # 'smith'
+                │           sex=sex,                      # 'M'
+                │           year_of_birth=year_of_birth,  # 1980
+                │       ),
+                │       (
+                │           f'{first_name}, {last_name},'
+                │           f' {sex}, {year_of_birth}'
+                │       )
+                │   )
+                └────── src/person/__init__.py
+                        └── def person(
+                                first_name, last_name,
+                                sex, year_of_birth,
+                            ):
+                            ├── first_name    = 'john'    # a_person[0]
+                            ├── last_name     = 'smith'  # a_person[1]
+                            ├── sex           = 'M'       # a_person[2]
+                            ├── year_of_birth = 1980      # a_person[3]
+                            └── return (
+                                    f'{first_name}, {last_name},'
+                                    f' {sex}, {year_of_birth}'
+                                )
+                                return 'john, smith, M, 1980'
 
 * I add a tuple_ for a person with a string_ as the ``year_of_birth``
 
@@ -410,6 +501,146 @@ I can make one :ref:`function<what is a function?>` for all the people.
             )
             ...
 
+* I no longer need the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` because it is only used by :ref:`test_person_factory<extract test_person_factory>`
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 17-20, 22-30
+
+        def test_person_factory(self):
+            people = (
+                ('jane', 'doe', 'F', 1991),
+                ('joe', 'blow', 'M', 1996),
+                ('mary', 'public', 'F', 2000),
+                ('john', 'smith', 'M', 1980),
+                ('first_name', 'last_name', 'F', 'a_string')
+            )
+            for a_person in people:
+                self.assert_person_factory_works(
+                    first_name=a_person[0],
+                    last_name=a_person[1],
+                    sex=a_person[2],
+                    year_of_birth=a_person[3],
+                )
+
+                first_name = a_person[0]
+                last_name = a_person[1]
+                sex = a_person[2]
+                year_of_birth = a_person[3]
+
+                self.assertEqual(
+                    src.person.person(
+                        first_name=first_name,
+                        last_name=last_name,
+                        sex=sex,
+                        year_of_birth=year_of_birth,
+                    ),
+                    None
+                )
+
+        def test_joe(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'jane, doe, F, 1991' != None
+
+* I change the expectation to ``'jane, doe, F, 1991'``
+
+  .. code-block:: python
+    :lineno-start: 86
+    :emphasize-lines: 8
+
+                self.assertEqual(
+                    src.person.person(
+                        first_name=first_name,
+                        last_name=last_name,
+                        sex=sex,
+                        year_of_birth=year_of_birth,
+                    ),
+                    'jane, doe, F, 1991'
+                )
+
+        def test_joe(self):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'joe, blow, M, 1996' != 'jane, doe, F, 1991'
+
+  because the :ref:`for loop<what is a for loop?>` moved to the next item in the ``people`` tuple_ (``'joe'``)
+
+* I change the expectation to the :ref:`f-string<what is string interpolation?>` from the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>`
+
+  .. code-block:: python
+    :lineno-start: 86
+    :emphasize-lines: 8-11
+
+                self.assertEqual(
+                    src.person.person(
+                        first_name=first_name,
+                        last_name=last_name,
+                        sex=sex,
+                        year_of_birth=year_of_birth,
+                    ),
+                    (
+                        f'{first_name}, {last_name},'
+                        f' {sex}, {year_of_birth}'
+                    )
+                )
+
+        def test_joe(self):
+
+* I remove the :ref:`call<how to call a function with input>` to the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` from :ref:`test_person_factory<extract test_person_factory>`
+
+  .. code-block:: python
+    :lineno-start: 65
+
+        def test_person_factory(self):
+            people = (
+                ('jane', 'doe', 'F', 1991),
+                ('joe', 'blow', 'M', 1996),
+                ('mary', 'public', 'F', 2000),
+                ('john', 'smith', 'M', 1980),
+                ('first_name', 'last_name', 'F', 'a_string')
+            )
+            for a_person in people:
+                first_name = a_person[0]
+                last_name = a_person[1]
+                sex = a_person[2]
+                year_of_birth = a_person[3]
+
+                self.assertEqual(
+                    src.person.person(
+                        first_name=first_name,
+                        last_name=last_name,
+                        sex=sex,
+                        year_of_birth=year_of_birth,
+                    ),
+                    (
+                        f'{first_name}, {last_name},'
+                        f' {sex}, {year_of_birth}'
+                    )
+                )
+
+        def test_joe(self):
+
+  the tests are still green.
+
+* I remove the :ref:`assert_person_factory_works method<extract assert_person_factory_works function>` from the :ref:`TestPerson class<add TestPerson class>`
+
+  .. code-block:: python
+    :lineno-start: 6
+
+    class TestPerson(unittest.TestCase):
+
+        this_year = datetime.date.today().year
+
+        def calculate_age(self, year_of_birth):
+            return self.this_year - year_of_birth
+
 * I add a git_ commit message
 
   .. code-block:: python
@@ -426,6 +657,8 @@ extract test_say_hello_function
 *********************************************************************************
 
 The tests for the :ref:`say_hello function<test say_hello function>` in :ref:`test_joe`, :ref:`test_jane`, :ref:`test_john` and :ref:`test_mary` make a :ref:`call<how to call a function with input>` to the :ref:`say_hello function<test say_hello function>` then compare the result with a string_.
+
+I can make one :ref:`function<what is a function?>` with a :ref:`for loop<what is a for loop?>` to remove the repetition.
 
 ----
 
